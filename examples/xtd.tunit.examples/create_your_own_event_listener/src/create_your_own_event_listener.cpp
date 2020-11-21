@@ -144,7 +144,6 @@ namespace unit_tests {
   };
 }
 
-// The main entry point for the application.
 int main() {
   return gtest_unit_test().run();
   // is same :

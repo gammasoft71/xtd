@@ -4,7 +4,6 @@
 using namespace std;
 using namespace xtd;
 
-// The main entry point for the application.
 int main() {
   wconsole::write(L"Hello ");
   wconsole::write_line(L"World!");

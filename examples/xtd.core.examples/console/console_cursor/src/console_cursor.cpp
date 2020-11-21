@@ -11,7 +11,6 @@ void write_at(const string& s, int x, int y) {
   console::write(s);
 }
 
-// The main entry point for the application.
 int main() {
   // Clear the screen, then save the top and left coordinates.
   console::clear();

@@ -2,7 +2,6 @@
 
 using namespace xtd;
 
-// The main entry point for the application.
 int main() {
   console::write_line("The current buffer height is {} rows.", console::buffer_height());
   console::write_line("The current buffer width is {} columns.", console::buffer_width());
