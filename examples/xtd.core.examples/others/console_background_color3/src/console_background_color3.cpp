@@ -1,10 +1,8 @@
 #include <xtd/xtd.core>
-#include <vector>
 
 using namespace std;
 using namespace xtd;
 
-// The main entry point for the application.
 int main() {
   cout << background_color(console_color::dark_blue) << "                    " << reset_color() << endl;
   cout << background_color(console_color::blue) << "                    " << reset_color() << endl;

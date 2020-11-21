@@ -1,8 +1,11 @@
 #include <xtd/xtd.core>
+#include <thread>
 
+using namespace std;
+using namespace std::chrono;
+using namespace std::this_thread;
 using namespace xtd;
 
-// The main entry point for the application.
 int main(int argc, char* argv[]) {
   int x = 0;
   //
@@ -10,6 +13,7 @@ int main(int argc, char* argv[]) {
     for (int i = 1; i <= x; i++) {
       console::write_line("Beep number {}.", i);
       console::beep();
+      sleep_for(milliseconds(100));
     }
   } else
     console::write_line("Usage: Enter the number of times (between 1 and 9) to beep.");

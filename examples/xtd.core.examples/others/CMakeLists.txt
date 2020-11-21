@@ -4,6 +4,10 @@ project(others)
 find_package(xtd REQUIRED)
 
 add_projects(
+  console_background_color2
+  console_background_color3
+  console_beep2
+  console_beep3
   hello_world_console2
   hello_world_console3
   hello_world_diagnostics2

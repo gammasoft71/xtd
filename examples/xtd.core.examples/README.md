@@ -11,5 +11,7 @@
 * [hello_world_io](hello_worlds/hello_world_io/README.md) The classic first application "Hello, World!" with [xtd::io::file](../../src/xtd.core/include/xtd/io/file.h) and [xtd::io::path](../../src/xtd.core/include/xtd/io/path.h) classes.
 * [hello_world_strings](hello_worlds/hello_world_strings/README.md) The classic first application "Hello, World!" with [xtd::strings](../../src/xtd.core/include/xtd/strings.h) class.
 
+## [Console](console/README.md)
+
 ## [Others](others/README.md)
 
