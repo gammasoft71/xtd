@@ -17,10 +17,10 @@ namespace stacktrace {
     StackFrame(int returnAddress, int framePointer, const std::vector<int>& params, int baseAddress) : returnAddress(returnAddress), framePointer(framePointer), params(params), baseAddress(baseAddress) {}
 
     int GetAbsoluteReturnAddress() const;
-    int GetReturnAddress() const { return this->returnAddress; }
-    int GetFramePointer() const { return this->framePointer; }
-    const std::vector< int >& GetParams() const { return this->params; }
-    virtual bool Equals(const StackFrame& sf) const { return &sf != NULL && this->returnAddress == sf.returnAddress && this->framePointer == sf.framePointer && this->params  == sf.params && this->baseAddress == sf.baseAddress; }
+    int GetReturnAddress() const { return returnAddress; }
+    int GetFramePointer() const { return framePointer; }
+    const std::vector< int >& GetParams() const { return params; }
+    virtual bool Equals(const StackFrame& sf) const { return &sf != NULL && returnAddress == sf.returnAddress && framePointer == sf.framePointer && params  == sf.params && baseAddress == sf.baseAddress; }
     virtual std::string ToString() const;
 
   private:

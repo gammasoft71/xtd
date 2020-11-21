@@ -33,12 +33,12 @@ namespace stacktrace {
     ModuleInformation() : id(NULL), baseAddress(0), size(0) {}
     ModuleInformation(const ModuleInformation& mi) : id(mi.id), name(mi.name), baseAddress(mi.baseAddress), size(mi.size) {}
 
-    intptr_t GetId() const {return this->id;}
-    const std::string& GetName() const {return this->name;}
-    int GetBaseAddress() const {return this->baseAddress;}
-    int GetSize() const {return this->size;}
+    intptr_t GetId() const {return id;}
+    const std::string& GetName() const {return name;}
+    int GetBaseAddress() const {return baseAddress;}
+    int GetSize() const {return size;}
 
-    virtual bool Equals(const ModuleInformation& mi) const { return &mi != NULL && this->id == mi.id && this->name == mi.name && this->baseAddress  == mi.baseAddress && this->size == mi.size; }
+    virtual bool Equals(const ModuleInformation& mi) const { return &mi != NULL && id == mi.id && name == mi.name && baseAddress  == mi.baseAddress && size == mi.size; }
 
     virtual std::string ToString() const;
 

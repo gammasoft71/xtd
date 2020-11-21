@@ -9,8 +9,8 @@ namespace stacktrace {
   struct ThreadInformation {
   public:
     static ThreadInformation GetThreadInformation();
-    int GetId() const { return this->id; }
-    virtual bool Equals(const ThreadInformation& ti) const { return &ti != NULL && this->id == ti.id; }
+    int GetId() const { return id; }
+    virtual bool Equals(const ThreadInformation& ti) const { return &ti != NULL && id == ti.id; }
 
   private:
     explicit ThreadInformation(int id) : id(id) {}
