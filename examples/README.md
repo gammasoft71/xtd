@@ -9,6 +9,11 @@
 * [Hello Worlds](xtd.core.examples/hello_worlds/README.md) contains xtd.core "Hello, World!" examples.
 * [Console](xtd.core.examples/console/README.md) contains console examples.
 * [Delegates](xtd.core.examples/delegates/README.md) contains delegates examples.
+* [Diagnostics](xtd.core.examples/diagnostics/README.md) contains diagnostics examples.
+* [Environment](xtd.core.examples/environment/README.md) contains environment examples.
+* [Keywords](xtd.core.examples/keywords/README.md) contains keywords examples.
+* [Main](xtd.core.examples/main/README.md) contains main examples.
+* [Strings](xtd.core.examples/strings/README.md) contains strings examples.
 * [Others](xtd.core.examples/others/README.md) contains others examples.
 
 ## [xtd.drawing](xtd.drawing.examples/README.md)
