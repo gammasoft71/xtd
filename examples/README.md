@@ -4,7 +4,9 @@
 
 ## [xtd.core](xtd.core.examples/README.md)
 
-[xtd.core](xtd.core.examples/README.md) contains xtd.core library examples.
+* [Hello Worlds](xtd.core.examples/hello_worlds/README.md) contains xtd.core "Hello, World!" examples.
+* [Console](xtd.core.examples/console/README.md) contains console examples.
+* [Delegates](xtd.core.examples/delegates/README.md) contains delegates examples.
 
 ## [xtd.drawing](xtd.drawing.examples/README.md)
 
