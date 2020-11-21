@@ -181,12 +181,13 @@ namespace xtd {
       functions_ = delegate.functions_;
       return *this;
     }
+    delegate(const delegate<result_t()>& delegate) noexcept : no_arguments_functions_(delegate.functions()) {}
     /// @endcond
 
     /// @brief Initializes a delegate that invokes the specified instance method.
     /// @param function the method instance.
-    delegate(const function_t& function) noexcept { functions_.push_back(function); }
-
+    delegate(const function_t& function) noexcept {functions_.push_back(function);}
+    
     /// @cond
     delegate(const no_arguments_function_t& function) noexcept { no_arguments_functions_.push_back(function); }
     /// @endcond
@@ -466,13 +467,21 @@ namespace xtd {
     /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
     bool operator!=(const delegate& delegate) const { return !operator==(delegate); }
 
+    template<typename type_t>
+    delegate& operator=(const type_t& function) noexcept {
+      no_arguments_functions_.clear();
+      functions_.clear();
+      functions_.push_back(function_t(function));
+      return *this;
+    }
+
     delegate& operator=(const function_t& function) noexcept {
       no_arguments_functions_.clear();
       functions_.clear();
       functions_.push_back(function);
       return *this;
     }
-    
+
     delegate& operator=(const no_arguments_function_t& function) noexcept {
       no_arguments_functions_.clear();
       functions_.clear();
