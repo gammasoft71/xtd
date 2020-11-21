@@ -18,3 +18,9 @@ int main(int argc, char* argv[]) {
   } else
     console::write_line("Usage: Enter the number of times (between 1 and 9) to beep.");
 }
+
+// This code produces the following output if 3 is entered on command line:
+//
+// Beep number 1.
+// Beep number 2.
+// Beep number 3.
