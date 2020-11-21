@@ -1,15 +1,12 @@
-#include <xtd/xtd.core>
-#include <iostream>
+#include <xtd/xtd>
 
-using namespace std;
 using namespace std::string_literals;
 using namespace xtd;
 
-// The main entry point for the application.
 int main() {
-  cout << format("{}, {}!", "Hello", "World"s) << endl;
+  console::out << format("{},{,10}!", "Hello", "World"s) << environment::new_line;
 }
 
 // This code produces the following output:
 //
-// Hello, World!
+// Hello,     World!
