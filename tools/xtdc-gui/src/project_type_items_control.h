@@ -89,7 +89,7 @@ namespace xtdc_gui {
       }
     }
 
-    const project_type_item& selected_project_type_item() const {return this->selected_project_type_item_;}
+    const project_type_item& selected_project_type_item() const {return selected_project_type_item_;}
     void selected_project_type_item(const project_type_item& value) {
       if (selected_project_type_item_ != value) {
         selected_project_type_item_ = value;
