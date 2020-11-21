@@ -16,23 +16,6 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output (with colors)
+# Output
 
-```
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-```
+![Screenshot](../../../../docs/pictures/examples/console_background_color.png)
