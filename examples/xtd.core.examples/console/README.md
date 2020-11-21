@@ -6,3 +6,4 @@
 * [console_beep](console_beep/README.md) shows how to use [xtd::console::beep](../../../src/xtd.core/include/xtd/basic_console.h) method.
 * [console_buffer](console_buffer/README.md) shows how to use [xtd::console::buffer_height](../../../src/xtd.core/include/xtd/basic_console.h) and [xtd::console::buffer_width](../../../src/xtd.core/include/xtd/basic_console.h) methods.
 * [console_color](console_color/README.md) shows how to use [xtd::console::background_color](../../../src/xtd.core/include/xtd/basic_console.h) and [xtd::console::foreground_color](../../../src/xtd.core/include/xtd/basic_console.h) methods.
+* [console_cursor](console_cursor/README.md) shows how to use [xtd::console::set_cursor_position](../../../../src/xtd.core/include/xtd/basic_console.h), [xtd::console::cursor_top](../../../../src/xtd.core/include/xtd/basic_console.h) and [xtd::console::cursor_left](../../../../src/xtd.core/include/xtd/basic_console.h) methods.

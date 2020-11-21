@@ -26,7 +26,7 @@ int main() {
   write_at("+", 0, 4);
   
   // Draw the bottom side, from left to right.
-  write_at("-", 1, 4); // shortcut: WriteAt("---", 1, 4)
+  write_at("-", 1, 4); // shortcut: write_at("---", 1, 4)
   write_at("-", 2, 4); // ...
   write_at("-", 3, 4); // ...
   write_at("+", 4, 4);
@@ -38,7 +38,7 @@ int main() {
   write_at("+", 4, 0);
   
   // Draw the top side, from right to left.
-  write_at("-", 3, 0); // shortcut: WriteAt("---", 1, 0)
+  write_at("-", 3, 0); // shortcut: write_at("---", 1, 0)
   write_at("-", 2, 0); // ...
   write_at("-", 1, 0); // ...
   //
