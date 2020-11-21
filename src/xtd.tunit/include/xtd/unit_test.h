@@ -35,7 +35,7 @@ namespace xtd {
       /// @brief Runs all tests in this UnitTest object and prints the result.
       /// @return EXIT_SUCCESS (0) if succeed; otherwise return EXIT_FAILURE (1).
       int run() {
-        if (parse_arguments(this->arguments))
+        if (parse_arguments(arguments))
           return xtd::tunit::settings::default_settings().exit_status();
 
         if (xtd::tunit::settings::default_settings().list_tests()) {
@@ -43,7 +43,7 @@ namespace xtd {
           for (auto test_class : test_classes())
             for(auto test : test_class.test()->tests())
               tests.push_back(test_class.test()->name() + '.' + test.name());
-          return this->list_tests(tests);
+          return list_tests(tests);
         }
 
         if (xtd::tunit::settings::default_settings().shuffle_test()) {
@@ -52,25 +52,25 @@ namespace xtd {
           std::shuffle(test_classes().begin(), test_classes().end(), g);
         }
           
-        for (this->repeat_iteration_ = 1; this->repeat_iteration_ <= xtd::tunit::settings::default_settings().repeaat_test() || xtd::tunit::settings::default_settings().repeaat_test() < 0; ++this->repeat_iteration_) {
+        for (repeat_iteration_ = 1; repeat_iteration_ <= xtd::tunit::settings::default_settings().repeaat_test() || xtd::tunit::settings::default_settings().repeaat_test() < 0; ++repeat_iteration_) {
            try {
-            this->event_listener_->on_unit_test_start(xtd::tunit::tunit_event_args(*this));
+            event_listener_->on_unit_test_start(xtd::tunit::tunit_event_args(*this));
             
-            this->event_listener_->on_unit_test_initialize_start(xtd::tunit::tunit_event_args(*this));
+            event_listener_->on_unit_test_initialize_start(xtd::tunit::tunit_event_args(*this));
             unit_test_initialize();
-            this->event_listener_->on_unit_test_initialize_end(xtd::tunit::tunit_event_args(*this));
+            event_listener_->on_unit_test_initialize_end(xtd::tunit::tunit_event_args(*this));
             
-            this->start_time_point_ = std::chrono::high_resolution_clock::now();
+            start_time_point_ = std::chrono::high_resolution_clock::now();
             for (auto& test_class : test_classes())
               if (test_class.test()->test_count())
                 test_class.test()->run(*this);
-            this->end_time_point_ = std::chrono::high_resolution_clock::now();
+            end_time_point_ = std::chrono::high_resolution_clock::now();
 
-            this->event_listener_->on_unit_test_cleanup_start(xtd::tunit::tunit_event_args(*this));
+            event_listener_->on_unit_test_cleanup_start(xtd::tunit::tunit_event_args(*this));
             unit_test_cleanup();
-            this->event_listener_->on_unit_test_cleanup_end(xtd::tunit::tunit_event_args(*this));
+            event_listener_->on_unit_test_cleanup_end(xtd::tunit::tunit_event_args(*this));
             
-            this->event_listener_->on_unit_test_end(xtd::tunit::tunit_event_args(*this));
+            event_listener_->on_unit_test_end(xtd::tunit::tunit_event_args(*this));
           } catch(const std::exception&) {
             xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
             // do error...
@@ -86,7 +86,7 @@ namespace xtd {
         return xtd::tunit::settings::default_settings().exit_status();
       }
       
-      int repeat_iteration() const noexcept {return this->repeat_iteration_;}
+      int repeat_iteration() const noexcept {return repeat_iteration_;}
       
       int repeat_iteration_count() const noexcept {return xtd::tunit::settings::default_settings().repeaat_test();}
       
@@ -94,7 +94,7 @@ namespace xtd {
       
       size_t test_cases_count() const noexcept {
         size_t count = 0;
-        for (auto test_class : this->test_classes())
+        for (auto test_class : test_classes())
           if (test_class.test()->test_count())
             count ++;
         return count;
@@ -102,14 +102,14 @@ namespace xtd {
       
       size_t test_count() const noexcept {
         size_t count = 0;
-        for (auto test_class : this->test_classes())
+        for (auto test_class : test_classes())
           count += test_class.test()->test_count();
         return count;
       }
 
       size_t aborted_test_count() const noexcept {
         size_t count = 0;
-        for (auto& test_class : this->test_classes())
+        for (auto& test_class : test_classes())
           for (auto& test : test_class.test()->tests())
             if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.aborted()) count++;
         return count;
@@ -117,7 +117,7 @@ namespace xtd {
       
       std::vector<std::string> aborted_test_names() const noexcept {
         std::vector<std::string> names;
-        for (auto& test_class : this->test_classes())
+        for (auto& test_class : test_classes())
           for (auto& test : test_class.test()->tests())
             if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.aborted()) names.push_back(test_class.test()->name() + "." + test.name());
         return names;
@@ -125,21 +125,21 @@ namespace xtd {
 
       std::chrono::milliseconds elapsed_time() const noexcept {
         using namespace std::chrono_literals;
-        if (this->start_time_point_.time_since_epoch() == 0ms && this->end_time_point_.time_since_epoch() == 0ms) return 0ms;
-        if (this->end_time_point_.time_since_epoch() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - this->start_time_point_);
-        return std::chrono::duration_cast<std::chrono::milliseconds>(this->end_time_point_ - this->start_time_point_);
+        if (start_time_point_.time_since_epoch() == 0ms && end_time_point_.time_since_epoch() == 0ms) return 0ms;
+        if (end_time_point_.time_since_epoch() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start_time_point_);
+        return std::chrono::duration_cast<std::chrono::milliseconds>(end_time_point_ - start_time_point_);
       }
 
       size_t ignored_test_count() const noexcept {
         size_t count = 0;
-        for (auto test_class : this->test_classes())
+        for (auto test_class : test_classes())
           count += test_class.test()->ignored_test_count();
         return count;
       }
 
       std::vector<std::string> ignored_test_names() const noexcept {
         std::vector<std::string> names;
-        for (auto& test_class : this->test_classes())
+        for (auto& test_class : test_classes())
           for (auto& test : test_class.test()->tests())
             if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.ignored()) names.push_back(test_class.test()->name() + "." + test.name());
         return names;
@@ -147,7 +147,7 @@ namespace xtd {
 
       size_t failed_test_count() const noexcept {
         size_t count = 0;
-        for (auto& test_class : this->test_classes())
+        for (auto& test_class : test_classes())
           for (auto& test : test_class.test()->tests())
             if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.failed()) count++;
         return count;
@@ -155,7 +155,7 @@ namespace xtd {
 
       std::vector<std::string> failed_test_names() const noexcept {
         std::vector<std::string> names;
-        for (auto& test_class : this->test_classes())
+        for (auto& test_class : test_classes())
           for (auto& test : test_class.test()->tests())
             if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.failed()) names.push_back(test_class.test()->name() + "." + test.name());
         return names;
@@ -163,7 +163,7 @@ namespace xtd {
 
       size_t succeed_test_count() const noexcept {
         size_t count = 0;
-        for (auto& test_class : this->test_classes())
+        for (auto& test_class : test_classes())
           for (auto& test : test_class.test()->tests())
             if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.succeed()) count++;
         return count;
@@ -171,7 +171,7 @@ namespace xtd {
 
       std::vector<std::string> succeed_test_names() const noexcept {
         std::vector<std::string> names;
-        for (auto& test_class : this->test_classes())
+        for (auto& test_class : test_classes())
           for (auto& test : test_class.test()->tests())
             if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.succeed()) names.push_back(test_class.test()->name() + "." + test.name());
         return names;
@@ -279,7 +279,7 @@ namespace xtd {
         if (xtd::tunit::settings::default_settings().output_xml()) {
           std::fstream file(xtd::tunit::settings::default_settings().output_xml_path(), std::ios::out | std::ios::trunc);
           file << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" << std::endl;
-          file << "<testsuites tests=\"" << this->test_count() << "\" failures=\"" << this->failed_test_count() << "\" disabled=\"" << this->ignored_test_count() << "\" errors=\"" << 0 << "\" timestamp=\"" << to_string(xtd::tunit::settings::default_settings().start_time()) << "\" time=\"" << to_string(this->elapsed_time()) << "\" name=\"" << this->name_ << "\">" << std::endl;
+          file << "<testsuites tests=\"" << test_count() << "\" failures=\"" << failed_test_count() << "\" disabled=\"" << ignored_test_count() << "\" errors=\"" << 0 << "\" timestamp=\"" << to_string(xtd::tunit::settings::default_settings().start_time()) << "\" time=\"" << to_string(elapsed_time()) << "\" name=\"" << name_ << "\">" << std::endl;
           for (auto& test_class : test_classes()) {
             file << "  <testsuite name=\"" << test_class.test()->name() << "\" tests=\"" << test_class.test()->test_count() << "\" failures=\"" << test_class.test()->failed_test_count() << "\" disabled=\"" << test_class.test()->ignored_test_count() << "\" error=\"" << test_class.test()->failed_test_count() << "\" time=\"" << to_string(test_class.test()->elapsed_time()) << "\">" << std::endl;
             for (auto& test : test_class.test()->tests()) {

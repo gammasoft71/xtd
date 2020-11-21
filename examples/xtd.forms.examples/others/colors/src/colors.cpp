@@ -52,7 +52,7 @@ namespace examples {
       }
     }
 
-    size_t selected_index() const {return this->selected_index_;}
+    size_t selected_index() const {return selected_index_;}
     void selected_index(size_t value) {
       if (selected_index_ != value) {
         selected_index_ = value;
@@ -60,7 +60,7 @@ namespace examples {
       }
     }
 
-    const drawing::color& selected_color() const {return this->selected_color_;}
+    const drawing::color& selected_color() const {return selected_color_;}
     void selected_color(const drawing::color& value) {
       if (selected_color_ != value) {
         selected_color_ = value;

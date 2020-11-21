@@ -31,60 +31,60 @@ namespace xtd {
 
       std::chrono::milliseconds elapsed_time() const noexcept {
         using namespace std::chrono_literals;
-        if (this->start_time_point.time_since_epoch() == 0ms && this->end_time_point.time_since_epoch() == 0ms) return 0ms;
-        if (this->end_time_point.time_since_epoch() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - this->start_time_point);
-        return std::chrono::duration_cast<std::chrono::milliseconds>(this->end_time_point - this->start_time_point);
+        if (start_time_point.time_since_epoch() == 0ms && end_time_point.time_since_epoch() == 0ms) return 0ms;
+        if (end_time_point.time_since_epoch() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start_time_point);
+        return std::chrono::duration_cast<std::chrono::milliseconds>(end_time_point - start_time_point);
       }
       
-      std::string name() const noexcept {return this->name_;}
+      std::string name() const noexcept {return name_;}
       
       size_t test_count() const noexcept {
         size_t count = 0;
-        for (auto method : this->tests_)
-          if (settings::default_settings().is_match_test_name(this->name(), method.name())) count++;
+        for (auto method : tests_)
+          if (settings::default_settings().is_match_test_name(name(), method.name())) count++;
         return count;
       }
       
       size_t aborted_test_count() const noexcept {
         size_t count = 0;
-        for (auto method : this->tests_)
-          if (settings::default_settings().is_match_test_name(this->name(), method.name()) && method.aborted()) count++;
+        for (auto method : tests_)
+          if (settings::default_settings().is_match_test_name(name(), method.name()) && method.aborted()) count++;
         return count;
       }
       
       size_t failed_test_count() const noexcept {
         size_t count = 0;
-        for (auto method : this->tests_)
-          if (settings::default_settings().is_match_test_name(this->name(), method.name()) && method.failed()) count++;
+        for (auto method : tests_)
+          if (settings::default_settings().is_match_test_name(name(), method.name()) && method.failed()) count++;
         return count;
       }
 
       size_t ignored_test_count() const noexcept {
         size_t count = 0;
-        for (auto method : this->tests_)
-          if (settings::default_settings().is_match_test_name(this->name(), method.name()) && method.ignored()) count++;
+        for (auto method : tests_)
+          if (settings::default_settings().is_match_test_name(name(), method.name()) && method.ignored()) count++;
         return count;
       }
       
       size_t succeed_test_count() const noexcept {
         size_t count = 0;
-        for (auto method : this->tests_)
-          if (settings::default_settings().is_match_test_name(this->name(), method.name()) && method.succeed()) count++;
+        for (auto method : tests_)
+          if (settings::default_settings().is_match_test_name(name(), method.name()) && method.succeed()) count++;
         return count;
       }
 
-      const std::vector<xtd::tunit::test>& tests() const noexcept {return this->tests_;}
+      const std::vector<xtd::tunit::test>& tests() const noexcept {return tests_;}
 
     protected:
-      void add_class_cleanup(const xtd::tunit::test& class_cleanup) noexcept {this->class_cleanup_ = class_cleanup;}
+      void add_class_cleanup(const xtd::tunit::test& class_cleanup) noexcept {class_cleanup_ = class_cleanup;}
       
-      void add_class_initialize(const xtd::tunit::test& class_initialize) noexcept {this->class_initialize_ = class_initialize;}
+      void add_class_initialize(const xtd::tunit::test& class_initialize) noexcept {class_initialize_ = class_initialize;}
       
-      void add_test_cleanup(const xtd::tunit::test& test_cleanup) noexcept {this->test_cleanup_ = test_cleanup;}
+      void add_test_cleanup(const xtd::tunit::test& test_cleanup) noexcept {test_cleanup_ = test_cleanup;}
       
-      void add_test_initialize(const xtd::tunit::test& test_initialize) noexcept {this->test_initialize_ = test_initialize;}
+      void add_test_initialize(const xtd::tunit::test& test_initialize) noexcept {test_initialize_ = test_initialize;}
       
-      void add_test_method(const xtd::tunit::test& test) noexcept {this->tests_.push_back(test);}
+      void add_test_method(const xtd::tunit::test& test) noexcept {tests_.push_back(test);}
       
     private:
       friend class xtd::tunit::test;
@@ -96,11 +96,11 @@ namespace xtd {
       friend class xtd::tunit::test_cleanup_attribute;
       friend class xtd::tunit::test_method_attribute;
       
-      const xtd::tunit::test& class_cleanup() const noexcept {return this->class_cleanup_;}
-      const xtd::tunit::test& class_initialize() const noexcept {return this->class_initialize_;}
-      const xtd::tunit::test& test_cleanup() const noexcept {return this->test_cleanup_;}
-      const xtd::tunit::test& test_initialize() const noexcept {return this->test_initialize_;}
-      const std::vector<xtd::tunit::test>& test_methods() const noexcept {return this->tests_;}
+      const xtd::tunit::test& class_cleanup() const noexcept {return class_cleanup_;}
+      const xtd::tunit::test& class_initialize() const noexcept {return class_initialize_;}
+      const xtd::tunit::test& test_cleanup() const noexcept {return test_cleanup_;}
+      const xtd::tunit::test& test_initialize() const noexcept {return test_initialize_;}
+      const std::vector<xtd::tunit::test>& test_methods() const noexcept {return tests_;}
 
       void run(const xtd::tunit::unit_test& unit_test);
       

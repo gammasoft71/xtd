@@ -25,8 +25,8 @@ namespace xtd {
       
       int list_tests(const std::vector<std::string>& tests) override {
         for (auto name : tests)
-          this->os_ << name << std::endl;
-        return this->unit_test::list_tests(tests);
+          os_ << name << std::endl;
+        return unit_test::list_tests(tests);
       }
       
       bool parse_arguments(const std::vector<std::string>& args) override {
@@ -35,76 +35,76 @@ namespace xtd {
             write_help();
             return true;
           }
-        return this->unit_test::parse_arguments(args);
+        return unit_test::parse_arguments(args);
       }
       
       void write_help() {
-        this->os_ << "This program contains tests written using xtd::tunit. You can use the" << std::endl;
-        this->os_ << "following command line flags to control its behavior:" << std::endl;
-        this->os_ << std::endl;
-        this->os_ << "Test selection:" << std::endl;
-        this->os_ << __foreground_color(__console_color::green);
-        this->os_ << "  --list_tests" << std::endl;
-        this->os_ << __reset_color();
-        this->os_ << "      List the names of all tests instead of running them." << std::endl;
-        this->os_ << __foreground_color(__console_color::green);
-        this->os_ << "  --filter_tests=";
-        this->os_ << __reset_color();
-        this->os_ << __foreground_color(__console_color::yellow);
-        this->os_ << "[PATTERN]" << std::endl;
-        this->os_ << __reset_color();
-        this->os_ << "      Run only the tests whose name matches one of the pattern." << std::endl;
-        this->os_ << "      '?' matches any single character; '*' matches any substring." << std::endl;
-        this->os_ << __foreground_color(__console_color::green);
-        this->os_ << "  --also_run_ignored_tests" << std::endl;
-        this->os_ << __reset_color();
-        this->os_ << "      Run all ignored tests too." << std::endl;
-        this->os_ << std::endl;
-        this->os_ << "Test execution:" << std::endl;
-        this->os_ << __foreground_color(__console_color::green);
-        this->os_ << "  --repeat_tests=";
-        this->os_ << __reset_color();
-        this->os_ << __foreground_color(__console_color::yellow);
-        this->os_ << "[COUNT]" << std::endl;
-        this->os_ << __reset_color();
-        this->os_ << "      Run the tests repeatedly; use a negative count to repeat forever." << std::endl;
-        this->os_ << __foreground_color(__console_color::green);
-        this->os_ << "  --shuffle_tests" << std::endl;
-        this->os_ << __reset_color();
-        this->os_ << "      Randomize tests' orders on every iteration." << std::endl;
-        this->os_ << __foreground_color(__console_color::green);
-        this->os_ << "  --random_seed=";
-        this->os_ << __reset_color();
-        this->os_ << __foreground_color(__console_color::yellow);
-        this->os_ << "[NUMBER]" << std::endl;
-        this->os_ << __reset_color();
-        this->os_ << "      Random number seed to use for shuffling test order. (any number" << std::endl;
-        this->os_ << "      or 0 to use a seed based on the current time)." << std::endl;
-        this->os_ << std::endl;
-        this->os_ << "Test output:" << std::endl;
-        this->os_ << __foreground_color(__console_color::green);
-        this->os_ << "  --output_color=";
-        this->os_ << __reset_color();
-        this->os_ << __foreground_color(__console_color::yellow);
-        this->os_ << "(true|false)" << std::endl;
-        this->os_ << __reset_color();
-        this->os_ << "      Enable/disable colored output." << std::endl;
-        this->os_ << __foreground_color(__console_color::green);
-        this->os_ << "  --show_duration=";
-        this->os_ << __reset_color();
-        this->os_ << __foreground_color(__console_color::yellow);
-        this->os_ << "(true|false)" << std::endl;
-        this->os_ << __reset_color();
-        this->os_ << "      Enable/disable the elapsed time of each test display." << std::endl;
-        this->os_ << __foreground_color(__console_color::green);
-        this->os_ << "  --output_xml=xml";
-        this->os_ << __reset_color();
-        this->os_ << __foreground_color(__console_color::yellow);
-        this->os_ << "[=PATH]" << std::endl;
-        this->os_ << __reset_color();
-        this->os_ << "      Generate an xml report in the given directory or with the given file" << std::endl;
-        this->os_ << "      name. PATH defaults to tests.xml." << std::endl;
-        this->os_ << std::endl;
+        os_ << "This program contains tests written using xtd::tunit. You can use the" << std::endl;
+        os_ << "following command line flags to control its behavior:" << std::endl;
+        os_ << std::endl;
+        os_ << "Test selection:" << std::endl;
+        os_ << __foreground_color(__console_color::green);
+        os_ << "  --list_tests" << std::endl;
+        os_ << __reset_color();
+        os_ << "      List the names of all tests instead of running them." << std::endl;
+        os_ << __foreground_color(__console_color::green);
+        os_ << "  --filter_tests=";
+        os_ << __reset_color();
+        os_ << __foreground_color(__console_color::yellow);
+        os_ << "[PATTERN]" << std::endl;
+        os_ << __reset_color();
+        os_ << "      Run only the tests whose name matches one of the pattern." << std::endl;
+        os_ << "      '?' matches any single character; '*' matches any substring." << std::endl;
+        os_ << __foreground_color(__console_color::green);
+        os_ << "  --also_run_ignored_tests" << std::endl;
+        os_ << __reset_color();
+        os_ << "      Run all ignored tests too." << std::endl;
+        os_ << std::endl;
+        os_ << "Test execution:" << std::endl;
+        os_ << __foreground_color(__console_color::green);
+        os_ << "  --repeat_tests=";
+        os_ << __reset_color();
+        os_ << __foreground_color(__console_color::yellow);
+        os_ << "[COUNT]" << std::endl;
+        os_ << __reset_color();
+        os_ << "      Run the tests repeatedly; use a negative count to repeat forever." << std::endl;
+        os_ << __foreground_color(__console_color::green);
+        os_ << "  --shuffle_tests" << std::endl;
+        os_ << __reset_color();
+        os_ << "      Randomize tests' orders on every iteration." << std::endl;
+        os_ << __foreground_color(__console_color::green);
+        os_ << "  --random_seed=";
+        os_ << __reset_color();
+        os_ << __foreground_color(__console_color::yellow);
+        os_ << "[NUMBER]" << std::endl;
+        os_ << __reset_color();
+        os_ << "      Random number seed to use for shuffling test order. (any number" << std::endl;
+        os_ << "      or 0 to use a seed based on the current time)." << std::endl;
+        os_ << std::endl;
+        os_ << "Test output:" << std::endl;
+        os_ << __foreground_color(__console_color::green);
+        os_ << "  --output_color=";
+        os_ << __reset_color();
+        os_ << __foreground_color(__console_color::yellow);
+        os_ << "(true|false)" << std::endl;
+        os_ << __reset_color();
+        os_ << "      Enable/disable colored output." << std::endl;
+        os_ << __foreground_color(__console_color::green);
+        os_ << "  --show_duration=";
+        os_ << __reset_color();
+        os_ << __foreground_color(__console_color::yellow);
+        os_ << "(true|false)" << std::endl;
+        os_ << __reset_color();
+        os_ << "      Enable/disable the elapsed time of each test display." << std::endl;
+        os_ << __foreground_color(__console_color::green);
+        os_ << "  --output_xml=xml";
+        os_ << __reset_color();
+        os_ << __foreground_color(__console_color::yellow);
+        os_ << "[=PATH]" << std::endl;
+        os_ << __reset_color();
+        os_ << "      Generate an xml report in the given directory or with the given file" << std::endl;
+        os_ << "      name. PATH defaults to tests.xml." << std::endl;
+        os_ << std::endl;
       }
       
     private:

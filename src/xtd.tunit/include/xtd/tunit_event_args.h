@@ -22,7 +22,7 @@ namespace xtd {
       
       /// @brief Gets current unit test.
       /// @return Current unit test.
-      const xtd::tunit::unit_test& unit_test() const {return this->ut_;}
+      const xtd::tunit::unit_test& unit_test() const {return ut_;}
 
     private:
       const xtd::tunit::unit_test& ut_;

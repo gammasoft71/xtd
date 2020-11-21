@@ -17,7 +17,7 @@ namespace xtd {
 
       /// @brief Gets current class test.
       /// @return Current class test.
-      const xtd::tunit::test_class& test_class() const noexcept {return this->tc_;}
+      const xtd::tunit::test_class& test_class() const noexcept {return tc_;}
 
     private:
       const xtd::tunit::test_class& tc_;
