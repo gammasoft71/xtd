@@ -158,7 +158,7 @@ color::color(const color& color, const known_color& known_color) : argb_(color.a
 }
 
 bool color::is_system_color() const {
-  return this->known_color_ != (known_color)0 && (this->known_color_ <= known_color::window_text || this->known_color_ >= drawing::known_color::button_face);
+  return known_color_ != (known_color)0 && (known_color_ <= known_color::window_text || known_color_ >= drawing::known_color::button_face);
 }
 
 color color::from_argb(uint32_t argb) {
@@ -423,9 +423,9 @@ color color::from_known_color(known_color color) {
 
 float color::get_brightness() const {
   // .net version (see https://referencesource.microsoft.com/#System.Drawing/commonui/System/Drawing/color.cs,9103fd761ca562ae)
-  //return ((float)max(max(this->r(), this->g()), this->b()) + (float)min(min(this->r(), this->g()), this->b())) / 255.0 / 2.0;
+  //return ((float)max(max(r(), g()), b()) + (float)min(min(r(), g()), b())) / 255.0 / 2.0;
   // algorithm  version (see https://www.programmingalgorithms.com/algorithm/rgb-to-hsv)
-  return (float)max(max(this->r(), this->g()), this->b()) / 255.0f;
+  return (float)max(max(r(), g()), b()) / 255.0f;
 }
 
 float color::get_hue() const {
@@ -452,12 +452,12 @@ float color::get_hue() const {
 }
 
 float color::get_lightness() const {
-  return ((float)max(max(this->r(), this->g()), this->b()) + (float)min(min(this->r(), this->g()), this->b())) / 2.0f / 255.0f;
+  return ((float)max(max(r(), g()), b()) + (float)min(min(r(), g()), b())) / 2.0f / 255.0f;
 }
 
 float color::get_saturation() const {
-  float max = (float)std::max(std::max(this->r(), this->g()), this->b()) / 255.0f;
-  float min = (float)std::min(std::min(this->r(), this->g()), this->b()) / 255.0f;
+  float max = (float)std::max(std::max(r(), g()), b()) / 255.0f;
+  float min = (float)std::min(std::min(r(), g()), b()) / 255.0f;
   
   if (max == min) return 0.0f;
   
@@ -474,17 +474,17 @@ color color::parse(const string& color) {
 }
 
 uint32_t color::to_argb() const {
-  if (this->handle_) return native::system_colors::to_argb(this->handle_);
-  return this->argb_;
+  if (handle_) return native::system_colors::to_argb(handle_);
+  return argb_;
 }
 
 known_color color::to_known_color() const {
-  return this->known_color_;
+  return known_color_;
 }
 
 string color::to_string() const {
-  if (this->empty_) return "color [empty]";
-  if (this->name_ != strings::format("{:X8}", this->argb_) && this->name_ != "0") return strings::format("color [{0}]", name());
+  if (empty_) return "color [empty]";
+  if (name_ != strings::format("{:X8}", argb_) && name_ != "0") return strings::format("color [{0}]", name());
   return strings::format("color [a={}, r={}, g={}, b={}]", a(), r(), g(), b());
 }
 

@@ -40,8 +40,8 @@ namespace xtd {
       font_family(const font_family& value);
       font_family() = default;
       font_family& operator=(const font_family& value);
-      bool operator==(const font_family& value) const {return this->data_->name_ == value.data_->name_;}
-      bool operator!=(const font_family& value) const {return !this->operator==(value);}
+      bool operator==(const font_family& value) const {return data_->name_ == value.data_->name_;}
+      bool operator!=(const font_family& value) const {return !operator==(value);}
       /// @endcond
       
       /// @brief Returns an array that contains all the font_family objects associated with the current graphics context.
@@ -62,7 +62,7 @@ namespace xtd {
       
       /// @brief Gets the name of this font_family.
       /// @return A String that represents the name of this font_family.
-      const std::string& name() const {return this->data_->name_;}
+      const std::string& name() const {return data_->name_;}
       
       /// @brief Returns the cell ascent, in design units, of the font_family of the specified style.
       /// @param style A font_style that contains style information for the font.
@@ -97,7 +97,7 @@ namespace xtd {
 
       /// @brief Converts this font_family to a human-readable string representation.
       /// @return The string that represents this font_family.
-      std::string to_string() const {return strings::format("[{}: name={}]", strings::class_name(*this), this->data_->name_);}
+      std::string to_string() const {return strings::format("[{}: name={}]", strings::class_name(*this), data_->name_);}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::font_family& font_family) noexcept {

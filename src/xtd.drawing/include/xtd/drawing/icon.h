@@ -30,7 +30,7 @@ namespace xtd {
       
       /// @brief Get the handle of this image.
       /// @return The handle of this image.
-      intptr_t handle() const {return this->data_->handle_;}
+      intptr_t handle() const {return data_->handle_;}
 
       static icon empty;
 

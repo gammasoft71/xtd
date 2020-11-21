@@ -62,12 +62,12 @@ namespace xtd {
       /// @brief Gets horizontal alignment of the string.
       /// @return A string_alignment enumeration that specifies the horizontal alignment of the string.
       /// @remarks Use line_alignment to specify the vertical alignment of the string.
-      xtd::drawing::string_alignment alignment() const {return this->alignment_;}
+      xtd::drawing::string_alignment alignment() const {return alignment_;}
       /// @brief Sets horizontal alignment of the string.
       /// @param alignment A string_alignment enumeration that specifies the horizontal alignment of the string.
       /// @remarks Use line_alignment to specify the vertical alignment of the string.
       xtd::drawing::string_format& alignment(xtd::drawing::string_alignment alignment) {
-        this->alignment_ = alignment;
+        alignment_ = alignment;
         return *this;
       }
 
@@ -96,12 +96,12 @@ namespace xtd {
       /// @brief Gets vertical alignment of the string.
       /// @return A string_alignment enumeration that specifies the vertical alignment of the string.
       /// @remarks Use alignment to specify the horizontal alignment of the string.
-      xtd::drawing::string_alignment line_alignment() const {return this->line_alignment_;}
+      xtd::drawing::string_alignment line_alignment() const {return line_alignment_;}
       /// @brief Sets vertical alignment of the string.
       /// @param alignment A string_alignment enumeration that specifies the vertical alignment of the string.
       /// @remarks Use alignment to specify the horizontal alignment of the string.
       xtd::drawing::string_format& line_alignment(xtd::drawing::string_alignment line_alignment) {
-        this->line_alignment_ = line_alignment;
+        line_alignment_ = line_alignment;
         return *this;
       }
       

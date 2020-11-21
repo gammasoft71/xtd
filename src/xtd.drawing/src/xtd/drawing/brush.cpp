@@ -5,20 +5,20 @@ using namespace xtd;
 using namespace xtd::drawing;
 
 brush::brush() {
-  this->data_->handle_ = native::brush::create();
+  data_->handle_ = native::brush::create();
 }
 
 brush::brush(const brush& value) {
-  if (this->data_.use_count() == 1 && this->data_->handle_ != 0) native::brush::destroy(this->data_->handle_);
-  this->data_ = value.data_;
+  if (data_.use_count() == 1 && data_->handle_ != 0) native::brush::destroy(data_->handle_);
+  data_ = value.data_;
 }
 
 brush& brush::operator=(const brush& value) {
-  if (this->data_.use_count() == 1 && this->data_->handle_ != 0) native::brush::destroy(this->data_->handle_);
-  this->data_ = value.data_;
+  if (data_.use_count() == 1 && data_->handle_ != 0) native::brush::destroy(data_->handle_);
+  data_ = value.data_;
   return *this;
 }
 
 brush::~brush() {
-  if (this->data_.use_count() == 1 && this->data_->handle_ != 0) native::brush::destroy(this->data_->handle_);
+  if (data_.use_count() == 1 && data_->handle_ != 0) native::brush::destroy(data_->handle_);
 }

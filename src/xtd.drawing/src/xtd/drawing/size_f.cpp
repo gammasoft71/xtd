@@ -9,22 +9,22 @@ size_f::size_f(const point_f& point) : width_(point.x()), height_(point.y()) {
 }
 
 size_f size_f::operator+(const size_f& size) const {
-  return {this->width_ + size.width_, this->height_ + size.height_};
+  return {width_ + size.width_, height_ + size.height_};
 }
 
 size_f size_f::operator-(const size_f& size) const {
-  return {this->width_ - size.width_, this->height_ - size.height_};
+  return {width_ - size.width_, height_ - size.height_};
 }
 
 size_f& size_f::operator+=(const size_f& size) {
-  this->width_ += size.width_;
-  this->height_ += size.height_;
+  width_ += size.width_;
+  height_ += size.height_;
   return *this;
 }
 
 size_f& size_f::operator-=(const size_f& size) {
-  this->width_ -= size.width_;
-  this->height_ -= size.height_;
+  width_ -= size.width_;
+  height_ -= size.height_;
   return *this;
 }
 

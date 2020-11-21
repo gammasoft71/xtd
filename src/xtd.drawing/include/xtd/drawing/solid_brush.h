@@ -15,11 +15,11 @@ namespace xtd {
       /// @cond
       solid_brush(const solid_brush& value);
       solid_brush& operator=(const solid_brush& value);
-      bool operator==(const solid_brush& value) const {return this->data_->color_ == value.data_->color_;}
-      bool operator!=(const solid_brush& value) const {return !this->operator==(value);}
+      bool operator==(const solid_brush& value) const {return data_->color_ == value.data_->color_;}
+      bool operator!=(const solid_brush& value) const {return !operator==(value);}
       /// @endcond
       
-      const drawing::color& color() const {return this->data_->color_;}
+      const drawing::color& color() const {return data_->color_;}
       solid_brush& color(const drawing::color& color);
       
     private:

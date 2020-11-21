@@ -39,7 +39,7 @@ namespace xtd {
       ~graphics();
       /// @endcond
       
-      intptr_t handle() const {return this->data_->handle_;}
+      intptr_t handle() const {return data_->handle_;}
       
       void clear(const color& color);
       
@@ -158,7 +158,7 @@ namespace xtd {
       friend forms::control;
       friend forms::paint_event_args;
       friend forms::screen;
-      graphics(intptr_t handle) {this->data_->handle_ = handle;}
+      graphics(intptr_t handle) {data_->handle_ = handle;}
 
       struct data {
         intptr_t handle_ = 0;

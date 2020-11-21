@@ -25,20 +25,20 @@ namespace xtd {
         /// @cond
         color_palette(const color_palette&) = default;
         color_palette& operator=(const color_palette&) = default;
-        bool operator==(const color_palette& value) const {return this->entries_ == value.entries_ && this->flags_ == value.flags_;}
-        bool operator!=(const color_palette& value) const {return !this->operator==(value);}
+        bool operator==(const color_palette& value) const {return entries_ == value.entries_ && flags_ == value.flags_;}
+        bool operator!=(const color_palette& value) const {return !operator==(value);}
         /// @endcond
         
         /// @brief Gets an array of color structures.
         /// @return The array of color structure that make up this color_palette.
-        const std::vector<color>& entries() const {return this->entries_;}
+        const std::vector<color>& entries() const {return entries_;}
         
         /// @brief Gets a value that specifies how to interpret the color information in the array of colors.
         /// @remarks The following flag values are valid:
         /// * 0x00000001 The color values in the array contain alpha information.
         /// * 0x00000002 The colors in the array are grayscale values.
         /// * 0x00000004 The colors in the array are halftone values.
-        int32_t flags() const {return this->flags_;}
+        int32_t flags() const {return flags_;}
         
       private:
         friend class xtd::drawing::image;

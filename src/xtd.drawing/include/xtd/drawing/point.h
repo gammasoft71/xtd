@@ -31,7 +31,7 @@ namespace xtd {
     ///   size button_size(start_point);
     ///   if (button_size == subtract_button.size()) {
     ///     // If the sizes are equal, tell the user.
-    ///     e.graphics().draw_string("The sizes are equal.", font(this->font, font_style.italic), brushes::indigo, 10.0F, 65.0F);
+    ///     e.graphics().draw_string("The sizes are equal.", font(font, font_style.italic), brushes::indigo, 10.0F, 65.0F);
     ///   }
     /// }
     /// @endcode
@@ -79,14 +79,14 @@ namespace xtd {
       ///   point point1(100, 100);
       ///
       ///   // Create a Graphics object.
-      ///   graphics form_graphics = this->create_graphics();
+      ///   graphics form_graphics = create_graphics();
       ///
       ///   // Construct another point, this time using a Size.
       ///   point point2(size(100, 100));
       ///
       ///   // Call the equality operator to see if the points are equal, and if so print out their x and y values.
       ///   if (point1 == point2) {
-      ///     form_graphics.draw_string(strings::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), this->font(), brushes::black, point_f(10, 70));
+      ///     form_graphics.draw_string(strings::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
       ///   }
       /// }
       /// @endcode
@@ -102,14 +102,14 @@ namespace xtd {
       ///   point point1(100, 100);
       ///
       ///   // Create a Graphics object.
-      ///   graphics form_graphics = this->create_graphics();
+      ///   graphics form_graphics = create_graphics();
       ///
       ///   // Construct another point, this time using a Size.
       ///   point point2(size(100, 100));
       ///
       ///   // Call the equality operator to see if the points are equal, and if so print out their x and y values.
       ///   if (point1 == point2) {
-      ///     form_graphics.draw_string(strings::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), this->font(), brushes::black, point_f(10, 70));
+      ///     form_graphics.draw_string(strings::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
       ///   }
       /// }
       /// @endcode
@@ -118,7 +118,7 @@ namespace xtd {
       /// @cond
       point(const point&) = default;
       point& operator=(const point&) = default;
-      operator point_f() const {return point_f(static_cast<float>(this->x_), static_cast<float>(this->y_));}
+      operator point_f() const {return point_f(static_cast<float>(x_), static_cast<float>(y_));}
       /// @endcond
       
       /// @brief Gets a value indicating whether this point is empty.
@@ -135,14 +135,14 @@ namespace xtd {
       ///   point point1(100, 100);
       ///
       ///   // Create a Graphics object.
-      ///   graphics form_graphics = this->create_graphics();
+      ///   graphics form_graphics = create_graphics();
       ///
       ///   // Construct another point, this time using a Size.
       ///   point point2(size(100, 100));
       ///
       ///   // Call the equality operator to see if the points are equal, and if so print out their x and y values.
       ///   if (point1 == point2) {
-      ///     form_graphics.draw_string(strings::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), this->font(), brushes::black, point_f(10, 70));
+      ///     form_graphics.draw_string(strings::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
       ///   }
       /// }
       /// @endcode
@@ -158,18 +158,18 @@ namespace xtd {
       ///   point point1(100, 100);
       ///
       ///   // Create a Graphics object.
-      ///   graphics form_graphics = this->create_graphics();
+      ///   graphics form_graphics = create_graphics();
       ///
       ///   // Construct another point, this time using a Size.
       ///   point point2(size(100, 100));
       ///
       ///   // Call the equality operator to see if the points are equal, and if so print out their x and y values.
       ///   if (point1 == point2) {
-      ///     form_graphics.draw_string(strings::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), this->font(), brushes::black, point_f(10, 70));
+      ///     form_graphics.draw_string(strings::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
       ///   }
       /// }
       /// @endcode
-      void x(int32_t x) {this->x_ = x;}
+      void x(int32_t x) {x_ = x;}
       
       /// @brief Gets the y-coordinate of this point.
       /// @return The y-coordinate of this point.
@@ -181,14 +181,14 @@ namespace xtd {
       ///   point point1(100, 100);
       ///
       ///   // Create a Graphics object.
-      ///   graphics form_graphics = this->create_graphics();
+      ///   graphics form_graphics = create_graphics();
       ///
       ///   // Construct another point, this time using a Size.
       ///   point point2(size(100, 100));
       ///
       ///   // Call the equality operator to see if the points are equal, and if so print out their x and y values.
       ///   if (point1 == point2) {
-      ///     form_graphics.draw_string(strings::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), this->font(), brushes::black, point_f(10, 70));
+      ///     form_graphics.draw_string(strings::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
       ///   }
       /// }
       /// @endcode
@@ -204,18 +204,18 @@ namespace xtd {
       ///   point point1(100, 100);
       ///
       ///   // Create a Graphics object.
-      ///   graphics form_graphics = this->create_graphics();
+      ///   graphics form_graphics = create_graphics();
       ///
       ///   // Construct another point, this time using a Size.
       ///   point point2(size(100, 100));
       ///
       ///   // Call the equality operator to see if the points are equal, and if so print out their x and y values.
       ///   if (point1 == point2) {
-      ///     form_graphics.draw_string(strings::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), this->font(), brushes::black, point_f(10, 70));
+      ///     form_graphics.draw_string(strings::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
       ///   }
       /// }
       /// @endcode
-      void y(int32_t y) {this->y_ = y;}
+      void y(int32_t y) {y_ = y;}
 
       /// @brief Adds the specified size to the specified point.
       /// @param pt The point to add.
@@ -245,8 +245,8 @@ namespace xtd {
       /// @param dx The amount to offset the x-coordinate.
       /// @param dy The amount to offset the y-coordinate.
       void offset(int dx, int dy) {
-        this->x_ += dx;
-        this->y_ += dy;
+        x_ += dx;
+        y_ += dy;
       }
       
       /// @brief Translates this point by the specified point.
@@ -262,7 +262,7 @@ namespace xtd {
       ///   e.eraphics().draw_line(pens::red, point1, point2);
       /// }
       /// @endcode
-      void offset(const point& p) {this->offset(p.x_, p.y_);}
+      void offset(const point& p) {offset(p.x_, p.y_);}
 
       /// @brief Converts the specified point_f to a point object by rounding the point_f values to the nearest integer.
       /// @param value The point_f to convert.
@@ -281,7 +281,7 @@ namespace xtd {
 
       /// @brief Converts this point to a human-readable string.
       /// @return A string that represents this point.
-      std::string to_string() const {return  strings::format("{{x={}, y={}}}", this->x_, this->y_);}
+      std::string to_string() const {return  strings::format("{{x={}, y={}}}", x_, y_);}
 
       /// @brief Converts the specified point_f to a point by truncating the values of the point_f.
       /// @param value The point_f to convert.
@@ -289,8 +289,8 @@ namespace xtd {
       static point truncate(const point_f& value);
 
       /// @cond
-      bool operator==(const point& value) const {return this->x_ == value.x_ && this->y_ == value.y_;}
-      bool operator!=(const point& value) const {return !this->operator==(value);}
+      bool operator==(const point& value) const {return x_ == value.x_ && y_ == value.y_;}
+      bool operator!=(const point& value) const {return !operator==(value);}
 
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::point& point) noexcept {
         return os << point.to_string();

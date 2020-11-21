@@ -23,13 +23,13 @@ namespace xtd {
         /// @cond
         frame_dimension(const frame_dimension&) = default;
         frame_dimension& operator=(const frame_dimension&) = default;
-        bool operator==(const frame_dimension& value) const {return this->guid_ == value.guid_;}
-        bool operator!=(const frame_dimension& value) const {return !this->operator==(value);}
+        bool operator==(const frame_dimension& value) const {return guid_ == value.guid_;}
+        bool operator!=(const frame_dimension& value) const {return !operator==(value);}
         /// @endcond
         
         /// @brief Gets a globally unique identifier (GUID) that represents this frame_dimension object.
         /// @return A guid structure that contains a GUID that represents this frame_dimension object.
-        const xtd::guid& guid() const {return this->guid_;}
+        const xtd::guid& guid() const {return guid_;}
         
         /// @brief Gets the page dimension.
         /// @return The page dimension.
