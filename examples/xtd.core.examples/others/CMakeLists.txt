@@ -7,4 +7,5 @@ add_projects(
   hello_world_console2
   hello_world_console3
   hello_world_diagnostics2
+  hello_world_environment2
 )
