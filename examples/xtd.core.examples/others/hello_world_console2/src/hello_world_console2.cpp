@@ -3,7 +3,6 @@
 using namespace std;
 using namespace xtd;
 
-// The main entry point for the application.
 int main() {
   console::out << background_color(console_color::blue) << foreground_color(console_color::white) << "Hello, World!" << reset_color() << endl;
 }

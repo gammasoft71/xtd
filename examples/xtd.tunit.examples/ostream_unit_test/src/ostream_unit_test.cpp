@@ -12,7 +12,6 @@ namespace unit_tests {
   };
 }
 
-// The main entry point for the application.
 int main() {
   // create your own ostream in this case a string stream for example
   stringstream ss;

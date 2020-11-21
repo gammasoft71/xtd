@@ -21,7 +21,6 @@ namespace unit_tests {
   };
 }
 
-// The main entry point for the application.
 int main() {
   return console_unit_test().run();
 }

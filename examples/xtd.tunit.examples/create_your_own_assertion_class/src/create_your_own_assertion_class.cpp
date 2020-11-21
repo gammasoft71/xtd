@@ -49,7 +49,6 @@ public:
   }
 };
 
-// The main entry point for the application.
 int main() {
   return xtd::tunit::console_unit_test().run();
 }

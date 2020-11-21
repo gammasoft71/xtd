@@ -11,7 +11,6 @@ void trace_message(const string& message, const line_info& info) {
   cout << "source line number: " << info.line_number() << endl;
 }
 
-// The main entry point for the application.
 int main() {
   trace_message("Something happened.", line_info_);
 }
