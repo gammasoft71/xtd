@@ -11,6 +11,7 @@ add_projects(
   console_color2
   console_color3
   console_color4
+  console_read_line2
   hello_world_console2
   hello_world_console3
   hello_world_diagnostics2
