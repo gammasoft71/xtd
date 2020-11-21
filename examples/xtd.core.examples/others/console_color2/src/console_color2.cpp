@@ -4,7 +4,6 @@
 using namespace std;
 using namespace xtd;
 
-// The main entry point for the application.
 int main() {
   const vector logo = {
     u8"████████████████████████████████████████████████████████████",
@@ -85,6 +84,6 @@ int main() {
 //      █████████                                                    █████████
 //      █████████                                                    █████████
 //        ██████████████████████████████████████████████████████████████████
-//                                      Gammasoft
-//      More than thirty years of passion for high technology especially in development
-//      (c++, c#, objective-c, ...).
+//                                    Gammasoft
+// More than thirty years of passion for high technology especially in development
+// (c++, c#, objective-c, ...).

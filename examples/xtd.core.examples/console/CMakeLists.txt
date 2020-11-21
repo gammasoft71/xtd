@@ -8,9 +8,6 @@ add_projects(
   console_beep
   console_buffer
   console_color
-  console_color2
-  console_color3
-  console_color4
   console_cursor
   console_in_out
   console_read_line
