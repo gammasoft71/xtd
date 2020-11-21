@@ -11,7 +11,7 @@ add_projects(
   guid
   hello_worlds
   keywords
-  main
+  mains
   strings
   others
 )
