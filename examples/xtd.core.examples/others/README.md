@@ -5,3 +5,4 @@
 * [hello_world_console2](hello_world_console2/README.md) The same classic first application "Hello World" on the standard output stream with another style.
 * [hello_world_console3](hello_world_console3/README.md) The same classic first application "Hello World" on the standard output stream with another style.
 * [hello_world_diagnostics2](hello_world_diagnostics2/README.md) The same classic first application "Hello World" on the debug output stream with another style.
+* [hello_world_environment2](hello_world_environment2/README.md) The same classic first application "Hello World" environment with another style.
