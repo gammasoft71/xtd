@@ -19,11 +19,11 @@ namespace stacktrace {
     */
     static ProcessInformation GetProcessInformation();
 
-    const std::string& GetName() const { return this->name; }
-    int GetId() const { return this->id; }
-    //const Version& GetVersion() const { return this->version; }
-    int GetBaseAddress() const { return this->baseAddress; }
-    const StackFrames& GetStackFrames() const { return this->stackFrames; }
+    const std::string& GetName() const { return name; }
+    int GetId() const { return id; }
+    //const Version& GetVersion() const { return version; }
+    int GetBaseAddress() const { return baseAddress; }
+    const StackFrames& GetStackFrames() const { return stackFrames; }
     static std::string GetFileName(std::string file);
 
   private:

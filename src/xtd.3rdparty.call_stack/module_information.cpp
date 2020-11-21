@@ -79,8 +79,8 @@ namespace stacktrace {
 
   string ModuleInformation::ToString() const {
     stringstream ss;
-    ss << "Name= "+this->name+", BaseAdress=0x";
-    ss << std::hex << this->baseAddress << "Size=0x" << this->size;
+    ss << "Name= "+name+", BaseAdress=0x";
+    ss << std::hex << baseAddress << "Size=0x" << size;
     return ss.str();
   }
 }
