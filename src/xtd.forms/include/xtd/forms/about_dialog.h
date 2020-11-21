@@ -32,7 +32,7 @@ namespace xtd {
       
       /// @brief Gets the product copyright.
       /// @return The product copyright.
-      std::string copyright() const {return this->copyright_;}
+      std::string copyright() const {return copyright_;}
       /// @brief Sets the product description.
       /// @param copyright The description copyright.
       /// @return Current about_dialog instance.
@@ -43,7 +43,7 @@ namespace xtd {
       
       /// @brief Gets the product description.
       /// @return The product description.
-      std::string description() const {return this->description_;}
+      std::string description() const {return description_;}
       /// @brief Sets the product description.
       /// @param description The product description.
       /// @return Current about_dialog instance.
@@ -54,7 +54,7 @@ namespace xtd {
       
       /// @brief Gets the product icon.
       /// @return The product icon.
-      xtd::drawing::icon icon() const {return xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(this->icon_));}
+      xtd::drawing::icon icon() const {return xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(icon_));}
       /// @brief Sets the product icon.
       /// @param icon The product icon.
       /// @return Current about_dialog instance.
@@ -79,7 +79,7 @@ namespace xtd {
 
       /// @brief Gets the product long version.
       /// @return The product long version.
-      std::string long_version() const {return this->long_version_;}
+      std::string long_version() const {return long_version_;}
       /// @brief Sets the product long version.
       /// @param version The version version.
       /// @return Current about_dialog instance.
@@ -90,7 +90,7 @@ namespace xtd {
 
       /// @brief Gets the product name.
       /// @return The product name.
-      std::string name() const {return this->name_;}
+      std::string name() const {return name_;}
       /// @brief Sets the product name.
       /// @param name The product name.
       /// @return Current about_dialog instance.
@@ -101,7 +101,7 @@ namespace xtd {
       
       /// @brief Gets the product version.
       /// @return The product version.
-      std::string version() const {return this->version_;}
+      std::string version() const {return version_;}
       /// @brief Sets the product version.
       /// @param version The version version.
       /// @return Current about_dialog instance.
@@ -112,7 +112,7 @@ namespace xtd {
       
       /// @brief Gets the product website.
       /// @return The website.
-      std::string website() const {return this->website_;}
+      std::string website() const {return website_;}
       /// @brief Sets the product website.
       /// @param website The  product website.
       /// @return Current about_dialog instance.
@@ -123,7 +123,7 @@ namespace xtd {
       
       /// @brief Gets the product website label.
       /// @return The product website label.
-      std::string website_label() const {return this->website_label_;}
+      std::string website_label() const {return website_label_;}
       /// @brief Sets the product website label.
       /// @param website_label The product website label.
       /// @return Current about_dialog instance.
@@ -190,7 +190,7 @@ namespace xtd {
 
       /// @brief Gets the product license.
       /// @return The product license.
-      std::string license() const {return this->license_;}
+      std::string license() const {return license_;}
       /// @brief Sets the product license.
       /// @param name The product license.
       /// @return Current about_dialog instance.

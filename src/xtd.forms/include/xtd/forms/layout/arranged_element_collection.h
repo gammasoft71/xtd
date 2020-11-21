@@ -34,14 +34,14 @@ namespace xtd {
           item_t& operator=(const item_t& value) {
             if (value.parent) parent = value.parent;
             if (parent != nullptr && !parent->inserting_ && !parent->erasing_) parent->item_updated(pos, static_cast<type_t&>(const_cast<item_t&>(value)));
-            this->type_t::operator=(value);
+            type_t::operator=(value);
             return *this;
           }
           
           item_t& operator=(item_t&& value) {
             if (value.parent) parent = value.parent;
             if (parent != nullptr && !parent->inserting_ && !parent->erasing_) parent->item_updated(pos, static_cast<type_t&>(value));
-            this->type_t::operator=(value);
+            type_t::operator=(value);
             return *this;
           }
 
@@ -75,16 +75,16 @@ namespace xtd {
         /// @cond
         arranged_element_collection(const std::initializer_list<type_t>& il) {
           for (auto item : il)
-            this->push_back(item);
+            push_back(item);
         }
         arranged_element_collection(const std::vector<type_t>& collection) {
           for (auto item : collection)
-            this->push_back(item);
+            push_back(item);
         }
-        arranged_element_collection(const arranged_element_collection& collection) {this->push_back_range(collection);}
+        arranged_element_collection(const arranged_element_collection& collection) {push_back_range(collection);}
         arranged_element_collection& operator=(const arranged_element_collection& collection) {
-          this->clear();
-          this->push_back_range(collection);
+          clear();
+          push_back_range(collection);
           return *this;
         }
         arranged_element_collection(arranged_element_collection&&) = default;
@@ -101,58 +101,58 @@ namespace xtd {
         /// @brief Occurs when an item is erased from the collection.
         event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_erased;
         
-        allocator_type get_allocator() const {return this->collection_.get_allocator();}
+        allocator_type get_allocator() const {return collection_.get_allocator();}
         
         reference at(size_type pos) {
-          this->collection_[pos].pos = pos;
-          this->collection_[pos].parent = this;
-          return this->collection_.at(pos);
+          collection_[pos].pos = pos;
+          collection_[pos].parent = this;
+          return collection_.at(pos);
         }
-        const_reference at(size_type pos) const {return this->collection_.at(pos);}
+        const_reference at(size_type pos) const {return collection_.at(pos);}
        
-        reference front() {return this->collection_.front();}
-        const_reference front() const {return this->collection_.front();}
+        reference front() {return collection_.front();}
+        const_reference front() const {return collection_.front();}
        
-        reference back() {return this->collection_.back();}
-        const_reference back() const {return this->collection_.back();}
+        reference back() {return collection_.back();}
+        const_reference back() const {return collection_.back();}
     
-        value_type* data() {return this->collection_.data();}
-        const value_type* data() const {return this->collection_.data();}
+        value_type* data() {return collection_.data();}
+        const value_type* data() const {return collection_.data();}
         
         reference operator[](size_type pos) {
-          this->collection_[pos].pos = pos;
-          this->collection_[pos].parent = this;
-          return this->collection_[pos];
+          collection_[pos].pos = pos;
+          collection_[pos].parent = this;
+          return collection_[pos];
         }
-        const_reference operator[](size_type pos) const {return this->collection_[pos];}
+        const_reference operator[](size_type pos) const {return collection_[pos];}
         
-        iterator begin() {return this->collection_.begin();}
-        const_iterator begin() const {return this->collection_.begin();}
-        const_iterator cbegin() const {return this->collection_.cbegin();}
+        iterator begin() {return collection_.begin();}
+        const_iterator begin() const {return collection_.begin();}
+        const_iterator cbegin() const {return collection_.cbegin();}
         
-        iterator end() {return this->collection_.end();}
-        const_iterator end() const {return this->collection_.end();}
-        const_iterator cend() const {return this->collection_.cend();}
+        iterator end() {return collection_.end();}
+        const_iterator end() const {return collection_.end();}
+        const_iterator cend() const {return collection_.cend();}
         
-        reverse_iterator rbegin() {return this->collection_.rbegin();}
-        const_reverse_iterator rbegin() const {return this->collection_.rbegin();}
-        const_reverse_iterator crbegin() const {return this->collection_.crbegin();}
+        reverse_iterator rbegin() {return collection_.rbegin();}
+        const_reverse_iterator rbegin() const {return collection_.rbegin();}
+        const_reverse_iterator crbegin() const {return collection_.crbegin();}
 
-        reverse_iterator rend() {return this->collection_.rend();}
-        const_reverse_iterator rend() const {return this->collection_.rend();}
-        const_reverse_iterator crend() const {return this->collection_.crend();}
+        reverse_iterator rend() {return collection_.rend();}
+        const_reverse_iterator rend() const {return collection_.rend();}
+        const_reverse_iterator crend() const {return collection_.crend();}
         
-        bool empty() const {return this->collection_.empty();}
+        bool empty() const {return collection_.empty();}
         
-        size_type size() const {return this->collection_.size();}
+        size_type size() const {return collection_.size();}
         
-        size_type max_size() const {return this->collection_.max_size();}
+        size_type max_size() const {return collection_.max_size();}
         
-        void reserve(size_type size) {this->collection_.reserve(size);}
+        void reserve(size_type size) {collection_.reserve(size);}
         
-        size_type capacity() const {return this->collection_.capacity();}
+        size_type capacity() const {return collection_.capacity();}
         
-        void shrink_to_fit() {this->collection_.shrink_to_fit();}
+        void shrink_to_fit() {collection_.shrink_to_fit();}
         
         bool sorted() const {return sorted_;}
         void sorted(bool value) {
@@ -163,124 +163,124 @@ namespace xtd {
         }
         
         void clear() {
-          iterator it = this->begin();
-          while (it != this->end())
-            it = this->erase(it);
+          iterator it = begin();
+          while (it != end())
+            it = erase(it);
         }
 
         iterator insert(iterator pos, const value_type& value) {
-          size_t index = pos - this->begin();
+          size_t index = pos - begin();
           inserting_ = true;
-          iterator result = this->collection_.insert(pos, value);
+          iterator result = collection_.insert(pos, value);
           inserting_ = false;
           (*this)[index].parent = this;
           (*this)[index].pos = index;
-          this->item_added(index, this->collection_[index]);
+          item_added(index, collection_[index]);
           if (sorted_) sort();
           return result;
         }
         
         iterator insert(const_iterator pos, const value_type& value) {
-          size_t index = pos - this->begin();
+          size_t index = pos - begin();
           inserting_ = true;
-          iterator result = this->collection_.insert(pos, value);
+          iterator result = collection_.insert(pos, value);
           inserting_ = false;
           (*this)[index].parent = this;
           (*this)[index].pos = index;
-          this->item_added(index, this->collection_[index]);
+          item_added(index, collection_[index]);
           if (sorted_) sort();
           return result;
         }
         
         iterator insert(const_iterator pos, const value_type&& value) {
-          size_t index = pos - this->begin();
+          size_t index = pos - begin();
           inserting_ = true;
-          iterator result = this->collection_.insert(pos, value);
+          iterator result = collection_.insert(pos, value);
           inserting_ = false;
           (*this)[index].parent = this;
           (*this)[index].pos = index;
-          this->item_added(index, this->collection_[index]);
+          item_added(index, collection_[index]);
           if (sorted_) sort();
           return result;
         }
 
         void insert_at(size_t index, const value_type& value) {
           if (index > size()) throw std::invalid_argument("index out of range");
-          this->insert(this->begin() + index, value);
+          insert(begin() + index, value);
         }
 
         iterator erase(iterator pos) {
-          this->item_erased(pos - this->begin(), *pos);
+          item_erased(pos - begin(), *pos);
           erasing_ = true;
-          iterator result = this->collection_.erase(pos);
+          iterator result = collection_.erase(pos);
           erasing_ = false;
           return result;
         }
         
         iterator erase(const_iterator pos) {
-          this->item_erased(pos - this->begin(), *pos);
+          item_erased(pos - begin(), *pos);
           erasing_ = true;
-          iterator result = this->collection_.erase(pos);
+          iterator result = collection_.erase(pos);
           erasing_ = false;
           return result;
         }
         
         iterator erase(iterator first, iterator last) {
-          iterator result = this->end();
+          iterator result = end();
           for (iterator it = first; it <= last; it++)
-            result = this->erase(it);
+            result = erase(it);
           return result;
         }
         
         iterator erase(const_iterator first, const_iterator last) {
           iterator result = this->bend();
           for (const_iterator it = first; it <= last; it++)
-            result = this->erase(it);
+            result = erase(it);
           return result;
         }
         
         void erase_at(size_t index) {
           if (index > size()) throw std::invalid_argument("index out of range");
-          this->erase(this->begin() + index);
+          erase(begin() + index);
         }
 
         void push_back(const value_type& item) {
-          this->collection_.push_back(item);
-          size_t index = this->collection_.size() - 1;
+          collection_.push_back(item);
+          size_t index = collection_.size() - 1;
           (*this)[index].parent = this;
           (*this)[index].pos = index;
-          this->item_added(index, this->collection_[index]);
+          item_added(index, collection_[index]);
           if (sorted_) sort();
         }
         
         void push_back(value_type&& item) {
-          this->collection_.push_back(item);
-          size_t index = this->collection_.size() - 1;
+          collection_.push_back(item);
+          size_t index = collection_.size() - 1;
           (*this)[index].parent = this;
           (*this)[index].pos = index;
-          this->item_added(index, this->collection_[index]);
+          item_added(index, collection_[index]);
           if (sorted_) sort();
         }
         
         void push_back_range(const arranged_element_collection& collection) {
           for(value_type item : collection)
-            this->push_back(item);
+            push_back(item);
         }
         
         void push_back_range(const std::vector<value_type>& collection) {
           for(value_type item : collection)
-            this->push_back(item);
+            push_back(item);
         }
 
         void push_back_range(const std::initializer_list<value_type>& collection) {
           for(value_type item : collection)
-            this->push_back(item);
+            push_back(item);
         }
         
         template<typename collection_t>
         void push_back_range(collection_t collection) {
           for(const auto& item : collection)
-            this->push_back(value_type(item));
+            push_back(value_type(item));
         }
 
         void sort() {

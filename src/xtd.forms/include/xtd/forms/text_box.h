@@ -21,7 +21,7 @@ namespace xtd {
         return *this;
       }
       
-      virtual forms::border_style border_style() const {return this->border_style_;}
+      virtual forms::border_style border_style() const {return border_style_;}
       virtual text_box& border_style(forms::border_style border_style);
       
       virtual xtd::forms::character_casing character_casing() const {return character_casing_;}

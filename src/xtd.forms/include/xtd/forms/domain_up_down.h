@@ -16,19 +16,19 @@ namespace xtd {
          item(const char* value) : value_(value) {}
          item(const item& value) = default;
          virtual ~item() = default;
-         bool operator==(const item& value) const {return this->value_ == value.value_;}
-         bool operator!=(const item& value) const {return !this->operator==(value);}
-         bool operator<(const item& value) const {return this->value_ < value.value_;}
-         bool operator<=(const item& value) const {return this->value_ <= value.value_;}
-         bool operator>(const item& value) const {return this->value_ > value.value_;}
-         bool operator>=(const item& value) const {return this->value_ >= value.value_;}
+         bool operator==(const item& value) const {return value_ == value.value_;}
+         bool operator!=(const item& value) const {return !operator==(value);}
+         bool operator<(const item& value) const {return value_ < value.value_;}
+         bool operator<=(const item& value) const {return value_ <= value.value_;}
+         bool operator>(const item& value) const {return value_ > value.value_;}
+         bool operator>=(const item& value) const {return value_ >= value.value_;}
          /// @endcond
          
-         virtual const std::string& value() const {return this->value_;}
+         virtual const std::string& value() const {return value_;}
          
-         virtual std::any tag() const {return this->tag_;}
+         virtual std::any tag() const {return tag_;}
          
-         std::string to_string() const {return this->value_;}
+         std::string to_string() const {return value_;}
          friend std::ostream& operator<<(std::ostream& os, const item& value) {return os << value.to_string();}
          
        private:
@@ -40,17 +40,17 @@ namespace xtd {
 
       domain_up_down();
 
-      item_collection& items() {return this->items_;}
+      item_collection& items() {return items_;}
 
-      const item_collection& items() const {return this->items_;}
+      const item_collection& items() const {return items_;}
       
       const domain_up_down& items(const item_collection& items) {
-        this->items_ = items;
+        items_ = items;
         return *this;
       }
       /// @brief Gets the zero-based index of the currently selected item.
       /// @return A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
-      virtual size_t selected_index() const {return this->selected_index_;}
+      virtual size_t selected_index() const {return selected_index_;}
       /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
       /// @param selected_index A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
       virtual domain_up_down& selected_index(size_t selected_index);

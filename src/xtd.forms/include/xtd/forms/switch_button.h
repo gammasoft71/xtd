@@ -60,7 +60,7 @@ namespace xtd {
         drawing::color text_color = checked_ ? fore_color() : drawing::color::average(button_back_color, fore_color(), .33);
         drawing::color slider_color = back_color();
         
-        if (!this->enabled()) {
+        if (!enabled()) {
           button_back_color = drawing::color::average(back_color(), button_back_color, .33);
           text_color = drawing::color::average(button_back_color, text_color, .33);
           slider_color = drawing::color::average(button_back_color, slider_color, .33);

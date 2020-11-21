@@ -9,11 +9,11 @@ using namespace xtd;
 using namespace xtd::forms;
 
 tab_control::tab_control() {
-  this->can_focus_ = false;
-  this->size_ = this->default_size();
+  can_focus_ = false;
+  size_ = default_size();
 
   /*
-  this->controls_.item_added += [this](size_t index, std::reference_wrapper<control> item) {
+  controls_.item_added += [this](size_t index, std::reference_wrapper<control> item) {
     native::tab_control::insert_item(handle(), index, item.get().handle());
     native::tab_control::page_text(handle(), index, item.get().text());
     if (selected_index_ == -1) selected_index_ = 0;
@@ -21,15 +21,15 @@ tab_control::tab_control() {
    */
   
   /* tab_page is removed by tab_page::destroy_handle() method.
-  this->controls_.item_erased += [this](size_t index, std::reference_wrapper<control> item) {
+  controls_.item_erased += [this](size_t index, std::reference_wrapper<control> item) {
     native::tab_control::delete_item(handle_, index);
   };*/
 }
 
 tab_control& tab_control::alignment(tab_alignment alignment) {
-  if (this->alignment_ != alignment) {
-    this->alignment_ = alignment;
-    this->recreate_handle();
+  if (alignment_ != alignment) {
+    alignment_ = alignment;
+    recreate_handle();
   }
   return *this;
 }
@@ -44,12 +44,12 @@ tab_control& tab_control::selected_index(size_t selected_index) {
 }
 
 forms::create_params tab_control::create_params() const {
-  forms::create_params create_params = this->control::create_params();
+  forms::create_params create_params = control::create_params();
   
   create_params.class_name("tabcontrol");
   create_params.style(create_params.style() | WS_CLIPSIBLINGS);
   
-  switch (this->alignment_) {
+  switch (alignment_) {
     case tab_alignment::bottom: create_params.style(create_params.style() | TCS_BOTTOM); break;
     case tab_alignment::left: create_params.style(create_params.style() | TCS_VERTICAL); break;
     case tab_alignment::right: create_params.style(create_params.style() | TCS_VERTICAL | TCS_RIGHT); break;
@@ -61,7 +61,7 @@ forms::create_params tab_control::create_params() const {
 
 drawing::size tab_control::measure_control() const {
   drawing::rectangle bounds;
-  for (auto item : this->controls())
+  for (auto item : controls())
     if (item.get().visible()) bounds = drawing::rectangle::make_union(bounds, item.get().bounds());
   return drawing::size(bounds.location() + bounds.size());
 }
@@ -94,11 +94,11 @@ void tab_control::recreate_handle() {
 void tab_control::wnd_proc(message& message) {
   switch (message.msg()) {
     case WM_REFLECT + WM_COMMAND: wm_reflect_command(message); break;
-    default: this->control::wnd_proc(message);
+    default: control::wnd_proc(message);
   }
 }
 
 void tab_control::wm_reflect_command(message& message) {
-  this->def_wnd_proc(message);
-  selected_index(native::tab_control::selected_index(this->handle()));
+  def_wnd_proc(message);
+  selected_index(native::tab_control::selected_index(handle()));
 }

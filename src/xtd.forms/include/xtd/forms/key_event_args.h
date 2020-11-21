@@ -19,30 +19,30 @@ namespace xtd {
       key_event_args& operator=(const key_event_args& key_event_args) = default;
       /// @endcond
 
-      bool alt() const {return (this->key_data_ & keys::alt) == keys::alt;}
+      bool alt() const {return (key_data_ & keys::alt) == keys::alt;}
       
-      bool command() const {return (this->key_data_ & keys::command) == keys::command;}
+      bool command() const {return (key_data_ & keys::command) == keys::command;}
       
-      bool control() const {return (this->key_data_ & keys::control) == keys::control;}
+      bool control() const {return (key_data_ & keys::control) == keys::control;}
       
-      bool handled() const {return this->handled_;}
-      void handled(bool handled) {this->handled_ = handled;}
+      bool handled() const {return handled_;}
+      void handled(bool handled) {handled_ = handled;}
       
-      keys key_code() const {return this->key_data_ & keys::key_code;}
+      keys key_code() const {return key_data_ & keys::key_code;}
  
-      keys key_data() const {return this->key_data_;}
+      keys key_data() const {return key_data_;}
       
-      int key_value() const {return static_cast<int>(this->key_data_) & 0xFFFF;}
-      //int key_value() const {return this->key_value_;}
+      int key_value() const {return static_cast<int>(key_data_) & 0xFFFF;}
+      //int key_value() const {return key_value_;}
 
-      keys modifiers() const {return this->key_data_ & keys::modifiers;}
+      keys modifiers() const {return key_data_ & keys::modifiers;}
       
-      bool shift() const {return (this->key_data_ & keys::shift) == keys::shift;}
+      bool shift() const {return (key_data_ & keys::shift) == keys::shift;}
       
-      bool suppress_key_press() const {return this->suppress_key_press_;}
+      bool suppress_key_press() const {return suppress_key_press_;}
       void suppress_key_press(bool suppress_key_press) {
-        this->suppress_key_press_ = suppress_key_press;
-        if (suppress_key_press) this->handled(true);
+        suppress_key_press_ = suppress_key_press;
+        if (suppress_key_press) handled(true);
       }
       
     private:

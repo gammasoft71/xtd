@@ -24,7 +24,7 @@ namespace xtd {
       
       /// @brief Gets a value that indicates whether the component is currently in design mode.
       /// @return true if the component is in design mode; otherwise, false.
-      bool design_mode() const {return this->design_mode_;}
+      bool design_mode() const {return design_mode_;}
       
     private:
       bool design_mode_ = false;

@@ -11,9 +11,9 @@ namespace xtd {
     public:
       folder_browser_dialog() = default;
       
-      bool auto_upgrade_enable() const {return this->get_option(BIF_USENEWUI);}
+      bool auto_upgrade_enable() const {return get_option(BIF_USENEWUI);}
       folder_browser_dialog& auto_upgrade_enable(bool value) {
-        this->set_option(BIF_USENEWUI, value);
+        set_option(BIF_USENEWUI, value);
         return *this;
       }
       
@@ -49,8 +49,8 @@ namespace xtd {
       void run_sheet(intptr_t owner) override;
 
     private:
-      bool get_option(size_t flag) const {return (this->options_ & flag) == flag;}
-      void set_option(size_t flag, bool value) {this->options_ = value ? this->options_ | flag : this->options_ & ~flag;}
+      bool get_option(size_t flag) const {return (options_ & flag) == flag;}
+      void set_option(size_t flag, bool value) {options_ = value ? options_ | flag : options_ & ~flag;}
 
       std::string description_;
       environment::special_folder root_folder_ = environment::special_folder::desktop;

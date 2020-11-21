@@ -18,7 +18,7 @@ namespace xtd {
       
       /// @brief Gets a value indicating the horizontal or vertical orientation of the up down button.
       /// @return One of the orientation values.
-      virtual forms::orientation orientation() const {return this->orientation_;}
+      virtual forms::orientation orientation() const {return orientation_;}
       /// @brief Sets a value indicating the horizontal or vertical orientation of the up down button
       /// @param orientation One of the orientation values.
       /// @param When the orientation property is set to orientation::horizontal, the scroll box moves from left to right as the value increases. When the orientation property is set to orientation::vertical, the scroll box moves from bottom to top as the Value increases.
@@ -35,14 +35,14 @@ namespace xtd {
       /// @param max_value The upper limit of the range of the track bar.
       /// @remarks You can use this method to set the entire range for the track_bar at the same time. To set the minimum or maximum values individually, use the minimum and maximum properties. If the min_value parameter is greater than the max_value parameter, max_value is set equal to min_value.
       void set_range(int min_value, int max_value) {
-        this->minimum(min_value);
-        this->maximum(min_value > max_value ? min_value : max_value);
+        minimum(min_value);
+        maximum(min_value > max_value ? min_value : max_value);
       }
       
       /// @brief Returns a string that represents the track_bar control.
       /// @return A string that represents the current progress_bar.
       /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
-      std::string to_string() const override {return strings::format("{}, minimum: {}, maximum: {}, value: {}", strings::full_class_name(*this), this->minimum_, this->maximum_, this->value_);}
+      std::string to_string() const override {return strings::format("{}, minimum: {}, maximum: {}, value: {}", strings::full_class_name(*this), minimum_, maximum_, value_);}
 
       /// @brief Occurs when either a mouse or keyboard action moves the scroll box.
       event<up_down_button, event_handler<control&>> scroll;

@@ -19,13 +19,13 @@ namespace xtd {
       
       static std::vector<screen> all_screens();
 
-      int32_t bits_per_pixel() const {return this->bits_per_pixel_;}
+      int32_t bits_per_pixel() const {return bits_per_pixel_;}
       
-      const drawing::rectangle& bounds() const {return this->bounds_;}
+      const drawing::rectangle& bounds() const {return bounds_;}
       
-      const std::string& device_name() const {return this->device_name_;}
+      const std::string& device_name() const {return device_name_;}
       
-      bool primary() const {return this->primary_;}
+      bool primary() const {return primary_;}
       
       static screen primary_screen() {
         std::vector<screen> screens = all_screens();
@@ -34,7 +34,7 @@ namespace xtd {
         return screens[0];
       }
       
-      const drawing::rectangle& working_area() const {return this->working_area_;}
+      const drawing::rectangle& working_area() const {return working_area_;}
       
       static drawing::graphics create_graphics();
 

@@ -26,17 +26,17 @@ namespace xtd {
         /// @cond
         item(const char* value) : list_box::item(value) {}
         item(const item& value) = default;
-        bool operator==(const item& value) const {return this->list_box::item::operator==(value);}
-        bool operator!=(const item& value) const {return this->list_box::item::operator!=(value);}
-        bool operator<(const item& value) const {return this->list_box::item::operator<(value);}
-        bool operator<=(const item& value) const {return this->list_box::item::operator<=(value);}
-        bool operator>(const item& value) const {return this->list_box::item::operator>(value);}
-        bool operator>=(const item& value) const {return this->list_box::item::operator>=(value);}
+        bool operator==(const item& value) const {return list_box::item::operator==(value);}
+        bool operator!=(const item& value) const {return list_box::item::operator!=(value);}
+        bool operator<(const item& value) const {return list_box::item::operator<(value);}
+        bool operator<=(const item& value) const {return list_box::item::operator<=(value);}
+        bool operator>(const item& value) const {return list_box::item::operator>(value);}
+        bool operator>=(const item& value) const {return list_box::item::operator>=(value);}
         /// @endcond
 
-        virtual bool checked() const {return this->check_state_ != forms::check_state::unchecked;}
+        virtual bool checked() const {return check_state_ != forms::check_state::unchecked;}
         
-        virtual forms::check_state check_state() const {return this->check_state_;}
+        virtual forms::check_state check_state() const {return check_state_;}
         
         friend std::ostream& operator<<(std::ostream& os, const item& value) {return os << value.to_string();}
 
@@ -64,12 +64,12 @@ namespace xtd {
       
       checked_item_collection checked_items() const;
       
-      object_collection& items() {return this->items_;}
+      object_collection& items() {return items_;}
 
-      const object_collection& items() const {return this->items_;}
+      const object_collection& items() const {return items_;}
       
       const list_box& items(const object_collection& items) {
-        this->items_ = items;
+        items_ = items;
         return *this;
       }
       
@@ -78,7 +78,7 @@ namespace xtd {
       
       std::vector<size_t> selected_indices() const override;
       
-      const item& selected_item() const {return this->selected_item_;}
+      const item& selected_item() const {return selected_item_;}
       
       list_box& selected_item(const item& selected_item);
       
@@ -86,7 +86,7 @@ namespace xtd {
       
       using list_box::text;
       control& text(const std::string& text) override {
-        this->selected_item_ = {text};
+        selected_item_ = {text};
         return *this;
       }
   
@@ -108,13 +108,13 @@ namespace xtd {
       event<checked_list_box, item_check_event_handler<control&>> item_check;
 
     protected:
-      bool allow_selection() override {return this->selection_mode_ != forms::selection_mode::none;}
+      bool allow_selection() override {return selection_mode_ != forms::selection_mode::none;}
 
       forms::create_params create_params() const override;
 
       void on_handle_created(const event_args& e) override;
       
-      virtual void on_item_check(item_check_event_args& e) {this->item_check(*this, e);}
+      virtual void on_item_check(item_check_event_args& e) {item_check(*this, e);}
       
       void on_selected_value_changed(const event_args& e) override;
 

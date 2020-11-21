@@ -29,17 +29,17 @@ namespace xtd {
       mouse_event_args& operator=(const mouse_event_args& mouse_event_args) = default;
       /// @endcond
       
-      mouse_buttons button() const {return this->button_;}
+      mouse_buttons button() const {return button_;}
       
-      const drawing::point& location() const {return this->location_;}
+      const drawing::point& location() const {return location_;}
       
-      int32_t clicks() const {return this->clicks_;}
+      int32_t clicks() const {return clicks_;}
       
-      int32_t delta() const {return this->delta_;}
+      int32_t delta() const {return delta_;}
       
-      int32_t x() const {return this->location().x();}
+      int32_t x() const {return location().x();}
       
-      int32_t y() const {return this->location().y();}
+      int32_t y() const {return location().y();}
       
     private:
       friend class button;

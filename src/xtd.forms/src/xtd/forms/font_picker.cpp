@@ -43,7 +43,7 @@ void font_picker::on_handle_created(const event_args& e) {
 }
 
 void font_picker::on_font_changed(const event_args& e) {
-  if (this->can_raise_events()) this->font_changed(*this, e);
+  if (can_raise_events()) font_changed(*this, e);
 }
 
 void font_picker::wnd_proc(message &message) {

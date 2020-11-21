@@ -17,10 +17,10 @@ namespace xtd {
       key_press_event_args& operator=(const key_press_event_args& key_press_event_args) = default;
       /// @endcond
 
-      bool handled() const {return this->handled_;}
-      void handled(bool handled) {this->handled_ = handled;}
+      bool handled() const {return handled_;}
+      void handled(bool handled) {handled_ = handled;}
       
-      char32_t key_char() const {return this->key_char_;}
+      char32_t key_char() const {return key_char_;}
 
     private:
       char32_t key_char_;

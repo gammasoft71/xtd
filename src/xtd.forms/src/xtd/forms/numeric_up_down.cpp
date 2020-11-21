@@ -8,9 +8,9 @@ using namespace xtd;
 using namespace xtd::forms;
 
 numeric_up_down::numeric_up_down() {
-  //this->back_color_ = this->default_back_color();
-  //this->fore_color_ = this->default_fore_color();
-  this->size_ = this->default_size();
+  //back_color_ = default_back_color();
+  //fore_color_ = default_fore_color();
+  size_ = default_size();
 }
 
 forms::create_params numeric_up_down::create_params() const {
@@ -74,15 +74,15 @@ numeric_up_down& numeric_up_down::value(double value) {
 }
 
 numeric_up_down& numeric_up_down::wrapped(bool value) {
-  if (this->wrapped_ != value) {
-    this->wrapped_ = value;
-    this->recreate_handle();
+  if (wrapped_ != value) {
+    wrapped_ = value;
+    recreate_handle();
   }
   return *this;
 }
 
 void numeric_up_down::on_handle_created(const event_args &e) {
-  this->scrollable_control::on_handle_created(e);
+  scrollable_control::on_handle_created(e);
   native::numeric_up_down::decimal_place(handle(), decimal_place_);
   native::numeric_up_down::increment(handle(), increment_);
   native::numeric_up_down::maximum(handle(), maximum_);
@@ -91,19 +91,19 @@ void numeric_up_down::on_handle_created(const event_args &e) {
 }
 
 void numeric_up_down::on_value_changed(const event_args& e) {
-  if (this->can_raise_events()) value_changed(*this, e);
+  if (can_raise_events()) value_changed(*this, e);
 }
 
 
 void numeric_up_down::wnd_proc(message &message) {
   switch (message.msg()) {
-    case WM_COMMAND: this->wm_command(message); break;
+    case WM_COMMAND: wm_command(message); break;
     default: up_down_base::wnd_proc(message);
   }
 }
 
 void numeric_up_down::wm_command(message& message) {
-  this->def_wnd_proc(message);
+  def_wnd_proc(message);
   if (value_ != native::numeric_up_down::value(handle())) {
     value_ = native::numeric_up_down::value(handle());
     on_value_changed(event_args::empty);

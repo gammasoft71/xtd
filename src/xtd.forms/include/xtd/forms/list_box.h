@@ -12,7 +12,7 @@ namespace xtd {
     public:      
       list_box();
 
-      virtual forms::border_style border_style() const {return this->border_style_;}
+      virtual forms::border_style border_style() const {return border_style_;}
       virtual list_box& border_style(forms::border_style border_style);
       
       drawing::color default_back_color() const override {return xtd::forms::theme_colors::current_theme().window();}
@@ -21,12 +21,12 @@ namespace xtd {
       
       drawing::size default_size() const override {return {120, 96};}
       
-      item_collection& items() {return this->items_;}
+      item_collection& items() {return items_;}
 
-      const item_collection& items() const {return this->items_;}
+      const item_collection& items() const {return items_;}
       
       const list_box& items(const item_collection& items) {
-        this->items_ = items;
+        items_ = items;
         return *this;
       }
       
@@ -35,17 +35,17 @@ namespace xtd {
       
       virtual std::vector<size_t> selected_indices() const;
 
-      const item& selected_item() const {return this->selected_item_;}
+      const item& selected_item() const {return selected_item_;}
       
       list_box& selected_item(const item& selected_item);
       
       std::vector<item> selected_items() const;
       
-      virtual forms::selection_mode selection_mode() const {return this->selection_mode_;}
+      virtual forms::selection_mode selection_mode() const {return selection_mode_;}
 
       virtual list_box& selection_mode(forms::selection_mode selection_mode);
 
-      virtual bool sorted() const {return this->sorted_;}
+      virtual bool sorted() const {return sorted_;}
       virtual list_box& sorted(bool sorted);
       
       using list_control::text;
@@ -55,7 +55,7 @@ namespace xtd {
       void end_update();
       
     protected:
-      bool allow_selection() override {return this->selection_mode_ != forms::selection_mode::none;}
+      bool allow_selection() override {return selection_mode_ != forms::selection_mode::none;}
 
       forms::create_params create_params() const override;
 

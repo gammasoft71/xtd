@@ -16,7 +16,7 @@ namespace xtd {
       
       /// @brief Gets the mode by which the button automatically resizes itself.
       /// @return One of the AutoSizeMode values. The default value is grow_only.
-      virtual forms::auto_size_mode auto_size_mode() const {return this->auto_size_mode_;}
+      virtual forms::auto_size_mode auto_size_mode() const {return auto_size_mode_;}
       /// @brief Sets the mode by which the button automatically resizes itself.
       /// @param value One of the AutoSizeMode values. The default value is growonly.
       virtual command_link_button& auto_size_mode(forms::auto_size_mode value);

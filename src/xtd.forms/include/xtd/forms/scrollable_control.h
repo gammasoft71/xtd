@@ -8,11 +8,11 @@ namespace xtd {
   namespace forms {
     class scrollable_control : public control {
     public:
-      virtual bool auto_scroll() const {return this->auto_scroll_;}
+      virtual bool auto_scroll() const {return auto_scroll_;}
       virtual scrollable_control& auto_scroll(bool auto_scroll) {
-        if (this->auto_scroll_ != auto_scroll) {
-          this->auto_scroll_ = auto_scroll;
-          this->recreate_handle();
+        if (auto_scroll_ != auto_scroll) {
+          auto_scroll_ = auto_scroll;
+          recreate_handle();
         }
         return *this;
       }
@@ -28,20 +28,20 @@ namespace xtd {
 
       drawing::rectangle display_rectangle() const override {return display_rectangle_;}
       
-      virtual bool hscroll() const {return this->hscroll_;}
+      virtual bool hscroll() const {return hscroll_;}
       virtual scrollable_control& hscroll(bool hscroll) {
-        if (this->hscroll_ != hscroll) {
-          this->hscroll_ = hscroll;
-          this->recreate_handle();
+        if (hscroll_ != hscroll) {
+          hscroll_ = hscroll;
+          recreate_handle();
         }
         return *this;
       }
       
-      virtual bool vscroll() const {return this->vscroll_;}
+      virtual bool vscroll() const {return vscroll_;}
       virtual scrollable_control& vscroll(bool vscroll) {
-        if (this->vscroll_ != vscroll) {
-          this->vscroll_ = vscroll;
-          this->recreate_handle();
+        if (vscroll_ != vscroll) {
+          vscroll_ = vscroll;
+          recreate_handle();
         }
         return *this;
       }
@@ -52,12 +52,12 @@ namespace xtd {
       forms::create_params create_params() const override;
 
       void on_layout(const event_args& e) override {
-        this->control::on_layout(e);
+        control::on_layout(e);
         if (auto_scroll_) {
           display_rectangle_ = client_rectangle_;
           display_rectangle_.height(display_rectangle_.height() - system_information::horizontal_scroll_bar_height());
           display_rectangle_.width(display_rectangle_.width() - system_information::vertical_scroll_bar_width());
-          for (auto item : this->controls()) {
+          for (auto item : controls()) {
             if (item.get().visible())
               display_rectangle_ = drawing::rectangle::make_union(display_rectangle_, item.get().bounds());
           }

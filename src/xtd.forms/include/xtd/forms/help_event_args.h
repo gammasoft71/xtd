@@ -22,11 +22,11 @@ namespace xtd {
       /// @param mouse_pos The coordinates of the mouse pointer.
       help_event_args(const drawing::point& mouse_pos) : mouse_pos_(mouse_pos) {}
       
-      bool handled() const {return this->handled_;}
-      void handled(bool handled) {this->handled_ = handled;}
+      bool handled() const {return handled_;}
+      void handled(bool handled) {handled_ = handled;}
 
-      drawing::point mouse_pos() const {return this->mouse_pos_;}
-      void mouse_pos(const drawing::point& mouse_pos) {this->mouse_pos_ = mouse_pos;}
+      drawing::point mouse_pos() const {return mouse_pos_;}
+      void mouse_pos(const drawing::point& mouse_pos) {mouse_pos_ = mouse_pos;}
       
     private:
       bool handled_ = false;

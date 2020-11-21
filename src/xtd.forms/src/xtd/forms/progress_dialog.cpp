@@ -45,21 +45,21 @@ progress_dialog& progress_dialog::marquee_animation_speed(size_t marquee_animati
 }
 
 progress_dialog& progress_dialog::maximum(int32_t maximum) {
-  if (this->maximum_ != maximum) {
-    this->maximum_ = maximum;
+  if (maximum_ != maximum) {
+    maximum_ = maximum;
     native::progress_dialog::maximum(handle_, maximum_);
     if (minimum_ > maximum) minimum(maximum);
-    if (this->value_ > maximum) value(maximum);
+    if (value_ > maximum) value(maximum);
   }
   return *this;
 }
 
 progress_dialog& progress_dialog::minimum(int32_t minimum) {
-  if (this->minimum_ != minimum) {
-    this->minimum_ = minimum;
-    native::progress_dialog::minimum(handle_, this->minimum_);
-    if (this->maximum_ < minimum) maximum(minimum);
-    if (this->value_ < minimum) value(minimum);
+  if (minimum_ != minimum) {
+    minimum_ = minimum;
+    native::progress_dialog::minimum(handle_, minimum_);
+    if (maximum_ < minimum) maximum(minimum);
+    if (value_ < minimum) value(minimum);
   }
   return *this;
 }
@@ -119,7 +119,7 @@ progress_dialog& progress_dialog::step(int32_t step) {
 }
 
 progress_dialog& progress_dialog::value(int32_t value) {
-  if (this->value_ != value) {
+  if (value_ != value) {
     if (value > maximum_) value_ = maximum_;
     if (value < minimum_) value_ = minimum_;
     else value_ = value;

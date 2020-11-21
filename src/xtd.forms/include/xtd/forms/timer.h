@@ -15,7 +15,7 @@ namespace xtd {
 
       /// @cond
       timer(const timer&) = delete;
-      ~timer() {this->stop();}
+      ~timer() {stop();}
       /// @endcond
       
       event<timer, event_handler<timer&>> tick;

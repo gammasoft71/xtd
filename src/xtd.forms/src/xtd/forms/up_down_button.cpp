@@ -9,7 +9,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 up_down_button::up_down_button() {
-  this->size_ = this->default_size();
+  size_ = default_size();
 }
 
 forms::create_params up_down_button::create_params() const {
@@ -44,17 +44,17 @@ up_down_button& up_down_button::minimum(int32_t value) {
 }
 
 up_down_button& up_down_button::orientation(forms::orientation orientation) {
-  if (this->orientation_ != orientation) {
-    this->orientation_ = orientation;
-    this->recreate_handle();
+  if (orientation_ != orientation) {
+    orientation_ = orientation;
+    recreate_handle();
   }
   return *this;
 }
 
 up_down_button& up_down_button::wrapped(bool value) {
-  if (this->wrapped_ != value) {
-    this->wrapped_ = value;
-    this->recreate_handle();
+  if (wrapped_ != value) {
+    wrapped_ = value;
+    recreate_handle();
   }
   return *this;
 }
@@ -74,32 +74,32 @@ up_down_button& up_down_button::value(int32_t value) {
 }
 
 void up_down_button::on_handle_created(const event_args &e) {
-  this->button_base::on_handle_created(e);
+  button_base::on_handle_created(e);
   native::up_down_button::maximum(handle(), maximum_);
   native::up_down_button::minimum(handle(), minimum_);
   native::up_down_button::value(handle(), value_);
 }
 
 void up_down_button::on_scroll(const event_args& e) {
-  if (this->can_raise_events()) scroll(*this, e);
+  if (can_raise_events()) scroll(*this, e);
 }
 
 void up_down_button::on_value_changed(const event_args& e) {
-  if (this->can_raise_events()) value_changed(*this, e);
+  if (can_raise_events()) value_changed(*this, e);
 }
 
 void up_down_button::wnd_proc(message &message) {
   switch (message.msg()) {
     case WM_REFLECT + WM_HSCROLL:
-    case WM_REFLECT + WM_VSCROLL: this->wm_scroll(message); break;
-    default: this->control::wnd_proc(message);
+    case WM_REFLECT + WM_VSCROLL: wm_scroll(message); break;
+    default: control::wnd_proc(message);
   }
 }
 
 void up_down_button::wm_scroll(message &message) {
   if (message.wparam() == SB_LINEDOWN) value_ = value_ > minimum_ ? value_ - 1 : maximum_;
   if (message.wparam() == SB_LINEUP) value_ = value_ < maximum_ ? value_ + 1 : minimum_;
-  this->on_scroll(event_args::empty);
-  this->on_value_changed(event_args::empty);
-  this->control::def_wnd_proc(message);
+  on_scroll(event_args::empty);
+  on_value_changed(event_args::empty);
+  control::def_wnd_proc(message);
 }

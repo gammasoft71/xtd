@@ -9,59 +9,59 @@ using namespace xtd;
 using namespace xtd::forms;
 
 domain_up_down::domain_up_down() {
-  //this->back_color_ = this->default_back_color();
-  //this->fore_color_ = this->default_fore_color();
-  this->size_ = this->default_size();
+  //back_color_ = default_back_color();
+  //fore_color_ = default_fore_color();
+  size_ = default_size();
 
-  this->items_.item_added += [&](size_t pos, const item& item) {
+  items_.item_added += [&](size_t pos, const item& item) {
     native::domain_up_down::insert_item(handle(), pos, item.value());
     domain_up_down::item selected_item;
-    if (this->selected_index_ != npos && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
+    if (selected_index_ != npos && selected_index_ < items_.size()) selected_item = items_[selected_index_];
     this->selected_item(selected_item);
   };
 
-  this->items_.item_erased += [&](size_t pos, const item& item) {
+  items_.item_erased += [&](size_t pos, const item& item) {
     native::domain_up_down::delete_item(handle(), pos);
 
     domain_up_down::item selected_item;
-    if (this->selected_index_ != npos && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
+    if (selected_index_ != npos && selected_index_ < items_.size()) selected_item = items_[selected_index_];
     this->selected_item(selected_item);
   };
   
-  this->items_.item_updated += [&](size_t pos, const item& item) {
+  items_.item_updated += [&](size_t pos, const item& item) {
     static bool update_disabled = false;
     if (update_disabled) return;
     native::domain_up_down::update_item(handle(), pos, item.value());
     domain_up_down::item selected_item;
-    if (this->selected_index_ != npos && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
+    if (selected_index_ != npos && selected_index_ < items_.size()) selected_item = items_[selected_index_];
     this->selected_item(selected_item);
   };
 }
 
 domain_up_down& domain_up_down::selected_index(size_t selected_index) {
-  if (this->selected_index_ != selected_index) {
-    if (selected_index != npos && selected_index > this->items_.size()) throw invalid_argument("out of range index");
-    this->selected_index_ = selected_index;
-    native::domain_up_down::selected_index(handle(), this->selected_index_);
+  if (selected_index_ != selected_index) {
+    if (selected_index != npos && selected_index > items_.size()) throw invalid_argument("out of range index");
+    selected_index_ = selected_index;
+    native::domain_up_down::selected_index(handle(), selected_index_);
 
     item selected_item;
-    if (this->selected_index_ != npos) selected_item = this->items_[this->selected_index_];
+    if (selected_index_ != npos) selected_item = items_[selected_index_];
     this->selected_item(selected_item);
 
-    this->on_text_changed(event_args::empty);
+    on_text_changed(event_args::empty);
   }
   return *this;
 }
 
 domain_up_down& domain_up_down::selected_item(const item& selected_item) {
-  if (this->selected_item_ != selected_item) {
-    auto it = std::find(this->items_.begin(), this->items_.end(), selected_item);
-    if (it == this->items_.end())
-      this->selected_item_ = this->selected_index() != npos ? this->items()[this->selected_index()] : "";
+  if (selected_item_ != selected_item) {
+    auto it = std::find(items_.begin(), items_.end(), selected_item);
+    if (it == items_.end())
+      selected_item_ = selected_index() != npos ? items()[selected_index()] : "";
     else {
-      size_t index = it - this->items_.begin();
-      this->selected_index(index);
-      this->selected_item_ = selected_item;
+      size_t index = it - items_.begin();
+      selected_index(index);
+      selected_item_ = selected_item;
 
     }
   }
@@ -69,9 +69,9 @@ domain_up_down& domain_up_down::selected_item(const item& selected_item) {
 }
 
 domain_up_down& domain_up_down::wrapped(bool value) {
-  if (this->wrapped_ != value) {
-    this->wrapped_ = value;
-    this->recreate_handle();
+  if (wrapped_ != value) {
+    wrapped_ = value;
+    recreate_handle();
   }
   return *this;
 }
@@ -87,11 +87,11 @@ forms::create_params domain_up_down::create_params() const {
 }
 
 void domain_up_down::on_handle_created(const event_args &e) {
-  this->scrollable_control::on_handle_created(e);
-  for (size_t index = 0; index < this->items_.size(); ++index)
-    native::domain_up_down::insert_item(handle(), index, this->items_[index].value());
-  native::domain_up_down::selected_index(handle(), this->selected_index_);
-  if (this->selected_index_ != npos) this->selected_item_ = this->items_[this->selected_index_];
+  scrollable_control::on_handle_created(e);
+  for (size_t index = 0; index < items_.size(); ++index)
+    native::domain_up_down::insert_item(handle(), index, items_[index].value());
+  native::domain_up_down::selected_index(handle(), selected_index_);
+  if (selected_index_ != npos) selected_item_ = items_[selected_index_];
   else native::control::text(handle(), text_);
 }
 
@@ -109,5 +109,5 @@ void domain_up_down::on_text_changed(const event_args& e) {
 }
 
 void domain_up_down::on_selected_item_changed(const event_args& e) {
-  if (this->can_raise_events()) selected_item_changed(*this, e);
+  if (can_raise_events()) selected_item_changed(*this, e);
 }

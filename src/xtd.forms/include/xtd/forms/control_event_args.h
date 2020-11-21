@@ -25,7 +25,7 @@ namespace xtd {
       
       /// @brief Gets the control object used by this event.
       /// @return The control used by this event.
-      const forms::control& control() const {return *this->control_;}
+      const forms::control& control() const {return *control_;}
       
     private:
       const forms::control* control_ = nullptr;

@@ -19,27 +19,27 @@ namespace xtd {
       /// @brief Gets a value indicating whether the ellipsis character (...) appears at the right edge of the control, denoting that the control text extends beyond the specified length of the control.
       /// @return true if the additional label text is to be indicated by an ellipsis; otherwise, false. The default is true.
       /// @remarks Set auto_ellipsis to true to display text that extends beyond the width of the control when the user passes over the control with the mouse. You must set the control's auto_size property to false if you want AutoEllipsis to be true. If AutoSize is true, the control will grow to fit the text and an ellipsis will not appear.
-      bool auto_ellipsis() const {return this->auto_ellipsis_;}
+      bool auto_ellipsis() const {return auto_ellipsis_;}
       
       /// @brief Sets a value indicating whether the ellipsis character (...) appears at the right edge of the control, denoting that the control text extends beyond the specified length of the control.
       /// @param true if the additional label text is to be indicated by an ellipsis; otherwise, false. The default is true.
       /// @remarks Set auto_ellipsis to true to display text that extends beyond the width of the control when the user passes over the control with the mouse. You must set the control's auto_size property to false if you want AutoEllipsis to be true. If AutoSize is true, the control will grow to fit the text and an ellipsis will not appear.
       virtual button_base& auto_ellipsis(bool auto_ellipsis) {
-        if (this->auto_ellipsis_ != auto_ellipsis)
-          this->auto_ellipsis_ = auto_ellipsis;
+        if (auto_ellipsis_ != auto_ellipsis)
+          auto_ellipsis_ = auto_ellipsis;
         return *this;
       }
       
       /// @brief Gets a value that indicates whether the control resizes based on its contents.
       /// @return true if enabled; otherwise, false.
-      bool auto_size() const override {return this->control::auto_size();}
+      bool auto_size() const override {return control::auto_size();}
       
       /// @brief Sets a value that indicates whether the control resizes based on its contents.
       /// @param auto_size true if enabled; otherwise, false.
       control& auto_size(bool auto_size) override {
-        this->control::auto_size(auto_size);
-        if (this->get_state(state::auto_size))
-          this->auto_ellipsis_ = false;
+        control::auto_size(auto_size);
+        if (get_state(state::auto_size))
+          auto_ellipsis_ = false;
         return *this;
       }
       
