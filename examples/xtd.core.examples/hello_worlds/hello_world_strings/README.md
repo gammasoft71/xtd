@@ -4,7 +4,7 @@ The classic first application "Hello, World!" with [xtd::strings](../../../../sr
 
 ## Sources
 
-[src/hello_world_io.cpp](src/hello_world_strings.cpp)
+[src/hello_world_strings.cpp](src/hello_world_strings.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
