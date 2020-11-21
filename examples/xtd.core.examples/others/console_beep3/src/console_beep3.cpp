@@ -1,4 +1,4 @@
-#include <xtd/xtd.core>
+#include <xtd/xtd>
 #include <thread>
 
 using namespace std;
