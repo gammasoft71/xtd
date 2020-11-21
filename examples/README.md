@@ -12,7 +12,7 @@
 * [Diagnostics](xtd.core.examples/diagnostics/README.md) contains diagnostics examples.
 * [Environment](xtd.core.examples/environment/README.md) contains environment examples.
 * [Keywords](xtd.core.examples/keywords/README.md) contains keywords examples.
-* [Main](xtd.core.examples/main/README.md) contains main examples.
+* [Mains](xtd.core.examples/mains/README.md) contains main examples.
 * [Strings](xtd.core.examples/strings/README.md) contains strings examples.
 * [Others](xtd.core.examples/others/README.md) contains others examples.
 
