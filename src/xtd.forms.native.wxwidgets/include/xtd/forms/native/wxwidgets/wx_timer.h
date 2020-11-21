@@ -9,15 +9,15 @@ namespace xtd {
       class wx_timer {
       public:
         wx_timer(delegate<void(const event_args&)> tick) : tick_(tick) {
-          this->timer_.Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {
+          timer_.Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {
             try {
-              this->tick_(event_args::empty);
+              tick_(event_args::empty);
             } catch(...) {
             }
           });
         }
         
-        wxTimer& timer() {return this->timer_;}
+        wxTimer& timer() {return timer_;}
         
       private:
         delegate<void(const event_args&)> tick_;

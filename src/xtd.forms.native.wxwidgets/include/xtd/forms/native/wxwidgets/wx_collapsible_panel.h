@@ -13,7 +13,7 @@ namespace xtd {
       public:
         wx_collapsible_panel(const forms::create_params& create_params) {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
-          this->control_handler::create<wxCollapsiblePane>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxString(create_params.caption().c_str(), wxMBConvUTF8()), wxPoint(create_params.x(), create_params.y()));
+          control_handler::create<wxCollapsiblePane>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxString(create_params.caption().c_str(), wxMBConvUTF8()), wxPoint(create_params.x(), create_params.y()));
 #if defined(__WIN32__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));

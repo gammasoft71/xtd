@@ -15,16 +15,16 @@ namespace xtd {
         wx_user_control(const forms::create_params& create_params) {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
           if ((create_params.ex_style() & WS_EX_AUTOSCROLL) == WS_EX_AUTOSCROLL)
-            this->control_handler::create<wxScrolled<wx_user_window>>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
+            control_handler::create<wxScrolled<wx_user_window>>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
           else
-            this->control_handler::create<wx_user_window>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
+            control_handler::create<wx_user_window>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
 #if defined(__WIN32__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
             control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
 #endif
-          this->control()->SetSize(create_params.width(), create_params.height());
+          control()->SetSize(create_params.width(), create_params.height());
         }
         
         static long style_to_wx_style(size_t style, size_t ex_style) {
