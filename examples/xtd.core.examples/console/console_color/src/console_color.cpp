@@ -1,6 +1,4 @@
 #include <xtd/xtd.core>
-#include <map>
-#include <vector>
 
 using namespace std;
 using namespace xtd;
