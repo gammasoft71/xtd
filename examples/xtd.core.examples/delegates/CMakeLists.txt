@@ -5,5 +5,8 @@ find_package(xtd REQUIRED)
 
 add_projects(
   delegate
+  delegate_lambda
+  delegate_member_method
+  delegate_multicast
   event
 )

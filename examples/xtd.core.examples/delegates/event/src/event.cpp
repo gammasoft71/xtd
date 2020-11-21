@@ -51,3 +51,8 @@ int main() {
   // click simulation
   button1.perform_click();
 }
+
+// This code produces the following output:
+//
+// text_changed [text=button1]
+// click on button1

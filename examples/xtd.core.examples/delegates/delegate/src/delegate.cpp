@@ -1,20 +1,36 @@
 #include <xtd/xtd.core>
-#include <iostream>
-#include <string>
 
 using namespace std;
 using namespace xtd;
 
-int main() {
-  delegate<void(const string& str)> write_line;
-  
-  write_line += [](const string& str)  {
-    cout << str << endl;
-  };
-  
-  write_line += [](auto str)  {
-    cerr << str << endl;
-  };
-  
-  write_line("Hello, world!");
+void goodbye(const string& s) {
+  console::write_line("Goodbye {}", s);
 }
+
+class object {
+public:
+  void hello(const std::string& s) {
+    console::write_line("Hello {}", s);
+  }
+};
+
+int main() {
+  using example_function = delegate<void(const string&)>;
+  ::object instance;
+  string str("World");
+  //example_function f = {instance, &::object::hello};
+  example_function f = {std::bind(&::object::hello, &instance, std::placeholders::_1)};
+
+  // equivalent to instance.hello(str)
+  f(str);
+  f = goodbye;
+  
+  // equivalent to goodbye(str)
+  f(str);
+  return 0;
+}
+
+// This code produces the following output:
+//
+// Hello, World
+// Goodbye, World
