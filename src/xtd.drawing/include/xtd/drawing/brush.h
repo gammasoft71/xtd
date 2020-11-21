@@ -21,8 +21,8 @@ namespace xtd {
       brush(const brush& value);
       brush& operator=(const brush& value);
       virtual ~brush();
-      bool operator==(const brush& value) const {return this->data_->handle_ == value.data_->handle_;}
-      bool operator!=(const brush& value) const {return !this->operator==(value);}
+      bool operator==(const brush& value) const {return data_->handle_ == value.data_->handle_;}
+      bool operator!=(const brush& value) const {return !operator==(value);}
       /// @endcond
       
       std::string to_string() const {return strings::full_class_name(*this);}

@@ -145,8 +145,8 @@ namespace xtd {
       /// @cond
       font(const font& value);
       font& operator=(const font& value);
-      bool operator==(const font& value) const {return this->data_->font_family_ == value.data_->font_family_ && this->data_->gdi_char_set_ == value.data_->gdi_char_set_ && this->data_->gdi_vertical_font_ == value.data_->gdi_vertical_font_ && this->data_->style_ == value.data_->style_ && this->data_->size_ == value.data_->size_ && this->data_->unit_ == value.data_->unit_;}
-      bool operator!=(const font& value) const {return !this->operator==(value);}
+      bool operator==(const font& value) const {return data_->font_family_ == value.data_->font_family_ && data_->gdi_char_set_ == value.data_->gdi_char_set_ && data_->gdi_vertical_font_ == value.data_->gdi_vertical_font_ && data_->style_ == value.data_->style_ && data_->size_ == value.data_->size_ && data_->unit_ == value.data_->unit_;}
+      bool operator!=(const font& value) const {return !operator==(value);}
       ~font();
       /// @endcond
       
@@ -154,7 +154,7 @@ namespace xtd {
       /// @return The string that represents this font_family.
       std::string to_string() const {
         //return strings::format("[{}: ]", strings::class_name(*this));
-        return strings::format("[{}: name={}, size={}, units={}, gdi_char_set={}, gdi_vertical_font={}]", strings::class_name(*this), this->data_->font_family_.name(), this->data_->size_, (int32_t)this->data_->unit_, this->data_->gdi_char_set_, this->data_->gdi_vertical_font_);
+        return strings::format("[{}: name={}, size={}, units={}, gdi_char_set={}, gdi_vertical_font={}]", strings::class_name(*this), data_->font_family_.name(), data_->size_, (int32_t)data_->unit_, data_->gdi_char_set_, data_->gdi_vertical_font_);
       }
       
       /// @cond
@@ -163,12 +163,12 @@ namespace xtd {
 
       /// @brief Gets a value that indicates whether this xtd::drawing::font is bold.
       /// @return true if this xtd::drawing::font is bold; otherwise, false.
-      bool bold() const {return (this->data_->style_ & font_style::bold) == font_style::bold;}
+      bool bold() const {return (data_->style_ & font_style::bold) == font_style::bold;}
 
       /// @brief Gets the xtd::draing::font_family associated with this xtd::drawing::font.
       /// @return The font_family associated with this Font.
       /// @remarks A font_family represents a group of fonts that have a similar font face, but may have different sizes and styles (for example, Arial, Times New Roman, and Verdana).
-      drawing::font_family font_family() const {return this->data_->font_family_;}
+      drawing::font_family font_family() const {return data_->font_family_;}
       
       /// @brief Gets a byte value that specifies the GDI character set that this xtd::drawing::font uses.
       /// @return A byte value that specifies the GDI character set that this xtd::drawing::font uses. The default is 1.
@@ -195,17 +195,17 @@ namespace xtd {
       /// | RUSSIAN       | 204  |
       /// | MAC           | 77   |
       /// | BALTIC        | 186  |
-      uint8_t gdi_char_set() const {return this->data_->gdi_char_set_;}
+      uint8_t gdi_char_set() const {return data_->gdi_char_set_;}
       
       /// @brief Gets a Boolean value that indicates whether this xtd::drawing::font is derived from a GDI vertical font.
       /// @return true if this xtd::drawing::font is derived from a GDI vertical font; otherwise, false.
       /// @remarks Use this property to determine if a font is compatible with native Win32 controls on non-Unicode platforms.
       /// @remarks gdi_vertical_font only returns true if this font was created from a classic GDI font definition, like a LOGFONT or HFONT.
-      bool gdi_vertical_font() const {return this->data_->gdi_vertical_font_;}
+      bool gdi_vertical_font() const {return data_->gdi_vertical_font_;}
       
       /// @brief Gets the window handle that the font is bound to.
       /// @return An intptr_t that contains the window handle (hfont) of the font.
-      intptr_t handle() const {return this->data_->handle_;}
+      intptr_t handle() const {return data_->handle_;}
       
       /// @brief Gets the line spacing of this font.
       /// @return The line spacing, in pixels, of this font.
@@ -218,23 +218,23 @@ namespace xtd {
       /// @brief Gets a value indicating whether the font is a member of xtd::drawing::system_fonts.
       /// @return true if the font is a member of xtd::drawing::system_fonts; otherwise, false. The default is false.
       /// @remarks When the user changes the system font, the is_system_font property could return true, even if the font is not actually a system font.
-      bool is_system_font() const {return this->data_->is_system_font_;}
+      bool is_system_font() const {return data_->is_system_font_;}
       
       /// @brief Gets a value that indicates whether this xtd::drawing::font is italic.
       /// @return true if this xtd::drawing::font is italic; otherwise, false.
-      bool italic() const {return (this->data_->style_ & font_style::italic) == font_style::italic;}
+      bool italic() const {return (data_->style_ & font_style::italic) == font_style::italic;}
 
       /// @brief Gets the face name of this xtd::drawing::font.
       /// @return A string representation of the face name of this xtd::drawing::font.
-      const std::string& name() const {return this->data_->font_family_.name();}
+      const std::string& name() const {return data_->font_family_.name();}
 
       /// @brief Gets the face name of this Font.
       /// @return A string representation of the face name of this Font.
-      const std::string& original_font_name() const {return this->data_->original_font_name_;}
+      const std::string& original_font_name() const {return data_->original_font_name_;}
       
       /// @brief Gets the em-size of this xtd::drawing::font measured in the units specified by the unit property.
       /// @return The em-size of this xtd::drawing::font.
-      float size() const {return this->data_->size_;}
+      float size() const {return data_->size_;}
       
       /// @brizef Gets the em-size, in points, of this xtd::drawing::font.
       /// @return The em-size, in points, of this xtd::drawing::font.
@@ -242,19 +242,19 @@ namespace xtd {
       
       /// @brief Gets a value that indicates whether this xtd::drawing::font is strikeout.
       /// @return true if this xtd::drawing::font is strikeout; otherwise, false.
-      bool strikeout() const {return (this->data_->style_ & font_style::strikeout) == font_style::strikeout;}
+      bool strikeout() const {return (data_->style_ & font_style::strikeout) == font_style::strikeout;}
 
       /// @brief Gets style information for this xtd::drawing::font.
       /// @return A font_style enumeration that contains style information for this xtd::drawing::font.
-      font_style style() const {return this->data_->style_;}
+      font_style style() const {return data_->style_;}
       
       /// @brief Gets a value that indicates whether this xtd::drawing::font is underline.
       /// @return true if this xtd::drawing::font is underline; otherwise, false.
-      bool underline() const {return (this->data_->style_ & font_style::underline) == font_style::underline;}
+      bool underline() const {return (data_->style_ & font_style::underline) == font_style::underline;}
       
       /// @brief Gets the unit of measure for this xtd::drawing::font.
       /// @return A graphics_unit that represents the unit of measure for this xtd::drawing::font.
-      graphics_unit unit() const {return this->data_->unit_;}
+      graphics_unit unit() const {return data_->unit_;}
       
       static font from_hdc(const intptr_t hdc);
       

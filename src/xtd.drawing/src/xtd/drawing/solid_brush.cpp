@@ -5,23 +5,23 @@ using namespace xtd;
 using namespace xtd::drawing;
 
 solid_brush::solid_brush() {
-  this->color(drawing::color::black);
+  color(drawing::color::black);
 }
   
 solid_brush& solid_brush::color(const drawing::color& color) {
-  if (this->data_->color_ != color) {
-    this->data_->color_ = color;
-    native::brush::solid(this->brush::data_->handle_, this->data_->color_.a(), this->data_->color_.r(), this->data_->color_.g(), this->data_->color_.b());
+  if (data_->color_ != color) {
+    data_->color_ = color;
+    native::brush::solid(brush::data_->handle_, data_->color_.a(), data_->color_.r(), data_->color_.g(), data_->color_.b());
   }
   return *this;
 }
 
 solid_brush::solid_brush(const solid_brush& value) : brush(value) {
-  this->data_ = value.data_;
+  data_ = value.data_;
 }
 
 solid_brush& solid_brush::operator=(const solid_brush& value) {
-  this->brush::operator=(value);
-  this->data_ = value.data_;
+  brush::operator=(value);
+  data_ = value.data_;
   return *this;
 }

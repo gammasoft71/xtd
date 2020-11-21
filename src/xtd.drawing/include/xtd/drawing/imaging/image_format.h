@@ -29,17 +29,17 @@ namespace xtd {
         /// @cond
         image_format(const image_format&) = default;
         image_format& operator=(const image_format&) = default;
-        bool operator==(const image_format& value) const {return this->guid_ == value.guid_;}
-        bool operator!=(const image_format& value) const {return !this->operator==(value);}
-        bool operator<(const image_format& value) const {return this->guid_ < value.guid_;}
-        bool operator<=(const image_format& value) const {return this->guid_ <= value.guid_;}
-        bool operator>(const image_format& value) const {return this->guid_ > value.guid_;}
-        bool operator>=(const image_format& value) const {return this->guid_ >= value.guid_;}
+        bool operator==(const image_format& value) const {return guid_ == value.guid_;}
+        bool operator!=(const image_format& value) const {return !operator==(value);}
+        bool operator<(const image_format& value) const {return guid_ < value.guid_;}
+        bool operator<=(const image_format& value) const {return guid_ <= value.guid_;}
+        bool operator>(const image_format& value) const {return guid_ > value.guid_;}
+        bool operator>=(const image_format& value) const {return guid_ >= value.guid_;}
         /// @endcond
         
         /// @brief Gets a guid structure that represents this image_format object.
         /// @return A guid structure that represents this image_format object.
-        const xtd::guid guid() const {return this->guid_;}
+        const xtd::guid guid() const {return guid_;}
         
         /// @brief Gets the bitmap (BMP) image format.
         /// @return An image_format object that indicates the bitmap image format.
@@ -177,7 +177,7 @@ namespace xtd {
         /// @return An image_format object that indicates the bitmap image format.
         static image_format tga() {return image_format(xtd::guid("b96b3ccd-0728-11d3-9d7b-0000f81ef32e"));}
 
-        virtual std::string to_string() const {return strings::format("[image_format: {}]", this->guid_);}
+        virtual std::string to_string() const {return strings::format("[image_format: {}]", guid_);}
         
         /// @cond
         friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::imaging::image_format& image_format) noexcept {

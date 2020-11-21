@@ -23,85 +23,85 @@ namespace {
 
 image::image(intptr_t hbitmap) {
   if (hbitmap) {
-    this->data_->handle_ = hbitmap;
-    this->update_properties();
+    data_->handle_ = hbitmap;
+    update_properties();
   }
 }
 
 image::image(const std::string &filename) {
-  this->data_->handle_ = native::image::create(filename);
-  this->update_properties();
+  data_->handle_ = native::image::create(filename);
+  update_properties();
 }
 
 image::image(std::istream& stream) {
-  this->data_->handle_ = native::image::create(stream);
-  this->update_properties();
+  data_->handle_ = native::image::create(stream);
+  update_properties();
 }
 
 image::image(const char* const* bits) {
-  this->data_->handle_ = native::image::create(bits);
-  this->data_->raw_format_ = imaging::image_format::memory_xpm();
-  this->update_properties();
+  data_->handle_ = native::image::create(bits);
+  data_->raw_format_ = imaging::image_format::memory_xpm();
+  update_properties();
 }
 
 image::image(int32_t width, int32_t height) {
-  this->data_->handle_ = native::image::create(width, height);
-  this->update_properties();
+  data_->handle_ = native::image::create(width, height);
+  update_properties();
 }
 
 image::image(const image& image, int32_t width, int32_t height) {
-  this->data_->handle_ = native::image::create(image.handle(), width, height);
-  this->update_properties();
+  data_->handle_ = native::image::create(image.handle(), width, height);
+  update_properties();
 }
 
 image::image(const image& image, const rectangle& rect) {
-  this->data_->handle_ = native::image::create(image.handle(), rect.left(), rect.top(), rect.width(), rect.height());
-  this->update_properties();
+  data_->handle_ = native::image::create(image.handle(), rect.left(), rect.top(), rect.width(), rect.height());
+  update_properties();
 }
 
 image::~image() {
-  if (this->data_.use_count() == 1 && this->data_->handle_)
-    native::image::destroy(this->data_->handle_);
+  if (data_.use_count() == 1 && data_->handle_)
+    native::image::destroy(data_->handle_);
 }
 
 void image::update_properties() {
-  this->data_->flags_ = static_cast<imaging::image_flags>(native::image::flags(this->data_->handle_));
+  data_->flags_ = static_cast<imaging::image_flags>(native::image::flags(data_->handle_));
   
-  size_t frame_dimensions = native::image::frame_resolutions(this->data_->handle_);
-  if ((frame_dimensions & FD_PAGE) == FD_PAGE) this->data_->frame_dimentions_list_.push_back(imaging::frame_dimension::page().guid());
-  if ((frame_dimensions & FD_RESOLUTION) == FD_RESOLUTION) this->data_->frame_dimentions_list_.push_back(imaging::frame_dimension::resolution().guid());
-  if ((frame_dimensions & FD_TIME) == FD_TIME) this->data_->frame_dimentions_list_.push_back(imaging::frame_dimension::time().guid());
+  size_t frame_dimensions = native::image::frame_resolutions(data_->handle_);
+  if ((frame_dimensions & FD_PAGE) == FD_PAGE) data_->frame_dimentions_list_.push_back(imaging::frame_dimension::page().guid());
+  if ((frame_dimensions & FD_RESOLUTION) == FD_RESOLUTION) data_->frame_dimentions_list_.push_back(imaging::frame_dimension::resolution().guid());
+  if ((frame_dimensions & FD_TIME) == FD_TIME) data_->frame_dimentions_list_.push_back(imaging::frame_dimension::time().guid());
 
-  this->data_->horizontal_resolution_ = native::image::horizontal_resolution(this->data_->handle_);
+  data_->horizontal_resolution_ = native::image::horizontal_resolution(data_->handle_);
 
   std::vector<native::argb> palette_entries;
-  native::image::color_palette(this->data_->handle_, palette_entries, this->data_->palette_.flags_);
+  native::image::color_palette(data_->handle_, palette_entries, data_->palette_.flags_);
   for (native::argb color : palette_entries)
-    this->data_->palette_.entries_.push_back(color::from_argb(color.a, color.r, color.g, color.b));
+    data_->palette_.entries_.push_back(color::from_argb(color.a, color.r, color.g, color.b));
     
-  this->data_->pixel_format_ = static_cast<imaging::pixel_format>(native::image::pixel_format(this->data_->handle_));
+  data_->pixel_format_ = static_cast<imaging::pixel_format>(native::image::pixel_format(data_->handle_));
   
   int32_t physical_width, physical_height;
-  native::image::physical_dimension(this->data_->handle_, physical_width, physical_height);
-  this->data_->physical_dimension_ = drawing::size_f(static_cast<float>(physical_width), static_cast<float>(physical_height));
+  native::image::physical_dimension(data_->handle_, physical_width, physical_height);
+  data_->physical_dimension_ = drawing::size_f(static_cast<float>(physical_width), static_cast<float>(physical_height));
   
-  this->data_->property_id_list_ = native::image::property_id_list(this->data_->handle_);
+  data_->property_id_list_ = native::image::property_id_list(data_->handle_);
   
-  for(const native::image::property_item& i : native::image::property_items(this->data_->handle_)) {
+  for(const native::image::property_item& i : native::image::property_items(data_->handle_)) {
     imaging::property_item item;
     item.id(i.id);
     item.len(i.len);
     item.value(i.value);
-    this->data_->property_ityems_.push_back(item);
+    data_->property_ityems_.push_back(item);
   }
 
-  data_->raw_format_ = to_image_format(native::image::raw_format(this->data_->handle_));
+  data_->raw_format_ = to_image_format(native::image::raw_format(data_->handle_));
   
   int32_t width, height;
-  native::image::size(this->data_->handle_, width, height);
-  this->data_->size_ = drawing::size(width, height);
+  native::image::size(data_->handle_, width, height);
+  data_->size_ = drawing::size(width, height);
 
-  this->data_->vertical_resolution_ = native::image::vertical_resolution(this->data_->handle_);
+  data_->vertical_resolution_ = native::image::vertical_resolution(data_->handle_);
 }
 
 void image::save(const std::string& filename) const {

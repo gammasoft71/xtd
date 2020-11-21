@@ -24,7 +24,7 @@ namespace xtd {
         linear_gradient_brush(const linear_gradient_brush& value);
         linear_gradient_brush& operator=(const linear_gradient_brush& value);
         bool operator==(const linear_gradient_brush& value) const {return data_->point1_ == value.data_->point1_ && data_->point2_ == value.data_->point2_ && data_->color1_ == value.data_->color1_ && data_->color2_ == value.data_->color2_;}
-        bool operator!=(const linear_gradient_brush& value) const {return !this->operator==(value);}
+        bool operator!=(const linear_gradient_brush& value) const {return !operator==(value);}
         /// @endcond
         
         const xtd::drawing::point& point1() const {return data_->point1_;}

@@ -31,14 +31,14 @@ namespace xtd {
 
       /// @cond
       size(const xtd::drawing::size&) = default;
-      bool operator==(const xtd::drawing::size& value) const {return this->width_ == value.width_ && this->height_ == value.height_;}      
-      bool operator!=(const xtd::drawing::size& value) const {return !this->operator==(value);}
+      bool operator==(const xtd::drawing::size& value) const {return width_ == value.width_ && height_ == value.height_;}      
+      bool operator!=(const xtd::drawing::size& value) const {return !operator==(value);}
       size& operator=(const xtd::drawing::size& size) = default;
       size operator+(const xtd::drawing::size& size) const;
       size operator-(const xtd::drawing::size& size) const;
       size& operator+=(const xtd::drawing::size& size);
       size& operator-=(const xtd::drawing::size& size);
-      operator size_f() {return size_f(static_cast<float>(this->width_), static_cast<float>(this->height_));}
+      operator size_f() {return size_f(static_cast<float>(width_), static_cast<float>(height_));}
       /// @endcond
       
       /// @brief Gets he vertical component of this Size Class.
@@ -49,7 +49,7 @@ namespace xtd {
       /// @brief Sets the vertical component of this Size Class.
       /// @return int The vertical component of this Size class, typically measured in pixels.
       /// @remarks The unit for the Height and Width of the Size class depend on the PageUnit and PageScale settings for the Graphics object that is used to draw.
-      void height(int32_t height) {this->height_ = height;}
+      void height(int32_t height) {height_ = height;}
       
       /// @brief Gets the horizontal component of this Size class.
       /// @return int The horizontal component of this Size class, typically measured in pixels.
@@ -59,7 +59,7 @@ namespace xtd {
       /// @brief Sets the horizontal component of this Size class.
       /// @return int The horizontal component of this Size class, typically measured in pixels.
       /// @remarks The unit for the Height and Width of the Size class depend on the PageUnit and PageScale settings for the Graphics object that is used to draw.
-      void width(int32_t width) {this->width_ = width;}
+      void width(int32_t width) {width_ = width;}
 
       /// @brief Adds the width and height of one Size class to the width and height of another size class.
       /// @param size1 The first Size class to add.
@@ -90,7 +90,7 @@ namespace xtd {
 
       /// @brief Creates a human-readable string that represents this size class.
       /// @return string A string that represents this size.
-      std::string to_string() const {return "{width=" + std::to_string(this->width_) + ", height=" + std::to_string(this->height_) + "}";}
+      std::string to_string() const {return "{width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";}
  
       /// @brief Converts the specified size_f to a size by truncating the values of the size_f.
       /// @param value The size_f to convert.

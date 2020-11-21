@@ -24,28 +24,28 @@ namespace xtd {
       point_f& operator=(const point_f&) = default;
       /// @endcond
       
-      bool operator==(const point_f& value) const {return this->x_ == value.x_ && this->y_ == value.y_;}
+      bool operator==(const point_f& value) const {return x_ == value.x_ && y_ == value.y_;}
       
-      bool operator!=(const point_f& value) const {return !this->operator==(value);}
+      bool operator!=(const point_f& value) const {return !operator==(value);}
       
       bool is_empty() const {return *this == point_f::empty;}
 
-      void offset(const point_f& pt) {this->offset(pt.x_, pt.y_);}
+      void offset(const point_f& pt) {offset(pt.x_, pt.y_);}
 
       void offset(float dx, float dy) {
-        this->x_ += dx;
-        this->y_ += dy;
+        x_ += dx;
+        y_ += dy;
       }
 
-      std::string to_string() const {return "{x=" + std::to_string(this->x_) + ", y=" + std::to_string(this->y_) + "}";}
+      std::string to_string() const {return "{x=" + std::to_string(x_) + ", y=" + std::to_string(y_) + "}";}
       
       float x() const {return x_;}
       
-      void x(float x) {this->x_ = x;}
+      void x(float x) {x_ = x;}
       
       float y() const {return y_;}
 
-      void y(float y) {this->y_ = y;}
+      void y(float y) {y_ = y;}
 
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::point_f& point) noexcept {
