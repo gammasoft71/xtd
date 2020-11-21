@@ -11,7 +11,7 @@ namespace xtd {
     public:
       group_box();
 
-      virtual forms::auto_size_mode auto_size_mode() const {return this->auto_size_mode_;}
+      virtual forms::auto_size_mode auto_size_mode() const {return auto_size_mode_;}
       virtual group_box& auto_size_mode(forms::auto_size_mode value);
       
       drawing::size default_size() const override {return {200, 100};}

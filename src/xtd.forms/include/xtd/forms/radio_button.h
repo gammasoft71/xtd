@@ -24,7 +24,7 @@ namespace xtd {
       /// @brief Gets a value determining the appearance of the radio_button.
       /// @return One of the appearance values. The default value is normal.
       /// @remarks If the appearance value is set to normal, then the radio_button control is drawn with a circular check box. If the value is set to button, then the radio_button is drawn as a control that can be toggled to an up or down state. Either type can display text, an image, or both.
-      virtual forms::appearance appearance() const {return this->appearance_;}
+      virtual forms::appearance appearance() const {return appearance_;}
       /// @brief Sets a value determining the appearance of the radio_button.
       /// @param appearance One of the appearance values. The default value is normal.
       /// @remarks If the appearance value is set to normal, then the radio_button control is drawn with a circular check box. If the value is set to button, then the radio_button is drawn as a control that can be toggled to an up or down state. Either type can display text, an image, or both.
@@ -34,7 +34,7 @@ namespace xtd {
       /// @return true if the checked value and the appearance of the control automatically change on the click event; otherwise, false. The default value is true.
       /// @remarks If the checked value is set to false, the radio_button portion of the control must be checked in code in the click event handler. In addition, if the radio_button is part of a radio_button control group, this property ensures that only one of the controls is checked at a given time.
       /// @remarks If the auto_check property is set to false, a group of radio_button controls will not act as a mutually exclusive group and the checked property must be updated in code.
-      virtual bool auto_check() const {return this->auto_check_;}
+      virtual bool auto_check() const {return auto_check_;}
       /// @brief Sets a value indicating whether the checked value and the appearance of the control automatically change when the control is clicked.
       /// @param auto_check true if the checked value and the appearance of the control automatically change on the click event; otherwise, false. The default value is true.
       /// @remarks If the checked value is set to false, the radio_button portion of the control must be checked in code in the click event handler. In addition, if the radio_button is part of a radio_button control group, this property ensures that only one of the controls is checked at a given time.
@@ -43,14 +43,14 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the control is checked.
       /// @return true if the check box is checked; otherwise, false.
-      virtual bool checked() const {return this->checked_;}
+      virtual bool checked() const {return checked_;}
       /// @brief Sets a value indicating whether the control is checked.
       /// @param checked true if the check box is checked; otherwise, false.
       virtual radio_button& checked(bool checked);
       
       /// @brief Gets the horizontal and vertical alignment of the check mark on a check_box control.
       /// @return One of the content_alignment values. The default value is middle_left.
-      virtual content_alignment check_align() const {return this->check_align_;}
+      virtual content_alignment check_align() const {return check_align_;}
       /// @brief Sets the horizontal and vertical alignment of the check mark on a check_box control.
       /// @param check_align One of the content_alignment values. The default value is middle_left.
       virtual radio_button& check_align(content_alignment check_align);
@@ -65,7 +65,7 @@ namespace xtd {
       /// @brief Returns a string that represents the progress_bar control.
       /// @return A string that represents the current progress_bar.
       /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
-      std::string to_string() const override {return strings::format("{}, checked: {}", strings::full_class_name(*this), this->checked_);}
+      std::string to_string() const override {return strings::format("{}, checked: {}", strings::full_class_name(*this), checked_);}
 
       /// @brief Occurs when the appearance property value changes.
       event<radio_button, event_handler<control&>> appearance_changed;
@@ -91,7 +91,7 @@ namespace xtd {
       /// When overriding on_appearance_changed(const event_args&) in a derived class, be sure to call the base class' on_appearance_changed(const event_args&) method so that registered delegates receive the event.
       virtual void on_appearance_changed(const event_args& e) {
         if (flat_style_ != xtd::forms::flat_style::system) invalidate();
-        this->appearance_changed(*this, e);
+        appearance_changed(*this, e);
       }
       
       /// @brief Raises the checked_changed event.
@@ -106,7 +106,7 @@ namespace xtd {
           else state_ = xtd::forms::visual_styles::radio_button_state::checked_normal;
           invalidate();
         }
-        this->checked_changed(*this, e);
+        checked_changed(*this, e);
       }
 
       void on_enabled_changed(const event_args& e) override {

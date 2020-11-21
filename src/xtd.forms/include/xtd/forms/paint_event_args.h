@@ -22,7 +22,7 @@ namespace xtd {
       paint_event_args& operator=(const paint_event_args& paint_event_args) = default;
       /// @endcond
 
-      const drawing::rectangle& clip_rectangle() const {return this->clip_rectangle_;}
+      const drawing::rectangle& clip_rectangle() const {return clip_rectangle_;}
       
       drawing::graphics graphics() const;
       

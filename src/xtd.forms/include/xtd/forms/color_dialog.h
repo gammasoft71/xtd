@@ -32,43 +32,43 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the dialog box  shows alpha values and an opacity selector (slider).
       /// @return true if the dialog box  shows alpha values and an opacity selector (slider); otherwise, false. The default is true.
-      bool alpha_color() const {return this->get_option(CC_ALPHACOLOR);}
+      bool alpha_color() const {return get_option(CC_ALPHACOLOR);}
       /// @brief Sets a value indicating whether the user can use the dialog box to define custom colors.
       /// @param alpha_color true if the dialog box  shows alpha values and an opacity selector (slider); otherwise, false.
       color_dialog& alpha_color(bool alpha_color) {
-        this->set_option(CC_ALPHACOLOR, alpha_color);
+        set_option(CC_ALPHACOLOR, alpha_color);
         return *this;
       }
       
       /// @brief Gets a value indicating whether the user can use the dialog box to define custom colors.
       /// @return true if the user can define custom colors; otherwise, false. The default is true.
-      bool allow_full_open() const {return this->get_option(CC_PREVENTFULLOPEN);}
+      bool allow_full_open() const {return get_option(CC_PREVENTFULLOPEN);}
       /// @brief Sets a value indicating whether the user can use the dialog box to define custom colors.
       /// @param allow_full_open true if the user can define custom colors; otherwise, false. The default is true.
       color_dialog& allow_full_open(bool allow_full_open) {
-        this->set_option(CC_PREVENTFULLOPEN, allow_full_open);
+        set_option(CC_PREVENTFULLOPEN, allow_full_open);
         return *this;
       }
 
       /// @brief Gets a value indicating whether the dialog box displays all available colors in the set of basic colors.
       /// @return true if the dialog box displays all available colors in the set of basic colors; otherwise, false. The default value is false.
-      bool any_color() const {return this->get_option(CC_ANYCOLOR);}
+      bool any_color() const {return get_option(CC_ANYCOLOR);}
       /// @breif Sets a value indicating whether the dialog box displays all available colors in the set of basic colors.
       /// @param any_color true if the dialog box displays all available colors in the set of basic colors; otherwise, false. The default value is false.
       color_dialog& any_color(bool any_color) {
-        this->set_option(CC_ANYCOLOR, any_color);
+        set_option(CC_ANYCOLOR, any_color);
         return *this;
       }
 
       /// @brief Gets the color selected by the user.
       /// @return The color selected by the user. If a color is not selected, the default value is black.
       /// @remarks The color selected by the user in the dialog box at run time, as defined in color structure.
-      drawing::color color() const {return this->color_;}
+      drawing::color color() const {return color_;}
       /// @brief Sets the color selected by the user.
       /// @param color The color selected by the user. If a color is not selected.
       /// @remarks The color selected by the user in the dialog box at run time, as defined in color structure.
       color_dialog& color(const drawing::color& color) {
-        this->color_ = color;
+        color_ = color;
         return *this;
       }
       
@@ -76,13 +76,13 @@ namespace xtd {
       /// @return A set of custom colors shown by the dialog box. The default value is empty.
       /// @remarks Users can create their own set of custom colors. These colors are contained in an int32_t composed of the BGR (blue, green, red) values necessary to create the color.
       /// @remarks Custom colors can only be defined if allow_full_open is set to true.
-      const std::optional<std::vector<int32_t>>& custom_colors() const  {return this->custom_colors_;}
+      const std::optional<std::vector<int32_t>>& custom_colors() const  {return custom_colors_;}
       /// @brief Sets the set of custom colors shown in the dialog box.
       /// @param custom_color A set of custom colors shown by the dialog box.
       /// @remarks Users can create their own set of custom colors. These colors are contained in an int32_t composed of the BGR (blue, green, red) values necessary to create the color.
       /// @remarks Custom colors can only be defined if allow_full_open is set to true.
       color_dialog& custom_colors(const std::vector<int32_t>& custom_colors)  {
-        this->custom_colors_ = custom_colors;
+        custom_colors_ = custom_colors;
         return *this;
       }
 
@@ -90,40 +90,40 @@ namespace xtd {
       /// @return true if the custom color controls are available when the dialog box is opened; otherwise, false. The default value is false.
       /// @remarks By default, the custom color controls are not visible when the dialog box is first opened. You must click the Custom Colors button to display them.
       /// @note If allow_full_open is false, then full_open has no effect.
-      bool full_open() const {return this->get_option(CC_FULLOPEN);}
+      bool full_open() const {return get_option(CC_FULLOPEN);}
       /// @brief Sets a value indicating whether the controls used to create custom colors are visible when the dialog box is opened
       /// @param full_open true if the custom color controls are available when the dialog box is opened; otherwise, false. The default value is false.
       /// @remarks By default, the custom color controls are not visible when the dialog box is first opened. You must click the Custom Colors button to display them.
       /// @note If allow_full_open is false, then full_open has no effect.
       color_dialog& full_open(bool full_open) {
-        this->set_option(CC_FULLOPEN, full_open);
+        set_option(CC_FULLOPEN, full_open);
         return *this;
       }
       
       /// @return Gets values to initialize the color_dialog.
       /// @return A bitwise combination of internal values that initializes the color_dialog.
       /// @return The options property corresponds to the flags used to initialize a color dialog box using Win32. Use the properties of the color_dialog class to get and set the options.
-      size_t options() const {return this->options_;}
+      size_t options() const {return options_;}
       
       /// @brief Gets a value indicating whether a Help button appears in the color dialog box.
       /// @return true if the Help button is shown in the dialog box; otherwise, false. The default value is false.
-      bool show_help() const {return this->get_option(CC_SHOWHELP);}
+      bool show_help() const {return get_option(CC_SHOWHELP);}
       /// @brief Sets a value indicating whether a Help button appears in the color dialog box.
       /// @param show_help true if the Help button is shown in the dialog box; otherwise, false.
       color_dialog& show_help(bool show_help) {
-        this->set_option(CC_SHOWHELP, show_help);
+        set_option(CC_SHOWHELP, show_help);
         return *this;
       }
       
       /// @brief Gets a value indicating whether the dialog box will restrict users to selecting solid colors only.
       /// @return true if users can select only solid colors; otherwise, false. The default value is false.
       /// @remarks This property is applicable to systems with 256 or fewer colors. On these types of systems, some colors are composites of others.
-      bool solid_color_only() const {return this->get_option(CC_SOLIDCOLOR);}
+      bool solid_color_only() const {return get_option(CC_SOLIDCOLOR);}
       /// @brief Sets a value indicating whether the dialog box will restrict users to selecting solid colors only.
       /// @param solid_color_only true if users can select only solid colors; otherwise, false.
       /// @remarks This property is applicable to systems with 256 or fewer colors. On these types of systems, some colors are composites of others.
       color_dialog& solid_color_only(bool solid_color_only) {
-        this->set_option(CC_SOLIDCOLOR, solid_color_only);
+        set_option(CC_SOLIDCOLOR, solid_color_only);
         return *this;
       }
 
@@ -141,8 +141,8 @@ namespace xtd {
       void run_sheet(intptr_t owner) override;
 
     private:
-      bool get_option(size_t flag) const {return (this->options_ & flag) == flag;}
-      void set_option(size_t flag, bool value) {this->options_ = value ? this->options_ | flag : this->options_ & ~flag;}
+      bool get_option(size_t flag) const {return (options_ & flag) == flag;}
+      void set_option(size_t flag, bool value) {options_ = value ? options_ | flag : options_ & ~flag;}
 
       drawing::color color_ = drawing::color::black;
       std::optional<std::vector<int32_t>> custom_colors_;

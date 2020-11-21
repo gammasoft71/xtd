@@ -17,7 +17,7 @@ namespace xtd {
       form_closing_event_args& operator=(const form_closing_event_args& form_closing_event_args) = default;
       /// @endcond
 
-      forms::close_reason close_reason() const {return this->close_reason_;}
+      forms::close_reason close_reason() const {return close_reason_;}
 
     private:
       forms::close_reason close_reason_ = forms::close_reason::none;

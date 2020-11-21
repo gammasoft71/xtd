@@ -14,7 +14,7 @@ namespace xtd {
       virtual bool auto_size() const override {return true;}
       /// @cond
 
-      virtual forms::border_style border_style() const {return this->border_style_;}
+      virtual forms::border_style border_style() const {return border_style_;}
       virtual collapsible_panel& border_style(forms::border_style border_style);
 
       drawing::size default_size() const override {return {0, 0};}

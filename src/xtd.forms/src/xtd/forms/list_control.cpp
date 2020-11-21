@@ -9,9 +9,9 @@ list_control::list_control() {
 }
 
 list_control& list_control::value_member(const std::string &value_member) {
-  if (this->value_member_ != value_member) {
-    this->value_member_ = value_member;
-    this->on_value_member_changed(event_args::empty);
+  if (value_member_ != value_member) {
+    value_member_ = value_member;
+    on_value_member_changed(event_args::empty);
   }
   return *this;
 }

@@ -61,7 +61,7 @@ namespace xtd {
       
       virtual void dots(const dot_collection& dots, bool on) {
         for (auto dot : dots)
-          this->set_dot(dot, on);
+          set_dot(dot, on);
       }
       
       virtual forms::dot_matrix_style dot_matrix_style() const {return dot_matrix_style_;}

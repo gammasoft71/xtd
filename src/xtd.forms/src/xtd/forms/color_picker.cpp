@@ -34,7 +34,7 @@ void color_picker::on_handle_created(const event_args& e) {
 }
 
 void color_picker::on_color_changed(const event_args &e) {
-  if (this->can_raise_events()) this->color_changed(*this, e);
+  if (can_raise_events()) color_changed(*this, e);
 }
 
 void color_picker::wnd_proc(message& message) {

@@ -14,15 +14,15 @@ namespace xtd {
     public:
       tab_control();
 
-      virtual control_collection& pages() {return this->controls();}
-      virtual const control_collection& pages() const {return this->controls();}
+      virtual control_collection& pages() {return controls();}
+      virtual const control_collection& pages() const {return controls();}
 
-      virtual tab_alignment alignment() const {return this->alignment_;}
+      virtual tab_alignment alignment() const {return alignment_;}
       virtual tab_control& alignment(tab_alignment alignment);
       
       drawing::size default_size() const override {return {200, 100};}
       
-      virtual size_t selected_index() const {return this->selected_index_;}
+      virtual size_t selected_index() const {return selected_index_;}
       virtual tab_control& selected_index(size_t selected_index_);
 
       event<tab_control, event_handler<control&>> selected_index_changed;

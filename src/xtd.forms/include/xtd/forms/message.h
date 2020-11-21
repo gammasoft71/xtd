@@ -15,24 +15,24 @@ namespace xtd {
       message& operator=(const message&) = default;
       /// @cond
       
-      intptr_t hwnd() const {return this->hwnd_;}
-      void hwnd(intptr_t value) {this->hwnd_ = value;}
+      intptr_t hwnd() const {return hwnd_;}
+      void hwnd(intptr_t value) {hwnd_ = value;}
       
-      intptr_t lparam() const {return this->lparam_;}
-      void lparam(intptr_t value) {this->lparam_ = value;}
+      intptr_t lparam() const {return lparam_;}
+      void lparam(intptr_t value) {lparam_ = value;}
       
-      int32_t msg() const {return this->msg_;}
-      void msg(int32_t value) {this->msg_ = value;}
+      int32_t msg() const {return msg_;}
+      void msg(int32_t value) {msg_ = value;}
       
-      intptr_t result() const {return this->result_;}
-      void result(intptr_t value) {this->result_ = value;}
+      intptr_t result() const {return result_;}
+      void result(intptr_t value) {result_ = value;}
       
-      intptr_t wparam() const {return this->wparam_;}
-      void wparam(intptr_t value) {this->wparam_ = value;}
+      intptr_t wparam() const {return wparam_;}
+      void wparam(intptr_t value) {wparam_ = value;}
       
       /// @cond
-      intptr_t handle() const {return this->handle_;}
-      void handle(intptr_t value) {this->handle_ = value;}
+      intptr_t handle() const {return handle_;}
+      void handle(intptr_t value) {handle_ = value;}
       /// @endcond
       
       static message create(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result) {return message(hwnd, msg, wparam, lparam, result);}
@@ -42,7 +42,7 @@ namespace xtd {
       /// @endcond
       
       template<typename type>
-      type get_lparam() { return (type)this->lparam_; }
+      type get_lparam() { return (type)lparam_; }
       
       std::string to_string() const;
       

@@ -59,7 +59,7 @@ namespace xtd {
 
       /// @brief Gets the mode by which the button automatically resizes itself.
       /// @return One of the AutoSizeMode values. The default value is grow_only.
-      virtual forms::auto_size_mode auto_size_mode() const {return this->auto_size_mode_;}
+      virtual forms::auto_size_mode auto_size_mode() const {return auto_size_mode_;}
       /// @brief Sets the mode by which the button automatically resizes itself.
       /// @param value One of the AutoSizeMode values. The default value is growonly.
       virtual button& auto_size_mode(forms::auto_size_mode value);
@@ -67,7 +67,7 @@ namespace xtd {
       /// @brief Gets the value returned to the parent form when the button is clicked.
       /// @return One of the DialogResult values.
       /// @remarks When a form is shown as a dialog box using the show_dialog method and one of its buttons is clicked, the button's dialog_result value is assigned to the form's dialog_result property.
-      forms::dialog_result dialog_result() const override {return this->dialog_result_;}
+      forms::dialog_result dialog_result() const override {return dialog_result_;}
       /// @brief Sets the value returned to the parent form when the button is clicked.
       /// @param dialog_result One of the DialogResult values.
       /// @remarks When a form is shown as a dialog box using the show_dialog method and one of its buttons is clicked, the button's dialog_result value is assigned to the form's dialog_result property.

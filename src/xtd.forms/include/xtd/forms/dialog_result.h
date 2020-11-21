@@ -23,7 +23,7 @@ namespace xtd {
     ///     result = message_box::show(*this, message, caption, buttons);
     ///     if (result == dialog_result::yes) {
     ///       // Closes the parent form.
-    ///       this->close();
+    ///       close();
     ///     }
     ///   }
     /// }

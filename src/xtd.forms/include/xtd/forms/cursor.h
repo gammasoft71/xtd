@@ -44,12 +44,12 @@ namespace xtd {
       /// @brief Gets the handle of the cursor.
       /// @return An intptr_t that represents the cursor's handle.
       /// @remarks This is not a copy of the handle; do not detroy it.
-      intptr_t handle() const {return this->data_->handle_;}
+      intptr_t handle() const {return data_->handle_;}
       
       /// @brief Gets the cursor hot spot.
       /// @return A point representing the cursor hot spot.
       /// @remarks The hot_spot is the point in the cursor that interacts with other elements on the screen.
-      drawing::point hot_spot() const {return this->data_->hot_spot_;}
+      drawing::point hot_spot() const {return data_->hot_spot_;}
       
       /// @brief Gets the cursor's position.
       /// @return A point that represents the cursor's position in screen coordinates.
@@ -62,17 +62,17 @@ namespace xtd {
 
       /// @brief Gets the size of the cursor object.
       /// @return A size that represents the width and height of the cursor.
-      drawing::size size() const {return this->data_->size_;}
+      drawing::size size() const {return data_->size_;}
       
       /// @brief Gets the object that contains data about the control.
       /// @return A std::any that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
-      std::any tag() const {return this->data_->tag_;}
+      std::any tag() const {return data_->tag_;}
       
       /// @brief Sets the object that contains data about the control.
       /// @param tag A std::any that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
-      void tag(std::any tag) {this->data_->tag_ = tag;}
+      void tag(std::any tag) {data_->tag_ = tag;}
       
       /// @remarks Copies the handle of this cursor.
       /// @return An intptr_t that represents the cursor's handle.
@@ -94,8 +94,8 @@ namespace xtd {
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const cursor& value) noexcept {return os << value.to_string();}
-      bool operator==(const cursor& value) const {return this->data_ == value.data_;}
-      bool operator!=(const cursor& value) const {return !this->operator==(value);}
+      bool operator==(const cursor& value) const {return data_ == value.data_;}
+      bool operator!=(const cursor& value) const {return !operator==(value);}
       /// @endcond
 
       static cursor none;

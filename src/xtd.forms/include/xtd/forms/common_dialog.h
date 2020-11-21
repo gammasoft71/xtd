@@ -41,12 +41,12 @@ namespace xtd {
       /// @brief Gets an object that contains data about the control.
       /// @return The object that contains data about the common_dialog.
       /// @remarks Use this property to store arbitrary information about the control.
-      std::any tag() const {return this->tag_;}
+      std::any tag() const {return tag_;}
       /// @brief Sets an object that contains data about the control.
       /// @param tag The object that contains data about the common_dialog.
       /// @remarks Use this property to store arbitrary information about the control.
       common_dialog& tag(const std::any& tag) {
-        this->tag_ = tag;
+        tag_ = tag;
         return*this;
       }
       
@@ -117,7 +117,7 @@ namespace xtd {
       /// @brief Raises the help_request event.
       /// @param e An help_event_args that provides the event data.
       /// @remarks This method is invoked when the Help button is clicked. Inheriting classes can override this method to handle the event.
-      virtual void on_help_request(help_event_args& e) {this->help_request(*this, e);}
+      virtual void on_help_request(help_event_args& e) {help_request(*this, e);}
       
       /// @brief When overridden in a derived class, specifies a common dialog box.
       /// @param hwnd_owner A value that represents the window handle of the owner window for the common dialog box.

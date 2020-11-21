@@ -35,7 +35,7 @@ namespace xtd {
       
       /// @brief Gets the product license.
       /// @return The product license.
-      std::optional<std::exception> exception() const {return exception_ ? std::optional<std::exception>(*this->exception_) : std::optional<std::exception>();}
+      std::optional<std::exception> exception() const {return exception_ ? std::optional<std::exception>(*exception_) : std::optional<std::exception>();}
       /// @brief Sets the product license.
       /// @param name The product license.
       /// @return Current exception_dialog instance.

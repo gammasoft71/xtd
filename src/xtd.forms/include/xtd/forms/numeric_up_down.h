@@ -32,14 +32,14 @@ namespace xtd {
       /// @param max_value The upper limit of the range of the track bar.
       /// @remarks You can use this method to set the entire range for the track_bar at the same time. To set the minimum or maximum values individually, use the minimum and maximum properties. If the min_value parameter is greater than the max_value parameter, max_value is set equal to min_value.
       void set_range(int min_value, int max_value) {
-        this->minimum(min_value);
-        this->maximum(min_value > max_value ? min_value : max_value);
+        minimum(min_value);
+        maximum(min_value > max_value ? min_value : max_value);
       }
       
       /// @brief Returns a string that represents the track_bar control.
       /// @return A string that represents the current progress_bar.
       /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
-      std::string to_string() const override {return strings::format("{}, minimum: {}, maximum: {}, value: {}", strings::full_class_name(*this), this->minimum_, this->maximum_, this->value_);}
+      std::string to_string() const override {return strings::format("{}, minimum: {}, maximum: {}, value: {}", strings::full_class_name(*this), minimum_, maximum_, value_);}
 
       event<numeric_up_down, event_handler<control&>> value_changed;
       

@@ -24,10 +24,10 @@ namespace xtd {
 
       /// @brief Gets a value indicating whether the event should be canceled.
       /// @return true if the event should be canceled; otherwise, false.
-      virtual bool cancel() const {return this->cancel_;}
+      virtual bool cancel() const {return cancel_;}
       /// @brief Sets a value indicating whether the event should be canceled.
       /// @param cancel true if the event should be canceled; otherwise, false.
-      virtual void cancel(bool cancel) {this->cancel_ = cancel;}
+      virtual void cancel(bool cancel) {cancel_ = cancel;}
 
     protected:
       bool cancel_ = false;

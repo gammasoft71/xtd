@@ -21,13 +21,13 @@ namespace xtd {
       
       /// @brief Gets a value that represents the argument of an asynchronous operation.
       /// @return An object representing the argument of an asynchronous operation.
-      std::any argument() const {return this->argument_;}
+      std::any argument() const {return argument_;}
       
       bool cancel() const {return cancel_;}
       void cancel(bool value) {cancel_ = value;}
 
-      std::any result() const {return this->result_;}
-      void result(std::any value) {this->result_ = value;}
+      std::any result() const {return result_;}
+      void result(std::any value) {result_ = value;}
 
     private:
       std::any argument_;

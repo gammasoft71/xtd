@@ -43,7 +43,7 @@ namespace xtd {
 
       /// @brief Gets the dialog title.
       /// @return The dialog title.
-      const std::string& text() const {return this->text_;}
+      const std::string& text() const {return text_;}
       /// @brief Sets the dialog title.
       /// @param copyright The dialog title.
       /// @return Current busy_dialog instance.
@@ -54,7 +54,7 @@ namespace xtd {
       
       /// @brief Gets the product description.
       /// @return The product description.
-      const std::string& description() const {return this->description_;}
+      const std::string& description() const {return description_;}
       /// @brief Sets the product description.
       /// @param description The product description.
       /// @return Current busy_dialog instance.
@@ -65,7 +65,7 @@ namespace xtd {
       
       /// @brief Gets the product icon.
       /// @return The product icon.
-      xtd::drawing::icon icon() const {return xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(this->icon_));}
+      xtd::drawing::icon icon() const {return xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(icon_));}
       /// @brief Sets the product icon.
       /// @param icon The product icon.
       /// @return Current busy_dialog instance.

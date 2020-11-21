@@ -11,38 +11,38 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 text_box::text_box() {
-  //this->back_color_ = this->default_back_color();
-  //this->fore_color_ = this->default_fore_color();
-  this->size_ = this->default_size();
+  //back_color_ = default_back_color();
+  //fore_color_ = default_fore_color();
+  size_ = default_size();
 }
 
 text_box& text_box::border_style(forms::border_style border_style) {
-  if (this->border_style_ != border_style) {
-    this->border_style_ = border_style;
-    this->recreate_handle();
+  if (border_style_ != border_style) {
+    border_style_ = border_style;
+    recreate_handle();
   }
   return *this;
 }
 
 text_box& text_box::character_casing(xtd::forms::character_casing value) {
-  if (this->character_casing_ != value) {
-    this->character_casing_ = value;
+  if (character_casing_ != value) {
+    character_casing_ = value;
     recreate_handle();
   }
   return *this;
 }
 
 text_box& text_box::multiline(bool value) {
-  if (this->multiline_ != value) {
-    this->multiline_ = value;
+  if (multiline_ != value) {
+    multiline_ = value;
     recreate_handle();
   }
   return *this;
 }
 
 text_box& text_box::password_char(char32_t value) {
-  if (this->password_char_ != value) {
-    this->password_char_ = value;
+  if (password_char_ != value) {
+    password_char_ = value;
     recreate_handle();
   }
   return *this;
@@ -64,7 +64,7 @@ const std::string& text_box::text() const {
 }
 
 control& text_box::text(const std::string& text) {
-  if (this->text_ != text) {
+  if (text_ != text) {
     text_ = text;
     if (!use_system_password_char_ && password_char_) {
       native::text_box::text(handle(), "");
@@ -93,12 +93,12 @@ text_box& text_box::use_system_password_char(bool value) {
 }
 
 forms::create_params text_box::create_params() const {
-  forms::create_params create_params = this->text_box_base::create_params();
+  forms::create_params create_params = text_box_base::create_params();
   
   create_params.class_name("textbox");
   
-  if (this->border_style_ == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
-  else if (this->border_style_ == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  if (border_style_ == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
+  else if (border_style_ == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
 
   if (accepts_return_) create_params.style(create_params.style() | ES_WANTRETURN);
   if (accepts_tab_) create_params.style(create_params.style() | ES_WANTTAB);
@@ -113,7 +113,7 @@ forms::create_params text_box::create_params() const {
 }
 
 drawing::size text_box::measure_control() const {
-  return drawing::size(this->client_size_.width(), static_cast<int32_t>(this->font().get_height()) + 2 + (this->border_style_ == border_style::none ? 0 : 4));
+  return drawing::size(client_size_.width(), static_cast<int32_t>(font().get_height()) + 2 + (border_style_ == border_style::none ? 0 : 4));
 }
 
 void text_box::append_text(const std::string& value) {
@@ -129,8 +129,8 @@ void text_box::on_handle_created(const event_args& e) {
   text_box_base::on_handle_created(e);
   /*
   switch (character_casing_) {
-    case xtd::forms::character_casing::upper: text_ = xtd::strings::to_upper(this->text_); break;
-    case xtd::forms::character_casing::lower: text_ = xtd::strings::to_lower(this->text_); break;
+    case xtd::forms::character_casing::upper: text_ = xtd::strings::to_upper(text_); break;
+    case xtd::forms::character_casing::lower: text_ = xtd::strings::to_lower(text_); break;
     default: break;
   }*/
 

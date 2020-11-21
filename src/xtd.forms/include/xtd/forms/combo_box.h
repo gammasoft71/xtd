@@ -20,26 +20,26 @@ namespace xtd {
 
       virtual drawing::size default_size() const override {return {121, 23};}
       
-      combo_box_style drop_down_style() const {return this->drop_down_style_;}
+      combo_box_style drop_down_style() const {return drop_down_style_;}
       combo_box& drop_down_style(combo_box_style drop_down_style);
       
-      item_collection& items() {return this->items_;}
+      item_collection& items() {return items_;}
 
-      const item_collection& items() const {return this->items_;}
+      const item_collection& items() const {return items_;}
       
       const combo_box& items(const item_collection& items) {
-        this->items_ = items;
+        items_ = items;
         return *this;
       }
       
       using list_control::selected_index;
       list_control& selected_index(size_t selected_index) override;
       
-      const item& selected_item() const {return this->selected_item_;}
+      const item& selected_item() const {return selected_item_;}
       
       combo_box& selected_item(const item& selected_item);
       
-      virtual bool sorted() const {return this->sorted_;}
+      virtual bool sorted() const {return sorted_;}
       virtual combo_box& sorted(bool sorted);
       
       using list_control::text;

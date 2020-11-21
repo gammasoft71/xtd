@@ -9,17 +9,17 @@ using namespace xtd;
 using namespace xtd::forms;
 
 command_link_button::command_link_button() {
-  this->size_ = this->default_size();
+  size_ = default_size();
   text_align(content_alignment::middle_left);
 }
 
 command_link_button& command_link_button::auto_size_mode(forms::auto_size_mode value) {
-  this->set_auto_size_mode(value);
+  set_auto_size_mode(value);
   return *this;
 }
 
 forms::create_params command_link_button::create_params() const {
-  forms::create_params create_params = this->button_base::create_params();
+  forms::create_params create_params = button_base::create_params();
   
   create_params.class_name("commandlinkbutton");
   
@@ -46,21 +46,21 @@ void button::wnd_proc(message &message) {
     case WM_LBUTTONUP:
     case WM_MBUTTONUP:
     case WM_RBUTTONUP:
-    case WM_XBUTTONUP: this->wm_mouse_up(message); break;
-    default: this->control::wnd_proc(message);
+    case WM_XBUTTONUP: wm_mouse_up(message); break;
+    default: control::wnd_proc(message);
   }
 }
 
 void button::wm_click(message& message) {
-  this->def_wnd_proc(message);
-  this->on_click(event_args::empty);
+  def_wnd_proc(message);
+  on_click(event_args::empty);
 }
 
 void button::wm_mouse_up(message& message) {
-  this->def_wnd_proc(message);
+  def_wnd_proc(message);
   mouse_event_args e = mouse_event_args::create(message);
-  this->on_mouse_click(e);
-  this->on_mouse_up(e);
+  on_mouse_click(e);
+  on_mouse_up(e);
 }
  */
 

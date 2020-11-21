@@ -124,7 +124,7 @@ namespace xtd {
       /// @return Gets values to initialize the file_dialog.
       /// @return A bitwise combination of internal values that initializes the file_dialog.
       /// @return The options property corresponds to the flags used to initialize a color dialog box using Win32. Use the properties of the file_dialog class to get and set the options.
-      size_t options() const {return this->options_;}
+      size_t options() const {return options_;}
 
       virtual bool restore_directory() const {return get_option(OFN_NOCHANGEDIR);}
       virtual file_dialog& restore_directory(bool value) {
@@ -187,8 +187,8 @@ namespace xtd {
 
     protected:
       /// @cond
-      bool get_option(size_t flag) const {return (this->options_ & flag) == flag;}
-      void set_option(size_t flag, bool value) {this->options_ = value ? this->options_ | flag : this->options_ & ~flag;}
+      bool get_option(size_t flag) const {return (options_ & flag) == flag;}
+      void set_option(size_t flag, bool value) {options_ = value ? options_ | flag : options_ & ~flag;}
 
       bool auto_upgrade_enabled_ = true;
       std::string default_ext_ = "";

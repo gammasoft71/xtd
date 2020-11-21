@@ -10,10 +10,10 @@ namespace xtd {
     public:
       user_control();
 
-      virtual forms::auto_size_mode auto_size_mode() const {return this->auto_size_mode_;}
+      virtual forms::auto_size_mode auto_size_mode() const {return auto_size_mode_;}
       virtual user_control& auto_size_mode(forms::auto_size_mode value);
       
-      virtual forms::border_style border_style() const {return this->border_style_;}
+      virtual forms::border_style border_style() const {return border_style_;}
       virtual user_control& border_style(forms::border_style border_style);
 
       drawing::size default_size() const override {return {150, 150};}

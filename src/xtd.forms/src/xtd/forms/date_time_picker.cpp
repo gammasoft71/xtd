@@ -8,8 +8,8 @@ using namespace xtd;
 using namespace xtd::forms;
 
 date_time_picker::date_time_picker() {
-  //this->back_color_ = this->default_back_color();
-  //this->fore_color_ = this->default_fore_color();
+  //back_color_ = default_back_color();
+  //fore_color_ = default_fore_color();
   can_focus_ = false;
   size_ = default_size();
 }
@@ -69,7 +69,7 @@ void date_time_picker::on_handle_created(const event_args& e) {
 }
 
 void date_time_picker::on_value_changed(const event_args& e) {
-  if (this->can_raise_events()) this->value_changed(*this, e);
+  if (can_raise_events()) value_changed(*this, e);
 }
 
 void date_time_picker::wnd_proc(message &message) {

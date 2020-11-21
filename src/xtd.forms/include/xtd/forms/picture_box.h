@@ -13,16 +13,16 @@ namespace xtd {
     public:
       picture_box();
 
-      virtual forms::border_style border_style() const {return this->border_style_;}
+      virtual forms::border_style border_style() const {return border_style_;}
       virtual picture_box& border_style(forms::border_style border_style);
 
       drawing::size default_size() const override {return {100, 50};}
       
-      const std::optional<drawing::image> image() const {return this->image_;}
+      const std::optional<drawing::image> image() const {return image_;}
       picture_box& image(const drawing::image& image);
       picture_box& image(std::nullptr_t);
       
-      picture_box_size_mode size_mode() const {return this->size_mode_;}
+      picture_box_size_mode size_mode() const {return size_mode_;}
       picture_box& size_mode(picture_box_size_mode size_mode);
 
     protected:

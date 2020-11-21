@@ -30,19 +30,19 @@ namespace xtd {
         item& operator=(const item& value) = default;
         item& operator=(item&& value) = default;
         virtual ~item() = default;
-        bool operator==(const item& value) const {return this->value_ == value.value_;}
-        bool operator!=(const item& value) const {return !this->operator==(value);}
-        bool operator<(const item& value) const {return this->value_ < value.value_;}
-        bool operator<=(const item& value) const {return this->value_ <= value.value_;}
-        bool operator>(const item& value) const {return this->value_ > value.value_;}
-        bool operator>=(const item& value) const {return this->value_ >= value.value_;}
+        bool operator==(const item& value) const {return value_ == value.value_;}
+        bool operator!=(const item& value) const {return !operator==(value);}
+        bool operator<(const item& value) const {return value_ < value.value_;}
+        bool operator<=(const item& value) const {return value_ <= value.value_;}
+        bool operator>(const item& value) const {return value_ > value.value_;}
+        bool operator>=(const item& value) const {return value_ >= value.value_;}
         /// @endcond
         
-        virtual const std::string& value() const {return this->value_;}
+        virtual const std::string& value() const {return value_;}
         
-        virtual std::any tag() const {return this->tag_;}
+        virtual std::any tag() const {return tag_;}
         
-        std::string to_string() const {return this->value_;}
+        std::string to_string() const {return value_;}
         friend std::ostream& operator<<(std::ostream& os, const item& value) {return os << value.to_string();}
         
       private:
@@ -54,12 +54,12 @@ namespace xtd {
 
       /// @brief Gets the zero-based index of the currently selected item.
       /// @return A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
-      virtual size_t selected_index() const {return this->selected_index_;}
+      virtual size_t selected_index() const {return selected_index_;}
       /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
       /// @param selected_index A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
       virtual list_control& selected_index(size_t selected_index) = 0;
 
-      virtual std::string value_member() const {return this->value_member_;}
+      virtual std::string value_member() const {return value_member_;}
       virtual list_control& value_member(const std::string& value_member);
                   
       event<list_control, event_handler<control&>> selected_index_changed;
@@ -81,11 +81,11 @@ namespace xtd {
       
       virtual drawing::color default_fore_color() const override {return xtd::forms::theme_colors::current_theme().window_text();}
       
-      virtual void on_selected_index_changed(const event_args& e) {this->selected_index_changed(*this, e);}
+      virtual void on_selected_index_changed(const event_args& e) {selected_index_changed(*this, e);}
 
-      virtual void on_selected_value_changed(const event_args& e) {this->selected_value_changed(*this, e);}
+      virtual void on_selected_value_changed(const event_args& e) {selected_value_changed(*this, e);}
 
-      virtual void on_value_member_changed(const event_args& e) {this->value_member_changed(*this, e);}
+      virtual void on_value_member_changed(const event_args& e) {value_member_changed(*this, e);}
 
       /// @cond
       size_t selected_index_ = npos;
