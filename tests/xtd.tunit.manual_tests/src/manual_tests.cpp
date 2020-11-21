@@ -30,10 +30,10 @@ public:
   foo() {}
   explicit foo(int value) : value_(value) {}
 
-  int value() const {return this->value_;}
+  int value() const {return value_;}
   
-  bool operator==(const foo& f) const {return this->value_ == f.value_;}
-  bool operator!=(const foo& f) const {return !this->operator==(f);}
+  bool operator==(const foo& f) const {return value_ == f.value_;}
+  bool operator!=(const foo& f) const {return !operator==(f);}
   
 private:
   int value_ = 0;

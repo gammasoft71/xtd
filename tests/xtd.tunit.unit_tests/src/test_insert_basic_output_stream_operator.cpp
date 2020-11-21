@@ -291,7 +291,7 @@ namespace unit_tests {
     class_without_insert_stream_operator() = default;
     explicit class_without_insert_stream_operator(int value) : value_(value) {}
     
-    int value() const noexcept {return this->value_;}
+    int value() const noexcept {return value_;}
     
   private:
     int value_ = 0;
@@ -309,7 +309,7 @@ namespace unit_tests {
     class_with_insert_stream_operator() = default;
     explicit class_with_insert_stream_operator(int value) : value_(value) {}
     
-    int value() const noexcept {return this->value_;}
+    int value() const noexcept {return value_;}
     
     friend std::ostream& operator<<(std::ostream& os, const class_with_insert_stream_operator& c) {
       return os << "(value = " << c.value_ << ")";

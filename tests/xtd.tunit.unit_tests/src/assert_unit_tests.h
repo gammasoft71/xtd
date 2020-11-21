@@ -17,7 +17,7 @@ namespace assert_unit_tests {
     explicit unit_test_error(const char* message) : message_(message) {}
     unit_test_error(const unit_test_error&) = default;
     unit_test_error& operator=(const unit_test_error&) = default;
-    const char* what() const noexcept {return this->message_.c_str();}
+    const char* what() const noexcept {return message_.c_str();}
     
   private:
     std::string message_;

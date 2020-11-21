@@ -10,23 +10,23 @@ namespace unit_tests {
     class unit_test_trace_listener : public trace_listener {
     public:
       unit_test_trace_listener() = default;
-      std::string result() const {return this->string_stream.str();}
+      std::string result() const {return string_stream.str();}
       
       void close() override {}
       void flush() override {}
       
       using trace_listener::write;
       void write(const std::string& message) override {
-        if (this->need_indent())
-          this->write_indent();
-        this->string_stream << message;
+        if (need_indent())
+          write_indent();
+        string_stream << message;
       }
 
       using trace_listener::write_line;
       void write_line(const std::string& message) override {
-        this->write(message);
-        this->string_stream << std::endl;
-        this->need_indent(true);
+        write(message);
+        string_stream << std::endl;
+        need_indent(true);
       }
       
       using trace_listener::need_indent;
