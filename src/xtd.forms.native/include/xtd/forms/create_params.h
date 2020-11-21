@@ -19,98 +19,98 @@ namespace xtd {
       create_params& operator=(create_params&) = default;
       /// @endcond
       
-      const std::string& caption() const {return this->caption_;}
+      const std::string& caption() const {return caption_;}
       
       create_params& caption(const std::string& caption) {
-        this->caption_ = caption;
+        caption_ = caption;
         return *this;
       }
       
-      const std::string& class_name() const {return this->class_name_;}
+      const std::string& class_name() const {return class_name_;}
       
       create_params& class_name(const std::string& class_name) {
-        this->class_name_ = class_name;
+        class_name_ = class_name;
         return *this;
       }
 
-      size_t class_style() const {return this->class_style_;}
+      size_t class_style() const {return class_style_;}
       
       create_params& class_style(size_t class_style) {
-        this->class_style_ = class_style;
+        class_style_ = class_style;
         return *this;
       }
 
-      size_t ex_style() const {return this->ex_style_;}
+      size_t ex_style() const {return ex_style_;}
       
       create_params& ex_style(size_t ex_style) {
-        this->ex_style_ = ex_style;
+        ex_style_ = ex_style;
         return *this;
       }
 
-      int32_t height() const {return this->size_.height();}
+      int32_t height() const {return size_.height();}
       
       create_params& height(int32_t height) {
-        this->size_.height(height);
+        size_.height(height);
         return *this;
       }
 
-      drawing::point location() const {return this->location_;}
+      drawing::point location() const {return location_;}
       
       create_params& location(const drawing::point location) {
-        this->location_ = location;
+        location_ = location;
         return *this;
       }
 
-      intptr_t param() const {return this->param_;}
+      intptr_t param() const {return param_;}
       
       create_params& param(intptr_t param) {
-        this->param_ = param;
+        param_ = param;
         return *this;
       }
 
-      intptr_t parent() const {return this->parent_;}
+      intptr_t parent() const {return parent_;}
       
       create_params& parent(intptr_t parent) {
-        this->parent_ = parent;
+        parent_ = parent;
         return *this;
       }
 
-      size_t style() const {return this->style_;}
+      size_t style() const {return style_;}
       
       create_params& style(size_t style) {
-        this->style_ = style;
+        style_ = style;
         return *this;
       }
 
-      drawing::size size() const {return this->size_;}
+      drawing::size size() const {return size_;}
       
       create_params& size(const drawing::size size) {
-        this->size_ = size;
+        size_ = size;
         return *this;
       }
 
-      int32_t width() const {return this->size_.width();}
+      int32_t width() const {return size_.width();}
       
       create_params& width(int32_t width) {
-        this->size_.width(width);
+        size_.width(width);
         return *this;
       }
 
-      int32_t x() const {return this->location_.x();}
+      int32_t x() const {return location_.x();}
       
       create_params& x(int32_t x) {
-        this->location_.x(x);
+        location_.x(x);
         return *this;
       }
       
-      int32_t y() const {return this->location_.y();}
+      int32_t y() const {return location_.y();}
       
       create_params& y(int32_t y) {
-        this->location_.y(y);
+        location_.y(y);
         return *this;
       }
 
-      std::string to_string() const {return strings::format("create_params {{'{}' , '{}', 0x{:X}, 0x{:X}, {{{}, {}, {}, {}}}}}", this->class_name_, this->caption_, this->style_, this->ex_style_, this->location_.x(), this->location_.y(), this->size_.width(), this->size_.height());}
+      std::string to_string() const {return strings::format("create_params {{'{}' , '{}', 0x{:X}, 0x{:X}, {{{}, {}, {}, {}}}}}", class_name_, caption_, style_, ex_style_, location_.x(), location_.y(), size_.width(), size_.height());}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const create_params& create_params) noexcept {return os << create_params.to_string();}
