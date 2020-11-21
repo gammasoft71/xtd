@@ -14,7 +14,7 @@ namespace xtd {
       public:
         wx_progress_bar(const forms::create_params& create_params) {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
-          this->control_handler::create<wxGauge>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, 100, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
+          control_handler::create<wxGauge>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, 100, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
 #if defined(__WIN32__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
@@ -22,19 +22,19 @@ namespace xtd {
           }
 #endif
 
-          this->timer_marquee.Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {
-            if (event.GetTimer().GetId() == this->timer_marquee.GetId() && !static_cast<wxGauge*>(this->control())->IsBeingDeleted())
-              static_cast<wxGauge*>(this->control())->Pulse();
+          timer_marquee.Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {
+            if (event.GetTimer().GetId() == timer_marquee.GetId() && !static_cast<wxGauge*>(control())->IsBeingDeleted())
+              static_cast<wxGauge*>(control())->Pulse();
           });
         }
         
         ~wx_progress_bar() {
-          this->timer_marquee.Stop();
+          timer_marquee.Stop();
         }
 
         void marquee(bool marquee, size_t animation_speed) {
-          if (marquee) this->timer_marquee.Start(static_cast<int32_t>(animation_speed));
-          else this->timer_marquee.Stop();
+          if (marquee) timer_marquee.Start(static_cast<int32_t>(animation_speed));
+          else timer_marquee.Stop();
         }
         
         static long style_to_wx_style(size_t style, size_t ex_style) {

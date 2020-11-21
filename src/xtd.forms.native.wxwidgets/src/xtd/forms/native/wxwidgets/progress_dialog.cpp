@@ -27,7 +27,7 @@ namespace {
   public:
     wx_progress_dialog(const std::string& title, const std::string& message, int32_t maximum = 100, wxWindow* parent = nullptr, int32_t style = wxPD_APP_MODAL | wxPD_AUTO_HIDE) : wxProgressDialog(title, message, maximum, parent, style) {
       timer_marquee.Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {
-        if (event.GetTimer().GetId() == this->timer_marquee.GetId())
+        if (event.GetTimer().GetId() == timer_marquee.GetId())
           Pulse();
       });
     }

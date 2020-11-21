@@ -15,17 +15,17 @@ namespace xtd {
         wx_picture_box(const forms::create_params& create_params) {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
           if ((create_params.style() & SS_BITMAP_CENTER) == SS_BITMAP_CENTER) {
-            this->control_handler::create<wxStaticBitmap>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxNullBitmap, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
-            static_cast<wxStaticBitmap*>(this->control())->SetScaleMode(wxStaticBitmap::Scale_None);
+            control_handler::create<wxStaticBitmap>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxNullBitmap, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
+            static_cast<wxStaticBitmap*>(control())->SetScaleMode(wxStaticBitmap::Scale_None);
           } else {
-            this->control_handler::create<wxGenericStaticBitmap>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxNullBitmap, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
+            control_handler::create<wxGenericStaticBitmap>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxNullBitmap, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
             if ((create_params.style() & SS_BITMAP_STRETCH) == SS_BITMAP_STRETCH) {
-              static_cast<wxGenericStaticBitmap*>(this->control())->SetScaleMode(wxGenericStaticBitmap::Scale_Fill);
+              static_cast<wxGenericStaticBitmap*>(control())->SetScaleMode(wxGenericStaticBitmap::Scale_Fill);
             } else if ((create_params.style() & SS_BITMAP_ZOOM) == SS_BITMAP_ZOOM) {
-              static_cast<wxGenericStaticBitmap*>(this->control())->SetScaleMode(wxGenericStaticBitmap::Scale_AspectFit);
+              static_cast<wxGenericStaticBitmap*>(control())->SetScaleMode(wxGenericStaticBitmap::Scale_AspectFit);
             } else {
-              this->auto_size = (create_params.style() & SS_BITMAP_AUTOSIZE) == SS_BITMAP_AUTOSIZE;
-              static_cast<wxGenericStaticBitmap*>(this->control())->SetScaleMode(wxGenericStaticBitmap::Scale_None);
+              auto_size = (create_params.style() & SS_BITMAP_AUTOSIZE) == SS_BITMAP_AUTOSIZE;
+              static_cast<wxGenericStaticBitmap*>(control())->SetScaleMode(wxGenericStaticBitmap::Scale_None);
             }
           }
 #if defined(__WIN32__)
@@ -34,7 +34,7 @@ namespace xtd {
             control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
 #endif
-          this->control()->SetSize(create_params.width(), create_params.height());
+          control()->SetSize(create_params.width(), create_params.height());
         }
         
         static long style_to_wx_style(size_t style, size_t ex_style) {

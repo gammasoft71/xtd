@@ -20,7 +20,7 @@ namespace xtd {
 #if defined(__WXGTK__)
           if (height < 32) height = 32;
 #endif
-          this->control_handler::create<wxTextCtrl>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxString(create_params.caption().c_str(), wxMBConvUTF8()), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), height), style_to_wx_style(create_params.style(), create_params.ex_style(), character_casing_));
+          control_handler::create<wxTextCtrl>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxString(create_params.caption().c_str(), wxMBConvUTF8()), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), height), style_to_wx_style(create_params.style(), create_params.ex_style(), character_casing_));
           if (character_casing_ != character_casing::normal) {
             control()->Bind(wxEVT_CHAR, [&](wxKeyEvent& event) {
               switch (character_casing_) {

@@ -18,21 +18,21 @@ namespace xtd {
 #if defined(__WXGTK__)
           if (height < 32) height = 32;
 #endif
-          this->control_handler::create<wxSpinCtrlDouble>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxString(create_params.caption().c_str(), wxMBConvUTF8()), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), height), style_to_wx_style(create_params.style(), create_params.ex_style()));
+          control_handler::create<wxSpinCtrlDouble>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxString(create_params.caption().c_str(), wxMBConvUTF8()), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), height), style_to_wx_style(create_params.style(), create_params.ex_style()));
           // Workaround : with wxWidgets version <= 3.1.4 when wxSpinCtrlDouble lost focus the value is changed by error.
-          value_ = static_cast<wxSpinCtrlDouble*>(this->control())->GetValue();
-          this->control()->Bind(wxEVT_SPINCTRLDOUBLE, [&](wxCommandEvent& event) {
-            value_ = static_cast<wxSpinCtrlDouble*>(this->control())->GetValue();
+          value_ = static_cast<wxSpinCtrlDouble*>(control())->GetValue();
+          control()->Bind(wxEVT_SPINCTRLDOUBLE, [&](wxCommandEvent& event) {
+            value_ = static_cast<wxSpinCtrlDouble*>(control())->GetValue();
             refresh_ = true;
           });
           
-          this->control()->Bind(wxEVT_TEXT, [&](wxCommandEvent& event) {
-            value_ = static_cast<wxSpinCtrlDouble*>(this->control())->GetValue();
+          control()->Bind(wxEVT_TEXT, [&](wxCommandEvent& event) {
+            value_ = static_cast<wxSpinCtrlDouble*>(control())->GetValue();
             refresh_ = false;
           });
           
-          this->control()->Bind(wxEVT_KILL_FOCUS, [&](wxFocusEvent& event) {
-            if (refresh_) static_cast<wxSpinCtrlDouble*>(this->control())->SetValue(value_);
+          control()->Bind(wxEVT_KILL_FOCUS, [&](wxFocusEvent& event) {
+            if (refresh_) static_cast<wxSpinCtrlDouble*>(control())->SetValue(value_);
           });
           // <-- Workaround
 #if defined(__WIN32__)
