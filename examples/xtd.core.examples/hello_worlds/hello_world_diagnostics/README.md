@@ -19,6 +19,6 @@ xtdc run
 # Output debug
 
 ```
-Hello,World!
+Hello, World!
 ```
 
