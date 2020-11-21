@@ -34,21 +34,21 @@ namespace xtd {
     /// @cond
     caller_info(const caller_info& caller_info) = default;
     caller_info& operator=(const caller_info&) = default;
-    bool operator==(const caller_info& li) const {return this->member_name_ == li.member_name_ && this->file_path_ == li.file_path_ && this->line_number_ == li.line_number_;}
-    bool operator!=(const caller_info& li) const {return !this->operator==(li);}
+    bool operator==(const caller_info& li) const {return member_name_ == li.member_name_ && file_path_ == li.file_path_ && line_number_ == li.line_number_;}
+    bool operator!=(const caller_info& li) const {return !operator==(li);}
     /// @endcond
     
     /// @brief Gets the member name
     /// @return string member name
-    const std::string& member_name() const noexcept {return this->member_name_;}
+    const std::string& member_name() const noexcept {return member_name_;}
     
     /// @brief Gets the file path
     /// @return string file path
-    const std::string& file_path() const noexcept {return this->file_path_;}
+    const std::string& file_path() const noexcept {return file_path_;}
     
     /// @brief Gets the line number
     /// @return int32 line number
-    unsigned int line_number() const noexcept {return this->line_number_;}
+    unsigned int line_number() const noexcept {return line_number_;}
     
     std::string to_string() const noexcept {
       if (file_path_ == "" && line_number_ == 0 && member_name_ == "") return "{Empty}";

@@ -36,17 +36,17 @@ namespace xtd {
     explicit guid(int a, int b, int c, const std::vector<uint8_t>& d) {
       if (d.size() != 8) throw std::invalid_argument("vector size must be 8");
       
-      this->data_[0] = static_cast<uint8_t>((a & 0xFF000000) >> 24);
-      this->data_[1] = static_cast<uint8_t>((a & 0x00FF0000) >> 16);
-      this->data_[2] = static_cast<uint8_t>((a & 0x0000FF00) >> 8);
-      this->data_[3] = static_cast<uint8_t>((a & 0x000000FF) >> 0);
-      this->data_[4] = static_cast<uint8_t>((b & 0xFF00) >> 8);
-      this->data_[5] = static_cast<uint8_t>((b & 0x00FF) >> 0);
-      this->data_[6] = static_cast<uint8_t>((c & 0xFF00) >> 8);
-      this->data_[7] = static_cast<uint8_t>((c & 0x00FF) >> 0);
+      data_[0] = static_cast<uint8_t>((a & 0xFF000000) >> 24);
+      data_[1] = static_cast<uint8_t>((a & 0x00FF0000) >> 16);
+      data_[2] = static_cast<uint8_t>((a & 0x0000FF00) >> 8);
+      data_[3] = static_cast<uint8_t>((a & 0x000000FF) >> 0);
+      data_[4] = static_cast<uint8_t>((b & 0xFF00) >> 8);
+      data_[5] = static_cast<uint8_t>((b & 0x00FF) >> 0);
+      data_[6] = static_cast<uint8_t>((c & 0xFF00) >> 8);
+      data_[7] = static_cast<uint8_t>((c & 0x00FF) >> 0);
       
       for (int index = 0; index < 8; index++)
-        this->data_[8 + index] = d[index];
+        data_[8 + index] = d[index];
     }
     
     /// @brief Initializes a new instance of the Guid structure by using the specified integers and bytes.
@@ -62,22 +62,22 @@ namespace xtd {
     /// @param j The next byte of the GUID.
     /// @param k The next byte of the GUID.
     guid(int a, short b, short c, uint8_t d, uint8_t e, uint8_t f, uint8_t g, uint8_t h, uint8_t i, uint8_t j, uint8_t k) noexcept {
-      this->data_[0] = static_cast<uint8_t>((a & 0xFF000000) >> 24);
-      this->data_[1] = static_cast<uint8_t>((a & 0x00FF0000) >> 16);
-      this->data_[2] = static_cast<uint8_t>((a & 0x0000FF00) >> 8);
-      this->data_[3] = static_cast<uint8_t>((a & 0x000000FF) >> 0);
-      this->data_[4] = static_cast<uint8_t>((b & 0xFF00) >> 8);
-      this->data_[5] = static_cast<uint8_t>((b & 0x00FF) >> 0);
-      this->data_[6] = static_cast<uint8_t>((c & 0xFF00) >> 8);
-      this->data_[7] = static_cast<uint8_t>((c & 0x00FF) >> 0);
-      this->data_[8] = d;
-      this->data_[9] = e;
-      this->data_[10] = f;
-      this->data_[11] = g;
-      this->data_[12] = h;
-      this->data_[13] = i;
-      this->data_[14] = j;
-      this->data_[15] = k;
+      data_[0] = static_cast<uint8_t>((a & 0xFF000000) >> 24);
+      data_[1] = static_cast<uint8_t>((a & 0x00FF0000) >> 16);
+      data_[2] = static_cast<uint8_t>((a & 0x0000FF00) >> 8);
+      data_[3] = static_cast<uint8_t>((a & 0x000000FF) >> 0);
+      data_[4] = static_cast<uint8_t>((b & 0xFF00) >> 8);
+      data_[5] = static_cast<uint8_t>((b & 0x00FF) >> 0);
+      data_[6] = static_cast<uint8_t>((c & 0xFF00) >> 8);
+      data_[7] = static_cast<uint8_t>((c & 0x00FF) >> 0);
+      data_[8] = d;
+      data_[9] = e;
+      data_[10] = f;
+      data_[11] = g;
+      data_[12] = h;
+      data_[13] = i;
+      data_[14] = j;
+      data_[15] = k;
     }
     
     /// @brief Initializes a new instance of the Guid structure by using the specified uint32_tegers and bytes.
@@ -93,22 +93,22 @@ namespace xtd {
     /// @param j The next byte of the GUID.
     /// @param k The next byte of the GUID.
     guid(uint32_t a, uint16_t b, uint16_t c, uint8_t d, uint8_t e, uint8_t f, uint8_t g, uint8_t h, uint8_t i, uint8_t j, uint8_t k) noexcept {
-      this->data_[0] = static_cast<uint8_t>((a & 0xFF000000) >> 24);
-      this->data_[1] = static_cast<uint8_t>((a & 0x00FF0000) >> 16);
-      this->data_[2] = static_cast<uint8_t>((a & 0x0000FF00) >> 8);
-      this->data_[3] = static_cast<uint8_t>((a & 0x000000FF) >> 0);
-      this->data_[4] = static_cast<uint8_t>((b & 0xFF00) >> 8);
-      this->data_[5] = static_cast<uint8_t>((b & 0x00FF) >> 0);
-      this->data_[6] = static_cast<uint8_t>((c & 0xFF00) >> 8);
-      this->data_[7] = static_cast<uint8_t>((c & 0x00FF) >> 0);
-      this->data_[8] = d;
-      this->data_[9] = e;
-      this->data_[10] = f;
-      this->data_[11] = g;
-      this->data_[12] = h;
-      this->data_[13] = i;
-      this->data_[14] = j;
-      this->data_[15] = k;
+      data_[0] = static_cast<uint8_t>((a & 0xFF000000) >> 24);
+      data_[1] = static_cast<uint8_t>((a & 0x00FF0000) >> 16);
+      data_[2] = static_cast<uint8_t>((a & 0x0000FF00) >> 8);
+      data_[3] = static_cast<uint8_t>((a & 0x000000FF) >> 0);
+      data_[4] = static_cast<uint8_t>((b & 0xFF00) >> 8);
+      data_[5] = static_cast<uint8_t>((b & 0x00FF) >> 0);
+      data_[6] = static_cast<uint8_t>((c & 0xFF00) >> 8);
+      data_[7] = static_cast<uint8_t>((c & 0x00FF) >> 0);
+      data_[8] = d;
+      data_[9] = e;
+      data_[10] = f;
+      data_[11] = g;
+      data_[12] = h;
+      data_[13] = i;
+      data_[14] = j;
+      data_[15] = k;
     }
     
     /// @brief Initializes a new instance of the guid structure by using the value represented by the specified string.
@@ -136,8 +136,8 @@ namespace xtd {
     /// @remarks "{0xCA761232, 0xED42, 0x11CE, {0xBA, 0xCD, 0x00, 0xAA, 0x00, 0x57, 0xB2, 0x23}}"
     guid(const std::string& guid) {
       std::string simple = xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(guid, "0x", ""), ",", ""), "-", ""), "(", ""), ")", ""), "{", ""), "}", "");
-      for (size_t i = 0; i < this->data_.size(); i ++) {
-        this->data_[i] = xtd::parse<uint8_t>(xtd::strings::substring(simple, 0, 2), xtd::number_styles::hex_number);
+      for (size_t i = 0; i < data_.size(); i ++) {
+        data_[i] = xtd::parse<uint8_t>(xtd::strings::substring(simple, 0, 2), xtd::number_styles::hex_number);
         simple = xtd::strings::remove(simple, 0, 2);
       }
     }
@@ -181,7 +181,7 @@ namespace xtd {
     
     bool equals(const guid& g) const noexcept override {
       for (size_t index = 0; index < 16; index++)
-        if (this->data_[index] != g.data_[index]) return false;
+        if (data_[index] != g.data_[index]) return false;
       return true;
     }
     
@@ -193,7 +193,7 @@ namespace xtd {
     
     /// @brief Returns a 16-element byte array that contains the value of this instance.
     /// @return Array<Byte> A 16-element byte array.
-    const std::vector<uint8_t>& to_byte_array() const noexcept {return this->data_;}
+    const std::vector<uint8_t>& to_byte_array() const noexcept {return data_;}
 
     /// @brief Returns a string representation of the value of this instance in registry format.
     /// @return string The value of this Guid, formatted by using the "D" format specifier as follows:
@@ -231,14 +231,14 @@ namespace xtd {
       bool hexadecimal = format == "x";
       
       std::string result;
-      for (size_t index = 0; index < this->data_.size(); index++) {
+      for (size_t index = 0; index < data_.size(); index++) {
         if (hexadecimal && (index == 4 || index == 6 || (index >= 8 && index <= 15)))
           result += ",";
         if (hexadecimal && (index == 0 || index == 8))
           result += "{";
         if (hexadecimal && (index == 0 || index == 4 || index == 6 || (index >= 8 && index <= 15)))
           result += "0x";
-        result += xtd::to_string(this->data_[index], "x2");
+        result += xtd::to_string(data_[index], "x2");
         if (hexadecimal && index == 15)
           result += "}}";
         if (hyphens && (index == 3 || index == 5 || index == 7 || index == 9))

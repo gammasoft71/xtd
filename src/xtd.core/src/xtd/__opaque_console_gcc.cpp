@@ -59,22 +59,22 @@ namespace {
     terminal() noexcept {
       termios termioAttributes;
       tcgetattr(0, &termioAttributes);
-      this->backupedTermioAttributes = termioAttributes;
+      backupedTermioAttributes = termioAttributes;
       termioAttributes.c_lflag &= ~ECHO;
       tcsetattr(0, TCSANOW, &termioAttributes);
     }
     
     ~terminal() noexcept {
-      tcsetattr(0, TCSANOW, &this->backupedTermioAttributes);
+      tcsetattr(0, TCSANOW, &backupedTermioAttributes);
       if (is_ansi_supported())
         std::cout << "\x1b]0;\x7" << std::flush;
     }
     
   public:
     int getch() noexcept {
-      if (this->peekCharacter != -1) {
-        int8_t character = this->peekCharacter;
-        this->peekCharacter = -1;
+      if (peekCharacter != -1) {
+        int8_t character = peekCharacter;
+        peekCharacter = -1;
         return character;
       }
       
@@ -95,7 +95,7 @@ namespace {
     }
     
     bool key_available() noexcept {
-      if (this->peekCharacter != -1)
+      if (peekCharacter != -1)
         return true;
       
       termios termioAttributes;
@@ -106,11 +106,11 @@ namespace {
       termioAttributes.c_cc[VMIN] = 0;
       tcsetattr(0, TCSANOW, &termioAttributes);
       
-      read(0, &this->peekCharacter, 1);
+      read(0, &peekCharacter, 1);
       
       tcsetattr(0, TCSANOW, &backupedTermioAttributes);
       
-      return this->peekCharacter != -1;
+      return peekCharacter != -1;
     }
     
     static bool is_ansi_supported() noexcept {
@@ -137,36 +137,36 @@ namespace {
       input_list(const input_list& il) : chars(il.chars) {}
       
       input_list& operator =(const input_list& il) {
-        this->chars = il.chars;
+        chars = il.chars;
         return *this;
       }
       
-      bool operator ==(const input_list& il) const {return this->chars == il.chars;}
-      bool operator !=(const input_list& il) const {return this->chars != il.chars;}
+      bool operator ==(const input_list& il) const {return chars == il.chars;}
+      bool operator !=(const input_list& il) const {return chars != il.chars;}
       
       using const_iterator = std::list<int>::const_iterator;
       using iterator = std::list<int>::iterator;
       
-      const_iterator cbegin() const {return this->chars.begin();}
-      const_iterator cend() const {return this->chars.end();}
-      const_iterator begin() const {return this->chars.begin();}
-      iterator begin() {return this->chars.begin();}
-      const_iterator end() const {return this->chars.end();}
-      iterator end() {return this->chars.end();}
+      const_iterator cbegin() const {return chars.begin();}
+      const_iterator cend() const {return chars.end();}
+      const_iterator begin() const {return chars.begin();}
+      iterator begin() {return chars.begin();}
+      const_iterator end() const {return chars.end();}
+      iterator end() {return chars.end();}
       
-      void add(int c) {this->chars.push_back(c);}
-      void add_front(int c) {this->chars.push_front(c);}
-      void remove(int c) {this->chars.remove(c);}
-      int count() const {return static_cast<int>(this->chars.size());}
-      int pop() { int c = this->chars.front();  this->chars.erase(this->chars.begin()); return c;}
-      void clear() {this->chars.clear();}
+      void add(int c) {chars.push_back(c);}
+      void add_front(int c) {chars.push_front(c);}
+      void remove(int c) {chars.remove(c);}
+      int count() const {return static_cast<int>(chars.size());}
+      int pop() { int c = chars.front();  chars.erase(chars.begin()); return c;}
+      void clear() {chars.clear();}
       
-      bool is_empty() const {return this->chars.empty();}
+      bool is_empty() const {return chars.empty();}
       
       std::string to_string() const {
         std::stringstream result;
-        std::list<int>::const_iterator iterator = this->chars.begin();
-        while (iterator != this->chars.end()) {
+        std::list<int>::const_iterator iterator = chars.begin();
+        while (iterator != chars.end()) {
           if (char(*iterator & 0xFF) == 27)
             result << "^[";
           else
@@ -197,11 +197,11 @@ namespace {
     key_info(const key_info& ki) : key_(ki.key_), key_char_(ki.key_char_), has_alt_modifier_(ki.has_alt_modifier_), has_control_modifier_(ki.has_control_modifier_), has_shift_modifier_(ki.has_shift_modifier_) {}
     
     key_info& operator =(const key_info& ki) {
-      this->key_ = ki.key_;
-      this->key_char_ = ki.key_char_;
-      this->has_alt_modifier_ = ki.has_alt_modifier_;
-      this->has_control_modifier_ = ki.has_control_modifier_;
-      this->has_shift_modifier_ = ki.has_shift_modifier_;
+      key_ = ki.key_;
+      key_char_ = ki.key_char_;
+      has_alt_modifier_ = ki.has_alt_modifier_;
+      has_control_modifier_ = ki.has_control_modifier_;
+      has_shift_modifier_ = ki.has_shift_modifier_;
       return *this;
     }
     
@@ -231,19 +231,19 @@ namespace {
       return to_key_info(inputs.pop(), true);
     }
     
-    int key() const {return this->key_;}
+    int key() const {return key_;}
     
-    int key_char() const {return this->key_char_;}
+    int key_char() const {return key_char_;}
     
-    bool has_alt_modifier() const {return this->has_alt_modifier_;}
+    bool has_alt_modifier() const {return has_alt_modifier_;}
     
-    bool has_control_modifier() const {return this->has_control_modifier_;}
+    bool has_control_modifier() const {return has_control_modifier_;}
     
-    bool has_shift_modifier() const {return this->has_shift_modifier_;}
+    bool has_shift_modifier() const {return has_shift_modifier_;}
     
     std::string to_string() const {
       std::stringstream result;
-      result << "{key=" << std::hex << this->key_ << ", key_char=" << std::dec << static_cast<char>(this->key_char_) << ", has_alt_modifier=" << to_string(this->has_alt_modifier_) << ", has_control_modifier=" << to_string(this->has_control_modifier_) << ", has_shift_modifier=" << to_string(this->has_shift_modifier_) << "}";
+      result << "{key=" << std::hex << key_ << ", key_char=" << std::dec << static_cast<char>(key_char_) << ", has_alt_modifier=" << to_string(has_alt_modifier_) << ", has_control_modifier=" << to_string(has_control_modifier_) << ", has_shift_modifier=" << to_string(has_shift_modifier_) << "}";
       return result.str();
     }
     

@@ -33,47 +33,47 @@ namespace xtd {
       /// @cond
       trace_listener(const trace_listener& tl) = delete;
       trace_listener& operator=(const trace_listener& tl) = delete;
-      virtual ~trace_listener() {this->flush();}
+      virtual ~trace_listener() {flush();}
       /// @endcond
       
       /// @brief Initializes a new instance of the trace_listener class using the specified name as the listener.
       /// @param name The name of the trace_listener.
-      explicit trace_listener(const std::string& name) {this->name_ = name;}
+      explicit trace_listener(const std::string& name) {name_ = name;}
       
       /// @brief Gets the indent level.
       /// @return unsigned int The indent level. The default is zero.
       /// @remarks The IndentLevel property represents the number of times that the indent specified by the IndentSize property is applied. This property is stored on per-thread/per-request basis.
-      unsigned int indent_level() const {return this->indent_level_;}
+      unsigned int indent_level() const {return indent_level_;}
 
       /// @brief Sets the indent level.
       /// @param indent_level The indent level. The default is zero.
       /// @remarks The IndentLevel property represents the number of times that the indent specified by the IndentSize property is applied. This property is stored on per-thread/per-request basis.
-      void indent_level(unsigned int indent_level) {this->indent_level_ = indent_level;}
+      void indent_level(unsigned int indent_level) {indent_level_ = indent_level;}
       
       /// @brief Gets the number of spaces in an indent.
       /// @return unsigned int The number of spaces in an indent. The default is four spaces.
       /// @remarks The property is stored on per-thread/per-request basis.
-      unsigned int indent_size() const {return this->indent_size_;}
+      unsigned int indent_size() const {return indent_size_;}
 
       /// @brief Sets the number of spaces in an indent.
       /// @param int32 The number of spaces in an indent. The default is four spaces.
       /// @remarks The property is stored on per-thread/per-request basis.
-      void indent_size(unsigned int indent_size) {this->indent_size_ = indent_size;}
+      void indent_size(unsigned int indent_size) {indent_size_ = indent_size;}
 
       /// @brief Gets a value indicating whether the trace listener is thread safe.
       /// @return bool true if the trace listener is thread safe; otherwise, false. The default is false.
       /// @remarks The value of IsThreadSafe is used to determine whether to use a global lock when writing to the listener. If the value of IsThreadSafe is false, the global lock is used regardless of the value of UseGlobalLock. The global lock is not used only if the value of IsThreadSafe is true and the value of UseGlobalLock is false. The default behavior is to use the global lock whenever writing to the listener.
-      virtual bool is_thread_safe() const {return this->is_thread_safe_;}
+      virtual bool is_thread_safe() const {return is_thread_safe_;}
 
       /// @brief Gets or sets a name for this TraceListener.
       /// @return string A name for this TraceListener. The default is an empty string ("").
       /// @remarks The name can be used to organize and access listeners in a TraceListenerCollection collection.
-      const std::string& name() const {return this->name_;}
+      const std::string& name() const {return name_;}
 
       /// @brief Sets a name for this TraceListener.
       /// @param name A name for this TraceListener. The default is an empty string ("").
       /// @remarks The name can be used to organize and access listeners in a TraceListenerCollection collection.
-      void name(const std::string& name) {this->name_ = name;}
+      void name(const std::string& name) {name_ = name;}
       
       /// @brief Gets the trace output options.
       /// @return trace_options A bitwise combination of the enumeration values. The default is None.
@@ -82,7 +82,7 @@ namespace xtd {
       /// * The EventLogTraceListener class, because it can cause a large volume of data to be written to the log.
       /// * The Write and WriteLine methods of the ConsoleTraceListener, DefaultTraceListener, and TextWriterTraceListener classes.
       /// * The Write and WriteLine methods of the TraceListener class when they are not overridden in a derived class.
-      const trace_options& trace_output_options() const {return this->trace_output_options_;}
+      const trace_options& trace_output_options() const {return trace_output_options_;}
 
       /// @brief Sets the trace output options.
       /// @param trace_output_options A bitwise combination of the enumeration values. The default is None.
@@ -91,11 +91,11 @@ namespace xtd {
       /// * The EventLogTraceListener class, because it can cause a large volume of data to be written to the log.
       /// * The Write and WriteLine methods of the ConsoleTraceListener, DefaultTraceListener, and TextWriterTraceListener classes.
       /// * The Write and WriteLine methods of the TraceListener class when they are not overridden in a derived class.
-      void trace_output_options(const trace_options& trace_output_options) {this->trace_output_options_ = trace_output_options;}
+      void trace_output_options(const trace_options& trace_output_options) {trace_output_options_ = trace_output_options;}
 
       /// @brief When overridden in a derived class, closes the output stream so it no longer receives tracing or debugging output.
       /// @remarks Use this method when the output is going to a file, such as to the TextWriterTraceListener. After a call to this method, you must reinitialize the object.
-      virtual void close() {this->flush();}
+      virtual void close() {flush();}
       
       /// @brief Emits an error message to the listener you create when you implement the TraceListener class.
       /// @param message A message to emit.
@@ -130,8 +130,8 @@ namespace xtd {
       template<typename object>
       void trace_data(const xtd::diagnostics::trace_event_cache& event_cache, const std::string& source, const xtd::diagnostics::trace_event_type& event_type, int id, const object& data) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        this->write_line(xtd::strings::format("{} {}: {} : {}", source, event_type, id, data));
-        this->write_event_cache(event_cache);
+        write_line(xtd::strings::format("{} {}: {} : {}", source, event_type, id, data));
+        write_event_cache(event_cache);
 #endif
       }
       
@@ -146,8 +146,8 @@ namespace xtd {
       template<typename object>
       void trace_data(const xtd::diagnostics::trace_event_cache& event_cache, const std::string& source, const xtd::diagnostics::trace_event_type& event_type, int id, const std::vector<object>& data) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        this->write_line(xtd::strings::format("{} {}: {} : {}", source, event_type, id, xtd::strings::join(", ", data)));
-        this->write_event_cache(event_cache);
+        write_line(xtd::strings::format("{} {}: {} : {}", source, event_type, id, xtd::strings::join(", ", data)));
+        write_event_cache(event_cache);
 #endif
       }
       
@@ -162,8 +162,8 @@ namespace xtd {
       template<typename ...objects>
       void trace_data(const xtd::diagnostics::trace_event_cache& event_cache, const std::string& source, const xtd::diagnostics::trace_event_type& event_type, int id, const objects& ... data) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        this->write_line(xtd::strings::format("{} {}: {} : {}", source, event_type, id, xtd::strings::join(", ", {data...})));
-        this->write_event_cache(event_cache);
+        write_line(xtd::strings::format("{} {}: {} : {}", source, event_type, id, xtd::strings::join(", ", {data...})));
+        write_event_cache(event_cache);
 #endif
       }
       
@@ -176,8 +176,8 @@ namespace xtd {
       /// @remarks The default implementation writes the values of the source, eventType and id parameters as a header. The event_cache data is written as a footer, the nature of the output data being dependent on the value of the TraceOutputOptions property.
       virtual void trace_event(const xtd::diagnostics::trace_event_cache& event_cache, const std::string& source, const xtd::diagnostics::trace_event_type& event_type, int id) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        this->write_line(xtd::strings::format("{} {}: {}", source, event_type, id));
-        this->write_event_cache(event_cache);
+        write_line(xtd::strings::format("{} {}: {}", source, event_type, id));
+        write_event_cache(event_cache);
 #endif
       }
       
@@ -191,8 +191,8 @@ namespace xtd {
       /// @remarks The default implementation writes the values of the source, eventType and id parameters as a header. The event_cache data is written as a footer, the nature of the output data being dependent on the value of the TraceOutputOptions property.
       virtual void trace_event(const xtd::diagnostics::trace_event_cache& event_cache, const std::string& source, const xtd::diagnostics::trace_event_type& event_type, int id, const std::string& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        this->write_line(xtd::strings::format("{} {}: {} : {}", source, event_type, id, message));
-        this->write_event_cache(event_cache);
+        write_line(xtd::strings::format("{} {}: {} : {}", source, event_type, id, message));
+        write_event_cache(event_cache);
 #endif
       }
 
@@ -208,8 +208,8 @@ namespace xtd {
       template<typename ...objects>
       void trace_event(const xtd::diagnostics::trace_event_cache& event_cache, const std::string& source, const xtd::diagnostics::trace_event_type& event_type, int id, const std::string& format, const objects& ... args) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        this->write_line(xtd::strings::format("{} {}: {} : {}", source, event_type, id, xtd::strings::format(format, args...)));
-        this->write_event_cache(event_cache);
+        write_line(xtd::strings::format("{} {}: {} : {}", source, event_type, id, xtd::strings::format(format, args...)));
+        write_event_cache(event_cache);
 #endif
       }
       
@@ -225,8 +225,8 @@ namespace xtd {
       template<typename activity_id_type>
       void trace_transfer(const xtd::diagnostics::trace_event_cache& event_cache, const std::string& source, int id, const std::string& message, const activity_id_type& related_activity_id) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        this->write_line(xtd::strings::format("{} transfert: {} : {}, related_activity_id={}", source, id, message, related_activity_id));
-        this->write_event_cache(event_cache);
+        write_line(xtd::strings::format("{} transfert: {} : {}, related_activity_id={}", source, id, message, related_activity_id));
+        write_event_cache(event_cache);
 #endif
       }
       
@@ -275,14 +275,14 @@ namespace xtd {
       template<typename object>
       trace_listener& operator<<(object&& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        this->write_line(message);
+        write_line(message);
 #endif
         return *this;
       }
 
     protected:
-      bool need_indent() const {return this->need_indent_;}
-      void need_indent(bool need_indent) {this->need_indent_ = need_indent;}
+      bool need_indent() const {return need_indent_;}
+      void need_indent(bool need_indent) {need_indent_ = need_indent;}
       
       void thread_safe(bool thread_safe) {is_thread_safe_ = thread_safe;}
 
@@ -290,27 +290,27 @@ namespace xtd {
       /// @remarks This method writes the indent and resets the NeedIndent property to false. Call this method if NeedIndent is true when you are overriding the Write and WriteLine methods. By default, this method uses blank spaces for indentation. The size of the indent is determined by the values of the IndentSize and IndentLevel properties. The IndentLevel property represents the number of times the indent of the size specified by the IndentSize property is applied. This method is called by the DefaultTraceListener and TextWriterTraceListener classes.
       virtual void write_indent() {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        this->need_indent_ = false;
-        for (unsigned int i = 0; i < this->indent_level_; ++i)
-          this->write(std::string(this->indent_size_, ' '));
+        need_indent_ = false;
+        for (unsigned int i = 0; i < indent_level_; ++i)
+          write(std::string(indent_size_, ' '));
 #endif
       }
 
     private:
       void write_event_cache(const trace_event_cache& event_cache) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        if (((int)this->trace_output_options_ & (int)xtd::diagnostics::trace_options::process_id) == (int)xtd::diagnostics::trace_options::process_id)
-          this->write_line(xtd::strings::format("{0}ProcessId={1}", std::string(this->indent_size_, ' '), event_cache.process_id()));
-        if (((int)this->trace_output_options_ & (int)xtd::diagnostics::trace_options::logical_operation_stack) == (int)xtd::diagnostics::trace_options::logical_operation_stack)
-          this->write_line(xtd::strings::format("{0}LogicalOperationStack={1}", std::string(this->indent_size_, ' '), xtd::strings::join(", ", event_cache.logical_operation_stack())));
-        if (((int)this->trace_output_options_ & (int)xtd::diagnostics::trace_options::thread_id) == (int)xtd::diagnostics::trace_options::thread_id)
-          this->write_line(xtd::strings::format("{0}ThreadId={1}", std::string(this->indent_size_, ' '), event_cache.thread_id()));
-        if (((int)this->trace_output_options_ & (int)xtd::diagnostics::trace_options::date_time) == (int)xtd::diagnostics::trace_options::date_time)
-         this->write_line(xtd::strings::format("{0}DateTime={1:D}T{1:T}", std::string(this->indent_size_, ' '), event_cache.date_time()));
-        if (((int)this->trace_output_options_ & (int)xtd::diagnostics::trace_options::timestamp) == (int)xtd::diagnostics::trace_options::timestamp)
-          this->write_line(xtd::strings::format("{0}Timestamp={1}", std::string(this->indent_size_, ' '), event_cache.timestamp()));
-        if (((int)this->trace_output_options_ & (int)xtd::diagnostics::trace_options::callstack) == (int)xtd::diagnostics::trace_options::callstack)
-          this->write_line(xtd::strings::format("{0}Callstack={1}", std::string(this->indent_size_, ' '), event_cache.call_stack()));
+        if (((int)trace_output_options_ & (int)xtd::diagnostics::trace_options::process_id) == (int)xtd::diagnostics::trace_options::process_id)
+          write_line(xtd::strings::format("{0}ProcessId={1}", std::string(indent_size_, ' '), event_cache.process_id()));
+        if (((int)trace_output_options_ & (int)xtd::diagnostics::trace_options::logical_operation_stack) == (int)xtd::diagnostics::trace_options::logical_operation_stack)
+          write_line(xtd::strings::format("{0}LogicalOperationStack={1}", std::string(indent_size_, ' '), xtd::strings::join(", ", event_cache.logical_operation_stack())));
+        if (((int)trace_output_options_ & (int)xtd::diagnostics::trace_options::thread_id) == (int)xtd::diagnostics::trace_options::thread_id)
+          write_line(xtd::strings::format("{0}ThreadId={1}", std::string(indent_size_, ' '), event_cache.thread_id()));
+        if (((int)trace_output_options_ & (int)xtd::diagnostics::trace_options::date_time) == (int)xtd::diagnostics::trace_options::date_time)
+         write_line(xtd::strings::format("{0}DateTime={1:D}T{1:T}", std::string(indent_size_, ' '), event_cache.date_time()));
+        if (((int)trace_output_options_ & (int)xtd::diagnostics::trace_options::timestamp) == (int)xtd::diagnostics::trace_options::timestamp)
+          write_line(xtd::strings::format("{0}Timestamp={1}", std::string(indent_size_, ' '), event_cache.timestamp()));
+        if (((int)trace_output_options_ & (int)xtd::diagnostics::trace_options::callstack) == (int)xtd::diagnostics::trace_options::callstack)
+          write_line(xtd::strings::format("{0}Callstack={1}", std::string(indent_size_, ' '), event_cache.call_stack()));
 #endif
       }
       
