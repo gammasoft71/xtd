@@ -27,6 +27,9 @@
 [xtd.forms](xtd.forms.examples/README.md) contains xtd.forms library examples.
 
 * [Hello Worlds](xtd.forms.examples/hello_worlds/README.md) contains xtd.forms "Hello, World!" examples.
+* [Applications](xtd.forms.examples/applications/README.md) contains applications examples.
+* [Common Controls](xtd.forms.examples/common_controls/README.md) contains common controls examples.
+* [Picker Controls](xtd.forms.examples/picker_controls/README.md) contains picker controls examples.
 
 ## [xtd.tunit](xtd.tunit.examples/README.md)
 
