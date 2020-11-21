@@ -93,6 +93,6 @@ int main() {
 //      █████████                                                    █████████
 //      █████████                                                    █████████
 //        ██████████████████████████████████████████████████████████████████
-//                                      Gammasoft
-//      More than thirty years of passion for high technology especially in development
-//      (c++, c#, objective-c, ...).
+//                                    Gammasoft
+// More than thirty years of passion for high technology especially in development
+// (c++, c#, objective-c, ...).
