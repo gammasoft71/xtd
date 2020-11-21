@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output (can be)
+# Output
 
 ```
 Ola Mundo!
