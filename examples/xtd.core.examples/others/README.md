@@ -1,6 +1,6 @@
 # xtd.core Others examples
 
-[This folder](.) contains xtd.core Others examples used by [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/) and more.
+[This folder](.) contains others examples used by [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/) and more.
 
 * [console_background_color2](console_background_color2/README.md) Shows how to use [xtd::console::background_color](../../../src/xtd.core/include/xtd/basic_console.h) method.
 * [console_background_color3](console_background_color3/README.md) Shows how to use [xtd::console::background_color](../../../src/xtd.core/include/xtd/basic_console.h) method.
