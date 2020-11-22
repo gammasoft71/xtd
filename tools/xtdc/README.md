@@ -2,13 +2,15 @@
 
 xtdc is project management command line tool.
 
-You can create, build, run, install, open, ... a project.
+xttdc can create a new project on many templates.
 
-# Templates
+xtdc can build, open, run, install, test or uninstall an existing project.
+
+# Templates project
 
 xtdc contians many project template. All project listed below are created with CMake and target your system (Visual Studio on Windows, Xcode on macOS and Code::Blocks or makefile on Linux).
 
-## GUI Application :
+## GUI Application sdk :
 
 * xtd (c++)
 * cocoa (objective-c)
@@ -20,18 +22,10 @@ xtdc contians many project template. All project listed below are created with C
 * wxWidgets (c++)
 * Qt 5 (c++)
 * Win32 (c)
-* winformw (c#)
-* wpf (c#)
+* Winforms (c#)
+* WPF (c#)
 
-## Console Application :
-
-* xtd (c++)
-* c++
-* c
-* c#
-* objective-c
-
-## Shared library :
+## Console Application SDK/language :
 
 * xtd (c++)
 * c++
@@ -39,7 +33,7 @@ xtdc contians many project template. All project listed below are created with C
 * c#
 * objective-c
 
-## Static library :
+## Shared or static library SDK/language :
 
 * xtd (c++)
 * c++
@@ -47,7 +41,7 @@ xtdc contians many project template. All project listed below are created with C
 * c#
 * objective-c
 
-## Unit Test project :
+## Unit Test project SDK/language :
 
 * xtd (c++)
 * gtest (c++)
