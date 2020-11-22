@@ -2,7 +2,7 @@
 
 # Notes
 
-[xtd is under development](development_status.md).
+[xtd is not yiet released](development_status.md).
 
 ______________________________________________________________________________________________
 
