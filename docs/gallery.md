@@ -9,6 +9,11 @@
 
 [game_of_life](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/game_of_life/README.md)
 
+
+[![calculator](pictures/game_of_life.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/calculator/README.md)
+
+[calculator](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/calculator/README.md)
+
 ______________________________________________________________________________________________
 
 © 2020 Gammasoft.
