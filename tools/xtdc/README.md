@@ -1,0 +1,108 @@
+# xtdc
+
+xtdc is project management command line tool.
+
+You can create, build, run, install, open, ... a project.
+
+# Templates
+
+xtdc contians many project template. All project listed below are created with CMake and target your system (Visual Studio on Windows, Xcode on macOS and Code::Blocks or makefile on Linux).
+
+## GUI Application :
+
+* xtd (c++)
+* cocoa (objective-c)
+* fltk (c++)
+* Gtk+ 2 (c)
+* Gtk+ 3 (c)
+* Gtk+ 4 (c)
+* Gtkmm (c++)
+* wxWidgets (c++)
+* Qt 5 (c++)
+* Win32 (c)
+* winformw (c#)
+* wpf (c#)
+
+## Console Application :
+
+* xtd (c++)
+* c++
+* c
+* c#
+* objective-c
+
+## Shared library :
+
+* xtd (c++)
+* c++
+* c
+* c#
+* objective-c
+
+## Static library :
+
+* xtd (c++)
+* c++
+* c
+* c#
+* objective-c
+
+## Unit Test project :
+
+* xtd (c++)
+* gtest (c++)
+* catch2 (c++)
+
+# Some examples
+
+## Create and run a xtd GUI application project
+
+```bash
+xtdc new gui my_xtd_project
+cd my_xtd_project
+xtdc run
+```
+
+or
+
+```bash
+mkdir my_xtd_project
+cd my_xtd_project
+xtdc new gui .
+xtdc run
+```
+
+## Create and open an objective-c console application project
+
+```bash
+xtdc new console --sdk objective-c my_objective_c_project
+cd my_objective_c_project
+xtdc open
+```
+
+## Create and test a xtd unit test application project
+
+```bash
+xtdc new test my_xtd_unit_test_project
+cd my_xtd_unit_test_project
+xtdc test
+```
+
+# For more info about xtdc
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```bash
+xtdc --help
+```
+
+For each command type xtdc 'command' --help to view specific command help.
+
+For example to view help on open command :
+```bash
+xtdc open --help
+```
+
+______________________________________________________________________________________________
+
+© 2020 Gammasoft.
