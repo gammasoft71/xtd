@@ -18,6 +18,12 @@ ________________________________________________________________________________
 
 ______________________________________________________________________________________________
 
+[![stopwatch](pictures/stopwatch.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/stopwatch/README.md)
+
+[stopwatch (on Windows)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/stopwatch/README.md)
+
+______________________________________________________________________________________________
+
 [![xtdc-gui](pictures/xtdc-gui.png)](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc-gui/README.md)
 
 [xtdc-gui - Create a new project (on macOS)](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc-gui/README.md)
