@@ -22,6 +22,10 @@ This [tutorial](writing_forms_applications.md) describe the basic steps that you
 
 This [tutorial](writing_tests.md) describe the basic steps that you must complete to create and run a unitests application from the command line.
 
+This  [tutorial](running_tests.md) provide running tests documentation.
+
+This [ttutorial](extending_tunit.md) provide extending xtd.tunit documentation.
+
 ## See also
 
 [Documentation](documentation.md)
