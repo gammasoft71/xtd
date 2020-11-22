@@ -14,11 +14,11 @@ This tutorial describe the basic steps that you must complete to create and run 
 
 This [tutorial](https://github.com/gammasoft71/xtd_console/tree/master/docs/writing_applicaitons.md) describe the basic steps that you must complete to create and run a console application from the command line.
 
-## Create Windows Form application
+## Create forms application
 
-This [tutorial](writing_forms_applications.md) describe the basic steps that you must complete to create and run a Windows Forms application from the command line.
+This [tutorial](writing_forms_applications.md) describe the basic steps that you must complete to create and run a xtd.forms application from the command line.
 
-## Create unittests application
+## Create unit tests application
 
 This [tutorial](writing_tests.md) describe the basic steps that you must complete to create and run a unitests application from the command line.
 
