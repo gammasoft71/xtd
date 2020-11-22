@@ -15,6 +15,7 @@ This section contains the xtd documentation. ​
 * [Development status](development_status.md) provide information about classes development status.
 * [Release notes](release_notes.md) provide release notes information.
 * [License](license.md) provide license information.
+* [Links](links.md) list the essential links.
 
 ______________________________________________________________________________________________
 
