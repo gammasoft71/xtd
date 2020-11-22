@@ -11,7 +11,7 @@
 
 | Product                                                                         | Copyright       | Description                               | Release |
 |---------------------------------------------------------------------------------|-----------------|-------------------------------------------|---------|
-| [call_stack](http://stacktrace.sourceforge.net/).                               | Fredrik Orderud | Provides information about the call stack | 2009    |
+| [call_stack](http://stacktrace.sourceforge.net/)                                | Fredrik Orderud | Provides information about the call stack | 2009    |
 | [StackWalker](https://www.codeproject.com/Articles/11132/Walking-the-callstack) | Jochen Kalmbach | Walking the callstack                     | v5      |
 
 # External toolkit used:
