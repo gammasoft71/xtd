@@ -135,11 +135,8 @@ xtdc open
 
 ## Remarks
 
-For more information type
-
-```bash
-xtdc --help
-```
+See [xtdc-gui](../tools/xtdc-gui/README.md) for more info.
+See [xtdc](../tools/xtdc/README.md) for more info.
 
 ______________________________________________________________________________________________
 
