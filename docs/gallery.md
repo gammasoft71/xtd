@@ -12,7 +12,7 @@
 
 [![game_of_life](pictures/game_of_life.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/game_of_life/README.md)
 
-[game_of_life on Linux Readhat Gnome](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/game_of_life/README.md)
+[game_of_life on Linux Ubuntu Gnome](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/game_of_life/README.md)
 
 ______________________________________________________________________________________________
 
