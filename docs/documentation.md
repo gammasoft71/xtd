@@ -9,6 +9,7 @@ This section contains the xtd documentation. ​
 * [Writing tests](writing_tests.md) provide writing tests documentation.
 * [Running tests](running_tests.md) provide running tests documentation.
 * [Extending xtd.tunit](extending_tunit.md) provide extending xtd.tunit documentation.
+* [Tutorial](tutorial.md) provide a tutorial to cover the basics needed to create xtd applications.
 * [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/) provide online user reference guide.
 * [Design Guidelines](design_guidelines.md) provides guidelines for designing libraries that extend and interact with the xtd.forms.
 * [Development status](development_status.md) provide information about classes development status.
