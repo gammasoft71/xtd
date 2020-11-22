@@ -55,7 +55,7 @@ xtdc-gui contians many project template. All project listed below are created wi
 * Choose your project template then click to "Next" button
 * Choose the name for your new project and the path where the project will be create, and finaly click "Create button" to create it.
 
-![xtdc-gui](../../pictures/xtdc-gui.gif)
+![xtdc-gui](../../docs/pictures/xtdc-gui.gif)
 
 ______________________________________________________________________________________________
 
