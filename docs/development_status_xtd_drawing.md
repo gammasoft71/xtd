@@ -14,14 +14,11 @@
 
 ![progress100](pictures/progress100.png) Complete
 
-# xtd libraries
+# xtd.drawing :
 
-| Library                                          | Status                                   |
-|--------------------------------------------------|------------------------------------------|
-| [xtd.core](development_status_xtd_core.md)       | ![progress75](pictures/progress50.png)   |
-| [xtd.drawing](development_status_xtd_drawing.md) | ![progress75](pictures/progress50.png)   |
-| [xtd.forms](development_status_xtd_forms.md)     | ![progress75](pictures/progress50.png)   |
-| [xtd.tunit](development_status_xtd_tunit.md)     | ![progress100](pictures/progress100.png) |
+| Name              | Type  | Status                                   |
+|-------------------|-------|------------------------------------------|
+| ...               | class | ![progress75](pictures/progress75.png)   |
 
 ______________________________________________________________________________________________
 
