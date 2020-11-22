@@ -128,7 +128,8 @@ For example, you can type :
 
 ```bash
 xtdc new gui hello_world
-xtdc open hello_world
+cd hello_world
+xtdc open
 ```
 "xtdc" command line tool will creating hello_world gui application, generate Visual Studio sultion if you running it on Windows, Xcode project if you are on macOS or Code::Blocks project if you are on Linux. If you are on Windows, Visual Studio will running with your new project. If you are on macOS, Xcode will running with your new project. If you are on Linux, Code::Blocks will running with your project.
 

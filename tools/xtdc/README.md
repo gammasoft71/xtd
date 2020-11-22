@@ -2,7 +2,7 @@
 
 xtdc is project management command line tool.
 
-xttdc can create a new project on many templates.
+xtdc can create a new project on many templates.
 
 xtdc can build, open, run, install, test or uninstall an existing project.
 
