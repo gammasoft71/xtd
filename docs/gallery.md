@@ -18,9 +18,9 @@ ________________________________________________________________________________
 
 ______________________________________________________________________________________________
 
-[![stopwatch](pictures/stopwatch.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/stopwatch_forms/README.md)
+[![stopwatch](pictures/stopwatch.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/stopwatch_form/README.md)
 
-[stopwatch (on Windows)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/stopwatch_forms/README.md)
+[stopwatch (on Windows)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/stopwatch_form/README.md)
 
 ______________________________________________________________________________________________
 
