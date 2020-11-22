@@ -51,6 +51,8 @@ xtdc contians many project template. All project listed below are created with C
 
 ## Create and run a xtd GUI application project
 
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
 ```bash
 xtdc new gui my_xtd_project
 cd my_xtd_project
@@ -68,6 +70,8 @@ xtdc run
 
 ## Create and open an objective-c console application project
 
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
 ```bash
 xtdc new console --sdk objective-c my_objective_c_project
 cd my_objective_c_project
@@ -75,6 +79,8 @@ xtdc open
 ```
 
 ## Create and test a xtd unit test application project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
 ```bash
 xtdc new test my_xtd_unit_test_project
