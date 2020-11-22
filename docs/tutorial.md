@@ -2,7 +2,7 @@
 
 This is [xtd](https://github.com/gammasoft71/xtd) tutorial for the [C++](c++.md) programming language. [xtd](https://github.com/gammasoft71/xtd) is a cross platform toolkit or framework for creating [C++](c++.md) GUI applications. After reading this tutorial, you will be able to program non trivial [xtd](https://github.com/gammasoft71/xtd) applications.
 
-Table of contents
+# Table of contents
 
 * [Introduction to xtd](introduction.md)
 * [console classes](console_classes.md)
@@ -18,7 +18,7 @@ Table of contents
 * [custom_controls](custom_controls.md)
 * [tetris](tetris.md)
 
-xtd
+# xtd
 
 * [xtd.core](https://github.com/gammasoft71/xtd) is a library for creating [C++](c++.md) console applications.
 * [xtd.forms](https://github.com/gammasoft71/xtd) is a GUI (Graphical User Interface) toolkit for creating [C++](c++.md) applications.
