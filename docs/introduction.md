@@ -1,10 +1,17 @@
-| [Home](home.md) | [Downloads](downloads.md) | [Examples](examples.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd_forms) | [Project](https://sourceforge.net/projects/formspro/) | [Contact](contact.md) | [Gammasoft](https://gammasoft71.wixsite.com/gammasoft) |
+| [Home](home.md) | [Downloads](downloads.md) | [Examples](examples.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Contact](contact.md) | [Gammasoft](https://gammasoft71.wixsite.com/gammasoft) |
 
-This tutorial will introduce you to the programming with the [xtd_forms](https://github.com/gammasoft71/xtd_forms) toolkit.
+This tutorial will introduce you to the programming with the [xtd](https://github.com/gammasoft71/xtd) framework.
 
-# xtd_forms
+# xtd
 
-[xtd_forms](https://github.com/gammasoft71/xtd_forms) is a Graphical User Interface (GUI) toolkit for creating [C++](c++.md) applications. It is an open source and cross-platform toolkit. [xtd_forms](https://github.com/gammasoft71/xtd_forms) applications run on all major OS platforms, including Windows, Linux, and macOS. The project was started by Gammasoft in 2019. [xtd_forms](https://github.com/gammasoft71/xtd_forms) is much more than a toolkit. [xtd_forms](https://github.com/gammasoft71/xtd_forms) is a part of [xtd](https://github.com/gammasoft71/xtd). xtd provides a large variety of classes for handling streams, databases, threads, online help, or application settings. [xtd_forms](https://github.com/gammasoft71/xtd_forms) consists of a large group of controls.
+
+* [xtd.core](https://github.com/gammasoft71/xtd) is a library for creating [C++](c++.md) console applications.
+* [xtd.forms](https://github.com/gammasoft71/xtd) is a GUI (Graphical User Interface) toolkit for creating [C++](c++.md) applications.
+* [xtd.tunit](https://github.com/gammasoft71/xtd) is a  [xUnit](https://en.wikipedia.org/wiki/XUnit) library for creating [C++](c++.md) unit test applications.
+
+[xtd](https://github.com/gammasoft71/xtd) is an open source and cross-platform framework.
+
+[xtd](https://github.com/gammasoft71/xtd) applications run on all major OS platforms, Windows, Linux and macOS.
 
 # The C++ programming language
 
@@ -41,7 +48,7 @@ Python is the most widely used scripting language.
 
 # Multiplatform programming
 
-Today, multiplatform programming is a buzzword. Most languages and libraries want to be multiplatform. xtd_foms was created as a multiplatform tool from the beginning. Most developers choose among these options. If it is possible, they go to the web. Or they can use Qt, wxWidgets, [xtd_forms](https://github.com/gammasoft71/xtd_forms), Swing, or SWT. The Qt library and wxWisgets are the closest competitors to [xtd_forms](https://github.com/gammasoft71/xtd_forms).
+Today, multiplatform programming is a buzzword. Most languages and libraries want to be multiplatform. xtd_foms was created as a multiplatform tool from the beginning. Most developers choose among these options. If it is possible, they go to the web. Or they can use Qt, wxWidgets, [xtd](https://github.com/gammasoft71/xtd), Swing, or SWT. The Qt library and wxWisgets are the closest competitors to [xtd](https://github.com/gammasoft71/xtd).
 
 # Install
 

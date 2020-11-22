@@ -20,9 +20,13 @@ Table of contents
 
 xtd
 
-[xtd.core](https://github.com/gammasoft71/xtd) is a library for creating [C++](c++.md) console applications. It is an open source and cross-platform toolkit. [xtd_forms](https://github.com/gammasoft71/xtd) applications run on all major OS platforms, Windows, Linux, macOS, Android and iOS.
-[xtd.forms](https://github.com/gammasoft71/xtd) is a GUI (Graphical User Interface) toolkit for creating [C++](c++.md) applications. It is an open source and cross-platform toolkit. [xtd_forms](https://github.com/gammasoft71/xtd) applications run on all major OS platforms, Windows, Linux, and macOS.
-[xtd.tunit](https://github.com/gammasoft71/xtd) is a  [xUnit](https://en.wikipedia.org/wiki/XUnit) library for creating [C++](c++.md) unit test applications. It is an open source and cross-platform toolkit. [xtd_forms](https://github.com/gammasoft71/xtd) applications run on all major OS platforms, Windows, Linux, macOS, Android and iOS.
+* [xtd.core](https://github.com/gammasoft71/xtd) is a library for creating [C++](c++.md) console applications.
+* [xtd.forms](https://github.com/gammasoft71/xtd) is a GUI (Graphical User Interface) toolkit for creating [C++](c++.md) applications.
+* [xtd.tunit](https://github.com/gammasoft71/xtd) is a  [xUnit](https://en.wikipedia.org/wiki/XUnit) library for creating [C++](c++.md) unit test applications.
+
+[xtd](https://github.com/gammasoft71/xtd) is an open source and cross-platform framework.
+
+[xtd](https://github.com/gammasoft71/xtd) applications run on all major OS platforms, Windows, Linux and macOS.
 
 ______________________________________________________________________________________________
 
