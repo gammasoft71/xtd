@@ -16,16 +16,22 @@ root
   |    +- tutorials
   |    +- movies
   +- examples
-  |    +- appplication
-  |    +- common_dialogs
-  |    +- components
-  |    +- ...
+  |    +- xtd.forms
+  |    |    +- appplication
+  |    |    +- common_dialogs
+  |    |    +- components
+  |    |    +- ...
+  |    + ...
+  +- resources
+  |    + countries
+  |    + cursors
+  |    + ...
   +- scripts
   |    +- cmake
   |    +- install
-  |    ±- ...
-  ±- src
-  |    +- xtd_forms
+  |    +- ...
+  +- src
+  |    +- xtd.forms
   |    |    +- include
   |    |    |    +- xtd
   |    |    |         +- forms
@@ -40,16 +46,25 @@ root
   |    |              ±- ...
   |    +- ...
   +- tests
-       +- xtd_forma_manual_tests
-       +- xtd_forma_unit_tests
-       |    +- xtd
-       |         +- forms
-       |         |    +- ...
-       |         +- ...
+  |    +- xtd.forms.manual_tests
+  |    +- xtd.forms.unit_tests
+  |    |    +- xtd
+  |    |         +- forms
+  |    |         |    +- ...
+  |    |         +- ...
+  |    +- ...
+  +- themes
+  |    +- gtk4_dark.css
+  |    +- gtk4_light.css
+  |    +- macos10_dark.css
+  |    +- ...
+  +- tools
+       +- guidgen
+       +- xtdc-gui
        +- ...
 ```
 
-**root** folder is the project folder where xtd.forms project was extracted or cloned.
+**root** folder is the project folder where xtd project was extracted or cloned.
 
 **root/build** folder contains the build result. This folder is automaticaly create by the install.
 
@@ -61,33 +76,45 @@ root
 
 **root/docs/pictures** folder contains the pictures used to illustrate the markdown documentation and website.
 
-**root/docs/tutorials** folder contains the xtd.forms tutorials.
+**root/docs/tutorials** folder contains the xtd tutorials.
 
-**root/docs/movies** folder contains the movies used to demonstrate how to use xtd.forms.
+**root/docs/movies** folder contains the movies used to demonstrate how to use xtd.
 
-**root/examples** folder contains examples to show how to used xtd.forms libraries.
+**root/examples** folder contains examples to show how to used xtd libraries organized by library and example theme.
+
+**root/resources** folder contains resource files organized by theme.
+
+**root/scripts** folder contains developper helper scripts.
+
+**root/scripts/appveyor** folder contains scripts needed by appveyor CI.
 
 **root/scripts/cmake** folder contains scripts needed by cmake.
 
 **root/scripts/install** folder contains installation scripts.
 
-**root/src** folder contains source files organized by libraries.
+**root/scripts/travis** folder contains scripts needed by travis CI.
+
+**root/src** folder contains source files organized by library.
 
 For each library the hierarchy is identical :
 
-**root/xtd_library_name/include** folder contains include files for xtd_library_name library.
+**root/xtd.library.name/include** folder contains include files for xtd.library_name library.
 
-**root/xtd_library_name/include/namespace1/namespace2/...** folder contains include files for xtd_library_name library organized by namespaces.
+**root/xtd.library.name/include/namespace1/namespace2/...** folder contains include files for xtd.library.name library organized by namespace.
 
-**root/xtd_library_name/src** folder contains source files for xtd_library_name library.
+**root/xtd.library.name/src** folder contains source files for xtd.library.name library.
 
-**root/xtd_library_name/src/namespace1/namespace2/...** folder contains source files for xtd_library_name library organized by namespaces.
+**root/xtd.library.name/src/namespace1/namespace2/...** folder contains source files for xtd.library.name library organized by namespace.
 
-**root/tests** folder contains tests organized by library and test types.
+**root/tests** folder contains tests organized by library and namespaces.
 
-For example, the **root/src/xtd_forms** folder contains xtd.forms library source files and the **root/src/xtd_forms_native_win32** folder contains xtd.forms.native.win32 library source files.
+**root/themes** folder contains default theme files.
 
-For exemple, the **root/tests/xtd_forms_unit_tests** contains xtd_forms library unit tests.
+**root/tools** folder contains xtd tools.
+
+For example, the **root/src/xtd.forms** folder contains xtd library source files and the **root/src/xtd.forms.native.win32** folder contains xtd.forms.native.win32 library source files.
+
+For exemple, the **root/tests/xtd.forms.unit_tests** contains xtd.forms library unit tests.
 
 For example, if a xtd.forms library header file contains :
 
@@ -200,7 +227,7 @@ public:
 class my_control : public xtd::form::control {
 public:
   my_control() = default;
-  my_control(const my_control&) = defuult;
+  my_control(const my_control&) = default;
   my_control& my_control& operator=(const my_control& my_control);
   
   const std::string base_name() const {return this->base_name_;;}  
