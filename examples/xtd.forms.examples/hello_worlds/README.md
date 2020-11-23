@@ -1,8 +1,6 @@
-# xtd.forms "Hello, World!" examples
+# "Hello, World!" examples
 
-[This folder](..) contains all examples used by [xtd::forms](../../src/xtd_forms) docmentation and more.
-
-## Hello World
+[This folder](..) contains xtd.forms "Hello, World!" examples.
 
 * [hello_world_emoticons](hello_world_emoticons/README.md) The classic first application "Hello, World!" with  [xtd::forms::emoticns](../../src/xtd_forms/include/xtd/forms/emoticns.hpp) component.
 * [hello_world_form](hello_world_form/README.md) The classic first application "Hello, World!" with  [xtd::forms::label](../../src/xtd_forms/include/xtd/forms/label.hpp) control.
