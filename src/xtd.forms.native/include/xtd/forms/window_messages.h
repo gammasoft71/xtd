@@ -292,8 +292,6 @@ constexpr int32_t WM_PENWINLAST = 0x038F;
 constexpr int32_t WM_USER = 0x0400;
 // Private Window Messages Stop Here : 0x7FFF;
 
-constexpr int32_t WM_REFLECT = WM_USER + 0x1C00;
-
 // NOTE: Messages available for use by applications.
 constexpr int32_t WM_APP = 0x8000;
 
@@ -327,8 +325,6 @@ constexpr size_t EN_ALIGN_RTL_EC = 0x0701;
 constexpr size_t EN_BEFORE_PASTE = 0x0800;
 constexpr size_t EN_AFTER_PASTE = 0x0801;
 
-constexpr int32_t UDN_DELTAPOS = -722;
-
 template<typename type1_t, typename type2_t>
 uint16_t MAKEWORD(type1_t a, type2_t b) {
   return static_cast<uint16_t>((static_cast<uint16_t>((static_cast<uint32_t>(a)) & 0xff)) | (static_cast<uint16_t>(static_cast<uint16_t>((static_cast<uint32_t>(b)) & 0xff))) << 8);
@@ -360,6 +356,10 @@ inline uint8_t HIBYTE(type_t value) {
 }
 
 #endif
+
+constexpr int32_t WM_REFLECT = WM_USER + 0x1C00;
+
+constexpr int32_t UDN_DELTAPOS = -722;
 
 constexpr int32_t WM_MOUSEENTER = WM_USER + 0x0001;
 
