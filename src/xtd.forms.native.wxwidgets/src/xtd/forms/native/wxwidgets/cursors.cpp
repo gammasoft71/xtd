@@ -7,9 +7,6 @@
 #include <wx/cursor.h>
 #include <wx/image.h>
 
-void __xtd_init_image_handlers__();
-void __xtd_clean_image_handlers__();
-
 using namespace xtd::forms::native;
 
 namespace {
@@ -26,13 +23,11 @@ namespace {
   }
 
   static intptr_t create_cursor_from_resources(const std::string& name, const xtd::drawing::point& hot_spot ) {
-    __xtd_init_image_handlers__();
     if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path(), "cursors", xtd::strings::format("{}{}.png", name, get_os_potfix())))) return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_DEFAULT));
     wxImage image(xtd::io::path::combine(forms_resource_path(), "cursors", xtd::strings::format("{}{}.png", name, get_os_potfix())));
     image.SetOption(wxIMAGE_OPTION_CUR_HOTSPOT_X, hot_spot.x());
     image.SetOption(wxIMAGE_OPTION_CUR_HOTSPOT_Y, hot_spot.y());
     wxCursor* cursor = new wxCursor(image);
-    __xtd_clean_image_handlers__();
     return reinterpret_cast<intptr_t>(cursor);
   }
 }

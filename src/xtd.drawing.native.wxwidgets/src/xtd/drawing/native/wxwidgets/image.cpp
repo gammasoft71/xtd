@@ -2,6 +2,7 @@
 #include <xtd/drawing/native/frame_dimension.h>
 #include <xtd/drawing/native/image_flags.h>
 #include <xtd/drawing/native/image_format.h>
+#include <xtd/drawing/native/toolkit.h>
 #include <xtd/strings.h>
 #include <atomic>
 #include <wx/image.h>
@@ -10,23 +11,6 @@
 
 using namespace xtd;
 using namespace xtd::drawing::native;
-
-std::atomic<uint32_t> __xtd_count_image_handler__ = 0;
-
-void __xtd_init_image_handlers__() {
-  if (__xtd_count_image_handler__ == 0)
-    wxInitAllImageHandlers();
-  ++__xtd_count_image_handler__;
-}
-
-void __xtd_clean_image_handlers__() {
-  /// @todo fix memory leak before activate cleanup...
-  /*
-  --__xtd_count_image_handler__;
-  if (__xtd_count_image_handler__ == 0)
-    wxImage::CleanUpHandlers();
-   */
-}
 
 namespace {
   class StdInputStreamAdapter : public wxInputStream {
@@ -99,23 +83,23 @@ void image::color_palette(intptr_t image, std::vector<argb>& entries, int32_t& f
 }
 
 intptr_t image::create(const std::string& filename) {
-  __xtd_init_image_handlers__();
+  toolkit::initialize(); // Must be first
   return reinterpret_cast<intptr_t>(new wxImage({filename.c_str(), wxMBConvUTF8()}));
 }
 
 intptr_t image::create(std::istream& stream) {
-  __xtd_init_image_handlers__();
+  toolkit::initialize(); // Must be first
   StdInputStreamAdapter std_stream(stream);
   return reinterpret_cast<intptr_t>(new wxImage(std_stream));
 }
 
 intptr_t image::create(const char* const* bits) {
-  __xtd_init_image_handlers__();
+  toolkit::initialize(); // Must be first
   return reinterpret_cast<intptr_t>(new wxImage(bits));
 }
 
 intptr_t image::create(int32_t width, int32_t height) {
-  __xtd_init_image_handlers__();
+  toolkit::initialize(); // Must be first
   wxImage* result = new wxImage(width, height);
   result->InitAlpha();
   for (int y = 0; y < height; y++)
@@ -125,16 +109,16 @@ intptr_t image::create(int32_t width, int32_t height) {
 }
 
 intptr_t image::create(intptr_t image, int32_t width, int32_t height) {
+  toolkit::initialize(); // Must be first
   if (image == 0) return 0;
-  __xtd_init_image_handlers__();
   wxImage* result = new wxImage(*reinterpret_cast<wxImage*>(image));
   result->Rescale(width, height);
   return reinterpret_cast<intptr_t>(result);
 }
 
 intptr_t image::create(intptr_t image, int32_t left, int32_t top, int32_t width, int32_t height) {
+  toolkit::initialize(); // Must be first
   if (image == 0) return 0;
-  __xtd_init_image_handlers__();
   wxImage* result = new wxImage(reinterpret_cast<wxImage*>(image)->GetSubImage({left, top, width, height}));
   return reinterpret_cast<intptr_t>(result);
 }
@@ -142,7 +126,6 @@ intptr_t image::create(intptr_t image, int32_t left, int32_t top, int32_t width,
 void image::destroy(intptr_t image) {
   reinterpret_cast<wxImage*>(image)->Destroy();
   delete reinterpret_cast<wxImage*>(image);
-  __xtd_clean_image_handlers__();
 }
 
 size_t image::flags(intptr_t image) {

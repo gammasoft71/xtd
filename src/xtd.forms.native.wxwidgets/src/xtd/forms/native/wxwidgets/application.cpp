@@ -2,12 +2,13 @@
 #include <unistd.h>
 #endif
 #include <xtd/environment.h>
+#include <xtd/drawing/native/toolkit.h>
+#include <xtd/drawing/native/wx_application.h>
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/window_messages.h>
 #include <xtd/drawing/system_colors.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_application.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_menu.h"
 #include <wx/aboutdlg.h>
 #include <wx/sysopt.h>
@@ -29,6 +30,7 @@ bool __xtd_macos_dark_mode_enabled__();
 
 using namespace std;
 using namespace xtd;
+using namespace xtd::drawing::native;
 using namespace xtd::forms::native;
 
 event<wx_application, delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>> wx_application::message_filter_proc;
@@ -43,11 +45,7 @@ bool application::allow_quit() {
 }
 
 void application::cleanup() {
-  if (wxTheApp) {
-    wxTheApp->OnExit();
-    wxApp::SetInstance(nullptr);
-    delete wxTheApp;
-  }
+  drawing::native::toolkit::shutdown(0);
 }
 
 bool application::dark_mode_enabled() {
@@ -123,16 +121,7 @@ void application::exit() {
 }
 
 void application::initialize() {
-  if (wxTheApp) return;
-  //wxDISABLE_DEBUG_SUPPORT();
-  wxDisableAsserts();
-  wxLog::SetLogLevel(wxLOG_Info);
-  wxSystemOptions::SetOption("osx.openfiledialog.always-show-types", 1);
-  wxApp::SetInstance(new wx_application());
-  int argc = 0;
-  wxEntryStart(argc, (wxChar**)nullptr);
-  wxTheApp->CallOnInit();
-  wxTheApp->SetExitOnFrameDelete(false);
+  drawing::native::toolkit::initialize();
 #if defined(__WXMSW__)
   init_dark_mode(__xtd_win32_enable_dark_mode__);
 #elif defined(__WXGTK__)

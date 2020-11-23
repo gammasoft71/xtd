@@ -21,6 +21,7 @@ add_sources(
   include/xtd/xtd.drawing.native.wxwidgets.h
   include/xtd/xtd.drawing.native.wxwidgets
   include/xtd/drawing/native/hdc_wrapper.h
+  include/xtd/drawing/native/wx_application.h
   include/xtd/drawing/native/wx_brush.h
   src/xtd/drawing/native/wxwidgets/brush.cpp
   src/xtd/drawing/native/wxwidgets/font.cpp
@@ -33,6 +34,7 @@ add_sources(
   src/xtd/drawing/native/wxwidgets/system_images.cpp
   src/xtd/drawing/native/wxwidgets/system_images_gtk.cpp
   src/xtd/drawing/native/wxwidgets/system_fonts.cpp
+  src/xtd/drawing/native/wxwidgets/toolkit.cpp
 )
 
 if (APPLE)

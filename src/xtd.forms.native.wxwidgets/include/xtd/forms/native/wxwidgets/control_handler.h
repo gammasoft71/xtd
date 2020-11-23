@@ -7,6 +7,7 @@
 #include <xtd/delegate.h>
 #include <xtd/diagnostics/debug.h>
 #include <xtd/drawing/size.h>
+#include <xtd/drawing/native/wx_application.h>
 #include <xtd/forms/window_messages.h>
 #include <xtd/forms/native/message_keys.h>
 #include <xtd/forms/native/scroll_bar_styles.h>
@@ -29,7 +30,6 @@
 #include <wx/textctrl.h>
 #include <wx/timer.h>
 #include <wx/tglbtn.h>
-#include "wx_application.h"
 #include "wx_menu.h"
 
 namespace xtd {
@@ -370,7 +370,7 @@ namespace xtd {
 
         intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
           if (destroyed_) return 0;
-          if (wx_application::message_filter(hwnd, msg, wparam, lparam, handle)) return call_def_wnd_proc(hwnd, msg, wparam, lparam, 1, handle);
+          if (xtd::drawing::native::wx_application::message_filter(hwnd, msg, wparam, lparam, handle)) return call_def_wnd_proc(hwnd, msg, wparam, lparam, 1, handle);
           if (wnd_proc.is_empty()) return call_def_wnd_proc(hwnd, msg, wparam, lparam, 0, handle);
 
           //return wnd_proc(hwnd, msg, wparam, lparam, handle);
@@ -436,7 +436,7 @@ namespace xtd {
       
       template<typename control_t>
       inline bool control_wrapper<control_t>::ProcessEvent(wxEvent& event) {
-        if (static_cast<wx_application*>(wxTheApp)->exceptionStored) return  process_result_;
+        if (static_cast<xtd::drawing::native::wx_application*>(wxTheApp)->exceptionStored) return  process_result_;
         //diagnostics::debug::write_line_if(event.GetEventType() != wxEVT_UPDATE_UI && event.GetEventType() != wxEVT_IDLE, strings::format("control_wrapper<{}>::ProcessEvent {}", strings::full_class_name<control_t>(), to_string(event)));
         if (event.GetEventType() == wxEVT_DESTROY) {
           //def_process_event(event);

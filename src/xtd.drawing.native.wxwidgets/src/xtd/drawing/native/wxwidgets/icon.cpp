@@ -1,4 +1,5 @@
 #include <xtd/drawing/native/icon.h>
+#include <xtd/drawing/native/toolkit.h>
 #include <xtd/strings.h>
 #include <atomic>
 #include <wx/bitmap.h>
@@ -9,9 +10,6 @@
 
 using namespace xtd;
 using namespace xtd::drawing::native;
-
-void __xtd_init_image_handlers__();
-void __xtd_clean_image_handlers__();
 
 namespace {
  class StdInputStreamAdapter : public wxInputStream {
@@ -62,24 +60,24 @@ namespace {
 }
 
 intptr_t icon::create(const std::string& filename) {
-  __xtd_init_image_handlers__();
+  toolkit::initialize(); // Must be first
   return reinterpret_cast<intptr_t>(new wxIconBundle({filename.c_str(), wxMBConvUTF8()}));
 }
 
 intptr_t icon::create(std::istream& stream) {
-  __xtd_init_image_handlers__();
+  toolkit::initialize(); // Must be first
   StdInputStreamAdapter std_stream(stream);
   return reinterpret_cast<intptr_t>(new wxIconBundle(std_stream));
 }
 
 intptr_t icon::create(const char* const* bits) {
-  __xtd_init_image_handlers__();
+  toolkit::initialize(); // Must be first
   return reinterpret_cast<intptr_t>(new wxIconBundle(wxIcon(bits)));
 }
 
 intptr_t icon::create(intptr_t image) {
+  toolkit::initialize(); // Must be first
   if (image == 0) return 0;
-  __xtd_init_image_handlers__();
   wxIconBundle* result = new wxIconBundle;
   wxIcon icon;
   icon.CopyFromBitmap(wxBitmap(*reinterpret_cast<wxImage*>(image)));
@@ -88,15 +86,14 @@ intptr_t icon::create(intptr_t image) {
 }
 
 intptr_t icon::create(intptr_t icon, int32_t width, int32_t height) {
+  toolkit::initialize(); // Must be first
   if (icon == 0) return 0;
-  __xtd_init_image_handlers__();
   wxIconBundle* result = new wxIconBundle(reinterpret_cast<wxIconBundle*>(icon)->GetIcon({width, height}));
   return reinterpret_cast<intptr_t>(result);
 }
 
 void icon::destroy(intptr_t icon) {
   delete reinterpret_cast<wxImage*>(icon);
-  __xtd_clean_image_handlers__();
 }
 
 void icon::save(intptr_t icon, const std::string& filename) {
