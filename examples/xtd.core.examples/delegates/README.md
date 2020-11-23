@@ -6,4 +6,4 @@
 * [delegate_lambda](delegate_lambda/README.md) shows how to use [xtd::delegate](../../../src/xtd.core/include/xtd/delegate.h) class.
 * [delegate_member_method](delegate_member_method/README.md) shows how to use [xtd::delegate](../../../src/xtd.core/include/xtd/delegate.h) class.
 * [delegate_multicast](delegate_multicast/README.md) shows how to use [xtd::delegate](../../../src/xtd.core/include/xtd/delegate.h) class.
-* [eventt](event/README.md) shows how to use [xtd::event](../../../src/xtd.core/include/xtd/event.h) class.
+* [event](event/README.md) shows how to use [xtd::event](../../../src/xtd.core/include/xtd/event.h) class.
