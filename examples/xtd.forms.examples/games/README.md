@@ -1,6 +1,6 @@
-# xtd_forms games examples
+# Games examples
 
-[This folder](..) contains all examples used by [xtd::forms](../../src/xtd_forms) docmentation and more.
+[This folder](..) contains xtd.forms game examples.
 
 ## Games
 

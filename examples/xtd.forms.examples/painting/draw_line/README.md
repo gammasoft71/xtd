@@ -1,6 +1,6 @@
 # draw_line
 
-The classic first application "Hello, Wrold!" with GDI+ drawing objects.
+This example shows how to draw line with [xtd::drawing::graphics](../../../../src/xtd.drawing/include/xtd/drawing/graphics.h) class.
 
 # Sources
 
