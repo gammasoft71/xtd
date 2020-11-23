@@ -1,6 +1,6 @@
 # splitter
 
-demonstrates the use of [xtd::forms::splitter](../../../src/xtd_forms/include/xtd/forms/splitter.hpp) control.
+demonstrates the use of [xtd::forms::splitter](../../../../src/xtd_forms/include/xtd/forms/splitter.hpp) control.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/splitter_w.png)
+![Screenshot](../../../../docs/pictures/examples/splitter_w.png)
 
-![Screenshot](../../../docs/pictures/examples/splitter_wd.png)
+![Screenshot](../../../../docs/pictures/examples/splitter_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/splitter_m.png)
+![Screenshot](../../../../docs/pictures/examples/splitter_m.png)
 
-![Screenshot](../../../docs/pictures/examples/splitter_md.png)
+![Screenshot](../../../../docs/pictures/examples/splitter_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/splitter_g.png)
+![Screenshot](../../../../docs/pictures/examples/splitter_g.png)
 
-![Screenshot](../../../docs/pictures/examples/splitter_gd.png)
+![Screenshot](../../../../docs/pictures/examples/splitter_gd.png)

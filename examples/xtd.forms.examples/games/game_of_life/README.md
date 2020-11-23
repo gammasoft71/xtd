@@ -53,18 +53,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/game_of_life_w.png)
+![Screenshot](../../../../docs/pictures/examples/game_of_life_w.png)
 
-![Screenshot](../../../docs/pictures/examples/game_of_life_wd.png)
+![Screenshot](../../../../docs/pictures/examples/game_of_life_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/game_of_life_m.png)
+![Screenshot](../../../../docs/pictures/examples/game_of_life_m.png)
 
-![Screenshot](../../../docs/pictures/examples/game_of_life_md.png)
+![Screenshot](../../../../docs/pictures/examples/game_of_life_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/game_of_life_g.png)
+![Screenshot](../../../../docs/pictures/examples/game_of_life_g.png)
 
-![Screenshot](../../../docs/pictures/examples/game_of_life_gd.png)
+![Screenshot](../../../../docs/pictures/examples/game_of_life_gd.png)

@@ -167,8 +167,8 @@
 * [enable_changed_event](events/enable_changed_event/README.md) demonstrates the use of [enable_changed](../../src/xtd.forms/include/xtd/forms/control.h) event.
 * [font_changed_event](events/font_changed_event/README.md) demonstrates the use of [font_changed](../../src/xtd.forms/include/xtd/forms/control.h) event.
 * [form_click](events/form_click/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) control and [click](../../src/xtd.forms/include/xtd/forms/control.h) event.
-* [form_and_messages](events/form_and_messages/README.md) demonstrates some events received by [xtd::forms::form](../../../src/xtd.forms/include/xtd/forms/form.h).
-* [form_paint](events/form_paint/README.md) demonstrates paint event with [xtd::forms::form](../../../src/xtd.forms/include/xtd/forms/form.h).
+* [form_and_messages](events/form_and_messages/README.md) demonstrates some events received by [xtd::forms::form](../../../../src/xtd.forms/include/xtd/forms/form.h).
+* [form_paint](events/form_paint/README.md) demonstrates paint event with [xtd::forms::form](../../../../src/xtd.forms/include/xtd/forms/form.h).
 * [wnd_proc](events/wnd_proc/README.md) demonstrates the use of [wnd_proc](../../src/xtd.forms/include/xtd/forms/control.h) method.
 
 ## [Others](others/README.md)
@@ -181,11 +181,11 @@
 * [clock](others/clock/README.md) demonstrates the use of [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
 * [colored_forms](others/colored_forms/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) control and xtd::drawing::color class.
 * [colored_tab_pages](others/colored_tab_pages/README.md) demonstrates the use of [xtd::forms::tab_control](../../src/xtd.forms/include/xtd/forms/tab_control.h) and colored [xtd::forms::tab_page](../../src/xtd.forms/include/xtd/forms/tab_page.h) controls.
-* [colors](others/colors/README.md) demonstrates the use of [xtd::forms::user_control](../../../src/xtd.forms/include/xtd/forms/user_control.h) control with xtd::drawing::color.
+* [colors](others/colors/README.md) demonstrates the use of [xtd::forms::user_control](../../../../src/xtd.forms/include/xtd/forms/user_control.h) control with xtd::drawing::color.
 * [docked_panels](others/docked_panels/README.md) demonstrates the use of [xtd::forms::panel](../../src/xtd.forms/include/xtd/forms/panel.h) container with [xtd::forms::dock_style](../../src/xtd.forms/include/xtd/forms/dock_style.h).
 * [font_family](others/font_family/README.md) demonstrates the use of xtd::drawing::font_family class.
 * [form_and_main](others/form_and_main/README.md) demonstrates how to use startup_ keyword.
-* [form_and_thread](others/form_and_thread/README.md) demonstrates how a thread can update ui with [xtd::forms::control::invoke](../../../src/xtd.forms/include/xtd/forms/form.h) method.
+* [form_and_thread](others/form_and_thread/README.md) demonstrates how a thread can update ui with [xtd::forms::control::invoke](../../../../src/xtd.forms/include/xtd/forms/form.h) method.
 * [form_window_state](others/form_window_state/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) window state.
 * [form2](others/form2/README.md) represents a window or dialog box that makes up an application's user interface.
 * [group_box_and_check_box](others/group_box_and_check_box/README.md) demonstrates the use of [xtd::forms::group_box](../../src/xtd.forms/include/xtd/forms/button.h) container and [xtd::forms::check_box](../../src/xtd.forms/include/xtd/forms/check_box.h) control.

@@ -1,6 +1,6 @@
 # sixteen_segment_display
 
-demonstrates how to use [xtd::forms::sixteen_segment_display](../../../src/xtd_forms/include/xtd/forms/sixteen_segment_display.hpp) control.
+demonstrates how to use [xtd::forms::sixteen_segment_display](../../../../src/xtd_forms/include/xtd/forms/sixteen_segment_display.hpp) control.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/sixteen_segment_display_w.png)
+![Screenshot](../../../../docs/pictures/examples/sixteen_segment_display_w.png)
 
-![Screenshot](../../../docs/pictures/examples/sixteen_segment_display_wd.png)
+![Screenshot](../../../../docs/pictures/examples/sixteen_segment_display_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/sixteen_segment_display_m.png)
+![Screenshot](../../../../docs/pictures/examples/sixteen_segment_display_m.png)
 
-![Screenshot](../../../docs/pictures/examples/sixteen_segment_display_md.png)
+![Screenshot](../../../../docs/pictures/examples/sixteen_segment_display_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/sixteen_segment_display_g.png)
+![Screenshot](../../../../docs/pictures/examples/sixteen_segment_display_g.png)
 
-![Screenshot](../../../docs/pictures/examples/sixteen_segment_display_gd.png)
+![Screenshot](../../../../docs/pictures/examples/sixteen_segment_display_gd.png)

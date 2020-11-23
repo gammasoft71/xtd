@@ -1,6 +1,6 @@
 # dot_matrix_display
 
-demonstrates how to use [xtd::forms::dot_matrix_display](../../../src/xtd_forms/include/xtd/forms/dot_matrix_display.hpp) control.
+demonstrates how to use [xtd::forms::dot_matrix_display](../../../../src/xtd_forms/include/xtd/forms/dot_matrix_display.hpp) control.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/dot_matrix_display_w.png)
+![Screenshot](../../../../docs/pictures/examples/dot_matrix_display_w.png)
 
-![Screenshot](../../../docs/pictures/examples/dot_matrix_display_wd.png)
+![Screenshot](../../../../docs/pictures/examples/dot_matrix_display_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/dot_matrix_display_m.png)
+![Screenshot](../../../../docs/pictures/examples/dot_matrix_display_m.png)
 
-![Screenshot](../../../docs/pictures/examples/dot_matrix_display_md.png)
+![Screenshot](../../../../docs/pictures/examples/dot_matrix_display_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/dot_matrix_display_g.png)
+![Screenshot](../../../../docs/pictures/examples/dot_matrix_display_g.png)
 
-![Screenshot](../../../docs/pictures/examples/dot_matrix_display_gd.png)
+![Screenshot](../../../../docs/pictures/examples/dot_matrix_display_gd.png)

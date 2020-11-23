@@ -1,6 +1,6 @@
 # label
 
-demonstrates the use of [xtd::forms::label](../../../src/xtd_forms/include/xtd/forms/label.hpp) control.
+demonstrates the use of [xtd::forms::label](../../../../src/xtd_forms/include/xtd/forms/label.hpp) control.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/label_w.png)
+![Screenshot](../../../../docs/pictures/examples/label_w.png)
 
-![Screenshot](../../../docs/pictures/examples/label_wd.png)
+![Screenshot](../../../../docs/pictures/examples/label_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/label_m.png)
+![Screenshot](../../../../docs/pictures/examples/label_m.png)
 
-![Screenshot](../../../docs/pictures/examples/label_md.png)
+![Screenshot](../../../../docs/pictures/examples/label_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/label_g.png)
+![Screenshot](../../../../docs/pictures/examples/label_g.png)
 
-![Screenshot](../../../docs/pictures/examples/label_gd.png)
+![Screenshot](../../../../docs/pictures/examples/label_gd.png)

@@ -1,6 +1,6 @@
 # hello_world_label
 
-The classic first application "Hello, World!" with  [xtd::forms::label](../../../src/xtd_forms/include/xtd/forms/label.hpp) control.
+The classic first application "Hello, World!" with  [xtd::forms::label](../../../../src/xtd_forms/include/xtd/forms/label.hpp) control.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/hello_world_label_w.png)
+![Screenshot](../../../../docs/pictures/examples/hello_world_label_w.png)
 
-![Screenshot](../../../docs/pictures/examples/hello_world_label_wd.png)
+![Screenshot](../../../../docs/pictures/examples/hello_world_label_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/hello_world_label_m.png)
+![Screenshot](../../../../docs/pictures/examples/hello_world_label_m.png)
 
-![Screenshot](../../../docs/pictures/examples/hello_world_label_md.png)
+![Screenshot](../../../../docs/pictures/examples/hello_world_label_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/hello_world_label_g.png)
+![Screenshot](../../../../docs/pictures/examples/hello_world_label_g.png)
 
-![Screenshot](../../../docs/pictures/examples/hello_world_label_gd.png)
+![Screenshot](../../../../docs/pictures/examples/hello_world_label_gd.png)

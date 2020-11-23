@@ -1,6 +1,6 @@
 # hello_world_message_box
 
-The classic first application "Hello, World!" with  [xtd::forms::message_box](../../../src/xtd_forms/include/xtd/forms/message_box.hpp) control.
+The classic first application "Hello, World!" with  [xtd::forms::message_box](../../../../src/xtd_forms/include/xtd/forms/message_box.hpp) control.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/hello_world_message_box_w.png)
+![Screenshot](../../../../docs/pictures/examples/hello_world_message_box_w.png)
 
-![Screenshot](../../../docs/pictures/examples/hello_world_message_box_wd.png)
+![Screenshot](../../../../docs/pictures/examples/hello_world_message_box_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/hello_world_message_box_m.png)
+![Screenshot](../../../../docs/pictures/examples/hello_world_message_box_m.png)
 
-![Screenshot](../../../docs/pictures/examples/hello_world_message_box_md.png)
+![Screenshot](../../../../docs/pictures/examples/hello_world_message_box_md.png)
 
 ## Linux Gnome :
 
-![Screenshot](../../../docs/pictures/examples/hello_world_message_box_g.png)
+![Screenshot](../../../../docs/pictures/examples/hello_world_message_box_g.png)
 
-![Screenshot](../../../docs/pictures/examples/hello_world_message_box_gd.png)
+![Screenshot](../../../../docs/pictures/examples/hello_world_message_box_gd.png)

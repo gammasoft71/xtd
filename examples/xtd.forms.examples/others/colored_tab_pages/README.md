@@ -1,6 +1,6 @@
 # colored_tab_pages
 
-demonstrates the use of [xtd::forms::tab_page](../../../src/xtd_forms/include/xtd/forms/tab_page.hpp) control with unicode text.
+demonstrates the use of [xtd::forms::tab_page](../../../../src/xtd_forms/include/xtd/forms/tab_page.hpp) control with unicode text.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/colored_tab_pages_w.png)
+![Screenshot](../../../../docs/pictures/examples/colored_tab_pages_w.png)
 
-![Screenshot](../../../docs/pictures/examples/colored_tab_pages_wd.png)
+![Screenshot](../../../../docs/pictures/examples/colored_tab_pages_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/colored_tab_pages_m.png)
+![Screenshot](../../../../docs/pictures/examples/colored_tab_pages_m.png)
 
-![Screenshot](../../../docs/pictures/examples/colored_tab_pages_md.png)
+![Screenshot](../../../../docs/pictures/examples/colored_tab_pages_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/colored_tab_pages_g.png)
+![Screenshot](../../../../docs/pictures/examples/colored_tab_pages_g.png)
 
-![Screenshot](../../../docs/pictures/examples/colored_tab_pages_gd.png)
+![Screenshot](../../../../docs/pictures/examples/colored_tab_pages_gd.png)

@@ -1,6 +1,6 @@
 # choice
 
-demonstrates the use of [xtd::forms::choice](../../../src/xtd_forms/include/xtd/forms/choice.hpp) control.
+demonstrates the use of [xtd::forms::choice](../../../../src/xtd_forms/include/xtd/forms/choice.hpp) control.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/choice_w.png)
+![Screenshot](../../../../docs/pictures/examples/choice_w.png)
 
-![Screenshot](../../../docs/pictures/examples/choice_wd.png)
+![Screenshot](../../../../docs/pictures/examples/choice_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/choice_m.png)
+![Screenshot](../../../../docs/pictures/examples/choice_m.png)
 
-![Screenshot](../../../docs/pictures/examples/choice_md.png)
+![Screenshot](../../../../docs/pictures/examples/choice_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/choice_g.png)
+![Screenshot](../../../../docs/pictures/examples/choice_g.png)
 
-![Screenshot](../../../docs/pictures/examples/choice_gd.png)
+![Screenshot](../../../../docs/pictures/examples/choice_gd.png)

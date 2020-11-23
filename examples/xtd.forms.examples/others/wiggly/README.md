@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/wiggly_w.png)
+![Screenshot](../../../../docs/pictures/examples/wiggly_w.png)
 
-![Screenshot](../../../docs/pictures/examples/wiggly_wd.png)
+![Screenshot](../../../../docs/pictures/examples/wiggly_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/wiggly_m.png)
+![Screenshot](../../../../docs/pictures/examples/wiggly_m.png)
 
-![Screenshot](../../../docs/pictures/examples/wiggly_md.png)
+![Screenshot](../../../../docs/pictures/examples/wiggly_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/wiggly_g.png)
+![Screenshot](../../../../docs/pictures/examples/wiggly_g.png)
 
-![Screenshot](../../../docs/pictures/examples/wiggly_gd.png)
+![Screenshot](../../../../docs/pictures/examples/wiggly_gd.png)

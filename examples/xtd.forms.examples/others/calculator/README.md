@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/calculator_w.png)
+![Screenshot](../../../../docs/pictures/examples/calculator_w.png)
 
-![Screenshot](../../../docs/pictures/examples/calculator_wd.png)
+![Screenshot](../../../../docs/pictures/examples/calculator_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/calculator_m.png)
+![Screenshot](../../../../docs/pictures/examples/calculator_m.png)
 
-![Screenshot](../../../docs/pictures/examples/calculator_md.png)
+![Screenshot](../../../../docs/pictures/examples/calculator_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/calculator_g.png)
+![Screenshot](../../../../docs/pictures/examples/calculator_g.png)
 
-![Screenshot](../../../docs/pictures/examples/calculator_gd.png)
+![Screenshot](../../../../docs/pictures/examples/calculator_gd.png)

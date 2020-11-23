@@ -1,6 +1,6 @@
 # text_box_password2
 
-demonstrates the use of [xtd::forms::text_box_password](../../../src/xtd_forms/include/xtd/forms/text_box_password.hpp) control.
+demonstrates the use of [xtd::forms::text_box_password](../../../../src/xtd_forms/include/xtd/forms/text_box_password.hpp) control.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/text_box_password2_w.png)
+![Screenshot](../../../../docs/pictures/examples/text_box_password2_w.png)
 
-![Screenshot](../../../docs/pictures/examples/text_box_password2_wd.png)
+![Screenshot](../../../../docs/pictures/examples/text_box_password2_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/text_box_password2_m.png)
+![Screenshot](../../../../docs/pictures/examples/text_box_password2_m.png)
 
-![Screenshot](../../../docs/pictures/examples/text_box_password2_md.png)
+![Screenshot](../../../../docs/pictures/examples/text_box_password2_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/text_box_password2_g.png)
+![Screenshot](../../../../docs/pictures/examples/text_box_password2_g.png)
 
-![Screenshot](../../../docs/pictures/examples/text_box_password2_gd.png)
+![Screenshot](../../../../docs/pictures/examples/text_box_password2_gd.png)

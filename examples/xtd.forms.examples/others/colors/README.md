@@ -1,6 +1,6 @@
 # colors
 
-demonstrates the use of [xtd::forms::user_control](../../../src/xtd_forms/include/xtd/forms/user_control.hpp) control with xtd::drawing::color.
+demonstrates the use of [xtd::forms::user_control](../../../../src/xtd_forms/include/xtd/forms/user_control.hpp) control with xtd::drawing::color.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/colors_w.png)
+![Screenshot](../../../../docs/pictures/examples/colors_w.png)
 
-![Screenshot](../../../docs/pictures/examples/colors_wd.png)
+![Screenshot](../../../../docs/pictures/examples/colors_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/colors_m.png)
+![Screenshot](../../../../docs/pictures/examples/colors_m.png)
 
-![Screenshot](../../../docs/pictures/examples/colors_md.png)
+![Screenshot](../../../../docs/pictures/examples/colors_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/colors_g.png)
+![Screenshot](../../../../docs/pictures/examples/colors_g.png)
 
-![Screenshot](../../../docs/pictures/examples/colors_gd.png)
+![Screenshot](../../../../docs/pictures/examples/colors_gd.png)

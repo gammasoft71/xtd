@@ -1,6 +1,6 @@
 # message_box
 
-demonstrates the use of [xtd::forms::message_box](../../../src/xtd_forms/include/xtd/forms/message_box.hpp) dialog.
+demonstrates the use of [xtd::forms::message_box](../../../../src/xtd_forms/include/xtd/forms/message_box.hpp) dialog.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/message_box_w.png)
+![Screenshot](../../../../docs/pictures/examples/message_box_w.png)
 
-![Screenshot](../../../docs/pictures/examples/message_box_wd.png)
+![Screenshot](../../../../docs/pictures/examples/message_box_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/message_box_m.png)
+![Screenshot](../../../../docs/pictures/examples/message_box_m.png)
 
-![Screenshot](../../../docs/pictures/examples/message_box_md.png)
+![Screenshot](../../../../docs/pictures/examples/message_box_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/message_box_g.png)
+![Screenshot](../../../../docs/pictures/examples/message_box_g.png)
 
-![Screenshot](../../../docs/pictures/examples/message_box_gd.png)
+![Screenshot](../../../../docs/pictures/examples/message_box_gd.png)

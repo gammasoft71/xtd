@@ -1,6 +1,6 @@
 # message_dialog_show_sheet
 
-demonstrates the use of [xtd::forms::message_dialog](../../../src/xtd_forms/include/xtd/forms/message_dialog.hpp) dialog.
+demonstrates the use of [xtd::forms::message_dialog](../../../../src/xtd_forms/include/xtd/forms/message_dialog.hpp) dialog.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/message_dialog_show_sheet_w.png)
+![Screenshot](../../../../docs/pictures/examples/message_dialog_show_sheet_w.png)
 
-![Screenshot](../../../docs/pictures/examples/message_dialog_show_sheet_wd.png)
+![Screenshot](../../../../docs/pictures/examples/message_dialog_show_sheet_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/message_dialog_show_sheet_m.png)
+![Screenshot](../../../../docs/pictures/examples/message_dialog_show_sheet_m.png)
 
-![Screenshot](../../../docs/pictures/examples/message_dialog_show_sheet_md.png)
+![Screenshot](../../../../docs/pictures/examples/message_dialog_show_sheet_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/message_dialog_show_sheet_g.png)
+![Screenshot](../../../../docs/pictures/examples/message_dialog_show_sheet_g.png)
 
-![Screenshot](../../../docs/pictures/examples/message_dialog_show_sheet_gd.png)
+![Screenshot](../../../../docs/pictures/examples/message_dialog_show_sheet_gd.png)

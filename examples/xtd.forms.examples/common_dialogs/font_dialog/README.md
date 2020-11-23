@@ -1,6 +1,6 @@
 # font_dialog
 
-demonstrates the use of [xtd::forms::font_dialog](../../../src/xtd_forms/include/xtd/forms/font_dialog.hpp) dialog.
+demonstrates the use of [xtd::forms::font_dialog](../../../../src/xtd_forms/include/xtd/forms/font_dialog.hpp) dialog.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/font_dialog_w.png)
+![Screenshot](../../../../docs/pictures/examples/font_dialog_w.png)
 
-![Screenshot](../../../docs/pictures/examples/font_dialog_wd.png)
+![Screenshot](../../../../docs/pictures/examples/font_dialog_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/font_dialog_m.png)
+![Screenshot](../../../../docs/pictures/examples/font_dialog_m.png)
 
-![Screenshot](../../../docs/pictures/examples/font_dialog_md.png)
+![Screenshot](../../../../docs/pictures/examples/font_dialog_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/font_dialog_g.png)
+![Screenshot](../../../../docs/pictures/examples/font_dialog_g.png)
 
-![Screenshot](../../../docs/pictures/examples/font_dialog_gd.png)
+![Screenshot](../../../../docs/pictures/examples/font_dialog_gd.png)

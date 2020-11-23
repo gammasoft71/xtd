@@ -1,6 +1,6 @@
 # clock
 
-demonstrates the use of [xtd::forms::lcd_label](../../../src/xtd_forms/include/xtd/forms/lcd_label.hpp) control.
+demonstrates the use of [xtd::forms::lcd_label](../../../../src/xtd_forms/include/xtd/forms/lcd_label.hpp) control.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/clock_w.png)
+![Screenshot](../../../../docs/pictures/examples/clock_w.png)
 
-![Screenshot](../../../docs/pictures/examples/clock_wd.png)
+![Screenshot](../../../../docs/pictures/examples/clock_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/clock_m.png)
+![Screenshot](../../../../docs/pictures/examples/clock_m.png)
 
-![Screenshot](../../../docs/pictures/examples/clock_md.png)
+![Screenshot](../../../../docs/pictures/examples/clock_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/clock_g.png)
+![Screenshot](../../../../docs/pictures/examples/clock_g.png)
 
-![Screenshot](../../../docs/pictures/examples/clock_gd.png)
+![Screenshot](../../../../docs/pictures/examples/clock_gd.png)

@@ -1,6 +1,6 @@
 # send_message_to_form
 
-demonstrates some events received by [form](../../../src/xtd_forms/include/xtd/forms/form.hpp).
+demonstrates some events received by [form](../../../../src/xtd_forms/include/xtd/forms/form.hpp).
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/send_message_to_form_w.png)
+![Screenshot](../../../../docs/pictures/examples/send_message_to_form_w.png)
 
-![Screenshot](../../../docs/pictures/examples/send_message_to_form_wd.png)
+![Screenshot](../../../../docs/pictures/examples/send_message_to_form_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/send_message_to_form_m.png)
+![Screenshot](../../../../docs/pictures/examples/send_message_to_form_m.png)
 
-![Screenshot](../../../docs/pictures/examples/send_message_to_form_md.png)
+![Screenshot](../../../../docs/pictures/examples/send_message_to_form_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/send_message_to_form_g.png)
+![Screenshot](../../../../docs/pictures/examples/send_message_to_form_g.png)
 
-![Screenshot](../../../docs/pictures/examples/send_message_to_form_gd.png)
+![Screenshot](../../../../docs/pictures/examples/send_message_to_form_gd.png)

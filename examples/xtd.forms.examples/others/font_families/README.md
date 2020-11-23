@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/font_families_w.png)
+![Screenshot](../../../../docs/pictures/examples/font_families_w.png)
 
-![Screenshot](../../../docs/pictures/examples/font_families_wd.png)
+![Screenshot](../../../../docs/pictures/examples/font_families_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/font_families_m.png)
+![Screenshot](../../../../docs/pictures/examples/font_families_m.png)
 
-![Screenshot](../../../docs/pictures/examples/font_families_md.png)
+![Screenshot](../../../../docs/pictures/examples/font_families_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/font_families_g.png)
+![Screenshot](../../../../docs/pictures/examples/font_families_g.png)
 
-![Screenshot](../../../docs/pictures/examples/font_families_gd.png)
+![Screenshot](../../../../docs/pictures/examples/font_families_gd.png)

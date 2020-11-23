@@ -1,6 +1,6 @@
 # line
 
-demonstrates how to create a custom control with [xtd::forms::user_control](../../../src/xtd_forms/include/xtd/forms/user_control.hpp) control.
+demonstrates how to create a custom control with [xtd::forms::user_control](../../../../src/xtd_forms/include/xtd/forms/user_control.hpp) control.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/line_w.png)
+![Screenshot](../../../../docs/pictures/examples/line_w.png)
 
-![Screenshot](../../../docs/pictures/examples/line_wd.png)
+![Screenshot](../../../../docs/pictures/examples/line_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/line_m.png)
+![Screenshot](../../../../docs/pictures/examples/line_m.png)
 
-![Screenshot](../../../docs/pictures/examples/line_md.png)
+![Screenshot](../../../../docs/pictures/examples/line_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/line_g.png)
+![Screenshot](../../../../docs/pictures/examples/line_g.png)
 
-![Screenshot](../../../docs/pictures/examples/line_gd.png)
+![Screenshot](../../../../docs/pictures/examples/line_gd.png)

@@ -1,6 +1,6 @@
 # button_renderer
 
-demonstrates the use of [xtd::forms::button_renderer](../../../src/xtd_forms/include/xtd/forms/button_renderer.hpp) control.
+demonstrates the use of [xtd::forms::button_renderer](../../../../src/xtd_forms/include/xtd/forms/button_renderer.hpp) control.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/button_renderer_w.png)
+![Screenshot](../../../../docs/pictures/examples/button_renderer_w.png)
 
-![Screenshot](../../../docs/pictures/examples/button_renderer_wd.png)
+![Screenshot](../../../../docs/pictures/examples/button_renderer_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/button_renderer_m.png)
+![Screenshot](../../../../docs/pictures/examples/button_renderer_m.png)
 
-![Screenshot](../../../docs/pictures/examples/button_renderer_md.png)
+![Screenshot](../../../../docs/pictures/examples/button_renderer_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/button_renderer_g.png)
+![Screenshot](../../../../docs/pictures/examples/button_renderer_g.png)
 
-![Screenshot](../../../docs/pictures/examples/button_renderer_gd.png)
+![Screenshot](../../../../docs/pictures/examples/button_renderer_gd.png)

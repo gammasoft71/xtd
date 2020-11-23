@@ -1,6 +1,6 @@
 # form_window_state
 
-demonstrates the use of [xtd::forms::form](../../../src/xtd_forms/include/xtd/forms/form.hpp) window state.
+demonstrates the use of [xtd::forms::form](../../../../src/xtd_forms/include/xtd/forms/form.hpp) window state.
 
 # Sources
 
@@ -20,16 +20,16 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/form_window_state_w.png)
+![Screenshot](../../../../docs/pictures/examples/form_window_state_w.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/form_window_state_m.png)
+![Screenshot](../../../../docs/pictures/examples/form_window_state_m.png)
 
-![Screenshot](../../../docs/pictures/examples/form_window_state_md.png)
+![Screenshot](../../../../docs/pictures/examples/form_window_state_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/form_window_state_g.png)
+![Screenshot](../../../../docs/pictures/examples/form_window_state_g.png)
 
-![Screenshot](../../../docs/pictures/examples/form_window_state_gd.png)
+![Screenshot](../../../../docs/pictures/examples/form_window_state_gd.png)

@@ -1,6 +1,6 @@
 # timer
 
-demonstrates the use of [xtd::forms::timer](../../../src/xtd_forms/include/xtd/forms/timer.hpp) component.
+demonstrates the use of [xtd::forms::timer](../../../../src/xtd_forms/include/xtd/forms/timer.hpp) component.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/timer_w.png)
+![Screenshot](../../../../docs/pictures/examples/timer_w.png)
 
-![Screenshot](../../../docs/pictures/examples/timer_wd.png)
+![Screenshot](../../../../docs/pictures/examples/timer_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/timer_m.png)
+![Screenshot](../../../../docs/pictures/examples/timer_m.png)
 
-![Screenshot](../../../docs/pictures/examples/timer_md.png)
+![Screenshot](../../../../docs/pictures/examples/timer_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/timer_g.png)
+![Screenshot](../../../../docs/pictures/examples/timer_g.png)
 
-![Screenshot](../../../docs/pictures/examples/timer_gd.png)
+![Screenshot](../../../../docs/pictures/examples/timer_gd.png)

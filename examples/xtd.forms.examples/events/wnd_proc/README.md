@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/wnd_proc_w.png)
+![Screenshot](../../../../docs/pictures/examples/wnd_proc_w.png)
 
-![Screenshot](../../../docs/pictures/examples/wnd_proc_wd.png)
+![Screenshot](../../../../docs/pictures/examples/wnd_proc_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/wnd_proc_m.png)
+![Screenshot](../../../../docs/pictures/examples/wnd_proc_m.png)
 
-![Screenshot](../../../docs/pictures/examples/wnd_proc_md.png)
+![Screenshot](../../../../docs/pictures/examples/wnd_proc_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/wnd_proc_g.png)
+![Screenshot](../../../../docs/pictures/examples/wnd_proc_g.png)
 
-![Screenshot](../../../docs/pictures/examples/wnd_proc_gd.png)
+![Screenshot](../../../../docs/pictures/examples/wnd_proc_gd.png)

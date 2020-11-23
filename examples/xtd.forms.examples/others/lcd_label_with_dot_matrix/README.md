@@ -1,6 +1,6 @@
 # lcd_label_with_dot_matrix
 
-demonstrates how to use [xtd::forms::lcd_label_with_dot_matrix](../../../src/xtd_forms/include/xtd/forms/lcd_label_with_dot_matrix.hpp) control.
+demonstrates how to use [xtd::forms::lcd_label_with_dot_matrix](../../../../src/xtd_forms/include/xtd/forms/lcd_label_with_dot_matrix.hpp) control.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/lcd_label_with_dot_matrix_w.png)
+![Screenshot](../../../../docs/pictures/examples/lcd_label_with_dot_matrix_w.png)
 
-![Screenshot](../../../docs/pictures/examples/lcd_label_with_dot_matrix_wd.png)
+![Screenshot](../../../../docs/pictures/examples/lcd_label_with_dot_matrix_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/lcd_label_with_dot_matrix_m.png)
+![Screenshot](../../../../docs/pictures/examples/lcd_label_with_dot_matrix_m.png)
 
-![Screenshot](../../../docs/pictures/examples/lcd_label_with_dot_matrix_md.png)
+![Screenshot](../../../../docs/pictures/examples/lcd_label_with_dot_matrix_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/lcd_label_with_dot_matrix_g.png)
+![Screenshot](../../../../docs/pictures/examples/lcd_label_with_dot_matrix_g.png)
 
-![Screenshot](../../../docs/pictures/examples/lcd_label_with_dot_matrix_gd.png)
+![Screenshot](../../../../docs/pictures/examples/lcd_label_with_dot_matrix_gd.png)

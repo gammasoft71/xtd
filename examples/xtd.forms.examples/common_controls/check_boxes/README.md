@@ -1,6 +1,6 @@
 # check_boxes
 
-demonstrates the use of [xtd::forms::check_boxes](../../../src/xtd_forms/include/xtd/forms/check_boxes.hpp) check_box object collection.
+demonstrates the use of [xtd::forms::check_boxes](../../../../src/xtd_forms/include/xtd/forms/check_boxes.hpp) check_box object collection.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/check_boxes_w.png)
+![Screenshot](../../../../docs/pictures/examples/check_boxes_w.png)
 
-![Screenshot](../../../docs/pictures/examples/check_boxes_wd.png)
+![Screenshot](../../../../docs/pictures/examples/check_boxes_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/check_boxes_m.png)
+![Screenshot](../../../../docs/pictures/examples/check_boxes_m.png)
 
-![Screenshot](../../../docs/pictures/examples/check_boxes_md.png)
+![Screenshot](../../../../docs/pictures/examples/check_boxes_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/check_boxes_g.png)
+![Screenshot](../../../../docs/pictures/examples/check_boxes_g.png)
 
-![Screenshot](../../../docs/pictures/examples/check_boxes_gd.png)
+![Screenshot](../../../../docs/pictures/examples/check_boxes_gd.png)

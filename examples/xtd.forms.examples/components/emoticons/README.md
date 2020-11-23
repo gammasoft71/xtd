@@ -1,6 +1,6 @@
 # emoticons
 
-demonstrates the use of [xtd::forms::emoticons](../../../src/xtd_forms/include/xtd/forms/emoticons.hpp) control.
+demonstrates the use of [xtd::forms::emoticons](../../../../src/xtd_forms/include/xtd/forms/emoticons.hpp) control.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/emoticons_w.png)
+![Screenshot](../../../../docs/pictures/examples/emoticons_w.png)
 
-![Screenshot](../../../docs/pictures/examples/emoticons_wd.png)
+![Screenshot](../../../../docs/pictures/examples/emoticons_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/emoticons_m.png)
+![Screenshot](../../../../docs/pictures/examples/emoticons_m.png)
 
-![Screenshot](../../../docs/pictures/examples/emoticons_md.png)
+![Screenshot](../../../../docs/pictures/examples/emoticons_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/emoticons_g.png)
+![Screenshot](../../../../docs/pictures/examples/emoticons_g.png)
 
-![Screenshot](../../../docs/pictures/examples/emoticons_gd.png)
+![Screenshot](../../../../docs/pictures/examples/emoticons_gd.png)

@@ -1,6 +1,6 @@
 # application_context
 
-Shows how to create an application with  [xtd::forms::appplication](../../../src/xtd_forms/include/xtd/forms/application.hpp) class with  [xtd::forms::application_context](../../../src/xtd_forms/include/xtd/forms/application_context.hpp) class.
+Shows how to create an application with  [xtd::forms::appplication](../../../../src/xtd_forms/include/xtd/forms/application.hpp) class with  [xtd::forms::application_context](../../../../src/xtd_forms/include/xtd/forms/application_context.hpp) class.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/application_context_w.png)
+![Screenshot](../../../../docs/pictures/examples/application_context_w.png)
 
-![Screenshot](../../../docs/pictures/examples/application_context_wd.png)
+![Screenshot](../../../../docs/pictures/examples/application_context_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/application_context_m.png)
+![Screenshot](../../../../docs/pictures/examples/application_context_m.png)
 
-![Screenshot](../../../docs/pictures/examples/application_context_md.png)
+![Screenshot](../../../../docs/pictures/examples/application_context_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/application_context_g.png)
+![Screenshot](../../../../docs/pictures/examples/application_context_g.png)
 
-![Screenshot](../../../docs/pictures/examples/application_context_gd.png)
+![Screenshot](../../../../docs/pictures/examples/application_context_gd.png)

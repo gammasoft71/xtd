@@ -1,6 +1,6 @@
 # form_and_thread
 
-demonstrates how a thread can update ui with [xtd::forms::control::invoke](../../../src/xtd_forms/include/xtd/forms/form.hpp) method.
+demonstrates how a thread can update ui with [xtd::forms::control::invoke](../../../../src/xtd_forms/include/xtd/forms/form.hpp) method.
 
 # Sources
 
@@ -20,16 +20,16 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/form_and_thread_w.png)
+![Screenshot](../../../../docs/pictures/examples/form_and_thread_w.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/form_and_thread_m.png)
+![Screenshot](../../../../docs/pictures/examples/form_and_thread_m.png)
 
-![Screenshot](../../../docs/pictures/examples/form_and_thread_md.png)
+![Screenshot](../../../../docs/pictures/examples/form_and_thread_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/form_and_thread_g.png)
+![Screenshot](../../../../docs/pictures/examples/form_and_thread_g.png)
 
-![Screenshot](../../../docs/pictures/examples/form_and_thread_gd.png)
+![Screenshot](../../../../docs/pictures/examples/form_and_thread_gd.png)
