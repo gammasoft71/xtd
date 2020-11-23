@@ -40,9 +40,9 @@
 * [Common Dialogs](xtd.forms.examples/common_dialogs/README.md) contains common dialogs examples.
 * [Dialogs](xtd.forms.examples/dialogs/README.md) contains dialogs examples.
 * [Custom dialogs](xtd.forms.examples/custom_dialogs/README.md) contains custom dialogs examples.
+* [eventts](xtd.forms.examples/events/README.md) contains events examples.
 * [Others](xtd.forms.examples/others/README.md) contains others examples.
 * [Games](xtd.forms.examples/games/README.md) contains games examples.
-* [Tutorial](xtd.forms.examples/tutorial/README.md) contains tutorial.
 
 ## [xtd.tunit](xtd.tunit.examples/README.md)
 
