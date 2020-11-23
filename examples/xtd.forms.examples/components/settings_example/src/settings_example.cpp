@@ -1,4 +1,4 @@
-#include <xtd/xtd.forms>
+#include <xtd/xtd>
 #include "../properties/settings.h"
 
 using namespace xtd::drawing;

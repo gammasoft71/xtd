@@ -1,7 +1,7 @@
 #include <map>
 #include <string>
 #include <vector>
-#include <xtd/xtd.forms>
+#include <xtd/xtd>
 
 using namespace std;
 using namespace xtd;

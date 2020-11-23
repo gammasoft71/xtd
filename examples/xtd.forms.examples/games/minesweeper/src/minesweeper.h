@@ -4,7 +4,7 @@
 #include "high_scores_dialog.h"
 #include "input_name_dialog.h"
 #include "../properties/settings.h"
-#include <xtd/xtd.forms>
+#include <xtd/xtd>
 
 namespace minesweeper {
   class form_minesweeper : public xtd::forms::form {

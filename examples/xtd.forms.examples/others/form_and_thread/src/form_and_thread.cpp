@@ -1,4 +1,4 @@
-#include <xtd/xtd.forms>
+#include <xtd/xtd>
 
 using namespace std::literals;
 using namespace xtd::forms;

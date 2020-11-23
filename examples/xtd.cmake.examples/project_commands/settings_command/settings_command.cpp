@@ -1,4 +1,4 @@
-#include <xtd/xtd.forms>
+#include <xtd/xtd>
 #include "properties/settings.hpp"
 
 using namespace xtd::forms;

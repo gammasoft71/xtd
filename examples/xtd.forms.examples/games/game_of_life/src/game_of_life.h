@@ -1,6 +1,6 @@
 #pragma once
 #include <random>
-#include <xtd/xtd.forms>
+#include <xtd/xtd>
 #include "grid.h"
 
 namespace game_of_life {

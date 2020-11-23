@@ -1,4 +1,4 @@
-#include <xtd/xtd.core>
+#include <xtd/xtd>
 #include <chrono>
 #include <vector>
 #include <thread>

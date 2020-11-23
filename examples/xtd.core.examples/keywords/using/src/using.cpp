@@ -1,4 +1,4 @@
-#include <xtd/xtd.core>
+#include <xtd/xtd>
 
 using namespace std;
 using namespace xtd;

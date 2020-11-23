@@ -1,5 +1,5 @@
 #include <iostream>
-#include <xtd/xtd.drawing>
+#include <xtd/xtd>
 
 using namespace std;
 using namespace xtd;

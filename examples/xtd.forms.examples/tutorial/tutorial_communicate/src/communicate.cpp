@@ -1,4 +1,4 @@
-#include <xtd/xtd.forms>
+#include <xtd/xtd>
 
 namespace tutorial {
   class panel_right : public xtd::forms::panel {

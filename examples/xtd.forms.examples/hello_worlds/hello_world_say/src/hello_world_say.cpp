@@ -1,5 +1,5 @@
 #include <filesystem>
-#include <xtd/xtd.forms>
+#include <xtd/xtd>
 
 using namespace std::filesystem;
 using namespace xtd;

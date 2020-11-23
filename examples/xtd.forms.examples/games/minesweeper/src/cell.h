@@ -1,7 +1,7 @@
 #pragma once
 #include "cell_state.h"
 #include "../properties/resources.h"
-#include <xtd/xtd.forms>
+#include <xtd/xtd>
 
 namespace minesweeper {
   class cell : public xtd::forms::user_control {

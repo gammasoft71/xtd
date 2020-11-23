@@ -1,7 +1,7 @@
 #pragma once
 #include "level.h"
 #include "../properties/settings.h"
-#include <xtd/xtd.forms>
+#include <xtd/xtd>
 
 namespace minesweeper {
   class high_scores_dialog : public xtd::forms::form {
