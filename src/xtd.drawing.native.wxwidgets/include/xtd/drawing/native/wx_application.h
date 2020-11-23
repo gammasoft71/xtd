@@ -1,5 +1,8 @@
 #pragma once
+
+#include <cstdint>
 #include <stdexcept>
+#include <xtd/delegate.h>
 #include <xtd/event.h>
 #include <wx/aboutdlg.h>
 #include <wx/app.h>
@@ -7,9 +10,11 @@
 #include <wx/window.h>
 
 namespace xtd {
-  namespace forms {
+  namespace drawing {
     namespace native {
       class wx_application : public wxApp {
+        static constexpr int32_t WM_ACTIVATEAPP = 0x001C;
+        static constexpr int32_t WM_ENTERIDLE = 0x0121;
       public:
         wx_application() = default;
         
@@ -28,7 +33,7 @@ namespace xtd {
           if (exceptionStored) std::rethrow_exception(exceptionStored);
           return result;
         }
-
+        
         bool ProcessEvent(wxEvent &event) override {
           if (exceptionStored) return wxApp::ProcessEvent(event);
           if (event.GetEventType() == wxEVT_ACTIVATE_APP) {
@@ -49,12 +54,13 @@ namespace xtd {
           return message_filter_proc(hwnd, msg, wparam, lparam, handle);
         }
         
-        static event<wx_application, delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>> message_filter_proc;
-        event<wx_application, delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>> wnd_proc;
-        event<wx_application, delegate<bool()>> thread_exception;
-
+        static xtd::event<wx_application, xtd::delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>> message_filter_proc;
+        xtd::event<wx_application, xtd::delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>> wnd_proc;
+        xtd::event<wx_application, xtd::delegate<bool()>> thread_exception;
+        
         std::exception_ptr exceptionStored;
       };
     }
   }
 }
+

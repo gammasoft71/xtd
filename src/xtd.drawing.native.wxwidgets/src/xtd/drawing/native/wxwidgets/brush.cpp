@@ -1,11 +1,13 @@
 #include <xtd/drawing/native/brush.h>
 #include <xtd/drawing/native/system_colors.h>
+#include <xtd/drawing/native/toolkit.h>
 #include "../../../../../include/xtd/drawing/native/wx_brush.h"
 #include <wx/colour.h>
 
 using namespace xtd::drawing::native;
 
 intptr_t brush::create() {
+  toolkit::initialize(); // Must be first
   return reinterpret_cast<intptr_t>(new wx_brush());
 }
 
