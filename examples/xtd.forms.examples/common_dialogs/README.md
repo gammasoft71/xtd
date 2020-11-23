@@ -1,8 +1,6 @@
-# xtd_forms common dialog examples
+# Common dialog examples
 
-[This folder](..) contains all examples used by [xtd::forms](../../src/xtd_forms) docmentation and more.
-
-## Common Dialogs
+[This folder](..) contains xtd.forms common dialog examples.
 
 * [color_dialog](color_dialog/README.md) represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.
 * [folder_browser_dialog](folder_browser_dialog/README.md) prompts the user to select a folder.
