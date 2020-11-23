@@ -1,4 +1,4 @@
-#include <xtd/xtd.forms>
+#include <xtd/xtd>
 
 int main() {
   auto form = xtd::forms::control::create<xtd::forms::form>("form1");

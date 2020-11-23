@@ -1,5 +1,5 @@
 #include <iostream>
-#include <xtd/xtd.drawing>
+#include <xtd/xtd>
 #include "logo.xpm"
 
 using namespace std;

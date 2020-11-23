@@ -1,4 +1,4 @@
-#include <xtd/xtd.forms>
+#include <xtd/xtd>
 #include "../resources/gammasoft_16x16.xpm"
 #include "../resources/gammasoft_32x32.xpm"
 #include "../resources/gammasoft_64x64.xpm"

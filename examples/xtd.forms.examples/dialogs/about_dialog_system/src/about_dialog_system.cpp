@@ -1,4 +1,4 @@
-#include <xtd/xtd.forms>
+#include <xtd/xtd>
 #include "../resources/gammasoft_64x64.xpm"
 
 using namespace xtd;

@@ -1,4 +1,4 @@
-#include <xtd/xtd.forms>
+#include <xtd/xtd>
 
 namespace tutorial {
   class form_button : public xtd::forms::form {

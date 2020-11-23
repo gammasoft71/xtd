@@ -1,4 +1,4 @@
-#include <xtd/xtd.forms>
+#include <xtd/xtd>
 
 namespace tutorial {
   class form_icon : public xtd::forms::form {

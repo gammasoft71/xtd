@@ -1,4 +1,4 @@
-#include <xtd/xtd.core>
+#include <xtd/xtd>
 
 using namespace std;
 using namespace xtd;
@@ -9,7 +9,7 @@ namespace examples {
         static int main() {
       // Write arguments to the console output
       for (string arg : environment::get_command_line_args())
-        cout << arg << endl;
+        console::writte_line(arg);
 
       return 42;
     }
