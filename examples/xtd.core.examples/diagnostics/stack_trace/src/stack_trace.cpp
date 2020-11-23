@@ -22,7 +22,7 @@ int main() {
 
 // This code produces the following output :
 //
-// Stack_trace:
+// stack_trace:
 //    at test3()
 //    at test2()
 //    at test1()
