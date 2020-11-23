@@ -9,7 +9,7 @@ add_projects(
   interface2
   startup
   static
-  static2
-  static3
+  static_class
+  static_class2
   using
 )
