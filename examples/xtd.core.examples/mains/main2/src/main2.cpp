@@ -6,10 +6,10 @@ using namespace xtd;
 namespace examples {
   class program {
   public:
-        static int main() {
+    static int main() {
       // Write arguments to the console output
       for (string arg : environment::get_command_line_args())
-        console::writte_line(arg);
+        console::write_line(arg);
 
       return 42;
     }
