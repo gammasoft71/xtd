@@ -1,4 +1,4 @@
-# "Hello, World!" examples
+# xtd.forms "Hello, World!" examples
 
 [This folder](..) contains xtd.forms "Hello, World!" examples.
 
