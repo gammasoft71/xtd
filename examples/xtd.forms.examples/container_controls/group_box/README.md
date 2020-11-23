@@ -1,6 +1,6 @@
 # group_box
 
-demonstrates the use of [xtd::forms::group_box](../../../src/xtd_forms/include/xtd/forms/group_box.hpp) container.
+demonstrates the use of [xtd::forms::group_box](../../../../src/xtd_forms/include/xtd/forms/group_box.hpp) container.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/group_box_w.png)
+![Screenshot](../../../../docs/pictures/examples/group_box_w.png)
 
-![Screenshot](../../../docs/pictures/examples/group_box_wd.png)
+![Screenshot](../../../../docs/pictures/examples/group_box_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/group_box_m.png)
+![Screenshot](../../../../docs/pictures/examples/group_box_m.png)
 
-![Screenshot](../../../docs/pictures/examples/group_box_md.png)
+![Screenshot](../../../../docs/pictures/examples/group_box_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/group_box_g.png)
+![Screenshot](../../../../docs/pictures/examples/group_box_g.png)
 
-![Screenshot](../../../docs/pictures/examples/group_box_gd.png)
+![Screenshot](../../../../docs/pictures/examples/group_box_gd.png)

@@ -1,6 +1,6 @@
 # date_time_picker
 
-demonstrates the use of [xtd::forms::date_time_picker](../../../src/xtd_forms/include/xtd/forms/date_time_picker.hpp) dialog.
+demonstrates the use of [xtd::forms::date_time_picker](../../../../src/xtd_forms/include/xtd/forms/date_time_picker.hpp) dialog.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/date_time_picker_w.png)
+![Screenshot](../../../../docs/pictures/examples/date_time_picker_w.png)
 
-![Screenshot](../../../docs/pictures/examples/date_time_picker_wd.png)
+![Screenshot](../../../../docs/pictures/examples/date_time_picker_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/date_time_picker_m.png)
+![Screenshot](../../../../docs/pictures/examples/date_time_picker_m.png)
 
-![Screenshot](../../../docs/pictures/examples/date_time_picker_md.png)
+![Screenshot](../../../../docs/pictures/examples/date_time_picker_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/date_time_picker_g.png)
+![Screenshot](../../../../docs/pictures/examples/date_time_picker_g.png)
 
-![Screenshot](../../../docs/pictures/examples/date_time_picker_gd.png)
+![Screenshot](../../../../docs/pictures/examples/date_time_picker_gd.png)

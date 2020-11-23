@@ -1,6 +1,6 @@
 # colored_forms
 
-demonstrates the use of [xtd::forms::form](../../../src/xtd_forms/include/xtd/forms/form.hpp) control with unicode text.
+demonstrates the use of [xtd::forms::form](../../../../src/xtd_forms/include/xtd/forms/form.hpp) control with unicode text.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/colored_forms_w.png)
+![Screenshot](../../../../docs/pictures/examples/colored_forms_w.png)
 
-![Screenshot](../../../docs/pictures/examples/colored_forms_wd.png)
+![Screenshot](../../../../docs/pictures/examples/colored_forms_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/colored_forms_m.png)
+![Screenshot](../../../../docs/pictures/examples/colored_forms_m.png)
 
-![Screenshot](../../../docs/pictures/examples/colored_forms_md.png)
+![Screenshot](../../../../docs/pictures/examples/colored_forms_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/colored_forms_g.png)
+![Screenshot](../../../../docs/pictures/examples/colored_forms_g.png)
 
-![Screenshot](../../../docs/pictures/examples/colored_forms_gd.png)
+![Screenshot](../../../../docs/pictures/examples/colored_forms_gd.png)

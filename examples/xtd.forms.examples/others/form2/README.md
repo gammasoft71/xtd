@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/form2_w.png)
+![Screenshot](../../../../docs/pictures/examples/form2_w.png)
 
-![Screenshot](../../../docs/pictures/examples/form2_wd.png)
+![Screenshot](../../../../docs/pictures/examples/form2_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/form2_m.png)
+![Screenshot](../../../../docs/pictures/examples/form2_m.png)
 
-![Screenshot](../../../docs/pictures/examples/form2_md.png)
+![Screenshot](../../../../docs/pictures/examples/form2_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/form2_g.png)
+![Screenshot](../../../../docs/pictures/examples/form2_g.png)
 
-![Screenshot](../../../docs/pictures/examples/form2_gd.png)
+![Screenshot](../../../../docs/pictures/examples/form2_gd.png)

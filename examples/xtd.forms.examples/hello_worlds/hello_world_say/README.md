@@ -1,6 +1,6 @@
 # hello_world_say
 
-The classic first application "Hello, World!" with [xtd::forms::button](../../../src/xtd_forms/include/xtd/forms/button.hpp) control.
+The classic first application "Hello, World!" with [xtd::forms::button](../../../../src/xtd_forms/include/xtd/forms/button.hpp) control.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/hello_world_say_w.png)
+![Screenshot](../../../../docs/pictures/examples/hello_world_say_w.png)
 
-![Screenshot](../../../docs/pictures/examples/hello_world_say_wd.png)
+![Screenshot](../../../../docs/pictures/examples/hello_world_say_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/hello_world_say_m.png)
+![Screenshot](../../../../docs/pictures/examples/hello_world_say_m.png)
 
-![Screenshot](../../../docs/pictures/examples/hello_world_say_md.png)
+![Screenshot](../../../../docs/pictures/examples/hello_world_say_md.png)
 
 ## Linux Gnome :
 
-![Screenshot](../../../docs/pictures/examples/hello_world_say_g.png)
+![Screenshot](../../../../docs/pictures/examples/hello_world_say_g.png)
 
-![Screenshot](../../../docs/pictures/examples/hello_world_say_gd.png)
+![Screenshot](../../../../docs/pictures/examples/hello_world_say_gd.png)

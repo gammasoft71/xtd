@@ -1,6 +1,6 @@
 # image_list
 
-demonstrates the use of [xtd::forms::image_list](../../../src/xtd_forms/include/xtd/forms/image_list.hpp) component.
+demonstrates the use of [xtd::forms::image_list](../../../../src/xtd_forms/include/xtd/forms/image_list.hpp) component.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/image_list_w.png)
+![Screenshot](../../../../docs/pictures/examples/image_list_w.png)
 
-![Screenshot](../../../docs/pictures/examples/image_list_wd.png)
+![Screenshot](../../../../docs/pictures/examples/image_list_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/image_list_m.png)
+![Screenshot](../../../../docs/pictures/examples/image_list_m.png)
 
-![Screenshot](../../../docs/pictures/examples/image_list_md.png)
+![Screenshot](../../../../docs/pictures/examples/image_list_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/image_list_g.png)
+![Screenshot](../../../../docs/pictures/examples/image_list_g.png)
 
-![Screenshot](../../../docs/pictures/examples/image_list_gd.png)
+![Screenshot](../../../../docs/pictures/examples/image_list_gd.png)

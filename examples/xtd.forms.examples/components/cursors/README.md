@@ -1,6 +1,6 @@
 # cursors
 
-demonstrates the use of [xtd::forms::cursor](../../../src/xtd_forms/include/xtd/forms/cursor.hpp) component.
+demonstrates the use of [xtd::forms::cursor](../../../../src/xtd_forms/include/xtd/forms/cursor.hpp) component.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/cursors_w.png)
+![Screenshot](../../../../docs/pictures/examples/cursors_w.png)
 
-![Screenshot](../../../docs/pictures/examples/cursors_wd.png)
+![Screenshot](../../../../docs/pictures/examples/cursors_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/cursors_m.png)
+![Screenshot](../../../../docs/pictures/examples/cursors_m.png)
 
-![Screenshot](../../../docs/pictures/examples/cursors_md.png)
+![Screenshot](../../../../docs/pictures/examples/cursors_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/cursors_g.png)
+![Screenshot](../../../../docs/pictures/examples/cursors_g.png)
 
-![Screenshot](../../../docs/pictures/examples/cursors_gd.png)
+![Screenshot](../../../../docs/pictures/examples/cursors_gd.png)

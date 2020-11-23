@@ -1,6 +1,6 @@
 # use_wait_cursor
 
-Shows how to create an use_wait_cursor with  [xtd::forms::application](../../../src/xtd_forms/include/xtd/forms/application.hpp) class.
+Shows how to create an use_wait_cursor with  [xtd::forms::application](../../../../src/xtd_forms/include/xtd/forms/application.hpp) class.
 
 # Sources
 
@@ -20,16 +20,16 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/use_wait_cursor_w.png)
+![Screenshot](../../../../docs/pictures/examples/use_wait_cursor_w.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/use_wait_cursor_m.png)
+![Screenshot](../../../../docs/pictures/examples/use_wait_cursor_m.png)
 
-![Screenshot](../../../docs/pictures/examples/use_wait_cursor_md.png)
+![Screenshot](../../../../docs/pictures/examples/use_wait_cursor_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/use_wait_cursor_g.png)
+![Screenshot](../../../../docs/pictures/examples/use_wait_cursor_g.png)
 
-![Screenshot](../../../docs/pictures/examples/use_wait_cursor_gd.png)
+![Screenshot](../../../../docs/pictures/examples/use_wait_cursor_gd.png)

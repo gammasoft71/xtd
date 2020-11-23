@@ -1,6 +1,6 @@
 # menu
 
-demonstrates the use of [xtd::forms::main_menu](../../../src/xtd_forms/include/xtd/forms/main_menu.hpp) component.
+demonstrates the use of [xtd::forms::main_menu](../../../../src/xtd_forms/include/xtd/forms/main_menu.hpp) component.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/menu_w.png)
+![Screenshot](../../../../docs/pictures/examples/menu_w.png)
 
-![Screenshot](../../../docs/pictures/examples/menu_wd.png)
+![Screenshot](../../../../docs/pictures/examples/menu_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/menu_m.png)
+![Screenshot](../../../../docs/pictures/examples/menu_m.png)
 
-![Screenshot](../../../docs/pictures/examples/menu_md.png)
+![Screenshot](../../../../docs/pictures/examples/menu_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/menu_g.png)
+![Screenshot](../../../../docs/pictures/examples/menu_g.png)
 
-![Screenshot](../../../docs/pictures/examples/menu_gd.png)
+![Screenshot](../../../../docs/pictures/examples/menu_gd.png)

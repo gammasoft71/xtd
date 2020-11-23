@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/draw_line_w.png)
+![Screenshot](../../../../docs/pictures/examples/draw_line_w.png)
 
-![Screenshot](../../../docs/pictures/examples/draw_line_wd.png)
+![Screenshot](../../../../docs/pictures/examples/draw_line_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/draw_line_m.png)
+![Screenshot](../../../../docs/pictures/examples/draw_line_m.png)
 
-![Screenshot](../../../docs/pictures/examples/draw_line_md.png)
+![Screenshot](../../../../docs/pictures/examples/draw_line_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/draw_line_g.png)
+![Screenshot](../../../../docs/pictures/examples/draw_line_g.png)
 
-![Screenshot](../../../docs/pictures/examples/draw_line_gd.png)
+![Screenshot](../../../../docs/pictures/examples/draw_line_gd.png)

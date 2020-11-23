@@ -1,6 +1,6 @@
 # texts
 
-demonstrates the use of [xtd::forms::texts](../../../src/xtd_forms/include/xtd/forms/texts.hpp) strings.
+demonstrates the use of [xtd::forms::texts](../../../../src/xtd_forms/include/xtd/forms/texts.hpp) strings.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/texts_w.png)
+![Screenshot](../../../../docs/pictures/examples/texts_w.png)
 
-![Screenshot](../../../docs/pictures/examples/texts_wd.png)
+![Screenshot](../../../../docs/pictures/examples/texts_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/texts_m.png)
+![Screenshot](../../../../docs/pictures/examples/texts_m.png)
 
-![Screenshot](../../../docs/pictures/examples/texts_md.png)
+![Screenshot](../../../../docs/pictures/examples/texts_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/texts_g.png)
+![Screenshot](../../../../docs/pictures/examples/texts_g.png)
 
-![Screenshot](../../../docs/pictures/examples/texts_gd.png)
+![Screenshot](../../../../docs/pictures/examples/texts_gd.png)

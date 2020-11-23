@@ -1,6 +1,6 @@
 # enable_changed_event
 
-demonstrates the use of [idle](../../../src/xtd_forms/include/xtd/forms/application.hpp) event.
+demonstrates the use of [idle](../../../../src/xtd_forms/include/xtd/forms/application.hpp) event.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/enable_changed_event_w.png)
+![Screenshot](../../../../docs/pictures/examples/enable_changed_event_w.png)
 
-![Screenshot](../../../docs/pictures/examples/enable_changed_event_wd.png)
+![Screenshot](../../../../docs/pictures/examples/enable_changed_event_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/enable_changed_event_m.png)
+![Screenshot](../../../../docs/pictures/examples/enable_changed_event_m.png)
 
-![Screenshot](../../../docs/pictures/examples/enable_changed_event_md.png)
+![Screenshot](../../../../docs/pictures/examples/enable_changed_event_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/enable_changed_event_g.png)
+![Screenshot](../../../../docs/pictures/examples/enable_changed_event_g.png)
 
-![Screenshot](../../../docs/pictures/examples/enable_changed_event_gd.png)
+![Screenshot](../../../../docs/pictures/examples/enable_changed_event_gd.png)

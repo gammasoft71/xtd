@@ -1,6 +1,6 @@
 # form_paint
 
-demonstrates paint event with [form](../../../src/xtd_forms/include/xtd/forms/form.hpp).
+demonstrates paint event with [form](../../../../src/xtd_forms/include/xtd/forms/form.hpp).
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/form_paint_w.png)
+![Screenshot](../../../../docs/pictures/examples/form_paint_w.png)
 
-![Screenshot](../../../docs/pictures/examples/form_paint_wd.png)
+![Screenshot](../../../../docs/pictures/examples/form_paint_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/form_paint_m.png)
+![Screenshot](../../../../docs/pictures/examples/form_paint_m.png)
 
-![Screenshot](../../../docs/pictures/examples/form_paint_md.png)
+![Screenshot](../../../../docs/pictures/examples/form_paint_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/form_paint_g.png)
+![Screenshot](../../../../docs/pictures/examples/form_paint_g.png)
 
-![Screenshot](../../../docs/pictures/examples/form_paint_gd.png)
+![Screenshot](../../../../docs/pictures/examples/form_paint_gd.png)

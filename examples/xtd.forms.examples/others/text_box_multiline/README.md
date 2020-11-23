@@ -1,6 +1,6 @@
 # text_box_multiline
 
-demonstrates the use of [xtd::forms::text_box_multiline](../../../src/xtd_forms/include/xtd/forms/text_box_multiline.hpp) control.
+demonstrates the use of [xtd::forms::text_box_multiline](../../../../src/xtd_forms/include/xtd/forms/text_box_multiline.hpp) control.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/text_box_multiline_w.png)
+![Screenshot](../../../../docs/pictures/examples/text_box_multiline_w.png)
 
-![Screenshot](../../../docs/pictures/examples/text_box_multiline_wd.png)
+![Screenshot](../../../../docs/pictures/examples/text_box_multiline_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/text_box_multiline_m.png)
+![Screenshot](../../../../docs/pictures/examples/text_box_multiline_m.png)
 
-![Screenshot](../../../docs/pictures/examples/text_box_multiline_md.png)
+![Screenshot](../../../../docs/pictures/examples/text_box_multiline_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/text_box_multiline_g.png)
+![Screenshot](../../../../docs/pictures/examples/text_box_multiline_g.png)
 
-![Screenshot](../../../docs/pictures/examples/text_box_multiline_gd.png)
+![Screenshot](../../../../docs/pictures/examples/text_box_multiline_gd.png)

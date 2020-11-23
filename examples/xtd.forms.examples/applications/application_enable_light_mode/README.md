@@ -1,6 +1,6 @@
 # application
 
-Shows how to create an application with  [xtd::forms::application](../../../src/xtd_forms/include/xtd/forms/application.hpp) class.
+Shows how to create an application with  [xtd::forms::application](../../../../src/xtd_forms/include/xtd/forms/application.hpp) class.
 
 # Sources
 
@@ -20,16 +20,16 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/application_w.png)
+![Screenshot](../../../../docs/pictures/examples/application_w.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/application_m.png)
+![Screenshot](../../../../docs/pictures/examples/application_m.png)
 
-![Screenshot](../../../docs/pictures/examples/application_md.png)
+![Screenshot](../../../../docs/pictures/examples/application_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/application_g.png)
+![Screenshot](../../../../docs/pictures/examples/application_g.png)
 
-![Screenshot](../../../docs/pictures/examples/application_gd.png)
+![Screenshot](../../../../docs/pictures/examples/application_gd.png)

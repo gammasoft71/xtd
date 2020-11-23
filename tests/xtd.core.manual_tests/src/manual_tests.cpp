@@ -1,28 +1,22 @@
 #include <xtd/xtd.core>
+#include <filesystem>
 
+using namespace std;
+using namespace std::filesystem;
 using namespace xtd;
-using namespace xtd::diagnostics;
+using namespace xtd::io;
 
-void test3() {
-  //console::write_line(stack_trace());
-  //throw argument_out_of_range_exception(caller_info_);
-  throw system_exception(caller_info_);
-}
-
-void test2() {
-  test3();
-}
-
-void test1() {
-  test2();
+void update_md_files(const filesystem::path& path) {
+  for (auto item : directory_iterator(path))
+    if (item.is_directory()) update_md_files(item.path());
+    else if (item.path().extension() == ".md") {
+      auto file_name= item.path().string();
+      file::write_all_text(file_name, strings::replace(file::read_all_text(file_name), "(../../..", "(../../../.."));
+    }
 }
 
 int main() {
   //console::write_line("Hello, World!");
   //system_exception::enable_stack_trace(false);
-  try {
-    test1();
-  } catch(const system_exception& e) {
-    console::write_line(e);
-  }
+  update_md_files({"/Users/yves/Projects/xtd/examples/xtd.forms.examples"});
 }

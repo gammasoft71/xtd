@@ -1,6 +1,6 @@
 # background_worker
 
-demonstrates the use of [xtd::forms::background_worker](../../../src/xtd_forms/include/xtd/forms/background_worker.hpp) component.
+demonstrates the use of [xtd::forms::background_worker](../../../../src/xtd_forms/include/xtd/forms/background_worker.hpp) component.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/background_worker_w.png)
+![Screenshot](../../../../docs/pictures/examples/background_worker_w.png)
 
-![Screenshot](../../../docs/pictures/examples/background_worker_wd.png)
+![Screenshot](../../../../docs/pictures/examples/background_worker_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/background_worker_m.png)
+![Screenshot](../../../../docs/pictures/examples/background_worker_m.png)
 
-![Screenshot](../../../docs/pictures/examples/background_worker_md.png)
+![Screenshot](../../../../docs/pictures/examples/background_worker_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/background_worker_g.png)
+![Screenshot](../../../../docs/pictures/examples/background_worker_g.png)
 
-![Screenshot](../../../docs/pictures/examples/background_worker_gd.png)
+![Screenshot](../../../../docs/pictures/examples/background_worker_gd.png)

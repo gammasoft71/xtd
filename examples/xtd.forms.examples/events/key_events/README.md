@@ -1,6 +1,6 @@
 # key_events
 
-demonstrates some events received by [form](../../../src/xtd_forms/include/xtd/forms/form.hpp).
+demonstrates some events received by [form](../../../../src/xtd_forms/include/xtd/forms/form.hpp).
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/key_events_w.png)
+![Screenshot](../../../../docs/pictures/examples/key_events_w.png)
 
-![Screenshot](../../../docs/pictures/examples/key_events_wd.png)
+![Screenshot](../../../../docs/pictures/examples/key_events_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/key_events_m.png)
+![Screenshot](../../../../docs/pictures/examples/key_events_m.png)
 
-![Screenshot](../../../docs/pictures/examples/key_events_md.png)
+![Screenshot](../../../../docs/pictures/examples/key_events_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/key_events_g.png)
+![Screenshot](../../../../docs/pictures/examples/key_events_g.png)
 
-![Screenshot](../../../docs/pictures/examples/key_events_gd.png)
+![Screenshot](../../../../docs/pictures/examples/key_events_gd.png)

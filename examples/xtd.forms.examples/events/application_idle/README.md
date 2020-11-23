@@ -1,6 +1,6 @@
 # application_idle
 
-demonstrates the use of [idle](../../../src/xtd_forms/include/xtd/forms/application.hpp) event.
+demonstrates the use of [idle](../../../../src/xtd_forms/include/xtd/forms/application.hpp) event.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/application_idle_w.png)
+![Screenshot](../../../../docs/pictures/examples/application_idle_w.png)
 
-![Screenshot](../../../docs/pictures/examples/application_idle_wd.png)
+![Screenshot](../../../../docs/pictures/examples/application_idle_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/application_idle_m.png)
+![Screenshot](../../../../docs/pictures/examples/application_idle_m.png)
 
-![Screenshot](../../../docs/pictures/examples/application_idle_md.png)
+![Screenshot](../../../../docs/pictures/examples/application_idle_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/application_idle_g.png)
+![Screenshot](../../../../docs/pictures/examples/application_idle_g.png)
 
-![Screenshot](../../../docs/pictures/examples/application_idle_gd.png)
+![Screenshot](../../../../docs/pictures/examples/application_idle_gd.png)

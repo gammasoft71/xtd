@@ -1,6 +1,6 @@
 # lcd_label_with_nine_segment
 
-demonstrates how to use [xtd::forms::lcd_label_with_nine_segment](../../../src/xtd_forms/include/xtd/forms/lcd_label_with_nine_segment.hpp) control.
+demonstrates how to use [xtd::forms::lcd_label_with_nine_segment](../../../../src/xtd_forms/include/xtd/forms/lcd_label_with_nine_segment.hpp) control.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/lcd_label_with_nine_segment_w.png)
+![Screenshot](../../../../docs/pictures/examples/lcd_label_with_nine_segment_w.png)
 
-![Screenshot](../../../docs/pictures/examples/lcd_label_with_nine_segment_wd.png)
+![Screenshot](../../../../docs/pictures/examples/lcd_label_with_nine_segment_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/lcd_label_with_nine_segment_m.png)
+![Screenshot](../../../../docs/pictures/examples/lcd_label_with_nine_segment_m.png)
 
-![Screenshot](../../../docs/pictures/examples/lcd_label_with_nine_segment_md.png)
+![Screenshot](../../../../docs/pictures/examples/lcd_label_with_nine_segment_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/lcd_label_with_nine_segment_g.png)
+![Screenshot](../../../../docs/pictures/examples/lcd_label_with_nine_segment_g.png)
 
-![Screenshot](../../../docs/pictures/examples/lcd_label_with_nine_segment_gd.png)
+![Screenshot](../../../../docs/pictures/examples/lcd_label_with_nine_segment_gd.png)

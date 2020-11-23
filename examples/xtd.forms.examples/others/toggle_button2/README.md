@@ -1,6 +1,6 @@
 # toggle_button2
 
-demonstrates the use of [xtd::forms::check_box](../../../src/xtd_forms/include/xtd/forms/toggle_button.hpp) control.
+demonstrates the use of [xtd::forms::check_box](../../../../src/xtd_forms/include/xtd/forms/toggle_button.hpp) control.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/toggle_button2_w.png)
+![Screenshot](../../../../docs/pictures/examples/toggle_button2_w.png)
 
-![Screenshot](../../../docs/pictures/examples/toggle_button2_wd.png)
+![Screenshot](../../../../docs/pictures/examples/toggle_button2_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/toggle_button2_m.png)
+![Screenshot](../../../../docs/pictures/examples/toggle_button2_m.png)
 
-![Screenshot](../../../docs/pictures/examples/toggle_button2_md.png)
+![Screenshot](../../../../docs/pictures/examples/toggle_button2_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/toggle_button2_g.png)
+![Screenshot](../../../../docs/pictures/examples/toggle_button2_g.png)
 
-![Screenshot](../../../docs/pictures/examples/toggle_button2_gd.png)
+![Screenshot](../../../../docs/pictures/examples/toggle_button2_gd.png)

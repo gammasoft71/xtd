@@ -1,6 +1,6 @@
 # screen
 
-demonstrates the use of [xtd::forms::screen](../../../src/xtd_forms/include/xtd/forms/screen.hpp) component.
+demonstrates the use of [xtd::forms::screen](../../../../src/xtd_forms/include/xtd/forms/screen.hpp) component.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/screen_w.png)
+![Screenshot](../../../../docs/pictures/examples/screen_w.png)
 
-![Screenshot](../../../docs/pictures/examples/screen_wd.png)
+![Screenshot](../../../../docs/pictures/examples/screen_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/screen_m.png)
+![Screenshot](../../../../docs/pictures/examples/screen_m.png)
 
-![Screenshot](../../../docs/pictures/examples/screen_md.png)
+![Screenshot](../../../../docs/pictures/examples/screen_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/screen_g.png)
+![Screenshot](../../../../docs/pictures/examples/screen_g.png)
 
-![Screenshot](../../../docs/pictures/examples/screen_gd.png)
+![Screenshot](../../../../docs/pictures/examples/screen_gd.png)

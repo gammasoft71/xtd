@@ -58,6 +58,6 @@ target_type(GUI_APPLICATION)
 
 See [cmake](htps:\\cmake.org) for more information.
 
-![Screenshot](../../../docs/pictures/examples/tutorial/simple.png)
+![Screenshot](../../../../docs/pictures/examples/tutorial/simple.png)
 
 Figure: simple

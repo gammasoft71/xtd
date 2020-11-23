@@ -1,6 +1,6 @@
 # lcd_label2
 
-demonstrates how to use [xtd::forms::lcd_label](../../../src/xtd_forms/include/xtd/forms/lcd_label.hpp) control.
+demonstrates how to use [xtd::forms::lcd_label](../../../../src/xtd_forms/include/xtd/forms/lcd_label.hpp) control.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/lcd_label2_w.png)
+![Screenshot](../../../../docs/pictures/examples/lcd_label2_w.png)
 
-![Screenshot](../../../docs/pictures/examples/lcd_label2_wd.png)
+![Screenshot](../../../../docs/pictures/examples/lcd_label2_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/lcd_label2_m.png)
+![Screenshot](../../../../docs/pictures/examples/lcd_label2_m.png)
 
-![Screenshot](../../../docs/pictures/examples/lcd_label2_md.png)
+![Screenshot](../../../../docs/pictures/examples/lcd_label2_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/lcd_label2_g.png)
+![Screenshot](../../../../docs/pictures/examples/lcd_label2_g.png)
 
-![Screenshot](../../../docs/pictures/examples/lcd_label2_gd.png)
+![Screenshot](../../../../docs/pictures/examples/lcd_label2_gd.png)

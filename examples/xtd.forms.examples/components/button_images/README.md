@@ -1,6 +1,6 @@
 # button_images
 
-demonstrates the use of [xtd::forms::button_images](../../../src/xtd_forms/include/xtd/forms/button_images.hpp) control.
+demonstrates the use of [xtd::forms::button_images](../../../../src/xtd_forms/include/xtd/forms/button_images.hpp) control.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/button_images_w.png)
+![Screenshot](../../../../docs/pictures/examples/button_images_w.png)
 
-![Screenshot](../../../docs/pictures/examples/button_images_wd.png)
+![Screenshot](../../../../docs/pictures/examples/button_images_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/button_images_m.png)
+![Screenshot](../../../../docs/pictures/examples/button_images_m.png)
 
-![Screenshot](../../../docs/pictures/examples/button_images_md.png)
+![Screenshot](../../../../docs/pictures/examples/button_images_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/button_images_g.png)
+![Screenshot](../../../../docs/pictures/examples/button_images_g.png)
 
-![Screenshot](../../../docs/pictures/examples/button_images_gd.png)
+![Screenshot](../../../../docs/pictures/examples/button_images_gd.png)

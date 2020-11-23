@@ -1,6 +1,6 @@
 # buttons
 
-demonstrates the use of [xtd::forms::buttons](../../../src/xtd_forms/include/xtd/forms/buttons.hpp) button object collection.
+demonstrates the use of [xtd::forms::buttons](../../../../src/xtd_forms/include/xtd/forms/buttons.hpp) button object collection.
 
 # Sources
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/buttons_w.png)
+![Screenshot](../../../../docs/pictures/examples/buttons_w.png)
 
-![Screenshot](../../../docs/pictures/examples/buttons_wd.png)
+![Screenshot](../../../../docs/pictures/examples/buttons_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/buttons_m.png)
+![Screenshot](../../../../docs/pictures/examples/buttons_m.png)
 
-![Screenshot](../../../docs/pictures/examples/buttons_md.png)
+![Screenshot](../../../../docs/pictures/examples/buttons_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/buttons_g.png)
+![Screenshot](../../../../docs/pictures/examples/buttons_g.png)
 
-![Screenshot](../../../docs/pictures/examples/buttons_gd.png)
+![Screenshot](../../../../docs/pictures/examples/buttons_gd.png)
