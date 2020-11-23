@@ -4,6 +4,7 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 
 void test3() {
+  console::write_line("stack_trace:");
   console::write_line(stack_trace());
 }
 
@@ -21,6 +22,7 @@ int main() {
 
 // This code produces the following output :
 //
+// Stack_trace:
 //    at test3()
 //    at test2()
 //    at test1()
