@@ -25,3 +25,7 @@
 | [![facebook_img](pictures/facebook32.png)](https://www.facebook.com/gammasoft71)        | [https://www.facebook.com/gammasoft71](https://www.facebook.com/gammasoft71)           |
 | [![twitter_img](pictures/twitter32.png)](https://twitter.com/gammasoft71)               | [https://twitter.com/gammasoft71](https://twitter.com/gammasoft71)                     |
 | [![mail_img](pictures/mail32.png)](mailto:gammasoft71@gmail.com)                        | [mailto:gammasoft71@gmail.com](mailto:gammasoft71@gmail.com)                           |
+
+______________________________________________________________________________________________
+
+© 2020 Gammasoft.
