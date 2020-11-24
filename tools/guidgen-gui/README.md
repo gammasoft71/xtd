@@ -1,6 +1,6 @@
 # guidgen-gui
 
-guidgen is a guid generator command line tool.
+guidgen is a guid generator GUI application.
 
 # Output
 
