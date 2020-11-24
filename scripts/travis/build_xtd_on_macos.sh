@@ -19,6 +19,4 @@ cmake .. -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=~/l
 if [ $? -ne 0 ]; then exit -1; fi
 cmake --build . -- -j $(nproc)
 if [ $? -ne 0 ]; then exit -1; fi
-cmake --build . --target install
-if [ $? -ne 0 ]; then exit -1; fi
 cd ..
