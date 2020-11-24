@@ -4,6 +4,7 @@ project(xtd.tunit.examples)
 find_package(xtd REQUIRED)
 
 add_projects(
+  assert
   assert_abort
   assert_are_equal
   assert_are_equal_with_tolerence
