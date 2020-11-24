@@ -7,10 +7,10 @@
 namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
-    /// @brief The assert class contains a collection of static methods that implement the most common assertions used in xtd::tUnit.
+    /// @brief The assume class contains a collection of static methods that implement the most common assertions used in xtd::tUnit.
     /// @par Examples
     /// This example show how to used some methods :
-    /// @include assert.cpp
+    /// @include assume.cpp
     class assume final : private base_assert {
     public:
       /// @cond
