@@ -91,19 +91,19 @@ namespace unit_tests {
   // Create new test fixture with test_class_ helper.
   class test_class_(test) {
   public:
-    // This is the method that is called 1 time before test class run.
+    // This method is called 1 time before test class run
     static void class_initialize_(class_initialize) {
     }
     
-    // This is the method that is called 1 time after test class run.
+    // This method is called 1 time after test class run
     static void class_cleanup_(class_cleanup) {
     }
     
-    // This is the method that is called before each test case of test fixture.
+    // This method that is called before each test case of test fixture.
     static void test_initialize_(test_initialize) {
     }
     
-    // This is the method that is called after each test case of test fixture.
+    // This method is called after each test case of test fixture.
     static void test_cleanup_(test_cleanup) {
     }
     
@@ -144,28 +144,28 @@ namespace unit_tests {
     // Used class_initialize_attribute object to register class initialize method.
     class_initialize_attribute class_initialize_attr {"class_initialize", *this, &test::class_initialize};
     
-    // This is the method that is called 1 time after test class run.
-    static void class_cleanup_(class_cleanup) {
+    // This method is called 1 time before test class run.
+    static void class_initialize() {
     }
 
     // Used class_cleanup_attribute object to register class cleanup method.
     class_cleanup_attribute class_cleanup_attr {"class_cleanup", *this, &test::class_cleanup};
 
-    // This is the method that is called 1 time before test class run.
+    // This method is called 1 time after test class run.
     static void class_cleanup() {
     }
 
     // Used test_initialize_attribute object to register test initialize method.
     test_initialize_attribute test_initialize_attr {"test_initialize", *this, &test::test_initialize};
     
-    // This is the method that is called before each test case of test fixture.
+    // This method is called before each test case of test fixture.
     static void test_initialize() {
     }
 
     // Used test_cleanup_attribute object to register test cleanup method.
     test_cleanup_attribute test_cleanup_attr {"test_cleanup", *this, &test::test_cleanup};
    
-    // This is the method that is called after each test case of test fixture.
+    // This method that is called after each test case of test fixture.
     static void test_cleanup() {
     }
 
