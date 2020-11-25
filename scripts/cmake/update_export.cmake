@@ -1,5 +1,5 @@
 macro(xtd_update_file_export path keyword export)
-  if (BUILD_XTD_SHARED_LIBRARIES)
+  if (XTD_BUILD_SHARED_LIBRARIES)
     file(WRITE ${path} 
       "/// @file\n"
       "/// @brief Contains ${export} keyword.\n"

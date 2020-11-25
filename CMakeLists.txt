@@ -135,9 +135,6 @@ endif ()
 include(scripts/cmake/xtd_commands.cmake)
 include(scripts/cmake/xtd_version.cmake)
 
-include(scripts/cmake/update_export.cmake)
-include(scripts/cmake/update_version_number.cmake)
-
 # Code coverage
 if (XTD_ENABLE_COVERAGE AND UNIX)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g --coverage")
@@ -157,6 +154,11 @@ endif ()
 
 # Projects
 add_projects(src tests tools)
+
+
+# Updates
+include(scripts/cmake/update_export.cmake)
+include(scripts/cmake/update_version_number.cmake)
 
 # install
 install_package()
