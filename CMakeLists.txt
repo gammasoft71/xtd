@@ -42,7 +42,7 @@ else ()
   set_property(CACHE XTD_NATIVE_GRAPHIC_TOOLKIT PROPERTY STRINGS fltk gtk3 gtk4 qt5 wxwidgets)
 endif ()
 
-# Validation opttions
+# Validation options
 if (XTD_BUILD_TESTS_XTD_DRAWING AND NOT XTD_BUILD_LIBRARIES_XTD_CORE)
   message(FATAL_ERROR "Build xtd.core librarie must must be set to ON: xtd.drawing depends of xtd.core")
 endif ()
