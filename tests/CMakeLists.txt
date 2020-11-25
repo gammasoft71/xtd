@@ -4,19 +4,18 @@ project(tests)
 include(../scripts/cmake/xtd_commands.cmake)
 include(../scripts/cmake/xtd_version.cmake)
 
-add_projects(
-  xtd.core.manual_tests
-  xtd.core.unit_tests
-  xtd.drawing.manual_tests
-  xtd.drawing.unit_tests
-  xtd.forms.manual_tests
-)
-
-if (NOT XTD_DISABLE_FROMS_TESTS)
-  add_projects(xtd.forms.unit_tests)
+if (XTD_BUILD_TESTS_XTD_CORE)
+  add_projects(xtd.core.manual_tests xtd.core.unit_tests)
+endif()
+  
+if (XTD_BUILD_TESTS_XTD_DRAWING)
+  add_projects(xtd.drawing.manual_tests xtd.drawing.unit_tests)
 endif()
 
-add_projects(
-  xtd.tunit.manual_tests
-  xtd.tunit.unit_tests
-)
+if (XTD_BUILD_TESTS_XTD_FORMS)
+  add_projects(xtd.forms.manual_tests xtd.forms.unit_tests)
+endif()
+
+if (XTD_BUILD_TESTS_XTD_TUNIT)
+  add_projects(xtd.tunit.manual_tests xtd.tunit.unit_tests)
+endif()
