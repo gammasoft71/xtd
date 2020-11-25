@@ -155,7 +155,6 @@ endif ()
 # Projects
 add_projects(src tests tools)
 
-
 # Updates
 include(scripts/cmake/update_export.cmake)
 include(scripts/cmake/update_version_number.cmake)
