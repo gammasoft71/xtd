@@ -164,6 +164,7 @@ add_sources(
   src/xtd/__opaque_console_gcc.cpp
   src/xtd/__opaque_console_win32.cpp
   src/xtd/__opaque_environment_gcc.cpp
+  src/xtd/__opaque_environment_version.cpp
   src/xtd/__opaque_environment_win32.cpp
   src/xtd/bit_converter.cpp
   src/xtd/environment.cpp
