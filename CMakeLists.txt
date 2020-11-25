@@ -27,10 +27,6 @@ option(XTD_SET_COMPILER_OPTION_WARNINGS_AS_ERRORS "Enable compiler option warnin
 add_definitions(-D__XTD_INSTALL_PATH__="${CMAKE_INSTALL_PREFIX}")
 add_definitions(-D__XTD_RESOURCES_PATH__="${CMAKE_INSTALL_PREFIX}")
 
-# incldue xtd_commands
-include(scripts/cmake/xtd_commands.cmake)
-include(scripts/cmake/xtd_version.cmake)
-
 # Graphic toolkits definitions
 if (WIN32)
   #set(XTD_NATIVE_GRAPHIC_TOOLKIT "wsw" CACHE STRING "Choose toolkit for native drawing and forms libraries")
@@ -45,6 +41,10 @@ else ()
   set(XTD_NATIVE_GRAPHIC_TOOLKIT "wxwidgets" CACHE STRING "Choose toolkit for native drawing and forms libraries")
   set_property(CACHE XTD_NATIVE_GRAPHIC_TOOLKIT PROPERTY STRINGS fltk gtk3 gtk4 qt5 wxwidgets)
 endif ()
+
+# incldue xtd_commands
+include(scripts/cmake/xtd_commands.cmake)
+include(scripts/cmake/xtd_version.cmake)
 
 # Code coverage
 if (XTD_ENABLE_COVERAGE AND UNIX)
