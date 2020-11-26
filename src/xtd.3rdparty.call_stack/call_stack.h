@@ -6,15 +6,7 @@
 #include <string>
 #include <vector>
 #include <sstream>
-
-// Specify the stack frame methods to skip
-#if __clang__
-static const int StackFrameInternalMethodsToSkip = 4L;
-#elif __GNUC__
-static const int StackFrameInternalMethodsToSkip = 2L;
-#else
-static const int StackFrameInternalMethodsToSkip = 4L;
-#endif
+#include "call_stack_export.h"
 
 namespace stacktrace {
   /** Call-stack entry datastructure. */
@@ -37,7 +29,7 @@ namespace stacktrace {
   };
   
   /** Stack-trace base class, for retrieving the current call-stack. */
-  class call_stack {
+  class call_stack_export_ call_stack {
   public:
     /** Stack-trace consructor.
      \param num_discard - number of stack entries to discard at the top. */
