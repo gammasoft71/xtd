@@ -45,7 +45,6 @@ add_sources(
   include/xtd/console_modifiers.h
   include/xtd/console_special_key.h
   include/xtd/cpp_standard.h
-  include/xtd/core_export.h
   include/xtd/ctrace.h
   include/xtd/debugstreambuf.h
   include/xtd/delegate.h

@@ -9,7 +9,6 @@ add_references(xtd.core)
 add_sources(
   include/xtd/xtd
   include/xtd/cmake_page.h
-  include/xtd/export.h
   include/xtd/format_page.h
   include/xtd/main_page.h
   include/xtd/xtd.h

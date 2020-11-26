@@ -51,7 +51,6 @@ add_sources(
   include/xtd/tunit
   include/xtd/tunit.h
   include/xtd/tunit_event_args.h
-  include/xtd/tunit_export.h
   include/xtd/tunit_main.h
   include/xtd/unit_test.h
   include/xtd/valid.h
