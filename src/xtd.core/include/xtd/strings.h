@@ -6,6 +6,7 @@
 #define __XTD_STRINGS_INCLUDE__
 /// @endcond
 
+#include "core_export.h"
 #include "internal/__format.h"
 #include "internal/__format_information.h"
 #include "internal/__format_stringer.h"
@@ -44,7 +45,7 @@ namespace xtd {
   /// @endcond
   
   /// @brief The strings Caintains string operation methods.
-  class strings {
+  class core_export_ strings {
   public:
     /// @cond
     strings() = delete;

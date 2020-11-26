@@ -1,6 +1,7 @@
 /// @file
 /// @brief Contains xtd::environment class.
 #pragma once
+#include "core_export.h"
 #include "guid.h"
 #include "platform_id.h"
 #include "version.h"
@@ -11,7 +12,7 @@ namespace xtd {
   class guid;
 }
 
-class __opaque_environment final {
+class core_export_ __opaque_environment final {
   friend class xtd::environment;
   friend class xtd::guid;
   

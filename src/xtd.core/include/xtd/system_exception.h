@@ -5,6 +5,7 @@
 #include <system_error>
 #include <xtd/strings.h>
 #include "caller_info.h"
+#include "core_export.h"
 #include "diagnostics/stack_trace.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -12,7 +13,7 @@ namespace xtd {
   /// @brief Defines the base class for predefined exceptions in the xtd namespace.
   /// @par Library
   /// xtd.core
-  class system_exception : public std::exception {
+  class core_export_ system_exception : public std::exception {
   public:
     /// @brief Optional reference wrapper on std::eception
     using exception_ref = std::optional<std::reference_wrapper<const std::exception>>;

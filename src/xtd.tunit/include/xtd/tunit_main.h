@@ -1,9 +1,10 @@
 /// @file
 /// @brief Contains main entry point.
 #pragma once
+#include "tunit_export.h"
 
 /// @cond
-class __tunit_main final {
+class tunit_export_ __tunit_main final {
 public:
   __tunit_main() = delete;
   static int main();

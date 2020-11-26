@@ -2,6 +2,7 @@
 /// @brief Contains xtd::__opaque_console class.
 #pragma once
 #include "console_color.h"
+#include "core_export.h"
 #include "console_key_info.h"
 #include "console_special_key.h"
 
@@ -17,7 +18,7 @@ namespace xtd {
   class basic_console;
 }
 
-class __opaque_console final {
+class core_export_ __opaque_console final {
   template<class char_t>
   friend class xtd::basic_console;
   friend struct ::__console_intercept_signals;

@@ -2,6 +2,7 @@
 /// @brief Contains __demangle function.
 #pragma once
 #include "settings.h"
+#include "tunit_export.h"
 #include <iostream>
 
 /// @cond
@@ -24,8 +25,8 @@ enum class __console_color {
   white
 };
 
-void __opaque_foreground_color(__console_color);
-void __opaque_reset_color();
+tunit_export_ void __opaque_foreground_color(__console_color);
+tunit_export_ void __opaque_reset_color();
 
 template<class Char>
 inline std::basic_streambuf<Char>* __opaque_get_out_rdbuf() {return nullptr;}
