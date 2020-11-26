@@ -6,6 +6,7 @@
 #include <memory>
 #include <string>
 #include <vector>
+#include "../core_export.h"
 #include "process_window_style.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -22,7 +23,7 @@ namespace xtd {
     /// @remarks Set UseShellExecute to specify whether to start the process by using the operating system shell.
     /// @remarks You can change the value of any process_start_info property up to the time that the process starts. After you start the process, changing these values has no effect.
     /// @note This class contains a link demand at the class level that applies to all members. A SecurityException is thrown when the immediate caller does not have full-trust permission. For details about security demands, see Link Demands.
-    class process_start_info final {
+    class core_export_ process_start_info final {
     public:
       /// @brief Initializes a new instance of the process_start_info class without specifying a file name with which to start the process.
       /// @remarks You must set at least the SetFileName() property before you start the process. The file name is any application or document. In this case, a document is defined to be any file type that has an open or default action associated with it. You can view registered file types and their associated applications for your computer by using the Folder Options dialog box, which is available through the operating system. The Advanced button leads to a dialog box that shows whether there is an open action associated with a specific registered file type.

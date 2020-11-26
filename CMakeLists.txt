@@ -170,7 +170,7 @@ file(WRITE "${XTD_CONFIG_CMAKE_FILE}"
   "\n"
   "set(${PROJECT_NAME}_INCLUDE_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../include\")\n"
   "set(${PROJECT_NAME}_LIBRARIES_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../lib\")\n"
-  "set(${PROJECT_NAME}_LIBRARIES ${PROJECT_NAME})\n"
+  "set(${PROJECT_NAME}_LIBRARIES ${PROJECT_NAME} xtd.3rdparty.call_stack xtd.core xtd.drawing xtd.forms xtd.tunit)\n"
   "set(${PROJECT_NAME}_FOUND TRUE)\n"
 )
 install(FILES scripts/cmake/xtd_commands.cmake DESTINATION cmake)

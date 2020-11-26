@@ -1,13 +1,14 @@
 /// @file
 /// @brief Contains xtd::diagnostics::debug class.
 #pragma once
+#include "../core_export.h"
 #include "process_start_info.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
-    class process final {
+    class core_export_ process final {
     public:
       process() = default;
       process(const process&) = default;

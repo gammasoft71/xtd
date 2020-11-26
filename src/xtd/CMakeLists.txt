@@ -5,7 +5,7 @@ project(xtd)
 include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 add_include_directories(include)
-add_references(xtd.core xtd.drawing xtd.forms xtd.tunit)
+add_references(xtd.core)
 add_sources(
   include/xtd/xtd
   include/xtd/cmake_page.h

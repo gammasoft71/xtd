@@ -4,7 +4,8 @@ cmake_minimum_required(VERSION 3.3)
 project(guidgen-gui)
 include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
-add_references(xtd)
+add_references(xtd #include "../core_export.h"
+xtd.tunit)
 add_sources(
   src/main_form.cpp
 )
