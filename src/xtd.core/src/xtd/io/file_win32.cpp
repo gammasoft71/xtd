@@ -5,7 +5,7 @@
 #undef max
 #undef min
 
-int __get_file_attributes(const char*path) {
+int xtd::io::file::__get_file_attributes(const char*path) {
   return GetFileAttributes(path);
 }
 #endif

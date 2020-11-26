@@ -4,7 +4,7 @@
 #include <cstring>
 #include <sys/stat.h>
 
-int __get_file_attributes(const char*path) {
+int xtd::io::file::__get_file_attributes(const char*path) {
   struct stat status;
   memset(&status, 0, sizeof(status));
   if (stat(path, &status) != 0) return -1;

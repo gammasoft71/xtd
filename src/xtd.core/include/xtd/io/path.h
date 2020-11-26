@@ -12,12 +12,6 @@
 //#include "drive_into.h"
 #include "file.h"
 
-/// @cond
-core_export_ std::string __get_current_dirirectory() noexcept;
-core_export_ std::string __get_temp_path() noexcept;
-core_export_ bool __is_windows_os() noexcept;
-/// @endcond
-
 //#include <iostream>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -459,6 +453,10 @@ namespace xtd {
       static char volume_separator_char() noexcept {return  volume_separator_char<char>();}
       
     private:
+      static std::string __get_current_dirirectory() noexcept;
+      static std::string __get_temp_path() noexcept;
+      static bool __is_windows_os() noexcept;
+
       template<typename char_t>
       static bool __is_drive(const std::basic_string<char_t>& path) noexcept {
         /// @todo remove comment when drive_info::get_drives will be create
