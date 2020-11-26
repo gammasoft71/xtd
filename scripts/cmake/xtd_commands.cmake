@@ -1871,8 +1871,9 @@ endif()
 
 if (MSVC)
   add_definitions(-D_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS)
-  add_compile_options(/utf-8 /wd4251 /wd4275 /wd4996 /Zc:__cplusplus /bigobj)
-  add_link_options(/ENTRY:mainCRTStartup)
+  add_compile_options(/utf-8 /wd4251 /wd4275 /wd4996 /Zc:__cplusplus)
+  set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /bigobj")
+  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /ENTRY:mainCRTStartup")
 endif ()
 
 add_definitions(-D__CMAKE_INSTALL_PREFIX__="${CMAKE_INSTALL_PREFIX}")
