@@ -5,6 +5,7 @@
 #include <memory>
 #include <vector>
 #include "../caller_info.h"
+#include "../core_export.h"
 #include "stack_frame.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -15,7 +16,7 @@ namespace xtd {
   
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
-    class stack_trace {
+    class core_export_ stack_trace {
     public:
       using frame_collection = std::vector<xtd::diagnostics::stack_frame>;
       

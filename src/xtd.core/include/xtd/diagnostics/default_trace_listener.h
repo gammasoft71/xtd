@@ -2,6 +2,7 @@
 /// @brief Contains xtd::diagnostics::debug class.
 #pragma once
 #include <xtd/io/file.h>
+#include "../core_export.h"
 #include "trace_listener.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -12,7 +13,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    class default_trace_listener : public trace_listener {
+    class core_export_ default_trace_listener : public trace_listener {
     public:
       default_trace_listener() : trace_listener("default") {};
       ~default_trace_listener() {flush();}

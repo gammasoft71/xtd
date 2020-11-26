@@ -1,5 +1,12 @@
 #include <thread>
-#include <xtd/xtd>
+#include <xtd/literals.h>
+#include <xtd/startup.h>
+#include <xtd/forms/application.h>
+#include <xtd/forms/button.h>
+#include <xtd/forms/choice.h>
+#include <xtd/forms/label.h>
+#include <xtd/forms/numeric_up_down.h>
+#include <xtd/forms/text_box.h>
 
 using namespace std;
 using namespace xtd;

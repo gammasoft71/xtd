@@ -3,6 +3,7 @@
 #pragma once
 #include <mutex>
 #include <string>
+#include "../core_export.h"
 #include "trace_listener_collection.h"
 
 /// @cond
@@ -27,7 +28,7 @@ namespace xtd {
     /// @par Examples
     /// The following example uses debug to indicate the beginning and the end of a program's execution. The example also uses the debug::indent and debug::unindent methods to distinguish the tracing output.
     /// @include debug.cpp
-    class trace {
+    class core_export_ trace {
     public:
       /// @brief Get whether Flush should be called on the Listeners after every write.
       /// @return true if Flush is called on the Listeners after every write; otherwise, false.

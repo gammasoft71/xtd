@@ -2,12 +2,13 @@
 /// @brief Contains xtd::io::file class.
 #pragma once
 
-#include "file_attributes.h"
 #include <cstdio>
 #include <fstream>
 #include <string>
 #include <vector>
 #include <filesystem>
+#include "../core_export.h"
+#include "file_attributes.h"
 
 /// @cond
 int __get_file_attributes(const char*path);
@@ -18,7 +19,7 @@ namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief Provides static methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of std::basic_ftream objects.
-    class file {
+    class core_export_ file {
     public:
       /// @cond
       file() = delete;

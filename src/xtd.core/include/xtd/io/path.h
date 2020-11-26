@@ -2,14 +2,15 @@
 /// @brief Contains xtd::tunit::unit_test class.
 #pragma once
 
-/// @todo remove comment when drive_into.h will be create
-//#include "drive_into.h"
-#include "file.h"
 #include <cstdlib>
 #include <random>
 #include <regex>
 #include <sstream>
 #include <string>
+#include "../core_export.h"
+/// @todo remove comment when drive_into.h will be create
+//#include "drive_into.h"
+#include "file.h"
 
 /// @cond
 std::string __get_current_dirirectory() noexcept;
@@ -24,7 +25,7 @@ namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief Performs operations on std::basic_string instances that contain file or directory path information. These operations are performed in a cross-platform manner.
-    class path {
+    class core_export_ path {
     public:
       /// @cond
       path() = delete;
