@@ -11,6 +11,7 @@
 
 #include "__opaque_environment.h"
 #include "compiler.h"
+#include "core_export.h"
 #include "cpp_standard.h"
 #include "environment_variable_target.h"
 #include "guid.h"
@@ -24,7 +25,7 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The environment class.
-  class environment final static_ {
+  class core_export_ environment final static_ {
   public:
     /// @enum special_folder
     /// @brief Specifies enumerated constants used to retrieve directory paths to system special folders.

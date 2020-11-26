@@ -5,6 +5,7 @@
 #include "assert.h"
 #include "assert_error.h"
 #include "line_info.h"
+#include "tunit_export.h"
 #include <functional>
 #include <chrono>
 #include <string>
@@ -19,7 +20,7 @@ namespace xtd {
     class valid;
     /// @endcond
     
-    class test final {
+    class tunit_export_ test final {
       enum class test_status {
         not_started,
         ignored,

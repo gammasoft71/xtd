@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include "core_export.h"
 #include "icomparable.h"
 #include "iequatable.h"
 #include "object.h"
@@ -8,7 +9,7 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents a globally unique identifier (GUID). A GUID is a 128-bit integer (16 bytes) that can be used across all computers and networks wherever a unique identifier is required. Such an identifier has a very low probability of being duplicated.
-  class guid final : public object, public icomparable<guid>, public iequatable<guid> {
+  class core_export_ guid final : public object, public icomparable<guid>, public iequatable<guid> {
   public:
     /// @brief Initializes a new instance of the Guid structure.
     guid() = default;

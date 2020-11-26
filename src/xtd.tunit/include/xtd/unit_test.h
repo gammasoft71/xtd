@@ -5,6 +5,7 @@
 #include "event_listener.h"
 #include "registered_test_class.h"
 #include "settings.h"
+#include "tunit_export.h"
 #include <chrono>
 #include <iomanip>
 #include <fstream>
@@ -22,7 +23,7 @@ namespace xtd {
     /// @endcond
 
     /// @brief The template class.
-    class unit_test {
+    class tunit_export_ unit_test {
     public:
       explicit unit_test(std::unique_ptr<xtd::tunit::event_listener> event_listener) noexcept;
       

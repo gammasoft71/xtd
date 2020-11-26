@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <vector>
 
+#include "core_export.h"
 #include "static.h"
 #include <xtd/strings.h>
 
@@ -43,7 +44,7 @@ namespace xtd {
   /// @par Example
   /// The following code example illustrates the use of several bit_converter class methods.
   /// @include bit_converter.cpp
-  class bit_converter final static_ {
+  class core_export_ bit_converter final static_ {
   public:
     /// @cond
 #if defined(__linux__) && defined(_LP64)

@@ -7,6 +7,7 @@
 #include "test_initialize_attribute.h"
 #include "test_cleanup_attribute.h"
 #include "test_method_attribute.h"
+#include "tunit_export.h"
 #include <chrono>
 #include <vector>
 
@@ -20,7 +21,7 @@ namespace xtd {
     class unit_test;
     /// @endcond
     
-    class test_class {
+    class tunit_export_ test_class {
     public:
       /// @cond
       test_class() = default;
