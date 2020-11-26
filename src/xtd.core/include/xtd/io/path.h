@@ -13,9 +13,9 @@
 #include "file.h"
 
 /// @cond
-std::string __get_current_dirirectory() noexcept;
-std::string __get_temp_path() noexcept;
-bool __is_windows_os() noexcept;
+core_export_ std::string __get_current_dirirectory() noexcept;
+core_export_ std::string __get_temp_path() noexcept;
+core_export_ bool __is_windows_os() noexcept;
 /// @endcond
 
 //#include <iostream>
