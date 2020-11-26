@@ -10,10 +10,6 @@
 #include "../core_export.h"
 #include "file_attributes.h"
 
-/// @cond
-core_export_ int __get_file_attributes(const char*path);
-/// @endcond
-
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
@@ -917,6 +913,9 @@ namespace xtd {
       template<typename char_t>
       static std::basic_ofstream<char_t> write_text(const char_t* path) noexcept {return write_text(std::basic_string<char_t>(path));}
       /// @endcond
+      
+    private:
+      static int __get_file_attributes(const char*path);
     };
   }
 }
