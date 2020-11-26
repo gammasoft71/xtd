@@ -11,7 +11,7 @@
 #include "file_attributes.h"
 
 /// @cond
-int __get_file_attributes(const char*path);
+core_export_ int __get_file_attributes(const char*path);
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
