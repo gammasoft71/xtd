@@ -134,6 +134,8 @@ endif ()
 # incldue xtd_commands
 include(scripts/cmake/xtd_commands.cmake)
 include(scripts/cmake/xtd_version.cmake)
+include(scripts/cmake/update_export.cmake)
+include(scripts/cmake/update_version_number.cmake)
 
 # Code coverage
 if (XTD_ENABLE_COVERAGE AND UNIX)
@@ -155,9 +157,13 @@ endif ()
 # Projects
 add_projects(src tests tools)
 
-# Updates
-include(scripts/cmake/update_export.cmake)
-include(scripts/cmake/update_version_number.cmake)
+# Updates export file
+xtd_update_export_file(src/xtd.3rdparty.call_stack/call_stack_export.h XTD_3RDPARTY_CALL_STACK_EXPORT call_stack_export_)
+xtd_update_export_file(src/xtd.core/include/xtd/core_export.h XTD_CORE_EXPORT core_export_)
+xtd_update_export_file(src/xtd.drawing/include/xtd/drawing_export.h XTD_DRAWING_EXPORT drawing_export_)
+xtd_update_export_file(src/xtd.forms/include/xtd/forms_export.h XTD_FORMS_EXPORT forms_export_)
+xtd_update_export_file(src/xtd.tunit/include/xtd/tunit_export.h XTD_TUNIT_EXPORT tunit_export_)
+xtd_update_export_file(src/xtd/include/xtd/export.h XTD_EXPORT export_)
 
 # install
 install_package()
