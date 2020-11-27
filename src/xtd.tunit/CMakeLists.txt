@@ -61,6 +61,7 @@ add_sources(
   src/__demangle_gcc.cpp
   src/__demangle_win32.cpp
   src/base_assert.cpp
+  src/settings.cpp
   src/tunit_main.cpp
   src/test.cpp
   src/test_class.cpp

@@ -4,13 +4,14 @@
 #include <chrono>
 #include <cstdlib>
 #include <string>
+#include "tunit_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @brief The settings class contains xtd.tunit settings.
-    class settings final {
+    class tunit_export_ settings final {
     public:
       /// @brief Creates new instance of settings.
       settings() = default;
@@ -22,10 +23,7 @@ namespace xtd {
 
       /// @brief Get default settings intance.
       /// @return Default settings instance.
-      static xtd::tunit::settings& default_settings() noexcept {
-        static xtd::tunit::settings settings;
-        return settings;
-      }
+      static xtd::tunit::settings& default_settings() noexcept;
 
       /// @brief Gets also run ignored test.
       /// @return true if also run ignored test; otherwise false.
