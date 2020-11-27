@@ -4,7 +4,7 @@
 #include "tunit_main.h"
 
 #if defined(TUNIT_CONFIG_MAIN)
-int main() {
-  return __tunit_main::main();
+int main(int argc, char* argv[]) {
+  return __tunit_main::main(argv, argc);
 }
 #endif

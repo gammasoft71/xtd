@@ -7,7 +7,7 @@
 class tunit_export_ __tunit_main final {
 public:
   __tunit_main() = delete;
-  static int main();
+  static int main(int argc, char* argv[]);
 };
 /// @endcond
 
