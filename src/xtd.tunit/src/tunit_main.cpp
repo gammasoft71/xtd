@@ -3,6 +3,6 @@
 
 using namespace xtd::tunit;
 
-int __tunit_main::main() {
-  return console_unit_test().run();
+int __tunit_main::main(int argc, char* argv[]) {
+  return console_unit_test(argv, argc).run();
 }
