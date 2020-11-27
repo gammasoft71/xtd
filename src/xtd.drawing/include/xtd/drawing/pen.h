@@ -3,6 +3,7 @@
 #include <memory>
 #include <ostream>
 #include <xtd/strings.h>
+#include "../drawing_export.h"
 #include "drawing2d/pen_alignment.h"
 #include "drawing2d/pen_type.h"
 #include "brush.h"
@@ -18,7 +19,7 @@ namespace xtd {
     /// @endcond
 
     /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
-    class pen final {
+    class drawing_export_ pen final {
     public:
       /// @brief Initializes a new instance of the xtd::drawing::pen class with the specified xtd::drawing::brush.
       /// @param brush A xtd::drawing::brush that determines the fill properties of this xtd::drawing::pen.

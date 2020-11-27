@@ -5,6 +5,7 @@
 #include <stdexcept>
 #include <vector>
 #include <xtd/strings.h>
+#include "../drawing_export.h"
 #include "font_family.h"
 #include "graphics_unit.h"
 
@@ -26,7 +27,7 @@ namespace xtd {
     /// @endcond
     
     /// @brief Defines a particular format for text, including font face, size, and style attributes. This class cannot be inherited.
-    class font final {
+    class drawing_export_ font final {
     public:
       /// @brief Initializes a new Font that uses the specified existing xtd::drawing::font and size.
       /// @param prototype The existing xtd::drawing::font from which to create the new xtd::drawing::font.

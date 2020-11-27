@@ -1,4 +1,5 @@
 #pragma once
+#include "../drawing_export.h"
 #include "brush.h"
 #include "color.h"
 
@@ -7,7 +8,7 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
-    class solid_brush : public brush {
+    class drawing_export_ solid_brush : public brush {
     public:
       solid_brush();
       solid_brush(const drawing::color& color) {this->color(color);}

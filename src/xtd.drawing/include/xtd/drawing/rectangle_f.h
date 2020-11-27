@@ -2,6 +2,7 @@
 #include <cstdint>
 #include <ostream>
 #include <string>
+#include "../drawing_export.h"
 #include "point_f.h"
 #include "size_f.h"
 
@@ -13,7 +14,7 @@ namespace xtd {
     class rectangle;
     /// @endcond
 
-    class rectangle_f {
+    class drawing_export_ rectangle_f {
     public:
       static const rectangle_f empty;
       

@@ -4,6 +4,7 @@
 #include <memory>
 #include <iostream>
 #include <string>
+#include "../drawing_export.h"
 #include "imaging/color_palette.h"
 #include "imaging/frame_dimension.h"
 #include "imaging/image_flags.h"
@@ -20,7 +21,7 @@ namespace xtd {
   namespace drawing {
     /// @brief An abstract base class that provides functionality for the bitmap and metafile descended classes.
     /// @remarks To draw an image on a Windows Form, you should use one of the draw_image methods.
-    class image {
+    class drawing_export_ image {
     public:
       /// @cond
       image() = default;

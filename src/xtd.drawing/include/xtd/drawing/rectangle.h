@@ -3,6 +3,7 @@
 #include <cstdint>
 #include <ostream>
 #include <string>
+#include "../drawing_export.h"
 #include "point.h"
 #include "size.h"
 #include "rectangle_f.h"
@@ -11,7 +12,7 @@
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
-    class rectangle {
+    class drawing_export_ rectangle {
     public:
       static const rectangle empty;
       

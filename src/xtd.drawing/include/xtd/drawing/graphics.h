@@ -3,6 +3,7 @@
 #include <limits>
 #include <ostream>
 #include <xtd/strings.h>
+#include "../drawing_export.h"
 #include "brush.h"
 #include "color.h"
 #include "font.h"
@@ -31,7 +32,7 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
-    class graphics {
+    class drawing_export_ graphics {
     public:
       /// @cond
       graphics(const graphics& value);

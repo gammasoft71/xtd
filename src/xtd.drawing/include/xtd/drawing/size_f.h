@@ -1,6 +1,7 @@
 #pragma once
 #include <ostream>
 #include <string>
+#include "../drawing_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -11,7 +12,7 @@ namespace xtd {
     /// @endcond
     
     /// @brief Stores an ordered pair of integers, which specify a height and width.
-    class size_f {
+    class drawing_export_ size_f {
     public:
       /// @brief Gets a Size class that has a Height and Width value of 0. This field is constant.
       static const xtd::drawing::size_f empty;

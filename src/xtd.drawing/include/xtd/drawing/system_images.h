@@ -1,8 +1,9 @@
 #pragma once
+#include <map>
+#include <xtd/static.h>
+#include "../drawing_export.h"
 #include "bitmap.h"
 #include "size.h"
-#include <xtd/static.h>
-#include <map>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -14,7 +15,7 @@ namespace xtd {
 
     /// @brief Each property of the system_images class is an image object for Windows system-wide images. This class cannot be inherited.
     /// @remarks Each property of the system_fonts class returns a Font used to display text in a particular Windows display element, such as the title bar of a window. These fonts reflect the current settings in Control Panel.
-    class system_images final static_ {
+    class drawing_export_ system_images final static_ {
     public:
       static xtd::drawing::size default_size() {return {32, 32};}
       static xtd::drawing::image image_loading() {return image_loading(default_size());}

@@ -1,4 +1,5 @@
 #pragma once
+#include "../drawing_export.h"
 #include "image.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -7,7 +8,7 @@ namespace xtd {
   namespace drawing {
     /// @brief Encapsulates a GDI+ bitmap, which consists of the pixel data for a graphics image and its attributes. A bitmap is an object used to work with images defined by pixel data.
     /// @remarks To draw an image on a Windows Form, you should use one of the draw_image methods.
-    class bitmap : public xtd::drawing::image {
+    class drawing_export_ bitmap : public xtd::drawing::image {
     public:
       explicit bitmap(const image& image) : xtd::drawing::image(image) {}
 

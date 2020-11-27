@@ -1,5 +1,6 @@
 #pragma once
 #include <xtd/static.h>
+#include "../drawing_export.h"
 #include "solid_brush.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -8,7 +9,7 @@ namespace xtd {
   namespace drawing {
     /// @brief brushes for all the standard colors. This class cannot be inherited.
     /// @remarks The brushes class contains static read-only properties that return a solid_brush object of the color indicated by the property name. You typically do not have to explicitly dispose of the brush returned by a property in this class, unless it is used to construct a new brush.
-    class brushes final static_ {
+    class drawing_export_ brushes final static_ {
     public:
       // A system-defined brush object.
       static xtd::drawing::solid_brush transparent();
