@@ -17,5 +17,5 @@ namespace {
 }
 #endif
 
-xtd::tunit::unit_test::unit_test(std::unique_ptr<xtd::tunit::event_listener> event_listener) noexcept : arguments(__tunit_argv + 1, __tunit_argv + __tunit_argc), name_(get_filename(__tunit_argv[0])), event_listener_(std::move(event_listener)) {
+xtd::tunit::unit_test::unit_test(std::unique_ptr<xtd::tunit::event_listener> event_listener) noexcept : arguments(__tunit_argv == nullptr ? 0 : __tunit_argv + 1, __tunit_argv == nullptr ? 0 : __tunit_argv + __tunit_argc), name_(__tunit_argv == nullptr ? "(unknown)" : get_filename(__tunit_argv[0])), event_listener_(std::move(event_listener)) {
 }
