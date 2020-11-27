@@ -29,4 +29,4 @@ unsigned int xtd::diagnostics::trace::indent_size_ = 4;
 xtd::diagnostics::trace_listener_collection& xtd::diagnostics::trace::listeners_ = __listeners__;
 bool xtd::diagnostics::trace::use_global_lock_ = true;
 std::mutex xtd::diagnostics::trace::global_lock_;
-std::string xtd::diagnostics::trace::source_name_ = __trace_argv[0];
+std::string xtd::diagnostics::trace::source_name_ = __trace_argv == nullptr ? "(unknown)" : __trace_argv[0];
