@@ -25,14 +25,16 @@ namespace xtd {
       class startup {\
       public:\
         startup() = delete; \
-        static int run(void (*main_function)(), const xtd::collections::specialized::string_vector& args) {main_function(); return xtd::environment::exit_code();}\
-        static int run(int (*main_function)(), const xtd::collections::specialized::string_vector& args) {return main_function();}\
-        static int run(void (*main_function)(xtd::collections::specialized::string_vector), const xtd::collections::specialized::string_vector& args) {main_function(args); return xtd::environment::exit_code();}\
-        static int run(void (*main_function)(const xtd::collections::specialized::string_vector&), const xtd::collections::specialized::string_vector& args) {main_function(args); return xtd::environment::exit_code();}\
-        static int run(int (*main_function)(xtd::collections::specialized::string_vector), const xtd::collections::specialized::string_vector& args) {return main_function(args);}\
-        static int run(int (*main_function)(const xtd::collections::specialized::string_vector&), const xtd::collections::specialized::string_vector& args) {return main_function(args);}\
+        static int run(void (*main_function)(), int argc, char* argv[]) {main_function(); return xtd::environment::exit_code();}\
+        static int run(int (*main_function)(), int argc, char* argv[]) {return main_function();}\
+        static int run(void (*main_function)(int argc, char* argv[]), int argc, char* argv[]) {main_function(argc, argv); return xtd::environment::exit_code();}\
+        static int run(void (*main_function)(xtd::collections::specialized::string_vector), int argc, char* argv[]) {main_function({argv + 1, argv + argc}); return xtd::environment::exit_code();}\
+        static int run(void (*main_function)(const xtd::collections::specialized::string_vector&), int argc, char* argv[]) {main_function({argv + 1, argv + argc}); return xtd::environment::exit_code();}\
+        static int run(int (*main_function)(int argc, char* argv[]), int argc, char* argv[]) {return main_function(argc, argv);}\
+        static int run(int (*main_function)(xtd::collections::specialized::string_vector), int argc, char* argv[]) {return main_function({argv + 1, argv + argc});}\
+        static int run(int (*main_function)(const xtd::collections::specialized::string_vector&), int argc, char* argv[]) {return main_function({argv + 1, argv + argc});}\
       };\
-      return startup::run(main_class::main, {argv + 1, argv + argc});\
+      return startup::run(main_class::main, argc, argv);\
     } \
     int __startup_force_to_end_with_semicolon__ = 0
 }
