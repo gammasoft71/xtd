@@ -65,6 +65,10 @@ namespace xtd {
         return std::chrono::duration_cast<std::chrono::milliseconds>(end_time_point - start_time_point);
       }
 
+      /// @cond
+      static intptr_t __internal_tunit_unit_tests_mode__;
+      /// @endcond
+      
     private:
       friend class xtd::tunit::assert;
       friend class xtd::tunit::base_assert;
