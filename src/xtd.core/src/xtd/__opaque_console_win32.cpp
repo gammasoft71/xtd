@@ -37,6 +37,30 @@ namespace {
     SetConsoleCtrlHandler(&__handler_routine, TRUE);
     return false;
   }();
+
+  class terminal final {
+  public:
+    static terminal terminal_;
+
+    void force_compiler_optimizer_to_create_object() {
+    }
+
+  private:
+    terminal() = default;
+    ~terminal() noexcept {
+      CONSOLE_SCREEN_BUFFER_INFO csbi;
+      GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+
+      csbi.wAttributes &= 0xFF0F;
+      csbi.wAttributes |= ((int)backColor_ << 4) | (int)foreColor_;
+      SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes);
+    }
+
+    xtd::console_color backColor_ = __background_color();
+    xtd::console_color foreColor_ = __foreground_color();
+  };
+
+  terminal terminal::terminal_;
 }
 
 xtd::console_color __opaque_console::background_color() noexcept {
@@ -44,6 +68,7 @@ xtd::console_color __opaque_console::background_color() noexcept {
 }
 
 bool __opaque_console::background_color(xtd::console_color color) noexcept {
+  terminal::terminal_.force_compiler_optimizer_to_create_object();
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   
@@ -146,6 +171,7 @@ xtd::console_color __opaque_console::foreground_color() noexcept {
 }
 
 bool __opaque_console::foreground_color(xtd::console_color color) noexcept {
+  terminal::terminal_.force_compiler_optimizer_to_create_object();
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   
