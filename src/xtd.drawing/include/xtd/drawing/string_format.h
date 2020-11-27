@@ -2,6 +2,7 @@
 #include <cstdint>
 #include <ostream>
 #include <xtd/strings.h>
+#include "../drawing_export.h"
 #include "hotkey_prefix.h"
 #include "string_alignment.h"
 #include "string_format_flags.h"
@@ -13,7 +14,7 @@ namespace xtd {
   namespace drawing {
     /// @brief Encapsulates text layout information (such as alignment, orientation and tab stops) display manipulations (such as ellipsis insertion and national digit substitution) and OpenType features. This class cannot be inherited.
     /// @remarks Many common formats are provided through the string_format_flags enumeration. string_format objects can be changed.
-    class string_format final {
+    class drawing_export_ string_format final {
     public:
       /// @brief Initializes a new string_format object.
       /// @remarks The following table shows initial property values for an instance of string_format class.

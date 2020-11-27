@@ -3,6 +3,7 @@
 #include <memory>
 #include <ostream>
 #include <xtd/strings.h>
+#include "../drawing_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -13,7 +14,7 @@ namespace xtd {
     /// @endcond
 
     /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
-    class brush {
+    class drawing_export_ brush {
     public:
       //static const brush null;
       

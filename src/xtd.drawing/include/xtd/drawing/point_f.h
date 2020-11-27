@@ -3,6 +3,7 @@
 #include <ostream>
 #include <string>
 #include <string>
+#include "../drawing_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -12,7 +13,7 @@ namespace xtd {
     class size;
     /// @endcond
 
-    class point_f {
+    class drawing_export_ point_f {
     public:
       static const point_f empty;
       

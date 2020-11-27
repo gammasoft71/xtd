@@ -2,6 +2,7 @@
 #include <cstdint>
 #include <ostream>
 #include <string>
+#include "../drawing_export.h"
 #include "known_color.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -25,7 +26,7 @@ namespace xtd {
     ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
     /// }
     /// @endcode
-    class color {
+    class drawing_export_ color {
     public:
       /// @brief Represents a color that is null.
       static const xtd::drawing::color empty;

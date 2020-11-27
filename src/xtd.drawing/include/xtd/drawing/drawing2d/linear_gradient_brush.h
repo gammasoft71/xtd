@@ -1,4 +1,5 @@
 #pragma once
+#include "../../drawing_export.h"
 #include "../brush.h"
 #include "../color.h"
 #include "../point.h"
@@ -9,7 +10,7 @@ namespace xtd {
   namespace drawing {
     /// @brief The xtd::.drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing2d {
-      class linear_gradient_brush : public brush {
+      class drawing_export_ linear_gradient_brush : public brush {
       public:
         linear_gradient_brush();
         linear_gradient_brush(const xtd::drawing::point& point1, const xtd::drawing::point& point2, const xtd::drawing::color& color1, const xtd::drawing::color& color2) {

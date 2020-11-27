@@ -5,8 +5,9 @@
 #include <stdexcept>
 #include <vector>
 #include <xtd/strings.h>
-#include "text/generic_font_families.h"
+#include "../drawing_export.h"
 #include "font_style.h"
+#include "text/generic_font_families.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -18,7 +19,7 @@ namespace xtd {
     }
     /// @endcond
     /// @brief Defines a group of type faces having a similar basic design and certain variations in styles. This class cannot be inherited.
-    class font_family final {
+    class drawing_export_ font_family final {
     public:
       /// @brief Initializes a new xtd::drawing::font_family with the specified name.
       /// @param name The name of the new xtd::drawing::font_family.

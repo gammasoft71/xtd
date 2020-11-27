@@ -1,6 +1,7 @@
 #pragma once
-#include "font.h"
 #include <xtd/static.h>
+#include "../drawing_export.h"
+#include "font.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -8,7 +9,7 @@ namespace xtd {
   namespace drawing {
     /// @brief Specifies the fonts used to display text in Windows display elements.
     /// @remarks Each property of the system_fonts class returns a Font used to display text in a particular Windows display element, such as the title bar of a window. These fonts reflect the current settings in Control Panel.
-    class system_fonts final static_ {
+    class drawing_export_ system_fonts final static_ {
     public:
       /// @brief Gets a font that is used to display text in the title bars of windows.
       static xtd::drawing::font caption_font();
