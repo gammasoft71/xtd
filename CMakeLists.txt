@@ -27,19 +27,19 @@ option(XTD_SET_COMPILER_OPTION_WARNINGS_AS_ERRORS "Enable compiler option warnin
 add_definitions(-D__XTD_INSTALL_PATH__="${CMAKE_INSTALL_PREFIX}")
 add_definitions(-D__XTD_RESOURCES_PATH__="${CMAKE_INSTALL_PREFIX}")
 
+# incldue xtd_commands
+include(scripts/cmake/xtd_commands.cmake)
+include(scripts/cmake/xtd_version.cmake)
+include(scripts/cmake/update_export.cmake)
+include(scripts/cmake/update_version_number.cmake)
+
 # Graphic toolkits definitions
 if (WIN32)
-  #set(XTD_NATIVE_GRAPHIC_TOOLKIT "wsw" CACHE STRING "Choose toolkit for native drawing and forms libraries")
-  set(XTD_NATIVE_GRAPHIC_TOOLKIT "wxwidgets" CACHE STRING "Choose toolkit for native drawing and forms libraries")
-  set_property(CACHE XTD_NATIVE_GRAPHIC_TOOLKIT PROPERTY STRINGS fltk qt5 msw wxwidgets)
+  choice_options(XTD_NATIVE_GRAPHIC_TOOLKIT "Choose toolkit for native drawing and forms libraries" wxwidgets msw qt5 fltk)
 elseif (APPLE)
-  #set(XTD_NATIVE_GRAPHIC_TOOLKIT "cocoa" CACHE STRING "Choose toolkit for native drawing and forms libraries")
-  set(XTD_NATIVE_GRAPHIC_TOOLKIT "wxwidgets" CACHE STRING "Choose toolkit for native drawing and forms libraries")
-  set_property(CACHE XTD_NATIVE_GRAPHIC_TOOLKIT PROPERTY STRINGS cocoa fltk qt5 wxwidgets)
+  choice_options(XTD_NATIVE_GRAPHIC_TOOLKIT "Choose toolkit for native drawing and forms libraries" wxwidgets cocoa qt5 fltk)
 else ()
-  #set(XTD_NATIVE_GRAPHIC_TOOLKIT "gtk4" CACHE STRING "Choose toolkit for native drawing and forms libraries")
-  set(XTD_NATIVE_GRAPHIC_TOOLKIT "wxwidgets" CACHE STRING "Choose toolkit for native drawing and forms libraries")
-  set_property(CACHE XTD_NATIVE_GRAPHIC_TOOLKIT PROPERTY STRINGS fltk gtk3 gtk4 qt5 wxwidgets)
+  choice_options(XTD_NATIVE_GRAPHIC_TOOLKIT "Choose toolkit for native drawing and forms libraries" wxwidgets gtk4 gtk3 qt5 fltk)
 endif ()
 
 # Validation options
@@ -130,12 +130,6 @@ if ("${XTD_NATIVE_GRAPHIC_TOOLKIT}" STREQUAL "wxwidgets")
   set(XTD_DRAWING_NATIVE_LIBRARY xtd.drawing.native.wxwidgets)
   set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.wxwidgets)
 endif ()
-
-# incldue xtd_commands
-include(scripts/cmake/xtd_commands.cmake)
-include(scripts/cmake/xtd_version.cmake)
-include(scripts/cmake/update_export.cmake)
-include(scripts/cmake/update_version_number.cmake)
 
 # Code coverage
 if (XTD_ENABLE_COVERAGE AND UNIX)
