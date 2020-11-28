@@ -1521,6 +1521,17 @@ namespace xtd {
     static const std::basic_string<char_t> to_lower(const char_t* str) noexcept {return to_lower(std::basic_string<char_t>(str));}
     /// @endcond
     
+    static std::string to_string(const char* str) {return str;}
+    
+    static std::string to_string(const std::string& str) {return str;}
+
+    static std::string to_string(std::string&& str) {return std::move(str);}
+    
+#if defined(__cpp_lib_char8_t)
+    static std::string to_string(const char8_t* str) {return to_string(std::u8string(str));}
+    static std::string to_string(const std::u8string& s) {return std::string(s.begin(), s.end());}
+#endif
+
     /// @brief Returns a copy of the specified string converted to uppercase.
     /// @param str string to convert to upper.
     /// @return String A new String in uppercase.
