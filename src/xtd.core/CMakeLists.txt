@@ -67,6 +67,7 @@ add_sources(
   include/xtd/invalid_cast_exception.h
   include/xtd/invalid_operation_exception.h
   include/xtd/invalid_program_exception.h
+  include/xtd/is.h
   include/xtd/istring.h
   include/xtd/length_exception.h
   include/xtd/literals.h
@@ -97,6 +98,7 @@ add_sources(
   include/xtd/to_string.h
   include/xtd/tracestreambuf.h
   include/xtd/typeof.h
+  include/xtd/types.h
   include/xtd/underflow_exception.h
   include/xtd/unused.h
   include/xtd/using.h
