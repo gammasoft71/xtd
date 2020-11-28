@@ -5,6 +5,6 @@
 
 #if defined(TUNIT_CONFIG_MAIN)
 int main(int argc, char* argv[]) {
-  return __tunit_main::main(argv, argc);
+  return __tunit_main::main(argc, argv);
 }
 #endif

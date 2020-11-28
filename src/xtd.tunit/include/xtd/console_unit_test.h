@@ -20,9 +20,9 @@ namespace xtd {
       console_unit_test() : ostream_unit_test(std::cout) {}
       
       /// @brief Create a new console unit test with argv specified and argc specified.
-      /// @param argv Arguments array from main method.
       /// @param argc Argument count from main method.
-      console_unit_test(char* argv[], int argc) : ostream_unit_test(std::cout, argv, argc) {}
+      /// @param argv Arguments array from main method.
+      console_unit_test(int argc, char* argv[]) : ostream_unit_test(std::cout, argc, argv) {}
     };
   }
 }

@@ -4,5 +4,5 @@
 using namespace xtd::tunit;
 
 int __tunit_main::main(int argc, char* argv[]) {
-  return console_unit_test(argv, argc).run();
+  return console_unit_test(argc, argv).run();
 }
