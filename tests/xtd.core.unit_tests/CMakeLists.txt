@@ -25,7 +25,9 @@ add_sources(
   src/invalid_cast_exception.cpp
   src/invalid_operation_exception.cpp
   src/invalid_program_exception.cpp
+  src/is.cpp
   src/length_exception.cpp
+  src/literals.cpp
   src/not_finite_number_exception.cpp
   src/not_implemented_exception.cpp
   src/not_supported_exception.cpp
