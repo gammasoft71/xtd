@@ -13,7 +13,7 @@
 #include <ratio>
 
 /// @cond
-#if __cplusplus <= 201703L
+#if __cplusplus <= 201705L
 namespace std {
   namespace chrono {
     using days = std::chrono::duration<long, std::ratio<86400>>;

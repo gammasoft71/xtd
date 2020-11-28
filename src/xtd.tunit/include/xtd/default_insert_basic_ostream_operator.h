@@ -2,6 +2,7 @@
 /// @brief Contains std::basic_ostream<Char, CharTraits>& operator<<(std::basic_ostream<Char, CharTraits>& os, const Type& value) function.
 #pragma once
 #include <array>
+#include <cstdint>
 #include <deque>
 #include <exception>
 #include <forward_list>
@@ -523,6 +524,42 @@ inline std::string __tunit_to_string(const std::string& value) {
 inline std::string __tunit_to_string(const char* value) {
   std::stringstream ss;
   ss << "\"" << value << "\"";
+  return ss.str();
+}
+
+inline std::string __tunit_to_string(const char16_t& value) {
+  std::stringstream ss;
+  ss << "\"" << reinterpret_cast<intptr_t>(&value) << "\"";
+  return ss.str();
+}
+
+inline std::string __tunit_to_string(const char16_t* value) {
+  std::stringstream ss;
+  ss << "\"" << reinterpret_cast<intptr_t>(value) << "\"";
+  return ss.str();
+}
+
+inline std::string __tunit_to_string(const char32_t& value) {
+  std::stringstream ss;
+  ss << "\"" << reinterpret_cast<intptr_t>(&value) << "\"";
+  return ss.str();
+}
+
+inline std::string __tunit_to_string(const char32_t* value) {
+  std::stringstream ss;
+  ss << "\"" << reinterpret_cast<intptr_t>(value) << "\"";
+  return ss.str();
+}
+
+inline std::string __tunit_to_string(const wchar_t& value) {
+  std::stringstream ss;
+  ss << "\"" << reinterpret_cast<intptr_t>(&value) << "\"";
+  return ss.str();
+}
+
+inline std::string __tunit_to_string(const wchar_t* value) {
+  std::stringstream ss;
+  ss << "\"" << reinterpret_cast<intptr_t>(value) << "\"";
   return ss.str();
 }
 

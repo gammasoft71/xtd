@@ -25,7 +25,7 @@ namespace xtd {
   template<typename T>
   inline bool is(int64_t value) {return false;}
   template<typename T>
-  inline bool is(intptr_t value) {return false;}
+  inline bool is(llong_t value) {return false;}
   template<typename T>
   inline bool is(uint8_t value) {return false;}
   template<typename T>
@@ -35,7 +35,7 @@ namespace xtd {
   template<typename T>
   inline bool is(uint64_t value) {return false;}
   template<typename T>
-  inline bool is(uintptr_t value) {return false;}
+  inline bool is(ullong_t value) {return false;}
   /// @endcond
   
   /// @brief Return true if specified value is the specified bool. A Is expression takes the following form:
@@ -166,19 +166,19 @@ namespace xtd {
     return true;
   }
 
-  /// @brief Return true if specified value is the specified intptr_t. A Is expression takes the following form:
+  /// @brief Return true if specified value is the specified llong_t. A Is expression takes the following form:
   /// @par Library
   /// xtd.core
   /// @par Examples
   /// @code
   /// int main() {
-  ///   intptr_t i = 42;
-  ///   std::cout << "i " << is<intptr_t>(i) ? "is" : "isn't" << " intptr_t" << endl;
+  ///   llong_t i = 42;
+  ///   std::cout << "i " << is<llong_t>(i) ? "is" : "isn't" << " llong_t" << endl;
   /// }
   /// @endcode
   /// @ingroup xtd_core
   template<>
-  inline bool is<intptr_t>(intptr_t value) {
+  inline bool is<llong_t>(llong_t value) {
     return true;
   }
  
@@ -246,19 +246,19 @@ namespace xtd {
     return true;
   }
   
-  /// @brief Return true if specified value is the specified uintptr_t. A Is expression takes the following form:
+  /// @brief Return true if specified value is the specified ullong_t. A Is expression takes the following form:
   /// @par Library
   /// xtd.core
   /// @par Examples
   /// @code
   /// int main() {
-  ///   uintptr_t u = 42;
-  ///   std::cout << "u " << is<uintptr_t>(i) ? "is" : "isn't" << " uintptr_t" << endl;
+  ///   ullong_t u = 42;
+  ///   std::cout << "u " << is<ullong_t>(i) ? "is" : "isn't" << " ullong_t" << endl;
   /// }
   /// @endcode
   /// @ingroup xtd_core
   template<>
-  inline bool is<uintptr_t>(uintptr_t value) {
+  inline bool is<ullong_t>(ullong_t value) {
     return true;
   }
 
