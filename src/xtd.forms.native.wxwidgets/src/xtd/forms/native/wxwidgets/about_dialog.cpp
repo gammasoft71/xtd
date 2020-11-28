@@ -1,3 +1,4 @@
+#include <xtd/literals.h>
 #include <xtd/drawing/bitmap.h>
 #include <xtd/forms/native/about_dialog.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
@@ -28,7 +29,7 @@ void about_dialog::show(intptr_t hwnd, const xtd::drawing::icon& icon, const std
   about_info.SetName(name);
   about_info.SetDescription(description);
   about_info.SetVersion(version, long_version);
-  about_info.SetCopyright(xtd::strings::replace(copyright, u8"\u00A9", u8"(c)"));
+  about_info.SetCopyright(xtd::strings::replace(copyright, u8"\u00A9"_s, u8"(c)"_s));
   if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Unix") {
     about_info.SetIcon(reinterpret_cast<wxIconBundle*>(icon.handle())->GetIcon());
     about_info.SetWebSite(website, website_label);

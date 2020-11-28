@@ -2,6 +2,7 @@
 #include <string>
 #include <xtd/delegate.h>
 #include <xtd/drawing/icon.h>
+#include "../forms_export.h"
 #include "dialog_style.h"
 #include "iwin32_window.h"
 #include "layout/arranged_element_collection.h"
@@ -14,7 +15,7 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of about_dialog dialog.
     /// @include about_dialog.cpp
-    class about_dialog final {
+    class forms_export_ about_dialog final {
     public:
       using creators_collection = xtd::forms::layout::arranged_element_collection<std::string>;
       using designers_collection = xtd::forms::layout::arranged_element_collection<std::string>;
