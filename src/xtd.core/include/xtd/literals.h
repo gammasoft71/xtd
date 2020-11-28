@@ -155,6 +155,21 @@ namespace xtd {
     return std::string(s, s + n);
   }
 
+#if defined(__cpp_lib_char8_t)
+  /// @brief Used to convert specified value into System::String.
+  /// @par Library
+  /// xtd.core
+  /// @par Examples
+  /// @code
+  /// std::string s = u8"This is a "_s + u8"simple test"_s;
+  /// std::cout << s << std::endl;
+  /// @endcode
+  /// @ingroup Literals
+  inline std::string operator""_s(const char8_t* s, size_t n) {
+    return std::string(s, s + n);
+  }
+#endif
+
   /// @brief Used to convert specified value into std::string.
   /// @par Library
   /// xtd.core
@@ -678,5 +693,59 @@ namespace xtd {
   /// @ingroup Literals
   inline uint64_t operator""_u64(const char* s, size_t n) {
     return xtd::parse<uint64_t>(std::string(s, s + n));
+  }
+
+  /// @brief Used to convert specified value into System::String.
+  /// @par Library
+  /// xtd.core
+  /// @par Examples
+  /// @code
+  /// std::string s = "This is a "_s + "simple test"_s;
+  /// std::cout << s << std::endl;
+  /// @endcode
+  /// @ingroup Literals
+  inline std::wstring operator""_ws(const wchar_t* s, size_t n) {
+    return std::wstring(s, s + n);
+  }
+  
+#if defined(__cpp_lib_char8_t)
+  /// @brief Used to convert specified value into System::String.
+  /// @par Library
+  /// xtd.core
+  /// @par Examples
+  /// @code
+  /// std::string s = u8"This is a "_s + u8"simple test"_s;
+  /// std::cout << s << std::endl;
+  /// @endcode
+  /// @ingroup Literals
+  inline std::wstring operator""_ws(const char8_t* s, size_t n) {
+    return std::wstring(s, s + n);
+  }
+#endif
+  
+  /// @brief Used to convert specified value into std::string.
+  /// @par Library
+  /// xtd.core
+  /// @par Examples
+  /// @code
+  /// std::string s = "This is a "_s + "simple test"_s;
+  /// std::cout << s << std::endl;
+  /// @endcode
+  /// @ingroup Literals
+  inline std::wstring operator""_ws(long double s) {
+    return L""; //strings::to_wstring(xtd::strings::format("{}", s));
+  }
+  
+  /// @brief Used to convert specified value into std::string.
+  /// @par Library
+  /// xtd.core
+  /// @par Examples
+  /// @code
+  /// std::string s = 49_s;
+  /// std::cout << s << std::endl;
+  /// @endcode
+  /// @ingroup Literals
+  inline std::wstring operator""_ws(unsigned long long s) {
+    return L""; //strings::to_wstring(xtd::strings::format("{}", s));
   }
 }
