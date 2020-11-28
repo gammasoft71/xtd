@@ -1,6 +1,33 @@
 ## @file
 ## @brief Contains xtd specific CMake commands.
 
+
+################################################################################
+# Generic commands
+
+## @brief Provides a choice options for the user to select an option from opttions list
+## @param OPTION the option to set.
+## @param MESSAGE Description message for the choice options.
+## @param DEFAULT_OPTION The default option.
+## @param ... Other options.
+## @remarks This method must be call before target_type().
+## @remarks This method is optional. 
+## @par Examples
+## @code
+##  cmake_minimum_required(VERSION 3.3)
+##
+##  project(my_project)
+##  find_package(xtd REQUIRED)
+##  add_sources(my_project.cpp)
+##  
+##  choice_options(TARGET_TYPE "Choose library dynamic, static or module" DINAMIC_LIBRARY STATIC_LIBRARY MODULE_LIBRARY)
+##  target_type(${TARGET_TYPE})
+## @endcode
+macro(choice_options OPTION MESSAGE DEFAULT_OPTION)
+  set(${OPTION} ${DEFAULT_OPTION} CACHE STRING MESSAGE)
+  set_property(CACHE ${OPTION} PROPERTY STRINGS ${DEFAULT_OPTION} ${ARGN})
+endmacro ()
+
 ################################################################################
 # Application properties commands
 
@@ -1830,8 +1857,11 @@ set(PROJECT_PATH "${PROJECT_PATH}/${PROJECT_NAME}")
 read_assembly_informations()
 
 # standard C++
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+choice_options(XTD_BUILD_CXX_STANDARD "Choose c++ stadard to build xtd projects" 20 17 14 11 98 compiler_default)
+if (NOT "${XTD_BUILD_CXX_STANDARD}" STREQUAL "compiler_default")
+  set(CMAKE_CXX_STANDARD ${XTD_BUILD_CXX_STANDARD})
+  set(CMAKE_CXX_STANDARD_REQUIRED ON)
+endif ()
 
 # standard C
 set(CMAKE_C_STANDARD 11)
