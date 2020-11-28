@@ -1,6 +1,6 @@
 #pragma once
 #include "component.h"
-#include <string>
+#include <xtd/strings.h>
 #include <xtd/static.h>
 #include <xtd/drawing/bitmap.h>
 
@@ -47,7 +47,10 @@ namespace xtd {
       
       static const std::vector<std::string> enclosed_letters;
       country(const std::string& name, const std::string& alpha_2_code, const std::string& alpha_3_code, int numeric_code) : name_(name), alpha_2_code_(alpha_2_code), alpha_3_code_(alpha_3_code), numeric_code_(numeric_code), emoticon_(enclosed_letters[alpha_2_code[0] - 'A'] + enclosed_letters[alpha_2_code[1] - 'A']) {}
-      
+#if defined(__cpp_lib_char8_t)
+      country(const std::u8string& name, const std::string& alpha_2_code, const std::string& alpha_3_code, int numeric_code) : name_(xtd::strings::to_string(name)), alpha_2_code_(alpha_2_code), alpha_3_code_(alpha_3_code), numeric_code_(numeric_code), emoticon_(enclosed_letters[alpha_2_code[0] - 'A'] + enclosed_letters[alpha_2_code[1] - 'A']) {}
+#endif
+
       std::string name_;
       std::string alpha_2_code_;
       std::string alpha_3_code_;
