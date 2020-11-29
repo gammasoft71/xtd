@@ -1,19 +1,19 @@
 | [Home](home.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md)  | [Contact](contact.md) | [Website](https://gammasoft71.wixsite.com/gammasoft) |
 
-# C++17
+# C++20
 
 ## In This Section
 
-* [C++17](#c++17)
+* [C++20](#c++20)
 * [Operating System](#operating-system)
 * [Libraries dependency](#libraries-dependency)
 * [Compilers](#compilers)
 
 ## C++17
 
-xtd.forms support c++17 or above.
+xtd.forms support c++20 or above.
 
-As of 2018, C++17 is the name for the most recent revision of the [ISO/IEC 14882](https://en.wikipedia.org/wiki/ISO/IEC_14882) standard for the [C++](https://en.wikipedia.org/wiki/C%2B%2B) programming language.
+As of 2018, C++20 is the name for the most recent revision of the [ISO/IEC 14882](https://en.wikipedia.org/wiki/ISO/IEC_14882) standard for the [C++](https://en.wikipedia.org/wiki/C%2B%2B) programming language.
 
 For more information see [wikipedia](https://en.wikipedia.org/wiki/C%2B%2B17) and [cppreference](https://en.cppreference.com/).
 
