@@ -515,10 +515,75 @@ std::basic_ostream<Char, CharTraits>& operator<<(std::basic_ostream<Char, CharTr
   return os;
 }
 
+inline std::string __tunit_codepoint_to_string(char32_t codepoint) {
+  std::string result;
+  if (codepoint < 0x80) {
+    result.push_back(static_cast<char>(codepoint));
+  } else  if (codepoint < 0x800) {
+    result.push_back(static_cast<char>((codepoint >> 6) | 0xc0));
+    result.push_back(static_cast<char>((codepoint & 0x3f) | 0x80));
+  } else if (codepoint < 0x10000) {
+    result.push_back(static_cast<char>((codepoint >> 12) | 0xe0));
+    result.push_back(static_cast<char>(((codepoint >> 6) & 0x3f) | 0x80));
+    result.push_back(static_cast<char>((codepoint & 0x3f) | 0x80));
+  } else {
+    result.push_back(static_cast<char>((codepoint >> 18) | 0xf0));
+    result.push_back(static_cast<char>(((codepoint >> 12) & 0x3f) | 0x80));
+    result.push_back(static_cast<char>(((codepoint >> 6) & 0x3f) | 0x80));
+    result.push_back(static_cast<char>((codepoint & 0x3f) | 0x80));
+  }
+  return result;
+}
+
+inline std::string __tunit_to_string(const char16_t& value) {
+  std::stringstream ss;
+  ss << "\"" << __tunit_codepoint_to_string(value) << "\"";
+  return ss.str();
+}
+
+inline std::string __tunit_to_string(const char32_t& value) {
+  std::stringstream ss;
+  ss << "\"" << __tunit_codepoint_to_string(value) << "\"";
+  return ss.str();
+}
+
+inline std::string __tunit_to_string(const wchar_t& value) {
+  std::stringstream ss;
+  ss << "\"" << __tunit_codepoint_to_string(value) << "\"";
+  return ss.str();
+}
+
 inline std::string __tunit_to_string(const std::string& value) {
   std::stringstream ss;
   ss << "\"" << value << "\"";
   return ss.str();
+}
+
+inline std::string __tunit_to_string(const std::u16string& value) {
+  std::string result;
+  result += "\"";
+  for (auto codepoint : value)
+    result += __tunit_codepoint_to_string(codepoint);
+  result += "\"";
+  return result;
+}
+
+inline std::string __tunit_to_string(const std::u32string& value) {
+  std::string result;
+  result += "\"";
+  for (auto codepoint : value)
+    result += __tunit_codepoint_to_string(codepoint);
+  result += "\"";
+  return result;
+}
+
+inline std::string __tunit_to_string(const std::wstring& value) {
+  std::string result;
+  result += "\"";
+  for (auto codepoint : value)
+    result += __tunit_codepoint_to_string(codepoint);
+  result += "\"";
+  return result;
 }
 
 inline std::string __tunit_to_string(const char* value) {
@@ -527,40 +592,16 @@ inline std::string __tunit_to_string(const char* value) {
   return ss.str();
 }
 
-inline std::string __tunit_to_string(const char16_t& value) {
-  std::stringstream ss;
-  ss << "\"" << reinterpret_cast<intptr_t>(&value) << "\"";
-  return ss.str();
-}
-
 inline std::string __tunit_to_string(const char16_t* value) {
-  std::stringstream ss;
-  ss << "\"" << reinterpret_cast<intptr_t>(value) << "\"";
-  return ss.str();
-}
-
-inline std::string __tunit_to_string(const char32_t& value) {
-  std::stringstream ss;
-  ss << "\"" << reinterpret_cast<intptr_t>(&value) << "\"";
-  return ss.str();
+  return __tunit_to_string(std::u16string(value));
 }
 
 inline std::string __tunit_to_string(const char32_t* value) {
-  std::stringstream ss;
-  ss << "\"" << reinterpret_cast<intptr_t>(value) << "\"";
-  return ss.str();
-}
-
-inline std::string __tunit_to_string(const wchar_t& value) {
-  std::stringstream ss;
-  ss << "\"" << reinterpret_cast<intptr_t>(&value) << "\"";
-  return ss.str();
+  return __tunit_to_string(std::u32string(value));
 }
 
 inline std::string __tunit_to_string(const wchar_t* value) {
-  std::stringstream ss;
-  ss << "\"" << reinterpret_cast<intptr_t>(value) << "\"";
-  return ss.str();
+  return __tunit_to_string(std::wstring(value));
 }
 
 template <typename TValue>
