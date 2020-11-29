@@ -13,4 +13,5 @@ add_projects(
   format_with_order
   join
   split
+  string_unicode
 )
