@@ -1857,9 +1857,9 @@ set(PROJECT_PATH "${PROJECT_PATH}/${PROJECT_NAME}")
 read_assembly_informations()
 
 # standard C++
-choice_options(XTD_BUILD_CXX_STANDARD "Choose c++ stadard to build xtd projects" 20 17 14 11 98 compiler_default)
-if (NOT "${XTD_BUILD_CXX_STANDARD}" STREQUAL "compiler_default")
-  set(CMAKE_CXX_STANDARD ${XTD_BUILD_CXX_STANDARD})
+choice_options(XTD_BUILD_CPP_STANDARD "Choose c++ stadard to build xtd projects" 20 17 14 11 98 compiler_default)
+if (NOT "${XTD_BUILD_CPP_STANDARD}" STREQUAL "compiler_default")
+  set(CMAKE_CXX_STANDARD ${XTD_BUILD_CPP_STANDARD})
   set(CMAKE_CXX_STANDARD_REQUIRED ON)
 endif ()
 
