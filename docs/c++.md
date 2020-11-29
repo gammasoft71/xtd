@@ -9,7 +9,7 @@
 * [Libraries dependency](#libraries-dependency)
 * [Compilers](#compilers)
 
-## C++17
+## C++20
 
 xtd.forms support c++20 or above.
 
@@ -22,7 +22,7 @@ For more information see [wikipedia](https://en.wikipedia.org/wiki/C%2B%2B17) an
 * Windows 7 32 or 64 bits or later
 * macOS X 10.14 or later
 * Linux (compatible with g++9)
-* Probably others (if a compatible C++17 compiler is supported and if [xtd.form.native](../src/xtd_forms_native) library is ported)
+* Probably others (if a compatible C++20 compiler is supported and if [xtd.form.native](../src/xtd_forms_native) library is ported)
 
 ## Libraries dependency
 
@@ -39,7 +39,7 @@ Compilers list where xtd.forms are tested
 * clang Apple LLVM version 10.0.0 (clang-1000.11.45.5) - Xcode 11
 * g++ 9
 
-More compilers can be used see [C++ compiler support for C++17](https://en.cppreference.com/w/cpp/compiler_support#cpp17).
+More compilers can be used see [C++ compiler support for C++20](https://en.cppreference.com/w/cpp/compiler_support#cpp17).
 
 ## See also
 
