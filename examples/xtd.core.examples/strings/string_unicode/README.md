@@ -19,5 +19,15 @@ xtdc run
 # Output
 
 ```
-Hello, World!
+Arabic:         الكلمة العربية
+Trad. Chinese:  中國的漢字
+Simpl. Chinese: 汉语
+French:         Langue française
+Greek:          Ελληνική γλώσσα
+Hebrew:         כתב עברית
+Hindi:          हिन्दी भाषा
+Icelandic:      Íslenska
+Japanese:       日本語のひらがな, 漢字とカタカナ
+Korean:         대한민국의 한글
+Russian:        Русский язык
 ```
