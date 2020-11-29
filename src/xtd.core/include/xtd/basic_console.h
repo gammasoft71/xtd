@@ -327,17 +327,17 @@ namespace xtd {
     template<typename ... args_t>
     static void write(const std::basic_string<char_t>& fmt, args_t&& ... args) noexcept {out << strings::format(fmt, std::forward<args_t>(args)...);}
 
-    static void write_line() noexcept {out << std::endl;}
+    static void write_line() noexcept {out << std::endl << std::flush;}
     
     //template<typename arg_t>
     //static void write_line(arg_t&& arg) noexcept {out << arg << std::endl;}
     
     template<typename arg_t>
-    static void write_line(arg_t&& arg) noexcept {write_line("{}", arg);}
+    static void write_line(arg_t&& arg) noexcept {out << strings::format(std::basic_string<char_t> {'{', '}'}, arg) << std::endl << std::flush;}
 
     /// @cond
     template<typename type_t>
-    static void write_line(const std::initializer_list<type_t>& il) noexcept {out << strings::format(std::basic_string<char_t> {'{', '}'}, il) << std::endl;}
+    static void write_line(const std::initializer_list<type_t>& il) noexcept {out << strings::format(std::basic_string<char_t> {'{', '}'}, il) << std::endl << std::flush;}
     /// @endcond
 
     template<typename ... args_t>
