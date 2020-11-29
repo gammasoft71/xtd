@@ -91,7 +91,7 @@ namespace {
       report += generate_exception_report();
       report += generate_libraries_report();
       report += generate_operating_system_report();
-      report += generate_standard_cpp_report();
+      report += generate_language_report();
       report += generate_compiler_report();
       return report;
     }
@@ -137,11 +137,12 @@ namespace {
       return report;
     }
     
-    std::string generate_standard_cpp_report() const {
-      std::string report = strings::format("{0} Standard C++ {0}{1}", std::string(14, '*'), environment::new_line());
+    std::string generate_language_report() const {
+      std::string report = strings::format("{0} Language {0}{1}", std::string(14, '*'), environment::new_line());
       report += strings::format("{}{}", environment::cpp_version().to_string(), environment::new_line());
       report += strings::format("    Version : {}{}", environment::cpp_version().version(), environment::new_line());
-      report += strings::format("    Standard : {}{}", environment::cpp_version().standard(), environment::new_line());
+      report += strings::format("    Language : {}{}", environment::cpp_version().is_experimental_language() ? environment::cpp_version().experimental_language() : environment::cpp_version().language(), environment::new_line());
+      report += strings::format("    Is experimental language : {}{}", environment::cpp_version().is_experimental_language(), environment::new_line());
       report += strings::format("    Is supported : {}{}", environment::cpp_version().is_supported(), environment::new_line());
       report += environment::new_line();
       return report;
