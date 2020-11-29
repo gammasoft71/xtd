@@ -11,3 +11,4 @@
 * [format_with_orderformat_with_order](format_with_order/README.md) shows how to use [xtd::strings::format](../../../src/xtd.core/include/xtd/strings.h) method.
 * [join](join/README.md) shows how to use [xtd::strings::join](../../../src/xtd.core/include/xtd/strings.h) method.
 * [split](split/README.md) shows how to use [xtd::strings::split](../../../src/xtd.core/include/xtd/strings.h) method.
+* [string_unicode](string_unicode/README.md) shows how to use [xtd::strings](../../../src/xtd.core/include/xtd/strings.h) class with unicode.
