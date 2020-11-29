@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::button](../../../../src/xtd_forms/include/x
 
 # Sources
 
-[src/stopwatch_form.cpp](ssrc/topwatch_form.cpp)
+[src/stopwatch_form.cpp](src/topwatch_form.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
