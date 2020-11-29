@@ -169,6 +169,42 @@ namespace xtd {
     return std::string(s, s + n);
   }
 #endif
+  /// @brief Used to convert specified value into System::String.
+  /// @par Library
+  /// xtd.core
+  /// @par Examples
+  /// @code
+  /// std::string s = U"This is a "_s + U"simple test"_s;
+  /// std::cout << s << std::endl;
+  /// @endcode
+  /// @ingroup Literals
+  inline std::string operator""_s(const char16_t* s, size_t n) {
+    return xtd::strings::format("{}", s);
+  }
+  /// @brief Used to convert specified value into System::String.
+  /// @par Library
+  /// xtd.core
+  /// @par Examples
+  /// @code
+  /// std::string s = u"This is a "_s + u"simple test"_s;
+  /// std::cout << s << std::endl;
+  /// @endcode
+  /// @ingroup Literals
+  inline std::string operator""_s(const char32_t* s, size_t n) {
+    return xtd::strings::format("{}", s);
+  }
+  /// @brief Used to convert specified value into System::String.
+  /// @par Library
+  /// xtd.core
+  /// @par Examples
+  /// @code
+  /// std::string s = L"This is a "_s + L"simple test"_s;
+  /// std::cout << s << std::endl;
+  /// @endcode
+  /// @ingroup Literals
+  inline std::string operator""_s(const wchar_t* s, size_t n) {
+    return xtd::strings::format("{}", s);
+  }
 
   /// @brief Used to convert specified value into std::string.
   /// @par Library

@@ -329,8 +329,11 @@ namespace xtd {
 
     static void write_line() noexcept {out << std::endl;}
     
+    //template<typename arg_t>
+    //static void write_line(arg_t&& arg) noexcept {out << arg << std::endl;}
+    
     template<typename arg_t>
-    static void write_line(arg_t&& arg) noexcept {out << arg << std::endl;}
+    static void write_line(arg_t&& arg) noexcept {write_line("{}", arg);}
 
     /// @cond
     template<typename type_t>
