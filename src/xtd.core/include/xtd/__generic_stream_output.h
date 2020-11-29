@@ -2,10 +2,12 @@
 /// @brief Contains generic stream output methods.
 #pragma once
 
-#include <array>
-#if !__APPLE__ || __MAC_OS_X_VERSION_MAX_ALLOWED >= 101401
-#include <optional>
+#if __cplusplus < 201703
+#error "Current C++ standard not supported. C++17 (201703) or better is required."
 #endif
+
+#include <array>
+#include <optional>
 #include <deque>
 #include <stdexcept>
 #include <forward_list>
