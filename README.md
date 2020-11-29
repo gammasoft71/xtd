@@ -18,7 +18,7 @@
 # Features
 
 * a collection of native C++ classes libraries, to complete std;
-* written in efficient, modern C++17;
+* written in efficient, modern C++20;
 * and highly portable and available on many different platforms (Windows, macOS, Linux, iOS and android);
 
 For more information see [documentations](docs/home.md) ([website](https://gammasoft71.wixsite.com/gammasoft)) and [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/).
