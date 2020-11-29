@@ -16,6 +16,7 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include "../types.h"
 
 /// @cond
 namespace xtd {
@@ -229,7 +230,11 @@ inline std::basic_string<char_t> __format_stringer(const char(&value)[len]) {
 
 template<typename char_t, typename value_t, int32_t len>
 inline std::basic_string<char_t> __format_stringer(const char8_t(&value)[len]) {
+#if defined(__cpp_lib_char8_t)
   auto s = std::u8string(value);
+#else
+  auto s = std::string(value);
+#endif
   std::basic_stringstream<char_t> ss;
   ss << std::basic_string<char_t>(s.begin(), s.end());
   return ss.str();
@@ -277,12 +282,14 @@ inline std::basic_string<char_t> __format_stringer(const wchar_t*& value) {
   return ss.str();
 }
 
+#if defined(__cpp_lib_char8_t)
 template<>
 inline std::string __format_stringer<char, std::u8string&>(std::u8string& value) {
   std::basic_stringstream<char> ss;
   ss << std::string(value.begin(), value.end());
   return ss.str();
 }
+#endif
 
 template<>
 inline std::string __format_stringer<char, std::u16string&>(std::u16string& value) {
@@ -395,12 +402,14 @@ inline std::string __format_stringer<char, char32_t&>(char32_t& value) {
   return xtd::to_string(value, "G", std::locale());
 }
 
+#if defined(__cpp_lib_char8_t)
 template<>
 inline std::wstring __format_stringer<wchar_t, std::u8string&>(std::u8string& value) {
   std::basic_stringstream<wchar_t> ss;
   ss << std::wstring(value.begin(), value.end());
   return ss.str();
 }
+#endif
 
 template<>
 inline std::wstring __format_stringer<wchar_t, std::u16string&>(std::u16string& value) {
