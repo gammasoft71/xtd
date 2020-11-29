@@ -44,7 +44,7 @@ add_sources(
   include/xtd/console_key_info.h
   include/xtd/console_modifiers.h
   include/xtd/console_special_key.h
-  include/xtd/cpp_standard.h
+  include/xtd/cpp_language.h
   include/xtd/ctrace.h
   include/xtd/debugstreambuf.h
   include/xtd/delegate.h
@@ -69,6 +69,7 @@ add_sources(
   include/xtd/invalid_program_exception.h
   include/xtd/is.h
   include/xtd/istring.h
+  include/xtd/language_id.h
   include/xtd/length_exception.h
   include/xtd/literals.h
   include/xtd/nameof.h
@@ -87,7 +88,6 @@ add_sources(
   include/xtd/platform_not_supported_exception.h
   include/xtd/predicate.h
   include/xtd/reset_color.h
-  include/xtd/standard_id.h
   include/xtd/startup.h
   include/xtd/static.h
   include/xtd/string_comparison.h
