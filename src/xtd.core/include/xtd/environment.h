@@ -12,7 +12,7 @@
 #include "__opaque_environment.h"
 #include "compiler.h"
 #include "core_export.h"
-#include "cpp_standard.h"
+#include "cpp_language.h"
 #include "environment_variable_target.h"
 #include "guid.h"
 #include "operating_system.h"
@@ -210,9 +210,9 @@ namespace xtd {
     
     /// @brief Gets an cpp_standard object that contains the current c++ standard identifier and version number.
     /// @return An object that contains the c++ standard identifier and version number.
-    static xtd::cpp_standard cpp_version() noexcept {
-      static xtd::cpp_standard cpp_standard;
-      return cpp_standard;
+    static xtd::cpp_language cpp_version() noexcept {
+      static xtd::cpp_language cpp_language;
+      return cpp_language;
     }
 
     /// @brief Gets the fully qualified path of the current working directory.
