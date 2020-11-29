@@ -139,7 +139,49 @@ namespace xtd {
     return to_string(value, values);
   }
 }
-  
+
+template<typename char_t>
+inline std::basic_string<char_t> __to_string(char32_t codepoint) {
+  std::basic_string<char_t> result;
+  if (codepoint < 0x80) {
+    result.push_back(static_cast<char_t>(codepoint));
+  } else  if (codepoint < 0x800) {
+    result.push_back(static_cast<char_t>((codepoint >> 6) | 0xc0));
+    result.push_back(static_cast<char_t>((codepoint & 0x3f) | 0x80));
+  } else if (codepoint < 0x10000) {
+    result.push_back(static_cast<char_t>((codepoint >> 12) | 0xe0));
+    result.push_back(static_cast<char_t>(((codepoint >> 6) & 0x3f) | 0x80));
+    result.push_back(static_cast<char_t>((codepoint & 0x3f) | 0x80));
+  } else {
+    result.push_back(static_cast<char_t>((codepoint >> 18) | 0xf0));
+    result.push_back(static_cast<char_t>(((codepoint >> 12) & 0x3f) | 0x80));
+    result.push_back(static_cast<char_t>(((codepoint >> 6) & 0x3f) | 0x80));
+    result.push_back(static_cast<char_t>((codepoint & 0x3f) | 0x80));
+  }
+  return result;
+}
+
+template<typename char_t>
+inline std::basic_string<char_t> __to_string(const std::basic_string<char_t>& str) {
+  std::basic_string<char_t> result;
+  for (char32_t codepoint : str)
+    result += __to_string<char_t>(codepoint);
+  return result;
+}
+
+template<typename char_t, typename arg_t>
+inline std::basic_string<char_t> __to_string(const std::basic_string<arg_t>& str) {
+  std::basic_string<char_t> result;
+  for (char32_t codepoint : str)
+    result += __to_string<char_t>(codepoint);
+  return result;
+}
+
+template<typename char_t, typename arg_t>
+inline std::basic_string<char_t> __to_string(const arg_t* str) {
+  return __to_string(std::basic_string<char_t>(str));
+}
+
 template<typename char_t, typename type_t, typename period_t = std::ratio<1>>
 std::basic_ostream<char_t>& operator<<(std::basic_ostream<char_t>& os, const std::chrono::duration<type_t, period_t>& value) {
   return os << xtd::to_string(value, std::basic_string<char_t> {'G'}, std::locale());
@@ -149,6 +191,70 @@ template<typename char_t, typename value_t>
 inline std::basic_string<char_t> __format_stringer(value_t value) {
   std::basic_stringstream<char_t> ss;
   ss << value;
+  return ss.str();
+}
+
+template<typename char_t, typename value_t, int32_t len>
+inline std::basic_string<char_t> __format_stringer(const char(&value)[len]) {
+  std::basic_stringstream<char_t> ss;
+  ss << __to_string<char_t>(value);
+  return ss.str();
+}
+
+template<typename char_t, typename value_t, int32_t len>
+inline std::basic_string<char_t> __format_stringer(const char8_t(&value)[len]) {
+  auto s = std::u8string(value);
+  std::basic_stringstream<char_t> ss;
+  ss << std::basic_string<char_t>(s.begin(), s.end());
+  return ss.str();
+}
+
+template<typename char_t, typename value_t, int32_t len>
+inline std::basic_string<char_t> __format_stringer(const char16_t(&value)[len]) {
+  std::basic_stringstream<char_t> ss;
+  ss << __to_string<char_t>(value);
+  return ss.str();
+}
+
+template<typename char_t, typename value_t, int32_t len>
+inline std::basic_string<char_t> __format_stringer(const char32_t(&value)[len]) {
+  std::basic_stringstream<char_t> ss;
+  ss << __to_string<char_t>(value);
+  return ss.str();
+}
+
+template<typename char_t, typename value_t, int32_t len>
+inline std::basic_string<char_t> __format_stringer(const wchar_t(&value)[len]) {
+  std::basic_stringstream<char_t> ss;
+  ss << __to_string<char_t>(value);
+  return ss.str();
+}
+
+template<>
+inline std::string __format_stringer<char, std::u8string&>(std::u8string& value) {
+  std::basic_stringstream<char> ss;
+  ss << std::string(value.begin(), value.end());
+  return ss.str();
+}
+
+template<>
+inline std::string __format_stringer<char, std::u16string&>(std::u16string& value) {
+  std::basic_stringstream<char> ss;
+  ss << __to_string<char>(value);
+  return ss.str();
+}
+
+template<>
+inline std::string __format_stringer<char, std::u32string&>(std::u32string& value) {
+  std::basic_stringstream<char> ss;
+  ss << __to_string<char>(value);
+  return ss.str();
+}
+
+template<>
+inline std::string __format_stringer<char, std::wstring&>(std::wstring& value) {
+  std::basic_stringstream<char> ss;
+  ss << __to_string<char>(value);
   return ss.str();
 }
 
@@ -240,6 +346,34 @@ inline std::string __format_stringer<char, char16_t&>(char16_t& value) {
 template<>
 inline std::string __format_stringer<char, char32_t&>(char32_t& value) {
   return xtd::to_string(value, "G", std::locale());
+}
+
+template<>
+inline std::wstring __format_stringer<wchar_t, std::u8string&>(std::u8string& value) {
+  std::basic_stringstream<wchar_t> ss;
+  ss << std::wstring(value.begin(), value.end());
+  return ss.str();
+}
+
+template<>
+inline std::wstring __format_stringer<wchar_t, std::u16string&>(std::u16string& value) {
+  std::basic_stringstream<wchar_t> ss;
+  ss << __to_string<wchar_t>(value);
+  return ss.str();
+}
+
+template<>
+inline std::wstring __format_stringer<wchar_t, std::u32string&>(std::u32string& value) {
+  std::basic_stringstream<wchar_t> ss;
+  ss << __to_string<wchar_t>(value);
+  return ss.str();
+}
+
+template<>
+inline std::wstring __format_stringer<wchar_t, std::string&>(std::string& value) {
+  std::basic_stringstream<wchar_t> ss;
+  ss << __to_string<wchar_t>(value);
+  return ss.str();
 }
 
 template<>

@@ -1520,11 +1520,17 @@ namespace xtd {
     template<typename char_t>
     static const std::basic_string<char_t> to_lower(const char_t* str) noexcept {return to_lower(std::basic_string<char_t>(str));}
     /// @endcond
+
+    template<typename char_t>
+    static std::string to_string(const std::basic_string<char_t>& str) {return format("{}", str);}
+    
+    template<typename char_t>
+    static std::string to_string(const char_t* str) {return format("{}", str);}
     
     static std::string to_string(const char* str) {return str;}
     
     static std::string to_string(const std::string& str) {return str;}
-
+    
     static std::string to_string(std::string&& str) {return std::move(str);}
     
 #if defined(__cpp_lib_char8_t)
