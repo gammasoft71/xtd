@@ -106,6 +106,7 @@ add_sources(
   src/xtd/forms/native/wxwidgets/track_bar.cpp
   src/xtd/forms/native/wxwidgets/up_down_button.cpp
   src/xtd/forms/native/wxwidgets/user_control.cpp
+  src/xtd/forms/window_messages.cpp
 )
 
 if (APPLE)

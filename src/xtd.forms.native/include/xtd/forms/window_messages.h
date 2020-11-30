@@ -363,4 +363,4 @@ constexpr int32_t UDN_DELTAPOS = -722;
 
 constexpr int32_t WM_MOUSEENTER = WM_USER + 0x0001;
 
-intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wParam, intptr_t lParam);
+intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam);
