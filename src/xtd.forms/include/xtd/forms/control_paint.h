@@ -8,6 +8,7 @@
 #include <xtd/drawing/rectangle.h>
 #include <xtd/drawing/string_format.h>
 #include <xtd/drawing/system_fonts.h>
+#include "../forms_export.h"
 #include "text_format_flags.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -15,7 +16,7 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Provides methods used to paint common Windows controls and their elements. This class cannot be inherited.
-    class control_paint final static_ {
+    class forms_export_ control_paint final static_ {
     public:
       /// @brief Returns the weighted average color between the two given colors.
       /// @param color1 The first color.

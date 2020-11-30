@@ -13,7 +13,7 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of input_dialog dialog.
     /// @include input_dialog.cpp
-    class input_dialog : public common_dialog {
+    class forms_export_ input_dialog : public common_dialog {
     public:
       /// @brief Initializes a new instance of the input_dialog class.
       input_dialog() = default;

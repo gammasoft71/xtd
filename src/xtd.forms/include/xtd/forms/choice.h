@@ -12,7 +12,7 @@ namespace xtd {
     /// @remarks To add or remove objects in the list at run time, use methods of the combo_box.object_collection class (through the items property of the combo_box). You can assign an array of object with the push_range method. The list then displays the default string value for each object. You can add individual objects with thepush method. You can delete items with the erase method or clear the entire list with the clear method.
     /// @remarks In addition to display and selection functionality, the combo_box also provides features that enable you to efficiently add items to the combo_box and to find text within the items of the list. With the begin_update and end_update methods, you can add a large number of items to the combo_box without the control being repainted each time an item is added to the list. The find_string and find_string_exact methods enable you to search for an item in the list that contains a specific search string.
     /// @remarks You can use these properties to manage the currently selected item in the list, the text property to specify the string displayed in the editing field, the selected_index property to get or set the current item, and the selected_item property to get or set a reference to the object.
-    class choice : public list_control {
+    class forms_export_ choice : public list_control {
     public:
       /// @brief Initializes a new instance of the combo_box class.
       choice();

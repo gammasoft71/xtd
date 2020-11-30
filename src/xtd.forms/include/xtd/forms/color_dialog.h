@@ -1,6 +1,7 @@
 #pragma once
 #include <xtd/drawing/color.h>
 #include <xtd/forms/color_dialog_flags.h>
+#include "../forms_export.h"
 #include "common_dialog.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -13,7 +14,7 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of color_dialog dialog.
     /// @include color_dialog.cpp
-    class color_dialog : public common_dialog {
+    class forms_export_ color_dialog : public common_dialog {
     public:
       /// @brief Initializes a new instance of the color_dialog class.
       /// @remarks When you create an instance of ColorDialog, the following read/write properties are set to initial values.

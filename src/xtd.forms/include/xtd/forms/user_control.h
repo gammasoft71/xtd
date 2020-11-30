@@ -6,7 +6,7 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    class user_control : public container_control {
+    class forms_export_ user_control : public container_control {
     public:
       user_control();
 

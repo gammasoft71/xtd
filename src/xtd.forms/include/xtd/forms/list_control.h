@@ -8,7 +8,7 @@ namespace xtd {
     /// @brief Provides a common implementation of members for the list_box and combo_box classes.
     /// @remarks The list_control class provides implementations of common elements for the list_box and combo_box controls.
     /// @remarks The following properties are of primary concern to users of a data-bound list_box or combo_box: data_source, display_member, selected_value, and value_member properties.
-    class list_control : public control {
+    class forms_export_ list_control : public control {
     public:
       class item {
       public:

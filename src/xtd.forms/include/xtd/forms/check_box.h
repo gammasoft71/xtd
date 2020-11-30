@@ -20,7 +20,7 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of check_box control.
     /// @include check_box.cpp
-    class check_box : public button_base {
+    class forms_export_ check_box : public button_base {
     public:
       /// @brief Initializes a new instance of the CheckBox class.
       /// @remarks By default, when a new check_box is instantiated, auto_check is set to true, checked is set to false, and appearance is set to normal.

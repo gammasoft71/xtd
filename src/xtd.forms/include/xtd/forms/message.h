@@ -4,10 +4,11 @@
 #include <sstream>
 #include <cstdint>
 #include <string>
+#include "../forms_export.h"
 
 namespace xtd {
   namespace forms {
-    class message {
+    class forms_export_ message {
     public:
       /// @cond
       message() = default;

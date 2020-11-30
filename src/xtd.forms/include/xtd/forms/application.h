@@ -2,6 +2,7 @@
 #include <cstdint>
 #include <memory>
 #include <vector>
+#include "../forms_export.h"
 #include "application_context.h"
 #include "application_informations.h"
 #include "imessage_filter.h"
@@ -34,7 +35,7 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of application class.
     /// @include application.cpp
-    class application {
+    class forms_export_ application {
     public:
       /// @brief Gets a value indicating whether the caller can quit this application.
       /// @return true if the caller can quit this application; otherwise, false.

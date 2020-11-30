@@ -19,7 +19,7 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of button control.
     /// @include button.cpp
-    class button : public ibutton_control, public button_base {
+    class forms_export_ button : public ibutton_control, public button_base {
     public:
       /// @brief Initializes a new instance of the button class.
       /// @remarks By default the button displays no caption. To specify the caption text, set the text property.

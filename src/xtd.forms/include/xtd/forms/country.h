@@ -12,7 +12,7 @@ namespace xtd {
     class countries;
     /// @endcond
 
-    class country : component {
+    class forms_export_ country : component {
     public:
       country() = default;
       /// @cond
