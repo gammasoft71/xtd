@@ -7,7 +7,6 @@ include(../../scripts/cmake/xtd_version.cmake)
 add_include_directories(include)
 add_sources(
   include/xtd/xtd.forms.native.h
-  include/xtd/xtd.forms.native
   include/xtd/forms/create_params.h
   include/xtd/forms/color_dialog_flags.h
   include/xtd/forms/file_dialog_flags.h
