@@ -42,3 +42,5 @@ examples/xtd.forms.examples/games/minesweeper/properties/resources.h
 examples/xtd.forms.examples/common_controls/picture_box/properties/resources.h
 examples/xtd.cmake.examples/project_commands/resources_command/properties/resources.h
 src/xtd.3rdparty.call_stack/call_stack_export.h
+src/xtd.drawing.native.wxwidgets/include/xtd/drawing_native_export.h
+src/xtd.forms.native.wxwidgets/include/xtd/forms_native_export.h
