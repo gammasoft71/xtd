@@ -307,7 +307,7 @@ macro(target_type TYPE)
   write_resources_files()
   write_settings_files()
   
-  set(ALL_FILES "${APPLICATION_ICON};${PROJECT_RESOURCE_FILES};${PROJECT_SOURCES};${CMAKE_ASSEMBLY_INFORMATIONS};${CMAKE_APPLICATION_PROPERTIES};${CMAKE_RESOURCES};${CMAKE_RESOURCE_STRINGS};${CMAKE_SETTINGS}")
+  set(ALL_FILES "${APPLICATION_ICON};${PROJECT_RESOURCE_FILES};${PROJECT_SOURCES};${APPLICATION_INFORMATIONS_FILE};${CMAKE_ASSEMBLY_INFORMATIONS};${CMAKE_APPLICATION_PROPERTIES};${CMAKE_RESOURCES};${CMAKE_RESOURCE_STRINGS};${CMAKE_SETTINGS}")
 
   if ("${TYPE}" STREQUAL "CONSOLE_APPLICATION")
     add_executable(${APPLICATION_NAME} ${ALL_FILES})
@@ -319,7 +319,7 @@ macro(target_type TYPE)
     add_executable(${APPLICATION_NAME} ${ALL_FILES})
     set(PROJECT_TYPE_REFERENCE xtd.tunit)
   elseif ("${TYPE}" STREQUAL "INTERFACE_LIBRARY")
-    add_library(${APPLICATION_NAME} INTERFACE ${ALL_FILES})
+    add_library(${APPLICATION_NAME} INTERFACE ${PROJECT_SOURCES})
   elseif ("${TYPE}" STREQUAL "MODULE_LIBRARY")
     add_library(${APPLICATION_NAME} MODULE ${ALL_FILES})
     set(PROJECT_TYPE_REFERENCE xtd.core)
@@ -1457,7 +1457,6 @@ macro(write_linux_application_informations_file)
   endif ()
 
   source_group(Resources FILES ${APPLICATION_INFORMATIONS_FILE})
-  set(PROJECT_SOURCES "${PROJECT_SOURCES};${APPLICATION_INFORMATIONS_FILE}")
 endmacro()
 
 ## @brief Write windows application informations file. Typically ${CMAKE_CURRENT_BINARY_DIR}/resources/ApplicationName.rc file.
@@ -1549,7 +1548,6 @@ macro(write_windows_application_informations_file)
   )
   
   source_group(Resources FILES ${APPLICATION_INFORMATIONS_FILE})
-  set(PROJECT_SOURCES "${PROJECT_SOURCES};${APPLICATION_INFORMATIONS_FILE}")
 endmacro()
 
 ## @brief Write project config cmake file. Typically ${CMAKE_CURRENT_BINARY_DIR}/${APPLICATION_NAME}Config.cmake
