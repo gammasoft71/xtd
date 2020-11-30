@@ -174,6 +174,7 @@ add_sources(
   src/xtd/guid.cpp
   src/xtd/strings.cpp
   src/xtd/system_exception.cpp
+  src/xtd/types.cpp
   src/xtd/diagnostics/debug.cpp
   src/xtd/diagnostics/default_trace_listener_gcc.cpp
   src/xtd/diagnostics/default_trace_listener_win32.cpp
