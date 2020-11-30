@@ -35,8 +35,6 @@ Game speed is regulated by the speed track bar and the size of the cells with th
 
 [src/grid.h](src/grid.h)
 
-[src/form_main.h](src/form_main.h)
-
 [src/game_of_life.cpp](src/game_of_life.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
