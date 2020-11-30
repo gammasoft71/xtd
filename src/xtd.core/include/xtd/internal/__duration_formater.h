@@ -13,7 +13,8 @@
 #include <ratio>
 
 /// @cond
-#if __cplusplus < 201707L
+#define __GCC_VERSION__ (__GNUC__ * 10000 + __GNUC_MINOR__ * 100 + __GNUC_PATCHLEVEL__)
+#if __cplusplus < 201707L || __GCC_VERSION__ < 100000
 namespace std {
   namespace chrono {
     using days = std::chrono::duration<long, std::ratio<86400>>;
