@@ -1,4 +1,7 @@
 #pragma once
+#include <cstdint>
+#include <string>
+#include "core_export.h"
 
 #if !defined(__cpp_lib_char8_t)
 class char8_t {
@@ -118,7 +121,7 @@ namespace xtd {
   /// foo = null; // release the unique pointer.
   /// @endcode
   /// @ingroup Types
-  static std::nullptr_t null;
+  extern core_export_ std::nullptr_t null;
   
   /// @brief Represents a 8-bit signed integer.
   /// @par Library
