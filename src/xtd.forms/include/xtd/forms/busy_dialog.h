@@ -5,6 +5,7 @@
 #include <xtd/drawing/color.h>
 #include <xtd/drawing/icon.h>
 #include <xtd/forms/control.h>
+#include "component.h"
 #include "dialog_style.h"
 #include "iwin32_window.h"
 
@@ -16,7 +17,7 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of busy_dialog dialog.
     /// @include busy_dialog.cpp
-    class busy_dialog  final {
+    class forms_export_ busy_dialog  final : public component {
     public:
       /// @brief Initializes a new instance of the busy_dialog class.
       busy_dialog() = default;

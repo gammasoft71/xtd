@@ -29,7 +29,7 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of form control.
     /// @include form.cpp
-    class form : public container_control {
+    class forms_export_ form : public container_control {
     public:
       /// @brief Initializes a new instance of the Form class.
       /// @remarks The default size of a form is 300 pixels in height and 300 pixels in width.

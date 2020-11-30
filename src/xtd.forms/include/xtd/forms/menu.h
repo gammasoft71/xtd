@@ -4,7 +4,6 @@
 #include <optional>
 #include <string>
 #include "component.h"
-#include "component.h"
 #include "layout/arranged_element_collection.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -22,7 +21,7 @@ namespace xtd {
     /// @remarks Unlike many base classes, the menu class uses its derived classes to define many of its properties. If you are using your menu in a multiple-document interface (MDI) application, you can use the mdi_list_item property to specify a menu_item that displays a list of open MDI child forms in your application. The menu_items property contains a list of menu_item objects stored in the menu class. For a main_menu or context_menu, this property contains all the menu_item objects that are displayed. For a menu_item, the menu_items property represents the submenu items associated with it.
     /// @remarks In addition to the properties that are provided for all the derived menu classes, the menu class also provides methods, such as clone_menu and merge_menu, that enable you to create new menus from existing menus, and also merge two menu structures together.
     /// @remarks The menu class also defines the nested class menu::menu_item_collection. This class defines the collection of menu_item objects used by the menu_items property. You can use the methods of the menu::menu_item_collection class to add and remove menu items from a main_menu, context_menu, or menu_item.
-    class menu : public component {
+    class forms_export_ menu : public component {
     public:
       using menu_item_collection = layout::arranged_element_collection<menu_item>;
       

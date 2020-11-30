@@ -1,13 +1,14 @@
 #pragma once
 #include <string>
 #include <xtd/static.h>
+#include "../forms_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Provides a collection of string objects for use by a Windows Forms application.
-    class texts final static_ {
+    class forms_export_ texts final static_ {
     public:
       /// @brief Gets a system-defined text that has a string value of "&Abort". This field is constant.
       static const std::string abort;

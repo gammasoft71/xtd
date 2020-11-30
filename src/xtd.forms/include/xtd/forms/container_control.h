@@ -10,7 +10,7 @@ namespace xtd {
     /// @remarks container_control objects provide a logical boundary for contained controls. The container control can capture the TAB key press and move focus to the next control in the collection.
     /// @note The container control does not receive focus; the focus is always set to the first child control in the collection of contained controls.
     /// @remarks You do not typically inherit directly from the container_control class. form, user_control, and up_down_base classes inherit from container_control.
-    class container_control : public scrollable_control {
+    class forms_export_ container_control : public scrollable_control {
     public:
       /// @brief Gets the active control on the container control.
       /// @return The control that is currently active on the container_control.

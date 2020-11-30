@@ -1,10 +1,11 @@
 #pragma once
+#include <xtd/static.h>
 #include <xtd/drawing/font.h>
 #include <xtd/drawing/size.h>
+#include "../forms_export.h"
 #include "arrange_direction.h"
 #include "arrange_starting_position.h"
 #include "boot_mode.h"
-#include <xtd/static.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -16,7 +17,7 @@ namespace xtd {
     /// @ingroup xtd_forms
     /// @remarks The system_information class provides static properties that can be used to get information about the current system environment. The class provides access to information such as Windows display element sizes, operating system settings, network availability, and the capabilities of hardware installed on the system. This class cannot be instantiated.
     /// @remarks For more information about system-wide parameters, see "SystemParametersInfo" in the Platform SDK documentation at http://msdn.microsoft.com.
-    class system_information final static_ {
+    class forms_export_ system_information final static_ {
     public:
       /// @cond
       /// @endcond
