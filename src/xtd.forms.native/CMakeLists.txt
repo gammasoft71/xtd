@@ -84,8 +84,6 @@ add_sources(
   include/xtd/forms/native/user_control.h
   include/xtd/forms/native/virtual_keys.h
   include/xtd/forms/native/window_styles.h
-  src/xtd.forms.native.cpp
-  src/xtd/forms/window_messages.cpp
 )
 target_type(INTERFACE_LIBRARY)
 
