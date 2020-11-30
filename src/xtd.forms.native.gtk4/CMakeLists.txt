@@ -9,7 +9,7 @@ pkg_check_modules(GTK gtk+-4.0)
 include_directories(${GTK_INCLUDE_DIRS})
 link_directories(${GTK_LIBRARY_DIRS})
 add_include_directories(include)
-add_references(xtd.drawing.native ${GTK_LIBRARIES})
+add_references(xtd.drawing xtd.drawing.native ${GTK_LIBRARIES})
 add_sources(
   include/xtd/xtd.forms.native.gtk4.h
   include/xtd/xtd.forms.native.gtk4

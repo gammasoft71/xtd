@@ -9,7 +9,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 add_include_directories(include)
-add_references(xtd.forms.native Qt5::Widgets)
+add_references(xtd.drawing xtd.forms.native Qt5::Widgets)
 add_sources(
   include/xtd/xtd.forms.native.qt5.h
   include/xtd/xtd.forms.native.qt5

@@ -9,7 +9,7 @@ pkg_check_modules(GTK gtk+-3.0)
 include_directories(${GTK_INCLUDE_DIRS})
 link_directories(${GTK_LIBRARY_DIRS})
 add_include_directories(include)
-add_references(xtd.drawing.native ${GTK_LIBRARIES})
+add_references(xtd.core xtd.drawing.native ${GTK_LIBRARIES})
 add_sources(
   include/xtd/xtd.drawing.native.gtk3.h
   include/xtd/xtd.drawing.native.gtk3
