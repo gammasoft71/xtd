@@ -14,7 +14,7 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of track_bar control.
     /// @include track_bar.cpp
-    class track_bar : public control {
+    class forms_export_ track_bar : public control {
     public:
       /// @brief Initializes a new instance of the track_bar class.
       /// @remarks The track_bar is created with a default horizontal orientation and a range of 0 to 10, with a tick mark shown for every value.

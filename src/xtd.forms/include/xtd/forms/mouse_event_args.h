@@ -17,7 +17,7 @@ namespace xtd {
     class toggle_button;
     /// @endcond
     
-    class mouse_event_args : public event_args {
+    class forms_export_ mouse_event_args : public event_args {
     public:
       mouse_event_args() = default;
       

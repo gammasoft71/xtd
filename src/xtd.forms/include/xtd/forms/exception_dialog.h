@@ -4,6 +4,7 @@
 #include <xtd/version.h>
 #include <xtd/drawing/icon.h>
 #include <xtd/system_exception.h>
+#include "component.h"
 #include "dialog_result.h"
 #include "dialog_style.h"
 #include "iwin32_window.h"
@@ -17,7 +18,7 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of exception_dialog dialog.
     /// @include exception_dialog.cpp
-    class exception_dialog final {
+    class forms_export_ exception_dialog final : public component {
     public:
       using creators_collection = xtd::forms::layout::arranged_element_collection<std::string>;
       using designers_collection = xtd::forms::layout::arranged_element_collection<std::string>;

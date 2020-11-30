@@ -17,6 +17,7 @@
 #include <xtd/drawing/size.h>
 #include <xtd/forms/create_params.h>
 
+#include "../forms_export.h"
 #include "layout/arranged_element_collection.h"
 #include "anchor_styles.h"
 #include "auto_size_mode.h"
@@ -57,7 +58,7 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of control control.
     /// @include control.cpp
-    class control : public component, public iwin32_window {
+    class forms_export_ control : public component, public iwin32_window {
     protected:
       /// @cond
       enum class state {

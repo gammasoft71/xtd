@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <xtd/delegate.h>
+#include "component.h"
 #include "dialog_style.h"
 #include "dialog_result.h"
 #include "help_event_handler.h"
@@ -36,7 +37,7 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of message_dialog dialog.
     /// @include message_dialog.cpp
-    class message_dialog final {
+    class forms_export_ message_dialog final : public component {
     public:
       /// @brief Initializes a new instance of the message_dialog class.
       message_dialog() = default;

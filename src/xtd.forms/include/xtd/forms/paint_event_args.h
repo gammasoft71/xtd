@@ -3,6 +3,7 @@
 #include <xtd/event_args.h>
 #include <xtd/drawing/graphics.h>
 #include <xtd/drawing/rectangle.h>
+#include "../forms_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -12,7 +13,7 @@ namespace xtd {
     class control;
     /// @endcond;
     
-    class paint_event_args : public event_args {
+    class forms_export_ paint_event_args : public event_args {
     public:
       paint_event_args() = default;
       paint_event_args(const drawing::rectangle& clip_rectangle, control& control, bool double_buffered) : clip_rectangle_(clip_rectangle), control_(&control), double_buffered_(double_buffered) {};
