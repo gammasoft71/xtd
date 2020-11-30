@@ -1120,7 +1120,8 @@ namespace xtd {
       /// @endcode
       template<typename Type, typename TValue>
       static void is_instance_of(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (dynamic_cast<const Type*>(&value) != nullptr)
+        const Type* instance = dynamic_cast<const Type*>(&value);
+        if (instance != nullptr)
           succeed(message, line_info);
         else
           base_assert::fail("instance of <" + __tunit_demangle(typeid(Type).name()) + ">", "<" + __tunit_demangle(typeid(value).name()) + ">", message, line_info);
