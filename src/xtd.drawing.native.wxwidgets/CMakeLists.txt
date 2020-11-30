@@ -18,7 +18,7 @@ endif()
 find_package(wxWidgets REQUIRED COMPONENTS base core xrc)
 include(${wxWidgets_USE_FILE})
 add_include_directories(include)
-add_references(xtd.drawing.native ${wxWidgets_LIBRARIES} ${XTD_EXTRA_LIBS})
+add_references(xtd.core xtd.drawing.native ${wxWidgets_LIBRARIES} ${XTD_EXTRA_LIBS})
 add_sources(
   include/xtd/xtd.drawing.native.wxwidgets.h
   include/xtd/xtd.drawing.native.wxwidgets

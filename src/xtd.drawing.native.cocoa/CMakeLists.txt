@@ -6,7 +6,7 @@ include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 add_link_options("-framework Cocoa")
 add_include_directories(include)
-add_references(xtd.drawing.native)
+add_references(xtd.core xtd.drawing.native)
 add_sources(
   include/xtd/xtd.drawing.native.cocoa.h
   include/xtd/xtd.drawing.native.cocoa

@@ -5,7 +5,7 @@ project(xtd.drawing.native.win32)
 include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 add_include_directories(include)
-add_references(xtd.drawing.native)
+add_references(xtd.core xtd.drawing.native)
 add_sources(
   include/xtd/xtd.drawing.native.win32.h
   include/xtd/xtd.drawing.native.win32

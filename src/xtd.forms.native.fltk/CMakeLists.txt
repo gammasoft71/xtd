@@ -7,7 +7,7 @@ include(../../scripts/cmake/xtd_version.cmake)
 find_package(FLTK REQUIRED)
 include_directories(${FLTK_INCLUDE_DIR})
 add_include_directories(include)
-add_references(xtd.forms.native ${FLTK_LIBRARIES})
+add_references(xtd.drawing xtd.forms.native ${FLTK_LIBRARIES})
 add_sources(
   include/xtd/xtd.forms.native.fltk.h
   include/xtd/xtd.forms.native.fltk
