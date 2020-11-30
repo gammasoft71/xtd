@@ -1,11 +1,12 @@
 #pragma once
 #include "../create_params.h"
 #include <xtd/static.h>
+#include <xtd/forms_native_export.h>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class domain_up_down final static_ {
+      class forms_native_export_ domain_up_down final static_ {
       public:
         static void delete_item(intptr_t control, size_t pos);
         static void insert_item(intptr_t control, size_t pos, const std::string& value);

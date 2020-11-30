@@ -3,11 +3,12 @@
 #include <xtd/static.h>
 #include <xtd/drawing/point.h>
 #include <xtd/drawing/rectangle.h>
+#include <xtd/forms_native_export.h>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class screen final static_ {
+      class forms_native_export_ screen final static_ {
       public:
         static size_t count();
         static intptr_t create_graphics();

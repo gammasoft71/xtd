@@ -2,11 +2,12 @@
 #include "../create_params.h"
 #include <vector>
 #include <xtd/static.h>
+#include <xtd/forms_native_export.h>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class choice final static_ {
+      class forms_native_export_ choice final static_ {
       public:
         static void begin_update(intptr_t control);
         static void delete_item(intptr_t control, size_t index);

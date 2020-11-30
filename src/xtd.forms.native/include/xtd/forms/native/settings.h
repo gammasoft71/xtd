@@ -2,11 +2,12 @@
 #include <cstdint>
 #include <string>
 #include <xtd/static.h>
+#include <xtd/forms_native_export.h>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class settings final static_ {
+      class forms_native_export_ settings final static_ {
       public:
         static intptr_t create(const std::string& product_name, const std::string& company_name);
         static void destroy(intptr_t config);

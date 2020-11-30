@@ -4,11 +4,12 @@
 #include <xtd/static.h>
 #include <xtd/environment.h>
 #include <xtd/drawing/size.h>
+#include <xtd/forms_native_export.h>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class system_information final static_ {
+      class forms_native_export_ system_information final static_ {
       public:
         static int32_t active_window_tracking_delay();
         static int32_t arrange_direction();

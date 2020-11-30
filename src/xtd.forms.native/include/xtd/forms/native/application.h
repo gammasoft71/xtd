@@ -3,11 +3,12 @@
 #include <vector>
 #include <xtd/static.h>
 #include <xtd/delegate.h>
+#include <xtd/forms_native_export.h>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class application final static_ {
+      class forms_native_export_ application final static_ {
       public:
         static bool allow_quit();
         static void cleanup();

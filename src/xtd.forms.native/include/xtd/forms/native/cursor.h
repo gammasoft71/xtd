@@ -3,11 +3,12 @@
 #include <xtd/static.h>
 #include <xtd/drawing/point.h>
 #include <xtd/drawing/size.h>
+#include <xtd/forms_native_export.h>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class cursor final static_ {
+      class forms_native_export_ cursor final static_ {
       public:
         static intptr_t create();
         static intptr_t create(intptr_t image, const drawing::point& hot_spot);

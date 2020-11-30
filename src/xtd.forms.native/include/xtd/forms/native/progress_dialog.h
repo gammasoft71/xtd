@@ -5,11 +5,12 @@
 #include <xtd/static.h>
 #include <xtd/drawing/color.h>
 #include <xtd/drawing/icon.h>
+#include <xtd/forms_native_export.h>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class progress_dialog final static_ {
+      class forms_native_export_ progress_dialog final static_ {
       public:
         static bool cancelled(intptr_t dialog);
         static intptr_t create(intptr_t hwnd, const std::string& text, const std::string& message, const std::vector<std::string>& informations, size_t animation_speed, int32_t minimum, int32_t maximum, int32_t value, size_t options);

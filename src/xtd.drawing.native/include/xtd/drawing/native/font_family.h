@@ -3,12 +3,13 @@
 #include <string>
 #include <vector>
 #include <xtd/static.h>
+#include <xtd/drawing_native_export.h>
 
 /// @cond
 namespace xtd {
   namespace drawing {
     namespace native {
-      class font_family final static_ {
+      class drawing_native_export_ font_family final static_ {
       public:
         static intptr_t create(const std::string& name);
         static void destroy(intptr_t font_family);

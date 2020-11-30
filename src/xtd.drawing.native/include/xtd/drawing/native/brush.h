@@ -1,12 +1,13 @@
 #pragma once
 #include <cstdint>
 #include <xtd/static.h>
+#include <xtd/drawing_native_export.h>
 
 /// @cond
 namespace xtd {
   namespace drawing {
     namespace native {
-      class brush final static_ {
+      class drawing_native_export_ brush final static_ {
       public:
         static intptr_t create();
         static void solid(intptr_t brush, uint8_t a, uint8_t r, uint8_t g, uint8_t b);

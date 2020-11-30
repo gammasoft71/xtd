@@ -5,12 +5,13 @@
 #include <vector>
 #include "argb.h"
 #include <xtd/static.h>
+#include <xtd/drawing_native_export.h>
 
 /// @cond
 namespace xtd {
   namespace drawing {
     namespace native {
-      class image final static_ {
+      class drawing_native_export_ image final static_ {
       public:
         struct property_item {
           int32_t id = 0;
