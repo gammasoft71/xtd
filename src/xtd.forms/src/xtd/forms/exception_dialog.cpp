@@ -130,7 +130,7 @@ namespace {
       std::string report = strings::format("{0} Operating System {0}{1}", std::string(14, '*'), environment::new_line());
       report += strings::format("{}{}", operating_system_names[environment::os_version().platform()], environment::new_line());
       report += strings::format("    Version : {}{}", environment::os_version().version(), environment::new_line());
-      report += strings::format("    Platform : {}{}", environment::os_version().platform(), environment::new_line());
+      report += strings::format("    Desktop environment : {}{}", environment::os_version().desktop_environment(), environment::new_line());
       report += strings::format("    OS Version : {}{}", environment::os_version(), environment::new_line());
       report += strings::format("    Is 64 bits : {}{}", environment::is_64_bit_operating_system(), environment::new_line());
       report += environment::new_line();
