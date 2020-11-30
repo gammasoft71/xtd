@@ -2,11 +2,12 @@
 #include "../create_params.h"
 #include <xtd/static.h>
 #include <xtd/drawing/image.h>
+#include <xtd/forms_native_export.h>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class button final static_ {
+      class forms_native_export_ button final static_ {
       public:
         static void image(intptr_t control, const drawing::image& image);
         static void image_align(intptr_t control, uint32_t align);

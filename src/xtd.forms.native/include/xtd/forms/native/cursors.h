@@ -1,11 +1,12 @@
 #pragma once
 #include <cstdint>
 #include <xtd/static.h>
+#include <xtd/forms_native_export.h>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class cursors final static_ {
+      class forms_native_export_ cursors final static_ {
       public:
         static intptr_t app_starting();
         static intptr_t arrow();

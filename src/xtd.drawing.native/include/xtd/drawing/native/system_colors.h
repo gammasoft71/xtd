@@ -2,12 +2,13 @@
 #include <cstdint>
 #include <vector>
 #include <xtd/static.h>
+#include <xtd/drawing_native_export.h>
 
 /// @cond
 namespace xtd {
   namespace drawing {
     namespace native {
-      class system_colors final static_ {
+      class drawing_native_export_ system_colors final static_ {
       public:
         static uint32_t to_argb(intptr_t color);
         static intptr_t accent();

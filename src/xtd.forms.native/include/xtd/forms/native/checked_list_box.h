@@ -2,11 +2,12 @@
 #include "../create_params.h"
 #include <vector>
 #include <xtd/static.h>
+#include <xtd/forms_native_export.h>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class checked_list_box final static_ {
+      class forms_native_export_ checked_list_box final static_ {
       public:
         static void begin_update(intptr_t control);
         static void check_state(intptr_t control, size_t index, int check_state);

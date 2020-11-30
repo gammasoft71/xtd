@@ -2,11 +2,12 @@
 #include <xtd/static.h>
 #include <xtd/drawing/image.h>
 #include <xtd/drawing/size.h>
+#include <xtd/forms_native_export.h>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class image_list final static_ {
+      class forms_native_export_ image_list final static_ {
       public:
         static intptr_t create(const drawing::size& image_size);
         static void delete_item(intptr_t image_list, size_t pos);

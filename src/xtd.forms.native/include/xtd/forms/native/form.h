@@ -1,11 +1,12 @@
 #pragma once
 #include "../create_params.h"
 #include <xtd/static.h>
+#include <xtd/forms_native_export.h>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class form final static_ {
+      class forms_native_export_ form final static_ {
       public:
         static void activate(intptr_t form);
         static void close(intptr_t form);

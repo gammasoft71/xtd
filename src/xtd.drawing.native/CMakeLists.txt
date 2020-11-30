@@ -26,7 +26,7 @@ add_sources(
   include/xtd/drawing/native/toolkit.h
   src/xtd.drawing.native.cpp
 )
-target_type(${XTD_LIBRARY_TYPE})
+target_type(INTERFACE_LIBRARY)
 
 # Install
 add_install_include_directories(include/xtd)

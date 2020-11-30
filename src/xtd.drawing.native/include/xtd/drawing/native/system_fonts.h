@@ -2,12 +2,13 @@
 #include <cstdint>
 #include <vector>
 #include <xtd/static.h>
+#include <xtd/drawing_native_export.h>
 
 /// @cond
 namespace xtd {
   namespace drawing {
     namespace native {
-      class system_fonts final static_ {
+      class drawing_native_export_ system_fonts final static_ {
       public:
         static intptr_t caption_font();
         static intptr_t default_font();
