@@ -10,7 +10,7 @@ namespace xtd {
     class tab_page;
     /// @endcond
   
-    class tab_control : public control {
+    class forms_export_ tab_control : public control {
     public:
       tab_control();
 

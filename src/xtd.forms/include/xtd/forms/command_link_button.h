@@ -8,7 +8,7 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    class command_link_button : public button_base {
+    class forms_export_ command_link_button : public button_base {
     public:
       /// @brief Initializes a new instance of the button class.
       /// @remarks By default the button displays no caption. To specify the caption text, set the text property.

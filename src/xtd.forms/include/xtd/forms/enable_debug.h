@@ -2,12 +2,13 @@
 #include <cstdint>
 #include <xtd/static.h>
 #include <xtd/diagnostics/trace_switch.h>
+#include "../forms_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    class enable_debug {
+    class forms_export_ enable_debug {
     public:
       enable_debug() = default;
       enable_debug(const enable_debug&) = default;

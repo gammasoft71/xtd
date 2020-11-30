@@ -12,7 +12,7 @@ namespace xtd {
   class form;
   /// @endcond
   
-    class main_menu : public menu {
+    class forms_export_ main_menu : public menu {
     public:      
       main_menu();
       main_menu(const std::initializer_list<menu_item>& menu_items);

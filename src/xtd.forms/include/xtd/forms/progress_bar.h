@@ -20,7 +20,7 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of progress_bar control.
     /// @include progress_bar.cpp
-    class progress_bar : public control {
+    class forms_export_ progress_bar : public control {
     public:
       /// @brief Initializes a new instance of the progress_bar class.
       /// @remarks By default, the minimum property is set to 0, the maximum property is set to 100, and the step property is set to 10.

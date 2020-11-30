@@ -7,6 +7,7 @@
 #include <xtd/drawing/image.h>
 #include <xtd/drawing/rectangle.h>
 #include <xtd/drawing/system_fonts.h>
+#include "../forms_export.h"
 #include "text_format_flags.h"
 #include "theme_renderers.h"
 #include "theme_colors.h"
@@ -16,7 +17,7 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    class check_box_renderer final static_ {
+    class forms_export_ check_box_renderer final static_ {
     public:
       static void draw_check_box(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::check_box_state& state) {draw_check_box(default_theme(), g, bounds, "", xtd::drawing::system_fonts::default_font(), xtd::forms::text_format_flags::default_format, xtd::drawing::image::empty, xtd::drawing::rectangle(0, 0, 0, 0), false, state, xtd::forms::theme_colors::current_theme().control(), xtd::forms::theme_colors::current_theme().control_text());}
       static void draw_check_box(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, bool focused, xtd::forms::visual_styles::check_box_state& state) {draw_check_box(default_theme(), g, bounds, "", xtd::drawing::system_fonts::default_font(), xtd::forms::text_format_flags::default_format, xtd::drawing::image::empty, xtd::drawing::rectangle(0, 0, 0, 0), true, state, xtd::forms::theme_colors::current_theme().control(), xtd::forms::theme_colors::current_theme().control_text());}

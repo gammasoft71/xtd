@@ -21,7 +21,7 @@ namespace xtd {
       separator = 4,
     };
   
-    class menu_item : public xtd::forms::menu {
+    class forms_export_ menu_item : public xtd::forms::menu {
     public:      
       menu_item();
       menu_item(const std::string& text);

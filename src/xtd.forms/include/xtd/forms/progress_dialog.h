@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <xtd/forms/progress_dialog_flags.h>
+#include "component.h"
 #include "dialog_style.h"
 #include "iwin32_window.h"
 
@@ -12,7 +13,7 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of progress_dialog dialog.
     /// @include progress_dialog.cpp
-    class progress_dialog  final {
+    class forms_export_ progress_dialog  final : public component {
     public:
       /// @brief Initializes a new instance of the progress_dialog class.
       progress_dialog() = default;

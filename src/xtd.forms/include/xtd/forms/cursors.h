@@ -7,7 +7,7 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Provides a collection of Cursor objects for use by a Windows Forms application.
-    class cursors final static_ {
+    class forms_export_ cursors final static_ {
     public:
       /// @brief Gets the cursor that appears when an application starts.
       /// @return The cursor that represents the cursor that appears when an application starts.

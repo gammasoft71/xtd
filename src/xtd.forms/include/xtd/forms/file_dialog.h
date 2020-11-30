@@ -30,7 +30,7 @@ namespace xtd {
     /// @remarks The xtd::io::path class contains static members to assist in manipulating absolute and relative path strings, whereas the System.IO.File and xtd::io::directory classes have static members that actually manipulate files and directories, respectively.
     /// @par Important
     /// If the user of your application changes the folder in the file_dialog, then the current working directory for your application is set to the location specified in the file_dialog. To prevent this, set the restore_directory property to true.
-    class file_dialog : public common_dialog {
+    class forms_export_ file_dialog : public common_dialog {
     public:
       /// @brief Initializes a new instance of the common_dialog class.
       file_dialog() = default;

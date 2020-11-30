@@ -15,7 +15,7 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of radio_button control.
     /// @include radio_button.cpp
-    class radio_button : public button_base {
+    class forms_export_ radio_button : public button_base {
     public:
       /// @brief Initializes a new instance of the radio_button class.
       /// @remarks The default view of the radio_button has its text aligned to the right of the button and the auto_check property is set to true.
