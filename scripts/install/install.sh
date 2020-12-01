@@ -28,85 +28,45 @@ case "$OSTYPE" in
   *"CentOS"* | *"Fedora"* | *"RedHat"*) sudo yum update; sudo yum install cmake gtk3-devel -y;;
 esac
 
-# detecting, generate, build and install wxwdigets
-#echo "Detecting if wxwidgets is installed..."
-#mkdir -p build/test_wxwidgets
-#pushd build/test_wxwidgets
-#cmake ../../scripts/install/test_wxwidgets
-#popd
-
-#if [ ! -f "scripts/install/test_wxwidgets/wxwidgets.lck" ]; then
-#  echo "  wxwidgets is not found"
-#else
-#  echo "  wxwidgets is found"
-#  rm "scripts/install/test_wxwidgets/wxwidgets.lck"
-#fi
-
-#if [ ! -f "scripts/install/test_wxwidgets/wxwidgets.lck" ]; then
-  echo "dowload and install wxwidgets..."
-  mkdir -p build/thirdparty/
-  pushd build/thirdparty
-  git clone https://github.com/wxwidgets/wxwidgets.git -b $WXWIDGETS_VERSION --depth 1
-  pushd wxwidgets
-  git submodule update --init
-  popd
-  mkdir -p wxwidgets/build_cmake
-  pushd wxwidgets/build_cmake
-  if [[ "$OSTYPE" == *"MSYS"* ]] || [ "$OSTYPE" == *"MINGW64"* ]]; then
-    cmake .. -DwxBUILD_SHARED=OFF
-    cmake --build . --target install --config Debug
-    cmake --build . --target install --config Release
-  elif [[ "$OSTYPE" == *"Darwin"* ]]; then
-    cmake .. -G "Xcode" -DwxBUILD_SHARED=OFF
-    cmake --build . --config Debug
-    cmake --build . --target install --config Debug
-    cmake --build . --config Release
-    cmake --build . --target install --config Release
-  else
-    mkdir Debug && mkdir Release
-    pushd Debug
-    cmake ../.. -G "CodeBlocks - Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF
-    cmake --build . -- -j8
-    sudo cmake --build . --target install
-    popd
-    pushd Release
-    cmake ../.. -G "CodeBlocks - Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DwxBUILD_SHARED=OFF
-    cmake --build . -- -j8
-    sudo cmake --build . --target install
-    popd
-  fi
-  popd
-  popd
-#fi
+echo "dowload and install wxwidgets..."
+mkdir -p build/thirdparty/
+pushd build/thirdparty
+git clone https://github.com/wxwidgets/wxwidgets.git -b $WXWIDGETS_VERSION --depth 1
+pushd wxwidgets
+git submodule update --init
+popd
+mkdir -p wxwidgets/build_cmake
+pushd wxwidgets/build_cmake
+mkdir Debug && mkdir Release
+pushd Debug
+cmake ../.. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEBUG_POSTFIX=d
+cmake --build . -- -j8
+sudo cmake --build . --target install
+popd
+pushd Release
+cmake ../.. -DCMAKE_BUILD_TYPE=Release
+cmake --build . -- -j8
+sudo cmake --build . --target install
+popd
+popd
+popd
 
 # generate, build and install xtd
 echo "install xtd..."
 git submodule update --init
 mkdir build
 pushd build
-if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
-  cmake .. "$@"
-  cmake --build . --target install --config Debug
-  cmake --build . --target install --config Release
-elif [[ "$OSTYPE" == *"Darwin"* ]]; then
-  cmake .. -G "Xcode" "$@"
-  cmake --build . --config Debug
-  cmake --build . --target install --config Debug
-  cmake --build . --config Release
-  cmake --build . --target install --config Release
-else
-  mkdir Release && mkdir Debug
-  pushd Release
-  cmake ../.. -G "CodeBlocks - Unix Makefiles" -DCMAKE_BUILD_TYPE=Release "$@"
-  cmake --build . -- -j8
-  sudo cmake --build . --target install
-  popd
-  pushd Debug
-  cmake ../.. -G "CodeBlocks - Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug "$@"
-  cmake --build . -- -j8
-  sudo cmake --build . --target install
-  popd
-fi
+mkdir Release && mkdir Debug
+pushd Release
+cmake ../..  -DCMAKE_BUILD_TYPE=Release "$@"
+cmake --build . -- -j8
+sudo cmake --build . --target install
+popd
+pushd Debug
+cmake ../.. -DCMAKE_BUILD_TYPE=Debug "$@"
+cmake --build . -- -j8
+sudo cmake --build . --target install
+popd
 popd
 
 # create gui tools shortcut in system operating applications
