@@ -11,9 +11,10 @@ add_sources(
   include/xtd/cmake_page.h
   include/xtd/format_page.h
   include/xtd/main_page.h
+  include/xtd/system_report.h
   include/xtd/xtd.h
   include/xtd/xtd.h
-  src/xtd.cpp
+  src/xtd/system_report.cpp
   ../../scripts/cmake/xtd_commands.cmake
   ../../scripts/cmake/xtd_version.cmake
 )
