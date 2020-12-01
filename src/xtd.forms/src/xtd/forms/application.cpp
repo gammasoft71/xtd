@@ -75,6 +75,7 @@ std::string application::executable_name() {
 }
 
 std::string application::executable_path() {
+  if (environment::get_command_line_args().size() == 0) return "";
   return environment::get_command_line_args()[0];
 }
 
@@ -110,6 +111,7 @@ std::string application::product_version() {
 }
 
 std::string application::startup_path() {
+  if (environment::get_command_line_args().size() == 0) return "";
   return io::path::get_directory_name(environment::get_command_line_args()[0]);
 }
 
