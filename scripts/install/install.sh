@@ -29,8 +29,8 @@ case "$OSTYPE" in
 esac
 
 echo "dowload and install wxwidgets..."
-mkdir -p build/thirdparty/
-pushd build/thirdparty
+mkdir -p build/3rdparty/
+pushd build/3rdparty
 git clone https://github.com/wxwidgets/wxwidgets.git -b $WXWIDGETS_VERSION --depth 1
 pushd wxwidgets
 git submodule update --init
@@ -39,7 +39,7 @@ mkdir -p wxwidgets/build_cmake
 pushd wxwidgets/build_cmake
 mkdir Debug && mkdir Release
 pushd Debug
-cmake ../.. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEBUG_POSTFIX=d
+cmake ../.. -DCMAKE_BUILD_TYPE=Debug
 cmake --build . -- -j8
 sudo cmake --build . --target install
 popd
@@ -53,7 +53,6 @@ popd
 
 # generate, build and install xtd
 echo "install xtd..."
-git submodule update --init
 mkdir build
 pushd build
 mkdir Release && mkdir Debug
