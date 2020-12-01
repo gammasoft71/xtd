@@ -24,14 +24,13 @@ git submodule update --init
 cd..
 mkdir wxwidgets\build_cmake
 cd wxwidgets\build_cmake
-cmake .. -DCMAKE_DEBUG_POSTFIX=d
+cmake ..
 cmake --build . --target install --config Debug
 cmake --build . --target install --config Release
 cd ..\..\..\..
 
 :: generate, build and install xtd
 echo install xtd...
-git submodule update --init
 mkdir build
 cd build
 cmake .. %*
