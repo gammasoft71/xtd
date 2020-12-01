@@ -132,7 +132,7 @@ namespace {
       report += strings::format("    Version : {}{}", environment::os_version().version(), environment::new_line());
       report += strings::format("    Desktop environment : {}{}", environment::os_version().desktop_environment(), environment::new_line());
       report += strings::format("    OS Version : {}{}", environment::os_version(), environment::new_line());
-      report += strings::format("    Is 64 bits : {}{}", environment::is_64_bit_operating_system(), environment::new_line());
+      report += strings::format("    64 bits : {}{}", environment::is_64_bit_operating_system(), environment::new_line());
       report += environment::new_line();
       return report;
     }
@@ -142,8 +142,8 @@ namespace {
       report += strings::format("{}{}", environment::cpp_version().to_string(), environment::new_line());
       report += strings::format("    Version : {}{}", environment::cpp_version().version(), environment::new_line());
       report += strings::format("    Language : {}{}", environment::cpp_version().is_experimental_language() ? environment::cpp_version().experimental_language() : environment::cpp_version().language(), environment::new_line());
-      report += strings::format("    Is experimental language : {}{}", environment::cpp_version().is_experimental_language(), environment::new_line());
-      report += strings::format("    Is supported : {}{}", environment::cpp_version().is_supported(), environment::new_line());
+      report += strings::format("    Experimental : {}{}", environment::cpp_version().is_experimental_language(), environment::new_line());
+      report += strings::format("    Supported : {}{}", environment::cpp_version().is_supported(), environment::new_line());
       report += environment::new_line();
       return report;
     }
@@ -154,7 +154,7 @@ namespace {
       report += strings::format("    Version : {0}{1}", environment::compiler_version().version(), environment::new_line());
       report += strings::format("    ID : {0}{1}", environment::compiler_version().compiler_id(), environment::new_line());
       report += strings::format("    Mode : {0}{1}", environment::compiler_version().is_build_type_debug() ? "Debug" : "Release", environment::new_line());
-      report += strings::format("    Is 64 bits : {0}{1}", environment::compiler_version().is_64_bit(), environment::new_line());
+      report += strings::format("    64 bits : {0}{1}", environment::compiler_version().is_64_bit(), environment::new_line());
       report += environment::new_line();
       return report;
     }
