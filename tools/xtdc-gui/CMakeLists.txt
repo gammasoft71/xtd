@@ -4,7 +4,6 @@ cmake_minimum_required(VERSION 3.3)
 project(xtdc-gui)
 include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
-add_references(xtd xtd.tunit)
 add_sources(
   src/main_form.h
   src/main_form.cpp
