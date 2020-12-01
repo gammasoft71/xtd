@@ -14,7 +14,7 @@
 #include <wx/sysopt.h>
 
 #if defined(__WXMSW__)
-extern int __xtd_win32_enable_dark_mode__;
+extern drawing_native_export_ int __xtd_win32_enable_dark_mode__;
 #elif defined(__WXGTK__)
 bool __xtd_gtk_enable_dark_mode__ = false;
 bool __xtd_gtk_enable_button_images__ = false;
