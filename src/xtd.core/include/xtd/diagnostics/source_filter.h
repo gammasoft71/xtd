@@ -16,7 +16,7 @@ namespace xtd {
     public:
       /// @brief Initializes a new instance of the source_filter class, specifying the name of the trace source.
       /// @param source The name of the trace source.
-      source_filter(const std::string& source) : sources_(source) {}
+      source_filter(const std::string& source) : source_(source) {}
 
       /// @brief Gets the name of the trace source.
       /// @return The name of the trace source.
