@@ -45,7 +45,7 @@ call scripts\install\shortcut.cmd "%xtd_program_path%\xtdc-gui.lnk" "%ProgramFil
 call scripts\install\shortcut.cmd "%xtd_program_path%\guidgen-gui.lnk" "%ProgramFiles(x86)%\xtd\bin\guidgen-gui.exe"
 
 :: add xtdc-gui path
-set path=%ProgramFiles(x86)%\xtd\bin;%path%
+set path=%ProgramFiles(x86)%\xtd\bin;%ProgramFiles(x86)%\wxWidgets\lib\vc_x64_dll;%path%
 setx path "%path%"
 
 :: launch xtdc-gui
