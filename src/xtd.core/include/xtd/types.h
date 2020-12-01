@@ -1,6 +1,7 @@
 #pragma once
 #include <cstdint>
 #include <string>
+#include <typeinfo>
 #include "core_export.h"
 
 #if !defined(__cpp_lib_char8_t)
