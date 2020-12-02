@@ -5,7 +5,7 @@ project(xtd)
 include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 add_include_directories(include)
-add_references(xtd.core)
+include(references.cmake)
 add_sources(
   include/xtd/xtd
   include/xtd/cmake_page.h
@@ -15,6 +15,9 @@ add_sources(
   include/xtd/xtd.h
   include/xtd/xtd.h
   src/xtd/system_report.cpp
+  references.cmake
+  ../../scripts/cmake/update_export.cmake
+  ../../scripts/cmake/update_version_number.cmake
   ../../scripts/cmake/xtd_commands.cmake
   ../../scripts/cmake/xtd_version.cmake
 )
