@@ -2,7 +2,7 @@
 #include <cstdint>
 #include <map>
 #include <vector>
-#include "literals.h"
+#include "format.h"
 #include "language_id.h"
 #include "version.h"
 
@@ -27,8 +27,6 @@ namespace xtd {
 
     bool is_supported() const noexcept {return cpp_ >= 201703L;}
     
-    int32_t month() const noexcept {return cpp_ % 100;}
-    
     language_id language() const noexcept {
       if (cpp_ >= 202002L) return language_id::cpp20;
       if (cpp_ >= 201703L) return language_id::cpp17;
@@ -49,12 +47,18 @@ namespace xtd {
       return language_id::unknown;
     }
     
+    int32_t month() const noexcept {return cpp_ % 100;}
+
+    std::string name() const noexcept {
+      static std::map<language_id, std::string> names {{language_id::cpp_pre98, "C++ Pre 98"}, {language_id::cpp98, "C++ 98"}, {language_id::cpp11, "C++ 11"}, {language_id::cpp14, "C++ 14"}, {language_id::cpp17, "C++ 17"}, {language_id::cpp20, "C++ 20"}, {language_id::unknown, "<unknown>"}};
+      if (is_experimental_language()) return format("Experimental {}", names[experimental_language()]);
+      return names[language()];
+    }
+    
     uint32_t value() const noexcept {return cpp_;}
 
     std::string version_string() const noexcept {
-      static std::map<language_id, std::string> names {{language_id::cpp_pre98, "C++ Pre 98"}, {language_id::cpp98, "C++ 98"}, {language_id::cpp11, "C++ 11"}, {language_id::cpp14, "C++ 14"}, {language_id::cpp17, "C++ 17"}, {language_id::cpp20, "C++ 20"}, {language_id::unknown, "<unknown>"}};
-      if (is_experimental_language()) return "Experimental "_s + names[experimental_language()];
-      return names[language()];
+      return format("{} {}", name(), version());
     }
     
     const xtd::version& version() const noexcept {

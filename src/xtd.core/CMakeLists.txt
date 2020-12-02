@@ -22,6 +22,7 @@ add_sources(
   include/xtd/__opaque_console.h
   include/xtd/__opaque_environment.h
   include/xtd/action.h
+  include/xtd/architecture_id.h
   include/xtd/argument_exception.h
   include/xtd/argument_null_exception.h
   include/xtd/argument_out_of_range_exception.h
@@ -87,6 +88,7 @@ add_sources(
   include/xtd/platform_id.h
   include/xtd/platform_not_supported_exception.h
   include/xtd/predicate.h
+  include/xtd/processor.h
   include/xtd/reset_color.h
   include/xtd/startup.h
   include/xtd/static.h
