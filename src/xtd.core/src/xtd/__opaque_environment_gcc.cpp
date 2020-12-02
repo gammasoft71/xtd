@@ -163,6 +163,10 @@ std::string __opaque_environment::get_user_name() noexcept {
   return name;
 }
 
+bool __opaque_environment::is_processor_arm() noexcept {
+  return  xtd::strings::contains(create_process("uname -m"), "arm");
+}
+
 bool __opaque_environment::is_os_64_bit() noexcept {
   return  xtd::strings::contains(create_process("uname -m"), "64");
 }

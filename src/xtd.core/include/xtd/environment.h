@@ -17,6 +17,7 @@
 #include "guid.h"
 #include "operating_system.h"
 #include "platform_id.h"
+#include "processor.h"
 #include "static.h"
 #include "version.h"
 #include "collections/specialized/string_vector.h"
@@ -350,7 +351,7 @@ namespace xtd {
 
     /// @brief Determines whether the current operating system is a 64-bit operating system.
     /// @return true if the operating system is 64-bit; otherwise, false.
-    static bool is_64_bit_operating_system() noexcept {return __opaque_environment::is_os_64_bit();}
+    static bool is_64_bit_operating_system() noexcept {return os_version().is_64_bit();}
     
     /// @brief Determines whether the current process is a 64-bit process.
     /// @return true if the process is 64-bit; otherwise, false.
@@ -384,14 +385,23 @@ namespace xtd {
         __opaque_environment::get_os_version(major, minor, build, revision);
         xtd::version version;
         version = xtd::version(major, minor, build, revision);
-        os = operating_system(__opaque_environment::get_os_platform_id(), version, __opaque_environment::get_service_pack(), __opaque_environment::get_desktop_environment());
+        os = operating_system(__opaque_environment::get_os_platform_id(), version, __opaque_environment::get_service_pack(), __opaque_environment::get_desktop_environment(), __opaque_environment::is_os_64_bit());
       }
       return os;
     }
 
     /// @brief Gets the number of processors on the current machine.
     /// @return The 32-bit unsigned integer that specifies the number of processors on the current machine. There is no default. If the current machine contains multiple processor groups, this property returns the number of logical processors that are available for use.
-    static unsigned int processor_count() noexcept {return __opaque_environment::get_processor_count();}
+    static uint32_t processor_count() noexcept {return processor_information().core_count();}
+    
+    /// @brief Gets an operating_system object that contains the current platform identifier and version number.
+    /// @return An object that contains the platform identifier and version number.
+    static xtd::processor processor_information() noexcept {
+      static xtd::processor proc(xtd::architecture_id::unknown, false, 1);
+      if (proc.architecture() == xtd::architecture_id::unknown)
+        proc = xtd::processor(__opaque_environment::is_processor_arm() ? architecture_id::arm : architecture_id::x86, __opaque_environment::is_os_64_bit(), __opaque_environment::get_processor_count());
+      return proc;
+    }
 
     /// @brief Creates, modifies, or deletes an environment variable stored in the current process.
     /// @param variable The name of an environment variable.

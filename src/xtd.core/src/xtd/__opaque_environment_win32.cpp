@@ -108,6 +108,12 @@ std::string __opaque_environment::get_user_name() noexcept {
   return user_name;
 }
 
+bool __opaque_environment::is_processor_arm() noexcept {
+  SYSTEM_INFO system_info;
+  GetNativeSystemInfo(&system_info);
+  return (system_info.wProcessorArchitecture & (PROCESSOR_ARCHITECTURE_ARM | PROCESSOR_ARCHITECTURE_ARM64)) != 0;
+}
+
 bool __opaque_environment::is_os_64_bit() noexcept {
   SYSTEM_INFO system_info;
   GetNativeSystemInfo(&system_info);

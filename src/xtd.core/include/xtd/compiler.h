@@ -2,6 +2,7 @@
 #include <vector>
 #include "build_type.h"
 #include "compiler_id.h"
+#include "format.h"
 #include "version.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -29,9 +30,13 @@ namespace xtd {
     
     static bool is_64_bit() noexcept {return sizeof(size_t) == 8;}
 
-    std::string version_string() const noexcept {
+    std::string name() const noexcept {
       static std::map<xtd::compiler_id, std::string> names {{compiler_id::unknown, "<unknown>"}, {compiler_id::microsoft_visual_studio, "Microsoft Visual Studio"}, {compiler_id::clang, "clang"}, {compiler_id::gcc, "gcc"}};
       return names[compiler_id()];
+    }
+    
+    std::string version_string() const noexcept {
+      return format("{} {}", name(), version());
     }
     
     const xtd::version& version() const noexcept {return version_;}

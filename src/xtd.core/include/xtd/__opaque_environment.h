@@ -30,6 +30,7 @@ class core_export_ __opaque_environment final {
   static std::string get_user_domain_name() noexcept;
   static std::string get_user_name() noexcept;
   static xtd::version get_version() noexcept;
+  static bool is_processor_arm() noexcept;
   static bool is_os_64_bit() noexcept;
   static xtd::guid new_guid() noexcept;
   static std::string new_line() noexcept;

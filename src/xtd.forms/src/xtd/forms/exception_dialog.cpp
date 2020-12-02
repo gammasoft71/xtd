@@ -91,8 +91,8 @@ namespace {
       report += generate_exception_report();
       report += generate_libraries_report();
       report += generate_operating_system_report();
-      report += generate_language_report();
       report += generate_compiler_report();
+      report += generate_language_report();
       return report;
     }
 
@@ -126,9 +126,8 @@ namespace {
     }
     
     std::string generate_operating_system_report() const {
-      static map<platform_id, string> operating_system_names {{platform_id::win32s, "Microsoft Win32S"}, {platform_id::win32_windows, "Microsoft Windows 98"}, {platform_id::win32_nt, "Microsoft Windows NT"}, {platform_id::win_ce, "Microsoft Windows CE"}, {platform_id::unix, "Unix"}, {platform_id::xbox, "Xbox"}, {platform_id::macos, "macOS"}, {platform_id::ios, "iOS"}, {platform_id::android, "Android"}, {platform_id::unknown, "<Unknown>"}};
       std::string report = strings::format("{0} Operating System {0}{1}", std::string(14, '*'), environment::new_line());
-      report += strings::format("{}{}", operating_system_names[environment::os_version().platform()], environment::new_line());
+      report += strings::format("{}{}", environment::os_version().name(), environment::new_line());
       report += strings::format("    Version : {}{}", environment::os_version().version(), environment::new_line());
       report += strings::format("    Desktop environment : {}{}", environment::os_version().desktop_environment(), environment::new_line());
       report += strings::format("    OS Version : {}{}", environment::os_version(), environment::new_line());
@@ -139,9 +138,8 @@ namespace {
     
     std::string generate_language_report() const {
       std::string report = strings::format("{0} Language {0}{1}", std::string(14, '*'), environment::new_line());
-      report += strings::format("{}{}", environment::cpp_version().to_string(), environment::new_line());
+      report += strings::format("{}{}", environment::cpp_version().name(), environment::new_line());
       report += strings::format("    Version : {}{}", environment::cpp_version().version(), environment::new_line());
-      report += strings::format("    Language : {}{}", environment::cpp_version().is_experimental_language() ? environment::cpp_version().experimental_language() : environment::cpp_version().language(), environment::new_line());
       report += strings::format("    Experimental : {}{}", environment::cpp_version().is_experimental_language(), environment::new_line());
       report += strings::format("    Supported : {}{}", environment::cpp_version().is_supported(), environment::new_line());
       report += environment::new_line();
@@ -150,7 +148,7 @@ namespace {
     
     std::string generate_compiler_report() const {
       std::string report = strings::format("{0} Compiler {0}{1}", std::string(14, '*'), environment::new_line());
-      report += strings::format("{0}{1}", environment::compiler_version().to_string(), environment::new_line());
+      report += strings::format("{0}{1}", environment::compiler_version().name(), environment::new_line());
       report += strings::format("    Version : {0}{1}", environment::compiler_version().version(), environment::new_line());
       report += strings::format("    ID : {0}{1}", environment::compiler_version().compiler_id(), environment::new_line());
       report += strings::format("    Mode : {0}{1}", environment::compiler_version().is_build_type_debug() ? "Debug" : "Release", environment::new_line());

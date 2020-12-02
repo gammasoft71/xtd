@@ -85,6 +85,7 @@
 #include "platform_id.h"
 #include "platform_not_supported_exception.h"
 #include "predicate.h"
+#include "processor.h"
 #include "reset_color.h"
 #include "startup.h"
 #include "static.h"
