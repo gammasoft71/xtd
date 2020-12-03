@@ -97,28 +97,28 @@ namespace {
   string generate_special_folders_string_report(int32_t indent) {
     std::string report = strings::format("{}Special folders{}", indent_string(indent), environment::new_line());
     for (auto special_folder : system_report::special_folders())
-      report += strings::format("{}{}={}{}", indent_string(indent + 1), special_folder.first, special_folder.second, environment::new_line());
+      report += strings::format("{}{}: {}{}", indent_string(indent + 1), special_folder.first, special_folder.second, environment::new_line());
     return report + environment::new_line();
   }
 
   string generate_system_colors_string_report(int32_t indent) {
     std::string report = strings::format("{}System colors{}", indent_string(indent), environment::new_line());
     for (auto system_color : system_report::system_colors())
-      report += strings::format("{}{}={}{}", indent_string(indent + 1), system_color.first, system_color.second, environment::new_line());
+      report += strings::format("{}{}: {}{}", indent_string(indent + 1), system_color.first, system_color.second, environment::new_line());
     return report + environment::new_line();
   }
 
   string generate_generic_font_families_string_report(int32_t indent) {
     std::string report = strings::format("{}System fonts{}", indent_string(indent), environment::new_line());
     for (auto font_family : system_report::generic_font_families())
-      report += strings::format("{}{}={}{}", indent_string(indent + 1), font_family.first, font_family.second, environment::new_line());
+      report += strings::format("{}{}: {}{}", indent_string(indent + 1), font_family.first, font_family.second, environment::new_line());
     return report + environment::new_line();
   }
 
   string generate_system_fonts_string_report(int32_t indent) {
     std::string report = strings::format("{}System fonts{}", indent_string(indent), environment::new_line());
     for (auto system_font : system_report::system_fonts())
-      report += strings::format("{}{}={}{}", indent_string(indent + 1), system_font.first, system_font.second, environment::new_line());
+      report += strings::format("{}{}: {}{}", indent_string(indent + 1), system_font.first, system_font.second, environment::new_line());
     return report + environment::new_line();
   }
 
@@ -131,6 +131,13 @@ namespace {
       report += format("{}Bits per pixel: {}{}", indent_string(indent + 2), screen.bits_per_pixel(), environment::new_line());
       report += format("{}Primary screen: {}{}", indent_string(indent + 2), screen.primary(), environment::new_line());
     }
+    return report + environment::new_line();
+  }
+
+  string generate_system_informations_string_report(int32_t indent) {
+    std::string report = strings::format("{}System informations{}", indent_string(indent), environment::new_line());
+    for (auto system_information : system_report::system_informations())
+      report += strings::format("{}{}: {}{}", indent_string(indent + 1), system_information.first, system_information.second, environment::new_line());
     return report + environment::new_line();
   }
 }
@@ -162,6 +169,43 @@ system_report::system_font_collection system_report::system_fonts() noexcept {
   return {{"Caption", drawing::system_fonts::caption_font()}, {"Default", drawing::system_fonts::default_font()}, {"Dialog", drawing::system_fonts::dialog_font()}, {"Icon title", drawing::system_fonts::icon_title_font()}, {"Menu", drawing::system_fonts::menu_font()}, {"Message box", drawing::system_fonts::message_box_font()}, {"Small caption", drawing::system_fonts::small_caption_font()}, {"Status", drawing::system_fonts::status_font()},};
 }
 
+system_report::system_information_collection system_report::system_informations() noexcept {
+  return {
+    {"Active window tracking delay", format("{}", forms::system_information::active_window_tracking_delay())},
+    {"Active", format("{}", forms::system_information::active_window_tracking_delay())},
+    {"Arrange direction", format("{}", forms::system_information::arrange_direction())},
+    {"Arrange starting position", format("{}", forms::system_information::arrange_starting_position())},
+    {"Boot mode", format("{}", forms::system_information::boot_mode())},
+    {"Border 3d size", format("{}", forms::system_information::border_3d_size())},
+    {"Border multiplier factor", format("{}", forms::system_information::border_multiplier_factor())},
+    {"Border size", format("{}", forms::system_information::border_size())},
+    {"Caption button size", format("{}", forms::system_information::caption_button_size())},
+    {"Caption height", format("{}", forms::system_information::caption_height())},
+    {"Caret blink time", format("{}", forms::system_information::caret_blink_time())},
+    {"Caret width", format("{}", forms::system_information::caret_width())},
+    {"Computer name", format("{}", forms::system_information::computer_name())},
+    {"Cursor size", format("{}", forms::system_information::cursor_size())},
+    {"DBCS enabled", format("{}", forms::system_information::dbcs_enabled())},
+    {"Debug os", format("{}", forms::system_information::debug_os())},
+    {"Double click size", format("{}", forms::system_information::double_click_size())},
+    {"Double_click time", format("{}", forms::system_information::double_click_time())},
+    {"Drag full windows", format("{}", forms::system_information::drag_full_windows())},
+    {"Drag size", format("{}", forms::system_information::drag_size())},
+    {"Fixed frame border size", format("{}", forms::system_information::fixed_frame_border_size())},
+    {"Font smoothing contrast", format("{}", forms::system_information::font_smoothing_contrast())},
+    {"Font smoothing type", format("{}", forms::system_information::font_smoothing_type())},
+    //{"Frame border size", format("{}", forms::system_information::frame_border_size())},
+    //{"High contrast", format("{}", forms::system_information::high_contrast())},
+    //{"Horizontal focus thickness", format("{}", forms::system_information::horizontal_focus_thickness())},
+    //{"Horizontal resize border thickness", format("{}", forms::system_information::horizontal_resize_border_thickness())},
+    //{"Horizontal scroll bar arrow width", format("{}", forms::system_information::horizontal_scroll_bar_arrow_width())},
+    {"Horizontal scroll bar height", format("{}", forms::system_information::horizontal_scroll_bar_height())},
+    //{"Horizontal scroll bar bhumb width", format("{}", forms::system_information::horizontal_scroll_bar_bhumb_width())},
+    //{"icon_horizontal_spacing", format("{}", forms::system_information::icon_horizontal_spacing())},
+    //{"Active", format("{}", forms::system_information::active_window_tracking_delay())},
+  };
+}
+
 string system_report::to_string() noexcept {
   int32_t indent = 0;
   string report;
@@ -178,6 +222,7 @@ string system_report::to_string() noexcept {
   report += generate_generic_font_families_string_report(indent);
   report += generate_system_fonts_string_report(indent);
   report += generate_screens_report(indent);
+  report += generate_system_informations_string_report(indent);
   return report;
 }
 

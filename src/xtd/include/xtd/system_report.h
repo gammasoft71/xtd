@@ -9,6 +9,7 @@
 #include <xtd/drawing/color.h>
 #include <xtd/drawing/font.h>
 #include <xtd/forms/screen.h>
+#include <xtd/forms/system_information.h>
 #include "export.h"
 
 namespace xtd {
@@ -56,6 +57,8 @@ namespace xtd {
     
     using system_font_collection = std::vector<std::pair<std::string, xtd::drawing::font>>;
     
+    using system_information_collection = std::vector<std::pair<std::string, std::string>>;
+    
     static xtd::diagnostics::stack_trace stack_trace() noexcept {return stack_trace(0);}
     
     static xtd::diagnostics::stack_trace stack_trace(size_t skip_frames) noexcept {return xtd::diagnostics::stack_trace(skip_frames, true);}
@@ -83,7 +86,9 @@ namespace xtd {
     static system_font_collection system_fonts() noexcept;
     
     static std::vector<xtd::forms::screen> screens() noexcept {return xtd::forms::screen::all_screens();}
-
+    
+    static system_information_collection system_informations() noexcept;
+    
     static std::string to_string() noexcept;
 
     static std::string to_xml() noexcept;
