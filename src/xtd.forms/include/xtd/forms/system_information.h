@@ -171,7 +171,7 @@ namespace xtd {
       /// @brief Gets the width, in pixels, of an icon arrangement cell in large icon view.
       /// @return The width, in pixels, of an icon arrangement cell in large icon view.
       /// @remarks The IconHorizontalSpacing property indicates the width of the space for an icon in large icon view. The system uses this distance to arrange icons in large icon view.
-      static int32_t icon_horizontal_spacing;
+      static int32_t icon_horizontal_spacing();
 
       /// @brief Gets the dimensions, in pixels, of the Windows default program icon size.
       /// @return A size that indicates the default dimensions, in pixels, for a program icon.
