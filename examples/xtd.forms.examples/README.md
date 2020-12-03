@@ -178,6 +178,7 @@
 * [button2](others/button2/README.md) demonstrates the use of [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) control.
 * [button3](others/button3/README.md) demonstrates the use of [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) control.
 * [button4](others/button4/README.md) demonstrates the use of [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) control.
+* [calculator](others/calculator/README.md) demonstrates the use of [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) control.
 * [clock](others/clock/README.md) demonstrates the use of [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
 * [colored_forms](others/colored_forms/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) control and xtd::drawing::color class.
 * [colored_tab_pages](others/colored_tab_pages/README.md) demonstrates the use of [xtd::forms::tab_control](../../src/xtd.forms/include/xtd/forms/tab_control.h) and colored [xtd::forms::tab_page](../../src/xtd.forms/include/xtd/forms/tab_page.h) controls.
@@ -186,6 +187,7 @@
 * [font_family](others/font_family/README.md) demonstrates the use of xtd::drawing::font_family class.
 * [form_and_main](others/form_and_main/README.md) demonstrates how to use startup_ keyword.
 * [form_and_thread](others/form_and_thread/README.md) demonstrates how a thread can update ui with [xtd::forms::control::invoke](../../../../src/xtd.forms/include/xtd/forms/form.h) method.
+* [form_show](others/form_show/README.md) demontrate how to launch form as normal window, modeless window and modal window.
 * [form_window_state](others/form_window_state/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) window state.
 * [form2](others/form2/README.md) represents a window or dialog box that makes up an application's user interface.
 * [group_box_and_check_box](others/group_box_and_check_box/README.md) demonstrates the use of [xtd::forms::group_box](../../src/xtd.forms/include/xtd/forms/button.h) container and [xtd::forms::check_box](../../src/xtd.forms/include/xtd/forms/check_box.h) control.
@@ -198,13 +200,19 @@
 * [lcd_label_with_sixteen_segment](others/lcd_label_with_sixteen_segment/README.md) representsthe use of [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
 * [lcd_label2](others/lcd_label2/README.md) representsthe use of [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
 * [painting](others/painting/README.md) demonstrates the use of xtd::forms::form, xtd::forms::panel, [xtd::forms::track_bar](../../src/xtd.forms/include/xtd/forms/track_bar.h) and [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) controls with mouse_down, mouse_move and paint events..
+* [settings2](others/settings_example2/README.md) represents settings application.
 * [smileys](others/smileys/README.md) demonstrates the use of [xtd::forms::label](../../src/xtd.forms/include/xtd/forms/label.h) control.
 * [some_controls](others/some_controls/README.md) demonstrates the use of some controls.
 * [stopwatch_form](others/stopwatch_form/README.md) demonstrates the use of stopwatch class, [xtd::forms::label](../../src/xtd.forms/include/xtd/forms/label.h) and [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) controls.
+* [system_images2](others/system_images2/README.md) demonstrates the use of **xtd::drawing::system_images** class.
+* [system_images3](others/system_images3/README.md) demonstrates the use of **xtd::drawing::system_images** class.
+* [system_report](others/system_report/README.md) shows system_repoort with [xtd::forms::text_box](../../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
 * [system_sound](others/system_sound/README.md) demonstrates the use of xtd::media::system_sound component.
 * [text_box_multiline](others/text_box_multiline/README.md) represents a Windows [xtd::forms::text_box](../../src/xtd.forms/include/xtd/forms/text_box.h) control.
 * [text_box_password](others/text_box_password/README.md) represents a Windows [xtd::forms::text_box](../../src/xtd.forms/include/xtd/forms/text_box.h) control.
 * [texts](others/texts/README.md) demonstrates the use of [xtd::forms::texts](../../src/xtd.forms/include/xtd/forms/texts.h) strings.
+* [toggle_button2](others/toggle_button2/README.md) represents a [xtd::forms::toggle_button](../../src/xtd.forms/include/xtd/forms/toggle_button.h) control.
+* [track_bar2](others/track_bar2/README.md) represents a standard Windows [xtd::forms::track_bar](../../src/xtd.forms/include/xtd/forms/track_bar.h).
 * [wiggly](others/wiggly/README.md) shows how to animate a user control using timer and timer::event. In addition, the example demonstrates how to use graphics::measure_string to determine the size of text on screen.
 * [All](.) You can see all examples here. 
 

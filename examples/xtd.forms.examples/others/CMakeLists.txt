@@ -39,7 +39,7 @@ add_projects(
   stopwatch_form
   system_images2
   system_images3
-  system_repoort
+  system_report
   text_box_multiline
   text_box_password
   text_box_password2
