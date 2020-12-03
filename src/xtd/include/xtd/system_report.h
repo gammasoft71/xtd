@@ -6,6 +6,8 @@
 #include <xtd/format.h>
 #include <xtd/static.h>
 #include <xtd/version.h>
+#include <xtd/drawing/color.h>
+#include <xtd/drawing/font.h>
 #include "export.h"
 
 namespace xtd {
@@ -47,6 +49,12 @@ namespace xtd {
     
     using special_folder_collection = std::vector<std::pair<std::string, std::string>>;
     
+    using system_color_collection = std::vector<std::pair<std::string, xtd::drawing::color>>;
+    
+    using system_font_family_collection = std::vector<std::pair<std::string, xtd::drawing::font_family>>;
+    
+    using system_font_collection = std::vector<std::pair<std::string, xtd::drawing::font>>;
+    
     static xtd::diagnostics::stack_trace stack_trace() noexcept {return stack_trace(0);}
     
     static xtd::diagnostics::stack_trace stack_trace(size_t skip_frames) noexcept {return xtd::diagnostics::stack_trace(skip_frames, true);}
@@ -67,6 +75,12 @@ namespace xtd {
     
     static special_folder_collection special_folders() noexcept;
     
+    static system_color_collection system_colors() noexcept;
+    
+    static system_font_family_collection generic_font_families() noexcept;
+    
+    static system_font_collection system_fonts() noexcept;
+
     static std::string to_string() noexcept;
 
     static std::string to_xml() noexcept;

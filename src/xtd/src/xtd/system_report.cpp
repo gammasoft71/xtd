@@ -1,12 +1,15 @@
 #include "../../include/xtd/system_report.h"
 #include <xtd/environment.h>
+#include <xtd/drawing/system_colors.h>
+#include <xtd/drawing/system_fonts.h>
 #include <xtd/io/path.h>
 
 using namespace std;
 using namespace xtd;
+using namespace xtd::drawing;
 
 namespace {
-  static constexpr int32_t default_size_indent = 2;
+  static constexpr int32_t default_size_indent = 3;
   
   string indent_string(int32_t indent, int32_t size_indent) {
     return std::string(indent * size_indent, ' ');
@@ -97,6 +100,27 @@ namespace {
       report += strings::format("{}{}={}{}", indent_string(indent + 1), special_folder.first, special_folder.second, environment::new_line());
     return report + environment::new_line();
   }
+
+  string generate_system_colors_string_report(int32_t indent) {
+    std::string report = strings::format("{}System colors{}", indent_string(indent), environment::new_line());
+    for (auto system_color : system_report::system_colors())
+      report += strings::format("{}{}={}{}", indent_string(indent + 1), system_color.first, system_color.second, environment::new_line());
+    return report + environment::new_line();
+  }
+
+  string generate_generic_font_families_string_report(int32_t indent) {
+    std::string report = strings::format("{}System fonts{}", indent_string(indent), environment::new_line());
+    for (auto font_family : system_report::generic_font_families())
+      report += strings::format("{}{}={}{}", indent_string(indent + 1), font_family.first, font_family.second, environment::new_line());
+    return report + environment::new_line();
+  }
+
+  string generate_system_fonts_string_report(int32_t indent) {
+    std::string report = strings::format("{}System fonts{}", indent_string(indent), environment::new_line());
+    for (auto system_font : system_report::system_fonts())
+      report += strings::format("{}{}={}{}", indent_string(indent + 1), system_font.first, system_font.second, environment::new_line());
+    return report + environment::new_line();
+  }
 }
 
 xtd::system_report::xtd_library_collection system_report::xtd_libraries() noexcept {
@@ -123,6 +147,18 @@ system_report::special_folder_collection system_report::special_folders() noexce
   return special_folders;
 }
 
+system_report::system_color_collection system_report::system_colors() noexcept {
+  return {{"Active border", color::from_argb(drawing::system_colors::active_border().to_argb())}, {"Active caption", color::from_argb(drawing::system_colors::active_caption().to_argb())}, {"Active caption text", color::from_argb(drawing::system_colors::active_caption_text().to_argb())}, {"App workspace", color::from_argb(drawing::system_colors::app_workspace().to_argb())}, {"Control", color::from_argb(drawing::system_colors::control().to_argb())}, {"Control dark", color::from_argb(drawing::system_colors::control_dark().to_argb())}, {"Control dark dark", color::from_argb(drawing::system_colors::control_dark_dark().to_argb())}, {"Control light", color::from_argb(drawing::system_colors::control_light().to_argb())}, {"ontrol light ligCht", color::from_argb(drawing::system_colors::control_light_light().to_argb())}, {"Control text", color::from_argb(drawing::system_colors::control_text().to_argb())}, {"Gray text", color::from_argb(drawing::system_colors::gray_text().to_argb())}, {"Highlight", color::from_argb(drawing::system_colors::highlight().to_argb())}, {"Highlight text", color::from_argb(drawing::system_colors::highlight_text().to_argb())}, {"Hot track", color::from_argb(drawing::system_colors::hot_track().to_argb())}, {"Inactive_border", color::from_argb(drawing::system_colors::inactive_border().to_argb())}, {"Inactive caption", color::from_argb(drawing::system_colors::inactive_caption().to_argb())}, {"Inactive caption text", color::from_argb(drawing::system_colors::inactive_caption_text().to_argb())}, {"Info", color::from_argb(drawing::system_colors::info().to_argb())}, {"Info text", color::from_argb(drawing::system_colors::info_text().to_argb())}, {"Menu", color::from_argb(drawing::system_colors::menu().to_argb())}, {"Menu text", color::from_argb(drawing::system_colors::menu_text().to_argb())}, {"Scroll bar", color::from_argb(drawing::system_colors::scroll_bar().to_argb())}, {"Window", color::from_argb(drawing::system_colors::window().to_argb())}, {"Window frame", color::from_argb(drawing::system_colors::window_frame().to_argb())}, {"Window text", color::from_argb(drawing::system_colors::window_text().to_argb())}, {"Button face", color::from_argb(drawing::system_colors::button_face().to_argb())}, {"Button highlight", color::from_argb(drawing::system_colors::button_highlight().to_argb())}, {"Button shadow", color::from_argb(drawing::system_colors::button_shadow().to_argb())}, {"Gradient active caption", color::from_argb(drawing::system_colors::gradient_active_caption().to_argb())}, {"Gradient inactive caption", color::from_argb(drawing::system_colors::gradient_inactive_caption().to_argb())}, {"Menu bar", color::from_argb(drawing::system_colors::menu_bar().to_argb())}, {"Menu highlight", color::from_argb(drawing::system_colors::menu_highlight().to_argb())}, {"Accent", color::from_argb(drawing::system_colors::accent().to_argb())}, {"Accent text", color::from_argb(drawing::system_colors::accent_text().to_argb())}, {"Text box", color::from_argb(drawing::system_colors::text_box().to_argb())}, {"Text box text", color::from_argb(drawing::system_colors::text_box_text().to_argb())},};
+}
+
+system_report::system_font_family_collection system_report::generic_font_families() noexcept {
+  return {{"Monospace", font_family::generic_monospace()}, {"Sans serif", font_family::generic_sans_serif()}, {"Serif", font_family::generic_serif()},};
+}
+
+system_report::system_font_collection system_report::system_fonts() noexcept {
+  return {{"Caption", drawing::system_fonts::caption_font()}, {"Default", drawing::system_fonts::default_font()}, {"Dialog", drawing::system_fonts::dialog_font()}, {"Icon title", drawing::system_fonts::icon_title_font()}, {"Menu", drawing::system_fonts::menu_font()}, {"Message box", drawing::system_fonts::message_box_font()}, {"Small caption", drawing::system_fonts::small_caption_font()}, {"Status", drawing::system_fonts::status_font()},};
+}
+
 string system_report::to_string() noexcept {
   int32_t indent = 0;
   string report;
@@ -135,6 +171,9 @@ string system_report::to_string() noexcept {
   report += generate_locale_string_report(indent);
   report += generate_environment_variables_string_report(indent);
   report += generate_special_folders_string_report(indent);
+  report += generate_system_colors_string_report(indent);
+  report += generate_generic_font_families_string_report(indent);
+  report += generate_system_fonts_string_report(indent);
   return report;
 }
 
