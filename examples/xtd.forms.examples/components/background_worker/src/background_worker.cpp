@@ -57,6 +57,8 @@ namespace examples {
       
       list_progress.location({10, 45});
       list_progress.size({280, 100});
+      list_progress.multiline(true);
+      list_progress.read_only(true);
       
       worker.worker_supports_cancellation(true);
       worker.worker_reports_progress(true);
@@ -70,8 +72,7 @@ namespace examples {
       
       worker.progress_changed += [&](component& sender, const progress_changed_event_args& e) {
         progress.value(e.progress_percentage());
-        list_progress.items().push_back(std::any_cast<std::string>(e.user_state()));
-        list_progress.selected_index(list_progress.items().size() - 1);
+        list_progress.append_text(format("{}{}", std::any_cast<std::string>(e.user_state()), environment::new_line()));
       };
       
       worker.run_worker_completed += [&](component& sender, const run_worker_completed_event_args& e){
@@ -79,7 +80,7 @@ namespace examples {
         button_run.enabled(true);
         button_cancel.enabled(false);
         progress.value(0);
-        list_progress.items().clear();
+        list_progress.text("");
         status.text(strings::format("Status : {}", e.cancel() ? "canceled" : "completed"));
       };
     }
@@ -91,7 +92,7 @@ namespace examples {
     button button_cancel;
     label status;
     progress_bar progress;
-    list_box list_progress;
+    text_box list_progress;
     background_worker worker;
   };
 }
