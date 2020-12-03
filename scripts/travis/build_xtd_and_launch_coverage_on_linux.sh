@@ -7,7 +7,7 @@ git clone https://github.com/wxwidgets/wxwidgets.git -b v3.1.4 --depth 1
 cd wxwidgets
 git submodule update --init
 mkdir build_cmake && cd build_cmake
-cmake .. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=~/local
+cmake .. -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF -DCMAKE_INSTALL_PREFIX=~/local
 cmake --build . -- -j8
 cmake --build . --target install
 cd ../../../..
