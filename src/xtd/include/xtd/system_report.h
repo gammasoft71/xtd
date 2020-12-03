@@ -8,6 +8,7 @@
 #include <xtd/version.h>
 #include <xtd/drawing/color.h>
 #include <xtd/drawing/font.h>
+#include <xtd/forms/screen.h>
 #include "export.h"
 
 namespace xtd {
@@ -80,6 +81,8 @@ namespace xtd {
     static system_font_family_collection generic_font_families() noexcept;
     
     static system_font_collection system_fonts() noexcept;
+    
+    static std::vector<xtd::forms::screen> screens() noexcept {return xtd::forms::screen::all_screens();}
 
     static std::string to_string() noexcept;
 

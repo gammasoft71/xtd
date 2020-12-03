@@ -121,15 +121,22 @@ namespace {
       report += strings::format("{}{}={}{}", indent_string(indent + 1), system_font.first, system_font.second, environment::new_line());
     return report + environment::new_line();
   }
+
+  string generate_screens_report(int32_t indent) {
+    std::string report = strings::format("{}Screens{}", indent_string(indent), environment::new_line());
+    for (auto screen : system_report::screens()) {
+      report += format("{}{}{}", indent_string(indent + 1), screen.device_name(), environment::new_line());
+      report += format("{}Bounds: {}{}", indent_string(indent + 2), screen.bounds(), environment::new_line());
+      report += format("{}Working area: {}{}", indent_string(indent + 2), screen.working_area(), environment::new_line());
+      report += format("{}Bits per pixel: {}{}", indent_string(indent + 2), screen.bits_per_pixel(), environment::new_line());
+      report += format("{}Primary screen: {}{}", indent_string(indent + 2), screen.primary(), environment::new_line());
+    }
+    return report + environment::new_line();
+  }
 }
 
 xtd::system_report::xtd_library_collection system_report::xtd_libraries() noexcept {
-  return {
-    {"xtd.core", environment::version(), xtd::io::path::combine(__XTD_INSTALL_PATH__, "include"), xtd::io::path::combine(__XTD_INSTALL_PATH__, "lib"), xtd::io::path::combine(__XTD_INSTALL_PATH__, "share", "xtd", "resources")},
-    {"xtd.drawing", environment::version(), xtd::io::path::combine(__XTD_INSTALL_PATH__, "include"), xtd::io::path::combine(__XTD_INSTALL_PATH__, "lib"), xtd::io::path::combine(__XTD_INSTALL_PATH__, "share", "xtd", "resources")},
-    {"xtd.forms", environment::version(), xtd::io::path::combine(__XTD_INSTALL_PATH__, "include"), xtd::io::path::combine(__XTD_INSTALL_PATH__, "lib"), xtd::io::path::combine(__XTD_INSTALL_PATH__, "share", "xtd", "resources")},
-    {"xtd.tunit", environment::version(), xtd::io::path::combine(__XTD_INSTALL_PATH__, "include"), xtd::io::path::combine(__XTD_INSTALL_PATH__, "lib"), xtd::io::path::combine(__XTD_INSTALL_PATH__, "share", "xtd", "resources")},
-  };
+  return {{"xtd.core", environment::version(), xtd::io::path::combine(__XTD_INSTALL_PATH__, "include"), xtd::io::path::combine(__XTD_INSTALL_PATH__, "lib"), xtd::io::path::combine(__XTD_INSTALL_PATH__, "share", "xtd", "resources")}, {"xtd.drawing", environment::version(), xtd::io::path::combine(__XTD_INSTALL_PATH__, "include"), xtd::io::path::combine(__XTD_INSTALL_PATH__, "lib"), xtd::io::path::combine(__XTD_INSTALL_PATH__, "share", "xtd", "resources")}, {"xtd.forms", environment::version(), xtd::io::path::combine(__XTD_INSTALL_PATH__, "include"), xtd::io::path::combine(__XTD_INSTALL_PATH__, "lib"), xtd::io::path::combine(__XTD_INSTALL_PATH__, "share", "xtd", "resources")}, {"xtd.tunit", environment::version(), xtd::io::path::combine(__XTD_INSTALL_PATH__, "include"), xtd::io::path::combine(__XTD_INSTALL_PATH__, "lib"), xtd::io::path::combine(__XTD_INSTALL_PATH__, "share", "xtd", "resources")},};
 }
 
 system_report::environment_variable_collection system_report::environment_variables() noexcept {
@@ -170,6 +177,7 @@ string system_report::to_string() noexcept {
   report += generate_system_colors_string_report(indent);
   report += generate_generic_font_families_string_report(indent);
   report += generate_system_fonts_string_report(indent);
+  report += generate_screens_report(indent);
   return report;
 }
 
