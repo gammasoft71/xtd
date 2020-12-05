@@ -9,14 +9,13 @@ namespace examples {
   public:
     main_form() {
       text("Hello world (label)");
-      client_size({300, 300});
       controls().push_back(label);
 
-      label.auto_size(true);
+      label.dock(dock_style::fill);
       label.font(drawing::font(label.font(), 32, font_style::bold|font_style::italic));
       label.fore_color(color::green);
-      label.location({5, 100});
       label.text("Hello, World!");
+      label.text_align(xtd::forms::content_alignment::middle_center);
     }
     
   private:
