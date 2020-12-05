@@ -15,7 +15,7 @@ public:
     };
     
     key_press += [&](control& sender, key_press_event_args& e) {
-      ctrace << format("key_press={{key_char={}}}", e.key_char() == 0 ? "[none]" : xtd::strings::format("'{}'", e.key_char())) << endl;
+      ctrace << format("key_press={{key_char={}}}", e.key_char() == 0 ? "[none]" : format("'{}'", e.key_char())) << endl;
     };
     
     key_up += [&](control& sender, key_event_args& e) {

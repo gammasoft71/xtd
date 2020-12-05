@@ -16,7 +16,7 @@ public:
       dialog.initial_directory(environment::get_folder_path(environment::special_folder::desktop));
       dialog.filter("Text Files (*.txt)|*.txt|All Files (*.*)|*.*");
       if (dialog.show_sheet_dialog(*this) == forms::dialog_result::ok)
-        label1.text(strings::format("File = {}", dialog.file_name()));
+        label1.text(format("File = {}", dialog.file_name()));
     };
 
     label1.parent(*this);

@@ -13,7 +13,7 @@ namespace examples {
       numeric_up_down1.parent(*this);
       numeric_up_down1.location({80, 50});
       numeric_up_down1.value_changed += [&] {
-        label1.text(strings::format("value = {}", numeric_up_down1.value()));
+        label1.text(format("value = {}", numeric_up_down1.value()));
       };
       numeric_up_down1.text_changed += [&] {
         cdebug << format("text = {}", numeric_up_down1.text()) << std::endl;

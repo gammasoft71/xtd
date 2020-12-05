@@ -17,4 +17,7 @@ add_projects(
   hello_world_diagnostics2
   hello_world_environment2
   wconsole2
+  xtd_format
+  xtd_format_with_order
+  xtd_formatf
 )
