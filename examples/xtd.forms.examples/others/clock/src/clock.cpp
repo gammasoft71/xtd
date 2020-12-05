@@ -30,10 +30,10 @@ int main() {
   label.back_color(color::average(color::black, label.fore_color(), 0.20));
   label.segment_style(segment_style::modern);
   label.show_background_digit(false);
-  label.text(strings::format("{:t}", std::chrono::system_clock::now()));
+  label.text(format("{:t}", std::chrono::system_clock::now()));
   
   timer.tick += [&] {
-    auto time_str = strings::format(show_seconds ? "{:t}" : "{:v}", std::chrono::system_clock::now());
+    auto time_str = format(show_seconds ? "{:t}" : "{:v}", std::chrono::system_clock::now());
     auto time = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
     if (!show_seconds && std::localtime(&time)->tm_sec % 2) time_str = strings::replace(time_str, ':', ' ');
     label.text(time_str);

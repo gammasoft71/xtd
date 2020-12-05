@@ -15,7 +15,7 @@ public:
       folder_browser_dialog dialog;
       dialog.root_folder(environment::special_folder::desktop);
       if (dialog.show_sheet_dialog(*this) == forms::dialog_result::ok)
-        label1.text(strings::format("Path = {}", dialog.selected_path()));
+        label1.text(format("Path = {}", dialog.selected_path()));
     };
 
     label1.parent(*this);

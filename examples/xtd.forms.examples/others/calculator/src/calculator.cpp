@@ -73,7 +73,7 @@ namespace calculator {
         button_numbers[i].parent(*this);
         button_numbers[i].back_color(drawing::color::from_argb(102, 102, 102));
         button_numbers[i].flat_style(xtd::forms::flat_style::flat);
-        button_numbers[i].text(strings::format("{}", i));
+        button_numbers[i].text(format("{}", i));
         button_numbers[i].location(button_number_locations[i]);
         button_numbers[i].size({60, 50});
         button_numbers[i].click += {*this, &form_main::button_number_click};
@@ -128,11 +128,11 @@ namespace calculator {
     }
     
     void button_percent_click(control& sender, const event_args& e) {
-      result.text(strings::format("{}", parse<double>(result.text()) / 100));
+      result.text(format("{}", parse<double>(result.text()) / 100));
     }
     
     void button_plus_minus_click(control& sender, const event_args& e) {
-      if (result.text() != "0" && result.text() != "0.") result.text(strings::format("{}", -parse<double>(result.text())));
+      if (result.text() != "0" && result.text() != "0.") result.text(format("{}", -parse<double>(result.text())));
     }
     
     void button_number_click(control& sender, const event_args& e) {
@@ -148,10 +148,10 @@ namespace calculator {
         if (!second_operand.has_value()) second_operand = parse<double>(result.text());
         switch (operation) {
           case operators::none: break;
-          case operators::divide: result.text(strings::format("{}", first_operand.value() / second_operand.value())); break;
-          case operators::multiply: result.text(strings::format("{}", first_operand.value() * second_operand.value())); break;
-          case operators::subtract: result.text(strings::format("{}", first_operand.value() - second_operand.value())); break;
-          case operators::add: result.text(strings::format("{}", first_operand.value() + second_operand.value())); break;
+          case operators::divide: result.text(format("{}", first_operand.value() / second_operand.value())); break;
+          case operators::multiply: result.text(format("{}", first_operand.value() * second_operand.value())); break;
+          case operators::subtract: result.text(format("{}", first_operand.value() - second_operand.value())); break;
+          case operators::add: result.text(format("{}", first_operand.value() + second_operand.value())); break;
           default: break;
         }
         first_operand = parse<double>(result.text());

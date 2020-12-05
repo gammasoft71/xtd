@@ -27,7 +27,7 @@ namespace minesweeper {
       message_label_.location({10, 10});
       message_label_.size({180, 60});
       message_label_.text_align(content_alignment::middle_center);
-      message_label_.text(xtd::strings::format("You have the fastest time\nfor {} level.\nPlease type your name.", level_to_string()));
+      message_label_.text(xtd::format("You have the fastest time\nfor {} level.\nPlease type your name.", level_to_string()));
       
       name_text_box_.parent(*this);
       name_text_box_.location({10, 80});
@@ -48,7 +48,7 @@ namespace minesweeper {
     minesweeper::level level() const {return level_;}
     void level(minesweeper::level level) {
       level_ = level;
-      message_label_.text(xtd::strings::format("You have the fastest time\nfor {} level.\nPlease type your name.", level_to_string()));
+      message_label_.text(xtd::format("You have the fastest time\nfor {} level.\nPlease type your name.", level_to_string()));
     }
     
     std::string gammer_name() const {return gammer_name_;}

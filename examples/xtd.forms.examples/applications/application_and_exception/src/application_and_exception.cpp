@@ -43,7 +43,7 @@ private:
     try {
       throw system_exception("Exception handled generated", caller_info_);
     } catch(const xtd::system_exception& e) {
-      message_box::show(*this, e.message(), strings::format("Exception {} handled", e.name()));
+      message_box::show(*this, e.message(), format("Exception {} handled", e.name()));
     }
   }
   void generate_exception() {throw invalid_argument("Exception generated");}
@@ -61,10 +61,10 @@ int main() {
     application::run(main_form());
   } catch(const system_exception& e) {
     debug::write_line(e);
-    message_box::show(e.to_string(), strings::format("Exception {} occured", strings::class_name(e)), message_box_buttons::ok, message_box_icon::error);
+    message_box::show(e.to_string(), format("Exception {} occured", strings::class_name(e)), message_box_buttons::ok, message_box_icon::error);
   } catch(const exception& e) {
     debug::write_line(e);
-    message_box::show(strings::format("Message : {}", e.what()), strings::format("Exception {} occured", strings::class_name(e)), message_box_buttons::ok, message_box_icon::error);
+    message_box::show(format("Message : {}", e.what()), format("Exception {} occured", strings::class_name(e)), message_box_buttons::ok, message_box_icon::error);
   } catch(...) {
     debug::write_line("Unknown exception occured");
     message_box::show("(Unknown exception)", "Unknown exception occured", message_box_buttons::ok, message_box_icon::error);
