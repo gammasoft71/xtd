@@ -6,7 +6,7 @@ include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 add_references(xtd)
 add_sources(
-  src/main_form.cpp
+  src/main_form.h
 )
 target_type(GUI_APPLICATION)
 
