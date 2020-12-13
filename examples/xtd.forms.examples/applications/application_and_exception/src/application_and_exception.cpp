@@ -11,7 +11,7 @@ public:
     text("application and exception example");
     
     // uncomment to throw error
-    //throw overflow_error("Creattion object error");
+    //throw overflow_error("Creation object error");
     
     generate_handled_exception_button.auto_size(true);
     generate_handled_exception_button.location({10, 10});
