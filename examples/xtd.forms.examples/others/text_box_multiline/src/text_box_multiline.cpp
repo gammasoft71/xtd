@@ -12,16 +12,16 @@ namespace examples {
 
       text_box1.location({10, 10});
       text_box1.multiline(true);
-      text_box1.size({280, 130});
+      text_box1.size({280, 135});
       text_box1.text_changed += [&] {
         text_box2.text(text_box1.text());
       };
       text_box1.text("Line 1\nLine 2\nLine 3\n...");
 
-      text_box2.location({10, 150});
+      text_box2.location({10, 155});
       text_box2.word_wrap(true);
       text_box2.multiline(true);
-      text_box2.size({280, 130});
+      text_box2.size({280, 135});
       text_box2.text_changed += [&] {
         text_box1.text(text_box2.text());
       };
