@@ -32,7 +32,7 @@
 * [Picker Controls](xtd.forms.examples/picker_controls/README.md) contains picker controls examples.
 * [Control containers](xtd.forms.examples/control_containers/README.md) contains container controls examples.
 * [Controls](xtd.forms.examples/controls/README.md) contains controls examples.
-* [Custom Controls](xtd.forms.examples/coustom_controls/README.md) contains custom controls examples.
+* [Custom Controls](xtd.forms.examples/custom_controls/README.md) contains custom controls examples.
 * [Menus and Toolbars](xtd.forms.examples/menus_and_toolbars/README.md) contains menus and toolbars examples.
 * [Datas](xtd.forms.examples/datas/README.md) contains datas examples.
 * [Components](xtd.forms.examples/components/README.md) contains components examples.
