@@ -52,7 +52,7 @@ namespace settings_example::properties {
     xtd::forms::settings settings_;
     xtd::drawing::color back_color_ {xtd::drawing::system_colors::control()};
     xtd::drawing::point location_ {{100, 50}};
-    xtd::drawing::size size_ {{360, 80}};
+    xtd::drawing::size size_ {{335, 45}};
   };
 }
 

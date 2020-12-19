@@ -63,14 +63,14 @@
 * [date_time_picker](picker_controls/date_time_picker/README.md) represents a Windows control that allows the user to select a date and a time and to display the date and time with a specified format.
 * [font_picker](picker_controls/font_picker/README.md) represents a Windows control that allows the user to select and display a font.
 
-## [Container controls](containers/README.md)
+## [Control containers](control_containers/README.md)
 
 * **flow_layout_panel** represents a panel that dynamically lays out its contents horizontally or vertically.
-* [form](container_controls/form/README.md) represents a window or dialog box that makes up an application's user interface.
-* [group_box](container_controls/group_box/README.md) represents a Windows control that displays a frame around a group of controls with an optional caption.
-* [panel](container_controls/panel/README.md) used to group collections of controls.
-* [split_container](container_controls/split_container/README.md) represents a control consisting of a movable bar that divides a container's display area into two resizable panels.
-* [tab_control](container_controls/tab_control/README.md) manages a related set of tab pages.
+* [form](control_containers/form/README.md) represents a window or dialog box that makes up an application's user interface.
+* [group_box](control_containers/group_box/README.md) represents a Windows control that displays a frame around a group of controls with an optional caption.
+* [panel](control_containers/panel/README.md) used to group collections of controls.
+* [split_container](control_containers/split_container/README.md) represents a control consisting of a movable bar that divides a container's display area into two resizable panels.
+* [tab_control](control_containers/tab_control/README.md) manages a related set of tab pages.
 * **table_layout_panel** represents a panel that dynamically lays out its contents in a grid composed of rows and columns.
 
 ## [Controls](controls/README.md)

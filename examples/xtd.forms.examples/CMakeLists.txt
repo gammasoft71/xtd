@@ -8,7 +8,7 @@ add_projects(
   applications
   common_controls
   picker_controls
-  container_controls
+  control_containers
   controls
   custom_controls
   menus_and_toolbars

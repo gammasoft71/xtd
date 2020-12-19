@@ -15,7 +15,7 @@ int main() {
   
   auto save_button = control::create<button>(*main_form, "&Save", {90, 10});
   save_button->click += [&] {
-    settings_example::properties::settings::default_settings().size(main_form->size());
+    settings_example::properties::settings::default_settings().size(main_form->client_size());
     settings_example::properties::settings::default_settings().location(main_form->location());
     settings_example::properties::settings::default_settings().back_color(main_form->back_color());
     settings_example::properties::settings::default_settings().save();
@@ -24,7 +24,7 @@ int main() {
   auto reload_button = control::create<button>(*main_form, "&Reload", {170, 10});
   reload_button->click += [&] {
     settings_example::properties::settings::default_settings().reload();
-    main_form->size(settings_example::properties::settings::default_settings().size());
+    main_form->client_size(settings_example::properties::settings::default_settings().size());
     main_form->location(settings_example::properties::settings::default_settings().location());
     main_form->back_color(settings_example::properties::settings::default_settings().back_color());
     back_color_picker->color(settings_example::properties::settings::default_settings().back_color());
