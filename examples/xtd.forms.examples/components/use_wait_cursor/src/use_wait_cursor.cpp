@@ -1,6 +1,8 @@
 #include <thread>
 #include <xtd/xtd>
 
+using namespace std::chrono;
+using namespace std::this_thread;
 using namespace xtd::forms;
 
 class form1 : public form {
@@ -16,7 +18,7 @@ public:
       use_wait_cursor wait;
       for (auto count = 0; count < 500; ++count) {
         application::yield();
-        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        sleep_for(milliseconds(10));
       }
     };
   }
