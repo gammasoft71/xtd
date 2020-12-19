@@ -19,7 +19,7 @@
 * [application_enable_dark_mode](applications/application_enable_dark_mode/README.md) shows how to enable dark mode with [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) class with [xtd::forms::application_context](../../src/xtd.forms/include/xtd/forms/application_context.h) class.
 * [application_enable_light_mode](applications/application_enable_light_mode/README.md) shows how to enable light mode with [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) class with [xtd::forms::application_context](../../src/xtd.forms/include/xtd/forms/application_context.h) class.
 * [application_icon](applications/application_icon/README.md) shows how to set application icon with cmake [application_icon()](applications/application_icon/CMakeLists.txt).
-* [application_use_wait_cursor](applications/application_use_wait_cursor/README.md) shows how to show and hide wait cursor application with [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) class with [xtd::forms::application_context](../../src/xtd.forms/include/xtd/forms/application_context.h) class.
+* [application_use_wait_cursor](applications/application_use_wait_cursor/README.md) shows how to show and hide wait cursor application with [xtd::forms::application::use_wait_cursor](../../src/xtd.forms/include/xtd/forms/application.h) method.
 
 ## [Common Controls](common_controls/README.md)
 
