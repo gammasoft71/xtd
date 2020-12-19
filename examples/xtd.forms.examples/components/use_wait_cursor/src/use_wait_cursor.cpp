@@ -18,7 +18,7 @@ public:
       use_wait_cursor wait;
       for (auto count = 0; count < 500; ++count) {
         application::yield();
-        sleep_for(milliseconds(10));
+        sleep_for(milliseconds(10)); // Simulate work...
       }
     };
   }
