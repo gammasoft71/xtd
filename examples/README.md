@@ -56,3 +56,4 @@
 
 * [Hello Worlds](xtd.cmake.examples/hello_worlds/README.md) contains xtd.cmake "Hello, World!" examples.
 * [Application properties](xtd.cmake.examples/application_properties/README.md) contains cmake application properties examples.
+* [Build options](xtd.cmake.examples/build_options/README.md) contains cmake build options examples.
