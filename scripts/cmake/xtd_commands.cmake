@@ -53,7 +53,7 @@ macro(target_default_namespace DEFAULT_NAMESPACE)
   set(APPLICATION_DEFAULT_NAMESPACE ${DEFAULT_NAMESPACE})
 endmacro()
 
-## @brief Specify if application is displaying in GNOME or KDE menu.
+## @brief Specifies if application is displaying in GNOME or KDE menu.
 ## @param DISPLAY option to display (ON or OFF)
 ## @remarks Only effect on linux.
 ## @remarks By default the application is registered but not visible in the general menu.
@@ -76,7 +76,7 @@ macro(target_display DISPLAY)
   set(APPLICATION_DISPLAY ${DISPLAY})
 endmacro()
 
-## @brief Specify the icon file (.ico for Windows, icns for maOS and png or svg for linux) that you want to use as your program icon.
+## @brief Specifies the icon file (.ico for Windows, icns for maOS and png or svg for linux) that you want to use as your program icon.
 ## @param ARGV0 the icon to set without extension. It can be empty.
 ## @remarks Do not specify the extesion of file. It's operatin system depedant.
 ## @remarks If you write multiplatform application you must have the specified file in ico, icns and png or svg formats.
@@ -190,7 +190,7 @@ macro(target_registered REGISTERED)
   endif ()
 endmacro()
 
-## @brief Specify the entry pointto be called when the application is load.
+## @brief Specifies the entry pointto be called when the application is load.
 ## @param ARGV0 the object that contains the entry point.
 ## @param ARGV1 the object definition file. (optional if you use TUnitMain_ or TUnitFrameworkMain_ entry point)
 ## @remarks Do not use this method of startup_(...) is present in your files or if you use standard c++ main() method.
@@ -236,7 +236,7 @@ macro(target_startup ...)
   set(PROJECT_SOURCES "${PROJECT_SOURCES};${STARTUP_FILE}")
 endmacro()
 
-## @brief Specify the type of application to build.
+## @brief Specifies the type of application to build.
 ## @param TYPE Type of application.
 ## Possible values : 
 ## * CONSOLE_APPLICATION Console application
@@ -511,7 +511,7 @@ macro(assembly_file_version FILE_VERSION)
   set(ASSEMBLY_FILE_VERSION "${FILE_VERSION}")
 endmacro()
 
-## @brief Specify an unique GUID that identifies the assembly. When you create a project, Visual Studio generates a GUID for the assembly. Corresponds to Guid.
+## @brief Specifies an unique GUID that identifies the assembly. When you create a project, Visual Studio generates a GUID for the assembly. Corresponds to Guid.
 ## @param GUID The guid to set.
 ## @remarks Call only once by project.
 ## @remarks This method must be call before target_type().
@@ -612,7 +612,7 @@ endmacro()
 ################################################################################
 # Build commands
 
-## @brief Specify the directory into which runtime target files should be built.
+## @brief Specifies the directory into which runtime target files should be built.
 ## @param OUTPUT_DIRECTORY the directory where runtime target files should be built.
 ## @remark This option is use mainly when a solution as more than one projec.
 ## @par Examples
@@ -694,7 +694,7 @@ endmacro()
 ################################################################################
 # Install commands
 
-## @brief Install include directories.
+## @brief Installs include directories.
 ## @param ARGN Include directories to install.
 ## @remarks This method is required for install package.
 ## @remarks This method can be call more than once in the same project.
@@ -719,7 +719,7 @@ macro(add_install_include_directories)
   endforeach()
 endmacro()
 
-## @brief Install include files.
+## @brief Installs include files.
 ## @param ARGN Include files to install.
 ## @remarks This method is required for install package.
 ## @remarks This method can be call more than once in the same project.
@@ -742,7 +742,7 @@ macro(add_install_include_files)
   set(INSTALL_INCLUDE_FILES "${INSTALL_INCLUDE_FILES};${${ARGN}}")
 endmacro()
 
-## @brief Install component.
+## @brief Installs component.
 ## @param ARGV0 Install name (optional).
 ## @remarks if install name no specified and install_name() method no called, the install name is equal to application name.
 ## @remarks This method is required for install package.
@@ -794,7 +794,7 @@ macro(install_component)
   endif ()
 endmacro()
 
-## @brief Specify the install name.
+## @brief Specifies the install name.
 ## @param NAME Install name.
 ## @remarks This method is optional.
 ## @remarks This method must be after add_references.
@@ -818,7 +818,7 @@ macro(install_name NAME)
   set(INSTALL_NAME ${NAME})
 endmacro()
 
-## @brief Install package MODULE_LIBRARY, STATIC_LIBRARY or SHARED_LIBRAY package.
+## @brief Installs package MODULE_LIBRARY, STATIC_LIBRARY or SHARED_LIBRAY package.
 ## @param ARGV0 Install name (optional).
 ## @remarks if install name no specified and install_name() method no called, the install name is equal to application name.
 ## @remarks This method is required for install package.
@@ -854,7 +854,7 @@ endmacro()
 ################################################################################
 # Project commands
 
-## @brief Add include directory to current project.
+## @brief Adds include directory to current project.
 ## @param ARGN directories to add.
 ## @remarks This method can be call more than once in the same project.
 ## @remarks This method must be call before target_type().
@@ -904,7 +904,7 @@ macro(add_packages)
   set(PROJECT_PACKAGES "${PROJECT_PACKAGES};${ARGN}")
 endmacro()
 
-## @brief Add child projects to parent project.
+## @brief Adds child projects to parent project.
 ## @param ARGN projects to add.
 ## @remarks  The path can be relative from CMAKE_CURRENT_SOURCE_DIR or absolute.
 ## @remarks This method can be call more than once in the same project.
@@ -932,7 +932,7 @@ macro(add_projects)
   endforeach()
 endmacro()
 
-## @brief Add references (libraries) to current project.
+## @brief Adds references (libraries) to current project.
 ## @param ARGN references to add.
 ## @remarks This method can be call more than once in the same project.
 ## @remarks This method must be call before target_type().
@@ -955,7 +955,7 @@ macro(add_references)
   set(PROJECT_REFERENCES "${PROJECT_REFERENCES};${ARGN}")
 endmacro()
 
-## @brief Add resource to current project.
+## @brief Adds resource to current project.
 ## @param NAME resource name to add.
 ## @param FILE resource file to add.
 ## @remarks  The path can be relative from CMAKE_CURRENT_SOURCE_DIR or absolute.
@@ -993,7 +993,7 @@ macro(resource NAME FILE)
   set(PROJECT_RESOURCE_FILES "${PROJECT_RESOURCE_FILES};${FILE}")
 endmacro()
 
-## @brief Add resource string to current project.
+## @brief Adds resource string to current project.
 ## @param NAME Name of string to add.
 ## @param VALUE Value of string to add.
 ## @param COMMENT Comment of string to add.
@@ -1024,7 +1024,7 @@ macro(resource_string NAME VALUE COMMENT)
   set(PROJECT_RESOURCE_STRING_NAMES "${PROJECT_RESOURCE_STRING_NAMES};${NAME}")
 endmacro()
 
-## @brief Add a setting to current project.
+## @brief Adds a setting to current project.
 ## @param NAME The name of setting to add.
 ## @param TYPE The type of setting to add.
 ## @param SCOPE The scope of setting to add (APPLICATION or USER).
@@ -1065,7 +1065,7 @@ macro(setting NAME TYPE SCOPE VALUE)
   set(PROJECT_SETTING_NAMES "${PROJECT_SETTING_NAMES};${NAME}")
 endmacro()
 
-## @brief Add source and header files to current project.
+## @brief Adds source and header files to current project.
 ## @param ARGN Files list to add.
 ## @remarks  The path can be relative from CMAKE_CURRENT_SOURCE_DIR or absolute.
 ## @remarks This method can be call more than once in the same project.
