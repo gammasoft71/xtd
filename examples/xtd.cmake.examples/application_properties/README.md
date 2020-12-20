@@ -5,3 +5,4 @@
 * [application_default_namespace](application_default_namespace/README.md) shows how to set application default namespace with cmake [application_default_namespace()](../../../scripts/cmake/xtd_commands.cmake).
 * [application_display](application_display/README.md) shows how to set application display with cmake [application_display()](../../../scripts/cmake/xtd_commands.cmake).
 * [application_icon](application_icon/README.md) shows how to set application icon with cmake [application_icon()](../../../scripts/cmake/xtd_commands.cmake).
+* [application_name](application_name/README.md) shows how to set application name with cmake [application_name()](../../../scripts/cmake/xtd_commands.cmake).
