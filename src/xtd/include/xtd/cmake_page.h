@@ -19,7 +19,7 @@
 /// * @ref GenericCommandsSection
 ///   * @ref ChoiceOptionsSubSection Provides a choice options for the user to select an option from options list.
 /// * @ref ApplicationPropertiesCommandsSection
-///   * @ref ApplicationDefaultNamespaceSubSection Specifie the the base namespace for files addedto the project.
+///   * @ref ApplicationDefaultNamespaceSubSection Specifie the the base namespace for files added to the project.
 ///   * @ref ApplicationDisplaySubSection Specify if application is displaying in GNOME or KDE menu.
 ///   * @ref ApplicationIconSubSection Specify the icon file (.ico for Windows, icns for maOS and png or svg for linux) that you want to use as your program icon.
 ///   * @ref ApplicationNameSubSection Specifie the name of the output file.
