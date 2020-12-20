@@ -265,6 +265,7 @@
 /// * MODULE_LIBRARY Module library
 /// * SHARED_LIBRARY Shared library (.dll or .so)
 /// * STATIC_LIBRARY Static library (.lib or .a)
+/// * INTERFACE_LIBRARY Interface library (header files only)
 /// * CUSTOM_TARGET Target with no output.
 /// @remarks This method is required except container project like Solution.
 /// @remarks This method must be the last method before add_references.
