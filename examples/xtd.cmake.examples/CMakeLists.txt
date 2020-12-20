@@ -11,7 +11,5 @@ add_projects(
   assembly_informations
   build_options
   project_commands
-  console_application
-  gui_application
-  test_application
+  others
 )

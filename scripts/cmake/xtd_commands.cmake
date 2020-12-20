@@ -5,7 +5,7 @@
 ################################################################################
 # Generic commands
 
-## @brief Provides a choice options for the user to select an option from opttions list
+## @brief Provides a choice options for the user to select an option from options list.
 ## @param OPTION the option to set.
 ## @param MESSAGE Description message for the choice options.
 ## @param DEFAULT_OPTION The default option.
@@ -20,7 +20,7 @@
 ##  find_package(xtd REQUIRED)
 ##  add_sources(my_project.cpp)
 ##  
-##  choice_options(TARGET_TYPE "Choose library dynamic, static or module" DINAMIC_LIBRARY STATIC_LIBRARY MODULE_LIBRARY)
+##  choice_options(TARGET_TYPE "Choose library dynamic, static, interface or module" DINAMIC_LIBRARY STATIC_LIBRARY INTERFACE_LIBRARY MODULE_LIBRARY)
 ##  target_type(${TARGET_TYPE})
 ## @endcode
 macro(choice_options OPTION MESSAGE DEFAULT_OPTION)
@@ -165,7 +165,7 @@ macro(application_name NAME)
   set(APPLICATION_NAME ${NAME})
 endmacro()
 
-## @brief Speficy the application is not registered in the system.
+## @brief Speficy the application is registered in the system.
 ## @remarks Only effect on linux.
 ## @remarks By default the application is registered but not visible in GNOME or KDE menu.
 ## @remarks Call only once by project.
