@@ -28,8 +28,8 @@
 ///   * @ref TargetTypeSubSection specifies the type of target to build.
 /// * @ref AssemblyInformationsCommandsSection
 ///   * @ref AssemblyCompanySubSection specifies a company name for the assembly manifest. Corresponds to AssemblyCompanyAttribute.
-///   * @ref AssemblyCopyrightSubSection specifies a configuration for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
 ///   * @ref AssemblyConfigurationSubSection specifies a configuration for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
+///   * @ref AssemblyCopyrightSubSection specifies a configuration for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
 ///   * @ref AssemblyCultureSubSection specifies the culture for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
 ///   * @ref AssemblyDescriptionSubSection specifies an optional description for the assembly manifest. Corresponds to AssemblyDescriptionAttribute.
 ///   * @ref AssemblyFileVersionSubSection specifies a version number that instructs the compiler to use a specific version for the Win32 file version resource. Corresponds to AssemblyFileVersionAttribute.
@@ -305,7 +305,7 @@
 ///  target_type(GUI_APPLICATION)
 /// @endcode
 ///
-/// @subsection AssemblyCopyrightSubSection assembly_copyright
+/// @subsection AssemblyConfigurationSubSection assembly_configuration
 /// @brief Specifies a configuration for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
 /// @param ASSEMBLY_CONFIGURATION The configuration to set.
 /// @remarks Call only once by project.
@@ -324,7 +324,7 @@
 ///  target_type(GUI_APPLICATION)
 /// @endcode
 ///
-/// @subsection AssemblyConfigurationSubSection assembly_configuration
+/// @subsection AssemblyCopyrightSubSection assembly_copyright
 /// @brief Specifies a configuration for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
 /// @param ASSEMBLY_CONFIGURATION The configuration to set.
 /// @remarks Call only once by project.
