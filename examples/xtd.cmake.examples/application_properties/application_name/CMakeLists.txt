@@ -8,7 +8,7 @@ find_package(xtd REQUIRED)
 application_name("xtd_forms_application")
 
 # Sources
-add_sources(application_name.cpp)
+add_sources(src/application_name.cpp)
 
 # Target
 target_type(GUI_APPLICATION)
