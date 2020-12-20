@@ -11,3 +11,4 @@
 * [application_icon](application_properties/application_icon/README.md) shows how to set application icon with cmake [application_icon()](../../scripts/cmake/xtd_commands.cmake).
 * [application_name](application_properties/application_name/README.md) shows how to set application name with cmake [application_name()](../../scripts/cmake/xtd_commands.cmake).
 * [application_registered](application_properties/application_registered/README.md) shows how to set application registered with cmake [application_registered()](../../scripts/cmake/xtd_commands.cmake).
+* [application_startup](application_properties/application_startup/README.md) shows how to set application startup with cmake [application_startup()](../../scripts/cmake/xtd_commands.cmake).
