@@ -19,81 +19,81 @@
 /// * @ref GenericCommandsSection
 ///   * @ref ChoiceOptionsSubSection Provides a choice options for the user to select an option from options list.
 /// * @ref TargetPropertiesCommandsSection
-///   * @ref TargetDefaultNamespaceSubSection Specifie the the base namespace for files added to the project.
-///   * @ref TargetDisplaySubSection Specify if application is displaying in GNOME or KDE menu.
-///   * @ref TargetIconSubSection Specify the icon file (.ico for Windows, icns for maOS and png or svg for linux) that you want to use as your program icon.
-///   * @ref TargetNameSubSection Specifie the name of the output file.
+///   * @ref TargetDefaultNamespaceSubSection specifies the the base namespace for files added to the project.
+///   * @ref TargetDisplaySubSection specifies if application is displaying in GNOME or KDE menu.
+///   * @ref TargetIconSubSection specifies the icon file (.ico for Windows, icns for maOS and png or svg for linux) that you want to use as your program icon.
+///   * @ref TargetNameSubSection specifies the name of the output file.
 ///   * @ref ApplicationRegisteredSubSection Speficy the application is registered in the system.
-///   * @ref TargetStartupSubSection Specify the entry pointto be called when the application is load.
-///   * @ref TargetTypeSubSection Specify the type of target to build.
+///   * @ref TargetStartupSubSection specifies the entry pointto be called when the application is load.
+///   * @ref TargetTypeSubSection specifies the type of target to build.
 /// * @ref AssemblyInformationsCommandsSection
-///   * @ref AssemblyCompanySubSection Specifies a company name for the assembly manifest. Corresponds to AssemblyCompanyAttribute.
-///   * @ref AssemblyCopyrightSubSection Specifies a configuration for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
-///   * @ref AssemblyConfigurationSubSection Specifies a configuration for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
-///   * @ref AssemblyCultureSubSection Specifies the culture for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
-///   * @ref AssemblyDescriptionSubSection Specifies an optional description for the assembly manifest. Corresponds to AssemblyDescriptionAttribute.
-///   * @ref AssemblyFileVersionSubSection Specifies a version number that instructs the compiler to use a specific version for the Win32 file version resource. Corresponds to AssemblyFileVersionAttribute.
-///   * @ref AssemblyGuidSubSection Specify an unique GUID that identifies the assembly. When you create a project, Visual Studio generates a GUID for the assembly. Corresponds to Guid.
-///   * @ref AssemblyProductSubSection Specifies a product name for the assembly manifest. Corresponds to AssemblyProductAttribute.
-///   * @ref AssemblyTitleSubSection Specifies a title for the assembly manifest. Corresponds to AssemblyTitleAttribute.
-///   * @ref AssemblyTrademarkSubSection Specifies a trademark for the assembly manifest. Corresponds to AssemblyTrademarkAttribute.
-///   * @ref AssemblyVersionSubSection Specifies the version of the assembly. Corresponds to AssemblyVersionAttribute.
+///   * @ref AssemblyCompanySubSection specifies a company name for the assembly manifest. Corresponds to AssemblyCompanyAttribute.
+///   * @ref AssemblyCopyrightSubSection specifies a configuration for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
+///   * @ref AssemblyConfigurationSubSection specifies a configuration for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
+///   * @ref AssemblyCultureSubSection specifies the culture for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
+///   * @ref AssemblyDescriptionSubSection specifies an optional description for the assembly manifest. Corresponds to AssemblyDescriptionAttribute.
+///   * @ref AssemblyFileVersionSubSection specifies a version number that instructs the compiler to use a specific version for the Win32 file version resource. Corresponds to AssemblyFileVersionAttribute.
+///   * @ref AssemblyGuidSubSection specifies an unique GUID that identifies the assembly. When you create a project, Visual Studio generates a GUID for the assembly. Corresponds to Guid.
+///   * @ref AssemblyProductSubSection specifies a product name for the assembly manifest. Corresponds to AssemblyProductAttribute.
+///   * @ref AssemblyTitleSubSection specifies a title for the assembly manifest. Corresponds to AssemblyTitleAttribute.
+///   * @ref AssemblyTrademarkSubSection specifies a trademark for the assembly manifest. Corresponds to AssemblyTrademarkAttribute.
+///   * @ref AssemblyVersionSubSection specifies the version of the assembly. Corresponds to AssemblyVersionAttribute.
 /// * @ref BuildOptionsCommandsSection
-///   * @ref BuildOutputDirectorySubSection Specify the directory into which runtime target files should be built.
+///   * @ref BuildOutputDirectorySubSection specifies the directory into which runtime target files should be built.
 /// * @ref InstallCommandsSection
 ///   * @ref AddInstallIncludeDirectoriesSubSection Install include directories.
-///   * @ref AddInstallIncludeFilesSubSection Install include files.
-///   * @ref InstallComponentSubSection Install component.
-///   * @ref InstallPackageSubSection Install application MODULE_LIBRARY, STATIC_LIBRARY or SHARED_LIBRAY package.
-///   * @ref InstallNameSubSection Specify the install name.
+///   * @ref AddInstallIncludeFilesSubSection installs include files.
+///   * @ref InstallComponentSubSection installs component.
+///   * @ref InstallPackageSubSection installs application MODULE_LIBRARY, STATIC_LIBRARY or SHARED_LIBRAY package.
+///   * @ref InstallNameSubSection specifies the install name.
 /// * @ref ProjectCommandsSection
 ///   * @ref AddIncludeDirectoriesSubSection Add include directory to current project.
-///   * @ref AddPackagesSubSection Adds, finds and loads settings from external required projects to current project.
-///   * @ref AddProjectsSubSection Add child projects to parent project.
-///   * @ref AddReferencesSubSection Add references (libraries) to current project.
-///   * @ref AddResourcesSubSection Add resources to current project.
-///   * @ref AddResourceStringSubSection Add resource string to current project.
-///   * @ref AddSettingSubSection Add a setting to current project.
-///   * @ref AddSourcesSubSection Add source and header files to current project.
+///   * @ref AddPackagesSubSection adds, finds and loads settings from external required projects to current project.
+///   * @ref AddProjectsSubSection adds child projects to parent project.
+///   * @ref AddReferencesSubSection adds references (libraries) to current project.
+///   * @ref AddResourcesSubSection adds resources to current project.
+///   * @ref AddResourceStringSubSection adds resource string to current project.
+///   * @ref AddSettingSubSection adds a setting to current project.
+///   * @ref AddSourcesSubSection adds source and header files to current project.
 ///
 /// @par xtd Specific CMake variables
 /// * @ref ApplicationPropertiesVariablesSection
-///   * @ref ApplicationDefaultNamespaceVariableSubSection Contains default namespace use by application.
-///   * @ref ApplicatioIconVariableSubSection Contains application icon file name without extension.
-///   * @ref ApplicationNameVariableSubSection Contains application name.
-///   * @ref ApplicationRegisteredVariableSubSection Contains boolean that specify if application is registered or not on the system.
-///   * @ref TargetTypeVariableSubSection Contains application type.
+///   * @ref ApplicationDefaultNamespaceVariableSubSection contains default namespace use by application.
+///   * @ref ApplicatioIconVariableSubSection contains application icon file name without extension.
+///   * @ref ApplicationNameVariableSubSection contains application name.
+///   * @ref ApplicationRegisteredVariableSubSection contains boolean that specify if application is registered or not on the system.
+///   * @ref TargetTypeVariableSubSection contains application type.
 /// * @ref AssemblyInformationsVariablesSection
-///   * @ref AssemblyCompanyVariableSubSection Contains assembly company name.
-///   * @ref AssemblyConfigurationVariableSubSection Contains assembly configuration string.
-///   * @ref AssemblyCopyrightVariableSubSection Contains assembly copyrignt string.
-///   * @ref AssemblyCultureVariableSubSection Contains assembly culture information.
-///   * @ref AssemblyDescriptionVariableSubSection Contains assembly description string.
-///   * @ref AssemblyFileVersionVariableSubSection Contains assembly file version number.
-///   * @ref AssemblyGuidVariableSubSection Contains assembly guid string.
-///   * @ref AssemblyProductVariableSubSection Contains assembly product string.
-///   * @ref AssemblyTitleVariableSubSection Contains assembly title string.
-///   * @ref AssemblyTrademarkVariableSubSection Contains assembly trademark information.
-///   * @ref AssemblyVersionVariableSubSection Contains assembly version number.
+///   * @ref AssemblyCompanyVariableSubSection contains assembly company name.
+///   * @ref AssemblyConfigurationVariableSubSection contains assembly configuration string.
+///   * @ref AssemblyCopyrightVariableSubSection contains assembly copyrignt string.
+///   * @ref AssemblyCultureVariableSubSection contains assembly culture information.
+///   * @ref AssemblyDescriptionVariableSubSection contains assembly description string.
+///   * @ref AssemblyFileVersionVariableSubSection contains assembly file version number.
+///   * @ref AssemblyGuidVariableSubSection contains assembly guid string.
+///   * @ref AssemblyProductVariableSubSection contains assembly product string.
+///   * @ref AssemblyTitleVariableSubSection contains assembly title string.
+///   * @ref AssemblyTrademarkVariableSubSection contains assembly trademark information.
+///   * @ref AssemblyVersionVariableSubSection contains assembly version number.
 /// * @ref BuildOptionsVariablesSection
-///   * @ref BuildOutputDirectoryVariableSubSection Contains build output directory.
-///   * @ref BuildTypeVariableSubSection Contains build type.
+///   * @ref BuildOutputDirectoryVariableSubSection contains build output directory.
+///   * @ref BuildTypeVariableSubSection contains build type.
 /// * @ref InstallVariablesSection
-///   * @ref InstallComponentsVariableSubSection Contains install project components.
-///   * @ref InstallIncludeDirectoriesVariableSubSection Contains install include directories.
-///   * @ref InstallIncludeFilesVariableSubSection Contains install include files.
-///   * @ref InstallNameVariableSubSection Contains install name.
+///   * @ref InstallComponentsVariableSubSection contains install project components.
+///   * @ref InstallIncludeDirectoriesVariableSubSection contains install include directories.
+///   * @ref InstallIncludeFilesVariableSubSection contains install include files.
+///   * @ref InstallNameVariableSubSection contains install name.
 /// * @ref ProjectVariablesSection
-///   * @ref ProjectApplicationSettingsSubSection Contains project application settings.
-///   * @ref ProjectIncludeDirectoriesSubSection Contains include directories.
-///   * @ref ProjectPackagesSubSection Contains project packages.
-///   * @ref ProjectProjectsSubSection Contains solution or project projects.
-///   * @ref ProjectReferencesSubSection Contains project references.
-///   * @ref ProjectResourcesSubSection Contains project resources.
-///   * @ref ProjectResourceStringsSubSection Contains project resource strings.
-///   * @ref ProjectSettingsSubSection Contains project settings.
-///   * @ref ProjectSourcesSubSection Contains project sources.
-///   * @ref ProjectUserSettingsSubSection Contains project user settings.
+///   * @ref ProjectApplicationSettingsSubSection contains project application settings.
+///   * @ref ProjectIncludeDirectoriesSubSection contains include directories.
+///   * @ref ProjectPackagesSubSection contains project packages.
+///   * @ref ProjectProjectsSubSection contains solution or project projects.
+///   * @ref ProjectReferencesSubSection contains project references.
+///   * @ref ProjectResourcesSubSection contains project resources.
+///   * @ref ProjectResourceStringsSubSection contains project resource strings.
+///   * @ref ProjectSettingsSubSection contains project settings.
+///   * @ref ProjectSourcesSubSection contains project sources.
+///   * @ref ProjectUserSettingsSubSection contains project user settings.
 /// * @ref SystemVariablesSection
 ///   * @ref UserDirectorySubSection The path to user home.
 ///
@@ -122,7 +122,7 @@
 /// @section TargetPropertiesCommandsSection Target properties commands
 ///
 /// @subsection TargetDefaultNamespaceSubSection target_default_namespace
-/// @brief Specifie the the base namespace for files added to the project.
+/// @brief Specifies the the base namespace for files added to the project.
 /// @param APPLICATION_DEFAULT_NAMESPACE the namespace to set.
 /// @remarks If you don't specify the target_default_namespace, it will be the same of the project name.
 /// @remarks Call only once by project.
@@ -141,7 +141,7 @@
 /// @endcode
 ///
 /// @subsection TargetDisplaySubSection target_display
-/// @brief Specify if application is displaying in GNOME or KDE menu.
+/// @brief Specifies if application is displaying in GNOME or KDE menu.
 /// @param APPLICATION_DISPLAY option to display (ON or OFF)
 /// @remarks Only effect on linux.
 /// @remarks By default the application is registered but not visible in the general menu.
@@ -161,7 +161,7 @@
 /// @endcode
 ///
 /// @subsection TargetIconSubSection target_icon
-/// @brief Specify the icon file (.ico for Windows, icns for maOS and png or svg for linux) that you want to use as your program icon.
+/// @brief Specifies the icon file (.ico for Windows, icns for maOS and png or svg for linux) that you want to use as your program icon.
 /// @param ARGV0 the icon to set without extension. It can be empty.
 /// @remarks Do not specify the extesion of file. It's operatin system depedant.
 /// @remarks If you write multiplatform application you must have the specified file in ico, icns and png or svg formats.
@@ -198,7 +198,7 @@
 /// @endcode
 ///
 /// @subsection TargetNameSubSection target_name
-/// @brief Specifie the name of the output file.
+/// @brief Specifies the name of the output file.
 /// @param APPLICATION_NAME the name to set.
 /// @remarks If you don't specify the target_name, it will be the same of the project name.
 /// @remarks Call only once by project.
@@ -236,7 +236,7 @@
 /// @endcode
 ///
 /// @subsection TargetStartupSubSection target_startup
-/// @brief Specify the entry pointto be called when the application is load.
+/// @brief Specifies the entry pointto be called when the application is load.
 /// @param ARGV0 the object that contains the entry point.
 /// @param ARGV1 the object definition file. (optional if you use TUnitMain_ or TUnitFrameworkMain_ entry point)
 /// @remarks Do not use this method of startup_(...) is present in your files or if you use standard c++ main() method.
@@ -256,7 +256,7 @@
 /// @endcode
 ///
 /// @subsection TargetTypeSubSection target_type
-/// @brief Specify the type of application to build.
+/// @brief Specifies the type of application to build.
 /// @param TARGET_TYPE Type of application.
 /// Possible values :
 /// * CONSOLE_APPLICATION Console application
@@ -408,7 +408,7 @@
 /// @endcode
 ///
 /// @subsection AssemblyGuidSubSection assembly_guid
-/// @brief Specify an unique GUID that identifies the assembly. When you create a project, Visual Studio generates a GUID for the assembly. Corresponds to Guid.
+/// @brief Specifies an unique GUID that identifies the assembly. When you create a project, Visual Studio generates a GUID for the assembly. Corresponds to Guid.
 /// @param ASSEMBLY_GUID The guid to set.
 /// @remarks Call only once by project.
 /// @remarks This method must be call before target_type().
@@ -493,7 +493,7 @@
 /// @section BuildOptionsCommandsSection Build options commands
 ///
 /// @subsection BuildOutputDirectorySubSection build_output_directory
-/// @brief Specify the directory into which runtime target files should be built.
+/// @brief Specifies the directory into which runtime target files should be built.
 /// @param OUTPUT_DIRECTORY the directory where runtime target files should be built.
 /// @remark This option is use mainly when a solution as more than one projec.
 /// @par Examples
@@ -512,7 +512,7 @@
 /// @section InstallCommandsSection Install commands
 ///
 /// @subsection AddInstallIncludeDirectoriesSubSection add_install_include_directories
-/// @brief Install include directories.
+/// @brief Installs include directories.
 /// @param ARGN Include directories to install.
 /// @remarks This method is required for install package.
 /// @remarks This method can be call more than once in the same project.
@@ -532,7 +532,7 @@
 /// @endcode
 ///
 /// @subsection AddInstallIncludeFilesSubSection add_install_include_files
-/// @brief Install include files.
+/// @brief Installs include files.
 /// @param ARGN Include files to install.
 /// @remarks This method is required for install package.
 /// @remarks This method can be call more than once in the same project.
@@ -573,7 +573,7 @@
 /// @endcode
 ///
 /// @subsection InstallPackageSubSection install_package
-/// @brief Install package MODULE_LIBRARY, STATIC_LIBRARY or SHARED_LIBRAY package.
+/// @brief Installs package MODULE_LIBRARY, STATIC_LIBRARY or SHARED_LIBRAY package.
 /// @param ARGV0 Install name (optional).
 /// @remarks if install name no specified and install_name() method no called, the install name is equal to application name.
 /// @remarks This method is required for install package.
@@ -595,7 +595,7 @@
 /// @endcode
 ///
 /// @subsection InstallNameSubSection install_name
-/// @brief Specify the install name.
+/// @brief Specifies the install name.
 /// @param NAME Install name.
 /// @remarks This method is optional.
 /// @remarks This method must be after add_references.
