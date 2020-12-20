@@ -7,7 +7,7 @@ find_package(xtd REQUIRED)
 # Projects
 add_projects(
   hello_worlds
-  application_properties
+  target_properties
   assembly_informations
   build_options
   project_commands
