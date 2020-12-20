@@ -1,10 +1,10 @@
-# application_cion
+# application_icon
 
 Shows how to set application icon with cmake [application_icon()](../../../../scripts/cmake/xtd_commands.cmake).
 
 # Sources
 
-[src/application.cpp](src/application_icon.cpp)
+[src/application_icon.cpp](src/application_icon.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
