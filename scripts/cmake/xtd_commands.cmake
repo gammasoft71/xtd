@@ -1,7 +1,6 @@
 ## @file
 ## @brief Contains xtd specific CMake commands.
 
-
 ################################################################################
 # Generic commands
 
@@ -49,8 +48,8 @@ endmacro ()
 ##  target_type(CONSOLE_APPLICATION)
 ## @endcode
 macro(target_default_namespace DEFAULT_NAMESPACE)
-  print("Add application default namespace [${DEFAULT_NAMESPACE}]...")
-  set(APPLICATION_DEFAULT_NAMESPACE ${DEFAULT_NAMESPACE})
+  message(VERBOSE "Add application default namespace [${DEFAULT_NAMESPACE}]...")
+  set(TARGET_DEFAULT_NAMESPACE ${DEFAULT_NAMESPACE})
 endmacro()
 
 ## @brief Specifies if application is displaying in GNOME or KDE menu.
@@ -72,8 +71,8 @@ endmacro()
 ##  target_type(GUI_APPLICATION)
 ## @endcode
 macro(target_display DISPLAY)
-  print("Add assembly display [${DISPLAY}]...")
-  set(APPLICATION_DISPLAY ${DISPLAY})
+  message(VERBOSE "Add assembly display [${DISPLAY}]...")
+  set(TARGET_DISPLAY ${DISPLAY})
 endmacro()
 
 ## @brief Specifies the icon file (.ico for Windows, icns for maOS and png or svg for linux) that you want to use as your program icon.
@@ -112,34 +111,34 @@ endmacro()
 ##  target_type(CONSOLE_APPLICATION)
 ## @endcode
 macro(target_icon)
-  print("Add application icon [${ARGV0}]...")
+  message(VERBOSE "Add application icon [${ARGV0}]...")
   if (${ARGC} GREATER 1)
     message(FATAL_ERROR "Only one icon param")
   elseif (${ARGC} EQUAL 1)
     if (MSVC)
-      set(APPLICATION_ICON ${ARGV0}.ico)
+      set(TARGET_ICON ${ARGV0}.ico)
     elseif (APPLE)
-      set(APPLICATION_ICON ${ARGV0}.icns)
-      set_source_files_properties(${APPLICATION_ICON} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
+      set(TARGET_ICON ${ARGV0}.icns)
+      set_source_files_properties(${TARGET_ICON} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
     elseif (UNIX)
-      get_filename_component(APPLICATION_ICON_FILENAME ${ARGV0} NAME)
+      get_filename_component(TARGET_ICON_FILENAME ${ARGV0} NAME)
       foreach(FORMAT 8 16 22 24 32 36 42 48 52 64 72 96 128 192 256 512) 
         if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${ARGV0}${FORMAT}.png)
-          configure_file(${ARGV0}${FORMAT}.png $ENV{HOME}/.local/share/icons/hicolor/${FORMAT}x${FORMAT}/apps/${APPLICATION_ICON_FILENAME}.png COPYONLY)
-          set(APPLICATION_ICON ${ARGV0}${FORMAT}.png)
+          configure_file(${ARGV0}${FORMAT}.png $ENV{HOME}/.local/share/icons/hicolor/${FORMAT}x${FORMAT}/apps/${TARGET_ICON_FILENAME}.png COPYONLY)
+          set(TARGET_ICON ${ARGV0}${FORMAT}.png)
         endif ()
       endforeach()
       if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${ARGV0}.png)
-        set(APPLICATION_ICON ${ARGV0}.png)
-        configure_file(${APPLICATION_ICON} $ENV{HOME}/.local/share/icons/hicolor/512x512/apps/${APPLICATION_ICON_FILENAME}.png COPYONLY)
+        set(TARGET_ICON ${ARGV0}.png)
+        configure_file(${TARGET_ICON} $ENV{HOME}/.local/share/icons/hicolor/512x512/apps/${TARGET_ICON_FILENAME}.png COPYONLY)
       endif ()
-      if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${APPLICATION_ICON}.svg)
-        set(APPLICATION_ICON ${ARGV0}.svg)
-        configure_file(${APPLICATION_ICON}.svg $ENV{HOME}/.local/share/icons/hicolor/scalable/apps/${APPLICATION_ICON_FILENAME}.svg COPYONLY)
+      if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${TARGET_ICON}.svg)
+        set(TARGET_ICON ${ARGV0}.svg)
+        configure_file(${TARGET_ICON}.svg $ENV{HOME}/.local/share/icons/hicolor/scalable/apps/${TARGET_ICON_FILENAME}.svg COPYONLY)
       endif ()
     endif ()
     
-    auto_source_group(${APPLICATION_ICON}) 
+    auto_source_group(${TARGET_ICON}) 
   endif ()
 endmacro()
 
@@ -161,8 +160,8 @@ endmacro()
 ##  target_type(CONSOLE_APPLICATION)
 ## @endcode
 macro(target_name NAME)
-  print("Add application name [${NAME}]...")
-  set(APPLICATION_NAME ${NAME})
+  message(VERBOSE "Add application name [${NAME}]...")
+  set(TARGET_NAME ${NAME})
 endmacro()
 
 ## @brief Speficy the application is registered in the system.
@@ -183,10 +182,10 @@ endmacro()
 ##  target_type(GUI_APPLICATION)
 ## @endcode
 macro(target_registered REGISTERED)
-  print("Set application registered [${REGISTERED}]...")
-  set(APPLICATION_REGISTERED ${REGISTERED})
-  if (NOT APPLICATION_REGISTERED)
-    file(REMOVE ${CMAKE_CURRENT_BINARY_DIR}/Resources/${APPLICATION_NAME}.desktop)
+  message(VERBOSE "Set application registered [${REGISTERED}]...")
+  set(TARGET_REGISTERED ${REGISTERED})
+  if (NOT TARGET_REGISTERED)
+    file(REMOVE ${CMAKE_CURRENT_BINARY_DIR}/Resources/${TARGET_NAME}.desktop)
   endif ()
 endmacro()
 
@@ -209,7 +208,7 @@ endmacro()
 ##  target_type(GUI_APPLICATION)
 ## @endcode
 macro(target_startup ...)
-  print("Add application startup [\"${ARGV0}\" ${ARGV1}]...")
+  message(VERBOSE "Add application startup [\"${ARGV0}\" ${ARGV1}]...")
   set(STARTUP_FILE properties/startup.cpp)
   if (${ARGC} EQUAL 2)
     set(MAIN_FILE ${ARGV1})
@@ -263,8 +262,8 @@ endmacro()
 ##  target_type(CONSOLE_APPLICATION)
 ## @endcode
 macro(target_type TYPE)
-  print("Add application type [${TYPE}]...")
-  set(APPLICATION_TYPE "${TYPE}")
+  message(VERBOSE "Add application type [${TYPE}]...")
+  set(TARGET_TYPE "${TYPE}")
   
   include(${CMAKE_CURRENT_SOURCE_DIR}/properties/assembly_informations.cmake OPTIONAL)
   if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/properties/assembly_informations.cmake)
@@ -274,8 +273,8 @@ macro(target_type TYPE)
   
   include(${CMAKE_CURRENT_SOURCE_DIR}/properties/target_properties.cmake OPTIONAL)
   if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/properties/target_properties.cmake)
-    set(CMAKE_APPLICATION_PROPERTIES properties/target_properties.cmake)
-    auto_source_group(${CMAKE_APPLICATION_PROPERTIES})
+    set(CMAKE_TARGET_PROPERTIES properties/target_properties.cmake)
+    auto_source_group(${CMAKE_TARGET_PROPERTIES})
   endif ()
   
   include(${CMAKE_CURRENT_SOURCE_DIR}/properties/resources.cmake OPTIONAL)
@@ -308,64 +307,64 @@ macro(target_type TYPE)
   write_resources_files()
   write_settings_files()
   
-  set(ALL_FILES "${APPLICATION_ICON};${PROJECT_RESOURCE_FILES};${PROJECT_SOURCES};${APPLICATION_INFORMATIONS_FILE};${CMAKE_ASSEMBLY_INFORMATIONS};${CMAKE_APPLICATION_PROPERTIES};${CMAKE_RESOURCES};${CMAKE_RESOURCE_STRINGS};${CMAKE_SETTINGS}")
+  set(ALL_FILES "${TARGET_ICON};${PROJECT_RESOURCE_FILES};${PROJECT_SOURCES};${TARGET_INFORMATIONS_FILE};${CMAKE_ASSEMBLY_INFORMATIONS};${CMAKE_TARGET_PROPERTIES};${CMAKE_RESOURCES};${CMAKE_RESOURCE_STRINGS};${CMAKE_SETTINGS}")
 
   if ("${TYPE}" STREQUAL "CONSOLE_APPLICATION")
-    add_executable(${APPLICATION_NAME} ${ALL_FILES})
+    add_executable(${TARGET_NAME} ${ALL_FILES})
     set(PROJECT_TYPE_REFERENCE xtd.core)
   elseif ("${TYPE}" STREQUAL "GUI_APPLICATION" OR "${TYPE}" STREQUAL "WINDOWS_APPLICATION")
-    add_executable(${APPLICATION_NAME} ${GUI} ${ALL_FILES})
+    add_executable(${TARGET_NAME} ${GUI} ${ALL_FILES})
     set(PROJECT_TYPE_REFERENCE xtd.forms)
   elseif ("${TYPE}" STREQUAL "TEST_APPLICATION")
-    add_executable(${APPLICATION_NAME} ${ALL_FILES})
+    add_executable(${TARGET_NAME} ${ALL_FILES})
     set(PROJECT_TYPE_REFERENCE xtd.tunit)
   elseif ("${TYPE}" STREQUAL "INTERFACE_LIBRARY")
     if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.19.0")
-      add_library(${APPLICATION_NAME} INTERFACE ${ALL_FILES})
+      add_library(${TARGET_NAME} INTERFACE ${ALL_FILES})
     else ()
-      add_library(${APPLICATION_NAME} INTERFACE)
+      add_library(${TARGET_NAME} INTERFACE)
     endif ()
   elseif ("${TYPE}" STREQUAL "MODULE_LIBRARY")
-    add_library(${APPLICATION_NAME} MODULE ${ALL_FILES})
+    add_library(${TARGET_NAME} MODULE ${ALL_FILES})
     set(PROJECT_TYPE_REFERENCE xtd.core)
   elseif ("${TYPE}" STREQUAL "SHARED_LIBRARY")
-    string(REPLACE "." "_" TARGET_NAME_UPPER ${APPLICATION_NAME})
+    string(REPLACE "." "_" TARGET_NAME_UPPER ${TARGET_NAME})
     string(TOUPPER ${TARGET_NAME_UPPER} TARGET_NAME_UPPER)
     add_definitions(-D${TARGET_NAME_UPPER}_EXPORT)
     if (NOT MSVC)
       add_compile_options(-fvisibility=hidden)
     endif ()
-    add_library(${APPLICATION_NAME} SHARED ${ALL_FILES})
-    if (NOT ("${APPLICATION_NAME}" STREQUAL "xtd.core" OR "${APPLICATION_NAME}" STREQUAL "xtd.3rdparty.call_stack"))
+    add_library(${TARGET_NAME} SHARED ${ALL_FILES})
+    if (NOT ("${TARGET_NAME}" STREQUAL "xtd.core" OR "${TARGET_NAME}" STREQUAL "xtd.3rdparty.call_stack"))
       set(PROJECT_TYPE_REFERENCE xtd.core)
     endif ()
   elseif ("${TYPE}" STREQUAL "STATIC_LIBRARY")
-    add_library(${APPLICATION_NAME} STATIC ${ALL_FILES})
-    if (NOT ("${APPLICATION_NAME}" STREQUAL "xtd.core" OR "${APPLICATION_NAME}" STREQUAL "xtd.3rdparty.call_stack"))
+    add_library(${TARGET_NAME} STATIC ${ALL_FILES})
+    if (NOT ("${TARGET_NAME}" STREQUAL "xtd.core" OR "${TARGET_NAME}" STREQUAL "xtd.3rdparty.call_stack"))
       set(PROJECT_TYPE_REFERENCE xtd.core)
     endif ()
   elseif ("${TYPE}" STREQUAL "CUSTOM_TARGET")
-    add_custom_target(${APPLICATION_NAME} SOURCES ${ALL_FILES})
+    add_custom_target(${TARGET_NAME} SOURCES ${ALL_FILES})
   else ()
     message(FATAL_ERROR "the TYPE must be on of theses value : CONSOLE_APPLICATION, GUI_APPLICATION, TEST_APPLICATION, MODULE_LIBRARY, SHARED_LIBRARY, STATIC_LIBRARY or CUSTOM_TARGET.")
   endif ()
 
   if ("${TYPE}" STREQUAL "INTERFACE_LIBRARY")
-    target_link_libraries(${APPLICATION_NAME} INTERFACE ${PROJECT_REFERENCES})
+    target_link_libraries(${TARGET_NAME} INTERFACE ${PROJECT_REFERENCES})
   else ()
-    target_link_libraries(${APPLICATION_NAME} ${PROJECT_TYPE_REFERENCE} ${PROJECT_REFERENCES})
+    target_link_libraries(${TARGET_NAME} ${PROJECT_TYPE_REFERENCE} ${PROJECT_REFERENCES})
   endif ()
   if ("${TYPE}" STREQUAL "TEST_APPLICATION")
-    add_test(NAME ${APPLICATION_NAME} COMMAND $<TARGET_FILE_NAME:${APPLICATION_NAME}> WORKING_DIRECTORY $<TARGET_FILE_DIR:${APPLICATION_NAME}>)
+    add_test(NAME ${TARGET_NAME} COMMAND $<TARGET_FILE_NAME:${TARGET_NAME}> WORKING_DIRECTORY $<TARGET_FILE_DIR:${TARGET_NAME}>)
   endif ()
 
   if (MSVC AND NOT "${TYPE}" STREQUAL "CUSTOM_TARGET" AND NOT "${TYPE}" STREQUAL "INTERFACE_LIBRARY")
-    target_compile_options(${APPLICATION_NAME} PRIVATE "$<$<CONFIG:Debug>:/Fd$<TARGET_FILE_DIR:${APPLICATION_NAME}>/${APPLICATION_NAME}${CMAKE_DEBUG_POSTFIX}.pdb>")
-    target_compile_options(${APPLICATION_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${APPLICATION_NAME}>/${APPLICATION_NAME}.pdb>")
+    target_compile_options(${TARGET_NAME} PRIVATE "$<$<CONFIG:Debug>:/Fd$<TARGET_FILE_DIR:${TARGET_NAME}>/${TARGET_NAME}${CMAKE_DEBUG_POSTFIX}.pdb>")
+    target_compile_options(${TARGET_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${TARGET_NAME}>/${TARGET_NAME}.pdb>")
   endif ()
 
   if (EXISTS include)
-    target_include_directories(${APPLICATION_NAME} PUBLIC $<INSTALL_INTERFACE:include>)
+    target_include_directories(${TARGET_NAME} PUBLIC $<INSTALL_INTERFACE:include>)
   endif ()
 
   if((NOT "${TYPE}" STREQUAL "INTERFACE_LIBRARY") OR ${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.19.0")
@@ -373,16 +372,16 @@ macro(target_type TYPE)
     string(LENGTH "${PROJECT_NAME}" PROJECT_NAME_LENGTH)
     MATH(EXPR PROPERTIES_FOLDER_PATH_LENGTH "${PROJECT_PATH_LENGTH}-${PROJECT_NAME_LENGTH}-1")
     string(SUBSTRING ${PROJECT_PATH} 0 ${PROPERTIES_FOLDER_PATH_LENGTH} PROPERTIES_FOLDER_PATH)
-    set_target_properties(${APPLICATION_NAME} PROPERTIES FOLDER "${PROPERTIES_FOLDER_PATH}")
+    set_target_properties(${TARGET_NAME} PROPERTIES FOLDER "${PROPERTIES_FOLDER_PATH}")
   endif ()
   
   if (PROJECT_INCLUDE_DIRECTORIES)
     foreach(INCLUDE_DIRECTORY ${PROJECT_INCLUDE_DIRECTORIES})
       file(RELATIVE_PATH INCLUDE_DIRECTORY_RELATIVE_PATH ${CMAKE_CURRENT_SOURCE_DIR} ${INCLUDE_DIRECTORY})
       if ("${TYPE}" STREQUAL "INTERFACE_LIBRARY")
-        target_include_directories(${APPLICATION_NAME} INTERFACE $<BUILD_INTERFACE:${INCLUDE_DIRECTORY}> $<INSTALL_INTERFACE:${INCLUDE_DIRECTORY_RELATIVE_PATH}>)
+        target_include_directories(${TARGET_NAME} INTERFACE $<BUILD_INTERFACE:${INCLUDE_DIRECTORY}> $<INSTALL_INTERFACE:${INCLUDE_DIRECTORY_RELATIVE_PATH}>)
       else ()
-        target_include_directories(${APPLICATION_NAME} PUBLIC $<BUILD_INTERFACE:${INCLUDE_DIRECTORY}> $<INSTALL_INTERFACE:${INCLUDE_DIRECTORY_RELATIVE_PATH}>)
+        target_include_directories(${TARGET_NAME} PUBLIC $<BUILD_INTERFACE:${INCLUDE_DIRECTORY}> $<INSTALL_INTERFACE:${INCLUDE_DIRECTORY_RELATIVE_PATH}>)
       endif ()
     endforeach()
   endif ()
@@ -409,7 +408,7 @@ endmacro()
 ##  target_type(GUI_APPLICATION)
 ## @endcode
 macro(assembly_company COMPANY)
-  print("Add assembly company [${COMPANY}]...")
+  message(VERBOSE "Add assembly company [${COMPANY}]...")
   set(ASSEMBLY_COMPANY "${COMPANY}")
 endmacro()
 
@@ -431,7 +430,7 @@ endmacro()
 ##  target_type(GUI_APPLICATION)
 ## @endcode
 macro(assembly_configuration CONFIGURATION)
-  print("Add assembly configuration [${CONFIGURATION}]...")
+  message(VERBOSE "Add assembly configuration [${CONFIGURATION}]...")
   set(ASSEMBLY_CONFIGURATION "${CONFIGURATION}")
 endmacro()
 
@@ -453,7 +452,7 @@ endmacro()
 ##  target_type(GUI_APPLICATION)
 ## @endcode
 macro(assembly_copyright COPYRIGHT)
-  print("Add assembly copyright [${COPYRIGHT}]...")
+  message(VERBOSE "Add assembly copyright [${COPYRIGHT}]...")
   set(ASSEMBLY_COPYRIGHT "${COPYRIGHT}")
 endmacro()
 
@@ -463,7 +462,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional. 
 macro(assembly_culture CULTURE)
-  print("Add assembly culture [${CULTURE}]...")
+  message(VERBOSE "Add assembly culture [${CULTURE}]...")
   set(ASSEMBLY_CULTURE "${CULTURE}")
 endmacro()
 
@@ -485,7 +484,7 @@ endmacro()
 ##  target_type(GUI_APPLICATION)
 ## @endcode
 macro(assembly_description DESCRIPTION)
-  print("Add assembly description [${DESCRIPTION}]...")
+  message(VERBOSE "Add assembly description [${DESCRIPTION}]...")
   set(ASSEMBLY_DESCRIPTION "${DESCRIPTION}")
 endmacro()
 
@@ -507,7 +506,7 @@ endmacro()
 ##  target_type(GUI_APPLICATION)
 ## @endcode
 macro(assembly_file_version FILE_VERSION)
-  print("Add assembly file version [${FILE_VERSION}]...")
+  message(VERBOSE "Add assembly file version [${FILE_VERSION}]...")
   set(ASSEMBLY_FILE_VERSION "${FILE_VERSION}")
 endmacro()
 
@@ -529,7 +528,7 @@ endmacro()
 ##  target_type(GUI_APPLICATION)
 ## @endcode
 macro(assembly_guid GUID)
-  print("Add assembly guid [${GUID}]...")
+  message(VERBOSE "Add assembly guid [${GUID}]...")
   set(ASSEMBLY_GUID "${GUID}")
 endmacro()
 
@@ -551,7 +550,7 @@ endmacro()
 ##  target_type(GUI_APPLICATION)
 ## @endcode
 macro(assembly_product PRODUCT)
-  print("Add assembly product [${PRODUCT}]...")
+  message(VERBOSE "Add assembly product [${PRODUCT}]...")
   set(ASSEMBLY_PRODUCT "${PRODUCT}")
 endmacro()
 
@@ -573,7 +572,7 @@ endmacro()
 ##  target_type(GUI_APPLICATION)
 ## @endcode
 macro(assembly_title TITLE)
-  print("Add assembly title [${TITLE}]...")
+  message(VERBOSE "Add assembly title [${TITLE}]...")
   set(ASSEMBLY_TITLE "${TITLE}")
 endmacro()
 
@@ -583,7 +582,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional. 
 macro(assembly_trademark TRADEMARK)
-  print("Add assembly trademark [${TRADEMARK}]...")
+  message(VERBOSE "Add assembly trademark [${TRADEMARK}]...")
   set(ASSEMBLY_TRADEMARK "${TRADEMARK}")
 endmacro()
 
@@ -605,7 +604,7 @@ endmacro()
 ##  target_type(GUI_APPLICATION)
 ## @endcode
 macro(assembly_version VERSION)
-  print("Add assembly version [${VERSION}]...")
+  message(VERBOSE "Add assembly version [${VERSION}]...")
   set(ASSEMBLY_VERSION "${VERSION}")
 endmacro()
 
@@ -635,24 +634,16 @@ endmacro()
 ################################################################################
 # Debug commands
 
-## @brief Print arguments on console only if ENABLE_VERBOSE option is ON.
-## @param ARGN arguments to print on console.
-macro(print)
-  if (ENABLE_VERBOSE)
-    message(STATUS ${ARGN})
-  endif ()
-endmacro()
-
 ## @brief Print application properties, assembly informations, build options, project and system informations on console.
 macro(print_project_informations)
   message(STATUS "")
   message(STATUS "Application properties:")
-  message(STATUS "  Default namespace [\"${APPLICATION_DEFAULT_NAMESPACE}\"]")
-  message(STATUS "  Icon [${APPLICATION_ICON}]")
-  message(STATUS "  Name [\"${APPLICATION_NAME}\"]")
-  message(STATUS "  Registered [${APPLICATION_REGISTERED}]")
+  message(STATUS "  Default namespace [\"${TARGET_DEFAULT_NAMESPACE}\"]")
+  message(STATUS "  Icon [${TARGET_ICON}]")
+  message(STATUS "  Name [\"${TARGET_NAME}\"]")
+  message(STATUS "  Registered [${TARGET_REGISTERED}]")
   message(STATUS "  Startup file [${STARTUP_FILE}]")
-  message(STATUS "  Type [${APPLICATION_TYPE}]")
+  message(STATUS "  Type [${TARGET_TYPE}]")
   message(STATUS "")
   message(STATUS "Assembly Informations:")
   message(STATUS "  Company [\"${ASSEMBLY_COMPANY}\"]")
@@ -672,7 +663,7 @@ macro(print_project_informations)
   message(STATUS "  Type [${BUILD_TYPE}]")
   message(STATUS "")
   message(STATUS "Project:")
-  message(STATUS "  Application Settings [${PROJECT_APPLICATION_SETTINGS}]")
+  message(STATUS "  Application Settings [${PROJECT_TARGET_SETTINGS}]")
   message(STATUS "  Output directory [${BUILD_OUTPUT_DIRECTORY}]")
   message(STATUS "  Packages [${PROJECT_PACKAGES}]")
   message(STATUS "  Projects [${PROJECT_PROJECTS}]")
@@ -771,26 +762,26 @@ macro(install_component)
   
   get_directory_property(HAS_PARENT PARENT_DIRECTORY)
   if (HAS_PARENT)
-    set(INSTALL_COMPONENTS "${INSTALL_COMPONENTS};${APPLICATION_NAME}" PARENT_SCOPE)
+    set(INSTALL_COMPONENTS "${INSTALL_COMPONENTS};${TARGET_NAME}" PARENT_SCOPE)
   else ()
-    set(INSTALL_COMPONENTS "${INSTALL_COMPONENTS};${APPLICATION_NAME}")
+    set(INSTALL_COMPONENTS "${INSTALL_COMPONENTS};${TARGET_NAME}")
   endif ()
   
-  install(TARGETS ${APPLICATION_NAME} EXPORT ${INSTALL_NAME} ARCHIVE DESTINATION lib LIBRARY DESTINATION lib RUNTIME DESTINATION bin BUNDLE DESTINATION bin FRAMEWORK DESTINATION lib BUNDLE DESTINATION bin)
+  install(TARGETS ${TARGET_NAME} EXPORT ${INSTALL_NAME} ARCHIVE DESTINATION lib LIBRARY DESTINATION lib RUNTIME DESTINATION bin BUNDLE DESTINATION bin FRAMEWORK DESTINATION lib BUNDLE DESTINATION bin)
   
-  if ("${APPLICATION_TYPE}" STREQUAL "STATIC_LIBRARY")
+  if ("${TARGET_TYPE}" STREQUAL "STATIC_LIBRARY")
     set(DESTINATION lib)
   else ()
     set(DESTINATION bin)
   endif ()
 
-  if ("${APPLICATION_TYPE}" STREQUAL "GUI_APPLICATION" OR "${APPLICATION_TYPE}" STREQUAL "CONSOLE_APPLICATION" OR "${APPLICATION_TYPE}" STREQUAL "TEST_APPLICATION")
+  if ("${TARGET_TYPE}" STREQUAL "GUI_APPLICATION" OR "${TARGET_TYPE}" STREQUAL "CONSOLE_APPLICATION" OR "${TARGET_TYPE}" STREQUAL "TEST_APPLICATION")
     install(FILES ${PROJECT_RESOURCES} DESTINATION ${DESTINATION}/resources)
   endif ()
   
-  if (MSVC AND NOT "${APPLICATION_TYPE}" STREQUAL "CUSTOM_TARGET" AND NOT "${APPLICATION_TYPE}" STREQUAL "INTERFACE_LIBRARY")
-    install(FILES $<TARGET_FILE_DIR:${APPLICATION_NAME}>/${APPLICATION_NAME}${CMAKE_DEBUG_POSTFIX}.pdb DESTINATION ${DESTINATION} CONFIGURATIONS Debug OPTIONAL)
-    install(FILES $<TARGET_FILE_DIR:${APPLICATION_NAME}>/${APPLICATION_NAME}.pdb DESTINATION ${DESTINATION} CONFIGURATIONS Release OPTIONAL)
+  if (MSVC AND NOT "${TARGET_TYPE}" STREQUAL "CUSTOM_TARGET" AND NOT "${TARGET_TYPE}" STREQUAL "INTERFACE_LIBRARY")
+    install(FILES $<TARGET_FILE_DIR:${TARGET_NAME}>/${TARGET_NAME}${CMAKE_DEBUG_POSTFIX}.pdb DESTINATION ${DESTINATION} CONFIGURATIONS Debug OPTIONAL)
+    install(FILES $<TARGET_FILE_DIR:${TARGET_NAME}>/${TARGET_NAME}.pdb DESTINATION ${DESTINATION} CONFIGURATIONS Release OPTIONAL)
   endif ()
 endmacro()
 
@@ -871,7 +862,7 @@ endmacro()
 ##  target_type(STATIC_LIBRARY)
 ## @endcode
 macro(add_include_directories)
-  print("Add include directories [${ARGN}]...")
+  message(VERBOSE "Add include directories [${ARGN}]...")
   foreach(INCLUDE_DIRECTORY ${ARGN})
     get_filename_component(INCLUDE_DIRECTORY_ABSOLUTE_PATH "${INCLUDE_DIRECTORY}" REALPATH BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
     set(PROJECT_INCLUDE_DIRECTORIES "${PROJECT_INCLUDE_DIRECTORIES};${INCLUDE_DIRECTORY_ABSOLUTE_PATH}")
@@ -897,7 +888,7 @@ endmacro()
 ##
 ## @endcode
 macro(add_packages)
-  print("Add packages [${ARGN}]...")
+  message(VERBOSE "Add packages [${ARGN}]...")
   foreach(PACKAGE ${ARGN})
     find_package(${PACKAGE} REQUIRED)
   endforeach()
@@ -920,7 +911,7 @@ endmacro()
 ##  add_projects(tests/test_lib_project1 tests/test_lib_project2 tests/test_lib_project_3)
 ## @endcode
 macro(add_projects)
-  print("Add projects [${ARGN}]...")
+  message(VERBOSE "Add projects [${ARGN}]...")
   foreach (PROJECT ${ARGN})
     get_filename_component(ABSOLUTE_PATH_PROJECT "${PROJECT}"  REALPATH BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
     if (NOT EXISTS ${ABSOLUTE_PATH_PROJECT})
@@ -951,7 +942,7 @@ endmacro()
 ##
 ## @endcode
 macro(add_references)
-  print("Add references [${ARGN}]...")
+  message(VERBOSE "Add references [${ARGN}]...")
   set(PROJECT_REFERENCES "${PROJECT_REFERENCES};${ARGN}")
 endmacro()
 
@@ -980,7 +971,7 @@ macro(resource NAME FILE)
     message(FATAL_ERROR "Duplicate resource NAME : ${NAME}")
   endif ()
 
-  print("Add resource [${NAME} ${FILE}]...")
+  message(VERBOSE "Add resource [${NAME} ${FILE}]...")
 
   get_filename_component(ABSOLUTE_PATH_FILE "${FILE}"  REALPATH BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
   if (NOT EXISTS ${ABSOLUTE_PATH_FILE})
@@ -1017,7 +1008,7 @@ macro(resource_string NAME VALUE COMMENT)
     message(FATAL_ERROR "Duplicate resource string NAME : ${NAME}")
   endif ()
 
-  print("Add resource string [${NAME} ${VALUE} ${COMMENT}]...")
+  message(VERBOSE "Add resource string [${NAME} ${VALUE} ${COMMENT}]...")
 
   get_filename_component(ABSOLUTE_PATH_FILE "${FILE}"  REALPATH BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
   set(PROJECT_RESOURCE_STRINGS "${PROJECT_RESOURCE_STRINGS};${NAME}=${VALUE}=${COMMENT}")
@@ -1055,10 +1046,10 @@ macro(setting NAME TYPE SCOPE VALUE)
     message(FATAL_ERROR "The SCOPE can be only equals to APPLICATION or USER")
   endif ()
 
-  print("Add setting application [${NAME} ${TYPE} ${SCOPE} ${VALUE}]...")
+  message(VERBOSE "Add setting application [${NAME} ${TYPE} ${SCOPE} ${VALUE}]...")
 
   if ("${SCOPE}" STREQUAL "APPLICATION")
-    set(PROJECT_APPLICATION_SETTINGS "${PROJECT_APPLICATION_SETTINGS};${NAME}=${TYPE}=${VALUE}")
+    set(PROJECT_TARGET_SETTINGS "${PROJECT_TARGET_SETTINGS};${NAME}=${TYPE}=${VALUE}")
   else ()
     set(PROJECT_USER_SETTINGS "${PROJECT_USER_SETTINGS};${NAME}=${TYPE}=${VALUE}")
   endif ()
@@ -1083,7 +1074,7 @@ endmacro()
 ##  target_type(CONSOLE_APPLICATION)
 ## @endcode
 macro(add_sources)
-  print("Add sources [${ARGN}]...")
+  message(VERBOSE "Add sources [${ARGN}]...")
   foreach (FILE ${ARGN})
     get_filename_component(ABSOLUTE_PATH_FILE "${FILE}"  REALPATH BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
     if (NOT EXISTS ${ABSOLUTE_PATH_FILE})
@@ -1114,12 +1105,12 @@ endmacro()
 ## @remarks Internal use only.
 macro(write_assembly_informations)
   if (NOT READING_ASSEMBLY_INFORMATIONS_FILE AND (ASSEMBLY_TITLE OR ASSEMBLY_DESCRIPTION OR ASSEMBLY_CONFIGURATION OR ASSEMBLY_COMPANY OR ASSEMBLY_PRODUCT OR ASSEMBLY_COPYRIGHT OR ASSEMBLY_TRADEMARK OR ASSEMBLY_CULTURE OR PROJECT_VERSION OR ASSEMBLY_FILE_VERSION OR ASSEMBLY_GUID))
-    #print("Writing Assembly Information file [${ASSEMBLY_INFORMATIONS_FILE}]...")
+    #message(VERBOSE "Writing Assembly Information file [${ASSEMBLY_INFORMATIONS_FILE}]...")
     
     if (ASSEMBLY_TITLE)
       set(TITLE "${ASSEMBLY_TITLE}")
     else ()
-      set(TITLE "${APPLICATION_NAME}")
+      set(TITLE "${TARGET_NAME}")
     endif ()
 
     if (ASSEMBLY_CONFIGURATION)
@@ -1131,7 +1122,7 @@ macro(write_assembly_informations)
     if (ASSEMBLY_PRODUCT)
       set(PRODUCT "${ASSEMBLY_PRODUCT}")
     else ()
-      set(PRODUCT "${APPLICATION_NAME}")
+      set(PRODUCT "${TARGET_NAME}")
     endif ()
 
     if (ASSEMBLY_FILE_VERSION)
@@ -1195,7 +1186,7 @@ endmacro()
 ## @brief Write resources files. Typically  properties/resources.h and properties/resources.cpp
 ## @remarks Internal use only.
 macro(write_settings_files)
-  if (PROJECT_APPLICATION_SETTINGS OR PROJECT_USER_SETTINGS)
+  if (PROJECT_TARGET_SETTINGS OR PROJECT_USER_SETTINGS)
     write_settings_file_header()
   endif ()
 endmacro()
@@ -1212,9 +1203,9 @@ macro(write_resources)
   foreach (RESOURCE_LINE ${PROJECT_RESOURCES})
     split_resource(${RESOURCE_LINE} NAME FILE)
     get_filename_component(FILENAME ${FILE} NAME)
-    if (APPLE AND "${APPLICATION_TYPE}" STREQUAL "GUI_APPLICATION")
+    if (APPLE AND "${TARGET_TYPE}" STREQUAL "GUI_APPLICATION")
       set_source_files_properties(${FILE} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
-    elseif ("${APPLICATION_TYPE}" STREQUAL "GUI_APPLICATION" OR "${APPLICATION_TYPE}" STREQUAL "CONSOLE_APPLICATION" OR "${APPLICATION_TYPE}" STREQUAL "TEST_APPLICATION")
+    elseif ("${TARGET_TYPE}" STREQUAL "GUI_APPLICATION" OR "${TARGET_TYPE}" STREQUAL "CONSOLE_APPLICATION" OR "${TARGET_TYPE}" STREQUAL "TEST_APPLICATION")
       if (CMAKE_BUILD_TYPE)
         configure_file(${FILE} ${RESOURCES_DIRECTORY_ROOT}/resources/${FILENAME} COPYONLY)
       else ()
@@ -1251,7 +1242,7 @@ endmacro()
 ## @remarks Internal use only.
 macro(read_assembly_informations)
   if (EXISTS ${ASSEMBLY_INFORMATIONS_FILE})
-    print("Reading Assembly Information file [${ASSEMBLY_INFORMATIONS_FILE}]...")
+    message(VERBOSE "Reading Assembly Information file [${ASSEMBLY_INFORMATIONS_FILE}]...")
     set(READING_ASSEMBLY_INFORMATIONS_FILE ON)
       file(READ ${ASSEMBLY_INFORMATIONS_FILE} ASSEMBLY_INFORMATION_STRING)
     string(REPLACE "\n" ";" ASSEMBLY_INFORMATION_LIST ${ASSEMBLY_INFORMATION_STRING})
@@ -1392,13 +1383,13 @@ endmacro()
 ## @brief Write macOS target informations  file. Typically target_name.app/info.plist file.
 ## @remarks Internal use only.
 macro(write_macos_target_informations_file)
-  #print("Writing macOS target informations ...")
+  #message(VERBOSE "Writing macOS target informations ...")
   set(MACOSX_BUNDLE_BUNDLE_NAME "${ASSEMBLY_TITLE}")
   set(MACOSX_BUNDLE_COPYRIGHT ${ASSEMBLY_COPYRIGHT})
   # The following line produce the warning "[default] Unable to load Info.plist exceptions (eGPUOverrides)" in Xcode when Xcode run application.
   set(MACOSX_BUNDLE_GUI_IDENTIFIER "${ASSEMBLY_GUID}")
-  get_filename_component(APPLICATION_ICON_FILENAME "${APPLICATION_ICON}" NAME)
-  set(MACOSX_BUNDLE_ICON_FILE "${APPLICATION_ICON_FILENAME}")
+  get_filename_component(TARGET_ICON_FILENAME "${TARGET_ICON}" NAME)
+  set(MACOSX_BUNDLE_ICON_FILE "${TARGET_ICON_FILENAME}")
   set(MACOSX_BUNDLE_INFO_STRING "${ASSEMBLY_DESCRIPTION}")
   if (ASSEMBLY_FILE_VERSION)
     set(MACOSX_BUNDLE_SHORT_VERSION_STRING ${ASSEMBLY_FILE_VERSION})
@@ -1410,21 +1401,21 @@ endmacro()
 ## @brief Write linux target informations  file. Typically ~/.local/share/applications/target_name.desktop file.
 ## @remarks Internal use only.
 macro(write_linux_target_informations_file)
-  set(APPLICATION_INFORMATIONS_FILE ${CMAKE_CURRENT_BINARY_DIR}/resources/${APPLICATION_NAME}.desktop)
+  set(TARGET_INFORMATIONS_FILE ${CMAKE_CURRENT_BINARY_DIR}/resources/${TARGET_NAME}.desktop)
   
   set(RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
   if (CMAKE_RUNTIME_OUTPUT_DIRECTORY)
     set(RUNTIME_OUTPUT_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
   endif ()
-  #print("Writing linux target informations  file [${APPLICATION_INFORMATIONS_FILE}]...")
+  #message(VERBOSE "Writing linux target informations  file [${TARGET_INFORMATIONS_FILE}]...")
  
-  if (APPLICATION_DISPLAY)
+  if (TARGET_DISPLAY)
     set(NO_DISPLAY "false")
   else ()  
     set(NO_DISPLAY "true")
   endif ()
   
-  if ("${APPLICATION_TYPE}" STREQUAL "CONSOLE_APPLICATION" OR "${APPLICATION_TYPE}" STREQUAL "TEST_APPLICATION")
+  if ("${TARGET_TYPE}" STREQUAL "CONSOLE_APPLICATION" OR "${TARGET_TYPE}" STREQUAL "TEST_APPLICATION")
     set(TERMINAL "true")
   else ()  
     set(TERMINAL "false")
@@ -1436,25 +1427,25 @@ macro(write_linux_target_informations_file)
     set(VERSION ${PROJECT_VERSION})
   endif ()
   
-  if (APPLICATION_ICON)
-    get_filename_component(APPLICATION_ICON_FILENAME ${APPLICATION_ICON} NAME_WE)
-    set(ICON "Icon=${APPLICATION_ICON_FILENAME}\n")
+  if (TARGET_ICON)
+    get_filename_component(TARGET_ICON_FILENAME ${TARGET_ICON} NAME_WE)
+    set(ICON "Icon=${TARGET_ICON_FILENAME}\n")
   elseif (TERMINAL)
     set(ICON "Icon=terminal\n")
   endif ()
   
   if ("${ASSEMBLY_TITLE}" STREQUAL "")
-    set(NAME "${APPLICATION_NAME}")
+    set(NAME "${TARGET_NAME}")
   else ()  
     set(NAME "${ASSEMBLY_TITLE}")
   endif ()
   
-  file(WRITE ${APPLICATION_INFORMATIONS_FILE}
+  file(WRITE ${TARGET_INFORMATIONS_FILE}
     "[Desktop Entry]\n"
     "Type=Application\n"
     "Encoding=UTF-8\n"
     "Comment=${ASSEMBLY_DESCRIPTION}\n"
-    "Exec=${RUNTIME_OUTPUT_DIRECTORY}/${APPLICATION_NAME}\n"
+    "Exec=${RUNTIME_OUTPUT_DIRECTORY}/${TARGET_NAME}\n"
     "${ICON}"
     "Name=${NAME}\n"
     "NoDisplay=${NO_DISPLAY}\n"
@@ -1462,20 +1453,20 @@ macro(write_linux_target_informations_file)
     "Version=${VERSION}\n"
   )
 
-  if (APPLICATION_REGISTERED)
-    file(COPY ${CMAKE_CURRENT_BINARY_DIR}/resources/${APPLICATION_NAME}.desktop DESTINATION "$ENV{HOME}/.local/share/applications" FILE_PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ)
-    configure_file(${CMAKE_CURRENT_BINARY_DIR}/resources/${APPLICATION_NAME}.desktop $ENV{HOME}/.local/share/applications/${APPLICATION_NAME}.desktop COPYONLY)
+  if (TARGET_REGISTERED)
+    file(COPY ${CMAKE_CURRENT_BINARY_DIR}/resources/${TARGET_NAME}.desktop DESTINATION "$ENV{HOME}/.local/share/applications" FILE_PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ)
+    configure_file(${CMAKE_CURRENT_BINARY_DIR}/resources/${TARGET_NAME}.desktop $ENV{HOME}/.local/share/applications/${TARGET_NAME}.desktop COPYONLY)
   endif ()
 
-  source_group(Resources FILES ${APPLICATION_INFORMATIONS_FILE})
+  source_group(Resources FILES ${TARGET_INFORMATIONS_FILE})
 endmacro()
 
 ## @brief Write windows target informations  file. Typically ${CMAKE_CURRENT_BINARY_DIR}/resources/ApplicationName.rc file.
 ## @remarks Internal use only.
 macro(write_windows_target_informations_file)
-  set(APPLICATION_INFORMATIONS_FILE ${CMAKE_CURRENT_BINARY_DIR}/resources/${APPLICATION_NAME}.rc)
+  set(TARGET_INFORMATIONS_FILE ${CMAKE_CURRENT_BINARY_DIR}/resources/${TARGET_NAME}.rc)
 
-  #print("Writing windows target informations  file [${APPLICATION_INFORMATIONS_FILE}]...")
+  #message(VERBOSE "Writing windows target informations  file [${TARGET_INFORMATIONS_FILE}]...")
   
   if (ASSEMBLY_FILE_VERSION)
     set(FILE_VERSION_STR "${ASSEMBLY_FILE_VERSION}.0")
@@ -1503,15 +1494,15 @@ macro(write_windows_target_informations_file)
     string(REPLACE "." "," PRODUCT_VERSION ${PRODUCT_VERSION_STR})
   endif ()
   
-  string(TOUPPER ${APPLICATION_NAME} UPPER_APPLICATION_NAME)
+  string(TOUPPER ${TARGET_NAME} UPPER_TARGET_NAME)
 
-  if (APPLICATION_ICON)
-    get_filename_component(ABSOLUTE_PATH_FILE_ICON "${APPLICATION_ICON}"  REALPATH BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
+  if (TARGET_ICON)
+    get_filename_component(ABSOLUTE_PATH_FILE_ICON "${TARGET_ICON}"  REALPATH BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
     string(REPLACE "/" "\\\\" ABSOLUTE_PATH_FILE_ICON ${ABSOLUTE_PATH_FILE_ICON})
-    set(IDI_EXECUTABLE_ICON "IDI_${UPPER_APPLICATION_NAME} ICON DISCARDABLE \"${ABSOLUTE_PATH_FILE_ICON}\"\n\n")
+    set(IDI_EXECUTABLE_ICON "IDI_${UPPER_TARGET_NAME} ICON DISCARDABLE \"${ABSOLUTE_PATH_FILE_ICON}\"\n\n")
   endif ()
 
-  file(WRITE ${APPLICATION_INFORMATIONS_FILE}
+  file(WRITE ${TARGET_INFORMATIONS_FILE}
     "#pragma region xtd generated code\n"
     "// This code was generated by CMake script.\n"
     "//\n"
@@ -1541,11 +1532,11 @@ macro(write_windows_target_informations_file)
     "      VALUE \"CompanyName\", \"${ASSEMBLY_COMPANY}\"\n"
     "      VALUE \"FileDescription\", \"${ASSEMBLY_TITLE}\"\n"
     "      VALUE \"FileVersion\", \"${FILE_VERSION}\"\n"
-    "      VALUE \"InternalName\", \"${APPLICATION_NAME}\"\n"
+    "      VALUE \"InternalName\", \"${TARGET_NAME}\"\n"
     "      VALUE \"LegalCopyright\", \"${ASSEMBLY_COPYRIGHT}\"\n"
     "      VALUE \"LegalTrademarks1\", \"${ASSEMBLY_TRADEMARK}\"\n"
     "      VALUE \"LegalTrademarks2\", \"${ASSEMBLY_TRADEMARK}\"\n"
-    "      VALUE \"OriginalFilename\", \"${APPLICATION_NAME}.exe\"\n"
+    "      VALUE \"OriginalFilename\", \"${TARGET_NAME}.exe\"\n"
     "      VALUE \"ProductName\", \"${ASSEMBLY_PRODUCT}\"\n"
     "      VALUE \"ProductVersion\", \"${PRODUCT_VERSION}\"\n"
     "    END\n"
@@ -1558,23 +1549,23 @@ macro(write_windows_target_informations_file)
     "#pragma endregion\n"
   )
   
-  source_group(Resources FILES ${APPLICATION_INFORMATIONS_FILE})
+  source_group(Resources FILES ${TARGET_INFORMATIONS_FILE})
 endmacro()
 
-## @brief Write project config cmake file. Typically ${CMAKE_CURRENT_BINARY_DIR}/${APPLICATION_NAME}Config.cmake
+## @brief Write project config cmake file. Typically ${CMAKE_CURRENT_BINARY_DIR}/${TARGET_NAME}Config.cmake
 ## @remarks Internal use only.
 macro(write_project_config_cmake)
-  string(TOUPPER ${APPLICATION_NAME} TARGET_NAME_UPPER)
+  string(TOUPPER ${TARGET_NAME} TARGET_NAME_UPPER)
   if (INSTALL_COMPONENTS)
     string(REPLACE ";" " " LIBRARIES ${INSTALL_COMPONENTS})
   endif ()
   if (PROJECT_REFERENCES)
     string(REPLACE ";" " " REFERENCES ${PROJECT_REFERENCES})
   endif ()
-  set(INSTALL_CMAKE_PROJECT_CONFIG_FILE "${CMAKE_CURRENT_BINARY_DIR}/${APPLICATION_NAME}Config.cmake")
+  set(INSTALL_CMAKE_PROJECT_CONFIG_FILE "${CMAKE_CURRENT_BINARY_DIR}/${TARGET_NAME}Config.cmake")
   file(WRITE ${INSTALL_CMAKE_PROJECT_CONFIG_FILE}
     "include(CMakeFindDependencyMacro)\n"
-    "include(\"\${CMAKE_CURRENT_LIST_DIR}/${APPLICATION_NAME}.cmake\")\n"
+    "include(\"\${CMAKE_CURRENT_LIST_DIR}/${TARGET_NAME}.cmake\")\n"
     "\n"
     "get_filename_component(${TARGET_NAME_UPPER}_INCLUDE_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../include\" ABSOLUTE)\n"
     "get_filename_component(${TARGET_NAME_UPPER}_LIBRARIES_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../lib\" ABSOLUTE)\n"
@@ -1598,7 +1589,7 @@ endmacro()
 macro(write_resources_file_header)
   set(RESOURCES_FILE_HEADER ${CMAKE_CURRENT_SOURCE_DIR}/properties/resources.h)
 
-  if (APPLE AND "${APPLICATION_TYPE}" STREQUAL "GUI_APPLICATION")
+  if (APPLE AND "${TARGET_TYPE}" STREQUAL "GUI_APPLICATION")
     set(PREFIX_RESOURCE_PATH "\"..\", \"Resources\"")
   else ()
     set(PREFIX_RESOURCE_PATH "\"resources\"")
@@ -1615,7 +1606,7 @@ macro(write_resources_file_header)
     "#include <exception>\n"
     "#include <${XTD_PROJECT_INCLUDE_FILE}>\n"
     "\n"
-    "namespace ${APPLICATION_DEFAULT_NAMESPACE}::properties {\n"
+    "namespace ${TARGET_DEFAULT_NAMESPACE}::properties {\n"
     "  /// @brief A strongly-typed resource class, for looking up localized strings, etc.\n"
     "  /// @details This class was auto-generated by CMake script. To add or remove a member, edit your CMakeList.txt file then rerun cmake tools.\n"
     "  class resources final static_ {\n"
@@ -1715,13 +1706,13 @@ macro(write_settings_file_header)
     "\n"
     "#include <${XTD_PROJECT_INCLUDE_FILE}>\n"
     "\n"
-    "namespace ${APPLICATION_DEFAULT_NAMESPACE}::properties {\n"
+    "namespace ${TARGET_DEFAULT_NAMESPACE}::properties {\n"
     "  class settings : public xtd::forms::component {\n"
     "  public:\n"
-    "    settings() : ::${APPLICATION_DEFAULT_NAMESPACE}::properties::settings(true) {}\n"
+    "    settings() : ::${TARGET_DEFAULT_NAMESPACE}::properties::settings(true) {}\n"
     "\n"
-    "    static ::${APPLICATION_DEFAULT_NAMESPACE}::properties::settings& default_settings() {\n"
-    "      static ::${APPLICATION_DEFAULT_NAMESPACE}::properties::settings default_settings;\n"
+    "    static ::${TARGET_DEFAULT_NAMESPACE}::properties::settings& default_settings() {\n"
+    "      static ::${TARGET_DEFAULT_NAMESPACE}::properties::settings default_settings;\n"
     "      return default_settings;\n"
     "    }\n"
     "\n"
@@ -1738,8 +1729,8 @@ macro(write_settings_file_header)
     endforeach()
   endif ()
   
-  if (PROJECT_APPLICATION_SETTINGS)
-    foreach(SETTING ${PROJECT_APPLICATION_SETTINGS})
+  if (PROJECT_TARGET_SETTINGS)
+    foreach(SETTING ${PROJECT_TARGET_SETTINGS})
       split_setting(${SETTING} NAME TYPE VALUE)
       file(APPEND ${SETTINGS_FILE_HEADER}
         "    ${TYPE} ${NAME}() {return ${VALUE};}\n"
@@ -1822,17 +1813,17 @@ endmacro()
 
 ## @brief Contains default namespace use by application.
 ## @see target_default_namespace
-set(APPLICATION_DEFAULT_NAMESPACE ${PROJECT_NAME})
+set(TARGET_DEFAULT_NAMESPACE ${PROJECT_NAME})
 
 ## @brief Contains application name.
 ## @see target_name
-set(APPLICATION_NAME ${PROJECT_NAME})
+set(TARGET_NAME ${PROJECT_NAME})
 
 ## @brief Contains boolean that specify if application is registered or not on the system.
 ##  * ON Registered
 ##  * OFF Not registered
 ## @see target_registered
-set(APPLICATION_REGISTERED ON)
+set(TARGET_REGISTERED ON)
 
 # @brief Contains build type (Debug or Release)
 if (CMAKE_BUILD_TYPE)
@@ -1861,7 +1852,7 @@ else ()
 endif ()
 
 if (NOT INSTALL_NAME)
-  set(INSTALL_NAME ${APPLICATION_NAME})
+  set(INSTALL_NAME ${TARGET_NAME})
 endif ()
 
 ## @brief Set project path. This path is used by add_prejects macro.
@@ -1893,8 +1884,8 @@ enable_testing()
 # add ASSEMBLY_VERSION definition
 #if (NOT PROJECT_VERSION AND XTD_VERSION)
 #  set(PROJECT_VERSION ${XTD_VERSION})
-#  remove_definitions(-DXTD_APPLICATION_VERSION)
-#  add_definitions(-D__XTD_APPLICATION_VERSION__="${PROJECT_VERSION}")
+#  remove_definitions(-DXTD_TARGET_VERSION)
+#  add_definitions(-D__XTD_TARGET_VERSION__="${PROJECT_VERSION}")
 #endif ()
 
 # add compile and link flags
