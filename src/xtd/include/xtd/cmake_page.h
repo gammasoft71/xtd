@@ -15,7 +15,7 @@
 ///  find_package(xtd REQUIRED)
 /// @endcode
 ///
-/// xtd Specific CMake commands:
+/// @par xtd Specific CMake commands
 /// * @ref GenericCommandsSection
 ///   * @ref ChoiceOptionsSubSection Provides a choice options for the user to select an option from options list.
 /// * @ref ApplicationPropertiesCommandsSection
@@ -56,7 +56,7 @@
 ///   * @ref AddSettingSubSection Add a setting to current project.
 ///   * @ref AddSourcesSubSection Add source and header files to current project.
 ///
-/// xtd Specific CMake variables:
+/// @par xtd Specific CMake variables
 /// * @ref ApplicationPropertiesVariablesSection
 ///   * @ref ApplicationDefaultNamespaceVariableSubSection Contains default namespace use by application.
 ///   * @ref ApplicatioIconVariableSubSection Contains application icon file name without extension.
