@@ -23,7 +23,7 @@
 ///   * @ref TargetDisplaySubSection specifies if application is displaying in GNOME or KDE menu.
 ///   * @ref TargetIconSubSection specifies the icon file (.ico for Windows, icns for maOS and png or svg for linux) that you want to use as your program icon.
 ///   * @ref TargetNameSubSection specifies the name of the output file.
-///   * @ref ApplicationRegisteredSubSection Speficy the application is registered in the system.
+///   * @ref TargetRegisteredSubSection Speficy the target is registered in the system.
 ///   * @ref TargetStartupSubSection specifies the entry pointto be called when the application is load.
 ///   * @ref TargetTypeSubSection specifies the type of target to build.
 /// * @ref AssemblyInformationsCommandsSection
@@ -216,7 +216,7 @@
 ///  target_type(CONSOLE_APPLICATION)
 /// @endcode
 ///
-/// @subsection ApplicationRegisterSubSection target_registered
+/// @subsection TargetRegisteredSubSection target_registered
 /// @brief Speficy the application is registered in the system.
 /// @remarks Only effect on linux.
 /// @remarks By default the application is registered but not visible in GNOME or KDE menu.
