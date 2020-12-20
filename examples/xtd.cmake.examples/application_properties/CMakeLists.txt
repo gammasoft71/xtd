@@ -12,4 +12,5 @@ add_projects(
   application_name
   application_registered
   application_startup
+  target_type
 )

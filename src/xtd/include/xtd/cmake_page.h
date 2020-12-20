@@ -16,14 +16,16 @@
 /// @endcode
 ///
 /// xtd Specific CMake commands:
+/// * @ref GenericCommandsSection
+///   * @ref ChoiceOptionsSubSection Provides a choice options for the user to select an option from options list.
 /// * @ref ApplicationPropertiesCommandsSection
 ///   * @ref ApplicationDefaultNamespaceSubSection Specifie the the base namespace for files addedto the project.
 ///   * @ref ApplicationDisplaySubSection Specify if application is displaying in GNOME or KDE menu.
 ///   * @ref ApplicationIconSubSection Specify the icon file (.ico for Windows, icns for maOS and png or svg for linux) that you want to use as your program icon.
 ///   * @ref ApplicationNameSubSection Specifie the name of the output file.
-///   * @ref ApplicationNoRegisterSubSection Speficy the application is not registered in the system.
+///   * @ref ApplicationRegisteredSubSection Speficy the application is registered in the system.
 ///   * @ref ApplicationStartupSubSection Specify the entry pointto be called when the application is load.
-///   * @ref ApplicationTypeSubSection Specify the type of application to build.
+///   * @ref TargetTypeSubSection Specify the type of application to build.
 /// * @ref AssemblyInformationsCommandsSection
 ///   * @ref AssemblyCompanySubSection Specifies a company name for the assembly manifest. Corresponds to AssemblyCompanyAttribute.
 ///   * @ref AssemblyCopyrightSubSection Specifies a configuration for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
@@ -60,7 +62,7 @@
 ///   * @ref ApplicatioIconVariableSubSection Contains application icon file name without extension.
 ///   * @ref ApplicationNameVariableSubSection Contains application name.
 ///   * @ref ApplicationRegisteredVariableSubSection Contains boolean that specify if application is registered or not on the system.
-///   * @ref ApplicationTypeVariableSubSection Contains application type.
+///   * @ref TargetTypeVariableSubSection Contains application type.
 /// * @ref AssemblyInformationsVariablesSection
 ///   * @ref AssemblyCompanyVariableSubSection Contains assembly company name.
 ///   * @ref AssemblyConfigurationVariableSubSection Contains assembly configuration string.
@@ -94,6 +96,28 @@
 ///   * @ref ProjectUserSettingsSubSection Contains project user settings.
 /// * @ref SystemVariablesSection
 ///   * @ref UserDirectorySubSection The path to user home.
+///
+/// @section GenericCommandsSection Generic commands
+///
+/// @subsection ChoiceOptionsSubSection choice_options
+/// @brief Provides a choice options for the user to select an option from options list.
+/// @param OPTION the option to set.
+/// @param MESSAGE Description message for the choice options.
+/// @param DEFAULT_OPTION The default option.
+/// @param ... Other options.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional. 
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(my_project.cpp)
+///  
+///  choice_options(TARGET_TYPE "Choose library dynamic, static, interface or module" DINAMIC_LIBRARY STATIC_LIBRARY INTERFACE_LIBRARY MODULE_LIBRARY)
+///  target_type(${TARGET_TYPE})
+/// @endcode
 ///
 /// @section ApplicationPropertiesCommandsSection Application properties commands
 ///
@@ -192,8 +216,8 @@
 ///  target_type(CONSOLE_APPLICATION)
 /// @endcode
 ///
-/// @subsection ApplicationNoRegisterSubSection application_no_register
-/// @brief Speficy the application is not registered in the system.
+/// @subsection ApplicationRegisterSubSection application_registered
+/// @brief Speficy the application is registered in the system.
 /// @remarks Only effect on linux.
 /// @remarks By default the application is registered but not visible in GNOME or KDE menu.
 /// @remarks Call only once by project.
@@ -207,7 +231,7 @@
 ///  find_package(xtd REQUIRED)
 ///  add_sources(my_project.cpp)
 ///
-///  application_no_register()
+///  application_registered(OFF)
 ///  target_type(GUI_APPLICATION)
 /// @endcode
 ///
@@ -231,9 +255,9 @@
 ///  target_type(GUI_APPLICATION)
 /// @endcode
 ///
-/// @subsection ApplicationTypeSubSection application_type
+/// @subsection TargetTypeSubSection target_type
 /// @brief Specify the type of application to build.
-/// @param APPLICATION_TYPE Type of application.
+/// @param TARGET_TYPE Type of application.
 /// Possible values :
 /// * CONSOLE_APPLICATION Console application
 /// * GUI_APPLICATION Gui application (Winforms)
@@ -651,7 +675,7 @@
 /// @subsection AddReferencesSubSection add_references
 /// @brief Add references (libraries) to current project.
 /// @param ARGN references to add.
-/// @remarks This method must be the last method after application_type.
+/// @remarks This method must be the last method after target_type.
 /// @remarks This method must be call after target_type().
 /// @remarks This method is optional.
 /// @par Examples
@@ -775,9 +799,9 @@
 ///
 /// @see @ref ApplicationNoRegisterSubSection
 ///
-/// @subsection ApplicationTypeVariableSubSection APPLICATION_TYPE
+/// @subsection TargetTypeVariableSubSection TARGET_TYPE
 /// @brief Contains application type.
-/// @see @ref ApplicationTypeSubSection
+/// @see @ref TargetTypeSubSection
 ///
 /// @section AssemblyInformationsVariablesSection Assembly informations Variables
 ///
