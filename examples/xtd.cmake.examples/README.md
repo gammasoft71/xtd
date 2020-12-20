@@ -5,4 +5,5 @@
 ## [Hello Worlds](hello_worlds/README.md)
 
 ## [Application properties](application_properties/README.md)
+
 * [application_icon](application_properties/application_icon/README.md) shows how to set application icon with cmake [application_icon()](../../scripts/cmake/xtd_commands.cmake).
