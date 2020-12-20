@@ -8,7 +8,7 @@ find_package(xtd REQUIRED)
 application_icon(resources/xtd_forms)
 
 # Sources
-add_sources(application_icon.cpp)
+add_sources(src/application_icon.cpp)
 
 # Target
 target_type(GUI_APPLICATION)
