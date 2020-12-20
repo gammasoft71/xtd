@@ -631,7 +631,7 @@
 ///  project(my_project)
 ///  find_package(xtd REQUIRED)
 ///  add_include_directories(include)
-///  add_sources(my_project.cpp include/my_project/my_project.hpp)
+///  add_sources(my_project.cpp include/my_project/my_project.h)
 ///
 ///  target_type(STATIC_LIBRARY)
 /// @endcode
@@ -707,7 +707,7 @@
 ///
 ///  project(my_project)
 ///  find_package(xtd REQUIRED)
-///  add_sources(file.hpp file.cpp)
+///  add_sources(file.h file.cpp)
 ///  resource(image1 resources/image1.png)
 ///  resource(image2 resources/image2.bmp)
 ///  resource(animation1 animations/ani1.gif)
@@ -729,7 +729,7 @@
 ///
 ///  project(my_project)
 ///  find_package(xtd REQUIRED)
-///  add_sources(file.hpp file.cpp)
+///  add_sources(file.h file.cpp)
 ///  resource_string(caption "\"Form examples\"" "Caption of main Form.")
 ///  resource_string(button_close_text "\"Close\"" "Text of close button.")
 ///
@@ -753,7 +753,7 @@
 ///
 ///  project(my_project)
 ///  find_package(xtd REQUIRED)
-///  add_sources(file.hpp file.cpp)
+///  add_sources(file.h file.cpp)
 ///  setting(name string APPLICATION "\"Settings example\"")
 ///  setting(back_color xtd::drawing::color USER "xtd::drawing::color::spring_green")
 ///
@@ -773,7 +773,7 @@
 ///
 ///  project(my_project)
 ///  find_package(xtd REQUIRED)
-///  add_sources(file1.hpp file2.hpp options/file3.hpp)
+///  add_sources(file1.h file2.h options/file3.h)
 ///  add_sources(file1.cpp file2.cpp options/file3.cpp)
 ///
 ///  target_type(CONSOLE_APPLICATION)
