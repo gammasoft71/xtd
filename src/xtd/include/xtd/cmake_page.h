@@ -17,7 +17,7 @@
 ///
 /// @par xtd Specific CMake commands
 /// * @ref GenericCommandsSection
-///   * @ref ChoiceOptionsSubSection Provides a choice options for the user to select an option from options list.
+///   * @ref ChoiceOptionsSubSection provides a choice options for the user to select an option from options list.
 /// * @ref TargetPropertiesCommandsSection
 ///   * @ref TargetDefaultNamespaceSubSection specifies the the base namespace for files added to the project.
 ///   * @ref TargetDisplaySubSection specifies if application is displaying in GNOME or KDE menu.
