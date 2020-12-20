@@ -4,6 +4,8 @@
 
 ## [Hello Worlds](hello_worlds/README.md)
 
+* [hello_world_cmake](hello_worlds/hello_world_cmake/README.md) The classic first application "Hello, World!" with cmake [xtd_commands.cmake](../../scripts/cmake/xtd_commands.cmake)..
+
 ## [Application properties](application_properties/README.md)
 
 * [application_default_namespace](application_properties/application_default_namespace/README.md) shows how to set application default namespace with cmake [application_default_namespace()](../../scripts/cmake/xtd_commands.cmake).
