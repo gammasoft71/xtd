@@ -1,7 +1,14 @@
 cmake_minimum_required(VERSION 3.3)
 
-project(about_dialog_system)
+# Project
+project(target_icon)
 find_package(xtd REQUIRED)
+
+# Application properties
 target_icon(resources/xtd_forms)
-add_sources(src/about_dialog_system.cpp)
+
+# Sources
+add_sources(src/target_icon.cpp)
+
+# Target
 target_type(GUI_APPLICATION)

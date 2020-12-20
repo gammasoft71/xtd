@@ -18,14 +18,14 @@
 /// @par xtd Specific CMake commands
 /// * @ref GenericCommandsSection
 ///   * @ref ChoiceOptionsSubSection Provides a choice options for the user to select an option from options list.
-/// * @ref ApplicationPropertiesCommandsSection
-///   * @ref ApplicationDefaultNamespaceSubSection Specifie the the base namespace for files added to the project.
-///   * @ref ApplicationDisplaySubSection Specify if application is displaying in GNOME or KDE menu.
-///   * @ref ApplicationIconSubSection Specify the icon file (.ico for Windows, icns for maOS and png or svg for linux) that you want to use as your program icon.
-///   * @ref ApplicationNameSubSection Specifie the name of the output file.
+/// * @ref TargetPropertiesCommandsSection
+///   * @ref TargetDefaultNamespaceSubSection Specifie the the base namespace for files added to the project.
+///   * @ref TargetDisplaySubSection Specify if application is displaying in GNOME or KDE menu.
+///   * @ref TargetIconSubSection Specify the icon file (.ico for Windows, icns for maOS and png or svg for linux) that you want to use as your program icon.
+///   * @ref TargetNameSubSection Specifie the name of the output file.
 ///   * @ref ApplicationRegisteredSubSection Speficy the application is registered in the system.
-///   * @ref ApplicationStartupSubSection Specify the entry pointto be called when the application is load.
-///   * @ref TargetTypeSubSection Specify the type of application to build.
+///   * @ref TargetStartupSubSection Specify the entry pointto be called when the application is load.
+///   * @ref TargetTypeSubSection Specify the type of target to build.
 /// * @ref AssemblyInformationsCommandsSection
 ///   * @ref AssemblyCompanySubSection Specifies a company name for the assembly manifest. Corresponds to AssemblyCompanyAttribute.
 ///   * @ref AssemblyCopyrightSubSection Specifies a configuration for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
@@ -119,12 +119,12 @@
 ///  target_type(${TARGET_TYPE})
 /// @endcode
 ///
-/// @section ApplicationPropertiesCommandsSection Application properties commands
+/// @section TargetPropertiesCommandsSection Target properties commands
 ///
-/// @subsection ApplicationDefaultNamespaceSubSection application_default_namespace
+/// @subsection TargetDefaultNamespaceSubSection target_default_namespace
 /// @brief Specifie the the base namespace for files added to the project.
 /// @param APPLICATION_DEFAULT_NAMESPACE the namespace to set.
-/// @remarks If you don't specify the application_default_namespace, it will be the same of the project name.
+/// @remarks If you don't specify the target_default_namespace, it will be the same of the project name.
 /// @remarks Call only once by project.
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
@@ -136,11 +136,11 @@
 ///  find_package(xtd REQUIRED)
 ///  add_sources(my_project.cpp)
 ///
-///  application_default_namespace("my_namespace")
+///  target_default_namespace("my_namespace")
 ///  target_type(CONSOLE_APPLICATION)
 /// @endcode
 ///
-/// @subsection ApplicationDisplaySubSection application_display
+/// @subsection TargetDisplaySubSection target_display
 /// @brief Specify if application is displaying in GNOME or KDE menu.
 /// @param APPLICATION_DISPLAY option to display (ON or OFF)
 /// @remarks Only effect on linux.
@@ -156,11 +156,11 @@
 ///  find_package(xtd REQUIRED)
 ///  add_sources(my_project.cpp)
 ///
-///  application_display(ON)
+///  target_display(ON)
 ///  target_type(GUI_APPLICATION)
 /// @endcode
 ///
-/// @subsection ApplicationIconSubSection application_icon
+/// @subsection TargetIconSubSection target_icon
 /// @brief Specify the icon file (.ico for Windows, icns for maOS and png or svg for linux) that you want to use as your program icon.
 /// @param ARGV0 the icon to set without extension. It can be empty.
 /// @remarks Do not specify the extesion of file. It's operatin system depedant.
@@ -193,14 +193,14 @@
 ///  find_package(xtd REQUIRED)
 ///  add_sources(my_project.cpp)
 ///
-///  application_icon(my_icon)
+///  target_icon(my_icon)
 ///  target_type(CONSOLE_APPLICATION)
 /// @endcode
 ///
-/// @subsection ApplicationNameSubSection application_name
+/// @subsection TargetNameSubSection target_name
 /// @brief Specifie the name of the output file.
 /// @param APPLICATION_NAME the name to set.
-/// @remarks If you don't specify the application_name, it will be the same of the project name.
+/// @remarks If you don't specify the target_name, it will be the same of the project name.
 /// @remarks Call only once by project.
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
@@ -212,11 +212,11 @@
 ///  find_package(xtd REQUIRED)
 ///  add_sources(my_project.cpp)
 ///
-///  application_name("my_exe")
+///  target_name("my_exe")
 ///  target_type(CONSOLE_APPLICATION)
 /// @endcode
 ///
-/// @subsection ApplicationRegisterSubSection application_registered
+/// @subsection ApplicationRegisterSubSection target_registered
 /// @brief Speficy the application is registered in the system.
 /// @remarks Only effect on linux.
 /// @remarks By default the application is registered but not visible in GNOME or KDE menu.
@@ -231,11 +231,11 @@
 ///  find_package(xtd REQUIRED)
 ///  add_sources(my_project.cpp)
 ///
-///  application_registered(OFF)
+///  target_registered(OFF)
 ///  target_type(GUI_APPLICATION)
 /// @endcode
 ///
-/// @subsection ApplicationStartupSubSection application_startup
+/// @subsection TargetStartupSubSection target_startup
 /// @brief Specify the entry pointto be called when the application is load.
 /// @param ARGV0 the object that contains the entry point.
 /// @param ARGV1 the object definition file. (optional if you use TUnitMain_ or TUnitFrameworkMain_ entry point)
@@ -251,7 +251,7 @@
 ///  find_package(xtd REQUIRED)
 ///  add_sources(my_project.cpp)
 ///
-///  application_startup("my_project::my_class" my_project.cpp)
+///  target_startup("my_project::my_class" my_project.cpp)
 ///  target_type(GUI_APPLICATION)
 /// @endcode
 ///
@@ -278,7 +278,7 @@
 ///  find_package(xtd REQUIRED)
 ///  add_sources(my_project.cpp)
 ///
-///  application_name("my_exe")
+///  target_name("my_exe")
 ///  target_type(CONSOLE_APPLICATION)
 ///
 ///  add_references(xtd.drawing xtd.drawing.native)
@@ -783,15 +783,15 @@
 ///
 /// @subsection ApplicationDefaultNamespaceVariableSubSection APPLICATION_DEFAULT_NAMESPACE
 /// @brief Contains default namespace use by application.
-/// @see @ref ApplicationDefaultNamespaceSubSection
+/// @see @ref TargetDefaultNamespaceSubSection
 ///
 /// @subsection ApplicatioIconVariableSubSection APPLICATION_ICON
 /// @brief Contains application icon file name without extension.
-/// @see @ref ApplicationIconSubSection
+/// @see @ref TargetIconSubSection
 ///
 /// @subsection ApplicationNameVariableSubSection APPLICATION_NAME
 /// @brief Contains application name.
-/// @see @ref ApplicationNameSubSection
+/// @see @ref TargetNameSubSection
 ///
 /// @subsection ApplicationRegisteredVariableSubSection APPLICATION_REGISTERED
 /// @brief Contains boolean that specify if application is registered or not on the system.

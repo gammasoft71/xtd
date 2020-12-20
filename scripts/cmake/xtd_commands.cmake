@@ -29,11 +29,11 @@ macro(choice_options OPTION MESSAGE DEFAULT_OPTION)
 endmacro ()
 
 ################################################################################
-# Application properties commands
+# Target properties commands
 
 ## @brief Specifie the the base namespace for files added to the project.
 ## @param DEFAULT_NAMESPACE the namespace to set.
-## @remarks If you don't specify the application_default_namespace, it will be the same of the project name.
+## @remarks If you don't specify the target_default_namespace, it will be the same of the project name.
 ## @remarks Call only once by project.
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional. 
@@ -45,10 +45,10 @@ endmacro ()
 ##  find_package(xtd REQUIRED)
 ##  add_sources(my_project.cpp)
 ##
-##  application_default_namespace("my_namespace")
+##  target_default_namespace("my_namespace")
 ##  target_type(CONSOLE_APPLICATION)
 ## @endcode
-macro(application_default_namespace DEFAULT_NAMESPACE)
+macro(target_default_namespace DEFAULT_NAMESPACE)
   print("Add application default namespace [${DEFAULT_NAMESPACE}]...")
   set(APPLICATION_DEFAULT_NAMESPACE ${DEFAULT_NAMESPACE})
 endmacro()
@@ -68,10 +68,10 @@ endmacro()
 ##  find_package(xtd REQUIRED)
 ##  add_sources(my_project.cpp)
 ##
-##  application_display(ON)
+##  target_display(ON)
 ##  target_type(GUI_APPLICATION)
 ## @endcode
-macro(application_display DISPLAY)
+macro(target_display DISPLAY)
   print("Add assembly display [${DISPLAY}]...")
   set(APPLICATION_DISPLAY ${DISPLAY})
 endmacro()
@@ -108,10 +108,10 @@ endmacro()
 ##  find_package(xtd REQUIRED)
 ##  add_sources(my_project.cpp)
 ##
-##  application_icon(my_icon)
+##  target_icon(my_icon)
 ##  target_type(CONSOLE_APPLICATION)
 ## @endcode
-macro(application_icon)
+macro(target_icon)
   print("Add application icon [${ARGV0}]...")
   if (${ARGC} GREATER 1)
     message(FATAL_ERROR "Only one icon param")
@@ -145,7 +145,7 @@ endmacro()
 
 ## @brief Specifie the name of the output file.
 ## @param NAME the name to set.
-## @remarks If you don't specify the application_name, it will be the same of the project name.
+## @remarks If you don't specify the target_name, it will be the same of the project name.
 ## @remarks Call only once by project.
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional. 
@@ -157,10 +157,10 @@ endmacro()
 ##  find_package(xtd REQUIRED)
 ##  add_sources(my_project.cpp)
 ##
-##  application_name("my_exe")
+##  target_name("my_exe")
 ##  target_type(CONSOLE_APPLICATION)
 ## @endcode
-macro(application_name NAME)
+macro(target_name NAME)
   print("Add application name [${NAME}]...")
   set(APPLICATION_NAME ${NAME})
 endmacro()
@@ -179,10 +179,10 @@ endmacro()
 ##  find_package(xtd REQUIRED)
 ##  add_sources(my_project.cpp)
 ##
-##  application_registered(OFF)
+##  target_registered(OFF)
 ##  target_type(GUI_APPLICATION)
 ## @endcode
-macro(application_registered REGISTERED)
+macro(target_registered REGISTERED)
   print("Set application registered [${REGISTERED}]...")
   set(APPLICATION_REGISTERED ${REGISTERED})
   if (NOT APPLICATION_REGISTERED)
@@ -205,10 +205,10 @@ endmacro()
 ##  find_package(xtd REQUIRED)
 ##  add_sources(my_project.cpp)
 ##
-##  application_startup("my_project::my_class" my_project.cpp)
+##  target_startup("my_project::my_class" my_project.cpp)
 ##  target_type(GUI_APPLICATION)
 ## @endcode
-macro(application_startup ...)
+macro(target_startup ...)
   print("Add application startup [\"${ARGV0}\" ${ARGV1}]...")
   set(STARTUP_FILE properties/startup.cpp)
   if (${ARGC} EQUAL 2)
@@ -259,7 +259,7 @@ endmacro()
 ##  add_sources(my_project.cpp)
 ##  add_references(xtd.string xtd.core)
 ##
-##  application_name("my_exe")
+##  target_name("my_exe")
 ##  target_type(CONSOLE_APPLICATION)
 ## @endcode
 macro(target_type TYPE)
@@ -272,9 +272,9 @@ macro(target_type TYPE)
     auto_source_group(${CMAKE_ASSEMBLY_INFORMATIONS})
   endif ()
   
-  include(${CMAKE_CURRENT_SOURCE_DIR}/properties/application_properties.cmake OPTIONAL)
-  if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/properties/application_properties.cmake)
-    set(CMAKE_APPLICATION_PROPERTIES properties/application_properties.cmake)
+  include(${CMAKE_CURRENT_SOURCE_DIR}/properties/target_properties.cmake OPTIONAL)
+  if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/properties/target_properties.cmake)
+    set(CMAKE_APPLICATION_PROPERTIES properties/target_properties.cmake)
     auto_source_group(${CMAKE_APPLICATION_PROPERTIES})
   endif ()
   
@@ -302,7 +302,7 @@ macro(target_type TYPE)
   remove_definitions(-DXTD_ASSEMBLY_VERSION)
   add_definitions(-D__XTD_ASSEMBLY_VERSION__="${PROJECT_VERSION}")
   
-  write_application_informations_file()
+  write_target_informations_file()
   write_assembly_informations()
   write_resources()
   write_resources_files()
@@ -1098,15 +1098,15 @@ endmacro()
 ################################################################################
 # Write files
 
-## @brief Write application informations file.
+## @brief Write target informations  file.
 ## @remarks Internal use only.
-macro(write_application_informations_file)
+macro(write_target_informations_file)
   if (MSVC)
-    write_windows_application_informations_file()
+    write_windows_target_informations_file()
   elseif (APPLE)
-    write_macos_application_informations_file()
+    write_macos_target_informations_file()
   elseif (UNIX)
-    write_linux_application_informations_file()
+    write_linux_target_informations_file()
   endif ()
 endmacro()
 
@@ -1389,10 +1389,10 @@ macro(split_setting SETTING NAME TYPE VALUE)
   set(VALUE ${VALUE_STR})
 endmacro()
 
-## @brief Write macOS application informations file. Typically application_name.app/info.plist file.
+## @brief Write macOS target informations  file. Typically target_name.app/info.plist file.
 ## @remarks Internal use only.
-macro(write_macos_application_informations_file)
-  #print("Writing macOS application informations...")
+macro(write_macos_target_informations_file)
+  #print("Writing macOS target informations ...")
   set(MACOSX_BUNDLE_BUNDLE_NAME "${ASSEMBLY_TITLE}")
   set(MACOSX_BUNDLE_COPYRIGHT ${ASSEMBLY_COPYRIGHT})
   # The following line produce the warning "[default] Unable to load Info.plist exceptions (eGPUOverrides)" in Xcode when Xcode run application.
@@ -1407,16 +1407,16 @@ macro(write_macos_application_informations_file)
   endif ()
 endmacro()
 
-## @brief Write linux application informations file. Typically ~/.local/share/applications/application_name.desktop file.
+## @brief Write linux target informations  file. Typically ~/.local/share/applications/target_name.desktop file.
 ## @remarks Internal use only.
-macro(write_linux_application_informations_file)
+macro(write_linux_target_informations_file)
   set(APPLICATION_INFORMATIONS_FILE ${CMAKE_CURRENT_BINARY_DIR}/resources/${APPLICATION_NAME}.desktop)
   
   set(RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
   if (CMAKE_RUNTIME_OUTPUT_DIRECTORY)
     set(RUNTIME_OUTPUT_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
   endif ()
-  #print("Writing linux application informations file [${APPLICATION_INFORMATIONS_FILE}]...")
+  #print("Writing linux target informations  file [${APPLICATION_INFORMATIONS_FILE}]...")
  
   if (APPLICATION_DISPLAY)
     set(NO_DISPLAY "false")
@@ -1470,12 +1470,12 @@ macro(write_linux_application_informations_file)
   source_group(Resources FILES ${APPLICATION_INFORMATIONS_FILE})
 endmacro()
 
-## @brief Write windows application informations file. Typically ${CMAKE_CURRENT_BINARY_DIR}/resources/ApplicationName.rc file.
+## @brief Write windows target informations  file. Typically ${CMAKE_CURRENT_BINARY_DIR}/resources/ApplicationName.rc file.
 ## @remarks Internal use only.
-macro(write_windows_application_informations_file)
+macro(write_windows_target_informations_file)
   set(APPLICATION_INFORMATIONS_FILE ${CMAKE_CURRENT_BINARY_DIR}/resources/${APPLICATION_NAME}.rc)
 
-  #print("Writing windows application informations file [${APPLICATION_INFORMATIONS_FILE}]...")
+  #print("Writing windows target informations  file [${APPLICATION_INFORMATIONS_FILE}]...")
   
   if (ASSEMBLY_FILE_VERSION)
     set(FILE_VERSION_STR "${ASSEMBLY_FILE_VERSION}.0")
@@ -1821,17 +1821,17 @@ endmacro()
 # Variables
 
 ## @brief Contains default namespace use by application.
-## @see application_default_namespace
+## @see target_default_namespace
 set(APPLICATION_DEFAULT_NAMESPACE ${PROJECT_NAME})
 
 ## @brief Contains application name.
-## @see application_name
+## @see target_name
 set(APPLICATION_NAME ${PROJECT_NAME})
 
 ## @brief Contains boolean that specify if application is registered or not on the system.
 ##  * ON Registered
 ##  * OFF Not registered
-## @see application_registered
+## @see target_registered
 set(APPLICATION_REGISTERED ON)
 
 # @brief Contains build type (Debug or Release)
@@ -1870,7 +1870,7 @@ set(PROJECT_PATH "${PROJECT_PATH}/${PROJECT_NAME}")
 ################################################################################
 # Globals settings
 
-# set application informations (properties/assembly_info.cpp)
+# set target informations  (properties/assembly_info.cpp)
 read_assembly_informations()
 
 # standard C++

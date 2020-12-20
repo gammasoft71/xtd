@@ -592,12 +592,12 @@ namespace xtdc_command {
     
     void create_xtd_console_application_properties(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines{
-        xtd::strings::format("application_default_namespace(\"{}\")", name),
-        xtd::strings::format("application_name(\"{}\")", name),
-        xtd::strings::format("application_startup(\"{}::program\" src/program.h)", name),
+        xtd::strings::format("target_default_namespace(\"{}\")", name),
+        xtd::strings::format("target_name(\"{}\")", name),
+        xtd::strings::format("target_startup(\"{}::program\" src/program.h)", name),
       };
       
-      xtd::io::file::write_all_lines(path/"properties"/"application_properties.cmake", lines);
+      xtd::io::file::write_all_lines(path/"properties"/"target_properties.cmake", lines);
     }
 
     void create_xtd_console_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
@@ -1654,13 +1654,13 @@ namespace xtdc_command {
     
     void create_xtd_gui_application_properties(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines{
-        xtd::strings::format("application_default_namespace(\"{}\")", name),
-        xtd::strings::format("application_icon(resources/{})", name),
-        xtd::strings::format("application_name(\"{}\")", name),
-        xtd::strings::format("application_startup(\"{}::form1\" src/form1.h)", name),
+        xtd::strings::format("target_default_namespace(\"{}\")", name),
+        xtd::strings::format("target_icon(resources/{})", name),
+        xtd::strings::format("target_name(\"{}\")", name),
+        xtd::strings::format("target_startup(\"{}::form1\" src/form1.h)", name),
       };
       
-      xtd::io::file::write_all_lines(path/"properties"/"application_properties.cmake", lines);
+      xtd::io::file::write_all_lines(path/"properties"/"target_properties.cmake", lines);
     }
 
     void create_xtd_gui_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
@@ -2196,11 +2196,11 @@ namespace xtdc_command {
     
     void create_xtd_shared_library_application_properties(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines{
-        xtd::strings::format("application_default_namespace(\"{}\")", name),
-        xtd::strings::format("application_name(\"{}\")", name),
+        xtd::strings::format("target_default_namespace(\"{}\")", name),
+        xtd::strings::format("target_name(\"{}\")", name),
       };
       
-      xtd::io::file::write_all_lines(path/"properties"/"application_properties.cmake", lines);
+      xtd::io::file::write_all_lines(path/"properties"/"target_properties.cmake", lines);
     }
     
     void create_xtd_shared_library_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
@@ -2606,11 +2606,11 @@ namespace xtdc_command {
     
     void create_xtd_static_library_application_properties(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines{
-        xtd::strings::format("application_default_namespace(\"{}\")", name),
-        xtd::strings::format("application_name(\"{}\")", name),
+        xtd::strings::format("target_default_namespace(\"{}\")", name),
+        xtd::strings::format("target_name(\"{}\")", name),
       };
       
-      xtd::io::file::write_all_lines(path/"properties"/"application_properties.cmake", lines);
+      xtd::io::file::write_all_lines(path/"properties"/"target_properties.cmake", lines);
     }
     
     void create_xtd_static_library_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
@@ -2848,12 +2848,12 @@ namespace xtdc_command {
     
     void create_xtd_unit_test_application_application_properties(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines{
-        xtd::strings::format("application_default_namespace(\"{}\")", name),
-        xtd::strings::format("application_name(\"{}\")", name),
-        xtd::strings::format("application_startup(tunit_main_)", name),
+        xtd::strings::format("target_default_namespace(\"{}\")", name),
+        xtd::strings::format("target_name(\"{}\")", name),
+        xtd::strings::format("target_startup(tunit_main_)", name),
       };
       
-      xtd::io::file::write_all_lines(path/"properties"/"application_properties.cmake", lines);
+      xtd::io::file::write_all_lines(path/"properties"/"target_properties.cmake", lines);
     }
     
     void create_xtd_unit_test_application_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
