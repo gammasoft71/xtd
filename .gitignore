@@ -45,3 +45,4 @@ src/xtd.3rdparty.call_stack/call_stack_export.h
 src/xtd.drawing.native.wxwidgets/include/xtd/drawing_native_export.h
 src/xtd.forms.native.wxwidgets/include/xtd/forms_native_export.h
 src/xtd/references.cmake
+examples/xtd.cmake.examples/application_properties/application_startup/properties/startup.cpp
