@@ -8,7 +8,7 @@ find_package(xtd REQUIRED)
 application_display(ON)
 
 # Sources
-add_sources(application_display.cpp)
+add_sources(src/application_display.cpp)
 
 # Target
 target_type(GUI_APPLICATION)
