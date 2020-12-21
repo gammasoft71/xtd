@@ -133,6 +133,7 @@
 * [system_images](components/system_images/README.md) demonstrates the use of **xtd::drawing::system_images** class.
 * [texts](components/texts/README.md) shows how to used [xtd::forms::texts](../../src/xtd.forms/include/xtd/forms/texts.h) collection.
 * [timer](components/timer/README.md) implements a timer that raises an event at user-defined intervals. This timer is optimized for use in Windows Forms applications and must be used in a window.
+* [translator](components/translator/README.md) demonstrates the use of [xtd::forms::translator](../../src/xtd/include/xtd/forms/translator.hpp) strings.
 * [use_wait_cursor](components/use_wait_cursor/README.md) shows how to use [xtd::forms::use_wait_cursor](../../src/xtd.forms/include/xtd/forms/use_wait_cursor.h) component.
 
 ## [Printing](printing/README.md)
