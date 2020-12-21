@@ -1,6 +1,6 @@
 # translator
 
-demonstrates the use of [xtd::forms::translator](../../../../src/xtd/include/xtd/forms/translator.hpp) strings.
+demonstrates the use of [xtd::forms::translator](../../../../src/xtd/include/xtd/translator.h) strings.
 
 # Sources
 
