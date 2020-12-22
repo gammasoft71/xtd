@@ -264,7 +264,7 @@ endmacro()
 macro(target_type TYPE)
   message(VERBOSE "Add application type [${TYPE}]...")
   set(TARGET_TYPE "${TYPE}")
-  
+
   include(${CMAKE_CURRENT_SOURCE_DIR}/properties/assembly_informations.cmake OPTIONAL)
   if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/properties/assembly_informations.cmake)
     set(CMAKE_ASSEMBLY_INFORMATIONS properties/assembly_informations.cmake)
@@ -306,8 +306,19 @@ macro(target_type TYPE)
   write_resources()
   write_resources_files()
   write_settings_files()
-  
-  set(ALL_FILES "${TARGET_ICON};${PROJECT_RESOURCE_FILES};${PROJECT_SOURCES};${TARGET_INFORMATIONS_FILE};${CMAKE_ASSEMBLY_INFORMATIONS};${CMAKE_TARGET_PROPERTIES};${CMAKE_RESOURCES};${CMAKE_RESOURCE_STRINGS};${CMAKE_SETTINGS}")
+
+  if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/locale")
+    set(LOCALE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/locale")
+    if (APPLE)
+      set_source_files_properties(${CMAKE_CURRENT_SOURCE_DIR}/locale PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
+    else ()
+      file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/locale DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+      file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/locale DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Debug)
+      file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/locale DESTINATION DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Release)
+    endif ()
+  endif ()
+
+  set(ALL_FILES "${TARGET_ICON};${PROJECT_RESOURCE_FILES};${PROJECT_SOURCES};${TARGET_INFORMATIONS_FILE};${CMAKE_ASSEMBLY_INFORMATIONS};${CMAKE_TARGET_PROPERTIES};${CMAKE_RESOURCES};${CMAKE_RESOURCE_STRINGS};${CMAKE_SETTINGS};${LOCALE_FILES}")
 
   if ("${TYPE}" STREQUAL "CONSOLE_APPLICATION")
     add_executable(${TARGET_NAME} ${ALL_FILES})

@@ -2,10 +2,12 @@
 #include <filesystem>
 #include <map>
 #include "../include/xtd/cdebug.h"
+#include "../include/xtd/environment.h"
 #include "../include/xtd/format.h"
 #include "../include/xtd/format_exception.h"
 #include "../include/xtd/collections/specialized/string_map.h"
 #include "../include/xtd/io/file.h"
+#include "../include/xtd/io/path.h"
 
 namespace {
   std::map<std::string, xtd::collections::specialized::string_map> __xtd_language_values__;
@@ -40,7 +42,7 @@ namespace {
       if (locale_item.is_directory()) {
         for (auto language_item : std::filesystem::directory_iterator(locale_item.path())) {
           if (language_item.path().extension() == ".strings")
-            parse_file(language_item.path(), locale_item.path().filename());
+            parse_file(language_item.path(), xtd::strings::to_lower(locale_item.path().filename().string()));
         }
       }
     }
@@ -58,7 +60,7 @@ std::string translator::language() {
 
 void translator::language(const std::string& language) {
   initialize(); // Must be first
-  __xtd_language__ = language;
+  __xtd_language__ = xtd::strings::to_lower(language);
 }
 
 std::vector<std::string> translator::languages() {
@@ -88,8 +90,17 @@ void translator::initialize() {
   static bool initialized = false;
   if (initialized) return;
   
-  //auto path = directoory xtd /usr/local/shared/xtd/locale
+  if (__xtd_language__.empty()) __xtd_language__ = environment::get_environment_variable("LANG");
+  if (__xtd_language__.empty() && !std::locale().name().empty() && std::locale().name() != "C") __xtd_language__ = xtd::strings::to_lower(xtd::strings::substring(std::locale().name(), 0, 2));
+
   parse_directory(path("locale"));
-  parse_directory(path("../Resources/locale"));
+  if (xtd::environment::os_version().is_macos_platform()) parse_directory(path(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]))/".."/"Resources"/"locale");
+  else parse_directory(path(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]))/"locale");
+  parse_directory(path(__XTD_INSTALL_PATH__)/"share"/"xtd"/"locale");
+  /*
+  if (xtd::environment::os_version().is_macos_platform()) parse_directory(path(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]))/".."/"Resources");
+  else if (xtd::environment::os_version().is_linux_platform()) parse_directory(path("usr")/"share"/"locale");
+  else parse_directory(path(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0])));
+   */
   initialized = true;
 }

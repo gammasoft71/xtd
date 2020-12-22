@@ -18,5 +18,6 @@ add_projects(
   system_images
   texts
   timer
+  translator
   use_wait_cursor
 )

@@ -1,0 +1,15 @@
+# Open button text
+key "Open"
+value "Ouvrir"
+
+# Close button text
+key "Close"
+value "Fermer"
+
+# Main window caption
+key "Translator example"
+value "Exemple de traducteur"
+
+# Label text
+key "The quick brown fox jumps over the lazy dog."
+value "Le rapide renard brun saute par-dessus le chien paresseux."
