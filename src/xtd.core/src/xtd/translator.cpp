@@ -1,7 +1,6 @@
 #include "../include/xtd/translator.h"
 #include <filesystem>
 #include <map>
-#include "../include/xtd/cdebug.h"
 #include "../include/xtd/environment.h"
 #include "../include/xtd/format.h"
 #include "../include/xtd/format_exception.h"
@@ -15,7 +14,6 @@ namespace {
   std::string __xtd_language__;
   
   void parse_file(const std::filesystem::path& file, const std::string& language) {
-    xtd::cdebug << xtd::format("parse {} for {} language", file, language) << std::endl;
     std::vector<std::string> lines = xtd::io::file::read_all_lines(file);
     std::string key;
     std::string value;
