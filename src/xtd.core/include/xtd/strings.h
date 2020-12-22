@@ -1617,6 +1617,7 @@ namespace xtd {
     /// @return The String that remains after all occurrences of the characters in the trim_chars parameter are removed from the end of the specified String.
     template<typename char_t>
     static std::basic_string<char_t> trim_end(const std::basic_string<char_t>& str, const std::vector<char_t>& trim_chars) noexcept {
+      if (!str.size()) return str;
       std::basic_string<char_t> result(str);
       while (std::find(trim_chars.begin(), trim_chars.end(), result[result.size() - 1]) != trim_chars.end())
         result.erase(result.size() - 1, 1);
