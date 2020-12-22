@@ -96,6 +96,7 @@
 #include "time_out_exception.h"
 #include "to_string.h"
 #include "tracestreambuf.h"
+#include "translator.h"
 #include "typeof.h"
 #include "types.h"
 #include "underflow_exception.h"

@@ -1,8 +1,10 @@
 #pragma once
 #include <limits>
 #include <stdexcept>
-#include <xtd/parse.h>
-#include <xtd/strings.h>
+#include "format.h"
+#include "parse.h"
+#include "strings.h"
+#include "translator.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -783,5 +785,25 @@ namespace xtd {
   /// @ingroup Literals
   inline std::wstring operator""_ws(unsigned long long s) {
     return L""; //strings::to_wstring(xtd::strings::format("{}", s));
+  }
+
+  inline std::string operator""_t(const char* s, size_t n) {
+    return xtd::translator::translate({s, s + n});
+  }
+  
+  inline std::string operator""_t(const char8_t* s, size_t n) {
+    return xtd::translator::translate({s, s + n});
+  }
+  
+  inline std::string operator""_t(const char16_t* s, size_t n) {
+    return xtd::translator::translate(xtd::format("{}", s));
+  }
+  
+  inline std::string operator""_t(const char32_t* s, size_t n) {
+    return xtd::translator::translate(xtd::format("{}", s));
+  }
+  
+  inline std::string operator""_t(const wchar_t* s, size_t n) {
+    return xtd::translator::translate(xtd::format("{}", s));
   }
 }
