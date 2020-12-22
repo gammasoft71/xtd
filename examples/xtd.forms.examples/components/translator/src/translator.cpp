@@ -29,6 +29,6 @@ private:
 };
 
 int main() {
-  locale::global(locale("ru_RU"));
+  locale::global(locale("ru_RU.utf-8"));
   application::run(form1());
 }
