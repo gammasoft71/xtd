@@ -9,5 +9,6 @@ add_projects(
   application_context
   application_enable_dark_mode
   application_enable_light_mode
+  application_restart
   application_use_wait_cursor
 )
