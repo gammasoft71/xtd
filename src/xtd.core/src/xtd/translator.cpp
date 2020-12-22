@@ -90,8 +90,8 @@ void translator::initialize() {
   static bool initialized = false;
   if (initialized) return;
   
-  if (__xtd_language__.empty()) __xtd_language__ = environment::get_environment_variable("LANG");
   if (__xtd_language__.empty() && !std::locale().name().empty() && std::locale().name() != "C") __xtd_language__ = xtd::strings::to_lower(xtd::strings::substring(std::locale().name(), 0, 2));
+  if (__xtd_language__.empty()) __xtd_language__ = environment::get_environment_variable("LANG");
 
   parse_directory(path("locale"));
   if (xtd::environment::os_version().is_macos_platform()) parse_directory(path(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]))/".."/"Resources"/"locale");
