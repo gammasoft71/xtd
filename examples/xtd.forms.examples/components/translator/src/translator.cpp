@@ -29,6 +29,11 @@ private:
 };
 
 int main() {
-  locale::global(locale("ru_RU.utf-8"));
+  try {
+    locale::global(locale("ru_RU.utf-8"));
+  } catch(const std::exception& e) {
+    message_box::show(format("Make sure russian locale is installed on your system :\n\n{}", e.what()), "Exception");
+    return -1;
+  }
   application::run(form1());
 }
