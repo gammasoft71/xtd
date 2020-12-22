@@ -99,6 +99,7 @@ add_sources(
   include/xtd/time_out_exception.h
   include/xtd/to_string.h
   include/xtd/tracestreambuf.h
+  include/xtd/translator.h
   include/xtd/typeof.h
   include/xtd/types.h
   include/xtd/underflow_exception.h
@@ -176,6 +177,8 @@ add_sources(
   src/xtd/guid.cpp
   src/xtd/strings.cpp
   src/xtd/system_exception.cpp
+  src/xtd/translator.cpp
+  src/xtd/types.cpp
   src/xtd/types.cpp
   src/xtd/diagnostics/debug.cpp
   src/xtd/diagnostics/default_trace_listener_gcc.cpp
