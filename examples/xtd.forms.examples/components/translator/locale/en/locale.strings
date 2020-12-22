@@ -1,0 +1,15 @@
+# Open button text
+key "Open"
+value "Open"
+
+# Close button text
+key "Close"
+value "Close"
+
+# Main window caption
+key "Translator example"
+value "Translator example"
+
+# Label text
+key "The quick brown fox jumps over the lazy dog."
+value "The quick brown fox jumps over the lazy dog."
