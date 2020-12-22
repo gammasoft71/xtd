@@ -35,7 +35,7 @@ public:
     };
     
     mouse_horizontal_wheel += [&](control& sender, const mouse_event_args& e) {
-      ctrace << format("mouse_horizontal_wheel={{button={}, clicks={}, delta={}, location=[{}]}}", e.button(), e.clicks(), e.delta(), e.location()) << endl;
+      ctrace << format("mouse_horizontal_wheel={{button={}, clicks={}, delta={}, location=[{}], modifier_keys=[{}]}}", e.button(), e.clicks(), e.delta(), e.location(), modifier_keys()) << endl;
     };
 
     mouse_leave += [&] {
@@ -51,7 +51,7 @@ public:
     };
     
     mouse_wheel += [&](control& sender, const mouse_event_args& e) {
-      ctrace << format("mouse_wheel={{button={}, clicks={}, delta={}, location=[{}]}}", e.button(), e.clicks(), e.delta(), e.location()) << endl;
+      ctrace << format("mouse_wheel={{button={}, clicks={}, delta={}, location=[{}], modifier_keys=[{}]}}", e.button(), e.clicks(), e.delta(), e.location(), modifier_keys()) << endl;
     };
   }
 };
