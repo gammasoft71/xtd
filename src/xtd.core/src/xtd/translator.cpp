@@ -91,10 +91,9 @@ void translator::initialize() {
   if (__xtd_language__.empty() && !std::locale().name().empty() && std::locale().name() != "C") __xtd_language__ = xtd::strings::to_lower(xtd::strings::substring(std::locale().name(), 0, 2));
   if (__xtd_language__.empty()) __xtd_language__ = environment::get_environment_variable("LANG");
 
-  parse_directory(path("locale"));
+  parse_directory(path(__XTD_INSTALL_PATH__)/"share"/"xtd"/"locale");
   if (xtd::environment::os_version().is_macos_platform()) parse_directory(path(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]))/".."/"Resources"/"locale");
   else parse_directory(path(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]))/"locale");
-  parse_directory(path(__XTD_INSTALL_PATH__)/"share"/"xtd"/"locale");
   /*
   if (xtd::environment::os_version().is_macos_platform()) parse_directory(path(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]))/".."/"Resources");
   else if (xtd::environment::os_version().is_linux_platform()) parse_directory(path("usr")/"share"/"locale");
