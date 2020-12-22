@@ -1,6 +1,3 @@
-#if !defined(_WIN32)
-#include <unistd.h>
-#endif
 #include <xtd/environment.h>
 #include <xtd/drawing/native/toolkit.h>
 #include <xtd/drawing/native/wx_application.h>
@@ -34,10 +31,6 @@ using namespace xtd::drawing::native;
 using namespace xtd::forms::native;
 
 event<wx_application, delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>> wx_application::message_filter_proc;
-
-namespace {
-bool restart_asked = false;
-}
 
 bool application::allow_quit() {
   initialize(); // Must be first
@@ -148,10 +141,6 @@ void application::register_wnd_proc(const delegate<intptr_t(intptr_t, int32_t, i
   static_cast<wx_application*>(wxTheApp)->wnd_proc += wnd_proc;
 }
 
-void application::restart() {
-  restart_asked = true;
-}
-
 void application::run() {
   initialize(); { // Must be first
     static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, true, 0, 0);
@@ -160,16 +149,6 @@ void application::run() {
     static_cast<wx_application*>(wxTheApp)->send_message(0, WM_QUIT, 0, 0, 0);
     wxApp::SetInstance(nullptr);
     delete wxTheApp;
-  }
-  if (restart_asked) {
-    std::vector<string> command_line_args = environment::get_command_line_args();
-    char** argv = new char* [command_line_args.size() + 1];
-    for (size_t index = 0; index < command_line_args.size(); index++)
-      argv[index] = command_line_args[index].data();
-    argv[command_line_args.size()] = 0;
-    execv(argv[0], argv);
-    delete[] argv;
-    _Exit(0);
   }
 }
 

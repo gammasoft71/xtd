@@ -1,3 +1,7 @@
+/// @todo Removev following includes when xtd::diagnostics::process will used for restart see below..
+#if !defined(_WIN32)
+#include <unistd.h>
+#endif
 #include <chrono>
 #include <xtd/io/path.h>
 #include <xtd/environment.h>
@@ -16,7 +20,8 @@ namespace {
   using message_filter_collection = std::vector<message_filter_ref>;
   
   static message_filter_collection message_filters;
-  
+  static bool restart_asked = false;
+
   bool message_filter_proc(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
     bool block = false;
   
@@ -36,6 +41,7 @@ namespace {
     return block;
   }
 }
+
 
 bool application::use_visual_styles_ = false;
 bool application::use_wait_cursor_ = false;
@@ -233,7 +239,7 @@ void application::restart() {
   cancel_event_args e;
   application::exit(e);
   if (!e.cancel())
-    native::application::restart();
+    restart_asked = true;
 }
 
 void application::run() {
@@ -258,6 +264,17 @@ void application::run(application_context& context) {
 void application::run(const form& form) {
   application_context context(form);
   application::run(context);
+  if (restart_asked) {
+    std::vector<string> command_line_args = environment::get_command_line_args();
+    char** argv = new char* [command_line_args.size() + 1];
+    for (size_t index = 0; index < command_line_args.size(); index++)
+    argv[index] = command_line_args[index].data();
+    argv[command_line_args.size()] = 0;
+    /// @todo Rplace following lines by xtd::diagnostics::process...
+    execv(argv[0], argv);
+    delete[] argv;
+    _Exit(0);
+  }
 }
 
 void application::theme(const std::string& theme_name) {
