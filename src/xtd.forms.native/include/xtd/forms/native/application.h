@@ -22,7 +22,6 @@ namespace xtd {
         static void enable_visual_style();
         static void exit();
         static void initialize();
-        static void restart();
         static void register_message_filter(const delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& message_filter);
         static void register_thread_exception(const delegate<bool()>& thread_exception);
         static void register_wnd_proc(const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc);
