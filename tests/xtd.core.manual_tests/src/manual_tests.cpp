@@ -23,13 +23,13 @@ int main() {
   console::write_line("locale = {}, value = {:C}", locale().name(), value);
   std::locale::global(std::locale(""));
   console::write_line("locale = {}, value = {:C}", locale().name(), value);
-  std::locale::global(std::locale("en_US"));
+  std::locale::global(std::locale("en_US.utf-8"));
   console::write_line("locale = {}, value = {:C}", locale().name(), value);
-  std::locale::global(std::locale("fr_FR"));
+  std::locale::global(std::locale("fr_FR.utf-8"));
   console::write_line("locale = {}, value = {:C}", locale().name(), value);
-  std::locale::global(std::locale("ja_JP"));
+  std::locale::global(std::locale("ja_JP.utf-8"));
   console::write_line("locale = {}, value = {:C}", locale().name(), value);
-  std::locale::global(std::locale("de_CH"));
+  std::locale::global(std::locale("de_CH.utf-8"));
   console::write_line("locale = {}, value = {:C}", locale().name(), value);
   
   console::write_line("locale = {}", locale().name());
