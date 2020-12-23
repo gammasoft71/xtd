@@ -109,7 +109,7 @@ namespace {
   }
 
   string generate_generic_font_families_string_report(int32_t indent) {
-    std::string report = strings::format("{}System fonts{}", indent_string(indent), environment::new_line());
+    std::string report = strings::format("{}Generic font families{}", indent_string(indent), environment::new_line());
     for (auto font_family : system_report::generic_font_families())
       report += strings::format("{}{}: {}{}", indent_string(indent + 1), font_family.first, font_family.second, environment::new_line());
     return report + environment::new_line();
