@@ -17,7 +17,7 @@ namespace guidgen_gui {
       using namespace xtd::drawing;
       using namespace xtd::forms;
       
-      client_size({475, 300});
+      client_size({645, 350});
       controls().push_back_range({count_label_, count_numeric_up_down_, format_label_, format_choice_, generate_button_, result_text_box_});
       text("Guid generator");
       
@@ -35,12 +35,14 @@ namespace guidgen_gui {
       format_label_.location({200, 13});
       format_label_.text("Format");
       
-      format_choice_.auto_size(true);
+      format_choice_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::right);
       format_choice_.location({260, 11});
-      format_choice_.items().push_back_range({{"N : 32 digits.", "N"_s}, {"D : 32 digits separated by hyphens.", "D"_s}, {"B : 32 digits separated by hyphens, enclosed in braces.", "B"_s}, {"P : 32 digits separated by hyphens, enclosed in parentheses.", "P"_s}, {"X : Four hexadecimal values enclosed in braces, where the fourth value is a subset of eight hexadecimal values that is also enclosed in braces.", "X"_s}});
+      format_choice_.width(290);
+      format_choice_.items().push_back_range({{"N : digits", "N"_s}, {"D : with hyphens", "D"_s}, {"B : with hyphens and braces", "B"_s}, {"P : with hyphens and parentheses", "P"_s}, {"X : hexadecimal with braces", "X"_s}});
       format_choice_.selected_index(1);
       
-      generate_button_.location({390, 10});
+      generate_button_.anchor(anchor_styles::top|anchor_styles::right);
+      generate_button_.location({560, 10});
       generate_button_.text("Generate");
       generate_button_.click += [&] {
         result_text_box_.text("");
@@ -54,7 +56,7 @@ namespace guidgen_gui {
             application::yield();
           });
           
-          for (int count = 0; count < parse<int>(count_numeric_up_down_.text()); count++) {
+          for (int count = 0; count < (count_numeric_up_down_.text() == "" ? count_numeric_up_down_.value() : parse<int>(count_numeric_up_down_.text())); count++) {
             begin_invoke([&] {
               result_text_box_.append_text(xtd::guid::new_guid().to_string(any_cast<string>(format_choice_.selected_item().tag())));
               result_text_box_.append_text(environment::new_line());
@@ -74,9 +76,10 @@ namespace guidgen_gui {
       };
       
       result_text_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+      result_text_box_.font({font_family::generic_monospace(), result_text_box_.font().size()});
       result_text_box_.location({10, 50});
       result_text_box_.read_only(true);
-      result_text_box_.size({455, 240});
+      result_text_box_.size({625, 290});
       result_text_box_.multiline(true);
     }
     
