@@ -202,30 +202,21 @@ namespace xtdc_gui {
       {"Dialogs - about dialog", "represents a common dialog box that displays about dialog.", {"xtd.forms.examples/dialogs/about_dialog"}},
       {"Dialogs - about dialog (system)", "represents a common dialog box that displays system about dlialog.", {"xtd.forms.examples/dialogs/about_dialog_system"}},
       {"Dialogs - message box", "displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.", {"xtd.forms.examples/dialogs/message_box"}},
-      {"Dialogs - message box (show sheet)", "displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.", {"xtd.forms.examples/dialogs/message_box_show_sheet"}},
 
       {"Custom dialogs - user dialog", "demonstrates the use of xtd::forms::form as dialog.", {"xtd.forms.examples/custom_dialogs/user_dialog"}},
-      
-      {"Demo - button appearance", "demonstrates the different appearance of xtd::forms::button control.", {"xtd.forms.examples/custom_dialogs/button_appearance"}},
-      {"Demo - check box appearance", "demonstrates the different appearance of xtd::forms::check_box control.", {"xtd.forms.examples/custom_dialogs/check_box_appearance"}},
-      {"Demo - lcd label appearance", "demonstrates the different appearance of xtd::forms::lcd_label control.", {"xtd.forms.examples/custom_dialogs/lcd_label_appearance"}},
-      {"Demo - message box appearance", "demonstrates the different appearance of xtd::forms::message_box dialog.", {"xtd.forms.examples/custom_dialogs/message_box_appearance"}},
 
-      {"Event - click", "demonstrates the use of xtd::forms::form control and click event.", {"xtd.forms.examples/events/form_click"}},
+      {"Event - application idle", "shows how to create an application with xtd::forms::application class and idle event.", {"xtd.forms.examples/events/application_idle"}},
       {"Event - enable changed event", "demonstrates the use of enable_changed event.", {"xtd.forms.examples/events/enable_changed_event"}},
       {"Event - font changed event", "demonstrates the use of font_changed event.", {"xtd.forms.examples/events/font_changed_event"}},
-      {"Event - form events", "demonstrates some events received by xtd::forms::form.", {"xtd.forms.examples/events/form_and_messages"}},
-      {"Event - idle", "shows how to create an application with xtd::forms::application class and idle event.", {"xtd.forms.examples/events/application_idle"}},
+      {"Event - form click", "demonstrates the use of xtd::forms::form control and click event.", {"xtd.forms.examples/events/form_click"}},
+      {"Event - form and messages", "demonstrates some events received by xtd::forms::form.", {"xtd.forms.examples/events/form_and_messages"}},
+      {"Event - form paint", "demonstrates paint event with xtd::forms::form.", {"xtd.forms.examples/events/form_paint"}},
       {"Event - key events", "demonstrates the use of mouse events.", {"xtd.forms.examples/events/key_events"}},
       {"Event - mouse events", "demonstrates the use of mouse events.", {"xtd.forms.examples/events/mouse_events"}},
       {"Event - move form", "demonstrates the use of mouse events.", {"xtd.forms.examples/events/move_form"}},
-      {"Event - paint", "demonstrates paint event with xtd::forms::form.", {"xtd.forms.examples/events/form_paint"}},
       {"Event - send message", "demonstrates how to send message to xtd::forms::form.", {"xtd.forms.examples/events/send_message_to_form"}},
-      {"Event - windows process", "demonstrates the use of wnd_proc method.", {"xtd.forms.examples/events/wnd_proc"}},
+      {"Event - wnd proc", "demonstrates the xtd::control::wnd_proc method.", {"xtd.forms.examples/events/wnd_proc"}},
       
-      {"Games - game of life", "The Game of Life is not your typical computer game. It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.", {"xtd.forms.examples/games/game_of_life"}},
-      {"Games - minesweeper", "The goal of the game is to uncover all the squares that do not contain mines.", {"xtd.forms.examples/games/minesweeper"}},
-
       {"Others - auto scroll", "demonstrates the use of xtd::forms::panel container with xtd::forms::scrollable_control::auto_scroll.", {"xtd.forms.examples/others/auto_scroll"}},
       {"Others - bitmap button", "demonstrates the use of xtd::forms::button control with image.", {"xtd.forms.examples/others/bitmap_button"}},
       {"Others - button 2", "represents a xtd::forms::button control.", {"xtd.forms.examples/others/button2"}},
@@ -259,11 +250,20 @@ namespace xtdc_gui {
       {"Others - stop watch", "demonstrates the use of xtd::forms::button, xtd::forms::label controls and xtd::forms::timer component..", {"xtd.forms.examples/others/stop_watch"}},
       {"Others - system images 2", "demonstrates the use of xtd::drawing::system_images class.", {"xtd.forms.examples/others/system_images2"}},
       {"Others - system images 3", "demonstrates the use of xtd::drawing::system_images class.", {"xtd.forms.examples/others/system_images3"}},
+      {"Others - system report", "shows system_repoort with xtd::forms::text_box control.", {"xtd.forms.examples/others/system_report"}},
       {"Others - text box multiline", "represents a Windows xtd::forms::text_box control.", {"xtd.forms.examples/others/text_box_multiline"}},
       {"Others - text box password", "represents a Windows xtd::forms::text_box control.", {"xtd.forms.examples/others/text_box_password"}},
       {"Others - toggle button 2", "represents a Windows xtd::forms::toggle_button control.", {"xtd.forms.examples/others/toggle_button2"}},
       {"Others - track bar 2", "represents a standard Windows xtd::forms::track_bar.", {"xtd.forms.examples/others/track_bar2"}},
       {"Others - wiggly", "shows how to animate a user control using timer and timer::event. In addition, the example demonstrates how to use graphics::measure_string to determine the size of text on screen.", {"xtd.forms.examples/others/wiggly"}},
+      
+      {"Games - game of life", "The Game of Life is not your typical computer game. It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.", {"xtd.forms.examples/games/game_of_life"}},
+      {"Games - minesweeper", "The goal of the game is to uncover all the squares that do not contain mines.", {"xtd.forms.examples/games/minesweeper"}},
+      
+      {"Demo - button appearance", "demonstrates the different appearance of xtd::forms::button control.", {"xtd.forms.examples/custom_dialogs/button_appearance"}},
+      {"Demo - check box appearance", "demonstrates the different appearance of xtd::forms::check_box control.", {"xtd.forms.examples/custom_dialogs/check_box_appearance"}},
+      {"Demo - lcd label appearance", "demonstrates the different appearance of xtd::forms::lcd_label control.", {"xtd.forms.examples/custom_dialogs/lcd_label_appearance"}},
+      {"Demo - message box appearance", "demonstrates the different appearance of xtd::forms::message_box dialog.", {"xtd.forms.examples/custom_dialogs/message_box_appearance"}},
     };
     std::vector<xtd_example_item> xtd_tunit_examples_ {
       {"assert - abort", "Tshows how to use assert abort.", "xtd.tunit.examples/assert_abort"},
