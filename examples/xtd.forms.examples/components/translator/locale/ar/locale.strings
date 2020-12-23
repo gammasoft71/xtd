@@ -1,15 +1,15 @@
 # Main window caption
 key "Translator example"
-value "Translator example"
+value "مثال المترجم"
 
 # Open button text
 key "Open"
-value "Open"
+value "افتح"
 
 # Close button text
 key "Close"
-value "Close"
+value "قريب"
 
 # Label text
 key "The quick brown fox jumps over the lazy dog."
-value "The quick brown fox jumps over the lazy dog."
+value "الثعلب البني السريع يقفز فوق الكلب الكسو"

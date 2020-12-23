@@ -1,3 +1,7 @@
+# Main window caption
+key "Translator example"
+value "Ejemplo de traductor"
+
 # Open button main window
 key "Open"
 value "Abrir"
@@ -5,10 +9,6 @@ value "Abrir"
 # Close button main window
 key "Close"
 value "Cerrar"
-
-# Main window caption
-key "Translator example"
-value "Ejemplo de traductor"
 
 # Label text
 key "The quick brown fox jumps over the lazy dog."
