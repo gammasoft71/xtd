@@ -7,6 +7,7 @@
 #include "caller_info.h"
 #include "core_export.h"
 #include "diagnostics/stack_trace.h"
+#include "literals.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
