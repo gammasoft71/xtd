@@ -787,8 +787,8 @@ namespace xtd {
     return L""; //strings::to_wstring(xtd::strings::format("{}", s));
   }
 
-  inline std::string operator""_t(const char* s, size_t n) {
-    return xtd::translator::translate({s, s + n});
+  inline const char* operator""_t(const char* s, size_t n) {
+    return xtd::translator::translate(s);
   }
   
   inline std::string operator""_t(const char8_t* s, size_t n) {

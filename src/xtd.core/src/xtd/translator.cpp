@@ -80,6 +80,15 @@ std::string translator::translate(const std::string& language, const std::string
   }
 }
 
+const char* translator::translate(const std::string& language, const char* value) {
+  initialize(); // Must be first
+  try {
+    return __xtd_language_values__.at(language).at(value).c_str();
+  } catch (...) {
+    return value;
+  }
+}
+
 void translator::parse_locale(const std::filesystem::path& locale_path) {
   parse_directory(locale_path);
 }
