@@ -22,7 +22,7 @@ namespace xtd {
     /// @brief Create a new instance of class system_exception
     /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
     /// @remarks Message is set with the default message associate to the exception.
-    explicit system_exception(const xtd::caller_info& information = xtd::caller_info::empty()) : system_exception(default_message_, nullptr, std::error_code(), "", information) {}
+    explicit system_exception(const xtd::caller_info& information = xtd::caller_info::empty()) : system_exception(default_message(), nullptr, std::error_code(), "", information) {}
     /// @brief Create a new instance of class system_exception
     /// @param message Message string associate to the exception.
     /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
@@ -47,7 +47,7 @@ namespace xtd {
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
     /// @remarks Message is set with the default message associate to the exception.
-    explicit system_exception(const std::exception& inner_exception, const xtd::caller_info& information = xtd::caller_info::empty()) : system_exception(default_message_, &inner_exception, std::error_code(), "", information) {}
+    explicit system_exception(const std::exception& inner_exception, const xtd::caller_info& information = xtd::caller_info::empty()) : system_exception(default_message(), &inner_exception, std::error_code(), "", information) {}
     /// @brief Create a new instance of class system_exception
     /// @param message Message string associate to the exception.
     /// @param inner_exception The exception that is the cause of the current exception.
@@ -135,8 +135,8 @@ namespace xtd {
   private:
     system_exception(const std::string& message, const std::exception* inner_exception, const std::error_code& error, const std::string& help_link, const xtd::caller_info& information);
     std::string stack_trace_to_string() const noexcept;
+    const char* default_message() {return "System error."_t;}
     
-    static constexpr const char* default_message_ = "System error.";
     static bool enable_stack_trace_;
     mutable std::string name_;
     std::string message_;

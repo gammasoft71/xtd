@@ -16,7 +16,7 @@ namespace xtd {
       /// @brief Create a new instance of class path_too_long_exception
       /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
       /// @remarks Message is set with the default message associate to the exception.
-      path_too_long_exception(const xtd::caller_info& info = xtd::caller_info::empty()) : ioexception(default_message_, info) {}
+      path_too_long_exception(const xtd::caller_info& info = xtd::caller_info::empty()) : ioexception(default_message(), info) {}
       /// @brief Create a new instance of class path_too_long_exception
       /// @param message Message string associate to the exception.
       /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
@@ -40,7 +40,7 @@ namespace xtd {
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
       /// @remarks Message is set with the default message associate to the exception.
-      path_too_long_exception(const std::exception& inner_exception, const xtd::caller_info& info = xtd::caller_info::empty()) : ioexception(default_message_, inner_exception, info) {}
+      path_too_long_exception(const std::exception& inner_exception, const xtd::caller_info& info = xtd::caller_info::empty()) : ioexception(default_message(), inner_exception, info) {}
       /// @brief Create a new instance of class path_too_long_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
@@ -72,7 +72,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      static constexpr const char* default_message_ = "The specified path, file name, or both are too long. The fully ualified file name must be less than 260 caracters, and the directory name must be less than 248 caracters.";
+      const char* default_message() {return "The specified path, file name, or both are too long. The fully ualified file name must be less than 260 caracters, and the directory name must be less than 248 caracters."_t;}
     };
   }
 }

@@ -14,7 +14,7 @@ namespace xtd {
     /// @brief Create a new instance of class operation_canceled_exception
     /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
     /// @remarks Message is set with the default message associate to the exception.
-    operation_canceled_exception(const xtd::caller_info& info = xtd::caller_info::empty()) : system_exception(default_message_, info) {}
+    operation_canceled_exception(const xtd::caller_info& info = xtd::caller_info::empty()) : system_exception(default_message(), info) {}
     /// @brief Create a new instance of class operation_canceled_exception
     /// @param message Message string associate to the exception.
     /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
@@ -38,7 +38,7 @@ namespace xtd {
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
     /// @remarks Message is set with the default message associate to the exception.
-    operation_canceled_exception(const std::exception& inner_exception, const xtd::caller_info& info = xtd::caller_info::empty()) : system_exception(default_message_, inner_exception, info) {}
+    operation_canceled_exception(const std::exception& inner_exception, const xtd::caller_info& info = xtd::caller_info::empty()) : system_exception(default_message(), inner_exception, info) {}
     /// @brief Create a new instance of class operation_canceled_exception
     /// @param message Message string associate to the exception.
     /// @param inner_exception The exception that is the cause of the current exception.
@@ -70,6 +70,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    static constexpr const char* default_message_ = "The operation was canceled.";
+    const char* default_message() {return "The operation was canceled."_t;}
   };
 }
