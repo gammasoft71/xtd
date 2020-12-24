@@ -14,7 +14,7 @@ namespace xtd {
     /// @brief Create a new instance of class underflow_exception
     /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
     /// @remarks Message is set with the default message associate to the exception.
-    underflow_exception(const xtd::caller_info& info = xtd::caller_info::empty()) : arithmetic_exception(default_message_, info) {}
+    underflow_exception(const xtd::caller_info& info = xtd::caller_info::empty()) : arithmetic_exception(default_message(), info) {}
     /// @brief Create a new instance of class underflow_exception
     /// @param message Message string associate to the exception.
     /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
@@ -38,7 +38,7 @@ namespace xtd {
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
     /// @remarks Message is set with the default message associate to the exception.
-    underflow_exception(const std::exception& inner_exception, const xtd::caller_info& info = xtd::caller_info::empty()) : arithmetic_exception(default_message_, inner_exception, info) {}
+    underflow_exception(const std::exception& inner_exception, const xtd::caller_info& info = xtd::caller_info::empty()) : arithmetic_exception(default_message(), inner_exception, info) {}
     /// @brief Create a new instance of class underflow_exception
     /// @param message Message string associate to the exception.
     /// @param inner_exception The exception that is the cause of the current exception.
@@ -70,6 +70,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    static constexpr const char* default_message_ = "Arithmetic operation resulted in an underflow.";
+    const char* default_message() {return "Arithmetic operation resulted in an underflow."_t;}
   };
 }
