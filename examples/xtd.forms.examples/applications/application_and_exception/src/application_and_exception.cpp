@@ -41,14 +41,14 @@ public:
 private:
   void generate_handled_exception() {
     try {
-      throw system_exception("Exception handled generated", caller_info_);
+      throw operation_canceled_exception(caller_info_);
     } catch(const xtd::system_exception& e) {
       message_box::show(*this, e.message(), format("Exception {} handled", e.name()));
     }
   }
-  void generate_exception() {throw invalid_argument("Exception generated");}
-  void generate_system_exception() {throw argument_out_of_range_exception("System exception generated", caller_info_);}
-  void generate_unknown_exception() {throw "Unknown exception generated";}
+  void generate_exception() {throw invalid_argument("Invalid argument");}
+  void generate_system_exception() {throw argument_out_of_range_exception(caller_info_);}
+  void generate_unknown_exception() {throw "Unknown exception occured";}
   
   button generate_handled_exception_button;
   button generate_exception_button;
