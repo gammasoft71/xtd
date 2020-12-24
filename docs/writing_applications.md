@@ -24,7 +24,7 @@ This [tutorial](writing_tests.md) describe the basic steps that you must complet
 
 This  [tutorial](running_tests.md) provide running tests documentation.
 
-This [ttutorial](extending_tunit.md) provide extending xtd.tunit documentation.
+This [tutorial](extending_tunit.md) provide extending xtd.tunit documentation.
 
 ## See also
 
