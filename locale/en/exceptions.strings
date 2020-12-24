@@ -1,2 +1,95 @@
+key "The given key was not present in the dictionnary."
+value "The given key was not present in the dictionnary."
+
+key "Attempted to access a path that is not on the disk."
+value "Attempted to access a path that is not on the disk."
+
+key "Attempted to access a drive that is not avaible."
+value "Attempted to access a drive that is not avaible."
+
+key "Attempted to read past the end of the stream."
+value "Attempted to read past the end of the stream."
+
+key "Input file or data stream does not conform to the expected file format specification."
+value "Input file or data stream does not conform to the expected file format specification."
+
+key "Could not load the specified file."
+value "Could not load the specified file."
+
+key "Unable to find the specified file."
+value "Unable to find the specified file."
+
+key "I/O error occured."
+value "I/O error occured."
+
+key "The specified path, file name, or both are too long. The fully ualified file name must be less than 260 caracters, and the directory name must be less than 248 caracters."
+value "The specified path, file name, or both are too long. The fully ualified file name must be less than 260 caracters, and the directory name must be less than 248 caracters."
+
 key "Value does not fall within the expected range."
 value "Value does not fall within the expected range."
+
+key "Value cannot be null."
+value "Value cannot be null."
+
+key "Specified argument is out of range of valid values."
+value "Specified argument is out of range of valid values."
+
+key "Overflow or underflow in the arithmetic operation."
+value "Overflow or underflow in the arithmetic operation."
+
+key "Attempt to divide by zero."
+value "Attempt to divide by zero."
+
+key "Report domain error."
+value "Report domain error."
+
+key "One of identified items is an invalid format."
+value "One of identified items is an invalid format."
+
+key "Index was outside the bounds of the array."
+value "Index was outside the bounds of the array."
+
+key "Specified cast is not valid."
+value "Specified cast is not valid."
+
+key "Operation is not valid due to the current state of the object."
+value "Operation is not valid due to the current state of the object."
+
+key "The system detected an invalid program."
+value "The system detected an invalid program."
+
+key "Exceed implementation defined length limits."
+value "Exceed implementation defined length limits."
+
+key "Number encountered was not a finite quantity."
+value "Number encountered was not a finite quantity."
+
+key "The method or operation is not implemented."
+value "The method or operation is not implemented."
+
+key "Specified method is not supported."
+value "Specified method is not supported."
+
+key "Object pointer not set to an instance of an object."
+value "Object pointer not set to an instance of an object."
+
+key "The operation was canceled."
+value "The operation was canceled."
+
+key "Arithmetic operation resulted in an overflow."
+value "Arithmetic operation resulted in an overflow."
+
+key "Operation is not supported on this platform."
+value "Operation is not supported on this platform."
+
+key "System error."
+value "System error."
+
+key "The operation has timed out."
+value "The operation has timed out."
+
+key "Arithmetic operation resulted in an underflow."
+value "Arithmetic operation resulted in an underflow."
+
+key "Syntax error in XML."
+value "Syntax error in XML."
