@@ -182,6 +182,7 @@ file(WRITE "${XTD_CONFIG_CMAKE_FILE}"
 install(FILES scripts/cmake/xtd_commands.cmake DESTINATION cmake)
 if (XTD_INSTALL_RESOURCES)
   install(DIRECTORY resources DESTINATION share/xtd)
+  install(DIRECTORY locale DESTINATION share/xtd)
   install(DIRECTORY docs/pictures/examples/. DESTINATION share/xtd/resources/pictures/examples)
 endif ()
 if (XTD_INSTALL_EXAMPLES)
