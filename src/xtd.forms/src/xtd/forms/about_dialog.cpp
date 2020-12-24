@@ -37,12 +37,12 @@ namespace {
       label_name_.padding(5);
       label_name_.dock(dock_style::top);
 
-      tab_page_about_.text("About");
+      tab_page_about_.text("About"_t);
       
-      tab_page_credits_.text("Credits");
+      tab_page_credits_.text("Credits"_t);
       tab_page_credits_.auto_scroll(true);
 
-      tab_page_license_.text("License");
+      tab_page_license_.text("License"_t);
       tab_page_license_.controls().push_back(text_box_license_);
 
       tab_control_about_.padding(5);
