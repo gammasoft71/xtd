@@ -16,6 +16,7 @@ add_sources(
   include/xtd/xtd.h
   src/xtd/system_report.cpp
   references.cmake
+  ../../locale/en/exceptions.strings
   ../../scripts/cmake/update_export.cmake
   ../../scripts/cmake/update_version_number.cmake
   ../../scripts/cmake/xtd_commands.cmake
