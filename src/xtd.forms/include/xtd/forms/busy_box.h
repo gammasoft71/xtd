@@ -1,5 +1,6 @@
 #pragma once
 #include "busy_dialog.h"
+#include <xtd/literals.h>
 #include <xtd/static.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -31,7 +32,7 @@ namespace xtd {
       
     private:
       static busy_dialog* dialog_;
-      static void show_busy_dialog(const iwin32_window* owner, const std::string& text = "Pleasee wait...", const std::string& caption = "", const xtd::drawing::icon& icon = xtd::drawing::icon::empty, const xtd::drawing::color& back_color = xtd::forms::theme_colors::current_theme().control(), const xtd::drawing::color& fore_color = xtd::forms::theme_colors::current_theme().control_text(), float transparency = 1.0) {
+      static void show_busy_dialog(const iwin32_window* owner, const std::string& text = "Pleasee wait..."_t, const std::string& caption = "", const xtd::drawing::icon& icon = xtd::drawing::icon::empty, const xtd::drawing::color& back_color = xtd::forms::theme_colors::current_theme().control(), const xtd::drawing::color& fore_color = xtd::forms::theme_colors::current_theme().control_text(), float transparency = 1.0) {
         if (dialog_) return;
         dialog_ = new busy_dialog();
         dialog_->description(text);
