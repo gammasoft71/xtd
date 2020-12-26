@@ -401,8 +401,10 @@ void form::wm_close(message &message) {
   if (event_args.cancel() != true) {
     can_close_ = true;
     hide();
-    if (!get_state(state::modal))
+    if (!get_state(state::modal)) {
       def_wnd_proc(message);
+      destroy_control();
+    }
     else {
       if (dialog_result_ == forms::dialog_result::none) dialog_result_ = forms::dialog_result::cancel;
       native::form::end_dialog(handle(), static_cast<int32_t>(dialog_result_));
