@@ -19,12 +19,12 @@ namespace guidgen_gui {
       
       client_size({645, 350});
       controls().push_back_range({count_label_, count_numeric_up_down_, format_label_, format_choice_, generate_button_, result_text_box_});
-      text("Guid generator");
+      text("Guid generator"_t);
       
       count_label_.anchor(anchor_styles::top|anchor_styles::left);
       count_label_.auto_size(true);
       count_label_.location({10, 13});
-      count_label_.text("Count");
+      count_label_.text("Count"_t);
       
       count_numeric_up_down_.location({70, 10});
       count_numeric_up_down_.set_range(1, 2000);
@@ -33,17 +33,17 @@ namespace guidgen_gui {
       
       format_label_.auto_size(true);
       format_label_.location({200, 13});
-      format_label_.text("Format");
+      format_label_.text("Format"_t);
       
       format_choice_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::right);
       format_choice_.location({260, 11});
       format_choice_.width(290);
-      format_choice_.items().push_back_range({{"N : digits", "N"_s}, {"D : with hyphens", "D"_s}, {"B : with hyphens and braces", "B"_s}, {"P : with hyphens and parentheses", "P"_s}, {"X : hexadecimal with braces", "X"_s}});
+      format_choice_.items().push_back_range({{"N : digits"_t, "N"_s}, {"D : with hyphens"_t, "D"_s}, {"B : with hyphens and braces"_t, "B"_s}, {"P : with hyphens and parentheses"_t, "P"_s}, {"X : hexadecimal with braces"_t, "X"_s}});
       format_choice_.selected_index(1);
       
       generate_button_.anchor(anchor_styles::top|anchor_styles::right);
       generate_button_.location({560, 10});
-      generate_button_.text("Generate");
+      generate_button_.text("Generate"_t);
       generate_button_.click += [&] {
         result_text_box_.text("");
         thread generate([&]{

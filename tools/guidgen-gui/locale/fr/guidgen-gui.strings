@@ -1,0 +1,26 @@
+key "Guid generator"
+value "Générateur de guid"
+
+key "Count"
+value "Nombre"
+
+key "Format"
+value "Format"
+
+key "N : digits"
+value "N : chiffres"
+
+key "D : with hyphens"
+value "D : avec traits d'union"
+
+key "B : with hyphens and braces"
+value "B : avec traits d'union et accolades"
+
+key "P : with hyphens and parentheses"
+value "P : avec traits d'union et parenthèses"
+
+key "X : hexadecimal with braces"
+value "X : hexadécimal avec accolades"
+
+key "Generate"
+value "Générer"
