@@ -26,7 +26,8 @@ std::string __opaque_environment::get_desktop_environment() noexcept {
 std::string __opaque_environment::get_environment_variable(const std::string& variable) noexcept {
   size_t size = 0;
   getenv_s(&size, NULL, 0, variable.c_str());
-  std::string value(size-1, 0);
+  if (size == 0) return "";
+  std::string value(size, 0);
   getenv_s(&size, value.data(), size, variable.c_str());
   return value;
 }
