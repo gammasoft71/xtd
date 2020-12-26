@@ -1,0 +1,26 @@
+key "Guid generator"
+value "Guid generator"
+
+key "Count"
+value "Count"
+
+key "Format"
+value "Format"
+
+key "N : digits"
+value "N : digits"
+
+key "D : with hyphens"
+value "D : with hyphens"
+
+key "B : with hyphens and braces"
+value "B : with hyphens and braces"
+
+key "P : with hyphens and parentheses"
+value "P : with hyphens and parentheses"
+
+key "X : hexadecimal with braces"
+value "X : hexadecimal with braces"
+
+key "Generate"
+value "Generate"
