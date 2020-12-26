@@ -112,12 +112,12 @@ namespace xtdc_gui {
       {"other - song", "Show how to play song with beep.", {"xtd.core.examples/console_song"}},
     };
     std::vector<xtd_example_item> xtd_forms_examples_ {
-      {"Hello world - hello world (emoticons)", "The classic first \"Hello, World!\" with xtd::forms::emoticons component.", {"xtd.forms.examples/hello_world_examples/hello_world_emoticons"}},
-      {"Hello world - hello world (label)", "The classic first \"Hello, World!\" with xtd::forms::label control.", {"xtd.forms.examples/hello_world_examples/hello_world_label"}},
-      {"Hello world - hello world (message box)", "The classic first \"Hello, World!\" with xtd::forms::message_box dialog.", {"xtd.forms.examples/hello_world_examples/hello_world_message_box"}},
-      {"Hello world - hello world (message box) 2", "The classic first \"Hello, World!\" with xtd::forms::message_box dialog.", {"xtd.forms.examples/hello_world_examples/hello_world_message_box2"}},
-      {"Hello world - hello world (paint)", "The classic first \"Hello, World!\" with GDI+ drawing objects.", {"xtd.forms.examples/hello_world_examples/hello_world_paint"}},
-      {"Hello world - hello world (say)", "The classic first application \"Hello, World!\" with say.", {"xtd.forms.examples/hello_world_examples/hello_world_say"}},
+      {"Hello world - hello world (emoticons)", "The classic first \"Hello, World!\" with xtd::forms::emoticons component.", {"xtd.forms.examples/hello_worlds/hello_world_emoticons"}},
+      {"Hello world - hello world (label)", "The classic first \"Hello, World!\" with xtd::forms::label control.", {"xtd.forms.examples/hello_worlds/hello_world_label"}},
+      {"Hello world - hello world (message box)", "The classic first \"Hello, World!\" with xtd::forms::message_box dialog.", {"xtd.forms.examples/hello_worlds/hello_world_message_box"}},
+      {"Hello world - hello world (message box) 2", "The classic first \"Hello, World!\" with xtd::forms::message_box dialog.", {"xtd.forms.examples/hello_worlds/hello_world_message_box2"}},
+      {"Hello world - hello world (paint)", "The classic first \"Hello, World!\" with GDI+ drawing objects.", {"xtd.forms.examples/hello_worlds/hello_world_paint"}},
+      {"Hello world - hello world (say)", "The classic first application \"Hello, World!\" with say.", {"xtd.forms.examples/hello_worlds/hello_world_say"}},
       
       {"Application - application", "shows how to create an application with xtd::forms::application class.", {"xtd.forms.examples/applications/application"}},
       {"Application - exception", "shows how to create an application with xtd::forms::application and how to manage exception.", {"xtd.forms.examples/applications/application_and_exception"}},
