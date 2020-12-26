@@ -26,12 +26,16 @@ using namespace xtd::forms;
 using namespace xtdc_gui;
 
 main_form::main_form() {
+  busy_box::show("Initializing...", "xtdc-gui");
   client_size({1000, 710});
   icon(system_icons::from_name("xtd"));
   minimize_box(false);
   if (environment::os_version().is_macos_platform())
     environment::set_environment_variable("PATH", "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin");
   start_position(form_start_position::center_screen);
+  visible_changed += [&] {
+    if (visible()) busy_box::hide();
+  };
   
   startup_panel_.auto_scroll(true);
   startup_panel_.parent(*this);
