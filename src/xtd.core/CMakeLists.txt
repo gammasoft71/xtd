@@ -8,7 +8,7 @@ add_include_directories(include)
 if(MSVC)
   add_references(xtd.3rdparty.call_stack rpcrt4)
 elseif (APPLE)
-  add_references(xtd.3rdparty.call_stack)
+  add_references(xtd.3rdparty.call_stack "-framework Foundation")
 elseif (ANDROID)
   add_references(xtd.3rdparty.call_stack)
 elseif (UNIX)
@@ -171,6 +171,9 @@ add_sources(
   src/xtd/__opaque_environment_gcc.cpp
   src/xtd/__opaque_environment_version.cpp
   src/xtd/__opaque_environment_win32.cpp
+  src/xtd/__opaque_translator_gcc.cpp
+  src/xtd/__opaque_translator_macos.mm
+  src/xtd/__opaque_translator_win32.cpp
   src/xtd/bit_converter.cpp
   src/xtd/environment.cpp
   src/xtd/event_args.cpp
