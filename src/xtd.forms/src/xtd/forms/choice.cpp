@@ -1,3 +1,5 @@
+#include <xtd/argument_out_of_range_exception.h>
+#include <xtd/literals.h>
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/choice.h>
 #include <xtd/forms/native/window_styles.h>
@@ -38,7 +40,7 @@ choice::choice() {
 
 list_control& choice::selected_index(size_t selected_index) {
   if (selected_index_ != selected_index) {
-    if (selected_index != npos && selected_index > items_.size()) throw invalid_argument("out of range index");
+    if (selected_index != npos && selected_index > items_.size()) throw argument_out_of_range_exception("Selected index greater than items size");
     selected_index_ = selected_index;
     native::choice::selected_index(handle(), selected_index_);
 

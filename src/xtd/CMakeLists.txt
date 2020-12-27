@@ -20,6 +20,7 @@ add_sources(
   ../../locale/en/application.strings
   ../../locale/en/busy_box.strings
   ../../locale/en/checked_list_box.strings
+  ../../locale/en/choice.strings
   ../../locale/en/exceptions.strings
   ../../scripts/cmake/update_export.cmake
   ../../scripts/cmake/update_version_number.cmake
