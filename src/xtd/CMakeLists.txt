@@ -26,6 +26,7 @@ add_sources(
   ../../locale/en/domain_up_down.strings
   ../../locale/en/exception_dialog.strings
   ../../locale/en/exceptions.strings
+  ../../locale/en/form.strings
   ../../locale/en/list_box.strings
   ../../scripts/cmake/update_export.cmake
   ../../scripts/cmake/update_version_number.cmake

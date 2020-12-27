@@ -1,5 +1,7 @@
 #include <random>
 #include <stdexcept>
+#include <xtd/invalid_operation_exception.h>
+#include <xtd/literals.h>
 #include <xtd/diagnostics/debug.h>
 #include <xtd/drawing/system_icons.h>
 #include <xtd/forms/native/class_styles.h>
@@ -151,7 +153,7 @@ form& form::owner(const control& value) {
 }
 
 control& form::parent(const control& parent) {
-  throw std::invalid_argument("Top-level control cannot be added to a control.");
+  throw invalid_operation_exception("Top-level control cannot be added to a control."_t);
 }
 
 form& form::show_icon(bool value) {
