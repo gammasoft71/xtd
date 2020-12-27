@@ -66,7 +66,7 @@ const char* translator::translate(const std::string& language, const char* value
 void translator::parse_locale(const std::filesystem::path& locale_path) {
   if (!std::filesystem::exists(locale_path) || !std::filesystem::is_directory(locale_path)) return;
   for (auto locale_item : std::filesystem::directory_iterator(locale_path)) {
-    if (!locale_item.is_directory() || language_ != xtd::strings::to_lower(locale_item.path().filename().string())) break;
+    if (!locale_item.is_directory() || language_ != xtd::strings::to_lower(locale_item.path().filename().string())) continue;
     for (auto language_item : std::filesystem::directory_iterator(locale_item.path()))
       if (language_item.path().extension() == ".strings") parse_file(language_item.path(), language_);
   }
