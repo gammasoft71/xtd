@@ -1,0 +1,92 @@
+key "Exception {} occured"
+value "Exception {} occured"
+
+key "Unknown exception occured"
+value "Unknown exception occured"
+
+key "Unhandled exception occured in your application. If you click\nContinue, the application will ignore this error and attempt to continue.\nIf you click Quit, the application will close immediately.\n\n{}"
+value "Unhandled exception occured in your application. If you click\nContinue, the application will ignore this error and attempt to continue.\nIf you click Quit, the application will close immediately.\n\n{}"
+
+key  "(Unknown exception)"
+value  "(Unknown exception)"
+
+key "Details"
+value "Details"
+
+key "Continue"
+value "Continue"
+
+key "Quit"
+value "Quit"
+
+key "Use try and catch to handle std::exception or xtd::system_exception instead{0}of this dialog box. For more information, see the xtd documentation.{0}{0}"
+value "Use try and catch to handle std::exception or xtd::system_exception instead{0}of this dialog box. For more information, see the xtd documentation.{0}{0}"
+
+key "{0} Exception text {0}{1}"
+value "{0} Exception text {0}{1}"
+
+key "(Unknown exception){0}"
+value "(Unknown exception){0}"
+
+key "{0} Libraries {0}{1}"
+value "{0} Libraries {0}{1}"
+
+key "    Name: {}.{}{}"
+value "    Name: {}.{}{}"
+
+key "    Version: {}{}"
+value "    Version: {}{}"
+
+key "    include path: {}{}"
+value "    include path: {}{}"
+
+key "    library path: {}{}"
+value "    library path: {}{}"
+
+key "    resources path: {}{}"
+value "    resources path: {}{}"
+
+key "{0} Operating System {0}{1}"
+value "{0} Operating System {0}{1}"
+
+key "    Version : {}{}"
+value "    Version : {}{}"
+
+key "    Desktop environment : {}{}"
+value "    Desktop environment : {}{}"
+
+key "    OS Version : {}{}"
+value "    OS Version : {}{}"
+
+key "    64 bits : {}{}"
+value "    64 bits : {}{}"
+
+key "{0} Language {0}{1}"
+value "{0} Language {0}{1}"
+
+key "    Version : {}{}"
+value "    Version : {}{}"
+
+key "    Experimental : {}{}"
+value "    Experimental : {}{}"
+
+key "    Supported : {}{}"
+value "    Supported : {}{}"
+
+key "{0} Compiler {0}{1}"
+value "{0} Compiler {0}{1}"
+
+key "    Version : {0}{1}"
+value "    Version : {0}{1}"
+
+key "    ID : {0}{1}"
+value "    ID : {0}{1}"
+
+key "    Mode : {0}{1}"
+value "    Mode : {0}{1}"
+
+key "    64 bits : {0}{1}"
+value "    64 bits : {0}{1}"
+
+key "Debug"
+key "Release"
