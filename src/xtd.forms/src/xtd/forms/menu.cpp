@@ -1,3 +1,4 @@
+#include <xtd/argument_exception.h>
 #include <xtd/strings.h>
 #include "../../../include/xtd/forms/menu.h"
 #include "../../../include/xtd/forms/context_menu.h"
@@ -94,7 +95,7 @@ void menu::clone_menu(const menu& menu_src) {
 }
 
 void menu::merge_menu(const menu& menu_src) {
-  if (data_.get() == menu_src.data_.get()) throw std::invalid_argument("It was attempted to merge the menu with itself");
+  if (data_.get() == menu_src.data_.get()) throw argument_exception("It was attempted to merge the menu with itself"_t);
   data_->menu_items_.push_back_range(menu_src.data_->menu_items_);
 }
 
