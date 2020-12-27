@@ -1,3 +1,5 @@
+#include <xtd/argument_out_of_range_exception.h>
+#include <xtd/literals.h>
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/domain_up_down.h>
 #include <xtd/forms/native/up_down_styles.h>
@@ -39,8 +41,8 @@ domain_up_down::domain_up_down() {
 }
 
 domain_up_down& domain_up_down::selected_index(size_t selected_index) {
+  if (selected_index != npos && selected_index >= items_.size()) argument_out_of_range_exception("Selected index greater than items size");
   if (selected_index_ != selected_index) {
-    if (selected_index != npos && selected_index > items_.size()) throw invalid_argument("out of range index");
     selected_index_ = selected_index;
     native::domain_up_down::selected_index(handle(), selected_index_);
 
