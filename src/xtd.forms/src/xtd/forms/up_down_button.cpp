@@ -17,7 +17,7 @@ forms::create_params up_down_button::create_params() const {
   
   create_params.class_name("updownbutton");
   
-  if (orientation_ == forms::orientation::horzontal) create_params.style(create_params.style() | UDS_HORZ);
+  if (orientation_ == forms::orientation::horizontal) create_params.style(create_params.style() | UDS_HORZ);
   if (wrapped_) create_params.style(create_params.style() | UDS_WRAP);
 
   return create_params;

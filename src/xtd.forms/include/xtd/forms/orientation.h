@@ -9,14 +9,14 @@ namespace xtd {
     /// @remarks Use the members of this enumeration to set the border style for controls that have a changeable border.
     enum class orientation {
       /// @brief The control or element is oriented horizontally.
-      horzontal = 0,
+      horizontal = 0,
       /// @brief The control or element is oriented vertically.
       vertical = 1,
     };
 
     /// @cond
-    inline std::ostream& operator<<(std::ostream& os, orientation value) {return os << to_string(value, {{orientation::horzontal, "horzontal"}, {orientation::vertical, "vertical"}});}
-    inline std::wostream& operator<<(std::wostream& os, orientation value) {return os << to_string(value, {{orientation::horzontal, L"horzontal"}, {orientation::vertical, L"vertical"}});}
+    inline std::ostream& operator<<(std::ostream& os, orientation value) {return os << to_string(value, {{orientation::horizontal, "horizontal"}, {orientation::vertical, "vertical"}});}
+    inline std::wostream& operator<<(std::wostream& os, orientation value) {return os << to_string(value, {{orientation::horizontal, L"horizontal"}, {orientation::vertical, L"vertical"}});}
     /// @endcond
   }
 }

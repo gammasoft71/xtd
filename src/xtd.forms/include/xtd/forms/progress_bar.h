@@ -141,7 +141,7 @@ namespace xtd {
       size_t marquee_animation_speed_ = 100;
       int32_t maximum_ = 100;
       int32_t minimum_ = 0;
-      forms::orientation orientation_ = forms::orientation::horzontal;
+      forms::orientation orientation_ = forms::orientation::horizontal;
       int32_t step_ = 10;
       progress_bar_style style_ = progress_bar_style::blocks;
       int32_t value_ = 0;
