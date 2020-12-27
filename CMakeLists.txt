@@ -26,6 +26,7 @@ option(XTD_SET_COMPILER_OPTION_WARNINGS_TO_ALL "Enable compiler option warnings 
 option(XTD_SET_COMPILER_OPTION_WARNINGS_AS_ERRORS "Enable compiler option warnings as errors" ON)
 add_definitions(-D__XTD_INSTALL_PATH__="${CMAKE_INSTALL_PREFIX}")
 add_definitions(-D__XTD_RESOURCES_PATH__="${CMAKE_INSTALL_PREFIX}")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/scripts/cmake)
 
 # incldue xtd_commands
 include(scripts/cmake/xtd_commands.cmake)
@@ -172,14 +173,16 @@ set(XTD_CONFIG_CMAKE_FILE ${CMAKE_CURRENT_BINARY_DIR}/xtdConfig.cmake)
 file(WRITE "${XTD_CONFIG_CMAKE_FILE}"
   "include(CMakeFindDependencyMacro)\n"
   "include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\")\n"
-  "include(\"\${CMAKE_CURRENT_LIST_DIR}/xtd_commands.cmake\")\n"
+  "include(\"\${CMAKE_CURRENT_LIST_DIR}/xtd_modules/xtd_commands.cmake\")\n"
+  "set(CMAKE_MODULE_PATH \${CMAKE_MODULE_PATH} \${CMAKE_CURRENT_LIST_DIR}/xtd_modules)\n"
   "\n"
   "set(${PROJECT_NAME}_INCLUDE_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../include\")\n"
   "set(${PROJECT_NAME}_LIBRARIES_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../lib\")\n"
   "set(${PROJECT_NAME}_LIBRARIES ${PROJECT_NAME} xtd.3rdparty.call_stack xtd.core xtd.drawing xtd.forms xtd.tunit xtd)\n"
   "set(${PROJECT_NAME}_FOUND TRUE)\n"
 )
-install(FILES scripts/cmake/xtd_commands.cmake DESTINATION cmake)
+install(FILES scripts/cmake/xtd_commands.cmake DESTINATION cmake/xtd_modules)
+install(FILES scripts/cmake/MacOSXBundleInfo.plist.in DESTINATION cmake/xtd_modules)
 if (XTD_INSTALL_RESOURCES)
   install(DIRECTORY resources DESTINATION share/xtd)
   install(DIRECTORY locale DESTINATION share/xtd)
