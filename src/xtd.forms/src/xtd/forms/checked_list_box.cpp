@@ -1,3 +1,5 @@
+#include <xtd/argument_out_of_range_exception.h>
+#include <xtd/literals.h>
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/checked_list_box.h>
 #include <xtd/forms/native/window_styles.h>
@@ -53,7 +55,7 @@ checked_list_box::checked_item_collection checked_list_box::checked_items() cons
 
 list_control& checked_list_box::selected_index(size_t selected_index) {
   if (selected_index_ != selected_index) {
-    if (selected_index != npos && selected_index > items_.size()) throw invalid_argument("out of range index");
+    if (selected_index != npos && selected_index > items_.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t);
     selected_index_ = selected_index;
     native::checked_list_box::selected_index(handle(), selected_index_);
 
