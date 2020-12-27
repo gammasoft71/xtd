@@ -1,5 +1,5 @@
-#include "../include/xtd/guid.h"
-#include "../include/xtd/__opaque_environment.h"
+#include "../../include/xtd/guid.h"
+#include "../../include/xtd/__opaque_environment.h"
 
 using namespace xtd;
 
