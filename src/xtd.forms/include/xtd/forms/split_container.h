@@ -23,7 +23,7 @@ namespace xtd {
       virtual split_container& splitter_distance(int splitter_distance) {
         if (splitter_distance_ != splitter_distance) {
           splitter_distance_ = splitter_distance;
-          if (orientation_ == xtd::forms::orientation::horzontal) panel1_.height(splitter_distance);
+          if (orientation_ == xtd::forms::orientation::horizontal) panel1_.height(splitter_distance);
           else panel1_.width(splitter_distance);
         }
         return *this;

@@ -168,7 +168,7 @@ namespace xtd {
       int32_t large_change_ = 5;
       int32_t maximum_ = 10;
       int32_t minimum_ = 0;
-      forms::orientation orientation_ = forms::orientation::horzontal;
+      forms::orientation orientation_ = forms::orientation::horizontal;
       int32_t small_change_ = 1;
       int32_t tick_frequency_ = 1;
       forms::tick_style tick_style_ = forms::tick_style::bottom_right;
