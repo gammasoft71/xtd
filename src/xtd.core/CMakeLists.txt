@@ -172,7 +172,6 @@ add_sources(
   src/xtd/__opaque_environment_version.cpp
   src/xtd/__opaque_environment_win32.cpp
   src/xtd/__opaque_translator_gcc.cpp
-  src/xtd/__opaque_translator_macos.mm
   src/xtd/__opaque_translator_win32.cpp
   src/xtd/bit_converter.cpp
   src/xtd/environment.cpp
@@ -195,6 +194,9 @@ add_sources(
   src/xtd/io/path_gcc.cpp
   src/xtd/io/path_win32.cpp
 )
+if (APPLE)
+  add_sources(src/xtd/__opaque_translator_macos.mm)
+endif ()
 target_type(${XTD_LIBRARY_TYPE})
 
 # Install
