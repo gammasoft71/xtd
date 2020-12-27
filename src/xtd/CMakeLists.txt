@@ -29,6 +29,7 @@ add_sources(
   ../../locale/en/form.strings
   ../../locale/en/image_list.strings
   ../../locale/en/list_box.strings
+  ../../locale/en/menu.strings
   ../../scripts/cmake/update_export.cmake
   ../../scripts/cmake/update_version_number.cmake
   ../../scripts/cmake/xtd_commands.cmake
