@@ -27,6 +27,7 @@ add_sources(
   ../../locale/en/exception_dialog.strings
   ../../locale/en/exceptions.strings
   ../../locale/en/form.strings
+  ../../locale/en/image_list.strings
   ../../locale/en/list_box.strings
   ../../scripts/cmake/update_export.cmake
   ../../scripts/cmake/update_version_number.cmake
