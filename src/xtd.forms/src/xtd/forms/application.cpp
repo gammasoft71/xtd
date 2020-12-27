@@ -6,6 +6,7 @@
 #include <xtd/io/path.h>
 #include <xtd/environment.h>
 #include <xtd/invalid_operation_exception.h>
+#include <xtd/literals.h>
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/window_messages.h>
 #include "../../../include/xtd/forms/application.h"
@@ -167,27 +168,27 @@ bool application::light_mode_enabled() {
 }
 
 void application::enable_dark_mode() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call applicaiton::enable_dark_mode() before application::run()");
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call applicaiton::enable_dark_mode() before application::run()"_t);
   native::application::enable_dark_mode();
 }
 
 void application::enable_button_images() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call applicaiton::enable_button_images() before application::run()");
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call applicaiton::enable_button_images() before application::run()"_t);
   native::application::enable_button_images();
 }
 
 void application::enable_light_mode() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call applicaiton::enable_light_mode() before application::run()");
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call applicaiton::enable_light_mode() before application::run()"_t);
   native::application::enable_light_mode();
 }
 
 void application::enable_menu_images() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call applicaiton::enable_menu_images() before application::run()");
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call applicaiton::enable_menu_images() before application::run()"_t);
   native::application::enable_menu_images();
 }
 
 void application::enable_visual_styles() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call applicaiton::enable_visual_styles() before application::run()");
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call applicaiton::enable_visual_styles() before application::run()"_t);
   application::use_visual_styles_ = true;
   native::application::enable_visual_style();
 }
@@ -249,7 +250,7 @@ void application::run() {
 }
 
 void application::run(application_context& context) {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Application already running");
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Application already running"_t);
   cursor::current(cursors::default_cursor());
   context.thread_exit += application::on_app_thread_exit;
   native::application::register_message_filter(delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>(message_filter_proc));
