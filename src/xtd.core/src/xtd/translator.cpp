@@ -17,6 +17,7 @@ map<string, string_map> translator::language_values_;
 string translator::language_;
 
 void translator::add_value(const std::string& language, const std::string& key, const std::string& value) {
+  initialize(); // Must be first
   language_values_[language][key] = value;
 }
 std::string translator::language() {
@@ -37,6 +38,13 @@ std::vector<std::string> translator::languages() {
       languages.push_back(language_value.first);
   }
   return languages;
+}
+
+std::string translator::system_language() {
+  std::string language;
+  if (!std::locale().name().empty() && std::locale().name() != "C") language = xtd::strings::to_lower(xtd::strings::substring(std::locale().name(), 0, 2));
+  if (language.empty()) language = xtd::strings::to_lower(xtd::strings::substring(environment::get_environment_variable("LANG"), 0, 2));
+  return language;
 }
 
 std::string translator::translate(const std::string& language, const std::string& value) {
@@ -60,12 +68,9 @@ const char* translator::translate(const std::string& language, const char* value
 void translator::parse_locale(const std::filesystem::path& locale_path) {
   if (!std::filesystem::exists(locale_path) || !std::filesystem::is_directory(locale_path)) return;
   for (auto locale_item : std::filesystem::directory_iterator(locale_path)) {
-    if (locale_item.is_directory()) {
-      for (auto language_item : std::filesystem::directory_iterator(locale_item.path())) {
-        if (language_item.path().extension() == ".strings")
-          parse_file(language_item.path(), xtd::strings::to_lower(locale_item.path().filename().string()));
-      }
-    }
+    if (!locale_item.is_directory() || language_ != xtd::strings::to_lower(locale_item.path().filename().string())) break;
+    for (auto language_item : std::filesystem::directory_iterator(locale_item.path()))
+      if (language_item.path().extension() == ".strings") parse_file(language_item.path(), language_);
   }
 }
 
@@ -90,13 +95,12 @@ void translator::parse_file(const std::filesystem::path& file, const std::string
 }
 
 void translator::initialize() {
-  static bool initialized = false;
-  if (initialized) return;
+  if (language_.empty()) language_ = system_language();
   
-  if (language_.empty() && !std::locale().name().empty() && std::locale().name() != "C") language_ = xtd::strings::to_lower(xtd::strings::substring(std::locale().name(), 0, 2));
-  if (language_.empty()) language_ = xtd::strings::to_lower(xtd::strings::substring(environment::get_environment_variable("LANG"), 0, 2));
-
-  parse_locale(path(__XTD_INSTALL_PATH__)/"share"/"xtd"/"locale");
+  static std::string language_initialized ;
+  if (language_initialized == language_ || language_values_.find(language_) != language_values_.end()) return;
+    
+ parse_locale(path(__XTD_INSTALL_PATH__)/"share"/"xtd"/"locale");
   if (xtd::environment::os_version().is_macos_platform()) parse_locale(path(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]))/".."/"Resources"/"locale");
   else parse_locale(path(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]))/"locale");
   /*
@@ -104,5 +108,5 @@ void translator::initialize() {
   else if (xtd::environment::os_version().is_linux_platform()) parse_locale(path("usr")/"share"/"locale");
   else parse_locale(path(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0])));
    */
-  initialized = true;
+  language_initialized = language_;
 }

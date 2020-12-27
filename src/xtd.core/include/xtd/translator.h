@@ -14,6 +14,8 @@ namespace xtd {
     
     static std::vector<std::string> languages();
 
+    static std::string system_language();
+
     static void add_value(const std::string& language, const std::string& key, const std::string& value);
     
     static void parse_locale(const std::filesystem::path& locale_path);
