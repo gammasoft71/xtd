@@ -24,6 +24,7 @@ add_sources(
   ../../locale/en/combo_box.strings
   ../../locale/en/countries.strings
   ../../locale/en/domain_up_down.strings
+  ../../locale/en/exception_dialog.strings
   ../../locale/en/exceptions.strings
   ../../locale/en/list_box.strings
   ../../scripts/cmake/update_export.cmake
