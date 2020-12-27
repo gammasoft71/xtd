@@ -22,6 +22,7 @@ add_sources(
   ../../locale/en/checked_list_box.strings
   ../../locale/en/choice.strings
   ../../locale/en/combo_box.strings
+  ../../locale/en/countries.strings
   ../../locale/en/exceptions.strings
   ../../locale/en/list_box.strings
   ../../scripts/cmake/update_export.cmake
