@@ -1,23 +1,24 @@
-#include "../include/xtd/translator.h"
+#include "../../include/xtd/translator.h"
 #include <filesystem>
 #include <map>
-#include "../include/xtd/environment.h"
-#include "../include/xtd/format.h"
-#include "../include/xtd/format_exception.h"
-#include "../include/xtd/collections/specialized/string_map.h"
-#include "../include/xtd/io/file.h"
-#include "../include/xtd/io/path.h"
+#include "../../include/xtd/environment.h"
+#include "../../include/xtd/format.h"
+#include "../../include/xtd/format_exception.h"
+#include "../../include/xtd/collections/specialized/string_map.h"
+#include "../../include/xtd/io/file.h"
+#include "../../include/xtd/io/path.h"
 
 using namespace std;
 using namespace std::filesystem;
 using namespace xtd;
 using namespace xtd::collections::specialized;
 
+string __translator_get_system_language__();
+
 map<string, string_map> translator::language_values_;
 string translator::language_;
 
 void translator::add_value(const std::string& language, const std::string& key, const std::string& value) {
-  initialize(); // Must be first
   language_values_[language][key] = value;
 }
 std::string translator::language() {
@@ -41,10 +42,7 @@ std::vector<std::string> translator::languages() {
 }
 
 std::string translator::system_language() {
-  std::string language;
-  if (!std::locale().name().empty() && std::locale().name() != "C") language = xtd::strings::to_lower(xtd::strings::substring(std::locale().name(), 0, 2));
-  if (language.empty()) language = xtd::strings::to_lower(xtd::strings::substring(environment::get_environment_variable("LANG"), 0, 2));
-  return language;
+  return __translator_get_system_language__();
 }
 
 std::string translator::translate(const std::string& language, const std::string& value) {
@@ -95,7 +93,10 @@ void translator::parse_file(const std::filesystem::path& file, const std::string
 }
 
 void translator::initialize() {
-  if (language_.empty()) language_ = system_language();
+  if (language_.empty()) {
+    if (!std::locale().name().empty() && std::locale().name() != "C") language_ = xtd::strings::to_lower(xtd::strings::substring(std::locale().name(), 0, 2));
+    else language_ = system_language();
+  }
   
   static std::string language_initialized ;
   if (language_initialized == language_ || language_values_.find(language_) != language_values_.end()) return;
