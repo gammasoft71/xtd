@@ -26,9 +26,9 @@
 #include <sys/param.h>
 #include <unistd.h>
 
-#include "../include/xtd/__opaque_environment.h"
-#include "../include/xtd/environment.h"
-#include "../include/xtd/collections/specialized/string_vector.h"
+#include "../../include/xtd/__opaque_environment.h"
+#include "../../include/xtd/environment.h"
+#include "../../include/xtd/collections/specialized/string_vector.h"
 #include <xtd/strings.h>
 
 int __environment_argc;

@@ -1,7 +1,7 @@
-#include "../include/xtd/console.h"
-#include "../include/xtd/environment.h"
-#include "../include/xtd/system_exception.h"
-#include "../include/xtd/diagnostics/stack_trace.h"
+#include "../../include/xtd/console.h"
+#include "../../include/xtd/environment.h"
+#include "../../include/xtd/system_exception.h"
+#include "../../include/xtd/diagnostics/stack_trace.h"
 
 using namespace xtd;
 
