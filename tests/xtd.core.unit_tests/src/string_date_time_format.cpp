@@ -163,7 +163,7 @@ namespace unit_tests {
     }
     
     void test_method_(format_date_time_local_with_alignment_invalid) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0,a}", make_time<Value>(2019, 1, 2, 3, 4, 5));});
+      assert::throws<format_exception>([]{strings::format("{0,a}", make_time<Value>(2019, 1, 2, 3, 4, 5));});
     }
 
     void test_method_(format_date_time_local_with_std_tm_with_date_argument_and_zero_fill) {

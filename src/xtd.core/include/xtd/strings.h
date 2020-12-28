@@ -29,6 +29,7 @@
 /// @cond
 template<typename char_t, typename ...args_t>
 void __extract_format_arg(std::basic_string<char_t>& fmt, std::vector<__format_information<char_t>>& format, args_t&&... args);
+void __throw_strings__format_exception(const std::string& message);
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -620,7 +621,7 @@ namespace xtd {
             begin_format_iterator = iterator;
             while (*iterator != char_t('}') && iterator != fmt.end()) ++iterator;
             if (iterator == fmt.end())
-              throw std::invalid_argument("Invalid format expression : open bracket '}' without end bracket '{'");
+              __throw_strings__format_exception("Invalid format expression : open bracket '}' without end bracket '{'");
             end_format_iterator = iterator;
             __format_information<char_t> fi;
             fi.location = result.size();
@@ -652,10 +653,10 @@ namespace xtd {
                   index_str = format;
                 try {
                   for (auto c : index_str)
-                    if (!std::isdigit(c)) throw std::invalid_argument("Invalid format expression : format argument must be start by ':'");
+                    if (!std::isdigit(c)) __throw_strings__format_exception("Invalid format expression : format argument must be start by ':'");
                   fi.index = std::stoi(index_str);
                 } catch(...) {
-                  throw std::invalid_argument("Invalid format expression : format argument must be start by ':'");
+                  __throw_strings__format_exception("Invalid format expression : format argument must be start by ':'");
                 }
               }
             }
@@ -663,9 +664,9 @@ namespace xtd {
           }
         } else if (*iterator == char_t('}')) {
           if (++iterator == fmt.cend())
-            throw std::invalid_argument("Invalid format expression : closing bracket '{' without open bracket '}'");
+            __throw_strings__format_exception("Invalid format expression : closing bracket '{' without open bracket '}'");
           if (*iterator != char_t('}'))
-            throw std::invalid_argument("Invalid format expression : closing bracket '{' without open bracket '}'");
+            __throw_strings__format_exception("Invalid format expression : closing bracket '{' without open bracket '}'");
           result += *iterator;
         } else
           result += *iterator;
@@ -1717,7 +1718,7 @@ void __extract_format_arg(std::basic_string<char_t>& fmt, size_t& index, std::ve
         try {
           alignment = std::stoi(format.alignment);
         } catch(...) {
-          throw std::invalid_argument("Invalid format expression");
+          __throw_strings__format_exception("Invalid format expression");
         }
         if (alignment > 0) arg_str = xtd::strings::pad_left(arg_str, alignment);
         else if (alignment < 0) arg_str = xtd::strings::pad_right(arg_str, -alignment);

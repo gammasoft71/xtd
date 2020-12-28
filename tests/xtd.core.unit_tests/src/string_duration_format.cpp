@@ -19,7 +19,7 @@ namespace unit_tests {
     }
     
     void test_method_(format_without_format_argument_separator) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0G}", 2h + 3min + 32s);});
+      assert::throws<format_exception>([]{strings::format("{0G}", 2h + 3min + 32s);});
     }
     
     void test_method_(format_with_left_alignment) {
@@ -43,7 +43,7 @@ namespace unit_tests {
     }
  
     void test_method_(format_with_alignment_invalid) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0,a}",2h + 3min + 32s);});
+      assert::throws<format_exception>([]{strings::format("{0,a}",2h + 3min + 32s);});
     }
 
     void test_method_(format_with_invalid_argument) {

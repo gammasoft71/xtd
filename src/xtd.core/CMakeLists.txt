@@ -176,6 +176,7 @@ add_sources(
   src/xtd/__opaque_environment_win32.cpp
   src/xtd/__opaque_translator_gcc.cpp
   src/xtd/__opaque_translator_win32.cpp
+  src/xtd/__parse_exception.cpp
   src/xtd/bit_converter.cpp
   src/xtd/environment.cpp
   src/xtd/event_args.cpp
