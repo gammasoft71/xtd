@@ -49,16 +49,16 @@ namespace minesweeper {
             {"-"},
             {"Best &times...", {[&] {minesweeper::high_scores_dialog().show_dialog(*this);}}},
             {"-"},
-            {texts::exit, {[&] {close();}}},
+            {texts::exit(), {[&] {close();}}},
           }
         },
         {
-          texts::help, {
+          texts::help(), {
             {"&Contens", {[&] {}}, shortcut::f1},
             {"&Search for Help On...", {[&] {}}},
             {"&How to Use Help", {[&] {}}},
             {"-"},
-            {texts::about, {[&] {about_dialog().show();}}}
+            {texts::about(), {[&] {about_dialog().show();}}}
           }
         },
       });

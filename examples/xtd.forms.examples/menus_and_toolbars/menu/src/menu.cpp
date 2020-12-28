@@ -9,10 +9,10 @@ namespace examples {
     form1() {
       text("Menu example");
       menu({
-        {texts::file, {
-          {texts::new_, {*this, &form1::on_menu_click}, menu_images::file_new(), shortcut::cmd_n},
+        {texts::file(), {
+          {texts::new_(), {*this, &form1::on_menu_click}, menu_images::file_new(), shortcut::cmd_n},
           {"-"},
-          {texts::open, {*this, &form1::on_menu_click}, menu_images::file_open(), shortcut::cmd_o},
+          {texts::open(), {*this, &form1::on_menu_click}, menu_images::file_open(), shortcut::cmd_o},
           {"Open recen", {
             {"Path/File1", {*this, &form1::on_menu_click}},
             {"Path/File2", {*this, &form1::on_menu_click}},
@@ -20,37 +20,37 @@ namespace examples {
             {"Path/File4", {*this, &form1::on_menu_click}},
             {"Path/File5", {*this, &form1::on_menu_click}},
           }},
-          {texts::close, {*this, &form1::on_menu_click}, shortcut::cmd_w},
+          {texts::close(), {*this, &form1::on_menu_click}, shortcut::cmd_w},
           {"-"},
-          {texts::save, {*this, &form1::on_menu_click}, menu_images::file_save(), shortcut::cmd_s},
-          {texts::save_as, {*this, &form1::on_menu_click}},
+          {texts::save(), {*this, &form1::on_menu_click}, menu_images::file_save(), shortcut::cmd_s},
+          {texts::save_as(), {*this, &form1::on_menu_click}},
           {"-"},
           {"Page &Seup...", {*this, &form1::on_menu_click}},
-          {texts::print, {*this, &form1::on_menu_click}, menu_images::file_print(), shortcut::cmd_p},
-          {texts::print_preview, {*this, &form1::on_menu_click}, menu_images::file_print_preview()},
+          {texts::print(), {*this, &form1::on_menu_click}, menu_images::file_print(), shortcut::cmd_p},
+          {texts::print_preview(), {*this, &form1::on_menu_click}, menu_images::file_print_preview()},
           {"-"},
-          {texts::exit, {*this, &form1::on_menu_click}, menu_images::file_exit(), shortcut::alt_f4},
+          {texts::exit(), {*this, &form1::on_menu_click}, menu_images::file_exit(), shortcut::alt_f4},
         }},
-        {texts::edit, {
-          {texts::undo, {*this, &form1::on_menu_click}, menu_images::edit_undo(), shortcut::cmd_z},
-          {texts::redo, {*this, &form1::on_menu_click}, menu_images::edit_redo(), shortcut::cmd_shift_z},
+        {texts::edit(), {
+          {texts::undo(), {*this, &form1::on_menu_click}, menu_images::edit_undo(), shortcut::cmd_z},
+          {texts::redo(), {*this, &form1::on_menu_click}, menu_images::edit_redo(), shortcut::cmd_shift_z},
           {"-"},
-          {texts::cut, {*this, &form1::on_menu_click}, menu_images::edit_cut(), shortcut::cmd_x},
-          {texts::copy, {*this, &form1::on_menu_click}, menu_images::edit_copy(), shortcut::cmd_c},
-          {texts::paste, {*this, &form1::on_menu_click}, menu_images::edit_paste(), shortcut::cmd_v},
+          {texts::cut(), {*this, &form1::on_menu_click}, menu_images::edit_cut(), shortcut::cmd_x},
+          {texts::copy(), {*this, &form1::on_menu_click}, menu_images::edit_copy(), shortcut::cmd_c},
+          {texts::paste(), {*this, &form1::on_menu_click}, menu_images::edit_paste(), shortcut::cmd_v},
           {"-"},
-          {texts::select_all, {*this, &form1::on_menu_click}, shortcut::cmd_a},
+          {texts::select_all(), {*this, &form1::on_menu_click}, shortcut::cmd_a},
           {"-"},
-          {texts::options, {*this, &form1::on_menu_click}},
+          {texts::options(), {*this, &form1::on_menu_click}},
         }},
-        {texts::view, {
-          {texts::back, {*this, &form1::on_menu_click}, menu_images::view_back()},
-          {texts::forward, {*this, &form1::on_menu_click}, menu_images::view_forward()},
+        {texts::view(), {
+          {texts::back(), {*this, &form1::on_menu_click}, menu_images::view_back()},
+          {texts::forward(), {*this, &form1::on_menu_click}, menu_images::view_forward()},
           {"-"},
           {"Show", {*this, &form1::on_menu_click}},
           {"Hide", {*this, &form1::on_menu_click}},
         }},
-        {texts::options, {
+        {texts::options(), {
           {"Value A", {*this, &form1::on_menu_click}, menu_item_kind::check, true, shortcut::alt_1},
           {"Value B", {*this, &form1::on_menu_click}, menu_item_kind::check, shortcut::alt_2},
           {"Value C", {*this, &form1::on_menu_click}, menu_item_kind::check, true, shortcut::alt_3},
@@ -63,8 +63,8 @@ namespace examples {
           {"Value H", {*this, &form1::on_menu_click}, menu_item_kind::radio},
           {"Value I", {*this, &form1::on_menu_click}, menu_item_kind::radio, true},
         }},
-        {texts::help, {
-          {texts::about, {*this, &form1::on_menu_click}},
+        {texts::help(), {
+          {texts::about(), {*this, &form1::on_menu_click}},
         }},
       });
 
