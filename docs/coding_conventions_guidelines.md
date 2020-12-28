@@ -167,11 +167,11 @@ namespace xtd {
 }
 ```
 
-The file will be named to *form_closing_event_handler.hpp*.
+The file will be named to *form_closing_event_handler.h*.
 
 ## File extensions
 
-**√ DO** Use .hpp for header files.
+**√ DO** Use .h for header files.
 
 **√ DO** Use .cpp for source files.
 
