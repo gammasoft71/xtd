@@ -89,4 +89,7 @@ key "    64 bits : {0}{1}"
 value "    64 bits : {0}{1}"
 
 key "Debug"
+value "Debug"
+
+key "Release"
 value "Release"
