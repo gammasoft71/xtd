@@ -70,6 +70,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() {return "Specified method is not supported."_t;}
+    const char* default_message() const {return "Specified method is not supported."_t;}
   };
 }

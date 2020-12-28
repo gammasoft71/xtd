@@ -72,7 +72,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      const char* default_message() {return "Could not load the specified file."_t;}
+      const char* default_message() const {return "Could not load the specified file."_t;}
     };
   }
 }

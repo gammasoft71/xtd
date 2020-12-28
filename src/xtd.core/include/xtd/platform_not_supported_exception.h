@@ -70,6 +70,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() {return "Operation is not supported on this platform."_t;}
+    const char* default_message() const {return "Operation is not supported on this platform."_t;}
   };
 }

@@ -2,6 +2,7 @@
 #include <limits>
 #include "../../../include/xtd/drawing/font.h"
 #include "../../../include/xtd/drawing/graphics.h"
+#include <xtd/argument_exception.h>
 #include <xtd/drawing/native/font.h>
 
 using namespace xtd;
@@ -27,8 +28,8 @@ font::font(const font& prototype, font_style style) {
 }
 
 font::font(std::string family_name, float em_size, font_style style, graphics_unit unit, uint8_t gdi_char_set, bool gdi_vertical_font) {
-  if (em_size <= 0 || em_size == std::numeric_limits<float>::infinity() || std::isnan(em_size)) throw std::invalid_argument("em_size is less than or equal to 0, evaluates to infinity, or is not a valid number.");
-  if (unit == graphics_unit::display) throw std::invalid_argument("unit can't be equal to graphics_unit::display.");
+  if (em_size <= 0 || em_size == std::numeric_limits<float>::infinity() || std::isnan(em_size)) throw xtd::argument_exception("em_size is less than or equal to 0, evaluates to infinity, or is not a valid number.", caller_info_);
+  if (unit == graphics_unit::display) throw xtd::argument_exception("unit can't be equal to graphics_unit::display.", caller_info_);
   try {
     data_->font_family_ = drawing::font_family(family_name);
   } catch (...) {

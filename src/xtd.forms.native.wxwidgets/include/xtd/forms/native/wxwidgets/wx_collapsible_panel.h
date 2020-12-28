@@ -1,5 +1,5 @@
 #pragma once
-#include <stdexcept>
+#include <xtd/argument_exception.h>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/forms/create_params.h>
 #include <wx/collpane.h>
@@ -12,7 +12,7 @@ namespace xtd {
       class wx_collapsible_panel : public control_handler {
       public:
         wx_collapsible_panel(const forms::create_params& create_params) {
-          if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
+          if (!create_params.parent()) throw xtd::argument_exception("control must have a parent", caller_info_);
           control_handler::create<wxCollapsiblePane>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxString(create_params.caption().c_str(), wxMBConvUTF8()), wxPoint(create_params.x(), create_params.y()));
 #if defined(__WIN32__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {

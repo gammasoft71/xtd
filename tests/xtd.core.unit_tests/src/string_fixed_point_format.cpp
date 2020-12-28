@@ -1,4 +1,5 @@
 #include <xtd/strings.h>
+#include <xtd/format_exception.h>
 #include <xtd/xtd.tunit>
 
 using namespace std;
@@ -76,15 +77,15 @@ namespace unit_tests {
     }
     
     void test_method_(format_with_currency_argument_and_three_digitis_precision) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:C100}", static_cast<Value>(42.24));});
+      assert::throws<xtd::format_exception>([]{strings::format("{0:C100}", static_cast<Value>(42.24));});
     }
     
     void test_method_(format_with_currency_argument_and_negative_precision) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:C-5}", static_cast<Value>(42.24));});
+      assert::throws<xtd::format_exception>([]{strings::format("{0:C-5}", static_cast<Value>(42.24));});
     }
     
     void test_method_(format_with_currency_argument_and_invalid_precision) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:Ca}", static_cast<Value>(42.24));});
+      assert::throws<xtd::format_exception>([]{strings::format("{0:Ca}", static_cast<Value>(42.24));});
     }
     
     void test_method_(format_with_exponencial_argument) {
@@ -106,15 +107,15 @@ namespace unit_tests {
     }
     
     void test_method_(format_with_exponencial_argument_and_three_digitis_precision) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:E100}", static_cast<Value>(42.24));});
+      assert::throws<xtd::format_exception>([]{strings::format("{0:E100}", static_cast<Value>(42.24));});
     }
     
     void test_method_(format_with_exponencial_argument_and_negative_precision) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:E-8}", static_cast<Value>(42.24));});
+      assert::throws<xtd::format_exception>([]{strings::format("{0:E-8}", static_cast<Value>(42.24));});
     }
     
     void test_method_(format_with_exponencial_argument_and_invalid_precision) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:Ea}", static_cast<Value>(42.24));});
+      assert::throws<xtd::format_exception>([]{strings::format("{0:Ea}", static_cast<Value>(42.24));});
     }
     
     void test_method_(format_with_fixed_point_argument) {
@@ -141,7 +142,7 @@ namespace unit_tests {
     }
     
     void test_method_(format_with_fixed_point_argument_and_invalid_precision) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:Fa}", static_cast<Value>(42.24));});
+      assert::throws<xtd::format_exception>([]{strings::format("{0:Fa}", static_cast<Value>(42.24));});
     }
     
     void test_method_(format_with_general_argument) {
@@ -176,23 +177,23 @@ namespace unit_tests {
     }
     
     void test_method_(format_with_decimals_with_general_argument_and_three_digitis_precision) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:G100}", static_cast<Value>(42.24));});
+      assert::throws<xtd::format_exception>([]{strings::format("{0:G100}", static_cast<Value>(42.24));});
     }
     
     void test_method_(format_with_general_argument_and_negative_precision) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:G-4}", static_cast<Value>(42.0));});
+      assert::throws<xtd::format_exception>([]{strings::format("{0:G-4}", static_cast<Value>(42.0));});
     }
     
     void test_method_(format_with_decimals_with_general_argument_and_negative_precision) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:G-4}", static_cast<Value>(42.24));});
+      assert::throws<xtd::format_exception>([]{strings::format("{0:G-4}", static_cast<Value>(42.24));});
     }
     
     void test_method_(format_with_decimals_with_general_argument_and_invalid_precision) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:Ga}", static_cast<Value>(42.0));});
+      assert::throws<xtd::format_exception>([]{strings::format("{0:Ga}", static_cast<Value>(42.0));});
     }
     
     void test_method_(format_with_general_argument_and_invalid_precision) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:Ga}", static_cast<Value>(42.24));});
+      assert::throws<xtd::format_exception>([]{strings::format("{0:Ga}", static_cast<Value>(42.24));});
     }
     
     void test_method_(format_with_number_argument) {
@@ -217,15 +218,15 @@ namespace unit_tests {
     }
     
     void test_method_(format_with_number_argument_and_three_digitis_precision) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:N100}", static_cast<Value>(1234567.89));});
+      assert::throws<xtd::format_exception>([]{strings::format("{0:N100}", static_cast<Value>(1234567.89));});
     }
     
     void test_method_(format_with_number_argument_and_negative_precision) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:N-4}", static_cast<Value>(1234567.89));});
+      assert::throws<xtd::format_exception>([]{strings::format("{0:N-4}", static_cast<Value>(1234567.89));});
     }
     
     void test_method_(format_with_number_argument_and_invalid_precision) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:Na}", static_cast<Value>(1234567.89));});
+      assert::throws<xtd::format_exception>([]{strings::format("{0:Na}", static_cast<Value>(1234567.89));});
     }
     
     void test_method_(format_with_percent_argument) {
@@ -241,15 +242,15 @@ namespace unit_tests {
     }
     
     void test_method_(format_with_percent_argument_and_three_digitis_precision) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:P100}", static_cast<Value>(0.42));});
+      assert::throws<xtd::format_exception>([]{strings::format("{0:P100}", static_cast<Value>(0.42));});
     }
     
     void test_method_(format_with_percent_argument_and_negative_precision) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:P-2}", static_cast<Value>(0.42));});
+      assert::throws<xtd::format_exception>([]{strings::format("{0:P-2}", static_cast<Value>(0.42));});
     }
     
     void test_method_(format_with_percent_argument_and_invalid_precision) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:Pa}", static_cast<Value>(0.42));});
+      assert::throws<xtd::format_exception>([]{strings::format("{0:Pa}", static_cast<Value>(0.42));});
     }
     
     void test_method_(format_with_alignment_before_format) {
@@ -257,11 +258,11 @@ namespace unit_tests {
     }
     
     void test_method_(format_with_alignmentafter_format) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:F,6}", static_cast<Value>(42.0));});
+      assert::throws<xtd::format_exception>([]{strings::format("{0:F,6}", static_cast<Value>(42.0));});
     }
     
     void test_method_(format_with_invalid_format) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:V}", static_cast<Value>(42.0));});
+      assert::throws<xtd::format_exception>([]{strings::format("{0:V}", static_cast<Value>(42.0));});
     }
   };
 }

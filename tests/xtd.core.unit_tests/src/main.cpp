@@ -1,4 +1,10 @@
-#include <xtd/startup.h>
-#include <xtd/tunit_main.h>
+#include <xtd/system_exception.h>
+#include <xtd/console_unit_test.h>
 
-startup_(tunit_main_);
+using namespace xtd;
+using namespace xtd::tunit;
+
+int main(int argc, char* argv[]) {
+  system_exception::enable_stack_trace(false);
+  return console_unit_test(argc, argv).run();
+}

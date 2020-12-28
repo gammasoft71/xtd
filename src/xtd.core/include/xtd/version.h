@@ -3,7 +3,9 @@
 #include <sstream>
 #include <regex>
 #include <vector>
-#include "collections/specialized//string_vector.h"
+#include "collections/specialized/string_vector.h"
+#include "argument_exception.h"
+#include "format_exception.h"
 
 /// @cond
 #undef major
@@ -51,7 +53,7 @@ namespace xtd {
         case 3: return version(std::stoi(versions[0]), std::stoi(versions[1]), std::stoi(versions[2]));
         case 4: return version(std::stoi(versions[0]), std::stoi(versions[1]), std::stoi(versions[2]), std::stoi(versions[3]));
       }
-      throw std::invalid_argument("bad format");
+      throw xtd::format_exception(caller_info_);
     }
     
     static bool try_parse(const std::string& ver, version& result) noexcept {
@@ -67,7 +69,7 @@ namespace xtd {
     
     std::string to_string(size_t field_count) const {
       if (field_count > 4 || (field_count >= 3 && build_ == -1) || (field_count == 4 && revision_ == -1))
-        throw std::invalid_argument("field_count invalid");
+        throw xtd::argument_exception("field_count invalid", caller_info_);
       std::stringstream result;
       if (field_count >= 1)
         result << std::to_string(major_);

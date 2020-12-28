@@ -9,6 +9,8 @@
 /// @endcond
 
 #include "__numeric_formater.h"
+#include "__format_exception.h"
+
 
 /// @cond
 template<typename char_t>
@@ -26,7 +28,7 @@ inline std::basic_string<char_t> __boolean_formater(const std::basic_string<char
     case 'X': return __numeric_formater(fmt, value ? 1 : 0, loc);
     case 'g':
     case 'G': return value ? std::basic_string<char_t> {'t', 'r', 'u', 'e'} : std::basic_string<char_t> {'f', 'a', 'l', 's', 'e'};
-    default: throw std::invalid_argument("Invalid format expression");
+    default: __format_exception("Invalid format expression"); return {};
   }
 }
 /// @endcond

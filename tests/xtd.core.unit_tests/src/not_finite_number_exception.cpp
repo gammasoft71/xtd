@@ -7,14 +7,6 @@ using namespace xtd::tunit;
 namespace unit_tests {
   class test_class_(test_not_finite_number_exception) {
   public:
-    static void class_initialize_(class_initialize) {
-      system_exception::enable_stack_trace(false);
-    }
-    
-    static void class_cleanup_(class_cleanup) {
-      system_exception::enable_stack_trace(true);
-    }
-    
     void test_method_(default_creator) {
       not_finite_number_exception e;
       assert::are_equal_(std::system_category(), e.error().category());

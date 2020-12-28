@@ -70,6 +70,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() {return "Object pointer not set to an instance of an object."_t;}
+    const char* default_message() const {return "Object pointer not set to an instance of an object."_t;}
   };
 }

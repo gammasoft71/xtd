@@ -1,4 +1,5 @@
 #include <xtd/strings.h>
+#include <xtd/format_exception.h>
 #include <xtd/xtd.tunit>
 
 using namespace std;
@@ -21,14 +22,14 @@ namespace xtd {
   template<>
   std::string to_string(const point& p, const std::string& fmt, const std::locale& loc) {
     if (fmt.empty()) return xtd::strings::format("({}, {})", p.x, p.y);
-    if (fmt.size() > 1) throw std::invalid_argument("Format can contains only one character.");
+    if (fmt.size() > 1) throw xtd::format_exception("Format can contains only one character.");
 
     switch (fmt[0]) {
       case 'l': return xtd::strings::format("(x={}, y={})", p.x, p.y);
       case 'L': return xtd::strings::format("(X={}, Y={})", p.x, p.y);
       case 'g':
       case 'G': return xtd::strings::format("({}, {})", p.x, p.y);
-      default: throw std::invalid_argument("Format invalid argument.");
+      default: throw xtd::format_exception("Format invalid argument.");
     }
   }
 }
@@ -65,7 +66,7 @@ namespace unit_tests {
     }
 
     void test_method_(format_point_with_invalid_argument) {
-      assert::throws<std::invalid_argument>([]{xtd::strings::format("{0:, }", point {42, 24});});
+      assert::throws<xtd::format_exception>([]{xtd::strings::format("{0:, }", point {42, 24});});
     }
   };
 }

@@ -1,5 +1,5 @@
 #pragma once
-#include <stdexcept>
+#include <xtd/argument_exception.h>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/forms/create_params.h>
 #include <xtd/forms/native/text_box_styles.h>
@@ -14,8 +14,7 @@ namespace xtd {
       public:
         enum class character_casing {normal, upper, lower};
         wx_text_box(const forms::create_params& create_params) {
-          if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
-
+          if (!create_params.parent()) throw xtd::argument_exception("control must have a parent", caller_info_);
           int32_t height = create_params.height();
 #if defined(__WXGTK__)
           if (height < 32) height = 32;

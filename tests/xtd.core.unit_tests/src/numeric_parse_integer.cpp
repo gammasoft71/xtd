@@ -1,4 +1,5 @@
 #include <xtd/strings.h>
+#include <xtd/system_exception.h>
 #include <xtd/xtd.tunit>
 
 using namespace std;

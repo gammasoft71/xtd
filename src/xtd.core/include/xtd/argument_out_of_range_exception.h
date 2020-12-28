@@ -70,6 +70,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() {return "Specified argument is out of range of valid values."_t;}
+    const char* default_message() const {return "Specified argument is out of range of valid values."_t;}
   };
 }

@@ -73,7 +73,7 @@ void form::menu(intptr_t form, intptr_t menu) {
   }
 #endif
 
-  //if (menu != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(form)->control())) throw std::invalid_argument("dialog can't have menu");
+  //if (menu != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(form)->control())) throw argument_exception("dialog can't have menu");
   if (!dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(form)->control())) {
     if (menu != 0) throw std::invalid_argument("dialog can't have menu");
     return;

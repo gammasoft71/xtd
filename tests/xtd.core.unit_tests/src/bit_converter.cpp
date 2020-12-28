@@ -1,6 +1,7 @@
 #include <cfloat>
 #include <cmath>
 #include <xtd/bit_converter.h>
+#include <xtd/argument_out_of_range_exception.h>
 #include <xtd/using.h>
 #include "bytes_assert.h"
 
@@ -538,11 +539,11 @@ namespace unit_tests {
       assert::are_equal("03-06-09", bit_converter::to_string(vectorOne, 0), line_info_);
       assert::are_equal("06-09", bit_converter::to_string(vectorOne, 1), line_info_);
       assert::are_equal("09", bit_converter::to_string(vectorOne, 2), line_info_);
-      assert::throws<out_of_range>([&] {bit_converter::to_string(vectorOne, 3);}, line_info_);
+      assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorOne, 3);}, line_info_);
       
       vector<uint8_t> vectorEmpty;
       assert::are_equal("", bit_converter::to_string(vectorEmpty, 0), line_info_);
-      assert::throws<out_of_range>([&] {bit_converter::to_string(vectorEmpty, 1);}, line_info_);
+      assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorEmpty, 1);}, line_info_);
     }
     
     void test_method_(to_string_with_start_index_and_length) {
@@ -552,21 +553,21 @@ namespace unit_tests {
       assert::are_equal("03", bit_converter::to_string(vectorOne, 0, 1), line_info_);
       assert::are_equal("03-06", bit_converter::to_string(vectorOne, 0, 2), line_info_);
       assert::are_equal("03-06-09", bit_converter::to_string(vectorOne, 0, 3), line_info_);
-      assert::throws<out_of_range>([&] {bit_converter::to_string(vectorOne, 0, 4);}, line_info_);
+      assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorOne, 0, 4);}, line_info_);
       
       assert::are_equal("", bit_converter::to_string(vectorOne, 1, 0), line_info_);
       assert::are_equal("06", bit_converter::to_string(vectorOne, 1, 1), line_info_);
       assert::are_equal("06-09", bit_converter::to_string(vectorOne, 1, 2), line_info_);
-      assert::throws<out_of_range>([&] {bit_converter::to_string(vectorOne, 1, 3);}, line_info_);
+      assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorOne, 1, 3);}, line_info_);
       
       assert::are_equal("", bit_converter::to_string(vectorOne, 2, 0), line_info_);
       assert::are_equal("09", bit_converter::to_string(vectorOne, 2, 1), line_info_);
-      assert::throws<out_of_range>([&] {bit_converter::to_string(vectorOne, 2, 2);}, line_info_);
+      assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorOne, 2, 2);}, line_info_);
       
-      assert::throws<out_of_range>([&] {bit_converter::to_string(vectorOne, 3, 1);}, line_info_);
+      assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorOne, 3, 1);}, line_info_);
       
       vector<uint8_t> vectorEmpty;
-      assert::throws<out_of_range>([&] {bit_converter::to_string(vectorEmpty, 1);}, line_info_);
+      assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorEmpty, 1);}, line_info_);
     }
     
     void test_method_(to_uint16) {

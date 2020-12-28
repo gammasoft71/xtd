@@ -16,6 +16,7 @@ elseif (UNIX)
 endif ()
 add_sources(
   include/xtd/__generic_stream_output.h
+  include/xtd/__generic_stream_output.h
   include/xtd/__get_err_rdbuf.h
   include/xtd/__get_in_rdbuf.h
   include/xtd/__get_out_rdbuf.h
@@ -149,6 +150,7 @@ add_sources(
   include/xtd/internal/__enum_formater.h
   include/xtd/internal/__fixed_point_formater.h
   include/xtd/internal/__format.h
+  include/xtd/internal/__format_exception.h
   include/xtd/internal/__format_information.h
   include/xtd/internal/__format_stringer.h
   include/xtd/internal/__natural_formater.h
@@ -189,6 +191,7 @@ add_sources(
   src/xtd/diagnostics/process_start_info.cpp
   src/xtd/diagnostics/stack_trace.cpp
   src/xtd/diagnostics/trace.cpp
+  src/xtd/internal/__format_exception.cpp
   src/xtd/io/file_gcc.cpp
   src/xtd/io/file_win32.cpp
   src/xtd/io/path_gcc.cpp

@@ -1,5 +1,5 @@
 #pragma once
-#include <stdexcept>
+#include <xtd/argument_exception.h>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/forms/create_params.h>
 #include <xtd/forms/native/button_styles.h>
@@ -18,7 +18,7 @@ namespace xtd {
       class wx_button : public control_handler {
       public:
         wx_button(const xtd::forms::create_params& create_params) {
-          if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
+          if (!create_params.parent()) throw xtd::argument_exception("control must have a parent", caller_info_);
           owner_draw_ = (create_params.style() & BS_OWNERDRAW) == BS_OWNERDRAW;
           if (owner_draw_) {
             control_handler::create<wx_user_window>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), 0);

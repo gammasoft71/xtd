@@ -1,5 +1,5 @@
 #pragma once
-#include <stdexcept>
+#include <xtd/argument_exception.h>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/forms/create_params.h>
 #include <xtd/forms/native/static_styles.h>
@@ -13,7 +13,7 @@ namespace xtd {
       class wx_picture_box : public control_handler {
       public:
         wx_picture_box(const forms::create_params& create_params) {
-          if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
+          if (!create_params.parent()) throw xtd::argument_exception("control must have a parent", caller_info_);
           if ((create_params.style() & SS_BITMAP_CENTER) == SS_BITMAP_CENTER) {
             control_handler::create<wxStaticBitmap>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxNullBitmap, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
             static_cast<wxStaticBitmap*>(control())->SetScaleMode(wxStaticBitmap::Scale_None);

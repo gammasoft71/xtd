@@ -9,6 +9,7 @@
 /// @endcond
 
 #include "../strings.h"
+#include "__format_exception.h"
 #include <chrono>
 #include <ratio>
 
@@ -41,7 +42,7 @@ inline std::basic_string<char_t> __make_string_from_duration(std::chrono::durati
 template<typename char_t, typename type_t, typename period_t = std::ratio<1>>
 inline std::basic_string<char_t> __duration_formater(std::basic_string<char_t> fmt, const std::chrono::duration<type_t, period_t>& value, const std::locale& loc) {
   if (fmt.empty()) fmt =  xtd::strings::format(std::basic_string<char_t> {'G'});
-  if (fmt.size() > 1) throw std::invalid_argument("Invalid format");
+  if (fmt.size() > 1) __format_exception("Invalid format");
   
   switch (fmt[0]) {
     case 'c': return __make_string_from_duration<char_t>(value);
@@ -59,7 +60,7 @@ inline std::basic_string<char_t> __duration_formater(std::basic_string<char_t> f
     case 'N': return xtd::strings::format(std::basic_string<char_t> {'{', ':', 'D', '9', '}'}, std::chrono::duration_cast<std::chrono::nanoseconds>(value).count() % 1000000000);
     case 's': return xtd::strings::format(std::basic_string<char_t> {'{', ':', 'D', '}'}, std::chrono::duration_cast<std::chrono::seconds>(value).count() % 60);
     case 'S': return xtd::strings::format(std::basic_string<char_t> {'{', ':', 'D', '2', '}'}, std::chrono::duration_cast<std::chrono::seconds>(value).count() % 60);
-    default: throw std::invalid_argument("Invalid format");
+    default: __format_exception("Invalid format"); return {};
   }
 }
 /// @endcond

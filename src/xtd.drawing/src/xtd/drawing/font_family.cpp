@@ -1,4 +1,5 @@
 #include "../../../include/xtd/drawing/text/installed_font_collection.h"
+#include <xtd/argument_exception.h>
 #include <xtd/drawing/native/font_family.h>
 
 using namespace xtd;
@@ -6,9 +7,9 @@ using namespace xtd::drawing;
 
 font_family::font_family(const std::string& name) {
   data_->name_ = name;
-  if (data_->name_.empty()) throw std::invalid_argument("name is an empty string");
+  if (data_->name_.empty()) throw xtd::argument_exception("name is an empty string", caller_info_);
   data_->handle_ = native::font_family::create(name);
-  if (data_->handle_ == 0) throw std::invalid_argument("name specifies a font that is not installed on the computer running the application.");
+  if (data_->handle_ == 0) throw xtd::argument_exception("name specifies a font that is not installed on the computer running the application.", caller_info_);
 }
 
 font_family::font_family(text::generic_font_families generic_font_families) {
@@ -16,7 +17,7 @@ font_family::font_family(text::generic_font_families generic_font_families) {
     case text::generic_font_families::serif: *this = font_family(native::font_family::generic_serif_name()); break;
     case text::generic_font_families::sans_serif: *this = font_family(native::font_family::generic_sans_serif_name()); break;
     case text::generic_font_families::monospace: *this = font_family(native::font_family::generic_monospace_name()); break;
-    default: throw std::invalid_argument("name specifies a font that is not installed on the computer running the application.");
+    default: throw xtd::argument_exception("name specifies a font that is not installed on the computer running the application.", caller_info_);
   }
 }
 
@@ -27,7 +28,7 @@ font_family::font_family(const std::string& name, const text::font_collection& f
       return;
     }
 
-  throw std::invalid_argument("name specifies a font that is not a part of specified font_collection.");
+  throw xtd::argument_exception("name specifies a font that is not a part of specified font_collection.", caller_info_);
 }
 
 font_family::font_family(const font_family& value) {
