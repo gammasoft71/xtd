@@ -5,7 +5,7 @@
 /// @cond
 #include <stdexcept>
 #include <string>
-#include <stacktrace/call_stack.hpp>
+#include <stacktrace/call_stack.h>
 
 namespace stacktrace {
   /** Abstract base-class for all stack-augmented exception classes.
