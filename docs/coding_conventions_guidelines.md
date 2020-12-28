@@ -121,8 +121,8 @@ For example, if a xtd.forms library header file contains :
 ```c++
 #pragma once
 
-#include <xtd/event_args.hpp>
-#include "close_reason.hpp"
+#include <xtd/event_args.h>
+#include "close_reason.h"
 
 namespace xtd {
   namespace forms {
@@ -156,8 +156,8 @@ For example, if file contains :
 ```c++
 #pragma once
 
-#include <xtd/event_handler.hpp>
-#include "form_closed_event_args.hpp"
+#include <xtd/event_handler.h>
+#include "form_closed_event_args.h"
 
 namespace xtd {
   namespace forms {
@@ -289,7 +289,7 @@ math() = delete;
 
 ## global variables
 
-**X DO NOT** Use global variables. All variables are in class. If necessary a global or static variable can create in a source files (.cpp) but it can't visible in the header file (.hpp). 
+**X DO NOT** Use global variables. All variables are in class. If necessary a global or static variable can create in a source files (.cpp) but it can't visible in the header file (.h). 
 
 **√ DO** Uses [factory_method](factory_method.md), [builder](builder.md) or [singleton](singleton.md) patterns to create unique object.
 
@@ -307,7 +307,7 @@ int x = 3;
 
 The documentation is generate by Doxygen.
 
-**√ DO** Write Doxygen documentation only in header file (**.hpp**).
+**√ DO** Write Doxygen documentation only in header file (**.h**).
 
 **√ DO** All documentation comment must start by triple slash **///**
 
@@ -328,11 +328,11 @@ void my_func(const std::sstring& name) {
 };
 ```
 
-This example of doxygen documented class (application_context.hpp) shows somes doxygen commands:
+This example of doxygen documented class (application_context.h) shows somes doxygen commands:
 
 ```c++
 #pragma once
-#include "form.hpp"
+#include "form.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
