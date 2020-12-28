@@ -1,4 +1,5 @@
 #include <xtd/strings.h>
+#include <xtd/argument_exception.h>
 #include <xtd/xtd.tunit>
 
 using namespace std;
@@ -57,18 +58,18 @@ namespace unit_tests {
     }
     
     void test_method_(parse_styles_number_with_two_leading_plus_sign) {
-      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("++42", number_styles::number);});
+      assert::throws<argument_exception>([]{xtd::parse<Value>("++42", number_styles::number);});
     }
     
     void test_method_(parse_styles_number_with_leading_minus_sign) {
       if (std::is_signed<Value>::value)
         assert::are_equal(static_cast<Value>(-42), xtd::parse<Value>("-42", number_styles::number));
       else
-        assert::throws<std::invalid_argument>([]{xtd::parse<Value>("-42", number_styles::number);});
+        assert::throws<argument_exception>([]{xtd::parse<Value>("-42", number_styles::number);});
     }
     
     void test_method_(parse_styles_number_with_two_leading_minus_sign) {
-      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("--42", number_styles::number);});
+      assert::throws<argument_exception>([]{xtd::parse<Value>("--42", number_styles::number);});
     }
     
     void test_method_(parse_styles_number_with_trailing_plus_sign) {
@@ -76,29 +77,29 @@ namespace unit_tests {
     }
     
     void test_method_(parse_styles_number_with_two_trailing_plus_sign) {
-      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42++", number_styles::number);});
+      assert::throws<argument_exception>([]{xtd::parse<Value>("42++", number_styles::number);});
     }
     
     void test_method_(parse_styles_number_with_trailing_minus_sign) {
       if (std::is_signed<Value>::value)
         assert::are_equal(static_cast<Value>(-42), xtd::parse<Value>("42-", number_styles::number));
       else
-        assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42-", number_styles::number);});
+        assert::throws<argument_exception>([]{xtd::parse<Value>("42-", number_styles::number);});
     }
     
     void test_method_(parse_styles_number_with_two_trailing_minus_sign) {
-      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42--", number_styles::number);});
+      assert::throws<argument_exception>([]{xtd::parse<Value>("42--", number_styles::number);});
     }
     
     void test_method_(parse_styles_number_with_parentheses) {
       if (std::is_signed<Value>::value)
-        assert::throws<std::invalid_argument>([]{xtd::parse<Value>("(42)", number_styles::number);});
+        assert::throws<argument_exception>([]{xtd::parse<Value>("(42)", number_styles::number);});
       else
-        assert::throws<std::invalid_argument>([]{xtd::parse<Value>("(42)", number_styles::number);});
+        assert::throws<argument_exception>([]{xtd::parse<Value>("(42)", number_styles::number);});
     }
     
     void test_method_(parse_styles_number_with_two_parentheses) {
-      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("((42))", number_styles::number);});
+      assert::throws<argument_exception>([]{xtd::parse<Value>("((42))", number_styles::number);});
     }
     
     void test_method_(parse_styles_number_with_decimal_point) {
@@ -106,7 +107,7 @@ namespace unit_tests {
     }
     
     void test_method_(parse_styles_number_with_two_decimal_point) {
-      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("4.2.0", number_styles::number);});
+      assert::throws<argument_exception>([]{xtd::parse<Value>("4.2.0", number_styles::number);});
     }
     
     void test_method_(parse_styles_number_with_thousands) {
@@ -116,23 +117,23 @@ namespace unit_tests {
     
     void test_method_(parse_styles_number_with_two_thousands) {
       if (!std::is_same<Value, int8_t>::value && !std::is_same<Value, char>::value && !std::is_same<Value, unsigned char>::value)
-        assert::throws<std::invalid_argument>([]{xtd::parse<Value>("1,,234", number_styles::number);});
+        assert::throws<argument_exception>([]{xtd::parse<Value>("1,,234", number_styles::number);});
     }
     
     void test_method_(parse_styles_number_with_exponent) {
-      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("4E+01", number_styles::number);});
+      assert::throws<argument_exception>([]{xtd::parse<Value>("4E+01", number_styles::number);});
     }
     
     void test_method_(parse_styles_number_with_leading_currency_symbol) {
-      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("$42", number_styles::number);});
+      assert::throws<argument_exception>([]{xtd::parse<Value>("$42", number_styles::number);});
     }
     
     void test_method_(parse_styles_number_with_trailing_currency_symbol) {
-      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42$", number_styles::number);});
+      assert::throws<argument_exception>([]{xtd::parse<Value>("42$", number_styles::number);});
     }
     
     void test_method_(parse_styles_number_with_binary_specifier) {
-      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("0b101010", number_styles::number);});
+      assert::throws<argument_exception>([]{xtd::parse<Value>("0b101010", number_styles::number);});
     }
     
     void test_method_(parse_styles_number_with_octal_specifier) {
@@ -140,11 +141,11 @@ namespace unit_tests {
     }
     
     void test_method_(parse_styles_number_with_hexa_specifier) {
-      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("0x2A", number_styles::number);});
+      assert::throws<argument_exception>([]{xtd::parse<Value>("0x2A", number_styles::number);});
     }
     
     void test_method_(parse_styles_number_invalid) {
-      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("z42", number_styles::number);});
+      assert::throws<argument_exception>([]{xtd::parse<Value>("z42", number_styles::number);});
     }
   };
 }

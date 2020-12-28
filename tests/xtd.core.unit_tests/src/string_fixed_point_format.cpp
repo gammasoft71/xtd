@@ -31,7 +31,7 @@ namespace unit_tests {
     }
     
     void test_method_(format_without_format_argument_separator) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0F}", static_cast<Value>(42.24));});
+      assert::throws<format_exception>([]{strings::format("{0F}", static_cast<Value>(42.24));});
     }
     
     void test_method_(format_with_left_alignment) {
@@ -59,7 +59,7 @@ namespace unit_tests {
     }
     
     void test_method_(format_with_alignment_invalid) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0,a}", static_cast<Value>(42.24));});
+      assert::throws<format_exception>([]{strings::format("{0,a}", static_cast<Value>(42.24));});
     }
     
     void test_method_(format_with_currency_argument) {
@@ -134,11 +134,11 @@ namespace unit_tests {
     }
     
     void test_method_(format_with_fixed_point_argument_and_three_digitis_precision) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0F100}", static_cast<Value>(42.24));});
+      assert::throws<format_exception>([]{strings::format("{0F100}", static_cast<Value>(42.24));});
     }
     
     void test_method_(format_with_fixed_point_argument_and_negative_precision) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0F-4}", static_cast<Value>(42.24));});
+      assert::throws<format_exception>([]{strings::format("{0F-4}", static_cast<Value>(42.24));});
     }
     
     void test_method_(format_with_fixed_point_argument_and_invalid_precision) {

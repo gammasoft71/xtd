@@ -46,7 +46,7 @@ namespace unit_tests {
     }
 
     void test_method_(format_without_format_argument_separator) {
-      assert::throws<std::invalid_argument>([]{strings::format(L"{0D}", static_cast<Value>(42));});
+      assert::throws<format_exception>([]{strings::format(L"{0D}", static_cast<Value>(42));});
     }
     
     void test_method_(format_with_left_alignment) {
@@ -74,7 +74,7 @@ namespace unit_tests {
     }
     
     void test_method_(format_with_alignment_invalid) {
-      assert::throws<std::invalid_argument>([]{strings::format(L"{0,a}", static_cast<Value>(42));});
+      assert::throws<format_exception>([]{strings::format(L"{0,a}", static_cast<Value>(42));});
     }
     
     void test_method_(format_with_binary_argument) {
