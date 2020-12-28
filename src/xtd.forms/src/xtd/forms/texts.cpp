@@ -1,89 +1,344 @@
 #include "../../../include/xtd/forms/texts.h"
+#include <xtd/literals.h>
 
 using namespace xtd::forms;
 
-const std::string texts::abort = "&Abort";
-const std::string texts::about = "&About";
-const std::string texts::actual_size = "&Actual Size";
-const std::string texts::add = "Add";
-const std::string texts::alignment = "Alignment";
-const std::string texts::align_left = "Align Left";
-const std::string texts::align_right = "Align Right";
-const std::string texts::apply = "&Apply";
-const std::string texts::ascending = "&Ascending";
-const std::string texts::back = "&Back";
-const std::string texts::bold = "&Bold";
-const std::string texts::bottom = "&Bottom";
-const std::string texts::cancel = "&Cancel";
-const std::string texts::cdrom = "&CD-Rom";
-const std::string texts::centered = "Centered";
-const std::string texts::clear = "&Clear";
-const std::string texts::close = "&Close";
-const std::string texts::color = "&Color";
-const std::string texts::contents = "&Contents";
-const std::string texts::convert = "&Convert";
-const std::string texts::copy = "&Copy";
-const std::string texts::customize = "&Customize";
-const std::string texts::cut = "Cu&t";
-const std::string texts::del = "&Delete";
-const std::string texts::descending = "&Descending";
-const std::string texts::down = "&Down";
-const std::string texts::edit = "&Edit";
-const std::string texts::execute = "&Execute";
-const std::string texts::exit = "E&xit";
-const std::string texts::file = "&File";
-const std::string texts::find = "&Find...";
-const std::string texts::first = "&First";
-const std::string texts::floppy = "&Floppy";
-const std::string texts::font = "&Font";
-const std::string texts::forward = "&Forward";
-const std::string texts::harddisk = "&Harddisk";
-const std::string texts::help = "&Help";
-const std::string texts::home = "&Home";
-const std::string texts::ignore = "&Ignore";
-const std::string texts::indent = "Indent";
-const std::string texts::index = "&Index";
-const std::string texts::info = "&Info";
-const std::string texts::italic = "&Italic";
-const std::string texts::justified = "Justified";
-const std::string texts::jump_to = "&Jump to";
-const std::string texts::last = "&Last";
-const std::string texts::network = "&Network";
-const std::string texts::new_ = "&New";
-const std::string texts::next = "&Next";
-const std::string texts::no = "&No";
-const std::string texts::ok = "&OK";
-const std::string texts::open = "&Open...";
-const std::string texts::options = "&Options";
-const std::string texts::paste = "&Paste";
-const std::string texts::preferences = "&Preferences";
-const std::string texts::previous = "&Previous";
-const std::string texts::print = "&Print...";
-const std::string texts::print_preview = "Print pre&view";
-const std::string texts::properties = "&Properties";
-const std::string texts::quit = "&Quit";
-const std::string texts::redo = "&Redo";
-const std::string texts::refresh = "Refresh";
-const std::string texts::remove = "Remove";
-const std::string texts::replace = "Rep&lace...";
-const std::string texts::retry = "&Retry";
-const std::string texts::revert_to_saved = "Revert to Saved";
-const std::string texts::save = "&Save";
-const std::string texts::save_as = "Save &As...";
-const std::string texts::search = "&Search";
-const std::string texts::select_all = "Select &All";
-const std::string texts::spell_check = "&Spell Check";
-const std::string texts::stop = "&Stop";
-const std::string texts::strikeout = "&Strikeout";
-const std::string texts::tools = "&Tools";
-const std::string texts::top = "&Top";
-const std::string texts::undelete = "Undelete";
-const std::string texts::underline = "&Underline";
-const std::string texts::undo = "&Undo";
-const std::string texts::unindent = "Unindend";
-const std::string texts::up = "&Up";
-const std::string texts::view = "&View";
-const std::string texts::yes = "&Yes";
-const std::string texts::zoom_in = "Zoom &In";
-const std::string texts::zoom_out = "Zoom &Out";
-const std::string texts::zoom_to_fit = "Zoom to &Fit";
+std::string texts::abort() {
+  return "&Abort"_t;
+}
+
+std::string texts::about() {
+  return "&About"_t;
+}
+
+std::string texts::actual_size() {
+  return "&Actual Size"_t;
+}
+
+std::string texts::add() {
+  return "Add"_t;
+}
+
+std::string texts::alignment() {
+  return "Alignment"_t;
+}
+
+std::string texts::align_left() {
+  return "Align Left"_t;
+}
+
+std::string texts::align_right() {
+  return "Align Right"_t;
+}
+
+std::string texts::apply() {
+  return "&Apply"_t;
+}
+
+std::string texts::ascending() {
+  return "&Ascending"_t;
+}
+
+std::string texts::back() {
+  return "&Back"_t;
+}
+
+std::string texts::bold() {
+  return "&Bold"_t;
+}
+
+std::string texts::bottom() {
+  return "&Bottom"_t;
+}
+
+std::string texts::cancel() {
+  return "&Cancel"_t;
+}
+
+std::string texts::cdrom() {
+  return "&CD-Rom"_t;
+}
+
+std::string texts::centered() {
+  return "Centered"_t;
+}
+
+std::string texts::clear() {
+  return "&Clear"_t;
+}
+
+std::string texts::close() {
+  return "&Close"_t;
+}
+
+std::string texts::color() {
+  return "&Color"_t;
+}
+
+std::string texts::contents() {
+  return "&Contents"_t;
+}
+
+std::string texts::convert() {
+  return "&Convert"_t;
+}
+
+std::string texts::copy() {
+  return "&Copy"_t;
+}
+
+std::string texts::customize() {
+  return "&Customize"_t;
+}
+
+std::string texts::cut() {
+  return "Cu&t"_t;
+}
+
+std::string texts::del() {
+  return "&Delete"_t;
+}
+
+std::string texts::descending() {
+  return "&Descending"_t;
+}
+
+std::string texts::down() {
+  return "&Down"_t;
+}
+
+std::string texts::edit() {
+  return "&Edit"_t;
+}
+
+std::string texts::execute() {
+  return "&Execute"_t;
+}
+
+std::string texts::exit() {
+  return "E&xit"_t;
+}
+
+std::string texts::file() {
+  return "&File"_t;
+}
+
+std::string texts::find() {
+  return "&Find..."_t;
+}
+
+std::string texts::first() {
+  return "&First"_t;
+}
+
+std::string texts::floppy() {
+  return "&Floppy"_t;
+}
+
+std::string texts::font() {
+  return "&Font"_t;
+}
+
+std::string texts::forward() {
+  return "&Forward"_t;
+}
+
+std::string texts::harddisk() {
+  return "&Harddisk"_t;
+}
+
+std::string texts::help() {
+  return "&Help"_t;
+}
+
+std::string texts::home() {
+  return "&Home"_t;
+}
+
+std::string texts::ignore() {
+  return "&Ignore"_t;
+}
+
+std::string texts::indent() {
+  return "Indent"_t;
+}
+
+std::string texts::index() {
+  return "&Index"_t;
+}
+
+std::string texts::info() {
+  return "&Info"_t;
+}
+
+std::string texts::italic() {
+  return "&Italic"_t;
+}
+
+std::string texts::justified() {
+  return "Justified"_t;
+}
+
+std::string texts::jump_to() {
+  return "&Jump to"_t;
+}
+
+std::string texts::last() {
+  return "&Last"_t;
+}
+
+std::string texts::network() {
+  return "&Network"_t;
+}
+
+std::string texts::new_() {
+  return "&New"_t;
+}
+
+std::string texts::next() {
+  return "&Next"_t;
+}
+
+std::string texts::no() {
+  return "&No"_t;
+}
+
+std::string texts::ok() {
+  return "&OK"_t;
+}
+
+std::string texts::open() {
+  return "&Open..."_t;
+}
+
+std::string texts::options() {
+  return "&Options"_t;
+}
+
+std::string texts::paste() {
+  return "&Paste"_t;
+}
+
+std::string texts::preferences() {
+  return "&Preferences"_t;
+}
+
+std::string texts::previous() {
+  return "&Previous"_t;
+}
+
+std::string texts::print() {
+  return "&Print..."_t;
+}
+
+std::string texts::print_preview() {
+  return "Print pre&view"_t;
+}
+
+std::string texts::properties() {
+  return "&Properties"_t;
+}
+
+std::string texts::quit() {
+  return "&Quit"_t;
+}
+
+std::string texts::redo() {
+  return "&Redo"_t;
+}
+
+std::string texts::refresh() {
+  return "Refresh"_t;
+}
+
+std::string texts::remove() {
+  return "Remove"_t;
+}
+
+std::string texts::replace() {
+  return "Rep&lace..."_t;
+}
+
+std::string texts::retry() {
+  return "&Retry"_t;
+}
+
+std::string texts::revert_to_saved() {
+  return "Revert to Saved"_t;
+}
+
+std::string texts::save() {
+  return "&Save"_t;
+}
+
+std::string texts::save_as() {
+  return "Save &As..."_t;
+}
+
+std::string texts::search() {
+  return "&Search"_t;
+}
+
+std::string texts::select_all() {
+  return "Select &All"_t;
+}
+
+std::string texts::spell_check() {
+  return "&Spell Check"_t;
+}
+
+std::string texts::stop() {
+  return "&Stop"_t;
+}
+
+std::string texts::strikeout() {
+  return "&Strikeout"_t;
+}
+
+std::string texts::tools() {
+  return "&Tools"_t;
+}
+
+std::string texts::top() {
+  return "&Top"_t;
+}
+
+std::string texts::undelete() {
+  return "Undelete"_t;
+}
+
+std::string texts::underline() {
+  return "&Underline"_t;
+}
+
+std::string texts::undo() {
+  return "&Undo"_t;
+}
+
+std::string texts::unindent() {
+  return "Unindend"_t;
+}
+
+std::string texts::up() {
+  return "&Up"_t;
+}
+
+std::string texts::view() {
+  return "&View"_t;
+}
+
+std::string texts::yes() {
+  return "&Yes"_t;
+}
+
+std::string texts::zoom_in() {
+  return "Zoom &In"_t;
+}
+
+std::string texts::zoom_out() {
+  return "Zoom &Out"_t;
+}
+
+std::string texts::zoom_to_fit() {
+  return "Zoom to &Fit"_t;
+}
