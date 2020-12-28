@@ -6,7 +6,7 @@
 
 #if defined(_WIN32_WCE)
 
-#include "call_stack.hpp"
+#include "call_stack.h"
 #include "ProcessInformation.h"
 #include "ThreadInformation.h"
 #include <iostream>
