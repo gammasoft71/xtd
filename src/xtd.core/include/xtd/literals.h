@@ -6,6 +6,10 @@
 #include "strings.h"
 #include "translator.h"
 
+/// @cond
+void __litterals_argument_out_of_range_exception();
+/// @endcond
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Used to convert specified value into byte.
@@ -17,7 +21,7 @@ namespace xtd {
   /// @endcode
   /// @ingroup Literals
   inline double operator""_d(long double n) {
-    if (n < static_cast<long double>(-std::numeric_limits<double>::max()) || n > static_cast<long double>(std::numeric_limits<double>::max())) throw std::invalid_argument("out of range");
+    if (n < static_cast<long double>(-std::numeric_limits<double>::max()) || n > static_cast<long double>(std::numeric_limits<double>::max())) __litterals_argument_out_of_range_exception();
     return static_cast<double>(n);
   }
 
@@ -30,7 +34,7 @@ namespace xtd {
   /// @endcode
   /// @ingroup Literals
   inline double operator""_d(unsigned long long n) {
-    if (n < static_cast<unsigned long long>(-std::numeric_limits<double>::max()) || n > static_cast<unsigned long long>(std::numeric_limits<double>::max())) throw std::invalid_argument("out of range");
+    if (n < static_cast<unsigned long long>(-std::numeric_limits<double>::max()) || n > static_cast<unsigned long long>(std::numeric_limits<double>::max())) __litterals_argument_out_of_range_exception();
     return static_cast<double>(n);
   }
 
@@ -55,7 +59,7 @@ namespace xtd {
   /// @endcode
   /// @ingroup Literals
   inline float operator""_f(long double n) {
-    if (n < static_cast<long double>(-std::numeric_limits<float>::max()) || n > static_cast<long double>(std::numeric_limits<float>::max())) throw std::invalid_argument("out of range");
+    if (n < static_cast<long double>(-std::numeric_limits<float>::max()) || n > static_cast<long double>(std::numeric_limits<float>::max())) __litterals_argument_out_of_range_exception();
     return static_cast<float>(n);
   }
 
@@ -68,7 +72,7 @@ namespace xtd {
   /// @endcode
   /// @ingroup Literals
   inline float operator""_f(unsigned long long n) {
-    if (n < static_cast<unsigned long long>(-std::numeric_limits<float>::max()) || n > static_cast<unsigned long long>(std::numeric_limits<float>::max())) throw std::invalid_argument("out of range");
+    if (n < static_cast<unsigned long long>(-std::numeric_limits<float>::max()) || n > static_cast<unsigned long long>(std::numeric_limits<float>::max())) __litterals_argument_out_of_range_exception();
     return static_cast<float>(n);
   }
 
@@ -438,7 +442,7 @@ namespace xtd {
   /// @endcode
   /// @ingroup Literals
   inline int8_t operator""_s8(long double n) {
-    if (n < static_cast<long double>(std::numeric_limits<int8_t>::min()) || n > static_cast<long double>(std::numeric_limits<int8_t>::max())) throw std::invalid_argument("out of range");
+    if (n < static_cast<long double>(std::numeric_limits<int8_t>::min()) || n > static_cast<long double>(std::numeric_limits<int8_t>::max())) __litterals_argument_out_of_range_exception();
     return static_cast<int8_t>(n);
   }
 
@@ -451,7 +455,7 @@ namespace xtd {
   /// @endcode
   /// @ingroup Literals
   inline int8_t operator""_s8(unsigned long long n) {
-    if (static_cast<long long>(n) < std::numeric_limits<int8_t>::min() || static_cast<long long>(n) > std::numeric_limits<int8_t>::max()) throw std::invalid_argument("out of range");
+    if (static_cast<long long>(n) < std::numeric_limits<int8_t>::min() || static_cast<long long>(n) > std::numeric_limits<int8_t>::max()) __litterals_argument_out_of_range_exception();
     return static_cast<int8_t>(n);
   }
 
@@ -476,7 +480,7 @@ namespace xtd {
   /// @endcode
   /// @ingroup Literals
   inline int16_t operator""_s16(long double n) {
-    if (n < static_cast<long double>(std::numeric_limits<int16_t>::min()) || n > static_cast<long double>(std::numeric_limits<int16_t>::max())) throw std::invalid_argument("out of range");
+    if (n < static_cast<long double>(std::numeric_limits<int16_t>::min()) || n > static_cast<long double>(std::numeric_limits<int16_t>::max())) __litterals_argument_out_of_range_exception();
     return static_cast<int16_t>(n);
   }
 
@@ -489,7 +493,7 @@ namespace xtd {
   /// @endcode
   /// @ingroup Literals
   inline int16_t operator""_s16(unsigned long long n) {
-    if (static_cast<long long>(n) < std::numeric_limits<int16_t>::min() || static_cast<long long>(n) > std::numeric_limits<int16_t>::max()) throw std::invalid_argument("out of range");
+    if (static_cast<long long>(n) < std::numeric_limits<int16_t>::min() || static_cast<long long>(n) > std::numeric_limits<int16_t>::max()) __litterals_argument_out_of_range_exception();
     return static_cast<int16_t>(n);
   }
 
@@ -514,7 +518,7 @@ namespace xtd {
   /// @endcode
   /// @ingroup Literals
   inline int32_t operator""_s32(long double n) {
-    if (n < static_cast<long double>(std::numeric_limits<int32_t>::min()) || n > static_cast<long double>(std::numeric_limits<int32_t>::max())) throw std::invalid_argument("out of range");
+    if (n < static_cast<long double>(std::numeric_limits<int32_t>::min()) || n > static_cast<long double>(std::numeric_limits<int32_t>::max())) __litterals_argument_out_of_range_exception();
     return static_cast<int32_t>(n);
   }
 
@@ -527,7 +531,7 @@ namespace xtd {
   /// @endcode
   /// @ingroup Literals
   inline int32_t operator""_s32(unsigned long long n) {
-    if (static_cast<long long>(n) < std::numeric_limits<int32_t>::min() || static_cast<long long>(n) > std::numeric_limits<int32_t>::max()) throw std::invalid_argument("out of range");
+    if (static_cast<long long>(n) < std::numeric_limits<int32_t>::min() || static_cast<long long>(n) > std::numeric_limits<int32_t>::max()) __litterals_argument_out_of_range_exception();
     return static_cast<int32_t>(n);
   }
 
@@ -552,7 +556,7 @@ namespace xtd {
   /// @endcode
   /// @ingroup Literals
   inline int64_t operator""_s64(long double n) {
-    if (n < static_cast<long double>(std::numeric_limits<int64_t>::min()) || n > static_cast<long double>(std::numeric_limits<int64_t>::max())) throw std::invalid_argument("out of range");
+    if (n < static_cast<long double>(std::numeric_limits<int64_t>::min()) || n > static_cast<long double>(std::numeric_limits<int64_t>::max())) __litterals_argument_out_of_range_exception();
     return static_cast<int64_t>(n);
   }
 
@@ -565,7 +569,7 @@ namespace xtd {
   /// @endcode
   /// @ingroup Literals
   inline int64_t operator""_s64(unsigned long long n) {
-    if (static_cast<long long>(n) < std::numeric_limits<int64_t>::min() || static_cast<long long>(n) > std::numeric_limits<int64_t>::max()) throw std::invalid_argument("out of range");
+    if (static_cast<long long>(n) < std::numeric_limits<int64_t>::min() || static_cast<long long>(n) > std::numeric_limits<int64_t>::max()) __litterals_argument_out_of_range_exception();
     return static_cast<int64_t>(n);
   }
 
@@ -590,7 +594,7 @@ namespace xtd {
   /// @endcode
   /// @ingroup Literals
   inline uint8_t operator""_u8(long double n) {
-    if (n < static_cast<long double>(std::numeric_limits<uint8_t>::min()) || n > static_cast<long double>(std::numeric_limits<uint8_t>::max())) throw std::invalid_argument("out of range");
+    if (n < static_cast<long double>(std::numeric_limits<uint8_t>::min()) || n > static_cast<long double>(std::numeric_limits<uint8_t>::max())) __litterals_argument_out_of_range_exception();
     return static_cast<uint8_t>(n);
   }
 
@@ -603,7 +607,7 @@ namespace xtd {
   /// @endcode
   /// @ingroup Literals
   inline uint8_t operator""_u8(unsigned long long n) {
-    if (n < static_cast<unsigned long long>(std::numeric_limits<uint8_t>::min()) || n > static_cast<unsigned long long>(std::numeric_limits<uint8_t>::max())) throw std::invalid_argument("out of range");
+    if (n < static_cast<unsigned long long>(std::numeric_limits<uint8_t>::min()) || n > static_cast<unsigned long long>(std::numeric_limits<uint8_t>::max())) __litterals_argument_out_of_range_exception();
     return static_cast<uint8_t>(n);
   }
 
@@ -628,7 +632,7 @@ namespace xtd {
   /// @endcode
   /// @ingroup Literals
   inline uint16_t operator""_u16(long double n) {
-    if (n < static_cast<long double>(std::numeric_limits<uint16_t>::min()) || n > static_cast<long double>(std::numeric_limits<uint16_t>::max())) throw std::invalid_argument("out of range");
+    if (n < static_cast<long double>(std::numeric_limits<uint16_t>::min()) || n > static_cast<long double>(std::numeric_limits<uint16_t>::max())) __litterals_argument_out_of_range_exception();
     return static_cast<uint16_t>(n);
   }
 
@@ -641,7 +645,7 @@ namespace xtd {
   /// @endcode
   /// @ingroup Literals
   inline uint16_t operator""_u16(unsigned long long n) {
-    if (n < static_cast<unsigned long long>(std::numeric_limits<uint16_t>::min()) || n > static_cast<unsigned long long>(std::numeric_limits<uint16_t>::max())) throw std::invalid_argument("out of range");
+    if (n < static_cast<unsigned long long>(std::numeric_limits<uint16_t>::min()) || n > static_cast<unsigned long long>(std::numeric_limits<uint16_t>::max())) __litterals_argument_out_of_range_exception();
     return static_cast<uint16_t>(n);
   }
 
@@ -666,7 +670,7 @@ namespace xtd {
   /// @endcode
   /// @ingroup Literals
   inline uint32_t operator""_u32(long double n) {
-    if (n < static_cast<long double>(std::numeric_limits<uint32_t>::min()) || n > static_cast<long double>(std::numeric_limits<uint32_t>::max())) throw std::invalid_argument("out of range");
+    if (n < static_cast<long double>(std::numeric_limits<uint32_t>::min()) || n > static_cast<long double>(std::numeric_limits<uint32_t>::max())) __litterals_argument_out_of_range_exception();
     return static_cast<uint32_t>(n);
   }
 
@@ -679,7 +683,7 @@ namespace xtd {
   /// @endcode
   /// @ingroup Literals
   inline uint32_t operator""_u32(unsigned long long n) {
-    if (n < static_cast<unsigned long long>(std::numeric_limits<uint32_t>::min()) || n > static_cast<unsigned long long>(std::numeric_limits<uint32_t>::max())) throw std::invalid_argument("out of range");
+    if (n < static_cast<unsigned long long>(std::numeric_limits<uint32_t>::min()) || n > static_cast<unsigned long long>(std::numeric_limits<uint32_t>::max())) __litterals_argument_out_of_range_exception();
     return static_cast<uint32_t>(n);
   }
 
@@ -704,7 +708,7 @@ namespace xtd {
   /// @endcode
   /// @ingroup Literals
   inline uint64_t operator""_u64(long double n) {
-    if (n < static_cast<long double>(std::numeric_limits<uint64_t>::min()) || n > static_cast<long double>(std::numeric_limits<uint64_t>::max())) throw std::invalid_argument("out of range");
+    if (n < static_cast<long double>(std::numeric_limits<uint64_t>::min()) || n > static_cast<long double>(std::numeric_limits<uint64_t>::max())) __litterals_argument_out_of_range_exception();
     return static_cast<uint64_t>(n);
   }
 
@@ -717,7 +721,7 @@ namespace xtd {
   /// @endcode
   /// @ingroup Literals
   inline uint64_t operator""_u64(unsigned long long n) {
-    if (n < static_cast<unsigned long long>(std::numeric_limits<uint64_t>::min()) || n > static_cast<unsigned long long>(std::numeric_limits<uint64_t>::max())) throw std::invalid_argument("out of range");
+    if (n < static_cast<unsigned long long>(std::numeric_limits<uint64_t>::min()) || n > static_cast<unsigned long long>(std::numeric_limits<uint64_t>::max())) __litterals_argument_out_of_range_exception();
     return static_cast<uint64_t>(n);
   }
 

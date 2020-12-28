@@ -5,6 +5,7 @@
 #include <map>
 #include <string>
 #include <vector>
+#include <xtd/argument_exception.h>
 #include <xtd/bit_converter.h>
 #include <xtd/environment.h>
 #include <xtd/action.h>
@@ -39,7 +40,7 @@ namespace xtdc_command {
         case project_type::static_library: return {project_sdk::none, project_sdk::xtd};
         case project_type::unit_test_application: return {project_sdk::catch2, project_sdk::gtest, project_sdk::xtd};
       }
-      throw std::invalid_argument("type is not project_type valid value");
+      throw xtd::argument_exception("type is not project_type valid value", caller_info_);
     }
     
     static std::vector<project_language> get_valid_languages(project_sdk sdk) {
@@ -59,7 +60,7 @@ namespace xtdc_command {
         case project_sdk::wxwidgets: return {project_language::cpp};
         case project_sdk::xtd: return {project_language::cpp};
       }
-      throw std::invalid_argument("sdk is not project_sdk valid value");
+      throw xtd::argument_exception("sdk is not project_sdk valid value", caller_info_);
     }
     
     std::string create(const std::string& name, project_type type, project_sdk sdk, project_language language) const {
