@@ -72,7 +72,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      const char* default_message() {return "Unable to find the specified file."_t;}
+      const char* default_message() const {return "Unable to find the specified file."_t;}
     };
   }
 }

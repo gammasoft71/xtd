@@ -1,5 +1,6 @@
 #include <cmath>
 #include <vector>
+#include <xtd/argument_exception.h>
 #include <xtd/strings.h>
 #include <xtd/drawing/native/graphics.h>
 #include "../../../../../include/xtd/drawing/native/hdc_wrapper.h"
@@ -49,7 +50,7 @@ namespace {
       wxGraphicsBrush b = graphics.CreateLinearGradientBrush(static_cast<double>(point1.x), static_cast<double>(point1.y), static_cast<double>(point2.x), static_cast<double>(point2.y), color1, color2);;
       return b;
     }
-    throw std::invalid_argument("brush not defined");
+    throw xtd::argument_exception("brush not defined", caller_info_);
   }
 }
 

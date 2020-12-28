@@ -4,6 +4,7 @@
 #include <memory>
 #include <stdexcept>
 #include <vector>
+#include "argument_null_exception.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -38,10 +39,10 @@ namespace xtd {
       if (functions_.size() == 0) return result_t();
       
       for (size_t i = 0; i < functions_.size() - 1; i++) {
-        if (functions_[i] == nullptr) throw std::invalid_argument("function null");
+        if (functions_[i] == nullptr) throw xtd::argument_null_exception("function null", caller_info_);
         functions_[i]();
       }
-      if (functions_.back() == nullptr) throw std::invalid_argument("function null");
+      if (functions_.back() == nullptr) throw xtd::argument_null_exception("function null", caller_info_);
       return functions_.back()();
     }
 
@@ -318,21 +319,21 @@ namespace xtd {
 
       if (no_arguments_functions_.size()) {
         for (size_t i = 0; i < no_arguments_functions_.size() - (functions_.size() == 0 ? 1 : 0); i++) {
-          if (no_arguments_functions_[i] == nullptr) throw std::invalid_argument("function null");
+          if (no_arguments_functions_[i] == nullptr) throw xtd::argument_null_exception("function null", caller_info_);
           no_arguments_functions_[i]();
         }
         
         if (functions_.size() == 0) {
-          if (no_arguments_functions_.back() == nullptr) throw std::invalid_argument("function null");
+          if (no_arguments_functions_.back() == nullptr) throw xtd::argument_null_exception("function null", caller_info_);
           return no_arguments_functions_.back()();
         }
       }
 
       for (size_t i = 0; i < functions_.size() - 1; i++) {
-        if (functions_[i] == nullptr) throw std::invalid_argument("function null");
+        if (functions_[i] == nullptr) throw xtd::argument_null_exception("function null", caller_info_);
         functions_[i](arguments...);
       }
-      if (functions_.back() == nullptr) throw std::invalid_argument("function null");
+      if (functions_.back() == nullptr) throw xtd::argument_null_exception("function null", caller_info_);
       return functions_.back()(arguments...);
     }
     

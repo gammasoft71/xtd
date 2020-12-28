@@ -1,4 +1,5 @@
 #include <xtd/strings.h>
+#include <xtd/format_exception.h>
 #include <xtd/xtd.tunit>
 
 using namespace std;
@@ -37,7 +38,7 @@ namespace unit_tests {
     }
 
     void test_method_(format_location_with_invalid_argument) {
-      assert::throws<std::invalid_argument>([]{xtd::strings::format(L"{0:G}", ::size {42, 24});});
+      assert::throws<xtd::format_exception>([]{xtd::strings::format(L"{0:G}", ::size {42, 24});});
     }
   };
 }

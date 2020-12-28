@@ -135,7 +135,7 @@ namespace xtd {
   private:
     system_exception(const std::string& message, const std::exception* inner_exception, const std::error_code& error, const std::string& help_link, const xtd::caller_info& information);
     std::string stack_trace_to_string() const noexcept;
-    const char* default_message() {return "System error."_t;}
+    const char* default_message() const;
     
     static bool enable_stack_trace_;
     mutable std::string name_;

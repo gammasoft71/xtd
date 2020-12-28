@@ -8,6 +8,7 @@
 #endif
 /// @endcond
 
+#include "__format_exception.h"
 #include "../strings.h"
 
 /// @cond
@@ -53,7 +54,7 @@ inline std::basic_string<char_t> __tm_formater(const char_t* fmt, const std::tm&
 
 inline std::string __date_time_formater(std::string fmt, const std::tm& time, const std::locale& loc) {
   if (fmt.empty()) fmt =  "G";
-  if (fmt.size() > 1) throw std::invalid_argument("Invalid format");
+  if (fmt.size() > 1) __format_exception("Invalid format");
   
   switch (fmt[0]) {
     case 'd': return xtd::strings::format("{:D2}/{:D2}/{}", time.tm_mon + 1, time.tm_mday, time.tm_year + 1900);
@@ -89,13 +90,13 @@ inline std::string __date_time_formater(std::string fmt, const std::tm& time, co
     case 'Y': return xtd::strings::format("{} {}", __get_month_name<char>(time, loc), time.tm_year + 1900);
     case 'z':
     case 'Z': return __tm_formater("%Z", time, loc);
-    default: throw std::invalid_argument("Invalid format");
+    default: __format_exception("Invalid format"); return {};
   }
 }
 
 inline std::wstring __date_time_formater(std::wstring fmt, const std::tm& time, const std::locale& loc) {
   if (fmt.empty()) fmt =  L"G";
-  if (fmt.size() > 1) throw std::invalid_argument("Invalid format");
+  if (fmt.size() > 1) __format_exception("Invalid format");
   
   switch (fmt[0]) {
     case 'd': return xtd::strings::format(L"{:D2}/{:D2}/{}", time.tm_mon + 1, time.tm_mday, time.tm_year + 1900);
@@ -131,7 +132,7 @@ inline std::wstring __date_time_formater(std::wstring fmt, const std::tm& time, 
     case 'Y': return xtd::strings::format(L"{} {}", __get_month_name<wchar_t>(time, loc), time.tm_year + 1900);
     case 'z':
     case 'Z': return __tm_formater(L"%Z", time, loc);
-    default: throw std::invalid_argument("Invalid format");
+    default: __format_exception("Invalid format"); return {};
   }
 }
 

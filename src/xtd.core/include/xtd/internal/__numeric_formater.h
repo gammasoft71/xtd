@@ -10,6 +10,7 @@
 
 #include "__binary_formater.h"
 #include "__fixed_point_formater.h"
+#include "__format_exception.h"
 
 /// @cond
 template<typename char_t, typename value_t>
@@ -18,16 +19,16 @@ inline std::basic_string<char_t> __numeric_formater(const std::basic_string<char
   
   std::vector<char_t> possible_formats {'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'n', 'N', 'o', 'O', 'p', 'P', 'x', 'X'};
   if (fmt.size() > 3 || std::find(possible_formats.begin(), possible_formats.end(), fmt[0]) == possible_formats.end() || (fmt.size() >= 2 && !std::isdigit(fmt[1])) || (fmt.size() == 3 && !std::isdigit(fmt[2])))
-    throw std::invalid_argument("Custom format not yet implemented");
+    __format_exception("Custom format not yet implemented");
   
   int precision = 0;
   if (fmt[0] == 'b' || fmt[0] == 'B' || fmt[0] == 'd' || fmt[0] == 'D' || fmt[0] == 'o' || fmt[0] == 'O' || fmt[0] == 'x' || fmt[0] == 'X') {
     try {
       for (auto c : fmt.substr(1))
-        if (!std::isdigit(c) && c != ' ' && c != '+' && c != '-') throw std::invalid_argument("Invalid format expression");
+        if (!std::isdigit(c) && c != ' ' && c != '+' && c != '-') __format_exception("Invalid format expression");
       if (fmt.size() > 1) precision = std::stoi(fmt.substr(1));
     } catch(...) {
-      throw std::invalid_argument("Invalid format expression");
+      __format_exception("Invalid format expression");
     }
     if ((fmt[0] == 'd' || fmt[0] == 'D') && precision > 0 && value < 0) precision += 1;
     if ((fmt[0] == 'd' || fmt[0] == 'D') && precision < 0 && value < 0) precision -= 1;

@@ -9,7 +9,7 @@ namespace xtd {
   /// @par Examples
   /// The following example demonstrates how to throw and catch an format_exception.
   /// @include format_exception.cpp
-  class format_exception :public system_exception {
+  class format_exception : public system_exception {
   public:
     /// @brief Create a new instance of class format_exception
     /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
@@ -70,6 +70,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() {return "One of identified items is an invalid format."_t;}
+    const char* default_message() const {return "One of identified items is an invalid format."_t;}
   };
 }

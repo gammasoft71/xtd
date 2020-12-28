@@ -1,4 +1,5 @@
 #include "../../include/xtd/environment.h"
+#include "../../include/xtd/argument_exception.h"
 
 #if defined(_WIN32)
 __declspec(dllimport) extern char** environ;
@@ -43,5 +44,5 @@ std::map<std::string, std::string>& xtd::environment::get_environment_variables(
     return envs;
   }
   
-  throw std::invalid_argument("invalid environment_variable_target value");
+  throw argument_exception("invalid environment_variable_target value");
 }

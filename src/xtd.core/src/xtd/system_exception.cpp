@@ -29,3 +29,7 @@ std::string system_exception::stack_trace_to_string() const noexcept {
       skip_frames = index;
   return stack_trace_->to_string(skip_frames + 1, information_);
 }
+
+const char* system_exception::default_message() const {
+  return "System error."_t;
+}

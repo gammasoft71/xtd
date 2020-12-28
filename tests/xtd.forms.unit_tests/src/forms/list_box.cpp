@@ -2,7 +2,7 @@
 #include <xtd/forms/form.h>
 #include <xtd/xtd.tunit>
 
-using namespace std;
+using namespace xtd;
 using namespace xtd::forms;
 using namespace xtd::tunit;
 
@@ -93,7 +93,7 @@ namespace unit_tests {
       list_box list_box;
       list_box.parent(form);
       
-      assert::throws_(std::invalid_argument, [&]{list_box.selected_index(0);});
+      assert::throws_(argument_exception, [&]{list_box.selected_index(0);});
     }
     
     void test_method_(selection_index_with_bad_index) {
@@ -102,7 +102,7 @@ namespace unit_tests {
       list_box.parent(form);      
       list_box.items().push_back_range({"d", "a", "c", "b"});
 
-      assert::throws_(std::invalid_argument, [&]{list_box.selected_index(4);});
+      assert::throws_(argument_exception, [&]{list_box.selected_index(4);});
     }
   };
 }

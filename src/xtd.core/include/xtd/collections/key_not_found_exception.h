@@ -74,7 +74,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      const char* default_message() {return "The given key was not present in the dictionnary."_t;}
+      const char* default_message() const {return "The given key was not present in the dictionnary."_t;}
     };
   }
 }

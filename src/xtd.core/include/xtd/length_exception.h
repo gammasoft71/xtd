@@ -70,6 +70,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() {return "Exceed implementation defined length limits."_t;}
+    const char* default_message() const {return "Exceed implementation defined length limits."_t;}
   };
 }

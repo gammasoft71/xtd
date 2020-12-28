@@ -85,7 +85,7 @@ namespace unit_tests {
     }
 
     void test_method_(parse_version_with_major) {
-      assert::throws_(invalid_argument, [] {version::parse("1");});
+      assert::throws_(format_exception, [] {version::parse("1");});
     }
 
     void test_method_(parse_version_with_major_and_minor) {
@@ -105,11 +105,11 @@ namespace unit_tests {
     }
 
     void test_method_(parse_version_with_major_minor_build_revision_and_bad_value) {
-      assert::throws_(invalid_argument, [] {version::parse("1.2.3.4.5");});
+      assert::throws_(format_exception, [] {version::parse("1.2.3.4.5");});
     }
 
     void test_method_(parse_version_with_bad_value) {
-      assert::throws_(invalid_argument, [] {version::parse("one");});
+      assert::throws_(format_exception, [] {version::parse("one");});
     }
 
     void test_method_(try_parse_version_with_good_string_value) {
@@ -165,7 +165,7 @@ namespace unit_tests {
     }
 
     void test_method_(to_string_field_3_with_empty_version) {
-      assert::throws_(invalid_argument, [] {version().to_string(3);});
+      assert::throws_(argument_exception, [] {version().to_string(3);});
     }
     
     void test_method_(to_string_field_3_with_full_version) {
@@ -173,7 +173,7 @@ namespace unit_tests {
     }
 
     void test_method_(to_string_field_4_with_empty_version) {
-      assert::throws_(invalid_argument, [] {version().to_string(4);});
+      assert::throws_(argument_exception, [] {version().to_string(4);});
     }
     
     void test_method_(to_string_field_4_with_full_version) {
@@ -181,7 +181,7 @@ namespace unit_tests {
     }
 
     void test_method_(to_string_field_greater_than_4) {
-      assert::throws_(invalid_argument, [] {version().to_string(5);});
+      assert::throws_(argument_exception, [] {version().to_string(5);});
     }
 
     void test_method_(ostream_operator) {

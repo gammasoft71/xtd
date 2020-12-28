@@ -1,5 +1,5 @@
 #pragma once
-#include <stdexcept>
+#include <xtd/argument_exception.h>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/forms/create_params.h>
 #include <xtd/forms/native/combo_box_styles.h>
@@ -12,7 +12,7 @@ namespace xtd {
       class wx_combo_box : public control_handler {
       public:
         wx_combo_box(const forms::create_params& create_params) {
-          if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
+          if (!create_params.parent()) throw xtd::argument_exception("control must have a parent", caller_info_);
 #if defined(__WXMSW__)
           int32_t height = (create_params.style() & CBS_SIMPLE) == CBS_SIMPLE ? 163 : 23;
 #elif defined(__WXGTK__)

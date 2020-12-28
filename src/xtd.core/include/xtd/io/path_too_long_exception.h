@@ -72,7 +72,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      const char* default_message() {return "The specified path, file name, or both are too long. The fully ualified file name must be less than 260 caracters, and the directory name must be less than 248 caracters."_t;}
+      const char* default_message() const {return "The specified path, file name, or both are too long. The fully ualified file name must be less than 260 caracters, and the directory name must be less than 248 caracters."_t;}
     };
   }
 }

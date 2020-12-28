@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <xtd/strings.h>
+#include <xtd/format_exception.h>
 #include <xtd/xtd.tunit>
 
 #include <time.h>

@@ -70,6 +70,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() {return "Number encountered was not a finite quantity."_t;}
+    const char* default_message() const {return "Number encountered was not a finite quantity."_t;}
   };
 }

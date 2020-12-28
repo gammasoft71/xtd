@@ -60,6 +60,7 @@ add_sources(
   src/version.cpp
   src/wstring_boolean_format.cpp
   src/wstring_date_time_format.cpp
+  src/wstring_duration_format.cpp
   src/wstring_enum_format.cpp
   src/wstring_enum_class_format.cpp
   src/wstring_fixed_point_format.cpp

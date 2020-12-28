@@ -70,6 +70,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() {return "The operation has timed out."_t;}
+    const char* default_message() const {return "The operation has timed out."_t;}
   };
 }

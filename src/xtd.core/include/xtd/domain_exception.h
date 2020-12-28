@@ -70,6 +70,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() {return "Report domain error."_t;}
+    const char* default_message() const {return "Report domain error."_t;}
   };
 }

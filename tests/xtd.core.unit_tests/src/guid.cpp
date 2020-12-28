@@ -57,8 +57,8 @@ namespace unit_tests {
     }
     
     void test_method_(to_string) {
-      assert::throws_(invalid_argument, []{guid::empty.to_string("A");});
-      assert::throws_(invalid_argument, []{guid::empty.to_string("ND");});
+      assert::throws_(format_exception, []{guid::empty.to_string("A");});
+      assert::throws_(format_exception, []{guid::empty.to_string("ND");});
       
       assert::are_equal_("00000000-0000-0000-0000-000000000000", guid::empty.to_string());
       assert::are_equal_("00000000-0000-0000-0000-000000000000", guid::empty.to_string(""));

@@ -72,7 +72,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      const char* default_message() {return "I/O error occured."_t;}
+      const char* default_message() const {return "I/O error occured."_t;}
     };
   }
 }

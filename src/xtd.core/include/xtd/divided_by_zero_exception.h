@@ -70,6 +70,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() {return "Attempt to divide by zero."_t;}
+    const char* default_message() const {return "Attempt to divide by zero."_t;}
   };
 }

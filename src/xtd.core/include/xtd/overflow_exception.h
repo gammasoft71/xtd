@@ -70,6 +70,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() {return "Arithmetic operation resulted in an overflow."_t;}
+    const char* default_message() const {return "Arithmetic operation resulted in an overflow."_t;}
   };
 }
