@@ -15,7 +15,8 @@ add_sources(
   include/xtd/xtd.h
   include/xtd/xtd.h
   src/xtd/system_report.cpp
-  references.cmake
+)
+add_sources(
   ../../locale/en/about_dialog.strings
   ../../locale/en/application.strings
   ../../locale/en/busy_box.strings
@@ -31,6 +32,9 @@ add_sources(
   ../../locale/en/list_box.strings
   ../../locale/en/menu.strings
   ../../locale/en/texts.strings
+)
+add_sources(
+  references.cmake
   ../../scripts/cmake/update_export.cmake
   ../../scripts/cmake/update_version_number.cmake
   ../../scripts/cmake/xtd_commands.cmake
