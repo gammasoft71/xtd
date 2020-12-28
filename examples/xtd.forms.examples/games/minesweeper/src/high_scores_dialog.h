@@ -76,7 +76,7 @@ namespace minesweeper {
 
       ok_button_.location({190, 150});
       ok_button_.width(100);
-      ok_button_.text(xtd::forms::texts::ok);
+      ok_button_.text(xtd::forms::texts::ok());
       ok_button_.dialog_result(dialog_result::ok);
       accept_button(ok_button_);
 
