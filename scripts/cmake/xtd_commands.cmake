@@ -1619,7 +1619,7 @@ macro(write_resources_file_header)
     "\n"
     "#pragma once\n"
     "\n"
-    "#include <exception>\n"
+    "#include <xtd/not_implemented_exception.h>\n"
     "#include <${XTD_PROJECT_INCLUDE_FILE}>\n"
     "\n"
     "namespace ${TARGET_DEFAULT_NAMESPACE}::properties {\n"
@@ -1666,7 +1666,7 @@ macro(write_resources_file_header)
       file(APPEND ${RESOURCES_FILE_HEADER}
         "    /// @brief Looks up a localized resource of type xtd::forms::sound.\n"
         "    static const xtd::object& ${NAME}() {\n"
-        "      throw std::logic_error(\"not yet implemented\");\n"
+        "      throw xtd::not_implemented_exceptionr(caller_info_);\n"
         "    }\n"
         "\n"
       )
