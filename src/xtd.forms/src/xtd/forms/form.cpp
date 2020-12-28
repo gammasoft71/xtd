@@ -153,7 +153,7 @@ form& form::owner(const control& value) {
 }
 
 control& form::parent(const control& parent) {
-  throw invalid_operation_exception("Top-level control cannot be added to a control."_t);
+  throw invalid_operation_exception("Top-level control cannot be added to a control."_t, caller_info_);
 }
 
 form& form::show_icon(bool value) {

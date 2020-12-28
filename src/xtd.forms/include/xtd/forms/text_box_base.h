@@ -1,5 +1,6 @@
 #pragma once
 #include "control.h"
+#include <xtd/argument_out_of_range_exception.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -74,8 +75,8 @@ namespace xtd {
       
       virtual void select(size_t start, size_t length) {
         if (selection_start_ != start || length != selection_length_) {
-          if (start > text().size()) throw std::invalid_argument("start greater than text size");
-          if (start + length > text().size()) throw std::invalid_argument("start + lenght greater than text size");
+          if (start > text().size()) throw argument_out_of_range_exception("start greater than text size", caller_info_);
+          if (start + length > text().size()) throw argument_out_of_range_exception("start + lenght greater than text size", caller_info_);
           selection_start_ = start;
           selection_length_ = length;
         }
