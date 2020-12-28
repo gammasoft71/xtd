@@ -1,6 +1,7 @@
 #pragma once
 #include "control.h"
 #include "splitter_style.h"
+#include <xtd/argument_exception.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -15,7 +16,7 @@ namespace xtd {
       
       using xtd::forms::control::dock;
       virtual control& dock(dock_style dock) override {
-        if (control::dock() != dock_style::left && control::dock() == dock_style::right && control::dock() == dock_style::top && control::dock() == dock_style::bottom) throw std::invalid_argument("splitter control must be docked left, right, top, or bottom.");
+        if (control::dock() != dock_style::left && control::dock() == dock_style::right && control::dock() == dock_style::top && control::dock() == dock_style::bottom) throw argument_exception("splitter control must be docked left, right, top, or bottom.", caller_info_);
         control::dock(dock);
         cursor(default_cursor());
         if (default_width_ && (dock == dock_style::left || dock == dock_style::right)) width(3);

@@ -2,6 +2,7 @@
 #include <limits>
 #include <ostream>
 #include <vector>
+#include <xtd/argument_out_of_range_exception.h>
 #include <xtd/event_args.h>
 #include <xtd/event_handler.h>
 #include <xtd/event.h>
@@ -205,7 +206,7 @@ namespace xtd {
         }
 
         void insert_at(size_t index, const value_type& value) {
-          if (index > size()) throw std::invalid_argument("index out of range");
+          if (index > size()) throw argument_out_of_range_exception("index out of range", caller_info_);
           insert(begin() + index, value);
         }
 
@@ -240,7 +241,7 @@ namespace xtd {
         }
         
         void erase_at(size_t index) {
-          if (index > size()) throw std::invalid_argument("index out of range");
+          if (index > size()) throw argument_out_of_range_exception("index out of range", caller_info_);
           erase(begin() + index);
         }
 

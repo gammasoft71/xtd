@@ -1,4 +1,5 @@
 #include "../../../include/xtd/forms/button_base.h"
+#include <xtd/argument_exception.h>
 #include <xtd/forms/native/button_styles.h>
 
 using namespace xtd;
@@ -38,7 +39,7 @@ button_base& button_base::image_align(content_alignment value) {
 
 button_base& button_base::image_index(int32_t value) {
  if (image_index_ != value) {
-   if (value < -1 || static_cast<size_t>(value) >= image_list_.images().size()) throw std::invalid_argument("Index out of range");
+   if (value < -1 || static_cast<size_t>(value) >= image_list_.images().size()) throw argument_out_of_range_exception("Index out of range", caller_info_);
    image_index_ = value;
    recreate_handle();
  }
