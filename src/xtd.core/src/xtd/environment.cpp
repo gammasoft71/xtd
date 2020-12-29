@@ -44,5 +44,5 @@ std::map<std::string, std::string>& xtd::environment::get_environment_variables(
     return envs;
   }
   
-  throw argument_exception("invalid environment_variable_target value");
+  throw argument_exception("Invalid environment variable target value"_t);
 }

@@ -1,0 +1,11 @@
+key "Invalid environment variable target value"
+value "Invalid environment variable target value"
+
+key "Environment variable name is empty"
+value "Environment variable name is empty"
+
+key "Can't erase environment variable"
+value "Can't erase environment variable"
+
+key "Can't set environment variable"
+value "Can't set environment variable"

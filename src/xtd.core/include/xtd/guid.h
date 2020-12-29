@@ -20,14 +20,14 @@ namespace xtd {
     /// @param bytes A 16-element byte array containing values with which to initialize the GUID.
     /// @exception std::invalid_argument bytes is not 16 bytes long.
     explicit guid(const std::vector<uint8_t>& data) : data_(data) {
-      if (data.size() != 16) throw xtd::argument_exception("vector size must be 16", caller_info_);
+      if (data.size() != 16) throw xtd::argument_exception("Vector size must be 16", caller_info_);
     }
     
     /// @brief Initializes a new instance of the Guid structure by using the specified array of bytes.
     /// @param bytes A 16-element byte array containing values with which to initialize the GUID.
     /// @exception std::invalid_argument bytes is not 16 bytes long.
     explicit guid(const std::initializer_list<uint8_t>& data) : data_(data) {
-      if (data.size() != 16) throw xtd::argument_exception("vector size must be 16", caller_info_);
+      if (data.size() != 16) throw xtd::argument_exception("Vector size must be 16", caller_info_);
     }
 
     /// @brief Initializes a new instance of the Guid structure by using the specified integers and byte array.
@@ -37,7 +37,7 @@ namespace xtd {
     /// @param d The remaining 8 bytes of the GUID.
     /// @exception std::invalid_argument bytes is not 8 bytes long.
     explicit guid(int a, int b, int c, const std::vector<uint8_t>& d) {
-      if (d.size() != 8) throw xtd::argument_exception("vector size must be 8", caller_info_);
+      if (d.size() != 8) throw xtd::argument_exception("Vector size must be 8", caller_info_);
       
       data_[0] = static_cast<uint8_t>((a & 0xFF000000) >> 24);
       data_[1] = static_cast<uint8_t>((a & 0x00FF0000) >> 16);
@@ -226,7 +226,7 @@ namespace xtd {
       format = format.empty() ? "d" : xtd::strings::to_lower(format);
       
       if (format.size() != 1 || xtd::strings::index_of("ndbpx", format) == std::string::npos)
-        throw xtd::format_exception("bad format", caller_info_);
+        throw xtd::format_exception(caller_info_);
       
       bool hyphens = format != "n" && format != "x";
       bool braces = format == "b";
