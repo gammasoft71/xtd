@@ -1,5 +1,5 @@
 #include <xtd/drawing/color.h>
-#include <xtd/argument_exception.h>
+#include <xtd/format_exception.h>
 #include <xtd/xtd.tunit>
 
 using namespace xtd::drawing;
@@ -215,7 +215,7 @@ namespace unit_tests {
     }
     
     void test_method_(create_from_know_color_invalid) {
-      assert::throws<xtd::argument_exception>([] {color::from_known_color((known_color)7654);});
+      assert::throws<xtd::format_exception>([] {color::from_known_color((known_color)7654);});
     }
 
     void test_method_(create_from_know_color_transparent) {
