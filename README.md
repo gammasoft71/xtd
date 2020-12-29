@@ -1,6 +1,6 @@
 [![console](docs/pictures/header.png)](https://gammasoft71.wixsite.com/gammasoft)
 
-[![Build Status](https://travis-ci.org/gammasoft71/xtd.svg?branch=master)](https://travis-ci.org/gammasoft71/xtd)
+[![Build Status](https://travis-ci.com/gammasoft71/xtd.svg?branch=master)](https://travis-ci.com/gammasoft71/xtd)
 [![Build status](https://ci.appveyor.com/api/projects/status/uqn1xbctwy88eghu?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd)
 [![Reference Guide](https://img.shields.io/badge/code-Reference_Guide-brightgreen.svg)](https://codedocs.xyz/gammasoft71/xtd/)
 [![Wiki](https://img.shields.io/badge/wiki-Home-brightgreen.svg)](./docs/home.md)
