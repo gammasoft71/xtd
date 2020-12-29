@@ -1,0 +1,12 @@
+key "Only characters : \"{}\" are valid"
+value "Only characters : \"{}\" are valid"
+
+key "value must be between 0.0 and 1.0."
+value "value must be between 0.0 and 1.0."
+
+key "value must be positive"
+value "value must be positive"
+
+key "lcd_style invalid"
+value "lcd_style invalid"
+

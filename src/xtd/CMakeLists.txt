@@ -22,19 +22,29 @@ add_sources(
   ../../locale/en/busy_box.strings
   ../../locale/en/checked_list_box.strings
   ../../locale/en/choice.strings
+  ../../locale/en/color.strings
   ../../locale/en/combo_box.strings
+  ../../locale/en/control.strings
   ../../locale/en/countries.strings
   ../../locale/en/domain_up_down.strings
   ../../locale/en/environment.strings
   ../../locale/en/exception_dialog.strings
   ../../locale/en/exceptions.strings
+  ../../locale/en/font.strings
+  ../../locale/en/font_family.strings
   ../../locale/en/form.strings
+  ../../locale/en/graphics.strings
   ../../locale/en/guid.strings
   ../../locale/en/image_list.strings
+  ../../locale/en/lcd_label.strings
   ../../locale/en/list_box.strings
   ../../locale/en/menu.strings
+  ../../locale/en/pen.strings
+  ../../locale/en/splitter.strings
   ../../locale/en/strings.strings
+  ../../locale/en/text_box_base.strings
   ../../locale/en/texts.strings
+  ../../locale/en/theme_colors.strings
   ../../locale/en/version.strings
 )
 add_sources(

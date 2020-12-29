@@ -50,7 +50,7 @@ namespace {
       wxGraphicsBrush b = graphics.CreateLinearGradientBrush(static_cast<double>(point1.x), static_cast<double>(point1.y), static_cast<double>(point2.x), static_cast<double>(point2.y), color1, color2);;
       return b;
     }
-    throw xtd::argument_exception("brush not defined", caller_info_);
+    throw xtd::argument_exception("brush not defined"_t, caller_info_);
   }
 }
 
