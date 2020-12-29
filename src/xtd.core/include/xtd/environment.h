@@ -274,7 +274,7 @@ namespace xtd {
         return ""; //return microsoft::win32::registry::get_value("HKEY_CURRENT_USER\\Environment", variable, "").to_string();
       if (target == environment_variable_target::machine)
         return ""; // return microsoft::win32::registry::get_value("HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Session Manager\\Environment", variable, "").to_string();
-      throw xtd::argument_exception("invalid environment_variable_target value", caller_info_);
+      throw xtd::argument_exception("Invalid environment variable target value"_t, caller_info_);
     }
 
     /// @brief Retrieves all environment variable names and their values from the current process.
@@ -423,15 +423,15 @@ namespace xtd {
     /// @remarks If value is empty and the environment variable named by variable exists, the environment variable is deleted. If variable does not exist, no error occurs even though the operation cannot be performed.
     /// @todo Add xtd::registry and uncomment lines.
     static void set_environment_variable(const std::string& variable, const std::string& value, environment_variable_target target) {
-      if (xtd::strings::is_empty(variable)) throw xtd::argument_exception("name is empty", caller_info_);
+      if (xtd::strings::is_empty(variable)) throw xtd::argument_exception("Environment variable name is empty"_t, caller_info_);
       
       if (target == environment_variable_target::process) {
         if (xtd::strings::is_empty(value)) {
           get_environment_variables().erase(variable);
-          if (__opaque_environment::unset_env(variable) != 0) throw xtd::argument_exception("can't erase environment variable", caller_info_);
+          if (__opaque_environment::unset_env(variable) != 0) throw xtd::argument_exception("Can't erase environment variable"_t, caller_info_);
         } else {
           get_environment_variables()[variable] = value;
-          if (__opaque_environment::set_env(variable, value) != 0) throw xtd::argument_exception("can't set environment variable", caller_info_);
+          if (__opaque_environment::set_env(variable, value) != 0) throw xtd::argument_exception("Can't set environment variable"_t, caller_info_);
         }
       } else if(target == environment_variable_target::user || target == environment_variable_target::machine) {
         //microsoft::win32::registry_key key = target == environment_variable_target::user ? microsoft::win32::registry::current_user().create_sub_key("Environment") : microsoft::win32::registry::local_machine().create_sub_key("System").create_sub_key("CurrentControlSet").create_sub_key("Control").create_sub_key("Session Manager").create_sub_key("Environment");
@@ -440,7 +440,7 @@ namespace xtd {
         //else
         //  key.set_value(variable, value);
       } else
-        throw xtd::argument_exception("invalid environment_variable_target value", caller_info_);
+        throw xtd::argument_exception("Invalid environment variable target value"_t, caller_info_);
     }
 
     /// @brief Gets current stack trace information.

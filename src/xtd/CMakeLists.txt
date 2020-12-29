@@ -25,13 +25,17 @@ add_sources(
   ../../locale/en/combo_box.strings
   ../../locale/en/countries.strings
   ../../locale/en/domain_up_down.strings
+  ../../locale/en/environment.strings
   ../../locale/en/exception_dialog.strings
   ../../locale/en/exceptions.strings
   ../../locale/en/form.strings
+  ../../locale/en/guid.strings
   ../../locale/en/image_list.strings
   ../../locale/en/list_box.strings
   ../../locale/en/menu.strings
+  ../../locale/en/strings.strings
   ../../locale/en/texts.strings
+  ../../locale/en/version.strings
 )
 add_sources(
   references.cmake
