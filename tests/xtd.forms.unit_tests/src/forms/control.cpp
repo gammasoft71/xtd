@@ -94,7 +94,7 @@ namespace unit_tests {
     
     void test_method_(create_control_without_parent) {
       control control;
-      assert::throws_(argument_exception, [&] {control.create_control();});
+      assert::throws_(format_exception, [&] {control.create_control();});
     }
     
     void test_method_(create_control_with_parent) {
