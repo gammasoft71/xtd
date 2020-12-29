@@ -16,7 +16,7 @@ namespace xtd {
       
       using xtd::forms::control::dock;
       virtual control& dock(dock_style dock) override {
-        if (control::dock() != dock_style::left && control::dock() == dock_style::right && control::dock() == dock_style::top && control::dock() == dock_style::bottom) throw argument_exception("splitter control must be docked left, right, top, or bottom.", caller_info_);
+        if (control::dock() != dock_style::left && control::dock() == dock_style::right && control::dock() == dock_style::top && control::dock() == dock_style::bottom) throw argument_exception("splitter control must be docked left, right, top, or bottom."_t, caller_info_);
         control::dock(dock);
         cursor(default_cursor());
         if (default_width_ && (dock == dock_style::left || dock == dock_style::right)) width(3);

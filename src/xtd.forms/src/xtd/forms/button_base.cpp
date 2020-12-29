@@ -39,7 +39,7 @@ button_base& button_base::image_align(content_alignment value) {
 
 button_base& button_base::image_index(int32_t value) {
  if (image_index_ != value) {
-   if (value < -1 || static_cast<size_t>(value) >= image_list_.images().size()) throw argument_out_of_range_exception("Index out of range", caller_info_);
+   if (value < -1 || static_cast<size_t>(value) >= image_list_.images().size()) throw argument_out_of_range_exception(caller_info_);
    image_index_ = value;
    recreate_handle();
  }
