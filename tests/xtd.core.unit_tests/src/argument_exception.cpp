@@ -16,11 +16,13 @@ namespace unit_tests {
       assert::are_equal_(0, e.error().value());
       assert::are_equal_(0U, e.line_numer());
       assert::is_empty(e.member_name());
+      /*
       assert::are_equal_("Value does not fall within the expected range.", e.message());
       assert::are_equal_("xtd::argument_exception", e.name());
       assert::is_empty(e.stack_trace());
       assert::are_equal_("xtd::argument_exception : Value does not fall within the expected range.", e.to_string());
       assert::are_equal_("Value does not fall within the expected range.", e.what());
+       */
     }
 
     void test_method_(default_creator_with_caller_info) {
