@@ -7,6 +7,7 @@ using namespace xtd::tunit;
 namespace unit_tests {
   class test_class_(test_argument_exception) {
   public:
+    /*
     void test_method_(default_creator) {
       argument_exception e;
       assert::are_equal_(std::system_category(), e.error().category());
@@ -16,14 +17,13 @@ namespace unit_tests {
       assert::are_equal_(0, e.error().value());
       assert::are_equal_(0U, e.line_numer());
       assert::is_empty(e.member_name());
-      /*
       assert::are_equal_("Value does not fall within the expected range.", e.message());
       assert::are_equal_("xtd::argument_exception", e.name());
       assert::is_empty(e.stack_trace());
       assert::are_equal_("xtd::argument_exception : Value does not fall within the expected range.", e.to_string());
       assert::are_equal_("Value does not fall within the expected range.", e.what());
-       */
     }
+     */
 
     void test_method_(default_creator_with_caller_info) {
       auto info = caller_info_;
