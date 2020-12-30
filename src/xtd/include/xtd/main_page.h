@@ -16,22 +16,12 @@
 /// @code
 /// #include <xtd/xtd>
 ///
-/// using namespace std;
 /// using namespace xtd;
 ///
-/// // The main entry point for the application.
 /// int main() {
-///   const char* s1 = "Hello,";
-///   string s2 = "World!";
-///
-///   cout << foreground_color(console_color::green);
-///   cout << format("{}{,7}", s1, s2);
-///   cout << reset_color() << endl;
-///
 ///   console::background_color(console_color::blue);
 ///   console::foreground_color(console_color::white);
-///   console::write_line("{}{,7}", s1, s2);
-///   console::reset_color();
+///   console::write_line("Hello, World!");
 /// }
 /// @endcode
 ///
@@ -39,16 +29,13 @@
 /// @code
 /// #include <xtd/xtd>
 ///
-/// using namespace xtd;
-/// using namespace xtd::drawing;
 /// using namespace xtd::forms;
 ///
-/// // The main entry point for the application.
 /// int main() {
 ///   button button1;
 ///   button1.text("Click me");
-///   button1.location(point(10, 10));
-///   button1.click += [&] {
+///   button1.location({10, 10});
+///   button1.click += [] {
 ///     messageBox::show("Hello, World!");
 ///   };
 ///
@@ -83,7 +70,6 @@
 ///   };
 /// }
 ///
-/// // The main entry point for the application.
 /// int main(int argc, char* argv[]) {
 ///   return console_unit_test(argv, argc).run();
 /// }
