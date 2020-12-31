@@ -23,11 +23,11 @@ namespace xtd {
             value
           };
           parse_status status = parse_status::selector;
-          auto start_index = 0UL;
+          size_t start_index = 0;
           xtd::html::css::selector current_selector;
           std::string current_selector_name;
           std::string current_key;
-          for (auto index = 0UL; index < text.size(); index++) {
+          for (size_t index = 0; index < text.size(); index++) {
             if (text[index] == '/' && text[index+1] == '*') {
               // Skip comments...
               index = xtd::strings::index_of(text, "*/", index+2);
