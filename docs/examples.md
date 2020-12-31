@@ -45,9 +45,9 @@ xtdc run
 Hello, World!
 ```
 
-## Forms
+## Gui
 
-### hello_world_forms.cpp
+### hello_world_form.cpp
 
 ```c++
 #include <xtd/xtd.xtd>
@@ -76,9 +76,9 @@ int main() {
 ```cmake
 cmake_minimum_required(VERSION 3.3)
 
-project(hello_world_forms)
+project(hello_world_form)
 find_package(xtd REQUIRED)
-add_sources(hello_world_forms.cpp)
+add_sources(hello_world_form.cpp)
 target_type(GUI_APPLICATION)
 ```
 
@@ -111,7 +111,7 @@ xtdc run
 
 ## Unit tests
 
-### hello_world_tunit.cpp:
+### hello_world_test.cpp:
 
 ```c++
 #include <xtd/xtd>
@@ -148,9 +148,9 @@ int main() {
 ```cmake
 cmake_minimum_required(VERSION 3.3)
 
-project(hello_world_tunit)
+project(hello_world_test)
 find_package(xtd REQUIRED)
-add_sources(hello_world_tunit.cpp)
+add_sources(hello_world_test.cpp)
 target_type(TEST_APPLICATION)
 ```
 
