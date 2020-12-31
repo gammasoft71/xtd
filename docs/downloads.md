@@ -2,7 +2,7 @@
 
 # Download the latest stable xtd version
 
-You can download latest stable version on [SourceForge](https://sourceforge.net/projects/xtdpro/)
+You can download latest stable version on [SourceForge](https://sourceforge.net/projects/xtdpro/).
 
 [![Downloadxtd](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/xtdpro/files/latest/download)
 
@@ -16,17 +16,17 @@ git clone https://github.com/gammasoft71/xtd.git
 
 # Libraries dependency
 
-xtd is currently in development mode and the only [xtd.form.native.wxwidgets](https://github.com/gammasoft71/xtd_forms/tree/master/src/xtd_forms_native_wxwidgets/README.md) backend is supported.
+xtd is currently in development mode and the only [xtd.forms.native.wxwidgets](https://github.com/gammasoft71/xtd_forms/tree/master/src/xtd_forms_native_wxwidgets/README.md) backend is supported.
 
 See [wxWidgets downloads](https://www.wxwidgets.org/downloads/) to install [wxWidgets](https://www.wxwidgets.org/)  on your system.
 
-In the future xtd.forms will use [xtd.form.native.win32](https://github.com/gammasoft71/xtd_forms/tree/master/src/xtd_forms_native_win32/README.md) on Windows, [xtd.form.native.cocoa](https://github.com/gammasoft71/xtd_forms/tree/master/src/xtd_forms_native_cocoa/README.md) on macOS and [xtd.form.native.gtk4](https://github.com/gammasoft71/xtd_forms/tree/master/src/xtd_forms_native_gtk4/README.md) on linux. Other backend like [xtd.form.native.qt5](https://github.com/gammasoft71/xtd_forms/tree/master/src/xtd_forms_native_qt5/README.md) will be ported too.
+In the future xtd.forms will use [xtd.forms.native.win32](https://github.com/gammasoft71/xtd_forms/tree/master/src/xtd_forms_native_win32/README.md) on Windows, [xtd.forms.native.cocoa](https://github.com/gammasoft71/xtd_forms/tree/master/src/xtd_forms_native_cocoa/README.md) on macOS and [xtd.forms.native.gtk4](https://github.com/gammasoft71/xtd_forms/tree/master/src/xtd_forms_native_gtk4/README.md) on linux. Other backend like [xtd.forms.native.qt5](https://github.com/gammasoft71/xtd_forms/tree/master/src/xtd_forms_native_qt5/README.md) will be ported too.
 
 # Installation
 
 ## Windows 7 SP1 or later
 
-1. Install Microsoft Visual Studio 2017 Community
+1. Install Microsoft Visual Studio 2017 Community or later
   
    In order to build xtd.forms, you first need download and install Microsoft Visual Studio 2017 community from [https://www.visualstudio.com](https://www.visualstudio.com).
 
@@ -36,14 +36,14 @@ In the future xtd.forms will use [xtd.form.native.win32](https://github.com/gamm
    
    *Remarks: Verify if you can execute 'cmake --version' in "Command Prompt", if it's no, add cmake install directory to your path.*
 
-3. After installing Microsoft Visual Studio and CMake, do the following in "Command Prompt" to build and install xtd.forms :
+3. After installing Microsoft Visual Studio and CMake, do the following in "Command Prompt" to build and install xtd :
 
 ```shell
 cd xtd_path_name
 install
 ```
 
-4. Create as many unit tests as you want with xtd.forms.
+4. Create as many applications as you want with xtd.
 
 
 ## macOS 10.14 (OS X Mojave) or later
