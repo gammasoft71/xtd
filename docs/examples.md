@@ -47,7 +47,7 @@ Hello, World!
 
 ## Forms
 
-### hello_world_form.cpp
+### hello_world_forms.cpp
 
 ```c++
 #include <xtd/xtd.xtd>
@@ -76,9 +76,9 @@ int main() {
 ```cmake
 cmake_minimum_required(VERSION 3.3)
 
-project(hello_world_form)
+project(hello_world_forms)
 find_package(xtd REQUIRED)
-add_sources(hello_world_form.cpp)
+add_sources(hello_world_forms.cpp)
 target_type(GUI_APPLICATION)
 ```
 
