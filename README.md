@@ -139,7 +139,7 @@ For more examples see [examples](examples/README.md)
 
 # Download and install
 
-Before running examples you must download and install xtd. To download and install it read [downloads](docs/downloads.md) file.
+Before running examples you must download and install xtd. To download and install it read [Gettting started](docs/getting_started.md) section.
 
 <!---
 # Motivations
