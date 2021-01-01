@@ -39,6 +39,13 @@ See [xtd libraries hierarchy](hierarchy.md).
 * Strong focus on code quality, style, consistency and code readability –all code must satisfy our coding style guide
 * Strong focus on tests (automated unit tests with high coverage)
 * Build on top of solid foundations – use existing proven C, C++ or Objective-C libraries (e.g. Win32 APi, Gtk4, AppKit,...) where it makes sense
+
+# Getting Started
+
+* [Installation](downloads.md) provide download and install documentation.
+* [Portability](portability.md) provide information about C++, libraries dependency, Operating System suported, Compilators and Devepment Environment tools.
+* [Examples](../examples/README.md) provide some examples.
+
 ______________________________________________________________________________________________
 
 © 2020 Gammasoft.
