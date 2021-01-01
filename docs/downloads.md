@@ -71,7 +71,7 @@ cd xtd_path_name
 
 4. Create as many applications as you want with xtd.
 
-## CentOS 7, Debian 9.7, Elementary OS 5.0, Fedora 29, LinuxMint 19.1, RedHat 7.5 and Ubuntu 18.04 (or later)
+## CentOS 7, Debian 9.7, Elementary OS 5.0, Fedora 29, LinuxMint 19.1, RedHat 7.5 and Ubuntu 19.04 (or later)
 
 1. Do the following in "Terminal" to Build and install :
 
@@ -87,7 +87,7 @@ cd xtd_path_name
 
 1. Install g++ 9 or later
   
-   In order to build , you first need download and install g++ 7 or later.
+   In order to build , you first need download and install g++ 9 or later.
 
    *Remarks: Verify if you can execute 'g++ --version' in "Terminal".*
 
@@ -108,7 +108,7 @@ cd xtd_path_name
 
 # Build and run your first xtd application
 
-Use internal tools installed with xtdc-gui.
+Use internal tools installed with xtd.
 
 ## xtdc-gui (gui)
 
