@@ -24,11 +24,11 @@ In the future xtd.forms will use [xtd.forms.native.win32](https://github.com/gam
 
 # Installation
 
-## Windows 7 SP1 or later
+## Windows 10 or later
 
-1. Install Microsoft Visual Studio 2017 Community or later
+1. Install Microsoft Visual Studio 2019 Community or later
   
-   In order to build xtd.forms, you first need download and install Microsoft Visual Studio 2017 community from [https://www.visualstudio.com](https://www.visualstudio.com).
+   In order to build xtd.forms, you first need download and install Microsoft Visual Studio 2019 community from [https://www.visualstudio.com](https://www.visualstudio.com).
 
 2. Install CMake 3.3 or later
   
@@ -46,9 +46,9 @@ install
 4. Create as many applications as you want with xtd.
 
 
-## macOS 10.14 (OS X Mojave) or later
+## macOS 10.15 (OS X Catalina) or later
 
-1. Install Xcode 10 or later
+1. Install Xcode 11 or later
   
    In order to build xtd.forms, you first need download and install Xcode from App Store and install "Commands line tools".
 
@@ -56,7 +56,7 @@ install
 
 2. Install Homebrew
   
-   After Xcode, to build Switch, you need to install package manager Homebrew ([http://brew.sh](http://brew.sh)).
+   After Xcode, to build Switch, you need to install package manager [Homebrew](https://brew.sh)).
    
 ```shell
 /usr/bin/ruby -e "$(curl -fsSL ttps://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -69,7 +69,7 @@ cd xtd_path_name
 ./install
 ```
 
-4. Create as many unit tests as you want with xtd.forms.
+4. Create as many applications as you want with xtd.
 
 ## CentOS 7, Debian 9.7, Elementary OS 5.0, Fedora 29, LinuxMint 19.1, RedHat 7.5 and Ubuntu 18.04 (or later)
 
@@ -80,12 +80,12 @@ cd xtd_path_name
 ./install
 ```
 
-2. Create as many unit tests as you want with xtd.forms.
+2. Create as many applications as you want with xtd.
 
 
 ## Other linux Distribution
 
-1. Install g++ 7 or later
+1. Install g++ 9 or later
   
    In order to build , you first need download and install g++ 7 or later.
 
