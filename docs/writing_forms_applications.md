@@ -1,6 +1,6 @@
 | [Home](home.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md)  | [Contact](contact.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-# Writing application
+# Writing Forms application
 
 ## In This Section
 
@@ -10,7 +10,7 @@
 
 This tutorial describe the basic steps that you must complete to create and run a Windows Forms application from the command line.
 
-## Create Windows Form
+## Create Forms
 
 The following procedures describe the basic steps that you must complete to create and run a Windows Forms application from the command line. There is extensive support for these procedures in Visual Studio. Also see Walkthrough: Creating a Simple Windows Form.
 
