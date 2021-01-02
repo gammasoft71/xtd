@@ -20,7 +20,7 @@ public:
       about_dialog.version("1.0");
       about_dialog.long_version("1.0.0");
       about_dialog.description("About dialog description.");
-      about_dialog.copyright("Copyright (c) 2020 Gammasoft.\nAll rights reserved.");
+      about_dialog.copyright("Copyright (c) 2021 Gammasoft.\nAll rights reserved.");
       about_dialog.website("https://gammasoft71.wixsite.com/gammasoft");
       about_dialog.website_label("gammasoft website");
       about_dialog.creators({"Gammasoft", "Contributors"});
@@ -29,7 +29,7 @@ public:
       about_dialog.designers({"Gammasoft"});
       about_dialog.license("MIT License\n"
                            "\n"
-                           "Copyright (c) 2019 Gammasoft.\n"
+                           "Copyright (c) 2021 Gammasoft.\n"
                            "\n"
                            "Permission is hereby granted, free of charge, to any person obtaining\n"
                            "a copy of this software and associated documentation files (the\n"
