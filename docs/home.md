@@ -2,11 +2,9 @@
 
 [![operating_systems_logo](pictures/operating_systems.png)](https://gammasoft71.wixsite.com/xtdpro)
 
-# xtd is ...
-
 Modern c++20 libraries to create console, gui and unit test applications.
 
-# Features
+# xtd is ...
 
 * a collection of native C++ classes libraries, to complete std;
 * written in efficient, modern C++20;
@@ -15,7 +13,7 @@ Modern c++20 libraries to create console, gui and unit test applications.
 
 [![architecture_logo](pictures/block_diagram.png)](hierarchy.md)
 
-# xtd is composed of several libraries
+# ... composed of several libraries
 
 These libreries are grouped by theme :
 
