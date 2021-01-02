@@ -42,9 +42,9 @@ See [xtd libraries hierarchy](hierarchy.md).
 
 # Getting Started
 
-* [Installation](downloads.md) provide download and install documentation.
-* [Portability](portability.md) provide information about C++, libraries dependency, Operating System suported, Compilators and Devepment Environment tools.
-* [Examples](../examples/README.md) provide some examples.
+* [Installation](downloads.md) provides download and install documentation.
+* [Portability](portability.md) provides information about C++, libraries dependency, Operating System suported, Compilators and Devepment Environment tools.
+* [Examples](../examples/README.md) provides some examples.
 
 ______________________________________________________________________________________________
 
