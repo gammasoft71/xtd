@@ -6,29 +6,15 @@ This tutorial describe the basic steps that you must complete to create and run 
 
 ## In this section
 
-* [Create comsole applicaiton](#createconsole-application)
-* [Create Windows Form application](#create-windows-form-application)
-* [Create unittests application](#create-unittests)
-
-## Create console application
-
-This [tutorial](https://github.com/gammasoft71/xtd_console/tree/master/docs/writing_applicaitons.md) describe the basic steps that you must complete to create and run a console application from the command line.
-
-## Create forms application
-
-This [tutorial](writing_forms_applications.md) describe the basic steps that you must complete to create and run a xtd.forms application from the command line.
-
-## Create unit tests application
-
-This [tutorial](writing_tests.md) describe the basic steps that you must complete to create and run a unitests application from the command line.
-
-This  [tutorial](running_tests.md) provide running tests documentation.
-
-This [tutorial](extending_tunit.md) provide extending xtd.tunit documentation.
+* [Create comsole applicaiton](writing_console_application.md) describes the basic steps that you must complete to create and run a console application from the command line.
+* [Create Windows Form application](writing_forms_applications.md) describes the basic steps that you must complete to create and run a xtd.forms application from the command line.
+* [Create unittests application](writing_tests.md) describes the basic steps that you must complete to create and run a xtd.tunit unitests application from the command line.
+* [Running unittests application](running_tests.md) provides running xtd.tunit tests documentation.
+* [Extending unittests application](extending_tunit.md) provides extending xtd.tunit tests documentation.
 
 ## See also
 
-[Documentation](documentation.md)
+* [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
 
