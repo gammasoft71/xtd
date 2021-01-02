@@ -8,5 +8,5 @@ To contact Gammasoft please send a mail to [gammasoft71@gmail.com](mailto:gammas
 
 ______________________________________________________________________________________________
 
-© 2020 Gammasoft.
+© 2021 Gammasoft.
 

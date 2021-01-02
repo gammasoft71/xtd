@@ -32,4 +32,4 @@ This [tutorial](extending_tunit.md) provide extending xtd.tunit documentation.
 
 ______________________________________________________________________________________________
 
-© 2020 Gammasoft.
+© 2021 Gammasoft.

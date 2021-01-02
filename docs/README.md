@@ -11,8 +11,8 @@
 * [Project](https://sourceforge.net/projects/xtdpro/) is a link to SourceForge project.
 * [Gammasoft](gammasoft.md) contains informations about Gammasoft.
 * [Contact](contact.md) is the way to contact Gammasoft.
-* [Website](https://gammasoft71.wixsite.com/gammasoft) is a link to Gammasoft website.
+* [Website](https://gammasoft71.wixsite.com/xtdpro) is a link to xtd website.
 
 ______________________________________________________________________________________________
 
-© 2020 Gammasoft.
+© 2021 Gammasoft.
