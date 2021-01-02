@@ -137,9 +137,11 @@ target_type(TEST_APPLICATION)
 
 For more examples see [examples](examples/README.md)
 
-# Download and install
+# Getting Started
 
-Before running examples you must download and install xtd. To download and install it read [Gettting started](docs/getting_started.md) section.
+* [Installation](downloads.md) provides download and install documentation.
+* [Portability](portability.md) provides information about C++, libraries dependency, Operating System suported, Compilators and Devepment Environment tools.
+* [Examples](../examples/README.md) provides some examples.
 
 <!---
 # Motivations
