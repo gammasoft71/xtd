@@ -4,6 +4,8 @@
 
 This section contains the xtd documentation. ​
 
+## In This Section
+
 * [Getting started](getting_started.md) provide getting started documentation.
 * [Writing applications](writing_applications.md) provide writing applications documentation.
 * [Tutorial](tutorial.md) provide a tutorial to cover the basics needed to create xtd applications.
