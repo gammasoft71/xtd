@@ -48,7 +48,7 @@ install
 
 ## macOS 10.15 (OS X Catalina) or later
 
-1. Install Xcode 11 or later
+1. Install Xcode 11.6 or later
   
    In order to build xtd.forms, you first need download and install Xcode from App Store and install "Commands line tools".
 
