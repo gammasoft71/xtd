@@ -2,8 +2,6 @@
 
 [![operating_systems_logo](pictures/operating_systems.png)](https://gammasoft71.wixsite.com/xtdpro)
 
-Modern c++20 libraries to create console, gui and unit test applications.
-
 # xtd is ...
 
 * a collection of native C++ classes libraries, to complete std;
