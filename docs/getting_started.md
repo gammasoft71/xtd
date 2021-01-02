@@ -12,7 +12,7 @@ This Section provide getting started documentation.
 
 ## See also
 
-[Documentation](documentation.md)
+* [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
 
