@@ -13,7 +13,7 @@ Modern c++20 libraries to create console, gui and unit test applications.
 * and highly portable and available on many different platforms (Windows, macOS, Linux, iOS and android);
 
 
-[![architecture_logo](pictures/architecture.png)](hierarchy.md)
+[![architecture_logo](pictures/block_diagram.png)](hierarchy.md)
 
 # xtd is composed of several libraries
 

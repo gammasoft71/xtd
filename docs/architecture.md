@@ -2,7 +2,7 @@
 
 # The xtd libraries architecture
 
-[![libraries_img](pictures/architecture.png)](hierarchy.md)
+[![libraries_img](pictures/block_diagram.png)](hierarchy.md)
 
 
 # xtd is composed of several libraries
