@@ -1,8 +1,8 @@
 | [Home](home.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md)  | [Contact](contact.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-# Writing application
+# Writing applications
 
-This tutorial describe the basic steps that you must complete to create and run a Windows Forms application from the command line.
+This tutorial describe the basic steps that you must complete to create and run a console, GUI or test application from the command line.
 
 ## In this section
 
