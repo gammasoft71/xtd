@@ -1,8 +1,8 @@
 | [Home](home.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md)  | [Contact](contact.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-This section contains the xtd documentation. ​
+# Documentation
 
-# In This Section
+This section contains the xtd documentation. ​
 
 * [Getting started](getting_started.md) provide getting started documentation.
 * [Writing applications](writing_applications.md) provide writing applications documentation.
