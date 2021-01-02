@@ -13,6 +13,7 @@ This section contains the xtd documentation. ​
 * [Design Guidelines](design_guidelines.md) provides guidelines for designing libraries that extend and interact with the xtd.forms.
 * [Development status](development_status.md) provide information about classes and libraries development status.
 * [Release notes](release_notes.md) provide release notes information.
+* [Portability](portability.md) provide information about C++, libraries dependency, Operating System suported, Compilators and Devepment Environment tools.
 * [Tools](tools.md) list the xtd tools.
 * [External tools, libraries and toolkits](external_tools_libraries_and_toolkits.md) list the external tools, libraries and toolkits used by xtd.
 * [License](license.md) provide license information.
