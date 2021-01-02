@@ -2,13 +2,13 @@
 
 # Writing application
 
-## In This Section
+This tutorial describe the basic steps that you must complete to create and run a Windows Forms application from the command line.
+
+## In this section
 
 * [Create comsole applicaiton](#createconsole-application)
 * [Create Windows Form application](#create-windows-form-application)
 * [Create unittests application](#create-unittests)
-
-This tutorial describe the basic steps that you must complete to create and run a Windows Forms application from the command line.
 
 ## Create console application
 
