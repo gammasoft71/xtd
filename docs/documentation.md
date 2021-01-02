@@ -4,7 +4,7 @@
 
 This section contains the xtd documentation. ​
 
-## In This Section
+## In this section
 
 * [Getting started](getting_started.md) provide getting started documentation.
 * [Writing applications](writing_applications.md) provide writing applications documentation.
