@@ -2,7 +2,7 @@
 
 # Getting Started
 
-## In This Section
+This Section provide getting started documentation.
 
 * [Installation](downloads.md) provide download and install documentation.
 * [Portability](portability.md) provide information about C++, libraries dependency, Operating System suported, Compilators and Devepment Environment tools.
