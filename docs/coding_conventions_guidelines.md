@@ -64,7 +64,7 @@ root
   |   +- ...
   +- tools
       +- guidgen
-      +- xtdc-gui
+      +- guidgen-gui
       +- ...
 ```
 
