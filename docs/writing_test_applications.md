@@ -388,13 +388,19 @@ void test_method_(test_case_1) {
 
 ## Initialize and Cleanup
 
+Comming soon...
+
 ## Test case
+
+Comming soon...
 
 ## Test class
 
-Test class or Test fixture...
+Comming soon...
 
 ## Test
+
+Comming soon...
 
 ## See also
 
