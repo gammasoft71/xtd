@@ -5,7 +5,7 @@
 ## In This Section
 
 * [Create console](#create-console)
-* [Adding a Control and Handling an Event](#adding-a-control-and-handling-an-event)
+* [Adding a write line and read line](#adding-a-write-line-and-read-line)
 * [Example](#example)
 
 This tutorial describe the basic steps that you must complete to create and run a console application from the command line.
@@ -89,9 +89,7 @@ xtdc run
 
 ## Adding a write line and read line
 
-The previous procedure steps demonstrated how to just create a basic Windows Form that compiles and runs. The next procedure will show you how to create and add a control to the form, and handle an event for the control.
-
-In addition to understanding how to create console applications, you should understand event-based programming and how to handle user input.
+The previous procedure steps demonstrated how to just create a basic consolecthat compiles and runs.
 
 ### To change background and forground colors and write and read line with the console
 
@@ -123,7 +121,7 @@ xtdc run
 
 Following code example is the complete example from the previous tutorial.
 
-form1.cpp:
+console1.cpp:
 
 ```c++
 #include <xtd/xtd>
