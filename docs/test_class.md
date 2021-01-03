@@ -102,7 +102,9 @@ int main(int argc, char* argv[]) {
 
 ## See also
 
-[Documentation](documentation.md)
+* [Writing test applications](writing_test_applications.md)
+* [Writing applicattions](writing_applications.md)
+* [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
 
