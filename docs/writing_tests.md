@@ -382,15 +382,13 @@ Assumptions make use with the following static classes :
 ```c++
 void test_method_(test_case_1) {
   assume::are_equal(4, 2 + 2, line_info_);
-  string_vassume::start_width("Hello", "Hello, World!", line_info_)
+  string_assume::start_width("Hello", "Hello, World!", line_info_)
 }
 ```
 
 ## Initialize and Cleanup
 
 ## Test case
-
-***Not yet implemented.***
 
 ## Test class
 
