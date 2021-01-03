@@ -2,7 +2,7 @@
 
 # Class cleanup (class_cleanup)
 
-Coomming soon...
+Comming soon...
 
 ## See also
 

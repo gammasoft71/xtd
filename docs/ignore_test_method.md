@@ -2,7 +2,7 @@
 
 # Ignore test method (ignore_test_method)
 
-Coomming soon...
+Comming soon...
 
 ## See also
 

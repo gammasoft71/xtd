@@ -2,7 +2,7 @@
 
 # Line info (line_info)
 
-Coomming soon...
+Comming soon...
 
 ## See also
 

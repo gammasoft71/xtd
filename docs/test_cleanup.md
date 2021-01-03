@@ -2,7 +2,7 @@
 
 # Test cleanup (test_cleanup)
 
-Coomming soon...
+Comming soon...
 
 ## See also
 

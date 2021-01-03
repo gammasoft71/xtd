@@ -2,7 +2,7 @@
 
 # Test method (test_method)
 
-Coomming soon...
+Comming soon...
 
 ## See also
 

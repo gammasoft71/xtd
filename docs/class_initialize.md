@@ -2,7 +2,7 @@
 
 # Class initialize (class_inittialize)
 
-Coomming soon...
+Comming soon...
 
 ## See also
 
