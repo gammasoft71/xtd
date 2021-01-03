@@ -1,25 +1,25 @@
 | [Home](home.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md)  | [Contact](contact.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-# Writing Forms application
+# Writing GUI application
 
 ## In This Section
 
-* [Create Windows Form](#create-windows-form)
+* [Create GUI](#create-gui)
 * [Adding a Control and Handling an Event](#adding-a-control-and-handling-an-event)
 * [Example](#example)
 
-This tutorial describe the basic steps that you must complete to create and run a Windows Forms application from the command line.
+This tutorial describe the basic steps that you must complete to create and run a GUI application from the command line.
 
-## Create Forms
+## Create GUI
 
-The following procedures describe the basic steps that you must complete to create and run a Windows Forms application from the command line. There is extensive support for these procedures in Visual Studio. Also see Walkthrough: Creating a Simple Windows Form.
+The following procedures describe the basic steps that you must complete to create and run a GUI application from the command line.
 
 ### To create the form
 
 1. Create form1.cpp file in your project folder and type the following include file and using statements:
 
 ```c++
-#include <xtd/xtd.forms>
+#include <xtd/xtd>
 
 using namespace xtd;
 using namespace xtd::drawing;
@@ -43,13 +43,10 @@ You will add more code to the constructor in a subsequent procedure.
 
 4. Add a main method.
 
-a. Call enable_visual_styles to give the best appearance to your application.
-
-b. Create an instance of the **form1** and run it.
+Create an instance of the **form1** and run it.
 
 ```c++
 int main() {
-  application::enable_visual_styles();
   application::run(form1());
 }
 ```
@@ -62,7 +59,7 @@ int main() {
 cmake_minimum_required(VERSION 3.3)
 ```
 
-2. Set the project name and add xtd.forms package.
+2. Set the project name and add xtd package.
 
 ```cmake
 Project(form1)
@@ -73,7 +70,7 @@ find_package(xtd REQUIRED)
 
 ```cmake
 add_sources(form1.cpp)
-arget_type(GUI_APPLICATION)
+target_type(GUI_APPLICATION)
 ```
 
 ### To compile and run the application
@@ -94,9 +91,9 @@ xtdc run
 
 ## Adding a Control and Handling an Event
 
-The previous procedure steps demonstrated how to just create a basic Windows Form that compiles and runs. The next procedure will show you how to create and add a control to the form, and handle an event for the control.
+The previous procedure steps demonstrated how to just create a basic GUI that compiles and runs. The next procedure will show you how to create and add a control to the form, and handle an event for the control.
 
-In addition to understanding how to create Windows Forms applications, you should understand event-based programming and how to handle user input.
+In addition to understanding how to create GUI applications, you should understand event-based programming and how to handle user input.
 
 ### To declare a button control and handle its click event
 
@@ -178,7 +175,6 @@ private:
 };
 
 int main() {
-  application::enable_visual_styles();
   application::run(form1());
 }
 ```
