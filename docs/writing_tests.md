@@ -400,7 +400,8 @@ Test class or Test fixture...
 
 ## See also
 
-[Documentation](documentation.md)
+* [Writing applicattions](writing_applications.md)
+* [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
 
