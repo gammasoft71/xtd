@@ -58,10 +58,6 @@ root
   |   |       +- ...
   |   +- ...
   +- themes
-  |   +- gtk4_dark.css
-  |   +- gtk4_light.css
-  |   +- macos10_dark.css
-  |   +- ...
   +- tools
       +- guidgen
       +- guidgen-gui
@@ -114,7 +110,7 @@ For each library the hierarchy is identical :
 
 **root/tests** folder contains tests organized by library and namespaces.
 
-**root/themes** folder contains default theme files.
+**root/themes** folder contains default css theme files.
 
 **root/tools** folder contains xtd tools.
 
