@@ -10,58 +10,62 @@
 root
   +- build
   +- docs
-  |    +- diagrams
-  |    |    +- uml
-  |    +- pictures
-  |    +- tutorials
-  |    +- movies
+  |   +- diagrams
+  |   |   +- uml
+  |   +- pictures
+  |   +- tutorials
+  |   +- movies
   +- examples
-  |    +- xtd.forms
-  |    |    +- appplication
-  |    |    +- common_dialogs
-  |    |    +- components
-  |    |    +- ...
-  |    + ...
+  |   +- xtd.forms
+  |   |   +- appplication
+  |   |   +- common_dialogs
+  |   |   +- components
+  |   |   +- ...
+  |   +- ...
+  +- locale
+  |   +- en
+  |   +- es
+  |   +- ...
   +- resources
-  |    + countries
-  |    + cursors
-  |    + ...
+  |   + countries
+  |   + cursors
+  |   + ...
   +- scripts
-  |    +- cmake
-  |    +- install
-  |    +- ...
+  |   +- cmake
+  |   +- install
+  |   +- ...
   +- src
-  |    +- xtd.forms
-  |    |    +- include
-  |    |    |    +- xtd
-  |    |    |         +- forms
-  |    |    |         |    +- layout
-  |    |    |         |    +- ...
-  |    |    |         ±- ...
-  |    |    +- src
-  |    |         +- xtd
-  |    |              +- forms
-  |    |              |    +- layout
-  |    |              |    +- ...
-  |    |              ±- ...
-  |    +- ...
+  |   +- xtd.forms
+  |   |   +- include
+  |   |   |   +- xtd
+  |   |   |       +- forms
+  |   |   |       |   +- layout
+  |   |   |       |   +- ...
+  |   |   |       +- ...
+  |   |   +- src
+  |   |       +- xtd
+  |   |           +- forms
+  |   |           |   +- layout
+  |   |           |   +- ...
+  |   |           +- ...
+  |   +- ...
   +- tests
-  |    +- xtd.forms.manual_tests
-  |    +- xtd.forms.unit_tests
-  |    |    +- xtd
-  |    |         +- forms
-  |    |         |    +- ...
-  |    |         +- ...
-  |    +- ...
+  |   +- xtd.forms.manual_tests
+  |   +- xtd.forms.unit_tests
+  |   |   +- xtd
+  |   |       +- forms
+  |   |       |   +- ...
+  |   |       +- ...
+  |   +- ...
   +- themes
-  |    +- gtk4_dark.css
-  |    +- gtk4_light.css
-  |    +- macos10_dark.css
-  |    +- ...
+  |   +- gtk4_dark.css
+  |   +- gtk4_light.css
+  |   +- macos10_dark.css
+  |   +- ...
   +- tools
-       +- guidgen
-       +- xtdc-gui
-       +- ...
+      +- guidgen
+      +- xtdc-gui
+      +- ...
 ```
 
 **root** folder is the project folder where xtd project was extracted or cloned.
@@ -81,6 +85,8 @@ root
 **root/docs/movies** folder contains the movies used to demonstrate how to use xtd.
 
 **root/examples** folder contains examples to show how to used xtd libraries organized by library and example theme.
+
+**root/locale** folder contains rlocale files organized by language.
 
 **root/resources** folder contains resource files organized by theme.
 
