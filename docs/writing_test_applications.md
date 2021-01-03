@@ -398,7 +398,7 @@ Test class or Test fixture...
 
 ## See also
 
-* [Writing applicattions](writing_applications.md)
+* [Writing applications](writing_applications.md)
 * [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
