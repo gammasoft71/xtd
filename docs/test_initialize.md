@@ -2,7 +2,7 @@
 
 # TTest initialize (test_inittialize)
 
-Coomming soon...
+Comming soon...
 
 ## See also
 
