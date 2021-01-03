@@ -93,7 +93,7 @@ The previous procedure steps demonstrated how to just create a basic Windows For
 
 In addition to understanding how to create console applications, you should understand event-based programming and how to handle user input.
 
-### To declare a button control and handle its click event
+### To change background and forground colors and write and read line with the console
 
 1. Change background color
 2. Change foreground color
@@ -113,7 +113,7 @@ The following code example demonstrates how to write and read with the console.
   }
 ```
 
-7. Compile and run the application.
+6. Compile and run the application.
 
 ```shell
 xtdc run
