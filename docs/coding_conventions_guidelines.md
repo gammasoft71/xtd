@@ -23,8 +23,8 @@ root
   |   |   +- ...
   |   +- ...
   +- locale
-  |   +- en
-  |   +- es
+  |   +- af
+  |   +- am
   |   +- ...
   +- resources
   |   + countries
