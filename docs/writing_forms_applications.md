@@ -66,14 +66,14 @@ cmake_minimum_required(VERSION 3.3)
 
 ```cmake
 Project(form1)
-find_package(xtd.forms REQUIRED)
+find_package(xtd REQUIRED)
 ```
 
 3. Add build rules for the he project.
 
 ```cmake
-add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE form1.cpp)
-target_link_libraries(${PROJECT_NAME} xtd.forms)
+add_sources(form1.cpp)
+arget_type(GUI_APPLICATION)
 ```
 
 ### To compile and run the application
@@ -181,7 +181,6 @@ int main() {
   application::enable_visual_styles();
   application::run(form1());
 }
-
 ```
 
 CMakeLists.txt:
@@ -197,7 +196,8 @@ target_type(GUI_APPLICATION)
 
 ## See also
 
-[Documentation](documentation.md)
+* [Writing applicattions](writing_applications.md)
+* [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
 
