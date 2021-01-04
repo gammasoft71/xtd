@@ -135,8 +135,6 @@ add_sources(hello_world_tunit.cpp)
 target_type(TEST_APPLICATION)
 ```
 
-For more examples see [examples](examples/README.md)
-
 # Getting Started
 
 * [Installation](downloads.md) provides download and install documentation.
