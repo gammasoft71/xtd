@@ -22,6 +22,10 @@ namespace xtd {
     /// @ingroup SwitchCore
     class core_export_ text_reader {
     public:
+      /// @cond
+      virtual ~text_reader() {}
+      /// @endcond
+
       /// @brief Provides a text_reader with no data to read from.
       /// @remarks Reading from the null text reader is similar to reading from the end of a stream:
       /// @remarks read and peek methods return -1.
