@@ -29,6 +29,12 @@ Minesweeper features:
 
 [src/minesweeper.h](src/minesweeper.h)
 
+[properties/resources.cmake](properties/resources.cmake)
+
+[properties/settings.cmake](properties/settings.cmake)
+
+[properties/target_properties.cmake](properties/target_properties.cmake)
+
 [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
