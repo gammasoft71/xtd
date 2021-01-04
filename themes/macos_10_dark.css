@@ -37,6 +37,7 @@ system-colors {
       window-frame: #FF9A9A9A;
       window-text: #FFE3E3E3;
 }
+
 form {
   back-color: window;
   fore-color: window-text;
