@@ -2,7 +2,7 @@
 /// @brief Contains xtd::io::file class.
 #pragma once
 
-#include <iostream>
+#include <fstream>
 #include <optional>
 #include "text_reader.h"
 
