@@ -30,7 +30,7 @@ namespace minesweeper {
       //properties::settings::default_settings().save();
       
       if (properties::settings::default_settings().original_color()) {
-        back_color(color::silver);
+        back_color(color::from_argb(192, 196, 200));
         fore_color(color::black);
       }
       
@@ -128,6 +128,7 @@ namespace minesweeper {
       mine_count_label.auto_size(true);
       mine_count_label.back_color(color::black);
       mine_count_label.fore_color(color::red);
+      mine_count_label.segment_style(forms::segment_style::modern);
       mine_count_label.thickness(5);
 
       stopwatch_label.parent(status_panel);
@@ -136,6 +137,7 @@ namespace minesweeper {
       stopwatch_label.back_color(color::black);
       stopwatch_label.fore_color(color::red);
       stopwatch_label.location({status_panel.width() - stopwatch_label.width() - 18, 17});
+      stopwatch_label.segment_style(forms::segment_style::modern);
       stopwatch_label.thickness(5);
 
       start_game.parent(status_panel);
