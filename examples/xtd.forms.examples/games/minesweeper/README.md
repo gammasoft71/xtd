@@ -18,7 +18,15 @@ Minesweeper features:
 # Sources
 
 [src/cell.h](src/cell.h)
+
+[src/cell_state.h](src/cell_state.h)
+
+[src/high_scores_dialog.h](src/high_scores_dialog.h)
+
+[src/input_name_dialog.h](src/input_name_dialog.h)
+
 [src/level.h](src/level.h)
+
 [src/minesweeper.h](src/minesweeper.h)
 
 [CMakeLists.txt](CMakeLists.txt)
