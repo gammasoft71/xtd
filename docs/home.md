@@ -5,7 +5,7 @@
 # xtd is ...
 
 * a collection of native C++ classes libraries, to complete std;
-* written in efficient, modern C++20;
+* written in efficient, modern C++17/20;
 * and highly portable and available on many different platforms (Windows, macOS, Linux, iOS and android);
 
 
