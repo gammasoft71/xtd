@@ -17,6 +17,8 @@ Minesweeper features:
  
 # Sources
 
+[src/cell.h](src/cell.h)
+[src/level.h](src/level.h)
 [src/minesweeper.h](src/minesweeper.h)
 
 [CMakeLists.txt](CMakeLists.txt)
