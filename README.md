@@ -137,8 +137,8 @@ target_type(TEST_APPLICATION)
 
 # Getting Started
 
-* [Installation](downloads.md) provides download and install documentation.
-* [Portability](portability.md) provides information about C++, libraries dependency, Operating System suported, Compilators and Devepment Environment tools.
+* [Installation](docs/downloads.md) provides download and install documentation.
+* [Portability](docs/portability.md) provides information about C++, libraries dependency, Operating System suported, Compilators and Devepment Environment tools.
 * [Examples](examples/README.md) provides some examples.
 
 <!---
