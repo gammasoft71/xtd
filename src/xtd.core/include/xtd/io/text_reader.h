@@ -106,7 +106,10 @@ namespace xtd {
     
     class synchronized_text_reader : public text_reader {
     public:
-      int32_t read() override;
+      int32_t read() override {
+        std::lock_guard<std::mutex> lock(mutex_);
+        return reader_.read();
+      }
       
     private:
       friend class text_reader;
