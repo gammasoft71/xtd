@@ -139,7 +139,7 @@ target_type(TEST_APPLICATION)
 
 * [Installation](downloads.md) provides download and install documentation.
 * [Portability](portability.md) provides information about C++, libraries dependency, Operating System suported, Compilators and Devepment Environment tools.
-* [Examples](../examples/README.md) provides some examples.
+* [Examples](examples/README.md) provides some examples.
 
 <!---
 # Motivations
