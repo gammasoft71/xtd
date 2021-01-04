@@ -281,7 +281,7 @@ namespace xtd {
   bool is(param_t* value) {
     try {
       if (value == nullptr) return false;
-      return dynamic_cast<const type_t*>(value) != nullptr;
+      return dynamic_cast<type_t*>(value) != nullptr;
     } catch (const std::bad_cast&) {
       return false;
     }
