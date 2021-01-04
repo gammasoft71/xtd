@@ -17,7 +17,7 @@ Minesweeper features:
  
 # Sources
 
-[src/minesweeper.cpp](src/minesweeper.cpp)
+[src/minesweeper.h](src/minesweeper.h)
 
 [CMakeLists.txt](CMakeLists.txt)
 
