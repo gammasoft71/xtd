@@ -168,6 +168,7 @@ add_sources(
   include/xtd/io/ioexception.h
   include/xtd/io/path.h
   include/xtd/io/path_too_long_exception.h
+  include/xtd/io/stream_reader.h
   include/xtd/io/text_reader.h
   src/xtd/__litterals_exception.cpp
   src/xtd/__opaque_console_gcc.cpp

@@ -147,4 +147,5 @@
 #include "io/ioexception.h"
 #include "io/path.h"
 #include "io/path_too_long_exception.h"
+#include "io/stream_reader.h"
 #include "io/text_reader.h"

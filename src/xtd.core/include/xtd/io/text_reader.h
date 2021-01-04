@@ -3,6 +3,7 @@
 #pragma once
 
 #include <cstdio>
+#include <istream>
 #include <mutex>
 #include <string>
 #include "../core_export.h"
@@ -15,11 +16,11 @@ namespace xtd {
     class null_text_reader;
     class synchronized_text_reader;
     /// @endcond
-    ///
+
     /// @brief Represents a reader that can read a sequential series of characters.
     /// @par Library
-    /// Switch.Core
-    /// @ingroup SwitchCore
+    /// xtd.core
+    /// @ingroup xtd_core
     class core_export_ text_reader {
     public:
       /// @cond
@@ -28,7 +29,7 @@ namespace xtd {
 
       /// @brief Provides a text_reader with no data to read from.
       /// @remarks Reading from the null text reader is similar to reading from the end of a stream:
-      /// @remarks read and peek methods return -1.
+      /// @remarks read and peek methods return EOF.
       /// @remarks read_block method returns zero.
       /// @remarks read_line and read_to_end methods return a string Empty.
       static null_text_reader& null();
@@ -37,12 +38,12 @@ namespace xtd {
       virtual void close() {}
       
       /// @brief Reads the next character without changing the state of the reader or the character source. Returns the next available character without actually reading it from the input stream.
-      /// @return An integer representing the next character to be read, or -1 if no more characters are available or the stream does not support seeking.
-      virtual int32_t peek() const {return -1;}
+      /// @return An integer representing the next character to be read, or EOF if no more characters are available or the stream does not support seeking.
+      virtual int32_t peek() const {return EOF;}
       
       /// @brief Reads the next character from the input stream and advances the character position by one character.
-      /// @return The next character from the input stream, or -1 if no more characters are available.
-      virtual int32_t read() {return -1;}
+      /// @return The next character from the input stream, or EOF if no more characters are available.
+      virtual int32_t read() {return EOF;}
       
       /// @brief Reads a specified maximum number of characters from the current text reader and writes the data to a buffer, beginning at the specified index.
       /// @param buffer When this method returns, this parameter contains the specified character array with the values between index and (index + count -1) replaced by the characters read from the current source.
@@ -52,7 +53,7 @@ namespace xtd {
       virtual int32_t read(char* buffer, int32_t index, int32_t count) {
         for (auto i = 0; i < count; i++) {
           auto current = read();
-          if (current == -1) return i;
+          if (current == EOF) return i;
           buffer[index + i] = static_cast<char>(current);
         }
         return count;
@@ -69,7 +70,7 @@ namespace xtd {
       /// @return The next line from the input stream, or the empty string if all characters have been read.
       virtual std::string read_line() {
         std::string line;
-        for (int32_t current = read(); current != -1 && current != '\n'; current = read()) {
+        for (int32_t current = read(); current != EOF && current != '\n'; current = read()) {
           if (current == '\r') continue;
             line += static_cast<char>(current);
         }
@@ -81,8 +82,8 @@ namespace xtd {
       /// @exception IO::IOException An I/O error occurs.
       virtual std::string read_to_end() {
         std::string text;
-        for (int32_t current = read(); current != -1; current = read()) {
-          if (current == '\n') continue;
+        for (int32_t current = read(); current != EOF; current = read()) {
+          if (current == '\r') continue;
           text += static_cast<char>(current);
         }
         return text;
@@ -101,7 +102,7 @@ namespace xtd {
     class null_text_reader : public text_reader {
     public:
       null_text_reader() = default;
-      int32_t read() override {return -1;}
+      int32_t read() override {return EOF;}
     };
     
     class synchronized_text_reader : public text_reader {
