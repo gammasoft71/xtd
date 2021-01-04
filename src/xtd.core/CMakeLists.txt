@@ -168,6 +168,7 @@ add_sources(
   include/xtd/io/ioexception.h
   include/xtd/io/path.h
   include/xtd/io/path_too_long_exception.h
+  include/xtd/io/text_reader.h
   src/xtd/__litterals_exception.cpp
   src/xtd/__opaque_console_gcc.cpp
   src/xtd/__opaque_console_win32.cpp
@@ -198,6 +199,7 @@ add_sources(
   src/xtd/io/file_win32.cpp
   src/xtd/io/path_gcc.cpp
   src/xtd/io/path_win32.cpp
+  src/xtd/io/text_reader.cpp
 )
 if (APPLE)
   add_sources(src/xtd/__opaque_translator_macos.mm)
