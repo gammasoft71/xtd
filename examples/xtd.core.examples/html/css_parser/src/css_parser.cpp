@@ -36,8 +36,9 @@ int main() {
 
   console::write_line("Get specific properties :");
   console::write_line("-------------------------");
-  console::write_line("opaicty = {}", css_parser.selectors().at(".user_box").properties().at("opacity").to_single());
-  console::write_line("z-index = {}", css_parser.selectors().at(".user_box").properties().at("z-index").to_int32());
+  console::write_line("filter = {}", css_parser.selectors().at(".user_box").properties().at("filter"));
+  console::write_line("opacity = {}", css_parser.selectors().at(".user_box").properties().at("opacity").to_single());
+  console::write_line("z-index = {}", css_parser.selectors().at(".user_box").properties().at("z-index").to<int32_t>());
 }
 
 // This code can produces the following output :
@@ -59,5 +60,6 @@ int main() {
 //
 // "Get specific properties :
 // --------------------------
+// filter = alpha(opacity=40)
 // opaicty = 0.4
 // z-index = 100
