@@ -10,13 +10,86 @@ namespace xtd {
       public:
         property() = default;
         explicit property(const std::string& value) : value_(value) {}
-        property(const std::string& key, const std::string& value) : key_(key), value_(value) {}
         operator std::string() {return value_;}
         
-        const std::string& key() const {return key_;}
-        void key(const std::string& key) {key_ = key;}
-
-        void value(const std::string& value) {value_ = value;}
+        static property from(bool value) {
+          property result;
+          result.value(value);
+          return result;
+        }
+        static property from(double value) {
+          property result;
+          result.value(value);
+          return result;
+        }
+        static property from(float value) {
+          property result;
+          result.value(value);
+          return result;
+        }
+        static property from(int8_t value) {
+          property result;
+          result.value(value);
+          return result;
+        }
+        static property from(int16_t value) {
+          property result;
+          result.value(value);
+          return result;
+        }
+        static property from(int32_t value) {
+          property result;
+          result.value(value);
+          return result;
+        }
+        static property from(int64_t value) {
+          property result;
+          result.value(value);
+          return result;
+        }
+        static property from(intptr_t value) {
+          property result;
+          result.value(value);
+          return result;
+        }
+        static property from(const std::string& value) {
+          property result;
+          result.value(value);
+          return result;
+        }
+        static property from(uint8_t value) {
+          property result;
+          result.value(value);
+          return result;
+        }
+        static property from(uint16_t value) {
+          property result;
+          result.value(value);
+          return result;
+        }
+        static property from(uint32_t value) {
+          property result;
+          result.value(value);
+          return result;
+        }
+        static property from(uint64_t value) {
+          property result;
+          result.value(value);
+          return result;
+        }
+        static property from(uintptr_t value) {
+          property result;
+          result.value(value);
+          return result;
+        }
+        template<typename value_t>
+        static property from(value_t value) {
+          property result;
+          result.value(value);
+          return result;
+        }
+        
+        const std::string& value() const {return value_;}
         void value(bool value) {value_ = format("{}", value);}
         void value(double value) {value_ = format("{}", value);}
         void value(float value) {value_ = format("{}", value);}
@@ -25,7 +98,7 @@ namespace xtd {
         void value(int32_t value) {value_ = format("{}", value);}
         void value(int64_t value) {value_ = format("{}", value);}
         void value(intptr_t value) {value_ = format("{}", value);}
-        const std::string& value() const {return value_;}
+        void value(const std::string& value) {value_ = value;}
         void value(uint8_t value) {value_ = format("{}", value);}
         void value(uint16_t value) {value_ = format("{}", value);}
         void value(uint32_t value) {value_ = format("{}", value);}
@@ -54,7 +127,6 @@ namespace xtd {
         friend std::ostream& operator <<(std::ostream& os, const property& property) noexcept {return os << property.to_string();}
         
       private:
-        std::string key_;
         std::string value_;
       };
     }
