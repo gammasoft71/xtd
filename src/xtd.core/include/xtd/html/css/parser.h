@@ -9,10 +9,12 @@ namespace xtd {
     namespace css {
       class parser {
       public:
+        using selectors_t = std::map<std::string, xtd::html::css::selector>;
+        
         parser(std::istream& stream) {parse_text(xtd::io::stream_reader(stream).read_to_end());}
         parser(const std::string& text) {parse_text(text);}
         
-        const std::map<std::string, xtd::html::css::selector>& selectors() const {return selectors_;}
+        const selectors_t& selectors() const {return selectors_;}
         
       private:
         void parse_text(std::string text) {
@@ -53,14 +55,14 @@ namespace xtd {
               auto value = xtd::strings::trim(xtd::strings::substring(text, start_index, index - start_index));
               if (value.empty()) throw xtd::format_exception("value cannot be empty", caller_info_);
               start_index = index + 1;
-              current_selector.properties()[current_key] = property(current_key, value);
+              current_selector.properties()[current_key] = property(value);
               status = parse_status::key;
             }
           }
         }
         
       private:
-        std::map<std::string, xtd::html::css::selector> selectors_;
+        selectors_t selectors_;
       };
     }
   }

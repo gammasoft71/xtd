@@ -17,8 +17,8 @@ auto css_text =
 "  opacity: 0.4;\n"
 "}";
 
-void write_parser(const parser& parser) {
-  for (auto selector : parser.selectors()) {
+void write_selectors(const parser::selectors_t& selectors) {
+  for (auto selector : selectors) {
     console::write_line("{} {{", selector.first);
     for (auto property : selector.second.properties())
       xtd::console::write_line("  {}: {};", property.first, property.second);
@@ -29,9 +29,9 @@ void write_parser(const parser& parser) {
 int main() {
   parser css_parser(css_text);
 
-  console::write_line("Write all properties :");
-  console::write_line("----------------------");
-  write_parser(css_parser);
+  console::write_line("Write all selectors and all properties :");
+  console::write_line("----------------------------------------");
+  write_selectors(css_parser.selectors());
   console::write_line();
 
   console::write_line("Get specific properties :");
@@ -43,8 +43,8 @@ int main() {
 
 // This code can produces the following output :
 //
-// Write all properties :
-// ----------------------
+// Write all selectors and all properties :
+// ----------------------------------------
 // .user_box {
 //   background: #4080FA;
 //   display: none;
@@ -58,8 +58,8 @@ int main() {
 //   z-index: 100;
 // }
 //
-// "Get specific properties :
-// --------------------------
+// Get specific properties :
+// -------------------------
 // filter = alpha(opacity=40)
 // opaicty = 0.4
 // z-index = 100
