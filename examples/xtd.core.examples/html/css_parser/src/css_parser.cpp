@@ -3,20 +3,6 @@
 using namespace xtd;
 using namespace xtd::html::css;
 
-auto css_text =
-".user_box {\n"
-"  display: none;\n"
-"  position: fixed;\n"
-"  z-index: 100;\n"
-"  width: 100%;\n"
-"  height: 100%;\n"
-"  left: 300;\n"
-"  top: 200;\n"
-"  background: #4080FA;\n"
-"  filter: alpha(opacity=40);\n"
-"  opacity: 0.4;\n"
-"}";
-
 void write_selectors(const parser::selectors_t& selectors) {
   for (auto selector : selectors) {
     console::write_line("{} {{", selector.first);
@@ -27,7 +13,18 @@ void write_selectors(const parser::selectors_t& selectors) {
 }
 
 int main() {
-  parser css_parser(css_text);
+  parser css_parser(".user_box {\n"
+                    "  display: none;\n"
+                    "  position: fixed;\n"
+                    "  z-index: 100;\n"
+                    "  width: 100%;\n"
+                    "  height: 100%;\n"
+                    "  left: 300;\n"
+                    "  top: 200;\n"
+                    "  background: #4080FA;\n"
+                    "  filter: alpha(opacity=40);\n"
+                    "  opacity: 0.4;\n"
+                    "}");
 
   console::write_line("Write all selectors and all properties :");
   console::write_line("----------------------------------------");
