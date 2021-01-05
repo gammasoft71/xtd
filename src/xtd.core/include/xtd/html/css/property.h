@@ -15,8 +15,24 @@ namespace xtd {
         
         const std::string& key() const {return key_;}
         void key(const std::string& key) {key_ = key;}
-        const std::string& value() const {return value_;}
+
         void value(const std::string& value) {value_ = value;}
+        void value(bool value) {value_ = format("{}", value);}
+        void value(double value) {value_ = format("{}", value);}
+        void value(float value) {value_ = format("{}", value);}
+        void value(int8_t value) {value_ = format("{}", value);}
+        void value(int16_t value) {value_ = format("{}", value);}
+        void value(int32_t value) {value_ = format("{}", value);}
+        void value(int64_t value) {value_ = format("{}", value);}
+        void value(intptr_t value) {value_ = format("{}", value);}
+        const std::string& value() const {return value_;}
+        void value(uint8_t value) {value_ = format("{}", value);}
+        void value(uint16_t value) {value_ = format("{}", value);}
+        void value(uint32_t value) {value_ = format("{}", value);}
+        void value(uint64_t value) {value_ = format("{}", value);}
+        void value(uintptr_t value) {value_ = format("{}", value);}
+        template<typename value_t>
+        void value(value_t value) {value_ = format("{}", value);}
 
         bool to_boolean() const {return xtd::parse<bool>(value_);}
         double to_double() const {return xtd::parse<double>(value_);}
@@ -24,13 +40,17 @@ namespace xtd {
         int16_t to_int16() const {return xtd::parse<int16_t>(value_);}
         int32_t to_int32() const {return xtd::parse<int32_t>(value_);}
         int64_t to_int64() const {return xtd::parse<int64_t>(value_);}
+        intptr_t to_intptr() const {return xtd::parse<intptr_t>(value_);}
         float to_single() const {return xtd::parse<float>(value_);}
         std::string to_string() const {return value_;}
         uint8_t to_uint8() const {return xtd::parse<uint8_t>(value_);}
         uint16_t to_uint16() const {return xtd::parse<uint16_t>(value_);}
         uint32_t to_uint32() const {return xtd::parse<uint32_t>(value_);}
         uint64_t to_uint64() const {return xtd::parse<uint64_t>(value_);}
-        
+        uintptr_t to_uintptr() const {return xtd::parse<uintptr_t>(value_);}
+        template<typename value_t>
+        uintptr_t to() const {return xtd::parse<value_t>(value_);}
+
         friend std::ostream& operator <<(std::ostream& os, const property& property) noexcept {return os << property.to_string();}
         
       private:
