@@ -10,6 +10,7 @@ add_projects(
   diagnostics
   environment
   guid
+  html
   keywords
   mains
   strings

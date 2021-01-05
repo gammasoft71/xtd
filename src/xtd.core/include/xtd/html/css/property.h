@@ -6,18 +6,18 @@
 namespace xtd {
   namespace html {
     namespace css {
-      /// @cond
-      class parser;
-      /// @endcond
-      
       class property {
       public:
         property() = default;
+        explicit property(const std::string& value) : value_(value) {}
+        property(const std::string& key, const std::string& value) : key_(key), value_(value) {}
         operator std::string() {return value_;}
         
         const std::string& key() const {return key_;}
+        void key(const std::string& key) {key_ = key;}
         const std::string& value() const {return value_;}
-        
+        void value(const std::string& value) {value_ = value;}
+
         bool to_boolean() const {return xtd::parse<bool>(value_);}
         double to_double() const {return xtd::parse<double>(value_);}
         int8_t to_int8() const {return xtd::parse<int8_t>(value_);}
@@ -34,8 +34,6 @@ namespace xtd {
         friend std::ostream& operator <<(std::ostream& os, const property& property) noexcept {return os << property.to_string();}
         
       private:
-        friend class parser;
-        explicit property(const std::string& key, const std::string& value) : key_(key), value_(value) {}
         std::string key_;
         std::string value_;
       };
