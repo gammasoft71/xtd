@@ -36,7 +36,7 @@ namespace xtd {
               continue;
             } else if (status == parse_status::selector && text[index] == '{') {
               current_selector_name = xtd::strings::trim(xtd::strings::substring(text, start_index, index - start_index));
-              current_selector.name_ = xtd::strings::trim(xtd::strings::substring(text, start_index, index - start_index));
+              current_selector.name(xtd::strings::trim(xtd::strings::substring(text, start_index, index - start_index)));
               start_index = index + 1;
               status = parse_status::key;
             } else if (status == parse_status::key && text[index] == '}') {
@@ -53,7 +53,7 @@ namespace xtd {
               auto value = xtd::strings::trim(xtd::strings::substring(text, start_index, index - start_index));
               if (value.empty()) throw xtd::format_exception("value cannot be empty", caller_info_);
               start_index = index + 1;
-              current_selector.properties_[current_key] = property(current_key, value);
+              current_selector.properties()[current_key] = property(current_key, value);
               status = parse_status::key;
             }
           }

@@ -5,10 +5,6 @@
 namespace xtd {
   namespace html {
     namespace css {
-      /// @cond
-      class parser;
-      /// @endcond
-      
       class selector {
       public:
         explicit selector(const std::string& name) : name_(name) {}
@@ -20,10 +16,11 @@ namespace xtd {
         /// @endcond
         
         const std::string& name() const {return name_;}
+        void name(const std::string& name) {name_ = name;}
         const std::map<std::string, property>& properties() const {return properties_;}
-        
+        std::map<std::string, property>& properties() {return properties_;}
+
       private:
-        friend class parser;
         std::string name_;
         std::map<std::string, property> properties_;
       };
