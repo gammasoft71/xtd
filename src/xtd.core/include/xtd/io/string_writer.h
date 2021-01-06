@@ -15,6 +15,11 @@ namespace xtd {
     /// @ingroup xtd_core
     class string_writer : public xtd::io::text_writer {
     public:
+      /// @cond Initializes a new instance of the stream_writer class .
+      string_writer() = default;
+      /// @cond Initializes a new instance of the stream_writer class for the specified string.
+      /// @param str base string.
+      string_writer(const std::string& str) {write(str);}
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
       const std::ostream& base_stream() const {return stream_;}
