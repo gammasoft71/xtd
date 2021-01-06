@@ -138,6 +138,7 @@
 #include "html/css/parser.h"
 #include "html/css/property.h"
 #include "html/css/selector.h"
+#include "html/css/writer.h"
 #include "io/cnull.h"
 #include "io/directory_not_found_exception.h"
 #include "io/drive_not_found_exception.h"

@@ -62,7 +62,6 @@ namespace xtd {
           }
         }
         
-      private:
         selectors_t selectors_;
       };
     }

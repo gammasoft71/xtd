@@ -144,6 +144,7 @@ add_sources(
   include/xtd/html/css/parser.h
   include/xtd/html/css/property.h
   include/xtd/html/css/selector.h
+  include/xtd/html/css/writer.h
   include/xtd/internal/__binary_formater.h
   include/xtd/internal/__boolean_formater.h
   include/xtd/internal/__character_formater.h
