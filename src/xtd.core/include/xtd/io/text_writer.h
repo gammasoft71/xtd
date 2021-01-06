@@ -53,7 +53,7 @@ namespace xtd {
       /// @brief Writes the specified string value to the text stream.
       /// @param value The value to write
       /// @exception io::ioexception An I/O error occurs.
-      void write(const std::string& value) {}
+      virtual void write(const std::string& value) {}
       
       /// @brief Writes the specified bool value to the text stream.
       /// @param value The value to write
