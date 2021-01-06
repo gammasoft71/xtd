@@ -177,6 +177,7 @@ add_sources(
   include/xtd/io/stream_reader.h
   include/xtd/io/stream_writer.h
   include/xtd/io/string_reader.h
+  include/xtd/io/string_writer.h
   include/xtd/io/text_reader.h
   include/xtd/io/text_writer.h
   src/xtd/__litterals_exception.cpp
