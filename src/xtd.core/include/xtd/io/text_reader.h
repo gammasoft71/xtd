@@ -77,9 +77,9 @@ namespace xtd {
         return line;
       }
       
-      /// @brief Reads all characters from the current position to the end of the TextReader and returns them as one string.
-      /// @return A string containing all characters from the current position to the end of the TextReader.
-      /// @exception IO::IOException An I/O error occurs.
+      /// @brief Reads all characters from the current position to the end of the text_reader and returns them as one string.
+      /// @return A string containing all characters from the current position to the end of the text_reader.
+      /// @exception io::ioexception An I/O error occurs.
       virtual std::string read_to_end() {
         std::string text;
         for (int32_t current = read(); current != EOF; current = read()) {
@@ -89,19 +89,18 @@ namespace xtd {
         return text;
       }
       
-      /// @brief Creates a thread-safe (synchronized) wrapper around the specified TextReader object.
-      /// @param reader The TextReader object to synchronize.
-      /// @return TextReader A thread-safe TextReader object.
+      /// @brief Creates a thread-safe (synchronized) wrapper around the specified text_reader object.
+      /// @param reader The text_reader object to synchronize.
+      /// @return text_reader A thread-safe text_reader object.
       static synchronized_text_reader synchronised(text_reader& reader);
       
     protected:
-      /// @brief Initializes a new instance of the System::IO::TextReader class.
+      /// @brief Initializes a new instance of the xtd::io::text_reader class.
       text_reader() = default;
     };
     
     class null_text_reader : public text_reader {
     public:
-      null_text_reader() = default;
       int32_t read() override {return EOF;}
     };
     

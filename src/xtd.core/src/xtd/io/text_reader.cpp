@@ -7,7 +7,6 @@ null_text_reader& text_reader::null() {
   return null_text_reader;
 }
 
-
 synchronized_text_reader text_reader::synchronised(text_reader& reader) {
   return synchronized_text_reader(reader);
 }
