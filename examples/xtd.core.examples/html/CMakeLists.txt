@@ -5,4 +5,5 @@ find_package(xtd REQUIRED)
 
 add_projects(
   css_parser
+  css_writer
 )
