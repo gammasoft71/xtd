@@ -156,5 +156,6 @@
 #include "io/stream_reader.h"
 #include "io/stream_writer.h"
 #include "io/string_reader.h"
+#include "io/string_writer.h"
 #include "io/text_reader.h"
 #include "io/text_writer.h"
