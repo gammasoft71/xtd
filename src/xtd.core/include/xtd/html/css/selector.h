@@ -1,13 +1,11 @@
 #pragma once
-#include <map>
-#include "property.h"
+#include "property_map.h"
 
 namespace xtd {
   namespace html {
     namespace css {
       class selector {
       public:
-        using properties_t = std::map<std::string, property>;
         explicit selector(const std::string& name) : name_(name) {}
         
         /// @cond
@@ -18,13 +16,14 @@ namespace xtd {
         
         const std::string& name() const {return name_;}
         void name(const std::string& name) {name_ = name;}
-        const properties_t& properties() const {return properties_;}
-        void properties(const properties_t& properties) {properties_ = properties;}
-        properties_t& properties() {return properties_;}
+
+        const xtd::html::css::property_map& properties() const {return properties_;}
+        void properties(const xtd::html::css::property_map& properties) {properties_ = properties;}
+        xtd::html::css::property_map& properties() {return properties_;}
 
       private:
         std::string name_;
-        properties_t properties_;
+        xtd::html::css::property_map properties_;
       };
     }
   }
