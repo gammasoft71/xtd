@@ -1,4 +1,4 @@
-system-colors {
+.system-colors {
       accent: #FF007AFF;
       accent-text: #FFFFFFFF;
       active-border: #FF4A4A4A;
@@ -38,7 +38,7 @@ system-colors {
       window-text: #FFE3E3E3;
 }
 
-form {
+.form {
   back-color: window;
   fore-color: window-text;
 }
