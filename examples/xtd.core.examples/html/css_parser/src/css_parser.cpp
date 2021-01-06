@@ -3,7 +3,7 @@
 using namespace xtd;
 using namespace xtd::html::css;
 
-void write_selectors(const parser::selectors_t& selectors) {
+void write_selectors(const selector_map& selectors) {
   for (auto selector : selectors) {
     console::write_line("{} {{", selector.first);
     for (auto property : selector.second.properties())
