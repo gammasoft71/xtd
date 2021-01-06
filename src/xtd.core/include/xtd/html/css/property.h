@@ -12,100 +12,26 @@ namespace xtd {
         explicit property(const std::string& value) : value_(value) {}
         operator std::string() {return value_;}
         
-        static property from(bool value) {
-          property result;
-          result.value(value);
-          return result;
-        }
-        static property from(double value) {
-          property result;
-          result.value(value);
-          return result;
-        }
-        static property from(float value) {
-          property result;
-          result.value(value);
-          return result;
-        }
-        static property from(int8_t value) {
-          property result;
-          result.value(value);
-          return result;
-        }
-        static property from(int16_t value) {
-          property result;
-          result.value(value);
-          return result;
-        }
-        static property from(int32_t value) {
-          property result;
-          result.value(value);
-          return result;
-        }
-        static property from(int64_t value) {
-          property result;
-          result.value(value);
-          return result;
-        }
-        static property from(intptr_t value) {
-          property result;
-          result.value(value);
-          return result;
-        }
-        static property from(const std::string& value) {
-          property result;
-          result.value(value);
-          return result;
-        }
-        static property from(uint8_t value) {
-          property result;
-          result.value(value);
-          return result;
-        }
-        static property from(uint16_t value) {
-          property result;
-          result.value(value);
-          return result;
-        }
-        static property from(uint32_t value) {
-          property result;
-          result.value(value);
-          return result;
-        }
-        static property from(uint64_t value) {
-          property result;
-          result.value(value);
-          return result;
-        }
-        static property from(uintptr_t value) {
-          property result;
-          result.value(value);
-          return result;
-        }
+        static property from(bool value) {return property(format("{}", value));}
+        static property from(double value) {return property(format("{}", value));}
+        static property from(float value) {return property(format("{}", value));}
+        static property from(int8_t value) {return property(format("{}", value));}
+        static property from(int16_t value) {return property(format("{}", value));}
+        static property from(int32_t value) {return property(format("{}", value));}
+        static property from(int64_t value) {return property(format("{}", value));}
+        static property from(intptr_t value) {return property(format("{}", value));}
+        static property from(const std::string& value) {return property(format("{}", value));}
+        static property from(uint8_t value) {return property(format("{}", value));}
+        static property from(uint16_t value) {return property(format("{}", value));}
+        static property from(uint32_t value) {return property(format("{}", value));}
+        static property from(uint64_t value) {return property(format("{}", value));}
+        static property from(uintptr_t value) {return property(format("{}", value));}
         template<typename value_t>
-        static property from(value_t value) {
-          property result;
-          result.value(value);
-          return result;
-        }
+        static property from(value_t value) {return property(format("{}", value));}
         
         const std::string& value() const {return value_;}
-        void value(bool value) {value_ = format("{}", value);}
-        void value(double value) {value_ = format("{}", value);}
-        void value(float value) {value_ = format("{}", value);}
-        void value(int8_t value) {value_ = format("{}", value);}
-        void value(int16_t value) {value_ = format("{}", value);}
-        void value(int32_t value) {value_ = format("{}", value);}
-        void value(int64_t value) {value_ = format("{}", value);}
-        void value(intptr_t value) {value_ = format("{}", value);}
-        void value(const std::string& value) {value_ = value;}
-        void value(uint8_t value) {value_ = format("{}", value);}
-        void value(uint16_t value) {value_ = format("{}", value);}
-        void value(uint32_t value) {value_ = format("{}", value);}
-        void value(uint64_t value) {value_ = format("{}", value);}
-        void value(uintptr_t value) {value_ = format("{}", value);}
         template<typename value_t>
-        void value(value_t value) {value_ = format("{}", value);}
+        uintptr_t value() const {return xtd::parse<value_t>(value_);}
 
         bool to_boolean() const {return xtd::parse<bool>(value_);}
         double to_double() const {return xtd::parse<double>(value_);}
