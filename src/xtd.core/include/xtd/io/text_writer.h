@@ -54,6 +54,31 @@ namespace xtd {
       /// @param value The value to write
       /// @exception io::ioexception An I/O error occurs.
       virtual void write(const std::string& value) {}
+      
+      /// @brief Writes the specified int8_t value to the text stream.
+      /// @param value The value to write
+      /// @exception io::ioexception An I/O error occurs.
+      virtual void write(int8_t value) {write(xtd::format("{}", value));}
+      
+      /// @brief Writes the specified int16_t value to the text stream.
+      /// @param value The value to write
+      /// @exception io::ioexception An I/O error occurs.
+      virtual void write(int16_t value) {write(xtd::format("{}", value));}
+      
+      /// @brief Writes the specified int32_t value to the text stream.
+      /// @param value The value to write
+      /// @exception io::ioexception An I/O error occurs.
+      virtual void write(int32_t value) {write(xtd::format("{}", value));}
+      
+      /// @brief Writes the specified int64_t value to the text stream.
+      /// @param value The value to write
+      /// @exception io::ioexception An I/O error occurs.
+      virtual void write(int64_t value) {write(xtd::format("{}", value));}
+      
+      /// @brief Writes the specified intptr_t value to the text stream.
+      /// @param value The value to write
+      /// @exception io::ioexception An I/O error occurs.
+      virtual void write(intptr_t value) {write(xtd::format("{}", value));}
 
       template<typename value_t>
       void write(value_t value) {write(xtd::format("{}", value));}
