@@ -11,6 +11,7 @@
 * [Delegates](xtd.core.examples/delegates/README.md) contains delegates examples.
 * [Diagnostics](xtd.core.examples/diagnostics/README.md) contains diagnostics examples.
 * [Environment](xtd.core.examples/environment/README.md) contains environment examples.
+* [Html](xtd.core.examples/html/README.md) contains html examples.
 * [Keywords](xtd.core.examples/keywords/README.md) contains keywords examples.
 * [Mains](xtd.core.examples/mains/README.md) contains main examples.
 * [Strings](xtd.core.examples/strings/README.md) contains strings examples.
