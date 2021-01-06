@@ -19,4 +19,18 @@ xtdc run
 # Output
 
 ```
+String stream :
+---------------
+.user_box {
+  background: #4080FA;
+  display: none;
+  filter: alpha(opacity=40);
+  height: 100%;
+  left: 300;
+  opacity: 0.4;
+  position: fixed;
+  top: 200;
+  width: 100%;
+  z-index: 100;
+}
 ```
