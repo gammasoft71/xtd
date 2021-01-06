@@ -12,6 +12,7 @@ namespace xtd {
         using selectors_t = std::map<std::string, xtd::html::css::selector>;
         
         parser(std::istream& stream) {parse_text(xtd::io::stream_reader(stream).read_to_end());}
+        parser(xtd::io::text_reader& text_reader) {parse_text(text_reader.read_to_end());}
         parser(const std::string& text) {parse_text(text);}
         
         const selectors_t& selectors() const {return selectors_;}
