@@ -143,6 +143,7 @@ add_sources(
   include/xtd/diagnostics/trace_switch.h
   include/xtd/html/css/parser.h
   include/xtd/html/css/property.h
+  include/xtd/html/css/property_map.h
   include/xtd/html/css/selector.h
   include/xtd/html/css/selector_map.h
   include/xtd/html/css/writer.h
