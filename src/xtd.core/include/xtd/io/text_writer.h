@@ -53,57 +53,72 @@ namespace xtd {
       /// @brief Writes the specified string value to the text stream.
       /// @param value The value to write
       /// @exception io::ioexception An I/O error occurs.
-      virtual void write(const std::string& value) {}
+      void write(const std::string& value) {}
+      
+      /// @brief Writes the specified bool value to the text stream.
+      /// @param value The value to write
+      /// @exception io::ioexception An I/O error occurs.
+      void write(bool value) {write(xtd::format("{}", value));}
+      
+      /// @brief Writes the specified double value to the text stream.
+      /// @param value The value to write
+      /// @exception io::ioexception An I/O error occurs.
+      void write(double value) {write(xtd::format("{}", value));}
+      
+      /// @brief Writes the specified float value to the text stream.
+      /// @param value The value to write
+      /// @exception io::ioexception An I/O error occurs.
+      void write(float value) {write(xtd::format("{}", value));}
       
       /// @brief Writes the specified int8_t value to the text stream.
       /// @param value The value to write
       /// @exception io::ioexception An I/O error occurs.
-      virtual void write(int8_t value) {write(xtd::format("{}", value));}
-      
+      void write(int8_t value) {write(xtd::format("{}", value));}
+
       /// @brief Writes the specified int16_t value to the text stream.
       /// @param value The value to write
       /// @exception io::ioexception An I/O error occurs.
-      virtual void write(int16_t value) {write(xtd::format("{}", value));}
+      void write(int16_t value) {write(xtd::format("{}", value));}
       
       /// @brief Writes the specified int32_t value to the text stream.
       /// @param value The value to write
       /// @exception io::ioexception An I/O error occurs.
-      virtual void write(int32_t value) {write(xtd::format("{}", value));}
+      void write(int32_t value) {write(xtd::format("{}", value));}
       
       /// @brief Writes the specified int64_t value to the text stream.
       /// @param value The value to write
       /// @exception io::ioexception An I/O error occurs.
-      virtual void write(int64_t value) {write(xtd::format("{}", value));}
+      void write(int64_t value) {write(xtd::format("{}", value));}
       
       /// @brief Writes the specified intptr_t value to the text stream.
       /// @param value The value to write
       /// @exception io::ioexception An I/O error occurs.
-      virtual void write(intptr_t value) {write(xtd::format("{}", value));}
+      void write(intptr_t value) {write(xtd::format("{}", value));}
       
       /// @brief Writes the specified uint8_t value to the text stream.
       /// @param value The value to write
       /// @exception io::ioexception An I/O error occurs.
-      virtual void write(uint8_t value) {write(xtd::format("{}", value));}
+      void write(uint8_t value) {write(xtd::format("{}", value));}
       
       /// @brief Writes the specified uint16_t value to the text stream.
       /// @param value The value to write
       /// @exception io::ioexception An I/O error occurs.
-      virtual void write(uint16_t value) {write(xtd::format("{}", value));}
+      void write(uint16_t value) {write(xtd::format("{}", value));}
       
       /// @brief Writes the specified uint32_t value to the text stream.
       /// @param value The value to write
       /// @exception io::ioexception An I/O error occurs.
-      virtual void write(uint32_t value) {write(xtd::format("{}", value));}
+      void write(uint32_t value) {write(xtd::format("{}", value));}
       
       /// @brief Writes the specified uint64_t value to the text stream.
       /// @param value The value to write
       /// @exception io::ioexception An I/O error occurs.
-      virtual void write(uint64_t value) {write(xtd::format("{}", value));}
+      void write(uint64_t value) {write(xtd::format("{}", value));}
       
       /// @brief Writes the specified uintptr_t value to the text stream.
       /// @param value The value to write
       /// @exception io::ioexception An I/O error occurs.
-      virtual void write(uintptr_t value) {write(xtd::format("{}", value));}
+      void write(uintptr_t value) {write(xtd::format("{}", value));}
 
       template<typename value_t>
       void write(value_t value) {write(xtd::format("{}", value));}
