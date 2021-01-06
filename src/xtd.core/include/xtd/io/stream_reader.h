@@ -16,10 +16,10 @@ namespace xtd {
     /// @ingroup xtd_core
     class stream_reader : public xtd::io::text_reader {
     public:
-      /// @cond Initializes a new instance of the stream_reader class for the specified file name.
+      /// @brief Initializes a new instance of the stream_reader class for the specified file name.
       /// @param path The complete file path to be read.
       stream_reader(const std::string& path) : stream_(new std::ifstream(path)), delete_when_destroy_(true) {}
-      /// @cond Initializes a new instance of the stream_reader class for the specified stream.
+      /// @brief Initializes a new instance of the stream_reader class for the specified stream.
       /// @param stream The stream to be read.
       stream_reader(std::istream& stream) : stream_(&stream) {}
       /// @cond

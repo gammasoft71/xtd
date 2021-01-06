@@ -16,10 +16,10 @@ namespace xtd {
     /// @ingroup xtd_core
     class stream_writer : public xtd::io::text_writer {
     public:
-      /// @cond Initializes a new instance of the stream_writer class for the specified file name.
+      /// @brief Initializes a new instance of the stream_writer class for the specified file name.
       /// @param path The complete file path to be read.
       stream_writer(const std::string& path) : stream_(new std::ofstream(path)), delete_when_destroy_(true) {}
-      /// @cond Initializes a new instance of the stream_writer class for the specified stream.
+      /// @brief Initializes a new instance of the stream_writer class for the specified stream.
       /// @param stream The stream to be read.
       stream_writer(std::ostream& stream) : stream_(&stream) {}
       /// @cond
