@@ -155,5 +155,6 @@
 #include "io/path_too_long_exception.h"
 #include "io/stream_reader.h"
 #include "io/stream_writer.h"
+#include "io/string_reader.h"
 #include "io/text_reader.h"
 #include "io/text_writer.h"
