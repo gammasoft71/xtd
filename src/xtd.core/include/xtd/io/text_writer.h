@@ -90,11 +90,6 @@ namespace xtd {
       /// @exception io::ioexception An I/O error occurs.
       void write(int64_t value) {write(xtd::format("{}", value));}
       
-      /// @brief Writes the specified intptr_t value to the text stream.
-      /// @param value The value to write
-      /// @exception io::ioexception An I/O error occurs.
-      void write(intptr_t value) {write(xtd::format("{}", value));}
-      
       /// @brief Writes the specified uint8_t value to the text stream.
       /// @param value The value to write
       /// @exception io::ioexception An I/O error occurs.
@@ -114,11 +109,6 @@ namespace xtd {
       /// @param value The value to write
       /// @exception io::ioexception An I/O error occurs.
       void write(uint64_t value) {write(xtd::format("{}", value));}
-      
-      /// @brief Writes the specified uintptr_t value to the text stream.
-      /// @param value The value to write
-      /// @exception io::ioexception An I/O error occurs.
-      void write(uintptr_t value) {write(xtd::format("{}", value));}
 
       template<typename value_t>
       void write(value_t value) {write(xtd::format("{}", value));}
