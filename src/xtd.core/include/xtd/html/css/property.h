@@ -19,13 +19,11 @@ namespace xtd {
         static property from(int16_t value) {return property(format("{}", value));}
         static property from(int32_t value) {return property(format("{}", value));}
         static property from(int64_t value) {return property(format("{}", value));}
-        static property from(intptr_t value) {return property(format("{}", value));}
         static property from(const std::string& value) {return property(format("{}", value));}
         static property from(uint8_t value) {return property(format("{}", value));}
         static property from(uint16_t value) {return property(format("{}", value));}
         static property from(uint32_t value) {return property(format("{}", value));}
         static property from(uint64_t value) {return property(format("{}", value));}
-        static property from(uintptr_t value) {return property(format("{}", value));}
         template<typename value_t>
         static property from(value_t value) {return property(format("{}", value));}
         
