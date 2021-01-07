@@ -8,7 +8,7 @@ echo.
 echo   Operating System is Windows
 
 :: check if administrator mode
-fsutil dirty query %systemdrive% > nul 2>&1
+WHOAMI /Groups | FIND "12288" > nul 2>&1
 IF %ERRORLEVEL% neq 0 (
   echo You are not in administrator mode!
   echo Run cmd as administrator before execute install.
