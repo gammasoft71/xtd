@@ -3,8 +3,8 @@
 [![Build Status](https://travis-ci.com/gammasoft71/xtd.svg?branch=master)](https://travis-ci.com/gammasoft71/xtd)
 [![Build status](https://ci.appveyor.com/api/projects/status/uqn1xbctwy88eghu?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd)
 [![Reference Guide](https://img.shields.io/badge/code-Reference_Guide-brightgreen.svg)](https://codedocs.xyz/gammasoft71/xtd/)
-[![Wiki](https://img.shields.io/badge/wiki-Home-brightgreen.svg)](./docs/home.md)
 [![Website](https://img.shields.io/badge/web-gammasoft-brightgreen.svg)](https://gammasoft71.wixsite.com/gammasoft)
+[![Wiki](https://img.shields.io/badge/wiki-Home-brightgreen.svg)](./docs/home.md)
 [![license](https://img.shields.io/github/license/gammasoft71/xtd.svg)](LICENSE.md)
 <!--- 
 [![Download xtd](https://img.shields.io/sourceforge/dt/xtdpro.svg)](https://sourceforge.net/projects/xtdpro/files/latest/download)
@@ -21,7 +21,7 @@
 * written in efficient, modern C++17 / C++20;
 * and highly portable and available on many different platforms (Windows, macOS, Linux, iOS and android);
 
-For more information see [documentations](docs/home.md) ([website](https://gammasoft71.wixsite.com/xtdpro)) and [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/).
+For more information see [website](https://gammasoft71.wixsite.com/xtdpro) ([documentations](docs/home.md)) and [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/).
 
 # Examples
 
