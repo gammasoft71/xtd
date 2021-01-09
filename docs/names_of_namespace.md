@@ -38,10 +38,9 @@ There are specific guidelines for avoiding type name conflicts for different cat
  
 # See also
 ​
-Other Resources
-
-* [Design Guidelines](design_guidelines.md)
 * [Naming Guidelines](naming_guidelines.md)
+* [Design Guidelines](design_guidelines.md)
+* [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
 

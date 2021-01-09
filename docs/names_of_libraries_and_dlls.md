@@ -16,10 +16,9 @@ where <component> contains one or more underscore-separated clauses. For example
 ​
 # See also
 ​
-Other Resources
-
-* [Design Guidelines](design_guidelines.md)
 * [Naming Guidelines](naming_guidelines.md)
+* [Design Guidelines](design_guidelines.md)
+* [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
 

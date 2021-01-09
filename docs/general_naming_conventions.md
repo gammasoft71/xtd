@@ -73,13 +73,12 @@ This will assist discovery when browsing documentation, or using Intellisense. T
 **X DO NOT** use the "ex" (or a similar) suffix for an identifier to distinguish it from an earlier version of the same API.
 
 **√ DO** use the "64" suffix when introducing versions of APIs that operate on a 64-bit integer (a long integer) instead of a 32-bit integer. You only need to take this approach when the existing 32-bit API exists; don’t do it for brand new APIs with only a 64-bit version.
-​
+​ 
 # See also
 ​
-Other Resources
-
-* [Design Guidelines](design_guidelines.md)
 * [Naming Guidelines](naming_guidelines.md)
+* [Design Guidelines](design_guidelines.md)
+* [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
 
