@@ -2,7 +2,7 @@
 
 # Writing GUI application
 
-## In This Section
+## In this section
 
 * [Create GUI](#create-gui)
 * [Adding a Control and Handling an Event](#adding-a-control-and-handling-an-event)

@@ -164,10 +164,9 @@ C++ are case-sensitivity.
  
 # See also
 ​
-Other Resources
-
-* [Design Guidelines](design_guidelines.md)
 * [Naming Guidelines](naming_guidelines.md)
+* [Design Guidelines](design_guidelines.md)
+* [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
 

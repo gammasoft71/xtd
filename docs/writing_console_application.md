@@ -2,7 +2,7 @@
 
 # Writing console application
 
-## In This Section
+## In this section
 
 * [Create console](#create-console)
 * [Adding a write line and read line](#adding-a-write-line-and-read-line)

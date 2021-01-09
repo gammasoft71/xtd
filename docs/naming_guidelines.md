@@ -19,9 +19,8 @@ Although adopting these naming conventions as general code development guideline
 ​
 # See also
 ​
-Other Resources
-
 * [Design Guidelines](design_guidelines.md)
+* [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
 

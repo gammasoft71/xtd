@@ -791,9 +791,8 @@ void example() {
 
 # See also
 ​
-Other Resources
-
 * [Design Guidelines](design_guidelines.md)
+* [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
 

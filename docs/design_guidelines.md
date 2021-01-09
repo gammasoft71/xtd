@@ -11,7 +11,7 @@ Such cases should be rare, and it is important that you have a clear and compell
 These guidelines are excerpted from the book Framework Design Guidelines:
 Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition, by Krzysztof Cwalina and Brad Abrams.
 
-# In This Section
+# In this section
 
 * [Coding Conventions Guidelines](coding_conventions_guidelines.md) provides guidelines for comments, documentation, indentations, new lines and spacing coding conventions.
 * [Naming Guidelines](naming_guidelines.md) Provides guidelines for naming libraries, namespaces, types, and members in class libraries.
@@ -21,6 +21,10 @@ Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition, by K
 * [Design Guidelines for Exception](design_guidelines_for_exception.md) Describes design guidelines for designing, throwing, and catching exceptions.
 * [Usage Guidelines](usage_guidelines.md) Describes guidelines for using common types such as arrays, attributes, and collections, supporting serialisation, and overloading equality operators.
 * [Common Design Patterns](common_design_patterns.md) are solutions to software design problems you find again and again in real-world application development. Patterns are about reusable designs and interactions of objects.
+
+## See also
+
+* [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
 

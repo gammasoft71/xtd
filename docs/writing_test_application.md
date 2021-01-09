@@ -404,7 +404,8 @@ Comming soon...
 
 ## See also
 
-* [Writing applications](writing_applications.md)
+## See also
+* [Writing applicattions](writing_applications.md)
 * [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
