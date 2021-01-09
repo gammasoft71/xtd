@@ -54,7 +54,21 @@ add_sources(hello_world_console.cpp)
 target_type(CONSOLE_APPLICATION)
 ```
 
-## Forms
+### Build and run
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run
+```
+
+### Output
+
+```
+Hello, World!
+```
+
+## GUI
 
 hello_world_forms.cpp:
 
@@ -89,6 +103,30 @@ find_package(xtd.forms REQUIRED)
 add_sources(hello_world_message_box.cpp)
 target_type(GUI_APPLICATION)
 ```
+
+```shell
+xtdc run
+```
+
+### Output
+
+#### Windows :
+
+![Screenshot](docs/pictures/examples/hello_world_message_box_w.png)
+
+![Screenshot](docs/pictures/examples/hello_world_message_box_wd.png)
+
+#### macOS :
+
+![Screenshot](docs/pictures/examples/hello_world_message_box_m.png)
+
+![Screenshot](docs/pictures/examples/hello_world_message_box_md.png)
+
+#### Linux Gnome :
+
+![Screenshot](docs/pictures/examples/hello_world_message_box_g.png)
+
+![Screenshot](docs/pictures/examples/hello_world_message_box_gd.png)
 
 ## Unit tests
 
@@ -133,6 +171,27 @@ project(hello_world_tunit)
 find_package(xtd.forms REQUIRED)
 add_sources(hello_world_tunit.cpp)
 target_type(TEST_APPLICATION)
+```
+
+### Build and run
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run
+```
+
+### Output
+
+```
+Start 2 tests from 1 test case
+Run tests:
+  SUCCEED hello_world_test.create_string_from_literal (0 ms total)
+  SUCCEED hello_world_test.create_string_from_chars (0 ms total)
+
+Test results:
+  SUCCEED 2 tests.
+End 2 tests from 1 test case ran. (0 ms total)
 ```
 
 # Getting Started
