@@ -110,7 +110,6 @@ xtdc run
 
 ![Screenshot](pictures/examples/hello_world_message_box_gd.png)
 
-
 ## Unit tests
 
 ### hello_world_test.cpp:
