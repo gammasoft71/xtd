@@ -18,7 +18,7 @@ Although adopting these naming conventions as general code development guideline
 * [Naming Resources](naming_resources.md)
 ​
 # See also
-​
+
 * [Design Guidelines](design_guidelines.md)
 * [Documentation](documentation.md)
 
