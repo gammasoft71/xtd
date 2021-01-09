@@ -96,6 +96,8 @@ xtdc run
 
 ![Screenshot](pictures/examples/hello_world_message_box_w.png)
 
+![Screenshot](pictures/examples/hello_world_message_box_wd.png)
+
 #### macOS :
 
 ![Screenshot](pictures/examples/hello_world_message_box_m.png)
