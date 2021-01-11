@@ -1,8 +1,8 @@
 # xtd
 
-[![xtd](docs/pictures/xtd_header.png)](https://gammasoft71.wixsite.com/xtdpro)
-
 Modern c++17/20 framework to create console, gui and unit test applications on Microsoft Windows, Apple macOS and Linux.
+
+[![xtd](docs/pictures/xtd_header.png)](https://gammasoft71.wixsite.com/xtdpro)
 
 ## Build status
 
