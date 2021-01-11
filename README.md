@@ -4,7 +4,7 @@ Modern c++17/20 framework to create console, gui and unit test applications.
 
 [![xtd](docs/pictures/xtd_header.png)](https://gammasoft71.wixsite.com/xtdpro)
 
-## Build status
+## Continuous Integration build status
 
 | Operating system | Status                                                                                                                              |
 |------------------|-------------------------------------------------------------------------------------------------------------------------------------|
