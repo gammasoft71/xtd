@@ -104,6 +104,8 @@ add_sources(hello_world_message_box.cpp)
 target_type(GUI_APPLICATION)
 ```
 
+### Build and run
+
 ```shell
 xtdc run
 ```
