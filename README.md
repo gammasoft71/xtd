@@ -1,15 +1,15 @@
+# xtd
+
+[![xtd](docs/pictures/xtd_header.png)](https://gammasoft71.wixsite.com/xtdpro)
+
+Modern c++17 / c++20 framework to create console, gui and unit test applications on Microsoft Windows, Apple macOS and Linux.
+
 [![Build Status](https://travis-ci.com/gammasoft71/xtd.svg?branch=master)](https://travis-ci.com/gammasoft71/xtd)
 [![Build status](https://ci.appveyor.com/api/projects/status/uqn1xbctwy88eghu?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd)
 [![Reference Guide](https://img.shields.io/badge/code-Reference_Guide-brightgreen.svg)](https://codedocs.xyz/gammasoft71/xtd/)
 [![Website](https://img.shields.io/badge/web-gammasoft-brightgreen.svg)](https://gammasoft71.wixsite.com/gammasoft)
 [![MD](https://img.shields.io/badge/md-Home-brightgreen.svg)](./docs/home.md)
 [![license](https://img.shields.io/github/license/gammasoft71/xtd.svg)](LICENSE.md)
-
-# xtd
-
-[![xtd](docs/pictures/xtd_header.png)](https://gammasoft71.wixsite.com/xtdpro)
-
-Modern c++17 / c++20 framework to create console, gui and unit test applications on Microsoft Windows, Apple macOS and Linux.
 
 ## Features
 
