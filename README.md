@@ -1,33 +1,29 @@
-[![console](docs/pictures/header.png)](https://gammasoft71.wixsite.com/xtdpro)
-
 [![Build Status](https://travis-ci.com/gammasoft71/xtd.svg?branch=master)](https://travis-ci.com/gammasoft71/xtd)
 [![Build status](https://ci.appveyor.com/api/projects/status/uqn1xbctwy88eghu?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd)
 [![Reference Guide](https://img.shields.io/badge/code-Reference_Guide-brightgreen.svg)](https://codedocs.xyz/gammasoft71/xtd/)
 [![Website](https://img.shields.io/badge/web-gammasoft-brightgreen.svg)](https://gammasoft71.wixsite.com/gammasoft)
-[![Wiki](https://img.shields.io/badge/wiki-Home-brightgreen.svg)](./docs/home.md)
+[![MD](https://img.shields.io/badge/md-Home-brightgreen.svg)](./docs/home.md)
 [![license](https://img.shields.io/github/license/gammasoft71/xtd.svg)](LICENSE.md)
-<!--- 
-[![Download xtd](https://img.shields.io/sourceforge/dt/xtdpro.svg)](https://sourceforge.net/projects/xtdpro/files/latest/download)
-[![GitHub top language](https://img.shields.io/github/languages/top/gammasoft71/xtd.svg)](README.md)
-[![Windows](https://img.shields.io/badge/os-Windows-004080.svg)](README.md)
-[![macOS](https://img.shields.io/badge/os-macOS-004080.svg)](README.md)
-[![Linux](https://img.shields.io/badge/os-Linux-004080.svg)](README.md)
-[![codecov](https://codecov.io/gh/gammasoft71/xtd/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd)
- --->
 
-# Features
+# xtd
+
+[![xtd](docs/pictures/xtd_header.png)](https://gammasoft71.wixsite.com/xtdpro)
+
+Modern c++17 unit testing framework on Microsoft Windows, Apple macOS, Linux, iOS and android.
+
+## Features
 
 * a collection of native C++ classes libraries, to complete std;
 * written in efficient, modern C++17 / C++20;
 * and highly portable and available on many different platforms (Windows, macOS, Linux, iOS and android);
 
-For more information see [website](https://gammasoft71.wixsite.com/xtdpro) ([documentations](docs/home.md)) and [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/).
+For more information see [website](https://gammasoft71.wixsite.com/xtdpro) (or [markdown documentations](https://github.com/gammasoft71/xtd/blob/master/docs/home.md)), [sources](https://github.com/gammasoft71/xtd) and [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/).
 
-# Examples
+## Examples
 
 The classic first application 'Hello World'.
 
-## Console
+### Console
 
 hello_world_console.cpp:
 
@@ -54,7 +50,7 @@ add_sources(hello_world_console.cpp)
 target_type(CONSOLE_APPLICATION)
 ```
 
-### Build and run
+#### Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -62,13 +58,13 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-### Output
+#### Output
 
 ```
 Hello, World!
 ```
 
-## GUI
+### GUI
 
 hello_world_forms.cpp:
 
@@ -104,7 +100,7 @@ add_sources(hello_world_message_box.cpp)
 target_type(GUI_APPLICATION)
 ```
 
-### Build and run
+#### Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -112,27 +108,27 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-### Output
+#### Output
 
-#### Windows :
+##### Windows :
 
 ![Screenshot](docs/pictures/examples/hello_world_message_box_w.png)
 
 ![Screenshot](docs/pictures/examples/hello_world_message_box_wd.png)
 
-#### macOS :
+##### macOS :
 
 ![Screenshot](docs/pictures/examples/hello_world_message_box_m.png)
 
 ![Screenshot](docs/pictures/examples/hello_world_message_box_md.png)
 
-#### Linux Gnome :
+##### Linux Gnome :
 
 ![Screenshot](docs/pictures/examples/hello_world_message_box_g.png)
 
 ![Screenshot](docs/pictures/examples/hello_world_message_box_gd.png)
 
-## Unit tests
+### Unit tests
 
 hello_world_tunit.cpp:
 
@@ -177,7 +173,7 @@ add_sources(hello_world_tunit.cpp)
 target_type(TEST_APPLICATION)
 ```
 
-### Build and run
+#### Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -185,7 +181,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-### Output
+#### Output
 
 ```
 Start 2 tests from 1 test case
@@ -198,40 +194,8 @@ Test results:
 End 2 tests from 1 test case ran. (0 ms total)
 ```
 
-# Getting Started
+## Getting Started
 
 * [Installation](docs/downloads.md) provides download and install documentation.
 * [Portability](docs/portability.md) provides information about C++, libraries dependency, Operating System suported, Compilators and Devepment Environment tools.
 * [Examples](examples/README.md) provides some examples.
-
-<!---
-# Motivations
-
-## All xtd libraries
-
-* Modern C++17 only
-* std c++ design guidelines.
-* Multiplatform (Windows, macOS, Android and ios and linux base oprating system).
-
-## xtd.tunit
-
-* Create a full [xunit](https://en.wikipedia.org/wiki/XUnit) unit testing library in C++17 with an api closely to [NUnit](https://nunit.org) for C# and [Microsoft.VisualStudio.TestTools.CppUnitTestFramework](https://docs.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference?view=vs-2019) for C++ on Windows.
-
-## xtd.system
-
-* Basic extend of std c++. The objectevie is not to replace [boost](https://www.boost.org) but get acces to a basic and simple api. For more complex development, it recommanded to use [boost](https://www.boost.org).
-* Basic string formater and parser. The objectevie is not to replace [fmtlib ](https://github.com/fmtlib/fmt) but get a basic and simple api to wait C++20 string format and string parse.
-* Implement Multicast delegates with easy registration (+= operator) and unregistration (-= operator) with event safe invocation by creator only.
-
-## xtd.console
-
-* Create a simple and light multiplatform console api compatible with std::stream (with an easy way redirection like std) with cursor visibility, background and forground color, position and size of console and more.
-
-## xtd.forms
-
-* Create a modern api for gui application (like Winforms in .Net).
-* If during development you are wondering about the allocated object, should you or should you not delete the pointer? Should you destroy it or not? Or in some cases do nothing. Or if a control must obligatorily be created with the operator new and not on the stack. I think it's all too complex and it can create memory leaks or even crashes.  That's why a simple and unequivocal RAI api is preferable.
-* A gui must follow the de operating system design guidelines. And sometimes if you want customize your application, not.
-* After reading [List of widget toolkits](https://en.wikipedia.org/wiki/List_of_widget_toolkits) and the [Philippe Groarke C++ UI Libraries post](https://philippegroarke.com/posts/2018/c++_ui_solutions/). I don't find a gui api more simple as Winforms C# or Borland C++ builder.
-* 
---->
