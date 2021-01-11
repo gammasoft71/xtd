@@ -9,7 +9,7 @@
 
 [![xtd](docs/pictures/xtd_header.png)](https://gammasoft71.wixsite.com/xtdpro)
 
-Modern c++17 unit testing framework on Microsoft Windows, Apple macOS, Linux, iOS and android.
+Modern c++17 / c++20 framework to create console, gui and unit test applications on Microsoft Windows, Apple macOS and Linux.
 
 ## Features
 
