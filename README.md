@@ -106,6 +106,8 @@ target_type(GUI_APPLICATION)
 
 ### Build and run
 
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
 ```shell
 xtdc run
 ```
