@@ -19,7 +19,7 @@
 * and highly portable and available on many different platforms (Windows, macOS, Linux, iOS and android);
 
 For more information see:
-* [xtd website](https://gammasoft71.wixsite.com/xtdpro)
+* [website](https://gammasoft71.wixsite.com/xtdpro)
 * [markdown documentations](https://github.com/gammasoft71/xtd/blob/master/docs/home.md)
 * [sources](https://github.com/gammasoft71/xtd) 
 * [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/).
