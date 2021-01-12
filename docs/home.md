@@ -8,7 +8,7 @@
 
 * a collection of native C++ classes libraries, to complete std;
 * written in efficient, modern C++17/20;
-* and [highly portable](portability.md#the-xtd-libraries-portability-list) and available on many different [platforms](portability.md#operating-system-supported);
+* and [highly portable](portability.md#the-xtd-libraries-portability-list) and available on [many different platforms](portability.md#operating-system-supported);
 
 
 [![architecture_logo](pictures/block_diagram.png)](hierarchy.md)
