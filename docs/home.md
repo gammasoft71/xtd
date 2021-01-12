@@ -2,7 +2,7 @@
 
 [![operating_systems_logo](pictures/operating_systems.png)](https://gammasoft71.wixsite.com/xtdpro)
 
-(*) See [portability](portabolity.md#the-xtd-libraries-portability-list) for more information
+(*) See [portability](portability.md#the-xtd-libraries-portability-list) for more information
 
 # xtd is ...
 
