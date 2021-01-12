@@ -1,6 +1,6 @@
 # xtd
 
-Modern c++17/20 framework to create console, GUI and unit test applications.
+Modern c++17/20 framework to create console, GUI and unit test applications on Windows, macO, Linux, iOS and android.
 
 [![xtd](docs/pictures/xtd_header.png)](https://gammasoft71.wixsite.com/xtdpro)
 
