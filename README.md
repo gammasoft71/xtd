@@ -18,7 +18,11 @@ Modern c++17/20 framework to create console, gui and unit test applications.
 * written in efficient, modern C++17 / C++20;
 * and highly portable and available on many different platforms (Windows, macOS, Linux, iOS and android);
 
-For more information see [website](https://gammasoft71.wixsite.com/xtdpro) (or [markdown documentations](https://github.com/gammasoft71/xtd/blob/master/docs/home.md)), [sources](https://github.com/gammasoft71/xtd) and [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/).
+For more information see:
+* [xtd website](https://gammasoft71.wixsite.com/xtdpro)
+* [markdown documentations](https://github.com/gammasoft71/xtd/blob/master/docs/home.md)
+* [sources](https://github.com/gammasoft71/xtd) 
+* [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/).
 
 ## Examples
 
