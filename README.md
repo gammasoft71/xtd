@@ -135,7 +135,7 @@ xtdc run
 
 ### Unit tests
 
-hello_world_tunit.cpp:
+hello_world_test.cpp:
 
 ```c++
 #include <xtd/xtd>
@@ -172,9 +172,9 @@ CMakeLists.txt:
 ```cmake
 cmake_minimum_required(VERSION 3.3)
 
-project(hello_world_tunit)
+project(hello_world_test)
 find_package(xtd REQUIRED)
-add_sources(hello_world_tunit.cpp)
+add_sources(hello_world_test.cpp)
 target_type(TEST_APPLICATION)
 ```
 
