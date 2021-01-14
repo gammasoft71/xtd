@@ -133,7 +133,8 @@
 /// End 2 tests from 1 test case ran. (0 ms total)
 /// @endcode
 ///
-/// For more examples see <a href="https://github.com/gammasoft71/xtd/tree/master/examples/">examples</a>.
+/// @section GettingStartedSection Getting Started
 ///
-/// @section DownloadSection Download and install
-/// Before running examples you must download and install xtd. To download and install it read <a href="https://github.com/gammasoft71/xtd/tree/master/docs/downloads.md">Downloads.md</a> file.
+///  * <a href="https://gammasoft71.wixsite.com/xtdpro/downloads">Installation</a> provides download and install documentation.
+///  * <a href="https://gammasoft71.wixsite.com/xtdpro/portability">Portability</a> provides information about C++, libraries dependency, Operating System suported, Compilators and Devepment Environment tools..
+///  * <a href="https://gammasoft71.wixsite.com/xtdpro/examples">Example</a> provides some examples.
