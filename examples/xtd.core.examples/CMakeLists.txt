@@ -13,6 +13,7 @@ add_projects(
   html
   keywords
   mains
+  random
   strings
   others
 )
