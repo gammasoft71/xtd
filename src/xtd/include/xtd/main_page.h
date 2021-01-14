@@ -14,9 +14,9 @@
 ///
 /// @subsection MoreInformationSubsection For more information see:
 ///  * <a href="https://gammasoft71.wixsite.com/xtdpro">website</a>
-///  * <a href="https://github.com/gammasoft71/xtd/tree/master/docs/home.md">markdown documentations</a>)
-///  * <a href="https://github.com/gammasoft71/xtd">sources</a>)
-///  * <a href="https://codedocs.xyz/gammasoft71/xtd/">Reference Guide</a>).
+///  * <a href="https://github.com/gammasoft71/xtd/tree/master/docs/home.md">markdown documentations</a>
+///  * <a href="https://github.com/gammasoft71/xtd">sources</a>
+///  * <a href="https://codedocs.xyz/gammasoft71/xtd/">Reference Guide</a>
 ///
 /// @section ExamplesSection Examples
 /// The classic first application 'Hello World'.
