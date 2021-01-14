@@ -9,7 +9,7 @@
 ///
 /// @section FeaturesSection Features
 ///   * a collection of native C++ classes libraries, to complete std;
-///   * written in efficient, modern C++17;
+///   * written in efficient, modern C++17 / C++20;
 ///   * and highly portable and available on many different platforms (Windows, macOS, Linux, iOS and android);
 ///
 /// @subsection MoreInformationSubsection For more information see:
