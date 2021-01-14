@@ -72,6 +72,7 @@
 /// @endcode
 ///
 /// @subsubsection ExamplesGUIOutputSubsubsection Output
+///
 /// Windows:
 ///  @image hello_world_message_box_w.png
 ///  @image hello_world_message_box_wd.png
