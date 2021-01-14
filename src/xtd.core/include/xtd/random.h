@@ -1,12 +1,11 @@
 #pragma once
 #include <limits>
-#include <cstdlib>
-#include <ctime>
+#include <optional>
+#include <random>
 #include "argument_null_exception.h"
 #include "argument_out_of_range_exception.h"
 #include "core_export.h"
-#include "strings.h"
-#include "types.h"
+#include "environment.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -31,12 +30,20 @@ namespace xtd {
   /// @include random3.cpp
   class random {
   public:
-    /// @brief Initializes a new instance of the random class, using a time-dependent default seed value
-    random() {srand(std::time(0));}
+    /// @brief Initializes a new instance of the random class, using a default generated seed value
+    random() : generator_(environment::tick_count().count()) {}
     
-    /// @brief Initializes a new instance of the random class, using a time-dependent default seed value.
-    /// @param seed A number used to calculate a starting value for the pseudo-random number sequence. If a negative number is specified, the absolute value of the number is used.
-    explicit random(uint32_t seed) {srand(seed);}
+    /// @brief Initializes a new instance of the random class, using a specified seed value.
+    /// @param seed A number used to calculate a starting value for the pseudo-random number sequence.
+    explicit random(uint32_t seed) : generator_(seed + 1) {}
+    
+    /// @brief Initializes a new instance of the random class, using a specified random device value.
+    /// @param random_device A random device value.
+    explicit random(std::random_device& random_device) : generator_(random_device()) {}
+    
+    /// @cond
+    virtual ~random() = default;
+    /// @endcond
 
     /// @brief Returns a nonnegative random number.
     /// @return A 32-bit signed integer greater than or equal to zero and less than std::numeric_limits<int32_t>::max())
@@ -72,7 +79,7 @@ namespace xtd {
     virtual int32_t next(int32_t min_value, int32_t max_value) const {
       if (min_value > max_value) throw argument_out_of_range_exception(caller_info_);
       if (min_value == max_value) return min_value;
-      return min_value + static_cast<int32_t>(sample() * RAND_MAX) % ((max_value - 1) - min_value + 1);
+      return min_value + static_cast<int32_t>(std::round(sample() * std::numeric_limits<int32_t>::max())) % ((max_value - 1) - min_value + 1);
     }
 
     /// @brief Returns a random number within a specified range.
@@ -83,10 +90,10 @@ namespace xtd {
     /// @remarks The next(value_t, value_t) overload returns random integers that range from min_value to max_value – 1. However, if max_value equals min_value, the method returns min_value.
     /// @remarks Unlike the other overloads of the next method, which return only non-negative values, this method can return a negative random integer.
     template<typename value_t>
-    int32_t next(value_t min_value, value_t max_value) const {
+    value_t next(value_t min_value, value_t max_value) const {
       if (min_value > max_value) throw argument_out_of_range_exception(caller_info_);
       if (min_value == max_value) return min_value;
-      return min_value + static_cast<value_t>(sample() * RAND_MAX) % ((max_value - 1) - min_value + 1);
+      return min_value + static_cast<value_t>(std::round(sample() * std::numeric_limits<value_t>::max())) % ((max_value - 1) - min_value + 1);
     }
 
     /// @brief Fills the elements of a specified array of bytes with random numbers.
@@ -101,7 +108,7 @@ namespace xtd {
     virtual void next_bytes(uint8_t* buffer, size_t buffer_size) const {
       if (buffer == nullptr) throw argument_null_exception(caller_info_);
       for (size_t index = 0; index < buffer_size; index++)
-        buffer[index] = static_cast<uint8_t>(next(0, std::numeric_limits<uint8_t>::max() + 1));
+        buffer[index] = next<uint8_t>(0, std::numeric_limits<uint8_t>::max());
     }
 
     /// @brief Fills the elements of a specified array of bytes with random numbers.
@@ -118,7 +125,7 @@ namespace xtd {
     void next_values(value_t* buffer, size_t buffer_size) const {
       if (buffer == nullptr) throw argument_null_exception(caller_info_);
       for (size_t index = 0; index < buffer_size; index++)
-      buffer[index] = static_cast<value_t>(next(0, std::numeric_limits<value_t>::max() + 1));
+      buffer[index] = next<value_t>(0, std::numeric_limits<value_t>::max());
     }
 
     /// @brief Returns a random number between 0.0 and 1.0
@@ -130,7 +137,12 @@ namespace xtd {
     /// @brief Returns a random number between 0.0 and 1.0
     /// @return A double-precision floating point number greater than or equal to 0.0, and less than 1.0.
     /// @remarks To produce a different random distribution or a different random number generator principle, derive a class from the random class and virtual the sample method.
-    virtual double sample() const {return static_cast<double>(rand()) / RAND_MAX;
+    virtual double sample() const {
+      static std::uniform_real_distribution<> distribution_(0, 1);
+      return distribution_(generator_);
     }
+
+  private:
+    mutable std::default_random_engine generator_;
   };
 }
