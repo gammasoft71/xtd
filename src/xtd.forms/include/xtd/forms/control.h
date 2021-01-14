@@ -319,7 +319,11 @@ namespace xtd {
       /// @remarks The created property returns true if the control was successfully created even though the control's handle might not have been created or recreated yet.
       virtual bool created() {return get_state(state::created);}
       
+      /// @brief Gets the cursor that is displayed when the mouse pointer is over the control.
+      /// @return A xtd::forms::cursor that represents the cursor to display when the mouse pointer is over the control.
       virtual forms::cursor cursor() const;
+      /// @brief Sets the cursor that is displayed when the mouse pointer is over the control.
+      /// @param cursor A xtd::forms::cursor that represents the cursor to display when the mouse pointer is over the control.
       virtual control& cursor(const forms::cursor& cursor);
       /// @cond
       virtual control& cursor(nullptr_t);
@@ -330,14 +334,24 @@ namespace xtd {
       /// @remarks This is the default back_color property value of a generic top-level control. Derived classes can have different defaults.
       virtual drawing::color default_back_color() const {return xtd::forms::theme_colors::current_theme().control();}
 
+      /// @brief Gets the default cursor for the control.
+      /// @return An object of type xtd::forms::cursor representing the current default cursor.
       virtual forms::cursor default_cursor() const {return cursors::default_cursor();}
 
+      /// @brief Gets the default font of the control.
+      /// @return The default font of the control. The value returned will vary depending on the user's operating system the local culture setting of their system.
+      virtual drawing::font default_font() const;
+
+      /// @brief Gets the default foreground color of the control.
+      /// @return The default foreground color of the control. The default is control_text.
       virtual drawing::color default_fore_color() const {return xtd::forms::theme_colors::current_theme().control_text();}
       
-      virtual drawing::font default_font() const;
-      
+      /// @brief Gets the default size of the control.
+      /// @return The default size of the control.
       virtual drawing::size default_size() const {return {0, 0};}
       
+      /// @brief Gets the rectangle that represents the display area of the control.
+      /// @return A rectangle that represents the display area of the control.
       virtual drawing::rectangle display_rectangle() const {return client_rectangle_;}
       
       /// @brief Gets or sets which control borders are docked to its parent control and determines how a control is resized with its parent.
@@ -351,87 +365,147 @@ namespace xtd {
       virtual dock_style dock() const {return dock_;}
       virtual control& dock(dock_style dock);
 
+      /// @brief Gets a value indicating whether this control should redraw its surface using a secondary buffer to reduce or prevent flicker.
+      /// @return true if the surface of the control should be drawn using double buffering; otherwise, false.
       virtual bool double_buffered() const {return get_state(state::double_buffered);}
+      /// @brief Sets a value indicating whether this control should redraw its surface using a secondary buffer to reduce or prevent flicker.
+      /// @param double_buffered true if the surface of the control should be drawn using double buffering; otherwise, false.
       virtual control& double_buffered(bool double_buffered) {
         set_state(state::double_buffered, double_buffered);
         return *this;
       }
       
+      /// @brief Gets a value indicating whether the control can respond to user interaction.
+      /// @return true if the control can respond to user interaction; otherwise, false. The default is true.
       virtual bool enabled() const {return get_state(state::enabled);}
+      /// @brief Gets a value indicating whether the control can respond to user interaction.
+      /// @param enabe true if the control can respond to user interaction; otherwise, false. The default is true.
       virtual control& enabled(bool enabled);
 
+      /// @brief Gets a value indicating whether the control has input focus.
+      /// @return true if the control has focus; otherwise, false.
       virtual bool focused() const {return focused_;}
 
+      /// @brief Gets the foreground color of the control.
+      /// @return The foreground color of the control. The default is the value of the default_fore_color property.
       virtual drawing::color fore_color() const;
+      /// @brief Sets the foreground color of the control.
+      /// @param color The foreground color of the control. The default is the value of the default_fore_color property.
       virtual control& fore_color(const drawing::color& color);
       /// @cond
       virtual control& fore_color(nullptr_t);
       /// @endcond
 
+      /// @brief Gets the font of the text displayed by the control.
+      /// @return The font to apply to the text displayed by the control. The default is the value of the default_font property.
       virtual drawing::font font() const;
+      /// @brief Gets the font of the text displayed by the control.
+      /// @param font The font to apply to the text displayed by the control. The default is the value of the default_font property.
       virtual control& font(const drawing::font& font);
       /// @cond
       virtual control& font(nullptr_t);
       /// @endcond
 
+      /// @brief Gets the window handle that the control is bound to.
+      /// @return An intptr_t that contains the window handle (HWND) of the control.
       intptr_t handle() const override;
       
+      /// @brief Gets the height of the control.
+      /// @return The height of the control in pixels.
       virtual int32_t height() const {return size_.height();}
+      /// @brief Sets the height of the control.
+      /// @param height The height of the control in pixels.
       virtual control& height(int32_t height) {
         if (size_.height() != height)
           set_bounds_core(0, 0, 0, height, bounds_specified::height);
         return *this;
       }
       
+      /// @brief Gets the distance, in pixels, between the left edge of the control and the left edge of its container's client area.
+      /// @return An int32_t representing the distance, in pixels, between the left edge of the control and the left edge of its container's client area.
       virtual int32_t left() const {return location_.x();}
+      /// @brief Sets the distance, in pixels, between the left edge of the control and the left edge of its container's client area.
+      /// @param left An int32_t representing the distance, in pixels, between the left edge of the control and the left edge of its container's client area.
       virtual control& left(int32_t left) {
         if (location_.x() != left)
           set_bounds_core(left, 0, 0, 0, bounds_specified::x);
         return *this;
       }
 
+      /// @brief Gets the coordinates of the upper-left corner of the control relative to the upper-left corner of its container.
+      /// @return The point that represents the upper-left corner of the control relative to the upper-left corner of its container.
       virtual drawing::point location() const {return location_;}
+      /// @brief Gets the coordinates of the upper-left corner of the control relative to the upper-left corner of its container.
+      /// @param location The point that represents the upper-left corner of the control relative to the upper-left corner of its container.
       virtual control& location(const drawing::point& location) {
         if (location_ != location)
           set_bounds_core(location.x(), location.y(), 0, 0, bounds_specified::location);
         return *this;
       }
       
+      /// @brief Gets the space between controls.
+      /// @return A padding representing the space between controls.
       virtual forms::padding margin() const {return margin_;}
+      /// @brief Sets the space between controls.
+      /// @param margin A padding representing the space between controls.
       virtual control& margin(const forms::padding& margin) {
         if (margin_ != margin)
           margin_ = margin;
         return *this;
       }
 
+      /// @brief Gets a value indicating which of the modifier keys (SHIFT, CTRL, and ALT) is in a pressed state.
+      /// @return A bitwise combination of the keys values. The default is none.
       static forms::keys modifier_keys() {return modifier_keys_;}
       
+      /// @brief Gets a value indicating which of the mouse buttons is in a pressed state.
+      /// @return A bitwise combination of the mouse_buttons enumeration values. The default is none.
       static forms::mouse_buttons mouse_buttons() {return mouse_buttons_;}
       
+      /// @brief Gets the name of the control.
+      /// @return The name of the control. The default is an empty string ("").
       virtual const std::string& name() const {return name_;}
+      /// @brief Sets the name of the control.
+      /// @param name The name of the control. The default is an empty string ("").
       virtual control& name(const std::string& name) {
         name_ = name;
         return*this;
       }
       
+      /// @brief Gets padding within the control.
+      /// @return A padding representing the control's internal spacing characteristics.
       virtual forms::padding padding() const {return padding_;}
+      /// @brief Sets padding within the control.
+      /// @param padding A padding representing the control's internal spacing characteristics.
       virtual control& padding(const forms::padding& padding) {
         if (padding_ != padding)
           padding_ = padding;
         return *this;
       }
       
+      /// @brief Gets the parent container of the control.
+      /// @return A control that represents the parent or container control of the control.
       virtual std::optional<control_ref> parent() const {return from_handle(parent_);}
+      /// @brief Sets the parent container of the control.
+      /// @param parent A control that represents the parent or container control of the control  or nullptr for none.
       virtual control& parent(const control& parent);
+      /// @brief Sets the parent container of the control.
+      /// @param parent A control that represents the parent or container control of the control  or nullptr for none.
       virtual control& parent(std::nullptr_t);
 
+      /// @brief Gets the product name of the assembly containing the control.
+      /// @return The product name of the assembly containing the control.
       virtual std::string product_name() const {return "xtd";}
       
       bool recreating_handle() const {return get_state(state::recreate);}
       
       virtual int32_t right() const {return left() + width();}
 
+      /// @brief Gets the height and width of the control.
+      /// @return The size that represents the height and width of the control in pixels.
       virtual const drawing::size& size() const {return size_;}
+      /// @brief Sets the height and width of the control.
+      /// @param size The size that represents the height and width of the control in pixels.
       virtual control& size(const drawing::size& size) {
         if (get_state(state::client_size_setted) || size_ != size) {
           set_state(state::client_size_setted, false);
@@ -455,7 +529,11 @@ namespace xtd {
         return*this;
       }
       
+      /// @brief Gets the text associated with this control.
+      /// @return The text associated with this control.
       virtual const std::string& text() const {return text_;}
+      /// @brief Sets the text associated with this control.
+      /// @param text The text associated with this control.
       virtual control& text(const std::string& text);
 
       virtual int32_t top() const {return location_.y();}
