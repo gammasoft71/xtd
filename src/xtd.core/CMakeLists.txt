@@ -90,6 +90,7 @@ add_sources(
   include/xtd/platform_not_supported_exception.h
   include/xtd/predicate.h
   include/xtd/processor.h
+  include/xtd/random.h
   include/xtd/reset_color.h
   include/xtd/startup.h
   include/xtd/static.h
