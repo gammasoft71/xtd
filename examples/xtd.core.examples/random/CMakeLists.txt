@@ -5,5 +5,7 @@ find_package(xtd REQUIRED)
 
 add_projects(
   random1
+  random2
+  random3
 )
 
