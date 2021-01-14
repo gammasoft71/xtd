@@ -136,6 +136,6 @@
 ///
 /// @section GettingStartedSection Getting Started
 ///
-///  * <a href="https://gammasoft71.wixsite.com/xtdpro/downloads">Installation</a> provides download and install documentation.
+///  * <a href="https://gammasoft71.wixsite.com/xtdpro/download">Installation</a> provides download and install documentation.
 ///  * <a href="https://gammasoft71.wixsite.com/xtdpro/portability">Portability</a> provides information about C++, libraries dependency, Operating System suported, Compilators and Devepment Environment tools..
-///  * <a href="https://gammasoft71.wixsite.com/xtdpro/examples">Example</a> provides some examples.
+///  * <a href="https://gammasoft71.wixsite.com/xtdpro/examples">Examples</a> provides some examples.
