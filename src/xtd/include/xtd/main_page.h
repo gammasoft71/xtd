@@ -3,6 +3,9 @@
 
 /// @mainpage xtd. - Reference Guide Documentation
 ///
+/// <b>Modern c++17/20 framework to create console, GUI and unit test applications on Windows, macO, Linux, iOS and android.</b>
+///  @image html xtd_header.png
+///
 /// @section FeaturesSection Features
 ///   * a collection of native C++ classes libraries, to complete std;
 ///   * written in efficient, modern C++17;
