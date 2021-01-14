@@ -17,7 +17,8 @@
 /// @section ExamplesSection Examples
 /// The classic first application 'Hello World'.
 ///
-/// src/hello_world_console.cpp:
+/// @subsection ExamplesConsoleSubsection Console
+/// hello_world_console.cpp:
 /// @code
 /// #include <xtd/xtd>
 ///
@@ -30,7 +31,19 @@
 /// }
 /// @endcode
 ///
-/// src/hello_worlds_forms.cpp:
+/// @subsubsection ExamplesConsoleBuildAndRunSubsubsection Build and run
+/// Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+/// @code
+/// xtdc run
+/// @endcode
+///
+/// @subsubsection ExamplesConsoleOutputSubsubsection Output
+/// @code
+/// Hello, World!
+/// @endcode
+///
+/// @subsection ExamplesGUISubsection GUI
+/// hello_worlds_forms.cpp:
 /// @code
 /// #include <xtd/xtd>
 ///
@@ -52,7 +65,16 @@
 /// }
 /// @endcode
 ///
-/// src/hello_worlds_tunit.cpp:
+/// @subsubsection ExamplesGUIBuildAndRunSubsubsection Build and run
+/// Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+/// @code
+/// xtdc run
+/// @endcode
+///
+/// @subsubsection ExamplesGUIOutputSubsubsection Output
+///
+/// @subsection ExamplesUnitTestSubsection Unit tests
+/// hello_worlds_tunit.cpp:
 /// @code
 /// #include <xtd/xtd>
 /// #include <string>
@@ -70,14 +92,34 @@
 ///
 ///     void test_method_(create_string_from_chars) {
 ///       string s = {'H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!'};
-///       assert::are_equal("Hello, World!", s);
+///       valid::are_equal(13, s.size());
+///       string_assert::starts_with("Hello,", s);
+///       string_assert::ends_with(" World!", s);
 ///     }
 ///   };
 /// }
 ///
-/// int main(int argc, char* argv[]) {
+/// int main() {
 ///   return console_unit_test(argv, argc).run();
 /// }
+/// @endcode
+///
+/// @subsubsection ExamplesUnitTestBuildAndRunSubsubsection Build and run
+/// Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+/// @code
+/// xtdc run
+/// @endcode
+///
+/// @subsubsection ExamplesUnitTestOutputSubsubsection Output
+/// @code
+/// Start 2 tests from 1 test case
+/// Run tests:
+///   SUCCEED hello_world_test.create_string_from_literal (0 ms total)
+///   SUCCEED hello_world_test.create_string_from_chars (0 ms total)
+///
+/// Test results:
+///   SUCCEED 2 tests.
+/// End 2 tests from 1 test case ran. (0 ms total)
 /// @endcode
 ///
 /// For more examples see <a href="https://github.com/gammasoft71/xtd/tree/master/examples/">examples</a>.
