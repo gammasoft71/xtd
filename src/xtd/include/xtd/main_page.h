@@ -72,6 +72,17 @@
 /// @endcode
 ///
 /// @subsubsection ExamplesGUIOutputSubsubsection Output
+/// Windows:
+///  @image hello_world_message_box_w.png
+///  @image hello_world_message_box_wd.png
+///
+/// macOS:
+///  @image hello_world_message_box_m.png
+///  @image hello_world_message_box_m.dpng
+///
+/// Linux Gnome:
+///  @image hello_world_message_box_g.png
+///  @image hello_world_message_box_gd.png
 ///
 /// @subsection ExamplesUnitTestSubsection Unit tests
 /// hello_worlds_tunit.cpp:
