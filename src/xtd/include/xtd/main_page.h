@@ -113,7 +113,7 @@
 ///  @image html hello_world_message_box_gd.png
 ///
 /// @subsection ExamplesUnitTestSubsection Unit tests
-/// hello_world_tunit.cpp:
+/// hello_world_test.cpp:
 /// @code
 /// #include <xtd/xtd>
 /// #include <string>
@@ -147,9 +147,9 @@
 /// @code
 /// cmake_minimum_required(VERSION 3.3)
 ///
-/// project(hello_world_tunit)
+/// project(hello_world_test)
 /// find_package(xtd REQUIRED)
-/// add_sources(hello_world_tunit.cpp)
+/// add_sources(hello_world_test.cpp)
 /// target_type(TEST_APPLICATION)
 /// @endcode
 ///
