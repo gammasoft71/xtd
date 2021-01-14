@@ -14,7 +14,7 @@ int main() {
   
   console::write_line("First Series:");
   for (size_t i = 0; i < bytes1.size(); i++) {
-    console::write("{0, 5}", bytes1[i]);
+    console::write("{, 5}", bytes1[i]);
     if ((i + 1) % 10 == 0)
       console::write_line();
   }
@@ -22,7 +22,7 @@ int main() {
   console::write_line();
   console::write_line("Second Series:");
   for (size_t i = 0; i < bytes2.size(); i++) {
-    console::write("{0, 5}", bytes2[i]);
+    console::write("{, 5}", bytes2[i]);
     if ((i + 1) % 10 == 0)
       console::write_line();
   }
