@@ -50,7 +50,7 @@ CMakeLists.txt:
 cmake_minimum_required(VERSION 3.3)
 
 project(hello_world_console)
-find_package(xtd.forms REQUIRED)
+find_package(xtd REQUIRED)
 add_sources(hello_world_console.cpp)
 target_type(CONSOLE_APPLICATION)
 ```
@@ -99,9 +99,9 @@ CMakeLists.txt:
 ```cmake
 cmake_minimum_required(VERSION 3.3)
 
-project(hello_world_message_box)
-find_package(xtd.forms REQUIRED)
-add_sources(hello_world_message_box.cpp)
+project(hello_world_forms_box)
+find_package(xtd REQUIRED)
+add_sources(hello_world_forms.cpp)
 target_type(GUI_APPLICATION)
 ```
 
@@ -173,7 +173,7 @@ CMakeLists.txt:
 cmake_minimum_required(VERSION 3.3)
 
 project(hello_world_tunit)
-find_package(xtd.forms REQUIRED)
+find_package(xtd REQUIRED)
 add_sources(hello_world_tunit.cpp)
 target_type(TEST_APPLICATION)
 ```
