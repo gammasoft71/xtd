@@ -75,6 +75,7 @@
 ///
 /// Windows:
 ///  @image html hello_world_message_box_w.png
+///
 ///  @image html hello_world_message_box_wd.png
 ///
 /// macOS:
