@@ -79,10 +79,12 @@
 ///
 /// macOS:
 ///  @image html hello_world_message_box_m.png
+///
 ///  @image html hello_world_message_box_md.png
 ///
 /// Linux Gnome:
 ///  @image html hello_world_message_box_g.png
+///
 ///  @image html hello_world_message_box_gd.png
 ///
 /// @subsection ExamplesUnitTestSubsection Unit tests
