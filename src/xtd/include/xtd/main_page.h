@@ -35,6 +35,16 @@
 /// }
 /// @endcode
 ///
+/// CMakeLists.txt:
+/// @code
+/// cmake_minimum_required(VERSION 3.3)
+///
+/// project(hello_world_console)
+/// find_package(xtd REQUIRED)
+/// add_sources(hello_world_console.cpp)
+/// target_type(CONSOLE_APPLICATION)
+/// @endcode
+///
 /// @subsubsection ExamplesConsoleBuildAndRunSubsubsection Build and run
 /// Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 /// @code
@@ -47,7 +57,7 @@
 /// @endcode
 ///
 /// @subsection ExamplesGUISubsection GUI
-/// hello_worlds_forms.cpp:
+/// hello_world_forms.cpp:
 /// @code
 /// #include <xtd/xtd>
 ///
@@ -67,6 +77,16 @@
 ///
 ///   application::run(form1);
 /// }
+/// @endcode
+///
+/// CMakeLists.txt:
+/// @code
+/// cmake_minimum_required(VERSION 3.3)
+///
+/// project(hello_world_forms)
+/// find_package(xtd REQUIRED)
+/// add_sources(hello_world_forms.cpp)
+/// target_type(GUI_APPLICATION)
 /// @endcode
 ///
 /// @subsubsection ExamplesGUIBuildAndRunSubsubsection Build and run
@@ -93,7 +113,7 @@
 ///  @image html hello_world_message_box_gd.png
 ///
 /// @subsection ExamplesUnitTestSubsection Unit tests
-/// hello_worlds_tunit.cpp:
+/// hello_world_tunit.cpp:
 /// @code
 /// #include <xtd/xtd>
 /// #include <string>
@@ -121,6 +141,16 @@
 /// int main() {
 ///   return console_unit_test(argv, argc).run();
 /// }
+/// @endcode
+///
+/// CMakeLists.txt:
+/// @code
+/// cmake_minimum_required(VERSION 3.3)
+///
+/// project(hello_world_tunit)
+/// find_package(xtd REQUIRED)
+/// add_sources(hello_world_tunit.cpp)
+/// target_type(TEST_APPLICATION)
 /// @endcode
 ///
 /// @subsubsection ExamplesUnitTestBuildAndRunSubsubsection Build and run
