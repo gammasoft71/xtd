@@ -75,17 +75,17 @@
 ///
 /// Windows:
 ///  @image html hello_world_message_box_w.png
-///
+/// <br>
 ///  @image html hello_world_message_box_wd.png
 ///
 /// macOS:
 ///  @image html hello_world_message_box_m.png
-///
+/// <br>
 ///  @image html hello_world_message_box_md.png
 ///
 /// Linux Gnome:
 ///  @image html hello_world_message_box_g.png
-///
+/// <br>
 ///  @image html hello_world_message_box_gd.png
 ///
 /// @subsection ExamplesUnitTestSubsection Unit tests
