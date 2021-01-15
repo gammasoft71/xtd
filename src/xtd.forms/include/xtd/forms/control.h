@@ -536,19 +536,33 @@ namespace xtd {
       /// @param text The text associated with this control.
       virtual control& text(const std::string& text);
 
+      /// @brief Gets the distance, in pixels, between the top edge of the control and the top edge of its container's client area.
+      /// @return An Int32_t representing the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
       virtual int32_t top() const {return location_.y();}
+      /// @brief Sets the distance, in pixels, between the top edge of the control and the top edge of its container's client area.
+      /// @param top An Int32_t representing the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
       virtual control& top(int32_t top) {
         if (location_.y() != top)
           set_bounds_core(0, top, 0, 0, bounds_specified::y);
         return *this;
       }
       
+      /// @brief Gets the parent control that is not parented by another Windows Forms control. Typically, this is the outermost Form that the control is contained in.
+      /// @return The control that represents the top-level control that contains the current control.
       virtual std::optional<control_ref> top_level_control() const;
 
+      /// @brief Gets a value indicating whether the control and all its child controls are displayed.
+      /// @return true if the control and all its child controls are displayed; otherwise, false. The default is true.
       virtual bool visible() const {return get_state(state::visible);}
+      /// @brief Sets a value indicating whether the control and all its child controls are displayed.
+      /// @param visible true if the control and all its child controls are displayed; otherwise, false. The default is true.
       virtual control& visible(bool visible);
 
+      /// @brief Gets the width of the control.
+      /// @return The width of the control in pixels.
       virtual int32_t width() const {return size_.width();}
+      /// @brief Sets the width of the control.
+      /// @param width The width of the control in pixels.
       virtual control& width(int32_t width) {
         if (size_.width() != width)
           set_bounds_core(0, 0, width, 0, bounds_specified::width);
@@ -557,6 +571,12 @@ namespace xtd {
       
       friend control& operator<<(control& parent, control& child) {
         child.parent(parent);
+        return parent;
+      }
+      
+      friend control& operator>>(control& parent, control& child) {
+        if (child.parent().has_value() && &child.parent().value().get() == &parent)
+          child.parent(nullptr);
         return parent;
       }
       
