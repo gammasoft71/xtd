@@ -48,8 +48,6 @@ add_sources(
   include/xtd/test_class.h
   include/xtd/test_class_attribute.h
   include/xtd/test_state.h
-  include/xtd/tunit
-  include/xtd/tunit.h
   include/xtd/tunit_event_args.h
   include/xtd/tunit_main.h
   include/xtd/unit_test.h
