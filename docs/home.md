@@ -1,6 +1,6 @@
 | [Home](home.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md)  | [Contact](contact.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-[![operating_systems_logo](pictures/operating_systems.png)](https://gammasoft71.wixsite.com/xtdpro)
+[![xtd_background](pictures/xtd_background.png)](https://gammasoft71.wixsite.com/xtdpro)
 
 (*) See [portability](portability.md#the-xtd-libraries-portability-list) for more information
 
