@@ -31,7 +31,7 @@ namespace xtd {
   class random {
   public:
     /// @brief Initializes a new instance of the random class, using a default generated seed value
-    random() : generator_(environment::tick_count().count()) {}
+    random() : generator_(static_cast<uint32_t>(environment::tick_count().count())) {}
     
     /// @brief Initializes a new instance of the random class, using a specified seed value.
     /// @param seed A number used to calculate a starting value for the pseudo-random number sequence.
