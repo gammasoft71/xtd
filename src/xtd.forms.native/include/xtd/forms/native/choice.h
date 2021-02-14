@@ -15,7 +15,7 @@ namespace xtd {
         static void insert_item(intptr_t control, size_t index, const std::string& value);
         static size_t selected_index(intptr_t control);
         static void selected_index(intptr_t control, size_t index);
-        static void update_item(intptr_t image_list, size_t pos, const std::string& value);
+        static void update_item(intptr_t control, size_t pos, const std::string& value);
       };
     }
   }
