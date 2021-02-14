@@ -60,6 +60,7 @@ namespace xtd {
       virtual button_base& image_index(int32_t value);
 
       virtual const forms::image_list& image_list() const {return image_list_;}
+      virtual forms::image_list& image_list() {return image_list_;}
       virtual button_base& image_list(const forms::image_list& value);
 
       /// @brief Gets the alignment of the text on the button control.
