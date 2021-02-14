@@ -13,6 +13,7 @@ add_sources(
   include/xtd/drawing//brush.h
   include/xtd/drawing//brushes.h
   include/xtd/drawing/color.h
+  include/xtd/drawing/colors.h
   include/xtd/drawing/dash_style.h
   include/xtd/drawing/font.h
   include/xtd/drawing/font_family.h
@@ -61,6 +62,7 @@ add_sources(
   src/xtd/drawing/brush.cpp
   src/xtd/drawing/brushes.cpp
   src/xtd/drawing/color.cpp
+  src/xtd/drawing/colors.cpp
   src/xtd/drawing/font.cpp
   src/xtd/drawing/font_family.cpp
   src/xtd/drawing/graphics.cpp

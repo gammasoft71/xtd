@@ -19,6 +19,7 @@
 #include "drawing/brush.h"
 #include "drawing/brushes.h"
 #include "drawing/color.h"
+#include "drawing/colors.h"
 #include "drawing/dash_style.h"
 #include "drawing/font_family.h"
 #include "drawing/font_style.h"
