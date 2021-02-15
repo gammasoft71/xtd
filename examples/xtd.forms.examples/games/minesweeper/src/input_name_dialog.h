@@ -7,6 +7,7 @@ namespace minesweeper {
   class input_name_dialog : public xtd::forms::form {
   public:
     input_name_dialog() {
+      using namespace xtd;
       using namespace xtd::drawing;
       using namespace xtd::forms;
       start_position(form_start_position::center_parent);
@@ -27,7 +28,7 @@ namespace minesweeper {
       message_label_.location({10, 10});
       message_label_.size({180, 60});
       message_label_.text_align(content_alignment::middle_center);
-      message_label_.text(xtd::format("You have the fastest time\nfor {} level.\nPlease type your name.", level_to_string()));
+      message_label_.text(xtd::format("You have the fastest time\nfor {} level.\nPlease type your name."_t, level_to_string()));
       
       name_text_box_.parent(*this);
       name_text_box_.location({10, 80});
@@ -47,8 +48,9 @@ namespace minesweeper {
     
     minesweeper::level level() const {return level_;}
     void level(minesweeper::level level) {
+      using namespace xtd;
       level_ = level;
-      message_label_.text(xtd::format("You have the fastest time\nfor {} level.\nPlease type your name.", level_to_string()));
+      message_label_.text(xtd::format("You have the fastest time\nfor {} level.\nPlease type your name."_t, level_to_string()));
     }
     
     std::string gammer_name() const {return gammer_name_;}
@@ -58,11 +60,14 @@ namespace minesweeper {
     }
     
   private:
-    std::string level_to_string() {return std::map<minesweeper::level, std::string> {{minesweeper::level::beginner, "beginner"}, {minesweeper::level::intermediate, "intermediate"}, {minesweeper::level::expert, "expert"}}[level_];}
+    std::string level_to_string() {
+      using namespace xtd;
+      return std::map<minesweeper::level, std::string> {{minesweeper::level::beginner, "beginner"_t}, {minesweeper::level::intermediate, "intermediate"_t}, {minesweeper::level::expert, "expert"_t}}[level_];
+    }
     xtd::forms::label message_label_;
     xtd::forms::text_box name_text_box_;
     xtd::forms::button ok_button_;
     minesweeper::level level_ = level::beginner;
-    std::string gammer_name_ = "Anonymous";
+    std::string gammer_name_ = xtd::translator::translate("Anonymous");
   };
 }

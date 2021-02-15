@@ -1,0 +1,38 @@
+key "Minesweeper"
+value "Minesweeper"
+
+key "&Game"
+value "&Game"
+
+key "&New games"
+value "&New games"
+
+key "&Beginner"
+value "&Beginner"
+
+key "&Intermediate"
+value "&Intermediate"
+
+key "&Expert"
+value "&Expert"
+
+key "&Custom..."
+value "&Custom..."
+
+key "&Marks [?]"
+value "&Marks [?]"
+
+key "&Original color"
+value "&Original color"
+
+key "Best &times..."
+value "Best &times..."
+
+key "&Contens"
+value "&Contens"
+
+key "&Search for Help On..."
+value "&Search for Help On..."
+
+key "&How to Use Help"
+value "&How to Use Help"

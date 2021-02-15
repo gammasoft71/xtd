@@ -1,0 +1,38 @@
+key "Minesweeper"
+value "Démineur"
+
+key "&Game"
+value "&Jeux"
+
+key "&New games"
+value "&Nouveau jeux"
+
+key "&Beginner"
+value "&Débutant"
+
+key "&Intermediate"
+value "&Intermédiaire"
+
+key "&Expert"
+value "&Expert"
+
+key "&Custom..."
+value "&Personnalisation..."
+
+key "&Marks [?]"
+value "&Marques [?]"
+
+key "&Original color"
+value "&Couleur originale"
+
+key "Best &times..."
+value "Meilleurs &temps..."
+
+key "&Contens"
+value "&Contenu"
+
+key "&Search for Help On..."
+value "&Recherche d'aide sur..."
+
+key "&How to Use Help"
+value "&Comment utiliser l'aide"

@@ -22,7 +22,7 @@ namespace minesweeper {
       using namespace xtd::drawing;
       using namespace xtd::forms;
 
-      text("Minesweeper");
+      text("Minesweeper"_t);
       auto_size_mode(xtd::forms::auto_size_mode::grow_and_shrink);
       auto_size(true);
       
@@ -36,27 +36,27 @@ namespace minesweeper {
       
       menu({
         {
-          "&Game", {
-            {"&New games", {[&] {new_game();}}, shortcut::f2},
+          "&Game"_t, {
+            {"&New games"_t, {[&] {new_game();}}, shortcut::f2},
             {"-"},
-            {"&Beginner", {[&] {change_level(level::beginner);}}, menu_item_kind::radio, true},
-            {"&Intermediate", {[&] {change_level(level::intermediate);}}, menu_item_kind::radio},
-            {"&Expert", {[&] {change_level(level::expert);}}, menu_item_kind::radio},
-            {"&Custom...", {[&] {change_level(level::custom);}}, menu_item_kind::radio},
+            {"&Beginner"_t, {[&] {change_level(level::beginner);}}, menu_item_kind::radio, true},
+            {"&Intermediate"_t, {[&] {change_level(level::intermediate);}}, menu_item_kind::radio},
+            {"&Expert"_t, {[&] {change_level(level::expert);}}, menu_item_kind::radio},
+            {"&Custom..."_t, {[&] {change_level(level::custom);}}, menu_item_kind::radio},
             {"-"},
-            {"&Marks [?]", {[&](component& sender, const event_args& e) {/*reinterpret_cast<menu_item&>(sender).checked(!reinterpret_cast<menu_item&>(sender).checked());*/ properties::settings::default_settings().marks(!properties::settings::default_settings().marks());}}, menu_item_kind::check, true},
-            {"&Original color", {[&](component& sender, const event_args& e) {/*reinterpret_cast<menu_item&>(sender).checked(!reinterpret_cast<menu_item&>(sender).checked());*/ properties::settings::default_settings().original_color(!properties::settings::default_settings().original_color());}}, menu_item_kind::check, true},
+            {"&Marks [?]"_t, {[&](component& sender, const event_args& e) {/*reinterpret_cast<menu_item&>(sender).checked(!reinterpret_cast<menu_item&>(sender).checked());*/ properties::settings::default_settings().marks(!properties::settings::default_settings().marks());}}, menu_item_kind::check, true},
+            {"&Original color"_t, {[&](component& sender, const event_args& e) {/*reinterpret_cast<menu_item&>(sender).checked(!reinterpret_cast<menu_item&>(sender).checked());*/ properties::settings::default_settings().original_color(!properties::settings::default_settings().original_color());}}, menu_item_kind::check, true},
             {"-"},
-            {"Best &times...", {[&] {minesweeper::high_scores_dialog().show_dialog(*this);}}},
+            {"Best &times..."_t, {[&] {minesweeper::high_scores_dialog().show_dialog(*this);}}},
             {"-"},
             {texts::exit(), {[&] {close();}}},
           }
         },
         {
           texts::help(), {
-            {"&Contens", {[&] {}}, shortcut::f1},
-            {"&Search for Help On...", {[&] {}}},
-            {"&How to Use Help", {[&] {}}},
+            {"&Contens"_t, {[&] {}}, shortcut::f1},
+            {"&Search for Help On..."_t, {[&] {}}},
+            {"&How to Use Help"_t, {[&] {}}},
             {"-"},
             {texts::about(), {[&] {about_dialog().show();}}}
           }

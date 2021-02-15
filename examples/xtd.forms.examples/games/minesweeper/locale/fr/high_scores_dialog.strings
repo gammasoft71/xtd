@@ -1,0 +1,17 @@
+key "Fastest Mine Sweepers"
+value "Les démineurs les plus rapides"
+
+key "Beginner"
+value "Débutant"
+
+key "Intermediate"
+value "Intermédiaire"
+
+key "Expert"
+value "Expert"
+
+key "&Reset Scores"
+value "&Réinitialisation des scores"
+
+key "{} seconds"
+value "{} secondes"
