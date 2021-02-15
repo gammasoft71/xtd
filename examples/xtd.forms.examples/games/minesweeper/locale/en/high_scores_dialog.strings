@@ -1,0 +1,17 @@
+key "Fastest Mine Sweepers"
+value "Fastest Mine Sweepers"
+
+key "Beginner"
+value "Beginner"
+
+key "Intermediate"
+value "Intermediate"
+
+key "Expert"
+value "Expert"
+
+key "&Reset Scores"
+value "&Reset Scores"
+
+key "{} seconds"
+value "{} seconds"

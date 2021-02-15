@@ -7,6 +7,7 @@ namespace minesweeper {
   class high_scores_dialog : public xtd::forms::form {
   public:
     high_scores_dialog() {
+      using namespace xtd;
       using namespace xtd::drawing;
       using namespace xtd::forms;
       start_position(form_start_position::center_parent);
@@ -27,19 +28,19 @@ namespace minesweeper {
       title_.text_align(content_alignment::middle_center);
       title_.location({10, 15});
       title_.width(340);
-      title_.text("Fastest Mine Sweepers");
+      title_.text("Fastest Mine Sweepers"_t);
 
       beginner_level_label_.location({10, 55});
       beginner_level_label_.auto_size(true);
-      beginner_level_label_.text("Beginner");
+      beginner_level_label_.text("Beginner"_t);
       
       intermediate_level_label_.location({10, 85});
       intermediate_level_label_.auto_size(true);
-      intermediate_level_label_.text("Intermediate");
+      intermediate_level_label_.text("Intermediate"_t);
       
       expert_level_label_.location({10, 115});
       expert_level_label_.auto_size(true);
-      expert_level_label_.text("Expert");
+      expert_level_label_.text("Expert"_t);
 
       beginner_score_label_.location({130, 55});
       beginner_score_label_.auto_size(true);
@@ -61,7 +62,7 @@ namespace minesweeper {
 
       reset_scores_button_.location({70, 150});
       reset_scores_button_.width(100);
-      reset_scores_button_.text("&Reset Scores");
+      reset_scores_button_.text("&Reset Scores"_t);
       reset_scores_button_.click += [&] {
         properties::settings empty;
         properties::settings::default_settings().beginner_high_scores_name(empty.beginner_high_scores_name());
@@ -86,9 +87,9 @@ namespace minesweeper {
   private:
     void read_and_update_settings() {
       using namespace xtd;
-      beginner_score_label_.text(format("{} seconds", properties::settings::default_settings().beginner_high_scores_value()));
-      intermediate_score_label_.text(format("{} seconds", properties::settings::default_settings().intermediate_high_scores_value()));
-      expert_score_label_.text(format("{} seconds", properties::settings::default_settings().expert_high_scores_value()));
+      beginner_score_label_.text(format("{} seconds"_t, properties::settings::default_settings().beginner_high_scores_value()));
+      intermediate_score_label_.text(format("{} seconds"_t, properties::settings::default_settings().intermediate_high_scores_value()));
+      expert_score_label_.text(format("{} seconds"_t, properties::settings::default_settings().expert_high_scores_value()));
 
       beginner_name_label_.text(properties::settings::default_settings().beginner_high_scores_name());
       intermediate_name_label_.text(properties::settings::default_settings().intermediate_high_scores_name());

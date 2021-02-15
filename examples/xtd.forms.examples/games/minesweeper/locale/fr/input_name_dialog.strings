@@ -1,0 +1,17 @@
+key "You have the fastest time\nfor {} level.\nPlease type your name."
+value "You have the fastest time\nfor {} level.\nPlease type your name."
+
+key "You have the fastest time\nfor {} level.\nPlease type your name."
+value "You have the fastest time\nfor {} level.\nPlease type your name."
+
+key "beginner"
+value "débutant"
+
+key "intermediate"
+value "intermédiairee"
+
+key "expert"
+value "expert"
+
+key "Anonymous"
+value "Anonyme"
