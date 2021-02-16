@@ -14,6 +14,7 @@ namespace minesweeper {
     
   public:
     static void main() {
+      std::locale::global(std::locale("Fr_fr"));
       xtd::forms::application::run(form_minesweeper());
     }
     
