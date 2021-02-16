@@ -1,14 +1,11 @@
 key "You have the fastest time\nfor {} level.\nPlease type your name."
-value "You have the fastest time\nfor {} level.\nPlease type your name."
-
-key "You have the fastest time\nfor {} level.\nPlease type your name."
-value "You have the fastest time\nfor {} level.\nPlease type your name."
+value "Vous avez le temps le plus\nrapide pour le niveau {}.\nVeuillez saisir votre nom."
 
 key "beginner"
 value "débutant"
 
 key "intermediate"
-value "intermédiairee"
+value "intermédiaire"
 
 key "expert"
 value "expert"

@@ -11,7 +11,7 @@ key "Expert"
 value "Expert"
 
 key "&Reset Scores"
-value "&Réinitialisation des scores"
+value "&Effacer"
 
 key "{} seconds"
 value "{} secondes"
