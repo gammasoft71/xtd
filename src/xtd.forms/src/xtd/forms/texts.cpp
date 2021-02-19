@@ -316,7 +316,7 @@ std::string texts::undo() {
 }
 
 std::string texts::unindent() {
-  return "Unindend"_t;
+  return "Unindent"_t;
 }
 
 std::string texts::up() {

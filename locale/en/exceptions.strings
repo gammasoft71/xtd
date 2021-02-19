@@ -22,8 +22,8 @@ value "Unable to find the specified file."
 key "I/O error occured."
 value "I/O error occured."
 
-key "The specified path, file name, or both are too long. The fully ualified file name must be less than 260 caracters, and the directory name must be less than 248 caracters."
-value "The specified path, file name, or both are too long. The fully ualified file name must be less than 260 caracters, and the directory name must be less than 248 caracters."
+key "The specified path, file name, or both are too long. The fully qualified file name must be less than 260 caracters, and the directory name must be less than 248 caracters."
+value "The specified path, file name, or both are too long. The fully qualified file name must be less than 260 caracters, and the directory name must be less than 248 caracters."
 
 key "Value does not fall within the expected range."
 value "Value does not fall within the expected range."

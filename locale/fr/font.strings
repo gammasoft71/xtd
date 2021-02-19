@@ -1,0 +1,5 @@
+key "em_size is less than or equal to 0, evaluates to infinity, or is not a valid number."
+value "em_size est inférieur ou égal à 0, s'évalue à l'infini ou n'est pas un nombre valide."
+
+key "unit can't be equal to graphics_unit::display."
+value "L'unité ne peut pas être égale à graphics_unit::display."
