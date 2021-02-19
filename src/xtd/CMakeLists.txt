@@ -48,6 +48,37 @@ add_sources(
   ../../locale/en/version.strings
 )
 add_sources(
+  ../../locale/fr/about_dialog.strings
+  ../../locale/fr/application.strings
+  ../../locale/fr/busy_box.strings
+  ../../locale/fr/checked_list_box.strings
+  ../../locale/fr/choice.strings
+  ../../locale/fr/color.strings
+  ../../locale/fr/combo_box.strings
+  ../../locale/fr/control.strings
+  ../../locale/fr/countries.strings
+  ../../locale/fr/domain_up_down.strings
+  ../../locale/fr/environment.strings
+  ../../locale/fr/exception_dialog.strings
+  ../../locale/fr/exceptions.strings
+  ../../locale/fr/font.strings
+  ../../locale/fr/font_family.strings
+  ../../locale/fr/form.strings
+  ../../locale/fr/graphics.strings
+  ../../locale/fr/guid.strings
+  ../../locale/fr/image_list.strings
+  ../../locale/fr/lcd_label.strings
+  ../../locale/fr/list_box.strings
+  ../../locale/fr/menu.strings
+  ../../locale/fr/pen.strings
+  ../../locale/fr/splitter.strings
+  ../../locale/fr/strings.strings
+  ../../locale/fr/text_box_base.strings
+  ../../locale/fr/texts.strings
+  ../../locale/fr/theme_colors.strings
+  ../../locale/fr/version.strings
+)
+add_sources(
   references.cmake
   ../../scripts/cmake/update_export.cmake
   ../../scripts/cmake/update_version_number.cmake

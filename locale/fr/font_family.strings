@@ -1,0 +1,8 @@
+key "name is an empty string"
+value "Le nom est une chaîne vide"
+
+key "name specifies a font that is not installed on the computer running the application."
+value "le nom spécifie une police qui n'est pas installée sur l'ordinateur qui exécute l'application."
+
+key "name specifies a font that is not a part of specified font_collection."
+value "le nom spécifie une police qui ne fait pas partie du groupe de polices spécifié."

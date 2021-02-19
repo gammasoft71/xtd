@@ -1,0 +1,254 @@
+key "&Abort"
+value "&Abandonner"
+
+key "&About"
+value "&A propos de"
+
+key "&Actual Size"
+value "Taille &actuelle"
+
+key "Add"
+value "Ajouter"
+
+key "Alignment"
+value "Alignement"
+
+key "Align Left"
+value "Aligner à gauche"
+
+key "Align Right"
+value "Aligner à droite"
+
+key "&Apply"
+value "&Appliquer"
+
+key "&Ascending"
+value "&Ascendant"
+
+key "&Back"
+value "&Retour"
+
+key "&Bold"
+value "&Gras"
+
+key "&Bottom"
+value "&Bas"
+
+key "&Cancel"
+value "&Annuler"
+
+key "&CD-Rom"
+value "&CD-Rom"
+
+key "Centered"
+value "Centré"
+
+key "&Clear"
+value "&Effacer"
+
+key "&Close"
+value "&Fermer"
+
+key "&Color"
+value "&Couleur"
+
+key "&Contents"
+value "&Contenu"
+
+key "&Convert"
+value "&Convertir"
+
+key "&Copy"
+value "&Copier"
+
+key "&Customize"
+value "&Personnaliser"
+
+key "Cu&t"
+value "Co&uper"
+
+key "&Delete"
+value "&Supprimer"
+
+key "&Descending"
+value "&Descendant"
+
+key "&Down"
+value "En &bas"
+
+key "&Edit"
+value "&Editer"
+
+key "&Execute"
+value "&Executer"
+
+key "E&xit"
+value "S&ortie"
+
+key "&File"
+value "&Fichier"
+
+key "&Find..."
+value "&Chercher..."
+
+key "&First"
+value "&Première"
+
+key "&Floppy"
+value "&Floppy"
+
+key "&Font"
+value "&Police"
+
+key "&Forward"
+value "&Transmettre"
+
+key "&Harddisk"
+value "&Harddisk"
+
+key "&Help"
+value "&Aide"
+
+key "&Home"
+value "&Accueil"
+
+key "&Ignore"
+value "&Ignorer"
+
+key "Indent"
+value "Indenter"
+
+key "&Index"
+value "&Indice"
+
+key "&Info"
+value "&Info"
+
+key "&Italic"
+value "&Italique"
+
+key "Justified"
+value "Justifié"
+
+key "&Jump to"
+value "&Aller à"
+
+key "&Last"
+value "&Dernier"
+
+key "&Network"
+value "&Réseau"
+
+key "&New"
+value "&Nouveau"
+
+key "&Next"
+value "&Suivant"
+
+key "&No"
+value "&Non"
+
+key "&OK"
+value "&OK"
+
+key "&Open..."
+value "&Ouvrir..."
+
+key "&Options"
+value "&Options"
+
+key "&Paste"
+value "&Coller"
+
+key "&Preferences"
+value "&PréférencesPréférences"
+
+key "&Previous"
+value "&Précédent"
+
+key "&Print..."
+value "Im&primer..."
+
+key "Print pre&view"
+value "Aperçu a&vant impression"
+
+key "&Properties"
+value "&Propriétés"
+
+key "&Quit"
+value "&Quitter"
+
+key "&Redo"
+value "&Répéter"
+
+key "Refresh"
+value "Rafraîchir"
+
+key "Remove"
+value "Supprimer"
+
+key "Rep&lace..."
+value "Remp&lacer..."
+
+key "&Retry"
+value "&Réessayer"
+
+key "Revert to Saved"v
+value "Revenir à la Sauvegarde"
+
+key "&Save"
+value "&Enregistrer"
+
+key "Save &As..."
+value "Enregistrer &sous..."
+
+key "&Search"
+value "&Rechercher"
+
+key "Select &All"
+value "Sélectionner &tout"
+
+key "&Spell Check"
+value "&Orthographe"
+
+key "&Stop"
+value "&Arrêter"
+
+key "&Strikeout"
+value "&Strikeout"
+
+key "&Tools"
+value "&Outils"
+
+key "&Top"
+value "&Haut"
+
+key "Undelete"
+value "Récupérer"
+
+key "&Underline"
+value "&Souligner"
+
+key "&Undo"
+value "&Annuler"
+
+key "Unindent"
+value "Désindenter"
+
+key "&Up"
+value "En &haut"
+
+key "&View"
+value "&View"
+
+key "&Yes"
+value "&Oui"
+
+key "Zoom &In"
+value "Zoom &Avant"
+
+key "Zoom &Out"
+value "Zoom A&rrière"
+
+key "Zoom to &Fit"
+value "Zoom &Ajusté"

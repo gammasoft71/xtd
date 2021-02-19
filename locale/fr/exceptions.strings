@@ -1,0 +1,95 @@
+key "The given key was not present in the dictionnary."
+value "La clé donnée n'était pas présente dans le dictionnaire."
+
+key "Attempted to access a path that is not on the disk."
+value "Tentative d'accès à un chemin d'accès qui n'est pas sur le disque."
+
+key "Attempted to access a drive that is not avaible."
+value "Tentative d'accès à un disque qui n'est pas disponible."
+
+key "Attempted to read past the end of the stream."
+value "Tentative de lecture au-delà de la fin du flux."
+
+key "Input file or data stream does not conform to the expected file format specification."
+value "Le fichier d'entrée ou le flux de données n'est pas conforme à la spécification du format de fichier attendu."
+
+key "Could not load the specified file."
+value "Impossible de charger le fichier spécifié."
+
+key "Unable to find the specified file."
+value "Impossible de trouver le fichier spécifié."
+
+key "I/O error occured."
+value "Une erreur d'entrée/sortie s'est produite."
+
+key "The specified path, file name, or both are too long. The fully qualified file name must be less than 260 caracters, and the directory name must be less than 248 caracters."
+value "Le chemin d'accès, le nom de fichier ou les deux sont trop longs. Le nom de fichier complet doit comporter moins de 260 caractères et le nom de répertoire moins de 248 caractères."
+
+key "Value does not fall within the expected range."
+value "La valeur ne se situe pas dans la fourchette prévue."
+
+key "Value cannot be null."
+value "La valeur ne peut être nulle."
+
+key "Specified argument is out of range of valid values."
+value "L'argument spécifié est en dehors de la plage des valeurs valables."
+
+key "Overflow or underflow in the arithmetic operation."
+value "Débordement ou sous-débordement dans l'opération arithmétique."
+
+key "Attempt to divide by zero."
+value "Tentative de division par zéro."
+
+key "Report domain error."
+value "Signaler une erreur de domaine."
+
+key "One of identified items is an invalid format."
+value "L'un des éléments identifiés est un format non valide."
+
+key "Index was outside the bounds of the array."
+value "L'index était en dehors des limites du tableau."
+
+key "Specified cast is not valid."
+value "Le casting spécifié n'est pas valable."
+
+key "Operation is not valid due to the current state of the object."
+value "L'opération n'est pas valable en raison de l'état actuel de l'objet."
+
+key "The system detected an invalid program."
+value "Le système a détecté un programme non valide."
+
+key "Exceed implementation defined length limits."
+value "Dépasser les limites de durée définies pour l'implémentation'."
+
+key "Number encountered was not a finite quantity."
+value "Le nombre rencontré n'était pas une quantité finie."
+
+key "The method or operation is not implemented."
+value "La méthode ou l'opération n'est pas implémentée."
+
+key "Specified method is not supported."
+value "La méthode spécifiée n'est pas prise en charge."
+
+key "Object pointer not set to an instance of an object."
+value "Pointeur d'objet non réglé sur une instance d'un objet."
+
+key "The operation was canceled."
+value "L'opération a été annulée."
+
+key "Arithmetic operation resulted in an overflow."
+value "Une opération arithmétique a entraîné un débordement."
+
+key "Operation is not supported on this platform."
+value "L'opération n'est pas pris en charge sur cette plate-forme."
+
+key "System error."
+value "Erreur système."
+
+key "The operation has timed out."
+value "L'opération a pris fin."
+
+key "Arithmetic operation resulted in an underflow."
+value "Une opération arithmétique a abouti à un sous-débit."
+
+key "Syntax error in XML."
+value "Erreur de syntaxe dans le XML."

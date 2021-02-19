@@ -232,8 +232,8 @@ value "&Underline"
 key "&Undo"
 value "&Undo"
 
-key "Unindend"
-value "Unindend"
+key "Unindent"
+value "Unindent"
 
 key "&Up"
 value "&Up"
