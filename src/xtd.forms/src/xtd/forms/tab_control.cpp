@@ -43,6 +43,14 @@ tab_control& tab_control::selected_index(size_t selected_index) {
   return *this;
 }
 
+tab_control& tab_control::image_list(const forms::image_list& value) {
+  if (image_list_ != value) {
+    image_list_ = value;
+    recreate_handle();
+  }
+  return *this;
+}
+
 forms::create_params tab_control::create_params() const {
   forms::create_params create_params = control::create_params();
   

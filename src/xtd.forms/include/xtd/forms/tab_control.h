@@ -1,5 +1,6 @@
 #pragma once
 #include "control.h"
+#include "image_list.h"
 #include "tab_alignment.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -21,6 +22,10 @@ namespace xtd {
       virtual tab_control& alignment(tab_alignment alignment);
       
       drawing::size default_size() const override {return {200, 100};}
+      
+      virtual const forms::image_list& image_list() const {return image_list_;}
+      virtual forms::image_list& image_list() {return image_list_;}
+      virtual tab_control& image_list(const forms::image_list& value);
       
       virtual size_t selected_index() const {return selected_index_;}
       virtual tab_control& selected_index(size_t selected_index_);
@@ -49,6 +54,7 @@ namespace xtd {
       /// @cond
       friend class tab_page;
       tab_alignment alignment_ = tab_alignment::top;
+      forms::image_list image_list_;
       size_t selected_index_ = npos;
       /// @endcond
     };
