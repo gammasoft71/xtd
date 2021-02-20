@@ -180,9 +180,9 @@ For add a new Operating System, you juste have to implement native api for the n
 
 ### Native API by library
 
-[xtd.drawing](https://github.com/gammasoft71/xtd/tree/master/src/xtd_drawing_native)
+[xtd.drawing](https://github.com/gammasoft71/xtd/tree/master/src/xtd.drawing.native)
 
-[xtd.forms](https://github.com/gammasoft71/xtd/tree/master/src/xtd_forms_native)
+[xtd.forms](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native)
 
 ## See also
 
