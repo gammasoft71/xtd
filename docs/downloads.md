@@ -16,11 +16,11 @@ git clone https://github.com/gammasoft71/xtd.git
 
 # Libraries dependency
 
-xtd is currently in development mode and the only [xtd.forms.native.wxwidgets](https://github.com/gammasoft71/xtd_forms/tree/master/src/xtd_forms_native_wxwidgets/README.md) backend is supported.
+xtd is currently in development mode and the only [xtd.forms.native.wxwidgets](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.wxwidgets/README.md) backend is supported.
 
 **wxWidgets 3.1.4 will be automatically installed with xtd.**
 
-In the future xtd.forms will use [xtd.forms.native.win32](https://github.com/gammasoft71/xtd_forms/tree/master/src/xtd_forms_native_win32/README.md) on Windows, [xtd.forms.native.cocoa](https://github.com/gammasoft71/xtd_forms/tree/master/src/xtd_forms_native_cocoa/README.md) on macOS and [xtd.forms.native.gtk4](https://github.com/gammasoft71/xtd_forms/tree/master/src/xtd_forms_native_gtk4/README.md) on linux. Other backend like [xtd.forms.native.qt5](https://github.com/gammasoft71/xtd_forms/tree/master/src/xtd_forms_native_qt5/README.md) will be ported too.
+In the future xtd.forms will use [xtd.forms.native.win32](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.win32/README.md) on Windows, [xtd.forms.native.cocoa](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.cocoa/README.md) on macOS and [xtd.forms.native.gtk4](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.gtk4/README.md) on linux. Other backend like [xtd.forms.native.qt5](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.qt5/README.md) will be ported too.
 
 # Installation
 
@@ -28,7 +28,7 @@ In the future xtd.forms will use [xtd.forms.native.win32](https://github.com/gam
 
 1. Install Microsoft Visual Studio 2019 Community or later
   
-   In order to build xtd.forms, you first need download and install Microsoft Visual Studio 2019 community from [https://www.visualstudio.com](https://www.visualstudio.com).
+   In order to build xtd, you first need download and install Microsoft Visual Studio 2019 community from [https://www.visualstudio.com](https://www.visualstudio.com).
 
 2. Install CMake 3.3 or later
   
@@ -50,13 +50,13 @@ install
 
 1. Install Xcode 11.6 or later
   
-   In order to build xtd.forms, you first need download and install Xcode from App Store and install "Commands line tools".
+   In order to build xtd, you first need download and install Xcode from App Store and install "Commands line tools".
 
    *Remarks: Verify if you can execute 'clang --version' in "Terminal".*
 
 2. Install Homebrew
   
-   After Xcode, to build Switch, you need to install package manager [Homebrew](https://brew.sh)).
+   After Xcode, to build xtd, you need to install package manager [Homebrew](https://brew.sh)).
    
 ```shell
 /usr/bin/ruby -e "$(curl -fsSL ttps://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -93,7 +93,7 @@ cd xtd_path_name
 
 2. Install CMake 3.3 or later
   
-   After Microsoft Visual Studio, you need to install the latest version cmake from [https://cmake.org/download/](https://cmake.org/download/)
+   After g++, you need to install the latest version cmake from [https://cmake.org/download/](https://cmake.org/download/)
 
    *Remarks: Verify if you can execute 'cmake --version' in "Terminal", if it's no, add cmake install directory to your path.*
 
