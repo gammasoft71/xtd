@@ -86,6 +86,9 @@ int main() {
   try {
     form form_main;
     form_main.text("Manual tests");
+    form_main.menu(forms::main_menu::create_standard_items([&](component& sender, const event_args& e) {
+      //cdebug << format("Menu item [{}] clicked", sender) << endl;
+    }));
     
     /*
      form_main.client_size({300, 300});
@@ -102,14 +105,6 @@ int main() {
      link_label1.parent(form_main);
      link_label1.text("Gammasoft present xtd_forms examples\nNext line...");
      */
-    
-    button button;
-    button.location({10, 10});
-    button.parent(form_main);
-    button.text("Exception");
-    button.click += [&] {
-      throw argument_out_of_range_exception(caller_info_);
-    };
     
     application::run(form_main);
   } catch(const exception& e) {
