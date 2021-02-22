@@ -1,6 +1,6 @@
 # about_dialog_system
 
-demonstrates the use of [xtd::forms::about_dialog](../../../../src/xtd_forms/include/xtd/forms/about_dialog.h) dialog.
+demonstrates the use of [xtd::forms::about_dialog](../../../../src/xtd.forms/include/xtd/forms/about_dialog.h) dialog.
 
 # Sources
 
