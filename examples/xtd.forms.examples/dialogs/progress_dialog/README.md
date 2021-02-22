@@ -1,10 +1,10 @@
 # about_dialog
 
-demonstrates the use of [xtd::forms::about_dialog](../../../../src/xtd_forms/include/xtd/forms/about_dialog.hpp) dialog.
+demonstrates the use of [xtd::forms::progress_dialog](../../../../src/xtd.forms/include/xtd/forms/progress_dialog.hpp) dialog.
 
 # Sources
 
-[src/about_dialog.cpp](src/about_dialog.cpp)
+[src/progress_dialog.cpp](src/progress_dialog.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/about_dialog_w.png)
+![Screenshot](../../../../docs/pictures/examples/progress_dialog_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/about_dialog_wd.png)
+![Screenshot](../../../../docs/pictures/examples/progress_dialog_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/about_dialog_m.png)
+![Screenshot](../../../../docs/pictures/examples/aprogress_dialog_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/about_dialog_md.png)
+![Screenshot](../../../../docs/pictures/examples/progress_dialog_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/about_dialog_g.png)
+![Screenshot](../../../../docs/pictures/examples/progress_dialog_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/about_dialog_gd.png)
+![Screenshot](../../../../docs/pictures/examples/progress_dialog_gd.png)
