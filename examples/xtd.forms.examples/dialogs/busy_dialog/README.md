@@ -1,6 +1,6 @@
 # about_dialog
 
-demonstrates the use of [xtd::forms::busy_dialog](../../../../src/xtd_forms/include/xtd/forms/busy_dialog.hpp) dialog.
+demonstrates the use of [xtd::forms::busy_dialog](../../../../src/xtd_forms/include/xtd/forms/busy_dialog.h) dialog.
 
 # Sources
 
