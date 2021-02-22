@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::progress_dialog](../../../../src/xtd.forms/
 
 # Sources
 
-[src/progress_dialog.cpp](src/progress_dialog.cpp)
+[progress_dialog.cpp](progress_dialog.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
