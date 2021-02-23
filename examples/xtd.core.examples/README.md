@@ -22,6 +22,11 @@
 * [console_song](console/console_song/README.md) shows how to use [xtd::console::beep](../../src/xtd.core/include/xtd/basic_console.h) method.
 * [wconsole](console/wconsole/README.md) shows how to use [xtd::wconsole](../../src/xtd.core/include/xtd/basic_console.h) class.
 
+## [Diagnostics](diagnostics/README.md)
+
+* [stack_trace](diagnostics/stack_trace/README.md) shows how to use [xtd::diagnostics/stack_trace](../../src/xtd.core/include/xtd/diagnostics/stack_trace.h) class.
+* [stopwatch](diagnostics/stopwatch/README.md) shows how to use [xtd::diagnostics/stopwatch](../../src/xtd.core/include/xtd/diagnostics/stopwatch.h) class.
+
 ## [Html](html/README.md)
 
 * [css_parser](html/css_parser/README.md) shows how to use [xtd::html/css/parser](../../src/xtd.core/include/xtd/html/css/parser.h) class.
