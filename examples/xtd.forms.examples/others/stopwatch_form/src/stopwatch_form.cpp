@@ -1,8 +1,7 @@
-#include <chrono>
 #include <xtd/xtd>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::diagnostics;
 using namespace xtd::forms;
 
 class stop_watch_form : public form {
@@ -48,28 +47,25 @@ public:
   
 private:
   void on_start_stop_click(control& sender, const event_args& e) {
-    running = !running;
-    if (running)
-      start = chrono::high_resolution_clock::now();
-    else
-      duration += chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now() - start);
-    timer_chrono.enabled(running);
+    if (stopwatch_.is_running()) stopwatch_.stop();
+    else stopwatch_.start();
+
+    timer_chrono.enabled(stopwatch_.is_running());
     start_stop.text(timer_chrono.enabled() ? "Stop" :  "Start");
     pause_resume.enabled(timer_chrono.enabled());
-    reset.enabled(!timer_chrono.enabled() || !running);
+    reset.enabled(!timer_chrono.enabled() || !stopwatch_.is_running());
   };
   
   void on_pause_resume_click(control& sender, const event_args& e) {
     timer_chrono.enabled(!timer_chrono.enabled());
     pause_resume.text(timer_chrono.enabled() ? "Pause" :  "Resume");
     start_stop.enabled(timer_chrono.enabled());
-    reset.enabled(!timer_chrono.enabled() || !running);
+    reset.enabled(!timer_chrono.enabled() || !stopwatch_.is_running());
   };
   
   void on_reset_click(control& sender, const event_args& e) {
     timer_chrono.enabled(false);
-    running = false;
-    duration = chrono::milliseconds(0);
+    stopwatch_.reset();
     start_stop.enabled(true);
     pause_resume.enabled(false);
     reset.enabled(false);
@@ -79,15 +75,10 @@ private:
   };
 
   void on_timer_tick(component& sender, const event_args& e) {
-    chrono::milliseconds elapsed_time = duration;
-    if (running) elapsed_time += chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now() - start);
-    watch.text(format("{0:H}:{0:M}:{0:S}.{1:D3}", elapsed_time, elapsed_time.count() % 1000));
+    watch.text(format("{0:H}:{0:M}:{0:S}.{1:D3}", stopwatch_.elapsed(), stopwatch_.elapsed_milliseconds() % 1000));
   };
 
-  chrono::high_resolution_clock::time_point start;
-  chrono::milliseconds duration {0};
-  bool running = false;
-  
+  stopwatch stopwatch_;
   panel watch_panel;
   lcd_label watch;
   button start_stop;
