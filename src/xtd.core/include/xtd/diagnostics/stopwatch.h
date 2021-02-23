@@ -122,7 +122,7 @@ namespace xtd {
       }
       
     private:
-      explicit stopwatch(bool start) { if (start) this->start();}
+      explicit stopwatch(bool start) {if (start) this->start();}
       bool running_ = false;
       int64_t start_ = 0;
       int64_t stop_ = 0;
