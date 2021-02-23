@@ -98,6 +98,8 @@ add_sources(
   include/xtd/string_split_options.h
   include/xtd/strings.h
   include/xtd/system_exception.h
+  include/xtd/tick.h
+  include/xtd/ticks.h
   include/xtd/time_out_exception.h
   include/xtd/to_string.h
   include/xtd/tracestreambuf.h
@@ -131,6 +133,7 @@ add_sources(
   include/xtd/diagnostics/source_switch.h
   include/xtd/diagnostics/stack_frame.h
   include/xtd/diagnostics/stack_trace.h
+  include/xtd/diagnostics/stopwatch.h
   include/xtd/diagnostics/switch_base.h
   include/xtd/diagnostics/trace.h
   include/xtd/diagnostics/trace_event_cache.h
