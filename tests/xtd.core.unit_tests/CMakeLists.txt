@@ -70,6 +70,7 @@ add_sources(
   src/wstring_string_format.cpp
   src/xml_syntax_exception.cpp
   src/collections/key_not_found_exception.cpp
+  src/diagnostics/stopwatch.cpp
   src/diagnostics/trace_listener.cpp
   src/io/directory_not_found_exception.cpp
   src/io/drive_not_found_exception.cpp
