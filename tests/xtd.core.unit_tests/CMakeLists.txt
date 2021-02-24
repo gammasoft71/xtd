@@ -55,6 +55,8 @@ add_sources(
   src/string_string_format.cpp
   src/strings.cpp
   src/system_exception.cpp
+  src/tick.cpp
+  src/ticks.cpp
   src/time_out_exception.cpp
   src/underflow_exception.cpp
   src/version.cpp
