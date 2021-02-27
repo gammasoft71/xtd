@@ -268,7 +268,7 @@
 /// * INTERFACE_LIBRARY Interface library (header files only)
 /// * CUSTOM_TARGET Target with no output.
 /// @remarks This method is required except container project like Solution.
-/// @remarks This method must be the last method before add_references.
+/// @remarks This method must be the last method.
 /// @remarks Call only once by project.
 /// @par Examples
 /// @code
@@ -277,11 +277,10 @@
 ///  project(my_project)
 ///  find_package(xtd REQUIRED)
 ///  add_sources(my_project.cpp)
+///  add_references(xtd.drawing xtd.drawing.native)
 ///
 ///  target_name("my_exe")
 ///  target_type(CONSOLE_APPLICATION)
-///
-///  add_references(xtd.drawing xtd.drawing.native)
 /// @endcode
 ///
 /// @section AssemblyInformationsCommandsSection Assembly informations commands
@@ -555,7 +554,7 @@
 /// @param ARGV0 Install name (optional).
 /// @remarks if install name no specified and install_name() method no called, the install name is equal to application name.
 /// @remarks This method is required for install package.
-/// @remarks This method must be call after add_references.
+/// @remarks This method must be call after target_type.
 /// @remarks Call only once by project.
 /// @par Examples
 /// @code
@@ -577,7 +576,7 @@
 /// @param ARGV0 Install name (optional).
 /// @remarks if install name no specified and install_name() method no called, the install name is equal to application name.
 /// @remarks This method is required for install package.
-/// @remarks This method must be after add_references.
+/// @remarks This method must be after target_type.
 /// @remarks Call only once by project.
 /// @par Examples
 /// @code
@@ -653,7 +652,6 @@
 ///  add_sources(my_project.cpp)
 ///
 ///  target_type(CONSOLE_APPLICATION)
-///
 /// @endcode
 ///
 /// @subsection AddProjectsSubSection add_projects
@@ -676,8 +674,7 @@
 /// @subsection AddReferencesSubSection add_references
 /// @brief Add references (libraries) to current project.
 /// @param ARGN references to add.
-/// @remarks This method must be the last method after target_type.
-/// @remarks This method must be call after target_type().
+/// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
 /// @par Examples
 /// @code
@@ -687,10 +684,10 @@
 ///  find_package(xtd REQUIRED)
 ///  add_sources(my_project.cpp)
 ///
-///  target_type(CONSOLE_APPLICATION)
-///
 ///  add_references(xtd.drawing xtd.drawing.native)
 ///  add_references(xtd.forms)
+///
+///  target_type(CONSOLE_APPLICATION)
 /// @endcode
 ///
 /// @subsection AddResourcesSubSection resource
