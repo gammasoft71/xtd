@@ -2756,7 +2756,6 @@ namespace xtdc_command {
       if (create_solution) create_gtest_unit_test_application_solution_cmakelists_txt(name);
       create_gtest_unit_test_application_cmakelists_txt(name, create_solution ? path_/name : path_);
       create_gtest_unit_test_application_source(name, create_solution ? path_/name : path_);
-      create_gtest_unit_test_application_main(name, create_solution ? path_/name : path_);
     }
     
     void create_gtest_unit_test_application_solution_cmakelists_txt(const std::string& name) const {
@@ -2779,7 +2778,6 @@ namespace xtdc_command {
         xtd::strings::format("project({} VERSION 1.0.0)", name),
         "find_package(GTest REQUIRED)",
         "set(SOURCES",
-        "  src/main.cpp",
         "  src/unit_test1.cpp",
         ")",
         "source_group(src FILES ${SOURCES})",
@@ -2794,7 +2792,7 @@ namespace xtdc_command {
         "",
         "# Application properties",
         "add_executable(${PROJECT_NAME} ${SOURCES})",
-        "target_link_libraries(${PROJECT_NAME} GTest::GTest)",
+        "target_link_libraries(${PROJECT_NAME} GTest::GTest GTest::Main)",
         "",
         "add_test(NAME ${PROJECT_NAME} COMMAND $<TARGET_FILE_NAME:${PROJECT_NAME}> WORKING_DIRECTORY $<TARGET_FILE_DIR:${PROJECT_NAME}>)",
       };
