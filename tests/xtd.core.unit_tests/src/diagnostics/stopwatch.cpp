@@ -129,7 +129,7 @@ namespace unit_tests {
       sleep_for(1ms);
       s.stop();
       auto elapsed_1 = s.elapsed_milliseconds();
-      assert::is_greater_or_equal_(1, elapsed_1);
+      assert::is_greater_or_equal_(elapsed_1, 1);
       s.start();
       sleep_for(1ms);
       s.stop();
