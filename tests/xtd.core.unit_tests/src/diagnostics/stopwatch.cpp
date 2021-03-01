@@ -27,7 +27,7 @@ namespace unit_tests {
       sleep_for(1ms);
       assert::is_true_(s.is_running());
       assert::is_greater_or_equal_(s.elapsed(), 1000000ns);
-      assert::is_greater_or_equal_(1, s.elapsed_milliseconds());
+      assert::is_greater_or_equal_(s.elapsed_milliseconds(), 1);
       assert::is_greater_or_equal_(s.elapsed_nanoseconds(), 1000000);
       assert::is_greater_or_equal_(s.elapsed_ticks(), 10000);
     }
@@ -39,7 +39,7 @@ namespace unit_tests {
       s.start();
       assert::is_true_(s.is_running());
       assert::is_greater_or_equal_(s.elapsed(), 1000000ns);
-      assert::is_greater_or_equal_(1, s.elapsed_milliseconds());
+      assert::is_greater_or_equal_(s.elapsed_milliseconds(), 1);
       assert::is_greater_or_equal_(s.elapsed_nanoseconds(), 1000000);
       assert::is_greater_or_equal_(s.elapsed_ticks(), 10000);
     }
@@ -62,7 +62,7 @@ namespace unit_tests {
       s.stop();
       assert::is_false_(s.is_running());
       assert::is_greater_or_equal_(s.elapsed(), 1000000ns);
-      assert::is_greater_or_equal_(1, s.elapsed_milliseconds());
+      assert::is_greater_or_equal_(s.elapsed_milliseconds(), 1);
       assert::is_greater_or_equal_(s.elapsed_nanoseconds(), 1000000);
       assert::is_greater_or_equal_(s.elapsed_ticks(), 10000);
     }
@@ -108,7 +108,7 @@ namespace unit_tests {
       sleep_for(1ms);
       assert::is_true_(s.is_running());
       assert::is_greater_or_equal_(s.elapsed(), 1000000ns);
-      assert::is_greater_or_equal_(1, s.elapsed_milliseconds());
+      assert::is_greater_or_equal_(s.elapsed_milliseconds(), 1);
       assert::is_greater_or_equal_(s.elapsed_nanoseconds(), 1000000);
       assert::is_greater_or_equal_(s.elapsed_ticks(), 10000);
     }
@@ -118,7 +118,7 @@ namespace unit_tests {
       sleep_for(1ms);
       assert::is_true_(s.is_running());
       assert::is_greater_or_equal_(s.elapsed(), 1000000ns);
-      assert::is_greater_or_equal_(1, s.elapsed_milliseconds());
+      assert::is_greater_or_equal_(s.elapsed_milliseconds(), 1);
       assert::is_greater_or_equal_(s.elapsed_nanoseconds(), 1000000);
       assert::is_greater_or_equal_(s.elapsed_ticks(), 10000);
     }
@@ -128,15 +128,18 @@ namespace unit_tests {
       s.start();
       sleep_for(1ms);
       s.stop();
-      assert::is_greater_or_equal_(1, s.elapsed_milliseconds());
+      auto elapsed_1 = s.elapsed_milliseconds();
+      assert::is_greater_or_equal_(1, elapsed_1);
       s.start();
-      sleep_for(2ms);
+      sleep_for(1ms);
       s.stop();
-      assert::is_greater_or_equal_(3, s.elapsed_milliseconds());
+      auto elapsed_2 = s.elapsed_milliseconds();
+      assert::is_greater(elapsed_2, elapsed_1);
       s.start();
-      sleep_for(3ms);
+      sleep_for(1ms);
       s.stop();
-      assert::is_greater_or_equal_(6, s.elapsed_milliseconds());
+      auto elapsed_3 = s.elapsed_milliseconds();
+      assert::is_greater(elapsed_3, elapsed_2);
     }
   };
 }
