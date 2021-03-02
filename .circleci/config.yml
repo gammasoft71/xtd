@@ -8,22 +8,22 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Installing SUDO
+          name: Installing apt
           command: 'sudo apt-get update && sudo apt-get install --allow sudo && sudo rm -rf /var/lib/apt/lists/*'
       - run:
-          name: Installing GCC
+          name: Installing gcc
           command: 'sudo apt-get update && apt-get install --allow gcc g++'
       - run:
-          name: Install CMAKE
+          name: Install cmake
           command: 'sudo apt-get update && sudo apt-get install --allow cmake'
       - run:
-          name: Install CMAKE
+          name: Install lcov
           command: 'sudo apt-get update && sudo apt-get install --allow lcov'
       - run:
-          name: Install CMAKE
+          name: Install gtk-3
           command: 'sudo apt-get update && sudo apt-get install --allow libgtk-3-dev'
       - run:
-          name: Install CMAKE
+          name: Install doxygen
           command: 'sudo apt-get update && sudo apt-get install --allow doxygen'
       - run:
           name: Build xtd and launch unit tests
