@@ -8,7 +8,7 @@ jobs:
       - run:
           name: Installing SUDO
           #command: 'apt-get update && apt-get install -y sudo && rm -rf /var/lib/apt/lists/*'
-          command: 'apt-get update && apt-get install -y sudo
+          command: 'apt-get update && apt-get install -y sudo'
       - run:
           name: Installing GCC
           command: 'apt-get update && apt-get install -y gcc g++'
