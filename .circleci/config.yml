@@ -1,7 +1,7 @@
 version: 2
 
 jobs:
-  build:
+  build-linux:
     machine:
       image: ubuntu-2004:202010-01
       
@@ -28,3 +28,19 @@ jobs:
       - run:
           name: Build xtd and launch unit tests
           command: scripts/circleci/build_xtd_and_launch_unit_tests_on_linux.sh
+
+  build-macos:
+    macos:
+      xcode: xcode12.2
+      
+    steps:
+      - checkout
+      - run:
+          name: Installing brew
+          command: 'brew upgrade'
+      - run:
+          name: Install doxygen
+          command: 'brew install doxygen'
+      - run:
+          name: Build xtd and launch unit tests
+          command: scripts/circleci/build_xtd_and_launch_unit_tests_on_macos.sh
