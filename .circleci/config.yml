@@ -1,7 +1,7 @@
 version: 2
 
 jobs:
-  build-linux:
+  build:
     machine:
       image: ubuntu-2004:202010-01
       
