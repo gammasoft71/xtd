@@ -6,11 +6,11 @@
 
 ## Continuous Integration build status
 
-| Operating system | Status                                                                                                                              |
-|------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| Windows          | [![status](https://ci.appveyor.com/api/projects/status/uqn1xbctwy88eghu?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd) |
-| macOS            | [![status](https://travis-ci.com/gammasoft71/xtd.svg?branch=master)](https://travis-ci.com/gammasoft71/xtd)                         |
-| Linux            | [![status](https://travis-ci.com/gammasoft71/xtd.svg?branch=master)](https://travis-ci.com/gammasoft71/xtd)                         |
+| Operating system | Status                                                                                                                                |
+|------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| Windows          | [![Appveyor](https://ci.appveyor.com/api/projects/status/uqn1xbctwy88eghu?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd) |
+| macOS            | [![TravisCI](https://travis-ci.com/gammasoft71/xtd.svg?branch=master)](https://travis-ci.com/gammasoft71/xtd)                         |
+| Linux            | [![CircleCI](https://circleci.com/gh/gammasoft71gammasoft71/xtd.svg?style=svg)](https://circleci.com/gh/gammasoft71/xtd)              |
 
 ## Features
 
