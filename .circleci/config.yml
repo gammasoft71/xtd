@@ -31,7 +31,7 @@ jobs:
 
   build-macos:
     macos:
-      xcode: xcode12.2
+      xcode: 12.2
       
     steps:
       - checkout
