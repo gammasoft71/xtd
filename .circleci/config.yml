@@ -10,19 +10,19 @@ jobs:
       #    command: 'apt-get update && apt-get install -y sudo && rm -rf /var/lib/apt/lists/*'
       - run:
           name: Installing GCC
-          command: 'apt-get update && apt-get install -y gcc g++'
+          command: 'apt-get update && apt-get install gcc g++'
       - run:
           name: Install CMAKE
-          command: 'apt-get update && sudo apt-get install -y cmake'
+          command: 'apt-get update && sudo apt-get install cmake'
       - run:
           name: Install CMAKE
-          command: 'apt-get update && sudo apt-get install -y lcov'
+          command: 'apt-get update && sudo apt-get install lcov'
       - run:
           name: Install CMAKE
-          command: 'apt-get update && sudo apt-get install -y libgtk-3-dev'
+          command: 'apt-get update && sudo apt-get install libgtk-3-dev'
       - run:
           name: Install CMAKE
-          command: 'apt-get update && sudo apt-get install -y doxygen'
+          command: 'apt-get update && sudo apt-get install doxygen'
       - run:
           name: Build xtd and launch unit tests
           command: scripts/circleci/build_xtd_and_launch_unit_tests_on_linux.sh
