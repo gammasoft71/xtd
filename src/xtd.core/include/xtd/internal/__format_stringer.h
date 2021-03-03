@@ -268,8 +268,13 @@ inline std::basic_string<char_t> __format_stringer(const wchar_t(&value)[len]) {
 
 template<typename char_t, typename value_t>
 inline std::basic_string<char_t> __format_stringer(const char8_t*& value) {
+#if defined(__cpp_lib_char8_t)
+  auto s = std::u8string(value);
+#else
+  auto s = std::string(value);
+#endif
   std::basic_stringstream<char_t> ss;
-  ss << __to_string<char_t>(value);
+  ss << std::basic_string<char_t>(s.begin(), s.end());
   return ss.str();
 }
 
