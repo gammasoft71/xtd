@@ -181,6 +181,11 @@ inline std::basic_string<char_t> __to_string(char16_t codepoint) {
 }
 
 template<typename char_t>
+inline std::basic_string<char_t> __to_string(char8_t codepoint) {
+  return __codepoint_to_string<char_t>(codepoint);
+}
+
+template<typename char_t>
 inline std::basic_string<char_t> __to_string(wchar_t codepoint) {
   return __codepoint_to_string<char_t>(codepoint);
 }
@@ -256,6 +261,13 @@ inline std::basic_string<char_t> __format_stringer(const char32_t(&value)[len]) 
 
 template<typename char_t, typename value_t, int32_t len>
 inline std::basic_string<char_t> __format_stringer(const wchar_t(&value)[len]) {
+  std::basic_stringstream<char_t> ss;
+  ss << __to_string<char_t>(value);
+  return ss.str();
+}
+
+template<typename char_t, typename value_t>
+inline std::basic_string<char_t> __format_stringer(const char8_t*& value) {
   std::basic_stringstream<char_t> ss;
   ss << __to_string<char_t>(value);
   return ss.str();
