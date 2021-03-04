@@ -227,40 +227,14 @@ inline std::basic_string<char_t> __format_stringer(value_t value) {
 }
 
 template<typename char_t, typename value_t, int32_t len>
-inline std::basic_string<char_t> __format_stringer(const char(&value)[len]) {
+inline std::basic_string<char_t> __format_stringer(const char*& value) {
   std::basic_stringstream<char_t> ss;
   ss << __to_string<char_t>(value);
   return ss.str();
 }
 
 template<typename char_t, typename value_t, int32_t len>
-inline std::basic_string<char_t> __format_stringer(const char8_t(&value)[len]) {
-#if defined(__cpp_lib_char8_t)
-  auto s = std::u8string(value);
-#else
-  auto s = std::string(value);
-#endif
-  std::basic_stringstream<char_t> ss;
-  ss << std::basic_string<char_t>(s.begin(), s.end());
-  return ss.str();
-}
-
-template<typename char_t, typename value_t, int32_t len>
-inline std::basic_string<char_t> __format_stringer(const char16_t(&value)[len]) {
-  std::basic_stringstream<char_t> ss;
-  ss << __to_string<char_t>(value);
-  return ss.str();
-}
-
-template<typename char_t, typename value_t, int32_t len>
-inline std::basic_string<char_t> __format_stringer(const char32_t(&value)[len]) {
-  std::basic_stringstream<char_t> ss;
-  ss << __to_string<char_t>(value);
-  return ss.str();
-}
-
-template<typename char_t, typename value_t, int32_t len>
-inline std::basic_string<char_t> __format_stringer(const wchar_t(&value)[len]) {
+inline std::basic_string<char_t> __format_stringer(const char* const& value) {
   std::basic_stringstream<char_t> ss;
   ss << __to_string<char_t>(value);
   return ss.str();
@@ -279,7 +253,26 @@ inline std::basic_string<char_t> __format_stringer(const char8_t*& value) {
 }
 
 template<typename char_t, typename value_t>
+inline std::basic_string<char_t> __format_stringer(const char8_t* const& value) {
+#if defined(__cpp_lib_char8_t)
+  auto s = std::u8string(value);
+#else
+  auto s = std::string(value);
+#endif
+  std::basic_stringstream<char_t> ss;
+  ss << std::basic_string<char_t>(s.begin(), s.end());
+  return ss.str();
+}
+
+template<typename char_t, typename value_t>
 inline std::basic_string<char_t> __format_stringer(const char16_t*& value) {
+  std::basic_stringstream<char_t> ss;
+  ss << __to_string<char_t>(value);
+  return ss.str();
+}
+
+template<typename char_t, typename value_t>
+inline std::basic_string<char_t> __format_stringer(const char16_t* const& value) {
   std::basic_stringstream<char_t> ss;
   ss << __to_string<char_t>(value);
   return ss.str();
@@ -293,7 +286,21 @@ inline std::basic_string<char_t> __format_stringer(const char32_t*& value) {
 }
 
 template<typename char_t, typename value_t>
+inline std::basic_string<char_t> __format_stringer(const char32_t* const& value) {
+  std::basic_stringstream<char_t> ss;
+  ss << __to_string<char_t>(value);
+  return ss.str();
+}
+
+template<typename char_t, typename value_t>
 inline std::basic_string<char_t> __format_stringer(const wchar_t*& value) {
+  std::basic_stringstream<char_t> ss;
+  ss << __to_string<char_t>(value);
+  return ss.str();
+}
+
+template<typename char_t, typename value_t>
+inline std::basic_string<char_t> __format_stringer(const wchar_t* const& value) {
   std::basic_stringstream<char_t> ss;
   ss << __to_string<char_t>(value);
   return ss.str();
