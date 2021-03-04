@@ -20,7 +20,7 @@ public:
     split_container_right.splitter_distance(160);
     
     split_container_center.dock(dock_style::fill);
-    split_container_center.orientation(xtd::forms::orientation::horzontal);
+    split_container_center.orientation(xtd::forms::orientation::horizontal);
     split_container_center.panel1().back_color(color::pink);
     split_container_center.panel2().back_color(color::light_green);
     split_container_center.parent(split_container_right.panel1());
