@@ -12,11 +12,11 @@ namespace xtd {
   /// @return string formated.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<typename char_t, typename ...args_t>
-  static std::basic_string<char_t> format(const std::basic_string<char_t>& format, args_t&&... args) {return xtd::strings::format(format, std::forward<args_t>(args)...);}
+  static std::string format(const std::basic_string<char_t>& format, args_t&&... args) {return xtd::strings::format(xtd::strings::to_string(format), std::forward<args_t>(args)...);}
 
   /// @cond
   template<typename char_t, typename ...args_t>
-  static std::basic_string<char_t> format(const char_t* format, args_t&&... args) {return xtd::format(std::basic_string<char_t>(format), std::forward<args_t>(args)...);}
+  static std::string format(const char_t* format, args_t&&... args) {return xtd::format(std::basic_string<char_t>(format), std::forward<args_t>(args)...);}
   /// @endcond
 
   /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
@@ -78,10 +78,10 @@ namespace xtd {
   /// @remarks Note regarding the c specifier: it takes an int (or wint_t) as argument, but performs the proper conversion to a char value (or a wchar_t) before formatting it for output.
   /// @remarks you can use std::string or std::wstring with format param %%s.
   template<typename char_t, typename ... args_t>
-  static std::basic_string<char_t> formatf(const std::basic_string<char_t>& format, args_t&& ... args) noexcept {return xtd::strings::formatf(format, std::forward<args_t>(args)...);}
+  static std::string formatf(const std::basic_string<char_t>& format, args_t&& ... args) noexcept {return xtd::strings::formatf(xtd::strings::to_string(format), std::forward<args_t>(args)...);}
   
   /// @cond
   template<typename char_t, typename ... args_t>
-  static std::basic_string<char_t> formatf(const char_t* format, args_t&& ... args) noexcept {return xtd::formatf(std::basic_string<char_t>(format), std::forward<args_t>(args) ...);}
+  static std::string formatf(const char_t* format, args_t&& ... args) noexcept {return xtd::formatf(std::basic_string<char_t>(format), std::forward<args_t>(args) ...);}
   /// @endcond
 }
