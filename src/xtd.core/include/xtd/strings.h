@@ -1537,12 +1537,6 @@ namespace xtd {
     
     static std::string to_string(std::string&& str) {return std::move(str);}
 
-    template<typename value_t, typename char_t>
-    static std::basic_string<char_t> to_string(const std::basic_string<value_t>& str) {return format("{}", str);}
-    
-    template<typename value_t, typename char_t>
-    static std::basic_string<char_t> to_string(const value_t* str) {return format("{}", str);}
-
 #if defined(__cpp_lib_char8_t)
     static std::string to_string(const char8_t* str) {return to_string(std::u8string(str));}
     static std::string to_string(const std::u8string& s) {return std::string(s.begin(), s.end());}
