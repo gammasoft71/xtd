@@ -1,10 +1,10 @@
-# xtd_format
+# format
 
 Show how to use format [xtd::format](../../../../src/xtd.core/include/xtd/format.h) class.
 
 ## Sources
 
-[src/xtd_format.cpp](src/xtd_formatf.cpp)
+[src/format.cpp](src/formatf.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

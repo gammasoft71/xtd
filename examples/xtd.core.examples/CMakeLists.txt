@@ -9,6 +9,7 @@ add_projects(
   delegates
   diagnostics
   environment
+  format
   guid
   html
   keywords

@@ -1,10 +1,10 @@
-# format_with_order
+# string_format_with_order
 
 Shows how to use [xtd::strings::format](../../../../src/xtd.core/include/xtd/strings.h) method.
 
 ## Sources
 
-[src/format_with_order.cpp](src/format_with_order.cpp)
+[src/string_format_with_order.cpp](src/string_format_with_order.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

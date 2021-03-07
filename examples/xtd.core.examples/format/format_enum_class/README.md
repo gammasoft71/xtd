@@ -1,10 +1,10 @@
-# format
+# format_enum_class
 
-Shows how to use [xtd::strings::format](../../../../src/xtd.core/include/xtd/strings.h) method.
+Show how to use format [xtd::format](../../../../src/xtd.core/include/xtd/format.h) class.
 
 ## Sources
 
-[src/format.cpp](src/format.cpp)
+[src/format_enum_class.cpp](src/format_enum_class.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -16,8 +16,9 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+# Output (with colors)
 
 ```
     string literal 042 a
 ```
+
