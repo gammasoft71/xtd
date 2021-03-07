@@ -9,9 +9,9 @@ add_projects(
   concat
   concat_collection
   contains
-  format
-  format_with_order
   join
   split
+  string_format
+  string_format_with_order
   string_unicode
 )
