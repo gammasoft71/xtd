@@ -4,13 +4,24 @@ using namespace std;
 using namespace xtd;
 
 int main() {
-  cout << format("{}", 42) << endl;
-  cout << format("{:D}", 42) << endl;
-  cout << format("0x{:X4}", 42) << endl;
-  cout << format("0b{:b8}", 42) << endl;
-  cout << format("0{:o}", 42) << endl;
+  locale::global(locale("en_US.UTF-8")); // change to us for currency
+  cout << format("{}", 12.345) << endl;
+  cout << format("{:C}", 12.345) << endl;
+  cout << format("{:E}", 12.345) << endl;
+  cout << format("{:F4}", 12.345) << endl;
+  cout << format("{:G}", 12.345) << endl;
+  cout << format("{:N}", 12.345) << endl;
+  cout << format("{}", std::numeric_limits<double>::infinity()) << endl;
+  cout << format("{}", std::numeric_limits<double>::quiet_NaN()) << endl;
 }
 
 // This code produces the following output with colors :
 //
-//     string literal 042 a
+// 12.345
+// $12.35
+// 1.234500E+01
+// 12.3450
+// 12.345
+// 12.35
+// INF
+// NAN
