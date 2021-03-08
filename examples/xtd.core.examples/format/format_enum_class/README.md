@@ -19,6 +19,6 @@ xtdc run
 # Output (with colors)
 
 ```
-    string literal 042 a
+saturday night fever
 ```
 
