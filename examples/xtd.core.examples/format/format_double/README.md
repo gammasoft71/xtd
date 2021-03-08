@@ -1,10 +1,10 @@
-# format_with_order
+# format_double
 
 Show how to use format [xtd::format](../../../../src/xtd.core/include/xtd/format.h) class.
 
 ## Sources
 
-[src/format_with_order.cpp](src/format_with_order.cpp)
+[src/format_double.cpp](src/format_double.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

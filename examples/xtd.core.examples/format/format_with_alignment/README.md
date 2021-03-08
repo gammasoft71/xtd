@@ -1,10 +1,10 @@
-# format_with_order
+# format_with_alignment
 
 Show how to use format [xtd::format](../../../../src/xtd.core/include/xtd/format.h) class.
 
 ## Sources
 
-[src/format_with_order.cpp](src/format_with_order.cpp)
+[src/format_with_alignment.cpp](src/format_with_alignment.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -19,6 +19,8 @@ xtdc run
 # Output (with colors)
 
 ```
-    string literal 042 a
+[        42]
+[42        ]
+[0000000042]
 ```
 

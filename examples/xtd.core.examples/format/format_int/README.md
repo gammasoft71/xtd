@@ -1,10 +1,10 @@
-# format_with_order
+# format_int
 
 Show how to use format [xtd::format](../../../../src/xtd.core/include/xtd/format.h) class.
 
 ## Sources
 
-[src/format_with_order.cpp](src/format_with_order.cpp)
+[src/format_int.cpp](src/format_int.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -19,6 +19,13 @@ xtdc run
 # Output (with colors)
 
 ```
-    string literal 042 a
+12.345
+$12.35
+1.234500E+01
+12.3450
+12.345
+12.35
+INF
+NAN
 ```
 
