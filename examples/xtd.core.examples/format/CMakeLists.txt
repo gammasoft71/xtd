@@ -8,9 +8,9 @@ add_projects(
   format_class
   format_class_with_specified_formating
   format_date_time
-  format_double
   format_duration
   format_enum_class
+  format_floating_point
   format_numeric
   format_with_alignment
   format_with_order
