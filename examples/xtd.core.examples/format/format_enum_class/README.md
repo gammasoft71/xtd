@@ -19,6 +19,16 @@ xtdc run
 # Output (with colors)
 
 ```
-saturday night fever
+saturday
+0b101
+0b101
+5
+5
+saturday
+saturday
+05
+05
+0x5
+0x5
 ```
 

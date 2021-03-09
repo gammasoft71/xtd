@@ -27,7 +27,7 @@ int main() {
     cout << format("{}", c) << endl;
 }
 
-// This code produces the following output with colors :
+// This code produces the following output :
 //
 // Jean-Luc Picard (Captain)
 // William Riker (Commander)

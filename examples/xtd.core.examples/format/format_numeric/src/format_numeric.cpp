@@ -28,7 +28,7 @@ int main() {
   cout << format("0x{:X4}", 42) << endl;
 }
 
-// This code produces the following output with colors :
+// This code produces the following output :
 //
 // 42
 // 0b00101010

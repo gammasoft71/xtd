@@ -7,6 +7,6 @@ int main() {
   cout << formatf("%10s %s %3d %c", "string", "literal"_s, 42, 'a') << endl;
 }
 
-// This code produces the following output with colors :
+// This code produces the following output :
 //
 //     string literal 042 a

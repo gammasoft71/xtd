@@ -13,7 +13,7 @@ int main() {
   cout << format("{0:h}:{0:m}:{0:s}.{0:n}", 2h + 3min + 32s + 24ms + 500ns + 24ms + 500ns) << endl;
 }
 
-// This code produces the following output with colors :
+// This code produces the following output :
 //
 // 1.02:03:32:024000500
 // 1.02:03:32:024000500
