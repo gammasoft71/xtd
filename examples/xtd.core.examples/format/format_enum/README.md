@@ -1,10 +1,10 @@
-# format
+# format_enum
 
 Show how to use format [xtd::format](../../../../src/xtd.core/include/xtd/format.h) class.
 
 ## Sources
 
-[src/format.cpp](src/format.cpp)
+[src/format_enum.cpp](src/format_enum.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -19,6 +19,16 @@ xtdc run
 # Output (with colors)
 
 ```
-    string literal 042 a
+saturday
+0b101
+0b101
+5
+5
+saturday
+saturday
+05
+05
+0x5
+0x5
 ```
 

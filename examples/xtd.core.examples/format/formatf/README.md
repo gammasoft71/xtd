@@ -4,7 +4,7 @@ Show how to use format [xtd::xtd_formatf](../../../../src/xtd.core/include/xtd/f
 
 ## Sources
 
-[src/xtd_format.cpp](src/xtd_formatf.cpp)
+[src/formatf.cpp](src/formatf.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

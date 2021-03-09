@@ -17,7 +17,7 @@ int main() {
   cout << format("{:X}", true) << endl;
 }
 
-// This code produces the following output with colors :
+// This code produces the following output :
 //
 // true
 // 1

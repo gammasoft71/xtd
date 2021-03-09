@@ -23,7 +23,7 @@ int main() {
   cout << format("{}", std::numeric_limits<double>::signaling_NaN()) << endl;
 }
 
-// This code produces the following output with colors :
+// This code produces the following output :
 //
 // 12.345
 // $12.35

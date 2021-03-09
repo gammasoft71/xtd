@@ -9,7 +9,7 @@ int main() {
   cout << format("[{:D10}]", 42) << endl;
 }
 
-// This code produces the following output with colors :
+// This code produces the following output :
 //
 // [        42]
 // [42        ]
