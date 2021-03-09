@@ -11,7 +11,7 @@ add_projects(
   format_double
   format_duration
   format_enum_class
-  format_int
+  format_numeric
   format_with_alignment
   format_with_order
   formatf
