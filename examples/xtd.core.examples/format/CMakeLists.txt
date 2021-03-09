@@ -5,6 +5,7 @@ find_package(xtd REQUIRED)
 
 add_projects(
   format
+  format_boolean
   format_class
   format_class_with_specified_formating
   format_date_time
