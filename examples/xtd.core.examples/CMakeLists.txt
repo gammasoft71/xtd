@@ -10,6 +10,7 @@ add_projects(
   diagnostics
   environment
   format
+  formatf
   guid
   html
   keywords
