@@ -1,10 +1,10 @@
-# format_character
+# formatf_character
 
 Show how to use format [xtd::format](../../../../src/xtd.core/include/xtd/format.h) class.
 
 ## Sources
 
-[src/format_character.cpp](src/format_character.cpp)
+[src/formatf_character.cpp](src/formatf_character.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
