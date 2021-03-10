@@ -17,6 +17,5 @@ add_projects(
   format_string
   format_with_alignment
   format_with_order
-  formatf
 )
 

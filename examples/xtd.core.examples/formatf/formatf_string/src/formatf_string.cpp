@@ -4,9 +4,11 @@ using namespace std;
 using namespace xtd;
 
 int main() {
-  cout << formatf("%10s %s %3d %c", "string", "literal"_s, 42, 'a') << endl;
+  cout << format("{}", "string") << endl;
+  cout << format("{:anything}", "string") << endl;
 }
 
 // This code produces the following output :
 //
-//     string literal 042 a
+// string
+// string
