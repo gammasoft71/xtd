@@ -1,10 +1,10 @@
-# format_numeric
+# formatf_numeric
 
 Show how to use format [xtd::format](../../../../src/xtd.core/include/xtd/format.h) class.
 
 ## Sources
 
-[src/format_numeric.cpp](src/format_numeric.cpp)
+[src/formatf_numeric.cpp](src/formatf_numeric.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

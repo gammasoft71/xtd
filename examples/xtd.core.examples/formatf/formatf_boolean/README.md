@@ -1,10 +1,10 @@
-# format_boolean
+# formatf_numeric
 
 Show how to use format [xtd::format](../../../../src/xtd.core/include/xtd/format.h) class.
 
 ## Sources
 
-[src/format_boolean.cpp](src/format_boolean.cpp)
+[src/formatf_numeric.cpp](src/formatf_numeric.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -19,16 +19,8 @@ xtdc run
 # Output (with colors)
 
 ```
-true
-1
-1
-1
-1
-true
-true
 1
 1
 1
 1
 ```
-

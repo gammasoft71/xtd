@@ -6,7 +6,7 @@ using namespace xtd;
 int main() {
   cout << format("{}", true) << endl;
   cout << format("{:b}", true) << endl;
-  cout << format("{:b}", true) << endl;
+  cout << format("{:B}", true) << endl;
   cout << format("{:d}", true) << endl;
   cout << format("{:D}", true) << endl;
   cout << format("{:g}", true) << endl;
