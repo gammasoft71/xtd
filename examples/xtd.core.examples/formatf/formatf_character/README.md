@@ -1,10 +1,10 @@
-# format_string
+# format_character
 
 Show how to use format [xtd::format](../../../../src/xtd.core/include/xtd/format.h) class.
 
 ## Sources
 
-[src/format_string.cpp](src/format_string.cpp)
+[src/format_character.cpp](src/format_character.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -19,16 +19,10 @@ xtdc run
 # Output (with colors)
 
 ```
-string
-string
-string
-string
-string
-string
-string
-string
-string
-string
-string
+a
+亰
+a
+亰
+🐨
 ```
 
