@@ -59,10 +59,14 @@ namespace xtd {
   template<typename type_t, typename period_t = std::ratio<1>>
   inline std::string to_string(const std::chrono::duration<type_t, period_t>& value, const std::string& fmt, const std::locale& loc);
   template<>
+  inline std::string to_string(const char8_t& value, const std::string& fmt, const std::locale& loc);
+  template<>
   inline std::string to_string(const char16_t& value, const std::string& fmt, const std::locale& loc);
   template<>
   inline std::string to_string(const char32_t& value, const std::string& fmt, const std::locale& loc);
-  
+  template<>
+  inline std::string to_string(const wchar_t& value, const std::string& fmt, const std::locale& loc);
+
   template<typename value_t>
   inline std::wstring to_string(const value_t& value, const std::wstring& fmt, const std::locale& loc);
   template<>
@@ -102,7 +106,15 @@ namespace xtd {
   
   template<typename type_t, typename period_t = std::ratio<1>>
   inline std::wstring to_string(const std::chrono::duration<type_t, period_t>& value, const std::wstring& fmt, const std::locale& loc);
-  
+  template<>
+  inline std::wstring to_string(const char8_t& value, const std::wstring& fmt, const std::locale& loc);
+  template<>
+  inline std::wstring to_string(const char16_t& value, const std::wstring& fmt, const std::locale& loc);
+  template<>
+  inline std::wstring to_string(const char32_t& value, const std::wstring& fmt, const std::locale& loc);
+  template<>
+  inline std::wstring to_string(const wchar_t& value, const std::wstring& fmt, const std::locale& loc);
+
   template<typename type_t, typename string_t>
   inline string_t to_string(type_t value, const std::map<type_t, string_t, std::greater<type_t>>& values) {
     if (values.find(value) != values.end()) return values.find(value)->second;
@@ -413,6 +425,16 @@ inline std::string __format_stringer<char, std::chrono::system_clock::time_point
 
 template<>
 inline std::string __format_stringer<char, std::tm&> (tm& value) {
+  return xtd::to_string(value, "G", std::locale());
+}
+
+template<>
+inline std::string __format_stringer<char, wchar_t&>(wchar_t& value) {
+  return xtd::to_string(value, "G", std::locale());
+}
+
+template<>
+inline std::string __format_stringer<char, char8_t&>(char8_t& value) {
   return xtd::to_string(value, "G", std::locale());
 }
 
