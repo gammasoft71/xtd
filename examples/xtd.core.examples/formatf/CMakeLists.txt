@@ -9,7 +9,7 @@ add_projects(
   formatf_character
   formatf_class
   formatf_class_with_specified_formating
-  #formatf_date_time
+  formatf_date_time
   #formatf_duration
   #formatf_enum
   #formatf_enum_class

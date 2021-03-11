@@ -19,10 +19,20 @@ int main() {
   cout << format("{:F}", date_time) << endl;
   cout << format("{:g}", date_time) << endl;
   cout << format("{:G}", date_time) << endl;
-  cout << format("{0:h} {0:i} {0:j} {0:l}", date_time) << endl;
-  cout << format("{0:H} {0:I} {0:J} {0:L}", date_time) << endl;
-  cout << format("{0:i}/{0:k}/{0:l}", date_time) << endl;
-  cout << format("{0:I}/{0:K}/{0:L}", date_time) << endl;
+  //cout << format("{0:h} {0:i} {0:j} {0:l}", date_time) << endl;
+  //cout << format("{0:H} {0:I} {0:J} {0:L}", date_time) << endl;
+  //cout << format("{:i}/{0:k}/{0:l}", date_time) << endl;
+  //cout << format("{:I}/{0:K}/{0:L}", date_time) << endl;
+  cout << format("{:h}", date_time) << endl;
+  cout << format("{:H}", date_time) << endl;
+  cout << format("{:i}", date_time) << endl;
+  cout << format("{:I}", date_time) << endl;
+  cout << format("{:j}", date_time) << endl;
+  cout << format("{:J}", date_time) << endl;
+  cout << format("{:k}", date_time) << endl;
+  cout << format("{:K}", date_time) << endl;
+  cout << format("{:l}", date_time) << endl;
+  cout << format("{:L}", date_time) << endl;
   cout << format("{:m}", date_time) << endl;
   cout << format("{:M}", date_time) << endl;
   cout << format("{:n}", date_time) << endl;
@@ -52,10 +62,16 @@ int main() {
 // Sat Jan  2 03:04:05 2021
 // Sat Jan  2 03:04:05 2021
 // Sat Jan  2 03:04:05 2021
-// Sat 02 Jan 21
-// Saturday 2 January 2021
-// 02/01/21
-// 2/1/2021
+// Sat
+// Saturday
+// 02
+// 2
+// Jan
+// January
+// 01
+// 1
+// 21
+// 2021
 // January 2
 // January 2
 // Saturday, 2 January 2021
