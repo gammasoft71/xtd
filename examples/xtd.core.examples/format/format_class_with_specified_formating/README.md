@@ -19,12 +19,9 @@ xtdc run
 # Output (with colors)
 
 ```
+Jean-Luc Picard (Captain)
+Jean-Luc Picard (Captain)
 Jean-Luc Picard
-William Riker
-Data
-Beverly Crusher
-Geordi La Forge
-Worf
-Tasha Yar
+Captain
 ```
 
