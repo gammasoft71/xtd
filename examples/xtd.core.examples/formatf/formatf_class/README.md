@@ -1,10 +1,10 @@
-# format_class
+# formatf_class
 
 Show how to use format [xtd::format](../../../../src/xtd.core/include/xtd/format.h) class.
 
 ## Sources
 
-[src/format_class.cpp](src/format_class.cpp)
+[src/formatf_class.cpp](src/formatf_class.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -19,12 +19,12 @@ xtdc run
 # Output (with colors)
 
 ```
-Jean-Luc Picard (Captain)
-William Riker (Commander)
-Data (Commander)
-Beverly Crusher (Commander)
-Geordi La Forge (Lieutenant Commander)
-Worf (Lieutenant Commander)
-Tasha Yar (Lieutenant)
+Jean-Luc Picard
+William Riker
+Data
+Beverly Crusher
+Geordi La Forge
+Worf
+Tasha Yar
 ```
 

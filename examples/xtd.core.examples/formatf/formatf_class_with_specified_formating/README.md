@@ -1,10 +1,10 @@
-# format_class_with_specified_formating
+# formatf_class_with_specified_formating
 
 Show how to use format [xtd::format](../../../../src/xtd.core/include/xtd/format.h) class.
 
 ## Sources
 
-[src/format_class_with_specified_formating.cpp](src/format_class_with_specified_formating.cpp)
+[src/formatf_class_with_specified_formating.cpp](src/formatf_class_with_specified_formating.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -19,12 +19,9 @@ xtdc run
 # Output (with colors)
 
 ```
+Jean-Luc Picard (Captain)
+Jean-Luc Picard (Captain)
 Jean-Luc Picard
-William Riker
-Data
-Beverly Crusher
-Geordi La Forge
-Worf
-Tasha Yar
+Captain
 ```
 

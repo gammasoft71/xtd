@@ -17,9 +17,6 @@ public:
     if (fmt == "R") return rank_;
     throw xtd::format_exception(caller_info_);
   }
-
-  // Only this operator is needed for character class to be recognized by format() without specified formating.
-  friend ostream& operator<<(ostream& os, const character& value) noexcept {return os << value.to_string();}
   
 private:
   string name_;
@@ -33,16 +30,16 @@ string xtd::to_string(const character& value, const string& fmt, const locale& l
 using characters = vector<character>;
 
 int main() {
-  for (auto c : characters {{"Jean-Luc Picard", "Captain"}, {"William Riker", "Commander"}, {"Data", "Commander"}, {"Beverly Crusher", "Commander"}, {"Geordi La Forge", "Lieutenant Commander"}, {"Worf", "Lieutenant Commander"}, {"Tasha Yar", "Lieutenant"}})
-    cout << format("{:N}", c) << endl;
+  character c("Jean-Luc Picard", "Captain");
+  cout << formatf("%s", c.to_string()) << endl;
+  cout << formatf("%s", c.to_string("F")) << endl;
+  cout << formatf("%s", c.to_string("N")) << endl;
+  cout << formatf("%s", c.to_string("R")) << endl;
 }
 
 // This code produces the following output :
 //
+// Jean-Luc Picard (Captain)
+// Jean-Luc Picard (Captain)
 // Jean-Luc Picard
-// William Riker
-// Data
-// Beverly Crusher
-// Geordi La Forge
-// Worf
-// Tasha Yar
+// Captain
