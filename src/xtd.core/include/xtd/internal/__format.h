@@ -24,6 +24,8 @@ inline std::basic_string<char> __formatf<char>(const char* fmt, ...) {
   va_start(args, fmt);
   vsnprintf(&formated_string[0], formated_string.size() + 1, fmt, args);
   va_end(args);
+  if (formated_string == "INF") formated_string = {'i', 'n', 'f'};
+  if (formated_string == "NAN") formated_string = {'n', 'a', 'n'};
   return formated_string;
 }
 
