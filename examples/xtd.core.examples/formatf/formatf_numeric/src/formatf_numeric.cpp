@@ -4,7 +4,6 @@ using namespace std;
 using namespace xtd;
 
 int main() {
-  locale::global(locale("en_US.UTF-8")); // change to us for currency
   cout << formatf("%i", 42) << endl;
   cout << formatf("%u", 42u) << endl;
   cout << formatf("%d", 42) << endl;
