@@ -28,10 +28,16 @@ Sat Jan  2 03:04:05 2021
 Sat Jan  2 03:04:05 2021
 Sat Jan  2 03:04:05 2021
 Sat Jan  2 03:04:05 2021
-Sat 02 Jan 21
-Saturday 2 January 2021
-02/01/21
-2/1/2021
+Sat
+Saturday
+02
+2
+Jan
+January
+01
+1
+21
+2021
 January 2
 January 2
 Saturday, 2 January 2021
