@@ -38,6 +38,6 @@ int main() {
 // 12.35
 // 0.12 %
 // 0.12 %
-// INF
-// NAN
-// NAN
+// inf
+// nan
+// nan

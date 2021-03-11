@@ -1,10 +1,10 @@
-# format_floating_point
+# formatf_floating_point
 
 Show how to use format [xtd::format](../../../../src/xtd.core/include/xtd/format.h) class.
 
 ## Sources
 
-[src/format_floating_point.cpp](src/format_floating_point.cpp)
+[src/formatf_floating_point.cpp](src/formatf_floating_point.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -19,21 +19,16 @@ xtdc run
 # Output (with colors)
 
 ```
-12.345
-$12.35
-$12.35
+12.345000
+12.345000
 1.234500e+01
 1.234500E+01
-12.35
-12.35
 12.345
 12.345
-12.35
-12.35
-0.12 %
-0.12 %
-INF
-NAN
-NAN
+0x0x1.8b0a3d70a3d71p+3
+0x0X1.8B0A3D70A3D71P+3
+inf
+nan
+nan
 ```
 
