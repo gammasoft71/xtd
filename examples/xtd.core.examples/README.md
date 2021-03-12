@@ -27,9 +27,9 @@
 * [stack_trace](diagnostics/stack_trace/README.md) shows how to use [xtd::diagnostics/stack_trace](../../src/xtd.core/include/xtd/diagnostics/stack_trace.h) class.
 * [stopwatch](diagnostics/stopwatch/README.md) shows how to use [xtd::diagnostics/stopwatch](../../src/xtd.core/include/xtd/diagnostics/stopwatch.h) class.
 
-## [Format](Format/README.md)
+## [Format](format/README.md)
 
-* [format](format/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method.
+* [format](format/format/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method.
 
 ## [Html](html/README.md)
 
