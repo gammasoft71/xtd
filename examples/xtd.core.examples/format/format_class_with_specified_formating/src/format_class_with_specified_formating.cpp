@@ -15,7 +15,7 @@ public:
     if (fmt == "F") return name_ + " (" + rank_ + ")";
     if (fmt == "N") return name_;
     if (fmt == "R") return rank_;
-    throw xtd::format_exception(caller_info_);
+    throw format_exception(caller_info_);
   }
 
   // Only this operator is needed for character class to be recognized by format() without specified formating.
