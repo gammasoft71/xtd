@@ -39,6 +39,9 @@
 * [format_duration](format/format_duration/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with durattion (sttd::chrono::duration).
 * [format_enum](format/format_enum/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with owner enum.
 * [format_enum_class](format/format_enum_class/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with owner enum class.
+* [format_exception](format/format_exception/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with exceptions (std::exception and inherited classes, xtd::system_exception and inherited classes).
+* [format_floating_point](format/format_floating_point/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with floating point (float, double and long double).
+* [format_numeric](format/format_numeric/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with numeric (int8_t, int16_t, int32_t, int64_t, uint8_t, uint16_t, uint32_t and uint64_t).
 
 ## [Html](html/README.md)
 
