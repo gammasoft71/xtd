@@ -42,6 +42,10 @@
 * [format_exception](format/format_exception/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with exceptions (std::exception and inherited classes, xtd::system_exception and inherited classes).
 * [format_floating_point](format/format_floating_point/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with floating point (float, double and long double).
 * [format_numeric](format/format_numeric/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with numeric (int8_t, int16_t, int32_t, int64_t, uint8_t, uint16_t, uint32_t and uint64_t).
+* [format_nullptr](format/format_nullptr/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with nulllptr and null.
+* [format_optional](format/format_optional/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with std::format_optional.
+* [format_pair](format/format_pair/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with std::pair.
+* [format_pointer](format/format_pointer/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with std::shared_ptr, std::unique_ptr and classic pointer.
 
 ## [Html](html/README.md)
 
