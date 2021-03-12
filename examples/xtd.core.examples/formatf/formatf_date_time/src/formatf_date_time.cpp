@@ -2,7 +2,6 @@
 #include <xtd/xtd>
 
 using namespace std;
-using namespace std::literals;
 using namespace xtd;
 
 std::string date_time_to_string(const std::string& format, const tm& tm) {

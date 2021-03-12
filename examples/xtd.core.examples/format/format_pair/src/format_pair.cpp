@@ -1,13 +1,12 @@
 #include <xtd/xtd>
 
 using namespace std;
-using namespace std::literals;
 using namespace xtd;
 
 int main() {
-  cout << formatf("%s %s %d %c", "string", "literal"s, 42, 'a') << endl;
+  cout << format("{}", make_pair(1, "one")) << endl;
 }
 
 // This code produces the following output :
 //
-// string literal 42 a
+// (1, one)
