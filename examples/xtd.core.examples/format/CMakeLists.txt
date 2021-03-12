@@ -5,6 +5,7 @@ find_package(xtd REQUIRED)
 
 add_projects(
   format
+  format_associative_containers
   format_boolean
   format_character
   format_class
@@ -13,9 +14,17 @@ add_projects(
   format_duration
   format_enum
   format_enum_class
+  format_exception
   format_floating_point
   format_numeric
+  format_nullptr
+  format_optional
+  format_pair
+  format_pointer
+  format_sequence_containers
   format_string
+  format_tuple
+  format_unordered_associative_containers
   format_with_alignment
   format_with_order
 )
