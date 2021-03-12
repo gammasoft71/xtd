@@ -36,6 +36,9 @@
 * [format_class](format/format_class/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with owner class.
 * [format_class_with_specified_formating](format/format_class_with_specified_formating/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with owner class and with specified formating args.
 * [format_date_time](format/format_date_time/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with date time (time_t, std::tm and std::chrono:system_clock::time_point).
+* [format_duration](format/format_duration/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with durattion (sttd::chrono::duration).
+* [format_enum](format/format_enum/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with owner enum.
+* [format_enum_class](format/format_enum_class/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with owner enum class.
 
 ## [Html](html/README.md)
 
