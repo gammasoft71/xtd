@@ -3,7 +3,7 @@
 [This folder](.) contains format examples used by [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/) and more.
 
 * [format](format/README.md) shows how to use [xtd::format](../../../src/xtd.core/include/xtd/format.h) method.
-* [format_associative_containersformat_associative_containers](format_associative_containers/README.md) shows how to use [xtd::format](../../../src/xtd.core/include/xtd/format.h) method with associative containers (std::set, std::multiset, sttd::map and std::multimap).
+* [format_associative_containers](format_associative_containers/README.md) shows how to use [xtd::format](../../../src/xtd.core/include/xtd/format.h) method with associative containers (std::set, std::multiset, sttd::map and std::multimap).
 * [format_boolean](format_boolean/README.md) shows how to use [xtd::format](../../../src/xtd.core/include/xtd/format.h) method with bool.
 * [format_character](format_character/README.md) shows how to use [xtd::format](../../../src/xtd.core/include/xtd/format.h) method with characters (char, wchar_t, char8_t, char16_t and char32_t).
 * [format_class](format_class/README.md) shows how to use [xtd::format](../../../src/xtd.core/include/xtd/format.h) method with owner class.
@@ -19,3 +19,7 @@
 * [format_optional](format_optional/README.md) shows how to use [xtd::format](../../../src/xtd.core/include/xtd/format.h) method with std::format_optional.
 * [format_pair](format_pair/README.md) shows how to use [xtd::format](../../../src/xtd.core/include/xtd/format.h) method with std::pair.
 * [format_pointer](format_pointer/README.md) shows how to use [xtd::format](../../../src/xtd.core/include/xtd/format.h) method with std::shared_ptr, std::unique_ptr and classic pointer.
+* [format_sequence_containers](format_asequence_containers/README.md) shows how to use [xtd::format](../../../src/xtd.core/include/xtd/format.h) method with sequence containers (std::initilizer_list, std::array, sttd::forward_list, std::list, std::deque and std::vector).
+* [format_string](format_string/README.md) shows how to use [xtd::format](../../../src/xtd.core/include/xtd/format.h) method with strings (std::string, std::wstring, std::u8string, std::u16string andstd::u32string).
+* [format_tuple](format_tuple/README.md) shows how to use [xtd::format](../../../src/xtd.core/include/xtd/format.h) method with std::tuple.
+* [format_unordered_associative_containers](format_unordered_associative_containers/README.md) shows how to use [xtd::format](../../../src/xtd.core/include/xtd/format.h) method with associative containers (std::unordered_set, std::unordered_multiset, sttd::unordered_map and std::unordered_multimap).
