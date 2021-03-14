@@ -247,7 +247,7 @@ namespace xtdc_gui {
       {"Others - lcd label 2", "represents a xtd::forms::lcd_label control.", {"xtd.forms.examples/others/lcd_label2"}},
       {"Others - painting", "demonstrates the use of xtd::forms::form, xtd::forms::panel, xtd::forms::track_bar and  xtd::forms::button controls with mouse_down, mouse_move and paint events.", {"xtd.forms.examples/others/painting"}},
       {"Others - smileys", "demonstrates the use of xtd::forms::label control.", {"xtd.forms.examples/others/smileys"}},
-      {"Others - stop watch", "demonstrates the use of xtd::forms::button, xtd::forms::label controls and xtd::forms::timer component..", {"xtd.forms.examples/others/stop_watch"}},
+      {"Others - stopwatch", "demonstrates the use of xtd::forms::button, xtd::forms::label controls and xtd::forms::timer component..", {"xtd.forms.examples/others/stopwatch_form"}},
       {"Others - system images 2", "demonstrates the use of xtd::drawing::system_images class.", {"xtd.forms.examples/others/system_images2"}},
       {"Others - system images 3", "demonstrates the use of xtd::drawing::system_images class.", {"xtd.forms.examples/others/system_images3"}},
       {"Others - system report", "shows system_repoort with xtd::forms::text_box control.", {"xtd.forms.examples/others/system_report"}},
