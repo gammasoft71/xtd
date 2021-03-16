@@ -8,7 +8,7 @@ namespace xtd {
     /// @brief Specifies the appearance of a control.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd.forms
+    /// @ingroup xtd_forms
     /// @remarks Use the members of this enumeration in controls that provide the Appearance property to set its value.
     enum class appearance {
       /// @brief The default appearance defined by the control class.

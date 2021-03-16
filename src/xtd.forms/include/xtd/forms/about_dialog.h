@@ -14,7 +14,7 @@ namespace xtd {
     /// @brief Represents a common dialog box that displays about box.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd.forms common_dialogs
+    /// @ingroup xtd_forms common_dialogs
     /// @par Example
     /// The following code example demonstrate the use of about_dialog dialog.
     /// @include about_dialog.cpp
