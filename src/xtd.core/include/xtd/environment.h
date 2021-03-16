@@ -27,6 +27,9 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The environment class.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   class core_export_ environment final static_ {
   public:
     /// @enum special_folder

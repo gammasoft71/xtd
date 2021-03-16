@@ -6,6 +6,9 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represent beep output manipulator class.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   /// @see xtd::basic_console<char_t>::beep(unsigned int frequency, unsigned int duration) method.
   class beep final {
   public:

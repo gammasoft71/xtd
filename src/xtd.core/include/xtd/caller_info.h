@@ -8,6 +8,9 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief caller_info information class is used to store current file, current line and current function information.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   /// @par Examples
   /// The following example shows how to use the caller_info
   /// @include caller_info.cpp

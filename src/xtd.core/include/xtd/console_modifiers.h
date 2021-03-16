@@ -6,6 +6,9 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents the SHIFT, ALT, and CTRL modifier keys on a keyboard.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   /// @see Console
   enum class console_modifiers {
     /// @brief The left or right ALT modifier key.

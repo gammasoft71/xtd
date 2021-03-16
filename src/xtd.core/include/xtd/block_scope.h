@@ -5,6 +5,7 @@ namespace xtd {
   /// @brief The specified expression is cleared automaticaly when the scope is ended.
   /// @par Library
   /// xtd.core
+  /// @ingroup xtd_core
   /// @par Examples
   /// @code
   /// // values is released automatically after the end closure }.

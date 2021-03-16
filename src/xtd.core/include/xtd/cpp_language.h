@@ -9,6 +9,9 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents information about c++ libraries, such as the version and langauge identifier. This class cannot be inherited.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   /// @remarks The cpp_language class contains information about c++ libraries.
   /// @remarks For information about current c++ libraries, retrieve the cpp_language object returned by the xtd::environment::cpp_language_version method.
   /// @remarks By design, the operating_system class is not a general purpose means of describing an operating system, and you cannot derive a more inclusive type from the operating_system class. If you need a type to contain other information about C++ libraries, create your own type, then include a field of typecpp_language and any additional fields or methods that you require.
