@@ -1,7 +1,7 @@
 #pragma once
 
 /// @defgroup xtd_drawing xtd.drawing
-/// @brief xtd.drawing library provides access to GDI+ basic graphics functionality.
+/// @brief The xtd.drawing library provides access to GDI+ basic graphics functionality.
 
 #include <xtd/xtd.core>
 

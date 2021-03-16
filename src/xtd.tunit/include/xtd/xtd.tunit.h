@@ -3,7 +3,7 @@
 #pragma once
 
 /// @defgroup xtd_tunit xtd.tunit
-/// @brief xtd.tunit library contains compnents needed for unit testing.
+/// @brief The xtd.tunit library contains compnents needed for unit testing.
 
 #include "abort_error.h"
 #include "assert.h"
