@@ -4,6 +4,7 @@
 #include <typeinfo>
 #include "core_export.h"
 
+/// @cond
 #if !defined(__cpp_lib_char8_t)
 class char8_t {
 public:
@@ -43,11 +44,8 @@ private:
 #endif
 
 using decimal_t = long double;
-
 using single_t = float;
-
 using ushort_t = unsigned short;
-
 using ulong_t = unsigned long;
 
 #if defined(__linux__) && defined(_LP64)
@@ -57,6 +55,7 @@ using ullong_t = unsigned long long int;
 using llong_t = long;
 using ullong_t = unsigned long;
 #endif
+/// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
