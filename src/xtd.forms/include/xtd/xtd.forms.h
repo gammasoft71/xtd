@@ -14,6 +14,12 @@
 /// @defgroup components components
 /// @brief Components are objects that an application uses in conjunction with another window.
 
+/// @defgroup common_dialogs common  dialogs
+/// @brief Common  dialogs consist of the open file, save file, open folder, find and replace, print, page setup, font, and color dialog boxes.
+
+/// @defgroup dialogs dialogs
+/// @brief Dialogs consist of the about, busy, message dialog boxes.
+
 /// @defgroup xtd_forms xtd.forms
 /// @brief The xtd.foms library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
 
