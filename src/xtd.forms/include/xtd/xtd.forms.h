@@ -17,6 +17,9 @@
 /// @defgroup dialogs dialogs
 /// @brief Dialogs consist of the about, busy, message dialog boxes.
 
+/// @defgroup events events
+/// @brief events are event args and event handler needed to response to window messages.
+
 /// @defgroup picker_controls picker  controls
 /// @brief Picker  controls are childs windows that an application uses in conjunction with another window to enable interaction with the user as a picker.
 
