@@ -49,6 +49,9 @@ namespace xtd {
   /// @endcond
   
   /// @brief The strings Caintains string operation methods.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   class core_export_ strings {
   public:
     /// @cond

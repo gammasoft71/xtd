@@ -6,6 +6,7 @@ namespace xtd {
   /// @brief Defines the entry point to be called when the application loads. Generally this is set either to the main form in your application or to the main procedure that should run when the application starts.
   /// @par Library
   /// xtd.core
+  /// @ingroup xtd_core keywords
   /// @param main_class The class that contains the static main method.
   /// @par Examples
   /// This example show a main method without arguments and without return code
@@ -19,7 +20,6 @@ namespace xtd {
   /// @par
   /// This example show a main method with argument and return code
   /// @include main4.cpp
-  /// @ingroup keywords
   #define startup_(main_class) \
     int main(int argc, char* argv[]) {\
       struct startup {\

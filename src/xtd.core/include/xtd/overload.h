@@ -4,7 +4,10 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-/// @brief Represents class that use to determine one of non const overloaded methods.
+  /// @brief Represents class that use to determine one of non const overloaded methods.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template <typename... args_t>
   struct non_const_overload {
     /// @brief Returns a pointer to an overloaded method. The template parameter is the list of the argument types of the method.
@@ -19,7 +22,10 @@ namespace xtd {
     static constexpr auto of(result_t (type_t::*method)(args_t...)) noexcept -> decltype(method) {return method;}
   };
 
-/// @brief Represents class that use to determine one of const overloaded methods.
+  /// @brief Represents class that use to determine one of const overloaded methods.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template <typename... args_t>
   struct const_overload {
     /// @brief Returns a pointer to an overloaded method. The template parameter is the list of the argument types of the method.
@@ -35,6 +41,9 @@ namespace xtd {
   };
 
   /// @brief Represents class that use to determine one of const and non const overloaded methods.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template <typename... args_t>
   struct overload : const_overload<args_t...>, non_const_overload<args_t...> {
     /// @cond
@@ -69,10 +78,19 @@ namespace xtd {
 }
 
 /// @brief Helper keyword that use to determine one of const and non const overloaded methods.
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core
 #define overload_ xtd::overload_
 
 /// @brief Helper keyword that use to determine one of const overloaded methods.
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core
 #define const_overload_ xtd::const_overload_
 
 /// @brief Helper keyword that use to determine one of non const overloaded methods.
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core
 #define non_const_overload_ xtd::non_const_overload_

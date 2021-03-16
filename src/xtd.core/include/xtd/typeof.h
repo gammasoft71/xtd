@@ -17,20 +17,19 @@ namespace xtd {
   }
   /// @endcond
 
-/// @brief Used to obtain the type string for a type. A typeof_ expression takes the following form:
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core
-/// @par Examples
-/// @code
-/// std::string type1 = typeof_<int32_t>();
-///
-/// int32_t i = 42;
-/// std::string type2 = typeof_(i);
-/// @endcode
-/// @remarks The typeof_ operator cannot be overloaded.
-/// @see System::Type
-/// @ingroup xtd_core keywords
+  /// @brief Used to obtain the type string for a type. A typeof_ expression takes the following form:
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core keywords
+  /// @par Examples
+  /// @code
+  /// std::string type1 = typeof_<int32_t>();
+  ///
+  /// int32_t i = 42;
+  /// std::string type2 = typeof_(i);
+  /// @endcode
+  /// @remarks The typeof_ operator cannot be overloaded.
+  /// @see System::Type
   #define typeof_ \
     xtd::__s__::__typeof_
 }

@@ -6,7 +6,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Provides an std::stringbuf for xtd::diagnostics::debug and xtd::diagnostics::trace.
+  /// @brief Provides an std::stringbuf for xtd::diagnostics::debug.
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core

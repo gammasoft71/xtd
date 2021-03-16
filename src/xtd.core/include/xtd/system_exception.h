@@ -14,6 +14,7 @@ namespace xtd {
   /// @brief Defines the base class for predefined exceptions in the xtd namespace.
   /// @par Library
   /// xtd.core
+  /// @ingroup xtd_core exceptions
   class core_export_ system_exception : public std::exception {
   public:
     /// @brief Optional reference wrapper on std::eception

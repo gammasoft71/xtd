@@ -6,6 +6,7 @@ namespace xtd {
   /// @brief The exception that is thrown when a feature does not run on a particular platform.
   /// @par Library
   /// xtd.core
+  /// @ingroup xtd_core exceptions
   /// @par Examples
   /// The following example demonstrates how to throw and catch an platform_not_supported_exception.
   /// @include platform_not_supported_exception.cpp

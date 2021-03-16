@@ -6,6 +6,7 @@ namespace xtd {
   /// @brief The exception that is thrown when the time allotted for a process or operation has expired.
   /// @par Library
   /// xtd.core
+  /// @ingroup xtd_core exceptions
   /// @par Examples
   /// The following example demonstrates how to throw and catch an time_out_exception.
   /// @include time_out_exception.cpp

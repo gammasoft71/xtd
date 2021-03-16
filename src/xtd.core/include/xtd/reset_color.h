@@ -6,6 +6,9 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represent reset color output manipulator class.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   /// @see xtd::basic_console<char_t>::reset_color() method.
   class reset_color final {
   public:

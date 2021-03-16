@@ -8,6 +8,9 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents information about an operating system, such as the version and platform identifier. This class cannot be inherited.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   /// @remarks The operating_system class contains information about an operating system.
   /// @remarks For information about the current runtime operating system, retrieve the operating_system object returned by the xtd::environment::os_version method.
   /// @remarks By design, the operating_system class is not a general purpose means of describing an operating system, and you cannot derive a more inclusive type from the operating_system class. If you need a type to contain other information about an operating system, create your own type, then include a field of type operating_system and any additional fields or methods that you require.

@@ -6,6 +6,7 @@ namespace xtd {
   /// @brief The exception that is thrown when an arithmetic, casting, or conversion operation in a checked context results in an underflow.
   /// @par Library
   /// xtd.core
+  /// @ingroup xtd_core exceptions
   /// @par Examples
   /// The following example demonstrates how to throw and catch an underflow_exception.
   /// @include underflow_exception.cpp
