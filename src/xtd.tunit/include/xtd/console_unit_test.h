@@ -10,6 +10,9 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @brief The console_unit_test class is console unit test interface.
+    /// @par Library
+    /// xtd.tunit
+    /// @ingroup xtd_tunit
     /// @remarks All messages are displayed on the console.
     /// @par Examples
     /// This example sho how to instanciate and launch tests witn console unit test.

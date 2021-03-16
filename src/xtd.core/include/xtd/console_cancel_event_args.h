@@ -9,7 +9,7 @@ namespace xtd {
   /// @brief Provides data for the console::cancel_key_press event. This class cannot be inherited.
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core
+  /// @ingroup xtd_core events
   /// @remarks A user can interrupt a console application process by simultaneously pressing the Control modifier key and the C console key (Ctrl+C), or the Control modifier key and the Break console key (Ctrl+Break). The console consequently provides a console_cancel_event_args object to the event handler for the console::cancel_key_press event to specify whether the process should be cancelled.
   /// @remarks If the cancel property is set to true in the event handler, the process is resumed; otherwise, the process is terminated. By default, the value of the console_cancel_event_args property is false, and the process terminates.
   class console_cancel_event_args final : public xtd::event_args {
