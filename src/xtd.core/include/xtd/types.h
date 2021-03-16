@@ -63,53 +63,53 @@ namespace xtd {
   /// @brief Represents a 8-bit unsigned integer.
   /// @par Library
   /// xtd.core
-  /// @ingroup types
+  /// @ingroup xtd_core types
   using byte = uint8_t;
   
   /// @brief Represents a 16-bit unicode character.
   /// @par Library
   /// xtd.core
-  /// @ingroup types
+  /// @ingroup xtd_core types
   using char8 = char8_t;
   
   /// @brief Represents a 8-bit unicode character.
   /// @par Library
   /// xtd.core
-  /// @ingroup types
+  /// @ingroup xtd_core types
   using char16 = char16_t;
 
   /// @brief Represents a 32-bit unicode character.
   /// @par Library
   /// xtd.core
-  /// @ingroup types
+  /// @ingroup xtd_core types
   using char32 = char32_t;
   
   /// @brief Represents a decimal-precision floating-point number.
   /// @par Library
   /// xtd.core
-  /// @ingroup types
+  /// @ingroup xtd_core types
   using decimal = decimal_t;
   
   /// @brief Represents a 16-bit signed integer.
   /// @par Library
   /// xtd.core
-  /// @ingroup types
+  /// @ingroup xtd_core types
   using int16 = int16_t;
   
   /// @brief Represents a 32-bit signed integer.
   /// @par Library
   /// xtd.core
-  /// @ingroup types
+  /// @ingroup xtd_core types
   using int32 = int32_t;
   
   /// @brief Represents a 64-bit signed integer.
   /// @par Library
   /// xtd.core
-  /// @ingroup types
+  /// @ingroup xtd_core types
   using int64 = int64_t;
   
   /// @brief Represent a pointer or a handle.
-  /// @ingroup types
+  /// @ingroup xtd_core types
   using intptr = intptr_t;
   
   /// @brief Represents a null pointer value.
@@ -121,78 +121,78 @@ namespace xtd {
   /// ...
   /// foo = null; // release the unique pointer.
   /// @endcode
-  /// @ingroup types
+  /// @ingroup xtd_core types
   extern core_export_ std::nullptr_t null;
   
   /// @brief Represents a 8-bit signed integer.
   /// @par Library
   /// xtd.core
-  /// @ingroup types
+  /// @ingroup xtd_core types
   using sbyte = int8_t;
   
   /// @brief Represents a size of any object in bytes
   /// @par Library
   /// xtd.core
-  /// @ingroup types
+  /// @ingroup xtd_core types
   using size = size_t;
   
   /// @brief Stores information about a type.
   /// @par Library
   /// xtd.core
-  /// @ingroup types
+  /// @ingroup xtd_core types
   using type = std::type_info;
   
   /// @brief Represents a 8-bit unsigned integer.
   /// @par Library
   /// xtd.core
-  /// @ingroup types
+  /// @ingroup xtd_core types
   using uchar = unsigned char;
   
   /// @brief Represents a 32-bit unsigned integer.
   /// @par Library
   /// xtd.core
-  /// @ingroup types
+  /// @ingroup xtd_core types
   using uint = unsigned int;
   
   /// @brief Represents a 16-bit unsigned integer.
   /// @par Library
   /// xtd.core
-  /// @ingroup types
+  /// @ingroup xtd_core types
   using uint16 = uint16_t;
   
   /// @brief Represents a 32-bit unsigned integer.
   /// @par Library
   /// xtd.core
-  /// @ingroup types
+  /// @ingroup xtd_core types
   using uint32 = uint32_t;
   
   /// @brief Represents a 64-bit unsigned integer.
   /// @par Library
   /// xtd.core
-  /// @ingroup types
+  /// @ingroup xtd_core types
   using uint64 = uint64_t;
   
   /// @brief Represent a pointer or a handle.
   /// @par Library
   /// xtd.core
-  /// @ingroup types
+  /// @ingroup xtd_core types
   using uintptr = uintptr_t;
   
   /// @brief Represents a 16-bit unsigned integer.
   /// @par Library
   /// xtd.core
-  /// @ingroup types
+  /// @ingroup xtd_core types
   using ushort = ushort_t;
   
   /// @brief Represents a 32-bit or 64-bit unsigned integer.
   /// @par Library
   /// xtd.core
-  /// @ingroup types
+  /// @ingroup xtd_core types
   using ulong = ulong_t;
   
   /// @brief Represents a wide character.
   /// @par Library
   /// xtd.core
-  /// @ingroup types
+  /// @ingroup xtd_core types
   using wchar = wchar_t;
 }
