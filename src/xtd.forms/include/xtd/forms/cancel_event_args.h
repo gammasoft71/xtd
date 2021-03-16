@@ -7,6 +7,9 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Provides data for a cancelable event.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms events
     /// @remarks A cancelable event is raised by a component when it is about to perform an action that can be canceled, such as the closing event of a form.
     class cancel_event_args : public event_args {
     public:
