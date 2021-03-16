@@ -16,6 +16,9 @@ namespace xtd {
     /// @ingroup xtd_forms common_dialogs
     /// @remarks The inherited member show_dialog must be invoked to create this specific common dialog box. hook_proc can be overridden to implement specific dialog box hook functionality.
     /// @remarks When you create an instance of font_dialog, some of the read/write properties are set to initial values. For a list of these values, see the font_dialog constructor.
+    /// @par Example
+    /// The following code example demonstrate the use of font_dialog dialog.
+    /// @include font_dialog.cpp
     class forms_export_ font_dialog : public common_dialog {
     public:
       /// @brief Initializes a new instance of the font_dialog class.

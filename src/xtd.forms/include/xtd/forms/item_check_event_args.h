@@ -14,6 +14,9 @@ namespace xtd {
     /// @endcond
     
     /// @brief Provides data for the item_check event of the checked_list_box and list_view controls.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms events
     /// @remarks The item_check event occurs when the checked state of an item in a checked list box changes. The item_check_event_args class specifies the index of the item to change, the current value of the check box for the item, and the new value to set for the check box.
     class item_check_event_args : public event_args {
     public:

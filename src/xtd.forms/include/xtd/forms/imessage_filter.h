@@ -6,6 +6,9 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Defines a message filter interface.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms interfaces
     /// @remarks This interface allows an application to capture a message before it is dispatched to a control or form.
     /// @remarks A class that implements the imessage_filter interface can be added to the application's message pump to filter out a message or perform other operations before the message is dispatched to a form or control. To add the message filter to an application's message pump, use the add_message_filter method in the application class.
     class imessage_filter  {
