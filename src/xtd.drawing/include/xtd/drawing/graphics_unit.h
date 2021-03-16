@@ -6,6 +6,9 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Specifies the unit of measure for the given data. This enumeration has a flags attribute that allows a bitwise combination of its member values.
+    /// @par Library
+    /// xtd.drawing
+    /// @ingroup xtd_drawing
     enum class graphics_unit {
       /// @brief Specifies the world coordinate system unit as the unit of measure.
       world = 0,

@@ -19,6 +19,9 @@ namespace xtd {
     /// @endcond
 
     /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
+    /// @par Library
+    /// xtd.drawing
+    /// @ingroup xtd_drawing
     class drawing_export_ pen final {
     public:
       /// @brief Initializes a new instance of the xtd::drawing::pen class with the specified xtd::drawing::brush.

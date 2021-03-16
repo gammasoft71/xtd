@@ -6,6 +6,9 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Specifies the known system colors.
+    /// @par Library
+    /// xtd.drawing
+    /// @ingroup xtd_drawing
     /// @see xtd::drawing::color
     enum class known_color {
       /// @brief The system-defined color of the active window's border.

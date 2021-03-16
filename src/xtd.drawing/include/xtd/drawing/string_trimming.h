@@ -6,6 +6,9 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Specifies how to trim characters from a string that does not completely fit into a layout shape.
+    /// @par Library
+    /// xtd.drawing
+    /// @ingroup xtd_drawing
     enum class string_trimming {
       /// @brief Specifies no trimming.
       none = 0,

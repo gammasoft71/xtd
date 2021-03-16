@@ -7,6 +7,9 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Encapsulates a GDI+ bitmap, which consists of the pixel data for a graphics image and its attributes. A bitmap is an object used to work with images defined by pixel data.
+    /// @par Library
+    /// xtd.drawing
+    /// @ingroup xtd_drawing
     /// @remarks To draw an image on a Windows Form, you should use one of the draw_image methods.
     class drawing_export_ bitmap : public xtd::drawing::image {
     public:

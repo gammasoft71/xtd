@@ -11,6 +11,9 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Specifies the alignment of a text string relative to its layout rectangle.
+    /// @par Library
+    /// xtd.drawing
+    /// @ingroup xtd_drawing
     /// @remarks When used with the line_alignment property, this enumeration sets the vertical alignment for a drawn string. When used with the alignment property, this enumeration sets the horizontal alignment.
     enum class string_alignment {
       /// @brief Specifies the text be aligned near the layout. In a left-to-right layout, the near position is left. In a right-to-left layout, the near position is right.

@@ -8,6 +8,9 @@ namespace xtd {
     /// @brief The xtd::drawing::text namespace provides advanced GDI+ typography functionality.
     namespace text {
       /// @brief Specifies the quality of text rendering.
+      /// @par Library
+      /// xtd.drawing
+      /// @ingroup xtd_drawing
       /// @remarks The quality ranges from text (fastest performance, but lowest quality) to antialiased text (better quality, but slower performance) to ClearType text (best quality on an LCD display).
       enum class text_rendering_hint {
         /// @brief Each character is drawn using its glyph bitmap, with the system default rendering hint. The text will be drawn using whatever font-smoothing settings the user has selected for the system.
