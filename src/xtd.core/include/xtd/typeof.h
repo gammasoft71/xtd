@@ -30,7 +30,7 @@ namespace xtd {
 /// @endcode
 /// @remarks The typeof_ operator cannot be overloaded.
 /// @see System::Type
-/// @ingroup Keywords
+/// @ingroup xtd_core keywords
   #define typeof_ \
     xtd::__s__::__typeof_
 }
