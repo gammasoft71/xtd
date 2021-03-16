@@ -18,6 +18,9 @@ namespace xtd {
       class font_collection;
     }
     /// @endcond
+    /// @par Library
+    /// xtd.drawing
+    /// @ingroup xtd_drawing
     /// @brief Defines a group of type faces having a similar basic design and certain variations in styles. This class cannot be inherited.
     class drawing_export_ font_family final {
     public:

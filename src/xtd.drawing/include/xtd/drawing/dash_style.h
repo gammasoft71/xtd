@@ -6,6 +6,9 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Specifies the style of dashed lines drawn with a xtd::drawing::pen object.
+    /// @par Library
+    /// xtd.drawing
+    /// @ingroup xtd_drawing
     /// @remarks To define a custom dash_style, set the dash_pattern property of the xtd::drawing::pen.
     enum class dash_style {
       /// @brief Specifies a solid line.

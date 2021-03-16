@@ -8,6 +8,9 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief pens for all the standard colors. This class cannot be inherited.
+    /// @par Library
+    /// xtd.drawing
+    /// @ingroup xtd_drawing
     /// @remarks The pen objects returned by this class are immutable, meaning their properties cannot be changed.
     class drawing_export_ pens final static_ {
     public:

@@ -32,6 +32,9 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
+    /// @par Library
+    /// xtd.drawing
+    /// @ingroup xtd_drawing
     class drawing_export_ graphics {
     public:
       /// @cond

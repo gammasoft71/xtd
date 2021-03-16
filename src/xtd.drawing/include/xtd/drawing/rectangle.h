@@ -12,6 +12,10 @@
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
+    /// @brief Stores a set of four integers that represent the location and size of a rectangle.
+    /// @par Library
+    /// xtd.drawing
+    /// @ingroup xtd_drawing
     class drawing_export_ rectangle {
     public:
       static const rectangle empty;

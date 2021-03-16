@@ -8,10 +8,10 @@ namespace xtd {
     /// @brief The xtd::.drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing2d {
       /// @brief SSpecifies the alignment of a xtd::drawing::pen object in relation to the theoretical, zero-width line.
-      /// @remarks A xtd::drawing::pen object has width. The center point of this pen width is aligned relative to the line being drawn depending on the alignment value. A xtd::draing::pen object can be positioned to draw inside of a line or centered over the line.
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing
+      /// @remarks A xtd::drawing::pen object has width. The center point of this pen width is aligned relative to the line being drawn depending on the alignment value. A xtd::draing::pen object can be positioned to draw inside of a line or centered over the line.
       /// @see xtd::drawing::pen
       enum class pen_alignment {
         center = 0,

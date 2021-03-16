@@ -11,7 +11,10 @@ namespace xtd {
     class point_f;
     /// @endcond
     
-    /// @brief Stores an ordered pair of integers, which specify a height and width.
+    /// @brief Stores an ordered pair of flooating-point, which specify a height and width.
+    /// @par Library
+    /// xtd.drawing
+    /// @ingroup xtd_drawing
     class drawing_export_ size_f {
     public:
       /// @brief Gets a Size class that has a Height and Width value of 0. This field is constant.

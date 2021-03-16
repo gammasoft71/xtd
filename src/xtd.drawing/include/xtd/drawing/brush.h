@@ -14,6 +14,9 @@ namespace xtd {
     /// @endcond
 
     /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
+    /// @par Library
+    /// xtd.drawing
+    /// @ingroup xtd_drawing
     class drawing_export_ brush {
     public:
       //static const brush null;

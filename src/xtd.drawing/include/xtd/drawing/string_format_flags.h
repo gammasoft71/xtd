@@ -6,6 +6,9 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Specifies the display and layout information for text strings. This enumeration  allows a bitwise combination of its member values.
+    /// @par Library
+    /// xtd.drawing
+    /// @ingroup xtd_drawing
     enum class string_format_flags {
       /// @brief Text is displayed from right to left. text.
       direction_right_to_left = 0b1,
