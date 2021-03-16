@@ -6,6 +6,9 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Specifies the appearance of a control.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd.forms
     /// @remarks Use the members of this enumeration in controls that provide the Appearance property to set its value.
     enum class appearance {
       /// @brief The default appearance defined by the control class.

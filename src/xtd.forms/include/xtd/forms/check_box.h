@@ -9,6 +9,9 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a Windows check_box.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd.forms common_controls
     /// @remarks Use a check_box to give the user an option, such as true/false or yes/no. The check_box control can display an image or text or both.
     /// @remarks check_box and radio_button controls have a similar function: they allow the user to choose from a list of options. check_box controls let the user pick a combination of options. In contrast, radio_button controls allow a user to choose from mutually exclusive options.
     /// @remarks The appearance property determines whether the check_box appears as a typical check_box or as a button.
