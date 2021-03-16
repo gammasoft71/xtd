@@ -32,7 +32,6 @@ add_sources(
   include/xtd/file_valid.h
   include/xtd/ignore_error.h
   include/xtd/line_info.h
-  include/xtd/main_page.h
   include/xtd/ostream_event_listener.h
   include/xtd/ostream_unit_test.h
   include/xtd/settings.h

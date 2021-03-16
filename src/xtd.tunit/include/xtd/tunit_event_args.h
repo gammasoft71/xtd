@@ -11,6 +11,9 @@ namespace xtd {
     /// @endcond
     
     /// @brief tunit_event_args is the base class for classes containing event data.
+    /// @par Library
+    /// xtd.tunit
+    /// @ingroup xtd_tunit events
     class tunit_event_args {
     public:
       /// @brief Create a new instance of class tunit_event_args

@@ -11,6 +11,9 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @brief The settings class contains xtd.tunit settings.
+    /// @par Library
+    /// xtd.tunit
+    /// @ingroup xtd_tunit
     class tunit_export_ settings final {
     public:
       /// @brief Creates new instance of settings.

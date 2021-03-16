@@ -9,6 +9,9 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @brief Exception thow when ignore.
+    /// @par Library
+    /// xtd.tunit
+    /// @ingroup xtd_tunit exceptions
     class ignore_error : public std::exception {
     public:
       /// @brief Create a new instance of ignore_error class.
