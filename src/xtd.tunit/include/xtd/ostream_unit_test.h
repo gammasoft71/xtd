@@ -10,6 +10,9 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @brief The ostream_unit_test class is ostream unit test interface.
+    /// @par Library
+    /// xtd.tunit
+    /// @ingroup xtd_tunit
     /// @remarks All messages are writting on the specified ostream.
     class ostream_unit_test : public xtd::tunit::unit_test {
     public:

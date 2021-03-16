@@ -10,6 +10,9 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @brief Represent the event listener class. Unit test call theses events when unit tests are processing.
+    /// @par Library
+    /// xtd.tunit
+    /// @ingroup xtd_tunit
     /// @remarks Override this class for create your own event listener.
     /// @par Examples
     /// The follow example shows how to create your own listener event for simulate gtest output.

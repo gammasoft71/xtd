@@ -23,6 +23,9 @@ namespace xtd {
     /// @endcond
 
     /// @brief The template class.
+    /// @par Library
+    /// xtd.tunit
+    /// @ingroup xtd_tunit
     class tunit_export_ unit_test {
     public:
       explicit unit_test(std::unique_ptr<xtd::tunit::event_listener> event_listener) noexcept;

@@ -10,6 +10,9 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @brief The ostream_unit_test class is a specialisation of event_listener class for writing events in std::ostream.
+    /// @par Library
+    /// xtd.tunit
+    /// @ingroup xtd_tunit
     /// @remarks This class is use by console_unit_test.
     /// @remarks you can use this class as you want as for example communicate between network.
     /// @par Examples

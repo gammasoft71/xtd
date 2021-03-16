@@ -9,6 +9,10 @@
 namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
+    /// @brief Represents the registered test class.
+    /// @par Library
+    /// xtd.tunit
+    /// @ingroup xtd_tunit
     class registered_test_class final {
     public:
       registered_test_class(const std::string& name, std::shared_ptr<xtd::tunit::test_class> test_class) noexcept : tc_(test_class) {tc_->name_ = name;}
