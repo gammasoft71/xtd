@@ -6,6 +6,9 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Provides a common implementation of members for the list_box and combo_box classes.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms
     /// @remarks The list_control class provides implementations of common elements for the list_box and combo_box controls.
     /// @remarks The following properties are of primary concern to users of a data-bound list_box or combo_box: data_source, display_member, selected_value, and value_member properties.
     class forms_export_ list_control : public control {

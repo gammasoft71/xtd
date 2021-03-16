@@ -11,6 +11,9 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms common_dialogs
+    /// @par Example
+    /// The following code example demonstrate the use of folder_browser_dialog dialog.
+    /// @include folder_browser_dialog.cpp
     class forms_export_ folder_browser_dialog final : public common_dialog {
     public:
       folder_browser_dialog() = default;

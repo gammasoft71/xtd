@@ -4,7 +4,10 @@
 namespace xtd {
   namespace forms {
     /// @brief represent a nine segment display class
-    class nine_segment_display : public seven_segment_display {
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms controls
+class nine_segment_display : public seven_segment_display {
     public:
       nine_segment_display() = default;
 

@@ -6,6 +6,9 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Specifies the known system colors.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms
     /// @see xtd::drawing::color
     enum class known_themed_color {
       /// @brief The system-defined color of the accent color (macos specific. On other platform is same as menu_highlight).

@@ -6,6 +6,9 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Specifies how a form window is displayed.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms
     /// @remarks This enumeration is used by the form class. It represents the different states of the form. The default state is normal.
     enum class form_window_state {
       /// @brief A default sized window.

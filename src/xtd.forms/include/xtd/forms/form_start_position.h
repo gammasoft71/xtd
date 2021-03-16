@@ -6,6 +6,9 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Specifies the initial position of a form.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms
     /// @remarks This enumeration is used by the start_position property of the form class. It represents the different start positions of the form. The default start position is windows_default_location.
     enum class form_start_position {
       /// @brief The position of the form is determined by the Location property.

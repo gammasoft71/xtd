@@ -17,6 +17,9 @@ namespace xtd {
     /// @endcond
 
     /// @brief Represents the base functionality for all menus. Although tool_strip_drop_down and tool_strip_drop_down_menu replace and add functionality to the menu control of previous versions, menu is retained for both backward compatibility and future use if you choose.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms
     /// @remarks This class is the base class for the main_menu, menu_item, and context_menu classes. You cannot create an instance of this class. The menus for an application consist of menu_item objects. These can contain other menu_item objects, representing submenu items. The menu_item objects can be stored in a main_menu for display as an entire menu structure for a form or a context_menu that is used to display shortcut menus. This class provides functionality that is common for all the menu classes.
     /// @remarks Unlike many base classes, the menu class uses its derived classes to define many of its properties. If you are using your menu in a multiple-document interface (MDI) application, you can use the mdi_list_item property to specify a menu_item that displays a list of open MDI child forms in your application. The menu_items property contains a list of menu_item objects stored in the menu class. For a main_menu or context_menu, this property contains all the menu_item objects that are displayed. For a menu_item, the menu_items property represents the submenu items associated with it.
     /// @remarks In addition to the properties that are provided for all the derived menu classes, the menu class also provides methods, such as clone_menu and merge_menu, that enable you to create new menus from existing menus, and also merge two menu structures together.
