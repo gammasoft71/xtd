@@ -7,7 +7,11 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    class forms_export_ folder_browser_dialog : public common_dialog {
+    /// @brief Prompts the user to select a folder. This class cannot be inherited.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms common_dialogs
+    class forms_export_ folder_browser_dialog final : public common_dialog {
     public:
       folder_browser_dialog() = default;
       

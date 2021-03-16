@@ -8,7 +8,7 @@ namespace xtd {
     /// @brief Provides focus-management functionality for controls that can function as a container for other controls.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms container_controls
+    /// @ingroup xtd_forms
     /// @remarks A container_control represents a control that can function as a container for other controls and provides focus management. Controls that inherit from this class can track the active control they contain, even when the focus moves somewhere within a different container.
     /// @remarks container_control objects provide a logical boundary for contained controls. The container control can capture the TAB key press and move focus to the next control in the collection.
     /// @note The container control does not receive focus; the focus is always set to the first child control in the collection of contained controls.

@@ -6,6 +6,9 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Specifies the date and time format the date_time_picker control displays.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms
     /// @remarks This enumeration is used by members such as date_time_picker::format.
     enum class date_time_picker_format {
       /// @brief The date_time_picker control displays the date/time value in the long date format set by the user's operating system.
