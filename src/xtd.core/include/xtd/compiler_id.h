@@ -5,6 +5,9 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Identifies the compiler, supported by an assembly.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   /// @see compileer
   enum class compiler_id {
     /// @brief The compiler is unknown.

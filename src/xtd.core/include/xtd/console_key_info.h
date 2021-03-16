@@ -9,6 +9,9 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Specifies the standard keys on a console.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   /// @see Console
   class console_key_info final {
   public:
