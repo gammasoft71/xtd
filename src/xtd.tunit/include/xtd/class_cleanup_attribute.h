@@ -30,7 +30,7 @@ namespace xtd {
 
 /// @brief add cleaup class method to class test.
 /// @param method_name cleanup class method to add.
-/// @ingroup tunit
+/// @ingroup xtd_tunit
 #define class_cleanup_(method_name) \
   __##method_name##_static() {} \
   class __class_cleanup_attribute : public xtd::tunit::class_cleanup_attribute { \

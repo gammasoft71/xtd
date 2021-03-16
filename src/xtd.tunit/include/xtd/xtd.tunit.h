@@ -2,8 +2,8 @@
 /// @brief Contains xtd::tunit::unit_test class.
 #pragma once
 
-/// @defgroup tunit tunit
-/// @brief tunit unit test library
+/// @defgroup xtd_tunit xtd.tunit
+/// @brief xtd.tunit library contains compnents needed for unit testing.
 
 #include "abort_error.h"
 #include "assert.h"
