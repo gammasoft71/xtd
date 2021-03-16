@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::strings class.
+/// @brief xtd.core library header.
 #pragma once
 
 /// @defgroup keywords keywords

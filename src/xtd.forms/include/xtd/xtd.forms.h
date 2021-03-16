@@ -1,4 +1,19 @@
+/// @file
+/// @brief xtd.forms library header.
 #pragma once
+
+/// @defgroup common_controls common  controls
+/// @brief Common  controls are childs windows that an application uses in conjunction with another window to enable interaction with the user.
+
+/// @defgroup picker_controls picker  controls
+/// @brief Picker  controls are childs windows that an application uses in conjunction with another window to enable interaction with the user as a picker.
+
+/// @defgroup container_controls container  controls
+/// @brief Container  controls are  container for other controls.
+
+/// @defgroup xtd_forms xtd.forms
+/// @brief xtd.foms library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
+
 #include <xtd/xtd.core>
 #include <xtd/xtd.drawing>
 #include <xtd/forms/create_params.h>
