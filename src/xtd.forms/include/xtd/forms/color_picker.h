@@ -13,7 +13,7 @@ namespace xtd {
     /// @remarks When you create an instance of color_dialog, some of the read/write properties are set to initial values. For a list of these values, see the color_dialog constructor.
     /// @par Example
     /// The following code example demonstrate the use of color_dialog dialog.
-    /// @include color_dialog.cpp
+    /// @include color_picker.cpp
     class forms_export_ color_picker : public control {
     public:
       color_picker();
