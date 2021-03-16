@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::cursor](../../../../src/xtd_forms/include/x
 
 # Sources
 
-[src/cursors.cpp](src/cursor.cpp)
+[src/cursors.cpp](src/cursors.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
