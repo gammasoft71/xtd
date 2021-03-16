@@ -6,6 +6,7 @@ namespace xtd {
   /// @brief The exception that is thrown when an attempts to exceed implementation defined length limits for some object.
   /// @par Library
   /// xtd.core
+  /// @ingroup xtd_core
   /// @par Examples
   /// The following example demonstrates how to throw and catch an length_exception.
   /// @include length_exception.cpp

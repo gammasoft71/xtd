@@ -6,6 +6,7 @@ namespace xtd {
   /// @brief The exception that is thrown when a method call is invalid for the object's current state.
   /// @par Library
   /// xtd.core
+  /// @ingroup xtd_core
   /// @par Examples
   /// The following example demonstrates how to throw and catch an invalid_operation_exception.
   /// @include invalid_operation_exception.cpp

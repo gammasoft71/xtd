@@ -8,6 +8,9 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Immutable basic_string<char_t>
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<class char_t, class char_traits_t = std::char_traits<char_t>, class allocator_t = std::allocator<char_t>>
   class immutable_basic_string : public std::basic_string<char_t, char_traits_t, allocator_t> {
   public:
@@ -220,18 +223,30 @@ namespace xtd {
   }
 
   /// @brief Immutable string<char_t>
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   /// @remarks It can be replaced by const std::string<char_t>.
   using istring = immutable_basic_string<char, std::char_traits<char>>;
 
   /// @brief Immutable u16string<char_t>
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   /// @remarks It can be replaced by const std::u16string<char_t>.
   using iu16string = immutable_basic_string<char16_t, std::char_traits<char16_t>>;
 
   /// @brief Immutable u32string<char_t>
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   /// @remarks It can be replaced by const std::u32string<char_t>.
   using iu32string = immutable_basic_string<char32_t, std::char_traits<char32_t>>;
 
   /// @brief Immutable wstring<char_t>
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   /// @remarks It can be replaced by const std::wstring<char_t>.
   using iwstring = immutable_basic_string<wchar_t, std::char_traits<wchar_t>>;
 }

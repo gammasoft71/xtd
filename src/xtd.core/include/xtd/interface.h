@@ -7,6 +7,7 @@ namespace xtd {
   /// @brief Represent an interface class.
   /// @par Library
   /// xtd.core
+  /// @ingroup xtd_core
   /// @par Examples
   /// @code
   /// class istringable : public interface {
