@@ -11,6 +11,9 @@
 /// @defgroup container_controls container  controls
 /// @brief Container  controls are  container for other controls.
 
+/// @defgroup components components
+/// @brief Components are objects that an application uses in conjunction with another window.
+
 /// @defgroup xtd_forms xtd.forms
 /// @brief The xtd.foms library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
 

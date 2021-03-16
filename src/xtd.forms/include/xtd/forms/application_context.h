@@ -10,6 +10,9 @@ namespace xtd {
     /// @endcond
     
     /// @brief Specifies the contextual information about an application thread.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms
     /// @remarks You can use the application_context class to redefine the circumstances that cause a message loop to exit. By default, the application_context listens to the closed event on the application's main form, then exits the thread's message loop.
     /// @par Example
     /// The following code example demonstrate the use of application and application_context classes.

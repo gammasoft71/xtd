@@ -12,6 +12,9 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Executes an operation on a separate thread.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms components
     /// @remarks The background_worker class allows you to run an operation on a separate, dedicated thread. Time-consuming operations like downloads and database transactions can cause your user interface (UI) to seem as though it has stopped responding while they are running. When you want a responsive UI and you are faced with long delays associated with such operations, the background_worker class provides a convenient solution.
     /// @remarks To execute a time-consuming operation in the background, create a background_worker and listen for events that report the progress of your operation and signal when your operation is finished.
     /// @remarks To set up for a background operation, add an event handler for the do_work event. Call your time-consuming operation in this event handler. To start the operation, call run_worker_async. To receive notifications of progress updates, handle the progress_changed event. To receive a notification when the operation is completed, handle the run_worker_completed event.
