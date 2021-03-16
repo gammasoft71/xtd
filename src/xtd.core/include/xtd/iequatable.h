@@ -6,6 +6,9 @@
 namespace xtd {
   template<typename type_t>
   /// @brief Defines a generalized method that a value type or class implements to create a type-specific method for determining equality of instances.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   /// @remarks This interface is implemented by types whose values can be equated (for example, the numeric and string classes). A value type or class implements the equals method to create a type-specific method suitable for determining equality of instances.
   /// @remarks The icomparable<T> interface defines the compare_to method, which determines the sort order of instances of the implementing type. The iequatable<T> interface defines the equals method, which determines the equality of instances of the implementing type.
   class iequatable interface_ {

@@ -6,6 +6,7 @@ namespace xtd {
   /// @brief The exception that is thrown when the format of an argument does not meet the parameter specifications of the invoked method.
   /// @par Library
   /// xtd.core
+  /// @ingroup xtd_core
   /// @par Examples
   /// The following example demonstrates how to throw and catch an format_exception.
   /// @include format_exception.cpp

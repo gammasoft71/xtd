@@ -7,6 +7,9 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   /// @param fmt A composite format string.
   /// @param args anarguments list to write using format.
   /// @return string formated.
@@ -20,6 +23,9 @@ namespace xtd {
   /// @endcond
 
   /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   /// @param fmt A composite format string.
   /// @param args anarguments list to write using format.
   /// @return string formated.
