@@ -6,7 +6,7 @@ namespace xtd {
   /// @brief The exception that is thrown when there is a syntax error in XML parsing
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core exceptioons
+  /// @ingroup xtd_core exceptions
   /// @par Examples
   /// The following example demonstrates how to throw and catch an xml_syntax_exception.
   /// @include xml_syntax_exception.cpp
