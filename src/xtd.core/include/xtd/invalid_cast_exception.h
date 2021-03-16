@@ -6,7 +6,7 @@ namespace xtd {
   /// @brief The exception that is thrown for invalid casting or explicit conversion.
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core
+  /// @ingroup xtd_core exceptions
   /// @par Examples
   /// The following example demonstrates how to throw and catch an invalid_cast_exception.
   /// @include invalid_cast_exception.cpp

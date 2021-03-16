@@ -6,7 +6,9 @@
 namespace xtd {
   /// @brief Determines the styles permitted in numeric string arguments that are passed to the xtd::parse and xtd::try_parse methods of the integral and floating-point numeric types.
   /// This enumeration has a flags attribute that allows a bitwise combination of its member values.
-  ///
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   enum class number_styles {
     /// @brief Indicates that no style elements, such as leading or trailing white space, thousands separators, or a decimal separator, can be present in the parsed string. The string to be parsed must consist of integral decimal digits only.
     none = 0x0,

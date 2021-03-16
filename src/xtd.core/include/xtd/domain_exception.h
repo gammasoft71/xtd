@@ -6,7 +6,7 @@ namespace xtd {
   /// @brief The exception that is thrown for errors in domain. That is, situations where the inputs are outside of the domain on which an operation is defined..
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core
+  /// @ingroup xtd_core exceptions
   /// @par Examples
   /// The following example demonstrates how to throw and catch an domain_exception.
   /// @include domain_exception.cpp

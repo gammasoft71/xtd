@@ -6,6 +6,7 @@ namespace xtd {
   /// @brief The exception that is thrown when there is an attempt to dereference a null object pointer.
   /// @par Library
   /// xtd.core
+  /// @ingroup xtd_core exceptions
   /// @par Examples
   /// The following example demonstrates how to throw and catch an null_pointer_exception.
   /// @include null_pointer_exception.cpp

@@ -6,7 +6,7 @@ namespace xtd {
   /// @brief The exception that is thrown when a requested method or operation is not implemented.
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core
+  /// @ingroup xtd_core exceptions
   /// @par Examples
   /// The following example demonstrates how to throw and catch an not_implemented_exception.
   /// @include not_implemented_exception.cpp

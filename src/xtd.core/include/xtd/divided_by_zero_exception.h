@@ -6,7 +6,7 @@ namespace xtd {
   /// @brief The exception that is thrown when there is an attempt to divide an integral or decimal value by zero.
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core
+  /// @ingroup xtd_core exceptions
   /// @par Examples
   /// The following example demonstrates how to throw and catch an divided_by_zero_exception.
   /// @include divided_by_zero_exception.cpp

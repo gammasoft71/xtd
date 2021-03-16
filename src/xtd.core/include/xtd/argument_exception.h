@@ -6,7 +6,7 @@ namespace xtd {
   /// @brief The exception that is thrown when one of the arguments provided to a method is not valid.
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core
+  /// @ingroup xtd_core exceptions
   /// @par Examples
   /// The following example demonstrates how to throw and catch an argument_exception.
   /// @include argument_exception.cpp

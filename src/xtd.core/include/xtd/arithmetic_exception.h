@@ -6,7 +6,7 @@ namespace xtd {
   /// @brief The exception that is thrown for errors in an arithmetic, casting, or conversion operation.
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core
+  /// @ingroup xtd_core exceptions
   /// @par Examples
   /// The following example demonstrates how to throw and catch an arithmetic_exception.
   /// @include arithmetic_exception.cpp

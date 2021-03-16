@@ -6,7 +6,7 @@ namespace xtd {
   /// @brief The exception that is thrown when a floating-point value is positive infinity, negative infinity, or Not-a-Number (NaN).
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core
+  /// @ingroup xtd_core exceptions
   /// @par Examples
   /// The following example demonstrates how to throw and catch an not_finite_number_exception.
   /// @include not_finite_number_exception.cpp
