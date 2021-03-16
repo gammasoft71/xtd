@@ -13,6 +13,9 @@ namespace xtd {
   /// @endcond
 
     /// @brief Displays a dialog box from which the user can select a file.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms
     /// @remarks file_dialog is an abstract class that contains common behavior for the open_file_dialog and save_file_dialog classes. It is not intended to be used directly but contains common behavior for those two classes. You cannot create an instance of file_dialog. Although the class is declared public, you cannot inherit from it, as it contains private abstract methods. To create a dialog box to select or save a file, use open_file_dialog or save_file_dialog.
     /// @remarks file_dialog is a modal dialog box; therefore, when shown, it blocks the rest of the application until the user has chosen a file. When a dialog box is displayed modally, no input (keyboard or mouse click) can occur except to objects on the dialog box. The program must hide or close the dialog box (usually in response to some user action) before input to the calling program can occur.
     /// @warning When you use classes derived from file_dialog, such as open_file_dialog and save_file_dialog, avoid using string literals containing absolute paths. Instead, dynamically obtain the path using one or more of the techniques described in the following table.

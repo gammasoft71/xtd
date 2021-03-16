@@ -8,6 +8,9 @@
 namespace xtd {
   namespace forms {
     /// @brief represent a dot matrix display class
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms controls
     class dot_matrix_display : public control {
     public:
       using dot = drawing::point;

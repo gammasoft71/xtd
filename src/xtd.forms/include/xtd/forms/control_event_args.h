@@ -12,6 +12,9 @@ namespace xtd {
     /// @endcond
 
     /// @brief Provides data for the control_added and control_removed events.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms events
     class control_event_args : public event_args {
     public:
       /// @cond

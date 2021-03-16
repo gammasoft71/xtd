@@ -11,6 +11,9 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Prompts the user to choose a font from among those installed on the local computer.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms common_dialogs
     /// @remarks The inherited member show_dialog must be invoked to create this specific common dialog box. hook_proc can be overridden to implement specific dialog box hook functionality.
     /// @remarks When you create an instance of font_dialog, some of the read/write properties are set to initial values. For a list of these values, see the font_dialog constructor.
     class forms_export_ font_dialog : public common_dialog {
