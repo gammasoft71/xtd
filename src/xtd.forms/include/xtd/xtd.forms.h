@@ -23,6 +23,9 @@
 /// @defgroup picker_controls picker  controls
 /// @brief Picker  controls are childs windows that an application uses in conjunction with another window to enable interaction with the user as a picker.
 
+/// @defgroup menus_and_toolbars   menus and toolbars
+/// @brief  menus and toolbars definitions.
+
 /// @defgroup xtd_forms xtd.forms
 /// @brief The xtd.foms library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
 
