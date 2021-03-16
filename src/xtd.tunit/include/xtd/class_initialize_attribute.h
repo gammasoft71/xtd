@@ -8,6 +8,9 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @brief This attribute is use to add initialize class method to class test attribute.
+    /// @par Library
+    /// xtd.tunit
+    /// @ingroup xtd_tunit
     class class_initialize_attribute {
     public:
       /// @brief Creates new instance of classinitialize_attribute attribute.
@@ -30,6 +33,8 @@ namespace xtd {
 
 /// @brief add initialize class method to class test.
 /// @param method_name cleanup class method to add.
+/// @par Library
+/// xtd.tunit
 /// @ingroup xtd_tunit
 #define class_initialize_(method_name) \
   __##method_name##_static() {} \

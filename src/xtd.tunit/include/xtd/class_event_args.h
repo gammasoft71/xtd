@@ -9,6 +9,9 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @brief Provides data for the xtd::tunit::class_test events.
+    /// @par Library
+    /// xtd.tunit
+    /// @ingroup xtd_tunit events
     class class_event_args : public xtd::tunit::tunit_event_args {
     public:
       /// @brief Create a new instance of class class_event_args.
