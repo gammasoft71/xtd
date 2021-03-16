@@ -25,7 +25,7 @@ namespace xtd {
   ///   }
   /// }
   /// @endcode
-  /// @ingroup Keywords
+  /// @ingroup xtd_core keywords
   #define nameof_(...) \
   std::string(#__VA_ARGS__)
 }
