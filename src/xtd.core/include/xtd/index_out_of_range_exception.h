@@ -6,7 +6,7 @@ namespace xtd {
   /// @brief The exception that is thrown when an attempt is made to access an element of an array with an index that is outside the bounds of the array.
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core
+  /// @ingroup xtd_core exceptions
   /// @par Examples
   /// The following example demonstrates how to throw and catch an index_out_of_range_exception.
   /// @include index_out_of_range_exception.cpp

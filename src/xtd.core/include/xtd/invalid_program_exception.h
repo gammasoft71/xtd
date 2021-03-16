@@ -6,7 +6,7 @@ namespace xtd {
   /// @brief The exception that is thrown when a program contains invalid metadata. Generally this indicates a bug in the compiler that generated the program.
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core
+  /// @ingroup xtd_core exceptions
   /// @par Examples
   /// The following example demonstrates how to throw and catch an invalid_program_exception.
   /// @include invalid_program_exception.cpp
