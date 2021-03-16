@@ -8,6 +8,9 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Specifies the levels of trace messages filtered by the source switch and event type filter. This enumeration has a flags attribute that allows a bitwise combination of its member values.
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core
     /// @remarks The source levels identify the trace_event_type events that are to be traced. The source_switch class uses the source_levels enumeration to define the event level of the trace message to use for filtering messages to send to the trace listener.
     enum class source_levels {
       /// @brief Allows all events through.

@@ -8,6 +8,7 @@ namespace xtd {
     /// @brief The exception that is thrown when reading is attempted past the end of a stream.
     /// @par Library
     /// xtd.core
+    /// @ingroup xtd_core exceptions
     /// @par Examples
     /// The following example demonstrates how to throw and catch an end_of_stream_exception.
     /// @include end_of_stream_exception.cpp

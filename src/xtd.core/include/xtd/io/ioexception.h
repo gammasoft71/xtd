@@ -8,6 +8,7 @@ namespace xtd {
     /// @brief The exception that is thrown when an I/O error occurs.
     /// @par Library
     /// xtd.core
+    /// @ingroup xtd_core exceptions
     /// @par Examples
     /// The following example demonstrates how to throw and catch an ioexception.
     /// @include ioexception.cpp

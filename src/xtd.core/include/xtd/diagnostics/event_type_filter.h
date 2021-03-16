@@ -9,6 +9,9 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Indicates whether a listener should trace based on the event type.
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core
     /// @remarks One of several different types of filters can be assigned to a trace listener through the filter property to provide a layer of screening beyond that provided by the trace_switch. The filter can be used to control the event types that are produced by the listener.
     /// @remarks This class filters events based on the value of the event_type property. This property can be set by code to specify the event type of messages that should be traced by the listener. The value of the property indicates the threshold at which to begin tracing. Event types at and above the specified level are traced. The should_trace method, called by listeners to determine if an event should be traced, uses the value of the event_type property.
     class event_type_filter : public xtd::diagnostics::trace_filter {

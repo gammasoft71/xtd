@@ -15,6 +15,9 @@ namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief Provides static methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of std::basic_ftream objects.
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core
     class core_export_ file {
     public:
       /// @cond

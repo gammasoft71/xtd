@@ -8,6 +8,7 @@ namespace xtd {
     /// @brief The exception that is thrown when a path or file name is longer than the system-defined maximum length.
     /// @par Library
     /// xtd.core
+    /// @ingroup xtd_core exceptions
     /// @par Examples
     /// The following example demonstrates how to throw and catch an path_too_long_exception.
     /// @include path_too_long_exception.cpp

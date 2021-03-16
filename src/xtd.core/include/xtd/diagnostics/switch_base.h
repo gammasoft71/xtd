@@ -12,6 +12,9 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Provides an abstract base class to create new debugging and tracing switches.
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core
     /// @remarks A switch provides an efficient mechanism for controlling tracing and debugging output at run time using external settings. The switch_base class implements default behavior for switches, allowing you to change the switch level at run time.
     /// @remarks This class is the base class for the boolean_switch, source_switch and the trace_switch classes. These switches meet most debugging and tracing needs.
     /// @par Notes to implementers

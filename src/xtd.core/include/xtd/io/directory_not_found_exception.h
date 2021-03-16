@@ -8,6 +8,7 @@ namespace xtd {
     /// @brief The exception that is thrown when part of a file or directory cannot be found.
     /// @par Library
     /// xtd.core
+    /// @ingroup xtd_core exceptions
     /// @par Examples
     /// The following example demonstrates how to throw and catch an directory_not_found_exception.
     /// @include directory_not_found_exception.cpp
