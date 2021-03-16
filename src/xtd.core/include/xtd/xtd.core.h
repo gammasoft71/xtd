@@ -2,14 +2,17 @@
 /// @brief xtd.core library header.
 #pragma once
 
+/// @defgroup exceptions exceptions
+/// @brief Exceptions classes.
+
 /// @defgroup keywords keywords
 /// @brief Keywords are predefined, reserved identifiers that have special meanings to the compiler.
 
-/// @defgroup types types
-/// @brief Types definitions
-
 /// @defgroup literals literals
 /// @brief Literals Allows integer, floating-point, character, and string literals to produce objects.
+
+/// @defgroup types types
+/// @brief Types definitions
 
 /// @defgroup xtd_core xtd.core
 /// @brief The xtd.core library contains all fundamental classes to access Hardware, Os, System, and more.
