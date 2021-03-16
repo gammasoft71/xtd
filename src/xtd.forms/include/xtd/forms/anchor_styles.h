@@ -8,7 +8,7 @@ namespace xtd {
     /// @brief Specifies how a control anchors to the edges of its container.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd.forms
+    /// @ingroup xtd_forms
     /// @remarks This enumeration has a flags  attribute that allows a bitwise combination of its member values.
     /// @remarks When a control is anchored to an edge of its container, the distance between the control and the specified edge remains constant when the container resizes. For example, if a control is anchored to the right edge of its container, the distance between the right edge of the control and the right edge of the container remains constant when the container resizes. A control can be anchored to any combination of control edges. If the control is anchored to opposite edges of its container (for example, to the top and bottom), it resizes when the container resizes. If a control has its anchor property set to none, the control moves half of the distance that the container of the control is resized. For example, if a button has its anchor property set to none and the form that the control is located on is resized by 20 pixels in either direction, the button will be moved 10 pixels in both directions.
     enum class anchor_styles {

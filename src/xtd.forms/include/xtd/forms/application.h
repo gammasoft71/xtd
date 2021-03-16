@@ -24,14 +24,14 @@ namespace xtd {
     /// @brief Represents a collection of form objects.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd.forms
+    /// @ingroup xtd_forms
     /// @remarks form_collection is used by the application object to list the currently open forms in an application through the open_forms property.
     using form_collection = std::vector<std::reference_wrapper<form>>;
     
     /// @brief Provides static methods and properties to manage an application, such as methods to start and stop an application, to process Windows messages, and methods to get information about an application. This class cannot be inherited.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd.forms
+    /// @ingroup xtd_forms
     /// @remarks The application class has methods to start and stop applications and threads, and to process Windows messages, as follows:
     /// * run() starts an application message loop on the current thread and, optionally, makes a form visible.
     /// * exit() or exit_thread() stops a message loop.
