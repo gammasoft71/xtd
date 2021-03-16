@@ -4,7 +4,6 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @interface IComparable
   /// @brief Defines a generalized comparison method that a value type or class implements to create a type-specific comparison method.
   /// @par Library
   /// xtd.core
