@@ -8,6 +8,7 @@ namespace xtd {
     /// @brief The exception that is thrown when an attempt to access a file that does not exist on disk fails.
     /// @par Library
     /// xtd.core
+    /// @ingroup xtd_core exceptions
     /// @par Examples
     /// The following example demonstrates how to throw and catch an file_not_found_exception.
     /// @include file_not_found_exception.cpp

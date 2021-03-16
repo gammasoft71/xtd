@@ -8,6 +8,7 @@ namespace xtd {
     /// @brief The exception that is thrown when trying to access a drive or share that is not available.
     /// @par Library
     /// xtd.core
+    /// @ingroup xtd_core exceptions
     /// @par Examples
     /// The following example demonstrates how to throw and catch an drive_not_found_exception.
     /// @include drive_not_found_exception.cpp

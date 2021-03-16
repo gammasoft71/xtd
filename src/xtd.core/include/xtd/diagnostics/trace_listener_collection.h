@@ -9,6 +9,10 @@
 namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
+    /// @brief Represents a collection of trace_listener.
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core
     using trace_listener_collection = std::vector<std::shared_ptr<trace_listener>>;
   }
 }

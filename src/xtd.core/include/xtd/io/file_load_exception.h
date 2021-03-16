@@ -8,6 +8,7 @@ namespace xtd {
     /// @brief The exception that is thrown when a managed assembly is found but cannot be loaded.
     /// @par Library
     /// xtd.core
+    /// @ingroup xtd_core exceptions
     /// @par Examples
     /// The following example demonstrates how to throw and catch an file_load_exception.
     /// @include file_load_exception.cpp

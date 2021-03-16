@@ -10,6 +10,7 @@ namespace xtd {
     /// @brief Specified how a new window should appear when the system starts a process.
     /// @par Library
     /// xtd.core
+    /// @ingroup xtd_core
     enum class process_window_style {
       /// @brief The normal, visible window style. The system displays a window with Normal style on the screen, in a default location. If a window is visible, the user can supply input to the window and view the window's output. Frequently, an application may initialize a new window to the Hidden style while it customizes the window's appearance, and then make the window style Normal.
       normal = 0,

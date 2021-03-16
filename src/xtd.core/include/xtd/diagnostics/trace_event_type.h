@@ -8,6 +8,9 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Identifies the type of event that has caused the trace.
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core
     /// @see trace
     enum class trace_event_type {
       /// @brief Fatal error or application crash.
