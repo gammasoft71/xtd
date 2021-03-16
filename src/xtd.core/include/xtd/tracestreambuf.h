@@ -6,6 +6,10 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @brief Provides an std::stringbuf for xtd::diagnostics::trace.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   class tracestreambuf : public std::stringbuf {
   public:
     int sync() override {

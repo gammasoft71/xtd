@@ -5,6 +5,7 @@ namespace xtd {
   /// @brief The specified expression is cleared automaticaly when the scope is ended.
   /// @par Library
   /// xtd.core
+  /// @ingroup xtd_core keywords
   /// @par Examples
   /// @code
   /// // values is released automatically after the end closure }.
@@ -13,7 +14,6 @@ namespace xtd {
   /// }
   /// @endcode
   /// @remarks same as @block_scope_
-  /// @ingroup keywords
   #define using_(...) \
     for (bool __xtd_using__ = true; __xtd_using__; __xtd_using__ = false)\
       for (__VA_ARGS__; __xtd_using__; __xtd_using__ = false)

@@ -6,6 +6,7 @@ namespace xtd {
   /// @brief The exception that is thrown in a thread upon cancellation of an operation that the thread was executing.
   /// @par Library
   /// xtd.core
+  /// @ingroup xtd_core exceptions
   /// @par Examples
   /// The following example demonstrates how to throw and catch an operation_canceled_exception.
   /// @include operation_canceled_exception.cpp

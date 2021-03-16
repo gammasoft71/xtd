@@ -5,6 +5,9 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Identifies the operating system, or platform, supported by an assembly.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   /// @see operating_system
   enum class platform_id {
     /// @brief The operating system is unknown.

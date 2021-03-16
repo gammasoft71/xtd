@@ -7,6 +7,9 @@
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {
   /// @brief Specifies the culture, case, and sort rules to be used by certain overloads of the strings::compare(string, string) method
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   /// @see xtd::strings
   enum class string_comparison {
     /// @brief Compare strings using ordinal (binary) sort rules.
@@ -16,6 +19,7 @@ namespace xtd {
   };
 }
 
+/// @cond
 inline std::ostream& operator<<(std::ostream& os, xtd::string_comparison sc) {
   switch (sc) {
     case xtd::string_comparison::ordinal: os << "ordinal"; break;
@@ -23,3 +27,4 @@ inline std::ostream& operator<<(std::ostream& os, xtd::string_comparison sc) {
   }
   return os;
 }
+/// @endcond

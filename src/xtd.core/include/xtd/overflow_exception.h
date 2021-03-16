@@ -6,6 +6,7 @@ namespace xtd {
   /// @brief The exception that is thrown when an arithmetic, casting, or conversion operation in a checked context results in an overflow.
   /// @par Library
   /// xtd.core
+  /// @ingroup xtd_core exceptions
   /// @par Examples
   /// The following example demonstrates how to throw and catch an overflow_exception.
   /// @include overflow_exception.cpp
