@@ -30,7 +30,7 @@ namespace xtd {
 
 /// @brief add initialize class method to class test.
 /// @param method_name cleanup class method to add.
-/// @ingroup tunit
+/// @ingroup xtd_tunit
 #define class_initialize_(method_name) \
   __##method_name##_static() {} \
   class __class_initialize_attribute : public xtd::tunit::class_initialize_attribute { \
