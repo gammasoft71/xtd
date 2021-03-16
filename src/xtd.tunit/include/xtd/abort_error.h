@@ -9,6 +9,9 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @brief Exception thow when abort.
+    /// @par Library
+    /// xtd.tunit
+    /// @ingroup xtd_tunit exceptions
     class abort_error : public std::exception {
     public:
       /// @brief Create a new instance of abort_error class.
