@@ -7,6 +7,9 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Provides the base implementation and enables object sharing between applications.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms components
     /// @remarks component is the base class for all components and controls.
     class component {
     public:
