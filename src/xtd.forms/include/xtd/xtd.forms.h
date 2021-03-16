@@ -14,6 +14,9 @@
 /// @defgroup container_controls container  controls
 /// @brief Container  controls are  container for other controls.
 
+/// @defgroup controls   controls
+/// @brief Controls are childs windows that an application uses in conjunction with another window to enable interaction with the user.
+
 /// @defgroup dialogs dialogs
 /// @brief Dialogs consist of the about, busy, message dialog boxes.
 
