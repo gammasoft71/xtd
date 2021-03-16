@@ -6,6 +6,9 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represent foreground color output manipulator class.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   /// @see xtd::basic_console<char_t>::foreground_color(console_color color) method.
   class foreground_color final {
   public:
