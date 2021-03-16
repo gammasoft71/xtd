@@ -3,10 +3,13 @@
 #pragma once
 
 /// @defgroup exceptions exceptions
-/// @brief Exceptions classes.
+/// @brief Exceptions definitions.
 
 /// @defgroup keywords keywords
 /// @brief Keywords are predefined, reserved identifiers that have special meanings to the compiler.
+
+/// @defgroup interfaces interfaces
+/// @brief Interfaces definitions.
 
 /// @defgroup literals literals
 /// @brief Literals Allows integer, floating-point, character, and string literals to produce objects.
