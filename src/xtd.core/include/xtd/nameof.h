@@ -5,6 +5,7 @@ namespace xtd {
   /// @brief Used to obtain the simple (unqualified) string name of a variable, type, or member.
   /// @par Library
   /// xtd.core
+  /// @ingroup xtd_core keywords
   /// When reporting errors in code, hooking up model-view-controller (MVC) links, firing property changed events, etc., you often want to capture the string name of a method. Using nameof helps keep your code valid when renaming definitions. Before, you had to use string literals to refer to definitions, which is brittle when renaming code elements because tools do not know to check these string literals.
   ///
   /// A nameof expression has this form:
@@ -25,7 +26,6 @@ namespace xtd {
   ///   }
   /// }
   /// @endcode
-  /// @ingroup xtd_core keywords
   #define nameof_(...) \
   std::string(#__VA_ARGS__)
 }
