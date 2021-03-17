@@ -8,6 +8,9 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a standard Windows track bar.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms common_controls
     /// @remarks The track_bar is a scrollable control similar to the scroll_bar control. You can configure ranges through which the value of the value property of a track bar scrolls by setting the minimum property to specify the lower end of the range and the maximum property to specify the upper end of the range.
     /// @remarks The large_change property defines the increment to add or subtract from the value property when clicks occur on either side of the scroll box. The track bar can be displayed horizontally or vertically.
     /// @remarks You can use this control to input numeric data obtained through the value property. You can display this numeric data in a control or use it in code.

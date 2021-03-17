@@ -8,6 +8,9 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represent settings associate to the application
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms components
     /// @remarks On Windows settings are stored in registry with '"HKEY_CURRENT_USER\Software\Company Name\Product Name" key or if no Comapny name "\HKEY_CURRENT_USER\Software\Product Name\Product Name" key.
     /// @remarks On macos settings are stored in '~/Library/Preferences/Product Name Preferences" file.
     /// @remarks On linux settings are stored in '~/.Product Name" file.

@@ -6,7 +6,10 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-      /// @brief Provides a collection of radio_button objects for use by a Windows Forms application.
+    /// @brief Provides a collection of radio_button objects for use by a Windows Forms application.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms
     class forms_export_ radio_buttons final static_ {
     public:
       /// @brief Create a system-defined radio_button that represent abort radio_button.

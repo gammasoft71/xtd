@@ -6,6 +6,9 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Specifies the location of tick marks in a Ttack_bar control.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms
     /// @remarks Use the members of this enumeration to set the value of the tick_style property of the track_bar control.
     enum class tick_style {
       /// @brief No tick marks appear in the control.

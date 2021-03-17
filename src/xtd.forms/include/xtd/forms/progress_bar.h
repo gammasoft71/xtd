@@ -8,6 +8,9 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a Windows progress bar control.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms common_controls
     /// @remarks A ProgressBar control visually indicates the progress of a lengthy operation in one of three styles:
     ///  * Segmented blocks that increase in steps from left to right.
     ///  * A continuous bar that fills in from left to right.
