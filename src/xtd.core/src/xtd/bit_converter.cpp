@@ -1,3 +1,4 @@
+#include <cstring>
 #include "../../include/xtd/bit_converter.h"
 #include "../../include/xtd/argument_out_of_range_exception.h"
 
@@ -11,7 +12,9 @@ namespace {
 const bool bit_converter::is_little_endian = *(char*)&__xtd_endian__ == 1;
 
 int64_t bit_converter::double_to_int64_bits(double value) {
-  return *((int64_t*)&value);
+  int64_t result = 0;
+  memcpy(&result, &value, sizeof(value));
+  return result;
 }
 
 vector<uint8_t> bit_converter::get_bytes(bool value) {
@@ -75,15 +78,21 @@ vector<uint8_t> bit_converter::get_bytes(ullong value) {
 }
 
 float bit_converter::int32_bits_to_single(int32_t value) {
-  return *((float*)&value);
+  float result = 0;
+  memcpy(&result, &value, sizeof(value));
+  return result;
 }
 
 double bit_converter::int64_bits_to_double(int64_t value) {
-  return *((double*)&value);
+  double result = 0;
+  memcpy(&result, &value, sizeof(value));
+  return result;
 }
 
 int32_t bit_converter::single_to_int32_bits(float value) {
-  return *((int32_t*)&value);
+  int32_t result = 0;
+  memcpy(&result, &value, sizeof(value));
+  return result;
 }
 
 bool bit_converter::to_boolean(const vector<uint8_t>& value, size_t start_index) {
