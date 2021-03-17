@@ -8,6 +8,9 @@ namespace xtd {
     /// @brief The xtd::forms::visual_styles namespace contains classes for rendering controls and other windows user interface (UI) elements with visual styles in operating systems that support them.
     namespace visual_styles {
       /// @brief Specifies the visual state of a radio button that is drawn with visual styles.
+      /// @par Library
+      /// xtd.forms
+      /// @ingroup xtd_forms
       /// @remarks The radio_button_state values correspond to the states of the visual_style_element objects exposed by the visual_style_element::radio_button::radio_button class. The radio_button_state values are also used as an argument in the radio_button_renderer.draw_radio_button method.
       enum class radio_button_state {
         /// @brief The radio button is unchecked.
