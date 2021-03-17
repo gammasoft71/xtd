@@ -13,6 +13,10 @@ namespace xtd {
   namespace forms {
     /// @brief The xtd::forms::layout namespace contains classes for implementing layout behaviors in your form or control.
     namespace layout {
+      /// @brief Represents a sorter none of objects.
+      /// @par Library
+      /// xtd.forms
+      /// @ingroup xtd_forms
       class sorter_none {
       public:
         template<typename type_t>
@@ -20,6 +24,9 @@ namespace xtd {
       };
   
       /// @brief Represents a collection of objects.
+      /// @par Library
+      /// xtd.forms
+      /// @ingroup xtd_forms
       /// @remarks The arranged_element_collection class represents a collection of objects arranged on a design surface or inside a parent xtd.forms::container_control.
       template<typename type_t, typename sorter_t = sorter_none>
       class arranged_element_collection {
