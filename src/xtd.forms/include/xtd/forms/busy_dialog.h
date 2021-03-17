@@ -24,32 +24,48 @@ namespace xtd {
     public:
       /// @brief Initializes a new instance of the busy_dialog class.
       busy_dialog() = default;
+      /// @cond
       ~busy_dialog() {hide();}
+      /// @endcond
       
+      /// @brief Gets the background color for the dialog.
+      /// @return A xtd::drawing::color that represents the background color of the dialog.
       xtd::drawing::color back_color() const {return back_color_;}
+      /// @brief Sets the background color for the dialog.
+      /// @param color A xtd::drawing::color that represents the background color of the dialog.
+      /// @return Current busy_dialog instance.
       busy_dialog& back_color(const xtd::drawing::color& color) {
         back_color_ = color;
         return *this;
       }
       
+      /// @brief Gets the dialog style color for the dialog.
+      /// @return A xtd::forms::dialog_style that represents the dialog style of the dialog.
       xtd::forms::dialog_style dialog_style() const {return dialog_style_;}
+      /// @brief Sets the dialog style color for the dialog.
+      /// @param dialog_style A xtd::forms::dialog_style that represents the dialog style of the dialog.
+      /// @return Current busy_dialog instance.
       busy_dialog& dialog_style(xtd::forms::dialog_style dialog_style) {
         dialog_style_ = dialog_style;
         return *this;
       }
       
+      /// @brief Gets the foreground color for the dialog.
+      /// @return A xtd::drawing::color that represents the foreground color of the dialog.
       xtd::drawing::color fore_color() const {return fore_color_;}
+      /// @brief Sets the foreground color for the dialog.
+      /// @param color A xtd::drawing::color that represents the foreground color of the dialog.
+      /// @return Current busy_dialog instance.
       busy_dialog& fore_color(const xtd::drawing::color& color) {
         fore_color_ = color;
         return *this;
       }
       
-
       /// @brief Gets the dialog title.
       /// @return The dialog title.
       const std::string& text() const {return text_;}
       /// @brief Sets the dialog title.
-      /// @param copyright The dialog title.
+      /// @param text The dialog title.
       /// @return Current busy_dialog instance.
       busy_dialog& text(const std::string& text) {
         text_ = text;
@@ -92,7 +108,14 @@ namespace xtd {
         return *this;
       }
 
+      /// @brief Gets the dialog transparency.
+      /// @return The dialog transparency.
+      /// @remarks 0 full transparency; 1.0 no transparency.
       double transparency() const {return transparency_;}
+      /// @brief Gets the dialog transparency.
+      /// @param transparency The dialog transparency.
+      /// @return Current busy_dialog instance.
+      /// @remarks 0 full transparency; 1.0 no transparency.
       busy_dialog& transparency(double transparency) {
         transparency_ = transparency;
         return *this;
@@ -106,6 +129,7 @@ namespace xtd {
       /// @brief Runs busy dialog box.
       void show(const iwin32_window& owner);
 
+      /// @brief Hides busy dialog box.
       void hide();
 
     private:
