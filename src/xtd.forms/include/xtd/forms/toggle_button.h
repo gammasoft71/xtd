@@ -8,6 +8,9 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a Windows toggle_button.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms common_controls
     /// @remarks Use a toggle_button to give the user an option, such as true/false or yes/no. The toggle_button control can display an image or text or both.
     /// @remarks toggle_button and radio_button controls have a similar function: they allow the user to choose from a list of options. toggle_button controls let the user pick a combination of options. In contrast, radio_button controls allow a user to choose from mutually exclusive options.
     /// @remarks The appearance property determines whether the toggle_button appears as a typical toggle_button or as a button.

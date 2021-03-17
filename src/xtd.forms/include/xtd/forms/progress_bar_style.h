@@ -6,6 +6,9 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Specifies the progress_bar_style of controls or elements of controls.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms
     /// @remarks You can use the marquee style when you need to indicate progress is being made, but you cannot indicate the quantity of progress. The marquee style is valid only when visual styles are enabled. The Continuous style is valid only when visual styles are not enabled.
     enum class progress_bar_style {
       /// @brief Indicates progress by increasing the number of segmented blocks in a progress_bar.

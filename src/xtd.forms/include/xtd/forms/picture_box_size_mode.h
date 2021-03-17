@@ -6,6 +6,9 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Specifies how an image is positioned within a picture_box.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms
     /// @remarks Use the members of this enumeration to set the value of the size_mode property of the picture_box.
     enum class picture_box_size_mode {
       /// @brief The image is placed in the upper-left corner of the picture_box. The image is clipped if it is larger than the picture_box it is contained in.
