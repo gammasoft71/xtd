@@ -8,6 +8,9 @@ namespace xtd {
     /// @brief The xtd::forms::visual_styles namespace contains classes for rendering controls and other windows user interface (UI) elements with visual styles in operating systems that support them.
     namespace visual_styles {
       /// @brief Specifies the visual state of a check box that is drawn with visual styles.
+      /// @par Library
+      /// xtd.forms
+      /// @ingroup xtd_forms
       /// @remarks The toggle_button_state values correspond to the states of the visual_style_element objects exposed by the visual_style_element::toggle_button class. The toggle_button_state values are also used as an argument in the togle_button_renderer.toggle_butotn method.
       enum class toggle_button_state {
         /// @brief The check box is unchecked.
