@@ -796,9 +796,11 @@ namespace xtd {
     return xtd::translator::translate(s);
   }
   
+#if defined(__cpp_lib_char8_t)
   inline std::string operator""_t(const char8_t* s, size_t n) {
     return xtd::translator::translate({s, s + n});
   }
+#endif
   
   inline std::string operator""_t(const char16_t* s, size_t n) {
     return xtd::translator::translate(xtd::format("{}", s));
