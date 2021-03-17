@@ -91,13 +91,17 @@ cd xtd_path_name
 
    *Remarks: Verify if you can execute 'g++ --version' in "Terminal".*
 
+2. Install gtk3
+  
+   After g++, you need to install the [gtk3](https://www.gtk.org).
+
 2. Install CMake 3.3 or later
   
-   After g++, you need to install the latest version cmake from [https://cmake.org/download/](https://cmake.org/download/)
+   After g++ and gtk3, you need to install the latest version cmake from [https://cmake.org/download/](https://cmake.org/download/).
 
    *Remarks: Verify if you can execute 'cmake --version' in "Terminal", if it's no, add cmake install directory to your path.*
 
-3. After installing g++ and CMake, do the following in "Terminal" to Build and install :
+3. After installing g++, gtk3 and CMake, do the following in "Terminal" to Build and install :
 
 ```shell
 cd xtd_path_name
