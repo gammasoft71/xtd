@@ -5,6 +5,7 @@
 #include "parse.h"
 #include "strings.h"
 #include "translator.h"
+#include "types.h"
 
 /// @cond
 void __litterals_argument_out_of_range_exception();
