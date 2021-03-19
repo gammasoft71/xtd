@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::layout::sorter_none and xtd::forms::arranged_element_collection <> classes.
+/// @brief Contains xtd::forms::layout::sorter_none and xtd::forms::arranged_element_collection< > collection.
 #pragma once
 #include <limits>
 #include <ostream>
@@ -8,6 +8,7 @@
 #include <xtd/event_args.h>
 #include <xtd/event_handler.h>
 #include <xtd/event.h>
+#include "sorter_none.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -15,16 +16,6 @@ namespace xtd {
   namespace forms {
     /// @brief The xtd::forms::layout namespace contains classes for implementing layout behaviors in your form or control.
     namespace layout {
-      /// @brief Represents a sorter none of objects.
-      /// @par Library
-      /// xtd.forms
-      /// @ingroup xtd_forms
-      class sorter_none {
-      public:
-        template<typename type_t>
-        void operator()(type_t first, type_t last) {}
-      };
-  
       /// @brief Represents a collection of objects.
       /// @par Library
       /// xtd.forms

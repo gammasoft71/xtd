@@ -41,6 +41,7 @@
 #include <xtd/forms/window_messages.h>
 
 #include "xtd/forms/layout/arranged_element_collection.h"
+#include "xtd/forms/layout/sorter_none.h"
 #include "xtd/forms/properties/resources.h"
 #include "xtd/forms/about_dialog.h"
 #include "xtd/forms/busy_box.h"

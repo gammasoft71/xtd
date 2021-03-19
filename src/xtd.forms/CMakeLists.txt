@@ -199,6 +199,7 @@ add_sources(
   include/xtd/forms/use_wait_cursor.h
   include/xtd/forms/user_control.h
   include/xtd/forms/layout/arranged_element_collection.h
+  include/xtd/forms/layout/sorter_none.h
   include/xtd/forms/properties/resources.h
   include/xtd/forms/visual_styles/check_box_state.h
   include/xtd/forms/visual_styles/push_button_state.h
