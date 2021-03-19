@@ -22,6 +22,12 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of button control.
     /// @include button.cpp
+    /// @image html button_w.png
+    /// @image html button_wb.png
+    /// @image html button_m.png
+    /// @image html button_md.png
+    /// @image html button_g.png
+    /// @image html button_gd.png
     class forms_export_ button : public ibutton_control, public button_base {
     public:
       /// @brief Initializes a new instance of the button class.
