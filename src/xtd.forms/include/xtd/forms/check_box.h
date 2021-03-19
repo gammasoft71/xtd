@@ -23,6 +23,18 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of check_box control.
     /// @include check_box.cpp
+    /// @par Windows
+    /// @image html check_box_w.png
+    /// <br>
+    /// @image html check_box_wd.png
+    /// @par macOS
+    /// @image html check_box_m.png
+    /// <br>
+    /// @image html check_box_md.png
+    /// @par Gnome
+    /// @image html check_box_g.png
+    /// <br>
+    /// @image html button_gd.png
     class forms_export_ check_box : public button_base {
     public:
       /// @brief Initializes a new instance of the CheckBox class.
