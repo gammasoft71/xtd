@@ -55,6 +55,21 @@ namespace xtd {
     /// @image html application_g.png
     /// <br>
     /// @image html application_gd.png
+    /// @par Example
+    ///  How to manage exception with application class.
+    /// @include application_and_exception.cpp
+    /// @par Windows
+    /// @image html application_and_exception_w.png
+    /// <br>
+    /// @image html application_and_exception_wd.png
+    /// @par macOS
+    /// @image html application_and_exception_m.png
+    /// <br>
+    /// @image html application_and_exception_md.png
+    /// @par Gnome
+    /// @image html application_and_exception_g.png
+    /// <br>
+    /// @image html application_and_exception_gd.png
     class forms_export_ application {
     public:
       /// @brief Gets a value indicating whether the caller can quit this application.
