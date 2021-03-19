@@ -25,11 +25,11 @@ namespace xtd {
     /// @par macOS
     /// @image html choice_m.png
     /// <br>
-    /// @image htmlchoice_md.png
+    /// @image html choice_md.png
     /// @par Gnome
     /// @image html choice_g.png
     /// <br>
-    /// @image htmlchoice_gd.png
+    /// @image html choice_gd.png
     class forms_export_ choice : public list_control {
     public:
       /// @brief Initializes a new instance of the combo_box class.
