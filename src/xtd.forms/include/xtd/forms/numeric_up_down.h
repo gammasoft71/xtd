@@ -5,6 +5,13 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @brief Represents a standard Windows numeric up down.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms common_controls
+    /// @par Example
+    /// The following code example demonstrate the use of numeric up down control.
+    /// @include numeric_up_down.cpp
     class forms_export_ numeric_up_down : public up_down_base {
     public:      
       numeric_up_down();
