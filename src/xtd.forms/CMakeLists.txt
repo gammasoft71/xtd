@@ -187,6 +187,7 @@ add_sources(
   include/xtd/forms/tick_style.h
   include/xtd/forms/timer.h
   include/xtd/forms/toggle_button.h
+  include/xtd/forms/toggle_buttons.h
   include/xtd/forms/tool_bar_images.h
   include/xtd/forms/trace_form.h
   include/xtd/forms/trace_form_base.h

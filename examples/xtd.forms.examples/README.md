@@ -52,6 +52,7 @@
 * [text_box](common_controls/text_box/README.md) represents a Windows [xtd::forms::text_box](../../src/xtd.forms/include/xtd/forms/text_box.h) control.
 * **tool_tip** Represents a small rectangular pop-up window that displays a brief description of a control's purpose when the user rests the pointer on the control.
 * [toggle_button](common_controls/toggle_button/README.md) represents a [xtd::forms::toggle_button](../../src/xtd.forms/include/xtd/forms/toggle_button.h) control.
+* [toggle_buttons](common_controls/toggle_buttons/README.md) Show how to use toggle buttons factory with [xtd::forms::toggle_buttons](../../src/xtd.forms/include/xtd/forms/toggle_buttons.h) factory.
 * [track_bar](common_controls/track_bar/README.md) represents a standard Windows [xtd::forms::track_bar](../../src/xtd.forms/include/xtd/forms/track_bar.h).
 * **tree_view** displays a hierarchical collection of labeled items, each represented by a TreeNode.
 * [up_down_button](common_controls/up_down_button/README.md) represents a Windows spin button.
