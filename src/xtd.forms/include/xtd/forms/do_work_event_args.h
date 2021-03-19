@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::do_work_event event args.
 #pragma once
 #include <any>
 #include <cstdint>
