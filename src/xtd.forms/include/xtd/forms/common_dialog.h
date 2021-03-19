@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::common_dialog_closed_event_args event args.
+/// @brief Contains xtd::forms::common_dialog class.
 #pragma once
 #include <any>
 #include "application.h"
