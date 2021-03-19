@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::contrtol conttrtol.
+/// @brief Contains xtd::forms::control conttrtol.
 #pragma once
 #include <any>
 #include <condition_variable>
