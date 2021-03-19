@@ -24,7 +24,7 @@ namespace xtd {
     /// @include button.cpp
     /// @par Windows
     /// @image html button_w.png
-    /// @image html button_wb.png
+    /// @image html button_wd.png
     /// @par macOS
     /// @image html button_m.png
     /// @image html button_md.png
