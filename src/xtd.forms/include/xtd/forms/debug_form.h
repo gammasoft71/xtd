@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::debug_form conttainer controls.
 #pragma once
 #include "trace_form_base.h"
 #include "icontrol_trace.h"
