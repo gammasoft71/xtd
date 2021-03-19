@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::anchor_styles enum class.
 #pragma once
 #include <xtd/strings.h>
 
