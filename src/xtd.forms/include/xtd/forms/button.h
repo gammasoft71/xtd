@@ -34,7 +34,6 @@ namespace xtd {
     /// @image html button_g.png
     /// <br>
     /// @image html button_gd.png
-
     class forms_export_ button : public ibutton_control, public button_base {
     public:
       /// @brief Initializes a new instance of the button class.
