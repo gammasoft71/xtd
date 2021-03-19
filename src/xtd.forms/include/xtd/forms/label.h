@@ -15,6 +15,18 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of label control.
     /// @include label.cpp
+    /// @par Windows
+    /// @image html label_w.png
+    /// <br>
+    /// @image html label_wd.png
+    /// @par macOS
+    /// @image html label_m.png
+    /// <br>
+    /// @image html label_md.png
+    /// @par Gnome
+    /// @image html label_g.png
+    /// <br>
+    /// @image html label_gd.png
     class forms_export_ label : public control {
     public:
       label();
