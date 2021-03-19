@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::properties::resources class.
 #pragma once
 #include <xtd/environment.h>
 #include "../control.h"
