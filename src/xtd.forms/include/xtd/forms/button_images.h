@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::buttoon_images factory.
+/// @brief Contains xtd::forms::button_images factory.
 #pragma once
 #include <xtd/static.h>
 #include <xtd/drawing/system_images.h>
