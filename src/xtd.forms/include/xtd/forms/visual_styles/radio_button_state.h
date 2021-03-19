@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::viruall_styles::radio_button_state enum class.
+/// @brief Contains xtd::forms::visual_styles::radio_button_state enum class.
 #pragma once
 #include <xtd/strings.h>
 

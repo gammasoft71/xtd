@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::viruall_styles::toggle_button_state enum class.
+/// @brief Contains xtd::forms::visual_styles::toggle_button_state enum class.
 #pragma once
 #include <xtd/strings.h>
 
