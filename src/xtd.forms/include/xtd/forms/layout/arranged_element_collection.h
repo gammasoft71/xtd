@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::llayout::sorter_none and arrangedd_element_collection <> classes.
 #pragma once
 #include <limits>
 #include <ostream>
