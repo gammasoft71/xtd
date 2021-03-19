@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::coloor_picker picker contrtols.
+/// @brief Contains xtd::forms::color_picker picker contrtols.
 #pragma once
 #include "control.h"
 
