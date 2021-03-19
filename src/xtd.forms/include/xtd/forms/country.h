@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::country component.
 #pragma once
 #include "component.h"
 #include <xtd/strings.h>
