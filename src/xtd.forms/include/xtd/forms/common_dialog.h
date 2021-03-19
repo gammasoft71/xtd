@@ -1,10 +1,11 @@
 /// @file
-/// @brief Contains xtd::forms::common_dialog_closed_event_args eventt args.
+/// @brief Contains xtd::forms::common_dialog_closed_event_args event args.
 #pragma once
 #include <any>
 #include "application.h"
 #include "form.h"
 #include "component.h"
+#include "common_dialog_closed_event_handler.h"
 #include "dialog_result.h"
 #include "help_event_handler.h"
 #include "iwin32_window.h"
@@ -17,26 +18,11 @@ struct __xtd_forms_common_dialog_closed_caller__;
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    /// @brief Provides data for a coommon dialog closed event.
-    /// @par Library
-    /// xtd.forms
-    /// @ingroup xtd_forms events
-    class common_dialog_closed_event_args final : public event_args {
-    public:
-      common_dialog_closed_event_args() = default;
-      explicit common_dialog_closed_event_args(forms::dialog_result dialog_result) : dialog_result_(dialog_result) {};
-      
-      virtual forms::dialog_result dialog_result() const {return dialog_result_;}
-      
-    private:
-      forms::dialog_result dialog_result_ = forms::dialog_result::none;
-    };
-
-    template<typename type_t>
-    using common_dialog_closed_event_handler = delegate<void(type_t, const common_dialog_closed_event_args& e)>;
-
     /// @brief Specifies the base class used for displaying dialog boxes on the screen.
     /// @remarks Inherited classes are required to implement run_dialog by invoking show_dialog to create a specific common dialog box. Inherited classes can optionally override hook_proc to implement specific dialog box hook functionality.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms
     class common_dialog : public component {
     public:
       /// @brief Initializes a new instance of the common_dialog class.
