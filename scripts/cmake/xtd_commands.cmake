@@ -1666,7 +1666,7 @@ macro(write_resources_file_header)
       file(APPEND ${RESOURCES_FILE_HEADER}
         "    /// @brief Looks up a localized resource of type xtd::forms::sound.\n"
         "    static const xtd::object& ${NAME}() {\n"
-        "      throw xtd::not_implemented_exceptionr(caller_info_);\n"
+        "      throw xtd::not_implemented_exception(caller_info_);\n"
         "    }\n"
         "\n"
       )
