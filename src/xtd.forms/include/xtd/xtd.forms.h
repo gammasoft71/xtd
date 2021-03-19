@@ -1,5 +1,5 @@
 /// @file
-/// @brief xtd.forms library header.
+/// @brief Contains  xtd.forms library headers.
 #pragma once
 
 /// @defgroup application application

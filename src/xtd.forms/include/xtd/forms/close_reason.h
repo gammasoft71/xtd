@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::close_reason enum class.
 #pragma once
 #include <xtd/strings.h>
 
