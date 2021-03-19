@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::application class.
 #pragma once
 #include <cstdint>
 #include <memory>
