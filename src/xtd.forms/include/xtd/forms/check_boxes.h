@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::check_boxes factory.
 #pragma once
 #include "check_box.h"
 #include "texts.h"

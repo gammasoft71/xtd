@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::checked_list_box control.
 #pragma once
 #include "item_check_event_handler.h"
 #include "list_box.h"

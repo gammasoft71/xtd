@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::check_box control.
 #pragma once
 #include "appearance.h"
 #include "button_base.h"
