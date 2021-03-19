@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::color_dialog dialog.
 #pragma once
 #include <xtd/drawing/color.h>
 #include <xtd/forms/color_dialog_flags.h>
