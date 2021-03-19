@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::context_menu menu.
 #pragma once
 #include "menu.h"
 
