@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::llayout::sorter_none and arrangedd_element_collection <> classes.
+/// @brief Contains xtd::forms::layout::sorter_none and xtd::forms::arranged_element_collection <> classes.
 #pragma once
 #include <limits>
 #include <ostream>
