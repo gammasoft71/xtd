@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::button_renderer class.
 #pragma once
 #include <optional>
 #include <string>
