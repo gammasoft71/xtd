@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::application_informations class.
 #pragma once
 #include <string>
 

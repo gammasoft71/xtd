@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::arrange_starting_position enum class.
 #pragma once
 #include <xtd/strings.h>
 
