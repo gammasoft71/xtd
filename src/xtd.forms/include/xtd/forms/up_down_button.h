@@ -14,9 +14,9 @@ namespace xtd {
     /// The following code example demonstrate the use of up down button control.
     /// @include up_down_button.cpp
     /// @par Windows
-    /// @image up_down_button_w.png
+    /// @image html up_down_button_w.png
     /// <br>
-    /// @image up_down_button_wd.png
+    /// @image html up_down_button_wd.png
     /// @par macOS
     /// @image html up_down_button_m.png
     /// <br>
