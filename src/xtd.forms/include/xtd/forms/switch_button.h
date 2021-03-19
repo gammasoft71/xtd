@@ -3,6 +3,13 @@
 
 namespace xtd {
   namespace forms {
+    /// @brief Represents a standard Windows switch button.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms common_controls
+    /// @par Example
+    /// The following code example demonstrate the use of switch button control.
+    /// @include switch_button.cpp
     class switch_button : public button_base {
     public:
       switch_button() = default;
