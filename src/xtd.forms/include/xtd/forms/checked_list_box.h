@@ -27,7 +27,7 @@ namespace xtd {
     /// <br>
     /// @image html checked_list_box_md.png
     /// @par Gnome
-    /// @image html check_edlist_box_g.png
+    /// @image html checked_list_box_g.png
     /// <br>
     /// @image html checked_list_box_gd.png
     class forms_export_ checked_list_box : public list_box {
