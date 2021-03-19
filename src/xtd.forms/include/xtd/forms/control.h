@@ -64,6 +64,18 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of control control.
     /// @include control.cpp
+    /// @par Windows
+    /// @image html control_w.png
+    /// <br>
+    /// @image html control_wd.png
+    /// @par macOS
+    /// @image html control_m.png
+    /// <br>
+    /// @image html control_md.png
+    /// @par Gnome
+    /// @image html control_g.png
+    /// <br>
+    /// @image html control_gd.png
     class forms_export_ control : public component, public iwin32_window {
     protected:
       /// @cond
