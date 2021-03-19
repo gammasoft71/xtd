@@ -9,7 +9,7 @@ namespace xtd {
     /// @brief Provides a collection of check_box objects for use by a Windows Forms application.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms
+    /// @ingroup xtd_forms common_controls
     class check_boxes final static_ {
     public:
       /// @brief Create a system-defined check_box that represent abort check_box.

@@ -187,7 +187,7 @@ namespace xtd {
     size_type find_last_not_of(const T& t, size_type pos = 0) const noexcept {return std::basic_string<char_t, char_traits_t, allocator_t>::find_last_not_of(t, pos);}
 
     friend std::basic_ostream<char_t, char_traits_t>& operator<<(std::basic_ostream<char_t, char_traits_t>& os, const immutable_basic_string<char_t, char_traits_t, allocator_t>& str) {return os << ((const std::basic_string<char_t, char_traits_t, allocator_t>&)str);}
-    friend std::basic_ostream<char_t, char_traits_t>& operator<<(std::basic_ostream<char_t, char_traits_t>& os, immutable_basic_string<char_t, char_traits_t, allocator_t>& str) {return os << ((std::basic_string<char_t, char_traits_t, allocator_t>&)str);}
+    //friend std::basic_ostream<char_t, char_traits_t>& operator<<(std::basic_ostream<char_t, char_traits_t>& os, immutable_basic_string<char_t, char_traits_t, allocator_t>& str) {return os << ((std::basic_string<char_t, char_traits_t, allocator_t>&)str);}
     /// @endcond
 
   private:

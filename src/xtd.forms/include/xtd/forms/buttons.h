@@ -9,7 +9,7 @@ namespace xtd {
     /// @brief Provides a collection of button objects for use by a Windows Forms application.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms
+    /// @ingroup xtd_forms common_controls
     class buttons final static_ {
     public:
       /// @brief Create a system-defined button that represent abort button.
