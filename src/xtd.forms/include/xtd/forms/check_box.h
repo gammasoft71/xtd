@@ -34,7 +34,7 @@ namespace xtd {
     /// @par Gnome
     /// @image html check_box_g.png
     /// <br>
-    /// @image html button_gd.png
+    /// @image html check_box_gd.png
     class forms_export_ check_box : public button_base {
     public:
       /// @brief Initializes a new instance of the CheckBox class.
