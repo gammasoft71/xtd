@@ -7,6 +7,13 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @brief Represents a picker control that displays available date time along with controls.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms picker_controls
+    /// @par Example
+    /// The following code example demonstrate the use of date_time_picker picker.
+    /// @include date_time_picker.cpp
     class forms_export_ date_time_picker : public control {
     public:
       date_time_picker();
