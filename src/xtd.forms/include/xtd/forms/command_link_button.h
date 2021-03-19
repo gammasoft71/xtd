@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::command_link_buttton control.
 #pragma once
 #include "button_base.h"
 #include "dialog_result.h"

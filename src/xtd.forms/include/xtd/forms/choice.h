@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::choioce control.
+/// @brief Contains xtd::forms::choice control.
 #pragma once
 #include "layout/arranged_element_collection.h"
 #include "list_control.h"
