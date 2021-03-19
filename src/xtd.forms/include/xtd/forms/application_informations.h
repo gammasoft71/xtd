@@ -10,7 +10,7 @@ namespace xtd {
     /// @brief Specifies the application informations.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms
+    /// @ingroup xtd_forms application
     class application_informations {
     public:
       /// @brief Gets the company name associated with the application.

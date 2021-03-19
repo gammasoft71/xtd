@@ -2,6 +2,9 @@
 /// @brief xtd.forms library header.
 #pragma once
 
+/// @defgroup application application
+/// @brief application definitions.
+
 /// @defgroup common_controls common  controls
 /// @brief Common  controls are childs windows that an application uses in conjunction with another window to enable interaction with the user.
 

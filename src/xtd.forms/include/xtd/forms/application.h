@@ -26,7 +26,7 @@ namespace xtd {
     /// @brief Represents a collection of form objects.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms
+    /// @ingroup xtd_forms application
     /// @remarks form_collection is used by the application object to list the currently open forms in an application through the open_forms property.
     using form_collection = std::vector<std::reference_wrapper<form>>;
     
