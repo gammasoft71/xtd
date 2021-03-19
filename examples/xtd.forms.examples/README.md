@@ -26,7 +26,7 @@
 * [button](common_controls/button/README.md) represents a Windows [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) control.
 * [buttons](common_controls/buttons/README.md) Show how to use buttons factory with [xtd::forms::buttons](../../src/xtd.forms/include/xtd/forms/buttons.h) control.
 * [check_box](common_controls/check_box/README.md) represents a Windows [xtd::forms::check_box](../../src/xtd.forms/include/xtd/forms/check_box.h) control.
-* [check_boxs](common_controls/check_boxs/README.md) Show how to use check boxes factory with [xtd::forms::check_boxs](../../src/xtd.forms/include/xtd/forms/check_boxs.h) factory.
+* [check_boxes](common_controls/check_boxes/README.md) Show how to use check boxes factory with [xtd::forms::check_boxes](../../src/xtd.forms/include/xtd/forms/check_boxes.h) factory.
 * [checked_list_box](common_controls/checked_list_box/README.md) represents a Windows control to display a list of check box.
 * [choice](common_controls/choice/README.md) represents a [xtd::forms::choice](../../src/xtd.forms/include/xtd/forms/choice.h) control.
 * [combo_box](common_controls/combo_box/README.md) represents a Windows [xtd::forms::combo_box](../../src/xtd.forms/include/xtd/forms/combo_box.h)control.
