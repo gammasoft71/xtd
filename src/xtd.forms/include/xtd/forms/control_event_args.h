@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::control_eventt_args event args.
+/// @brief Contains xtd::forms::control_event_args event args.
 #pragma once
 #include <cstdint>
 #include <xtd/event_args.h>
