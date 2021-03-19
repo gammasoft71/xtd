@@ -28,6 +28,21 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms application
     /// @remarks form_collection is used by the application object to list the currently open forms in an application through the open_forms property.
+    /// @par Example
+    /// The following code example demonstrate the use of application class.
+    /// @include application.cpp
+    /// @par Windows
+    /// @image html application_w.png
+    /// <br>
+    /// @image html application_wd.png
+    /// @par macOS
+    /// @image html application_m.png
+    /// <br>
+    /// @image html application_md.png
+    /// @par Gnome
+    /// @image html application_g.png
+    /// <br>
+    /// @image html application_gd.png
     using form_collection = std::vector<std::reference_wrapper<form>>;
     
     /// @brief Provides static methods and properties to manage an application, such as methods to start and stop an application, to process Windows messages, and methods to get information about an application. This class cannot be inherited.

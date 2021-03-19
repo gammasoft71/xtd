@@ -12,7 +12,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
     /// @par Example
-    /// The following code example demonstrate the use of busyt_dialog dialog.
+    /// The following code example demonstrate the use of busy_box dialog.
     /// @include busy_box.cpp
     class forms_export_ busy_box final static_ {
     public:
