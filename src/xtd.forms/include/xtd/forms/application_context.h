@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::appllication_context class.
+/// @brief Contains xtd::forms::application_context class.
 #pragma once
 #include "form.h"
 
