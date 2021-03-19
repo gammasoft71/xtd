@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::component class.
 #pragma once
 #include <cstdint>
 #include "../forms_export.h"
