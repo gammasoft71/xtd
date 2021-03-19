@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::butttons factory.
 #pragma once
 #include "button.h"
 #include "texts.h"

@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::boot_mode enum class.
 #pragma once
 #include <xtd/strings.h>
 

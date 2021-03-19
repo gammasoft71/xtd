@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::busy_box dialog.
 #pragma once
 #include "busy_dialog.h"
 #include <xtd/literals.h>

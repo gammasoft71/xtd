@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::button control.
 #pragma once
 #include <xtd/environment.h>
 #include "button_base.h"
