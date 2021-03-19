@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::contrtol_trace_listener listener.
 #pragma once
 #include <xtd/diagnostics/trace_listener.h>
 #include "icontrol_trace.h"

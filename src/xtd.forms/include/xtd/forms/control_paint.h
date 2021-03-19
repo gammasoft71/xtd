@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::control_paint class.
 #pragma once
 #include <optional>
 #include <string>

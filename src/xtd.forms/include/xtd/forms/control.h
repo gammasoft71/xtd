@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::contrtol conttrtol.
 #pragma once
 #include <any>
 #include <condition_variable>
