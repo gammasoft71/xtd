@@ -11,7 +11,7 @@ namespace xtd {
     /// @ingroup xtd_forms
     /// @remarks Use the members of this enumeration to set the border style for controls that have a changeable border.
     enum class border_style {
-      /// @brief No border.s
+      /// @brief No border.
       none = 0,
       /// @brief A single-line border.
       fixed_single = 1,
