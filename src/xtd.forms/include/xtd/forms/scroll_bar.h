@@ -8,10 +8,7 @@ namespace xtd {
     /// @brief Represents a standard Windows scroll bar.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms common_controls
-    /// @par Example
-    /// The following code example demonstrate the use of scroll bar control.
-    /// @include scroll_bar.cpp
+    /// @ingroup xtd_forms
     // class forms_export_ scroll_bar : public control {
     class scroll_bar : public control {
     public:      
