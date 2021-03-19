@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::viruall_styles::check_box_state enum class.
 #pragma once
 #include <xtd/strings.h>
 
