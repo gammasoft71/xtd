@@ -17,7 +17,7 @@ namespace xtd {
     /// @note If the use_compatible_text_rendering property is false, the custom_tab_offsets property will be ignored and replaced with standard tab offsets.
     /// @par Example
     /// The following code example demonstrate the use of checked_list_box control.
-    /// @include checkeded_list_box.cpp
+    /// @include checked_list_box.cpp
     /// @par Windows
     /// @image html checked_list_box_w.png
     /// <br>
