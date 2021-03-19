@@ -46,6 +46,8 @@ add_sources(
   include/xtd/forms/combo_box_style.h
   include/xtd/forms/command_link_button.h
   include/xtd/forms/common_dialog.h
+  include/xtd/forms/common_dialog_closed_event_args.h
+  include/xtd/forms/common_dialog_closed_event_handler.h
   include/xtd/forms/component.h
   include/xtd/forms/container_control.h
   include/xtd/forms/content_alignment.h
