@@ -26,7 +26,7 @@ namespace xtd {
     /// @par Gnome
     /// @image html command_link_button_g.png
     /// <br>
-    /// @image html combo_box_gd.png
+    /// @image html command_link_button_gd.png
     class forms_export_ command_link_button : public button_base {
     public:
       /// @brief Initializes a new instance of the button class.
