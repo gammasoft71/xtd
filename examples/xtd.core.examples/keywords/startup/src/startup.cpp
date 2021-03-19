@@ -18,4 +18,4 @@ startup_(examples::program);
 
 // This code produces the following output if one two "three four" five six are entered on command line:
 //
-// args = one, two, three, four five, six
+// args = one, two, three four, five, six
