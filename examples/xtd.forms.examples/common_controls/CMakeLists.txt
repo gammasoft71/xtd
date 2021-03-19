@@ -24,6 +24,7 @@ add_projects(
   splitter
   text_box
   toggle_button
+  toggle_buttons
   track_bar
   up_down_button
   user_control
