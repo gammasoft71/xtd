@@ -10,6 +10,13 @@
 
 namespace xtd {
   namespace forms {
+    /// @brief Represents a lcd label.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms controls
+    /// @par Example
+    /// The following code example demonstrate the use of lcd_label control.
+    /// @include lcd_label.cpp
     class lcd_label : public control {
       class idigit {
       public:
