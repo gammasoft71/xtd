@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::backgroound_worker component.
+/// @brief Contains xtd::forms::background_worker component.
 #pragma once
 #include <thread>
 #include "../forms_export.h"
