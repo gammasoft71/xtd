@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::common_dialog_closed_event_args eventt args.
 #pragma once
 #include <any>
 #include "application.h"

@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::container_control class.
 #pragma once
 #include "scrollable_control.h"
 
