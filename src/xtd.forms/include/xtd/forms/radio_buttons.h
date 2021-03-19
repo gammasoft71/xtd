@@ -9,7 +9,7 @@ namespace xtd {
     /// @brief Provides a collection of radio_button objects for use by a Windows Forms application.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms
+    /// @ingroup xtd_forms common_controls
     class forms_export_ radio_buttons final static_ {
     public:
       /// @brief Create a system-defined radio_button that represent abort radio_button.
