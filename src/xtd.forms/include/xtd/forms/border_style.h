@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::border_style enum class.
 #pragma once
 #include <xtd/strings.h>
 
