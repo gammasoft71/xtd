@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::cursors factory.
 #pragma once
 #include "cursor.h"
 #include <xtd/static.h>

@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::cursor class.
 #pragma once
 #include <any>
 #include <cstdint>

@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::countries factory.
 #pragma once
 #include "country.h"
 
