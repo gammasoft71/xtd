@@ -7,7 +7,7 @@ using namespace xtd;
 namespace examples {
   class program {
   public:
-        static void main(const std::vector<std::string>& args) {
+    static void main(const std::vector<std::string>& args) {
       cout << format("args = {}", strings::join(", ", args)) << endl;
       environment::exit_code(42);
     }
