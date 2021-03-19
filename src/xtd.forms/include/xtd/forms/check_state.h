@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::chack_state enum class.
+/// @brief Contains xtd::forms::check_state enum class.
 #pragma once
 #include <xtd/strings.h>
 

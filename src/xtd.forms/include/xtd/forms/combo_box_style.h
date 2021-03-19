@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::combo_box_style enum class.
 #pragma once
 #include <xtd/strings.h>
 

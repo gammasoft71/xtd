@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::combo_box control.
 #pragma once
 #include "layout/arranged_element_collection.h"
 #include "combo_box_style.h"
