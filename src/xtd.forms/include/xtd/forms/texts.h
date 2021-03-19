@@ -10,7 +10,7 @@ namespace xtd {
     /// @brief Provides a collection of string objects for use by a Windows Forms application.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms
+    /// @ingroup xtd_forms components
     class forms_export_ texts final static_ {
     public:
       /// @brief Gets a system-defined text that has a string value of "&Abort". This field is constant.
