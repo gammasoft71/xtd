@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::form_closing_event_args event args.
 #pragma once
 
 #include "cancel_event_args.h"
