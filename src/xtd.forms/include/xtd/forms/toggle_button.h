@@ -10,7 +10,7 @@ namespace xtd {
     /// @brief Represents a Windows toggle_button.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms common_controls
+    /// @ingroup xtd_forms controls
     /// @remarks Use a toggle_button to give the user an option, such as true/false or yes/no. The toggle_button control can display an image or text or both.
     /// @remarks toggle_button and radio_button controls have a similar function: they allow the user to choose from a list of options. toggle_button controls let the user pick a combination of options. In contrast, radio_button controls allow a user to choose from mutually exclusive options.
     /// @remarks The appearance property determines whether the toggle_button appears as a typical toggle_button or as a button.

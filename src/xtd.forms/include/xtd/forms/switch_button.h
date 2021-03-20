@@ -6,7 +6,7 @@ namespace xtd {
     /// @brief Represents a standard Windows switch button.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms common_controls
+    /// @ingroup xtd_forms controls
     /// @par Example
     /// The following code example demonstrate the use of switch button control.
     /// @include switch_button.cpp

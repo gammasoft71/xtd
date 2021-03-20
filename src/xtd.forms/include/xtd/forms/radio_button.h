@@ -10,7 +10,7 @@ namespace xtd {
     /// @brief Enables the user to select a single option from a group of choices when paired with other radio_button controls.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms common_controls
+    /// @ingroup xtd_forms controls
     /// @remarks The radio_button control can display text, an Image, or both.
     /// @remarks When the user selects one option button (also known as a radio button) within a group, the others clear automatically. All radio_button controls in a given container, such as a Form, constitute a group. To create multiple groups on one form, place each group in its own container, such as a group_box or panel control.
     /// @remarks radio_button and check_box controls have a similar function: they offer choices a user can select or clear. The difference is that multiple check_box controls can be selected at the same time, but option buttons are mutually exclusive.

@@ -10,7 +10,7 @@ namespace xtd {
     /// @brief Represents a Windows progress bar control.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms common_controls
+    /// @ingroup xtd_forms controls
     /// @remarks A ProgressBar control visually indicates the progress of a lengthy operation in one of three styles:
     ///  * Segmented blocks that increase in steps from left to right.
     ///  * A continuous bar that fills in from left to right.

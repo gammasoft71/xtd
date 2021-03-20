@@ -9,7 +9,7 @@ namespace xtd {
     /// @brief Represents a standard Windows up down button.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms common_controls
+    /// @ingroup xtd_forms controls
     /// @par Example
     /// The following code example demonstrate the use of up down button control.
     /// @include up_down_button.cpp

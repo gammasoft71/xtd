@@ -11,7 +11,7 @@ namespace xtd {
     /// @brief Provides a collection of check_box objects for use by a Windows Forms application.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms common_controls
+    /// @ingroup xtd_forms controls
     /// @par Example
     /// The following code example demonstrate the use of check_boxes control factory.
     /// @include check_boxes.cpp
