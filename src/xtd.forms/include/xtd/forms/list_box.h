@@ -13,7 +13,7 @@ namespace xtd {
     /// @brief Represents a standard Windows list box.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms common_controls
+    /// @ingroup xtd_forms controls
     /// @par Example
     /// The following code example demonstrate the use of list_box control.
     /// @include list_box.cpp

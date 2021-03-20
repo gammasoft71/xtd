@@ -11,7 +11,7 @@ namespace xtd {
     /// @brief Provides a collection of button objects for use by a Windows Forms application.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms common_controls
+    /// @ingroup xtd_forms controls
     /// @par Example
     /// The following code example demonstrate the use of buttons control factory.
     /// @include buttons.cpp

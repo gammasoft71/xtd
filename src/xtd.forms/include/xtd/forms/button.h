@@ -15,7 +15,7 @@ namespace xtd {
     /// @brief Represents a Windows button control.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms common_controls
+    /// @ingroup xtd_forms controls
     /// @remarks A Button can be clicked by using the mouse, ENTER key, or SPACEBAR if the button has focus.
     /// @remarks Set the accept_button or cancel_button property of a form to allow users to click a button by pressing the ENTER or ESC keys even if the button does not have focus. This gives the form the behavior of a dialog box.
     /// @remarks When you display a form using the show_dialog method, you can use the dialog_result property of a button to specify the return value of show_dialog.

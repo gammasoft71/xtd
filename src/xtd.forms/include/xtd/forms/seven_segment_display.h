@@ -8,7 +8,7 @@ namespace xtd {
     /// @brief represent a seven segment display class
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms common_controls
+    /// @ingroup xtd_forms controls
     class seven_segment_display : public control {
     public:
       seven_segment_display() {

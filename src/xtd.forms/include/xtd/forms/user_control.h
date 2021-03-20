@@ -9,7 +9,7 @@ namespace xtd {
     /// @brief Represents a standard Windows user control.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms common_controls
+    /// @ingroup xtd_forms controls
     /// @par Example
     /// The following code example demonstrate the use of user control.
     /// @include user_control.cpp

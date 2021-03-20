@@ -11,7 +11,7 @@ namespace xtd {
     /// @brief Represents a choice control.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms common_controls
+    /// @ingroup xtd_forms controls
     /// @remarks A combo_box displays a text box combined with a list_box, which enables the user to select items from the list or enter a new value.
     /// @remarks The drop_down_style property specifies whether the list is always displayed or whether the list is displayed in a drop-down. The drop_down_style property also specifies whether the text portion can be edited. See combo_box_style for the available settings and their effects. There is no setting to always display the list and disallow entering a new value. To display a list to which no new values can be added, use a list_box control.
     /// @remarks To add or remove objects in the list at run time, use methods of the combo_box.object_collection class (through the items property of the combo_box). You can assign an array of object with the push_range method. The list then displays the default string value for each object. You can add individual objects with thepush method. You can delete items with the erase method or clear the entire list with the clear method.

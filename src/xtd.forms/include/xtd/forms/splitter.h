@@ -10,7 +10,7 @@ namespace xtd {
     /// @brief Represents a standard Windows splitter.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms common_controls
+    /// @ingroup xtd_forms controls
     /// @par Example
     /// The following code example demonstrate the use of splitter control.
     /// @include splitter.cpp

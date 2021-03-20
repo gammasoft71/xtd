@@ -5,8 +5,8 @@
 /// @defgroup application application
 /// @brief application definitions.
 
-/// @defgroup common_controls common  controls
-/// @brief Common  controls are childs windows that an application uses in conjunction with another window to enable interaction with the user.
+/// @defgroup controls  controls
+/// @brief Controls are childs windows that an application uses in conjunction with another window to enable interaction with the user.
 
 /// @defgroup components components
 /// @brief Components are objects that an application uses in conjunction with another window.

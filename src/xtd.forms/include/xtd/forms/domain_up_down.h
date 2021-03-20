@@ -10,7 +10,7 @@ namespace xtd {
     /// @brief Represents a Windows spin box (also known as an up-down control) that displays string values.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms common_controls
+    /// @ingroup xtd_forms controls
     /// @par Example
     /// The following code example demonstrate the use of domain up down control.
     /// @include domain_up_down.cpp
