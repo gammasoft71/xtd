@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::collapsible_panel container controls.
+/// @brief Contains xtd::forms::collapsible_panel container.
 #pragma once
 #include "control.h"
 #include "border_style.h"
@@ -11,7 +11,7 @@ namespace xtd {
     /// @brief Used to group collections of controls in a collapsible panel.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms container_controls
+    /// @ingroup xtd_forms containers
     /// @par Example
     /// The following code example demonstrate the use of collapsible_panel contrtoll container.
     /// @include collapsible_panel.cpp

@@ -11,7 +11,7 @@ namespace xtd {
     /// @brief Used to group collections of controls.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms container_controls
+    /// @ingroup xtd_forms containers
     /// @par Example
     /// The following code example demonstrate the use of panel contrtoll container.
     /// @include panel.cpp

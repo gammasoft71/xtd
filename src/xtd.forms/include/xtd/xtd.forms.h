@@ -11,8 +11,8 @@
 /// @defgroup components components
 /// @brief Components are objects that an application uses in conjunction with another window.
 
-/// @defgroup container_controls container  controls
-/// @brief Container  controls are  container for other controls.
+/// @defgroup containers containers
+/// @brief Containers are  container for other controls.
 
 /// @defgroup dialogs dialogs
 /// @brief Common  dialogs consist of the open file, save file, open folder, find and replace, print, page setup, font, color dialog boxes, about, busy, message dialog boxes.
