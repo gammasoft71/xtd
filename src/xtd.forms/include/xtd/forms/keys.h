@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains keys enum.
+/// @brief Contains xtd::forms::keys enum class.
 #pragma once
 #include <xtd/strings.h>
 

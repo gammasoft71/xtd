@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::image_list component.
 #pragma once
 #include <any>
 #include <xtd/drawing/image.h>

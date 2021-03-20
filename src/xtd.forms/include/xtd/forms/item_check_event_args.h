@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::item_check_event_args eventt args.
 #pragma once
 #include <cstdint>
 #include <limits>
