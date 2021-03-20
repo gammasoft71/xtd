@@ -4,6 +4,7 @@
 #include <string>
 #include <xtd/drawing/image.h>
 #include "menu.h"
+#include "menu_item_kind.h"
 #include "shortcut.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -14,14 +15,6 @@ namespace xtd {
     class main_menu;
     class context_menu;
     /// @endcond
-    
-    enum class menu_item_kind {
-      normal = 0,
-      check = 1,
-      radio = 2,
-      drop_down = 3,
-      separator = 4,
-    };
   
     class forms_export_ menu_item : public xtd::forms::menu {
     public:      
