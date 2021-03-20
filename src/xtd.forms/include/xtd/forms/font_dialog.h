@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::font_dialog dialog.
 #pragma once
 #include <xtd/drawing/color.h>
 #include <xtd/drawing/font.h>

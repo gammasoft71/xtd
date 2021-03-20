@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::font_picker control.
 #pragma once
 #include "control.h"
 
