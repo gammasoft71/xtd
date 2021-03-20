@@ -8,26 +8,17 @@
 /// @defgroup common_controls common  controls
 /// @brief Common  controls are childs windows that an application uses in conjunction with another window to enable interaction with the user.
 
-/// @defgroup common_dialogs common  dialogs
-/// @brief Common  dialogs consist of the open file, save file, open folder, find and replace, print, page setup, font, and color dialog boxes.
-
 /// @defgroup components components
 /// @brief Components are objects that an application uses in conjunction with another window.
 
 /// @defgroup container_controls container  controls
 /// @brief Container  controls are  container for other controls.
 
-/// @defgroup controls   controls
-/// @brief Controls are childs windows that an application uses in conjunction with another window to enable interaction with the user.
-
 /// @defgroup dialogs dialogs
-/// @brief Dialogs consist of the about, busy, message dialog boxes.
+/// @brief Common  dialogs consist of the open file, save file, open folder, find and replace, print, page setup, font, color dialog boxes, about, busy, message dialog boxes.
 
 /// @defgroup events events
 /// @brief events are event args and event handler needed to response to window messages.
-
-/// @defgroup picker_controls picker  controls
-/// @brief Picker  controls are childs windows that an application uses in conjunction with another window to enable interaction with the user as a picker.
 
 /// @defgroup menus_and_toolbars   menus and toolbars
 /// @brief  menus and toolbars definitions.

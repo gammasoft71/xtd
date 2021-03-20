@@ -12,7 +12,7 @@ namespace xtd {
     /// @brief Represents a picker control that displays available date time along with controls.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms picker_controls
+    /// @ingroup xtd_forms common_controls
     /// @par Example
     /// The following code example demonstrate the use of date_time_picker picker.
     /// @include date_time_picker.cpp

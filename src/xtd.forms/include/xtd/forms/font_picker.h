@@ -10,7 +10,7 @@ namespace xtd {
     /// @brief Represents a picker control that displays available fonts along with controls.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms picker_controls
+    /// @ingroup xtd_forms common_controls
     /// @par Example
     /// The following code example demonstrate the use of font_picker picker.
     /// @include font_picker.cpp

@@ -12,7 +12,7 @@ namespace xtd {
     /// @brief represent a dot matrix display class
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms controls
+    /// @ingroup xtd_forms common_controls
     /// @par Example
     /// The following code example demonstrate the use of dot matrix display control.
     /// @include dot_matrix_display.cpp
