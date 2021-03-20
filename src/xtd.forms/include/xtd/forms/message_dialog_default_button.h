@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::message_dialog_default_button enum class.
 #pragma once
 #include <xtd/strings.h>
 

@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::mouse_event_args event args.
 #pragma once
 #include <cstdint>
 #include <xtd/event_args.h>

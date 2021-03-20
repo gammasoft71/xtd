@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::message_dialog_ooptions enum class.
 #pragma once
 #include <xtd/strings.h>
 

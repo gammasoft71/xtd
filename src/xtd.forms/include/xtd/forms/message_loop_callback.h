@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::message_loop_callback callback.
 #pragma once
 #include <xtd/delegate.h>
 

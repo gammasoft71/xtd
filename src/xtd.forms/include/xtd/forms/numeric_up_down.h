@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::numeric_up_down control.
 #pragma once
 #include "up_down_base.h"
 

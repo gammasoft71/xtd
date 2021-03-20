@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::message_dialog dialog.
 #pragma once
 #include <string>
 #include <xtd/delegate.h>

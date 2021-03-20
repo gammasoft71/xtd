@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::message_box dialog.
 #pragma once
 #include "message_dialog.h"
 #include "iwin32_window.h"
