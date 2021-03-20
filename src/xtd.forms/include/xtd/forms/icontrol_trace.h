@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::icontrol_trace interface.
 #pragma once
 #include <xtd/interface.h>
 
