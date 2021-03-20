@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::form container controls.
 #pragma once
 #include <cstddef>
 #include <xtd/drawing/icon.h>

@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::form_button_images factory.
 #pragma once
 #include <xtd/environment.h>
 #include <xtd/static.h>
