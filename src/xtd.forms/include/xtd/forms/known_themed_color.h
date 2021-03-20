@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::known_themed_color enum class.
 #pragma once
 #include <xtd/strings.h>
 

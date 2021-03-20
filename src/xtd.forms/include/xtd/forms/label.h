@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::label conttrol.
 #pragma once
 #include "control.h"
 #include "border_style.h"

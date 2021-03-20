@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::menu_item menu.
 #pragma once
 #include <string>
 #include <xtd/drawing/image.h>
