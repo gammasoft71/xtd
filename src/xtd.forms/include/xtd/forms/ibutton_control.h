@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::ibutton_control interface.
 #pragma once
 #include <xtd/interface.h>
 #include "control.h"

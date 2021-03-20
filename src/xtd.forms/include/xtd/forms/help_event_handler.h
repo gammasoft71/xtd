@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::help_event_handler event handler.
 #pragma once
 
 #include <xtd/event_handler.h>

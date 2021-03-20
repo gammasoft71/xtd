@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::fourteen_segment_display control.
 #pragma once
 #include "seven_segment_display.h"
 

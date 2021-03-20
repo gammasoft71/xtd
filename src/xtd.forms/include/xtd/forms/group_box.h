@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::group_box conttainer controls.
 #pragma once
 #include "control.h"
 #include "border_style.h"

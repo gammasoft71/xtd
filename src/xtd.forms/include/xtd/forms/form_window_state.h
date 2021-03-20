@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::form_window_state enum class.
 #pragma once
 #include <xtd/strings.h>
 
