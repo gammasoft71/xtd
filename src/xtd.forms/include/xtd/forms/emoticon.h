@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::emoticon enum component.
 #pragma once
 #include "component.h"
 #include <xtd/static.h>
