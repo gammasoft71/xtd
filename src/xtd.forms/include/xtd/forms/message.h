@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::message class.
 #pragma once
 
 #include <iomanip>
