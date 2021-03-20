@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::help_event_args event args.
 #pragma once
 #include <xtd/event_args.h>
 #include <xtd/drawing/point.h>
