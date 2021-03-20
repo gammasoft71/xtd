@@ -15,7 +15,7 @@ namespace xtd {
     /// @brief Prompts the user to choose a font from among those installed on the local computer.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms common_dialogs
+    /// @ingroup xtd_forms dialogs
     /// @remarks The inherited member show_dialog must be invoked to create this specific common dialog box. hook_proc can be overridden to implement specific dialog box hook functionality.
     /// @remarks When you create an instance of font_dialog, some of the read/write properties are set to initial values. For a list of these values, see the font_dialog constructor.
     /// @par Example

@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::orientation enum class.
 #pragma once
 #include <xtd/strings.h>
 

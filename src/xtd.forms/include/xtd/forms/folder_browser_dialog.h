@@ -12,7 +12,7 @@ namespace xtd {
     /// @brief Prompts the user to select a folder. This class cannot be inherited.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms common_dialogs
+    /// @ingroup xtd_forms dialogs
     /// @par Example
     /// The following code example demonstrate the use of folder_browser_dialog dialog.
     /// @include folder_browser_dialog.cpp

@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::panel container control.
 #pragma once
 #include "scrollable_control.h"
 #include "border_style.h"
