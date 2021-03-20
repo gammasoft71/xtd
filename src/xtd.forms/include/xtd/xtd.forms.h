@@ -5,14 +5,14 @@
 /// @defgroup application application
 /// @brief application definitions.
 
-/// @defgroup controls  controls
-/// @brief Controls are childs windows that an application uses in conjunction with another window to enable interaction with the user.
-
 /// @defgroup components components
 /// @brief Components are objects that an application uses in conjunction with another window.
 
 /// @defgroup containers containers
 /// @brief Containers are  container for other controls.
+
+/// @defgroup controls  controls
+/// @brief Controls are childs windows that an application uses in conjunction with another window to enable interaction with the user.
 
 /// @defgroup dialogs dialogs
 /// @brief Common  dialogs consist of the open file, save file, open folder, find and replace, print, page setup, font, color dialog boxes, about, busy, message dialog boxes.
