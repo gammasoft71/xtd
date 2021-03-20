@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::emoticons factory.
 #pragma once
 #include "emoticon.h"
 

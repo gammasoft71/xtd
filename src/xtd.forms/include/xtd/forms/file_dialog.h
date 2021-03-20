@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::file_dialog common_dialog.
 #pragma once
 #include "common_dialog.h"
 #include <vector>

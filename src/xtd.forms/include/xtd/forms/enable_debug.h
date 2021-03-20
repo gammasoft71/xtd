@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::enable_debug class.
 #pragma once
 #include <cstdint>
 #include <xtd/static.h>

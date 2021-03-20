@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::dot_matrix_display control.
 #pragma once
 #include <array>
 #include <xtd/drawing/solid_brush.h>
@@ -11,6 +13,21 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
+    /// @par Example
+    /// The following code example demonstrate the use of dot matrix display control.
+    /// @include dot_matrix_display.cpp
+    /// @par Windows
+    /// @image html dot_matrix_display_w.png
+    /// <br>
+    /// @image html dot_matrix_display_wd.png
+    /// @par macOS
+    /// @image html dot_matrix_display_m.png
+    /// <br>
+    /// @image html dot_matrix_display_md.png
+    /// @par Gnome
+    /// @image html dot_matrix_display_g.png
+    /// <br>
+    /// @image html dot_matrix_display_gd.png
     class dot_matrix_display : public control {
     public:
       using dot = drawing::point;
