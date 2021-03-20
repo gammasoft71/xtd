@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::iwin32_window interface.
 #pragma once
 #include <cstdint>
 

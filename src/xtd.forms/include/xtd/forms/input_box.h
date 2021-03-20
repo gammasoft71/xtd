@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::input_box control.
 #pragma once
 #include "input_dialog.h"
 #include "input_box_style.h"

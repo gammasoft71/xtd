@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::imessage_filter interface.
 #pragma once
 #include <cstdint>
 
