@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::menu menu.
 #pragma once
 #include <any>
 #include <map>

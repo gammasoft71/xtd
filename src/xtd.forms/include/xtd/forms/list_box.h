@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::list_box control.
 #pragma once
 #include "layout/arranged_element_collection.h"
 #include "border_style.h"

@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::list_control control.
 #pragma once
 #include "control.h"
 

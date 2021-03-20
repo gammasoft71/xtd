@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::menu_images factory.
 #pragma once
 #include <xtd/static.h>
 #include <xtd/drawing/system_images.h>

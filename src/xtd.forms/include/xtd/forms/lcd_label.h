@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::forms::lcd_label conttrol.
+#pragma once
 #include <codecvt>
 #include <xtd/argument_out_of_range_exception.h>
 #include "control.h"

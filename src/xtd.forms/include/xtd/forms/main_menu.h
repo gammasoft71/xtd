@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::forms::main_menu menu.
 #pragma once
 #include "menu_item.h"
 #include "message.h"
