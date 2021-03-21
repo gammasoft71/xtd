@@ -107,23 +107,23 @@ namespace xtd {
     immutable_basic_string operator=(char_t ch) {return std::basic_string<char_t, char_traits_t, allocator_t>::assign(ch);}
     immutable_basic_string operator=(const char* str) {return std::basic_string<char_t, char_traits_t, allocator_t>::assign(str);}
     immutable_basic_string operator=(const std::initializer_list<char_t>& il) {return std::basic_string<char_t, char_traits_t, allocator_t>::assign(il);}
-    template<typename T>
-    immutable_basic_string operator=(const T& t) {return std::basic_string<char_t, char_traits_t, allocator_t>::assign(t);}
+    template<typename type_t>
+    immutable_basic_string operator=(const type_t& t) {return std::basic_string<char_t, char_traits_t, allocator_t>::assign(t);}
 
     /*
     immutable_basic_string operator+(const immutable_basic_string& str) const {return std::basic_string<char_t, char_traits_t, allocator_t>::operator+(str);;}
     immutable_basic_string operator+(char_t ch) const {return std::basic_string<char_t, char_traits_t, allocator_t>::operator+(ch);}
     immutable_basic_string operator+(const char_t* str) const {return std::basic_string<char_t, char_traits_t, allocator_t>::operator+(str);}
     immutable_basic_string operator+(const std::initializer_list<char_t>& il) const {return std::basic_string<char_t, char_traits_t, allocator_t>::operator+(il);}
-    template<typename T>
-    immutable_basic_string operator+(const T& t) const {std::basic_string<char_t, char_traits_t, allocator_t>::operator+=(t); return *this;}
+    template<typename type_t>
+    immutable_basic_string operator+(const type_t& t) const {std::basic_string<char_t, char_traits_t, allocator_t>::operator+=(t); return *this;}
 
     immutable_basic_string& operator+=(const immutable_basic_string& str) {std::basic_string<char_t, char_traits_t, allocator_t>::operator+=(str); return *this;}
     immutable_basic_string& operator+=(char_t ch) {std::basic_string<char_t, char_traits_t, allocator_t>::operator+=(ch); return *this;}
     immutable_basic_string& operator+=(const char_t* str) {std::basic_string<char_t, char_traits_t, allocator_t>::operator+=(str); return *this;}
     immutable_basic_string& operator+=(const std::initializer_list<char_t>& il) {std::basic_string<char_t, char_traits_t, allocator_t>::operator+=(il); return *this;}
-    template<typename T>
-    immutable_basic_string& operator+=(const T& t) {std::basic_string<char_t, char_traits_t, allocator_t>::operator+=(t); return *this;}
+    template<typename type_t>
+    immutable_basic_string& operator+=(const type_t& t) {std::basic_string<char_t, char_traits_t, allocator_t>::operator+=(t); return *this;}
      */
     
     int compare(const immutable_basic_string& str) const noexcept {return std::basic_string<char_t, char_traits_t, allocator_t>::compare(str);}
@@ -162,29 +162,29 @@ namespace xtd {
     size_type find_first_of(const char_t* str, size_type pos, size_type count) const {return std::basic_string<char_t, char_traits_t, allocator_t>::find_first_of(str, pos, count);}
     size_type find_first_of(const char_t* str, size_type pos = 0) const {return std::basic_string<char_t, char_traits_t, allocator_t>::find_first_of(str, pos);}
     size_type find_first_of(char_t ch, size_type pos = 0) const noexcept {return std::basic_string<char_t, char_traits_t, allocator_t>::find_first_of(ch, pos);}
-    template<typename T>
-    size_type find_first_of(const T& t, size_type pos = 0) const noexcept {return std::basic_string<char_t, char_traits_t, allocator_t>::find_first_of(t, pos);}
+    template<typename type_t>
+    size_type find_first_of(const type_t& t, size_type pos = 0) const noexcept {return std::basic_string<char_t, char_traits_t, allocator_t>::find_first_of(t, pos);}
     
     size_type find_first_not_of(const immutable_basic_string& str, size_type pos = 0) const noexcept {return std::basic_string<char_t, char_traits_t, allocator_t>::find_first_not_of(str, pos);}
     size_type find_first_not_of(const char_t* str, size_type pos, size_type count) const {return std::basic_string<char_t, char_traits_t, allocator_t>::find_first_not_of(str, pos, count);}
     size_type find_first_not_of(const char_t* str, size_type pos = 0) const {return std::basic_string<char_t, char_traits_t, allocator_t>::find_first_not_of(str, pos);}
     size_type find_first_not_of(char_t ch, size_type pos = 0) const noexcept {return std::basic_string<char_t, char_traits_t, allocator_t>::find_first_not_of(ch, pos);}
-    template<typename T>
-    size_type find_first_not_of(const T& t, size_type pos = 0) const noexcept {return std::basic_string<char_t, char_traits_t, allocator_t>::find_first_not_of(t, pos);}
+    template<typename type_t>
+    size_type find_first_not_of(const type_t& t, size_type pos = 0) const noexcept {return std::basic_string<char_t, char_traits_t, allocator_t>::find_first_not_of(t, pos);}
 
     size_type find_last_of(const immutable_basic_string& str, size_type pos = 0) const noexcept {return std::basic_string<char_t, char_traits_t, allocator_t>::find_last_of(str, pos);}
     size_type find_last_of(const char_t* str, size_type pos, size_type count) const {return std::basic_string<char_t, char_traits_t, allocator_t>::find_last_of(str, pos, count);}
     size_type find_last_of(const char_t* str, size_type pos = 0) const {return std::basic_string<char_t, char_traits_t, allocator_t>::find_last_of(str, pos);}
     size_type find_last_of(char_t ch, size_type pos = 0) const noexcept {return std::basic_string<char_t, char_traits_t, allocator_t>::find_last_of(ch, pos);}
-    template<typename T>
-    size_type find_last_of(const T& t, size_type pos = 0) const noexcept {return std::basic_string<char_t, char_traits_t, allocator_t>::find_last_of(t, pos);}
+    template<typename type_t>
+    size_type find_last_of(const type_t& t, size_type pos = 0) const noexcept {return std::basic_string<char_t, char_traits_t, allocator_t>::find_last_of(t, pos);}
     
     size_type find_last_not_of(const immutable_basic_string& str, size_type pos = 0) const noexcept {return std::basic_string<char_t, char_traits_t, allocator_t>::find_last_not_of(str, pos);}
     size_type find_last_not_of(const char_t* str, size_type pos, size_type count) const {return std::basic_string<char_t, char_traits_t, allocator_t>::find_last_not_of(str, pos, count);}
     size_type find_last_not_of(const char_t* str, size_type pos = 0) const {return std::basic_string<char_t, char_traits_t, allocator_t>::find_last_not_of(str, pos);}
     size_type find_last_not_of(char_t ch, size_type pos = 0) const noexcept {return std::basic_string<char_t, char_traits_t, allocator_t>::find_last_not_of(ch, pos);}
-    template<typename T>
-    size_type find_last_not_of(const T& t, size_type pos = 0) const noexcept {return std::basic_string<char_t, char_traits_t, allocator_t>::find_last_not_of(t, pos);}
+    template<typename type_t>
+    size_type find_last_not_of(const type_t& t, size_type pos = 0) const noexcept {return std::basic_string<char_t, char_traits_t, allocator_t>::find_last_not_of(t, pos);}
 
     friend std::basic_ostream<char_t, char_traits_t>& operator<<(std::basic_ostream<char_t, char_traits_t>& os, const immutable_basic_string<char_t, char_traits_t, allocator_t>& str) {return os << ((const std::basic_string<char_t, char_traits_t, allocator_t>&)str);}
     //friend std::basic_ostream<char_t, char_traits_t>& operator<<(std::basic_ostream<char_t, char_traits_t>& os, immutable_basic_string<char_t, char_traits_t, allocator_t>& str) {return os << ((std::basic_string<char_t, char_traits_t, allocator_t>&)str);}

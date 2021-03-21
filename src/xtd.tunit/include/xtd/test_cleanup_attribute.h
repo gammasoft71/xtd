@@ -9,11 +9,11 @@ namespace xtd {
   namespace tunit {
     class test_cleanup_attribute {
     public:
-      template<typename TestClass>
-      test_cleanup_attribute(const std::string& name, TestClass& test_class, void (*method)()) noexcept :  test_cleanup_attribute(name, test_class, method, xtd::tunit::line_info()) {}
+      template<typename test_class_t>
+      test_cleanup_attribute(const std::string& name, test_class_t& test_class, void (*method)()) noexcept :  test_cleanup_attribute(name, test_class, method, xtd::tunit::line_info()) {}
       
-      template<typename TestClass>
-      test_cleanup_attribute(const std::string& name, TestClass& test_class, void (*method)(), const xtd::tunit::line_info& caller) noexcept {test_class.add_test_cleanup({name, method, caller});}
+      template<typename test_class_t>
+      test_cleanup_attribute(const std::string& name, test_class_t& test_class, void (*method)(), const xtd::tunit::line_info& caller) noexcept {test_class.add_test_cleanup({name, method, caller});}
     };
   }
 }

@@ -168,14 +168,14 @@ namespace xtd {
       
       static void error(const std::string& actual, const std::string& expected, const std::string& message, const xtd::tunit::line_info& line_info);
       
-      template <typename TValue>
-      static std::string to_string(const TValue& value) {return __tunit_to_string(value);}
+      template <typename value_t>
+      static std::string to_string(const value_t& value) {return __tunit_to_string(value);}
       
-      template <typename TValue>
-      static std::string to_string(const TValue* value) {return __tunit_to_string(value);}
+      template <typename value_t>
+      static std::string to_string(const value_t* value) {return __tunit_to_string(value);}
 
-      template<typename TCollection>
-      static std::string join_items(const TCollection& collection) {return __tunit_join__items(collection);}
+      template<typename collection_t>
+      static std::string join_items(const collection_t& collection) {return __tunit_join__items(collection);}
       
       static std::string join_items(const std::string& str) {return __tunit_join__items(str);}
     };

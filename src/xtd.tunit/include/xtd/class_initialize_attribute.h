@@ -17,16 +17,16 @@ namespace xtd {
       /// @param name Name of attribute
       /// @param test_class xtd::tunit::class_test containing initialize method.
       /// @param method Initialize class method.
-      template<typename TestClass>
-      class_initialize_attribute(const std::string& name, TestClass& test_class, void (*method)()) noexcept :  class_initialize_attribute(name, test_class, method, xtd::tunit::line_info()) {}
+      template<typename test_class_t>
+      class_initialize_attribute(const std::string& name, test_class_t& test_class, void (*method)()) noexcept :  class_initialize_attribute(name, test_class, method, xtd::tunit::line_info()) {}
       
       /// @brief Creates new instance of classinitialize_attribute attribute.
       /// @param name Name of attribute
       /// @param test_class xtd::tunit::class_test containing initialize method.
       /// @param method Initialize class method.
       /// @param line_info Contains information about current file and current line.
-      template<typename TestClass>
-      class_initialize_attribute(const std::string& name, TestClass& test_class, void (*method)(), const xtd::tunit::line_info& caller) noexcept {test_class.add_class_initialize({name, method, caller});}
+      template<typename test_class_t>
+      class_initialize_attribute(const std::string& name, test_class_t& test_class, void (*method)(), const xtd::tunit::line_info& caller) noexcept {test_class.add_class_initialize({name, method, caller});}
     };
   }
 }

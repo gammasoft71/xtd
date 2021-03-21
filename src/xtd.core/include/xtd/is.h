@@ -8,33 +8,33 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @cond
-  template<typename T>
+  template<typename value_t>
   inline bool is(bool value) {return false;}
-  template<typename T>
+  template<typename value_t>
   inline bool is(decimal_t value) {return false;}
-  template<typename T>
+  template<typename value_t>
   inline bool is(double value) {return false;}
-  template<typename T>
+  template<typename value_t>
   inline bool is(float value) {return false;}
-  template<typename T>
+  template<typename value_t>
   inline bool is(int8_t value) {return false;}
-  template<typename T>
+  template<typename value_t>
   inline bool is(int16_t value) {return false;}
-  template<typename T>
+  template<typename value_t>
   inline bool is(int32_t value) {return false;}
-  template<typename T>
+  template<typename value_t>
   inline bool is(int64_t value) {return false;}
-  template<typename T>
+  template<typename value_t>
   inline bool is(llong_t value) {return false;}
-  template<typename T>
+  template<typename value_t>
   inline bool is(uint8_t value) {return false;}
-  template<typename T>
+  template<typename value_t>
   inline bool is(uint16_t value) {return false;}
-  template<typename T>
+  template<typename value_t>
   inline bool is(uint32_t value) {return false;}
-  template<typename T>
+  template<typename value_t>
   inline bool is(uint64_t value) {return false;}
-  template<typename T>
+  template<typename value_t>
   inline bool is(ullong_t value) {return false;}
   /// @endcond
   

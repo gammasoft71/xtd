@@ -135,8 +135,8 @@ namespace xtd {
       /// @param paths The path array.
       /// @return A string containing the combined paths. If one of the specified paths is a zero-length string, this method returns the other path. If path2 contains an absolute path, this method returns path2.
       /// @remarks an empty string if path contains one or more of the invalid characters.
-      template<typename char_t, typename T>
-      static std::basic_string<char_t> combine(T paths) noexcept {
+      template<typename char_t, typename path_t>
+      static std::basic_string<char_t> combine(path_t paths) noexcept {
         std::basic_string<char_t> result;
         for (auto path : paths)
           result = combine(result, path);
@@ -144,8 +144,8 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename T>
-      static std::basic_string<char> combine(T paths) noexcept {
+      template<typename path_t>
+      static std::basic_string<char> combine(path_t paths) noexcept {
         std::basic_string<char> result;
         for (auto path : paths)
           result = combine(result, path);
@@ -166,16 +166,16 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename char_t, typename T>
-      static std::basic_string<char_t> combine(const std::initializer_list<T>& paths) noexcept {
+      template<typename char_t, typename path_t>
+      static std::basic_string<char_t> combine(const std::initializer_list<path_t>& paths) noexcept {
         std::basic_string<char_t> result;
         for (auto path : paths)
           result = combine(result, path);
         return result;
       }
       
-      template<typename T>
-      static std::basic_string<char> combine(const std::initializer_list<T>& paths) noexcept {
+      template<typename path_t>
+      static std::basic_string<char> combine(const std::initializer_list<path_t>& paths) noexcept {
         std::basic_string<char> result;
         for (auto path : paths)
           result = combine(result, path);
