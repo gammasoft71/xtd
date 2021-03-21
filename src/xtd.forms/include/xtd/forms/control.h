@@ -801,12 +801,25 @@ namespace xtd {
       /// @remarks If the suspend_layout method was called before calling the perform_layout method, the layout event is suppressed.
       void perform_layout() {on_layout(event_args::empty);}
       
+      /// @brief Computes the location of the specified screen point into client coordinates.
+      /// @param p The screen coordinate xtd::drawing::point to convert.
+      /// @return A xtd::drawing::point that represents the converted xtd::drawing::point, p, in client coordinates.
       xtd::drawing::point point_to_client(const xtd::drawing::point& p);
       
+      /// @brief Computes the location of the specified client point into screen coordinates.
+      /// @param p The client coordinate  xtd::drawing::point to convert.
+      /// @return A  xtd::drawing::point that represents the converted  xtd::drawing::point, p, in screen coordinates.
       xtd::drawing::point point_to_screen(const xtd::drawing::point& p);
       
+      /// @brief Preprocesses keyboard or input messages within the message loop before they are dispatched.
+      /// @param message A xtd::forms::message, passed by reference, that represents the message to process. The possible values are WM_KEYDOWN, WM_SYSKEYDOWN, WM_CHAR, and WM_SYSCHAR.
+      /// @return true if the message was processed by the control; otherwise, false.
+      /// @remarks pre_process_message is called by the application's message loop to preprocess input messages before they are dispatched. Possible values for the msg parameter are WM_KEYDOWN, WM_SYSKEYDOWN, WM_CHAR, and WM_SYSCHAR.
       virtual bool pre_process_message(xtd::forms::message& message);
 
+      /// @brief Forces the control to invalidate its client area and immediately redraw itself and any child controls.
+      /// @par Notes to Inheritors
+      /// When overriding refresh() in a derived class, be sure to call the base class's refresh() method so the control and its child controls are invalidated and redrawn.
       virtual void refresh() const;
       
       /// @brief Resumes usual layout logic.
@@ -826,14 +839,35 @@ namespace xtd {
         if (perform_layout) this->perform_layout();
       }
       
+      /// @brief Send a message with specified hwnd, message, wparam and lparam.
+      /// @param hwnd The window handle of the message.
+      /// @param msg The ID number for the message.
+      /// @param wparam The WParam field of the message.
+      /// @param lparam The LParam field of the message.
+      /// @return Return the return value of the message.
       intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) const;
       
+      /// @brief Sets a value indicating how a control will behave when its auto_size property is enabled.
+      /// @param auto_size_mode One of the xtd::forms::auto_size_mode values.
       void set_auto_size_mode(auto_size_mode auto_size_mode);
       
+      /// @brief Sets the bounds of the control to the specified location and size.
+      /// @param x The new left property value of the control.
+      /// @param y The new top property value of the control.
+      /// @param width The new width property value of the control.
+      /// @param height The new height property value of the control.
       void set_bounds(int32_t x, int32_t y, int32_t width, int32_t height) {set_bounds(x, y, width, height, bounds_specified::all);}
 
+      /// @brief Sets the specified bounds of the control to the specified location and size.
+      /// @param x The new left property value of the control.
+      /// @param y The new top property value of the control.
+      /// @param width The new width property value of the control.
+      /// @param height The new height property value of the control.
+      /// @param specified A bitwise combination of the xtd::forms::bounds_specified values. For any parameter not specified, the current value will be used.
       void set_bounds(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) {set_bounds_core(x, y, width, height, specified);}
 
+      /// @brief Displays the control to the user.
+      /// @remarks Showing the control is equivalent to setting the visible property to true. After the show method is called, the visible property returns a value of true until the hide method is called.
       virtual void show() {visible(true);}
       
       /// @brief Temporarily suspends the layout logic for the control.
@@ -845,8 +879,16 @@ namespace xtd {
         set_state(state::layout_deferred, true);
       }
       
+      /// @brief Returns a string containing the name of the control, if any.
+      /// @return A string containing the name of the control, if any, or class name if the control is unnamed.
       virtual std::string to_string() const;
       
+      /// @brief Causes the control to redraw the invalidated regions within its client area.
+      /// @remarks Executes any pending requests for painting.
+      /// @remarks There are two ways to repaint a form and its contents:
+      /// * You can use one of the overloads of the invalidate method with the update method.
+      /// * You can call the refresh method, which forces the control to redraw itself and all its children. This is equivalent to setting the invalidate method to true and using it with update.
+      /// @remarks The invalidate method governs what gets painted or repainted. The update method governs when the painting or repainting occurs. If you use the invalidate and update methods together rather than calling refresh, what gets repainted depends on which overload of invalidate you use. The update method just forces the control to be painted immediately, but the invalidate method governs what gets painted when you call the update method.
       virtual void update() const;
       
       /// @cond
