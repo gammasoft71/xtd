@@ -235,7 +235,7 @@ ECLIPSE_DOC_ID         = org.doxygen.Project
 #---------------------------------------------------------------------------
 
 DISABLE_INDEX          = NO
-GENERATE_TREEVIEW      = NO
+GENERATE_TREEVIEW      = YES # Default: NO
 ENUM_VALUES_PER_LINE   = 1 # Default: 4
 TREEVIEW_WIDTH         = 250
 EXT_LINKS_IN_WINDOW    = NO
