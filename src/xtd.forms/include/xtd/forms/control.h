@@ -609,7 +609,26 @@ namespace xtd {
           child.parent(nullptr);
         return parent;
       }
+
+      /// @brief Executes the specified delegate asynchronously on the thread that the control's underlying handle was created on.
+      /// @param value A delegate to a method that takes no parameters.
+      /// @return An async_result_invoke that represents the result of the begin_invoke(delegate) operation.
+      async_result_invoke begin_invoke(delegate<void()> value) {return begin_invoke(delegate<void(std::vector<std::any>)>(value), {});}
       
+      /// @brief Executes the specified delegate asynchronously with the specified arguments, on the thread that the control's underlying handle was created on.
+      /// @param value A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
+      /// @param args An array of objects to pass as arguments to the given method. This can be empty if no arguments are needed.
+      /// @return An async_result_invoke that represents the result of the begin_invoke(delegate) operation.
+      async_result_invoke begin_invoke(delegate<void(std::vector<std::any>)> value, const std::vector<std::any>& args);
+      
+      /// @cond
+      template<typename delegate_t>
+      async_result_invoke begin_invoke(delegate_t value, const std::vector<std::any>& args) {return begin_invoke(delegate<void(std::vector<std::any>)>(value), args);}
+      
+      template<typename delegate_t>
+      async_result_invoke begin_invoke(delegate_t value) {return begin_invoke(delegate<void(std::vector<std::any>)>(value), {});}
+      /// @endcond
+
       /// @brief Brings the control to the front of the z-order.
       /// @remarks The control is moved to the front of the z-order. If the control is a child of another control, the child control is moved to the front of the z-order. bring_to_front does not make a control a top-level control, and it does not raise the paint event.
       virtual void bring_to_front();
@@ -707,7 +726,11 @@ namespace xtd {
       /// @par Notes to Inheritors
       /// When overriding destroy_handle() in a derived class, be sure to call the base class's destroy_handle() method to ensure that the handle is destroyed.
       virtual void destroy_handle();
-      
+
+      /// @brief Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.
+      /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke(delegate).
+      void end_invoke(async_result_invoke async);
+
       /// Sets input focus to the control.
       /// @return true if the input focus request was successful; otherwise, false.
       /// @remarks The focus method returns true if the control successfully received input focus. The control can have the input focus while not displaying any visual cues of having the focus. This behavior is primarily observed by the nonselectable controls listed below, or any controls derived from them.
@@ -728,27 +751,25 @@ namespace xtd {
       /// @remarks Hiding the control is equivalent to setting the visible property to false. After the hide method is called, the visible property returns a value of false until the show method is called.
       virtual void hide() {visible(false);}
       
+      /// @brief Invalidates the entire surface of the control and causes the control to be redrawn.
+      /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
       virtual void invalidate() const {invalidate({{0, 0}, client_size()}, true);}
 
+      /// @brief Invalidates a specific region of the control and causes a paint message to be sent to the control. Optionally, invalidates the child controls assigned to the control.
+      /// @param invalidate_children true to invalidate the control's child controls; otherwise, false.
+      /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
       virtual void invalidate(bool invalidate_children) const {invalidate({{0, 0}, client_size()}, invalidate_children);}
 
+      /// @brief Invalidates the specified region of the control (adds it to the control's update region, which is the area that will be repainted at the next paint operation), and causes a paint message to be sent to the control.
+      /// @param rect A xtd::drawing::rectangle that represents the region to invalidate.
+      /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
       virtual void invalidate(const drawing::rectangle& rect) const {invalidate(rect, true);}
       
+      /// @brief Invalidates the specified region of the control (adds it to the control's update region, which is the area that will be repainted at the next paint operation), and causes a paint message to be sent to the control. Optionally, invalidates the child controls assigned to the control.
+      /// @param rect A xtd::drawing::rectangle that represents the region to invalidate.
+      /// @param invalidate_children true to invalidate the control's child controls; otherwise, false.
+      /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
       virtual void invalidate(const drawing::rectangle& rect, bool invalidate_children) const;
-
-      async_result_invoke begin_invoke(delegate<void(std::vector<std::any>)> value, const std::vector<std::any>& args);
-      
-      async_result_invoke begin_invoke(delegate<void()> value) {return begin_invoke(delegate<void(std::vector<std::any>)>(value), {});}
-      
-      void end_invoke(async_result_invoke async);
-      
-      /// @cond
-      template<typename delegate_t>
-      async_result_invoke begin_invoke(delegate_t value, const std::vector<std::any>& args) {return begin_invoke(delegate<void(std::vector<std::any>)>(value), args);}
-      
-      template<typename delegate_t>
-      async_result_invoke begin_invoke(delegate_t value) {return begin_invoke(delegate<void(std::vector<std::any>)>(value), {});}
-      /// @endcond
 
       void invoke(delegate<void(std::vector<std::any>)> value, const std::vector<std::any>& args) {end_invoke(begin_invoke(value, args));}
       
