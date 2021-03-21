@@ -240,7 +240,7 @@ dl.reflist {
 /*********************************************/
 div.line {
 	background: transparent;
-	color: inherit;
+	color: #d7d7d7;
 }
 
 div.line a {
@@ -309,6 +309,10 @@ span.lineno a {
 .memTemplItemLeft, .memTemplItemRight, .memTemplParams {
 	background: #32363d;
 	color: inherit;
+}
+
+.memtemplate {
+	color: #B4CCF9;
 }
 
 .memSeparator {
