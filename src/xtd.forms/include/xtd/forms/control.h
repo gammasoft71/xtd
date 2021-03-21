@@ -900,8 +900,12 @@ namespace xtd {
       bool operator!=(const control& value) const {return !operator==(value);}
       /// @endcond
 
+      /// @brief Occurs when the value of the auto_size property changes.
+      /// @remarks This event is raised if the auto_size property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> auto_size_changed;
 
+      /// @brief Occurs when the value of the back_color property changes.
+      /// @remarks This event is raised if the back_color property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> back_color_changed;
       
       event<control, event_handler<control&>> click;
