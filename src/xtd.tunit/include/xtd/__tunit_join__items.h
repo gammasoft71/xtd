@@ -6,8 +6,8 @@
 #include <string>
 
 /// @cond
-template<typename TCollection>
-std::string __tunit_join__items(const TCollection& collection) {
+template<typename collection_t>
+std::string __tunit_join__items(const collection_t& collection) {
   std::stringstream ss;
   ss << "< ";
   bool first = true;

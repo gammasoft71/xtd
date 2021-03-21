@@ -81,8 +81,8 @@ namespace xtd {
   template<>
   inline std::string to_string(const std::tm& value, const std::string& fmt, const std::locale& loc) {return __date_time_formater(fmt, value, loc);}
 
-  template<typename Type, typename Period>
-  inline std::string to_string(const std::chrono::duration<Type, Period>& value, const std::string& fmt, const std::locale& loc) {return __duration_formater(fmt, value, loc);}
+  template<typename type_t, typename Period>
+  inline std::string to_string(const std::chrono::duration<type_t, Period>& value, const std::string& fmt, const std::locale& loc) {return __duration_formater(fmt, value, loc);}
 
   template<>
   inline std::string to_string(const std::string& value, const std::string& fmt, const std::locale& loc) {return __string_formater(fmt, value, loc);}
@@ -167,8 +167,8 @@ namespace xtd {
   template<>
   inline std::wstring to_string(const std::tm& value, const std::wstring& fmt, const std::locale& loc) {return __date_time_formater(fmt, value, loc);}
 
-  template<typename Type, typename Period>
-  inline std::wstring to_string(const std::chrono::duration<Type, Period>& value, const std::wstring& fmt, const std::locale& loc) {return __duration_formater(fmt, value, loc);}
+  template<typename type_t, typename Period>
+  inline std::wstring to_string(const std::chrono::duration<type_t, Period>& value, const std::wstring& fmt, const std::locale& loc) {return __duration_formater(fmt, value, loc);}
 
   template<>
   inline std::wstring to_string(const std::wstring& value, const std::wstring& fmt, const std::locale& loc) {return __string_formater(fmt, value, loc);}

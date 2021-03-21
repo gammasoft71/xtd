@@ -23,8 +23,8 @@ namespace assert_unit_tests {
     std::string message_;
   };
   
-  template <typename TExcpected, typename TActual>
-  void assert_value(const std::string& name, const TExcpected& expected, const TActual& actual, const std::string& file, int line_number) {
+  template <typename expected_t, typename actual_t>
+  void assert_value(const std::string& name, const expected_t& expected, const actual_t& actual, const std::string& file, int line_number) {
     if (actual == expected)
       std::cout << "  SUCCEED " << name << std::endl;
     else {

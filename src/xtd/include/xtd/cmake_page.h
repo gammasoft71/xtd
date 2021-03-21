@@ -324,32 +324,6 @@
 /// @endcode
 ///
 /// @subsection AssemblyCopyrightSubSection assembly_copyright
-/// @brief Specifies a configuration for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
-/// @param ASSEMBLY_CONFIGURATION The configuration to set.
-/// @remarks Call only once by project.
-/// @remarks This method must be call before target_type().
-/// @remarks This method is optional.
-/// @par Examples
-/// @code
-///  cmake_minimum_required(VERSION 3.3)
-///
-///  project(my_project)
-///  find_package(xtd REQUIRED)
-///  add_sources(my_project.cpp)
-///
-///  assembly_configuration("Beta public")
-///
-///  target_type(GUI_APPLICATION)
-/// @endcode
-///
-/// @subsection AssemblyCultureSubSection assembly_culture
-/// @brief Specifies the culture for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
-/// @param ASSEMBLY_CONFIGURATION The culture to set.
-/// @remarks Call only once by project.
-/// @remarks This method must be call before target_type().
-/// @remarks This method is optional.
-///
-/// @subsection AssemblyCopyrightSubSection assembly_copyright
 /// @brief Specifies a copyright notice for the assembly manifest. Corresponds to AssemblyCopyrightAttribute.
 /// @param ASSEMBLY_COPYRIGHT The copyright to set.
 /// @remarks Call only once by project.
@@ -367,6 +341,13 @@
 ///
 ///  target_type(GUI_APPLICATION)
 /// @endcode
+///
+/// @subsection AssemblyCultureSubSection assembly_culture
+/// @brief Specifies the culture for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
+/// @param ASSEMBLY_CONFIGURATION The culture to set.
+/// @remarks Call only once by project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
 ///
 /// @subsection AssemblyDescriptionSubSection assembly_description
 /// @brief Specifies an optional description for the assembly manifest. Corresponds to AssemblyDescriptionAttribute.
@@ -839,7 +820,7 @@
 /// @brief Contains assembly title string.
 /// @see @ref AssemblyTitleSubSection
 ///
-/// @subsection AssemblyTitleVariableSubSection ASSEMBLY_TRADEMARK
+/// @subsection AssemblyTrademarkVariableSubSection ASSEMBLY_TRADEMARK
 /// @brief Contains assembly trademark information.
 /// @see @ref AssemblyTrademarkSubSection
 ///

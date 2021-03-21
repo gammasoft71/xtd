@@ -29,8 +29,8 @@ namespace xtd {
       /// xtd::tunit::assume::are_equal(24, int(24)); // test ok.
       /// xtd::tunit::assume::are_equal(23, int(24)); // test throws an abort_error exception.
       /// @endcode
-      template<typename TExpected, typename TActual>
-      static void are_equal(const TExpected& expected, const TActual& actual) {are_equal(expected, actual, "", line_info());}
+      template<typename expected_t, typename actual_t>
+      static void are_equal(const expected_t& expected, const actual_t& actual) {are_equal(expected, actual, "", line_info());}
       
       /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
@@ -42,8 +42,8 @@ namespace xtd {
       /// xtd::tunit::assume::are_equal(24, int(24), line_info_); // test ok.
       /// xtd::tunit::assume::are_equal(23, int(24), line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TExpected, typename TActual>
-      static void are_equal(const TExpected& expected, const TActual& actual, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, "", line_info);}
+      template<typename expected_t, typename actual_t>
+      static void are_equal(const expected_t& expected, const actual_t& actual, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, "", line_info);}
       
       /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
@@ -55,8 +55,8 @@ namespace xtd {
       /// xtd::tunit::assume::are_equal(24, int(24), "User message..."); // test ok.
       /// xtd::tunit::assume::are_equal(23, int(24), "User message..."); // test throws an abort_error exception.
       /// @endcode
-      template<typename TExpected, typename TActual>
-      static void are_equal(const TExpected& expected, const TActual& actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
+      template<typename expected_t, typename actual_t>
+      static void are_equal(const expected_t& expected, const actual_t& actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
       
       /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
@@ -69,8 +69,8 @@ namespace xtd {
       /// xtd::tunit::assume::are_equal(24, int(24), "User message...", line_info_); // test ok.
       /// xtd::tunit::assume::are_equal(23, int(24), "User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TExpected, typename TActual>
-      static void are_equal(const TExpected& expected, const TActual& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename expected_t, typename actual_t>
+      static void are_equal(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::are_equal(expected, actual, message, line_info);
         } catch (...) {
@@ -139,7 +139,7 @@ namespace xtd {
       /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
+      /// @param tolerance Indicates a tolerance within which they will be considered as equal.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// @code
@@ -152,7 +152,7 @@ namespace xtd {
       /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
+      /// @param tolerance Indicates a tolerance within which they will be considered as equal.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -166,7 +166,7 @@ namespace xtd {
       /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
+      /// @param tolerance Indicates a tolerance within which they will be considered as equal.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -180,7 +180,7 @@ namespace xtd {
       /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
+      /// @param tolerance Indicates a tolerance within which they will be considered as equal.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -201,7 +201,7 @@ namespace xtd {
       /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
+      /// @param tolerance Indicates a tolerance within which they will be considered as equal.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// @code
@@ -214,7 +214,7 @@ namespace xtd {
       /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
+      /// @param tolerance Indicates a tolerance within which they will be considered as equal.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -228,7 +228,7 @@ namespace xtd {
       /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
+      /// @param tolerance Indicates a tolerance within which they will be considered as equal.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -242,7 +242,7 @@ namespace xtd {
       /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
+      /// @param tolerance Indicates a tolerance within which they will be considered as equal.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -263,7 +263,7 @@ namespace xtd {
       /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
+      /// @param tolerance Indicates a tolerance within which they will be considered as equal.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// @code
@@ -276,7 +276,7 @@ namespace xtd {
       /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
+      /// @param tolerance Indicates a tolerance within which they will be considered as equal.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -290,7 +290,7 @@ namespace xtd {
       /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
+      /// @param tolerance Indicates a tolerance within which they will be considered as equal.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -304,7 +304,7 @@ namespace xtd {
       /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
+      /// @param tolerance Indicates a tolerance within which they will be considered as equal.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -331,8 +331,8 @@ namespace xtd {
       /// xtd::tunit::assume::are_not_equal(23, int(24)); // test ok.
       /// xtd::tunit::assume::are_not_equal(24, int(24)); // test throws an abort_error exception.
       /// @endcode
-      template<typename TExpected, typename TActual>
-      static void are_not_equal(const TExpected& expected, const TActual& actual) {are_not_equal(expected, actual, "", line_info());}
+      template<typename expected_t, typename actual_t>
+      static void are_not_equal(const expected_t& expected, const actual_t& actual) {are_not_equal(expected, actual, "", line_info());}
       
       /// @brief Assumes that two type are not equal.
       /// @param expected the expected value.
@@ -344,8 +344,8 @@ namespace xtd {
       /// xtd::tunit::assume::are_not_equal(23, int(24), line_info_); // test ok.
       /// xtd::tunit::assume::are_not_equal(24, int(24), line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TExpected, typename TActual>
-      static void are_not_equal(const TExpected& expected, const TActual& actual, const xtd::tunit::line_info& line_info) {are_not_equal(expected, actual, "", line_info);}
+      template<typename expected_t, typename actual_t>
+      static void are_not_equal(const expected_t& expected, const actual_t& actual, const xtd::tunit::line_info& line_info) {are_not_equal(expected, actual, "", line_info);}
       
       /// @brief Assumes that two type are not equal.
       /// @param expected the expected value.
@@ -357,8 +357,8 @@ namespace xtd {
       /// xtd::tunit::assume::are_not_equal(23, int(24), "User message..."); // test ok.
       /// xtd::tunit::assume::are_not_equal(24, int(24), "User message..."); // test throws an abort_error exception.
       /// @endcode
-      template<typename TExpected, typename TActual>
-      static void are_not_equal(const TExpected& expected, const TActual& actual, const std::string& message) {are_not_equal(expected, actual, message, line_info());}
+      template<typename expected_t, typename actual_t>
+      static void are_not_equal(const expected_t& expected, const actual_t& actual, const std::string& message) {are_not_equal(expected, actual, message, line_info());}
       
       /// @brief Assumes that two type are not equal.
       /// @param expected the expected value.
@@ -371,8 +371,8 @@ namespace xtd {
       /// xtd::tunit::assume::are_not_equal(23, int(24), "User message...", line_info_); // test ok.
       /// xtd::tunit::assume::are_not_equal(24, int(24), "User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TExpected, typename TActual>
-      static void are_not_equal(const TExpected& expected, const TActual& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename expected_t, typename actual_t>
+      static void are_not_equal(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::are_not_equal(expected, actual, message, line_info);
         } catch (...) {
@@ -426,8 +426,8 @@ namespace xtd {
       /// xtd::tunit::assume::are_not_same(c, a); // test ok.
       /// xtd::tunit::assume::are_not_same(b, a); // test throws an abort_error exception.
       /// @endcode
-      template<typename TExpected, typename TActual>
-      static void are_not_same(const TExpected& expected, const TActual& actual) {are_not_same(expected, actual, "", line_info());}
+      template<typename expected_t, typename actual_t>
+      static void are_not_same(const expected_t& expected, const actual_t& actual) {are_not_same(expected, actual, "", line_info());}
       
       /// @brief Assumes that two objects do refer to differents objects.
       /// @param expected the expected value.
@@ -442,8 +442,8 @@ namespace xtd {
       /// xtd::tunit::assume::are_not_same(c, a, line_info_); // test ok.
       /// xtd::tunit::assume::are_not_same(b, a, line_info); // test throws an abort_error exception.
       /// @endcode
-      template<typename TExpected, typename TActual>
-      static void are_not_same(const TExpected& expected, const TActual& actual, const xtd::tunit::line_info& line_info) {are_not_same(expected, actual, "", line_info);}
+      template<typename expected_t, typename actual_t>
+      static void are_not_same(const expected_t& expected, const actual_t& actual, const xtd::tunit::line_info& line_info) {are_not_same(expected, actual, "", line_info);}
       
       /// @brief Assumes that two objects do refer to differents objects.
       /// @param expected the expected value.
@@ -458,8 +458,8 @@ namespace xtd {
       /// xtd::tunit::assume::are_not_same(c, a, "User message..."); // test ok.
       /// xtd::tunit::assume::are_not_same(b, a, "User message..."); // test throws an abort_error exception.
       /// @endcode
-      template<typename TExpected, typename TActual>
-      static void are_not_same(const TExpected& expected, const TActual& actual, const std::string& message) {are_not_same(expected, actual, message, line_info());}
+      template<typename expected_t, typename actual_t>
+      static void are_not_same(const expected_t& expected, const actual_t& actual, const std::string& message) {are_not_same(expected, actual, message, line_info());}
       
       /// @brief Assumes that two objects do refer to differents objects.
       /// @param expected the expected value.
@@ -475,8 +475,8 @@ namespace xtd {
       /// xtd::tunit::assume::are_not_same(c, a, "User message...", line_info_); // test ok.
       /// xtd::tunit::assume::are_not_same(b, a, "User message...", line_info); // test throws an abort_error exception.
       /// @endcode
-      template<typename TExpected, typename TActual>
-      static void are_not_same(const TExpected& expected, const TActual& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename expected_t, typename actual_t>
+      static void are_not_same(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::are_not_same(expected, actual, message, line_info);
         } catch (...) {
@@ -496,8 +496,8 @@ namespace xtd {
       /// xtd::tunit::assume::are_same(b, a); // test ok.
       /// xtd::tunit::assume::are_same(c, a); // test throws an abort_error exception.
       /// @endcode
-      template<typename TExpected, typename TActual>
-      static void are_same(const TExpected& expected, const TActual& actual) {are_same(expected, actual, "", line_info());}
+      template<typename expected_t, typename actual_t>
+      static void are_same(const expected_t& expected, const actual_t& actual) {are_same(expected, actual, "", line_info());}
       
       /// @brief Assumes that two objects do refer to differents objects.
       /// @param expected the expected value.
@@ -512,8 +512,8 @@ namespace xtd {
       /// xtd::tunit::assume::are_same(b, a, line_info_); // test ok.
       /// xtd::tunit::assume::are_same(c, a, line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TExpected, typename TActual>
-      static void are_same(const TExpected& expected, const TActual& actual, const xtd::tunit::line_info& line_info) {are_same(expected, actual, "", line_info);}
+      template<typename expected_t, typename actual_t>
+      static void are_same(const expected_t& expected, const actual_t& actual, const xtd::tunit::line_info& line_info) {are_same(expected, actual, "", line_info);}
       
       /// @brief Assumes that two objects do refer to differents objects.
       /// @param expected the expected value.
@@ -528,8 +528,8 @@ namespace xtd {
       /// xtd::tunit::assume::are_same(b, a, "User message..."); // test ok.
       /// xtd::tunit::assume::are_same(c, a, "User message..."); // test throws an abort_error exception.
       /// @endcode
-      template<typename TExpected, typename TActual>
-      static void are_same(const TExpected& expected, const TActual& actual, const std::string& message) {are_same(expected, actual, message, line_info());}
+      template<typename expected_t, typename actual_t>
+      static void are_same(const expected_t& expected, const actual_t& actual, const std::string& message) {are_same(expected, actual, message, line_info());}
       
       /// @brief Assumes that two objects do refer to differents objects.
       /// @param expected the expected value.
@@ -545,8 +545,8 @@ namespace xtd {
       /// xtd::tunit::assume::are_same(b, a, "User message...", line_info_); // test ok.
       /// xtd::tunit::assume::are_same(c, a, "User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TExpected, typename TActual>
-      static void are_same(const TExpected& expected, const TActual& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename expected_t, typename actual_t>
+      static void are_same(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::are_same(expected, actual, message, line_info);
         } catch (...) {
@@ -564,8 +564,8 @@ namespace xtd {
       /// xtd::tunit::assume::contains(2, v1); // test ok.
       /// xtd::tunit::assume::contains(4, v1); // test throws an abort_error exception.
       /// @endcode
-      template<typename TItem, typename TCollection>
-      static void contains(const TItem& item, const TCollection& collection) {contains(item, collection, "", line_info());}
+      template<typename item_t, typename collection_t>
+      static void contains(const item_t& item, const collection_t& collection) {contains(item, collection, "", line_info());}
       
       /// @brief Assumes that collection contains an item.
       /// @param item object to verify.
@@ -578,8 +578,8 @@ namespace xtd {
       /// xtd::tunit::assume::contains(2, v1, line_info_); // test ok.
       /// xtd::tunit::assume::contains(4, v1, line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TItem, typename TCollection>
-      static void contains(const TItem& item, const TCollection& collection, const xtd::tunit::line_info& line_info) {contains(item, collection, "", line_info);}
+      template<typename item_t, typename collection_t>
+      static void contains(const item_t& item, const collection_t& collection, const xtd::tunit::line_info& line_info) {contains(item, collection, "", line_info);}
       
       /// @brief Assumes that collection contains an item.
       /// @param item object to verify.
@@ -592,8 +592,8 @@ namespace xtd {
       /// xtd::tunit::assume::contains(2, v1, "User message..."); // test ok.
       /// xtd::tunit::assume::contains(4, v1, "User message..."); // test throws an abort_error exception.
       /// @endcode
-      template<typename TItem, typename TCollection>
-      static void contains(const TItem& item, const TCollection& collection, const std::string& message) {contains(item, collection, message, line_info());}
+      template<typename item_t, typename collection_t>
+      static void contains(const item_t& item, const collection_t& collection, const std::string& message) {contains(item, collection, message, line_info());}
       
       /// @brief Assumes that collection contains an item.
       /// @param item object to verify.
@@ -607,8 +607,8 @@ namespace xtd {
       /// xtd::tunit::assume::contains(2, v1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assume::contains(4, v1, "User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TItem, typename TCollection>
-      static void contains(const TItem& item, const TCollection& collection, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename item_t, typename collection_t>
+      static void contains(const item_t& item, const collection_t& collection, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::contains(item, collection, message, line_info);
         } catch (...) {
@@ -617,14 +617,14 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename TItem, typename TValue>
-      static void contains(const TItem& item, const std::initializer_list<TValue>& values) {contains(item, values, "", line_info());}
-      template<typename TItem, typename TValue>
-      static void contains(const TItem& item, const std::initializer_list<TValue>& values, const xtd::tunit::line_info& line_info) {contains(item, values, "", line_info);}
-      template<typename TItem, typename TValue>
-      static void contains(const TItem& item, const std::initializer_list<TValue>& values, const std::string& message) {contains(item, values, message, line_info());}
-      template<typename TItem, typename TValue>
-      static void contains(const TItem& item, const std::initializer_list<TValue>& values, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename item_t, typename value_t>
+      static void contains(const item_t& item, const std::initializer_list<value_t>& values) {contains(item, values, "", line_info());}
+      template<typename item_t, typename value_t>
+      static void contains(const item_t& item, const std::initializer_list<value_t>& values, const xtd::tunit::line_info& line_info) {contains(item, values, "", line_info);}
+      template<typename item_t, typename value_t>
+      static void contains(const item_t& item, const std::initializer_list<value_t>& values, const std::string& message) {contains(item, values, message, line_info());}
+      template<typename item_t, typename value_t>
+      static void contains(const item_t& item, const std::initializer_list<value_t>& values, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::contains(item, values, message, line_info);
         } catch (...) {
@@ -729,8 +729,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_empty(v1); // test ok.
       /// xtd::tunit::assume::is_empty(v2); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue>
-      static void is_empty(const TValue& value) {is_empty(value, "", line_info());}
+      template<typename value_t>
+      static void is_empty(const value_t& value) {is_empty(value, "", line_info());}
       
       /// @brief Assumes that collection contains an item.
       /// @param value The value to check is empty.
@@ -743,8 +743,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_empty(v1, line_info_); // test ok.
       /// xtd::tunit::assume::is_empty(v2, line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue>
-      static void is_empty(const TValue& value, const xtd::tunit::line_info& line_info) {is_empty(value, "", line_info);}
+      template<typename value_t>
+      static void is_empty(const value_t& value, const xtd::tunit::line_info& line_info) {is_empty(value, "", line_info);}
       
       /// @brief Assumes that collection contains an item.
       /// @param value The value to check is empty.
@@ -757,8 +757,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_empty(v1, "User message..."); // test ok.
       /// xtd::tunit::assume::is_empty(v2, "User message..."); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue>
-      static void is_empty(const TValue& value, const std::string& message) {is_empty(value, message, line_info());}
+      template<typename value_t>
+      static void is_empty(const value_t& value, const std::string& message) {is_empty(value, message, line_info());}
       
       /// @brief Assumes that collection contains an item.
       /// @param value The value to check is empty.
@@ -772,8 +772,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_empty(v1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assume::is_empty(v2, "User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue>
-      static void is_empty(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename value_t>
+      static void is_empty(const value_t& value, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_empty(value, message, line_info);
         } catch (...) {
@@ -782,14 +782,14 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename TValue>
-      static void is_empty(const std::initializer_list<TValue>& value) {is_empty(value, "", line_info());}
-      template<typename TValue>
-      static void is_empty(const std::initializer_list<TValue>& value, const xtd::tunit::line_info& line_info) {is_empty(value, "", line_info);}
-      template<typename TValue>
-      static void is_empty(const std::initializer_list<TValue>& value, const std::string& message) {is_empty(value, message, line_info());}
-      template<typename TValue>
-      static void is_empty(const std::initializer_list<TValue>& values, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename value_t>
+      static void is_empty(const std::initializer_list<value_t>& value) {is_empty(value, "", line_info());}
+      template<typename value_t>
+      static void is_empty(const std::initializer_list<value_t>& value, const xtd::tunit::line_info& line_info) {is_empty(value, "", line_info);}
+      template<typename value_t>
+      static void is_empty(const std::initializer_list<value_t>& value, const std::string& message) {is_empty(value, message, line_info());}
+      template<typename value_t>
+      static void is_empty(const std::initializer_list<value_t>& values, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_empty(values, message, line_info);
         } catch (...) {
@@ -897,8 +897,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_greater(24, 12); // test ok.
       /// xtd::tunit::assume::is_greater(24, 48); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue1, typename TValue2>
-      static void is_greater(const TValue1& val1, const TValue2& val2) {is_greater(val1, val2, "", line_info());}
+      template<typename value1_t, typename value2_t>
+      static void is_greater(const value1_t& val1, const value2_t& val2) {is_greater(val1, val2, "", line_info());}
       
       /// @brief Assumes that the first value is greater than the second value.
       /// @param val1 the first value.
@@ -910,8 +910,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_greater(24, 12, line_info_); // test ok.
       /// xtd::tunit::assume::is_greater(24, 48, line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue1, typename TValue2>
-      static void is_greater(const TValue1& val1, const TValue2& val2, const xtd::tunit::line_info& line_info) {is_greater(val1, val2, "", line_info);}
+      template<typename value1_t, typename value2_t>
+      static void is_greater(const value1_t& val1, const value2_t& val2, const xtd::tunit::line_info& line_info) {is_greater(val1, val2, "", line_info);}
       
       /// @brief Assumes that the first value is greater than the second value.
       /// @param val1 the first value.
@@ -923,8 +923,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_greater(24, 12, "User message..."); // test ok.
       /// xtd::tunit::assume::is_greater(24, 48, "User message..."); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue1, typename TValue2>
-      static void is_greater(const TValue1& val1, const TValue2& val2, const std::string& message) {is_greater(val1, val2, message, line_info());}
+      template<typename value1_t, typename value2_t>
+      static void is_greater(const value1_t& val1, const value2_t& val2, const std::string& message) {is_greater(val1, val2, message, line_info());}
       
       /// @brief Assumes that the first value is greater than the second value.
       /// @param val1 the first value.
@@ -937,8 +937,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_greater(24, 12, "User message...", line_info_); // test ok.
       /// xtd::tunit::assume::is_greater(24, 48, "User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue1, typename TValue2>
-      static void is_greater(const TValue1& val1, const TValue2& val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename value1_t, typename value2_t>
+      static void is_greater(const value1_t& val1, const value2_t& val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_greater(val1, val2, message, line_info);
         } catch (...) {
@@ -990,8 +990,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_greater_or_equal(24, 24); // test ok.
       /// xtd::tunit::assume::is_greater_or_equal(24, 48); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue1, typename TValue2>
-      static void is_greater_or_equal(const TValue1& val1, const TValue2& val2) {is_greater_or_equal(val1, val2, "", line_info());}
+      template<typename value1_t, typename value2_t>
+      static void is_greater_or_equal(const value1_t& val1, const value2_t& val2) {is_greater_or_equal(val1, val2, "", line_info());}
       
       /// @brief Assumes that the first value is greater than or equal to the second value.
       /// @param val1 the first value.
@@ -1004,8 +1004,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_greater_or_equal(24, 24, line_info_); // test ok.
       /// xtd::tunit::assume::is_greater_or_equal(24, 48, line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue1, typename TValue2>
-      static void is_greater_or_equal(const TValue1& val1, const TValue2& val2, const xtd::tunit::line_info& line_info) {is_greater_or_equal(val1, val2, "", line_info);}
+      template<typename value1_t, typename value2_t>
+      static void is_greater_or_equal(const value1_t& val1, const value2_t& val2, const xtd::tunit::line_info& line_info) {is_greater_or_equal(val1, val2, "", line_info);}
       
       /// @brief Assumes that the first value is greater than or equal to the second value.
       /// @param val1 the first value.
@@ -1018,8 +1018,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_greater_or_equal(24, 24, "User message..."); // test ok.
       /// xtd::tunit::assume::is_greater_or_equal(24, 48, "User message..."); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue1, typename TValue2>
-      static void is_greater_or_equal(const TValue1& val1, const TValue2& val2, const std::string& message) {is_greater_or_equal(val1, val2, message, line_info());}
+      template<typename value1_t, typename value2_t>
+      static void is_greater_or_equal(const value1_t& val1, const value2_t& val2, const std::string& message) {is_greater_or_equal(val1, val2, message, line_info());}
       
       /// @brief Assumes that the first value is greater than or equal to the second value.
       /// @param val1 the first value.
@@ -1033,8 +1033,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_greater_or_equal(24, 24, "User message...", line_info_); // test ok.
       /// xtd::tunit::assume::is_greater_or_equal(24, 48, "User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue1, typename TValue2>
-      static void is_greater_or_equal(const TValue1& val1, const TValue2& val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename value1_t, typename value2_t>
+      static void is_greater_or_equal(const value1_t& val1, const value2_t& val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_greater_or_equal(val1, val2, message, line_info);
         } catch (...) {
@@ -1085,8 +1085,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_instance_of<std::logic_error>(except); // test ok.
       /// xtd::tunit::assume::is_instance_of<std::bad_cast>(except); test fails
       /// @endcode
-      template<typename Type, typename TValue>
-      static void is_instance_of(const TValue& value) {is_instance_of<Type>(value, "", line_info());}
+      template<typename type_t, typename value_t>
+      static void is_instance_of(const value_t& value) {is_instance_of<type_t>(value, "", line_info());}
       
       /// @brief Assumes that an object is of the type supplied or a derived type.
       /// @param value The object to verify
@@ -1098,8 +1098,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_instance_of<std::logic_error>(except, line_info_); // test ok.
       /// xtd::tunit::assume::is_instance_of<std::bad_cast>(except, line_info_); test fails
       /// @endcode
-      template<typename Type, typename TValue>
-      static void is_instance_of(const TValue& value, const xtd::tunit::line_info& line_info) {is_instance_of<Type>(value, "", line_info);}
+      template<typename type_t, typename value_t>
+      static void is_instance_of(const value_t& value, const xtd::tunit::line_info& line_info) {is_instance_of<type_t>(value, "", line_info);}
       
       /// @brief Assumes that an object is of the type supplied or a derived type.
       /// @param value The object to verify
@@ -1111,8 +1111,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_instance_of<std::logic_error>(except, "User message..."); // test ok.
       /// xtd::tunit::assume::is_instance_of<std::bad_cast>(except, "User message..."); test fails
       /// @endcode
-      template<typename Type, typename TValue>
-      static void is_instance_of(const TValue& value, const std::string& message) {is_instance_of<Type>(value, message, line_info());}
+      template<typename type_t, typename value_t>
+      static void is_instance_of(const value_t& value, const std::string& message) {is_instance_of<type_t>(value, message, line_info());}
       
       /// @brief Assumes that an object is of the type supplied or a derived type.
       /// @param value The object to verify
@@ -1125,10 +1125,10 @@ namespace xtd {
       /// xtd::tunit::assume::is_instance_of<std::logic_error>(except, "User message...", line_info_); // test ok.
       /// xtd::tunit::assume::is_instance_of<std::bad_cast>(except, "User message...", line_info_); test fails
       /// @endcode
-      template<typename Type, typename TValue>
-      static void is_instance_of(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename type_t, typename value_t>
+      static void is_instance_of(const value_t& value, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
-          assert::is_instance_of<Type>(value, message, line_info);
+          assert::is_instance_of<type_t>(value, message, line_info);
         } catch (...) {
           assert::abort();
         }
@@ -1143,8 +1143,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_less(24, 48); // test ok.
       /// xtd::tunit::assume::is_less(24, 12); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue1, typename TValue2>
-      static void is_less(const TValue1& val1, const TValue2& val2) {is_less(val1, val2, "", line_info());}
+      template<typename value1_t, typename value2_t>
+      static void is_less(const value1_t& val1, const value2_t& val2) {is_less(val1, val2, "", line_info());}
       
       /// @brief Assumes that the first value is is_less than the second value.
       /// @param val1 the first value.
@@ -1156,8 +1156,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_less(24, 48, line_info_); // test ok.
       /// xtd::tunit::assume::is_less(24, 12, line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue1, typename TValue2>
-      static void is_less(const TValue1& val1, const TValue2& val2, const xtd::tunit::line_info& line_info) {is_less(val1, val2, "", line_info);}
+      template<typename value1_t, typename value2_t>
+      static void is_less(const value1_t& val1, const value2_t& val2, const xtd::tunit::line_info& line_info) {is_less(val1, val2, "", line_info);}
       
       /// @brief Assumes that the first value is is_less than the second value.
       /// @param val1 the first value.
@@ -1169,8 +1169,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_less(24, 48, "User message..."); // test ok.
       /// xtd::tunit::assume::is_less(24, 12, "User message..."); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue1, typename TValue2>
-      static void is_less(const TValue1& val1, const TValue2& val2, const std::string& message) {is_less(val1, val2, message, line_info());}
+      template<typename value1_t, typename value2_t>
+      static void is_less(const value1_t& val1, const value2_t& val2, const std::string& message) {is_less(val1, val2, message, line_info());}
       
       /// @brief Assumes that the first value is is_less than the second value.
       /// @param val1 the first value.
@@ -1183,8 +1183,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_less(24, 48, "User message...", line_info_); // test ok.
       /// xtd::tunit::assume::is_less(24, 12, "User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue1, typename TValue2>
-      static void is_less(const TValue1& val1, const TValue2& val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename value1_t, typename value2_t>
+      static void is_less(const value1_t& val1, const value2_t& val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_less(val1, val2, message, line_info);
         } catch (...) {
@@ -1236,8 +1236,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_less_or_equal(24, 24); // test ok.
       /// xtd::tunit::assume::is_less_or_equal(24, 12); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue1, typename TValue2>
-      static void is_less_or_equal(const TValue1& val1, const TValue2& val2) {is_less_or_equal(val1, val2, "", line_info());}
+      template<typename value1_t, typename value2_t>
+      static void is_less_or_equal(const value1_t& val1, const value2_t& val2) {is_less_or_equal(val1, val2, "", line_info());}
       
       /// @brief Assumes that the first value is is_less than or equal to the second value.
       /// @param val1 the first value.
@@ -1250,8 +1250,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_less_or_equal(24, 24, line_info_); // test ok.
       /// xtd::tunit::assume::is_less_or_equal(24, 12, line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue1, typename TValue2>
-      static void is_less_or_equal(const TValue1& val1, const TValue2& val2, const xtd::tunit::line_info& line_info) {is_less_or_equal(val1, val2, "", line_info);}
+      template<typename value1_t, typename value2_t>
+      static void is_less_or_equal(const value1_t& val1, const value2_t& val2, const xtd::tunit::line_info& line_info) {is_less_or_equal(val1, val2, "", line_info);}
       
       /// @brief Assumes that the first value is is_less than or equal to the second value.
       /// @param val1 the first value.
@@ -1264,8 +1264,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_less_or_equal(24, 24, "User message..."); // test ok.
       /// xtd::tunit::assume::is_less_or_equal(24, 12, "User message..."); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue1, typename TValue2>
-      static void is_less_or_equal(const TValue1& val1, const TValue2& val2, const std::string& message) {is_less_or_equal(val1, val2, message, line_info());}
+      template<typename value1_t, typename value2_t>
+      static void is_less_or_equal(const value1_t& val1, const value2_t& val2, const std::string& message) {is_less_or_equal(val1, val2, message, line_info());}
       
       /// @brief Assumes that the first value is is_less than or equal to the second value.
       /// @param val1 the first value.
@@ -1279,8 +1279,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_less_or_equal(24, 24, "User message...", line_info_); // test ok.
       /// xtd::tunit::assume::is_less_or_equal(24, 12, "User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue1, typename TValue2>
-      static void is_less_or_equal(const TValue1& val1, const TValue2& val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename value1_t, typename value2_t>
+      static void is_less_or_equal(const value1_t& val1, const value2_t& val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_less_or_equal(val1, val2, message, line_info);
         } catch (...) {
@@ -1506,8 +1506,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_negative(i1); // test ok.
       /// xtd::tunit::assume::is_negative(i2); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue>
-      static void is_negative(const TValue& value) {is_negative(value, "", line_info());}
+      template<typename value_t>
+      static void is_negative(const value_t& value) {is_negative(value, "", line_info());}
       
       /// @brief Assumes that ta condition is negative.
       /// @param value The value to check is negative.
@@ -1520,8 +1520,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_negative(i1, line_info_); // test ok.
       /// xtd::tunit::assume::is_negative(i2, line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue>
-      static void is_negative(const TValue& value, const xtd::tunit::line_info& line_info) {is_negative(value, "", line_info);}
+      template<typename value_t>
+      static void is_negative(const value_t& value, const xtd::tunit::line_info& line_info) {is_negative(value, "", line_info);}
       
       /// @brief Assumes that ta condition is negative.
       /// @param value The value to check is negative.
@@ -1534,8 +1534,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_negative(i1, "User message..."); // test ok.
       /// xtd::tunit::assume::is_negative(i2, "User message..."); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue>
-      static void is_negative(const TValue& value, const std::string& message) {is_negative(value, message, line_info());}
+      template<typename value_t>
+      static void is_negative(const value_t& value, const std::string& message) {is_negative(value, message, line_info());}
       
       /// @brief Assumes that ta condition is negative.
       /// @param value The value to check is negative.
@@ -1549,8 +1549,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_negative(i1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assume::is_negative(i2, "User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue>
-      static void is_negative(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename value_t>
+      static void is_negative(const value_t& value, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_negative(value, message, line_info);
         } catch (...) {
@@ -1568,8 +1568,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_empty(v1); // test ok.
       /// xtd::tunit::assume::is_not_empty(v2); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue>
-      static void is_not_empty(const TValue& value) {is_not_empty(value, "", line_info());}
+      template<typename value_t>
+      static void is_not_empty(const value_t& value) {is_not_empty(value, "", line_info());}
       
       /// @brief Assumes that collection does not contain any item.
       /// @param value The value to check is empty.
@@ -1582,8 +1582,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_empty(v1, line_info_); // test ok.
       /// xtd::tunit::assume::is_not_empty(v2, line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue>
-      static void is_not_empty(const TValue& value, const xtd::tunit::line_info& line_info) {is_not_empty(value, "", line_info);}
+      template<typename value_t>
+      static void is_not_empty(const value_t& value, const xtd::tunit::line_info& line_info) {is_not_empty(value, "", line_info);}
       
       /// @brief Assumes that collection does not contain any item.
       /// @param value The value to check is empty.
@@ -1596,8 +1596,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_empty(v1, "User message..."); // test ok.
       /// xtd::tunit::assume::is_not_empty(v2, "User message..."); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue>
-      static void is_not_empty(const TValue& value, const std::string& message) {is_not_empty(value, message, line_info());}
+      template<typename value_t>
+      static void is_not_empty(const value_t& value, const std::string& message) {is_not_empty(value, message, line_info());}
       
       /// @brief Assumes that collection does not contain any item.
       /// @param value The value to check is empty.
@@ -1611,8 +1611,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_empty(v1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assume::is_not_empty(v2, "User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue>
-      static void is_not_empty(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename value_t>
+      static void is_not_empty(const value_t& value, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_not_empty(value, message, line_info);
         } catch (...) {
@@ -1621,14 +1621,14 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename TValue>
-      static void is_not_empty(const std::initializer_list<TValue>& value) {is_not_empty(value, "", line_info());}
-      template<typename TValue>
-      static void is_not_empty(const std::initializer_list<TValue>& value, const xtd::tunit::line_info& line_info) {is_not_empty(value, "", line_info);}
-      template<typename TValue>
-      static void is_not_empty(const std::initializer_list<TValue>& value, const std::string& message) {is_not_empty(value, message, line_info());}
-      template<typename TValue>
-      static void is_not_empty(const std::initializer_list<TValue>& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename value_t>
+      static void is_not_empty(const std::initializer_list<value_t>& value) {is_not_empty(value, "", line_info());}
+      template<typename value_t>
+      static void is_not_empty(const std::initializer_list<value_t>& value, const xtd::tunit::line_info& line_info) {is_not_empty(value, "", line_info);}
+      template<typename value_t>
+      static void is_not_empty(const std::initializer_list<value_t>& value, const std::string& message) {is_not_empty(value, message, line_info());}
+      template<typename value_t>
+      static void is_not_empty(const std::initializer_list<value_t>& value, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_not_empty(value, message, line_info);
         } catch (...) {
@@ -1678,8 +1678,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_instance_of<std::bad_cast>(except); // test ok.
       /// xtd::tunit::assume::is_not_instance_of<std::logic_error>(except); test fails
       /// @endcode
-      template<typename Type, typename TValue>
-      static void is_not_instance_of(const TValue& value) {is_not_instance_of<Type>(value, "", line_info());}
+      template<typename type_t, typename value_t>
+      static void is_not_instance_of(const value_t& value) {is_not_instance_of<type_t>(value, "", line_info());}
       
       /// @brief Assumes that an object is not of the type supplied or a derived type.
       /// @param value The object to verify
@@ -1691,8 +1691,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_instance_of<std::bad_cast>(except, line_info_); // test ok.
       /// xtd::tunit::assume::is_not_instance_of<std::logic_error>(except, line_info_); test fails
       /// @endcode
-      template<typename Type, typename TValue>
-      static void is_not_instance_of(const TValue& value, const xtd::tunit::line_info& line_info) {is_not_instance_of<Type>(value, "", line_info);}
+      template<typename type_t, typename value_t>
+      static void is_not_instance_of(const value_t& value, const xtd::tunit::line_info& line_info) {is_not_instance_of<type_t>(value, "", line_info);}
       
       /// @brief Assumes that an object is not of the type supplied or a derived type.
       /// @param value The object to verify
@@ -1704,8 +1704,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_instance_of<std::bad_cast>(except, "User message..."); // test ok.
       /// xtd::tunit::assume::is_not_instance_of<std::logic_error>(except, "User message..."); test fails
       /// @endcode
-      template<typename Type, typename TValue>
-      static void is_not_instance_of(const TValue& value, const std::string& message) {is_not_instance_of<Type>(value, message, line_info());}
+      template<typename type_t, typename value_t>
+      static void is_not_instance_of(const value_t& value, const std::string& message) {is_not_instance_of<type_t>(value, message, line_info());}
       
       /// @brief Assumes that an object is not of the type supplied or a derived type.
       /// @param value The object to verify
@@ -1718,10 +1718,10 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_instance_of<std::bad_cast>(except, "User message...", line_info_); // test ok.
       /// xtd::tunit::assume::is_not_instance_of<std::logic_error>(except, "User message...", line_info_); test fails
       /// @endcode
-      template<typename Type, typename TValue>
-      static void is_not_instance_of(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename type_t, typename value_t>
+      static void is_not_instance_of(const value_t& value, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
-          assert::is_not_instance_of<Type>(value, message, line_info);
+          assert::is_not_instance_of<type_t>(value, message, line_info);
         } catch (...) {
           assert::abort();
         }
@@ -1738,8 +1738,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_null(s1); // test ok.
       /// xtd::tunit::assume::is_not_null(s2); // test throws an abort_error exception.
       /// @endcode
-      template<typename TPointer>
-      static void is_not_null(const TPointer* pointer) {is_not_null(pointer, "", line_info());}
+      template<typename pointer_t>
+      static void is_not_null(const pointer_t* pointer) {is_not_null(pointer, "", line_info());}
       
       /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
@@ -1753,8 +1753,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_null(s1, line_info_); // test ok.
       /// xtd::tunit::assume::is_not_null(s2, line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TPointer>
-      static void is_not_null(const TPointer* pointer, const xtd::tunit::line_info& line_info) {is_not_null(pointer, "", line_info);}
+      template<typename pointer_t>
+      static void is_not_null(const pointer_t* pointer, const xtd::tunit::line_info& line_info) {is_not_null(pointer, "", line_info);}
       
       /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
@@ -1768,8 +1768,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assume::is_not_null(s2, "User message..."); // test throws an abort_error exception.
       /// @endcode
-      template<typename TPointer>
-      static void is_not_null(const TPointer* pointer, const std::string& message) {is_not_null(pointer, message, line_info());}
+      template<typename pointer_t>
+      static void is_not_null(const pointer_t* pointer, const std::string& message) {is_not_null(pointer, message, line_info());}
       
       /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
@@ -1784,70 +1784,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_null(s1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assume::is_not_null(s2, "User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TPointer>
-      static void is_not_null(const TPointer* pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
-        try {
-          assert::is_not_null(pointer, message, line_info);
-        } catch (...) {
-          assert::abort();
-        }
-      }
-      
-      /// @brief Assumes that the pointer is not null.
-      /// @param pointer The pointer to check is null.
-      /// @exception xtd::tunit::abort_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::unique_ptr<std::string> s1 = std::make_unique<std::string>("Anything");
-      /// std::unique_ptr<std::string> s2;
-      /// xtd::tunit::assume::is_not_null(s1); // test ok.
-      /// xtd::tunit::assume::is_not_null(s2); // test throws an abort_error exception.
-      /// @endcode
-      template<typename TPointer>
-      static void is_not_null(const std::unique_ptr<TPointer>& pointer) {is_not_null(pointer, "", line_info());}
-      
-      /// @brief Assumes that the pointer is not null.
-      /// @param pointer The pointer to check is null.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::abort_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::unique_ptr<std::string> s1 = std::make_unique<std::string>("Anything");
-      /// std::unique_ptr<std::string> s2;
-      /// xtd::tunit::assume::is_not_null(s1, line_info_); // test ok.
-      /// xtd::tunit::assume::is_not_null(s2, line_info_); // test throws an abort_error exception.
-      /// @endcode
-      template<typename TPointer>
-      static void is_not_null(const std::unique_ptr<TPointer>& pointer, const xtd::tunit::line_info& line_info) {is_not_null(pointer, "", line_info);}
-      
-      /// @brief Assumes that the pointer is not null.
-      /// @param pointer The pointer to check is null.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @exception xtd::tunit::abort_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::unique_ptr<std::string> s1 = std::make_unique<std::string>("Anything");
-      /// std::unique_ptr<std::string> s2;
-      /// xtd::tunit::assume::is_not_null(s1, "User message..."); // test ok.
-      /// xtd::tunit::assume::is_not_null(s2, "User message..."); // test throws an abort_error exception.
-      /// @endcode
-      template<typename TPointer>
-      static void is_not_null(const std::unique_ptr<TPointer>& pointer, const std::string& message) {is_not_null(pointer, message, line_info());}
-      
-      /// @brief Assumes that the pointer is not null.
-      /// @param pointer The pointer to check is null.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::abort_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::unique_ptr<std::string> s1 = std::make_unique<std::string>("Anything");
-      /// std::unique_ptr<std::string> s2;
-      /// xtd::tunit::assume::is_not_null(s1, "User message...", line_info_); // test ok.
-      /// xtd::tunit::assume::is_not_null(s2, "User message...", line_info_); // test throws an abort_error exception.
-      /// @endcode
-      template<typename TPointer>
-      static void is_not_null(const std::unique_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename pointer_t>
+      static void is_not_null(const pointer_t* pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_not_null(pointer, message, line_info);
         } catch (...) {
@@ -1860,13 +1798,75 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// @code
+      /// std::unique_ptr<std::string> s1 = std::make_unique<std::string>("Anything");
+      /// std::unique_ptr<std::string> s2;
+      /// xtd::tunit::assume::is_not_null(s1); // test ok.
+      /// xtd::tunit::assume::is_not_null(s2); // test throws an abort_error exception.
+      /// @endcode
+      template<typename pointer_t>
+      static void is_not_null(const std::unique_ptr<pointer_t>& pointer) {is_not_null(pointer, "", line_info());}
+      
+      /// @brief Assumes that the pointer is not null.
+      /// @param pointer The pointer to check is null.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::abort_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::unique_ptr<std::string> s1 = std::make_unique<std::string>("Anything");
+      /// std::unique_ptr<std::string> s2;
+      /// xtd::tunit::assume::is_not_null(s1, line_info_); // test ok.
+      /// xtd::tunit::assume::is_not_null(s2, line_info_); // test throws an abort_error exception.
+      /// @endcode
+      template<typename pointer_t>
+      static void is_not_null(const std::unique_ptr<pointer_t>& pointer, const xtd::tunit::line_info& line_info) {is_not_null(pointer, "", line_info);}
+      
+      /// @brief Assumes that the pointer is not null.
+      /// @param pointer The pointer to check is null.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::abort_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::unique_ptr<std::string> s1 = std::make_unique<std::string>("Anything");
+      /// std::unique_ptr<std::string> s2;
+      /// xtd::tunit::assume::is_not_null(s1, "User message..."); // test ok.
+      /// xtd::tunit::assume::is_not_null(s2, "User message..."); // test throws an abort_error exception.
+      /// @endcode
+      template<typename pointer_t>
+      static void is_not_null(const std::unique_ptr<pointer_t>& pointer, const std::string& message) {is_not_null(pointer, message, line_info());}
+      
+      /// @brief Assumes that the pointer is not null.
+      /// @param pointer The pointer to check is null.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::abort_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::unique_ptr<std::string> s1 = std::make_unique<std::string>("Anything");
+      /// std::unique_ptr<std::string> s2;
+      /// xtd::tunit::assume::is_not_null(s1, "User message...", line_info_); // test ok.
+      /// xtd::tunit::assume::is_not_null(s2, "User message...", line_info_); // test throws an abort_error exception.
+      /// @endcode
+      template<typename pointer_t>
+      static void is_not_null(const std::unique_ptr<pointer_t>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
+        try {
+          assert::is_not_null(pointer, message, line_info);
+        } catch (...) {
+          assert::abort();
+        }
+      }
+      
+      /// @brief Assumes that the pointer is not null.
+      /// @param pointer The pointer to check is null.
+      /// @exception xtd::tunit::abort_error If bad assertion.
+      /// @par Examples
+      /// @code
       /// std::shared_ptr<std::string> s1 = std::make_shared<std::string>("Anything");
       /// std::shared_ptr<std::string> s2;
       /// xtd::tunit::assume::is_not_null(s1); // test ok.
       /// xtd::tunit::assume::is_not_null(s2); // test throws an abort_error exception.
       /// @endcode
-      template<typename TPointer>
-      static void is_not_null(const std::shared_ptr<TPointer>& pointer) {is_not_null(pointer, "", line_info());}
+      template<typename pointer_t>
+      static void is_not_null(const std::shared_ptr<pointer_t>& pointer) {is_not_null(pointer, "", line_info());}
       
       /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
@@ -1879,8 +1879,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_null(s1, line_info_); // test ok.
       /// xtd::tunit::assume::is_not_null(s2, line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TPointer>
-      static void is_not_null(const std::shared_ptr<TPointer>& pointer, const xtd::tunit::line_info& line_info) {is_not_null(pointer, "", line_info);}
+      template<typename pointer_t>
+      static void is_not_null(const std::shared_ptr<pointer_t>& pointer, const xtd::tunit::line_info& line_info) {is_not_null(pointer, "", line_info);}
       
       /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
@@ -1893,8 +1893,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assume::is_not_null(s2, "User message..."); // test throws an abort_error exception.
       /// @endcode
-      template<typename TPointer>
-      static void is_not_null(const std::shared_ptr<TPointer>& pointer, const std::string& message) {is_not_null(pointer, message, line_info());}
+      template<typename pointer_t>
+      static void is_not_null(const std::shared_ptr<pointer_t>& pointer, const std::string& message) {is_not_null(pointer, message, line_info());}
       
       /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
@@ -1908,8 +1908,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_null(s1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assume::is_not_null(s2, "User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TPointer>
-      static void is_not_null(const std::shared_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename pointer_t>
+      static void is_not_null(const std::shared_ptr<pointer_t>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_not_null(pointer, message, line_info);
         } catch (...) {
@@ -1929,8 +1929,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_null(s1); // test ok.
       /// xtd::tunit::assume::is_not_null(s2); // test ok.
       /// @endcode
-      template<typename TPointer>
-      static void is_not_null(const std::weak_ptr<TPointer>& pointer) {is_not_null(pointer, "", line_info());}
+      template<typename pointer_t>
+      static void is_not_null(const std::weak_ptr<pointer_t>& pointer) {is_not_null(pointer, "", line_info());}
       
       /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
@@ -1945,8 +1945,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_null(s1, line_info_); // test ok.
       /// xtd::tunit::assume::is_not_null(s2, line_info_); // test ok.
       /// @endcode
-      template<typename TPointer>
-      static void is_not_null(const std::weak_ptr<TPointer>& pointer, const xtd::tunit::line_info& line_info) {is_not_null(pointer, "", line_info);}
+      template<typename pointer_t>
+      static void is_not_null(const std::weak_ptr<pointer_t>& pointer, const xtd::tunit::line_info& line_info) {is_not_null(pointer, "", line_info);}
       
       /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
@@ -1961,8 +1961,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assume::is_not_null(s2, "User message..."); // test ok.
       /// @endcode
-      template<typename TPointer>
-      static void is_not_null(const std::weak_ptr<TPointer>& pointer, const std::string& message) {is_not_null(pointer, message, line_info());}
+      template<typename pointer_t>
+      static void is_not_null(const std::weak_ptr<pointer_t>& pointer, const std::string& message) {is_not_null(pointer, message, line_info());}
       
       /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
@@ -1978,8 +1978,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_null(s1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assume::is_not_null(s2, "User message...", line_info_); // test ok.
       /// @endcode
-      template<typename TPointer>
-      static void is_not_null(const std::weak_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {assert::succeed(message, line_info);}
+      template<typename pointer_t>
+      static void is_not_null(const std::weak_ptr<pointer_t>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {assert::succeed(message, line_info);}
       
       /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
@@ -2041,8 +2041,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_zero(i1); // test ok.
       /// xtd::tunit::assume::is_not_zero(i2); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue>
-      static void is_not_zero(const TValue& value) {is_not_zero(value, "", line_info());}
+      template<typename value_t>
+      static void is_not_zero(const value_t& value) {is_not_zero(value, "", line_info());}
       
       /// @brief Assumes that ta condition is not zero.
       /// @param value The value to check is not zero.
@@ -2055,8 +2055,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_zero(i1, line_info_); // test ok.
       /// xtd::tunit::assume::is_not_zero(i2, line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue>
-      static void is_not_zero(const TValue& value, const xtd::tunit::line_info& line_info) {is_not_zero(value, "", line_info);}
+      template<typename value_t>
+      static void is_not_zero(const value_t& value, const xtd::tunit::line_info& line_info) {is_not_zero(value, "", line_info);}
       
       /// @brief Assumes that ta condition is not zero.
       /// @param value The value to check is not zero.
@@ -2069,8 +2069,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_zero(i1, "User message..."); // test ok.
       /// xtd::tunit::assume::is_not_zero(i2, "User message..."); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue>
-      static void is_not_zero(const TValue& value, const std::string& message) {is_not_zero(value, message, line_info());}
+      template<typename value_t>
+      static void is_not_zero(const value_t& value, const std::string& message) {is_not_zero(value, message, line_info());}
       
       /// @brief Assumes that ta condition is not zero.
       /// @param value The value to check is not zero.
@@ -2084,8 +2084,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_zero(i1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assume::is_not_zero(i2, "User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue>
-      static void is_not_zero(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename value_t>
+      static void is_not_zero(const value_t& value, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_zero(value, message, line_info);
         } catch (...) {
@@ -2104,8 +2104,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_null(s1); // test ok.
       /// xtd::tunit::assume::is_null(s2); // test throws an abort_error exception.
       /// @endcode
-      template<typename TPointer>
-      static void is_null(const TPointer* pointer) {is_null(pointer, "", line_info());}
+      template<typename pointer_t>
+      static void is_null(const pointer_t* pointer) {is_null(pointer, "", line_info());}
       
       /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -2119,8 +2119,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_null(s1, line_info_); // test ok.
       /// xtd::tunit::assume::is_null(s2, line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TPointer>
-      static void is_null(const TPointer* pointer, const xtd::tunit::line_info& line_info) {is_null(pointer, "", line_info);}
+      template<typename pointer_t>
+      static void is_null(const pointer_t* pointer, const xtd::tunit::line_info& line_info) {is_null(pointer, "", line_info);}
       
       /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -2134,8 +2134,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assume::is_null(s2, "User message..."); // test throws an abort_error exception.
       /// @endcode
-      template<typename TPointer>
-      static void is_null(const TPointer* pointer, const std::string& message) {is_null(pointer, message, line_info());}
+      template<typename pointer_t>
+      static void is_null(const pointer_t* pointer, const std::string& message) {is_null(pointer, message, line_info());}
       
       /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -2150,8 +2150,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_null(s1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assume::is_null(s2, "User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TPointer>
-      static void is_null(const TPointer* pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename pointer_t>
+      static void is_null(const pointer_t* pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_null(pointer, message, line_info);
         } catch (...) {
@@ -2169,8 +2169,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_null(s1); // test ok.
       /// xtd::tunit::assume::is_null(s2); // test throws an abort_error exception.
       /// @endcode
-      template<typename TPointer>
-      static void is_null(const std::unique_ptr<TPointer>& pointer) {is_null(pointer, "", line_info());}
+      template<typename pointer_t>
+      static void is_null(const std::unique_ptr<pointer_t>& pointer) {is_null(pointer, "", line_info());}
       
       /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -2183,8 +2183,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_null(s1, line_info_); // test ok.
       /// xtd::tunit::assume::is_null(s2, line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TPointer>
-      static void is_null(const std::unique_ptr<TPointer>& pointer, const xtd::tunit::line_info& line_info) {is_null(pointer, "", line_info);}
+      template<typename pointer_t>
+      static void is_null(const std::unique_ptr<pointer_t>& pointer, const xtd::tunit::line_info& line_info) {is_null(pointer, "", line_info);}
       
       /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -2197,8 +2197,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assume::is_null(s2, "User message..."); // test throws an abort_error exception.
       /// @endcode
-      template<typename TPointer>
-      static void is_null(const std::unique_ptr<TPointer>& pointer, const std::string& message) {is_null(pointer, message, line_info());}
+      template<typename pointer_t>
+      static void is_null(const std::unique_ptr<pointer_t>& pointer, const std::string& message) {is_null(pointer, message, line_info());}
       
       /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -2212,8 +2212,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_null(s1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assume::is_null(s2, "User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TPointer>
-      static void is_null(const std::unique_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename pointer_t>
+      static void is_null(const std::unique_ptr<pointer_t>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_null(pointer, message, line_info);
         } catch (...) {
@@ -2231,8 +2231,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_null(s1); // test ok.
       /// xtd::tunit::assume::is_null(s2); // test throws an abort_error exception.
       /// @endcode
-      template<typename TPointer>
-      static void is_null(const std::shared_ptr<TPointer>& pointer) {is_null(pointer, "", line_info());}
+      template<typename pointer_t>
+      static void is_null(const std::shared_ptr<pointer_t>& pointer) {is_null(pointer, "", line_info());}
       
       /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -2245,8 +2245,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_null(s1, line_info_); // test ok.
       /// xtd::tunit::assume::is_null(s2, line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TPointer>
-      static void is_null(const std::shared_ptr<TPointer>& pointer, const xtd::tunit::line_info& line_info) {is_null(pointer, "", line_info);}
+      template<typename pointer_t>
+      static void is_null(const std::shared_ptr<pointer_t>& pointer, const xtd::tunit::line_info& line_info) {is_null(pointer, "", line_info);}
       
       /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -2259,8 +2259,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assume::is_null(s2, "User message..."); // test throws an abort_error exception.
       /// @endcode
-      template<typename TPointer>
-      static void is_null(const std::shared_ptr<TPointer>& pointer, const std::string& message) {is_null(pointer, message, line_info());}
+      template<typename pointer_t>
+      static void is_null(const std::shared_ptr<pointer_t>& pointer, const std::string& message) {is_null(pointer, message, line_info());}
       
       /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -2274,8 +2274,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_null(s1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assume::is_null(s2, "User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TPointer>
-      static void is_null(const std::shared_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename pointer_t>
+      static void is_null(const std::shared_ptr<pointer_t>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_null(pointer, message, line_info);
         } catch (...) {
@@ -2295,8 +2295,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_null(s1); // test throws an abort_error exception.
       /// xtd::tunit::assume::is_null(s2); // test throws an abort_error exception.
       /// @endcode
-      template<typename TPointer>
-      static void is_null(const std::weak_ptr<TPointer>& pointer) {is_null(pointer, "", line_info());}
+      template<typename pointer_t>
+      static void is_null(const std::weak_ptr<pointer_t>& pointer) {is_null(pointer, "", line_info());}
       
       /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -2311,8 +2311,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_null(s1, line_info_); // test throws an abort_error exception.
       /// xtd::tunit::assume::is_null(s2, line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TPointer>
-      static void is_null(const std::weak_ptr<TPointer>& pointer, const xtd::tunit::line_info& line_info) {is_null(pointer, "", line_info);}
+      template<typename pointer_t>
+      static void is_null(const std::weak_ptr<pointer_t>& pointer, const xtd::tunit::line_info& line_info) {is_null(pointer, "", line_info);}
       
       /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -2327,8 +2327,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_null(s1, "User message..."); // test throws an abort_error exception.
       /// xtd::tunit::assume::is_null(s2, "User message..."); // test throws an abort_error exception.
       /// @endcode
-      template<typename TPointer>
-      static void is_null(const std::weak_ptr<TPointer>& pointer, const std::string& message) {is_null(pointer, message, line_info());}
+      template<typename pointer_t>
+      static void is_null(const std::weak_ptr<pointer_t>& pointer, const std::string& message) {is_null(pointer, message, line_info());}
       
       /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -2344,8 +2344,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_null(s1, "User message...", line_info_); // test throws an abort_error exception.
       /// xtd::tunit::assume::is_null(s2, "User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TPointer>
-      static void is_null(const std::weak_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename pointer_t>
+      static void is_null(const std::weak_ptr<pointer_t>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_null(pointer, message, line_info);
         } catch (...) {
@@ -2407,8 +2407,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_positive(i1); // test ok.
       /// xtd::tunit::assume::is_positive(i2); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue>
-      static void is_positive(const TValue& value) {is_positive(value, "", line_info());}
+      template<typename value_t>
+      static void is_positive(const value_t& value) {is_positive(value, "", line_info());}
       
       /// @brief Assumes that ta condition is positive.
       /// @param value The value to check is positive.
@@ -2421,8 +2421,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_positive(i1, line_info_); // test ok.
       /// xtd::tunit::assume::is_positive(i2, line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue>
-      static void is_positive(const TValue& value, const xtd::tunit::line_info& line_info) {is_positive(value, "", line_info);}
+      template<typename value_t>
+      static void is_positive(const value_t& value, const xtd::tunit::line_info& line_info) {is_positive(value, "", line_info);}
       
       /// @brief Assumes that ta condition is positive.
       /// @param value The value to check is positive.
@@ -2435,8 +2435,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_positive(i1, "User message..."); // test ok.
       /// xtd::tunit::assume::is_positive(i2, "User message..."); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue>
-      static void is_positive(const TValue& value, const std::string& message) {is_positive(value, message, line_info());}
+      template<typename value_t>
+      static void is_positive(const value_t& value, const std::string& message) {is_positive(value, message, line_info());}
       
       /// @brief Assumes that ta condition is positive.
       /// @param value The value to check is positive.
@@ -2450,8 +2450,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_positive(i1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assume::is_positive(i2, "User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue>
-      static void is_positive(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename value_t>
+      static void is_positive(const value_t& value, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_positive(value, message, line_info);
         } catch (...) {
@@ -2527,8 +2527,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_zero(i1); // test ok.
       /// xtd::tunit::assume::is_zero(i2); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue>
-      static void is_zero(const TValue& value) {is_zero(value, "", line_info());}
+      template<typename value_t>
+      static void is_zero(const value_t& value) {is_zero(value, "", line_info());}
       
       /// @brief Assumes that ta condition is zero.
       /// @param value The value to check is zero.
@@ -2541,8 +2541,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_zero(i1, line_info_); // test ok.
       /// xtd::tunit::assume::is_zero(i2, line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue>
-      static void is_zero(const TValue& value, const xtd::tunit::line_info& line_info) {is_zero(value, "", line_info);}
+      template<typename value_t>
+      static void is_zero(const value_t& value, const xtd::tunit::line_info& line_info) {is_zero(value, "", line_info);}
       
       /// @brief Assumes that ta condition is zero.
       /// @param value The value to check is zero.
@@ -2555,8 +2555,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_zero(i1, "User message..."); // test ok.
       /// xtd::tunit::assume::is_zero(i2, "User message..."); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue>
-      static void is_zero(const TValue& value, const std::string& message) {is_zero(value, message, line_info());}
+      template<typename value_t>
+      static void is_zero(const value_t& value, const std::string& message) {is_zero(value, message, line_info());}
       
       /// @brief Assumes that ta condition is zero.
       /// @param value The value to check is zero.
@@ -2570,8 +2570,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_zero(i1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assume::is_zero(i2, "User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TValue>
-      static void is_zero(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      template<typename value_t>
+      static void is_zero(const value_t& value, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_zero(value, message, line_info);
         } catch (...) {
@@ -2580,7 +2580,7 @@ namespace xtd {
       }
       
       /// @brief Assumes that the statement throws a particular exception when called.
-      /// @param TException The exception type that must be throw.
+      /// @tparam exception_t The exception type that must be throw.
       /// @param statement The statement that verify.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -2589,11 +2589,11 @@ namespace xtd {
       /// xtd::tunit::assume::throws<std::out_of_range>([&] {v1.at(5);}); // test ok.
       /// xtd::tunit::assume::throws<std::out_of_range>([&] {v1.at(2);}); // test throws an abort_error exception.
       /// @endcode
-      template<typename TException>
-      static void throws(const std::function<void()>& statement) {throws<TException>(statement, "", line_info());}
+      template<typename exception_t>
+      static void throws(const std::function<void()>& statement) {throws<exception_t>(statement, "", line_info());}
       
       /// @brief Assumes that the statement throws a particular exception when called.
-      /// @param TException The exception type that must be throw.
+      /// @tparam exception_t The exception type that must be throw.
       /// @param statement The statement that verify.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -2603,11 +2603,11 @@ namespace xtd {
       /// xtd::tunit::assume::throws<std::out_of_range>([&] {v1.at(5);}, line_info_); // test ok.
       /// xtd::tunit::assume::throws<std::out_of_range>([&] {v1.at(2);}, line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TException>
-      static void throws(const std::function<void()>& statement, const xtd::tunit::line_info& line_info) {throws<TException>(statement, "", line_info);}
+      template<typename exception_t>
+      static void throws(const std::function<void()>& statement, const xtd::tunit::line_info& line_info) {throws<exception_t>(statement, "", line_info);}
       
       /// @brief Assumes that the statement throws a particular exception when called.
-      /// @param TException The exception type that must be throw.
+      /// @tparam exception_t The exception type that must be throw.
       /// @param statement The statement that verify.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -2617,11 +2617,11 @@ namespace xtd {
       /// xtd::tunit::assume::throws<std::out_of_range>([&] {v1.at(5);}, "User message..."); // test ok.
       /// xtd::tunit::assume::throws<std::out_of_range>([&] {v1.at(2);}, "User message..."); // test throws an abort_error exception.
       /// @endcode
-      template<typename TException>
-      static void throws(const std::function<void()>& statement, const std::string& message) {throws<TException>(statement, message, line_info());}
+      template<typename exception_t>
+      static void throws(const std::function<void()>& statement, const std::string& message) {throws<exception_t>(statement, message, line_info());}
       
       /// @brief Assumes that the statement throws a particular exception when called.
-      /// @param TException The exception type that must be throw.
+      /// @tparam exception_t The exception type that must be throw.
       /// @param statement The statement that verify.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -2632,10 +2632,10 @@ namespace xtd {
       /// xtd::tunit::assume::throws<std::out_of_range>([&] {v1.at(5);}, "User message...", line_info_); // test ok.
       /// xtd::tunit::assume::throws<std::out_of_range>([&] {v1.at(2);}, "User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
-      template<typename TException>
+      template<typename exception_t>
       static void throws(const std::function<void()>& statement, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
-          assert::throws<TException>(statement, message, line_info);
+          assert::throws<exception_t>(statement, message, line_info);
         } catch (...) {
           assert::abort();
         }

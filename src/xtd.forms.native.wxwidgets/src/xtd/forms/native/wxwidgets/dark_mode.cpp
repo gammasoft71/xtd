@@ -1,4 +1,5 @@
-/// @file Contains dark_mode methods
+/// @file
+/// @brief Contains dark_mode methods
 /// @remarks Code from https://github.com/ysc3839/win32-darkmode
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
 
