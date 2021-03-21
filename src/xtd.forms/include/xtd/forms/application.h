@@ -223,12 +223,12 @@ namespace xtd {
       /// @param e The event_args objects to pass to the idle event.
       static void raise_idle(const event_args& e);
       
-      /// @cond Registers a callback for checking whether the message loop is running in hosted environments.
+      /// @brief Registers a callback for checking whether the message loop is running in hosted environments.
       /// @param callback The method to call when Windows Forms needs to check if the hosting environment is still sending messages.
       /// @remarks This method is used when hosting Windows Forms in another environment. In hosted environments, the message_loop property will always return false if Windows Forms is not processing messages. Use this callback to tell Windows Forms if the hosting environment is still processing messages.
       static void register_message_loop_callback(message_loop_callback callback);
       
-      /// @cond Removes a message filter from the message pump of the application.
+      /// @brief Removes a message filter from the message pump of the application.
       /// @param value The implementation of the imessage_filter to remove from the application.
       /// @remarks You can remove a message filter when you no longer want to capture Windows messages before they are dispatched.
       static void remove_message_filter(const imessage_filter& value);
