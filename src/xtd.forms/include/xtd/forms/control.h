@@ -771,10 +771,15 @@ namespace xtd {
       /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
       virtual void invalidate(const drawing::rectangle& rect, bool invalidate_children) const;
 
+      /// @brief Executes the specified delegate on the thread that owns the control's underlying window handle.
+      /// @param vallue A delegate that contains a method to be called in the control's thread context.
+      void invoke(delegate<void()> value) {invoke(delegate<void(std::vector<std::any>)>(value), {});}
+      
+      /// @brief Executes the specified delegate, on the thread that owns the control's underlying window handle, with the specified list of arguments.
+      /// @param value A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
+      /// @param args An array of objects to pass as arguments to the specified method. This parameter can be null if the method takes no arguments.
       void invoke(delegate<void(std::vector<std::any>)> value, const std::vector<std::any>& args) {end_invoke(begin_invoke(value, args));}
       
-      void invoke(delegate<void()> value) {invoke(delegate<void(std::vector<std::any>)>(value), {});}
-
       /// @cond
       template<typename delegate_t>
       void invoke(delegate_t value, const std::vector<std::any>& args) {invoke(delegate<void(std::vector<std::any>)>(value), args);}
