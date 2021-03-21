@@ -910,14 +910,20 @@ namespace xtd {
       
       event<control, event_handler<control&>> click;
       
+      /// @brief Occurs when the value of the client_size property changes.
+      /// @remarks This event is raised if the client_size property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> client_size_changed;
         
+      /// @brief Occurs when the value of the cursor property changes.
+      /// @remarks This event is raised if the cursor property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> cursor_changed;
 
       event<control, control_event_handler<control&>> control_added;
       
       event<control, control_event_handler<control&>> control_removed;
       
+      /// @brief Occurs when the value of the dock property changes.
+      /// @remarks This event is raised if the dock property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> dock_changed;
         
       event<control, event_handler<control&>> double_click;
@@ -928,10 +934,16 @@ namespace xtd {
       
       event<control, event_handler<control&>> handle_destroyed;
       
+      /// @brief Occurs when the value of the enabled property changes.
+      /// @remarks This event is raised if the enabled property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> enabled_changed;
 
+      /// @brief Occurs when the value of the fore_color property changes.
+      /// @remarks This event is raised if the fore_color property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> fore_color_changed;
       
+      /// @brief Occurs when the value of the font property changes.
+      /// @remarks This event is raised if the font property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> font_changed;
       
       event<control, key_event_handler<control&>> key_down;
@@ -944,6 +956,8 @@ namespace xtd {
       /// @remarks The layout event occurs when child controls are added or removed, when the bounds of the control changes, and when other changes occur that can affect the layout of the control. The layout event can be suppressed using the suspend_layout and resume_layout methods. Suspending layout enables you to perform multiple actions on a control without having to perform a layout for each change. For example, if you resize and move a control, each operation would raise a layout event.
       event<control, event_handler<control&>> layout;
       
+      /// @brief Occurs when the value of the location property changes.
+      /// @remarks This event is raised if the location property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> location_changed;
       
       event<control, event_handler<control&>> lost_focus;
@@ -968,14 +982,22 @@ namespace xtd {
       
       event<control, paint_event_handler<control&>> paint;
       
+      /// @brief Occurs when the value of the parent property changes.
+      /// @remarks This event is raised if the parent property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> parent_changed;
       
       event<control, event_handler<control&>> resize;
         
+      /// @brief Occurs when the value of the size property changes.
+      /// @remarks This event is raised if the size property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> size_changed;
 
+      /// @brief Occurs when the value of the text property changes.
+      /// @remarks This event is raised if the text property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> text_changed;
       
+      /// @brief Occurs when the value of the visible property changes.
+      /// @remarks This event is raised if the visible property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> visible_changed;
 
     protected:
