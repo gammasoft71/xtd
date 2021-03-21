@@ -163,7 +163,7 @@ IGNORE_PREFIX          =
 #---------------------------------------------------------------------------
 
 GENERATE_HTML          = YES
-HTML_OUTPUT            = ReferenceGuide
+HTML_OUTPUT            = html
 HTML_FILE_EXTENSION    = .html
 HTML_HEADER            = "docs/doxygen/html_header.html"
 HTML_FOOTER            = "docs/doxygen/html_footer.html"
@@ -173,8 +173,8 @@ HTML_EXTRA_FILES       =
 HTML_COLORSTYLE_HUE    = 220
 HTML_COLORSTYLE_SAT    = 100
 HTML_COLORSTYLE_GAMMA  = 80
-HTML_TIMESTAMP         = YES # Default: NO
-HTML_DYNAMIC_SECTIONS  = NO
+HTML_TIMESTAMP         = YES
+HTML_DYNAMIC_SECTIONS  = YES # Default: NO
 HTML_INDEX_NUM_ENTRIES = 100
 
 
