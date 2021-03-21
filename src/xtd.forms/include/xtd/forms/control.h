@@ -517,8 +517,12 @@ namespace xtd {
       /// @return The product name of the assembly containing the control.
       virtual std::string product_name() const {return "xtd";}
       
+      /// @brief Gets a value indicating whether the control is currently re-creating its handle.
+      /// @return true if the control is currently re-creating its handle; otherwise, false.
       bool recreating_handle() const {return get_state(state::recreate);}
       
+      /// @brief Gets the distance, in pixels, between the right edge of the control and the left edge of its container's client area.
+      /// @return An int32_t representing the distance, in pixels, between the right edge of the control and the left edge of its container's client area.
       virtual int32_t right() const {return left() + width();}
 
       /// @brief Gets the height and width of the control.
@@ -589,19 +593,32 @@ namespace xtd {
         return *this;
       }
       
+      /// @brief Add child control.
+      /// @param parent A control that represents the parent or container control of the control.
+      /// @param child A control to add to parent.
       friend control& operator<<(control& parent, control& child) {
         child.parent(parent);
         return parent;
       }
       
+      /// @brief Remove child control.
+      /// @param parent A control that represents the parent or container control of the control.
+      /// @param child A control to remove to parent.
       friend control& operator>>(control& parent, control& child) {
         if (child.parent().has_value() && &child.parent().value().get() == &parent)
           child.parent(nullptr);
         return parent;
       }
       
+      /// @brief Brings the control to the front of the z-order.
+      /// @remarks The control is moved to the front of the z-order. If the control is a child of another control, the child control is moved to the front of the z-order. bring_to_front does not make a control a top-level control, and it does not raise the paint event.
       virtual void bring_to_front();
 
+      /// @brief A factory to create a specified control with specified location ,size back_color and fore_color.
+      /// @param location A xtd::drawing::point that represent location of the control.
+      /// @param size A xtd::drawing::size that represent size of the control.
+      /// @param back_color A xtd::drawing::color that represent background color of the control.
+      /// @param fore_color A xtd::drawing::color that represent foreground color of the control.
       template<typename control_t>
       static std::unique_ptr<control_t> create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
         std::unique_ptr<control_t> item = std::make_unique<control_t>();
@@ -612,6 +629,12 @@ namespace xtd {
         return item;
       }
       
+      /// @brief A factory to create a specified control with specified parent, location ,size back_color and fore_color.
+      /// @param parent The parent that contains the new created control.
+      /// @param location A xtd::drawing::point that represent location of the control.
+      /// @param size A xtd::drawing::size that represent size of the control.
+      /// @param back_color A xtd::drawing::color that represent background color of the control.
+      /// @param fore_color A xtd::drawing::color that represent foreground color of the control.
       template<typename control_t>
       static std::unique_ptr<control_t> create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
         std::unique_ptr<control_t> item = std::make_unique<control_t>();
@@ -623,6 +646,12 @@ namespace xtd {
         return item;
       }
       
+      /// @brief A factory to create a specified control with specified text, location ,size back_color and fore_color.
+      /// @param text A string that represent text of the control.
+      /// @param location A xtd::drawing::point that represent location of the control.
+      /// @param size A xtd::drawing::size that represent size of the control.
+      /// @param back_color A xtd::drawing::color that represent background color of the control.
+      /// @param fore_color A xtd::drawing::color that represent foreground color of the control.
       template<typename control_t>
       static std::unique_ptr<control_t> create(const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
         std::unique_ptr<control_t> item = std::make_unique<control_t>();
@@ -634,6 +663,13 @@ namespace xtd {
         return item;
       }
       
+      /// @brief A factory to create a specified control with specified parent, text, location ,size back_color and fore_color.
+      /// @param parent The parent that contains the new created control.
+      /// @param text A string that represent text of the control.
+      /// @param location A xtd::drawing::point that represent location of the control.
+      /// @param size A xtd::drawing::size that represent size of the control.
+      /// @param back_color A xtd::drawing::color that represent background color of the control.
+      /// @param fore_color A xtd::drawing::color that represent foreground color of the control.
       template<typename control_t>
       static std::unique_ptr<control_t> create(const control& parent, const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
         std::unique_ptr<control_t> item = std::make_unique<control_t>();
@@ -646,22 +682,50 @@ namespace xtd {
         return item;
       }
 
+      /// @brief Forces the creation of the visible control, including the creation of the handle and any visible child controls.
+      /// @remarks The create_control method forces a handle to be created for the control and its child controls. This method is used when you need a handle immediately for manipulation of the control or its children; simply calling a control's constructor does not create the Handle.
+      /// @remarks create_control does not create a control handle if the control's visible property is false. You can either call the create_control method or access the handle property to create the control's handle regardless of the control's visibility, but in this case, no window handles are created for the control's children.
       void create_control();
       
-      void destroy_control();
-      
-      virtual void create_handle();
-      
+      /// @brief Creates the xtd::drawing::graphics for the control.
+      /// @remarks The graphics object that you retrieve through the create_graphics method should not normally be retained after the current Windows message has been processed, because anything painted with that object will be erased with the next WM_PAINT message. Therefore you cannot cache the graphics object for reuse, except to use non-visual methods like xtd::drawing::graphics::measure_string. Instead, you must call create_graphics every time that you want to use the graphics object.
       drawing::graphics create_graphics() const;
+      
+      /// @brief Creates a handle for the control.
+      /// @remarks You typically should not call the create_handle method directly. The preferred method is to call the create_control method, which forces a handle to be created for the control and its child controls when the control is created.
+      /// @par Notes to Inheritors
+      /// When overriding create_handle() in a derived class, be sure to call the base class's create_handle() method to ensure that the handle is created.
+      virtual void create_handle();
 
+      /// @brief Forces the destruction of the visible control, including the destruction of the handle and any visible child controls.
+      /// @remarks The destroy_control method forces a handle to be destroyed for the control and its child controls.
+      /// @par Notes to Inheritors
+      /// When overriding destroy_control() in a derived class, be sure to call the base class's destroy_control() method to ensure that the handle is destroyed.
+      virtual void destroy_control();
+
+      /// @brief Destroys the handle associated with the control.
+      /// @par Notes to Inheritors
+      /// When overriding destroy_handle() in a derived class, be sure to call the base class's destroy_handle() method to ensure that the handle is destroyed.
       virtual void destroy_handle();
       
+      /// Sets input focus to the control.
+      /// @return true if the input focus request was successful; otherwise, false.
+      /// @remarks The focus method returns true if the control successfully received input focus. The control can have the input focus while not displaying any visual cues of having the focus. This behavior is primarily observed by the nonselectable controls listed below, or any controls derived from them.
       bool focus();
       
+      /// @brief Retrieves the control that contains the specified handle.
+      /// @param handle The window handle (HWND) to search for.
+      /// @return The control that represents the control associated with the specified handle; returns null if no control with the specified handle is found.
+      /// @remarks This method searches up the window handle parent chain until it finds a handle that is associated with a control. This method is more reliable than the from_handle method, because it correctly returns controls that own more than one handle.
       static std::optional<control_ref> from_child_handle(intptr_t handle);
 
+      /// @brief Returns the control that is currently associated with the specified handle.
+      /// @param handle The window handle (HWND) to search for.
+      /// @return A control that represents the control associated with the specified handle; returns null if no control with the specified handle is found.
       static std::optional<control_ref> from_handle(intptr_t handle);
       
+      /// @brief Conceals the control from the user.
+      /// @remarks Hiding the control is equivalent to setting the visible property to false. After the hide method is called, the visible property returns a value of false until the show method is called.
       virtual void hide() {visible(false);}
       
       virtual void invalidate() const {invalidate({{0, 0}, client_size()}, true);}
