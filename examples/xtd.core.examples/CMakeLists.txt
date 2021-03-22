@@ -12,11 +12,11 @@ add_projects(
   format
   formatf
   guid
-  html
   keywords
   mains
   random
   strings
+  web
   others
 )
 

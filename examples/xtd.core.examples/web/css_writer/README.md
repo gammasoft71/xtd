@@ -1,10 +1,10 @@
-# css_parser
+# css_writer
 
-Shows how to use [xtd::html::css:parser](../../../../src/xtd.core/include/xtd/html/css/parser.h) class.
+Shows how to use [xtd::web::css:writer](../../../../src/xtd.core/include/xtd/web/css/writer.h) class.
 
 ## Sources
 
-[src/css_parser.cpp](src/css_parser.cpp)
+[src/css_parser.cpp](src/css_writer.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -19,8 +19,8 @@ xtdc run
 # Output
 
 ```
-Write all selectors and all properties :
-----------------------------------------
+String stream :
+---------------
 .user_box {
   background: #4080FA;
   display: none;
@@ -33,10 +33,4 @@ Write all selectors and all properties :
   width: 100%;
   z-index: 100;
 }
-
-Get specific properties :
--------------------------
-filter = alpha(opacity=40)
-opacity = 0.4
-z-index = 100
 ```

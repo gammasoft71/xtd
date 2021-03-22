@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::html::css::writer class.
+/// @brief Contains xtd::web::css::writer class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "selector_map.h"
@@ -7,8 +7,9 @@
 #include <xtd/format_exception.h>
 #include <xtd/io/stream_writer.h>
 
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  namespace html {
+  namespace web {
     namespace css {
       class writer {
       public:
@@ -19,9 +20,9 @@ namespace xtd {
           if (delete_when_destroy_ && text_writer_) delete text_writer_;
         }
         
-        const xtd::html::css::selector_map& selectors() const {return selectors_;}
-        xtd::html::css::selector_map& selectors() {return selectors_;}
-        void selectors(const xtd::html::css::selector_map& selector) {selectors_ = selector;}
+        const xtd::web::css::selector_map& selectors() const {return selectors_;}
+        xtd::web::css::selector_map& selectors() {return selectors_;}
+        void selectors(const xtd::web::css::selector_map& selector) {selectors_ = selector;}
         
         void write() {
           if (!text_writer_) return;
@@ -34,7 +35,7 @@ namespace xtd {
         }
 
       private:
-        xtd::html::css::selector_map selectors_;
+        xtd::web::css::selector_map selectors_;
         xtd::io::text_writer* text_writer_ = nullptr;
         bool delete_when_destroy_ = true;
       };

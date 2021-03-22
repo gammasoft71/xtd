@@ -3,7 +3,7 @@
 
 using namespace std;
 using namespace xtd;
-using namespace xtd::html::css;
+using namespace xtd::web::css;
 
 int main() {
   stringstream string_stream;
