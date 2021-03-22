@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::forms::radio_buttons factory.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "radio_button.h"
 #include "texts.h"

@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::forms::renderer class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <optional>
 #include <xtd/delegate.h>

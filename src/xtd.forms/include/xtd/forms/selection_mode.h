@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::forms::selection_mode enum class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/strings.h>
 

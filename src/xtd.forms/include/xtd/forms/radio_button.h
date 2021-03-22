@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::forms::radio_button control.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "appearance.h"
 #include "button_base.h"
