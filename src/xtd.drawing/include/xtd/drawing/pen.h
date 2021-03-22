@@ -97,6 +97,7 @@ namespace xtd {
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::pen& pen) noexcept {
         return os << pen.to_string();
       }
+      /// @endcond
 
     private:
       friend class graphics;

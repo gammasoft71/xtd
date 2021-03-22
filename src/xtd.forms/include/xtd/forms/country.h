@@ -44,6 +44,7 @@ namespace xtd {
       friend std::ostream& operator<<(std::ostream& os, const xtd::forms::country& country) noexcept {
         return os << country.to_string();
       }
+      /// @endcond
 
     private:
       friend class countries;
