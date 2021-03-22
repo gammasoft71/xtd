@@ -1,4 +1,4 @@
-# Doxyfile 1.8.13
+# Doxyfile 1.8.14
 
 #---------------------------------------------------------------------------
 # Project related configuration options
@@ -17,7 +17,7 @@ BRIEF_MEMBER_DESC      = YES
 REPEAT_BRIEF           = YES
 ABBREVIATE_BRIEF       = 
 ALWAYS_DETAILED_SEC    = YES # Default: NO
-INLINE_INHERITED_MEMB  = NO
+INLINE_INHERITED_MEMB  = YES # Default: NO
 FULL_PATH_NAMES        = YES
 STRIP_FROM_PATH        = src
 STRIP_FROM_INC_PATH    = 
