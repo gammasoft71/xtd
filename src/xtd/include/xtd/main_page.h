@@ -68,7 +68,7 @@
 ///   button1.text("Click me");
 ///   button1.location({10, 10});
 ///   button1.click += [] {
-///     messageBox::show("Hello, World!");
+///     message_box::show("Hello, World!");
 ///   };
 ///
 ///   form form1;
