@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::io::file_attributes enum class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

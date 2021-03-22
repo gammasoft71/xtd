@@ -1,5 +1,6 @@
 /// @file
-/// @brief Contains xtd::tunit::unit_test class.
+/// @brief Contains xtd::io::path class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
 #include <cstdlib>

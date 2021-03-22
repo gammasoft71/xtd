@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::io::end_of_stream_exception exception.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "ioexception.h"
 

@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::io::file class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
 #include <cstdio>
