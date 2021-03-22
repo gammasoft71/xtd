@@ -1,5 +1,6 @@
 /// @file
-/// @brief Contains xtd::diagnostics::debug class.
+/// @brief Contains xtd::diagnostics::switch_base class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
 #include <map>

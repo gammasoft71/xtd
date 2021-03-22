@@ -1,5 +1,6 @@
 /// @file
-/// @brief Contains xtd::diagnostics::trace class.
+/// @brief Contains xtd::diagnostics::stack_trace class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <exception>
 #include <memory>

@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::collections::key_not_found_exception exception.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "../system_exception.h"
 

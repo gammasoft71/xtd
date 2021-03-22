@@ -1,5 +1,6 @@
 /// @file
-/// @brief Contains xtd::diagnostics::debug class.
+/// @brief Contains xtd::diagnostics::trace_listener_collection typedef.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <memory>
 #include <vector>

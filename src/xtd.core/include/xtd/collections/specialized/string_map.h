@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::collections::specialized::string_map typedef.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <string>
 #include <map>

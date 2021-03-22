@@ -1,4 +1,5 @@
 /// @file
-/// @brief Contains xtd::core classes.
+/// @brief Contains xtd.core library headers.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "xtd.core.h"
