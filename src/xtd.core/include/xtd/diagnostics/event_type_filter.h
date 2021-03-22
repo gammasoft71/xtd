@@ -1,5 +1,6 @@
 /// @file
-/// @brief Contains xtd::diagnostics::debug class.
+/// @brief Contains xtd::diagnostics::event_type_filter class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "source_levels.h"
 #include "trace_filter.h"

@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::diagnostics::debug class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <mutex>
 #include <string>

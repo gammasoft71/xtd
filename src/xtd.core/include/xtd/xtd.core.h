@@ -1,5 +1,6 @@
 /// @file
-/// @brief xtd.core library header.
+/// @brief Contains xtd.core library headers.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
 /// @defgroup exceptions exceptions

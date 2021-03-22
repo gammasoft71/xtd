@@ -1,5 +1,6 @@
 /// @file
-/// @brief Contains xtd::diagnostics::trace class.
+/// @brief Contains xtd::diagnostics::stopwatch class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <string>
 #include "../ticks.h"
