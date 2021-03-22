@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::forms::theme_images class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/delegate.h>
 #include <xtd/drawing/image.h>

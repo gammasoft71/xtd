@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::forms::up_down_button control.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "button_base.h"
 #include "orientation.h"

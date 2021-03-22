@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains  xtd.forms library headers.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
 /// @defgroup application application

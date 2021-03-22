@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::forms::system_information class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/static.h>
 #include <xtd/drawing/font.h>

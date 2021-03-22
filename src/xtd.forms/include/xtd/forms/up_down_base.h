@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::forms::up_doawn_base control.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "border_style.h"
 #include "container_control.h"

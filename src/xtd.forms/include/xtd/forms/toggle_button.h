@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::forms::toggle_button control.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "button_base.h"
 #include "check_state.h"

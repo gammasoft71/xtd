@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::forms::trace_form dialog.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "trace_form_base.h"
 #include "icontrol_trace.h"
