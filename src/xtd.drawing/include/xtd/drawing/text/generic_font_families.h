@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd.drawing::text::generic_font_families enum class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/strings.h>
 
