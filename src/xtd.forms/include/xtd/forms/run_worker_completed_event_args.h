@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::forms::run_worker_completed_event_args event args.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <any>
 #include <optional>
