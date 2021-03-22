@@ -11,6 +11,9 @@ file(WRITE ${XTD_HEADER_FILE}
   "//\n"
   "// Changes to this file may cause incorrect behavior and will be lost if the file is regenerated.\n"
   "\n"
+  "/// @file\n"
+  "/// @brief Contains xtd library headers.\n"
+  "/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.\n"
   "#pragma once\n"
 )
 

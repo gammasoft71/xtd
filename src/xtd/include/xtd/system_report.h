@@ -1,5 +1,6 @@
 /// @file
-/// @brief Contains system_report class
+/// @brief Contains xtd::system_report class
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <vector>
 #include <xtd/environment.h>
