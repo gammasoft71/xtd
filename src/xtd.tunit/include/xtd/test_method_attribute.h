@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::test_method_attribute class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "test.h"
 #include "test_state.h"

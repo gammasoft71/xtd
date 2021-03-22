@@ -40,13 +40,11 @@ inline std::basic_ostream<char_t, char_traits_t>& operator<<(std::basic_ostream<
   return os << "exception: " << value.what();
 }
 
-#if !__APPLE__ || __MAC_OS_X_VERSION_MAX_ALLOWED >= 101401
 template <typename char_t, typename char_traits_t, typename value_t>
 inline std::basic_ostream<char_t, char_traits_t>& operator<<(std::basic_ostream<char_t, char_traits_t>& os, const std::optional<value_t>& value) {
   if (!value.has_value()) return os << "(null)";
   return os << '(' << value.value() << ')';
 }
-#endif
 
 template <typename char_t, typename char_traits_t, typename type1_t, typename type2_t>
 inline std::basic_ostream<char_t, char_traits_t>& operator<<(std::basic_ostream<char_t, char_traits_t>& os, const std::pair<type1_t, type2_t>& value) {

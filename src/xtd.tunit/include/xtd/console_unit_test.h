@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::console_unit_test class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "unit_test.h"
 #include "ostream_unit_test.h"

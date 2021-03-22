@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::directory_valid class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "valid.h"
 #include "directory_assert.h"

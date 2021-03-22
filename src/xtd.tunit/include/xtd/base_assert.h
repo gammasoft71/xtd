@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::assert class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
 #include "__demangle.h"

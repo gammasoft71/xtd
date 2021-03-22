@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::test_state enum class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "test.h"
 

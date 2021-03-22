@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::collection_assert class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "assert.h"
 
