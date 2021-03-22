@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::menu menu.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <any>
 #include <map>

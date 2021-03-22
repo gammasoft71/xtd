@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::lcd_label conttrol.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <codecvt>
 #include <xtd/argument_out_of_range_exception.h>

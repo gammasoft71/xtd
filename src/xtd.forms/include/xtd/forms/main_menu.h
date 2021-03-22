@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::main_menu menu.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "menu_item.h"
 #include "message.h"

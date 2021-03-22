@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::emoticon enum component.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "component.h"
 #include <xtd/static.h>

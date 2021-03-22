@@ -1,7 +1,8 @@
 /// @file
-/// @brief Contains doygen format page.
+/// @brief Contains format page.
 
-/// @page FormatPage Format Documentation
+/// @page FormatPage Format
+/// @brief Contains formatting converting documentation
 ///
 /// @section FormatingType Formating Types
 ///

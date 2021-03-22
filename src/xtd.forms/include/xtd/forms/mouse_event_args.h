@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::mouse_event_args event args.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
 #include <xtd/event_args.h>

@@ -1,7 +1,8 @@
 /// @file
-/// @brief Contains doygen license page.
+/// @brief Contains license page.
 
 /// @page LicensePage License
+/// @brief Contains license informations.
 ///
 /// @image html license.png
 ///

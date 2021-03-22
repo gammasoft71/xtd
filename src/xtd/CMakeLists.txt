@@ -10,6 +10,7 @@ add_sources(
   include/xtd/xtd
   include/xtd/cmake_page.h
   include/xtd/format_page.h
+  include/xtd/license_page.h
   include/xtd/main_page.h
   include/xtd/system_report.h
   include/xtd/xtd.h

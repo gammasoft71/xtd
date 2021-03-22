@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::enable_debug class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
 #include <xtd/static.h>

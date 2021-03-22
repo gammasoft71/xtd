@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::icontrol_trace interface.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/interface.h>
 

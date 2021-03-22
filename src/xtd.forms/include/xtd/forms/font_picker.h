@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::font_picker control.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "control.h"
 
