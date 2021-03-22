@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::forms::theme_colors class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "theme_base.h"
 #include "known_themed_color.h"

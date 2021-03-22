@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::forms::use_wait_cursor class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "application.h"
 
