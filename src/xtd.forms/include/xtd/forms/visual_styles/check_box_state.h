@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::visual_styles::check_box_state enum class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/strings.h>
 

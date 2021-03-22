@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::button_renderer class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <optional>
 #include <string>

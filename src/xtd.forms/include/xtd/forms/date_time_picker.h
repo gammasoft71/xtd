@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::date_time_picker picker.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <chrono>
 #include "control.h"

@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::color_dialog dialog.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/drawing/color.h>
 #include <xtd/forms/color_dialog_flags.h>

@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::component class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
 #include "../forms_export.h"
@@ -17,6 +18,7 @@ namespace xtd {
     public:
       
     protected:
+      /// @brief Initialises a new instance of the compnent class.
       component() = default;
       
       /// @cond

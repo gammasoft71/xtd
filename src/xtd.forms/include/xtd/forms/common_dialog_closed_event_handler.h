@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::common_dialog_closed_event_handler event handler.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/event_handler.h>
 #include "common_dialog_closed_event_args.h"

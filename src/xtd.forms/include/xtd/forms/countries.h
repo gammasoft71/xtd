@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::countries factory.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "country.h"
 
