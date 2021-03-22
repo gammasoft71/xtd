@@ -15,7 +15,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
+  /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @cond
     class graphics;
@@ -27,12 +27,20 @@ namespace xtd {
     /// @ingroup xtd_drawing
     class drawing_export_ pen final {
     public:
+      /// @brief Initializes a new instance of the xtd::drawing::pen class.
+      pen();
+
       /// @brief Initializes a new instance of the xtd::drawing::pen class with the specified xtd::drawing::brush.
       /// @param brush A xtd::drawing::brush that determines the fill properties of this xtd::drawing::pen.
       /// @remarks The brush property determines how the xtd::drawing::pen draws lines. Lines are drawn as if they are filled rectangles, with the characteristics of the specified brush.
       /// @remarks The width property of the new xtd::drawing::pen  is set to 1 (the default).
       pen(const xtd::drawing::brush& brush);
       
+      /// @brief Initializes a new instance of the xtd::drawing::pen class with the specified xtd::drawing::brush.
+      /// @param brush A xtd::drawing::brush that determines the fill properties of this xtd::drawing::pen.
+      /// @param width A single number that represent the pen width.
+      /// @remarks The brush property determines how the xtd::drawing::pen draws lines. Lines are drawn as if they are filled rectangles, with the characteristics of the specified brush.
+      /// @remarks The width property of the new xtd::drawing::pen  is set to 1 (the default).
       pen(const xtd::drawing::brush& brush, float width);
       
       /// @brief Initializes a new instance of the xtd::drawing::pen class with the specified xtd::drawing::color.
@@ -40,10 +48,13 @@ namespace xtd {
       /// @remarks The color property is set to the color specified by the color parameter. The width property is set to 1 (the default).
       pen(const xtd::drawing::color& color);
       
+      /// @brief Initializes a new instance of the xtd::drawing::pen class with the specified xtd::drawing::color.
+      /// @param color A xtd::drawing::color structure that indicates the color of this xtd::drawing::pen.
+      /// @param width A single number that represent the pen width.
+      /// @remarks The color property is set to the color specified by the color parameter. The width property is set to 1 (the default).
       pen(const xtd::drawing::color& color, float width);
       
       /// @cond
-      pen();
       pen(const xtd::drawing::pen& value);
       pen& operator=(const xtd::drawing::pen& value);
       virtual ~pen();
