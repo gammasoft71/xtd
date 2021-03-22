@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd.drawing library headers.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
 /// @defgroup xtd_drawing xtd.drawing
