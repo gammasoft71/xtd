@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::html::css::writer class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "selector_map.h"
 #include <xtd/argument_exception.h>

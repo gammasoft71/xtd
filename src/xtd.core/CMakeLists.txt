@@ -36,6 +36,7 @@ add_sources(
   include/xtd/build_type.h
   include/xtd/caller_info.h
   include/xtd/cdebug.h
+  include/xtd/cnull.h
   include/xtd/compiler.h
   include/xtd/compiler_id.h
   include/xtd/console.h
@@ -166,7 +167,6 @@ add_sources(
   include/xtd/internal/__natural_formater.h
   include/xtd/internal/__numeric_formater.h
   include/xtd/internal/__string_formater.h
-  include/xtd/io/cnull.h
   include/xtd/io/directory_not_found_exception.h
   include/xtd/io/drive_not_found_exception.h
   include/xtd/io/end_of_stream_exception.h

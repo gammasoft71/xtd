@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::html::css::property class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <ostream>
 #include <string>
