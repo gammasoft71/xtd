@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains main entry point.
+/// @brief Contains main entry point for TUNIT_CONFIG_MAIN.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "tunit_main.h"
