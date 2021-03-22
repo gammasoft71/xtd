@@ -1,7 +1,7 @@
 #include <xtd/xtd>
 
 using namespace xtd;
-using namespace xtd::html::css;
+using namespace xtd::web::css;
 
 void write_selectors(const selector_map& selectors) {
   for (auto selector : selectors) {

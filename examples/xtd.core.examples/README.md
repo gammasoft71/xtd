@@ -53,16 +53,16 @@
 * [format_with_alignment](format/format_with_alignment/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with specified alignment args.
 * [format_with_order](format/format_with_order/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with specified order args.
 
-## [Html](html/README.md)
-
-* [css_parser](html/css_parser/README.md) shows how to use [xtd::html/css/parser](../../src/xtd.core/include/xtd/html/css/parser.h) class.
-* [css_writer](html/css_writer/README.md) shows how to use [xtd::html/css/writer](../../src/xtd.core/include/xtd/html/css/writer.h) class.
-
 ## [random](random/README.md)
 
 * [random1](random/random1/README.md) shows how to use [xtd::random::next_bytes](../../src/xtd.core/include/xtd/random.h) method.
 * [random2](random/random2/README.md) shows how to use [xtd::random](../../src/xtd.core/include/xtd/random.h) class.
 * [random3](random/random3/README.md) shows how to use [xtd::random::next](../../src/xtd.core/include/xtd/random.h) method.
+
+## [Web](web/README.md)
+
+* [css_parser](web/css_parser/README.md) shows how to use [xtd::web/css/parser](../../src/xtd.core/include/xtd/html/css/parser.h) class.
+* [css_writer](web/css_writer/README.md) shows how to use [xtd::web/css/writer](../../src/xtd.core/include/xtd/html/css/writer.h) class.
 
 ## [Others](others/README.md)
 
