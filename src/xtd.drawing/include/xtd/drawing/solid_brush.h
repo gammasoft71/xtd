@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::drawing::solid_brush class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "../drawing_export.h"
 #include "brush.h"

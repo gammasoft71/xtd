@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::drawing::image class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <any>
 #include <cstdint>

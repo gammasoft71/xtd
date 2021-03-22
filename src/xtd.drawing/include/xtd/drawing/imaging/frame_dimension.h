@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd.drawing::imaging::frame_dimension class.
+/// @brief Contains xtd::drawing::imaging::frame_dimension class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>

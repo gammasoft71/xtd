@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::drawing::rectangle class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cmath>
 #include <cstdint>

@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::drawing::string_format_flags enum class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/strings.h>
 

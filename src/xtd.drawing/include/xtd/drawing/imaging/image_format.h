@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd.drawing::imaging::image_format class.
+/// @brief Contains xtd::drawing::imaging::image_format class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
