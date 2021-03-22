@@ -1,11 +1,10 @@
 /// @file
 /// @brief Contains CMake page.
 
-/// @page CMake xtd specific CMake commands
-/// 
-/// @brief xtd add specific CMake commands to manage project, assembly informations and application properties.
+/// @page CMake CMake
+/// @brief Caintains specific CMake commands to manage project, assembly informations and application properties.
 ///
-/// These specific commands are automaticaly added when you add find_package(xtd REQUIRED) to your CMakeLists.txt file.
+/// These specific CMake commands are automaticaly added when you add find_package(xtd REQUIRED) to your CMakeLists.txt file.
 ///
 /// @par Examples
 /// @code

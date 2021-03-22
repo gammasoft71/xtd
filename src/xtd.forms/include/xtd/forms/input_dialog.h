@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::input_dialog dialog.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <string>
 #include <xtd/delegate.h>

@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::file_dialog dialog.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "common_dialog.h"
 #include <vector>

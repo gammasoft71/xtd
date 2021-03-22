@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::imessage_filter interface.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
 

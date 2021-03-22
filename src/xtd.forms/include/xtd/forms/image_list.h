@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::image_list component.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <any>
 #include <xtd/drawing/image.h>

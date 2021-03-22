@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains doygen main page.
+/// @brief Contains main page.
 
 /// @mainpage xtd - Reference Guide Documentation
 ///

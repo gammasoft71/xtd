@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::message_box_options enum class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/forms/message_dialog_options.h>
 

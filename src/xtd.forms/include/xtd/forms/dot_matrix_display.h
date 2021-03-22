@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::dot_matrix_display control.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <array>
 #include <xtd/drawing/solid_brush.h>

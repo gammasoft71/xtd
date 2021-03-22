@@ -45,55 +45,55 @@ endif ()
 
 # Validation options
 if (XTD_BUILD_TESTS_XTD_DRAWING AND NOT XTD_BUILD_LIBRARIES_XTD_CORE)
-  message(FATAL_ERROR "Build xtd.core librarie must must be set to ON: xtd.drawing depends of xtd.core")
+  message(FATAL_ERROR "Build xtd.core libraries must must be set to ON: xtd.drawing depends of xtd.core")
 endif ()
 
 if (XTD_BUILD_LIBRARIES_XTD_FORMS AND NOT XTD_BUILD_LIBRARIES_XTD_DRAWING)
-  message(FATAL_ERROR "Build xtd.drawing librarie must must be set to ON: xtd.drawing depends of xtd.drawing")
+  message(FATAL_ERROR "Build xtd.drawing libraries must must be set to ON: xtd.drawing depends of xtd.drawing")
 endif ()
 
 if (XTD_BUILD_TESTS_XTD_CORE AND NOT XTD_BUILD_LIBRARIES_XTD_CORE)
-  message(FATAL_ERROR "Build xtd.core librarie must must be set to ON: xtd.core.manual.tests and xtd.core.unit.tests depends of xtd.core")
+  message(FATAL_ERROR "Build xtd.core libraries must must be set to ON: xtd.core.manual.tests and xtd.core.unit.tests depends of xtd.core")
 endif ()
 
 if (XTD_BUILD_TESTS_XTD_CORE AND NOT XTD_BUILD_LIBRARIES_XTD_TUNIT)
-  message(FATAL_ERROR "Build xtd.tunit librarie must must be set to ON: xtd.core.unit.tests depends of xtd.tunit")
+  message(FATAL_ERROR "Build xtd.tunit libraries must must be set to ON: xtd.core.unit.tests depends of xtd.tunit")
 endif ()
 
 if (XTD_BUILD_TESTS_XTD_DRAWING AND NOT XTD_BUILD_LIBRARIES_XTD_DRAWING)
-  message(FATAL_ERROR "Build xtd.drawing librarie must must be set to ON: xtd.drawing.manual.tests and xtd.drawing.unit.tests depends of xtd.drawing")
+  message(FATAL_ERROR "Build xtd.drawing libraries must must be set to ON: xtd.drawing.manual.tests and xtd.drawing.unit.tests depends of xtd.drawing")
 endif ()
 
 if (XTD_BUILD_TESTS_XTD_DRAWING AND NOT XTD_BUILD_LIBRARIES_XTD_TUNIT)
-  message(FATAL_ERROR "Build xtd.tunit librarie must must be set to ON: xtd.drawing.unit.tests depends of xtd.tunit")
+  message(FATAL_ERROR "Build xtd.tunit libraries must must be set to ON: xtd.drawing.unit.tests depends of xtd.tunit")
 endif ()
 
 if (XTD_BUILD_TESTS_XTD_FORMS AND NOT XTD_BUILD_LIBRARIES_XTD_FORMS)
-  message(FATAL_ERROR "Build xtd.forms librarie must must be set to ON: xtd.forms.manual.tests and xtd.forms.unit.tests depends of xtd.forms")
+  message(FATAL_ERROR "Build xtd.forms libraries must must be set to ON: xtd.forms.manual.tests and xtd.forms.unit.tests depends of xtd.forms")
 endif ()
 
 if (XTD_BUILD_TESTS_XTD_FORMS AND NOT XTD_BUILD_LIBRARIES_XTD_TUNIT)
-  message(FATAL_ERROR "Build xtd.tunit librarie must must be set to ON: xtd.forms.unit.tests depends of xtd.tunit")
+  message(FATAL_ERROR "Build xtd.tunit libraries must must be set to ON: xtd.forms.unit.tests depends of xtd.tunit")
 endif ()
 
 if (XTD_BUILD_TESTS_XTD_TUNIT AND NOT XTD_BUILD_LIBRARIES_XTD_TUNIT)
-  message(FATAL_ERROR "Build xtd.tunit librarie must must be set to ON: xtd.tunit.manual.tests and xtd.tunit.unit.tests depends of xtd.tunit")
+  message(FATAL_ERROR "Build xtd.tunit libraries must must be set to ON: xtd.tunit.manual.tests and xtd.tunit.unit.tests depends of xtd.tunit")
 endif ()
 
 if (XTD_BUILD_TOOL_GUIDGEN_COMMAND_LINE AND NOT XTD_BUILD_LIBRARIES_XTD_CORE)
-  message(FATAL_ERROR "Build xtd.core librarie must must be set to ON: guidgen command line tool depends of xtd.core")
+  message(FATAL_ERROR "Build xtd.core libraries must must be set to ON: guidgen command line tool depends of xtd.core")
 endif ()
 
 if (XTD_BUILD_TOOL_GUIDGEN_GUI AND NOT XTD_BUILD_LIBRARIES_XTD_FORMS)
-  message(FATAL_ERROR "Build xtd.forms librarie must must be set to ON: guidgen-gui GUI tool depends of xtd.forms")
+  message(FATAL_ERROR "Build xtd.forms libraries must must be set to ON: guidgen-gui GUI tool depends of xtd.forms")
 endif ()
 
 if (XTD_BUILD_TOOL_XTDC_COMMAND_LINE AND NOT XTD_BUILD_LIBRARIES_XTD_CORE)
-  message(FATAL_ERROR "Build xtd.core librarie must must be set to ON: xtdc command line tool depends of xtd.core")
+  message(FATAL_ERROR "Build xtd.core libraries must must be set to ON: xtdc command line tool depends of xtd.core")
 endif ()
 
 if (XTD_BUILD_TOOL_XTDC_GUI AND NOT XTD_BUILD_LIBRARIES_XTD_FORMS)
-  message(FATAL_ERROR "Build xtd.forms librarie must must be set to ON: xtdc-gu GUI tool depends of xtd.forms")
+  message(FATAL_ERROR "Build xtd.forms libraries must must be set to ON: xtdc-gu GUI tool depends of xtd.forms")
 endif ()
 
 # set drawing and forms native library
