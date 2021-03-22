@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::check_boxes factory.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "check_box.h"
 #include "texts.h"

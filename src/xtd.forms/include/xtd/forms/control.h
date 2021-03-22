@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::control conttrtol.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <any>
 #include <condition_variable>

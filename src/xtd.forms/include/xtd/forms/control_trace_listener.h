@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::control_trace_listener listener.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/diagnostics/trace_listener.h>
 #include "icontrol_trace.h"
