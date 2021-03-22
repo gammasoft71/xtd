@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd.drawing::text::font_collection class.
+/// @brief Contains xtd::drawing::text::font_collection class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <vector>

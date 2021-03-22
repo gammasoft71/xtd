@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::drawing::system_images factory.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <map>
 #include <xtd/static.h>

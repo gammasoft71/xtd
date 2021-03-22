@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd.drawing::imaging::color_palette class.
+/// @brief Contains xtd::drawing::imaging::color_palette class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>

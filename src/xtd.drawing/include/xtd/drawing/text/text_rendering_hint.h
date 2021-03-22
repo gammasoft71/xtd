@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd.drawing::text::text_rendering_hint enum class.
+/// @brief Contains xtd::drawing::text::text_rendering_hint enum class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/strings.h>
