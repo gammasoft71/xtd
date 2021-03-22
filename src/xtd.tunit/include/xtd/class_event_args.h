@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::class_event_args class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "test_class.h"
 #include "tunit_event_args.h"

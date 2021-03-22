@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::string_assume class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "assume.h"
 #include "string_assert.h"

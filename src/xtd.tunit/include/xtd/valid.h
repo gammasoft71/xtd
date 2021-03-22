@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::valid class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "assert.h"
 

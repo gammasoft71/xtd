@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::test_class class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "class_initialize_attribute.h"
 #include "class_cleanup_attribute.h"

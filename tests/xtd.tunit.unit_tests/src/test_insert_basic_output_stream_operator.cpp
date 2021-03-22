@@ -8,9 +8,7 @@
 #include <iostream>
 #include <list>
 #include <map>
-#if !__APPLE__ || __MAC_OS_X_VERSION_MAX_ALLOWED >= 101401
 #include <optional>
-#endif
 #include <set>
 #include <stack>
 #include <stdexcept>
@@ -60,7 +58,6 @@ namespace unit_tests {
     assert_value_(0U, ss.str().find("exception: "));
   }
   
-#if !__APPLE__ || __MAC_OS_X_VERSION_MAX_ALLOWED >= 101401
   void test_(test_insert_basic_output_stream_operator, test_optional_without_value) {
     std::optional<int> o;
     std::stringstream ss;
@@ -74,7 +71,6 @@ namespace unit_tests {
     ss << o;
     assert_value_("(42)", ss.str());
   }
-#endif
 
   void test_(test_insert_basic_output_stream_operator, test_pair) {
     auto p = std::make_pair("string", 42);

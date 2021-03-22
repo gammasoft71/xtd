@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains std::basic_ostream<char_t, char_traits_t>& operator<<(std::basic_ostream<char_t, char_traits_t>& os, const type_t& value) function.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <array>
 #include <cstdint>
@@ -11,9 +12,7 @@
 #include <iostream>
 #include <list>
 #include <map>
-#if !__APPLE__ || __MAC_OS_X_VERSION_MAX_ALLOWED >= 101401
 #include <optional>
-#endif
 #include <set>
 #include <stdexcept>
 #include <string>
@@ -110,7 +109,6 @@ struct __tunit_value_printer<char_t, char_traits_t, std::exception> {
   }
 };
 
-#if !__APPLE__ || __MAC_OS_X_VERSION_MAX_ALLOWED >= 101401
 template <typename char_t, typename char_traits_t, typename value_t>
 struct __tunit_value_printer<char_t, char_traits_t, std::optional<value_t>> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const std::optional<value_t>& value) {
@@ -123,7 +121,6 @@ struct __tunit_value_printer<char_t, char_traits_t, std::optional<value_t>> {
     }
   }
 };
-#endif
 
 template <typename char_t, typename char_traits_t>
 struct __tunit_value_printer<char_t, char_traits_t, std::string> {

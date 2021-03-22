@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::tunit_event_args class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

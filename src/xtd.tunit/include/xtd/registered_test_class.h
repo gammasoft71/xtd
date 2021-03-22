@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::registered_test_class class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "test_class.h"
 #include <memory>

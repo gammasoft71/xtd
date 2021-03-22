@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains __demangle function.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "settings.h"
 #include "tunit_export.h"

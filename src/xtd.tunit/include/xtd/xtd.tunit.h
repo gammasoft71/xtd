@@ -1,5 +1,6 @@
 /// @file
-/// @brief Contains xtd::tunit::unit_test class.
+/// @brief Contains xtd.tunit library headers.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
 /// @defgroup xtd_tunit xtd.tunit
