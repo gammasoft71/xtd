@@ -173,6 +173,7 @@ add_sources(
   include/xtd/forms/splitter_panel.h
   include/xtd/forms/splitter_style.h
   include/xtd/forms/switch_button.h
+  include/xtd/forms/switch_button_renderer.h
   include/xtd/forms/system_information.h
   include/xtd/forms/tab_alignment.h
   include/xtd/forms/tab_control.h
@@ -270,6 +271,7 @@ add_sources(
   src/xtd/forms/settings.cpp
   src/xtd/forms/split_container.cpp
   src/xtd/forms/splitter.cpp
+  src/xtd/forms/switch_button_renderer.cpp
   src/xtd/forms/system_information.cpp
   src/xtd/forms/tab_control.cpp
   src/xtd/forms/tab_page.cpp
