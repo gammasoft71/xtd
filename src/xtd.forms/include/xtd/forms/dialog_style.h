@@ -8,8 +8,11 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @brief Specifies the style of a dialog.
     enum class dialog_style {
+      /// @brief Standard style dialog.
       standard = 0,
+      /// @brief System style dialog.
       system = 1,
     };
 
