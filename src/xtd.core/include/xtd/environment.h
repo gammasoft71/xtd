@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::environment class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <map>
 #include <cstdlib>

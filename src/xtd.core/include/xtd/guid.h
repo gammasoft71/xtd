@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::guid class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <vector>
 #include "argument_exception.h"

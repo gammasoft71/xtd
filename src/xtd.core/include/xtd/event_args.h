@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::event_args event args.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "core_export.h"
 

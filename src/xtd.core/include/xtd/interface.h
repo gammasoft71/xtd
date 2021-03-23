@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::interface interface.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
 #undef interface

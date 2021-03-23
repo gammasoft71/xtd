@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::ctracee ostream.
+/// @brief Contains xtd::ctrace ostream.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <iostream>
