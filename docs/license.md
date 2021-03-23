@@ -2,7 +2,7 @@
 
 [![MIT Logo](pictures/license.png)](https://opensource.org/licenses/MIT)
  
-MIT License
+[MIT License](https://opensource.org/licenses/MIT)
 
 Copyright (c) 2021 [Gammasoft](https://gammasoft71.wixsite.com/gammasoft).
 
