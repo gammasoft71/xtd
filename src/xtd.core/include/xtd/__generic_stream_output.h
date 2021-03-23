@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains generic stream output methods.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
 #if __cplusplus < 201703

@@ -1,5 +1,6 @@
 /// @file
-/// @brief Contains xtd::environment class.
+/// @brief Contains __opaque_environment class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "core_export.h"
 #include "guid.h"

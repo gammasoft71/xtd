@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::console_key_info class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
 #include <iostream>

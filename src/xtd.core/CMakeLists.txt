@@ -112,6 +112,7 @@ add_sources(
   include/xtd/using.h
   include/xtd/va_args_comma.h
   include/xtd/version.h
+  include/xtd/wconsole.h
   include/xtd/xml_syntax_exception.h
   include/xtd/xtd.core
   include/xtd/xtd.core.h

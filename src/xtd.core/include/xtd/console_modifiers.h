@@ -1,5 +1,6 @@
 /// @file
-/// @brief Contains xtd::console_modifiers enum.
+/// @brief Contains xtd::console_modifiers enum class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/strings.h>
 

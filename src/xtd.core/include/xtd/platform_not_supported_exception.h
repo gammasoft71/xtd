@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::platform_not_supported_exception exception.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "not_supported_exception.h"
 

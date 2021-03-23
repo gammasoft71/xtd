@@ -1,5 +1,6 @@
 /// @file
-/// @brief Contains xtd::beep class.
+/// @brief Contains xtd::console_cancel_event_handler event handler.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/event_handler.h>
 #include "console_cancel_event_args.h"

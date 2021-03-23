@@ -6,7 +6,7 @@ macro(xtd_update_export_file path keyword export)
       "// Changes to this file may cause incorrect behavior and will be lost if the file is regenerated.\n"
       "\n"
       "/// @file\n"
-      "/// @brief Contains ${export} keyword.\n"
+      "/// @brief Contains @${export} keyword.\n"
       "/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.\n"
       "#pragma once\n"
       "\n"
@@ -31,10 +31,12 @@ macro(xtd_update_export_file path keyword export)
       "// Changes to this file may cause incorrect behavior and will be lost if the file is regenerated.\n"
       "\n"
       "/// @file\n"
-      "/// @brief Contains ${export} keyword.\n"
+      "/// @brief Contains @${export} keyword.\n"
       "/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.\n"
       "#pragma once\n"
       "\n"
+      "/// @brief Define shared library export.\n"
+      "/// @ingroup keywords\n"
       "#define ${export}\n"
     )
   endif()

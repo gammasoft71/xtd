@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains __get_in_rdbuf method.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <iostream>
 
