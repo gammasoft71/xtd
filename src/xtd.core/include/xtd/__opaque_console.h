@@ -1,5 +1,6 @@
 /// @file
-/// @brief Contains xtd::__opaque_console class.
+/// @brief Contains __opaque_console class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "console_color.h"
 #include "core_export.h"

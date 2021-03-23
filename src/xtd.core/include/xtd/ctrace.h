@@ -1,5 +1,6 @@
 /// @file
-/// @brief Contains xtd::cdebug ostream.
+/// @brief Contains xtd::ctracee ostream.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <iostream>
 #include "tracestreambuf.h"

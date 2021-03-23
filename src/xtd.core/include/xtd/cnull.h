@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::cnull object.
+/// @brief Contains xtd::cnull ostream.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 

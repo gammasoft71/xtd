@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::divided_by_zero_exception exception.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "arithmetic_exception.h"
 

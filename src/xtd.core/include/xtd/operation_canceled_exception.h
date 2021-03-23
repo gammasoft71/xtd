@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::operation_canceled_exception exception.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "system_exception.h"
 

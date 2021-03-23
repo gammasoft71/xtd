@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::up_doawn_base control.
+/// @brief Contains xtd::forms::up_down_base control.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "border_style.h"

@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::argument_null_exception exception.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "argument_exception.h"
 

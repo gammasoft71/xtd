@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::basic_console class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "__generic_stream_output.h"
 #include <xtd/strings.h>

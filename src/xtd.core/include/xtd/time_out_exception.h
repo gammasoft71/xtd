@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::time_out_exception exception.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "system_exception.h"
 
