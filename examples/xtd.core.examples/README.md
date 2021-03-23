@@ -61,7 +61,7 @@
 
 ## [Web](web/README.md)
 
-* [css_parser](web/css_parser/README.md) shows how to use [xtd::web/css/parser](../../src/xtd.core/include/xtd/html/css/parser.h) class.
+* [css_reader](web/css_reader/README.md) shows how to use [xtd::web/css/reader](../../src/xtd.core/include/xtd/html/css/reader.h) class.
 * [css_writer](web/css_writer/README.md) shows how to use [xtd::web/css/writer](../../src/xtd.core/include/xtd/html/css/writer.h) class.
 
 ## [Others](others/README.md)

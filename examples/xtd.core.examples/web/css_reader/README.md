@@ -1,10 +1,10 @@
-# css_parser
+# css_reader
 
-Shows how to use [xtd::web::css:parser](../../../../src/xtd.core/include/xtd/web/css/parser.h) class.
+Shows how to use [xtd::web::css:parser](../../../../src/xtd.core/include/xtd/web/css/reader.h) class.
 
 ## Sources
 
-[src/css_parser.cpp](src/css_parser.cpp)
+[src/css_reader.cpp](src/css_reader.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
