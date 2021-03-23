@@ -31,21 +31,18 @@
 
 * [Hello Worlds](xtd.forms.examples/hello_worlds/README.md) contains xtd.forms "Hello, World!" examples.
 * [Applications](xtd.forms.examples/applications/README.md) contains applications examples.
-* [Common Controls](xtd.forms.examples/common_controls/README.md) contains common controls examples.
-* [Picker Controls](xtd.forms.examples/picker_controls/README.md) contains picker controls examples.
-* [Control containers](xtd.forms.examples/control_containers/README.md) contains container controls examples.
-* [Controls](xtd.forms.examples/controls/README.md) contains controls examples.
-* [Custom Controls](xtd.forms.examples/custom_controls/README.md) contains custom controls examples.
+* [Controls](xtd.forms.examples/controls/README.md) contains common controls examples.
+* [Containers](xtd.forms.examples/containers/README.md) contains container controls examples.
 * [Menus and Toolbars](xtd.forms.examples/menus_and_toolbars/README.md) contains menus and toolbars examples.
 * [Datas](xtd.forms.examples/datas/README.md) contains datas examples.
 * [Components](xtd.forms.examples/components/README.md) contains components examples.
 * [Printing](xtd.forms.examples/datas/README.md) contains printing examples.
-* [Common Dialogs](xtd.forms.examples/common_dialogs/README.md) contains common dialogs examples.
 * [Dialogs](xtd.forms.examples/dialogs/README.md) contains dialogs examples.
-* [Custom dialogs](xtd.forms.examples/custom_dialogs/README.md) contains custom dialogs examples.
 * [events](xtd.forms.examples/events/README.md) contains events examples.
-* [Others](xtd.forms.examples/others/README.md) contains others examples.
+* [User Controls](xtd.forms.examples/user_controls/README.md) contains custom controls examples.
+* [User dialogs](xtd.forms.examples/user_dialogs/README.md) contains custom dialogs examples.
 * [Games](xtd.forms.examples/games/README.md) contains games examples.
+* [Others](xtd.forms.examples/others/README.md) contains others examples.
 
 ## [xtd.tunit](xtd.tunit.examples/README.md)
 
