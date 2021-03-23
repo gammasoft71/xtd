@@ -13,7 +13,7 @@ void write_selectors(const selector_map& selectors) {
 }
 
 int main() {
-  parser css_parser(".user_box {\n"
+  reader css_reader(".user_box {\n"
                     "  display: none;\n"
                     "  position: fixed;\n"
                     "  z-index: 100;\n"
@@ -28,14 +28,14 @@ int main() {
 
   console::write_line("Write all selectors and all properties :");
   console::write_line("----------------------------------------");
-  write_selectors(css_parser.selectors());
+  write_selectors(css_reader.selectors());
   console::write_line();
 
   console::write_line("Get specific properties :");
   console::write_line("-------------------------");
-  console::write_line("filter = {}", css_parser.selectors().at(".user_box").properties().at("filter"));
-  console::write_line("opacity = {}", css_parser.selectors().at(".user_box").properties().at("opacity").to_single());
-  console::write_line("z-index = {}", css_parser.selectors().at(".user_box").properties().at("z-index").to<int32_t>());
+  console::write_line("filter = {}", css_reader.selectors().at(".user_box").properties().at("filter"));
+  console::write_line("opacity = {}", css_reader.selectors().at(".user_box").properties().at("opacity").to_single());
+  console::write_line("z-index = {}", css_reader.selectors().at(".user_box").properties().at("z-index").to<int32_t>());
 }
 
 // This code can produces the following output :

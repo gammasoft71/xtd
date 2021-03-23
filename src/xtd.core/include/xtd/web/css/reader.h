@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::web::css::parser class.
+/// @brief Contains xtd::web::css::reader class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "selector_map.h"
@@ -12,11 +12,11 @@ namespace xtd {
   /// @brief Contains classes and interfaces that enable browser-server communication. This namespace includes the http_request class, which provides extensive information about the current HTTP request; the http_response class, which manages HTTP output to the client; and the http_server_utility class, which provides access to server-side utilities and processes. xtd::web also includes classes for cookie manipulation, file transfer, exception information, and output cache control.
   namespace web {
     namespace css {
-      class parser {
+      class reader {
       public:
-        parser(std::istream& stream) {parse_text(xtd::io::stream_reader(stream).read_to_end());}
-        parser(xtd::io::text_reader& text_reader) {parse_text(text_reader.read_to_end());}
-        parser(const std::string& text) {parse_text(text);}
+        reader(std::istream& stream) {parse_text(xtd::io::stream_reader(stream).read_to_end());}
+        reader(xtd::io::text_reader& text_reader) {parse_text(text_reader.read_to_end());}
+        reader(const std::string& text) {parse_text(text);}
         
         const xtd::web::css::selector_map& selectors() const {return selectors_;}
         
