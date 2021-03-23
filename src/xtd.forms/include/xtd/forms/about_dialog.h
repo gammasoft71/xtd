@@ -14,28 +14,38 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    /// @brief Represents a dialog box that displays about box.
+    /// @brief Represents a dialog box that displays about dialog.
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
     /// @par Example
     /// The following code example demonstrate the use of about_dialog dialog.
     /// @include about_dialog.cpp
+    /// @par Windows
+    /// @image html about_dialog_w.png
+    /// <br>
+    /// @image html about_dialog_wd.png
+    /// @par macOS
+    /// @image html about_dialog_m.png
+    /// <br>
+    /// @image html about_dialog_md.png
+    /// @par Gnome
+    /// @image html about_dialog_g.png
+    /// <br>
+    /// @image html about_dialog_gd.png
     class forms_export_ about_dialog final : public component {
     public:
+      /// @brief Reprresents a creators collection.
       using creators_collection = xtd::forms::layout::arranged_element_collection<std::string>;
+      /// @brief Reprresents a designers collection.
       using designers_collection = xtd::forms::layout::arranged_element_collection<std::string>;
+      /// @brief Reprresents a documentt writers collection.
       using doc_writers_collection = xtd::forms::layout::arranged_element_collection<std::string>;
+      /// @brief Reprresents a translators collection.
       using translators_collection = xtd::forms::layout::arranged_element_collection<std::string>;
 
       /// @brief Initializes a new instance of the about_dialog class.
       about_dialog() = default;
-      
-      xtd::forms::dialog_style dialog_style() const {return dialog_style_;}
-      about_dialog& dialog_style(xtd::forms::dialog_style dialog_style) {
-        dialog_style_ = dialog_style;
-        return *this;
-      }
       
       /// @brief Gets the product copyright.
       /// @return The product copyright.
@@ -59,6 +69,17 @@ namespace xtd {
         return *this;
       }
       
+      /// @brief Gets the dialog style.
+      /// @return One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
+      xtd::forms::dialog_style dialog_style() const {return dialog_style_;}
+      /// @brief Sets the dialog style.
+      /// @param dialog_style One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
+      /// @return Current about_dialog instance.
+      about_dialog& dialog_style(xtd::forms::dialog_style dialog_style) {
+        dialog_style_ = dialog_style;
+        return *this;
+      }
+
       /// @brief Gets the product icon.
       /// @return The product icon.
       xtd::drawing::icon icon() const {return xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(icon_));}
