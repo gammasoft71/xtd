@@ -4,7 +4,7 @@
 /// @page CursorsAppearancesPage Cursors appearances
 /// @brief Contains cursors appearances.
 ///
-/// Shows  xtd::forms::cursors appearance on Windos, Linux Gnome and macOS Operating Systems.
+/// Shows xtd::forms::cursors appearance on Windows, Linux Gnome and macOS Operating Systems.
 ///
 /// | Name                       | Value                                  | Windows                             | Linux Gnome                         | macOS                               |
 /// |----------------------------|----------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
