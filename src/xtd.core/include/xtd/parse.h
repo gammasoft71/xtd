@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::parse methods.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
 #include "number_styles.h"

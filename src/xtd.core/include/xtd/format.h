@@ -1,5 +1,6 @@
 /// @file
-/// @brief Contains xtd::format class.
+/// @brief Contains xtd::format method.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <iostream>
 #include "strings.h"

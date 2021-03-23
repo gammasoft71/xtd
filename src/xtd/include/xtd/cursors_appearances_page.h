@@ -1,12 +1,12 @@
 /// @file
-/// @brief Contains cursors apprearances page.
+/// @brief Contains cursors appearances page.
 
-/// @page CursorsAppeareancesPage Cursors apprearances
-/// @brief Contains cursors apprearances.
+/// @page CursorsAppearancesPage Cursors appearances
+/// @brief Contains cursors appearances.
 ///
-/// Shows  xtd::forms::cursors apprearance on main Operating System.
+/// Shows  xtd::forms::cursors appearance on Windos, Linux Gnome and macOS Operating Systems.
 ///
-/// | Name                       | Value                                  | Windows                             | Gtk                                 | macOS                               |
+/// | Name                       | Value                                  | Windows                             | Linux Gnome                         | macOS                               |
 /// |----------------------------|----------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
 /// | Application starting       | xtd::forms::cursors::app_starting      | @image html app_starting_w.png      | @image html app_starting_g.png      | @image html app_starting_m.png      |
 /// | Arrow                      | xtd::forms::cursors::arrow             | @image html arrow_w.png             | @image html arrow_g.png             | @image html arrow_m.png             |

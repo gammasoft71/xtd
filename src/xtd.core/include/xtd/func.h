@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::func delegate.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
 #include "delegate.h"

@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::processor class.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <map>
 #include <vector>
