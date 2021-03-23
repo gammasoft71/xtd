@@ -9,6 +9,7 @@ include(references.cmake)
 add_sources(
   include/xtd/xtd
   include/xtd/cmake_page.h
+  include/xtd/controls_appearances_page.h
   include/xtd/cursors_appearances_page.h
   include/xtd/format_page.h
   include/xtd/license_page.h
