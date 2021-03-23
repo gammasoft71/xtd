@@ -1,6 +1,6 @@
 # Control containers examples
 
-[This folder](.) contains control containers examples.
+[This folder](.) contains containers examples.
 
 * **flow_layout_panel** represents a panel that dynamically lays out its contents horizontally or vertically.
 * [collapsible_panel](collapsible_panel/README.md) used to group collections of controls in a collapsible container.
