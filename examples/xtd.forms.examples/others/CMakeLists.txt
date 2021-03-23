@@ -4,6 +4,7 @@ project(others)
 find_package(xtd REQUIRED)
 
 add_projects(
+  about_dialog_system
   auto_scroll
   bitmap_button
   button2
@@ -32,6 +33,7 @@ add_projects(
   lcd_label_with_nine_segment
   lcd_label_with_seven_segment
   lcd_label_with_sixteen_segment
+  message_dialog_show_sheet
   painting
   settings_example2
   smileys

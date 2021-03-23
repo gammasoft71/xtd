@@ -6,23 +6,20 @@ find_package(xtd REQUIRED)
 add_projects(
   hello_worlds
   applications
-  common_controls
-  picker_controls
-  control_containers
   controls
-  custom_controls
+  containers
   menus_and_toolbars
   datas
   components
-  painting
   printing
-  common_dialogs
   dialogs
-  custom_dialogs
   events
+  painting
+  user_controls
+  user_dialogs
+  games
   others
   tests
   demos
-  games
   tutorial
 )

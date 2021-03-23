@@ -5,12 +5,16 @@ find_package(xtd REQUIRED)
 
 add_projects(
   about_dialog
-  about_dialog_system
   busy_box
   busy_dialog
+  color_dialog
+  folder_browser_dialog
+  font_dialog
+  input_box
+  input_dialog
   message_box
   message_dialog
-  message_dialog_show_sheet
-  input_box
+  open_file_dialog
   progress_dialog
+  save_file_dialog
 )

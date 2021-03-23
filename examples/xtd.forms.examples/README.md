@@ -21,74 +21,63 @@
 * [application_restart](applications/application_restart/README.md) shows how to restart application with [xtd::forms::application::restart](../../src/xtd_forms/include/xtd/forms/application.hpp) method.
 * [application_use_wait_cursor](applications/application_use_wait_cursor/README.md) shows how to show and hide wait cursor application with [xtd::forms::application::use_wait_cursor](../../src/xtd.forms/include/xtd/forms/application.h) method.
 
-## [Common Controls](common_controls/README.md)
+## [Controls](controls/README.md)
 
-* [button](common_controls/button/README.md) represents a Windows [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) control.
-* [buttons](common_controls/buttons/README.md) Show how to use buttons factory with [xtd::forms::buttons](../../src/xtd.forms/include/xtd/forms/buttons.h) control.
-* [check_box](common_controls/check_box/README.md) represents a Windows [xtd::forms::check_box](../../src/xtd.forms/include/xtd/forms/check_box.h) control.
-* [check_boxes](common_controls/check_boxes/README.md) Show how to use check boxes factory with [xtd::forms::check_boxes](../../src/xtd.forms/include/xtd/forms/check_boxes.h) factory.
-* [checked_list_box](common_controls/checked_list_box/README.md) represents a Windows control to display a list of check box.
-* [choice](common_controls/choice/README.md) represents a [xtd::forms::choice](../../src/xtd.forms/include/xtd/forms/choice.h) control.
-* [combo_box](common_controls/combo_box/README.md) represents a Windows [xtd::forms::combo_box](../../src/xtd.forms/include/xtd/forms/combo_box.h)control.
-* [command_link_button](common_controls/command_link_button/README.md) represents a Windows [xtd::forms::command_link_button](../../src/xtd.forms/include/xtd/forms/command_link_button.h) control.
-* [control](common_controls/control/README.md) defines the base class for controls, which are components with visual representation.
-* [domain_up_down](common_controls/domain_up_down/README.md) represents a Windows spin box (also known as an up-down control) that displays string values.
+* [button](controls/button/README.md) represents a Windows [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) control.
+* [buttons](controls/buttons/README.md) Show how to use buttons factory with [xtd::forms::buttons](../../src/xtd.forms/include/xtd/forms/buttons.h) control.
+* [check_box](controls/check_box/README.md) represents a Windows [xtd::forms::check_box](../../src/xtd.forms/include/xtd/forms/check_box.h) control.
+* [check_boxes](controls/check_boxes/README.md) Show how to use check boxes factory with [xtd::forms::check_boxes](../../src/xtd.forms/include/xtd/forms/check_boxes.h) factory.
+* [checked_list_box](controls/checked_list_box/README.md) represents a Windows control to display a list of check box.
+* [choice](controls/choice/README.md) represents a [xtd::forms::choice](../../src/xtd.forms/include/xtd/forms/choice.h) control.
+* [color_picker](picker_controls/color_picker/README.md) represents a Windows control that allows the user to select and display a color.
+* [combo_box](controls/combo_box/README.md) represents a Windows [xtd::forms::combo_box](../../src/xtd.forms/include/xtd/forms/combo_box.h)control.
+* [command_link_button](controls/command_link_button/README.md) represents a Windows [xtd::forms::command_link_button](../../src/xtd.forms/include/xtd/forms/command_link_button.h) control.
+* [control](controls/control/README.md) defines the base class for controls, which are components with visual representation.
+* [date_time_picker](picker_controls/date_time_picker/README.md) represents a Windows control that allows the user to select a date and a time and to display the date and time with a specified format.
+* [domain_up_down](controls/domain_up_down/README.md) represents a Windows spin box (also known as an up-down control) that displays string values.
+* [dot_matrix_display](controls/dot_matrix_display/README.md) represents a [xtd::forms::fourteen_segment_display](../../src/xtd.forms/include/xtd/forms/dot_matrix_display.h) control.
+* [font_picker](picker_controls/font_picker/README.md) represents a Windows control that allows the user to select and display a font.
+* [fourteen_segment_display](controls/fourteen_segment_display/README.md) represents a [xtd::forms::fourteen_segment_display](../../src/xtd.forms/include/xtd/forms/fourteen_segment_display.h) control.
 * **hscroll_bar** represents a standard Windows horizontal scroll bar.
-* [label](common_controls/label/README.md) represents a standard Windows [xtd::forms::label](../../src/xtd.forms/include/xtd/forms/label.h).
+* [label](controls/label/README.md) represents a standard Windows [xtd::forms::label](../../src/xtd.forms/include/xtd/forms/label.h).
+* [lcd_label](controls/lcd_label/README.md) represents a [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
 * **link_label** represents a Windows label control that can display hyperlinks.
-* [list_box](common_controls/list_box/README.md) represents a Windows control to display a list of items.
+* [list_box](controls/list_box/README.md) represents a Windows control to display a list of items.
 * **list_view** represents a Windows list view control, which displays a collection of items that can be displayed using one of four different views.
 * **masked_text_box** uses a mask to distinguish between proper and improper user input.
 * **month_calendar** specifies values for navigating among accessible objects.
+* [nine_segment_display](controls/nine_segment_display/README.md) represents a [xtd::forms::nine_segment_display](../../src/xtd.forms/include/xtd/forms/nine_segment_display.h) control.
 * **notify_icon** specifies a component that creates an icon in the notification area. This class cannot be inherited.
-* [numeric_up_down](common_controls/numeric_up_down/README.md) represents a Windows spin box (also known as an up-down control) that displays numeric values.
-* [picture_box](common_controls/picture_box/README.md) represents a Windows picture box control for displaying an image.
-* [progress_bar](common_controls/progress_bar/README.md) represents a Windows [xtd::forms::progress_bar](../../src/xtd.forms/include/xtd/forms/progress_bar.h) control.
-* [radio_button](common_controls/radio_button/README.md) enables the user to select a single option from a group of choices when paired with other [xtd::forms::radio_button](../../src/xtd.forms/include/xtd/forms/radio_button.h) controls.
-* [radio_buttons](common_controls/radio_buttons/README.md) Show how to use radio buttons factory with [xtd::forms::radio_buttons](../../src/xtd.forms/include/xtd/forms/radio_buttons.h) factory.
+* [numeric_up_down](controls/numeric_up_down/README.md) represents a Windows spin box (also known as an up-down control) that displays numeric values.
+* [picture_box](controls/picture_box/README.md) represents a Windows picture box control for displaying an image.
+* [progress_bar](controls/progress_bar/README.md) represents a Windows [xtd::forms::progress_bar](../../src/xtd.forms/include/xtd/forms/progress_bar.h) control.
+* [radio_button](controls/radio_button/README.md) enables the user to select a single option from a group of choices when paired with other [xtd::forms::radio_button](../../src/xtd.forms/include/xtd/forms/radio_button.h) controls.
+* [radio_buttons](controls/radio_buttons/README.md) Show how to use radio buttons factory with [xtd::forms::radio_buttons](../../src/xtd.forms/include/xtd/forms/radio_buttons.h) factory.
 * **rich_text_box** represents a Windows rich text box control.
-* [splitter](common_controls/splitter/README.md) represents a splitter control that enables the user to resize docked controls. Splitter has been replaced by SplitContainer and is provided only for compatibility with previous versions.
-* [switch_button](common_controls/switch_button/README.md) represents a [xtd::forms::switch_button](../../src/xtd.forms/include/xtd/forms/switch_button.h) control.
-* [text_box](common_controls/text_box/README.md) represents a Windows [xtd::forms::text_box](../../src/xtd.forms/include/xtd/forms/text_box.h) control.
+* [seven_segment_display](controls/seven_segment_display/README.md) represents a [xtd::forms::seven_segment_display](../../src/xtd.forms/include/xtd/forms/seven_segment_display.h) control.
+* [sixteen_segment_display](controls/sixteen_segment_display/README.md) represents a [xtd::forms::sixteen_segment_display](../../src/xtd.forms/include/xtd/forms/sixteen_segment_display.h) control.
+* [splitter](controls/splitter/README.md) represents a splitter control that enables the user to resize docked controls. Splitter has been replaced by SplitContainer and is provided only for compatibility with previous versions.
+* [switch_button](controls/switch_button/README.md) represents a [xtd::forms::switch_button](../../src/xtd.forms/include/xtd/forms/switch_button.h) control.
+* [text_box](controls/text_box/README.md) represents a Windows [xtd::forms::text_box](../../src/xtd.forms/include/xtd/forms/text_box.h) control.
 * **tool_tip** Represents a small rectangular pop-up window that displays a brief description of a control's purpose when the user rests the pointer on the control.
-* [toggle_button](common_controls/toggle_button/README.md) represents a [xtd::forms::toggle_button](../../src/xtd.forms/include/xtd/forms/toggle_button.h) control.
-* [toggle_buttons](common_controls/toggle_buttons/README.md) Show how to use toggle buttons factory with [xtd::forms::toggle_buttons](../../src/xtd.forms/include/xtd/forms/toggle_buttons.h) factory.
-* [track_bar](common_controls/track_bar/README.md) represents a standard Windows [xtd::forms::track_bar](../../src/xtd.forms/include/xtd/forms/track_bar.h).
+* [toggle_button](controls/toggle_button/README.md) represents a [xtd::forms::toggle_button](../../src/xtd.forms/include/xtd/forms/toggle_button.h) control.
+* [toggle_buttons](controls/toggle_buttons/README.md) Show how to use toggle buttons factory with [xtd::forms::toggle_buttons](../../src/xtd.forms/include/xtd/forms/toggle_buttons.h) factory.
+* [track_bar](controls/track_bar/README.md) represents a standard Windows [xtd::forms::track_bar](../../src/xtd.forms/include/xtd/forms/track_bar.h).
 * **tree_view** displays a hierarchical collection of labeled items, each represented by a TreeNode.
-* [up_down_button](common_controls/up_down_button/README.md) represents a Windows spin button.
-* [user_control](common_controls/user_control/README.md) defines the base class for user controls.
+* [up_down_button](controls/up_down_button/README.md) represents a Windows spin button.
+* [user_control](controls/user_control/README.md) defines the base class for user controls.
 * **vscroll_bar** represents a standard Windows vertical scroll bar.
 * **web_browser** enables the user to navigate Web pages inside your form.
 
-## [Picker Controls](picker_controls/README.md)
-
-* [color_picker](picker_controls/color_picker/README.md) represents a Windows control that allows the user to select and display a color.
-* [date_time_picker](picker_controls/date_time_picker/README.md) represents a Windows control that allows the user to select a date and a time and to display the date and time with a specified format.
-* [font_picker](picker_controls/font_picker/README.md) represents a Windows control that allows the user to select and display a font.
-
-## [Control containers](control_containers/README.md)
+## [containers](containers/README.md)
 
 * **flow_layout_panel** represents a panel that dynamically lays out its contents horizontally or vertically.
-* [form](control_containers/form/README.md) represents a window or dialog box that makes up an application's user interface.
-* [group_box](control_containers/group_box/README.md) represents a Windows control that displays a frame around a group of controls with an optional caption.
-* [panel](control_containers/panel/README.md) used to group collections of controls.
-* [split_container](control_containers/split_container/README.md) represents a control consisting of a movable bar that divides a container's display area into two resizable panels.
-* [tab_control](control_containers/tab_control/README.md) manages a related set of tab pages.
+* [form](containers/form/README.md) represents a window or dialog box that makes up an application's user interface.
+* [group_box](containers/group_box/README.md) represents a Windows control that displays a frame around a group of controls with an optional caption.
+* [panel](containers/panel/README.md) used to group collections of controls.
+* [split_container](containers/split_container/README.md) represents a control consisting of a movable bar that divides a container's display area into two resizable panels.
+* [tab_control](containers/tab_control/README.md) manages a related set of tab pages.
 * **table_layout_panel** represents a panel that dynamically lays out its contents in a grid composed of rows and columns.
-
-## [Controls](controls/README.md)
-
-* [dot_matrix_display](controls/dot_matrix_display/README.md) represents a [xtd::forms::fourteen_segment_display](../../src/xtd.forms/include/xtd/forms/dot_matrix_display.h) control.
-* [fourteen_segment_display](controls/fourteen_segment_display/README.md) represents a [xtd::forms::fourteen_segment_display](../../src/xtd.forms/include/xtd/forms/fourteen_segment_display.h) control.
-* [lcd_label](controls/lcd_label/README.md) represents a [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
-* [nine_segment_display](controls/nine_segment_display/README.md) represents a [xtd::forms::nine_segment_display](../../src/xtd.forms/include/xtd/forms/nine_segment_display.h) control.
-* [seven_segment_display](controls/seven_segment_display/README.md) represents a [xtd::forms::seven_segment_display](../../src/xtd.forms/include/xtd/forms/seven_segment_display.h) control.
-* [sixteen_segment_display](controls/sixteen_segment_display/README.md) represents a [xtd::forms::sixteen_segment_display](../../src/xtd.forms/include/xtd/forms/sixteen_segment_display.h) control.
-
-## [Custom Controls](custom_controls/README.md)
-
-* [line](custom_controls/line/README.md) demonstrates the use of [xtd::forms::user_control](../../src/xtd.forms/include/xtd/forms/user_control.h)control to draw simple lines.
-* [numeric_text_box](custom_controls/numeric_text_box/README.md) demonstrates the customize [xtd::forms::text_box](../../src/xtd.forms/include/xtd/forms/text_box.h) control.
 
 ## [Menus and Toolbars](menus_and_tollbars/README.md)
 
@@ -145,24 +134,23 @@
 * **print_preview_control** represents the raw preview part of print previewing from a Windows Forms application, without any dialog boxes or buttons. Most PrintPreviewControl objects are found on PrintPreviewDialog objects, but they do not have to be.
 * **print_preview_dialog** represents a dialog box form that contains a PrintPreviewControl for printing from a Windows Forms application.
 
-## [Common Dialogs](common_dialogs/README.md)
-
-* [color_dialog](common_dialogs/color_dialog/README.md) represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.
-* [folder_browser_dialog](common_dialogs/folder_browser_dialog/README.md) prompts the user to select a folder.
-* [font_dialog](common_dialogs/font_dialog/README.md) prompts the user to choose a font from among those installed on the local computer.
-* [input_dialog](common_dialogs/input_dialog/README.md) prompts the user to input text.
-* [open_file_dialog](common_dialogs/open_file_dialog/README.md) displays a standard dialog box that prompts the user to open a file.
-* [save_file_dialog](common_dialogs/save_file_dialog/README.md) prompts the user to select a location for saving a file.
-
 ## [Dialogs](dialogs/README.md)
 
-* [about_dialog](dialogs/about_dialog/README.md) represents a common dialog box that displays about box.
-* [message_box](dialogs/message_box/README.md) displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.
+* **about_box** represents a dialog box that displays about box.
+* [about_dialog](dialogs/about_dialog/README.md) represents a dialog box that displays about box.
+* [busy_box](dialogs/busy_box/README.md) represents a busy box that displays busy box.
+* [busy_dialog](dialogs/busy_dialog/README.md) represents a busy box that displays busy box.
+* [color_dialog](dialogs/color_dialog/README.md) represents a ialog box that displays available colors along with controls that enable the user to define custom colors.
 * **find_replace_dialog** represents a find replace dialog box.
-
-## [Custom Dialogs](custom_dialogs/README.md)
-
-* [user_dialog](custom_dialogs/user_dialog/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) as dialog.
+* [folder_browser_dialog](dialogs/folder_browser_dialog/README.md) prompts the user to select a folder.
+* [font_dialog](dialogs/font_dialog/README.md) prompts the user to choose a font from among those installed on the local computer.
+* [input_box](dialogs/input_box/README.md) prompts the user to input text.
+* [input_dialog](dialogs/input_dialog/README.md) prompts the user to input text.
+* [message_box](dialogs/message_box/README.md) displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.
+* [message_dialog](dialogs/message_dialog/README.md) displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.
+* [open_file_dialog](dialogs/open_file_dialog/README.md) displays a standard dialog box that prompts the user to open a file.
+* [progress_dialog](dialogs/progress_dialog/README.md) represents a progress box that displays progress box.
+* [save_file_dialog](dialogs/save_file_dialog/README.md) prompts the user to select a location for saving a file.
 
 ## [Events](events/README.md)
 
@@ -175,6 +163,20 @@
 * [form_and_messages](events/form_and_messages/README.md) demonstrates some events received by [xtd::forms::form](../../../../src/xtd.forms/include/xtd/forms/form.h).
 * [form_paint](events/form_paint/README.md) demonstrates paint event with [xtd::forms::form](../../../../src/xtd.forms/include/xtd/forms/form.h).
 * [wnd_proc](events/wnd_proc/README.md) demonstrates the use of [wnd_proc](../../src/xtd.forms/include/xtd/forms/control.h) method.
+
+## [User Controls](user_controls/README.md)
+
+* [line](user_controls/line/README.md) demonstrates the use of [xtd::forms::user_control](../../src/xtd.forms/include/xtd/forms/user_control.h)control to draw simple lines.
+* [numeric_text_box](user_controls/numeric_text_box/README.md) demonstrates the customize [xtd::forms::text_box](../../src/xtd.forms/include/xtd/forms/text_box.h) control.
+
+## [User Dialogs](user_dialogs/README.md)
+
+* [user_dialog](user_dialogs/user_dialog/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) as dialog.
+
+## [Games](games/README.md)
+
+* [game_of_life](games/game_of_life/README.md) The Game of Life is not your typical computer game. It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.
+* [minesweeper](games/minesweeper/README.md) The goal of the game is to uncover all the squares that do not contain mines.
 
 ## [Others](others/README.md)
 
@@ -220,8 +222,3 @@
 * [track_bar2](others/track_bar2/README.md) represents a standard Windows [xtd::forms::track_bar](../../src/xtd.forms/include/xtd/forms/track_bar.h).
 * [wiggly](others/wiggly/README.md) shows how to animate a user control using timer and timer::event. In addition, the example demonstrates how to use graphics::measure_string to determine the size of text on screen.
 * [All](.) You can see all examples here. 
-
-## [Games](games/README.md)
-
-* [game_of_life](games/game_of_life/README.md) The Game of Life is not your typical computer game. It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.
-* [minesweeper](games/minesweeper/README.md) The goal of the game is to uncover all the squares that do not contain mines.

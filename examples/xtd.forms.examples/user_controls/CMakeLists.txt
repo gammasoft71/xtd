@@ -1,10 +1,9 @@
 cmake_minimum_required(VERSION 3.3)
 
-project(picker_controls)
+project(user_control)
 find_package(xtd REQUIRED)
 
 add_projects(
-  color_picker
-  date_time_picker
-  font_picker
+  line
+  numeric_text_box
 )
