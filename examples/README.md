@@ -32,7 +32,7 @@
 * [Hello Worlds](xtd.forms.examples/hello_worlds/README.md) contains xtd.forms "Hello, World!" examples.
 * [Applications](xtd.forms.examples/applications/README.md) contains applications examples.
 * [Controls](xtd.forms.examples/controls/README.md) contains common controls examples.
-* [Containers](xtd.forms.examples/containers/README.md) contains container controls examples.
+* [Containers](xtd.forms.examples/containers/README.md) contains containers examples.
 * [Menus and Toolbars](xtd.forms.examples/menus_and_toolbars/README.md) contains menus and toolbars examples.
 * [Datas](xtd.forms.examples/datas/README.md) contains datas examples.
 * [Components](xtd.forms.examples/components/README.md) contains components examples.
