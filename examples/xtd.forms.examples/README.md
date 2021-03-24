@@ -180,6 +180,7 @@
 
 ## [Others](others/README.md)
 
+* [about_dialog_system](dialogs/about_dialog_system/README.md) represents a dialog box that displays about box.
 * [auto_scroll](others/auto_scroll/README.md) demonstrates the use of [xtd::forms::panel](../../src/xtd.forms/include/xtd/forms/panel.h) container with [xtd::forms/scrollable_control::auto_scroll](../../src/xtd.forms/include/xtd/forms/scrollable_control.h).
 * [bitmap_button](others/bitmap_button/README.md) demonstrates the use of [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) control and xtd::drawing::image].
 * [button2](others/button2/README.md) demonstrates the use of [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) control.
