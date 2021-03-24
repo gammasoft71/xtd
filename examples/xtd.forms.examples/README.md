@@ -29,14 +29,14 @@
 * [check_boxes](controls/check_boxes/README.md) Show how to use check boxes factory with [xtd::forms::check_boxes](../../src/xtd.forms/include/xtd/forms/check_boxes.h) factory.
 * [checked_list_box](controls/checked_list_box/README.md) represents a Windows control to display a list of check box.
 * [choice](controls/choice/README.md) represents a [xtd::forms::choice](../../src/xtd.forms/include/xtd/forms/choice.h) control.
-* [color_picker](picker_controls/color_picker/README.md) represents a Windows control that allows the user to select and display a color.
+* [color_picker](controls/color_picker/README.md) represents a Windows control that allows the user to select and display a color.
 * [combo_box](controls/combo_box/README.md) represents a Windows [xtd::forms::combo_box](../../src/xtd.forms/include/xtd/forms/combo_box.h)control.
 * [command_link_button](controls/command_link_button/README.md) represents a Windows [xtd::forms::command_link_button](../../src/xtd.forms/include/xtd/forms/command_link_button.h) control.
 * [control](controls/control/README.md) defines the base class for controls, which are components with visual representation.
-* [date_time_picker](picker_controls/date_time_picker/README.md) represents a Windows control that allows the user to select a date and a time and to display the date and time with a specified format.
+* [date_time_picker](controls/date_time_picker/README.md) represents a Windows control that allows the user to select a date and a time and to display the date and time with a specified format.
 * [domain_up_down](controls/domain_up_down/README.md) represents a Windows spin box (also known as an up-down control) that displays string values.
 * [dot_matrix_display](controls/dot_matrix_display/README.md) represents a [xtd::forms::fourteen_segment_display](../../src/xtd.forms/include/xtd/forms/dot_matrix_display.h) control.
-* [font_picker](picker_controls/font_picker/README.md) represents a Windows control that allows the user to select and display a font.
+* [font_picker](controls/font_picker/README.md) represents a Windows control that allows the user to select and display a font.
 * [fourteen_segment_display](controls/fourteen_segment_display/README.md) represents a [xtd::forms::fourteen_segment_display](../../src/xtd.forms/include/xtd/forms/fourteen_segment_display.h) control.
 * **hscroll_bar** represents a standard Windows horizontal scroll bar.
 * [label](controls/label/README.md) represents a standard Windows [xtd::forms::label](../../src/xtd.forms/include/xtd/forms/label.h).
