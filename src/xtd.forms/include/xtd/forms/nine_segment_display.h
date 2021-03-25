@@ -10,6 +10,21 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
+    /// @par Example
+    /// The following code example demonstrate the use of nine segment display control.
+    /// @include nine_segment_display.cpp
+    /// @par Windows
+    /// @image html nine_segment_display_w.png
+    /// <br>
+    /// @image html nine_segment_display_wd.png
+    /// @par macOS
+    /// @image html nine_segment_display_m.png
+    /// <br>
+    /// @image html nine_segment_display_md.png
+    /// @par Gnome
+    /// @image html nine_segment_display_g.png
+    /// <br>
+    /// @image html nine_segment_display_gd.png
 class nine_segment_display : public seven_segment_display {
     public:
       nine_segment_display() = default;

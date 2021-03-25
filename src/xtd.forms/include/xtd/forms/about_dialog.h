@@ -33,6 +33,21 @@ namespace xtd {
     /// @image html about_dialog_g.png
     /// <br>
     /// @image html about_dialog_gd.png
+    /// @par Example
+    /// The following code example demonstrate the use of about_dialog dialog with dialog_styledialog_style tooo system.
+    /// @include about_dialog_system.cpp
+    /// @par Windows
+    /// @image html about_dialog_system_w.png
+    /// <br>
+    /// @image html about_dialog_system_wd.png
+    /// @par macOS
+    /// @image html about_dialog_system_m.png
+    /// <br>
+    /// @image html about_dialog_system_md.png
+    /// @par Gnome
+    /// @image html about_dialog_system_g.png
+    /// <br>
+    /// @image html about_dialog_system_gd.png
     class forms_export_ about_dialog final : public component {
     public:
       /// @brief Reprresents a creators collection.
