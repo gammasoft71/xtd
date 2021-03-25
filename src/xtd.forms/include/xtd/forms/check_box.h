@@ -47,24 +47,99 @@ namespace xtd {
     public:
       /// @brief Initializes a new instance of the CheckBox class.
       /// @remarks By default, when a new check_box is instantiated, auto_check is set to true, checked is set to false, and appearance is set to normal.
+      /// @par Example
+      /// The following code example demonstrate the use of check_box constructor.
+      /// @include check_box.cpp
+      /// @par Windows
+      /// @image html check_box_w.png
+      /// <br>
+      /// @image html check_box_wd.png
+      /// @par macOS
+      /// @image html check_box_m.png
+      /// <br>
+      /// @image html check_box_md.png
+      /// @par Gnome
+      /// @image html check_box_g.png
+      /// <br>
+      /// @image html check_box_gd.png
       check_box();
 
       /// @brief Gets the value that determines the appearance of a check_box control.
       /// @return One of the appearance values. The default value is normal.
       /// @remarks If appearance value is set to normal, the check_box has a typical appearance. If the value is set to button, the check_box appears like a toggle button, which can be toggled to an up or down state.
+      /// @par Example
+      /// The following code example demonstrate the use of check_box appearance.
+      /// @include check_box.cpp
+      /// @par Windows
+      /// @image html check_box_w.png
+      /// <br>
+      /// @image html check_box_wd.png
+      /// @par macOS
+      /// @image html check_box_m.png
+      /// <br>
+      /// @image html check_box_md.png
+      /// @par Gnome
+      /// @image html check_box_g.png
+      /// <br>
+      /// @image html check_box_gd.png
       virtual forms::appearance appearance() const {return appearance_;}
       /// @brief Gets the value that determines the appearance of a check_box control.
       /// @param appearance One of the appearance values. The default value is normal.
       /// @remarks If appearance value is set to normal, the check_box has a typical appearance. If the value is set to button, the check_box appears like a toggle button, which can be toggled to an up or down state.
+      /// @par Example
+      /// The following code example demonstrate the use of check_box a ppearance.
+      /// @include check_box.cpp
+      /// @par Windows
+      /// @image html check_box_w.png
+      /// <br>
+      /// @image html check_box_wd.png
+      /// @par macOS
+      /// @image html check_box_m.png
+      /// <br>
+      /// @image html check_box_md.png
+      /// @par Gnome
+      /// @image html check_box_g.png
+      /// <br>
+      /// @image html check_box_gd.png
       virtual check_box& appearance(forms::appearance appearance);
 
       /// @brief Gets a value indicating whether the checked or check_state values and the check_box's appearance are automatically changed when the check_box is clicked.
       /// @return true if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
       /// @remarks If auto_check is set to false, you will need to add code to update the checked or check_state values in the click event handler.
+      /// @par Example
+      /// The following code example demonstrate the use of check_box auto_check.
+      /// @include check_box.cpp
+      /// @par Windows
+      /// @image html check_box_w.png
+      /// <br>
+      /// @image html check_box_wd.png
+      /// @par macOS
+      /// @image html check_box_m.png
+      /// <br>
+      /// @image html check_box_md.png
+      /// @par Gnome
+      /// @image html check_box_g.png
+      /// <br>
+      /// @image html check_box_gd.png
       virtual bool auto_check() const {return auto_check_;}
       /// @brief Sets a value indicating whether the checked or check_state values and the check_box's appearance are automatically changed when the check_box is clicked.
       /// @param auto_check true if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
       /// @remarks If auto_check is set to false, you will need to add code to update the checked or check_state values in the click event handler.
+      /// @par Example
+      /// The following code example demonstrate the use of check_box auto_check.
+      /// @include check_box.cpp
+      /// @par Windows
+      /// @image html check_box_w.png
+      /// <br>
+      /// @image html check_box_wd.png
+      /// @par macOS
+      /// @image html check_box_m.png
+      /// <br>
+      /// @image html check_box_md.png
+      /// @par Gnome
+      /// @image html check_box_g.png
+      /// <br>
+      /// @image html check_box_gd.png
       virtual check_box& auto_check(bool auto_check);
       
       /// @brief Gets the horizontal and vertical alignment of the check mark on a check_box control.
@@ -77,10 +152,40 @@ namespace xtd {
       /// @brief Gets a value indicating whether the check_box is in the checked state.
       /// @return true if the check_box is in the checked state; otherwise, false. The default value is false. If the three_state property is set to true, the checked property will return true for either a checked or indeterminate check_state.
       /// @remarks When the value is true, the check_box portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is true and raised like a standard button when false.
+      /// @par Example
+      /// The following code example demonstrate the use of check_box checked.
+      /// @include check_box.cpp
+      /// @par Windows
+      /// @image html check_box_w.png
+      /// <br>
+      /// @image html check_box_wd.png
+      /// @par macOS
+      /// @image html check_box_m.png
+      /// <br>
+      /// @image html check_box_md.png
+      /// @par Gnome
+      /// @image html check_box_g.png
+      /// <br>
+      /// @image html check_box_gd.png
       virtual bool checked() const {return checked_;}
       /// @brief Sets a value indicating whether the check_box is in the checked state.
       /// @param checked true if the check_box is in the checked state; otherwise, false. The default value is false.
       /// @remarks When the value is true, the check_box portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is true and raised like a standard button when false.
+      /// @par Example
+      /// The following code example demonstrate the use of check_box checked.
+      /// @include check_box.cpp
+      /// @par Windows
+      /// @image html check_box_w.png
+      /// <br>
+      /// @image html check_box_wd.png
+      /// @par macOS
+      /// @image html check_box_m.png
+      /// <br>
+      /// @image html check_box_md.png
+      /// @par Gnome
+      /// @image html check_box_g.png
+      /// <br>
+      /// @image html check_box_gd.png
       virtual check_box& checked(bool checked);
       
       /// @brief Gets the state of the check_box.
@@ -92,6 +197,21 @@ namespace xtd {
       /// | checked         | The check_box displays a check mark.                        | The control appears sunken. |
       /// | unchecked     | The CheckBox is empty.                                               | The control appears raised.   |
       /// | indeterminate | The CheckBox displays a check mark and is shaded. | The control appears flat.        |
+      /// @par Example
+      /// The following code example demonstrate the use of check_box check_state.
+      /// @include check_box.cpp
+      /// @par Windows
+      /// @image html check_box_w.png
+      /// <br>
+      /// @image html check_box_wd.png
+      /// @par macOS
+      /// @image html check_box_m.png
+      /// <br>
+      /// @image html check_box_md.png
+      /// @par Gnome
+      /// @image html check_box_g.png
+      /// <br>
+      /// @image html check_box_gd.png
       virtual forms::check_state check_state() const {return check_state_;}
       /// @brief Sets the state of the check_box.
       /// @param chexk_state One of the check_state enumeration values. The default value is unchecked.
@@ -101,6 +221,21 @@ namespace xtd {
       /// | checked         | The check_box displays a check mark.                        | The control appears sunken. |
       /// | unchecked     | The CheckBox is empty.                                               | The control appears raised.   |
       /// | indeterminate | The CheckBox displays a check mark and is shaded. | The control appears flat.        |
+      /// @par Example
+      /// The following code example demonstrate the use of check_box check_state.
+      /// @include check_box.cpp
+      /// @par Windows
+      /// @image html check_box_w.png
+      /// <br>
+      /// @image html check_box_wd.png
+      /// @par macOS
+      /// @image html check_box_m.png
+      /// <br>
+      /// @image html check_box_md.png
+      /// @par Gnome
+      /// @image html check_box_g.png
+      /// <br>
+      /// @image html check_box_gd.png
       virtual check_box& check_state(forms::check_state check_state);
       
       /// @brief Gets the default size of the control.
@@ -110,10 +245,40 @@ namespace xtd {
       /// @brief Gets a value indicating whether the check_box will allow three check states rather than two.
       /// @return true if the check_box is able to display three check states; otherwise, false. The default value is false.
       /// @remarks If the three_state property is set to false, the check_state property value can only be set to the indeterminate value of xtd.forms.check_state in code and not by user interaction.
+      /// @par Example
+      /// The following code example demonstrate the use of check_box three_state.
+      /// @include check_box.cpp
+      /// @par Windows
+      /// @image html check_box_w.png
+      /// <br>
+      /// @image html check_box_wd.png
+      /// @par macOS
+      /// @image html check_box_m.png
+      /// <br>
+      /// @image html check_box_md.png
+      /// @par Gnome
+      /// @image html check_box_g.png
+      /// <br>
+      /// @image html check_box_gd.png
       virtual bool three_state() const {return three_state_;}
       /// @brief Gets a value indicating whether the check_box will allow three check states rather than two.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false. The default value is false.
       /// @remarks If the three_state property is set to false, the check_state property value can only be set to the indeterminate value of xtd.forms.check_state in code and not by user interaction.
+      /// @par Example
+      /// The following code example demonstrate the use of check_box three_state.
+      /// @include check_box.cpp
+      /// @par Windows
+      /// @image html check_box_w.png
+      /// <br>
+      /// @image html check_box_wd.png
+      /// @par macOS
+      /// @image html check_box_m.png
+      /// <br>
+      /// @image html check_box_md.png
+      /// @par Gnome
+      /// @image html check_box_g.png
+      /// <br>
+      /// @image html check_box_gd.png
       virtual check_box& three_state(bool three_state);
       
       /// @brief Occurs when the value of the appearance property changes.
