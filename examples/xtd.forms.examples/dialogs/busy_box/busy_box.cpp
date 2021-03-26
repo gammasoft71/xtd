@@ -15,7 +15,7 @@ public:
     button1.click += [] {
       busy_box::show("Please wait while do something...", "Application busy");
       for (auto count = 0; count < 500; ++count) {
-        application::yield();
+        application::do_events();
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
       }
       busy_box::hide();

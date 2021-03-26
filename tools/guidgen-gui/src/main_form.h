@@ -53,7 +53,7 @@ namespace guidgen_gui {
             generate_button_.enabled(false);
             result_text_box_.enabled(false);
             application::use_wait_cursor(true);
-            application::yield();
+            application::do_events();
           });
           
           for (int count = 0; count < (count_numeric_up_down_.text() == "" ? count_numeric_up_down_.value() : parse<int>(count_numeric_up_down_.text())); count++) {
@@ -69,7 +69,7 @@ namespace guidgen_gui {
             generate_button_.enabled(true);
             result_text_box_.enabled(true);
             application::use_wait_cursor(false);
-            application::yield();
+            application::do_events();
           });
         });
         generate.detach();

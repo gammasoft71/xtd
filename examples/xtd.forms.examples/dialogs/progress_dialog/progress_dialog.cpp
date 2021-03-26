@@ -40,7 +40,7 @@ public:
       dialog.show_elapsed_time(true);
       dialog.show_dialog(*this);
       while (!dialog.cancelled()) {
-        application::yield();
+        application::do_events();
         std::this_thread::sleep_for(100ms);
       }
     };

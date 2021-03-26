@@ -22,7 +22,7 @@ public:
       dialog.transparency(0.75);
       dialog.show();
       for (auto count = 0; count < 500; ++count) {
-        application::yield();
+        application::do_events();
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
       }
     };
