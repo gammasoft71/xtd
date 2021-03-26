@@ -741,7 +741,7 @@ namespace xtd {
       /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke(delegate).
       void end_invoke(async_result_invoke async);
 
-      /// Sets input focus to the control.
+      /// @brief Sets input focus to the control.
       /// @return true if the input focus request was successful; otherwise, false.
       /// @remarks The focus method returns true if the control successfully received input focus. The control can have the input focus while not displaying any visual cues of having the focus. This behavior is primarily observed by the nonselectable controls listed below, or any controls derived from them.
       bool focus();

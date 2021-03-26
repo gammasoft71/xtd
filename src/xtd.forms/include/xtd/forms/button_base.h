@@ -69,11 +69,27 @@ namespace xtd {
       /// @param value One of the content_alignment values. The default is middle_center.
       virtual button_base& image_align(content_alignment value);
       
+      /// @brief Gets the image list index value of the image displayed on the button control.
+      /// @return A zero-based index, which represents the image position in an image_list. The default is -1.
+      /// @remarks When the image_index or image_list properties are set, the Image property is set to its default value, xtd::drawing::image::empty.
+      /// @remarks image_key and image_index are mutually exclusive, meaning if one is set, the other is set to an invalid value and ignored. If you set the image_key property, the image_index property is automatically set to -1. Alternatively, if you set the image_index property, the image_key is automatically set to an empty string ("").
+      /// @remarks If the image_list property value is changed to xtd::forms::image_list::empty, the image_index property returns its default value, -1. However, the assigned image_index value is retained internally and used when another image_list object is assigned to the image_list property. If the new image_list assigned to the image_list property has an imageList::_image_collection::size property value that is less than or equal to the value assigned to the image_index property minus one (to account for the collection being a zero-based index), the image_index property value is adjusted to one less than the size property value. For example, consider a button control whose image_list has three images and whose image_index property is set to 2. If a new image_list that has only two images is assigned to the button, the image_index value changes to 1.
       virtual int32_t image_index() const {return image_index_;}
+      /// @brief Sets the image list index value of the image displayed on the button control.
+      /// @return A zero-based index, which represents the image position in an image_list. The default is -1.
+      /// @remarks When the image_index or image_list properties are set, the Image property is set to its default value, xtd::drawing::image::empty.
+      /// @remarks image_key and image_index are mutually exclusive, meaning if one is set, the other is set to an invalid value and ignored. If you set the image_key property, the image_index property is automatically set to -1. Alternatively, if you set the image_index property, the image_key is automatically set to an empty string ("").
+      /// @remarks If the image_list property value is changed to xtd::forms::image_list::empty, the image_index property returns its default value, -1. However, the assigned image_index value is retained internally and used when another image_list object is assigned to the image_list property. If the new image_list assigned to the image_list property has an imageList::_image_collection::size property value that is less than or equal to the value assigned to the image_index property minus one (to account for the collection being a zero-based index), the image_index property value is adjusted to one less than the size property value. For example, consider a button control whose image_list has three images and whose image_index property is set to 2. If a new image_list that has only two images is assigned to the button, the image_index value changes to 1.
       virtual button_base& image_index(int32_t value);
 
+      /// @brief Gets the image_list that contains the image displayed on a button control.
+      /// @return An xtd::drawing::image_list. The default value is xtd::drawing::image_list::empty.
       virtual const forms::image_list& image_list() const {return image_list_;}
+      /// @brief Gets the image_list that contains the image displayed on a button control.
+      /// @return An xtd::drawing::image_list. The default value is xtd::drawing::image_list::empty.
       virtual forms::image_list& image_list() {return image_list_;}
+      /// @brief Sets the image_list that contains the image displayed on a button control.
+      /// @return An xtd::drawing::image_list. The default value is xtd::drawing::image_list::empty.
       virtual button_base& image_list(const forms::image_list& value);
 
       /// @brief Gets the alignment of the text on the button control.

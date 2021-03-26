@@ -23,6 +23,18 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of busy_dialog dialog.
     /// @include busy_dialog.cpp
+    /// @par Windows
+    /// @image html busy_dialog_w.png
+    /// <br>
+    /// @image html busy_dialog_w.png
+    /// @par macOS
+    /// @image html busy_dialog_m.png
+    /// <br>
+    /// @image html busy_dialog_md.png
+    /// @par Gnome
+    /// @image html busy_dialog_g.png
+    /// <br>
+    /// @image html busy_dialog_gd.png
     class forms_export_ busy_dialog  final : public component {
     public:
       /// @brief Initializes a new instance of the busy_dialog class.

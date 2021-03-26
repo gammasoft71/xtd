@@ -13,10 +13,10 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a Windows check_box.
     /// @par Appearance
-    /// | Mode  | Windows                              | Gtk                                  | macOS                                |
+    /// | Mode  | Windows                              | macOS                                | Gnome                                |
     /// |-------|--------------------------------------|--------------------------------------|--------------------------------------|
-    /// | Light | @image html control_check_box_w.png  | @image html control_check_box_g.png  | @image html control_check_box_m.png  |
-    /// | Dark  | @image html control_check_box_wd.png | @image html control_check_box_gd.png | @image html control_check_box_md.png |
+    /// | Light | @image html control_check_box_w.png  | @image html control_check_box_m.png  | @image html control_check_box_g.png  |
+    /// | Dark  | @image html control_check_box_wd.png | @image html control_check_box_md.png | @image html control_check_box_gd.png |
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
