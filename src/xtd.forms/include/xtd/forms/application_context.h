@@ -20,7 +20,6 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of application and application_context classes.
     /// @include application_context.cpp
-    /// @include application.cpp
     /// @par Windows
     /// @image html application_context_w.png
     /// <br>

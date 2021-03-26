@@ -14,6 +14,7 @@
 #include "theme.h"
 #include <xtd/delegate.h>
 #include <xtd/event_args.h>
+#include <xtd/static.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -71,7 +72,7 @@ namespace xtd {
     /// @image html application_and_exception_g.png
     /// <br>
     /// @image html application_and_exception_gd.png
-    class forms_export_ application {
+    class forms_export_ application final static_ {
     public:
       /// @brief Gets a value indicating whether the caller can quit this application.
       /// @return true if the caller can quit this application; otherwise, false.
@@ -158,11 +159,41 @@ namespace xtd {
       /// @brief Gets whether the wait cursor is used for all open forms of the application.
       /// @return true is the wait cursor is used for all open forms; otherwise, false.
       /// @remarks When this property is set to true, the use_wait_cursor property of all open forms in the application will be set to true. This call will not return until this property has been set on all forms. Use this property when you have a long-running operation, and want to indicate in all application forms that the operation is still processing.
+      /// @par Example
+      /// The following code example demonstrate the use of application use wait cursor property.
+      /// @include application_use_wait_cursor.cpp
+      /// @par Windows
+      /// @image html application_use_wait_cursor_w.png
+      /// <br>
+      /// @image html application_use_wait_cursor_wd.png
+      /// @par macOS
+      /// @image html application_use_wait_cursor_m.png
+      /// <br>
+      /// @image html application_use_wait_cursor_md.png
+      /// @par Gnome
+      /// @image html application_use_wait_cursor_g.png
+      /// <br>
+      /// @image html application_use_wait_cursor_gd.png
       static bool use_wait_cursor();
       
       /// @brief Sets whether the wait cursor is used for all open forms of the application.
       /// @param use_wait_cursor true is the wait cursor is used for all open forms; otherwise, false.
       /// @remarks When this property is set to true, the use_wait_cursor property of all open forms in the application will be set to true. This call will not return until this property has been set on all forms. Use this property when you have a long-running operation, and want to indicate in all application forms that the operation is still processing.
+      /// @par Example
+      /// The following code example demonstrate the use of application use wait cursor property.
+      /// @include application_use_wait_cursor.cpp
+      /// @par Windows
+      /// @image html application_use_wait_cursor_w.png
+      /// <br>
+      /// @image html application_use_wait_cursor_wd.png
+      /// @par macOS
+      /// @image html application_use_wait_cursor_m.png
+      /// <br>
+      /// @image html application_use_wait_cursor_md.png
+      /// @par Gnome
+      /// @image html application_use_wait_cursor_g.png
+      /// <br>
+      /// @image html application_use_wait_cursor_gd.png
       static void use_wait_cursor(bool use_wait_cursor);
       
       /// @brief Adds a message filter to monitor Windows messages as they are routed to their destinations.
@@ -237,22 +268,70 @@ namespace xtd {
       /// @brief Shuts down the application and starts a new instance immediately.
       /// @remarks Applications are restarted in the context in which they were initially run.
       /// @remarks If your application was originally supplied command-line options when it first executed, restart will launch the application again with the same options.
+      /// @par Example
+      /// The following code example demonstrate the use of application restart method.
+      /// @include application_restart.cpp
+      /// @par Windows
+      /// @image html application_restart_w.png
+      /// <br>
+      /// @image html application_restart_wd.png
+      /// @par macOS
+      /// @image html application_restart_m.png
+      /// <br>
+      /// @image html application_restart_md.png
+      /// @par Gnome
+      /// @image html application_restart_g.png
+      /// <br>
+      /// @image html application_restart_gd.png
       static void restart();
       
       /// @brief Begins running a standard application message loop on the current thread, without a form.
       /// @remarks In a Win32-based or Windows Forms application, a message loop is a routine in code that processes user events, such as mouse clicks and keyboard strokes. Every running Windows-based application requires an active message loop, called the main message loop. When the main message loop is closed, the application exits. In Windows Forms, this loop is closed when the exit method is called, or when the exit_thread method is called on the thread that is running the main message loop.
       /// @remarks Most Windows Forms developers will not need to use this version of the method. You should use the run(const form&) overload to start an application with a main form, so that the application terminates when the main form is closed. For all other situations, use the run(application_context&) overload, which supports supplying an application_context object for better control over the lifetime of the application.
+      /// @par Example
+      /// The following code example demonstrate the use of application run method.
+      /// @include application_run.cpp
       static void run();
 
       /// @brief Begins running a standard application message loop on the current thread, with an application_context.
       /// @param context An ApplicationContext in which the application is run.
       /// @remarks The message loop runs until Exit or exit_thread is called or the thread_exit event is raised on the context object.
+      /// @par Example
+      /// The following code example demonstrate the use of application run method.
+      /// @include application_context.cpp
+      /// @par Windows
+      /// @image html application_context_w.png
+      /// <br>
+      /// @image html application_context_wd.png
+      /// @par macOS
+      /// @image html application_context_m.png
+      /// <br>
+      /// @image html application_context_md.png
+      /// @par Gnome
+      /// @image html application_context_g.png
+      /// <br>
+      /// @image html application_context_gd.png
       static void run(application_context& context);
       
       /// @brief Begins running a standard application message loop on the current thread, and makes the specified form visible.
       /// @param main_form A form that represents the form to make visible.
       /// @remarks Typically, the main function of an application calls this method and passes to it the main window of the application.
       /// @remarks This method adds an event handler to the main_form parameter for the closed event. The event handler calls exit_thread to clean up the application.
+      /// @par Example
+      /// The following code example demonstrate the use of application run method.
+      /// @include application.cpp
+      /// @par Windows
+      /// @image html application_w.png
+      /// <br>
+      /// @image html application_wd.png
+      /// @par macOS
+      /// @image html application_m.png
+      /// <br>
+      /// @image html application_md.png
+      /// @par Gnome
+      /// @image html application_g.png
+      /// <br>
+      /// @image html application_gd.png
       static void run(const form& main_form);
       
       static void theme(const std::string& theme_name);
@@ -290,6 +369,21 @@ namespace xtd {
 
       /// @brief Occurs when the application finishes processing and is about to enter the idle state.
       /// @remarks If you have tasks that you must perform before the thread becomes idle, attach them to this event.
+      /// @par Example
+      /// The following code example demonstrate the use of application idle event.
+      /// @include application_idle.cpp
+      /// @par Windows
+      /// @image html application_idle_w.png
+      /// <br>
+      /// @image html application_idle_wd.png
+      /// @par macOS
+      /// @image html application_idle_m.png
+      /// <br>
+      /// @image html application_idle_md.png
+      /// @par Gnome
+      /// @image html application_idle_g.png
+      /// <br>
+      /// @image html application_idle_gd.png
       static event<application, delegate<void(const event_args&)>> idle;
 
       /// @brief Occurs when the application is about to leave a modal state.
@@ -323,7 +417,6 @@ namespace xtd {
       static void wm_enter_idle(message& message);
       static void wm_quit(message& message);
 
-      application() = default;
       static bool use_visual_styles_;
       static bool use_wait_cursor_;
       static bool message_loop_;

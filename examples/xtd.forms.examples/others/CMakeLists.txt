@@ -5,6 +5,7 @@ find_package(xtd REQUIRED)
 
 add_projects(
   about_dialog_system
+  application_run
   auto_scroll
   bitmap_button
   button2
