@@ -117,37 +117,18 @@ namespace xtd {
       /// @param value One of the AutoSizeMode values. The default value is growonly.
       virtual button& auto_size_mode(forms::auto_size_mode value);
       
-      /// @brief Gets the value returned to the parent form when the button is clicked.
-      /// @return One of the DialogResult values.
-      /// @remarks When a form is shown as a dialog box using the show_dialog method and one of its buttons is clicked, the button's dialog_result value is assigned to the form's dialog_result property.
       forms::dialog_result dialog_result() const override {return dialog_result_;}
-      /// @brief Sets the value returned to the parent form when the button is clicked.
-      /// @param dialog_result One of the DialogResult values.
-      /// @remarks When a form is shown as a dialog box using the show_dialog method and one of its buttons is clicked, the button's dialog_result value is assigned to the form's dialog_result property.
       control& dialog_result(forms::dialog_result dialog_result) override;
 
-      /// @brief Notifies a control that it is the default button so that its appearance and behavior is adjusted accordingly.
-      /// @param value true if the control should behave as a default button; otherwise false.
-      /// @remarks This method is called by a parent form to make a control the default button. Default buttons are set to have an extra thick border.
       void notify_default(bool value) override;
 
-      /// @brief Generates a click event for the control.
-      /// @remarks This method is called for the button that has focus, or for the default button (if no other button has focus) when the user presses the ENTER key. This method is also called when the user presses the ESC key if the button is set as the cancel button.
       void perform_click() override;
 
-      /// @brief Measure this control.
-      /// @return The drawing::size size of this control.
-      /// @remarks This method is used when auto_size is true.
       drawing::size measure_control() const override;
       
     protected:
-      /// @brief Gets a create_params on the base class when creating a window.
-      /// @return A create_params object on the base class when creating a window.
-      /// @remarks Inheriting classes can override this property to add extra functionality, but must first call the create_params constructor on the base class to verify that the control continues to work correctly.
       forms::create_params create_params() const override;
       
-      /// @brief Raises the Click event.
-      /// @param e An event_args that contains the event data.
       void on_click(const event_args& e) override;
 
       void on_enabled_changed(const event_args& e) override {

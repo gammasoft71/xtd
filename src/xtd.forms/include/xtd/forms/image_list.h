@@ -36,6 +36,8 @@ namespace xtd {
       
       std::any tag() const {return data_->tag_;}
       void tag(std::any& tag) {data_->tag_ = tag;}
+      
+      static image_list empty;
 
     private:
       struct data {

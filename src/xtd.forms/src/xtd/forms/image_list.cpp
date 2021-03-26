@@ -6,6 +6,8 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+image_list image_list::empty;
+
 image_list::image_list() {
   data_->handle_ = native::image_list::create(data_->image_size_);
   data_->images_.item_added += [&](size_t pos, drawing::image& item) {
