@@ -1452,9 +1452,10 @@ namespace xtd {
 
       /// @brief Measure this control.
       /// @return The drawing::size size of this control.
-      /// @remarks This metod is not relevant for this class.
       virtual drawing::size measure_control() const;
       
+      /// @brief Measure this control text.
+      /// @return The drawing::size size of this control text.
       drawing::size measure_text() const;
       
       /// @brief Raises the auto_size_changed event.
@@ -1621,6 +1622,8 @@ namespace xtd {
       /// @param e An xtd::event_args that contains the event data.
       virtual void on_visible_changed(const event_args& e);
 
+      /// @brief Forces the re-creation of the handle for the control.
+      /// @remarks The recreate_handle method is called whenever parameters are needed for a new control, but using a call from update_styles to create_params is insufficient. This method also calls destroy_handle and create_handle and sets recreating_handle to true.
       virtual void recreate_handle();
  
       /// @brief Performs the work of setting the specified bounds of this control.
