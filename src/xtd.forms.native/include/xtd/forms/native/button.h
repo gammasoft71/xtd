@@ -9,8 +9,6 @@ namespace xtd {
     namespace native {
       class forms_native_export_ button final static_ {
       public:
-        static void image(intptr_t control, const drawing::image& image);
-        static void image_align(intptr_t control, uint32_t align);
         static void set_default_button(intptr_t control);
       };
     }

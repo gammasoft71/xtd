@@ -60,7 +60,6 @@ void button::on_click(const event_args& e) {
 }
 
 void button::on_image_changed(const xtd::event_args& e) {
-  if (flat_style_ == xtd::forms::flat_style::system) native::button::image(handle_, image_);
   button_base::on_image_changed(e);
 }
 
@@ -68,8 +67,6 @@ void button::on_handle_created(const event_args& e) {
   button_base::on_handle_created(e);
   if (flat_style_ == xtd::forms::flat_style::system) {
     if (image_ != drawing::image::empty || (image_list_.images().size() && image_index_ > -1)) {
-      native::button::image(handle(), image_ != drawing::image::empty ? image_ : image_list_.images()[image_index_]);
-      native::button::image_align(handle(), static_cast<uint32_t>(image_align_));
       if (image_align_ != content_alignment::middle_center) native::control::text(handle(), text_);
       native::control::location(handle(), location_);
       native::control::size(handle(), size_);

@@ -23,6 +23,7 @@ button_base& button_base::image(const drawing::image& value) {
     image_ = value;
     image_list_ = forms::image_list();
     image_index_ = -1;
+    if (flat_style_ != xtd::forms::flat_style::system) invalidate();
     on_image_changed(xtd::event_args::empty);
   }
   return *this;
@@ -31,8 +32,7 @@ button_base& button_base::image(const drawing::image& value) {
 button_base& button_base::image_align(content_alignment value) {
   if (image_align_ != value) {
     image_align_ = value;
-    if (flat_style_ == xtd::forms::flat_style::system) recreate_handle();
-    else invalidate();
+    if (flat_style_ != xtd::forms::flat_style::system) invalidate();
   }
   return *this;
 }
@@ -41,7 +41,7 @@ button_base& button_base::image_index(int32_t value) {
  if (image_index_ != value) {
    if (value < -1 || static_cast<size_t>(value) >= image_list_.images().size()) throw argument_out_of_range_exception(caller_info_);
    image_index_ = value;
-   recreate_handle();
+   if (flat_style_ != xtd::forms::flat_style::system) invalidate();
  }
   return *this;
 }

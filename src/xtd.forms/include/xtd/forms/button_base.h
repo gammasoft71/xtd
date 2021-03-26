@@ -36,23 +36,30 @@ namespace xtd {
         return *this;
       }
       
-      /// @brief Gets a value that indicates whether the control resizes based on its contents.
-      /// @return true if enabled; otherwise, false.
       bool auto_size() const override {return control::auto_size();}
-      
-      /// @brief Sets a value that indicates whether the control resizes based on its contents.
-      /// @param auto_size true if enabled; otherwise, false.
       control& auto_size(bool auto_size) override {
         control::auto_size(auto_size);
         if (get_state(state::auto_size))
           auto_ellipsis_ = false;
         return *this;
       }
-      
+
+      /// @brief Gets the flat style appearance of the button control.
+      /// @return One of the xtd::forms::flat_style values. The default value is xtd::forms::flat_style::standard.
       virtual xtd::forms::flat_style flat_style() const {return flat_style_;}
+      /// @brief Sets the flat style appearance of the button control.
+      /// @param flat_style One of the xtd::forms::flat_style values. The default value is xtd::forms::flat_style::standard.
       virtual xtd::forms::button_base& flat_style(xtd::forms::flat_style flat_style);
 
+      /// @brief Gets the image that is displayed on a button control.
+      /// @return The Image displayed on the button control. The default value is xtd::drawing::image::empty.
+      /// @remarks When the image property is set, the image_list property will be set to xtd::forms::image_list::empty, and the image_index property will be set to its default, -1.
+      /// @note If the flat_style property is set to xtd::forms::flat_style::system, any images assigned to the image property are not displayed.
       virtual const drawing::image& image() const {return image_;}
+      /// @brief Sets the image that is displayed on a button control.
+      /// @param value The Image displayed on the button control. The default value is xtd::drawing::image::empty.
+      /// @remarks When the image property is set, the image_list property will be set to xtd::forms::image_list::empty, and the image_index property will be set to its default, -1.
+      /// @note If the flat_style property is set to xtd::forms::flat_style::system, any images assigned to the image property are not displayed.
       virtual button_base& image(const drawing::image& value);
       
       /// @brief Gets the alignment of the image on the button control.
@@ -76,6 +83,8 @@ namespace xtd {
       /// @param value One of the content_alignment values. The default is middle_center.
       virtual button_base& text_align(content_alignment value);
       
+      /// @brief Occurs when the value of the image property changes.
+      /// @remarks This event is raised if the image property is changed by either a programmatic modification or user interaction.
       event<button_base, event_handler<control&>> image_changed;
 
     protected:
@@ -115,6 +124,8 @@ namespace xtd {
         control::on_fore_color_changed(e);
       }
 
+      /// @brief Raises the image_changed event.
+      /// @param e An xtd::event_args that contains the event data.
       virtual void on_image_changed(const xtd::event_args& e) {
         if (flat_style_ != xtd::forms::flat_style::system) invalidate();
         if (can_raise_events()) image_changed(*this, e);
@@ -167,8 +178,8 @@ namespace xtd {
 
       bool auto_ellipsis_ = false;
       xtd::forms::flat_style flat_style_ = xtd::forms::flat_style::standard;
-      drawing::image image_ = drawing::image::empty;
-      forms::image_list image_list_;
+      xtd::drawing::image image_ = xtd::drawing::image::empty;
+      xtd::forms::image_list image_list_ = xtd::forms::image_list::empty;
       int32_t image_index_ = -1;
       content_alignment image_align_ = content_alignment::middle_center;
       content_alignment text_align_ = content_alignment::middle_center;

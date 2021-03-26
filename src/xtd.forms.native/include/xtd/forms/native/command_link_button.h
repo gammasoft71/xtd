@@ -7,9 +7,10 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      // class forms_native_export_ command_link_button final static_ {
-      class command_link_button final static_ {
+      class forms_native_export_ command_link_button final static_ {
       public:
+        static void image(intptr_t control, const drawing::image& image);
+        static void image_align(intptr_t control, uint32_t align);
       };
     }
   }
