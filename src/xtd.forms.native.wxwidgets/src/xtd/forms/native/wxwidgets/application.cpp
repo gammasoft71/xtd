@@ -61,7 +61,8 @@ bool application::dark_mode_enabled() {
 
 void application::do_events() {
   initialize(); // Must be first
-  wxTheApp->ProcessPendingEvents();
+  //wxTheApp->ProcessPendingEvents();
+  wxYield();
 }
 
 void application::do_idle() {
@@ -155,9 +156,4 @@ void application::run() {
 void application::use_wait_cursor(bool use_wait_cursor) {
   if (use_wait_cursor) wxBeginBusyCursor();
   else wxEndBusyCursor();
-}
-
-void application::yield() {
-  initialize(); // Must be first
-  wxYield();
 }

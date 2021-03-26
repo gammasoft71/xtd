@@ -17,7 +17,7 @@ public:
     button1.click += [] {
       application::use_wait_cursor(true);
       for (auto count = 0; count < 500; ++count) {
-        application::yield();
+        application::do_events();
         sleep_for(milliseconds(10)); // Simulate work...
       }
       application::use_wait_cursor(false);

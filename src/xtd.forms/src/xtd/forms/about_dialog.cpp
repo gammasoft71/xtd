@@ -129,7 +129,7 @@ namespace {
       
       about_dialog_standard->visible(true);
       while (about_dialog_standard->visible())
-        application::yield();
+        application::do_events();
       about_dialog_standard.reset();
     }
     

@@ -39,7 +39,7 @@ void message_dialog::show_sheet(const iwin32_window& owner) {
 xtd::forms::dialog_result message_dialog::show_sheet_dialog(const iwin32_window& owner) {
   show_sheet(owner);
   while(dialog_result_ == xtd::forms::dialog_result::none)
-    application::yield();
+    application::do_events();
   return dialog_result_;
 }
 

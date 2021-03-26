@@ -260,8 +260,6 @@ namespace xtd {
       static const xtd::forms::theme& theme();
       static const std::vector<std::string>& theme_names();
 
-      static void yield();
-
       /*
       /// @brief Instructs the application how to respond to unhandled exceptions.
       /// @param mode An unhandled_exception_mode value describing how the application should behave if an exception is thrown without being caught.

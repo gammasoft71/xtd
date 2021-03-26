@@ -26,7 +26,6 @@ namespace xtd {
         static void register_thread_exception(const delegate<bool()>& thread_exception);
         static void register_wnd_proc(const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc);
         static void run();
-        static void yield();
         static void use_wait_cursor(bool use_wait_cursor);
       };
     }
