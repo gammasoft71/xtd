@@ -344,7 +344,7 @@ PREDEFINED             = "block_scope_=" \
                          "interface_=: public xtd::interface" \
                          "nameof_=std::string(#__VA_ARGS__)" \
                          "startup_=" \
-                         "static_=: public xtd::static" \
+                         "static_=: public xtd::static_class" \
                          "typeof_=xtd::__s__::__typeof_" \
                          "using_=" \
 EXPAND_AS_DEFINED      = 
