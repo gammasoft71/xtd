@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains @nameof_ keyword.
+/// @brief Contains #nameof_ keyword.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 

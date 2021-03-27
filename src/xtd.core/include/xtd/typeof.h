@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains @typeof_ keyword.
+/// @brief Contains #typeof_ keyword.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/strings.h>

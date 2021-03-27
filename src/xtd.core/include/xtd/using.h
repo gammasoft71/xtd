@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains @using_ keyword.
+/// @brief Contains #using_ keyword.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
@@ -28,7 +28,7 @@ namespace xtd {
   ///   cout << strings::join(", ", values) << endl;
   /// }
   /// @endcode
-  /// @remarks same as @block_scope_
+  /// @remarks same as #block_scope_
   #define using_(...) \
     for (bool __xtd_using__ = true; __xtd_using__; __xtd_using__ = false)\
       for (__VA_ARGS__; __xtd_using__; __xtd_using__ = false)

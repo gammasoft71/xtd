@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains @__VA_ARGS_COMMA__ keyword.
+/// @brief Contains #__VA_ARGS_COMMA__ keyword.
 #pragma once
 
 #if !defined(__VA_ARGS_COMMA__)
