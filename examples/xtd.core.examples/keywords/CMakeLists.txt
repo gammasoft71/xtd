@@ -5,6 +5,7 @@ find_package(xtd REQUIRED)
 
 add_projects(
   block_scope
+  caller_info
   interface
   interface2
   startup

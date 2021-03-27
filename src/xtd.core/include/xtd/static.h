@@ -23,6 +23,7 @@ namespace xtd {
   /// @brief This keyword is use to represent a static class. A static class can't be instancied (constructors are deleted).
   /// @par Library
   /// xtd.core
+  /// @ingroup xtd_core keywords
   /// @par Examples
   /// @code
   /// class foo static_ {
@@ -30,13 +31,13 @@ namespace xtd {
   ///   static std::string to_string() {return "foo";}
   /// };
   /// @endcode
-  /// @ingroup keywords
   #define static_ \
     : xtd::static_class
 
   /// @brief This keyword is use to represent a static class. A static class can't be instancied (constructors are deleted).
   /// @par Library
   /// xtd.core
+  /// @ingroup xtd_core keywords
   /// @par Examples
   /// @code
   /// class foo static_class_ {
@@ -44,7 +45,6 @@ namespace xtd {
   ///   static std::string to_string() {return "foo";}
   /// };
   /// @endcode
-  /// @ingroup keywords
   #define static_class_ \
     : xtd::static_class
 }
