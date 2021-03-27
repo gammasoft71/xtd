@@ -16,6 +16,18 @@ namespace xtd {
   ///   cout << strings::join(", ", values) << endl;
   /// }
   /// @endcode
+  /// same as :
+  /// @code
+  /// using_(auto values = {1, 2, 3, 4, 5})
+  ///   cout << strings::join(", ", values) << endl;
+  /// @endcode
+  /// same as :
+  /// @code
+  /// {
+  ///   auto values = {1, 2, 3, 4, 5};
+  ///   cout << strings::join(", ", values) << endl;
+  /// }
+  /// @endcode
   /// @remarks same as @block_scope_
   #define using_(...) \
     for (bool __xtd_using__ = true; __xtd_using__; __xtd_using__ = false)\

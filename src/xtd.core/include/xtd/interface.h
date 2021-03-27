@@ -35,6 +35,7 @@ namespace xtd {
   /// @brief This keyword is use to represent an interface.
   /// @par Library
   /// xtd.core
+  /// @ingroup xtd_core keywords
   /// @par Examples
   /// @code
   /// class istringable interface_ {
@@ -49,7 +50,6 @@ namespace xtd {
   ///   std:::string to_string() const override {return "foo";}
   /// };
   /// @endcode
-  /// @ingroup keywords
   #define interface_ \
     : public xtd::interface
 }

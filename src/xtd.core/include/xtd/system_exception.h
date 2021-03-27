@@ -153,6 +153,9 @@ namespace xtd {
 }
 
 /// @brief Helper on system_exception to call it with caller information
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core keywords
 /// @remarks Is equivalent to system_exception({any argument}, caller_info_)
 /// @code
 /// void my_func() {
@@ -161,5 +164,4 @@ namespace xtd {
 ///   ...
 /// }
 /// @endcode
-/// @ingroup keywords
 #define system_exception_(...) system_exception(add_caller_information_(__VA_ARGS__))

@@ -78,11 +78,13 @@ namespace xtd {
 }
 
 /// @brief Get xtd::tunit::caller_info informations
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core keywords
 /// @return xtd::tunit::caller_info caller informations.
 /// @par Examples
 /// The following example shows how to use the #caller_info_.
 /// @include caller_info.cpp
-/// @ingroup keywords
 #define caller_info_ \
   xtd::caller_info {__FILE__, __LINE__, __func__}
 
