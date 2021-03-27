@@ -23,7 +23,7 @@ namespace xtd {
     /// @remarks To set up for a background operation, add an event handler for the do_work event. Call your time-consuming operation in this event handler. To start the operation, call run_worker_async. To receive notifications of progress updates, handle the progress_changed event. To receive a notification when the operation is completed, handle the run_worker_completed event.
     /// @note You must be careful not to manipulate any user-interface objects in your do_work event handler. Instead, communicate to the user interface through the progress_changed and run_worker_completed events.
     /// @remarks If your background operation requires a parameter, call run_worker_async with your parameter. Inside the do_work event handler, you can extract the parameter from the do_work_event_args.argument property.
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrate the use of background_worker component.
     /// @include background_worker.cpp
     /// @par Windows

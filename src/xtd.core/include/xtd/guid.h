@@ -17,7 +17,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  /// @par Example
+  /// @par Examples
   /// The following code example demonstrate the use of guid class.
   /// @include guid.cpp
   class core_export_ guid final : public object, public icomparable<guid>, public iequatable<guid> {

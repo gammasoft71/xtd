@@ -167,7 +167,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  /// @par Example
+  /// @par Examples
   /// The following example shows how to define a delegate named myMethoddelegate. Instances of this delegate are created for an instance method && a static method of the nested mySampleClass class. The delegate for the instance method requires an instance of mySampleClass. The mySampleClass instance is saved in a variable named mySC.
   /// @include delegate.cpp
   template<typename result_t, typename... arguments_t>

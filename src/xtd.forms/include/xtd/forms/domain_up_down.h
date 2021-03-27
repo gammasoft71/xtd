@@ -12,7 +12,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrate the use of domain up down control.
     /// @include domain_up_down.cpp
     /// @par Windows

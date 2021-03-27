@@ -17,7 +17,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms application
     /// @remarks You can use the application_context class to redefine the circumstances that cause a message loop to exit. By default, the application_context listens to the closed event on the application's main form, then exits the thread's message loop.
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrate the use of application and application_context classes.
     /// @include application_context.cpp
     /// @par Windows

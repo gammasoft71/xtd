@@ -41,7 +41,7 @@ namespace xtd {
   /// * If systems sending and receiving data can have different endianness, always transmit data in a particular order. This means that the order of uint8_ts in the std::vector may have to be reversed either before sending them or after receiving them. A common convention is to transmit data in network uint8_t order (big-endian order). The following example provides an implementation for sending an integer value in network uint8_t order.
   /// @include bit_converterEndianess.cpp
   /// * If systems sending and receiving data can have different endianness and the data to be transmitted consists of signed integers, call the IPAddress.HostToNetworkOrder method to convert the data to network uint8_t order and the IPAddress.NetworkToHostOrder method to convert it to the order required by the recipient.
-  /// @par Example
+  /// @par Examples
   /// The following code example illustrates the use of several bit_converter class methods.
   /// @include bit_converter.cpp
   class core_export_ bit_converter final static_ {
@@ -68,7 +68,7 @@ namespace xtd {
     /// @param value The number to convert.
     /// @return A 64-bit signed integer whose value is equivalent to value.
     /// @remarks The order of bits in the integer returned by the double_to_int64_bits method depends on whether the computer architecture is little-endian or big-endian.
-    /// @par Example
+    /// @par Examples
     /// The following code example converts the bit patterns of several Double values to int64_t values with the double_to_int64_bits method.
     /// @include bit_converterdouble_to_int64_bits.cpp
     static int64_t double_to_int64_bits(double value);

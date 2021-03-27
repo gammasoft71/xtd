@@ -12,7 +12,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms application
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrate the use of application_informations class.
     /// @include application_informations.cpp
     /// @par Windows

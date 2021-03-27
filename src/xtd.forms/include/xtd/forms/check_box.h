@@ -28,7 +28,7 @@ namespace xtd {
     /// @remarks The flat_style property determines the style and appearance of the control. If the flat_style property is set to flat_style::system, the user's operating system determines the appearance of the control.
     /// @note When the flat_style property is set to flat_style::system, the check_align property is ignored and the control is displayed using the content_alignment::middle_left or content_alignment::middle_right alignment. If the check_align property is set to one of the right alignments, the control is displayed using the content_alignment::middle_right alignment; otherwise, it is displayed using the content_alignment::middle_left alignment.
     /// @remarks The following describes an indeterminate state: You have a check_box that determines if the selected text in a rich_text_box is bold. When you select text you can click the check_box to bold the selection. Likewise, when you select some text, the check_box displays whether the selected text is bold. If your selected text contains text that is bold and normal, the check_box will have an indeterminate state.
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrate the use of check_box control.
     /// @include check_box.cpp
     /// @par Windows
@@ -47,7 +47,7 @@ namespace xtd {
     public:
       /// @brief Initializes a new instance of the CheckBox class.
       /// @remarks By default, when a new check_box is instantiated, auto_check is set to true, checked is set to false, and appearance is set to normal.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of check_box constructor.
       /// @include check_box.cpp
       /// @par Windows
@@ -67,7 +67,7 @@ namespace xtd {
       /// @brief Gets the value that determines the appearance of a check_box control.
       /// @return One of the appearance values. The default value is normal.
       /// @remarks If appearance value is set to normal, the check_box has a typical appearance. If the value is set to button, the check_box appears like a toggle button, which can be toggled to an up or down state.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of check_box appearance.
       /// @include check_box.cpp
       /// @par Windows
@@ -86,7 +86,7 @@ namespace xtd {
       /// @brief Gets the value that determines the appearance of a check_box control.
       /// @param appearance One of the appearance values. The default value is normal.
       /// @remarks If appearance value is set to normal, the check_box has a typical appearance. If the value is set to button, the check_box appears like a toggle button, which can be toggled to an up or down state.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of check_box a ppearance.
       /// @include check_box.cpp
       /// @par Windows
@@ -106,7 +106,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether the checked or check_state values and the check_box's appearance are automatically changed when the check_box is clicked.
       /// @return true if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
       /// @remarks If auto_check is set to false, you will need to add code to update the checked or check_state values in the click event handler.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of check_box auto_check.
       /// @include check_box.cpp
       /// @par Windows
@@ -125,7 +125,7 @@ namespace xtd {
       /// @brief Sets a value indicating whether the checked or check_state values and the check_box's appearance are automatically changed when the check_box is clicked.
       /// @param auto_check true if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
       /// @remarks If auto_check is set to false, you will need to add code to update the checked or check_state values in the click event handler.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of check_box auto_check.
       /// @include check_box.cpp
       /// @par Windows
@@ -152,7 +152,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether the check_box is in the checked state.
       /// @return true if the check_box is in the checked state; otherwise, false. The default value is false. If the three_state property is set to true, the checked property will return true for either a checked or indeterminate check_state.
       /// @remarks When the value is true, the check_box portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is true and raised like a standard button when false.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of check_box checked.
       /// @include check_box.cpp
       /// @par Windows
@@ -171,7 +171,7 @@ namespace xtd {
       /// @brief Sets a value indicating whether the check_box is in the checked state.
       /// @param checked true if the check_box is in the checked state; otherwise, false. The default value is false.
       /// @remarks When the value is true, the check_box portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is true and raised like a standard button when false.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of check_box checked.
       /// @include check_box.cpp
       /// @par Windows
@@ -197,7 +197,7 @@ namespace xtd {
       /// | checked         | The check_box displays a check mark.                        | The control appears sunken. |
       /// | unchecked     | The CheckBox is empty.                                               | The control appears raised.   |
       /// | indeterminate | The CheckBox displays a check mark and is shaded. | The control appears flat.        |
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of check_box check_state.
       /// @include check_box.cpp
       /// @par Windows
@@ -221,7 +221,7 @@ namespace xtd {
       /// | checked         | The check_box displays a check mark.                        | The control appears sunken. |
       /// | unchecked     | The CheckBox is empty.                                               | The control appears raised.   |
       /// | indeterminate | The CheckBox displays a check mark and is shaded. | The control appears flat.        |
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of check_box check_state.
       /// @include check_box.cpp
       /// @par Windows
@@ -245,7 +245,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether the check_box will allow three check states rather than two.
       /// @return true if the check_box is able to display three check states; otherwise, false. The default value is false.
       /// @remarks If the three_state property is set to false, the check_state property value can only be set to the indeterminate value of xtd.forms.check_state in code and not by user interaction.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of check_box three_state.
       /// @include check_box.cpp
       /// @par Windows
@@ -264,7 +264,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether the check_box will allow three check states rather than two.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false. The default value is false.
       /// @remarks If the three_state property is set to false, the check_state property value can only be set to the indeterminate value of xtd.forms.check_state in code and not by user interaction.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of check_box three_state.
       /// @include check_box.cpp
       /// @par Windows

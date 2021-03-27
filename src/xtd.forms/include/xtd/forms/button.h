@@ -27,7 +27,7 @@ namespace xtd {
     /// @remarks When you display a form using the show_dialog method, you can use the dialog_result property of a button to specify the return value of show_dialog.
     /// @remarks You can change the button's appearance. For example, to make it appear flat for a Web look, set the flat_style property to flat_style::flat. The flat_style property can also be set to flat_style::popup, which appears flat until the mouse pointer passes over the button; then the button takes on the standard Windows button appearance.
     /// @note If the control that has focus accepts and processes the ENTER key press, the button does not process it. For example, if a multiline text_box or another button has focus, that control processes the ENTER key press instead of the accept button.
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrate the use of button control.
     /// @include button.cpp
     /// @par Windows
@@ -42,7 +42,7 @@ namespace xtd {
     /// @image html button_g.png
     /// <br>
     /// @image html button_gd.png
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrate the use of button control witth bitmap.
     /// @include bitmap_button.cpp
     /// @par Windows

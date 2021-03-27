@@ -42,7 +42,7 @@ namespace xtd {
     /// * do_events() processes messages while your program is in a loop.
     /// * add_message_filter() adds a message filter to the application message pump to monitor Windows messages.
     /// @remarks You cannot create an instance of this class.
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrate the use of application class.
     /// @include application.cpp
     /// @par Windows
@@ -57,7 +57,7 @@ namespace xtd {
     /// @image html application_g.png
     /// <br>
     /// @image html application_gd.png
-    /// @par Example
+    /// @par Examples
     ///  How to manage exception with application class.
     /// @include application_and_exception.cpp
     /// @par Windows
@@ -159,7 +159,7 @@ namespace xtd {
       /// @brief Gets whether the wait cursor is used for all open forms of the application.
       /// @return true is the wait cursor is used for all open forms; otherwise, false.
       /// @remarks When this property is set to true, the use_wait_cursor property of all open forms in the application will be set to true. This call will not return until this property has been set on all forms. Use this property when you have a long-running operation, and want to indicate in all application forms that the operation is still processing.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of application use wait cursor property.
       /// @include application_use_wait_cursor.cpp
       /// @par Windows
@@ -179,7 +179,7 @@ namespace xtd {
       /// @brief Sets whether the wait cursor is used for all open forms of the application.
       /// @param use_wait_cursor true is the wait cursor is used for all open forms; otherwise, false.
       /// @remarks When this property is set to true, the use_wait_cursor property of all open forms in the application will be set to true. This call will not return until this property has been set on all forms. Use this property when you have a long-running operation, and want to indicate in all application forms that the operation is still processing.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of application use wait cursor property.
       /// @include application_use_wait_cursor.cpp
       /// @par Windows
@@ -268,7 +268,7 @@ namespace xtd {
       /// @brief Shuts down the application and starts a new instance immediately.
       /// @remarks Applications are restarted in the context in which they were initially run.
       /// @remarks If your application was originally supplied command-line options when it first executed, restart will launch the application again with the same options.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of application restart method.
       /// @include application_restart.cpp
       /// @par Windows
@@ -288,7 +288,7 @@ namespace xtd {
       /// @brief Begins running a standard application message loop on the current thread, without a form.
       /// @remarks In a Win32-based or Windows Forms application, a message loop is a routine in code that processes user events, such as mouse clicks and keyboard strokes. Every running Windows-based application requires an active message loop, called the main message loop. When the main message loop is closed, the application exits. In Windows Forms, this loop is closed when the exit method is called, or when the exit_thread method is called on the thread that is running the main message loop.
       /// @remarks Most Windows Forms developers will not need to use this version of the method. You should use the run(const form&) overload to start an application with a main form, so that the application terminates when the main form is closed. For all other situations, use the run(application_context&) overload, which supports supplying an application_context object for better control over the lifetime of the application.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of application run method.
       /// @include application_run.cpp
       static void run();
@@ -296,7 +296,7 @@ namespace xtd {
       /// @brief Begins running a standard application message loop on the current thread, with an application_context.
       /// @param context An ApplicationContext in which the application is run.
       /// @remarks The message loop runs until Exit or exit_thread is called or the thread_exit event is raised on the context object.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of application run method.
       /// @include application_context.cpp
       /// @par Windows
@@ -317,7 +317,7 @@ namespace xtd {
       /// @param main_form A form that represents the form to make visible.
       /// @remarks Typically, the main function of an application calls this method and passes to it the main window of the application.
       /// @remarks This method adds an event handler to the main_form parameter for the closed event. The event handler calls exit_thread to clean up the application.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of application run method.
       /// @include application.cpp
       /// @par Windows
@@ -369,7 +369,7 @@ namespace xtd {
 
       /// @brief Occurs when the application finishes processing and is about to enter the idle state.
       /// @remarks If you have tasks that you must perform before the thread becomes idle, attach them to this event.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of application idle event.
       /// @include application_idle.cpp
       /// @par Windows

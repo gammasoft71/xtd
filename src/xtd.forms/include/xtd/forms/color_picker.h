@@ -14,7 +14,7 @@ namespace xtd {
     /// @ingroup xtd_forms controls
     /// @remarks The inherited member show_dialog must be invoked to create this specific common dialog box. hook_proc can be overridden to implement specific dialog box hook functionality. Use color to retrieve the color selected by the user.
     /// @remarks When you create an instance of color_dialog, some of the read/write properties are set to initial values. For a list of these values, see the color_dialog constructor.
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrate the use of color_picker picker.
     /// @include color_picker.cpp
     /// @par Windows

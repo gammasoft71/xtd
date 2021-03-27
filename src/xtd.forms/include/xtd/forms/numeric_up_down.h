@@ -12,7 +12,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrate the use of numeric up down control.
     /// @include numeric_up_down.cpp
     /// @par Windows
