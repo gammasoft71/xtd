@@ -18,7 +18,7 @@ namespace xtd {
     /// @remarks When the user selects one option button (also known as a radio button) within a group, the others clear automatically. All radio_button controls in a given container, such as a Form, constitute a group. To create multiple groups on one form, place each group in its own container, such as a group_box or panel control.
     /// @remarks radio_button and check_box controls have a similar function: they offer choices a user can select or clear. The difference is that multiple check_box controls can be selected at the same time, but option buttons are mutually exclusive.
     /// @remarks Use the checked property to get or set the state of a radio_button. The option button's appearance can be altered to appear as a toggle-style button or as a standard option button by setting the appearance property.
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrate the use of radio_button control.
     /// @include radio_button.cpp
     /// @par Windows

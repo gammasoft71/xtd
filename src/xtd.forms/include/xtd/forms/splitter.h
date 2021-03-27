@@ -14,7 +14,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrate the use of splitter control.
     /// @include splitter.cpp
     /// @par Windows

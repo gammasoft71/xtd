@@ -64,7 +64,7 @@ namespace xtd {
     /// @remarks The control class implements very basic functionality required by classes that display information to the user. It handles user input through the keyboard and pointing devices. It handles message routing and security. It defines the bounds of a control (its position and size), although it does not implement painting. It provides a window handle (hWnd).
     /// @remarks Windows Forms controls use ambient properties so child controls can appear like their surrounding environment. An ambient property is a control property that, if not set, is retrieved from the parent control. If the control does not have a parent, and the property is not set, the control attempts to determine the value of the ambient property through the site property. If the control is not sited, if the site does not support ambient properties, or if the property is not set on the ambient_properties, the control uses its own default values. Typically, an ambient property represents a characteristic of a control, such as back_color, that is communicated to a child control. For example, a button will have the same back_color as its parent form by default. Ambient properties provided by the control class include: cursor, font, back_color, fore_color, and right_to_left.
     /// @remarks The majority of the controls in the xtd::forms namespace use the underlying Windows common control as a base to build on.
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrate the use of control control.
     /// @include control.cpp
     /// @par Windows
@@ -928,7 +928,7 @@ namespace xtd {
       /// | xtd::forms::form, xtd::forms::collapsible_panel, xtd::forms::data_grid, xtd::forms::dot_matrix_display, xtd::forms::label, xtd::forms::lcd_label, xtd::forms::link_label, xtd::forms::nine_segment_display, xtd::forms::seven_segment_display, xtd::forms::sixteen_segment_display, xtd::forms::panel, xtd::forms::group_box, xtd::forms::picture_box, xtd::forms::splitter, xtd::forms::status_bar, xtd::forms::tool_bar, xtd::forms::tab_page, ** xtd::forms::tab_control | click            | click, double_click     | click             | click, double_click | click              | click, double_click       | click                | click, double_click         | click                | click, double_click         |
       /// <br>* The mouse pointer must be over a child object (xtd::forms::tree_node or xtd::forms::list_view_item).
       /// <br>** The xtd::forms::tab_control must have at least one xtd::forms::tab_page in its xtd::forms::tab_pages collection.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
       /// @par Windows
@@ -981,7 +981,7 @@ namespace xtd {
       /// | xtd::forms::form, xtd::forms::collapsible_panel, xtd::forms::data_grid, xtd::forms::dot_matrix_display, xtd::forms::label, xtd::forms::lcd_label, xtd::forms::link_label, xtd::forms::nine_segment_display, xtd::forms::seven_segment_display, xtd::forms::sixteen_segment_display, xtd::forms::panel, xtd::forms::group_box, xtd::forms::picture_box, xtd::forms::splitter, xtd::forms::status_bar, xtd::forms::tool_bar, xtd::forms::tab_page, ** xtd::forms::tab_control | click            | click, double_click     | click             | click, double_click | click              | click, double_click       | click                | click, double_click         | click                | click, double_click         |
       /// <br>* The mouse pointer must be over a child object (xtd::forms::tree_node or xtd::forms::list_view_item).
       /// <br>** The xtd::forms::tab_control must have at least one xtd::forms::tab_page in its xtd::forms::tab_pages collection.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
       /// @par Windows
@@ -1044,7 +1044,7 @@ namespace xtd {
       /// 1. xtd::forms::control::key_press event
       /// 1. xtd::forms::control::key_up event
       /// @remarks To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the key_press_event_args::handled property in your form's key_press event-handling method to true. Certain keys, such as the TAB, RETURN, ESC, and arrow keys are handled by controls automatically. To have these keys raise the key_down event, you must override the is_input_key method in each control on your form. The code for the override of the is_input_key would need to determine if one of the special keys is pressed and return a value of true. Instead of overriding the is_input_key method, you can handle the preview_key_ddown event and set the is_input_key property to true.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of control keyboard events.
       /// @include key_events.cpp
       /// @par Windows
@@ -1069,7 +1069,7 @@ namespace xtd {
       /// @remarks The key_press event is not raised by non-character keys other than space and backspace; however, the non-character keys do raise the key_down and key_up events.
       /// @remarks Use the xtd::forms::key_press_event_args::key_char property to sample keystrokes at run time and to consume or modify a subset of common keystrokes.
       /// @remarks To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the key_press_event_args::handled property in your form's key_press event-handling method to true.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of control keyboard events.
       /// @include key_events.cpp
       /// @par Windows
@@ -1092,7 +1092,7 @@ namespace xtd {
       /// 1. xtd::forms::control::key_press event
       /// 1. xtd::forms::control::key_up event
       /// @remarks To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the key_press_event_args::handled property in your form's key_press event-handling method to true. Certain keys, such as the TAB, RETURN, ESC, and arrow keys are handled by controls automatically. To have these keys raise the key_down event, you must override the is_input_key method in each control on your form. The code for the override of the is_input_key would need to determine if one of the special keys is pressed and return a value of true. Instead of overriding the is_input_key method, you can handle the preview_key_ddown event and set the is_input_key property to true.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of control keyboard events.
       /// @include key_events.cpp
       /// @par Windows
@@ -1148,7 +1148,7 @@ namespace xtd {
       /// @remarks Two single clicks that occur close enough in time, as determined by the mouse settings of the user's operating system, will generate a mouse_double_click event instead of the second mouse_click event.
       /// @par important
       /// click events are logically higher-level events of a control. They are often raised by other actions, such as pressing the ENTER key when the control has focus.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
       /// @par Windows
@@ -1179,7 +1179,7 @@ namespace xtd {
       /// @remarks For this to occur, the various events cannot be disabled in the control's class.
       /// @par important
       /// double_click events are logically higher-level events of a control. They may be raised by other user actions, such as shortcut key combinations.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
       /// @par Windows
@@ -1204,7 +1204,7 @@ namespace xtd {
       /// 4. xtd::forms::control::mouse_up
       /// 5. xtd::forms::control::mouse_leave
       /// @note The following events are not raised for the tab_control class unless there is at least one tab_page in the tab_control::tab_pages collection: click, double_click, mouse_down, mouse_up, mouse_hover, mouse_enter, mouse_leave and mouse_move. If there is at least one tab_page in the collection, and the user interacts with the tab control's header (where the tab_page names appear), the tab_control raises the appropriate event. However, if the user interaction is within the client area of the tab page, the tab_page raises the appropriate event.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
       /// @par Windows
@@ -1229,7 +1229,7 @@ namespace xtd {
       /// 4. xtd::forms::control::mouse_up
       /// 5. xtd::forms::control::mouse_leave
       /// @note The following events are not raised for the tab_control class unless there is at least one tab_page in the tab_control::tab_pages collection: click, double_click, mouse_down, mouse_up, mouse_hover, mouse_enter, mouse_leave and mouse_move. If there is at least one tab_page in the collection, and the user interacts with the tab control's header (where the tab_page names appear), the tab_control raises the appropriate event. However, if the user interaction is within the client area of the tab page, the tab_page raises the appropriate event.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
       /// @par Windows
@@ -1255,7 +1255,7 @@ namespace xtd {
       /// 4. xtd::forms::control::mouse_up
       /// 5. xtd::forms::control::mouse_leave
       /// @note The following events are not raised for the tab_control class unless there is at least one tab_page in the tab_control::tab_pages collection: click, double_click, mouse_down, mouse_up, mouse_hover, mouse_enter, mouse_leave and mouse_move. If there is at least one tab_page in the collection, and the user interacts with the tab control's header (where the tab_page names appear), the tab_control raises the appropriate event. However, if the user interaction is within the client area of the tab page, the tab_page raises the appropriate event.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
       /// @par Windows
@@ -1280,7 +1280,7 @@ namespace xtd {
       /// 4. xtd::forms::control::mouse_up
       /// 5. xtd::forms::control::mouse_leave
       /// @note The following events are not raised for the tab_control class unless there is at least one tab_page in the tab_control::tab_pages collection: click, double_click, mouse_down, mouse_up, mouse_hover, mouse_enter, mouse_leave and mouse_move. If there is at least one tab_page in the collection, and the user interacts with the tab control's header (where the tab_page names appear), the tab_control raises the appropriate event. However, if the user interaction is within the client area of the tab page, the tab_page raises the appropriate event.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
       /// @par Windows
@@ -1305,7 +1305,7 @@ namespace xtd {
       /// 4. xtd::forms::control::mouse_up
       /// 5. xtd::forms::control::mouse_leave
       /// @note The following events are not raised for the tab_control class unless there is at least one tab_page in the tab_control::tab_pages collection: click, double_click, mouse_down, mouse_up, mouse_hover, mouse_enter, mouse_leave and mouse_move. If there is at least one tab_page in the collection, and the user interacts with the tab control's header (where the tab_page names appear), the tab_control raises the appropriate event. However, if the user interaction is within the client area of the tab page, the tab_page raises the appropriate event.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
       /// @par Windows
@@ -1330,7 +1330,7 @@ namespace xtd {
       /// 4. xtd::forms::control::mouse_up
       /// 5. xtd::forms::control::mouse_leave
       /// @note The following events are not raised for the tab_control class unless there is at least one tab_page in the tab_control::tab_pages collection: click, double_click, mouse_down, mouse_up, mouse_hover, mouse_enter, mouse_leave and mouse_move. If there is at least one tab_page in the collection, and the user interacts with the tab control's header (where the tab_page names appear), the tab_control raises the appropriate event. However, if the user interaction is within the client area of the tab page, the tab_page raises the appropriate event.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
       /// @par Windows
@@ -1356,7 +1356,7 @@ namespace xtd {
       /// 4. xtd::forms::control::mouse_up
       /// 5. xtd::forms::control::mouse_leave
       /// @note The following events are not raised for the tab_control class unless there is at least one tab_page in the tab_control::tab_pages collection: click, double_click, mouse_down, mouse_up, mouse_hover, mouse_enter, mouse_leave and mouse_move. If there is at least one tab_page in the collection, and the user interacts with the tab control's header (where the tab_page names appear), the tab_control raises the appropriate event. However, if the user interaction is within the client area of the tab page, the tab_page raises the appropriate event.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
       /// @par Windows
@@ -1376,7 +1376,7 @@ namespace xtd {
       /// @brief Occurs when the control is redrawn.
       /// @remarks The paint event is raised when the control is redrawn. It passes an instance of paint_event_args to the method(s) that handles the paint event. The paint event is raised when the control is redrawn. It passes an instance of paint_event_args to the method(s) that handles the paint event.
       /// @remarks When creating a new custom control or an inherited control with a different visual appearance, you must provide code to render the control by overriding the on_paint method.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of control paintt events.
       /// @include form_paint.cpp
       /// @par Windows
@@ -1400,7 +1400,7 @@ namespace xtd {
       /// @brief Occurs when the control is resized.
       /// @remarks To determine the size of the resized control, you can cast the sender parameter of the registered control_event_handler method to a control and get its size property (or height and width properties individually).
       /// @remarks To handle custom layouts, use the layout event instead of the resize event. The layout event is raised in response to a resize event, but also in response to other changes that affect the layout of the control.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrate the use of control resize event.
       /// @include dot_matrix_display.cpp
       /// @par Windows

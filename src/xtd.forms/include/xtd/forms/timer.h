@@ -20,7 +20,7 @@ namespace xtd {
     /// @remarks When you use this timer, use the tick event to perform a polling operation or to display a splash screen for a specified period of time. Whenever the enabled property is set to true and the interval property is greater than zero, the tick event is raised at intervals based on the interval property setting.
     /// @remarks This class provides methods to set the interval, and to start and stop the timer.
     /// @remarks The Windows Forms Timer component is single-threaded, and is limited to an accuracy of 55 milliseconds.
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrate the use of timer component.
     /// @include timer.cpp
     /// @par Windows

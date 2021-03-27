@@ -13,7 +13,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrate the use of up down button control.
     /// @include up_down_button.cpp
     /// @par Windows

@@ -23,7 +23,7 @@ namespace xtd {
     /// @remarks The value property represents the progress that the application has made toward completing the operation. The value displayed by the progress_bar only approximates the current value of the value property. Based on the size of the progress_bar, the value property determines when to display the next block or increase the size of the bar.
     /// @remarks There are a number of ways to modify the value displayed by the progress_bar other than changing the value property directly. You can use the step property to specify a specific value to increment the Value property by, and then call the perform_step method to increment the value. To vary the increment value, you can use the increment method and specify a value with which to increment the value property.
     /// @note fore_color and back_color changes for the progress_bar will not be honored.
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrate the use of progress_bar control.
     /// @include progress_bar.cpp
     /// @par Windows

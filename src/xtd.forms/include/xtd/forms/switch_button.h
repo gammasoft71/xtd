@@ -10,7 +10,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrate the use of switch button control.
     /// @include switch_button.cpp
     /// @par Windows

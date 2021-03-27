@@ -13,7 +13,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrate the use of user control.
     /// @include user_control.cpp
     /// @par Windows

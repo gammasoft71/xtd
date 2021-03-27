@@ -13,7 +13,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrate the use of buttons control factory.
     /// @include buttons.cpp
     /// @par Windows

@@ -18,7 +18,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrate the use of about_dialog dialog.
     /// @include about_dialog.cpp
     /// @par Windows
@@ -33,7 +33,7 @@ namespace xtd {
     /// @image html about_dialog_g.png
     /// <br>
     /// @image html about_dialog_gd.png
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrate the use of about_dialog dialog with dialog_styledialog_style tooo system.
     /// @include about_dialog_system.cpp
     /// @par Windows

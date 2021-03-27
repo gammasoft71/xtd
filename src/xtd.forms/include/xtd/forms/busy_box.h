@@ -14,7 +14,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrate the use of busy_box dialog.
     /// @include busy_box.cpp
     /// @par Windows

@@ -14,7 +14,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrate the use of dot matrix display control.
     /// @include dot_matrix_display.cpp
     /// @par Windows

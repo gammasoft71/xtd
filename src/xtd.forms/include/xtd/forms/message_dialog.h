@@ -37,7 +37,7 @@ namespace xtd {
     using message_dialog_closed_event_handler = delegate<void(type_t, const message_dialog_closed_event_args& e)>;
   
   /// @brief Represents a common dialog box that displays message box.
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrate the use of message_dialog dialog.
     /// @include message_dialog.cpp
     class forms_export_ message_dialog final : public component {
