@@ -15,7 +15,10 @@ add_sources(
   include/xtd/license_page.h
   include/xtd/main_page.h
   include/xtd/system_report.h
-  include/xtd/xtd.h
+  include/xtd/xtd_core_examples.h
+  include/xtd/xtd_forms_examples.h
+  include/xtd/xtd_tunit_examples.h
+  include/xtd/xtd
   include/xtd/xtd.h
   src/xtd/system_report.cpp
 )
