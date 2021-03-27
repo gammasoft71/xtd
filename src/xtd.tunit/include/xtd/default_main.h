@@ -4,10 +4,12 @@
 #pragma once
 #include "tunit_main.h"
 
-/// @cond
+/// @brief If you define TUNIT_CONFIG_MAIN before including xtd.tunit.h include, a main entry point is generated for you.
+/// @example
+/// This example shows how to usse
+/// @include tunit_config_main.cpp TUNIT_CONFIG_MAIN
 #if defined(TUNIT_CONFIG_MAIN)
 int main(int argc, char* argv[]) {
   return __tunit_main::main(argc, argv);
 }
 #endif
-/// @endcond
