@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains @startup_ keyword.
+/// @brief Contains #startup_ keyword.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "environment.h"

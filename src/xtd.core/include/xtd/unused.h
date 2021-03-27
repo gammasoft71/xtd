@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains @unused_ keyword.
+/// @brief Contains #unused_ keyword.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
