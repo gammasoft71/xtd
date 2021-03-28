@@ -35,14 +35,35 @@ namespace xtd {
     /// @image html checked_list_box_gd.png
     class forms_export_ checked_list_box : public list_box {
     public:
+      /// @brief Represent an item contained in the checked_list_box::object_collection.
       class item : public list_box::item {
       public:
+        /// @brief Initializes a new instance of the item class.
         item() = default;
+        /// @brief Initializes a new instance of the item class with specified value.
+        /// @param value a string that represent the item.
         item(const std::string& value) : list_box::item(value) {}
+        /// @brief Initializes a new instance of the item class with specified value and check state.
+        /// @param value a string that represent the item.
+        /// @param checked a bool that represent check state.
         item(const std::string& value, bool checked) : list_box::item(value), check_state_(checked ? forms::check_state::checked : forms::check_state::unchecked) {}
+        /// @brief Initializes a new instance of the item class with specified value and checked state.
+        /// @param value a string that represent the item.
+        /// @param check_state a bool that represent check state.
         item(const std::string& value, forms::check_state check_state) : list_box::item(value), check_state_(check_state) {}
+        /// @brief Initializes a new instance of the item class with specified value and tag.
+        /// @param value a string that represent the item.
+        /// @param tag an object that contains data about the item.
         item(const std::string& value, const std::any& tag) : list_box::item(value, tag) {}
+        /// @brief Initializes a new instance of the item class with specified value, check state and tag.
+        /// @param value a string that represent the item.
+        /// @param checked a bool that represent check state.
+        /// @param tag an object that contains data about the item.
         item(const std::string& value, bool checked, const std::any& tag) : list_box::item(value, tag), check_state_(checked ? forms::check_state::checked : forms::check_state::unchecked) {}
+        /// @brief Initializes a new instance of the item class with specified value, check state and tag.
+        /// @param value a string that represent the item.
+        /// @param checked a bool that represent check state.
+        /// @param tag an object that contains data about the item.
         item(const std::string& value, forms::check_state check_state, const std::any& tag) : list_box::item(value, tag), check_state_(check_state) {}
         /// @cond
         item(const char* value) : list_box::item(value) {}
@@ -53,14 +74,18 @@ namespace xtd {
         bool operator<=(const item& value) const {return list_box::item::operator<=(value);}
         bool operator>(const item& value) const {return list_box::item::operator>(value);}
         bool operator>=(const item& value) const {return list_box::item::operator>=(value);}
+        friend std::ostream& operator<<(std::ostream& os, const item& value) {return os << value.to_string();}
         /// @endcond
 
+        /// @brief Gets a value indicating whether the item is in the checked state.
+        /// @return true if the item is in the checked state; otherwise, false. The default value is false. If the three_state property is set to true, the checked property will return true for either a checked or indeterminate check_state.
         virtual bool checked() const {return check_state_ != forms::check_state::unchecked;}
         
+        /// @brief Gets the state of the item.
+        /// @return One of the check_state enumeration values. The default value is unchecked.
+        /// @remarks If the three_state property is set to false, the check_state property value can only be set to check_state::indeterminate in code and not by u ser interaction.
         virtual forms::check_state check_state() const {return check_state_;}
         
-        friend std::ostream& operator<<(std::ostream& os, const item& value) {return os << value.to_string();}
-
       private:
         forms::check_state check_state_ = forms::check_state::unchecked;
       };
@@ -83,6 +108,9 @@ namespace xtd {
       /// @remarks The collection of checked indexes is a subset of the indexes into the collection of all items in the checked_list_box control. These indexes specify items in a checked or indeterminate state.
       checked_index_collection checked_indices() const;
       
+      /// @brief Collection of checked items in this checked_list_box.
+      /// @return The checked_list_box::checked_item_collection collection for the checked_list_box.
+      /// @remarks The collection is a subset of the objects in the items collection, representing only those items whose xtd::forms::check_state is checked or indeterminate. The indexes in this collection are in ascending order.
       checked_item_collection checked_items() const;
       
       object_collection& items() {return items_;}

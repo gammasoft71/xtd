@@ -123,12 +123,12 @@ namespace xtd {
       void notify_default(bool value) override;
 
       void perform_click() override;
-
-      drawing::size measure_control() const override;
       
     protected:
       forms::create_params create_params() const override;
-      
+
+      drawing::size measure_control() const override;
+
       void on_click(const event_args& e) override;
 
       void on_enabled_changed(const event_args& e) override {
