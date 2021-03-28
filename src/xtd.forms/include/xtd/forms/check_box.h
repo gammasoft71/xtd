@@ -190,13 +190,13 @@ namespace xtd {
       
       /// @brief Gets the state of the check_box.
       /// @return One of the check_state enumeration values. The default value is unchecked.
-      /// @remarks If the three_state property is set to false, the check_state property value can only be set to check_state::Indeterminate in code and not by u ser interaction.
+      /// @remarks If the three_state property is set to false, the check_state property value can only be set to check_state::indeterminate in code and not by u ser interaction.
       /// @remarks The following table describes the xtd::forms::appearance of the check_box control in its different states for the normal and button style control check_box::appearance.
-      /// | Check_state   |  appearance::normal                                                    | appearance::button                |
-      /// |--------------------|------------------------------------------------------------------------|----------------------------------------|
-      /// | checked         | The check_box displays a check mark.                        | The control appears sunken. |
-      /// | unchecked     | The CheckBox is empty.                                               | The control appears raised.   |
-      /// | indeterminate | The CheckBox displays a check mark and is shaded. | The control appears flat.        |
+      /// | Check_state   |  appearance::normal                                                    | appearance::button                     |
+      /// |---------------|------------------------------------------------------------------------|----------------------------------------|
+      /// | checked       | The check_box displays a check mark.                                   | The control appears sunken.            |
+      /// | unchecked     | The CheckBox is empty.                                                 | The control appears raised.            |
+      /// | indeterminate | The CheckBox displays a check mark and is shaded.                      | The control appears flat.              |
       /// @par Examples
       /// The following code example demonstrate the use of check_box check_state.
       /// @include check_box.cpp
@@ -346,8 +346,6 @@ namespace xtd {
         button_base::on_enabled_changed(e);
       }
       
-      /// @brief Raises the handle_created event.
-      /// @param e An event_args that contains the event data.
       void on_handle_created(const event_args& e) override;
 
       void on_mouse_down(const mouse_event_args& e) override {
