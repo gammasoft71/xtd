@@ -384,6 +384,14 @@ namespace xtd {
       /// @par Notes to Inheritors
       /// When overriding the dock property in a derived class, use the base class's dock property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set methods of the dock property; you can override only one if needed.
       virtual dock_style dock() const {return dock_;}
+      /// @brief Sets or sets which control borders are docked to its parent control and determines how a control is resized with its parent.
+      /// @param dock One of the dock_style values. The default is none.
+      /// @remarks Use the dock property to define how a control is automatically resized as its parent control is resized. For example, setting dock to dock_style::left causes the control to align itself with the left edges of its parent control and to resize as the parent control is resized. Controls are docked in their Z-order, which is the visual layering of controls on a form along the form's Z-axis (depth).
+      /// @remarks A control can be docked to one edge of its parent container or can be docked to all edges and fill the parent container.
+      /// @remarks Setting the margin property on a docked control has no effect on the distance of the control from the edges of its container.
+      /// @note The anchor and dock properties are mutually exclusive. Only one can be set at a time, and the last one set takes precedence.
+      /// @par Notes to Inheritors
+      /// When overriding the dock property in a derived class, use the base class's dock property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set methods of the dock property; you can override only one if needed.
       virtual control& dock(dock_style dock);
 
       /// @brief Gets a value indicating whether this control should redraw its surface using a secondary buffer to reduce or prevent flicker.
