@@ -44,11 +44,11 @@ namespace xtd {
       combo_box_style drop_down_style() const {return drop_down_style_;}
       combo_box& drop_down_style(combo_box_style drop_down_style);
       
-      item_collection& items() {return items_;}
+      object_collection& items() {return items_;}
 
-      const item_collection& items() const {return items_;}
+      const object_collection& items() const {return items_;}
       
-      const combo_box& items(const item_collection& items) {
+      const combo_box& items(const object_collection& items) {
         items_ = items;
         return *this;
       }
@@ -99,7 +99,7 @@ namespace xtd {
       int32_t drop_down_height_ = 0;
       combo_box_style drop_down_style_ = combo_box_style::drop_down;
       int32_t drop_down_width_ = 0;
-      item_collection items_;
+      object_collection items_;
       item selected_item_;
       bool sorted_ = false;
       bool user_set_size_ = false;

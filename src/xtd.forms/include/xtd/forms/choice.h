@@ -40,11 +40,11 @@ namespace xtd {
 
       virtual drawing::size default_size() const override {return {121, 23};}
       
-      item_collection& items() {return items_;}
+      object_collection& items() {return items_;}
 
-      const item_collection& items() const {return items_;}
+      const object_collection& items() const {return items_;}
       
-      const choice& items(const item_collection& items) {
+      const choice& items(const object_collection& items) {
         items_ = items;
         return *this;
       }
@@ -88,7 +88,7 @@ namespace xtd {
       
       virtual void wm_mouse_up(message& message);
       
-      item_collection items_;
+      object_collection items_;
       item selected_item_;
       bool sorted_ = false;
       bool user_set_size_ = false;

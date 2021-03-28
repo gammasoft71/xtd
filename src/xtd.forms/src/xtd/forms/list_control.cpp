@@ -7,11 +7,3 @@ list_control::list_control() {
   //back_color_ = default_back_color();
   //fore_color_ = default_fore_color();
 }
-
-list_control& list_control::value_member(const std::string &value_member) {
-  if (value_member_ != value_member) {
-    value_member_ = value_member;
-    on_value_member_changed(event_args::empty);
-  }
-  return *this;
-}

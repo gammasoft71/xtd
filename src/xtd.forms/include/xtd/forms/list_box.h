@@ -34,7 +34,11 @@ namespace xtd {
     public:      
       list_box();
 
+      /// @brief Gets the type of border that is drawn around the list_box.
+      /// @return One of the xtd::forms::border_styleforms::border_style values. The default is fixed_single.
       virtual forms::border_style border_style() const {return border_style_;}
+      /// @brief Sets the type of border that is drawn around the list_box.
+      /// @param border_style One of the xtd::forms::border_styleforms::border_style values. The default is fixed_single.
       virtual list_box& border_style(forms::border_style border_style);
       
       drawing::color default_back_color() const override {return xtd::forms::theme_colors::current_theme().window();}
@@ -43,11 +47,18 @@ namespace xtd {
       
       drawing::size default_size() const override {return {120, 96};}
       
-      item_collection& items() {return items_;}
-
-      const item_collection& items() const {return items_;}
-      
-      const list_box& items(const item_collection& items) {
+      /// @brief Gets the items of the list_box.
+      /// @return An list_boxlist_box::object_collection representing the items in the list_box.
+      /// @remarks This property enables you to obtain a reference to the list of items that are currently stored in the list_box. With this reference, you can add items, remove items, and obtain a count of the items in the collection.
+      object_collection& items() {return items_;}
+      /// @brief Gets the items of the list_box.
+      /// @return An list_boxlist_box::object_collection representing the items in the list_box.
+      /// @remarks This property enables you to obtain a reference to the list of items that are currently stored in the list_box. With this reference, you can add items, remove items, and obtain a count of the items in the collection.
+      const object_collection& items() const {return items_;}
+      /// @brief Sets the items of the list_box.
+      /// @return An list_boxlist_box::object_collection representing the items in the list_box.
+      /// @remarks This property enables you to obtain a reference to the list of items that are currently stored in the list_box. With this reference, you can add items, remove items, and obtain a count of the items in the collection.
+      const list_box& items(const object_collection& items) {
         items_ = items;
         return *this;
       }
@@ -96,7 +107,7 @@ namespace xtd {
       virtual void wm_mouse_up(message& message);
       
       forms::border_style border_style_ = forms::border_style::fixed_single;
-      item_collection items_;
+      object_collection items_;
       item selected_item_;
       forms::selection_mode selection_mode_ = forms::selection_mode::one;
       bool sorted_ = false;
