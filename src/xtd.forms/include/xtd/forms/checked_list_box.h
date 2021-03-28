@@ -35,7 +35,7 @@ namespace xtd {
     /// @image html checked_list_box_gd.png
     class forms_export_ checked_list_box : public list_box {
     public:
-      /// @brief Represent an item contained in the checked_list_box::object_collection.
+      /// @brief Represent an item contained in the checked_list_box::object_collection collection.
       class item : public list_box::item {
       public:
         /// @brief Initializes a new instance of the item class.
@@ -113,10 +113,17 @@ namespace xtd {
       /// @remarks The collection is a subset of the objects in the items collection, representing only those items whose xtd::forms::check_state is checked or indeterminate. The indexes in this collection are in ascending order.
       checked_item_collection checked_items() const;
       
+      /// @brief Gets the collection of items in this checked_list_box.
+      /// @return The checked_list_box::object_collection collection representing the items in the checked_list_box.
+      /// @remarks The items property enables you to obtain a reference to the list of items that are currently stored in a checked_list_box control. With this reference, you can add items, remove items, and obtain a count of the items in the collection.
       object_collection& items() {return items_;}
-
+      /// @brief Gets the collection of items in this checked_list_box.
+      /// @return The checked_list_box::object_collection collection representing the items in the checked_list_box.
+      /// @remarks The items property enables you to obtain a reference to the list of items that are currently stored in a checked_list_box control. With this reference, you can add items, remove items, and obtain a count of the items in the collection.
       const object_collection& items() const {return items_;}
-      
+      /// @brief Sets the collection of items in this checked_list_box.
+      /// @param items The checked_list_box::object_collection collection representing the items in the checked_list_box.
+      /// @remarks The items property enables you to obtain a reference to the list of items that are currently stored in a checked_list_box control. With this reference, you can add items, remove items, and obtain a count of the items in the collection.
       const list_box& items(const object_collection& items) {
         items_ = items;
         return *this;
