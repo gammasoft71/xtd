@@ -14,22 +14,45 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms containers
     /// @par Examples
-    /// The following code example demonstrate the use of collapsible_panel contrtoll container.
+    /// The following code example demonstrate the use of collapsible_panel container.
     /// @include collapsible_panel.cpp
+    /// @par Windows
+    /// @image html collapsible_panel_w.png
+    /// <br>
+    /// @image html collapsible_panel_wd.png
+    /// @par macOS
+    /// @image html collapsible_panel_m.png
+    /// <br>
+    /// @image html collapsible_panel_md.png
+    /// @par Gnome
+    /// @image html collapsible_panel_g.png
+    /// <br>
+    /// @image html collapsible_panel_gd.png
     class forms_export_ collapsible_panel : public control {
     public:
+      /// @brief Initializes a new instance of the collapsible_panel class.
       collapsible_panel();
 
       /// @cond
       virtual bool auto_size() const override {return true;}
       /// @cond
 
+      /// @brief Get the border style for the control.
+      /// @return One of the border_style values. The default is border_style::none.
+      /// @remarks By default, the collapsible_panel control is displayed without a border. You can use this property to distinguish the boundaries of the collapsible_panel control from other areas on the form.
       virtual forms::border_style border_style() const {return border_style_;}
+      /// @brief Set the border style for the control.
+      /// @param border_style One of the border_style values. The default is border_style::none.
+      /// @remarks By default, the collapsible_panel control is displayed without a border. You can use this property to distinguish the boundaries of the collapsible_panel control from other areas on the form.
       virtual collapsible_panel& border_style(forms::border_style border_style);
 
       drawing::size default_size() const override {return {0, 0};}
       
+      /// @brief Gets a value indicating whether the collapsible_panel is in the expanded.
+      /// @return true if collapsible_panel is expanded; otherwise false.
       bool expanded() const {return expanded_;}
+      /// @brief Sets a value indicating whether the collapsible_panel is in the expanded.
+      /// @param expanded true if collapsible_panel is expanded; otherwise false.
       collapsible_panel& expanded(bool expanded);
 
       /// @cond
@@ -37,10 +60,15 @@ namespace xtd {
       const xtd::drawing::size& size() const override {return control::size();}
       /// @endcond
 
+      /// @brief Collapse the collapsible_panel.
+      /// @remarks Collapseing the collapsible_panel is equivalent to setting the expanded property to false. After the collapse method is called, the expanded property returns a value of false until the expand method is called.
       void collapse() {expanded(false);}
 
+      /// @brief Expand the collapsible_panel.
+      /// @remarks Expandinf the collapsible_panel is equivalent to setting the expanded property to true. After the expand method is called, the expanded property returns a value of true until the collapse method is called.
       void expand() {expanded(true);}
       
+      /// @brief Occurs when the expanded property changes.
       xtd::event<collapsible_panel, xtd::event_handler<control&>> expanded_changed;
 
     protected:
@@ -52,17 +80,17 @@ namespace xtd {
       
       void on_control_removed(const control_event_args& e) override;
       
+      /// @brief Raises the expanded_changed event.
       virtual void on_expanded_changed(const xtd::event_args& e);
 
       void on_handle_created(const event_args& e) override;
 
-      /// @brief Processes Windows messages.
-      /// @param m The Windows Message to process.
-      /// @remarks All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method.
       void wnd_proc(message& message) override;
 
+      /// @cond
       forms::border_style border_style_ = forms::border_style::none;
       bool expanded_ = false;
+      /// @endcond
       
     private:
       control& auto_size(bool auto_size) override {return control::auto_size(auto_size);}
