@@ -2,10 +2,10 @@
 
 [This folder](..) contains xtd.forms dialog examples.
 
-* [about_box](about_box/README.md) represents a dialog box that displays about dialog.
+* [about_box](about_box/README.md) represents a dialog box that displays about box.
 * [about_dialog](about_dialog/README.md) represents a dialog box that displays about dialog.
 * [about_dialog_system](about_dialog_system/README.md) represents a dialog box that displays system about dialog.
-* [busy_box](busy_box/README.md) represents a dialog box that displays busy dialog.
+* [busy_box](busy_box/README.md) represents a dialog box that displays busy box.
 * [busy_dialog](busy_dialog/README.md) represents a dialog box that displays busy dialog.
 * [color_box](color_box/README.md) represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.
 * [color_dialog](color_dialog/README.md) represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.
