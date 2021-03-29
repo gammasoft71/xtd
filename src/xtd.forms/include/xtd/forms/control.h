@@ -148,7 +148,7 @@ namespace xtd {
       /// @brief Represents a collection of controls.
       using control_collection = layout::arranged_element_collection<control_ref>;
       
-      /// @brief Initializes a new instance of the Control class with default settings.
+      /// @brief Initializes a new instance of the control class with default settings.
       /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       control();
       /// @brief Initializes a new instance of the control class with specific text.
