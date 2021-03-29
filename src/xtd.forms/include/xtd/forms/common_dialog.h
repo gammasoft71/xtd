@@ -29,6 +29,8 @@ namespace xtd {
       /// @brief Initializes a new instance of the common_dialog class.
       common_dialog() = default;
       
+      /// @brief Get assync dialog_result result after dialog box is closing.
+      /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       xtd::forms::dialog_result dialog_result() const {return dialog_result_;}
 
       /// @brief Gets an object that contains data about the control.
@@ -92,7 +94,8 @@ namespace xtd {
       /// @brief Occurs when the user clicks the Help button on a common dialog box.
       event<common_dialog, help_event_handler<component&>> help_request;
 
-      event<common_dialog, common_dialog_closed_event_handler<component&>> common_dialog_closed;
+      /// @brief Occurs when the user close a common dialog box with dialog close button or other dialog buttons.
+       event<common_dialog, common_dialog_closed_event_handler<component&>> common_dialog_closed;
       
     protected:
       /// @cond
