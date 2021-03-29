@@ -127,7 +127,6 @@ namespace xtd {
       const object_collection& items() const {return items_;}
       /// @brief Sets the collection of items in this checked_list_box.
       /// @param items The checked_list_box::object_collection collection representing the items in the checked_list_box.
-      /// @remarks The items property enables you to obtain a reference to the list of items that are currently stored in a checked_list_box control. With this reference, you can add items, remove items, and obtain a count of the items in the collection.
       const list_box& items(const object_collection& items) {
         items_ = items;
         return *this;
