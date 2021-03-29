@@ -10,6 +10,25 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @brief Represents a Windows control that displays a frame around a group of controls with an optional caption.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms containers
+    /// @par Examples
+    /// The following code example demonstrate the use of group_box control.
+    /// @include group_box.cpp
+    /// @par Windows
+    /// @image html group_box_w.png
+    /// <br>
+    /// @image html group_box_wd.png
+    /// @par macOS
+    /// @image html group_box_m.png
+    /// <br>
+    /// @image html group_box_md.png
+    /// @par Gnome
+    /// @image html group_box_g.png
+    /// <br>
+    /// @image html group_box_gd.png
     class forms_export_ group_box : public control {
     public:
       group_box();
