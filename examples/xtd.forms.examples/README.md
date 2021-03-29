@@ -137,11 +137,11 @@
 ## [Dialogs](dialogs/README.md)
 
 * [about_box](dialogs/about_box/README.md) represents a dialog box that displays about box.
-* [about_dialog](dialogs/about_dialog/README.md) represents a dialog box that displays about box.
+* [about_dialog](dialogs/about_dialog/README.md) represents a dialog box that displays about dialog.
 * [busy_box](dialogs/busy_box/README.md) represents a busy box that displays busy box.
-* [busy_dialog](dialogs/busy_dialog/README.md) represents a busy box that displays busy box.
-* [color_box](dialogs/color_box/README.md) represents a ialog box that displays available colors along with controls that enable the user to define custom colors.
-* [color_dialog](dialogs/color_dialog/README.md) represents a ialog box that displays available colors along with controls that enable the user to define custom colors.
+* [busy_dialog](dialogs/busy_dialog/README.md) represents a busy box that displays busy dialog.
+* [color_box](dialogs/color_box/README.md) represents a dialog box that displays available colors along with controls that enable the user to define custom colors.
+* [color_dialog](dialogs/color_dialog/README.md) represents a dialog box that displays available colors along with controls that enable the user to define custom colors.
 * **find_replace_dialog** represents a find replace dialog box.
 * [folder_browser_dialog](dialogs/folder_browser_dialog/README.md) prompts the user to select a folder.
 * [font_dialog](dialogs/font_dialog/README.md) prompts the user to choose a font from among those installed on the local computer.
