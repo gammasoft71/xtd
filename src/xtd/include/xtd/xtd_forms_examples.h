@@ -240,4 +240,33 @@
 /// @image html collapsible_panel_g.png
 /// <br>
 /// @image html collapsible_panel_gd.png
-
+/// ///
+/// @example form.cpp
+/// The following code example demonstrate the use of form control.
+/// @par Windows
+/// @image html form_w.png
+/// <br>
+/// @image html form_wd.png
+/// @par macOS
+/// @image html form_m.png
+/// <br>
+/// @image html form_md.png
+/// @par Gnome
+/// @image html form_g.png
+/// <br>
+/// @image html form_gd.png
+///
+/// @example group_box.cpp
+/// The following code example demonstrate the use of group_box control.
+/// @par Windows
+/// @image html group_box_w.png
+/// <br>
+/// @image html group_box_wd.png
+/// @par macOS
+/// @image html group_box_m.png
+/// <br>
+/// @image html group_box_md.png
+/// @par Gnome
+/// @image html group_box_g.png
+/// <br>
+/// @image html group_box_gd.png
