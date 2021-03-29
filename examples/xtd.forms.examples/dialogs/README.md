@@ -7,6 +7,7 @@
 * [about_dialog_system](about_dialog_system/README.md) represents a dialog box that displays system about dialog.
 * [busy_box](busy_box/README.md) represents a dialog box that displays busy dialog.
 * [busy_dialog](busy_dialog/README.md) represents a dialog box that displays busy dialog.
+* [color_box](color_box/README.md) represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.
 * [color_dialog](color_dialog/README.md) represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.
 * [folder_browser_dialog](folder_browser_dialog/README.md) prompts the user to select a folder.
 * [font_dialog](font_dialog/README.md) prompts the user to choose a font from among those installed on the local computer.
