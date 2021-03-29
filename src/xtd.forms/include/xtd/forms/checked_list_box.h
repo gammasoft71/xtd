@@ -65,6 +65,7 @@ namespace xtd {
         /// @param checked a bool that represent check state.
         /// @param tag an object that contains data about the item.
         item(const std::string& value, forms::check_state check_state, const std::any& tag) : list_box::item(value, tag), check_state_(check_state) {}
+        
         /// @cond
         item(const char* value) : list_box::item(value) {}
         item(const item& value) = default;
@@ -99,6 +100,9 @@ namespace xtd {
       /// @brief Encapsulates the collection of checked items, including items in an indeterminate state, in a checked_list_box control.
       using checked_item_collection = std::vector<item>;
 
+      /// @brief Represents the collection of selected items in the list_box.
+      using selected_object_collection = std::vector<item>;
+
       /// @brief Initializes a new instance of the checked_list_box class.
       /// @remarks By default, checked_list_box uses set_style and the resize_redraw value of control_styles to specify that the control is redrawn when resized.
       checked_list_box();
@@ -130,37 +134,80 @@ namespace xtd {
       }
       
       using list_box::selected_index;
+      /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
+      /// @param selected_index A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
       list_control& selected_index(size_t selected_index) override;
       
       std::vector<size_t> selected_indices() const override;
       
+      /// @brief Gets the currently selected item in the checked_list_box.
+      /// @return An object that represents the current selection in the control.
+      /// @remarks For a standard list_box, you can use this property to determine which item is selected in the list_box. If the selection_mode property of the list_boxlist_box is set to either selection_mode::multi_simple or selection_mode::multi_extended (which indicates a multiple-selection list_box) and multiple items are selected in the list, this property can return any selected item.
+      /// @remarks To retrieve a collection containing all selected items in a multiple-selection list_box, use the selected_items property. If you want to obtain the index position of the currently selected item in the list_box, use the selected_index property. In addition, you can use the selected_indices property to obtain all the selected indexes in a multiple-selection list_box.
       const item& selected_item() const {return selected_item_;}
-      
+      /// @brief Sets the currently selected item in the list_box.
+      /// @param selected_item An object that represents the current selection in the control.
+      /// @remarks For a standard list_box, you can use this property to determine which item is selected in the list_box. If the selection_mode property of the list_boxlist_box is set to either selection_mode::multi_simple or selection_mode::multi_extended (which indicates a multiple-selection list_box) and multiple items are selected in the list, this property can return any selected item.
+      /// @remarks To retrieve a collection containing all selected items in a multiple-selection list_box, use the selected_items property. If you want to obtain the index position of the currently selected item in the list_box, use the selected_index property. In addition, you can use the selected_indices property to obtain all the selected indexes in a multiple-selection list_box.
       list_box& selected_item(const item& selected_item);
-      
-      std::vector<item> selected_items() const;
+
+      /// @brief Gets a collection containing the currently selected items in the list_box.
+      /// @return A list_box::selected_object_collection containing the currently selected items in the control.
+      /// @remarks For a multiple-selection list_box, this property returns a collection containing all items that are selected in the list_box. For a single-selection list_box, this property returns a collection containing a single element containing the only selected item in the list_box. For more information about how to manipulate the items of the collection, see list_box::selected_object_collection.
+      /// @remarks The list_box class provides a number of ways to reference selected items. Instead of using the selected_items property to obtain the currently selected item in a single-selection list_box, you can use the selected_item property. If you want to obtain the index position of an item that is currently selected in the list_box, instead of the item itself, use the selected_index property. In addition, you can use the selected_indices property if you want to obtain the index positions of all selected items in a multiple-selection list_box.
+      selected_object_collection selected_items() const;
       
       using list_box::text;
+      /// @brief Sets the text associated with this control.
+      /// @param text The text associated with this control.
       control& text(const std::string& text) override {
         selected_item_ = {text};
         return *this;
       }
   
+      /// @brief Maintains performance while items are added to the list_box one at a time by preventing the control from drawing until the EndUpdate() method is called.
+      /// @remarks The preferred way to add multiple items to the list_box is to use the push_back_range method of the list_box::object_collection class (through the items property of the list_box). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the list_box::object_collection class, you can use the begin_update method to prevent the control from repainting the list_box each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the list_box to repaint. This way of adding items can prevent flickered drawing of the list_box when a large number of items are being added to the list.
       void begin_update();
+      /// @brief Resumes painting the list_box control after painting is suspended by the begin_update method.
+      /// @remarks The preferred way to add multiple items to the list_box is to use the push_back_range method of the list_box::object_collection class (through the items property of the list_box). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the list_box::object_collection class, you can use the begin_update method to prevent the control from repainting the list_box each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the list_box to repaint. This way of adding items can prevent flickered drawing of the list_box when a large number of items are being added to the list.
       void end_update();
 
+      /// @brief Returns a value indicating whether the specified item is checked.
+      /// @param index The index of the item.
+      /// @return true if the item is checked; otherwise, false.
+      /// @remarks get_item_checked returns true if the value of CheckState is checked or indeterminate for the item. To determine the specific state the item is in, use the get_item_check_state method.
       bool get_item_checked(size_t index) const;
       
+      /// @brief Returns a value indicating the check state of the current item.
+      /// @param index The index of the item.
+      /// @return One of the check_state values.
+      /// @remarks The get_item_check_state method provides the ability to get the check_state value of an item, given the index. If you never set the check state of an item to indeterminate, then use the getItem_checked method.
       forms::check_state get_item_check_state(size_t index) const;
 
+      /// @brief Returns the text value of the current item.
+      /// @param index The index of the item.
+      /// @return A string that represent the text value of tthe current item.
       const std::string& get_item_text(size_t index) const;
 
+      /// @brief Sets check_state for the item at the specified index to checked.
+      /// @param index The index of the item to set the check state for.
+      /// @param checked true to set the item as checked; otherwise, false.
+      /// @remarks When a value of true is passed, this method sets the check_state value to checked. A value of false sets check_state to unchecked.
       void set_item_checked(size_t index, bool checked);
 
+      /// @brief Sets the check state of the item at the specified index.
+      /// @param index The index of the item to set the check state for.
+      /// @param check_state One of the check_state values.
+      /// @remarks The set_item_check_state method raises the item_check event.
+      /// @remarks Items whose check_state is set to indeterminate appear with a check mark in the check box, but the box is grayed to indicate the indeterminate status of the checked item.
       void set_item_check_state(size_t index, forms::check_state check_state);
 
+      /// @brief Sets the text value of the item at the specified index.
+      /// @param index The index of the item to set the check state for.
+      /// @param text A string that represent the text value.
       void set_item_text(size_t index, const std::string& text);
       
+      /// @brief Occurs when the checked state of an item changes.
       event<checked_list_box, item_check_event_handler<control&>> item_check;
 
     protected:
@@ -170,6 +217,8 @@ namespace xtd {
 
       void on_handle_created(const event_args& e) override;
       
+      /// @brief Raises the ItemCheck event.
+      /// @param e An item_check_event_args that contains the event data.
       virtual void on_item_check(item_check_event_args& e) {item_check(*this, e);}
       
       void on_selected_value_changed(const event_args& e) override;
@@ -184,8 +233,10 @@ namespace xtd {
       
       void wm_mouse_up(message& message) override;
       
+      /// @cond
       object_collection items_;
       item selected_item_;
+      /// @endcond
     };
   }
 }
