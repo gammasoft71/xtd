@@ -225,3 +225,19 @@
 /// @image html choice_g.png
 /// <br>
 /// @image html choice_gd.png
+///
+/// @example collapsible_panel.cpp
+/// The following code example demonstrate the use of collapsible_panel container.
+/// @par Windows
+/// @image html collapsible_panel_w.png
+/// <br>
+/// @image html collapsible_panel_wd.png
+/// @par macOS
+/// @image html collapsible_panel_m.png
+/// <br>
+/// @image html collapsible_panel_md.png
+/// @par Gnome
+/// @image html collapsible_panel_g.png
+/// <br>
+/// @image html collapsible_panel_gd.png
+
