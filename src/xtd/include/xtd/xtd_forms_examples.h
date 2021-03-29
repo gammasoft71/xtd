@@ -256,6 +256,36 @@
 /// <br>
 /// @image html collapsible_panel_gd.png
 ///
+/// @example color_box.cpp
+/// The following code example demonstrate the use of color_box dialog.
+/// @par Windows
+/// @image html color_box_w.png
+/// <br>
+/// @image html color_box_wd.png
+/// @par macOS
+/// @image html color_box_m.png
+/// <br>
+/// @image html color_box_md.png
+/// @par Gnome
+/// @image html color_box_g.png
+/// <br>
+/// @image html color_box_gd.png
+///
+/// @example color_dialog.cpp
+/// The following code example demonstrate the use of color_dialog dialog.
+/// @par Windows
+/// @image html color_dialog_w.png
+/// <br>
+/// @image html color_dialog_wd.png
+/// @par macOS
+/// @image html color_dialog_m.png
+/// <br>
+/// @image html color_dialog_md.png
+/// @par Gnome
+/// @image html color_dialog_g.png
+/// <br>
+/// @image html color_dialog_gd.png
+///
 /// @example color_dialog.cpp
 /// The following code example demonstrate the use of color_dialog dialog.
 /// @par Windows

@@ -8,6 +8,7 @@ add_projects(
   about_dialog
   busy_box
   busy_dialog
+  color_box
   color_dialog
   folder_browser_dialog
   font_dialog

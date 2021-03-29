@@ -25,7 +25,7 @@ namespace xtd {
     /// <br>
     /// @image html color_dialog_wd.png
     /// @par macOS
-    /// @image html color_dialog_md.png
+    /// @image html color_dialog_m.png
     /// <br>
     /// @image html color_dialog_md.png
     /// @par Gnome
@@ -49,7 +49,7 @@ namespace xtd {
       /// @remarks You can change the value for any of these properties through a separate call to the property.
       color_dialog() = default;
       
-      /// @brief Gets a value indicating whether the dialog box  shows alpha values and an opacity selector (slider).
+      /// @brief Gets a value indicating whether the dialog box shows alpha values and an opacity selector (slider).
       /// @return true if the dialog box  shows alpha values and an opacity selector (slider); otherwise, false. The default is true.
       bool alpha_color() const {return get_option(CC_ALPHACOLOR);}
       /// @brief Sets a value indicating whether the user can use the dialog box to define custom colors.
