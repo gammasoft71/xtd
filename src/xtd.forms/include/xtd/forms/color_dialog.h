@@ -72,7 +72,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether the dialog box displays all available colors in the set of basic colors.
       /// @return true if the dialog box displays all available colors in the set of basic colors; otherwise, false. The default value is false.
       bool any_color() const {return get_option(CC_ANYCOLOR);}
-      /// @breif Sets a value indicating whether the dialog box displays all available colors in the set of basic colors.
+      /// @brief Sets a value indicating whether the dialog box displays all available colors in the set of basic colors.
       /// @param any_color true if the dialog box displays all available colors in the set of basic colors; otherwise, false. The default value is false.
       color_dialog& any_color(bool any_color) {
         set_option(CC_ANYCOLOR, any_color);
@@ -119,7 +119,7 @@ namespace xtd {
         return *this;
       }
       
-      /// @return Gets values to initialize the color_dialog.
+      /// @brief Gets values to initialize the color_dialog.
       /// @return A bitwise combination of internal values that initializes the color_dialog.
       /// @return The options property corresponds to the flags used to initialize a color dialog box using Win32. Use the properties of the color_dialog class to get and set the options.
       size_t options() const {return options_;}
