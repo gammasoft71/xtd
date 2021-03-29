@@ -16,7 +16,7 @@ namespace xtd {
     /// @ingroup xtd_forms dialogs
     /// @par Examples
     /// The following code example demonstrate the use of color_box dialog.
-    /// @include color_dialog.cpp
+    /// @include color_box.cpp
     /// @par Windows
     /// @image html color_box_w.png
     /// <br>
