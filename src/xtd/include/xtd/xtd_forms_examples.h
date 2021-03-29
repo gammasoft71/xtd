@@ -1,6 +1,21 @@
 /// @file
 /// @brief Contains xtd.forms examples.
 ///
+/// @example about_box.cpp
+/// The following code example demonstrate the use of about_box dialog.
+/// @par Windows
+/// @image html about_box_w.png
+/// <br>
+/// @image html about_box_wd.png
+/// @par macOS
+/// @image html about_box_m.png
+/// <br>
+/// @image html about_box_md.png
+/// @par Gnome
+/// @image html about_box_g.png
+/// <br>
+/// @image html about_box_gd.png
+///
 /// @example about_dialog.cpp
 /// The following code example demonstrate the use of xtd::forms::about_dialog dialog.
 /// @par Windows
@@ -240,6 +255,21 @@
 /// @image html collapsible_panel_g.png
 /// <br>
 /// @image html collapsible_panel_gd.png
+///
+/// @example color_dialog.cpp
+/// The following code example demonstrate the use of color_dialog dialog.
+/// @par Windows
+/// @image html color_dialog_w.png
+/// <br>
+/// @image html color_dialog_wd.png
+/// @par macOS
+/// @image html color_dialog_md.png
+/// <br>
+/// @image html color_dialog_md.png
+/// @par Gnome
+/// @image html color_dialog_g.png
+/// <br>
+/// @image html color_dialog_gd.png
 ///
 /// @example colored_tab_pages.cpp
 /// The following code example demonstrate the use of tab_control and colored tab_page containers.

@@ -136,7 +136,7 @@
 
 ## [Dialogs](dialogs/README.md)
 
-* **about_box** represents a dialog box that displays about box.
+* [about_box](dialogs/about_box/README.md) represents a dialog box that displays about box.
 * [about_dialog](dialogs/about_dialog/README.md) represents a dialog box that displays about box.
 * [busy_box](dialogs/busy_box/README.md) represents a busy box that displays busy box.
 * [busy_dialog](dialogs/busy_dialog/README.md) represents a busy box that displays busy box.

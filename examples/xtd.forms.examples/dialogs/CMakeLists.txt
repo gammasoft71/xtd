@@ -4,6 +4,7 @@ project(dialogs)
 find_package(xtd REQUIRED)
 
 add_projects(
+  about_box
   about_dialog
   busy_box
   busy_dialog
