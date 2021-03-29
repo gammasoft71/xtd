@@ -301,6 +301,21 @@
 /// <br>
 /// @image html color_dialog_gd.png
 ///
+/// @example color_picker.cpp
+/// The following code example demonstrate the use of color_picker picker.
+/// @par Windows
+/// @image html color_picker_w.png
+/// <br>
+/// @image html color_picker_wd.png
+/// @par macOS
+/// @image html color_picker_m.png
+/// <br>
+/// @image html color_picker_md.png
+/// @par Gnome
+/// @image html color_picker_g.png
+/// <br>
+/// @image html color_picker_gd.png
+///
 /// @example colored_tab_pages.cpp
 /// The following code example demonstrate the use of tab_control and colored tab_page containers.
 /// @par Windows
@@ -345,7 +360,38 @@
 /// @image html group_box_g.png
 /// <br>
 /// @image html group_box_gd.png
-/// @zxample split_container.cpp
+///
+/// @example group_box_and_check_box.cpp
+/// The following code example demonstrate the use of group_box container and check_box controls.
+/// @par Windows
+/// @image html group_box_and_check_box_w.png
+/// <br>
+/// @image html group_box_and_check_box_wd.png
+/// @par macOS
+/// @image html group_box_and_check_box_m.png
+/// <br>
+/// @image html group_box_and_check_box_md.png
+/// @par Gnome
+/// @image html group_box_and_check_box_g.png
+/// <br>
+/// @image html group_box_and_check_box_gd.png
+///
+/// @example group_box_and_radio_button.cpp
+/// The following code example demonstrate the use of group_box container and radio_button controls.
+/// @par Windows
+/// @image html group_box_and_radio_button_w.png
+/// <br>
+/// @image html group_box_and_radio_button_wd.png
+/// @par macOS
+/// @image html group_box_and_radio_button_m.png
+/// <br>
+/// @image html group_box_and_radio_button_md.png
+/// @par Gnome
+/// @image html group_box_and_radio_button_g.png
+/// <br>
+/// @image html group_box_and_radio_button_gd.png
+///
+/// @example split_container.cpp
 /// The following code example demonstrate the use of split_container container.
 /// @par Windows
 /// @image html split_container_w.png

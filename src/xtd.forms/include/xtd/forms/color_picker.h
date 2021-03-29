@@ -31,9 +31,16 @@ namespace xtd {
     /// @image html color_picker_gd.png
     class forms_export_ color_picker : public control {
     public:
+      /// @brief Initializes a new instance of the color_picker class.
       color_picker();
 
+      /// @brief Gets the color selected by the user.
+      /// @return The color selected by the user. If a color is not selected, the default value is black.
+      /// @remarks The color selected by the user in the color picker at run time, as defined in color structure.
       const drawing::color& color() const {return color_;}
+      /// @brief Sets the color selected by the user.
+      /// @param color The color selected by the user. If a color is not selected.
+      /// @remarks The color selected by the user in the color picker at run time, as defined in color structure.
       void color(const drawing::color& color);
       
       drawing::size default_size() const override {return {100, 25};}
@@ -52,18 +59,18 @@ namespace xtd {
         return *this;
       }
 
+      /// @brief Occurs when the value of the color property changes.
       event<color_picker, event_handler<control&>> color_changed;
       
     protected:
       forms::create_params create_params() const override;
       
+      /// @brief Raises the colore_changed event.
+      /// @param e An event_args that contains the event data.
       void on_color_changed(const event_args& e);
       
       void on_handle_created(const event_args& e) override;
       
-      /// @brief Processes Windows messages.
-      /// @param m The Windows Message to process.
-      /// @remarks All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method.
       void wnd_proc(message& message) override;
       
     private:
