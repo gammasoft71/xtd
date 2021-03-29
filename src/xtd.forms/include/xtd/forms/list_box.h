@@ -71,6 +71,8 @@ namespace xtd {
       }
       
       using list_control::selected_index;
+      /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
+      /// @param selected_index A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
       list_control& selected_index(size_t selected_index) override;
       
       /// @brief Gets a collection that contains the zero-based indexes of all currently selected items in the list_box.
@@ -115,6 +117,8 @@ namespace xtd {
       virtual list_box& sorted(bool sorted);
       
       using list_control::text;
+      /// @brief Sets the text associated with this control.
+      /// @param text The text associated with this control.
       control& text(const std::string& text) override {return *this;}
 
       /// @brief Maintains performance while items are added to the list_box one at a time by preventing the control from drawing until the EndUpdate() method is called.
