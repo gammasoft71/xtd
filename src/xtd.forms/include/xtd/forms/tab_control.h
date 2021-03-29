@@ -14,6 +14,25 @@ namespace xtd {
     class tab_page;
     /// @endcond
   
+    /// @brief Manages a related set of tab pages.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms containers
+    /// @par Examples
+    /// The following code example demonstrate the use of tab_control container.
+    /// @include tab_control.cpp
+    /// @par Windows
+    /// @image html tab_control_w.png
+    /// <br>
+    /// @image html tab_control_wd.png
+    /// @par macOS
+    /// @image html tab_control_m.png
+    /// <br>
+    /// @image html tab_control_md.png
+    /// @par Gnome
+    /// @image html tab_control_g.png
+    /// <br>
+    /// @image html tab_control_gd.png
     class forms_export_ tab_control : public control {
     public:
       tab_control();

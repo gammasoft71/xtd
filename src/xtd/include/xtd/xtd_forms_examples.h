@@ -240,7 +240,22 @@
 /// @image html collapsible_panel_g.png
 /// <br>
 /// @image html collapsible_panel_gd.png
-/// ///
+///
+/// @example colored_tab_pages.cpp
+/// The following code example demonstrate the use of tab_control and colored tab_page containers.
+/// @par Windows
+/// @image html colored_tab_pages_w.png
+/// <br>
+/// @image html colored_tab_pages_wd.png
+/// @par macOS
+/// @image html colored_tab_pages_m.png
+/// <br>
+/// @image html colored_tab_pages_md.png
+/// @par Gnome
+/// @image html colored_tab_pages_g.png
+/// <br>
+/// @image html colored_tab_pages_gd.png
+///
 /// @example form.cpp
 /// The following code example demonstrate the use of form control.
 /// @par Windows
@@ -270,3 +285,33 @@
 /// @image html group_box_g.png
 /// <br>
 /// @image html group_box_gd.png
+/// @zxample split_container.cpp
+/// The following code example demonstrate the use of split_container container.
+/// @par Windows
+/// @image html split_container_w.png
+/// <br>
+/// @image html split_container_wd.png
+/// @par macOS
+/// @image html split_container_m.png
+/// <br>
+/// @image html split_container_md.png
+/// @par Gnome
+/// @image html split_container_g.png
+/// <br>
+/// @image html split_container_gd.png
+///
+/// @example tab_control.cpp
+/// The following code example demonstrate the use of tab_control container.
+/// @par Windows
+/// @image html tab_control_w.png
+/// <br>
+/// @image html tab_control_wd.png
+/// @par macOS
+/// @image html tab_control_m.png
+/// <br>
+/// @image html tab_control_md.png
+/// @par Gnome
+/// @image html tab_control_g.png
+/// <br>
+/// @image html tab_control_gd.png
+///
