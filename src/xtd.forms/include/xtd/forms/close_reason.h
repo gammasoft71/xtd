@@ -12,7 +12,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    /// @remarks The FormClosing and FormClosed events are raised when a Form is closed, either through user action or programmatically. Handlers for these events receive parameters of type FormClosingEventArgs and FormClosedEventArgs, respectively. Both of these event argument classes use the CloseReason enumeration.
+    /// @remarks The form_closing and form_closed events are raised when a form is closed, either through user action or programmatically. Handlers for these events receive parameters of type form_closing_event_args and form_closed_event_args, respectively. Both of these event argument classes use the close_reason enumeration.
     enum class close_reason {
       /// @brief The cause of the closure was not defined or could not be determined.
       none = 0,
