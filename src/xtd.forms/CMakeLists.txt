@@ -9,6 +9,7 @@ add_references(${XTD_FORMS_NATIVE_LIBRARY})
 add_sources(
   include/xtd/xtd.forms.h
   include/xtd/xtd.forms
+  include/xtd/forms/about_box.h
   include/xtd/forms/about_dialog.h
   include/xtd/forms/anchor_styles.h
   include/xtd/forms/appearance.h

@@ -2,6 +2,7 @@
 
 [This folder](..) contains xtd.forms dialog examples.
 
+* [about_box](about_box/README.md) represents a dialog box that displays about dialog.
 * [about_dialog](about_dialog/README.md) represents a dialog box that displays about dialog.
 * [about_dialog_system](about_dialog_system/README.md) represents a dialog box that displays system about dialog.
 * [busy_box](busy_box/README.md) represents a dialog box that displays busy dialog.

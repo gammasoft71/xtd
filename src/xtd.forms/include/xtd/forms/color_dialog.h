@@ -20,6 +20,18 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of color_dialog dialog.
     /// @include color_dialog.cpp
+    /// @par Windows
+    /// @image html color_dialog_w.png
+    /// <br>
+    /// @image html color_dialog_wd.png
+    /// @par macOS
+    /// @image html color_dialog_md.png
+    /// <br>
+    /// @image html color_dialog_md.png
+    /// @par Gnome
+    /// @image html color_dialog_g.png
+    /// <br>
+    /// @image html color_dialog_gd.png
     class forms_export_ color_dialog : public common_dialog {
     public:
       /// @brief Initializes a new instance of the color_dialog class.
