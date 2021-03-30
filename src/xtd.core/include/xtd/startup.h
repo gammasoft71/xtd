@@ -4,6 +4,7 @@
 #pragma once
 
 #include "environment.h"
+#include "static.h"
 #include "collections/specialized/string_vector.h"
 #if defined(__CMAKE_TARGET_TYPE__) && __CMAKE_TARGET_TYPE__ == 2 // 2 == GUI_APPLICATION
 #include <xtd/system_exception.h>
@@ -16,13 +17,13 @@
 
 /// @cond
 #if defined(__CMAKE_TARGET_TYPE__) && __CMAKE_TARGET_TYPE__ == 2 // 2 == GUI_APPLICATION
-#define __startup_catch_exception__(e) xtd::forms::exception_dialog dialog; dialog.exception(e); dialog.show_dialog()
-#define __startup_catch_system_exception__(e) xtd::forms::exception_dialog dialog; dialog.exception(e); dialog.show_dialog()
-#define __startup_catch_unknown_exception__() xtd::forms::exception_dialog dialog; dialog.show_dialog()
+inline void __startup_catch_exception__(const std::exception& e) {xtd::forms::exception_dialog dialog; dialog.exception(e); dialog.show_dialog();}
+inline void __startup_catch_exception__(const xtd::system_exception& e) {xtd::forms::exception_dialog dialog; dialog.exception(e); dialog.show_dialog();}
+inline void __startup_catch_exception__() {xtd::forms::exception_dialog dialog; dialog.show_dialog();}
 #else
-#define __startup_catch_exception__(e) xtd::diagnostics::debug::write_line(xtd::strings::format("exception: {}", e.what()))
-#define __startup_catch_system_exception__(e) xtd::diagnostics::debug::write_line(e)
-#define __startup_catch_unknown_exception__() xtd::diagnostics::debug::write_line("Unknown exception occured")
+inline void __startup_catch_exception__(const std::exception& e) {xtd::diagnostics::debug::write_line(xtd::strings::format("exception: {}", e.what()));}
+inline void __startup_catch_exception__(const xtd::system_exception& e) {xtd::diagnostics::debug::write_line(e);}
+inline void __startup_catch_exception__() {xtd::diagnostics::debug::write_line("Unknown exception occured");}
 #endif
 #undef startup_
 /// @endcond
@@ -48,8 +49,7 @@ namespace xtd {
   /// @include main4.cpp
   #define startup_(main_class) \
     int main(int argc, char* argv[]) {\
-      struct startup {\
-        startup() = delete; \
+      struct startup final static_ {\
         static int run(void (*main_function)(), int, char*[]) {main_function(); return xtd::environment::exit_code();}\
         static int run(int (*main_function)(), int, char*[]) {return main_function();}\
         static int run(void (*main_function)(int argc, char* argv[]), int argc, char* argv[]) {main_function(argc, argv); return xtd::environment::exit_code();}\
@@ -63,11 +63,11 @@ namespace xtd {
       try {\
         return startup::run(main_class::main, argc, argv);\
       } catch(const xtd::system_exception& e) {\
-        __startup_catch_system_exception__(e);\
+        __startup_catch_exception__(e);\
       } catch(const std::exception& e) {\
         __startup_catch_exception__(e);\
       } catch(...) {\
-        __startup_catch_unknown_exception__();\
+        __startup_catch_exception__();\
       }\
     }\
     int __startup_force_to_end_with_semicolon__ = 0
