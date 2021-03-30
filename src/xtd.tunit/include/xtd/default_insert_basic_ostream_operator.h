@@ -206,9 +206,8 @@ struct __tunit_value_printer<char_t, char_traits_t, const char8_t*> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, char8_t value) {
     if (value <= 0xFF)
       os << static_cast<char>(value);
-    else {
+    else
       os << "\\x" << std::hex << static_cast<int>(value);
-    }
   }
 };
 
@@ -229,11 +228,7 @@ struct __tunit_value_printer<char_t, char_traits_t, char8_t> {
   }
   
   static void print(std::basic_ostream<char_t, char_traits_t>& os, char8_t value) {
-    if (value <= 0xFF)
-      os << static_cast<char>(value);
-    else {
-      os << "\\x" << std::hex << static_cast<int>(value);
-    }
+    os << static_cast<char>(value);
   }
 };
 
@@ -256,9 +251,8 @@ struct __tunit_value_printer<char_t, char_traits_t, const char16_t*> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, char16_t value) {
     if (value <= 0xFF)
       os << static_cast<char>(value);
-    else {
+    else
       os << "\\x" << std::hex << static_cast<int>(value);
-    }
   }
 };
 
@@ -281,9 +275,8 @@ struct __tunit_value_printer<char_t, char_traits_t, char16_t> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, char16_t value) {
     if (value <= 0xFF)
       os << static_cast<char>(value);
-    else {
+    else
       os << "\\x" << std::hex << static_cast<int>(value);
-    }
   }
 };
 
@@ -306,9 +299,8 @@ struct __tunit_value_printer<char_t, char_traits_t, const char32_t*> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, char32_t value) {
     if (value <= 0xFF)
       os << static_cast<char>(value);
-    else {
+    else
       os << "\\x" << std::hex << static_cast<int>(value);
-    }
   }
 };
 
@@ -331,9 +323,8 @@ struct __tunit_value_printer<char_t, char_traits_t, char32_t> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, char32_t value) {
     if (value <= 0xFF)
       os << static_cast<char>(value);
-    else {
+    else
       os << "\\x" << std::hex << static_cast<int>(value);
-    }
   }
 };
 
@@ -356,9 +347,8 @@ struct __tunit_value_printer<char_t, char_traits_t, const wchar_t*> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, wchar_t value) {
     if (value <= 0xFF)
       os << static_cast<char>(value);
-    else {
+    else
       os << "\\x" << std::hex << static_cast<int>(value);
-    }
   }
 };
 
@@ -381,9 +371,8 @@ struct __tunit_value_printer<char_t, char_traits_t, wchar_t> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, wchar_t value) {
     if (value <= 0xFF)
       os << static_cast<char>(value);
-    else {
+    else
       os << "\\x" << std::hex << static_cast<int>(value);
-    }
   }
 };
 
