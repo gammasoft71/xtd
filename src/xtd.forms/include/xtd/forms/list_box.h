@@ -112,6 +112,7 @@ namespace xtd {
       virtual bool sorted() const {return sorted_;}
       /// @brief Sets a value indicating whether the items in the list_box are sorted alphabetically.
       /// @param sorted true if items in the control are sorted; otherwise, false. The default is false.
+      /// @return This instance of list_box.
       /// @remarks Use the sorted property to automatically sort strings alphabetically in a list_box. As items are added to a sorted list_box, the items are moved to the appropriate location in the sorted list. When adding items to a list_box, it is more efficient to sort the items first and then add new items.
       virtual list_box& sorted(bool sorted);
       

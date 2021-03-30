@@ -331,6 +331,36 @@
 /// <br>
 /// @image html colored_tab_pages_gd.png
 ///
+/// @example combo_box.cpp
+/// The following code example demonstrate the use of combo box control.
+/// @par Windows
+/// @image html combo_box_w.png
+/// <br>
+/// @image html combo_box_wd.png
+/// @par macOS
+/// @image html combo_box_m.png
+/// <br>
+/// @image html combo_box_md.png
+/// @par Gnome
+/// @image html combo_box_g.png
+/// <br>
+/// @image html combo_box_gd.png
+///
+/// @example command_link_button.cpp
+/// The following code example demonstrate the use of command link button control.
+/// @par Windows
+/// @image html command_link_button_w.png
+/// <br>
+/// @image html command_link_button_wd.png
+/// @par macOS
+/// @image html command_link_button_m.png
+/// <br>
+/// @image html command_link_button_md.png
+/// @par Gnome
+/// @image html command_link_button_g.png
+/// <br>
+/// @image html command_link_button_gd.png
+///
 /// @example form.cpp
 /// The following code example demonstrate the use of form control.
 /// @par Windows
