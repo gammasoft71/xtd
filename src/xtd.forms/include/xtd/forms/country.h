@@ -15,23 +15,43 @@ namespace xtd {
     class countries;
     /// @endcond
 
+    /// @brief Represent a coountry with name, codes nd flag.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms components
     class forms_export_ country : component {
     public:
-      country() = default;
       /// @cond
+      country() = default;
       bool operator==(const country& value) const {return name_ == value.name_ && alpha_2_code_ == value.alpha_2_code_ && alpha_3_code_ == value.alpha_3_code_ && numeric_code_ == value.numeric_code_;}
       bool operator!=(const country& value) const {return !operator==(value);}
       /// @endcond
       
+      /// @brief Get an empty country.
+      /// @return An empty country
       static const country empty();
-      
-      virtual const std::string name() const {return name_;}
+
+      /// @brief Gets the country 2 alpha codde.
+      /// @return A string that represent the 2 alpha code.
       virtual const std::string alpha_2_code() const {return alpha_2_code_;}
+
+      /// @brief Gets the country 3 alpha codde.
+      /// @return A string that represent the 3 alpha code.
       virtual const std::string alpha_3_code() const {return alpha_3_code_;}
-      virtual int numeric_code() const {return numeric_code_;}
+
       virtual const std::string emoticon() const {return emoticon_;}
+      
       virtual const xtd::drawing::image flag() const;
+      
       virtual const xtd::drawing::image flag_squared() const;
+
+      /// @brief Gets the country name.
+      /// @return A string that represent the country.
+      virtual const std::string name() const {return name_;}
+
+      /// @brief Gets the country numeric code.
+      /// @return A signed-integer that represent the numerci codde.
+      virtual int numeric_code() const {return numeric_code_;}
 
       static country from_name(const std::string& name);
       static country from_alpha_2_code(const std::string& alpha_2_code);
