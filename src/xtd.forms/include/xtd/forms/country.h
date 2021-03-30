@@ -15,7 +15,7 @@ namespace xtd {
     class countries;
     /// @endcond
 
-    /// @brief Represent a coountry with name, codes nd flag.
+    /// @brief Represent a country with name, alpha codes, numeric code, emoticon and flag.
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms components

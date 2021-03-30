@@ -12,7 +12,7 @@ namespace xtd {
     /// @brief Provides a collection of Cursor objects for use by a Windows Forms application.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms
+    /// @ingroup xtd_forms components
     class forms_export_ cursors final static_ {
     public:
       /// @brief Gets the cursor that appears when an application starts.
