@@ -7,11 +7,15 @@ using namespace xtd::forms;
 
 class main_form : public form {
 public:
+  static void main() {
+    application::run(main_form());
+  }
+  
   main_form() {
     text("application and exception example");
     
     // uncomment to throw error and catch it in main entry point
-    // throw overflow_error("Creation object error");
+    throw overflow_error("Creation object error");
     
     generate_handled_exception_button.auto_size(true);
     generate_handled_exception_button.location({10, 10});
@@ -56,22 +60,4 @@ private:
   button generate_unknown_exception_button;
 };
 
-int main() {
-  try {
-    application::run(main_form());
-  } catch(const system_exception& e) {
-    debug::write_line(e);
-    exception_dialog dialog;
-    dialog.exception(e);
-    dialog.show_dialog();
-  } catch(const exception& e) {
-    debug::write_line(e);
-    exception_dialog dialog;
-    dialog.exception(e);
-    dialog.show_dialog();
-  } catch(...) {
-    debug::write_line("Unknown exception occured");
-    exception_dialog dialog;
-    dialog.show_dialog();
-  }
-}
+startup_(main_form);

@@ -195,6 +195,7 @@
 #include "xtd/forms/splitter.h"
 #include "xtd/forms/splitter_panel.h"
 #include "xtd/forms/splitter_style.h"
+#include "xtd/forms/startup.h"
 #include "xtd/forms/switch_button.h"
 #include "xtd/forms/system_information.h"
 #include "xtd/forms/tab_control.h"
