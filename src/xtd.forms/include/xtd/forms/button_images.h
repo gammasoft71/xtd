@@ -13,7 +13,7 @@ namespace xtd {
     /// @brief Provides a button images factories for use by a button control.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms
+    /// @ingroup xtd_forms components
     class button_images final static_ {
     public:
       /// @brief Add image object.
