@@ -135,6 +135,7 @@ namespace xtd {
       using list_box::selected_index;
       /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
       /// @param selected_index A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
+      /// @return This instance of list_control.
       list_control& selected_index(size_t selected_index) override;
       
       std::vector<size_t> selected_indices() const override;
