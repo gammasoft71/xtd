@@ -253,6 +253,8 @@ namespace xtd {
 #endif
       }
 
+      /// @brief Writes the message to the listener you create when you implement the trace_listener class.
+      /// @param message A string you want to write.
       virtual void write(const std::string& message) = 0;
       
       /// @brief Writes the value of the object's ToString method to the listener you create when you implement the TraceListener class.
@@ -274,8 +276,11 @@ namespace xtd {
 #endif
       }
 
+      /// @brief Writes the message to the listener you create when you implement the trace_listener class followed by a line terminator.followed by a line terminator.
+      /// @param message A string you want to write.
       virtual void write_line(const std::string& message) = 0;
       
+      /// @cond
       template<typename object>
       trace_listener& operator<<(object&& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
@@ -283,11 +288,18 @@ namespace xtd {
 #endif
         return *this;
       }
+      /// @endcond
 
     protected:
+      /// @brief Gets a value indicating whether to indent the output.
+      /// @return true if the output should be indented; otherwise, false.
       bool need_indent() const {return need_indent_;}
+      /// @brief Sets a value indicating whether to indent the output.
+      /// @param need_indent true if the output should be indented; otherwise, false.
       void need_indent(bool need_indent) {need_indent_ = need_indent;}
       
+      /// @brief Sets a value indicating whether the trace listener is thread safe.
+      /// @param thread_safe true if the trace listener is thread safe; otherwise, false. The default is false.
       void thread_safe(bool thread_safe) {is_thread_safe_ = thread_safe;}
 
       /// @brief Writes the indent to the listener you create when you implement this class, and resets the NeedIndent property to false.
