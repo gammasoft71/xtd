@@ -13,16 +13,19 @@ public:
     button1.auto_size(true);
     button1.text("Exception...");
     button1.click += [&] {
-      exception_dialog dialog;
-      dialog.exception(exception);
-      if (dialog.show_dialog() == dialog_result::cancel)
-        application::exit();
+      try{
+        throw invalid_operation_exception("Throw invalid_operation_exception to show an exception dialog.", caller_info_);
+      } catch(const xtd::system_exception& e) {
+        exception_dialog dialog;
+        dialog.exception(e);
+        if (dialog.show_dialog() == dialog_result::cancel)
+          application::exit();
+      }
     };
   }
   
 private:
   button button1;
-  invalid_operation_exception exception {"Dialog exception example"};
 };
 
 int main() {
