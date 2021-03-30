@@ -43,27 +43,21 @@ namespace xtd {
       /// @param value One of the AutoSizeMode values. The default value is growonly.
       virtual command_link_button& auto_size_mode(forms::auto_size_mode value);
 
-      /// @brief Gets the default size of the control.
-      /// @return The default size.
       drawing::size default_size() const override {return {200, 60};}
       
-      /// @brief Measure this control.
-      /// @return The drawing::size size of this control.
-      /// @remarks This method is used when auto_size is true.
       drawing::size measure_control() const override;
       
     protected:
-      /// @brief Gets a create_params on the base class when creating a window.
-      /// @return A create_params object on the base class when creating a window.
-      /// @remarks Inheriting classes can override this property to add extra functionality, but must first call the create_params constructor on the base class to verify that the control continues to work correctly.
       forms::create_params create_params() const override;
       
       void on_handle_created(const event_args& e) override;
       
+      /*
       /// @brief Processes Windows messages.
       /// @param m The Windows Message to process.
       /// @remarks All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method.
-      //void wnd_proc(message& message) override;
+      void wnd_proc(message& message) override;
+       */
 
       /// @cond
       forms::dialog_result dialog_result_ = forms::dialog_result::none;
