@@ -84,6 +84,9 @@ namespace xtd {
       /// @remarks If the specified xtd::drawing::color is one of the xtd::drawing::system_color, the color is converted to a xtd::drawing::system_color.control_light_lightk color; otherwise, the color's luminosity value is decreased.
       static xtd::drawing::color light_light(const xtd::drawing::color& base_color) {return light(base_color, 1.0);}
       
+      /// @brief Convert xtd::forms::text_format_flags to xtd::drawing::string_format.
+      /// @param flags a text_format_flags to convert.
+      /// @return A string_format converted.
       static xtd::drawing::string_format string_format(xtd::forms::text_format_flags flags) {
         xtd::drawing::string_format string_format;
         string_format.line_alignment(xtd::drawing::string_alignment::center);
@@ -103,7 +106,6 @@ namespace xtd {
         
         return string_format;
       }
-
     };
   }
 }
