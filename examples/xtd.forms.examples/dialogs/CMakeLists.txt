@@ -10,6 +10,7 @@ add_projects(
   busy_dialog
   color_box
   color_dialog
+  exception_dialog
   folder_browser_dialog
   font_dialog
   input_box
