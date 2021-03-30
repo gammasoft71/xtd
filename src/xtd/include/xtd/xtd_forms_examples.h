@@ -391,6 +391,21 @@
 /// <br>
 /// @image html date_time_picker_gd.png
 ///
+/// @example exception_dialog.cpp
+/// The following code example demonstrate the use of exception_dialog dialog.
+/// @par Windows
+/// @image html exception_dialog_w.png
+/// <br>
+/// @image html exception_dialog_wd.png
+/// @par macOS
+/// @image html exception_dialog_m.png
+/// <br>
+/// @image html exception_dialog_md.png
+/// @par Gnome
+/// @image html exception_dialog_g.png
+/// <br>
+/// @image html exception_dialog_gd.png
+///
 /// @example form.cpp
 /// The following code example demonstrate the use of form control.
 /// @par Windows

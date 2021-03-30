@@ -2,6 +2,7 @@
 /// @brief Contains xtd::forms::exception_dialog dialog.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+#include <functional>
 #include <string>
 #include <xtd/delegate.h>
 #include <xtd/version.h>
@@ -24,28 +25,41 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of exception_dialog dialog.
     /// @include exception_dialog.cpp
+    /// @par Windows
+    /// @image html exception_dialog_w.png
+    /// <br>
+    /// @image html exception_dialog_wd.png
+    /// @par macOS
+    /// @image html exception_dialog_m.png
+    /// <br>
+    /// @image html exception_dialog_md.png
+    /// @par Gnome
+    /// @image html exception_dialog_g.png
+    /// <br>
+    /// @image html exception_dialog_gd.png
     class forms_export_ exception_dialog final : public component {
     public:
-      using creators_collection = xtd::forms::layout::arranged_element_collection<std::string>;
-      using designers_collection = xtd::forms::layout::arranged_element_collection<std::string>;
-      using doc_writers_collection = xtd::forms::layout::arranged_element_collection<std::string>;
-      using translators_collection = xtd::forms::layout::arranged_element_collection<std::string>;
-
       /// @brief Initializes a new instance of the exception_dialog class.
       exception_dialog() = default;
       
+      /// @brief Gets the dialog style.
+      /// @return One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
       xtd::forms::dialog_style dialog_style() const {return dialog_style_;}
+      /// @brief Sets the dialog style.
+      /// @param dialog_style One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
+      /// @return Current exception_dialog instance.
       exception_dialog& dialog_style(xtd::forms::dialog_style dialog_style) {
         dialog_style_ = dialog_style;
         return *this;
       }
       
-      /// @brief Gets the product license.
-      /// @return The product license.
-      std::optional<std::exception> exception() const {return exception_ ? std::optional<std::exception>(*exception_) : std::optional<std::exception>();}
-      /// @brief Sets the product license.
-      /// @param name The product license.
+      /// @brief Gets exception referecne.
+      /// @return A exception referecne.
+      std::reference_wrapper<const std::exception> exception() const {return std::reference_wrapper<const std::exception>(*exception_);}
+      /// @brief Sets exception.
+      /// @param exception The exception.
       /// @return Current exception_dialog instance.
+      /// @warning Contains only a reference on the parameter exception. Do not delete exception before closing dialog.
       exception_dialog& exception(const std::exception& exception) {
         exception_ = &exception;
         return *this;

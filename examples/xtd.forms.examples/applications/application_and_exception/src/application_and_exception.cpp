@@ -10,8 +10,8 @@ public:
   main_form() {
     text("application and exception example");
     
-    // uncomment to throw error
-    //throw overflow_error("Creation object error");
+    // uncomment to throw error and catch it in main entry point
+    // throw overflow_error("Creation object error");
     
     generate_handled_exception_button.auto_size(true);
     generate_handled_exception_button.location({10, 10});
@@ -61,12 +61,17 @@ int main() {
     application::run(main_form());
   } catch(const system_exception& e) {
     debug::write_line(e);
-    message_box::show(e.to_string(), format("Exception {} occured", strings::class_name(e)), message_box_buttons::ok, message_box_icon::error);
+    exception_dialog dialog;
+    dialog.exception(e);
+    dialog.show_dialog();
   } catch(const exception& e) {
     debug::write_line(e);
-    message_box::show(format("Message : {}", e.what()), format("Exception {} occured", strings::class_name(e)), message_box_buttons::ok, message_box_icon::error);
+    exception_dialog dialog;
+    dialog.exception(e);
+    dialog.show_dialog();
   } catch(...) {
     debug::write_line("Unknown exception occured");
-    message_box::show("(Unknown exception)", "Unknown exception occured", message_box_buttons::ok, message_box_icon::error);
+    exception_dialog dialog;
+    dialog.show_dialog();
   }
 }
