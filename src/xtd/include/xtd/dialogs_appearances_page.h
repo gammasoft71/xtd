@@ -4,16 +4,61 @@
 /// @page DialogsAppearancesPage Dialogs appearances
 /// @brief Contains dialogs appearances.
 ///
-/// xtd::forms::button appearance:
+/// @par About dialog appearance
+/// xtd::forms::about_dialog
 ///
-/// | Mode  | Windows                              | macOS                                | Gnome                                |
-/// |-------|--------------------------------------|--------------------------------------|--------------------------------------|
-/// | Light | @image html control_button_w.png     | @image html control_button_m.png     | @image html control_button_g.png     |
-/// | Dark  | @image html control_button_wd.png    | @image html control_button_md.png    | @image html control_button_gd.png    |
+/// | Mode  | Windows                                | macOS                                  | Gnome                                  |
+/// |-------|----------------------------------------|----------------------------------------|----------------------------------------|
+/// | Light | @image html dialog_about_dialog_w.png  | @image html dialog_about_dialog_m.png  | @image html dialog_about_dialog_g.png  |
+/// | Dark  | @image html dialog_about_dialog_wd.png | @image html dialog_about_dialog_md.png | @image html dialog_about_dialog_gd.png |
 ///
-/// xtd::forms::check_box appearance:
+/// @par Busy dialog appearance
+/// xtd::forms::busy_dialog
 ///
-/// | Mode  | Windows                              | macOS                                | Gnome                                |
-/// |-------|--------------------------------------|--------------------------------------|--------------------------------------|
-/// | Light | @image html control_check_box_w.png  | @image html control_check_box_m.png  | @image html control_check_box_g.png  |
-/// | Dark  | @image html control_check_box_wd.png | @image html control_check_box_md.png | @image html control_check_box_gd.png |
+/// | Mode  | Windows                               | macOS                                 | Gnome                                 |
+/// |-------|---------------------------------------|---------------------------------------|---------------------------------------|
+/// | Light | @image html dialog_busy_dialog_w.png  | @image html dialog_busy_dialog_m.png  | @image html dialog_busy_dialog_g.png  |
+/// | Dark  | @image html dialog_busy_dialog_wd.png | @image html dialog_busy_dialog_md.png | @image html dialog_busy_dialog_gd.png |
+///
+/// @par Color folder browser appearance
+/// xtd::forms::folder_browser_dialog
+///
+/// | Mode  | Windows                                | macOS                                  | Gnome                                  |
+/// |-------|----------------------------------------|----------------------------------------|----------------------------------------|
+/// | Light | @image html dialog_color_dialog_w.png  | @image html dialog_color_dialog_m.png  | @image html dialog_color_dialog_g.png  |
+/// | Dark  | @image html dialog_color_dialog_wd.png | @image html dialog_color_dialog_md.png | @image html dialog_color_dialog_gd.png |
+///
+/// @par Exception dialog appearance
+/// xtd::forms::exception_dialog
+///
+/// | Mode  | Windows                                    | macOS                                      | Gnome                                      |
+/// |-------|--------------------------------------------|--------------------------------------------|--------------------------------------------|
+/// | Light | @image html dialog_exception_dialog_w.png  | @image html dialog_exception_dialog_m.png  | @image html dialog_exception_dialog_g.png  |
+/// | Dark  | @image html dialog_exception_dialog_wd.png | @image html dialog_exception_dialog_md.png | @image html dialog_exception_dialog_gd.png |
+///
+///
+/// @par Folder browser dialog appearance
+/// xtd::forms::folder_browser_dialog
+///
+/// | Mode  | Windows                                         | macOS                                           | Gnome                                           |
+/// |-------|-------------------------------------------------|-------------------------------------------------|-------------------------------------------------|
+/// | Light | @image html dialog_folder_browser_dialog_w.png  | @image html dialog_folder_browser_dialog_m.png  | @image html dialog_folder_browser_dialog_g.png  |
+/// | Dark  | @image html dialog_folder_browser_dialog_wd.png | @image html dialog_folder_browser_dialog_md.png | @image html dialog_folder_browser_dialog_gd.png |
+///
+///
+/// @par Font dialog appearance
+/// xtd::forms::font_dialog
+///
+/// | Mode  | Windows                               | macOS                                 | Gnome                                 |
+/// |-------|---------------------------------------|---------------------------------------|---------------------------------------|
+/// | Light | @image html dialog_font_dialog_w.png  | @image html dialog_font_dialog_m.png  | @image html dialog_font_dialog_g.png  |
+/// | Dark  | @image html dialog_font_dialog_wd.png | @image html dialog_font_dialog_md.png | @image html dialog_font_dialog_gd.png |
+///
+/// @par Input dialog appearance
+/// xtd::forms::input_dialog
+///
+/// | Mode  | Windows                                | macOS                                  | Gnome                                  |
+/// |-------|----------------------------------------|----------------------------------------|----------------------------------------|
+/// | Light | @image html dialog_input_dialog_w.png  | @image html dialog_input_dialog_m.png  | @image html dialog_input_dialog_g.png  |
+/// | Dark  | @image html dialog_input_dialog_wd.png | @image html dialog_input_dialog_md.png | @image html dialog_input_dialog_gd.png |
+///
