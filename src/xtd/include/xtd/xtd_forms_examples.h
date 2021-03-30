@@ -376,6 +376,21 @@
 /// <br>
 /// @image html control_gd.png
 ///
+/// @example date_time_picker.cpp
+/// The following code example demonstrate the use of date_time_picker picker.
+/// @par Windows
+/// @image html date_time_picker_w.png
+/// <br>
+/// @image html date_time_picker_wd.png
+/// @par macOS
+/// @image html date_time_picker_m.png
+/// <br>
+/// @image html date_time_picker_md.png
+/// @par Gnome
+/// @image html date_time_picker_g.png
+/// <br>
+/// @image html date_time_picker_gd.png
+///
 /// @example form.cpp
 /// The following code example demonstrate the use of form control.
 /// @par Windows
