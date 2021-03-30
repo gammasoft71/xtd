@@ -17,13 +17,30 @@
 
 /// @cond
 #if defined(__CMAKE_TARGET_TYPE__) && __CMAKE_TARGET_TYPE__ == 2 // 2 == GUI_APPLICATION
-inline void __startup_catch_exception__(const std::exception& e) {xtd::forms::exception_dialog dialog; dialog.exception(e); dialog.show_dialog();}
-inline void __startup_catch_exception__(const xtd::system_exception& e) {xtd::forms::exception_dialog dialog; dialog.exception(e); dialog.show_dialog();}
-inline void __startup_catch_exception__() {xtd::forms::exception_dialog dialog; dialog.show_dialog();}
+inline void __startup_catch_exception__(const std::exception& e) {
+  xtd::forms::exception_dialog dialog;
+  dialog.exception(e);
+  dialog.show_dialog();
+}
+inline void __startup_catch_exception__(const xtd::system_exception& e) {
+  xtd::forms::exception_dialog dialog;
+  dialog.exception(e);
+  dialog.show_dialog();
+}
+inline void __startup_catch_exception__() {
+  xtd::forms::exception_dialog dialog;
+  dialog.show_dialog();
+}
 #else
-inline void __startup_catch_exception__(const std::exception& e) {xtd::diagnostics::debug::write_line(xtd::strings::format("exception: {}", e.what()));}
-inline void __startup_catch_exception__(const xtd::system_exception& e) {xtd::diagnostics::debug::write_line(e);}
-inline void __startup_catch_exception__() {xtd::diagnostics::debug::write_line("Unknown exception occured");}
+inline void __startup_catch_exception__(const std::exception& e) {
+  xtd::diagnostics::debug::write_line(xtd::strings::format("exception: {}", e.what()));
+}
+inline void __startup_catch_exception__(const xtd::system_exception& e) {
+  xtd::diagnostics::debug::write_line(e);
+}
+inline void __startup_catch_exception__() {
+  xtd::diagnostics::debug::write_line("Unknown exception occured");
+}
 #endif
 #undef startup_
 /// @endcond
