@@ -42,6 +42,7 @@ inline void __startup_catch_exception__() {
   xtd::diagnostics::debug::write_line("Unknown exception occured");
 }
 #endif
+
 #undef startup_
 /// @endcond
 
