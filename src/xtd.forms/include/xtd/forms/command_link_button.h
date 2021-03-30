@@ -42,6 +42,12 @@ namespace xtd {
       /// @brief Sets the mode by which the button automatically resizes itself.
       /// @param value One of the AutoSizeMode values. The default value is growonly.
       virtual command_link_button& auto_size_mode(forms::auto_size_mode value);
+      
+      /// @brief Set text and supplementary text.
+      /// @param text A string that represent control text
+      /// @param supplementary_text A string thatt represent supplementary text.
+      /// @remarks Is equavant to call text property with text and spplementary_text separed by "\n".
+      control& texts(const std::string& text, const std::string& supplementary_text) {return this->text(format("{}{}{}", text, environment::new_line(), supplementary_text));}
 
       drawing::size default_size() const override {return {200, 60};}
       

@@ -361,6 +361,21 @@
 /// <br>
 /// @image html command_link_button_gd.png
 ///
+/// @example control.cpp
+/// The following code example demonstrate the use of control control.
+/// @par Windows
+/// @image html control_w.png
+/// <br>
+/// @image html control_wd.png
+/// @par macOS
+/// @image html control_m.png
+/// <br>
+/// @image html control_md.png
+/// @par Gnome
+/// @image html control_g.png
+/// <br>
+/// @image html control_gd.png
+///
 /// @example form.cpp
 /// The following code example demonstrate the use of form control.
 /// @par Windows

@@ -13,7 +13,8 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms menus_and_toolbars
     class forms_export_ context_menu : public menu {
-    public:      
+    public:
+      /// @brief Initialoize context_menu class.
       context_menu();
       
       /// @cond
