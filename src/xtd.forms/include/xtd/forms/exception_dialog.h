@@ -18,6 +18,20 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    class exception_dialog_closed_event_args final : public event_args {
+    public:
+      exception_dialog_closed_event_args() = default;
+      explicit exception_dialog_closed_event_args(forms::dialog_result dialog_result) : dialog_result_(dialog_result) {};
+      
+      virtual forms::dialog_result dialog_result() const {return dialog_result_;}
+      
+    private:
+      forms::dialog_result dialog_result_ = forms::dialog_result::none;
+    };
+    
+    template<typename type_t>
+    using exception_dialog_closed_event_handler = delegate<void(type_t, const exception_dialog_closed_event_args& e)>;
+    
     /// @brief Represents a common dialog box that displays exception box.
     /// @par Library
     /// xtd.forms
@@ -42,6 +56,8 @@ namespace xtd {
       /// @brief Initializes a new instance of the exception_dialog class.
       exception_dialog() = default;
       
+      xtd::forms::dialog_result dialog_result() const {return dialog_result_;}
+      
       /// @brief Gets the dialog style.
       /// @return One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
       xtd::forms::dialog_style dialog_style() const {return dialog_style_;}
@@ -65,15 +81,43 @@ namespace xtd {
         return *this;
       }
 
+      /// @brief Gets the dialog caption text.
+      /// @return The current dialog caption text.
+      std::string text() const {return text_;}
+      /// @brief Sets the dialog caption text.
+      /// @param text The new dialog caption text.
+      /// @return Current input_dialog instance.
+      exception_dialog& text(const std::string& text) {
+        if (text_ != text)
+          text_ = text;
+        return *this;
+      }
+      
       /// @brief Resets all properties to empty string.
       void reset();
       
       /// @brief Runs exception dialog box.
       xtd::forms::dialog_result show_dialog();
+      /// @brief Runs exception dialog box.
+      xtd::forms::dialog_result show_dialog(const iwin32_window& owner);
+      /// @brief Runs exception dialog box.
+      void show_sheet(const iwin32_window& owner);
+      /// @brief Runs exception dialog box.
+      xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner);
+      
+      event<exception_dialog, exception_dialog_closed_event_handler<exception_dialog&>> exception_dialog_closed;
 
+    protected:
+      void on_exception_dialog_closed(const exception_dialog_closed_event_args& e) {
+        dialog_result_ = e.dialog_result();
+        exception_dialog_closed(*this, e);
+      }
+      
     private:
+      xtd::forms::dialog_result dialog_result_ = xtd::forms::dialog_result::none;
       xtd::forms::dialog_style dialog_style_ = xtd::forms::dialog_style::standard;
       const std::exception* exception_ = nullptr;
+      std::string text_;
     };
   }
 }

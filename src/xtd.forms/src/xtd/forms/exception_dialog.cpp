@@ -21,7 +21,7 @@ namespace {
   using link_label = label;
   class exception_dialog_standard : public form {
   public:
-    exception_dialog_standard(const std::exception* exception) : exception_(exception) {
+    exception_dialog_standard(const std::exception* exception, const string& text, delegate<void(const exception_dialog_closed_event_args& e)>* on_dialog_closed) : exception_(exception) {
       auto_size(true);
       auto_size_mode(forms::auto_size_mode::grow_and_shrink);
       accept_button(button_continue_);
@@ -31,10 +31,11 @@ namespace {
       minimize_box(false);
       //form_border_style(forms::form_border_style::fixed_dialog);
       start_position(form_start_position::center_screen);
-      if (application::open_forms().size() > 0)
-        text(application::open_forms()[0].get().text());
-      else
-        text(exception_ ? strings::format("Exception {} occured"_t, strings::class_name(*exception_)) : "Unknown exception occured"_t);
+      this->text(text);
+      form_closed += [&, on_dialog_closed]{
+        on_dialog_closed->invoke(exception_dialog_closed_event_args(dialog_result()));
+        delete on_dialog_closed;
+      };
 
       panel_top_.location({0, 0});
       panel_top_.size({550, 150});
@@ -80,12 +81,26 @@ namespace {
       text_box_details_.text(generate_report());
     }
     
-    static xtd::forms::dialog_result show_dialog(const std::exception* exception) {
-      exception_dialog_standard dialog(exception);
-      if (application::open_forms().size() > 0) return dialog.form::show_sheet_dialog(application::open_forms()[0].get());
+    static xtd::forms::dialog_result show_dialog(const std::exception* exception, const string& text, delegate<void(const exception_dialog_closed_event_args& e)>* on_dialog_closed) {
+      exception_dialog_standard dialog(exception, text, on_dialog_closed);
       return dialog.form::show_dialog();
     }
     
+    static xtd::forms::dialog_result show_dialog(const iwin32_window& owner, const std::exception* exception, const string& text, delegate<void(const exception_dialog_closed_event_args& e)>* on_dialog_closed) {
+      exception_dialog_standard dialog(exception, text, on_dialog_closed);
+      return dialog.form::show_dialog(owner);
+    }
+    
+    static void show_sheet(const iwin32_window& owner, const std::exception* exception, const string& text, delegate<void(const exception_dialog_closed_event_args& e)>* on_dialog_closed) {
+      exception_dialog_standard dialog(exception, text, on_dialog_closed);
+      dialog.form::show_sheet_dialog(owner);
+    }
+    
+    static xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner, const std::exception* exception, const string& text, delegate<void(const exception_dialog_closed_event_args& e)>* on_dialog_closed) {
+      exception_dialog_standard dialog(exception, text, on_dialog_closed);
+      return dialog.form::show_sheet_dialog(owner);
+    }
+
   private:
     std::string generate_report() const {
       std::string report = strings::format("Use try and catch to handle std::exception or xtd::system_exception instead{0}of this dialog box. For more information, see the xtd documentation.{0}{0}"_t, environment::new_line());
@@ -173,8 +188,22 @@ namespace {
 void exception_dialog::reset() {
   dialog_style_ = xtd::forms::dialog_style::standard;
   exception_ = nullptr;
+  text_ = "";
 }
 
 xtd::forms::dialog_result exception_dialog::show_dialog() {
-  return exception_dialog_standard::show_dialog(exception_);
+  return exception_dialog_standard::show_dialog(exception_, text_, new delegate<void(const exception_dialog_closed_event_args& e)>(*this, &exception_dialog::on_exception_dialog_closed));
+}
+
+xtd::forms::dialog_result exception_dialog::show_dialog(const iwin32_window& owner) {
+  return exception_dialog_standard::show_dialog(owner, exception_, text_, new delegate<void(const exception_dialog_closed_event_args& e)>(*this, &exception_dialog::on_exception_dialog_closed));
+}
+
+void exception_dialog::show_sheet(const iwin32_window& owner) {
+  dialog_result_ = xtd::forms::dialog_result::none;
+  exception_dialog_standard::show_sheet(owner, exception_, text_, new delegate<void(const exception_dialog_closed_event_args& e)>(*this, &exception_dialog::on_exception_dialog_closed));
+}
+
+xtd::forms::dialog_result exception_dialog::show_sheet_dialog(const iwin32_window& owner) {
+  return exception_dialog_standard::show_sheet_dialog(owner, exception_, text_, new delegate<void(const exception_dialog_closed_event_args& e)>(*this, &exception_dialog::on_exception_dialog_closed));
 }
