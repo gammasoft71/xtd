@@ -278,21 +278,6 @@
 /// <br>
 /// @image html color_dialog_wd.png
 /// @par macOS
-/// @image html color_dialog_m.png
-/// <br>
-/// @image html color_dialog_md.png
-/// @par Gnome
-/// @image html color_dialog_g.png
-/// <br>
-/// @image html color_dialog_gd.png
-///
-/// @example color_dialog.cpp
-/// The following code example demonstrate the use of color_dialog dialog.
-/// @par Windows
-/// @image html color_dialog_w.png
-/// <br>
-/// @image html color_dialog_wd.png
-/// @par macOS
 /// @image html color_dialog_md.png
 /// <br>
 /// @image html color_dialog_md.png
@@ -376,6 +361,21 @@
 /// <br>
 /// @image html control_gd.png
 ///
+/// @example countries.cpp
+/// The following code example demonstrate the use of countries and country components.
+/// @par Windows
+/// @image html countries_w.png
+/// <br>
+/// @image html countries_wd.png
+/// @par macOS
+/// @image html countries_m.png
+/// <br>
+/// @image html countries_md.png
+/// @par Gnome
+/// @image html countries_g.png
+/// <br>
+/// @image html countries_gd.png
+///
 /// @example date_time_picker.cpp
 /// The following code example demonstrate the use of date_time_picker picker.
 /// @par Windows
@@ -390,6 +390,21 @@
 /// @image html date_time_picker_g.png
 /// <br>
 /// @image html date_time_picker_gd.png
+///
+/// @example exception_bxo.cpp
+/// The following code example demonstrate the use of exception_dialog dialog.
+/// @par Windows
+/// @image html exception_box_w.png
+/// <br>
+/// @image html exception_box_wd.png
+/// @par macOS
+/// @image html exception_box_m.png
+/// <br>
+/// @image html exception_box_md.png
+/// @par Gnome
+/// @image html exception_box_g.png
+/// <br>
+/// @image html exception_box_gd.png
 ///
 /// @example exception_dialog.cpp
 /// The following code example demonstrate the use of exception_dialog dialog.
