@@ -31,6 +31,7 @@ namespace xtd {
     /// @image html date_time_picker_gd.png
     class forms_export_ date_time_picker : public control {
     public:
+      /// @brief Initializes a new instance of the date_time_picker class.
       date_time_picker();
 
       virtual date_time_picker_format format() const {return format_;}

@@ -13,6 +13,21 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms components
+    /// @par Examples
+    /// The following code example demonstrate the use of cursors component.
+    /// @include cursors.cpp
+    /// @par Windows
+    /// @image html cursors_w.png
+    /// <br>
+    /// @image html cursors_wd.png
+    /// @par macOS
+    /// @image html cursors_m.png
+    /// <br>
+    /// @image html cursors_md.png
+    /// @par Gnome
+    /// @image html cursors_g.png
+    /// <br>
+    /// @image html cursors_gd.png
     class forms_export_ cursors final static_ {
     public:
       /// @brief Gets the cursor that appears when an application starts.

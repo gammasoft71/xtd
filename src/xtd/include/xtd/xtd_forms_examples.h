@@ -376,6 +376,21 @@
 /// <br>
 /// @image html countries_gd.png
 ///
+/// @example cursors.cpp
+/// The following code example demonstrate the use of cursors component.
+/// @par Windows
+/// @image html cursors_w.png
+/// <br>
+/// @image html cursors_wd.png
+/// @par macOS
+/// @image html cursors_m.png
+/// <br>
+/// @image html cursors_md.png
+/// @par Gnome
+/// @image html cursors_g.png
+/// <br>
+/// @image html cursors_gd.png
+///
 /// @example date_time_picker.cpp
 /// The following code example demonstrate the use of date_time_picker picker.
 /// @par Windows

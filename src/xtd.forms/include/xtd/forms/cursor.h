@@ -26,6 +26,21 @@ namespace xtd {
     /// @remarks Different cursor shapes are used to inform the user what operation the mouse will have. For example, when editing or selecting text, a cursors::ibeam cursor is typically displayed. A wait cursor is commonly used to inform the user that a process is currently running. Examples of processes you might have the user wait for are opening a file, saving a file, or filling a control such as a data_grid, list_box or tree_view with a large amount of data.
     /// @remarks All controls that derive from the Control class have a Cursor property. To change the cursor displayed by the mouse pointer when it is within the bounds of the control, assign a Cursor to the Cursor property of the control. Alternatively, you can display cursors at the application level by assigning a Cursor to the Current property. For example, if the purpose of your application is to edit a text file, you might set the Current property to Cursors.WaitCursor to display a wait cursor over the application while the file loads or saves to prevent any mouse events from being processed. When the process is complete, set the Current property to Cursors.Default for the application to display the appropriate cursor over each control type.
     /// @see xtd::forms::cursors
+    /// @par Examples
+    /// The following code example demonstrate the use of cursor component.
+    /// @include cursors.cpp
+    /// @par Windows
+    /// @image html cursors_w.png
+    /// <br>
+    /// @image html cursors_wd.png
+    /// @par macOS
+    /// @image html cursors_m.png
+    /// <br>
+    /// @image html cursors_md.png
+    /// @par Gnome
+    /// @image html cursors_g.png
+    /// <br>
+    /// @image html cursors_gd.png
     class forms_export_ cursor {
     public:
       /// @brief Initializes a new instance of the Cursor class.
@@ -87,7 +102,15 @@ namespace xtd {
       /// @remarks The handle created as a result of calling this method must be deleted of when you are done with it.
       intptr_t copy_handle() const;
       
+      /// @brief Create a cursor form a specified bitmap with specified hot spot.
+      /// @param bitmap A xtd::drawing::bitmap image will be use by cursor.
+      /// @return A new cursor instance.
+      /// @param hot_spot A xtd::drawing::point hot spot location.
       static cursor from_bitmap(const xtd::drawing::bitmap& bitmap, const xtd::drawing::point& hot_spot) {return cursor(bitmap, hot_spot);}
+      /// @brief Create a cursor form a specified bitmap.
+      /// @param bitmap A xtd::drawing::bitmap image will be use by cursor.
+      /// @return A new cursor instance.
+      /// @remarks The hot spot location is top left (0, 0).
       static cursor from_bitmap(const xtd::drawing::bitmap& bitmap) {return from_bitmap(bitmap, {});}
 
       /// @brief Hides the cursor.
@@ -98,6 +121,8 @@ namespace xtd {
       /// @brief The show and hide method calls must be balanced. For every call to the hide method there must be a corresponding call to the show method.
       static void show();
       
+      /// @brief Returns a string containing the name of the cursor.
+      /// @return A string containing the name of the cursor.
       std::string to_string() const;
       
       /// @cond
@@ -106,6 +131,7 @@ namespace xtd {
       bool operator!=(const cursor& value) const {return !operator==(value);}
       /// @endcond
 
+      /// @brief Represent none cursor.
       static cursor none;
       
     private:
