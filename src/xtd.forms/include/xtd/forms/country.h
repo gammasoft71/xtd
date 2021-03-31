@@ -46,18 +46,24 @@ namespace xtd {
       /// @return An empty country
       static const country empty();
 
-      /// @brief Gets the country 2 alpha codde.
-      /// @return A string that represent the 2 alpha code.
+      /// @brief Gets the country alpha 2 code.
+      /// @return A string that represent the alpha 2 code.
       virtual const std::string alpha_2_code() const {return alpha_2_code_;}
 
-      /// @brief Gets the country 3 alpha codde.
-      /// @return A string that represent the 3 alpha code.
+      /// @brief Gets the country alpha 3 code.
+      /// @return A string that represent the alpha 3 code.
       virtual const std::string alpha_3_code() const {return alpha_3_code_;}
 
+      /// @brief Gets the country emoticon.
+      /// @return A string that represent the emoticpn.
       virtual const std::string emoticon() const {return emoticon_;}
       
+      /// @brief Gets the country flag.
+      /// @return A xtd::drawing::image that represent the flag of 1024 x 768 pixels.
       virtual const xtd::drawing::image flag() const;
       
+      /// @brief Gets the country flag.
+      /// @return A xtd::drawing::image that represent the flag of 1024 x 1024 pixels.
       virtual const xtd::drawing::image flag_squared() const;
 
       /// @brief Gets the country name.
@@ -65,14 +71,24 @@ namespace xtd {
       virtual const std::string name() const {return name_;}
 
       /// @brief Gets the country numeric code.
-      /// @return A signed-integer that represent the numerci codde.
+      /// @return A signed-integer that represent the numerci code.
       virtual int numeric_code() const {return numeric_code_;}
 
-      static country from_name(const std::string& name);
+      /// @brief Gets a country from alpha 2 code.
+      /// @return If exist a xtd::forms::country that represent alpha 2 coded; otherwise xtd::forms::country::empty.
       static country from_alpha_2_code(const std::string& alpha_2_code);
+      /// @brief Gets a country from alpha 3 code.
+      /// @return If exist a xtd::forms::country that represent alpha 3 coded; otherwise xtd::forms::country::empty.
       static country from_alpha_3_code(const std::string& alpha_3_code);
+      /// @brief Gets a country from name.
+      /// @return If exist a xtd::forms::country that represent name; otherwise xtd::forms::country::empty.
+      static country from_name(const std::string& name);
+      /// @brief Gets a country from numeric code.
+      /// @return If exist a xtd::forms::country that represent numeric coded; otherwise xtd::forms::country::empty.
       static country from_numeric_code(int numeric_code);
 
+      /// @brief Returns a string containing the name, alpha codes and numeric code of the country.
+      /// @return A string containing the name, alpha codes and numeric code of the country.
       virtual std::string to_string() const;
       
       /// @cond

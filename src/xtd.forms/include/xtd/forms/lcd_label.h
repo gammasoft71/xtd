@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::lcd_label conttrol.
+/// @brief Contains xtd::forms::lcd_label control.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <codecvt>
