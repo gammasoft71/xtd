@@ -1,3 +1,5 @@
+#include <chrono>
+#include <thread>
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/form.h>
@@ -6,6 +8,8 @@
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_menu.h"
 #include <wx/apptrait.h>
 
+using namespace std::literals;
+using namespace std::this_thread;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
@@ -125,8 +129,10 @@ int32_t form::show_sheet_dialog(intptr_t form) {
     result = event.GetReturnCode();
   });
   dialog->ShowWindowModal();
-  while (result == wxID_ANY)
+  while (result == wxID_ANY) {
     wxYield();
+    sleep_for(100ms);
+  }
   return result;
 }
 
