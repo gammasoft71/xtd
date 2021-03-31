@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::control conttrtol.
+/// @brief Contains xtd::forms::control conttrol.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <any>
@@ -27,6 +27,7 @@
 #include "bounds_specified.h"
 #include "component.h"
 #include "control_event_handler.h"
+#include "control_ref.h"
 #include "control_styles.h"
 #include "cursors.h"
 #include "dock_style.h"
@@ -47,15 +48,8 @@ namespace xtd {
     /// @cond
     class application;
     class screen;
-    class control;
     /// @endcond
     
-    /// @brief Represents a control reference.
-    /// @par Library
-    /// xtd.forms
-    /// @ingroup xtd_forms
-    using control_ref = std::reference_wrapper<control>;
-
     /// @brief Defines the base class for controls, which are components with visual representation.
     /// @par Library
     /// xtd.forms
