@@ -9,7 +9,7 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    /// @brief Represents a form that displays trace form.
+    /// @brief Represents a form that displays trace form.  This class cannot be inherited.
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms forms
