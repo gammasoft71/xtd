@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::message_box dialog.
+/// @brief Contains xtd::forms::exception_box dialog.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "exception_dialog.h"
