@@ -4,5 +4,7 @@ project(forms)
 find_package(xtd REQUIRED)
 
 add_projects(
+  debug_form
   form
+  trace_form
 )
