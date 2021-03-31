@@ -406,6 +406,21 @@
 /// <br>
 /// @image html date_time_picker_gd.png
 ///
+/// @example debug_form.cpp
+/// The following code example demonstrate the use of debug_form form.
+/// @par Windows
+/// @image html debug_form_w.png
+/// <br>
+/// @image html debug_form_wd.png
+/// @par macOS
+/// @image html debug_form_m.png
+/// <br>
+/// @image html debug_form_md.png
+/// @par Gnome
+/// @image html debug_form_g.png
+/// <br>
+/// @image html debug_form_gd.png
+///
 /// @example exception_box.cpp
 /// The following code example demonstrate the use of exception_dialog dialog.
 /// @par Windows
@@ -525,4 +540,19 @@
 /// @image html tab_control_g.png
 /// <br>
 /// @image html tab_control_gd.png
+///
+/// @example trace_form.cpp
+/// The following code example demonstrate the use of trace_form form.
+/// @par Windows
+/// @image html trace_form_w.png
+/// <br>
+/// @image html trace_form_wd.png
+/// @par macOS
+/// @image html trace_form_m.png
+/// <br>
+/// @image html trace_form_md.png
+/// @par Gnome
+/// @image html trace_form_g.png
+/// <br>
+/// @image html trace_form_gd.png
 ///
