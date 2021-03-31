@@ -13,9 +13,9 @@ public:
   main_form() {
     text("application and exception example");
     
-    // uncomment to throw error and catch it in main entry point
-    // throw overflow_error("Creation object error");
-    
+    // uncomment next line to throw error and catch it in main entry point
+    // throw system_exception(caller_info_);
+
     generate_handled_exception_button.auto_size(true);
     generate_handled_exception_button.location({10, 10});
     generate_handled_exception_button.parent(*this);
