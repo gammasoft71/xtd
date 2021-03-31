@@ -5,7 +5,6 @@ find_package(xtd REQUIRED)
 
 add_projects(
   collapsible_panel
-  form
   group_box
   panel
   split_container

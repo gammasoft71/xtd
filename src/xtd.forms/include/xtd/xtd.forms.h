@@ -21,6 +21,9 @@
 /// @defgroup events events
 /// @brief events are event args and event handler needed to response to window messages.
 
+/// @defgroup forms forms
+/// @brief forms definitions.
+
 /// @defgroup menus_and_toolbars   menus and toolbars
 /// @brief  menus and toolbars definitions.
 

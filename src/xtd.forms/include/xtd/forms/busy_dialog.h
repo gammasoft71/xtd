@@ -26,7 +26,7 @@ namespace xtd {
     /// @par Windows
     /// @image html busy_dialog_w.png
     /// <br>
-    /// @image html busy_dialog_w.png
+    /// @image html busy_dialog_wd.png
     /// @par macOS
     /// @image html busy_dialog_m.png
     /// <br>

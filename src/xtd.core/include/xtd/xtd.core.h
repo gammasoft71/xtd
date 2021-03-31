@@ -13,7 +13,7 @@
 /// @brief Interfaces definitions.
 
 /// @defgroup literals literals
-/// @brief Literals Allows integer, floating-point, character, and string literals to produce objects.
+/// @brief Literals allows integer, floating-point, character, and string literals to produce objects.
 
 /// @defgroup types types
 /// @brief Types definitions

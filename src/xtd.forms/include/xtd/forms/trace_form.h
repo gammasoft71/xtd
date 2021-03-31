@@ -9,6 +9,26 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @brief Represents a form that displays trace form.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms forms
+    /// This form is used in a development phase to trace all written trace with xtd::diagnostics::trace class.
+    /// @par Examples
+    /// The following code example demonstrate the use of trace_form form.
+    /// @include trace_form.cpp
+    /// @par Windows
+    /// @image html trace_form_w.png
+    /// <br>
+    /// @image html trace_form_wd.png
+    /// @par macOS
+    /// @image html trace_form_m.png
+    /// <br>
+    /// @image html trace_form_md.png
+    /// @par Gnome
+    /// @image html trace_form_g.png
+    /// <br>
+    /// @image html trace_form_gd.png
     class trace_form final : public xtd::forms::icontrol_trace, public xtd::forms::trace_form_base {
     public:
       trace_form() : trace_form_base("Trace") {

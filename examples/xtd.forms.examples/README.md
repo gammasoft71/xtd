@@ -72,7 +72,6 @@
 ## [containers](containers/README.md)
 
 * **flow_layout_panel** represents a panel that dynamically lays out its contents horizontally or vertically.
-* [form](containers/form/README.md) represents a window or dialog box that makes up an application's user interface.
 * [group_box](containers/group_box/README.md) represents a Windows control that displays a frame around a group of controls with an optional caption.
 * [panel](containers/panel/README.md) used to group collections of controls.
 * [split_container](containers/split_container/README.md) represents a control consisting of a movable bar that divides a container's display area into two resizable panels.
@@ -87,6 +86,33 @@
 * **status_strip** represents a Windows status bar control.
 * **tool_strip** provides a container for Windows toolbar objects.
 * **tool_strip_container** provides panels on each side of the form and a central panel that can hold one or more controls.
+
+## [forms](forms/README.md)
+
+* [form](forms/form/README.md) represents a window or dialog box that makes up an application's user interface.
+* [form_debug](forms/form_debug/README.md) represents a form that trace all written debug with xtd::diagnosticts::debug class.
+* [form_trace](forms/form_debug/README.md) represents a form that trace all written trace with xtd::diagnosticts::trace class.
+
+## [Dialogs](dialogs/README.md)
+
+* [about_box](dialogs/about_box/README.md) represents a dialog box that displays about box.
+* [about_dialog](dialogs/about_dialog/README.md) represents a dialog box that displays about dialog.
+* [busy_box](dialogs/busy_box/README.md) represents a busy box that displays busy box.
+* [busy_dialog](dialogs/busy_dialog/README.md) represents a busy box that displays busy dialog.
+* [color_box](dialogs/color_box/README.md) represents a dialog box that displays available colors along with controls that enable the user to define custom colors.
+* [color_dialog](dialogs/color_dialog/README.md) represents a dialog box that displays available colors along with controls that enable the user to define custom colors.
+* [exception_box](dialogs/exception_box/README.md) represents a exception box that displays exceptioon box.
+* [exception_dialog](dialogs/exception_dialog/README.md) represents a exception box that displays exceptioon box.
+* **find_replace_dialog** represents a find replace dialog box.
+* [folder_browser_dialog](dialogs/folder_browser_dialog/README.md) prompts the user to select a folder.
+* [font_dialog](dialogs/font_dialog/README.md) prompts the user to choose a font from among those installed on the local computer.
+* [input_box](dialogs/input_box/README.md) prompts the user to input text.
+* [input_dialog](dialogs/input_dialog/README.md) prompts the user to input text.
+* [message_box](dialogs/message_box/README.md) displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.
+* [message_dialog](dialogs/message_dialog/README.md) displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.
+* [open_file_dialog](dialogs/open_file_dialog/README.md) displays a standard dialog box that prompts the user to open a file.
+* [progress_dialog](dialogs/progress_dialog/README.md) represents a progress box that displays progress box.
+* [save_file_dialog](dialogs/save_file_dialog/README.md) prompts the user to select a location for saving a file.
 
 ## [Datas](datas/README.md)
 
@@ -133,27 +159,6 @@
 * **print_document** defines a reusable object that sends output to a printer, when printing from a Windows Forms application.
 * **print_preview_control** represents the raw preview part of print previewing from a Windows Forms application, without any dialog boxes or buttons. Most PrintPreviewControl objects are found on PrintPreviewDialog objects, but they do not have to be.
 * **print_preview_dialog** represents a dialog box form that contains a PrintPreviewControl for printing from a Windows Forms application.
-
-## [Dialogs](dialogs/README.md)
-
-* [about_box](dialogs/about_box/README.md) represents a dialog box that displays about box.
-* [about_dialog](dialogs/about_dialog/README.md) represents a dialog box that displays about dialog.
-* [busy_box](dialogs/busy_box/README.md) represents a busy box that displays busy box.
-* [busy_dialog](dialogs/busy_dialog/README.md) represents a busy box that displays busy dialog.
-* [color_box](dialogs/color_box/README.md) represents a dialog box that displays available colors along with controls that enable the user to define custom colors.
-* [color_dialog](dialogs/color_dialog/README.md) represents a dialog box that displays available colors along with controls that enable the user to define custom colors.
-* [exception_box](dialogs/exception_box/README.md) represents a exception box that displays exceptioon box.
-* [exception_dialog](dialogs/exception_dialog/README.md) represents a exception box that displays exceptioon box.
-* **find_replace_dialog** represents a find replace dialog box.
-* [folder_browser_dialog](dialogs/folder_browser_dialog/README.md) prompts the user to select a folder.
-* [font_dialog](dialogs/font_dialog/README.md) prompts the user to choose a font from among those installed on the local computer.
-* [input_box](dialogs/input_box/README.md) prompts the user to input text.
-* [input_dialog](dialogs/input_dialog/README.md) prompts the user to input text.
-* [message_box](dialogs/message_box/README.md) displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.
-* [message_dialog](dialogs/message_dialog/README.md) displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.
-* [open_file_dialog](dialogs/open_file_dialog/README.md) displays a standard dialog box that prompts the user to open a file.
-* [progress_dialog](dialogs/progress_dialog/README.md) represents a progress box that displays progress box.
-* [save_file_dialog](dialogs/save_file_dialog/README.md) prompts the user to select a location for saving a file.
 
 ## [Events](events/README.md)
 
