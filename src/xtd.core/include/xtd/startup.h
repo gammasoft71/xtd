@@ -16,8 +16,8 @@
 
 /// @cond
 #if defined(__CMAKE_TARGET_TYPE__) && __CMAKE_TARGET_TYPE__ == 2 // 2 == GUI_APPLICATION
-inline void __startup_catch_exception__(const std::exception& e) {xtd::forms::application::open_forms().size() > 0 ? xtd::forms::excpetion_box::show(xtd::forms::application::open_forms()[0].get(), e, xtd::forms::application::product_name()) : xtd::forms::excpetion_box::show(e, xtd::forms::application::product_name());}
-inline void __startup_catch_exception__() {xtd::forms::application::open_forms().size() > 0 ? xtd::forms::excpetion_box::show(xtd::forms::application::open_forms()[0].get(), xtd::forms::application::product_name()) : xtd::forms::excpetion_box::show(xtd::forms::application::product_name());}
+inline void __startup_catch_exception__(const std::exception& e) {xtd::forms::application::open_forms().size() > 0 ? xtd::forms::exception_box::show(xtd::forms::application::open_forms()[0].get(), e, xtd::forms::application::product_name()) : xtd::forms::exception_box::show(e, xtd::forms::application::product_name());}
+inline void __startup_catch_exception__() {xtd::forms::application::open_forms().size() > 0 ? xtd::forms::exception_box::show(xtd::forms::application::open_forms()[0].get(), xtd::forms::application::product_name()) : xtd::forms::exception_box::show(xtd::forms::application::product_name());}
 #else
 inline void __startup_catch_exception__(const std::exception& e) {xtd::diagnostics::debug::write_line(xtd::strings::format("exception: {}", e.what()));}
 inline void __startup_catch_exception__(const xtd::system_exception& e) {xtd::diagnostics::debug::write_line(e);}

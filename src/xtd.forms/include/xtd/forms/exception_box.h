@@ -14,7 +14,7 @@ namespace xtd {
     class control;
     /// @endcond
 
-    class excpetion_box final static_ {
+    class exception_box final static_ {
     public:
       static dialog_result show(const iwin32_window& owner) {return show_exception_dialog(&owner);}
       static dialog_result show(const iwin32_window& owner, const std::string& caption) {return show_exception_dialog(&owner, nullptr, caption);}

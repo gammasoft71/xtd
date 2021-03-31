@@ -308,9 +308,9 @@ bool application::on_app_thread_exception() {
   try {
     throw;
   } catch (const std::exception& e) {
-    return (open_forms().size() > 0 ? excpetion_box::show(open_forms()[0].get(), e, product_name()) : excpetion_box::show(e, product_name())) == dialog_result::ok;
+    return (open_forms().size() > 0 ? exception_box::show(open_forms()[0].get(), e, product_name()) : exception_box::show(e, product_name())) == dialog_result::ok;
   } catch (...) {
-    return (open_forms().size() > 0 ? excpetion_box::show(open_forms()[0].get(), product_name()) : excpetion_box::show(product_name())) == dialog_result::ok;
+    return (open_forms().size() > 0 ? exception_box::show(open_forms()[0].get(), product_name()) : exception_box::show(product_name())) == dialog_result::ok;
   }
 }
 
