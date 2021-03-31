@@ -10,7 +10,7 @@
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/window_messages.h>
 #include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/exception_dialog.h"
+#include "../../../include/xtd/forms/exception_box.h"
 #include "../../../include/xtd/forms/theme.h"
 
 using namespace std;
@@ -308,12 +308,9 @@ bool application::on_app_thread_exception() {
   try {
     throw;
   } catch (const std::exception& e) {
-    exception_dialog dialog;
-    dialog.exception(e);
-    return dialog.show_dialog() == dialog_result::ok;
+    return (open_forms().size() > 0 ? excpetion_box::show(open_forms()[0].get(), e, product_name()) : excpetion_box::show(e, product_name())) == dialog_result::ok;
   } catch (...) {
-    exception_dialog dialog;
-    return dialog.show_dialog() == dialog_result::ok;
+    return (open_forms().size() > 0 ? excpetion_box::show(open_forms()[0].get(), product_name()) : excpetion_box::show(product_name())) == dialog_result::ok;
   }
 }
 
