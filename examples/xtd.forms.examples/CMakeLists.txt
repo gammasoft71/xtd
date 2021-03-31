@@ -9,10 +9,11 @@ add_projects(
   controls
   containers
   menus_and_toolbars
+  forms
+  dialogs
   datas
   components
   printing
-  dialogs
   events
   painting
   user_controls
