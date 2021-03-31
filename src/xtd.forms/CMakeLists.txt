@@ -79,6 +79,7 @@ add_sources(
   include/xtd/forms/emoticon.h
   include/xtd/forms/emoticons.h
   include/xtd/forms/enable_debug.h
+  include/xtd/forms/exception_box.h
   include/xtd/forms/exception_dialog.h
   include/xtd/forms/file_dialog.h
   include/xtd/forms/flat_style.h
