@@ -6,7 +6,7 @@ using namespace xtd::forms;
 class form1 : public form {
 public:
   form1() {
-    text("Exception dialog example");
+    text("Exception box example");
     controls().push_back(button1);
 
     button1.location({10, 10});
@@ -16,9 +16,7 @@ public:
       try{
         throw invalid_operation_exception("Throws an invalid operation exception to show an exception dialog.", caller_info_);
       } catch(const xtd::system_exception& e) {
-        exception_dialog dialog;
-        dialog.exception(e);
-        if (dialog.show_sheet_dialog(*this) == dialog_result::cancel)
+        if (exception_box::show(*this, e) == dialog_result::cancel)
           application::exit();
       }
     };
