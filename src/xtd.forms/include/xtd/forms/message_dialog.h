@@ -36,7 +36,7 @@ namespace xtd {
     template<typename type_t>
     using message_dialog_closed_event_handler = delegate<void(type_t, const message_dialog_closed_event_args& e)>;
   
-  /// @brief Represents a common dialog box that displays message box.
+    /// @brief Represents a common dialog box that displays message box.
     /// @par Examples
     /// The following code example demonstrate the use of message_dialog dialog.
     /// @include message_dialog.cpp
@@ -66,6 +66,8 @@ namespace xtd {
         return *this;
       }
 
+      xtd::forms::dialog_result dialog_result() const {return dialog_result_;}
+      
       xtd::forms::dialog_style dialog_style() const {return dialog_style_;}
       message_dialog& dialog_style(xtd::forms::dialog_style dialog_style) {
         if (dialog_style_ != dialog_style)
