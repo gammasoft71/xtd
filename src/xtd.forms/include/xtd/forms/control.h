@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::control conttrol.
+/// @brief Contains xtd::forms::control control.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <any>

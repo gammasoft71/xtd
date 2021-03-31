@@ -402,11 +402,10 @@ namespace xtd {
       static event<application, delegate<void(const event_args&)>> thread_exit;
 
     private:
-      /// @cond
       friend class form;
       friend class input_dialog;
       friend class message_box;
-      /// @endcond
+
       static void on_app_thread_exit(const application_context& sender, const event_args& e);
       static bool on_app_thread_exception();
       static void raise_enter_thread_modal(const event_args& e);

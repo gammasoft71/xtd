@@ -391,7 +391,7 @@
 /// <br>
 /// @image html date_time_picker_gd.png
 ///
-/// @example exception_bxo.cpp
+/// @example exception_box.cpp
 /// The following code example demonstrate the use of exception_dialog dialog.
 /// @par Windows
 /// @image html exception_box_w.png

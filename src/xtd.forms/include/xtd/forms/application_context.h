@@ -104,9 +104,8 @@ namespace xtd {
       }
       
     private:
-      /// @cond
       friend class application;
-      /// @endcond
+
       form* main_form_ = nullptr;
       std::any tag_;
     };
