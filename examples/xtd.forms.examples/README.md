@@ -142,6 +142,8 @@
 * [busy_dialog](dialogs/busy_dialog/README.md) represents a busy box that displays busy dialog.
 * [color_box](dialogs/color_box/README.md) represents a dialog box that displays available colors along with controls that enable the user to define custom colors.
 * [color_dialog](dialogs/color_dialog/README.md) represents a dialog box that displays available colors along with controls that enable the user to define custom colors.
+* [exception_box](dialogs/exception_box/README.md) represents a exception box that displays exceptioon box.
+* [exception_dialog](dialogs/exception_dialog/README.md) represents a exception box that displays exceptioon box.
 * **find_replace_dialog** represents a find replace dialog box.
 * [folder_browser_dialog](dialogs/folder_browser_dialog/README.md) prompts the user to select a folder.
 * [font_dialog](dialogs/font_dialog/README.md) prompts the user to choose a font from among those installed on the local computer.
