@@ -9,6 +9,7 @@ public:
   form1() {
     text("Trace form example");
     
+    write_trace_button.auto_repeat(true);
     write_trace_button.auto_size(true);
     write_trace_button.location({10, 10});
     write_trace_button.parent(*this);
