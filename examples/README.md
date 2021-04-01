@@ -34,10 +34,11 @@
 * [Controls](xtd.forms.examples/controls/README.md) contains common controls examples.
 * [Containers](xtd.forms.examples/containers/README.md) contains containers examples.
 * [Menus and Toolbars](xtd.forms.examples/menus_and_toolbars/README.md) contains menus and toolbars examples.
+* [Forms](xtd.forms.examples/forms/README.md) contains forms examples.
+* [Dialogs](xtd.forms.examples/dialogs/README.md) contains dialogs examples.
 * [Datas](xtd.forms.examples/datas/README.md) contains datas examples.
 * [Components](xtd.forms.examples/components/README.md) contains components examples.
 * [Printing](xtd.forms.examples/datas/README.md) contains printing examples.
-* [Dialogs](xtd.forms.examples/dialogs/README.md) contains dialogs examples.
 * [events](xtd.forms.examples/events/README.md) contains events examples.
 * [User Controls](xtd.forms.examples/user_controls/README.md) contains custom controls examples.
 * [User dialogs](xtd.forms.examples/user_dialogs/README.md) contains custom dialogs examples.
