@@ -107,7 +107,7 @@ namespace xtd {
       bool show_date_ = true;
       bool show_time_ = true;
       std::string format_ = "{0}";
-      std::string header_separator_ = "| ";
+      std::string header_separator_ = "|";
       xtd::forms::text_box text_;
     };
   }
