@@ -9,6 +9,7 @@ public:
   form1() {
     text("Debug form example");
 
+    write_debug_button.auto_repeat(true);
     write_debug_button.auto_size(true);
     write_debug_button.location({10, 10});
     write_debug_button.parent(*this);

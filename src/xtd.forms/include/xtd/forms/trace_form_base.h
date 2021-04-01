@@ -2,6 +2,8 @@
 /// @brief Contains xtd::forms::trace_form_base dialog.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+#include <chrono>
+#include <xtd/drawing/font_family.h>
 #include "form.h"
 #include "text_box.h"
 
@@ -47,6 +49,7 @@ namespace xtd {
 
         dock(xtd::forms::dock_style::bottom);
         start_position(xtd::forms::form_start_position::manual);
+        font(xtd::drawing::font(xtd::drawing::font_family::generic_monospace(), font().size()));
         this->text(text);
         
         text_.dock(xtd::forms::dock_style::fill);
@@ -76,7 +79,8 @@ namespace xtd {
       }
       
       void write_header() {
-        text_.append_text(xtd::strings::format(format_, std::chrono::system_clock::now()));
+        auto now =  std::chrono::system_clock::now();
+        text_.append_text(xtd::strings::format(format_, now, (std::chrono::duration_cast<std::chrono::microseconds>(now.time_since_epoch())).count() % 1000000));
         need_header_ = false;
       }
       
@@ -86,9 +90,9 @@ namespace xtd {
     private:
       void update_format() {
         format_ = "";
-        if (show_date_ && show_time_) format_ = "{0:u} - " + format_;
+        if (show_date_ && show_time_) format_ = "{0:u}.{1:D6} - " + format_;
         else if (show_date_) format_ = "{0:L}-{0:k}-{0:i} - " + format_;
-        else if (show_time_) format_ = "{0:t} - " + format_;
+        else if (show_time_) format_ = "{0:t}.{1:D6} - " + format_;
       }
 
       bool need_header_ = true;
