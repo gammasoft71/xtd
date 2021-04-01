@@ -13,7 +13,7 @@ public:
     write_trace_button.auto_size(true);
     write_trace_button.location({10, 10});
     write_trace_button.parent(*this);
-    write_trace_button.text("Write trace...");
+    write_trace_button.text("Write line...");
     write_trace_button.click += [&] {
       static int counter = 0;
       trace::write_line("Write line {}...", ++counter);
