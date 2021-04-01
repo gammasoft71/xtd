@@ -73,10 +73,10 @@ namespace xtd {
       }
       
       /// @brief Gets if this button instance is auto repeat.
-      /// @return true, if is auto repeat; otherwise false.
+      /// @return true, if is auto repeat; otherwise false. Default is false.
       virtual bool auto_repeat() const {return auto_repeat_;}
       /// @brief Sets if this button instance is auto repeat.
-      /// @param auto_repeat true, if is auto repeat; otherwise false.
+      /// @param auto_repeat true, if is auto repeat; otherwise false. Default is false.
       /// @return This button.
       virtual button& auto_repeat(bool auto_repeat) {
         if (auto_repeat_ != auto_repeat) {
@@ -87,10 +87,10 @@ namespace xtd {
       }
       
       /// @brief Gets the auto repeat delay.
-      /// @return Auto repeat delay in milliseconds.
+      /// @return Auto repeat delay in milliseconds. Default is 300 ms.
       virtual int32_t auto_repeat_delay() const {return auto_repeat_delay_;}
       /// @brief Gets the auto repeat delay.
-      /// @param auto_repeat_delay Auto repeat delay in milliseconds.
+      /// @param auto_repeat_delay Auto repeat delay in milliseconds. Default is 300 ms.
       /// @return This button.
       virtual button& auto_repeat_delay(int32_t auto_repeat_delay) {
         if (auto_repeat_delay_ != auto_repeat_delay)
@@ -99,10 +99,10 @@ namespace xtd {
       }
       
       /// @brief Gets the auto repeat interval.
-      /// @return Auto repeat interval in milliseconds.
+      /// @return Auto repeat interval in milliseconds. Default is 100 ms.
       virtual int32_t auto_repeat_interval() const {return auto_repeat_interval_;}
       /// @brief Gets the auto repeat interval.
-      /// @param auto_repeat_delay Auto repeat interval in milliseconds.
+      /// @param auto_repeat_delay Auto repeat interval in milliseconds. Default is 100 ms.
       /// @return This button.
       virtual button& auto_repeat_interval(int32_t auto_repeat_interval) {
         if (auto_repeat_interval_ != auto_repeat_interval)
