@@ -41,6 +41,14 @@ namespace xtd {
           update_format();
         }
       }
+      
+      const std::string& header_separator() const {return header_separator_;}
+      void show_date(const std::string& header_separator) {
+        if (header_separator_ != header_separator_) {
+          header_separator_ = header_separator;
+          update_format();
+        }
+      }
 
     protected:
       trace_form_base(const std::string& text) {
@@ -80,7 +88,7 @@ namespace xtd {
       
       void write_header() {
         auto now =  std::chrono::system_clock::now();
-        text_.append_text(xtd::strings::format(format_, now, (std::chrono::duration_cast<std::chrono::microseconds>(now.time_since_epoch())).count() % 1000000));
+        text_.append_text(xtd::strings::format(format_, now, (std::chrono::duration_cast<std::chrono::microseconds>(now.time_since_epoch())).count() % 1000000, header_separator_));
         need_header_ = false;
       }
       
@@ -90,15 +98,16 @@ namespace xtd {
     private:
       void update_format() {
         format_ = "";
-        if (show_date_ && show_time_) format_ = "{0:u}.{1:D6} - " + format_;
-        else if (show_date_) format_ = "{0:L}-{0:k}-{0:i} - " + format_;
-        else if (show_time_) format_ = "{0:t}.{1:D6} - " + format_;
+        if (show_date_ && show_time_) format_ = "{0:u}.{1:D6}{2}" + format_;
+        else if (show_date_) format_ = "{0:L}-{0:k}-{0:i}{2}" + format_;
+        else if (show_time_) format_ = "{0:t}.{1:D6}{2}" + format_;
       }
 
       bool need_header_ = true;
       bool show_date_ = true;
       bool show_time_ = true;
       std::string format_ = "{0}";
+      std::string header_separator_ = "| ";
       xtd::forms::text_box text_;
     };
   }
