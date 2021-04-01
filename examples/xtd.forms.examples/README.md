@@ -90,8 +90,8 @@
 ## [forms](forms/README.md)
 
 * [form](forms/form/README.md) represents a window or dialog box that makes up an application's user interface.
-* [form_debug](forms/form_debug/README.md) represents a form that trace all written debug with xtd::diagnosticts::debug class.
-* [form_trace](forms/form_debug/README.md) represents a form that trace all written trace with xtd::diagnosticts::trace class.
+* [debug_form](forms/debug_form/README.md) represents a form that trace all written debug with xtd::diagnosticts::debug class.
+* [trace_form](forms/trace_form/README.md) represents a form that trace all written trace with xtd::diagnosticts::trace class.
 
 ## [Dialogs](dialogs/README.md)
 
