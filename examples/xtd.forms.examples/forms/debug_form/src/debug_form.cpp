@@ -1,7 +1,6 @@
 #define DEBUG // Force debug mode even if example is builded in release.
 #include <xtd/xtd>
 
-using namespace xtd::diagnostics;
 using namespace xtd::forms;
 
 class form1 : public form {
@@ -9,19 +8,19 @@ public:
   form1() {
     text("Debug form example");
 
-    write_debug_button.auto_repeat(true);
-    write_debug_button.auto_size(true);
-    write_debug_button.location({10, 10});
-    write_debug_button.parent(*this);
-    write_debug_button.text("Write line...");
-    write_debug_button.click += [&] {
+    button1.auto_repeat(true);
+    button1.auto_size(true);
+    button1.location({10, 10});
+    button1.parent(*this);
+    button1.text("Write line...");
+    button1.click += [&] {
       static int counter = 0;
-      debug::write_line("Write line {}...", ++counter);
+      xtd::diagnostics::debug::write_line("Write line {}...", ++counter);
     };
   }
   
 private:
-  button write_debug_button;
+  button button1;
 };
 
 int main() {
