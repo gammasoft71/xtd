@@ -13,7 +13,7 @@ public:
     write_debug_button.auto_size(true);
     write_debug_button.location({10, 10});
     write_debug_button.parent(*this);
-    write_debug_button.text("Write debug...");
+    write_debug_button.text("Write line...");
     write_debug_button.click += [&] {
       static int counter = 0;
       debug::write_line("Write line {}...", ++counter);
