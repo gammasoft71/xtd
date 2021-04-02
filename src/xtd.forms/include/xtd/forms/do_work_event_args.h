@@ -4,7 +4,7 @@
 #pragma once
 #include <any>
 #include <cstdint>
-#include <xtd/event_args.h>
+#include "cancel_event_args.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -14,7 +14,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    class do_work_event_args : public event_args {
+    class do_work_event_args : public cancel_event_args {
     public:
       /// @cond
       do_work_event_args(const do_work_event_args& do_work_event_args) = default;
@@ -29,15 +29,15 @@ namespace xtd {
       /// @return An object representing the argument of an asynchronous operation.
       std::any argument() const {return argument_;}
       
-      bool cancel() const {return cancel_;}
-      void cancel(bool value) {cancel_ = value;}
-
+      /// @brief Gets a value that represents the result of an asynchronous operation.
+      /// @return A std::any representing the result of an asynchronous operation.
       std::any result() const {return result_;}
+      /// @brief Sets a value that represents the result of an asynchronous operation.
+      /// @param value A std::any representing the result of an asynchronous operation.
       void result(std::any value) {result_ = value;}
 
     private:
       std::any argument_;
-      bool cancel_ = false;
       std::any result_;
     };
   }

@@ -59,6 +59,7 @@ namespace xtd {
       const object_collection& items() const {return items_;}
       /// @brief Sets an object representing the collection of the items contained in this combo_box. Gets an object representing the collection of the items contained in this combo_box.
       /// @param items A combo_box::object_collection representing the items in the combo_box.
+      /// @return This instamce of combo_box.
       const combo_box& items(const object_collection& items) {
         items_ = items;
         return *this;
