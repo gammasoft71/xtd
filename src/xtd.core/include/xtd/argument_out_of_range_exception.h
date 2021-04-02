@@ -13,7 +13,7 @@ namespace xtd {
   /// @par Examples
   /// The following example demonstrates how to throw and catch an argument_out_of_range_exception.
   /// @include argument_out_of_range_exception.cpp
-  class argument_out_of_range_exception :public argument_exception {
+  class argument_out_of_range_exception : public argument_exception {
   public:
     /// @brief Create a new instance of class argument_out_of_range_exception
     /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.

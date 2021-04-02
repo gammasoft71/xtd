@@ -15,7 +15,7 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates how to throw and catch an path_too_long_exception.
     /// @include path_too_long_exception.cpp
-    class path_too_long_exception :public ioexception {
+    class path_too_long_exception : public ioexception {
     public:
       /// @brief Create a new instance of class path_too_long_exception
       /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.

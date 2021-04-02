@@ -13,7 +13,7 @@ namespace xtd {
   /// @par Examples
   /// The following example demonstrates how to throw and catch an invalid_program_exception.
   /// @include invalid_program_exception.cpp
-  class invalid_program_exception :public system_exception {
+  class invalid_program_exception : public system_exception {
   public:
     /// @brief Create a new instance of class invalid_program_exception
     /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.

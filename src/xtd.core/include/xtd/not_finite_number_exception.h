@@ -13,7 +13,7 @@ namespace xtd {
   /// @par Examples
   /// The following example demonstrates how to throw and catch an not_finite_number_exception.
   /// @include not_finite_number_exception.cpp
-  class not_finite_number_exception :public arithmetic_exception {
+  class not_finite_number_exception : public arithmetic_exception {
   public:
     /// @brief Create a new instance of class not_finite_number_exception
     /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.

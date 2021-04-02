@@ -15,7 +15,7 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates how to throw and catch an drive_not_found_exception.
     /// @include drive_not_found_exception.cpp
-    class drive_not_found_exception :public ioexception {
+    class drive_not_found_exception : public ioexception {
     public:
       /// @brief Create a new instance of class drive_not_found_exception
       /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.

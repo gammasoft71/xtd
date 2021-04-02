@@ -13,7 +13,7 @@ namespace xtd {
   /// @par Examples
   /// The following example demonstrates how to throw and catch an underflow_exception.
   /// @include underflow_exception.cpp
-  class underflow_exception :public arithmetic_exception {
+  class underflow_exception : public arithmetic_exception {
   public:
     /// @brief Create a new instance of class underflow_exception
     /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.

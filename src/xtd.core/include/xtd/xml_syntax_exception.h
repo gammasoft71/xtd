@@ -14,7 +14,7 @@ namespace xtd {
   /// The following example demonstrates how to throw and catch an xml_syntax_exception.
   /// @include xml_syntax_exception.cpp
   /// @todo move to security namespace
-  class xml_syntax_exception :public system_exception {
+  class xml_syntax_exception : public system_exception {
   public:
     /// @brief Create a new instance of class xml_syntax_exception
     /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
