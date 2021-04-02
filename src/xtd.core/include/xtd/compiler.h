@@ -52,25 +52,25 @@ namespace xtd {
     std::string to_string() const noexcept {return version_string();}
     
   private:
-#if _MSC_VER
+#if defined(_MSC_VER)
     xtd::compiler_id compiler_id_ = xtd::compiler_id::microsoft_visual_studio;
-#elif __clang__
+#elif defined(__clang__)
     xtd::compiler_id compiler_id_ = xtd::compiler_id::clang;
-#elif __GNUC__
+#elif defined(__GNUC__)
     xtd::compiler_id compiler_id_ = xtd::compiler_id::gcc;
 #else
     xtd::compiler_id compiler_id_ = xtd::compiler_id::unknown;
 #endif
-#if _MSC_VER
+#if defined(_MSC_VER)
     xtd::version version_ {_MSC_VER/100, _MSC_VER%100, 0};
-#elif __clang__
+#elif defined(__clang__)
     xtd::version version_ {__clang_major__ , __clang_minor__, __clang_patchlevel__};
-#elif __GNUC__
+#elif defined(__GNUC__)
     xtd::version version_ {__GNUC__ , __GNUC_MINOR__, __GNUC_PATCHLEVEL__};
 #else
     xtd::version version_;
 #endif
-#if NDEBUG
+#if defined(NDEBUG)
     xtd::build_type build_type_ = xtd::build_type::release;
 #else
     xtd::build_type build_type_ = xtd::build_type::debug;
