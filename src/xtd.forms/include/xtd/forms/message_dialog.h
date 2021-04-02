@@ -36,10 +36,25 @@ namespace xtd {
     template<typename type_t>
     using message_dialog_closed_event_handler = delegate<void(type_t, const message_dialog_closed_event_args& e)>;
   
-    /// @brief Represents a common dialog box that displays message box.
+    /// @brief Displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A message_dialog can contain text, buttons, and symbols that inform and instruct the user.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms dialogs
     /// @par Examples
     /// The following code example demonstrate the use of message_dialog dialog.
     /// @include message_dialog.cpp
+    /// @par Windows
+    /// @image html message_dialog_w.png
+    /// <br>
+    /// @image html message_dialog_wd.png
+    /// @par macOS
+    /// @image html message_dialog_m.png
+    /// <br>
+    /// @image html message_dialog_md.png
+    /// @par Gnome
+    /// @image html message_dialog_g.png
+    /// <br>
+    /// @image html message_dialog_gd.png
     class forms_export_ message_dialog final : public component {
     public:
       /// @brief Initializes a new instance of the message_dialog class.

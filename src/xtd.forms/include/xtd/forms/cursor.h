@@ -97,7 +97,7 @@ namespace xtd {
       /// @remarks Any type of class can be assigned to this property.
       void tag(std::any tag) {data_->tag_ = tag;}
       
-      /// @remarks Copies the handle of this cursor.
+      /// @brief Copies the handle of this cursor.
       /// @return An intptr_t that represents the cursor's handle.
       /// @remarks The handle created as a result of calling this method must be deleted of when you are done with it.
       intptr_t copy_handle() const;

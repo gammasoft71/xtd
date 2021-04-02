@@ -18,6 +18,25 @@ namespace xtd {
     class control;
     /// @endcond
 
+    /// @brief Displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A message_box can contain text, buttons, and symbols that inform and instruct the user.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms dialogs
+    /// @par Examples
+    /// The following code example demonstrate the use of message_box dialog.
+    /// @include message_box.cpp
+    /// @par Windows
+    /// @image html message_box_w.png
+    /// <br>
+    /// @image html message_box_wd.png
+    /// @par macOS
+    /// @image html message_box_m.png
+    /// <br>
+    /// @image html message_box_md.png
+    /// @par Gnome
+    /// @image html message_box_g.png
+    /// <br>
+    /// @image html message_box_gd.png
     class message_box final static_ {
     public:
       static dialog_result show(const iwin32_window& owner) {return show_message_dialog(&owner);}
