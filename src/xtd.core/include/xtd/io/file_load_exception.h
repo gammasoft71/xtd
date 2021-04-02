@@ -15,7 +15,7 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates how to throw and catch an file_load_exception.
     /// @include file_load_exception.cpp
-    class file_load_exception :public ioexception {
+    class file_load_exception : public ioexception {
     public:
       /// @brief Create a new instance of class file_load_exception
       /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.

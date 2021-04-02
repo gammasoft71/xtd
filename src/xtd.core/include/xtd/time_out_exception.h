@@ -13,7 +13,7 @@ namespace xtd {
   /// @par Examples
   /// The following example demonstrates how to throw and catch an time_out_exception.
   /// @include time_out_exception.cpp
-  class time_out_exception :public system_exception {
+  class time_out_exception : public system_exception {
   public:
     /// @brief Create a new instance of class time_out_exception
     /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.

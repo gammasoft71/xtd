@@ -15,7 +15,7 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates how to throw and catch an end_of_stream_exception.
     /// @include end_of_stream_exception.cpp
-    class end_of_stream_exception :public ioexception {
+    class end_of_stream_exception : public ioexception {
     public:
       /// @brief Create a new instance of class end_of_stream_exception
       /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.

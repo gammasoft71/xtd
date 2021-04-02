@@ -15,7 +15,7 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates how to throw and catch an ioexception.
     /// @include ioexception.cpp
-    class ioexception :public system_exception {
+    class ioexception : public system_exception {
     public:
       /// @brief Create a new instance of class ioexception
       /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
