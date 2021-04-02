@@ -55,8 +55,8 @@ namespace xtd {
           arranged_element_collection* parent = nullptr;
         };
         
-        /// @brief @member types
         /// @{
+        /// Member types
         using value_type = item_t;
         using allocator_type = std::allocator<item_t>;
         using size_type = size_t;
@@ -71,7 +71,7 @@ namespace xtd {
         using const_reverse_iterator = typename std::vector<value_type>::const_reverse_iterator;
         /// @}
         
-        /// @biref Creats a new object arranged_element_collection
+        /// @brief Creats a new object arranged_element_collection
         explicit arranged_element_collection(const allocator_type& allocator = allocator_type()) : collection_(allocator) {}
         
         /// @cond
@@ -300,6 +300,7 @@ namespace xtd {
         
         std::vector<type_t> to_vector() const {return to_array();}
 
+        /// @brief This is a special value equal to the maximum value representable by the type size_t.
         static const size_t npos = std::numeric_limits<size_t>::max();
 
       private:

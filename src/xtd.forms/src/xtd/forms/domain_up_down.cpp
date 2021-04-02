@@ -70,9 +70,9 @@ domain_up_down& domain_up_down::selected_item(const item& selected_item) {
   return *this;
 }
 
-domain_up_down& domain_up_down::wrapped(bool value) {
-  if (wrapped_ != value) {
-    wrapped_ = value;
+domain_up_down& domain_up_down::wrap(bool value) {
+  if (wrap_ != value) {
+    wrap_ = value;
     recreate_handle();
   }
   return *this;
@@ -83,7 +83,7 @@ forms::create_params domain_up_down::create_params() const {
   
   create_params.class_name("domainupdown");
   
-  if (wrapped_) create_params.style(create_params.style() | UDS_WRAP);
+  if (wrap_) create_params.style(create_params.style() | UDS_WRAP);
 
   return create_params;
 }
