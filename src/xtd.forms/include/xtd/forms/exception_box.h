@@ -14,20 +14,39 @@ namespace xtd {
     class control;
     /// @endcond
 
+    /// @brief Represents a common dialog box that displays exception box.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms dialogs
+    /// @par Examples
+    /// The following code example demonstrate the use of exception_box dialog.
+    /// @include exception_box.cpp
+    /// @par Windows
+    /// @image html exception_box_w.png
+    /// <br>
+    /// @image html exception_box_wd.png
+    /// @par macOS
+    /// @image html exception_box_m.png
+    /// <br>
+    /// @image html exception_box_md.png
+    /// @par Gnome
+    /// @image html exception_box_g.png
+    /// <br>
+    /// @image html exception_box_gd.png
     class exception_box final static_ {
     public:
-      static dialog_result show(const iwin32_window& owner) {return show_exception_dialog(&owner);}
-      static dialog_result show(const iwin32_window& owner, const std::string& caption) {return show_exception_dialog(&owner, nullptr, caption);}
-      static dialog_result show(const iwin32_window& owner, const std::exception& exception) {return show_exception_dialog(&owner, &exception);}
-      static dialog_result show(const iwin32_window& owner, const std::exception& exception, const std::string& caption) {return show_exception_dialog(&owner, &exception, caption);}
+      static dialog_result show(const iwin32_window& owner) {return show_exception_box(&owner);}
+      static dialog_result show(const iwin32_window& owner, const std::string& caption) {return show_exception_box(&owner, nullptr, caption);}
+      static dialog_result show(const iwin32_window& owner, const std::exception& exception) {return show_exception_box(&owner, &exception);}
+      static dialog_result show(const iwin32_window& owner, const std::exception& exception, const std::string& caption) {return show_exception_box(&owner, &exception, caption);}
       
-      static dialog_result show() {return show_exception_dialog(nullptr);}
-      static dialog_result show(const std::string& caption) {return show_exception_dialog(nullptr, nullptr, caption);}
-      static dialog_result show(const std::exception& exception) {return show_exception_dialog(nullptr, &exception);}
-      static dialog_result show(const std::exception& exception, const std::string& caption) {return show_exception_dialog(nullptr, &exception, caption);}
+      static dialog_result show() {return show_exception_box(nullptr);}
+      static dialog_result show(const std::string& caption) {return show_exception_box(nullptr, nullptr, caption);}
+      static dialog_result show(const std::exception& exception) {return show_exception_box(nullptr, &exception);}
+      static dialog_result show(const std::exception& exception, const std::string& caption) {return show_exception_box(nullptr, &exception, caption);}
       
     private:
-      static dialog_result show_exception_dialog(const iwin32_window* owner, const std::exception* exception = nullptr, const std::string& caption = "") {
+      static dialog_result show_exception_box(const iwin32_window* owner, const std::exception* exception = nullptr, const std::string& caption = "") {
         exception_dialog dialog;
         if (exception) dialog.exception(*exception);
         dialog.text(caption);
