@@ -11,7 +11,7 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    /// @brief Represents a base form for ebug and trace form.
+    /// @brief Represents a base form for debug_form and trace_form forms. This class cannot be instantiated.
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms forms
@@ -26,34 +26,54 @@ namespace xtd {
         return xtd::forms::control::dock(dock);
       }
       
-      bool show_date() const {return show_date_;}
-      void show_date(bool value) {
+      /// @brief Gets a vallue indicate if date is showing before trace text.
+      /// @return true is date showing; otherwise false. By default is true.
+      virtual bool show_date() const {return show_date_;}
+      /// @brief Sets a vallue indicate if date is showing before trace text.
+      /// @param value true is date showing; otherwise false. By default is true.
+      /// @return this instance of trace_form_base.
+      virtual trace_form_base& show_date(bool value) {
         if (show_date_ != value) {
           show_date_ = value;
           update_format();
         }
+        return *this;
       }
       
-      bool show_time() const {return show_time_;}
-      void show_time(bool value) {
+      /// @brief Gets a vallue indicate if time is showing before trace text.
+      /// @return true is time showing; otherwise false. By default is true.
+      virtual  bool show_time() const {return show_time_;}
+      /// @brief Sets a vallue indicate if time is showing before trace text.
+      /// @param value true is time showing; otherwise false. By default is true.
+      /// @return this instance of trace_form_base.
+      virtual trace_form_base& show_time(bool value) {
         if (show_time_ != value) {
           show_time_ = value;
           update_format();
         }
+        return *this;
       }
       
-      const std::string& header_separator() const {return header_separator_;}
-      void show_date(const std::string& header_separator) {
+      /// @brief Gets the string used to separate date and/or time from trace text.
+      /// @return A string that represent separator. By default is "|".
+      virtual const std::string& header_separator() const {return header_separator_;}
+      /// @brief Sets the string used to separate date and/or time from trace text.
+      /// @param header_separator A string that represent separator. By default is "|".
+      /// @return this instance of trace_form_base.
+      virtual trace_form_base& header_separator(const std::string& header_separator) {
         if (header_separator_ != header_separator_) {
           header_separator_ = header_separator;
           update_format();
         }
+        return *this;
       }
 
     protected:
+      /// @brief Initializes a new instance of the trace_form_base class with spefied caption text.
+      /// @param text A string that represent the caption text oof the debug form.
       trace_form_base(const std::string& text) {
-        name("__xtd_forms_trace_form");
-        text_.name("__xtd_forms_trace_form_text");
+        name("9f5767d6-7a21-4ebe-adfe-2427b2024a55");
+        text_.name("d014d407-851c-49c1-a343-3380496a639a");
 
         dock(xtd::forms::dock_style::bottom);
         start_position(xtd::forms::form_start_position::manual);
@@ -74,26 +94,42 @@ namespace xtd {
         form::on_form_closing(e);
       }
 
+      /// @brief Writes trace string to the multiline text.
+      /// @param trace A string to write.
       virtual void write(const std::string& trace) {
         if (need_header()) write_header();
         text_.append_text(trace);
       }
       
+      /// @brief Writes trace string to the multiline text followed by a line terminator.
+      /// @param trace A string to write.
       virtual void write_line(const std::string& trace) {
-        if (need_header()) write_header();
-        text_.append_text(trace);
-        text_.append_text("\n");
+        write(trace);
+        text_.append_text(environment::new_line());
         need_header(true);
       }
       
-      void write_header() {
+      /// @brief Writes header, if needed. Writes date and/or time and header_separtor.
+      /// @param trace A string to write.
+      virtual void write_header() {
         auto now =  std::chrono::system_clock::now();
         text_.append_text(xtd::strings::format(format_, now, (std::chrono::duration_cast<std::chrono::microseconds>(now.time_since_epoch())).count() % 1000000, header_separator_));
         need_header_ = false;
       }
       
-      bool need_header() const {return need_header_;}
-      void need_header(bool value) {need_header_ = value;}
+      /// @brief Gets a value indicate if header need written.
+      /// @return true if header needed; otherwise false.
+      /// @remarks After each line terminator, header was needed.
+      virtual bool need_header() const {return need_header_;}
+      /// @brief Sets a value indicate if header need written.
+      /// @param value true if header needed; otherwise false.
+      /// @remarks After each line terminator, header was needed.
+      /// @return this instance of trace_form_base.
+     virtual trace_form_base& need_header(bool value) {
+        if (need_header_ != value)
+          need_header_ = value;
+        return *this;
+      }
 
     private:
       void update_format() {

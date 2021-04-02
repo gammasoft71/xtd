@@ -730,7 +730,7 @@ intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_
 }
 
 void control::wnd_proc(message& message) {
-  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!xtd::strings::starts_with(name(), "__xtd_forms_trace_form") && enable_debug::get(enable_debug::events), strings::format("({}) receive message [{}]", *this, message));
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!xtd::strings::starts_with(name(), "9f5767d6-7a21-4ebe-adfe-2427b2024a55") && enable_debug::get(enable_debug::events), strings::format("({}) receive message [{}]", *this, message));
   switch (message.msg()) {
       // keyboard:
     case WM_CHAR:

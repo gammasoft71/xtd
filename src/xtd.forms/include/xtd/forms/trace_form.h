@@ -13,7 +13,10 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms forms
-    /// This form is used in a development phase to trace all written trace with xtd::diagnostics::trace class.
+    /// @remarks This form is used in a development phase to trace all written trace with xtd::diagnostics::trace class.
+    /// @remarks You must enable debug mode to use a trace listener. The syntax is compiler specific. If you use other than cmake to manage your build, refer to the documentation of your build nanager.
+    ///  * To enable debug mode with cmake, add the add_definitions(-DDEBUG) command line in the CMakeLists.txt of your porject, or you can add #define DEBUG to the top of your file.
+    /// @remarks To activete your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if defined(DEBUG) ... #endif block, and add the /DDEBUG option to the compiler command line or add #define DEBUG to the file.
     /// @par Examples
     /// The following code example demonstrate the use of trace_form form.
     /// @include trace_form.cpp
@@ -31,6 +34,7 @@ namespace xtd {
     /// @image html trace_form_gd.png
     class trace_form final : public xtd::forms::icontrol_trace, public xtd::forms::trace_form_base {
     public:
+      /// @brief Initializes a new instance of the trace_form class.
       trace_form() : trace_form_base("Trace") {
         xtd::diagnostics::trace::listeners().push_back(listener_);
 #if defined(TRACE)
@@ -41,7 +45,11 @@ namespace xtd {
       ~trace_form() {xtd::diagnostics::trace::listeners().erase(std::find(xtd::diagnostics::trace::listeners().begin(), xtd::diagnostics::trace::listeners().end(), listener_));}
       /// @endcond
       
+      /// @brief Gets underlying trace listener.
+      /// @return A xtd::diagnostics::trace_listener trace listener. In this case a xtd::forms::control_trace_listener.
       const xtd::diagnostics::trace_listener& trace_listener() const {return *listener_;}
+      /// @brief Gets underlying trace listener.
+      /// @return A xtd::diagnostics::trace_listener trace listener. In this case a xtd::forms::control_trace_listener.
       xtd::diagnostics::trace_listener& trace_listener() {return *listener_;}
 
       void write(const std::string& trace) override {
@@ -54,6 +62,7 @@ namespace xtd {
         trace_form_base::write_line(trace);
 #endif
       }
+      
       void flush() override {}
       
     private:
