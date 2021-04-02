@@ -43,7 +43,7 @@ namespace xtd {
     /// @image html cursors_gd.png
     class forms_export_ cursor {
     public:
-      /// @brief Initializes a new instance of the Cursor class.
+      /// @brief Initializes a new instance of the cursor class.
       cursor();
       /// @brief Initializes a new instance of the Cursor class from the specified Windows handle.
       /// @param handle An IntPtr that represents the Windows handle of the cursor to create.
