@@ -31,61 +31,57 @@ namespace xtd {
     /// @image html dot_matrix_display_gd.png
     class dot_matrix_display : public control {
     public:
-      using dot = drawing::point;
-      using dot_collection =  std::vector<dot>;
-
+      /// @brief Reprresents a dots collection.
+      using dots_collection =  std::vector<std::vector<bool>>;
+      
+      /// @brief Reprresents a point collection.
+      using points_collection =  std::vector<xtd::drawing::point>;
+      
+      /// @brief Initialize a new instance of dot_matrix_display class.
       dot_matrix_display() {
         auto_size(true);
         double_buffered(true);
         size_ = default_size();
       }
 
-      virtual drawing::color background_dot_color() {return background_dot_color_.value_or(drawing::color::average(back_color(), fore_color(), background_dot_transparency_));}
-      virtual dot_matrix_display& background_dot_color(const drawing::color& value) {
-        if (!background_dot_color_.has_value() || background_dot_color_.value() != value) {
-          background_dot_color_ = value;
+      /// @brief Gets background dot color.
+      /// @return A xtd::drawing color that represent the background dot color.
+      /// @remarks Do not confuse back_dot_color and back_color. Background dot color is the color when dot is off.
+      virtual drawing::color back_dot_color() {return back_dot_color_.value_or(fore_color());}
+      /// @brief Sets background dot color.
+      /// @param value A xtd::drawing color that represent the background dot color.
+      /// @return This instance of dot_matrix_display.
+      /// @remarks Do not confuse back_dot_color and back_color. Background dot color is the color when dot is off.
+      virtual dot_matrix_display& back_dot_color(const drawing::color& value) {
+        if (!back_dot_color_.has_value() || back_dot_color_.value() != value) {
+          back_dot_color_ = value;
           invalidate();
         }
         return *this;
       }
 
-      virtual double background_dot_transparency() const {return background_dot_transparency_;}
-      virtual dot_matrix_display& background_dot_transparency(double value) {
-        if (background_dot_transparency_ != value) {
-          background_dot_transparency_ = value;
+      /// @brief Gets the background dot transparency.
+      /// @return A double-precision value between 0.0 and 1.0 that represent the background dot transparency.
+      virtual double back_dot_transparency() const {return back_dot_transparency_;}
+      /// @brief Sets the background dot transparency.
+      /// @param value A double-precision value between 0.0 and 1.0 that represent the background dot transparency.
+      /// @return This instance of dot_matrix_display.
+      virtual dot_matrix_display& back_dot_transparency(double value) {
+        if (back_dot_transparency_ != value) {
+          back_dot_transparency_ = value;
+          if (back_dot_transparency_ < 0.0) back_dot_transparency_ = 0.0;
+          if (back_dot_transparency_ > 1.0) back_dot_transparency_ = 1.0;
           invalidate();
         }
         return *this;
       }
 
-      virtual const std::vector<std::vector<bool>>& dots() const {return dots_;}
-
-      virtual int32_t dot_height() const {return dot_size_.height();}
-      virtual void dot_height(int32_t value) {dot_size({dot_size_.width(), value});}
-
-      virtual int32_t dot_width() const {return dot_size_.width();}
-      virtual void dot_width(int32_t value) {dot_size({value, dot_size_.height()});}
-
-      virtual const drawing::size& dot_size() const {return dot_size_;}
-      virtual void dot_size(const drawing::size& value) {
-        if (dot_size_ != value) {
-          dot_size_ = value;
-          dots_ = std::vector<std::vector<bool>>(dot_size_.width(), std::vector<bool>(dot_size_.height(), false));
-          invalidate();
-        }
-      }
-
-      virtual void dots(const dot_collection& dots) {
-        set_all_dots(false);
-        this->dots(dots, true);
-      }
-      
-      virtual void dots(const dot_collection& dots, bool on) {
-        for (auto dot : dots)
-          set_dot(dot, on);
-      }
-      
+      /// @brief Gets dot matrix style.
+      /// @return One of xtd::forms::dot_matrix_style values. The default is xtd::forms::dot_matrix_style::standardforms::dot_matrix_style::standard
       virtual forms::dot_matrix_style dot_matrix_style() const {return dot_matrix_style_;}
+      /// @brief Sets dot matrix style.
+      /// @param value One of xtd::forms::dot_matrix_style values. The default is xtd::forms::dot_matrix_style::standardforms::dot_matrix_style::standard
+      /// @return This instance of dot_matrix_display.
       virtual dot_matrix_display& dot_matrix_style(forms::dot_matrix_style value) {
         if (dot_matrix_style_ != value) {
           dot_matrix_style_ = value;
@@ -93,17 +89,77 @@ namespace xtd {
         }
         return *this;
       }
-      
-      virtual bool show_background_dot() const {return show_background_dot_;}
-      virtual dot_matrix_display& show_background_dot(bool value) {
-        if (show_background_dot_ != value) {
-          show_background_dot_ = value;
+
+      /// @brief Gets all dots status.
+      /// @return A dots_colllection that represent all dots status.
+      virtual const dots_collection& dots() const {return dots_;}
+      /// @brief Sets all dots status.
+      /// @param dots A dots_colllection that represent all dots status.
+      /// @return This instance of dot_matrix_display.
+      virtual const dot_matrix_display& dots(const dots_collection& dots) {
+        if (dots_ != dots) {
+          dots_ = dots;
           invalidate();
         }
         return *this;
       }
 
-      virtual int32_t thickness() const {return thickness_.value_or(size_.height() < (dot_size_.height() * 2) ? 1 : (size_.height() - dot_size_.height()) / dot_size_.height());}
+      /// @brief Gets the matrix size. Number of width dots.
+      /// @return A int32_t represent the width dots of the matrix. The default is 7.
+      virtual int32_t matrix_height() const {return matrix_size_.height();}
+      /// @brief Sets the matrix size. Number of width dots.
+      /// @param value A int32_t represent the width dots of the matrix. The default is 7.
+      /// @return This instance of dot_matrix_display.
+      virtual void matrix_height(int32_t value) {matrix_size({matrix_size_.width(), value});}
+      
+      /// @brief Gets the matrix size. Number height dots.
+      /// @return A int32_t that represent the width dots of the matrix. The default is 7.
+      virtual int32_t matrix_width() const {return matrix_size_.width();}
+      /// @brief Sets the matrix size. Number height dots.
+      /// @param value A int32_t that represent the width dots of the matrix. The default is 7.
+      /// @return This instance of dot_matrix_display.
+      virtual void matrix_width(int32_t value) {matrix_size({value, matrix_size_.height()});}
+      
+      /// @brief Gets the matrix size. Number of width and height dots.
+      /// @return A xtd::drawing::point that represent the width and height dots of the matrix. The default is {7, 7}.
+      virtual const drawing::size& matrix_size() const {return matrix_size_;}
+      /// @brief Gets the matrix size. Number of width and height dots.
+      /// @param value A xtd::drawing::point that represent the width and height dots of the matrix. The default is {7, 7}. The default is {7, 7}.
+      /// @return This instance of dot_matrix_display.
+      virtual void matrix_size(const drawing::size& value) {
+        if (matrix_size_ != value) {
+          matrix_size_ = value;
+          dots_ = std::vector<std::vector<bool>>(matrix_size_.width(), std::vector<bool>(matrix_size_.height(), false));
+          invalidate();
+        }
+      }
+
+      /// @brief Gets a value indicate if background dots is shown.
+      /// @return true if background dots is shown; otherwise false
+      virtual bool show_back_dot() const {return show_back_dot_;}
+      /// @brief Sets a value indicate if background dots is shown.
+      /// @param value true if background dots is shown; otherwise false
+      /// @return This instance of dot_matrix_display.
+      virtual dot_matrix_display& show_back_dot(bool value) {
+        if (show_back_dot_ != value) {
+          show_back_dot_ = value;
+          invalidate();
+        }
+        return *this;
+      }
+
+      /// @brief Gets thickness of dot.
+      /// @return A int32_t that represent the dot tickness.
+      /// @remarks By not specified tickness. It compute as this:
+      ///  If control height less than matrix height * 2 than 1.
+      ///  Else (control height - matrix height) / matrix height.
+      virtual int32_t thickness() const {return thickness_.value_or(size_.height() < (matrix_size_.height() * 2) ? 1 : (size_.height() - matrix_size_.height()) / matrix_size_.height());}
+      /// @brief Sets thickness of dot.
+      /// @param value A int32_t that represent the dot tickness.
+      /// @return This instance of dot_matrix_display.
+      /// @remarks By not specified tickness. It compute as this:
+      ///  If control height less than matrix height * 2 than 1.
+      ///  Else (control height - matrix height) / matrix height.
       virtual dot_matrix_display& thickness(int32_t value) {
         if (!thickness_.has_value() || thickness_.value() != value) {
           thickness_ = value;
@@ -112,18 +168,41 @@ namespace xtd {
         return *this;
       }
 
+      /// @brief Sets all dots with specified boolean.
+      /// @param on true to set all dots to on; otherwise false.
       virtual void set_all_dots(bool on) {
-        for (int32_t x = 0; x < static_cast<int32_t>(dots_.size()); x++)
-          for (int32_t y = 0; y < static_cast<int32_t>(dots_[x].size()); y++)
+        for (auto x = 0; x < static_cast<int32_t>(dots_.size()); x++)
+          for (auto y = 0; y < static_cast<int32_t>(dots_[x].size()); y++)
             dots_[x][y] = on;
       }
       
-      virtual bool get_dot(const dot& dot) const {return dots_[dot.x()][dot.y()];}
-      virtual void set_dot(const dot& dot, bool on) {
-        if (dots_[dot.x()][dot.y()] != on) {
-          dots_[dot.x()][dot.y()] = on;
+      /// @brief Gets specified dot point status.
+      /// @param point dot point location in the matrix.
+      /// @return true if specified dot point is on; otherwise false.
+      virtual bool get_dot(const drawing::point& point) const {return dots_[point.x()][point.y()];}
+      
+      /// @brief Sets specified dot point status.
+      /// @param point dot point location in the matrix.
+      /// @param on true if specified dot point is on; otherwise false.
+      virtual void set_dot(const drawing::point& point, bool on) {
+        if (dots_[point.x()][point.y()] != on) {
+          dots_[point.x()][point.y()] = on;
           invalidate();
         }
+      }
+
+      /// @brief Sets specified dots to on.
+      /// @param points Dot points collection tha contains locations in the matrix.
+      virtual void set_dots(const points_collection& points) {
+        set_all_dots(false);
+        set_dots(points, true);
+      }
+      /// @brief Sets specified dots with specified boolean.
+      /// @param points Dot points collection tha contains locations in the matrix.
+      /// @param on true to set pecified dots points to on; otherwise false.
+      virtual void set_dots(const points_collection& points, bool on) {
+        for (auto point : points)
+          set_dot(point, on);
       }
 
     protected:
@@ -132,38 +211,38 @@ namespace xtd {
       void on_paint(paint_event_args& e) override {
         drawing::graphics graphics = e.graphics();
         graphics.clear(back_color());
-        if (show_background_dot_) draw_background_dot(graphics);
-        for (int32_t x = 0; x < static_cast<int32_t>(dots_.size()); x++)
-          for (int32_t y = 0; y < static_cast<int32_t>(dots_[x].size()); y++)
+        for (int32_t x = 0; x < static_cast<int32_t>(dots_.size()); x++) {
+          for (int32_t y = 0; y < static_cast<int32_t>(dots_[x].size()); y++) {
             if (dots_[x][y]) draw_dot(graphics, fore_color(), {x, y});
+            else if (show_back_dot_) draw_dot(graphics, drawing::color::average(back_color(), back_dot_color(), back_dot_transparency_), {x, y});
+          }
+        }
       }
       
       drawing::size measure_control() const override {
-        int32_t width = static_cast<int32_t>(static_cast<double>(height()) / dot_height() * dot_width());
+        int32_t width = static_cast<int32_t>(static_cast<double>(height()) / matrix_height() * matrix_width());
         return drawing::size(width, height());
       }
 
-      virtual void draw_background_dot(drawing::graphics& graphics) {
-        for (int32_t x = 0; x < static_cast<int32_t>(dots_.size()); x++)
-          for (int32_t y = 0; y < static_cast<int32_t>(dots_[x].size()); y++)
-            draw_dot(graphics, background_dot_color(), {x, y});
-      }
-
-      virtual void draw_dot(drawing::graphics& graphics, const drawing::color& color,const dot& dot) {
+      /// @brief Draw specified dot point with specified color on specified graphics.
+      /// @param graphics DEfine the conrol graphics where draw the specified dot point.
+      /// @param color The dot color to draw.
+      /// @param point The dot point location in the matrix.
+      virtual void draw_dot(drawing::graphics& graphics, const drawing::color& color, const drawing::point& point) {
         int32_t y = (width() - static_cast<int32_t>(dots_.size()))  / static_cast<int32_t>(dots_.size());
-        int32_t x = (height() - static_cast<int32_t>(dots_[dot.y()].size())) / static_cast<int32_t>(dots_[dot.y()].size());
+        int32_t x = (height() - static_cast<int32_t>(dots_[point.y()].size())) / static_cast<int32_t>(dots_[point.y()].size());
         if (dot_matrix_style_ == dot_matrix_style::standard)
-          graphics.fill_pie(drawing::solid_brush(color), (1 + x) * dot.x(), (1 + y) * dot.y(), thickness(), thickness(), 0, 360);
+          graphics.fill_pie(drawing::solid_brush(color), (1 + x) * point.x(), (1 + y) * point.y(), thickness(), thickness(), 0, 360);
         else if (dot_matrix_style_ == dot_matrix_style::square)
-          graphics.fill_rectangle(drawing::solid_brush(color), (1 + x) * dot.x(), (1 + y) * dot.y(), thickness(), thickness());
+          graphics.fill_rectangle(drawing::solid_brush(color), (1 + x) * point.x(), (1 + y) * point.y(), thickness(), thickness());
       }
 
       /// @cond
-      drawing::size dot_size_ = {7, 7};
-      std::vector<std::vector<bool>> dots_ = std::vector<std::vector<bool>>(dot_size_.width(), std::vector<bool>(dot_size_.height(), false));
-      bool show_background_dot_ = true;
-      std::optional<drawing::color> background_dot_color_;
-      double background_dot_transparency_ = 0.05;
+      drawing::size matrix_size_ = {7, 7};
+      dots_collection dots_ = dots_collection(matrix_size_.width(), std::vector<bool>(matrix_size_.height(), false));
+      bool show_back_dot_ = true;
+      std::optional<drawing::color> back_dot_color_;
+      double back_dot_transparency_ = 0.05;
       forms::dot_matrix_style dot_matrix_style_ = forms::dot_matrix_style::standard;
       std::optional<int32_t> thickness_;
       /// @endcond

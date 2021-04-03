@@ -592,7 +592,7 @@ namespace xtd {
       /// @param color2 The second color.
       /// @param weight The weighting factor
       /// @return The average color.
-      /// @remarks The alpha od color1 is conserved.
+      /// @remarks The alpha of color1 is conserved.
       /// @remarks The red, green and blue values are averages using the following formula:
       /// @code
       /// color = color1 * (1 - weight) + color2 * weight;
