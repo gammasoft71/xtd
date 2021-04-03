@@ -4,7 +4,7 @@
 #pragma once
 #include <memory>
 #include <xtd/strings.h>
-#include "component.h"
+#include "../forms_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -17,7 +17,7 @@ namespace xtd {
     /// @remarks On Windows settings are stored in registry with '"HKEY_CURRENT_USER\Software\Company Name\Product Name" key or if no Comapny name "\HKEY_CURRENT_USER\Software\Product Name\Product Name" key.
     /// @remarks On macos settings are stored in '~/Library/Preferences/Product Name Preferences" file.
     /// @remarks On linux settings are stored in '~/.Product Name" file.
-    class forms_export_ settings : public component {
+    class forms_export_ settings {
     public:
       settings();
       ~settings();
