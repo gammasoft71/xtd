@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::country component.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include "component.h"
+#include "../forms_export.h"
 #include <xtd/strings.h>
 #include <xtd/static.h>
 #include <xtd/drawing/bitmap.h>
@@ -34,10 +34,11 @@ namespace xtd {
     /// @image html countries_g.png
     /// <br>
     /// @image html countries_gd.png
-    class forms_export_ country : component {
+    class forms_export_ country {
     public:
       /// @cond
       country() = default;
+      virtual ~country() = default;
       bool operator==(const country& value) const {return name_ == value.name_ && alpha_2_code_ == value.alpha_2_code_ && alpha_3_code_ == value.alpha_3_code_ && numeric_code_ == value.numeric_code_;}
       bool operator!=(const country& value) const {return !operator==(value);}
       /// @endcond
