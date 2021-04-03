@@ -22,8 +22,8 @@ add_projects(
   label
   lcd_label
   list_box
-  numeric_up_down
   nine_segment_display
+  numeric_up_down
   picture_box
   progress_bar
   radio_button
@@ -31,11 +31,11 @@ add_projects(
   seven_segment_display
   sixteen_segment_display
   splitter
+  switch_button
   text_box
   toggle_button
   toggle_buttons
   track_bar
   up_down_button
   user_control
-  switch_button
 )
