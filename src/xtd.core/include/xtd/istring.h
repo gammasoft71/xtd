@@ -204,23 +204,21 @@ namespace xtd {
     immutable_basic_string& replace(size_type pos, size_type count, const immutable_basic_string& str);
     void resize(size_type count);
   };
+
+  inline std::basic_string<char> operator "" _is( const char* str, size_t len ) {
+    return std::basic_string<char>(str, len);
+  }
   
-  namespace string_literals {
-    inline std::basic_string<char> operator "" _is( const char* str, size_t len ) {
-      return std::basic_string<char>(str, len);
-    }
-    
-    inline std::basic_string<wchar_t> operator "" _is( const wchar_t* str, size_t len ) {
-      return std::basic_string<wchar_t>(str, len);
-    }
-    
-    inline std::basic_string<char16_t> operator "" _is( const char16_t* str, size_t len ) {
-      return std::basic_string<char16_t>(str, len);
-    }
-    
-    inline std::basic_string<char32_t> operator "" _is( const char32_t* str, size_t len ) {
-      return std::basic_string<char32_t>(str, len);
-    }
+  inline std::basic_string<wchar_t> operator "" _is( const wchar_t* str, size_t len ) {
+    return std::basic_string<wchar_t>(str, len);
+  }
+  
+  inline std::basic_string<char16_t> operator "" _is( const char16_t* str, size_t len ) {
+    return std::basic_string<char16_t>(str, len);
+  }
+  
+  inline std::basic_string<char32_t> operator "" _is( const char32_t* str, size_t len ) {
+    return std::basic_string<char32_t>(str, len);
   }
 
   /// @brief Immutable string<char_t>
