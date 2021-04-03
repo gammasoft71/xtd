@@ -99,6 +99,7 @@ namespace xtd {
       virtual const dot_matrix_display& dots(const dots_collection& dots) {
         if (dots_ != dots) {
           dots_ = dots;
+          matrix_size_ = drawing::size(dots_[0].size(), dots_.size());
           invalidate();
         }
         return *this;
@@ -129,7 +130,7 @@ namespace xtd {
       virtual void matrix_size(const drawing::size& value) {
         if (matrix_size_ != value) {
           matrix_size_ = value;
-          dots_ = std::vector<std::vector<bool>>(matrix_size_.width(), std::vector<bool>(matrix_size_.height(), false));
+          dots_ = dots_collection(matrix_size_.height(), std::vector<bool>(matrix_size_.width(), false));
           invalidate();
         }
       }
@@ -171,22 +172,22 @@ namespace xtd {
       /// @brief Sets all dots with specified boolean.
       /// @param on true to set all dots to on; otherwise false.
       virtual void set_all_dots(bool on) {
-        for (auto x = 0; x < static_cast<int32_t>(dots_.size()); x++)
-          for (auto y = 0; y < static_cast<int32_t>(dots_[x].size()); y++)
-            dots_[x][y] = on;
+        for (auto y = 0; y < static_cast<int32_t>(dots_.size()); y++)
+          for (auto x = 0; x < static_cast<int32_t>(dots_[y].size()); x++)
+            dots_[y][x] = on;
       }
       
       /// @brief Gets specified dot point status.
       /// @param point dot point location in the matrix.
       /// @return true if specified dot point is on; otherwise false.
-      virtual bool get_dot(const drawing::point& point) const {return dots_[point.x()][point.y()];}
+      virtual bool get_dot(const drawing::point& point) const {return dots_[point.y()][point.x()];}
       
       /// @brief Sets specified dot point status.
       /// @param point dot point location in the matrix.
       /// @param on true if specified dot point is on; otherwise false.
       virtual void set_dot(const drawing::point& point, bool on) {
-        if (dots_[point.x()][point.y()] != on) {
-          dots_[point.x()][point.y()] = on;
+        if (dots_[point.y()][point.x()] != on) {
+          dots_[point.y()][point.x()] = on;
           invalidate();
         }
       }
@@ -211,9 +212,9 @@ namespace xtd {
       void on_paint(paint_event_args& e) override {
         drawing::graphics graphics = e.graphics();
         graphics.clear(back_color());
-        for (int32_t x = 0; x < static_cast<int32_t>(dots_.size()); x++) {
-          for (int32_t y = 0; y < static_cast<int32_t>(dots_[x].size()); y++) {
-            if (dots_[x][y]) draw_dot(graphics, fore_color(), {x, y});
+        for (int32_t y = 0; y < static_cast<int32_t>(dots_.size()); y++) {
+          for (int32_t x = 0; x < static_cast<int32_t>(dots_[y].size()); x++) {
+            if (dots_[y][x]) draw_dot(graphics, fore_color(), {x, y});
             else if (show_back_dot_) draw_dot(graphics, drawing::color::average(back_color(), back_dot_color(), back_dot_transparency_), {x, y});
           }
         }
@@ -229,8 +230,8 @@ namespace xtd {
       /// @param color The dot color to draw.
       /// @param point The dot point location in the matrix.
       virtual void draw_dot(drawing::graphics& graphics, const drawing::color& color, const drawing::point& point) {
-        int32_t y = (width() - static_cast<int32_t>(dots_.size()))  / static_cast<int32_t>(dots_.size());
-        int32_t x = (height() - static_cast<int32_t>(dots_[point.y()].size())) / static_cast<int32_t>(dots_[point.y()].size());
+        int32_t y = (height() - static_cast<int32_t>(dots_.size())) / static_cast<int32_t>(dots_.size());
+        int32_t x = (width() - static_cast<int32_t>(dots_[point.y()].size()))  / static_cast<int32_t>(dots_[point.y()].size());
         if (dot_matrix_style_ == dot_matrix_style::standard)
           graphics.fill_pie(drawing::solid_brush(color), (1 + x) * point.x(), (1 + y) * point.y(), thickness(), thickness(), 0, 360);
         else if (dot_matrix_style_ == dot_matrix_style::square)

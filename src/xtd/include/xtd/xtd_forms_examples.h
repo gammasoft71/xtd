@@ -421,6 +421,21 @@
 /// <br>
 /// @image html debug_form_gd.png
 ///
+/// @example dot_matrix_display.cpp
+/// The following code example demonstrate the use of dot matrix display control.
+/// @par Windows
+/// @image html dot_matrix_display_w.png
+/// <br>
+/// @image html dot_matrix_display_wd.png
+/// @par macOS
+/// @image html dot_matrix_display_m.png
+/// <br>
+/// @image html dot_matrix_display_md.png
+/// @par Gnome
+/// @image html dot_matrix_display_g.png
+/// <br>
+/// @image html dot_matrix_display_gd.png
+///
 /// @example exception_box.cpp
 /// The following code example demonstrate the use of exception_dialog dialog.
 /// @par Windows

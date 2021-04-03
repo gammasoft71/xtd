@@ -12,7 +12,7 @@ public:
     dot_matrix_display1.parent(*this);
     dot_matrix_display1.fore_color(color::red);
     dot_matrix_display1.anchor(anchor_styles::top|anchor_styles::bottom);
-    
+   
     timer1.interval(300);
     timer1.enabled(true);
     timer1.tick += [&] {
