@@ -58,9 +58,9 @@ namespace xtd {
         std::string get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/%\\_°\"'[](){}<>| .,:;!?&$€";}
         int32_t get_thickness() const override {return dot_matrix_display::thickness();}
         
-        void set_background_digit_transparency(double value) override {dot_matrix_display::background_dot_transparency(value);}
+        void set_background_digit_transparency(double value) override {dot_matrix_display::back_dot_transparency(value);}
         void set_character(wchar_t value) override {
-          static std::map<wchar_t, dot_matrix_display::dot_collection> characters {
+          static std::map<wchar_t, dot_matrix_display::points_collection> characters {
             {'0', {{2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {1, 2}, {4, 2}, {5, 2}, {1, 3}, {3, 3}, {5, 3}, {1, 4}, {2, 4}, {5, 4}, {1, 5}, {5, 5}, {2, 6}, {3, 6}, {4, 6}}},
             {'1', {{3, 0}, {2, 1}, {3, 1}, {3, 2}, {3, 3}, {3, 4}, {3, 5}, {3, 6}}},
             {'2', {{2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {5, 2}, {4, 3}, {3, 4}, {2, 5}, {1, 6}, {2, 6}, {3, 6}, {4, 6}, {5, 6}}},
@@ -157,12 +157,12 @@ namespace xtd {
           if (character_ != value) {
             if (characters.find(value) == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), caller_info_);
             character_ = value;
-            dot_matrix_display::dots(characters[value]);
+            dot_matrix_display::set_dots(characters[value]);
           }
         }
         void set_segment_style(forms::segment_style value) override {}
         void set_dot_matrix_style(forms::dot_matrix_style value) override {dot_matrix_display::dot_matrix_style(value);}
-        void set_show_background_digit(bool value) override {dot_matrix_display::show_background_dot(value);}
+        void set_show_background_digit(bool value) override {dot_matrix_display::show_back_dot(value);}
         void set_thickness(int32_t value) override {dot_matrix_display::thickness(value);}
         
       private:
