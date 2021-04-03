@@ -212,12 +212,9 @@ namespace xtd {
       void on_paint(paint_event_args& e) override {
         drawing::graphics graphics = e.graphics();
         graphics.clear(back_color());
-        for (int32_t y = 0; y < static_cast<int32_t>(dots_.size()); y++) {
-          for (int32_t x = 0; x < static_cast<int32_t>(dots_[y].size()); x++) {
-            if (dots_[y][x]) draw_dot(graphics, fore_color(), {x, y});
-            else if (show_back_dot_) draw_dot(graphics, drawing::color::average(back_color(), back_dot_color(), back_dot_transparency_), {x, y});
-          }
-        }
+        for (int32_t y = 0; y < static_cast<int32_t>(dots_.size()); y++)
+          for (int32_t x = 0; x < static_cast<int32_t>(dots_[y].size()); x++)
+            draw_dot(graphics, dots_[y][x] ? fore_color() : drawing::color::average(back_color(), back_dot_color(), back_dot_transparency_), {x, y});
       }
       
       drawing::size measure_control() const override {
