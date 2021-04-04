@@ -1,6 +1,6 @@
 # debug_form
 
-demonstrates the use of [xtd::debug_forms::debug_form](../../../../src/xtd_debug_forms/include/xtd/debug_forms/debug_form.hpp) container.
+demonstrates the use of [xtd::debug_forms::debug_form](../../../../src/xtd_forms/include/xtd/forms/debug_form.hpp) container.
 
 # Sources
 

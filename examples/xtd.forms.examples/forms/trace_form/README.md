@@ -1,6 +1,6 @@
 # trace_form
 
-demonstrates the use of [xtd::trace_forms::trace_form](../../../../src/xtd_trace_forms/include/xtd/trace_forms/trace_form.hpp) container.
+demonstrates the use of [xtd::trace_forms::trace_form](../../../../src/xtd_forms/include/xtd/forms/trace_form.hpp) container.
 
 # Sources
 
