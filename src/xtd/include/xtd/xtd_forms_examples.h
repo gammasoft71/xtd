@@ -526,6 +526,21 @@
 /// <br>
 /// @image html font_dialog_gd.png
 ///
+/// @example font_picker.cpp
+/// The following code example demonstrate the use of font_picker picker.
+/// @par Windows
+/// @image html font_picker_w.png
+/// <br>
+/// @image html font_picker_wd.png
+/// @par macOS
+/// @image html font_picker_m.png
+/// <br>
+/// @image html font_picker_md.png
+/// @par Gnome
+/// @image html font_picker_g.png
+/// <br>
+/// @image html font_picker_gd.png
+///
 /// @example form.cpp
 /// The following code example demonstrate the use of form control.
 /// @par Windows
@@ -585,6 +600,51 @@
 /// @image html group_box_and_radio_button_g.png
 /// <br>
 /// @image html group_box_and_radio_button_gd.png
+///
+/// @example open_file_dialog.cpp
+/// The following code example demonstrate the use of open_file_dialog dialog.
+/// @par Windows
+/// @image html open_file_dialog_w.png
+/// <br>
+/// @image html open_file_dialog_wd.png
+/// @par macOS
+/// @image html open_file_dialog_m.png
+/// <br>
+/// @image html open_file_dialog_md.png
+/// @par Gnome
+/// @image html open_file_dialog_g.png
+/// <br>
+/// @image html open_file_dialog_gd.png
+///
+/// @example progress_dialog.cpp
+/// The following code example demonstrate the use of progress_dialog dialog.
+/// @par Windows
+/// @image html progress_dialog_w.png
+/// <br>
+/// @image html progress_dialog_wd.png
+/// @par macOS
+/// @image html progress_dialog_m.png
+/// <br>
+/// @image html progress_dialog_md.png
+/// @par Gnome
+/// @image html progress_dialog_g.png
+/// <br>
+/// @image html progress_dialog_gd.png
+///
+/// @example save_file_dialog.cpp
+/// The following code example demonstrate the use of save_file_dialog dialog.
+/// @par Windows
+/// @image html save_file_dialog_w.png
+/// <br>
+/// @image html save_file_dialog_wd.png
+/// @par macOS
+/// @image html save_file_dialog_m.png
+/// <br>
+/// @image html save_file_dialog_md.png
+/// @par Gnome
+/// @image html save_file_dialog_g.png
+/// <br>
+/// @image html save_file_dialog_gd.png
 ///
 /// @example seven_segment_display.cpp
 /// The following code example demonstrate the use of seven segment display control.

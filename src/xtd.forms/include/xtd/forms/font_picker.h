@@ -29,21 +29,37 @@ namespace xtd {
     /// @image html font_picker_gd.png
     class forms_export_ font_picker : public control {
     public:
+      /// @brief Initializes a new instance of the font_picker class.
       font_picker();
 
+      /// @brief Gets the color selected by the user.
+      /// @return The color selected by the user. If a color is not selected, the default value is black.
+      /// @remarks The color selected by the user in the color picker at run time, as defined in color structure.
       const drawing::color& color() const {return color_;}
+      /// @brief Sets the color selected by the user.
+      /// @param color The color selected by the user. If a color is not selected.
+      /// @brief This instance of control.
+      /// @remarks The color selected by the user in the color picker at run time, as defined in color structure.
       control& color(const drawing::color& color);
       
+      /// @brief Gets the selected font.
+      /// @return The selected font.
       drawing::font font() const override {return font_;}
+      /// @brief Sets the selected font.
+      /// @param font The selected font.
+      /// @return This instance of control.
       control& font(const drawing::font& font) override;
       
       drawing::size default_size() const override {return {100, 25};}
       
+      /// @brief Occurs when the value of the font property changes.
       event<font_picker, event_handler<control&>> font_changed;
 
     protected:
       forms::create_params create_params() const override;
       
+      /// @brief Raises the font_changed event.
+      /// @param e An event_args that contains the event data.
       void on_font_changed(const event_args& e) override;
       
       void on_handle_created(const event_args& e) override;
