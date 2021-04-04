@@ -137,27 +137,62 @@ namespace xtd {
       /// @remarks Each file name includes both the file path and the extension. If no files are selected, this method returns an empty array.
       virtual const std::vector<std::string> file_names() const {return file_names_;}
 
+      /// @brief Gets the current file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box.
+      /// @return The file filtering options available in the dialog box.
+      /// @remarks For each filtering option, the filter string contains a description of the filter, followed by the vertical bar (|) and the filter pattern. The strings for different filtering options are separated by the vertical bar.
+      /// @remarks The following is an example of a filter string:
+      /// @verbatim Text files (*.txt)|*.txt|All files (*.*)|*.* @endverbatim
+      /// @remarks You can add several filter patterns to a filter by separating the file types with semicolons, for example:
+      /// @verbatim Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.* @endverbatim
+      /// @remarks Use the filter_index property to set which filtering option is shown first to the user.
       virtual const std::string& filter() const {return filter_;}
+      /// @brief Sets the current file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box.
+      /// @param value The file filtering options available in the dialog box.
+      /// @return This instance of file_dialog.
+      /// @remarks For each filtering option, the filter string contains a description of the filter, followed by the vertical bar (|) and the filter pattern. The strings for different filtering options are separated by the vertical bar.
+      /// @remarks The following is an example of a filter string:
+      /// @verbatim Text files (*.txt)|*.txt|All files (*.*)|*.* @endverbatim
+      /// @remarks You can add several filter patterns to a filter by separating the file types with semicolons, for example:
+      /// @verbatim Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.* @endverbatim
+      /// @remarks Use the filter_index property to set which filtering option is shown first to the user.
       virtual file_dialog& filter(const std::string& value) {
         filter_ = value;
         return *this;
       }
 
+      /// @brief Gets the index of the filter currently selected in the file dialog box.
+      /// @return A value containing the index of the filter currently selected in the file dialog box. The default value is 1.
+      /// @remarks Use the filter_index property to set which filtering option is shown first to the user. You can also use the value of filter_index after showing the file dialog to perform special file operations depending upon the filter chosen.
+      /// @note The index value of the first filter entry is 1.
       virtual size_t filter_index() const {return filter_index_;}
+      /// @brief Sets the index of the filter currently selected in the file dialog box.
+      /// @param value A value containing the index of the filter currently selected in the file dialog box. The default value is 1.
+      /// @return This instance of file_dialog.
+      /// @remarks Use the filter_index property to set which filtering option is shown first to the user. You can also use the value of filter_index after showing the file dialog to perform special file operations depending upon the filter chosen.
+      /// @note The index value of the first filter entry is 1.
       virtual file_dialog& filter_index(size_t value) {
         filter_index_ = value;
         return *this;
       }
 
+      /// @brief Gets the initial directory displayed by the file dialog box.
+      /// @return The initial directory displayed by the file dialog box. The default is an empty string ("").
+      /// @remarks The InitialDirectory property is typically set using one of the following sources:
+      /// * A path that was previously used in the program, perhaps retained from the last directory or file operation.
+      /// * A path read from a persistent source, such as an application setting, a Registry or a string resource in the application.
+      /// * Standard Windows, macOs or linux system and user paths, such as Program Files, MyDocuments, MyMusic, and so on (which you can obtain using the xtd::environment::get_folder_path method)
+      /// * A path related to the current application, such as its startup directory (which you can obtain using properties on the xtd::forms::application object).
       virtual const std::string& initial_directory() const {return initial_directory_;}
+      /// @brief Sets the initial directory displayed by the file dialog box.
+      /// @param value The initial directory displayed by the file dialog box. The default is an empty string ("").
+      /// @return This instance of file_dialog.
+      /// @remarks The InitialDirectory property is typically set using one of the following sources:
+      /// * A path that was previously used in the program, perhaps retained from the last directory or file operation.
+      /// * A path read from a persistent source, such as an application setting, a Registry or a string resource in the application.
+      /// * Standard Windows, macOs or linux system and user paths, such as Program Files, MyDocuments, MyMusic, and so on (which you can obtain using the xtd::environment::get_folder_path method)
+      /// * A path related to the current application, such as its startup directory (which you can obtain using properties on the xtd::forms::application object).
       virtual file_dialog& initial_directory(const std::string& value) {
         initial_directory_ = value;
-        return *this;
-      }
-      
-      virtual bool multiselect() const {return get_option(OFN_ALLOWMULTISELECT);}
-      virtual file_dialog& multiselect(bool value) {
-        set_option(OFN_ALLOWMULTISELECT, value);
         return *this;
       }
       
@@ -166,13 +201,25 @@ namespace xtd {
       /// @return The options property corresponds to the flags used to initialize a color dialog box using Win32. Use the properties of the file_dialog class to get and set the options.
       size_t options() const {return options_;}
 
+      /// @brief Gets a value indicating whether the dialog box restores the directory to the previously selected directory before closing.
+      /// @return true if the dialog box restores the current directory to the previously selected directory if the user changed the directory while searching for files; otherwise, false. The default value is false.
       virtual bool restore_directory() const {return get_option(OFN_NOCHANGEDIR);}
+      /// @brief Sets a value indicating whether the dialog box restores the directory to the previously selected directory before closing.
+      /// @param value true if the dialog box restores the current directory to the previously selected directory if the user changed the directory while searching for files; otherwise, false. The default value is false.
+      /// @return This instance of file_dialog.
       virtual file_dialog& restore_directory(bool value) {
         set_option(OFN_NOCHANGEDIR, value);
         return *this;
       }
       
+      /// @remarks Gets a value indicating whether the Help button is displayed in the file dialog box.
+      /// @return true if the dialog box includes a help button; otherwise, false. The default value is false.true if the dialog box includes a help button; otherwise, false. The default value is false.
+      /// @remarks A help_requested event is raised when the user clicks the Help button.
       virtual bool show_help() const {return !get_option(OFN_SHOWHELP);}
+      /// @remarks Sets a value indicating whether the Help button is displayed in the file dialog box.
+      /// @param value true if the dialog box includes a help button; otherwise, false. The default value is false.true if the dialog box includes a help button; otherwise, false. The default value is false.
+      /// @return This instance of file_dialog.
+      /// @remarks A help_requested event is raised when the user clicks the Help button.
       virtual file_dialog& show_help(bool value) {
         set_option(OFN_SHOWHELP, value);
         return *this;
