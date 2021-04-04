@@ -11,6 +11,7 @@ add_projects(
   countries
   cursors
   emoticons
+  enable_debug
   image_list
   radio_button_renderer
   screen
