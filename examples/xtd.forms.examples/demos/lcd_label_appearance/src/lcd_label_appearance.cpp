@@ -13,12 +13,10 @@ namespace examples {
       choice_lcd_style.location({10, 10});
       choice_lcd_style.items().push_back_range({{"Seven segment display", lcd_style::seven_segment_display}, {"Nine segment display", lcd_style::nine_segment_display}, {"Fourteen segment display", lcd_style::fourteen_segment_display}, {"Sixteen segment display", lcd_style::sixteen_segment_display}, {"Dot matrix display", lcd_style::dot_matrix_display}});
       choice_lcd_style.selected_value_changed += [&] {
-        lcd_label_label.text("");
         lcd_label_label.lcd_style(std::any_cast<lcd_style>(choice_lcd_style.selected_item().tag()));
-        lcd_label_label.text(lcd_label_label.valid_characters());
         choice_segment_style.items().clear();
         if (choice_lcd_style.selected_item().value() == "Dot matrix display") {
-          choice_segment_style.items().push_back_range({{"Standard", dot_matrix_style::standard}, {"Square", dot_matrix_style::square}});
+          choice_segment_style.items().push_back_range({{"Standard", dot_matrix_style::standard}, {"Round", dot_matrix_style::round}, {"Square", dot_matrix_style::square}});
           choice_segment_style.selected_index(static_cast<int>(lcd_label_label.dot_matrix_style()));
         } else {
           choice_segment_style.items().push_back_range({{"Standard", segment_style::standard}, {"Modern", segment_style::modern}, {"Mixed", segment_style::mixed}, {"expanded", segment_style::expanded}, {"Design", segment_style::design}, {"Stick", segment_style::stick}});
@@ -42,7 +40,7 @@ namespace examples {
       numeric_up_down_height.value_changed += [&] {
         lcd_label_label.height(static_cast<int>(numeric_up_down_height.value()));
       };
-      numeric_up_down_height.value(25);
+      numeric_up_down_height.value(50);
       
       color_picker_up_down_fore_color.location({390, 10});
       color_picker_up_down_fore_color.color(lcd_label_label.fore_color());
@@ -60,7 +58,7 @@ namespace examples {
       };
       
       lcd_label_label.location({10, 45});
-      lcd_label_label.text(lcd_label_label.valid_characters());
+      lcd_label_label.text("1234567890");
       lcd_label_label.auto_size(true);
 
       text("LCD label example");
