@@ -29,6 +29,7 @@ namespace xtd {
     /// @image html seven_segment_display_gd.png
     class seven_segment_display : public control {
     public:
+      /// @brief Initialize a new instance of seven_segment_display class.
       seven_segment_display() {
         double_buffered(true);
         size_ = default_size();

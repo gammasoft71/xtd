@@ -8,8 +8,11 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @brief Represent dot matrix style used by doot_matrix_display control.
   enum class dot_matrix_style {
+    /// @brief Standard dot matrix style.
     standard,
+    /// @brief Square dot matrix style.
     square,
   };
 

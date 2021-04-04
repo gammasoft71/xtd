@@ -31,13 +31,13 @@ namespace xtd {
     /// @image html about_box_gd.png
     class forms_export_ about_box final static_ {
     public:
-      /// @brief Reprresents a creators collection.
+      /// @brief Represents a creators collection.
       using creators_collection = xtd::forms::about_dialog::creators_collection;
-      /// @brief Reprresents a designers collection.
+      /// @brief Represents a designers collection.
       using designers_collection = xtd::forms::about_dialog::designers_collection;
-      /// @brief Reprresents a documentt writers collection.
+      /// @brief Represents a documentt writers collection.
       using doc_writers_collection = xtd::forms::about_dialog::doc_writers_collection;
-      /// @brief Reprresents a translators collection.
+      /// @brief Represents a translators collection.
       using translators_collection = xtd::forms::about_dialog::translators_collection;
 
       /// @brief Displays an about box in front of the specified window.

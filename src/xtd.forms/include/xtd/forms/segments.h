@@ -55,7 +55,6 @@ namespace xtd {
       g1 = g,
       /// @brief The g2 segment.
       g2 = 0b1000000000000000,
-
       /// @brief The dp segment (dot point).
       dp = 0b10000000000000000,
       /// @brief The cp segment (punctuation colon).

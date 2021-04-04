@@ -8,12 +8,19 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @brief Represent segment style used by seven_segment_display, fortheen_segment_display, nine_segment_display and sixtheen_segment_display controls.
   enum class segment_style {
+    /// @brief Standard segment style.
     standard,
+    /// @brief Modern segment style.
     modern,
+    /// @brief Mixed (mix between standard and modern) segment style.
     mixed,
+    /// @brief Expanded segment style.
     expanded,
+    /// @brief Design segment style.
     design,
+    /// @brief Stick segment style.
     stick,
   };
 

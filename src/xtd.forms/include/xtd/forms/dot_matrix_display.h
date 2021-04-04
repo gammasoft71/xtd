@@ -31,10 +31,10 @@ namespace xtd {
     /// @image html dot_matrix_display_gd.png
     class dot_matrix_display : public control {
     public:
-      /// @brief Reprresents a dots collection.
+      /// @brief Represents a dots collection.
       using dots_collection =  std::vector<std::vector<bool>>;
       
-      /// @brief Reprresents a point collection.
+      /// @brief Represents a point collection.
       using points_collection =  std::vector<xtd::drawing::point>;
       
       /// @brief Initialize a new instance of dot_matrix_display class.
