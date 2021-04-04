@@ -526,6 +526,21 @@
 /// <br>
 /// @image html group_box_and_radio_button_gd.png
 ///
+/// @example seven_segment_display.cpp
+/// The following code example demonstrate the use of seven segment display control.
+/// @par Windows
+/// @image html seven_segment_display_w.png
+/// <br>
+/// @image html seven_segment_display_wd.png
+/// @par macOS
+/// @image html seven_segment_display_m.png
+/// <br>
+/// @image html seven_segment_display_md.png
+/// @par Gnome
+/// @image html seven_segment_display_g.png
+/// <br>
+/// @image html seven_segment_display_gd.png
+///
 /// @example split_container.cpp
 /// The following code example demonstrate the use of split_container container.
 /// @par Windows
