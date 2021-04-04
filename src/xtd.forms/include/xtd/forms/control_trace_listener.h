@@ -13,6 +13,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms debug
+    /// @par Examples
     class control_trace_listener : public xtd::diagnostics::trace_listener {
     public:
       /// @brief Initializes a new instance of the control_trace_listener class with specified control_trace.

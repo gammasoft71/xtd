@@ -13,7 +13,7 @@ namespace xtd {
     /// @brief Provides the default output methods and behavior for tracing.
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core debug
     class core_export_ default_trace_listener : public trace_listener {
     public:
       default_trace_listener() : trace_listener("default") {};
