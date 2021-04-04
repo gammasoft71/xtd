@@ -14,7 +14,7 @@ namespace xtd {
     /// @brief Represents a base form for debug_form and trace_form forms. This class cannot be instantiated.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms
+    /// @ingroup xtd_forms debug
     class trace_form_base : public xtd::forms::form {
     public:
       xtd::forms::control& dock(xtd::forms::dock_style dock) override {

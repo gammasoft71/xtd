@@ -12,7 +12,7 @@ namespace xtd {
     /// @brief Represents a form that displays debug form. This class cannot be inherited.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms forms
+    /// @ingroup xtd_forms forms debug
     /// @remarks This form is used in a development phase to trace all written debug with xtd::diagnostics::debug class.
     /// @remarks You must enable debug mode to use a debug form. The syntax is compiler specific. If you use other than cmake to manage your build, refer to the documentation of your build nanager.
     ///  * To enable debug mode with cmake, add the add_definitions(-DDEBUG) command line in the CMakeLists.txt of your porject, or you can add #define DEBUG to the top of your file.

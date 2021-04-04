@@ -12,7 +12,7 @@ namespace xtd {
     /// @brief Directs tracing or debugging output to either vers un icontrol_trace.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms
+    /// @ingroup xtd_forms debug
     class control_trace_listener : public xtd::diagnostics::trace_listener {
     public:
       /// @brief Initializes a new instance of the control_trace_listener class with specified control_trace.
