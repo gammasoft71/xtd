@@ -15,6 +15,9 @@
 /// @defgroup controls  controls
 /// @brief Controls are childs windows that an application uses in conjunction with another window to enable interaction with the user.
 
+/// @defgroup debug debug
+/// @brief All needed for debugging and tracing.
+
 /// @defgroup dialogs dialogs
 /// @brief Common  dialogs consist of the open file, save file, open folder, find and replace, print, page setup, font, color dialog boxes, about, busy, message dialog boxes.
 
