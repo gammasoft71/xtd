@@ -123,6 +123,7 @@ namespace xtd {
       /// @brief When overridden in a derived class, specifies a common dialog box.
       /// @param hwnd_owner A value that represents the window handle of the owner window for the common dialog box.
       /// @return true if the dialog box was successfully run; otherwise, false.
+      /// @remarks The result will done in asynch. Check result_dialog property aftter dialog box closed to obtain the result.
       virtual void run_sheet(intptr_t hwnd_owner) = 0;
 
       /// @cond

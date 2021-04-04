@@ -196,7 +196,7 @@ namespace xtd {
         return *this;
       }
       
-      /// @return Gets values to initialize the file_dialog.
+      /// @brief Gets values to initialize the file_dialog.
       /// @return A bitwise combination of internal values that initializes the file_dialog.
       /// @return The options property corresponds to the flags used to initialize a color dialog box using Win32. Use the properties of the file_dialog class to get and set the options.
       size_t options() const {return options_;}
@@ -212,12 +212,12 @@ namespace xtd {
         return *this;
       }
       
-      /// @remarks Gets a value indicating whether the Help button is displayed in the file dialog box.
-      /// @return true if the dialog box includes a help button; otherwise, false. The default value is false.true if the dialog box includes a help button; otherwise, false. The default value is false.
+      /// @brief Gets a value indicating whether the Help button is displayed in the file dialog box.
+      /// @return true if the dialog box includes a help button; otherwise, false. The default value is false.
       /// @remarks A help_requested event is raised when the user clicks the Help button.
       virtual bool show_help() const {return !get_option(OFN_SHOWHELP);}
-      /// @remarks Sets a value indicating whether the Help button is displayed in the file dialog box.
-      /// @param value true if the dialog box includes a help button; otherwise, false. The default value is false.true if the dialog box includes a help button; otherwise, false. The default value is false.
+      /// @brief Sets a value indicating whether the Help button is displayed in the file dialog box.
+      /// @param value true if the dialog box includes a help button; otherwise, false. The default value is false.
       /// @return This instance of file_dialog.
       /// @remarks A help_requested event is raised when the user clicks the Help button.
       virtual file_dialog& show_help(bool value) {
@@ -225,31 +225,64 @@ namespace xtd {
         return *this;
       }
       
+      /// @brief Gets a value indicating whether hidden files are displayed in the file dialog box.
+      /// @return true if the dialog box includes hidden files; otherwise, false. The default value is false.
       virtual bool show_hidden_files() const {return !get_option(OFN_FORCESHOWHIDDEN);}
+      /// @brief Sets a value indicating whether hidden files are displayed in the file dialog box.
+      /// @param value true if the dialog box includes hidden files; otherwise, false. The default value is false.
+      /// @return This instance of file_dialog.
       virtual file_dialog& show_hidden_files(bool value) {
         set_option(OFN_FORCESHOWHIDDEN, value);
         return *this;
       }
       
+      /// @brief Gets a value indicating whether preview file is displayed in the file dialog box.
+      /// @return true if the dialog box includes peview file; otherwise, false. The default value is false.
       virtual bool show_preview() const {return !get_option(OFN_SHOWPREVIEW);}
+      /// @brief Sets a value indicating whether preview file is displayed in the file dialog box.
+      /// @param value true if the dialog box includes peview file; otherwise, false. The default value is false.
+      /// @return This instance of file_dialog.
       virtual file_dialog& show_preview(bool value) {
         set_option(OFN_SHOWPREVIEW, value);
         return *this;
       }
 
+      /// @brief Gets whether the dialog box supports displaying and saving files that have multiple file name extensions.Gets or sets whether the dialog box supports displaying and saving files that have multiple file name extensions.
+      /// @return true if the dialog box supports multiple file name extensions; otherwise, false. The default is false.
+      /// @remarks Sometimes users must open and save files that use multiple file name extensions. For example, the application manifest files used by the click_once deployment technology end in the complex file name extension ".exe.manifest". Setting this property to true enables you to set the FFilter property to a multi-dotted extension.
+      /// @remarks If support_multi_dotted_extensions is false, and you assign a multi-dotted extension to Filter, derived controls such as save_file_dialog will only use the last extension in the string. For example, ".manifest" will be used instead of ".exe.manifest".
       virtual bool support_multi_dotted_extensions() const {return support_multi_dotted_extensions_;}
+      /// @brief Sets whether the dialog box supports displaying and saving files that have multiple file name extensions.Gets or sets whether the dialog box supports displaying and saving files that have multiple file name extensions.
+      /// @param value true if the dialog box supports multiple file name extensions; otherwise, false. The default is false.
+      /// @return This instance of file_dialog.
+      /// @remarks Sometimes users must open and save files that use multiple file name extensions. For example, the application manifest files used by the click_once deployment technology end in the complex file name extension ".exe.manifest". Setting this property to true enables you to set the FFilter property to a multi-dotted extension.
+      /// @remarks If support_multi_dotted_extensions is false, and you assign a multi-dotted extension to Filter, derived controls such as save_file_dialog will only use the last extension in the string. For example, ".manifest" will be used instead of ".exe.manifest".
       virtual file_dialog& support_multi_dotted_extensions(bool value) {
         support_multi_dotted_extensions_ = value;
         return *this;
       }
       
+      /// @brief Gets the file dialog box title.
+      /// @return The file dialog box title. The default value is an empty string ("").
+      /// @remarks The string is placed in the title bar of the dialog box. If the title is an empty string, the system uses a default title, which is either "Save As" or "Open".
       virtual const std::string& title() const {return title_;}
+      /// @brief Sets the file dialog box title.
+      /// @param value The file dialog box title. The default value is an empty string ("").
+      /// @return This instance of file_dialog.
+      /// @remarks The string is placed in the title bar of the dialog box. If the title is an empty string, the system uses a default title, which is either "Save As" or "Open".
       virtual file_dialog& title(const std::string& value) {
         title_ = value;
         return *this;
       }
       
+      /// @brief Gets a value indicating whether the dialog box accepts only valid file names.
+      /// @return true if the dialog box accepts only valid file names; otherwise, false. The default value is true.
+      /// @remarks If the edit control contains anything but spaces when the user clicks OK, the dialog box returns the file name, whether it is valid or not. No default extension is added to the text.
       virtual bool validate_names() const {return !get_option(OFN_NOVALIDATE);}
+      /// @brief Gets a value indicating whether the dialog box accepts only valid file names.
+      /// @param value true if the dialog box accepts only valid file names; otherwise, false. The default value is true.
+      /// @return This instance of file_dialog.
+      /// @remarks If the edit control contains anything but spaces when the user clicks OK, the dialog box returns the file name, whether it is valid or not. No default extension is added to the text.
       virtual file_dialog& validate_names(bool value) {
         set_option(OFN_NOVALIDATE, !value);
         return *this;
@@ -258,10 +291,9 @@ namespace xtd {
       /// @brief Resets all properties to their default values.
       /// @remarks When overriding reset() in a derived class, be sure to call the base class's reset() method.
       void reset() override;
-      
-      bool run_dialog (intptr_t hwnd_owner) override;
-      void run_sheet (intptr_t hwnd_owner) override;
 
+      /// @brief Provides a string version of this object.
+      /// @return A string version of this object.
       std::string to_string() const {
         return strings::format("{}: title: {}, filename: {}", strings::full_class_name(*this), title_, file_name_);
       }
@@ -272,7 +304,16 @@ namespace xtd {
       }
       /// @endcond
 
-    protected:
+    protected:      
+      /// @brief Runs file dialog box.
+      /// @param hwnd_owner A value that represents the window handle of the owner window for the common dialog box.
+      /// @return true if the file could be opened; otherwise, false.
+      /// @remarks This method provides an implementation of run_dialog, and is invoked when the user of a file dialog invokes show_dialog.
+      bool run_dialog(intptr_t hwnd_owner) override;
+      /// @brief Runs file dialog box in sheet mode.
+      /// @param hwnd_owner A value that represents the window handle of the owner window for the common dialog box.
+      void run_sheet(intptr_t hwnd_owner) override;
+
       /// @cond
       bool get_option(size_t flag) const {return (options_ & flag) == flag;}
       void set_option(size_t flag, bool value) {options_ = value ? options_ | flag : options_ & ~flag;}
