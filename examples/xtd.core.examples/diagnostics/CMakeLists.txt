@@ -4,6 +4,7 @@ project(diagnostics)
 find_package(xtd REQUIRED)
 
 add_projects(
+  console_trace_listener
   stack_trace
   stopwatch
 )
