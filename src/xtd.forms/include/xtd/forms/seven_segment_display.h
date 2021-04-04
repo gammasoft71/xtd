@@ -107,16 +107,26 @@ namespace xtd {
         return *this;
       }
 
+      /// @brief Gets seven_segment_display value.
+      /// @return A xtd::forms::segments cominaison that represent seven_segment_display.
       virtual forms::segments value() const {return value_;}
-      virtual seven_segment_display& value(forms::segments segments) {
-        if (value_ != segments) {
-          value_ = segments;
+      /// @brief Sets seven_segment_display value.
+      /// @param value A xtd::forms::segments cominaison that represent seven_segment_display.
+      /// @return This instance of seven_segment_display.
+      virtual seven_segment_display& value(forms::segments value) {
+        if (value_ != value) {
+          value_ = value;
           invalidate();
         }
         return *this;
       }
 
+      /// @brief Gets if specified xtd::forms::segments combinaison is on.
+      /// @return true if xtd::forms::segments combinaison is on; otherwise false.
       virtual bool get_segments(forms::segments segment) const {return (value_ & segment) == segment;}
+      /// @brief Sets specified xtd::forms::segments combinaison to on.
+      /// @param segment A xtd::forms::segments combinaison to set.
+      /// @param on true to set to on; otherwise false.
       virtual void set_segments(forms::segments segment, bool value) { value_ = value ? (value_ | segment) : (value_ & ~segment); }
 
     protected:
@@ -161,6 +171,8 @@ namespace xtd {
         control::set_client_size_core(width, height);
       }
 
+      /// @brief Draw all background digit on specified graphics.
+      /// @param graphics A xtd::drawing::graphics from on_paint method.
       virtual void draw_back_digit(drawing::graphics& graphics) {
         draw_segment_a(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
         draw_segment_b(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
@@ -171,6 +183,9 @@ namespace xtd {
         draw_segment_g(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
       }
 
+      /// @brief Draw segment a on specified graphics with specified color.
+      /// @param graphics A xtd::drawing::graphics from on_paint method.
+      /// @param color A xtd::drawing::color used to draw segemnt.
       virtual void draw_segment_a(drawing::graphics& graphics, const drawing::color& color) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
@@ -193,6 +208,9 @@ namespace xtd {
         }
       }
       
+      /// @brief Draw segment b on specified graphics with specified color.
+      /// @param graphics A xtd::drawing::graphics from on_paint method.
+      /// @param color A xtd::drawing::color used to draw segemnt.
       virtual void draw_segment_b(drawing::graphics& graphics, const drawing::color& color) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
@@ -215,6 +233,9 @@ namespace xtd {
         }
       }
       
+      /// @brief Draw segment c on specified graphics with specified color.
+      /// @param graphics A xtd::drawing::graphics from on_paint method.
+      /// @param color A xtd::drawing::color used to draw segemnt.
       virtual void draw_segment_c(drawing::graphics& graphics, const drawing::color& color) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
@@ -237,6 +258,9 @@ namespace xtd {
         }
       }
       
+      /// @brief Draw segment d on specified graphics with specified color.
+      /// @param graphics A xtd::drawing::graphics from on_paint method.
+      /// @param color A xtd::drawing::color used to draw segemnt.
       virtual void draw_segment_d(drawing::graphics& graphics, const drawing::color& color) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
@@ -259,6 +283,9 @@ namespace xtd {
         }
       }
 
+      /// @brief Draw segment e on specified graphics with specified color.
+      /// @param graphics A xtd::drawing::graphics from on_paint method.
+      /// @param color A xtd::drawing::color used to draw segemnt.
       virtual void draw_segment_e(drawing::graphics& graphics, const drawing::color& color) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
@@ -281,6 +308,9 @@ namespace xtd {
         }
       }
 
+      /// @brief Draw segment f on specified graphics with specified color.
+      /// @param graphics A xtd::drawing::graphics from on_paint method.
+      /// @param color A xtd::drawing::color used to draw segemnt.
       virtual void draw_segment_f(drawing::graphics& graphics, const drawing::color& color) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
@@ -303,6 +333,9 @@ namespace xtd {
         }
       }
 
+      /// @brief Draw segment g on specified graphics with specified color.
+      /// @param graphics A xtd::drawing::graphics from on_paint method.
+      /// @param color A xtd::drawing::color used to draw segemnt.
       virtual void draw_segment_g(drawing::graphics& graphics, const drawing::color& color) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
@@ -325,6 +358,9 @@ namespace xtd {
         }
       }
 
+      /// @brief Draw segment dot point on specified graphics with specified color.
+      /// @param graphics A xtd::drawing::graphics from on_paint method.
+      /// @param color A xtd::drawing::color used to draw segemnt.
       virtual void draw_dp(drawing::graphics& graphics, const drawing::color& color) {
         if (segment_style_ == segment_style::standard) {
           graphics.fill_ellipse(drawing::solid_brush(color), size_.width() / 2 - thickness() / 2, size_.height() - 1 - thickness(), thickness(), thickness());
@@ -343,6 +379,9 @@ namespace xtd {
         }
       }
       
+      /// @brief Draw segment punctuation colon on specified graphics with specified color.
+      /// @param graphics A xtd::drawing::graphics from on_paint method.
+      /// @param color A xtd::drawing::color used to draw segemnt.
       virtual void draw_pc(drawing::graphics& graphics, const drawing::color& color) {
         if (segment_style_ == segment_style::standard) {
           graphics.fill_ellipse(drawing::solid_brush(color), size_.width() / 2 - thickness() / 2, size_.height() / 3 - thickness() / 2, thickness(), thickness());
