@@ -7,13 +7,13 @@
     <tab type="pages" visible="yes" title="Documentation" intro="Contains the xtd documentation."/>
     <tab type="namespacelist" visible="yes" title="Namespaces" intro="Contains a list of all documented namespaces with brief descriptions."/>
     <tab type="classes" visible="yes" title="">
-      <tab type="classlist" visible="yes" title="" intro="Contains the classes, structs, unions and interfaces with brief descriptions."/>
+      <tab type="classlist" visible="yes" title="" intro="Contains the classes, structs and interfaces with brief descriptions."/>
       <tab type="classindex" visible="$ALPHABETICAL_INDEX" title=""/> 
       <tab type="hierarchy" visible="yes" title="" intro="Contains inheritance class list sorted roughly, but not completely, alphabetically."/>
       <tab type="classmembers" visible="no" title="" intro=""/>
     </tab>
-    <tab type="examples" visible="yes" title="" intro="Contains all examples used by this Reference Guide."/>
     <tab type="filelist" visible="yes" title="Files" intro="Contains a list of all documented files with brief descriptions."/>
+    <tab type="examples" visible="yes" title="" intro="Contains all examples used by this Reference Guide."/>
   </navindex>
 
   <!-- Layout definition for a class page -->
