@@ -105,9 +105,13 @@ namespace xtd {
       /// @brief Runs exception dialog box.
       xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner);
       
+      /// @brief Occurs when the user close an exception dialog box with dialog close button or other dialog buttons.
       event<exception_dialog, exception_dialog_closed_event_handler<exception_dialog&>> exception_dialog_closed;
 
     protected:
+      /// @brief Raises the close event.
+      /// @param e An exception_dialog_closed_event_args that provides the event data.
+      /// @remarks This method is invoked when the exception dialog box is closed.
       void on_exception_dialog_closed(const exception_dialog_closed_event_args& e) {
         dialog_result_ = e.dialog_result();
         exception_dialog_closed(*this, e);
