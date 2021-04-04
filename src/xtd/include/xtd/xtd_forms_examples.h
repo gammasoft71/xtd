@@ -465,7 +465,6 @@
 /// @image html enable_debug_g.png
 /// <br>
 /// @image html enable_debug_gd.png
-
 ///
 /// @example exception_box.cpp
 /// The following code example demonstrate the use of exception_dialog dialog.
