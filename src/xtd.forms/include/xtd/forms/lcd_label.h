@@ -42,11 +42,11 @@ namespace xtd {
         virtual std::string get_valid_characters() const = 0;
         virtual int32_t get_thickness() const = 0;
 
-        virtual void set_background_digit_transparency(double value) = 0;
+        virtual void set_back_digit_transparency(double value) = 0;
         virtual void set_character(wchar_t value) = 0;
         virtual void set_segment_style(forms::segment_style value) = 0;
         virtual void set_dot_matrix_style(forms::dot_matrix_style value) = 0;
-        virtual void set_show_background_digit(bool value) = 0;
+        virtual void set_show_back_digit(bool value) = 0;
         virtual void set_thickness(int32_t value) = 0;
       };
 
@@ -58,7 +58,7 @@ namespace xtd {
         std::string get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/%\\_°\"'[](){}<>| .,:;!?&$€";}
         int32_t get_thickness() const override {return dot_matrix_display::thickness();}
         
-        void set_background_digit_transparency(double value) override {dot_matrix_display::back_dot_transparency(value);}
+        void set_back_digit_transparency(double value) override {dot_matrix_display::back_dot_transparency(value);}
         void set_character(wchar_t value) override {
           static std::map<wchar_t, dot_matrix_display::points_collection> characters {
             {'0', {{2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {1, 2}, {4, 2}, {5, 2}, {1, 3}, {3, 3}, {5, 3}, {1, 4}, {2, 4}, {5, 4}, {1, 5}, {5, 5}, {2, 6}, {3, 6}, {4, 6}}},
@@ -162,7 +162,7 @@ namespace xtd {
         }
         void set_segment_style(forms::segment_style value) override {}
         void set_dot_matrix_style(forms::dot_matrix_style value) override {dot_matrix_display::dot_matrix_style(value);}
-        void set_show_background_digit(bool value) override {dot_matrix_display::show_back_dot(value);}
+        void set_show_back_digit(bool value) override {dot_matrix_display::show_back_dot(value);}
         void set_thickness(int32_t value) override {dot_matrix_display::thickness(value);}
         
       private:
@@ -177,7 +177,7 @@ namespace xtd {
         std::string get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/\\_°\"'[]()| .,:";}
         int32_t get_thickness() const override {return fourteen_segment_display::thickness();}
         
-        void set_background_digit_transparency(double value) override {fourteen_segment_display::background_segment_transparency(value);}
+        void set_back_digit_transparency(double value) override {fourteen_segment_display::back_segment_transparency(value);}
         void set_character(wchar_t value) override {
           static std::map<wchar_t, forms::segments> characters {
             {'0', forms::segments::a|forms::segments::b|forms::segments::c|forms::segments::d|forms::segments::e|forms::segments::f},
@@ -270,7 +270,7 @@ namespace xtd {
         }
         void set_segment_style(forms::segment_style value) override {fourteen_segment_display::segment_style(value);}
         void set_dot_matrix_style(forms::dot_matrix_style value) override {}
-        void set_show_background_digit(bool value) override {fourteen_segment_display::show_background_segment(value);}
+        void set_show_back_digit(bool value) override {fourteen_segment_display::show_back_segment(value);}
         void set_thickness(int32_t value) override {seven_segment_display::thickness(value);}
         
       private:
@@ -285,7 +285,7 @@ namespace xtd {
         std::string get_valid_characters() const override {return "0123456789ABCDEFGHIJLNOPQRSTUYabcdefghijlnopqrstuy=-_°\"'[]| .,:";}
         int32_t get_thickness() const override {return nine_segment_display::thickness();}
         
-        void set_background_digit_transparency(double value) override {nine_segment_display::background_segment_transparency(value);}
+        void set_back_digit_transparency(double value) override {nine_segment_display::back_segment_transparency(value);}
         void set_character(wchar_t value) override {
           static std::map<wchar_t, forms::segments> characters {
             {'0', forms::segments::a|forms::segments::b|forms::segments::c|forms::segments::d|forms::segments::e|forms::segments::f},
@@ -358,7 +358,7 @@ namespace xtd {
         }
         void set_segment_style(forms::segment_style value) override {nine_segment_display::segment_style(value);}
         void set_dot_matrix_style(forms::dot_matrix_style value) override {}
-        void set_show_background_digit(bool value) override {nine_segment_display::show_background_segment(value);}
+        void set_show_back_digit(bool value) override {nine_segment_display::show_back_segment(value);}
         void set_thickness(int32_t value) override {seven_segment_display::thickness(value);}
         
       private:
@@ -373,7 +373,7 @@ namespace xtd {
         std::string get_valid_characters() const override {return "0123456789ABCDEFGHIJLNOPQRSTUYabcdefghijlnopqrstuy=-_°\"'[]| .,:";}
         int32_t get_thickness() const override {return seven_segment_display::thickness();}
 
-        void set_background_digit_transparency(double value) override {seven_segment_display::background_segment_transparency(value);}
+        void set_back_digit_transparency(double value) override {seven_segment_display::back_segment_transparency(value);}
         void set_character(wchar_t value) override {
           static std::map<wchar_t, forms::segments> characters {
             {'0', forms::segments::a|forms::segments::b|forms::segments::c|forms::segments::d|forms::segments::e|forms::segments::f},
@@ -446,7 +446,7 @@ namespace xtd {
         }
         void set_segment_style(forms::segment_style value) override {seven_segment_display::segment_style(value);}
         void set_dot_matrix_style(forms::dot_matrix_style value) override {}
-        void set_show_background_digit(bool value) override {seven_segment_display::show_background_segment(value);}
+        void set_show_back_digit(bool value) override {seven_segment_display::show_back_segment(value);}
         void set_thickness(int32_t value) override {seven_segment_display::thickness(value);}
 
       private:
@@ -461,7 +461,7 @@ namespace xtd {
         std::string get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/\\_°\"'[]()| .,:";}
         int32_t get_thickness() const override {return sixteen_segment_display::thickness();}
         
-        void set_background_digit_transparency(double value) override {sixteen_segment_display::background_segment_transparency(value);}
+        void set_back_digit_transparency(double value) override {sixteen_segment_display::back_segment_transparency(value);}
         void set_character(wchar_t value) override {
           static std::map<wchar_t, forms::segments> characters {
             {'0', forms::segments::a1|forms::segments::a2|forms::segments::b|forms::segments::c|forms::segments::d1|forms::segments::d2|forms::segments::e|forms::segments::f},
@@ -554,7 +554,7 @@ namespace xtd {
         }
         void set_segment_style(forms::segment_style value) override {sixteen_segment_display::segment_style(value);}
         void set_dot_matrix_style(forms::dot_matrix_style value) override {}
-        void set_show_background_digit(bool value) override {sixteen_segment_display::show_background_segment(value);}
+        void set_show_back_digit(bool value) override {sixteen_segment_display::show_back_segment(value);}
         void set_thickness(int32_t value) override {sixteen_segment_display::thickness(value);}
         
       private:
@@ -567,20 +567,20 @@ namespace xtd {
         size_ = default_size();
       }
       
-      double background_digit_transparency() const {return background_digit_transparency_;}
-      lcd_label& background_digit_transparency(double value) {
+      double back_digit_transparency() const {return back_digit_transparency_;}
+      lcd_label& back_digit_transparency(double value) {
         if (value < 0.0 && value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t, caller_info_);
-        if (background_digit_transparency_ != value) {
-          background_digit_transparency_ = value;
+        if (back_digit_transparency_ != value) {
+          back_digit_transparency_ = value;
           set_digits_params();
         }
         return *this;
       }
       
-      bool show_background_digit() const {return show_background_digit_;}
-      lcd_label& show_background_digit(bool value) {
-        if (show_background_digit_ != value) {
-          show_background_digit_ = value;
+      bool show_back_digit() const {return show_back_digit_;}
+      lcd_label& show_back_digit(bool value) {
+        if (show_back_digit_ != value) {
+          show_back_digit_ = value;
           set_digits_params();
         }
         return *this;
@@ -687,8 +687,8 @@ namespace xtd {
         for (auto& digit : digits_) {
           dynamic_cast<control*>(digit.get())->height(size_.height());
           dynamic_cast<control*>(digit.get())->left(offset_left);
-          digit->set_background_digit_transparency(background_digit_transparency_);
-          digit->set_show_background_digit(show_background_digit_);
+          digit->set_back_digit_transparency(back_digit_transparency_);
+          digit->set_show_back_digit(show_back_digit_);
           digit->set_segment_style(segment_style_);
           digit->set_dot_matrix_style(dot_matrix_style_);
           if (thickness_.has_value()) digit->set_thickness(thickness());
@@ -717,8 +717,8 @@ namespace xtd {
       }
 
     private:
-      bool show_background_digit_ = true;
-      double background_digit_transparency_ = 0.05;
+      bool show_back_digit_ = true;
+      double back_digit_transparency_ = 0.05;
       std::optional<int32_t> digit_spacing_;
       forms::lcd_style lcd_style_ = forms::lcd_style::seven_segment_display;
       forms::segment_style segment_style_ = forms::segment_style::standard;

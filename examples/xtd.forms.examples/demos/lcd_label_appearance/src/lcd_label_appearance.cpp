@@ -56,7 +56,7 @@ namespace examples {
       check_box_show_digit_background.checked(true);
       check_box_show_digit_background.text("Show background digit");
       check_box_show_digit_background.checked_changed += [&] {
-        lcd_label_label.show_background_digit(check_box_show_digit_background.checked());
+        lcd_label_label.show_back_digit(check_box_show_digit_background.checked());
       };
       
       lcd_label_label.location({10, 45});

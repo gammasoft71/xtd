@@ -42,12 +42,12 @@ namespace xtd {
         if ((value_ & forms::segments::d2) == forms::segments::d2) draw_segment_d2(graphics, fore_color());
       }
  
-      void draw_background_digit(drawing::graphics& graphics) override {
-        fourteen_segment_display::draw_background_digit(graphics);
-        draw_segment_a1(graphics, background_segment_color());
-        draw_segment_a2(graphics, background_segment_color());
-        draw_segment_d1(graphics, background_segment_color());
-        draw_segment_d2(graphics, background_segment_color());
+      void draw_back_digit(drawing::graphics& graphics) override {
+        fourteen_segment_display::draw_back_digit(graphics);
+        draw_segment_a1(graphics, back_segment_color());
+        draw_segment_a2(graphics, back_segment_color());
+        draw_segment_d1(graphics, back_segment_color());
+        draw_segment_d2(graphics, back_segment_color());
       }
 
       virtual void draw_segment_a1(drawing::graphics& graphics, const drawing::color& color) {

@@ -29,7 +29,7 @@ int main() {
   label.fore_color(color::lime);
   label.back_color(color::average(color::black, label.fore_color(), 0.20));
   label.segment_style(segment_style::modern);
-  label.show_background_digit(false);
+  label.show_back_digit(false);
   label.text(format("{:t}", std::chrono::system_clock::now()));
   
   timer.tick += [&] {

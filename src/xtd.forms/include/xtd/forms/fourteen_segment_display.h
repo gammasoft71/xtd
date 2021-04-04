@@ -46,16 +46,16 @@ namespace xtd {
         if ((value_ & forms::segments::m) == forms::segments::m) draw_segment_m(graphics, fore_color());
       }
  
-      void draw_background_digit(drawing::graphics& graphics) override {
-        seven_segment_display::draw_background_digit(graphics);
-        draw_segment_g1(graphics, background_segment_color());
-        draw_segment_g2(graphics, background_segment_color());
-        draw_segment_h(graphics, background_segment_color());
-        draw_segment_i(graphics, background_segment_color());
-        draw_segment_j(graphics, background_segment_color());
-        draw_segment_k(graphics, background_segment_color());
-        draw_segment_l(graphics, background_segment_color());
-        draw_segment_m(graphics, background_segment_color());
+      void draw_back_digit(drawing::graphics& graphics) override {
+        seven_segment_display::draw_back_digit(graphics);
+        draw_segment_g1(graphics, back_segment_color());
+        draw_segment_g2(graphics, back_segment_color());
+        draw_segment_h(graphics, back_segment_color());
+        draw_segment_i(graphics, back_segment_color());
+        draw_segment_j(graphics, back_segment_color());
+        draw_segment_k(graphics, back_segment_color());
+        draw_segment_l(graphics, back_segment_color());
+        draw_segment_m(graphics, back_segment_color());
       }
 
       virtual void draw_segment_g1(drawing::graphics& graphics, const drawing::color& color) {
