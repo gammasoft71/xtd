@@ -35,7 +35,14 @@ namespace xtd {
         size_ = default_size();
       }
 
+      /// @brief Gets background segment color.
+      /// @return A xtd::drawing color that represent the background segment color.
+      /// @remarks Do not confuse back_segment_color and back_color. Background segment color is the color when segment is off.
       virtual drawing::color back_segment_color() {return back_segment_color_.value_or(fore_color());}
+      /// @brief Sets background segment color.
+      /// @param value A xtd::drawing color that represent the background segment color.
+      /// @return This instance of seven_segment_display.
+      /// @remarks Do not confuse back_segment_color and back_color. Background segment color is the color when segment is off.
       virtual seven_segment_display& back_segment_color(const drawing::color& value) {
         if (!back_segment_color_.has_value() || back_segment_color_.value() != value) {
           back_segment_color_ = value;
@@ -44,7 +51,12 @@ namespace xtd {
         return *this;
       }
 
+      /// @brief Gets the background segment transparency.
+      /// @return A double-precision value between 0.0 and 1.0 that represent the background segment transparency.
       virtual double back_segment_transparency() const {return back_segment_transparency_;}
+      /// @brief Sets the background segment transparency.
+      /// @param value A double-precision value between 0.0 and 1.0 that represent the background segment transparency.
+      /// @return This instance of seven_segment_display.
       virtual seven_segment_display& back_segment_transparency(double value) {
         if (back_segment_transparency_ != value) {
           back_segment_transparency_ = value;
@@ -53,7 +65,12 @@ namespace xtd {
         return *this;
       }
       
+      /// @brief Gets a value indicate if background segments are shown.
+      /// @return true if background segments are shown; otherwise false
       virtual bool show_back_segment() const {return show_back_segment_;}
+      /// @brief Sets a value indicate if background segments are shown.
+      /// @param value true if background segments are shown; otherwise false
+      /// @return This instance of seven_segment_display.
       virtual seven_segment_display& show_back_segment(bool value) {
         if (show_back_segment_ != value) {
           show_back_segment_ = value;
@@ -62,16 +79,12 @@ namespace xtd {
         return *this;
       }
       
-      virtual forms::segments value() const {return value_;}
-      virtual seven_segment_display& value(forms::segments segments) {
-        if (value_ != segments) {
-          value_ = segments;
-          invalidate();
-        }
-        return *this;
-      }
-      
+      /// @brief Gets segment style.
+      /// @return One of xtd::forms::segment_style values. The default is xtd::forms::segment_style::standard.
       virtual forms::segment_style segment_style() const {return segment_style_;}
+      /// @brief Sets segment style.
+      /// @param value One of xtd::forms::segment_style values. The default is xtd::forms::segment_style::standard.
+      /// @return This instance of seven_segment_display.
       virtual seven_segment_display& segment_style(forms::segment_style value) {
         if (segment_style_ != value) {
           segment_style_ = value;
@@ -80,10 +93,24 @@ namespace xtd {
         return *this;
       }
       
+      /// @brief Gets thickness of segment.
+      /// @return A int32_t that represent the segment tickness.
       virtual int32_t thickness() const {return thickness_.value_or(size_.height() < 10 ? 1 : (size_.height() / 10 + ((size_.height() / 10) % 2 ? 0 : 1)));}
+      /// @brief Sets thickness of segment.
+      /// @param value A int32_t that represent the segment tickness.
+      /// @return This instance of seven_segment_display.
       virtual seven_segment_display& thickness(int32_t value) {
         if (!thickness_.has_value() || thickness_.value() != value) {
           thickness_ = value;
+          invalidate();
+        }
+        return *this;
+      }
+
+      virtual forms::segments value() const {return value_;}
+      virtual seven_segment_display& value(forms::segments segments) {
+        if (value_ != segments) {
+          value_ = segments;
           invalidate();
         }
         return *this;
