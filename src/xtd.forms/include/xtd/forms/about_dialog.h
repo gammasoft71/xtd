@@ -50,13 +50,13 @@ namespace xtd {
     /// @image html about_dialog_system_gd.png
     class forms_export_ about_dialog final : public component {
     public:
-      /// @brief Reprresents a creators collection.
+      /// @brief Represents a creators collection.
       using creators_collection = xtd::forms::layout::arranged_element_collection<std::string>;
-      /// @brief Reprresents a designers collection.
+      /// @brief Represents a designers collection.
       using designers_collection = xtd::forms::layout::arranged_element_collection<std::string>;
-      /// @brief Reprresents a documentt writers collection.
+      /// @brief Represents a documentt writers collection.
       using doc_writers_collection = xtd::forms::layout::arranged_element_collection<std::string>;
-      /// @brief Reprresents a translators collection.
+      /// @brief Represents a translators collection.
       using translators_collection = xtd::forms::layout::arranged_element_collection<std::string>;
 
       /// @brief Initializes a new instance of the about_dialog class.
