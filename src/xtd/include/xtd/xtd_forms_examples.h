@@ -451,6 +451,22 @@
 /// <br>
 /// @image html emoticons_gd.png
 ///
+/// @example enable_debug.cpp
+/// The following code example demonstrate the use of enable_debug class.
+/// @par Windows
+/// @image html enable_debug_w.png
+/// <br>
+/// @image html enable_debug_wd.png
+/// @par macOS
+/// @image html enable_debug_m.png
+/// <br>
+/// @image html enable_debug_md.png
+/// @par Gnome
+/// @image html enable_debug_g.png
+/// <br>
+/// @image html enable_debug_gd.png
+
+///
 /// @example exception_box.cpp
 /// The following code example demonstrate the use of exception_dialog dialog.
 /// @par Windows
