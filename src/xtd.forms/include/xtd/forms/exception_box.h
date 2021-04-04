@@ -35,14 +35,34 @@ namespace xtd {
     /// @image html exception_box_gd.png
     class exception_box final static_ {
     public:
+      /// @brief Displays a exception box in front of the specified window. The exception box displays an unknown excpetion.
+      /// @param owner A iwin32_window that represents the owner window of the busy box.
       static dialog_result show(const iwin32_window& owner) {return show_exception_box(&owner);}
+      /// @brief Displays a exception box in front of the specified window. The exception box displays a specified caption and unknown excpetion.
+      /// @param owner A iwin32_window that represents the owner window of the busy box.
+      /// @param caption A string that specifies the title bar caption to display.
       static dialog_result show(const iwin32_window& owner, const std::string& caption) {return show_exception_box(&owner, nullptr, caption);}
+      /// @brief Displays a exception box in front of the specified window. The exception box displays a specified exception.
+      /// @param owner A iwin32_window that represents the owner window of the busy box.
+      /// @param exception An exception to display.
       static dialog_result show(const iwin32_window& owner, const std::exception& exception) {return show_exception_box(&owner, &exception);}
+      /// @brief Displays a exception box in front of the specified window. The exception box displays a specified exception and caption.
+      /// @param owner A iwin32_window that represents the owner window of the busy box.
+      /// @param exception An exception to display.
+      /// @param caption A string that specifies the title bar caption to display.
       static dialog_result show(const iwin32_window& owner, const std::exception& exception, const std::string& caption) {return show_exception_box(&owner, &exception, caption);}
       
+      /// @brief Displays a exception box. The exception box displays an unknown exception.
       static dialog_result show() {return show_exception_box(nullptr);}
+      /// @brief Displays a exception box. The exception box displays a specified caption and unknown exception.
+      /// @param caption A string that specifies the title bar caption to display.
       static dialog_result show(const std::string& caption) {return show_exception_box(nullptr, nullptr, caption);}
+      /// @brief Displays a exception box. The exception box displays a specified exception.
+      /// @param exception An exception to display.
       static dialog_result show(const std::exception& exception) {return show_exception_box(nullptr, &exception);}
+      /// @brief Displays a exception box. The exception box displays a specified exception and caption.
+      /// @param exception An exception to display.
+      /// @param caption A string that specifies the title bar caption to display.
       static dialog_result show(const std::exception& exception, const std::string& caption) {return show_exception_box(nullptr, &exception, caption);}
       
     private:
