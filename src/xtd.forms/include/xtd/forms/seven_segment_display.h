@@ -34,28 +34,28 @@ namespace xtd {
         size_ = default_size();
       }
 
-      virtual drawing::color background_segment_color() {return background_segment_color_.value_or(drawing::color::average(back_color(), fore_color(), background_segment_transparency_));}
-      virtual seven_segment_display& background_segment_color(const drawing::color& value) {
-        if (!background_segment_color_.has_value() || background_segment_color_.value() != value) {
-          background_segment_color_ = value;
+      virtual drawing::color back_segment_color() {return back_segment_color_.value_or(fore_color());}
+      virtual seven_segment_display& back_segment_color(const drawing::color& value) {
+        if (!back_segment_color_.has_value() || back_segment_color_.value() != value) {
+          back_segment_color_ = value;
           invalidate();
         }
         return *this;
       }
 
-      virtual double background_segment_transparency() const {return background_segment_transparency_;}
-      virtual seven_segment_display& background_segment_transparency(double value) {
-        if (background_segment_transparency_ != value) {
-          background_segment_transparency_ = value;
+      virtual double back_segment_transparency() const {return back_segment_transparency_;}
+      virtual seven_segment_display& back_segment_transparency(double value) {
+        if (back_segment_transparency_ != value) {
+          back_segment_transparency_ = value;
           invalidate();
         }
         return *this;
       }
       
-      virtual bool show_background_segment() const {return show_background_segment_;}
-      virtual seven_segment_display& show_background_segment(bool value) {
-        if (show_background_segment_ != value) {
-          show_background_segment_ = value;
+      virtual bool show_back_segment() const {return show_back_segment_;}
+      virtual seven_segment_display& show_back_segment(bool value) {
+        if (show_back_segment_ != value) {
+          show_back_segment_ = value;
           invalidate();
         }
         return *this;
@@ -97,16 +97,22 @@ namespace xtd {
       void on_paint(paint_event_args& e) override {
         drawing::graphics graphics = e.graphics();
         graphics.clear(back_color());
-        if (show_background_segment_ && value_ != forms::segments::dp && value_ != forms::segments::pc) draw_background_digit(graphics);
+        if ((value_ & forms::segments::a) == forms::segments::a) draw_segment_a(graphics, fore_color());
+        else if (show_back_segment_) draw_segment_a(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
+        if ((value_ & forms::segments::b) == forms::segments::b) draw_segment_b(graphics, fore_color());
+        else if (show_back_segment_) draw_segment_b(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
+        if ((value_ & forms::segments::c) == forms::segments::c) draw_segment_c(graphics, fore_color());
+        else if (show_back_segment_) draw_segment_c(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
+        if ((value_ & forms::segments::d) == forms::segments::d) draw_segment_d(graphics, fore_color());
+        else if (show_back_segment_) draw_segment_d(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
+        if ((value_ & forms::segments::e) == forms::segments::e) draw_segment_e(graphics, fore_color());
+        else if (show_back_segment_) draw_segment_e(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
+        if ((value_ & forms::segments::f) == forms::segments::f) draw_segment_f(graphics, fore_color());
+        else if (show_back_segment_) draw_segment_f(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
+        if ((value_ & forms::segments::g) == forms::segments::g) draw_segment_g(graphics, fore_color());
+        else if (show_back_segment_) draw_segment_g(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
         if ((value_ & forms::segments::dp) == forms::segments::dp) draw_dp(graphics, fore_color());
         if ((value_ & forms::segments::pc) == forms::segments::pc) draw_pc(graphics, fore_color());
-        if ((value_ & forms::segments::a) == forms::segments::a) draw_segment_a(graphics, fore_color());
-        if ((value_ & forms::segments::b) == forms::segments::b) draw_segment_b(graphics, fore_color());
-        if ((value_ & forms::segments::c) == forms::segments::c) draw_segment_c(graphics, fore_color());
-        if ((value_ & forms::segments::d) == forms::segments::d) draw_segment_d(graphics, fore_color());
-        if ((value_ & forms::segments::e) == forms::segments::e) draw_segment_e(graphics, fore_color());
-        if ((value_ & forms::segments::f) == forms::segments::f) draw_segment_f(graphics, fore_color());
-        if ((value_ & forms::segments::g) == forms::segments::g) draw_segment_g(graphics, fore_color());
       }
       
       drawing::size measure_control() const override {
@@ -133,14 +139,7 @@ namespace xtd {
         control::set_client_size_core(width, height);
       }
 
-      virtual void draw_background_digit(drawing::graphics& graphics) {
-        draw_segment_a(graphics, background_segment_color());
-        draw_segment_b(graphics, background_segment_color());
-        draw_segment_c(graphics, background_segment_color());
-        draw_segment_d(graphics, background_segment_color());
-        draw_segment_e(graphics, background_segment_color());
-        draw_segment_f(graphics, background_segment_color());
-        draw_segment_g(graphics, background_segment_color());
+      virtual void draw_back_digit(drawing::graphics& graphics) {
       }
 
       virtual void draw_segment_a(drawing::graphics& graphics, const drawing::color& color) {
@@ -343,9 +342,9 @@ namespace xtd {
 
       /// @cond
       forms::segments value_ = forms::segments::none;
-      bool show_background_segment_ = true;
-      std::optional<drawing::color> background_segment_color_;
-      double background_segment_transparency_ = 0.05;
+      bool show_back_segment_ = true;
+      std::optional<drawing::color> back_segment_color_;
+      double back_segment_transparency_ = 0.05;
       forms::segment_style segment_style_ = forms::segment_style::standard;
       std::optional<int32_t> thickness_;
       /// @endcond

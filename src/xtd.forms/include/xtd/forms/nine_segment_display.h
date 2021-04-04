@@ -40,10 +40,10 @@ class nine_segment_display : public seven_segment_display {
         if ((value_ & forms::segments::i) == forms::segments::i) draw_segment_i(graphics, fore_color());
       }
  
-      void draw_background_digit(drawing::graphics& graphics) override {
-        seven_segment_display::draw_background_digit(graphics);
-        draw_segment_h(graphics, background_segment_color());
-        draw_segment_i(graphics, background_segment_color());
+      void draw_back_digit(drawing::graphics& graphics) override {
+        seven_segment_display::draw_back_digit(graphics);
+        draw_segment_h(graphics, back_segment_color());
+        draw_segment_i(graphics, back_segment_color());
       }
 
       virtual void draw_segment_h(drawing::graphics& graphics, const drawing::color& color) {

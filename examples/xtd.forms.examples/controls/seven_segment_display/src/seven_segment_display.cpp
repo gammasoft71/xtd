@@ -12,7 +12,7 @@ public:
     seven_segment_display1.parent(*this);
     seven_segment_display1.fore_color(color::red);
     seven_segment_display1.anchor(anchor_styles::top|anchor_styles::bottom);
-    
+     
     timer1.interval(300);
     timer1.enabled(true);
     timer1.tick += [&] {
