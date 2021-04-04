@@ -28,7 +28,7 @@ namespace xtd {
     /// @par Gnome
     /// @image html folder_browser_dialog_g.png
     /// <br>
-    /// @image html efolder_browser_dialog_gd.png
+    /// @image html folder_browser_dialog_gd.png
     class forms_export_ folder_browser_dialog final : public common_dialog {
     public:
       /// @brief Initializes a new instance of the folder_browser_dialog class.

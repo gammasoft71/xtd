@@ -509,7 +509,22 @@
 /// @par Gnome
 /// @image html folder_browser_dialog_g.png
 /// <br>
-/// @image html efolder_browser_dialog_gd.png
+/// @image html folder_browser_dialog_gd.png
+///
+/// @example font_dialog.cpp
+/// The following code example demonstrate the use of font_dialog dialog.
+/// @par Windows
+/// @image html font_dialog_w.png
+/// <br>
+/// @image html font_dialog_wd.png
+/// @par macOS
+/// @image html font_dialog_m.png
+/// <br>
+/// @image html font_dialog_md.png
+/// @par Gnome
+/// @image html font_dialog_g.png
+/// <br>
+/// @image html font_dialog_gd.png
 ///
 /// @example form.cpp
 /// The following code example demonstrate the use of form control.
