@@ -436,6 +436,21 @@
 /// <br>
 /// @image html dot_matrix_display_gd.png
 ///
+/// @example emoticons.cpp
+/// The following code example demonstrate the use of emoticon and emoticons classes.
+/// @par Windows
+/// @image html emoticons_w.png
+/// <br>
+/// @image html emoticons_wd.png
+/// @par macOS
+/// @image html emoticons_m.png
+/// <br>
+/// @image html emoticons_md.png
+/// @par Gnome
+/// @image html emoticons_g.png
+/// <br>
+/// @image html emoticons_gd.png
+///
 /// @example exception_box.cpp
 /// The following code example demonstrate the use of exception_dialog dialog.
 /// @par Windows

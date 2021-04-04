@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::emoticon enum component.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include "component.h"
+#include "../forms_export.h"
 #include <xtd/static.h>
 #include <ostream>
 #include <string>
@@ -12,22 +12,58 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    class forms_export_ emoticon : public component {
+    /// @brief Represent a emoticon with name and codepoints.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms components
+    /// @par Examples
+    /// The following code example demonstrate the use of emoticon class.
+    /// @include emoticons.cpp
+    /// @par Windows
+    /// @image html emoticons_w.png
+    /// <br>
+    /// @image html emoticons_wd.png
+    /// @par macOS
+    /// @image html emoticons_m.png
+    /// <br>
+    /// @image html emoticons_md.png
+    /// @par Gnome
+    /// @image html emoticons_g.png
+    /// <br>
+    /// @image html emoticons_gd.png
+    class forms_export_ emoticon {
     public:
+      /// @brief Represents an empty emoticon.
       static const emoticon empty();
       
+      /// @brief Initialize a new instance of emoticon class with specified name and codepoints.
+      /// @param name A string that represent the name of emoticon
+      /// @param codepoints An initializer list of char32_t that represent the emoticon.
       emoticon(const std::string& name, std::initializer_list<char32_t> codepoints) : name_(name), codepoints_(codepoints) {}
       
+      /// @brief Initialize a new instance of emoticon class with specified name and codepoints.
+      /// @param name A string that represent the name of emoticon
+      /// @param codepoints An array of char32_t that represent the emoticon.
       emoticon(const std::string& name, const std::vector<char32_t>& codepoints) : name_(name), codepoints_(codepoints) {}
       
+      /// @brief Initialize a new instance of emoticon class with specified name and codepoint.
+      /// @param name A string that represent the name of emoticon
+      /// @param codepoint A char32_t that represent the emoticon.
       emoticon(const std::string& name, char32_t codepoint) : name_(name), codepoints_({codepoint}) {}
       
+      /// @brief Initialize a new instance of emoticon class with specified codepoints.
+      /// @param codepoints An initializer list of char32_t that represent the emoticon.
       emoticon(std::initializer_list<char32_t> codepoints) : codepoints_(codepoints) {}
       
+      /// @brief Initialize a new instance of emoticon class with specified codepoints.
+      /// @param codepoints An array of char32_t that represent the emoticon.
       emoticon(const std::vector<char32_t>& codepoints) : codepoints_(codepoints) {}
       
+      /// @brief Initialize a new instance of emoticon class with specified codepoint.
+      /// @param codepoints A char32_t that represent the emoticon.
       emoticon(char32_t codepoint) : codepoints_({codepoint}) {}
       
+      /// @cond
       template<typename type_t>
       emoticon(const std::string& name, std::initializer_list<type_t> codepoints) : name_(name) {
         for(auto codepoint : codepoints)
@@ -58,7 +94,6 @@ namespace xtd {
       template<typename type_t>
       emoticon(type_t codepoint) : codepoints_({static_cast<char32_t>(codepoint)}) {}
 
-      /// @cond
       emoticon() = default;
       emoticon(const emoticon&) = default;
       emoticon& operator=(const emoticon&) = default;
@@ -69,10 +104,16 @@ namespace xtd {
       }
       /// @endcond
       
+      /// @brief Gets name of emoticon.
+      /// @return A string that represent the name of emoticon.
       const std::string& name() const {return name_;}
       
+      /// @brief Gets codepoints of emoticon.
+      /// @return An array of char32_t that represent the emoticon.
       const std::vector<char32_t>& codepoints() const {return codepoints_;}
-      
+
+      /// @brief Returns a string containing the codepoints of the emoticons.
+      /// @return A string containing the codepoints of the emoticon. Empty string ("") for none codepoints.
       std::string to_string() const {
         std::string result;
         for (auto codepoint : codepoints_) {
