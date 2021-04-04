@@ -172,8 +172,8 @@ namespace xtd {
       /// @brief Sets all dots with specified boolean.
       /// @param on true to set all dots to on; otherwise false.
       virtual void set_all_dots(bool on) {
-        for (auto y = 0; y < static_cast<int32_t>(dots_.size()); y++)
-          for (auto x = 0; x < static_cast<int32_t>(dots_[y].size()); x++)
+        for (int32_t y = 0; y < static_cast<int32_t>(dots_.size()); y++)
+          for (int32_t x = 0; x < static_cast<int32_t>(dots_[y].size()); x++)
             dots_[y][x] = on;
       }
       
