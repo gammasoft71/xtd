@@ -10,10 +10,10 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-  /// @cond
+    /// @cond
     class open_file_dialog;
     class save_file_dialog;
-  /// @endcond
+    /// @endcond
 
     /// @brief Displays a dialog box from which the user can select a file.
     /// @par Library
@@ -46,6 +46,7 @@ namespace xtd {
       virtual bool add_extension() const {return get_option(OFN_ADDEXTENSION);}
       /// @brief Sets a value indicating whether the dialog box automatically adds an extension to a file name if the user omits the extension.
       /// @param value true if the dialog box adds an extension to a file name if the user omits the extension; otherwise, false. The default value is true.
+      /// @return This instance of file_dialog.
       virtual file_dialog& add_extension(bool value) {
         set_option(OFN_ADDEXTENSION, value);
         return *this;
@@ -58,6 +59,7 @@ namespace xtd {
       virtual bool auto_upgrade_enabled() const {return auto_upgrade_enabled_;}
       /// @brief Sets a value indicating whether this file_dialog instance should automatically upgrade appearance and behavior when running on Windows Vista.
       /// @param value true if this file_dialog instance should automatically upgrade appearance and behavior when running on Windows Vista; otherwise, false. The default is true.
+      /// @return This instance of file_dialog.
       /// @remarks If this property is false, the file_dialog class will have a Windows XP-style appearance and behavior on Windows Vista.
       /// @remarks On Windows XP, this property does not have any effect.
       virtual file_dialog& auto_upgrade_enabled(bool value) {
@@ -71,36 +73,68 @@ namespace xtd {
       virtual bool check_file_exists() const {return get_option(OFN_FILEMUSTEXIST);}
       /// @brief Sets a value indicating whether the dialog box displays a warning if the user specifies a file name that does not exist.
       /// @param value true if the dialog box displays a warning if the user specifies a file name that does not exist; otherwise, false. The default value is false.
+      /// @return This instance of file_dialog.
       /// @remarks The default value is true for an inheriting open_file_dialog and false for an inheriting save_file_dialog.
       virtual file_dialog& check_file_exists(bool value) {
         set_option(OFN_FILEMUSTEXIST, value);
         return *this;
       }
       
+      /// @brief Gets a value indicating whether the dialog box displays a warning if the user specifies a path that does not exist.
+      /// @return true if the dialog box displays a warning when the user specifies a path that does not exist; otherwise, false. The default value is true.
       virtual bool check_path_exists() const {return get_option(OFN_PATHMUSTEXIST);}
+      /// @brief Sets a value indicating whether the dialog box displays a warning if the user specifies a path that does not exist.
+      /// @param value true if the dialog box displays a warning when the user specifies a path that does not exist; otherwise, false. The default value is true.
+      /// @return This instance of file_dialog.
       virtual file_dialog& check_path_exists(bool value) {
         set_option(OFN_PATHMUSTEXIST, value);
         return *this;
       }
       
+      /// @brief Gets the default file name extension.
+      /// @return The default file name extension. The returned string does not include the period. The default value is an empty string ("").
+      /// @remarks When the user of your application specifies a file name without an extension, the file_dialog appends an extension to the file name. The extension that is used is determined by the filter and default_ext properties. If a filter is selected in the file_dialog and the filter specifies an extension, then that extension is used. If the filter selected uses a wildcard in place of the extension, then the extension specified in the default_ext property is used.
       virtual const std::string& default_ext() const {return default_ext_;}
+      /// @brief Sets the default file name extension.
+      /// @return The default file name extension. The returned string does not include the period. The default value is an empty string ("").
+      /// @param value When the user of your application specifies a file name without an extension, the file_dialog appends an extension to the file name. The extension that is used is determined by the filter and default_ext properties. If a filter is selected in the file_dialog and the filter specifies an extension, then that extension is used. If the filter selected uses a wildcard in place of the extension, then the extension specified in the default_ext property is used.
+      /// @return This instance of file_dialog.
       virtual file_dialog& default_ext(const std::string& value) {
         default_ext_ = value;
         return *this;
       }
 
+      /// @brief Gets a value indicating whether the dialog box returns the location of the file referenced by the shortcut or whether it returns the location of the shortcut (.lnk).
+      /// @return true if the dialog box returns the location of the file referenced by the shortcut; otherwise, false. The default value is true.
       virtual bool dereference_link() const {return !get_option(OFN_NODEREFERENCELINKS);}
+      /// @brief Dets a value indicating whether the dialog box returns the location of the file referenced by the shortcut or whether it returns the location of the shortcut (.lnk).
+      /// @param value true if the dialog box returns the location of the file referenced by the shortcut; otherwise, false. The default value is true.
+      /// @return This instance of file_dialog.
       virtual file_dialog& dereference_link(bool value) {
         set_option(OFN_NODEREFERENCELINKS, !value);
         return *this;
       }
       
+      /// @brief Gets a string containing the file name selected in the file dialog box.
+      /// @return The file name selected in the file dialog box. The default value is an empty string ("").
+      /// @remarks The file name includes both the file path and the extension. If no files are selected, this method returns an empty string ("").
+      /// @remarks When used from the save_file_dialog class, this property represents the file being saved; when used from the open_file_dialog class, it represents the file being opened.
+      /// @remarks This property can only be the name of one selected file. If you want to return an array containing the names of all selected files in a multiple-selection dialog box, use file_names.
       virtual const std::string& file_name() const {return file_name_;}
+      /// @brief Sets a string containing the file name selected in the file dialog box.
+      /// @param value The file name selected in the file dialog box. The default value is an empty string ("").
+      /// @return This instance of file_dialog.
+      /// @remarks The file name includes both the file path and the extension. If no files are selected, this method returns an empty string ("").
+      /// @remarks When used from the save_file_dialog class, this property represents the file being saved; when used from the open_file_dialog class, it represents the file being opened.
+      /// @remarks This property can only be the name of one selected file. If you want to return an array containing the names of all selected files in a multiple-selection dialog box, use file_names.
       virtual file_dialog& file_name(const std::string& value) {
         file_name_ = value;
         return *this;
       }
 
+      /// @brief Gets the file names of all selected files in the dialog box.
+      /// @return An array of type string, containing the file names of all selected files in the dialog box.
+      /// @remarks Each file name includes both the file path and the extension. If no files are selected, this method returns an empty array.
       virtual const std::vector<std::string> file_names() const {return file_names_;}
 
       virtual const std::string& filter() const {return filter_;}
