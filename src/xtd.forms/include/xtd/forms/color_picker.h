@@ -65,7 +65,7 @@ namespace xtd {
     protected:
       forms::create_params create_params() const override;
       
-      /// @brief Raises the colore_changed event.
+      /// @brief Raises the color_changed event.
       /// @param e An event_args that contains the event data.
       void on_color_changed(const event_args& e);
       
