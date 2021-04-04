@@ -101,6 +101,7 @@ namespace xtd {
       /// @brief Runs exception dialog box.
       xtd::forms::dialog_result show_dialog(const iwin32_window& owner);
       /// @brief Runs exception dialog box.
+      /// @remarks The result will done in asynch. Check result_dialog property aftter dialog box closed to obtain the result.
       void show_sheet(const iwin32_window& owner);
       /// @brief Runs exception dialog box.
       xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner);
