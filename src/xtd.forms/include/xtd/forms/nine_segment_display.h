@@ -42,8 +42,8 @@ class nine_segment_display : public seven_segment_display {
  
       void draw_back_digit(drawing::graphics& graphics) override {
         seven_segment_display::draw_back_digit(graphics);
-        draw_segment_h(graphics, back_segment_color());
-        draw_segment_i(graphics, back_segment_color());
+        draw_segment_h(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
+        draw_segment_i(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
       }
 
       virtual void draw_segment_h(drawing::graphics& graphics, const drawing::color& color) {
