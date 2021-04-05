@@ -29,8 +29,28 @@ public:
   
 private:
   int counter = 0;
-  std::vector<segments> chaser = {segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g|segments::h|segments::i, segments::none, segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g|segments::h|segments::i, segments::none, segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g|segments::h|segments::i, segments::a, segments::b, segments::g, segments::e, segments::d, segments::c, segments::g, segments::f, segments::h, segments::i, segments::dp, segments::pc};
-  std::vector<segment_style> segment_styles = {segment_style::standard, segment_style::modern, segment_style::mixed, segment_style::expanded, segment_style::design, segment_style::stick};
+  std::vector<segments> chaser = {
+    segments::none,
+    segments::a,
+    segments::a|segments::b,
+    segments::a|segments::b|segments::c,
+    segments::a|segments::b|segments::c|segments::d,
+    segments::a|segments::b|segments::c|segments::d|segments::e,
+    segments::a|segments::b|segments::c|segments::d|segments::e|segments::f,
+    segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g,
+    segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g|segments::h,
+    segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g|segments::h|segments::i,
+    segments::dp,
+    segments::pc
+  };
+  std::vector<segment_style> segment_styles = {
+    segment_style::standard,
+    segment_style::modern,
+    segment_style::mixed,
+    segment_style::expanded,
+    segment_style::design,
+    segment_style::stick
+  };
   nine_segment_display nine_segment_display1;
   timer timer1;
 };

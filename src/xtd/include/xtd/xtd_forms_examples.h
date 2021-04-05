@@ -556,6 +556,21 @@
 /// <br>
 /// @image html form_gd.png
 ///
+/// @example fourteen_segment_display.cpp
+/// The following code example demonstrate the use of fourteen segment display control.
+/// @par Windows
+/// @image html fourteen_segment_display_w.png
+/// <br>
+/// @image html fourteen_segment_display_wd.png
+/// @par macOS
+/// @image html fourteen_segment_display_m.png
+/// <br>
+/// @image html fourteen_segment_display_md.png
+/// @par Gnome
+/// @image html fourteen_segment_display_g.png
+/// <br>
+/// @image html fourteen_segment_display_gd.png
+///
 /// @example group_box.cpp
 /// The following code example demonstrate the use of group_box control.
 /// @par Windows
@@ -600,6 +615,21 @@
 /// @image html group_box_and_radio_button_g.png
 /// <br>
 /// @image html group_box_and_radio_button_gd.png
+///
+/// @example nine_segment_display.cpp
+/// The following code example demonstrate the use of nine segment display control.
+/// @par Windows
+/// @image html nine_segment_display_w.png
+/// <br>
+/// @image html nine_segment_display_wd.png
+/// @par macOS
+/// @image html nine_segment_display_m.png
+/// <br>
+/// @image html nine_segment_display_md.png
+/// @par Gnome
+/// @image html nine_segment_display_g.png
+/// <br>
+/// @image html nine_segment_display_gd.png
 ///
 /// @example open_file_dialog.cpp
 /// The following code example demonstrate the use of open_file_dialog dialog.
@@ -660,6 +690,21 @@
 /// @image html seven_segment_display_g.png
 /// <br>
 /// @image html seven_segment_display_gd.png
+///
+/// @example sixteen_segment_display.cpp
+/// The following code example demonstrate the use of sixteen segment display control.
+/// @par Windows
+/// @image html sixteen_segment_display_w.png
+/// <br>
+/// @image html sixteen_segment_display_wd.png
+/// @par macOS
+/// @image html sixteen_segment_display_m.png
+/// <br>
+/// @image html sixteen_segment_display_md.png
+/// @par Gnome
+/// @image html sixteen_segment_display_g.png
+/// <br>
+/// @image html sixteen_segment_display_gd.png
 ///
 /// @example split_container.cpp
 /// The following code example demonstrate the use of split_container container.
