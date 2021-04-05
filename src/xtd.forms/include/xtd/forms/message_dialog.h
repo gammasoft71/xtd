@@ -34,7 +34,7 @@ namespace xtd {
     };
     
     template<typename type_t>
-    using message_dialog_closed_event_handler = delegate<void(type_t, const message_dialog_closed_event_args& e)>;
+    using message_dialog_closed_event_handler = delegate<void(type_t sender, const message_dialog_closed_event_args& e)>;
   
     /// @brief Displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A message_dialog can contain text, buttons, and symbols that inform and instruct the user.
     /// @par Library

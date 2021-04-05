@@ -30,7 +30,7 @@ namespace xtd {
     };
     
     template<typename type_t>
-    using exception_dialog_closed_event_handler = delegate<void(type_t, const exception_dialog_closed_event_args& e)>;
+    using exception_dialog_closed_event_handler = delegate<void(type_t sender, const exception_dialog_closed_event_args& e)>;
     
     /// @brief Represents a common dialog box that displays exception box.
     /// @par Library
