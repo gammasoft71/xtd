@@ -616,6 +616,21 @@
 /// <br>
 /// @image html group_box_and_radio_button_gd.png
 ///
+/// @example image_list.cpp
+/// The following code example demonstrate the use of image_list class.
+/// @par Windows
+/// @image html image_list_w.png
+/// <br>
+/// @image html image_list_wd.png
+/// @par macOS
+/// @image html image_list_m.png
+/// <br>
+/// @image html image_list_md.png
+/// @par Gnome
+/// @image html image_list_g.png
+/// <br>
+/// @image html image_list_gd.png
+///
 /// @example nine_segment_display.cpp
 /// The following code example demonstrate the use of nine segment display control.
 /// @par Windows
