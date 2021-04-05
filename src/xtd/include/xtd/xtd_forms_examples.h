@@ -616,6 +616,21 @@
 /// <br>
 /// @image html group_box_and_radio_button_gd.png
 ///
+/// @example hello_world_label.cpp
+/// The following code example demonstrate the use of label control.
+/// @par Windows
+/// @image html hello_world_label_w.png
+/// <br>
+/// @image html hello_world_label_wd.png
+/// @par macOS
+/// @image html hello_world_label_m.png
+/// <br>
+/// @image html hello_world_label_md.png
+/// @par Gnome
+/// @image html hello_world_label_g.png
+/// <br>
+/// @image html hello_world_label_gd.png
+///
 /// @example image_list.cpp
 /// The following code example demonstrate the use of image_list class.
 /// @par Windows
@@ -690,6 +705,21 @@
 /// @image html input_dialog_password_g.png
 /// <br>
 /// @image html input_dialog_multiline_gd.png
+///
+/// @example label.cpp
+/// The following code example demonstrate the use of label control.
+/// @par Windows
+/// @image html label_w.png
+/// <br>
+/// @image html label_wd.png
+/// @par macOS
+/// @image html label_m.png
+/// <br>
+/// @image html label_md.png
+/// @par Gnome
+/// @image html label_g.png
+/// <br>
+/// @image html label_gd.png
 ///
 /// @example nine_segment_display.cpp
 /// The following code example demonstrate the use of nine segment display control.
