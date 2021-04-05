@@ -29,8 +29,35 @@ public:
   
 private:
   int counter = 0;
-  std::vector<segments> chaser = {segments::a1|segments::a2|segments::b|segments::c|segments::d1|segments::d2|segments::e|segments::f|segments::g1|segments::g2|segments::h|segments::i|segments::j|segments::k|segments::l|segments::m, segments::none, segments::a1|segments::a2|segments::b|segments::c|segments::d1|segments::d2|segments::e|segments::f|segments::g1|segments::g2|segments::h|segments::i|segments::j|segments::k|segments::l|segments::m, segments::none, segments::a1|segments::a2|segments::b|segments::c|segments::d1|segments::d2|segments::e|segments::f|segments::g1|segments::g2|segments::h|segments::i|segments::j|segments::k|segments::l|segments::m, segments::a1,segments::a2, segments::b, segments::c, segments::d2, segments::d1, segments::e, segments::f, segments::a1, segments::a2, segments::b, segments::c, segments::d2, segments::d1, segments::e, segments::f, segments::i|segments::l, segments::j|segments::k, segments::g1|segments::g2, segments::h|segments::m, segments::i|segments::l, segments::j|segments::k, segments::g1|segments::g2, segments::h|segments::m, segments::i|segments::l, segments::dp, segments::pc};
-  std::vector<segment_style> segment_styles = {segment_style::standard, segment_style::modern, segment_style::mixed, segment_style::expanded, segment_style::design, segment_style::stick};
+  std::vector<segments> chaser = {
+    segments::none,
+    segments::a1,
+    segments::a1|segments::a2,
+    segments::a1|segments::a2|segments::b,
+    segments::a1|segments::a2|segments::b|segments::c,
+    segments::a1|segments::a2|segments::b|segments::c|segments::d2,
+    segments::a1|segments::a2|segments::b|segments::c|segments::d1|segments::d2,
+    segments::a1|segments::a2|segments::b|segments::c|segments::d1|segments::d2|segments::e,
+    segments::a1|segments::a2|segments::b|segments::c|segments::d1|segments::d2|segments::e|segments::f,
+    segments::a1|segments::a2|segments::b|segments::c|segments::d1|segments::d2|segments::e|segments::f|segments::g1,
+    segments::a1|segments::a2|segments::b|segments::c|segments::d1|segments::d2|segments::e|segments::f|segments::g1|segments::g2,
+    segments::a1|segments::a2|segments::b|segments::c|segments::d1|segments::d2|segments::e|segments::f|segments::g1|segments::g2|segments::h,
+    segments::a1|segments::a2|segments::b|segments::c|segments::d1|segments::d2|segments::e|segments::f|segments::g1|segments::g2|segments::h|segments::i,
+    segments::a1|segments::a2|segments::b|segments::c|segments::d1|segments::d2|segments::e|segments::f|segments::g1|segments::g2|segments::h|segments::i|segments::j,
+    segments::a1|segments::a2|segments::b|segments::c|segments::d1|segments::d2|segments::e|segments::f|segments::g1|segments::g2|segments::h|segments::i|segments::j|segments::k,
+    segments::a1|segments::a2|segments::b|segments::c|segments::d1|segments::d2|segments::e|segments::f|segments::g1|segments::g2|segments::h|segments::i|segments::j|segments::k|segments::l,
+    segments::a1|segments::a2|segments::b|segments::c|segments::d1|segments::d2|segments::e|segments::f|segments::g1|segments::g2|segments::h|segments::i|segments::j|segments::k|segments::l|segments::m,
+    segments::dp,
+    segments::pc
+  };
+  std::vector<segment_style> segment_styles = {
+    segment_style::standard,
+    segment_style::modern,
+    segment_style::mixed,
+    segment_style::expanded,
+    segment_style::design,
+    segment_style::stick
+  };
   sixteen_segment_display sixteen_segment_display1;
   timer timer1;
 };
