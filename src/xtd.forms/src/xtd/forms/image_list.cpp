@@ -32,7 +32,7 @@ image_list::~image_list() {
   }
 }
 
-void image_list::image_size(const drawing::size& value) {
+const image_list& image_list::image_size(const drawing::size& value) {
   if (value.width() < 16 || value.width() > 256 || value.height() < 16 || value.height() > 256) throw argument_out_of_range_exception("The values for width and height must be between 16 and 256."_t, caller_info_);
   if (data_->image_size_ != value) {
     data_->image_size_ = value;
@@ -40,4 +40,5 @@ void image_list::image_size(const drawing::size& value) {
     native::image_list::destroy(data_->handle_);
     data_->handle_ = native::image_list::create(data_->image_size_);
   }
+  return *this;
 }

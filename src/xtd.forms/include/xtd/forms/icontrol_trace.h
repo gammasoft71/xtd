@@ -14,8 +14,15 @@ namespace xtd {
     /// @ingroup xtd_forms interfaces
     class icontrol_trace interface_ {
     public:
+      /// @brief Write debug or trace message on this instance control.
+      /// @param message A string that tcontains the debug oor trace message.
       virtual void write(const std::string& message) = 0;
+
+      /// @brief Write debug or trace message on this instance control followed by line terminator.
+      /// @param message A string that tcontains the debug oor trace message.
       virtual void write_line(const std::string& message) = 0;
+
+      /// @brief Flushes the output buffer and causes buffered data to write to the contrtol.
       virtual void flush() = 0;
     };
   }
