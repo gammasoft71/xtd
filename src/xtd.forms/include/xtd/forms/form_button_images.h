@@ -389,20 +389,86 @@ namespace xtd {
       /// @return A xtd::drawing::image that represent "window-system-menu-hovered".
       static xtd::drawing::image system_menu_hovered(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "window-system-menu-hovered", size);}
 
+      /// @brief Gets the height and width of the button images.
+      /// @return The size that represents the height and width of the button images in pixels.
+      /// @remarks The following table show size by operating system :
+      /// | Windows  | macOS    | linux    |
+      /// |----------|----------|----------|
+      /// | {90, 58} | {24, 24} | {64, 64} |
       static xtd::drawing::size size() {return size(false);}
+      /// @brief Gets the height and width of the button images with specified maximized form.
+      /// @param maximized_form true if form is maximized; otherwise false.
+      /// @return The size that represents the height and width of the button images in pixels.
+      /// @remarks The following table show size by operating system :
+      /// | maximized form | Windows  | macOS    | linux    |
+      /// |----------------|----------|----------|----------|
+      /// | false          | {90, 58} | {24, 24} | {64, 64} |
+      /// | true           | {90, 42} | {24, 24} | {64, 64} |
       static xtd::drawing::size size(bool maximized_form) {
         if (environment::os_version().is_windows_platform()) return {90, maximized_form ? 42 : 58};
         if (environment::os_version().is_macos_platform()) return {24, 24};
         if (environment::os_version().is_linux_platform()) return {64, 64};
         return {32, 32};
       }
+      
+      /// @brief Gets image object with specified name.
+      /// @param name the image name to get.
+      /// @return A xtd::drawing::image that represent the specified name.
+      /// @remarks Use xtd::drawing::system_images::context_names to get names by context.
       static xtd::drawing::image from_name(const std::string& name) {return from_name(name, size());}
-      static xtd::drawing::image from_name(bool maximized_form, const std::string& name) {return from_name(name, size(maximized_form));}
+      /// @brief Gets image object with specified theme and name.
+      /// @param theme the theme name that contains the image to get.
+      /// @param name the image name to get.
+      /// @return A xtd::drawing::image that represent the specified name.
+      /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
+      /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
       static xtd::drawing::image from_name(const std::string& theme, const std::string& name) {return from_name(theme, name, size());}
-      static xtd::drawing::image from_name(const std::string& theme, bool maximized_form, const std::string& name) {return from_name(theme, name, size(maximized_form));}
+      /// @brief Gets image object with specified name and size.
+      /// @param name the image name to get.
+      /// @param size The size that represents the height and width of the button images in pixels.
+      /// @return A xtd::drawing::image that represent the specified name.
+      /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
+      /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
       static xtd::drawing::image from_name(const std::string& name, const xtd::drawing::size& size) {return from_name(xtd::forms::theme_images::current_theme(), name, size);}
+      /// @brief Gets image object with specified theme, name and size.
+      /// @param theme the theme name that contains the image to get.
+      /// @param name the image name to get.
+      /// @param size The size that represents the height and width of the button images in pixels.
+      /// @return A xtd::drawing::image that represent the specified name.
+      /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
+      /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
       static xtd::drawing::image from_name(const std::string& theme, const std::string& name, const xtd::drawing::size& size) {return from_name(xtd::forms::theme_images::theme_from_name(theme), name, size);}
+      /// @brief Gets image object with specified theme, name and size.
+      /// @param theme the theme that contains the image to get.
+      /// @param name the image name to get.
+      /// @param size The size that represents the height and width of the button images in pixels.
+      /// @return A xtd::drawing::image that represent the specified name.
+      /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
+      /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
       static xtd::drawing::image from_name(const xtd::forms::theme_images& theme, const std::string& name, const xtd::drawing::size& size) {return theme.from_name(name, size);}
+      /// @brief Gets image object with specified name and maximized form.
+      /// @param name the image name to get.
+      /// @param maximized_form true if form is maximized; otherwise false.
+      /// @return A xtd::drawing::image that represent the specified name.
+      /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
+      /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
+      static xtd::drawing::image from_name(const std::string& name, bool maximized_form) {return from_name(name, size(maximized_form));}
+      /// @brief Gets image object with specified thele,  name and maximized form.
+      /// @param theme the theme name that contains the image to get.
+      /// @param name the image name to get.
+      /// @param maximized_form true if form is maximized; otherwise false.
+      /// @return A xtd::drawing::image that represent the specified name.
+      /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
+      /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
+      static xtd::drawing::image from_name(const std::string& theme, const std::string& name, bool maximized_form) {return from_name(theme, name, size(maximized_form));}
+      /// @brief Gets image object with specified thele,  name and maximized form.
+      /// @param theme the theme name that contains the image to get.
+      /// @param name the image name to get.
+      /// @param maximized_form true if form is maximized; otherwise false.
+      /// @return A xtd::drawing::image that represent the specified name.
+      /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
+      /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
+      static xtd::drawing::image from_name(const xtd::forms::theme_images& theme, const std::string& name, bool maximized_form) {return from_name(theme, name, size(maximized_form));}
     };
   }
 }
