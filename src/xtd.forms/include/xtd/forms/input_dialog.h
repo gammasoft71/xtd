@@ -66,14 +66,12 @@ namespace xtd {
       /// @brief Initializes a new instance of the input_dialog class.
       input_dialog() = default;
 
-      xtd::forms::dialog_style dialog_style() const {return dialog_style_;}
-      input_dialog& dialog_style(xtd::forms::dialog_style dialog_style) {
-        if (dialog_style_ != dialog_style)
-          dialog_style_ = dialog_style;
-        return *this;
-      }
-      
+      /// @brief Gets the character casing.
+      /// @return One of the xtd::forms::character_casing values. The default value is xtd::forms::character_casing::normal.
       xtd::forms::character_casing character_casing() const {return character_casing_;}
+      /// @brief Sets the character casing.
+      /// @param dialog_style One of the xtd::forms::character_casing values. The default value is xtd::forms::character_casing::normal.
+      /// @return Current input instance.
       input_dialog& character_casing(xtd::forms::character_casing character_casing) {
         if (character_casing_ != character_casing) {
           character_casing_ = character_casing;
@@ -86,7 +84,26 @@ namespace xtd {
         return *this;
       }
       
+      /// @brief Gets the dialog style.
+      /// @return One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
+      xtd::forms::dialog_style dialog_style() const {return dialog_style_;}
+      /// @brief Sets the dialog style.
+      /// @param dialog_style One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
+      /// @return Current input instance.
+      input_dialog& dialog_style(xtd::forms::dialog_style dialog_style) {
+        if (dialog_style_ != dialog_style)
+          dialog_style_ = dialog_style;
+        return *this;
+      }
+      
+      /// @brief Gets multiline status.
+      /// @return true if dialoog text box is multiline; otherwise false.
+      /// @remarks The default value is false.
       bool multiline() const {return multiline_;}
+      /// @brief Sets multiline status.
+      /// @param multiline true if dialoog text box is multiline; otherwise false.
+      /// @return Current input_dialog instance.
+      /// @remarks The default value is false.
       input_dialog& multiline(bool multiline) {
         if (multiline_ != multiline)
           multiline_ = multiline;
@@ -117,8 +134,18 @@ namespace xtd {
         return *this;
       }
 
+      /// @brief Gets use system password char status.
+      /// @return true if dialoog text box use system password char status; otherwise false.
+      /// @remarks The default value is false.
       bool use_system_password_char() const {return use_system_password_char_;}
-      void use_system_password_char(bool use_system_password_char) {use_system_password_char_ = use_system_password_char;}
+      /// @brief Sets use system password char status.
+      /// @param use_system_password_char true if dialoog text box use system password char status; otherwise false.
+      /// @return Current input_dialog instance.
+      /// @remarks The default value is false.
+      input_dialog&  use_system_password_char(bool use_system_password_char) {
+        use_system_password_char_ = use_system_password_char;
+        return *this;
+      }
       
       /// @brief Gets the value.
       /// @return The value.
@@ -144,6 +171,7 @@ namespace xtd {
       bool run_dialog(intptr_t owner) override;
       void run_sheet(intptr_t owner) override;
 
+      /// @cond
       xtd::forms::character_casing character_casing_ = xtd::forms::character_casing::normal;
       xtd::forms::dialog_style dialog_style_ = xtd::forms::dialog_style::standard;
       bool multiline_ = false;
@@ -151,6 +179,7 @@ namespace xtd {
       std::string text_;
       bool use_system_password_char_ = false;
       std::string value_;
+      /// @endcond
     };
   }
 }
