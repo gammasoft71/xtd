@@ -10,7 +10,13 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @brief Represents the method that will handle the key_up or key_down event of a control.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms events
+    /// @param sender The source of the event.
+    /// @param e A key_event_args that contains the event data.
     template<typename type_t>
-    using key_event_handler = delegate<void(type_t, key_event_args&)>;
+    using key_event_handler = delegate<void(type_t sender, key_event_args& e)>;
   }
 }
