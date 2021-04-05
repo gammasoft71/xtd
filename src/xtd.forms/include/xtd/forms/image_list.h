@@ -11,10 +11,18 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @brief Provides methods to manage a collection of xtd::drawing::image objects. This class cannot be inherited.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms components
+    /// @remarks image_list is typically used by other controls, such as the list_vview, tree_view, or tool_bar. You can add bitmaps or icons to the image_list, and the other controls are able to use the images as they require.
+    /// @remarks image_list uses a handle to manage the list of images. The handle is not created until certain operations, such as getting the handle or calling draw, are performed on the image list. Performing other operations, such as setting the color_depth or image_size will cause the handle to be recreated. Therefore, you should perform these operations before you add images to the image_list.
     class forms_export_ image_list final : public component {
     public:
+      /// @brief Encapsulates the collection of xtd::drawing::image objects in an image_list.
       using image_collection = layout::arranged_element_collection<drawing::image>;
 
+      /// @brief Initialize a new instance ao image_list class.
       image_list();
       /// @cond
       ~image_list();
@@ -24,19 +32,44 @@ namespace xtd {
       bool operator!=(const image_list& value) const {return !operator==(value);}
       /// @endcond
 
+      /// @brief Gets the handle of the image list object.
+      /// @return The handle for the image list. The default is 0.
       intptr_t handle() const {return data_->handle_;}
       
+      /// @brief Gets a value indicating whether the underlying Win32 handle has been created.
+      /// @return true if the Handle has been created; otherwise, false. The default is false.
       bool handle_created() const {return data_->handle_ != 0;}
       
+      /// @brief Gets the xtd::forms::image_list::image_collection for this image list.
+      /// @return The collection of images.
+      /// @remarks If the image collection has not yet been created, it is created when you retrieve this property.
       image_collection& images() {return data_->images_;}
+      /// @brief Gets the xtd::forms::image_list::image_collection for this image list.
+      /// @return The collection of images.
+      /// @remarks If the image collection has not yet been created, it is created when you retrieve this property.
       const image_collection& images() const {return data_->images_;}
       
+      /// @brief Gets the size of the images in the image list.
+      /// @return The xtd::drawing::size that defines the height and width, in pixels, of the images in the list. The default size is 16 by 16. The maximum size is 256 by 256.
       const drawing::size image_size() const {return data_->image_size_;}
-      void image_size(const drawing::size& value);
+      /// @brief Sets the size of the images in the image list.
+      /// @param vallue The xtd::drawing::size that defines the height and width, in pixels, of the images in the list. The default size is 16 by 16. The maximum size is 256 by 256.
+      /// @remarks Setting the image_size property prior to adding images to the image collection causes the images to be resized to the image size specified.
+      /// @remarks When you set the image_size property to a new value, the handle for the image list is recreated.
+      /// @remarks Because setting the image_size property causes the handle to be recreated, you should set image_size prior to setting the Images property. When the handle for the image_list has been created, setting the color_depth or image_size properties in code, after setting the images property, will cause the collection of images set for the images property to be deleted.
+      const image_list& image_size(const drawing::size& value);
       
+      /// @brief Gets an object that contains additional data about the image_list.
+      /// @return A object that contains additional data about the image_list.
       std::any tag() const {return data_->tag_;}
-      void tag(std::any& tag) {data_->tag_ = tag;}
+      /// @brief Sets an object that contains additional data about the image_list.
+      /// @param tag A object that contains additional data about the image_list.
+      const image_list& tag(std::any& tag) {
+        data_->tag_ = tag;
+        return *this;
+      }
       
+      /// @brief Represents an image_list empty.
       static image_list empty;
 
     private:
