@@ -61,9 +61,15 @@ namespace xtd {
     /// @image html group_box_and_radio_button_gd.png
     class forms_export_ group_box : public control {
     public:
+      /// @brief Initializes a new instance of the group_box class.
       group_box();
 
+      /// @brief Gets how the group_box behaves when its auto_size property is enabled
+      /// @return One of the xtd::forms::auto_size_mode values. The default is xtd::forms::auto_size_mode::grow_only.
       virtual forms::auto_size_mode auto_size_mode() const {return auto_size_mode_;}
+      /// @brief Sets how the group_box behaves when its auto_size property is enabled
+      /// @param value One of the xtd::forms::auto_size_mode values. The default is xtd::forms::auto_size_mode::grow_only.
+      /// @return This instance of group_box.
       virtual group_box& auto_size_mode(forms::auto_size_mode value);
       
       drawing::size default_size() const override {return {200, 100};}
