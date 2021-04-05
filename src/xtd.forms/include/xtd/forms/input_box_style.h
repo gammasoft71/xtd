@@ -14,8 +14,11 @@ namespace xtd {
     /// @ingroup xtd_forms
     /// @remarks This enumeration is used by the input_box class.
     enum class input_box_style {
+      /// @brief Single line text boox.
       normal,
+      /// @brief Multiline text box.
       multiline,
+      /// @brief Single line text box with password characters.
       password
     };
 

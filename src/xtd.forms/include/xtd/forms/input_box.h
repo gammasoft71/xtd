@@ -31,16 +31,86 @@ namespace xtd {
     /// @image html input_box_gd.png
     class input_box final static_ {
     public:
+      /// @brief Displays an input box in front of the specified window. The input box displays a text value.
+      /// @param value A std::string that specifies the text to display.
+      /// @param owner A iwin32_window that represents the owner window of the color box.
+      /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
+      /// @remarks If dialog_result is ok, the value parameter contains the new chosen value.
       static xtd::forms::dialog_result show(std::string& value, const xtd::forms::iwin32_window& owner) {return show_input_box(value, &owner);}
+      /// @brief Displays an input box in front of the specified window. The input box displays a input text value with specifiedd invite message text.
+      /// @param value A std::string that specifies the text to display.
+      /// @param owner A iwin32_window that represents the owner window of the color box.
+      /// @param text A std::string that specifies the invite message text to display.
+      /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
+      /// @remarks If dialog_result is ok, the value parameter contains the new chosen value.
       static xtd::forms::dialog_result show(std::string& value, const xtd::forms::iwin32_window& owner, const std::string& text) {return show_input_box(value, &owner, text);}
+      /// @brief Displays an input box in front of the specified window. The input box displays a input text value with specifiedd invite message text and caption title.
+      /// @param value A std::string that specifies the text to display.
+      /// @param owner A iwin32_window that represents the owner window of the color box.
+      /// @param text A std::string that specifies the invite message text to display.
+      /// @param caption A std::string that specifies the caption title of dialog.
+      /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
+      /// @remarks If dialog_result is ok, the value parameter contains the new chosen value.
       static xtd::forms::dialog_result show(std::string& value, const xtd::forms::iwin32_window& owner, const std::string& text, const std::string& caption) {return show_input_box(value, &owner, text, caption);}
+      /// @brief Displays an input box in front of the specified window. The input box displays a input text value with specifiedd invite message text, caption title and input box style.
+      /// @param value A std::string that specifies the text to display.
+      /// @param owner A iwin32_window that represents the owner window of the color box.
+      /// @param text A std::string that specifies the invite message text to display.
+      /// @param caption A std::string that specifies the caption title of dialog.
+      /// @param style On of xtd::forms::input_box_style values.
+      /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
+      /// @remarks If dialog_result is ok, the value parameter contains the new chosen value.
       static xtd::forms::dialog_result show(std::string& value, const xtd::forms::iwin32_window& owner, const std::string& text, const std::string& caption, xtd::forms::input_box_style style) {return show_input_box(value, &owner, text, caption, style);}
+      /// @brief Displays an input box in front of the specified window. The input box displays a input text value with specifiedd invite message text, caption title, input box style andd character casing.
+      /// @param value A std::string that specifies the text to display.
+      /// @param owner A iwin32_window that represents the owner window of the color box.
+      /// @param text A std::string that specifies the invite message text to display.
+      /// @param caption A std::string that specifies the caption title of dialog.
+      /// @param style On of xtd::forms::input_box_style values. The default is xtd::forms::input_box_style::normal
+      /// @param casing On of xtd::forms::character_casing values. The default is xtd::forms::character_casing::normal
+      /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
+      /// @remarks If dialog_result is ok, the value parameter contains the new chosen value.
       static xtd::forms::dialog_result show(std::string& value, const xtd::forms::iwin32_window& owner, const std::string& text, const std::string& caption, xtd::forms::input_box_style style, xtd::forms::character_casing casing) {return show_input_box(value, &owner, text, caption, style, casing);}
       
+      /// @brief Displays an input box. The input box displays a text value.
+      /// @param value A std::string that specifies the text to display.
+      /// @param owner A iwin32_window that represents the owner window of the color box.
+      /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
+      /// @remarks If dialog_result is ok, the value parameter contains the new chosen value.
       static xtd::forms::dialog_result show(std::string& value) {return show_input_box(value);}
+      /// @brief Displays an input box. The input box displays a input text value with specifiedd invite message text.
+      /// @param value A std::string that specifies the text to display.
+      /// @param owner A iwin32_window that represents the owner window of the color box.
+      /// @param text A std::string that specifies the invite message text to display.
+      /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
+      /// @remarks If dialog_result is ok, the value parameter contains the new chosen value.
       static xtd::forms::dialog_result show(std::string& value, const std::string& text) {return show_input_box(value, nullptr, text);}
+      /// @brief Displays an input box. The input box displays a input text value with specifiedd invite message text and caption title.
+      /// @param value A std::string that specifies the text to display.
+      /// @param owner A iwin32_window that represents the owner window of the color box.
+      /// @param text A std::string that specifies the invite message text to display.
+      /// @param caption A std::string that specifies the caption title of dialog.
+      /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
+      /// @remarks If dialog_result is ok, the value parameter contains the new chosen value.
       static xtd::forms::dialog_result show(std::string& value, const std::string& text, const std::string& caption) {return show_input_box(value, nullptr, text, caption);}
+      /// @brief Displays an input box. The input box displays a input text value with specifiedd invite message text, caption title and input box style.
+      /// @param value A std::string that specifies the text to display.
+      /// @param owner A iwin32_window that represents the owner window of the color box.
+      /// @param text A std::string that specifies the invite message text to display.
+      /// @param caption A std::string that specifies the caption title of dialog.
+      /// @param style On of xtd::forms::input_box_style values.
+      /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
+      /// @remarks If dialog_result is ok, the value parameter contains the new chosen value.
       static xtd::forms::dialog_result show(std::string& value, const std::string& text, const std::string& caption, xtd::forms::input_box_style style) {return show_input_box(value, nullptr, text, caption, style);}
+      /// @brief Displays an input box. The input box displays a input text value with specifiedd invite message text, caption title, input box style andd character casing.
+      /// @param value A std::string that specifies the text to display.
+      /// @param owner A iwin32_window that represents the owner window of the color box.
+      /// @param text A std::string that specifies the invite message text to display.
+      /// @param caption A std::string that specifies the caption title of dialog.
+      /// @param style On of xtd::forms::input_box_style values. The default is xtd::forms::input_box_style::normal
+      /// @param casing On of xtd::forms::character_casing values. The default is xtd::forms::character_casing::normal
+      /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
+      /// @remarks If dialog_result is ok, the value parameter contains the new chosen value.
       static xtd::forms::dialog_result show(std::string& value, const std::string& text, const std::string& caption, xtd::forms::input_box_style style, xtd::forms::character_casing casing) {return show_input_box(value, nullptr, text, caption, style, casing);}
       
     private:

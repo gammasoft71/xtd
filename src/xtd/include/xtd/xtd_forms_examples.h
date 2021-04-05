@@ -660,21 +660,36 @@
 /// @image html input_dialog_g.png
 /// <br>
 /// @image html input_dialog_gd.png
-/// @par Examples
-/// The following code example demonstrate the use of input_dialog dialog.
-/// @include input_dialog.cpp
+///
+/// @example input_dialog_multiline.cpp
+/// The following code example demonstrate the use of input_dialog dialog with multiline.
 /// @par Windows
-/// @image html input_dialog_w.png
+/// @image html input_dialog_multiline_w.png
 /// <br>
-/// @image html input_dialog_wd.png
+/// @image html input_dialog_multiline_wd.png
 /// @par macOS
-/// @image html input_dialog_m.png
+/// @image html input_dialog_multiline_m.png
 /// <br>
-/// @image html input_dialog_md.png
+/// @image html input_dialog_multiline_md.png
 /// @par Gnome
-/// @image html input_dialog_g.png
+/// @image html input_dialog_multiline_g.png
 /// <br>
-/// @image html input_dialog_gd.png
+/// @image html input_dialog_multiline_gd.png
+///
+/// @example input_dialog_password.cpp
+/// The following code example demonstrate the use of input_dialog dialog with password.
+/// @par Windows
+/// @image html input_dialog_password_w.png
+/// <br>
+/// @image html input_dialog_password_wd.png
+/// @par macOS
+/// @image html input_dialog_passwordpassword_m.png
+/// <br>
+/// @image html input_dialog_password_md.png
+/// @par Gnome
+/// @image html input_dialog_password_g.png
+/// <br>
+/// @image html input_dialog_multiline_gd.png
 ///
 /// @example nine_segment_display.cpp
 /// The following code example demonstrate the use of nine segment display control.
