@@ -17,6 +17,6 @@ namespace xtd {
     /// @param sender The source of the event.
     /// @param e A form_closing_event_args that contains the event data.
     template<typename type_t>
-    using form_closing_event_handler = delegate<void(type_t, form_closing_event_args&)>;
+    using form_closing_event_handler = delegate<void(type_t sender, form_closing_event_args& e)>;
   }
 }
