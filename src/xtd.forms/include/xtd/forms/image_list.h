@@ -17,6 +17,21 @@ namespace xtd {
     /// @ingroup xtd_forms components
     /// @remarks image_list is typically used by other controls, such as the list_vview, tree_view, or tool_bar. You can add bitmaps or icons to the image_list, and the other controls are able to use the images as they require.
     /// @remarks image_list uses a handle to manage the list of images. The handle is not created until certain operations, such as getting the handle or calling draw, are performed on the image list. Performing other operations, such as setting the color_depth or image_size will cause the handle to be recreated. Therefore, you should perform these operations before you add images to the image_list.
+    /// @par Examples
+    /// The following code example demonstrate the use of image_list class.
+    /// @include image_list.cpp
+    /// @par Windows
+    /// @image html image_list_w.png
+    /// <br>
+    /// @image html image_list_wd.png
+    /// @par macOS
+    /// @image html image_list_m.png
+    /// <br>
+    /// @image html image_list_md.png
+    /// @par Gnome
+    /// @image html image_list_g.png
+    /// <br>
+    /// @image html image_list_gd.png
     class forms_export_ image_list final : public component {
     public:
       /// @brief Encapsulates the collection of xtd::drawing::image objects in an image_list.
