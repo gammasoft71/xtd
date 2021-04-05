@@ -327,62 +327,31 @@ namespace xtd {
       /// @return A xtd::drawing::image that represent "window-restore-hovered".
       static xtd::drawing::image restore_hovered(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "window-restore-hovered", size);}
 
-      /// @brief Close image object.
-      /// @return A xtd::drawing::image that represent "window-close".
-      static xtd::drawing::image system_menu() {return system_menu(xtd::forms::theme_images::current_theme(), size());}
-      /// @brief Close image object with specified maximized form.
-      /// @param maximized_form true if form is maximized; otherwise false.
-      /// @return A xtd::drawing::image that represent "window-close".
-      static xtd::drawing::image system_menu(bool maximized_form) {return system_menu(xtd::forms::theme_images::current_theme(), size(maximized_form));}
-      /// @brief Close image object with specified theme.
-      /// @param theme a string that represent theme of image.
-      /// @return A xtd::drawing::image that represent "window-close".
-      static xtd::drawing::image system_menu(const std::string& theme) {return system_menu(theme, size());}
-      /// @brief Close image object with specified theme and maximized form.
-      /// @param theme a string that represent theme of image.
-      /// @param maximized_form true if form is maximized; otherwise false.
-      /// @return A xtd::drawing::image that represent "window-close".
-      static xtd::drawing::image system_menu(const std::string& theme, bool maximized_form) {return system_menu(theme, size(maximized_form));}
-      /// @brief Close image object with specified size.
-      /// @param size a xtd::drawing::size represent the sie of the image.
-      /// @return A xtd::drawing::image that represent "window-close".
-      static xtd::drawing::image system_menu(const xtd::drawing::size& size) {return system_menu(xtd::forms::theme_images::current_theme(), size);}
-      /// @brief Close image object with specified theme and size.
-      /// @param theme a string that represent theme of image.
-      /// @param size a xtd::drawing::size represent the sie of the image.
-      /// @return A xtd::drawing::image that represent "window-close".
-      static xtd::drawing::image system_menu(const std::string& theme, const xtd::drawing::size& size) {return system_menu(xtd::forms::theme_images::theme_from_name(theme), size);}
-      /// @brief Close image object with specified theme and size.
-      /// @param xtd::forms::theme_images a string that represent theme of image.
-      /// @param size a xtd::drawing::size represent the sie of the image.
-      /// @return A xtd::drawing::image that represent "window-close".
-      static xtd::drawing::image system_menu(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "window-system-menu", size);}
-
       /// @brief System menu image object.
       /// @return A xtd::drawing::image that represent "window-system-menu".
-      static xtd::drawing::image system_menu() {return system_menu_hovered(xtd::forms::theme_images::current_theme(), size());}
+      static xtd::drawing::image system_menu() {return system_menu(xtd::forms::theme_images::current_theme(), size());}
       /// @brief System menu image object with specified maximized form.
       /// @param maximized_form true if form is maximized; otherwise false.
       /// @return A xtd::drawing::image that represent "window-system-menu".
-      static xtd::drawing::image system_menu(bool maximized_form) {return system_menu_hovered(xtd::forms::theme_images::current_theme(), size(maximized_form));}
+      static xtd::drawing::image system_menu(bool maximized_form) {return system_menu(xtd::forms::theme_images::current_theme(), size(maximized_form));}
       /// @brief System menu image object with specified theme.
       /// @param theme a string that represent theme of image.
       /// @return A xtd::drawing::image that represent "window-system-menu".
-      static xtd::drawing::image system_menu(const std::string& theme) {return system_menu_hovered(theme, size());}
+      static xtd::drawing::image system_menu(const std::string& theme) {return system_menu(theme, size());}
       /// @brief System menu image object with specified theme and maximized form.
       /// @param theme a string that represent theme of image.
       /// @param maximized_form true if form is maximized; otherwise false.
       /// @return A xtd::drawing::image that represent "window-system-menu".
-      static xtd::drawing::image system_menu(const std::string& theme, bool maximized_form) {return system_menu_hovered(theme, size(maximized_form));}
+      static xtd::drawing::image system_menu(const std::string& theme, bool maximized_form) {return system_menu(theme, size(maximized_form));}
       /// @brief System menu image object with specified size.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-system-menu".
-      static xtd::drawing::image system_menuconst xtd::drawing::size& size) {return system_menu_hovered(xtd::forms::theme_images::current_theme(), size);}
+      static xtd::drawing::image system_menu(const xtd::drawing::size& size) {return system_menu(xtd::forms::theme_images::current_theme(), size);}
       /// @brief System menu image object with specified theme and size.
       /// @param theme a string that represent theme of image.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-system-menu".
-      static xtd::drawing::image system_menu(const std::string& theme, const xtd::drawing::size& size) {return system_menu_hovered(xtd::forms::theme_images::theme_from_name(theme), size);}
+      static xtd::drawing::image system_menu(const std::string& theme, const xtd::drawing::size& size) {return system_menu(xtd::forms::theme_images::theme_from_name(theme), size);}
       /// @brief System menu image object with specified theme and size.
       /// @param xtd::forms::theme_images a string that represent theme of image.
       /// @param size a xtd::drawing::size represent the sie of the image.
