@@ -17,9 +17,17 @@ namespace xtd {
     class context_menu;
     /// @endcond
   
+    /// @brief Represents an individual item that is displayed within a main_menu or context_menu.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms menus_and_toolbars
     class forms_export_ menu_item : public xtd::forms::menu {
-    public:      
+    public:
+      /// @brief Initializes a menu_item with a blank caption.
+      /// @remarks Once you have created a blank menu_item using this constructor, you can use the properties and methods of the menu_item class to specify the appearance and behavior of your menu_item.
       menu_item();
+      /// @brief Initializes a new instance of the menu_item class with a specified caption for the menu item.
+      /// @param text The caption for the menu item.
       menu_item(const std::string& text);
       menu_item(const std::string& text, xtd::forms::shortcut shortcut);
       menu_item(const std::string& text, const xtd::drawing::image& image);
@@ -33,7 +41,14 @@ namespace xtd {
       menu_item(const std::string& text, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked);
       menu_item(const std::string& text, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut);
 
+      /// @brief Initializes a new instance of the class with a specified caption and event handler for the Click event of the menu item.
+      /// @param text The caption for the menu item.
+      /// @param on_click The event_handler that handles the Click event for this menu item.
       menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click);
+      /// @brief Initializes a new instance of the class with a specified caption, event handler, and associated shortcut key for the menu item.
+      /// @param text The caption for the menu item.
+      /// @param on_click The event_handler that handles the Click event for this menu item.
+      /// @param shortcut One of the xtd::forms::shortcut values.
       menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, xtd::forms::shortcut shortcut);
       menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, const xtd::drawing::image& image);
       menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, const xtd::drawing::image& image, xtd::forms::shortcut shortcut);
