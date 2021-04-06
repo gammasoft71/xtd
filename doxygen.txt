@@ -198,13 +198,6 @@ CHM_INDEX_ENCODING     =
 BINARY_TOC             = NO
 TOC_EXPAND             = NO
 
-# If the GENERATE_QHP tag is set to YES and both QHP_NAMESPACE and
-# QHP_VIRTUAL_FOLDER are set, an additional index file will be generated that
-# can be used as input for Qt's qhelpgenerator to generate a Qt Compressed Help
-# (.qch) of the generated HTML documentation.
-# The default value is: NO.
-# This tag requires that the tag GENERATE_HTML is set to YES.
-
 #---------------------------------------------------------------------------
 # QHP Output Options
 #---------------------------------------------------------------------------
