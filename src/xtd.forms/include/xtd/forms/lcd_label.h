@@ -612,7 +612,7 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception if value less than 0.0 or greater than 1.0.
       /// @return This instance of lcd_label.
       lcd_label& back_digit_transparency(double value) {
-        if (value < 0.0 && value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t, caller_info_);
+        if (value < 0.0 || value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t, caller_info_);
         if (back_digit_transparency_ != value) {
           back_digit_transparency_ = value;
           set_digits_params();
