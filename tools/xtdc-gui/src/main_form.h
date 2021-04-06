@@ -167,7 +167,7 @@ namespace xtdc_gui {
       {"Containers - split container", "represents a control consisting of a movable bar that divides a container's display area into two resizable panels.", {"xtd.forms.examples/containers/split_container"}},
       {"Containers - tab control", "manages a related set of tab pages.", {"xtd.forms.examples/containers/tab_control"}},
       
-      {"Menus and toolbars - menu", "provides a menu system for a form.", {"xtd.forms.examples/menus_and_toolbars/menu"}},
+      {"Menus and toolbars - main_menu", "provides a menu system for a form.", {"xtd.forms.examples/menus_and_toolbars/main_menu"}},
 
       {"Components - background worker", "executes an operation on a separate thread.", {"xtd.forms.examples/components/background_worker"}},
       {"Components - button images", "shows how to create a bitmap button with xtd::froms::button_images factory class.", {"xtd.forms.examples/components/button_images"}},

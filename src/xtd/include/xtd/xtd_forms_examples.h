@@ -751,6 +751,36 @@
 /// <br>
 /// @image html lcd_label2_gd.png
 ///
+/// @example main_menu.cpp
+/// The following code example demonstrate the use of main_menu control.
+/// @par Windows
+/// @image html main_menu_w.png
+/// <br>
+/// @image html main_menu_wd.png
+/// @par macOS
+/// @image html main_menu_m.png
+/// <br>
+/// @image html main_menu_md.png
+/// @par Gnome
+/// @image html main_menu_g.png
+/// <br>
+/// @image html main_menu_gd.png
+///
+/// @example main_menu_create_standard_items.cpp
+/// The following code example demonstrate the use of main_menu::create_standard_items factroy.
+/// @par Windows
+/// @image html main_menu_create_standard_items_w.png
+/// <br>
+/// @image html main_menu_create_standard_itemsmain_menu_create_standard_items_wd.png
+/// @par macOS
+/// @image html main_menu_create_standard_items_m.png
+/// <br>
+/// @image html main_menu_create_standard_items_md.png
+/// @par Gnome
+/// @image html main_menu_create_standard_items_g.png
+/// <br>
+/// @image html main_menu_create_standard_items_gd.png
+///
 /// @example nine_segment_display.cpp
 /// The following code example demonstrate the use of nine segment display control.
 /// @par Windows
