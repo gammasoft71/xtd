@@ -8,11 +8,20 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @brief Represent lcd label style used by lcd_label control.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms
   enum class lcd_style {
+    /// @brief Seven segment dsiplay style.
     seven_segment_display,
+    /// @brief Nine segment dsiplay style.
     nine_segment_display,
+    /// @brief Fourteen segment dsiplay style.
     fourteen_segment_display,
+    /// @brief Sixteen segment dsiplay style.
     sixteen_segment_display,
+    /// @brief Dot matrix dsiplay style.
     dot_matrix_display,
   };
 
