@@ -26,7 +26,7 @@ JAVADOC_AUTOBRIEF      = NO
 QT_AUTOBRIEF           = NO
 MULTILINE_CPP_IS_BRIEF = NO
 INHERIT_DOCS           = YES
-SEPARATE_MEMBER_PAGES  = YES # Default: NO
+SEPARATE_MEMBER_PAGES  = NO
 TAB_SIZE               = 2 # Default: 4
 ALIASES                = 
 OPTIMIZE_OUTPUT_FOR_C  = NO
@@ -232,7 +232,7 @@ ECLIPSE_DOC_ID         = org.doxygen.Project
 #---------------------------------------------------------------------------
 
 DISABLE_INDEX          = NO
-GENERATE_TREEVIEW      = YES # Default: NO
+GENERATE_TREEVIEW      = NO
 ENUM_VALUES_PER_LINE   = 1 # Default: 4
 TREEVIEW_WIDTH         = 250
 EXT_LINKS_IN_WINDOW    = NO
