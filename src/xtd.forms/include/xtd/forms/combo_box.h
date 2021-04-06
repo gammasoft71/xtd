@@ -68,7 +68,7 @@ namespace xtd {
       using list_control::selected_index;
       /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
       /// @param selected_index A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
-      /// @return This instance of list_control.
+      /// @return Current list_control.
       list_control& selected_index(size_t selected_index) override;
       
       /// @brief Gets currently selected item in the combo_box.
@@ -76,7 +76,7 @@ namespace xtd {
       const item& selected_item() const {return selected_item_;}
       /// @brief Sets currently selected item in the combo_box.
       /// @param selected_item An object that represents the current selection in the control.
-      /// @return This instance of combo_box.
+      /// @return Current combo_box.
       combo_box& selected_item(const item& selected_item);
       
       /// @brief Gets a value indicating whether the items in the combo_box are sorted alphabetically.
@@ -85,7 +85,7 @@ namespace xtd {
       virtual bool sorted() const {return sorted_;}
       /// @brief Sets a value indicating whether the items in the combo_box are sorted alphabetically.
       /// @param sorted true if items in the control are sorted; otherwise, false. The default is false.
-      /// @return This instance of combo_box.
+      /// @return Current combo_box.
       /// @remarks Use the sorted property to automatically sort strings alphabetically in a combo_box. As items are added to a sorted combo_box, the items are moved to the appropriate location in the sorted list. When adding items to a list_box, it is more efficient to sort the items first and then add new items.
       virtual combo_box& sorted(bool sorted);
       

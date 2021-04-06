@@ -31,7 +31,7 @@ namespace xtd {
       virtual bool show_date() const {return show_date_;}
       /// @brief Sets a vallue indicate if date is showing before trace text.
       /// @param value true is date showing; otherwise false. By default is true.
-      /// @return this instance of trace_form_base.
+      /// @return Current trace_form_base.
       virtual trace_form_base& show_date(bool value) {
         if (show_date_ != value) {
           show_date_ = value;
@@ -45,7 +45,7 @@ namespace xtd {
       virtual  bool show_time() const {return show_time_;}
       /// @brief Sets a vallue indicate if time is showing before trace text.
       /// @param value true is time showing; otherwise false. By default is true.
-      /// @return this instance of trace_form_base.
+      /// @return Current trace_form_base.
       virtual trace_form_base& show_time(bool value) {
         if (show_time_ != value) {
           show_time_ = value;
@@ -59,7 +59,7 @@ namespace xtd {
       virtual const std::string& header_separator() const {return header_separator_;}
       /// @brief Sets the string used to separate date and/or time from trace text.
       /// @param header_separator A string that represent separator. By default is "|".
-      /// @return this instance of trace_form_base.
+      /// @return Current trace_form_base.
       virtual trace_form_base& header_separator(const std::string& header_separator) {
         if (header_separator_ != header_separator_) {
           header_separator_ = header_separator;
@@ -124,7 +124,7 @@ namespace xtd {
       /// @brief Sets a value indicate if header need written.
       /// @param value true if header needed; otherwise false.
       /// @remarks After each line terminator, header was needed.
-      /// @return this instance of trace_form_base.
+      /// @return Current trace_form_base.
      virtual trace_form_base& need_header(bool value) {
         if (need_header_ != value)
           need_header_ = value;

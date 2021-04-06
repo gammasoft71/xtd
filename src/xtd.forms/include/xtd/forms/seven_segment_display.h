@@ -42,7 +42,7 @@ namespace xtd {
       virtual drawing::color back_segment_color() {return back_segment_color_.value_or(fore_color());}
       /// @brief Sets background segment color.
       /// @param value A xtd::drawing color that represent the background segment color.
-      /// @return This instance of seven_segment_display.
+      /// @return Current seven_segment_display.
       /// @remarks Do not confuse back_segment_color and back_color. Background segment color is the color when segment is off.
       virtual seven_segment_display& back_segment_color(const drawing::color& value) {
         if (!back_segment_color_.has_value() || back_segment_color_.value() != value) {
@@ -58,7 +58,7 @@ namespace xtd {
       /// @brief Sets the background segment transparency.
       /// @param value A double-precision value between 0.0 and 1.0 that represent the background segment transparency.
       /// @exception xtd::argument_out_of_range_exception if value less than 0.0 or greater than 1.0.
-      /// @return This instance of seven_segment_display.
+      /// @return Current seven_segment_display.
       virtual seven_segment_display& back_segment_transparency(double value) {
         if (value < 0.0 || value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t, caller_info_);
         if (back_segment_transparency_ != value) {
@@ -73,7 +73,7 @@ namespace xtd {
       virtual bool show_back_segment() const {return show_back_segment_;}
       /// @brief Sets a value indicate if background segments are shown.
       /// @param value true if background segments are shown; otherwise false
-      /// @return This instance of seven_segment_display.
+      /// @return Current seven_segment_display.
       virtual seven_segment_display& show_back_segment(bool value) {
         if (show_back_segment_ != value) {
           show_back_segment_ = value;
@@ -87,7 +87,7 @@ namespace xtd {
       virtual forms::segment_style segment_style() const {return segment_style_;}
       /// @brief Sets segment style.
       /// @param value One of xtd::forms::segment_style values. The default is xtd::forms::segment_style::standard.
-      /// @return This instance of seven_segment_display.
+      /// @return Current seven_segment_display.
       virtual seven_segment_display& segment_style(forms::segment_style value) {
         if (segment_style_ != value) {
           segment_style_ = value;
@@ -101,7 +101,7 @@ namespace xtd {
       virtual int32_t thickness() const {return thickness_.value_or(size_.height() < 10 ? 1 : (size_.height() / 10 + ((size_.height() / 10) % 2 ? 0 : 1)));}
       /// @brief Sets thickness of segment.
       /// @param value A int32_t that represent the segment tickness.
-      /// @return This instance of seven_segment_display.
+      /// @return Current seven_segment_display.
       virtual seven_segment_display& thickness(int32_t value) {
         if (!thickness_.has_value() || thickness_.value() != value) {
           thickness_ = value;
@@ -115,7 +115,7 @@ namespace xtd {
       virtual forms::segments value() const {return value_;}
       /// @brief Sets seven_segment_display value.
       /// @param value A xtd::forms::segments cominaison that represent seven_segment_display.
-      /// @return This instance of seven_segment_display.
+      /// @return Current seven_segment_display.
       virtual seven_segment_display& value(forms::segments value) {
         if (value_ != value) {
           value_ = value;

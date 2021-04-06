@@ -40,7 +40,7 @@ namespace xtd {
       virtual date_time_picker_format format() const {return format_;}
       /// @brief Sets the format of the date and time displayed in the control.
       /// @param format One of the date_time_picker_format values. The default is long_format.
-      /// @return This instance of date_time_picker.
+      /// @return Current date_time_picker.
       /// @remarks This property determines the date/time format the date is displayed in. The date/time format is based on the user's regional settings in their operating system.
       virtual control& format(date_time_picker_format format);
       
@@ -49,22 +49,22 @@ namespace xtd {
       virtual std::chrono::system_clock::time_point max_date() const {return max_date_;}
       /// @brief Sets the maximum date and time that can be selected in the control.
       /// @param max_date The maximum date and time that can be selected in the control.
-      /// @return This instance of date_time_picker.
+      /// @return Current date_time_picker.
       virtual control& max_date(std::chrono::system_clock::time_point max_date);
       /// @brief Sets the maximum date and time that can be selected in the control.
       /// @param max_date The maximum date and time that can be selected in the control.
-      /// @return This instance of date_time_picker.
+      /// @return Current date_time_picker.
       virtual control& max_date(time_t max_date) {return this->max_date(std::chrono::system_clock::from_time_t(max_date));}
       /// @brief Sets the maximum date and time that can be selected in the control.
       /// @param max_date The maximum date and time that can be selected in the control.
-      /// @return This instance of date_time_picker.
+      /// @return Current date_time_picker.
       virtual control& max_date(const std::tm& max_date) {
         std::tm internal_max_date = max_date;
         return this->max_date(mktime(&internal_max_date));
       }
       /// @brief Sets the maximum date and time that can be selected in the control.
       /// @param max_date The maximum date and time that can be selected in the control.
-      /// @return This instance of date_time_picker.
+      /// @return Current date_time_picker.
       virtual control& max_date(int32_t year, int32_t month, int32_t day) {
         std::tm internal_max_date = {};
         internal_max_date.tm_year = year - 1900;
@@ -74,7 +74,7 @@ namespace xtd {
       }
       /// @brief Sets the maximum date and time that can be selected in the control.
       /// @param max_date The maximum date and time that can be selected in the control.
-      /// @return This instance of date_time_picker.
+      /// @return Current date_time_picker.
       virtual control& max_date(int32_t year, int32_t month, int32_t day, int32_t hour, int32_t minute, int32_t second) {
         std::tm internal_max_date = {};
         internal_max_date.tm_year = year - 1900;
@@ -91,22 +91,22 @@ namespace xtd {
       virtual std::chrono::system_clock::time_point min_date() const {return max_date_;}
       /// @brief Sets the minimum date and time that can be selected in the control.
       /// @param max_date The minimum date and time that can be selected in the control.
-      /// @return This instance of date_time_picker.
+      /// @return Current date_time_picker.
       virtual control& min_date(std::chrono::system_clock::time_point min_date);
       /// @brief Sets the minimum date and time that can be selected in the control.
       /// @param max_date The minimum date and time that can be selected in the control.
-      /// @return This instance of date_time_picker.
+      /// @return Current date_time_picker.
       virtual control& min_date(time_t min_date) {return this->min_date(std::chrono::system_clock::from_time_t(min_date));}
       /// @brief Sets the minimum date and time that can be selected in the control.
       /// @param max_date The minimum date and time that can be selected in the control.
-      /// @return This instance of date_time_picker.
+      /// @return Current date_time_picker.
       virtual control& min_date(const std::tm& min_date) {
         std::tm internal_min_date = min_date;
         return this->min_date(mktime(&internal_min_date));
       }
       /// @brief Sets the minimum date and time that can be selected in the control.
       /// @param max_date The minimum date and time that can be selected in the control.
-      /// @return This instance of date_time_picker.
+      /// @return Current date_time_picker.
       virtual control& min_date(int32_t year, int32_t month, int32_t day) {
         std::tm internal_min_date = {};
         internal_min_date.tm_year = year - 1900;
@@ -116,7 +116,7 @@ namespace xtd {
       }
       /// @brief Sets the minimum date and time that can be selected in the control.
       /// @param max_date The minimum date and time that can be selected in the control.
-      /// @return This instance of date_time_picker.
+      /// @return Current date_time_picker.
       virtual control& min_date(int32_t year, int32_t month, int32_t day, int32_t hour, int32_t minute, int32_t second) {
         std::tm internal_min_date = {};
         internal_min_date.tm_year = year - 1900;

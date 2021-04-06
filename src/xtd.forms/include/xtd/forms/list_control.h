@@ -82,7 +82,7 @@ namespace xtd {
       virtual size_t selected_index() const {return selected_index_;}
       /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
       /// @param selected_index A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
-      /// @return This instance of list_control.
+      /// @return Current list_control.
       virtual list_control& selected_index(size_t selected_index) = 0;
                   
       /// @brief Occurs when the selected_index property changes.

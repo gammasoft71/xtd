@@ -47,7 +47,7 @@ namespace xtd {
       drawing::font font() const override {return font_;}
       /// @brief Sets the selected font.
       /// @param font The selected font.
-      /// @return This instance of control.
+      /// @return Current control.
       control& font(const drawing::font& font) override;
       
       drawing::size default_size() const override {return {100, 25};}

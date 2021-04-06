@@ -51,7 +51,7 @@ namespace xtd {
       virtual drawing::color back_dot_color() {return back_dot_color_.value_or(fore_color());}
       /// @brief Sets background dot color.
       /// @param value A xtd::drawing color that represent the background dot color.
-      /// @return This instance of dot_matrix_display.
+      /// @return Current dot_matrix_display.
       /// @remarks Do not confuse back_dot_color and back_color. Background dot color is the color when dot is off.
       virtual dot_matrix_display& back_dot_color(const drawing::color& value) {
         if (!back_dot_color_.has_value() || back_dot_color_.value() != value) {
@@ -67,7 +67,7 @@ namespace xtd {
       /// @brief Sets the background dot transparency.
       /// @param value A double-precision value between 0.0 and 1.0 that represent the background dot transparency.
       /// @exception xtd::argument_out_of_range_exception if value less than 0.0 or greater than 1.0.
-      /// @return This instance of dot_matrix_display.
+      /// @return Current dot_matrix_display.
       virtual dot_matrix_display& back_dot_transparency(double value) {
         if (value < 0.0 || value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t, caller_info_);
         if (back_dot_transparency_ != value) {
@@ -84,7 +84,7 @@ namespace xtd {
       virtual forms::dot_matrix_style dot_matrix_style() const {return dot_matrix_style_;}
       /// @brief Sets dot matrix style.
       /// @param value One of xtd::forms::dot_matrix_style values. The default is xtd::forms::dot_matrix_style::standard.
-      /// @return This instance of dot_matrix_display.
+      /// @return Current dot_matrix_display.
       virtual dot_matrix_display& dot_matrix_style(forms::dot_matrix_style value) {
         if (dot_matrix_style_ != value) {
           dot_matrix_style_ = value;
@@ -98,7 +98,7 @@ namespace xtd {
       virtual const dots_collection& dots() const {return dots_;}
       /// @brief Sets all dots status.
       /// @param dots A dots_colllection that represent all dots status.
-      /// @return This instance of dot_matrix_display.
+      /// @return Current dot_matrix_display.
       virtual const dot_matrix_display& dots(const dots_collection& dots) {
         if (dots_ != dots) {
           dots_ = dots;
@@ -113,7 +113,7 @@ namespace xtd {
       virtual int32_t matrix_height() const {return matrix_size_.height();}
       /// @brief Sets the matrix size. Number of height dots.
       /// @param value A int32_t represent the height dots of the matrix. The default is 7.
-      /// @return This instance of dot_matrix_display.
+      /// @return Current dot_matrix_display.
       virtual void matrix_height(int32_t value) {matrix_size({matrix_size_.width(), value});}
       
       /// @brief Gets the matrix size. Number height dots.
@@ -121,7 +121,7 @@ namespace xtd {
       virtual int32_t matrix_width() const {return matrix_size_.width();}
       /// @brief Sets the matrix size. Number height dots.
       /// @param value A int32_t that represent the width dots of the matrix. The default is 7.
-      /// @return This instance of dot_matrix_display.
+      /// @return Current dot_matrix_display.
       virtual void matrix_width(int32_t value) {matrix_size({value, matrix_size_.height()});}
       
       /// @brief Gets the matrix size. Number of width and height dots.
@@ -129,7 +129,7 @@ namespace xtd {
       virtual const drawing::size& matrix_size() const {return matrix_size_;}
       /// @brief Gets the matrix size. Number of width and height dots.
       /// @param value A xtd::drawing::point that represent the width and height dots of the matrix. The default is {7, 7}. The default is {7, 7}.
-      /// @return This instance of dot_matrix_display.
+      /// @return Current dot_matrix_display.
       virtual void matrix_size(const drawing::size& value) {
         if (matrix_size_ != value) {
           matrix_size_ = value;
@@ -143,7 +143,7 @@ namespace xtd {
       virtual bool show_back_dot() const {return show_back_dot_;}
       /// @brief Sets a value indicate if background dots are shown.
       /// @param value true if background dots arrer shown; otherwise false
-      /// @return This instance of dot_matrix_display.
+      /// @return Current dot_matrix_display.
       virtual dot_matrix_display& show_back_dot(bool value) {
         if (show_back_dot_ != value) {
           show_back_dot_ = value;
@@ -157,7 +157,7 @@ namespace xtd {
       virtual int32_t thickness() const {return thickness_.value_or(size_.height() < (matrix_size_.height() * 2) ? 1 : (size_.height() - matrix_size_.height()) / matrix_size_.height());}
       /// @brief Sets thickness of dot.
       /// @param value A int32_t that represent the dot tickness.
-      /// @return This instance of dot_matrix_display.
+      /// @return Current dot_matrix_display.
       virtual dot_matrix_display& thickness(int32_t value) {
         if (!thickness_.has_value() || thickness_.value() != value) {
           thickness_ = value;

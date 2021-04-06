@@ -33,7 +33,7 @@ namespace xtd {
       using fourteen_segment_display::thickness;
       /// @brief Sets thickness of segment.
       /// @param value A int32_t that represent the segment tickness.
-      /// @return This instance of seven_segment_display.
+      /// @return Current seven_segment_display.
       int32_t thickness() const override {return thickness_.value_or(size_.height() < 20 ? 1 : (size_.height() / 20 + ((size_.height() / 20) % 2 ? 0 : 1)));}
 
     protected:

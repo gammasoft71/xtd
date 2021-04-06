@@ -86,7 +86,7 @@ namespace xtd {
       const object_collection& items() const {return items_;}
       /// @brief Sets an object representing the collection of the items contained in this domain_up_down. Gets an object representing the collection of the items contained in this domain_up_down.
       /// @param items A domain_up_down::object_collection representing the items in the domain_up_down.
-      /// @return This instance of domain_up_down.
+      /// @return Current domain_up_down.
       const domain_up_down& items(const object_collection& items) {
         items_ = items;
         return *this;
@@ -96,7 +96,7 @@ namespace xtd {
       virtual size_t selected_index() const {return selected_index_;}
       /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
       /// @param selected_index A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
-      /// @return This instance of domain_up_down.
+      /// @return Current domain_up_down.
       virtual domain_up_down& selected_index(size_t selected_index);
       
       /// @brief Gets the selected item based on the index value of the selected item in the collection.
@@ -104,7 +104,7 @@ namespace xtd {
       const item& selected_item() const {return selected_item_;}
       /// @brief Gets the selected item based on the index value of the selected item in the collection.
       /// @param item The selected item based on the selected_index value. The default value is item::empty.
-      /// @return This instance of domain_up_down.
+      /// @return Current domain_up_down.
       domain_up_down& selected_item(const item& selected_item);
 
       /// @brief Gets a value indicating whether the collection of items continues to the first or last item if the user continues past the end of the list.
@@ -112,7 +112,7 @@ namespace xtd {
       virtual bool wrap() {return wrap_;}
       /// @brief Sets a value indicating whether the collection of items continues to the first or last item if the user continues past the end of the list.
       /// @param value true if the list starts again when the user reaches the beginning or end of the collection; otherwise, false. The default value is false.
-      /// @return This instance of domain_up_down.
+      /// @return Current domain_up_down.
       virtual domain_up_down& wrap(bool value);
       
       forms::create_params create_params() const override;

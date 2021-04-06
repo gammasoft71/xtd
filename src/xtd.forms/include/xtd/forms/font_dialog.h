@@ -62,7 +62,7 @@ namespace xtd {
       bool allow_script_change() const {return !get_option(CF_SELECTSCRIPT);}
       /// @brief Sets a value indicating whether the user can change the character set specified in the Script combo box to display a character set other than the one currently displayed.
       /// @param allow_script_change true if the user can change the character set specified in the Script combo box; otherwise, false. The default value is true.
-      /// @return This instance of font_dialog.
+      /// @return Current font_dialog.
       /// @remarks The Script combo box found on the Font dialog box contains character sets associated with the selected font.
       font_dialog& allow_script_change(bool allow_script_change) {
         set_option(CF_SELECTSCRIPT, !allow_script_change);
@@ -74,7 +74,7 @@ namespace xtd {
       bool allow_simulation() const {return !get_option(CF_NOSIMULATIONS);}
       /// @brief Sets a value indicating whether the dialog box allows graphics device interface (GDI) font simulations.
       /// @param allow_simulation true if font simulations are allowed; otherwise, false. The default value is true.
-      /// @return This instance of font_dialog.
+      /// @return Current font_dialog.
       font_dialog& allow_simulation(bool allow_simulation) {
         set_option(CF_NOSIMULATIONS, !allow_simulation);
         return *this;
@@ -85,7 +85,7 @@ namespace xtd {
       bool allow_vector_fonts() const {return !get_option(CF_NOVECTORFONTS);}
       /// @brief Sets a value indicating whether the dialog box allows vector font selections.
       /// @param allow_vector_fonts true if vector fonts are allowed; otherwise, false. The default value is true.
-      /// @return This instance of font_dialog.
+      /// @return Current font_dialog.
       font_dialog& allow_vector_fonts(bool allow_vector_fonts) {
         set_option(CF_NOVECTORFONTS, !allow_vector_fonts);
         return *this;
@@ -96,7 +96,7 @@ namespace xtd {
       bool allow_vertical_fonts() const {return !get_option(CF_NOVERTFONTS);}
       /// @brief Sets a value indicating whether the dialog box displays both vertical and horizontal fonts or only horizontal fonts.
       /// @param allow_vertical_fonts true if both vertical and horizontal fonts are allowed; otherwise, false. The default value is true.
-      /// @return This instance of font_dialog.
+      /// @return Current font_dialog.
       font_dialog& allow_vertical_fonts(bool allow_vertical_fonts) {
         set_option(CF_NOVERTFONTS, !allow_vertical_fonts);
         return *this;
@@ -107,7 +107,7 @@ namespace xtd {
       drawing::color color() const {return color_;}
       /// @brief Sets the selected font color.
       /// @param color The color of the selected font. The default value is Black.
-      /// @return This instance of font_dialog.
+      /// @return Current font_dialog.
       font_dialog& color(const drawing::color& color) {
         color_ = color;
         return *this;
@@ -118,7 +118,7 @@ namespace xtd {
       bool fixed_pitch_only() const {return get_option(CF_FIXEDPITCHONLY);}
       /// @brief Sets a value indicating whether the dialog box allows only the selection of fixed-pitch fonts.
       /// @param fixed_pitch_only true if only fixed-pitch fonts can be selected; otherwise, false. The default value is false.
-      /// @return This instance of font_dialog.
+      /// @return Current font_dialog.
       font_dialog& fixed_pitch_only(bool fixed_pitch_only) {
         set_option(CF_FIXEDPITCHONLY, fixed_pitch_only);
         return *this;
@@ -129,7 +129,7 @@ namespace xtd {
       drawing::font font() const {return font_;}
       /// @brief Sets the selected font.
       /// @param font The selected font.
-      /// @return This instance of font_dialog.
+      /// @return Current font_dialog.
       font_dialog& font(const drawing::font& font) {
         font_ = font;
         return *this;
@@ -140,7 +140,7 @@ namespace xtd {
       bool font_must_exist() const {return get_option(CF_FORCEFONTEXIST);}
       /// @brief Sets a value indicating whether the dialog box specifies an error condition if the user attempts to select a font or style that does not exist.
       /// @param font_must_exist true if the dialog box specifies an error condition when the user tries to select a font or style that does not exist; otherwise, false. The default is false.
-      /// @return This instance of font_dialog.
+      /// @return Current font_dialog.
       font_dialog& font_must_exist(bool font_must_exist) {
         set_option(CF_FORCEFONTEXIST, font_must_exist);
         return *this;
@@ -151,7 +151,7 @@ namespace xtd {
       size_t max_size() const {return max_size_;}
       /// @brief Sets the maximum point size a user can select.
       /// @param max_size The maximum point size a user can select. The default is 0.
-      /// @return This instance of font_dialog.
+      /// @return Current font_dialog.
       font_dialog& max_size(size_t max_size) {
         max_size_ = max_size;
         return *this;
@@ -162,7 +162,7 @@ namespace xtd {
       size_t min_size() const {return min_size_;}
       /// @brief Sets the minimum point size a user can select.
       /// @param min_size The minimum point size a user can select. The default is 0.
-      /// @return This instance of font_dialog.
+      /// @return Current font_dialog.
       font_dialog& min_size(size_t min_size) {
         min_size_ = min_size;
         return *this;
@@ -178,7 +178,7 @@ namespace xtd {
       bool script_only() const {return get_option(CF_SCRIPTSONLY);}
       /// @brief Sets a value indicating whether the dialog box allows selection of fonts for all non-OEM and Symbol character sets, as well as the ANSI character set.
       /// @param script_script = true if selection of fonts for all non-OEM and Symbol character sets, as well as the ANSI character set, is allowed; otherwise, false. The default value is false.
-      /// @return This instance of font_dialog.
+      /// @return Current font_dialog.
       font_dialog& script_only(bool script_only) {
         set_option(CF_SCRIPTSONLY, script_only);
         return *this;
@@ -189,7 +189,7 @@ namespace xtd {
       bool show_apply() const {return get_option(CF_APPLY);}
       /// @brief Sets a value indicating whether the dialog box contains an Apply button.
       /// @param show_apply true if the dialog box contains an Apply button; otherwise, false. The default value is false.
-      /// @return This instance of font_dialog.
+      /// @return Current font_dialog.
       font_dialog& show_apply(bool show_apply) {
         set_option(CF_APPLY, show_apply);
         return *this;
@@ -200,7 +200,7 @@ namespace xtd {
       bool show_color() const {return show_color_;}
       /// @brief Sets a value indicating whether the dialog box displays the color choice.
       /// @param show_color true if the dialog box displays the color choice; otherwise, false. The default value is false.
-      /// @return This instance of font_dialog.
+      /// @return Current font_dialog.
       font_dialog& show_color(bool show_color) {
         show_color_ = show_color;
         return *this;
@@ -211,7 +211,7 @@ namespace xtd {
       bool show_effect() const {return get_option(CF_EFFECTS);}
       /// @brief Sets a value indicating whether the dialog box contains controls that allow the user to specify strikethrough, underline, and text color options.
       /// @param show_effect true if the dialog box contains controls to set strikethrough, underline, and text color options; otherwise, false. The default value is true.
-      /// @return This instance of font_dialog.
+      /// @return Current font_dialog.
       font_dialog& show_effect(bool show_effect) {
         set_option(CF_EFFECTS, show_effect);
         return *this;
@@ -222,7 +222,7 @@ namespace xtd {
       bool show_help() const {return get_option(CF_SHOWHELP);}
       /// @brief Sets a value indicating whether the dialog box displays a Help button.
       /// @param show_help true if the dialog box displays a Help button; otherwise, false. The default value is false.
-      /// @return This instance of font_dialog.
+      /// @return Current font_dialog.
       font_dialog& show_help(bool show_help) {
         set_option(CF_SHOWHELP, show_help);
         return *this;
