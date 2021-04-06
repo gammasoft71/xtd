@@ -721,6 +721,36 @@
 /// <br>
 /// @image html label_gd.png
 ///
+/// @example lcd_label.cpp
+/// The following code example demonstrate the use of lcd_label control.
+/// @par Windows
+/// @image html lcd_label_w.png
+/// <br>
+/// @image html lcd_label_wdbel_wd.png
+/// @par macOS
+/// @image html lcd_label_m.png
+/// <br>
+/// @image html lcd_label_md.png
+/// @par Gnome
+/// @image html lcd_label_g.png
+/// <br>
+/// @image html lcd_label_gd.png
+///
+/// @example lcd_label2.cpp
+/// The following code example demonstrate the use of lcd_label control.
+/// @par Windows
+/// @image html lcd_label2_w.png
+/// <br>
+/// @image html lcd_label2_wd.png
+/// @par macOS
+/// @image html lcd_label2_m.png
+/// <br>
+/// @image html lcd_label2_md.png
+/// @par Gnome
+/// @image html lcd_label2_g.png
+/// <br>
+/// @image html lcd_label2_gd.png
+///
 /// @example nine_segment_display.cpp
 /// The following code example demonstrate the use of nine segment display control.
 /// @par Windows

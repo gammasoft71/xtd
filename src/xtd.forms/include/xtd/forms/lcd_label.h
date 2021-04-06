@@ -4,6 +4,7 @@
 #pragma once
 #include <codecvt>
 #include <xtd/argument_out_of_range_exception.h>
+#include <xtd/interface.h>
 #include "control.h"
 #include "dot_matrix_display.h"
 #include "lcd_style.h"
@@ -24,7 +25,7 @@ namespace xtd {
     /// @par Windows
     /// @image html lcd_label_w.png
     /// <br>
-    /// @image html lalcd_label_wdbel_wd.png
+    /// @image html lcd_label_wd.png
     /// @par macOS
     /// @image html lcd_label_m.png
     /// <br>
@@ -33,11 +34,24 @@ namespace xtd {
     /// @image html lcd_label_g.png
     /// <br>
     /// @image html lcd_label_gd.png
+    /// @par Examples
+    /// The following code example demonstrate the use of lcd_label control.
+    /// @include lcd_label2.cpp
+    /// @par Windows
+    /// @image html lcd_label2_w.png
+    /// <br>
+    /// @image html lcd_label2_wd.png
+    /// @par macOS
+    /// @image html lcd_label2_m.png
+    /// <br>
+    /// @image html lcd_label2_md.png
+    /// @par Gnome
+    /// @image html lcd_label2_g.png
+    /// <br>
+    /// @image html lcd_label2_gd.png
     class lcd_label : public control {
-      class idigit {
+      class idigit interface_ {
       public:
-        ~idigit() = default;
-
         virtual wchar_t get_character() const = 0;
         virtual std::string get_valid_characters() const = 0;
         virtual int32_t get_thickness() const = 0;
@@ -568,12 +582,20 @@ namespace xtd {
       };
 
     public:
+      /// @brief Initialise a new lcd_label class.
       lcd_label() {
         auto_size_mode_ = forms::auto_size_mode::grow_and_shrink;
         size_ = default_size();
       }
       
+      /// @brief Gets background digit color.
+      /// @return A xtd::drawing color that represent the background digit color.
+      /// @remarks Do not confuse back_digit_color and back_color. Background digitt color is the color when digit is off.
       xtd::drawing::color back_digit_color() const {return back_digit_color_.value_or(fore_color());}
+      /// @brief Sets background digit color.
+      /// @param value A xtd::drawing color that represent the background digit color.
+      /// @return This instance of lcd_label.
+      /// @remarks Do not confuse back_digit_color and back_color. Background digitt color is the color when digit is off.
       lcd_label& back_digit_color(const xtd::drawing::color& value) {
         if (!back_digit_color_.has_value() || back_digit_color_.value() != value) {
           back_digit_color_ = value;
@@ -582,7 +604,13 @@ namespace xtd {
         return *this;
       }
       
+      /// @brief Gets the background digit transparency.
+      /// @return A double-precision value between 0.0 and 1.0 that represent the background digit transparency.
       double back_digit_transparency() const {return back_digit_transparency_;}
+      /// @brief Sets the background digit transparency.
+      /// @param value A double-precision value between 0.0 and 1.0 that represent the background digit transparency.
+      /// @exception xtd::argument_out_of_range_exception if value less than 0.0 or greater than 1.0.
+      /// @return This instance of lcd_label.
       lcd_label& back_digit_transparency(double value) {
         if (value < 0.0 && value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t, caller_info_);
         if (back_digit_transparency_ != value) {
