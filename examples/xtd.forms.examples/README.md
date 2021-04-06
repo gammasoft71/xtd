@@ -80,7 +80,7 @@
 
 ## [Menus and Toolbars](menus_and_tollbars/README.md)
 
-* [menu](menus_and_toolbars/menu/README.md) provides a menu system for a form.
+* [main_menu](menus_and_toolbars/main_menu/README.md) provides a main menu system for a form.
 * **context_menu_strip** represents a shortcut menu.
 * **menu_strip** provides a menu system for a form.
 * **status_strip** represents a Windows status bar control.

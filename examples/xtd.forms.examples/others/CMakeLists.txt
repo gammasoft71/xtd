@@ -34,6 +34,7 @@ add_projects(
   lcd_label_with_nine_segment
   lcd_label_with_seven_segment
   lcd_label_with_sixteen_segment
+  main_menu_create_standard_items
   message_dialog_show_sheet
   painting
   settings_example2

@@ -7,7 +7,7 @@ namespace examples {
   class form1 : public form {
   public:
     form1() {
-      text("Menu example");
+      text("Main menu example");
       menu({
         {texts::file(), {
           {texts::new_(), {*this, &form1::on_menu_click}, menu_images::file_new(), shortcut::cmd_n},
