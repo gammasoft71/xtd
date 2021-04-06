@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <array>
+#include <xtd/argument_out_of_range_exception.h>
 #include <xtd/drawing/solid_brush.h>
 #include "control.h"
 #include "segments.h"
@@ -65,8 +66,10 @@ namespace xtd {
       virtual double back_dot_transparency() const {return back_dot_transparency_;}
       /// @brief Sets the background dot transparency.
       /// @param value A double-precision value between 0.0 and 1.0 that represent the background dot transparency.
+      /// @exception xtd::argument_out_of_range_exception if value less than 0.0 or greater than 1.0.
       /// @return This instance of dot_matrix_display.
       virtual dot_matrix_display& back_dot_transparency(double value) {
+        if (value < 0.0 && value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t, caller_info_);
         if (back_dot_transparency_ != value) {
           back_dot_transparency_ = value;
           if (back_dot_transparency_ < 0.0) back_dot_transparency_ = 0.0;
