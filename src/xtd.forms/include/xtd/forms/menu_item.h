@@ -77,14 +77,17 @@ namespace xtd {
     protected:
       friend main_menu;
       friend context_menu;
+
       intptr_t create_menu_handle() override;
       void destroy_menu_handle(intptr_t handle) override;
 
+      /// @cond
       std::string text_;
       xtd::drawing::image image_ = xtd::drawing::image::empty;
       xtd::forms::menu_item_kind kind_ = xtd::forms::menu_item_kind::normal;
       bool checked_ = false;
       xtd::forms::shortcut shortcut_ = static_cast<xtd::forms::shortcut>(0);
+      /// @endcond
     };
   }
 }
