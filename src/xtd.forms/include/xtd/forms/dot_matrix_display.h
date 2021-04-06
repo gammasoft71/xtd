@@ -108,11 +108,11 @@ namespace xtd {
         return *this;
       }
 
-      /// @brief Gets the matrix size. Number of width dots.
-      /// @return A int32_t represent the width dots of the matrix. The default is 7.
+      /// @brief Gets the matrix size. Number of height dots.
+      /// @return A int32_t represent the height dots of the matrix. The default is 7.
       virtual int32_t matrix_height() const {return matrix_size_.height();}
-      /// @brief Sets the matrix size. Number of width dots.
-      /// @param value A int32_t represent the width dots of the matrix. The default is 7.
+      /// @brief Sets the matrix size. Number of height dots.
+      /// @param value A int32_t represent the height dots of the matrix. The default is 7.
       /// @return This instance of dot_matrix_display.
       virtual void matrix_height(int32_t value) {matrix_size({matrix_size_.width(), value});}
       
