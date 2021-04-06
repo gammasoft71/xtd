@@ -24,7 +24,7 @@ namespace xtd {
       message() = default;
       message(const message& message) = default;
       message& operator=(const message&) = default;
-      /// @cond
+      /// @endcond
       
       /// @brief Gets the window handle of the message.
       /// @return The window handle of the message.
