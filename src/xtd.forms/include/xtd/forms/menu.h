@@ -29,6 +29,7 @@ namespace xtd {
     /// @remarks The menu class also defines the nested class menu::menu_item_collection. This class defines the collection of menu_item objects used by the menu_items property. You can use the methods of the menu::menu_item_collection class to add and remove menu items from a main_menu, context_menu, or menu_item.
     class forms_export_ menu : public component {
     public:
+      /// @brief Represents a collection of menu_item objects.
       using menu_item_collection = layout::arranged_element_collection<menu_item>;
       
       /// @cond
@@ -59,6 +60,7 @@ namespace xtd {
       menu_item_collection& menu_items() {return data_->menu_items_;}
       /// @brief Sets a value indicating the collection of menu_item objects associated with the menu.
       /// @param value A menu::menu_item_collection that represents the list of menu_item objects stored in the menu.
+      /// @return Current menu class.
       /// @remarks You can use this property to obtain a reference to the list of menu items that are currently stored in the menu. For main_menu and context_menu objects, the menu_items property contains the entire menu structure in the control. For the menu_item class, the menu_items property contains the list of submenu items associated with the menu_item. With the reference to the collection of menu items for the menu (provided by this property), you can add and remove menu items, determine the total number of menu items, and clear the list of menu items from the collection. For more information on maintaining the menu item collection for a menu, see the xtd::forms::menu::menu_item_collection documentation.
       menu& menu_items(const menu_item_collection& value);
       /// @cond
@@ -73,6 +75,7 @@ namespace xtd {
 
       /// @brief Sets the name of the menu.
       /// @param value A string representing the name.
+      /// @return Current menu class.
       /// @remarks At design time, this property is set to the programmatic identifier of the control. However, this property has no bearing on the control at run time.
       menu& name(const std::string& value) {
         data_->name_ = value;
@@ -84,6 +87,7 @@ namespace xtd {
       std::any tag() const {return data_->tag_;}
       /// @brief Sets user-defined data associated with the control.
       /// @param value An object representing the data.
+      /// @return Current menu class.
       menu& tag(std::any value) {
         data_->tag_ = value;
         return *this;
@@ -128,8 +132,10 @@ namespace xtd {
       /// @param items An array of type MenuItem containing the objects to add to the menu.
       /// @remarks Since menu is an abstract class, only inherited classes can call the menu constructor.
       explicit menu(const menu_item_collection& items);
+      /// @cond
       explicit menu(const std::initializer_list<menu_item>& items);
       explicit menu(const std::vector<menu_item>& items);
+      /// @endcond
 
       /// @brief Copies the menu that is passed as a parameter to the current menu.
       /// @param menu_src The Menu to copy.
