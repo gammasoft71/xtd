@@ -3,30 +3,52 @@
 #include <cstdint>
 
 #ifndef WM_NULL
+/// @brief Performs no operation. An application sends the WM_NULL message if it wants to post a message that the recipient window will ignore.
 constexpr int32_t WM_NULL = 0x0000;
+/// @brief Sent when an application requests that a window be created by calling the CreateWindowEx or CreateWindow function. (The message is sent before the function returns.) The window procedure of the new window receives this message after the window is created, but before the window becomes visible.
 constexpr int32_t WM_CREATE = 0x0001;
+/// @brief Sent when a window is being destroyed. It is sent to the window procedure of the window being destroyed after the window is removed from the screen.
 constexpr int32_t WM_DESTROY = 0x0002;
+/// @brief Sent after a window has been moved.
 constexpr int32_t WM_MOVE = 0x0003;
 // not defined 0x0004
+/// @brief Sent to a window after its size has changed.
 constexpr int32_t WM_SIZE = 0x0005;
+/// @brief Sent to both the window being activated and the window being deactivated. If the windows use the same input queue, the message is sent synchronously, first to the window procedure of the top-level window being deactivated, then to the window procedure of the top-level window being activated. If the windows use different input queues, the message is sent asynchronously, so the window is activated immediately.
 constexpr int32_t WM_ACTIVATE = 0x0006;
+/// @brief Sent to a window after it has gained the keyboard focus.
 constexpr int32_t WM_SETFOCUS = 0x0007;
+/// @brief Sent to a window immediately before it loses the keyboard focus.
 constexpr int32_t WM_KILLFOCUS = 0x0008;
 // not defined 0x0009
+/// @brief Sent when an application changes the enabled state of a window. It is sent to the window whose enabled state is changing. This message is sent before the EnableWindow function returns, but after the enabled state (WS_DISABLED style bit) of the window has changed.
 constexpr int32_t WM_ENABLE = 0x000A;
+/// @brief An application sends the WM_SETREDRAW message to a window to allow changes in that window to be redrawn or to prevent changes in that window from being redrawn.
 constexpr int32_t WM_SETREDRAW = 0x000B;
+/// @brief Sets the text of a window.
 constexpr int32_t WM_SETTEXT = 0x000C;
+/// @brief Copies the text that corresponds to a window into a buffer provided by the caller.
 constexpr int32_t WM_GETTEXT = 0x000D;
+/// @brief Determines the length, in characters, of the text associated with a window.
 constexpr int32_t WM_GETTEXTLENGTH = 0x000E;
+/// @brief The WM_PAINT message is sent when the system or another application makes a request to paint a portion of an application's window. The message is sent when the UpdateWindow or RedrawWindow function is called, or by the DispatchMessage function when the application obtains a WM_PAINT message by using the GetMessage or PeekMessage function.
 constexpr int32_t WM_PAINT = 0x000F;
+/// @brief Sent as a signal that a window or an application should terminate.
 constexpr int32_t WM_CLOSE = 0x0010;
+/// @brief The WM_QUERYENDSESSION message is sent when the user chooses to end the session or when an application calls one of the system shutdown functions. If any application returns zero, the session is not ended. The system stops sending WM_QUERYENDSESSION messages as soon as one application returns zero.
 constexpr int32_t WM_QUERYENDSESSION = 0x0011;
+/// @brief Indicates a request to terminate an application, and is generated when the application calls the PostQuitMessage function. This message causes the GetMessage function to return zero.
 constexpr int32_t WM_QUIT = 0x0012;
+/// @brief Sent to an icon when the user requests that the window be restored to its previous size and position.
 constexpr int32_t WM_QUERYOPEN = 0x0013;
+/// @brief Sent when the window background must be erased (for example, when a window is resized). The message is sent to prepare an invalidated portion of a window for painting.
 constexpr int32_t WM_ERASEBKGND = 0x0014;
+/// @brief The WM_SYSCOLORCHANGE message is sent to all top-level windows when a change is made to a system color setting.
 constexpr int32_t WM_SYSCOLORCHANGE = 0x0015;
+/// @brief The WM_ENDSESSION message is sent to an application after the system processes the results of the WM_QUERYENDSESSION message. The WM_ENDSESSION message informs the application whether the session is ending.The WM_ENDSESSION message is sent to an application after the system processes the results of the WM_QUERYENDSESSION message. The WM_ENDSESSION message informs the application whether the session is ending.
 constexpr int32_t WM_ENDSESSION = 0x0016;
 // not defined 0x0017
+/// @brief Sent to a window when the window is about to be hidden or shown.
 constexpr int32_t WM_SHOWWINDOW = 0x0018;
 constexpr int32_t WM_CTLCOLOR = 0x0019;
 constexpr int32_t WM_WININICHANGE = 0x001A;
