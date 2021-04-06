@@ -594,7 +594,7 @@ namespace xtd {
       xtd::drawing::color back_digit_color() const {return back_digit_color_.value_or(fore_color());}
       /// @brief Sets background digit color.
       /// @param value A xtd::drawing color that represent the background digit color.
-      /// @return This instance of lcd_label.
+      /// @return Current lcd_label.
       /// @remarks Do not confuse back_digit_color and back_color. Background digitt color is the color when digit is off.
       lcd_label& back_digit_color(const xtd::drawing::color& value) {
         if (!back_digit_color_.has_value() || back_digit_color_.value() != value) {
@@ -610,7 +610,7 @@ namespace xtd {
       /// @brief Sets the background digit transparency.
       /// @param value A double-precision value between 0.0 and 1.0 that represent the background digit transparency.
       /// @exception xtd::argument_out_of_range_exception if value less than 0.0 or greater than 1.0.
-      /// @return This instance of lcd_label.
+      /// @return Current lcd_label.
       lcd_label& back_digit_transparency(double value) {
         if (value < 0.0 || value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t, caller_info_);
         if (back_digit_transparency_ != value) {
@@ -625,7 +625,7 @@ namespace xtd {
       bool show_back_digit() const {return show_back_digit_;}
       /// @brief Sets a value indicate if background digits are shown.
       /// @param value true if background digits arrer shown; otherwise false
-      /// @return This instance of lcd_label.
+      /// @return Current lcd_label.
       lcd_label& show_back_digit(bool value) {
         if (show_back_digit_ != value) {
           show_back_digit_ = value;
@@ -639,7 +639,7 @@ namespace xtd {
       int32_t digit_spacing() const {return digit_spacing_.value_or(lcd_style_ == lcd_style::dot_matrix_display ? 0 : thickness());}
       /// @brief Sets the digit spacing.
       /// @param value A int32_t represent the digit spacing.
-      /// @return This instance of lcd_label.
+      /// @return Current lcd_label.
       /// @exception xtdd::argument_out_of_range_exception if value less than 0.
       lcd_label& digit_spacing(int32_t value) {
         if (value < 0) throw argument_out_of_range_exception("value must be positive"_t, caller_info_);
@@ -655,7 +655,7 @@ namespace xtd {
       forms::lcd_style lcd_style() const {return lcd_style_;}
       /// @brief Sets lcd style.
       /// @param value One of xtd::forms::lcd_style values. The default is xtd::forms::lcd_style::seven_segment_display.
-      /// @return This instance of lcd_label.
+      /// @return Current lcd_label.
       lcd_label& lcd_style(forms::lcd_style value) {
         if (lcd_style_ != value) {
           lcd_style_ = value;
@@ -671,7 +671,7 @@ namespace xtd {
       forms::segment_style segment_style() const {return segment_style_;}
       /// @brief Sets segment style.
       /// @param value One of xtd::forms::segment_style values. The default is xtd::forms::segment_style::standard.
-      /// @return This instance of lcd_label.
+      /// @return Current lcd_label.
       lcd_label& segment_style(forms::segment_style value) {
         if (segment_style_ != value) {
           segment_style_ = value;
@@ -686,7 +686,7 @@ namespace xtd {
       forms::dot_matrix_style dot_matrix_style() const {return dot_matrix_style_;}
       /// @brief Sets dot matrix style.
       /// @param value One of xtd::forms::dot_matrix_style values. The default is xtd::forms::dot_matrix_style::standard.
-      /// @return This instance of lcd_label.
+      /// @return Current lcd_label.
       lcd_label& dot_matrix_style(forms::dot_matrix_style value) {
         if (dot_matrix_style_ != value) {
           dot_matrix_style_ = value;
@@ -701,7 +701,7 @@ namespace xtd {
       int32_t thickness() const {return thickness_.value_or(digits_.size() ? digits_[0]->get_thickness() : 1);}
       /// @brief Sets thickness of lcd.
       /// @param value A int32_t that represent the lcd tickness.
-      /// @return This instance of lcd_label.
+      /// @return Current lcd_label.
      lcd_label& thickness(int32_t value) {
         if (thickness_ != value) {
           thickness_ = value;
@@ -713,7 +713,7 @@ namespace xtd {
       using control::text;
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
-      /// @return This instance of control.
+      /// @return Current control.
       control& text(const std::string& value) override {
         if (text_ != value) {
           suspend_layout();

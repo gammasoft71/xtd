@@ -69,7 +69,7 @@ namespace xtd {
       virtual forms::auto_size_mode auto_size_mode() const {return auto_size_mode_;}
       /// @brief Sets how the group_box behaves when its auto_size property is enabled
       /// @param value One of the xtd::forms::auto_size_mode values. The default is xtd::forms::auto_size_mode::grow_only.
-      /// @return This instance of group_box.
+      /// @return Current group_box.
       virtual group_box& auto_size_mode(forms::auto_size_mode value);
       
       drawing::size default_size() const override {return {200, 100};}

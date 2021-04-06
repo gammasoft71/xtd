@@ -46,7 +46,7 @@ namespace xtd {
       virtual bool add_extension() const {return get_option(OFN_ADDEXTENSION);}
       /// @brief Sets a value indicating whether the dialog box automatically adds an extension to a file name if the user omits the extension.
       /// @param value true if the dialog box adds an extension to a file name if the user omits the extension; otherwise, false. The default value is true.
-      /// @return This instance of file_dialog.
+      /// @return Current file_dialog.
       virtual file_dialog& add_extension(bool value) {
         set_option(OFN_ADDEXTENSION, value);
         return *this;
@@ -59,7 +59,7 @@ namespace xtd {
       virtual bool auto_upgrade_enabled() const {return auto_upgrade_enabled_;}
       /// @brief Sets a value indicating whether this file_dialog instance should automatically upgrade appearance and behavior when running on Windows Vista.
       /// @param value true if this file_dialog instance should automatically upgrade appearance and behavior when running on Windows Vista; otherwise, false. The default is true.
-      /// @return This instance of file_dialog.
+      /// @return Current file_dialog.
       /// @remarks If this property is false, the file_dialog class will have a Windows XP-style appearance and behavior on Windows Vista.
       /// @remarks On Windows XP, this property does not have any effect.
       virtual file_dialog& auto_upgrade_enabled(bool value) {
@@ -73,7 +73,7 @@ namespace xtd {
       virtual bool check_file_exists() const {return get_option(OFN_FILEMUSTEXIST);}
       /// @brief Sets a value indicating whether the dialog box displays a warning if the user specifies a file name that does not exist.
       /// @param value true if the dialog box displays a warning if the user specifies a file name that does not exist; otherwise, false. The default value is false.
-      /// @return This instance of file_dialog.
+      /// @return Current file_dialog.
       /// @remarks The default value is true for an inheriting open_file_dialog and false for an inheriting save_file_dialog.
       virtual file_dialog& check_file_exists(bool value) {
         set_option(OFN_FILEMUSTEXIST, value);
@@ -85,7 +85,7 @@ namespace xtd {
       virtual bool check_path_exists() const {return get_option(OFN_PATHMUSTEXIST);}
       /// @brief Sets a value indicating whether the dialog box displays a warning if the user specifies a path that does not exist.
       /// @param value true if the dialog box displays a warning when the user specifies a path that does not exist; otherwise, false. The default value is true.
-      /// @return This instance of file_dialog.
+      /// @return Current file_dialog.
       virtual file_dialog& check_path_exists(bool value) {
         set_option(OFN_PATHMUSTEXIST, value);
         return *this;
@@ -98,7 +98,7 @@ namespace xtd {
       /// @brief Sets the default file name extension.
       /// @return The default file name extension. The returned string does not include the period. The default value is an empty string ("").
       /// @param value When the user of your application specifies a file name without an extension, the file_dialog appends an extension to the file name. The extension that is used is determined by the filter and default_ext properties. If a filter is selected in the file_dialog and the filter specifies an extension, then that extension is used. If the filter selected uses a wildcard in place of the extension, then the extension specified in the default_ext property is used.
-      /// @return This instance of file_dialog.
+      /// @return Current file_dialog.
       virtual file_dialog& default_ext(const std::string& value) {
         default_ext_ = value;
         return *this;
@@ -109,7 +109,7 @@ namespace xtd {
       virtual bool dereference_link() const {return !get_option(OFN_NODEREFERENCELINKS);}
       /// @brief Dets a value indicating whether the dialog box returns the location of the file referenced by the shortcut or whether it returns the location of the shortcut (.lnk).
       /// @param value true if the dialog box returns the location of the file referenced by the shortcut; otherwise, false. The default value is true.
-      /// @return This instance of file_dialog.
+      /// @return Current file_dialog.
       virtual file_dialog& dereference_link(bool value) {
         set_option(OFN_NODEREFERENCELINKS, !value);
         return *this;
@@ -123,7 +123,7 @@ namespace xtd {
       virtual const std::string& file_name() const {return file_name_;}
       /// @brief Sets a string containing the file name selected in the file dialog box.
       /// @param value The file name selected in the file dialog box. The default value is an empty string ("").
-      /// @return This instance of file_dialog.
+      /// @return Current file_dialog.
       /// @remarks The file name includes both the file path and the extension. If no files are selected, this method returns an empty string ("").
       /// @remarks When used from the save_file_dialog class, this property represents the file being saved; when used from the open_file_dialog class, it represents the file being opened.
       /// @remarks This property can only be the name of one selected file. If you want to return an array containing the names of all selected files in a multiple-selection dialog box, use file_names.
@@ -148,7 +148,7 @@ namespace xtd {
       virtual const std::string& filter() const {return filter_;}
       /// @brief Sets the current file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box.
       /// @param value The file filtering options available in the dialog box.
-      /// @return This instance of file_dialog.
+      /// @return Current file_dialog.
       /// @remarks For each filtering option, the filter string contains a description of the filter, followed by the vertical bar (|) and the filter pattern. The strings for different filtering options are separated by the vertical bar.
       /// @remarks The following is an example of a filter string:
       /// @verbatim Text files (*.txt)|*.txt|All files (*.*)|*.* @endverbatim
@@ -167,7 +167,7 @@ namespace xtd {
       virtual size_t filter_index() const {return filter_index_;}
       /// @brief Sets the index of the filter currently selected in the file dialog box.
       /// @param value A value containing the index of the filter currently selected in the file dialog box. The default value is 1.
-      /// @return This instance of file_dialog.
+      /// @return Current file_dialog.
       /// @remarks Use the filter_index property to set which filtering option is shown first to the user. You can also use the value of filter_index after showing the file dialog to perform special file operations depending upon the filter chosen.
       /// @note The index value of the first filter entry is 1.
       virtual file_dialog& filter_index(size_t value) {
@@ -185,7 +185,7 @@ namespace xtd {
       virtual const std::string& initial_directory() const {return initial_directory_;}
       /// @brief Sets the initial directory displayed by the file dialog box.
       /// @param value The initial directory displayed by the file dialog box. The default is an empty string ("").
-      /// @return This instance of file_dialog.
+      /// @return Current file_dialog.
       /// @remarks The InitialDirectory property is typically set using one of the following sources:
       /// * A path that was previously used in the program, perhaps retained from the last directory or file operation.
       /// * A path read from a persistent source, such as an application setting, a Registry or a string resource in the application.
@@ -206,7 +206,7 @@ namespace xtd {
       virtual bool restore_directory() const {return get_option(OFN_NOCHANGEDIR);}
       /// @brief Sets a value indicating whether the dialog box restores the directory to the previously selected directory before closing.
       /// @param value true if the dialog box restores the current directory to the previously selected directory if the user changed the directory while searching for files; otherwise, false. The default value is false.
-      /// @return This instance of file_dialog.
+      /// @return Current file_dialog.
       virtual file_dialog& restore_directory(bool value) {
         set_option(OFN_NOCHANGEDIR, value);
         return *this;
@@ -218,7 +218,7 @@ namespace xtd {
       virtual bool show_help() const {return !get_option(OFN_SHOWHELP);}
       /// @brief Sets a value indicating whether the Help button is displayed in the file dialog box.
       /// @param value true if the dialog box includes a help button; otherwise, false. The default value is false.
-      /// @return This instance of file_dialog.
+      /// @return Current file_dialog.
       /// @remarks A help_requested event is raised when the user clicks the Help button.
       virtual file_dialog& show_help(bool value) {
         set_option(OFN_SHOWHELP, value);
@@ -230,7 +230,7 @@ namespace xtd {
       virtual bool show_hidden_files() const {return !get_option(OFN_FORCESHOWHIDDEN);}
       /// @brief Sets a value indicating whether hidden files are displayed in the file dialog box.
       /// @param value true if the dialog box includes hidden files; otherwise, false. The default value is false.
-      /// @return This instance of file_dialog.
+      /// @return Current file_dialog.
       virtual file_dialog& show_hidden_files(bool value) {
         set_option(OFN_FORCESHOWHIDDEN, value);
         return *this;
@@ -241,7 +241,7 @@ namespace xtd {
       virtual bool show_preview() const {return !get_option(OFN_SHOWPREVIEW);}
       /// @brief Sets a value indicating whether preview file is displayed in the file dialog box.
       /// @param value true if the dialog box includes peview file; otherwise, false. The default value is false.
-      /// @return This instance of file_dialog.
+      /// @return Current file_dialog.
       virtual file_dialog& show_preview(bool value) {
         set_option(OFN_SHOWPREVIEW, value);
         return *this;
@@ -254,7 +254,7 @@ namespace xtd {
       virtual bool support_multi_dotted_extensions() const {return support_multi_dotted_extensions_;}
       /// @brief Sets whether the dialog box supports displaying and saving files that have multiple file name extensions.Gets or sets whether the dialog box supports displaying and saving files that have multiple file name extensions.
       /// @param value true if the dialog box supports multiple file name extensions; otherwise, false. The default is false.
-      /// @return This instance of file_dialog.
+      /// @return Current file_dialog.
       /// @remarks Sometimes users must open and save files that use multiple file name extensions. For example, the application manifest files used by the click_once deployment technology end in the complex file name extension ".exe.manifest". Setting this property to true enables you to set the FFilter property to a multi-dotted extension.
       /// @remarks If support_multi_dotted_extensions is false, and you assign a multi-dotted extension to Filter, derived controls such as save_file_dialog will only use the last extension in the string. For example, ".manifest" will be used instead of ".exe.manifest".
       virtual file_dialog& support_multi_dotted_extensions(bool value) {
@@ -268,7 +268,7 @@ namespace xtd {
       virtual const std::string& title() const {return title_;}
       /// @brief Sets the file dialog box title.
       /// @param value The file dialog box title. The default value is an empty string ("").
-      /// @return This instance of file_dialog.
+      /// @return Current file_dialog.
       /// @remarks The string is placed in the title bar of the dialog box. If the title is an empty string, the system uses a default title, which is either "Save As" or "Open".
       virtual file_dialog& title(const std::string& value) {
         title_ = value;
@@ -281,7 +281,7 @@ namespace xtd {
       virtual bool validate_names() const {return !get_option(OFN_NOVALIDATE);}
       /// @brief Gets a value indicating whether the dialog box accepts only valid file names.
       /// @param value true if the dialog box accepts only valid file names; otherwise, false. The default value is true.
-      /// @return This instance of file_dialog.
+      /// @return Current file_dialog.
       /// @remarks If the edit control contains anything but spaces when the user clicks OK, the dialog box returns the file name, whether it is valid or not. No default extension is added to the text.
       virtual file_dialog& validate_names(bool value) {
         set_option(OFN_NOVALIDATE, !value);

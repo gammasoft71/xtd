@@ -20,7 +20,7 @@ namespace xtd {
       virtual forms::border_style border_style() const {return border_style_;}
       /// @brief Sets the border style for the spin box (also known as an up-down control).
       /// @param value One of the border_style values. The default value is fixed_single.
-      /// @return This instance of up_down_base.
+      /// @return Current up_down_base.
       virtual up_down_base& border_style(forms::border_style value);
 
     protected:

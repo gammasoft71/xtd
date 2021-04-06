@@ -43,7 +43,7 @@ namespace xtd {
       virtual bool multiselect() const {return get_option(OFN_ALLOWMULTISELECT);}
       /// @brief Sets a value indicating whether the dialog box allows multiple files to be selected.
       /// @param value true if the dialog box allows multiple files to be selected together or concurrently; otherwise, false. The default value is false.
-      /// @return This instance of open_file_dialog.
+      /// @return Current open_file_dialog.
       /// @remarks Use the file_names property to access the full list of selected file names.
       virtual open_file_dialog& multiselect(bool value) {
         set_option(OFN_ALLOWMULTISELECT, value);

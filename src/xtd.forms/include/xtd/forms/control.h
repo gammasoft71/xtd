@@ -210,7 +210,7 @@ namespace xtd {
       virtual anchor_styles anchor() const {return anchor_;}
       /// @brief Gets the edges of the container to which a control is bound and determines how a control is resized with its parent.
       /// @param anchor A bitwise combination of the anchor_styles values. The default is top and left.
-      /// @return This instance of control.
+      /// @return Current control.
       /// @remarks Use the anchor property to define how a control is automatically resized as its parent control is resized. Anchoring a control to its parent control ensures that the anchored edges remain in the same position relative to the edges of the parent control when the parent control is resized.
       /// @remarks You can anchor a control to one or more edges of its container. For example, if you have a form with a button whose anchor property value is set to top and bottom, the button is stretched to maintain the anchored distance to the top and bottom edges of the form as the height of the form is increased.
       /// @note The anchor and dock properties are mutually exclusive. Only one can be set at a time, and the last one set takes precedence.
@@ -228,7 +228,7 @@ namespace xtd {
       virtual bool auto_size() const {return get_state(state::auto_size);}
       /// @brief Sets a value that indicates whether the control resizes based on its contents.
       /// @param auto_size true if enabled; otherwise, false.
-      /// @return This instance of control.
+      /// @return Current control.
       /// @remarks This property is not relevant for this class.
       virtual control& auto_size(bool auto_size);
 
@@ -239,7 +239,7 @@ namespace xtd {
       virtual drawing::color back_color() const;
       /// @brief Sets the background color for the control.
       /// @param color A xtd::drawing::color that represents the background color of the control. The default is the value of the default_back_color property.
-      /// @return This instance of control.
+      /// @return Current control.
       /// @remarks The back_color property does not support transparent colors unless the supports_transparent_back_color value of xtd::forms::control_styles is set to true.
       /// @remarks The back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same back_color as its parent form by default.
       /// @par Notes to Inheritors
@@ -261,7 +261,7 @@ namespace xtd {
       virtual drawing::rectangle bounds() const {return {location_, size_};}
       /// @brief Sets the size and location of the control including its nonclient elements, in pixels, relative to the parent control.
       /// @param A rectangle in pixels relative to the parent control that represents the size and location of the control including its nonclient elements.
-      /// @return This instance of control.
+      /// @return Current control.
       /// @remarks The bounds of the control include the nonclient elements such as scroll bars, borders, title bars, and menus. The Set_bounds_core method is called to set the bounds property. The bounds property is not always changed through its set method so you should override the set_bounds_core method to ensure that your code is executed when the bounds property is set.
       virtual control& bounds(const drawing::rectangle& bounds) {
         set_bounds_core(bounds.x(), bounds.y(), bounds.width(), bounds.height(), bounds_specified::all);
@@ -302,7 +302,7 @@ namespace xtd {
       virtual const drawing::size& client_size() const {return client_size_;}
       /// @brief Sets the height and width of the client area of the control.
       /// @param A size that represents the dimensions of the client area of the control.
-      /// @return This instance of control.
+      /// @return Current control.
       /// @remarks The client area of a control is the bounds of the control, minus the nonclient elements such as scroll bars, borders, title bars, and menus. The set_client_size_core method is called to set the client_size property. The client_size property is not always changed through its set method so you should override the set_client_sizeCore method to ensure that your code is executed when the client_size property is set.
       virtual control& client_size(const drawing::size& client_size) {
         if (!get_state(state::client_size_setted) || client_size_ != client_size) {
@@ -341,7 +341,7 @@ namespace xtd {
       virtual forms::cursor cursor() const;
       /// @brief Sets the cursor that is displayed when the mouse pointer is over the control.
       /// @param cursor A xtd::forms::cursor that represents the cursor to display when the mouse pointer is over the control.
-      /// @return This instance of control.
+      /// @return Current control.
       virtual control& cursor(const forms::cursor& cursor);
       /// @cond
       virtual control& cursor(nullptr_t);
@@ -383,7 +383,7 @@ namespace xtd {
       virtual dock_style dock() const {return dock_;}
       /// @brief Sets or sets which control borders are docked to its parent control and determines how a control is resized with its parent.
       /// @param dock One of the dock_style values. The default is none.
-      /// @return This instance of control.
+      /// @return Current control.
       /// @remarks Use the dock property to define how a control is automatically resized as its parent control is resized. For example, setting dock to dock_style::left causes the control to align itself with the left edges of its parent control and to resize as the parent control is resized. Controls are docked in their Z-order, which is the visual layering of controls on a form along the form's Z-axis (depth).
       /// @remarks A control can be docked to one edge of its parent container or can be docked to all edges and fill the parent container.
       /// @remarks Setting the margin property on a docked control has no effect on the distance of the control from the edges of its container.
@@ -397,7 +397,7 @@ namespace xtd {
       virtual bool double_buffered() const {return get_state(state::double_buffered);}
       /// @brief Sets a value indicating whether this control should redraw its surface using a secondary buffer to reduce or prevent flicker.
       /// @param double_buffered true if the surface of the control should be drawn using double buffering; otherwise, false.
-      /// @return This instance of control.
+      /// @return Current control.
       virtual control& double_buffered(bool double_buffered) {
         set_state(state::double_buffered, double_buffered);
         return *this;
@@ -408,7 +408,7 @@ namespace xtd {
       virtual bool enabled() const {return get_state(state::enabled);}
       /// @brief Gets a value indicating whether the control can respond to user interaction.
       /// @param enabe true if the control can respond to user interaction; otherwise, false. The default is true.
-      /// @return This instance of control.
+      /// @return Current control.
       virtual control& enabled(bool enabled);
 
       /// @brief Gets a value indicating whether the control has input focus.
@@ -420,7 +420,7 @@ namespace xtd {
       virtual drawing::color fore_color() const;
       /// @brief Sets the foreground color of the control.
       /// @param color The foreground color of the control. The default is the value of the default_fore_color property.
-      /// @return This instance of control.
+      /// @return Current control.
       virtual control& fore_color(const drawing::color& color);
       /// @cond
       virtual control& fore_color(nullptr_t);
@@ -431,7 +431,7 @@ namespace xtd {
       virtual drawing::font font() const;
       /// @brief Gets the font of the text displayed by the control.
       /// @param font The font to apply to the text displayed by the control. The default is the value of the default_font property.
-      /// @return This instance of control.
+      /// @return Current control.
       virtual control& font(const drawing::font& font);
       /// @cond
       virtual control& font(nullptr_t);
@@ -446,7 +446,7 @@ namespace xtd {
       virtual int32_t height() const {return size_.height();}
       /// @brief Sets the height of the control.
       /// @param height The height of the control in pixels.
-      /// @return This instance of control.
+      /// @return Current control.
       virtual control& height(int32_t height) {
         if (size_.height() != height)
           set_bounds_core(0, 0, 0, height, bounds_specified::height);
@@ -463,7 +463,7 @@ namespace xtd {
       virtual int32_t left() const {return location_.x();}
       /// @brief Sets the distance, in pixels, between the left edge of the control and the left edge of its container's client area.
       /// @param left An int32_t representing the distance, in pixels, between the left edge of the control and the left edge of its container's client area.
-      /// @return This instance of control.
+      /// @return Current control.
       virtual control& left(int32_t left) {
         if (location_.x() != left)
           set_bounds_core(left, 0, 0, 0, bounds_specified::x);
@@ -475,7 +475,7 @@ namespace xtd {
       virtual drawing::point location() const {return location_;}
       /// @brief Gets the coordinates of the upper-left corner of the control relative to the upper-left corner of its container.
       /// @param location The point that represents the upper-left corner of the control relative to the upper-left corner of its container.
-      /// @return This instance of control.
+      /// @return Current control.
       virtual control& location(const drawing::point& location) {
         if (location_ != location)
           set_bounds_core(location.x(), location.y(), 0, 0, bounds_specified::location);
@@ -487,7 +487,7 @@ namespace xtd {
       virtual forms::padding margin() const {return margin_;}
       /// @brief Sets the space between controls.
       /// @param margin A padding representing the space between controls.
-      /// @return This instance of control.
+      /// @return Current control.
       virtual control& margin(const forms::padding& margin) {
         if (margin_ != margin)
           margin_ = margin;
@@ -507,7 +507,7 @@ namespace xtd {
       virtual const std::string& name() const {return name_;}
       /// @brief Sets the name of the control.
       /// @param name The name of the control. The default is an empty string ("").
-      /// @return This instance of control.
+      /// @return Current control.
       virtual control& name(const std::string& name) {
         name_ = name;
         return*this;
@@ -518,7 +518,7 @@ namespace xtd {
       virtual forms::padding padding() const {return padding_;}
       /// @brief Sets padding within the control.
       /// @param padding A padding representing the control's internal spacing characteristics.
-      /// @return This instance of control.
+      /// @return Current control.
       virtual control& padding(const forms::padding& padding) {
         if (padding_ != padding)
           padding_ = padding;
@@ -530,11 +530,11 @@ namespace xtd {
       virtual std::optional<control_ref> parent() const {return from_handle(parent_);}
       /// @brief Sets the parent container of the control.
       /// @param parent A control that represents the parent or container control of the control  or nullptr for none.
-      /// @return This instance of control.
+      /// @return Current control.
       virtual control& parent(const control& parent);
       /// @brief Sets the parent container of the control.
       /// @param parent A control that represents the parent or container control of the control  or nullptr for none.
-      /// @return This instance of control.
+      /// @return Current control.
       virtual control& parent(std::nullptr_t);
 
       /// @brief Gets the product name of the assembly containing the control.
@@ -554,7 +554,7 @@ namespace xtd {
       virtual const drawing::size& size() const {return size_;}
       /// @brief Sets the height and width of the control.
       /// @param size The size that represents the height and width of the control in pixels.
-      /// @return This instance of control.
+      /// @return Current control.
       virtual control& size(const drawing::size& size) {
         if (get_state(state::client_size_setted) || size_ != size) {
           set_state(state::client_size_setted, false);
@@ -571,7 +571,7 @@ namespace xtd {
       
       /// @brief Sets the object that contains data about the control.
       /// @param tag A std::any that contains data about the control. The default is empty.
-      /// @return This instance of control.
+      /// @return Current control.
       /// @remarks Any type of class can be assigned to this property.
       /// @remarks A common use for the tag property is to store data that is closely associated with the control. For example, if you have a control that displays information about a customer, you might store a data_set that contains the customer's order history in that control's tag property so the data can be accessed quickly.
       virtual control& tag(std::any tag) {
@@ -584,7 +584,7 @@ namespace xtd {
       virtual const std::string& text() const {return text_;}
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
-      /// @return This instance of control.
+      /// @return Current control.
       virtual control& text(const std::string& text);
 
       /// @brief Gets the distance, in pixels, between the top edge of the control and the top edge of its container's client area.
@@ -592,7 +592,7 @@ namespace xtd {
       virtual int32_t top() const {return location_.y();}
       /// @brief Sets the distance, in pixels, between the top edge of the control and the top edge of its container's client area.
       /// @param top An Int32_t representing the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
-      /// @return This instance of control.
+      /// @return Current control.
       virtual control& top(int32_t top) {
         if (location_.y() != top)
           set_bounds_core(0, top, 0, 0, bounds_specified::y);
@@ -608,7 +608,7 @@ namespace xtd {
       virtual bool visible() const {return get_state(state::visible);}
       /// @brief Sets a value indicating whether the control and all its child controls are displayed.
       /// @param visible true if the control and all its child controls are displayed; otherwise, false. The default is true.
-      /// @return This instance of control.
+      /// @return Current control.
       virtual control& visible(bool visible);
 
       /// @brief Gets the width of the control.
@@ -616,7 +616,7 @@ namespace xtd {
       virtual int32_t width() const {return size_.width();}
       /// @brief Sets the width of the control.
       /// @param width The width of the control in pixels.
-      /// @return This instance of control.
+      /// @return Current control.
       virtual control& width(int32_t width) {
         if (size_.width() != width)
           set_bounds_core(0, 0, width, 0, bounds_specified::width);
@@ -626,7 +626,7 @@ namespace xtd {
       /// @brief Add child control.
       /// @param parent A control that represents the parent or container control of the control.
       /// @param child A control to add to parent.
-      /// @return This instance of control.
+      /// @return Current control.
       friend control& operator<<(control& parent, control& child) {
         child.parent(parent);
         return parent;
@@ -635,7 +635,7 @@ namespace xtd {
       /// @brief Remove child control.
       /// @param parent A control that represents the parent or container control of the control.
       /// @param child A control to remove to parent.
-      /// @return This instance of control.
+      /// @return Current control.
       friend control& operator>>(control& parent, control& child) {
         if (child.parent().has_value() && &child.parent().value().get() == &parent)
           child.parent(nullptr);

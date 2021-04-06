@@ -58,11 +58,11 @@ namespace xtd {
       std::optional<std::reference_wrapper<ibutton_control>> accept_button() const {return accept_button_;}
       /// @brief Sets the button on the form that is clicked when the user presses the ENTER key.
       /// @param value An ibutton_control that represents the button to use as the accept button for the form.
-      /// @return This instance of form.
+      /// @return Current form.
       form& accept_button(const ibutton_control& value);
       /// @brief Sets the button on the form that is clicked when the user presses the ENTER key.
       /// @param value An ibutton_control that represents the button to use as the accept button for the form.
-      /// @return This instance of form.
+      /// @return Current form.
       form& accept_button(nullptr_t);
       
       /// @brief Gets the currently active form for this application.
@@ -74,7 +74,7 @@ namespace xtd {
       virtual forms::auto_size_mode auto_size_mode() const {return auto_size_mode_;}
       /// @brief Sets the mode by which the form automatically resizes itself.
       /// @param value An auto_size_mode enumerated value. The default is grow_only.
-      /// @return This instance of form.
+      /// @return Current form.
       virtual form& auto_size_mode(forms::auto_size_mode value);
       
       /// @brief Gets the button control that is clicked when the user presses the ESC key.
@@ -82,11 +82,11 @@ namespace xtd {
       std::optional<std::reference_wrapper<ibutton_control>> cancel_button() const {return cancel_button_;}
       /// @brief Gets the button control that is clicked when the user presses the ESC key.
       /// @param value  An ibutton_control that represents the cancel button for the form.
-      /// @return This instance of form.
+      /// @return Current form.
       form& cancel_button(const ibutton_control& value);
       /// @brief Gets the button control that is clicked when the user presses the ESC key.
       /// @param value  An ibutton_control that represents the cancel button for the form.
-      /// @return This instance of form.
+      /// @return Current form.
       form& cancel_button(nullptr_t);
 
       /// @brief Gets a value indicating whether a close box is displayed in the caption bar of the form.
@@ -94,7 +94,7 @@ namespace xtd {
       virtual bool close_box() const {return close_box_;}
       /// @brief Sets a value indicating whether a close box is displayed in the caption bar of the form.
       /// @param value true if the form displays a close box in the upper-left corner of the form; otherwise, false. The default is true.
-      /// @return This instance of form.
+      /// @return Current form.
       virtual form& close_box(bool value);
       
       /// @brief Gets a value indicating whether a control box is displayed in the caption bar of the form.
@@ -102,7 +102,7 @@ namespace xtd {
       virtual bool control_box() const {return control_box_;}
       /// @brief Sets a value indicating whether a control box is displayed in the caption bar of the form.
       /// @param value true if the form displays a control box in the upper-right corner of the form; otherwise, false. The default is true.
-      /// @return This instance of form.
+      /// @return Current form.
       virtual form& control_box(bool value);
 
       drawing::size default_size() const override {return {300, 300};}
@@ -112,7 +112,7 @@ namespace xtd {
       virtual forms::dialog_result dialog_result() const {return dialog_result_;}
       /// @brief Sets the dialog result for the form.
       /// @param value A dialog_result that represents the result of the form when used as a dialog box.
-      /// @return This instance of form.
+      /// @return Current form.
       virtual form& dialog_result(forms::dialog_result value);
       
       /// @brief Gets the border style of the form.
@@ -120,7 +120,7 @@ namespace xtd {
       virtual forms::form_border_style form_border_style() const {return form_border_style_;}
       /// @brief Gets the border style of the form.
       /// @param value A form_border_style that represents the style of border to display for the form. The default is form_border_style::sizable.
-      /// @return This instance of form.
+      /// @return Current form.
       virtual form& form_border_style(forms::form_border_style value);
       
       /// @brief Gets the icon for the form.
@@ -128,7 +128,7 @@ namespace xtd {
       virtual const xtd::drawing::icon& icon() const {return icon_;}
       /// @brief Sets the icon for the form.
       /// @param value An icon that represents the icon for the form.
-      /// @return This instance of form.
+      /// @return Current form.
       virtual form& icon(const xtd::drawing::icon& value);
 
       /// @brief Gets a value indicating whether a Help button should be displayed in the caption box of the form.
@@ -136,7 +136,7 @@ namespace xtd {
       virtual bool help_button() const {return help_button_;}
       /// @brief Gets a value indicating whether a Help button should be displayed in the caption box of the form.
       /// @param value true to display a Help button in the form's caption bar; otherwise, false. The default is false.
-      /// @return This instance of form.
+      /// @return Current form.
       virtual form& help_button(bool value);
       
       /// @brief Gets a value indicating whether the Maximize button is displayed in the caption bar of the form.
@@ -144,7 +144,7 @@ namespace xtd {
       virtual bool maximize_box() const {return maximize_box_;}
       /// @brief Gets a value indicating whether the Maximize button is displayed in the caption bar of the form.
       /// @param value true to display a Maximize button for the form; otherwise, false. The default is true.
-      /// @return This instance of form.
+      /// @return Current form.
       virtual form& maximize_box(bool value);
       
       /// @brief Gets the main_menu that is displayed in the form.
@@ -152,11 +152,11 @@ namespace xtd {
       virtual std::optional<forms::main_menu> menu() const {return menu_;}
       /// @brief Sets the main_menu that is displayed in the form.
       /// @param value A main_menu that represents the menu to display in the form.
-      /// @return This instance of form.
+      /// @return Current form.
       virtual form& menu(const forms::main_menu& value);
       /// @brief Sets the main_menu that is displayed in the form.
       /// @param value A main_menu that represents the menu to display in the form.
-      /// @return This instance of form.
+      /// @return Current form.
       virtual form& menu(nullptr_t);
 
       /// @brief Gets a value indicating whether the Minimize button is displayed in the caption bar of the form.
@@ -164,7 +164,7 @@ namespace xtd {
       virtual bool minimize_box() const {return minimize_box_;}
       /// @brief Sets a value indicating whether the Minimize button is displayed in the caption bar of the form.
       /// @param value true to display a Minimize button for the form; otherwise, false. The default is true.
-      /// @return This instance of form.
+      /// @return Current form.
       virtual form& minimize_box(bool value);
 
       /// @brief Gets a value indicating whether this form is displayed modally.
@@ -176,7 +176,7 @@ namespace xtd {
       virtual std::optional<control_ref> owner() const {return from_handle(owner_);}
       /// @brief Sets the form that owns this form.
       /// @param value A form that represents the form that is the owner of this form.
-      /// @return This instance of form.
+      /// @return Current form.
       virtual form& owner(const control& value);
 
       using container_control::parent;
@@ -189,7 +189,7 @@ namespace xtd {
       virtual bool show_icon() const {return show_icon_;}
       /// @brief Sets a value indicating whether an icon is displayed in the caption bar of the form.
       /// @param value true if the form displays an icon in the caption bar; otherwise, false. The default is true.
-      /// @return This instance of form.
+      /// @return Current form.
       virtual form& show_icon(bool value);
 
       /// @brief Gets the starting position of the form at run time.
@@ -197,7 +197,7 @@ namespace xtd {
       virtual form_start_position start_position() const {return start_position_;}
       /// @brief Sets the starting position of the form at run time.
       /// @param value A form_start_position that represents the starting position of the form.
-      /// @return This instance of form.
+      /// @return Current form.
       virtual form& start_position(form_start_position value);
 
       /// @brief Gets a value indicating whether to display the form as a top-level window.
@@ -216,13 +216,13 @@ namespace xtd {
       virtual bool top_most() const {return top_most_;}
       /// @brief Sets a value indicating whether the form should be displayed as a topmost form.
       /// @param value true to display the form as a topmost form; otherwise, false. The default is false.
-      /// @return This instance of form.
+      /// @return Current form.
       virtual form& top_most(bool value);
       
       using container_control::visible;
       /// @brief Sets a value indicating whether the control and all its child controls are displayed.
       /// @param visible true if the control and all its child controls are displayed; otherwise, false. The default is true.
-      /// @return This instance of control.
+      /// @return Current control.
       control& visible(bool visible) override;
       
       /// @brief Gets a value that indicates whether form is minimized, maximized, or normal.
@@ -230,7 +230,7 @@ namespace xtd {
       virtual form_window_state window_state() const {return window_state_;}
       /// @brief Sets a value that indicates whether form is minimized, maximized, or normal.
       /// @param value A form_window_state that represents whether form is minimized, maximized, full_screen, or normal. The default is form_window_state::normal.
-      /// @return This instance of form.
+      /// @return Current form.
       virtual form& window_state(form_window_state value);
       
       /// @brief Activates the form and gives it focus.
