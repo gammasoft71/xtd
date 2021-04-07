@@ -1493,7 +1493,6 @@ namespace xtd {
 
     protected:
       friend class application;
-      friend paint_event_args;
       friend class screen;
       
       /// @brief Gets the required creation parameters when the control handle is created.

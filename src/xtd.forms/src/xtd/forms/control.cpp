@@ -1042,7 +1042,8 @@ void control::wm_mouse_wheel(message& message) {
 
 void control::wm_paint(message& message) {
   def_wnd_proc(message);
-  paint_event_args e(*this, client_rectangle_);
+  auto graphics = get_state(state::double_buffered) ? drawing::graphics(native::control::create_double_buffered_paint_graphics(handle_)) : drawing::graphics(native::control::create_paint_graphics(handle_));
+  paint_event_args e(graphics, client_rectangle_);
   on_paint(e);
 }
 
