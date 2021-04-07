@@ -25,5 +25,5 @@ mouse_event_args mouse_event_args::create(const message& message, bool double_cl
   drawing::point location((int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam()));
   if (forms::control::from_handle(message.hwnd()).has_value())
     location = forms::control::from_handle(message.hwnd()).value().get().point_to_client(location);
-  return mouse_event_args(message_to_mouse_buttons(message), location, double_click_fired  ? 2 : 1, delta);
+  return mouse_event_args(message_to_mouse_buttons(message), double_click_fired  ? 2 : 1, location, delta);
 }

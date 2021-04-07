@@ -1010,7 +1010,7 @@ void control::wm_mouse_up(message& message) {
 void control::wm_mouse_move(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(enable_debug::get(enable_debug::mouse_events), strings::format("({}) receive message [{}]", *this, message));
   def_wnd_proc(message);
-  mouse_event_args e = mouse_event_args(wparam_to_mouse_buttons(message), point_to_client({(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}), get_state(control::state::double_click_fired) ? 2 : 1, 0);
+  mouse_event_args e = mouse_event_args(wparam_to_mouse_buttons(message), get_state(control::state::double_click_fired) ? 2 : 1, point_to_client({(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}), 0);
   // Workaround : sometimes mouse enter and/or mouse leave message are not send
   // For example on macos when mouse down in control and mouse is moved out then moved in, the mouse enter messege is not send...
   // The two followed line fixed it
