@@ -871,6 +871,51 @@
 /// <br>
 /// @image html open_file_dialog_gd.png
 ///
+/// @example panel.cpp
+/// The following code example demonstrate the use of panel container.
+/// @par Windows
+/// @image html panel_w.png
+/// <br>
+/// @image html panel_wd.png
+/// @par macOS
+/// @image html panel_m.png
+/// <br>
+/// @image html panel_md.png
+/// @par Gnome
+/// @image html panel_g.png
+/// <br>
+/// @image html panel_gd.png
+///
+/// @example picture_box.cpp
+/// The following code example demonstrate the use of picture box control.
+/// @par Windows
+/// @image html picture_box_w.png
+/// <br>
+/// @image html picture_box_wd.png
+/// @par macOS
+/// @image html picture_box_m.png
+/// <br>
+/// @image html picture_box_md.png
+/// @par Gnome
+/// @image html picture_box_g.png
+/// <br>
+/// @image html picture_box_gd.png
+///
+/// @example progress_bar.cpp
+/// The following code example demonstrate the use of progress_bar control.
+/// @par Windows
+/// @image html progress_bar_w.png
+/// <br>
+/// @image html progress_bar_wd.png
+/// @par macOS
+/// @image html progress_bar_m.png
+/// <br>
+/// @image html progress_bar_md.png
+/// @par Gnome
+/// @image html progress_bar_g.png
+/// <br>
+/// @image html progress_bar_gd.png
+///
 /// @example progress_dialog.cpp
 /// The following code example demonstrate the use of progress_dialog dialog.
 /// @par Windows
