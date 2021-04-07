@@ -73,6 +73,34 @@ namespace xtd {
         return *this;
       }
       
+      /// @brief Gets the creators array.
+      /// @return The creator array.
+      const creators_collection& creators() const {return creators_;}
+      /// @brief Gets the creators array.
+      /// @return The creator array.
+      creators_collection& creators() {return creators_;}
+      /// @brief Sets the creators array.
+      /// @param creators The creators array.
+      /// @return Current about_dialog instance.
+      about_dialog& creators(const creators_collection& creators) {
+        creators_ = creators;
+        return *this;
+      }
+      
+      /// @brief Gets the documentation writers array.
+      /// @return The documentation writers array.
+      const doc_writers_collection& doc_writers() const {return doc_writers_;}
+      /// @brief Gets the documentation writers array.
+      /// @return The designers array.
+      doc_writers_collection& doc_writers() {return doc_writers_;}
+      /// @brief Sets the documentation writers array.
+      /// @param doc_writers The documentation writers array.
+      /// @return Current about_dialog instance.
+      about_dialog& doc_writers(const doc_writers_collection& doc_writers) {
+        doc_writers_ = doc_writers;
+        return *this;
+      }
+
       /// @brief Gets the product description.
       /// @return The product description.
       std::string description() const {return description_;}
@@ -84,6 +112,20 @@ namespace xtd {
         return *this;
       }
       
+      /// @brief Gets the designers array.
+      /// @return The designers array.
+      const designers_collection& designers() const {return designers_;}
+      /// @brief Gets the designers array.
+      /// @return The designers array.
+      designers_collection& designers() {return designers_;}
+      /// @brief Sets the designers array.
+      /// @param designers The designers array.
+      /// @return Current about_dialog instance.
+      about_dialog& designers(const designers_collection& designers) {
+        designers_ = designers;
+        return *this;
+      }
+
       /// @brief Gets the dialog style.
       /// @return One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
       xtd::forms::dialog_style dialog_style() const {return dialog_style_;}
@@ -120,6 +162,17 @@ namespace xtd {
         return *this;
       }
 
+      /// @brief Gets the product license.
+      /// @return The product license.
+      std::string license() const {return license_;}
+      /// @brief Sets the product license.
+      /// @param name The product license.
+      /// @return Current about_dialog instance.
+      about_dialog& license(const std::string& license) {
+        license_ = license;
+        return *this;
+      }
+
       /// @brief Gets the product long version.
       /// @return The product long version.
       std::string long_version() const {return long_version_;}
@@ -142,6 +195,20 @@ namespace xtd {
         return *this;
       }
       
+      /// @brief Gets the translators array.
+      /// @return The translators array.
+      const translators_collection& translators() const {return translators_;}
+      /// @brief Gets the translators array.
+      /// @return The translators array.
+      translators_collection& translators() {return translators_;}
+      /// @brief Sets the translators array.
+      /// @param translators The translators array.
+      /// @return Current about_dialog instance.
+      about_dialog& translators(const translators_collection& translators) {
+        translators_ = translators;
+        return *this;
+      }
+
       /// @brief Gets the product version.
       /// @return The product version.
       std::string version() const {return version_;}
@@ -172,73 +239,6 @@ namespace xtd {
       /// @return Current about_dialog instance.
       about_dialog& website_label(const std::string& website_label) {
         website_label_ = website_label;
-        return *this;
-      }
-      
-      /// @brief Gets the creators array.
-      /// @return The creator array.
-      const creators_collection& creators() const {return creators_;}
-      /// @brief Gets the creators array.
-      /// @return The creator array.
-      creators_collection& creators() {return creators_;}
-      /// @brief Sets the creators array.
-      /// @param creators The creators array.
-      /// @return Current about_dialog instance.
-      about_dialog& creators(const creators_collection& creators) {
-        creators_ = creators;
-        return *this;
-      }
-      
-      /// @brief Gets the designers array.
-      /// @return The designers array.
-      const designers_collection& designers() const {return designers_;}
-      /// @brief Gets the designers array.
-      /// @return The designers array.
-      designers_collection& designers() {return designers_;}
-      /// @brief Sets the designers array.
-      /// @param designers The designers array.
-      /// @return Current about_dialog instance.
-      about_dialog& designers(const designers_collection& designers) {
-        designers_ = designers;
-        return *this;
-      }
-      
-      /// @brief Gets the documentation writers array.
-      /// @return The documentation writers array.
-      const doc_writers_collection& doc_writers() const {return doc_writers_;}
-      /// @brief Gets the documentation writers array.
-      /// @return The designers array.
-      doc_writers_collection& doc_writers() {return doc_writers_;}
-      /// @brief Sets the documentation writers array.
-      /// @param doc_writers The documentation writers array.
-      /// @return Current about_dialog instance.
-      about_dialog& doc_writers(const doc_writers_collection& doc_writers) {
-        doc_writers_ = doc_writers;
-        return *this;
-      }
-      
-      /// @brief Gets the translators array.
-      /// @return The translators array.
-      const translators_collection& translators() const {return translators_;}
-      /// @brief Gets the translators array.
-      /// @return The translators array.
-      translators_collection& translators() {return translators_;}
-      /// @brief Sets the translators array.
-      /// @param translators The translators array.
-      /// @return Current about_dialog instance.
-      about_dialog& translators(const translators_collection& translators) {
-        translators_ = translators;
-        return *this;
-      }
-
-      /// @brief Gets the product license.
-      /// @return The product license.
-      std::string license() const {return license_;}
-      /// @brief Sets the product license.
-      /// @param name The product license.
-      /// @return Current about_dialog instance.
-      about_dialog& license(const std::string& license) {
-        license_ = license;
         return *this;
       }
 
