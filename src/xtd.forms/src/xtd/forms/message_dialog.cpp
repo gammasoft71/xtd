@@ -23,18 +23,18 @@ void message_dialog::reset() {
 }
 
 xtd::forms::dialog_result message_dialog::show_dialog() {
-  on_message_dialog_closed(message_dialog_closed_event_args(static_cast<xtd::forms::dialog_result>(native::message_box::show(0, message_, text_, static_cast<uint32_t>(buttons_) + static_cast<uint32_t>(icon_) + static_cast<uint32_t>(default_button_) + static_cast<uint32_t>(options_), display_help_button_))));
+  on_dialog_closed(dialog_closed_event_args(static_cast<xtd::forms::dialog_result>(native::message_box::show(0, message_, text_, static_cast<uint32_t>(buttons_) + static_cast<uint32_t>(icon_) + static_cast<uint32_t>(default_button_) + static_cast<uint32_t>(options_), display_help_button_))));
   return dialog_result_;
 }
 
 xtd::forms::dialog_result message_dialog::show_dialog(const iwin32_window& owner) {
-  on_message_dialog_closed(message_dialog_closed_event_args(static_cast<xtd::forms::dialog_result>(native::message_box::show(owner.handle(), message_, text_, static_cast<uint32_t>(buttons_) + static_cast<uint32_t>(icon_) + static_cast<uint32_t>(default_button_) + static_cast<uint32_t>(options_), display_help_button_))));
+  on_dialog_closed(dialog_closed_event_args(static_cast<xtd::forms::dialog_result>(native::message_box::show(owner.handle(), message_, text_, static_cast<uint32_t>(buttons_) + static_cast<uint32_t>(icon_) + static_cast<uint32_t>(default_button_) + static_cast<uint32_t>(options_), display_help_button_))));
   return dialog_result_;
 }
 
 void message_dialog::show_sheet(const iwin32_window& owner) {
   dialog_result_ = xtd::forms::dialog_result::none;
-  native::message_box::show_sheet({*new __xtd_forms_message_dialog_closed_caller__(this), &__xtd_forms_message_dialog_closed_caller__::on_message_dialog_closed}, owner.handle(), message_, text_, static_cast<uint32_t>(buttons_) + static_cast<uint32_t>(icon_) + static_cast<uint32_t>(default_button_) + static_cast<uint32_t>(options_), display_help_button_);
+  native::message_box::show_sheet({*new __xtd_forms_message_dialog_closed_caller__(this), &__xtd_forms_message_dialog_closed_caller__::on_dialog_closed}, owner.handle(), message_, text_, static_cast<uint32_t>(buttons_) + static_cast<uint32_t>(icon_) + static_cast<uint32_t>(default_button_) + static_cast<uint32_t>(options_), display_help_button_);
 }
 
 xtd::forms::dialog_result message_dialog::show_sheet_dialog(const iwin32_window& owner) {

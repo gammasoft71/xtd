@@ -49,8 +49,6 @@ add_sources(
   include/xtd/forms/combo_box_style.h
   include/xtd/forms/command_link_button.h
   include/xtd/forms/common_dialog.h
-  include/xtd/forms/common_dialog_closed_event_args.h
-  include/xtd/forms/common_dialog_closed_event_handler.h
   include/xtd/forms/component.h
   include/xtd/forms/container_control.h
   include/xtd/forms/content_alignment.h
@@ -69,6 +67,8 @@ add_sources(
   include/xtd/forms/date_time_picker.h
   include/xtd/forms/date_time_picker_format.h
   include/xtd/forms/debug_form.h
+  include/xtd/forms/dialog_closed_event_args.h
+  include/xtd/forms/dialog_closed_event_handler.h
   include/xtd/forms/dialog_result.h
   include/xtd/forms/dialog_style.h
   include/xtd/forms/do_work_event_args.h
@@ -134,8 +134,6 @@ add_sources(
   include/xtd/forms/message_box_options.h
   include/xtd/forms/message_dialog.h
   include/xtd/forms/message_dialog_buttons.h
-  include/xtd/forms/message_dialog_closed_event_args.h
-  include/xtd/forms/message_dialog_closed_event_handler.h
   include/xtd/forms/message_dialog_default_button.h
   include/xtd/forms/message_dialog_icon.h
   include/xtd/forms/message_dialog_options.h
