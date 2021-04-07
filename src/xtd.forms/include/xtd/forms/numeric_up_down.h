@@ -86,7 +86,12 @@ namespace xtd {
       /// @remarks When the value property is set, the new value is validated to be between the minimum and maximum values. Following this, the update_edit_text method is called to update the spin box's display with the new value in the appropriate format.
       virtual numeric_up_down& value(double value);
       
+      /// @brief Get a value indicate if value can be wrapped.
+      /// @return true if value can be wrapped; otherwise false. The default is false.
       virtual bool wrapped() {return wrapped_;}
+      /// @brief Set a value indicate if value can be wrapped.
+      /// @param value true if value can be wrapped; otherwise false. The default is false.
+      /// @return Current numeric_up_down.
       virtual numeric_up_down& wrapped(bool value);
       
       /// @brief Sets the minimum and maximum values for a track_bar.
