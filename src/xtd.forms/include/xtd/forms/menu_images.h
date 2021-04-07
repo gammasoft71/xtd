@@ -13,7 +13,7 @@ namespace xtd {
     /// @brief Provides a menu images factories for use by a menu control.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms components
+    /// @ingroup xtd_forms }
     class menu_images final static_ {
     public:
       /// @brief File new image object.
