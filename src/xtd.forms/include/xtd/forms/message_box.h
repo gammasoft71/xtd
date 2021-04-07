@@ -39,22 +39,102 @@ namespace xtd {
     /// @image html message_box_gd.png
     class message_box final static_ {
     public:
+      /// @brief Displays a message box in front of the specified window.
+      /// @param owner An implementation of iwin32_window that will own the modal dialog box.
       static dialog_result show(const iwin32_window& owner) {return show_message_dialog(&owner);}
+      /// @brief Displays a message box in front of the specified window with specified text.
+      /// @param owner An implementation of iwin32_window that will own the modal dialog box.
+      /// @param text The text to display in the message box.
       static dialog_result show(const iwin32_window& owner, const std::string& text) {return show_message_dialog(&owner, text);}
+      /// @brief Displays a message box in front of the specified window with specified text and caption.
+      /// @param owner An implementation of iwin32_window that will own the modal dialog box.
+      /// @param text The text to display in the message box.
+      /// @param caption The text to display in the title bar of the message box.
       static dialog_result show(const iwin32_window& owner, const std::string& text, const std::string& caption) {return show_message_dialog(&owner, text, caption);}
+      /// @brief Displays a message box in front of the specified window with the specified text, caption, and buttons.
+      /// @param owner An implementation of iwin32_window that will own the modal dialog box.
+      /// @param text The text to display in the message box.
+      /// @param caption The text to display in the title bar of the message box.
+      /// @param buttons One of the message_box_buttons values that specifies which buttons to display in the message box.
       static dialog_result show(const iwin32_window& owner, const std::string& text, const std::string& caption, message_box_buttons buttons) {return show_message_dialog(&owner, text, caption, buttons);}
+      /// @brief Displays a message box in front of the specified window with the specified text, caption, buttons, and icon.
+      /// @param owner An implementation of iwin32_window that will own the modal dialog box.
+      /// @param text The text to display in the message box.
+      /// @param caption The text to display in the title bar of the message box.
+      /// @param buttons One of the message_box_buttons values that specifies which buttons to display in the message box.
+      /// @param icon One of the message_box_icon values that specifies which icon to display in the message box.
       static dialog_result show(const iwin32_window& owner, const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon) {return show_message_dialog(&owner, text, caption, buttons, icon);}
+      /// @brief Displays a message box in front of the specified window with the specified text, caption, buttons, icon, and default button.
+      /// @param owner An implementation of iwin32_window that will own the modal dialog box.
+      /// @param text The text to display in the message box.
+      /// @param caption The text to display in the title bar of the message box.
+      /// @param buttons One of the message_box_buttons values that specifies which buttons to display in the message box.
+      /// @param icon One of the message_box_icon values that specifies which icon to display in the message box.
+      /// @param default_button One of the message_box_default_button values that specifies the default button for the message box.
       static dialog_result show(const iwin32_window& owner, const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button) {return show_message_dialog(&owner, text, caption, buttons, icon, default_button);}
+      /// @brief Displays a message box in front of the specified window with the specified text, caption, buttons, icon, default button, and options.
+      /// @param owner An implementation of iwin32_window that will own the modal dialog box.
+      /// @param text The text to display in the message box.
+      /// @param caption The text to display in the title bar of the message box.
+      /// @param buttons One of the message_box_buttons values that specifies which buttons to display in the message box.
+      /// @param icon One of the message_box_icon values that specifies which icon to display in the message box.
+      /// @param default_button One of the message_box_default_button values that specifies the default button for the message box.
+      /// @param options One of the message_box_options values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults.
       static dialog_result show(const iwin32_window& owner, const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options) {return show_message_dialog(&owner, text, caption, buttons, icon, default_button, options);}
+      /// @brief Displays a message box in front of the specified window with the specified text, caption, buttons, icon, default button, options, and Help button.
+      /// @param owner An implementation of iwin32_window that will own the modal dialog box.
+      /// @param text The text to display in the message box.
+      /// @param caption The text to display in the title bar of the message box.
+      /// @param buttons One of the message_box_buttons values that specifies which buttons to display in the message box.
+      /// @param icon One of the message_box_icon values that specifies which icon to display in the message box.
+      /// @param default_button One of the message_box_default_button values that specifies the default button for the message box.
+      /// @param options One of the message_box_options values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults.
+      /// @param display_help_button true to show the Help button; otherwise, false. The default is false.
       static dialog_result show(const iwin32_window& owner, const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options, bool display_help_button) {return show_message_dialog(&owner, text, caption, buttons, icon, default_button, options, display_help_button);}
       
+      /// @brief Displays a message box.
       static dialog_result show() {return show_message_dialog(nullptr);}
+      /// @brief Displays a message box with specified text.
+      /// @param text The text to display in the message box.
       static dialog_result show(const std::string& text) {return show_message_dialog(nullptr, text);}
+      /// @brief Displays a message box with specified text and caption.
+      /// @param text The text to display in the message box.
+      /// @param caption The text to display in the title bar of the message box.
       static dialog_result show(const std::string& text, const std::string& caption) {return show_message_dialog(nullptr, text, caption);}
+      /// @brief Displays a message box with the specified text, caption, and buttons.
+      /// @param text The text to display in the message box.
+      /// @param caption The text to display in the title bar of the message box.
+      /// @param buttons One of the message_box_buttons values that specifies which buttons to display in the message box.
       static dialog_result show(const std::string& text, const std::string& caption, message_box_buttons buttons) {return show_message_dialog(nullptr, text, caption, buttons);}
+      /// @brief Displays a message box with the specified text, caption, buttons, and icon.
+      /// @param text The text to display in the message box.
+      /// @param caption The text to display in the title bar of the message box.
+      /// @param buttons One of the message_box_buttons values that specifies which buttons to display in the message box.
+      /// @param icon One of the message_box_icon values that specifies which icon to display in the message box.
       static dialog_result show(const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon) {return show_message_dialog(nullptr, text, caption, buttons, icon);}
+      /// @brief Displays a message box with the specified text, caption, buttons, icon, and default button.
+      /// @param text The text to display in the message box.
+      /// @param caption The text to display in the title bar of the message box.
+      /// @param buttons One of the message_box_buttons values that specifies which buttons to display in the message box.
+      /// @param icon One of the message_box_icon values that specifies which icon to display in the message box.
+      /// @param default_button One of the message_box_default_button values that specifies the default button for the message box.
       static dialog_result show(const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button) {return show_message_dialog(nullptr, text, caption, buttons, icon, default_button);}
+      /// @brief Displays a message box with the specified text, caption, buttons, icon, default button, and options.
+      /// @param text The text to display in the message box.
+      /// @param caption The text to display in the title bar of the message box.
+      /// @param buttons One of the message_box_buttons values that specifies which buttons to display in the message box.
+      /// @param icon One of the message_box_icon values that specifies which icon to display in the message box.
+      /// @param default_button One of the message_box_default_button values that specifies the default button for the message box.
+      /// @param options One of the message_box_options values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults.
       static dialog_result show(const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options) {return show_message_dialog(nullptr, text, caption, buttons, icon, default_button, options);}
+      /// @brief Displays a message box with the specified text, caption, buttons, icon, default button, options, and Help button.
+      /// @param text The text to display in the message box.
+      /// @param caption The text to display in the title bar of the message box.
+      /// @param buttons One of the message_box_buttons values that specifies which buttons to display in the message box.
+      /// @param icon One of the message_box_icon values that specifies which icon to display in the message box.
+      /// @param default_button One of the message_box_default_button values that specifies the default button for the message box.
+      /// @param options One of the message_box_options values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults.
+      /// @param display_help_button true to show the Help button; otherwise, false. The default is false.
       static dialog_result show(const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options, bool display_help_button) {return show_message_dialog(nullptr, text, caption, buttons, icon, default_button, options, display_help_button);}
       
     private:
