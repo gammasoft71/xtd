@@ -112,12 +112,15 @@ namespace xtd {
       void report_progress(int32_t percent_progress, std::any user_state);
 
       /// @brief Occurs when run_worker_async() is called.
+      /// @ingroup events
       event<background_worker, do_work_event_handler<component&>> do_work;
 
       /// @brief Occurs when report_progress(int32_t) is called.
+      /// @ingroup events
       event<background_worker, progress_changed_event_handler<component&>> progress_changed;
 
       /// @brief Occurs when the background operation has completed, has been canceled, or has raised an exception.
+      /// @ingroup events
       event<background_worker, run_worker_completed_event_handler<component&>> run_worker_completed;
       
     private:

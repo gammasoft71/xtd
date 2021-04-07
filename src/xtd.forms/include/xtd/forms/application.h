@@ -361,13 +361,16 @@ namespace xtd {
        */
 
       /// @brief Occurs when the application is about to shut down.
+      /// @ingroup events
       /// @remarks You must attach the event handlers to the application_exit event to perform unhandled, required tasks before the application stops running. You can close files opened by this application, or dispose of objects that garbage collection did not reclaim.
       static event<application, delegate<void(const event_args&)>> application_exit;
 
       /// @brief Occurs when the application is about to enter a modal state.
+      /// @ingroup events
       static event<application, delegate<void(const event_args&)>> enter_thread_modal;
 
       /// @brief Occurs when the application finishes processing and is about to enter the idle state.
+      /// @ingroup events
       /// @remarks If you have tasks that you must perform before the thread becomes idle, attach them to this event.
       /// @par Examples
       /// The following code example demonstrate the use of application idle event.
@@ -387,10 +390,12 @@ namespace xtd {
       static event<application, delegate<void(const event_args&)>> idle;
 
       /// @brief Occurs when the application is about to leave a modal state.
+      /// @ingroup events
       static event<application, delegate<void(const event_args&)>> leave_thread_modal;
       
       /*
       /// @brief Occurs when an untrapped thread exception is thrown.
+      /// @ingroup events
       /// @remarks This event allows your Windows Forms application to handle otherwise unhandled exceptions that occur in Windows Forms threads. Attach your event handlers to the thread_exception event to deal with these exceptions, which will leave your application in an unknown state. Where possible, exceptions should be handled by a structured exception handling block.
       /// @param You can change whether this callback is used for unhandled Windows Forms thread exceptions by setting set_unhandled_exception_mode. To catch exceptions that occur in threads not created and owned by Windows Forms, use the unhandled_exception event handler.
       /// @note To guarantee that no activations of this event are missed, you must attach a handler before you call application::run.
@@ -398,6 +403,7 @@ namespace xtd {
        */
 
       /// @brief Occurs when a thread is about to shut down. When the main thread for an application is about to be shut down, this event is raised first, followed by an application_exit event.
+      /// @ingroup events
       /// @remarks You must attach the event handlers to the thread_exit event to perform any unhandled, required tasks before the thread stops running. Close files opened by this thread, or dispose of objects that the garbage collector did not reclaim.
       static event<application, delegate<void(const event_args&)>> thread_exit;
 

@@ -53,6 +53,7 @@ namespace xtd {
       drawing::size default_size() const override {return {100, 25};}
       
       /// @brief Occurs when the value of the font property changes.
+      /// @ingroup events
       event<font_picker, event_handler<control&>> font_changed;
 
     protected:

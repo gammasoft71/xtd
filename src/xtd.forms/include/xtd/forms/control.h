@@ -928,14 +928,17 @@ namespace xtd {
       /// @endcond
 
       /// @brief Occurs when the value of the auto_size property changes.
+      /// @ingroup events
       /// @remarks This event is raised if the auto_size property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> auto_size_changed;
 
       /// @brief Occurs when the value of the back_color property changes.
+      /// @ingroup events
       /// @remarks This event is raised if the back_color property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> back_color_changed;
       
       /// @brief Occurs when the control is clicked.
+      /// @ingroup events
       /// @remarks The click event passes an xtd::event_args to its event handler, so it only indicates that a click has occurred. If you need more specific mouse information (button, number of clicks, wheel rotation, or location), use the mouse_click event. However, the mouse_click event will not be raised if the click is caused by action other than that of the mouse, such as pressing the ENTER key.
       /// @remarks A double-click is determined by the mouse settings of the user's operating system. The user can set the time between clicks of a mouse button that should be considered a double-click rather than two clicks. The click event is raised every time a control is double-clicked. For example, if you have event handlers for the click and double_click events of a xtd::forms::form, the click and double_dlick events are raised when the form is double-clicked and both methods are called. If a control is double-clicked and that control does not support the double_click event, the click event might be raised twice.
       /// @remarks You must set the standard_click value of xtd::forms::control_styles to true for this event to be raised.
@@ -972,24 +975,30 @@ namespace xtd {
       event<control, event_handler<control&>> click;
       
       /// @brief Occurs when the value of the client_size property changes.
+      /// @ingroup events
       /// @remarks This event is raised if the client_size property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> client_size_changed;
         
       /// @brief Occurs when the value of the cursor property changes.
+      /// @ingroup events
       /// @remarks This event is raised if the cursor property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> cursor_changed;
 
       /// @brief Occurs when a new control is added to the control::control_collection.
+      /// @ingroup events
       event<control, control_event_handler<control&>> control_added;
       
       /// @brief Occurs when a new control is removed to the control::control_collection.
+      /// @ingroup events
       event<control, control_event_handler<control&>> control_removed;
       
       /// @brief Occurs when the value of the dock property changes.
+      /// @ingroup events
       /// @remarks This event is raised if the dock property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> dock_changed;
         
       /// @brief Occurs when the control is double-clicked.
+      /// @ingroup events
       /// @remarks A double-click is determined by the mouse settings of the user's operating system. The user can set the time between clicks of a mouse button that should be considered a double-click rather than two clicks. The click event is raised every time a control is double-clicked. For example, if you have event handlers for the click and double_click events of a xtd::forms::form, the click and double_dlick events are raised when the form is double-clicked and both methods are called. If a control is double-clicked and that control does not support the double_click event, the click event might be raised twice.
       /// @remarks You must set the standard_double_click and standard_click value of xtd::forms::control_styles to true for this event to be raised.
       /// @note The following events are not raised for the xtd::forms::tab_control class unless there is at least one xtd::forms::tab_page in the xtd::forms::tab_control. xtd::forms::tab_control::tab_pages collection: click, double_click, mouse_down, mouse_up, mouse_hover, mouse_enter, mouse_leave and mouse_move. If there is at least one xtd::forms::tab_page in the collection, and the user interacts with the tab control's header (where the xtd::forms::tab_page names appear), the xtd::forms::tab_control raises the appropriate event. However, if the user interaction is within the client area of the tab page, the xtd::forms::tab_page raises the appropriate event.
@@ -1025,6 +1034,7 @@ namespace xtd {
       event<control, event_handler<control&>> double_click;
 
       /// @brief Occurs when the control receives focus.
+      /// @ingroup events
       /// @remarks When you change the focus by using the keyboard (TAB, SHIFT+TAB, and so on), by calling the select or select_next_control methods, or by setting the container_control::active_control property to the current form, focus events occur in the following order:
       /// 1. xtd::forms::control::enter event
       /// 2. xtd::forms::control::got_focus event
@@ -1045,26 +1055,32 @@ namespace xtd {
       event<control, event_handler<control&>> got_focus;
       
       /// @brief Occurs when a handle is created for the control.
+      /// @ingroup events
       /// @remarks A handle is created when the xtd::forms::control is displayed for the first time. For example, if a xtd::forms::control is created that has visible set to false, the handle_created event will not be raised until visible is set to true.
       event<control, event_handler<control&>> handle_created;
       
       /// @brief Occurs when the control's handle is in the process of being destroyed.
+      /// @ingroup events
       /// @remarks During the handle_destroyed event, the control is still a valid Windows control and the handle can be recreated by calling the recreate_handle method.
       event<control, event_handler<control&>> handle_destroyed;
       
       /// @brief Occurs when the value of the enabled property changes.
+      /// @ingroup events
       /// @remarks This event is raised if the enabled property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> enabled_changed;
 
       /// @brief Occurs when the value of the fore_color property changes.
+      /// @ingroup events
       /// @remarks This event is raised if the fore_color property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> fore_color_changed;
       
       /// @brief Occurs when the value of the font property changes.
+      /// @ingroup events
       /// @remarks This event is raised if the font property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> font_changed;
       
       /// @brief Occurs when a key is pressed while the control has focus.
+      /// @ingroup events
       /// @remarks Key events occur in the following order:
       /// 1. xtd::forms::control::key_down event
       /// 1. xtd::forms::control::key_press event
@@ -1088,6 +1104,7 @@ namespace xtd {
       event<control, key_event_handler<control&>> key_down;
       
       /// @brief Occurs when a character. space or backspace key is pressed while the control has focus.
+      /// @ingroup events
       /// @remarks Key events occur in the following order:
       /// 1. xtd::forms::control::key_down event
       /// 1. xtd::forms::control::key_press event
@@ -1113,6 +1130,7 @@ namespace xtd {
       event<control, key_press_event_handler<control&>> key_press;
       
       /// @brief Occurs when a key is released while the control has focus.
+      /// @ingroup events
       /// @remarks Key events occur in the following order:
       /// 1. xtd::forms::control::key_down eventv
       /// 1. xtd::forms::control::key_press event
@@ -1136,14 +1154,17 @@ namespace xtd {
       event<control, key_event_handler<control&>> key_up;
       
       /// @brief Occurs when a control should reposition its child controls.
+      /// @ingroup events
       /// @remarks The layout event occurs when child controls are added or removed, when the bounds of the control changes, and when other changes occur that can affect the layout of the control. The layout event can be suppressed using the suspend_layout and resume_layout methods. Suspending layout enables you to perform multiple actions on a control without having to perform a layout for each change. For example, if you resize and move a control, each operation would raise a layout event.
       event<control, event_handler<control&>> layout;
       
       /// @brief Occurs when the value of the location property changes.
+      /// @ingroup events
       /// @remarks This event is raised if the location property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> location_changed;
       
       /// @brief Occurs when the control loses focus.
+      /// @ingroup events
       /// @remarks When you change the focus by using the keyboard (TAB, SHIFT+TAB, and so on), by calling the select or select_next_control methods, or by setting the container_control::active_control property to the current form, focus events occur in the following order:
       /// 1. xtd::forms::control::enter event
       /// 2. xtd::forms::control::got_focus event
@@ -1165,6 +1186,7 @@ namespace xtd {
       event<control, event_handler<control&>> lost_focus;
       
       /// @brief Occurs when the control is clicked by the mouse.
+      /// @ingroup events
       /// @remarks Depressing a mouse button when the cursor is over a control typically raises the following series of events from the control:
       /// 1. xtd::forms::control::mouse_down event
       /// 2. xtd::forms::control::click event
@@ -1192,6 +1214,7 @@ namespace xtd {
       event<control, mouse_event_handler<control&>> mouse_click;
       
       /// @brief Occurs when the control is double clicked by the mouse.
+      /// @ingroup events
       /// @remarks The mouse_double_click event occurs when the user depresses a mouse button twice in quick succession when the cursor is over the control. The time interval that separates two single clicks from a double-click is determined by the mouse settings of the user's operating system.
       /// @remarks The following series of events is raised by the control when such a user action takes place:
       /// 1. xtd::forms::control::mouse_down event
@@ -1223,6 +1246,7 @@ namespace xtd {
       event<control, mouse_event_handler<control&>> mouse_double_click;
       
       /// @brief Occurs when the mouse pointer is over the control and a mouse button is pressed.
+      /// @ingroup events
       /// @remarks Mouse events occur in the following order:
       /// 1. xtd::forms::control::mouse_enter
       /// 2. xtd::forms::control::mouse_move
@@ -1248,6 +1272,7 @@ namespace xtd {
       event<control, mouse_event_handler<control&>> mouse_down;
       
       /// @brief Occurs when the mouse pointer enters the control.
+      /// @ingroup events
       /// @remarks Mouse events occur in the following order:
       /// 1. xtd::forms::control::mouse_enter
       /// 2. xtd::forms::control::mouse_move
@@ -1273,6 +1298,7 @@ namespace xtd {
       event<control, event_handler<control&>> mouse_enter;
       
       /// @brief Occurs when the mouse hoirontal wheel moves while the control has focus.
+      /// @ingroup events
       /// @remarks When handling the mouse_hoorizontal_wheel event it is important to follow the user interface (UI) standards associated with the mouse wheel. The mouse_event_args::delta property value indicates the amount the mouse wheel has been moved.
       /// @remarks Mouse events occur in the following order:
       /// 1. xtd::forms::control::mouse_enter
@@ -1299,6 +1325,7 @@ namespace xtd {
       event<control, mouse_event_handler<control&>> mouse_horizontal_wheel;
       
       /// @brief Occurs when the mouse pointer leaves the control.
+      /// @ingroup events
       /// @remarks Mouse events occur in the following order:
       /// 1. xtd::forms::control::mouse_enter
       /// 2. xtd::forms::control::mouse_move
@@ -1324,6 +1351,7 @@ namespace xtd {
       event<control, event_handler<control&>> mouse_leave;
       
       /// @brief Occurs when the mouse pointer is moved over the control.
+      /// @ingroup events
       /// @remarks Mouse events occur in the following order:
       /// 1. xtd::forms::control::mouse_enter
       /// 2. xtd::forms::control::mouse_move
@@ -1349,6 +1377,7 @@ namespace xtd {
       event<control, mouse_event_handler<control&>> mouse_move;
       
       /// @brief Occurs when the mouse pointer is over the control and a mouse button is released.
+      /// @ingroup events
       /// @remarks Mouse events occur in the following order:
       /// 1. xtd::forms::control::mouse_enter
       /// 2. xtd::forms::control::mouse_move
@@ -1374,6 +1403,7 @@ namespace xtd {
       event<control, mouse_event_handler<control&>> mouse_up;
       
       /// @brief Occurs when the mouse wheel moves while the control has focus.
+      /// @ingroup events
       /// @remarks When handling the mouse_wheel event it is important to follow the user interface (UI) standards associated with the mouse wheel. The mouse_event_args::delta property value indicates the amount the mouse wheel has been moved. The UI should scroll when the accumulated delta is plus or minus 120. The UI should scroll the number of logical lines returned by the system_information::mouse_wheel_scroll_lines property for every delta value reached. You can also scroll more smoothly in smaller that 120 unit increments, however the ratio should remain constant, that is system_information::mouse_wheel_scroll_lines lines scrolled per 120 delta units of wheel movement.
       /// @remarks Mouse events occur in the following order:
       /// 1. xtd::forms::control::mouse_enter
@@ -1400,6 +1430,7 @@ namespace xtd {
       event<control, mouse_event_handler<control&>> mouse_wheel;
       
       /// @brief Occurs when the control is redrawn.
+      /// @ingroup events
       /// @remarks The paint event is raised when the control is redrawn. It passes an instance of paint_event_args to the method(s) that handles the paint event. The paint event is raised when the control is redrawn. It passes an instance of paint_event_args to the method(s) that handles the paint event.
       /// @remarks When creating a new custom control or an inherited control with a different visual appearance, you must provide code to render the control by overriding the on_paint method.
       /// @par Examples
@@ -1420,10 +1451,12 @@ namespace xtd {
       event<control, paint_event_handler<control&>> paint;
       
       /// @brief Occurs when the value of the parent property changes.
+      /// @ingroup events
       /// @remarks This event is raised if the parent property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> parent_changed;
       
       /// @brief Occurs when the control is resized.
+      /// @ingroup events
       /// @remarks To determine the size of the resized control, you can cast the sender parameter of the registered control_event_handler method to a control and get its size property (or height and width properties individually).
       /// @remarks To handle custom layouts, use the layout event instead of the resize event. The layout event is raised in response to a resize event, but also in response to other changes that affect the layout of the control.
       /// @par Examples
@@ -1444,14 +1477,17 @@ namespace xtd {
       event<control, event_handler<control&>> resize;
         
       /// @brief Occurs when the value of the size property changes.
+      /// @ingroup events
       /// @remarks This event is raised if the size property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> size_changed;
 
       /// @brief Occurs when the value of the text property changes.
+      /// @ingroup events
       /// @remarks This event is raised if the text property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> text_changed;
       
       /// @brief Occurs when the value of the visible property changes.
+      /// @ingroup events
       /// @remarks This event is raised if the visible property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> visible_changed;
 

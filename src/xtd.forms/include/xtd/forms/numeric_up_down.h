@@ -12,6 +12,10 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
+    /// @remarks A numeric_up_down control contains a single numeric value that can be incremented or decremented by clicking the up or down buttons of the control. The user can also enter in a value, unless the read_only property is set to true.
+    /// @remarks The numeric display can be formatted by setting the decimal_places, hexadecimal, or thousands_separator properties. To display hexadecimal values in the control, set the hexadecimal property to true. To display a thousands separator in decimal numbers when appropriate, set the thousands_separator property to true. To specify the number of digits displayed after the decimal symbol, set the ddecimal_places property to the number of decimal places to display.
+    /// @remarks To specify the allowable range of values for the control, set the minimum and maximum properties. Set the increment value to specify the value to be incremented or decremented to the value property when the user clicks the up or down arrow buttons. You can increase the speed that the control moves through numbers when the user continuously presses the up or down arrow by setting the accelerations property.
+    /// @remarks When the up_button or down_button methods are called, either in code or by the click of the up or down buttons, the new value is validated and the control is updated with the new value in the appropriate format. Specifically, if the user_edit property is set to true, the parse_edit_text method is called prior to validating or updating the value. The value is then verified to be between the minimum and maximum values, and the update_edit_text method is called.
     /// @par Examples
     /// The following code example demonstrate the use of numeric up down control.
     /// @include numeric_up_down.cpp
@@ -28,22 +32,58 @@ namespace xtd {
     /// <br>
     /// @image html numeric_up_down_gd.png
     class forms_export_ numeric_up_down : public up_down_base {
-    public:      
+    public:
+      /// @brief Initializes a new instance of the numeric_up_down class.
       numeric_up_down();
 
+      /// @brief Gets the number of decimal places to display in the spin box (also known as an up-down control). This property doesn't affect the value property.
+      /// @return The number of decimal places to display in the spin box. The default is 0.
+      /// @remarks When the decimal_places property is set, the update_edit_text method is called to update the spin box's display to the new format.
       virtual double decimal_place() {return decimal_place_;}
+      /// @brief Sets the number of decimal places to display in the spin box (also known as an up-down control). This property doesn't affect the value property.
+      /// @param value The number of decimal places to display in the spin box. The default is 0.
+      /// @return Current numeric_up_down.
+      /// @remarks When the decimal_places property is set, the update_edit_text method is called to update the spin box's display to the new format.
       virtual numeric_up_down& decimal_place(int32_t value);
 
+      /// @brief Gets the value to increment or decrement the spin box (also known as an up-down control) when the up or down buttons are clicked.
+      /// @return The value to increment or decrement the Value property when the up or down buttons are clicked on the spin box. The default value is 1.
+      /// @remarks Clicking the up button causes the value property to increment by the amount specified by the increment property and approach the maximum property. Clicking the down button causes the value property to be decremented by the amount specified by the increment property and approach the minimum property.
       virtual double increment() {return increment_;}
+      /// @brief Sets the value to increment or decrement the spin box (also known as an up-down control) when the up or down buttons are clicked.
+      /// @param value The value to increment or decrement the Value property when the up or down buttons are clicked on the spin box. The default value is 1.
+      /// @return Current numeric_up_down.
+      /// @remarks Clicking the up button causes the value property to increment by the amount specified by the increment property and approach the maximum property. Clicking the down button causes the value property to be decremented by the amount specified by the increment property and approach the minimum property.
       virtual numeric_up_down& increment(double value);
       
+      /// @brief Gets the maximum value for the spin box (also known as an up-down control).
+      /// @return The maximum value for the spin box. The default value is 100.
+      /// @remarks When the maximum property is set, the minimum property is evaluated and the update_edit_text method is called. If the minimum property is greater than the new maximum property, the minimum property value is set equal to the maximum value. If the current Value is greater than the new Maximum value. the value property value is set equal to the maximum value.
       virtual double maximum() {return maximum_;}
+      /// @brief Sets the maximum value for the spin box (also known as an up-down control).
+      /// @param value The maximum value for the spin box. The default value is 100.
+      /// @return Current numeric_up_down.
+      /// @remarks When the maximum property is set, the minimum property is evaluated and the update_edit_text method is called. If the minimum property is greater than the new maximum property, the minimum property value is set equal to the maximum value. If the current Value is greater than the new Maximum value. the value property value is set equal to the maximum value.
       virtual numeric_up_down& maximum(double value);
       
+      /// @brief Gets the minimum allowed value for the spin box (also known as an up-down control).
+      /// @return The minimum allowed value for the spin box. The default value is 0.
+      /// @remarks When the maximum property is set, the minimum property is evaluated and the update_edit_text method is called. If the minimum property is greater than the new maximum property, the minimum property value is set equal to the maximum value. If the current Value is greater than the new Maximum value. the value property value is set equal to the maximum value.
       virtual double minimum() {return minimum_;}
+      /// @brief Sets the minimum allowed value for the spin box (also known as an up-down control).
+      /// @param value The minimum allowed value for the spin box. The default value is 0.
+      /// @return Current numeric_up_down.
+      /// @remarks When the maximum property is set, the minimum property is evaluated and the update_edit_text method is called. If the minimum property is greater than the new maximum property, the minimum property value is set equal to the maximum value. If the current Value is greater than the new Maximum value. the value property value is set equal to the maximum value.
       virtual numeric_up_down& minimum(double value);
 
+      /// @brief Gets the value assigned to the spin box (also known as an up-down control).
+      /// @return The numeric value of the numeric_up_down control.
+      /// @remarks When the value property is set, the new value is validated to be between the minimum and maximum values. Following this, the update_edit_text method is called to update the spin box's display with the new value in the appropriate format.
       virtual double value() {return value_;}
+      /// @brief Sets the value assigned to the spin box (also known as an up-down control).
+      /// @param value The numeric value of the numeric_up_down control.
+      /// @return Current numeric_up_down.
+      /// @remarks When the value property is set, the new value is validated to be between the minimum and maximum values. Following this, the update_edit_text method is called to update the spin box's display with the new value in the appropriate format.
       virtual numeric_up_down& value(double value);
       
       virtual bool wrapped() {return wrapped_;}
@@ -63,6 +103,8 @@ namespace xtd {
       /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
       std::string to_string() const override {return strings::format("{}, minimum: {}, maximum: {}, value: {}", strings::full_class_name(*this), minimum_, maximum_, value_);}
 
+      /// @brief Occurs when the value property has been changed in some way.
+      /// @ingroup events
       event<numeric_up_down, event_handler<control&>> value_changed;
       
     protected:
@@ -78,10 +120,13 @@ namespace xtd {
       /// @param e A EventArgs that contains the event data.
       void on_handle_created(const event_args& e) override;
 
+      /// @brief Raises the value_changed event.
+      /// @param e An event_args that contains the event data.
       virtual void on_value_changed(const event_args& e);
 
-      /// @cond
       void wnd_proc(message& message) override;
+
+      /// @cond
       void wm_command(message& message);
       /// @endcond
 

@@ -269,15 +269,19 @@ namespace xtd {
       virtual forms::dialog_result show_sheet_dialog(const iwin32_window& owner);
       
       /// @brief Occurs when the form is activated in code or by the user.
+      /// @ingroup events
       event<form, event_handler<control&>> activated;
       
       /// @brief Occurs when the form loses focus and is no longer the active form.
+      /// @ingroup events
       event<form, event_handler<control&>> deactivate;
 
       /// @brief Occurs after the form is closed.
+      /// @ingroup events
       event<form, form_closed_event_handler<control&>> form_closed;
       
       /// @brief Occurs before the form is closed.
+      /// @ingroup events
       event<form, form_closing_event_handler<control&>> form_closing;
 
     protected:

@@ -118,9 +118,11 @@ namespace xtd {
       forms::create_params create_params() const override;
       
       /// @brief Occurs when the selected_item property has been changed.
+      /// @ingroup events
       event<domain_up_down, event_handler<control&>> selected_item_changed;
 
       /// @brief Occurs when the value property has been changed.
+      /// @ingroup events
       event<domain_up_down, event_handler<control&>> value_changed;
 
       /// @brief This is a special value equal to the maximum value representable by the type size_t.

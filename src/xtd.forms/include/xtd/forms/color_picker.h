@@ -60,6 +60,7 @@ namespace xtd {
       }
 
       /// @brief Occurs when the value of the color property changes.
+      /// @ingroup events
       event<color_picker, event_handler<control&>> color_changed;
       
     protected:
