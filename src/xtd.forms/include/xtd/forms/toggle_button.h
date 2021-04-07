@@ -102,9 +102,11 @@ namespace xtd {
       virtual toggle_button& three_state(bool three_state);
       
       /// @brief Occurs when the value of the checked property changes.
+      /// @ingroup events
       event<toggle_button, event_handler<control&>> checked_changed;
       
       /// @brief Occurs when the value of the check_state property changes.
+      /// @ingroup events
       event<toggle_button, event_handler<control&>> check_state_changed;
 
     protected:

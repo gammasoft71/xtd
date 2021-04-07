@@ -86,9 +86,11 @@ namespace xtd {
       std::string to_string() const override {return strings::format("{}, checked: {}", strings::full_class_name(*this), checked_);}
 
       /// @brief Occurs when the appearance property value changes.
+      /// @ingroup events
       event<radio_button, event_handler<control&>> appearance_changed;
 
       /// @brief Occurs when the value of the checked property changes.
+      /// @ingroup events
       event<radio_button, event_handler<control&>> checked_changed;
 
     protected:

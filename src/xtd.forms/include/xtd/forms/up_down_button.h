@@ -67,8 +67,11 @@ namespace xtd {
       std::string to_string() const override {return strings::format("{}, minimum: {}, maximum: {}, value: {}", strings::full_class_name(*this), minimum_, maximum_, value_);}
 
       /// @brief Occurs when either a mouse or keyboard action moves the scroll box.
+      /// @ingroup events
       event<up_down_button, event_handler<control&>> scroll;
 
+      /// @brief Occurs when the value of the value property changes.
+      /// @ingroup events
       event<up_down_button, event_handler<control&>> value_changed;
       
     protected:

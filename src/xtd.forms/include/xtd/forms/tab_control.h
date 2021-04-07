@@ -52,6 +52,7 @@ namespace xtd {
       virtual size_t selected_index() const {return selected_index_;}
       virtual tab_control& selected_index(size_t selected_index_);
 
+      /// @ingroup events
       event<tab_control, event_handler<control&>> selected_index_changed;
 
       /// @brief This is a special value equal to the maximum value representable by the type size_t.
