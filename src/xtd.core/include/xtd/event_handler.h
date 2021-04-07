@@ -10,11 +10,11 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents the method that will handle an event that has no event data.
+  /// @param sender The source of the event.
+  /// @param e An object that contains no event data.
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core events
-  /// @param sender The source of the event.
-  /// @param e An object that contains no event data.
   template<typename type_t>
   using event_handler = xtd::delegate<void(type_t sender, const event_args& e)>;
 }
