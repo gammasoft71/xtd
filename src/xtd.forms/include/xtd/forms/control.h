@@ -532,8 +532,8 @@ namespace xtd {
       /// @param parent A control that represents the parent or container control of the control  or nullptr for none.
       /// @return Current control.
       virtual control& parent(const control& parent);
-      /// @brief Sets the parent container of the control.
-      /// @param parent A control that represents the parent or container control of the control  or nullptr for none.
+      /// @brief Resets the parent container of the control.
+      /// @param nullptr.
       /// @return Current control.
       virtual control& parent(std::nullptr_t);
 
