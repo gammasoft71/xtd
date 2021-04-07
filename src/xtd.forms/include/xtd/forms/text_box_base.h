@@ -54,7 +54,10 @@ namespace xtd {
         return *this;
       }
       
+      /// @ingroup events
       event<text_box_base, event_handler<control&>> accepts_tab_changed;
+
+      /// @ingroup events
       event<text_box_base, event_handler<control&>> read_only_changed;
 
       virtual void append_text(const std::string& value) {

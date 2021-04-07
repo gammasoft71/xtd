@@ -73,6 +73,7 @@ namespace xtd {
       virtual bool use_system_password_char() const {return use_system_password_char_;}
       virtual text_box& use_system_password_char(bool value);
       
+      /// @ingroup events
       event<text_box, event_handler<control&>> accepts_return_changed;
 
       void append_text(const std::string& value) override;

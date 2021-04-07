@@ -751,6 +751,21 @@
 /// <br>
 /// @image html lcd_label2_gd.png
 ///
+/// @example list_box.cpp
+/// The following code example demonstrate the use of list_box control.
+/// @par Windows
+/// @image html list_box_w.png
+/// <br>
+/// @image html list_box_wd.png
+/// @par macOS
+/// @image html list_box_m.png
+/// <br>
+/// @image html list_box_md.png
+/// @par Gnome
+/// @image html list_box_g.png
+/// <br>
+/// @image html list_box_gd.png
+///
 /// @example main_menu.cpp
 /// The following code example demonstrate the use of main_menu control.
 /// @par Windows
@@ -781,6 +796,36 @@
 /// <br>
 /// @image html main_menu_create_standard_items_gd.png
 ///
+/// @example message_box.cpp
+/// The following code example demonstrate the use of message_box dialog.
+/// @par Windows
+/// @image html message_box_w.png
+/// <br>
+/// @image html message_box_wd.png
+/// @par macOS
+/// @image html message_box_m.png
+/// <br>
+/// @image html message_box_md.png
+/// @par Gnome
+/// @image html message_box_g.png
+/// <br>
+/// @image html message_box_gd.png
+///
+/// @example message_dialog.cpp
+/// The following code example demonstrate the use of message_dialog dialog.
+/// @par Windows
+/// @image html message_dialog_w.png
+/// <br>
+/// @image html message_dialog_wd.png
+/// @par macOS
+/// @image html message_dialog_m.png
+/// <br>
+/// @image html message_dialog_md.png
+/// @par Gnome
+/// @image html message_dialog_g.png
+/// <br>
+/// @image html message_dialog_gd.png
+///
 /// @example nine_segment_display.cpp
 /// The following code example demonstrate the use of nine segment display control.
 /// @par Windows
@@ -795,6 +840,21 @@
 /// @image html nine_segment_display_g.png
 /// <br>
 /// @image html nine_segment_display_gd.png
+///
+/// @example numeric_up_down.cpp
+/// The following code example demonstrate the use of numeric up down control.
+/// @par Windows
+/// @image html numeric_up_down_w.png
+/// <br>
+/// @image html numeric_up_down_wd.png
+/// @par macOS
+/// @image html numeric_up_down_m.png
+/// <br>
+/// @image html numeric_up_down_md.png
+/// @par Gnome
+/// @image html numeric_up_down_g.png
+/// <br>
+/// @image html numeric_up_down_gd.png
 ///
 /// @example open_file_dialog.cpp
 /// The following code example demonstrate the use of open_file_dialog dialog.

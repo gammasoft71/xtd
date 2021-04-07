@@ -55,6 +55,7 @@ namespace xtd {
         return *this;
       }
 
+      /// @ingroup events
       event<switch_button, event_handler<control&>> checked_changed;
 
     protected:

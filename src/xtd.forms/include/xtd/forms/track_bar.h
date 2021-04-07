@@ -128,9 +128,11 @@ namespace xtd {
       std::string to_string() const override {return strings::format("{}, minimum: {}, maximum: {}, value: {}", strings::full_class_name(*this), minimum_, maximum_, value_);}
       
       /// @brief Occurs when either a mouse or keyboard action moves the scroll box.
+      /// @ingroup events
       event<track_bar, event_handler<control&>> scroll;
 
       /// @brief Occurs when the value property of a track bar changes, either by movement of the scroll box or by manipulation in code.
+      /// @ingroup events
       event<track_bar, event_handler<control&>> value_changed;
       
     protected:
