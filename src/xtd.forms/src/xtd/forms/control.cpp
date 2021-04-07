@@ -1042,7 +1042,7 @@ void control::wm_mouse_wheel(message& message) {
 
 void control::wm_paint(message& message) {
   def_wnd_proc(message);
-  paint_event_args e(client_rectangle_, *this, get_state(state::double_buffered));
+  paint_event_args e(*this, client_rectangle_);
   on_paint(e);
 }
 
