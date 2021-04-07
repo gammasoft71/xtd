@@ -18,7 +18,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the common_dialog_closed_event_args class.
       common_dialog_closed_event_args() = default;
       /// @brief Initializes a new instance of the common_dialog_closed_event_args class.
-      /// @param dialog_result The dialog_result contains tthe result when closing dialog.
+      /// @param dialog_result The dialog_result contains the result when closing dialog.
       explicit common_dialog_closed_event_args(forms::dialog_result dialog_result) : dialog_result_(dialog_result) {};
       
       /// @brief Get the dialog_result contains tthe result when closing dialog.

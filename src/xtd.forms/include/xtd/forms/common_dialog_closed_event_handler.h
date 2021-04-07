@@ -14,7 +14,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms events
     /// @param sender The source of the event.
-    /// @param e An common_dialog_closed_event_args that contains no event data.
+    /// @param e An common_dialog_closed_event_args that contains event data.
     template<typename type_t>
     using common_dialog_closed_event_handler = delegate<void(type_t sender, const common_dialog_closed_event_args& e)>;
   }
