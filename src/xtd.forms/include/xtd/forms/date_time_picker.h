@@ -168,6 +168,7 @@ namespace xtd {
       drawing::size default_size() const override {return {100, 25};}
       
       /// @brief Occurs when the value of the value property changes.
+      /// @ingroup events
       event<date_time_picker, event_handler<control&>> value_changed;
 
     protected:

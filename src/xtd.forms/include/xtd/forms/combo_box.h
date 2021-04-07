@@ -102,6 +102,7 @@ namespace xtd {
       void end_update();
 
       /// @brief Occurs when the drop_down_style property has changed.
+      /// @ingroup events
       event<combo_box, event_handler<control&>> drop_down_style_changed;
       
     protected:

@@ -107,6 +107,7 @@ namespace xtd {
       xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner);
       
       /// @brief Occurs when the user close an exception dialog box with dialog close button or other dialog buttons.
+      /// @ingroup events
       event<exception_dialog, exception_dialog_closed_event_handler<exception_dialog&>> exception_dialog_closed;
 
     protected:

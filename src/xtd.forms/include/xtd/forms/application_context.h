@@ -76,6 +76,7 @@ namespace xtd {
       void tag(std::any tag) {tag_ = tag;}
 
       /// @brief Occurs when the message loop of the thread should be terminated, by calling exit_thread().
+      /// @ingroup events
       event<application_context, event_handler<const application_context&>> thread_exit;
       
       /// @brief Terminates the message loop of the thread.

@@ -86,9 +86,11 @@ namespace xtd {
       virtual list_control& selected_index(size_t selected_index) = 0;
                   
       /// @brief Occurs when the selected_index property changes.
+      /// @ingroup events
       event<list_control, event_handler<control&>> selected_index_changed;
 
       /// @brief Occurs when the selected_value property changes.
+      /// @ingroup events
       event<list_control, event_handler<control&>> selected_value_changed;
 
       /// @brief This is a special value equal to the maximum value representable by the type size_t.

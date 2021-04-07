@@ -69,6 +69,7 @@ namespace xtd {
       void expand() {expanded(true);}
       
       /// @brief Occurs when the expanded property changes.
+      /// @ingroup events
       xtd::event<collapsible_panel, xtd::event_handler<control&>> expanded_changed;
 
     protected:
