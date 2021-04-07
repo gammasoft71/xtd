@@ -10,6 +10,12 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @brief Represents the method that will handle the MouseDown, MouseUp, or MouseMove event of a form, control, or other component.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms events
+    /// @param sender The source of the event.
+    /// @param e A xtd::forms::mouse_event_args that contains the event data.
     template<typename type_t>
     using mouse_event_handler = delegate<void(type_t sender, const mouse_event_args& e)>;
   }
