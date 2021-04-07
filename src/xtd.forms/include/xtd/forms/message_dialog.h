@@ -3,13 +3,13 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <string>
-#include <xtd/delegate.h>
 #include "component.h"
 #include "dialog_style.h"
 #include "dialog_result.h"
 #include "help_event_handler.h"
 #include "iwin32_window.h"
 #include "message_dialog_buttons.h"
+#include "message_dialog_closed_event_handler.h"
 #include "message_dialog_default_button.h"
 #include "message_dialog_icon.h"
 #include "message_dialog_options.h"
@@ -22,17 +22,6 @@ struct __xtd_forms_message_dialog_closed_caller__;
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    class message_dialog_closed_event_args final : public event_args {
-    public:
-      message_dialog_closed_event_args() = default;
-      explicit message_dialog_closed_event_args(forms::dialog_result dialog_result) : dialog_result_(dialog_result) {};
-      
-      virtual forms::dialog_result dialog_result() const {return dialog_result_;}
-      
-    private:
-      forms::dialog_result dialog_result_ = forms::dialog_result::none;
-    };
-    
     template<typename type_t>
     using message_dialog_closed_event_handler = delegate<void(type_t sender, const message_dialog_closed_event_args& e)>;
   

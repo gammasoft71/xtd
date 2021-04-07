@@ -134,6 +134,8 @@ add_sources(
   include/xtd/forms/message_box_options.h
   include/xtd/forms/message_dialog.h
   include/xtd/forms/message_dialog_buttons.h
+  include/xtd/forms/message_dialog_closed_event_args.h
+  include/xtd/forms/message_dialog_closed_event_handler.h
   include/xtd/forms/message_dialog_default_button.h
   include/xtd/forms/message_dialog_icon.h
   include/xtd/forms/message_dialog_options.h
