@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::message_dialog_closed_event_args eventt args.
+/// @brief Contains xtd::forms::dialog_closed_event_args dialog.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/event_args.h>
@@ -8,17 +8,17 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    /// @brief Provides data for a message dialog closed event.
+    /// @brief Provides data for a dialog closed event.
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    class message_dialog_closed_event_args final : public event_args {
+    class dialog_closed_event_args final : public event_args {
     public:
-      /// @brief Initializes a new instance of the message_dialog_closed_event_args class.
-      message_dialog_closed_event_args() = default;
-      /// @brief Initializes a new instance of the message_dialog_closed_event_args class.
+      /// @brief Initializes a new instance of the dialog_closed_event_args class.
+      dialog_closed_event_args() = default;
+      /// @brief Initializes a new instance of the dialog_closed_event_args class.
       /// @param dialog_result The dialog_result contains the result when closing dialog.
-      explicit message_dialog_closed_event_args(forms::dialog_result dialog_result) : dialog_result_(dialog_result) {};
+      explicit dialog_closed_event_args(forms::dialog_result dialog_result) : dialog_result_(dialog_result) {};
       
       /// @brief Get the dialog_result contains tthe result when closing dialog.
       /// One of dialog_result enumerated values.

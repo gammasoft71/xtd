@@ -6,7 +6,7 @@
 #include "application.h"
 #include "form.h"
 #include "component.h"
-#include "common_dialog_closed_event_handler.h"
+#include "dialog_closed_event_handler.h"
 #include "dialog_result.h"
 #include "help_event_handler.h"
 #include "iwin32_window.h"
@@ -56,7 +56,7 @@ namespace xtd {
       xtd::forms::dialog_result show_dialog() {
         auto form = form::active_form();
         dialog_result_ = run_dialog(0) ? dialog_result::ok : dialog_result::cancel;
-        on_common_dialog_closed(common_dialog_closed_event_args(dialog_result_));
+        on_dialog_closed(dialog_closed_event_args(dialog_result_));
         if (form.has_value()) form.value().get().activate();
         return dialog_result_;
       }
@@ -68,7 +68,7 @@ namespace xtd {
       xtd::forms::dialog_result show_dialog(const iwin32_window& owner) {
         auto form = form::active_form();
         dialog_result_ = run_dialog(owner.handle()) ? dialog_result::ok : dialog_result::cancel;
-        on_common_dialog_closed(common_dialog_closed_event_args(dialog_result_));
+        on_dialog_closed(dialog_closed_event_args(dialog_result_));
         if (form.has_value()) form.value().get().activate();
         return dialog_result_;
       }
@@ -97,7 +97,7 @@ namespace xtd {
 
       /// @brief Occurs when the user close a common dialog box with dialog close button or other dialog buttons.
       /// @ingroup events
-      event<common_dialog, common_dialog_closed_event_handler<component&>> common_dialog_closed;
+      event<common_dialog, dialog_closed_event_handler<component&>> dialog_closed;
       
     protected:
       /// @cond
@@ -107,9 +107,9 @@ namespace xtd {
       /// @brief Raises the close event.
       /// @param e An common_dialog_close_event_args that provides the event data.
       /// @remarks This method is invoked when the common dialog box is closed.
-      virtual void on_common_dialog_closed(const common_dialog_closed_event_args& e) {
+      virtual void on_dialog_closed(const dialog_closed_event_args& e) {
         dialog_result_ = e.dialog_result();
-        common_dialog_closed(*this, e);
+        dialog_closed(*this, e);
       }
 
       /// @brief Raises the help_request event.

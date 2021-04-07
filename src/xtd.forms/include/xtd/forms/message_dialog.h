@@ -5,11 +5,11 @@
 #include <string>
 #include "component.h"
 #include "dialog_style.h"
+#include "dialog_closed_event_handler.h"
 #include "dialog_result.h"
 #include "help_event_handler.h"
 #include "iwin32_window.h"
 #include "message_dialog_buttons.h"
-#include "message_dialog_closed_event_handler.h"
 #include "message_dialog_default_button.h"
 #include "message_dialog_icon.h"
 #include "message_dialog_options.h"
@@ -22,9 +22,6 @@ struct __xtd_forms_message_dialog_closed_caller__;
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    template<typename type_t>
-    using message_dialog_closed_event_handler = delegate<void(type_t sender, const message_dialog_closed_event_args& e)>;
-  
     /// @brief Displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A message_dialog can contain text, buttons, and symbols that inform and instruct the user.
     /// @par Library
     /// xtd.forms
@@ -167,7 +164,7 @@ namespace xtd {
       
       /// @brief Occurs when the user close a message dialog box with dialog close button or other dialog buttons.
       /// @ingroup events
-      event<message_dialog, message_dialog_closed_event_handler<message_dialog&>> message_dialog_closed;
+      event<message_dialog, dialog_closed_event_handler<message_dialog&>> dialog_closed;
       
     private:
       /// @cond
@@ -177,9 +174,9 @@ namespace xtd {
       /// @brief Raises the close event.
       /// @param e An message_dialog_close_event_args that provides the event data.
       /// @remarks This method is invoked when the message dialog box is closed.
-      virtual void on_message_dialog_closed(const message_dialog_closed_event_args& e) {
+      virtual void on_dialog_closed(const dialog_closed_event_args& e) {
         dialog_result_ = e.dialog_result();
-        message_dialog_closed(*this, e);
+        dialog_closed(*this, e);
       }
 
       xtd::forms::message_dialog_buttons buttons_ = xtd::forms::message_dialog_buttons::ok;

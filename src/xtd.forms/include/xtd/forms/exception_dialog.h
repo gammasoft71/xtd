@@ -4,13 +4,13 @@
 #pragma once
 #include <functional>
 #include <string>
-#include <xtd/delegate.h>
 #include <xtd/version.h>
 #include <xtd/drawing/icon.h>
 #include <xtd/system_exception.h>
 #include "component.h"
 #include "dialog_result.h"
 #include "dialog_style.h"
+#include "dialog_closed_event_handler.h"
 #include "iwin32_window.h"
 #include "layout/arranged_element_collection.h"
 
@@ -18,20 +18,6 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    class exception_dialog_closed_event_args final : public event_args {
-    public:
-      exception_dialog_closed_event_args() = default;
-      explicit exception_dialog_closed_event_args(forms::dialog_result dialog_result) : dialog_result_(dialog_result) {};
-      
-      virtual forms::dialog_result dialog_result() const {return dialog_result_;}
-      
-    private:
-      forms::dialog_result dialog_result_ = forms::dialog_result::none;
-    };
-    
-    template<typename type_t>
-    using exception_dialog_closed_event_handler = delegate<void(type_t sender, const exception_dialog_closed_event_args& e)>;
-    
     /// @brief Represents a common dialog box that displays exception box.
     /// @par Library
     /// xtd.forms
@@ -108,15 +94,15 @@ namespace xtd {
       
       /// @brief Occurs when the user close an exception dialog box with dialog close button or other dialog buttons.
       /// @ingroup events
-      event<exception_dialog, exception_dialog_closed_event_handler<exception_dialog&>> exception_dialog_closed;
+      event<exception_dialog, dialog_closed_event_handler<exception_dialog&>> dialog_closed;
 
     protected:
       /// @brief Raises the close event.
       /// @param e An exception_dialog_closed_event_args that provides the event data.
       /// @remarks This method is invoked when the exception dialog box is closed.
-      void on_exception_dialog_closed(const exception_dialog_closed_event_args& e) {
+      void on_dialog_closed(const dialog_closed_event_args& e) {
         dialog_result_ = e.dialog_result();
-        exception_dialog_closed(*this, e);
+        dialog_closed(*this, e);
       }
       
     private:
