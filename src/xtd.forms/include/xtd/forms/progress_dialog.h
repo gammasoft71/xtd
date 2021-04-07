@@ -41,7 +41,12 @@ namespace xtd {
       
       bool skipped() const;
       
+      /// @brief Gets the dialog style.
+      /// @return One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
       xtd::forms::dialog_style dialog_style() const {return dialog_style_;}
+      /// @brief Sets the dialog style.
+      /// @param dialog_style One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
+      /// @return Current progress dialog.
       progress_dialog& dialog_style(xtd::forms::dialog_style dialog_style) {
         if (dialog_style_ != dialog_style) {
           dialog_style_ = dialog_style;
@@ -58,7 +63,12 @@ namespace xtd {
       /// @return Current progress_dialog instance.
       progress_dialog& informations(const std::vector<std::string>& informations);
 
+      /// @brief Gets a value that Indicates progress by continuously scrolling a block across a progress_bar in a marquee fashion.
+      /// @return truee is marquee; otherwise false. The default is false.
       bool marquee() const {return get_option(PROGDLG_MARQUEEPROGRESS);}
+      /// @brief Gets a value that Indicates progress by continuously scrolling a block across a progress_bar in a marquee fashion.
+      /// @param marquee truee is marquee; otherwise false. The default is false.
+      /// @return Current progress_dialog instance.
       progress_dialog& marquee(bool marquee);
       
       /// @brief Gets he time period, in milliseconds, that it takes the progress block to scroll across the progress bar.
