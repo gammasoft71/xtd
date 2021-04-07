@@ -11,7 +11,7 @@ namespace xtd {
     /// @brief Represents a method that will check whether the hosting environment is still sending messages.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms
+    /// @ingroup xtd_forms events
     /// @return true if the hosting environment is still sending messages; otherwise, false.
     /// @remarks This delegate is used with the application::register_message_loop method.
     using message_loop_callback = delegate<bool()>;
