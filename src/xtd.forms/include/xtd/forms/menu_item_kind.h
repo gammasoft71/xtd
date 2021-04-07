@@ -8,11 +8,20 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @brief Represent menu item kind used by xtd::forms::menu_item component.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms
     enum class menu_item_kind {
+      /// Normal menu item.
       normal = 0,
+      /// Check menu item.
       check = 1,
+      /// Radio menu item.
       radio = 2,
+      /// Drop down menu item.
       drop_down = 3,
+      /// seprator menu item.
       separator = 4,
     };
 
