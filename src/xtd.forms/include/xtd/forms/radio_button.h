@@ -45,6 +45,7 @@ namespace xtd {
       virtual forms::appearance appearance() const {return appearance_;}
       /// @brief Sets a value determining the appearance of the radio_button.
       /// @param appearance One of the appearance values. The default value is normal.
+      /// @return Current radio_button instance.
       /// @remarks If the appearance value is set to normal, then the radio_button control is drawn with a circular check box. If the value is set to button, then the radio_button is drawn as a control that can be toggled to an up or down state. Either type can display text, an image, or both.
       virtual radio_button& appearance(forms::appearance appearance);
 
@@ -55,6 +56,7 @@ namespace xtd {
       virtual bool auto_check() const {return auto_check_;}
       /// @brief Sets a value indicating whether the checked value and the appearance of the control automatically change when the control is clicked.
       /// @param auto_check true if the checked value and the appearance of the control automatically change on the click event; otherwise, false. The default value is true.
+      /// @return Current radio_button instance.
       /// @remarks If the checked value is set to false, the radio_button portion of the control must be checked in code in the click event handler. In addition, if the radio_button is part of a radio_button control group, this property ensures that only one of the controls is checked at a given time.
       /// @remarks If the auto_check property is set to false, a group of radio_button controls will not act as a mutually exclusive group and the checked property must be updated in code.
       virtual radio_button& auto_check(bool auto_check);
@@ -64,6 +66,7 @@ namespace xtd {
       virtual bool checked() const {return checked_;}
       /// @brief Sets a value indicating whether the control is checked.
       /// @param checked true if the check box is checked; otherwise, false.
+      /// @return Current radio_button instance.
       virtual radio_button& checked(bool checked);
       
       /// @brief Gets the horizontal and vertical alignment of the check mark on a check_box control.
@@ -71,6 +74,7 @@ namespace xtd {
       virtual content_alignment check_align() const {return check_align_;}
       /// @brief Sets the horizontal and vertical alignment of the check mark on a check_box control.
       /// @param check_align One of the content_alignment values. The default value is middle_left.
+      /// @return Current radio_button instance.
       virtual radio_button& check_align(content_alignment check_align);
 
       /// @brief Gets the default size of the control.

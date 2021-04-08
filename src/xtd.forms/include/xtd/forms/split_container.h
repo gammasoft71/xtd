@@ -32,6 +32,7 @@ namespace xtd {
     /// @image html split_container_gd.png
     class forms_export_ split_container : public  xtd::forms::scrollable_control {
     public:
+      /// @brief Initializes a new instance of the split_container class.
       split_container() {
         can_focus_ = false;
         size_ = default_size();
@@ -40,8 +41,41 @@ namespace xtd {
       }
       
       drawing::size default_size() const override {return {150, 100};}
+
+      /// @brief Gets a value indicating the horizontal or vertical orientation of the split_container panels.
+      /// @return One of the orientation values. The default is vertical.
+      virtual xtd::forms::orientation orientation() const {return orientation_;}
+      /// @brief Sets a value indicating the horizontal or vertical orientation of the split_container panels.
+      /// @param orientation One of the orientation values. The default is vertical.
+      /// @return Current split_container instance.
+      virtual split_container& orientation(xtd::forms::orientation orientation) {
+        if (orientation_ != orientation) {
+          orientation_ = orientation;
+          arrange_childs();
+        }
+        return *this;
+      }
       
+      /// @brief Gets the left or top panel of the splitter_panel, depending on orientation.
+      /// @return If orientation is vertical, the left panel of the split_container. If orientation is horizontal, the top panel of the split_container.
+      virtual const splitter_panel& panel1() const {return panel1_;};
+      /// @brief Gets the left or top panel of the splitter_panel, depending on orientation.
+      /// @return If orientation is vertical, the left panel of the split_container. If orientation is horizontal, the top panel of the split_container.
+      virtual splitter_panel& panel1() {return panel1_;};
+
+      /// @brief Gets the right or bottom panel of the splitter_panel, depending on orientation.
+      /// @return If orientation is vertical, the right panel of the split_container. If orientation is horizontal, the bottom panel of the split_container.
+      virtual const splitter_panel& panel2() const {return panel2_;};
+      /// @brief Gets the right or bottom panel of the splitter_panel, depending on orientation.
+      /// @return If orientation is vertical, the right panel of the split_container. If orientation is horizontal, the bottom panel of the split_container.
+      virtual splitter_panel& panel2() {return panel2_;};
+
+      /// @brief Gets the location of the splitter, in pixels, from the left or top edge of the split_container.
+      /// @return An int32_t representing the location of the splitter, in pixels, from the left or top edge of the split_container. The default value is 50 pixels.
       virtual int splitter_distance() const {return splitter_distance_;}
+      /// @brief Sets the location of the splitter, in pixels, from the left or top edge of the split_container.
+      /// @param splitter_distance An int32_t representing the location of the splitter, in pixels, from the left or top edge of the split_container. The default value is 50 pixels.
+      /// @return Current split_container instance.
       virtual split_container& splitter_distance(int splitter_distance) {
         if (splitter_distance_ != splitter_distance) {
           splitter_distance_ = splitter_distance;
@@ -51,16 +85,12 @@ namespace xtd {
         return *this;
       }
 
-      virtual xtd::forms::orientation orientation() const {return orientation_;}
-      virtual split_container& orientation(xtd::forms::orientation orientation) {
-        if (orientation_ != orientation) {
-          orientation_ = orientation;
-          arrange_childs();
-        }
-        return *this;
-      }
-      
+      /// @brief Gets the style of the splitter.
+      /// @return One of xtd::forms::splitter_style values. The default is xtd::forms::splitter_style::update_childs
       virtual xtd::forms::splitter_style splitter_style() const {return splitter_.splitter_style();}
+      /// @brief Sets the style of the splitter.
+      /// @param splitter_style One of xtd::forms::splitter_style values. The default is xtd::forms::splitter_style::update_childs
+      /// @return Current split_container instance.
       virtual split_container& splitter_style(xtd::forms::splitter_style splitter_style) {
         if (splitter_.splitter_style() != splitter_style) {
           splitter_.splitter_style(splitter_style);
@@ -68,7 +98,14 @@ namespace xtd {
         return *this;
       }
       
+      /// @brief Gets or sets the width of the splitter in pixels.
+      /// @return An int32_t representing the width of the splitter, in pixels. The default is four pixels.
+      /// @remarks Use the splitter_width property to change the width of the splitter itself, not the split_container.
       virtual int splitter_width() const {return splitter_width_;}
+      /// @brief Gets or sets the width of the splitter in pixels.
+      /// @param splitter_width An int32_t representing the width of the splitter, in pixels. The default is four pixels.
+      /// @return Current split_container instance.
+      /// @remarks Use the splitter_width property to change the width of the splitter itself, not the split_container.
       virtual split_container& splitter_width(int splitter_width) {
         if (splitter_width_ != splitter_width) {
           splitter_width_ = splitter_width;
@@ -76,11 +113,6 @@ namespace xtd {
         }
         return *this;
       }
-      
-      virtual const splitter_panel& panel1() const {return panel1_;};
-      virtual splitter_panel& panel1() {return panel1_;};
-      virtual const splitter_panel& panel2() const {return panel2_;};
-      virtual splitter_panel& panel2() {return panel2_;};
       
     protected:
       void on_resize(const event_args& e) override {
