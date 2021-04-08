@@ -26,6 +26,22 @@ namespace xtd {
         return xtd::forms::control::dock(dock);
       }
       
+      /// @brief Gets the string used to separate date and/or time from trace text.
+      /// @return A string that represent separator. By default is "|".
+      virtual const std::string& header_separator() const {return header_separator_;}
+      /// @brief Sets the string used to separate date and/or time from trace text.
+      /// @param header_separator A string that represent separator. By default is "|".
+      /// @return Current trace_form_base.
+      virtual trace_form_base& header_separator(const std::string& header_separator) {
+        if (header_separator_ != header_separator_) {
+          header_separator_ = header_separator;
+          update_format();
+        }
+        return *this;
+      }
+
+      const std::string& name() const override {return form::name();}
+      
       /// @brief Gets a vallue indicate if date is showing before trace text.
       /// @return true is date showing; otherwise false. By default is true.
       virtual bool show_date() const {return show_date_;}
@@ -53,23 +69,7 @@ namespace xtd {
         }
         return *this;
       }
-      
-      /// @brief Gets the string used to separate date and/or time from trace text.
-      /// @return A string that represent separator. By default is "|".
-      virtual const std::string& header_separator() const {return header_separator_;}
-      /// @brief Sets the string used to separate date and/or time from trace text.
-      /// @param header_separator A string that represent separator. By default is "|".
-      /// @return Current trace_form_base.
-      virtual trace_form_base& header_separator(const std::string& header_separator) {
-        if (header_separator_ != header_separator_) {
-          header_separator_ = header_separator;
-          update_format();
-        }
-        return *this;
-      }
 
-      const std::string& name() const override {return form::name();}
-      
    protected:
       /// @brief Initializes a new instance of the trace_form_base class with spefied caption text.
       /// @param text A string that represent the caption text oof the debug form.
