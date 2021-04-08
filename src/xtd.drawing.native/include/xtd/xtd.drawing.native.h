@@ -1,8 +1,5 @@
 #pragma once
 
-/// @defgroup xtd_drawing_native xtd.drawing.native
-/// @brief xtd.drawing.native library contains native api definitions used by xtd.drawing library.
-
 #include <xtd/strings.h>
 #include "drawing/native/brush.h"
 #include "drawing/native/font_family.h"

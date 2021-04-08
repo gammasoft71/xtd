@@ -3,36 +3,6 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
-/// @defgroup application application
-/// @brief application definitions.
-
-/// @defgroup components components
-/// @brief Components are objects that an application uses in conjunction with another window.
-
-/// @defgroup containers containers
-/// @brief Containers are  container for other controls.
-
-/// @defgroup controls  controls
-/// @brief Controls are childs windows that an application uses in conjunction with another window to enable interaction with the user.
-
-/// @defgroup debug debug
-/// @brief All needed for debugging and tracing.
-
-/// @defgroup dialogs dialogs
-/// @brief Common  dialogs consist of the open file, save file, open folder, find and replace, print, page setup, font, color dialog boxes, about, busy, message dialog boxes.
-
-/// @defgroup events events
-/// @brief events are event args and event handler needed to response to window messages.
-
-/// @defgroup forms forms
-/// @brief forms definitions.
-
-/// @defgroup menus_and_toolbars   menus and toolbars
-/// @brief  menus and toolbars definitions.
-
-/// @defgroup xtd_forms xtd.forms
-/// @brief The xtd.foms library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
-
 #include <xtd/xtd.core>
 #include <xtd/xtd.drawing>
 #include <xtd/forms/create_params.h>

@@ -8,20 +8,21 @@ add_include_directories(include)
 include(references.cmake)
 add_sources(
   include/xtd/xtd
-  include/xtd/cmake_page.h
-  include/xtd/controls_appearances_page.h
-  include/xtd/cursors_appearances_page.h
-  include/xtd/dialogs_appearances_page.h
-  include/xtd/format_page.h
-  include/xtd/license_page.h
-  include/xtd/main_page.h
   include/xtd/system_report.h
-  include/xtd/xtd_core_examples.h
-  include/xtd/xtd_forms_examples.h
-  include/xtd/xtd_tunit_examples.h
   include/xtd/xtd
   include/xtd/xtd.h
   src/xtd/system_report.cpp
+  include/doxygen/cmake_page.h
+  include/doxygen/controls_appearances_page.h
+  include/doxygen/cursors_appearances_page.h
+  include/doxygen/dialogs_appearances_page.h
+  include/doxygen/format_page.h
+  include/doxygen/groups.h
+  include/doxygen/license_page.h
+  include/doxygen/main_page.h
+  include/doxygen/xtd_core_examples.h
+  include/doxygen/xtd_forms_examples.h
+  include/doxygen/xtd_tunit_examples.h
 )
 add_sources(
   ../../locale/en/about_dialog.strings

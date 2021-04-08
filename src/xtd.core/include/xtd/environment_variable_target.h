@@ -9,7 +9,7 @@ namespace xtd {
   /// @brief Specifies the location where an environment variable is stored or retrieved in a set or get operation.
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core
+  /// @ingroup xtd_core utilities
   enum class environment_variable_target {
     /// @brief The environment variable is stored or retrieved from the environment block associated with the current process.
     process = 0,
