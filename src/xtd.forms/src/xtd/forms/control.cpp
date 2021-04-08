@@ -44,6 +44,10 @@ namespace {
       return mouse_buttons::middle;
     return mouse_buttons::none;
   }
+  
+  bool is_trace_form_or_control(const std::string& name) {
+    return name == "9f5767d6-7a21-4ebe-adfe-2427b2024a55" || name == "d014d407-851c-49c1-a343-3380496a639a";
+  }
 }
 
 forms::keys control::modifier_keys_ = forms::keys::none;
@@ -732,7 +736,7 @@ intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_
 }
 
 void control::wnd_proc(message& message) {
-  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!xtd::strings::starts_with(name(), "9f5767d6-7a21-4ebe-adfe-2427b2024a55") && enable_debug::get(enable_debug::events), strings::format("({}) receive message [{}]", *this, message));
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::events), strings::format("({}) receive message [{}]", *this, message));
   switch (message.msg()) {
       // keyboard:
     case WM_CHAR:
@@ -850,10 +854,10 @@ void control::do_layout_childs_with_dock_style() {
 
   if (docked) {
     drawing::rectangle docking_rect = {{0, 0}, client_size()};
-    if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(enable_debug::get(enable_debug::layout), strings::format("({}) do_layout :", *this));
+    if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), strings::format("({}) do_layout :", *this));
     if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::indent();
-    if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(enable_debug::get(enable_debug::layout), strings::format("docking_rect = {}", docking_rect));
-    if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(enable_debug::get(enable_debug::layout), strings::format("padding = {}", padding_));
+    if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), strings::format("docking_rect = {}", docking_rect));
+    if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), strings::format("padding = {}", padding_));
     docking_rect.left(docking_rect.left() + padding_.left());
     docking_rect.top(docking_rect.top() + padding_.top());
     docking_rect.width(docking_rect.width() - padding_.left() - padding_.right());
@@ -865,31 +869,31 @@ void control::do_layout_childs_with_dock_style() {
         iterator->get().width(docking_rect.width());
         docking_rect.top(docking_rect.top() + iterator->get().height());
         docking_rect.height(docking_rect.height() - iterator->get().height());
-        if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(enable_debug::get(enable_debug::layout), strings::format("top ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
+        if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), strings::format("top ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
       } else if (iterator->get().dock() == dock_style::bottom) {
         iterator->get().location({docking_rect.left(), docking_rect.bottom() - iterator->get().height()});
         iterator->get().width(docking_rect.width());
         docking_rect.height(docking_rect.height() - iterator->get().height());
-        if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(enable_debug::get(enable_debug::layout), strings::format("bottom ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
+        if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), strings::format("bottom ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
       } else if (iterator->get().dock() == dock_style::left) {
         iterator->get().location({docking_rect.left(), docking_rect.top()});
         iterator->get().height(docking_rect.height());
         docking_rect.left(docking_rect.left() + iterator->get().width());
         docking_rect.width(docking_rect.width() - iterator->get().width());
-        if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(enable_debug::get(enable_debug::layout), strings::format("left ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
+        if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), strings::format("left ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
       } else if (iterator->get().dock() == dock_style::right) {
         iterator->get().location({docking_rect.right() - iterator->get().width(), docking_rect.top()});
         iterator->get().height(docking_rect.height());
         docking_rect.width(docking_rect.width() - iterator->get().width());
-        if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(enable_debug::get(enable_debug::layout), strings::format("right ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
+        if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), strings::format("right ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
       } else if (iterator->get().dock() == dock_style::fill) {
         iterator->get().location({docking_rect.left(), docking_rect.top()});
         iterator->get().size({docking_rect.width(), docking_rect.height()});
-        if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(enable_debug::get(enable_debug::layout), strings::format("fill ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
+        if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), strings::format("fill ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
       }
     }
     if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::unindent();
-    if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(enable_debug::get(enable_debug::layout), strings::format("({}) end do_layout :", *this));
+    if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), strings::format("({}) end do_layout :", *this));
   }
 }
 
@@ -940,7 +944,7 @@ void control::wm_command(message& message) {
 }
 
 void control::wm_key_char(message& message) {
-  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(enable_debug::get(enable_debug::key_events), strings::format("({}) receive message [{}]", *this, message));
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::key_events), strings::format("({}) receive message [{}]", *this, message));
   if (message.msg() == WM_KEYDOWN || message.msg ()== WM_SYSKEYDOWN) {
     key_event_args key_event_args(static_cast<keys>(message.wparam()));
     modifier_keys_ = key_event_args.modifiers();
@@ -969,7 +973,7 @@ void control::wm_kill_focus(message& message) {
 }
 
 void control::wm_mouse_down(message& message) {
-  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(enable_debug::get(enable_debug::mouse_events), strings::format("({}) receive message [{}]", *this, message));
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), strings::format("({}) receive message [{}]", *this, message));
   def_wnd_proc(message);
   set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
   mouse_event_args e = mouse_event_args::create(message, get_state(state::double_click_fired));
@@ -978,7 +982,7 @@ void control::wm_mouse_down(message& message) {
 }
 
 void control::wm_mouse_double_click(message& message) {
-  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(enable_debug::get(enable_debug::mouse_events), strings::format("({}) receive message [{}]", *this, message));
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), strings::format("({}) receive message [{}]", *this, message));
   def_wnd_proc(message);
   set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
   on_double_click(event_args::empty);
@@ -986,21 +990,21 @@ void control::wm_mouse_double_click(message& message) {
 }
 
 void control::wm_mouse_enter(message& message) {
-  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(enable_debug::get(enable_debug::mouse_events), strings::format("({}) receive message [{}]", *this, message));
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), strings::format("({}) receive message [{}]", *this, message));
   mouse_in_ = true;
   def_wnd_proc(message);
   on_mouse_enter(event_args::empty);
 }
 
 void control::wm_mouse_leave(message& message) {
-  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(enable_debug::get(enable_debug::mouse_events), strings::format("({}) receive message [{}]", *this, message));
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), strings::format("({}) receive message [{}]", *this, message));
   mouse_in_ = false;
   def_wnd_proc(message);
   on_mouse_leave(event_args::empty);
 }
 
 void control::wm_mouse_up(message& message) {
-  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(enable_debug::get(enable_debug::mouse_events), strings::format("({}) receive message [{}]", *this, message));
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), strings::format("({}) receive message [{}]", *this, message));
   def_wnd_proc(message);
   mouse_event_args e = mouse_event_args::create(message);
   mouse_buttons_ &= ~e.button();
@@ -1010,17 +1014,17 @@ void control::wm_mouse_up(message& message) {
 }
 
 void control::wm_mouse_move(message& message) {
-  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(enable_debug::get(enable_debug::mouse_events), strings::format("({}) receive message [{}]", *this, message));
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), strings::format("({}) receive message [{}]", *this, message));
   def_wnd_proc(message);
   mouse_event_args e = mouse_event_args(wparam_to_mouse_buttons(message), get_state(control::state::double_click_fired) ? 2 : 1, point_to_client({(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}), 0);
   // Workaround : sometimes mouse enter and/or mouse leave message are not send
   // For example on macos when mouse down in control and mouse is moved out then moved in, the mouse enter messege is not send...
   // The two followed line fixed it
   if (!mouse_in_ && client_rectangle().contains(e.location())) {
-    xtd::diagnostics::debug::write_line_if(enable_debug::trace_switch().trace_warning() && enable_debug::get(enable_debug::workaround), "Workaround : mouse enter event !!!");
+    xtd::diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::trace_switch().trace_warning() && enable_debug::get(enable_debug::workaround), "Workaround : mouse enter event !!!");
     wm_mouse_enter(message);
   } else if (mouse_in_ && !client_rectangle().contains(e.location())) {
-    xtd::diagnostics::debug::write_line_if(enable_debug::trace_switch().trace_warning() && enable_debug::get(enable_debug::workaround), "Workaround : mouse leave event !!!");
+    xtd::diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::trace_switch().trace_warning() && enable_debug::get(enable_debug::workaround), "Workaround : mouse leave event !!!");
     wm_mouse_leave(message);
   }
   on_mouse_move(e);
@@ -1035,6 +1039,7 @@ void control::wm_move(message& message) {
 }
 
 void control::wm_mouse_wheel(message& message) {
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), strings::format("({}) receive message [{}]", *this, message));
   def_wnd_proc(message);
   if (message.msg() == WM_MOUSEHWHEEL)
     on_mouse_horizontal_wheel(mouse_event_args::create(message, get_state(state::double_click_fired), static_cast<int32_t>(HIWORD(message.wparam()))));
