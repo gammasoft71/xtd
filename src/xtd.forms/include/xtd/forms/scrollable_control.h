@@ -9,6 +9,10 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @brief Defines a base class for controls that support auto-scrolling behavior.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms
     class forms_export_ scrollable_control : public control {
     public:
       /// @brief Gets a value indicating whether the container enables the user to scroll to any controls placed outside of its visible boundaries.

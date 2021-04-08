@@ -991,6 +991,21 @@
 /// <br>
 /// @image html screen_gd.png
 ///
+/// @example settings_example.cpp
+/// The following code example demonstrate the use of settings class.
+/// @par Windows
+/// @image html settings_example_w.png
+/// <br>
+/// @image html settings_example_wd.png
+/// @par macOS
+/// @image html settings_example_m.png
+/// <br>
+/// @image html settings_example_md.png
+/// @par Gnome
+/// @image html settings_example_g.png
+/// <br>
+/// @image html settings_example_gd.png
+///
 /// @example seven_segment_display.cpp
 /// The following code example demonstrate the use of seven segment display control.
 /// @par Windows
