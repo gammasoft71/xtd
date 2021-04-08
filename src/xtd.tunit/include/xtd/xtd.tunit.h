@@ -3,9 +3,6 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
-/// @defgroup xtd_tunit xtd.tunit
-/// @brief The xtd.tunit library contains compnents needed for unit testing.
-
 #include "abort_error.h"
 #include "assert.h"
 #include "assert_error.h"

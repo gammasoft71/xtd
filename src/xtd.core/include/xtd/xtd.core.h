@@ -3,24 +3,6 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
-/// @defgroup exceptions exceptions
-/// @brief Exceptions definitions.
-
-/// @defgroup keywords keywords
-/// @brief Keywords are predefined, reserved identifiers that have special meanings to the compiler.
-
-/// @defgroup interfaces interfaces
-/// @brief Interfaces definitions.
-
-/// @defgroup literals literals
-/// @brief Literals allows integer, floating-point, character, and string literals to produce objects.
-
-/// @defgroup types types
-/// @brief Types definitions
-
-/// @defgroup xtd_core xtd.core
-/// @brief The xtd.core library contains all fundamental classes to access Hardware, Os, System, and more.
-
 #include "__generic_stream_output.h" // must be included first
 #include "__get_err_rdbuf.h"
 #include "__get_in_rdbuf.h"
