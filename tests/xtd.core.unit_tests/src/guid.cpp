@@ -51,8 +51,9 @@ namespace unit_tests {
       map<guid, guid> guids;
       for (int32_t i = 0; i < 1'000; i++) {
         xtd::guid guid = xtd::guid::new_guid();
-        assert::is_true_(guids.find(guid) == guids.end());
-        guids[guid] = guid;
+        auto it = guids.find(guid);
+        assert::is_true_(it == guids.end());
+        it->second = guid;
       }
     }
     

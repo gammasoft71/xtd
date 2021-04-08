@@ -83,8 +83,9 @@ std::string __opaque_environment::get_know_folder_path(int id) noexcept {
 #else
   static std::map<xtd::environment::special_folder, std::string> special_folders = {{xtd::environment::special_folder::desktop, xtd::environment::expand_environment_variables("%HOME%/Desktop")}, {xtd::environment::special_folder::my_documents, xtd::environment::expand_environment_variables("%HOME%")}, {xtd::environment::special_folder::my_music, xtd::environment::expand_environment_variables("%HOME%/Music")}, {xtd::environment::special_folder::my_videos, xtd::environment::expand_environment_variables("%HOME%/Videos")}, {xtd::environment::special_folder::desktop_directory, xtd::environment::expand_environment_variables("%HOME%/Desktop")}, {xtd::environment::special_folder::fonts, xtd::environment::expand_environment_variables("%HOME%/.fonts")}, {xtd::environment::special_folder::templates, xtd::environment::expand_environment_variables("%HOME%/Templates")}, {xtd::environment::special_folder::application_data, xtd::environment::expand_environment_variables("%HOME%/.config")}, {xtd::environment::special_folder::local_application_data, xtd::environment::expand_environment_variables("%HOME%/.local/share")}, {xtd::environment::special_folder::common_application_data, "/usr/share"}, {xtd::environment::special_folder::my_pictures, xtd::environment::expand_environment_variables("%HOME%/Pictures")}, {xtd::environment::special_folder::user_profile, xtd::environment::expand_environment_variables("%HOME%")}, {xtd::environment::special_folder::common_templates, "/usr/share/templates"}};
 #endif
-  if (special_folders.find(static_cast<xtd::environment::special_folder>(id)) == special_folders.end()) return "";
-  return special_folders[static_cast<xtd::environment::special_folder>(id)];
+  auto it = special_folders.find(static_cast<xtd::environment::special_folder>(id));
+  if (it == special_folders.end()) return "";
+  return it->second;
 }
 
 std::string __opaque_environment::get_machine_name() noexcept {
