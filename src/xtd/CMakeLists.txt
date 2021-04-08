@@ -12,17 +12,17 @@ add_sources(
   include/xtd/xtd
   include/xtd/xtd.h
   src/xtd/system_report.cpp
-  include/doxygen/cmake_page.h
-  include/doxygen/controls_appearances_page.h
-  include/doxygen/cursors_appearances_page.h
-  include/doxygen/dialogs_appearances_page.h
-  include/doxygen/format_page.h
-  include/doxygen/groups.h
-  include/doxygen/license_page.h
-  include/doxygen/main_page.h
-  include/doxygen/xtd_core_examples.h
-  include/doxygen/xtd_forms_examples.h
-  include/doxygen/xtd_tunit_examples.h
+  include/doxygen/cmake_page.dox
+  include/doxygen/controls_appearances_page.dox
+  include/doxygen/cursors_appearances_page.dox
+  include/doxygen/dialogs_appearances_page.dox
+  include/doxygen/format_page.dox
+  include/doxygen/groups.dox
+  include/doxygen/license_page.dox
+  include/doxygen/main_page.dox
+  include/doxygen/xtd_core_examples.dox
+  include/doxygen/xtd_forms_examples.dox
+  include/doxygen/xtd_tunit_examples.dox
 )
 add_sources(
   ../../locale/en/about_dialog.strings
