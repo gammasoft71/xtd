@@ -7,16 +7,16 @@ using namespace xtd::drawing;
 
 int main() {
   font font1(font_family::generic_monospace(), 42.0f, font_style::bold);
-  cout << format("font1 = {0}", font1) << endl;
+  cout << strings::format("font1 = {0}", font1) << endl;
 
   font font2("Times New Roman", 24.0f);
-  cout << format("font2 = {0}", font2) << endl;
+  cout << strings::format("font2 = {0}", font2) << endl;
 
   font font3(font_family::generic_serif(), 24.0f);
-  cout << format("font3 = {0}", font3) << endl;
+  cout << strings::format("font3 = {0}", font3) << endl;
 
-  cout << format("font1 {0} font2", font1 == font2 ? "==" : "!=") << endl;
-  cout << format("font2 {0} font3", font2 == font3 ? "==" : "!=") << endl;
+  cout << strings::format("font1 {0} font2", font1 == font2 ? "==" : "!=") << endl;
+  cout << strings::format("font2 {0} font3", font2 == font3 ? "==" : "!=") << endl;
 }
 
 // This code can produce the following output:

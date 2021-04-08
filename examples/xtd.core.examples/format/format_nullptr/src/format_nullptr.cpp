@@ -4,10 +4,10 @@ using namespace std;
 using namespace xtd;
 
 int main() {
-  cout << format("{}", nullptr) << endl;
-  cout << format("{}", null) << endl;
-  cout << format("{}", NULL) << endl;
-  cout << format("{}", 0) << endl;
+  cout << strings::format("{}", nullptr) << endl;
+  cout << strings::format("{}", null) << endl;
+  cout << strings::format("{}", NULL) << endl;
+  cout << strings::format("{}", 0) << endl;
 }
 
 // This code produces the following output :

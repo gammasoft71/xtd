@@ -4,17 +4,17 @@ using namespace std;
 using namespace xtd;
 
 int main() {
-  cout << format("{}", true) << endl;
-  cout << format("{:b}", true) << endl;
-  cout << format("{:B}", true) << endl;
-  cout << format("{:d}", true) << endl;
-  cout << format("{:D}", true) << endl;
-  cout << format("{:g}", true) << endl;
-  cout << format("{:G}", true) << endl;
-  cout << format("{:o}", true) << endl;
-  cout << format("{:O}", true) << endl;
-  cout << format("{:x}", true) << endl;
-  cout << format("{:X}", true) << endl;
+  cout << strings::format("{}", true) << endl;
+  cout << strings::format("{:b}", true) << endl;
+  cout << strings::format("{:B}", true) << endl;
+  cout << strings::format("{:d}", true) << endl;
+  cout << strings::format("{:D}", true) << endl;
+  cout << strings::format("{:g}", true) << endl;
+  cout << strings::format("{:G}", true) << endl;
+  cout << strings::format("{:o}", true) << endl;
+  cout << strings::format("{:O}", true) << endl;
+  cout << strings::format("{:x}", true) << endl;
+  cout << strings::format("{:X}", true) << endl;
 }
 
 // This code produces the following output :

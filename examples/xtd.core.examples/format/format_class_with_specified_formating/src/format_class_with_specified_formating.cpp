@@ -18,7 +18,7 @@ public:
     throw format_exception(caller_info_);
   }
 
-  // Only this operator is needed for character class to be recognized by format() without specified formating.
+  // Only this operator is needed for character class to be recognized by strings::format() without specified formating.
   friend ostream& operator<<(ostream& os, const character& value) noexcept {return os << value.to_string();}
   
 private:
@@ -26,16 +26,16 @@ private:
   string rank_;
 };
 
-// Only this method is needed for character class to be recognized by format() with specified formating (F, N or R).
+// Only this method is needed for character class to be recognized by strings::format() with specified formating (F, N or R).
 template<>
 string xtd::to_string(const character& value, const string& fmt, const locale& loc) {return value.to_string(fmt);}
 
 int main() {
   character c("Jean-Luc Picard", "Captain");
-  cout << format("{}", c) << endl;
-  cout << format("{:F}", c) << endl;
-  cout << format("{:N}", c) << endl;
-  cout << format("{:R}", c) << endl;
+  cout << strings::format("{}", c) << endl;
+  cout << strings::format("{:F}", c) << endl;
+  cout << strings::format("{:N}", c) << endl;
+  cout << strings::format("{:R}", c) << endl;
 }
 
 // This code produces the following output :

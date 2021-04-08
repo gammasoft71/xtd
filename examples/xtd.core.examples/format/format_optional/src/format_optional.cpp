@@ -4,8 +4,8 @@ using namespace std;
 using namespace xtd;
 
 int main() {
-  cout << format("{}", optional<string>()) << endl;
-  cout << format("{}", optional<string>("Optional string")) << endl;
+  cout << strings::format("{}", optional<string>()) << endl;
+  cout << strings::format("{}", optional<string>("Optional string")) << endl;
 }
 
 // This code produces the following output :

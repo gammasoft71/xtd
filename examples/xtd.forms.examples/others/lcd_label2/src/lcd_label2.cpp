@@ -24,7 +24,7 @@ int main() {
   label.text("  0.0");
 
   timer.tick += [&] {
-    label.text(format("{,5:F1}", counter++ / 10.0));
+    label.text(strings::format("{,5:F1}", counter++ / 10.0));
   };
 
   label.mouse_down += [&] {

@@ -4,7 +4,7 @@ using namespace std;
 using namespace xtd;
 
 int main() {
-  cout << format("{}", make_pair(1, "one")) << endl;
+  cout << strings::format("{}", make_pair(1, "one")) << endl;
 }
 
 // This code produces the following output :

@@ -6,22 +6,22 @@ using namespace xtd;
 
 int main() {
   auto duration = 26h + 3min + 32s + 24ms + 500ns;
-  cout << format("{}", duration) << endl;
-  cout << format("{:c}", duration) << endl;
-  cout << format("{:d}", duration) << endl;
-  cout << format("{:D}", duration) << endl;
-  cout << format("{:f}", duration) << endl;
-  cout << format("{:F}", duration) << endl;
-  cout << format("{:g}", duration) << endl;
-  cout << format("{:G}", duration) << endl;
-  cout << format("{:h}", duration) << endl;
-  cout << format("{:H}", duration) << endl;
-  cout << format("{:m}", duration) << endl;
-  cout << format("{:M}", duration) << endl;
-  cout << format("{:n}", duration) << endl;
-  cout << format("{:N}", duration) << endl;
-  cout << format("{:s}", duration) << endl;
-  cout << format("{:S}", duration) << endl;
+  cout << strings::format("{}", duration) << endl;
+  cout << strings::format("{:c}", duration) << endl;
+  cout << strings::format("{:d}", duration) << endl;
+  cout << strings::format("{:D}", duration) << endl;
+  cout << strings::format("{:f}", duration) << endl;
+  cout << strings::format("{:F}", duration) << endl;
+  cout << strings::format("{:g}", duration) << endl;
+  cout << strings::format("{:G}", duration) << endl;
+  cout << strings::format("{:h}", duration) << endl;
+  cout << strings::format("{:H}", duration) << endl;
+  cout << strings::format("{:m}", duration) << endl;
+  cout << strings::format("{:M}", duration) << endl;
+  cout << strings::format("{:n}", duration) << endl;
+  cout << strings::format("{:N}", duration) << endl;
+  cout << strings::format("{:s}", duration) << endl;
+  cout << strings::format("{:S}", duration) << endl;
 }
 
 // This code produces the following output :
