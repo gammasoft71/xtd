@@ -27,16 +27,29 @@ namespace xtd {
     /// @image html switch_button_gd.png
     class switch_button : public button_base {
     public:
+      /// Initialize new instance of switch_button class.
       switch_button() = default;
       
+      /// @brief Gets a value indicating whether the checked and the switch_button's appearance are automatically changed when the switch_button is clicked.
+      /// @return true if the checked value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
+      /// @remarks If auto_check is set to false, you will need to add code to update the checked in the click event handler.
       virtual bool auto_check() const {return auto_check_;}
+      /// @brief Sets a value indicating whether the checked and the switch_button's appearance are automatically changed when the switch_button is clicked.
+      /// @param auto_check true if the checked value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
+      /// @return Current switch_button instance.
+      /// @remarks If auto_check is set to false, you will need to add code to update the checked in the click event handler.
       virtual switch_button& auto_check(bool auto_check) {
         if (auto_check_ != auto_check)
           auto_check_ = auto_check;
         return *this;
       }
       
+      /// @brief Gets a value indicating whether the switch_button is rouded appearance.
+      /// @return true if the switch_button is in the rounded appearance; otherwise, false. The default value is true.
       virtual bool rounded() const {return rounded_;}
+      /// @brief Sets a value indicating whether the switch_button is rouded appearance.
+      /// @param value true if the switch_button is in the rounded appearance; otherwise, false. The default value is true.
+      /// @return Current switch_button instance.
       virtual switch_button& rounded(bool value) {
         if (rounded_ != value) {
           rounded_ = value;
@@ -45,7 +58,12 @@ namespace xtd {
         return *this;
       }
       
+      /// @brief Gets a value indicating whether the switch_button is in the checked state.
+      /// @return true if the switch_button is in the checked state; otherwise, false. The default value is false.
       virtual bool checked() const {return checked_;}
+      /// @brief Sets a value indicating whether the switch_button is in the checked state.
+      /// @param checked true if the switch_button is in the checked state; otherwise, false. The default value is false.
+      /// @return Current switch_button instance.
       virtual switch_button& checked(bool checked) {
         if (checked_ != checked) {
           checked_ = checked;
@@ -55,10 +73,15 @@ namespace xtd {
         return *this;
       }
 
+      /// @brief Occurs when the value of the checked property changes.
       /// @ingroup events
       event<switch_button, event_handler<control&>> checked_changed;
 
     protected:
+      /// @brief Raises the checked_changed event.
+      /// @param e An event_args that contains the event data.
+      /// @remarks Raising an event invokes the event handler through a delegate.
+      /// @remarks The on_checked_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
       virtual void on_checked_changed(const event_args& e) {checked_changed(*this, e);}
 
       void on_mouse_down(const mouse_event_args& e) override {
