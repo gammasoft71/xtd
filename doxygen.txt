@@ -35,7 +35,7 @@ OPTIMIZE_FOR_FORTRAN   = NO
 OPTIMIZE_OUTPUT_VHDL   = NO
 EXTENSION_MAPPING      = 
 MARKDOWN_SUPPORT       = YES
-TOC_INCLUDE_HEADINGS   = 0
+TOC_INCLUDE_HEADINGS   = 5
 AUTOLINK_SUPPORT       = YES
 BUILTIN_STL_SUPPORT    = NO
 CPP_CLI_SUPPORT        = NO
@@ -109,9 +109,9 @@ INPUT                  = src/xtd/include \
                          src/xtd.core/include \
                          src/xtd.drawing/include \
                          src/xtd.forms/include \
-                         src/xtd.tunit/include \
-#                        src/xtd.drawing.native/include \
-#                        src/xtd.forms.native/include \
+                         src/xtd.tunit/include
+#                         src/xtd.drawing.native/include \
+#                         src/xtd.forms.native/include
 INPUT_ENCODING         = UTF-8
 FILE_PATTERNS          = *.dox *.h *.md
 RECURSIVE              = YES # Default: NO
