@@ -37,8 +37,12 @@ namespace xtd {
       progress_dialog() = default;
       ~progress_dialog() {hide();}
       
+      /// @brief Gets whether user has clicked on cancel butttoon.
+      /// @return true if user has clicked on cancel button; otherwise false.
       bool cancelled() const;
-      
+
+      /// @brief Gets whether user has clicked on skip butttoon.
+      /// @return true if user has clicked on skip button; otherwise false.
       bool skipped() const;
       
       /// @brief Gets the dialog style.
@@ -109,20 +113,45 @@ namespace xtd {
       /// @param minimum The minimum value of the range. The default is 0.
       /// @remarks This property specifies the lower limit of the value property. When the value of the minimum property is changed, the progress_bar control is redrawn to reflect the new range of the control. When the value of the value property is equal to the value of the minimum property, the progress bar is empty. To change the value of the progress bar, use the step property with the perform_step method, use the increment method, or set the value of the value property directly.
       progress_dialog& minimum(int32_t minimum);
-      
+
+      /// @brief Gets a value that indicates whether cancel button is shown.
+      /// @return true if cancel button shown; otherwise false. By default false.
       bool show_cancel_button() const {return !get_option(PROGDLG_NOCANCEL);}
+      /// @brief Sets a value that indicates whether cancel button is shown.
+      /// @param show_cancel_button true if cancel button is shown; otherwise false. By default false.
+      /// @return Current progress_dialog instance.
       progress_dialog& show_cancel_button(bool show_cancel_button);
       
+      /// @brief Gets a value that indicates whether ealapsed time is shown.
+      /// @return true if elapsed time is shown; otherwise false. By default false.
       bool show_elapsed_time() const {return !get_option(PROGDLG_ELAPSEDTIME);}
+      /// @brief Sets a value that indicates whether elapsed time is shown.
+      /// @param show_elapsed_time true if elapsed time is shown; otherwise false. By default false.
+      /// @return Current progress_dialog instance.
       progress_dialog& show_elapsed_time(bool show_elapsed_time);
       
+      /// @brief Gets a value that indicates whether estimated time is shown.
+      /// @return true if estimated time is shown; otherwise false. By default false.
       bool show_estimated_time() const {return !get_option(PROGDLG_ESTIMATEDTIME);}
+      /// @brief Sets a value that indicates whether estimated time is shown.
+      /// @param show_estimated_time true if estimated time is shown; otherwise false. By default false.
+      /// @return Current progress_dialog instance.
       progress_dialog& show_estimated_time(bool show_estimated_time);
 
+      /// @brief Gets a value that indicates whether remaining time is shown.
+      /// @return true if remaining time is shown; otherwise false. By default false.
       bool show_remaining_time() const {return !get_option(PROGDLG_AUTOTIME);}
+      /// @brief Sets a value that indicates whether remaining time is shown.
+      /// @param show_remaining_time true if remaining time is shown; otherwise false. By default false.
+      /// @return Current progress_dialog instance.
       progress_dialog& show_remaining_time(bool show_remaining_time);
 
+      /// @brief Gets a value that indicates whether skip button is shown.
+      /// @return true if skipv button shown; otherwise false. By default false.
       bool show_skip_button() const {return !get_option(PROGDLG_NOSKIP);}
+      /// @brief Sets a value that indicates whether skip button is shown.
+      /// @param show_skip_button true if skip button is shown; otherwise false. By default false.
+      /// @return Current progress_dialog instance.
       progress_dialog& show_skip_button(bool show_skip_button);
 
       /// @brief Gets the amount by which a call to the PerformStep() method increases the current position of the progress bar.
@@ -161,6 +190,7 @@ namespace xtd {
       /// @remarks The minimum and maximum values of the value property are specified by the minimum and maximum properties. This property enables you to increment or decrement the value of the progress bar directly. To perform consistent increases in the value of the progress_bar control you can use the step property with the perform_step method. To increase the progress bar value by varying amounts, use the increment method.
       progress_dialog& value(int32_t value);
 
+      /// @brief Hides progress dialog box.
       void hide();
 
       /// @brief Advances the current position of the progress bar by the specified amount.
@@ -176,19 +206,19 @@ namespace xtd {
       /// @brief Resets all properties to empty string.
       void reset();
       
-      /// @brief Runs busy dialog box.
+      /// @brief Runs progress dialog box.
       void show();
-      /// @brief Runs busy dialog box.
+      /// @brief Runs progress dialog box.
       void show(const iwin32_window& owner);
       
-      /// @brief Runs busy dialog box.
+      /// @brief Runs progress dialog box.
       void show_sheet(const iwin32_window& owner);
       
-      /// @brief Runs busy dialog box.
+      /// @brief Runs progress dialog box.
       void show_dialog();
-      /// @brief Runs busy dialog box.
+      /// @brief Runs progress dialog box.
       void show_dialog(const iwin32_window& owner);
-      /// @brief Runs busy dialog box.
+      /// @brief Runs progress dialog box.
       void show_sheet_dialog(const iwin32_window& owner);
 
     private:
