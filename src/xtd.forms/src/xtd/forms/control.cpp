@@ -367,8 +367,9 @@ bool control::focus() {
 
 std::optional<std::reference_wrapper<control>> control::from_child_handle(intptr_t handle) {
   try {
-    if (handles_.find(handle) != handles_.end())
-      return handles_[handle]->parent();
+    auto it = handles_.find(handle);
+    if (it != handles_.end())
+      return it->second->parent();
     return std::optional<std::reference_wrapper<control>>();
   } catch (...) {
     return std::optional<std::reference_wrapper<control>>();
@@ -377,8 +378,9 @@ std::optional<std::reference_wrapper<control>> control::from_child_handle(intptr
 
 std::optional<std::reference_wrapper<control>> control::from_handle(intptr_t handle) {
   try {
-    if (handles_.find(handle) != handles_.end())
-      return *handles_[handle];
+    auto it = handles_.find(handle);
+    if (it != handles_.end())
+      return *it->second;
     return std::optional<std::reference_wrapper<control>>();
   } catch (...) {
     return std::optional<std::reference_wrapper<control>>();

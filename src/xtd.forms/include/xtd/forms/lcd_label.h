@@ -171,9 +171,10 @@ namespace xtd {
             {L'\u20AC', {{3, 0}, {4, 0}, {5, 0}, {2, 1}, {1, 2}, {2, 2}, {3, 2}, {4, 2}, {5, 2}, {2, 3}, {1, 4}, {2, 4}, {3, 4}, {4, 4}, {5, 4}, {2, 5}, {3, 6}, {4, 6}, {5, 6}}},
           };
           if (character_ != value) {
-            if (characters.find(value) == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), caller_info_);
+            auto it = characters.find(value);
+            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), caller_info_);
             character_ = value;
-            dot_matrix_display::set_dots(characters[value]);
+            dot_matrix_display::set_dots(it->second);
           }
         }
         void set_segment_style(forms::segment_style value) override {}
@@ -280,9 +281,10 @@ namespace xtd {
             {':', forms::segments::pc}
           };
           if (character_ != value) {
-            if (characters.find(value) == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), caller_info_);
+            auto it = characters.find(value);
+            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), caller_info_);
             character_ = value;
-            fourteen_segment_display::value(characters[value]);
+            fourteen_segment_display::value(it->second);
           }
         }
         void set_segment_style(forms::segment_style value) override {fourteen_segment_display::segment_style(value);}
@@ -369,9 +371,10 @@ namespace xtd {
             {':', forms::segments::pc}
           };
           if (character_ != value) {
-            if (characters.find(value) == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), caller_info_);
+            auto it = characters.find(value);
+            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), caller_info_);
             character_ = value;
-            nine_segment_display::value(characters[value]);
+            nine_segment_display::value(it->second);
           }
         }
         void set_segment_style(forms::segment_style value) override {nine_segment_display::segment_style(value);}
@@ -458,9 +461,10 @@ namespace xtd {
             {',', forms::segments::dp},
             {':', forms::segments::pc}};
           if (character_ != value) {
-            if (characters.find(value) == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), caller_info_);
+            auto it = characters.find(value);
+            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), caller_info_);
             character_ = value;
-            seven_segment_display::value(characters[value]);
+            seven_segment_display::value(it->second);
           }
         }
         void set_segment_style(forms::segment_style value) override {seven_segment_display::segment_style(value);}
@@ -567,9 +571,10 @@ namespace xtd {
             {':', forms::segments::pc}
           };
           if (character_ != value) {
-            if (characters.find(value) == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), caller_info_);
+            auto it = characters.find(value);
+            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), caller_info_);
             character_ = value;
-            sixteen_segment_display::value(characters[value]);
+            sixteen_segment_display::value(it->second);
           }
         }
         void set_segment_style(forms::segment_style value) override {sixteen_segment_display::segment_style(value);}

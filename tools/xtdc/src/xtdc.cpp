@@ -876,9 +876,10 @@ namespace xtdc_command {
         if (show_help) cout << strings::join("\n", get_help()) << endl;
         return 0;
       }
-      map<string, function<int(const vector<string>&)>> commands {{"add", add}, {"build", build}, {"clean", clean}, {"documentation", documentation}, {"examples", examples}, {"guide", guide}, {"help", help}, {"install", install}, {"new", new_project}, {"open", open}, {"update", update}, {"run", run}, {"targets", targets}, {"test", test}, {"uninstall", uninstall}, {"web", web}};
-      if (commands.find(command_args[0]) == commands.end()) return invalid_command(command_args);
-      return commands[command_args[0]](command_args);
+      static map<string, function<int(const vector<string>&)>> commands {{"add", add}, {"build", build}, {"clean", clean}, {"documentation", documentation}, {"examples", examples}, {"guide", guide}, {"help", help}, {"install", install}, {"new", new_project}, {"open", open}, {"update", update}, {"run", run}, {"targets", targets}, {"test", test}, {"uninstall", uninstall}, {"web", web}};
+      auto it = commands.find(command_args[0]);
+      if (it == commands.end()) return invalid_command(command_args);
+      return it->second(command_args);
     }
   };
 }

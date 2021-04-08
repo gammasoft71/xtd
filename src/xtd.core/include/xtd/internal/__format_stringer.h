@@ -117,7 +117,8 @@ namespace xtd {
 
   template<typename type_t, typename string_t>
   inline string_t to_string(type_t value, const std::map<type_t, string_t, std::greater<type_t>>& values) {
-    if (values.find(value) != values.end()) return values.find(value)->second;
+    auto it = values.find(value);
+    if (it != values.end()) return it->second;
     string_t result;
     long long rest = static_cast<long long>(value);
     for (auto item : values) {
