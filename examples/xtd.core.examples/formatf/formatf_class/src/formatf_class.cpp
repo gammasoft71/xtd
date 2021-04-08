@@ -21,7 +21,7 @@ using characters = vector<character>;
 
 int main() {
   for (auto c : characters {{"Jean-Luc Picard", "Captain"}, {"William Riker", "Commander"}, {"Data", "Commander"}, {"Beverly Crusher", "Commander"}, {"Geordi La Forge", "Lieutenant Commander"}, {"Worf", "Lieutenant Commander"}, {"Tasha Yar", "Lieutenant"}})
-    cout << formatf("%s", c.to_string()) << endl;
+    cout << strings::formatf("%s", c.to_string()) << endl;
 }
 
 // This code produces the following output :

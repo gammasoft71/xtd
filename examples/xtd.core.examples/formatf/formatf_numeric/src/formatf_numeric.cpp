@@ -4,12 +4,12 @@ using namespace std;
 using namespace xtd;
 
 int main() {
-  cout << formatf("%i", 42) << endl;
-  cout << formatf("%u", 42u) << endl;
-  cout << formatf("%d", 42) << endl;
-  cout << formatf("0%o", 42) << endl;
-  cout << formatf("0x%04x", 42) << endl;
-  cout << formatf("0x%04X", 42) << endl;
+  cout << strings::formatf("%i", 42) << endl;
+  cout << strings::formatf("%u", 42u) << endl;
+  cout << strings::formatf("%d", 42) << endl;
+  cout << strings::formatf("0%o", 42) << endl;
+  cout << strings::formatf("0x%04x", 42) << endl;
+  cout << strings::formatf("0x%04X", 42) << endl;
 }
 
 // This code produces the following output :
