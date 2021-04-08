@@ -1081,6 +1081,21 @@
 /// <br>
 /// @image html tab_control_gd.png
 ///
+/// @example texts.cpp
+/// The following code example demonstrate the use of texts class.
+/// @par Windows
+/// @image html texts_w.png
+/// <br>
+/// @image html texts_wd.png
+/// @par macOS
+/// @image html texts_m.png
+/// <br>
+/// @image html texts_md.png
+/// @par Gnome
+/// @image html texts_g.png
+/// <br>
+/// @image html texts_gd.png
+///
 /// @example trace_form.cpp
 /// The following code example demonstrate the use of trace_form form.
 /// @par Windows
@@ -1095,4 +1110,19 @@
 /// @image html trace_form_g.png
 /// <br>
 /// @image html trace_form_gd.png
+///
+/// @example use_wait_cursor.cpp
+/// The following code example demonstrate the use of use_wait_cursor class.
+/// @par Windows
+/// @image html use_wait_cursor_w.png
+/// <br>
+/// @image html use_wait_cursor_wd.png
+/// @par macOS
+/// @image html use_wait_cursor_m.png
+/// <br>
+/// @image html use_wait_cursor_md.png
+/// @par Gnome
+/// @image html use_wait_cursor_g.png
+/// <br>
+/// @image html use_wait_cursor_gd.png
 ///
