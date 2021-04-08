@@ -68,7 +68,9 @@ namespace xtd {
         return *this;
       }
 
-    protected:
+      const std::string& name() const override {return form::name();}
+      
+   protected:
       /// @brief Initializes a new instance of the trace_form_base class with spefied caption text.
       /// @param text A string that represent the caption text oof the debug form.
       trace_form_base(const std::string& text) {
@@ -132,6 +134,8 @@ namespace xtd {
       }
 
     private:
+      using form::name;
+      
       void update_format() {
         format_ = "";
         if (show_date_ && show_time_) format_ = "{0:u}.{1:D6}{2}" + format_;
