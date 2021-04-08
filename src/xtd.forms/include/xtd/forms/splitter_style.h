@@ -8,8 +8,14 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @brief Represent splitter style used by splitter control.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms
     enum class splitter_style {
+      /// @brief Draw line splitter style.
       draw_line = 0,
+      /// @brief Update childs splitter style.
       update_childs = 1
     };
 
