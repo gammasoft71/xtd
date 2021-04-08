@@ -931,6 +931,36 @@
 /// <br>
 /// @image html progress_dialog_gd.png
 ///
+/// @example radio_button.cpp
+/// The following code example demonstrate the use of radio_button control.
+/// @par Windows
+/// @image html radio_button_w.png
+/// <br>
+/// @image html radio_button_wd.png
+/// @par macOS
+/// @image html radio_button_m.png
+/// <br>
+/// @image html radio_button_md.png
+/// @par Gnome
+/// @image html radio_button_g.png
+/// <br>
+/// @image html radio_button_gd.png
+///
+/// @example radio_buttons.cpp
+/// The following code example demonstrate the use of radio_button control facttory.
+/// @par Windows
+/// @image html radio_buttons_w.png
+/// <br>
+/// @image html radio_buttons_wd.png
+/// @par macOS
+/// @image html radio_buttons_m.png
+/// <br>
+/// @image html radio_buttons_md.png
+/// @par Gnome
+/// @image html radio_buttons_g.png
+/// <br>
+/// @image html radio_buttons_gd.png
+///
 /// @example save_file_dialog.cpp
 /// The following code example demonstrate the use of save_file_dialog dialog.
 /// @par Windows
