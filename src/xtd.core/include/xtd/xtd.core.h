@@ -44,7 +44,6 @@
 #include "event_args.h"
 #include "event_handler.h"
 #include "foreground_color.h"
-#include "format.h"
 #include "format_exception.h"
 #include "func.h"
 #include "guid.h"

@@ -4,8 +4,8 @@
 #pragma once
 #include <vector>
 #include <xtd/environment.h>
-#include <xtd/format.h>
 #include <xtd/static.h>
+#include <xtd/strings.h>
 #include <xtd/version.h>
 #include <xtd/drawing/color.h>
 #include <xtd/drawing/font.h>
@@ -34,7 +34,7 @@ namespace xtd {
       
       const std::string& resources_path() const {return resources_path_;}
       
-      std::string to_string() const {return xtd::format("{} (version {})", name_, version_);}
+      std::string to_string() const {return xtd::strings::format("{} (version {})", name_, version_);}
       
     private:
       friend class system_report;

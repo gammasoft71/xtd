@@ -5,8 +5,8 @@
 #include <cstdint>
 #include <map>
 #include <vector>
-#include "format.h"
 #include "language_id.h"
+#include "strings.h"
 #include "version.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -57,14 +57,14 @@ namespace xtd {
 
     std::string name() const noexcept {
       static std::map<language_id, std::string> names {{language_id::cpp_pre98, "C++ Pre 98"}, {language_id::cpp98, "C++ 98"}, {language_id::cpp11, "C++ 11"}, {language_id::cpp14, "C++ 14"}, {language_id::cpp17, "C++ 17"}, {language_id::cpp20, "C++ 20"}, {language_id::unknown, "<unknown>"}};
-      if (is_experimental_language()) return format("Experimental {}", names[experimental_language()]);
+      if (is_experimental_language()) return strings::format("Experimental {}", names[experimental_language()]);
       return names[language()];
     }
     
     uint32_t value() const noexcept {return cpp_;}
 
     std::string version_string() const noexcept {
-      return format("{} {}", name(), version());
+      return strings::format("{} {}", name(), version());
     }
     
     const xtd::version& version() const noexcept {

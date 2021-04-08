@@ -16,20 +16,20 @@ namespace xtd {
         explicit property(const std::string& value) : value_(value) {}
         operator std::string() {return value_;}
         
-        static property from(bool value) {return property(format("{}", value));}
-        static property from(double value) {return property(format("{}", value));}
-        static property from(float value) {return property(format("{}", value));}
-        static property from(int8_t value) {return property(format("{}", value));}
-        static property from(int16_t value) {return property(format("{}", value));}
-        static property from(int32_t value) {return property(format("{}", value));}
-        static property from(int64_t value) {return property(format("{}", value));}
-        static property from(const std::string& value) {return property(format("{}", value));}
-        static property from(uint8_t value) {return property(format("{}", value));}
-        static property from(uint16_t value) {return property(format("{}", value));}
-        static property from(uint32_t value) {return property(format("{}", value));}
-        static property from(uint64_t value) {return property(format("{}", value));}
+        static property from(bool value) {return property(strings::format("{}", value));}
+        static property from(double value) {return property(strings::format("{}", value));}
+        static property from(float value) {return property(strings::format("{}", value));}
+        static property from(int8_t value) {return property(strings::format("{}", value));}
+        static property from(int16_t value) {return property(strings::format("{}", value));}
+        static property from(int32_t value) {return property(strings::format("{}", value));}
+        static property from(int64_t value) {return property(strings::format("{}", value));}
+        static property from(const std::string& value) {return property(strings::format("{}", value));}
+        static property from(uint8_t value) {return property(strings::format("{}", value));}
+        static property from(uint16_t value) {return property(strings::format("{}", value));}
+        static property from(uint32_t value) {return property(strings::format("{}", value));}
+        static property from(uint64_t value) {return property(strings::format("{}", value));}
         template<typename value_t>
-        static property from(value_t value) {return property(format("{}", value));}
+        static property from(value_t value) {return property(strings::format("{}", value));}
         
         const std::string& value() const {return value_;}
         template<typename value_t>

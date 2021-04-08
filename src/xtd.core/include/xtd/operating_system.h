@@ -4,8 +4,8 @@
 #pragma once
 #include <map>
 #include <vector>
-#include "format.h"
 #include "platform_id.h"
+#include "strings.h"
 #include "version.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
