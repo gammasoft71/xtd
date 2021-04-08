@@ -17,6 +17,7 @@ namespace xtd {
     public:      
       
     protected:
+      /// @brief Intializes a new instance of scroll_bar class.
       scroll_bar() = default;
     };
   }
