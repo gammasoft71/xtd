@@ -1,5 +1,5 @@
-#include <xtd/format.h>
 #include <xtd/cdebug.h>
+#include <xtd/strings.h>
 #include <xtd/forms/native/main_menu.h>
 #include "../../../include/xtd/forms/menu_item.h"
 #include "../../../include/xtd/forms/main_menu.h"
@@ -93,10 +93,10 @@ void main_menu::destroy_menu_handle(intptr_t handle) {
 
 void main_menu::wm_click(message& message) {
   for (auto item : handles_) {
-    cdebug << format("handle = 0x{:X}, menu = {}", item.first, item.second) << std::endl;
+    cdebug << strings::format("handle = 0x{:X}, menu = {}", item.first, item.second) << std::endl;
   }
   auto menu = static_cast<menu_item*>(handles_[message.lparam()]);
-  cdebug << format("Menu click : wparam = {}, lparam = 0x{:X}, menu = {}", message.wparam(), message.lparam(), menu ? menu->text() : "(null)") << std::endl;
+  cdebug << strings::format("Menu click : wparam = {}, lparam = 0x{:X}, menu = {}", message.wparam(), message.lparam(), menu ? menu->text() : "(null)") << std::endl;
 }
 
 xtd::forms::main_menu main_menu::create_standard_items(const xtd::event_handler<xtd::forms::component&>& on_click) {

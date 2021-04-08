@@ -4,7 +4,6 @@
 #pragma once
 #include <limits>
 #include <stdexcept>
-#include "format.h"
 #include "parse.h"
 #include "strings.h"
 #include "translator.h"
@@ -806,14 +805,14 @@ namespace xtd {
 #endif
   
   inline std::string operator""_t(const char16_t* s, size_t n) {
-    return xtd::translator::translate(xtd::format("{}", s));
+    return xtd::translator::translate(xtd::strings::format("{}", s));
   }
   
   inline std::string operator""_t(const char32_t* s, size_t n) {
-    return xtd::translator::translate(xtd::format("{}", s));
+    return xtd::translator::translate(xtd::strings::format("{}", s));
   }
   
   inline std::string operator""_t(const wchar_t* s, size_t n) {
-    return xtd::translator::translate(xtd::format("{}", s));
+    return xtd::translator::translate(xtd::strings::format("{}", s));
   }
 }

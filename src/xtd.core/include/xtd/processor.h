@@ -5,7 +5,7 @@
 #include <map>
 #include <vector>
 #include "architecture_id.h"
-#include "format.h"
+#include "strings.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -41,7 +41,7 @@ namespace xtd {
 
     std::string architecture_string() const noexcept {
       if (!architecture_string_.empty()) return architecture_string_;
-      architecture_string_ = format("{}", architecture_);
+      architecture_string_ = strings::format("{}", architecture_);
       if (is_64_bit_) {
         if (architecture_ == architecture_id::x86) architecture_string_ += "_";
         architecture_string_ += "64";

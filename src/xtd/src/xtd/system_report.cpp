@@ -125,11 +125,11 @@ namespace {
   string generate_screens_report(int32_t indent) {
     std::string report = strings::format("{}Screens{}", indent_string(indent), environment::new_line());
     for (auto screen : system_report::screens()) {
-      report += format("{}{}{}", indent_string(indent + 1), screen.device_name(), environment::new_line());
-      report += format("{}Bounds: {}{}", indent_string(indent + 2), screen.bounds(), environment::new_line());
-      report += format("{}Working area: {}{}", indent_string(indent + 2), screen.working_area(), environment::new_line());
-      report += format("{}Bits per pixel: {}{}", indent_string(indent + 2), screen.bits_per_pixel(), environment::new_line());
-      report += format("{}Primary screen: {}{}", indent_string(indent + 2), screen.primary(), environment::new_line());
+      report += strings::format("{}{}{}", indent_string(indent + 1), screen.device_name(), environment::new_line());
+      report += strings::format("{}Bounds: {}{}", indent_string(indent + 2), screen.bounds(), environment::new_line());
+      report += strings::format("{}Working area: {}{}", indent_string(indent + 2), screen.working_area(), environment::new_line());
+      report += strings::format("{}Bits per pixel: {}{}", indent_string(indent + 2), screen.bits_per_pixel(), environment::new_line());
+      report += strings::format("{}Primary screen: {}{}", indent_string(indent + 2), screen.primary(), environment::new_line());
     }
     return report + environment::new_line();
   }
@@ -171,38 +171,38 @@ system_report::system_font_collection system_report::system_fonts() noexcept {
 
 system_report::system_information_collection system_report::system_informations() noexcept {
   return {
-    {"Active window tracking delay", format("{}", forms::system_information::active_window_tracking_delay())},
-    {"Active", format("{}", forms::system_information::active_window_tracking_delay())},
-    {"Arrange direction", format("{}", forms::system_information::arrange_direction())},
-    {"Arrange starting position", format("{}", forms::system_information::arrange_starting_position())},
-    {"Boot mode", format("{}", forms::system_information::boot_mode())},
-    {"Border 3d size", format("{}", forms::system_information::border_3d_size())},
-    {"Border multiplier factor", format("{}", forms::system_information::border_multiplier_factor())},
-    {"Border size", format("{}", forms::system_information::border_size())},
-    {"Caption button size", format("{}", forms::system_information::caption_button_size())},
-    {"Caption height", format("{}", forms::system_information::caption_height())},
-    {"Caret blink time", format("{}", forms::system_information::caret_blink_time())},
-    {"Caret width", format("{}", forms::system_information::caret_width())},
-    {"Computer name", format("{}", forms::system_information::computer_name())},
-    {"Cursor size", format("{}", forms::system_information::cursor_size())},
-    {"DBCS enabled", format("{}", forms::system_information::dbcs_enabled())},
-    {"Debug os", format("{}", forms::system_information::debug_os())},
-    {"Double click size", format("{}", forms::system_information::double_click_size())},
-    {"Double_click time", format("{}", forms::system_information::double_click_time())},
-    {"Drag full windows", format("{}", forms::system_information::drag_full_windows())},
-    {"Drag size", format("{}", forms::system_information::drag_size())},
-    {"Fixed frame border size", format("{}", forms::system_information::fixed_frame_border_size())},
-    {"Font smoothing contrast", format("{}", forms::system_information::font_smoothing_contrast())},
-    {"Font smoothing type", format("{}", forms::system_information::font_smoothing_type())},
-    //{"Frame border size", format("{}", forms::system_information::frame_border_size())},
-    //{"High contrast", format("{}", forms::system_information::high_contrast())},
-    //{"Horizontal focus thickness", format("{}", forms::system_information::horizontal_focus_thickness())},
-    //{"Horizontal resize border thickness", format("{}", forms::system_information::horizontal_resize_border_thickness())},
-    //{"Horizontal scroll bar arrow width", format("{}", forms::system_information::horizontal_scroll_bar_arrow_width())},
-    {"Horizontal scroll bar height", format("{}", forms::system_information::horizontal_scroll_bar_height())},
-    //{"Horizontal scroll bar bhumb width", format("{}", forms::system_information::horizontal_scroll_bar_bhumb_width())},
-    //{"icon_horizontal_spacing", format("{}", forms::system_information::icon_horizontal_spacing())},
-    //{"Active", format("{}", forms::system_information::active_window_tracking_delay())},
+    {"Active window tracking delay", strings::format("{}", forms::system_information::active_window_tracking_delay())},
+    {"Active", strings::format("{}", forms::system_information::active_window_tracking_delay())},
+    {"Arrange direction", strings::format("{}", forms::system_information::arrange_direction())},
+    {"Arrange starting position", strings::format("{}", forms::system_information::arrange_starting_position())},
+    {"Boot mode", strings::format("{}", forms::system_information::boot_mode())},
+    {"Border 3d size", strings::format("{}", forms::system_information::border_3d_size())},
+    {"Border multiplier factor", strings::format("{}", forms::system_information::border_multiplier_factor())},
+    {"Border size", strings::format("{}", forms::system_information::border_size())},
+    {"Caption button size", strings::format("{}", forms::system_information::caption_button_size())},
+    {"Caption height", strings::format("{}", forms::system_information::caption_height())},
+    {"Caret blink time", strings::format("{}", forms::system_information::caret_blink_time())},
+    {"Caret width", strings::format("{}", forms::system_information::caret_width())},
+    {"Computer name", strings::format("{}", forms::system_information::computer_name())},
+    {"Cursor size", strings::format("{}", forms::system_information::cursor_size())},
+    {"DBCS enabled", strings::format("{}", forms::system_information::dbcs_enabled())},
+    {"Debug os", strings::format("{}", forms::system_information::debug_os())},
+    {"Double click size", strings::format("{}", forms::system_information::double_click_size())},
+    {"Double_click time", strings::format("{}", forms::system_information::double_click_time())},
+    {"Drag full windows", strings::format("{}", forms::system_information::drag_full_windows())},
+    {"Drag size", strings::format("{}", forms::system_information::drag_size())},
+    {"Fixed frame border size", strings::format("{}", forms::system_information::fixed_frame_border_size())},
+    {"Font smoothing contrast", strings::format("{}", forms::system_information::font_smoothing_contrast())},
+    {"Font smoothing type", strings::format("{}", forms::system_information::font_smoothing_type())},
+    //{"Frame border size", strings::format("{}", forms::system_information::frame_border_size())},
+    //{"High contrast", strings::format("{}", forms::system_information::high_contrast())},
+    //{"Horizontal focus thickness", strings::format("{}", forms::system_information::horizontal_focus_thickness())},
+    //{"Horizontal resize border thickness", strings::format("{}", forms::system_information::horizontal_resize_border_thickness())},
+    //{"Horizontal scroll bar arrow width", strings::format("{}", forms::system_information::horizontal_scroll_bar_arrow_width())},
+    {"Horizontal scroll bar height", strings::format("{}", forms::system_information::horizontal_scroll_bar_height())},
+    //{"Horizontal scroll bar bhumb width", strings::format("{}", forms::system_information::horizontal_scroll_bar_bhumb_width())},
+    //{"icon_horizontal_spacing", strings::format("{}", forms::system_information::icon_horizontal_spacing())},
+    //{"Active", strings::format("{}", forms::system_information::active_window_tracking_delay())},
   };
 }
 

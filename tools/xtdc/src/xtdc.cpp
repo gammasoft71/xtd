@@ -28,7 +28,7 @@ namespace xtdc_command {
       vector<string> command_args;
       if (process_xtdc_arguments(args, show_help, show_info, show_version, command_args, invalid_option) == false) {
         if (!invalid_option.empty())
-          cout << format("Unknown option: {0}", invalid_option) << endl;
+          cout << strings::format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
         cout << strings::join("\n", get_help()) << endl;
@@ -357,7 +357,7 @@ namespace xtdc_command {
       string path;
       if (!process_add_arguments(args, show_help, type, name, path, sdk, invalid_option)) {
         if (!invalid_option.empty())
-          cout << format("Unknown option: {0}", invalid_option) << endl;
+          cout << strings::format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
         cout << strings::join("\n", get_add_help()) << endl;
@@ -388,7 +388,7 @@ namespace xtdc_command {
       string path;
       if (!process_build_arguments(args, show_help, clean_first, release, target, path, invalid_option)) {
         if (!invalid_option.empty())
-          cout << format("Unknown option: {0}", invalid_option) << endl;
+          cout << strings::format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
         cout << strings::join("\n", get_build_help()) << endl;
@@ -410,7 +410,7 @@ namespace xtdc_command {
       string path;
       if (!process_clean_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
-          cout << format("Unknown option: {0}", invalid_option) << endl;
+          cout << strings::format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
         cout << strings::join("\n", get_clean_help()) << endl;
@@ -437,7 +437,7 @@ namespace xtdc_command {
       string path;
       if (!process_install_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
-          cout << format("Unknown option: {0}", invalid_option) << endl;
+          cout << strings::format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
         cout << strings::join("\n", get_install_help()) << endl;
@@ -461,7 +461,7 @@ namespace xtdc_command {
       string path;
       if (!process_new_arguments(args, show_help, type, name, path, sdk, invalid_option)) {
         if (!invalid_option.empty())
-          cout << format("Unknown option: {0}", invalid_option) << endl;
+          cout << strings::format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
         cout << strings::join("\n", get_new_help()) << endl;
@@ -490,7 +490,7 @@ namespace xtdc_command {
       string path;
       if (!process_open_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
-          cout << format("Unknown option: {0}", invalid_option) << endl;
+          cout << strings::format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
         cout << strings::join("\n", get_open_help()) << endl;
@@ -512,7 +512,7 @@ namespace xtdc_command {
       string path;
       if (!process_update_arguments(args, show_help, target, path, invalid_option)) {
         if (!invalid_option.empty())
-          cout << format("Unknown option: {0}", invalid_option) << endl;
+          cout << strings::format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
         cout << strings::join("\n", get_update_help()) << endl;
@@ -535,7 +535,7 @@ namespace xtdc_command {
       string path;
       if (!process_run_arguments(args, show_help, release, target, path, invalid_option)) {
         if (!invalid_option.empty())
-          cout << format("Unknown option: {0}", invalid_option) << endl;
+          cout << strings::format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
         cout << strings::join("\n", get_run_help()) << endl;
@@ -556,7 +556,7 @@ namespace xtdc_command {
       string path;
       if (!process_targets_arguments(args, show_help, path, invalid_option)) {
         if (!invalid_option.empty())
-          cout << format("Unknown option: {0}", invalid_option) << endl;
+          cout << strings::format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
         cout << strings::join("\n", get_targets_help()) << endl;
@@ -578,7 +578,7 @@ namespace xtdc_command {
       string path;
       if (!process_test_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
-          cout << format("Unknown option: {0}", invalid_option) << endl;
+          cout << strings::format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
         cout << strings::join("\n", get_test_help()) << endl;
@@ -600,7 +600,7 @@ namespace xtdc_command {
       string path;
       if (!process_uninstall_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
-          cout << format("Unknown option: {0}", invalid_option) << endl;
+          cout << strings::format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
         cout << strings::join("\n", get_uninstall_help()) << endl;

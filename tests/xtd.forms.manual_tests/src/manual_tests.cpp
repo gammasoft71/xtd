@@ -87,7 +87,7 @@ int main() {
     form form_main;
     form_main.text("Manual tests");
     form_main.menu(forms::main_menu::create_standard_items([&](component& sender, const event_args& e) {
-      //cdebug << format("Menu item [{}] clicked", sender) << endl;
+      //cdebug << strings::format("Menu item [{}] clicked", sender) << endl;
     }));
     
     /*

@@ -2,8 +2,8 @@
 #include <filesystem>
 #include <map>
 #include "../../include/xtd/environment.h"
-#include "../../include/xtd/format.h"
 #include "../../include/xtd/format_exception.h"
+#include "../../include/xtd/strings.h"
 #include "../../include/xtd/collections/specialized/string_map.h"
 #include "../../include/xtd/io/file.h"
 #include "../../include/xtd/io/path.h"
@@ -84,7 +84,7 @@ void translator::parse_file(const std::filesystem::path& file, const std::string
     if (xtd::strings::starts_with(line, "#")) continue;
     if (key.empty() && xtd::strings::starts_with(line, "key ")) key = xtd::strings::trim(xtd::strings::remove(line, 0, 4), '"');
     else if (!key.empty() && xtd::strings::starts_with(line, "value ")) value = xtd::strings::trim(xtd::strings::remove(line, 0, 6), '"');
-    else throw xtd::format_exception(xtd::format("file {} has an invalid format at line {}", file, line_count), caller_info_);
+    else throw xtd::format_exception(xtd::strings::format("file {} has an invalid format at line {}", file, line_count), caller_info_);
     if (!key.empty() && !value.empty()) {
       add_value(language, key, value);
       key = value = "";

@@ -5,7 +5,7 @@
 #include <vector>
 #include "build_type.h"
 #include "compiler_id.h"
-#include "format.h"
+#include "strings.h"
 #include "version.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -42,7 +42,7 @@ namespace xtd {
     }
     
     std::string version_string() const noexcept {
-      return format("{} {}", name(), version());
+      return strings::format("{} {}", name(), version());
     }
     
     const xtd::version& version() const noexcept {return version_;}
