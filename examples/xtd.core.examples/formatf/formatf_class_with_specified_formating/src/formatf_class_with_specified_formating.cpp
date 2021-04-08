@@ -31,10 +31,10 @@ using characters = vector<character>;
 
 int main() {
   character c("Jean-Luc Picard", "Captain");
-  cout << formatf("%s", c.to_string()) << endl;
-  cout << formatf("%s", c.to_string("F")) << endl;
-  cout << formatf("%s", c.to_string("N")) << endl;
-  cout << formatf("%s", c.to_string("R")) << endl;
+  cout << strings::formatf("%s", c.to_string()) << endl;
+  cout << strings::formatf("%s", c.to_string("F")) << endl;
+  cout << strings::formatf("%s", c.to_string("N")) << endl;
+  cout << strings::formatf("%s", c.to_string("R")) << endl;
 }
 
 // This code produces the following output :

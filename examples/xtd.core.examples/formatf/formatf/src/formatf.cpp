@@ -5,7 +5,7 @@ using namespace std::literals;
 using namespace xtd;
 
 int main() {
-  cout << formatf("%s %s %d %c", "string", "literal"s, 42, 'a') << endl;
+  cout << strings::formatf("%s %s %d %c", "string", "literal"s, 42, 'a') << endl;
 }
 
 // This code produces the following output :
