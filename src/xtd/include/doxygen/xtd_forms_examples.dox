@@ -976,6 +976,21 @@
 /// <br>
 /// @image html save_file_dialog_gd.png
 ///
+/// @example screen.cpp
+/// The following code example demonstrate the use of screen class.
+/// @par Windows
+/// @image html screen_w.png
+/// <br>
+/// @image html screen_wd.png
+/// @par macOS
+/// @image html screen_m.png
+/// <br>
+/// @image html screen_md.png
+/// @par Gnome
+/// @image html screen_g.png
+/// <br>
+/// @image html screen_gd.png
+///
 /// @example seven_segment_display.cpp
 /// The following code example demonstrate the use of seven segment display control.
 /// @par Windows
