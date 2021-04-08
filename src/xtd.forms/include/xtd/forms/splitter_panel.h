@@ -12,9 +12,16 @@ namespace xtd {
     class split_container;
   /// @endcond
   
+    /// @brief Creates a panel that is associated with a split_container.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms containers
+    /// @remarks The constructor for this object is not public, so you cannot explicitly create a splitter_panel object.
+    /// @remarks The splitter_panel is a member of its associated split_container rather than being a member of the underlying form. At design time, the splitter_panel is accessible through the panel1 or panel2 properties of split_container.
     class splitter_panel : public panel {
       friend class split_container;
     protected:
+      /// @brief Initializes a new instance of splitter_panel.
       splitter_panel() = default;
     };
   }
