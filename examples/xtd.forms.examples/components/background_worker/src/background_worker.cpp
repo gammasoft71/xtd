@@ -66,13 +66,13 @@ namespace examples {
         for (auto step = 1; step <= progress.maximum(); step++) {
           if (worker.cancellation_pending()) break; // stop work...
           std::this_thread::sleep_for(100ms); // simulate work...
-          worker.report_progress(step, format("step {} / {}", step, progress.maximum()));
+          worker.report_progress(step, strings::format("step {} / {}", step, progress.maximum()));
         }
       };
       
       worker.progress_changed += [&](component& sender, const progress_changed_event_args& e) {
         progress.value(e.progress_percentage());
-        list_progress.append_text(format("{}{}", std::any_cast<std::string>(e.user_state()), environment::new_line()));
+        list_progress.append_text(strings::format("{}{}", std::any_cast<std::string>(e.user_state()), environment::new_line()));
       };
       
       worker.run_worker_completed += [&](component& sender, const run_worker_completed_event_args& e){
@@ -81,7 +81,7 @@ namespace examples {
         button_cancel.enabled(false);
         progress.value(0);
         list_progress.text("");
-        status.text(format("Status : {}", e.cancel() ? "canceled" : "completed"));
+        status.text(strings::format("Status : {}", e.cancel() ? "canceled" : "completed"));
       };
     }
     

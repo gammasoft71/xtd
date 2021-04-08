@@ -4,7 +4,7 @@ using namespace std;
 using namespace xtd;
 
 int main() {
-  cout << format("{}", make_tuple(1, "one", .42)) << endl;
+  cout << strings::format("{}", make_tuple(1, "one", .42)) << endl;
 }
 
 // This code produces the following output :

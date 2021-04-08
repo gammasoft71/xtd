@@ -4,11 +4,11 @@ using namespace std;
 using namespace xtd;
 
 int main() {
-  cout << format("{}", 'a') << endl;
-  cout << format("{}", L'\u4eb0') << endl;
-  cout << format("{}", u8'a') << endl;
-  cout << format("{}", u'\u4eb0') << endl;
-  cout << format("{}", U'\U0001F428') << endl;
+  cout << strings::format("{}", 'a') << endl;
+  cout << strings::format("{}", L'\u4eb0') << endl;
+  cout << strings::format("{}", u8'a') << endl;
+  cout << strings::format("{}", u'\u4eb0') << endl;
+  cout << strings::format("{}", U'\U0001F428') << endl;
 }
 
 // This code produces the following output :

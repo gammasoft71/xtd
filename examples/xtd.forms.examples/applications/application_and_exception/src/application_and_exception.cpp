@@ -46,7 +46,7 @@ private:
     try {
       throw operation_canceled_exception(caller_info_);
     } catch(const xtd::system_exception& e) {
-      message_box::show(*this, e.message(), format("Exception {} handled", e.name()));
+      message_box::show(*this, e.message(), strings::format("Exception {} handled", e.name()));
     }
   }
   void generate_exception() {throw invalid_argument("Invalid argument");}

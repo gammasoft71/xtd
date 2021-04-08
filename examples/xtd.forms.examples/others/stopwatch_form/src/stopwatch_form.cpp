@@ -75,7 +75,7 @@ private:
   };
 
   void on_timer_tick(component& sender, const event_args& e) {
-    watch.text(format("{0:H}:{0:M}:{0:S}.{1:D3}", stopwatch_.elapsed(), stopwatch_.elapsed_milliseconds() % 1000));
+    watch.text(strings::format("{0:H}:{0:M}:{0:S}.{1:D3}", stopwatch_.elapsed(), stopwatch_.elapsed_milliseconds() % 1000));
   };
 
   stopwatch stopwatch_;

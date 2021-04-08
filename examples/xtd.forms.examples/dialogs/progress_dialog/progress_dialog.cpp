@@ -22,7 +22,7 @@ public:
       dialog.show_dialog(*this);
       for (auto step = 1; step <= dialog.maximum(); ++step) {
         dialog.value(step);
-        dialog.message(format("Step {}/{} ==> {}", dialog.value(), dialog.maximum(), dialog.skipped() ? "skipped" : "done"));
+        dialog.message(strings::format("Step {}/{} ==> {}", dialog.value(), dialog.maximum(), dialog.skipped() ? "skipped" : "done"));
         std::this_thread::sleep_for(100ms);
       }
     };

@@ -151,7 +151,7 @@ namespace minesweeper {
       
       stopwatch.interval(1000);
       stopwatch.tick += [&] {
-        if (stopwatch_count_ < 999) stopwatch_label.text(format("{:D3}", ++stopwatch_count_));
+        if (stopwatch_count_ < 999) stopwatch_label.text(strings::format("{:D3}", ++stopwatch_count_));
       };
     }
     
@@ -236,8 +236,8 @@ namespace minesweeper {
                 cell.state(cell_state::question);
                 --flagged_mine_count_;
               } else if (cell.state() == cell_state::flag || cell.state() == cell_state::question) cell.state(cell_state::unchecked);
-              if ((mine_count_ - flagged_mine_count_) >= 0 && (mine_count_ - flagged_mine_count_) <= 999) mine_count_label.text(format("{:D3}", mine_count_ - flagged_mine_count_));
-              else if (mine_count_ - flagged_mine_count_ >= -99) mine_count_label.text(format("{:D2}", mine_count_ - flagged_mine_count_));
+              if ((mine_count_ - flagged_mine_count_) >= 0 && (mine_count_ - flagged_mine_count_) <= 999) mine_count_label.text(strings::format("{:D3}", mine_count_ - flagged_mine_count_));
+              else if (mine_count_ - flagged_mine_count_ >= -99) mine_count_label.text(strings::format("{:D2}", mine_count_ - flagged_mine_count_));
             }
           };
         }
@@ -284,7 +284,7 @@ namespace minesweeper {
         }
       }
       
-      mine_count_label.text(format("{:D3}", mine_count_ - flagged_mine_count_));
+      mine_count_label.text(strings::format("{:D3}", mine_count_ - flagged_mine_count_));
       stopwatch_label.text("000");
       start_game.image(bitmap(properties::resources::smiley1(), {24, 24}));
       resume_layout();

@@ -23,7 +23,7 @@ private:
   string rank_;
 };
 
-// Only this method is needed for character class to be recognized by format() with specified formating (F, N or R).
+// Only this method is needed for character class to be recognized by strings::format() with specified formating (F, N or R).
 template<>
 string xtd::to_string(const character& value, const string& fmt, const locale& loc) {return value.to_string(fmt);}
 

@@ -9,7 +9,7 @@ namespace examples {
     form1() {
       text("Main menu create standard ittems example");
       menu(main_menu::create_standard_items([&](component& sender, const event_args& e) {
-        list_box1.items().push_back(format("{} clicked", static_cast<menu_item&>(sender).text()));
+        list_box1.items().push_back(strings::format("{} clicked", static_cast<menu_item&>(sender).text()));
       }));
       list_box1.parent(*this);
       list_box1.dock(dock_style::fill);

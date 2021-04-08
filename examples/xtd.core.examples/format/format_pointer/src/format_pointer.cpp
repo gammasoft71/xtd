@@ -5,23 +5,23 @@ using namespace xtd;
 
 int main() {
   int* ptr = nullptr;
-  cout << format("{}", ptr) << endl;
+  cout << strings::format("{}", ptr) << endl;
   ptr = new int(42);
-  cout << format("{}", ptr) << endl;
-  cout << format("{}", *ptr) << endl;
+  cout << strings::format("{}", ptr) << endl;
+  cout << strings::format("{}", *ptr) << endl;
   delete ptr;
 
   shared_ptr<int> sptr;
-  cout << format("{}", sptr) << endl;
+  cout << strings::format("{}", sptr) << endl;
   sptr = make_shared<int>(42);
-  cout << format("{}", sptr) << endl;
-  cout << format("{}", *sptr) << endl;
+  cout << strings::format("{}", sptr) << endl;
+  cout << strings::format("{}", *sptr) << endl;
 
   unique_ptr<int> uptr;
-  cout << format("{}", uptr) << endl;
+  cout << strings::format("{}", uptr) << endl;
   uptr = make_unique<int>(42);
-  cout << format("{}", uptr) << endl;
-  cout << format("{}", *uptr) << endl;
+  cout << strings::format("{}", uptr) << endl;
+  cout << strings::format("{}", *uptr) << endl;
 }
 
 // This code can produces the following output :

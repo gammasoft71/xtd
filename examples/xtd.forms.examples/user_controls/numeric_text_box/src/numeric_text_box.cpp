@@ -48,7 +48,7 @@ namespace examples {
       numeric_text_box1.value(42);
       numeric_text_box1.location({10, 10});
       numeric_text_box1.value_changed += [&] {
-        ctrace << format("value_changed [value={}]", numeric_text_box1.value()) << endl;
+        ctrace << strings::format("value_changed [value={}]", numeric_text_box1.value()) << endl;
       };
     }
     
