@@ -1051,6 +1051,21 @@
 /// <br>
 /// @image html split_container_gd.png
 ///
+/// @example splitter.cpp
+/// The following code example demonstrate the use of splitter control.
+/// @par Windows
+/// @image html splitter_w.png
+/// <br>
+/// @image html splitter_wd.png
+/// @par macOS
+/// @image html splitter_m.png
+/// <br>
+/// @image html splitter_md.png
+/// @par Gnome
+/// @image html splitter_g.png
+/// <br>
+/// @image html splitter_gd.png
+///
 /// @example tab_control.cpp
 /// The following code example demonstrate the use of tab_control container.
 /// @par Windows
