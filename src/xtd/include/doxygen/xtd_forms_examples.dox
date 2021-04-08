@@ -1066,6 +1066,21 @@
 /// <br>
 /// @image html splitter_gd.png
 ///
+/// @example switch_button.cpp
+/// The following code example demonstrate the use of switch button control.
+/// @par Windows
+/// @image html switch_button_w.png
+/// <br>
+/// @image html switch_button_wd.png
+/// @par macOS
+/// @image html switch_button_m.png
+/// <br>
+/// @image html switch_button_md.png
+/// @par Gnome
+/// @image html switch_button_g.png
+/// <br>
+/// @image html switch_button_gd.png
+///
 /// @example tab_control.cpp
 /// The following code example demonstrate the use of tab_control container.
 /// @par Windows
