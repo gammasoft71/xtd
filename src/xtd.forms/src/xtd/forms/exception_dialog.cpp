@@ -78,6 +78,7 @@ namespace {
       text_box_details_.size({530, 185});
       text_box_details_.multiline(true);
       text_box_details_.read_only(true);
+      text_box_details_.word_wrap(false);
       text_box_details_.text(generate_report());
     }
     

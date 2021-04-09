@@ -50,7 +50,7 @@ namespace {
   }
 }
 
-bool input_dialog::run_dialog(intptr_t control, const std::string& text, const std::string& message, std::string& value, int32_t character_casing, bool multiline, bool use_system_password_char) {
+bool input_dialog::run_dialog(intptr_t control, const std::string& text, const std::string& message, std::string& value, int32_t character_casing, bool multiline, bool use_system_password_char, bool word_wrap) {
   wxWindowPtr<wxTextEntryDialog> text_entry_dialog(create_text_entry_dialog(control, text, message, value, character_casing, multiline, use_system_password_char));
   int result = text_entry_dialog->ShowModal() == wxID_OK ? IDOK : IDCANCEL;
   if (result == IDCANCEL) return false;
@@ -61,8 +61,8 @@ bool input_dialog::run_dialog(intptr_t control, const std::string& text, const s
   return true;
 }
 
-void input_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t control, const std::string& text, const std::string& message, std::string& value, int32_t character_casing, bool multiline, bool use_system_password_char) {
-  //wxWindowPtr<wxTextEntryDialog> text_entry_dialog(create_text_entry_dialog(control, text, message, value, character_casing, multiline, use_system_password_char));
+void input_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t control, const std::string& text, const std::string& message, std::string& value, int32_t character_casing, bool multiline, bool use_system_password_char, bool word_wrap) {
+  //wxWindowPtr<wxTextEntryDialog> text_entry_dialog(create_text_entry_dialog(control, text, message, value, character_casing, multiline, use_system_password_char, word_wrap));
   wxTextEntryDialog* text_entry_dialog(create_text_entry_dialog(control, text, message, value, character_casing, multiline, use_system_password_char));
   text_entry_dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [text_entry_dialog, on_dialog_closed, &value, character_casing](wxWindowModalDialogEvent& event) {
     auto result = event.GetReturnCode() == wxID_OK;

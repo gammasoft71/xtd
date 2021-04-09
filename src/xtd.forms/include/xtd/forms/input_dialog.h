@@ -164,6 +164,20 @@ namespace xtd {
         return *this;
       }
 
+      /// @brief Gets word wrap status.
+      /// @return true if dialoog text box is word wrap; otherwise false.
+      /// @remarks The default value is true.
+      bool word_wrap() const {return word_wrap_;}
+      /// @brief Sets word wrap status.
+      /// @param word_wrap true if dialoog text box is word wrap; otherwise false.
+      /// @return Current input_dialog instance.
+      /// @remarks The default value is true.
+      input_dialog& word_wrap(bool word_wrap) {
+        if (word_wrap_ != word_wrap)
+          word_wrap_ = word_wrap;
+        return *this;
+      }
+      
       /// @brief Resets all properties to empty string.
       void reset() override;
 
@@ -179,6 +193,7 @@ namespace xtd {
       std::string text_;
       bool use_system_password_char_ = false;
       std::string value_;
+      bool word_wrap_ = true;
       /// @endcond
     };
   }
