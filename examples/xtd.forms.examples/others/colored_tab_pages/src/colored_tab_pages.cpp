@@ -10,7 +10,7 @@ public:
   form1() {
     text("Colored Tab pages example");
     controls().push_back(tab_control_colored);
-    client_size({390, 270});
+    size({600, 450});
     
     image_list_.image_size({16, 16});
     for_each(colors.begin(), colors.end(), [&](auto color) {
@@ -31,7 +31,7 @@ public:
   }
   
 private:
-  vector<color> colors = {colors::red(), colors::green(), colors::blue(), colors::yellow()};
+  vector<color> colors = {colors::light_pink(), colors::light_green(), colors::light_blue(), colors::light_yellow()};
   image_list image_list_;
   tab_control tab_control_colored;
   vector<shared_ptr<tab_page>> tab_pages;
