@@ -44,6 +44,7 @@ namespace xtd {
     /// @image html colored_tab_pages_gd.png
     class forms_export_ tab_page : public panel {
     public:
+      /// @brief Initializes a new instance of the tab_page class.
       tab_page();
 
       using panel::auto_scroll;
