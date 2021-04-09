@@ -81,6 +81,7 @@ namespace guidgen_gui {
       result_text_box_.read_only(true);
       result_text_box_.size({625, 290});
       result_text_box_.multiline(true);
+      result_text_box_.word_wrap(false);
     }
     
     static void main() {

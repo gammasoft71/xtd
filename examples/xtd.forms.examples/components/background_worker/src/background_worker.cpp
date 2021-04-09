@@ -59,7 +59,8 @@ namespace examples {
       list_progress.size({280, 100});
       list_progress.multiline(true);
       list_progress.read_only(true);
-      
+      list_progress.word_wrap(false);
+
       worker.worker_supports_cancellation(true);
       worker.worker_reports_progress(true);
       worker.do_work += [&] {

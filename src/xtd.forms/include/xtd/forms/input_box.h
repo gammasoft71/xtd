@@ -61,7 +61,7 @@ namespace xtd {
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       /// @remarks If dialog_result is ok, the value parameter contains the new chosen value.
       static xtd::forms::dialog_result show(std::string& value, const xtd::forms::iwin32_window& owner, const std::string& text, const std::string& caption, xtd::forms::input_box_style style) {return show_input_box(value, &owner, text, caption, style);}
-      /// @brief Displays an input box in front of the specified window. The input box displays a input text value with specifiedd invite message text, caption title, input box style andd character casing.
+      /// @brief Displays an input box in front of the specified window. The input box displays a input text value with specifiedd invite message text, caption title, input box style and character casing.
       /// @param value A std::string that specifies the text to display.
       /// @param owner A iwin32_window that represents the owner window of the color box.
       /// @param text A std::string that specifies the invite message text to display.
@@ -71,7 +71,18 @@ namespace xtd {
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       /// @remarks If dialog_result is ok, the value parameter contains the new chosen value.
       static xtd::forms::dialog_result show(std::string& value, const xtd::forms::iwin32_window& owner, const std::string& text, const std::string& caption, xtd::forms::input_box_style style, xtd::forms::character_casing casing) {return show_input_box(value, &owner, text, caption, style, casing);}
-      
+      /// @brief Displays an input box in front of the specified window. The input box displays a input text value with specifiedd invite message text, caption title, input box style, character casing and word_wrap.
+      /// @param value A std::string that specifies the text to display.
+      /// @param owner A iwin32_window that represents the owner window of the color box.
+      /// @param text A std::string that specifies the invite message text to display.
+      /// @param caption A std::string that specifies the caption title of dialog.
+      /// @param style On of xtd::forms::input_box_style values. The default is xtd::forms::input_box_style::normal
+      /// @param casing On of xtd::forms::character_casing values. The default is xtd::forms::character_casing::normal
+      /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
+      /// @param word_wrap true if word_wrap; otherwise false. The default is true.
+      /// @remarks If dialog_result is ok, the value parameter contains the new chosen value.
+      static xtd::forms::dialog_result show(std::string& value, const xtd::forms::iwin32_window& owner, const std::string& text, const std::string& caption, xtd::forms::input_box_style style, xtd::forms::character_casing casing, bool word_wrap) {return show_input_box(value, &owner, text, caption, style, casing, word_wrap);}
+
       /// @brief Displays an input box. The input box displays a text value.
       /// @param value A std::string that specifies the text to display.
       /// @param owner A iwin32_window that represents the owner window of the color box.
@@ -102,7 +113,7 @@ namespace xtd {
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       /// @remarks If dialog_result is ok, the value parameter contains the new chosen value.
       static xtd::forms::dialog_result show(std::string& value, const std::string& text, const std::string& caption, xtd::forms::input_box_style style) {return show_input_box(value, nullptr, text, caption, style);}
-      /// @brief Displays an input box. The input box displays a input text value with specifiedd invite message text, caption title, input box style andd character casing.
+      /// @brief Displays an input box. The input box displays a input text value with specifiedd invite message text, caption title, input box style and character casing.
       /// @param value A std::string that specifies the text to display.
       /// @param owner A iwin32_window that represents the owner window of the color box.
       /// @param text A std::string that specifies the invite message text to display.
@@ -112,9 +123,20 @@ namespace xtd {
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       /// @remarks If dialog_result is ok, the value parameter contains the new chosen value.
       static xtd::forms::dialog_result show(std::string& value, const std::string& text, const std::string& caption, xtd::forms::input_box_style style, xtd::forms::character_casing casing) {return show_input_box(value, nullptr, text, caption, style, casing);}
-      
+      /// @brief Displays an input box. The input box displays a input text value with specifiedd invite message text, caption title, input box style, character casing and word_wrap.
+      /// @param value A std::string that specifies the text to display.
+      /// @param owner A iwin32_window that represents the owner window of the color box.
+      /// @param text A std::string that specifies the invite message text to display.
+      /// @param caption A std::string that specifies the caption title of dialog.
+      /// @param style On of xtd::forms::input_box_style values. The default is xtd::forms::input_box_style::normal
+      /// @param casing On of xtd::forms::character_casing values. The default is xtd::forms::character_casing::normal
+      /// @param word_wrap true if word_wrap; otherwise false. The default is true.
+      /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
+      /// @remarks If dialog_result is ok, the value parameter contains the new chosen value.
+      static xtd::forms::dialog_result show(std::string& value, const std::string& text, const std::string& caption, xtd::forms::input_box_style style, xtd::forms::character_casing casing, bool word_wrap) {return show_input_box(value, nullptr, text, caption, style, casing, word_wrap);}
+
     private:
-      static xtd::forms::dialog_result show_input_box(std::string& value, const xtd::forms::iwin32_window* owner = nullptr, const std::string& text = "", const std::string& caption = "", xtd::forms::input_box_style style = xtd::forms::input_box_style::normal, xtd::forms::character_casing casing = xtd::forms::character_casing::normal) {
+      static xtd::forms::dialog_result show_input_box(std::string& value, const xtd::forms::iwin32_window* owner = nullptr, const std::string& text = "", const std::string& caption = "", xtd::forms::input_box_style style = xtd::forms::input_box_style::normal, xtd::forms::character_casing casing = xtd::forms::character_casing::normal, bool word_wrap = true) {
         xtd::forms::input_dialog dialog;
         dialog.value(value);
         dialog.message(text);
@@ -122,6 +144,7 @@ namespace xtd {
         dialog.character_casing(casing);
         dialog.multiline(style == xtd::forms::input_box_style::multiline);
         dialog.use_system_password_char(style == xtd::forms::input_box_style::password);
+        dialog.word_wrap(word_wrap);
         xtd::forms::dialog_result result = owner ? dialog.show_sheet_dialog(*owner) : dialog.show_dialog();
         if (result == xtd::forms::dialog_result::ok) value = dialog.value();
         return result;

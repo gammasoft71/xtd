@@ -17,6 +17,7 @@ namespace examples {
       button1.click += [&] {
         input_dialog input_dialog;
         input_dialog.multiline(true);
+        input_dialog.word_wrap(false);
         input_dialog.text("Enter lines");
         input_dialog.value(label1.text());
         if (input_dialog.show_dialog(*this) == dialog_result::ok)

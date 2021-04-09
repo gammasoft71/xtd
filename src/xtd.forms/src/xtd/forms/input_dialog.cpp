@@ -15,7 +15,7 @@ using namespace xtd::forms;
 namespace {
   class input_dialog_standard : public form {
   public:
-    input_dialog_standard(const std::string& text, const std::string& message, const std::string& value, xtd::forms::character_casing character_casing, bool multiline, bool use_system_password_char) {
+    input_dialog_standard(const std::string& text, const std::string& message, const std::string& value, xtd::forms::character_casing character_casing, bool multiline, bool use_system_password_char, bool word_wrap) {
       auto offset_multiline = multiline ? 100 : 0;
       
       icon(xtd::drawing::icon::empty);
@@ -47,6 +47,7 @@ namespace {
       input_text_box_.multiline(multiline);
       input_text_box_.text(value);
       input_text_box_.use_system_password_char(use_system_password_char);
+      input_text_box_.word_wrap(word_wrap);
 
       cancel_button_.anchor(anchor_styles::right|anchor_styles::bottom);
       cancel_button_.dialog_result(forms::dialog_result::cancel);
@@ -107,6 +108,7 @@ void input_dialog::reset() {
   text_ = "";
   use_system_password_char_ = false;
   value_ = "";
+  word_wrap_ = true;
 }
 
 bool input_dialog::run_dialog(intptr_t owner) {
@@ -116,13 +118,13 @@ bool input_dialog::run_dialog(intptr_t owner) {
     default: break;
   }
   if (dialog_style_ == xtd::forms::dialog_style::standard) {
-    input_dialog_standard dialog(text_, message_, value_, character_casing_, multiline_, use_system_password_char_);
+    input_dialog_standard dialog(text_, message_, value_, character_casing_, multiline_, use_system_password_char_, word_wrap_);
     auto result = dialog.run_dialog(owner);
     if (result) value_ = dialog.value();
     return result;
   }
   application::raise_enter_thread_modal(event_args::empty);
-  auto result = native::input_dialog::run_dialog(owner, text_, message_, value_, static_cast<int32_t>(character_casing_), multiline_, use_system_password_char_);
+  auto result = native::input_dialog::run_dialog(owner, text_, message_, value_, static_cast<int32_t>(character_casing_), multiline_, use_system_password_char_, word_wrap_);
   application::raise_leave_thread_modal(event_args::empty);
   return result;
 }
@@ -137,7 +139,7 @@ void input_dialog::run_sheet(intptr_t owner) {
     run_dialog(owner);
   else {
     if (dialog_style_ == xtd::forms::dialog_style::standard) {
-      std::shared_ptr<input_dialog_standard> dialog = std::make_shared<input_dialog_standard>(text_, message_, value_, character_casing_, multiline_, use_system_password_char_);
+      std::shared_ptr<input_dialog_standard> dialog = std::make_shared<input_dialog_standard>(text_, message_, value_, character_casing_, multiline_, use_system_password_char_, word_wrap_);
       dialog->form_closed += [&, dialog](control& sender, const form_closed_event_args& e) {
         if (dialog->dialog_result() == dialog_result::ok) value_ = dialog->value();
         on_dialog_closed(dialog_closed_event_args(dialog->dialog_result()));
@@ -146,7 +148,7 @@ void input_dialog::run_sheet(intptr_t owner) {
       return;
     }
     application::raise_enter_thread_modal(event_args::empty);
-    native::input_dialog::run_sheet({*new __xtd_forms_common_dialog_closed_caller__(this), &__xtd_forms_common_dialog_closed_caller__::on_common_dialog_closed}, owner, text_, message_, value_, static_cast<int32_t>(character_casing_), multiline_, use_system_password_char_);
+    native::input_dialog::run_sheet({*new __xtd_forms_common_dialog_closed_caller__(this), &__xtd_forms_common_dialog_closed_caller__::on_common_dialog_closed}, owner, text_, message_, value_, static_cast<int32_t>(character_casing_), multiline_, use_system_password_char_, word_wrap_);
     application::raise_leave_thread_modal(event_args::empty);
   }
 }

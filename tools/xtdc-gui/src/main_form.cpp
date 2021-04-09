@@ -179,6 +179,7 @@ main_form::main_form() {
   open_xtd_examples_information_text_box_.anchor(anchor_styles::top|anchor_styles::bottom|anchor_styles::right);
   open_xtd_examples_information_text_box_.multiline(true);
   open_xtd_examples_information_text_box_.read_only(true);
+  open_xtd_examples_information_text_box_.word_wrap(false);
 
   open_xtd_examples_information_picture_box_.parent(open_xtd_examples_panel_);
   open_xtd_examples_information_picture_box_.location({550, open_xtd_examples_panel_.size().height() - 260});
