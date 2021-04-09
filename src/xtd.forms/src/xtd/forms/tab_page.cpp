@@ -56,3 +56,14 @@ void tab_page::destroy_handle() {
   if (parent().has_value()) native::tab_control::delete_item(parent().value().get().handle(), handle());
   panel::destroy_handle();
 }
+
+void tab_page::on_handle_created(const event_args& e) {
+  panel::on_handle_created(e);
+  if (image_index_ != -1) {
+    for (size_t index = 0; index < parent().value().get().controls().size(); index++) {
+      if (parent().value().get().controls()[index].get().handle() == handle()) {
+        native::tab_control::page_image_index(parent_, index, image_index_);
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 #include <limits>
+#include <xtd/invalid_operation_exception.h>
 #include <xtd/forms/native/tab_control.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_tab_control.h"
 

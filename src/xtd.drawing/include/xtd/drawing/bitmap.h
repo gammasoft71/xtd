@@ -30,6 +30,8 @@ namespace xtd {
       
       bitmap(int32_t width, int32_t height) : xtd::drawing::image(width, height) {}
       
+      explicit bitmap(const xtd::drawing::size& size) : xtd::drawing::image(size.width(), size.height()) {}
+
       bitmap clone(const rectangle& rect) {return bitmap(*this, rect);}
 
       /// @cond
