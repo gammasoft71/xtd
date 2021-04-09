@@ -1096,6 +1096,21 @@
 /// <br>
 /// @image html tab_control_gd.png
 ///
+/// @example text_box.cpp
+/// The following code example demonstrate the use of text box control.
+/// @par Windows
+/// @image html text_box_w.png
+/// <br>
+/// @image html text_box_wd.png
+/// @par macOS
+/// @image html text_box_m.png
+/// <br>
+/// @image html text_box_md.png
+/// @par Gnome
+/// @image html text_box_g.png
+/// <br>
+/// @image html text_box_gd.png
+///
 /// @example texts.cpp
 /// The following code example demonstrate the use of texts class.
 /// @par Windows
@@ -1110,6 +1125,51 @@
 /// @image html texts_g.png
 /// <br>
 /// @image html texts_gd.png
+///
+/// @example timer.cpp
+/// The following code example demonstrate the use of timer component.
+/// @par Windows
+/// @image html timer_w.png
+/// <br>
+/// @image html timer_wd.png
+/// @par macOS
+/// @image html timer_m.png
+/// <br>
+/// @image html timer_md.png
+/// @par Gnome
+/// @image html timer_g.png
+/// <br>
+/// @image html timer_gd.png
+///
+/// @example toggle_button.cpp
+/// The following code example demonstrate the use of toggle_button control.
+/// @par Windows
+/// @image html toggle_button_w.png
+/// <br>
+/// @image html toggle_button_wd.png
+/// @par macOS
+/// @image html toggle_button_m.png
+/// <br>
+/// @image html toggle_button_md.png
+/// @par Gnome
+/// @image html toggle_button_g.png
+/// <br>
+/// @image html toggle_button_gd.png
+///
+/// @example toggle_buttons.cpp
+/// The following code example demonstrate the use of toggle_buttons factory.
+/// @par Windows
+/// @image html toggle_buttons_w.png
+/// <br>
+/// @image html toggle_buttons_wd.png
+/// @par macOS
+/// @image html toggle_buttons_m.png
+/// <br>
+/// @image html toggle_buttons_md.png
+/// @par Gnome
+/// @image html toggle_buttons_g.png
+/// <br>
+/// @image html toggle_buttons_gd.png
 ///
 /// @example trace_form.cpp
 /// The following code example demonstrate the use of trace_form form.
@@ -1126,6 +1186,36 @@
 /// <br>
 /// @image html trace_form_gd.png
 ///
+/// @example track_bar.cpp
+/// The following code example demonstrate the use of track_bar control.
+/// @par Windows
+/// @image html track_bar_w.png
+/// <br>
+/// @image html track_bar_wd.png
+/// @par macOS
+/// @image html track_bar_m.png
+/// <br>
+/// @image html track_bar_md.png
+/// @par Gnome
+/// @image html track_bar_g.png
+/// <br>
+/// @image html track_bar_gd.png
+///
+/// @example up_down_button.cpp
+/// The following code example demonstrate the use of up down button control.
+/// @par Windows
+/// @image html up_down_button_w.png
+/// <br>
+/// @image html up_down_button_wd.png
+/// @par macOS
+/// @image html up_down_button_m.png
+/// <br>
+/// @image html up_down_button_md.png
+/// @par Gnome
+/// @image html up_down_button_g.png
+/// <br>
+/// @image html up_down_button_gd.png
+///
 /// @example use_wait_cursor.cpp
 /// The following code example demonstrate the use of use_wait_cursor class.
 /// @par Windows
@@ -1141,3 +1231,18 @@
 /// <br>
 /// @image html use_wait_cursor_gd.png
 ///
+/// @example user_control.cpp
+/// The following code example demonstrate the use of user control.
+/// @par Windows
+/// @image html user_control_w.png
+/// <br>
+/// @image html user_control_wd.png
+/// @par macOS
+/// @image html user_control_m.png
+/// <br>
+/// @image html user_control_md.png
+/// @par Gnome
+/// @image html user_control_g.png
+/// <br>
+/// @image html user_control_gd.png
+

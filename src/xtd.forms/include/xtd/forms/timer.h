@@ -35,7 +35,6 @@ namespace xtd {
     /// @image html timer_g.png
     /// <br>
     /// @image html timer_gd.png
-
     class forms_export_ timer final : public component {
     public:
       /// @brief Initializes a new instance of the timer class.
