@@ -4,6 +4,7 @@
 #include <xtd/forms/native/tab_control_styles.h>
 #include <xtd/forms/native/window_styles.h>
 #include "../../../include/xtd/forms/tab_control.h"
+#include "../../../include/xtd/forms/tab_page.h"
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -90,12 +91,19 @@ void tab_control::on_control_removed(const control_event_args &e) {
   if (selected_index_ != npos) selected_index(npos);
 }
 
+void tab_control::on_handle_created(const event_args& e) {
+  control::on_handle_created(e);
+  native::tab_control::image_list(handle(), image_list_.handle());
+}
+
 void tab_control::recreate_handle() {
   control::recreate_handle();
 
+  native::tab_control::image_list(handle(), image_list_.handle());
   for (auto index = 0U; index < controls().size(); index++) {
     native::tab_control::insert_item(handle(), index, controls()[index].get().handle());
     native::tab_control::page_text(handle(), index, controls()[index].get().text());
+    native::tab_control::page_image_index(handle(), index, dynamic_cast<xtd::forms::tab_page&>(controls()[index].get()).image_index());
   }
 }
 

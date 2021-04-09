@@ -52,10 +52,12 @@ namespace xtd {
       /// @return An xtd::forms::image_list that specifies the images to display on the tabs.
       /// @remarks To display an image on a tab, set the image_index property of that xtd::forms::tab_page. The image_index acts as the index into the image_list.
       virtual const forms::image_list& image_list() const {return image_list_;}
+      /*
       /// @brief Gets the images to display on the control's tabs.
       /// @return An xtd::forms::image_list that specifies the images to display on the tabs.
       /// @remarks To display an image on a tab, set the image_index property of that xtd::forms::tab_page. The image_index acts as the index into the image_list.
       virtual forms::image_list& image_list() {return image_list_;}
+       */
       /// @brief Sets the images to display on the control's tabs.
       /// @param value An xtd::forms::image_list that specifies the images to display on the tabs.
       /// @return Current tab_control instance.
@@ -94,7 +96,9 @@ namespace xtd {
       void on_control_added(const control_event_args& e) override;
       
       void on_control_removed(const control_event_args& e) override;
-      
+
+      void on_handle_created(const event_args& e) override;
+
       /// @brief Raises the selected_index_changed event.
       /// @param An xtd::event_args that contains the event data.
       virtual void on_selected_index_changed(const event_args& e) {selected_index_changed(*this, e);}

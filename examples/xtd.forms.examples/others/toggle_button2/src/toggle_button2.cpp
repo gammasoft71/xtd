@@ -49,7 +49,7 @@ private:
     bitmap bitmap(16, 16);
     auto g = graphics::from_image(bitmap);
     g.fill_ellipse(solid_brush(color), 0, 0, bitmap.width(), bitmap.height());
-    g.draw_ellipse(pen(control_paint::light(color)), 0, 0, bitmap.width() - 1, bitmap.height() - 1);
+    g.draw_ellipse(pens::black(), 0, 0, bitmap.width() - 1, bitmap.height() - 1);
     return bitmap;
   }
   
