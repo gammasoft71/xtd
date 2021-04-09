@@ -27,6 +27,18 @@ scrollable_control& tab_page::auto_scroll(bool auto_scroll) {
   return *this;
 }
 
+tab_page& tab_page::image_index(int32_t value) {
+  if (image_index_ != value) {
+    image_index_ = value;
+    for (size_t index = 0; index < parent().value().get().controls().size(); index++) {
+      if (parent().value().get().controls()[index].get().handle() == handle()) {
+        native::tab_control::page_image_index(parent_, index, image_index_);
+      }
+    }
+  }
+  return *this;
+}
+
 control& tab_page::text(const std::string& text) {
   if (text_ != text) {
     if (parent().has_value()) {
