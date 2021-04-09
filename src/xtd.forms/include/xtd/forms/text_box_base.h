@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "control.h"
+#include <xtd/bit_converter.h>
 #include <xtd/argument_out_of_range_exception.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -25,6 +26,22 @@ namespace xtd {
         }
         return *this;
       }
+      
+      /// @brief Gets the border type of the text box control.
+      /// @return A xtd::forms::border_style that represents the border type of the text box control. The default is fixed_single.
+      virtual forms::border_style border_style() const {return border_style_;}
+      /// @brief Sets the border type of the text box control.
+      /// @param border_style A xtd::forms::border_style that represents the border type of the text box control. The default is fixed_single.
+      /// @return Current text_box_base instance.
+      virtual text_box_base& border_style(forms::border_style border_style) {
+        if (border_style_ != border_style) {
+          border_style_ = border_style;
+          recreate_handle();
+          on_border_style_changed(event_args::empty);
+        }
+        return *this;
+      }
+
 
       forms::cursor default_cursor() const override {return forms::cursors::ibeam();}
 
@@ -40,6 +57,23 @@ namespace xtd {
       /// @remarks Each element in the array becomes a line of text in the text box control. If the multiline property of the text box control is set to true and a newline character appears in the text, the text following the newline character is added to a new element in the array and displayed on a separate line.
       text_box_base& lines(const std::vector<std::string>& lines) {
         text(strings::join("\n", lines));
+        return *this;
+      }
+      
+      /// @brief Gets a value indicating whether this is a multiline text box control.
+      /// @return true if the control is a multiline text box control; otherwise, false. The default is false.
+      /// @remarks A multiline text box allows you to display more than one line of text in the control. If the word_wrap property is set to true, text entered into the multiline text box is wrapped to the next line in the control. If the word_wrap property is set to false, text entered into the multiline text box control will be displayed on the same line until a newline character is entered.
+      virtual bool multiline() const {return multiline_;}
+      /// @brief Sets a value indicating whether this is a multiline text box control.
+      /// @param value true if the control is a multiline text box control; otherwise, false. The default is false.
+      /// @return Current text_box_base instance.
+      /// @remarks A multiline text box allows you to display more than one line of text in the control. If the word_wrap property is set to true, text entered into the multiline text box is wrapped to the next line in the control. If the word_wrap property is set to false, text entered into the multiline text box control will be displayed on the same line until a newline character is entered.
+      virtual text_box_base& multiline(bool value) {
+        if (multiline_ != value) {
+          multiline_ = value;
+          recreate_handle();
+          on_multiline_changed(event_args::empty);
+        }
         return *this;
       }
       
@@ -89,6 +123,9 @@ namespace xtd {
       /// @brief Indicates whether a multiline text box control automatically wraps words to the beginning of the next line when necessary.
       /// @return true if the multiline text box control wraps words; false if the text box control automatically scrolls horizontally when the user types past the right edge of the control. The default is true.
       virtual bool word_wrap() const {return word_wrap_;}
+      /// @brief Indicates whether a multiline text box control automatically wraps words to the beginning of the next line when necessary.
+      /// @param value true if the multiline text box control wraps words; false if the text box control automatically scrolls horizontally when the user types past the right edge of the control. The default is true.
+      /// @return Current text_box_base instance.
       virtual text_box_base& word_wrap(bool value) {
         if (word_wrap_ != value) {
           word_wrap_ = value;
@@ -135,6 +172,14 @@ namespace xtd {
       /// @ingroup events
       event<text_box_base, event_handler<control&>> accepts_tab_changed;
       
+      /// @brief Occurs when the value of the accepts_tab border_style has changed.
+      /// @ingroup events
+      event<text_box_base, event_handler<control&>> border_style_changed;
+      
+      /// @brief Occurs when the value of the accepts_tab border_style has changed.
+      /// @ingroup events
+      event<text_box_base, event_handler<control&>> multiline_changed;
+      
       /// @brief Occurs when the value of the read_only property has changed.
       /// @ingroup events
       event<text_box_base, event_handler<control&>> read_only_changed;
@@ -149,6 +194,18 @@ namespace xtd {
         if (can_raise_events()) accepts_tab_changed(*this, e);
       }
       
+      /// @brief Raises the border_style_changed event.
+      /// @param e An xtd::event_args that contains the event data.
+      virtual void on_border_style_changed(const event_args& e) {
+        if (can_raise_events()) border_style_changed(*this, e);
+      }
+      
+      /// @brief Raises the multiline_changed event.
+      /// @param e An xtd::event_args that contains the event data.
+      virtual void on_multiline_changed(const event_args& e) {
+        if (can_raise_events()) multiline_changed(*this, e);
+      }
+
       /// @brief Raises the read_only_changed event.
       /// @param e An xtd::event_args that contains the event data.
       virtual void on_read_only_changed(const event_args& e) {
@@ -157,6 +214,8 @@ namespace xtd {
 
       /// @cond
       bool accepts_tab_ = false;
+      xtd::forms::border_style border_style_ = xtd::forms::border_style::fixed_single;
+      bool multiline_ = false;
       bool read_only_ = false;
       bool word_wrap_ = true;
       mutable size_t selection_start_ = 0;

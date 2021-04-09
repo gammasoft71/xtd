@@ -16,25 +16,9 @@ text_box::text_box() {
   size_ = default_size();
 }
 
-text_box& text_box::border_style(forms::border_style border_style) {
-  if (border_style_ != border_style) {
-    border_style_ = border_style;
-    recreate_handle();
-  }
-  return *this;
-}
-
 text_box& text_box::character_casing(xtd::forms::character_casing value) {
   if (character_casing_ != value) {
     character_casing_ = value;
-    recreate_handle();
-  }
-  return *this;
-}
-
-text_box& text_box::multiline(bool value) {
-  if (multiline_ != value) {
-    multiline_ = value;
     recreate_handle();
   }
   return *this;
