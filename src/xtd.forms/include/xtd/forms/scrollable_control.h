@@ -20,7 +20,7 @@ namespace xtd {
       virtual bool auto_scroll() const {return auto_scroll_;}
       /// @brief Sets a value indicating whether the container enables the user to scroll to any controls placed outside of its visible boundaries.
       /// @param auto_scroll true if the container enables auto-scrolling; otherwise, false. The default value is false.
-      /// @return This nstance of scrollable_control
+      /// @return Current scrollable_control instance.
       virtual scrollable_control& auto_scroll(bool auto_scroll) {
         if (auto_scroll_ != auto_scroll) {
           auto_scroll_ = auto_scroll;
@@ -34,7 +34,7 @@ namespace xtd {
       drawing::size auto_scroll_margin() const {return auto_scroll_margin_;}
       /// @brief Sets the size of the auto-scroll margin.
       /// @param value A size that represents the height and width of the auto-scroll margin in pixels.
-      /// @return This nstance of scrollable_control
+      /// @return Current scrollable_control instance.
       scrollable_control& auto_scroll_margin(const drawing::size& value) {
         if (auto_scroll_margin_ != value) {
           auto_scroll_margin_ = value;
@@ -52,7 +52,7 @@ namespace xtd {
       virtual bool hscroll() const {return hscroll_;}
       /// @brief Sets a value indicating whether the horizontal scroll bar is visible.
       /// @param hscrooll true if the horizontal scroll bar is visible; otherwise, false.
-      /// @return This nstance of scrollable_control
+      /// @return Current scrollable_control instance.
       virtual scrollable_control& hscroll(bool hscroll) {
         if (hscroll_ != hscroll) {
           hscroll_ = hscroll;
@@ -66,7 +66,7 @@ namespace xtd {
       virtual bool vscroll() const {return vscroll_;}
       /// @brief Sets a value indicating whether the vertical scroll bar is visible.
       /// @param vscroll true if the vertical scroll bar is visible; otherwise, false.
-      /// @return This nstance of scrollable_control
+      /// @return Current scrollable_control instance.
       virtual scrollable_control& vscroll(bool vscroll) {
         if (vscroll_ != vscroll) {
           vscroll_ = vscroll;
