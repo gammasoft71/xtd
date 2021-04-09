@@ -96,7 +96,7 @@ namespace {
       about_dialog_standard->label_name_.text(name);
       if (has_credit || has_license) {
         about_dialog_standard->controls().push_back_range({about_dialog_standard->tab_control_about_, about_dialog_standard->label_name_, about_dialog_standard->picture_box_icon_});
-        about_dialog_standard->tab_control_about_.pages().push_back(about_dialog_standard->tab_page_about_);
+        about_dialog_standard->tab_control_about_.tab_pages().push_back(about_dialog_standard->tab_page_about_);
         about_dialog_standard->tab_page_about_.controls().push_back(about_dialog_standard->panel_about_);
       } else {
         about_dialog_standard->controls().push_back_range({about_dialog_standard->panel_about_, about_dialog_standard->label_name_, about_dialog_standard->picture_box_icon_});
@@ -119,11 +119,11 @@ namespace {
       about_dialog_standard->label_copyright_.text(xtd::strings::format("{}", xtd::strings::replace(copyright, u8"(c)"_s, u8"\u00A9"_s)));
       
       if (has_credit) {
-        about_dialog_standard->tab_control_about_.pages().push_back(about_dialog_standard->tab_page_credits_);
+        about_dialog_standard->tab_control_about_.tab_pages().push_back(about_dialog_standard->tab_page_credits_);
       }
       
       if (has_license) {
-        about_dialog_standard->tab_control_about_.pages().push_back(about_dialog_standard->tab_page_license_);
+        about_dialog_standard->tab_control_about_.tab_pages().push_back(about_dialog_standard->tab_page_license_);
         about_dialog_standard->text_box_license_.text(license);
       }
       
