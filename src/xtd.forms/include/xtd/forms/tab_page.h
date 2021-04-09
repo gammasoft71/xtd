@@ -47,6 +47,9 @@ namespace xtd {
       tab_page();
 
       using panel::auto_scroll;
+      /// @brief Sets a value indicating whether the container enables the user to scroll to any controls placed outside of its visible boundaries.
+      /// @param auto_scroll true if the container enables auto-scrolling; otherwise, false. The default value is false.
+      /// @return Current scrollable_control instance.
       scrollable_control& auto_scroll(bool auto_scroll) override;
 
       /// @brief Gets the image list index value of the image displayed on the tab_page control.
@@ -63,6 +66,9 @@ namespace xtd {
       virtual tab_page& image_index(int32_t value);
 
       using panel::text;
+      /// @brief Sets the text associated with this control.
+      /// @param text The text associated with this control.
+      /// @return Current control instance.
       control& text(const std::string& text) override;
 
       void destroy_handle() override;
