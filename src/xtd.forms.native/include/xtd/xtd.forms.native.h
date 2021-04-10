@@ -15,6 +15,7 @@
 #include "forms/native/arranged_direction_window.h"
 #include "forms/native/busy_dialog.h"
 #include "forms/native/button.h"
+#include "forms/native/button_states.h"
 #include "forms/native/button_styles.h"
 #include "forms/native/check_box.h"
 #include "forms/native/checked_list_box.h"
