@@ -33,7 +33,7 @@ namespace xtd {
         /// @remarks If result is true, the color parameter contains the new chosen color.
         static bool run_dialog(intptr_t hwnd, drawing::color& color, std::optional<std::vector<int32_t>>& custom_colors, size_t options);
         /// @brief Shows async dialog as sheet.
-        /// @param on_dialog_coloed a diallog close delegate to call when the dialog is closed.
+        /// @param on_dialog_closed a diallog close delegate to call when the dialog is closed.
         /// @param color A xtd::drawing::color that specifies the color to display.
         /// @param custom_colors A collors array that contains user custom colors.
         /// @param options A bitwise combination of the color dialog flags.
