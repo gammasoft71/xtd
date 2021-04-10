@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd.forms.native library headers.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/xtd.core>
 #include <xtd/xtd.drawing>

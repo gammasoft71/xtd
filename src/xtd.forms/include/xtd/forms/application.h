@@ -214,13 +214,13 @@ namespace xtd {
       /// @warning Calling this method causes the current thread to be suspended while all waiting window messages are processed. If a message causes an event to be triggered, then other areas of your application code may execute. This can cause your application to exhibit unexpected behaviors that are difficult to debug. If you perform operations or computations that take a long time, it is often preferable to perform those operations on a new thread.
       static void do_events();
       
-      /// @brief Enables dark mode for the application.
-      static void enable_dark_mode();
-      
       /// @brief Enables button images for the application.
       /// @remarks This method has an effect only on linux.
       static void enable_button_images();
       
+      /// @brief Enables dark mode for the application.
+      static void enable_dark_mode();
+
       /// @brief Enables light mode for the application.
       static void enable_light_mode();
       
