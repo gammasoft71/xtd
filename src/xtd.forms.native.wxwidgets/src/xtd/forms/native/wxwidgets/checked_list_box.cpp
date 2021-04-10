@@ -15,12 +15,12 @@ void checked_list_box::begin_update(intptr_t control) {
   reinterpret_cast<control_handler*>(control)->control()->Freeze();
 }
 
-void checked_list_box::check_state(intptr_t control, size_t index, int check_state) {
+void checked_list_box::check_state(intptr_t control, size_t index, int32_t check_state) {
   if (control == 0) return;
   static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Check(static_cast<int32_t>(index), check_state != 0);
 }
 
-int checked_list_box::check_state(intptr_t control, size_t index) {
+int32_t checked_list_box::check_state(intptr_t control, size_t index) {
   if (control == 0) return false;
   return static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->IsChecked(static_cast<int32_t>(index));
 }

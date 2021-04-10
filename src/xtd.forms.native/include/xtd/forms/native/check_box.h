@@ -16,11 +16,11 @@ namespace xtd {
       /// @warning Internal use only
       class forms_native_export_ check_box final static_ {
       public:
-        /// @brief set check state.
-        /// @param control Chreck box window handle to set check state.
+        /// @brief Sets check state.
+        /// @param control Chreck box window handle.
         /// @param check_state The check state value : BST_UNCHECKED or BST_CHECKED or BST_INDETERMINATE.
         /// @warning Internal use only
-        static void check_state(intptr_t control, int check_state);
+        static void check_state(intptr_t control, int32_t check_state);
       };
     }
   }
