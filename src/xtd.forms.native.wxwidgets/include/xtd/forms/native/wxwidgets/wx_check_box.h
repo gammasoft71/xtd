@@ -3,6 +3,7 @@
 #include <xtd/drawing/system_colors.h>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/forms/create_params.h>
+#include <xtd/forms/native/button_states.h>
 #include <xtd/forms/native/button_styles.h>
 #include <wx/checkbox.h>
 #include <wx/platform.h>

@@ -19,6 +19,7 @@ add_sources(
   include/xtd/forms/native/arranged_direction_window.h
   include/xtd/forms/native/busy_dialog.h
   include/xtd/forms/native/button.h
+  include/xtd/forms/native/button_states.h
   include/xtd/forms/native/button_styles.h
   include/xtd/forms/native/check_box.h
   include/xtd/forms/native/checked_list_box.h
