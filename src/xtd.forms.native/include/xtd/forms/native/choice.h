@@ -27,7 +27,7 @@ namespace xtd {
         static void begin_update(intptr_t control);
         /// @brief Deletes specified item index.
         /// @param control Choice window handle.
-        /// @param index The item index to set the check state for.
+        /// @param index The item index to delete.
         /// @warning Internal use only
         static void delete_item(intptr_t control, size_t index);
         /// @brief Resumes painting the checked_list_box control after painting is suspended by the begin_update method.
@@ -36,12 +36,12 @@ namespace xtd {
         static void end_update(intptr_t control);
         /// @brief Inserts at specified item index a specified value.
         /// @param control Choice window handle.
-        /// @param index The item index to set the check state for.
+        /// @param index The item index to insert.
         /// @param value The text value.
         /// @warning Internal use only
         static void insert_item(intptr_t control, size_t index, const std::string& value);
         /// @brief Gets selected item index.
-        /// @param control Choice list box window handle.
+        /// @param control Choice window handle.
         /// @return The selected item index.
         /// @warning Internal use only
         static size_t selected_index(intptr_t control);
@@ -52,7 +52,7 @@ namespace xtd {
         static void selected_index(intptr_t control, size_t index);
         /// @brief Updates a specified item index with specified value.
         /// @param control Choice window handle.
-        /// @param index The item index to set the check state for.
+        /// @param index The item index to update.
         /// @param value The text value.
         /// @warning Internal use only
         static void update_item(intptr_t control, size_t pos, const std::string& value);
