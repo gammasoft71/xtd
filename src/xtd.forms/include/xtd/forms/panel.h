@@ -30,6 +30,7 @@ namespace xtd {
     /// @image html panel_gd.png
     class forms_export_ panel : public scrollable_control {
     public:
+      /// @brief Initialises a new instance of panel class.
       panel();
 
       /// @brief Gets the mode by which the panel automatically resizes itself.
@@ -37,7 +38,7 @@ namespace xtd {
       virtual forms::auto_size_mode auto_size_mode() const {return auto_size_mode_;}
       /// @brief Sets the mode by which the panel automatically resizes itself.
       /// @param value An auto_size_mode enumerated value. The default is grow_only.
-      /// @return Current panel.
+      /// @return Current panel instance.
       virtual panel& auto_size_mode(forms::auto_size_mode value);
       
       /// @brief Gets the border style for the control.
@@ -46,7 +47,7 @@ namespace xtd {
       virtual forms::border_style border_style() const {return border_style_;}
       /// @brief Sets the border style for the control.
       /// @param border_style One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
-      /// @return Current panel.
+      /// @return Current panel instance.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
       virtual panel& border_style(forms::border_style border_style);
 
