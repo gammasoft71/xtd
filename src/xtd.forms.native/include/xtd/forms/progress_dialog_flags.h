@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains arranged progress dialog flags constants.
+/// @brief Contains progress dialog flags constants.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstddef>

@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains arranged font dialog flags constants.
+/// @brief Contains font dialog flags constants.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstddef>
