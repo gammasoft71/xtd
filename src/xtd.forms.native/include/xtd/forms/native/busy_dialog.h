@@ -33,9 +33,11 @@ namespace xtd {
         /// @param fore_color A color that represents the background color of the busy box.
         /// @param transparency A float that represents the ttransparency of the busy box. (0: full transparency and 1.0 no transparency)
         /// @return The created and shown busy dialog window handle.
+        /// @warning Internal use only
         static intptr_t create(intptr_t hwnd, const xtd::drawing::icon& icon, const std::string& text, const std::string& description, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color, double transparency);
         /// @brief Destroys busy dialog.
         /// @param dialog Busy dialog window handle to destroy.
+        /// @warning Internal use only
         static void destroy(intptr_t dialog);
       };
     }
