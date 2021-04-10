@@ -39,7 +39,7 @@ namespace xtd {
         static int32_t check_state(intptr_t control, size_t index);
         /// @brief Deletes specified item index.
         /// @param control Checked list box window handle.
-        /// @param index The item index to set the check state for.
+        /// @param index The item index to delete.
         /// @warning Internal use only
         static void delete_item(intptr_t control, size_t index);
         /// @brief Resumes painting the checked_list_box control after painting is suspended by the begin_update method.
@@ -48,7 +48,7 @@ namespace xtd {
         static void end_update(intptr_t control);
         /// @brief Inserts at specified item index a specified value and check state.
         /// @param control Checked list box window handle.
-        /// @param index The item index to set the check state for.
+        /// @param index The item index to insert.
         /// @param value The text value.
         /// @param check_state The check state value : BST_UNCHECKED or BST_CHECKED or BST_INDETERMINATE.
         /// @warning Internal use only
@@ -70,7 +70,7 @@ namespace xtd {
         static std::vector<size_t> selected_indices(intptr_t control);
         /// @brief Updates a specified item index with specified value and check state.
         /// @param control Checked list box window handle.
-        /// @param index The item index to set the check state for.
+        /// @param index The item index to update.
         /// @param value The text value.
         /// @param check_state The check state value : BST_UNCHECKED or BST_CHECKED or BST_INDETERMINATE.
         /// @warning Internal use only
