@@ -29,13 +29,28 @@ namespace xtd {
     /// <br>
     /// @image html up_down_button_gd.png
     class forms_export_ up_down_button : public button_base {
-    public:      
+    public:
+      /// @brief Initializes a new instance of up_down_button class.
       up_down_button();
 
+      /// @brief Gets the maximum value for the up_down_button control.
+      /// @return The maximum value for the up down button. The default value is 100.
+      /// @remarks When the maximum property is set, the minimum property is evaluated and the update_edit_text method is called. If the minimum property is greater than the new maximum property, the minimum property value is set equal to the maximum value. If the current Value is greater than the new Maximum value. the value property value is set equal to the maximum value.
       virtual int32_t maximum() {return maximum_;}
+      /// @brief Sets the maximum value for the up_down_button control.
+      /// @param value The maximum value for the up down button. The default value is 100.
+      /// @return Current numeric_up_down.
+      /// @remarks When the maximum property is set, the minimum property is evaluated and the update_edit_text method is called. If the minimum property is greater than the new maximum property, the minimum property value is set equal to the maximum value. If the current Value is greater than the new Maximum value. the value property value is set equal to the maximum value.
       virtual up_down_button& maximum(int32_t value);
       
+      /// @brief Gets the minimum allowed value for the up_down_button control.
+      /// @return The minimum allowed value for the up down buttonup down buttonup down button. The default value is 0.
+      /// @remarks When the maximum property is set, the minimum property is evaluated and the update_edit_text method is called. If the minimum property is greater than the new maximum property, the minimum property value is set equal to the maximum value. If the current Value is greater than the new Maximum value. the value property value is set equal to the maximum value.
       virtual int32_t minimum() {return minimum_;}
+      /// @brief Sets the minimum allowed value for the up_down_button control.
+      /// @param value The minimum allowed value for the up down buttonup down button. The default value is 0.
+      /// @return Current numeric_up_down.
+      /// @remarks When the maximum property is set, the minimum property is evaluated and the update_edit_text method is called. If the minimum property is greater than the new maximum property, the minimum property value is set equal to the maximum value. If the current Value is greater than the new Maximum value. the value property value is set equal to the maximum value.
       virtual up_down_button& minimum(int32_t value);
       
       /// @brief Gets a value indicating the horizontal or vertical orientation of the up down button.
@@ -46,10 +61,22 @@ namespace xtd {
       /// @param When the orientation property is set to orientation::horizontal, the scroll box moves from left to right as the value increases. When the orientation property is set to orientation::vertical, the scroll box moves from bottom to top as the Value increases.
       virtual up_down_button& orientation(forms::orientation orientation);
 
+      /// @brief Gets the value assigned to the up_down_button control.
+      /// @return The numeric value of the up down button control.
+      /// @remarks When the value property is set, the new value is validated to be between the minimum and maximum values. Following this, the update_edit_text method is called to update the spin box's display with the new value in the appropriate format.
       virtual int32_t value() {return value_;}
+      /// @brief Sets the value assigned to the up_down_button control.
+      /// @param value The numeric value of the up down button control.
+      /// @return Current numeric_up_down.
+      /// @remarks When the value property is set, the new value is validated to be between the minimum and maximum values. Following this, the update_edit_text method is called to update the spin box's display with the new value in the appropriate format.
       virtual up_down_button& value(int32_t value);
 
+      /// @brief Get a value indicate if value can be wrapped.
+      /// @return true if value can be wrapped; otherwise false. The default is false.
       virtual bool wrapped() {return wrapped_;}
+      /// @brief Set a value indicate if value can be wrapped.
+      /// @param value true if value can be wrapped; otherwise false. The default is false.
+      /// @return Current numeric_up_down.
       virtual up_down_button& wrapped(bool value);
       
       /// @brief Sets the minimum and maximum values for a track_bar.
@@ -84,8 +111,17 @@ namespace xtd {
       /// @param e A EventArgs that contains the event data.
       void on_handle_created(const event_args& e) override;
 
+      /// @brief Raises the Scroll event.
+      /// @param e An event_args that contains the event data.
+      /// @remarks You can use the OnScroll event to update other controls as the position of the scroll box changes.
+      /// @remarks Raising an event invokes the event handler through a delegate.
+      /// @remarks The on_scroll method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
+      /// @par Notes to Inheritors
+      /// @remarks When overriding on_scroll(const event_args&) in a derived class, be sure to call the base class' on_scroll(const event_args&) method so that registered delegates receive the event.
       virtual void on_scroll(const event_args& e);
 
+      /// @brief Raises the value_changed event.
+      /// @param e An event_args that contains the event data.
       virtual void on_value_changed(const event_args& e);
       
       /// @brief Processes Windows messages.
