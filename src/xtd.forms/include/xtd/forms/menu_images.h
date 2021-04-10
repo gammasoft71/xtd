@@ -280,23 +280,23 @@ namespace xtd {
       /// @return A xtd::drawing::image that represent "go-previous".
       static xtd::drawing::image view_back(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "go-previous", size);}
 
-      /// @brief View next image object.
+      /// @brief View forward image object.
       /// @return A xtd::drawing::image that represent  "go-next".
       static xtd::drawing::image view_forward() {return view_forward(xtd::forms::theme_images::current_theme(), size());}
-      /// @brief View nextView next image object with specified theme.
+      /// @brief View forward image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent  "go-next".
       static xtd::drawing::image view_forward(const std::string& theme) {return view_forward(theme, size());}
-      /// @brief View nextView next image object with specified size.
+      /// @brief View forward image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent  "go-next".
       static xtd::drawing::image view_forward(const xtd::drawing::size& size) {return view_forward(xtd::forms::theme_images::current_theme(), size);}
-      /// @brief View next image object with specified theme and size.
+      /// @brief View forward image object with specified theme and size.
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent  "go-next".
       static xtd::drawing::image view_forward(const std::string& theme, const xtd::drawing::size& size) {return view_forward(xtd::forms::theme_images::theme_from_name(theme), size);}
-      /// @brief View next image object with specified theme and size.
+      /// @brief View forward image object with specified theme and size.
       /// @param theme A xtd::forms::theme_images that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent  "go-next".
