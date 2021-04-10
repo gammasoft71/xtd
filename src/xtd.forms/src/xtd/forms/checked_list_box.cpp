@@ -17,7 +17,7 @@ checked_list_box::checked_list_box() {
   size_ = default_size();
 
   items_.item_added += [&](size_t pos, const item& item) {
-    native::checked_list_box::insert_item(handle(), pos, item.value(), item.checked());
+    native::checked_list_box::insert_item(handle(), pos, item.value(), static_cast<int32_t>(item.check_state()));
     checked_list_box::item selected_item;
     if (selected_index_ != npos && selected_index_ < items_.size()) selected_item = items_[selected_index_];
     this->selected_item(selected_item);
@@ -32,7 +32,7 @@ checked_list_box::checked_list_box() {
   };
   
   items_.item_updated += [&](size_t pos, const item& item) {
-    native::checked_list_box::update_item(handle(), pos, item.value(), item.checked());
+    native::checked_list_box::update_item(handle(), pos, item.value(), static_cast<int32_t>(item.check_state()));
     checked_list_box::item selected_item;
     if (selected_index_ != npos && selected_index_ < items_.size()) selected_item = items_[selected_index_];
     this->selected_item(selected_item);
