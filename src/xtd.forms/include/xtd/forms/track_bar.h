@@ -152,7 +152,7 @@ namespace xtd {
       /// @remarks Raising an event invokes the event handler through a delegate.
       /// @remarks The on_scroll method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
       /// @par Notes to Inheritors
-      /// When overriding on_scroll(const event_args&) in a derived class, be sure to call the base class' on_scroll(const event_args&) method so that registered delegates receive the event.
+      /// @remarks When overriding on_scroll(const event_args&) in a derived class, be sure to call the base class' on_scroll(const event_args&) method so that registered delegates receive the event.
       virtual void on_scroll(const event_args& e);
       
       /// @brief Raises the value_changed event.
