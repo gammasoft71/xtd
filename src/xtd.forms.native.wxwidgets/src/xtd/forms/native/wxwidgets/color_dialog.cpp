@@ -50,6 +50,6 @@ bool color_dialog::run_dialog(intptr_t hwnd, drawing::color& color, std::optiona
   return true;
 }
 
-void color_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const drawing::color& color, std::optional<std::vector<int32_t>>& custom_colors, size_t options) {
+void color_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, drawing::color& color, std::optional<std::vector<int32_t>>& custom_colors, size_t options) {
   on_dialog_closed(run_dialog(hwnd, color, custom_colors, options));
 }
