@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains arranged color dialog flags constants.
+/// @brief Contains color dialog flags constants.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstddef>
