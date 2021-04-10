@@ -18,7 +18,7 @@ namespace xtd {
       class forms_native_export_ button final static_ {
       public:
         /// @brief Mark button as default.
-        /// @param control Button window handle to set default.
+        /// @param control Button window handle.
         /// @warning Internal use only
         static void set_default_button(intptr_t control);
       };
