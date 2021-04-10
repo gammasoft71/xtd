@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains xtd::forms::native::application API.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
 #include <vector>
@@ -5,27 +8,62 @@
 #include <xtd/delegate.h>
 #include <xtd/forms_native_export.h>
 
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @brief The xtd::forms::native namespace contains internal native API definitions to access underlying toolkits used by xtd.forms library.
+    /// @warning Internal use only
     namespace native {
+      /// @brief Contains application native API.
+      /// @par Library
+      /// xtd.forms.native
+      /// @ingroup xtd_forms_native
+      /// @warning Internal use only
       class forms_native_export_ application final static_ {
       public:
+        /// @brief Gets a value indicating whether the caller can quit this application.
+        /// @return true if the caller can quit this application; otherwise, false.
         static bool allow_quit();
+        /// @brief Cleanup all datas, handles, references, ... initialized by initilize before quit.
+        /// @remarks Some toolkits are nothing to clean. Leave this method empty.
         static void cleanup();
+        /// @brief Processes all Windows messages currently in the message queue.
         static void do_events();
+        /// @brief Processes do idle event.
         static void do_idle();
+        /// @brief Return true if dark mode is enabled for the application; otherwise return false.
+        /// @return true if dark mode is enabled; otherwise false.
         static bool dark_mode_enabled();
+        /// @brief Enables button images for the application.
         static void enable_button_images();
+        /// @brief Enables dark mode for the application.
         static void enable_dark_mode();
+        /// @brief Enables light mode for the application.
         static void enable_light_mode();
+        /// @brief Enables menu images for the application.
         static void enable_menu_images();
+        /// @brief Enables visual styles for the application.
         static void enable_visual_style();
+        /// @brief Exits application.
         static void exit();
+        /// @brief Initialize all datas, handles, references, ... needed by tookits.
+        /// @remarks Some toolkits are nothing to init. Leave this method empty.
         static void initialize();
+        /// @brief Register a specified message filter from the message pump of the application.
+        /// @param message_filter A message filter delegate to register.
         static void register_message_filter(const delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& message_filter);
+        /// @brief Register a specified thread_exception from the message pump of the application.
+        /// @param thread_exception A thread exception delegate to register.
+        /// @remarks The thread exception delegate return true if the user want quit application after exception.
         static void register_thread_exception(const delegate<bool()>& thread_exception);
+        /// @brief Register a specified wnd proc from the message pump of the application.
+        /// @param wnd_proc A wnd proc delegate to register.
         static void register_wnd_proc(const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc);
+        /// @brief Begins running a standard application message loop on the current thread.
         static void run();
+        /// @brief Sets whether the wait cursor is used for all open forms of the application.
+        /// @param use_wait_cursor true is the wait cursor is used for all open forms; otherwise, false.
         static void use_wait_cursor(bool use_wait_cursor);
       };
     }

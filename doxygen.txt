@@ -109,9 +109,9 @@ INPUT                  = src/xtd/include \
                          src/xtd.core/include \
                          src/xtd.drawing/include \
                          src/xtd.forms/include \
-                         src/xtd.tunit/include
+                         src/xtd.tunit/include \
+                         src/xtd.forms.native/include
 #                         src/xtd.drawing.native/include \
-#                         src/xtd.forms.native/include
 INPUT_ENCODING         = UTF-8
 FILE_PATTERNS          = *.dox *.h *.md
 RECURSIVE              = YES # Default: NO
