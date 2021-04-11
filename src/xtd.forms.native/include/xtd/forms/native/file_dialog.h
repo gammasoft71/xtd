@@ -39,7 +39,7 @@ namespace xtd {
         /// @warning Internal use only
         static bool run_open_dialog(intptr_t hwnd, const std::string& default_ext, std::string& file_name, std::vector<std::string>& file_names, const std::string& filter, size_t filter_index, const std::string& initial_directory, size_t options, bool support_multi_dotted_extensions, const std::string& title);
         /// @brief Shows async open file dialog as sheet.
-        /// @param on_dialog_closed a diallog close delegate to call when the dialog is closed.
+        /// @param on_dialog_closed a dialog close delegate to call when the dialog is closed.
         /// @param hwnd Parent window handle.
         /// @param default_ext The default file name extension. The returned string does not include the period.
         /// @param file_name The file name selected in the file dialog box.
@@ -70,7 +70,7 @@ namespace xtd {
         /// @warning Internal use only
         static bool run_save_dialog(intptr_t hwnd, const std::string& default_ext, std::string& file_name, std::vector<std::string>& file_names, const std::string& filter, size_t filter_index, const std::string& initial_directory, size_t options, bool support_multi_dotted_extensions, const std::string& title);
         /// @brief Shows async save file dialog as sheet.
-        /// @param on_dialog_closed a diallog close delegate to call when the dialog is closed.
+        /// @param on_dialog_closed a dialog close delegate to call when the dialog is closed.
         /// @param hwnd Parent window handle.
         /// @param default_ext The default file name extension. The returned string does not include the period.
         /// @param file_name The file name selected in the file dialog box.
