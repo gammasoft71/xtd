@@ -1,14 +1,62 @@
+/// @file
+/// @brief Contains content alignment constants.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstddef>
 
-constexpr size_t CA_TOP_LEFT = 0b1;
-constexpr size_t CA_TOP_CENTER = 0b10;
-constexpr size_t CA_TOP_RIGHT = 0b100;
+/// @brief Content is vertically aligned at the top, and horizontally aligned on the left.
+/// @par Library
+/// xtd.forms.native
+/// @ingroup xtd_forms_native
+/// @warning Internal use only
+constexpr size_t CA_TOPLEFT = 0b1;
+/// @brief Content is vertically aligned at the top, and horizontally aligned at the center.
+/// @par Library
+/// xtd.forms.native
+/// @ingroup xtd_forms_native
+/// @warning Internal use only
+constexpr size_t CA_TOPCENTER = 0b10;
+/// @brief Content is vertically aligned at the top, and horizontally aligned on the right.
+/// @par Library
+/// xtd.forms.native
+/// @ingroup xtd_forms_native
+/// @warning Internal use only
+constexpr size_t CA_TOPRIGHT = 0b100;
 
-constexpr size_t CA_MIDDLE_LEFT = 0b10000;
-constexpr size_t CA_MIDDLE_CENTER = 0b100000;
-constexpr size_t CA_MIDDLE_RIGHT = 0b1000000;
+/// @brief Content is vertically aligned in the middle, and horizontally aligned on the left.
+/// @par Library
+/// xtd.forms.native
+/// @ingroup xtd_forms_native
+/// @warning Internal use only
+constexpr size_t CA_MIDDLELEFT = 0b10000;
+/// @brief Content is vertically aligned at the middle, and horizontally aligned at the center.
+/// @par Library
+/// xtd.forms.native
+/// @ingroup xtd_forms_native
+/// @warning Internal use only
+constexpr size_t CA_MIDDLECENTER = 0b100000;
+/// @brief Content is vertically aligned at the middle, and horizontally aligned on the right.
+/// @par Library
+/// xtd.forms.native
+/// @ingroup xtd_forms_native
+/// @warning Internal use only
+constexpr size_t CA_MIDDLERIGHT = 0b1000000;
 
-constexpr size_t CA_BOTTOM_LEFT = 0b100000000;
-constexpr size_t CA_BOTTOM_CENTER = 0b1000000000;
-constexpr size_t CA_BOTTOM_RIGHT = 0b10000000000;
+/// @brief Content is vertically aligned in the bottom, and horizontally aligned on the left.
+/// @par Library
+/// xtd.forms.native
+/// @ingroup xtd_forms_native
+/// @warning Internal use only
+constexpr size_t CA_BOTTOMLEFT = 0b100000000;
+/// @brief Content is vertically aligned at the bottom, and horizontally aligned at the center.
+/// @par Library
+/// xtd.forms.native
+/// @ingroup xtd_forms_native
+/// @warning Internal use only
+constexpr size_t CA_BOTTOMCENTER = 0b1000000000;
+/// @brief Content is vertically aligned at the bottom, and horizontally aligned on the right.
+/// @par Library
+/// xtd.forms.native
+/// @ingroup xtd_forms_native
+/// @warning Internal use only
+constexpr size_t CA_BOTTOMRIGHT = 0b10000000000;
