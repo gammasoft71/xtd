@@ -1,6 +1,6 @@
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_menu.h"
 #include <xtd/forms/native/menu_item.h>
-#include <xtd/forms/native/menu_item_kind.h>
+#include <xtd/forms/native/menu_item_kinds.h>
 #include <map>
 #include <wx/menuitem.h>
 
