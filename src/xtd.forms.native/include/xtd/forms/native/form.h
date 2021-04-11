@@ -73,15 +73,15 @@ namespace xtd {
         /// @param control Control window handle.
         /// @warning Internal use only
         static void restore(intptr_t form);
-        /// @brief Run form as dialog modal.
+        /// @brief Show dialog.
         /// @param control Control window handle.
         /// @warning Internal use only
         static int32_t show_dialog(intptr_t form);
-        /// @brief Run form as async sheet.
+        /// @brief Show async dialog as sheet.
         /// @param control Control window handle.
         /// @warning Internal use only
         static void show_sheet(intptr_t form);
-        /// @brief Run form as sheet modal.
+        /// @brief Show dialog as sheet.
         /// @param control Control window handle.
         /// @warning Internal use only
         static int32_t show_sheet_dialog(intptr_t form);
