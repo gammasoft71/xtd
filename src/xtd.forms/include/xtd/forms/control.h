@@ -473,7 +473,7 @@ namespace xtd {
       /// @brief Gets the coordinates of the upper-left corner of the control relative to the upper-left corner of its container.
       /// @return The point that represents the upper-left corner of the control relative to the upper-left corner of its container.
       virtual drawing::point location() const {return location_;}
-      /// @brief Gets the coordinates of the upper-left corner of the control relative to the upper-left corner of its container.
+      /// @brief Sets the coordinates of the upper-left corner of the control relative to the upper-left corner of its container.
       /// @param location The point that represents the upper-left corner of the control relative to the upper-left corner of its container.
       /// @return Current control.
       virtual control& location(const drawing::point& location) {
@@ -836,7 +836,7 @@ namespace xtd {
       
       /// @brief Computes the location of the specified client point into screen coordinates.
       /// @param p The client coordinate  xtd::drawing::point to convert.
-      /// @return A  xtd::drawing::point that represents the converted  xtd::drawing::point, p, in screen coordinates.
+      /// @return A xtd::drawing::point that represents the converted  xtd::drawing::point, p, in screen coordinates.
       xtd::drawing::point point_to_screen(const xtd::drawing::point& p);
       
       /// @brief Preprocesses keyboard or input messages within the message loop before they are dispatched.
@@ -872,7 +872,7 @@ namespace xtd {
       /// @param msg The ID number for the message.
       /// @param wparam The WParam field of the message.
       /// @param lparam The LParam field of the message.
-      /// @return Return the return value of the message.
+      /// @return The return value of the message.
       intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) const;
       
       /// @brief Sets a value indicating how a control will behave when its auto_size property is enabled.

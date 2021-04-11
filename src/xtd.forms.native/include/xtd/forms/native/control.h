@@ -95,12 +95,12 @@ namespace xtd {
         static void destroy(intptr_t control);
         /// @brief Gets a value indicating whether the control can respond to user interaction.
         /// @param control Control window handle.
-        /// @return true if the control can respond to user interaction; otherwise, false. The default is true.
+        /// @return true if the control can respond to user interaction; otherwise, false.
         /// @warning Internal use only
         static bool enabled(intptr_t control);
         /// @brief Sets a value indicating whether the control can respond to user interaction.
         /// @param control Control window handle.
-        /// @param enabled true if the control can respond to user interaction; otherwise, false. The default is true.
+        /// @param enabled true if the control can respond to user interaction; otherwise, false.
         /// @warning Internal use only
         static void enabled(intptr_t control, bool enabled);
         /// @brief Sets input focus to the control.
@@ -122,78 +122,99 @@ namespace xtd {
         /// @param font The xtd::drawing::font to apply to the text displayed by the control.
         /// @warning Internal use only
         static void font(intptr_t control, const drawing::font& font);
-        /// @brief
+        /// @brief Invalidates the entire surface of the control and causes the control to be redrawn.
         /// @param control Control window handle.
-        /// @warning Internal use only
-        static void invoke_in_control_thread(intptr_t control, delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args, std::shared_ptr<std::shared_mutex> invoked);
-        /// @brief
-        /// @param control Control window handle.
-        /// @warning Internal use only
-        static drawing::point location(intptr_t control);
-        /// @brief
-        /// @param control Control window handle.
-        /// @warning Internal use only
-        static void location(intptr_t control, const drawing::point& location);
-        /// @brief
-        /// @param control Control window handle.
-        /// @warning Internal use only
-        static drawing::size size(intptr_t control);
-        /// @brief
-        /// @param control Control window handle.
-        /// @warning Internal use only
-        static void size(intptr_t control, const drawing::size& size);
-        /// @brief
-        /// @param control Control window handle.
-        /// @warning Internal use only
-        static std::string text(intptr_t control);
-        /// @brief
-        /// @param control Control window handle.
-        /// @warning Internal use only
-        static void text(intptr_t control, const std::string& text);
-        /// @brief
-        /// @param control Control window handle.
-        /// @warning Internal use only
-        static bool visible(intptr_t control);
-        /// @brief
-        /// @param control Control window handle.
-        /// @warning Internal use only
-        static void visible(intptr_t control, bool visible);
-        /// @brief
-        /// @param control Control window handle.
-        /// @warning Internal use only
-        static drawing::point point_to_client(intptr_t control, const drawing::point& p);
-        /// @brief
-        /// @param control Control window handle.
-        /// @warning Internal use only
-        static drawing::point point_to_screen(intptr_t control, const drawing::point& p);
-        /// @brief
-        /// @param control Control window handle.
+        /// @param rect A xtd::drawing::rectangle that represents the region to invalidate.
+        /// @param erase_background true to erase background control; otherwise, false.
         /// @warning Internal use only
         static void invalidate(intptr_t control, const drawing::rectangle& rect, bool erase_background);
-        /// @brief
+        /// @brief Executes the specified delegate, on the thread that owns the control's underlying window handle, with the specified list of arguments and mutex.
         /// @param control Control window handle.
+        /// @param invoker A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
+        /// @param args An array of objects to pass as arguments to the specified method. This parameter can be null if the method takes no arguments.
+        /// @param invoked A mutex for async invoke.
+        /// @remarks Signal mutex when invoke is done.
         /// @warning Internal use only
-        static void register_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc);
-        /// @brief
+        static void invoke_in_control_thread(intptr_t control, delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args, std::shared_ptr<std::shared_mutex> invoked);
+        /// @brief Gets the coordinates of the upper-left corner of the control relative to the upper-left corner of its container.
         /// @param control Control window handle.
+        /// @return The point that represents the upper-left corner of the control relative to the upper-left corner of its container.
         /// @warning Internal use only
-        static void unregister_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc);
-        /// @brief
+        static drawing::point location(intptr_t control);
+        /// @brief Sets the coordinates of the upper-left corner of the control relative to the upper-left corner of its container.
         /// @param control Control window handle.
+        /// @param location 
         /// @warning Internal use only
-        static void register_client_size_changed(intptr_t control, delegate<void(const event_args&)> callback);
-        /// @brief
+        static void location(intptr_t control, const drawing::point& location);
+        /// @brief Computes the location of the specified screen point into client coordinates.
+        /// @param control Control window handle.
+        /// @param p The screen coordinate xtd::drawing::point to convert.
+        /// @return A xtd::drawing::point that represents the converted xtd::drawing::point, p, in client coordinates.
+        /// @warning Internal use only
+        static drawing::point point_to_client(intptr_t control, const drawing::point& p);
+        /// @brief Computes the location of the specified client point into screen coordinates.
+        /// @param control Control window handle.
+        /// @param p The client coordinate  xtd::drawing::point to convert.
+        /// @return A xtd::drawing::point that represents the converted  xtd::drawing::point, p, in screen coordinates.
+        /// @warning Internal use only
+        static drawing::point point_to_screen(intptr_t control, const drawing::point& p);
+        /// @brief Forces the control to invalidate its client area and immediately redraw itself and any child controls.
         /// @param control Control window handle.
         /// @warning Internal use only
         static void refresh(intptr_t control);
-        /// @brief
+        /// @brief Register a specified wnd proc from the message pump of the control.
+        /// @param control Control window handle.
+        /// @param wnd_proc A wnd proc delegate to register.
+        /// @warning Internal use only
+        static void register_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc);
+        /// @brief Send a message with specified hwnd, message, wparam and lparam.
+        /// @param control Control window handle.
+        /// @param hwnd The window handle of the message.
+        /// @param msg The ID number for the message.
+        /// @param wparam The WParam field of the message.
+        /// @param lparam The LParam field of the message.
+        /// @return The return value of the message.
+        /// @warning Internal use only
+        static intptr_t send_message(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wParam, intptr_t lParam);
+        /// @brief Gets the height and width of the control.
+        /// @param control Control window handle.
+        /// @return The size that represents the height and width of the control in pixels.
+        /// @warning Internal use only
+        static drawing::size size(intptr_t control);
+        /// @brief Sets the height and width of the control.
+        /// @param control Control window handle.
+        /// @param size The size that represents the height and width of the control in pixels.
+        /// @warning Internal use only
+        static void size(intptr_t control, const drawing::size& size);
+        /// @brief Gets the text associated with this control.
+        /// @param control Control window handle.
+        /// @return The text associated with this control.
+        /// @warning Internal use only
+        static std::string text(intptr_t control);
+        /// @brief Sets the text associated with this control.
+        /// @param control Control window handle.
+        /// @param text The text associated with this control.
+        /// @warning Internal use only
+        static void text(intptr_t control, const std::string& text);
+        /// @brief Unregister a specified wnd proc from the message pump of the control.
+        /// @param control Control window handle.
+        /// @param wnd_proc A wnd proc delegate to unregister.
+        /// @warning Internal use only
+        static void unregister_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc);
+        /// @brief Causes the control to redraw the invalidated regions within its client area.
         /// @param control Control window handle.
         /// @warning Internal use only
         static void update(intptr_t control);
-        /// @brief
+        /// @brief Gets a value indicating whether the control and all its child controls are displayed.
         /// @param control Control window handle.
+        /// @return true if the control and all its child controls are displayed; otherwise, false.
         /// @warning Internal use only
-        static intptr_t send_message(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wParam, intptr_t lParam);
+        static bool visible(intptr_t control);
+        /// @brief Sets a value indicating whether the control and all its child controls are displayed.
+        /// @param control Control window handle.
+        /// @param visible true if the control and all its child controls are displayed; otherwise, false.
+        /// @warning Internal use only
+        static void visible(intptr_t control, bool visible);
         
         /// @brief Coomvert message identifiers to a string.
         /// @param control Control window handle.
