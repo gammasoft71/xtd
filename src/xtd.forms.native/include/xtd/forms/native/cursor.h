@@ -24,13 +24,13 @@ namespace xtd {
       class forms_native_export_ cursor final static_ {
       public:
         /// @brief Creates cursor.
-        /// @return The created control window handle.
+        /// @return The created cursor handle.
         /// @warning Internal use only
         static intptr_t create();
         /// @brief Creates cursor with specifiiedd image and hot spot.
         /// @param image A xtd::drawing::image image will be use by cursor.
         /// @param hot_spot A xtd::drawing::point hot spot location.
-        /// @return The created control window handle.
+        /// @return The created cursor handle.
         /// @warning Internal use only
         static intptr_t create(const xtd::drawing::image& image, const drawing::point& hot_spot);
         /// @brief Copies the cursor handle.
