@@ -296,12 +296,12 @@ namespace xtd {
       /// @remarks Because client coordinates are relative to the upper-left corner of the client area of the control, the coordinates of the upper-left corner of the rectangle returned by this property are (0,0). You can use this property to obtain the size and coordinates of the client area of the control for tasks such as drawing on the surface of the control.
       virtual const drawing::rectangle& client_rectangle() const {return client_rectangle_;}
 
-      /// @brief Gets  the height and width of the client area of the control.
+      /// @brief Gets the height and width of the client area of the control.
       /// @return A size that represents the dimensions of the client area of the control.
       /// @remarks The client area of a control is the bounds of the control, minus the nonclient elements such as scroll bars, borders, title bars, and menus.
       virtual const drawing::size& client_size() const {return client_size_;}
       /// @brief Sets the height and width of the client area of the control.
-      /// @param A size that represents the dimensions of the client area of the control.
+      /// @param client_size A size that represents the dimensions of the client area of the control.
       /// @return Current control.
       /// @remarks The client area of a control is the bounds of the control, minus the nonclient elements such as scroll bars, borders, title bars, and menus. The set_client_size_core method is called to set the client_size property. The client_size property is not always changed through its set method so you should override the set_client_sizeCore method to ensure that your code is executed when the client_size property is set.
       virtual control& client_size(const drawing::size& client_size) {
@@ -406,7 +406,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether the control can respond to user interaction.
       /// @return true if the control can respond to user interaction; otherwise, false. The default is true.
       virtual bool enabled() const {return get_state(state::enabled);}
-      /// @brief Gets a value indicating whether the control can respond to user interaction.
+      /// @brief Sets a value indicating whether the control can respond to user interaction.
       /// @param enabe true if the control can respond to user interaction; otherwise, false. The default is true.
       /// @return Current control.
       virtual control& enabled(bool enabled);
@@ -429,7 +429,7 @@ namespace xtd {
       /// @brief Gets the font of the text displayed by the control.
       /// @return The font to apply to the text displayed by the control. The default is the value of the default_font property.
       virtual drawing::font font() const;
-      /// @brief Gets the font of the text displayed by the control.
+      /// @brief Sets the font of the text displayed by the control.
       /// @param font The font to apply to the text displayed by the control. The default is the value of the default_font property.
       /// @return Current control.
       virtual control& font(const drawing::font& font);
@@ -743,7 +743,7 @@ namespace xtd {
       void create_control();
       
       /// @brief Creates the xtd::drawing::graphics for the control.
-      /// @return A xtd::drawing::graphics for the screen.
+      /// @return A xtd::drawing::graphics for the control.
       /// @remarks The graphics object that you retrieve through the create_graphics method should not normally be retained after the current Windows message has been processed, because anything painted with that object will be erased with the next WM_PAINT message. Therefore you cannot cache the graphics object for reuse, except to use non-visual methods like xtd::drawing::graphics::measure_string. Instead, you must call create_graphics every time that you want to use the graphics object.
       drawing::graphics create_graphics() const;
       
