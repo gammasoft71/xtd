@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains class style constants.
+/// @brief Contains combo box style constants.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstddef>
@@ -77,7 +77,7 @@ constexpr size_t CBS_DISABLENOSCROLL = 0x0800L;
 /// @ingroup xtd_forms_native
 /// @warning Internal use only
 constexpr size_t CBS_UPPERCASE = 0x2000L;
-/// @brief Converts to lowercase all text in both the selection field and the list. 
+/// @brief Converts to lowercase all text in both the selection field and the list.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native
