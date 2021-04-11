@@ -6,10 +6,20 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
+void domain_up_down::begin_update(intptr_t control) {
+  if (control == 0) return;
+  reinterpret_cast<control_handler*>(control)->control()->Freeze();
+}
+
 void domain_up_down::delete_item(intptr_t control, size_t index) {
   if (control == 0) return;
   static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetItems().RemoveAt(index);
   static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->updateSpin();
+}
+
+void domain_up_down::end_update(intptr_t control) {
+  if (control == 0) return;
+  reinterpret_cast<control_handler*>(control)->control()->Thaw();
 }
 
 void domain_up_down::insert_item(intptr_t control, size_t index, const std::string& value) {
