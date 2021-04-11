@@ -96,8 +96,8 @@ namespace xtd {
       /// @remarks When the user of your application specifies a file name without an extension, the file_dialog appends an extension to the file name. The extension that is used is determined by the filter and default_ext properties. If a filter is selected in the file_dialog and the filter specifies an extension, then that extension is used. If the filter selected uses a wildcard in place of the extension, then the extension specified in the default_ext property is used.
       virtual const std::string& default_ext() const {return default_ext_;}
       /// @brief Sets the default file name extension.
-      /// @return The default file name extension. The returned string does not include the period. The default value is an empty string ("").
-      /// @param value When the user of your application specifies a file name without an extension, the file_dialog appends an extension to the file name. The extension that is used is determined by the filter and default_ext properties. If a filter is selected in the file_dialog and the filter specifies an extension, then that extension is used. If the filter selected uses a wildcard in place of the extension, then the extension specified in the default_ext property is used.
+      /// @param value The default file name extension. The returned string does not include the period. The default value is an empty string ("").
+      /// @remarks When the user of your application specifies a file name without an extension, the file_dialog appends an extension to the file name. The extension that is used is determined by the filter and default_ext properties. If a filter is selected in the file_dialog and the filter specifies an extension, then that extension is used. If the filter selected uses a wildcard in place of the extension, then the extension specified in the default_ext property is used.
       /// @return Current file_dialog.
       virtual file_dialog& default_ext(const std::string& value) {
         default_ext_ = value;
