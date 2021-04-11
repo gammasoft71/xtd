@@ -84,7 +84,7 @@ int32_t message_box::show(intptr_t control, const std::string& text, const std::
   return convert_to_dialog_result(dialog.ShowModal(), style);
 }
 
-void message_box::show_sheet(xtd::delegate<void(int)> on_dialog_closed, intptr_t control, const std::string& text, const std::string& caption, uint32_t style, bool display_help_button) {
+void message_box::show_sheet(xtd::delegate<void(int32_t)> on_dialog_closed, intptr_t control, const std::string& text, const std::string& caption, uint32_t style, bool display_help_button) {
   native::application::initialize(); // Must be first
   on_dialog_closed(show(control, text, caption, style, display_help_button));
 }

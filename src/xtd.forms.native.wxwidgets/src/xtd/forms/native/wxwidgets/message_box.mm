@@ -72,7 +72,7 @@ int32_t message_box::show(intptr_t control, const std::string& text, const std::
   }
 }
 
-void message_box::show_sheet(xtd::delegate<void(int)> on_dialog_closed, intptr_t control, const std::string& text, const std::string& caption, uint32_t style, bool display_help_button) {
+void message_box::show_sheet(xtd::delegate<void(int32_t)> on_dialog_closed, intptr_t control, const std::string& text, const std::string& caption, uint32_t style, bool display_help_button) {
   @autoreleasepool {
     NSAlert *alert = create_alert(text, caption, style, display_help_button);
     [alert beginSheetModalForWindow:[reinterpret_cast<control_handler*>(control)->control()->GetHandle() window] completionHandler:^(NSModalResponse return_code) {
