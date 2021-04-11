@@ -15,7 +15,7 @@ namespace xtd {
     /// @brief The xtd::forms::native namespace contains internal native API definitions to access underlying toolkits used by xtd.forms library.
     /// @warning Internal use only
     namespace native {
-      /// @brief Contains image list native API.
+      /// @brief Contains input dialog native API.
       /// @par Library
       /// xtd.forms.native
       /// @ingroup xtd_forms_native
@@ -36,6 +36,7 @@ namespace xtd {
         /// @warning Internal use only
         static bool run_dialog(intptr_t hwnd, const std::string& text, const std::string& message, std::string& value, int32_t character_casting, bool multiline, bool use_system_password_char, bool word_wrap);
         /// @brief Shows async dialog as sheet.
+        /// @param on_dialog_closed a dialog close delegate to call when the dialog is closed.
         /// @param hwnd Parent window handle.
         /// @param text A std::string that specifies the caption title of dialog.
         /// @param message A std::string that specifies the invite message text to display.
