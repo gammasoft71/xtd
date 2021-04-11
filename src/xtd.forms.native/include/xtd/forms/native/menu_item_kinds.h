@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains menu item kind constants.
+/// @brief Contains menu item kinds constants.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstddef>
