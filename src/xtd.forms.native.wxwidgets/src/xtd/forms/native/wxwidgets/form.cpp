@@ -45,10 +45,10 @@ void form::full_screen(intptr_t form, bool full_screen) {
 #endif
 }
 
-void form::icon(intptr_t form, intptr_t icon) {
+void form::icon(intptr_t form, const xtd::drawing::icon& icon) {
   if (form == 0) return;
-  if (!icon) static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->SetIcon(wxIcon());
-  else static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->SetIcon(reinterpret_cast<wxIconBundle*>(icon)->GetIcon());
+  if (icon == drawing::icon::empty) static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->SetIcon(wxIcon());
+  else static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->SetIcon(reinterpret_cast<wxIconBundle*>(icon.handle())->GetIcon());
 }
 
 bool form::maximize(intptr_t form) {
