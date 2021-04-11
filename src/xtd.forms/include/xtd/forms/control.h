@@ -1435,7 +1435,7 @@ namespace xtd {
       /// @remarks The paint event is raised when the control is redrawn. It passes an instance of paint_event_args to the method(s) that handles the paint event. The paint event is raised when the control is redrawn. It passes an instance of paint_event_args to the method(s) that handles the paint event.
       /// @remarks When creating a new custom control or an inherited control with a different visual appearance, you must provide code to render the control by overriding the on_paint method.
       /// @par Examples
-      /// The following code example demonstrate the use of control paintt events.
+      /// The following code example demonstrate the use of control paint events.
       /// @include form_paint.cpp
       /// @par Windows
       /// @image html form_paint_w.png

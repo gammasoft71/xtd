@@ -54,6 +54,7 @@ add_sources(
   include/xtd/forms/native/main_menu.h
   include/xtd/forms/native/menu.h
   include/xtd/forms/native/menu_item.h
+  include/xtd/forms/native/menu_item_kind.h
   include/xtd/forms/native/message_box.h
   include/xtd/forms/native/message_box_styles.h
   include/xtd/forms/native/message_keys.h
