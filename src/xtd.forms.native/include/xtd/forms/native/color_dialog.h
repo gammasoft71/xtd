@@ -38,7 +38,7 @@ namespace xtd {
         /// @param color A xtd::drawing::color that specifies the color to display.
         /// @param custom_colors A collors array that contains user custom colors.
         /// @param options A bitwise combination of the color dialog flags.
-        /// @remarks Whendialog closed and if result is true, the color parameter contains the new chosen color.
+        /// @remarks When dialog closed and if result is true, the color parameter contains the new chosen color.
         /// @warning Internal use only
         static void run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, drawing::color& color, std::optional<std::vector<int32_t>>& custom_colors, size_t options);
       };
