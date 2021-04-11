@@ -9,7 +9,7 @@
 #include <xtd/drawing/size.h>
 #include <xtd/drawing/native/wx_application.h>
 #include <xtd/forms/window_messages.h>
-#include <xtd/forms/native/message_keys.h>
+#include <xtd/forms/native/mouse_key.h>
 #include <xtd/forms/native/scroll_bar_styles.h>
 #include <xtd/forms/native/virtual_keys.h>
 #include <xtd/forms/native/window_styles.h>
@@ -545,7 +545,8 @@ namespace xtd {
 #else
         if (mouse_state.ControlDown()) virtual_keys |= MK_CONTROL;
 #endif
-        if (mouse_state.ShiftDown()) virtual_keys |= MK_SHIFT;
+        if (mouse_state.
+()) virtual_keys |= MK_SHIFT;
         if (mouse_state.LeftIsDown()) virtual_keys |= MK_LBUTTON;
         if (mouse_state.MiddleIsDown()) virtual_keys |= MK_MBUTTON;
         if (mouse_state.RightIsDown()) virtual_keys |= MK_RBUTTON;
