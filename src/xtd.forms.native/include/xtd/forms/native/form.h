@@ -92,7 +92,7 @@ namespace xtd {
         static void end_dialog(intptr_t form, int32_t result);
         /// @brief Set virtual size
         /// @param control Control window handle.
-        /// @param A virtual xtd::drawing::size.
+        /// @param size A virtual xtd::drawing::size.
         /// @warning Internal use only
         static void virtual_size(intptr_t control, const drawing::size& size);
       };

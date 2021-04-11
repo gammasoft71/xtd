@@ -6,11 +6,6 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-void picture_box::clear(intptr_t control) {
-  if (!control) return;
-  static_cast<wxStaticBitmapBase*>(reinterpret_cast<control_handler*>(control)->control())->SetBitmap(wxNullBitmap);
-}
-
 void picture_box::image(intptr_t control, const drawing::image& image) {
   if (!control) return;
   wxSize current_size = reinterpret_cast<control_handler*>(control)->control()->GetSize();
@@ -22,4 +17,9 @@ void picture_box::image(intptr_t control, const drawing::image& image) {
       current_size.SetHeight(reinterpret_cast<control_handler*>(control)->control()->GetSize().GetHeight());
   }
   reinterpret_cast<control_handler*>(control)->control()->SetSize(current_size);
+}
+
+void picture_box::reset(intptr_t control) {
+  if (!control) return;
+  static_cast<wxStaticBitmapBase*>(reinterpret_cast<control_handler*>(control)->control())->SetBitmap(wxNullBitmap);
 }
