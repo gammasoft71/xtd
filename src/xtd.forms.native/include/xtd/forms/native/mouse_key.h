@@ -48,3 +48,9 @@ constexpr size_t MK_XBUTTON1 = 0x0020;
 /// @warning Internal use only
 constexpr size_t MK_XBUTTON2 = 0x0040;
 #endif
+/// @brief The CMD key is down.
+/// @par Library
+/// xtd.forms.native
+/// @ingroup xtd_forms_native
+/// @warning Internal use only
+constexpr size_t MK_COMMAND = 0x0080;

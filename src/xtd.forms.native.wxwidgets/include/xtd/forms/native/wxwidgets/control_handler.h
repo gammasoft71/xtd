@@ -540,13 +540,12 @@ namespace xtd {
         int32_t virtual_keys = 0;
 
 #if defined(__APPLE__)
-        if (mouse_state.RawControlDown()) virtual_keys |= VK_COMMAND;
+        if (mouse_state.RawControlDown()) virtual_keys |= MK_COMMAND;
         if (mouse_state.ControlDown()) virtual_keys |= MK_CONTROL;
 #else
         if (mouse_state.ControlDown()) virtual_keys |= MK_CONTROL;
 #endif
-        if (mouse_state.
-()) virtual_keys |= MK_SHIFT;
+        if (mouse_state.ShiftDown()) virtual_keys |= MK_SHIFT;
         if (mouse_state.LeftIsDown()) virtual_keys |= MK_LBUTTON;
         if (mouse_state.MiddleIsDown()) virtual_keys |= MK_MBUTTON;
         if (mouse_state.RightIsDown()) virtual_keys |= MK_RBUTTON;
