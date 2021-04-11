@@ -22,10 +22,12 @@ namespace xtd {
       class forms_native_export_ color_picker final static_ {
       public:
         /// @brief Gets picker color.
+        /// @param control Control window handle.
         /// @return A xtd::drawing::color from picker.
         /// @warning Internal use only
         static drawing::color color(intptr_t control);
         /// @brief Sets picker color.
+        /// @param control Control window handle.
         /// @param color A xtd::drawing::color to picker.
         /// @warning Internal use only
         static void color(intptr_t control, const drawing::color& color);
