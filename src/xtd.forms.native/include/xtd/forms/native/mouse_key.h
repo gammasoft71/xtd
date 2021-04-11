@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains message keys constants.
+/// @brief Contains moouse key constants.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstddef>

@@ -9,7 +9,7 @@
 #include <xtd/drawing/native/system_colors.h>
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/control.h>
-#include <xtd/forms/native/message_keys.h>
+#include <xtd/forms/native/mouse_key.h>
 #include <xtd/forms/native/window_styles.h>
 #include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/control.h"
