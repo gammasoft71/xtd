@@ -65,7 +65,7 @@ constexpr size_t IDCLOSE = 8;
 /// @ingroup xtd_forms_native
 /// @warning Internal use only
 constexpr size_t IDHELP = 9;
-/// @brief
+/// @brief The Try button was selected.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native
