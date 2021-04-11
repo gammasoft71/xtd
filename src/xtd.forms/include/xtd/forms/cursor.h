@@ -104,8 +104,8 @@ namespace xtd {
       
       /// @brief Create a cursor form a specified bitmap with specified hot spot.
       /// @param bitmap A xtd::drawing::bitmap image will be use by cursor.
-      /// @return A new cursor instance.
       /// @param hot_spot A xtd::drawing::point hot spot location.
+      /// @return A new cursor instance.
       static cursor from_bitmap(const xtd::drawing::bitmap& bitmap, const xtd::drawing::point& hot_spot) {return cursor(bitmap, hot_spot);}
       /// @brief Create a cursor form a specified bitmap.
       /// @param bitmap A xtd::drawing::bitmap image will be use by cursor.

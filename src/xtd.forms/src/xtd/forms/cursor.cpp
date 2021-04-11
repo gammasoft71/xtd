@@ -28,7 +28,7 @@ cursor::cursor() {
 }
 
 cursor::cursor(const bitmap& bitmap, const xtd::drawing::point& hot_spot) {
-  data_->handle_ = native::cursor::create(bitmap.handle(), hot_spot);
+  data_->handle_ = native::cursor::create(bitmap, hot_spot);
   data_->hot_spot_ = hot_spot;
   data_->size_ = native::cursor::size(data_->handle_);
 }
