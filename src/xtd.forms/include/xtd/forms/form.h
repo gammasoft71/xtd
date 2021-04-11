@@ -134,7 +134,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether a Help button should be displayed in the caption box of the form.
       /// @return true to display a Help button in the form's caption bar; otherwise, false. The default is false.
       virtual bool help_button() const {return help_button_;}
-      /// @brief Gets a value indicating whether a Help button should be displayed in the caption box of the form.
+      /// @brief Sets a value indicating whether a Help button should be displayed in the caption box of the form.
       /// @param value true to display a Help button in the form's caption bar; otherwise, false. The default is false.
       /// @return Current form.
       virtual form& help_button(bool value);
@@ -142,7 +142,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether the Maximize button is displayed in the caption bar of the form.
       /// @return true to display a Maximize button for the form; otherwise, false. The default is true.
       virtual bool maximize_box() const {return maximize_box_;}
-      /// @brief Gets a value indicating whether the Maximize button is displayed in the caption bar of the form.
+      /// @brief Sets a value indicating whether the Maximize button is displayed in the caption bar of the form.
       /// @param value true to display a Maximize button for the form; otherwise, false. The default is true.
       /// @return Current form.
       virtual form& maximize_box(bool value);
