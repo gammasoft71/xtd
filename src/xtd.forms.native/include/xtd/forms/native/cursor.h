@@ -33,14 +33,46 @@ namespace xtd {
         /// @return The created control window handle.
         /// @warning Internal use only
         static intptr_t create(const xtd::drawing::image& image, const drawing::point& hot_spot);
+        /// @brief Copies the cursor handle.
+        /// @param cursor Cursor handle.
+        /// @return An intptr_t that represents the cursor's handle.
+        /// @warning Internal use only
         static intptr_t copy(intptr_t cursor);
+        /// @brief Sets a cursor object that represents the mouse cursor.
+        /// @param cursor Cursor handle.
+        /// @warning Internal use only
         static void current(intptr_t cursor);
+        /// @brief Destroy cursor.
+        /// @param cursor Cursor handle.
+        /// @warning Internal use only
         static void destroy(intptr_t cursor);
+        /// @brief Hides cursor.
+        /// @param cursor Cursor handle.
+        /// @warning Internal use only
         static void hide();
+        /// @brief Gets the cursor hot spot.
+        /// @param cursor Cursor handle.
+        /// @return A point representing the cursor hot spot.
+        /// @warning Internal use only
         static drawing::point hot_spot(intptr_t cursor);
+        /// @brief Gets the cursor's position.
+        /// @param cursor Cursor handle.
+        /// @return A point that represents the cursor's position in screen coordinates.
+        /// @warning Internal use only
         static drawing::point position();
+        /// @brief Sets the cursor's position.
+        /// @param cursor Cursor handle.
+        /// @param position A point that represents the cursor's position in screen coordinates.
+        /// @warning Internal use only
         static void position(const drawing::point& position);
+        /// @brief Gets the size of the cursor object.
+        /// @param cursor Cursor handle.
+        /// @return A size that represents the width and height of the cursor.
+        /// @warning Internal use only
         static drawing::size size(intptr_t cursor);
+        /// @brief Shows cursor.
+        /// @param cursor Cursor handle.
+        /// @warning Internal use only
         static void show();
       };
     }
