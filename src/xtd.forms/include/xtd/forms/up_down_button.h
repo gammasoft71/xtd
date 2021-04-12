@@ -44,11 +44,11 @@ namespace xtd {
       virtual up_down_button& maximum(int32_t value);
       
       /// @brief Gets the minimum allowed value for the up_down_button control.
-      /// @return The minimum allowed value for the up down buttonup down buttonup down button. The default value is 0.
+      /// @return The minimum allowed value for the up down button. The default value is 0.
       /// @remarks When the maximum property is set, the minimum property is evaluated and the update_edit_text method is called. If the minimum property is greater than the new maximum property, the minimum property value is set equal to the maximum value. If the current Value is greater than the new Maximum value. the value property value is set equal to the maximum value.
       virtual int32_t minimum() {return minimum_;}
       /// @brief Sets the minimum allowed value for the up_down_button control.
-      /// @param value The minimum allowed value for the up down buttonup down button. The default value is 0.
+      /// @param value The minimum allowed value for the up down button. The default value is 0.
       /// @return Current numeric_up_down.
       /// @remarks When the maximum property is set, the minimum property is evaluated and the update_edit_text method is called. If the minimum property is greater than the new maximum property, the minimum property value is set equal to the maximum value. If the current Value is greater than the new Maximum value. the value property value is set equal to the maximum value.
       virtual up_down_button& minimum(int32_t value);
