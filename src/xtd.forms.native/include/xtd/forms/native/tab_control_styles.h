@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains progress bar styles constants.
+/// @brief Contains tab control styles constants.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstddef>

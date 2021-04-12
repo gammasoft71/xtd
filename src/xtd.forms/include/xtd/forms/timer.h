@@ -66,7 +66,7 @@ namespace xtd {
       /// @remarks To get the number of seconds in the interval, divide this number by 1,000.
       int32_t interval() const {return interval_;}
       /// @brief Sets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
-      /// @param interval An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
+      /// @param interval An int32_t specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
       /// @remarks To get the number of seconds in the interval, divide this number by 1,000.
       void interval(int32_t interval);
 
