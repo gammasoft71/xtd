@@ -13,7 +13,7 @@ namespace xtd {
     /// @brief The xtd::forms::native namespace contains internal native API definitions to access underlying toolkits used by xtd.forms library.
     /// @warning Internal use only
     namespace native {
-      /// @brief Contains progress_bar native API.
+      /// @brief Contains progress bar native API.
       /// @par Library
       /// xtd.forms.native
       /// @ingroup xtd_forms_native

@@ -72,6 +72,11 @@ progress_dialog& progress_dialog::message(const std::string& message) {
   return *this;
 }
 
+void progress_dialog::resume() {
+  if (!handle_) return;
+  native::progress_dialog::resume(handle_);
+}
+
 progress_dialog& progress_dialog::show_cancel_button(bool show_cancel_button) {
   if (!get_option(PROGDLG_NOCANCEL) != show_cancel_button) {
     set_option(PROGDLG_NOCANCEL, !show_cancel_button);
