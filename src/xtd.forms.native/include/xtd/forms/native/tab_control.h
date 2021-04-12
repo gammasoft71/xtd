@@ -46,8 +46,6 @@ namespace xtd {
         /// @param page The tab page handle.
         /// @warning Internal use only
         static void insert_item(intptr_t control, size_t index, intptr_t page);
-        static void page_image_index(intptr_t control, size_t index, size_t image_index);
-        static void page_text(intptr_t control, size_t index, const std::string& text);
         /// @brief Gets selected tab page index.
         /// @param control Tab control window handle.
         /// @return The selected tab page index.

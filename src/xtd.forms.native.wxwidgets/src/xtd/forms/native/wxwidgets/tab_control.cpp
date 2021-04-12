@@ -32,16 +32,6 @@ void tab_control::insert_item(intptr_t control, size_t index, intptr_t page) {
   static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->InsertPage(index, reinterpret_cast<control_handler*>(page)->control(), wxEmptyString);
 }
 
-void tab_control::page_image_index(intptr_t control, size_t index, size_t image_index) {
-  if (control == 0) return;
-  static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->SetPageImage(static_cast<int32_t>(index), static_cast<int32_t>(image_index));
-}
-
-void tab_control::page_text(intptr_t control, size_t index, const std::string& text) {
-  if (control == 0) return;
-  static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->SetPageText(static_cast<int32_t>(index), {text.c_str(), wxMBConvUTF8()});
-}
-
 size_t tab_control::selected_index(intptr_t control) {
   if (control == 0) return std::numeric_limits<size_t>::max();
   return static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->GetSelection();

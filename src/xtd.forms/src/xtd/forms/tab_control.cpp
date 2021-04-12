@@ -1,6 +1,7 @@
 #include <xtd/environment.h>
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/tab_control.h>
+#include <xtd/forms/native/tab_page.h>
 #include <xtd/forms/native/tab_control_styles.h>
 #include <xtd/forms/native/window_styles.h>
 #include "../../../include/xtd/forms/tab_control.h"
@@ -77,7 +78,8 @@ drawing::size tab_control::measure_control() const {
 
 void tab_control::on_control_added(const control_event_args &e) {
   native::tab_control::insert_item(handle(), controls().size() - 1, controls()[controls().size() - 1].get().handle());
-  native::tab_control::page_text(handle(), controls().size() - 1, controls()[controls().size() - 1].get().text());
+  //native::tab_control::page_text(handle(), controls().size() - 1, controls()[controls().size() - 1].get().text());
+  native::tab_page::text(controls()[controls().size() - 1].get().handle(), controls()[controls().size() - 1].get().text());
   if (xtd::environment::os_version().is_linux_platform()) {
     controls()[controls().size() - 1].get().size(size() - xtd::drawing::size(0, 40));
     controls()[controls().size() - 1].get().client_size(size() - xtd::drawing::size(0, 40));
@@ -102,8 +104,10 @@ void tab_control::recreate_handle() {
   native::tab_control::image_list(handle(), image_list_.handle());
   for (auto index = 0U; index < controls().size(); index++) {
     native::tab_control::insert_item(handle(), index, controls()[index].get().handle());
-    native::tab_control::page_text(handle(), index, controls()[index].get().text());
-    native::tab_control::page_image_index(handle(), index, dynamic_cast<xtd::forms::tab_page&>(controls()[index].get()).image_index());
+    //native::tab_control::page_text(handle(), index, controls()[index].get().text());
+    //native::tab_control::page_image_index(handle(), index, dynamic_cast<xtd::forms::tab_page&>(controls()[index].get()).image_index());
+    native::tab_page::text(controls()[index].get().handle(), controls()[index].get().text());
+    native::tab_page::image_index(controls()[index].get().handle(), static_cast<tab_page&>(controls()[index].get()).image_index());
   }
 }
 
