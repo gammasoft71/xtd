@@ -7,11 +7,6 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-void tab_control::add_item(intptr_t control, intptr_t page, const std::string& text) {
-  if (control == 0 || page == 0) return;
-  static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->AddPage(reinterpret_cast<control_handler*>(page)->control(), {text.c_str(), wxMBConvUTF8()});
-}
-
 void tab_control::delete_item(intptr_t control, size_t index) {
   if (control == 0) return;
   static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->RemovePage(index);
