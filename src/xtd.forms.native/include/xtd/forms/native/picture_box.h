@@ -14,7 +14,7 @@ namespace xtd {
     /// @brief The xtd::forms::native namespace contains internal native API definitions to access underlying toolkits used by xtd.forms library.
     /// @warning Internal use only
     namespace native {
-      /// @brief Contains picture_box native API.
+      /// @brief Contains picture box native API.
       /// @par Library
       /// xtd.forms.native
       /// @ingroup xtd_forms_native

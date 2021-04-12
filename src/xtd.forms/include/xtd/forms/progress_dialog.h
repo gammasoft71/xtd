@@ -63,7 +63,7 @@ namespace xtd {
       /// @return The information texts.
       const std::vector<std::string>& informations() const {return informations_;}
       /// @brief Sets the information texts.
-      /// @param description The information texts.
+      /// @param informations The information texts.
       /// @return Current progress_dialog instance.
       progress_dialog& informations(const std::vector<std::string>& informations);
 
@@ -111,8 +111,12 @@ namespace xtd {
       int32_t minimum() {return minimum_;}
       /// @brief Sets the minimum value of the range of the control.
       /// @param minimum The minimum value of the range. The default is 0.
+      /// @return Current progress_dialog instance.
       /// @remarks This property specifies the lower limit of the value property. When the value of the minimum property is changed, the progress_bar control is redrawn to reflect the new range of the control. When the value of the value property is equal to the value of the minimum property, the progress bar is empty. To change the value of the progress bar, use the step property with the perform_step method, use the increment method, or set the value of the value property directly.
       progress_dialog& minimum(int32_t minimum);
+
+      /// @brief Resume progress dialog box after Abort button clicked.
+      void resume();
 
       /// @brief Gets a value that indicates whether cancel button is shown.
       /// @return true if cancel button shown; otherwise false. By default false.
@@ -211,7 +215,7 @@ namespace xtd {
       /// @brief Runs progress dialog box.
       void show(const iwin32_window& owner);
       
-      /// @brief Runs progress dialog box.
+      /// @brief Runs progress dialog box as sheet.
       void show_sheet(const iwin32_window& owner);
       
       /// @brief Runs progress dialog box.
