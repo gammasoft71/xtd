@@ -44,7 +44,7 @@ namespace xtd {
       static std::vector<screen> all_screens();
 
       /// @brief Gets the number of bits of memory, associated with one pixel of data.
-      /// @return The number of bits of memory, associated with one pixel of data
+      /// @return The number of bits of memory, associated with one pixel of data.
       /// @remarks Typically, the number of bits per pixel for a screen is useful when working with bitmaps.
       int32_t bits_per_pixel() const {return bits_per_pixel_;}
       
