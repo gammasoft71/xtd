@@ -111,6 +111,11 @@ namespace xtd {
       virtual void wm_reflect_command(message& message);
       
       friend class tab_page;
+      size_t get_child_index(intptr_t page) {
+        for (size_t index = 0;index < controls().size(); ++index)
+          if (controls()[index].get().handle() == page) return index;
+        return npos;
+      }
       tab_alignment alignment_ = tab_alignment::top;
       forms::image_list image_list_;
       size_t selected_index_ = npos;

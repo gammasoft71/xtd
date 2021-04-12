@@ -30,24 +30,15 @@ scrollable_control& tab_page::auto_scroll(bool auto_scroll) {
 tab_page& tab_page::image_index(int32_t value) {
   if (image_index_ != value) {
     image_index_ = value;
-    for (size_t index = 0; index < parent().value().get().controls().size(); index++) {
-      if (parent().value().get().controls()[index].get().handle() == handle()) {
-        native::tab_control::page_image_index(parent_, index, image_index_);
-      }
-    }
+     if (parent().has_value()) native::tab_control::page_image_index(parent().value().get().handle(), parent().value().get().get_child_index(handle()), image_index_);
   }
   return *this;
 }
 
 control& tab_page::text(const std::string& text) {
   if (text_ != text) {
-    if (parent().has_value()) {
-      for (size_t index = 0; index < parent().value().get().controls().size(); index++) {
-        if (parent().value().get().controls()[index].get().handle() == handle()) {
-          native::tab_control::page_text(parent_, index, text);
-        }
-      }
-    }
+    if (parent().has_value())
+      if (parent().has_value()) native::tab_control::page_text(parent().value().get().handle(), parent().value().get().get_child_index(handle()), text);
   }
   return control::text(text);
 }
@@ -59,11 +50,6 @@ void tab_page::destroy_handle() {
 
 void tab_page::on_handle_created(const event_args& e) {
   panel::on_handle_created(e);
-  if (image_index_ != -1) {
-    for (size_t index = 0; index < parent().value().get().controls().size(); index++) {
-      if (parent().value().get().controls()[index].get().handle() == handle()) {
-        native::tab_control::page_image_index(parent_, index, image_index_);
-      }
-    }
-  }
+  if (image_index_ != -1)
+    if (parent().has_value()) native::tab_control::page_image_index(parent().value().get().handle(), parent().value().get().get_child_index(handle()), image_index_);
 }

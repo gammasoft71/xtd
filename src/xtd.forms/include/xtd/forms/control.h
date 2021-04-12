@@ -783,7 +783,30 @@ namespace xtd {
       /// @param handle The window handle (HWND) to search for.
       /// @return A control that represents the control associated with the specified handle; returns null if no control with the specified handle is found.
       static std::optional<control_ref> from_handle(intptr_t handle);
-      
+
+      /// @brief Retrieves the index of a control within the control collection.
+      /// @param child The control to search for in the control collection.
+      /// @return A zero-based index value that represents the location of the specified child control within the control collection.
+      /// @exceptioon xtd::argument_exceptioon The child control is not in the control::control_collection.
+      size_t get_child_index(intptr_t child) const {
+        for (size_t index = 0;index < controls().size(); ++index)
+        if (controls()[index].get().handle() == child) return index;
+        throw xtd::argument_exception(caller_info_);
+      }
+
+      /// @brief Retrieves the index of the specified child control within the control collection, and optionally raises an exception if the specified control is not within the control collection.
+      /// @param child The control to search for in the control collection.
+      /// @@param throw_exceptiion true to throw an exception if the control specified in the child parameter is not a control in the control::control_collection; otherwise, false.
+      size_t get_child_index(intptr_t child, bool& throw_exception) const {
+        throw_exception = false;
+        try {
+          return get_child_index(child);
+        } catch(...) {
+          throw_exception = true;
+          return control_collection::npos;
+        }
+      }
+
       /// @brief Conceals the control from the user.
       /// @remarks Hiding the control is equivalent to setting the visible property to false. After the hide method is called, the visible property returns a value of false until the show method is called.
       virtual void hide() {visible(false);}
