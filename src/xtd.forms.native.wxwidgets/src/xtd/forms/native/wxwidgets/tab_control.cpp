@@ -7,9 +7,19 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
+void tab_control::begin_update(intptr_t control) {
+  if (control == 0) return;
+  static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->Freeze();
+}
+
 void tab_control::delete_item(intptr_t control, size_t index) {
   if (control == 0) return;
   static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->RemovePage(index);
+}
+
+void tab_control::end_update(intptr_t control) {
+  if (control == 0) return;
+  static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->Thaw();
 }
 
 void tab_control::image_list(intptr_t control, intptr_t image_list) {
