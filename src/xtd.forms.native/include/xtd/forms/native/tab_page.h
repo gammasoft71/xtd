@@ -20,12 +20,12 @@ namespace xtd {
       /// @warning Internal use only
       class forms_native_export_ tab_page final static_ {
       public:
-        /// @brief Sets image index associate to the page.
+        /// @brief Sets image index associate to the tab page.
         /// @param control Tab page window handle.
         /// @param image_index The image index.
         /// @warning Internal use only
         static void image_index(intptr_t control, size_t image_index);
-        /// @brief Sets text associate to the page.
+        /// @brief Sets text associate to the tab page.
         /// @param control Tab page window handle.
         /// @param text The text string.
         /// @warning Internal use only
