@@ -47,6 +47,7 @@ add_sources(
   include/xtd/forms/native/wxwidgets/wx_picture_box.h
   include/xtd/forms/native/wxwidgets/wx_progress_bar.h
   include/xtd/forms/native/wxwidgets/wx_radio_button.h
+  include/xtd/forms/native/wxwidgets/wx_switch_button.h
   include/xtd/forms/native/wxwidgets/wx_tab_control.h
   include/xtd/forms/native/wxwidgets/wx_tab_page.h
   include/xtd/forms/native/wxwidgets/wx_text_box.h
@@ -97,6 +98,7 @@ add_sources(
   src/xtd/forms/native/wxwidgets/radio_button.cpp
   src/xtd/forms/native/wxwidgets/screen.cpp
   src/xtd/forms/native/wxwidgets/settings.cpp
+  src/xtd/forms/native/wxwidgets/switch_button.cpp
   src/xtd/forms/native/wxwidgets/system_information.cpp
   src/xtd/forms/native/wxwidgets/tab_control.cpp
   src/xtd/forms/native/wxwidgets/tab_page.cpp
