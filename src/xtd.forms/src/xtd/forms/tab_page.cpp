@@ -44,7 +44,7 @@ control& tab_page::text(const std::string& text) {
 }
 
 void tab_page::destroy_handle() {
-  if (parent().has_value()) native::tab_control::delete_item(parent().value().get().handle(), handle());
+  if (parent().has_value()) native::tab_control::delete_item(parent().value().get().handle(), parent().value().get().get_child_index(handle()));
   panel::destroy_handle();
 }
 

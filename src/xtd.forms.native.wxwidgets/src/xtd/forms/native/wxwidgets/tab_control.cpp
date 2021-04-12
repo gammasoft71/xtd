@@ -12,12 +12,6 @@ void tab_control::delete_item(intptr_t control, size_t index) {
   static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->RemovePage(index);
 }
 
-void tab_control::delete_item(intptr_t control, intptr_t page) {
-  if (control == 0 || page == 0) return;
-  size_t index = static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->FindPage(reinterpret_cast<control_handler*>(page)->control());
-  if (index != std::numeric_limits<size_t>::max()) delete_item(control, index);
-}
-
 void tab_control::image_list(intptr_t control, intptr_t image_list) {
   if (control == 0) return;
   static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->SetImageList(reinterpret_cast<wxImageList*>(image_list));
