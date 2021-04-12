@@ -58,19 +58,19 @@ namespace xtd {
         /// @return The created control window handle.
         /// @warning Internal use only
         static intptr_t create(const create_params& create_params);
-        /// @brief Creates the xtd::drawing::graphics for the control.
+        /// @brief Creates a graphics for the control.
         /// @param control Control window handle.
-        /// @return A xtd::drawing::graphics for the control.
+        /// @return A graphics handle for the control.
         /// @warning Internal use only
         static intptr_t create_graphics(intptr_t control);
-        /// @brief Creates the xtd::drawing::graphics for the paint event control.
+        /// @brief Creates a graphics for the paint event control.
         /// @param control Control window handle.
-        /// @return A xtd::drawing::graphics for the paint event control.
+        /// @return A graphics handle for the paint event control.
         /// @warning Internal use only
         static intptr_t create_paint_graphics(intptr_t control);
-        /// @brief Creates the xtd::drawing::graphics for the double buffer paint event control.
+        /// @brief Creates a raphics for the double buffer paint event control.
         /// @param control Control window handle.
-        /// @return A xtd::drawing::graphics for the double buffered paint event control.
+        /// @return A graphics handle for the double buffered paint event control.
         /// @warning Internal use only
         static intptr_t create_double_buffered_paint_graphics(intptr_t control);
         /// @brief Sets the cursor that is displayed when the mouse pointer is over the control.
