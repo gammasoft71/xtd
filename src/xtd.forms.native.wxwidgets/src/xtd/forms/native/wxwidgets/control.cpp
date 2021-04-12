@@ -35,6 +35,7 @@
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_tab_control.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_tab_page.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_text_box.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_toggle_button.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_track_bar.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_up_down_button.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_user_control.h"
@@ -96,7 +97,7 @@ intptr_t control::create(const forms::create_params& create_params) {
   if (create_params.class_name() == "tabcontrol") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_tab_control(create_params)));
   if (create_params.class_name() == "tabpage") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_tab_page(create_params)));
   if (create_params.class_name() == "textbox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_text_box(create_params)));
-  if (create_params.class_name() == "togglebutton") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_check_box(create_params)));
+  if (create_params.class_name() == "togglebutton") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_toggle_button(create_params)));
   if (create_params.class_name() == "trackbar") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_track_bar(create_params)));
   if (create_params.class_name() == "updownbutton") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_up_down_button(create_params)));
   if (create_params.class_name() == "usercontrol") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_user_control(create_params)));
