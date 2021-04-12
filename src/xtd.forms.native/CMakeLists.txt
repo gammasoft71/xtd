@@ -69,6 +69,7 @@ add_sources(
   include/xtd/forms/native/scroll_bar_styles.h
   include/xtd/forms/native/settings.h
   include/xtd/forms/native/static_styles.h
+  include/xtd/forms/native/switch_button.h
   include/xtd/forms/native/system_information.h
   include/xtd/forms/native/tab_control.h
   include/xtd/forms/native/tab_control_styles.h
