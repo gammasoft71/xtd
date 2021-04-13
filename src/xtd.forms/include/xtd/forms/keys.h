@@ -451,7 +451,7 @@ namespace xtd {
       lcommand_key = 0x00000101,
       /// @brief The right CMD key.
       rcommand_key = 0x00000102,
-      /// @brief The right CMD key.
+      /// @brief The FUNCTION key.
       function_key = 0x00000104,
       /// @brief The SHIFt modifier key.
       shift = 0x00010000,

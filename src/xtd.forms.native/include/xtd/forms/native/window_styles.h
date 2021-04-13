@@ -1,3 +1,6 @@
+/// @file
+/// @brief Contains window styles constants.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstddef>
 
