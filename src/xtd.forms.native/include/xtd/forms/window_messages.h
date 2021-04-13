@@ -1272,38 +1272,38 @@ constexpr int32_t WM_TABLET_FIRST = 0x02C0;
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_TABLET_LAST = 0x02DF;
-/// @brief
+/// @brief Sent when the effective dots per inch (dpi) for a window has changed. The DPI is the scale factor for a window. There are multiple events that can cause the DPI to change. The following list indicates the possible causes for the change in DPI.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_DPICHANGED = 0x02E0;
 // not defined 0x02E1 - 0x029F
-/// @brief
+/// @brief An application sends a WM_CUT message to an edit control or combo box to delete (cut) the current selection, if any, in the edit control and copy the deleted text to the clipboard in CF_TEXT format.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_CUT = 0x0300;
-/// @brief
+/// @brief An application sends the WM_COPY message to an edit control or combo box to copy the current selection to the clipboard in CF_TEXT format.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_COPY = 0x0301;
-/// @brief
+/// @brief An application sends a WM_PASTE message to an edit control or combo box to copy the current content of the clipboard to the edit control at the current caret position. Data is inserted only if the clipboard contains data in CF_TEXT format.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_PASTE = 0x0302;
-/// @brief
+/// @brief An application sends a WM_CLEAR message to an edit control or combo box to delete (clear) the current selection, if any, from the edit control.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_CLEAR = 0x0303;
-/// @brief
+/// @brief An application sends a WM_UNDO message to an edit control to undo the last operation. When this message is sent to an edit control, the previously deleted text is restored or the previously added text is deleted.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
