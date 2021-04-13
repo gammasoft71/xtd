@@ -18,7 +18,7 @@ namespace xtd {
       /// @brief Contains font picker native API.
       /// @par Library
       /// xtd.forms.native
-      /// @ingroup xtd_forms_native
+      /// @ingroup xtd_forms_native native
       /// @warning Internal use only
       class forms_native_export_ font_picker final static_ {
       public:

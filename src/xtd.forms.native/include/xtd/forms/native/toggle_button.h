@@ -16,7 +16,7 @@ namespace xtd {
       /// @brief Contains toggle button native API.
       /// @par Library
       /// xtd.forms.native
-      /// @ingroup xtd_forms_native
+      /// @ingroup xtd_forms_native native
       /// @warning Internal use only
       class forms_native_export_ toggle_button final static_ {
       public:

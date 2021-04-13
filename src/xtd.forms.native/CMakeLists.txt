@@ -38,7 +38,7 @@ add_sources(
   include/xtd/forms/native/cursors.h
   include/xtd/forms/native/date_time_picker.h
   include/xtd/forms/native/date_time_picker_styles.h
-  include/xtd/forms/native/dialog_box_ids.h
+  include/xtd/forms/native/dialog_box_identifiers.h
   include/xtd/forms/native/domain_up_down.h
   include/xtd/forms/native/edit_styles.h
   include/xtd/forms/native/file_dialog.h

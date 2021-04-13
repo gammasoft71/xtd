@@ -16,7 +16,7 @@ namespace xtd {
       /// @brief Contains tab page native API.
       /// @par Library
       /// xtd.forms.native
-      /// @ingroup xtd_forms_native
+      /// @ingroup xtd_forms_native native
       /// @warning Internal use only
       class forms_native_export_ tab_page final static_ {
       public:

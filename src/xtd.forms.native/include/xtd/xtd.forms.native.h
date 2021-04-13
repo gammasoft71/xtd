@@ -34,7 +34,7 @@
 #include "forms/native/cursors.h"
 #include "forms/native/date_time_picker.h"
 #include "forms/native/date_time_picker_styles.h"
-#include "forms/native/dialog_box_ids.h"
+#include "forms/native/dialog_box_identifiers.h"
 #include "forms/native/domain_up_down.h"
 #include "forms/native/edit_styles.h"
 #include "forms/native/file_dialog.h"
