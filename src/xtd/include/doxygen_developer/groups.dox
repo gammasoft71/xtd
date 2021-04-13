@@ -1,0 +1,14 @@
+/// @file
+/// @brief Contains groups definitions.
+
+/// @defgroup virtual_keys virtual keys
+/// @brief virtual keys definitions.
+/// @warning Internal use only
+
+/// @defgroup xtd_drawing_native xtd.drawing.native
+/// @brief xtd.drawing.native library contains internal native API definitions to access underlying toolkits used by xtd.drawing library.
+/// @warning Internal use only
+
+/// @defgroup xtd_forms_native xtd.forms.native
+/// @brief The xtd.foms.native library contains internal native API definitions to access underlying toolkits used by xtd.forms library.
+/// @warning Internal use only
