@@ -1,5 +1,6 @@
 #include <xtd/environment.h>
 #include <xtd/forms/native/control.h>
+#include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/tab_control.h>
 #include <xtd/forms/native/tab_page.h>
 #include <xtd/forms/native/tab_control_styles.h>

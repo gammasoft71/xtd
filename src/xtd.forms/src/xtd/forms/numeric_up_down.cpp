@@ -1,4 +1,5 @@
 #include <xtd/forms/native/control.h>
+#include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/numeric_up_down.h>
 #include <xtd/forms/native/up_down_styles.h>
 #include <xtd/forms/native/window_styles.h>

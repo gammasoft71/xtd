@@ -1,5 +1,6 @@
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/collapsible_panel.h>
+#include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/window_styles.h>
 #include "../../../include/xtd/forms/collapsible_panel.h"
 

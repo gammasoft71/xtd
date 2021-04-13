@@ -1,6 +1,7 @@
 #include <xtd/argument_out_of_range_exception.h>
 #include <xtd/literals.h>
 #include <xtd/forms/native/control.h>
+#include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/list_box.h>
 #include <xtd/forms/native/window_styles.h>
 #include <xtd/forms/native/list_box_styles.h>

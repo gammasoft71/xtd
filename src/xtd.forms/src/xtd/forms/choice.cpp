@@ -2,6 +2,7 @@
 #include <xtd/literals.h>
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/choice.h>
+#include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/window_styles.h>
 #include "../../../include/xtd/forms/choice.h"
 

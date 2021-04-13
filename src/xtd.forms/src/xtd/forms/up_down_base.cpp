@@ -1,3 +1,4 @@
+#include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/window_styles.h>
 #include "../../../include/xtd/forms/up_down_base.h"
 

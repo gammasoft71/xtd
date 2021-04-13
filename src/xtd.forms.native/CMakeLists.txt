@@ -41,6 +41,7 @@ add_sources(
   include/xtd/forms/native/dialog_box_identifiers.h
   include/xtd/forms/native/domain_up_down.h
   include/xtd/forms/native/edit_styles.h
+  include/xtd/forms/native/extended_window_styles.h
   include/xtd/forms/native/file_dialog.h
   include/xtd/forms/native/folder_browser_dialog.h
   include/xtd/forms/native/font_dialog.h
