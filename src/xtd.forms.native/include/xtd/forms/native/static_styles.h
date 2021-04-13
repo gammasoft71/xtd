@@ -5,6 +5,7 @@
 #include <cstddef>
 
 // https://docs.microsoft.com/en-us/cpp/mfc/reference/styles-used-by-mfc
+
 #ifndef SS_LEFT
 /// @brief Designates a simple rectangle and displays the given text flush-left in the rectangle. The text is formatted before it is displayed. Words that would extend past the end of a line are automatically wrapped to the beginning of the next flush-left line.
 /// @par Library

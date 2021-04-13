@@ -41,6 +41,10 @@
 /// @brief date time states definitions.
 /// @warning Internal use only
 
+/// @defgroup ex_ws extended window styles
+/// @brief extended window styles definitions.
+/// @warning Internal use only
+
 /// @defgroup id dialog box identifiers
 /// @brief dialog box identifiers definitions.
 /// @warning Internal use only
@@ -103,6 +107,10 @@
 
 /// @defgroup virtual_keys virtual keys
 /// @brief virtual keys definitions.
+/// @warning Internal use only
+
+/// @defgroup ws window styles
+/// @brief window styles definitions.
 /// @warning Internal use only
 
 /// @defgroup xtd_drawing_native xtd.drawing.native
