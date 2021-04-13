@@ -55,9 +55,8 @@
 /// @defgroup xtd_core xtd.core
 /// @brief The xtd.core library contains all fundamental classes to access Hardware, Os, System, and more.
 
-/// @defgroup xtd_drawing_native xtd.drawing.native
-/// @brief xtd.drawing.native library contains internal native API definitions to access underlying toolkits used by xtd.drawing library.
-/// @warning Internal use only
+/// @defgroup xtd_drawing xtd.drawing
+/// @brief The xtd.drawing library provides access to GDI+ basic graphics functionality.
 
 /// @defgroup xtd_forms xtd.forms
 /// @brief The xtd.foms library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
