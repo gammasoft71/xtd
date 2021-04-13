@@ -65,6 +65,10 @@
 /// @brief mouse and key definitions.
 /// @warning Internal use only
 
+/// @defgroup native native API
+/// @brief Native API for access to underlying toolkits.
+/// @warning Internal use only
+
 /// @defgroup ofn open file flags
 /// @brief open file flags definitions.
 /// @warning Internal use only

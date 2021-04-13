@@ -16,7 +16,7 @@ namespace xtd {
       /// @brief Contains group box native API.
       /// @par Library
       /// xtd.forms.native
-      /// @ingroup xtd_forms_native
+      /// @ingroup xtd_forms_native native
       /// @remarks No member for the moment.
       /// @warning Internal use only
       class group_box final static_ {

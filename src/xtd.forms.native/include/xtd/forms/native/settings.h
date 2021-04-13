@@ -17,7 +17,7 @@ namespace xtd {
       /// @brief Contains settings native API.
       /// @par Library
       /// xtd.forms.native
-      /// @ingroup xtd_forms_native
+      /// @ingroup xtd_forms_native native
       /// @remarks On Windows settings are stored in registry with "HKEY_CURRENT_USER\Software\company_name\product_name" key.
       /// @remarks On macos settings are stored in "~/Library/Preferences/product_name Preferences" file.
       /// @remarks On linux settings are stored in "~/.product_name" file.

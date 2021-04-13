@@ -1,6 +1,6 @@
 #include <xtd/drawing/system_colors.h>
 #include <xtd/forms/native/application.h>
-#include <xtd/forms/native/dialog_box_ids.h>
+#include <xtd/forms/native/dialog_box_identifiers.h>
 #include <xtd/forms/native/input_dialog.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"

@@ -16,7 +16,7 @@ namespace xtd {
     namespace native {
       /// @brief Contains form native API.
       /// @par Library
-      /// xtd.forms.native
+      /// xtd.forms.native native
       /// @ingroup xtd_forms_native
       /// @warning Internal use only
       class forms_native_export_ form final static_ {

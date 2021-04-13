@@ -17,7 +17,7 @@ namespace xtd {
       /// @brief Contains button native API.
       /// @par Library
       /// xtd.forms.native
-      /// @ingroup xtd_forms_native
+      /// @ingroup xtd_forms_native native
       /// @warning Internal use only
       class forms_native_export_ button final static_ {
       public:

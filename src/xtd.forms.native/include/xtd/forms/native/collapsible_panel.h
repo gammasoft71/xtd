@@ -16,7 +16,7 @@ namespace xtd {
       /// @brief Contains collapsible panel native API.
       /// @par Library
       /// xtd.forms.native
-      /// @ingroup xtd_forms_native
+      /// @ingroup xtd_forms_native native
       /// @warning Internal use only
       class forms_native_export_ collapsible_panel final static_ {
       public:

@@ -19,7 +19,7 @@ namespace xtd {
       /// @brief Contains file dialog native API.
       /// @par Library
       /// xtd.forms.native
-      /// @ingroup xtd_forms_native
+      /// @ingroup xtd_forms_native native
       /// @warning Internal use only
       class forms_native_export_ file_dialog final static_ {
       public:

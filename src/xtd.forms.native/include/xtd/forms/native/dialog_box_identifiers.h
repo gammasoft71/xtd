@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains message box result identifier constants.
+/// @brief Contains dialog box identifiers constants.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstddef>
