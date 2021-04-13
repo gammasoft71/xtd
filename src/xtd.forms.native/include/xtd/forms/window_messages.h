@@ -257,367 +257,367 @@ constexpr int32_t WM_MEASUREITEM = 0x002C;
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_DELETEITEM = 0x002D;
-/// @brief
+/// @brief Sent by a list box with the LBS_WANTKEYBOARDINPUT style to its owner in response to a WM_KEYDOWN message.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_VKEYTOITEM = 0x002E;
-/// @brief
+/// @brief Sent by a list box with the LBS_WANTKEYBOARDINPUT style to its owner in response to a WM_CHAR message.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_CHARTOITEM = 0x002F;
-/// @brief
+/// @brief Sets the font that a control is to use when drawing text.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_SETFONT = 0x0030;
-/// @brief
+/// @brief Retrieves the font with which the control is currently drawing its text.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_GETFONT = 0x0031;
-/// @brief
+/// @brief Sent to a window to associate a hot key with the window. When the user presses the hot key, the system activates the window.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_SETHOTKEY = 0x0032;
-/// @brief
+/// @brief Sent to determine the hot key associated with a window.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_GETHOTKEY = 0x0033;
 // not defined 0x0034 - 0x0036
-/// @brief
+/// @brief Sent to a minimized (iconic) window. The window is about to be dragged by the user but does not have an icon defined for its class. An application can return a handle to an icon or cursor. The system displays this cursor or icon while the user drags the icon.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_QUERYDRAGICON = 0x0037;
-/// @brief
+/// @brief Sent to determine the relative position of a new item in the sorted list of an owner-drawn combo box or list box. Whenever the application adds a new item, the system sends this message to the owner of a combo box or list box created with the CBS_SORT or LBS_SORT style.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_COMPAREITEM = 0x0039;
-/// @brief
+/// @brief Sent by both Microsoft Active Accessibility and Microsoft UI Automation to obtain information about an accessible object contained in a server application.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_GETOBJECT = 0x003D;
-/// @brief
+/// @brief Sent to all top-level windows when the system detects more than 12.5 percent of system time over a 30- to 60-second interval is being spent compacting memory. This indicates that system memory is low.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_COMPACTING = 0x0041;
-/// @brief
+/// @brief Deprecated. This message is not sent in modern versions of Windows.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_COMMNOTIFY = 0x0044;
-/// @brief
+/// @brief Sent to a window whose size, position, or place in the Z order is about to change as a result of a call to the SetWindowPos function or another window-management function.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_WINDOWPOSCHANGING = 0x0046;
-/// @brief
+/// @brief Sent to a window whose size, position, or place in the Z order has changed as a result of a call to the SetWindowPos function or another window-management function.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_WINDOWPOSCHANGED = 0x0047;
-/// @brief
+/// @brief Notifies applications that the system, typically a battery-powered personal computer, is about to enter a suspended mode.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_POWER = 0x0048;
-/// @brief
+/// @brief An application sends the WM_COPYDATA message to pass data to another application.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_COPYDATA = 0x004A;
-/// @brief
+/// @brief Posted to an application when a user cancels the application's journaling activities. The message is posted with a NULL window handle.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_CANCELJOURNAL = 0x004B;
 // not defined 0x004C - 0x004D
-/// @brief
+/// @brief Sent by a common control to its parent window when an event has occurred or the control requires some information.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_NOTIFY = 0x004E;
 // not defined 0x004F
-/// @brief
+/// @brief Posted to the window with the focus when the user chooses a new input language, either with the hotkey (specified in the Keyboard control panel application) or from the indicator on the system taskbar. An application can accept the change by passing the message to the DefWindowProc function or reject the change (and prevent it from taking place) by returning immediately.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_INPUTLANGCHANGEREQUEST = 0x0050;
-/// @brief
+/// @brief Sent to the topmost affected window after an application's input language has been changed. You should make any application-specific settings and pass the message to the DefWindowProc function, which passes the message to all first-level child windows. These child windows can pass the message to DefWindowProc to have it pass the message to their child windows, and so on.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_INPUTLANGCHANGE = 0x0051;
-/// @brief
+/// @brief Sent to an application that has initiated a training card with Windows Help. The message informs the application when the user clicks an authorable button. An application initiates a training card by specifying the HELP_TCARD command in a call to the WinHelp function.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_TCARD = 0x0052;
-/// @brief
+/// @brief Indicates that the user pressed the F1 key. If a menu is active when F1 is pressed, WM_HELP is sent to the window associated with the menu; otherwise, WM_HELP is sent to the window that has the keyboard focus. If no window has the keyboard focus, WM_HELP is sent to the currently active window.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_HELP = 0x0053;
-/// @brief
+/// @brief Sent to all windows after the user has logged on or off. When the user logs on or off, the system updates the user-specific settings. The system sends this message immediately after updating the settings.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_USERCHANGED = 0x0054;
-/// @brief
+/// @brief Determines if a window accepts ANSI or Unicode structures in the WM_NOTIFY notification message. WM_NOTIFYFORMAT messages are sent from a common control to its parent window and from the parent window to the common control.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_NOTIFYFORMAT = 0x0055;
 // not defined 0x0056 - 0x007A
-/// @brief
+/// @brief Notifies a window that the user desires a context menu to appear. The user may have clicked the right mouse button (right-clicked) in the window, pressed Shift+F10 or pressed the applications key (context menu key) available on some keyboards.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_CONTEXTMENU = 0x007B;
-/// @brief
+/// @brief Sent to a window when the SetWindowLong function is about to change one or more of the window's styles.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_STYLECHANGING = 0x007C;
-/// @brief
+/// @brief Sent to a window after the SetWindowLong function has changed one or more of the window's styles.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_STYLECHANGED = 0x007D;
-/// @brief
+/// @brief The WM_DISPLAYCHANGE message is sent to all windows when the display resolution has changed.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_DISPLAYCHANGE = 0x007E;
-/// @brief
+/// @brief Sent to a window to retrieve a handle to the large or small icon associated with a window. The system displays the large icon in the ALT+TAB dialog, and the small icon in the window caption.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_GETICON = 0x007F;
-/// @brief
+/// @brief Associates a new large or small icon with a window. The system displays the large icon in the ALT+TAB dialog box, and the small icon in the window caption.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_SETICON = 0x0080;
-/// @brief
+/// @brief Sent prior to the WM_CREATE message when a window is first created.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_NCCREATE = 0x0081;
-/// @brief
+/// @brief Notifies a window that its nonclient area is being destroyed. The DestroyWindow function sends the WM_NCDESTROY message to the window following the WM_DESTROY message.WM_DESTROY is used to free the allocated memory object associated with the window.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_NCDESTROY = 0x0082;
-/// @brief
+/// @brief Sent when the size and position of a window's client area must be calculated. By processing this message, an application can control the content of the window's client area when the size or position of the window changes.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_NCCALCSIZE = 0x0083;
-/// @brief
+/// @brief Sent to a window in order to determine what part of the window corresponds to a particular screen coordinate. This can happen, for example, when the cursor moves, when a mouse button is pressed or released, or in response to a call to a function such as WindowFromPoint. If the mouse is not captured, the message is sent to the window beneath the cursor. Otherwise, the message is sent to the window that has captured the mouse.Sent to a window in order to determine what part of the window corresponds to a particular screen coordinate. This can happen, for example, when the cursor moves, when a mouse button is pressed or released, or in response to a call to a function such as WindowFromPoint. If the mouse is not captured, the message is sent to the window beneath the cursor. Otherwise, the message is sent to the window that has captured the mouse.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_NCHITTEST = 0x0084;
-/// @brief
+/// @brief The WM_NCPAINT message is sent to a window when its frame must be painted.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_NCPAINT = 0x0085;
-/// @brief
+/// @brief Sent to a window when its nonclient area needs to be changed to indicate an active or inactive state.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_NCACTIVATE = 0x0086;
-/// @brief
+/// @brief Sent to the window procedure associated with a control. By default, the system handles all keyboard input to the control; the system interprets certain types of keyboard input as dialog box navigation keys. To override this default behavior, the control can respond to the WM_GETDLGCODE message to indicate the types of input it wants to process itself.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_GETDLGCODE = 0x0087;
-/// @brief
+/// @brief The WM_SYNCPAINT message is used to synchronize painting while avoiding linking independent GUI threads.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_SYNCPAINT = 0x0088;
 // not defined 0x0089 - 0x000F
-/// @brief
+/// @brief Posted to a window when the cursor is moved within the nonclient area of the window. This message is posted to the window that contains the cursor. If a window has captured the mouse, this message is not posted.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_NCMOUSEMOVE = 0x00A0;
-/// @brief
+/// @brief Posted when the user presses the left mouse button while the cursor is within the nonclient area of a window. This message is posted to the window that contains the cursor. If a window has captured the mouse, this message is not posted.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_NCLBUTTONDOWN = 0x00A1;
-/// @brief
+/// @brief Posted when the user releases the left mouse button while the cursor is within the nonclient area of a window. This message is posted to the window that contains the cursor. If a window has captured the mouse, this message is not posted.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_NCLBUTTONUP = 0x00A2;
-/// @brief
+/// @brief Posted when the user double-clicks the left mouse button while the cursor is within the nonclient area of a window. This message is posted to the window that contains the cursor. If a window has captured the mouse, this message is not posted.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_NCLBUTTONDBLCLK = 0x00A3;
-/// @brief
+/// @brief Posted when the user presses the right mouse button while the cursor is within the nonclient area of a window. This message is posted to the window that contains the cursor. If a window has captured the mouse, this message is not posted.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_NCRBUTTONDOWN = 0x00A4;
-/// @brief
+/// @brief Posted when the user releases the right mouse button while the cursor is within the nonclient area of a window. This message is posted to the window that contains the cursor. If a window has captured the mouse, this message is not posted.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_NCRBUTTONUP = 0x00A5;
-/// @brief
+/// @brief Posted when the user double-clicks the right mouse button while the cursor is within the nonclient area of a window. This message is posted to the window that contains the cursor. If a window has captured the mouse, this message is not posted.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_NCRBUTTONDBLCLK = 0x00A6;
-/// @brief
+/// @brief Posted when the user presses the middle mouse button while the cursor is within the nonclient area of a window. This message is posted to the window that contains the cursor. If a window has captured the mouse, this message is not posted.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_NCMBUTTONDOWN = 0x00A7;
-/// @brief
+/// @brief Posted when the user releases the middle mouse button while the cursor is within the nonclient area of a window. This message is posted to the window that contains the cursor. If a window has captured the mouse, this message is not posted.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_NCMBUTTONUP = 0x00A8;
-/// @brief
+/// @brief Posted when the user double-clicks the middle mouse button while the cursor is within the nonclient area of a window. This message is posted to the window that contains the cursor. If a window has captured the mouse, this message is not posted.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_NCMBUTTONDBLCLK = 0x00A9;
 // not defined 0x00AA
-/// @brief
+/// @brief Posted when the user presses the first or second X button while the cursor is in the nonclient area of a window. This message is posted to the window that contains the cursor. If a window has captured the mouse, this message is not posted.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_NCXBUTTONDOWN = 0x00AB;
-/// @brief
+/// @brief Posted when the user releases the first or second X button while the cursor is in the nonclient area of a window. This message is posted to the window that contains the cursor. If a window has captured the mouse, this message is not posted.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_NCXBUTTONUP = 0x00AC;
-/// @brief
+/// @brief Posted when the user double-clicks the first or second X button while the cursor is in the nonclient area of a window. This message is posted to the window that contains the cursor. If a window has captured the mouse, this message is not posted.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_NCXBUTTONDBLCLK = 0x00AD;
-/// @brief
+/// @brief Sent to the window that registered to receive raw input.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_INPUT_DEVICE_CHANGE = 0x00FE;
-/// @brief
+/// @brief Sent to the window that is getting raw input.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_INPUT = 0x00FF;
-/// @brief
+/// @brief Posted to the window with the keyboard focus when a nonsystem key is pressed. A nonsystem key is a key that is pressed when the ALT key is not pressed.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_KEYDOWN = 0x0100;
-/// @brief
+/// @brief Posted to the window with the keyboard focus when a nonsystem key is released. A nonsystem key is a key that is pressed when the ALT key is not pressed, or a keyboard key that is pressed when a window has the keyboard focus.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_KEYUP = 0x0101;
-/// @brief
+/// @brief Posted to the window with the keyboard focus when a WM_KEYDOWN message is translated by the TranslateMessage function. The WM_CHAR message contains the character code of the key that was pressed.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_CHAR = 0x0102;
-/// @brief
+/// @brief Posted to the window with the keyboard focus when a WM_KEYUP message is translated by the TranslateMessage function. WM_DEADCHAR specifies a character code generated by a dead key. A dead key is a key that generates a character, such as the umlaut (double-dot), that is combined with another character to form a composite character. For example, the umlaut-O character ( ) is generated by typing the dead key for the umlaut character, and then typing the O key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_DEADCHAR = 0x0103;
-/// @brief
+/// @brief Posted to the window with the keyboard focus when the user presses the F10 key (which activates the menu bar) or holds down the ALT key and then presses another key. It also occurs when no window currently has the keyboard focus; in this case, the WM_SYSKEYDOWN message is sent to the active window. The window that receives the message can distinguish between these two contexts by checking the context code in the lParam parameter.Posted to the window with the keyboard focus when the user presses the F10 key (which activates the menu bar) or holds down the ALT key and then presses another key. It also occurs when no window currently has the keyboard focus; in this case, the WM_SYSKEYDOWN message is sent to the active window. The window that receives the message can distinguish between these two contexts by checking the context code in the lParam parameter.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_SYSKEYDOWN = 0x0104;
-/// @brief
+/// @brief Posted to the window with the keyboard focus when the user releases a key that was pressed while the ALT key was held down. It also occurs when no window currently has the keyboard focus; in this case, the WM_SYSKEYUP message is sent to the active window. The window that receives the message can distinguish between these two contexts by checking the context code in the lParam parameter.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_SYSKEYUP = 0x0105;
-/// @brief
+/// @brief Posted to the window with the keyboard focus when a WM_SYSKEYDOWN message is translated by the TranslateMessage function. It specifies the character code of a system character key that is, a character key that is pressed while the ALT key is down.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_SYSCHAR = 0x0106;
-/// @brief
+/// @brief Sent to the window with the keyboard focus when a WM_SYSKEYDOWN message is translated by the TranslateMessage function. WM_SYSDEADCHAR specifies the character code of a system dead key that is, a dead key that is pressed while holding down the ALT key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
@@ -625,75 +625,75 @@ constexpr int32_t WM_SYSCHAR = 0x0106;
 constexpr int32_t WM_SYSDEADCHAR = 0x0107;
 //constexpr int32_t WM_KEYLAST = 0x0108;
 //constexpr int32_t WM_UNICHAR = 0x0109;
-/// @brief
+/// @brief Keyboard message filter value.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_KEYLAST = 0x0109;
 // not defined 0x010B - 0x010C
-/// @brief
+/// @brief Sent immediately before the IME generates the composition string as a result of a keystroke. A window receives this message through its WindowProc function.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_IME_STARTCOMPOSITION = 0x010D;
-/// @brief
+/// @brief Sent to an application when the IME ends composition. A window receives this message through its WindowProc function.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_IME_ENDCOMPOSITION = 0x010E;
-/// @brief
+/// @brief Sent to the dialog box procedure immediately before a dialog box is displayed. Dialog box procedures typically use this message to initialize controls and carry out any other initialization tasks that affect the appearance of the dialog box.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_INITDIALOG = 0x0110;
-/// @brief
+/// @brief Sent when the user selects a command item from a menu, when a control sends a notification message to its parent window, or when an accelerator keystroke is translated.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_COMMAND = 0x0111;
-/// @brief
+/// @brief A window receives this message when the user chooses a command from the Window menu (formerly known as the system or control menu) or when the user chooses the maximize button, minimize button, restore button, or close button.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_SYSCOMMAND = 0x0112;
-/// @brief
+/// @brief Posted to the installing thread's message queue when a timer expires. The message is posted by the GetMessage or PeekMessage function.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_TIMER = 0x0113;
-/// @brief
+/// @brief The WM_HSCROLL message is sent to a window when a scroll event occurs in the window's standard horizontal scroll bar. This message is also sent to the owner of a horizontal scroll bar control when a scroll event occurs in the control.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_HSCROLL = 0x0114;
-/// @brief
+/// @brief The WM_VSCROLL message is sent to a window when a scroll event occurs in the window's standard vertical scroll bar. This message is also sent to the owner of a vertical scroll bar control when a scroll event occurs in the control.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_VSCROLL = 0x0115;
-/// @brief
+/// @brief Sent when a menu is about to become active. It occurs when the user clicks an item on the menu bar or presses a menu key. This allows the application to modify the menu before it is displayed.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_INITMENU = 0x0116;
-/// @brief
+/// @brief Sent when a drop-down menu or submenu is about to become active. This allows an application to modify the menu before it is displayed, without changing the entire menu.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_INITMENUPOPUP = 0x0117;
 // not defined 0x0118
-/// @brief
+/// @brief Passes information about a gesture.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
