@@ -105,7 +105,8 @@ WARN_LOGFILE           = build/doxygen_warnings.txt
 # Configuration options related to the input files
 #---------------------------------------------------------------------------
 
-INPUT                  = src/xtd/include \
+INPUT                  = src/xtd/include/doxygen \
+                         src/xtd/include/xtd \
                          src/xtd.core/include \
                          src/xtd.drawing/include \
                          src/xtd.forms/include \
