@@ -37,6 +37,7 @@
 #include "forms/native/dialog_box_identifiers.h"
 #include "forms/native/domain_up_down.h"
 #include "forms/native/edit_styles.h"
+#include "forms/native/extended_window_styles.h"
 #include "forms/native/file_dialog.h"
 #include "forms/native/folder_browser_dialog.h"
 #include "forms/native/font_dialog.h"

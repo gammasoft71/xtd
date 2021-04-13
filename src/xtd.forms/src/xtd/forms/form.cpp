@@ -6,6 +6,7 @@
 #include <xtd/drawing/system_icons.h>
 #include <xtd/forms/native/class_styles.h>
 #include <xtd/forms/native/control.h>
+#include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/form.h>
 #include <xtd/forms/native/window_styles.h>
 #include <xtd/forms/window_messages.h>

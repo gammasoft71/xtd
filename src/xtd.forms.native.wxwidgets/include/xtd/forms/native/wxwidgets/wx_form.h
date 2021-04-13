@@ -3,6 +3,7 @@
 #include <xtd/drawing/system_colors.h>
 #include <xtd/forms/create_params.h>
 #include <xtd/forms/native/class_styles.h>
+#include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/window_styles.h>
 #include <wx/app.h>
 #include <wx/dialog.h>

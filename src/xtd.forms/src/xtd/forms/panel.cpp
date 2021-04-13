@@ -1,4 +1,5 @@
 #include <xtd/forms/native/control.h>
+#include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/panel.h>
 #include <xtd/forms/native/window_styles.h>
 #include "../../../include/xtd/forms/panel.h"

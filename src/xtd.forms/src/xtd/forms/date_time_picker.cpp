@@ -1,6 +1,7 @@
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/date_time_picker.h>
 #include <xtd/forms/native/date_time_picker_styles.h>
+#include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/window_styles.h>
 #include "../../../include/xtd/forms/date_time_picker.h"
 

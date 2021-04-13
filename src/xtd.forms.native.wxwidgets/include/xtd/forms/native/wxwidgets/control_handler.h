@@ -9,6 +9,7 @@
 #include <xtd/drawing/size.h>
 #include <xtd/drawing/native/wx_application.h>
 #include <xtd/forms/window_messages.h>
+#include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/mouse_key.h>
 #include <xtd/forms/native/scroll_bar_styles.h>
 #include <xtd/forms/native/virtual_keys.h>
