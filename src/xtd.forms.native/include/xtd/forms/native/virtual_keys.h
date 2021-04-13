@@ -1352,46 +1352,46 @@ constexpr size_t VK_OEM_8 = 0x0000DF;
 // 0x0000E0 : reserved
 
 // Various extended or enhanced keyboards
-/// @brief The F24 key.
+/// @brief The OEM ax key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_AX = 0x0000E1; //  'AX' key on Japanese AX kbd
-/// @brief
+/// @brief The OEM 102 key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_102 = 0x0000E2; //  "<>" or "\|" on RT 102-key kbd.
-/// @brief
+/// @brief The ico help key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_ICO_HELP = 0x0000E3; //  Help key on ICO
-/// @brief
+/// @brief The ico 00 key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_ICO_00 = 0x0000E4; //  00 key on ICO
 
-/// @brief
+/// @brief The PROCESS KEY key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_PROCESSKEY = 0x0000E5;
 
-/// @brief
+/// @brief The ico clear key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_ICO_CLEAR = 0x0000E6;
 
-/// @brief
+/// @brief The packet key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
@@ -1401,134 +1401,134 @@ constexpr size_t VK_PACKET = 0x0000E7;
 // 0x0000E8 : unassigned
 
 // Nokia/Ericsson definitions
-/// @brief
+/// @brief The OEM reset key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_RESET = 0x0000E9;
-/// @brief
+/// @brief The OEM jump key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_JUMP = 0x0000EA;
-/// @brief
+/// @brief The OEM PA1 key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_PA1 = 0x0000EB;
-/// @brief
+/// @brief The OEM PA2 key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_PA2 = 0x0000EC;
-/// @brief
+/// @brief The OEM PA3 key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_PA3 = 0x0000ED;
-/// @brief
+/// @brief The OEM WSCTRL key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_WSCTRL = 0x0000EE;
-/// @brief
+/// @brief The OEM CUSEL key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_CUSEL = 0x0000EF;
-/// @brief
+/// @brief The OEM ATTN key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_ATTN = 0x0000F0;
-/// @brief
+/// @brief The OEM finish key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_FINISH = 0x0000F1;
-/// @brief
+/// @brief The OEM copy key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_COPY = 0x0000F2;
-/// @brief
+/// @brief The OEM auto key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_AUTO = 0x0000F3;
-/// @brief
+/// @brief The OEM ENLW key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_ENLW = 0x0000F4;
-/// @brief
+/// @brief The OEM BACKTAB key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_BACKTAB = 0x0000F5;
 
-/// @brief
+/// @brief The ATTN key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_ATTN = 0x0000F6;
-/// @brief
+/// @brief The CRSEL key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_CRSEL = 0x0000F7;
-/// @brief
+/// @brief The EXSEL key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_EXSEL = 0x0000F8;
-/// @brief
+/// @brief The ERASE OF key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_EREOF = 0x0000F9;
-/// @brief
+/// @brief The PALY key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_PLAY = 0x0000FA;
-/// @brief
+/// @brief The ZOOM key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_ZOOM = 0x0000FB;
-/// @brief
+/// @brief Reserved for future use.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_NONAME = 0x0000FC;
-/// @brief
+/// @brief The PA1 key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_PA1 = 0x0000FD;
-/// @brief
+/// @brief The OEM CLEAR key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
