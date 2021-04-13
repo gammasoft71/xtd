@@ -5,7 +5,7 @@
 #---------------------------------------------------------------------------
 
 DOXYFILE_ENCODING      = UTF-8
-PROJECT_NAME           = "xtd - Reference Guide"
+PROJECT_NAME           = "xtd - Developer Guide"
 PROJECT_NUMBER         = 0.1.0
 PROJECT_BRIEF          = "Modern c++17/20 framework to create console, GUI and unit test applications on Windows, macOS, Linux, iOS and android."
 PROJECT_LOGO           = docs/pictures/xtd_doxygen.png
@@ -105,11 +105,14 @@ WARN_LOGFILE           = build/doxygen_warnings.txt
 # Configuration options related to the input files
 #---------------------------------------------------------------------------
 
-INPUT                  = src/xtd/include \
+INPUT                  = src/xtd/include/doxygen_developer \
+                         src/xtd/include \
                          src/xtd.core/include \
                          src/xtd.drawing/include \
                          src/xtd.forms/include \
-                         src/xtd.tunit/include
+                         src/xtd.tunit/include \
+                         src/xtd.drawing.native/include \
+                         src/xtd.forms.native/include
 INPUT_ENCODING         = UTF-8
 FILE_PATTERNS          = *.dox *.h *.md
 RECURSIVE              = YES # Default: NO
@@ -158,7 +161,7 @@ IGNORE_PREFIX          =
 #---------------------------------------------------------------------------
 
 GENERATE_HTML          = YES
-HTML_OUTPUT            = html
+HTML_OUTPUT            = developer_html
 HTML_FILE_EXTENSION    = .html
 HTML_HEADER            = "docs/doxygen/html_header.html"
 HTML_FOOTER            = "docs/doxygen/html_footer.html"
