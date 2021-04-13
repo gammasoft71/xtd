@@ -77,12 +77,12 @@
 /// @brief open file flags definitions.
 /// @warning Internal use only
 
-/// @defgroup pbs progrress bar styles
+/// @defgroup pbs progress bar styles
 /// @brief progress bar styles definitions.
 /// @warning Internal use only
 
-/// @defgroup progdlg progrress dialog flags
-/// @brief progrress dialog flags definitions.
+/// @defgroup progdlg progress dialog flags
+/// @brief progress dialog flags definitions.
 /// @warning Internal use only
 
 /// @defgroup sb scroll bar styles
