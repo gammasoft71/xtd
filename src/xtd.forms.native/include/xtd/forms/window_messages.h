@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains windows message identifiers constants.
+/// @brief Contains windows messages constants.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstddef>
