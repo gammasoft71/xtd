@@ -6,7 +6,7 @@
 #include <xtd/drawing/font.h>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/drawing/system_fonts.h>
-#include <xtd/forms/font_dialog_flags.h>
+#include <xtd/forms/choose_font_flags.h>
 #include "common_dialog.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

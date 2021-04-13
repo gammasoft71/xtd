@@ -23,6 +23,8 @@ add_sources(
   include/doxygen/xtd_core_examples.dox
   include/doxygen/xtd_forms_examples.dox
   include/doxygen/xtd_tunit_examples.dox
+  include/doxygen_developer/groups.dox
+  include/doxygen_developer/main_page.dox
 )
 add_sources(
   ../../locale/en/about_dialog.strings

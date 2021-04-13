@@ -862,62 +862,70 @@ constexpr size_t VK_F24 = 0x000087;
 
 // 0x000088 - 0x00008F : UI navigation
 
-/// @brief
+/// @brief The navigation view key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
+/// @remarks Reserved.
 /// @warning Internal use only
 constexpr size_t VK_NAVIGATION_VIEW = 0x000088; // reserved
-/// @brief
+/// @brief The navigation menu key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
+/// @remarks Reserved.
 /// @warning Internal use only
 constexpr size_t VK_NAVIGATION_MENU = 0x000089; // reserved
-/// @brief
+/// @brief The navigation up key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
+/// @remarks Reserved.
 /// @warning Internal use only
 constexpr size_t VK_NAVIGATION_UP = 0x00008A; // reserved
-/// @brief
+/// @brief The navigation down key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
+/// @remarks Reserved.
 /// @warning Internal use only
 constexpr size_t VK_NAVIGATION_DOWN = 0x00008B; // reserved
-/// @brief
+/// @brief The navigation left key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
+/// @remarks Reserved.
 /// @warning Internal use only
 constexpr size_t VK_NAVIGATION_LEFT = 0x00008C; // reserved
-/// @brief
+/// @brief The navigation right key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
+/// @remarks Reserved.
 /// @warning Internal use only
 constexpr size_t VK_NAVIGATION_RIGHT = 0x00008D; // reserved
-/// @brief
+/// @brief The navigation accept key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
+/// @remarks Reserved.
 /// @warning Internal use only
 constexpr size_t VK_NAVIGATION_ACCEPT = 0x00008E; // reserved
-/// @brief
+/// @brief The navigation cancel key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
+/// @remarks Reserved.
 /// @warning Internal use only
 constexpr size_t VK_NAVIGATION_CANCEL = 0x00008F; // reserved
 
-/// @brief
+/// @brief The NUM LOCK key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_NUMLOCK = 0x000090;
-/// @brief
+/// @brief The SCROLL LOCK key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
@@ -925,7 +933,7 @@ constexpr size_t VK_NUMLOCK = 0x000090;
 constexpr size_t VK_SCROLL = 0x000091;
 
 // NEC PC-9800 kbd definitions
-/// @brief
+/// @brief The OEM Nec equal key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
@@ -933,31 +941,31 @@ constexpr size_t VK_SCROLL = 0x000091;
 constexpr size_t VK_OEM_NEC_EQUAL = 0x000092; // '=' key on numpad
 
 // Fujitsu/OASYS kbd definitions
-/// @brief
+/// @brief The OEM Fj Jisho key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_FJ_JISHO = 0x000092; // 'Dictionary' key
-/// @brief
+/// @brief The OEM Fj Masshou key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_FJ_MASSHOU = 0x000093; // 'Unregister word' key
-/// @brief
+/// @brief The OEM Fj Touroku key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_FJ_TOUROKU = 0x000094; // 'Register word' key
-/// @brief
+/// @brief The OEM Fj Loya key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_FJ_LOYA = 0x000095; // 'Left OYAYUBI' key
-/// @brief
+/// @brief The OEM Fj Roya key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
@@ -969,152 +977,147 @@ constexpr size_t VK_OEM_FJ_ROYA = 0x000096; // 'Right OYAYUBI' key
 // VK_L* & VK_R* - left and right Alt, Ctrl and Shift virtual keys.
 // Used only as parameters to GetAsyncKeyState() and GetKeyState().
 // No other API or message will distinguish left and right keys in this way.
-/// @brief
+/// @brief The left SHIFT key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_LSHIFT = 0x0000A0;
-/// @brief
+/// @brief The right SHIFT key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_RSHIFT = 0x0000A1;
-/// @brief
+/// @brief The left CTRL key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_LCONTROL = 0x0000A2;
-/// @brief
+/// @brief The right CTRL key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_RCONTROL = 0x0000A3;
-/// @brief
+/// @brief The left ALT key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_LMENU = 0x0000A4;
-/// @brief
+/// @brief The right ALT key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_RMENU = 0x0000A5;
 
-/// @brief
+/// @brief The browser back key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_BROWSER_BACK = 0x0000A6;
-/// @brief
+/// @brief The browser forward key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_BROWSER_FORWARD = 0x0000A7;
-/// @brief
+/// @brief The browser refresh key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_BROWSER_REFRESH = 0x0000A8;
-/// @brief
+/// @brief The browser stop key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_BROWSER_STOP = 0x0000A9;
-/// @brief
+/// @brief The browser search key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_BROWSER_SEARCH = 0x0000AA;
-/// @brief
-/// @par Library
-/// xtd.forms.native
-/// @ingroup xtd_forms_native virtual_keys
-/// @warning Internal use only
-/// @brief
+/// @brief The browser favorites key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_BROWSER_FAVORITES = 0x0000AB;
-/// @brief
+/// @brief The browser home key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_BROWSER_HOME = 0x0000AC;
 
-/// @brief
+/// @brief The volume mute key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_VOLUME_MUTE = 0x0000AD;
-/// @brief
+/// @brief The volume down key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_VOLUME_DOWN = 0x0000AE;
-/// @brief
+/// @brief The volume up key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_VOLUME_UP = 0x0000AF;
-/// @brief
+/// @brief The media next trak key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_MEDIA_NEXT_TRACK = 0x0000B0;
-/// @brief
+/// @brief The media previous track key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_MEDIA_PREV_TRACK = 0x0000B1;
-/// @brief
+/// @brief The media stop key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_MEDIA_STOP = 0x0000B2;
-/// @brief
+/// @brief The media play key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_MEDIA_PLAY_PAUSE = 0x0000B3;
-/// @brief
+/// @brief The launch mail key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_LAUNCH_MAIL = 0x0000B4;
-/// @brief
+/// @brief The media select key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_LAUNCH_MEDIA_SELECT = 0x0000B5;
-/// @brief
+/// @brief The launch application one key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_LAUNCH_APP1 = 0x0000B6;
-/// @brief
+/// @brief The launch application two key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
@@ -1123,43 +1126,43 @@ constexpr size_t VK_LAUNCH_APP2 = 0x0000B7;
 
 // 0x0000B8 - 0x0000B9 : reserved
 
-/// @brief
+/// @brief The OEM 1 key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_1 = 0x0000BA; // ';:' for US
-/// @brief
+/// @brief The OEM plus key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_PLUS = 0x0000BB; // '+' any country
-/// @brief
+/// @brief The OEM comma key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_COMMA = 0x0000BC; // ',' any country
-/// @brief
+/// @brief The OEM minus key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_MINUS = 0x0000BD; // '-' any country
-/// @brief
+/// @brief The OEM period key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_PERIOD = 0x0000BE; // '.' any country
-/// @brief
+/// @brief The OEM 2 key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_2 = 0x0000BF; // '/?' for US
-/// @brief
+/// @brief The OEM 3 key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
@@ -1170,61 +1173,61 @@ constexpr size_t VK_OEM_3 = 0x0000C0; // '`~' for US
 
 // 0x0000C3 - 0x0000DA : Gamepad input
 
-/// @brief
+/// @brief The gamepad A key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_GAMEPAD_A = 0x0000C3; // reserved
-/// @brief
+/// @brief The gamepad B key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_GAMEPAD_B = 0x0000C4; // reserved
-/// @brief
+/// @brief The gamepad X key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_GAMEPAD_X = 0x0000C5; // reserved
-/// @brief
+/// @brief The gamepad Y key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_GAMEPAD_Y = 0x0000C6; // reserved
-/// @brief
+/// @brief The gamepad right shoulder key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_GAMEPAD_RIGHT_SHOULDER = 0x0000C7; // reserved
-/// @brief
+/// @brief The gamepad left shoulder key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_GAMEPAD_LEFT_SHOULDER = 0x0000C8; // reserved
-/// @brief
+/// @brief The gamepad left trigger key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_GAMEPAD_LEFT_TRIGGER = 0x0000C9; // reserved
-/// @brief
+/// @brief The gamepad right trigger key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_GAMEPAD_RIGHT_TRIGGER = 0x0000CA; // reserved
-/// @brief
+/// @brief The gamepad direction pad up key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_GAMEPAD_DPAD_UP = 0x0000CB; // reserved
-/// @brief
+/// @brief The gampad direction pad down key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
@@ -1315,31 +1318,31 @@ constexpr size_t VK_GAMEPAD_RIGHT_THUMBSTICK_RIGHT = 0x0000D9; // reserved
 /// @warning Internal use only
 constexpr size_t VK_GAMEPAD_RIGHT_THUMBSTICK_LEFT = 0x0000DA; // reserved
 
-/// @brief
+/// @brief The OEM 4 key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_4 = 0x0000DB; //  '[{' for US
-/// @brief
+/// @brief The OEM 5 key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_5 = 0x0000DC; //  '\|' for US
-/// @brief
+/// @brief The OEM 6 key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_6 = 0x0000DD; //  ']}' for US
-/// @brief
+/// @brief The OEM 7 key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @warning Internal use only
 constexpr size_t VK_OEM_7 = 0x0000DE; //  ''"' for US
-/// @brief
+/// @brief The OEM 8 key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
@@ -1349,7 +1352,7 @@ constexpr size_t VK_OEM_8 = 0x0000DF;
 // 0x0000E0 : reserved
 
 // Various extended or enhanced keyboards
-/// @brief
+/// @brief The F24 key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys

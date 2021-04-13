@@ -1,6 +1,102 @@
 /// @file
 /// @brief Contains groups definitions.
 
+/// @defgroup arw arranged direction window
+/// @brief arranged direction window definitions.
+/// @warning Internal use only
+
+/// @defgroup bif browser info flags
+/// @brief browser info flags definitions.
+/// @warning Internal use only
+
+/// @defgroup bst button states
+/// @brief button states definitions.
+/// @warning Internal use only
+
+/// @defgroup bs button styles
+/// @brief button styles definitions.
+/// @warning Internal use only
+
+/// @defgroup cc choose color flags
+/// @brief choose color flags definitions.
+/// @warning Internal use only
+
+/// @defgroup cf choose font flags
+/// @brief choose font flags definitions.
+/// @warning Internal use only
+
+/// @defgroup cs class styles
+/// @brief class styles definitions.
+/// @warning Internal use only
+
+/// @defgroup cbs combo box styles
+/// @brief combo box styles definitions.
+/// @warning Internal use only
+
+/// @defgroup ca content alignment
+/// @brief content alignment definitions.
+/// @warning Internal use only
+
+/// @defgroup dts date time states
+/// @brief date time states definitions.
+/// @warning Internal use only
+
+/// @defgroup id dialog box identifiers
+/// @brief dialog box identifiers definitions.
+/// @warning Internal use only
+
+/// @defgroup es edit styles
+/// @brief edit styles definitions.
+/// @warning Internal use only
+
+/// @defgroup lbs list box styles
+/// @brief list box styles definitions.
+/// @warning Internal use only
+
+/// @defgroup mi menu item kind
+/// @brief menu item kind definitions.
+/// @warning Internal use only
+
+/// @defgroup mb message box styles
+/// @brief message box styles definitions.
+/// @warning Internal use only
+
+/// @defgroup mk mouse and key
+/// @brief mouse and key definitions.
+/// @warning Internal use only
+
+/// @defgroup ofn open file flags
+/// @brief open file flags definitions.
+/// @warning Internal use only
+
+/// @defgroup pbs progrress bar styles
+/// @brief progress bar styles definitions.
+/// @warning Internal use only
+
+/// @defgroup progdlg progrress dialog flags
+/// @brief progrress dialog flags definitions.
+/// @warning Internal use only
+
+/// @defgroup sb scroll bar styles
+/// @brief scroll bar styles definitions.
+/// @warning Internal use only
+
+/// @defgroup ss static styles
+/// @brief static styles definitions.
+/// @warning Internal use only
+
+/// @defgroup tcs tab control styles
+/// @brief tab control styles definitions.
+/// @warning Internal use only
+
+/// @defgroup tbs track bar styles
+/// @brief track bar styles definitions.
+/// @warning Internal use only
+
+/// @defgroup uds up down styles
+/// @brief up down styles definitions.
+/// @warning Internal use only
+
 /// @defgroup virtual_keys virtual keys
 /// @brief virtual keys definitions.
 /// @warning Internal use only

@@ -1,5 +1,5 @@
 #include <xtd/forms/native/font_dialog.h>
-#include <xtd/forms/font_dialog_flags.h>
+#include <xtd/forms/choose_font_flags.h>
 #include <wx/fontdlg.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"

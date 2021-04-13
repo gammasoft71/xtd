@@ -37,9 +37,6 @@
 /// @defgroup literals literals
 /// @brief Literals allows integer, floating-point, character, and string literals to produce objects.
 
-/// @defgroup message_ids message identifiers
-/// @brief message identifiers definitions.
-
 /// @defgroup menus_and_toolbars   menus and toolbars
 /// @brief menus and toolbars definitions.
 
@@ -51,6 +48,9 @@
 
 /// @defgroup utilities utilities
 /// @brief Contains utility classes.
+
+/// @defgroup wm window messages
+/// @brief window messages definitions.
 
 /// @defgroup xtd_core xtd.core
 /// @brief The xtd.core library contains all fundamental classes to access Hardware, Os, System, and more.

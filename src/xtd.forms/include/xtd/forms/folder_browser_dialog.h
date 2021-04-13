@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/environment.h>
-#include <xtd/forms/folder_browser_dialog_flags.h>
+#include <xtd/forms/browser_info_flags.h>
 #include "common_dialog.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

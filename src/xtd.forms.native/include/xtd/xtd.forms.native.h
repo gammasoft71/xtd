@@ -7,8 +7,8 @@
 
 #include <xtd/strings.h>
 #include "forms/create_params.h"
-#include "forms/color_dialog_flags.h"
-#include "forms/font_dialog_flags.h"
+#include "forms/choose_color_flags.h"
+#include "forms/choose_font_flags.h"
 #include "forms/window_messages.h"
 #include "forms/native/about_dialog.h"
 #include "forms/native/application.h"
@@ -36,6 +36,7 @@
 #include "forms/native/date_time_picker_styles.h"
 #include "forms/native/dialog_box_ids.h"
 #include "forms/native/domain_up_down.h"
+#include "forms/native/edit_styles.h"
 #include "forms/native/file_dialog.h"
 #include "forms/native/folder_browser_dialog.h"
 #include "forms/native/font_dialog.h"
@@ -68,7 +69,6 @@
 #include "forms/native/tab_control_styles.h"
 #include "forms/native/tab_page.h"
 #include "forms/native/text_box.h"
-#include "forms/native/text_box_styles.h"
 #include "forms/native/timer.h"
 #include "forms/native/toggle_button.h"
 #include "forms/native/track_bar.h"

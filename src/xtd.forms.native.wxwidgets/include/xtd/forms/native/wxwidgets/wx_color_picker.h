@@ -2,7 +2,7 @@
 #include <xtd/argument_exception.h>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/forms/create_params.h>
-#include <xtd/forms/color_dialog_flags.h>
+#include <xtd/forms/choose_color_flags.h>
 #include <wx/clrpicker.h>
 #include "control_handler.h"
 
