@@ -4,7 +4,7 @@
 #pragma once
 #include "common_dialog.h"
 #include <vector>
-#include <xtd/forms/file_dialog_flags.h>
+#include <xtd/forms/open_file_name_flags.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

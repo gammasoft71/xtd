@@ -7,11 +7,11 @@ include(../../scripts/cmake/xtd_version.cmake)
 add_include_directories(include)
 add_sources(
   include/xtd/xtd.forms.native.h
+  include/xtd/forms/browser_info_flags.h
   include/xtd/forms/create_params.h
-  include/xtd/forms/color_dialog_flags.h
-  include/xtd/forms/file_dialog_flags.h
-  include/xtd/forms/folder_browser_dialog_flags.h
-  include/xtd/forms/font_dialog_flags.h
+  include/xtd/forms/choose_color_flags.h
+  include/xtd/forms/choose_font_flags.h
+  include/xtd/forms/open_file_name_flags.h
   include/xtd/forms/progress_dialog_flags.h
   include/xtd/forms/window_messages.h
   include/xtd/forms/native/about_dialog.h
@@ -40,6 +40,7 @@ add_sources(
   include/xtd/forms/native/date_time_picker_styles.h
   include/xtd/forms/native/dialog_box_ids.h
   include/xtd/forms/native/domain_up_down.h
+  include/xtd/forms/native/edit_styles.h
   include/xtd/forms/native/file_dialog.h
   include/xtd/forms/native/folder_browser_dialog.h
   include/xtd/forms/native/font_dialog.h
@@ -75,7 +76,6 @@ add_sources(
   include/xtd/forms/native/tab_control_styles.h
   include/xtd/forms/native/tab_page.h
   include/xtd/forms/native/text_box.h
-  include/xtd/forms/native/text_box_styles.h
   include/xtd/forms/native/timer.h
   include/xtd/forms/native/toggle_button.h
   include/xtd/forms/native/track_bar.h

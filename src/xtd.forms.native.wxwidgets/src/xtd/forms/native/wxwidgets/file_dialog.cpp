@@ -1,6 +1,6 @@
 #include <xtd/io/path.h>
 #include <xtd/forms/native/file_dialog.h>
-#include <xtd/forms/file_dialog_flags.h>
+#include <xtd/forms/open_file_name_flags.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #include <wx/filedlg.h>
 #include <wx/windowptr.h>

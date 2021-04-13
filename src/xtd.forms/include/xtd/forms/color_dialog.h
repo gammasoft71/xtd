@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/drawing/color.h>
-#include <xtd/forms/color_dialog_flags.h>
+#include <xtd/forms/choose_color_flags.h>
 #include "../forms_export.h"
 #include "common_dialog.h"
 

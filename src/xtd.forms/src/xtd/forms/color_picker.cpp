@@ -2,7 +2,7 @@
 #include <xtd/forms/native/color_picker.h>
 #include <xtd/forms/native/static_styles.h>
 #include <xtd/forms/native/window_styles.h>
-#include <xtd/forms/color_dialog_flags.h>
+#include <xtd/forms/choose_color_flags.h>
 #include "../../../include/xtd/forms/color_picker.h"
 
 using namespace xtd;
