@@ -1309,210 +1309,180 @@ constexpr int32_t WM_CLEAR = 0x0303;
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_UNDO = 0x0304;
-/// @brief
+/// @brief Sent to the clipboard owner if it has delayed rendering a specific clipboard format and if an application has requested data in that format. The clipboard owner must render data in the specified format and place it on the clipboard by calling the SetClipboardData function.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_RENDERFORMAT = 0x0305;
-/// @brief
+/// @brief Sent to the clipboard owner before it is destroyed, if the clipboard owner has delayed rendering one or more clipboard formats. For the content of the clipboard to remain available to other applications, the clipboard owner must render data in all the formats it is capable of generating, and place the data on the clipboard by calling the SetClipboardData function.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_RENDERALLFORMATS = 0x0306;
-/// @brief
+/// @brief Sent to the clipboard owner when a call to the EmptyClipboard function empties the clipboard.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_DESTROYCLIPBOARD = 0x0307;
-/// @brief
+/// @brief Sent to the first window in the clipboard viewer chain when the content of the clipboard changes. This enables a clipboard viewer window to display the new content of the clipboard.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_DRAWCLIPBOARD = 0x0308;
-/// @brief
+/// @brief Sent to the clipboard owner by a clipboard viewer window when the clipboard contains data in the CF_OWNERDISPLAY format and the clipboard viewer's client area needs repainting.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_PAINTCLIPBOARD = 0x0309;
-/// @brief
+/// @brief Sent to the clipboard owner by a clipboard viewer window when the clipboard contains data in the CF_OWNERDISPLAY format and an event occurs in the clipboard viewer's vertical scroll bar. The owner should scroll the clipboard image and update the scroll bar values.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_VSCROLLCLIPBOARD = 0x030A;
-/// @brief
+/// @brief Sent to the clipboard owner by a clipboard viewer window when the clipboard contains data in the CF_OWNERDISPLAY format and the clipboard viewer's client area has changed size.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_SIZECLIPBOARD = 0x030B;
-/// @brief
+/// @brief Sent to the clipboard owner by a clipboard viewer window to request the name of a CF_OWNERDISPLAY clipboard format.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_ASKCBFORMATNAME = 0x030C;
-/// @brief
+/// @brief Sent to the first window in the clipboard viewer chain when a window is being removed from the chain.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_CHANGECBCHAIN = 0x030D;
-/// @brief
+/// @brief Sent to the clipboard owner by a clipboard viewer window. This occurs when the clipboard contains data in the CF_OWNERDISPLAY format and an event occurs in the clipboard viewer's horizontal scroll bar. The owner should scroll the clipboard image and update the scroll bar values.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_HSCROLLCLIPBOARD = 0x030E;
-/// @brief
+/// @brief The WM_QUERYNEWPALETTE message informs a window that it is about to receive the keyboard focus, giving the window the opportunity to realize its logical palette when it receives the focus.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_QUERYNEWPALETTE = 0x030F;
-/// @brief
+/// @brief The WM_PALETTEISCHANGING message informs applications that an application is going to realize its logical palette.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_PALETTEISCHANGING = 0x0310;
-/// @brief
+/// @brief The WM_PALETTECHANGED message is sent to all top-level and overlapped windows after the window with the keyboard focus has realized its logical palette, thereby changing the system palette. This message enables a window that uses a color palette but does not have the keyboard focus to realize its logical palette and update its client area.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_PALETTECHANGED = 0x0311;
-/// @brief
+/// @brief Posted when the user presses a hot key registered by the RegisterHotKey function. The message is placed at the top of the message queue associated with the thread that registered the hot key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_HOTKEY = 0x0312;
 // not defined 0x0313 - 0x0316
-/// @brief
+/// @brief The WM_PRINT message is sent to a window to request that it draw itself in the specified device context, most commonly in a printer device context.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_PRINT = 0x0317;
-/// @brief
+/// @brief The WM_PRINTCLIENT message is sent to a window to request that it draw its client area in the specified device context, most commonly in a printer device context.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_PRINTCLIENT = 0x0318;
-/// @brief
+/// @brief Notifies a window that the user generated an application command event, for example, by clicking an application command button using the mouse or typing an application command key on the keyboard.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_APPCOMMAND = 0x0319;
-/// @brief
+/// @brief Broadcast to every window following a theme change event. Examples of theme change events are the activation of a theme, the deactivation of a theme, or a transition from one theme to another.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_THEMECHANGED = 0x031A;
 // not defined 0x031B - 0x031C
-/// @brief
+/// @brief Sent when the contents of the clipboard have changed.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_CLIPBOARDUPDATE = 0x031D;
-/// @brief
+/// @brief Informs all top-level windows that Desktop Window Manager (DWM) composition has been enabled or disabled.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_DWMCOMPOSITIONCHANGED = 0x031E;
-/// @brief
+/// @brief Sent when the non-client area rendering policy has changed.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_DWMNCRENDERINGCHANGED = 0x031F;
-/// @brief
+/// @brief Informs all top-level windows that the colorization color has changed.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_DWMCOLORIZATIONCOLORCHANGED = 0x0320;
-/// @brief
+/// @brief Sent when a Desktop Window Manager (DWM) composed window is maximized.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_DWMWINDOWMAXIMIZEDCHANGE = 0x0321;
-/// @brief
+/// @brief Instructs a window to provide a static bitmap to use as a thumbnail representation of that window.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_DWMSENDICONICTHUMBNAIL = 0x0323;
-/// @brief
+/// @brief Instructs a window to provide a static bitmap to use as a live preview (also known as a Peek preview) of that window.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_DWMSENDICONICLIVEPREVIEWBITMAP = 0x0326;
 // not defined 0x0327 - 0x033E
-/// @brief
+/// @brief Sent to request extended title bar information. A window receives this message through its WindowProc function.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_GETTITLEBARINFOEX = 0x033F;
 // not defined 0x0340 - 0x0357
-/// @brief
-/// @par Library
-/// xtd.forms.native
-/// @ingroup xtd_forms_native wm
-/// @remarks This value can be contained in the xtd::forms::message::msg property.
+/// @cond
 constexpr int32_t WM_HANDHELDFIRST = 0x0358;
-// not defined 0x0359 - 0x035E
-/// @brief
-/// @par Library
-/// xtd.forms.native
-/// @ingroup xtd_forms_native wm
-/// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_HANDHELDLAST = 0x035F;
-/// @brief
-/// @par Library
-/// xtd.forms.native
-/// @ingroup xtd_forms_native wm
-/// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_AFXFIRST = 0x0360;
-// not defined 0x0361 - 0x037E
-/// @brief
-/// @par Library
-/// xtd.forms.native
-/// @ingroup xtd_forms_native wm
-/// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_AFXLAST = 0x037F;
-/// @brief
-/// @par Library
-/// xtd.forms.native
-/// @ingroup xtd_forms_native wm
-/// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_PENWINFIRST = 0x0380;
 // not defined 0x0381 - 0x038E
-/// @brief
-/// @par Library
-/// xtd.forms.native
-/// @ingroup xtd_forms_native wm
-/// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_PENWINLAST = 0x038F;
+/// @endcond
 // not defined 0x0390 - 0x039F
 
 // NOTE: All Message Numbers below 0x0400 are RESERVED.
 // Private Window Messages Start Here:
-/// @brief
+/// @brief Used to define private messages for use by private window classes, usually of the form WM_USER+x, where x is an integer value.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
@@ -1521,7 +1491,7 @@ constexpr int32_t WM_USER = 0x0400;
 // Private Window Messages Stop Here : 0x7FFF;
 
 // NOTE: Messages available for use by applications.
-/// @brief
+/// @brief Used to define private messages, usually of the form WM_APP+x, where x is an integer value.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native wm
