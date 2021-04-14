@@ -19,7 +19,7 @@ namespace xtd {
     /// @brief Each property of the system_images class is an image object for Windows system-wide images. This class cannot be inherited.
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing
+    /// @ingroup xtd_drawing drawing
     /// @remarks Each property of the system_fonts class returns a Font used to display text in a particular Windows display element, such as the title bar of a window. These fonts reflect the current settings in Control Panel.
     class drawing_export_ system_images final static_ {
     public:

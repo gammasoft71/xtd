@@ -6,45 +6,28 @@ using namespace xtd::drawing;
 using namespace xtd::drawing::drawing2d;
 
 linear_gradient_brush::linear_gradient_brush() {
-  data_->color1_ = color::black;
-  data_->color2_ = color::black;
+  data_->linear_colors_ = {color::black, color::black};
   recreate_handle();
 }
 
-linear_gradient_brush& linear_gradient_brush::point1(const drawing::point& point1) {
-  if (data_->point1_ != point1) {
-    data_->point1_ = point1;
+linear_gradient_brush& linear_gradient_brush::rectangle(const drawing::rectangle_f& rect) {
+  if (data_->rect_ != rect) {
+    data_->rect_ = rect;
     recreate_handle();
   }
   return *this;
 }
 
-linear_gradient_brush& linear_gradient_brush::point2(const drawing::point& point2) {
-  if (data_->point2_ != point2) {
-    data_->point2_ = point2;
-    recreate_handle();
-  }
-  return *this;
-}
-
-linear_gradient_brush& linear_gradient_brush::color1(const drawing::color& color1) {
-  if (data_->color1_ != color1) {
-    data_->color1_ = color1;
-    recreate_handle();
-  }
-  return *this;
-}
-
-linear_gradient_brush& linear_gradient_brush::color2(const drawing::color& color2) {
-  if (data_->color2_ != color2) {
-    data_->color2_ = color2;
+linear_gradient_brush& linear_gradient_brush::linear_colors(const std::array<xtd::drawing::color, 2>& linear_colors) {
+  if (data_->linear_colors_ != linear_colors) {
+    data_->linear_colors_ = linear_colors;
     recreate_handle();
   }
   return *this;
 }
 
 void linear_gradient_brush::recreate_handle() {
-  native::brush::linear_gradient(brush::data_->handle_, data_->point1_.x(), data_->point1_.y(), data_->point2_.x(), data_->point2_.y(), data_->color1_.a(), data_->color1_.r(), data_->color1_.g(), data_->color1_.b(), data_->color2_.a(), data_->color2_.r(), data_->color2_.g(), data_->color2_.b());
+  native::brush::linear_gradient(brush::data_->handle_, data_->rect_.x(), data_->rect_.y(), data_->rect_.right(), data_->rect_.bottom(), data_->linear_colors_[0].a(), data_->linear_colors_[0].r(), data_->linear_colors_[0].g(), data_->linear_colors_[0].b(), data_->linear_colors_[1].a(), data_->linear_colors_[1].r(), data_->linear_colors_[1].g(), data_->linear_colors_[1].b());
 }
 
 linear_gradient_brush::linear_gradient_brush(const linear_gradient_brush& value) : brush(value) {

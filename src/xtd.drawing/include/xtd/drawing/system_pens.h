@@ -13,7 +13,7 @@ namespace xtd {
     /// @brief Each property of the system_pens class is a pen that is the color of a Windows display element and that has a width of 1 pixel.
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing
+    /// @ingroup xtd_drawing drawing
     class drawing_export_ system_pens final static_ {
     public:
       /// @brief Gets a pen that is the color of the active border.

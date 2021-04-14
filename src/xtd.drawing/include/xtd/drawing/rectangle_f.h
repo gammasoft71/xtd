@@ -20,7 +20,7 @@ namespace xtd {
     /// @brief Stores a set of four floating-points that represent the location and size of a rectangle.
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing
+    /// @ingroup xtd_drawing drawing
     class drawing_export_ rectangle_f {
     public:
       static const rectangle_f empty;

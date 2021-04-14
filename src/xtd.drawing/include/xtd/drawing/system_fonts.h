@@ -13,7 +13,7 @@ namespace xtd {
     /// @brief Specifies the fonts used to display text in Windows display elements.
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing
+    /// @ingroup xtd_drawing drawing
     /// @remarks Each property of the system_fonts class returns a Font used to display text in a particular Windows display element, such as the title bar of a window. These fonts reflect the current settings in Control Panel.
     class drawing_export_ system_fonts final static_ {
     public:

@@ -17,7 +17,7 @@ namespace xtd {
     
     /// @brief Stores an ordered pair of integers, which specify a height and width.
     /// @par Library
-    /// xtd.drawing
+    /// xtd.drawing drawing
     /// @ingroup xtd_drawing
     class drawing_export_ size {
     public:

@@ -744,6 +744,7 @@ namespace xtd {
       
       /// @brief Creates the xtd::drawing::graphics for the control.
       /// @return A xtd::drawing::graphics for the control.
+      /// @ingroup drawing
       /// @remarks The graphics object that you retrieve through the create_graphics method should not normally be retained after the current Windows message has been processed, because anything painted with that object will be erased with the next WM_PAINT message. Therefore you cannot cache the graphics object for reuse, except to use non-visual methods like xtd::drawing::graphics::measure_string. Instead, you must call create_graphics every time that you want to use the graphics object.
       drawing::graphics create_graphics() const;
       

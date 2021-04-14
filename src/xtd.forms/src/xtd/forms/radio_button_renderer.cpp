@@ -82,7 +82,7 @@ void radio_button_renderer::draw_radio_button_gnome_dark(graphics g, const recta
   }
 
   rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 8, 17, 17};
-  g.fill_ellipse(drawing2d::linear_gradient_brush({bounds.x(), bounds.top()}, {bounds.x(), bounds.bottom()}, control_paint::light(button_color, 0.15), button_color), button_rectangle);
+  g.fill_ellipse(drawing2d::linear_gradient_brush(point {bounds.x(), bounds.top()}, point {bounds.x(), bounds.bottom()}, control_paint::light(button_color, 0.15), button_color), button_rectangle);
   g.draw_ellipse(pen(border_color, 1), rectangle::inflate(button_rectangle, {-1, -1}));
   rectangle string_rectangle = {bounds.x() + 21, bounds.y(), bounds.width() - 21, bounds.height()};
   if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)
@@ -110,7 +110,7 @@ void radio_button_renderer::draw_radio_button_gnome_light(graphics g, const rect
   }
 
   rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 8, 17, 17};
-  g.fill_ellipse(drawing2d::linear_gradient_brush({bounds.x(), bounds.top()}, {bounds.x(), bounds.bottom()}, control_paint::light(button_color, 0.5), button_color), button_rectangle);
+  g.fill_ellipse(drawing2d::linear_gradient_brush(point {bounds.x(), bounds.top()}, point {bounds.x(), bounds.bottom()}, control_paint::light(button_color, 0.5), button_color), button_rectangle);
   g.draw_ellipse(pen(border_color, 1), rectangle::inflate(button_rectangle, {-1, -1}));
   rectangle string_rectangle = {bounds.x() + 21, bounds.y(), bounds.width() - 21, bounds.height()};
   if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)
@@ -156,7 +156,7 @@ void radio_button_renderer::draw_radio_button_macos_dark(graphics g, const recta
   
   rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 7, 16, 16};
   if (state == xtd::forms::visual_styles::radio_button_state::unchecked_normal || state == xtd::forms::visual_styles::radio_button_state::unchecked_hot || state == xtd::forms::visual_styles::radio_button_state::unchecked_pressed || state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled) {
-    g.fill_ellipse(drawing2d::linear_gradient_brush({button_rectangle.x(), button_rectangle.top()}, {button_rectangle.x(), button_rectangle.bottom()}, control_paint::dark(button_color, .5), button_color), button_rectangle);
+    g.fill_ellipse(drawing2d::linear_gradient_brush(point {button_rectangle.x(), button_rectangle.top()}, point {button_rectangle.x(), button_rectangle.bottom()}, control_paint::dark(button_color, .5), button_color), button_rectangle);
     g.draw_ellipse(pen(border_color, 1), rectangle::inflate(button_rectangle, {-1, -1}));
   } else
     g.fill_ellipse(solid_brush(button_color), button_rectangle);

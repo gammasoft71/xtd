@@ -79,6 +79,7 @@ namespace xtd {
       
       /// @brief Creates the xtd::drawing::graphics for the screen.
       /// @return A xtd::drawing::graphics for the screen.
+      /// @ingroup drawing
       static drawing::graphics create_graphics();
 
       /// @brief Retrieves a screen for the display that contains the largest portion of the specified control.

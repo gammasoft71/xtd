@@ -19,6 +19,9 @@
 /// @defgroup dialogs dialogs
 /// @brief Dalogs consist of the open file, save file, open folder, find and replace, print, page setup, font, color dialog boxes, about, busy, message dialog boxes, ...
 
+/// @defgroup drawing drawing
+/// @brief All needed for drawing something.
+
 /// @defgroup events events
 /// @brief events are event args and event handler needed to response to window messages.
 

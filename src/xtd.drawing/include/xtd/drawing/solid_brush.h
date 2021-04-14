@@ -13,7 +13,7 @@ namespace xtd {
     /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing
+    /// @ingroup xtd_drawing drawing
     class drawing_export_ solid_brush : public brush {
     public:
       solid_brush();
