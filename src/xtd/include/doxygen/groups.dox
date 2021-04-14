@@ -49,9 +49,6 @@
 /// @defgroup utilities utilities
 /// @brief Contains utility classes.
 
-/// @defgroup wm window messages
-/// @brief window messages definitions.
-
 /// @defgroup xtd_core xtd.core
 /// @brief The xtd.core library contains all fundamental classes to access Hardware, Os, System, and more.
 
