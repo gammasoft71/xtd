@@ -71,7 +71,7 @@ namespace xtd {
       int32_t width() const {return width_;}
       void width(int32_t width) {width_ = width;}
       
-      static rectangle ceil(const rectangle_f& rect) {return rectangle(static_cast<int32_t>(std::ceil(rect.x())), static_cast<int32_t>(std::ceil(rect.y())), static_cast<int32_t>(std::ceil(rect.width())), static_cast<int32_t>(std::ceil(rect.height())));}
+      static rectangle ceiling(const rectangle_f& rect) {return rectangle(static_cast<int32_t>(std::ceil(rect.x())), static_cast<int32_t>(std::ceil(rect.y())), static_cast<int32_t>(std::ceil(rect.width())), static_cast<int32_t>(std::ceil(rect.height())));}
       
       bool contains(const point& pt) const {return contains(pt.x(), pt.y());}
       bool contains(const rectangle& rect) const {return x_ <= rect.x_ && (rect.x_ + rect.width_) <= (x_ + width_) && y_ <= rect.y_ &&  (rect.y_ + rect.height_) <= (y_ + height_);}
