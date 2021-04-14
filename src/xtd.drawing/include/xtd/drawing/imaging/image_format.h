@@ -180,6 +180,8 @@ namespace xtd {
         /// @return An image_format object that indicates the bitmap image format.
         static image_format tga() {return image_format(xtd::guid("b96b3ccd-0728-11d3-9d7b-0000f81ef32e"));}
 
+        /// @brief Converts this image_format object to a human-readable string.
+        /// @return A string that represents this ImageFormat object.
         virtual std::string to_string() const {return strings::format("[image_format: {}]", guid_);}
         
         /// @cond
