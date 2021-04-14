@@ -17,10 +17,15 @@ namespace xtd {
       /// @remarks A xtd::drawing::pen object has width. The center point of this pen width is aligned relative to the line being drawn depending on the alignment value. A xtd::draing::pen object can be positioned to draw inside of a line or centered over the line.
       /// @see xtd::drawing::pen
       enum class pen_alignment {
+        /// @brief Specifies that the xtd::drawing::pen object is centered over the theoretical line.
         center = 0,
+        /// @brief Specifies that the xtd::drawing::pen is positioned on the inside of the theoretical line.
         inset = 1,
+        /// @brief Specifies the xtd::drawing::pen is positioned on the outside of the theoretical line.
         outset = 2,
+        /// @brief Specifies the xtd::drawing::pen is positioned to the left of the theoretical line.
         left = 3,
+        /// @brief Specifies the xtd::drawing::pen is positioned to the right of the theoretical line.
         right = 4,
       };
       
