@@ -23,10 +23,11 @@ namespace xtd {
         /// @return Array<FontFamily> An array of FontFamily objects.
         const std::vector<font_family>& families() const {return families_;}
         
-        /// @cond
       protected:
+        /// @brief Initialise new instance of font_collection class.
         font_collection() {}
 
+        /// @cond
         std::vector<font_family> families_;
         /// @endcond
       };
