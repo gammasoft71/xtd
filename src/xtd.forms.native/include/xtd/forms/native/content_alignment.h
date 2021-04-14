@@ -8,18 +8,21 @@
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native ca
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t CA_TOPLEFT = 0b1;
 /// @brief Content is vertically aligned at the top, and horizontally aligned at the center.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native ca
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t CA_TOPCENTER = 0b10;
 /// @brief Content is vertically aligned at the top, and horizontally aligned on the right.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native ca
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t CA_TOPRIGHT = 0b100;
 
@@ -27,18 +30,21 @@ constexpr size_t CA_TOPRIGHT = 0b100;
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native ca
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t CA_MIDDLELEFT = 0b10000;
 /// @brief Content is vertically aligned at the middle, and horizontally aligned at the center.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native ca
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t CA_MIDDLECENTER = 0b100000;
 /// @brief Content is vertically aligned at the middle, and horizontally aligned on the right.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native ca
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t CA_MIDDLERIGHT = 0b1000000;
 
@@ -46,17 +52,20 @@ constexpr size_t CA_MIDDLERIGHT = 0b1000000;
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native ca
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t CA_BOTTOMLEFT = 0b100000000;
 /// @brief Content is vertically aligned at the bottom, and horizontally aligned at the center.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native ca
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t CA_BOTTOMCENTER = 0b1000000000;
 /// @brief Content is vertically aligned at the bottom, and horizontally aligned on the right.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native ca
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t CA_BOTTOMRIGHT = 0b10000000000;

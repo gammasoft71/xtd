@@ -9,18 +9,21 @@
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native bst
+/// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t BST_UNCHECKED = 0x0000;
 /// @brief Sets the button state to checked.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native bst
+/// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t BST_CHECKED = 0x0001;
 /// @brief Sets the button state to grayed, indicating an indeterminate state. Use this value only if the button has the BS_3STATE or BS_AUTO3STATE style.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native bst
+/// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t BST_INDETERMINATE = 0x0002;
 /// @brief The button is being shown in the pushed state.
@@ -32,12 +35,14 @@ constexpr size_t BST_INDETERMINATE = 0x0002;
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native bst
+/// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t BST_PUSHED = 0x0004;
 /// @brief The button has the keyboard focus.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native bst
+/// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t BST_FOCUS = 0x0008;
 
@@ -45,6 +50,7 @@ constexpr size_t BST_FOCUS = 0x0008;
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native bst
+/// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t BST_DROPDOWNPUSHED = 0x0400;
 #endif
