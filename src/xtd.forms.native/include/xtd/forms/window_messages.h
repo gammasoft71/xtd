@@ -318,12 +318,9 @@ constexpr int32_t WM_GETOBJECT = 0x003D;
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_COMPACTING = 0x0041;
-/// @brief Deprecated. This message is not sent in modern versions of Windows.
-/// @par Library
-/// xtd.forms.native
-/// @ingroup xtd_forms_native wm
-/// @remarks This value can be contained in the xtd::forms::message::msg property.
+/// @cond
 constexpr int32_t WM_COMMNOTIFY = 0x0044;
+/// @endcond
 /// @brief Sent to a window whose size, position, or place in the Z order is about to change as a result of a call to the SetWindowPos function or another window-management function.
 /// @par Library
 /// xtd.forms.native
@@ -1259,19 +1256,11 @@ constexpr int32_t WM_NCMOUSELEAVE = 0x02A2;
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_WTSSESSION_CHANGE = 0x02B1;
 // not defined 0x02B2 - 0x02BF
-/// @brief
-/// @par Library
-/// xtd.forms.native
-/// @ingroup xtd_forms_native wm
-/// @remarks This value can be contained in the xtd::forms::message::msg property.
+/// @cond
 constexpr int32_t WM_TABLET_FIRST = 0x02C0;
 // not defined 0x02C1 - 0x02DE
-/// @brief
-/// @par Library
-/// xtd.forms.native
-/// @ingroup xtd_forms_native wm
-/// @remarks This value can be contained in the xtd::forms::message::msg property.
 constexpr int32_t WM_TABLET_LAST = 0x02DF;
+/// @endcond
 /// @brief Sent when the effective dots per inch (dpi) for a window has changed. The DPI is the scale factor for a window. There are multiple events that can cause the DPI to change. The following list indicates the possible causes for the change in DPI.
 /// @par Library
 /// xtd.forms.native
