@@ -14,6 +14,7 @@
 #include "imaging/image_format.h"
 #include "imaging/pixel_format.h"
 #include "imaging/property_item.h"
+#include "graphics.h"
 #include "rectangle.h"
 #include "size.h"
 #include "size_f.h"
@@ -128,7 +129,12 @@ namespace xtd {
       /// @brief Gets the width, in pixels, of this image.
       /// @return The width, in pixels, of this image.
       int32_t width() const {return data_->size_.width();}
-      
+  
+      /// @brief Creates the xtd::drawing::graphics for the image.
+      /// @return A xtd::drawing::graphics for the image.
+      /// @ingroup drawing
+      graphics create_graphics() {return graphics::from_image(*this);}
+
       static image from_hbitmap(intptr_t hbitmap) {return image(hbitmap);}
 
       /// @brief Creates an image from the specified file.

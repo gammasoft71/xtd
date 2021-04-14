@@ -13,7 +13,7 @@ namespace xtd {
     /// @brief pens for all the standard colors. This class cannot be inherited.
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing
+    /// @ingroup xtd_drawing drawing
     /// @remarks The pen objects returned by this class are immutable, meaning their properties cannot be changed.
     class drawing_export_ pens final static_ {
     public:

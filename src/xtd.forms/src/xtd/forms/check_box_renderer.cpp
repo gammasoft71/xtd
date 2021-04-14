@@ -83,7 +83,7 @@ void check_box_renderer::draw_check_box_gnome_dark(graphics g, const rectangle& 
   }
 
   rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 8, 16, 16};
-  g.fill_rounded_rectangle(drawing2d::linear_gradient_brush({bounds.x(), bounds.top()}, {bounds.x(), bounds.bottom()}, control_paint::light(button_color, 0.15), button_color), button_rectangle, 3);
+  g.fill_rounded_rectangle(drawing2d::linear_gradient_brush(point {bounds.x(), bounds.top()}, point {bounds.x(), bounds.bottom()}, control_paint::light(button_color, 0.15), button_color), button_rectangle, 3);
   g.draw_rounded_rectangle(pen(border_color, 1), rectangle::inflate(button_rectangle, {-1, -1}), 3);
   rectangle string_rectangle = { bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height() };
   if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::checked_disabled) {
@@ -114,7 +114,7 @@ void check_box_renderer::draw_check_box_gnome_light(graphics g, const rectangle&
   }
 
   rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 8, 16, 16};
-  g.fill_rounded_rectangle(drawing2d::linear_gradient_brush({bounds.x(), bounds.top()}, {bounds.x(), bounds.bottom()}, control_paint::light(button_color, 0.5), button_color), button_rectangle, 3);
+  g.fill_rounded_rectangle(drawing2d::linear_gradient_brush(point {bounds.x(), bounds.top()}, point {bounds.x(), bounds.bottom()}, control_paint::light(button_color, 0.5), button_color), button_rectangle, 3);
   g.draw_rounded_rectangle(pen(border_color, 1), rectangle::inflate(button_rectangle, {-1, -1}), 3);
   rectangle string_rectangle = { bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height() };
   if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::checked_disabled) {
@@ -163,7 +163,7 @@ void check_box_renderer::draw_check_box_macos_dark(graphics g, const rectangle& 
   
   rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 7, 16, 16};
   if (state == xtd::forms::visual_styles::check_box_state::unchecked_normal || state == xtd::forms::visual_styles::check_box_state::unchecked_hot || state == xtd::forms::visual_styles::check_box_state::unchecked_pressed ||state == xtd::forms::visual_styles::check_box_state::unchecked_disabled)
-    g.fill_rounded_rectangle(drawing2d::linear_gradient_brush({button_rectangle.x(), button_rectangle.top()}, {button_rectangle.x(), button_rectangle.bottom()}, control_paint::dark(button_color, .5), button_color), button_rectangle, 4);
+    g.fill_rounded_rectangle(drawing2d::linear_gradient_brush(point {button_rectangle.x(), button_rectangle.top()}, point {button_rectangle.x(), button_rectangle.bottom()}, control_paint::dark(button_color, .5), button_color), button_rectangle, 4);
   else
     g.fill_rounded_rectangle(solid_brush(button_color), button_rectangle, 4);
   g.draw_rounded_rectangle(pen(border_color, 1), rectangle::inflate(button_rectangle, {-1, -1}), 4);
@@ -195,7 +195,7 @@ void check_box_renderer::draw_check_box_macos_light(graphics g, const rectangle&
   
   rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 7, 16, 16};
   if (state == xtd::forms::visual_styles::check_box_state::unchecked_normal || state == xtd::forms::visual_styles::check_box_state::unchecked_hot || state == xtd::forms::visual_styles::check_box_state::unchecked_pressed ||state == xtd::forms::visual_styles::check_box_state::unchecked_disabled)
-    g.fill_rounded_rectangle(drawing2d::linear_gradient_brush({bounds.x(), bounds.top()}, {bounds.x(), bounds.bottom()}, button_color, control_paint::light(button_color)), button_rectangle, 4);
+    g.fill_rounded_rectangle(drawing2d::linear_gradient_brush(point {bounds.x(), bounds.top()}, point {bounds.x(), bounds.bottom()}, button_color, control_paint::light(button_color)), button_rectangle, 4);
   else
     g.fill_rounded_rectangle(solid_brush(button_color), button_rectangle, 4);
   g.draw_rounded_rectangle(pen(border_color, 1), rectangle::inflate(button_rectangle, {-1, -1}), 4);

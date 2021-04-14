@@ -1,5 +1,6 @@
 #include <vector>
 #include "../../../include/xtd/drawing/graphics.h"
+#include "../../../include/xtd/drawing/image.h"
 #include "../../../include/xtd/drawing/solid_brush.h"
 #include <xtd/strings.h>
 #include <xtd/drawing/native/graphics.h>

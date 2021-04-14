@@ -18,7 +18,7 @@ namespace xtd {
     /// @brief Stores a set of four integers that represent the location and size of a rectangle.
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing
+    /// @ingroup xtd_drawing drawing
     class drawing_export_ rectangle {
     public:
       static const rectangle empty;

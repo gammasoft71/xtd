@@ -19,7 +19,7 @@ namespace xtd {
     /// @brief Represents an ordered pair of floating-point x- and y-coordinates that defines a point in a two-dimensional plane.
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing
+    /// @ingroup xtd_drawing drawing
     class drawing_export_ point_f {
     public:
       static const point_f empty;

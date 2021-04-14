@@ -19,7 +19,7 @@ namespace xtd {
     /// @brief Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional plane.
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing
+    /// @ingroup xtd_drawing drawing
     /// @remarks To convert a point to a point_f, use Implicit cast operator.
     /// @par Examples
     ///

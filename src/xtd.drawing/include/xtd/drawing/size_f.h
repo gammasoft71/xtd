@@ -17,7 +17,7 @@ namespace xtd {
     /// @brief Stores an ordered pair of flooating-point, which specify a height and width.
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing
+    /// @ingroup xtd_drawing drawing
     class drawing_export_ size_f {
     public:
       /// @brief Gets a Size class that has a Height and Width value of 0. This field is constant.

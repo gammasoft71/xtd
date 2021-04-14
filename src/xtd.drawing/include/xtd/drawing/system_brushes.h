@@ -13,7 +13,7 @@ namespace xtd {
     /// @brief Each property of the system_brushes class is a solid_brush that is the color of a Windows display element.
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing
+    /// @ingroup xtd_drawing drawing
     class drawing_export_ system_brushes final static_ {
     public:
       /// @brief Gets a solid_brush that is the color of the active border.

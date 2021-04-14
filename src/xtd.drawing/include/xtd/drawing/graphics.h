@@ -10,7 +10,6 @@
 #include "brush.h"
 #include "color.h"
 #include "font.h"
-#include "image.h"
 #include "pen.h"
 #include "point.h"
 #include "point_f.h"
@@ -34,10 +33,13 @@ namespace xtd {
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
+    /// @cond
+    class image;
+    /// @endcond
     /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing
+    /// @ingroup xtd_drawing drawing
     class drawing_export_ graphics {
     public:
       /// @cond
