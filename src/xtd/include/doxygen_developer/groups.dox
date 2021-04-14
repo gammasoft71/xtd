@@ -109,6 +109,9 @@
 /// @brief virtual keys definitions.
 /// @warning Internal use only
 
+/// @defgroup wm window messages
+/// @brief window messages definitions.
+
 /// @defgroup ws window styles
 /// @brief window styles definitions.
 /// @warning Internal use only
