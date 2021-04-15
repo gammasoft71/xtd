@@ -16,10 +16,11 @@ namespace xtd {
     class graphics;
     /// @endcond
 
-    /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
+    /// @brief Defines objects used to fill the interiors of graphical shapes such as rectangles, ellipses, pies, polygons, and paths.
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing
+    /// @remarks This is an abstract base class and cannot be instantiated. To create a brush object, use classes derived from xtd::drawing::brush, such as xtd::drawing::solid_brush, xtd::drawing::texture_brush, and xtd::drawing::drawing2d::linear_gradient_brush.
     class drawing_export_ brush {
     public:
       //static const brush null;

@@ -21,6 +21,8 @@
 
 /// @defgroup drawing drawing
 /// @brief All needed for drawing something.
+/// A xtd::drawing::graphics class is create from xtd::forms::control::create_graphics or xtd::forms::screen::create_graphics or xtd::drawing::image::create_graphics.
+/// And also when xtd::forms::control::paint event is sended, the xtd::forms::paint_event_args contains a xtd::drawing::graphics associate to the control event paint.
 
 /// @defgroup events events
 /// @brief events are event args and event handler needed to response to window messages.
