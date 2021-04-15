@@ -19,7 +19,7 @@ namespace xtd {
     /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing drawing
+    /// @ingroup xtd_drawing
     class drawing_export_ brush {
     public:
       //static const brush null;
@@ -32,6 +32,8 @@ namespace xtd {
       bool operator!=(const brush& value) const {return !operator==(value);}
       /// @endcond
       
+      /// @brief Converts this brush object to a human-readable string.
+      /// @return A string that represents this brush object.
       std::string to_string() const {return strings::full_class_name(*this);}
       
       /// @cond
@@ -43,15 +45,20 @@ namespace xtd {
     protected:
       friend class graphics;
 
+      /// @brief Initialize a new instance of brush class.
       brush();
       
+      /// @brief In a derived class, sets a reference to a GDI+ brush object.
+      /// @param brush A pointer to the GDI+ brush object.
       void set_native_brush(intptr_t brush);
       
+      /// @cond
       struct data {
         intptr_t handle_ = 0;
       };
       
       std::shared_ptr<data> data_ = std::make_shared<data>();
+      /// @endcond
     };
   }
 }
