@@ -263,8 +263,14 @@ namespace xtd {
       /// @return A graphics_unit that represents the unit of measure for this xtd::drawing::font.
       graphics_unit unit() const {return data_->unit_;}
       
+      /// @brief Creates a font from the specified Windows handle to a device context.
+      /// @param hdc A handle to a device context.
+      /// @return The font this method creates.
       static font from_hdc(const intptr_t hdc);
       
+      /// @brief Creates a font from the specified Windows handle.
+      /// @param hfont A Windows handle to a GDI font.
+      /// @return The font this method creates.
       static font from_hfont(const intptr_t hfont);
       
       /// @brief Returns the line spacing, in pixels, of this font.
