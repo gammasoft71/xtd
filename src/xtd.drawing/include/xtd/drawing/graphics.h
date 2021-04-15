@@ -130,14 +130,42 @@ namespace xtd {
       /// @remarks The Bézier curve is drawn from the first point to the fourth point. The second and third points are control points that determine the shape of the curve.
       void draw_bezier(const pen& pen, int32_t x1, int32_t y1, int32_t x2, int32_t y2, int32_t x3, int32_t y3, int32_t x4, int32_t y4);
 
+      /// @brief Draws an ellipse specified by a bounding xtd::drawing::rectangle structure.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the ellipse.
+      /// @param rect xtd::drawing::rectangle structure that defines the boundaries of the ellipse.
+      /// @remarks This method draws an ellipse that is defined by the bounding rectangle specified by the rect parameter.
       void draw_ellipse(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect) {draw_ellipse(pen, rect.x(), rect.y(), rect.width(), rect.height());}
+      /// @brief Draws an ellipse specified by a bounding xtd::drawing::rectangle_f structure.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the ellipse.
+      /// @param rect xtd::drawing::rectangle_f structure that defines the boundaries of the ellipse.
+      /// @remarks This method draws an ellipse that is defined by the bounding rectangle specified by the rect parameter.
       void draw_ellipse(const xtd::drawing::pen& pen, const xtd::drawing::rectangle_f& rect) {draw_ellipse(pen, rect.x(), rect.y(), rect.width(), rect.height());}
+      /// @brief Draws an ellipse defined by a bounding rectangle specified by coordinates for the upper-left corner of the rectangle, a height, and a width.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the ellipse.
+      /// @param x The x-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse.
+      /// @param y The y-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse.
+      /// @param width Width of the bounding rectangle that defines the ellipse.
+      /// @param height Height of the bounding rectangle that defines the ellipse.
+      /// @remarks This method draws an ellipse that is defined by the bounding rectangle described by the x, y, width, and height parameters.
       void draw_ellipse(const xtd::drawing::pen& pen, int32_t x, int32_t y, int32_t width, int32_t height);
+      /// @brief Draws an ellipse defined by a bounding rectangle specified by coordinates for the upper-left corner of the rectangle, a height, and a width.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the ellipse.
+      /// @param x The x-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse.
+      /// @param y The y-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse.
+      /// @param width Width of the bounding rectangle that defines the ellipse.
+      /// @param height Height of the bounding rectangle that defines the ellipse.
+      /// @remarks This method draws an ellipse that is defined by the bounding rectangle described by the x, y, width, and height parameters.
       void draw_ellipse(const xtd::drawing::pen& pen, float x, float y, float width, float height) {draw_ellipse(pen, static_cast<int32_t>(x), static_cast<int32_t>(y), static_cast<int32_t>(width), static_cast<int32_t>(height));}
       
+      void draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle& rect) {draw_image(image, rect.x(), rect.y(), rect.width(), rect.height());}
+      void draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle_f& rect) {draw_image(image, rect.x(), rect.y(), rect.width(), rect.height());}
       void draw_image(const xtd::drawing::image& image, const xtd::drawing::point& point) {draw_image(image, point.x(), point.y());}
+      void draw_image(const xtd::drawing::image& image, const xtd::drawing::point_f& point) {draw_image(image, point.x(), point.y());}
+      void draw_image(const xtd::drawing::image& image, int32_t x, int32_t y, int32_t width, int32_t height);
+      void draw_image(const xtd::drawing::image& image, float x, float y, float width, float height) {draw_image(image, static_cast<int32_t>(x), static_cast<int32_t>(y), static_cast<int32_t>(width), static_cast<int32_t>(height));}
       void draw_image(const xtd::drawing::image& image, int32_t x, int32_t y);
-      
+      void draw_image(const xtd::drawing::image& image, float x, float y) {draw_image(image, static_cast<int32_t>(x), static_cast<int32_t>(y));}
+
       void draw_image_disabled(const xtd::drawing::image& image, const xtd::drawing::point& point) {draw_image_disabled(image, point.x(), point.y());}
       void draw_image_disabled(const xtd::drawing::image& image, const xtd::drawing::point& point, float brightness) {draw_image_disabled(image, point.x(), point.y(), brightness);}
       void draw_image_disabled(const xtd::drawing::image& image, int32_t x, int32_t y) {draw_image_disabled(image, x, y, 1.0);}

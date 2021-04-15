@@ -13,6 +13,8 @@ public:
     panel_.parent(*this);
     panel_.dock(dock_style::fill);
     panel_.paint += [&](control& sender, paint_event_args& e) {
+      e.graphics().draw_image(system_images::from_name("gammasoft", drawing::size {2048, 2048}), e.clip_rectangle());
+      /*
       e.graphics().clear(colors::light_blue());
       e.graphics().draw_rectangle(pens::black(), 10, 10, 20, 20);
       e.graphics().draw_rectangle(pens::white(), 12, 12, 16, 16);
@@ -25,6 +27,7 @@ public:
 
       e.graphics().fill_rectangle(brushes::black(), 40, 40, 20, 20);
       e.graphics().fill_ellipse(brushes::white(), 42, 42, 16, 16);
+       */
     };
   }
 
