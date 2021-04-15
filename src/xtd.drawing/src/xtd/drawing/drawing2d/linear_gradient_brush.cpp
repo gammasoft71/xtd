@@ -27,7 +27,7 @@ linear_gradient_brush& linear_gradient_brush::linear_colors(const std::array<xtd
 }
 
 void linear_gradient_brush::recreate_handle() {
-  native::brush::linear_gradient(brush::data_->handle_, data_->rect_.x(), data_->rect_.y(), data_->rect_.right(), data_->rect_.bottom(), data_->linear_colors_[0].a(), data_->linear_colors_[0].r(), data_->linear_colors_[0].g(), data_->linear_colors_[0].b(), data_->linear_colors_[1].a(), data_->linear_colors_[1].r(), data_->linear_colors_[1].g(), data_->linear_colors_[1].b());
+  native::brush::linear_gradient(brush::data_->handle_, static_cast<int32_t>(data_->rect_.x()), static_cast<int32_t>(data_->rect_.y()), static_cast<int32_t>(data_->rect_.right()), static_cast<int32_t>(data_->rect_.bottom()), data_->linear_colors_[0].a(), data_->linear_colors_[0].r(), data_->linear_colors_[0].g(), data_->linear_colors_[0].b(), data_->linear_colors_[1].a(), data_->linear_colors_[1].r(), data_->linear_colors_[1].g(), data_->linear_colors_[1].b());
 }
 
 linear_gradient_brush::linear_gradient_brush(const linear_gradient_brush& value) : brush(value) {
