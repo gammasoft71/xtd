@@ -17,58 +17,58 @@ using namespace xtd::forms::native;
 bool __toogle_full_screen_frame__(wxTopLevelWindow* control);
 void __toogle_full_screen_frame__(wxTopLevelWindow* control, bool full_screen);
 
-void form::activate(intptr_t form) {
-  if (form == 0) return;
-  reinterpret_cast<control_handler*>(form)->control()->Raise();
+void form::activate(intptr_t control) {
+  if (control == 0) return;
+  reinterpret_cast<control_handler*>(control)->control()->Raise();
 }
 
-void form::close(intptr_t form) {
-  if (form == 0) return;
-  reinterpret_cast<control_handler*>(form)->control()->Close();
+void form::close(intptr_t control) {
+  if (control == 0) return;
+  reinterpret_cast<control_handler*>(control)->control()->Close();
 }
 
-bool form::full_screen(intptr_t form) {
-  if (form == 0) return false;
+bool form::full_screen(intptr_t control) {
+  if (control == 0) return false;
 #if defined(__APPLE__)
-  return __toogle_full_screen_frame__(static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control()));
+  return __toogle_full_screen_frame__(static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()));
 #else
-  return static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->IsFullScreen();
+  return static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->IsFullScreen();
 #endif
 }
 
-void form::full_screen(intptr_t form, bool full_screen) {
-  if (form == 0) return;
+void form::full_screen(intptr_t control, bool full_screen) {
+  if (control == 0) return;
 #if defined(__APPLE__)
-  __toogle_full_screen_frame__(static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control()), full_screen);
+  __toogle_full_screen_frame__(static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()), full_screen);
 #else
-  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->ShowFullScreen(full_screen);
+  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->ShowFullScreen(full_screen);
 #endif
 }
 
-void form::icon(intptr_t form, const xtd::drawing::icon& icon) {
-  if (form == 0) return;
-  if (icon == drawing::icon::empty) static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->SetIcon(wxIcon());
-  else static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->SetIcon(reinterpret_cast<wxIconBundle*>(icon.handle())->GetIcon());
+void form::icon(intptr_t control, const xtd::drawing::icon& icon) {
+  if (control == 0) return;
+  if (icon == drawing::icon::empty) static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->SetIcon(wxIcon());
+  else static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->SetIcon(reinterpret_cast<wxIconBundle*>(icon.handle())->GetIcon());
 }
 
-bool form::maximize(intptr_t form) {
-  if (form == 0) return false;
+bool form::maximize(intptr_t control) {
+  if (control == 0) return false;
 #if defined(__WXGTK__)
-    xtd::drawing::size form_size = control::size(form);
-    xtd::drawing::size screen_size = screen::working_area(screen::from_handle(form)).size();
+    xtd::drawing::size form_size = control::size(control);
+    xtd::drawing::size screen_size = screen::working_area(screen::from_handle(control)).size();
     return form_size.width() == screen_size.width() && form_size.height() == screen_size.height();
 #else
-  return static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->IsMaximized();
+  return static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->IsMaximized();
 #endif
 }
 
-void form::maximize(intptr_t form, bool maximize) {
-  if (form == 0) return;
-  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->Maximize(maximize);
+void form::maximize(intptr_t control, bool maximize) {
+  if (control == 0) return;
+  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->Maximize(maximize);
 }
 
-void form::menu(intptr_t form, intptr_t menu) {
-  if (form == 0) return;
+void form::menu(intptr_t control, intptr_t menu) {
+  if (control == 0) return;
 
 #if defined(__APPLE__)
   if (menu != 0) {
@@ -77,51 +77,51 @@ void form::menu(intptr_t form, intptr_t menu) {
   }
 #endif
 
-  //if (menu != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(form)->control())) throw argument_exception("dialog can't have menu"_t, caller_info_);
-  if (!dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(form)->control())) {
+  //if (menu != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("dialog can't have menu"_t, caller_info_);
+  if (!dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) {
     if (menu != 0) throw argument_exception("dialog can't have menu"_t, caller_info_);
     return;
   }
-  static_cast<wxFrame*>(reinterpret_cast<control_handler*>(form)->control())->SetMenuBar(menu != 0 ? reinterpret_cast<wx_menu_bar*>(menu) : wx_menu_bar::create_default_menu_bar());
+  static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->SetMenuBar(menu != 0 ? reinterpret_cast<wx_menu_bar*>(menu) : wx_menu_bar::create_default_menu_bar());
 }
 
-bool form::minimize(intptr_t form) {
-  if (form == 0) return false;
-  return static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->IsIconized();
+bool form::minimize(intptr_t control) {
+  if (control == 0) return false;
+  return static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->IsIconized();
 }
 
-void form::minimize(intptr_t form, bool minimize) {
-  if (form == 0) return;
-  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->Iconize(minimize);
+void form::minimize(intptr_t control, bool minimize) {
+  if (control == 0) return;
+  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->Iconize(minimize);
 }
 
-void form::restore(intptr_t form) {
-  if (form == 0) return;
-  full_screen(form, false);
-  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->Restore();
+void form::restore(intptr_t control) {
+  if (control == 0) return;
+  full_screen(control, false);
+  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->Restore();
 #if defined(__WXGTK__)
-  maximize(form, false);
-  minimize(form, false);
+  maximize(control, false);
+  minimize(control, false);
 #endif
 }
 
-int32_t form::show_dialog(intptr_t form) {
-  if (form == 0) return 0;
-  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control())) throw argument_exception("show_dialog work only with dialog"_t, caller_info_);
-  auto dialog = static_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control());
+int32_t form::show_dialog(intptr_t control) {
+  if (control == 0) return 0;
+  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("show_dialog work only with dialog"_t, caller_info_);
+  auto dialog = static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control());
   return dialog->ShowModal();
 }
 
-void form::show_sheet(intptr_t form) {
-  if (form == 0) return;
-  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control())) throw argument_exception("show_sheet work only with dialog"_t, caller_info_);
-  static_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control())->ShowWindowModal();
+void form::show_sheet(intptr_t control) {
+  if (control == 0) return;
+  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("show_sheet work only with dialog"_t, caller_info_);
+  static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())->ShowWindowModal();
 }
 
-int32_t form::show_sheet_dialog(intptr_t form) {
-  if (form == 0) return 0;
-  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control())) throw argument_exception("show_sheet_dialog work only with dialog"_t, caller_info_);
-  auto dialog = static_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control());
+int32_t form::show_sheet_dialog(intptr_t control) {
+  if (control == 0) return 0;
+  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("show_sheet_dialog work only with dialog"_t, caller_info_);
+  auto dialog = static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control());
   
   if (!dialog->GetParent()) return dialog->ShowModal();
   int32_t result = wxID_ANY;
@@ -136,10 +136,15 @@ int32_t form::show_sheet_dialog(intptr_t form) {
   return result;
 }
 
-void form::end_dialog(intptr_t form, int32_t result) {
-  if (form == 0) return;
-  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control())) throw argument_exception("end_dialog work only with dialog"_t, caller_info_);
-  static_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control())->EndModal(result);
+void form::end_dialog(intptr_t control, int32_t result) {
+  if (control == 0) return;
+  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("end_dialog work only with dialog"_t, caller_info_);
+  static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())->EndModal(result);
+}
+
+void form::transparency(intptr_t control, double transparency) {
+  if (control == 0) return;
+  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->SetTransparent(static_cast<uint8_t>(255 * transparency));
 }
 
 void form::virtual_size(intptr_t control, const drawing::size& size) {

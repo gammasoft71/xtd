@@ -187,6 +187,14 @@ form& form::top_most(bool value) {
   return *this;
 }
 
+form& form::transparency(double transparency) {
+  if (transparency_ != transparency) {
+    transparency_ = transparency;
+    native::form::transparency(handle(), transparency_);
+  }
+  return *this;
+}
+
 control& form::visible(bool visible) {
   std::optional<forms::form_window_state> current_window_state;
   if (!previous_screeen_) {
@@ -423,6 +431,7 @@ void form::on_handle_created(const event_args &e) {
   if (menu_.has_value()) native::form::menu(handle(), menu_.value().handle());
   if (menu_.has_value()) native::form::menu(handle(), menu_.value().handle());
   if (accept_button_.has_value()) accept_button_.value().get().notify_default(true);
+  if (transparency_ != 1.0) native::form::transparency(handle(), transparency_);
 }
 
 void form::on_handle_destroyed(const event_args &e) {
