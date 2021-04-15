@@ -30,7 +30,7 @@ namespace xtd {
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the linear gradient.
         /// @param color2 A xtd::drawing::color structure that represents the ending color of the linear gradient.
         linear_gradient_brush(const xtd::drawing::point& point1, const xtd::drawing::point& point2, const xtd::drawing::color& color1, const xtd::drawing::color& color2) {
-          data_->rect_ = xtd::drawing::rectangle_f(point1.x(), point1.y(), point2.x() - point1.x(), point2.y() - point1.y());
+          data_->rect_ = xtd::drawing::rectangle_f(static_cast<float>(point1.x()), static_cast<float>(point1.y()), static_cast<float>(point2.x() - point1.x()), static_cast<float>(point2.y() - point1.y()));
           data_->linear_colors_ = {color1, color2};
           recreate_handle();
         }
