@@ -1,5 +1,6 @@
 #include <xtd/xtd>
 
+using namespace std::literals;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
@@ -23,7 +24,7 @@ namespace examples {
         button1.text(timer1.enabled() ? "Stop": "Start");
       };
 
-      timer1.interval(100);
+      timer1.interval(100ms);
       timer1.tick += [&](forms::timer& sender, const event_args& e) {
         label1.text(strings::format("{:F1}", ++counter / 10.0));
       };

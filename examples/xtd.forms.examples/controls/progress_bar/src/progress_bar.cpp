@@ -1,5 +1,6 @@
 #include <xtd/xtd>
 
+using namespace std::literals;
 using namespace xtd::forms;
 
 namespace examples {
@@ -36,7 +37,7 @@ namespace examples {
       progress_bar5.style(progress_bar_style::marquee);
       progress_bar5.width(200);
       
-      timer1.interval(50);
+      timer1.interval(50ms);
       timer1.tick += [&] {
         progress_bar4.value(progress_bar4.value() < progress_bar4.maximum() ? progress_bar4.value() + 1 : progress_bar4.minimum());
       };

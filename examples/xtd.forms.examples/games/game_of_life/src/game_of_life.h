@@ -88,7 +88,7 @@ namespace game_of_life {
       track_bar_speed_.value(speed_);
       track_bar_speed_.value_changed += [&] {
         speed_ = track_bar_speed_.value();
-        timer_run_.interval(1000 / speed_);
+        timer_run_.interval_milliseconds(1000 / speed_);
         label_speed_.text(xtd::strings::format("Speed : {}", speed_));
       };
       track_bar_speed_.size({200, 25});
@@ -139,7 +139,7 @@ namespace game_of_life {
         }
       };
       
-      timer_run_.interval(1000 / speed_);
+      timer_run_.interval_milliseconds(1000 / speed_);
       timer_run_.tick += {*this, &form_game_of_life::next};
       
       grid_.cell_changed += [&](grid& sender, const cell_event_args& e) {

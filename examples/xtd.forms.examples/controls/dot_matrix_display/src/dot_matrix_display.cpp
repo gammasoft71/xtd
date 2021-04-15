@@ -1,5 +1,6 @@
 #include <xtd/xtd>
 
+using namespace std::literals;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
@@ -13,7 +14,7 @@ public:
     dot_matrix_display1.fore_color(color::red);
     dot_matrix_display1.anchor(anchor_styles::top|anchor_styles::bottom);
    
-    timer1.interval(300);
+    timer1.interval(300ms);
     timer1.enabled(true);
     timer1.tick += [&] {
       dot_matrix_display1.dot_matrix_style(dot_matrix_styles[(counter / chaser.size()) % dot_matrix_styles.size()]);

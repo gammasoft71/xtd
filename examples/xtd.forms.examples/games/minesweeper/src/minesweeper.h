@@ -149,7 +149,7 @@ namespace minesweeper {
         new_game();
       };
       
-      stopwatch.interval(1000);
+      stopwatch.interval_milliseconds(1000);
       stopwatch.tick += [&] {
         if (stopwatch_count_ < 999) stopwatch_label.text(strings::format("{:D3}", ++stopwatch_count_));
       };

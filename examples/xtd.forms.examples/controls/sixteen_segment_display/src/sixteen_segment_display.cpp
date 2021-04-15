@@ -1,5 +1,6 @@
 #include <xtd/xtd>
 
+using namespace std::literals;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
@@ -13,7 +14,7 @@ public:
     sixteen_segment_display1.fore_color(color::red);
     sixteen_segment_display1.anchor(anchor_styles::top|anchor_styles::bottom);
     
-    timer1.interval(300);
+    timer1.interval(300ms);
     timer1.enabled(true);
     timer1.tick += [&] {
       sixteen_segment_display1.segment_style(segment_styles[(counter / chaser.size()) % segment_styles.size()]);
