@@ -463,7 +463,7 @@ namespace xtd {
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF9ACD32. This field is constant.
       static const xtd::drawing::color yellow_green;
       
-      /// @brief Create a new instance of class xtd::drawing::color.
+      /// @brief Initialize a new instance of xtd::drawing::color class.
       color() = default;
       
       /// @cond
@@ -1072,9 +1072,10 @@ namespace xtd {
       /// @endcode
       float get_saturation() const;
       
-      /// @cond
+      /// @brief Creates a xtd::drawing::color class from the specified name.
+      /// @param name A string that is the name of a predefined color. Valid names are the same as the names of the elements of the xtd::drawing::known_color enumeration or hexadecimal value that represents argb value, or four decimal values separated by a comma represanting respectively a, r, g, b, values.
+      /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       static xtd::drawing::color parse(const std::string& color);
-      /// @endcond
       
       /// @brief Gets the 32-bit ARGB value of this xtd::drawing::color class.
       /// @return int The 32-bit ARGB value of this xtd::drawing::color.
@@ -1133,7 +1134,7 @@ namespace xtd {
       /// @remarks A predefined color is also called a known color and is represented by an element of the xtd::drawing::known_color enumeration. When the ToKnownColor method is applied to a xtd::drawing::color structure that is created by using the FromArgb method, ToKnownColor returns 0, even if the ARGB value matches the ARGB value of a predefined color. ToKnownColor also returns 0 when it is applied to a xtd::drawing::color structure that is created by using the FromName method with a string name that is not valid.
       xtd::drawing::known_color to_known_color() const;
       
-      /// @brief reates a human-readable string that represents this color class.
+      /// @brief Creates a human-readable string that represents this color class.
       /// @return string A string that represents this Size.
       /// @par Examples
       /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgse, which is a parameter of the Paint event handler. The code performs the following actions:
@@ -1201,6 +1202,10 @@ namespace xtd {
     /// @endcond
   }
 
+  /// @brief Creates a xtd::drawing::color class from the specified name.
+  /// @param name A string that is the name of a predefined color. Valid names are the same as the names of the elements of the xtd::drawing::known_color enumeration or hexadecimal value that represents argb value, or four decimal values separated by a comma represanting respectively a, r, g, b, values.
+  /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
+  /// @ingroup format_parse
   template<>
   inline drawing::color parse<drawing::color>(const std::string& str) {
     return drawing::color::parse(str);

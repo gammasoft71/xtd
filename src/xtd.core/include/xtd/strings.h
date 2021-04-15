@@ -611,6 +611,7 @@ namespace xtd {
     /// @param fmt A composite format string.
     /// @param args anarguments list to write using format.
     /// @return string formated.
+    /// @ingroup format_parse
     /// @remarks for more information about format see @ref FormatPage "Format".
     template<typename char_t, typename ...args_t>
     static std::basic_string<char_t> format(const std::basic_string<char_t>& fmt, args_t&&... args) {
@@ -687,6 +688,7 @@ namespace xtd {
     /// @param fmt A composite format string.
     /// @param args anarguments list to write using format.
     /// @return string formated.
+    /// @ingroup format_parse
     /// @remarks for more information about format see @ref FormatPage "Format".
     template<typename char_t, typename ...args_t>
     static std::basic_string<char_t> format(const char_t* fmt, args_t&&... args) {return format(std::basic_string<char_t>(fmt), std::forward<args_t>(args)...);}
@@ -695,6 +697,7 @@ namespace xtd {
     /// @param fmt A composite format string.
     /// @param args anarguments list to write using format.
     /// @return string formated.
+    /// @ingroup format_parse
     /// @remarks A format specifier follows this prototype:
     /// @remarks %[flags][width][.precision][length]specifier
     /// | specifier | Output                                                                                                                                                   | Example      |
@@ -756,6 +759,7 @@ namespace xtd {
     /// @param fmt A composite format string.
     /// @param args anarguments list to write using format.
     /// @return string formated.
+    /// @ingroup format_parse
     /// @remarks A format specifier follows this prototype:
     /// @remarks %[flags][width][.precision][length]specifier
     /// | specifier | Output                                                                                                                                                   | Example      |

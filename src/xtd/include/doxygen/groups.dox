@@ -28,6 +28,10 @@
 /// @defgroup exceptions exceptions
 /// @brief Exceptions definitions.
 
+/// @defgroup format_parse format and parse
+/// @brief All needed for formating or parsing object.
+/// @remarks for more information about format see @ref FormatPage "Format".
+
 /// @defgroup forms forms
 /// @brief forms definitions.
 
