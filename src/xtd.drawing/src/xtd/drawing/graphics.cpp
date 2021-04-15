@@ -1,6 +1,6 @@
 #include <vector>
+#include "../../../include/xtd/drawing/bitmap.h"
 #include "../../../include/xtd/drawing/graphics.h"
-#include "../../../include/xtd/drawing/image.h"
 #include "../../../include/xtd/drawing/solid_brush.h"
 #include <xtd/strings.h>
 #include <xtd/drawing/native/graphics.h>
@@ -58,8 +58,13 @@ void graphics::draw_ellipse(const pen& pen, int32_t x, int32_t y, int32_t width,
   native::graphics::draw_ellipse(data_->handle_, pen.data_->handle_, x, y, width, height);
 }
 
+void graphics::draw_image(const xtd::drawing::image& image, int32_t x, int32_t y, int32_t width, int32_t height) {
+  if (size(width, height) == image.size())  native::graphics::draw_image(data_->handle_, image.handle(), x, y);
+  else native::graphics::draw_image(data_->handle_, bitmap(image, size(width, height)).handle(), x, y);
+}
+
 void graphics::draw_image(const image& image, int32_t x, int32_t y) {
-  native::graphics::draw_image(data_->handle_, image.handle(), x, y);
+  draw_image(image, x, y, image.size().width(), image.size().height());
 }
 
 void graphics::draw_image_disabled(const image& image, int32_t x, int32_t y, float brightness) {
