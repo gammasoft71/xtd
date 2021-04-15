@@ -1,6 +1,7 @@
 #include <xtd/xtd>
 
 using namespace std;
+using namespace std::literals;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
@@ -11,7 +12,7 @@ namespace examples {
     wiggly() {
       back_color(system_colors::window());
       font({font(), font().size() + 12});
-      timer.interval(60);
+      timer.interval(60ms);
       timer.tick += [&] {
         step++;
         invalidate();

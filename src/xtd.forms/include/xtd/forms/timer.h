@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
+#include <chrono>
 #include <memory>
 #include <xtd/event.h>
 #include <xtd/event_handler.h>
@@ -60,15 +61,25 @@ namespace xtd {
       /// @param enabled true if the timer is currently enabled; otherwise, false. The default is false.
       /// @remarks Calling the start method is the same as setting enabled to true. Likewise, calling the stop method is the same as setting enabled to false.
       void enabled(bool enabled);
-      
+
       /// @brief Gets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
       /// @return An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
       /// @remarks To get the number of seconds in the interval, divide this number by 1,000.
-      int32_t interval() const {return interval_;}
+      std::chrono::milliseconds interval() const {return std::chrono::milliseconds(interval_);}
       /// @brief Sets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
       /// @param interval An int32_t specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
       /// @remarks To get the number of seconds in the interval, divide this number by 1,000.
-      void interval(int32_t interval);
+      template<typename rep_t, typename period_t = std::ratio<1>>
+      void interval(const std::chrono::duration<rep_t, period_t>& interval) {interval_milliseconds(static_cast<int32_t>(std::chrono::duration_cast<std::chrono::milliseconds>(interval).count()));}
+
+      /// @brief Gets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
+      /// @return An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
+      /// @remarks To get the number of seconds in the interval, divide this number by 1,000.
+      int32_t interval_milliseconds() const {return interval_;}
+      /// @brief Sets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
+      /// @param interval An int32_t specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
+      /// @remarks To get the number of seconds in the interval, divide this number by 1,000.
+      void interval_milliseconds(int32_t interval);
 
       /// @brief Stops the timer.
       /// @remarks You can also stop the timer by setting the enabled property to fallse.

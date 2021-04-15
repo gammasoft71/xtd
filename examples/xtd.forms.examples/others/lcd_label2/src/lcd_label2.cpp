@@ -1,5 +1,6 @@
 #include <xtd/xtd>
 
+using namespace std::literals;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
@@ -8,7 +9,7 @@ int main() {
   auto counter = 0;
   
   timer timer;
-  timer.interval(100);
+  timer.interval(100ms);
   
   form form_main;
   form_main.text("Lcd label example 2");

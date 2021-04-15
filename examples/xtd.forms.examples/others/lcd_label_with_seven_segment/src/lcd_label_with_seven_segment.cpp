@@ -1,5 +1,6 @@
 #include <xtd/xtd>
 
+using namespace std::literals;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
@@ -19,7 +20,7 @@ int main() {
   label.text(strings::format("{}", label.valid_characters()[index]));
 
   timer timer;
-  timer.interval(300);
+  timer.interval(300ms);
   timer.enabled(!timer.enabled());
   timer.tick += [&] {
     if (++index >= label.valid_characters().size()) index = 0;

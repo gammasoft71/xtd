@@ -1,5 +1,6 @@
 #include <xtd/xtd>
 
+using namespace std::literals;
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::forms;
@@ -41,7 +42,7 @@ public:
     reset.enabled(false);
     reset.click += {*this, &stop_watch_form::on_reset_click};
     
-    timer_chrono.interval(11);
+    timer_chrono.interval(11ms);
     timer_chrono.tick +=  {*this, &stop_watch_form::on_timer_tick};
   }
   

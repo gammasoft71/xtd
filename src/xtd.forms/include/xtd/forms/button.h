@@ -66,7 +66,7 @@ namespace xtd {
           auto_repeat_timer_.enabled(false);
           if (enabled()) {
             perform_click();
-            auto_repeat_timer_.interval(auto_repeat_interval_);
+            auto_repeat_timer_.interval_milliseconds(auto_repeat_interval_);
             auto_repeat_timer_.enabled(auto_repeat_);
           }
         };
@@ -141,7 +141,7 @@ namespace xtd {
       void on_image_changed(const xtd::event_args& e) override;
 
       void on_mouse_down(const mouse_event_args& e) override {
-        auto_repeat_timer_.interval(auto_repeat_delay_);
+        auto_repeat_timer_.interval_milliseconds(auto_repeat_delay_);
         auto_repeat_timer_.enabled(auto_repeat_);
         if (flat_style_ != xtd::forms::flat_style::system && enabled()) state_ = xtd::forms::visual_styles::push_button_state::pressed;
         button_base::on_mouse_down(e);
