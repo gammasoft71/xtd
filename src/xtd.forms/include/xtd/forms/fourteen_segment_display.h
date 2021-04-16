@@ -39,15 +39,14 @@ namespace xtd {
     protected:
       void on_paint(paint_event_args& e) override {
         seven_segment_display::on_paint(e);
-        drawing::graphics graphics = e.graphics();
-        if ((value_ & forms::segments::g1) == forms::segments::g1) draw_segment_g1(graphics, fore_color());
-        if ((value_ & forms::segments::g2) == forms::segments::g2) draw_segment_g2(graphics, fore_color());
-        if ((value_ & forms::segments::h) == forms::segments::h) draw_segment_h(graphics, fore_color());
-        if ((value_ & forms::segments::i) == forms::segments::i) draw_segment_i(graphics, fore_color());
-        if ((value_ & forms::segments::j) == forms::segments::j) draw_segment_j(graphics, fore_color());
-        if ((value_ & forms::segments::k) == forms::segments::k) draw_segment_k(graphics, fore_color());
-        if ((value_ & forms::segments::l) == forms::segments::l) draw_segment_l(graphics, fore_color());
-        if ((value_ & forms::segments::m) == forms::segments::m) draw_segment_m(graphics, fore_color());
+        if ((value_ & forms::segments::g1) == forms::segments::g1) draw_segment_g1(e.graphics(), fore_color());
+        if ((value_ & forms::segments::g2) == forms::segments::g2) draw_segment_g2(e.graphics(), fore_color());
+        if ((value_ & forms::segments::h) == forms::segments::h) draw_segment_h(e.graphics(), fore_color());
+        if ((value_ & forms::segments::i) == forms::segments::i) draw_segment_i(e.graphics(), fore_color());
+        if ((value_ & forms::segments::j) == forms::segments::j) draw_segment_j(e.graphics(), fore_color());
+        if ((value_ & forms::segments::k) == forms::segments::k) draw_segment_k(e.graphics(), fore_color());
+        if ((value_ & forms::segments::l) == forms::segments::l) draw_segment_l(e.graphics(), fore_color());
+        if ((value_ & forms::segments::m) == forms::segments::m) draw_segment_m(e.graphics(), fore_color());
       }
  
       void draw_back_digit(drawing::graphics& graphics) override {

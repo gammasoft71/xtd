@@ -75,9 +75,7 @@ void label::on_font_changed(const xtd::event_args& e) {
 }
 
 void label::on_paint(paint_event_args& e) {
-  if (flat_style_ == xtd::forms::flat_style::system)
-    control::on_paint(e);
-  else {
+  if (flat_style_ != xtd::forms::flat_style::system) {
     xtd::drawing::string_format string_format;
     switch (text_align_) {
       case content_alignment::top_left: string_format.line_alignment(xtd::drawing::string_alignment::near); string_format.alignment(xtd::drawing::string_alignment::near); break;
@@ -93,6 +91,7 @@ void label::on_paint(paint_event_args& e) {
     }
     e.graphics().draw_string(text_, font(), xtd::drawing::solid_brush(fore_color()), xtd::drawing::rectangle(0, 0, client_size().width(), client_size().height()), string_format);
   }
+  control::on_paint(e);
 }
 
 void label::on_text_changed(const xtd::event_args& e) {

@@ -100,8 +100,6 @@ namespace xtd {
       }
 
       void on_paint(paint_event_args& e) override {
-        button_base::on_paint(e);
-
         drawing::color button_back_color = checked_ ? xtd::forms::theme_colors::current_theme().accent() : xtd::forms::theme_colors::current_theme().gray_text();
         drawing::color text_color = checked_ ? fore_color() : drawing::color::average(button_back_color, fore_color(), .33);
         drawing::color slider_color = back_color();
@@ -142,6 +140,7 @@ namespace xtd {
           e.graphics().draw_line(drawing::pen(control_paint::dark(slider_color)), slider_location.x(), slider_location.y() + slider_size.height() - 1, slider_location.x() + slider_size.width(), slider_location.y() + slider_size.height() - 1);
           e.graphics().draw_line(drawing::pen(control_paint::dark(slider_color)), slider_location.x() + slider_size.width(), slider_location.y(), slider_location.x() + slider_size.width(), slider_location.y() + slider_size.height() - 1);
         }
+        button_base::on_paint(e);
       }
       
     private:

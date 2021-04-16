@@ -136,18 +136,18 @@ namespace xtd {
       drawing::size default_size() const override {return {13, 25};}
 
       void on_paint(paint_event_args& e) override {
-        drawing::graphics graphics = e.graphics();
-        graphics.clear(back_color());
-        if (show_back_segment_) draw_back_digit(graphics);
-        if ((value_ & forms::segments::dp) == forms::segments::dp) draw_dp(graphics, fore_color());
-        if ((value_ & forms::segments::pc) == forms::segments::pc) draw_pc(graphics, fore_color());
-        if ((value_ & forms::segments::a) == forms::segments::a) draw_segment_a(graphics, fore_color());
-        if ((value_ & forms::segments::b) == forms::segments::b) draw_segment_b(graphics, fore_color());
-        if ((value_ & forms::segments::c) == forms::segments::c) draw_segment_c(graphics, fore_color());
-        if ((value_ & forms::segments::d) == forms::segments::d) draw_segment_d(graphics, fore_color());
-        if ((value_ & forms::segments::e) == forms::segments::e) draw_segment_e(graphics, fore_color());
-        if ((value_ & forms::segments::f) == forms::segments::f) draw_segment_f(graphics, fore_color());
-        if ((value_ & forms::segments::g) == forms::segments::g) draw_segment_g(graphics, fore_color());
+        control::on_paint(e);
+        e.graphics().clear(back_color());
+        if (show_back_segment_) draw_back_digit(e.graphics());
+        if ((value_ & forms::segments::dp) == forms::segments::dp) draw_dp(e.graphics(), fore_color());
+        if ((value_ & forms::segments::pc) == forms::segments::pc) draw_pc(e.graphics(), fore_color());
+        if ((value_ & forms::segments::a) == forms::segments::a) draw_segment_a(e.graphics(), fore_color());
+        if ((value_ & forms::segments::b) == forms::segments::b) draw_segment_b(e.graphics(), fore_color());
+        if ((value_ & forms::segments::c) == forms::segments::c) draw_segment_c(e.graphics(), fore_color());
+        if ((value_ & forms::segments::d) == forms::segments::d) draw_segment_d(e.graphics(), fore_color());
+        if ((value_ & forms::segments::e) == forms::segments::e) draw_segment_e(e.graphics(), fore_color());
+        if ((value_ & forms::segments::f) == forms::segments::f) draw_segment_f(e.graphics(), fore_color());
+        if ((value_ & forms::segments::g) == forms::segments::g) draw_segment_g(e.graphics(), fore_color());
       }
       
       drawing::size measure_control() const override {

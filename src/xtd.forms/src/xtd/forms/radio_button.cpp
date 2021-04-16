@@ -103,9 +103,7 @@ void radio_button::on_handle_created(const event_args &e) {
 }
 
 void radio_button::on_paint(paint_event_args& e) {
-  if (flat_style_ == xtd::forms::flat_style::system)
-    control::on_paint(e);
-  else {
+  if (flat_style_ != xtd::forms::flat_style::system) {
     text_format_flags flags = to_text_format_flags(text_align_);
     if (appearance_ == xtd::forms::appearance::normal) {
       if (flat_style_ == xtd::forms::flat_style::flat) radio_button_renderer::draw_flat_radio_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), state_, !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
@@ -117,6 +115,7 @@ void radio_button::on_paint(paint_event_args& e) {
       else theme_renderers::current_theme().draw_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), to_push_button_style(state_), !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
     }
   }
+  button_base::on_paint(e);
 }
 
 void radio_button::wnd_proc(message &message) {

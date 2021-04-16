@@ -263,6 +263,7 @@ add_sources(
   src/xtd/forms/open_file_dialog.cpp
   src/xtd/forms/padding.cpp
   src/xtd/forms/panel.cpp
+  src/xtd/forms/paint_event_args.cpp
   src/xtd/forms/picture_box.cpp
   src/xtd/forms/progress_bar.cpp
   src/xtd/forms/progress_dialog.cpp
