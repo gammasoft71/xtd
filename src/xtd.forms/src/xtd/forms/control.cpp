@@ -605,7 +605,7 @@ void control::on_mouse_wheel(const mouse_event_args& e) {
   if (can_raise_events()) mouse_wheel(*this, e);
 }
 
-void control::on_paint(paint_event_args &e) {
+void control::on_paint(paint_event_args& e) {
   if (can_raise_events()) paint(*this, e);
 }
 
@@ -1050,8 +1050,7 @@ void control::wm_mouse_wheel(message& message) {
 
 void control::wm_paint(message& message) {
   def_wnd_proc(message);
-  auto graphics = get_state(state::double_buffered) ? drawing::graphics(native::control::create_double_buffered_paint_graphics(handle_)) : drawing::graphics(native::control::create_paint_graphics(handle_));
-  paint_event_args e(graphics, client_rectangle_);
+  paint_event_args e(*this, client_rectangle_);
   on_paint(e);
 }
 

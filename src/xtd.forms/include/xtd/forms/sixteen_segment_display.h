@@ -39,11 +39,10 @@ namespace xtd {
     protected:
       void on_paint(paint_event_args& e) override {
         fourteen_segment_display::on_paint(e);
-        drawing::graphics graphics = e.graphics();
-        if ((value_ & forms::segments::a1) == forms::segments::a1) draw_segment_a1(graphics, fore_color());
-        if ((value_ & forms::segments::a2) == forms::segments::a2) draw_segment_a2(graphics, fore_color());
-        if ((value_ & forms::segments::d1) == forms::segments::d1) draw_segment_d1(graphics, fore_color());
-        if ((value_ & forms::segments::d2) == forms::segments::d2) draw_segment_d2(graphics, fore_color());
+        if ((value_ & forms::segments::a1) == forms::segments::a1) draw_segment_a1(e.graphics(), fore_color());
+        if ((value_ & forms::segments::a2) == forms::segments::a2) draw_segment_a2(e.graphics(), fore_color());
+        if ((value_ & forms::segments::d1) == forms::segments::d1) draw_segment_d1(e.graphics(), fore_color());
+        if ((value_ & forms::segments::d2) == forms::segments::d2) draw_segment_d2(e.graphics(), fore_color());
       }
  
       void draw_back_digit(drawing::graphics& graphics) override {

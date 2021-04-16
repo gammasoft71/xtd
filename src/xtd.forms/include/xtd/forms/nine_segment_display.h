@@ -39,9 +39,8 @@ class nine_segment_display : public seven_segment_display {
     protected:
       void on_paint(paint_event_args& e) override {
         seven_segment_display::on_paint(e);
-        drawing::graphics graphics = e.graphics();
-        if ((value_ & forms::segments::h) == forms::segments::h) draw_segment_h(graphics, fore_color());
-        if ((value_ & forms::segments::i) == forms::segments::i) draw_segment_i(graphics, fore_color());
+        if ((value_ & forms::segments::h) == forms::segments::h) draw_segment_h(e.graphics(), fore_color());
+        if ((value_ & forms::segments::i) == forms::segments::i) draw_segment_i(e.graphics(), fore_color());
       }
  
       void draw_back_digit(drawing::graphics& graphics) override {
