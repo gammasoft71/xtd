@@ -120,8 +120,6 @@ namespace xtd {
           return wx_style;
         }
 
-        bool enable_send_paint_event() const override {return false;}
-
         wxWindow* main_control() const override {
           return panel_;
         }
