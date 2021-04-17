@@ -3,17 +3,8 @@
 # Changes to this file may cause incorrect behavior and will be lost if the file is regenerated.
 
 language: cpp
-dist: bionic
 
 addons:
-  apt:
-    sources:
-    - ubuntu-toolchain-r-test
-    packages:
-    - g++-9
-    - lcov
-    - libgtk-3-dev
-    - doxygen
   homebrew:
     packages:
     - doxygen
@@ -24,6 +15,3 @@ matrix:
     os: osx
     osx_image: xcode12.2
     script: scripts/travis/build_xtd_on_macos.sh
-  - env: TEST="Build xtd 0.1.0 and launch unit tests on Linux"
-    os: linux
-    script: scripts/travis/build_xtd_and_launch_unit_tests_on_linux.sh
