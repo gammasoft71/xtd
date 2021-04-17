@@ -107,24 +107,24 @@ intptr_t control::create(const forms::create_params& create_params) {
 intptr_t control::create_paint_graphics(intptr_t control) {
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper;
   if (control == 0) hdc_wrapper->create<wxScreenDC>();
-  else hdc_wrapper->create<wxPaintDC>(reinterpret_cast<control_handler*>(control)->graphic_control());
+  else hdc_wrapper->create<wxPaintDC>(reinterpret_cast<control_handler*>(control)->main_control());
   return reinterpret_cast<intptr_t>(hdc_wrapper);
 }
 
 intptr_t control::create_double_buffered_paint_graphics(intptr_t control) {
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper;
-  //wxColour back_color = reinterpret_cast<control_handler*>(control)->graphic_control()->GetBackgroundColour();
-  reinterpret_cast<control_handler*>(control)->graphic_control()->SetBackgroundStyle(wxBackgroundStyle::wxBG_STYLE_PAINT);
+  //wxColour back_color = reinterpret_cast<control_handler*>(control)->main_control()->GetBackgroundColour();
+  reinterpret_cast<control_handler*>(control)->main_control()->SetBackgroundStyle(wxBackgroundStyle::wxBG_STYLE_PAINT);
   //reinterpret_cast<control_handler*>(control)->graphic_control()->SetBackgroundColour(back_color);
   if (control == 0) hdc_wrapper->create<wxScreenDC>();
-  else  hdc_wrapper->create<wxAutoBufferedPaintDC>(reinterpret_cast<control_handler*>(control)->graphic_control());
+  else  hdc_wrapper->create<wxAutoBufferedPaintDC>(reinterpret_cast<control_handler*>(control)->main_control());
   return reinterpret_cast<intptr_t>(hdc_wrapper);
 }
 
 intptr_t control::create_graphics(intptr_t control) {
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper;
   if (control == 0) hdc_wrapper->create<wxScreenDC>();
-  else  hdc_wrapper->create<wxClientDC>(reinterpret_cast<control_handler*>(control)->graphic_control());
+  else  hdc_wrapper->create<wxClientDC>(reinterpret_cast<control_handler*>(control)->main_control());
   return reinterpret_cast<intptr_t>(hdc_wrapper);
 }
 
@@ -263,19 +263,19 @@ void control::visible(intptr_t control, bool visible) {
 
 void control::invalidate(intptr_t control, const drawing::rectangle& rect, bool erase_background) {
   if (control == 0) return;
-  reinterpret_cast<control_handler*>(control)->graphic_control()->RefreshRect(wxRect(rect.left(), rect.top(), rect.width(), rect.height()), erase_background);
+  reinterpret_cast<control_handler*>(control)->main_control()->RefreshRect(wxRect(rect.left(), rect.top(), rect.width(), rect.height()), erase_background);
 }
 
 void control::refresh(intptr_t control) {
   if (control == 0) return;
   
-  reinterpret_cast<control_handler*>(control)->graphic_control()->Refresh();
+  reinterpret_cast<control_handler*>(control)->main_control()->Refresh();
 }
 
 void control::update(intptr_t control) {
   if (control == 0) return;
   
-  reinterpret_cast<control_handler*>(control)->graphic_control()->Update();
+  reinterpret_cast<control_handler*>(control)->main_control()->Update();
 }
 
 void control::register_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc) {

@@ -18,7 +18,7 @@ namespace xtd {
     namespace native {
       class wxMainPanel : public wxScrolled<wxPanel> {
       public:
-        wxMainPanel(wxWindow *parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxScrolledWindowStyle, const wxString& name = wxPanelNameStr) : wxScrolled<wxPanel>(parent, winid, pos, size, style, name) {}
+        wxMainPanel(control_handler* control_handler, wxWindow *parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxScrolledWindowStyle, const wxString& name = wxPanelNameStr) : wxScrolled<wxPanel>(parent, winid, pos, size, style, name), control_handler_(control_handler) {}
       protected:
         bool ProcessEvent(wxEvent &event) override {
           bool result = wxPanel::ProcessEvent(event);
@@ -45,9 +45,12 @@ namespace xtd {
           else if (event.GetEventType() == wxEVT_KEY_DOWN) wxPostEvent(GetParent(), event);
           else if (event.GetEventType() == wxEVT_CHAR) wxPostEvent(GetParent(), event);
           else if (event.GetEventType() == wxEVT_KEY_UP) wxPostEvent(GetParent(), event);
-          //else if (event.GetEventType() == wxEVT_PAINT) wxPostEvent(GetParent(), event);
+          else if (event.GetEventType() == wxEVT_PAINT) control_handler_->send_message(reinterpret_cast<intptr_t>(control_handler_), WM_PAINT, 0, 0, reinterpret_cast<intptr_t>(&event));
           return result;
         }
+
+      private:
+        control_handler* control_handler_ = nullptr;
       };
 
       class wx_form : public control_handler {
@@ -67,7 +70,7 @@ namespace xtd {
           }
 #endif
           control()->SetMinSize({75, 23});
-          panel_ = new wxMainPanel(control(), wxID_ANY, wxDefaultPosition, wxDefaultSize, panel_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
+          panel_ = new wxMainPanel(this, control(), wxID_ANY, wxDefaultPosition, wxDefaultSize, panel_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
 #if defined(__WIN32__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             panel_->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
@@ -119,14 +122,6 @@ namespace xtd {
 
         wxWindow* main_control() const override {
           return panel_;
-        }
-        
-        wxWindow* graphic_control() const override {
-#if defined(__APPLE__) || defined(__WXGTK__)
-          return control();
-#else
-          return panel_;
-#endif
         }
         
         void SetBackgroundColour(const wxColour &colour) override {
