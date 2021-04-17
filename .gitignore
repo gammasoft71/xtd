@@ -46,3 +46,4 @@ src/xtd.drawing.native.wxwidgets/include/xtd/drawing_native_export.h
 src/xtd.forms.native.wxwidgets/include/xtd/forms_native_export.h
 src/xtd/references.cmake
 examples/xtd.cmake.examples/application_properties/application_startup/properties/startup.cpp
+examples/xtd.forms.examples/controls/picture_box/properties/resources.h
