@@ -14,4 +14,5 @@ matrix:
   - env: TEST="Build xtd 0.1.0 on macOS"
     os: osx
     osx_image: xcode12.2
-    script: scripts/travis/build_xtd_on_macos.sh
+    #script: scripts/travis/build_xtd_on_macos.sh
+    script: scripts/travis/build_xtd_and_launch_unit_tests_on_macos.sh
