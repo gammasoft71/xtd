@@ -382,8 +382,6 @@ namespace xtd {
           return result;
         }
         
-        virtual bool enable_send_paint_event() const {return true;}
-        
         virtual void SetBackgroundColour(const wxColour &colour) {
           control_->SetBackgroundColour(colour);
         }
@@ -425,6 +423,8 @@ namespace xtd {
         wxWindow* control() const {return control_;}
         virtual wxWindow* main_control() const {return control_->GetMainWindowOfCompositeControl();}
 
+        virtual bool enable_send_paint_event() const {return control() == main_control();}
+        
         void clear_control() {control_ = nullptr;}
                 
         intptr_t call_def_wnd_proc(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle) {return def_wnd_proc(hwnd, msg, wparam, lparam, result, handle);}
