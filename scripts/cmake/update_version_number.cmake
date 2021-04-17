@@ -76,6 +76,7 @@ if (${STRING_FOUND} EQUAL -1)
     "      \n"
     "    steps:\n"
     "      - checkout\n"
+    "      - run: echo "xtd ${XTD_VERSION} on linux"\n"
     "      - run:\n"
     "          name: Installing apt\n"
     "          command: 'sudo apt-get update && sudo apt-get install -y sudo && sudo rm -rf /var/lib/apt/lists/*'\n"
