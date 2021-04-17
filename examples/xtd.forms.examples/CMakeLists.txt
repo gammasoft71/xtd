@@ -15,7 +15,7 @@ add_projects(
   components
   printing
   events
-  painting
+  drawing
   user_controls
   user_dialogs
   games
