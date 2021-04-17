@@ -5,7 +5,7 @@
 version: 2
 
 workflows:
-  "xtd 0.1.0 on linux"
+  "xtd 0.1.0 on linux":
   jobs:
     build:
       machine:
