@@ -4,31 +4,33 @@
 
 version: 2
 
-jobs:
-  build:
-    machine:
-      image: ubuntu-2004:202010-01
-      
-    steps:
-      - checkout
-      - run:
-          name: Installing apt
-          command: 'sudo apt-get update && sudo apt-get install -y sudo && sudo rm -rf /var/lib/apt/lists/*'
-      - run:
-          name: Installing gcc
-          command: 'sudo apt-get update && sudo apt-get install -y gcc g++'
-      - run:
-          name: Install cmake
-          command: 'sudo apt-get update && sudo apt-get install -y cmake'
-      - run:
-          name: Install lcov
-          command: 'sudo apt-get update && sudo apt-get install -y lcov'
-      - run:
-          name: Install gtk-3
-          command: 'sudo apt-get update && sudo apt-get install -y libgtk-3-dev'
-      - run:
-          name: Install doxygen
-          command: 'sudo apt-get update && sudo apt-get install -y doxygen'
-      - run:
-          name: Build xtd and launch unit tests
-          command: scripts/circleci/build_xtd_and_launch_unit_tests_on_linux.sh
+workflows:
+  "xtd 0.1.0 on linux"
+  jobs:
+    build:
+      machine:
+        image: ubuntu-2004:202010-01
+        
+      steps:
+        - checkout
+        - run:
+            name: Installing apt
+            command: 'sudo apt-get update && sudo apt-get install -y sudo && sudo rm -rf /var/lib/apt/lists/*'
+        - run:
+            name: Installing gcc
+            command: 'sudo apt-get update && sudo apt-get install -y gcc g++'
+        - run:
+            name: Install cmake
+            command: 'sudo apt-get update && sudo apt-get install -y cmake'
+        - run:
+            name: Install lcov
+            command: 'sudo apt-get update && sudo apt-get install -y lcov'
+        - run:
+            name: Install gtk-3
+            command: 'sudo apt-get update && sudo apt-get install -y libgtk-3-dev'
+        - run:
+            name: Install doxygen
+            command: 'sudo apt-get update && sudo apt-get install -y doxygen'
+        - run:
+            name: Build xtd and launch unit tests
+            command: scripts/circleci/build_xtd_and_launch_unit_tests_on_linux.sh
