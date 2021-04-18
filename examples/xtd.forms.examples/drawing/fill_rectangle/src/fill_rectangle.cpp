@@ -23,16 +23,22 @@ namespace examples {
       auto gradient_horizontal_brush = linear_gradient_brush(drawing::rectangle(230, 10, 100, 100), color::green, back_color(), linear_gradient_mode::horizontal);
       e.graphics().fill_rectangle(gradient_horizontal_brush, 230, 10, 100, 100);
       
-      auto gradient_vertical_brush = linear_gradient_brush(drawing::rectangle(10, 120, 100, 100), color::blue, back_color(), linear_gradient_mode::vertical);
-      e.graphics().fill_rectangle(gradient_vertical_brush, 10, 120, 100, 100);
+      auto hatch_cross_brush = solid_brush(color::white);
+      e.graphics().fill_rectangle(hatch_cross_brush, 10, 120, 100, 100);
       
-      auto gradient_forward_diagonal_brush = linear_gradient_brush(drawing::rectangle(120, 120, 100, 100), color::yellow, back_color(), linear_gradient_mode::forward_diagonal);
-      e.graphics().fill_rectangle(gradient_forward_diagonal_brush, 120, 120, 100, 100);
-      
-      auto gradient_backward_diagonal_brush = linear_gradient_brush(drawing::rectangle(230, 120, 100, 100), color::cyan, back_color(), linear_gradient_mode::backward_diagonal);
-      e.graphics().fill_rectangle(gradient_backward_diagonal_brush, 230, 120, 100, 100);
+      auto texture_circle_brush = texture_brush(create_circle_brush_image(color::yellow));
+      e.graphics().fill_rectangle(texture_circle_brush, 120, 120, 100, 100);
 
       form::on_paint(e);
+    }
+    
+  private:
+    image create_circle_brush_image(const color& color) {
+      auto bitmap = drawing::bitmap(16, 16);
+      auto graphics = drawing::graphics::from_image(bitmap);
+      graphics.fill_ellipse(solid_brush(color), 0, 0, bitmap.width(), bitmap.height());
+      graphics.draw_ellipse(pens::black(), 0, 0, bitmap.width() - 1, bitmap.height() - 1);
+      return bitmap;
     }
   };
 }

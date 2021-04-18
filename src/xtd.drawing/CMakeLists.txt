@@ -43,6 +43,7 @@ add_sources(
   include/xtd/drawing/system_icons.h
   include/xtd/drawing/system_images.h
   include/xtd/drawing/system_pens.h
+  include/xtd/drawing/texture_brush.h
   include/xtd/drawing/drawing2d/linear_gradient_brush.h
   include/xtd/drawing/drawing2d/linear_gradient_mode.h
   include/xtd/drawing/drawing2d/pen_alignment.h
@@ -84,6 +85,7 @@ add_sources(
   src/xtd/drawing/system_fonts.cpp
   src/xtd/drawing/system_images.cpp
   src/xtd/drawing/system_pens.cpp
+  src/xtd/drawing/texture_brush.cpp
   src/xtd/drawing/drawing2d/linear_gradient_brush.cpp
   src/xtd/drawing/text/installed_font_collection.cpp
   src/xtd/drawing/text/private_font_collection.cpp

@@ -19,6 +19,10 @@ void brush::linear_gradient(intptr_t brush, int32_t x1, int32_t y1, int32_t x2, 
   reinterpret_cast<wx_brush*>(brush)->create_linear_gradiant_brush({x1, y1}, {x2, y2}, {r1, g1, b1, a1}, {r2, g2, b2, a2});
 }
 
+void brush::texture(intptr_t brush, intptr_t texture) {
+  reinterpret_cast<wx_brush*>(brush)->create_texture_brush(*reinterpret_cast<wxImage*>(texture));
+}
+
 void brush::destroy(intptr_t brush) {
   delete reinterpret_cast<wx_brush*>(brush);
 }

@@ -2,6 +2,7 @@
 
 #include <cstdint>
 #include <wx/brush.h>
+#include <wx/image.h>
 #include <wx/graphics.h>
 
 namespace xtd {
@@ -12,7 +13,8 @@ namespace xtd {
         enum class brush_type {
           none,
           solid,
-          linear_gradient
+          linear_gradient,
+          texture
         };
         
         struct solid_brush {
@@ -24,6 +26,9 @@ namespace xtd {
           wxColour color1;
           wxColour color2;
           //const wxGraphicsMatrix* graphics_matrix;
+        };
+        struct texture_brush {
+          wxImage texture;
         };
 
         wx_brush() = default;
@@ -41,19 +46,29 @@ namespace xtd {
           linear_gradiant_brush_.color2 = color2;
         }
         
+        void create_texture_brush(const wxImage& texture) {
+          brush_type_ = brush_type::texture;
+          texture_brush_.texture = texture;
+        }
+        
         bool is_solid_brush() const {return brush_type_ == brush_type::solid;}
         bool is_linear_gradiant_brush() const {return brush_type_ == brush_type::linear_gradient;}
+        bool is_texture_brush() const {return brush_type_ == brush_type::texture;}
 
         const solid_brush& get_solid_brush() const {return solid_brush_;}
         solid_brush& get_solid_brush() {return solid_brush_;}
         
         const linear_gradiant_brush& get_linear_gradiant_brush() const {return linear_gradiant_brush_;}
         linear_gradiant_brush& get_linear_gradiant_brush() {return linear_gradiant_brush_;}
-
+        
+        const texture_brush& get_texture_brush() const {return texture_brush_;}
+        texture_brush& get_texture_brush() {return texture_brush_;}
+        
       private:
         brush_type brush_type_ = brush_type::none;
         solid_brush solid_brush_;
         linear_gradiant_brush linear_gradiant_brush_;
+        texture_brush texture_brush_;
       };
     }
   }

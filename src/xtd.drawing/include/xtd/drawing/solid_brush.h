@@ -10,11 +10,11 @@
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
-    /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
+    /// @brief Defines a xtd::drawing::brush of a single color. Brushes are used to fill graphics shapes, such as rectangles, ellipses, pies, polygons, and paths. This class cannot be inherited.
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    class drawing_export_ solid_brush : public brush {
+    class drawing_export_ solid_brush final : public brush {
     public:
       solid_brush();
       solid_brush(const drawing::color& color) {this->color(color);}
