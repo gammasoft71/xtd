@@ -40,6 +40,12 @@ namespace {
     wxFont font_;
   };
 
+  wxBrush to_brush(const wx_brush& brush) {
+    if (brush.is_solid_brush()) return wxBrush(brush.get_solid_brush().color);
+    if (brush.is_texture_brush()) return wxBrush(brush.get_texture_brush().texture);
+    throw xtd::argument_exception("brush not defined"_t, caller_info_);
+  }
+
   wxGraphicsBrush to_graphics_brush(wxGraphicsContext& graphics, const wx_brush& brush) {
     if (brush.is_solid_brush()) return graphics.CreateBrush(wxBrush(brush.get_solid_brush().color));
     if (brush.is_linear_gradiant_brush()) {
@@ -50,6 +56,7 @@ namespace {
       wxGraphicsBrush b = graphics.CreateLinearGradientBrush(static_cast<double>(point1.x), static_cast<double>(point1.y), static_cast<double>(point2.x), static_cast<double>(point2.y), color1, color2);;
       return b;
     }
+    if (brush.is_texture_brush()) return graphics.CreateBrush(wxBrush(brush.get_texture_brush().texture));
     throw xtd::argument_exception("brush not defined"_t, caller_info_);
   }
 }
@@ -194,7 +201,7 @@ void graphics::fill_ellipse(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, 
 void graphics::fill_pie(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle) {
   if (!hdc) return;
   graphics_context gc(hdc);
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetBrush(wxBrush(reinterpret_cast<wx_brush*>(brush)->get_solid_brush().color));
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetBrush(to_brush(*reinterpret_cast<wx_brush*>(brush)));
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetPen(*wxTRANSPARENT_PEN);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().DrawEllipticArc(x, y, width, height, start_angle, start_angle + sweep_angle);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();

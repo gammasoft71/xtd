@@ -16,7 +16,7 @@ namespace xtd {
   namespace drawing {
     /// @brief The xtd::.drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing2d {
-      /// @brief Encapsulates a xtd::drawing::rush with a linear gradient. This class cannot be inherited.
+      /// @brief Encapsulates a xtd::drawing::brush with a linear gradient. This class cannot be inherited.
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing drawing

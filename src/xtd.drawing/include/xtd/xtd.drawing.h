@@ -50,3 +50,4 @@
 #include "drawing/system_icons.h"
 #include "drawing/system_images.h"
 #include "drawing/system_pens.h"
+#include "drawing/texture_brush.h"
