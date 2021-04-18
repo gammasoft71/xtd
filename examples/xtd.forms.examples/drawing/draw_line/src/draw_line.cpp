@@ -12,29 +12,29 @@ namespace examples {
     }
     
     void on_paint(paint_event_args& e) override {
-      auto pen_solid = pen(color::red, 5);
-      e.graphics().draw_line(pen_solid, 10, e.clip_rectangle().height() / 7, e.clip_rectangle().width() - 20, e.clip_rectangle().height() / 7);
+      auto solid_pen = pen(color::red, 5);
+      e.graphics().draw_line(solid_pen, 10, e.clip_rectangle().height() / 7, e.clip_rectangle().width() - 20, e.clip_rectangle().height() / 7);
       
-      auto pen_dot = pen(color::green, 5);
-      pen_dot.dash_style(xtd::drawing::dash_style::dot);
-      e.graphics().draw_line(pen_dot, 10, e.clip_rectangle().height() / 7 * 2, e.clip_rectangle().width() - 20, e.clip_rectangle().height() / 7 * 2);
+      auto dot_pen = pen(color::green, 5);
+      dot_pen.dash_style(xtd::drawing::dash_style::dot);
+      e.graphics().draw_line(dot_pen, 10, e.clip_rectangle().height() / 7 * 2, e.clip_rectangle().width() - 20, e.clip_rectangle().height() / 7 * 2);
       
-      auto pen_dash = pen(color::blue, 5);
-      pen_dash.dash_style(xtd::drawing::dash_style::dash);
-      e.graphics().draw_line(pen_dash, 10, e.clip_rectangle().height() / 7 * 3, e.clip_rectangle().width() - 20, e.clip_rectangle().height() / 7 * 3);
+      auto dash_pen = pen(color::blue, 5);
+      dash_pen.dash_style(xtd::drawing::dash_style::dash);
+      e.graphics().draw_line(dash_pen, 10, e.clip_rectangle().height() / 7 * 3, e.clip_rectangle().width() - 20, e.clip_rectangle().height() / 7 * 3);
       
-      auto pen_dash_dot = pen(color::yellow, 5);
-      pen_dash_dot.dash_style(xtd::drawing::dash_style::dash_dot);
-      e.graphics().draw_line(pen_dash_dot, 10, e.clip_rectangle().height() / 7 * 4, e.clip_rectangle().width() - 20, e.clip_rectangle().height() / 7 * 4);
+      auto dash_dot_pen = pen(color::yellow, 5);
+      dash_dot_pen.dash_style(xtd::drawing::dash_style::dash_dot);
+      e.graphics().draw_line(dash_dot_pen, 10, e.clip_rectangle().height() / 7 * 4, e.clip_rectangle().width() - 20, e.clip_rectangle().height() / 7 * 4);
       
-      auto pen_dash_dot_dot = pen(color::cyan, 5);
-      pen_dash_dot_dot.dash_style(xtd::drawing::dash_style::dash_dot_dot);
-      e.graphics().draw_line(pen_dash_dot_dot, 10, e.clip_rectangle().height() / 7 * 5, e.clip_rectangle().width() - 20, e.clip_rectangle().height() / 7 * 5);
+      auto dash_dot_dot_pen = pen(color::cyan, 5);
+      dash_dot_dot_pen.dash_style(xtd::drawing::dash_style::dash_dot_dot);
+      e.graphics().draw_line(dash_dot_dot_pen, 10, e.clip_rectangle().height() / 7 * 5, e.clip_rectangle().width() - 20, e.clip_rectangle().height() / 7 * 5);
       
-      auto pen_custom = pen(color::magenta, 5);
-      pen_custom.dash_style(xtd::drawing::dash_style::custom);
-      pen_custom.dash_pattern({4, 1, 3, 2});
-      e.graphics().draw_line(pen_custom, 10, e.clip_rectangle().height() / 7 * 6, e.clip_rectangle().width() - 20, e.clip_rectangle().height() / 7 * 6);
+      auto custom_pen = pen(color::magenta, 5);
+      custom_pen.dash_style(xtd::drawing::dash_style::custom);
+      custom_pen.dash_pattern({4, 1, 3, 2});
+      e.graphics().draw_line(custom_pen, 10, e.clip_rectangle().height() / 7 * 6, e.clip_rectangle().width() - 20, e.clip_rectangle().height() / 7 * 6);
       
       form::on_paint(e);
     }

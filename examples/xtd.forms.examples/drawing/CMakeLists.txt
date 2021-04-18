@@ -7,4 +7,5 @@ add_projects(
   draw_image
   draw_line
   draw_rectangle
+  fill_rectangle
 )
