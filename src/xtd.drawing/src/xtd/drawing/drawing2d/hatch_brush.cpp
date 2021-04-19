@@ -305,82 +305,42 @@ namespace {
   }
 
   image create_dashed_horizontal_texture(const color& fore_color, const color& back_color) {
+    static point_collection points {{0, 0}, {1, 0}, {6, 0}, {7, 0}, {2, 4}, {3, 4}, {4, 4}, {5, 4}};
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    graphics.draw_line(pen(fore_color, 1), 0, 0, 0, 0);
-    graphics.draw_line(pen(fore_color, 1), 1, 0, 1, 0);
-    graphics.draw_line(pen(fore_color, 1), 6, 0, 6, 0);
-    graphics.draw_line(pen(fore_color, 1), 7, 0, 7, 0);
-
-    graphics.draw_line(pen(fore_color, 1), 2, 4, 2, 4);
-    graphics.draw_line(pen(fore_color, 1), 3, 4, 3, 4);
-    graphics.draw_line(pen(fore_color, 1), 4, 4, 4, 4);
-    graphics.draw_line(pen(fore_color, 1), 5, 4, 5, 4);
+    for (auto point : points)
+      graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
   
   image create_dashed_vertical_texture(const color& fore_color, const color& back_color) {
+    static point_collection points {{2, 0}, {2, 1}, {6, 2}, {6, 3}, {6, 4}, {6, 5}, {2, 6}, {2, 7}};
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    graphics.draw_line(pen(fore_color, 1), 2, 0, 2, 0);
-    graphics.draw_line(pen(fore_color, 1), 2, 1, 2, 1);
-    graphics.draw_line(pen(fore_color, 1), 2, 6, 2, 6);
-    graphics.draw_line(pen(fore_color, 1), 2, 7, 2, 7);
-    
-    graphics.draw_line(pen(fore_color, 1), 6, 2, 6, 2);
-    graphics.draw_line(pen(fore_color, 1), 6, 3, 6, 3);
-    graphics.draw_line(pen(fore_color, 1), 6, 4, 6, 4);
-    graphics.draw_line(pen(fore_color, 1), 6, 5, 6, 5);
+    for (auto point : points)
+      graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
   
   image create_small_confetti_texture(const color& fore_color, const color& back_color) {
+    static point_collection points {{5, 0}, {1, 1}, {4, 2}, {7, 3}, {2, 4}, {6, 5}, {3, 6}, {0, 7}};
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    graphics.draw_line(pen(fore_color, 1), 5, 0, 5, 0);
-    graphics.draw_line(pen(fore_color, 1), 1, 1, 1, 1);
-    graphics.draw_line(pen(fore_color, 1), 4, 2, 4, 2);
-    graphics.draw_line(pen(fore_color, 1), 7, 3, 7, 3);
-    graphics.draw_line(pen(fore_color, 1), 2, 4, 2, 4);
-    graphics.draw_line(pen(fore_color, 1), 6, 5, 6, 5);
-    graphics.draw_line(pen(fore_color, 1), 3, 6, 3, 6);
-    graphics.draw_line(pen(fore_color, 1), 0, 7, 0, 7);
+    for (auto point : points)
+      graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
   
   image create_large_confetti_texture(const color& fore_color, const color& back_color) {
+    static point_collection points {{2, 0}, {3, 0}, {5, 0}, {6, 0}, {2, 1}, {3, 1}, {6, 2}, {7, 2}, {1, 3}, {2, 3}, {6, 3}, {7, 3}, {1, 4}, {2, 4}, {4, 4}, {5, 4}, {4, 5}, {5, 5}, {0, 6}, {1, 6}, {0, 7}, {1, 7}, {5, 7}, {6, 7}};
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    graphics.draw_line(pen(fore_color, 1), 2, 0, 2, 0);
-    graphics.draw_line(pen(fore_color, 1), 3, 0, 3, 0);
-    graphics.draw_line(pen(fore_color, 1), 5, 0, 5, 0);
-    graphics.draw_line(pen(fore_color, 1), 6, 0, 6, 0);
-    graphics.draw_line(pen(fore_color, 1), 2, 1, 2, 1);
-    graphics.draw_line(pen(fore_color, 1), 3, 1, 3, 1);
-    graphics.draw_line(pen(fore_color, 1), 6, 2, 6, 2);
-    graphics.draw_line(pen(fore_color, 1), 7, 2, 7, 2);
-    graphics.draw_line(pen(fore_color, 1), 1, 3, 1, 3);
-    graphics.draw_line(pen(fore_color, 1), 2, 3, 2, 3);
-    graphics.draw_line(pen(fore_color, 1), 6, 3, 6, 3);
-    graphics.draw_line(pen(fore_color, 1), 7, 3, 7, 3);
-    graphics.draw_line(pen(fore_color, 1), 1, 4, 1, 4);
-    graphics.draw_line(pen(fore_color, 1), 2, 4, 2, 4);
-    graphics.draw_line(pen(fore_color, 1), 4, 4, 4, 4);
-    graphics.draw_line(pen(fore_color, 1), 5, 4, 5, 4);
-    graphics.draw_line(pen(fore_color, 1), 4, 4, 4, 4);
-    graphics.draw_line(pen(fore_color, 1), 5, 4, 5, 4);
-    graphics.draw_line(pen(fore_color, 1), 4, 5, 4, 5);
-    graphics.draw_line(pen(fore_color, 1), 5, 5, 5, 5);
-    graphics.draw_line(pen(fore_color, 1), 0, 6, 0, 6);
-    graphics.draw_line(pen(fore_color, 1), 1, 6, 1, 6);
-    graphics.draw_line(pen(fore_color, 1), 0, 7, 0, 7);
-    graphics.draw_line(pen(fore_color, 1), 1, 7, 1, 7);
-    graphics.draw_line(pen(fore_color, 1), 5, 7, 5, 7);
-    graphics.draw_line(pen(fore_color, 1), 6, 7, 6, 7);
+    for (auto point : points)
+      graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
   
