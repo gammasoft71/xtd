@@ -350,7 +350,7 @@ namespace {
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
     for (auto point : points)
-      graphics.draw_line(pen(fore_color, 1), point, point);
+      graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
   
@@ -360,7 +360,7 @@ namespace {
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
     for (auto point : points)
-      graphics.draw_line(pen(fore_color, 1), point, point);
+      graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
 
@@ -370,7 +370,7 @@ namespace {
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
     for (auto point : points)
-      graphics.draw_line(pen(fore_color, 1), point, point);
+      graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
 
@@ -380,7 +380,7 @@ namespace {
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
     for (auto point : points)
-      graphics.draw_line(pen(fore_color, 1), point, point);
+      graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
 
@@ -390,7 +390,20 @@ namespace {
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
     for (auto point : points)
-      graphics.draw_line(pen(fore_color, 1), point, point);
+      graphics.draw_point(pen(fore_color, 1), point);
+    return bitmap;
+  }
+
+  image create_plaid_texture(const color& fore_color, const color& back_color) {
+    static point_collection points {{2, 0}, {3, 0}, {4, 0}, {5, 0}, {2, 1}, {3, 1}, {4, 1}, {5, 1}, {2, 2}, {3, 2}, {4, 2}, {5, 2}, {2, 3}, {3, 3}, {4, 3}, {5, 3}};
+    auto bitmap = drawing::bitmap(8, 8);
+    auto graphics = drawing::graphics::from_image(bitmap);
+    graphics.clear(back_color);
+    for (auto point : points)
+      graphics.draw_point(pen(fore_color, 1), point);
+    for (int32_t y = 4, index = 0; y < 8; y++, index++)
+      for (int32_t x = 0; x < 8; x++, index++)
+        if (index % 2 == 0) graphics.draw_point(pen(fore_color, 1), x, y);
     return bitmap;
   }
 }
@@ -412,6 +425,7 @@ hatch_brush::hatch_brush(xtd::drawing::drawing2d::hatch_style hatch_style, const
 void hatch_brush::recreate_handle() {
   static std::map<xtd::drawing::drawing2d::hatch_style, delegate<image(const color&, const color&)>> textures {{hatch_style::horizontal, {create_horizontal_texture}}, {hatch_style::vertical, {create_vertical_texture}}, {hatch_style::forward_diagonal, {create_forward_diagonal_texture}}, {hatch_style::backward_diagonal, {create_backward_diagonal_texture}}, {hatch_style::cross, {create_cross_texture}}, {hatch_style::diagonal_cross, {create_diagonal_cross_texture}}, {hatch_style::percent_05, {create_percent_05_texture}}, {hatch_style::percent_10, {create_percent_10_texture}}, {hatch_style::percent_20, {create_percent_20_texture}}, {hatch_style::percent_25, {create_percent_25_texture}}, {hatch_style::percent_30, {create_percent_30_texture}}, {hatch_style::percent_40, {create_percent_40_texture}}, {hatch_style::percent_50, {create_percent_50_texture}}, {hatch_style::percent_60, {create_percent_60_texture}}, {hatch_style::percent_70, {create_percent_70_texture}}, {hatch_style::percent_75, {create_percent_75_texture}}, {hatch_style::percent_80, {create_percent_80_texture}}, {hatch_style::percent_90, {create_percent_90_texture}}, {hatch_style::light_downward_diagonal, {create_light_downward_diagonal_texture}}, {hatch_style::light_upward_diagonal, {create_light_upward_diagonal_texture}}, {hatch_style::dark_downward_diagonal, {create_dark_downward_diagonal_texture}}, {hatch_style::dark_upward_diagonal, {create_dark_upward_diagonal_texture}}, {hatch_style::wide_downward_diagonal, {create_wide_downward_diagonal_texture}}, {hatch_style::wide_upward_diagonal, {create_wide_upward_diagonal_texture}}, {hatch_style::light_horizontal, {create_light_horizontal_texture}}, {hatch_style::light_vertical, {create_light_vertical_texture}}, {hatch_style::narrow_horizontal, {create_narrow_horizontal_texture}}, {hatch_style::narrow_vertical, {create_narrow_vertical_texture}}, {hatch_style::dark_horizontal, {create_dark_horizontal_texture}}, {hatch_style::dark_vertical, {create_dark_vertical_texture}}, {hatch_style::dashed_downward_diagonal, {create_dashed_downward_diagonal_texture}}, {hatch_style::dashed_upward_diagonal, {create_dashed_upward_diagonal_texture}}, {hatch_style::dashed_horizontal, {create_dashed_horizontal_texture}}, {hatch_style::dashed_vertical, {create_dashed_vertical_texture}}, {hatch_style::small_confetti, {create_small_confetti_texture}}, {hatch_style::large_confetti, {create_large_confetti_texture}}, {hatch_style::zig_zag, {create_zig_zag_texture}}, {hatch_style::wave, {create_wave_texture}}, {hatch_style::diagonal_brick, {create_diagonal_brick_texture}}, {hatch_style::horizontal_brick, {create_horizontal_brick_texture}},
     {hatch_style::weave, {create_weave_texture}},
+    {hatch_style::plaid, {create_plaid_texture}},
   };
   auto it = textures.find(data_->hatch_style_);
   native::brush::texture(brush::data_->handle_, (it != textures.end() ? it->second(data_->fore_color_, data_->back_color_) : create_empty_texture(data_->fore_color_, data_->back_color_)).handle());
