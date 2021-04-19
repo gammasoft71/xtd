@@ -23,8 +23,8 @@ namespace examples {
       auto gradient_horizontal_brush = linear_gradient_brush(drawing::rectangle(230, 10, 100, 100), color::green, color::white, linear_gradient_mode::horizontal);
       e.graphics().fill_rectangle(gradient_horizontal_brush, 230, 10, 100, 100);
 
-      auto hatch_cross_brush = hatch_brush(hatch_style::cross, color::blue, color::white);
-      e.graphics().fill_rectangle(hatch_cross_brush, 10, 120, 100, 100);
+      auto hatch_diagonal_cross_brush = hatch_brush(hatch_style::dark_vertical, color::blue, color::white);
+      e.graphics().fill_rectangle(hatch_diagonal_cross_brush, 10, 120, 100, 100);
       
       auto texture_circle_brush = texture_brush(create_circle_brush_image(color::yellow));
       e.graphics().fill_rectangle(texture_circle_brush, 120, 120, 100, 100);
