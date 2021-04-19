@@ -8,6 +8,8 @@ using namespace xtd::drawing;
 using namespace xtd::drawing::drawing2d;
 
 namespace {
+  using point_collection = std::vector<xtd::drawing::point>;
+  
   image create_empty_texture(const color& fore_color, const color& back_color) {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
@@ -16,309 +18,131 @@ namespace {
   }
   
   image create_horizontal_texture(const color& fore_color, const color& back_color) {
+    static point_collection points {{0, 4}, {1, 4}, {2, 4}, {3, 4}, {4, 4}, {5, 4}, {6, 4}, {7, 4}};
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    graphics.draw_line(pen(fore_color, 1), 0, 4, 0, 4);
-    graphics.draw_line(pen(fore_color, 1), 1, 4, 1, 4);
-    graphics.draw_line(pen(fore_color, 1), 2, 4, 2, 4);
-    graphics.draw_line(pen(fore_color, 1), 3, 4, 3, 4);
-    graphics.draw_line(pen(fore_color, 1), 4, 4, 4, 4);
-    graphics.draw_line(pen(fore_color, 1), 5, 4, 5, 4);
-    graphics.draw_line(pen(fore_color, 1), 6, 4, 6, 4);
-    graphics.draw_line(pen(fore_color, 1), 7, 4, 7, 4);
+    for (auto point : points)
+      graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
 
   image create_vertical_texture(const color& fore_color, const color& back_color) {
+    static point_collection points {{2, 0}, {2, 1}, {2, 2}, {2, 3}, {2, 4}, {2, 5}, {2, 6}, {2, 7}};
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    graphics.draw_line(pen(fore_color, 1), 2, 0, 2, 0);
-    graphics.draw_line(pen(fore_color, 1), 2, 1, 2, 1);
-    graphics.draw_line(pen(fore_color, 1), 2, 2, 2, 2);
-    graphics.draw_line(pen(fore_color, 1), 2, 3, 2, 3);
-    graphics.draw_line(pen(fore_color, 1), 2, 4, 2, 4);
-    graphics.draw_line(pen(fore_color, 1), 2, 5, 2, 5);
-    graphics.draw_line(pen(fore_color, 1), 2, 6, 2, 6);
-    graphics.draw_line(pen(fore_color, 1), 2, 7, 2, 7);
+    for (auto point : points)
+      graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
 
   image create_forward_diagonal_texture(const color& fore_color, const color& back_color) {
+    static point_collection antialiasing_points {{5, 0}, {7, 0}, {0, 1}, {6, 1}, {1, 2}, {7, 2}, {0, 3}, {2, 3}, {1, 4}, {3, 4}, {2, 5}, {4, 5}, {3, 6}, {5, 6}, {4, 7}, {6, 7}};
+    static point_collection points {{6, 0}, {7, 1}, {0, 2}, {1, 3}, {2, 4}, {3, 5}, {4, 6}, {5, 7}};
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 5, 0, 5, 0);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 7, 0, 7, 0);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 0, 1, 0, 1);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 6, 1, 6, 1);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 1, 2, 1, 2);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 7, 2, 7, 2);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 0, 3, 0, 3);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 2, 3, 2, 3);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 1, 4, 1, 4);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 3, 4, 3, 4);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 2, 5, 2, 5);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 4, 5, 4, 5);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 3, 6, 3, 6);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 5, 6, 5, 6);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 4, 7, 4, 7);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 6, 7, 6, 7);
-
-    graphics.draw_line(pen(fore_color, 1), 6, 0, 6, 0);
-    graphics.draw_line(pen(fore_color, 1), 7, 1, 7, 1);
-    graphics.draw_line(pen(fore_color, 1), 0, 2, 0, 2);
-    graphics.draw_line(pen(fore_color, 1), 1, 3, 1, 3);
-    graphics.draw_line(pen(fore_color, 1), 2, 4, 2, 4);
-    graphics.draw_line(pen(fore_color, 1), 3, 5, 3, 5);
-    graphics.draw_line(pen(fore_color, 1), 4, 6, 4, 6);
-    graphics.draw_line(pen(fore_color, 1), 5, 7, 5, 7);
-
+    for (auto point : antialiasing_points)
+      graphics.draw_point(pen(color::from_argb(64, fore_color), 1), point);
+    for (auto point : points)
+      graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
 
   image create_backward_diagonal_texture(const color& fore_color, const color& back_color) {
+    static point_collection antialiasing_points {{4, 0}, {6, 0}, {3, 1}, {5, 1}, {2, 2}, {4, 2}, {1, 3}, {3, 3}, {0, 4}, {2, 4}, {7, 5}, {1, 5}, {6, 6}, {0, 6}, {5, 7}, {7, 7}};
+    static point_collection points {{5, 0}, {4, 1}, {3, 2}, {2, 3}, {1, 4}, {0, 5}, {7, 6}, {6, 7}};
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 4, 0, 4, 0);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 6, 0, 6, 0);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 3, 1, 3, 1);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 5, 1, 5, 1);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 2, 2, 2, 2);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 4, 2, 4, 2);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 1, 3, 1, 3);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 3, 3, 3, 3);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 0, 4, 0, 4);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 2, 4, 2, 4);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 7, 5, 7, 5);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 1, 5, 1, 5);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 6, 6, 6, 6);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 0, 6, 0, 6);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 5, 7, 5, 7);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 7, 7, 7, 7);
-
-    graphics.draw_line(pen(fore_color, 1), 5, 0, 5, 0);
-    graphics.draw_line(pen(fore_color, 1), 4, 1, 4, 1);
-    graphics.draw_line(pen(fore_color, 1), 3, 2, 3, 2);
-    graphics.draw_line(pen(fore_color, 1), 2, 3, 2, 3);
-    graphics.draw_line(pen(fore_color, 1), 1, 4, 1, 4);
-    graphics.draw_line(pen(fore_color, 1), 0, 5, 0, 5);
-    graphics.draw_line(pen(fore_color, 1), 7, 6, 7, 6);
-    graphics.draw_line(pen(fore_color, 1), 6, 7, 6, 7);
-
+    for (auto point : antialiasing_points)
+      graphics.draw_point(pen(color::from_argb(64, fore_color), 1), point);
+    for (auto point : points)
+      graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
 
   image create_cross_texture(const color& fore_color, const color& back_color) {
+    static point_collection points {{0, 4}, {1, 4}, {2, 4}, {3, 4}, {4, 4}, {5, 4}, {6, 4}, {7, 4}, {2, 0}, {2, 1}, {2, 2}, {2, 3}, {2, 5}, {2, 6}, {2, 7}};
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    graphics.draw_line(pen(fore_color, 1), 0, 4, 0, 4);
-    graphics.draw_line(pen(fore_color, 1), 1, 4, 1, 4);
-    graphics.draw_line(pen(fore_color, 1), 2, 4, 2, 4);
-    graphics.draw_line(pen(fore_color, 1), 3, 4, 3, 4);
-    graphics.draw_line(pen(fore_color, 1), 4, 4, 4, 4);
-    graphics.draw_line(pen(fore_color, 1), 5, 4, 5, 4);
-    graphics.draw_line(pen(fore_color, 1), 6, 4, 6, 4);
-    graphics.draw_line(pen(fore_color, 1), 7, 4, 7, 4);
-    graphics.draw_line(pen(fore_color, 1), 2, 0, 2, 0);
-    graphics.draw_line(pen(fore_color, 1), 2, 1, 2, 1);
-    graphics.draw_line(pen(fore_color, 1), 2, 2, 2, 2);
-    graphics.draw_line(pen(fore_color, 1), 2, 3, 2, 3);
-    graphics.draw_line(pen(fore_color, 1), 2, 4, 2, 4);
-    graphics.draw_line(pen(fore_color, 1), 2, 5, 2, 5);
-    graphics.draw_line(pen(fore_color, 1), 2, 6, 2, 6);
-    graphics.draw_line(pen(fore_color, 1), 2, 7, 2, 7);
+    for (auto point : points)
+      graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
 
   image create_diagonal_cross_texture(const color& fore_color, const color& back_color) {
+    static point_collection antialiasing_points {{5, 0}, {7, 0}, {0, 1}, {6, 1}, {1, 2}, {7, 2}, {0, 3}, {2, 3}, {1, 4}, {3, 4}, {2, 5}, {4, 5}, {3, 6}, {5, 6}, {4, 7}, {6, 7}, {4, 0}, {6, 0}, {3, 1}, {5, 1}, {2, 2}, {4, 2}, {1, 3}, {3, 3}, {0, 4}, {2, 4}, {7, 5}, {1, 5}, {6, 6}, {0, 6}, {5, 7}, {7, 7}};
+    static point_collection points {{6, 0}, {7, 1}, {0, 2}, {1, 3}, {2, 4}, {3, 5}, {4, 6}, {5, 7}, {5, 0}, {4, 1}, {3, 2}, {2, 3}, {1, 4}, {0, 5}, {7, 6}, {6, 7}};
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 5, 0, 5, 0);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 7, 0, 7, 0);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 0, 1, 0, 1);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 6, 1, 6, 1);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 1, 2, 1, 2);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 7, 2, 7, 2);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 0, 3, 0, 3);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 2, 3, 2, 3);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 1, 4, 1, 4);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 3, 4, 3, 4);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 2, 5, 2, 5);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 4, 5, 4, 5);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 3, 6, 3, 6);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 5, 6, 5, 6);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 4, 7, 4, 7);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 6, 7, 6, 7);
-    
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 4, 0, 4, 0);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 6, 0, 6, 0);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 3, 1, 3, 1);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 5, 1, 5, 1);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 2, 2, 2, 2);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 4, 2, 4, 2);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 1, 3, 1, 3);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 3, 3, 3, 3);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 0, 4, 0, 4);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 2, 4, 2, 4);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 7, 5, 7, 5);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 1, 5, 1, 5);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 6, 6, 6, 6);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 0, 6, 0, 6);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 5, 7, 5, 7);
-    graphics.draw_line(pen(color::from_argb(64, fore_color), 1), 7, 7, 7, 7);
-
-    graphics.draw_line(pen(fore_color, 1), 6, 0, 6, 0);
-    graphics.draw_line(pen(fore_color, 1), 7, 1, 7, 1);
-    graphics.draw_line(pen(fore_color, 1), 0, 2, 0, 2);
-    graphics.draw_line(pen(fore_color, 1), 1, 3, 1, 3);
-    graphics.draw_line(pen(fore_color, 1), 2, 4, 2, 4);
-    graphics.draw_line(pen(fore_color, 1), 3, 5, 3, 5);
-    graphics.draw_line(pen(fore_color, 1), 4, 6, 4, 6);
-    graphics.draw_line(pen(fore_color, 1), 5, 7, 5, 7);
-    
-    graphics.draw_line(pen(fore_color, 1), 5, 0, 5, 0);
-    graphics.draw_line(pen(fore_color, 1), 4, 1, 4, 1);
-    graphics.draw_line(pen(fore_color, 1), 3, 2, 3, 2);
-    graphics.draw_line(pen(fore_color, 1), 2, 3, 2, 3);
-    graphics.draw_line(pen(fore_color, 1), 1, 4, 1, 4);
-    graphics.draw_line(pen(fore_color, 1), 0, 5, 0, 5);
-    graphics.draw_line(pen(fore_color, 1), 7, 6, 7, 6);
-    graphics.draw_line(pen(fore_color, 1), 6, 7, 6, 7);
-
+    for (auto point : antialiasing_points)
+      graphics.draw_point(pen(color::from_argb(64, fore_color), 1), point);
+    for (auto point : points)
+      graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
 
   image create_percent_05_texture(const color& fore_color, const color& back_color) {
+    static point_collection points {{6, 0}, {2, 4}};
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    graphics.draw_line(pen(fore_color, 1), 6, 0, 6, 0);
-    graphics.draw_line(pen(fore_color, 1), 2, 4, 2, 4);
+    for (auto point : points)
+      graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
 
   image create_percent_10_texture(const color& fore_color, const color& back_color) {
+    static point_collection points {{2, 0}, {6, 2}, {2, 4}, {6, 6}};
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    graphics.draw_line(pen(fore_color, 1), 2, 0, 2, 0);
-    graphics.draw_line(pen(fore_color, 1), 6, 2, 6, 2);
-    graphics.draw_line(pen(fore_color, 1), 2, 4, 2, 4);
-    graphics.draw_line(pen(fore_color, 1), 6, 6, 6, 6);
+    for (auto point : points)
+      graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
 
   image create_percent_20_texture(const color& fore_color, const color& back_color) {
+    static point_collection points {{2, 0}, {6, 0}, {0, 2}, {4, 2}, {2, 4}, {6, 4}, {0, 6}, {4, 6}};
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    graphics.draw_line(pen(fore_color, 1), 2, 0, 2, 0);
-    graphics.draw_line(pen(fore_color, 1), 6, 0, 6, 0);
-    graphics.draw_line(pen(fore_color, 1), 0, 2, 0, 2);
-    graphics.draw_line(pen(fore_color, 1), 4, 2, 4, 2);
-    graphics.draw_line(pen(fore_color, 1), 2, 4, 2, 4);
-    graphics.draw_line(pen(fore_color, 1), 6, 4, 6, 4);
-    graphics.draw_line(pen(fore_color, 1), 0, 6, 0, 6);
-    graphics.draw_line(pen(fore_color, 1), 4, 6, 4, 6);
+    for (auto point : points)
+      graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
 
   image create_percent_25_texture(const color& fore_color, const color& back_color) {
+    static point_collection points {{2, 0}, {6, 0}, {0, 1}, {4, 1}, {2, 2}, {6, 2}, {0, 3}, {4, 3}, {2, 4}, {6, 4}, {0, 5}, {4, 5}, {2, 6}, {6, 6}, {0, 7}, {4, 7}};
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    graphics.draw_line(pen(fore_color, 1), 2, 0, 2, 0);
-    graphics.draw_line(pen(fore_color, 1), 6, 0, 6, 0);
-    graphics.draw_line(pen(fore_color, 1), 0, 1, 0, 1);
-    graphics.draw_line(pen(fore_color, 1), 4, 1, 4, 1);
-    graphics.draw_line(pen(fore_color, 1), 2, 2, 2, 2);
-    graphics.draw_line(pen(fore_color, 1), 6, 2, 6, 2);
-    graphics.draw_line(pen(fore_color, 1), 0, 3, 0, 3);
-    graphics.draw_line(pen(fore_color, 1), 4, 3, 4, 3);
-    graphics.draw_line(pen(fore_color, 1), 2, 4, 2, 4);
-    graphics.draw_line(pen(fore_color, 1), 6, 4, 6, 4);
-    graphics.draw_line(pen(fore_color, 1), 0, 5, 0, 5);
-    graphics.draw_line(pen(fore_color, 1), 4, 5, 4, 5);
-    graphics.draw_line(pen(fore_color, 1), 2, 6, 2, 6);
-    graphics.draw_line(pen(fore_color, 1), 6, 6, 6, 6);
-    graphics.draw_line(pen(fore_color, 1), 0, 7, 0, 7);
-    graphics.draw_line(pen(fore_color, 1), 4, 7, 4, 7);
+    for (auto point : points)
+      graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
 
   image create_percent_30_texture(const color& fore_color, const color& back_color) {
+    static point_collection points {{0, 0}, {2, 0}, {4, 0}, {6, 0}, {3, 1}, {7, 1}, {0, 2}, {2, 2}, {4, 2}, {6, 2}, {1, 3}, {5, 3}, {0, 4}, {2, 4}, {4, 4}, {6, 4}, {3, 5}, {7, 5}, {0, 6}, {2, 6}, {4, 6}, {6, 6}, {1, 7}, {5, 7}};
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    graphics.draw_line(pen(fore_color, 1), 0, 0, 0, 0);
-    graphics.draw_line(pen(fore_color, 1), 2, 0, 2, 0);
-    graphics.draw_line(pen(fore_color, 1), 4, 0, 4, 0);
-    graphics.draw_line(pen(fore_color, 1), 6, 0, 6, 0);
-    graphics.draw_line(pen(fore_color, 1), 3, 1, 3, 1);
-    graphics.draw_line(pen(fore_color, 1), 7, 1, 7, 1);
-    graphics.draw_line(pen(fore_color, 1), 0, 2, 0, 2);
-    graphics.draw_line(pen(fore_color, 1), 2, 2, 2, 2);
-    graphics.draw_line(pen(fore_color, 1), 4, 2, 4, 2);
-    graphics.draw_line(pen(fore_color, 1), 6, 2, 6, 2);
-    graphics.draw_line(pen(fore_color, 1), 1, 3, 1, 3);
-    graphics.draw_line(pen(fore_color, 1), 5, 3, 5, 3);
-    graphics.draw_line(pen(fore_color, 1), 0, 4, 0, 4);
-    graphics.draw_line(pen(fore_color, 1), 2, 4, 2, 4);
-    graphics.draw_line(pen(fore_color, 1), 4, 4, 4, 4);
-    graphics.draw_line(pen(fore_color, 1), 6, 4, 6, 4);
-    graphics.draw_line(pen(fore_color, 1), 3, 5, 3, 5);
-    graphics.draw_line(pen(fore_color, 1), 7, 5, 7, 5);
-    graphics.draw_line(pen(fore_color, 1), 0, 6, 0, 6);
-    graphics.draw_line(pen(fore_color, 1), 2, 6, 2, 6);
-    graphics.draw_line(pen(fore_color, 1), 4, 6, 4, 6);
-    graphics.draw_line(pen(fore_color, 1), 6, 6, 6, 6);
-    graphics.draw_line(pen(fore_color, 1), 1, 7, 1, 7);
-    graphics.draw_line(pen(fore_color, 1), 5, 7, 5, 7);
+    for (auto point : points)
+      graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
   
   image create_percent_40_texture(const color& fore_color, const color& back_color) {
+    static point_collection points {{0, 0}, {2, 0}, {4, 0}, {6, 0}, {1, 1}, {3, 1}, {5, 1}, {7, 1}, {0, 2}, {2, 2}, {4, 2}, {6, 2}, {1, 3}, {5, 3}, {7, 3}, {0, 4}, {2, 4}, {4, 4}, {6, 4}, {1, 5}, {3, 5}, {5, 5}, {7, 5}, {0, 6}, {2, 6}, {4, 6}, {6, 6}, {1, 7}, {3, 7}, {5, 7}};
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    graphics.draw_line(pen(fore_color, 1), 0, 0, 0, 0);
-    graphics.draw_line(pen(fore_color, 1), 2, 0, 2, 0);
-    graphics.draw_line(pen(fore_color, 1), 4, 0, 4, 0);
-    graphics.draw_line(pen(fore_color, 1), 6, 0, 6, 0);
-    graphics.draw_line(pen(fore_color, 1), 1, 1, 1, 1);
-    graphics.draw_line(pen(fore_color, 1), 3, 1, 3, 1);
-    graphics.draw_line(pen(fore_color, 1), 5, 1, 5, 1);
-    graphics.draw_line(pen(fore_color, 1), 7, 1, 7, 1);
-    graphics.draw_line(pen(fore_color, 1), 0, 2, 0, 2);
-    graphics.draw_line(pen(fore_color, 1), 2, 2, 2, 2);
-    graphics.draw_line(pen(fore_color, 1), 4, 2, 4, 2);
-    graphics.draw_line(pen(fore_color, 1), 6, 2, 6, 2);
-    graphics.draw_line(pen(fore_color, 1), 1, 3, 1, 3);
-    graphics.draw_line(pen(fore_color, 1), 5, 3, 5, 3);
-    graphics.draw_line(pen(fore_color, 1), 7, 3, 7, 3);
-    graphics.draw_line(pen(fore_color, 1), 0, 4, 0, 4);
-    graphics.draw_line(pen(fore_color, 1), 2, 4, 2, 4);
-    graphics.draw_line(pen(fore_color, 1), 4, 4, 4, 4);
-    graphics.draw_line(pen(fore_color, 1), 6, 4, 6, 4);
-    graphics.draw_line(pen(fore_color, 1), 1, 5, 1, 5);
-    graphics.draw_line(pen(fore_color, 1), 3, 5, 3, 5);
-    graphics.draw_line(pen(fore_color, 1), 5, 5, 5, 5);
-    graphics.draw_line(pen(fore_color, 1), 7, 5, 7, 5);
-    graphics.draw_line(pen(fore_color, 1), 0, 6, 0, 6);
-    graphics.draw_line(pen(fore_color, 1), 2, 6, 2, 6);
-    graphics.draw_line(pen(fore_color, 1), 4, 6, 4, 6);
-    graphics.draw_line(pen(fore_color, 1), 6, 6, 6, 6);
-    graphics.draw_line(pen(fore_color, 1), 1, 7, 1, 7);
-    graphics.draw_line(pen(fore_color, 1), 3, 7, 3, 7);
-    graphics.draw_line(pen(fore_color, 1), 5, 7, 5, 7);
+    for (auto point : points)
+      graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
   
@@ -326,38 +150,9 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    graphics.draw_line(pen(fore_color, 1), 0, 0, 0, 0);
-    graphics.draw_line(pen(fore_color, 1), 2, 0, 2, 0);
-    graphics.draw_line(pen(fore_color, 1), 4, 0, 4, 0);
-    graphics.draw_line(pen(fore_color, 1), 6, 0, 6, 0);
-    graphics.draw_line(pen(fore_color, 1), 1, 1, 1, 1);
-    graphics.draw_line(pen(fore_color, 1), 3, 1, 3, 1);
-    graphics.draw_line(pen(fore_color, 1), 5, 1, 5, 1);
-    graphics.draw_line(pen(fore_color, 1), 7, 1, 7, 1);
-    graphics.draw_line(pen(fore_color, 1), 0, 2, 0, 2);
-    graphics.draw_line(pen(fore_color, 1), 2, 2, 2, 2);
-    graphics.draw_line(pen(fore_color, 1), 4, 2, 4, 2);
-    graphics.draw_line(pen(fore_color, 1), 6, 2, 6, 2);
-    graphics.draw_line(pen(fore_color, 1), 1, 3, 1, 3);
-    graphics.draw_line(pen(fore_color, 1), 3, 3, 3, 3);
-    graphics.draw_line(pen(fore_color, 1), 5, 3, 5, 3);
-    graphics.draw_line(pen(fore_color, 1), 7, 3, 7, 3);
-    graphics.draw_line(pen(fore_color, 1), 0, 4, 0, 4);
-    graphics.draw_line(pen(fore_color, 1), 2, 4, 2, 4);
-    graphics.draw_line(pen(fore_color, 1), 4, 4, 4, 4);
-    graphics.draw_line(pen(fore_color, 1), 6, 4, 6, 4);
-    graphics.draw_line(pen(fore_color, 1), 1, 5, 1, 5);
-    graphics.draw_line(pen(fore_color, 1), 3, 5, 3, 5);
-    graphics.draw_line(pen(fore_color, 1), 5, 5, 5, 5);
-    graphics.draw_line(pen(fore_color, 1), 7, 5, 7, 5);
-    graphics.draw_line(pen(fore_color, 1), 0, 6, 0, 6);
-    graphics.draw_line(pen(fore_color, 1), 2, 6, 2, 6);
-    graphics.draw_line(pen(fore_color, 1), 4, 6, 4, 6);
-    graphics.draw_line(pen(fore_color, 1), 6, 6, 6, 6);
-    graphics.draw_line(pen(fore_color, 1), 1, 7, 1, 7);
-    graphics.draw_line(pen(fore_color, 1), 3, 7, 3, 7);
-    graphics.draw_line(pen(fore_color, 1), 5, 7, 5, 7);
-    graphics.draw_line(pen(fore_color, 1), 7, 7, 7, 7);
+    for (int32_t y = 0, index = 0; y < 8; y++, index++)
+      for (int32_t x = 0; x < 8; x++, index++)
+        if (index % 2 == 0) graphics.draw_point(pen(fore_color, 1), x, y);
     return bitmap;
   }
 
@@ -838,6 +633,39 @@ namespace {
     graphics.draw_line(pen(fore_color, 1), 6, 7, 6, 7);
     return bitmap;
   }
+  
+  image create_zig_zag_texture(const color& fore_color, const color& back_color) {
+    auto bitmap = drawing::bitmap(8, 8);
+    auto graphics = drawing::graphics::from_image(bitmap);
+    graphics.clear(back_color);
+    graphics.draw_line(pen(fore_color, 1), 1, 0, 1, 0);
+    graphics.draw_line(pen(fore_color, 1), 2, 0, 2, 0);
+    graphics.draw_line(pen(fore_color, 1), 0, 1, 0, 1);
+    graphics.draw_line(pen(fore_color, 1), 3, 1, 3, 1);
+    graphics.draw_line(pen(fore_color, 1), 4, 2, 4, 2);
+    graphics.draw_line(pen(fore_color, 1), 7, 2, 7, 2);
+    graphics.draw_line(pen(fore_color, 1), 5, 3, 5, 3);
+    graphics.draw_line(pen(fore_color, 1), 6, 3, 6, 3);
+    graphics.draw_line(pen(fore_color, 1), 1, 4, 1, 4);
+    graphics.draw_line(pen(fore_color, 1), 2, 4, 2, 4);
+    graphics.draw_line(pen(fore_color, 1), 0, 5, 0, 5);
+    graphics.draw_line(pen(fore_color, 1), 3, 5, 3, 5);
+    graphics.draw_line(pen(fore_color, 1), 4, 6, 4, 6);
+    graphics.draw_line(pen(fore_color, 1), 7, 6, 7, 6);
+    graphics.draw_line(pen(fore_color, 1), 5, 7, 5, 7);
+    graphics.draw_line(pen(fore_color, 1), 6, 7, 6, 7);
+    return bitmap;
+  }
+  
+  image create_wave_texture(const color& fore_color, const color& back_color) {
+    static point_collection points {{5, 1}, {6, 1}, {1, 2}, {4, 2}, {7, 2}, {2, 3}, {3, 3}, {5, 5}, {6, 5}, {1, 6}, {4, 6}, {7, 6}, {2, 7}, {3, 7}};
+    auto bitmap = drawing::bitmap(8, 8);
+    auto graphics = drawing::graphics::from_image(bitmap);
+    graphics.clear(back_color);
+    for (auto point : points)
+      graphics.draw_line(pen(fore_color, 1), point, point);
+    return bitmap;
+  }
 }
 
 hatch_brush::hatch_brush() {
@@ -859,6 +687,8 @@ void hatch_brush::recreate_handle() {
     {hatch_style::dashed_vertical, {create_dashed_vertical_texture}},
     {hatch_style::small_confetti, {create_small_confetti_texture}},
     {hatch_style::large_confetti, {create_large_confetti_texture}},
+    {hatch_style::zig_zag, {create_zig_zag_texture}},
+    {hatch_style::wave, {create_wave_texture}},
   };
   auto it = textures.find(data_->hatch_style_);
   native::brush::texture(brush::data_->handle_, (it != textures.end() ? it->second(data_->fore_color_, data_->back_color_) : create_empty_texture(data_->fore_color_, data_->back_color_)).handle());
