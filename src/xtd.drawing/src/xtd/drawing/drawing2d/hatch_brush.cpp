@@ -728,6 +728,36 @@ namespace {
     graphics.draw_line(pen(fore_color, 1), 7, 7, 7, 7);
     return bitmap;
   }
+
+  image create_dashed_downward_diagonal_texture(const color& fore_color, const color& back_color) {
+    auto bitmap = drawing::bitmap(8, 8);
+    auto graphics = drawing::graphics::from_image(bitmap);
+    graphics.clear(back_color);
+    graphics.draw_line(pen(fore_color, 1), 0, 0, 0, 0);
+    graphics.draw_line(pen(fore_color, 1), 4, 0, 4, 0);
+    graphics.draw_line(pen(fore_color, 1), 1, 1, 1, 1);
+    graphics.draw_line(pen(fore_color, 1), 5, 1, 5, 1);
+    graphics.draw_line(pen(fore_color, 1), 2, 6, 2, 6);
+    graphics.draw_line(pen(fore_color, 1), 6, 6, 6, 6);
+    graphics.draw_line(pen(fore_color, 1), 3, 7, 3, 7);
+    graphics.draw_line(pen(fore_color, 1), 7, 7, 7, 7);
+    return bitmap;
+  }
+
+  image create_dashed_upward_diagonal_texture(const color& fore_color, const color& back_color) {
+    auto bitmap = drawing::bitmap(8, 8);
+    auto graphics = drawing::graphics::from_image(bitmap);
+    graphics.clear(back_color);
+    graphics.draw_line(pen(fore_color, 1), 3, 0, 3, 0);
+    graphics.draw_line(pen(fore_color, 1), 7, 0, 7, 0);
+    graphics.draw_line(pen(fore_color, 1), 2, 1, 2, 1);
+    graphics.draw_line(pen(fore_color, 1), 6, 1, 6, 1);
+    graphics.draw_line(pen(fore_color, 1), 1, 6, 1, 6);
+    graphics.draw_line(pen(fore_color, 1), 5, 6, 5, 6);
+    graphics.draw_line(pen(fore_color, 1), 0, 7, 0, 7);
+    graphics.draw_line(pen(fore_color, 1), 4, 7, 4, 7);
+    return bitmap;
+  }
 }
 
 hatch_brush::hatch_brush() {
@@ -776,6 +806,8 @@ void hatch_brush::recreate_handle() {
     {hatch_style::narrow_vertical, {create_narrow_vertical_texture}},
     {hatch_style::dark_horizontal, {create_dark_horizontal_texture}},
     {hatch_style::dark_vertical, {create_dark_vertical_texture}},
+    {hatch_style::dashed_downward_diagonal, {create_dashed_downward_diagonal_texture}},
+    {hatch_style::dashed_upward_diagonal, {create_dashed_upward_diagonal_texture}},
   };
   auto it = textures.find(data_->hatch_style_);
   native::brush::texture(brush::data_->handle_, (it != textures.end() ? it->second(data_->fore_color_, data_->back_color_) : create_empty_texture(data_->fore_color_, data_->back_color_)).handle());
