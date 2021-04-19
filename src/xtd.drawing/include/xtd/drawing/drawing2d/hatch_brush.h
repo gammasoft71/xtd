@@ -17,14 +17,40 @@ namespace xtd {
   namespace drawing {
     /// @brief The xtd::.drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing2d {
-      /// @brief Encapsulates a xtd::drawing::brush with a linear gradient. This class cannot be inherited.
+      /// @brief Defines a rectangular brush with a hatch style, a foreground color, and a background color. This class cannot be inherited.
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing drawing
+      /// @remarks The following illustration shows an ellipse filled with a horizontal hatch pattern.
+      /// @image html hatch1.png
+      /// @par Examples
+      /// The following code example demonstrate the use of hacth_brush class.
+      /// @include fill_rectangle.cpp
+      /// @par Windows
+      /// @image html fill_rectangle_w.png
+      /// <br>
+      /// @image html fill_rectangle_wd.png
+      /// @par macOS
+      /// @image html fill_rectangle_m.png
+      /// <br>
+      /// @image html fill_rectangle_md.png
+      /// @par Gnome
+      /// @image html fill_rectangle_g.png
+      /// <br>
+      /// @image html fill_rectangle_gd.png
       class drawing_export_ hatch_brush final : public brush {
       public:
+        /// @brief Initializes a new instance of the hatch_brush class.
         hatch_brush();
+        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::hatch_brush class with the specified xtd::drawing::drawing2d::hatch_style enumeration and foreground color.
+        /// @param hatch_style One of the xtd::drawing::drawing2d::hatch_style values that represents the pattern drawn by this xtd::drawing::drawing2d::hatch_brush.
+        /// @param fore_color The xtd::drawing::color structure that represents the color of lines drawn by this xtd::drawing::drawing2d::hatch_brush.
+        /// @remarks The background color is initialized to black.
         hatch_brush(xtd::drawing::drawing2d::hatch_style hatch_style, const xtd::drawing::color& fore_color) : hatch_brush(hatch_style, fore_color, xtd::drawing::color::black) {}
+        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::hatch_brush class with the specified xtd::drawing::drawing2d::hatch_style enumeration, foreground color and background color.
+        /// @param hatch_style One of the xtd::drawing::drawing2d::hatch_style values that represents the pattern drawn by this xtd::drawing::drawing2d::hatch_brush.
+        /// @param fore_color The xtd::drawing::color structure that represents the color of lines drawn by this xtd::drawing::drawing2d::hatch_brush.
+        /// @param back_color The xtd::drawing::color structure that represents the color of spaces between the lines drawn by this xtd::drawing::drawing2d::hatch_brush.
         hatch_brush(xtd::drawing::drawing2d::hatch_style hatch_style, const xtd::drawing::color& fore_color, const xtd::drawing::color& back_color);
 
         /// @cond
@@ -34,14 +60,17 @@ namespace xtd {
         bool operator!=(const hatch_brush& value) const {return !operator==(value);}
         /// @endcond
         
+        /// @brief Gets the color of spaces between the hatch lines drawn by this hatch_brush object.
+        /// @return A xtd::drawing::color structure that represents the background color for this hatch_brush.
+        xtd::drawing::color background_color() const {return data_->back_color_;}
+        
+        /// @brief Gets the color of hatch lines drawn by this hatch_brush object.
+        /// @return A xtd::drawing::color structure that represents the foreground color for this hatch_brush.
+        xtd::drawing::color foreground_color() const {return data_->fore_color_;}
+        
+        /// @brief Gets the hatch style of this hatch_brush object.
+        /// @return One of the xtd::drawing::drawing2d::hatch_style values that represents the pattern of this hatch_brush.
         xtd::drawing::drawing2d::hatch_style hatch_style() const {return data_->hatch_style_;}
-        hatch_brush& hatch_style(xtd::drawing::drawing2d::hatch_style hatch_style);
-        
-        xtd::drawing::color back_color() const {return data_->back_color_;}
-        hatch_brush& back_color(xtd::drawing::color back_color);
-        
-        xtd::drawing::color fore_color() const {return data_->fore_color_;}
-        hatch_brush& fore_color(xtd::drawing::color fore_color);
 
         private:
         void recreate_handle();
