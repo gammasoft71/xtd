@@ -436,6 +436,21 @@
 /// <br>
 /// @image html dot_matrix_display_gd.png
 ///
+/// @example fill_rectangle.cpp
+/// The following code example demonstrate the use of brush classes.
+/// @par Windows
+/// @image html fill_rectangle_w.png
+/// <br>
+/// @image html fill_rectangle_wd.png
+/// @par macOS
+/// @image html fill_rectangle_m.png
+/// <br>
+/// @image html fill_rectangle_md.png
+/// @par Gnome
+/// @image html fill_rectangle_g.png
+/// <br>
+/// @image html fill_rectangle_gd.png
+///
 /// @example emoticons.cpp
 /// The following code example demonstrate the use of emoticon and emoticons classes.
 /// @par Windows
