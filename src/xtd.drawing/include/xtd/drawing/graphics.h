@@ -175,7 +175,12 @@ namespace xtd {
       void draw_line(const xtd::drawing::pen& pen, const xtd::drawing::point_f& p1, const point_f& p2) {draw_line(pen, p1.x(), p1.y(), p2.x(), p2.y());}
       void draw_line(const xtd::drawing::pen& pen, int32_t x1, int32_t y1, int32_t x2, int32_t y2);
       void draw_line(const xtd::drawing::pen& pen, float x1, float y1, float x2, float y2) {draw_line(pen, static_cast<int32_t>(x1), static_cast<int32_t>(y1), static_cast<int32_t>(x2), static_cast<int32_t>(y2));}
-            
+      
+      void draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point& p) {draw_point(pen, p.x(), p.y());}
+      void draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point_f& p) {draw_point(pen, p.x(), p.y());}
+      void draw_point(const xtd::drawing::pen& pen, int32_t x, int32_t y) {draw_line(pen, x, y, x, y);}
+      void draw_point(const xtd::drawing::pen& pen, float x, float y) {draw_point(pen, static_cast<int32_t>(x), static_cast<int32_t>(y));}
+      
       void draw_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect) {draw_rectangle(pen, rect.x(), rect.y(), rect.width(), rect.height());}
       void draw_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle_f& rect) {draw_rectangle(pen, rect.x(), rect.y(), rect.width(), rect.height());}
       void draw_rectangle(const xtd::drawing::pen& pen, int32_t x, int32_t y, int32_t width, int32_t height);
