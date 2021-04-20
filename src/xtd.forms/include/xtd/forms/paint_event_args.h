@@ -36,7 +36,7 @@ namespace xtd {
       /// @endcond
 
       /// @brief Gets the rectangle in which to paint.
-      /// @return The xtd::drawing::rectangle in which to paint.urn
+      /// @return The xtd::drawing::rectangle in which to paint.
       const drawing::rectangle& clip_rectangle() const {return clip_rectangle_;}
       
       /// @brief Gets the graphics used to paint.
