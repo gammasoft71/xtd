@@ -11,6 +11,7 @@ namespace examples {
       text("Draw line example");
     }
     
+  protected:
     void on_paint(paint_event_args& e) override {
       auto solid_pen = pen(color::red, 5);
       e.graphics().draw_line(solid_pen, 10, e.clip_rectangle().height() / 7, e.clip_rectangle().width() - 20, e.clip_rectangle().height() / 7);

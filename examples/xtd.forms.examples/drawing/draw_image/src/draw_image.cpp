@@ -9,6 +9,7 @@ public:
     text("Draw image example");
   }
   
+protected:
   void on_paint(paint_event_args& e) override {
     auto image_size = std::min(e.clip_rectangle().width(), e.clip_rectangle().height());
     auto image_rect = xtd::drawing::rectangle((e.clip_rectangle().width() - image_size) / 2, (e.clip_rectangle().height() - image_size) / 2, image_size, image_size);
@@ -17,12 +18,10 @@ public:
     form::on_paint(e);
   }
   
-  static void main() {
-    application::run(form_main());
-  }
-  
 private:
   xtd::drawing::image image = system_images::from_name("system-file-manager", xtd::drawing::size {1024, 1024});
 };
 
-startup_(form_main);
+int main() {
+  application::run(form_main());
+}
