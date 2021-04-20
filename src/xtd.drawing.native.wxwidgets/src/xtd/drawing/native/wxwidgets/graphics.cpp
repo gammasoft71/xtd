@@ -134,6 +134,15 @@ void graphics::draw_line(intptr_t hdc, intptr_t pen, int32_t x1, int32_t y1, int
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
+void graphics::draw_point(intptr_t hdc, intptr_t pen, int32_t x, int32_t y) {
+  if (!hdc) return;
+  graphics_context gc(hdc);
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetBrush(*wxTRANSPARENT_BRUSH);
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetPen(*reinterpret_cast<wxPen*>(pen));
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().DrawPoint(x, y);
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
+}
+
 void graphics::draw_rectangle(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_t width, int32_t height) {
   if (!hdc) return;
   wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
