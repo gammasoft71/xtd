@@ -38,11 +38,19 @@ namespace xtd {
     namespace native {
       class control_handler;
       
+      class icontrol_wrapper {
+      public:
+        virtual ~icontrol_wrapper() {}
+        virtual void reset_handler() = 0;
+      };
+      
       template<typename control_t>
-      class control_wrapper : public control_t {
+      class control_wrapper : public control_t, public icontrol_wrapper {
       public:
        template<typename ...args_type>
         control_wrapper(control_handler* event_handler, args_type&& ...args) : control_t(args...), event_handler_(event_handler) {}
+        
+        ~control_wrapper();
 
         intptr_t def_wnd_proc(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle) {
           if (handle != 0) {
@@ -52,6 +60,8 @@ namespace xtd {
           }
           return process_result_;
         }
+        
+        void reset_handler() override {event_handler_ = nullptr;}
         
       private:
         static std::string to_string(const wxEventType& eventType) {
@@ -354,7 +364,9 @@ namespace xtd {
       class control_handler {
       public:
         control_handler() = default;
-        virtual ~control_handler() {}
+        virtual ~control_handler() {
+          if (dynamic_cast<icontrol_wrapper*>(control_)) reinterpret_cast<icontrol_wrapper*>(control_)->reset_handler();
+        }
 
         template<typename control_type, typename ...args_type>
         void create(args_type&& ...args) {
@@ -422,6 +434,8 @@ namespace xtd {
 
         wxWindow* control() const {return control_;}
         virtual wxWindow* main_control() const {return control_->GetMainWindowOfCompositeControl();}
+        
+        void reset_control() {control_ = nullptr;}
 
         virtual bool enable_send_paint_event() const {return control() == main_control();}
         
@@ -438,7 +452,13 @@ namespace xtd {
       };
       
       template<typename control_t>
+      inline control_wrapper<control_t>::~control_wrapper() {
+        if (event_handler_) event_handler_->reset_control();
+      }
+      
+      template<typename control_t>
       inline bool control_wrapper<control_t>::ProcessEvent(wxEvent& event) {
+        if (event_handler_ == nullptr) return false;
         if (static_cast<xtd::drawing::native::wx_application*>(wxTheApp)->exceptionStored) return  process_result_;
         //diagnostics::debug::write_line_if(event.GetEventType() != wxEVT_UPDATE_UI && event.GetEventType() != wxEVT_IDLE, strings::format("control_wrapper<{}>::ProcessEvent {}", strings::full_class_name<control_t>(), to_string(event)));
         if (event.GetEventType() == wxEVT_DESTROY) {
