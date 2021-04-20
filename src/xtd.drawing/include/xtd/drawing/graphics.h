@@ -178,7 +178,7 @@ namespace xtd {
       
       void draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point& p) {draw_point(pen, p.x(), p.y());}
       void draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point_f& p) {draw_point(pen, p.x(), p.y());}
-      void draw_point(const xtd::drawing::pen& pen, int32_t x, int32_t y) {draw_line(pen, x, y, x, y);}
+      void draw_point(const xtd::drawing::pen& pen, int32_t x, int32_t y) {draw_line(pen, x, y, x + 1, y);}
       void draw_point(const xtd::drawing::pen& pen, float x, float y) {draw_point(pen, static_cast<int32_t>(x), static_cast<int32_t>(y));}
       
       void draw_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect) {draw_rectangle(pen, rect.x(), rect.y(), rect.width(), rect.height());}
