@@ -75,6 +75,10 @@ void graphics::draw_line(const pen& pen, int32_t x1, int32_t y1, int32_t x2, int
   native::graphics::draw_line(data_->handle_, pen.data_->handle_, x1, y1, x2, y2);
 }
 
+void graphics::draw_point(const pen& pen, int32_t x, int32_t y) {
+  native::graphics::draw_point(data_->handle_, pen.data_->handle_, x, y);
+}
+
 void graphics::draw_rectangle(const pen& pen, int32_t x, int32_t y, int32_t width, int32_t height) {
   native::graphics::draw_rectangle(data_->handle_, pen.data_->handle_, x, y, width, height);
 }
