@@ -8,6 +8,7 @@
 #include <xtd/strings.h>
 #include "../drawing_export.h"
 #include "brush.h"
+#include "solid_brush.h"
 #include "color.h"
 #include "font.h"
 #include "pen.h"
@@ -178,8 +179,8 @@ namespace xtd {
       
       void draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point& p) {draw_point(pen, p.x(), p.y());}
       void draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point_f& p) {draw_point(pen, p.x(), p.y());}
-      void draw_point(const xtd::drawing::pen& pen, int32_t x, int32_t y);
-      void draw_point(const xtd::drawing::pen& pen, float x, float y) {draw_point(pen, static_cast<int32_t>(x), static_cast<int32_t>(y));}
+      void draw_point(const xtd::drawing::pen& pen, int32_t x, int32_t y) {draw_point(pen, static_cast<float>(x), static_cast<float>(y));}
+      void draw_point(const xtd::drawing::pen& pen, float x, float y) {fill_ellipse(solid_brush(pen.color()), x, y, pen.width(), pen.width());}
       
       void draw_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect) {draw_rectangle(pen, rect.x(), rect.y(), rect.width(), rect.height());}
       void draw_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle_f& rect) {draw_rectangle(pen, rect.x(), rect.y(), rect.width(), rect.height());}

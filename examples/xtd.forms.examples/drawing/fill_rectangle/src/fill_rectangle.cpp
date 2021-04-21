@@ -11,16 +11,6 @@ namespace examples {
     form1() {
       text("Fill rectangle example");
       client_size({340, 230});
-
-      bitmap img(8, 8);
-      graphics g = graphics::from_image(img);
-      //g.draw_rectangle(pens::red(), 0, 0, 7, 7);
-      g.draw_line(pens::red(), 0, 0, 0, 0);
-      for (int y = 0; y < img.height(); y++) {
-        for (int x = 0; x < img.width(); x++)
-          diagnostics::debug::write("{}, ", img.get_pixel(x, y));
-        diagnostics::debug::write_line();
-      }
     }
     
   protected:
@@ -45,6 +35,5 @@ namespace examples {
 }
 
 int main() {
-  debug_form df;
   application::run(examples::form1());
 }

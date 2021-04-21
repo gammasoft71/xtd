@@ -138,17 +138,6 @@ void graphics::draw_line(intptr_t hdc, intptr_t pen, int32_t x1, int32_t y1, int
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
-void graphics::draw_point(intptr_t hdc, intptr_t pen, int32_t x, int32_t y) {
-  if (!hdc) return;
-  wxPen wxpen = *reinterpret_cast<wxPen*>(pen);
-  wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
-  auto path = graphics.CreatePath();
-  path.AddEllipse(x, y, wxpen.GetWidth(), wxpen.GetWidth());
-  graphics.SetBrush(wxBrush(wxpen.GetColour()));
-  graphics.FillPath(path);
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
-}
-
 void graphics::draw_rectangle(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_t width, int32_t height) {
   if (!hdc) return;
   wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
