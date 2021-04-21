@@ -66,9 +66,9 @@ void graphics::clear(intptr_t hdc, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
   if (hdc == 0) return;
   wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   auto path = graphics.CreatePath();
-  double width = 0.0, heigth = 0.0;
-  graphics.GetSize(&width, &heigth);
-  path.AddRectangle(0, 0, width, heigth);
+  double width = 0.0, height = 0.0;
+  graphics.GetSize(&width, &height);
+  path.AddRectangle(0, 0, width, height);
   graphics.SetBrush(wxBrush({r, g, b, a}));
   graphics.FillPath(path);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
@@ -83,19 +83,21 @@ void graphics::destroy(intptr_t hdc) {
 void graphics::draw_arc(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle) {
   if (!hdc) return;
   graphics_context gc(hdc);
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetBrush(*wxTRANSPARENT_BRUSH);
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetPen(*reinterpret_cast<wxPen*>(pen));
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().DrawEllipticArc(x, y, width, height, start_angle, start_angle + sweep_angle);
+  wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc();
+  dc.SetBrush(*wxTRANSPARENT_BRUSH);
+  dc.SetPen(*reinterpret_cast<wxPen*>(pen));
+  dc.DrawEllipticArc(x, y, width, height, start_angle, start_angle + sweep_angle);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
 void graphics::draw_bezier(intptr_t hdc, intptr_t pen, int32_t x1, int32_t y1, int32_t x2, int32_t y2, int32_t x3, int32_t y3, int32_t x4, int32_t y4) {
   if (!hdc) return;
   graphics_context gc(hdc);
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetBrush(*wxTRANSPARENT_BRUSH);
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetPen(*reinterpret_cast<wxPen*>(pen));
+  wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc();
+  dc.SetBrush(*wxTRANSPARENT_BRUSH);
+  dc.SetPen(*reinterpret_cast<wxPen*>(pen));
   std::vector<wxPoint> points {wxPoint(x1, y1), wxPoint(x2, y2), wxPoint(x3, y3), wxPoint(x4, y4)};
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().DrawSpline(4, points.data());
+  dc.DrawSpline(4, points.data());
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
@@ -111,15 +113,17 @@ void graphics::draw_ellipse(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, in
 
 void graphics::draw_image(intptr_t hdc, intptr_t image, int32_t x, int32_t y) {
   if (!hdc) return;
+  wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   wxBitmap bitmap = wxBitmap(*reinterpret_cast<wxImage*>(image));
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics().DrawBitmap(bitmap, x, y, bitmap.GetWidth(),bitmap.GetHeight());
+  graphics.DrawBitmap(bitmap, x, y, bitmap.GetWidth(),bitmap.GetHeight());
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
 void graphics::draw_image_disabled(intptr_t hdc, intptr_t image, int32_t x, int32_t y, float brightness) {
   if (!hdc) return;
+  wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   wxBitmap bitmap = wxBitmap(*reinterpret_cast<wxImage*>(image)).ConvertToDisabled(static_cast<uint8_t>(255 * brightness));
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics().DrawBitmap(bitmap, x, y, bitmap.GetWidth(),bitmap.GetHeight());
+  graphics.DrawBitmap(bitmap, x, y, bitmap.GetWidth(),bitmap.GetHeight());
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
@@ -136,10 +140,12 @@ void graphics::draw_line(intptr_t hdc, intptr_t pen, int32_t x1, int32_t y1, int
 
 void graphics::draw_point(intptr_t hdc, intptr_t pen, int32_t x, int32_t y) {
   if (!hdc) return;
-  graphics_context gc(hdc);
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetBrush(*wxTRANSPARENT_BRUSH);
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetPen(*reinterpret_cast<wxPen*>(pen));
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().DrawPoint(x, y);
+  wxPen wxpen = *reinterpret_cast<wxPen*>(pen);
+  wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
+  auto path = graphics.CreatePath();
+  path.AddEllipse(x, y, wxpen.GetWidth(), wxpen.GetWidth());
+  graphics.SetBrush(wxBrush(wxpen.GetColour()));
+  graphics.FillPath(path);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
@@ -167,9 +173,10 @@ void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font,
   if (!hdc) return;
   // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::DrawText doesn't work witth unicode on Windows.
   if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") {
-    reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetFont(*reinterpret_cast<wxFont*>(font));
-    reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetTextForeground({ r, g, b, a });
-    reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().DrawText({ text.c_str(), wxMBConvUTF8() }, x, y);
+    wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc();
+    dc.SetFont(*reinterpret_cast<wxFont*>(font));
+    dc.SetTextForeground({ r, g, b, a });
+    dc.DrawText({ text.c_str(), wxMBConvUTF8() }, x, y);
   } else {
     wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
     graphics.SetFont(*reinterpret_cast<wxFont*>(font), { r, g, b, a });
@@ -182,11 +189,12 @@ void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font,
   if (!hdc) return;
   // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::DrawText doesn't work witth unicode on Windows.
   if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") {
-    reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetClippingRegion({ x, y }, { w, h });
-    reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetFont(*reinterpret_cast<wxFont*>(font));
-    reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetTextForeground({ r, g, b, a });
-    reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().DrawText({ text.c_str(), wxMBConvUTF8() }, x, y);
-    reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().DestroyClippingRegion();
+    wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc();
+    dc.SetClippingRegion({ x, y }, { w, h });
+    dc.SetFont(*reinterpret_cast<wxFont*>(font));
+    dc.SetTextForeground({ r, g, b, a });
+    dc.DrawText({ text.c_str(), wxMBConvUTF8() }, x, y);
+    dc.DestroyClippingRegion();
   } else {
     wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
     graphics.Clip(x, y, w, h);
@@ -210,9 +218,10 @@ void graphics::fill_ellipse(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, 
 void graphics::fill_pie(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle) {
   if (!hdc) return;
   graphics_context gc(hdc);
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetBrush(to_brush(*reinterpret_cast<wx_brush*>(brush)));
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetPen(*wxTRANSPARENT_PEN);
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().DrawEllipticArc(x, y, width, height, start_angle, start_angle + sweep_angle);
+  wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc();
+  dc.SetBrush(to_brush(*reinterpret_cast<wx_brush*>(brush)));
+  dc.SetPen(*wxTRANSPARENT_PEN);
+  dc.DrawEllipticArc(x, y, width, height, start_angle, start_angle + sweep_angle);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
