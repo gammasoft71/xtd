@@ -26,7 +26,7 @@ namespace examples {
   private:
     image create_circle_texture(const color& color) {
       auto texture = bitmap(16, 16);
-      auto graphics = graphics::from_image(texture);
+      auto graphics = texture.create_graphics();
       graphics.fill_ellipse(solid_brush(color), 0, 0, texture.width() - 1, texture.height() - 1);
       graphics.draw_ellipse(pens::black(), 0, 0, texture.width() - 1, texture.height() - 1);
       return texture;
