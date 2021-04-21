@@ -13,9 +13,14 @@ namespace xtd {
       public:
         hdc_wrapper() = default;
         ~hdc_wrapper() {
-          delete graphics_;
-          delete hdc_;
+          if (graphics_) delete graphics_;
+          if (bitmap_) delete bitmap_;
+          if (hdc_) delete hdc_;
         }
+ 
+        const wxGraphicsContext& graphics() const {return *graphics_;}
+        wxGraphicsContext& graphics() {return *graphics_;}
+
         const wxDC& hdc() const {return *hdc_;}
         wxDC& hdc() {return *hdc_;}
         
@@ -33,9 +38,6 @@ namespace xtd {
           image_ = image;
           graphics_ = create_graphics(*hdc);
         }
-
-        const wxGraphicsContext& graphics() const {return *graphics_;}
-        wxGraphicsContext& graphics() {return *graphics_;}
         
         void apply_update() {
           if (bitmap_ && image_) *image_ = bitmap_->ConvertToImage();
