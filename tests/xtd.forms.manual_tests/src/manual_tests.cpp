@@ -106,6 +106,9 @@ int main() {
      link_label1.text("Gammasoft present xtd_forms examples\nNext line...");
      */
     
+    form_main.background_image(xtd::drawing::system_images::from_name("xtd", xtd::drawing::size {128, 128}));
+    form_main.background_image_layout(xtd::forms::image_layout::tile);
+
     application::run(form_main);
   } catch(const exception& e) {
     message_box::show(e.what(), xtd::strings::full_class_name(e));

@@ -128,6 +128,22 @@ control& control::back_color(nullptr_t) {
   return *this;
 }
 
+control& control::background_image(const xtd::drawing::image& background_image) {
+  if (background_image_ != background_image) {
+    background_image_ = background_image;
+    on_background_image_changed(event_args::empty);
+  }
+  return *this;
+}
+
+control& control::background_image_layout(xtd::forms::image_layout background_image_layout) {
+  if (background_image_layout_ != background_image_layout) {
+    background_image_layout_ = background_image_layout;
+    on_background_image_layout_changed(event_args::empty);
+  }
+  return *this;
+}
+
 bool control::can_focus() const {
   bool visible_and_enebled = handle_ && get_state(state::visible) && get_state(state::enabled);
 
@@ -446,6 +462,16 @@ void control::on_back_color_changed(const event_args &e) {
   if (can_raise_events()) back_color_changed(*this, e);
 }
 
+void control::on_background_image_changed(const event_args &e) {
+  invalidate();
+  if (can_raise_events()) background_image_changed(*this, e);
+}
+
+void control::on_background_image_layout_changed(const event_args &e) {
+  invalidate();
+  if (can_raise_events()) background_image_layout_changed(*this, e);
+}
+
 void control::on_create_control() {
   for (auto control : controls_) {
     control.get().parent_ = handle_;
@@ -606,6 +632,7 @@ void control::on_mouse_wheel(const mouse_event_args& e) {
 }
 
 void control::on_paint(paint_event_args& e) {
+  if (background_image_ != xtd::drawing::image::empty) draw_image(e.graphics(), e.clip_rectangle(), background_image_, background_image_layout_);
   if (can_raise_events()) paint(*this, e);
 }
 
@@ -783,6 +810,23 @@ void control::def_wnd_proc(message& message) {
   message.result(native::control::def_wnd_proc(handle_, message.hwnd(), message.msg(),message.wparam(), message.lparam(), message.result(), message.handle()));
 }
 
+void control::draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& clip_rectangle, const xtd::drawing::image& image, xtd::forms::image_layout image_layout) {
+  if (image_layout == xtd::forms::image_layout::none) {
+    graphics.draw_image(image, clip_rectangle.location());
+  } else if (image_layout == xtd::forms::image_layout::tile) {
+    for (int32_t y = 0; y < clip_rectangle.height(); y += image.size().height())
+      for (int32_t x = 0; x < clip_rectangle.width(); x += image.size().width())
+        graphics.draw_image(image, x, y);
+  } else if (image_layout == xtd::forms::image_layout::center) {
+    graphics.draw_image(image, clip_rectangle.x() + (clip_rectangle.width() - image.width()) / 2, clip_rectangle.y() + (clip_rectangle.height() - image.height()) / 2);
+  } if (image_layout == xtd::forms::image_layout::stretch) {
+    graphics.draw_image(image, clip_rectangle);
+  } else if (image_layout == xtd::forms::image_layout::zoom) {
+    auto image_size = std::min(clip_rectangle.width(), clip_rectangle.height());
+    auto image_rect = xtd::drawing::rectangle((clip_rectangle.width() - image_size) / 2, (clip_rectangle.height() - image_size) / 2, image_size, image_size);
+    graphics.draw_image(image, image_rect);
+  }
+}
 void control::recreate_handle() {
   if (handle_ != 0) {
     set_state(state::recreate, true);
