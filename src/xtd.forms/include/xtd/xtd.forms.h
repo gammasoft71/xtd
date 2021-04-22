@@ -100,6 +100,7 @@
 #include "xtd/forms/help_event_handler.h"
 #include "xtd/forms/ibutton_control.h"
 #include "xtd/forms/icontrol_trace.h"
+#include "xtd/forms/image_layout.h"
 #include "xtd/forms/image_list.h"
 #include "xtd/forms/imessage_filter.h"
 #include "xtd/forms/input_box.h"

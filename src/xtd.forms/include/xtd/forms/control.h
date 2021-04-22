@@ -31,6 +31,7 @@
 #include "control_styles.h"
 #include "cursors.h"
 #include "dock_style.h"
+#include "image_layout.h"
 #include "iwin32_window.h"
 #include "key_event_handler.h"
 #include "key_press_event_handler.h"
@@ -249,6 +250,29 @@ namespace xtd {
       virtual control& back_color(nullptr_t);
       /// @endcond
 
+      /// @brief Gets the background image displayed in the control.
+      /// @return An xtd::drrawing::image that represents the image to display in the background of the control.
+      /// @remarks Use the background_image property to place a graphic image onto a control.
+      virtual const xtd::drawing::image& background_image() const {return background_image_;}
+      /// @brief Sets the background image displayed in the control.
+      /// @param background_image An xtd::drrawing::image that represents the image to display in the background of the control.
+      /// @return Current control.
+      /// @remarks Use the background_image property to place a graphic image onto a control.
+      virtual control& background_image(const xtd::drawing::image& background_image);
+      
+      /// @brief Gets the background image layout as defined in the xtd::forms::image_layout enumeration.
+      /// @return One of the values of xtd::forms::image_layout (center , none, stretch, tile, or zoom). tile is the default value.
+      /// @remarks Use the background_image_layout property to specify the position and behavior of an image you have placed onto a control. background_image_layout takes effect only if the background_image property is set.
+      /// @remarks You can increase performance for large images if you set background_image_layout to something other than tile.
+      virtual xtd::forms::image_layout background_image_layout() const {return background_image_layout_;}
+      
+      /// @brief Sets the background image layout as defined in the xtd::forms::image_layout enumeration.
+      /// @param background_image_layout One of the values of xtd::forms::image_layout (center , none, stretch, tile, or zoom). tile is the default value.
+      /// @return Current control.
+      /// @remarks Use the background_image_layout property to specify the position and behavior of an image you have placed onto a control. background_image_layout takes effect only if the background_image property is set.
+      /// @remarks You can increase performance for large images if you set background_image_layout to something other than tile.
+      virtual control& background_image_layout(xtd::forms::image_layout background_image_layout);
+      
       /// @brief Gets the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
       /// @return An int32_t representing the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
       /// @remarks The value of this property is equal to the sum of the top property value, and the height property value.
@@ -961,6 +985,16 @@ namespace xtd {
       /// @ingroup events
       /// @remarks This event is raised if the back_color property is changed by either a programmatic modification or user interaction.
       event<control, event_handler<control&>> back_color_changed;
+
+      /// @brief Occurs when the value of the background_image property changes.
+      /// @ingroup events
+      /// @remarks This event is raised if the background_image property is changed by either a programmatic modification or user interaction
+      event<control, event_handler<control&>> background_image_changed;
+      
+      /// @brief Occurs when the value of the background_image_layouot property changes.
+      /// @ingroup events
+      /// @remarks This event is raised if the background_image_layout property is changed by either a programmatic modification or user interaction
+      event<control, event_handler<control&>> background_image_layout_changed;
       
       /// @brief Occurs when the control is clicked.
       /// @ingroup events
@@ -1531,6 +1565,8 @@ namespace xtd {
       /// @brief Sends the specified message to the default window procedure.
       /// @param message The Windows Message to process.
       virtual void def_wnd_proc(message& message);
+      
+      static void draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& clip_rectangle, const xtd::drawing::image& image, xtd::forms::image_layout image_layout);
 
       /// @brief Retrieves the value of the specified control style bit for the control.
       /// @param flag The control_styles bit to return the value from.
@@ -1553,6 +1589,14 @@ namespace xtd {
       /// @brief Raises the back_color_changed event.
       /// @param e An xtd::event_args that contains the event data.
       virtual void on_back_color_changed(const event_args& e);
+      
+      /// @brief Raises the background_image_changed event.
+      /// @param e An xtd::event_args that contains the event data.
+      virtual void on_background_image_changed(const event_args& e);
+      
+      /// @brief Raises the background_image_layout_changed event.
+      /// @param e An xtd::event_args that contains the event data.
+      virtual void on_background_image_layout_changed(const event_args& e);
       
       /// @brief Raises the click event.
       /// @param e An xtd::event_args that contains the event data.
@@ -1757,6 +1801,8 @@ namespace xtd {
       drawing::point auto_scroll_point_;
       auto_size_mode auto_size_mode_ = auto_size_mode::grow_and_shrink;
       std::optional<drawing::color> back_color_;
+      xtd::drawing::image background_image_ = xtd::drawing::image::empty;
+      xtd::forms::image_layout background_image_layout_ = xtd::forms::image_layout::tile;
       bool can_focus_ = true;
       bool can_raise_events_ = true;
       drawing::rectangle client_rectangle_;
