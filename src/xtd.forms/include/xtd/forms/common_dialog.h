@@ -3,6 +3,8 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <any>
+#include <chrono>
+#include <thread>
 #include "application.h"
 #include "form.h"
 #include "component.h"
@@ -86,8 +88,10 @@ namespace xtd {
       /// @remarks This version of the show_dialog method allows you to specify a specific form or control that will own the dialog box that is shown. If you use the version of this method that has no parameters, the dialog box being shown would be owned automatically by the currently active window of your application.
       xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner) {
         show_sheet(owner);
-        while (dialog_result_ == xtd::forms::dialog_result::none)
+        while (dialog_result_ == xtd::forms::dialog_result::none) {
           application::do_events();
+          std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        }
         return dialog_result_;
       }
 
