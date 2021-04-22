@@ -61,8 +61,7 @@ bool application::dark_mode_enabled() {
 
 void application::do_events() {
   initialize(); // Must be first
-  //wxTheApp->ProcessPendingEvents();
-  wxYield();
+  if (wxTheApp) wxTheApp->Yield();
 }
 
 void application::do_idle() {
