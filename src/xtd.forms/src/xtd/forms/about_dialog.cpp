@@ -1,4 +1,6 @@
+#include <chrono>
 #include <memory>
+#include <thread>
 #include <xtd/literals.h>
 #include <xtd/forms/native/about_dialog.h>
 #include <xtd/drawing/system_icons.h>
@@ -129,8 +131,10 @@ namespace {
       }
       
       about_dialog_standard->visible(true);
-      while (about_dialog_standard->visible())
+      while (about_dialog_standard->visible()) {
         application::do_events();
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+      }
       about_dialog_standard.reset();
     }
     
