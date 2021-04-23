@@ -70,11 +70,20 @@ namespace xtd {
 
       /// @brief Draws the specified image in a specified rectangle with specified layout.
       /// @param xtd::drawing::graphics The Graphics to draw on.
-      /// @param clip_rectangle xtd::drawing::rectangle structure that defines the rectangle of the drawn image.
       /// @param image The xtd::drawing::image to draw.
+      /// @param clip_rectangle xtd::drawing::rectangle structure that defines the rectangle of the drawn image.
       /// @param image_layout One of the values of xtd::forms::image_layout (center , none, stretch, tile, or zoom).
-      static void draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& clip_rectangle, const xtd::drawing::image& image, xtd::forms::image_layout image_layout);
-      
+      static void draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, const xtd::drawing::rectangle& clip_rectangle, xtd::forms::image_layout image_layout) {draw_image(graphics, image, clip_rectangle.x(), clip_rectangle.y(), clip_rectangle.width(), clip_rectangle.height(), image_layout);}
+      /// @brief Draws the specified image in a specified rectangle with specified layout.
+      /// @param xtd::drawing::graphics The Graphics to draw on.
+      /// @param image The xtd::drawing::image to draw.
+      /// @param x The x-coordinate of the top left of the drawn image.
+      /// @param y The y-coordinate of the top left of the drawn image.
+      /// @param width The width of the drawn image.
+      /// @param height The height of the drawn image.
+      /// @param image_layout One of the values of xtd::forms::image_layout (center , none, stretch, tile, or zoom).
+      static void draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, int32_t x, int32_t y, int32_t width, int32_t height, xtd::forms::image_layout image_layout);
+
       /// @brief Draws the specified image in a disabled state.
       /// @param xtd::drawing::graphics The Graphics to draw on.
       /// @param image The xtd::drawing::image to draw.

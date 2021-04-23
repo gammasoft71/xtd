@@ -633,7 +633,7 @@ void control::on_mouse_wheel(const mouse_event_args& e) {
 }
 
 void control::on_paint(paint_event_args& e) {
-  if (background_image_ != xtd::drawing::image::empty) control_paint::draw_image(e.graphics(), e.clip_rectangle(), background_image_, background_image_layout_);
+  if (background_image_ != xtd::drawing::image::empty) control_paint::draw_image(e.graphics(), background_image_, e.clip_rectangle(), background_image_layout_);
   if (can_raise_events()) paint(*this, e);
 }
 
