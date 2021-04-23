@@ -22,7 +22,7 @@ namespace xtd {
     /// @brief Provides methods used to paint common Windows controls and their elements. This class cannot be inherited.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms
+    /// @ingroup xtd_forms drawing
     class forms_export_ control_paint final static_ {
     public:
       /// @brief Returns the weighted average color between the two given colors.
