@@ -105,9 +105,17 @@ int main() {
      link_label1.parent(form_main);
      link_label1.text("Gammasoft present xtd_forms examples\nNext line...");
      */
+        
+    button b1;
+    b1.parent(form_main);
+    b1.location({10, 10});
+    b1.image(button_images::from_name("gammasoft"));
     
-    form_main.background_image(xtd::drawing::system_images::from_name("xtd", xtd::drawing::size {128, 128}));
-    form_main.background_image_layout(xtd::forms::image_layout::tile);
+    button b2;
+    b2.parent(form_main);
+    b2.location({10, 50});
+    b2.enabled(false);
+    b2.image(button_images::from_name("gammasoft"));
 
     application::run(form_main);
   } catch(const exception& e) {

@@ -24,6 +24,7 @@
 namespace xtd {
   namespace forms {
     class control;
+    class control_paint;
     class paint_event_args;
     class screen;
   }
@@ -167,11 +168,6 @@ namespace xtd {
       void draw_image(const xtd::drawing::image& image, int32_t x, int32_t y);
       void draw_image(const xtd::drawing::image& image, float x, float y) {draw_image(image, static_cast<int32_t>(x), static_cast<int32_t>(y));}
 
-      void draw_image_disabled(const xtd::drawing::image& image, const xtd::drawing::point& point) {draw_image_disabled(image, point.x(), point.y());}
-      void draw_image_disabled(const xtd::drawing::image& image, const xtd::drawing::point& point, float brightness) {draw_image_disabled(image, point.x(), point.y(), brightness);}
-      void draw_image_disabled(const xtd::drawing::image& image, int32_t x, int32_t y) {draw_image_disabled(image, x, y, 1.0);}
-      void draw_image_disabled(const xtd::drawing::image& image, int32_t x, int32_t y, float brightness);
-
       void draw_line(const xtd::drawing::pen& pen, const xtd::drawing::point& p1, const point& p2) {draw_line(pen, p1.x(), p1.y(), p2.x(), p2.y());}
       void draw_line(const xtd::drawing::pen& pen, const xtd::drawing::point_f& p1, const point_f& p2) {draw_line(pen, p1.x(), p1.y(), p2.x(), p2.y());}
       void draw_line(const xtd::drawing::pen& pen, int32_t x1, int32_t y1, int32_t x2, int32_t y2);
@@ -234,10 +230,13 @@ namespace xtd {
     private:
       friend xtd::drawing::font;
       friend xtd::forms::control;
+      friend xtd::forms::control_paint;
       friend xtd::forms::paint_event_args;
       friend xtd::forms::screen;
-      graphics(intptr_t handle) {data_->handle_ = handle;}
 
+      graphics(intptr_t handle) {data_->handle_ = handle;}
+      void draw_image_disabled(const xtd::drawing::image& image, int32_t x, int32_t y, float brightness);
+      
       struct data {
         intptr_t handle_ = 0;
       };

@@ -87,7 +87,7 @@ void radio_button_renderer::draw_radio_button_gnome_dark(graphics g, const recta
   rectangle string_rectangle = {bounds.x() + 21, bounds.y(), bounds.width() - 21, bounds.height()};
   if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)
     g.fill_ellipse(solid_brush(mark_color), rectangle::offset(rectangle::inflate(button_rectangle, {-9, -9}), {4, 4}));
-  if (image != image::empty && (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)) g.draw_image_disabled(image, image_bounds.location(), 0.25);
+  if (image != image::empty && (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, string_rectangle, flags);
 }
@@ -115,7 +115,7 @@ void radio_button_renderer::draw_radio_button_gnome_light(graphics g, const rect
   rectangle string_rectangle = {bounds.x() + 21, bounds.y(), bounds.width() - 21, bounds.height()};
   if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)
     g.fill_ellipse(solid_brush(mark_color), rectangle::offset(rectangle::inflate(button_rectangle, {-9, -9}), {4, 4}));
-  if (image != image::empty && (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)) g.draw_image_disabled(image, image_bounds.location());
+  if (image != image::empty && (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, string_rectangle, flags);
 }
@@ -164,7 +164,7 @@ void radio_button_renderer::draw_radio_button_macos_dark(graphics g, const recta
   if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_disabled) {
     g.fill_ellipse(solid_brush(mark_color), rectangle::offset(rectangle::inflate(button_rectangle, {-10, -10}), {5, 5}));
   }
-  if (image != image::empty && (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)) g.draw_image_disabled(image, image_bounds.location(), 0.25);
+  if (image != image::empty && (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, string_rectangle, flags);
 }
@@ -207,7 +207,7 @@ void radio_button_renderer::draw_radio_button_symbolic_dark(graphics g, const re
   rectangle string_rectangle = {bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height()};
   if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)
     g.fill_ellipse(solid_brush(mark_color), rectangle::offset(rectangle::inflate(button_rectangle, {-10, -10}), {5, 5}));
-  if (image != image::empty && (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)) g.draw_image_disabled(image, image_bounds.location(), 0.25);
+  if (image != image::empty && (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, string_rectangle, flags);
 }
@@ -241,7 +241,7 @@ void radio_button_renderer::draw_radio_button_symbolic_light(graphics g, const r
   rectangle string_rectangle = {bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height()};
   if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)
     g.fill_ellipse(solid_brush(mark_color), rectangle::offset(rectangle::inflate(button_rectangle, {-10, -10}), {5, 5}));
-  if (image != image::empty && (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)) g.draw_image_disabled(image, image_bounds.location());
+  if (image != image::empty && (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, string_rectangle, flags);
 }
@@ -274,7 +274,7 @@ void radio_button_renderer::draw_radio_button_windows_dark(graphics g, const rec
   rectangle string_rectangle = { bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height() };
   if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)
     g.fill_ellipse(solid_brush(mark_color), rectangle(button_rectangle.x() + 3, button_rectangle.y() + 3, button_rectangle.width() - 6, button_rectangle.height() - 6));
-  if (image != image::empty && (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)) g.draw_image_disabled(image, image_bounds.location(), 0.25);
+  if (image != image::empty && (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, string_rectangle, flags);
 }
@@ -302,7 +302,7 @@ void radio_button_renderer::draw_radio_button_windows_light(graphics g, const re
   rectangle string_rectangle = { bounds.x() + 19, bounds.y(), bounds.width() - 14, bounds.height() };
   if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)
     g.fill_ellipse(solid_brush(mark_color), rectangle(button_rectangle.x() + 3, button_rectangle.y() + 3, button_rectangle.width() - 6, button_rectangle.height() - 6));
-  if (image != image::empty && (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)) g.draw_image_disabled(image, image_bounds.location());
+  if (image != image::empty && (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, string_rectangle, flags);
 
