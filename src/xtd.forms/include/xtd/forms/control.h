@@ -251,11 +251,11 @@ namespace xtd {
       /// @endcond
 
       /// @brief Gets the background image displayed in the control.
-      /// @return An xtd::drrawing::image that represents the image to display in the background of the control.
+      /// @return An xtd::drawing::image that represents the image to display in the background of the control.
       /// @remarks Use the background_image property to place a graphic image onto a control.
       virtual const xtd::drawing::image& background_image() const {return background_image_;}
       /// @brief Sets the background image displayed in the control.
-      /// @param background_image An xtd::drrawing::image that represents the image to display in the background of the control.
+      /// @param background_image An xtd::drawing::image that represents the image to display in the background of the control.
       /// @return Current control.
       /// @remarks Use the background_image property to place a graphic image onto a control.
       virtual control& background_image(const xtd::drawing::image& background_image);
@@ -1565,8 +1565,6 @@ namespace xtd {
       /// @brief Sends the specified message to the default window procedure.
       /// @param message The Windows Message to process.
       virtual void def_wnd_proc(message& message);
-      
-      static void draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& clip_rectangle, const xtd::drawing::image& image, xtd::forms::image_layout image_layout);
 
       /// @brief Retrieves the value of the specified control style bit for the control.
       /// @param flag The control_styles bit to return the value from.

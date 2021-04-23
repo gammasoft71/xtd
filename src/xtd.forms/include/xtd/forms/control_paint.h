@@ -12,6 +12,7 @@
 #include <xtd/drawing/string_format.h>
 #include <xtd/drawing/system_fonts.h>
 #include "../forms_export.h"
+#include "image_layout.h"
 #include "text_format_flags.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -66,6 +67,44 @@ namespace xtd {
       /// @return A xtd::drawing::color that represents the dark color on the control.
       /// @remarks If the specified xtd::drawing::color is one of the xtd::drawing::system_color, the color is converted to a xtd::drawing::system_color.control_dark_dark color; otherwise, the color's luminosity value is decreased.
       static xtd::drawing::color dark_dark(const xtd::drawing::color& base_color) {return dark(base_color, 1.0);}
+
+      /// @brief Draws the specified image in a specified rectangle with specified layout.
+      /// @param xtd::drawing::graphics The Graphics to draw on.
+      /// @param clip_rectangle xtd::drawing::rectangle structure that defines the rectangle of the drawn image.
+      /// @param image The xtd::drawing::image to draw.
+      /// @param image_layout One of the values of xtd::forms::image_layout (center , none, stretch, tile, or zoom).
+      static void draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& clip_rectangle, const xtd::drawing::image& image, xtd::forms::image_layout image_layout);
+      
+      /// @brief Draws the specified image in a disabled state.
+      /// @param xtd::drawing::graphics The Graphics to draw on.
+      /// @param image The xtd::drawing::image to draw.
+      /// @param x The x-coordinate of the top left of the border image.
+      /// @param y The y-coordinate of the top left of the border image.
+      /// @param brightness The brighness (between 0.0 and 1.0 for drawing image disabled.
+      /// @remarks The background parameter is used to calculate the fill color of the disabled image so that it is always visible against the background
+      static void draw_image_disabled(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, int32_t x, int32_t y, float brightness);
+      /// @brief Draws the specified image in a disabled state.
+      /// @param xtd::drawing::graphics The Graphics to draw on.
+      /// @param image The xtd::drawing::image to draw.
+      /// @param x The x-coordinate of the top left of the border image.
+      /// @param y The y-coordinate of the top left of the border image.
+      /// @param background The xtd::drawing::color of the background behind the image.
+      /// @remarks The background parameter is used to calculate the fill color of the disabled image so that it is always visible against the background
+      static void draw_image_disabled(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, int32_t x, int32_t y, const xtd::drawing::color& background) {draw_image_disabled(graphics, image, x, y, background.get_brightness());}
+      /// @brief Draws the specified image in a disabled state.
+      /// @param xtd::drawing::graphics The Graphics to draw on.
+      /// @param image The xtd::drawing::image to draw.
+      /// @param location The xtd::drawing::point of the top left of the border image.
+      /// @param brightness The brighness (between 0.0 and 1.0 for drawing image disabled.
+      /// @remarks The background parameter is used to calculate the fill color of the disabled image so that it is always visible against the background
+      static void draw_image_disabled(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, const xtd::drawing::point& location, float brightness) {draw_image_disabled(graphics, image, location.x(), location.y(), brightness);}
+      /// @brief Draws the specified image in a disabled state.
+      /// @param xtd::drawing::graphics The Graphics to draw on.
+      /// @param image The xtd::drawing::image to draw.
+      /// @param location The xtd::drawing::point of the top left of the border image.
+      /// @param background The xtd::drawing::color of the background behind the image.
+      /// @remarks The background parameter is used to calculate the fill color of the disabled image so that it is always visible against the background
+      static void draw_image_disabled(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, const xtd::drawing::point& location, const xtd::drawing::color& background) {draw_image_disabled(graphics, image, location.x(), location.y(), background.get_brightness());}
 
       /// @brief Creates a new light color object for the control from the specified color.
       /// @param color The xtd::drawing::color to be lightened.

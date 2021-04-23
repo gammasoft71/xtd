@@ -91,7 +91,7 @@ void check_box_renderer::draw_check_box_gnome_dark(graphics g, const rectangle& 
     g.draw_line(pen(mark_color, 3), button_rectangle.x() + button_rectangle.width() / 2 - 1, button_rectangle.y() + button_rectangle.height() - 6, button_rectangle.x() + button_rectangle.width() - 4, button_rectangle.y() + 5);
   } else if (state == xtd::forms::visual_styles::check_box_state::mixed_normal || state == xtd::forms::visual_styles::check_box_state::mixed_hot || state == xtd::forms::visual_styles::check_box_state::mixed_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)
     g.draw_line(pen(mark_color, 4), button_rectangle.x() + 5, button_rectangle.y() + button_rectangle.height() / 2, button_rectangle.x() + button_rectangle.width() - 5, button_rectangle.y() + button_rectangle.height() / 2);
-  if (image != image::empty && (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)) g.draw_image_disabled(image, image_bounds.location(), 0.25);
+  if (image != image::empty && (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, string_rectangle, flags);
 }
@@ -122,7 +122,7 @@ void check_box_renderer::draw_check_box_gnome_light(graphics g, const rectangle&
     g.draw_line(pen(mark_color, 3), button_rectangle.x() + button_rectangle.width() / 2 - 1, button_rectangle.y() + button_rectangle.height() - 6, button_rectangle.x() + button_rectangle.width() - 4, button_rectangle.y() + 5);
   } else if (state == xtd::forms::visual_styles::check_box_state::mixed_normal || state == xtd::forms::visual_styles::check_box_state::mixed_hot || state == xtd::forms::visual_styles::check_box_state::mixed_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)
     g.draw_line(pen(mark_color, 4), button_rectangle.x() + 5, button_rectangle.y() + button_rectangle.height() / 2, button_rectangle.x() + button_rectangle.width() - 5, button_rectangle.y() + button_rectangle.height() / 2);
-  if (image != image::empty && (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)) g.draw_image_disabled(image, image_bounds.location());
+  if (image != image::empty && (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, string_rectangle, flags);
 }
@@ -173,7 +173,7 @@ void check_box_renderer::draw_check_box_macos_dark(graphics g, const rectangle& 
     g.draw_line(pen(mark_color, 2), button_rectangle.x() + button_rectangle.width() / 2, button_rectangle.y() + button_rectangle.height() - 4, button_rectangle.x() + button_rectangle.width() - 4, button_rectangle.y() + 4);
   } else if (state == xtd::forms::visual_styles::check_box_state::mixed_normal || state == xtd::forms::visual_styles::check_box_state::mixed_hot || state == xtd::forms::visual_styles::check_box_state::mixed_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)
     g.draw_line(pen(mark_color, 2), button_rectangle.x() + 5, button_rectangle.y() + button_rectangle.height() / 2, button_rectangle.x() + button_rectangle.width() - 5, button_rectangle.y() + button_rectangle.height() / 2);
-  if (image != image::empty && (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)) g.draw_image_disabled(image, image_bounds.location(), 0.25);
+  if (image != image::empty && (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, string_rectangle, flags);
 }
@@ -205,7 +205,7 @@ void check_box_renderer::draw_check_box_macos_light(graphics g, const rectangle&
     g.draw_line(pen(mark_color, 2), button_rectangle.x() + button_rectangle.width() / 2, button_rectangle.y() + button_rectangle.height() - 4, button_rectangle.x() + button_rectangle.width() - 4, button_rectangle.y() + 4);
   } else if (state == xtd::forms::visual_styles::check_box_state::mixed_normal || state == xtd::forms::visual_styles::check_box_state::mixed_hot || state == xtd::forms::visual_styles::check_box_state::mixed_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)
     g.draw_line(pen(mark_color, 2), button_rectangle.x() + 5, button_rectangle.y() + button_rectangle.height() / 2, button_rectangle.x() + button_rectangle.width() - 5, button_rectangle.y() + button_rectangle.height() / 2);
-  if (image != image::empty && (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)) g.draw_image_disabled(image, image_bounds.location());
+  if (image != image::empty && (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, string_rectangle, flags);
 
@@ -248,7 +248,7 @@ void check_box_renderer::draw_check_box_symbolic_dark(graphics g, const rectangl
     g.draw_line(pen(mark_color, 2), button_rectangle.x() + button_rectangle.width() / 2, button_rectangle.y() + button_rectangle.height() - 4, button_rectangle.x() + button_rectangle.width() - 4, button_rectangle.y() + 4);
   } else if (state == xtd::forms::visual_styles::check_box_state::mixed_normal || state == xtd::forms::visual_styles::check_box_state::mixed_hot || state == xtd::forms::visual_styles::check_box_state::mixed_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)
     g.draw_line(pen(mark_color, 2), button_rectangle.x() + 5, button_rectangle.y() + button_rectangle.height() / 2, button_rectangle.x() + button_rectangle.width() - 5, button_rectangle.y() + button_rectangle.height() / 2);
-  if (image != image::empty && (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)) g.draw_image_disabled(image, image_bounds.location(), 0.25);
+  if (image != image::empty && (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, string_rectangle, flags);
 }
@@ -286,7 +286,7 @@ void check_box_renderer::draw_check_box_symbolic_light(graphics g, const rectang
     g.draw_line(pen(mark_color, 2), button_rectangle.x() + button_rectangle.width() / 2, button_rectangle.y() + button_rectangle.height() - 4, button_rectangle.x() + button_rectangle.width() - 4, button_rectangle.y() + 4);
   } else if (state == xtd::forms::visual_styles::check_box_state::mixed_normal || state == xtd::forms::visual_styles::check_box_state::mixed_hot || state == xtd::forms::visual_styles::check_box_state::mixed_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)
     g.draw_line(pen(mark_color, 2), button_rectangle.x() + 5, button_rectangle.y() + button_rectangle.height() / 2, button_rectangle.x() + button_rectangle.width() - 5, button_rectangle.y() + button_rectangle.height() / 2);
-  if (image != image::empty && (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)) g.draw_image_disabled(image, image_bounds.location(), 1.0);
+  if (image != image::empty && (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, string_rectangle, flags);
 }
@@ -322,7 +322,7 @@ void check_box_renderer::draw_check_box_windows_dark(graphics g, const rectangle
     g.draw_line(pen(mark_color, 2), button_rectangle.x() + button_rectangle.width() / 2, button_rectangle.y() + button_rectangle.height() - 4, button_rectangle.x() + button_rectangle.width() - 4, button_rectangle.y() + 4);
   } else if (state == xtd::forms::visual_styles::check_box_state::mixed_normal || state == xtd::forms::visual_styles::check_box_state::mixed_hot || state == xtd::forms::visual_styles::check_box_state::mixed_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)
     g.draw_line(pen(mark_color, 2), button_rectangle.x() + 4, button_rectangle.y() + button_rectangle.height() / 2, button_rectangle.x() + button_rectangle.width() - 3, button_rectangle.y() + button_rectangle.height() / 2);
-  if (image != image::empty && (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)) g.draw_image_disabled(image, image_bounds.location(), 0.25);
+  if (image != image::empty && (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, string_rectangle, flags);
 }
@@ -353,7 +353,7 @@ void check_box_renderer::draw_check_box_windows_light(graphics g, const rectangl
     g.draw_line(pen(mark_color, 1), button_rectangle.x() + button_rectangle.width() / 2 - 1, button_rectangle.y() + button_rectangle.height() - 4, button_rectangle.x() + button_rectangle.width() - 2, button_rectangle.y() + 2);
   } else if (state == xtd::forms::visual_styles::check_box_state::mixed_normal || state == xtd::forms::visual_styles::check_box_state::mixed_hot || state == xtd::forms::visual_styles::check_box_state::mixed_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)
     g.fill_rectangle(solid_brush(mark_color), rectangle(button_rectangle.x() + 3, button_rectangle.y() + 3, button_rectangle.width() - 6, button_rectangle.height() - 6));
-  if (image != image::empty && (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)) g.draw_image_disabled(image, image_bounds.location());
+  if (image != image::empty && (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, string_rectangle, flags);
 }
