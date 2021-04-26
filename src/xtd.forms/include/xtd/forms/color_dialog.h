@@ -95,13 +95,21 @@ namespace xtd {
       /// @return A set of custom colors shown by the dialog box. The default value is empty.
       /// @remarks Users can create their own set of custom colors. These colors are contained in an int32_t composed of the BGR (blue, green, red) values necessary to create the color.
       /// @remarks Custom colors can only be defined if allow_full_open is set to true.
-      const std::optional<std::vector<uint32_t>>& custom_colors() const  {return custom_colors_;}
+      const std::vector<uint32_t>& custom_colors() const  {return custom_colors_;}
+      /// @brief Gets the set of custom colors shown in the dialog box.
+      /// @return A set of custom colors shown by the dialog box. The default value is empty.
+      /// @remarks Users can create their own set of custom colors. These colors are contained in an int32_t composed of the BGR (blue, green, red) values necessary to create the color.
+      /// @remarks Custom colors can only be defined if allow_full_open is set to true.
+      std::vector<uint32_t>& custom_colors()  {return custom_colors_;}
       /// @brief Sets the set of custom colors shown in the dialog box.
       /// @param custom_color A set of custom colors shown by the dialog box.
       /// @remarks Users can create their own set of custom colors. These colors are contained in an int32_t composed of the BGR (blue, green, red) values necessary to create the color.
       /// @remarks Custom colors can only be defined if allow_full_open is set to true.
       color_dialog& custom_colors(const std::vector<uint32_t>& custom_colors)  {
-        custom_colors_ = custom_colors;
+        for (size_t index = 0; index < custom_colors.size(); index++)
+          custom_colors_[index] = custom_colors[index];
+        for (size_t index = custom_colors.size(); index < custom_colors_.size(); index++)
+          custom_colors_[index] = 0xFFFFFFFF;
         return *this;
       }
 
@@ -164,7 +172,7 @@ namespace xtd {
       void set_option(size_t flag, bool value) {options_ = value ? options_ | flag : options_ & ~flag;}
 
       drawing::color color_ = drawing::color::black;
-      std::optional<std::vector<uint32_t>> custom_colors_;
+      std::vector<uint32_t> custom_colors_ = std::vector<uint32_t>(16, 0xFFFFFFFF);
       size_t options_ = CC_ALPHACOLOR | CC_PREVENTFULLOPEN;
     };
   }
