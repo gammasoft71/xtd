@@ -12,6 +12,7 @@ namespace examples {
 
       check_box1.auto_check(false);
       check_box1.click += [&] {
+        // Uncomments next line to check / uncheck check box 1 (auto_check is false...)
         //check_box1.checked(!check_box1.checked());
         check_box1.text(strings::format("{}", check_box1.check_state()));
       };
@@ -42,6 +43,7 @@ namespace examples {
       check_box5.appearance(forms::appearance::button);
       check_box5.auto_check(false);
       check_box5.click += [&] {
+        // Uncomments next line to check / uncheck check box 5 (auto_check is false...)
         //check_box5.checked(!check_box5.checked());
         check_box5.text(strings::format("{}", check_box5.check_state()));
       };
