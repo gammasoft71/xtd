@@ -96,11 +96,6 @@ namespace xtd {
       /// @remarks Users can create their own set of custom colors. These colors are contained in an int32_t composed of the BGR (blue, green, red) values necessary to create the color.
       /// @remarks Custom colors can only be defined if allow_full_open is set to true.
       const std::vector<uint32_t>& custom_colors() const  {return custom_colors_;}
-      /// @brief Gets the set of custom colors shown in the dialog box.
-      /// @return A set of custom colors shown by the dialog box. The default value is empty.
-      /// @remarks Users can create their own set of custom colors. These colors are contained in an int32_t composed of the BGR (blue, green, red) values necessary to create the color.
-      /// @remarks Custom colors can only be defined if allow_full_open is set to true.
-      std::vector<uint32_t>& custom_colors()  {return custom_colors_;}
       /// @brief Sets the set of custom colors shown in the dialog box.
       /// @param custom_color A set of custom colors shown by the dialog box.
       /// @remarks Users can create their own set of custom colors. These colors are contained in an int32_t composed of the BGR (blue, green, red) values necessary to create the color.
