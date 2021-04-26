@@ -23,15 +23,17 @@ namespace {
 }
 #endif
 
-bool color_dialog::run_dialog(intptr_t hwnd, drawing::color& color, std::optional<std::vector<int32_t>>& custom_colors, size_t options) {
+bool color_dialog::run_dialog(intptr_t hwnd, drawing::color& color, std::optional<std::vector<uint32_t>>& custom_colors, size_t options) {
   wxColourData color_data;
   color_data.SetChooseAlpha((options & CC_ALPHACOLOR) == CC_ALPHACOLOR);
   color_data.SetChooseFull((options & CC_FULLOPEN) == CC_FULLOPEN);
   color_data.SetColour(wxColour(color.r(), color.g(), color.b(), color.a()));
   if (custom_colors.has_value()) {
     size_t max_index = custom_colors.value().size() > 16 ? 16 : custom_colors.value().size();
-    for(size_t index = 0; index < max_index; ++index)
-    color_data.SetCustomColour(static_cast<int32_t>(index), wxColour(custom_colors.value()[index]));
+    for(size_t index = 0; index < max_index; ++index) {
+      xtd::drawing::color custom_color = xtd::drawing::color::from_argb(custom_colors.value()[index]);
+      color_data.SetCustomColour(static_cast<int32_t>(index), wxColour(custom_color.r(), custom_color.g(), custom_color.b(), custom_color.a()));
+    }
   }
 #if defined(__WXMSW__)
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
@@ -44,12 +46,14 @@ bool color_dialog::run_dialog(intptr_t hwnd, drawing::color& color, std::optiona
   std::vector<int32_t> colors;
   if (custom_colors.has_value()) {
     size_t max_index = custom_colors.value().size() > 16 ? 16 : custom_colors.value().size();
-    for(size_t index = 0; index < max_index; ++index)
-    custom_colors.value()[index] = color_data.GetCustomColour(static_cast<int32_t>(index)).GetRGB();
+    for(size_t index = 0; index < max_index; ++index) {
+      xtd::drawing::color custom_color = xtd::drawing::color::from_argb(color_data.GetCustomColour(static_cast<int32_t>(index)).Alpha(), color_data.GetCustomColour(static_cast<int32_t>(index)).Red(), color_data.GetCustomColour(static_cast<int32_t>(index)).Green(), color_data.GetCustomColour(static_cast<int32_t>(index)).Blue());
+      custom_colors.value()[index] = custom_color.to_argb();
+    }
   }
   return true;
 }
 
-void color_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, drawing::color& color, std::optional<std::vector<int32_t>>& custom_colors, size_t options) {
+void color_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, drawing::color& color, std::optional<std::vector<uint32_t>>& custom_colors, size_t options) {
   on_dialog_closed(run_dialog(hwnd, color, custom_colors, options));
 }
