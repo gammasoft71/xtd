@@ -37,14 +37,16 @@ bool color_dialog::run_dialog(intptr_t hwnd, drawing::color& color, std::vector<
 #endif
   wxColourDialog dialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), &color_data);
   dialog.SetParent(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control());
-  if (dialog.ShowModal() != wxID_OK) return false;
-  wxColour colour = dialog.GetColourData().GetColour();
-  color = drawing::color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
+  bool result = dialog.ShowModal() == wxID_OK;
+  if (result) {
+    wxColour colour = dialog.GetColourData().GetColour();
+    color = drawing::color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
+  }
   for(size_t index = 0; index < custom_colors.size(); ++index) {
     xtd::drawing::color custom_color = xtd::drawing::color::from_argb(color_data.GetCustomColour(static_cast<int32_t>(index)).Alpha(), color_data.GetCustomColour(static_cast<int32_t>(index)).Red(), color_data.GetCustomColour(static_cast<int32_t>(index)).Green(), color_data.GetCustomColour(static_cast<int32_t>(index)).Blue());
     custom_colors[index] = custom_color.to_argb();
   }
-  return true;
+  return result;
 }
 
 void color_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, drawing::color& color, std::vector<uint32_t>& custom_colors, size_t options) {
