@@ -11,7 +11,6 @@ namespace examples {
       controls().push_back_range({radio_button1, radio_button2, radio_button3, radio_button4, radio_button5, label1});
 
       radio_button1.auto_check(false);
-      radio_button1.checked(true);
       radio_button1.location({30, 30});
       radio_button1.font(drawing::font(font(), drawing::font_style::italic));
       radio_button1.text("Radio 1");
@@ -36,7 +35,6 @@ namespace examples {
       
       radio_button5.auto_check(false);
       radio_button5.appearance(appearance::button);
-      radio_button5.checked(true);
       radio_button5.font(drawing::font(font(), drawing::font_style::italic));
       radio_button5.location({30, 150});
       radio_button5.text("Radio 5");
