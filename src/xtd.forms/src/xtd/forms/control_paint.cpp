@@ -4,6 +4,9 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
+void control_paint::draw_button(xtd::drawing::graphics& graphics, int32_t x, int32_t y, int32_t width, int32_t height, xtd::forms::button_state state) {
+}
+
 void control_paint::draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, int32_t x, int32_t y, int32_t width, int32_t height, xtd::forms::image_layout image_layout) {
   if (image_layout == xtd::forms::image_layout::none) {
     graphics.draw_image(image, x, y);
@@ -13,7 +16,7 @@ void control_paint::draw_image(xtd::drawing::graphics& graphics, const xtd::draw
         graphics.draw_image(image, x + offset_x, y + offset_y);
   } else if (image_layout == xtd::forms::image_layout::center) {
     graphics.draw_image(image, x + (width - image.width()) / 2, y + (height - image.height()) / 2);
-  } if (image_layout == xtd::forms::image_layout::stretch) {
+  } else if (image_layout == xtd::forms::image_layout::stretch) {
     graphics.draw_image(image, x, y, width, height);
   } else if (image_layout == xtd::forms::image_layout::zoom) {
     auto image_size = std::min(width, height);
