@@ -109,13 +109,15 @@ int main() {
     button b1;
     b1.parent(form_main);
     b1.location({10, 10});
-    b1.image(button_images::from_name("gammasoft"));
+    b1.size({200, 100});
+    b1.image(button_images::from_name("gammasoft", drawing::size {64, 64}));
     
     button b2;
     b2.parent(form_main);
-    b2.location({10, 50});
+    b2.location({10, 120});
     b2.enabled(false);
-    b2.image(button_images::from_name("gammasoft"));
+    b2.size({200, 100});
+    b2.image(button_images::from_name("gammasoft", drawing::size {64, 64}));
 
     application::run(form_main);
   } catch(const exception& e) {
