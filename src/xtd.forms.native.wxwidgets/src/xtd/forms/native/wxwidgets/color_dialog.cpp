@@ -43,7 +43,8 @@ bool color_dialog::run_dialog(intptr_t hwnd, drawing::color& color, std::vector<
     color = drawing::color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
   }
   for(size_t index = 0; index < custom_colors.size(); ++index) {
-    xtd::drawing::color custom_color = xtd::drawing::color::from_argb(color_data.GetCustomColour(static_cast<int32_t>(index)).Alpha(), color_data.GetCustomColour(static_cast<int32_t>(index)).Red(), color_data.GetCustomColour(static_cast<int32_t>(index)).Green(), color_data.GetCustomColour(static_cast<int32_t>(index)).Blue());
+    wxColour custom_colour = dialog.GetColourData().GetCustomColour(static_cast<int32_t>(index));
+    xtd::drawing::color custom_color = xtd::drawing::color::from_argb(custom_colour.Alpha(), custom_colour.Red(), custom_colour.Green(), custom_colour.Blue());
     custom_colors[index] = custom_color.to_argb();
   }
   return result;
