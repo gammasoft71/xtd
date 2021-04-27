@@ -8,7 +8,7 @@ using namespace xtd::forms;
 void color_dialog::reset() {
   dialog_result_ = xtd::forms::dialog_result::none;
   color_ = drawing::color::black;
-  custom_colors_ = std::vector<uint32_t>(16, 0xFFFFFFFF);
+  custom_colors_ = std::vector<xtd::drawing::color>(16, xtd::drawing::color::white);
   options_ = CC_ALPHACOLOR | CC_PREVENTFULLOPEN;
 }
 

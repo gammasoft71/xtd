@@ -23,14 +23,13 @@ namespace {
 }
 #endif
 
-bool color_dialog::run_dialog(intptr_t hwnd, drawing::color& color, std::vector<uint32_t>& custom_colors, size_t options) {
+bool color_dialog::run_dialog(intptr_t hwnd, drawing::color& color, std::vector<xtd::drawing::color>& custom_colors, size_t options) {
   wxColourData color_data;
   color_data.SetChooseAlpha((options & CC_ALPHACOLOR) == CC_ALPHACOLOR);
   color_data.SetChooseFull((options & CC_FULLOPEN) == CC_FULLOPEN);
   color_data.SetColour(wxColour(color.r(), color.g(), color.b(), color.a()));
   for(size_t index = 0; index < custom_colors.size(); ++index) {
-    xtd::drawing::color custom_color = xtd::drawing::color::from_argb(custom_colors[index]);
-    color_data.SetCustomColour(static_cast<int32_t>(index), wxColour(custom_color.r(), custom_color.g(), custom_color.b(), custom_color.a()));
+    color_data.SetCustomColour(static_cast<int32_t>(index), wxColour(custom_colors[index].r(), custom_colors[index].g(), custom_colors[index].b(), custom_colors[index].a()));
   }
 #if defined(__WXMSW__)
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
@@ -44,12 +43,11 @@ bool color_dialog::run_dialog(intptr_t hwnd, drawing::color& color, std::vector<
   }
   for(size_t index = 0; index < custom_colors.size(); ++index) {
     wxColour custom_colour = dialog.GetColourData().GetCustomColour(static_cast<int32_t>(index));
-    xtd::drawing::color custom_color = xtd::drawing::color::from_argb(custom_colour.Alpha(), custom_colour.Red(), custom_colour.Green(), custom_colour.Blue());
-    custom_colors[index] = custom_color.to_argb();
+    custom_colors[index] = xtd::drawing::color::from_argb(custom_colour.Alpha(), custom_colour.Red(), custom_colour.Green(), custom_colour.Blue());
   }
   return result;
 }
 
-void color_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, drawing::color& color, std::vector<uint32_t>& custom_colors, size_t options) {
+void color_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, drawing::color& color, std::vector<xtd::drawing::color>& custom_colors, size_t options) {
   on_dialog_closed(run_dialog(hwnd, color, custom_colors, options));
 }
