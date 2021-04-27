@@ -29,6 +29,7 @@ add_sources(
   include/xtd/forms/button_base.h
   include/xtd/forms/button_images.h
   include/xtd/forms/button_renderer.h
+  include/xtd/forms/button_state.h
   include/xtd/forms/buttons.h
   include/xtd/forms/cancel_event_args.h
   include/xtd/forms/cancel_event_handler.h
