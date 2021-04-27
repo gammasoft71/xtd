@@ -16,7 +16,7 @@ public:
     button1.click += [&] {
       color_dialog color_dialog;
       color_dialog.color(back_color());
-      static vector<uint32_t> custom_colors = {color::red.to_argb(), color::green.to_argb(), color::blue.to_argb(), color::yellow.to_argb(), system_colors::button_face().to_argb()};
+      static vector custom_colors = {color::red, color::green, color::blue, color::yellow, system_colors::button_face()};
       color_dialog.custom_colors(custom_colors);
       if (color_dialog.show_dialog(*this) == forms::dialog_result::ok)
         back_color(color_dialog.color());

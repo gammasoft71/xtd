@@ -32,7 +32,7 @@ namespace xtd {
         /// @return true if the user clicks OK in the dialog box; otherwise, false.
         /// @remarks If result is true, the color parameter contains the new chosen color.
         /// @warning Internal use only
-        static bool run_dialog(intptr_t hwnd, xtd::drawing::color& color, std::vector<uint32_t>& custom_colors, size_t options);
+        static bool run_dialog(intptr_t hwnd, xtd::drawing::color& color, std::vector<xtd::drawing::color>& custom_colors, size_t options);
         /// @brief Shows async dialog as sheet.
         /// @param on_dialog_closed a dialog close delegate to call when the dialog is closed.
         /// @param color A xtd::drawing::color that specifies the color to display.
@@ -40,7 +40,7 @@ namespace xtd {
         /// @param options A bitwise combination of the color dialog flags.
         /// @remarks When dialog closed and if result is true, the color parameter contains the new chosen color.
         /// @warning Internal use only
-        static void run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, xtd::drawing::color& color, std::vector<uint32_t>& custom_colors, size_t options);
+        static void run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, xtd::drawing::color& color, std::vector<xtd::drawing::color>& custom_colors, size_t options);
       };
     }
   }
