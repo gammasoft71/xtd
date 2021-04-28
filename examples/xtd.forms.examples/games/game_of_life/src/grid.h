@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include <xtd/event.h>
-#include "cell_event_handler.h"
+#include "cell.h"
 
 namespace game_of_life {
   using cell_row_collection = std::vector<cell>;
@@ -38,10 +38,9 @@ namespace game_of_life {
         }
       }
       
-      for(auto cell : updated_cells) {
+      for(auto cell : updated_cells)
         cells_[cell.y][cell.x] = cell.state;
-        on_status_changed(cell_event_args(cells_[cell.y][cell.x], cell.x, cell.y));
-      }
+      if (!updated_cells.empty())  on_cells_updated(xtd::event_args::empty);
     }
     
     int get_neighbors(int x, int y) const {
@@ -72,10 +71,10 @@ namespace game_of_life {
       return neighbors;
     }
 
-    xtd::event<grid, cell_event_handler<grid&>> cell_changed;
+    xtd::event<grid, xtd::event_handler<grid&>> cells_updated;
 
   private:
-    void on_status_changed(const cell_event_args& e) {cell_changed(*this, e);}
+    void on_cells_updated(const xtd::event_args& e) {cells_updated(*this, e);}
 
     cell_collection cells_{columns, cell_row_collection {rows}};
   };

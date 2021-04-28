@@ -1,5 +1,7 @@
 #pragma once
+#include <chrono>
 #include <random>
+#include <thread>
 #include <xtd/xtd>
 #include "grid.h"
 
@@ -15,12 +17,19 @@ namespace game_of_life {
       text("John Conway's Game of Life");
       client_size({715, 485});
       
+      form_closed += [&] {
+        closed_ = true;
+        thread_run_.join();
+      };
+      
       button_run_.parent(*this);
       button_run_.text("Run");
       button_run_.location({10, 10});
       button_run_.click += [&] {
-        timer_run_.enabled(!timer_run_.enabled());
-        button_run_.text(timer_run_.enabled() ? "Stop" : "Run");
+        run_enabled_ = !run_enabled_;
+        button_run_.text(run_enabled_ ? "Stop" : "Run");
+        button_clear_.enabled(!run_enabled_ );
+        button_next_.enabled(!run_enabled_ );
       };
       
       button_next_.parent(*this);
@@ -88,7 +97,7 @@ namespace game_of_life {
       track_bar_speed_.value(speed_);
       track_bar_speed_.value_changed += [&] {
         speed_ = track_bar_speed_.value();
-        timer_run_.interval_milliseconds(1000 / speed_);
+        interval_milliseconds_ = 1000 / speed_;
         label_speed_.text(xtd::strings::format("Speed : {}", speed_));
       };
       track_bar_speed_.size({200, 25});
@@ -139,12 +148,28 @@ namespace game_of_life {
         }
       };
       
-      timer_run_.interval_milliseconds(1000 / speed_);
-      timer_run_.tick += {*this, &form_game_of_life::next};
-      
-      grid_.cell_changed += [&](grid& sender, const cell_event_args& e) {
-        panel_grid_.invalidate(xtd::drawing::rectangle((e.x() - offset_x_) * zoom_, (e.y() - offset_y_) * zoom_, zoom_, zoom_), false);
+      grid_.cells_updated += [&] {
+        panel_grid_.begin_invoke([&] {
+          panel_grid_.invalidate();
+          label_iterations_.text(xtd::strings::format("Iterations : {}", iterations_));
+        });
       };
+
+      thread_run_ = std::thread([&] {
+        while (!closed_) {
+          if (!run_enabled_)
+            std::this_thread::sleep_for(std::chrono::milliseconds(200));
+          else{
+            xtd::diagnostics::debug::write_line("run iteration");
+            next();
+            static auto lastRunTime = std::chrono::high_resolution_clock::now();
+            auto elapsedTime = std::chrono::high_resolution_clock::now() - lastRunTime;
+            if (elapsedTime < std::chrono::milliseconds(interval_milliseconds_)) std::this_thread::sleep_for(std::chrono::milliseconds(interval_milliseconds_) - elapsedTime);
+            else std::this_thread::yield();
+            lastRunTime = std::chrono::high_resolution_clock::now();
+          }
+        }
+      });
     }
     
   private:
@@ -159,7 +184,7 @@ namespace game_of_life {
     
     void next() {
       grid_.next();
-      label_iterations_.text(xtd::strings::format("Iterations : {}", ++iterations_));
+      ++iterations_;
     }
     
     void random() {
@@ -399,7 +424,10 @@ namespace game_of_life {
     int speed_ = 25;
     int offset_x_ = 200;
     int offset_y_ = 200;
-    
+    bool closed_ = false;
+    bool run_enabled_ = false;
+    int interval_milliseconds_ = 1000/speed_;
+
     xtd::forms::button button_run_;
     xtd::forms::button button_next_;
     xtd::forms::button button_clear_;
@@ -410,7 +438,7 @@ namespace game_of_life {
     xtd::forms::label label_speed_;
     xtd::forms::track_bar track_bar_speed_;
     xtd::forms::panel panel_grid_;
-    xtd::forms::timer timer_run_;
+    std::thread thread_run_;
     xtd::drawing::color line_color_ = xtd::drawing::system_colors::window_text();
     xtd::drawing::color empty_color_ = xtd::drawing::system_colors::window();
     xtd::drawing::color populated_color_ = xtd::drawing::system_colors::window_text();
