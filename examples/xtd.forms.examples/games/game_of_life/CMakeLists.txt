@@ -6,7 +6,5 @@ add_sources(
   src/cell.h
   src/game_of_life.h
   src/grid.h
-  src/cell_event_args.h
-  src/cell_event_handler.h
 )
 target_type(GUI_APPLICATION)
