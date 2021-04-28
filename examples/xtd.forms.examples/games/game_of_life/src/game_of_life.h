@@ -164,14 +164,8 @@ namespace game_of_life {
             next();
             static auto lastRunTime = std::chrono::high_resolution_clock::now();
             auto elapsedTime = std::chrono::high_resolution_clock::now() - lastRunTime;
-            if (elapsedTime < std::chrono::milliseconds(interval_milliseconds_)) {
-              std::this_thread::sleep_for(std::chrono::milliseconds(interval_milliseconds_) - elapsedTime);
-              xtd::diagnostics::debug::write_line("Sleep : {}", std::chrono::milliseconds(interval_milliseconds_) - elapsedTime);
-            }
-            else {
-              std::this_thread::yield(); 
-              xtd::diagnostics::debug::write_line("Yield");
-            }
+            if (elapsedTime < std::chrono::milliseconds(interval_milliseconds_)) std::this_thread::sleep_for(std::chrono::milliseconds(interval_milliseconds_) - elapsedTime);
+            else std::this_thread::yield(); 
             lastRunTime = std::chrono::high_resolution_clock::now();
           }
         }
