@@ -1,3 +1,5 @@
+#include <chrono>
+#include <thread>
 #include <xtd/environment.h>
 #include <xtd/drawing/native/toolkit.h>
 #include <xtd/drawing/native/wx_application.h>
@@ -26,6 +28,8 @@ bool __xtd_macos_dark_mode_enabled__();
 #endif
 
 using namespace std;
+using namespace std::this_thread;
+using namespace std::literals;
 using namespace xtd;
 using namespace xtd::drawing::native;
 using namespace xtd::forms::native;
@@ -65,6 +69,7 @@ void application::do_events() {
 }
 
 void application::do_idle() {
+  sleep_for(20ms);
   wxWakeUpIdle();
 }
 
