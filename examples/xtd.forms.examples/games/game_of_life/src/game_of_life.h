@@ -108,6 +108,7 @@ namespace game_of_life {
       panel_grid_.border_style(xtd::forms::border_style::fixed_single);
       panel_grid_.location({10, 75});
       panel_grid_.size({695, 395});
+      panel_grid_.double_buffered(true);
       
       panel_grid_.mouse_down += [&](control& sender, const xtd::forms::mouse_event_args& e) {
         current_state_ = grid_.cells()[offset_y_ + e.location().y() / zoom_][offset_x_ + e.location().x() / zoom_] == cell::populated ? cell::empty : cell::populated;
@@ -159,13 +160,18 @@ namespace game_of_life {
         while (!closed_) {
           if (!run_enabled_)
             std::this_thread::sleep_for(std::chrono::milliseconds(200));
-          else{
-            xtd::diagnostics::debug::write_line("run iteration");
+          else {
             next();
             static auto lastRunTime = std::chrono::high_resolution_clock::now();
             auto elapsedTime = std::chrono::high_resolution_clock::now() - lastRunTime;
-            if (elapsedTime < std::chrono::milliseconds(interval_milliseconds_)) std::this_thread::sleep_for(std::chrono::milliseconds(interval_milliseconds_) - elapsedTime);
-            else std::this_thread::yield();
+            if (elapsedTime < std::chrono::milliseconds(interval_milliseconds_)) {
+              std::this_thread::sleep_for(std::chrono::milliseconds(interval_milliseconds_) - elapsedTime);
+              xtd::diagnostics::debug::write_line("Sleep : {}", std::chrono::milliseconds(interval_milliseconds_) - elapsedTime);
+            }
+            else {
+              std::this_thread::yield(); 
+              xtd::diagnostics::debug::write_line("Yield");
+            }
             lastRunTime = std::chrono::high_resolution_clock::now();
           }
         }
