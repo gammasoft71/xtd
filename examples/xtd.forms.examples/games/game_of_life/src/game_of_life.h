@@ -421,7 +421,7 @@ namespace game_of_life {
     grid grid_;
     int iterations_ = 0;
     int zoom_ = 15;
-    int speed_ = 25;
+    int speed_ = 10;
     int offset_x_ = 200;
     int offset_y_ = 200;
     bool closed_ = false;
