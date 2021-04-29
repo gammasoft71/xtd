@@ -2,6 +2,8 @@
 
 [This folder](.) contains xtd.core examples used by [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/) and more.
 
+[![xtd_core](../../docs/pictures/xtd_core_header.png)](https://gammasoft71.wixsite.com/xtdpro)
+
 ## [Hello Worlds](hello_worlds/README.md)
 
 * [hello_world_console](hello_worlds/hello_world_console/README.md) The classic first application "Hello, World!" with [xtd::console](../../src/xtd.core/include/xtd/basic_console.h) class.
