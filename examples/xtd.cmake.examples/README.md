@@ -2,6 +2,8 @@
 
 [This folder](.) contains xtd.cmake examples used by [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/) and more.
 
+[![xtd_cmake](../../docs/pictures/xtd_cmake_header.png)](https://gammasoft71.wixsite.com/xtdpro)
+
 ## [Hello Worlds](hello_worlds/README.md)
 
 * [hello_world_cmake](hello_worlds/hello_world_cmake/README.md) The classic first application "Hello, World!" with cmake [xtd_commands.cmake](../../scripts/cmake/xtd_commands.cmake)..
