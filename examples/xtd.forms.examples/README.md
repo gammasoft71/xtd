@@ -2,6 +2,8 @@
 
 [This folder](.) contains xtd.forms examples used by [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/) and more.
 
+[![xtd_forms](../../docs/pictures/xtd_forms_header.png)](https://gammasoft71.wixsite.com/xtdpro)
+
 ## [Hello Worlds](hello_worlds/README.md)
 
 * [hello_world_emoticons](hello_worlds/hello_world_emoticons/README.md) The classic first application "Hello, World!" with  [xtd::forms::emoticons](../../src/xtd.forms/include/xtd/forms/emoticons.h) component.

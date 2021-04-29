@@ -8,28 +8,28 @@
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_NONE = 0x000000;
 /// @brief The LINEFEED key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_LINE_FEED = 0x00000A;
 /// @brief The PAGE UP key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_PAGEUP = 0x000021;
 /// @brief The PAGE DOWN key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_PAGEDOWN = 0x000022;
 
@@ -37,70 +37,70 @@ constexpr size_t VK_PAGEDOWN = 0x000022;
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_0 = 0x000030;
 /// @brief The 1 key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_1 = 0x000031;
 /// @brief The 2 key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_2 = 0x000032;
 /// @brief The 3 key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_3 = 0x000033;
 /// @brief The 4 key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_4 = 0x000034;
 /// @brief The 5 key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_5 = 0x000035;
 /// @brief The 6 key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_6 = 0x000036;
 /// @brief The 7 key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_7 = 0x000037;
 /// @brief The 8 key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_8 = 0x000038;
 /// @brief The 9 key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_9 = 0x000039;
 
@@ -108,182 +108,182 @@ constexpr size_t VK_9 = 0x000039;
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_A = 0x000041;
 /// @brief The B key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_B = 0x000042;
 /// @brief The C key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_C = 0x000043;
 /// @brief The D key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_D = 0x000044;
 /// @brief The E key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_E = 0x000045;
 /// @brief The F key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_F = 0x000046;
 /// @brief The G key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_G = 0x000047;
 /// @brief The H key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_H = 0x000048;
 /// @brief The I key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_I = 0x000049;
 /// @brief The J key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_J = 0x00004A;
 /// @brief The K key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_K = 0x00004B;
 /// @brief The L key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_L = 0x00004C;
 /// @brief The M key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_M = 0x00004D;
 /// @brief The N key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_N = 0x00004E;
 /// @brief The O key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_O = 0x00004F;
 /// @brief The P key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_P = 0x000050;
 /// @brief The Q key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_Q = 0x000051;
 /// @brief The R key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_R = 0x000052;
 /// @brief The S key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_S = 0x000053;
 /// @brief The T key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_T = 0x000054;
 /// @brief The U key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_U = 0x000055;
 /// @brief The V key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_V = 0x000056;
 /// @brief The W key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_W = 0x000057;
 /// @brief The X key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_X = 0x000058;
 /// @brief The Y key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_Y = 0x000059;
 /// @brief The Z key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_Z = 0x00005A;
 
@@ -291,21 +291,21 @@ constexpr size_t VK_Z = 0x00005A;
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_COMMAND = 0x00000100;
 /// @brief The left CMD key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_LCOMMAND = 0x00000101;
 /// @brief The right CMD key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_RCOMMAND = 0x00000102;
 // 0x00000103 : reserved for VK_LCOMMAND and VK_RCOMMAND combined
@@ -313,7 +313,7 @@ constexpr size_t VK_RCOMMAND = 0x00000102;
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_FUNCTION = 0x00000104;
 
@@ -321,42 +321,42 @@ constexpr size_t VK_FUNCTION = 0x00000104;
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_SHIFT_MODIFIER = 0x00010000;
 /// @brief The CTRL modifier key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_CONTROL_MODIFIER = 0x00020000;
 /// @brief The ALT modifier key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_ALT_MODIFIER = 0x00040000;
 /// @brief The CMD modifier key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_COMMAND_MODIFIER = 0x00080000;
 /// @brief The META modifier key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_META_MODIFIER = 0x00100000;
 /// @brief The FUNCTIOON modifier key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
-/// @remarks For more info see https://docs.microsoft.com .
+/// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t VK_FUNCTION_MODIFIER = 0x00200000;
 
