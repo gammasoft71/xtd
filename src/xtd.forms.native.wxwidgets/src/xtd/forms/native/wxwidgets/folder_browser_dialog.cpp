@@ -9,6 +9,45 @@
 using namespace xtd;
 using namespace xtd::forms::native;
 
+#if defined(__WXMSW__)
+#include <ShlObj.h>
+using namespace std;
+namespace {
+  int CALLBACK OnBrowserCalllback(HWND hwnd, UINT message, LPARAM lParam, LPARAM data) {
+    if (message == BFFM_INITIALIZED && !wstring(reinterpret_cast<wchar_t*>(data)).empty())
+      SendMessage(hwnd, BFFM_SETSELECTION, 1, data);
+    return 0;
+  }
+}
+
+bool folder_browser_dialog::run_dialog(intptr_t hwnd, const std::string& description, environment::special_folder root_folder, std::string& selected_path, size_t options) {
+  BROWSEINFO browserInfo = { 0 };
+  browserInfo.hwndOwner = hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control()->GetHandle();
+  PIDLIST_ABSOLUTE pidlRoot;
+  SHGetSpecialFolderLocation(reinterpret_cast<HWND>(hwnd), static_cast<int>(root_folder), &pidlRoot);
+  browserInfo.lpfn = OnBrowserCalllback;
+  wstring wselected_path = wxString(selected_path.c_str(), wxMBConvUTF8()).ToStdWstring();
+  browserInfo.lParam = reinterpret_cast<LPARAM>(wselected_path.c_str());
+  wstring wdescription = wxString(description.c_str(), wxMBConvUTF8()).ToStdWstring();
+  browserInfo.lpszTitle = wdescription.c_str();
+
+  browserInfo.ulFlags = options;
+
+  PCIDLIST_ABSOLUTE result = SHBrowseForFolder(&browserInfo);
+  if (result) {
+    wchar_t path[MAX_PATH];
+    SHGetPathFromIDList(result, path);
+    selected_path = wxString(path).ToUTF8().data();
+    return true;
+  }
+  return false;
+}
+
+void folder_browser_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const std::string& description, environment::special_folder root_folder, std::string& selected_path, size_t options) {
+   on_dialog_closed(run_dialog(hwnd, description, root_folder, selected_path, options));
+}
+
+#else
 namespace {
 // Workaround : with wxWidgets version <= 3.1.4 wxDirDialog ShowWindowModal method doesn't exists on other platform that macOS
 #if defined(__APPLE__)
@@ -43,3 +82,4 @@ void folder_browser_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed
   });
   dialog->ShowWindowModal();
 }
+#endif
