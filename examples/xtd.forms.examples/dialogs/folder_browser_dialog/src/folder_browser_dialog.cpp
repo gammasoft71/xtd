@@ -14,7 +14,6 @@ public:
     button1.text("Folder...");
     button1.click += [&] {
       folder_browser_dialog dialog;
-      dialog.root_folder(environment::special_folder::desktop);
       dialog.selected_path(selected_path);
       if (dialog.show_sheet_dialog(*this) == forms::dialog_result::ok) {
         selected_path = dialog.selected_path();
