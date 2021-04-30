@@ -88,6 +88,18 @@ namespace xtd {
         selected_path_ = value;
         return *this;
       }
+      
+      /// @brief Gets a value indicating whether the New Folder button appears in the folder browser dialog box.
+      /// @return true if the New Folder button is shown in the dialog box; otherwise, false. The default is true.
+      /// @remarks When show_new_folder_button is true, the New Folder button is visible, giving the user a chance to create a folder. When the user clicks the New Folder button, a new folder is created and the user is prompted to specify the folder name. The selected node in the tree becomes the parent of the new folder. The actual caption of the New Folder button can vary depending upon the operating system
+      bool show_new_folder_button() const {return !get_option(BIF_NONEWFOLDERBUTTON);}
+      /// @brief Sets a value indicating whether the New Folder button appears in the folder browser dialog box.
+      /// @param value true if the New Folder button is shown in the dialog box; otherwise, false. The default is true.
+      /// @remarks When show_new_folder_button is true, the New Folder button is visible, giving the user a chance to create a folder. When the user clicks the New Folder button, a new folder is created and the user is prompted to specify the folder name. The selected node in the tree becomes the parent of the new folder. The actual caption of the New Folder button can vary depending upon the operating system
+      folder_browser_dialog& show_new_folder_button(bool value) {
+        set_option(BIF_NONEWFOLDERBUTTON, !value);
+        return *this;
+      }
 
       /// @brief Resets all options to their default values, the last selected color to black, and the custom colors to their default values.
       void reset() override;
