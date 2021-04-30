@@ -1,5 +1,6 @@
 #include <xtd/xtd>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -14,8 +15,11 @@ public:
     button1.click += [&] {
       folder_browser_dialog dialog;
       dialog.root_folder(environment::special_folder::desktop);
-      if (dialog.show_sheet_dialog(*this) == forms::dialog_result::ok)
-        label1.text(strings::format("Path = {}", dialog.selected_path()));
+      dialog.selected_path(selected_path);
+      if (dialog.show_sheet_dialog(*this) == forms::dialog_result::ok) {
+        selected_path = dialog.selected_path();
+        label1.text(strings::format("Path = {}", selected_path));
+      }
     };
 
     label1.parent(*this);
@@ -27,6 +31,7 @@ public:
 private:
   button button1;
   label label1;
+  string selected_path;
 };
 
 int main() {
