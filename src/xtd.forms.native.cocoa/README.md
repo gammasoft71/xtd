@@ -7,7 +7,7 @@ The toolkit [xtd.form.native.cocoa](.) is based on Apple [AppKit](https://develo
 
 ## Remarks
 
-This toolkit run only on macOS X.
+This toolkit run only on macOS.
 
 ______________________________________________________________________________________________
 
