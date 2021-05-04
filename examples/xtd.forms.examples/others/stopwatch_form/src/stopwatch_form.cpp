@@ -43,30 +43,30 @@ public:
     reset.click += {*this, &stop_watch_form::on_reset_click};
     
     timer_chrono.interval(11ms);
-    timer_chrono.tick +=  {*this, &stop_watch_form::on_timer_tick};
+    timer_chrono.tick += {*this, &stop_watch_form::on_timer_tick};
   }
   
 private:
   void on_start_stop_click(control& sender, const event_args& e) {
-    if (stopwatch_.is_running()) stopwatch_.stop();
-    else stopwatch_.start();
+    if (stopwatch.is_running()) stopwatch.stop();
+    else stopwatch.start();
 
-    timer_chrono.enabled(stopwatch_.is_running());
+    timer_chrono.enabled(stopwatch.is_running());
     start_stop.text(timer_chrono.enabled() ? "Stop" :  "Start");
     pause_resume.enabled(timer_chrono.enabled());
-    reset.enabled(!timer_chrono.enabled() || !stopwatch_.is_running());
+    reset.enabled(!timer_chrono.enabled() || !stopwatch.is_running());
   };
   
   void on_pause_resume_click(control& sender, const event_args& e) {
     timer_chrono.enabled(!timer_chrono.enabled());
     pause_resume.text(timer_chrono.enabled() ? "Pause" :  "Resume");
     start_stop.enabled(timer_chrono.enabled());
-    reset.enabled(!timer_chrono.enabled() || !stopwatch_.is_running());
+    reset.enabled(!timer_chrono.enabled() || !stopwatch.is_running());
   };
   
   void on_reset_click(control& sender, const event_args& e) {
     timer_chrono.enabled(false);
-    stopwatch_.reset();
+    stopwatch.reset();
     start_stop.enabled(true);
     pause_resume.enabled(false);
     reset.enabled(false);
@@ -76,10 +76,10 @@ private:
   };
 
   void on_timer_tick(component& sender, const event_args& e) {
-    watch.text(strings::format("{0:H}:{0:M}:{0:S}.{1:D3}", stopwatch_.elapsed(), stopwatch_.elapsed_milliseconds() % 1000));
+    watch.text(strings::format("{0:H}:{0:M}:{0:S}.{1:D3}", stopwatch.elapsed(), stopwatch.elapsed_milliseconds() % 1000));
   };
 
-  stopwatch stopwatch_;
+  stopwatch stopwatch;
   panel watch_panel;
   lcd_label watch;
   button start_stop;
