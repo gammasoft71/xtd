@@ -7,4 +7,5 @@ add_projects(
   assert
   assert_abort
   asser_are_equal
+  assert_are_equal_with_tolerence
 )
