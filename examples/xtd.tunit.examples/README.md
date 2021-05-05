@@ -10,5 +10,7 @@
 
 ## [Assert](assert/README.md)
 
+* [assert](assert/assert/README.md) shows how to use [xtd::tunit::assert](../../src/xtd.tunit/include/xtd/assert.h) class.
+
 ## [Others](others/README.md)
 
