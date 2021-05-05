@@ -25,11 +25,11 @@ Run tests:
   FAILED  test.test_case2 (0 ms total)
     Expected: false
     But was:  true
-    Stack Trace: in /Users/gammasoft/Projects/xtd/examples/xtd.tunit.examples/assert/src/assert.cpp:14
+    Stack Trace: in |---OMITTED---|/assert.cpp:14
   FAILED  test.test_case3 (0 ms total)
     Expected: No Exception to be thrown
     But was:  <std::range_error>
-    Stack Trace: in /Users/gammasoft/Projects/xtd/examples/xtd.tunit.examples/assert/src/assert.cpp:18
+    Stack Trace: in |---OMITTED---|/assert.cpp:18
 
 Test results:
   SUCCEED 1 test.
