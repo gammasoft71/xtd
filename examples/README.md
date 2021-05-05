@@ -51,7 +51,7 @@
 
 [xtd.tunit](xtd.tunit.examples/README.md) contains xtd.tunit library examples.
 
-* [Hello Worlds](xtd.tunix.examples/hello_worlds/README.md) contains xtd.tunit "Hello, World!" examples.
+* [Hello Worlds](xtd.tunit.examples/hello_worlds/README.md) contains xtd.tunit "Hello, World!" examples.
 
 ## [xtd.cmake](xtd.cmake.examples/README.md)
 
