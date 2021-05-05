@@ -52,9 +52,10 @@
 [xtd.tunit](xtd.tunit.examples/README.md) contains xtd.tunit library examples.
 
 * [Hello Worlds](xtd.tunit.examples/hello_worlds/README.md) contains xtd.tunit "Hello, World!" examples.
-* [assert](xtd.tunit.examples/assert/README.md) contains assert examples.
-* [expect](xtd.tunit.examples/expect/README.md) contains expect examples.
-* [valid](xtd.tunit.examples/valid/README.md) contains valid examples.
+* [Assert](xtd.tunit.examples/assert/README.md) contains assert examples.
+* [Expect](xtd.tunit.examples/expect/README.md) contains expect examples.
+* [Valid](xtd.tunit.examples/valid/README.md) contains valid examples.
+* [Others](xtd.tunit.examples/others/README.md) contains others examples.
 
 ## [xtd.cmake](xtd.cmake.examples/README.md)
 
