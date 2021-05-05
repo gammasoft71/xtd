@@ -43,7 +43,7 @@ add_projects(
   create_your_own_assertion_class
   create_your_own_event_listener
   generic_test_class
-  hello_world_tunit
+  hello_worlds
   line_info
   many_asserts
   many_valids_and_asserts
