@@ -18,4 +18,5 @@ add_projects(
   assert_is_NaN
   assert_is_empty
   assert_is_false
+  assert_is_greater
 )
