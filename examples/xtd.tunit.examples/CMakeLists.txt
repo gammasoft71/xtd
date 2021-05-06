@@ -24,4 +24,5 @@ add_projects(
   test_class
   test_class_without_helpers
   tunit_config_main
+  assert_is_not_instance_of
 )
