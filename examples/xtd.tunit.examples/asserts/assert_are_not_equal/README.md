@@ -1,6 +1,6 @@
 # assert_are_not_equal
 
-Shows how to use [xtd::tunit::assert::assert_are_not_equal](../../../../src/xtd.tunit/include/xtd/assert.h) method.
+Shows how to use [xtd::tunit::assert::are_not_equal](../../../../src/xtd.tunit/include/xtd/assert.h) method.
 
 ## Sources
 
