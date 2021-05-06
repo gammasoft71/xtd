@@ -13,5 +13,13 @@
 * [assert](assert/assert/README.md) shows how to use [xtd::tunit::assert](../../src/xtd.tunit/include/xtd/assert.h) class.
 * [assert_abort](assert/assert_abort/README.md) shows how to use [xtd::tunit::assert::abort](../../src/xtd.tunit/include/xtd/assert.h) method.
 
+## [String assert](string_assert/README.md)
+
+## [Custom assert](custom_assert/README.md)
+
+## [Expect](expect/README.md)
+
+## [Valid](valid/README.md)
+
 ## [Others](others/README.md)
 
