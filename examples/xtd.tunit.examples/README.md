@@ -17,6 +17,8 @@ o
 
 ## [User assert](user_asserts/README.md)
 
+## [Assumes](assumes/README.md)
+
 ## [Expects](expects/README.md)
 
 ## [Valids](valids/README.md)
