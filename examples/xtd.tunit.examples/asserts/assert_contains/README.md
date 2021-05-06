@@ -19,6 +19,7 @@ xtdc run
 # Output
 
 ```
+Start 4 tests from 1 test case
 Run tests:
   SUCCEED test.test_case_collection_succeed (0 ms total)
   FAILED  test.test_case_collection_failed (0 ms total)
