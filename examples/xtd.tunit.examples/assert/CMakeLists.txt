@@ -11,4 +11,5 @@ add_projects(
   assert_are_not_equal
   assert_are_not_same
   assert_are_same
+  assert_contains
 )
