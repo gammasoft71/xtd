@@ -5,21 +5,21 @@
 [![xtd_tunit](../../docs/pictures/xtd_tunit_header.png)](https://gammasoft71.wixsite.com/xtdpro)
 
 ## [Hello Worlds](hello_worlds/README.md)
-
+o
 * [hello_world_tunit](hello_worlds/hello_world_tunit/README.md) shows the classic first application "hello, world!".
 
-## [Assert](assert/README.md)
+## [Asserts](asserts/README.md)
 
-* [assert](assert/assert/README.md) shows how to use [xtd::tunit::assert](../../src/xtd.tunit/include/xtd/assert.h) class.
-* [assert_abort](assert/assert_abort/README.md) shows how to use [xtd::tunit::assert::abort](../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert](asserts/assert/README.md) shows how to use [xtd::tunit::assert](../../src/xtd.tunit/include/xtd/assert.h) class.
+* [assert_abort](asserts/assert_abort/README.md) shows how to use [xtd::tunit::assert::abort](../../src/xtd.tunit/include/xtd/assert.h) method.
 
-## [String assert](string_assert/README.md)
+## [String asserts](string_asserts/README.md)
 
-## [Custom assert](custom_assert/README.md)
+## [User assert](user_asserts/README.md)
 
-## [Expect](expect/README.md)
+## [Expects](expects/README.md)
 
-## [Valid](valid/README.md)
+## [Valids](valids/README.md)
 
 ## [Others](others/README.md)
 
