@@ -21,7 +21,7 @@ xtdc run
 ```
 Start 1 test from 1 test case
 Run tests:
-  IGNORED test.test_case_aborted (0 ms total)
+  IGNORED test.test_case_ignored (0 ms total)
     Test ignored
 
 Test results:
