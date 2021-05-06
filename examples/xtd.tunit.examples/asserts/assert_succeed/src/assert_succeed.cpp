@@ -22,5 +22,5 @@ int main() {
 //   SUCCEED test.test_case_succeed (0 ms total)
 //
 // Test results:
-//  SUCCEED 1 test.
+//   SUCCEED 1 test.
 // End 1 test from 1 test case ran. (0 ms total)
