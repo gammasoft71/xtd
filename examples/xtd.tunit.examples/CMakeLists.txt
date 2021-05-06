@@ -4,7 +4,7 @@ project(xtd.tunit.examples)
 find_package(xtd REQUIRED)
 
 add_projects(
-  assert
+  asserts
   class_with_insert_stream_operator
   class_without_insert_stream_operator
   collection_assert_all_items_are_instances_of
