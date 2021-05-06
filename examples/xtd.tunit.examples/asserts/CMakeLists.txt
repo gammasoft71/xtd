@@ -33,4 +33,5 @@ add_projects(
   assert_is_zero
   assert_succeed
   assert_throws
+  assert_throws_any
 )
