@@ -18,9 +18,7 @@ add_projects(
   many_asserts
   many_valids_and_asserts
   ostream_unit_test
-  string_assert_are_equal_ignoring_case
-  string_assert_are_not_equal_ignoring_case
-  string_assert_contains
+  string_asserts
   test_class
   test_class_without_helpers
   tunit_config_main
