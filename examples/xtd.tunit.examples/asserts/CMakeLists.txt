@@ -13,4 +13,5 @@ add_projects(
   assert_are_same
   assert_contains
   assert_does_not_throw
+  assert_fail
 )
