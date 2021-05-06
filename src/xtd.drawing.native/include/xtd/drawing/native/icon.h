@@ -3,7 +3,6 @@
 #include <istream>
 #include <string>
 #include <vector>
-#include "argb.h"
 #include <xtd/static.h>
 #include <xtd/drawing_native_export.h>
 
