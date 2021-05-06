@@ -14,4 +14,5 @@ add_projects(
   assert_contains
   assert_does_not_throw
   assert_fail
+  assert_ignore
 )
