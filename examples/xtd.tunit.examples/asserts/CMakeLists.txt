@@ -26,4 +26,5 @@ add_projects(
   assert_is_negative
   assert_is_not_empty
   assert_is_not_null
+  assert_is_not_zero
 )
