@@ -15,4 +15,5 @@ add_projects(
   assert_does_not_throw
   assert_fail
   assert_ignore
+  assert_is_NaN
 )
