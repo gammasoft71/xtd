@@ -23,7 +23,7 @@ Start 2 tests from 1 test case
 Run tests:
   SUCCEED test.test_case_succeed (0 ms total)
   FAILED  test.test_case_failed (0 ms total)
-    Expected: iess than 12
+    Expected: less than 12
     But was:  24
     Stack Trace: in |---OMITTED---|/assert_is_less.cpp:13
 
