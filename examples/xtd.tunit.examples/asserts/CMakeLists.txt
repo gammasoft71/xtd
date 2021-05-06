@@ -20,4 +20,5 @@ add_projects(
   assert_is_false
   assert_is_greater
   assert_is_greater_or_equal
+  assert_is_instance_of
 )
