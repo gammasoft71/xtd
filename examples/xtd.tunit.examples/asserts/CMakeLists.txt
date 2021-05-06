@@ -19,4 +19,5 @@ add_projects(
   assert_is_empty
   assert_is_false
   assert_is_greater
+  assert_is_greater_or_equal
 )
