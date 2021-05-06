@@ -29,4 +29,5 @@ add_projects(
   assert_is_not_zero
   assert_is_null
   assert_is_positive
+  assert_is_true
 )
