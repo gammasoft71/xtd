@@ -49,7 +49,7 @@ int main() {
 //   FAILED  test.test_case_failed (0 ms total)
 //     Expected: (value = 42)
 //     But was:  (value = 24)
-//     Stack Trace: in /Users/yves/Projects/xtd/xtd.tunit/examples/class_with_insert_stream_operator/src/class_with_insert_stream_operator.cpp:32
+//     Stack Trace: in |---OMITTED---|/class_with_insert_stream_operator.cpp:32
 //
 // Test results:
 //   SUCCEED 1 test.
