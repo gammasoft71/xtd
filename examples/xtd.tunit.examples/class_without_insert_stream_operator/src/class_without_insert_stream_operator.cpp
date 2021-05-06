@@ -47,7 +47,7 @@ int main() {
 //   FAILED  test.test_case_failed (0 ms total)
 //     Expected: 4-byte object <2A-00 00-00>
 //     But was:  4-byte object <18-00 00-00>
-//     Stack Trace: in /Users/yves/Projects/xtd/xtd.tunit/examples/class_without_insert_stream_operator/src/class_without_insert_stream_operator.cpp:30
+//     Stack Trace: in |---OMITTED---|/class_without_insert_stream_operator.cpp:30
 //
 // Test results:
 //   SUCCEED 1 test.
