@@ -1,6 +1,6 @@
 # assert_are_equal_with_tolerence
 
-Shows how to use [xtd::tunit::assert::assert_are_equal_with_tolerence](../../../../src/xtd.tunit/include/xtd/assert.h) methosd.
+Shows how to use [xtd::tunit::assert::are_equal_with_tolerence](../../../../src/xtd.tunit/include/xtd/assert.h) methosd.
 
 ## Sources
 
