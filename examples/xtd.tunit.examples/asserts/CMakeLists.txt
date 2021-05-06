@@ -31,4 +31,5 @@ add_projects(
   assert_is_positive
   assert_is_true
   assert_is_zero
+  assert_succeed
 )
