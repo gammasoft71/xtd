@@ -30,7 +30,7 @@ int main() {
 // Run tests:
 //   SUCCEED test.test_case_succeed (0 ms total)
 //   FAILED  test.test_case_failed (0 ms total)
-//     Expected: nnot zero
+//     Expected: not zero
 //     But was:  0
 //     Stack Trace: in |---OMITTED---|/assert_is_not_zero.cpp:15
 //
