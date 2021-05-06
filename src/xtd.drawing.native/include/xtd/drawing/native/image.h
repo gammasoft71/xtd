@@ -38,7 +38,9 @@ namespace xtd {
         static size_t raw_format(intptr_t image);
         static void size(intptr_t image, int32_t& width, int32_t& height);
         static float vertical_resolution(intptr_t image);
+        /// @todo Remove struct argb and replace by uint8_t a, uint8_t r, uint8_t g, b...
         static void get_pixel(intptr_t image, int32_t x, int32_t y, argb& color);
+        /// @todo Remove struct argb and replace by uint8_t a, uint8_t r, uint8_t g, b...
         static void set_pixel(intptr_t image, int32_t x, int32_t y, const argb& color);
         static void save(intptr_t image, const std::string& filename);
         static void save(intptr_t image, const std::string& filename, size_t raw_format);
