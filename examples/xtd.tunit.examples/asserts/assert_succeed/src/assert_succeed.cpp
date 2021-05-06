@@ -6,7 +6,7 @@ namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
-      assert::succeed_();
+      assert::succeed();
     }
   };
 }
