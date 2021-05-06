@@ -27,6 +27,11 @@ namespace xtd {
       /// @param argv Arguments array from main method.
       ostream_unit_test(std::ostream& os, int argc, char* argv[]) : xtd::tunit::unit_test(std::make_unique<xtd::tunit::ostream_event_listener>(os), argc, argv), os_(os) {}
       
+      /// @brief Gets the ostream used by this instance.
+      /// @return The ostream used by this instance.
+      /// @warning Used it only if you need to write specific user messages. If you change or redirect it when tests running, the unit test output result will be indeterminate.
+      std::ostream& ostream() {return os_;}
+
       int list_tests(const std::vector<std::string>& tests) override {
         for (auto name : tests)
           os_ << name << std::endl;
