@@ -449,7 +449,6 @@ namespace xtd {
 
     /// @brief Gets current stack trace information.
     /// @return A string containing stack trace information. This value can be empty "".
-    /// @todo Add xtd::diagnostics and uncomment line.
     static std::string stack_trace() noexcept {
       return xtd::diagnostics::stack_trace(true).to_string();
     }
