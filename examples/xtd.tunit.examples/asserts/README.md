@@ -19,4 +19,16 @@
 * [assert_is_instance_of](assert_is_instnce_of/README.md) shows how to use [xtd::tunit::assert::is_instance_of](../../../src/xtd.tunit/include/xtd/assert.h) method.
 * [assert_is_less](assert_is_less/README.md) shows how to use [xtd::tunit::assert::is_less](../../../src/xtd.tunit/include/xtd/assert.h) method.
 * [assert_is_less_or_equal](assert_is_less_or_equal/README.md) shows how to use [xtd::tunit::assert::is_less_or_equal](../../../src/xtd.tunit/include/xtd/assert.h) method.
-* [assert_is_negative](assert_is_negative/README.md) shows how to use [xtd::tunit::assert::abort](../../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert_is_negative](assert_is_negative/README.md) shows how to use [xtd::tunit::assert::is_negative](../../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert_is_not_empty](assert_is_not_empty/README.md) shows how to use [xtd::tunit::assert::is_not_empty](../../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert_is_not_instance_of](assert_is_not_instance_of/README.md) shows how to use [xtd::tunit::assert::is_not_instance_of](../../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert_is_not_null](assert_is_not_null/README.md) shows how to use [xtd::tunit::assert::is_not_null](../../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert_abort](assert_abort/README.md) shows how to use [xtd::tunit::assert::abort](../../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert_abort](assert_abort/README.md) shows how to use [xtd::tunit::assert::abort](../../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert_abort](assert_abort/README.md) shows how to use [xtd::tunit::assert::abort](../../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert_abort](assert_abort/README.md) shows how to use [xtd::tunit::assert::abort](../../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert_abort](assert_abort/README.md) shows how to use [xtd::tunit::assert::abort](../../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert_abort](assert_abort/README.md) shows how to use [xtd::tunit::assert::abort](../../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert_abort](assert_abort/README.md) shows how to use [xtd::tunit::assert::abort](../../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert_abort](assert_abort/README.md) shows how to use [xtd::tunit::assert::abort](../../../src/xtd.tunit/include/xtd/assert.h) method.
+* 
