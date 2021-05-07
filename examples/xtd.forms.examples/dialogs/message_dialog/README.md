@@ -1,6 +1,6 @@
 # message_dialog
 
-demonstrates the use of [xtd::forms::message_dialog](../../../../src/xtd_forms/include/xtd/forms/message_dialog.hpp) dialog.
+demonstrates the use of [xtd::forms::message_dialog](../../../../src/xtd.forms/include/xtd/forms/message_dialog.h) dialog.
 
 # Sources
 
