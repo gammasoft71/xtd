@@ -55,8 +55,8 @@
 * [Asserts](xtd.tunit.examples/asserts/README.md) contains asserts examples.
 * [Collection asserts](xtd.tunit.examples/collection_asserts/README.md) contains collection asserts examples.
 * [String asserts](xtd.tunit.examples/string_asserts/README.md) contains string asserts examples.
-* [User asserts](xtd.tunit.examples/custom_asserts/README.md) contains user asserts examples.
-* [Assumes](xtd.tunit.examples/assimes/README.md) contains assumes examples.
+* [User asserts](xtd.tunit.examples/user_asserts/README.md) contains user asserts examples.
+* [Assumes](xtd.tunit.examples/assumes/README.md) contains assumes examples.
 * [Valids](xtd.tunit.examples/valids/README.md) contains valids examples.
 * [Others](xtd.tunit.examples/others/README.md) contains others examples.
 
