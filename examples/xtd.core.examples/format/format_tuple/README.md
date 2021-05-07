@@ -19,5 +19,6 @@ xtdc run
 # Output (with colors)
 
 ```
-(1, one, 0.42)```
+(1, one, 0.42)
+```
 
