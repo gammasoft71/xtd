@@ -18,7 +18,7 @@
 * [assert_are_not_same](asserts/assert_are_not_same/README.md) shows how to use [xtd::tunit::assert::are_not_same](../../src/xtd.tunit/include/xtd/assert.h) method.
 * [assert_are_same](asserts/assert_are_same/README.md) shows how to use [xtd::tunit::assert::are_same](../../src/xtd.tunit/include/xtd/assert.h) method.
 * [assert_contains](asserts/assert_contains/README.md) shows how to use [xtd::tunit::assert::contains](../../src/xtd.tunit/include/xtd/assert.h) method.
-* [assert_does_not_throw](assert_does_not_throw/README.md) shows how to use [xtd::tunit::assert::does_not_throw](../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert_does_not_throw](asserts/assert_does_not_throw/README.md) shows how to use [xtd::tunit::assert::does_not_throw](../../src/xtd.tunit/include/xtd/assert.h) method.
 * [assert_fail](asserts/assert_fail/README.md) shows how to use [xtd::tunit::assert::fail](../../src/xtd.tunit/include/xtd/assert.h) method.
 * [assert_ignore](asserts/assert_ignore/README.md) shows how to use [xtd::tunit::assert::ignore](../../src/xtd.tunit/include/xtd/assert.h) method.
 * [assert_is_NaN](asserts/assert_is_NaN/README.md) shows how to use [xtd::tunit::assert::is_NaN](../../src/xtd.tunit/include/xtd/assert.h) method.
