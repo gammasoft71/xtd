@@ -55,6 +55,9 @@
 
 ## [User assert](user_asserts/README.md)
 
+* [math_assert](user_asserts/math_assert/README.md) shows how to create your own [xtd::tunit::assert](../../src/xtd.tunit/include/xtd/assert.h) class.
+
+
 ## [Assumes](assumes/README.md)
 
 ## [Valids](valids/README.md)
