@@ -19,8 +19,6 @@
 
 ## [Assumes](assumes/README.md)
 
-## [Expects](expects/README.md)
-
 ## [Valids](valids/README.md)
 
 ## [Others](others/README.md)
