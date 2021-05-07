@@ -28,6 +28,6 @@
 * [assert_is_positive](assert_is_positive/README.md) shows how to use [xtd::tunit::assert::is_positive](../../../src/xtd.tunit/include/xtd/assert.h) method.
 * [assert_is_true](assert_is_true/README.md) shows how to use [xtd::tunit::assert::is_true](../../../src/xtd.tunit/include/xtd/assert.h) method.
 * [assert_is_zero](assert_is_zero/README.md) shows how to use [xtd::tunit::assert::is_zero](../../../src/xtd.tunit/include/xtd/assert.h) method.
-* [assert_succeed](assert_succeed_abort/README.md) shows how to use [xtd::tunit::assert::succeed](../../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert_succeed](assert_succeed/README.md) shows how to use [xtd::tunit::assert::succeed](../../../src/xtd.tunit/include/xtd/assert.h) method.
 * [assert_throws](assert_throws/README.md) shows how to use [xtd::tunit::assert::throws](../../../src/xtd.tunit/include/xtd/assert.h) method.
 * [assert_throws_any](assert_throws_any/README.md) shows how to use [xtd::tunit::assert::throws_any](../../../src/xtd.tunit/include/xtd/assert.h) method.
