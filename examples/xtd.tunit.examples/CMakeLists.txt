@@ -7,7 +7,6 @@ add_projects(
   asserts
   collection_asserts
   console_unit_test
-  create_your_own_assertion_class
   create_your_own_event_listener
   generic_test_class
   hello_worlds
@@ -19,5 +18,5 @@ add_projects(
   test_class
   test_class_without_helpers
   tunit_config_main
-  assert_is_not_instance_of
+  user_asserts
 )
