@@ -4,7 +4,7 @@ Shows how to set build output directory with cmake [build_output_directory()](..
 
 # Sources
 
-[src/build_output_directory.cpp](src/build_output_directory.cpp)
+[build_output_directory.cpp](build_output_directory.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
