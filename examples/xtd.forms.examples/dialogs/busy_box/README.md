@@ -1,10 +1,10 @@
-# about_box
+# busy_box
 
-demonstrates the use of [xtd::forms::about_box](../../../../src/xtd_forms/include/xtd/forms/about_box.hpp) dialog.
+demonstrates the use of [xtd::forms::busy_box](../../../../src/xtd_forms/include/xtd/forms/busy_box.hpp) dialog.
 
 # Sources
 
-[src/about_box.cpp](src/about_box.cpp)
+[src/busy_box.cpp](src/busy_box.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/about_box_w.png)
+![Screenshot](../../../../docs/pictures/examples/busy_box_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/about_box_wd.png)
+![Screenshot](../../../../docs/pictures/examples/busy_box_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/about_box_m.png)
+![Screenshot](../../../../docs/pictures/examples/busy_box_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/about_box_md.png)
+![Screenshot](../../../../docs/pictures/examples/busy_box_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/about_box_g.png)
+![Screenshot](../../../../docs/pictures/examples/busy_box_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/about_box_gd.png)
+![Screenshot](../../../../docs/pictures/examples/busy_box_gd.png)
