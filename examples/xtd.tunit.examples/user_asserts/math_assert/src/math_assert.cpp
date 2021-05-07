@@ -61,7 +61,7 @@ int main() {
 //   FAILED  math_test.test_case_failed (0 ms total)
 //     Expected: greater of 100
 //     But was:  20
-//     Stack Trace: in |---OMITTED---|/create_your_own_assertion_class.cpp:47
+//     Stack Trace: in |---OMITTED---|/math_assert.cpp:47
 //
 // Test results:
 //   SUCCEED 1 test.
