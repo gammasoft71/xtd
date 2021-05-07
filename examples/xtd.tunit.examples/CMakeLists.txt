@@ -10,7 +10,6 @@ add_projects(
   create_your_own_event_listener
   generic_test_class
   hello_worlds
-  line_info
   ostream_unit_test
   string_asserts
   test_class
