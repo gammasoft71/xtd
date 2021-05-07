@@ -4,7 +4,7 @@
 * [assert_abort](assert_abort/README.md) shows how to use [xtd::tunit::assert::abort](../../../src/xtd.tunit/include/xtd/assert.h) method.
 * [assert_are_equal](assert_are_equal/README.md) shows how to use [xtd::tunit::assert::are_equal](../../../src/xtd.tunit/include/xtd/assert.h) method.
 * [assert_are_equal_with_tolerence](assert_are_equal_with_tolerence/README.md) shows how to use [xtd::tunit::assert::are_equal_with_tolerence](../../../src/xtd.tunit/include/xtd/assert.h) method.
-* [assert_are_not_equel](assert_are_not_equal/README.md) shows how to use [xtd::tunit::assert::are_not_equal](../../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert_are_not_equal](assert_are_not_equal/README.md) shows how to use [xtd::tunit::assert::are_not_equal](../../../src/xtd.tunit/include/xtd/assert.h) method.
 * [assert_are_not_same](assert_are_not_same/README.md) shows how to use [xtd::tunit::assert::are_not_same](../../../src/xtd.tunit/include/xtd/assert.h) method.
 * [assert_are_same](assert_are_same/README.md) shows how to use [xtd::tunit::assert::are_same](../../../src/xtd.tunit/include/xtd/assert.h) method.
 * [assert_contains](assert_contains/README.md) shows how to use [xtd::tunit::assert::contains](../../../src/xtd.tunit/include/xtd/assert.h) method.
