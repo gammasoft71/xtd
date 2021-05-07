@@ -5,10 +5,7 @@ find_package(xtd REQUIRED)
 
 add_projects(
   asserts
-  class_with_insert_stream_operator
-  class_without_insert_stream_operator
-  collection_assert_all_items_are_instances_of
-  collection_assert_all_items_are_not_null
+  collection_asserts
   console_unit_test
   create_your_own_assertion_class
   create_your_own_event_listener
