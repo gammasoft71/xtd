@@ -19,7 +19,7 @@ xtdc run
 # Output
 
 ```
-alue to write
+value to write
 Value to write
 Value to write
 Value to write
