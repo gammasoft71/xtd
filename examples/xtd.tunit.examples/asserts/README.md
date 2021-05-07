@@ -23,12 +23,12 @@
 * [assert_is_not_empty](assert_is_not_empty/README.md) shows how to use [xtd::tunit::assert::is_not_empty](../../../src/xtd.tunit/include/xtd/assert.h) method.
 * [assert_is_not_instance_of](assert_is_not_instance_of/README.md) shows how to use [xtd::tunit::assert::is_not_instance_of](../../../src/xtd.tunit/include/xtd/assert.h) method.
 * [assert_is_not_null](assert_is_not_null/README.md) shows how to use [xtd::tunit::assert::is_not_null](../../../src/xtd.tunit/include/xtd/assert.h) method.
-* [assert_abort](assert_abort/README.md) shows how to use [xtd::tunit::assert::abort](../../../src/xtd.tunit/include/xtd/assert.h) method.
-* [assert_abort](assert_abort/README.md) shows how to use [xtd::tunit::assert::abort](../../../src/xtd.tunit/include/xtd/assert.h) method.
-* [assert_abort](assert_abort/README.md) shows how to use [xtd::tunit::assert::abort](../../../src/xtd.tunit/include/xtd/assert.h) method.
-* [assert_abort](assert_abort/README.md) shows how to use [xtd::tunit::assert::abort](../../../src/xtd.tunit/include/xtd/assert.h) method.
-* [assert_abort](assert_abort/README.md) shows how to use [xtd::tunit::assert::abort](../../../src/xtd.tunit/include/xtd/assert.h) method.
-* [assert_abort](assert_abort/README.md) shows how to use [xtd::tunit::assert::abort](../../../src/xtd.tunit/include/xtd/assert.h) method.
-* [assert_abort](assert_abort/README.md) shows how to use [xtd::tunit::assert::abort](../../../src/xtd.tunit/include/xtd/assert.h) method.
-* [assert_abort](assert_abort/README.md) shows how to use [xtd::tunit::assert::abort](../../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert_is_not_zero](assert_is_not_zero/README.md) shows how to use [xtd::tunit::assert::is_not_zero](../../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert_is_null](assert_is_null/README.md) shows how to use [xtd::tunit::assert::is_null](../../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert_is_positive](assert_is_positive/README.md) shows how to use [xtd::tunit::assert::is_positive](../../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert_is_true](assert_is_true/README.md) shows how to use [xtd::tunit::assert::is_true](../../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert_is_zero](assert_is_zero/README.md) shows how to use [xtd::tunit::assert::is_zero](../../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert_succeed](assert_succeed_abort/README.md) shows how to use [xtd::tunit::assert::succeed](../../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert_throws](assert_throws/README.md) shows how to use [xtd::tunit::assert::throws](../../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert_throws_any](assert_throws_any/README.md) shows how to use [xtd::tunit::assert::throws_any](../../../src/xtd.tunit/include/xtd/assert.h) method.
 * 
