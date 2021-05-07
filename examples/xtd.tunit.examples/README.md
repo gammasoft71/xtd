@@ -64,6 +64,10 @@
 
 ## [Test classes](test_classes/README.md)
 
+* [generic_test_class](test_classes/generic_test_class/README.md) shows how to use generic [xtd::tunit::test_class](../../src/xtd.tunit/include/xtd/test_class.h) class.
+* [test_class](test_classes/test_class/README.md) shows how to use [xtd::tunit::test_class](../../src/xtd.tunit/include/xtd/test_class.h) class.
+* [test_class_without_helpers](test_classes/test_class_without_helpers/README.md) shows how to use [xtd::tunit::test_class](../../src/xtd.tunit/include/xtd/test_class.h) class without helpers.
+
 ## [Unit tests](unit_tests/README.md)
 
 ## [Others](others/README.md)
