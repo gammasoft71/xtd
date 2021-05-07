@@ -6,4 +6,5 @@ find_package(xtd REQUIRED)
 add_projects(
   class_with_insert_stream_operator
   class_without_insert_stream_operator
+  many_asserts
 )
