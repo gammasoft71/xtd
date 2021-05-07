@@ -9,4 +9,5 @@ add_projects(
   line_info
   many_asserts
   many_valids_and_asserts
+  tunit_config_main
 )
