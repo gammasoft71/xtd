@@ -1,10 +1,10 @@
 # busy_box
 
-demonstrates the use of [xtd::forms::busy_box](../../../../src/xtd_forms/include/xtd/forms/busy_box.hpp) dialog.
+demonstrates the use of [xtd::forms::busy_box](../../../../src/xtd_forms/include/xtd/forms/busy_box.h) dialog.
 
 # Sources
 
-[src/busy_box.cpp](src/busy_box.cpp)
+[src/busy_box.cpp](busy_box.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
