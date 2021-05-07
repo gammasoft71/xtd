@@ -14,6 +14,5 @@ add_projects(
   string_asserts
   test_class
   test_class_without_helpers
-  tunit_config_main
   user_asserts
 )
