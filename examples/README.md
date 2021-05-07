@@ -58,6 +58,8 @@
 * [User asserts](xtd.tunit.examples/user_asserts/README.md) contains user asserts examples.
 * [Assumes](xtd.tunit.examples/assumes/README.md) contains assumes examples.
 * [Valids](xtd.tunit.examples/valids/README.md) contains valids examples.
+* [Test classes](xtd.tunit.examples/test_classes/README.md) contains test classes examples.
+* [Unit tests](xtd.tunit.examples/unit_tests/README.md) contains unit tests examples.
 * [Others](xtd.tunit.examples/others/README.md) contains others examples.
 
 ## [xtd.cmake](xtd.cmake.examples/README.md)
