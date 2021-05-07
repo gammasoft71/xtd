@@ -6,13 +6,12 @@ find_package(xtd REQUIRED)
 add_projects(
   asserts
   collection_asserts
-  console_unit_test
   create_your_own_event_listener
   generic_test_class
   hello_worlds
-  ostream_unit_test
   string_asserts
   test_class
   test_class_without_helpers
+  unit_tests
   user_asserts
 )
