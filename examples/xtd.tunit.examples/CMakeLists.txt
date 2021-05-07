@@ -7,7 +7,6 @@ add_projects(
   asserts
   assumes
   collection_asserts
-  expects
   hello_worlds
   others
   string_asserts
