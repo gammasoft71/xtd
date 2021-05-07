@@ -42,6 +42,7 @@
 * [assert_throws](asserts/assert_throws/README.md) shows how to use [xtd::tunit::assert::throws](../../src/xtd.tunit/include/xtd/assert.h) method.
 * [assert_throws_any](asserts/assert_throws_any/README.md) shows how to use [xtd::tunit::assert::throws_any](../../src/xtd.tunit/include/xtd/assert.h) method.
 
+## [Collection asserts](collection_asserts/README.md)
 
 ## [String asserts](string_asserts/README.md)
 
