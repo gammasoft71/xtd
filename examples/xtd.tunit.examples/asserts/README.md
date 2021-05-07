@@ -16,7 +16,7 @@
 * [assert_is_false](assert_is_false/README.md) shows how to use [xtd::tunit::assert::is_false](../../../src/xtd.tunit/include/xtd/assert.h) method.
 * [assert_is_greater](assert_is_greater/README.md) shows how to use [xtd::tunit::assert::is_greather](../../../src/xtd.tunit/include/xtd/assert.h) method.
 * [assert_is_greater_or_equal](assert_is_greater_or_equal/README.md) shows how to use [xtd::tunit::assert::is_greater_or_equal](../../../src/xtd.tunit/include/xtd/assert.h) method.
-* [assert_is_instance_of](assert_is_instnce_of/README.md) shows how to use [xtd::tunit::assert::is_instance_of](../../../src/xtd.tunit/include/xtd/assert.h) method.
+* [assert_is_instance_of](assert_is_instance_of/README.md) shows how to use [xtd::tunit::assert::is_instance_of](../../../src/xtd.tunit/include/xtd/assert.h) method.
 * [assert_is_less](assert_is_less/README.md) shows how to use [xtd::tunit::assert::is_less](../../../src/xtd.tunit/include/xtd/assert.h) method.
 * [assert_is_less_or_equal](assert_is_less_or_equal/README.md) shows how to use [xtd::tunit::assert::is_less_or_equal](../../../src/xtd.tunit/include/xtd/assert.h) method.
 * [assert_is_negative](assert_is_negative/README.md) shows how to use [xtd::tunit::assert::is_negative](../../../src/xtd.tunit/include/xtd/assert.h) method.
