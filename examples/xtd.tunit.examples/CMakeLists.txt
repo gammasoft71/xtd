@@ -11,8 +11,6 @@ add_projects(
   generic_test_class
   hello_worlds
   line_info
-  many_asserts
-  many_valids_and_asserts
   ostream_unit_test
   string_asserts
   test_class
