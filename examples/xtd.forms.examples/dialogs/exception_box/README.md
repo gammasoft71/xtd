@@ -1,6 +1,6 @@
 # exception_box
 
-demonstrates the use of [xtd::forms::exception_box](../../../../src/xtd_forms/include/xtd/forms/exception_box.hpp) dialog.
+demonstrates the use of [xtd::forms::exception_box](../../../../src/xtd.forms/include/xtd/forms/exception_box.h) dialog.
 
 # Sources
 
