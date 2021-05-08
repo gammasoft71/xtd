@@ -1,4 +1,4 @@
-# Tools
+# tools
 
 Contains xtd command line and GUI tools.
 
