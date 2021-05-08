@@ -105,7 +105,7 @@
 * [color_dialog](dialogs/color_dialog/README.md) represents a dialog box that displays available colors along with controls that enable the user to define custom colors.
 * [exception_box](dialogs/exception_box/README.md) represents a exception box that displays exceptioon box.
 * [exception_dialog](dialogs/exception_dialog/README.md) represents a exception box that displays exceptioon box.
-* **find_replace_dialog** represents a find replace dialog box.
+* **find_dialog** represents a find dialog box.
 * [folder_browser_dialog](dialogs/folder_browser_dialog/README.md) prompts the user to select a folder.
 * [font_dialog](dialogs/font_dialog/README.md) prompts the user to choose a font from among those installed on the local computer.
 * [input_box](dialogs/input_box/README.md) prompts the user to input text.
@@ -114,6 +114,7 @@
 * [message_dialog](dialogs/message_dialog/README.md) displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.
 * [open_file_dialog](dialogs/open_file_dialog/README.md) displays a standard dialog box that prompts the user to open a file.
 * [progress_dialog](dialogs/progress_dialog/README.md) represents a progress box that displays progress box.
+* **replace_dialog** represents a replace dialog box.
 * [save_file_dialog](dialogs/save_file_dialog/README.md) prompts the user to select a location for saving a file.
 
 ## [Datas](datas/README.md)
