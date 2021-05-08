@@ -1,4 +1,4 @@
-# Tests
+# tests
 
 Contains unit tests and manual tests for xtd libraries.
 
