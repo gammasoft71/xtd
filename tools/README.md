@@ -1,6 +1,6 @@
 # Tools
 
-Contains xtd command line ang GUI tools.
+Contains xtd command line and GUI tools.
 
 ## Command line tools
 
