@@ -1,4 +1,4 @@
-# about_dialog
+# busy_dialog
 
 demonstrates the use of [xtd::forms::busy_dialog](../../../../src/xtd.forms/include/xtd/forms/busy_dialog.h) dialog.
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/about_dialog_w.png)
+![Screenshot](../../../../docs/pictures/examples/busy_dialog_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/about_dialog_wd.png)
+![Screenshot](../../../../docs/pictures/examples/busy_dialog_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/about_dialog_m.png)
+![Screenshot](../../../../docs/pictures/examples/busy_dialog_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/about_dialog_md.png)
+![Screenshot](../../../../docs/pictures/examples/busy_dialog_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/about_dialog_g.png)
+![Screenshot](../../../../docs/pictures/examples/busy_dialog_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/about_dialog_gd.png)
+![Screenshot](../../../../docs/pictures/examples/busy_dialog_gd.png)
