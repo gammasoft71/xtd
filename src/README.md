@@ -36,5 +36,5 @@ Contains xtd sources.
 
 ## Third parties
 
-* [xtd.3rdparty.call_stack](xtd.3rdparty.call_stack)
+* [xtd.3rdparty.call_stack](xtd.3rdparty.call_stack) provides information about the call stack.
 
