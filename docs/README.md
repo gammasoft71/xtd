@@ -1,6 +1,8 @@
 | [Home](home.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md)  | [Contact](contact.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-# In this section
+# Docs
+
+Contains xtd markdown documentations.
 
 * [xtd](home.md) contains general information.
 * [Gallery](gallery.md) contains some pictures that represents xtd working.
