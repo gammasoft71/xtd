@@ -6,7 +6,7 @@ find_package(xtd REQUIRED)
 add_projects(
   class_with_insert_stream_operator
   class_without_insert_stream_operator
-  create_your_own_event_listener
+  create_gtest_like_event_listener
   line_info
   many_asserts
   many_valids_and_asserts
