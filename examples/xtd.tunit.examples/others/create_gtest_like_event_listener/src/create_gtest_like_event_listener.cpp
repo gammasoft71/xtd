@@ -160,7 +160,7 @@ int main() {
 // [ RUN      ] test.test_case2
 // [       OK ] test.test_case2 (0 ms)
 // [ RUN      ] test.test_case3
-// !---OMITTED---!/xtd.tunit/examples/create_your_own_unit_test/src/create_your_own_unit_test.cpp:139: Failure
+// !---OMITTED---!/create_gtest_like_event_listener.cpp:139: Failure
 //   Actual: false
 // Expected: true
 // Your message...
