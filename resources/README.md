@@ -6,3 +6,4 @@ Contains xtd resources.
 * [cursors](cursors) contains cursors images.
 * [icons](icons) contains xtd icons.
 * [pictures](pictures) contains xtd images.
+* []() contains system images for Gnome, Kde, macOS, Windows, Symbolic and xtd.
