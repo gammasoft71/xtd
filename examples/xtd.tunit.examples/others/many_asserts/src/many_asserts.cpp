@@ -32,15 +32,15 @@ int main() {
 //   FAILED  test.test_case1 (0 ms total)
 //     Expected: true
 //     But was:  false
-//     Stack Trace: in /Users/yves/Projects/xtd/xtd.tunit/examples/many_asserts/src/many_asserts.cpp:10
+//     Stack Trace: in !---OMITTED---!/many_asserts.cpp:10
 //   FAILED  test.test_case2 (0 ms total)
 //     Expected: false
 //     But was:  true
-//     Stack Trace: in /Users/yves/Projects/xtd/xtd.tunit/examples/many_asserts/src/many_asserts.cpp:14
+//     Stack Trace: in !---OMITTED---!/many_asserts.cpp:14
 //   FAILED  test.test_case3 (0 ms total)
 //     Expected: No Exception to be thrown
 //     But was:  <std::range_error>
-//     Stack Trace: in /Users/yves/Projects/xtd/xtd.tunit/examples/many_asserts/src/many_asserts.cpp:18
+//     Stack Trace: in !---OMITTED---!/many_asserts.cpp:18
 //
 // Test results:
 //   FAILED  3 tests.
