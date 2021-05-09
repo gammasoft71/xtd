@@ -18,6 +18,7 @@ xtdc run
 
 # Output
 
+```
 Start 1 test from 1 test case
 Run tests:
   FAILED  test.test_case1 (0 ms total)
@@ -35,6 +36,5 @@ Run tests:
 
 Test results:
   FAILED  1 test.
-End 1 test from 1 test case ran. (0 ms total)```
-
+End 1 test from 1 test case ran. (0 ms total)
 ```
