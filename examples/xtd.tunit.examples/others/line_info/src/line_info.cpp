@@ -19,5 +19,5 @@ int main() {
 //
 // message: Something happened.
 // member name: main
-// source file path: /Users/UserName/Projects/xtd/xtd.tunit/examples/line_info/src/line_info.cpp
+// source file path: !---OMITTED---!/line_info/src/line_info.cpp
 // source line number: 16
