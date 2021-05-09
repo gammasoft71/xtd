@@ -1,6 +1,6 @@
-# others
+# line_info
 
-Shows how to use [xtd::tunit::assert](../../../../src/xtd.tunit/include/xtd/assert.h) class.
+Shows how to use [xtd::tunit::line_info](../../../../src/xtd.tunit/include/xtd/line_info.h) class and line_info_ keywords.
 
 ## Sources
 
@@ -19,5 +19,8 @@ xtdc run
 # Output
 
 ```
-
+message: Something happened.
+member name: main
+source file path: !---OMITTED---!/line_info.cpp
+source line number: 16
 ```
