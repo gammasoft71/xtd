@@ -1,0 +1,3 @@
+# locale
+
+Contains translation files.
