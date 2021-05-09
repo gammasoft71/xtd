@@ -4,7 +4,7 @@ Contains unit tests and manual tests for xtd libraries.
 
 ## Unit tests
 
-* [xtd.core.unit_tests](xtd.core.unit_tests) contains unit tests for xtd.core library.
+* [xtd.core.unit_tests](xtd.core.unit_tests) contains unit tests for [xtd.core](../src/xtd.core) library.
 * [xtd.drawing.unit_tests](xtd.drawing.unit_tests) contains unit tests for xtd.drawing library.
 * [xtd.forms.unit_tests](xtd.core.unit_tests) contains unit tests for xtd.forms library.
 * [xtd.tunit.unit_tests](xtd.tunit.unit_tests) contains unit tests for xtd.tunit library.
