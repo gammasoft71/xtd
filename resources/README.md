@@ -2,7 +2,7 @@
 
 Contains xtd resources.
 
-* [countries](countries) contains coutries flags.
+* [countries](countries) contains countries flags.
 * [cursors](cursors) contains cursors images for Gnome, macOS and Windows.
 * [icons](icons) contains xtd icons.
 * [pictures](pictures) contains xtd images.
