@@ -1,6 +1,6 @@
 # tunit_config_main
 
-Shows how to use [TUNIT_CONFIG_MAIN](../../../../src/xtd.tunit/include/xtd/default_main.h) keyword.
+Shows how to use [TUNIT_CONFIG_MAIN](../../../../src/xtd.tunit/include/xtd/default_main.h) define.
 
 ## Sources
 
