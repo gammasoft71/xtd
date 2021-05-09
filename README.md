@@ -69,7 +69,7 @@ xtdc run
 Hello, World!
 ```
 
-### GUI
+### Forms
 
 hello_world_forms.cpp:
 
