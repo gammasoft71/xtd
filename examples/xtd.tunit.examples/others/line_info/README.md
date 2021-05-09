@@ -4,7 +4,7 @@ Shows how to use [xtd::tunit::line_info](../../../../src/xtd.tunit/include/xtd/l
 
 ## Sources
 
-[src/others.cpp](src/others.cpp)
+[src/line_info.cpp](src/line_info.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
