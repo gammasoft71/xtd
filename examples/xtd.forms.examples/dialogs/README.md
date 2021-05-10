@@ -1,4 +1,4 @@
-# xtd_forms common dialog examples
+# dialog examples
 
 [This folder](..) contains xtd.forms dialog examples.
 
