@@ -7,15 +7,15 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Identifies the compiler, supported by an assembly.
+  /// @brief Identifies the buil type
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @see compileer
   enum class build_type {
-    /// @brief The compiler is unknown.
+    /// @brief Build type debug.
     debug = 0,
-    /// @brief The compiler is Microsoft Visual Studio.
+    /// @brief Build type release.
     release,
   };
 
