@@ -2,9 +2,14 @@
 
 # Tools
 
-* [guidgen](../tools/guidgen/README.md) is a guid generator command line tool.
-* [guidgen-gui](../tools/guidgen-gui/README.md) is a guid generator GUI application.
+## Command line tools
+
 * [xtdc](../tools/xtdc/README.md) is project management command line tool.
+* [guidgen](../tools/guidgen/README.md) is a guid generator command line tool.
+
+## GUI tools
+
+* [guidgen-gui](../tools/guidgen-gui/README.md) is a guid generator GUI application.
 * [xtdc-gui](../tools/xtdc-gui/README.md) is project management GUI application.
 ______________________________________________________________________________________________
 
