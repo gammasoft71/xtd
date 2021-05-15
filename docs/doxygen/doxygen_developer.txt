@@ -5,7 +5,7 @@
 #---------------------------------------------------------------------------
 
 DOXYFILE_ENCODING      = UTF-8
-PROJECT_NAME           = "xtd - Reference Guide"
+PROJECT_NAME           = "xtd - Developer Guide - Internal use only"
 PROJECT_NUMBER         = 0.1.0
 PROJECT_BRIEF          = "Modern c++17/20 framework to create console, GUI and unit test applications on Windows, macOS, Linux, iOS and android."
 PROJECT_LOGO           = docs/pictures/xtd_doxygen.png
@@ -19,7 +19,7 @@ ABBREVIATE_BRIEF       =
 ALWAYS_DETAILED_SEC    = YES # Default: NO
 INLINE_INHERITED_MEMB  = NO
 FULL_PATH_NAMES        = YES
-STRIP_FROM_PATH        = src
+STRIP_FROM_PATH        = ../../src
 STRIP_FROM_INC_PATH    = 
 SHORT_NAMES            = NO
 JAVADOC_AUTOBRIEF      = NO
@@ -89,7 +89,7 @@ SHOW_USED_FILES        = YES
 SHOW_FILES             = YES
 SHOW_NAMESPACES        = YES
 FILE_VERSION_FILTER    = 
-LAYOUT_FILE            = docs/doxygen/xtd_doxygen_layout.xml
+LAYOUT_FILE            = xtd_doxygen_layout.xml
 CITE_BIB_FILES         = 
 QUIET                  = NO
 WARNINGS               = YES
@@ -98,19 +98,21 @@ WARN_IF_DOC_ERROR      = YES
 WARN_NO_PARAMDOC       = NO
 WARN_AS_ERROR          = NO
 WARN_FORMAT            = "$file:$line: $text"
-WARN_LOGFILE           = build/doxygen_warnings.txt
+WARN_LOGFILE           = ../../build/doxygen_warnings.txt
 
 
 #---------------------------------------------------------------------------
 # Configuration options related to the input files
 #---------------------------------------------------------------------------
 
-INPUT                  = src/xtd/include/doxygen \
-                         src/xtd/include/xtd \
-                         src/xtd.core/include \
-                         src/xtd.drawing/include \
-                         src/xtd.forms/include \
-                         src/xtd.tunit/include
+INPUT                  = ../../src/xtd/include/doxygen_developer \
+                         ../../src/xtd/include \
+                         ../../src/xtd.core/include \
+                         ../../src/xtd.drawing/include \
+                         ../../src/xtd.forms/include \
+                         ../../src/xtd.tunit/include \
+                         ../../src/xtd.drawing.native/include \
+                         ../../src/xtd.forms.native/include
 INPUT_ENCODING         = UTF-8
 FILE_PATTERNS          = *.dox *.h *.md
 RECURSIVE              = YES # Default: NO
@@ -118,10 +120,10 @@ EXCLUDE                =
 EXCLUDE_SYMLINKS       = NO
 EXCLUDE_PATTERNS       = __*.*
 EXCLUDE_SYMBOLS        = 
-EXAMPLE_PATH           = examples
+EXAMPLE_PATH           = ../../examples
 EXAMPLE_PATTERNS       = *
 EXAMPLE_RECURSIVE      = YES # Default: NO
-IMAGE_PATH             = docs/pictures
+IMAGE_PATH             = ../pictures
 INPUT_FILTER           = 
 FILTER_PATTERNS        = 
 FILTER_SOURCE_FILES    = NO
@@ -159,12 +161,12 @@ IGNORE_PREFIX          =
 #---------------------------------------------------------------------------
 
 GENERATE_HTML          = YES
-HTML_OUTPUT            = html
+HTML_OUTPUT            = developer_html
 HTML_FILE_EXTENSION    = .html
-HTML_HEADER            = "docs/doxygen/html_header.html"
-HTML_FOOTER            = "docs/doxygen/html_footer.html"
+HTML_HEADER            = html_header.html
+HTML_FOOTER            = html_footer.html
 HTML_STYLESHEET        = 
-HTML_EXTRA_STYLESHEET  = "docs/doxygen/custom.css" "docs/doxygen/custom_dark_theme.css"
+HTML_EXTRA_STYLESHEET  = custom.css custom_dark_theme.css
 HTML_EXTRA_FILES       = 
 HTML_COLORSTYLE_HUE    = 220
 HTML_COLORSTYLE_SAT    = 100
