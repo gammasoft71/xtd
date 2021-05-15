@@ -6,7 +6,7 @@ find_package(xtd REQUIRED)
 add_projects(
   assert
   assert_abort
-  asser_are_equal
+  assert_are_equal
   assert_are_equal_with_tolerence
   assert_are_not_equal
   assert_are_not_same
