@@ -67,7 +67,7 @@ TAGLINKS =
 # ENABLED_SECTIONS =
 # ENABLE_PREPROCESSING =
 # ENUM_VALUES_PER_LINE =
-# EXAMPLE_PATH =
+EXAMPLE_PATH = examples
 # EXAMPLE_PATTERNS =
 # EXAMPLE_RECURSIVE =
 # EXCLUDE =
@@ -112,15 +112,16 @@ TAGLINKS =
 # HTML_COLORSTYLE_SAT =
 # HTML_DYNAMIC_SECTIONS =
 # HTML_EXTRA_FILES =
-# HTML_EXTRA_STYLESHEET =
-# HTML_FOOTER =
-# HTML_HEADER =
+HTML_EXTRA_STYLESHEET = docs/doxygen/custom.css \
+                        docs/doxygen/custom_dark_theme.css
+HTML_FOOTER = docs/doxygen/html_footer.html
+HTML_HEADER = docs/doxygen/html_header.html
 # HTML_INDEX_NUM_ENTRIES =
 # HTML_STYLESHEET =
 # HTML_TIMESTAMP =
 # IDL_PROPERTY_SUPPORT =
 # IGNORE_PREFIX =
-# IMAGE_PATH =
+IMAGE_PATH = docs/pictures
 # INCLUDED_BY_GRAPH =
 # INCLUDE_FILE_PATTERNS =
 # INCLUDE_GRAPH =
@@ -131,12 +132,17 @@ TAGLINKS =
 # INLINE_INHERITED_MEMB =
 # INLINE_SIMPLE_STRUCTS =
 # INLINE_SOURCES =
-# INPUT =
+INPUT = src/xtd/include/doxygen \
+        src/xtd/include/xtd \
+        src/xtd.core/include \
+        src/xtd.drawing/include \
+        src/xtd.forms/include \
+        src/xtd.tunit/include
 # INPUT_ENCODING =
 # INTERACTIVE_SVG =
 # INTERNAL_DOCS =
 # JAVADOC_AUTOBRIEF =
-# LAYOUT_FILE =
+LAYOUT_FILE = docs/doxygen/xtd_doxygen_layout.xml
 # MACRO_EXPANSION =
 # MARKDOWN_SUPPORT =
 # MAX_DOT_GRAPH_DEPTH =
@@ -150,7 +156,7 @@ TAGLINKS =
 # PLANTUML_JAR_PATH =
 # PREDEFINED =
 # PROJECT_BRIEF =
-# PROJECT_LOGO =
+PROJECT_LOGO = docs/pictures/xtd_doxygen.png
 # PROJECT_NAME =
 # PROJECT_NUMBER =
 # QT_AUTOBRIEF =
@@ -180,7 +186,7 @@ TAGLINKS =
 # STRICT_PROTO_MATCHING =
 # STRIP_CODE_COMMENTS =
 # STRIP_FROM_INC_PATH =
-# STRIP_FROM_PATH =
+STRIP_FROM_PATH = src
 # SUBGROUPING =
 # TAB_SIZE =
 # TEMPLATE_RELATIONS =
@@ -190,4 +196,5 @@ TAGLINKS =
 # UML_LOOK =
 # USE_MDFILE_AS_MAINPAGE =
 # VERBATIM_HEADERS =
+WARN_LOGFILE = build/doxygen_warnings.txt
 #
