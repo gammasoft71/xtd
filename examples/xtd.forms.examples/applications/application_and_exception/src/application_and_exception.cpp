@@ -14,7 +14,7 @@ public:
     text("application and exception example");
     
     // uncomment next line to throw error and catch it in main entry point
-    // throw system_exception(caller_info_);
+    //throw system_exception(caller_info_);
 
     generate_handled_exception_button.auto_size(true);
     generate_handled_exception_button.location({10, 10});
