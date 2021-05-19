@@ -6,6 +6,7 @@
 #include <memory>
 #include <vector>
 #include "../forms_export.h"
+#include "../forms_namespace_aliases.h"
 #include "application_context.h"
 #include "application_informations.h"
 #include "imessage_filter.h"

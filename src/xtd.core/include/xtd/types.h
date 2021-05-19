@@ -198,3 +198,13 @@ namespace xtd {
   /// @ingroup xtd_core types
   using wchar = wchar_t;
 }
+
+/*
+/// @cond
+namespace __ {
+  /// @endcond
+  /// @brief The system namespace contains all fundamental classes to access Hardware, Os, System, and more.
+  namespace system = xtd;
+}
+using namespace __;
+*/

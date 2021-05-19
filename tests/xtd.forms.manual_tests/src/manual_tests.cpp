@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
-using namespace xtd::forms;
+using namespace xtd::windows::forms;
 
 namespace xtd {
   namespace forms {

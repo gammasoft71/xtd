@@ -1,0 +1,2 @@
+#pragma once
+#include "xtd.core.native.win32.h"

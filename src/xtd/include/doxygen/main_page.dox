@@ -3,7 +3,7 @@
 
 /// @mainpage xtd - Reference Guide Documentation
 ///
-/// <b>Modern c++17/20 framework to create console, GUI and unit test applications on Windows, macOS, Linux, iOS and android.</b>
+/// <b>Modern c++17/20 framework to create console, forms (GUI like WinForms) and unit test applications on Windows, macOS, Linux, iOS and android.</b>
 ///
 /// @image html xtd_header.png
 ///
@@ -56,7 +56,7 @@
 /// Hello, World!
 /// @endcode
 ///
-/// @subsection ExamplesGUISubsection GUI
+/// @subsection ExamplesFormsSubsection Forms
 /// hello_world_forms.cpp:
 /// @code
 /// #include <xtd/xtd>
@@ -89,13 +89,13 @@
 /// target_type(GUI_APPLICATION)
 /// @endcode
 ///
-/// @subsubsection ExamplesGUIBuildAndRunSubsubsection Build and run
+/// @subsubsection ExamplesFormsBuildAndRunSubsubsection Build and run
 /// Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 /// @code
 /// xtdc run
 /// @endcode
 ///
-/// @subsubsection ExamplesGUIOutputSubsubsection Output
+/// @subsubsection ExamplesFormsOutputSubsubsection Output
 ///
 /// Windows:
 ///  @image html hello_world_message_box_w.png
