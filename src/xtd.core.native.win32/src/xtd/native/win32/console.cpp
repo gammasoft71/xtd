@@ -215,7 +215,7 @@ int32_t console::output_code_page() {
 }
 
 void console::output_code_page(int32_t codePage) {
-  SetConsoleOutputCP(codePage) == TRUE;
+  SetConsoleOutputCP(codePage);
 }
 
 void console::read_key(int32_t& key_char, int32_t& key_code, bool& alt, bool& shift, bool& ctrl) {
