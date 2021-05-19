@@ -752,7 +752,7 @@ void console::treat_control_c_as_input(bool treat_control_c_as_input) {
   ::treat_control_c_as_input = treat_control_c_as_input;
 }
 
-void console::unregister_user_cancel_callback(std::function<bool(int32_t)> user_cancel_callback) {
+void console::unregister_user_cancel_callback() {
   ::user_cancel_callback = nullptr;
 }
 
