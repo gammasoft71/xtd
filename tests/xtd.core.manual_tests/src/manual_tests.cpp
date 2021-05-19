@@ -3,14 +3,12 @@
 using namespace std;
 using namespace xtd;
 
-std::function<bool(int32_t)> user_cancel_callback;
+class xtd_core_manual_test {
+public:
+  static void main() {
+    // console::write_line("Hello, Wolrd!");
+    throw invalid_operation_exception(caller_info_);
+  }
+};
 
-void register_user_cancel_callback(std::function<bool(int32_t)> user_cancel_callback) {
-  ::user_cancel_callback = user_cancel_callback;
-}
-
-int main() {
-  console::write_line("Hello, Wolrd!");
-  register_user_cancel_callback([](int v) {return v == 42;});
-  console::write_line(user_cancel_callback ? user_cancel_callback(24) : false);
-}
+startup_(xtd_core_manual_test);
