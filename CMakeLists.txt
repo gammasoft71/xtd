@@ -36,10 +36,13 @@ include(scripts/cmake/update_version_number.cmake)
 
 # Graphic toolkits definitions
 if (WIN32)
+  choice_options(XTD_NATIVE_OPERATING_SYSTEM "Choose Operating System for native system libraries" Windows macOS linux iOS android)
   choice_options(XTD_NATIVE_GRAPHIC_TOOLKIT "Choose toolkit for native drawing and forms libraries" wxwidgets msw qt5 fltk)
 elseif (APPLE)
+  choice_options(XTD_NATIVE_OPERATING_SYSTEM "Choose Operating System for native system libraries" macOS Windows linux iOS android)
   choice_options(XTD_NATIVE_GRAPHIC_TOOLKIT "Choose toolkit for native drawing and forms libraries" wxwidgets cocoa qt5 fltk)
 else ()
+  choice_options(XTD_NATIVE_OPERATING_SYSTEM "Choose Operating System for native system libraries" linux Windows macOS iOS android)
   choice_options(XTD_NATIVE_GRAPHIC_TOOLKIT "Choose toolkit for native drawing and forms libraries" wxwidgets gtk4 gtk3 qt5 fltk)
 endif ()
 
@@ -94,6 +97,13 @@ endif ()
 
 if (XTD_BUILD_TOOL_XTDC_GUI AND NOT XTD_BUILD_LIBRARIES_XTD_FORMS)
   message(FATAL_ERROR "Build xtd.forms libraries must must be set to ON: xtdc-gu GUI tool depends of xtd.forms")
+endif ()
+
+# set core native library
+if ("${XTD_NATIVE_OPERATING_SYSTEM}" STREQUAL "Windows")
+  set(XTD_CORE_NATIVE_LIBRARY xtd.core.native.win32)
+else ()
+  set(XTD_CORE_NATIVE_LIBRARY xtd.core.native.unix)
 endif ()
 
 # set drawing and forms native library
@@ -154,6 +164,9 @@ add_projects(src tests tools)
 
 # Updates export file
 xtd_update_export_file(src/xtd.3rdparty.call_stack/call_stack_export.h XTD_3RDPARTY_CALL_STACK_EXPORT call_stack_export_)
+string(REPLACE "." "_" XTD_CORE_NATIVE_LIBRARY_UPPER ${XTD_CORE_NATIVE_LIBRARY})
+string(TOUPPER ${XTD_CORE_NATIVE_LIBRARY_UPPER} XTD_CORE_NATIVE_LIBRARY_UPPER)
+xtd_update_export_file(src/${XTD_CORE_NATIVE_LIBRARY}/include/xtd/core_native_export.h ${XTD_CORE_NATIVE_LIBRARY_UPPER}_EXPORT core_native_export_)
 xtd_update_export_file(src/xtd.core/include/xtd/core_export.h XTD_CORE_EXPORT core_export_)
 string(REPLACE "." "_" XTD_DRAWING_NATIVE_LIBRARY_UPPER ${XTD_DRAWING_NATIVE_LIBRARY})
 string(TOUPPER ${XTD_DRAWING_NATIVE_LIBRARY_UPPER} XTD_DRAWING_NATIVE_LIBRARY_UPPER)
@@ -162,6 +175,7 @@ xtd_update_export_file(src/xtd.drawing/include/xtd/drawing_export.h XTD_DRAWING_
 string(REPLACE "." "_" XTD_FORMS_NATIVE_LIBRARY_UPPER ${XTD_FORMS_NATIVE_LIBRARY})
 string(TOUPPER ${XTD_FORMS_NATIVE_LIBRARY_UPPER} XTD_FORMS_NATIVE_LIBRARY_UPPER)
 xtd_update_export_file(src/${XTD_FORMS_NATIVE_LIBRARY}/include/xtd/forms_native_export.h ${XTD_FORMS_NATIVE_LIBRARY_UPPER}_EXPORT forms_native_export_)
+
 xtd_update_export_file(src/xtd.forms/include/xtd/forms_export.h XTD_FORMS_EXPORT forms_export_)
 xtd_update_export_file(src/xtd.tunit/include/xtd/tunit_export.h XTD_TUNIT_EXPORT tunit_export_)
 xtd_update_export_file(src/xtd/include/xtd/export.h XTD_EXPORT export_)

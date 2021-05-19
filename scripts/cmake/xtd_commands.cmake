@@ -23,7 +23,7 @@
 ##  target_type(${TARGET_TYPE})
 ## @endcode
 macro(choice_options OPTION MESSAGE DEFAULT_OPTION)
-  set(${OPTION} ${DEFAULT_OPTION} CACHE STRING MESSAGE)
+  set(${OPTION} ${DEFAULT_OPTION} CACHE STRING ${MESSAGE})
   set_property(CACHE ${OPTION} PROPERTY STRINGS ${DEFAULT_OPTION} ${ARGN})
 endmacro ()
 

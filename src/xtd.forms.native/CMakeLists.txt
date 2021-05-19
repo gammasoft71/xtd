@@ -6,6 +6,7 @@ include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 add_include_directories(include)
 add_sources(
+  include/xtd/xtd.forms.native
   include/xtd/xtd.forms.native.h
   include/xtd/forms/browser_info_flags.h
   include/xtd/forms/create_params.h

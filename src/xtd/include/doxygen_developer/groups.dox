@@ -37,6 +37,14 @@
 /// @brief content alignment definitions.
 /// @warning Internal use only
 
+/// @defgroup console_color console color
+/// @brief console color definitions.
+/// @warning Internal use only
+
+/// @defgroup console_special_key console special key
+/// @brief console special key definitions.
+/// @warning Internal use only
+
 /// @defgroup dts date time states
 /// @brief date time states definitions.
 /// @warning Internal use only
@@ -114,6 +122,10 @@
 
 /// @defgroup ws window styles
 /// @brief window styles definitions.
+/// @warning Internal use only
+
+/// @defgroup xtd_core_native xtd.core.native
+/// @brief The xtd.core.native library contains internal native API definitions to access underlying ooperating system components used by xtd.core library.
 /// @warning Internal use only
 
 /// @defgroup xtd_drawing_native xtd.drawing.native

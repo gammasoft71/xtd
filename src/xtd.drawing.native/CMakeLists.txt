@@ -6,6 +6,7 @@ include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 add_include_directories(include)
 add_sources(
+  include/xtd/xtd.drawing.native
   include/xtd/xtd.drawing.native.h
   include/xtd/drawing/native/argb.h
   include/xtd/drawing/native/brush.h
