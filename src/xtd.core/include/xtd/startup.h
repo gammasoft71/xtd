@@ -8,7 +8,7 @@
 #include "strings.h"
 #include "system_exception.h"
 #include "collections/specialized/string_vector.h"
-#include "diagnostics/debug.h"
+#include "console.h"
 #if defined(__CMAKE_TARGET_TYPE__) && __CMAKE_TARGET_TYPE__ == 2 // 2 == GUI_APPLICATION
 #include "xtd/forms/application.h"
 #include "xtd/forms/exception_box.h"
@@ -19,9 +19,9 @@
 inline void __startup_catch_exception__(const std::exception& e) {xtd::forms::application::open_forms().size() > 0 ? xtd::forms::exception_box::show(xtd::forms::application::open_forms()[0].get(), e, xtd::forms::application::product_name()) : xtd::forms::exception_box::show(e, xtd::forms::application::product_name());}
 inline void __startup_catch_exception__() {xtd::forms::application::open_forms().size() > 0 ? xtd::forms::exception_box::show(xtd::forms::application::open_forms()[0].get(), xtd::forms::application::product_name()) : xtd::forms::exception_box::show(xtd::forms::application::product_name());}
 #else
-inline void __startup_catch_exception__(const std::exception& e) {xtd::diagnostics::debug::write_line(xtd::strings::format("exception: {}", e.what()));}
-inline void __startup_catch_exception__(const xtd::system_exception& e) {xtd::diagnostics::debug::write_line(e);}
-inline void __startup_catch_exception__() {xtd::diagnostics::debug::write_line("Unknown exception occured");}
+inline void __startup_catch_exception__(const std::exception& e) {xtd::console::write_line("Unhandled exception: {}", e.what());}
+inline void __startup_catch_exception__(const xtd::system_exception& e) {xtd::console::write_line("Unhandled exception: {}", e);}
+inline void __startup_catch_exception__() {xtd::console::write_line("Unhandled exception: Unknown exception occured");}
 #endif
 /// @endcond
 
