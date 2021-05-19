@@ -139,7 +139,9 @@ namespace xtd {
         static void title(const std::string& title);
         static bool treat_control_c_as_input();
         static void treat_control_c_as_input(bool treat_control_c_as_input);
-        static void unregister_user_cancel_callback(std::function<bool(int32_t)> user_cancel_callback);
+        /// @brief Unregister the user cancel callback previously registered with xtd::native::console::register_user_cancel_callback method.
+        /// @warning Internal use only
+        static void unregister_user_cancel_callback();
         static int32_t window_left();
         static int32_t window_height();
         static int32_t window_top();
