@@ -13,13 +13,13 @@ using namespace xtd::native;
 namespace {
   std::function<bool(int32_t)> user_cancel_callback;
 
-  int32_t __background_color() noexcept {
+  int32_t __background_color() {
     CONSOLE_SCREEN_BUFFER_INFO csbi;
     GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
     return (csbi.wAttributes & 0x00F0) >> 4;
   }
 
-  int32_t __foreground_color() noexcept {
+  int32_t __foreground_color() {
     CONSOLE_SCREEN_BUFFER_INFO csbi;
     GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
     return csbi.wAttributes & 0x000F;
@@ -30,13 +30,13 @@ namespace {
       //xtd::console_cancel_event_args console_cancel(false, ctrl_type == CTRL_C_EVENT ? xtd::console_special_key::control_c : xtd::console_special_key::control_break);
       //xtd::console::__internal_cancel_key_press__(console_cancel);
       //return console_cancel.cancel() == TRUE;
-      return user_cancel_callback && user_cancel_callback(ctrl_type == CTRL_C_EVENT ? CONSOLE_SPECIAL_KEY_CTRL_C : CONSOLE_SPECIAL_KEY_CTRL_BREAK) == true);
+      return user_cancel_callback && user_cancel_callback(ctrl_type == CTRL_C_EVENT ? CONSOLE_SPECIAL_KEY_CTRL_C : CONSOLE_SPECIAL_KEY_CTRL_BREAK) == true;
     }
     return FALSE;
   }
 
-  xtd::console_color backColor = __background_color();
-  xtd::console_color foreColor = __foreground_color();
+  int32_t backColor = __background_color();
+  int32_t foreColor = __foreground_color();
   bool treat_control_c_as_input = [&]()-> bool {
     SetConsoleCtrlHandler(&__handler_routine, TRUE);
     return false;
@@ -51,7 +51,7 @@ namespace {
 
   private:
     terminal() = default;
-    ~terminal() noexcept {
+    ~terminal() {
       CONSOLE_SCREEN_BUFFER_INFO csbi;
       GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
 
@@ -60,66 +60,64 @@ namespace {
       SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes);
     }
 
-    xtd::console_color backColor_ = __background_color();
-    xtd::console_color foreColor_ = __foreground_color();
+    int32_t backColor_ = __background_color();
+    int32_t foreColor_ = __foreground_color();
   };
 
   terminal terminal::terminal_;
 }
 
-int32_t console::background_color() noexcept {
+int32_t console::background_color() {
   return __background_color();
 }
 
-bool console::background_color(int32_t color) noexcept {
+void console::background_color(int32_t color) {
   terminal::terminal_.force_compiler_optimizer_to_create_object();
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   
   csbi.wAttributes &= 0xFF0F;
   csbi.wAttributes |= color << 4;
-  return SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes) == TRUE;
+  SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes);
 }
 
-bool console::beep(uint32_t frequency, uint32_t duration) noexcept {
-  if (frequency < 37 || frequency > 32767)
-    return false;
+void console::beep(uint32_t frequency, uint32_t duration) {
+  if (frequency < 37 || frequency > 32767) return;
   
   Beep(frequency, duration);
-  return true;
 }
 
-int32_t console::buffer_height() noexcept {
+int32_t console::buffer_height() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   return csbi.dwSize.Y;
 }
 
-bool console::buffer_height(int32_t height) noexcept {
+void console::buffer_height(int32_t height) {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   csbi.dwSize.Y = static_cast<int16_t>(height);
-  return SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE), csbi.dwSize) == TRUE;
+  SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE), csbi.dwSize);
 }
 
-int32_t console::buffer_width() noexcept {
+int32_t console::buffer_width() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   return csbi.dwSize.X;
 }
 
-bool console::buffer_width(int32_t width) noexcept {
+void console::buffer_width(int32_t width) {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   csbi.dwSize.X = static_cast<int16_t>(width);
-  return SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE), csbi.dwSize) == TRUE;
+  SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE), csbi.dwSize);
 }
 
-bool console::caps_lock() noexcept {
+bool console::caps_lock() {
   return (GetKeyState(VK_CAPITAL) & 0x0001) == 0x0001;
 }
 
-bool console::clear() noexcept {
+void console::clear() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   
@@ -127,22 +125,22 @@ bool console::clear() noexcept {
   DWORD nbCharsWritten = 0;
   FillConsoleOutputAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes, csbi.dwSize.X * csbi.dwSize.Y, coord, &nbCharsWritten);
   FillConsoleOutputCharacter(GetStdHandle(STD_OUTPUT_HANDLE), ' ', csbi.dwSize.X * csbi.dwSize.Y, coord, &nbCharsWritten);
-  return console::set_cursor_position(0, 0);
+  console::set_cursor_position(0, 0);
 }
 
-int32_t console::cursor_left() noexcept {
+int32_t console::cursor_left() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   return csbi.dwCursorPosition.X;
 }
 
-int32_t console::cursor_size() noexcept {
+int32_t console::cursor_size() {
   CONSOLE_CURSOR_INFO cci;
   GetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci);
   return cci.dwSize;
 }
 
-void console::cursor_size(int32_t size) noexcept {
+void console::cursor_size(int32_t size) {
   CONSOLE_CURSOR_INFO cci;
   GetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci);
   
@@ -150,19 +148,19 @@ void console::cursor_size(int32_t size) noexcept {
   SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci);
 }
 
-int32_t console::cursor_top() noexcept {
+int32_t console::cursor_top() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   return csbi.dwCursorPosition.Y;
 }
 
-bool console::cursor_visible() noexcept {
+bool console::cursor_visible() {
   CONSOLE_CURSOR_INFO cci;
   GetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci);
   return cci.bVisible != FALSE;
 }
 
-void console::cursor_visible(bool visible) noexcept {
+void console::cursor_visible(bool visible) {
   CONSOLE_CURSOR_INFO cci;
   GetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci);
   
@@ -170,57 +168,57 @@ void console::cursor_visible(bool visible) noexcept {
   SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci);
 }
 
-int32_t console::foreground_color() noexcept {
+int32_t console::foreground_color() {
   return __foreground_color();
 }
 
-bool console::foreground_color(int32_t color) noexcept {
+void console::foreground_color(int32_t color) {
   terminal::terminal_.force_compiler_optimizer_to_create_object();
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   
   csbi.wAttributes &= 0xFFF0;
   csbi.wAttributes |= color;
-  return SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes) == TRUE;
+  SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes);
 }
 
-int32_t console::input_code_page() noexcept {
+int32_t console::input_code_page() {
   return GetConsoleCP();
 }
 
-bool console::input_code_page(int32_t codePage) noexcept {
-  return SetConsoleCP(codePage) == TRUE;
+void console::input_code_page(int32_t codePage) {
+  SetConsoleCP(codePage);
 }
 
-bool console::key_available() noexcept {
+bool console::key_available() {
   return _kbhit() != 0;
 }
 
-int32_t console::largest_window_height() noexcept {
+int32_t console::largest_window_height() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   return csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
 }
 
-int32_t console::largest_window_width() noexcept {
+int32_t console::largest_window_width() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   return csbi.srWindow.Left;
 }
 
-bool console::number_lock() noexcept {
+bool console::number_lock() {
   return (GetKeyState(VK_NUMLOCK) & 0x0001) == 0x0001;
 }
 
-int32_t console::output_code_page() noexcept {
+int32_t console::output_code_page() {
   return GetConsoleOutputCP();
 }
 
-bool console::output_code_page(int32_t codePage) noexcept {
-  return SetConsoleOutputCP(codePage) == TRUE;
+void console::output_code_page(int32_t codePage) {
+  SetConsoleOutputCP(codePage) == TRUE;
 }
 
-void console::read_key(int32_t& key_char, int32_t& key_code, bool& alt, bool& shift, bool& ctrl) noexcept {
+void console::read_key(int32_t& key_char, int32_t& key_code, bool& alt, bool& shift, bool& ctrl) {
   INPUT_RECORD input_record;
   do {
     DWORD nb_events_read = 0;
@@ -238,29 +236,30 @@ void console::register_user_cancel_callback(std::function<bool(int32_t)> user_ca
   ::user_cancel_callback = user_cancel_callback;
 }
 
-bool console::reset_color() noexcept {
-  return console::background_color(backColor) && console::foreground_color(foreColor);
+void console::reset_color() {
+  console::background_color(backColor);
+  console::foreground_color(foreColor);
 }
 
-bool console::set_cursor_position(int32_t left, int32_t top) noexcept {
+void console::set_cursor_position(int32_t left, int32_t top) {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   csbi.dwCursorPosition.X = static_cast<int16_t>(left);
   csbi.dwCursorPosition.Y = static_cast<int16_t>(top);
-  return SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), csbi.dwCursorPosition) == TRUE;
+  SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), csbi.dwCursorPosition);
 }
 
-std::string console::title() noexcept {
+std::string console::title() {
   char title[MAX_PATH];
   if (GetConsoleTitle(title, MAX_PATH) == 0) return "";
   return title;
 }
 
-bool console::title(const std::string& title) noexcept {
-  return SetConsoleTitle(title.c_str());
+void console::title(const std::string& title) {
+  SetConsoleTitle(title.c_str());
 }
 
-bool console::treat_control_c_as_input() noexcept {
+bool console::treat_control_c_as_input() {
   DWORD mode = 0;
   GetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), &mode);
   return  (mode & ENABLE_PROCESSED_INPUT) != ENABLE_PROCESSED_INPUT;
@@ -280,25 +279,25 @@ void console::unregister_user_cancel_callback(std::function<bool(int32_t)> user_
   ::user_cancel_callback = nullptr;
 }
 
-int32_t console::window_height() noexcept {
+int32_t console::window_height() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   return csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
 }
 
-int32_t console::window_left() noexcept {
+int32_t console::window_left() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   return csbi.srWindow.Left;
 }
 
-int32_t console::window_top() noexcept {
+int32_t console::window_top() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   return csbi.srWindow.Top;
 }
 
-int32_t console::window_width() noexcept {
+int32_t console::window_width() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   return csbi.srWindow.Right - csbi.srWindow.Left + 1;
