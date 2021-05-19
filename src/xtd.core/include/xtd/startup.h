@@ -19,9 +19,9 @@
 inline void __startup_catch_exception__(const std::exception& e) {xtd::forms::application::open_forms().size() > 0 ? xtd::forms::exception_box::show(xtd::forms::application::open_forms()[0].get(), e, xtd::forms::application::product_name()) : xtd::forms::exception_box::show(e, xtd::forms::application::product_name());}
 inline void __startup_catch_exception__() {xtd::forms::application::open_forms().size() > 0 ? xtd::forms::exception_box::show(xtd::forms::application::open_forms()[0].get(), xtd::forms::application::product_name()) : xtd::forms::exception_box::show(xtd::forms::application::product_name());}
 #else
-inline void __startup_catch_exception__(const std::exception& e) {xtd::console::write_line("Unhandled exception: {}", e.what());}
-inline void __startup_catch_exception__(const xtd::system_exception& e) {xtd::console::write_line("Unhandled exception: {}", e);}
-inline void __startup_catch_exception__() {xtd::console::write_line("Unhandled exception: Unknown exception occured");}
+inline void __startup_catch_exception__(const std::exception& e) {std::cerr << std::endl << xtd::strings::format("Unhandled exception: {}", e.what()) << std::endl;}
+inline void __startup_catch_exception__(const xtd::system_exception& e) { std::cerr << std::endl << xtd::strings::format("Unhandled exception: {}", e) << std::endl;}
+inline void __startup_catch_exception__() { std::cerr << std::endl << xtd::strings::format("Unhandled exception: Unknown exception occured") << std::endl;}
 #endif
 /// @endcond
 
