@@ -1,6 +1,5 @@
 #include <xtd/xtd.core>
 
-using namespace std;
 using namespace xtd;
 
 class xtd_core_manual_test {
