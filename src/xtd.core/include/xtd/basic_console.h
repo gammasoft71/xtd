@@ -137,7 +137,7 @@ namespace xtd {
     /// @par Examples
     /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
     /// @include console_cursor.cpp
-    static bool cursor_left(int left) {return set_cursor_position(left, cursor_top());}
+    static void cursor_left(int left) {set_cursor_position(left, cursor_top());}
     
     /// @brief Gets or sets the height of the cursor within a character cell.
     /// @return The size of the cursor expressed as a percentage of the height of a character cell. The property value ranges from 1 to 100.
@@ -166,7 +166,7 @@ namespace xtd {
     /// @par Examples
     /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
     /// @include console_cursor.cpp
-    static bool cursor_top(int top) {return set_cursor_position(cursor_left(), top);}
+    static void cursor_top(int top) {set_cursor_position(cursor_left(), top);}
     
     /// @brief Gets a value indicating whether the cursor is visible.
     /// @return true if the cursor is visible; otherwise, false.
