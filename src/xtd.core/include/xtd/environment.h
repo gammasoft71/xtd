@@ -185,8 +185,8 @@ namespace xtd {
       common_oem_links = 58,
       /// @brief The file system directory that acts as a staging area for files waiting to be written to a CD.
       cd_burning = 59,
-      /// @brief
-      home = 60
+      /// @brief The file system directory that contains home folder.
+      home = 64
     };
 
     /// @brief Specifies options to use for getting the path to a special folder.
@@ -222,7 +222,7 @@ namespace xtd {
     }
 
     /// @brief Gets the fully qualified path of the current working directory.
-    /// @return std::sgtring A string containing a directory path.
+    /// @return std::string A string containing a directory path.
     /// @remarks By definition, if this process starts in the root directory of a local or network drive, the value returned by this method is the drive name followed by a trailing slash (for example, "C:\"). If this process starts in a subdirectory, the value returned by this method is the drive and subdirectory path, without a trailing slash (for example, "C:\mySubDirectory").
     static std::string current_directory() noexcept {return __opaque_environment::get_current_directory();}
     

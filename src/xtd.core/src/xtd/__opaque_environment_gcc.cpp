@@ -65,7 +65,7 @@ std::string __opaque_environment::get_desktop_environment() noexcept {
 #else
   auto current_desktop = get_environment_variable("XDG_CURRENT_DESKTOP");
   if (current_desktop == "") current_desktop = get_environment_variable("XDG_DATA_DIRS");
-  for (auto environment_desktop : {"budgie", "cinamon",  "deepin", "Enlightenment", "étoilé", "gnome", "kde", "lxqt", "mate", "pantheon", "razor", "unity", "xfce"}) {
+  for (auto environment_desktop : {"budgie", "cinamon", "deepin", "Enlightenment", "étoilé", "gnome", "kde", "lxqt", "mate", "pantheon", "razor", "unity", "xfce"}) {
     if (xtd::strings::contains(xtd::strings::to_lower(current_desktop), environment_desktop)) return environment_desktop;
   }
   return "";
@@ -108,7 +108,7 @@ xtd::platform_id __opaque_environment::get_os_platform_id() noexcept {
 #endif
 }
 
-int __opaque_environment::get_os_version(int& major, int& minor, int& build, int& revision) noexcept {
+void __opaque_environment::get_os_version(int& major, int& minor, int& build, int& revision) noexcept {
 #if defined(__APPLE__)
   xtd::collections::specialized::string_vector numbers = xtd::strings::split(create_process("sw_vers -productVersion"), {'.', '\n'});
 #else
@@ -122,7 +122,6 @@ int __opaque_environment::get_os_version(int& major, int& minor, int& build, int
     build = 0;
   if (numbers.size() < 4 || !xtd::strings::try_parse(numbers[3], revision))
     revision = 0;
-  return 0;
 }
 
 std::string __opaque_environment::get_service_pack() noexcept {

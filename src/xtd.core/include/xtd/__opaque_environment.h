@@ -23,7 +23,7 @@ class core_export_ __opaque_environment final {
   static std::string get_know_folder_path(int id) noexcept;
   static std::string get_machine_name() noexcept;
   static xtd::platform_id get_os_platform_id() noexcept;
-  static int get_os_version(int& major, int& minor, int& build, int& revision) noexcept;
+  static void get_os_version(int& major, int& minor, int& build, int& revision) noexcept;
   static std::string get_service_pack() noexcept;
   static unsigned int get_processor_count() noexcept;
   static size_t get_system_page_size() noexcept;
