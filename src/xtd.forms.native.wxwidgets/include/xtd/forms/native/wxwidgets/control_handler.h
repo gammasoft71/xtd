@@ -447,7 +447,7 @@ namespace xtd {
         event<control_handler, delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t, intptr_t)>> def_wnd_proc;
         
       private:
-        wxWindow* control_;
+        wxWindow* control_ = nullptr;
         bool destroyed_ = false;
       };
       
