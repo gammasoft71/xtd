@@ -56,7 +56,7 @@ namespace {
 
   class terminal final {
   private:
-    terminal() noexcept {
+    terminal() {
       termios termioAttributes;
       tcgetattr(0, &termioAttributes);
       backupedTermioAttributes = termioAttributes;
@@ -64,14 +64,14 @@ namespace {
       tcsetattr(0, TCSANOW, &termioAttributes);
     }
     
-    ~terminal() noexcept {
+    ~terminal() {
       tcsetattr(0, TCSANOW, &backupedTermioAttributes);
       if (is_ansi_supported())
         std::cout << "\x1b]0;\x7" << std::flush;
     }
     
   public:
-    int getch() noexcept {
+    int getch() {
       if (peekCharacter != -1) {
         int8_t character = peekCharacter;
         peekCharacter = -1;
@@ -94,7 +94,7 @@ namespace {
       return character;
     }
     
-    bool key_available() noexcept {
+    bool key_available() {
       if (peekCharacter != -1)
         return true;
       
@@ -113,7 +113,7 @@ namespace {
       return peekCharacter != -1;
     }
     
-    static bool is_ansi_supported() noexcept {
+    static bool is_ansi_supported() {
       static std::string terminal = getenv("TERM") == nullptr ? "" : getenv("TERM");
       return isatty(fileno(stdout)) && (terminal == "xterm" || terminal == "xterm-color" || terminal == "xterm-256color" || terminal == "screen" || terminal == "screen-256color" || terminal == "linux" || terminal == "cygwin");
     }
@@ -548,11 +548,11 @@ namespace {
   std::string title;
 }
 
-xtd::console_color __opaque_console::background_color() noexcept {
+xtd::console_color __opaque_console::background_color() {
   return backColor;
 }
 
-bool __opaque_console::background_color(xtd::console_color color) noexcept {
+bool __opaque_console::background_color(xtd::console_color color) {
   static std::map<xtd::console_color, const char*> colors {{xtd::console_color::black, "\033[40m"}, {xtd::console_color::dark_blue, "\033[44m"}, {xtd::console_color::dark_green, "\033[42m"}, {xtd::console_color::dark_cyan, "\033[46m"}, {xtd::console_color::dark_red, "\033[41m"}, {xtd::console_color::dark_magenta, "\033[45m"}, {xtd::console_color::dark_yellow, "\033[43m"}, {xtd::console_color::gray, "\033[47m"}, {xtd::console_color::dark_gray, "\033[100m"}, {xtd::console_color::blue, "\033[104m"}, {xtd::console_color::green, "\033[102m"}, {xtd::console_color::cyan, "\033[106m"}, {xtd::console_color::red, "\033[101m"}, {xtd::console_color::magenta, "\033[105m"}, {xtd::console_color::yellow, "\033[103m"}, {xtd::console_color::white, "\033[107m"}};
   auto it = colors.find(color);
   if (!terminal::is_ansi_supported() && it != colors.end()) return false;
@@ -561,7 +561,7 @@ bool __opaque_console::background_color(xtd::console_color color) noexcept {
   return true;
 }
 
-bool __opaque_console::beep(unsigned int frequency, unsigned int duration) noexcept {
+bool __opaque_console::beep(unsigned int frequency, unsigned int duration) {
   if (frequency < 37 || frequency > 32767)
     return false;
   
@@ -580,38 +580,38 @@ bool __opaque_console::beep(unsigned int frequency, unsigned int duration) noexc
   return true;
 }
 
-int __opaque_console::buffer_height() noexcept {
+int __opaque_console::buffer_height() {
   /// @todo console buffer Height on linux and macOS
   return __opaque_console::window_height();
 }
 
-bool __opaque_console::buffer_height(int height) noexcept {
+bool __opaque_console::buffer_height(int height) {
   /// @todo set console buffer height on linux and macOS
   return true;
 }
 
-int __opaque_console::buffer_width() noexcept {
+int __opaque_console::buffer_width() {
   /// @todo console buffer Width on linux and macOS
   return __opaque_console::window_width();
 }
 
-bool __opaque_console::buffer_width(int width) noexcept {
+bool __opaque_console::buffer_width(int width) {
   /// @todo set console buffer width on linux and macOS
   return true;
 }
 
-bool __opaque_console::caps_lock() noexcept {
+bool __opaque_console::caps_lock() {
   /// @todo caps lock status on linux and macOS
   return false;
 }
 
-bool __opaque_console::clear() noexcept {
+bool __opaque_console::clear() {
   if (!terminal::is_ansi_supported()) return false;
   std::cout << "\x1b[H\x1b[2J" << std::flush;
   return true;
 }
 
-int __opaque_console::cursor_left() noexcept {
+int __opaque_console::cursor_left() {
   if (!terminal::is_ansi_supported()) return 0;
   std::cout << "\x1b[6n" << std::flush;
   terminal::terminal_.getch();
@@ -623,11 +623,11 @@ int __opaque_console::cursor_left() noexcept {
   return atoi(left.c_str()) - 1;
 }
 
-int __opaque_console::cursor_size() noexcept {
+int __opaque_console::cursor_size() {
   return 100;
 }
 
-void __opaque_console::cursor_size(int size) noexcept {
+void __opaque_console::cursor_size(int size) {
   if (terminal::is_ansi_supported()) {
     if (size < 50)
       std::cout << "\x1b[4 q" << std::flush;
@@ -636,7 +636,7 @@ void __opaque_console::cursor_size(int size) noexcept {
   }
 }
 
-int __opaque_console::cursor_top() noexcept {
+int __opaque_console::cursor_top() {
   if (!terminal::is_ansi_supported()) return 0;
   std::cout << "\x1b[6n" << std::flush;
   terminal::terminal_.getch();
@@ -648,22 +648,22 @@ int __opaque_console::cursor_top() noexcept {
   return atoi(top.c_str()) - 1;
 }
 
-bool __opaque_console::cursor_visible() noexcept {
+bool __opaque_console::cursor_visible() {
   return cursorVisible;
 }
 
-void __opaque_console::cursor_visible(bool visible) noexcept {
+void __opaque_console::cursor_visible(bool visible) {
   if (terminal::is_ansi_supported()) {
     cursorVisible = visible;
     std::cout << (cursorVisible ? "\x1b[?25h" : "\x1b[?25l") << std::flush;
   }
 }
 
-xtd::console_color __opaque_console::foreground_color() noexcept {
+xtd::console_color __opaque_console::foreground_color() {
   return foreColor;
 }
 
-bool __opaque_console::foreground_color(xtd::console_color color) noexcept {
+bool __opaque_console::foreground_color(xtd::console_color color) {
   static std::map<xtd::console_color, const char*> colors {{xtd::console_color::black, "\033[30m"}, {xtd::console_color::dark_blue, "\033[34m"}, {xtd::console_color::dark_green, "\033[32m"}, {xtd::console_color::dark_cyan, "\033[36m"}, {xtd::console_color::dark_red, "\033[31m"}, {xtd::console_color::dark_magenta, "\033[35m"}, {xtd::console_color::dark_yellow, "\033[33m"}, {xtd::console_color::gray, "\033[37m"}, {xtd::console_color::dark_gray, "\033[90m"}, {xtd::console_color::blue, "\033[94m"}, {xtd::console_color::green, "\033[92m"}, {xtd::console_color::cyan, "\033[96m"}, {xtd::console_color::red, "\033[91m"}, {xtd::console_color::magenta, "\033[95m"}, {xtd::console_color::yellow, "\033[93m"}, {xtd::console_color::white, "\033[97m"}};
   auto it = colors.find(color);
   if (!terminal::is_ansi_supported() && it != colors.end()) return false;
@@ -672,44 +672,44 @@ bool __opaque_console::foreground_color(xtd::console_color color) noexcept {
   return true;
 }
 
-int __opaque_console::input_code_page() noexcept {
+int __opaque_console::input_code_page() {
   /// @todo console input code page status on linux and macOS
   return 65001;
 }
 
-bool __opaque_console::input_code_page(int codePage) noexcept {
+bool __opaque_console::input_code_page(int codePage) {
   /// @todo set console input code page on linux and macOS
   return true;
 }
 
-bool __opaque_console::key_available() noexcept {
+bool __opaque_console::key_available() {
   return key_info::key_available();
 }
 
-int __opaque_console::largest_window_height() noexcept {
+int __opaque_console::largest_window_height() {
   return 1000;
 }
 
-int __opaque_console::largest_window_width() noexcept {
+int __opaque_console::largest_window_width() {
   return 1000;
 }
 
-bool __opaque_console::number_lock() noexcept {
+bool __opaque_console::number_lock() {
   /// @todo number lock status on linux and macOS
   return false;
 }
 
-int __opaque_console::output_code_page() noexcept {
+int __opaque_console::output_code_page() {
   /// @todo console output code page status on linux and macOS
   return 65001;
 }
 
-bool __opaque_console::output_code_page(int codePage) noexcept {
+bool __opaque_console::output_code_page(int codePage) {
   /// @todo set console output code page on linux and macOS
   return true;
 }
 
-void __opaque_console::read_key(int& key_char, int& key_code, bool& alt, bool& shift, bool& ctrl) noexcept {
+void __opaque_console::read_key(int& key_char, int& key_code, bool& alt, bool& shift, bool& ctrl) {
   key_info key_info = key_info::read();
   key_char = static_cast<int>(key_info.key_char());
   key_code = static_cast<int>(key_info.key());
@@ -718,19 +718,19 @@ void __opaque_console::read_key(int& key_char, int& key_code, bool& alt, bool& s
   shift = key_info.has_shift_modifier();
 }
 
-bool __opaque_console::reset_color() noexcept {
+bool __opaque_console::reset_color() {
   if (!terminal::is_ansi_supported()) return false;
   std::cout << "\033[49m\033[39m" << std::flush;
   return true;
 }
 
-bool __opaque_console::set_cursor_position(int left, int top) noexcept {
+bool __opaque_console::set_cursor_position(int left, int top) {
   if (!terminal::is_ansi_supported()) return false;
   std::cout << "\x1b[" << top + 1 << ";" << left + 1 << "f" << std::flush;
   return true;
 }
 
-std::string __opaque_console::title() noexcept {
+std::string __opaque_console::title() {
   /// @todo get console get title on linux and macOS
   /*
    * Didn't work correctly!
@@ -746,14 +746,14 @@ std::string __opaque_console::title() noexcept {
   return ::title;
 }
 
-bool __opaque_console::title(const std::string& title) noexcept {
+bool __opaque_console::title(const std::string& title) {
   if (!terminal::is_ansi_supported()) return false;
   ::title = title;
   std::cout << "\x1b]0;" << title.c_str() << "\x7" << std::flush;
   return true;
 }
 
-bool __opaque_console::treat_control_c_as_input() noexcept {
+bool __opaque_console::treat_control_c_as_input() {
   return ::treat_control_c_as_input;
 }
 
@@ -761,12 +761,7 @@ void __opaque_console::treat_control_c_as_input(bool treat_control_c_as_input) {
   ::treat_control_c_as_input = treat_control_c_as_input;
 }
 
-int __opaque_console::window_left() noexcept {
-  /// @todo get console window left on linux and macOS
-  return 0;
-}
-
-int __opaque_console::window_height() noexcept {
+int __opaque_console::window_height() {
   if (!terminal::is_ansi_supported()) return 24;
   int top = __opaque_console::cursor_top();
   __opaque_console::set_cursor_position(__opaque_console::cursor_left(), 999);
@@ -775,18 +770,39 @@ int __opaque_console::window_height() noexcept {
   return height;
 }
 
-int __opaque_console::window_top() noexcept {
+void __opaque_console::window_height(int32_t height) {
+  /// @todo set console window height on linux and macOS
+}
+
+int __opaque_console::window_left() {
+  /// @todo get console window left on linux and macOS
+  return 0;
+}
+
+void __opaque_console::window_left(int32_t left) {
+  /// @todo set console window left on linux and macOS
+}
+
+int __opaque_console::window_top() {
   /// @todo get console window top on linux and macOS
   return 0;
 }
 
-int __opaque_console::window_width() noexcept {
+void __opaque_console::window_top(int32_t top) {
+  /// @todo set console window top on linux and macOS
+}
+
+int __opaque_console::window_width() {
   if (!terminal::is_ansi_supported()) return 80;
   int left = __opaque_console::cursor_left();
   __opaque_console::set_cursor_position(999, __opaque_console::cursor_top());
   int width = __opaque_console::cursor_left() + 1;
   __opaque_console::set_cursor_position(left, __opaque_console::cursor_top());
   return width;
+}
+
+void __opaque_console::window_width(int32_t width) {
+  /// @todo set console window width on linux and macOS
 }
 
 #endif

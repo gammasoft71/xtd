@@ -13,8 +13,13 @@ namespace xtd {
   /// @see xtd::basic_console<char_t>::beep(unsigned int frequency, unsigned int duration) method.
   class beep final {
   public:
+    /// @brief Plays the sound of a beep through the console speaker.
+    /// @remarks By default, the beep plays at a frequency of 800 hertz for a duration of 200 milliseconds
     beep() = default;
 
+    /// @brief Plays the sound of a beep of a specified frequency and duration through the console speaker.
+    /// @param frequency The frequency of the beep, ranging from 37 to 32767 hertz
+    /// @param duration The duration of the beep measured in milliseconds
     beep(unsigned int frequency, unsigned int duration) : frequency_(frequency), duration_(duration) {}
     
     /// @cond

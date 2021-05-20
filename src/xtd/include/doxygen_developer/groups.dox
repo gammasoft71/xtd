@@ -29,6 +29,10 @@
 /// @brief class styles definitions.
 /// @warning Internal use only
 
+/// @defgroup csidl constant special item ID list
+/// @brief special item ID list definitions.
+/// @warning Internal use only
+
 /// @defgroup cbs combo box styles
 /// @brief combo box styles definitions.
 /// @warning Internal use only
@@ -83,6 +87,10 @@
 
 /// @defgroup ofn open file flags
 /// @brief open file flags definitions.
+/// @warning Internal use only
+
+/// @defgroup platform_id platform id
+/// @brief platform id definitions.
 /// @warning Internal use only
 
 /// @defgroup pbs progress bar styles

@@ -133,19 +133,66 @@ namespace xtd {
         /// @remarks The five parametrs will contains informations on key pressed.
         /// @warning Internal use only
         static void read_key(int32_t& key_char, int32_t& key_code, bool& alt, bool& shift, bool& ctrl);
+        /// @brief Sets the foreground and background console colors to their defaults.
+        /// @remarks The foreground and background colors are restored to the colors that existed when the current process began. For more information, see the foreground_color and background_color properties.
+        /// @warning Internal use only
         static void reset_color();
+        /// @brief Sets the position of the cursor.
+        /// @param left The column position of the cursor. Columns are numbered from left to right starting at 0.
+        /// @param top The row position of the cursor. Rows are numbered from top to bottom starting at 0.
+        /// @warning Internal use only
         static void set_cursor_position(int32_t left, int32_t top);
+        /// @brief Gets the title to display in the console title bar.
+        /// @return The string to be displayed in the title bar of the console. The maximum length of the title string is 24500 characters.
+        /// @warning Internal use only
         static std::string title();
+        /// @brief Sets the title to display in the console title bar.
+        /// @param title The string to be displayed in the title bar of the console. The maximum length of the title string is 24500 characters.
+        /// @warning Internal use only
         static void title(const std::string& title);
+        /// @brief Gets a value indicating whether the combination of the Control modifier key and C console key (Ctrl+C) is treated as ordinary input or as an interruption that is handled by the operating system.
+        /// @return true if Ctrl+C is treated as ordinary input; otherwise, false.
+        /// @warning Internal use only
         static bool treat_control_c_as_input();
+        /// @brief Sets a value indicating whether the combination of the Control modifier key and C console key (Ctrl+C) is treated as ordinary input or as an interruption that is handled by the operating system.
+        /// @param treat_control_c_as_input true if Ctrl+C is treated as ordinary input; otherwise, false.
+        /// @warning Internal use only
         static void treat_control_c_as_input(bool treat_control_c_as_input);
         /// @brief Unregister the user cancel callback previously registered with xtd::native::console::register_user_cancel_callback method.
         /// @warning Internal use only
         static void unregister_user_cancel_callback();
-        static int32_t window_left();
+        /// @brief Gets the height of the console window area.
+        /// @return The height of the console window measured in rows.
+        /// @warning Internal use only
         static int32_t window_height();
+        /// @brief Sets the height of the console window area.
+        /// @param height The height of the console window measured in rows.
+        /// @warning Internal use only
+        static void window_height(int32_t height);
+        /// @brief Gets the left of the console window area.
+        /// @return The left of the console window measured in columns.
+        /// @warning Internal use only
+        static int32_t window_left();
+        /// @brief Sets the left of the console window area.
+        /// @param left The left of the console window measured in columns.
+        /// @warning Internal use only
+        static void window_left(int32_t left);
+        /// @brief Gets the top of the console window area.
+        /// @return The top of the console window measured in rows.
+        /// @warning Internal use only
         static int32_t window_top();
+        /// @brief Sets the top of the console window area.
+        /// @param top The top of the console window measured in rows.
+        /// @warning Internal use only
+        static void window_top(int32_t top);
+        /// @brief Gets the width of the console window area.
+        /// @return The width of the console window measured in columns.
+        /// @warning Internal use only
         static int32_t window_width();
+        /// @brief Sets the width of the console window area.
+        /// @param width The width of the console window measured in columns.
+        /// @warning Internal use only
+        static void window_width(int32_t width);
       };
     }
 }

@@ -49,7 +49,7 @@ xtd::platform_id __opaque_environment::get_os_platform_id() noexcept {
   return xtd::platform_id::win32_nt;
 }
 
-int __opaque_environment::get_os_version(int& major, int& minor, int& build, int& revision) noexcept {
+void __opaque_environment::get_os_version(int& major, int& minor, int& build, int& revision) noexcept {
 #pragma warning(push)
 #pragma warning(disable : 4996)
   OSVERSIONINFOEX version_info;
@@ -62,7 +62,6 @@ int __opaque_environment::get_os_version(int& major, int& minor, int& build, int
     revision = (version_info.wServicePackMajor << 16) | version_info.wServicePackMinor;
   }
 #pragma warning(pop)
-  return 0;
 }
 
 std::string __opaque_environment::get_service_pack() noexcept {

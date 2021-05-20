@@ -28,13 +28,11 @@ namespace xtd {
   public:    
     /// @brief Gets the error output stream. A std::basic_ostream<char_t> that represents the error output stream.
     static std::basic_ostream<char_t> error;
-
     /// @brief Gets the standard input stream. A std::basic_istream<char_t> that represents the standard input stream.
     /// @par Examples
     /// The following sample illustrates the use of the in property.
     /// @include console_in_out.cpp
     static std::basic_istream<char_t> in;
-    
     /// @brief Gets the standard output stream. A std::basic_ostream<char_t> that represents the standard output stream.
     /// @par Examples
     /// The following sample illustrates the use of the out property.
@@ -56,7 +54,6 @@ namespace xtd {
     /// The following example saves the values of the console_color enumeration to an array and stores the current values of the background_color and foreground_color properties to variables. It then changes the foreground color to each color in the console_color enumeration except to the color that matches the current background, and it changes the background color to each color in the console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the reset_color method to restore the original console colors.
     /// @include console_color4.cpp
     static console_color background_color() {return  __opaque_console::background_color();}
-    
     /// @brief Sets the background color of the console.
     /// @param color Aconsole_color that specifies the background color of the console; that is, the color that appears behind each character.
     /// @remarks A change to the background_color method affects only output that is written to individual character cells after the background color is changed. To change the background color of the console window as a whole, set the BackgroundColor property and call the Clear method. The following example provides an illustration.
@@ -71,7 +68,6 @@ namespace xtd {
     /// The following example demonstrates the beep method. The example accepts a number from 1 through 9 as a command line argument, and plays the beep that number of times.
     /// @include console_beep.cpp
     static void beep() {beep(800, 200);}
-    
     /// @brief Plays the sound of a beep of a specified frequency and duration through the console speaker.
     /// @param frequency The frequency of the beep, ranging from 37 to 32767 hertz
     /// @param duration The duration of the beep measured in milliseconds
@@ -86,7 +82,6 @@ namespace xtd {
     /// This example demonstrates the buffer_height and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns.
     /// @include console_buffer.cpp
     static int buffer_height() {return __opaque_console::buffer_height();}
-    
     /// @brief Sets or sets the height of the buffer area.
     /// @param height The current height, in rows, of the buffer area.
     /// @par Examples
@@ -100,7 +95,6 @@ namespace xtd {
     /// This example demonstrates the BufferHeight and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns.
     /// @include console_buffer.cpp
     static int buffer_width() {return __opaque_console::buffer_width();}
-    
     /// @brief Sets the width of the buffer area.
     /// @param width The current width, in columns, of the buffer area.
     /// @par Examples
@@ -130,7 +124,6 @@ namespace xtd {
     /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
     /// @include console_cursor.cpp
     static int cursor_left() {return __opaque_console::cursor_left();}
-    
     /// @brief Sets the column position of the cursor within the buffer area.
     /// @param left The current position, in columns, of the cursor.
     /// @return true if cursor left changed; otherwise false.
@@ -145,7 +138,6 @@ namespace xtd {
     /// This example demonstrates the cursor_size property. The example increases the size of the cursor each time any console key is pressed, then restores the cursor to its original size before terminating.
     /// @include console_cursor_size.cpp
     static int cursor_size() {return __opaque_console::cursor_size();}
-    
     /// @brief Sets the height of the cursor within a character cell.
     /// @param size The size of the cursor expressed as a percentage of the height of a character cell. The property value ranges from 1 to 100.
     /// @par Examples
@@ -159,7 +151,6 @@ namespace xtd {
     /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
     /// @include console_cursor.cpp
     static int cursor_top() {return __opaque_console::cursor_top();}
-    
     /// @brief Sets the row position of the cursor within the buffer area.
     /// @param top The current position, in rows, of the cursor.
     /// @return true if cursor top changed; otherwise false.
@@ -174,7 +165,6 @@ namespace xtd {
     /// This example demonstrates the cursor_visible property. The example makes the cursor visible if the first column of input is a '+' character or invisible if the input is a '-' character.
     /// @include console_cursor_visible.cpp
     static bool cursor_visible() {return __opaque_console::cursor_visible();}
-    
     /// @brief Sets a value indicating whether the cursor is visible.
     /// @param visible true if the cursor is visible; otherwise, false.
     /// @par Examples
@@ -188,7 +178,6 @@ namespace xtd {
     /// The following example saves the values of the console_color enumeration to an array and stores the current values of the background_color and foreground_color properties to variables. It then changes the foreground color to each color in the ConsoleColor enumeration except to the color that matches the current background, and it changes the background color to each color in the console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the reset_color method to restore the original console colors.
     /// @include console_color4.cpp
     static console_color foreground_color() {return __opaque_console::foreground_color();}
-    
     /// @brief Sets the foreground color of the console.
     /// @param color A console_color that specifies the foreground color of the console; that is, the color of each character that is displayed.
     /// @par Examples
@@ -199,7 +188,6 @@ namespace xtd {
     /// @brief Gets the code page the console uses to read input.
     /// @return The code page used to read console input.
     static int input_code_page() {return __opaque_console::input_code_page();}
-    
     /// @brief Sets the code page the console uses to read input.
     /// @param code_page The code page used to read console input.
     /// @return true if the code page changed; otherwise false.
@@ -208,11 +196,9 @@ namespace xtd {
     /// @brief Gets a value that indicates whether the error output stream has been redirected from the standard error stream.
     /// @param true if error output is redirected; otherwise, false.
     static bool is_error_redireted() {return error.rdbuf() != __get_err_rdbuf<char_t>();}
-    
     /// @brief  Gets a value that indicates whether the input stream has been redirected from the standard input stream.
     /// @param true if input is redirected; otherwise, false.
     static bool is_in_redireted() {return in.rdbuf() != __get_in_rdbuf<char_t>();}
-    
     /// @brief  Gets a value that indicates whether the output stream has been redirected from the standard output stream.
     /// @param true if output is redirected; otherwise, false.
     static bool is_out_redireted() {return out.rdbuf() != __get_out_rdbuf<char_t>();}
@@ -226,7 +212,6 @@ namespace xtd {
     /// @brief Gets the largest possible number of console window rows, based on the current font and screen resolution.
     /// @param The height of the largest possible console window measured in rows.
     static int largest_window_height() {return __opaque_console::largest_window_height();}
-    
     /// @brief Gets the largest possible number of console window columns, based on the current font and screen resolution.
     /// @param The width of the largest possible console window measured in colomns.
     static int largest_window_width() {return __opaque_console::largest_window_width();}
@@ -239,12 +224,10 @@ namespace xtd {
     /// @return The standard error stream.
     /// @remarks This method can be used to reacquire the standard error stream after it has been changed by the set_error method.
     static std::basic_ostream<char_t> open_standard_error() {return std::basic_ostream<char_t>(__get_err_rdbuf<char_t>());}
-    
     /// @brief Acquires the standard input stream.
     /// @return The standard input stream.
     /// @remarks This method can be used to reacquire the standard input stream after it has been changed by the set_int method.
     static std::basic_istream<char_t> open_standard_input() {return std::basic_istream<char_t>(__get_in_rdbuf<char_t>());}
-    
     /// @brief Acquires the standard output stream.
     /// @return The standard output stream.
     /// @remarks This method can be used to reacquire the standard output stream after it has been changed by the set_output method.
@@ -253,7 +236,6 @@ namespace xtd {
     /// @brief Gets the code page the console uses to write output.
     /// @return The code page used to write console output.
     static int output_code_page() {return __opaque_console::output_code_page();}
-    
     /// @brief Sets the code page the console uses to write output.
     /// @param code_page The code page used to write console output.
     /// @return true if the code page changed; otherwise false.
@@ -270,7 +252,6 @@ namespace xtd {
     /// @return ConsoleKeyInfo A ConsoleKeyInfo object that describes the ConsoleKey constant and Unicode character, if any, that correspond to the pressed console key.
     /// The ConsoleKeyInfo object also describes, in a bitwise combination of ConsoleModifiers values, whether one or more SHIFT, ALT, or CTRL modifier keys was pressed simultaneously with the console key.
     static console_key_info read_key() {return read_key(false);}
-    
     /// @brief Obtains the next character or function key pressed by the user. The pressed key is optionally displayed in the console window.
     /// @param intercept Determines whether to display the pressed key in the console window. true to not display the pressed key; otherwise, false
     /// @return ConsoleKeyInfo A ConsoleKeyInfo object that describes the ConsoleKey constant and Unicode character, if any, that correspond to the pressed console key.
@@ -307,13 +288,11 @@ namespace xtd {
     /// @remarks By default, the error property is set to the standard error output stream.
     /// @remarks A std::ostream that encapsulates a std::ofstream can be used to send error messages to a file.
     static void set_error(const std::basic_ostream<char_t>& os) {error.rdbuf(os.rdbuf());}
-    
     /// @brief Sets the int property to the specified std::istream object.
     /// @param os A stream that is the new standard input.
     /// @remarks By default, the in property is set to the standard input stream.
     /// @remarks A std::istream that encapsulates a std::ifstream can be used to receivr input from a file.
     static void set_in(const std::basic_istream<char_t>& is)  {in.rdbuf(is.rdbuf());}
-    
     /// @brief Sets the out property to the specified std::ostream object.
     /// @param os A stream that is the new standard output.
     /// @remarks By default, the out property is set to the standard output stream.
@@ -323,46 +302,85 @@ namespace xtd {
     /// @brief Gets the title to display in the console title bar.
     /// @return The string to be displayed in the title bar of the console. The maximum length of the title string is 24500 characters.
     static std::string title() {return __opaque_console::title();}
-    
     /// @brief Sets the title to display in the console title bar.
     /// @param title The string to be displayed in the title bar of the console. The maximum length of the title string is 24500 characters.
     static void title(const std::string& title) {__opaque_console::title(title);}
 
+    /// @brief Gets a value indicating whether the combination of the Control modifier key and C console key (Ctrl+C) is treated as ordinary input or as an interruption that is handled by the operating system.
+    /// @return true if Ctrl+C is treated as ordinary input; otherwise, false.
+    /// @remarks If the value of the treat_control_c_as_input property is false and Ctrl+C is pressed, the pressed keys are not stored in the input buffer and the operating system terminates the currently executing process. This is the default value.
+    /// @warning Use this property judiciously because setting it to true has such a dramatic effect. Most users expect Ctrl+C to terminate a console application. If you disable the effect of Ctrl+C, the user must remember to use Ctrl+Break to terminate the application, which is a less familiar key combination.
     static bool treat_control_c_as_input() {return __opaque_console::treat_control_c_as_input();}
-
+    /// @brief Sets a value indicating whether the combination of the Control modifier key and C console key (Ctrl+C) is treated as ordinary input or as an interruption that is handled by the operating system.
+    /// @param treat_control_c_as_input true if Ctrl+C is treated as ordinary input; otherwise, false.
+    /// @remarks If the value of the treat_control_c_as_input property is false and Ctrl+C is pressed, the pressed keys are not stored in the input buffer and the operating system terminates the currently executing process. This is the default value.
+    /// @warning Use this property judiciously because setting it to true has such a dramatic effect. Most users expect Ctrl+C to terminate a console application. If you disable the effect of Ctrl+C, the user must remember to use Ctrl+Break to terminate the application, which is a less familiar key combination.
     static void treat_control_c_as_input(bool treat_control_c_as_input) {return __opaque_console::treat_control_c_as_input(treat_control_c_as_input);}
 
+    /// @brief Gets the height of the console window area.
+    /// @return The height of the console window measured in rows.
     static int window_height() {return __opaque_console::window_height();}
-    
+    /// @brief Sets the height of the console window area.
+    /// @param height The height of the console window measured in rows.
+    static void window_height(int height) {__opaque_console::window_height(height);}
+
+    /// @brief Gets the left of the console window area.
+    /// @return The left of the console window measured in columns.
     static int window_left() {return __opaque_console::window_left();}
-    
+    /// @brief Sets the left of the console window area.
+    /// @param left The left of the console window measured in columns.
+    static void window_left(int left) {__opaque_console::window_left(left);}
+
+    /// @brief Gets the top of the console window area.
+    /// @return The top of the console window measured in rows.
     static int window_top() {return __opaque_console::window_top();}
-    
+    /// @brief Sets the top of the console window area.
+    /// @param top The top of the console window measured in rows.
+    static void window_top(int top) {__opaque_console::window_top(top);}
+
+    /// @brief Gets the width of the console window area.
+    /// @return The width of the console window measured in columns.
     static int window_width() {return __opaque_console::window_width();}
-    
+    /// @brief Sets the width of the console window area.
+    /// @param width The width of the console window measured in columns.
+    static void window_width(int width) {__opaque_console::window_width(width);}
+
+    /// @brief Writes the text representation of the specified value to the standard output stream.
+    /// @tparam arg_t The type of the value to write.
+    /// @param value The value to write,
     template<typename arg_t>
-    static void write(arg_t&& arg) {out << strings::format(std::basic_string<char_t> {'{', '}'},  arg);}
+    static void write(arg_t&& value) {out << strings::format(std::basic_string<char_t> {'{', '}'},  value);}
     
     /// @cond
     template<typename type_t>
     static void write(std::initializer_list<type_t>&& il) {out << strings::format(std::basic_string<char_t> {'{', '}'}, il);}
     /// @endcond
     
+    /// @brief Writes the text representation of the specified listt of values to the standard output stream using the specified format information.
+    /// @tparam ...args_t Types of the values to write.
+    /// @param values Values to write,
     template<typename ... args_t>
-    static void write(const std::basic_string<char_t>& fmt, args_t&& ... args) {out << strings::format(fmt, std::forward<args_t>(args)...);}
+    static void write(const std::basic_string<char_t>& fmt, args_t&& ... values) {out << strings::format(fmt, std::forward<args_t>(values)...);}
 
+    /// @brief Writes the current line terminator to the standard output stream using the specified format information.
     static void write_line() {out << std::endl << std::flush;}
     
+    /// @brief Writes the text representation of the specified value, followed by the current line terminator, to the standard output stream.
+    /// @tparam arg_t The type of the value to write.
+    /// @param value The value to write,
     template<typename arg_t>
-    static void write_line(arg_t&& arg) {out << strings::format(std::basic_string<char_t> {'{', '}'}, arg) << std::endl << std::flush;}
+    static void write_line(arg_t&& value) {out << strings::format(std::basic_string<char_t> {'{', '}'}, value) << std::endl << std::flush;}
 
     /// @cond
     template<typename type_t>
     static void write_line(const std::initializer_list<type_t>& il) {out << strings::format(std::basic_string<char_t> {'{', '}'}, il) << std::endl << std::flush;}
     /// @endcond
 
+    /// @brief Writes the text representation of the specified listt of values, followed by the current line terminator, to the standard output stream using the specified format information.
+    /// @tparam ...args_t Types of the values to write.
+    /// @param values Values to write,
     template<typename ... args_t>
-    static void write_line(const std::basic_string<char_t>& fmt, args_t&& ... args) {out << strings::format(fmt, std::forward<args_t>(args)...) << std::endl << std::flush;}
+    static void write_line(const std::basic_string<char_t>& fmt, args_t&& ... values) {out << strings::format(fmt, std::forward<args_t>(values)...) << std::endl << std::flush;}
     
     /// @cond
     static void __internal_cancel_key_press__(xtd::console_cancel_event_args& e) {cancel_key_press(e);}
