@@ -46,7 +46,7 @@ namespace game_of_life {
       choice_figures_.items().push_back_range({{"Figure", figure_delegate(*this, &form_game_of_life::nothing)}, {"Random cells", figure_delegate(*this, &form_game_of_life::random)}, {"Blinker", figure_delegate(*this, &form_game_of_life::blinker)}, {"Toad", figure_delegate(*this, &form_game_of_life::toad)}, {"beacon", figure_delegate(*this, &form_game_of_life::beacon)}, {"galaxy", figure_delegate(*this, &form_game_of_life::galaxy)}, {"Pulsar", figure_delegate(*this, &form_game_of_life::pulsar)}, {"Penta-decathlon", figure_delegate(*this, &form_game_of_life::penta_decathlon)}, {"Glider", figure_delegate(*this, &form_game_of_life::glider)}, {"Small exploder", figure_delegate(*this, &form_game_of_life::small_exploder)}, {"Exploder", figure_delegate(*this, &form_game_of_life::exploder)}, {"Lightweight spaceship", figure_delegate(*this, &form_game_of_life::lightweight_spaceship)}, {"Middleweight spaceship", figure_delegate(*this, &form_game_of_life::middleweight_spaceship)}, {"Heavyweight spaceship", figure_delegate(*this, &form_game_of_life::heavyweight_spaceship)}, {"Fireship", figure_delegate(*this, &form_game_of_life::fireship)}, {"Tumbler", figure_delegate(*this, &form_game_of_life::tumbler)}, {"Gosper glider gun", figure_delegate(*this, &form_game_of_life::gosper_glider_gun)}, {"Simkin glider gun", figure_delegate(*this, &form_game_of_life::simkin_glider_gun)}});
       choice_figures_.location({280, 11});
       choice_figures_.selected_index(0);
-      choice_figures_.width(200);
+      choice_figures_.width(220);
       choice_figures_.selected_index_changed += [&] {
         std::any_cast<figure_delegate>(choice_figures_.items()[choice_figures_.selected_index()].tag())();
         choice_figures_.selected_index(0);
