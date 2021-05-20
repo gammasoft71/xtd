@@ -7,7 +7,7 @@ version: 2
 jobs:
   build:
     machine:
-      image: ubuntu-2004:202010-01
+      image: ubuntu-2004:202104-01
       
     steps:
       - checkout
@@ -17,7 +17,7 @@ jobs:
           command: 'sudo apt-get update && sudo apt-get install -y sudo && sudo rm -rf /var/lib/apt/lists/*'
       - run:
           name: Installing gcc
-          command: 'sudo apt-get update && sudo apt-get install -y g++'
+          command: 'sudo apt-get update && sudo apt-get install -y gcc g++'
       - run:
           name: Install cmake
           command: 'sudo apt-get update && sudo apt-get install -y cmake'
