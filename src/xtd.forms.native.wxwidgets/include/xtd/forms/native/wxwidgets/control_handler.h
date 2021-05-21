@@ -12,7 +12,9 @@
 #include <xtd/delegate.h>
 #include <xtd/diagnostics/debug.h>
 #include <xtd/drawing/size.h>
+#define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/wx_application.h>
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/forms/window_messages.h>
 #include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/mouse_key.h>
