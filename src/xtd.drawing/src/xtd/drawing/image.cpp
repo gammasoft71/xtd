@@ -78,10 +78,10 @@ void image::update_properties() {
 
   data_->horizontal_resolution_ = native::image::horizontal_resolution(data_->handle_);
 
-  std::vector<native::argb> palette_entries;
+  std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t>> palette_entries;
   native::image::color_palette(data_->handle_, palette_entries, data_->palette_.flags_);
-  for (native::argb color : palette_entries)
-    data_->palette_.entries_.push_back(color::from_argb(color.a, color.r, color.g, color.b));
+  for (auto [a, r, g, b] : palette_entries)
+    data_->palette_.entries_.push_back(color::from_argb(a, r, g, b));
     
   data_->pixel_format_ = static_cast<imaging::pixel_format>(native::image::pixel_format(data_->handle_));
   

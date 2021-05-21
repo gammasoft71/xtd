@@ -8,7 +8,6 @@ add_include_directories(include)
 add_sources(
   include/xtd/xtd.drawing.native
   include/xtd/xtd.drawing.native.h
-  include/xtd/drawing/native/argb.h
   include/xtd/drawing/native/brush.h
   include/xtd/drawing/native/font.h
   include/xtd/drawing/native/font_family.h
