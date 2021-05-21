@@ -6,6 +6,8 @@
 #include <cstdint>
 #include <string>
 #include <vector>
+#include "constant_special_item_id_list.h"
+#include "platform_ids.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -44,7 +46,7 @@ namespace xtd {
       /// @warning Internal use only
       static std::string get_machine_name();
       /// @brief Gets a platform id that identifies the operating system platform.
-      /// @return Operating system platform iidentifier (see platform_id.h file).
+      /// @return Operating system platform iidentifier (see platform_ids.h file).
       /// @warning Internal use only
       static int32_t get_os_platform_id();
       /// @brief Gets a System::Version object that identifies the operating system.

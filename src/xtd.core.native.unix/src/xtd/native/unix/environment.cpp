@@ -25,8 +25,6 @@
 #include <unistd.h>
 
 #include <xtd/native/environment.h>
-#include <xtd/native/constant_special_item_id_list.h>
-#include <xtd/native/platform_id.h>
 #include "../../../../include/xtd/native/unix/strings.h"
 
 using namespace xtd::native;

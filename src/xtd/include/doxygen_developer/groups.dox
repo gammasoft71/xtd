@@ -65,6 +65,10 @@
 /// @brief edit styles definitions.
 /// @warning Internal use only
 
+/// @defgroup file_attributes file attributes
+/// @brief file attributes definitions.
+/// @warning Internal use only
+
 /// @defgroup lbs list box styles
 /// @brief list box styles definitions.
 /// @warning Internal use only

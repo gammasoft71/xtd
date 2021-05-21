@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 
+#undef unix
+
 namespace xtd::native::unix {
   class strings final {
   public:
