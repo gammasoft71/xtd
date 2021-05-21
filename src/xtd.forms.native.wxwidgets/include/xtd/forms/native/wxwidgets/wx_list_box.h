@@ -15,8 +15,12 @@
 namespace xtd {
   namespace forms {
     namespace native {
+      class control;
+      class list_box;
       class wx_list_box : public control_handler {
-      public:
+        friend xtd::forms::native::control;
+        friend xtd::forms::native::list_box;
+      private:
         wx_list_box(const forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, caller_info_);
           control_handler::create<wxListBox>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), 0, nullptr, style_to_wx_style(create_params.style(), create_params.ex_style()));

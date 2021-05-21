@@ -40,20 +40,23 @@
 #include <wx/tglbtn.h>
 #include "wx_menu.h"
 
+/// @todo split control_handler file into icontrol_wrapper, control_wrapper and control_handler.
 namespace xtd {
   namespace forms {
     namespace native {
       class control_handler;
       
       class icontrol_wrapper {
-      public:
+        friend control_handler;
+      protected:
         virtual ~icontrol_wrapper() {}
         virtual void reset_handler() = 0;
       };
       
       template<typename control_t>
       class control_wrapper : public control_t, public icontrol_wrapper {
-      public:
+        friend control_handler;
+      protected:
        template<typename ...args_type>
         control_wrapper(control_handler* event_handler, args_type&& ...args) : control_t(args...), event_handler_(event_handler) {}
         

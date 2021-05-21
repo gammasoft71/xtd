@@ -15,8 +15,12 @@
 namespace xtd {
   namespace forms {
     namespace native {
+      class choice;
+      class control;
       class wx_choice : public control_handler {
-      public:
+        friend xtd::forms::native::choice;
+        friend xtd::forms::native::control;
+      private:
         wx_choice(const forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, caller_info_);
 #if defined(__WXMSW__)

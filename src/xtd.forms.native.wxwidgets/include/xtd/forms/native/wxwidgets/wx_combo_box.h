@@ -15,8 +15,12 @@
 namespace xtd {
   namespace forms {
     namespace native {
+      class combo_box;
+      class control;
       class wx_combo_box : public control_handler {
-      public:
+        friend xtd::forms::native::combo_box;
+        friend xtd::forms::native::control;
+      private:
         wx_combo_box(const forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, caller_info_);
 #if defined(__WXMSW__)
