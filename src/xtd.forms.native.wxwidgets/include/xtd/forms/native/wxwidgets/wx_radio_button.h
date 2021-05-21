@@ -18,8 +18,12 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class wx_radio_button : public control_handler {        
-      public:
+      class control;
+      class radio_button;
+      class wx_radio_button : public control_handler {
+        friend xtd::forms::native::control;
+        friend xtd::forms::native::radio_button;
+      private:
         wx_radio_button(const forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, caller_info_);
           owner_draw_ = (create_params.style() & BS_OWNERDRAW) == BS_OWNERDRAW;

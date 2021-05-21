@@ -12,8 +12,12 @@
 namespace xtd {
   namespace forms {
     namespace native {
+      class control;
+      class timer;
       class wx_timer {
-      public:
+        friend xtd::forms::native::control;
+        friend xtd::forms::native::timer;
+      private:
         wx_timer(delegate<void(const event_args&)> tick) : tick_(tick) {
           timer_.Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {
             try {

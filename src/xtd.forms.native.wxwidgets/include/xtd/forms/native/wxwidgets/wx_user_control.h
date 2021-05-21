@@ -16,8 +16,12 @@
 namespace xtd {
   namespace forms {
     namespace native {
+      class control;
+      class user_control;
       class wx_user_control : public control_handler {
-      public:
+        friend xtd::forms::native::control;
+        friend xtd::forms::native::user_control;
+      private:
         wx_user_control(const forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, caller_info_);
           if ((create_params.ex_style() & WS_EX_AUTOSCROLL) == WS_EX_AUTOSCROLL)

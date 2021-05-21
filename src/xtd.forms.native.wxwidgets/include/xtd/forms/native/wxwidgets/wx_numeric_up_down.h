@@ -16,8 +16,12 @@
 namespace xtd {
   namespace forms {
     namespace native {
+      class control;
+      class numeric_up_down;
       class wx_numeric_up_down : public control_handler {
-      public:
+        friend xtd::forms::native::control;
+        friend xtd::forms::native::numeric_up_down;
+      private:
         wx_numeric_up_down(const forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, caller_info_);
           int32_t height = create_params.height();
