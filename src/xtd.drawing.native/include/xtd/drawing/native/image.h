@@ -8,8 +8,8 @@
 #include <cstdint>
 #include <istream>
 #include <string>
+#include <tuple>
 #include <vector>
-#include "argb.h"
 #include <xtd/static.h>
 #include <xtd/drawing_native_export.h>
 
@@ -34,7 +34,7 @@ namespace xtd {
           std::vector<uint8_t> value;
         };
         
-        static void color_palette(intptr_t image, std::vector<argb>& entries, int32_t& flags);
+        static void color_palette(intptr_t image, std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t>>& entries, int32_t& flags);
         static intptr_t create(const std::string& filename);
         static intptr_t create(std::istream& stream);
         static intptr_t create(const char* const* bits);
@@ -52,10 +52,8 @@ namespace xtd {
         static size_t raw_format(intptr_t image);
         static void size(intptr_t image, int32_t& width, int32_t& height);
         static float vertical_resolution(intptr_t image);
-        /// @todo Remove struct argb and replace by uint8_t a, uint8_t r, uint8_t g, b...
-        static void get_pixel(intptr_t image, int32_t x, int32_t y, argb& color);
-        /// @todo Remove struct argb and replace by uint8_t a, uint8_t r, uint8_t g, b...
-        static void set_pixel(intptr_t image, int32_t x, int32_t y, const argb& color);
+        static void get_pixel(intptr_t image, int32_t x, int32_t y, uint8_t& a, uint8_t& r, uint8_t& g, uint8_t& b);
+        static void set_pixel(intptr_t image, int32_t x, int32_t y, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
         static void save(intptr_t image, const std::string& filename);
         static void save(intptr_t image, const std::string& filename, size_t raw_format);
         static void save(intptr_t image, std::ostream& stream, size_t raw_format);

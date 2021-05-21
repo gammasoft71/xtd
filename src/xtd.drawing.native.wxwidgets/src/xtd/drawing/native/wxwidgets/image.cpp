@@ -74,14 +74,13 @@ namespace {
   }
 }
 
-void image::color_palette(intptr_t image, std::vector<argb>& entries, int32_t& flags) {
+void image::color_palette(intptr_t image, std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t>>& entries, int32_t& flags) {
   wxPalette palette = reinterpret_cast<wxImage*>(image)->GetPalette();
   entries.clear();
   for (int index = 0; index < palette.GetColoursCount(); index++) {
-    argb color;
-    color.a = 255;
-    palette.GetRGB(index, &color.r, &color.g, &color.b);
-    entries.push_back(color);
+    uint8_t a = 255, r = 0, g = 0, b = 0;
+    palette.GetRGB(index, &r, &g, &b);
+    entries.push_back({a, r, g, b});
   }
   flags = 0;
 }
@@ -193,20 +192,19 @@ float image::vertical_resolution(intptr_t image) {
   return vertical_resolution;
 }
 
-void image::get_pixel(intptr_t image, int32_t x, int32_t y, argb& color) {
-  if (reinterpret_cast<wxImage*>(image)->IsTransparent(x, y, 1))
-    color.a = color.r = color.g = color.b = 0;
+void image::get_pixel(intptr_t image, int32_t x, int32_t y, uint8_t& a, uint8_t& r, uint8_t& g, uint8_t& b) {
+  if (reinterpret_cast<wxImage*>(image)->IsTransparent(x, y, 1)) a = r = g = b = 0;
   else {
-    color.a = reinterpret_cast<wxImage*>(image)->HasAlpha() ? reinterpret_cast<wxImage*>(image)->GetAlpha(x, y) : 255;
-    color.r = reinterpret_cast<wxImage*>(image)->GetRed(x, y);
-    color.g = reinterpret_cast<wxImage*>(image)->GetGreen(x, y);
-    color.b = reinterpret_cast<wxImage*>(image)->GetBlue(x, y);
+    a = reinterpret_cast<wxImage*>(image)->HasAlpha() ? reinterpret_cast<wxImage*>(image)->GetAlpha(x, y) : 255;
+    r = reinterpret_cast<wxImage*>(image)->GetRed(x, y);
+    g = reinterpret_cast<wxImage*>(image)->GetGreen(x, y);
+    b = reinterpret_cast<wxImage*>(image)->GetBlue(x, y);
   }
 }
 
-void image::set_pixel(intptr_t image, int32_t x, int32_t y, const argb& color) {
-  if (reinterpret_cast<wxImage*>(image)->HasAlpha()) reinterpret_cast<wxImage*>(image)->SetAlpha(x, y, color.a);
-  reinterpret_cast<wxImage*>(image)->SetRGB(x, y, color.r, color.g, color.b);
+void image::set_pixel(intptr_t image, int32_t x, int32_t y, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
+  if (reinterpret_cast<wxImage*>(image)->HasAlpha()) reinterpret_cast<wxImage*>(image)->SetAlpha(x, y, a);
+  reinterpret_cast<wxImage*>(image)->SetRGB(x, y, r, g, b);
 }
 
 void image::save(intptr_t image, const std::string& filename) {
