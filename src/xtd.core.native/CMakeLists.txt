@@ -13,7 +13,11 @@ add_sources(
   include/xtd/native/console.h
   include/xtd/native/constant_special_item_id_list.h
   include/xtd/native/environment.h
-  include/xtd/native/platform_id.h
+  include/xtd/native/file.h
+  include/xtd/native/file_attribute.h
+  include/xtd/native/path.h
+  include/xtd/native/platform_ids.h
+  include/xtd/native/translator.h
 )
 target_type(INTERFACE_LIBRARY)
 

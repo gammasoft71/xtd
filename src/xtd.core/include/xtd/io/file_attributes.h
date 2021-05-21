@@ -29,7 +29,7 @@ namespace xtd {
       /// @brief The file is temporary. File systems attempt to keep all of the data in memory for quicker access rather than flushing the data back to mass storage. A temporary file should be deleted by the application as soon as it is no longer needed.
       temporary = 0x0100,
       /// @brief The file is a sparse file. Sparse files are typically large files whose data are mostly zeros.
-      sparseFile = 0x0200,
+      sparse_file = 0x0200,
       /// @brief The file contains a reparse point, which is a block of user-defined data associated with a file or a directory.
       reparse_point = 0x0400,
       /// @brief The file is compressed.
