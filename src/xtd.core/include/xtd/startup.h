@@ -36,7 +36,7 @@ namespace xtd {
   /// This example show a main method without arguments and without return code
   /// @include main1.cpp
   /// @par
-  /// This example show a main method with a return code without arguments
+  /// This example show a main method with a return code and without arguments
   /// @include main2.cpp
   /// @par
   /// This example show a main method with argument and without return code
