@@ -1,8 +1,10 @@
 #include <xtd/environment.h>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/button_states.h>
 #include <xtd/forms/native/button_styles.h>
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/radio_button.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/radio_button.h"
 #include "../../../include/xtd/forms/button_renderer.h"
 #include "../../../include/xtd/forms/radio_button_renderer.h"

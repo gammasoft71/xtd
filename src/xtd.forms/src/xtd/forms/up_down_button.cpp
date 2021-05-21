@@ -1,9 +1,11 @@
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/up_down_button.h>
 #include <xtd/forms/native/up_down_styles.h>
 #include <xtd/forms/native/window_styles.h>
 #include <xtd/forms/native/scroll_bar_styles.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/up_down_button.h"
 
 using namespace xtd;

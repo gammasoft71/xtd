@@ -1,4 +1,6 @@
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/timer.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/timer.h"
 
 using namespace xtd;

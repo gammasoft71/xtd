@@ -4,11 +4,13 @@
 #include <xtd/literals.h>
 #include <xtd/diagnostics/debug.h>
 #include <xtd/drawing/system_icons.h>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/class_styles.h>
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/form.h>
 #include <xtd/forms/native/window_styles.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/window_messages.h>
 #include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/form.h"

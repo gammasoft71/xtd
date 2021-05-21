@@ -1,6 +1,8 @@
 #include "../../../include/xtd/forms/screen.h"
 #include <limits>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/screen.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 
 using namespace std;
 using namespace xtd;

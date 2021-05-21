@@ -1,11 +1,13 @@
 #include <chrono>
 #include <thread>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/form.h>
 #include <xtd/forms/native/screen.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_form.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_menu.h"
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <wx/apptrait.h>
 
 using namespace std::literals;

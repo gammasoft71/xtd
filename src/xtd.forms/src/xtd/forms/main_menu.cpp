@@ -1,6 +1,8 @@
 #include <xtd/cdebug.h>
 #include <xtd/strings.h>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/main_menu.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/menu_item.h"
 #include "../../../include/xtd/forms/main_menu.h"
 #include "../../../include/xtd/forms/menu_images.h"

@@ -1,6 +1,8 @@
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/track_bar.h>
-#include <xtd/forms/window_messages.h>
 #include <xtd/forms/native/track_bar_styles.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/window_messages.h>
 #include "../../../include/xtd/forms/track_bar.h"
 
 using namespace xtd;

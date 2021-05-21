@@ -1,7 +1,9 @@
 #include <stdexcept>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/timer.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_timer.h"
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 
 using namespace xtd;
 using namespace xtd::forms::native;

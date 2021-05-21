@@ -1,6 +1,8 @@
 #include "../../../include/xtd/forms/settings.h"
 #include "../../../include/xtd/forms/application.h"
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/settings.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 
 using namespace xtd::forms;
 

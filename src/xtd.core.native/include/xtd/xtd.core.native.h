@@ -4,7 +4,7 @@
 #pragma once
 /// @cond
 #ifndef __XTD_CORE_NATIVE_LIBRARY__
-#error "Do not include this file: Internal used only"
+#error "Do not include this file: Internal use only"
 #endif
 /// @endcond
 

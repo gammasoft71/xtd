@@ -1,7 +1,7 @@
 #pragma once
 /// @cond
 #ifndef __XTD_DRAWING_NATIVE_LIBRARY__
-#error "Do not include this file: Internal used only"
+#error "Do not include this file: Internal use only"
 #endif
 /// @endcond
 
@@ -9,10 +9,18 @@
 #include <xtd/static.h>
 #include <xtd/drawing_native_export.h>
 
-/// @cond
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
+    /// @brief The xtd::drawing::native namespace contains internal native API definitions to access underlying toolkits used by xtd.drawing library.
+    /// @warning Internal use only
     namespace native {
+      /// @brief Contains pen native API.
+      /// @par Library
+      /// xtd.drawing.native
+      /// @ingroup xtd_drawing_native native
+      /// @warning Internal use only
       class drawing_native_export_ pen final static_ {
       public:
         static intptr_t create();
@@ -25,4 +33,3 @@ namespace xtd {
     }
   }
 }
-/// @endcond

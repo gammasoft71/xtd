@@ -1,4 +1,10 @@
 #pragma once
+/// @cond
+#ifndef __XTD_FORMS_NATIVE_LIBRARY__
+#error "Do not include this file: Internal use only"
+#endif
+/// @endcond
+
 #include <xtd/argument_exception.h>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/drawing/system_colors.h>

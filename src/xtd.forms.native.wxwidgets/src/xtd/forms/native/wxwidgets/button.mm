@@ -1,7 +1,9 @@
 #if defined(__APPLE__)
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/button.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_button.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_color_picker.h"
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <Quartz/Quartz.h>
 
 using namespace xtd::forms::native;

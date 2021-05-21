@@ -1,5 +1,7 @@
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/progress_bar.h>
 #include <xtd/forms/native/progress_bar_styles.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/progress_bar.h"
 
 using namespace xtd;

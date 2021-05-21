@@ -1,6 +1,8 @@
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/font_picker.h>
 #include <xtd/forms/native/content_alignment.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_font_picker.h"
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 
 using namespace xtd;
 using namespace xtd::drawing;

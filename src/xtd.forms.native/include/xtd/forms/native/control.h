@@ -2,6 +2,12 @@
 /// @brief Contains xtd::forms::native::control API.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+/// @cond
+#ifndef __XTD_FORMS_NATIVE_LIBRARY__
+#error "Do not include this file: Internal use only"
+#endif
+/// @endcond
+
 #include <any>
 #include <map>
 #include <shared_mutex>

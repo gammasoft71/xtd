@@ -1,4 +1,10 @@
 #pragma once
+/// @cond
+#ifndef __XTD_FORMS_NATIVE_LIBRARY__
+#error "Do not include this file: Internal use only"
+#endif
+/// @endcond
+
 #include <codecvt>
 #include <limits>
 #include <string>

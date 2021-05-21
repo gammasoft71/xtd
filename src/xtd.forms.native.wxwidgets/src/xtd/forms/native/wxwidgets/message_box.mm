@@ -1,10 +1,12 @@
 #if defined(__APPLE__)
 #include <xtd/strings.h>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/dialog_box_identifiers.h>
 #include <xtd/forms/native/message_box.h>
 #include <xtd/forms/native/message_box_styles.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #import <Cocoa/Cocoa.h>
 #import <Foundation/Foundation.h>
 

@@ -1,8 +1,10 @@
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/button_styles.h>
 #include <xtd/forms/native/check_box.h>
-#include <xtd/forms/window_messages.h>
 #include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/window_styles.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/window_messages.h>
 #include "../../../include/xtd/forms/check_box.h"
 #include "../../../include/xtd/forms/button_renderer.h"
 #include "../../../include/xtd/forms/check_box_renderer.h"

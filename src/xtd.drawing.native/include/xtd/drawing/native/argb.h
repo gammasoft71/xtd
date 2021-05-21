@@ -1,13 +1,12 @@
 #pragma once
 /// @cond
 #ifndef __XTD_DRAWING_NATIVE_LIBRARY__
-#error "Do not include this file: Internal used only"
+#error "Do not include this file: Internal use only"
 #endif
 /// @endcond
 
 #include <cstdint>
 
-/// @cond
 namespace xtd {
   namespace drawing {
     namespace native {
@@ -21,4 +20,3 @@ namespace xtd {
     }
   }
 }
-/// @endcond

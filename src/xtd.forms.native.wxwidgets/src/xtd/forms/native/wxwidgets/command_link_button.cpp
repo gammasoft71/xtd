@@ -1,6 +1,8 @@
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/command_link_button.h>
 #include <xtd/forms/native/content_alignment.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_command_link_button.h"
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 
 using namespace xtd;
 using namespace xtd::forms::native;

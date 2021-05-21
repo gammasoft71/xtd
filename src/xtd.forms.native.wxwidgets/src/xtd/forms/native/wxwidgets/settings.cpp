@@ -1,8 +1,10 @@
 #if !defined(_WIN32)
 #include <unistd.h>
 #endif
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/settings.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <wx/config.h>
 
 using namespace std;

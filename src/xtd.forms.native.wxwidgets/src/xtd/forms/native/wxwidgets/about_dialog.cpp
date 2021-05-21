@@ -1,8 +1,10 @@
 #include <xtd/literals.h>
 #include <xtd/drawing/bitmap.h>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/about_dialog.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <wx/aboutdlg.h>
 
 using namespace xtd;

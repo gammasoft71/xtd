@@ -1,4 +1,10 @@
 #pragma once
+/// @cond
+#ifndef __XTD_FORMS_NATIVE_LIBRARY__
+#error "Do not include this file: Internal use only"
+#endif
+/// @endcond
+
 #include <xtd/delegate.h>
 #include <xtd/event_args.h>
 #include <wx/timer.h>

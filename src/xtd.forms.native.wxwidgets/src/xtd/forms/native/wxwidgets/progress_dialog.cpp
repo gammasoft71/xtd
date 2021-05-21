@@ -1,7 +1,9 @@
 #include <xtd/forms/progress_dialog_flags.h>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/progress_dialog.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <wx/progdlg.h>
 #include <wx/timer.h>
 

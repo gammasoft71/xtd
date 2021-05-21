@@ -1,11 +1,13 @@
 #include <codecvt>
 #include <stdexcept>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/message_box.h>
 #include <xtd/forms/native/dialog_box_identifiers.h>
 #include <xtd/forms/native/message_box_styles.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <wx/app.h>
 #include <wx/msgdlg.h>
 #include <wx/windowptr.h>

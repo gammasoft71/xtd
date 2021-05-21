@@ -1,6 +1,8 @@
-#include <xtd/forms/native/folder_browser_dialog.h>
 #include <xtd/forms/browser_info_flags.h>
+#define __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/native/folder_browser_dialog.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 
 #include <wx/filefn.h>
 #include <wx/dirdlg.h>

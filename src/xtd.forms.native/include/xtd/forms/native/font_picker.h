@@ -2,6 +2,12 @@
 /// @brief Contains xtd::forms::native::font_picker API.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+/// @cond
+#ifndef __XTD_FORMS_NATIVE_LIBRARY__
+#error "Do not include this file: Internal use only"
+#endif
+/// @endcond
+
 #include "../create_params.h"
 #include <xtd/static.h>
 #include <xtd/drawing/color.h>

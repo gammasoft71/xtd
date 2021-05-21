@@ -1,4 +1,6 @@
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/cursors.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/cursors.h"
 
 using namespace xtd::forms;

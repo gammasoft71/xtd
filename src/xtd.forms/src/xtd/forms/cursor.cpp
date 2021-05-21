@@ -1,5 +1,7 @@
 #include <optional>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/cursor.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/cursor.h"
 #include "../../../include/xtd/forms/cursors.h"
 

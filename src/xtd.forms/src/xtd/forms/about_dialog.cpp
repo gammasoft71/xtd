@@ -2,7 +2,9 @@
 #include <memory>
 #include <thread>
 #include <xtd/literals.h>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/about_dialog.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/drawing/system_icons.h>
 #include "../../../include/xtd/forms/about_dialog.h"
 #include "../../../include/xtd/forms/application.h"
