@@ -9,11 +9,13 @@
 #include <xtd/drawing/native/graphics.h>
 #include <xtd/drawing/native/system_colors.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/mouse_key.h>
 #include <xtd/forms/native/window_styles.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/control.h"
 #include "../../../include/xtd/forms/control_paint.h"

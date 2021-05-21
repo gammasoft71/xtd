@@ -1,5 +1,7 @@
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/progress_bar.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_progress_bar.h"
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 
 using namespace xtd;
 using namespace xtd::drawing;

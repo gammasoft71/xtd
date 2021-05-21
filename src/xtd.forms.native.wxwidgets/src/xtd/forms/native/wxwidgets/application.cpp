@@ -3,14 +3,16 @@
 #include <xtd/environment.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/toolkit.h>
-#undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/wx_application.h>
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
-#include <xtd/forms/window_messages.h>
-#include <xtd/drawing/system_colors.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_menu.h"
+#undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/window_messages.h>
+#include <xtd/drawing/system_colors.h>
 #include <wx/aboutdlg.h>
 #include <wx/sysopt.h>
 

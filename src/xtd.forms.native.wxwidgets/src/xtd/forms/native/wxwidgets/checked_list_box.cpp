@@ -1,9 +1,11 @@
 #include <limits>
 #include <stdexcept>
 #include <xtd/drawing/system_colors.h>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/checked_list_box.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_checked_list_box.h"
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 
 using namespace std;
 using namespace xtd;

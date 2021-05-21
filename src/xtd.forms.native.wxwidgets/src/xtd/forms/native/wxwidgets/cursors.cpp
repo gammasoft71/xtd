@@ -1,5 +1,7 @@
 #include <stdexcept>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/cursors.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/environment.h>
 #include <xtd/drawing/point.h>
 #include <xtd/io/path.h>

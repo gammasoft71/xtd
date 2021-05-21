@@ -1,10 +1,12 @@
 #include <xtd/argument_out_of_range_exception.h>
 #include <xtd/literals.h>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/combo_box.h>
 #include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/window_styles.h>
 #include <xtd/forms/native/combo_box_styles.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/combo_box.h"
 
 using namespace std;

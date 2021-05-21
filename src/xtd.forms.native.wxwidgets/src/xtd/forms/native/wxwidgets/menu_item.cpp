@@ -1,6 +1,8 @@
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_menu.h"
 #include <xtd/forms/native/menu_item.h>
 #include <xtd/forms/native/menu_item_kind.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <map>
 #include <wx/menuitem.h>
 

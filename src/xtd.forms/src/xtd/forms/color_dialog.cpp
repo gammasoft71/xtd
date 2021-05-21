@@ -1,4 +1,6 @@
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/color_dialog.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/color_dialog.h"
 #include "xtd_forms_common_dialog_closed_caller.h"
 

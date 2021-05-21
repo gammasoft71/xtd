@@ -1,6 +1,8 @@
 #include <map>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/check_box.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_check_box.h"
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 
 using namespace xtd;
 using namespace xtd::drawing;

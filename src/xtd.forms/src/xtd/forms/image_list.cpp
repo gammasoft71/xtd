@@ -1,4 +1,6 @@
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/image_list.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_out_of_range_exception.h>
 #include <xtd/drawing/bitmap.h>
 #include "../../../include/xtd/forms/image_list.h"

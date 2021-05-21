@@ -8,6 +8,7 @@
 #include <xtd/drawing/native/hdc_wrapper.h>
 #include <xtd/drawing/native/system_colors.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/control.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
@@ -41,6 +42,7 @@
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_track_bar.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_up_down_button.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_user_control.h"
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <wx/dcbuffer.h>
 #include <wx/dcmemory.h>
 #include <wx/dcclient.h>

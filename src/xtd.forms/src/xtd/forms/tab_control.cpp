@@ -1,10 +1,12 @@
 #include <xtd/environment.h>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/tab_control.h>
 #include <xtd/forms/native/tab_page.h>
 #include <xtd/forms/native/tab_control_styles.h>
 #include <xtd/forms/native/window_styles.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/tab_control.h"
 #include "../../../include/xtd/forms/tab_page.h"
 

@@ -1,7 +1,9 @@
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/user_control.h>
 #include <xtd/forms/native/window_styles.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/user_control.h"
 

@@ -8,9 +8,11 @@
 #include <xtd/drawing/string_format.h>
 #include <xtd/drawing/system_brushes.h>
 #include <xtd/drawing/system_pens.h>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/button.h>
 #include <xtd/forms/native/button_styles.h>
 #include <xtd/forms/native/control.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/window_messages.h>
 
 using namespace xtd;

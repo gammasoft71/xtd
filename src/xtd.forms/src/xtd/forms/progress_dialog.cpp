@@ -1,5 +1,7 @@
 #include <memory>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/progress_dialog.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/progress_dialog.h"
 
 using namespace std;

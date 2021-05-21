@@ -1,10 +1,12 @@
 #include <xtd/drawing/solid_brush.h>
 #include <xtd/drawing/string_format.h>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/label.h>
 #include <xtd/forms/native/static_styles.h>
 #include <xtd/forms/native/window_styles.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/label.h"
 
 using namespace xtd;

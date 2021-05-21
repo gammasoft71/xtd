@@ -4,7 +4,7 @@
 #pragma once
 /// @cond
 #ifndef __XTD_CORE_NATIVE_LIBRARY__
-#error "Do not include this file: Internal used only"
+#error "Do not include this file: Internal use only"
 #endif
 /// @endcond
 
@@ -17,7 +17,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief The xtd::core::native namespace contains internal native API definitions to access underlying oerating system components used by xtd.core library.
+  /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
     /// @brief Contains environment native API.

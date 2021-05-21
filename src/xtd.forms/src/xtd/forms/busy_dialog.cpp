@@ -1,5 +1,7 @@
 #include <memory>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/busy_dialog.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/drawing/system_icons.h>
 #include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/busy_box.h"

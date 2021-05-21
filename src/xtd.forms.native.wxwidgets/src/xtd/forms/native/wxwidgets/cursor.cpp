@@ -1,5 +1,7 @@
 #include <stdexcept>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/cursor.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <wx/bitmap.h>
 #include <wx/cursor.h>
 #include <wx/window.h>

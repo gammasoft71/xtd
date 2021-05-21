@@ -1,4 +1,6 @@
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/context_menu.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/context_menu.h"
 
 using namespace xtd;

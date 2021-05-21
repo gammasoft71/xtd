@@ -1,5 +1,7 @@
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/menu.h>
 #include <xtd/forms/native/menu_item.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/menu_item.h"
 
 using namespace xtd;

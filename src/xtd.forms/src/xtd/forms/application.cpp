@@ -7,7 +7,9 @@
 #include <xtd/environment.h>
 #include <xtd/invalid_operation_exception.h>
 #include <xtd/literals.h>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/window_messages.h>
 #include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/exception_box.h"

@@ -1,7 +1,9 @@
 /// @file
 /// @brief Contains dark_mode methods
 /// @remarks Code from https://github.com/ysc3839/win32-darkmode
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 
 #if defined(_WIN32)
 #include <Windows.h>

@@ -1,6 +1,8 @@
 #include "../../../include/xtd/forms/button_base.h"
 #include <xtd/argument_exception.h>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/button_styles.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 
 using namespace xtd;
 using namespace xtd::forms;

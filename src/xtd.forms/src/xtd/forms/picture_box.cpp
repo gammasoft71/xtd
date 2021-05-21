@@ -1,8 +1,10 @@
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/picture_box.h>
 #include <xtd/forms/native/window_styles.h>
 #include <xtd/forms/native/static_styles.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/picture_box.h"
 
 using namespace std;

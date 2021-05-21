@@ -1,8 +1,10 @@
 #include <xtd/drawing/native/hdc_wrapper.h>
+#define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/screen.h>
-#include <xtd/strings.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
+#undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/strings.h>
 #include <wx/dcscreen.h>
 #include <wx/display.h>
 
