@@ -16,6 +16,10 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @cond
+    class radio_button;
+    /// @endcond
+    
     /// @brief The xtd::forms::native namespace contains internal native API definitions to access underlying toolkits used by xtd.forms library.
     /// @warning Internal use only
     namespace native {
@@ -25,7 +29,8 @@ namespace xtd {
       /// @ingroup xtd_forms_native native
       /// @warning Internal use only
       class forms_native_export_ radio_button final static_ {
-      public:
+        friend xtd::forms::radio_button;
+      protected:
         /// @brief Sets checked.
         /// @param control Radio button window handle.
         /// @param checked true if the radio button is checked; otherwise, false.

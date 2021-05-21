@@ -18,6 +18,11 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @cond
+    class tab_control;
+    class tab_page;
+    /// @endcond
+    
     /// @brief The xtd::forms::native namespace contains internal native API definitions to access underlying toolkits used by xtd.forms library.
     /// @warning Internal use only
     namespace native {
@@ -27,7 +32,9 @@ namespace xtd {
       /// @ingroup xtd_forms_native native
       /// @warning Internal use only
       class forms_native_export_ tab_control final static_ {
-      public:
+        friend xtd::forms::tab_control;
+        friend xtd::forms::tab_page;
+      protected:
         /// @brief Maintains performance while items are added to the tab_control one at a tab_page by preventing the control from drawing until the end_update() method is called.
         /// @param control Tab control window handle.
         /// @warning Internal use only
