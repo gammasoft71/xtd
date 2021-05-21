@@ -17,6 +17,10 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @cond
+    class image_list;
+    /// @endcond
+    
     /// @brief The xtd::forms::native namespace contains internal native API definitions to access underlying toolkits used by xtd.forms library.
     /// @warning Internal use only
     namespace native {
@@ -26,7 +30,8 @@ namespace xtd {
       /// @ingroup xtd_forms_native native
       /// @warning Internal use only
       class forms_native_export_ image_list final static_ {
-      public:
+        friend xtd::forms::image_list;
+      protected:
         /// @brief Creates image list.
         /// @param image_size A xtd::drawing::size image size.
         /// @return The created control window handle.
