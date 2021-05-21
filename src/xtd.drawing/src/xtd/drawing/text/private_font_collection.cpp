@@ -1,7 +1,9 @@
 #include <exception>
 #include "../../../../include/xtd/drawing/text/private_font_collection.h"
 #include <xtd/not_implemented_exception.h>
+#define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/font_family.h>
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
 
 using namespace xtd;
 using namespace xtd::drawing;

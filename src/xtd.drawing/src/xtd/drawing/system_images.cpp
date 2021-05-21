@@ -4,7 +4,9 @@
 #include <filesystem>
 #include <map>
 #include <xtd/environment.h>
+#define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/system_images.h>
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
 
 // doc : https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html
 //

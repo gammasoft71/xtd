@@ -1,6 +1,8 @@
 #include <map>
 #include <vector>
+#define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/pen.h>
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <wx/colour.h>
 #include <wx/pen.h>
 

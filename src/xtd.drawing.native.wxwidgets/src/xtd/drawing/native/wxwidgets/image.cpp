@@ -1,8 +1,10 @@
+#define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/image.h>
 #include <xtd/drawing/native/frame_dimension.h>
 #include <xtd/drawing/native/image_flags.h>
 #include <xtd/drawing/native/image_format.h>
 #include <xtd/drawing/native/toolkit.h>
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/strings.h>
 #include <atomic>
 #include <wx/image.h>

@@ -4,8 +4,10 @@
 #include <xtd/environment.h>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/drawing/system_fonts.h>
+#define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/hdc_wrapper.h>
 #include <xtd/drawing/native/system_colors.h>
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/control.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"

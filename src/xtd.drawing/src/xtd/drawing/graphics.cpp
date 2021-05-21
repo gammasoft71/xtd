@@ -3,7 +3,9 @@
 #include "../../../include/xtd/drawing/graphics.h"
 #include "../../../include/xtd/drawing/solid_brush.h"
 #include <xtd/strings.h>
+#define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/graphics.h>
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
 
 using namespace std;
 using namespace xtd;

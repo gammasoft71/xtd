@@ -1,5 +1,7 @@
 #include "../../../include/xtd/drawing/system_fonts.h"
+#define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/system_fonts.h>
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
 
 using namespace xtd;
 using namespace xtd::drawing;

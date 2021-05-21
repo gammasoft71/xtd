@@ -1,7 +1,9 @@
 #include <algorithm>
 #include <cmath>
+#define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/font.h>
 #include <xtd/drawing/native/font_family.h>
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <wx/app.h>
 #include <wx/colour.h>
 #include <wx/fontenum.h>

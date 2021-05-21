@@ -1,7 +1,9 @@
 #include <xtd/delegate.h>
 #include <xtd/event.h>
+#define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/toolkit.h>
 #include <xtd/drawing/native/wx_application.h>
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <wx/app.h>
 #include <wx/image.h>
 #include <wx/sysopt.h>

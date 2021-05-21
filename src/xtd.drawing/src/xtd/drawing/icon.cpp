@@ -1,6 +1,8 @@
 #include "../../../include/xtd/drawing/icon.h"
 #include <fstream>
+#define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/icon.h>
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
 
 using namespace xtd;
 using namespace xtd::drawing;

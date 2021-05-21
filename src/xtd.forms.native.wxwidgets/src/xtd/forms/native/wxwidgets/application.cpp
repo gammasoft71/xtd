@@ -1,7 +1,9 @@
 #include <chrono>
 #include <thread>
 #include <xtd/environment.h>
+#define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/toolkit.h>
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/wx_application.h>
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/window_messages.h>

@@ -24,8 +24,10 @@
 #include <sys/param.h>
 #include <unistd.h>
 
+#define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/environment.h>
 #include "../../../../include/xtd/native/unix/strings.h"
+#undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace xtd::native;
 
