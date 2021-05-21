@@ -17,7 +17,7 @@ namespace xtd {
     /// xtd.core.native
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
-    class core_export_ environment final {
+    class core_native_export_ environment final {
     public:
       /// @brief Gets the fully qualified path of the current working directory.
       /// @return std::string A string containing a directory path.

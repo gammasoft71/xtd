@@ -19,7 +19,7 @@ constexpr int32_t CSIDL_DESKTOP = 0x0000;
 /// @ingroup xtd_core_native csidl
 /// @remarks /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
-constexpr int32_t CSIDL_INTERNET =  = 0x0001;
+constexpr int32_t CSIDL_INTERNET = 0x0001;
 /// @brief The directory that contains the user's program groups.
 /// @par Library
 /// xtd.core.native
@@ -68,7 +68,7 @@ constexpr int32_t CSIDL_STARTUP = 0x0007;
 /// @ingroup xtd_core_native csidl
 /// @remarks /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
-constexpr int32_t CSIDL_RECENT =  = 0x0008;
+constexpr int32_t CSIDL_RECENT = 0x0008;
 /// @brief The directory that contains the Send To menu items.
 /// @par Library
 /// xtd.core.native
@@ -411,7 +411,7 @@ constexpr int32_t CSIDL_CDBURN_AREA = 0x003b;
 /// @ingroup xtd_core_native csidl
 /// @remarks /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
-vconstexpr int32_t CSIDL_COMPUTERSNEARME = 0x003d;
+constexpr int32_t CSIDL_COMPUTERSNEARME = 0x003d;
 #endif
 /// @brief The file system directory that contains home folder.
 /// @par Library
