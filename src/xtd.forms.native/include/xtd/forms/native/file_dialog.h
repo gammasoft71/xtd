@@ -19,6 +19,11 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @cond
+    class open_file_dialog;
+    class save_file_dialog;
+    /// @endcond
+    
     /// @brief The xtd::forms::native namespace contains internal native API definitions to access underlying toolkits used by xtd.forms library.
     /// @warning Internal use only
     namespace native {
@@ -27,8 +32,11 @@ namespace xtd {
       /// xtd.forms.native
       /// @ingroup xtd_forms_native native
       /// @warning Internal use only
+      /// @todo Split file_dialog into open_file_dialog and save_file_dialog.
       class forms_native_export_ file_dialog final static_ {
-      public:
+        friend xtd::forms::open_file_dialog;
+        friend xtd::forms::save_file_dialog;
+      protected:
         /// @brief Shows open file dialog.
         /// @param hwnd Parent window handle.
         /// @param default_ext The default file name extension. The returned string does not include the period.

@@ -19,6 +19,10 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @cond
+    class folder_browser_dialog;
+    /// @endcond
+    
     /// @brief The xtd::forms::native namespace contains internal native API definitions to access underlying toolkits used by xtd.forms library.
     /// @warning Internal use only
     namespace native {
@@ -28,7 +32,8 @@ namespace xtd {
       /// @ingroup xtd_forms_native native
       /// @warning Internal use only
       class forms_native_export_ folder_browser_dialog final static_ {
-      public:
+        friend xtd::forms::folder_browser_dialog;
+      protected:
         /// @brief Shows dialog.
         /// @param hwnd Parent window handle.
         /// @param description The description to display.

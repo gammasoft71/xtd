@@ -18,16 +18,37 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @cond
+    class application;
+    class control;
+    /// @endcond
+    
     /// @brief The xtd::forms::native namespace contains internal native API definitions to access underlying toolkits used by xtd.forms library.
     /// @warning Internal use only
     namespace native {
+      /// @cond
+      class control;
+      class message_box;
+      class screen;
+      class settings;
+      class timer;
+      class wx_command_link_button;
+      /// @endcond
+      
       /// @brief Contains application native API.
       /// @par Library
       /// xtd.forms.native
       /// @ingroup xtd_forms_native native
       /// @warning Internal use only
       class forms_native_export_ application final static_ {
-      public:
+        friend xtd::forms::application;
+        friend xtd::forms::control;
+        friend xtd::forms::native::control;
+        friend xtd::forms::native::screen;
+        friend xtd::forms::native::settings;
+        friend xtd::forms::native::timer;
+        friend xtd::forms::native::wx_command_link_button;
+      protected:
         /// @brief Gets a value indicating whether the caller can quit this application.
         /// @return true if the caller can quit this application; otherwise, false.
         /// @warning Internal use only
