@@ -16,8 +16,12 @@
 namespace xtd {
   namespace forms {
     namespace native {
+      class control;
+      class picture_box;
       class wx_picture_box : public control_handler {
-      public:
+        friend xtd::forms::native::control;
+        friend xtd::forms::native::picture_box;
+      private:
         wx_picture_box(const forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, caller_info_);
           if ((create_params.style() & SS_BITMAP_CENTER) == SS_BITMAP_CENTER) {

@@ -20,6 +20,9 @@
 namespace xtd {
   namespace forms {
     namespace native {
+      class control;
+      class menu_item;
+      class menu;
       class wx_menu_bar;
       class wx_menu;
 
@@ -32,7 +35,10 @@ namespace xtd {
       };
       
       class wx_menu_item {
-      public:
+        friend xtd::forms::native::control;
+        friend xtd::forms::native::menu_item;
+        friend xtd::forms::native::menu;
+      private:
         wx_menu_item() = default;
 
         wx_menu_item(const std::string& text, intptr_t image, wx_menu_item_kind kind, bool checked, size_t shortcut) : text_(text), shortcut_(shortcut), image_(image), kind_(kind != wx_menu_item_kind::normal ? kind : (text == "-" ? wx_menu_item_kind::separator : wx_menu_item_kind::normal)), checked_(checked) {}

@@ -16,8 +16,12 @@
 namespace xtd {
   namespace forms {
     namespace native {
+      class control;
+      class text_box;
       class wx_text_box : public control_handler {
-      public:
+        friend xtd::forms::native::control;
+        friend xtd::forms::native::text_box;
+      private:
         enum class character_casing {normal, upper, lower};
         wx_text_box(const forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, caller_info_);

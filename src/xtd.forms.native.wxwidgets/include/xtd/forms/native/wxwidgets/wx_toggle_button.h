@@ -18,8 +18,12 @@
 namespace xtd {
   namespace forms {
     namespace native {
+      class control;
+      class toggle_button;
       class wx_toggle_button : public control_handler {
-      public:
+        friend xtd::forms::native::control;
+        friend xtd::forms::native::toggle_button;
+      private:
         wx_toggle_button(const forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, caller_info_);
           owner_draw_ = (create_params.style() & BS_OWNERDRAW) == BS_OWNERDRAW;
