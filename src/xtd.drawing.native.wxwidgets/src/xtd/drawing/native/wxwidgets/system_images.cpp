@@ -1,7 +1,9 @@
 #include <atomic>
 #include <wx/image.h>
 #include <wx/bitmap.h>
+#define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/system_images.h>
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/environment.h>
 #include <xtd/strings.h>
 

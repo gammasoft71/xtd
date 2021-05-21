@@ -2,7 +2,9 @@
 #include "../../../include/xtd/drawing/pen.h"
 #include "../../../include/xtd/drawing/solid_brush.h"
 #include <xtd/argument_exception.h>
+#define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/pen.h>
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
 
 using namespace std;
 using namespace xtd;

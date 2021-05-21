@@ -2,9 +2,11 @@
 #include <vector>
 #include <xtd/argument_exception.h>
 #include <xtd/strings.h>
+#define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/graphics.h>
 #include "../../../../../include/xtd/drawing/native/hdc_wrapper.h"
 #include "../../../../../include/xtd/drawing/native/wx_brush.h"
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <wx/app.h>
 #include <wx/dcgraph.h>
 #include <wx/dcmemory.h>

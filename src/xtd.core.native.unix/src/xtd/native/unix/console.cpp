@@ -1,6 +1,8 @@
+#define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/console.h>
 #include <xtd/native/console_color.h>
 #include <xtd/native/console_special_key.h>
+#undef __XTD_CORE_NATIVE_LIBRARY__
 
 #include <csignal>
 #include <iostream>

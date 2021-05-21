@@ -1,5 +1,7 @@
 #include "../../../include/xtd/drawing/bitmap.h"
+#define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/image.h>
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
 
 using namespace xtd;
 using namespace xtd::drawing;

@@ -1,4 +1,10 @@
 #pragma once
+/// @cond
+#ifndef __XTD_DRAWING_NATIVE_LIBRARY__
+#error "Do not include this file: Internal used only"
+#endif
+/// @endcond
+
 #include <cstdint>
 #include <istream>
 #include <string>

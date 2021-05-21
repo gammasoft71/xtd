@@ -3,7 +3,9 @@
 #include "../../../include/xtd/drawing/font.h"
 #include "../../../include/xtd/drawing/graphics.h"
 #include <xtd/argument_exception.h>
+#define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/font.h>
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
 
 using namespace xtd;
 using namespace xtd::drawing;

@@ -1,6 +1,8 @@
 #include "../../../include/xtd/drawing/color.h"
 #include <xtd/argument_exception.h>
+#define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/system_colors.h>
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <cmath>
 #include <map>
 #include <stdexcept>

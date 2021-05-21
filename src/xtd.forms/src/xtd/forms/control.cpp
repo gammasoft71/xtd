@@ -5,8 +5,10 @@
 #include <xtd/diagnostics/trace_switch.h>
 #include <xtd/strings.h>
 #include <xtd/drawing/system_fonts.h>
+#define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/graphics.h>
 #include <xtd/drawing/native/system_colors.h>
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/extended_window_styles.h>
