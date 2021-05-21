@@ -19,81 +19,91 @@
 #include <wx/textctrl.h>
 #include "control_handler.h"
 
-class wxDomainSpinCtrl : public wxPanel {
-public:
-  wxDomainSpinCtrl(wxWindow* parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long textBoxStyle = 0, long spinStyle = 0) : wxPanel(parent, winid, pos, size) {
-    textBox = new wxTextCtrl(this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, textBoxStyle);
-    upDown = new wxSpinButton(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, spinStyle);
-
-#if defined(__WXMSW__)
-    auto window_color = xtd::drawing::system_colors::window();
-    auto window_text_color = xtd::drawing::system_colors::window_text();
-    textBox->SetBackgroundColour({window_color.r(), window_color.g(), window_color.b(), window_color.a()});
-    textBox->SetForegroundColour({window_text_color.r(), window_text_color.g(), window_text_color.b(), window_text_color.a()});
-#endif
-    if (size == wxDefaultSize) SetSize(120, textBox->GetSize().GetHeight());
-
-    textBox->SetPosition(wxPoint(0, 0));
-    textBox->SetSize(GetSize() - wxSize(upDown->GetSize().GetWidth(), 0));
-    textBox->Bind(wxEVT_TEXT, [&](wxCommandEvent& event) {
-      wxPostEvent(this, wxCommandEvent(wxEVT_TEXT, GetId()));
-    });
-
-    upDown->SetPosition(wxPoint(GetSize().GetWidth() - upDown->GetSize().GetWidth(), 0));
-    upDown->SetSize(upDown->GetSize().GetWidth(), GetSize().GetHeight());
-    upDown->SetRange(0, static_cast<int>(items.GetCount()) - 1);
-    upDown->Bind(wxEVT_SPIN, [&](wxSpinEvent& event) {
-      if (index == std::numeric_limits<size_t>::max())
-        upDown->SetValue(static_cast<int32_t>(items.GetCount() - 1));
-      index = items.GetCount() - 1 - upDown->GetValue();
-      SetTextWithSelectedIndex();
-    });
-
-    Bind(wxEVT_SIZE, [&](wxEvent& ev) {
-      textBox->SetSize(GetSize() - wxSize(upDown->GetSize().GetWidth(), 0));
-      upDown->SetPosition(wxPoint(GetSize().GetWidth() - upDown->GetSize().GetWidth(), (GetSize().GetHeight() - upDown->GetSize().GetHeight()) / 2));
-    });
-  }
-
-  wxArrayString& GetItems() { return items; }
-
-  wxString GetValue() const { return textBox->GetValue(); }
-
-  void SetValue(const wxString& value) { textBox->SetValue(value); }
-
-  size_t GetSelectedIndex() const { return index; }
-
-  void SetSelectedIndex(size_t index) {
-    this->index = index;
-    if (index != std::numeric_limits<size_t>::max()) upDown->SetValue(static_cast<int32_t>(items.GetCount() - 1 - index));
-    else upDown->SetValue(static_cast<int32_t>(items.GetCount() - 1));
-    SetTextWithSelectedIndex();
-  }
-
-  wxString GetLabel() const override {return textBox->GetValue();}
-
-  void SetLabel(const wxString& value) override {textBox->SetValue(value);}
-  
-  void updateSpin() {
-    upDown->SetRange(0, static_cast<int32_t>(items.GetCount()-1));
-  }
-
-private:
-  void SetTextWithSelectedIndex() {
-    if (index != std::numeric_limits<size_t>::max()) textBox->SetValue(items[index]);
-  }
-
-  wxTextCtrl* textBox;
-  wxSpinButton* upDown;
-  wxArrayString items;
-  size_t index = std::numeric_limits<size_t>::max();
-};
-
 namespace xtd {
   namespace forms {
     namespace native {
+      class control;
+      template<typename control_t>
+      class control_wrapper;
+      class domain_up_down;
+      class wx_domain_up_down;
+      class wxDomainSpinCtrl : public wxPanel {
+        template<typename control_t>
+        friend class control_wrapper;
+        friend xtd::forms::native::domain_up_down;
+        friend xtd::forms::native::wx_domain_up_down;
+      private:
+        wxDomainSpinCtrl(wxWindow* parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long textBoxStyle = 0, long spinStyle = 0) : wxPanel(parent, winid, pos, size) {
+          textBox = new wxTextCtrl(this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, textBoxStyle);
+          upDown = new wxSpinButton(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, spinStyle);
+          
+#if defined(__WXMSW__)
+          auto window_color = xtd::drawing::system_colors::window();
+          auto window_text_color = xtd::drawing::system_colors::window_text();
+          textBox->SetBackgroundColour({window_color.r(), window_color.g(), window_color.b(), window_color.a()});
+          textBox->SetForegroundColour({window_text_color.r(), window_text_color.g(), window_text_color.b(), window_text_color.a()});
+#endif
+          if (size == wxDefaultSize) SetSize(120, textBox->GetSize().GetHeight());
+          
+          textBox->SetPosition(wxPoint(0, 0));
+          textBox->SetSize(GetSize() - wxSize(upDown->GetSize().GetWidth(), 0));
+          textBox->Bind(wxEVT_TEXT, [&](wxCommandEvent& event) {
+            wxPostEvent(this, wxCommandEvent(wxEVT_TEXT, GetId()));
+          });
+          
+          upDown->SetPosition(wxPoint(GetSize().GetWidth() - upDown->GetSize().GetWidth(), 0));
+          upDown->SetSize(upDown->GetSize().GetWidth(), GetSize().GetHeight());
+          upDown->SetRange(0, static_cast<int>(items.GetCount()) - 1);
+          upDown->Bind(wxEVT_SPIN, [&](wxSpinEvent& event) {
+            if (index == std::numeric_limits<size_t>::max())
+              upDown->SetValue(static_cast<int32_t>(items.GetCount() - 1));
+            index = items.GetCount() - 1 - upDown->GetValue();
+            SetTextWithSelectedIndex();
+          });
+          
+          Bind(wxEVT_SIZE, [&](wxEvent& ev) {
+            textBox->SetSize(GetSize() - wxSize(upDown->GetSize().GetWidth(), 0));
+            upDown->SetPosition(wxPoint(GetSize().GetWidth() - upDown->GetSize().GetWidth(), (GetSize().GetHeight() - upDown->GetSize().GetHeight()) / 2));
+          });
+        }
+        
+        wxArrayString& GetItems() { return items; }
+        
+        wxString GetValue() const { return textBox->GetValue(); }
+        
+        void SetValue(const wxString& value) { textBox->SetValue(value); }
+        
+        size_t GetSelectedIndex() const { return index; }
+        
+        void SetSelectedIndex(size_t index) {
+          this->index = index;
+          if (index != std::numeric_limits<size_t>::max()) upDown->SetValue(static_cast<int32_t>(items.GetCount() - 1 - index));
+          else upDown->SetValue(static_cast<int32_t>(items.GetCount() - 1));
+          SetTextWithSelectedIndex();
+        }
+        
+        wxString GetLabel() const override {return textBox->GetValue();}
+        
+        void SetLabel(const wxString& value) override {textBox->SetValue(value);}
+        
+        void updateSpin() {
+          upDown->SetRange(0, static_cast<int32_t>(items.GetCount()-1));
+        }
+        
+        void SetTextWithSelectedIndex() {
+          if (index != std::numeric_limits<size_t>::max()) textBox->SetValue(items[index]);
+        }
+        
+        wxTextCtrl* textBox;
+        wxSpinButton* upDown;
+        wxArrayString items;
+        size_t index = std::numeric_limits<size_t>::max();
+      };
+      
       class wx_domain_up_down : public control_handler {
-      public:
+        friend xtd::forms::native::control;
+        friend xtd::forms::native::domain_up_down;
+      private:
         wx_domain_up_down(const forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, caller_info_);
           int32_t height = create_params.height();

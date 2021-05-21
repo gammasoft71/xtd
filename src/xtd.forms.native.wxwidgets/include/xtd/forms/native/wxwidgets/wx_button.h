@@ -21,8 +21,12 @@ void __set_button_bezel_style__(wxButton* control, int32_t x, int32_t y, int32_t
 namespace xtd {
   namespace forms {
     namespace native {
+      class button;
+      class control;
       class wx_button : public control_handler {
-      public:
+        friend xtd::forms::native::button;
+        friend xtd::forms::native::control;
+      private:
         wx_button(const xtd::forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, caller_info_);
           owner_draw_ = (create_params.style() & BS_OWNERDRAW) == BS_OWNERDRAW;

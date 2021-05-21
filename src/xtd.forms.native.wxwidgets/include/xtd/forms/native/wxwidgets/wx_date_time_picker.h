@@ -17,8 +17,12 @@
 namespace xtd {
   namespace forms {
     namespace native {
+      class control;
+      class date_time_picker;
       class wx_date_time_picker : public control_handler {
-      public:
+        friend xtd::forms::native::control;
+        friend xtd::forms::native::date_time_picker;
+      private:
         wx_date_time_picker(const xtd::forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, caller_info_);
           if ((create_params.style() & DTS_TIMEFORMAT) == DTS_TIMEFORMAT)

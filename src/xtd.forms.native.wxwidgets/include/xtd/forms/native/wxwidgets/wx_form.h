@@ -22,10 +22,12 @@
 namespace xtd {
   namespace forms {
     namespace native {
+      class wx_form;
       class wxMainPanel : public wxScrolled<wxPanel> {
-      public:
+        friend xtd::forms::native::wx_form;
+      private:
         wxMainPanel(control_handler* control_handler, wxWindow *parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxScrolledWindowStyle, const wxString& name = wxPanelNameStr) : wxScrolled<wxPanel>(parent, winid, pos, size, style, name), control_handler_(control_handler) {}
-      protected:
+
         bool ProcessEvent(wxEvent &event) override {
           bool result = wxPanel::ProcessEvent(event);
           if (!GetParent()->IsShown()) return result;
@@ -55,7 +57,6 @@ namespace xtd {
           return result;
         }
 
-      private:
         control_handler* control_handler_ = nullptr;
       };
 

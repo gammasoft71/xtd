@@ -15,8 +15,12 @@
 namespace xtd {
   namespace forms {
     namespace native {
+      class color_picker;
+      class control;
       class wx_color_picker : public control_handler {
-      public:
+        friend xtd::forms::native::color_picker;
+        friend xtd::forms::native::control;
+      private:
         wx_color_picker(const xtd::forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, caller_info_);
           int style = wxCLRP_DEFAULT_STYLE;
