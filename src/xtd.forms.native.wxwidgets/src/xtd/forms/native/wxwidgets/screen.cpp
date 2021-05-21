@@ -1,4 +1,6 @@
+#define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/hdc_wrapper.h>
+#define __XTD_DRAWING_NATIVE_LIBRARY__
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/screen.h>

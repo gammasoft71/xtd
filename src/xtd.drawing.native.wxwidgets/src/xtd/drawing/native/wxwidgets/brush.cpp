@@ -2,8 +2,8 @@
 #include <xtd/drawing/native/brush.h>
 #include <xtd/drawing/native/system_colors.h>
 #include <xtd/drawing/native/toolkit.h>
-#undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/drawing/native/wx_brush.h"
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <wx/colour.h>
 
 using namespace xtd::drawing::native;
