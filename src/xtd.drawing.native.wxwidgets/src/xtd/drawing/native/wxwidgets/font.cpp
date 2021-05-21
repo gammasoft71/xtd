@@ -8,12 +8,19 @@
 using namespace xtd::drawing::native;
 
 namespace {
+  int32_t dpi() {
+    if (!wxTheApp) return 72;
+    wxScreenDC hdc;
+    wxSize dpi = hdc.GetPPI();
+    return dpi.GetHeight();
+  }
+  
   // Workaround : with wxWidgets version <= 3.1.4 font is in pixels and not in points on macOS
   float points_to_native_font_graphics_untit(float size) {
-    return wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Macintosh" ? size : size / font::dpi() * 96.0f;
+    return wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Macintosh" ? size : size / dpi() * 96.0f;
   }
   float native_font_graphics_untit_to_points(float size) {
-    return wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Macintosh" ? size : size / 96.0f * font::dpi();
+    return wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Macintosh" ? size : size / 96.0f * dpi();
   }
 }
 
@@ -37,10 +44,7 @@ void font::destroy(intptr_t font) {
 }
 
 int32_t font::dpi() {
-  if (!wxTheApp) return 72;
-  wxScreenDC hdc;
-  wxSize dpi = hdc.GetPPI();
-  return dpi.GetHeight();
+  return ::dpi();
 }
 
 void font::get_information(intptr_t font, std::string& name, float& em_size, bool& bold, bool& italic, bool& underline, bool& strikeout, uint8_t& gdi_char_set, bool& gdi_vertical_font) {

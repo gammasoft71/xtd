@@ -13,6 +13,10 @@
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
+    /// @cond
+    class pen;
+    /// @endcond
+    
     /// @brief The xtd::drawing::native namespace contains internal native API definitions to access underlying toolkits used by xtd.drawing library.
     /// @warning Internal use only
     namespace native {
@@ -22,7 +26,8 @@ namespace xtd {
       /// @ingroup xtd_drawing_native native
       /// @warning Internal use only
       class drawing_native_export_ pen final static_ {
-      public:
+        friend xtd::drawing::pen;
+      protected:
         static intptr_t create();
         static void color(intptr_t pen, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
         static void dash_pattern(intptr_t pen, std::vector<float> dash_pattern);
