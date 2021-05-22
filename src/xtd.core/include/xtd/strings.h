@@ -1534,14 +1534,14 @@ namespace xtd {
     /// @param str string to convert to array.
     /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty String, the returned array is empty and has a zero length.
     template<typename char_t>
-    static const std::vector<char_t> to_array(const std::basic_string<char_t>& str) noexcept {return to_array(str, 0, str.size());}
+    static std::vector<char_t> to_array(const std::basic_string<char_t>& str) noexcept {return to_array(str, 0, str.size());}
     
     /// @brief Copies the characters in this instance to a Unicode character array starting at specitied index.
     /// @param str string to convert to array.
     /// @param start_index The starting position of string to convert.
     /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty String, the returned array is empty and has a zero length.
     template<typename char_t>
-    static const std::vector<char_t> to_array(const std::basic_string<char_t>& str, size_t start_index) noexcept {return to_array(str, start_index, str.size() - start_index);}
+    static std::vector<char_t> to_array(const std::basic_string<char_t>& str, size_t start_index) noexcept {return to_array(str, start_index, str.size() - start_index);}
     
     /// @brief Copies the characters in this instance to a Unicode character array starting at specitied index with specified legnth.
     /// @param str string to convert to array.
@@ -1549,7 +1549,7 @@ namespace xtd {
     /// @param length The length of the string to convert
     /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty String, the returned array is empty and has a zero length.
     template<typename char_t>
-    static const std::vector<char_t> to_array(const std::basic_string<char_t>& str, size_t start_index, size_t length) noexcept {
+    static std::vector<char_t> to_array(const std::basic_string<char_t>& str, size_t start_index, size_t length) noexcept {
       if (start_index >= str.size()) return {};
       if (start_index + length >= str.size()) return {str.begin() + start_index, str.end()};
       return {str.begin() + start_index, str.begin() + start_index + length};
@@ -1557,11 +1557,11 @@ namespace xtd {
     
     /// @cond
     template<typename char_t>
-    static const std::vector<char_t> to_array(const char_t* str) noexcept {return to_array(std::basic_string<char_t>(str));}
+    static std::vector<char_t> to_array(const char_t* str) noexcept {return to_array(std::basic_string<char_t>(str));}
     template<typename char_t>
-    static const std::vector<char_t> to_array(const char_t* str, size_t start_index) noexcept {return to_array(std::basic_string<char_t>(str), start_index);}
+    static std::vector<char_t> to_array(const char_t* str, size_t start_index) noexcept {return to_array(std::basic_string<char_t>(str), start_index);}
     template<typename char_t>
-    static const std::vector<char_t> to_array(const char_t* str, size_t start_index, size_t length) noexcept {return to_array(std::basic_string<char_t>(str), start_index, length);}
+    static std::vector<char_t> to_array(const char_t* str, size_t start_index, size_t length) noexcept {return to_array(std::basic_string<char_t>(str), start_index, length);}
     /// @endcond
     
     
@@ -1569,27 +1569,27 @@ namespace xtd {
     /// @param str string to convert to lower.
     /// @return String A new String in lowercase.
     template<typename char_t>
-    static const std::basic_string<char_t> to_lower(const std::basic_string<char_t>& str) noexcept {
+    static std::basic_string<char_t> to_lower(const std::basic_string<char_t>& str) noexcept {
       std::basic_string<char_t> result;
       for(char_t c : str) result.push_back(static_cast<char_t>(tolower(c)));
       return result;
     }
     
     /// @cond
-    static const std::basic_string<char16_t> to_lower(const std::basic_string<char16_t>& str) noexcept {
+    static std::basic_string<char16_t> to_lower(const std::basic_string<char16_t>& str) noexcept {
       std::basic_string<char16_t> result;
       for(char16_t c : str) result.push_back(c <= 0xFF ? static_cast<char16_t>(tolower(static_cast<char>(c))) : c);
       return result;
     }
     
-    static const std::basic_string<char32_t> to_lower(const std::basic_string<char32_t>& str) noexcept {
+    static std::basic_string<char32_t> to_lower(const std::basic_string<char32_t>& str) noexcept {
       std::basic_string<char32_t> result;
       for(char32_t c : str) result.push_back(c <= 0xFF ? static_cast<char32_t>(tolower(static_cast<char>(c))) : c);
       return result;
     }
     
     template<typename char_t>
-    static const std::basic_string<char_t> to_lower(const char_t* str) noexcept {return to_lower(std::basic_string<char_t>(str));}
+    static std::basic_string<char_t> to_lower(const char_t* str) noexcept {return to_lower(std::basic_string<char_t>(str));}
     /// @endcond
 
     template<typename char_t>
@@ -1613,27 +1613,27 @@ namespace xtd {
     /// @param str string to convert to upper.
     /// @return String A new String in uppercase.
     template<typename char_t>
-    static const std::basic_string<char_t> to_upper(const std::basic_string<char_t>& str) noexcept {
+    static std::basic_string<char_t> to_upper(const std::basic_string<char_t>& str) noexcept {
       std::basic_string<char_t> result;
       for(char_t c : str) result.push_back(static_cast<char_t>(toupper(c)));
       return result;
     }
     
     /// @cond
-    static const std::basic_string<char16_t> to_upper(const std::basic_string<char16_t>& str) noexcept {
+    static std::basic_string<char16_t> to_upper(const std::basic_string<char16_t>& str) noexcept {
       std::basic_string<char16_t> result;
       for(char16_t c : str) result.push_back(c <= 0xFF ? static_cast<char16_t>(toupper(static_cast<char>(c))) : c);
       return result;
     }
     
-    static const std::basic_string<char32_t> to_upper(const std::basic_string<char32_t>& str) noexcept {
+    static std::basic_string<char32_t> to_upper(const std::basic_string<char32_t>& str) noexcept {
       std::basic_string<char32_t> result;
       for(char32_t c : str) result.push_back(c <= 0xFF ? static_cast<char32_t>(toupper(static_cast<char>(c))) : c);
       return result;
     }
     
     template<typename char_t>
-    static const std::basic_string<char_t> to_upper(const char_t* str) noexcept {return to_upper(std::basic_string<char_t>(str));}
+    static std::basic_string<char_t> to_upper(const char_t* str) noexcept {return to_upper(std::basic_string<char_t>(str));}
     /// @endcond
     
     /// @brief Removes all leading and trailing occurrences of white-space characters from the specifed String.
