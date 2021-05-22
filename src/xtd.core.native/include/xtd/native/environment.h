@@ -27,15 +27,6 @@ namespace xtd {
     /// @warning Internal use only
     class core_native_export_ environment final {
     public:
-      /// @brief Gets the fully qualified path of the current working directory.
-      /// @return std::string A string containing a directory path.
-      /// @warning Internal use only
-      static std::string current_directory();
-      /// @brief Sets the fully qualified path of the current working directory.
-      /// @param directory_name A string containing a directory path.
-      /// @warning Internal use only
-      static void current_directory(const std::string& directory_name);
-
       /// @brief Gets the desktop environment name.
       /// @return std::string A string containing desktop environment name.
       /// @remarks Returns "windows" on Windows, "macos" on macOS, "budgie" or "cinamon" or "deepin" or "Enlightenment", "étoilé" or "gnome" or "kde" or "lxqt" or "mate" or "pantheon" or "razor" or "unity" or "xfce" on linux.

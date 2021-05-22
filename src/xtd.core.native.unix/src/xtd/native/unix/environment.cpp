@@ -54,15 +54,6 @@ namespace {
   }
 }
 
-std::string environment::current_directory() {
-  char path[MAXPATHLEN + 1];
-  return getcwd(path, MAXPATHLEN) ? path : "";
-}
-
-void environment::current_directory(const std::string& directory_name) {
-  chdir(directory_name.c_str());
-}
-
 std::string environment::get_desktop_environment() {
 #if defined(__APPLE__)
   return "macos";
