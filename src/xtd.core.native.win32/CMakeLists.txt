@@ -12,6 +12,7 @@ add_sources(
   src/xtd/native/win32/console.cpp
   src/xtd/native/win32/environment.cpp
   src/xtd/native/win32/file.cpp
+  src/xtd/native/win32/path.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})
 
