@@ -9,7 +9,7 @@
 /// @endcond
 
 #include <xtd/core_native_export.h>
-#include <csttdint>
+#include <cstdint>
 #include <string>
 #include "file_attribute.h"
 
@@ -29,7 +29,7 @@ namespace xtd {
       /// @param path A string containing the file path.
       /// @return The file attributes. (see file_attribute.h file).
       /// @warning Internal use only
-      static int32_t get_file_attributes(const std::string& path);
+      static int32_t get_attributes(const std::string& path);
     };
   }
 }

@@ -30,7 +30,12 @@ namespace xtd {
       /// @brief Gets the fully qualified path of the current working directory.
       /// @return std::string A string containing a directory path.
       /// @warning Internal use only
-      static std::string get_current_directory();
+      static std::string current_directory();
+      /// @brief Sets the fully qualified path of the current working directory.
+      /// @param directory_name A string containing a directory path.
+      /// @warning Internal use only
+      static void current_directory(const std::string& directory_name);
+
       /// @brief Gets the desktop environment name.
       /// @return std::string A string containing desktop environment name.
       /// @remarks Returns "windows" on Windows, "macos" on macOS, "budgie" or "cinamon" or "deepin" or "Enlightenment", "étoilé" or "gnome" or "kde" or "lxqt" or "mate" or "pantheon" or "razor" or "unity" or "xfce" on linux.
@@ -103,19 +108,15 @@ namespace xtd {
       /// @return A string containing "\r\n" for non-Unix platforms, or a string containing "\n" for Unix platforms.
       /// @warning Internal use only
       static std::string new_line();
-      /// @brief Sets the fully qualified path of the current working directory.
-      /// @param directory_name A string containing a directory path.
-      /// @warning Internal use only
-      static void set_current_directory(const std::string& directory_name);
       /// @brief Creates or modifies an environment variable stored in the current process.
       /// @param variable The name of an environment variable.
       /// @param value A value to assign to variable.
       /// @warning Internal use only
-      static void set_env(const std::string& name, const std::string& value);
+      static void set_environment_variable(const std::string& name, const std::string& value);
       /// @brief Deletes an environment variable stored in the current process.
       /// @param variable The name of an environment variable.
       /// @warning Internal use only
-      static void unset_env(const std::string& name);
+      static void unset_environment_variable(const std::string& name);
     };
   }
 }
