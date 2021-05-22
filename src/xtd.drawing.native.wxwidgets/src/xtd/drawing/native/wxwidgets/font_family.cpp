@@ -18,14 +18,14 @@ namespace {
     return size;  // font is in points
   }
 #else
-float pixel_to_native_font_graphics_untit(float size) {
-  auto dpi = 72;
-  if (wxTheApp) {
-    wxScreenDC hdc;
-    dpi = hdc.GetPPI().GetHeight();
+  float pixel_to_native_font_graphics_untit(float size) {
+    auto dpi = 72;
+    if (wxTheApp) {
+      wxScreenDC hdc;
+      dpi = hdc.GetPPI().GetHeight();
+    }
+    return size / 96.0f * dpi;  // font is in pixels and not in points
   }
-  return size / 96.0f * dpi;  // font is in pixels and not in points
-}
 #endif
 }
 
