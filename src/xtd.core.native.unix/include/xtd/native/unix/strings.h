@@ -49,7 +49,14 @@ namespace xtd::native {
         
         return list;
       }
-      
+
+      static const std::string to_lower(const std::string& str) noexcept {
+        std::string result;
+        for(auto c : str)
+          result.push_back(static_cast<char>(tolower(c)));
+        return result;
+      }
+
       static std::string trim_end(const std::string& str, const std::vector<char>& trim_chars) noexcept {
         if (!str.size()) return str;
         std::string result(str);
