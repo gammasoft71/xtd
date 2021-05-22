@@ -38,7 +38,8 @@ namespace {
     if (character_casing == 1) text_entry_dialog->ForceUpper();
     
 #if defined(__WXMSW__)
-    if (application::dark_mode_enabled()) {
+    // Idem : if (application::dark_mode_enabled()) {
+    if (drawing::system_colors::window().get_lightness() < 0.5) {
       text_entry_dialog->SetBackgroundColour({xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b()});
       for (auto child : text_entry_dialog->GetChildren()) {
         auto back_color = dynamic_cast<wxTextEntry*>(child) ? xtd::drawing::system_colors::window() : xtd::drawing::system_colors::control();
