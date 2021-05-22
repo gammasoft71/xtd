@@ -13,21 +13,19 @@ using namespace xtd::drawing::native;
 
 
 namespace {
-  int32_t dpi() {
-    if (!wxTheApp) return 72;
-    wxScreenDC hdc;
-    wxSize dpi = hdc.GetPPI();
-    return dpi.GetHeight();
-  }
-
 #if defined(__APPLE__)
   float pixel_to_native_font_graphics_untit(float size) {
     return size;  // font is in points
   }
 #else
-  float pixel_to_native_font_graphics_untit(float size) {
-    return size / 96.0f * dpi();  // font is in pixels and not in points
+float pixel_to_native_font_graphics_untit(float size) {
+  auto dpi = 72;
+  if (wxTheApp) {
+    wxScreenDC hdc;
+    dpi = hdc.GetPPI().GetHeight();
   }
+  return size / 96.0f * dpi;  // font is in pixels and not in points
+}
 #endif
 }
 
