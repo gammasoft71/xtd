@@ -70,7 +70,7 @@ std::string environment::get_desktop_environment() {
   auto current_desktop = get_environment_variable("XDG_CURRENT_DESKTOP");
   if (current_desktop == "") current_desktop = get_environment_variable("XDG_DATA_DIRS");
   for (auto environment_desktop : {"budgie", "cinamon", "deepin", "Enlightenment", "étoilé", "gnome", "kde", "lxqt", "mate", "pantheon", "razor", "unity", "xfce"}) {
-    if (xtd::strings::contains(xtd::strings::to_lower(current_desktop), environment_desktop)) return environment_desktop;
+    if (unix::strings::contains(unix::strings::to_lower(current_desktop), environment_desktop)) return environment_desktop;
   }
   return "";
 #endif
