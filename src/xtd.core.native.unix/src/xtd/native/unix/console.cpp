@@ -27,10 +27,10 @@ using namespace xtd::native;
 
 namespace {
   std::function<bool(int32_t)> user_cancel_callback;
-  int32_t backColor = CONSOLE_COLOR_BLACK;
-  int32_t foreColor = CONSOLE_COLOR_WHITE;
-  bool cursor_visible = true;
-  bool treat_control_c_as_input = false;
+  auto back_color = CONSOLE_COLOR_BLACK;
+  auto fore_color = CONSOLE_COLOR_WHITE;
+  auto cursor_visible = true;
+  auto treat_control_c_as_input = false;
   std::string title;
 
   struct console_intercept_signals {
@@ -53,11 +53,10 @@ namespace {
       if (user_cancel_callback && user_cancel_callback(signal_keys_[signal]) == false) exit(EXIT_FAILURE);
     }
 
-    static std::map<int32_t, int32_t> signal_keys_;
+    inline static std::map<int32_t, int32_t> signal_keys_  {{SIGQUIT, CONSOLE_SPECIAL_KEY_CTRL_BS}, {SIGTSTP, CONSOLE_SPECIAL_KEY_CTRL_Z}, {SIGINT, CONSOLE_SPECIAL_KEY_CTRL_C}};
     static console_intercept_signals console_intercept_signals_;
   };
 
-  std::map<int32_t, int32_t> console_intercept_signals::signal_keys_ {{SIGQUIT, CONSOLE_SPECIAL_KEY_CTRL_BS}, {SIGTSTP, CONSOLE_SPECIAL_KEY_CTRL_Z}, {SIGINT, CONSOLE_SPECIAL_KEY_CTRL_C}};
   console_intercept_signals console_intercept_signals::console_intercept_signals_;
 
   class terminal final {
@@ -65,22 +64,22 @@ namespace {
     terminal() {
       termios termioAttributes;
       tcgetattr(0, &termioAttributes);
-      backupedTermioAttributes = termioAttributes;
+      backuped_termio_attributes = termioAttributes;
       termioAttributes.c_lflag &= ~ECHO;
       tcsetattr(0, TCSANOW, &termioAttributes);
     }
     
     ~terminal() {
-      tcsetattr(0, TCSANOW, &backupedTermioAttributes);
+      tcsetattr(0, TCSANOW, &backuped_termio_attributes);
       if (is_ansi_supported())
         std::cout << "\x1b]0;\x7" << std::flush;
     }
     
   public:
     int32_t getch() {
-      if (peekCharacter != -1) {
-        int8_t character = peekCharacter;
-        peekCharacter = -1;
+      if (peek_character != -1) {
+        int8_t character = peek_character;
+        peek_character = -1;
         return character;
       }
       
@@ -101,7 +100,7 @@ namespace {
     }
     
     bool key_available() {
-      if (peekCharacter != -1)
+      if (peek_character != -1)
         return true;
       
       termios termioAttributes;
@@ -112,11 +111,11 @@ namespace {
       termioAttributes.c_cc[VMIN] = 0;
       tcsetattr(0, TCSANOW, &termioAttributes);
       
-      read(0, &peekCharacter, 1);
+      read(0, &peek_character, 1);
       
       tcsetattr(0, TCSANOW, &backupedTermioAttributes);
       
-      return peekCharacter != -1;
+      return peek_character != -1;
     }
     
     static bool is_ansi_supported() {
@@ -127,8 +126,8 @@ namespace {
     static terminal terminal_;
     
   private:
-    int8_t peekCharacter {-1};
-    termios backupedTermioAttributes;
+    int8_t peek_character = -1;
+    termios backuped_termio_attributes;
   };
   
   terminal terminal::terminal_;
@@ -202,7 +201,7 @@ namespace {
     
     key_info(const key_info& ki) : key_(ki.key_), key_char_(ki.key_char_), has_alt_modifier_(ki.has_alt_modifier_), has_control_modifier_(ki.has_control_modifier_), has_shift_modifier_(ki.has_shift_modifier_) {}
     
-    key_info& operator =(const key_info& ki) {
+    key_info& operator=(const key_info& ki) {
       key_ = ki.key_;
       key_char_ = ki.key_char_;
       has_alt_modifier_ = ki.has_alt_modifier_;
@@ -214,8 +213,7 @@ namespace {
     static bool key_available() {return !inputs.is_empty() || terminal::terminal_.key_available();}
     
     static key_info read() {
-      if (!inputs.is_empty())
-        return to_key_info(inputs.pop());
+      if (!inputs.is_empty()) return to_key_info(inputs.pop());
       
       do
         inputs.add(terminal::terminal_.getch());
@@ -227,24 +225,17 @@ namespace {
         return key_info(it->second.key, it->second.key_char, false, false, it->second.shift);
       }
       
-      if (inputs.count() == 1)
-        return to_key_info(inputs.pop());
-      
-      if (inputs.count() > 1 && *inputs.begin() != 27)
-        return to_key_info(to_key(inputs));
+      if (inputs.count() == 1) return to_key_info(inputs.pop());
+      if (inputs.count() > 1 && *inputs.begin() != 27) return to_key_info(to_key(inputs));
       
       inputs.pop();
       return to_key_info(inputs.pop(), true);
     }
     
     int32_t key() const {return key_;}
-    
     int32_t key_char() const {return key_char_;}
-    
     bool has_alt_modifier() const {return has_alt_modifier_;}
-    
     bool has_control_modifier() const {return has_control_modifier_;}
-    
     bool has_shift_modifier() const {return has_shift_modifier_;}
     
     std::string to_string() const {
@@ -549,26 +540,25 @@ namespace {
 }
 
 int32_t console::background_color() {
-  return backColor;
+  return back_color;
 }
 
 void console::background_color(int32_t color) {
+  if (!terminal::is_ansi_supported()) return;
   static std::map<int32_t, const char*> colors {{CONSOLE_COLOR_BLACK, "\033[40m"}, {CONSOLE_COLOR_DARK_BLUE, "\033[44m"}, {CONSOLE_COLOR_DARK_GREEN, "\033[42m"}, {CONSOLE_COLOR_DARK_CYAN, "\033[46m"}, {CONSOLE_COLOR_DARK_RED, "\033[41m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\033[45m"}, {CONSOLE_COLOR_DARK_YELLOW, "\033[43m"}, {CONSOLE_COLOR_GRAY, "\033[47m"}, {CONSOLE_COLOR_DARK_GRAY, "\033[100m"}, {CONSOLE_COLOR_BLUE, "\033[104m"}, {CONSOLE_COLOR_GREEN, "\033[102m"}, {CONSOLE_COLOR_CYAN, "\033[106m"}, {CONSOLE_COLOR_RED, "\033[101m"}, {CONSOLE_COLOR_MAGENTA, "\033[105m"}, {CONSOLE_COLOR_YELLOW, "\033[103m"}, {CONSOLE_COLOR_WHITE, "\033[107m"}};
   auto it = colors.find(color);
-  if (!terminal::is_ansi_supported() && it != colors.end()) return;
+  if (it != colors.end()) return;
   std::cout << it->second << std::flush;
-  backColor = color;
+  back_color = color;
 }
 
 void console::beep(uint32_t frequency, uint32_t duration) {
   if (frequency < 37 || frequency > 32767) return;
   
   int32_t fd = open("/dev/console", O_WRONLY);
-  if (fd == -1)
-    std::cout << "\a" << std::flush;
+  if (fd == -1) std::cout << "\a" << std::flush;
   else {
-    if (ioctl(fd, KIOCSOUND, (int32_t)(1193180 / frequency)) < 0)
-      std::cout << "\a" << std::flush;
+    if (ioctl(fd, KIOCSOUND, (int32_t)(1193180 / frequency)) < 0) std::cout << "\a" << std::flush;
     else {
       usleep(1000 * duration);
       ioctl(fd, KIOCSOUND, 0);
@@ -622,12 +612,9 @@ int32_t console::cursor_size() {
 }
 
 void console::cursor_size(int32_t size) {
-  if (terminal::is_ansi_supported()) {
-    if (size < 50)
-      std::cout << "\x1b[4 q" << std::flush;
-    else
-      std::cout << "\x1b[2 q" << std::flush;
-  }
+  if (!terminal::is_ansi_supported()) return;
+  if (size < 50) std::cout << "\x1b[4 q" << std::flush;
+  else std::cout << "\x1b[2 q" << std::flush;
 }
 
 int32_t console::cursor_top() {
@@ -647,23 +634,22 @@ bool console::cursor_visible() {
 }
 
 void console::cursor_visible(bool visible) {
-  if (terminal::is_ansi_supported()) {
-    ::cursor_visible = visible;
-    std::cout << (::cursor_visible ? "\x1b[?25h" : "\x1b[?25l") << std::flush;
-  }
+  if (!terminal::is_ansi_supported()) return;
+  ::cursor_visible = visible;
+  std::cout << (::cursor_visible ? "\x1b[?25h" : "\x1b[?25l") << std::flush;
 }
 
 int32_t console::foreground_color() {
-  return foreColor;
+  return fore_color;
 }
 
 void console::foreground_color(int32_t color) {
+  if (!terminal::is_ansi_supported()) return;
   static std::map<int32_t, const char*> colors {{CONSOLE_COLOR_BLACK, "\033[30m"}, {CONSOLE_COLOR_DARK_BLUE, "\033[34m"}, {CONSOLE_COLOR_DARK_GREEN, "\033[32m"}, {CONSOLE_COLOR_DARK_CYAN, "\033[36m"}, {CONSOLE_COLOR_DARK_RED, "\033[31m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\033[35m"}, {CONSOLE_COLOR_DARK_YELLOW, "\033[33m"}, {CONSOLE_COLOR_GRAY, "\033[37m"}, {CONSOLE_COLOR_DARK_GRAY, "\033[90m"}, {CONSOLE_COLOR_BLUE, "\033[94m"}, {CONSOLE_COLOR_GREEN, "\033[92m"}, {CONSOLE_COLOR_CYAN, "\033[96m"}, {CONSOLE_COLOR_RED, "\033[91m"}, {CONSOLE_COLOR_MAGENTA, "\033[95m"}, {CONSOLE_COLOR_YELLOW, "\033[93m"}, {CONSOLE_COLOR_WHITE, "\033[97m"}};
   auto it = colors.find(color);
-  if (!terminal::is_ansi_supported() && it != colors.end()) return;
+  if (it != colors.end()) return;
   std::cout << it->second << std::flush;
-  foreColor = color;
-  return;
+  fore_color = color;
 }
 
 int32_t console::input_code_page() {
@@ -702,7 +688,7 @@ void console::output_code_page(int32_t codePage) {
 }
 
 void console::read_key(int32_t& key_char, int32_t& key_code, bool& alt, bool& shift, bool& ctrl) {
-  key_info key_info = key_info::read();
+  auto key_info = key_info::read();
   key_char = static_cast<int32_t>(key_info.key_char());
   key_code = static_cast<int32_t>(key_info.key());
   alt = key_info.has_alt_modifier();
@@ -725,18 +711,19 @@ void console::set_cursor_position(int32_t left, int32_t top) {
 }
 
 std::string console::title() {
+  if (!terminal::is_ansi_supported()) return ::title;;
   /// @todo get console get title on linux and macOS
   /*
    * Didn't work correctly!
   std::cout << "\x1b[21t" << std::endl;
   
-  if (!terminal.KeyAvailable())
-    return ::title;
+  if (!terminal.key_available()) return ::title;
   
   std::string title;
-  for (char c = terminal.Getch(); terminal::terminal_.key_available(); c = terminal::terminal_.getch())
-    title.push_back(c);
-  return title; */
+  for (auto c = terminal.getch(); terminal::terminal_.key_available(); c = terminal::terminal_.getch())
+    title.push_back(static_cast<char>(c));
+  return title;
+   */
   return ::title;
 }
 
@@ -765,9 +752,9 @@ int32_t console::window_left() {
 
 int32_t console::window_height() {
   if (!terminal::is_ansi_supported()) return 24;
-  int32_t top = console::cursor_top();
+  auto top = console::cursor_top();
   console::set_cursor_position(console::cursor_left(), 999);
-  int32_t height = console::cursor_top() + 1;
+  auto height = console::cursor_top() + 1;
   console::set_cursor_position(console::cursor_left(), top);
   return height;
 }
@@ -779,9 +766,9 @@ int32_t console::window_top() {
 
 int32_t console::window_width() {
   if (!terminal::is_ansi_supported()) return 80;
-  int32_t left = console::cursor_left();
+  auto left = console::cursor_left();
   console::set_cursor_position(999, console::cursor_top());
-  int32_t width = console::cursor_left() + 1;
+  auto width = console::cursor_left() + 1;
   console::set_cursor_position(left, console::cursor_top());
   return width;
 }

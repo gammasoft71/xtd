@@ -36,7 +36,7 @@ char** __environment_argv;
 
 namespace {
   static std::string create_process(const std::string& command) {
-    FILE* fs = popen(command.c_str(), "r");
+    auto fs = popen(command.c_str(), "r");
     std::string result;
     while (!feof(fs)) {
       char buf[513];
@@ -54,9 +54,13 @@ namespace {
   }
 }
 
-std::string environment::get_current_directory() {
+std::string environment::current_directory() {
   char path[MAXPATHLEN + 1];
   return getcwd(path, MAXPATHLEN) ? path : "";
+}
+
+void environment::current_directory(const std::string& directory_name) {
+  chdir(directory_name.c_str());
 }
 
 std::string environment::get_desktop_environment() {
@@ -73,8 +77,8 @@ std::string environment::get_desktop_environment() {
 }
 
 std::string environment::get_environment_variable(const std::string& variable) {
-  char* value = getenv(variable.c_str());
-  return value == nullptr ? "" : value;
+  auto value = getenv(variable.c_str());
+  return value ? value : "";
 }
 
 std::string environment::get_know_folder_path(int32_t csidl) {
@@ -114,14 +118,10 @@ void environment::get_os_version(int32_t& major, int32_t& minor, int32_t& build,
 #else
   std::vector<std::string> numbers = unix::strings::split(create_process("uname -r"), {'.', '-', '\n'});
 #endif
-  if (numbers.size() < 1 || !unix::strings::try_parse(numbers[0], major))
-    major = 0;
-  if (numbers.size() < 2 || !unix::strings::try_parse(numbers[1], minor))
-    minor = 0;
-  if (numbers.size() < 3 || !unix::strings::try_parse(numbers[2], build))
-    build = 0;
-  if (numbers.size() < 4 || !unix::strings::try_parse(numbers[3], revision))
-    revision = 0;
+  if (numbers.size() < 1 || !unix::strings::try_parse(numbers[0], major)) major = 0;
+  if (numbers.size() < 2 || !unix::strings::try_parse(numbers[1], minor)) minor = 0;
+  if (numbers.size() < 3 || !unix::strings::try_parse(numbers[2], build)) build = 0;
+  if (numbers.size() < 4 || !unix::strings::try_parse(numbers[3], revision)) revision = 0;
 }
 
 std::string environment::get_service_pack() {
@@ -139,15 +139,16 @@ size_t environment::get_system_page_size() {
 uint32_t environment::get_tick_count() {
 #if defined (__APPLE__)
   // https://stackoverflow.com/questions/3269321/osx-programmatically-get-uptime
-  struct timeval boottime, nowtime;
-  size_t len = sizeof(boottime);
-  int32_t mib[2] = { CTL_KERN, KERN_BOOTTIME };
-  sysctl(mib, 2, &boottime, &len, NULL, 0);
-  gettimeofday(&nowtime, NULL);
-  return (int32_t)((nowtime.tv_sec - boottime.tv_sec) * 1000) + ((nowtime.tv_usec - boottime.tv_usec) / 1000);
+  struct timeval boottime {};
+  struct timeval nowtime {};
+  auto len = sizeof(boottime);
+  int32_t mib[2] = {CTL_KERN, KERN_BOOTTIME};
+  sysctl(mib, 2, &boottime, &len, nullptr, 0);
+  gettimeofday(&nowtime, nullptr);
+  return static_cast<uint32_t>((nowtime.tv_sec - boottime.tv_sec) * 1000) + static_cast<uint32_t>((nowtime.tv_usec - boottime.tv_usec) / 1000);
 #else
   // https://stackoverflow.com/questions/1540627/what-api-do-i-call-to-get-the-system-uptime
-  struct sysinfo info;
+  struct sysinfo info {};
   sysinfo(&info);
   return info.uptime * 1000;
 #endif
@@ -158,9 +159,8 @@ std::string environment::get_user_domain_name() {
 }
 
 std::string environment::get_user_name() {
-  char name[512];
-  strcpy(name, getenv("USER"));
-  return name;
+  auto user_name = getenv("USER");
+  return user_name ? user_name : "";
 }
 
 bool environment::is_processor_arm() {
@@ -214,14 +214,10 @@ std::string environment::new_line() {
   return "\n";
 }
 
-void environment::set_current_directory(const std::string& directory_name) {
-  chdir(directory_name.c_str());
-}
-
-void environment::set_env(const std::string& name, const std::string& value) {
+void environment::set_environment_variable(const std::string& name, const std::string& value) {
   setenv(name.c_str(), value.c_str(), 1);
 }
 
-void environment::unset_env(const std::string& name) {
+void environment::unset_environment_variable(const std::string& name) {
   unsetenv(name.c_str());
 }

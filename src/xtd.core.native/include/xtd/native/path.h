@@ -9,7 +9,7 @@
 /// @endcond
 
 #include <xtd/core_native_export.h>
-#include <csttdint>
+#include <cstdint>
 #include <string>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -24,11 +24,6 @@ namespace xtd {
     /// @warning Internal use only
     class core_native_export_ path final {
     protected:
-      /// @brief Gets the current directory.
-      /// @return The current directory.
-      /// @warning Internal use only
-      static std::string get_current_dirirectory();
-      
       /// @brief Gets temp path.
       /// @return The temp path.
       /// @warning Internal use only
