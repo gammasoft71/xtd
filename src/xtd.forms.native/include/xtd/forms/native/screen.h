@@ -26,12 +26,16 @@ namespace xtd {
     /// @brief The xtd::forms::native namespace contains internal native API definitions to access underlying toolkits used by xtd.forms library.
     /// @warning Internal use only
     namespace native {
+      /// @cond
+      class form;
+      /// @endcond
       /// @brief Contains screen native API.
       /// @par Library
       /// xtd.forms.native
       /// @ingroup xtd_forms_native native
       /// @warning Internal use only
      class forms_native_export_ screen final static_ {
+       friend xtd::forms::native::form;
        friend xtd::forms::screen;
      protected:
        /// @brief Gets number of screens.

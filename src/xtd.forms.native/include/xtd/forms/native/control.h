@@ -45,6 +45,10 @@ namespace xtd {
     /// @brief The xtd::forms::native namespace contains internal native API definitions to access underlying toolkits used by xtd.forms library.
     /// @warning Internal use only
     namespace native {
+      /// @cond
+      class form;
+      /// @endcond
+
       /// @brief Contains control native API.
       /// @par Library
       /// xtd.forms.native
@@ -59,6 +63,7 @@ namespace xtd {
         friend xtd::forms::domain_up_down;
         friend xtd::forms::message;
         friend xtd::forms::paint_event_args;
+        friend xtd::forms::native::form;
       protected:
         /// @brief Sets the background color for the control.
         /// @param control Control window handle.

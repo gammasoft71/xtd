@@ -44,7 +44,8 @@ namespace xtd {
         friend xtd::forms::application;
         friend xtd::forms::control;
         friend xtd::forms::native::control;
-        friend xtd::forms::native::screen;
+        friend xtd::forms::native::message_box;
+         friend xtd::forms::native::screen;
         friend xtd::forms::native::settings;
         friend xtd::forms::native::timer;
         friend xtd::forms::native::wx_command_link_button;
