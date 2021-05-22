@@ -49,6 +49,10 @@
 /// @brief console special key definitions.
 /// @warning Internal use only
 
+/// @defgroup drive_type drive type
+/// @brief drive type definitions.
+/// @warning Internal use only
+
 /// @defgroup dts date time states
 /// @brief date time states definitions.
 /// @warning Internal use only
