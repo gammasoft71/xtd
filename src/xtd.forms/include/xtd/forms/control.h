@@ -1582,174 +1582,217 @@ namespace xtd {
       
       /// @brief Raises the auto_size_changed event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_auto_size_changed(const event_args& e);
       
       /// @brief Raises the back_color_changed event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_back_color_changed(const event_args& e);
       
       /// @brief Raises the background_image_changed event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_background_image_changed(const event_args& e);
       
       /// @brief Raises the background_image_layout_changed event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_background_image_layout_changed(const event_args& e);
       
       /// @brief Raises the click event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_click(const event_args& e);
       
       /// @brief Raises the client_size_changed event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_client_size_changed(const event_args& e);
       
       /// @brief Raises the control_added event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_control_added(const control_event_args& e);
       
       /// @brief Raises the control_removed event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_control_removed(const control_event_args& e);
       
       /// @brief Raises the create_control event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_create_control();
       
       /// @brief Raises the cursor_changed event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_cursor_changed(const event_args& e);
 
       /// @brief Raises the dock_changed event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_dock_changed(const event_args& e);
         
       /// @brief Raises the double_click event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_double_click(const event_args& e);
 
       /// @brief Raises the enabled_changed event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_enabled_changed(const event_args& e);
       
       /// @brief Raises the fore_color_changed event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_fore_color_changed(const event_args& e);
       
       /// @brief Raises the font_changed event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_font_changed(const event_args& e);
       
       /// @brief Raises the handle_created event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_got_focus(const event_args& e);
       
       /// @brief Raises the handle_created event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_handle_created(const event_args& e);
       
       /// @brief Raises the handle_destroyed event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_handle_destroyed(const event_args& e);
       
       /// @brief Raises the key_down event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_key_down(key_event_args& e);
       
       /// @brief Raises the key_press event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_key_press(key_press_event_args& e);
       
       /// @brief Raises the key_up event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_key_up(key_event_args& e);
 
       /// @brief Raises the layout event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_layout(const event_args& e);
 
       /// @brief Raises the location_changed event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_location_changed(const event_args& e);
       
       /// @brief Raises the lost_focus event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_lost_focus(const event_args& e);
       
       /// @brief Raises the mouse_click event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_mouse_click(const mouse_event_args& e);
       
       /// @brief Raises the mouse_double_click event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_mouse_double_click(const mouse_event_args& e);
       
       /// @brief Raises the mouse_down event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_mouse_down(const mouse_event_args& e);
       
       /// @brief Raises the mouse_enter event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_mouse_enter(const event_args& e);
       
       /// @brief Raises the mouse_horizontal_wheel event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_mouse_horizontal_wheel(const mouse_event_args& e);
       
       /// @brief Raises the mouse_leave event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_mouse_leave(const event_args& e);
       
       /// @brief Raises the mouse_move event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_mouse_move(const mouse_event_args& e);
       
       /// @brief Raises the mouse_up event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_mouse_up(const mouse_event_args& e);
       
       /// @brief Raises the mouse_wheel event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_mouse_wheel(const mouse_event_args& e);
       
       /// @brief Raises the paint event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_paint(paint_event_args& e);
       
       /// @brief Raises the parent_back_color_changed event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_parent_back_color_changed(const event_args& e);
         
       /// @brief Raises the parent_cursor_changed event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_parent_cursor_changed(const event_args& e);
 
       /// @brief Raises the parent_changed event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_parent_changed(const event_args& e);
       
       /// @brief Raises the parent_fore_color_changed event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_parent_fore_color_changed(const event_args& e);
       
       /// @brief Raises the parent_font_changed event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_parent_font_changed(const event_args& e);
       
       /// @brief Raises the resize event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_resize(const event_args& e);
         
       /// @brief Raises the size_changed event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_size_changed(const event_args& e);
 
       /// @brief Raises the text_changed event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_text_changed(const event_args& e);
       
       /// @brief Raises the visible_changed event.
       /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
       virtual void on_visible_changed(const event_args& e);
 
       /// @brief Forces the re-creation of the handle for the control.
