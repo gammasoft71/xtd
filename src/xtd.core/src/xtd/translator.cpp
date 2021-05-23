@@ -1,19 +1,20 @@
 #include "../../include/xtd/translator.h"
-#include <filesystem>
-#include <map>
 #include "../../include/xtd/environment.h"
 #include "../../include/xtd/format_exception.h"
 #include "../../include/xtd/strings.h"
 #include "../../include/xtd/collections/specialized/string_map.h"
 #include "../../include/xtd/io/file.h"
 #include "../../include/xtd/io/path.h"
+#define __XTD_CORE_NATIVE_LIBRARY__
+#include <xtd/native/translator.h>
+#undef __XTD_CORE_NATIVE_LIBRARY__
+#include <filesystem>
+#include <map>
 
 using namespace std;
 using namespace std::filesystem;
 using namespace xtd;
 using namespace xtd::collections::specialized;
-
-string __translator_get_system_language__();
 
 map<string, string_map> translator::language_values_;
 string translator::language_;
@@ -42,7 +43,7 @@ std::vector<std::string> translator::languages() {
 }
 
 std::string translator::system_language() {
-  return __translator_get_system_language__();
+  return xtd::native::translator::get_system_language();
 }
 
 std::string translator::translate(const std::string& language, const std::string& value) {

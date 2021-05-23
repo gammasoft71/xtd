@@ -5,17 +5,8 @@ project(xtd.core)
 include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 add_include_directories(include)
-if(MSVC)
-  add_references(xtd.3rdparty.call_stack rpcrt4)
-elseif (APPLE)
-  add_references(xtd.3rdparty.call_stack "-framework Foundation")
-elseif (ANDROID)
-  add_references(xtd.3rdparty.call_stack)
-elseif (UNIX)
-  add_references(xtd.3rdparty.call_stack uuid)
-endif ()
+add_references(xtd.3rdparty.call_stack ${XTD_CORE_NATIVE_LIBRARY})
 add_sources(
-  include/xtd/generic_stream_output.h
   include/xtd/__opaque_environment.h
   include/xtd/action.h
   include/xtd/architecture_id.h
@@ -149,15 +140,18 @@ add_sources(
   include/xtd/internal/__duration_formater.h
   include/xtd/internal/__enum_formater.h
   include/xtd/internal/__fixed_point_formater.h
+  include/xtd/internal/__generic_stream_output.h
   include/xtd/internal/__get_err_rdbuf.h
   include/xtd/internal/__get_in_rdbuf.h
   include/xtd/internal/__get_out_rdbuf.h
   include/xtd/internal/__format_exception.h
   include/xtd/internal/__format_information.h
   include/xtd/internal/__format_stringer.h
+  include/xtd/internal/__literals_exception.h
   include/xtd/internal/__natural_formater.h
   include/xtd/internal/__numeric_formater.h
   include/xtd/internal/__opaque_console.h
+  include/xtd/internal/__parse_exception.h
   include/xtd/internal/__sprintf.h
   include/xtd/internal/__string_formater.h
   include/xtd/io/directory_not_found_exception.h
@@ -183,15 +177,11 @@ add_sources(
   include/xtd/web/css/selector.h
   include/xtd/web/css/selector_map.h
   include/xtd/web/css/writer.h
-  src/xtd/__litterals_exception.cpp
   src/xtd/__opaque_console_gcc.cpp
   src/xtd/__opaque_console_win32.cpp
   src/xtd/__opaque_environment_gcc.cpp
   src/xtd/__opaque_environment_version.cpp
   src/xtd/__opaque_environment_win32.cpp
-  src/xtd/__opaque_translator_gcc.cpp
-  src/xtd/__opaque_translator_win32.cpp
-  src/xtd/__parse_exception.cpp
   src/xtd/bit_converter.cpp
   src/xtd/environment.cpp
   src/xtd/event_args.cpp
@@ -209,6 +199,8 @@ add_sources(
   src/xtd/diagnostics/stack_trace.cpp
   src/xtd/diagnostics/trace.cpp
   src/xtd/internal/__format_exception.cpp
+  src/xtd/internal/__litterals_exception.cpp
+  src/xtd/internal/__parse_exception.cpp
   src/xtd/io/file_gcc.cpp
   src/xtd/io/file_win32.cpp
   src/xtd/io/path_gcc.cpp
@@ -216,9 +208,6 @@ add_sources(
   src/xtd/io/text_reader.cpp
   src/xtd/io/text_writer.cpp
 )
-if (APPLE)
-  add_sources(src/xtd/__opaque_translator_macos.mm)
-endif ()
 target_type(${XTD_LIBRARY_TYPE})
 
 # Install

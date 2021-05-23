@@ -31,8 +31,8 @@
 #include "../../include/xtd/collections/specialized/string_vector.h"
 #include <xtd/strings.h>
 
-int __environment_argc;
-char** __environment_argv;
+int __opaque_environment_argc;
+char** __opaque_environment_argv;
 
 namespace {
   static std::string create_process(const std::string& command) {
@@ -49,8 +49,8 @@ namespace {
   }
   
   __attribute__((constructor)) void startup_program(int argc, char **argv) {
-    __environment_argc = argc;
-    __environment_argv = argv;
+    __opaque_environment_argc = argc;
+    __opaque_environment_argv = argv;
   }
 }
 

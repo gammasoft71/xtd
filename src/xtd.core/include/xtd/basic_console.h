@@ -2,9 +2,9 @@
 /// @brief Contains xtd::basic_console class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include "generic_stream_output.h"
 #include <xtd/strings.h>
 #define __XTD_CORE_INTERNAL__
+#include "internal/__generic_stream_output.h"
 #include "internal/__get_err_rdbuf.h"
 #include "internal/__get_in_rdbuf.h"
 #include "internal/__get_out_rdbuf.h"

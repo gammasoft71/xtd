@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains throw format exception method.
+/// @brief Contains throw parse exception methods.
 #pragma once
 /// @cond
 #ifndef __XTD_CORE_INTERNAL__
@@ -10,5 +10,6 @@
 #include <string>
 
 /// @cond
-void __format_exception(const std::string& message);
+void __throw_parse_argument_exception(const std::string& message);
+void __throw_parse_index_out_of_range_exception();
 /// @endcond

@@ -1,6 +1,8 @@
-#include "../../include/xtd/parse.h"
-#include "../../include/xtd/argument_exception.h"
-#include "../../include/xtd/index_out_of_range_exception.h"
+#define __XTD_CORE_INTERNAL__
+#include "../../../include/xtd/internal/__parse_exception.h"
+#undef __XTD_CORE_INTERNAL__
+#include "../../../include/xtd/argument_exception.h"
+#include "../../../include/xtd/index_out_of_range_exception.h"
 
 void __throw_parse_argument_exception(const std::string& message) {
   throw xtd::argument_exception(message, caller_info_);

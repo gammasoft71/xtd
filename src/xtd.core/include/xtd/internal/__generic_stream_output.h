@@ -2,6 +2,11 @@
 /// @brief Contains generic stream output methods.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+/// @cond
+#ifndef __XTD_CORE_INTERNAL__
+#error "Do not include this file: Internal use only"
+#endif
+/// @endcond
 
 #include <array>
 #include <optional>

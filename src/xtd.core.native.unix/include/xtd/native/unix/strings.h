@@ -11,9 +11,11 @@
 
 namespace xtd::native {
   class environment;
+  class translator;
   namespace unix {
     class strings final {
       friend xtd::native::environment;
+      friend xtd::native::translator;
     protected:
       strings() = delete;
       
@@ -56,6 +58,12 @@ namespace xtd::native {
           result.push_back(static_cast<char>(tolower(c)));
         return result;
       }
+      
+      static std::string substring(const std::string& str, size_t start_index, size_t length) noexcept {
+        if (start_index >= str.size()) return "";
+        return str.substr(start_index, length);
+      }
+
 
       static std::string trim_end(const std::string& str, const std::vector<char>& trim_chars) noexcept {
         if (!str.size()) return str;

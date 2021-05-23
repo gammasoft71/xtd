@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains throw format exception method.
+/// @brief Contains throw literals exception method.
 #pragma once
 /// @cond
 #ifndef __XTD_CORE_INTERNAL__
@@ -10,5 +10,5 @@
 #include <string>
 
 /// @cond
-void __format_exception(const std::string& message);
+void __litterals_argument_out_of_range_exception();
 /// @endcond

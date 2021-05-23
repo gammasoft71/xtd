@@ -3,7 +3,6 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
-#include "generic_stream_output.h" // must be included first
 #include "action.h"
 #include "argument_exception.h"
 #include "argument_null_exception.h"

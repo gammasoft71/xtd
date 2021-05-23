@@ -2,16 +2,17 @@
 /// @brief Contains xtd literals.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+/// @cond
+#define __XTD_CORE_INTERNAL__
+#include "internal/__literals_exception.h"
+#undef __XTD_CORE_INTERNAL__
+/// @endcond
 #include <limits>
 #include <stdexcept>
 #include "parse.h"
 #include "strings.h"
 #include "translator.h"
 #include "types.h"
-
-/// @cond
-void __litterals_argument_out_of_range_exception();
-/// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

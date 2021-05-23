@@ -13,6 +13,10 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @cond
+  class translator;
+  /// @endcond
+
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
@@ -22,6 +26,7 @@ namespace xtd {
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
     class core_native_export_ translator final {
+      friend xtd::translator;
     protected:
       /// @brief Gets the system language.
       /// @return std::string A string containing the system language.
