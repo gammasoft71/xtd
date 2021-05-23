@@ -7,7 +7,6 @@ include(../../scripts/cmake/xtd_version.cmake)
 add_include_directories(include)
 add_references(xtd.3rdparty.call_stack ${XTD_CORE_NATIVE_LIBRARY})
 add_sources(
-  include/xtd/__opaque_environment.h
   include/xtd/action.h
   include/xtd/architecture_id.h
   include/xtd/argument_exception.h
@@ -179,9 +178,7 @@ add_sources(
   include/xtd/web/css/writer.h
   src/xtd/__opaque_console_gcc.cpp
   src/xtd/__opaque_console_win32.cpp
-  src/xtd/__opaque_environment_gcc.cpp
-  src/xtd/__opaque_environment_version.cpp
-  src/xtd/__opaque_environment_win32.cpp
+  src/xtd/environment_version.cpp
   src/xtd/bit_converter.cpp
   src/xtd/environment.cpp
   src/xtd/event_args.cpp
