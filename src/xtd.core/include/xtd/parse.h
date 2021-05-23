@@ -2,7 +2,11 @@
 /// @brief Contains xtd::parse methods.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-
+/// @cond
+#define __XTD_CORE_INTERNAL__
+#include "internal/__parse_exception.h"
+#undef __XTD_CORE_INTERNAL__
+/// @endcond
 #include "number_styles.h"
 #include "strings.h"
 
@@ -10,9 +14,6 @@
 #undef min
 
 /// @cond
-void __throw_parse_argument_exception(const std::string& message);
-void __throw_parse_index_out_of_range_exception();
-
 template <typename char_t>
 inline std::basic_string<char_t> __parse_remove_decorations(const std::basic_string<char_t>& s, xtd::number_styles styles) {
   std::basic_string<char_t> str(s);
