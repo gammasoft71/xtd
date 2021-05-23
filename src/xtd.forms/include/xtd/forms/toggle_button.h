@@ -119,7 +119,7 @@ namespace xtd {
       /// @remarks This metod is not relevant for this class.
       drawing::size measure_control() const override;
       
-      /// @brief Raises the checked_changed event.
+      /// @brief Raises the toggle_button::checked_changed event.
       /// @param e An event_args that contains the event data.
       /// @remarks Raising an event invokes the event handler through a delegate.
       /// @remarks The on_checked_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
@@ -133,7 +133,7 @@ namespace xtd {
         if (flat_style_ != xtd::forms::flat_style::system) invalidate();
       }
       
-      /// @brief Raises the check_state_changed event.
+      /// @brief Raises the toggle_button::check_state_changed event.
       /// @param e An event_args that contains the event data.
       /// @remarks Raising an event invokes the event handler through a delegate.
       /// @remarks The on_check_state_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.

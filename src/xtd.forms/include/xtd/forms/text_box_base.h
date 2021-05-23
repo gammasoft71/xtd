@@ -188,25 +188,25 @@ namespace xtd {
       /// @brief initializes a new instance of the text_box_base class.
       text_box_base() = default;
 
-      /// @brief Raises the accepts_tab_changed event.
+      /// @brief Raises the text_box_base::accepts_tab_changed event.
       /// @param e An xtd::event_args that contains the event data.
       virtual void on_accepts_tab_changed(const event_args& e) {
         if (can_raise_events()) accepts_tab_changed(*this, e);
       }
       
-      /// @brief Raises the border_style_changed event.
+      /// @brief Raises the text_box_base::border_style_changed event.
       /// @param e An xtd::event_args that contains the event data.
       virtual void on_border_style_changed(const event_args& e) {
         if (can_raise_events()) border_style_changed(*this, e);
       }
       
-      /// @brief Raises the multiline_changed event.
+      /// @brief Raises the text_box_base::text_box_base::multiline_changed event.
       /// @param e An xtd::event_args that contains the event data.
       virtual void on_multiline_changed(const event_args& e) {
         if (can_raise_events()) multiline_changed(*this, e);
       }
 
-      /// @brief Raises the read_only_changed event.
+      /// @brief Raises the text_box_base::read_only_changed event.
       /// @param e An xtd::event_args that contains the event data.
       virtual void on_read_only_changed(const event_args& e) {
         if (can_raise_events()) read_only_changed(*this, e);

@@ -137,7 +137,7 @@ namespace xtd {
 
       void on_handle_created(const event_args& e) override;
       
-      /// @brief Raises the selected_item_changed event.
+      /// @brief Raises the domain_up_down::selected_item_changed event.
       /// @param e An event_args that contains the event data.
       virtual void on_selected_item_changed(const event_args& e);
 

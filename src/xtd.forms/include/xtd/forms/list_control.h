@@ -108,10 +108,10 @@ namespace xtd {
       
       virtual drawing::color default_fore_color() const override {return xtd::forms::theme_colors::current_theme().window_text();}
       
-      /// @brief Raises the selected_index_changed event.
+      /// @brief Raises the list_control::selected_index_changed event.
       virtual void on_selected_index_changed(const event_args& e) {selected_index_changed(*this, e);}
 
-      /// @brief Raises the selected_value_changed event.
+      /// @brief Raises the list_control::selected_value_changed event.
       virtual void on_selected_value_changed(const event_args& e) {selected_value_changed(*this, e);}
 
       /// @cond

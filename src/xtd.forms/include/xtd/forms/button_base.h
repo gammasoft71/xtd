@@ -141,7 +141,7 @@ namespace xtd {
         control::on_fore_color_changed(e);
       }
 
-      /// @brief Raises the image_changed event.
+      /// @brief Raises the button_base::image_changed event.
       /// @param e An xtd::event_args that contains the event data.
       virtual void on_image_changed(const xtd::event_args& e) {
         if (flat_style_ != xtd::forms::flat_style::system) invalidate();

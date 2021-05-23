@@ -111,7 +111,7 @@ namespace xtd {
       /// @param e A EventArgs that contains the event data.
       void on_handle_created(const event_args& e) override;
 
-      /// @brief Raises the Scroll event.
+      /// @brief Raises the up_down_button::scroll event.
       /// @param e An event_args that contains the event data.
       /// @remarks You can use the OnScroll event to update other controls as the position of the scroll box changes.
       /// @remarks Raising an event invokes the event handler through a delegate.
@@ -120,7 +120,7 @@ namespace xtd {
       /// @remarks When overriding on_scroll(const event_args&) in a derived class, be sure to call the base class' on_scroll(const event_args&) method so that registered delegates receive the event.
       virtual void on_scroll(const event_args& e);
 
-      /// @brief Raises the value_changed event.
+      /// @brief Raises the up_down_button::value_changed event.
       /// @param e An event_args that contains the event data.
       virtual void on_value_changed(const event_args& e);
       

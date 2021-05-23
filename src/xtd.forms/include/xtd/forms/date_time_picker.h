@@ -178,7 +178,7 @@ namespace xtd {
       
       drawing::color default_fore_color() const override {return xtd::forms::theme_colors::current_theme().window_text();}
       
-      /// @brief Raises the value_changed event.
+      /// @brief Raises the date_time_picker::value_changed event.
       /// @param e An event_args that contains the event data.
       virtual void on_value_changed(const event_args& e);
       

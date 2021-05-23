@@ -79,15 +79,15 @@ namespace xtd {
       /// @remarks When you call cancel_async, your worker method has an opportunity to stop its execution and exit. The worker code should periodically check thecancellation_pending property to see if it has been set to true.
       void cancel_async();
       
-      /// @brief Raises the do_work event.
+      /// @brief Raises the background_worker::do_work event.
       /// @param e An event_args that contains the event data.
       virtual void on_do_work(do_work_event_args& e) {do_work(*this, e);}
       
-      /// @brief Raises the progress_changed event.
+      /// @brief Raises the background_worker::progress_changed event.
       /// @param e An event_args that contains the event data.
       virtual void on_progres_changed(const progress_changed_event_args& e) {progress_changed(*this, e);}
       
-      /// @brief Raises the run_worker_completed event.
+      /// @brief Raises the background_worker::run_worker_completed event.
       /// @param e An event_args that contains the event data.
       virtual void on_run_worker_completed(const run_worker_completed_event_args& e) {run_worker_completed(*this, e);}
 

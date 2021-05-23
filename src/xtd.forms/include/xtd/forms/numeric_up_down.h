@@ -125,7 +125,7 @@ namespace xtd {
       /// @param e A EventArgs that contains the event data.
       void on_handle_created(const event_args& e) override;
 
-      /// @brief Raises the value_changed event.
+      /// @brief Raises the numeric_up_down::value_changed event.
       /// @param e An event_args that contains the event data.
       virtual void on_value_changed(const event_args& e);
 
