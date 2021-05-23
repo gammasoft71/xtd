@@ -57,6 +57,10 @@
 /// @brief date time states definitions.
 /// @warning Internal use only
 
+/// @defgroup environment_variable_target environment variable target
+/// @brief environment variable target definitions.
+/// @warning Internal use only
+
 /// @defgroup ex_ws extended window styles
 /// @brief extended window styles definitions.
 /// @warning Internal use only

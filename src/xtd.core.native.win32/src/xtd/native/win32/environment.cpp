@@ -5,6 +5,8 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
+#include <string>
+#include <vector>
 #include <direct.h>
 #include <shlobj.h>
 #include <windows.h>
@@ -15,17 +17,44 @@ using namespace xtd::native;
 #undef min
 #undef max
 
+__declspec(dllimport) extern char** environ;
+__declspec(dllimport) extern int __argc;
+__declspec(dllimport) extern char** __argv;
+int __environment_argc = __argc;
+char** __environment_argv = __argv;
+
+std::vector<std::string> environment::get_command_line_args() {
+  return {__environment_argv, __environment_argv + __environment_argc};
+}
+
 std::string environment::get_desktop_environment() {
   return "windows";
 }
 
 std::string environment::get_environment_variable(const std::string& variable) {
-  size_t size = 0;
-  getenv_s(&size, NULL, 0, variable.c_str());
-  if (size == 0) return "";
-  std::string value(size, 0);
-  getenv_s(&size, value.data(), size, variable.c_str());
-  return value;
+  if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
+    static std::map<std::string, std::string> envs;
+    if (envs.size() == 0) {
+      for (size_t index = 0; environ[index] != nullptr; index++) {
+        std::vector<std::string> key_value = unix::strings::split(environ[index], {'='});
+        if (key_value.size() == 2)
+          envs[key_value[0]] = key_value[1];
+      }
+    }
+    return envs;
+  }
+  
+  if(target == ENVIRONMENT_VARIABLE_TARGET_USER || target == ENVIRONMENT_VARIABLE_TARGET_MACHINE) {
+    static std::map<std::string, std::string> envs;
+    envs.clear();
+    //microsoft::win32::registry_key key = target == environment_variable_target::user ? microsoft::win32::registry::current_user().create_sub_key("Environment") : microsoft::win32::registry::local_machine().create_sub_key("System").create_sub_key("CurrentControlSet").create_sub_key("Control").create_sub_key("Session Manager").create_sub_key("Environment");
+    //for (auto name : key.get_value_names())
+    //  envs[name] = key.get_value(name).to_string();
+    return envs;
+  }
+  
+  static std::map<std::string, std::string> envs;
+  return envs;
 }
 
 std::string environment::get_know_folder_path(int32_t id) {
