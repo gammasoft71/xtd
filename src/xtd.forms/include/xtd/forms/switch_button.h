@@ -78,7 +78,7 @@ namespace xtd {
       event<switch_button, event_handler<control&>> checked_changed;
 
     protected:
-      /// @brief Raises the checked_changed event.
+      /// @brief Raises the switch_button::checked_changed event.
       /// @param e An event_args that contains the event data.
       /// @remarks Raising an event invokes the event handler through a delegate.
       /// @remarks The on_checked_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.

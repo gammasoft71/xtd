@@ -238,7 +238,7 @@ namespace xtd {
       void reset() override;
       
     protected:
-      /// @brief Raises the apply event.
+      /// @brief Raises the font_dialog::apply event.
       /// @param e An event_args that contains the data.
       /// @remarks Raising an event invokes the event handler through a delegate.
       /// @par Notes to Inheritors

@@ -107,7 +107,7 @@ namespace xtd {
       /// @remarks This method is used when auto_size is true.
       drawing::size measure_control() const override;
 
-      /// @brief Raises the appearance_changed event.
+      /// @brief Raises the radio_button::appearance_changed event.
       /// @param e An EventArgs that contains the event data.
       /// @remarks Raising an event invokes the event handler through a delegate.
       /// @remarks The on_appearance_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
@@ -118,7 +118,7 @@ namespace xtd {
         appearance_changed(*this, e);
       }
       
-      /// @brief Raises the checked_changed event.
+      /// @brief Raises the radio_button::radio_button::checked_changed event.
       /// @param e An EventArgs that contains the event data.
       /// @remarks Raising an event invokes the event handler through a delegate.
       /// @remarks The on_checked_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.

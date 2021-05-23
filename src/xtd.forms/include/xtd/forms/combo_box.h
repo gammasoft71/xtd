@@ -108,7 +108,7 @@ namespace xtd {
     protected:
       forms::create_params create_params() const override;
 
-      /// @brief Raises the drop_down_style_changed event.
+      /// @brief Raises the combo_box::drop_down_style_changed event.
       virtual void on_drop_down_style_changed(const event_args& e);
       
       void on_handle_created(const event_args& e) override;

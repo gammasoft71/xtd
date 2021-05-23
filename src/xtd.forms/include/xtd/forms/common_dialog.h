@@ -108,7 +108,7 @@ namespace xtd {
       friend struct ::__xtd_forms_common_dialog_closed_caller__;
       /// @endcond
       
-      /// @brief Raises the close event.
+      /// @brief Raises the common_dialog::dialog_close event.
       /// @param e An common_dialog_close_event_args that provides the event data.
       /// @remarks This method is invoked when the common dialog box is closed.
       virtual void on_dialog_closed(const dialog_closed_event_args& e) {
@@ -116,7 +116,7 @@ namespace xtd {
         dialog_closed(*this, e);
       }
 
-      /// @brief Raises the help_request event.
+      /// @brief Raises the common_dialog::help_request event.
       /// @param e An help_event_args that provides the event data.
       /// @remarks This method is invoked when the Help button is clicked. Inheriting classes can override this method to handle the event.
       virtual void on_help_request(help_event_args& e) {help_request(*this, e);}

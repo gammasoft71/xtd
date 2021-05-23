@@ -81,7 +81,7 @@ namespace xtd {
       
       void on_control_removed(const control_event_args& e) override;
       
-      /// @brief Raises the expanded_changed event.
+      /// @brief Raises the collapsible_panel::expanded_changed event.
       virtual void on_expanded_changed(const xtd::event_args& e);
 
       void on_handle_created(const event_args& e) override;

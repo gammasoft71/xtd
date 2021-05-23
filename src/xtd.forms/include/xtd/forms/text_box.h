@@ -117,7 +117,7 @@ namespace xtd {
       
       drawing::size measure_control() const override;
       
-      /// @brief Raises the accepts_return_changed event.
+      /// @brief Raises the text_box::accepts_return_changed event.
       /// @param e An xtd::event_args that contains the event data.
       virtual void on_accepts_return_changed(const event_args& e) {if (can_raise_events()) accepts_return_changed(*this, e);}
 
