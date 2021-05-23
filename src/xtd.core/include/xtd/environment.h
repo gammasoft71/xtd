@@ -30,7 +30,7 @@ namespace xtd {
   /// @brief The environment class.
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core
+  /// @ingroup xtd_core system_information
   class core_export_ environment final static_ {
   public:
     /// @enum special_folder

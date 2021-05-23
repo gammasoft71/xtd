@@ -13,7 +13,13 @@
 #include <xtd/forms/system_information.h>
 #include "export.h"
 
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @brief Provides system report about the current system environment.
+  /// @par Library
+  /// xtd
+  /// @ingroup xtd system_information
+  /// @remarks The system_report class provides static properties that can be used to get information and creates a string and xml reports about the current system environment.
   class export_ system_report final static_ {
   public:
     class xtd_library final {

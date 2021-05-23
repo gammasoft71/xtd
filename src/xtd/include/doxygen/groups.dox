@@ -52,6 +52,9 @@
 /// @defgroup renderers renderers
 /// @brief Control renderers definitions.
 
+/// @defgroup system_information system information
+/// @brief System information contains classes that provides informations about the current system environment.
+
 /// @defgroup types types
 /// @brief Types definitions
 

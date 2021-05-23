@@ -90,7 +90,7 @@
 /// @warning Internal use only
 
 /// @defgroup native native API
-/// @brief Native API for access to underlying toolkits.
+/// @brief Native API for access to underlying operating systems and toolkits.
 /// @warning Internal use only
 
 /// @defgroup ofn open file flags
