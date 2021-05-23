@@ -1,10 +1,10 @@
-# system_repoort
+# system_report
 
 shows system_repoort with [xtd::forms::text_box](../../../../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
 
 # Sources
 
-[src/system_repoort.cpp](src/system_repoort.cpp)
+[src/system_report.cpp](src/system_report.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/system_repoort_w.png)
+![Screenshot](../../../../docs/pictures/examples/system_report_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/system_repoort_wd.png)
+![Screenshot](../../../../docs/pictures/examples/system_report_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/system_repoort_m.png)
+![Screenshot](../../../../docs/pictures/examples/system_report_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/system_repoort_md.png)
+![Screenshot](../../../../docs/pictures/examples/system_report_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/system_repoort_g.png)
+![Screenshot](../../../../docs/pictures/examples/system_report_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/system_repoort_gd.png)
+![Screenshot](../../../../docs/pictures/examples/system_report_gd.png)
