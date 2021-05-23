@@ -20,7 +20,7 @@ namespace xtd {
   /// @brief Represents the version number of an assembly, operating system, or the common language runtime. This class cannot be inherited.
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core utilities
+  /// @ingroup xtd_core system
   class version final {
   public:
     version() noexcept = default;

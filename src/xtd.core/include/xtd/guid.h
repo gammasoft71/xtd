@@ -16,7 +16,7 @@ namespace xtd {
   /// @brief Represents a globally unique identifier (GUID). A GUID is a 128-bit integer (16 bytes) that can be used across all computers and networks wherever a unique identifier is required. Such an identifier has a very low probability of being duplicated.
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core utilities
+  /// @ingroup xtd_core system
   /// @par Examples
   /// The following code example demonstrate the use of guid class.
   /// @include guid.cpp
