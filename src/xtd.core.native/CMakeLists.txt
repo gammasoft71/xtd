@@ -15,6 +15,7 @@ add_sources(
   include/xtd/native/drive_type.h
   include/xtd/native/drive.h
   include/xtd/native/environment.h
+  include/xtd/native/environment_variable_target.h
   include/xtd/native/file.h
   include/xtd/native/file_attribute.h
   include/xtd/native/path.h

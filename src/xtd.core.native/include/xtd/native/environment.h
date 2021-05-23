@@ -10,9 +10,11 @@
 
 #include <xtd/core_native_export.h>
 #include <cstdint>
+#include <map>
 #include <string>
 #include <vector>
 #include "constant_special_item_id_list.h"
+#include "environment_variable_target.h"
 #include "platform_ids.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -27,12 +29,21 @@ namespace xtd {
     /// @warning Internal use only
     class core_native_export_ environment final {
     public:
+      /// @brief Returns a string array containing the command-line arguments for the current process.
+      /// @return An array of string where each element contains a command-line argument. The first element is the executable file name, and the following zero or more elements contain the remaining command-line arguments.
+      /// @warning Internal use only
+      static std::vector<std::string> get_command_line_args();
       /// @brief Gets the desktop environment name.
       /// @return std::string A string containing desktop environment name.
       /// @remarks Returns "windows" on Windows, "macos" on macOS, "budgie" or "cinamon" or "deepin" or "Enlightenment", "étoilé" or "gnome" or "kde" or "lxqt" or "mate" or "pantheon" or "razor" or "unity" or "xfce" on linux.
       /// @remarks Return "" if not found or defined.
       /// @warning Internal use only
       static std::string get_desktop_environment();
+      /// @brief Retrieves all environment variable names and their values from the current process, or from the Windows operating system registry key for the current user or local machine.
+      /// @param target The environment variable target (see environment_variable_target.h fille).
+      /// @return std::map A dictionary that contains all environment variable names and their values from the source specified by the target parameter; otherwise, an empty dictionary if no environment variables are found.
+      /// @warning Internal use only
+      static std::map<std::string, std::string>& get_environment_variables(int32_t target);
       /// @brief Retrieves the value of an environment variable from the current process.
       /// @param variable The name of the environment variable.
       /// @return std::string The value of the environment variable specified by variable, or empty "" if the environment variable is not found.

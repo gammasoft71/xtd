@@ -1,12 +1,9 @@
 #include <algorithm>
 #include <cstdio>
 #include <cstdlib>
-#include <cstring>
-#include <map>
 #include <numeric>
 #include <random>
 #include <thread>
-#include <vector>
 
 #include <time.h>
 #if !defined(__ANDROID__)
@@ -31,6 +28,7 @@
 
 using namespace xtd::native;
 
+extern char** environ;
 int32_t __environment_argc;
 char** __environment_argv;
 
@@ -54,6 +52,10 @@ namespace {
   }
 }
 
+std::vector<std::string> environment::get_command_line_args() {
+  return {__environment_argv, __environment_argv + __environment_argc};
+}
+
 std::string environment::get_desktop_environment() {
 #if defined(__APPLE__)
   return "macos";
@@ -70,6 +72,32 @@ std::string environment::get_desktop_environment() {
 std::string environment::get_environment_variable(const std::string& variable) {
   auto value = getenv(variable.c_str());
   return value ? value : "";
+}
+
+std::map<std::string, std::string>& environment::get_environment_variables(int32_t target) {
+  if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
+    static std::map<std::string, std::string> envs;
+    if (envs.size() == 0) {
+      for (size_t index = 0; environ[index] != nullptr; index++) {
+        std::vector<std::string> key_value = unix::strings::split(environ[index], {'='});
+        if (key_value.size() == 2)
+          envs[key_value[0]] = key_value[1];
+      }
+    }
+    return envs;
+  }
+  
+  if(target == ENVIRONMENT_VARIABLE_TARGET_USER || target == ENVIRONMENT_VARIABLE_TARGET_MACHINE) {
+    static std::map<std::string, std::string> envs;
+    envs.clear();
+    //microsoft::win32::registry_key key = target == environment_variable_target::user ? microsoft::win32::registry::current_user().create_sub_key("Environment") : microsoft::win32::registry::local_machine().create_sub_key("System").create_sub_key("CurrentControlSet").create_sub_key("Control").create_sub_key("Session Manager").create_sub_key("Environment");
+    //for (auto name : key.get_value_names())
+    //  envs[name] = key.get_value(name).to_string();
+    return envs;
+  }
+  
+  static std::map<std::string, std::string> envs;
+  return envs;
 }
 
 std::string environment::get_know_folder_path(int32_t csidl) {
