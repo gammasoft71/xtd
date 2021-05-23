@@ -154,7 +154,7 @@ add_sources(
   include/xtd/internal/__duration_formater.h
   include/xtd/internal/__enum_formater.h
   include/xtd/internal/__fixed_point_formater.h
-  include/xtd/internal/__format.h
+  include/xtd/internal/__sprintf.h
   include/xtd/internal/__format_exception.h
   include/xtd/internal/__format_information.h
   include/xtd/internal/__format_stringer.h

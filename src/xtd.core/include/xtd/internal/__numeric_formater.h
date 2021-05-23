@@ -39,11 +39,11 @@ inline std::basic_string<char_t> __numeric_formater(const std::basic_string<char
     case 'b':
     case 'B': return __binary_formater<char_t>(value, precision);
     case 'd':
-    case 'D': return xtd::strings::formatf(fmt_str + char_t(std::is_unsigned<value_t>::value ? 'u' : 'd'), precision, static_cast<long long>(value));
+    case 'D': return xtd::strings::sprintf(fmt_str + char_t(std::is_unsigned<value_t>::value ? 'u' : 'd'), precision, static_cast<long long>(value));
     case 'o':
-    case 'O': return xtd::strings::formatf(fmt_str + char_t('o'), precision, static_cast<long long>(value));
+    case 'O': return xtd::strings::sprintf(fmt_str + char_t('o'), precision, static_cast<long long>(value));
     case 'x':
-    case 'X': return xtd::strings::formatf(fmt_str + fmt[0], precision, static_cast<long long>(value));
+    case 'X': return xtd::strings::sprintf(fmt_str + fmt[0], precision, static_cast<long long>(value));
     default: return __fixed_point_formater(fmt, static_cast<long double>(value), loc);
   }
 }

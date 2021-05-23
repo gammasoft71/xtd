@@ -10,11 +10,11 @@ add_projects(
   diagnostics
   environment
   format
-  formatf
   guid
   keywords
   mains
   random
+  sprintf
   strings
   web
   others
