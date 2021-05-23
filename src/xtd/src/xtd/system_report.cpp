@@ -227,5 +227,5 @@ string system_report::to_string() noexcept {
 }
 
 string system_report::to_xml() noexcept {
-  return "";
+  return "(Not yet implemented)";
 }
