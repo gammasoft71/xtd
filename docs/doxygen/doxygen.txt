@@ -355,7 +355,7 @@ EXTERNAL_PAGES         = YES
 # Configuration options related to the dot tool
 #---------------------------------------------------------------------------
 
-CLASS_DIAGRAMS         = YES
+CLASS_DIAGRAMS         = NO # Default: YES
 DIA_PATH               = 
 HIDE_UNDOC_RELATIONS   = YES
 HAVE_DOT               = NO
