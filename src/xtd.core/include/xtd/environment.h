@@ -7,10 +7,8 @@
 #include <thread>
 #include <vector>
 
-//#include <xtd/io>
 #include <xtd/strings.h>
 
-#include "__opaque_environment.h"
 #include "argument_exception.h"
 #include "compiler.h"
 #include "core_export.h"
@@ -205,18 +203,18 @@ namespace xtd {
     /// @remarks This method provides access to the program name and any arguments specified on the command line when the current process was started.
     /// @remarks The program name can include path information, but is not required to do so. Use the get_command_line_args method to retrieve the command-line information parsed and stored in an array of strings.
     /// @remarks The maximum size of the command-line buffer is not set to a specific number of characters; it varies depending on the operating system that is running on the computer.
-    static std::string command_line() noexcept {return xtd::strings::join(" ", get_command_line_args());}
+    static std::string command_line() {return xtd::strings::join(" ", get_command_line_args());}
     
     /// @brief Gets an cpp_standard object that contains the current c++ standard identifier and version number.
     /// @return An object that contains the c++ standard identifier and version number.
-    static xtd::compiler compiler_version() noexcept {
+    static xtd::compiler compiler_version() {
       static xtd::compiler compiler;
       return compiler;
     }
     
     /// @brief Gets an cpp_standard object that contains the current c++ standard identifier and version number.
     /// @return An object that contains the c++ standard identifier and version number.
-    static xtd::cpp_language cpp_version() noexcept {
+    static xtd::cpp_language cpp_version() {
       static xtd::cpp_language cpp_language;
       return cpp_language;
     }
@@ -224,19 +222,28 @@ namespace xtd {
     /// @brief Gets the fully qualified path of the current working directory.
     /// @return std::string A string containing a directory path.
     /// @remarks By definition, if this process starts in the root directory of a local or network drive, the value returned by this method is the drive name followed by a trailing slash (for example, "C:\"). If this process starts in a subdirectory, the value returned by this method is the drive and subdirectory path, without a trailing slash (for example, "C:\mySubDirectory").
-    static std::string current_directory() noexcept {return __opaque_environment::get_current_directory();}
+    static std::string current_directory();
     
     /// @brief Sets the fully qualified path of the current working directory.
     /// @param directory_name A string containing a directory path.
-    static void current_directory(const std::string& directory_name) {__opaque_environment::set_current_directory(directory_name);}
+    static void current_directory(const std::string& directory_name);
     
     /// @brief Gets a unique identifier for the current thread.
     /// @return A std::thread::id that represents a unique identifier for this thread.
-    static std::thread::id current_thread_id() noexcept {return std::this_thread::get_id();}
+    static std::thread::id current_thread_id() {return std::this_thread::get_id();}
 
-    static int exit_code() noexcept;
-    
-    static void exit_code(int value) noexcept;
+    /// @brief Gets the exit code of the process.
+    /// @return A 32-bit signed integer containing the exit code. The default value is 0 (zero), which indicates that the process completed successfully.
+    /// @remarks If the main method returns void, you can use this property to set the exit code that will be returned to the calling environment. If Main does not return void, this property is ignored. The initial value of this property is zero.
+    /// @warning The exit_code property is a signed 32-bit integer. To prevent the property from returning a negative exit code, you should not use values greater than or equal to 0x80000000.
+    /// @remarks Use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present and a value of 2 to indicate that the file is in the wrong format.
+    static int exit_code();
+    /// @brief Sets the exit code of the process.
+    /// @param value A 32-bit signed integer containing the exit code. The default value is 0 (zero), which indicates that the process completed successfully.
+    /// @remarks If the main method returns void, you can use this property to set the exit code that will be returned to the calling environment. If Main does not return void, this property is ignored. The initial value of this property is zero.
+    /// @warning The exit_code property is a signed 32-bit integer. To prevent the property from returning a negative exit code, you should not use values greater than or equal to 0x80000000.
+    /// @remarks Use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present and a value of 2 to indicate that the file is in the wrong format.
+    static void exit_code(int value);
     
     /// @brief Returns a string array containing the command-line arguments for the current process.
     /// @return An array of string where each element contains a command-line argument. The first element is the executable file name, and the following zero or more elements contain the remaining command-line arguments.
@@ -253,7 +260,7 @@ namespace xtd {
     /// | MyApp \\\alpha \\\\"beta                     | MyApp, \\\alpha, \\beta                    |
     /// | MyApp \\\\\"alpha \"beta                     | MyApp, \\"alpha, "beta                     |
     /// @remarks To obtain the command line as a single string, use the command_line method.
-    static xtd::collections::specialized::string_vector get_command_line_args() noexcept;
+    static xtd::collections::specialized::string_vector get_command_line_args();
     
     /// @brief Retrieves the value of an environment variable from the current process.
     /// @param variable The name of the environment variable.
@@ -261,7 +268,7 @@ namespace xtd {
     /// @remarks The get_environment_variable(std::string) method retrieves an environment variable from the environment block of the current process only. It is equivalent to calling the get_environment_variable(std::string, xtd::environment_variable_target) method with a target value of xtd::environment_variable_target.process.
     /// @remarks To retrieve all environment variables along with their values, call the get_environment_variables method.
     /// @remarks Environment variable names are case-sensitive on Linux and macOS but are not case-sensitive on Windows.
-    static std::string get_environment_variable(const std::string& variable) noexcept {return get_environment_variable(variable, environment_variable_target::process);}
+    static std::string get_environment_variable(const std::string& variable) {return get_environment_variable(variable, environment_variable_target::process);}
     
     /// @brief Retrieves the value of an environment variable from the current process or from the Windows operating system registry key for the current user or local machine.
     /// @param variable The name of an environment variable.
@@ -271,20 +278,12 @@ namespace xtd {
     /// @remarks To retrieve all environment variables along with their values, call the get_environment_variables method.
     /// @remarks Environment variable names are case-sensitive on Linux and macOS but are not case-sensitive on Windows.
     /// @todo Add xtd::registry and uncomment lines.
-   static std::string get_environment_variable(const std::string& variable, environment_variable_target target) {
-      if (target == environment_variable_target::process)
-        return __opaque_environment::get_environment_variable(variable);
-      if (target == environment_variable_target::user)
-        return ""; //return microsoft::win32::registry::get_value("HKEY_CURRENT_USER\\Environment", variable, "").to_string();
-      if (target == environment_variable_target::machine)
-        return ""; // return microsoft::win32::registry::get_value("HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Session Manager\\Environment", variable, "").to_string();
-      throw xtd::argument_exception("Invalid environment variable target value"_t, caller_info_);
-    }
+    static std::string get_environment_variable(const std::string& variable, environment_variable_target target);
 
     /// @brief Retrieves all environment variable names and their values from the current process.
     /// @return std::map A dictionary that contains all environment variable names and their values; otherwise, an empty dictionary if no environment variables are found.
     /// @remarks The names and values for the environment variables are stored as key-value pairs in the returned std::map.
-    static std::map<std::string, std::string>& get_environment_variables() noexcept {return get_environment_variables(environment_variable_target::process);}
+    static std::map<std::string, std::string>& get_environment_variables() {return get_environment_variables(environment_variable_target::process);}
 
     /// @brief Retrieves all environment variable names and their values from the current process, or from the Windows operating system registry key for the current user or local machine.
     /// @param target One of the environment_variable_target values.
@@ -298,7 +297,7 @@ namespace xtd {
     /// @param folder One of enumeration values that identifies a system special folder.
     /// @return The path to the specified system special folder, if that folder physically exists on your computer; otherwise, an empty string ("").
     /// @remarks This method retrieves the path to a system special folder, such as Program Files, Programs, System, or Startup, which can be used to access common information. Special folders are set by default by the system, or explicitly by the user, when installing a version of Windows.
-    static std::string get_folder_path(environment::special_folder folder) noexcept {return get_folder_path(folder, environment::special_folder_option::none);}
+    static std::string get_folder_path(environment::special_folder folder) {return get_folder_path(folder, environment::special_folder_option::none);}
     
     /// @brief Gets the path to the system special folder that is identified by the specified enumeration, and uses a specified option for accessing special folders.
     /// @param folder One of the enumeration values that identifies a system special folder.
@@ -306,35 +305,25 @@ namespace xtd {
     /// @return The path to the specified system special folder, if that folder physically exists on your computer; otherwise, an empty string ("").
     /// @remarks This method retrieves the path to a system special folder, such as Program Files, Programs, System, or Startup, which can be used to access common information. Special folders are set by default by the system, or explicitly by the user, when installing a version of Windows.
     /// @todo Add xtd::io::directory and uncomment lines.
-    static std::string get_folder_path(environment::special_folder folder, environment::special_folder_option option) {
-      std::string path = __opaque_environment::get_know_folder_path(static_cast<int>(folder));
-      
-      //if (option == environment::special_folder_option::none)
-      //  return !xtd::io::directory::exists(path) ? "" :  path;
-      
-      //if (!System::IO::Directory::Exists(path))
-      //  xtd::io::directory::create_directory(path);
-      
-      return path;
-    }
+    static std::string get_folder_path(environment::special_folder folder, environment::special_folder_option option);
     
     /// @brief Returns an array of string containing the names of the logical drives on the current computer.
     /// @return An array of strings where each element contains the name of a logical drive. For example, if the computer's hard drive is the first logical drive, the first element returned is "C:\".
     /// @todo Add xtd::io::__opaque_io and uncomment lines.
-    static xtd::collections::specialized::string_vector get_logical_drives() noexcept {
+    static xtd::collections::specialized::string_vector get_logical_drives() {
       return {}; //__opaque_io::get_drives();
     }
     
     /// @brief Terminates this process and returns an exit code to the operating system.
     /// @param exit_code The exit code to return to the operating system. Use 0 (zero) to indicate that the process completed successfully.
     /// @remarks For the exit_code parameter, use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present, and a value of 2 to indicate that the file is in the wrong format.
-    static void exit(int exit_code) noexcept {::_Exit(exit_code);}
+    static void exit(int exit_code) {::_Exit(exit_code);}
     
     /// @brief Replaces the name of each environment variable embedded in the specified string with the string equivalent of the value of the variable, then returns the resulting string.
     /// @param name A string containing the names of zero or more environment variables. Each environment variable is quoted with the percent sign character (%).
     /// @return A string with each environment variable replaced by its value.
     /// @remarks Replacement only occurs for environment variables that are set. For example, suppose name is "MyENV = %MyENV%". If the environment variable, MyENV, is set to 42, this method returns "MyENV = 42". If MyENV is not set, no change occurs; this method returns "MyENV = %MyENV%".
-    static std::string expand_environment_variables(const std::string& name) noexcept {
+    static std::string expand_environment_variables(const std::string& name) {
       std::string buffer = name;
       std::string result;
       
@@ -356,20 +345,20 @@ namespace xtd {
 
     /// @brief Determines whether the current operating system is a 64-bit operating system.
     /// @return true if the operating system is 64-bit; otherwise, false.
-    static bool is_64_bit_operating_system() noexcept {return os_version().is_64_bit();}
+    static bool is_64_bit_operating_system() {return os_version().is_64_bit();}
     
     /// @brief Determines whether the current process is a 64-bit process.
     /// @return true if the process is 64-bit; otherwise, false.
-    static bool is_64_bit_process() noexcept {return sizeof(size_t) == 8;}
+    static bool is_64_bit_process() {return sizeof(size_t) == 8;}
 
     /// @brief Gets the NetBIOS name of this local computer.
     /// @return A string containing the name of this computer.
     /// @remarks The name of this computer is established at system startup when the name is read from the registry. If this computer is a node in a cluster, the name of the node is returned.
-    static std::string machine_name() noexcept {return __opaque_environment::get_machine_name();}
+    static std::string machine_name();
     
     /// @brief Gets the newline string defined for this environment.
     /// @return A string containing "\r\n" for non-Unix platforms, or a string containing "\n" for Unix platforms.
-    static std::string new_line() noexcept {return __opaque_environment::new_line();}
+    static std::string new_line();
 
     /// @brief Inserts a new-line character and flushes the stream.
     /// @param os Output stream object affected. Because this function is a manipulator, it is designed to be used alone with no arguments in conjunction with the insertion (<<) operations on output streams (see example below).
@@ -383,30 +372,15 @@ namespace xtd {
     
     /// @brief Gets an operating_system object that contains the current platform identifier and version number.
     /// @return An object that contains the platform identifier and version number.
-    static xtd::operating_system os_version() noexcept {
-      static xtd::operating_system os(xtd::platform_id::unknown, xtd::version());
-      if (os.platform() == xtd::platform_id::unknown) {
-        int major, minor, build, revision;
-        __opaque_environment::get_os_version(major, minor, build, revision);
-        xtd::version version;
-        version = xtd::version(major, minor, build, revision);
-        os = operating_system(__opaque_environment::get_os_platform_id(), version, __opaque_environment::get_service_pack(), __opaque_environment::get_desktop_environment(), __opaque_environment::is_os_64_bit());
-      }
-      return os;
-    }
+    static xtd::operating_system os_version();
 
     /// @brief Gets the number of processors on the current machine.
     /// @return The 32-bit unsigned integer that specifies the number of processors on the current machine. There is no default. If the current machine contains multiple processor groups, this property returns the number of logical processors that are available for use.
-    static uint32_t processor_count() noexcept {return processor_information().core_count();}
+    static uint32_t processor_count() {return processor_information().core_count();}
     
     /// @brief Gets an operating_system object that contains the current platform identifier and version number.
     /// @return An object that contains the platform identifier and version number.
-    static xtd::processor processor_information() noexcept {
-      static xtd::processor proc(xtd::architecture_id::unknown, false, 1);
-      if (proc.architecture() == xtd::architecture_id::unknown)
-        proc = xtd::processor(__opaque_environment::is_processor_arm() ? architecture_id::arm : architecture_id::x86, __opaque_environment::is_os_64_bit(), __opaque_environment::get_processor_count());
-      return proc;
-    }
+    static xtd::processor processor_information();
 
     /// @brief Creates, modifies, or deletes an environment variable stored in the current process.
     /// @param variable The name of an environment variable.
@@ -426,62 +400,45 @@ namespace xtd {
     /// @remarks If the value argument is not empty and the environment variable named by the variable argument does not exist, the environment variable is created and assigned the contents of value. If it does exist, its value is modified.
     /// @remarks If value is empty and the environment variable named by variable exists, the environment variable is deleted. If variable does not exist, no error occurs even though the operation cannot be performed.
     /// @todo Add xtd::registry and uncomment lines.
-    static void set_environment_variable(const std::string& variable, const std::string& value, environment_variable_target target) {
-      if (xtd::strings::is_empty(variable)) throw xtd::argument_exception("Environment variable name is empty"_t, caller_info_);
-      
-      if (target == environment_variable_target::process) {
-        if (xtd::strings::is_empty(value)) {
-          get_environment_variables().erase(variable);
-          if (__opaque_environment::unset_env(variable) != 0) throw xtd::argument_exception("Can't erase environment variable"_t, caller_info_);
-        } else {
-          get_environment_variables()[variable] = value;
-          if (__opaque_environment::set_env(variable, value) != 0) throw xtd::argument_exception("Can't set environment variable"_t, caller_info_);
-        }
-      } else if(target == environment_variable_target::user || target == environment_variable_target::machine) {
-        //microsoft::win32::registry_key key = target == environment_variable_target::user ? microsoft::win32::registry::current_user().create_sub_key("Environment") : microsoft::win32::registry::local_machine().create_sub_key("System").create_sub_key("CurrentControlSet").create_sub_key("Control").create_sub_key("Session Manager").create_sub_key("Environment");
-        //if (xtd::strings::is_empty(value))
-        //  key.delete_value(variable);
-        //else
-        //  key.set_value(variable, value);
-      } else
-        throw xtd::argument_exception("Invalid environment variable target value"_t, caller_info_);
-    }
+    static void set_environment_variable(const std::string& variable, const std::string& value, environment_variable_target target);
 
     /// @brief Gets current stack trace information.
     /// @return A string containing stack trace information. This value can be empty "".
-    static std::string stack_trace() noexcept {
+    static std::string stack_trace() {
       return xtd::diagnostics::stack_trace(true).to_string();
     }
     
     /// @brief Gets the fully qualified path of the system directory.
     /// @return A string containing a directory path.
     /// @remarks An example of the value returned is the string "C:\Windows".
-    static std::string system_directory() noexcept {return get_folder_path(environment::special_folder::system);}
+    static std::string system_directory() {return get_folder_path(environment::special_folder::system);}
 
     /// @brief Gets the number of bytes in the operating system's memory page.
     /// @return The number of bytes in the system memory page.
-    static size_t system_page_size() noexcept {return __opaque_environment::get_system_page_size();}
+    static size_t system_page_size();
 
     /// @brief Gets the number of milliseconds elapsed since the system started.
     /// @return A 32-bit unsigned integer containing the amount of time in milliseconds that has passed since the last time the computer was started.
-    static std::chrono::milliseconds tick_count() noexcept {return std::chrono::milliseconds(__opaque_environment::get_tick_count());}
+    static std::chrono::milliseconds tick_count();
     
     /// @brief Gets the network domain name associated with the current user.
     /// @return The network domain name associated with the current user.
-    static std::string user_domain_name() noexcept {return __opaque_environment::get_user_domain_name();}
+    static std::string user_domain_name();
     
     /// @brief Gets a value indicating whether the current process is running in user interactive mode.
     /// @return bool true if the current process is running in user interactive mode; otherwise, false.
     /// @remarks The user_interactive method reports false for a Os process or a service like IIS that runs without a user interface. If this property is false, do not display modal dialogs or message boxes because there is no graphical user interface for the user to interact with.
     /// @remarks Return always true for now.
     /// @todo check if process is an operating system process or service process...
-    static bool user_interactive() noexcept {return true;}
+    static bool user_interactive() {return true;}
     
     /// @brief Gets the user name of the person who is currently logged on to the operating system.
     /// @return The user name of the person who is logged on to the operating system.
-    static std::string user_name() noexcept {return __opaque_environment::get_user_name();}
+    static std::string user_name();
     
-    static xtd::version version() noexcept;
+    /// @brief Gets a version consisting of the major, minor, build, and revision numbers of the xtd framework.
+    /// @return The version of the xttd framework.
+    static xtd::version version();
   };
 
   /// @cond

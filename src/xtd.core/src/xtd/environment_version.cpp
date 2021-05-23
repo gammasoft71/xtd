@@ -4,6 +4,6 @@
 
 #include "../../include/xtd/environment.h"
 
-xtd::version xtd::environment::version() noexcept {
+xtd::version xtd::environment::version() {
   return xtd::version::parse("0.1.0");
 }
