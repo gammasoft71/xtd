@@ -15,11 +15,7 @@ elseif (UNIX)
   add_references(xtd.3rdparty.call_stack uuid)
 endif ()
 add_sources(
-  include/xtd/__generic_stream_output.h
-  include/xtd/__generic_stream_output.h
-  include/xtd/__get_err_rdbuf.h
-  include/xtd/__get_in_rdbuf.h
-  include/xtd/__get_out_rdbuf.h
+  include/xtd/generic_stream_output.h
   include/xtd/__opaque_console.h
   include/xtd/__opaque_environment.h
   include/xtd/action.h
@@ -154,6 +150,9 @@ add_sources(
   include/xtd/internal/__duration_formater.h
   include/xtd/internal/__enum_formater.h
   include/xtd/internal/__fixed_point_formater.h
+  include/xtd/internal/__get_err_rdbuf.h
+  include/xtd/internal/__get_in_rdbuf.h
+  include/xtd/internal/__get_out_rdbuf.h
   include/xtd/internal/__sprintf.h
   include/xtd/internal/__format_exception.h
   include/xtd/internal/__format_information.h

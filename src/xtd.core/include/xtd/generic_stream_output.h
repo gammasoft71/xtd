@@ -3,10 +3,6 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
-#if __cplusplus < 201703
-#error "Current C++ standard not supported. C++17 (201703) or better is required."
-#endif
-
 #include <array>
 #include <optional>
 #include <deque>
