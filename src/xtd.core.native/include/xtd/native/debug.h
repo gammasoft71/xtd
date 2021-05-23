@@ -20,25 +20,26 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @cond
-  class guid;
+  namespace diagnostics {
+    class default_trace_listener;
+  }
   /// @endcond
   
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
-    /// @brief Contains guid native API.
+    /// @brief Contains debug native API.
     /// @par Library
     /// xtd.core.native
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
-    class core_native_export_ guid final {
-      friend xtd::guid;
+    class core_native_export_ debug final {
+      friend xtd::diagnostics::default_trace_listener;
     protected:
-      /// @brief Generates a globally unique identifier (GUID).
-      /// @return A 16-element byte array containing GUID.
-      /// @remarks A GUID is a 128-bit integer (16 bytes) that can be used across all computers and networks wherever a unique identifier is required. Such an identifier has a very low probability of being duplicated.
+      /// @brief Writes a specified message to the debuger output.
+      /// @param message Message to write.
       /// @warning Internal use only
-      static std::vector<uint8_t> new_guid();
+      static void write_to_output(const std::string& message);
     };
   }
 }

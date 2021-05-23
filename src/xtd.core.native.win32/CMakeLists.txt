@@ -11,6 +11,7 @@ add_sources(
   include/xtd/xtd.core.native.win32.h
   include/xtd/xtd.core.native.win32
   src/xtd/native/win32/console.cpp
+  src/xtd/native/win32/debug.cpp
   src/xtd/native/win32/environment.cpp
   src/xtd/native/win32/file.cpp
   src/xtd/native/win32/guid.cpp
