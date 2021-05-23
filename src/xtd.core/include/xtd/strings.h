@@ -8,9 +8,9 @@
 /// @endcond
 
 #include "core_export.h"
-#include "internal/__format.h"
 #include "internal/__format_information.h"
 #include "internal/__format_stringer.h"
+#include "internal/__sprintf.h"
 #include "istring.h"
 #include "string_comparison.h"
 #include "string_split_options.h"
@@ -753,7 +753,7 @@ namespace xtd {
     /// @remarks Note regarding the c specifier: it takes an int (or wint_t) as argument, but performs the proper conversion to a char value (or a wchar_t) before formatting it for output.
     /// @remarks you can use std::string or std::wstring with format param %%s.
     template<typename char_t, typename ... args_t>
-    static std::basic_string<char_t> formatf(const std::basic_string<char_t>& fmt, args_t&& ... args) noexcept {return __formatf(fmt.c_str(), convert_param(std::forward<args_t>(args)) ...);}
+    static std::basic_string<char_t> sprintf(const std::basic_string<char_t>& fmt, args_t&& ... args) noexcept {return sprintf(fmt.c_str(), std::forward<args_t>(args) ...);}
     
     /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
     /// @param fmt A composite format string.
@@ -815,7 +815,7 @@ namespace xtd {
     /// @remarks Note regarding the c specifier: it takes an int (or wint_t) as argument, but performs the proper conversion to a char value (or a wchar_t) before formatting it for output.
     /// @remarks you can use std::string or std::wstring with format param %%s.
     template<typename char_t, typename ... args_t>
-    static std::basic_string<char_t> formatf(const char_t* fmt, args_t&& ... args) noexcept {return formatf(std::basic_string<char_t>(fmt), std::forward<args_t>(args) ...);}
+    static std::basic_string<char_t> sprintf(const char_t* fmt, args_t&& ... args) noexcept {return __sprintf(fmt, convert_param(std::forward<args_t>(args)) ...);}
     
     /// @brief Returns the hash code for this string.
     /// @return A hash code.
