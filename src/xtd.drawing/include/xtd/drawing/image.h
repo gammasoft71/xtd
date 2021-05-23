@@ -26,7 +26,7 @@ namespace xtd {
     /// @brief An abstract base class that provides functionality for the bitmap and metafile descended classes.
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing
+    /// @ingroup xtd_drawing drawing
     /// @remarks To draw an image on a Windows Form, you should use one of the draw_image methods.
     class drawing_export_ image {
     public:
