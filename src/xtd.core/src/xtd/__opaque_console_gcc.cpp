@@ -1,6 +1,5 @@
 #if defined(__linux__) || defined(__APPLE__)
 
-#include "../../include/xtd/__opaque_console.h"
 #include "../../include/xtd/console.h"
 
 #include <csignal>

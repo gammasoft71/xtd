@@ -16,7 +16,6 @@ elseif (UNIX)
 endif ()
 add_sources(
   include/xtd/generic_stream_output.h
-  include/xtd/__opaque_console.h
   include/xtd/__opaque_environment.h
   include/xtd/action.h
   include/xtd/architecture_id.h
@@ -153,12 +152,13 @@ add_sources(
   include/xtd/internal/__get_err_rdbuf.h
   include/xtd/internal/__get_in_rdbuf.h
   include/xtd/internal/__get_out_rdbuf.h
-  include/xtd/internal/__sprintf.h
   include/xtd/internal/__format_exception.h
   include/xtd/internal/__format_information.h
   include/xtd/internal/__format_stringer.h
   include/xtd/internal/__natural_formater.h
   include/xtd/internal/__numeric_formater.h
+  include/xtd/internal/__opaque_console.h
+  include/xtd/internal/__sprintf.h
   include/xtd/internal/__string_formater.h
   include/xtd/io/directory_not_found_exception.h
   include/xtd/io/drive_not_found_exception.h
