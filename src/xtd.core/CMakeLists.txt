@@ -176,8 +176,6 @@ add_sources(
   include/xtd/web/css/selector.h
   include/xtd/web/css/selector_map.h
   include/xtd/web/css/writer.h
-  src/xtd/__opaque_console_gcc.cpp
-  src/xtd/__opaque_console_win32.cpp
   src/xtd/environment_version.cpp
   src/xtd/bit_converter.cpp
   src/xtd/environment.cpp
@@ -197,6 +195,8 @@ add_sources(
   src/xtd/diagnostics/trace.cpp
   src/xtd/internal/__format_exception.cpp
   src/xtd/internal/__litterals_exception.cpp
+  src/xtd/internal/__opaque_console_gcc.cpp
+  src/xtd/internal/__opaque_console_win32.cpp
   src/xtd/internal/__parse_exception.cpp
   src/xtd/io/file_gcc.cpp
   src/xtd/io/file_win32.cpp
