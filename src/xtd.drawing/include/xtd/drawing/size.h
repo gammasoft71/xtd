@@ -17,8 +17,8 @@ namespace xtd {
     
     /// @brief Stores an ordered pair of integers, which specify a height and width.
     /// @par Library
-    /// xtd.drawing drawing
-    /// @ingroup xtd_drawing
+    /// xtd.drawing
+    /// @ingroup xtd_drawing drawing
     class drawing_export_ size {
     public:
       /// @brief Gets a Size class that has a Height and Width value of 0. This field is constant.
