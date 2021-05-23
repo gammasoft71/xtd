@@ -42,6 +42,8 @@ namespace xtd {
       /// @brief Initializes a new instance of the exception_dialog class.
       exception_dialog() = default;
       
+      /// @brief Get assync dialog_result result after dialog box is closing.
+      /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       xtd::forms::dialog_result dialog_result() const {return dialog_result_;}
       
       /// @brief Gets the dialog style.
