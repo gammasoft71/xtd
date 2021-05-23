@@ -1,10 +1,9 @@
 /// @file
 /// @brief Contains __boolean_formater method.
 #pragma once
-
 /// @cond
-#ifndef __XTD_STRINGS_INCLUDE__
-#error "Do not include this file yourself, use only #include <xtd/xtd.core>"
+#ifndef __XTD_CORE_INTERNAL__
+#error "Do not include this file: Internal use only"
 #endif
 /// @endcond
 

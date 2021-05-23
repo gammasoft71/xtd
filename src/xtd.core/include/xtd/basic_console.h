@@ -2,11 +2,13 @@
 /// @brief Contains xtd::basic_console class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include "__generic_stream_output.h"
+#include "generic_stream_output.h"
 #include <xtd/strings.h>
-#include "__get_err_rdbuf.h"
-#include "__get_in_rdbuf.h"
-#include "__get_out_rdbuf.h"
+#define __XTD_CORE_INTERNAL__
+#include "internal/__get_err_rdbuf.h"
+#include "internal/__get_in_rdbuf.h"
+#include "internal/__get_out_rdbuf.h"
+#undef __XTD_CORE_INTERNAL__
 #include "__opaque_console.h"
 #include "console_cancel_event_handler.h"
 #include <xtd/event.h>

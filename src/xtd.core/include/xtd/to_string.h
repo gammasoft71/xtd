@@ -4,9 +4,7 @@
 #pragma once
 
 /// @cond
-#define __XTD_STRINGS_INCLUDE__
-/// @endcond
-
+#define __XTD_CORE_INTERNAL__
 #include "internal/__binary_formater.h"
 #include "internal/__boolean_formater.h"
 #include "internal/__character_formater.h"
@@ -18,11 +16,8 @@
 #include "internal/__natural_formater.h"
 #include "internal/__numeric_formater.h"
 #include "internal/__string_formater.h"
-
-/// @cond
-#undef __XTD_STRINGS_INCLUDE__
+#undef __XTD_CORE_INTERNAL__
 /// @endcond
-
 #include "types.h"
 #include "strings.h"
 

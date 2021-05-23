@@ -3,14 +3,14 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
-/// @cond
-#define __XTD_STRINGS_INCLUDE__
-/// @endcond
-
 #include "core_export.h"
+/// @cond
+#define __XTD_CORE_INTERNAL__
 #include "internal/__format_information.h"
 #include "internal/__format_stringer.h"
 #include "internal/__sprintf.h"
+#undef __XTD_CORE_INTERNAL__
+/// @endcond
 #include "istring.h"
 #include "string_comparison.h"
 #include "string_split_options.h"
@@ -1809,7 +1809,3 @@ void __extract_format_arg(std::basic_string<char_t>& fmt, std::vector<__format_i
   (__extract_format_arg(fmt, index, formats, args),...);
   __xtd_strings_unused(index); // workouround to mute gcc warning: unused-but-set-variable
 }
-
-/// @cond
-#undef __XTD_STRINGS_INCLUDE__
-/// @endcond

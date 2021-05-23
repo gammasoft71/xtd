@@ -3,10 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
-#include "__generic_stream_output.h" // must be included first
-#include "__get_err_rdbuf.h"
-#include "__get_in_rdbuf.h"
-#include "__get_out_rdbuf.h"
+#include "generic_stream_output.h" // must be included first
 #include "__opaque_console.h"
 #include "action.h"
 #include "argument_exception.h"
