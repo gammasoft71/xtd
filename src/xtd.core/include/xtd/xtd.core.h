@@ -4,7 +4,6 @@
 #pragma once
 
 #include "generic_stream_output.h" // must be included first
-#include "__opaque_console.h"
 #include "action.h"
 #include "argument_exception.h"
 #include "argument_null_exception.h"

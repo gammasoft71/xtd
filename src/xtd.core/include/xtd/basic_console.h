@@ -8,8 +8,8 @@
 #include "internal/__get_err_rdbuf.h"
 #include "internal/__get_in_rdbuf.h"
 #include "internal/__get_out_rdbuf.h"
+#include "internal/__opaque_console.h"
 #undef __XTD_CORE_INTERNAL__
-#include "__opaque_console.h"
 #include "console_cancel_event_handler.h"
 #include <xtd/event.h>
 #include <xtd/static.h>

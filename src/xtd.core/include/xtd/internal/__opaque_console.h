@@ -2,10 +2,16 @@
 /// @brief Contains __opaque_console class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include "console_color.h"
-#include "core_export.h"
-#include "console_key_info.h"
-#include "console_special_key.h"
+/// @cond
+#ifndef __XTD_CORE_INTERNAL__
+#error "Do not include this file: Internal use only"
+#endif
+/// @endcond
+
+#include "../console_color.h"
+#include "../core_export.h"
+#include "../console_key_info.h"
+#include "../console_special_key.h"
 
 #include <iostream>
 #include <map>
@@ -64,5 +70,4 @@ class core_export_ __opaque_console final {
   static int32_t window_width();
   static void window_width(int32_t width);
 };
-
 /// @endcond
