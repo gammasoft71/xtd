@@ -11,6 +11,6 @@ namespace xtd {
   /// @brief Represent a tick duration
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core
+  /// @ingroup xtd_core types
   using ticks = std::chrono::duration<long long, tick>;
 }

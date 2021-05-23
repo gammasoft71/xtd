@@ -52,7 +52,7 @@ namespace xtd {
   /// @brief The strings Caintains string operation methods.
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core utilities
+  /// @ingroup xtd_core system
   class core_export_ strings {
   public:
     /// @cond

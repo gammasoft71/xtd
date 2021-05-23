@@ -15,7 +15,7 @@ namespace xtd {
   /// @brief Converts base data types to an std::vector of uint8_ts, and an std::vector of uint8_ts to base data types.
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core utilities
+  /// @ingroup xtd_core system
   /// @remarks The bit_converter class helps manipulate value types in their fundamental form, as a series of uint8_ts. A uint8_t is defined as an 8-bit unsigned integer. The bit_converter class includes static methods to convert each of the primitive types to and from an std::vector of uint8_ts, as the following table illustrates.
   /// | Type     | To uint8_t conversion                                 | From uint8_t conversion                                                                |
   /// |----------|-------------------------------------------------------|----------------------------------------------------------------------------------------|

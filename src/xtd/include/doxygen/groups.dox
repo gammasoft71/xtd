@@ -52,14 +52,14 @@
 /// @defgroup renderers renderers
 /// @brief Control renderers definitions.
 
+/// @defgroup system system
+/// @brief Contains system classes.
+
 /// @defgroup system_information system information
 /// @brief System information contains classes that provides informations about the current system environment.
 
 /// @defgroup types types
 /// @brief Types definitions
-
-/// @defgroup utilities utilities
-/// @brief Contains utility classes.
 
 /// @defgroup xtd_core xtd.core
 /// @brief The xtd.core library contains all fundamental classes to access Hardware, Os, System, and more.

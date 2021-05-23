@@ -15,7 +15,7 @@ namespace xtd {
   /// @brief Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet certain statistical requirements for randomness.
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core utilities
+  /// @ingroup xtd_core system
   /// @remarks Pseudo-random numbers are chosen with equal probability from a finite set of numbers. The chosen numbers are not completely random because a definite mathematical algorithm is used to select them, but they are sufficiently random for practical purposes. The current implementation of the random class is based on Donald E. Knuth's subtractive random number generator algorithm. For more information, see D. E. Knuth. "The Art of Computer Programming, volume 2: Seminumerical Algorithms". Addison-Wesley, Reading, MA, second edition, 1981.
   /// @remarks The random number generation starts from a seed value. If the same seed is used repeatedly, the same series of numbers is generated. One way to produce different sequences is to make the seed value time-dependent, thereby producing a different series with each new instance of random. By default, the parameterless constructor of the random class uses the system clock to generate its seed value, while its parameterized constructor can take an int32_t value based on the number of ticks in the current time. However, because the clock has finite resolution, using the parameterless constructor to create different random objects in close succession creates random number generators that produce identical sequences of random numbers. The following example illustrates that two random objects that are instantiated in close succession generate an identical series of random numbers.
   /// @include random1.cpp

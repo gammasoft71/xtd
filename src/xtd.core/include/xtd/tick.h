@@ -10,6 +10,6 @@ namespace xtd {
   /// @brief Represent a tick (1 tick = 100 nanoseconds).
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core
+  /// @ingroup xtd_core types
   using tick = std::ratio<1LL, 10000000LL>;
 }

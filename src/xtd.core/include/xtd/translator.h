@@ -13,7 +13,7 @@ namespace xtd {
   /// @brief Represents translatoor class. This class cannot be inherited.
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core utilities
+  /// @ingroup xtd_core system
   class translator final static_ {
   public:
     static std::string language();
