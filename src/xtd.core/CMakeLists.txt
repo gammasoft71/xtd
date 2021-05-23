@@ -151,6 +151,7 @@ add_sources(
   include/xtd/internal/__numeric_formater.h
   include/xtd/internal/__opaque_console.h
   include/xtd/internal/__parse_exception.h
+  include/xtd/internal/__parse.h
   include/xtd/internal/__sprintf.h
   include/xtd/internal/__string_formater.h
   include/xtd/io/directory_not_found_exception.h
