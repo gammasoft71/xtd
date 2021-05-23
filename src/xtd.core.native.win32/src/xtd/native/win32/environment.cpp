@@ -140,12 +140,6 @@ bool environment::is_os_64_bit() {
   return (system_info.wProcessorArchitecture & (PROCESSOR_ARCHITECTURE_AMD64 | PROCESSOR_ARCHITECTURE_ARM64 | PROCESSOR_ARCHITECTURE_IA64)) != 0;
 }
 
-std::vector<uint8_t> environment::new_guid() {
-  UUID guid {};
-  UuidCreate(&guid);
-  return {reinterpret_cast<uint8_t*>(&guid), reinterpret_cast<uint8_t*>(&guid) + 16};
-}
-
 std::string environment::new_line() {
   return "\n";
 }

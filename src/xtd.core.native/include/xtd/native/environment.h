@@ -19,16 +19,26 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @cond
+  class environment;
+  /// @endcond
+  
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
+    /// @cond
+    class translator;
+    /// @endcond
+    
     /// @brief Contains environment native API.
     /// @par Library
     /// xtd.core.native
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
     class core_native_export_ environment final {
-    public:
+      friend xtd::environment;
+      friend xtd::native::translator;
+    protected:
       /// @brief Returns a string array containing the command-line arguments for the current process.
       /// @return An array of string where each element contains a command-line argument. The first element is the executable file name, and the following zero or more elements contain the remaining command-line arguments.
       /// @warning Internal use only
@@ -101,11 +111,6 @@ namespace xtd {
       /// @return true if the operating system is 64-bit; otherwise, false.
       /// @warning Internal use only
       static bool is_os_64_bit();
-      /// @brief Generates a globally unique identifier (GUID).
-      /// @return A 16-element byte array containing GUID.
-      /// @remarks A GUID is a 128-bit integer (16 bytes) that can be used across all computers and networks wherever a unique identifier is required. Such an identifier has a very low probability of being duplicated.
-      /// @warning Internal use only
-      static std::vector<uint8_t> new_guid();
       /// @brief Gets the newline string defined for this environment.
       /// @return A string containing "\r\n" for non-Unix platforms, or a string containing "\n" for Unix platforms.
       /// @warning Internal use only

@@ -199,10 +199,8 @@ add_sources(
   src/xtd/internal/__opaque_console_gcc.cpp
   src/xtd/internal/__opaque_console_win32.cpp
   src/xtd/internal/__parse_exception.cpp
-  src/xtd/io/file_gcc.cpp
-  src/xtd/io/file_win32.cpp
-  src/xtd/io/path_gcc.cpp
-  src/xtd/io/path_win32.cpp
+  src/xtd/io/file.cpp
+  src/xtd/io/path.cpp
   src/xtd/io/text_reader.cpp
   src/xtd/io/text_writer.cpp
 )

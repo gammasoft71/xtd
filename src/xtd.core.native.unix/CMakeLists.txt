@@ -18,6 +18,7 @@ add_sources(
   src/xtd/native/unix/console.cpp
   src/xtd/native/unix/environment.cpp
   src/xtd/native/unix/file.cpp
+  src/xtd/native/unix/guid.cpp
   src/xtd/native/unix/path.cpp
   src/xtd/native/unix/translator.cpp
 )
