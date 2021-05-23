@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains path API.
+/// @brief Contains environment API.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
@@ -10,31 +10,35 @@
 
 #include <xtd/core_native_export.h>
 #include <cstdint>
+#include <map>
 #include <string>
+#include <vector>
+#include "constant_special_item_id_list.h"
+#include "environment_variable_target.h"
+#include "platform_ids.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @cond
-  namespace io {
-    class path;
-  }
+  class guid;
   /// @endcond
-
+  
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
-    /// @brief Contains path native API.
+    /// @brief Contains environment native API.
     /// @par Library
     /// xtd.core.native
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
-    class core_native_export_ path final {
-      friend xtd::io::path;
+    class core_native_export_ guid final {
+      friend xtd::guid;
     protected:
-      /// @brief Gets temp path.
-      /// @return The temp path.
+      /// @brief Generates a globally unique identifier (GUID).
+      /// @return A 16-element byte array containing GUID.
+      /// @remarks A GUID is a 128-bit integer (16 bytes) that can be used across all computers and networks wherever a unique identifier is required. Such an identifier has a very low probability of being duplicated.
       /// @warning Internal use only
-      static std::string get_temp_path();
+      static std::vector<uint8_t> new_guid();
     };
   }
 }
