@@ -19,9 +19,10 @@ namespace xtd {
   /// @par Library
   /// xtd
   /// @ingroup xtd system_information
-  /// @remarks The system_report class provides static properties that can be used to get information and creates a string and xml reports about the current system environment.
+  /// @remarks The system_report class provides static properties that can be used to get information and creates a string and xml format string reports about the current system environment.
   class export_ system_report final static_ {
   public:
+    /// @brief Represents a xtd library that contains name, version and paths.
     class xtd_library final {
     public:
       /// @cond
@@ -52,18 +53,19 @@ namespace xtd {
       std::string resources_path_;
     };
     
+    /// @brief Represents a xtd libraries collection.
     using xtd_library_collection = std::vector<xtd_library>;
-    
+    /// @brief Represents an environment variables collection.
     using environment_variable_collection = std::vector<std::pair<std::string, std::string>>;
-    
+    /// @brief Represents a folders collection.
     using special_folder_collection = std::vector<std::pair<std::string, std::string>>;
-    
+    /// @brief Represents a colors collection.
     using system_color_collection = std::vector<std::pair<std::string, xtd::drawing::color>>;
-    
+    /// @brief Represents a font famlilies collection.
     using system_font_family_collection = std::vector<std::pair<std::string, xtd::drawing::font_family>>;
-    
+    /// @brief Represents a fonts collection.
     using system_font_collection = std::vector<std::pair<std::string, xtd::drawing::font>>;
-    
+    /// @brief Represents a system informations collection.
     using system_information_collection = std::vector<std::pair<std::string, std::string>>;
     
     static xtd::diagnostics::stack_trace stack_trace() noexcept {return stack_trace(0);}
@@ -96,8 +98,12 @@ namespace xtd {
     
     static system_information_collection system_informations() noexcept;
     
+    /// @brief Generates string report.
+    /// @return A string report.
     static std::string to_string() noexcept;
-
+    /// @brief Generates xml format string report.
+    /// @return An xml format string report.
+    /// @todo Implement xml report
     static std::string to_xml() noexcept;
   };
 }
