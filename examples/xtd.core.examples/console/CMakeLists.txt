@@ -11,6 +11,7 @@ add_projects(
   console_cursor
   console_in_out
   console_read_line
+  console_read_key
   console_song
   wconsole
 )
