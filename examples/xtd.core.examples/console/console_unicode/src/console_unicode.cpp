@@ -23,6 +23,7 @@ int main() {
     if (console::cursor_left() >= 70)
       console::write_line();
   }
+  console::write_line();
 }
 
 // This code produces the following output:
