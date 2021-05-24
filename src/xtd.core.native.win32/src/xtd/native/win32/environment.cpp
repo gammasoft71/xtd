@@ -1,5 +1,6 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/environment.h>
+#include "../../../../include/xtd/native/win32/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 #include <cstdio>
@@ -32,11 +33,16 @@ std::string environment::get_desktop_environment() {
 }
 
 std::string environment::get_environment_variable(const std::string& variable) {
+  auto value = getenv(variable.c_str());
+  return value ? value : "";
+}
+
+std::map<std::string, std::string>& environment::get_environment_variables(int32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
     static std::map<std::string, std::string> envs;
     if (envs.size() == 0) {
       for (size_t index = 0; environ[index] != nullptr; index++) {
-        std::vector<std::string> key_value = unix::strings::split(environ[index], {'='});
+        std::vector<std::string> key_value = win32::strings::split(environ[index], {'='});
         if (key_value.size() == 2)
           envs[key_value[0]] = key_value[1];
       }

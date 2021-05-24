@@ -15,8 +15,8 @@ add_sources(
   include/xtd/xtd.core.native.unix.h
   include/xtd/xtd.core.native.unix
   include/xtd/native/unix/strings.h
-  src/xtd/native/unix/debug.cpp
   src/xtd/native/unix/console.cpp
+  src/xtd/native/unix/debug.cpp
   src/xtd/native/unix/environment.cpp
   src/xtd/native/unix/file.cpp
   src/xtd/native/unix/guid.cpp

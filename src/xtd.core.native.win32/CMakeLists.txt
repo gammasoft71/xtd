@@ -10,12 +10,14 @@ add_references(xtd.core.native)
 add_sources(
   include/xtd/xtd.core.native.win32.h
   include/xtd/xtd.core.native.win32
+  include/xtd/native/win32/strings.h
   src/xtd/native/win32/console.cpp
   src/xtd/native/win32/debug.cpp
   src/xtd/native/win32/environment.cpp
   src/xtd/native/win32/file.cpp
   src/xtd/native/win32/guid.cpp
   src/xtd/native/win32/path.cpp
+  src/xtd/native/win32/translator.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})
 
