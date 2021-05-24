@@ -43,19 +43,19 @@ namespace guidgen {
       return "Usage\n"
       "  guidgen [--format Format] [--count Count]\n"
       "\n"
-      "-f, --format : Indicates how to format the value of this Guid. The format parameter can be :\n"
-      "                 N : 32 digits.\n"
-      "                 D : 32 digits separated by hyphens.\n"
-      "                 B : 32 digits separated by hyphens, enclosed in braces.\n"
-      "                 P : 32 digits separated by hyphens, enclosed in parentheses.\n"
-      "                 X : Four hexadecimal values enclosed in braces, where the fourth value is a subset of eight hexadecimal values that is also enclosed in braces.\n"
-      "-c, --count  : indicate the number of generation (form 1 to 2147483647)\n"
-      "-v, --version      : Shows version information.\n"
-      "-h, --help   : Shows this help page.";
+      "-f, --format  : Indicates how to format the value of this Guid. The format parameter can be :\n"
+      "                  N : 32 digits.\n"
+      "                  D : 32 digits separated by hyphens.\n"
+      "                  B : 32 digits separated by hyphens, enclosed in braces.\n"
+      "                  P : 32 digits separated by hyphens, enclosed in parentheses.\n"
+      "                  X : Four hexadecimal values enclosed in braces, where the fourth value is a subset of eight hexadecimal values that is also enclosed in braces.\n"
+      "-c, --count   : indicate the number of generation (form 1 to 2147483647)\n"
+      "-v, --version : Shows version information.\n"
+      "-h, --help    : Shows this help page.";
     }
     
     static string get_version() {
-      return strings::format("guidgen version {}, © {:L} by Gammasoft", /*environment::version()*/ version(1, 0, 0), chrono::system_clock::now());
+      return strings::format("guidgen version {}, © {:L} by Gammasoft", environment::version(), chrono::system_clock::now());
     }
 
     static bool process_arguments(const vector<string>& args, string& format, int& count, bool& show_version, bool& show_help) {

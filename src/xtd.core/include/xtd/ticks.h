@@ -8,7 +8,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Represent a tick duration
+  /// @brief Represents a tick duration
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types

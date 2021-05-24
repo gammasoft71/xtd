@@ -1281,7 +1281,7 @@ namespace xtd {
       /// 3. xtd::forms::control::mouse_click event
       /// 4. xtd::forms::control::mouse_up event
       /// 5. xtd::forms::control::mouse_down event
-      /// 6. xtd::forms::control::doublle_click event
+      /// 6. xtd::forms::control::double_click event
       /// 7. xtd::forms::control::mouse_click event
       /// 8. xtd::forms::control::mouse_up event
       /// @remarks For this to occur, the various events cannot be disabled in the control's class.
