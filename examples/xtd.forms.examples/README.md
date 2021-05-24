@@ -91,8 +91,9 @@
 
 ## [forms](forms/README.md)
 
-* [form](forms/form/README.md) represents a window or dialog box that makes up an application's user interface.
 * [debug_form](forms/debug_form/README.md) represents a form that trace all written debug with xtd::diagnosticts::debug class.
+* [dialog](forms/dialog/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd_forms/include/xtd/forms/form.hpp) container as dialog.
+* [form](forms/form/README.md) represents a window or dialog box that makes up an application's user interface.
 * [trace_form](forms/trace_form/README.md) represents a form that trace all written trace with xtd::diagnosticts::trace class.
 
 ## [Dialogs](dialogs/README.md)
