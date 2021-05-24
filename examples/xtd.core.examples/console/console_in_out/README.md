@@ -2,7 +2,7 @@
 
 Shows how to use [xtd::console::in](../../../../src/xtd.core/include/xtd/basic_console.h) and [xtd::console::out](../../../../src/xtd.core/include/xtd/basic_console.h) streams.
 
-## Sources
+# Sources
 
 [src/console_in_out.cpp](src/console_in_out.cpp)
 
