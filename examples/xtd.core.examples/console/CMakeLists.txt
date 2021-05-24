@@ -13,5 +13,7 @@ add_projects(
   console_read_line
   console_read_key
   console_song
+  console_title
+  console_unicode
   wconsole
 )

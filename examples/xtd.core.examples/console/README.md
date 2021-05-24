@@ -11,4 +11,6 @@
 * [console_read_key](console_read_key/README.md) shows how to use [xtd::console::read_key](../../../src/xtd.core/include/xtd/basic_console.h) and [xtd::console::key_available](../../../src/xtd.core/include/xtd/basic_console.h) methods.
 * [console_read_line](console_read_line/README.md) shows how to use [xtd::console::read_line](../../../src/xtd.core/include/xtd/basic_console.h) method.
 * [console_song](console_song/README.md) shows how to use [xtd::console::beep](../../../src/xtd.core/include/xtd/basic_console.h) method.
+* [console_title](console_title/README.md) shows how to use [xtd::console::title](../../../src/xtd.core/include/xtd/basic_console.h) method.
+* [console_unicode](console_title/README.md) shows how to use [xtd::console](../../../src/xtd.core/include/xtd/basic_console.h) with unicode characters.
 * [wconsole](wconsole/README.md) shows how to use [xtd::wconsole](../../../src/xtd.core/include/xtd/basic_console.h) class.
