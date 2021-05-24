@@ -1,5 +1,3 @@
-#if defined(__linux__) || defined(__APPLE__)
-
 #include "../../../include/xtd/io/path.h"
 #include "../../../include/xtd/environment.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
@@ -21,5 +19,3 @@ bool path::__is_windows_os() noexcept {
 std::string path::__get_temp_path() noexcept {
   return native::path::get_temp_path();
 }
-
-#endif
