@@ -8,7 +8,7 @@ Shows how to use [xtd::console::read_key](../../../../src/xtd.core/include/xtd/b
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output if user stroke 'q', 'w', 'e', 'r', 't', 'y', Ctrl+C and Escape keys
+## Output if user stroke 'q', 'w', 'e', 'r', 't', 'y', Ctrl+C and Escape keys
 
 ```
 Key = q (81), Char = 'q' (113), Modifiers = 0
