@@ -53,7 +53,7 @@
 /// @brief Keywords are predefined, reserved identifiers that have special meanings to the compiler.
 
 /// @defgroup libraries libraries
-/// @brief the xtd libraries.
+/// @brief The xtd libraries.
 
 /// @defgroup menus_and_toolbars  menus and toolbars
 /// @brief menus and toolbars definitions.
