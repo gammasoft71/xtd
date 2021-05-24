@@ -32,6 +32,11 @@
 * [stack_trace](diagnostics/stack_trace/README.md) shows how to use [xtd::diagnostics/stack_trace](../../src/xtd.core/include/xtd/diagnostics/stack_trace.h) class.
 * [stopwatch](diagnostics/stopwatch/README.md) shows how to use [xtd::diagnostics/stopwatch](../../src/xtd.core/include/xtd/diagnostics/stopwatch.h) class.
 
+## [Environment](environment/README.md)
+
+* [environment_stack_trace](environment/environment_stack_trace/README.md) shows how to use [xtd::environment::stack_trace](../../src/xtd.core/include/xtd/environment.h) method.
+* [environment_tick_count](environment/environment_tick_count/README.md) shows how to use [xtd::environment::tick_count](../../src/xtd.core/include/xtd/environment.h) method.
+
 ## [Format](format/README.md)
 
 * [format](format/format/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method.
