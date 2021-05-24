@@ -16,7 +16,7 @@
 /// @par Library
 /// xtd.core.native
 /// @ingroup xtd_core_native drive_type
-/// @remarks /// @remarks For more info see https://docs.microsoft.com .
+/// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr int32_t DRIVE_UNKNOWN = 0;
 
@@ -24,7 +24,7 @@ constexpr int32_t DRIVE_UNKNOWN = 0;
 /// @par Library
 /// xtd.core.native
 /// @ingroup xtd_core_native drive_type
-/// @remarks /// @remarks For more info see https://docs.microsoft.com .
+/// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr int32_t DRIVE_NO_ROOT_DIR = 1;
 
@@ -32,7 +32,7 @@ constexpr int32_t DRIVE_NO_ROOT_DIR = 1;
 /// @par Library
 /// xtd.core.native
 /// @ingroup xtd_core_native drive_type
-/// @remarks /// @remarks For more info see https://docs.microsoft.com .
+/// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr int32_t DRIVE_REMOVABLE = 2;
 
@@ -40,7 +40,7 @@ constexpr int32_t DRIVE_REMOVABLE = 2;
 /// @par Library
 /// xtd.core.native
 /// @ingroup xtd_core_native drive_type
-/// @remarks /// @remarks For more info see https://docs.microsoft.com .
+/// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr int32_t DRIVE_FIXED = 3;
 
@@ -48,7 +48,7 @@ constexpr int32_t DRIVE_FIXED = 3;
 /// @par Library
 /// xtd.core.native
 /// @ingroup xtd_core_native drive_type
-/// @remarks /// @remarks For more info see https://docs.microsoft.com .
+/// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr int32_t DRIVE_REMOTE = 4;
 
@@ -56,7 +56,7 @@ constexpr int32_t DRIVE_REMOTE = 4;
 /// @par Library
 /// xtd.core.native
 /// @ingroup xtd_core_native drive_type
-/// @remarks /// @remarks For more info see https://docs.microsoft.com .
+/// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr int32_t DRIVE_CDROM = 5;
 
@@ -64,7 +64,7 @@ constexpr int32_t DRIVE_CDROM = 5;
 /// @par Library
 /// xtd.core.native
 /// @ingroup xtd_core_native drive_type
-/// @remarks /// @remarks For more info see https://docs.microsoft.com .
+/// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr int32_t DRIVE_RAMDISK = 6;
 #endif
