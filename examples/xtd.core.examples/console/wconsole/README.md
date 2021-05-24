@@ -2,7 +2,7 @@
 
 Shows how to use [xtd::wconsole](../../../../src/xtd.core/include/xtd/basic_console.h) class.
 
-## Sources
+# Sources
 
 [src/wconsole.cpp](src/wconsole.cpp)
 

@@ -2,7 +2,7 @@
 
 Shows how to use [xtd::console::beep](../../../../src/xtd.core/include/xtd/basic_console.h) method.
 
-## Sources
+# Sources
 
 [src/console_song.cpp](src/console_song.cpp)
 

@@ -2,7 +2,7 @@
 
 Shows how to use [xtd::console::buffer_height](../../../../src/xtd.core/include/xtd/basic_console.h) and [xtd::console::buffer_width](../../../../src/xtd.core/include/xtd/basic_console.h) methods.
 
-## Sources
+# Sources
 
 [src/console_buffer.cpp](src/console_buffer.cpp)
 

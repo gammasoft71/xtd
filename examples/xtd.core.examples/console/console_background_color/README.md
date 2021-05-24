@@ -2,7 +2,7 @@
 
 Shows how to use [xtd::console::background_color](../../../../src/xtd.core/include/xtd/basic_console.h) method.
 
-## Sources
+# Sources
 
 [src/console_background_color.cpp](src/console_background_color.cpp)
 
