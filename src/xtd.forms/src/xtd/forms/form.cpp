@@ -266,6 +266,7 @@ forms::dialog_result form::show_dialog() {
   result = static_cast<forms::dialog_result>(native::form::show_dialog(handle()));
   application::raise_leave_thread_modal(event_args::empty);
   set_state(state::modal, false);
+  destroy_control();
   return result;
 }
 
@@ -278,6 +279,7 @@ forms::dialog_result form::show_dialog(const iwin32_window& owner) {
   forms::dialog_result result = dialog_result_ = forms::dialog_result::none;
   application::raise_enter_thread_modal(event_args::empty);
   result = static_cast<forms::dialog_result>(native::form::show_dialog(handle()));
+  destroy_control();
   return result;
 }
 
@@ -301,6 +303,7 @@ forms::dialog_result form::show_sheet_dialog(const iwin32_window& owner) {
   forms::dialog_result result = dialog_result_ = forms::dialog_result::none;
   application::raise_enter_thread_modal(event_args::empty);
   result = static_cast<forms::dialog_result>(native::form::show_sheet_dialog(handle()));
+  destroy_control();
   return result;
 }
 
