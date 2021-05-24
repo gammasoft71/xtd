@@ -1,4 +1,4 @@
-#if defined(__linux__)
+#if !defined(__APPLE__)
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/translator.h>
 #include <xtd/native/environment.h>
