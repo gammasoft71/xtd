@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::form](../../../../src/xtd_forms/include/xtd
 
 # Sources
 
-[src/form.cpp](src/dialog.cpp)
+[src/dialog.cpp](src/dialog.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
