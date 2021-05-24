@@ -19,5 +19,5 @@ xtdc run
 # Output
 
 ```
-Time since boot : 8.18:12:02:823000000
+Time since boot : 8 days 18:20
 ```
