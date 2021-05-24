@@ -2,13 +2,13 @@
 
 Shows how to use [xtd::console::read_key](../../../../src/xtd.core/include/xtd/basic_console.h) and  [xtd::console::key_available](../../../../src/xtd.core/include/xtd/basic_console.h) methods.
 
-## Sources
+# Sources
 
 [src/console_color.cpp](src/console_read_key.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-## Build and run
+# Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-## Output if user stroke 'q', 'w', 'e', 'r', 't', 'y', Ctrl+C and Escape keys
+# Output if user stroke 'q', 'w', 'e', 'r', 't', 'y', Ctrl+C and Escape keys
 
 ```
 Key = q (81), Char = 'q' (113), Modifiers = 0
