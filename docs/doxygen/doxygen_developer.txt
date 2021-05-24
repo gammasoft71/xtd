@@ -357,7 +357,7 @@ EXTERNAL_PAGES         = YES
 # Configuration options related to the dot tool
 #---------------------------------------------------------------------------
 
-CLASS_DIAGRAMS         = YES
+CLASS_DIAGRAMS         = NO # Default: YES
 DIA_PATH               = 
 HIDE_UNDOC_RELATIONS   = YES
 HAVE_DOT               = NO # Todo YES # Default: NO
@@ -375,7 +375,7 @@ INCLUDE_GRAPH          = NO # Default: YES
 INCLUDED_BY_GRAPH      = NO # Default: YES
 CALL_GRAPH             = NO
 CALLER_GRAPH           = NO
-GRAPHICAL_HIERARCHY    = YES
+GRAPHICAL_HIERARCHY    = NO # Default: YES
 DIRECTORY_GRAPH        = NO # Default: YES
 DOT_IMAGE_FORMAT       = png
 INTERACTIVE_SVG        = NO
