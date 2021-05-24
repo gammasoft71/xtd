@@ -11,10 +11,12 @@ public:
     cancel_button(button_cancel);
     client_size({200, 80});
     form_border_style(forms::form_border_style::fixed_dialog);
+    control_box(false);
     minimize_box(false);
     maximize_box(false);
-    start_position(form_start_position::center_screen);
-    text("Input dialog");
+    show_icon(false);
+    start_position(form_start_position::center_parent);
+    text("User input dialog");
     controls().push_back_range({input, button_ok, button_cancel});
 
     input.location({10, 10});
@@ -49,7 +51,6 @@ class form1 : public form {
 public:
   form1() {
     controls().push_back_range({button_dialog, input_text});
-    start_position(form_start_position::center_screen);
     size({800, 450});
     text("User dialog exemple");
     

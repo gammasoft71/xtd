@@ -15,8 +15,8 @@ public:
     minimize_box(false);
     maximize_box(false);
     show_icon(false);
-    start_position(form_start_position::center_screen);
-    text("Input dialog");
+    start_position(form_start_position::center_parent);
+    text("User input dialog");
     controls().push_back_range({input, button_ok, button_cancel});
 
     input.location({10, 10});
@@ -51,7 +51,6 @@ class form1 : public form {
 public:
   form1() {
     controls().push_back_range({button_dialog, input_text});
-    start_position(form_start_position::center_screen);
     size({800, 450});
     text("User dialog exemple");
     
@@ -63,11 +62,8 @@ public:
     button_dialog.text("Dialog...");
     button_dialog.click += [&] {
       dialog.input_text(input_text.text());
-      dialog.visible(true);
-      /*
       if (dialog.show_dialog(*this) == forms::dialog_result::ok)
         input_text.text(dialog.input_text());
-        */
     };
   }
   
