@@ -23,7 +23,7 @@
 ///   * @ref TargetIconSubSection specifies the icon file (.ico for Windows, icns for maOS and png or svg for linux) that you want to use as your program icon.
 ///   * @ref TargetNameSubSection specifies the name of the output file.
 ///   * @ref TargetRegisteredSubSection Speficy the target is registered in the system.
-///   * @ref TargetStartupSubSection specifies the entry pointto be called when the application is load.
+///   * @ref TargetStartupSubSection specifies the entry point to be called when the application is load.
 ///   * @ref TargetTypeSubSection specifies the type of target to build.
 /// * @ref AssemblyInformationsCommandsSection
 ///   * @ref AssemblyCompanySubSection specifies a company name for the assembly manifest. Corresponds to AssemblyCompanyAttribute.
@@ -235,7 +235,7 @@
 /// @endcode
 ///
 /// @subsection TargetStartupSubSection target_startup
-/// @brief Specifies the entry pointto be called when the application is load.
+/// @brief Specifies the entry point to be called when the application is load.
 /// @param ARGV0 the object that contains the entry point.
 /// @param ARGV1 the object definition file. (optional if you use TUnitMain_ or TUnitFrameworkMain_ entry point)
 /// @remarks Do not use this method of startup_(...) is present in your files or if you use standard c++ main() method.
