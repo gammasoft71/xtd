@@ -1313,12 +1313,17 @@ namespace xtd {
     template<typename char_t>
     static std::basic_string<char_t> replace(const std::basic_string<char_t>& str, const std::basic_string<char_t>& old_string, const std::basic_string<char_t>& new_string) noexcept {
       std::basic_string<char_t> result(str);
+      auto old_size = old_string.length();
+      auto new_size = new_string.length();
       size_t index = 0;
       while (true) {
         index = result.find(old_string, index);
         if (index == std::string::npos) break;
-        result.erase(index, old_string.size());
-        result.insert(index, new_string);
+        if (old_size == new_size) result.replace(index, old_size, new_string);
+        else {
+          result.erase(index, old_string.size());
+          result.insert(index, new_string);
+        }
         index += new_string.size();
       }
       return result;
