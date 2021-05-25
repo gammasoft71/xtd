@@ -21,7 +21,10 @@ namespace xtdc_command {
   class project_management {
     class change_current_directory {
     public:
-      change_current_directory(const std::filesystem::path& current_directory) {xtd::environment::current_directory(current_directory.string());}
+      change_current_directory(const std::filesystem::path& current_directory) {
+        if (!xtd::io::file::exists(current_directory)) std::filesystem::create_directories(std::filesystem::path(current_directory));
+        xtd::environment::current_directory(current_directory.string());
+      }
       ~change_current_directory() {xtd::environment::current_directory(previous_current_directoy_);}
     private:
       std::string previous_current_directoy_ = xtd::environment::current_directory();
