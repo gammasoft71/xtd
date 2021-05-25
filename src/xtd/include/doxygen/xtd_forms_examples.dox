@@ -32,7 +32,7 @@
 /// @image html about_dialog_gd.png
 ///
 /// @example about_dialog_system.cpp
-/// The following code example demonstrate the use of xtd::forms::about_dialog dialog with dialog_styledialog_style tooo system.
+/// The following code example demonstrate the use of xtd::forms::about_dialog dialog with dialog_style to system.
 /// @par Windows
 /// @image html about_dialog_system_w.png
 /// <br>
