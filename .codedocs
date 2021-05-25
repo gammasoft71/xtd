@@ -112,7 +112,7 @@ HAVE_DOT = NO
 # HTML_COLORSTYLE_HUE =
 # HTML_COLORSTYLE_SAT =
 # HTML_DYNAMIC_SECTIONS =
-# HTML_EXTRA_FILES =
+HTML_EXTRA_FILES = docs/pictures/xtd_doxygen.png
 HTML_EXTRA_STYLESHEET = docs/doxygen/custom.css \
                         docs/doxygen/custom_dark_theme.css
 HTML_FOOTER = docs/doxygen/html_footer.html
