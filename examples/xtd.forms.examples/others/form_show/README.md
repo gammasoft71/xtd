@@ -1,10 +1,10 @@
-# form2
+# form_show
 
 This example demontrate how to launch form as normal window, modeless window and modal window.
 
 # Sources
 
-[src/form2.cpp](src/form2.cpp)
+[src/form_show.cpp](src/form_show.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/form2_w.png)
+![Screenshot](../../../../docs/pictures/examples/form_show_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/form2_wd.png)
+![Screenshot](../../../../docs/pictures/examples/form_show_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/form2_m.png)
+![Screenshot](../../../../docs/pictures/examples/form_show_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/form2_md.png)
+![Screenshot](../../../../docs/pictures/examples/form_show_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/form2_g.png)
+![Screenshot](../../../../docs/pictures/examples/form_show_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/form2_gd.png)
+![Screenshot](../../../../docs/pictures/examples/form_show_gd.png)
