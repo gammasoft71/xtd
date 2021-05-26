@@ -4,9 +4,9 @@ using namespace xtd;
 using namespace xtd::web::css;
 
 void write_selectors(const selector_map& selectors) {
-  for (auto [name, content] : selectors) {
+  for (auto [name, contents] : selectors) {
     console::write_line("{} {{", name);
-    for (auto [key, value] : content.properties())
+    for (auto [key, value] : contents.properties())
       xtd::console::write_line("  {}: {};", key, value);
     console::write_line("}");
   }
