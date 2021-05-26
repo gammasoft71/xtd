@@ -17,7 +17,7 @@ namespace xtd {
     /// @brief Provides the base class for trace filter implementations.
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core debug
+    /// @ingroup xtd_core
     /// @remarks Trace filters can be used by trace listeners to provide an extra layer of filtering beyond that provided by trace switches. The trace filter for a trace listener can be found in the listener's filter property. Trace switches determine if a trace is to be sent to the trace listeners. Trace filters allow the individual trace listeners to determine whether or not the trace is to be written to the associated output medium. For example, as determined by each trace filter, a trace may be written to the console by a console_trace_listener, but not to the event log by a event_log_trace_listener.
     /// @remarks Filters that inherit from the trace_filter class can be used by trace listeners that inherit from the trace_listener class to perform filtering of events being traced. trace_filter contains a single method, should_trace, which takes event data and returns a flag indicating whether the event should be traced.
     class trace_filter {

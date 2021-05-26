@@ -11,7 +11,7 @@ namespace xtd {
     /// @brief Indicates whether a listener should trace a message based on the source of a trace.
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core debug
+    /// @ingroup xtd_core
     /// @remarks One of several different types of filters can be assigned to a trace listener to provide a layer of screening beyond that provided by the trace switch. The filter can be used to control the level of tracing that is produced by the listener.
     /// @remarks This class filters events based on a specific trace source set by the user.
     /// @remarks source_filter overrides the should_trace method and defines a source property that specifies the name of the trace source to be traced by the listener.

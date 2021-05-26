@@ -12,7 +12,7 @@ namespace xtd {
     /// @brief Directs tracing or debugging output to either the standard output or the standard error stream.
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core debug
+    /// @ingroup xtd_core diagnostics debug
     /// @par Examples
     /// The following example shows how to use console_trace_listener class.
     /// @include console_trace_listener.cpp
