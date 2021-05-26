@@ -68,6 +68,7 @@ add_sources(
   include/xtd/forms/date_time_picker.h
   include/xtd/forms/date_time_picker_format.h
   include/xtd/forms/debug_form.h
+  include/xtd/forms/debug_message_box.h
   include/xtd/forms/dialog_closed_event_args.h
   include/xtd/forms/dialog_closed_event_handler.h
   include/xtd/forms/dialog_result.h
@@ -202,6 +203,7 @@ add_sources(
   include/xtd/forms/tool_bar_images.h
   include/xtd/forms/trace_form.h
   include/xtd/forms/trace_form_base.h
+  include/xtd/forms/trace_message_box.h
   include/xtd/forms/track_bar.h
   include/xtd/forms/up_down_base.h
   include/xtd/forms/up_down_button.h
