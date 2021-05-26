@@ -626,7 +626,7 @@ namespace xtdc_command {
     }
     
     static int guide(const vector<string>& args) {
-      system(strings::format("{}https://codedocs.xyz/gammasoft71/xtd", environment::os_version().is_macos_platform() ? "open " : "").c_str());
+      system(strings::format("{}https://codedocs.xyz/gammasoft71/xtd/index.html", environment::os_version().is_macos_platform() ? "open " : "").c_str());
       return 0;
     }
     
