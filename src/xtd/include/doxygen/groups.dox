@@ -5,6 +5,10 @@
 /// @brief application definitions.
 /// @ingroup gui
 
+/// @defgroup collections collections
+/// @brief collections definitions.
+/// @ingroup system
+
 /// @defgroup components components
 /// @brief Components are objects that an application uses in conjunction with another window.
 /// @ingroup gui
@@ -13,12 +17,16 @@
 /// @brief Containers are  container for other controls.
 /// @ingroup gui
 
-/// @defgroup controls  controls
+/// @defgroup controls controls
 /// @brief Controls are childs windows that an application uses in conjunction with another window to enable interaction with the user.
 /// @ingroup gui
 
 /// @defgroup debug debug
 /// @brief All needed for debugging and tracing.
+
+/// @defgroup diagnostics diagnostics
+/// @brief diagnostics definitions.
+/// @ingroup system
 
 /// @defgroup dialogs dialogs
 /// @brief Dalogs consist of the open file, save file, open folder, find and replace, print, page setup, font, color dialog boxes, about, busy, message dialog boxes, ...
@@ -45,6 +53,10 @@
 
 /// @defgroup interfaces interfaces
 /// @brief Interfaces definitions.
+
+/// @defgroup io io
+/// @brief io definitions.
+/// @ingroup system
 
 /// @defgroup keywords keywords
 /// @brief Keywords are predefined, reserved identifiers that have special meanings to the compiler.
@@ -90,3 +102,7 @@
 /// @defgroup xtd_tunit xtd.tunit
 /// @brief The xtd.tunit library contains compnents needed for unit testing.
 /// @ingroup libraries
+
+/// @defgroup web web
+/// @brief web definitions.
+/// @ingroup system
