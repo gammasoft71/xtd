@@ -9,7 +9,7 @@ This section contains the xtd documentation. ​
 * [Getting started](getting_started.md) provide getting started documentation.
 * [Writing applications](writing_applications.md) provide writing applications documentation.
 * [Tutorial](tutorial.md) provide a tutorial to cover the basics needed to create xtd applications.
-* [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/) provide online user reference guide.
+* [Reference Guide](https://codedocs.xyz/gammasoft71/xtd//index.html) provide online user reference guide.
 * [Design Guidelines](design_guidelines.md) provides guidelines for designing libraries that extend and interact with the xtd.forms.
 * [Development status](development_status.md) provide information about classes and libraries development status.
 * [Release notes](release_notes.md) provide release notes information.
