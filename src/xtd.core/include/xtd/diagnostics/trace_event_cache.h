@@ -15,7 +15,7 @@ namespace xtd {
     /// @brief Provides trace event data specific to a thread and a process.
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core debug
+    /// @ingroup xtd_core
     class trace_event_cache {
     public:
       //using clock = std::chrono::high_resolution_clock;

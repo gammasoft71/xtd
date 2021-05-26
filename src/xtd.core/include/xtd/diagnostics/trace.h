@@ -19,7 +19,7 @@ namespace xtd {
     /// @brief Provides a set of methods and properties that help you debug the execution of your code. This class cannot be inherited.
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core debug
+    /// @ingroup xtd_core diagnostics debug
     /// @remarks You can use the properties and methods in the debug class to instrument release builds. Instrumentation allows you to monitor the health of your application running in real-life settings. Tracing helps you isolate problems and fix them without disturbing a running system.
     /// @remarks This class provides methods to display an assert dialog box, and to emit an assertion that will always Fail. This class provides write methods in the following variations: write, write_line, write_if, and write_line_if.
     /// @remarks The boolean_switch and trace_switch classes provide means to dynamically control the tracing output. You can modify the values of these switches without recompiling your application. For information on using the configuration file to set a switch, see the switch class and the trace_switches topic.

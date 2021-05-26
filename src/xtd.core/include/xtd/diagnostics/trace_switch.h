@@ -13,7 +13,7 @@ namespace xtd {
     /// @brief Provides a multilevel switch to control tracing and debug output without recompiling your code.
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core debug
+    /// @ingroup xtd_core
     /// @remarks You can use a trace switch to filter out messages based on their importance. The trace_switch class provides the trace_error, trace_warning, trace_info, and trace_verbose properties to test the level of the switch. The level property gets or sets the switch's trace_level.
     /// @remarks You can set the level of a trace_switch through the application configuration file and then use the configured trace_switch level in your application. Alternately, you can create a trace_switch in your code and set the level directly to instrument a specific section of code.
     class trace_switch : public xtd::diagnostics::switch_base {

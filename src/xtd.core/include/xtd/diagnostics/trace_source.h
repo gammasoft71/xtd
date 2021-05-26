@@ -16,7 +16,7 @@ namespace xtd {
     /// @brief Provides a set of methods and properties that enable applications to trace the execution of code and associate trace messages with their source.
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core debug
+    /// @ingroup xtd_core
     /// @remarks The trace_source class is used by applications to produce traces that can be associated with the application. trace_source provides tracing methods that allow you to easily trace events, trace data, and issue informational traces.
     /// @remarks The trace_source class is identified by the name of a source, typically the name of the application. The trace messages coming from a particular component can be initiated by a particular trace source, allowing all messages coming from that component to be easily identified.
     /// @remarks trace_source defines tracing methods but does not actually provide any specific mechanism for generating and storing tracing data. The tracing data is produced by trace listeners, which are plug-ins that can be loaded by trace sources.
