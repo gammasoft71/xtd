@@ -14,7 +14,7 @@ namespace xtd {
     /// @brief Represents a writer that can write a sequential series of characters.
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core io
     class stream_writer : public xtd::io::text_writer {
     public:
       /// @brief Initializes a new instance of the stream_writer class for the specified file name.

@@ -11,7 +11,7 @@ namespace xtd {
     /// @brief Implements a std::pair with the key and the value strongly typed to be std::any.
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core collections
     using any_pair = std::pair<std::any, std::any>;
   }
 }

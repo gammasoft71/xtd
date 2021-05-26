@@ -22,7 +22,7 @@ namespace xtd {
     /// @brief Performs operations on std::basic_string instances that contain file or directory path information. These operations are performed in a cross-platform manner.
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core io
     class core_export_ path {
     public:
       /// @cond

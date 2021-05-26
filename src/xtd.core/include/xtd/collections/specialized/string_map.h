@@ -14,7 +14,7 @@ namespace xtd {
       /// @brief Implements a std::map with the key and the value strongly typed to be strings.
       /// @par Library
       /// xtd.core
-      /// @ingroup xtd_core
+      /// @ingroup xtd_core collections
       using string_map = std::map<std::string, std::string>;
     }
   }

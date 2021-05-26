@@ -14,7 +14,7 @@ namespace xtd {
       /// @brief Represents a collection of strings.
       /// @par Library
       /// xtd.core
-      /// @ingroup xtd_core
+      /// @ingroup xtd_core collections
       using string_vector = std::vector<std::string>;
     }
   }

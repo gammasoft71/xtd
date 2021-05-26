@@ -13,7 +13,7 @@ namespace xtd {
     /// @brief Represents a reader that can read a sequential series of characters.
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core io
     class string_reader : public xtd::io::text_reader {
     public:
       /// @brief Initializes a new instance of the stream_reader class for the specified file name.

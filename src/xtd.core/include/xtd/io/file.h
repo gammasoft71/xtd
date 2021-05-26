@@ -18,7 +18,7 @@ namespace xtd {
     /// @brief Provides static methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of std::basic_ftream objects.
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core io
     class core_export_ file {
     public:
       /// @cond
