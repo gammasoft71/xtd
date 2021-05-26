@@ -1,10 +1,10 @@
-# track_bar
+# track_bar2
 
 demonstrates the use of [xtd::forms::track_bar](../../../../src/xtd_forms/include/xtd/forms/track_bar.hpp) control.
 
 # Sources
 
-[src/track_bar.cpp](src/track_bar.cpp)
+[src/track_bar2.cpp](src/track_bar2.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/track_bar_w.png)
+![Screenshot](../../../../docs/pictures/examples/track_bar2_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/track_bar_wd.png)
+![Screenshot](../../../../docs/pictures/examples/track_bar2_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/track_bar_m.png)
+![Screenshot](../../../../docs/pictures/examples/track_bar2_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/track_bar_md.png)
+![Screenshot](../../../../docs/pictures/examples/track_bar2_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/track_bar_g.png)
+![Screenshot](../../../../docs/pictures/examples/track_bar2_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/track_bar_gd.png)
+![Screenshot](../../../../docs/pictures/examples/track_bar2_gd.png)
