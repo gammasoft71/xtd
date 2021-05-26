@@ -21,7 +21,7 @@ namespace xtd {
     /// @brief Represents a reader that can read a sequential series of characters.
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core io
     class core_export_ text_reader {
     public:
       /// @cond

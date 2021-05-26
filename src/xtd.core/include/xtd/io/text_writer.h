@@ -22,7 +22,7 @@ namespace xtd {
     /// @brief Represents a writer that can write a sequential series of characters.
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core io
     class core_export_ text_writer {
     public:
       /// @cond

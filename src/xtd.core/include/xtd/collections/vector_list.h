@@ -11,7 +11,7 @@ namespace xtd {
     /// @brief Represents a collection of std::any.
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core collections
     using vector_list = std::vector<std::any>;
   }
 }
