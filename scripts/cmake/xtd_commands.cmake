@@ -189,7 +189,7 @@ macro(target_registered REGISTERED)
   endif ()
 endmacro()
 
-## @brief Specifies the entry pointto be called when the application is load.
+## @brief Specifies the entry point to be called when the application is load.
 ## @param ARGV0 the object that contains the entry point.
 ## @param ARGV1 the object definition file. (optional if you use TUnitMain_ or TUnitFrameworkMain_ entry point)
 ## @remarks Do not use this method of startup_(...) is present in your files or if you use standard c++ main() method.
