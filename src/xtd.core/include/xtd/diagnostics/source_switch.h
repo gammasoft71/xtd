@@ -13,7 +13,7 @@ namespace xtd {
     /// @brief Provides a multilevel switch to control tracing and debug output without recompiling your code.
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core debug
     /// @remarks The switch property of the trace_source class is a source_switch object. The source_switch class provides a level property to test the event level of the switch. The level property gets or sets the switch's trace_level value.
     /// @remarks The switch is used to check whether a trace should be propagated or ignored. Each trace_source trace method calls the should_trace method before calling the listeners. If the should_trace method returns false, the trace is ignored and the trace method exits. If the should_trace method returns true, the trace is passed to the listeners.
     class source_switch : public xtd::diagnostics::switch_base {
