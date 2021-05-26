@@ -1,6 +1,6 @@
 @echo off
 
-set WXWIDGETS_VERSION=v3.1.4
+set WXWIDGETS_VERSION=v3.1.5
 
 echo Install xtd libraries version %xtd_version%, copyright Gammasoft, 2020
 echo.
