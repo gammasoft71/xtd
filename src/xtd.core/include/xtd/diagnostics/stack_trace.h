@@ -17,6 +17,11 @@ namespace xtd {
   
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
+    /// @brief Represents a stack trace, which is an ordered collection of one or more stack frames.
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core debug
+    /// @remarks xtd::diagnostics::stack_trace information will be most informative with Debug build configurations. By default, Debug builds include debug symbols, while Release builds do not. The debug symbols contain most of the file, method name, line number, and column information used in constructing xtd::diagnostics::stack_frame and xtd::diagnostics::stack_trace objects.
     class core_export_ stack_trace {
     public:
       using frame_collection = std::vector<xtd::diagnostics::stack_frame>;

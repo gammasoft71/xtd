@@ -12,7 +12,7 @@ namespace xtd {
     /// @brief Provides a set of methods and properties that you can use to accurately measure elapsed time.
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core diagnostics
     /// @remarks A stopwatch instance can measure elapsed time for one interval, or the total of elapsed time across multiple intervals. In a typical stopwatch scenario, you call the start method, then eventually call the stop method, and then you check elapsed time using the Elapsed property.
     /// @remarks A stopwatch instance is either running or stopped; use IsRunning to determine the current state of a stopwatch. Use start to begin measuring elapsed time; use stop to stop measuring elapsed time. Query the elapsed time value through the properties Elapsed, ElapsedMilliseconds, or ElapsedTicks. You can query the elapsed time properties while the instance is running or stopped. The elapsed time properties steadily increase while the stopwatch is running; they remain constant when the instance is stopped.
     /// @remarks By default, the elapsed time value of a stopwatch instance equals the total of all measured time intervals. Each call to start begins counting at the cumulative elapsed time; each call to stop ends the current interval measurement and freezes the cumulative elapsed time value. Use the reset method to clear the cumulative elapsed time in an existing stopwatch instance.
