@@ -102,6 +102,7 @@ add_sources(
   include/xtd/forms/group_box.h
   include/xtd/forms/help_event_args.h
   include/xtd/forms/help_event_handler.h
+  include/xtd/forms/horizontal_layout_panel.h
   include/xtd/forms/ibutton_control.h
   include/xtd/forms/icontrol_trace.h
   include/xtd/forms/image_layout.h
@@ -212,6 +213,7 @@ add_sources(
   include/xtd/forms/layout/arranged_element_collection.h
   include/xtd/forms/layout/sorter_none.h
   include/xtd/forms/properties/resources.h
+  include/xtd/forms/vertical_layout_panel.h
   include/xtd/forms/visual_styles/check_box_state.h
   include/xtd/forms/visual_styles/push_button_state.h
   include/xtd/forms/visual_styles/radio_button_state.h
