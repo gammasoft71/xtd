@@ -2,6 +2,8 @@
 /// @brief Contains xtd::forms::vertical_layout_panel container.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+#include <map>
+#include "vertical_control_layout_style_collection.h"
 #include "panel.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -31,9 +33,17 @@ namespace xtd {
     public:
       /// @brief Initialises a new instance of vertical layout panel class.
       vertical_layout_panel() = default;
+      
+      const vertical_control_layout_style_collection& control_layout_styles() const {return control_layout_styles_;}
+      vertical_control_layout_style_collection& control_layout_styles() {return control_layout_styles_;}
 
     protected:
+      void on_control_added(const xtd::forms::control_event_args& e) override;
+      void on_control_removed(const xtd::forms::control_event_args& e) override;
       void on_layout(const xtd::event_args& e) override;
+
+    private:
+      vertical_control_layout_style_collection control_layout_styles_;
     };
   }
 }
