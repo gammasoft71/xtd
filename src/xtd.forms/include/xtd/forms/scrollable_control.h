@@ -38,7 +38,7 @@ namespace xtd {
       scrollable_control& auto_scroll_margin(const drawing::size& value) {
         if (auto_scroll_margin_ != value) {
           auto_scroll_margin_ = value;
-          on_layout(event_args::empty);
+          perform_layout();
         }
         return *this;
       }
