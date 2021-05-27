@@ -85,7 +85,9 @@ add_sources(
   include/xtd/forms/exception_box.h
   include/xtd/forms/exception_dialog.h
   include/xtd/forms/file_dialog.h
+  include/xtd/forms/fixed_layout_panel.h
   include/xtd/forms/flat_style.h
+  include/xtd/forms/flow_layout_panel.h
   include/xtd/forms/folder_browser_dialog.h
   include/xtd/forms/font_dialog.h
   include/xtd/forms/font_picker.h
@@ -187,6 +189,7 @@ add_sources(
   include/xtd/forms/tab_alignment.h
   include/xtd/forms/tab_control.h
   include/xtd/forms/tab_page.h
+  include/xtd/forms/table_layout_panel.h
   include/xtd/forms/text_box_base.h
   include/xtd/forms/text_box.h
   include/xtd/forms/text_format_flags.h
@@ -249,11 +252,14 @@ add_sources(
   src/xtd/forms/enable_debug.cpp
   src/xtd/forms/exception_dialog.cpp
   src/xtd/forms/file_dialog.cpp
+  src/xtd/forms/fixed_layout_panel.cpp
+  src/xtd/forms/flow_layout_panel.cpp
   src/xtd/forms/folder_browser_dialog.cpp
   src/xtd/forms/font_dialog.cpp
   src/xtd/forms/font_picker.cpp
   src/xtd/forms/form.cpp
   src/xtd/forms/group_box.cpp
+  src/xtd/forms/horizontal_layout_panel.cpp
   src/xtd/forms/image_list.cpp
   src/xtd/forms/input_dialog.cpp
   src/xtd/forms/label.cpp
@@ -286,6 +292,7 @@ add_sources(
   src/xtd/forms/system_information.cpp
   src/xtd/forms/tab_control.cpp
   src/xtd/forms/tab_page.cpp
+  src/xtd/forms/table_layout_panel.cpp
   src/xtd/forms/text_box.cpp
   src/xtd/forms/texts.cpp
   src/xtd/forms/theme.cpp
@@ -298,6 +305,7 @@ add_sources(
   src/xtd/forms/track_bar.cpp
   src/xtd/forms/up_down_base.cpp
   src/xtd/forms/up_down_button.cpp
+  src/xtd/forms/vertical_layout_panel.cpp
   src/xtd/forms/user_control.cpp
   src/xtd/forms/xtd_forms_common_dialog_closed_caller.h
   src/xtd/forms/xtd_forms_message_dialog_closed_caller.h
