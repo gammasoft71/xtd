@@ -875,7 +875,7 @@ namespace xtd {
 
       /// @brief Forces the control to apply layout logic to all its child controls.
       /// @remarks If the suspend_layout method was called before calling the perform_layout method, the layout event is suppressed.
-      void perform_layout() {on_layout(event_args::empty);}
+      void perform_layout();
       
       /// @brief Computes the location of the specified screen point into client coordinates.
       /// @param p The screen coordinate xtd::drawing::point to convert.
