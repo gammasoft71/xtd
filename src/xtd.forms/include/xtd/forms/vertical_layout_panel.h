@@ -28,14 +28,18 @@ namespace xtd {
     /// <br>
     /// @image html vertical_layout_panel_gd.png
     class vertical_layout_panel : public panel {
+    public:
+      /// @brief Initialises a new instance of vertical layout panel class.
+      vertical_layout_panel() = default;
+
     protected:
       void on_layout(const xtd::event_args& e) override {
         panel::on_layout(e);
         if (controls().size() == 0) return;
-        auto top = padding().top();
-        auto left = padding().left();
-        auto width = client_size().width() - padding().left() - padding().right();
-        auto height = client_size().height() / controls().size() - padding().top() - padding().bottom();
+        int32_t top = padding().top();
+        int32_t left = padding().left();
+        int32_t width = client_size().width() - padding().left() - padding().right();
+        int32_t height = client_size().height() / controls().size() - padding().top() - padding().bottom();
         for (size_t index = 0; index < controls().size(); ++index) {
           controls()[index].get().set_bounds(left, top, width, height);
           top += height + padding().bottom() + padding().top();
