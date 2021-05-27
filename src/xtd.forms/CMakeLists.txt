@@ -55,10 +55,11 @@ add_sources(
   include/xtd/forms/content_alignment.h
   include/xtd/forms/context_menu.h
   include/xtd/forms/control.h
-  include/xtd/forms/control_ref.h
   include/xtd/forms/control_event_args.h
   include/xtd/forms/control_event_handler.h
+  include/xtd/forms/control_layout_style.h
   include/xtd/forms/control_paint.h
+  include/xtd/forms/control_ref.h
   include/xtd/forms/control_styles.h
   include/xtd/forms/control_trace_listener.h
   include/xtd/forms/countries.h
@@ -104,6 +105,8 @@ add_sources(
   include/xtd/forms/group_box.h
   include/xtd/forms/help_event_args.h
   include/xtd/forms/help_event_handler.h
+  include/xtd/forms/horizontal_control_layout_style.h
+  include/xtd/forms/horizontal_control_layout_style_collection.h
   include/xtd/forms/horizontal_layout_panel.h
   include/xtd/forms/ibutton_control.h
   include/xtd/forms/icontrol_trace.h
@@ -179,6 +182,7 @@ add_sources(
   include/xtd/forms/seven_segment_display.h
   include/xtd/forms/shortcut.h
   include/xtd/forms/sixteen_segment_display.h
+  include/xtd/forms/size_type.h
   include/xtd/forms/split_container.h
   include/xtd/forms/splitter.h
   include/xtd/forms/splitter_panel.h
@@ -216,6 +220,8 @@ add_sources(
   include/xtd/forms/layout/arranged_element_collection.h
   include/xtd/forms/layout/sorter_none.h
   include/xtd/forms/properties/resources.h
+  include/xtd/forms/vertical_control_layout_style.h
+  include/xtd/forms/vertical_control_layout_style_collection.h
   include/xtd/forms/vertical_layout_panel.h
   include/xtd/forms/visual_styles/check_box_state.h
   include/xtd/forms/visual_styles/push_button_state.h

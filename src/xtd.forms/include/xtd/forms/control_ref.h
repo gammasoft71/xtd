@@ -16,5 +16,18 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms
     using control_ref = std::reference_wrapper<control>;
+    
+    /// @brief Represents a const control reference.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms
+    using const_control_ref = std::reference_wrapper<const control>;
   }
 }
+
+/// @cond
+/// Using xtd::forms::control::operator< in external method instead member because and  std::map<const_control_ref, ...>> make error with operator<.
+/// See https://stackoverflow.com/questions/9139748/using-stdreference-wrapper-as-the-key-in-a-stdmap
+inline bool operator<(const xtd::forms::control_ref& value1, const xtd::forms::control_ref& value2) {return &value1.get() < &value2.get();}
+inline bool operator<(const xtd::forms::const_control_ref& value1, const xtd::forms::const_control_ref& value2) {return &value1.get() < &value2.get();}
+/// @endcond

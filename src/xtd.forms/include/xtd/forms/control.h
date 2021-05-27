@@ -974,6 +974,7 @@ namespace xtd {
       
       bool operator==(const control& value) const {return this == &value;}
       bool operator!=(const control& value) const {return !operator==(value);}
+      //bool operator<(const control& value) const {return this < &value;}
       /// @endcond
 
       /// @brief Occurs when the value of the auto_size property changes.
@@ -1900,3 +1901,9 @@ namespace xtd {
     };
   }
 }
+
+/// @cond
+/// Using xtd::forms::control::operator< in external method instead member because and  std::map<const_control_ref, ...>> make error with operator<.
+/// See https://stackoverflow.com/questions/9139748/using-stdreference-wrapper-as-the-key-in-a-stdmap
+inline bool operator<(const xtd::forms::control& value1, const xtd::forms::control& value2) {return &value1 < &value2;}
+/// @endcond

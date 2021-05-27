@@ -3,6 +3,16 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+void vertical_layout_panel::on_control_added(const xtd::forms::control_event_args& e) {
+  panel::on_control_added(e);
+  //control_layout_styles_[const_control_ref(e.control())] = vertical_control_layout_style();
+}
+
+void vertical_layout_panel::on_control_removed(const xtd::forms::control_event_args& e) {
+  panel::on_control_removed(e);
+  //control_layout_styles_.erase(const_control_ref(e.control()));
+}
+
 void vertical_layout_panel::on_layout(const event_args& e) {
   panel::on_layout(e);
   if (controls().size() == 0) return;
