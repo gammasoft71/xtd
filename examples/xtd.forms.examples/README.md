@@ -75,10 +75,12 @@
 
 * **flow_layout_panel** represents a panel that dynamically lays out its contents horizontally or vertically.
 * [group_box](containers/group_box/README.md) represents a Windows control that displays a frame around a group of controls with an optional caption.
+* [horizontal_layout_panel](containers/horizontal_layout_panel/README.md) used to group collections of horizontal alligned controls.
 * [panel](containers/panel/README.md) used to group collections of controls.
 * [split_container](containers/split_container/README.md) represents a control consisting of a movable bar that divides a container's display area into two resizable panels.
 * [tab_control](containers/tab_control/README.md) manages a related set of tab pages.
 * **table_layout_panel** represents a panel that dynamically lays out its contents in a grid composed of rows and columns.
+* [vertical_layout_panel](containers/vertical_layout_panel/README.md) used to group collections of horizontal alligned controls.
 
 ## [Menus and Toolbars](menus_and_tollbars/README.md)
 
