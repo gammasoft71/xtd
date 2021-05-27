@@ -12,7 +12,7 @@ public:
     button_.location({10, 10});
     button_.text("Error...");
     button_.click += [&] {
-      debug_message_box::show(*this, "Processus error");
+      debug_message_box::show(*this, "An unknown process error occured.");
     };
   }
   

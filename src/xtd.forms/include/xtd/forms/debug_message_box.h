@@ -2,6 +2,7 @@
 /// @brief Contains xtd::forms::debug_message_box dialog.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+#include "application.h"
 #include "message_box.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -16,12 +17,12 @@ namespace xtd {
     public:
       /// @brief Displays a message box and write debug with specified text.
       /// @param text The text to display in the message box.
-      static xtd::forms::dialog_result show(const std::string& text) {return show_message_dialog(nullptr, text);}
+      static xtd::forms::dialog_result show(const std::string& text) {return show_message_dialog(nullptr, text, xtd::forms::application::product_name(), xtd::forms::message_box_buttons::ok, xtd::forms::message_box_icon::error);}
       
       /// @brief Displays a message box in front of the specified window and write debug with specified text.
       /// @param owner An implementation of iwin32_window that will own the modal dialog box.
       /// @param text The text to display in the message box.
-      static dialog_result show(const iwin32_window& owner, const std::string& text) {return show_message_dialog(&owner, text);}
+      static dialog_result show(const iwin32_window& owner, const std::string& text) {return show_message_dialog(&owner, text, xtd::forms::application::product_name(), xtd::forms::message_box_buttons::ok, xtd::forms::message_box_icon::error);}
       
     private:
       static xtd::forms::dialog_result show_message_dialog(const xtd::forms::iwin32_window* owner, const std::string& text = "", const std::string& caption = "", xtd::forms::message_box_buttons buttons = xtd::forms::message_box_buttons::ok, xtd::forms::message_box_icon icon = xtd::forms::message_box_icon::none, xtd::forms::message_box_default_button default_button = xtd::forms::message_box_default_button::button1, xtd::forms::message_box_options options = static_cast<xtd::forms::message_box_options>(0), bool display_help_button = false) {
