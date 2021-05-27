@@ -83,6 +83,8 @@
 #include "xtd/forms/enable_debug.h"
 #include "xtd/forms/exception_box.h"
 #include "xtd/forms/exception_dialog.h"
+#include "xtd/forms/file_dialog.h"
+#include "xtd/forms/fixed_layout_panel.h"
 #include "xtd/forms/flat_style.h"
 #include "xtd/forms/folder_browser_dialog.h"
 #include "xtd/forms/font_dialog.h"

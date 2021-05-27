@@ -13,17 +13,17 @@ public:
     layout_panel.dock(dock_style::fill);
     layout_panel.padding(forms::padding(5));
     
-    red_panel.parent(layout_panel);
-    red_panel.back_color(colors::red());
+    light_pink_panel.parent(layout_panel);
+    light_pink_panel.back_color(colors::light_pink());
     
-    green_panel.parent(layout_panel);
-    green_panel.back_color(colors::green());
+    light_green_panel.parent(layout_panel);
+    light_green_panel.back_color(colors::light_green());
     
-    blue_panel.parent(layout_panel);
-    blue_panel.back_color(colors::blue());
+    light_blue_panel.parent(layout_panel);
+    light_blue_panel.back_color(colors::light_blue());
     
-    yellow_panel.parent(layout_panel);
-    yellow_panel.back_color(colors::yellow());
+    light_yellow_panel.parent(layout_panel);
+    light_yellow_panel.back_color(colors::light_yellow());
   }
   
   static void main() {
@@ -32,10 +32,10 @@ public:
   
 private:
   vertical_layout_panel layout_panel;
-  panel red_panel;
-  panel green_panel;
-  panel blue_panel;
-  panel yellow_panel;
+  panel light_pink_panel;
+  panel light_green_panel;
+  panel light_blue_panel;
+  panel light_yellow_panel;
 };
 
 startup_(form_main);
