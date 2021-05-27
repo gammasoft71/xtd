@@ -10,6 +10,7 @@ add_projects(
   busy_dialog
   color_box
   color_dialog
+  debug_message_box
   exception_box
   exception_dialog
   folder_browser_dialog
@@ -21,4 +22,5 @@ add_projects(
   open_file_dialog
   progress_dialog
   save_file_dialog
+  trace_message_box
 )
