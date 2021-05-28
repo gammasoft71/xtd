@@ -11,10 +11,10 @@ public:
     controls().push_back(layout_panel);
 
     layout_panel.controls().push_back_range({light_pink_panel, light_green_panel, light_blue_panel, light_yellow_panel});
-    layout_panel.control_layout_style(light_pink_panel, {true, size_type::absolute, 30});
-    layout_panel.control_layout_style(light_green_panel, {true, size_type::percent, .70f});
-    layout_panel.control_layout_style(light_blue_panel, {true, size_type::percent, .15f});
-    layout_panel.control_layout_style(light_yellow_panel, {true, size_type::auto_size});
+    layout_panel.control_layout_style(light_pink_panel, {30, size_type::absolute, true});
+    layout_panel.control_layout_style(light_green_panel, {.70f, size_type::percent, true});
+    layout_panel.control_layout_style(light_blue_panel, {.15f, size_type::percent, true});
+    layout_panel.control_layout_style(light_yellow_panel, {size_type::auto_size, true});
     layout_panel.dock(dock_style::fill);
     layout_panel.padding(forms::padding(5));
 

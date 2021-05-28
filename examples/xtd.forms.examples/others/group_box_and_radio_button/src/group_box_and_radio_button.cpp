@@ -10,8 +10,8 @@ public:
     text("Group box and radio button example");
     client_size({300, 160});
     
-    layout_panel->control_layout_style(*group_box1, {true, size_type::auto_size});
-    layout_panel->control_layout_style(*group_box2, {true, size_type::auto_size});
+    layout_panel->control_layout_style(*group_box1, {size_type::auto_size, true});
+    layout_panel->control_layout_style(*group_box2, {size_type::auto_size, true});
     layout_panel->dock(dock_style::fill);
     layout_panel->padding(10);
     
