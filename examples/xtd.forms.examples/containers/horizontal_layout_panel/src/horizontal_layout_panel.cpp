@@ -11,6 +11,7 @@ public:
 
     layout_panel.parent(*this);
     layout_panel.controls().push_back_range({light_pink_panel, light_green_panel, light_blue_panel, light_yellow_panel});
+    layout_panel.control_layout_style(light_blue_panel, horizontal_control_layout_style(false));
     layout_panel.dock(dock_style::fill);
     layout_panel.padding(forms::padding(5));
 

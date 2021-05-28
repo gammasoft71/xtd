@@ -51,16 +51,15 @@ void vertical_layout_panel::on_layout(const event_args& e) {
 
   int32_t left = padding().left();
   int32_t top = padding().top();
-  int32_t width = client_size().width() - padding().left() - padding().right();
+  int32_t width = 0;
   int32_t height = 0;
-  auto index = 0;
   for (auto& [control, layout_style] : control_layout_styles_) {
+    width = layout_style.expanded() ? client_size().width() - padding().left() - padding().right() : control.get().width();
     if (layout_style.size_type() == size_type::absolute) height = layout_style.height();
     else if (layout_style.size_type() == size_type::percent) height = static_cast<int32_t>(percent_height * (layout_style.height() / total_percent));
     else if (layout_style.size_type() == size_type::auto_size) height = auto_size_height / auto_size_control_count;
     else throw argument_exception(caller_info_);
     control.get().set_bounds(left, top, width, height);
     top += height + padding().bottom() + padding().top();
-    index++;
   }
 }
