@@ -16,9 +16,9 @@ namespace xtd {
     enum class size_type {
       /// @brief The control should be automatically sized to share space with its peers.
       auto_size = 0,
-      /// @brief The image within the picture_box is stretched or shrunk to fit the size of the picture_box.
+      /// @brief The control should be sized to an exact number of pixels.
       absolute = 1,
-      /// @brief The picture_box is sized equal to the size of the image that it contains.
+      /// @brief The control should be sized as a percentage of the parent container.
       percent = 2,
     };
 
