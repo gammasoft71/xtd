@@ -50,8 +50,9 @@ void horizontal_layout_panel::on_layout(const event_args& e) {
   int32_t left = padding().left();
   int32_t top = padding().top();
   int32_t width = 0;
-  int32_t height = client_size().height() - padding().top() - padding().bottom();
+  int32_t height = 0;
   for (auto& [control, layout_style] : control_layout_styles_) {
+    height = layout_style.expanded() ? client_size().height() - padding().top() - padding().bottom() : control.get().height();
     if (layout_style.size_type() == size_type::absolute) width = layout_style.width();
     else if (layout_style.size_type() == size_type::percent) width = static_cast<int32_t>(percent_width * (layout_style.width() / total_percent));
     else if (layout_style.size_type() == size_type::auto_size) width = auto_size_width / auto_size_control_count;
