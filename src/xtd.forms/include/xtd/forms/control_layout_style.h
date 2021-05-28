@@ -49,13 +49,23 @@ namespace xtd {
         return *this;
       }
 
+      /// @brief Gets a flag indicating if control is expanded to its containing layout container.
+      /// @return true if control expanded; otherwise false.
       bool expanded() const {return expanded_;}
+      /// @brief Sets a flag indicating if control is expanded to its containing layout container.
+      /// @param expanded true if control expanded; otherwise false.
       control_layout_style& expanded(bool expanded) {
         expanded_ = expanded;
         return *this;
       }
 
+      /// @brief Gets a flag indicating how a control should be align to its containing layout container.
+      /// @return align One of the content_alignment values. The default is middle_center.
+      /// @remarks This property work only if expanded = false.
       xtd::forms::content_alignment align() const {return align_;}
+      /// @brief Sets a flag indicating how a control should be align to its containing layout container.
+      /// @param align One of the content_alignment values. The default is middle_center.
+      /// @remarks This property work only if expanded = false.
       control_layout_style& align(xtd::forms::content_alignment align) {
         align_ = align;
         return *this;
