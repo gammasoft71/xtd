@@ -49,11 +49,17 @@ void vertical_layout_panel::on_layout(const event_args& e) {
   int32_t percent_height = static_cast<int32_t>(auto_size_height * total_percent);
   auto_size_height -= percent_height;
 
-  int32_t left = padding().left();
+  int32_t left = 0;
   int32_t top = padding().top();
   int32_t width = 0;
   int32_t height = 0;
   for (auto& [control, layout_style] : control_layout_styles_) {
+    if (layout_style.expanded()) left = padding().left();
+    else {
+      if (layout_style.align() == content_alignment::top_left || layout_style.align() == content_alignment::middle_left || layout_style.align() == content_alignment::bottom_left) left = padding().left();
+      else if (layout_style.align() == content_alignment::top_right || layout_style.align() == content_alignment::middle_right || layout_style.align() == content_alignment::bottom_right) left =  padding().top() + client_size().width() - padding().left() - padding().right() - control.get().width();
+      else  left = client_size().width() / 2 - control.get().width() / 2;
+    }
     width = layout_style.expanded() ? client_size().width() - padding().left() - padding().right() : control.get().width();
     if (layout_style.size_type() == size_type::absolute) height = layout_style.height();
     else if (layout_style.size_type() == size_type::percent) height = static_cast<int32_t>(percent_height * (layout_style.height() / total_percent));
