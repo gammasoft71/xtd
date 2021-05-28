@@ -12,10 +12,12 @@ namespace examples {
       client_size({360, 240});
 
       layout_panel.parent(*this);
+      layout_panel.controls().push_back_range({list_box_left, list_box_right});
+      layout_panel.control_layout_style(list_box_left, {true, size_type::auto_size});
+      layout_panel.control_layout_style(list_box_right, {true, size_type::auto_size});
       layout_panel.dock(dock_style::fill);
       layout_panel.padding(forms::padding(20));
       
-      list_box_left.parent(layout_panel);
       list_box_left.double_click += [&] {
         if (list_box_left.selected_index() != list_box_left.npos) {
           list_box_right.items().push_back(list_box_left.selected_item());
@@ -24,7 +26,6 @@ namespace examples {
         }
       };
 
-      list_box_right.parent(layout_panel);
       list_box_right.sorted(true);
       list_box_right.double_click += [&] {
         if (list_box_right.selected_index() != list_box_right.npos) {
