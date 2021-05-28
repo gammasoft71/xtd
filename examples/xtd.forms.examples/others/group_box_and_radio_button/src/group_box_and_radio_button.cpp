@@ -22,6 +22,7 @@ public:
     layout_panel_group_box2->padding(5);
 
     radio_button1->checked(true);
+    radio_button2->hide();
     radio_button5->checked(true);
   }
   
