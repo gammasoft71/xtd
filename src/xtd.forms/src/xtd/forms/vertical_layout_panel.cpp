@@ -35,8 +35,8 @@ void vertical_layout_panel::on_layout(const event_args& e) {
   panel::on_layout(e);
   if (!parent() && controls().size() == 0) return;
   
-  int32_t auto_size_height = client_size().height();
   size_t auto_size_control_count = count_if(control_layout_styles_.begin(), control_layout_styles_.end(), [](auto layout_style)->bool {return layout_style.second.size_type() == size_type::auto_size;});
+  int32_t auto_size_height = client_size().height() - static_cast<int32_t>(control_layout_styles().size() * padding().top()) - static_cast<int32_t>(control_layout_styles().size() * padding().bottom());
 
   int32_t absolute_height = 0;
   for (auto& [control, layout_style] : control_layout_styles_)
@@ -50,7 +50,7 @@ void vertical_layout_panel::on_layout(const event_args& e) {
   auto_size_height -= percent_height;
 
   int32_t left = padding().left();
-  int32_t top = 0;
+  int32_t top = padding().top();
   int32_t width = client_size().width() - padding().left() - padding().right();
   int32_t height = 0;
   auto index = 0;
