@@ -15,7 +15,8 @@ public:
     layout_panel.control_layout_style(light_green_panel, vertical_control_layout_style(size_type::percent, .70));
     layout_panel.control_layout_style(light_blue_panel, vertical_control_layout_style(size_type::percent, .15));
     layout_panel.dock(dock_style::fill);
-    
+    layout_panel.padding(forms::padding(5));
+
     light_pink_panel.back_color(colors::light_pink());
     light_green_panel.back_color(colors::light_green());
     light_blue_panel.back_color(colors::light_blue());
