@@ -1,16 +1,33 @@
+#include <xtd/argument_exception.h>
 #include "../../../include/xtd/forms/vertical_layout_panel.h"
 
 using namespace xtd;
 using namespace xtd::forms;
 
+const vertical_control_layout_style& vertical_layout_panel::control_layout_style(const const_control_ref& control) const {
+  auto it = control_layout_styles_.find(control);
+  if (it == control_layout_styles_.end()) throw argument_exception(caller_info_);
+  return it->second;
+}
+
+vertical_layout_panel& vertical_layout_panel::control_layout_style(const const_control_ref& control, const vertical_control_layout_style& value) {
+  auto it = control_layout_styles_.find(control);
+  if (it == control_layout_styles_.end()) throw argument_exception(caller_info_);
+  if (it->second != value) {
+    it->second = value;
+    perform_layout();
+  }
+  return *this;
+}
+
 void vertical_layout_panel::on_control_added(const xtd::forms::control_event_args& e) {
   panel::on_control_added(e);
-  //control_layout_styles_[const_control_ref(e.control())] = vertical_control_layout_style();
+  control_layout_styles_[e.control()] = vertical_control_layout_style();
 }
 
 void vertical_layout_panel::on_control_removed(const xtd::forms::control_event_args& e) {
   panel::on_control_removed(e);
-  //control_layout_styles_.erase(const_control_ref(e.control()));
+  control_layout_styles_.erase(e.control());
 }
 
 void vertical_layout_panel::on_layout(const event_args& e) {
