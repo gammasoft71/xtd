@@ -12,5 +12,5 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    using vertical_control_layout_style_collection = std::map<const_control_ref, vertical_control_layout_style, const_control_ref_less>;  }
+    using vertical_control_layout_style_collection = std::map<control_ref, vertical_control_layout_style, control_ref_less>;  }
 }

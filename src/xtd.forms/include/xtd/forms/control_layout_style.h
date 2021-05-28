@@ -21,6 +21,7 @@ namespace xtd {
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
       explicit control_layout_style(xtd::forms::size_type size_type) : size_type_(size_type) {}
 
+    public:
       /// @brief Gets a flag indicating how a control should be sized relative to its containing layout container.
       /// @return One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
       xtd::forms::size_type size_type() const {return size_type_;}

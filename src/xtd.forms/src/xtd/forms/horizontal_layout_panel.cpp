@@ -3,13 +3,13 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-const horizontal_control_layout_style& horizontal_layout_panel::control_layout_style(const const_control_ref& control) const {
+const horizontal_control_layout_style& horizontal_layout_panel::control_layout_style(const control_ref& control) const {
   auto it = control_layout_styles_.find(control);
   if (it == control_layout_styles_.end()) throw argument_exception(caller_info_);
   return it->second;
 }
 
-horizontal_layout_panel& horizontal_layout_panel::control_layout_style(const const_control_ref& control, const horizontal_control_layout_style& value) {
+horizontal_layout_panel& horizontal_layout_panel::control_layout_style(const control_ref& control, const horizontal_control_layout_style& value) {
   auto it = control_layout_styles_.find(control);
   if (it == control_layout_styles_.end()) throw argument_exception(caller_info_);
   if (it->second != value) {
@@ -21,12 +21,12 @@ horizontal_layout_panel& horizontal_layout_panel::control_layout_style(const con
 
 void horizontal_layout_panel::on_control_added(const xtd::forms::control_event_args& e) {
   panel::on_control_added(e);
-  control_layout_styles_[e.control()] = horizontal_control_layout_style();
+  control_layout_styles_[const_cast<xtd::forms::control&>(e.control())] = horizontal_control_layout_style();
 }
 
 void horizontal_layout_panel::on_control_removed(const xtd::forms::control_event_args& e) {
   panel::on_control_removed(e);
-  control_layout_styles_.erase(const_control_ref(e.control()));
+  control_layout_styles_.erase(const_cast<xtd::forms::control&>(e.control()));
 }
 
 void horizontal_layout_panel::on_layout(const event_args& e) {
