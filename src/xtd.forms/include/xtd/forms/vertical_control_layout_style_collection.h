@@ -2,6 +2,8 @@
 /// @brief Contains xtd::forms::vertical_control_layout_style_collection typedef.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+#include <utility>
+#include <vector>
 #include "vertical_control_layout_style.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -12,5 +14,5 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    using vertical_control_layout_style_collection = std::map<control_ref, vertical_control_layout_style, control_ref_less>;  }
+    using vertical_control_layout_style_collection = std::vector<std::pair<control_ref, vertical_control_layout_style>>;  }
 }
