@@ -5,7 +5,8 @@ using namespace xtd::forms;
 
 void horizontal_layout_panel::on_control_added(const xtd::forms::control_event_args& e) {
   panel::on_control_added(e);
-  //control_layout_styles_[e.control()] = horizontal_control_layout_style();
+  //control_layout_styles_[const_control_ref(e.control())] = horizontal_control_layout_style();
+  //control_layout_styles_.insert_or_assign(const_control_ref(e.control()), horizontal_control_layout_style());
 }
 
 void horizontal_layout_panel::on_control_removed(const xtd::forms::control_event_args& e) {
