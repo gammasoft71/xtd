@@ -22,12 +22,33 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms
     using const_control_ref = std::reference_wrapper<const control>;
+
+    /// @brief Represents less comparator for control_ref.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms
+    struct control_ref_less {
+      /// @brief Compare two specified control_ref.
+      /// @param value1 The first value to compare.
+      /// @param value2 The second value to compare.
+      /// @return true if value1 < value2; otherwise false.
+      bool operator()(const control_ref& value1, const control_ref& value2) const {
+        return &value1.get() < &value2.get();
+      }
+    };
+
+    /// @brief Represents less comparator for const const_control_ref.
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms
+    struct const_control_ref_less {
+      /// @brief Compare two specified const_control_ref.
+      /// @param value1 The first value to compare.
+      /// @param value2 The second value to compare.
+      /// @return true if value1 < value2; otherwise false.
+      bool operator()(const const_control_ref& value1, const const_control_ref& value2) const {
+        return &value1.get() < &value2.get();
+      }
+    };
   }
 }
-
-/// @cond
-/// Using xtd::forms::control::operator< in external method instead member because and  std::map<const_control_ref, ...>> make error with operator<.
-/// See https://stackoverflow.com/questions/9139748/using-stdreference-wrapper-as-the-key-in-a-stdmap
-inline bool operator<(const xtd::forms::control_ref value1, const xtd::forms::control_ref value2) {return &value1.get() < &value2.get();}
-inline bool operator<(const xtd::forms::const_control_ref value1, const xtd::forms::const_control_ref value2) {return &value1.get() < &value2.get();}
-/// @endcond

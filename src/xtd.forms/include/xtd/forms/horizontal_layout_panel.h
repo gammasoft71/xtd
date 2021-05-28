@@ -33,8 +33,20 @@ namespace xtd {
       /// @brief Initialises a new instance of horizontal layout panel class.
       horizontal_layout_panel() = default;
       
+      /// @brief Gets horizontal control layout style for all child controls.
+      /// @return The horizontal control layout style collection.
       const horizontal_control_layout_style_collection& control_layout_styles() const {return control_layout_styles_;}
-      horizontal_control_layout_style_collection& control_layout_styles() {return control_layout_styles_;}
+      
+      /// @brief Gets horizontal control layout style for specified child controls.
+      /// @param control The control to get horizontal control layout style.
+      /// @return The horizontal control layout style for the specified control.
+      /// @exception xtd::argument_exception container does not contains control.
+      const horizontal_control_layout_style& control_layout_style(const const_control_ref& control) const;
+      /// @brief Sets horizontal control layout style for specified child controls.
+      /// @param control The control to get horizontal control layout style.
+      /// @param value The horizontal control layout style for the specified control.
+      /// @exception xtd::argument_exception container does not contains control.
+      horizontal_layout_panel& control_layout_style(const const_control_ref& control, const horizontal_control_layout_style& value);
 
     protected:
       void on_control_added(const xtd::forms::control_event_args& e) override;

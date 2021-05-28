@@ -9,20 +9,14 @@ public:
   form_main() {
     text("Horizontal layout panel example");
 
-    layout_panel.parent(*this);
+    layout_panel.controls().push_back_range({light_pink_panel, light_green_panel, light_blue_panel, light_yellow_panel});
     layout_panel.dock(dock_style::fill);
     layout_panel.padding(forms::padding(5));
-    
-    light_pink_panel.parent(layout_panel);
+    layout_panel.parent(*this);
+
     light_pink_panel.back_color(colors::light_pink());
-    
-    light_green_panel.parent(layout_panel);
     light_green_panel.back_color(colors::light_green());
-    
-    light_blue_panel.parent(layout_panel);
     light_blue_panel.back_color(colors::light_blue());
-    
-    light_yellow_panel.parent(layout_panel);
     light_yellow_panel.back_color(colors::light_yellow());
   }
   
