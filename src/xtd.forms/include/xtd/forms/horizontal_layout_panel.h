@@ -41,12 +41,12 @@ namespace xtd {
       /// @param control The control to get horizontal control layout style.
       /// @return The horizontal control layout style for the specified control.
       /// @exception xtd::argument_exception container does not contains control.
-      const horizontal_control_layout_style& control_layout_style(const const_control_ref& control) const;
+      const horizontal_control_layout_style& control_layout_style(const control_ref& control) const;
       /// @brief Sets horizontal control layout style for specified child controls.
       /// @param control The control to get horizontal control layout style.
       /// @param value The horizontal control layout style for the specified control.
       /// @exception xtd::argument_exception container does not contains control.
-      horizontal_layout_panel& control_layout_style(const const_control_ref& control, const horizontal_control_layout_style& value);
+      horizontal_layout_panel& control_layout_style(const control_ref& control, const horizontal_control_layout_style& value);
 
     protected:
       void on_control_added(const xtd::forms::control_event_args& e) override;
