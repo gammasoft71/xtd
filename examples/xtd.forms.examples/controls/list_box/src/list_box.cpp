@@ -11,10 +11,11 @@ namespace examples {
       text("List box example");
       client_size({360, 240});
 
-      list_box_left.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom);
-      list_box_left.location({20, 20});
-      list_box_left.parent(*this);
-      list_box_left.size({150, 200});
+      layout_panel.parent(*this);
+      layout_panel.dock(dock_style::fill);
+      layout_panel.padding(forms::padding(20));
+      
+      list_box_left.parent(layout_panel);
       list_box_left.double_click += [&] {
         if (list_box_left.selected_index() != list_box_left.npos) {
           list_box_right.items().push_back(list_box_left.selected_item());
@@ -23,11 +24,8 @@ namespace examples {
         }
       };
 
-      list_box_right.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
-      list_box_right.location({190, 20});
-      list_box_right.parent(*this);
+      list_box_right.parent(layout_panel);
       list_box_right.sorted(true);
-      list_box_right.size({150, 200});
       list_box_right.double_click += [&] {
         if (list_box_right.selected_index() != list_box_right.npos) {
           list_box_left.items().push_back(list_box_right.selected_item());
@@ -41,6 +39,7 @@ namespace examples {
     }
     
   private:
+    horizontal_layout_panel layout_panel;
     list_box list_box_left;
     list_box list_box_right;
   };
