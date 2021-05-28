@@ -1,5 +1,6 @@
 #include <xtd/xtd>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -9,51 +10,34 @@ public:
     text("Group box and radio button example");
     client_size({300, 160});
     
-    group_box1.parent(*this);
-    group_box1.bounds({10, 10, 135, 140});
-    group_box1.text("Group 1");
+    layout_panel->control_layout_style(*group_box1, {true, size_type::auto_size});
+    layout_panel->control_layout_style(*group_box2, {true, size_type::auto_size});
+    layout_panel->dock(dock_style::fill);
+    layout_panel->padding(10);
     
-    group_box2.parent(*this);
-    group_box2.bounds({155, 10, 135, 140});
-    group_box2.text("Group 2");
-    
-    radio_button1.checked(true);
-    radio_button1.location({20, 10});
-    radio_button1.parent(group_box1);
-    radio_button1.text("radio 1");
-    
-    radio_button2.location({20, 40});
-    radio_button2.parent(group_box1);
-    radio_button2.text("radio 2");
+    layout_panel_group_box1->dock(dock_style::fill);
+    layout_panel_group_box1->padding(5);
 
-    radio_button3.location({20, 70});
-    radio_button3.parent(group_box1);
-    radio_button3.text("radio 3");
+    layout_panel_group_box2->dock(dock_style::fill);
+    layout_panel_group_box2->padding(5);
 
-    radio_button4.location({20, 10});
-    radio_button4.parent(group_box2);
-    radio_button4.text("radio 4");
-
-    radio_button5.checked(true);
-    radio_button5.location({20, 40});
-    radio_button5.parent(group_box2);
-    radio_button5.text("radio 5");
-
-    radio_button6.location({20, 70});
-    radio_button6.parent(group_box2);
-    radio_button6.text("radio 6");
+    radio_button1->checked(true);
+    radio_button2->hide();
+    radio_button5->checked(true);
   }
   
 private:
-  group_box group_box1;
-  group_box group_box2;
-  
-  radio_button radio_button1;
-  radio_button radio_button2;
-  radio_button radio_button3;
-  radio_button radio_button4;
-  radio_button radio_button5;
-  radio_button radio_button6;
+  unique_ptr<horizontal_layout_panel> layout_panel = create<horizontal_layout_panel>(*this);
+  unique_ptr<group_box> group_box1 = create<group_box>(*layout_panel, "Group 1");
+  unique_ptr<vertical_layout_panel> layout_panel_group_box1 = create<vertical_layout_panel>(*group_box1);
+  unique_ptr<radio_button> radio_button1 = create<radio_button>(*layout_panel_group_box1, "radio 1");
+  unique_ptr<radio_button> radio_button2 = create<radio_button>(*layout_panel_group_box1, "radio 2");
+  unique_ptr<radio_button> radio_button3 = create<radio_button>(*layout_panel_group_box1, "radio 3");
+  unique_ptr<group_box> group_box2 = create<group_box>(*layout_panel, "Group 2");
+  unique_ptr<vertical_layout_panel> layout_panel_group_box2 = create<vertical_layout_panel>(*group_box2);
+  unique_ptr<radio_button> radio_button4 = create<radio_button>(*layout_panel_group_box2, "radio 4");
+  unique_ptr<radio_button> radio_button5 = create<radio_button>(*layout_panel_group_box2, "radio 5");
+  unique_ptr<radio_button> radio_button6 = create<radio_button>(*layout_panel_group_box2, "radio 6");
 };
 
 int main() {

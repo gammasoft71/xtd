@@ -38,12 +38,12 @@ void horizontal_layout_panel::on_layout(const event_args& e) {
   
   int32_t absolute_width = 0;
   for (auto& [control, layout_style] : control_layout_styles_)
-    if (layout_style.size_type() == size_type::absolute) absolute_width += layout_style.width();
+    if (layout_style.size_type() == size_type::absolute) absolute_width += layout_style.width().value_or(control.get().default_size().width());;
   auto_size_width -= absolute_width;
   
   float total_percent = 0;
   for (auto& [control, layout_style] : control_layout_styles_)
-    if (layout_style.size_type() == size_type::percent) total_percent += layout_style.width();
+    if (layout_style.size_type() == size_type::percent) total_percent += layout_style.width().value_or(0);
   int32_t percent_width = static_cast<int32_t>(auto_size_width * total_percent);
   auto_size_width -= percent_width;
   
@@ -59,8 +59,8 @@ void horizontal_layout_panel::on_layout(const event_args& e) {
       else top = client_size().height() / 2 - control.get().height() / 2;
     }
     height = layout_style.expanded() ? client_size().height() - padding().top() - padding().bottom() : control.get().height();
-    if (layout_style.size_type() == size_type::absolute) width = layout_style.width();
-    else if (layout_style.size_type() == size_type::percent) width = static_cast<int32_t>(percent_width * (layout_style.width() / total_percent));
+    if (layout_style.size_type() == size_type::absolute) width = layout_style.width().value_or(control.get().default_size().width());
+    else if (layout_style.size_type() == size_type::percent) width = static_cast<int32_t>(percent_width * (layout_style.width().value_or(0) / total_percent));
     else if (layout_style.size_type() == size_type::auto_size) width = auto_size_width / auto_size_control_count;
     else throw argument_exception(caller_info_);
     control.get().set_bounds(left, top, width, height);
