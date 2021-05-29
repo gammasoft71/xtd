@@ -14,7 +14,7 @@
 
 /// @cond
 #define __GCC_VERSION__ (__GNUC__ * 10000 + __GNUC_MINOR__ * 100 + __GNUC_PATCHLEVEL__)
-#if !defined(WIN32) && (__cplusplus < 201707L || (!__clang__ && __GCC_VERSION__ < 100000))
+#if __cplusplus < 201707L || (!__clang__ && __GCC_VERSION__ < 100000)
 namespace std {
   namespace chrono {
     using days = std::chrono::duration<long, std::ratio<86400>>;
