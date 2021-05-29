@@ -6,6 +6,7 @@
 /// @endcond
 
 #include <cstdint>
+#include <functional>
 #include <memory>
 #include <set>
 #include <thread>
@@ -383,24 +384,24 @@ namespace xtd {
           control_ = new control_wrapper<control_type>(this, args...);
           control_->SetClientData(this);
           destroyed_ = false;
-          def_wnd_proc += {static_cast<control_wrapper<control_type>&>(*control_), &control_wrapper<control_type>::def_wnd_proc};
+          def_wnd_proc = std::bind(&control_wrapper<control_type>::def_wnd_proc, static_cast<control_wrapper<control_type>*>(control_), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6);
         }
         
         void destroy() {
+          def_wnd_proc = nullptr;
+          wnd_proc = nullptr;
           destroyed_ = true;
           control_->Destroy();
-          //def_wnd_proc -= {static_cast<control_wrapper<control_type>&>(*control_), &control_wrapper<control_type>::def_wnd_proc};
         }
 
         intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
           if (destroyed_) return 0;
           if (xtd::drawing::native::wx_application::message_filter(hwnd, msg, wparam, lparam, handle)) return call_def_wnd_proc(hwnd, msg, wparam, lparam, 1, handle);
-          if (wnd_proc.is_empty()) return call_def_wnd_proc(hwnd, msg, wparam, lparam, 0, handle);
+          if (!wnd_proc) return call_def_wnd_proc(hwnd, msg, wparam, lparam, 0, handle);
 
           //return wnd_proc(hwnd, msg, wparam, lparam, handle);
           intptr_t result = 0;
-          for (auto& fct : wnd_proc.functions())
-            if (!destroyed_ && fct != nullptr) result = fct(hwnd, msg, wparam, lparam, handle);
+          if (wnd_proc && !destroyed_) result = wnd_proc(hwnd, msg, wparam, lparam, handle);
           return result;
         }
         
@@ -451,10 +452,10 @@ namespace xtd {
         
         void clear_control() {control_ = nullptr;}
                 
-        intptr_t call_def_wnd_proc(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle) {return def_wnd_proc(hwnd, msg, wparam, lparam, result, handle);}
+        intptr_t call_def_wnd_proc(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle) {return def_wnd_proc ? def_wnd_proc(hwnd, msg, wparam, lparam, result, handle) : 0;}
         
-        event<control_handler, delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>> wnd_proc;
-        event<control_handler, delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t, intptr_t)>> def_wnd_proc;
+        std::function<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)> wnd_proc;
+        std::function<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t, intptr_t)> def_wnd_proc;
         
       private:
         wxWindow* control_ = nullptr;

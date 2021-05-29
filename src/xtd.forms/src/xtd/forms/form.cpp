@@ -266,7 +266,6 @@ forms::dialog_result form::show_dialog() {
   result = static_cast<forms::dialog_result>(native::form::show_dialog(handle()));
   application::raise_leave_thread_modal(event_args::empty);
   set_state(state::modal, false);
-  destroy_control();
   return result;
 }
 
@@ -279,7 +278,6 @@ forms::dialog_result form::show_dialog(const iwin32_window& owner) {
   forms::dialog_result result = dialog_result_ = forms::dialog_result::none;
   application::raise_enter_thread_modal(event_args::empty);
   result = static_cast<forms::dialog_result>(native::form::show_dialog(handle()));
-  destroy_control();
   return result;
 }
 
@@ -303,7 +301,6 @@ forms::dialog_result form::show_sheet_dialog(const iwin32_window& owner) {
   forms::dialog_result result = dialog_result_ = forms::dialog_result::none;
   application::raise_enter_thread_modal(event_args::empty);
   result = static_cast<forms::dialog_result>(native::form::show_sheet_dialog(handle()));
-  destroy_control();
   return result;
 }
 
@@ -417,9 +414,7 @@ void form::wm_close(message &message) {
   if (event_args.cancel() != true) {
     can_close_ = true;
     hide();
-    if (!get_state(state::modal))
-      destroy_control();
-    else {
+    if (get_state(state::modal)) {
       if (dialog_result_ == forms::dialog_result::none) dialog_result_ = forms::dialog_result::cancel;
       native::form::end_dialog(handle(), static_cast<int32_t>(dialog_result_));
       application::raise_leave_thread_modal(event_args::empty);
@@ -427,6 +422,7 @@ void form::wm_close(message &message) {
       parent_ = parent_before_show_dialog_;
     }
     on_form_closed(form_closed_event_args());
+    destroy_control();
   }
 }
 

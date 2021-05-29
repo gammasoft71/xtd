@@ -229,11 +229,10 @@ namespace xtd {
         /// @param text The text associated with this control.
         /// @warning Internal use only
         static void text(intptr_t control, const std::string& text);
-        /// @brief Unregister a specified wnd proc from the message pump of the control.
+        /// @brief Unregister the wnd proc previously registered.
         /// @param control Control window handle.
-        /// @param wnd_proc A wnd proc delegate to unregister.
         /// @warning Internal use only
-        static void unregister_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc);
+        static void unregister_wnd_proc(intptr_t control);
         /// @brief Causes the control to redraw the invalidated regions within its client area.
         /// @param control Control window handle.
         /// @warning Internal use only
