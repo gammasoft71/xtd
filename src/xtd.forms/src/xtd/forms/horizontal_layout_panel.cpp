@@ -1,5 +1,7 @@
+#include <xtd/argument_exception.h>
 #include "../../../include/xtd/forms/horizontal_layout_panel.h"
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -40,7 +42,7 @@ void horizontal_layout_panel::on_layout(const event_args& e) {
   
   int32_t absolute_width = 0;
   for (auto& [control, layout_style] : control_layout_styles_)
-    if (layout_style.size_type() == size_type::absolute) absolute_width += layout_style.width().value_or(control.get().default_size().width());;
+    if (layout_style.size_type() == size_type::absolute) absolute_width += static_cast<int32_t>(layout_style.width().value_or(control.get().default_size().width()));
   auto_size_width -= absolute_width;
   
   float total_percent = 0;
@@ -61,9 +63,9 @@ void horizontal_layout_panel::on_layout(const event_args& e) {
       else top = client_size().height() / 2 - control.get().height() / 2;
     }
     height = layout_style.expanded() ? client_size().height() - padding().top() - padding().bottom() : control.get().height();
-    if (layout_style.size_type() == size_type::absolute) width = layout_style.width().value_or(control.get().default_size().width());
+    if (layout_style.size_type() == size_type::absolute) width = static_cast<int32_t>(layout_style.width().value_or(control.get().default_size().width()));
     else if (layout_style.size_type() == size_type::percent) width = static_cast<int32_t>(percent_width * (layout_style.width().value_or(0) / total_percent));
-    else if (layout_style.size_type() == size_type::auto_size) width = auto_size_width / auto_size_control_count;
+    else if (layout_style.size_type() == size_type::auto_size) width = static_cast<int32_t>(auto_size_width / auto_size_control_count);
     else throw argument_exception(caller_info_);
     control.get().set_bounds(left, top, width, height);
     left += width + padding().right() + padding().left();
