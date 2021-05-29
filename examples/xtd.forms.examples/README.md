@@ -74,6 +74,7 @@
 ## [containers](containers/README.md)
 
 * **flow_layout_panel** represents a panel that dynamically lays out its contents horizontally or vertically.
+* [collapsible_panel](containers/collapsible_panel/README.md) used to group collections of controls in a collapsible container.
 * [group_box](containers/group_box/README.md) represents a Windows control that displays a frame around a group of controls with an optional caption.
 * [horizontal_layout_panel](containers/horizontal_layout_panel/README.md) used to group collections of horizontal alligned controls.
 * [panel](containers/panel/README.md) used to group collections of controls.
