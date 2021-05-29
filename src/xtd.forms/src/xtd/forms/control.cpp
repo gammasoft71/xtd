@@ -377,7 +377,7 @@ void control::create_handle() {
 }
 
 void control::destroy_handle() {
-  if (handle_) native::control::unregister_wnd_proc(handle_, {*this, &control::wnd_proc_});
+  if (handle_) native::control::unregister_wnd_proc(handle_);
   handles_.erase(handle_);
   on_handle_destroyed(event_args::empty);
   native::control::destroy(handle_);
