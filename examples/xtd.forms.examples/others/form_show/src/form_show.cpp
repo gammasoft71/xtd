@@ -15,6 +15,12 @@ namespace example {
 
       layout_panel.dock(dock_style::fill);
       layout_panel.controls().push_back_range({button_normal, button_modeless, button_top_most, button_modal, button_sheet, button_sheet_modal});
+      layout_panel.control_layout_style(button_normal, { size_type::auto_size, true });
+      layout_panel.control_layout_style(button_modeless, { size_type::auto_size, true });
+      layout_panel.control_layout_style(button_top_most, { size_type::auto_size, true });
+      layout_panel.control_layout_style(button_modal, { size_type::auto_size, true });
+      layout_panel.control_layout_style(button_sheet, { size_type::auto_size, true });
+      layout_panel.control_layout_style(button_sheet_modal, { size_type::auto_size, true });
 
       button_normal.text("Show normal");
       button_normal.click += [&] {
