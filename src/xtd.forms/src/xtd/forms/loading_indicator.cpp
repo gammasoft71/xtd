@@ -1,4 +1,4 @@
-#include <cmath>
+#include <numbers>
 #include <xtd/drawing/solid_brush.h>
 #include <xtd/drawing/string_format.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
@@ -14,9 +14,8 @@ using namespace xtd;
 using namespace xtd::forms;
 
 namespace {
-  static double degrees_to_radians(double degrees) {
-    /// @todo replace by std::numbers::pi when all is in c++20
-    return M_PI / 180 * degrees;
+  static float degrees_to_radians(float degrees) {
+    return static_cast<float>(std::numbers::pi / 180 * degrees);
   }
 }
 
@@ -61,7 +60,7 @@ void loading_indicator::on_paint(paint_event_args& e) {
     for (int n = 0; n < intervals_; n++) {
       const int opacity_index = enabled() ? n + 1 : 2;
       const int opacity = opacity_index*(255 + 1)/intervals_ - 1;
-      e.graphics().fill_ellipse(xtd::drawing::solid_brush(xtd::drawing::color::from_argb(opacity, fore_color())), -(radius_factor_ / 2.f - 1.f) * width + width / radius_factor_ * 2.f, -(radius_factor_ / 2.f - 1.f) * height + height / radius_factor_ * 2.f, 2.f * width, 2.f *height);
+      e.graphics().fill_ellipse(xtd::drawing::solid_brush(xtd::drawing::color::from_argb(static_cast<uint8_t>(opacity), fore_color())), -(radius_factor_ / 2.f - 1.f) * width + width / radius_factor_ * 2.f, -(radius_factor_ / 2.f - 1.f) * height + height / radius_factor_ * 2.f, 2.f * width, 2.f *height);
       e.graphics().rotate_transform(angle);
     }
   }
