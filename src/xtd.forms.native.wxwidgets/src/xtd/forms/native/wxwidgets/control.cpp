@@ -29,6 +29,7 @@
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_group_box.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_label.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_list_box.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_loading_indicator.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_numeric_up_down.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_panel.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_picture_box.h"
@@ -92,6 +93,7 @@ intptr_t control::create(const forms::create_params& create_params) {
   if (create_params.class_name() == "groupbox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_group_box(create_params)));
   if (create_params.class_name() == "label") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_label(create_params)));
   if (create_params.class_name() == "listbox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_list_box(create_params)));
+  if (create_params.class_name() == "loadingindicator") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_loading_indicator(create_params)));
   if (create_params.class_name() == "numericupdown") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_numeric_up_down(create_params)));
   if (create_params.class_name() == "panel") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_panel(create_params)));
   if (create_params.class_name() == "picturebox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_picture_box(create_params)));
