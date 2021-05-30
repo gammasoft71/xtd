@@ -1,3 +1,4 @@
+#include <cmath>
 #include <xtd/drawing/solid_brush.h>
 #include <xtd/drawing/string_format.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
