@@ -86,6 +86,11 @@
 /// @warning Internal use only
 /// @ingroup native
 
+/// @defgroup li loading indicator styles
+/// @brief loading indicator styles definitions.
+/// @warning Internal use only
+/// @ingroup native
+
 /// @defgroup es edit styles
 /// @brief edit styles definitions.
 /// @warning Internal use only

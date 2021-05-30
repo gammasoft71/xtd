@@ -54,6 +54,8 @@ add_sources(
   include/xtd/forms/native/label.h
   include/xtd/forms/native/list_box.h
   include/xtd/forms/native/list_box_styles.h
+  include/xtd/forms/native/loading_indicator.h
+  include/xtd/forms/native/loading_indicator_styles.h
   include/xtd/forms/native/main_menu.h
   include/xtd/forms/native/menu.h
   include/xtd/forms/native/menu_item.h
