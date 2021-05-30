@@ -9,11 +9,11 @@ using namespace xtd;
 using namespace xtd::forms::native;
 
 void loading_indicator::start(intptr_t control) {
-  if (reinterpret_cast<wx_loading_indicator*>(control)->owner_draw_) return;
-  static_cast<wxActivityIndicator*>(reinterpret_cast<control_handler*>(control)->control())->Start();
+  if (control == 0 || reinterpret_cast<wx_loading_indicator*>(control)->owner_draw_) return;
+  static_cast<wxActivityIndicator*>(reinterpret_cast<wx_loading_indicator*>(control)->control())->Start();
 }
 
 void loading_indicator::stop(intptr_t control) {
-  if (reinterpret_cast<wx_loading_indicator*>(control)->owner_draw_) return;
-  static_cast<wxActivityIndicator*>(reinterpret_cast<control_handler*>(control)->control())->Stop();
+  if (control == 0 || reinterpret_cast<wx_loading_indicator*>(control)->owner_draw_) return;
+  static_cast<wxActivityIndicator*>(reinterpret_cast<wx_loading_indicator*>(control)->control())->Stop();
 }

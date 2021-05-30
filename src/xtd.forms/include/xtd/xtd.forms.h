@@ -126,6 +126,8 @@
 #include "xtd/forms/lcd_label.h"
 #include "xtd/forms/list_box.h"
 #include "xtd/forms/list_control.h"
+#include "xtd/forms/loading_indicator.h"
+#include "xtd/forms/loading_indicator_style.h"
 #include "xtd/forms/main_menu.h"
 #include "xtd/forms/menu.h"
 #include "xtd/forms/menu_item.h"

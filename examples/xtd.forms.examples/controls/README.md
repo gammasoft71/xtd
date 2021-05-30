@@ -23,6 +23,7 @@
 * **link_label** represents a Windows label control that can display hyperlinks.
 * [list_box](list_box/README.md) represents a Windows control to display a list of items.
 * **list_view** represents a Windows list view control, which displays a collection of items that can be displayed using one of four different views.
+* [loading_indicator](loading_indicator/README.md) represents a Windows control to display a loading indicator animation.
 * **masked_text_box** uses a mask to distinguish between proper and improper user input.
 * **month_calendar** specifies values for navigating among accessible objects.
 * **notify_icon** specifies a component that creates an icon in the notification area. This class cannot be inherited.

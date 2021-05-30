@@ -22,6 +22,7 @@ add_projects(
   label
   lcd_label
   list_box
+  loading_indicator
   nine_segment_display
   numeric_up_down
   picture_box

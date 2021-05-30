@@ -130,6 +130,8 @@ add_sources(
   include/xtd/forms/lcd_style.h
   include/xtd/forms/list_box.h
   include/xtd/forms/list_control.h
+  include/xtd/forms/loading_indicator.h
+  include/xtd/forms/loading_indicator_style.h
   include/xtd/forms/main_menu.h
   include/xtd/forms/menu.h
   include/xtd/forms/menu_item.h
@@ -271,6 +273,7 @@ add_sources(
   src/xtd/forms/label.cpp
   src/xtd/forms/list_box.cpp
   src/xtd/forms/list_control.cpp
+  src/xtd/forms/loading_indicator.cpp
   src/xtd/forms/main_menu.cpp
   src/xtd/forms/menu.cpp
   src/xtd/forms/menu_item.cpp
