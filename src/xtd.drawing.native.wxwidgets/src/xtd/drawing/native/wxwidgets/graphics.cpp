@@ -269,3 +269,13 @@ void graphics::measure_string(intptr_t hdc, const std::string &text, intptr_t fo
     if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Windows" && reinterpret_cast<wxFont*>(font)->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += std::ceil(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().GetFontMetrics().averageWidth / 2.3f);
   }
 }
+
+void graphics::rotate_transform(intptr_t hdc, float angle) {
+  wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
+  graphics.Rotate(angle);
+}
+
+void graphics::translate_clip(intptr_t hdc, int32_t dx, int32_t dy) {
+  wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
+  graphics.Translate(dx, dy);
+}
