@@ -219,6 +219,12 @@ namespace xtd {
       
       size_f measure_string(const std::string& text, const xtd::drawing::font& font);
       
+      void rotate_transform(float angle);
+
+      void translate_clip(int32_t dx, int32_t dy);
+
+      void translate_clip(float dx, float dy) {translate_clip(static_cast<int32_t>(dx), static_cast<int32_t>(dy));}
+
       std::string to_string() const {return strings::full_class_name(*this);}
       
       /// @cond

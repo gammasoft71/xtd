@@ -164,3 +164,11 @@ size_f graphics::measure_string(const std::string &text, const font &font) {
   native::graphics::measure_string(data_->handle_, text, font.handle(), width, height);
   return size_f(static_cast<float>(width), static_cast<float>(height));
 }
+
+void graphics::rotate_transform(float angle) {
+  native::graphics::rotate_transform(data_->handle_, angle);
+}
+
+void graphics::translate_clip(int32_t dx, int32_t dy) {
+  native::graphics::translate_clip(data_->handle_, dx, dy);
+}

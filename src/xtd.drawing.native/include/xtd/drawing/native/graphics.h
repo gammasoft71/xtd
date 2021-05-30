@@ -47,6 +47,8 @@ namespace xtd {
         static void fill_rounded_rectangle(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int32_t width, int32_t height, int32_t radius);
         static intptr_t from_image(intptr_t image);
         static void measure_string(intptr_t hdc, const std::string& text, intptr_t font, int32_t& width, int32_t& height);
+        static void rotate_transform(intptr_t hdc, float angle);
+        static void translate_clip(intptr_t hdc, int32_t dx, int32_t dy);
       };
     }
   }
