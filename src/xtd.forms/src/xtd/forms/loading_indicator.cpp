@@ -1,4 +1,4 @@
-#include <numbers>
+#include <cmath>
 #include <xtd/drawing/solid_brush.h>
 #include <xtd/drawing/string_format.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
@@ -15,7 +15,7 @@ using namespace xtd::forms;
 
 namespace {
   static float degrees_to_radians(float degrees) {
-    return static_cast<float>(std::numbers::pi / 180 * degrees);
+    return static_cast<float>(M_PI / 180 * degrees);
   }
 }
 
