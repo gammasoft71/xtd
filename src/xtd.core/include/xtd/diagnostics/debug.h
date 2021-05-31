@@ -2,6 +2,7 @@
 /// @brief Contains xtd::diagnostics::debug class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+#include <cstdint>
 #include <mutex>
 #include <string>
 #include "../core_export.h"
@@ -50,20 +51,20 @@ namespace xtd {
       /// @brief Gets the indent level.
       /// @return The indent level. The default is zero.
       /// @remarks The IndentLevel property represents the number of times the indent of size IndentSize is applied. This property is stored on per-thread/per-request basis.
-      static unsigned int indent_level();
+      static uint32_t indent_level();
       /// @brief Sets the indent level.
       /// @param indent_level The indent level. The default is zero.
       /// @remarks The IndentLevel property represents the number of times the indent of size IndentSize is applied. This property is stored on per-thread/per-request basis.
-      static void indent_level(unsigned int indent_level);
+      static void indent_level(uint32_t indent_level);
       
       /// @brief Gets the number of spaces in an indent.
       /// @return The number of spaces in an indent. The default is four.
       /// @remarks A ostream_trace_listener interprets this number as spaces. An event_log_trace_listener ignores this value.
-      static unsigned int indent_size();
+      static uint32_t indent_size();
       /// @brief Sets the number of spaces in an indent.
       /// @param indent_size The number of spaces in an indent. The default is four.
       /// @remarks A ostream_trace_listener interprets this number as spaces. An event_log_trace_listener ignores this value.
-      static void indent_size(unsigned int indent_size);
+      static void indent_size(uint32_t indent_size);
       
       /// @brief Gets the collection of listeners that is monitoring the trace output.
       /// @return A trace_listener_collection that represents a collection of type trace_listener monitoring the trace output.
