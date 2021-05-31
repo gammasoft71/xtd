@@ -187,6 +187,7 @@ add_sources(
   src/xtd/translator.cpp
   src/xtd/types.cpp
   src/xtd/types.cpp
+  src/xtd/diagnostics/console_trace_listener.cpp
   src/xtd/diagnostics/debug.cpp
   src/xtd/diagnostics/default_trace_listener.cpp
   src/xtd/diagnostics/process.cpp
