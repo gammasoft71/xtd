@@ -23,19 +23,19 @@ void debug::auto_flush(bool auto_flush) {
   auto_flush_ = auto_flush;
 }
 
-unsigned int debug::indent_level() {
+uint32_t debug::indent_level() {
   return indent_level_;
 }
 
-void debug::indent_level(unsigned int indent_level) {
+void debug::indent_level(uint32_t indent_level) {
   indent_level_ = indent_level;
 }
 
-unsigned int debug::indent_size() {
+uint32_t debug::indent_size() {
   return indent_size_;
 }
 
-void debug::indent_size(unsigned int indent_size) {
+void debug::indent_size(uint32_t indent_size) {
   indent_size_ = indent_size;
 }
 
