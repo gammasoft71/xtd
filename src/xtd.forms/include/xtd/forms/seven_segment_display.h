@@ -52,17 +52,17 @@ namespace xtd {
         return *this;
       }
 
-      /// @brief Gets the background segment transparency.
-      /// @return A double-precision value between 0.0 and 1.0 that represent the background segment transparency.
-      virtual double back_segment_transparency() const {return back_segment_transparency_;}
-      /// @brief Sets the background segment transparency.
-      /// @param value A double-precision value between 0.0 and 1.0 that represent the background segment transparency.
+      /// @brief Gets the background segment opacity.
+      /// @return A double-precision value between 0.0 and 1.0 that represent the background segment opacity.
+      virtual double back_segment_opacity() const {return back_segment_opacity_;}
+      /// @brief Sets the background segment opacity.
+      /// @param value A double-precision value between 0.0 and 1.0 that represent the background segment opacity.
       /// @exception xtd::argument_out_of_range_exception if value less than 0.0 or greater than 1.0.
       /// @return Current seven_segment_display.
-      virtual seven_segment_display& back_segment_transparency(double value) {
+      virtual seven_segment_display& back_segment_opacity(double value) {
         if (value < 0.0 || value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t, caller_info_);
-        if (back_segment_transparency_ != value) {
-          back_segment_transparency_ = value;
+        if (back_segment_opacity_ != value) {
+          back_segment_opacity_ = value;
           invalidate();
         }
         return *this;
@@ -177,13 +177,13 @@ namespace xtd {
       /// @brief Draw all background digit on specified graphics.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       virtual void draw_back_digit(drawing::graphics& graphics) {
-        draw_segment_a(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
-        draw_segment_b(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
-        draw_segment_c(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
-        draw_segment_d(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
-        draw_segment_e(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
-        draw_segment_f(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
-        draw_segment_g(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
+        draw_segment_a(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
+        draw_segment_b(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
+        draw_segment_c(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
+        draw_segment_d(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
+        draw_segment_e(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
+        draw_segment_f(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
+        draw_segment_g(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
       }
 
       /// @brief Draw segment a on specified graphics with specified color.
@@ -415,7 +415,7 @@ namespace xtd {
       forms::segments value_ = forms::segments::none;
       bool show_back_segment_ = true;
       std::optional<drawing::color> back_segment_color_;
-      double back_segment_transparency_ = 0.05;
+      double back_segment_opacity_ = 0.95;
       forms::segment_style segment_style_ = forms::segment_style::standard;
       std::optional<int32_t> thickness_;
       /// @endcond

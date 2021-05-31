@@ -26,14 +26,14 @@ void busy_dialog::reset() {
 void busy_dialog::show() {
   native_ = dialog_style_ == xtd::forms::dialog_style::system;
   if (native_)
-    handle_ = native::busy_dialog::create(0, xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(icon_)), text_, description_, back_color_, fore_color_, transparency_);
+    handle_ = native::busy_dialog::create(0, xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(icon_)), text_, description_, back_color_, fore_color_, opacity_);
   application::do_events();
 }
 
 void busy_dialog::show(const iwin32_window& owner) {
   native_ = dialog_style_ == xtd::forms::dialog_style::system;
   if (native_)
-    handle_ = native::busy_dialog::create(owner.handle(), xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(icon_)), text_, description_, back_color_, fore_color_, transparency_);
+    handle_ = native::busy_dialog::create(owner.handle(), xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(icon_)), text_, description_, back_color_, fore_color_, opacity_);
   application::do_events();
 }
 

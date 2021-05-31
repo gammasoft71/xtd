@@ -57,7 +57,7 @@ namespace xtd {
         virtual int32_t get_thickness() const = 0;
 
         virtual void set_back_digit_color(const xtd::drawing::color& value) = 0;
-        virtual void set_back_digit_transparency(double value) = 0;
+        virtual void set_back_digit_opacity(double value) = 0;
         virtual void set_character(wchar_t value) = 0;
         virtual void set_segment_style(forms::segment_style value) = 0;
         virtual void set_dot_matrix_style(forms::dot_matrix_style value) = 0;
@@ -74,7 +74,7 @@ namespace xtd {
         int32_t get_thickness() const override {return dot_matrix_display::thickness();}
         
         void set_back_digit_color(const xtd::drawing::color& value) override {dot_matrix_display::back_dot_color(value);}
-        void set_back_digit_transparency(double value) override {dot_matrix_display::back_dot_transparency(value);}
+        void set_back_digit_opacity(double value) override {dot_matrix_display::back_dot_opacity(value);}
         void set_character(wchar_t value) override {
           static std::map<wchar_t, dot_matrix_display::points_collection> characters {
             {'0', {{2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {1, 2}, {4, 2}, {5, 2}, {1, 3}, {3, 3}, {5, 3}, {1, 4}, {2, 4}, {5, 4}, {1, 5}, {5, 5}, {2, 6}, {3, 6}, {4, 6}}},
@@ -195,7 +195,7 @@ namespace xtd {
         int32_t get_thickness() const override {return fourteen_segment_display::thickness();}
         
         void set_back_digit_color(const xtd::drawing::color& value) override {fourteen_segment_display::back_segment_color(value);}
-        void set_back_digit_transparency(double value) override {fourteen_segment_display::back_segment_transparency(value);}
+        void set_back_digit_opacity(double value) override {fourteen_segment_display::back_segment_opacity(value);}
         void set_character(wchar_t value) override {
           static std::map<wchar_t, forms::segments> characters {
             {'0', forms::segments::a|forms::segments::b|forms::segments::c|forms::segments::d|forms::segments::e|forms::segments::f},
@@ -305,7 +305,7 @@ namespace xtd {
         int32_t get_thickness() const override {return nine_segment_display::thickness();}
         
         void set_back_digit_color(const xtd::drawing::color& value) override {nine_segment_display::back_segment_color(value);}
-        void set_back_digit_transparency(double value) override {nine_segment_display::back_segment_transparency(value);}
+        void set_back_digit_opacity(double value) override {nine_segment_display::back_segment_opacity(value);}
         void set_character(wchar_t value) override {
           static std::map<wchar_t, forms::segments> characters {
             {'0', forms::segments::a|forms::segments::b|forms::segments::c|forms::segments::d|forms::segments::e|forms::segments::f},
@@ -395,7 +395,7 @@ namespace xtd {
         int32_t get_thickness() const override {return seven_segment_display::thickness();}
 
         void set_back_digit_color(const xtd::drawing::color& value) override {seven_segment_display::back_segment_color(value);}
-        void set_back_digit_transparency(double value) override {seven_segment_display::back_segment_transparency(value);}
+        void set_back_digit_opacity(double value) override {seven_segment_display::back_segment_opacity(value);}
         void set_character(wchar_t value) override {
           static std::map<wchar_t, forms::segments> characters {
             {'0', forms::segments::a|forms::segments::b|forms::segments::c|forms::segments::d|forms::segments::e|forms::segments::f},
@@ -485,7 +485,7 @@ namespace xtd {
         int32_t get_thickness() const override {return sixteen_segment_display::thickness();}
         
         void set_back_digit_color(const xtd::drawing::color& value) override {sixteen_segment_display::back_segment_color(value);}
-        void set_back_digit_transparency(double value) override {sixteen_segment_display::back_segment_transparency(value);}
+        void set_back_digit_opacity(double value) override {sixteen_segment_display::back_segment_opacity(value);}
         void set_character(wchar_t value) override {
           static std::map<wchar_t, forms::segments> characters {
             {'0', forms::segments::a1|forms::segments::a2|forms::segments::b|forms::segments::c|forms::segments::d1|forms::segments::d2|forms::segments::e|forms::segments::f},
@@ -609,17 +609,17 @@ namespace xtd {
         return *this;
       }
       
-      /// @brief Gets the background digit transparency.
-      /// @return A double-precision value between 0.0 and 1.0 that represent the background digit transparency.
-      double back_digit_transparency() const {return back_digit_transparency_;}
-      /// @brief Sets the background digit transparency.
-      /// @param value A double-precision value between 0.0 and 1.0 that represent the background digit transparency.
+      /// @brief Gets the background digit opacity.
+      /// @return A double-precision value between 0.0 and 1.0 that represent the background digit opacity.
+      double back_digit_opacity() const {return back_digit_opacity_;}
+      /// @brief Sets the background digit opacity.
+      /// @param value A double-precision value between 0.0 and 1.0 that represent the background digit opacity.
       /// @exception xtd::argument_out_of_range_exception if value less than 0.0 or greater than 1.0.
       /// @return Current lcd_label.
-      lcd_label& back_digit_transparency(double value) {
+      lcd_label& back_digit_opacity(double value) {
         if (value < 0.0 || value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t, caller_info_);
-        if (back_digit_transparency_ != value) {
-          back_digit_transparency_ = value;
+        if (back_digit_opacity_ != value) {
+          back_digit_opacity_ = value;
           set_digits_params();
         }
         return *this;
@@ -794,7 +794,7 @@ namespace xtd {
           dynamic_cast<control*>(digit.get())->height(size_.height());
           dynamic_cast<control*>(digit.get())->left(offset_left);
           digit->set_back_digit_color(back_digit_color());
-          digit->set_back_digit_transparency(back_digit_transparency_);
+          digit->set_back_digit_opacity(back_digit_opacity_);
           digit->set_show_back_digit(show_back_digit_);
           digit->set_segment_style(segment_style_);
           digit->set_dot_matrix_style(dot_matrix_style_);
@@ -805,7 +805,7 @@ namespace xtd {
 
       bool show_back_digit_ = true;
       std::optional<xtd::drawing::color> back_digit_color_;
-      double back_digit_transparency_ = 0.05;
+      double back_digit_opacity_ = 0.05;
       std::optional<int32_t> digit_spacing_;
       forms::lcd_style lcd_style_ = forms::lcd_style::seven_segment_display;
       forms::segment_style segment_style_ = forms::segment_style::standard;

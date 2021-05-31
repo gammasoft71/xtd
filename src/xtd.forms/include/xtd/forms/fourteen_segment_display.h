@@ -51,14 +51,14 @@ namespace xtd {
  
       void draw_back_digit(drawing::graphics& graphics) override {
         seven_segment_display::draw_back_digit(graphics);
-        draw_segment_g1(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
-        draw_segment_g2(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
-        draw_segment_h(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
-        draw_segment_i(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
-        draw_segment_j(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
-        draw_segment_k(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
-        draw_segment_l(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
-        draw_segment_m(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
+        draw_segment_g1(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
+        draw_segment_g2(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
+        draw_segment_h(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
+        draw_segment_i(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
+        draw_segment_j(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
+        draw_segment_k(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
+        draw_segment_l(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
+        draw_segment_m(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
       }
 
       /// @brief Draw segment g1 on specified graphics with specified color.

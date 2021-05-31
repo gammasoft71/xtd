@@ -61,19 +61,19 @@ namespace xtd {
         return *this;
       }
 
-      /// @brief Gets the background dot transparency.
-      /// @return A double-precision value between 0.0 and 1.0 that represent the background dot transparency.
-      virtual double back_dot_transparency() const {return back_dot_transparency_;}
-      /// @brief Sets the background dot transparency.
-      /// @param value A double-precision value between 0.0 and 1.0 that represent the background dot transparency.
+      /// @brief Gets the background dot opacity.
+      /// @return A double-precision value between 0.0 and 1.0 that represent the background dot opacity.
+      virtual double back_dot_opacity() const {return back_dot_opacity_;}
+      /// @brief Sets the background dot opacity.
+      /// @param value A double-precision value between 0.0 and 1.0 that represent the background dot opacity.
       /// @exception xtd::argument_out_of_range_exception if value less than 0.0 or greater than 1.0.
       /// @return Current dot_matrix_display.
-      virtual dot_matrix_display& back_dot_transparency(double value) {
+      virtual dot_matrix_display& back_dot_opacity(double value) {
         if (value < 0.0 || value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t, caller_info_);
-        if (back_dot_transparency_ != value) {
-          back_dot_transparency_ = value;
-          if (back_dot_transparency_ < 0.0) back_dot_transparency_ = 0.0;
-          if (back_dot_transparency_ > 1.0) back_dot_transparency_ = 1.0;
+        if (back_dot_opacity_ != value) {
+          back_dot_opacity_ = value;
+          if (back_dot_opacity_ < 0.0) back_dot_opacity_ = 0.0;
+          if (back_dot_opacity_ > 1.0) back_dot_opacity_ = 1.0;
           invalidate();
         }
         return *this;
@@ -211,7 +211,7 @@ namespace xtd {
         for (int32_t y = 0; y < static_cast<int32_t>(dots_.size()); y++) {
           for (int32_t x = 0; x < static_cast<int32_t>(dots_[y].size()); x++) {
             if (dots_[y][x]) draw_dot(e.graphics(), fore_color(), {x, y});
-            else if (show_back_dot_) draw_dot(e.graphics(), drawing::color::average(back_color(), back_dot_color(), back_dot_transparency_), {x, y});
+            else if (show_back_dot_) draw_dot(e.graphics(), drawing::color::average(back_color(), back_dot_color(), 1.0 - back_dot_opacity_), {x, y});
           }
         }
         control::on_paint(e);
@@ -240,7 +240,7 @@ namespace xtd {
       dots_collection dots_ = dots_collection(matrix_size_.width(), std::vector<bool>(matrix_size_.height(), false));
       bool show_back_dot_ = true;
       std::optional<drawing::color> back_dot_color_;
-      double back_dot_transparency_ = 0.05;
+      double back_dot_opacity_ = 0.95;
       forms::dot_matrix_style dot_matrix_style_ = forms::dot_matrix_style::standard;
       std::optional<int32_t> thickness_;
       /// @endcond

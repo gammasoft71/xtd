@@ -21,8 +21,8 @@
 using namespace xtd;
 using namespace xtd::forms::native;
 
-intptr_t busy_dialog::create(intptr_t hwnd, const xtd::drawing::icon& icon, const std::string& text, const std::string& description, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color, double transparency) {
-  auto dialog = new wxBusyInfo(wxBusyInfoFlags().Parent(hwnd ? reinterpret_cast<control_handler*>(hwnd)->control() : nullptr).Icon(icon.handle() ? reinterpret_cast<wxIconBundle*>(icon.handle())->GetIcon() : wxNullIcon).Title(text).Label(description).Background(wxColour(back_color.r(), back_color.g(), back_color.b(), back_color.a())).Foreground(wxColour(fore_color.r(), fore_color.g(), fore_color.b(), fore_color.a())).Transparency(255.0 * transparency));
+intptr_t busy_dialog::create(intptr_t hwnd, const xtd::drawing::icon& icon, const std::string& text, const std::string& description, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color, double opacity) {
+  auto dialog = new wxBusyInfo(wxBusyInfoFlags().Parent(hwnd ? reinterpret_cast<control_handler*>(hwnd)->control() : nullptr).Icon(icon.handle() ? reinterpret_cast<wxIconBundle*>(icon.handle())->GetIcon() : wxNullIcon).Title(text).Label(description).Background(wxColour(back_color.r(), back_color.g(), back_color.b(), back_color.a())).Foreground(wxColour(fore_color.r(), fore_color.g(), fore_color.b(), fore_color.a())).Transparency(255.0 * (1.0 - opacity)));
 #if defined(__APPLE__)
   std::function<void(wxWindow*, const wxCursor*)> set_cursor = [&](wxWindow* window, const wxCursor* cursor) {
     if (!window) return;

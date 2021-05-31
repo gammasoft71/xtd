@@ -219,12 +219,12 @@ namespace xtd {
       /// @return Current form.
       virtual form& top_most(bool value);
       
-      /// @brief Gets form transparency.
-      /// @return A double-precision value between 0.0 and 1.0 that represent the form transparency.
-      virtual double transparency() const {return transparency_;}
-      /// @brief Sets form transparency.
-      /// @param transparency A double-precision value between 0.0 and 1.0 that represent the form transparency.
-      virtual form& transparency(double transparency);
+      /// @brief Gets form opacity.
+      /// @return A double-precision value between 0.0 and 1.0 that represent the form opacity.
+      virtual double opacity() const {return opacity_;}
+      /// @brief Sets form opacity.
+      /// @param opacity A double-precision value between 0.0 and 1.0 that represent the form opacity.
+      virtual form& opacity(double opacity);
 
       using container_control::visible;
       /// @brief Sets a value indicating whether the control and all its child controls are displayed.
@@ -354,7 +354,7 @@ namespace xtd {
       intptr_t owner_ = 0;
       void internal_set_window_state();
       intptr_t parent_before_show_dialog_ = 0;
-      double transparency_ = 1.0;
+      double opacity_ = 1.0;
     };
   }
 }
