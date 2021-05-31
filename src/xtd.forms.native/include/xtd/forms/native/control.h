@@ -89,6 +89,40 @@ namespace xtd {
         /// @brief Creates control.
         /// @param create_param A xtd::forms::create_param object that contains needed parameters to create control.
         /// @return The created control window handle.
+        /// @remarks For creating controls somes xtd::forms::create_params members are filled in as follow :
+        /// | Control                         | xtd::forms::create_params::class_name | xtd::forms::create_params::style                              |
+        /// |---------------------------------|---------------------------------------|---------------------------------------------------------------|
+        /// | xtd::forms::button              | "button"                              | button_styles.h and window_styles.h bitwise combinaison       |
+        /// | xtd::forms::check_box           | "checkbox"                            | button_styles.h and window_styles.h bitwise combinaison       |
+        /// | xtd::forms::checked_list_box    | "checkedlistbox"                      | window_styles.h bitwise combinaison                           |
+        /// | xtd::forms::choice              | "choice"                              | window_styles.h bitwise combinaison                           |
+        /// | xtd::forms::collapsible_panel   | "collapsiblepanel"                    | window_styles.h bitwise combinaison                           |
+        /// | xtd::forms::color_picker        | "colorpicker"                         | window_styles.h bitwise combinaison                           |
+        /// | xtd::forms::combo_box           | "combobox"                            | combo_box_styles.h and window_styles.h bitwise combinaison    |
+        /// | xtd::forms::command_link_button | "commandlinkbutton"                   | window_styles.h bitwise combinaison                           |
+        /// | xtd::forms::date_time_picker    | "datetimepicker"                      | window_styles.h bitwise combinaison                           |
+        /// | xtd::forms::domain_up_down      | "domainupdown"                        | window_styles.h bitwise combinaison                           |
+        /// | xtd::forms::font_picker         | "fontpicker"                          | window_styles.h bitwise combinaison                           |
+        /// | xtd::forms::form                | "form"                                | window_styles.h bitwise combinaison                           |
+        /// | xtd::forms::group_box           | "groupbox"                            | button_styles.h and window_styles.h bitwise combinaison       |
+        /// | xtd::forms::label               | "label"                               | window_styles.h bitwise combinaison                           |
+        /// | xtd::forms::list_box            | "listbox"                             | list_box_styles.h and window_styles.h bitwise combinaison     |
+        /// | xtd::forms::loading_indicator   | "loadingindicator"                    | window_styles.h bitwise combinaison                           |
+        /// | xtd::forms::numeric_up_down     | "numericupdown"                       | window_styles.h bitwise combinaison                           |
+        /// | xtd::forms::panel               | "panel"                               | window_styles.h bitwise combinaison                           |
+        /// | xtd::forms::picture_box         | "picturebox"                          | window_styles.h bitwise combinaison                           |
+        /// | xtd::forms::progress_bar        | "progressbar"                         | progress_bar_styles.h and window_styles.h bitwise combinaison |
+        /// | xtd::forms::radio_button        | "radiobutton"                         | button_styles.h and window_styles.h bitwise combinaison       |
+        /// | xtd::forms::switch_button       | "switchbutton"                        | button_styles.h and window_styles.h bitwise combinaison       |
+        /// | xtd::forms::tab_control         | "tabcontrol"                          | tab_control_styles.h and window_styles.h bitwise combinaison  |
+        /// | xtd::forms::tab_page            | "tabpage"                             | window_styles.h bitwise combinaison                           |
+        /// | xtd::forms::text_box            | "textbox"                             | window_styles.h bitwise combinaison                           |
+        /// | xtd::forms::toggle_button       | "togglebutton"                        | button_styles.h and window_styles.h bitwise combinaison       |
+        /// | xtd::forms::track_bar           | "trackbar"                            | track_bar_styles.h and window_styles.h bitwise combinaison    |
+        /// | xtd::forms::up_down_button      | "updownbutton"                        | button_styles.h and window_styles.h bitwise combinaison       |
+        /// | xtd::forms::user_control        | "usercontrol"                         | window_styles.h bitwise combinaison                           |
+        /// @remarks Read xtd::forms::create_params for other members.
+        /// @note For more portability and compatibility with underlying toolkits, xtd::forms::create_params::class_name does not contains real Windows names like WC_DIALOG, WC_BUTTON,...
         /// @warning Internal use only
         static intptr_t create(const create_params& create_params);
         /// @brief Creates a graphics for the control.
