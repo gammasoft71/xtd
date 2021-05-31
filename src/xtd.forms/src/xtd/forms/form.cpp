@@ -189,10 +189,10 @@ form& form::top_most(bool value) {
   return *this;
 }
 
-form& form::transparency(double transparency) {
-  if (transparency_ != transparency) {
-    transparency_ = transparency;
-    native::form::transparency(handle(), transparency_);
+form& form::opacity(double opacity) {
+  if (opacity_ != opacity) {
+    opacity_ = opacity;
+    native::form::opacity(handle(), opacity_);
   }
   return *this;
 }
@@ -432,7 +432,7 @@ void form::on_handle_created(const event_args &e) {
   if (menu_.has_value()) native::form::menu(handle(), menu_.value().handle());
   if (menu_.has_value()) native::form::menu(handle(), menu_.value().handle());
   if (accept_button_.has_value()) accept_button_.value().get().notify_default(true);
-  if (transparency_ != 1.0) native::form::transparency(handle(), transparency_);
+  if (opacity_ != 1.0) native::form::opacity(handle(), opacity_);
 }
 
 void form::on_handle_destroyed(const event_args &e) {

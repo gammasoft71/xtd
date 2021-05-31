@@ -101,11 +101,11 @@ namespace xtd {
         /// @param control Control window handle.
         /// @warning Internal use only
         static int32_t show_sheet_dialog(intptr_t control);
-        /// @brief Sets form transparency.
+        /// @brief Sets form opacity.
         /// @param control Control window handle.
-        /// @param transparency A double-precision value between 0.0 and 1.0 that represent the form transparency.
+        /// @param opacity A double-precision value between 0.0 and 1.0 that represent the form opacity.
         /// @warning Internal use only
-        static void transparency(intptr_t control, double transparency);
+        static void opacity(intptr_t control, double opacity);
         /// @brief Set virtual size
         /// @param control Control window handle.
         /// @param size A virtual xtd::drawing::size.

@@ -123,16 +123,16 @@ namespace xtd {
         return *this;
       }
 
-      /// @brief Gets the dialog transparency.
-      /// @return The dialog transparency.
-      /// @remarks 0 full transparency; 1.0 no transparency.
-      double transparency() const {return transparency_;}
-      /// @brief Gets the dialog transparency.
-      /// @param transparency The dialog transparency.
+      /// @brief Gets the dialog opacity.
+      /// @return The dialog opacity.
+      /// @remarks 0 full opacity; 1.0 full opacity.
+      double opacity() const {return opacity_;}
+      /// @brief Gets the dialog opacity.
+      /// @param opacity The dialog opacity.
       /// @return Current busy_dialog instance.
-      /// @remarks 0 full transparency; 1.0 no transparency.
-      busy_dialog& transparency(double transparency) {
-        transparency_ = transparency;
+      /// @remarks 0 full opacity; 1.0 full opacity.
+      busy_dialog& opacity(double opacity) {
+        opacity_ = opacity;
         return *this;
       }
 
@@ -154,7 +154,7 @@ namespace xtd {
       xtd::drawing::image icon_;
       std::string text_;
       std::string description_;
-      double transparency_;
+      double opacity_ = 0.;
       bool native_ = false;
       intptr_t handle_ = 0;
     };

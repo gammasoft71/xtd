@@ -47,10 +47,10 @@ namespace xtd {
  
       void draw_back_digit(drawing::graphics& graphics) override {
         fourteen_segment_display::draw_back_digit(graphics);
-        draw_segment_a1(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
-        draw_segment_a2(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
-        draw_segment_d1(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
-        draw_segment_d2(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_transparency()));
+        draw_segment_a1(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
+        draw_segment_a2(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
+        draw_segment_d1(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
+        draw_segment_d2(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
       }
 
       /// @brief Draw segment a1 on specified graphics with specified color.

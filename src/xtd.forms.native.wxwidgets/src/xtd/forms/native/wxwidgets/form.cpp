@@ -144,9 +144,9 @@ void form::end_dialog(intptr_t control, int32_t result) {
   static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())->EndModal(result);
 }
 
-void form::transparency(intptr_t control, double transparency) {
+void form::opacity(intptr_t control, double opacity) {
   if (control == 0) return;
-  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->SetTransparent(static_cast<uint8_t>(255 * transparency));
+  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->SetTransparent(static_cast<uint8_t>(255 * (1.0 - opacity)));
 }
 
 void form::virtual_size(intptr_t control, const drawing::size& size) {

@@ -19,7 +19,7 @@ public:
       dialog.description("Please wait while do something...");
       dialog.back_color(xtd::drawing::color::red);
       dialog.fore_color(xtd::drawing::color::white);
-      dialog.transparency(0.75);
+      dialog.opacity(0.25);
       dialog.show();
       for (auto count = 0; count < 500; ++count) {
         application::do_events();
