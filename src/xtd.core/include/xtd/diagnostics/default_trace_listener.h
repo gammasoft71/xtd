@@ -2,7 +2,6 @@
 /// @brief Contains xtd::diagnostics::default_trace_listener class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/io/file.h>
 #include "../core_export.h"
 #include "trace_listener.h"
 
@@ -17,49 +16,43 @@ namespace xtd {
     class core_export_ default_trace_listener : public trace_listener {
     public:
       /// @brief Initializes a new instance of the default_trace_listener class with "default" as its Name property value.
-      default_trace_listener() : trace_listener("default") {};
+      default_trace_listener();
       /// @cond
-      ~default_trace_listener() {flush();}
+      ~default_trace_listener();
       /// @endcond
 
       /// @brief Gets the name of a log file to write trace or debug messages to.
       /// @return The name of a log file to write trace or debug messages to.
-      std::string log_file_name() const {return log_file_name_;}
+      std::string log_file_name() const;
       /// @brief Sets the name of a log file to write trace or debug messages to.
       /// @param log_file_name The name of a log file to write trace or debug messages to.
-      void log_file_name(const std::string log_file_name) {log_file_name_ = log_file_name;}
+      void log_file_name(const std::string log_file_name);
 
-      void close() override {}
+      void close() override;
       void flush() override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        if (!message_line_.empty())
-          write_line("");
+        __flush();
 #endif
       }
       
       using trace_listener::write;
       void write(const std::string& message) override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        if (need_indent())
-          write_indent();
-        message_line_ += message;
-        if (!log_file_name_.empty())
-          xtd::io::file::append_all_text(log_file_name_, message);
+        __write(message);
 #endif
       }
       
       using trace_listener::write_line;
       void write_line(const std::string& message) override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        write(message + "\n");
-        write_to_output_debug(message_line_);
-        message_line_ = "";
-        need_indent(true);
+        __write_line(message);
 #endif
       }
       
     private:
-      void write_to_output_debug(const std::string& message);
+      void __flush();
+      void __write(const std::string& message);
+      void __write_line(const std::string& message);
       
       std::string log_file_name_;
       std::string message_line_;
