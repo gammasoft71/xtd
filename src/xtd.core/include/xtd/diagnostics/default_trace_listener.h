@@ -16,10 +16,17 @@ namespace xtd {
     /// @ingroup xtd_core diagnostics debug
     class core_export_ default_trace_listener : public trace_listener {
     public:
+      /// @brief Initializes a new instance of the default_trace_listener class with "default" as its Name property value.
       default_trace_listener() : trace_listener("default") {};
+      /// @cond
       ~default_trace_listener() {flush();}
-      
+      /// @endcond
+
+      /// @brief Gets the name of a log file to write trace or debug messages to.
+      /// @return The name of a log file to write trace or debug messages to.
       std::string log_file_name() const {return log_file_name_;}
+      /// @brief Sets the name of a log file to write trace or debug messages to.
+      /// @param log_file_name The name of a log file to write trace or debug messages to.
       void log_file_name(const std::string log_file_name) {log_file_name_ = log_file_name;}
 
       void close() override {}
