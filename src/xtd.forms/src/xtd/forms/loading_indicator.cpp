@@ -1,3 +1,4 @@
+#define _USE_MATH_DEFINES
 #include <cmath>
 #include <xtd/drawing/solid_brush.h>
 #include <xtd/drawing/string_format.h>
