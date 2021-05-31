@@ -55,10 +55,12 @@ namespace xtd {
       
       /// @brief Gets a bitwise combination of class style values.
       /// @return A bitwise combination of the class style values.
+      /// @remarks see class_styles.h file
       size_t class_style() const {return class_style_;}
       /// @brief Gets a bitwise combination of class style values.
       /// @param class_style A bitwise combination of the class style values.
       /// @return Current create_param instance.
+      /// @remarks see class_styles.h file
       create_params& class_style(size_t class_style) {
         class_style_ = class_style;
         return *this;
@@ -67,11 +69,13 @@ namespace xtd {
       /// @brief Gets a bitwise combination of extended window style values.
       /// @return A bitwise combination of the extended window style values.
       /// @remarks The ex_style property supports extended appearance and initial state values to apply to the control.
+      /// @remarks see window_styles.h file
       size_t ex_style() const {return ex_style_;}
       /// @brief Sets a bitwise combination of extended window style values.
       /// @param ex_Sttyle A bitwise combination of the extended window style values.
       /// @return Current create_param instance.
       /// @remarks The ex_style property supports extended appearance and initial state values to apply to the control.
+      /// @remarks see window_styles.h file
       create_params& ex_style(size_t ex_style) {
         ex_style_ = ex_style;
         return *this;
