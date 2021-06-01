@@ -31,28 +31,28 @@ namespace xtd {
       void close() override;
       void flush() override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        __flush();
+        flush_();
 #endif
       }
       
       using trace_listener::write;
       void write(const std::string& message) override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        __write(message);
+        write_(message);
 #endif
       }
       
       using trace_listener::write_line;
       void write_line(const std::string& message) override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        __write_line(message);
+        write_line_(message);
 #endif
       }
       
     private:
-      void __flush();
-      void __write(const std::string& message);
-      void __write_line(const std::string& message);
+      void flush_();
+      void write_(const std::string& message);
+      void write_line_(const std::string& message);
       
       std::string log_file_name_;
       std::string message_line_;

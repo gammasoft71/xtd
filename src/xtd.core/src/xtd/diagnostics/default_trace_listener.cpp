@@ -25,17 +25,17 @@ void default_trace_listener::log_file_name(const std::string log_file_name) {
 void default_trace_listener::close() {
 }
 
-void default_trace_listener::__flush() {
+void default_trace_listener::flush_() {
   if (!message_line_.empty()) write_line("");
 }
 
-void default_trace_listener::__write(const std::string& message) {
+void default_trace_listener::write_(const std::string& message) {
   if (need_indent()) write_indent();
   message_line_ += message;
   if (!log_file_name_.empty()) xtd::io::file::append_all_text(log_file_name_, message);
 }
 
-void default_trace_listener::__write_line(const std::string& message) {
+void default_trace_listener::write_line_(const std::string& message) {
   write(message + "\n");
   native::debug::write_to_output(message_line_);
   message_line_ = "";
