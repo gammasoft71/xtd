@@ -8,14 +8,14 @@ namespace examples {
     form1() {
       text("Loading indicator example");
 
-      loading_indicator.parent(*this);
-      loading_indicator.location({10, 10});
-      loading_indicator.fore_color(xtd::drawing::system_colors::accent());
-      loading_indicator.start();
+      loading_indicator1.parent(*this);
+      loading_indicator1.location({10, 10});
+      loading_indicator1.fore_color(xtd::drawing::system_colors::accent());
+      loading_indicator1.start();
     }
     
   private:
-    loading_indicator loading_indicator;
+    loading_indicator loading_indicator1;
   };
 }
 
