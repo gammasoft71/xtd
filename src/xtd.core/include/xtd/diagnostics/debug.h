@@ -11,7 +11,6 @@
 
 /// @cond
 #undef assert
-void __assert__(bool condition);
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -90,7 +89,7 @@ namespace xtd {
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       static void assert(bool condition) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        assert(condition, "");
+        __assert_message(condition, "");
 #endif
       }
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
@@ -98,9 +97,7 @@ namespace xtd {
       /// @param message The message to send to the Listeners collection.
       static void assert(bool condition, const std::string& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        __assert__(condition);
-        if (!condition)
-          fail(message);
+        __assert_message(condition, message);
 #endif
       }
       
@@ -110,17 +107,7 @@ namespace xtd {
       /// @note The display of the message box is dependent on the presence of the default_trace_listener. If the default_trace_listener is not in the listeners collection, the message box is not displayed. The default_trace_listener can be removed by the <clear>, the <remove>, or by calling the clear method on the listeners property (xtd::diagnostics::trace::listeners().clear()).
       static void fail(const std::string& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        for (auto listener : listeners_) {
-          if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
-          if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
-          if (!listener->is_thread_safe() && use_global_lock_) {
-            std::lock_guard<std::mutex> lock(global_lock_);
-            listener->fail(message);
-          } else {
-            listener->fail(message);
-          }
-        }
-        if (auto_flush_) flush();
+        __fail(message);
 #endif
       }
       /// @brief Emits an error message and a detailed error message.
@@ -130,25 +117,14 @@ namespace xtd {
       /// @note The display of the message box is dependent on the presence of the default_trace_listener. If the default_trace_listener is not in the listeners collection, the message box is not displayed. The default_trace_listener can be removed by the <clear>, the <remove>, or by calling the clear method on the listeners property (xtd::diagnostics::trace::listeners().clear()).
       static void fail(const std::string& message, const std::string& detail_message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        for (auto listener : listeners_) {
-          if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
-          if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
-          if (!listener->is_thread_safe() && use_global_lock_) {
-            std::lock_guard<std::mutex> lock(global_lock_);
-            listener->fail(message, detail_message);
-          } else {
-            listener->fail(message, detail_message);
-          }
-        }
-        if (auto_flush_) flush();
+        __fail(message, detail_message);
 #endif
       }
 
       /// @brief Flushes the output buffer and causes buffered data to write to the listeners collection.
       static void flush() {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        for (auto listener : listeners_)
-          listener->flush();
+        __flush();
 #endif
       }
       
@@ -160,7 +136,7 @@ namespace xtd {
       /// @remarks The default line terminator is a carriage return followed by a line feed. By default, the output is written to an instance of default_trace_listener.
       static void print(const std::string& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        write_line(message);
+        __write_line(message);
 #endif
       }
       /// @brief Writes a formatted string followed by a line terminator to the trace listeners in the listeners collection.
@@ -170,14 +146,14 @@ namespace xtd {
       template<typename ...args_t>
       static void print(const std::string& format, args_t&&... args) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        write_line(format, args...);
+        __write_line(xtd::strings::format(format, args...));
 #endif
       }
       /// @cond
       template<typename ...args_t>
       static void print(const char* format, args_t&&... args) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        write_line(format, args...);
+        __write_line(xtd::strings::format(format, args...));
 #endif
       }
       /// @endcond
@@ -185,35 +161,59 @@ namespace xtd {
       /// @brief Writes an error message to the trace listeners in the Listeners collection using the specified message.
       /// @param message The informative message to write.
       /// @remarks trace_error calls the trace_event method for each trace listener, with the trace event type error, passing the informative message as the message string.
-      static void trace_error(const std::string& message);
+      static void trace_error(const std::string& message) {
+#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        __trace_event(trace_event_type::error, message);
+#endif
+      }
       /// @brief Writes an error message to the trace listeners in the listeners collection using the specified array of objects and formatting information.
       /// @param format A format string that contains zero or more format items, which correspond to objects in the args array.
       /// @param ...args An object array containing zero or more objects to format.
       /// @remarks trace_error calls the trace_event methods in the trace listeners with the trace event type error, passing the message content as an object array with formatting information.
       template<typename ...objects_t>
-      static void trace_error(const std::string& message, const objects_t& ... args) {trace_event(trace_event_type::error, message, args...);}
+      static void trace_error(const std::string& message, const objects_t& ... args) {
+#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        __trace_event(trace_event_type::error, xtd::strings::format(message, args...));
+#endif
+      }
       
       /// @brief Writes an informational message to the trace listeners in the listeners collection using the specified message.
       /// @param message The informative message to write.
       /// @remarks trace_information calls the trace_event method for each trace listener, with the trace event type information, passing the informative message as the message string.
-      static void trace_information(const std::string& message);
+      static void trace_information(const std::string& message) {
+#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        __trace_event(trace_event_type::information, message);
+#endif
+      }
       /// @brief Writes an informational message to the trace listeners in the listeners collection using the specified array of objects and formatting information.
       /// @param format A format string that contains zero or more format items, which correspond to objects in the args array.
       /// @param ...args An object array containing zero or more objects to format.
       /// @remarks trace_information calls the trace_event methods in the trace listeners with the trace event type information, passing the message content as an object array with formatting information.
       template<typename ...objects_t>
-      static void trace_information(const std::string& message, const objects_t& ... args) {trace_event(trace_event_type::information, message, args...);}
+      static void trace_information(const std::string& message, const objects_t& ... args) {
+#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        __trace_event(trace_event_type::information, xtd::strings::format(message, args...));
+#endif
+      }
 
       /// @brief Writes a warning message to the trace listeners in the listeners collection using the specified message.
       /// @param message The informative message to write.
       /// @remarks trace_warning calls the trace_event method for each trace listener with the trace event type Warning, passing the informative message as the message string.
-      static void trace_warning(const std::string& message);
+      static void trace_warning(const std::string& message) {
+#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        __trace_event(trace_event_type::warning, message);
+#endif
+      }
       /// @brief Writes a warning message to the trace listeners in the listeners collection using the specified array of objects and formatting information.
       /// @param format A format string that contains zero or more format items, which correspond to objects in the args array.
       /// @param ...args An object array containing zero or more objects to format.
       /// @remarks trace_warning calls the trace_event methods in the trace listeners with the trace event type Warning, passing the message content as an object array with formatting information.
       template<typename ...objects_t>
-      static void trace_warning(const std::string& message, const objects_t& ... args) {trace_event(trace_event_type::warning, message, args...);}
+      static void trace_warning(const std::string& message, const objects_t& ... args) {
+#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        __trace_event(trace_event_type::warning, xtd::strings::format(message, args...));
+#endif
+      }
 
       /// @brief Decreases the current indent_level by one.
       static void unindent();
@@ -224,17 +224,7 @@ namespace xtd {
       /// @remarks This method calls the write method of the trace listener.
       static void write(const std::string& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        for (auto listener : listeners_) {
-          if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
-          if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
-          if (!listener->is_thread_safe() && use_global_lock_) {
-            std::lock_guard<std::mutex> lock(global_lock_);
-            listener->write(message);
-          } else {
-            listener->write(message);
-          }
-        }
-        if (auto_flush_) flush();
+        __write(message);
 #endif
       }
       /// @brief Writes a message to the trace listeners in the listeners collection.
@@ -244,17 +234,7 @@ namespace xtd {
       template<typename object_t>
       static void write(const object_t& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        for (auto listener : listeners_) {
-          if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
-          if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
-          if (!listener->is_thread_safe() && use_global_lock_) {
-            std::lock_guard<std::mutex> lock(global_lock_);
-            listener->write(message);
-          } else {
-            listener->write(message);
-          }
-        }
-        if (auto_flush_) flush();
+        __write(xtd::strings::format("", message));
 #endif
       }
       /// @brief Writes a category name and message to the trace listeners in the listeners collection.
@@ -266,17 +246,7 @@ namespace xtd {
       template<typename object_t>
       static void write(const object_t& message, const std::string& category) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        for (auto listener : listeners_) {
-          if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
-          if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
-          if (!listener->is_thread_safe() && use_global_lock_) {
-            std::lock_guard<std::mutex> lock(global_lock_);
-            listener->write(message, category);
-          } else {
-            listener->write(message, category);
-          }
-        }
-        if (auto_flush_) flush();
+        __write(xtd::strings::format("", message), category);
 #endif
       }
       /// @brief Writes a formatted string to the trace listeners in the listeners collection.
@@ -287,34 +257,14 @@ namespace xtd {
       template<typename ...args_t>
       static void write(const std::string& format, args_t&&... args) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        for (auto listener : listeners_) {
-          if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
-          if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
-          if (!listener->is_thread_safe() && use_global_lock_) {
-            std::lock_guard<std::mutex> lock(global_lock_);
-            listener->write(strings::format(format, args...));
-          } else {
-            listener->write(strings::format(format, args...));
-          }
-        }
-        if (auto_flush_) flush();
+        __write(strings::format(format, args...));
 #endif
       }
       /// @cond
       template<typename ...args_t>
       static void write(const char* format, args_t&&... args) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        for (auto listener : listeners_) {
-          if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
-          if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
-          if (!listener->is_thread_safe() && use_global_lock_) {
-            std::lock_guard<std::mutex> lock(global_lock_);
-            listener->write(strings::format(format, args...));
-          } else {
-            listener->write(strings::format(format, args...));
-          }
-        }
-        if (auto_flush_) flush();
+        __write(strings::format(format, args...));
 #endif
       }
       /// @endcond
@@ -326,7 +276,7 @@ namespace xtd {
       /// @remarks This method calls the write method of the trace listener.
       static void write_if(bool condition, const std::string& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        if (condition) write(message);
+        if (condition) __write(message);
 #endif
       }
       template<typename object_t>
@@ -337,7 +287,7 @@ namespace xtd {
       /// @remarks This method calls the write method of the trace listener.
       static void write_if(bool condition, const object_t& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        if (condition) write(message);
+        if (condition) __write(message);
 #endif
       }
       /// @brief Writes a category name and message to the trace listeners in the Listeners collection if a condition is true.
@@ -349,7 +299,7 @@ namespace xtd {
       template<typename object_t>
       static void write_if(bool condition, const object_t& message, const std::string& category) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        if (condition) write(message, category);
+        if (condition) __write(message, category);
 #endif
       }
       
@@ -368,17 +318,7 @@ namespace xtd {
       /// @remarks This method calls the write method of the trace listener.
       static void write_line(const std::string& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        for (auto listener : listeners_) {
-          if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
-          if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
-          if (!listener->is_thread_safe() && use_global_lock_) {
-            std::lock_guard<std::mutex> lock(global_lock_);
-            listener->write_line(message);
-          } else {
-            listener->write_line(message);
-          }
-        }
-        if (auto_flush_) flush();
+        __write_line(message);
 #endif
       }
       /// @brief Writes a message followed by a line terminator to the trace listeners in the listeners collection.
@@ -388,17 +328,7 @@ namespace xtd {
       template<typename object_t>
       static void write_line(const object_t& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        for (auto listener : listeners_) {
-          if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
-          if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
-          if (!listener->is_thread_safe() && use_global_lock_) {
-            std::lock_guard<std::mutex> lock(global_lock_);
-            listener->write_line(message);
-          } else {
-            listener->write_line(message);
-          }
-        }
-        if (auto_flush_) flush();
+        __write_line(xtd::strings::format("", message));
 #endif
       }
       /// @brief Writes a category name and message followed by a line terminator to the trace listeners in the listeners collection.
@@ -410,17 +340,7 @@ namespace xtd {
       template<typename object_t>
       static void write_line(const object_t& message, const std::string& category) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        for (auto listener : listeners_) {
-          if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
-          if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
-          if (!listener->is_thread_safe() && use_global_lock_) {
-            std::lock_guard<std::mutex> lock(global_lock_);
-            listener->write_line(message, category);
-          } else {
-            listener->write_line(message, category);
-          }
-        }
-        if (auto_flush_) flush();
+        __write_line(xtd::strings::format("", message), category);
 #endif
       }
       /// @brief Writes a formatted string followed by a line terminator to the trace listeners in the listeners collection.
@@ -430,34 +350,14 @@ namespace xtd {
       template<typename ...args_t>
       static void write_line(const std::string& format, args_t&&... args) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        for (auto listener : listeners_) {
-          if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
-          if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
-          if (!listener->is_thread_safe() && use_global_lock_) {
-            std::lock_guard<std::mutex> lock(global_lock_);
-            listener->write_line(strings::format(format, args...));
-          } else {
-            listener->write_line(strings::format(format, args...));
-          }
-        }
-        if (auto_flush_) flush();
+        __write_line(strings::format(format, args...));
 #endif
       }
       /// @cond
       template<typename ...args_t>
       static void write_line(const char* format, args_t&&... args) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        for (auto listener : listeners_) {
-          if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
-          if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
-          if (!listener->is_thread_safe() && use_global_lock_) {
-            std::lock_guard<std::mutex> lock(global_lock_);
-            listener->write_line(strings::format(format, args...));
-          } else {
-            listener->write_line(strings::format(format, args...));
-          }
-        }
-        if (auto_flush_) flush();
+        __write_line(strings::format(format, args...));
 #endif
       }
       /// @endcond
@@ -469,7 +369,7 @@ namespace xtd {
       /// @remarks This method calls the write method of the trace listener.
       static void write_line_if(bool condition, const std::string& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        if (condition) write_line(message);
+        if (condition) __write_line(message);
 #endif
       }
       /// @brief Writes a message followed by a line terminator to the trace listeners in the Listeners collection if a condition is true.
@@ -480,7 +380,7 @@ namespace xtd {
       template<typename object_t>
       static void write_line_if(bool condition, const object_t& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        if (condition) write_line(message);
+        if (condition) __write_line(message);
 #endif
       }
       /// @brief Writes a category name and message followed by a line terminator to the trace listeners in the Listeners collection if a condition is true.
@@ -492,44 +392,21 @@ namespace xtd {
       template<typename object_t>
       static void write_line_if(bool condition, const object_t& message, const std::string& category) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        if (condition) write_line(message, category);
+        if (condition) __write_line(message, category);
 #endif
       }      
 
     private:
-      static void trace_event(trace_event_type trace_event_type, const std::string& message) {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        for (auto listener : listeners_) {
-          if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
-          if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
-          if (!listener->is_thread_safe() && use_global_lock_) {
-            std::lock_guard<std::mutex> lock(global_lock_);
-            listener->trace_event(trace_event_cache(), source_name_, trace_event_type, 0, message);
-          } else {
-            listener->trace_event(trace_event_cache(), source_name_, trace_event_type, 0, message);
-          }
-        }
-        if (auto_flush_) flush();
-#endif
-      }
-      
-      template<typename ...objects_t>
-      static void trace_event(trace_event_type trace_event_type, const std::string& message, const objects_t& ... args) {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        for (auto listener : listeners_) {
-          if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
-          if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
-          if (!listener->is_thread_safe() && use_global_lock_) {
-            std::lock_guard<std::mutex> lock(global_lock_);
-            listener->trace_event(trace_event_cache(), source_name_, trace_event_type, 0, message, args...);
-          } else {
-            listener->trace_event(trace_event_cache(), source_name_, trace_event_type, 0, message, args...);
-          }
-        }
-        if (auto_flush_) flush();
-#endif
-      }
-      
+      static void __assert_message(bool condition, const std::string& message);
+      static void __fail(const std::string& message);
+      static void __fail(const std::string& message, const std::string& detail_message);
+      static void __flush();
+      static void __trace_event(trace_event_type trace_event_type, const std::string& message);
+      static void __write(const std::string& message);
+      static void __write(const std::string& message, const std::string& category);
+      static void __write_line(const std::string& message);
+      static void __write_line(const std::string& message, const std::string& category);
+
       inline static bool auto_flush_ = false;
       inline static unsigned int indent_level_ = 0;
       inline static unsigned int indent_size_ = 4;

@@ -1,4 +1,7 @@
 #include <cassert>
+namespace {
+  void __c_assert__(bool condition) {assert(condition);}
+}
 
 #include "../../../include/xtd/diagnostics/debug.h"
 #include "../../../include/xtd/diagnostics/default_trace_listener.h"
@@ -10,6 +13,8 @@ using namespace xtd::diagnostics;
 
 extern trace_listener_collection __listeners__;
 extern char** __diagnostics_argv;
+
+void __assert__(bool condition);
 
 trace_listener_collection& debug::listeners_ = __listeners__;
 mutex debug::global_lock_;
@@ -59,18 +64,114 @@ void debug::indent() {
   indent_level(indent_level() + 1);
 }
 
-void debug::trace_error(const std::string& message) {
-  trace_event(trace_event_type::error, message);
-}
-
-void debug::trace_information(const std::string& message) {
-  trace_event(trace_event_type::information, message);
-}
-
-void debug::trace_warning(const std::string& message) {
-  trace_event(trace_event_type::warning, message);
-}
-
 void debug::unindent() {
   if (indent_level() != 0) indent_level(indent_level() - 1);
+}
+
+void debug::__assert_message(bool condition, const std::string& message) {
+  __c_assert__(condition);
+  if (!condition) fail(message);
+}
+
+void debug::__fail(const std::string& message) {
+  for (auto listener : listeners_) {
+    if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
+    if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
+    if (!listener->is_thread_safe() && use_global_lock_) {
+      std::lock_guard<std::mutex> lock(global_lock_);
+      listener->fail(message);
+    } else {
+      listener->fail(message);
+    }
+  }
+  if (auto_flush_) flush();
+}
+
+void debug::__fail(const std::string& message, const std::string& detail_message) {
+  for (auto listener : listeners_) {
+    if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
+    if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
+    if (!listener->is_thread_safe() && use_global_lock_) {
+      std::lock_guard<std::mutex> lock(global_lock_);
+      listener->fail(message, detail_message);
+    } else {
+      listener->fail(message, detail_message);
+    }
+  }
+  if (auto_flush_) flush();
+}
+
+void debug::__flush() {
+  for (auto listener : listeners_)
+    listener->flush();
+}
+
+void debug::__trace_event(trace_event_type trace_event_type, const std::string& message) {
+  for (auto listener : listeners_) {
+    if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
+    if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
+    if (!listener->is_thread_safe() && use_global_lock_) {
+      std::lock_guard<std::mutex> lock(global_lock_);
+      listener->trace_event(trace_event_cache(), source_name_, trace_event_type, 0, message);
+    } else {
+      listener->trace_event(trace_event_cache(), source_name_, trace_event_type, 0, message);
+    }
+  }
+  if (auto_flush_) flush();
+}
+
+void debug::__write(const std::string& message) {
+  for (auto listener : listeners_) {
+    if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
+    if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
+    if (!listener->is_thread_safe() && use_global_lock_) {
+      std::lock_guard<std::mutex> lock(global_lock_);
+      listener->write(message);
+    } else {
+      listener->write(message);
+    }
+  }
+  if (auto_flush_) flush();
+}
+
+void debug::__write(const std::string& message, const std::string& category) {
+  for (auto listener : listeners_) {
+    if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
+    if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
+    if (!listener->is_thread_safe() && use_global_lock_) {
+      std::lock_guard<std::mutex> lock(global_lock_);
+      listener->write(message, category);
+    } else {
+      listener->write(message, category);
+    }
+  }
+  if (auto_flush_) flush();
+}
+
+void debug::__write_line(const std::string& message) {
+  for (auto listener : listeners_) {
+    if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
+    if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
+    if (!listener->is_thread_safe() && use_global_lock_) {
+      std::lock_guard<std::mutex> lock(global_lock_);
+      listener->write_line(message);
+    } else {
+      listener->write_line(message);
+    }
+  }
+  if (auto_flush_) flush();
+}
+
+void debug::__write_line(const std::string& message, const std::string& category) {
+  for (auto listener : listeners_) {
+    if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
+    if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
+    if (!listener->is_thread_safe() && use_global_lock_) {
+      std::lock_guard<std::mutex> lock(global_lock_);
+      listener->write_line(message, category);
+    } else {
+      listener->write_line(message, category);
+    }
+  }
+  if (auto_flush_) flush();
 }
