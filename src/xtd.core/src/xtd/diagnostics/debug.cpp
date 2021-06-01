@@ -68,12 +68,12 @@ void debug::unindent() {
   if (indent_level() != 0) indent_level(indent_level() - 1);
 }
 
-void debug::__assert_message(bool condition, const std::string& message) {
+void debug::assert_(bool condition, const std::string& message) {
   __c_assert__(condition);
   if (!condition) fail(message);
 }
 
-void debug::__fail(const std::string& message) {
+void debug::fail_(const std::string& message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -87,7 +87,7 @@ void debug::__fail(const std::string& message) {
   if (auto_flush_) flush();
 }
 
-void debug::__fail(const std::string& message, const std::string& detail_message) {
+void debug::fail_(const std::string& message, const std::string& detail_message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -101,12 +101,12 @@ void debug::__fail(const std::string& message, const std::string& detail_message
   if (auto_flush_) flush();
 }
 
-void debug::__flush() {
+void debug::flush_() {
   for (auto listener : listeners_)
     listener->flush();
 }
 
-void debug::__trace_event(trace_event_type trace_event_type, const std::string& message) {
+void debug::trace_event_(trace_event_type trace_event_type, const std::string& message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -120,7 +120,7 @@ void debug::__trace_event(trace_event_type trace_event_type, const std::string& 
   if (auto_flush_) flush();
 }
 
-void debug::__write(const std::string& message) {
+void debug::write_(const std::string& message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -134,7 +134,7 @@ void debug::__write(const std::string& message) {
   if (auto_flush_) flush();
 }
 
-void debug::__write(const std::string& message, const std::string& category) {
+void debug::write_(const std::string& message, const std::string& category) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -148,7 +148,7 @@ void debug::__write(const std::string& message, const std::string& category) {
   if (auto_flush_) flush();
 }
 
-void debug::__write_line(const std::string& message) {
+void debug::write_line_(const std::string& message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -162,7 +162,7 @@ void debug::__write_line(const std::string& message) {
   if (auto_flush_) flush();
 }
 
-void debug::__write_line(const std::string& message, const std::string& category) {
+void debug::write_line_(const std::string& message, const std::string& category) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
