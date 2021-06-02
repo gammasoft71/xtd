@@ -15,20 +15,16 @@ namespace {
   const bool debug_process = false;
 }
 
-process::process() {
-  data_->exit_callback_ += {*this, &process::on_exited};
-}
-
 process& process::operator=(const process& value) {
   if (data_.use_count() == 1 && data_->thread_.joinable()) data_->thread_.detach();
   auto exit_callback = data_->exit_callback_;
   data_ = value.data_;
-  data_->exit_callback_ = exit_callback;
+  exited.set_data(data_.get());
+  data_->exit_callback_ += exit_callback;
   return *this;
 }
 
 process::~process() {
-  data_->exit_callback_ -= {*this, &process::on_exited};
   if (data_.use_count() == 1 && data_->thread_.joinable()) data_->thread_.detach();
 }
 
@@ -83,7 +79,10 @@ process process::start(const process_start_info &start_info) {
     native::process::wait(process_data->handle_, process_data->exit_code_);
     process_data->exit_time_ = system_clock::now();
     debug::write_line_if(debug_process, strings::format("process::start [handle={}, exit_time={:u}.{:D6}, excited]", process_data->handle_, process_data->exit_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process_data->exit_time_.time_since_epoch())).count() % 1000000));
-    process_data->exit_callback_();
+    
+    class process p;
+    //*p.data_ = *process_data;
+    process_data->exit_callback_(p, event_args::empty);
   }, process.data_.get());
   while(!thread_started) this_thread::yield();
   return process;
