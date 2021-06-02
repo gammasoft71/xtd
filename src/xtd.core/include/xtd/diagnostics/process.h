@@ -24,21 +24,12 @@ namespace xtd {
     /// @remarks If you have a path variable declared in your system using quotes, you must fully qualify that path when starting any process found in that location. Otherwise, the system will not find the path. For example, if c:\mypath is not in your path, and you add it using quotation marks: path = %path%;"c:\mypath", you must fully qualify any process in c:\mypath when starting it.
     /// @remarks A system process is uniquely identified on the system by its process identifier. Like many Windows resources, a process is also identified by its handle, which might not be unique on the computer. A handle is the generic term for an identifier of a resource. The operating system persists the process handle, which is accessed through the Handle property of the Process component, even when the process has exited. Thus, you can get the process's administrative information, such as the xtd::diagnostics::process::exit_code (usually either zero for success or a nonzero error code) and the xtd::diagnostics::process::exit_time. xtd::diagnostics::process::handles are an extremely valuable resource, so leaking handles is more virulent than leaking memory.
     class core_export_ process final {
-      struct data {
-        intptr_t handle_ = 0;
-        process_start_info start_info_;
-        std::thread thread_;
-        std::chrono::system_clock::time_point start_time_;
-        std::chrono::system_clock::time_point exit_time_;
-        int32_t exit_code_ = 0;
-        event_handler<process> exit_callback_;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      struct data;
       
     public:
       class event_process : protected event_handler<process> {
         friend process;
-        event_process(data* data) : event_handler<process>(), data_(data) {}
+        event_process() : event_handler<process>() {}
         void set_data(data* data) {data_ = data;}
 
       public:        
@@ -86,7 +77,7 @@ namespace xtd {
       /// @remarks When the xtd::diagnostics::process_start_info::use_shell_execute property is set to its default value, true, you can start applications and documents in a way that is similar to using the Run dialog box of the Windows Start menu. When xtd::diagnostics::process_start_info::use_shell_execute is false, you can start only executables.
       /// @remarks Any executable file that you can call from the command line can be started in one of two ways: by setting the appropriate members of the xtd::diagnostics::process:start_info property and calling the xtd::diagnostics::process::start method with no parameters, or by passing the appropriate parameter to the static_start member.
       /// @remarks You can create a xtd::diagnostics::processs component by using the constructor, one of the static xtd::diagnostics::processs::start overloads, or any of the xtd::diagnostics::processs::get_process_by_id, xtd::diagnostics::processs::get_processes, or xtd::diagnostics::processs::get_processes_by_name methods. After you have done so, you have a view into the associated process. This is not a dynamic view that updates itself automatically when the process properties have changed in memory. Instead, you must call xtd::diagnostics::processs::refresh for the component to update the xtd::diagnostics::processs property information in your application.
-      process() = default;
+      process();
       /// @cond
       process(const process&) = default;
       process& operator=(const process& value);
@@ -121,10 +112,22 @@ namespace xtd {
 
       process& wait_for_exit();
       
-      event_process exited {data_.get()};
+      event_process exited;
 
     protected:
       virtual void on_exited();
+      
+    private:
+      struct data {
+        intptr_t handle_ = 0;
+        process_start_info start_info_;
+        std::thread thread_;
+        std::chrono::system_clock::time_point start_time_;
+        std::chrono::system_clock::time_point exit_time_;
+        int32_t exit_code_ = 0;
+        event_handler<process> exit_callback_;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
