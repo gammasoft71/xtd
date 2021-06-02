@@ -64,9 +64,9 @@ process process::start(const process_start_info &start_info) {
   process.start_info(start_info);
   bool thread_started = false;
 
-  process.data_->thread_ = thread([&](process::data* process_data) {
+  process.data_->thread_ = thread([&](class process process) {
     thread_started = true;
-    process_data->start_time_ = system_clock::now();
+    process.data_->start_time_ = system_clock::now();
     std::string shell_execute = "";
     if (process.start_info().use_shell_execute()) {
       if (environment::os_version().is_windows_platform()) shell_execute = "explorer ";
@@ -74,16 +74,13 @@ process process::start(const process_start_info &start_info) {
       else if (environment::os_version().is_linux_platform()) shell_execute = "xdg-open ";
     }
     auto command_line_ = strings::format("{}{}{}", shell_execute, process.start_info().file_name(), process.start_info().arguments() == "" ? "" : strings::format(" {}", process.start_info().arguments()));
-    process_data->handle_ = native::process::create(command_line_);
-    debug::write_line_if(debug_process, strings::format("process::start [handle={}, start_time={:u}.{:D6}, started]", process_data->handle_, process_data->start_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process_data->start_time_.time_since_epoch())).count() % 1000000));
-    native::process::wait(process_data->handle_, process_data->exit_code_);
-    process_data->exit_time_ = system_clock::now();
-    debug::write_line_if(debug_process, strings::format("process::start [handle={}, exit_time={:u}.{:D6}, excited]", process_data->handle_, process_data->exit_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process_data->exit_time_.time_since_epoch())).count() % 1000000));
-    
-    class process p;
-    //*p.data_ = *process_data;
-    process_data->exit_callback_(p, event_args::empty);
-  }, process.data_.get());
+    process.data_->handle_ = native::process::create(command_line_);
+    debug::write_line_if(debug_process, strings::format("process::start [handle={}, start_time={:u}.{:D6}, started]", process.data_->handle_, process.data_->start_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time_.time_since_epoch())).count() % 1000000));
+    native::process::wait(process.data_->handle_, process.data_->exit_code_);
+    process.data_->exit_time_ = system_clock::now();
+    debug::write_line_if(debug_process, strings::format("process::start [handle={}, exit_time={:u}.{:D6}, excited]", process.data_->handle_, process.data_->exit_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->exit_time_.time_since_epoch())).count() % 1000000));
+    process.on_exited();
+  }, process);
   while(!thread_started) this_thread::yield();
   return process;
 }
@@ -104,11 +101,6 @@ process& process::wait_for_exit() {
   return *this;
 }
 
-/*
-void process::register_exited(xtd::delegate<void()> exited) {
-  data_->exit_callback_ += exited;
-} */
-
 void process::on_exited() {
-  exited(*this, event_args::empty);
+  data_->exit_callback_(*this, event_args::empty);
 }

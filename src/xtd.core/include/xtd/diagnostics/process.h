@@ -122,7 +122,6 @@ namespace xtd {
       process& wait_for_exit();
       
       event_process exited {data_.get()};
-      //void register_exited(xtd::delegate<void()> exited);
 
     protected:
       virtual void on_exited();
