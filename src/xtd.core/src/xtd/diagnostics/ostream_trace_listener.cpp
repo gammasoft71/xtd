@@ -5,7 +5,7 @@ using namespace xtd::diagnostics;
 
 ostream_trace_listener::ostream_trace_listener(const std::ostream& ostream) {
   this->ostream(ostream);
-};
+}
 
 ostream_trace_listener::~ostream_trace_listener() {
   flush();
