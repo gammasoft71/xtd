@@ -17,7 +17,6 @@ intptr_t process::create(const std::string& command_line) {
     for (size_t index = 0; index < command_line_args.size(); ++index)
       execvp_args[index] = command_line_args[index].data();
     execvp_args[execvp_args.size()-1] = nullptr;
-    
     execvp(execvp_args[0], execvp_args.data());
   }
   return static_cast<intptr_t>(process);
@@ -25,7 +24,7 @@ intptr_t process::create(const std::string& command_line) {
 
 bool process::kill(intptr_t process) {
   if (process == 0) return false;
-  return ::kill(static_cast<pid_t>(process), SIGKILL) == 0;
+  return ::kill(static_cast<pid_t>(process), SIGTERM) == 0;
 }
 
 bool process::wait(intptr_t process, int32_t& exit_code) {
