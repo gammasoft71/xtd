@@ -19,14 +19,14 @@ namespace xtd {
     public:
       /// @brief Initializes a new instance of the event_type_filter class.
       /// @param level A bitwise combination of the source_levels values that specifies the event type of the messages to trace.
-      event_type_filter(xtd::diagnostics::source_levels level) : level_(level) {}
+      event_type_filter(xtd::diagnostics::source_levels level);
 
       /// @brief Gets the event type of the messages to trace.
       /// @return A bitwise combination of the source_levels values.
-      xtd::diagnostics::source_levels event_type() const {return level_;}
+      xtd::diagnostics::source_levels event_type() const;
       /// @brief Sets the event type of the messages to trace.
       /// @param level A bitwise combination of the source_levels values.
-      void event_type(xtd::diagnostics::source_levels level) {level_ = level;}
+      void event_type(xtd::diagnostics::source_levels level);
       
       /// @brief Determines whether the trace listener should trace the event.
       /// @param chache The trace_event_cache that contains information for the trace event.
@@ -36,9 +36,7 @@ namespace xtd {
       /// @param message Message to write.
       /// @param data1 A trace data object.
       /// @param data_array A trace data object.
-      bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const std::string& source, xtd::diagnostics::trace_event_type event_type, int32_t id, const std::string& message, std::any data1, const std::vector<std::any>& data_array) override {
-        return (static_cast<int>(event_type) & static_cast<int>(level_)) != 0;
-      }
+      bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const std::string& source, xtd::diagnostics::trace_event_type event_type, int32_t id, const std::string& message, std::any data1, const std::vector<std::any>& data_array) override;
       
     private:
       xtd::diagnostics::source_levels level_ = xtd::diagnostics::source_levels::off;
