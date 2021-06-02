@@ -191,6 +191,7 @@ add_sources(
   src/xtd/diagnostics/debug.cpp
   src/xtd/diagnostics/default_trace_listener.cpp
   src/xtd/diagnostics/event_type_filter.cpp
+  src/xtd/diagnostics/ostream_trace_listener.cpp
   src/xtd/diagnostics/process.cpp
   src/xtd/diagnostics/process_start_info.cpp
   src/xtd/diagnostics/stack_trace.cpp
