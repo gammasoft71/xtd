@@ -22,6 +22,7 @@ add_sources(
   include/xtd/native/guid.h
   include/xtd/native/path.h
   include/xtd/native/platform_ids.h
+  include/xtd/native/process.h
   include/xtd/native/translator.h
 )
 target_type(INTERFACE_LIBRARY)

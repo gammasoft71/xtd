@@ -1,6 +1,6 @@
 
 /// @file
-/// @brief Contains console special key constants.
+/// @brief Contains console file attribute constants.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 /// @cond

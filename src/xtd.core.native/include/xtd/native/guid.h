@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains environment API.
+/// @brief Contains guid API.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
