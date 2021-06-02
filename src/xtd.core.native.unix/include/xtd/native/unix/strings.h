@@ -5,16 +5,20 @@
 #endif
 /// @endcond
 
+#include <limits>
+#include <vector>
 #include <string>
 
 #undef unix
 
 namespace xtd::native {
   class environment;
+  class process;
   class translator;
   namespace unix {
     class strings final {
       friend xtd::native::environment;
+      friend xtd::native::process;
       friend xtd::native::translator;
     protected:
       strings() = delete;
@@ -36,7 +40,10 @@ namespace xtd::native {
         return result;
       }
       
-      static std::vector<std::string> split(const std::string& str, const std::vector<char>& separators) noexcept {
+      static std::vector<std::string> split(const std::string& str, const std::vector<char>& separators, size_t count = std::numeric_limits<size_t>::max()) noexcept {
+        if (count == 0) return {};
+        if (count == 1) return {str};
+        
         std::vector<std::string> list;
         std::string subString;
         std::vector<char> split_char_separators = separators.size() == 0 ? std::vector<char> {9, 10, 11, 12, 13, 32} : separators;
@@ -44,6 +51,10 @@ namespace xtd::native {
           bool is_separator =  std::find(split_char_separators.begin(), split_char_separators.end(), *it) != split_char_separators.end();
           if (!is_separator) subString.append(std::string(1, *it));
           if ((static_cast<size_t>(it - str.begin()) == str.length() - 1 || is_separator) && (subString.length() > 0 || (subString.length() == 0))) {
+            if (list.size() == count - 1) {
+              list.push_back(subString + std::string(str.c_str(), it - str.begin() + (is_separator ? 0 : 1), str.length() - (it - str.begin()) + (is_separator ? 0 : 1)));
+              return list;
+            }
             list.push_back(subString);
             subString.clear();
           }
