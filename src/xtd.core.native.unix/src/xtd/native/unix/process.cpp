@@ -30,10 +30,9 @@ bool process::kill(intptr_t process) {
 
 bool process::wait(intptr_t process, int32_t& exit_code) {
   if (process == 0) return false;
-  siginfo_t wait_info;
-  memset(&wait_info, 0, sizeof(siginfo_t));
+  siginfo_t wait_info {};
   wait_info.si_pid = static_cast<pid_t>(process);
   waitid(P_PID, static_cast<pid_t>(process), &wait_info, WEXITED | WSTOPPED | WCONTINUED | WNOWAIT);
-  exit_code = wait_info.si_code;
+  exit_code = wait_info.si_status;
   return true;
 }

@@ -15,6 +15,10 @@ namespace {
   const bool debug_process = false;
 }
 
+process::process() {
+  exited.set_data(data_.get());
+}
+
 process& process::operator=(const process& value) {
   if (data_.use_count() == 1 && data_->thread_.joinable()) data_->thread_.detach();
   auto exit_callback = data_->exit_callback_;
