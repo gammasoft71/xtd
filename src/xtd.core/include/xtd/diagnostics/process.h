@@ -113,7 +113,7 @@ namespace xtd {
 
       std::chrono::system_clock::time_point start_time() const;
 
-      process&  kill();
+      process& kill();
 
       static process start(const process_start_info& start_info);
       static process start(const std::string& file_name);
