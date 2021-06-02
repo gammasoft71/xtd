@@ -56,7 +56,6 @@ namespace xtd {
       /// @brief Gets the set of command-line arguments_ to use when starting the application.
       /// @return File type–specific arguments_ that the system can associate with the application specified in the FileName property. The default is an empty string (""). On Windows Vista and earlier versions of the Windows operating system, the length of the arguments_ added to the length of the full path to the process must be less than 2080. On Windows 7 and later versions, the length must be less than 32699.
       const std::string& arguments() const {return arguments_;}
-      
       /// @brief Sets the set of command-line arguments_ to use when starting the application.
       /// @param value File type–specific arguments_ that the system can associate with the application specified in the FileName property. The default is an empty string (""). On Windows Vista and earlier versions of the Windows operating system, the length of the arguments_ added to the length of the full path to the process must be less than 2080. On Windows 7 and later versions, the length must be less than 32699.
       process_start_info& arguments(const std::string& value) {
@@ -77,6 +76,8 @@ namespace xtd {
       /// @brief Gets a value that identifies the domain_ to use when starting the process.
       /// @return string The Active Directory domain_ to use when starting the process. The domain_ property is primarily of interest to users within enterprise environments that use Active Directory.
       std::string domain() const {return domain_;}
+      /// @brief Sets a value that identifies the domain_ to use when starting the process.
+      /// @param value string The Active Directory domain_ to use when starting the process. The domain_ property is primarily of interest to users within enterprise environments that use Active Directory.
       process_start_info& domain(const std::string& value) {
         domain_ = value;
         return *this;
@@ -117,14 +118,21 @@ namespace xtd {
       /// @remarks The set of file types available to you depends in part on the value of the UseShellExecute property. If UseShellExecute is true, you can start any document and perform operations on the file, such as printing, with the Process component. When UseShellExecute is false, you can start only executables with the Process component.
       /// @remarks You can start a ClickOnce application by setting the FileName property to the location (for example, a Web address) from which you originally installed the application. Do not start a ClickOnce application by specifying its installed location on your hard disk.
       const std::string& file_name() const {return file_name_;}
+      /// @brief Sets the application or document to start.
+      /// @param value string The name of the application to start, or the name of a document of a file type that is associated with an application and that has a default open action available to it. The default is an empty string ("").
+      /// @remarks You must set at least the FileName property before you start the process. The file name is any application or document. A document is defined to be any file type that has an open or default action associated with it. You can view registered file types and their associated applications for your computer by using the Folder Options dialog box, which is available through the operating system. The Advanced button leads to a dialog box that shows whether there is an open action associated with a specific registered file type.
+      /// @remarks The set of file types available to you depends in part on the value of the UseShellExecute property. If UseShellExecute is true, you can start any document and perform operations on the file, such as printing, with the Process component. When UseShellExecute is false, you can start only executables with the Process component.
+      /// @remarks You can start a ClickOnce application by setting the FileName property to the location (for example, a Web address) from which you originally installed the application. Do not start a ClickOnce application by specifying its installed location on your hard disk.
       process_start_info& file_name(const std::string& value) {
         file_name_ = value;
         return *this;
       }
+      /// @cond
       process_start_info& file_name(const char* value) {
         file_name_ = value;
         return *this;
       }
+      /// @endcond
       process_start_info& file_name(const std::filesystem::path& value) {
         file_name_ = value.string();
         return *this;

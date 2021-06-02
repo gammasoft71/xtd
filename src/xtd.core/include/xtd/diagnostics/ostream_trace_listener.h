@@ -18,48 +18,43 @@ namespace xtd {
       /// @brief Initializes a new instance of the ostream_trace_listener class with a specified ostream.
       /// @param ostream An std::ostream that represents the stream the ostream_trace_listener writes to.
       /// @remarks This constructor initializes the name property to an empty string ("").
-      ostream_trace_listener(const std::ostream& ostream) {
-        this->ostream(ostream);
-      };
+      ostream_trace_listener(const std::ostream& ostream);
       /// @cond
-      ~ostream_trace_listener() {flush();}
+      ~ostream_trace_listener();
       /// @endcond
       
       /// @brief Gets the underlying stream.
       /// @return A std::ostream that represents the stream the ostream_trace_listener writes to.
-      virtual const std::ostream& ostream() const {return ostream_;}
+      virtual const std::ostream& ostream() const;
       /// @brief Sets the underlying stream.
       /// @param ostream A std::ostream that represents the stream the ostream_trace_listener writes to.
-      virtual void ostream(const std::ostream& ostream) {ostream_.rdbuf(ostream.rdbuf());}
+      virtual void ostream(const std::ostream& ostream);
 
-      void close() override {}
+      void close() override;
       void flush() override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        if (ostream_.good())
-          ostream_ << std::flush;
+        flush_();
 #endif
       }
       
       using trace_listener::write;
       void write(const std::string& message) override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        if (need_indent())
-          write_indent();
-        if (ostream_.good())
-          ostream_ << message;
+        write_(message);
 #endif
       }
       
       using trace_listener::write_line;
       void write_line(const std::string& message) override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        write(message + "\n");
-         need_indent(true);
+        write_line_(message);
 #endif
       }
       
     private:
-      void write_to_output_debug(const std::string& message);
+      void flush_();
+      void write_(const std::string& message);
+      void write_line_(const std::string& message);
       std::ostream ostream_ {nullptr};
     };
   }
