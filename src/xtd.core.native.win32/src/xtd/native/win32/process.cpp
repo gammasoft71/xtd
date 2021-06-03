@@ -21,7 +21,8 @@ intptr_t process::create(const std::string& command_line, int32_t process_creati
   STARTUPINFO startup_info {};
   startup_info.cb = sizeof(STARTUPINFO);
   PROCESS_INFORMATION process_information;
-  CreateProcessA(nullptr, const_cast<LPSTR>(((process_creation_flags & USE_SHELL_EXECUTE_PROCESS) == USE_SHELL_EXECUTE_PROCESS && !is_executable ? shell_execute() + command_line : command_line).c_str()), nullptr, nullptr, true, process_creation_flags, nullptr, nullptr, &startup_info, &process_information);
+  auto process_command_line = (process_creation_flags & USE_SHELL_EXECUTE_PROCESS) == USE_SHELL_EXECUTE_PROCESS && !is_executable ? shell_execute() + command_line : command_line;
+  if (CreateProcessA(nullptr, process_command_line.data(), nullptr, nullptr, false, process_creation_flags, nullptr, nullptr, &startup_info, &process_information) == 0) return 0;
   return reinterpret_cast<intptr_t>(process_information.hProcess);
 }
 
@@ -34,5 +35,6 @@ bool process::wait(intptr_t process, int32_t& exit_code) {
   if (process == 0) return false;
   bool result = WaitForSingleObject(reinterpret_cast<HANDLE>(process), INFINITE) == 0;
   if (result) GetExitCodeProcess(reinterpret_cast<HANDLE>(process), reinterpret_cast<LPDWORD>(&exit_code));
+  CloseHandle(reinterpret_cast<HANDLE>(process));
   return result;
 }
