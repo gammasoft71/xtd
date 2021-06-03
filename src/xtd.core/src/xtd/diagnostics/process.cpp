@@ -33,7 +33,8 @@ process::~process() {
 }
 
 int32_t process::exit_code() const {
-  return data_->exit_code_;
+  if (!has_exited()) throw xtd::invalid_operation_exception(caller_info_);
+  return data_->exit_code_.value();
 }
 
 std::chrono::system_clock::time_point process::exit_time() const {
@@ -42,13 +43,19 @@ std::chrono::system_clock::time_point process::exit_time() const {
 
 intptr_t process::handle() const {return data_->handle_;}
 
+bool process::has_exited() const {
+  if (data_->handle_ == 0 && !data_->exit_code_.has_value()) throw xtd::invalid_operation_exception(caller_info_);
+  return data_->exit_code_.has_value();
+}
+
 std::string process::machine_name() const {
   if (data_->handle_ == 0) throw xtd::invalid_operation_exception(caller_info_);
   return ".";
 }
 
-process_start_info process::start_info() const {return data_->start_info_;}
-process& process::start_info(process_start_info value) {
+const process_start_info& process::start_info() const {return data_->start_info_;}
+process_start_info& process::start_info() {return data_->start_info_;}
+process& process::start_info(const process_start_info& value) {
   data_->start_info_ = value;
   return *this;
 }
@@ -58,17 +65,16 @@ std::chrono::system_clock::time_point process::start_time() const {
 }
 
 process&  process::kill() {
+  if (data_->handle_ == 0) throw xtd::invalid_operation_exception(caller_info_);
   native::process::kill(data_->handle_);
   debug::write_line_if(debug_process, strings::format("process::kill [handle={}, killed]", data_->handle_));
   return *this;
 }
 
-process process::start(const process_start_info &start_info) {
-  process process;
-  process.start_info(start_info);
+bool process::start() {
   bool thread_started = false;
-
-  process.data_->thread_ = thread([&](class process process) {
+  data_->thread_ = thread([](class process process, bool& thread_started) {
+    process.data_->exit_code_.reset();
     thread_started = true;
     process.data_->start_time_ = system_clock::now();
     std::string shell_execute = "";
@@ -80,12 +86,21 @@ process process::start(const process_start_info &start_info) {
     auto command_line_ = strings::format("{}{}{}", shell_execute, process.start_info().file_name(), process.start_info().arguments() == "" ? "" : strings::format(" {}", process.start_info().arguments()));
     process.data_->handle_ = native::process::create(command_line_);
     debug::write_line_if(debug_process, strings::format("process::start [handle={}, start_time={:u}.{:D6}, started]", process.data_->handle_, process.data_->start_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time_.time_since_epoch())).count() % 1000000));
-    native::process::wait(process.data_->handle_, process.data_->exit_code_);
+    int32_t exit_code = 0;
+    if (native::process::wait(process.data_->handle_, exit_code)) process.data_->exit_code_ = exit_code;
     process.data_->exit_time_ = system_clock::now();
     debug::write_line_if(debug_process, strings::format("process::start [handle={}, exit_time={:u}.{:D6}, excited]", process.data_->handle_, process.data_->exit_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->exit_time_.time_since_epoch())).count() % 1000000));
+    process.data_->handle_ = 0;
     process.on_exited();
-  }, process);
+  }, *this, std::ref(thread_started));
   while(!thread_started) this_thread::yield();
+  return thread_started;
+}
+
+process process::start(const process_start_info &start_info) {
+  process process;
+  process.start_info(start_info);
+  process.start();
   return process;
 }
 
@@ -100,7 +115,10 @@ process process::start(const std::string& file_name, const std::string& argument
 process& process::wait_for_exit() {
   debug::write_line_if(debug_process, strings::format("process::wait_for_exit [handle={}, wait...]", data_->handle_));
   if (data_->thread_.joinable()) data_->thread_.join();
-  else native::process::wait(data_->handle_, data_->exit_code_);
+  else {
+    int32_t exit_code = 0;
+    if (native::process::wait(data_->handle_, exit_code)) data_->exit_code_ = exit_code;
+  }
   debug::write_line_if(debug_process, strings::format("process::wait_for_exit [handle={}, exit_code={}, ...exit]", data_->handle_, data_->exit_code_));
   return *this;
 }

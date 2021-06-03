@@ -7,6 +7,7 @@
 #include "../event_handler.h"
 #include "process_start_info.h"
 #include <chrono>
+#include <optional>
 #include <thread>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -27,9 +28,13 @@ namespace xtd {
       struct data;
       
     public:
-      class event_process : protected event_handler<process> {
+      /// @brief Represents a process event.
+      /// @par Library
+      /// xtd.core
+      /// @ingroup xtd_core diagnostics
+      class process_event : protected event_handler<process> {
         friend process;
-        event_process() : event_handler<process>() {}
+        process_event() : event_handler<process>() {}
         void set_data(data* data) {data_ = data;}
 
       public:        
@@ -84,6 +89,8 @@ namespace xtd {
       ~process();
       /// @endcond
 
+      /// @brief Gets the value that the associated process specified when it terminated.
+      /// @return The code that the associated process specified when it terminated.
       int32_t exit_code() const;
       std::chrono::system_clock::time_point exit_time() const;
 
@@ -93,26 +100,30 @@ namespace xtd {
       /// @exception xtd::not_supported_exception You are trying to access the xtd::diagnostics::processs::handle property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.
       /// @remarks An application can obtain a handle to a process that can be used as a parameter to many process-information and control functions. You can use this handle to initialize a xtd::diagnostics::wait_handle or to call native methods with platform invoke.
       intptr_t handle() const;
+      
+      bool has_exited() const;
 
       /// @brief Gets the name of the computer the associated process is running on.
       /// @return The name of the computer that the associated process is running on.
       /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::processs object.
       std::string machine_name() const;
       
-      process_start_info start_info() const;
-      process& start_info(process_start_info value);
+      const process_start_info& start_info() const;
+      process_start_info& start_info();
+      process& start_info(const process_start_info& value);
 
       std::chrono::system_clock::time_point start_time() const;
 
       process& kill();
 
+      bool start();
       static process start(const process_start_info& start_info);
       static process start(const std::string& file_name);
       static process start(const std::string& file_name, const std::string& arguments);
 
       process& wait_for_exit();
       
-      event_process exited;
+      process_event exited;
 
     protected:
       virtual void on_exited();
@@ -124,7 +135,7 @@ namespace xtd {
         std::thread thread_;
         std::chrono::system_clock::time_point start_time_;
         std::chrono::system_clock::time_point exit_time_;
-        int32_t exit_code_ = 0;
+        std::optional<int32_t> exit_code_;
         event_handler<process> exit_callback_;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
