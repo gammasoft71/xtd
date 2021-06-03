@@ -18,15 +18,17 @@ intptr_t process::create(const std::string& command_line, int32_t process_creati
   startup_info.cb = sizeof(STARTUPINFO);
   PROCESS_INFORMATION process_information;
   CreateProcessA(nullptr, const_cast<LPSTR>(((process_creation_flags & USE_SHELL_EXECUTE_PROCESS) == USE_SHELL_EXECUTE_PROCESS ? shell_execute() + command_line : command_line).c_str()), nullptr, nullptr, true, process_creation_flags, nullptr, nullptr, &startup_info, &process_information);
-  return 0;
+  return reinterpret_cast<intptr_t>(process_information.hProcess);
 }
 
 bool process::kill(intptr_t handle) {
   if (handle == 0) return false;
-  return true;
+  return TerminateProcess(reinterpret_cast<HANDLE>(handle), static_cast<uint32_t>(-1)) != 0;
 }
 
 bool process::wait(intptr_t process, int32_t& exit_code) {
   if (process == 0) return false;
-  return true;
+  bool result = WaitForSingleObject(reinterpret_cast<HANDLE>(process), static_cast<DWORD>(-1)) == 0;
+  if (result) GetExitCodeProcess(reinterpret_cast<HANDLE>(process), reinterpret_cast<LPDWORD>(&exit_code));
+  return result;
 }
