@@ -111,11 +111,9 @@ process process::start(const std::string& file_name, const std::string& argument
 
 process& process::wait_for_exit() {
   debug::write_line_if(debug_process, strings::format("process::wait_for_exit [handle={}, wait...]", data_->handle_));
+  int32_t exit_code = 0;
   if (data_->thread_.joinable()) data_->thread_.join();
-  else {
-    int32_t exit_code = 0;
-    if (native::process::wait(data_->handle_, exit_code)) data_->exit_code_ = exit_code;
-  }
+  else if (native::process::wait(data_->handle_, exit_code)) data_->exit_code_ = exit_code;
   debug::write_line_if(debug_process, strings::format("process::wait_for_exit [handle={}, exit_code={}, ...exit]", data_->handle_, data_->exit_code_));
   return *this;
 }
