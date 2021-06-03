@@ -1,5 +1,6 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/process.h>
+#include <xtd/native/process_creation_flags.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <cstdlib>
 
@@ -11,8 +12,8 @@ namespace {
   }
 }
 
-intptr_t process::create(const std::string& command_line, bool use_shell_execute) {
-  ::system((use_shell_execute ? shell_execute() + command_line : command_line).c_str());
+intptr_t process::create(const std::string& command_line, int32_t process_creation_flags) {
+  ::system(((process_creation_flags & USE_SHELL_EXECUTE_PROCESS) == USE_SHELL_EXECUTE_PROCESS ? shell_execute() + command_line : command_line).c_str());
   return 0;
 }
 
