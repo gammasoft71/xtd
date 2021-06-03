@@ -37,6 +37,7 @@ add_projects(
   main_menu_create_standard_items
   message_dialog_show_sheet
   painting
+  process_form
   settings_example2
   smileys
   stopwatch_form

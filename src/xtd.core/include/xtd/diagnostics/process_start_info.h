@@ -38,6 +38,16 @@ namespace xtd {
       /// @remarks You can change the FileName property after you call this constructor, up to the time that the process starts. After you start the process, changing these values has no effect.
       explicit process_start_info(const std::string& file_name) {file_name_ = file_name;}
       
+      /// @brief Initializes a new instance of the process_start_info class and specifies a file name such as an application or document with which to start the process and specifies use shell execute.
+      /// @param file_name_ An application or document with which to start a process.
+      /// @param use_shell_execute true if the shell should be used when starting the process; false if the process should be created directly from the executable file. The default is true.
+      /// @remarks The file name is any application or document. In this case, a document is defined to be any file type that has an open or default action associated with it. You can view registered file types and their associated applications for your computer by using the Folder Options dialog box, which is available through the operating system. The Advanced button leads to a dialog box that shows whether there is an open action associated with a specific registered file type.
+      /// @remarks You can change the FileName property after you call this constructor, up to the time that the process starts. After you start the process, changing these values has no effect.
+      explicit process_start_info(const std::string& file_name, bool use_shell_execute) {
+        file_name_ = file_name;
+        use_shell_execute_ = use_shell_execute;
+      }
+      
       /// @brief Initializes a new instance of the process_start_info class, specifies an application file name with which to start the process, and specifies a set of command-line arguments_ to pass to the application.
       /// @param file_name  An application with which to start a process.
       /// @param arguments Command-line arguments_ to pass to the application when the process starts.
@@ -46,6 +56,18 @@ namespace xtd {
       process_start_info(const std::string& file_name, const std::string& arguments) {
         file_name_ = file_name;
         arguments_ = arguments;
+      }
+      
+      /// @brief Initializes a new instance of the process_start_info class, specifies an application file name with which to start the process, specifies a set of command-line arguments_ to pass to the application and specifies use shell execute.
+      /// @param file_name  An application with which to start a process.
+      /// @param arguments Command-line arguments_ to pass to the application when the process starts.
+      /// @param use_shell_execute true if the shell should be used when starting the process; false if the process should be created directly from the executable file. The default is true.
+      /// @remarks The file name is any application or document. In this case, a document is defined to be any file type that has an open or default action associated with it. You can view registered file types and their associated applications for your computer by using the Folder Options dialog box, which is available through the operating system. The Advanced button leads to a dialog box that shows whether there is an open action associated with a specific registered file type.
+      /// @remarks You can change the FileName or Arguments properties after you call this constructor, up to the time that the process starts. After you start the process, changing these values has no effect.
+      process_start_info(const std::string& file_name, const std::string& arguments, bool use_shell_execute) {
+        file_name_ = file_name;
+        arguments_ = arguments;
+        use_shell_execute_ = use_shell_execute;
       }
       
       /// @cond
@@ -276,7 +298,7 @@ namespace xtd {
       }
       
       /// @brief Gets or sets a value indicating whether to use the operating system shell to start the process.
-      /// @return string true if the shell should be used when starting the process; false if the process should be created directly from the executable file. The default is true.
+      /// @return true if the shell should be used when starting the process; false if the process should be created directly from the executable file. The default is true.
       /// @remarks Setting this property to false enables you to redirect input, output, and error streams.
       /// @note UseShellExecute must be false if the UserName property is not null or an empty string, or an InvalidOperationException will be thrown when the Process.Start(process_start_info) method is called.
       /// @remarks When you use the operating system shell to start processes, you can start any document (which is any registered file type associated with an executable that has a default open action) and perform operations on the file, such as printing, by using the Process object. When UseShellExecute is false, you can start only executables by using the Process object.
@@ -342,11 +364,11 @@ namespace xtd {
       bool load_user_profile_ = false;
       //xtd::security::secure_string password_;
       std::string password_;
-      bool redirect_standard_error_;
-      bool redirect_standard_input_;
-      bool redirect_standard_output_;
+      bool redirect_standard_error_ = false;
+      bool redirect_standard_input_ = false;
+      bool redirect_standard_output_ = false;
       std::string user_name_;
-      bool use_shell_execute_;
+      bool use_shell_execute_ = true;
       std::string verb_;
       process_window_style window_style_ = process_window_style::normal;
       std::string working_directory_;

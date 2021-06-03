@@ -4,6 +4,7 @@
 #include "../../../include/xtd/invalid_operation_exception.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/process.h>
+#include <xtd/native/process_creation_flags.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace std;
@@ -77,15 +78,12 @@ bool process::start() {
     process.data_->exit_code_.reset();
     thread_started = true;
     process.data_->start_time_ = system_clock::now();
-    std::string shell_execute = "";
-    if (process.start_info().use_shell_execute()) {
-      if (environment::os_version().is_windows_platform()) shell_execute = "explorer ";
-      else if (environment::os_version().is_macos_platform()) shell_execute = "open ";
-      else if (environment::os_version().is_linux_platform()) shell_execute = "xdg-open ";
-    }
-    auto command_line_ = strings::format("{}{}{}", shell_execute, process.start_info().file_name(), process.start_info().arguments() == "" ? "" : strings::format(" {}", process.start_info().arguments()));
-    process.data_->handle_ = native::process::create(command_line_);
-    debug::write_line_if(debug_process, strings::format("process::start [handle={}, start_time={:u}.{:D6}, started]", process.data_->handle_, process.data_->start_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time_.time_since_epoch())).count() % 1000000));
+    auto command_line = strings::format("{}{}", process.start_info().file_name(), process.start_info().arguments() == "" ? "" : strings::format(" {}", process.start_info().arguments()));
+    int32_t process_creation_flags = 0;
+    if (process.start_info().create_no_window()) process_creation_flags |= CREATE_NO_WINDOW;
+    if (process.start_info().use_shell_execute()) process_creation_flags |= USE_SHELL_EXECUTE_PROCESS;
+    process.data_->handle_ = native::process::create(command_line, process_creation_flags);
+    debug::write_line_if(debug_process, strings::format("process::start [handle={}, command_line={}, start_time={:u}.{:D6}, started]", process.data_->handle_, command_line, process.data_->start_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time_.time_since_epoch())).count() % 1000000));
     int32_t exit_code = 0;
     if (native::process::wait(process.data_->handle_, exit_code)) process.data_->exit_code_ = exit_code;
     process.data_->exit_time_ = system_clock::now();

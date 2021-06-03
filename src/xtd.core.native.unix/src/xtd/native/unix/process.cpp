@@ -1,5 +1,6 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/process.h>
+#include <xtd/native/process_creation_flags.h>
 #include "../../../../include/xtd/native/unix/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <vector>
@@ -10,10 +11,20 @@
 
 using namespace xtd::native;
 
-intptr_t process::create(const std::string& command_line) {
+namespace {
+  std::string shell_execute() {
+#if defined(__APPLE__)
+    return "open ";
+#else
+    return "xdg-open ";
+#endif
+  }
+}
+
+intptr_t process::create(const std::string& command_line, int32_t process_creation_flags) {
   pid_t process = fork();
   if (process == 0) {
-    auto command_line_args = xtd::native::unix::strings::split(command_line, {' '}, 2);
+    auto command_line_args = xtd::native::unix::strings::split((process_creation_flags & USE_SHELL_EXECUTE_PROCESS) == USE_SHELL_EXECUTE_PROCESS ? shell_execute() + command_line : command_line, {' '}, 2);
     std::vector<char*> execvp_args(command_line_args.size() + 1);
     for (size_t index = 0; index < command_line_args.size(); ++index)
       execvp_args[index] = command_line_args[index].data();
