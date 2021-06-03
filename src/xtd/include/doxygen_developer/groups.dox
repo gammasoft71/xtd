@@ -11,13 +11,23 @@
 /// @warning Internal use only
 /// @ingroup native
 
+/// @defgroup bs button styles
+/// @brief button styles definitions.
+/// @warning Internal use only
+/// @ingroup native
+
 /// @defgroup bst button states
 /// @brief button states definitions.
 /// @warning Internal use only
 /// @ingroup native
 
-/// @defgroup bs button styles
-/// @brief button styles definitions.
+/// @defgroup ca content alignment
+/// @brief content alignment definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup cbs combo box styles
+/// @brief combo box styles definitions.
 /// @warning Internal use only
 /// @ingroup native
 
@@ -31,26 +41,6 @@
 /// @warning Internal use only
 /// @ingroup native
 
-/// @defgroup cs class styles
-/// @brief class styles definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup csidl constant special item ID list
-/// @brief special item ID list definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup cbs combo box styles
-/// @brief combo box styles definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup ca content alignment
-/// @brief content alignment definitions.
-/// @warning Internal use only
-/// @ingroup native
-
 /// @defgroup console_color console color
 /// @brief console color definitions.
 /// @warning Internal use only
@@ -58,6 +48,16 @@
 
 /// @defgroup console_special_key console special key
 /// @brief console special key definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup cs class styles
+/// @brief class styles definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup csidl constant special item ID list
+/// @brief special item ID list definitions.
 /// @warning Internal use only
 /// @ingroup native
 
@@ -76,8 +76,18 @@
 /// @warning Internal use only
 /// @ingroup native
 
+/// @defgroup es edit styles
+/// @brief edit styles definitions.
+/// @warning Internal use only
+/// @ingroup native
+
 /// @defgroup ex_ws extended window styles
 /// @brief extended window styles definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup file_attributes file attributes
+/// @brief file attributes definitions.
 /// @warning Internal use only
 /// @ingroup native
 
@@ -91,28 +101,18 @@
 /// @warning Internal use only
 /// @ingroup native
 
-/// @defgroup es edit styles
-/// @brief edit styles definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup file_attributes file attributes
-/// @brief file attributes definitions.
-/// @warning Internal use only
-/// @ingroup native
-
 /// @defgroup lbs list box styles
 /// @brief list box styles definitions.
 /// @warning Internal use only
 /// @ingroup native
 
-/// @defgroup mi menu item kind
-/// @brief menu item kind definitions.
+/// @defgroup mb message box styles
+/// @brief message box styles definitions.
 /// @warning Internal use only
 /// @ingroup native
 
-/// @defgroup mb message box styles
-/// @brief message box styles definitions.
+/// @defgroup mi menu item kind
+/// @brief menu item kind definitions.
 /// @warning Internal use only
 /// @ingroup native
 
@@ -130,13 +130,18 @@
 /// @warning Internal use only
 /// @ingroup native
 
-/// @defgroup platform_id platform id
-/// @brief platform id definitions.
+/// @defgroup pbs progress bar styles
+/// @brief progress bar styles definitions.
 /// @warning Internal use only
 /// @ingroup native
 
-/// @defgroup pbs progress bar styles
-/// @brief progress bar styles definitions.
+/// @defgroup pcf process creation flags
+/// @brief process creation flags definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup platform_id platform id
+/// @brief platform id definitions.
 /// @warning Internal use only
 /// @ingroup native
 
@@ -155,13 +160,13 @@
 /// @warning Internal use only
 /// @ingroup native
 
-/// @defgroup tcs tab control styles
-/// @brief tab control styles definitions.
+/// @defgroup tbs track bar styles
+/// @brief track bar styles definitions.
 /// @warning Internal use only
 /// @ingroup native
 
-/// @defgroup tbs track bar styles
-/// @brief track bar styles definitions.
+/// @defgroup tcs tab control styles
+/// @brief tab control styles definitions.
 /// @warning Internal use only
 /// @ingroup native
 

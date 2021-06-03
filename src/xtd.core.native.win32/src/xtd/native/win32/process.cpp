@@ -5,8 +5,14 @@
 
 using namespace xtd::native;
 
-intptr_t process::create(const std::string& command_line) {
-  ::system(command_line.c_str());
+namespace {
+  std::string shell_execute() {
+    return "explorer ";
+  }
+}
+
+intptr_t process::create(const std::string& command_line, bool use_shell_execute) {
+  ::system((use_shell_execute ? shell_execute() + command_line : command_line).c_str());
   return 0;
 }
 
