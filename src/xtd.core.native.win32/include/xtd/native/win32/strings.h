@@ -6,13 +6,16 @@
 /// @endcond
 
 #include <string>
+#include <vector>
 
 namespace xtd::native {
   class environment;
+  class process;
   class translator;
   namespace win32 {
     class strings final {
       friend xtd::native::environment;
+      friend xtd::native::process;
       friend xtd::native::translator;
     protected:
       strings() = delete;
@@ -20,7 +23,11 @@ namespace xtd::native {
       static bool contains(const std::string& str, const std::string& value) noexcept {
         return str.find(value) != str.npos;
       }
-      
+
+      static bool ends_with(const std::string& str, const std::string& value) noexcept {
+        return to_lower(str).rfind(to_lower(value)) + to_lower(value).size() == str.size();
+      }
+
       static std::string replace(const std::string& str, const std::string& old_string, const std::string& new_string) noexcept {
         std::string result(str);
         size_t index = 0;

@@ -46,7 +46,7 @@ public:
     open_calculator_button.image_align(content_alignment::middle_left);
     open_calculator_button.text("Calculator...");
     open_calculator_button.click += [] {
-      if (environment::os_version().is_windows_platform()) process::start(process_start_info("calc.exe", false));
+      if (environment::os_version().is_windows_platform()) process::start("calc.exe");
       else if (environment::os_version().is_macos_platform()) process::start("/System/Applications/Calculator.app");
       else if (environment::os_version().is_linux_platform()) process::start(process_start_info("gnome-calculator", false));
     };
