@@ -32,7 +32,7 @@ bool process::kill(intptr_t handle) {
 
 bool process::wait(intptr_t process, int32_t& exit_code) {
   if (process == 0) return false;
-  bool result = WaitForSingleObject(reinterpret_cast<HANDLE>(process), static_cast<DWORD>(-1)) == 0;
+  bool result = WaitForSingleObject(reinterpret_cast<HANDLE>(process), INFINITE) == 0;
   if (result) GetExitCodeProcess(reinterpret_cast<HANDLE>(process), reinterpret_cast<LPDWORD>(&exit_code));
   return result;
 }
