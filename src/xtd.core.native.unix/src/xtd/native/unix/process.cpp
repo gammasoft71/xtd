@@ -30,6 +30,7 @@ intptr_t process::create(const std::string& command_line, int32_t process_creati
       execvp_args[index] = command_line_args[index].data();
     execvp_args[execvp_args.size()-1] = nullptr;
     execvp(execvp_args[0], execvp_args.data());
+    exit(errno);
   }
   return static_cast<intptr_t>(process);
 }
