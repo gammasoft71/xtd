@@ -89,8 +89,7 @@ bool process::start() {
     int32_t exit_code = 0;
     if (native::process::wait(process.data_->handle_, exit_code)) process.data_->exit_code_ = exit_code;
     process.data_->exit_time_ = system_clock::now();
-    debug::write_line_if(debug_process, strings::format("process::start [handle={}, exit_time={:u}.{:D6}, excited]", process.data_->handle_, process.data_->exit_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->exit_time_.time_since_epoch())).count() % 1000000));
-    process.data_->handle_ = 0;
+    debug::write_line_if(debug_process, strings::format("process::start [handle={}, exit_time={:u}.{:D6}, exited]", process.data_->handle_, process.data_->exit_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->exit_time_.time_since_epoch())).count() % 1000000));
     process.on_exited();
   }, *this, std::ref(thread_started));
   while(!thread_started) this_thread::yield();
