@@ -1,5 +1,6 @@
 /// @todo #include<numbers> instead #include <cmath> when all is in c++20
 //#include <numbers>
+#define _USE_MATH_DEFINES
 #include <cmath>
 #include <xtd/forms/control.h>
 
@@ -56,7 +57,7 @@ namespace xtd {
       }
 
     private:
-      static double degrees_to_radians(double degrees) {
+      static float degrees_to_radians(float degrees) {
         /// @todo replace by std::numbers::pi when all is in c++20
         return M_PI / 180 * degrees;
       }
@@ -88,11 +89,11 @@ public:
     create_button.text("create");
     create_button.click += [&] {
       //proc = process::start(process_start_info(path::combine(environment::get_folder_path(environment::special_folder::my_pictures), "switch.png")));
-      process_start_info psi("/System/Applications/Calculator.app/Contents/MacOS/Calculator");
+      process_start_info psi("calc.exe");
       psi.use_shell_execute(false);
       proc = process::start(psi);
       debug::write_line("start time : {}", proc.start_time());
-      //proc.wait_for_exit();
+      proc.wait_for_exit();
     };
 
     proc.exited += {*this, &form_main::on_process_exit};
