@@ -5,7 +5,6 @@ using namespace xtd::diagnostics;
 using namespace xtd::io;
 using namespace xtd::forms;
 
-
 class main_form : public form {
 public:
   main_form() {
