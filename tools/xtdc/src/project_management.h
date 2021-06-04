@@ -1725,7 +1725,6 @@ namespace xtdc_command {
         "}",
         "",
         "void form1::main() {",
-        "  application::enable_visual_styles();",
         "  application::run(form1());",
         "}",
       };
