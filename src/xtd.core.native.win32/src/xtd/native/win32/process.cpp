@@ -36,7 +36,7 @@ intptr_t process::create(const string& file_name, const string& arguments, int32
   STARTUPINFO startup_info {};
   startup_info.cb = sizeof(STARTUPINFO);
   PROCESS_INFORMATION process_information;
-  if (CreateProcessA(nullptr, command_line.data(), nullptr, nullptr, false, process_creation_flags, nullptr, nullptr, &startup_info, &process_information) == 0) return 0;
+  if (CreateProcessA(nullptr, command_line.data(), nullptr, nullptr, false, process_creation_flags, nullptr, working_directory == "" ? nullptr : working_directory.c_str(), &startup_info, &process_information) == 0) return 0;
   return reinterpret_cast<intptr_t>(process_information.hProcess);
 }
 
