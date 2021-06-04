@@ -1010,8 +1010,8 @@ namespace xtd {
     /// @return A String consisting of the elements of value interspersed with the separator String.
     /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
     /// @remarks stream << operator is called on each object to generate the content.
-    template<typename char_t, typename Collection>
-    static std::basic_string<char_t> join(const std::basic_string<char_t>& separator, const Collection& values) noexcept {return join(separator, values, 0, values.size());}
+    template<typename char_t, typename collection_t>
+    static std::basic_string<char_t> join(const std::basic_string<char_t>& separator, const collection_t& values) noexcept {return join(separator, values, 0, values.size());}
     
     /// @brief Concatenates a specified separator String between each element of a specified Object array, yielding a single concatenated String.
     /// @param separator A String separator.
@@ -1020,8 +1020,8 @@ namespace xtd {
     /// @return A String consisting of the elements of value interspersed with the separator String.
     /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
     /// @remarks stream << operator is called on each object to generate the content.
-    template<typename char_t, typename Collection>
-    static std::basic_string<char_t> join(const std::basic_string<char_t>& separator, const Collection& values, size_t index) noexcept {return join(separator, values, index, values.size()-index);}
+    template<typename char_t, typename collection_t>
+    static std::basic_string<char_t> join(const std::basic_string<char_t>& separator, const collection_t& values, size_t index) noexcept {return join(separator, values, index, values.size()-index);}
     
     /// @brief Concatenates a specified separator String between each element of a specified Object array, yielding a single concatenated String.
     /// @param separator A String separator.
@@ -1031,8 +1031,8 @@ namespace xtd {
     /// @return A String consisting of the elements of value interspersed with the separator String.
     /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
     /// @remarks stream << operator is called on each object to generate the content.
-    template<typename char_t, typename Collection>
-    static std::basic_string<char_t> join(const std::basic_string<char_t>& separator, const Collection& values, size_t index, size_t count) noexcept {
+    template<typename char_t, typename collection_t>
+    static std::basic_string<char_t> join(const std::basic_string<char_t>& separator, const collection_t& values, size_t index, size_t count) noexcept {
       size_t i = 0;
       std::basic_stringstream<char_t> ss;
       for (const auto& item : values) {
@@ -1046,12 +1046,12 @@ namespace xtd {
     }
     
     /// @cond
-    template<typename char_t, typename Collection>
-    static std::basic_string<char_t> join(const char_t* separator, const Collection& values) noexcept {return join(std::basic_string<char_t>(separator), values);}
-    template<typename char_t, typename Collection>
-    static std::basic_string<char_t> join(const char_t* separator, const Collection& values, size_t index) noexcept {return join(std::basic_string<char_t>(separator), values, index);}
-    template<typename char_t, typename Collection>
-    static std::basic_string<char_t> join(const char_t* separator, const Collection& values, size_t index, size_t count) noexcept {return join(std::basic_string<char_t>(separator), values, index, count);}
+    template<typename char_t, typename collection_t>
+    static std::basic_string<char_t> join(const char_t* separator, const collection_t& values) noexcept {return join(std::basic_string<char_t>(separator), values);}
+    template<typename char_t, typename collection_t>
+    static std::basic_string<char_t> join(const char_t* separator, const collection_t& values, size_t index) noexcept {return join(std::basic_string<char_t>(separator), values, index);}
+    template<typename char_t, typename collection_t>
+    static std::basic_string<char_t> join(const char_t* separator, const collection_t& values, size_t index, size_t count) noexcept {return join(std::basic_string<char_t>(separator), values, index, count);}
     template<typename char_t, typename Value>
     static std::basic_string<char_t> join(const char_t* separator, const std::initializer_list<Value>& values) noexcept {return join(std::basic_string<char_t>(separator), values);}
     template<typename char_t, typename Value>

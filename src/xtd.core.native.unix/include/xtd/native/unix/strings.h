@@ -7,6 +7,7 @@
 
 #include <limits>
 #include <vector>
+#include <sstream>
 #include <string>
 
 #undef unix
@@ -26,7 +27,24 @@ namespace xtd::native {
       static bool contains(const std::string& str, const std::string& value) noexcept {
         return str.find(value) != str.npos;
       }
+
+      template<typename separator_t, typename collection_t>
+      static std::string join(const separator_t& separator, const collection_t& values) noexcept {return join(separator, values, 0, values.size());}
       
+      template<typename separator_t, typename collection_t>
+      static std::string join(const separator_t& separator, const collection_t& values, size_t index, size_t count) noexcept {
+        size_t i = 0;
+        std::stringstream ss;
+        for (const auto& item : values) {
+          if (i >= index) {
+            if (i != index) ss << separator;
+            ss << item;
+          }
+          if (++i >= index + count) break;
+        }
+        return ss.str();
+      }
+
       static std::string replace(const std::string& str, const std::string& old_string, const std::string& new_string) noexcept {
         std::string result(str);
         size_t index = 0;
