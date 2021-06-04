@@ -616,22 +616,22 @@ namespace xtdc_command {
     }
     
     static int documentation(const vector<string>& args) {
-      system(strings::format("{}https://github.com/gammasoft71/xtd/blob/master/docs/home.md", environment::os_version().is_macos_platform() ? "open " : "").c_str());
+      xtd::diagnostics::process::start("https://github.com/gammasoft71/xtd/blob/master/docs/home.md").wait_for_exit();
       return 0;
     }
     
     static int examples(const vector<string>& args) {
-      system(strings::format("{}https://github.com/gammasoft71/xtd/blob/master/examples/README.md", environment::os_version().is_macos_platform() ? "open " : "").c_str());
+      xtd::diagnostics::process::start("https://github.com/gammasoft71/xtd/blob/master/examples/README.md").wait_for_exit();
       return 0;
     }
     
     static int guide(const vector<string>& args) {
-      system(strings::format("{}https://codedocs.xyz/gammasoft71/xtd/index.html", environment::os_version().is_macos_platform() ? "open " : "").c_str());
+      xtd::diagnostics::process::start("https://codedocs.xyz/gammasoft71/xtd/index.html").wait_for_exit();
       return 0;
     }
     
     static int web(const vector<string>& args) {
-      system(strings::format("{}https://gammasoft71.wixsite.com/gammasoft", environment::os_version().is_macos_platform() ? "open " : "").c_str());
+      xtd::diagnostics::process::start("https://gammasoft71.wixsite.com/gammasoft").wait_for_exit();
       return 0;
     }
     
