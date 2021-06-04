@@ -13,10 +13,12 @@ add_projects(
   guid
   keywords
   mains
+  processes
   random
   sprintf
   strings
   web
   others
+  tests
 )
 

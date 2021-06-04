@@ -35,7 +35,7 @@ namespace xtd {
       /// @param command_line Message to write.
       /// @return The created process handle.
       /// @warning Internal use only
-      static intptr_t create(const std::string& command_line, int32_t process_creation_flags);
+      static intptr_t create(const std::string& file_name, const std::string& arguments, int32_t process_creation_flags);
       /// @brief Kill process.
       /// @param process The process handle to kill.
       /// @warning Internal use only
