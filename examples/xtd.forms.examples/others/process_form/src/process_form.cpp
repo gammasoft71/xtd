@@ -55,7 +55,9 @@ public:
     open_readme_png_file_button.text("Open \"gammasoft.png\" file...");
     open_readme_png_file_button.click += [] {
       drawing::system_images::from_name("gammasoft", drawing::size(512, 512)).save(path::combine(path::get_temp_path(), "gammasoft.png"));
-      process::start(path::combine(path::get_temp_path(), "gammasoft.png"));
+      process_start_info psi("gammasoft.png");
+      psi.working_directory(path::get_temp_path());
+      process::start(psi);
     };
 
     open_calculator_button.image(button_images::from_name("accessories-calculator", drawing::size(64, 64)));

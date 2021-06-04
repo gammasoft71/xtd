@@ -82,7 +82,7 @@ bool process::start() {
     int32_t process_creation_flags = 0;
     if (process.start_info().create_no_window()) process_creation_flags |= CREATE_NO_WINDOW;
     if (process.start_info().use_shell_execute()) process_creation_flags |= USE_SHELL_EXECUTE_PROCESS;
-    process.data_->handle_ = native::process::create(process.start_info().file_name(), process.start_info().arguments(), process_creation_flags);
+    process.data_->handle_ = native::process::create(process.start_info().file_name(), process.start_info().arguments(), process_creation_flags, process.start_info().working_directory());
     debug::write_line_if(debug_process, strings::format("process::start [handle={}, command_line={}, start_time={:u}.{:D6}, started]", process.data_->handle_, command_line, process.data_->start_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time_.time_since_epoch())).count() % 1000000));
     int32_t exit_code = 0;
     if (native::process::wait(process.data_->handle_, exit_code)) process.data_->exit_code_ = exit_code;

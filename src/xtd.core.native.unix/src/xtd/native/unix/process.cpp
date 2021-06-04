@@ -11,6 +11,7 @@
 #include <sys/wait.h>
 
 using namespace std;
+using namespace std::filesystem;
 using namespace xtd::native;
 
 namespace {
@@ -29,8 +30,8 @@ namespace {
     return false;
   }
   
-  bool is_valid_shell_execute_process(const string& command_line) {
-    return filesystem::exists(command_line) || is_known_uri(command_line);
+  bool is_valid_shell_execute_process(const string& command_line, const std::string& working_directory) {
+    return exists(command_line) || exists(path(working_directory)/path(command_line)) || is_known_uri(command_line);
   }
   
   vector<string> split_arguments(const string& line_argument) {
@@ -73,15 +74,14 @@ namespace {
   }
 }
 
-intptr_t process::create(const string& file_name, const string& arguments, int32_t process_creation_flags) {
+intptr_t process::create(const string& file_name, const string& arguments, int32_t process_creation_flags, const std::string& working_directory) {
   auto command_line = file_name + (arguments == "" ? "" : (" " + arguments));
-  if ((process_creation_flags & USE_SHELL_EXECUTE_PROCESS) == USE_SHELL_EXECUTE_PROCESS && !is_valid_shell_execute_process(command_line)) process_creation_flags &= ~USE_SHELL_EXECUTE_PROCESS;
   pid_t process = fork();
   if (process == 0) {
     vector<string> command_line_args;
-    if ((process_creation_flags & USE_SHELL_EXECUTE_PROCESS) == USE_SHELL_EXECUTE_PROCESS) {
+    if ((process_creation_flags & USE_SHELL_EXECUTE_PROCESS) == USE_SHELL_EXECUTE_PROCESS && is_valid_shell_execute_process(command_line, working_directory)) {
       command_line_args.push_back(shell_execute());
-      command_line_args.push_back(command_line);
+      command_line_args.push_back(exists(path(working_directory)/path(command_line)) ? (path(working_directory)/path(command_line)).string() : command_line);
     } else {
       command_line_args = split_arguments(arguments);
       command_line_args.insert(command_line_args.begin(), file_name);
