@@ -8,7 +8,7 @@ add_include_directories(include)
 if (APPLE)
   add_references("-framework Foundation")
 elseif (NOT ANDROID)
-  add_references(uuid)
+  add_references(uuid pthread)
 endif ()
 add_references(xtd.core.native)
 add_sources(
