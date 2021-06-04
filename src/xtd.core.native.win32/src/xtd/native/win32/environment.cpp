@@ -1,5 +1,6 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/environment.h>
+#include <xtd/native/constant_special_item_id_list.h>
 #include "../../../../include/xtd/native/win32/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
@@ -64,6 +65,10 @@ std::map<std::string, std::string>& environment::get_environment_variables(int32
 }
 
 std::string environment::get_know_folder_path(int32_t id) {
+  if (id == CSIDL_HOME) {
+    auto path = getenv("HOMEPATH");
+    return path ? path : "";
+  }
   char path[MAX_PATH + 1];
   return SHGetFolderPath(nullptr, id, nullptr, SHGFP_TYPE_CURRENT, path) == S_OK ? path : "";
 }
