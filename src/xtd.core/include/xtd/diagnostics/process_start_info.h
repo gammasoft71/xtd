@@ -38,16 +38,6 @@ namespace xtd {
       /// @remarks You can change the FileName property after you call this constructor, up to the time that the process starts. After you start the process, changing these values has no effect.
       explicit process_start_info(const std::string& file_name) {file_name_ = file_name;}
       
-      /// @brief Initializes a new instance of the process_start_info class and specifies a file name such as an application or document with which to start the process and specifies use shell execute.
-      /// @param file_name_ An application or document with which to start a process.
-      /// @param use_shell_execute true if the shell should be used when starting the process; false if the process should be created directly from the executable file. The default is true.
-      /// @remarks The file name is any application or document. In this case, a document is defined to be any file type that has an open or default action associated with it. You can view registered file types and their associated applications for your computer by using the Folder Options dialog box, which is available through the operating system. The Advanced button leads to a dialog box that shows whether there is an open action associated with a specific registered file type.
-      /// @remarks You can change the FileName property after you call this constructor, up to the time that the process starts. After you start the process, changing these values has no effect.
-      explicit process_start_info(const std::string& file_name, bool use_shell_execute) {
-        file_name_ = file_name;
-        use_shell_execute_ = use_shell_execute;
-      }
-      
       /// @brief Initializes a new instance of the process_start_info class, specifies an application file name with which to start the process, and specifies a set of command-line arguments_ to pass to the application.
       /// @param file_name  An application with which to start a process.
       /// @param arguments Command-line arguments_ to pass to the application when the process starts.
@@ -56,18 +46,6 @@ namespace xtd {
       process_start_info(const std::string& file_name, const std::string& arguments) {
         file_name_ = file_name;
         arguments_ = arguments;
-      }
-      
-      /// @brief Initializes a new instance of the process_start_info class, specifies an application file name with which to start the process, specifies a set of command-line arguments_ to pass to the application and specifies use shell execute.
-      /// @param file_name  An application with which to start a process.
-      /// @param arguments Command-line arguments_ to pass to the application when the process starts.
-      /// @param use_shell_execute true if the shell should be used when starting the process; false if the process should be created directly from the executable file. The default is true.
-      /// @remarks The file name is any application or document. In this case, a document is defined to be any file type that has an open or default action associated with it. You can view registered file types and their associated applications for your computer by using the Folder Options dialog box, which is available through the operating system. The Advanced button leads to a dialog box that shows whether there is an open action associated with a specific registered file type.
-      /// @remarks You can change the FileName or Arguments properties after you call this constructor, up to the time that the process starts. After you start the process, changing these values has no effect.
-      process_start_info(const std::string& file_name, const std::string& arguments, bool use_shell_execute) {
-        file_name_ = file_name;
-        arguments_ = arguments;
-        use_shell_execute_ = use_shell_execute;
       }
       
       /// @cond
