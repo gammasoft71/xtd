@@ -18,13 +18,13 @@ public:
     return result;
   }
   
-  size_t wide_char_to_multi_byte(const wchar_t* wide_char_ctr, uint32_t _NbMultibyteChar_U32, char* multi_byte_str, const char* local_str) {
+  size_t wide_char_to_multi_byte(const wchar_t* wide_char_ctr, uint32_t nb_multibyte_char, char* multi_byte_str, const char* local_str) {
     size_t result = static_cast<size_t> (-1);
     bool ok = true;
     
     if (wide_char_ctr) {
       if (local_str) ok = local_str[0] ? setlocale(LC_ALL, local_str) != nullptr : setlocale(LC_ALL, "C") != nullptr;
-      if (ok) result = std::wcstombs(multi_byte_str, wide_char_ctr, _NbMultibyteChar_U32);
+      if (ok) result = std::wcstombs(multi_byte_str, wide_char_ctr, nb_multibyte_char);
       if (local_str) std::locale::global(std::locale::global(std::locale(local_str)));
     }
     
