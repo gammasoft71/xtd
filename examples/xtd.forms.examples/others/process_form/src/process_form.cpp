@@ -28,7 +28,7 @@ public:
       process::start("https://gammasoft71.wixsite.com/xtdpro");
     };
 
-    xtd_mail_button.image(button_images::from_name("mail-send", drawing::size(64, 64)));
+    xtd_mail_button.image(button_images::from_name("document-send", drawing::size(64, 64)));
     xtd_mail_button.image_align(content_alignment::middle_left);
     xtd_mail_button.text("Write mail...");
     xtd_mail_button.click += [] {
