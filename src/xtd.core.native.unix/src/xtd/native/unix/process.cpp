@@ -83,6 +83,7 @@ intptr_t process::create(const string& file_name, const string& arguments, int32
       command_line_args.push_back(shell_execute());
       command_line_args.push_back(exists(path(working_directory)/path(command_line)) ? (path(working_directory)/path(command_line)).string() : command_line);
     } else {
+      if (working_directory != "") current_path(working_directory);
       command_line_args = split_arguments(arguments);
       command_line_args.insert(command_line_args.begin(), file_name);
     }
