@@ -1,10 +1,10 @@
 # environment_stack_trace
 
-Shows how to use [xtd::environment](../../../../src/xtd.core/include/xtd/environment.h) class.
+Shows how to use [xtd::diagnostics::process_start_info](../../../../src/xtd.core/include/xtd/diagnostics/process_start_info.h) class.
 
 ## Sources
 
-[src/environment_stack_trace.cpp](src/environment_stack_trace.cpp)
+[src/process_start_info.cpp](src/process_start_info.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
