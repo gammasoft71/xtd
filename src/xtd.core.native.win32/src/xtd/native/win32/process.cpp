@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <Windows.h>
 
+using namespace std;
 using namespace xtd::native;
 
 namespace {
