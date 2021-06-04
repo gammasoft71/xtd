@@ -4,6 +4,7 @@
 #include "../../../../include/xtd/native/unix/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <vector>
+#include <filesystem>
 #include <cstdlib>
 #include <signal.h>
 #include <unistd.h>
@@ -19,6 +20,17 @@ namespace {
 #else
     return "xdg-open";
 #endif
+  }
+
+  bool is_known_uri(const string& command_line) {
+    static vector<string> schemes = {"file", "ftp", "gopher", "http", "https", "mailto", "net.pipe", "net.tcp", "news", "nntp"};
+    for (auto scheme : schemes)
+      if (command_line.find(scheme + ":") == 0) return true;
+    return false;
+  }
+  
+  bool is_valid_shell_execute_process(const string& command_line) {
+    return filesystem::exists(command_line) || is_known_uri(command_line);
   }
   
   vector<string> split_arguments(const string& line_argument) {
@@ -62,12 +74,14 @@ namespace {
 }
 
 intptr_t process::create(const string& file_name, const string& arguments, int32_t process_creation_flags) {
+  auto command_line = file_name + (arguments == "" ? "" : (" " + arguments));
+  if ((process_creation_flags & USE_SHELL_EXECUTE_PROCESS) == USE_SHELL_EXECUTE_PROCESS && !is_valid_shell_execute_process(command_line)) process_creation_flags &= ~USE_SHELL_EXECUTE_PROCESS;
   pid_t process = fork();
   if (process == 0) {
     vector<string> command_line_args;
     if ((process_creation_flags & USE_SHELL_EXECUTE_PROCESS) == USE_SHELL_EXECUTE_PROCESS) {
       command_line_args.push_back(shell_execute());
-      command_line_args.push_back(file_name + (arguments == "" ? "" : (" " + arguments)));
+      command_line_args.push_back(command_line);
     } else {
       command_line_args = split_arguments(arguments);
       command_line_args.insert(command_line_args.begin(), file_name);
