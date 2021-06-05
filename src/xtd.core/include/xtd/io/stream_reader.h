@@ -33,6 +33,10 @@ namespace xtd {
       /// @return The underlying stream.
       std::optional<std::reference_wrapper<std::istream>> base_stream() const {return stream_ ? std::optional<std::reference_wrapper<std::istream>>(*stream_) : std::optional<std::reference_wrapper<std::istream>>();}
       
+      /// @brief Gets a value that indicates whether the current stream position is at the end of the stream.
+      /// @return true if the current stream position is at the end of the stream; otherwise false.
+      bool end_of_stream() const {return peek() == EOF;}
+      
       /// @brief Closes the stream_reader object and the underlying stream, and releases any system resources associated with the reader.
       void close() override {
         if (stream_ && dynamic_cast<std::ifstream*>(stream_)) static_cast<std::ifstream*>(stream_)->close();
