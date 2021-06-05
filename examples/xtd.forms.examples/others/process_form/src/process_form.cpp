@@ -12,13 +12,13 @@ public:
     controls().push_back(layout_panel);
     client_size({350, 540});
 
-    layout_panel.controls().push_back_range({xtd_web_button, xtd_mail_button, open_home_folder_button, open_readme_txt_file_button, open_readme_png_file_button, open_calculator_button});
+    layout_panel.controls().push_back_range({xtd_web_button, write_mail_button, open_home_folder_button, open_readme_txt_file_button, open_gammasoft_png_file_button, open_calculator_button});
     layout_panel.dock(dock_style::fill);
     layout_panel.control_layout_style(xtd_web_button, {size_type::auto_size, true});
-    layout_panel.control_layout_style(xtd_mail_button, {size_type::auto_size, true});
+    layout_panel.control_layout_style(write_mail_button, {size_type::auto_size, true});
     layout_panel.control_layout_style(open_home_folder_button, {size_type::auto_size, true});
     layout_panel.control_layout_style(open_readme_txt_file_button, {size_type::auto_size, true});
-    layout_panel.control_layout_style(open_readme_png_file_button, {size_type::auto_size, true});
+    layout_panel.control_layout_style(open_gammasoft_png_file_button, {size_type::auto_size, true});
     layout_panel.control_layout_style(open_calculator_button, {size_type::auto_size, true});
 
     xtd_web_button.image(button_images::from_name("text-html", drawing::size(64, 64)));
@@ -28,10 +28,10 @@ public:
       process::start("https://gammasoft71.wixsite.com/xtdpro");
     };
 
-    xtd_mail_button.image(button_images::from_name("document-send", drawing::size(64, 64)));
-    xtd_mail_button.image_align(content_alignment::middle_left);
-    xtd_mail_button.text("Write mail...");
-    xtd_mail_button.click += [] {
+    write_mail_button.image(button_images::from_name("document-send", drawing::size(64, 64)));
+    write_mail_button.image_align(content_alignment::middle_left);
+    write_mail_button.text("Write mail...");
+    write_mail_button.click += [] {
       process::start("mailto:gammasoft71@gmail.com");
     };
 
@@ -50,10 +50,10 @@ public:
       process::start(path::combine(path::get_temp_path(), "readme.txt"));
     };
     
-    open_readme_png_file_button.image(button_images::from_name("image-x-generic", drawing::size(64, 64)));
-    open_readme_png_file_button.image_align(content_alignment::middle_left);
-    open_readme_png_file_button.text("Open \"gammasoft.png\" file...");
-    open_readme_png_file_button.click += [] {
+    open_gammasoft_png_file_button.image(button_images::from_name("image-x-generic", drawing::size(64, 64)));
+    open_gammasoft_png_file_button.image_align(content_alignment::middle_left);
+    open_gammasoft_png_file_button.text("Open \"gammasoft.png\" file...");
+    open_gammasoft_png_file_button.click += [] {
       drawing::system_images::from_name("gammasoft", drawing::size(512, 512)).save(path::combine(path::get_temp_path(), "gammasoft.png"));
       process_start_info psi("gammasoft.png");
       psi.working_directory(path::get_temp_path());
@@ -74,10 +74,10 @@ public:
 private:
   vertical_layout_panel layout_panel;
   button xtd_web_button;
-  button xtd_mail_button;
+  button write_mail_button;
   button open_home_folder_button;
   button open_readme_txt_file_button;
-  button open_readme_png_file_button;
+  button open_gammasoft_png_file_button;
   button open_calculator_button;
 };
 
