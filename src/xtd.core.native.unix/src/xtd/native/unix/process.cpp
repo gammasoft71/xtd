@@ -42,7 +42,23 @@ namespace {
     char value_ = EOF;
     std::string buffer_;
   };
+
+  class process_istream : public std::istream {
+  public:
+    process_istream(int file_descriptor) : std::istream(&stream_buf_), stream_buf_(file_descriptor) {}
+    
+  private:
+    file_descriptor_streambuf stream_buf_;
+  };
   
+  class process_ostream : public std::ostream {
+  public:
+    process_ostream(int file_descriptor) : std::ostream(&stream_buf_), stream_buf_(file_descriptor) {}
+    
+  private:
+    file_descriptor_streambuf stream_buf_;
+  };
+
   std::string shell_execute() {
 #if defined(__APPLE__)
     return "open";
@@ -152,13 +168,10 @@ intptr_t process::create(const string& file_name, const string& arguments, int32
     if (redirect_standard_input) close(pipe_stdin[0]);
     if (redirect_standard_output) close(pipe_stdout[1]);
     if (redirect_standard_error) close(pipe_stderr[1]);
-    
-    file_descriptor_streambuf file_descriptor_streambuf_stdin(pipe_stdin[1]);
-    std::ostream process_stdin_stream(&file_descriptor_streambuf_stdin);
-    file_descriptor_streambuf file_descriptor_streambuf_stdout(pipe_stdout[0]);
-    std::istream process_stdout_stream(&file_descriptor_streambuf_stdout);
-    file_descriptor_streambuf file_descriptor_streambuf_stderr(pipe_stderr[0]);
-    std::istream process_stderr_stream(&file_descriptor_streambuf_stderr);
+
+    process_ostream process_stdin_stream(pipe_stdin[1]);
+    process_istream process_stdout_stream(pipe_stdout[0]);
+    process_istream process_stderr_stream(pipe_stderr[0]);
   }
   return static_cast<intptr_t>(process);
 }
