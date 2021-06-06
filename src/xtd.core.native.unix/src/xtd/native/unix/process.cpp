@@ -17,12 +17,12 @@ using namespace xtd::native;
 namespace {
   class file_descriptor_streambuf : public std::streambuf {
   public:
-    file_descriptor_streambuf(int fd) : fd_(fd) {}
-    ~file_descriptor_streambuf() {close(fd_);}
+    file_descriptor_streambuf(int file_descriptor) : file_descriptor_(file_descriptor) {}
+    ~file_descriptor_streambuf() {close(file_descriptor_);}
     
   protected:
     int underflow() override {
-      if (read(fd_, &value_, 1) == 1) {
+      if (read(file_descriptor_, &value_, 1) == 1) {
         this->setg(&value_, &value_, &value_+1);
         return value_;
       }
@@ -31,16 +31,15 @@ namespace {
     
     int overflow(int c) override {
       value_ = static_cast<char>(c);
-      if (write(fd_, &value_, 1) != -1) {
+      if (write(file_descriptor_, &value_, 1) != -1) {
         this->setp(&value_, &value_);
         return 0;
       }
       return std::streambuf::overflow(c); // EOF
     }
     
-    int fd_;
+    int file_descriptor_;
     char value_ = EOF;
-    std::string buffer_;
   };
 
   class process_istream : public std::istream {
@@ -75,7 +74,7 @@ namespace {
   }
   
   bool is_valid_shell_execute_process(const string& command_line, const std::string& working_directory) {
-    return exists(command_line) || exists(path(working_directory)/path(command_line)) || is_known_uri(command_line);
+    return command_line == "" || exists(command_line) || exists(path(working_directory)/path(command_line)) || is_known_uri(command_line);
   }
   
   vector<string> split_arguments(const string& line_argument) {
@@ -148,7 +147,8 @@ tuple<intptr_t, unique_ptr<ostream>, unique_ptr<istream>, unique_ptr<istream>> p
     vector<string> command_line_args;
     if ((process_creation_flags & USE_SHELL_EXECUTE_PROCESS) == USE_SHELL_EXECUTE_PROCESS && is_valid_shell_execute_process(command_line, working_directory)) {
       command_line_args.push_back(shell_execute());
-      command_line_args.push_back(exists(path(working_directory)/path(command_line)) ? (path(working_directory)/path(command_line)).string() : command_line);
+      auto command_working_directory = working_directory != "" ? working_directory : current_path().string();
+      command_line_args.push_back(exists(path(command_working_directory)/path(command_line)) ? (path(command_working_directory)/path(command_line)).string() : command_line);
     } else {
       if (working_directory != "") current_path(working_directory);
       command_line_args = split_arguments(arguments);
