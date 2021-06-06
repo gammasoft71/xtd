@@ -66,42 +66,48 @@ namespace {
 
 tuple<intptr_t, unique_ptr<ostream>, unique_ptr<istream>, unique_ptr<istream>> process::create(const string& file_name, const string& arguments, int32_t process_creation_flags, const string& working_directory, tuple<bool, bool, bool> redirect_standard_streams) {
   if ((process_creation_flags & USE_SHELL_EXECUTE_PROCESS) == USE_SHELL_EXECUTE_PROCESS) {
-    HANDLE process = ShellExecuteA(nullptr, nullptr, file_name.c_str(), arguments != "" ? arguments.c_str() : nullptr, working_directory != "" ? working_directory.c_str() : nullptr, SW_NORMAL);
+    HANDLE process = ShellExecute(nullptr, nullptr, file_name.c_str(), arguments != "" ? arguments.c_str() : nullptr, working_directory != "" ? working_directory.c_str() : nullptr, SW_NORMAL);
     return make_tuple(reinterpret_cast<intptr_t>(process), nullptr, nullptr, nullptr);
   }
 
   auto [redirect_standard_input, redirect_standard_output, redirect_standard_error] = redirect_standard_streams;
   STARTUPINFO startup_info {};
-  startup_info.cb = sizeof(STARTUPINFO);
+  startup_info.cb = sizeof(STARTUPINFOA);
   if (redirect_standard_input || redirect_standard_output || redirect_standard_error) startup_info.dwFlags |= STARTF_USESTDHANDLES;
-  char temp_path_name[MAX_PATH];
-  GetTempPathA(MAX_PATH, temp_path_name);
+  SECURITY_ATTRIBUTES security_attributes {};
+  security_attributes.nLength = sizeof(SECURITY_ATTRIBUTES);
+  security_attributes.bInheritHandle = TRUE;
 
-  if (redirect_standard_error) {
-    char temp_file_name[MAX_PATH];
-    GetTempFileNameA(temp_path_name, "err", 0, temp_file_name);
-    HANDLE file_handle = CreateFileA(temp_file_name, GENERIC_WRITE, 0, nullptr, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr);
-    startup_info.hStdError = file_handle;
-  }
-
+  HANDLE pipe_stdin[2] = {0, 0};
   if (redirect_standard_input) {
-    char temp_file_name[MAX_PATH];
-    GetTempFileNameA(temp_path_name, "in", 0, temp_file_name);
-    HANDLE file_handle = CreateFileA(temp_file_name, GENERIC_READ, 0, nullptr, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr);
-    startup_info.hStdInput = file_handle;
+    CreatePipe(&pipe_stdin[0], &pipe_stdin[1], &security_attributes, 0);
+    SetHandleInformation(pipe_stdin[1], HANDLE_FLAG_INHERIT, 0);
+    startup_info.hStdInput = pipe_stdin[0];
   }
 
+  HANDLE pipe_stdout[2] = {0, 0};
   if (redirect_standard_output) {
-    char temp_file_name[MAX_PATH];
-    GetTempFileNameA(temp_path_name, "out", 0, temp_file_name);
-    HANDLE file_handle = CreateFileA(temp_file_name, GENERIC_WRITE, FILE_SHARE_WRITE, nullptr, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr);
-    startup_info.hStdOutput = file_handle;
+    CreatePipe(&pipe_stdout[0], &pipe_stdout[1], &security_attributes, 0);
+    SetHandleInformation(pipe_stdout[0], HANDLE_FLAG_INHERIT, 0);
+    startup_info.hStdOutput = pipe_stdout[1];
+  }
+
+  HANDLE pipe_stderr[2] = {0, 0};
+  if (redirect_standard_error) {
+    CreatePipe(&pipe_stderr[0], &pipe_stderr[1], &security_attributes, 0);
+    SetHandleInformation(pipe_stderr[0], HANDLE_FLAG_INHERIT, 0);
+    startup_info.hStdError = pipe_stderr[1];
   }
 
   PROCESS_INFORMATION process_information;
   process_creation_flags &= ~USE_SHELL_EXECUTE_PROCESS;
-  if (CreateProcessA(nullptr, (file_name + (arguments == "" ? "" : (" " + arguments))).data(), nullptr, nullptr, false, process_creation_flags, nullptr, working_directory == "" ? nullptr : working_directory.c_str(), &startup_info, &process_information) == 0) return make_tuple(0, nullptr, nullptr, nullptr);
-  return make_tuple(reinterpret_cast<intptr_t>(process_information.hProcess), make_unique<process_ostream>(startup_info.hStdInput), make_unique<process_istream>(startup_info.hStdOutput), make_unique<process_istream>(startup_info.hStdError));
+  if (CreateProcess(nullptr, (file_name + (arguments == "" ? "" : (" " + arguments))).data(), nullptr, nullptr, true, process_creation_flags, nullptr, working_directory == "" ? nullptr : working_directory.c_str(), &startup_info, &process_information) == 0) return make_tuple(0, nullptr, nullptr, nullptr);
+
+  if (redirect_standard_input) CloseHandle(pipe_stdin[0]);
+  if (redirect_standard_output) CloseHandle(pipe_stdout[1]);
+  if (redirect_standard_error) CloseHandle(pipe_stderr[1]);
+
+  return make_tuple(reinterpret_cast<intptr_t>(process_information.hProcess), make_unique<process_ostream>(pipe_stdin[1]), make_unique<process_istream>(pipe_stdout[0]), make_unique<process_istream>(pipe_stderr[0]));
 }
 
 bool process::kill(intptr_t handle) {
