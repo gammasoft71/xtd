@@ -120,12 +120,13 @@ namespace {
 tuple<intptr_t, unique_ptr<ostream>, unique_ptr<istream>, unique_ptr<istream>> process::create(const string& file_name, const string& arguments, int32_t process_creation_flags, const string& working_directory, tuple<bool, bool, bool> redirect_standard_streams) {
   auto [redirect_standard_input, redirect_standard_output, redirect_standard_error] = redirect_standard_streams;
   auto command_line = file_name + (arguments == "" ? "" : (" " + arguments));
+
   int pipe_stdin[2];
-  pipe(pipe_stdin);
+  if (redirect_standard_input) pipe(pipe_stdin);
   int pipe_stdout[2];
-  pipe(pipe_stdout);
+  if (redirect_standard_output) pipe(pipe_stdout);
   int pipe_stderr[2];
-  pipe(pipe_stderr);
+  if (redirect_standard_error) pipe(pipe_stderr);
   
   pid_t process = fork();
   if (process == 0) {
