@@ -11,6 +11,7 @@
 #include <xtd/core_native_export.h>
 #include <cstdint>
 #include <string>
+#include <tuple>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -35,7 +36,7 @@ namespace xtd {
       /// @param command_line Message to write.
       /// @return The created process handle.
       /// @warning Internal use only
-      static intptr_t create(const std::string& file_name, const std::string& arguments, int32_t process_creation_flags, const std::string& working_directory);
+      static std::tuple<intptr_t, std::unique_ptr<std::ostream>, std::unique_ptr<std::istream>, std::unique_ptr<std::istream>> create(const std::string& file_name, const std::string& arguments, int32_t process_creation_flags, const std::string& working_directory, std::tuple<bool, bool, bool> redirect_standard_streams);
       /// @brief Kill process.
       /// @param process The process handle to kill.
       /// @warning Internal use only

@@ -7,6 +7,7 @@
 #include "../event_handler.h"
 #include "process_start_info.h"
 #include <chrono>
+#include <memory>
 #include <optional>
 #include <thread>
 
@@ -108,6 +109,12 @@ namespace xtd {
       /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::processs object.
       std::string machine_name() const;
       
+      std::istream& standard_error();
+
+      std::ostream& standard_input();
+
+      std::istream& standard_output();
+
       const process_start_info& start_info() const;
       process_start_info& start_info();
       process& start_info(const process_start_info& value);
@@ -130,8 +137,11 @@ namespace xtd {
       
     private:
       struct data {
-        intptr_t handle_ = 0;
         process_start_info start_info_;
+        intptr_t handle_ = 0;
+        std::unique_ptr<std::ostream> standard_input_;
+        std::unique_ptr<std::istream> standard_output_;
+        std::unique_ptr<std::istream> standard_error_;
         std::thread thread_;
         std::chrono::system_clock::time_point start_time_;
         std::chrono::system_clock::time_point exit_time_;
