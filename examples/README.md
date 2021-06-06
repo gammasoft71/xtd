@@ -16,7 +16,7 @@
 * [Format](xtd.core.examples/format/README.md) contains format examples.
 * [Keywords](xtd.core.examples/keywords/README.md) contains keywords examples.
 * [Mains](xtd.core.examples/mains/README.md) contains main examples.
-* [Processes](xtd.core.examples/processes/README.MD) contains process examples.
+* [Processes](xtd.core.examples/processes/README.md) contains process examples.
 * [Random](xtd.core.examples/random/README.md) contains random examples.
 * [Strings](xtd.core.examples/strings/README.md) contains strings examples.
 * [Web](xtd.core.examples/web/README.md) contains web examples.
