@@ -5,6 +5,11 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <filesystem>
 
+// Workaround : Add "/usr/local/bin" to PATH if needed on macOS when debugging on Xcodde...
+struct __update__macos_path__ {
+  __update__macos_path__() {if (xtd::environment::os_version().is_macos_platform() && !xtd::strings::contains(xtd::environment::get_environment_variable("PATH"), "/usr/local/bin")) xtd::environment::set_environment_variable("PATH", "/usr/local/bin:"+xtd::environment::get_environment_variable("PATH"));}
+} __updmacpath__;
+
 using namespace xtd;
 
 namespace {
