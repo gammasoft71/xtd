@@ -28,7 +28,7 @@ namespace {
   }
 }
 
-intptr_t process::create(const string& file_name, const string& arguments, int32_t process_creation_flags, const std::string& working_directory) {
+tuple<intptr_t, unique_ptr<ostream>, unique_ptr<istream>, unique_ptr<istream>> process::create(const string& file_name, const string& arguments, int32_t process_creation_flags, const string& working_directory, tuple<bool, bool, bool> redirect_standard_streams) {
   auto command_line = file_name + (arguments == "" ? "" : (" " + arguments));
   if ((process_creation_flags & USE_SHELL_EXECUTE_PROCESS) == USE_SHELL_EXECUTE_PROCESS && is_valid_shell_execute_process(command_line, working_directory))
     command_line = shell_execute() + " " + (exists(path(working_directory)/path(command_line)) ? (path(working_directory)/path(command_line)).string() : command_line);
@@ -38,7 +38,7 @@ intptr_t process::create(const string& file_name, const string& arguments, int32
   PROCESS_INFORMATION process_information;
   process_creation_flags &= ~USE_SHELL_EXECUTE_PROCESS;
   if (CreateProcessA(nullptr, command_line.data(), nullptr, nullptr, false, process_creation_flags, nullptr, working_directory == "" ? nullptr : working_directory.c_str(), &startup_info, &process_information) == 0) return 0;
-  return reinterpret_cast<intptr_t>(process_information.hProcess);
+  return make_tuple(reinterpret_cast<intptr_t>(process_information.hProcess), nullptr, nullptr, nullptr);
 }
 
 bool process::kill(intptr_t handle) {
