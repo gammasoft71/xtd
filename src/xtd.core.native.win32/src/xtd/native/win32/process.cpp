@@ -62,28 +62,18 @@ namespace {
   std::string shell_execute() {
     return "explorer";
   }
-
-  bool is_known_uri(const string& command_line) {
-    static vector<string> schemes = {"file", "ftp", "gopher", "http", "https", "mailto", "net.pipe", "net.tcp", "news", "nntp"};
-    for (auto scheme : schemes)
-      if (command_line.find(scheme + ":") == 0) return true;
-    return false;
-  }
-  
-  bool is_valid_shell_execute_process(const string& command_line, const std::string& working_directory) {
-    return exists(command_line) || exists(path(working_directory)/path(command_line)) || is_known_uri(command_line);
-  }
 }
 
 tuple<intptr_t, unique_ptr<ostream>, unique_ptr<istream>, unique_ptr<istream>> process::create(const string& file_name, const string& arguments, int32_t process_creation_flags, const string& working_directory, tuple<bool, bool, bool> redirect_standard_streams) {
-  auto [redirect_standard_input, redirect_standard_output, redirect_standard_error] = redirect_standard_streams;
-  auto command_line = file_name + (arguments == "" ? "" : (" " + arguments));
-  if ((process_creation_flags & USE_SHELL_EXECUTE_PROCESS) == USE_SHELL_EXECUTE_PROCESS && is_valid_shell_execute_process(command_line, working_directory))
-    command_line = shell_execute() + " " + (exists(path(working_directory)/path(command_line)) ? (path(working_directory)/path(command_line)).string() : command_line);
+  if ((process_creation_flags & USE_SHELL_EXECUTE_PROCESS) == USE_SHELL_EXECUTE_PROCESS){
+    HANDLE process = ShellExecuteA(nullptr, nullptr, file_name.c_str(), arguments.c_str(), working_directory.c_str(), SW_NORMAL);
+    return make_tuple(reinterpret_cast<intptr_t>(process), nullptr, nullptr, nullptr);
+  }
 
+  auto [redirect_standard_input, redirect_standard_output, redirect_standard_error] = redirect_standard_streams;
   STARTUPINFO startup_info {};
   startup_info.cb = sizeof(STARTUPINFO);
-
+  if (redirect_standard_input || redirect_standard_output || redirect_standard_error) startup_info.dwFlags |= STARTF_USESTDHANDLES;
   char temp_path_name[MAX_PATH];
   GetTempPathA(MAX_PATH, temp_path_name);
 
@@ -91,7 +81,6 @@ tuple<intptr_t, unique_ptr<ostream>, unique_ptr<istream>, unique_ptr<istream>> p
     char temp_file_name[MAX_PATH];
     GetTempFileNameA(temp_path_name, "err", 0, temp_file_name);
     HANDLE file_handle = CreateFileA(temp_file_name, GENERIC_WRITE, 0, nullptr, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr);
-    startup_info.dwFlags |= STARTF_USESTDHANDLES;
     startup_info.hStdError = file_handle;
   }
 
@@ -99,7 +88,6 @@ tuple<intptr_t, unique_ptr<ostream>, unique_ptr<istream>, unique_ptr<istream>> p
     char temp_file_name[MAX_PATH];
     GetTempFileNameA(temp_path_name, "in", 0, temp_file_name);
     HANDLE file_handle = CreateFileA(temp_file_name, GENERIC_READ, 0, nullptr, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr);
-    startup_info.dwFlags |= STARTF_USESTDHANDLES;
     startup_info.hStdInput = file_handle;
   }
 
@@ -107,13 +95,12 @@ tuple<intptr_t, unique_ptr<ostream>, unique_ptr<istream>, unique_ptr<istream>> p
     char temp_file_name[MAX_PATH];
     GetTempFileNameA(temp_path_name, "out", 0, temp_file_name);
     HANDLE file_handle = CreateFileA(temp_file_name, GENERIC_WRITE, FILE_SHARE_WRITE, nullptr, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr);
-    startup_info.dwFlags |= STARTF_USESTDHANDLES;
     startup_info.hStdOutput = file_handle;
   }
 
   PROCESS_INFORMATION process_information;
   process_creation_flags &= ~USE_SHELL_EXECUTE_PROCESS;
-  if (CreateProcessA(nullptr, command_line.data(), nullptr, nullptr, false, process_creation_flags, nullptr, working_directory == "" ? nullptr : working_directory.c_str(), &startup_info, &process_information) == 0) return make_tuple(0, nullptr, nullptr, nullptr);
+  if (CreateProcessA(nullptr, (file_name + (arguments == "" ? "" : (" " + arguments))).data(), nullptr, nullptr, false, process_creation_flags, nullptr, working_directory == "" ? nullptr : working_directory.c_str(), &startup_info, &process_information) == 0) return make_tuple(0, nullptr, nullptr, nullptr);
   return make_tuple(reinterpret_cast<intptr_t>(process_information.hProcess), make_unique<process_ostream>(startup_info.hStdInput), make_unique<process_istream>(startup_info.hStdOutput), make_unique<process_istream>(startup_info.hStdError));
 }
 
