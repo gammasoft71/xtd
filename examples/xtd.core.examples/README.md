@@ -67,6 +67,10 @@
 * [format_with_alignment](format/format_with_alignment/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with specified alignment args.
 * [format_with_order](format/format_with_order/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with specified order args.
 
+## [Processes](processes/README.md)
+
+* [process_start_info](processes/process_start_info/README.md) shows how to use [xtd::diagnostics:process_start_info](../../src/xtd.core/include/xtd/diagnostics/process_start_info.h) class.
+
 ## [random](random/README.md)
 
 * [random1](random/random1/README.md) shows how to use [xtd::random::next_bytes](../../src/xtd.core/include/xtd/random.h) method.
