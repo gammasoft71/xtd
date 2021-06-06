@@ -118,12 +118,8 @@ namespace {
   }
 }
 
-intptr_t process::create(const string& file_name, const string& arguments, int32_t process_creation_flags, const std::string& working_directory) {
-  // Set following three lines in parameters...
-  bool redirect_standard_input = false;
-  bool redirect_standard_output = true;
-  bool redirect_standard_error = false;
-  
+tuple<intptr_t, unique_ptr<ostream>, unique_ptr<istream>, unique_ptr<istream>> process::create(const string& file_name, const string& arguments, int32_t process_creation_flags, const string& working_directory, tuple<bool, bool, bool> redirect_standard_streams) {
+  auto [redirect_standard_input, redirect_standard_output, redirect_standard_error] = redirect_standard_streams;
   auto command_line = file_name + (arguments == "" ? "" : (" " + arguments));
   int pipe_stdin[2];
   pipe(pipe_stdin);
@@ -164,16 +160,13 @@ intptr_t process::create(const string& file_name, const string& arguments, int32
     execvp_args[execvp_args.size()-1] = nullptr;
     execvp(execvp_args[0], execvp_args.data());
     exit(errno);
-  } else {
-    if (redirect_standard_input) close(pipe_stdin[0]);
-    if (redirect_standard_output) close(pipe_stdout[1]);
-    if (redirect_standard_error) close(pipe_stderr[1]);
-
-    process_ostream process_stdin_stream(pipe_stdin[1]);
-    process_istream process_stdout_stream(pipe_stdout[0]);
-    process_istream process_stderr_stream(pipe_stderr[0]);
   }
-  return static_cast<intptr_t>(process);
+  
+  if (redirect_standard_input) close(pipe_stdin[0]);
+  if (redirect_standard_output) close(pipe_stdout[1]);
+  if (redirect_standard_error) close(pipe_stderr[1]);
+
+  return make_tuple(static_cast<intptr_t>(process), make_unique<process_ostream>(pipe_stdin[1]), make_unique<process_istream>(pipe_stdout[0]), make_unique<process_istream>(pipe_stderr[0]));
 }
 
 bool process::kill(intptr_t process) {
