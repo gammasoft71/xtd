@@ -33,8 +33,8 @@ namespace xtd {
     class core_native_export_ process final {
       friend xtd::diagnostics::process;
     protected:
-      /// @brief Creates a process with specified command line.
-      /// @param command_line Message to write.
+      /// @brief Creates a process with specified file name, specified arguments, specified process creation flags, specified working directory, and specified boolean tuples that represent redirect standard streams.
+      /// @param file_name Message to write.
       /// @return The created process handle.
       /// @warning Internal use only
       static std::tuple<intptr_t, std::unique_ptr<std::ostream>, std::unique_ptr<std::istream>, std::unique_ptr<std::istream>> create(const std::string& file_name, const std::string& arguments, int32_t process_creation_flags, const std::string& working_directory, std::tuple<bool, bool, bool> redirect_standard_streams);
