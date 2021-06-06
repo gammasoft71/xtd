@@ -69,7 +69,7 @@
 
 ## [Processes](processes/README.md)
 
-* [process_start_info](processes/process_start_info/README.md) shows how to use [xtd::diagnostics:process_start_info](../../src/xtd.core/include/xtd/diagnostics/process_start_info.h) class.
+* [process_start_info](processes/README.md) shows how to use [xtd::diagnostics:process](../../src/xtd.core/include/xtd/diagnostics/process.h) class.
 
 ## [random](random/README.md)
 
