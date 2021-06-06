@@ -107,7 +107,7 @@ bool process::start() {
     thread_started = true;
    debug::write_line_if(debug_process, strings::format("process::start [handle={}, command_line={}, start_time={:u}.{:D6}, started]", process.data_->handle_, command_line, process.data_->start_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time_.time_since_epoch())).count() % 1000000));
     int32_t exit_code = 0;
-    if (native::process::wait(process.data_->handle_, exit_code)) process.data_->exit_code_ = exit_code;
+    if (!process.data_->start_info_.use_shell_execute() && native::process::wait(process.data_->handle_, exit_code)) process.data_->exit_code_ = exit_code;
     process.data_->exit_time_ = system_clock::now();
     debug::write_line_if(debug_process, strings::format("process::start [handle={}, exit_time={:u}.{:D6}, exit_code={}, exited]", process.data_->handle_, process.data_->exit_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->exit_time_.time_since_epoch())).count() % 1000000, process.data_->exit_code_));
     process.on_exited();
@@ -135,7 +135,7 @@ process& process::wait_for_exit() {
   debug::write_line_if(debug_process, strings::format("process::wait_for_exit [handle={}, wait...]", data_->handle_));
   int32_t exit_code = 0;
   if (data_->thread_.joinable()) data_->thread_.join();
-  else if (native::process::wait(data_->handle_, exit_code)) data_->exit_code_ = exit_code;
+  else if (!data_->start_info_.use_shell_execute() && native::process::wait(data_->handle_, exit_code)) data_->exit_code_ = exit_code;
   debug::write_line_if(debug_process, strings::format("process::wait_for_exit [handle={}, exit_code={}, ...exit]", data_->handle_, data_->exit_code_));
   return *this;
 }
