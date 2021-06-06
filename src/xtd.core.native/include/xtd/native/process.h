@@ -10,6 +10,7 @@
 
 #include <xtd/core_native_export.h>
 #include <cstdint>
+#include <memory>
 #include <string>
 #include <tuple>
 
