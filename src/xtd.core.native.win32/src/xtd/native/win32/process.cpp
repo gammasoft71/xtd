@@ -2,9 +2,11 @@
 #include <xtd/native/process.h>
 #include <xtd/native/process_creation_flags.h>
 #include "../../../../include/xtd/native/win32/strings.h"
+#include <xtd/native/process_window_style.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <filesystem>
 #include <cstdlib>
+#include <map>
 #include <Windows.h>
 
 using namespace std;
@@ -64,12 +66,7 @@ namespace {
   }
 }
 
-tuple<intptr_t, unique_ptr<ostream>, unique_ptr<istream>, unique_ptr<istream>> process::create(const string& file_name, const string& arguments, int32_t process_creation_flags, const string& working_directory, tuple<bool, bool, bool> redirect_standard_streams) {
-  if ((process_creation_flags & USE_SHELL_EXECUTE_PROCESS) == USE_SHELL_EXECUTE_PROCESS) {
-    HANDLE process = ShellExecute(nullptr, nullptr, file_name.c_str(), arguments != "" ? arguments.c_str() : nullptr, working_directory != "" ? working_directory.c_str() : nullptr, SW_NORMAL);
-    return make_tuple(reinterpret_cast<intptr_t>(process), nullptr, nullptr, nullptr);
-  }
-
+tuple<intptr_t, unique_ptr<ostream>, unique_ptr<istream>, unique_ptr<istream>> process::create(const string& file_name, const string& arguments, const string& working_directory, int32_t process_creation_flags, int32_t process_window_style, tuple<bool, bool, bool> redirect_standard_streams) {
   auto [redirect_standard_input, redirect_standard_output, redirect_standard_error] = redirect_standard_streams;
   STARTUPINFO startup_info {};
   startup_info.cb = sizeof(STARTUPINFOA);
@@ -113,6 +110,12 @@ tuple<intptr_t, unique_ptr<ostream>, unique_ptr<istream>, unique_ptr<istream>> p
 bool process::kill(intptr_t handle) {
   if (handle == 0) return false;
   return TerminateProcess(reinterpret_cast<HANDLE>(handle), static_cast<uint32_t>(-1)) != 0;
+}
+
+intptr_t process::shell_execute(const std::string& file_name, const std::string& arguments, const std::string& working_directory, int32_t process_window_style) {
+  map<int32_t, int32_t> window_styles {{PROCESS_WINDOW_STYLE_NORMAL, SW_NORMAL}, {PROCESS_WINDOW_STYLE_HIDDEN, SW_HIDE}, {PROCESS_WINDOW_STYLE_MINIMIZED, SW_SHOWMINIMIZED}, {PROCESS_WINDOW_STYLE_MAXIMIZED, SW_SHOWMAXIMIZED}};
+  HANDLE process = ShellExecute(nullptr, nullptr, file_name.c_str(), arguments != "" ? arguments.c_str() : nullptr, working_directory != "" ? working_directory.c_str() : nullptr, window_styles[process_window_style]);
+  return reinterpret_cast<intptr_t>(process);
 }
 
 bool process::wait(intptr_t process, int32_t& exit_code) {

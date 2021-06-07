@@ -132,10 +132,3 @@ constexpr int32_t CREATE_DEFAULT_ERROR_MODE = 0x04000000;
 /// @warning Internal use only
 constexpr int32_t CREATE_NO_WINDOW = 0x08000000;
 #endif
-/// @brief Indicating whether to use the operating system shell to start the process.
-/// @par Library
-/// xtd.core.native
-/// @ingroup xtd_core_native pcf
-/// @remarks Added specifically for xtd.
-/// @warning Internal use only
-constexpr int32_t USE_SHELL_EXECUTE_PROCESS = 0x10000000;

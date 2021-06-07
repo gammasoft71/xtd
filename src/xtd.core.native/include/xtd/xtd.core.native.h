@@ -24,4 +24,5 @@
 #include "native/platform_ids.h"
 #include "native/process.h"
 #include "native/process_creation_flags.h"
+#include "native/process_window_style.h"
 #include "native/translator.h"

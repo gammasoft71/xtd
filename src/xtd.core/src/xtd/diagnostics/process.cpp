@@ -95,17 +95,21 @@ bool process::start() {
   data_->thread_ = thread([](class process process, bool& thread_started) {
     process.data_->exit_code_.reset();
     process.data_->start_time_ = system_clock::now();
-    auto command_line = strings::format("{}{}", process.start_info().file_name(), process.start_info().arguments() == "" ? "" : strings::format(" {}", process.start_info().arguments()));
     int32_t process_creation_flags = 0;
     if (process.start_info().create_no_window()) process_creation_flags |= CREATE_NO_WINDOW;
-    if (process.start_info().use_shell_execute()) process_creation_flags |= USE_SHELL_EXECUTE_PROCESS;
-    auto [handle, standard_input, standard_output, standard_error] = native::process::create(process.start_info().file_name(), process.start_info().arguments(), process_creation_flags, process.start_info().working_directory(), make_tuple(process.data_->start_info_.redirect_standard_input(), process.data_->start_info_.redirect_standard_output(), process.data_->start_info_.redirect_standard_error()));
-    process.data_->handle_ = handle;
-    process.data_->standard_input_ = move(standard_input);
-    process.data_->standard_output_ = move(standard_output);
-    process.data_->standard_error_ = move(standard_error);
+    int32_t process_window_style = 0;
+
+    if (process.start_info().use_shell_execute()) {
+      process.data_->handle_ = native::process::shell_execute(process.start_info().file_name(), process.start_info().arguments(), process.start_info().working_directory(), process_window_style);
+    } else {
+      auto [handle, standard_input, standard_output, standard_error] = native::process::create(process.start_info().file_name(), process.start_info().arguments(), process.start_info().working_directory(), process_creation_flags, process_window_style, make_tuple(process.data_->start_info_.redirect_standard_input(), process.data_->start_info_.redirect_standard_output(), process.data_->start_info_.redirect_standard_error()));
+      process.data_->handle_ = handle;
+      process.data_->standard_input_ = move(standard_input);
+      process.data_->standard_output_ = move(standard_output);
+      process.data_->standard_error_ = move(standard_error);
+    }
     thread_started = true;
-   debug::write_line_if(debug_process, strings::format("process::start [handle={}, command_line={}, start_time={:u}.{:D6}, started]", process.data_->handle_, command_line, process.data_->start_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time_.time_since_epoch())).count() % 1000000));
+    debug::write_line_if(debug_process, strings::format("process::start [handle={}, command_line={}, start_time={:u}.{:D6}, started]", process.data_->handle_, strings::format("{}{}", process.start_info().file_name(), process.start_info().arguments() == "" ? "" : strings::format(" {}", process.start_info().arguments())), process.data_->start_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time_.time_since_epoch())).count() % 1000000));
     int32_t exit_code = 0;
     if (!process.data_->start_info_.use_shell_execute() && native::process::wait(process.data_->handle_, exit_code)) process.data_->exit_code_ = exit_code;
     process.data_->exit_time_ = system_clock::now();

@@ -1,6 +1,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/process.h>
 #include <xtd/native/process_creation_flags.h>
+#include <xtd/native/process_window_style.h>
 #include "../../../../include/xtd/native/unix/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <vector>
@@ -58,7 +59,7 @@ namespace {
     file_descriptor_streambuf stream_buf_;
   };
 
-  std::string shell_execute() {
+  std::string shell_execute_command() {
 #if defined(__APPLE__)
     return "open";
 #else
@@ -117,9 +118,8 @@ namespace {
   }
 }
 
-tuple<intptr_t, unique_ptr<ostream>, unique_ptr<istream>, unique_ptr<istream>> process::create(const string& file_name, const string& arguments, int32_t process_creation_flags, const string& working_directory, tuple<bool, bool, bool> redirect_standard_streams) {
+tuple<intptr_t, unique_ptr<ostream>, unique_ptr<istream>, unique_ptr<istream>> process::create(const string& file_name, const string& arguments, const string& working_directory, int32_t process_creation_flags, int32_t process_window_style, tuple<bool, bool, bool> redirect_standard_streams) {
   auto [redirect_standard_input, redirect_standard_output, redirect_standard_error] = redirect_standard_streams;
-  auto command_line = file_name + (arguments == "" ? "" : (" " + arguments));
 
   int pipe_stdin[2];
   if (redirect_standard_input) pipe(pipe_stdin);
@@ -146,15 +146,9 @@ tuple<intptr_t, unique_ptr<ostream>, unique_ptr<istream>, unique_ptr<istream>> p
     }
     
     vector<string> command_line_args;
-    if ((process_creation_flags & USE_SHELL_EXECUTE_PROCESS) == USE_SHELL_EXECUTE_PROCESS && is_valid_shell_execute_process(command_line, working_directory)) {
-      command_line_args.push_back(shell_execute());
-      auto command_working_directory = working_directory != "" ? working_directory : current_path().string();
-      command_line_args.push_back(exists(path(command_working_directory)/path(command_line)) ? (path(command_working_directory)/path(command_line)).string() : command_line);
-    } else {
-      if (working_directory != "") current_path(working_directory);
-      command_line_args = split_arguments(arguments);
-      command_line_args.insert(command_line_args.begin(), file_name);
-    }
+    if (working_directory != "") current_path(working_directory);
+    command_line_args = split_arguments(arguments);
+    command_line_args.insert(command_line_args.begin(), file_name);
     std::vector<char*> execvp_args(command_line_args.size() + 1);
     for (size_t index = 0; index < command_line_args.size(); ++index)
       execvp_args[index] = command_line_args[index].data();
@@ -173,6 +167,29 @@ tuple<intptr_t, unique_ptr<ostream>, unique_ptr<istream>, unique_ptr<istream>> p
 bool process::kill(intptr_t process) {
   if (process == 0) return false;
   return ::kill(static_cast<pid_t>(process), SIGTERM) == 0;
+}
+
+intptr_t process::shell_execute(const std::string& file_name, const std::string& arguments, const std::string& working_directory, int32_t process_window_style) {
+  pid_t process = fork();
+  if (process == 0) {
+    vector<string> command_line_args;
+    command_line_args = split_arguments(arguments);
+    if (is_valid_shell_execute_process(file_name, working_directory)) {
+      auto command_working_directory = working_directory != "" ? working_directory : current_path().string();
+      command_line_args.insert(command_line_args.begin(), exists(path(command_working_directory)/path(file_name)) ? (path(command_working_directory)/path(file_name)).string() : file_name);
+      command_line_args.insert(command_line_args.begin(), shell_execute_command());
+    } else {
+      if (working_directory != "") current_path(working_directory);
+      command_line_args.insert(command_line_args.begin(), file_name);
+    }
+    std::vector<char*> execvp_args(command_line_args.size() + 1);
+    for (size_t index = 0; index < command_line_args.size(); ++index)
+      execvp_args[index] = command_line_args[index].data();
+    execvp_args[execvp_args.size()-1] = nullptr;
+    execvp(execvp_args[0], execvp_args.data());
+    exit(errno);
+  }
+  return static_cast<intptr_t>(process);
 }
 
 bool process::wait(intptr_t process, int32_t& exit_code) {
