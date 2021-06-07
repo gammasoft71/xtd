@@ -779,7 +779,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   inline std::wstring operator""_ws(long double s) {
-    return L""; //strings::to_wstring(xtd::strings::format("{}", s));
+    return xtd::strings::format(L"{}", s);
   }
   
   /// @brief Used to convert specified value into std::string.
@@ -792,7 +792,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   inline std::wstring operator""_ws(unsigned long long s) {
-    return L""; //strings::to_wstring(xtd::strings::format("{}", s));
+    return xtd::strings::format(L"{}", s);
   }
 
   inline const char* operator""_t(const char* s, size_t n) {
