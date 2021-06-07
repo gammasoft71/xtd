@@ -97,7 +97,6 @@ tuple<intptr_t, unique_ptr<ostream>, unique_ptr<istream>, unique_ptr<istream>> p
   }
 
   PROCESS_INFORMATION process_information;
-  process_creation_flags &= ~USE_SHELL_EXECUTE_PROCESS;
   if (CreateProcess(nullptr, (file_name + (arguments == "" ? "" : (" " + arguments))).data(), nullptr, nullptr, true, process_creation_flags, nullptr, working_directory == "" ? nullptr : working_directory.c_str(), &startup_info, &process_information) == 0) return make_tuple(0, nullptr, nullptr, nullptr);
 
   if (redirect_standard_input) CloseHandle(pipe_stdin[0]);
