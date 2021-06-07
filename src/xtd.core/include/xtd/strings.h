@@ -1609,10 +1609,27 @@ namespace xtd {
     static std::string to_string(const std::string& str) {return str;}
     
     static std::string to_string(std::string&& str) {return std::move(str);}
-
+    
 #if defined(__cpp_lib_char8_t)
     static std::string to_string(const char8_t* str) {return to_string(std::u8string(str));}
     static std::string to_string(const std::u8string& s) {return std::string(s.begin(), s.end());}
+#endif
+
+    template<typename char_t>
+    static std::wstring to_wstring(const std::basic_string<char_t>& str) {return format(L"{}", str);}
+    
+    template<typename char_t>
+    static std::wstring to_wstring(const char_t* str) {return format(L"{}", str);}
+    
+    static std::wstring to_wstring(const wchar* str) {return str;}
+    
+    static std::wstring to_wstring(const std::wstring& str) {return str;}
+    
+    static std::wstring to_wstring(std::wstring&& str) {return std::move(str);}
+
+#if defined(__cpp_lib_char8_t)
+    static std::wstring to_wstring(const char8_t* str) {return to_wstring(std::u8string(str));}
+    static std::wstring to_wstring(const std::u8string& s) {return format(L"{}", std::string(s.begin(), s.end()));}
 #endif
 
     /// @brief Returns a copy of the specified string converted to uppercase.
