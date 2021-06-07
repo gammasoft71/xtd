@@ -150,6 +150,11 @@
 /// @warning Internal use only
 /// @ingroup native
 
+/// @defgroup pws process window style
+/// @brief process window style definitions.
+/// @warning Internal use only
+/// @ingroup native
+
 /// @defgroup sb scroll bar styles
 /// @brief scroll bar styles definitions.
 /// @warning Internal use only
