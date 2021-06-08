@@ -7,6 +7,7 @@ using namespace xtd::io;
 class xtd_core_manual_test {
 public:
   static void main() {
+    console::output_code_page(65001);
     stream_reader reader(process::start(process_start_info("xtdc", "--help").use_shell_execute(false).redirect_standard_output(true)).standard_output());
     console::write(reader.read_to_end());
   }
