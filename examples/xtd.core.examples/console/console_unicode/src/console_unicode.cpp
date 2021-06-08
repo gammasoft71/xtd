@@ -8,11 +8,11 @@ int main() {
   console::output_code_page(65001);
   
   // Create a Char array for the modern Cyrillic alphabet, from U+0410 to U+044F.
-  int nchars = 0x044F - 0x0410 + 1;
-  vector<char32> chars(nchars);
-  int code_point = 0x0410;
-  for (size_t ctr = 0; ctr < chars.size(); ctr++) {
-    chars[ctr] = static_cast<char32>(code_point);
+  auto nchars = 0x044F - 0x0410 + 1;
+  vector<char32_t> chars(nchars);
+  auto code_point = U'\U00000410';
+  for (auto ctr = 0u; ctr < chars.size(); ctr++) {
+    chars[ctr] = code_point;
     code_point++;
   }
   
