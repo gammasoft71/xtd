@@ -38,7 +38,8 @@ inline std::basic_string<char_t> __numeric_formater(const std::basic_string<char
     case 'b':
     case 'B': return __binary_formater<char_t>(value, precision);
     case 'd':
-    case 'D': return xtd::strings::sprintf(fmt_str + char_t(std::is_unsigned<value_t>::value ? 'u' : 'd'), precision, static_cast<long long>(value));
+    case 'D':
+    case 'G': return xtd::strings::sprintf(fmt_str + char_t(std::is_unsigned<value_t>::value ? 'u' : 'd'), precision, static_cast<long long>(value));
     case 'o':
     case 'O': return xtd::strings::sprintf(fmt_str + char_t('o'), precision, static_cast<long long>(value));
     case 'x':

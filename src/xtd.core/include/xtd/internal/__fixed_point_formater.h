@@ -30,8 +30,9 @@ inline std::basic_string<char_t> __fixed_point_formater(const std::basic_string<
     __format_exception("Invalid format expression");
   }
   if ((fmt[0] == 'f' || fmt[0] == 'F' || fmt[0] == 'n' || fmt[0] == 'N' || fmt[0] == 'p' || fmt[0] == 'P' || fmt[0] == 'r' || fmt[0] == 'R') && fmt.size() == 1) precision = 2;
-  if ((fmt[0] == 'e' || fmt[0] == 'E' || fmt[0] == 'g' || fmt[0] == 'G') && fmt.size() == 1) precision = 6;
-  
+  if ((fmt[0] == 'e' || fmt[0] == 'E') && fmt.size() == 1) precision = 6;
+  if ((fmt[0] == 'g' || fmt[0] == 'G') && fmt.size() == 1) precision = sizeof(value) <= 4 ? 7 : 15;
+
   std::basic_string<char_t> fmt_str({'%', '.', '*', 'L'});
   switch (fmt[0]) {
     case 'c':
