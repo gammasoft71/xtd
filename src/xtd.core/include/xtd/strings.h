@@ -1600,37 +1600,114 @@ namespace xtd {
 
     template<typename char_t>
     static std::string to_string(const std::basic_string<char_t>& str) {return format("{}", str);}
-    
     template<typename char_t>
     static std::string to_string(const char_t* str) {return format("{}", str);}
-    
     static std::string to_string(const char* str) {return str;}
-    
-    static std::string to_string(const std::string& str) {return str;}
-    
+    static const std::string& to_string(const std::string& str) {return str;}
     static std::string to_string(std::string&& str) {return std::move(str);}
-    
 #if defined(__cpp_lib_char8_t)
     static std::string to_string(const char8_t* str) {return to_string(std::u8string(str));}
-    static std::string to_string(const std::u8string& s) {return std::string(s.begin(), s.end());}
+    static std::string to_string(const std::u8string& str) {return std::string(str.begin(), str.end());}
+
+    static std::u8string to_u8string(const char* str) {return to_u8string(to_string(str));}
+    static std::u8string to_u8string(const std::string& str) {return std::u8string(str.begin(), str.end());}
+    template<typename char_t>
+    static std::u8string to_u8string(const std::basic_string<char_t>& str) {return to_u8string(to_string(str).c_str());}
+    template<typename char_t>
+    static std::u8string to_u8string(const char_t* str) {return to_u8string(to_string(str).c_str());}
+    static std::u8string to_u8string(const char8_t* str) {return str;}
+    static const std::u8string& to_u8string(const std::u8string& str) {return str;}
+    static std::u8string to_u8string(std::u8string&& str) {return std::move(str);}
 #endif
 
+    static std::u16string to_u16string(const std::string& str) {return to_u16string(str.c_str());}
+    static std::u16string to_u16string(const char* str) {
+      std::u16string out;
+      char32_t codepoint;
+      while (*str != 0) {
+        unsigned char ch = static_cast<unsigned char>(*str);
+        if (ch <= 0x7f) codepoint = ch;
+        else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
+        else if (ch <= 0xdf) codepoint = ch & 0x1f;
+        else if (ch <= 0xef) codepoint = ch & 0x0f;
+        else codepoint = ch & 0x07;
+        ++str;
+        if (((*str & 0xc0) != 0x80) && (codepoint <= 0x10ffff)) {
+          if (codepoint > 0xffff) {
+            out.append(1, static_cast<wchar_t>(0xd800 + (codepoint >> 10)));
+            out.append(1, static_cast<wchar_t>(0xdc00 + (codepoint & 0x03ff)));
+          } else if (codepoint < 0xd800 || codepoint >= 0xe000)
+            out.append(1, static_cast<wchar_t>(codepoint));
+        }
+      }
+      return out;
+    }
     template<typename char_t>
-    static std::wstring to_wstring(const std::basic_string<char_t>& str) {return format(L"{}", str);}
-    
+    static std::u16string to_u16string(const std::basic_string<char_t>& str) {return to_u16string(to_string(str).c_str());}
     template<typename char_t>
-    static std::wstring to_wstring(const char_t* str) {return format(L"{}", str);}
-    
+    static std::u16string to_u16string(const char_t* str) {return to_u16string(to_string(str).c_str());}
+    static std::u16string to_u16string(const char16_t* str) {return str;}
+    static const std::u16string& to_u16string(const std::u16string& str) {return str;}
+    static std::u16string to_u16string(std::u16string&& str) {return std::move(str);}
+
+    static std::u32string to_u32string(const std::string& str) {return to_u32string(str.c_str());}
+    static std::u32string to_u32string(const char* str) {
+      std::u32string out;
+      char32_t codepoint;
+      while (*str != 0) {
+        unsigned char ch = static_cast<unsigned char>(*str);
+        if (ch <= 0x7f) codepoint = ch;
+        else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
+        else if (ch <= 0xdf) codepoint = ch & 0x1f;
+        else if (ch <= 0xef) codepoint = ch & 0x0f;
+        else codepoint = ch & 0x07;
+        ++str;
+        if (((*str & 0xc0) != 0x80) && (codepoint <= 0x10ffff)) {
+          if (sizeof(wchar_t) > 2)
+            out.append(1, static_cast<wchar_t>(codepoint));
+        }
+      }
+      return out;
+    }
+    template<typename char_t>
+    static std::u32string to_u32string(const std::basic_string<char_t>& str) {return to_u32string(to_string(str).c_str());}
+    template<typename char_t>
+    static std::u32string to_u32string(const char_t* str) {return to_u32string(to_string(str).c_str());}
+    static std::u32string to_u32string(const char32_t* str) {return str;}
+    static const std::u32string& to_u32string(const std::u32string& str) {return str;}
+    static std::u32string to_u32string(std::u32string&& str) {return std::move(str);}
+
+    static std::wstring to_wstring(const std::string& str) {return to_wstring(str.c_str());}
+    static std::wstring to_wstring(const char* str) {
+      std::wstring out;
+      char32_t codepoint;
+      while (*str != 0) {
+        unsigned char ch = static_cast<unsigned char>(*str);
+        if (ch <= 0x7f) codepoint = ch;
+        else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
+        else if (ch <= 0xdf) codepoint = ch & 0x1f;
+        else if (ch <= 0xef) codepoint = ch & 0x0f;
+        else codepoint = ch & 0x07;
+        ++str;
+        if (((*str & 0xc0) != 0x80) && (codepoint <= 0x10ffff)) {
+          if (sizeof(wchar_t) > 2)
+            out.append(1, static_cast<wchar_t>(codepoint));
+          else if (codepoint > 0xffff) {
+            out.append(1, static_cast<wchar_t>(0xd800 + (codepoint >> 10)));
+            out.append(1, static_cast<wchar_t>(0xdc00 + (codepoint & 0x03ff)));
+          } else if (codepoint < 0xd800 || codepoint >= 0xe000)
+            out.append(1, static_cast<wchar_t>(codepoint));
+        }
+      }
+      return out;
+    }
+    template<typename char_t>
+    static std::wstring to_wstring(const std::basic_string<char_t>& str) {return to_wstring(to_string(str).c_str());}
+    template<typename char_t>
+    static std::wstring to_wstring(const char_t* str) {return to_wstring(to_string(str).c_str());}
     static std::wstring to_wstring(const wchar* str) {return str;}
-    
-    static std::wstring to_wstring(const std::wstring& str) {return str;}
-    
+    static const std::wstring& to_wstring(const std::wstring& str) {return str;}
     static std::wstring to_wstring(std::wstring&& str) {return std::move(str);}
-
-#if defined(__cpp_lib_char8_t)
-    static std::wstring to_wstring(const char8_t* str) {return to_wstring(std::u8string(str));}
-    static std::wstring to_wstring(const std::u8string& s) {return format(L"{}", std::string(s.begin(), s.end()));}
-#endif
 
     /// @brief Returns a copy of the specified string converted to uppercase.
     /// @param str string to convert to upper.
