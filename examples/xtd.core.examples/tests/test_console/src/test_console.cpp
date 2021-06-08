@@ -6,6 +6,7 @@ class console_main {
 public:
   static void main() {
     console::write_line("Hello, World!");
+    forms::message_box::show("Hello, World!");
   }
 };
 
