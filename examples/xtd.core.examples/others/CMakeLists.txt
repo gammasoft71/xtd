@@ -4,6 +4,7 @@ project(others)
 find_package(xtd REQUIRED)
 
 add_projects(
+  bit_converter
   console_background_color2
   console_background_color3
   console_beep2
