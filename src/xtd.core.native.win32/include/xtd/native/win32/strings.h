@@ -57,18 +57,40 @@ namespace xtd::native {
         return list;
       }
 
+      static std::string substring(const std::string& str, size_t start_index, size_t length) noexcept {
+        if (start_index >= str.size()) return "";
+        return str.substr(start_index, length);
+      }
+
       static const std::string to_lower(const std::string& str) noexcept {
         std::string result;
         for(auto c : str)
           result.push_back(static_cast<char>(tolower(c)));
         return result;
       }
-      
-      static std::string substring(const std::string& str, size_t start_index, size_t length) noexcept {
-        if (start_index >= str.size()) return "";
-        return str.substr(start_index, length);
-      }
 
+      static std::wstring to_wstring(const std::string& str) {return to_wstring(str.c_str());}
+      static std::wstring to_wstring(const char* str) {
+        std::wstring out;
+        char32_t codepoint;
+        while (*str != 0) {
+          unsigned char ch = static_cast<unsigned char>(*str);
+          if (ch <= 0x7f) codepoint = ch;
+          else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
+          else if (ch <= 0xdf) codepoint = ch & 0x1f;
+          else if (ch <= 0xef) codepoint = ch & 0x0f;
+          else codepoint = ch & 0x07;
+          ++str;
+          if (((*str & 0xc0) != 0x80) && (codepoint <= 0x10ffff)) {
+            if (codepoint > 0xffff) {
+              out.append(1, static_cast<wchar_t>(0xd800 + (codepoint >> 10)));
+              out.append(1, static_cast<wchar_t>(0xdc00 + (codepoint & 0x03ff)));
+            } else if (codepoint < 0xd800 || codepoint >= 0xe000)
+              out.append(1, static_cast<wchar_t>(codepoint));
+          }
+        }
+        return out;
+      }
 
       static std::string trim_end(const std::string& str, const std::vector<char>& trim_chars) noexcept {
         if (!str.size()) return str;

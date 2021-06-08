@@ -4,6 +4,7 @@
 #include "../../../../include/xtd/native/win32/strings.h"
 #include <xtd/native/process_window_style.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#define UNICODE
 #include <filesystem>
 #include <cstdlib>
 #include <map>
@@ -97,7 +98,7 @@ tuple<intptr_t, unique_ptr<ostream>, unique_ptr<istream>, unique_ptr<istream>> p
   }
 
   PROCESS_INFORMATION process_information;
-  if (CreateProcess(nullptr, (file_name + (arguments == "" ? "" : (" " + arguments))).data(), nullptr, nullptr, true, process_creation_flags, nullptr, working_directory == "" ? nullptr : working_directory.c_str(), &startup_info, &process_information) == 0) return make_tuple(0, nullptr, nullptr, nullptr);
+  if (CreateProcess(nullptr, win32::strings::to_wstring(file_name + (arguments == "" ? "" : (" " + arguments))).data(), nullptr, nullptr, true, process_creation_flags, nullptr, working_directory == "" ? nullptr : win32::strings::to_wstring(working_directory).c_str(), &startup_info, &process_information) == 0) return make_tuple(0, nullptr, nullptr, nullptr);
 
   if (redirect_standard_input) CloseHandle(pipe_stdin[0]);
   if (redirect_standard_output) CloseHandle(pipe_stdout[1]);
@@ -113,7 +114,7 @@ bool process::kill(intptr_t handle) {
 
 intptr_t process::shell_execute(const std::string& file_name, const std::string& arguments, const std::string& working_directory, int32_t process_window_style) {
   map<int32_t, int32_t> window_styles {{PROCESS_WINDOW_STYLE_NORMAL, SW_NORMAL}, {PROCESS_WINDOW_STYLE_HIDDEN, SW_HIDE}, {PROCESS_WINDOW_STYLE_MINIMIZED, SW_SHOWMINIMIZED}, {PROCESS_WINDOW_STYLE_MAXIMIZED, SW_SHOWMAXIMIZED}};
-  HANDLE process = ShellExecute(nullptr, nullptr, file_name.c_str(), arguments != "" ? arguments.c_str() : nullptr, working_directory != "" ? working_directory.c_str() : nullptr, window_styles[process_window_style]);
+  HANDLE process = ShellExecute(nullptr, nullptr, win32::strings::to_wstring(file_name).c_str(), arguments != "" ? win32::strings::to_wstring(arguments).c_str() : nullptr, working_directory != "" ? win32::strings::to_wstring(working_directory).c_str() : nullptr, window_styles[process_window_style]);
   return reinterpret_cast<intptr_t>(process);
 }
 
