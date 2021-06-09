@@ -7,6 +7,7 @@
 #include <vector>
 #include <filesystem>
 #include <cstdlib>
+#include <set>
 #include <signal.h>
 #include <unistd.h>
 #include <sys/wait.h>
@@ -16,7 +17,7 @@ using namespace std::filesystem;
 using namespace xtd::native;
 
 namespace {
-  class file_descriptor_streambuf : public std::streambuf {
+  class file_descriptor_streambuf : public streambuf {
   public:
     file_descriptor_streambuf(int file_descriptor) : file_descriptor_(file_descriptor) {}
     ~file_descriptor_streambuf() {close(file_descriptor_);}
@@ -27,7 +28,7 @@ namespace {
         this->setg(&value_, &value_, &value_+1);
         return value_;
       }
-      return std::streambuf::underflow(); // EOF
+      return streambuf::underflow(); // EOF
     }
     
     int overflow(int c) override {
@@ -36,35 +37,56 @@ namespace {
         this->setp(&value_, &value_);
         return 0;
       }
-      return std::streambuf::overflow(c); // EOF
+      return streambuf::overflow(c); // EOF
     }
     
     int file_descriptor_;
     char value_ = EOF;
   };
 
-  class process_istream : public std::istream {
+  class process_istream : public istream {
   public:
-    process_istream(int file_descriptor) : std::istream(&stream_buf_), stream_buf_(file_descriptor) {}
+    process_istream(int file_descriptor) : istream(&stream_buf_), stream_buf_(file_descriptor) {}
     
   private:
     file_descriptor_streambuf stream_buf_;
   };
   
-  class process_ostream : public std::ostream {
+  class process_ostream : public ostream {
   public:
-    process_ostream(int file_descriptor) : std::ostream(&stream_buf_), stream_buf_(file_descriptor) {}
+    process_ostream(int file_descriptor) : ostream(&stream_buf_), stream_buf_(file_descriptor) {}
     
   private:
     file_descriptor_streambuf stream_buf_;
   };
 
-  std::string shell_execute_command() {
+  string shell_execute_command() {
 #if defined(__APPLE__)
     return "open";
 #else
     return "xdg-open";
 #endif
+  }
+
+  string get_full_file_name_with_extension(function<vector<string>(const string& str, const vector<char>& separators, size_t count)> splitter, const string& file_name, const string& working_directory = "") {
+    string path_directories = getenv("PATH") == nullptr ? "" : getenv("PATH");
+#if defined(__APPLE__)
+    path_directories += ":/Applications:/Applications/Utilities:/System/Applications:/System/Applications/Utilities";
+    string user = getenv("USER") != nullptr ? getenv("USER") : "";
+    if (user != "") path_directories += ":/Users/" + user + "/Applications";
+#endif
+    
+    static set<string> standard_extensions = {"", ".action", ".apk", ".app", ".bin", ".command", ".csh", ".ipa", ".ksh", ".osx", ".out", ".run", ".sh", ".workflow"};
+    set<string> extensions = path(file_name).has_extension() ? set<string> {""} : standard_extensions;
+    for(auto extension : extensions) {
+      auto file_name_with_extension = file_name + extension;
+      if (working_directory != "" && exists(path(working_directory)/file_name_with_extension)) return (path(working_directory)/file_name_with_extension).string();
+      if (path(file_name_with_extension).has_root_directory()) return file_name_with_extension;
+      if (exists(current_path()/file_name_with_extension)) return (current_path()/file_name_with_extension).string();
+      for (auto directory : splitter(path_directories, {':'}, numeric_limits<size_t>::max()))
+        if (exists(path(directory)/file_name_with_extension)) return (path(directory)/file_name_with_extension).string();
+    }
+    return file_name;
   }
 
   bool is_known_uri(const string& command_line) {
@@ -74,8 +96,8 @@ namespace {
     return false;
   }
   
-  bool is_valid_shell_execute_process(const string& command_line, const std::string& working_directory) {
-    return command_line == "" || exists(command_line) || exists(path(working_directory)/path(command_line)) || is_known_uri(command_line);
+  bool is_valid_shell_execute_process(function<vector<string>(const string& str, const vector<char>& separators, size_t count)> splitter, const string& command_line, const string& working_directory) {
+    return command_line == "" || exists(get_full_file_name_with_extension(splitter, command_line, working_directory)) || is_known_uri(command_line);
   }
   
   vector<string> split_arguments(const string& line_argument) {
@@ -148,8 +170,8 @@ tuple<intptr_t, unique_ptr<ostream>, unique_ptr<istream>, unique_ptr<istream>> p
     vector<string> command_line_args;
     if (working_directory != "") current_path(working_directory);
     command_line_args = split_arguments(arguments);
-    command_line_args.insert(command_line_args.begin(), file_name);
-    std::vector<char*> execvp_args(command_line_args.size() + 1);
+    command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name));
+    vector<char*> execvp_args(command_line_args.size() + 1);
     for (size_t index = 0; index < command_line_args.size(); ++index)
       execvp_args[index] = command_line_args[index].data();
     execvp_args[execvp_args.size()-1] = nullptr;
@@ -169,20 +191,20 @@ bool process::kill(intptr_t process) {
   return ::kill(static_cast<pid_t>(process), SIGTERM) == 0;
 }
 
-intptr_t process::shell_execute(const std::string& file_name, const std::string& arguments, const std::string& working_directory, int32_t process_window_style) {
+intptr_t process::shell_execute(const string& file_name, const string& arguments, const string& working_directory, int32_t process_window_style) {
   pid_t process = fork();
   if (process == 0) {
     vector<string> command_line_args;
     command_line_args = split_arguments(arguments);
-    if (is_valid_shell_execute_process(file_name, working_directory)) {
+    if (is_valid_shell_execute_process(&unix::strings::split, file_name, working_directory)) {
       auto command_working_directory = working_directory != "" ? working_directory : current_path().string();
-      command_line_args.insert(command_line_args.begin(), exists(path(command_working_directory)/path(file_name)) ? (path(command_working_directory)/path(file_name)).string() : file_name);
+      command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name, working_directory));
       command_line_args.insert(command_line_args.begin(), shell_execute_command());
     } else {
       if (working_directory != "") current_path(working_directory);
-      command_line_args.insert(command_line_args.begin(), file_name);
+      command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name));
     }
-    std::vector<char*> execvp_args(command_line_args.size() + 1);
+    vector<char*> execvp_args(command_line_args.size() + 1);
     for (size_t index = 0; index < command_line_args.size(); ++index)
       execvp_args[index] = command_line_args[index].data();
     execvp_args[execvp_args.size()-1] = nullptr;
