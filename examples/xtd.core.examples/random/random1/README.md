@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output on command line
+# Output
 
 ```
 First Series:
