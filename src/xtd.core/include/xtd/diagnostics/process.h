@@ -147,6 +147,7 @@ namespace xtd {
         std::chrono::system_clock::time_point exit_time_;
         std::optional<int32_t> exit_code_;
         event_handler<process> exit_callback_;
+        std::exception_ptr exception_pointer_;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };
