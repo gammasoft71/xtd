@@ -1,22 +1,9 @@
-# process
+# process_start_info
 
-Shows how to use [xtd::process](../../../../src/xtd.core/include/xtd/diagnostics/process.h) class with standard output redirection.
+Shows how to use [xtd::diagnostics::process_start_info](../../../../src/xtd.core/include/xtd/diagnostics/process_start_info.h) class.
 
-## Sources
+# Subprojects
 
-[src/process.cpp](src/process.cpp)
+[args_echo](args_echo/README.md)
 
-[CMakeLists.txt](CMakeLists.txt)
-
-# Build and run
-
-Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
-
-```cmake
-xtdc run
-```
-
-# Output
-
-```
-```
+[start_args_echo](start_args_echo/README.md)
