@@ -5,7 +5,7 @@ using namespace xtd::io;
 using namespace xtd::diagnostics;
 
 int main() {
-  process_start_info start_info(environment::os_version().is_windows_platform() ? "args_echo.exe" : "./args_echo");
+  process_start_info start_info("args_echo");
 
   // Start with one argument.
   // Output of args_echo:
