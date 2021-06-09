@@ -26,6 +26,7 @@ process& process::operator=(const process& value) {
   data_ = value.data_;
   exited.set_data(data_.get());
   data_->exit_callback_ += exit_callback;
+  data_->exception_pointer_ = nullptr;
   return *this;
 }
 
@@ -93,30 +94,46 @@ process&  process::kill() {
 bool process::start() {
   bool thread_started = false;
   data_->thread_ = thread([](class process process, bool& thread_started) {
-    process.data_->exit_code_.reset();
-    process.data_->start_time_ = system_clock::now();
-    int32_t process_creation_flags = 0;
-    if (process.start_info().create_no_window()) process_creation_flags |= CREATE_NO_WINDOW;
-    int32_t process_window_style = 0;
-
-    if (process.start_info().use_shell_execute()) {
-      process.data_->handle_ = native::process::shell_execute(process.start_info().file_name(), process.start_info().arguments(), process.start_info().working_directory(), process_window_style);
-    } else {
-      auto [handle, standard_input, standard_output, standard_error] = native::process::create(process.start_info().file_name(), process.start_info().arguments(), process.start_info().working_directory(), process_creation_flags, process_window_style, make_tuple(process.data_->start_info_.redirect_standard_input(), process.data_->start_info_.redirect_standard_output(), process.data_->start_info_.redirect_standard_error()));
-      process.data_->handle_ = handle;
-      process.data_->standard_input_ = move(standard_input);
-      process.data_->standard_output_ = move(standard_output);
-      process.data_->standard_error_ = move(standard_error);
+    try {
+      process.data_->exit_code_.reset();
+      process.data_->start_time_ = system_clock::now();
+      int32_t process_creation_flags = 0;
+      if (process.start_info().create_no_window()) process_creation_flags |= CREATE_NO_WINDOW;
+      int32_t process_window_style = 0;
+      
+      if (process.start_info().use_shell_execute()) {
+        process.data_->handle_ = native::process::shell_execute(process.start_info().file_name(), process.start_info().arguments(), process.start_info().working_directory(), process_window_style);
+      } else {
+        auto [handle, standard_input, standard_output, standard_error] = native::process::create(process.start_info().file_name(), process.start_info().arguments(), process.start_info().working_directory(), process_creation_flags, process_window_style, make_tuple(process.data_->start_info_.redirect_standard_input(), process.data_->start_info_.redirect_standard_output(), process.data_->start_info_.redirect_standard_error()));
+        process.data_->handle_ = handle;
+        process.data_->standard_input_ = move(standard_input);
+        process.data_->standard_output_ = move(standard_output);
+        process.data_->standard_error_ = move(standard_error);
+      }
+      if (process.data_->handle_ == 0) {
+        throw invalid_operation_exception("The system cannot find the file specified", caller_info_);
+      }
+      thread_started = true;
+      debug::write_line_if(debug_process, strings::format("process::start [handle={}, command_line={}, start_time={:u}.{:D6}, started]", process.data_->handle_, strings::format("{}{}", process.start_info().file_name(), process.start_info().arguments() == "" ? "" : strings::format(" {}", process.start_info().arguments())), process.data_->start_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time_.time_since_epoch())).count() % 1000000));
+      int32_t exit_code = 0;
+      if (!process.data_->start_info_.use_shell_execute() && native::process::wait(process.data_->handle_, exit_code)) process.data_->exit_code_ = exit_code;
+      process.data_->exit_time_ = system_clock::now();
+      debug::write_line_if(debug_process, strings::format("process::start [handle={}, exit_time={:u}.{:D6}, exit_code={}, exited]", process.data_->handle_, process.data_->exit_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->exit_time_.time_since_epoch())).count() % 1000000, process.data_->exit_code_));
+      if (exit_code == -1 || exit_code == 0x00ffffff)
+        throw invalid_operation_exception("The system cannot find the file specified", caller_info_);
+      process.on_exited();
+    } catch(...) {
+      process.data_->exception_pointer_ = std::current_exception();
+      thread_started = true;
     }
-    thread_started = true;
-    debug::write_line_if(debug_process, strings::format("process::start [handle={}, command_line={}, start_time={:u}.{:D6}, started]", process.data_->handle_, strings::format("{}{}", process.start_info().file_name(), process.start_info().arguments() == "" ? "" : strings::format(" {}", process.start_info().arguments())), process.data_->start_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time_.time_since_epoch())).count() % 1000000));
-    int32_t exit_code = 0;
-    if (!process.data_->start_info_.use_shell_execute() && native::process::wait(process.data_->handle_, exit_code)) process.data_->exit_code_ = exit_code;
-    process.data_->exit_time_ = system_clock::now();
-    debug::write_line_if(debug_process, strings::format("process::start [handle={}, exit_time={:u}.{:D6}, exit_code={}, exited]", process.data_->handle_, process.data_->exit_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->exit_time_.time_since_epoch())).count() % 1000000, process.data_->exit_code_));
-    process.on_exited();
   }, *this, std::ref(thread_started));
   while(!thread_started) this_thread::yield();
+  //this_thread::sleep_for(std::chrono::milliseconds(50));
+  if (data_->exception_pointer_) {
+    std::exception_ptr exception_pointer = data_->exception_pointer_;
+    data_->exception_pointer_ = nullptr;
+    rethrow_exception(exception_pointer);
+  }
   return thread_started;
 }
 
@@ -141,9 +158,16 @@ process& process::wait_for_exit() {
   if (data_->thread_.joinable()) data_->thread_.join();
   else if (!data_->start_info_.use_shell_execute() && native::process::wait(data_->handle_, exit_code)) data_->exit_code_ = exit_code;
   debug::write_line_if(debug_process, strings::format("process::wait_for_exit [handle={}, exit_code={}, ...exit]", data_->handle_, data_->exit_code_));
+  if (data_->exception_pointer_) {
+    std::exception_ptr exception_pointer = data_->exception_pointer_;
+    data_->exception_pointer_ = nullptr;
+    rethrow_exception(exception_pointer);
+  }
+  
   return *this;
 }
 
 void process::on_exited() {
   data_->exit_callback_(*this, event_args::empty);
 }
+
