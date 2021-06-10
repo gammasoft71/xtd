@@ -237,7 +237,6 @@ namespace xtd {
         std::exception_ptr exception_pointer_;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
-    private:
       friend __init_process_message_box_message__;
       inline static xtd::delegate<void(const std::string&)> message_box_message_;
     };
