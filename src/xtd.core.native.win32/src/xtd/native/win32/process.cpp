@@ -109,7 +109,7 @@ process::started_process process::start(const string& file_name, const string& a
   }
   
   PROCESS_INFORMATION process_information;
-  if (CreateProcess(nullptr, win32::strings::to_wstring(file_name + (arguments == "" ? "" : (" " + arguments))).data(), nullptr, nullptr, true, process_creation_flags, nullptr, working_directory == "" ? nullptr : win32::strings::to_wstring(working_directory).c_str(), &startup_info, &process_information) == 0) return make_tuple(0, nullptr, nullptr, nullptr);
+  if (CreateProcess(nullptr, win32::strings::to_wstring(file_name + (arguments == "" ? "" : (" " + arguments))).data(), nullptr, nullptr, true, process_creation_flags, nullptr, working_directory == "" ? nullptr : win32::strings::to_wstring(working_directory).c_str(), &startup_info, &process_information) == 0) return make_tuple(0, 0, nullptr, nullptr, nullptr);
   
   if (redirect_standard_input) CloseHandle(pipe_stdin[0]);
   if (redirect_standard_output) CloseHandle(pipe_stdout[1]);
