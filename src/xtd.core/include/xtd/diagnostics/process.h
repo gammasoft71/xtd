@@ -150,7 +150,7 @@ namespace xtd {
       /// @brief Gets the time that the associated process exited.
       /// @return A std::chrono::system_clock::time_point that indicates when the associated process was terminated.
       /// @exception xtd::not_supported_exception You are trying to access the xtd::diagnostics::process::exit_time property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.
-      /// @REMARKS If the process has not terminated, attempting to retrieve the xtd::diagnostics::process::exit_time property throws an exception. Use xtd::diagnostics::process::has_exited before getting the xtd::diagnostics::process::exit_time property to determine whether the associated process has terminated.
+      /// @remarks If the process has not terminated, attempting to retrieve the xtd::diagnostics::process::exit_time property throws an exception. Use xtd::diagnostics::process::has_exited before getting the xtd::diagnostics::process::exit_time property to determine whether the associated process has terminated.
       std::chrono::system_clock::time_point exit_time() const;
 
       /// @brief Gets the native handle of the associated process.
@@ -158,9 +158,27 @@ namespace xtd {
       /// @exception xtd::invalid_operation_exception The process has not been started or has exited. The xtd::diagnostics::processs::handle property cannot be read because there is no process associated with this xtd::diagnostics::processs instance. -or- The xtd::diagnostics::processs instance has been attached to a running process but you do not have the necessary permissions to get a handle with full access rights.
       /// @exception xtd::not_supported_exception You are trying to access the xtd::diagnostics::processs::handle property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.
       /// @remarks An application can obtain a handle to a process that can be used as a parameter to many process-information and control functions. You can use this handle to initialize a xtd::diagnostics::wait_handle or to call native methods with platform invoke.
+      /// @remarks This process handle is private to an application--in other words, process handles cannot be shared. A process also has a process Id which, unlike the xtd::diagnostics::processs::handle, is unique and, therefore, valid throughout the system.
+      /// @remarks Only processes started through a call to xtd::diagnostics::processs::start set the xtd::diagnostics::processs::handle property of the corresponding xtd::diagnostics::processs instances.
       intptr_t handle() const;
       
+      /// @brief Gets a value indicating whether the associated process has been terminated.
+      /// @return true if the operating system process referenced by the process component has terminated; otherwise, false.
+      /// @exception xtd::invalid_operation_exception There is no process associated with the object.
+      /// @exception xtd::not_supported_exception You are trying to access the xtd::diagnostics::process::has_exited property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.
+      /// @remarks A value of true for xtd::diagnostics::process::has_exited indicates that the associated process has terminated, either normally or abnormally. You can request or force the associated process to exit by calling xtd::diagnostics::process::close_main_window or xtd::diagnostics::process::kill. If a handle is open to the process, the operating system releases the process memory when the process has exited, but retains administrative information about the process, such as the handle, exit code, and exit time. To get this information, you can use the xtd::diagnostics::process::exit_code and xtd::diagnostics::process::exit_time properties. These properties are populated automatically for processes that were started by this component. The administrative information is released when all the Process components that are associated with the system process are destroyed and hold no more handles to the exited process.
+      /// @remarks A process can terminate independently of your code. If you started the process using this component, the system updates the value of xtd::diagnostics::process::has_exited automatically, even if the associated process exits independently.
+      /// @note When standard output has been redirected to asynchronous event handlers, it is possible that output processing will not have completed when HasExited returns true. To ensure that asynchronous event handling has been completed, call the xtd::diagnostics::wait_for_exit() overload that takes no parameter before checking xtd::diagnostics::has_exited.
       bool has_exited() const;
+
+      /// @brief Gets the unique identifier for the associated process.
+      /// @return The system-generated unique identifier of the process that is referenced by this process instance.
+      /// @exception xtd::invalid_operation The process's Id property has not been set.
+      /// @remarks The process xtd::diagnostics::process::id is not valid if the associated process is not running. Therefore, you should ensure that the process is running before attempting to retrieve the xtd::diagnostics::process::id property. Until the process terminates, the process identifier uniquely identifies the process throughout the system.
+      /// @remarks You can connect a process that is running on a local or remote computer to a new xtd::diagnostics::process instance by passing the process identifier to the xtd::diagnostics::process::get_process_by_id method. xtd::diagnostics::process::get_process_by_id is a static method that creates a new component and sets the xtd::diagnostics::process::id property for the new xtd::diagnostics::process instance automatically.
+      /// @remarks Process identifiers can be reused by the system. The xtd::diagnostics::process::id property value is unique only while the associated process is running. After the process has terminated, the system can reuse the xtd::diagnostics::process::id property value for an unrelated process.
+      /// @remarks Because the identifier is unique on the system, you can pass it to other threads as an alternative to passing a xtd::diagnostics::process instance. This action can save system resources yet guarantee that the process is correctly identified.
+      int32_t id() const;
 
       /// @brief Gets the name of the computer the associated process is running on.
       /// @return The name of the computer that the associated process is running on.
@@ -203,6 +221,7 @@ namespace xtd {
       struct data {
         process_start_info start_info_;
         intptr_t handle_ = 0;
+        int32_t id_ = 0;
         std::unique_ptr<std::ostream> standard_input_;
         std::unique_ptr<std::istream> standard_output_;
         std::unique_ptr<std::istream> standard_error_;

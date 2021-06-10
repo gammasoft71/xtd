@@ -58,6 +58,8 @@ bool process::has_exited() const {
   return data_->exit_code_.has_value();
 }
 
+int32_t process::id() const {return data_->id_;}
+
 std::string process::machine_name() const {
   if (data_->handle_ == 0) throw xtd::invalid_operation_exception(caller_info_);
   return ".";
@@ -113,8 +115,9 @@ bool process::start() {
       if (process.start_info().use_shell_execute()) {
         process.data_->handle_ = native::process::shell_execute(process.start_info().file_name(), process.start_info().arguments(), process.start_info().working_directory(), process_window_style);
       } else {
-        auto [handle, standard_input, standard_output, standard_error] = native::process::start(process.start_info().file_name(), process.start_info().arguments(), process.start_info().working_directory(), process_window_style, process_creation_flags, make_tuple(process.data_->start_info_.redirect_standard_input(), process.data_->start_info_.redirect_standard_output(), process.data_->start_info_.redirect_standard_error()));
+        auto [handle, id, standard_input, standard_output, standard_error] = native::process::start(process.start_info().file_name(), process.start_info().arguments(), process.start_info().working_directory(), process_window_style, process_creation_flags, make_tuple(process.data_->start_info_.redirect_standard_input(), process.data_->start_info_.redirect_standard_output(), process.data_->start_info_.redirect_standard_error()));
         process.data_->handle_ = handle;
+        process.data_->id_ = id;
         process.data_->standard_input_ = move(standard_input);
         process.data_->standard_output_ = move(standard_output);
         process.data_->standard_error_ = move(standard_error);
