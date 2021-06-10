@@ -2,6 +2,7 @@
 #include "../../../include/xtd/diagnostics/debug.h"
 #include "../../../include/xtd/environment.h"
 #include "../../../include/xtd/invalid_operation_exception.h"
+#include "../../../include/xtd/io/path.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/process.h>
 #include <xtd/native/process_creation_flags.h>
@@ -10,6 +11,7 @@
 using namespace std;
 using namespace std::chrono;
 using namespace xtd;
+using namespace xtd::io;
 using namespace xtd::diagnostics;
 
 namespace {
@@ -62,11 +64,19 @@ bool process::has_exited() const {
   return data_->exit_code_.has_value();
 }
 
-int32_t process::id() const {return data_->id_;}
+int32_t process::id() const {
+  if (data_->handle_ == 0) throw xtd::invalid_operation_exception(caller_info_);
+  return data_->id_;
+}
 
 std::string process::machine_name() const {
   if (data_->handle_ == 0) throw xtd::invalid_operation_exception(caller_info_);
-  return ".";
+  return data_->machine_name_;
+}
+
+std::string process::process_name() const {
+  if (data_->handle_ == 0) throw xtd::invalid_operation_exception(caller_info_);
+  return path::get_file_name_without_extension(data_->start_info_.file_name());
 }
 
 std::istream& process::standard_error() {
@@ -122,6 +132,7 @@ bool process::start() {
         auto [handle, id, standard_input, standard_output, standard_error] = native::process::start(process.start_info().file_name(), process.start_info().arguments(), process.start_info().working_directory(), process_window_style, process_creation_flags, make_tuple(process.data_->start_info_.redirect_standard_input(), process.data_->start_info_.redirect_standard_output(), process.data_->start_info_.redirect_standard_error()));
         process.data_->handle_ = handle;
         process.data_->id_ = id;
+        process.data_->machine_name_ = ".";
         process.data_->standard_input_ = move(standard_input);
         process.data_->standard_output_ = move(standard_output);
         process.data_->standard_error_ = move(standard_error);
