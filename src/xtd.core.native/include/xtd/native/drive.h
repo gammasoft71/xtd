@@ -43,7 +43,18 @@ namespace xtd {
       /// @return An array of system drive names.
       /// @warning Internal use only
       static std::vector<std::string> get_drives();
+      /// @brief Gets volume information
+      /// @param root_path_name The root path name of the volume
+      /// @param volume_name The name of the volume.
+      /// @param file_system_name The file system name.
+      /// @return true if succeed; otherwise false.
+      /// @warning Internal use only
       static bool get_volume_information(const std::string& root_path_name, std::string& volume_name, std::string& file_system_name);
+      /// @brief Sets volume label
+      /// @param root_path_name The root path name of the volume
+      /// @param volume The volume namr to set.
+      /// @return true if succeed; otherwise false.
+      /// @warning Internal use only
       static bool set_Volume_label(const sttd::string& root_path_name, const std::string& volume_name);
     };
   }

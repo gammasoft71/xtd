@@ -145,18 +145,50 @@ namespace {
   }
 }
 
-tuple<intptr_t, unique_ptr<ostream>, unique_ptr<istream>, unique_ptr<istream>> process::create(const string& file_name, const string& arguments, const string& working_directory, int32_t process_creation_flags, int32_t process_window_style, tuple<bool, bool, bool> redirect_standard_streams) {
-  auto [redirect_standard_input, redirect_standard_output, redirect_standard_error] = redirect_standard_streams;
+bool process::kill(intptr_t process) {
+  if (process == 0) return false;
+  return ::kill(static_cast<pid_t>(process), SIGTERM) == 0;
+}
 
+intptr_t process::shell_execute(const string& file_name, const string& arguments, const string& working_directory, int32_t process_window_style) {
+  if (!is_valid_shell_execute_process(&unix::strings::split, file_name, working_directory)) return 0;
+  pid_t process = fork();
+  if (process == 0) {
+    vector<string> command_line_args;
+    command_line_args = split_arguments(arguments);
+    bool is_shell_execute = true;
+    for (auto arg : command_line_args)
+      if (!(is_shell_execute = is_valid_shell_execute_process(&unix::strings::split, arg, working_directory))) break;
+    if (is_shell_execute) {
+      auto command_working_directory = working_directory != "" ? working_directory : current_path().string();
+      command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name, working_directory));
+      command_line_args.insert(command_line_args.begin(), shell_execute_command());
+    } else {
+      if (working_directory != "") current_path(working_directory);
+      command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name));
+    }
+    vector<char*> execvp_args(command_line_args.size() + 1);
+    for (size_t index = 0; index < command_line_args.size(); ++index)
+      execvp_args[index] = command_line_args[index].data();
+    execvp_args[execvp_args.size()-1] = nullptr;
+    execvp(execvp_args[0], execvp_args.data());
+    exit(-1);
+  }
+  return static_cast<intptr_t>(process);
+}
+
+process::started_process process::start(const string& file_name, const string& arguments, const string& working_directory, int32_t process_window_style, int32_t process_creation_flags, tuple<bool, bool, bool> redirect_standard_streams) {
+  auto [redirect_standard_input, redirect_standard_output, redirect_standard_error] = redirect_standard_streams;
+  
   int pipe_stdin[2];
   if (redirect_standard_input) pipe(pipe_stdin);
   int pipe_stdout[2];
   if (redirect_standard_output) pipe(pipe_stdout);
   int pipe_stderr[2];
   if (redirect_standard_error) pipe(pipe_stderr);
-
+  
   if (!is_valid_process(&unix::strings::split, file_name, working_directory)) return make_tuple(0, make_unique<process_ostream>(pipe_stdin[1]), make_unique<process_istream>(pipe_stdout[0]), make_unique<process_istream>(pipe_stderr[0]));;
-
+  
   pid_t process = fork();
   if (process == 0) {
     if (redirect_standard_input) {
@@ -189,40 +221,8 @@ tuple<intptr_t, unique_ptr<ostream>, unique_ptr<istream>, unique_ptr<istream>> p
   if (redirect_standard_input) close(pipe_stdin[0]);
   if (redirect_standard_output) close(pipe_stdout[1]);
   if (redirect_standard_error) close(pipe_stderr[1]);
-
+  
   return make_tuple(static_cast<intptr_t>(process), make_unique<process_ostream>(pipe_stdin[1]), make_unique<process_istream>(pipe_stdout[0]), make_unique<process_istream>(pipe_stderr[0]));
-}
-
-bool process::kill(intptr_t process) {
-  if (process == 0) return false;
-  return ::kill(static_cast<pid_t>(process), SIGTERM) == 0;
-}
-
-intptr_t process::shell_execute(const string& file_name, const string& arguments, const string& working_directory, int32_t process_window_style) {
-  if (!is_valid_shell_execute_process(&unix::strings::split, file_name, working_directory)) return 0;
-  pid_t process = fork();
-  if (process == 0) {
-    vector<string> command_line_args;
-    command_line_args = split_arguments(arguments);
-    bool is_shell_execute = true;
-    for (auto arg : command_line_args)
-      if (!(is_shell_execute = is_valid_shell_execute_process(&unix::strings::split, arg, working_directory))) break;
-    if (is_shell_execute) {
-      auto command_working_directory = working_directory != "" ? working_directory : current_path().string();
-      command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name, working_directory));
-      command_line_args.insert(command_line_args.begin(), shell_execute_command());
-    } else {
-      if (working_directory != "") current_path(working_directory);
-      command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name));
-    }
-    vector<char*> execvp_args(command_line_args.size() + 1);
-    for (size_t index = 0; index < command_line_args.size(); ++index)
-      execvp_args[index] = command_line_args[index].data();
-    execvp_args[execvp_args.size()-1] = nullptr;
-    execvp(execvp_args[0], execvp_args.data());
-    exit(-1);
-  }
-  return static_cast<intptr_t>(process);
 }
 
 bool process::wait(intptr_t process, int32_t& exit_code) {
