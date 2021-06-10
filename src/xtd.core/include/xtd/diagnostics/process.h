@@ -102,6 +102,9 @@ namespace xtd {
       private:
         data* data_ = nullptr;
       };
+      
+      /// @brief Represents a point in time.
+      using time_point = std::chrono::system_clock::time_point;
 
       /// @brief Initializes a new instance of the xtd::diagnostics::process class.
       /// @remarks If you do not specify the machine_name property, the default is the local computer, (".").
@@ -151,7 +154,7 @@ namespace xtd {
       /// @return A std::chrono::system_clock::time_point that indicates when the associated process was terminated.
       /// @exception xtd::not_supported_exception You are trying to access the xtd::diagnostics::process::exit_time property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.
       /// @remarks If the process has not terminated, attempting to retrieve the xtd::diagnostics::process::exit_time property throws an exception. Use xtd::diagnostics::process::has_exited before getting the xtd::diagnostics::process::exit_time property to determine whether the associated process has terminated.
-      std::chrono::system_clock::time_point exit_time() const;
+      time_point exit_time() const;
 
       /// @brief Gets the native handle of the associated process.
       /// @return The handle that the operating system assigned to the associated process when the process was started. The system uses this handle to keep track of process attributes.
@@ -195,7 +198,7 @@ namespace xtd {
       process_start_info& start_info();
       process& start_info(const process_start_info& value);
 
-      std::chrono::system_clock::time_point start_time() const;
+      time_point start_time() const;
 
       process& kill();
 
@@ -226,8 +229,8 @@ namespace xtd {
         std::unique_ptr<std::istream> standard_output_;
         std::unique_ptr<std::istream> standard_error_;
         std::thread thread_;
-        std::chrono::system_clock::time_point start_time_;
-        std::chrono::system_clock::time_point exit_time_;
+        process::time_point start_time_;
+        process::time_point exit_time_;
         bool enable_raising_events_ = false;
         std::optional<int32_t> exit_code_;
         event_handler<process> exit_callback_;

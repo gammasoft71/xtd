@@ -47,7 +47,7 @@ int32_t process::exit_code() const {
   return data_->exit_code_.value();
 }
 
-std::chrono::system_clock::time_point process::exit_time() const {
+process::time_point process::exit_time() const {
   return data_->exit_time_;
 }
 
@@ -90,7 +90,7 @@ process& process::start_info(const process_start_info& value) {
   return *this;
 }
 
-std::chrono::system_clock::time_point process::start_time() const {
+process::time_point process::start_time() const {
   return data_->start_time_;
 }
 
