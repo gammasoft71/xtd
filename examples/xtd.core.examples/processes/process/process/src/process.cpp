@@ -8,7 +8,7 @@ int main() {
   try {
     using_(process my_process) {
       my_process.start_info().use_shell_execute(false);
-      // // You can start any process, hello_world is a do-nothing example.
+      // You can start any process, hello_world is a do-nothing example.
       my_process.start_info().file_name("hello_world");
       my_process.start_info().create_no_window(true);
       my_process.start();
