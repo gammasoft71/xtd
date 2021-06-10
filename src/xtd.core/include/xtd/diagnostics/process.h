@@ -239,8 +239,6 @@ namespace xtd {
       std::shared_ptr<data> data_ = std::make_shared<data>();
     private:
       friend __init_process_message_box_message__;
-      // This delehgate will be initialized by __init_process_message_box_message__ in xtd.forns/src/xtd/forms/appllication.cpp file.
-      // This operation can be done only if xtd.forms lib is present.
       inline static xtd::delegate<void(const std::string&)> message_box_message_;
     };
   }

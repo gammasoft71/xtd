@@ -16,6 +16,10 @@ namespace {
   const bool debug_process = false;
 }
 
+// This delehgate will be initialized by __init_process_message_box_message__ in xtd.forns/src/xtd/forms/appllication.cpp file.
+// This operation can be done only if xtd.forms lib is present.
+//xtd::delegate<void(const std::string&)> process::message_box_message_;
+
 process::process() {
   exited.set_data(data_.get());
 }
