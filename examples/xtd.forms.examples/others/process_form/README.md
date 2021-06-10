@@ -1,6 +1,6 @@
 # process_form
 
-Sows how to launch process from forms.
+Shows how to launch process from forms.
 
 # Sources
 
