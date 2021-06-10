@@ -16,6 +16,8 @@ namespace {
   const bool debug_process = false;
 }
 
+//xtd::delegate<void(const std::string&)> process::message_box_message_;
+
 process::process() {
   exited.set_data(data_.get());
 }
@@ -130,6 +132,9 @@ bool process::start() {
   while(!thread_started) this_thread::yield();
   //this_thread::sleep_for(std::chrono::milliseconds(50));
   if (data_->exception_pointer_) {
+    if (data_->start_info_.use_shell_execute() && data_->start_info_.error_dialog()) {
+      message_box_message_(data_->start_info_.file_name());
+    }
     std::exception_ptr exception_pointer = data_->exception_pointer_;
     data_->exception_pointer_ = nullptr;
     rethrow_exception(exception_pointer);
