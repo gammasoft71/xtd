@@ -191,6 +191,9 @@ process::started_process process::start(const string& file_name, const string& a
   
   pid_t process = fork();
   if (process == 0) {
+    /// @todo set converted priority
+    // setpriority(PRIO_PROCESS, 0, prioriy);
+    
     if (redirect_standard_input) {
       close(pipe_stdin[1]);
       dup2(pipe_stdin[0], 0);

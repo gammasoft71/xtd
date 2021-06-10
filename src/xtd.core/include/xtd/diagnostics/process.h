@@ -186,8 +186,12 @@ namespace xtd {
       /// @brief Gets the name of the computer the associated process is running on.
       /// @return The name of the computer that the associated process is running on.
       /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::processs object.
+      /// @remarks You can view statistical data and process information for processes running on remote computers but you cannot call xtd::diagnostics::process::start, xtd::diagnostics::process::close_main_window, or xtd::diagnostics::process::kill on remote computers.
+      /// @note When the associated process is executing on the local machine, this property returns a period (".") for the machine name. You should use the xtd::environment::machine_name property to get the correct machine name.
       std::string machine_name() const;
-      
+
+      std::string process_name() const;
+
       std::istream& standard_error();
 
       std::ostream& standard_input();
@@ -225,6 +229,7 @@ namespace xtd {
         process_start_info start_info_;
         intptr_t handle_ = 0;
         int32_t id_ = 0;
+        std::string machine_name_;
         std::unique_ptr<std::ostream> standard_input_;
         std::unique_ptr<std::istream> standard_output_;
         std::unique_ptr<std::istream> standard_error_;
