@@ -14,9 +14,9 @@ public:
     //console::write(reader.read_to_end());
     try {
       using_(process process) {
-        process.start_info().use_shell_execute(false);
         process.start_info().file_name("xtdc");
         process.start_info().arguments("--help");
+        process.start_info().use_shell_execute(false);
         process.start();
         process.wait_for_exit();
         process.start();
