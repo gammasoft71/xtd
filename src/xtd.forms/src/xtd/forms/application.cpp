@@ -7,17 +7,36 @@
 #include <xtd/environment.h>
 #include <xtd/invalid_operation_exception.h>
 #include <xtd/literals.h>
+#include <xtd/diagnostics/process.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/window_messages.h>
 #include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/exception_box.h"
+#include "../../../include/xtd/forms/message_box.h"
 #include "../../../include/xtd/forms/theme.h"
 
 using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
+
+// Initialize xtd::diagnostics::process::message_box_message_ delegate th show message_box dialog.
+// This operation can be done only if xtd.forms lib is present.
+struct __init_process_message_box_message__ {
+  __init_process_message_box_message__() {
+    xtd::diagnostics::process::message_box_message_ = {*this, &__init_process_message_box_message__::__show_message_box__};
+  }
+  
+  void __show_message_box__(const std::string& file_name) {
+    xtd::forms::message_box::show(xtd::strings::format("{} cannot find '{}'. Make sure you typed the name correctly, and try again.", xtd::environment::os_version().name(), file_name), file_name, xtd::forms::message_box_buttons::ok, xtd::forms::message_box_icon::error);
+  }
+  
+  void __force_compiler_optimizer_to_create_object__() {
+  }
+};
+
+__init_process_message_box_message__ __init_process_message_box_message_value__;
 
 namespace {
   using message_filter_ref = std::reference_wrapper<imessage_filter>;
@@ -247,6 +266,7 @@ void application::restart() {
 }
 
 void application::run() {
+  __init_process_message_box_message_value__.__force_compiler_optimizer_to_create_object__();
   application_context context;
   application::run(context);
 }

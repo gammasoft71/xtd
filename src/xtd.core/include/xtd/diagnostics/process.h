@@ -7,9 +7,14 @@
 #include "../event_handler.h"
 #include "process_start_info.h"
 #include <chrono>
+#include <functional>
 #include <memory>
 #include <optional>
 #include <thread>
+
+/// @cond
+struct __init_process_message_box_message__;
+/// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -150,6 +155,11 @@ namespace xtd {
         std::exception_ptr exception_pointer_;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
+    private:
+      friend __init_process_message_box_message__;
+      // This delehgate will be initialized by __init_process_message_box_message__ in xtd.forns/src/xtd/forms/appllication.cpp file.
+      // This operation can be done only if xtd.forms lib is present.
+      inline static xtd::delegate<void(const std::string&)> message_box_message_;
     };
   }
 }
