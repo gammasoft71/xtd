@@ -16,8 +16,6 @@ namespace {
   const bool debug_process = false;
 }
 
-//xtd::delegate<void(const std::string&)> process::message_box_message_;
-
 process::process() {
   exited.set_data(data_.get());
 }
@@ -34,6 +32,14 @@ process& process::operator=(const process& value) {
 
 process::~process() {
   if (data_.use_count() == 1 && data_->thread_.joinable()) data_->thread_.detach();
+}
+
+bool process::enable_raising_events() const {
+  return data_->enable_raising_events_;
+}
+
+void process::enable_raising_events(bool value) {
+  data_->enable_raising_events_ = value;
 }
 
 int32_t process::exit_code() const {
@@ -122,6 +128,7 @@ bool process::start() {
       debug::write_line_if(debug_process, strings::format("process::start [handle={}, exit_time={:u}.{:D6}, exit_code={}, exited]", process.data_->handle_, process.data_->exit_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->exit_time_.time_since_epoch())).count() % 1000000, process.data_->exit_code_));
       if (exit_code == -1 || exit_code == 0x00ffffff) throw invalid_operation_exception("The system cannot find the file specified", caller_info_);
       process.on_exited();
+      process.data_->handle_ = 0;
     } catch(...) {
       process.data_->exception_pointer_ = std::current_exception();
       allow_to_continue = true;
@@ -169,5 +176,5 @@ process& process::wait_for_exit() {
 }
 
 void process::on_exited() {
-  data_->exit_callback_(*this, event_args::empty);
+  if (data_->enable_raising_events_) data_->exit_callback_(*this, event_args::empty);
 }

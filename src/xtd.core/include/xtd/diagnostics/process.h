@@ -37,46 +37,68 @@ namespace xtd {
       /// @brief Represents a process event.
       /// @par Library
       /// xtd.core
+      /// @remarks Used by xtd::diagnostics::process::exited, xtd::diagnostics::process::error_data_recaived and xtd::diagnostics::process::output_data_received events.
       /// @ingroup xtd_core diagnostics
       class process_event : protected event_handler<process> {
         friend process;
         process_event() : event_handler<process>() {}
         void set_data(data* data) {data_ = data;}
 
-      public:        
+      public:
+        /// @brief Gerts a value indicate if the event is empty.
+        /// @return true if evcent does not contains functions; otherwise false.
         bool is_empty() const noexcept { return event_handler<process>::is_empty(); }
         
+        /// @brief Adds an handler to the event.
+        /// @param handler Handler to add.
+        /// @return The current event instance.
         event_handler<process>& operator+=(const event_handler<process>& handler) noexcept {
           data_->exit_callback_+=(handler);
          return event_handler<process>::operator+=(handler);
         }
         
+        /// @brief Adds a function to the event.
+        /// @param handler Function to add.
+        /// @return The current event instance.
         event_handler<process>& operator +=(const typename event_handler<process>::function_t& function) noexcept {
           data_->exit_callback_+=(function);
           return event_handler<process>::operator+=(function);
         }
         
+        /// @brief Adds a function to the event.
+        /// @param handler Function to add.
+        /// @return The current event instance.
         template<typename fn_t>
         event_handler<process>& operator +=(fn_t function) noexcept {
           data_->exit_callback_+=(function);
           return event_handler<process>::operator+=(function);
         }
         
+        /// @brief Removes an handler to the event.
+        /// @param handler Handler to remove.
+        /// @return The current event instance.
         event_handler<process>& operator -=(const event_handler<process>& handler) noexcept {
           data_->exit_callback_-=(handler);
          return event_handler<process>::operator-=(handler);
         }
         
+        /// @brief Removes a function to the event.
+        /// @param handler Function to remove.
+        /// @return The current event instance.
         event_handler<process>& operator -=(const typename event_handler<process>::function_t& function) noexcept {
           data_->exit_callback_-=(function);
           return event_handler<process>::operator-=(function);
         }
         
+        /// @brief Removes a function to the event.
+        /// @param handler Function to remove.
+        /// @return The current event instance.
         template<typename fn_t>
         event_handler<process>& operator -=(fn_t function) noexcept {
           data_->exit_callback_-=(function);
           return event_handler<process>::operator-=(function);
         }
+        
       private:
         data* data_ = nullptr;
       };
@@ -94,10 +116,41 @@ namespace xtd {
       process& operator=(const process& value);
       ~process();
       /// @endcond
+      
+      /// @brief Gets whether the xtd::diagnostics::process::exited event should be raised when the process terminates.
+      /// @return true if the xtd::diagnostics::process::exited event should be raised when the associated process is terminated (through either an exit or a call to xtd::diagnostics::process::kill()); otherwise, false. The default is false. Note that the xtd::diagnostics::process::exited event is raised even if the value of xtd::diagnostics::process::enable_raising_events is false when the process exits during or before the user performs a xtd::diagnostics::process::has_exited check.
+      /// @remarks The xtd::diagnostics::process::enable_raising_events property suggests whether the component should be notified when the operating system has shut down a process. The xtd::diagnostics::process::enable_raising_events property is used in asynchronous processing to notify your application that a process has exited. To force your application to synchronously wait for an exit event (which interrupts processing of the application until the exit event has occurred), use the xtd::diagnostics::process::wait_for_exit method.
+      /// @remarks If the component's xtd::diagnostics::process::enable_raising_events value is true, or when xtd::diagnostics::process::enable_raising_events is false and a xtd::diagnostics::process::has_exited check is invoked by the component, the component can access the administrative information for the associated process, which remains stored by the operating system. Such information includes the xtd::diagnostics::process::exit_time and the xtd::diagnostics::process::exit_code.
+      /// @remarks After the associated process exits, the xtd::diagnostics::process::handle of the component no longer points to an existing process resource. Instead, it can only be used to access the operating system's information about the process resource. The operating system is aware that there are handles to exited processes that haven't been released by xtd::diagnostics::process components, so it keeps the xtd::diagnostics::process::exit_time and xtd::diagnostics::process::handle information in memory.
+      /// @remarks There's a cost associated with watching for a process to exit. If xtd::diagnostics::process::enable_raising_events is true, the xtd::diagnostics::process::exited event is raised when the associated process terminates. Your procedures for the xtd::diagnostics::process::exited event run at that time.
+      /// @remarks Sometimes, your application starts a process but doesn't require notification of its closure. For example, your application can start Notepad to allow the user to perform text editing but make no further use of the Notepad application. You can choose to avoid notification when the process exits because it's not relevant to the continued operation of your application. Setting xtd::diagnostics::process::enable_raising_events to false can save system resources.
+      bool enable_raising_events() const;
+      /// @brief Sets whether the xtd::diagnostics::process::exited event should be raised when the process terminates.
+      /// @param value true if the xtd::diagnostics::process::exited event should be raised when the associated process is terminated (through either an exit or a call to xtd::diagnostics::process::kill()); otherwise, false. The default is false. Note that the xtd::diagnostics::process::exited event is raised even if the value of xtd::diagnostics::process::enable_raising_events is false when the process exits during or before the user performs a xtd::diagnostics::process::has_exited check.
+      /// @remarks The xtd::diagnostics::process::enable_raising_events property suggests whether the component should be notified when the operating system has shut down a process. The xtd::diagnostics::process::enable_raising_events property is used in asynchronous processing to notify your application that a process has exited. To force your application to synchronously wait for an exit event (which interrupts processing of the application until the exit event has occurred), use the xtd::diagnostics::process::wait_for_exit method.
+      /// @remarks If the component's xtd::diagnostics::process::enable_raising_events value is true, or when xtd::diagnostics::process::enable_raising_events is false and a xtd::diagnostics::process::has_exited check is invoked by the component, the component can access the administrative information for the associated process, which remains stored by the operating system. Such information includes the xtd::diagnostics::process::exit_time and the xtd::diagnostics::process::exit_code.
+      /// @remarks After the associated process exits, the xtd::diagnostics::process::handle of the component no longer points to an existing process resource. Instead, it can only be used to access the operating system's information about the process resource. The operating system is aware that there are handles to exited processes that haven't been released by xtd::diagnostics::process components, so it keeps the xtd::diagnostics::process::exit_time and xtd::diagnostics::process::handle information in memory.
+      /// @remarks There's a cost associated with watching for a process to exit. If xtd::diagnostics::process::enable_raising_events is true, the xtd::diagnostics::process::exited event is raised when the associated process terminates. Your procedures for the xtd::diagnostics::process::exited event run at that time.
+      /// @remarks Sometimes, your application starts a process but doesn't require notification of its closure. For example, your application can start Notepad to allow the user to perform text editing but make no further use of the Notepad application. You can choose to avoid notification when the process exits because it's not relevant to the continued operation of your application. Setting xtd::diagnostics::process::enable_raising_events to false can save system resources.
+      void enable_raising_events(bool value);
 
       /// @brief Gets the value that the associated process specified when it terminated.
       /// @return The code that the associated process specified when it terminated.
+      /// @exception xtd::invalid_operation_exception The process has not exited. -or- The process xtd::diagnostics::process::handle is not valid.
+      /// @exception xtd::not_supported_exceptioon You are trying to access the xtd::diagnostics::process::exit_code property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.
+      /// @remarks Use xtd::diagnostics::process::exit_code to get the status that the system process returned when it exited. You can use the exit code much like an integer return value from a main() procedure.
+      /// @remarks The xtd::diagnostics::process::exit_code value for a process reflects the specific convention implemented by the application developer for that process. If you use the exit code value to make decisions in your code, be sure that you know the exit code convention used by the application process.
+      /// @remarks Developers usually indicate a successful exit by an xtd::diagnostics::process::exit_code value of zero (EXIT_SUCCESS), and designate errors by nonzero values (EXIT_FAILURE) that the calling method can use to identify the cause of an abnormal process termination. It is not necessary to follow these guidelines, but they are the convention.
+      /// @remarks If you try to get the xtd::diagnostics::process::exit_code before the process has exited, the attempt throws an exception. Examine the xtd::diagnostics::process::has_exited property first to verify whether the associated process has terminated.
+      /// @note When standard output has been redirected to asynchronous event handlers, it is possible that output processing will not have completed when HasExited returns true. To ensure that asynchronous event handling has been completed, call the xtd::diagnostics::wait_for_exit() overload that takes no parameter before checking xtd::diagnostics::has_exited.
+      /// @remarks You can use the xtd::diagnostics::process::close_main_window or the xtd::diagnostics::process::kill method to cause an associated process to exit.
+      /// @remarks There are two ways of being notified when the associated process exits: synchronously and asynchronously. Synchronous notification relies on calling the xtd::diagnostics::process::wait_for_exit method to pause the processing of your application until the associated component exits. Asynchronous notification relies on the xtd::diagnostics::process::exited event. When using asynchronous notification, xtd::diagnostics::process::enable_raising_events must be set to true for the xtd::diagnostics::process component to receive notification that the process has exited.
       int32_t exit_code() const;
+
+      /// @brief Gets the time that the associated process exited.
+      /// @return A std::chrono::system_clock::time_point that indicates when the associated process was terminated.
+      /// @exception xtd::not_supported_exceptioon You are trying to access the xtd::diagnostics::process::exit_time property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.
+      /// @REMARKS If the process has not terminated, attempting to retrieve the xtd::diagnostics::process::exit_time property throws an exception. Use xtd::diagnostics::process::has_exited before getting the xtd::diagnostics::process::exit_time property to determine whether the associated process has terminated.
       std::chrono::system_clock::time_point exit_time() const;
 
       /// @brief Gets the native handle of the associated process.
@@ -135,8 +188,14 @@ namespace xtd {
 
       process& wait_for_exit();
       
+      process_event error_data_recaived;
+      
+      /// @brief Occurs when a process exits.
+      /// @remarks The exited event indicates that the associated process exited. This occurrence means either that the process terminated (aborted) or successfully closed. This event can occur only if the value of the EnableRaisingEvents property is true.
       process_event exited;
-
+      
+      process_event output_data_recaived;
+      
     protected:
       virtual void on_exited();
       
@@ -150,6 +209,7 @@ namespace xtd {
         std::thread thread_;
         std::chrono::system_clock::time_point start_time_;
         std::chrono::system_clock::time_point exit_time_;
+        bool enable_raising_events_ = false;
         std::optional<int32_t> exit_code_;
         event_handler<process> exit_callback_;
         std::exception_ptr exception_pointer_;
