@@ -187,7 +187,7 @@ process::started_process process::start(const string& file_name, const string& a
   int pipe_stderr[2];
   if (redirect_standard_error) pipe(pipe_stderr);
   
-  if (!is_valid_process(&unix::strings::split, file_name, working_directory)) return make_tuple(0, make_unique<process_ostream>(pipe_stdin[1]), make_unique<process_istream>(pipe_stdout[0]), make_unique<process_istream>(pipe_stderr[0]));;
+  if (!is_valid_process(&unix::strings::split, file_name, working_directory)) return make_tuple(0, 0, make_unique<process_ostream>(pipe_stdin[1]), make_unique<process_istream>(pipe_stdout[0]), make_unique<process_istream>(pipe_stderr[0]));;
   
   pid_t process = fork();
   if (process == 0) {
@@ -222,7 +222,7 @@ process::started_process process::start(const string& file_name, const string& a
   if (redirect_standard_output) close(pipe_stdout[1]);
   if (redirect_standard_error) close(pipe_stderr[1]);
   
-  return make_tuple(static_cast<intptr_t>(process), make_unique<process_ostream>(pipe_stdin[1]), make_unique<process_istream>(pipe_stdout[0]), make_unique<process_istream>(pipe_stderr[0]));
+  return make_tuple(static_cast<intptr_t>(process), static_cast<int32_t>(process), make_unique<process_ostream>(pipe_stdin[1]), make_unique<process_istream>(pipe_stdout[0]), make_unique<process_istream>(pipe_stderr[0]));
 }
 
 bool process::wait(intptr_t process, int32_t& exit_code) {

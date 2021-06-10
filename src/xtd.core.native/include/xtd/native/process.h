@@ -35,10 +35,11 @@ namespace xtd {
     protected:
       /// @brief Contains the created process hande and created standard streams :
       /// * [0] : The created process handle.
-      /// * [1] : The created ostream for the standard input.
-      /// * [2] : The created istream for the standard output.
-      /// * [3] : The created istream for the standard error.
-      using started_process = std::tuple<intptr_t, std::unique_ptr<std::ostream>, std::unique_ptr<std::istream>, std::unique_ptr<std::istream>>;
+      /// * [1] : The created process id.
+      /// * [2] : The created ostream for the standard input.
+      /// * [3] : The created istream for the standard output.
+      /// * [4] : The created istream for the standard error.
+      using started_process = std::tuple<intptr_t, int32_t, std::unique_ptr<std::ostream>, std::unique_ptr<std::istream>, std::unique_ptr<std::istream>>;
       
       /// @brief Kill process.
       /// @param process The process handle to kill.
@@ -63,14 +64,10 @@ namespace xtd {
       /// * [0] : true if input should be read from standard_input; otherwise, false. The default is false.
       /// * [1] : true if input should be written to standard_output; otherwise, false. The default is false.
       /// * [2] : true if input should be written to standard_error; otherwise, false. The default is false.
-      /// @return A tuple that contains the created process hande and created standard streams :
-      /// * [0] : The created process handle.
-      /// * [1] : The created ostream for the standard input.
-      /// * [2] : The created istream for the standard output.
-      /// * [3] : The created istream for the standard error.
+      /// @return A process::started_process that contains the created process hande, id and created standard streams.
       /// @warning Internal use only
       static started_process start(const std::string& file_name, const std::string& arguments, const std::string& working_directory, int32_t process_window_style, int32_t process_creation_flags, std::tuple<bool, bool, bool> redirect_standard_streams);
-      /// @brief Wait process.
+      /// @brief Wait process and close handles.
       /// @param process The process handle to wait.
       /// @param exit Receives the process exit code.
       /// @return true if succeed; otherwise false.
