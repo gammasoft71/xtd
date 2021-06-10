@@ -137,7 +137,7 @@ namespace xtd {
       /// @brief Gets the value that the associated process specified when it terminated.
       /// @return The code that the associated process specified when it terminated.
       /// @exception xtd::invalid_operation_exception The process has not exited. -or- The process xtd::diagnostics::process::handle is not valid.
-      /// @exception xtd::not_supported_exceptioon You are trying to access the xtd::diagnostics::process::exit_code property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.
+      /// @exception xtd::not_supported_exception You are trying to access the xtd::diagnostics::process::exit_code property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.
       /// @remarks Use xtd::diagnostics::process::exit_code to get the status that the system process returned when it exited. You can use the exit code much like an integer return value from a main() procedure.
       /// @remarks The xtd::diagnostics::process::exit_code value for a process reflects the specific convention implemented by the application developer for that process. If you use the exit code value to make decisions in your code, be sure that you know the exit code convention used by the application process.
       /// @remarks Developers usually indicate a successful exit by an xtd::diagnostics::process::exit_code value of zero (EXIT_SUCCESS), and designate errors by nonzero values (EXIT_FAILURE) that the calling method can use to identify the cause of an abnormal process termination. It is not necessary to follow these guidelines, but they are the convention.
@@ -149,7 +149,7 @@ namespace xtd {
 
       /// @brief Gets the time that the associated process exited.
       /// @return A std::chrono::system_clock::time_point that indicates when the associated process was terminated.
-      /// @exception xtd::not_supported_exceptioon You are trying to access the xtd::diagnostics::process::exit_time property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.
+      /// @exception xtd::not_supported_exception You are trying to access the xtd::diagnostics::process::exit_time property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.
       /// @REMARKS If the process has not terminated, attempting to retrieve the xtd::diagnostics::process::exit_time property throws an exception. Use xtd::diagnostics::process::has_exited before getting the xtd::diagnostics::process::exit_time property to determine whether the associated process has terminated.
       std::chrono::system_clock::time_point exit_time() const;
 
