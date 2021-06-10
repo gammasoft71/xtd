@@ -65,7 +65,7 @@ public:
       if (environment::os_version().is_windows_platform()) process::start("calc");
       else if (environment::os_version().is_macos_platform()) process::start("Calculator");
       else if (environment::os_version().is_linux_platform()) process::start("gnome-calculator");
-      else throw invalid_operation_exception("Calculator not found.");
+      else throw invalid_operation_exception("Calculator application unknown.");
     };
   }
   
