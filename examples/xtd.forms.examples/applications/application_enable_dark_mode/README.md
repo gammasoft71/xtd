@@ -1,6 +1,6 @@
 # application_enable_dark_mode
 
-Shows how to create an application with  [xtd::forms::application](../../../../src/xtd_forms/include/xtd/forms/application.hpp) class.
+Shows how to create an application with  [xtd::forms::application::enable_dark_mode](../../../../src/xtd_forms/include/xtd/forms/application.hpp) method.
 
 # Sources
 
@@ -26,10 +26,7 @@ xtdc run
 
 ![Screenshot](../../../../docs/pictures/examples/application_enable_dark_mode_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/application_enable_dark_mode_md.png)
 
 ## Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/application_enable_dark_mode_g.png)
-
-![Screenshot](../../../../docs/pictures/examples/application_enable_dark_mode_gd.png)
