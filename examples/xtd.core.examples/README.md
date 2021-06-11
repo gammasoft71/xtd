@@ -78,6 +78,19 @@
 * [random2](random/random2/README.md) shows how to use [xtd::random](../../src/xtd.core/include/xtd/random.h) class.
 * [random3](random/random3/README.md) shows how to use [xtd::random::next](../../src/xtd.core/include/xtd/random.h) method.
 
+# [strings](strings/README.md)
+
+* [compare](strings/compare/README.md) shows how to use [xtd::strings::compare](../../src/xtd.core/include/xtd/strings.h) method.
+* [compare_ignore_case](strings/compare_ignore_case/README.md) shows how to use [xtd::strings::compare](../../src/xtd.core/include/xtd/strings.h) method.
+* [concat](strings/concat/README.md) shows how to use [xtd::strings::concat](../../src/xtd.core/include/xtd/strings.h) method.
+* [concat_collection](strings/concat_collection/README.md) shows how to use [xtd::strings::concat](../../src/xtd.core/include/xtd/strings.h) method.
+* [contains](strings/contains/README.md) shows how to use [xtd::strings::contains](../../src/xtd.core/include/xtd/strings.h) method.
+* [format](strings/format/README.md) shows how to use [xtd::strings::format](../../src/xtd.core/include/xtd/strings.h) method.
+* [format_with_orderformat_with_order](strings/format_with_order/README.md) shows how to use [xtd::strings::format](../../src/xtd.core/include/xtd/strings.h) method.
+* [join](strings/join/README.md) shows how to use [xtd::strings::join](../../src/xtd.core/include/xtd/strings.h) method.
+* [split](strings/split/README.md) shows how to use [xtd::strings::split](../../src/xtd.core/include/xtd/strings.h) method.
+* [string_unicode](strings/string_unicode/README.md) shows how to use [xtd::strings](../../src/xtd.core/include/xtd/strings.h) class with unicode.
+
 ## [Web](web/README.md)
 
 * [css_reader](web/css_reader/README.md) shows how to use [xtd::web/css/reader](../../src/xtd.core/include/xtd/html/css/reader.h) class.
