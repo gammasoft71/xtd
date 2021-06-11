@@ -439,6 +439,7 @@ namespace xtd {
       ///   p.start();
       ///
       ///   // To avoid deadlocks, always read the output stream first and then wait.
+      ///   p.begin_error_read_line();
       ///   string output = stream_reader(p.standard_error()).read_to_end();
       ///   p.wait_for_exit();
       ///
@@ -628,6 +629,7 @@ namespace xtd {
       ///   p.start();
       ///
       ///   // To avoid deadlocks, always read the output stream first and then wait.
+      ///   p.begin_error_read_line();
       ///   string output = stream_reader(p.standard_error()).read_to_end();
       ///   p.wait_for_exit();
       ///
