@@ -1,6 +1,6 @@
 # hello_world_label
 
-The classic first application "Hello, World!" with  [xtd::forms::label](../../../../src/xtd_forms/include/xtd/forms/label.hpp) control.
+The classic first application "Hello, World!" with  [xtd::forms::label](../../../../src/xtd.forms/include/xtd/forms/label.h) control.
 
 # Sources
 
