@@ -78,7 +78,7 @@
 * [random2](random/random2/README.md) shows how to use [xtd::random](../../src/xtd.core/include/xtd/random.h) class.
 * [random3](random/random3/README.md) shows how to use [xtd::random::next](../../src/xtd.core/include/xtd/random.h) method.
 
-# [strings](strings/README.md)
+## [strings](strings/README.md)
 
 * [compare](strings/compare/README.md) shows how to use [xtd::strings::compare](../../src/xtd.core/include/xtd/strings.h) method.
 * [compare_ignore_case](strings/compare_ignore_case/README.md) shows how to use [xtd::strings::compare](../../src/xtd.core/include/xtd/strings.h) method.
