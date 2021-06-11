@@ -107,11 +107,14 @@ add_sources(
   include/xtd/collections/specialized/string_pair.h
   include/xtd/collections/specialized/string_vector.h
   include/xtd/diagnostics/console_trace_listener.h
+  include/xtd/diagnostics/data_received_event_args.h
+  include/xtd/diagnostics/data_received_event_handler.h
   include/xtd/diagnostics/debug.h
   include/xtd/diagnostics/default_trace_listener.h
   include/xtd/diagnostics/event_type_filter.h
   include/xtd/diagnostics/ostream_trace_listener.h
   include/xtd/diagnostics/process.h
+  include/xtd/diagnostics/process_priority_class.h
   include/xtd/diagnostics/process_start_info.h
   include/xtd/diagnostics/process_window_style.h
   include/xtd/diagnostics/source_filter.h

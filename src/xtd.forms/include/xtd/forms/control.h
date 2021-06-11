@@ -812,7 +812,7 @@ namespace xtd {
       /// @brief Retrieves the index of a control within the control collection.
       /// @param child The control to search for in the control collection.
       /// @return A zero-based index value that represents the location of the specified child control within the control collection.
-      /// @exceptioon xtd::argument_exceptioon The child control is not in the control::control_collection.
+      /// @exception xtd::argument_exception The child control is not in the control::control_collection.
       size_t get_child_index(intptr_t child) const {
         for (size_t index = 0;index < controls().size(); ++index)
         if (controls()[index].get().handle() == child) return index;

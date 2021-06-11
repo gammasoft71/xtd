@@ -140,6 +140,11 @@
 /// @warning Internal use only
 /// @ingroup native
 
+/// @defgroup ppc process pricority class
+/// @brief process priority class definitions.
+/// @warning Internal use only
+/// @ingroup native
+
 /// @defgroup platform_id platform id
 /// @brief platform id definitions.
 /// @warning Internal use only

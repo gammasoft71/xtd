@@ -2,7 +2,7 @@
 /// @brief Contains xtd::console_cancel_event_handler event handler.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/event_handler.h>
+#include "event_handler.h"
 #include "console_cancel_event_args.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

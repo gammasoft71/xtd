@@ -105,6 +105,7 @@
 #include "diagnostics/event_type_filter.h"
 #include "diagnostics/ostream_trace_listener.h"
 #include "diagnostics/process.h"
+#include "diagnostics/process_priority_class.h"
 #include "diagnostics/process_start_info.h"
 #include "diagnostics/process_window_style.h"
 #include "diagnostics/source_filter.h"

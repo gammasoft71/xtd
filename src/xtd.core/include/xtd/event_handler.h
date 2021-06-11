@@ -15,6 +15,6 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core events
-  template<typename type_t>
-  using event_handler = xtd::delegate<void(type_t sender, const event_args& e)>;
+  template<typename sender_t>
+  using event_handler = xtd::delegate<void(sender_t sender, const event_args& e)>;
 }

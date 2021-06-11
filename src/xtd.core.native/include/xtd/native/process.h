@@ -41,11 +41,16 @@ namespace xtd {
       /// * [4] : The created istream for the standard error.
       using started_process = std::tuple<intptr_t, int32_t, std::unique_ptr<std::ostream>, std::unique_ptr<std::istream>, std::unique_ptr<std::istream>>;
       
+      static int32_t base_priority(int32_t priority);
+
       /// @brief Kill process.
       /// @param process The process handle to kill.
       /// @return true if succeed; otherwise false.
       /// @warning Internal use only
       static bool kill(intptr_t process);
+      
+      static bool priority_class(intptr_t process, int32_t priority);
+
       /// @brief Creates a process with specified file name, specified arguments, specified working directory, specified process creation flags, and specified process window style.
       /// @param file_name the name of the application file to run in process launched by the shell execute.
       /// @param arguments Command-line arguments to pass when startinhg the process.
