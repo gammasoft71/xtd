@@ -13,6 +13,7 @@
 #include <set>
 #include <signal.h>
 #include <unistd.h>
+#include <sys/resource.h>
 #include <sys/wait.h>
 
 using namespace std;
