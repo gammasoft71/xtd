@@ -1,6 +1,6 @@
 # application_and_exception
 
-Shows how to create an application with  [xtd::forms::application](../../../../src/xtd_forms/include/xtd/forms/application.hpp) class and how to manage exception.
+Shows how to create an application with  [xtd::forms::application](../../../../src/xtd.forms/include/xtd/forms/application.h) class and how to manage exception.
 
 # Sources
 
