@@ -99,6 +99,3 @@
 * [hello_world_diagnostics2](others/hello_world_diagnostics2/README.md) The same classic first application "Hello World" on the debug output stream with another style.
 * [hello_world_environment2](others/hello_world_environment2/README.md) The same classic first application "Hello World" environment with another style.
 * [wconsole2](others/wconsole2/README.md) shows how to use [xtd::wconsole](../../src/xtd.core/include/xtd/basic_console.h) class.
-* [xtd_format](others/xtd_format/README.md) Show how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) class.
-* [xtd_format_with_order](others/others/xtd_format_with_order/README.md) Show how to use [xtd::format](../../../src/xtd.core/include/xtd/format.h) class.
-* [xtd_formatf](others/xtd_formatf/README.md) Show how to use [xtd::formatf](../../src/xtd.core/include/xtd/format.h) class.
