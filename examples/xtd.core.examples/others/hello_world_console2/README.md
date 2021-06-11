@@ -4,7 +4,7 @@ The classic first application "Hello, World!" with [xtd::console](../../../../sr
 
 ## Sources
 
-[src/hello_world_console2.cpp](src/hello_world_console.cpp)
+[src/hello_world_console2.cpp](src/hello_world_console2.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
