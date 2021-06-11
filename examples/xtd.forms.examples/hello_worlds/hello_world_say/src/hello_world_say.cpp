@@ -21,7 +21,7 @@ public:
     button1.parent(*this);
     button1.text("Say...");
     button1.click += [&] {
-      process::start(process_start_info().file_name(temp_directory_path()/"say.cmd").arguments("\"Hello, World!\"").create_no_window(true));
+      process::start(process_start_info(temp_directory_path()/"say.cmd", "\"Hello, World!\"").create_no_window(true));
     };
   }
   
