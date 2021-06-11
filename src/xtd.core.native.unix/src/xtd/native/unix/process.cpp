@@ -1,6 +1,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/process.h>
 #include <xtd/native/process_creation_flags.h>
+#include <xtd/native/priority_class.h>
 #include <xtd/native/process_window_style.h>
 #include "../../../../include/xtd/native/unix/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
@@ -8,6 +9,7 @@
 #include <filesystem>
 #include <cstdlib>
 #include <functional>
+#include <map>
 #include <set>
 #include <signal.h>
 #include <unistd.h>
@@ -143,11 +145,31 @@ namespace {
     }
     return arguments;
   }
+  
+  bool compute_base_priority(int32_t priority, int32_t& base_priority) {
+    static map<int32_t, int32_t> base_priorities {{IDLE_PRIORITY_CLASS, PRIO_MIN}, {BELOW_NORMAL_PRIORITY_CLASS, PRIO_MIN + (PRIO_MAX - PRIO_MIN)/4}, {NORMAL_PRIORITY_CLASS, PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 2}, {ABOVE_NORMAL_PRIORITY_CLASS, PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4}, {HIGH_PRIORITY_CLASS, PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8}, {REALTIME_PRIORITY_CLASS, PRIO_MAX}};
+    auto it = base_priorities.find(priority);
+    if (it == base_priorities.end()) return false;
+    base_priority = it->second;
+    return true;
+  }
+}
+
+int32_t process::base_priority(int32_t priority) {
+  int32_t base_priority = PRIO_MIN + (PRIO_MAX - PRIO_MIN)/2;
+  compute_base_priority(priority, base_priority);
+  return base_priority;
 }
 
 bool process::kill(intptr_t process) {
   if (process == 0) return false;
   return ::kill(static_cast<pid_t>(process), SIGTERM) == 0;
+}
+
+bool process::priority_class(intptr_t process, int32_t priority) {
+  int32_t base_priority = PRIO_MIN + (PRIO_MAX - PRIO_MIN)/2;
+  if (compute_base_priority(priority, base_priority) == false) return false;
+  return setpriority(PRIO_PROCESS, process, base_priority) == 0;
 }
 
 intptr_t process::shell_execute(const string& file_name, const string& arguments, const string& working_directory, int32_t process_window_style) {
@@ -191,9 +213,6 @@ process::started_process process::start(const string& file_name, const string& a
   
   pid_t process = fork();
   if (process == 0) {
-    /// @todo set converted priority
-    // setpriority(PRIO_PROCESS, 0, prioriy);
-    
     if (redirect_standard_input) {
       close(pipe_stdin[1]);
       dup2(pipe_stdin[0], 0);

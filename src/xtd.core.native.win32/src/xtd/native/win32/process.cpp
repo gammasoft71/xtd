@@ -67,9 +67,20 @@ namespace {
   }
 }
 
+int32_t process::base_priority(int32_t priority) {
+  static map<int32_t, int32_t> base_priorities {{IDLE_PRIORITY_CLASS, 4}, {BELOW_NORMAL_PRIORITY_CLASS, 6}, {NORMAL_PRIORITY_CLASS, 8}, {ABOVE_NORMAL_PRIORITY_CLASS, 10}, {HIGH_PRIORITY_CLASS, 13}, {REALTIME_PRIORITY_CLASS, 24}};
+  auto it = base_priorities.find(priority);
+  if (it == base_priorities.end()) it = base_priorities.find(NORMAL_PRIORITY_CLASS);
+  return it->second;
+}
+
 bool process::kill(intptr_t handle) {
   if (handle == 0) return false;
   return TerminateProcess(reinterpret_cast<HANDLE>(handle), static_cast<uint32_t>(-1)) != 0;
+}
+
+bool process::priority_class(intptr_t process, int32_t priority) {
+  return SetPriorityClass(process, priority) == TRUE;
 }
 
 intptr_t process::shell_execute(const std::string& file_name, const std::string& arguments, const std::string& working_directory, int32_t process_window_style) {

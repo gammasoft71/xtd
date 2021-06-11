@@ -6,6 +6,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/process.h>
 #include <xtd/native/process_creation_flags.h>
+#include <xtd/native/priority_class.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace std;
@@ -21,6 +22,78 @@ namespace {
 // This delehgate will be initialized by __init_process_message_box_message__ in xtd.forns/src/xtd/forms/appllication.cpp file.
 // This operation can be done only if xtd.forms lib is present.
 //xtd::delegate<void(const std::string&)> process::message_box_message_;
+
+bool process::error_data_received_event::is_empty() const noexcept {
+  return data_received_event_handler<process&>::is_empty();
+}
+
+data_received_event_handler<process&>& process::error_data_received_event::operator+=(const data_received_event_handler<process&>& handler) noexcept {
+  data_->error_data_received_callback_+=(handler);
+  return data_received_event_handler<process&>::operator+=(handler);
+}
+
+data_received_event_handler<process&>& process::error_data_received_event::operator+=(const typename data_received_event_handler<process&>::function_t& function) noexcept {
+  data_->error_data_received_callback_+=(function);
+  return data_received_event_handler<process&>::operator+=(function);
+}
+
+data_received_event_handler<process&>& process::error_data_received_event::operator-=(const data_received_event_handler<process&>& handler) noexcept {
+  data_->error_data_received_callback_-=(handler);
+  return data_received_event_handler<process&>::operator-=(handler);
+}
+
+data_received_event_handler<process&>& process::error_data_received_event::operator-=(const typename data_received_event_handler<process&>::function_t& function) noexcept {
+  data_->error_data_received_callback_-=(function);
+  return data_received_event_handler<process&>::operator-=(function);
+}
+
+bool process::exit_event::is_empty() const noexcept {
+  return event_handler<process&>::is_empty();
+}
+
+event_handler<process&>& process::exit_event::operator+=(const event_handler<process&>& handler) noexcept {
+  data_->exit_callback_+=(handler);
+  return event_handler<process&>::operator+=(handler);
+}
+
+event_handler<process&>& process::exit_event::operator+=(const typename event_handler<process&>::function_t& function) noexcept {
+  data_->exit_callback_+=(function);
+  return event_handler<process&>::operator+=(function);
+}
+
+event_handler<process&>& process::exit_event::operator-=(const event_handler<process&>& handler) noexcept {
+  data_->exit_callback_-=(handler);
+  return event_handler<process&>::operator-=(handler);
+}
+
+event_handler<process&>& process::exit_event::operator-=(const typename event_handler<process&>::function_t& function) noexcept {
+  data_->exit_callback_-=(function);
+  return event_handler<process&>::operator-=(function);
+}
+
+bool process::output_data_received_event::is_empty() const noexcept {
+  return data_received_event_handler<process&>::is_empty();
+}
+
+data_received_event_handler<process&>& process::output_data_received_event::operator+=(const data_received_event_handler<process&>& handler) noexcept {
+  data_->output_data_received_callback_+=(handler);
+  return data_received_event_handler<process&>::operator+=(handler);
+}
+
+data_received_event_handler<process&>& process::output_data_received_event::operator+=(const typename data_received_event_handler<process&>::function_t& function) noexcept {
+  data_->output_data_received_callback_+=(function);
+  return data_received_event_handler<process&>::operator+=(function);
+}
+
+data_received_event_handler<process&>& process::output_data_received_event::operator-=(const data_received_event_handler<process&>& handler) noexcept {
+  data_->output_data_received_callback_-=(handler);
+  return data_received_event_handler<process&>::operator-=(handler);
+}
+
+data_received_event_handler<process&>& process::output_data_received_event::operator-=(const typename data_received_event_handler<process&>::function_t& function) noexcept {
+  data_->output_data_received_callback_-=(function);
+  return data_received_event_handler<process&>::operator-=(function);
+}
 
 process::process() {
   exited.set_data(data_.get());
@@ -40,12 +113,18 @@ process::~process() {
   if (data_.use_count() == 1 && data_->thread_.joinable()) data_->thread_.detach();
 }
 
+int32_t process::base_priority() const {
+  static map<process_priority_class, int32_t> base_priorities {{process_priority_class::idle, 4}, {process_priority_class::below_normal, 6}, {process_priority_class::normal, 8}, {process_priority_class::above_normal, 10}, {process_priority_class::high, 13}, {process_priority_class::real_time, 24}};
+  return base_priorities[priority_class()];
+}
+
 bool process::enable_raising_events() const {
   return data_->enable_raising_events_;
 }
 
-void process::enable_raising_events(bool value) {
+process& process::enable_raising_events(bool value) {
   data_->enable_raising_events_ = value;
+  return *this;
 }
 
 int32_t process::exit_code() const {
@@ -72,6 +151,20 @@ int32_t process::id() const {
 std::string process::machine_name() const {
   if (data_->handle_ == 0) throw xtd::invalid_operation_exception(caller_info_);
   return data_->machine_name_;
+}
+
+process_priority_class process::priority_class() const {
+  return data_->priority_class_;
+}
+
+process& process::priority_class(process_priority_class value) {
+  if (data_->handle_ == 0) throw xtd::invalid_operation_exception(caller_info_);
+  data_->priority_class_ = value;
+  static map<process_priority_class, int32_t> priorities {{process_priority_class::idle, IDLE_PRIORITY_CLASS}, {process_priority_class::below_normal, BELOW_NORMAL_PRIORITY_CLASS}, {process_priority_class::normal, NORMAL_PRIORITY_CLASS}, {process_priority_class::above_normal, ABOVE_NORMAL_PRIORITY_CLASS}, {process_priority_class::high, HIGH_PRIORITY_CLASS}, {process_priority_class::real_time, REALTIME_PRIORITY_CLASS}};
+  auto it = priorities.find(value);
+  if (it == priorities.end()) throw argument_exception(caller_info_);
+  if (native::process::priority_class(data_->handle_, it->second) == false) throw invalid_operation_exception(caller_info_);
+  return *this;
 }
 
 std::string process::process_name() const {
@@ -108,11 +201,17 @@ process::time_point process::start_time() const {
   return data_->start_time_;
 }
 
-process&  process::kill() {
+void process::close() {
+  if (data_.use_count() == 1 && data_->thread_.joinable()) {
+    data_->thread_.detach();
+    data_->handle_ = 0;
+  }
+}
+
+void process::kill() {
   if (data_->handle_ == 0) throw xtd::invalid_operation_exception(caller_info_);
   native::process::kill(data_->handle_);
   debug::write_line_if(debug_process, strings::format("process::kill [handle={}, killed]", data_->handle_));
-  return *this;
 }
 
 bool process::start() {
@@ -178,6 +277,24 @@ process process::start(const std::string& file_name, const std::string& argument
 }
 
 process& process::wait_for_exit() {
+  debug::write_line_if(debug_process, strings::format("process::wait_for_exit [handle={}, wait...]", data_->handle_));
+  int32_t exit_code = 0;
+  if (data_->thread_.joinable()) data_->thread_.join();
+  else if (!data_->start_info_.use_shell_execute() && native::process::wait(data_->handle_, exit_code)) data_->exit_code_ = exit_code;
+  debug::write_line_if(debug_process, strings::format("process::wait_for_exit [handle={}, exit_code={}, ...exit]", data_->handle_, data_->exit_code_));
+  if (data_->exception_pointer_) {
+    if (data_->start_info_.use_shell_execute() && data_->start_info_.error_dialog())  message_box_message_(data_->start_info_.file_name());
+    std::exception_ptr exception_pointer = data_->exception_pointer_;
+    data_->exception_pointer_ = nullptr;
+    rethrow_exception(exception_pointer);
+  }
+  
+  return *this;
+}
+
+process& process::wait_for_exit(int32_t milliseconds) {
+  /// @todo create a timeout...
+  /// @see https://stackoverflow.com/questions/9948420/timeout-for-thread-join
   debug::write_line_if(debug_process, strings::format("process::wait_for_exit [handle={}, wait...]", data_->handle_));
   int32_t exit_code = 0;
   if (data_->thread_.joinable()) data_->thread_.join();

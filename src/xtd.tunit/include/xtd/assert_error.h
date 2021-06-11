@@ -12,7 +12,7 @@ namespace xtd {
     /// @brief Exception thow when an assertion failed.
     /// @par Library
     /// xtd.tunit
-    /// @ingroup xtd_tunit exceptioons
+    /// @ingroup xtd_tunit exceptions
     class assert_error : public std::exception {
     public:
       /// @brief Create a new instance of assert_error class.
