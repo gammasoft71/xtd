@@ -83,9 +83,9 @@ bool process::priority_class(intptr_t process, int32_t priority) {
   return SetPriorityClass(reinterpret_cast<HANDLE>(process), priority) == TRUE;
 }
 
-intptr_t process::shell_execute(const std::string& file_name, const std::string& arguments, const std::string& working_directory, int32_t process_window_style) {
+intptr_t process::shell_execute(const std::string& verb, const std::string& file_name, const std::string& arguments, const std::string& working_directory, int32_t process_window_style) {
   map<int32_t, int32_t> window_styles {{PROCESS_WINDOW_STYLE_NORMAL, SW_NORMAL}, {PROCESS_WINDOW_STYLE_HIDDEN, SW_HIDE}, {PROCESS_WINDOW_STYLE_MINIMIZED, SW_SHOWMINIMIZED}, {PROCESS_WINDOW_STYLE_MAXIMIZED, SW_SHOWMAXIMIZED}};
-  HANDLE process = ShellExecute(nullptr, nullptr, win32::strings::to_wstring(file_name).c_str(), arguments != "" ? win32::strings::to_wstring(arguments).c_str() : nullptr, working_directory != "" ? win32::strings::to_wstring(working_directory).c_str() : nullptr, window_styles[process_window_style]);
+  HANDLE process = ShellExecute(nullptr, verb != "" ? win32::strings::to_wstring(verb).c_str() : nullptr, win32::strings::to_wstring(file_name).c_str(), arguments != "" ? win32::strings::to_wstring(arguments).c_str() : nullptr, working_directory != "" ? win32::strings::to_wstring(working_directory).c_str() : nullptr, window_styles[process_window_style]);
   return reinterpret_cast<intptr_t>(process);
 }
 
