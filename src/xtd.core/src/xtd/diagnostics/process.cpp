@@ -242,7 +242,7 @@ bool process::start() {
       int32_t process_window_style = 0;
       
       if (process.start_info().use_shell_execute()) {
-        process.data_->handle_ = native::process::shell_execute(process.start_info().Verb(), process.start_info().file_name(), process.start_info().arguments(), process.start_info().working_directory(), process_window_style);
+        process.data_->handle_ = native::process::shell_execute(process.start_info().verb(), process.start_info().file_name(), process.start_info().arguments(), process.start_info().working_directory(), process_window_style);
       } else {
         auto [handle, id, standard_input, standard_output, standard_error] = native::process::start(process.start_info().file_name(), process.start_info().arguments(), process.start_info().working_directory(), process_window_style, process_creation_flags, make_tuple(process.data_->start_info_.redirect_standard_input(), process.data_->start_info_.redirect_standard_output(), process.data_->start_info_.redirect_standard_error()));
         process.data_->handle_ = handle;

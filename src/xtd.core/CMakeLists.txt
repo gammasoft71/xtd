@@ -174,6 +174,7 @@ add_sources(
   include/xtd/io/string_writer.h
   include/xtd/io/text_reader.h
   include/xtd/io/text_writer.h
+  include/xtd/security/secure_string.h
   include/xtd/web/css/property.h
   include/xtd/web/css/property_map.h
   include/xtd/web/css/reader.h
