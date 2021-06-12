@@ -80,7 +80,7 @@ bool process::kill(intptr_t handle) {
 }
 
 bool process::priority_class(intptr_t process, int32_t priority) {
-  return SetPriorityClass(process, priority) == TRUE;
+  return SetPriorityClass(reinterpret_cast<HANDLE>(process), priority) == TRUE;
 }
 
 intptr_t process::shell_execute(const std::string& file_name, const std::string& arguments, const std::string& working_directory, int32_t process_window_style) {
