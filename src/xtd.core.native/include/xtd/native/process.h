@@ -71,7 +71,7 @@ namespace xtd {
       /// @param process_window_style One of the values that indicates whether the process is started in a window that is maximized, minimized, normal (neither maximized nor minimized), or not visible. The default is Normal. (see process_window_window_style.h file).
       /// @return The created process handle.
       /// @warning Internal use only
-      static intptr_t shell_execute(const std::string& file_name, const std::string& arguments, const std::string& working_directory, int32_t process_window_style);
+      static intptr_t shell_execute(const std::string& verb, const std::string& file_name, const std::string& arguments, const std::string& working_directory, int32_t process_window_style);
       /// @brief Starts a process with specified file name, specified arguments, specified working directory, specified process window style, specified process creation flags, and specified boolean tuples that represent redirect standard streams.
       /// @param file_name the name of the application file to run in the process.
       /// @param arguments Command-line arguments to pass when startinhg the process.
