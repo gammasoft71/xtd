@@ -177,32 +177,29 @@ intptr_t process::shell_execute(const std::string& verb, const string& file_name
   if (!is_valid_shell_execute_process(&unix::strings::split, file_name, working_directory)) return 0;
   pid_t process = fork();
   if (process == 0) {
-    vector<string> command_line_args;
-    command_line_args = split_arguments(arguments);
     bool is_shell_execute = true;
-    for (auto arg : command_line_args)
+    for (auto arg : split_arguments(arguments))
       if (!(is_shell_execute = is_valid_shell_execute_process(&unix::strings::split, arg, working_directory))) break;
+    vector<string> command_line_args;
     if (is_shell_execute) {
-      auto command_working_directory = working_directory != "" ? working_directory : current_path().string();
 #if defined(__APPLE__)
       if (verb == "runas") {
         if (file_name == "") return 0;
-        command_line_args.clear();
         command_line_args.insert(command_line_args.begin(), string("do shell script \"") + file_name + (arguments != "" ? " " + arguments : "") + string("\" with administrator privileges"));
         command_line_args.insert(command_line_args.begin(), "-e");
         command_line_args.insert(command_line_args.begin(), "osascript");
       } else if (verb == "print") {
         if (file_name == "") return 0;
-        command_line_args.clear();
         command_line_args.insert(command_line_args.begin(), file_name);
         command_line_args.insert(command_line_args.begin(), "lpr");
       } else
 #endif
-      if (verb == "" || verb == "open" || verb == "explore" || verb == "edit" || verb == "runas" || verb == "print") {
-        if (verb == "open" && file_name == "") return 0;
+      if (verb == "" || verb == "open" || verb == "explore" || verb == "edit" || verb == "runas" || verb == "runasuser" || verb == "print") {
+        if (verb == "") command_line_args = split_arguments(arguments);
+        if ((verb == "open" || verb == "runas" || verb == "runasuser") && file_name == "") return 0;
         if (verb == "explore" && (file_name == "" || !is_directory(file_name))) return 0;
-        if (verb == "edit" && (file_name == "" || !is_regular_file(file_name))) return 0;
-        if (verb == "open" || verb == "edit" || verb == "explore") command_line_args.clear();
+        if (verb == "edit" && (file_name == "" || !is_regular_file(file_name) || (status(file_name).permissions() & perms::owner_write) != perms::owner_write)) return 0;
+        if ((verb == "runas" || verb == "runasuser")  && (file_name == "" || (status(file_name).permissions() & perms::owner_exec) != perms::owner_exec)) return 0;
         command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name, working_directory));
         command_line_args.insert(command_line_args.begin(), shell_execute_command());
       } else {
@@ -210,6 +207,7 @@ intptr_t process::shell_execute(const std::string& verb, const string& file_name
         command_line_args.insert(command_line_args.begin(), verb);
       }
     } else {
+      command_line_args = split_arguments(arguments);
       if (working_directory != "") current_path(working_directory);
       command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name));
     }
