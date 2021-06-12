@@ -25,7 +25,7 @@ namespace sleepfor {
       
       if (show_version) console::write_line(get_version());
       else if (show_help) console::write_line("{0}{1}{1}{2}", get_version(), environment::new_line(), get_usage());
-      else if (indefinitely) sleep_for(years(numeric_limits<int32_t>::max()));
+      else if (indefinitely) while(true) sleep_for(hours(numeric_limits<int32_t>::max()));
       else if (type == period_type::nanoseconds) sleep_for(nanoseconds(duration));
       else if (type == period_type::seconds) sleep_for(seconds(duration));
       else if (type == period_type::minutes) sleep_for(minutes(duration));
