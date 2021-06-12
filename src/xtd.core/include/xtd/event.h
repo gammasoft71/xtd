@@ -33,7 +33,7 @@ namespace xtd {
     /// @brief Adds a function to the event.
     /// @param handler Function to add.
     /// @return The current event instance.
-    handler_t& operator +=(const typename handler_t::function_t& function) noexcept {
+    handler_t& operator+=(const typename handler_t::function_t& function) noexcept {
       return handler_t::operator+=(function);
     }
     
