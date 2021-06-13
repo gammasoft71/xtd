@@ -170,9 +170,7 @@ namespace xtdc_command {
       xtd::diagnostics::process process;
       process.start_info(xtd::diagnostics::process_start_info(target_path));
       process.start_info().use_shell_execute(is_gui(target_path));
-      process.start();
-      //process.wait_for_exit();
-      
+      process.start();      
       return "";
     }
 
