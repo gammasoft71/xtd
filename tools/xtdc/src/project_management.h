@@ -286,6 +286,7 @@ namespace xtdc_command {
           change_current_directory current_directory {build_path().string()};
           xtd::diagnostics::process process;
           process.start_info({"cmake", xtd::strings::format("--system-information xtd_si.txt")});
+          process.start_info().use_shell_execute(false);
           process.start();
           process.wait_for_exit();
         }
