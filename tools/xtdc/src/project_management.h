@@ -161,15 +161,17 @@ namespace xtdc_command {
 
     std::string run(const std::string& target, bool release) const {
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {} does not exists or is empty! Run project aborted.", path_);
-      change_current_directory current_directory {xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path()};
       build(target, false, release);
+      change_current_directory current_directory {xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path()};
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Run project aborted.";
       auto target_path = target.empty() ? get_first_target_path(release) : get_target_path(target, release);
       if (target_path.empty()) return "The target does not exist! Run project aborted.";
       
+      std::cout << "Run : " << target_path << std::endl;
+      
       xtd::diagnostics::process process;
       process.start_info(xtd::diagnostics::process_start_info(target_path));
-      process.start_info().use_shell_execute(!xtd::environment::os_version().is_windows_platform());
+      process.start_info().use_shell_execute(is_gui(target_path));
       process.start();
       process.wait_for_exit();
       
@@ -263,20 +265,30 @@ namespace xtdc_command {
       return "";
     }
     
-    bool is_windows_gui_app(const std::filesystem::path& app_path) const {
-      if (!std::filesystem::exists(app_path)) return false;
-      auto bytes = xtd::io::file::read_all_bytes(app_path);
+    bool is_windows_gui_app(const std::filesystem::path& path) const {
+      if (!std::filesystem::exists(path)) return false;
+      auto bytes = xtd::io::file::read_all_bytes(path);
       // read PE Format : https://docs.microsoft.com/en-us/windows/win32/debug/pe-format
       if (bytes[0] != 'M' || bytes[1] != 'Z') return false;
       return xtd::bit_converter::to_uint16(bytes, xtd::bit_converter::to_uint16(bytes, 0x3C) + 92) == 2;
     }
     
-    bool is_linux_gui_app(const std::filesystem::path& path, const std::filesystem::path& target) const {
-      if (!std::filesystem::exists(path/target)) return false;
-      auto lines = xtd::io::file::read_all_lines(std::filesystem::path(xtd::environment::get_folder_path(xtd::environment::special_folder::home))/".local"/"share"/"applications"/xtd::strings::format("{}.desktop", target));
+    bool is_linux_gui_app(const std::filesystem::path& path) const {
+      if (!std::filesystem::exists(path)) return false;
+      auto lines = xtd::io::file::read_all_lines(std::filesystem::path(xtd::environment::get_folder_path(xtd::environment::special_folder::home))/".local"/"share"/"applications"/xtd::strings::format("{}.desktop", path.filename()));
       for (auto line : lines)
         if (xtd::strings::to_lower(line) == "terminael=false") return true;
       return false;
+    }
+    
+    bool is_macos_gui_app(const std::filesystem::path& path) const {
+      return std::filesystem::path(path).has_extension() && std::filesystem::path(path).extension().string() == ".app";
+    }
+    
+    bool is_gui(const std::filesystem::path& path) const {
+      if (xtd::environment::os_version().is_windows_platform()) return is_windows_gui_app(path);
+      if (xtd::environment::os_version().is_macos_platform()) return is_macos_gui_app(path);
+      return is_linux_gui_app(path);
     }
     
     std::vector<std::string>& get_system_information() const {
