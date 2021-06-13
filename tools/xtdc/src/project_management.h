@@ -190,7 +190,10 @@ namespace xtdc_command {
       change_current_directory current_directory {xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path()};
       build("", false, release);
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Test project aborted.";
-      xtd::diagnostics::process::start("ctest", xtd::strings::format("--output-on-failure --build-config {}", release ? "release" : "debug")).wait_for_exit();
+      xtd::diagnostics::process process;
+      process.start_info({"ctest", xtd::strings::format("--output-on-failure --build-config {}", release ? "release" : "debug")});
+      process.start();
+      process.wait_for_exit();
       return xtd::strings::format("Project {} tested", path_);
     }
     
@@ -281,7 +284,10 @@ namespace xtdc_command {
       if (system_information.size() == 0) {
         if (!std::filesystem::exists(build_path()/"xtd_si.txt")) {
           change_current_directory current_directory {build_path().string()};
-          xtd::diagnostics::process::start("cmake", xtd::strings::format("--system-information xtd_si.txt")).wait_for_exit();
+          xtd::diagnostics::process process;
+          process.start_info({"cmake", xtd::strings::format("--system-information xtd_si.txt")});
+          process.start();
+          process.wait_for_exit();
         }
         system_information = xtd::io::file::read_all_lines(build_path()/"xtd_si.txt");
       }
