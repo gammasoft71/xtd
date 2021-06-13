@@ -6,7 +6,7 @@ guidgen is a guid generator command line tool.
 
 ## generate one guid wuth 32 digits separated by hyphen format
 
-Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+Open "Command Prompt" or "Terminal", and type the following:
 
 ```bash
 guidgen
@@ -26,7 +26,7 @@ Example output
 
 ## generate ten guids wuth Four hexadecimal values enclosed in braces, where the fourth value is a subset of eight hexadecimal values that is also enclosed in braces.
 
-Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+Open "Command Prompt" or "Terminal", and type the following:
 
 ```bash
 guidgen --count 10 --format X
@@ -49,7 +49,7 @@ Example output
 
 # For more info about guidgen
 
-Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+Open "Command Prompt" or "Terminal", and type the following:
 
 ```bash
 guidgen --help
