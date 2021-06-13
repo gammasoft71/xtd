@@ -393,7 +393,7 @@ namespace xtd {
       /// @note You cannot mix asynchronous and synchronous read operations on a redirected stream. Once the redirected stream of a xtd::diagnostics::process is opened in either asynchronous or synchronous mode, all further read operations on that stream must be in the same mode. For example, do not follow xtd::diagnostics::process::begin_error_read_line with a call to xtd::ioo::stream_reader::read_line on the xtd::diagnostics::process::standard_error stream, or vice versa. However, you can read two different streams in different modes. For example, you can call xtd::diagnostics::process::begin_output_read_line and then call xtd::io::sstream_reader::read_line for the xtd::diagnostics::process::standard_error stream.
       process_start_info& redirect_standard_error(bool value);
       
-      /// @biref Gets a value indicating whether the input for an application is read from the Process.StandardInput stream.
+      /// @brief Gets a value indicating whether the input for an application is read from the Process.StandardInput stream.
       /// @return true if input should be read from Process.StandardInput; otherwise, false. The default is false.
       /// @par Examples
       /// The following example illustrates how to redirect the xtd::diagnostics::process::standard_input stream of a process. The example starts the sort command with redirected input. It then prompts the user for text, and passes that to the sort process by means of the redirected xtd::diagnostics::process::standard_input stream. The sort results are displayed to the user on the console.
@@ -456,7 +456,7 @@ namespace xtd {
       /// @remarks A xtd::diagnostics::process can read input text from its standard input stream, typically the keyboard. By redirecting the xtd::diagnostics::process::standard_input stream, you can programmatically specify the input. For example, instead of using keyboard input, you can provide text from the contents of a designated file or output from another application.
       /// @note To use xtd::diagnostics::process::standard_input, you must set xtd::diagnostics::process_start_info::use_shell_execute to false, and you must set xtd::diagnostics::process_start_info::redirect_standard_input to true. Otherwise, writing to the xtd::diagnostics::process::standard_input stream throws an exception.
       bool redirect_standard_input() const;
-      /// @biref Sts a value indicating whether the input for an application is read from the Process.StandardInput stream.
+      /// @brief Sts a value indicating whether the input for an application is read from the Process.StandardInput stream.
       /// @param value true if input should be read from Process.StandardInput; otherwise, false. The default is false.
       /// @return The current instance of process_start_info.
       /// @par Examples
