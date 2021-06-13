@@ -107,14 +107,16 @@ namespace xtdc_command {
     
     std::string build(const std::string& target, bool clean_first, bool release) const {
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {} does not exists or is empty! Build project aborted.", path_);
-      change_current_directory current_directory {xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path()};
-      generate();
-      xtd::diagnostics::process process;
+      if (clean_first) clean(release);
+      else generate();
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Build project aborted.";
+      change_current_directory current_directory {xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path()};
+      xtd::diagnostics::process process;
       if (xtd::environment::os_version().is_windows_platform() || xtd::environment::os_version().is_macos_platform())
         process.start_info({"cmake", xtd::strings::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::strings::format(" --target {}", target), clean_first ? " --clean-first {}" : "")});
       else
         process.start_info({"cmake", xtd::strings::format("--build {}{}", build_path()/(release ? "Release" : "Debug"), target.empty() ? "" : xtd::strings::format(" --target {}", target), clean_first ? " --clean-first {}" : "")});
+      process.start_info().use_shell_execute(false);
       process.start();
       process.wait_for_exit();
       last_exit_code_ = process.exit_code();
@@ -3134,9 +3136,12 @@ namespace xtdc_command {
         process.start_info({"cmake", xtd::strings::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, build_path()/"Release")});
         patch_cbp_file(name, "Release");
       }
-      process.start();
-      process.wait_for_exit();
-      last_exit_code_ = process.exit_code();
+      if (process.start_info().file_name() != "") {
+        process.start_info().use_shell_execute(false);
+        process.start();
+        process.wait_for_exit();
+        last_exit_code_ = process.exit_code();
+      }
     }
     
     void patch_cbp_file(const std::string& name, const std::string& build_config) const {
