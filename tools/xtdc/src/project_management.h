@@ -167,8 +167,6 @@ namespace xtdc_command {
       auto target_path = target.empty() ? get_first_target_path(release) : get_target_path(target, release);
       if (target_path.empty()) return "The target does not exist! Run project aborted.";
       
-      std::cout << "Run : " << target_path << std::endl;
-      
       xtd::diagnostics::process process;
       process.start_info(xtd::diagnostics::process_start_info(target_path));
       process.start_info().use_shell_execute(is_gui(target_path));
