@@ -166,7 +166,13 @@ namespace xtdc_command {
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Run project aborted.";
       auto target_path = target.empty() ? get_first_target_path(release) : get_target_path(target, release);
       if (target_path.empty()) return "The target does not exist! Run project aborted.";
-      xtd::diagnostics::process::start(target_path).wait_for_exit();
+      
+      xtd::diagnostics::process process;
+      process.start_info(xtd::diagnostics::process_start_info(target_path));
+      process.start_info().use_shell_execute(!xtd::environment::os_version().is_windows_platform());
+      process.start();
+      process.wait_for_exit();
+      
       return "";
     }
 
@@ -238,6 +244,7 @@ namespace xtdc_command {
       for (const auto& line : get_system_information())
         if (xtd::strings::index_of(line, "_BINARY_DIR:STATIC=") != std::string::npos)
           return make_platform_target_path({xtd::strings::replace(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", xtd::strings::substring(line, 0, xtd::strings::index_of(line, "_BINARY_DIR:STATIC="))), "")}, xtd::strings::substring(line, 0, xtd::strings::index_of(line, "_BINARY_DIR:STATIC=")), release);
+      if (xtd::environment::os_version().is_windows_platform()) return (build_path() / path_.filename() / (release ? "Release" : "Debug") / path_.filename()).string();
       return (build_path()/(release ? "Release" : "Debug")/path_.filename()/path_.filename()).string();
     }
     
