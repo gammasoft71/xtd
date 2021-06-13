@@ -170,7 +170,7 @@ namespace xtdc_command {
       xtd::diagnostics::process process;
       process.start_info(xtd::diagnostics::process_start_info(target_path));
       process.start_info().use_shell_execute(is_gui(target_path));
-      process.start();      
+      process.start();
       return "";
     }
 
@@ -190,6 +190,7 @@ namespace xtdc_command {
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Test project aborted.";
       xtd::diagnostics::process process;
       process.start_info({"ctest", xtd::strings::format("--output-on-failure --build-config {}", release ? "release" : "debug")});
+      process.start_info().use_shell_execute(false);
       process.start();
       process.wait_for_exit();
       return xtd::strings::format("Project {} tested", path_);
