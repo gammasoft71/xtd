@@ -117,6 +117,80 @@ process_start_info& process_start_info::password_in_clear_text(const std::string
   return *this;
 }
 
-vector<string> process_start_info::get_verbs(const string& file_name) const {
+bool process_start_info::redirect_standard_error() const {
+  return redirect_standard_error_;
+}
+
+process_start_info& process_start_info::redirect_standard_error(bool value) {
+  redirect_standard_error_ = value;
+  return *this;
+}
+
+bool process_start_info::redirect_standard_input() const {
+  return redirect_standard_input_;
+}
+
+process_start_info& process_start_info::redirect_standard_input(bool value) {
+  redirect_standard_input_ = value;
+  return *this;
+}
+
+bool process_start_info::redirect_standard_output() const {
+  return redirect_standard_output_;
+}
+
+process_start_info& process_start_info::redirect_standard_output(bool value) {
+  redirect_standard_output_ = value;
+  return *this;
+}
+
+const std::string& process_start_info::user_name() const {
+  return user_name_;
+}
+
+process_start_info& process_start_info::user_name(const std::string& value) {
+  user_name_ = value;
+  return *this;
+}
+
+bool process_start_info::use_shell_execute() const {
+  return use_shell_execute_;
+}
+
+process_start_info& process_start_info::use_shell_execute(bool value) {
+  use_shell_execute_ = value;
+  return *this;
+}
+
+std::string process_start_info::verb() const {
+  return verb_;
+}
+
+process_start_info& process_start_info::verb(const std::string& value) {
+  verb_ = value;
+  return *this;
+}
+
+std::vector<std::string> process_start_info::verbs() const {
+  if (file_name_ == "") return {};
+  // return native::process:verbs(file_name_);
   return {};
+}
+
+process_window_style process_start_info::window_style() const {
+  return window_style_;
+}
+
+process_start_info& process_start_info::window_style(process_window_style value) {
+  window_style_ = value;
+  return *this;
+}
+
+const std::string& process_start_info::working_directory() const {
+  return working_directory_;
+}
+
+process_start_info& process_start_info::working_directory(const std::string& value) {
+  working_directory_ = value;
+  return *this;
 }
