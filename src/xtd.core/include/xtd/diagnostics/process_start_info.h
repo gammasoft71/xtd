@@ -168,66 +168,60 @@ namespace xtd {
       process_start_info& pasword(const xtd::security::secure_string& value);
 
       /// @brief Gets the user password in clear text to use when starting the process.
-      /// @return string The user password in clear text.
+      /// @return The user password in clear text.
       std::string password_in_clear_text() const;
       /// @brief Sets the user password in clear text to use when starting the process.
       /// @param value string The user password in clear text.
       process_start_info& password_in_clear_text(const std::string& value);
       
-      /// @brief Gets or sets a value that indicates whether the error output of an application is written to the Process.StandardError stream.
-      /// @return bool true if error output should be written to Process::StandardError; otherwise, false. The default is false.
-      /// @remarks When a Process writes text to its standard error stream, that text is typically displayed on the console. By redirecting the StandardError stream, you can manipulate or suppress the error output of a process. For example, you can filter the text, format it differently, or write the output to both the console and a designated log file.
-      /// @note You must set UseShellExecute to false if you want to set RedirectStandardError to true. Otherwise, reading from the StandardError stream throws an exception.
-      /// @remarks The redirected StandardError stream can be read synchronously or asynchronously. Methods such as Read, ReadLine and ReadToEnd perform synchronous read operations on the error output stream of the process. These synchronous read operations do not complete until the associated Process writes to its StandardError stream, or closes the stream.
-      /// @remarks In contrast, BeginErrorReadLine starts asynchronous read operations on the StandardError stream. This method enables a designated event handler for the stream output and immediately returns to the caller, which can perform other work while the stream output is directed to the event handler.
-      /// @note The application that is processing the asynchronous output should call the WaitForExit method to ensure that the output buffer has been flushed.
-      /// @remarks Synchronous read operations introduce a dependency between the caller reading from the StandardError stream and the child process writing to that stream. These dependencies can cause deadlock conditions. When the caller reads from the redirected stream of a child process, it is dependent on the child. The caller waits for the read operation until the child writes to the stream or closes the stream. When the child process writes enough data_ to fill its redirected stream, it is dependent on the parent. The child process waits for the next write operation until the parent reads from the full stream or closes the stream. The deadlock condition results when the caller and child process wait for each other to complete an operation, and neither can continue. You can avoid deadlocks by evaluating dependencies between the caller and child process.
+      /// @brief Gets a value that indicates whether the error output of an application is written to the xtd::diagnostics::process::standard_error stream.
+      /// @return true if error output should be written to xtd::diagnostics::process::standard_error; otherwise, false. The default is false.
+      /// @remarks When a xtd::diagnostics::process writes text to its standard error stream, that text is typically displayed on the console. By redirecting the xtd::diagnostics::process::standard_error stream, you can manipulate or suppress the error output of a process. For example, you can filter the text, format it differently, or write the output to both the console and a designated log file.
+      /// @note You must set xtd::diagnostics::process_start_info::use_shell_execute to false if you want to set xtd::diagnostics::process_start_info::redirect_standard_error to true. Otherwise, reading from the xtd::diagnostics::process::standard_error stream throws an exception.
+      /// @remarks The redirected xtd::diagnostics::process::standard_error stream can be read synchronously or asynchronously. Methods such as xtd::io::sream_reader::read, xtd::io::sream_reader::read_ine and xtd::io::sream_reader::read_to_end perform synchronous read operations on the error output stream of the process. These synchronous read operations do not complete until the associated xtd::diagnostics::process writes to its xtd::diagnostics::process::standard_error stream, or closes the stream.
+      /// @remarks In contrast, xtd::diagnostics::process::begin_error_read_line starts asynchronous read operations on the xtd::diagnostics::process::standard_error stream. This method enables a designated event handler for the stream output and immediately returns to the caller, which can perform other work while the stream output is directed to the event handler.
+      /// @note The application that is processing the asynchronous output should call the xtd::diagnostics::process::wait_for_exit method to ensure that the output buffer has been flushed.
+      /// @remarks Synchronous read operations introduce a dependency between the caller reading from the xtd::diagnostics::process::standard_eror stream and the child process writing to that stream. These dependencies can cause deadlock conditions. When the caller reads from the redirected stream of a child process, it is dependent on the child. The caller waits for the read operation until the child writes to the stream or closes the stream. When the child process writes enough data_ to fill its redirected stream, it is dependent on the parent. The child process waits for the next write operation until the parent reads from the full stream or closes the stream. The deadlock condition results when the caller and child process wait for each other to complete an operation, and neither can continue. You can avoid deadlocks by evaluating dependencies between the caller and child process.
       /// For example, the following code shows how to read from a redirected stream and wait for the child process to exit.
       /// @code
       /// // Start the child process.
-      /// Process p;
+      /// process p;
       /// Redirect the error stream of the child process.
-      /// p.StartInfo().UseShellExecute = false;
-      /// p.StartInfo().RedirectStandardError = true;
-      /// p.StartInfo().FileName = "Write500Lines.exe";
-      /// p.Start();
+      /// p.start_info().use_shell_execute(false);
+      /// p.start_info().redirect_standard_error(true);
+      /// p.start_info().file_name("write_500_lines");
+      /// p.start();
       /// // Do not wait for the child process to exit before
       /// // reading to the end of its redirected error stream.
-      /// // p.WaitForExit();
+      /// // p.wait_for_exit();
       /// // Read the error stream first and then wait.
-      /// string error = p.StandardError().ReadToEnd();
-      /// p.WaitForExit();
+      /// string error = stream_reader(p.standard_error()).read_ro_end();
+      /// p.wait_for_exit();
       /// @endcode
-      /// @remarks The code example avoids a deadlock condition by calling p.StandardError.ReadToEnd before p.WaitForExit. A deadlock condition can result if the parent process calls p.WaitForExit before p.StandardError.ReadToEnd and the child process writes enough text to fill the redirected stream. The parent process would wait indefinitely for the child process to exit. The child process would wait indefinitely for the parent to read from the full StandardError stream.
+      /// @remarks The code example avoids a deadlock condition by calling read_stream(p.standard_error()).read_to_end before p.wait_for_exit. A deadlock condition can result if the parent process calls p.wait_for_exit before stream_reader(p.standard_error()).read_to_end and the child process writes enough text to fill the redirected stream. The parent process would wait indefinitely for the child process to exit. The child process would wait indefinitely for the parent to read from the full xtd::diagnostics::process::standardE_error stream.
       /// @remarks There is a similar issue when you read all text from both the standard output and standard error streams. For example, the following code performs a read operation on both streams.
       /// @code
       /// // Do not perform a synchronous read to the end of both
       /// // redirected streams.
-      /// // string output = p.StandardOutput().ReadToEnd();
-      /// // string error = p.StandardError().ReadToEnd();
-      /// // p.WaitForExit();
+      /// // string output = stream_reader(p.standard_output()).read_to_end();
+      /// // string error = stream_reader(p.standard_error()).read_to_end();
+      /// // p.wait_for_exit();
       /// // Use asynchronous read operations on at least one of the streams.
-      /// p.BeginOutputReadLine();
-      /// string error = p.StandardError().ReadToEnd();
-      /// p.WaitForExit();
+      /// p.begin_output_read_line();
+      /// string error = stream_reader(p.standard_error()).read_to_rnd();
+      /// p.wait_for_exit();
       /// @endcode
       /// @remarks The code example avoids the deadlock condition by performing asynchronous read operations on the StandardOutput stream. A deadlock condition results if the parent process calls p.StandardOutput.ReadToEnd followed by p.StandardError.ReadToEnd and the child process writes enough text to fill its error stream. The parent process would wait indefinitely for the child process to close its StandardOutput stream. The child process would wait indefinitely for the parent to read from the full StandardError stream.
       /// @remarks You can use asynchronous read operations to avoid these dependencies and their deadlock potential. Alternately, you can avoid the deadlock condition by creating two threads and reading the output of each stream on a separate thread.
-      bool redirect_standard_error() const {return redirect_standard_error_;}
-      process_start_info& redirect_standard_error(bool value) {
-        redirect_standard_error_ = value;
-        return *this;
-      }
+      bool redirect_standard_error() const;
+      process_start_info& redirect_standard_error(bool value);
       
       /// @biref Gets or sets a value indicating whether the input for an application is read from the Process.StandardInput stream.
       /// @return bool true if input should be read from Process.StandardInput; otherwise, false. The default is false.
       /// @remarks A Process can read input text from its standard input stream, typically the keyboard. By redirecting the StandardInput stream, you can programmatically specify the input of a process. For example, instead of using keyboard input, you can provide text from the contents of a designated file or output from another application.
       /// @note You must set UseShellExecute to false if you want to set RedirectStandardInput to true. Otherwise, writing to the StandardInput stream throws an exception.
-      bool redirect_standard_input() const {return redirect_standard_input_;}
-      process_start_info& redirect_standard_input(bool value) {
-        redirect_standard_input_ = value;
-        return *this;
-      }
+      bool redirect_standard_input() const;
+      process_start_info& redirect_standard_input(bool value);
       
       /// @brief Gets or sets a value that indicates whether the textual output of an application is written to the Process.StandardOutput stream.
       /// @return bool true if output should be written to Process.StandardOutput; otherwise, false. The default is false.
@@ -260,22 +254,16 @@ namespace xtd {
       /// @endcode
       /// @remarks The code example avoids the deadlock condition by performing asynchronous read operations on the StandardOutput stream. A deadlock condition results if the parent process calls p.StandardOutput.ReadToEnd followed by p.StandardError.ReadToEnd and the child process writes enough text to fill its error stream. The parent process would wait indefinitely for the child process to close its StandardOutput stream. The child process would wait indefinitely for the parent to read from the full StandardError stream.
       /// @remarks You can use asynchronous read operations to avoid these dependencies and their deadlock potential. Alternately, you can avoid the deadlock condition by creating two threads and reading the output of each stream on a separate thread.
-      bool redirect_standard_output() const {return redirect_standard_output_;}
-      process_start_info& redirect_standard_output(bool value) {
-        redirect_standard_output_ = value;
-        return *this;
-      }
+      bool redirect_standard_output() const;
+      process_start_info& redirect_standard_output(bool value);
       
       /// @brief Gets or sets the user name to be used when starting the process.
       /// @return string The user name to use when starting the process.
       /// @par Important
       /// The WorkingDirectory property must be set if UserName and Password are provided. If the property is not set, the default working directory is %SYSTEMROOT%\system32.
       /// @remarks If the UserName property is not an empty string, the UseShellExecute property must be false, or an InvalidOperationException will be thrown when the Process.Start(process_start_info) method is called.
-      const std::string& user_name() const {return user_name_;}
-      process_start_info& user_name(const std::string& value) {
-        user_name_ = value;
-        return *this;
-      }
+      const std::string& user_name() const;
+      process_start_info& user_name(const std::string& value);
       
       /// @brief Gets or sets a value indicating whether to use the operating system shell to start the process.
       /// @return true if the shell should be used when starting the process; false if the process should be created directly from the executable file. The default is true.
@@ -285,36 +273,27 @@ namespace xtd {
       /// @note UseShellExecute must be true if you set the ErrorDialog property to true.
       /// @remarks The WorkingDirectory property behaves differently depending on the value of the UseShellExecute property. When UseShellExecute is true, the WorkingDirectory property specifies the location of the executable. If WorkingDirectory is an empty string, it is assumed that the current directory contains the executable.
       /// @remarks When UseShellExecute is false, the WorkingDirectory property is not used to find the executable. Instead, it is used only by the process that is started and has meaning only within the context of the new process. When UseShellExecute is false, the FileName property can be either a fully qualified path to the executable, or a simple executable name that the system will attempt to find within folders specified by the PATH environment variable.
-      bool use_shell_execute() const {return use_shell_execute_;}
-      process_start_info& use_shell_execute(bool value) {
-        use_shell_execute_ = value;
-        return *this;
-      }
+      bool use_shell_execute() const;
+      process_start_info& use_shell_execute(bool value);
       
       /// @brief Gets or sets the verb to use when opening the application or document specified by the FileName property.
       /// @return string The action to take with the file that the process opens. The default is an empty string (""), which signifies no action.
       /// @remarks Each file name extension has its own set of verbs, which can be obtained by using the Verbs property. For example, the "print" verb will print a document specified by using FileName. The default verb can be specified by using an empty string (""). Examples of verbs are "Edit", "Open", "OpenAsReadOnly", "Print", and "Printto". You should use only verbs that appear in the set of verbs returned by the Verbs property.
       /// @remarks When you use the Verb property, you must include the file name extension when you set the value of the FileName property. The file name does not need to have an extension if you manually enter a value for the Verb property.
-      std::string verb() const {return verb_;}
-      process_start_info& Verb(const std::string& value) {
-        verb_ = value;
-        return *this;
-      }
+      std::string verb() const;
+      process_start_info& verb(const std::string& value);
       
       /// @brief Gets the set of verbs associated with the type of file specified by the FileName property.
       /// @return Array<string> The actions that the system can apply to the file indicated by the FileName property.
       /// @remarks The Verbs property enables you to determine the verbs that can be used with the file specified by the FileName property. You can set the Verb property to the value of any verb in the set. Examples of verbs are "Edit", "Open", "OpenAsReadOnly", "Print", and "Printto".
       /// @remarks When you use the Verbs property, you must include the file name extension when you set the value of the FileName property. The file name extension determines the set of possible verbs.
-      std::vector<std::string> verbs() const {return get_verbs(file_name_);}
+      std::vector<std::string> verbs() const;
       
       /// @brief Gets or sets the window state to use when the process is started.
       /// @return ProcessWindowStyle One of the enumeration values that indicates whether the process is started in a window that is maximized, minimized, normal (neither maximized nor minimized), or not visible. The default is Normal.
       /// @exception InvalidEnumArgumentException The window style is not one of the ProcessWindowStyle enumeration members.
-      process_window_style window_style() const {return window_style_;}
-      process_start_info& window_style(process_window_style value){
-        window_style_ = value;
-        return *this;
-      }
+      process_window_style window_style() const;
+      process_start_info& window_style(process_window_style value);
       
       /// When the UseShellExecute property is false, gets or sets the working directory for the process to be started. When UseShellExecute is true, gets or sets the directory that contains the process to be started.
       /// @return string When UseShellExecute is true, the fully qualified name of the directory that contains the process to be started. When the UseShellExecute property is false, the working directory for the process to be started. The default is an empty string ("").
@@ -324,14 +303,10 @@ namespace xtd {
       /// @remarks The WorkingDirectory property behaves differently when UseShellExecute is true than when UseShellExecute is false. When UseShellExecute is true, the WorkingDirectory property specifies the location of the executable. If WorkingDirectory is an empty string, the current directory is understood to contain the executable.
       /// @note When UseShellExecute is true, the working directory of the application that starts the executable is also the working directory of the executable.
       /// @remarks When UseShellExecute is false, the WorkingDirectory property is not used to find the executable. Instead, its value applies to the process that is started and only has meaning within the context of the new process.
-      const std::string& working_directory() const {return working_directory_;}
-      process_start_info& working_directory(const std::string& value) {
-        working_directory_ = value;
-        return *this;
-      }
+      const std::string& working_directory() const;
+      process_start_info& working_directory(const std::string& value);
       
     private:
-      std::vector<std::string> get_verbs(const std::string& file_name_) const;
       std::string file_name_;
       std::string arguments_;
       bool create_no_window_ = false;
