@@ -794,7 +794,8 @@ namespace xtd {
       bool use_shell_execute() const;
       /// @brief Sets a value indicating whether to use the operating system shell to start the process.
       /// @param value true if the shell should be used when starting the process; false if the process should be created directly from the executable file. The default is true.
-      /// @return The current instance of process_start_info.      /// @remarks Setting this property to false enables you to redirect input, output, and error streams.
+      /// @return The current instance of process_start_info.
+      /// @remarks Setting this property to false enables you to redirect input, output, and error streams.
       /// @note xtd::diagnostics::process_start_info::use_shell_execute must be false if the xtd::diagnostics::process_start_info::user_name property is not an empty string, or an xtd::invalid_operation_exception will be thrown when the xtd::diagnostics::process::start(process_start_info) method is called.
       /// @remarks When you use the operating system shell to start processes, you can start any document (which is any registered file type associated with an executable that has a default open action) and perform operations on the file, such as printing, by using the Process object. When xtd::diagnostics::process_start_info::use_shell_execute is false, you can start only executables by using the xtd::diagnostics::process object.
       /// @note xtd::diagnostics::process_start_info::use_shell_execute must be true if you set the xtd::diagnostics::process_start_info::error_dialog property to true.
@@ -802,34 +803,52 @@ namespace xtd {
       /// @remarks When xtd::diagnostics::process_start_info::use_shell_execute is false, the xtd::diagnostics::process_start_info::working_directory property is not used to find the executable. Instead, it is used only by the process that is started and has meaning only within the context of the new process. When xtd::diagnostics::process_start_info::use_shell_xecute is false, the xtd::diagnostics::process_start_info::file_name property can be either a fully qualified path to the executable, or a simple executable name that the system will attempt to find within folders specified by the PATH environment variable.
       process_start_info& use_shell_execute(bool value);
       
-      /// @brief Gets or sets the verb to use when opening the application or document specified by the FileName property.
-      /// @return string The action to take with the file that the process opens. The default is an empty string (""), which signifies no action.
-      /// @remarks Each file name extension has its own set of verbs, which can be obtained by using the Verbs property. For example, the "print" verb will print a document specified by using FileName. The default verb can be specified by using an empty string (""). Examples of verbs are "Edit", "Open", "OpenAsReadOnly", "Print", and "Printto". You should use only verbs that appear in the set of verbs returned by the Verbs property.
-      /// @remarks When you use the Verb property, you must include the file name extension when you set the value of the FileName property. The file name does not need to have an extension if you manually enter a value for the Verb property.
+      /// @brief Gets the verb to use when opening the application or document specified by the FileName property.
+      /// @return The action to take with the file that the process opens. The default is an empty string (""), which signifies no action.
+      /// @remarks Each file name extension has its own set of verbs, which can be obtained by using the Verbs property. For example, the "print" verb will print a document specified by using FileName. The default verb can be specified by using an empty string (""). Examples of verbs are "Edit", "Open", "OpenAsReadOnly", "Print", and "Printto". You should use only verbs that appear in the set of verbs returned by the xtd::diagnostics::process_start_info::verbs property.
+      /// @remarks When you use the xtd::diagnostics::process_start_info::verb property, you must include the file name extension when you set the value of the xtd::diagnostics::process_start_info::file_name property. The file name does not need to have an extension if you manually enter a value for the xtd::diagnostics::process_start_info::verb property.
       std::string verb() const;
+      /// @brief Sts the verb to use when opening the application or document specified by the FileName property.
+      /// @param value The action to take with the file that the process opens. The default is an empty string (""), which signifies no action.
+      /// @return The current instance of process_start_info.
+      /// @remarks Each file name extension has its own set of verbs, which can be obtained by using the Verbs property. For example, the "print" verb will print a document specified by using FileName. The default verb can be specified by using an empty string (""). Examples of verbs are "Edit", "Open", "OpenAsReadOnly", "Print", and "Printto". You should use only verbs that appear in the set of verbs returned by the xtd::diagnostics::process_start_info::verbs property.
+      /// @remarks When you use the xtd::diagnostics::process_start_info::verb property, you must include the file name extension when you set the value of the xtd::diagnostics::process_start_info::file_name property. The file name does not need to have an extension if you manually enter a value for the xtd::diagnostics::process_start_info::verb property.
       process_start_info& verb(const std::string& value);
       
-      /// @brief Gets the set of verbs associated with the type of file specified by the FileName property.
-      /// @return Array<string> The actions that the system can apply to the file indicated by the FileName property.
-      /// @remarks The Verbs property enables you to determine the verbs that can be used with the file specified by the FileName property. You can set the Verb property to the value of any verb in the set. Examples of verbs are "Edit", "Open", "OpenAsReadOnly", "Print", and "Printto".
-      /// @remarks When you use the Verbs property, you must include the file name extension when you set the value of the FileName property. The file name extension determines the set of possible verbs.
+      /// @brief Gets the set of verbs associated with the type of file specified by the xtd::diagnostics::process_start_info::file_name property.
+      /// @return The actions that the system can apply to the file indicated by the xtd::diagnostics::process_start_info::file_name property.
+      /// @remarks The xtd::diagnostics::process_start_info::verbs property enables you to determine the verbs that can be used with the file specified by the xtd::diagnostics::process_start_info::file_name property. You can set the xtd::diagnostics::process_start_info::verb property to the value of any verb in the set. Examples of verbs are "Edit", "Open", "OpenAsReadOnly", "Print", and "Printto".
+      /// @remarks When you use the xtd::diagnostics::process_start_info::verbs property, you must include the file name extension when you set the value of the xtd::diagnostics::process_start_info::file_name property. The file name extension determines the set of possible verbs.
       std::vector<std::string> verbs() const;
       
-      /// @brief Gets or sets the window state to use when the process is started.
-      /// @return ProcessWindowStyle One of the enumeration values that indicates whether the process is started in a window that is maximized, minimized, normal (neither maximized nor minimized), or not visible. The default is Normal.
-      /// @exception InvalidEnumArgumentException The window style is not one of the ProcessWindowStyle enumeration members.
+      /// @brief Gets the window state to use when the process is started.
+      /// @return One of the enumeration values that indicates whether the process is started in a window that is maximized, minimized, normal (neither maximized nor minimized), or not visible. The default is xtd::diagnostics::process_window_style::normal.
+      /// @exception xtd::invalid_enum_argument_exception The window style is not one of the xtd::diagnostics::process_window_style enumeration members.
       process_window_style window_style() const;
+      /// @brief Sets the window state to use when the process is started.
+      /// @param value One of the enumeration values that indicates whether the process is started in a window that is maximized, minimized, normal (neither maximized nor minimized), or not visible. The default is xtd::diagnostics::process_window_style::normal.
+      /// @return The current instance of process_start_info.
+      /// @exception xtd::invalid_enum_argument_exception The window style is not one of the xtd::diagnostics::process_window_style enumeration members.
       process_start_info& window_style(process_window_style value);
       
-      /// When the UseShellExecute property is false, gets or sets the working directory for the process to be started. When UseShellExecute is true, gets or sets the directory that contains the process to be started.
-      /// @return string When UseShellExecute is true, the fully qualified name of the directory that contains the process to be started. When the UseShellExecute property is false, the working directory for the process to be started. The default is an empty string ("").
+      /// @brief When the xtd::diagnostics::process_start_info::use_shell_execute property is false, gets or sets the working directory for the process to be started. When xtd::diagnostics::process_start_info::use_shell_execute is true, gets or sets the directory that contains the process to be started.
+      /// @return When xtd::diagnostics::process_start_info::use_shell_execute is true, the fully qualified name of the directory that contains the process to be started. When the xtd::diagnostics::process_start_info::use_shell_execute property is false, the working directory for the process to be started. The default is an empty string ("").
       /// @par Important
-      /// The WorkingDirectory property must be set if UserName and Password are provided. If the property is not set, the default working directory is %SYSTEMROOT%\system32.
+      /// The xtd::diagnostics::process_start_info::working_directory property must be set if xtd::diagnostics::process_start_info::user_name and xtd::diagnostics::process_start_info::password are provided. If the property is not set, the default working directory is %SYSTEMROOT%\system32.
       /// @remarks If the directory is already part of the system path variable, you do not have to repeat the directory's location in this property.
-      /// @remarks The WorkingDirectory property behaves differently when UseShellExecute is true than when UseShellExecute is false. When UseShellExecute is true, the WorkingDirectory property specifies the location of the executable. If WorkingDirectory is an empty string, the current directory is understood to contain the executable.
-      /// @note When UseShellExecute is true, the working directory of the application that starts the executable is also the working directory of the executable.
-      /// @remarks When UseShellExecute is false, the WorkingDirectory property is not used to find the executable. Instead, its value applies to the process that is started and only has meaning within the context of the new process.
+      /// @remarks The xtd::diagnostics::process_start_info::working_directory property behaves differently when xtd::diagnostics::process_start_info::use_shell_execute is true than when xtd::diagnostics::process_start_info::use_shell_execute is false. When xtd::diagnostics::process_start_info::use_shell_execute is true, the xtd::diagnostics::process_start_info::working_directory property specifies the location of the executable. If xtd::diagnostics::process_start_info::working_directory is an empty string, the current directory is understood to contain the executable.
+      /// @note When xtd::diagnostics::process_start_info::use_shell_execute is true, the working directory of the application that starts the executable is also the working directory of the executable.
+      /// @remarks When xtd::diagnostics::process_start_info::use_shell_execute is false, the xtd::diagnostics::process_start_info::working_directory property is not used to find the executable. Instead, its value applies to the process that is started and only has meaning within the context of the new process.
       const std::string& working_directory() const;
+      /// @brief When the xtd::diagnostics::process_start_info::use_shell_execute property is false, gets or sets the working directory for the process to be started. When xtd::diagnostics::process_start_info::use_shell_execute is true, gets or sets the directory that contains the process to be started.
+      /// @param value When xtd::diagnostics::process_start_info::use_shell_execute is true, the fully qualified name of the directory that contains the process to be started. When the xtd::diagnostics::process_start_info::use_shell_execute property is false, the working directory for the process to be started. The default is an empty string ("").
+      /// @return The current instance of process_start_info.
+      /// @par Important
+      /// The xtd::diagnostics::process_start_info::working_directory property must be set if xtd::diagnostics::process_start_info::user_name and xtd::diagnostics::process_start_info::password are provided. If the property is not set, the default working directory is %SYSTEMROOT%\system32.
+      /// @remarks If the directory is already part of the system path variable, you do not have to repeat the directory's location in this property.
+      /// @remarks The xtd::diagnostics::process_start_info::working_directory property behaves differently when xtd::diagnostics::process_start_info::use_shell_execute is true than when xtd::diagnostics::process_start_info::use_shell_execute is false. When xtd::diagnostics::process_start_info::use_shell_execute is true, the xtd::diagnostics::process_start_info::working_directory property specifies the location of the executable. If xtd::diagnostics::process_start_info::working_directory is an empty string, the current directory is understood to contain the executable.
+      /// @note When xtd::diagnostics::process_start_info::use_shell_execute is true, the working directory of the application that starts the executable is also the working directory of the executable.
+      /// @remarks When xtd::diagnostics::process_start_info::use_shell_execute is false, the xtd::diagnostics::process_start_info::working_directory property is not used to find the executable. Instead, its value applies to the process that is started and only has meaning within the context of the new process.
       process_start_info& working_directory(const std::string& value);
       
     private:
