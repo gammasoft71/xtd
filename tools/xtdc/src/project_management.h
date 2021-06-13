@@ -151,6 +151,7 @@ namespace xtdc_command {
       build(target, false, release);
       auto target_path = target.empty() ? get_first_target_path(release) : get_target_path(target, release);
       if (target_path.empty()) return "The target does not exist! Run project aborted.";
+      std::cout << "run : " << target_path << std::endl;
       xtd::diagnostics::process::start(target_path).wait_for_exit();
       return "";
     }
@@ -226,16 +227,12 @@ namespace xtdc_command {
     }
     
     std::string make_platform_target_path(const std::filesystem::path& path, const std::string& target, bool release) const {
-      if (xtd::environment::os_version().is_windows_platform() && is_windows_gui_app(path/(release ? "Release" : "Debug")/xtd::strings::format("{}.exe", target)))
-        return xtd::strings::format("start \"{}\" {}", target, (path/(release ? "Release" : "Debug")/xtd::strings::format("{}.exe", target)).string());
-      else if (xtd::environment::os_version().is_windows_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/xtd::strings::format("{}.exe", target)))
+      if (xtd::environment::os_version().is_windows_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/xtd::strings::format("{}.exe", target)))
         return (path/(release ? "Release" : "Debug")/xtd::strings::format("{}.exe", target)).string();
       else if (xtd::environment::os_version().is_macos_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/xtd::strings::format("{}.app", target)))
-        return xtd::strings::format("open {}", path/(release ? "Release" : "Debug")/xtd::strings::format("{}.app", target));
+        return (path/(release ? "Release" : "Debug")/xtd::strings::format("{}.app", target)).string();
       else if (xtd::environment::os_version().is_macos_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/target))
         return (path/(release ? "Release" : "Debug")/target).string();
-      else if (xtd::environment::os_version().is_linux_platform() && is_linux_gui_app(path, target))
-        return xtd::strings::format("xdg-open {}", path/target);
       else if (xtd::environment::os_version().is_linux_platform() && std::filesystem::exists(path/target))
         return (path/target).string();
       return "";
