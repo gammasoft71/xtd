@@ -255,11 +255,15 @@ bool process::start() {
       if (process.data_->handle_ == 0) throw invalid_operation_exception("The system cannot find the file specified", caller_info_);
       allow_to_continue = true;
       debug::write_line_if(debug_process, strings::format("process::start [handle={}, command_line={}, start_time={:u}.{:D6}, started]", process.data_->handle_, strings::format("{}{}", process.start_info().file_name(), process.start_info().arguments() == "" ? "" : strings::format(" {}", process.start_info().arguments())), process.data_->start_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time_.time_since_epoch())).count() % 1000000));
-      int32_t exit_code = 0;
-      if (process.data_->start_info_.use_shell_execute() || native::process::wait(process.data_->handle_.value(), exit_code)) process.data_->exit_code_ = exit_code;
+      if (process.data_->start_info_.use_shell_execute()) {
+        process.data_->exit_code_ = native::process::wait_shell_execute(process.data_->handle_.value()) ?  0 : -1;
+      } else {
+        int32_t exit_code = 0;
+        process.data_->exit_code_ =  native::process::wait_process(process.data_->handle_.value(), exit_code) ? exit_code : -1;
+      }
       process.data_->exit_time_ = system_clock::now();
       debug::write_line_if(debug_process, strings::format("process::start [handle={}, exit_time={:u}.{:D6}, exit_code={}, exited]", process.data_->handle_, process.data_->exit_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->exit_time_.time_since_epoch())).count() % 1000000, process.data_->exit_code_));
-      if (exit_code == -1 || exit_code == 0x00ffffff) throw invalid_operation_exception("The system cannot find the file specified", caller_info_);
+      if (!process.data_->exit_code_.has_value() || process.data_->exit_code_ == -1 || process.data_->exit_code_ == 0x00ffffff) throw invalid_operation_exception("The system cannot find the file specified", caller_info_);
       process.on_exited();
     } catch(...) {
       process.data_->exception_pointer_ = std::current_exception();
