@@ -418,11 +418,11 @@ void form::wm_close(message &message) {
       if (dialog_result_ == forms::dialog_result::none) dialog_result_ = forms::dialog_result::cancel;
       native::form::end_dialog(handle(), static_cast<int32_t>(dialog_result_));
       application::raise_leave_thread_modal(event_args::empty);
-      set_state(state::modal, false);
       parent_ = parent_before_show_dialog_;
     }
     on_form_closed(form_closed_event_args());
-    destroy_control();
+    if (!get_state(state::modal)) destroy_control();
+    set_state(state::modal, false);
   }
 }
 
