@@ -139,7 +139,7 @@ bool process::wait_process(intptr_t process, int32_t& exit_code) {
   return result;
 }
 
-bool process::wait_shell_execute(intptr_t process, int32_t& exit_code) {
+bool process::wait_shell_execute(intptr_t process) {
   if (process == 0) return false;
   bool result = WaitForSingleObject(reinterpret_cast<HANDLE>(process), INFINITE) == 0;
   CloseHandle(reinterpret_cast<HANDLE>(process));
