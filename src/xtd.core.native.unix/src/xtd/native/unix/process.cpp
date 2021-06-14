@@ -94,7 +94,12 @@ namespace {
   }
   
   bool is_valid_process(function<vector<string>(const string& str, const vector<char>& separators, size_t count)> splitter, const string& command_line, const string& working_directory) {
-    return exists(get_full_file_name_with_extension(splitter, command_line, working_directory));
+    auto full_file_name_with_extension = get_full_file_name_with_extension(splitter, command_line, working_directory);
+#if defined(__APPLE__)
+    return exists(full_file_name_with_extension);
+#else
+    return exists(full_file_name_with_extension) && (is_directory(full_file_name_with_extension) || (status(full_file_name_with_extension).permissions() & perms::owner_exec) != perms::owner_exec);
+#endif
   }
 
   bool is_valid_uri(const string& command_line) {
@@ -174,12 +179,13 @@ bool process::priority_class(intptr_t process, int32_t priority) {
 }
 
 intptr_t process::shell_execute(const std::string& verb, const string& file_name, const string& arguments, const string& working_directory, int32_t process_window_style) {
-  if (!is_valid_shell_execute_process(&unix::strings::split, file_name, working_directory)) return 0;
   pid_t process = fork();
   if (process == 0) {
-    bool is_shell_execute = true;
-    for (auto arg : split_arguments(arguments))
-      if (!(is_shell_execute = is_valid_shell_execute_process(&unix::strings::split, arg, working_directory))) break;
+    bool is_shell_execute = is_valid_shell_execute_process(&unix::strings::split, file_name, working_directory);
+    if (is_shell_execute) {
+      for (auto arg : split_arguments(arguments))
+        if (!(is_shell_execute = is_valid_shell_execute_process(&unix::strings::split, arg, working_directory))) break;
+    }
     vector<string> command_line_args;
     if (is_shell_execute) {
 #if defined(__APPLE__)
