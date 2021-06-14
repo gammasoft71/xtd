@@ -90,13 +90,7 @@ namespace xtd {
       /// @param exit Receives the process exit code.
       /// @return true if succeed; otherwise false.
       /// @warning Internal use only
-      static bool wait_process(intptr_t process, int32_t& exit_code);
-      /// @brief Wait shell process and close handles.
-      /// @param process The process handle to wait.
-      /// @param exit Receives the process exit code.
-      /// @return true if succeed; otherwise false.
-      /// @warning Internal use only
-      static bool wait_shell_execute(intptr_t process);
+      static bool wait(intptr_t process, int32_t& exit_code);
     };
   }
 }
