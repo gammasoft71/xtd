@@ -13,14 +13,12 @@ using namespace xtd::io;
 class xtd_core_manual_test {
 public:
   static void main() {
-    //system("osascript -e \"do shell script \\\"/System/Applications/TextEdit.app/Contents/MacOS/TextEdit\\\" with administrator privileges\"");
-
     try {
       using_(process process) {
-        process.start_info().file_name("/Users/yves/Projects/xtd/docs/pictures/gammasoft.png");
+        process.start_info().file_name("ls");
         process.start_info().use_shell_execute(true);
-        process.start_info().verb("cot");
-        process.start_info().arguments("");
+        process.start_info().verb("");
+        process.start_info().arguments("-lia");
         //process.start_info().redirect_standard_output(true);
         process.start();
         //console::write(stream_reader(process.standard_output()).read_to_end());
