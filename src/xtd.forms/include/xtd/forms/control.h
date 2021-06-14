@@ -327,7 +327,7 @@ namespace xtd {
       /// @brief Sets the height and width of the client area of the control.
       /// @param client_size A size that represents the dimensions of the client area of the control.
       /// @return Current control.
-      /// @remarks The client area of a control is the bounds of the control, minus the nonclient elements such as scroll bars, borders, title bars, and menus. The set_client_size_core method is called to set the client_size property. The client_size property is not always changed through its set method so you should override the set_client_sizeCore method to ensure that your code is executed when the client_size property is set.
+      /// @remarks The client area of a control is the bounds of the control, minus the nonclient elements such as scroll bars, borders, title bars, and menus. The set_client_size_core method is called to set the client_size property. The client_size property is not always changed through its set method so you should override the set_client_size_core method to ensure that your code is executed when the client_size property is set.
       virtual control& client_size(const drawing::size& client_size) {
         if (!get_state(state::client_size_setted) || client_size_ != client_size) {
           set_state(state::client_size_setted, true);
