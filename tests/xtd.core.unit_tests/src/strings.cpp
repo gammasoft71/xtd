@@ -384,7 +384,9 @@ namespace unit_tests {
     }
     
     void test_method_(to_u8string) {
-      collection_assert::are_equal({u8'a', u8'e', u8'i', u8'o', u8'u', u8'\xC3', u8'\xA0', u8'\xC3', u8'\xA7', u8'\xC3', u8'\xA9', u8'\xC3', u8'\xA8', u8'\xC3', u8'\xAA', u8'\xC3', u8'\xAB', u8'\xC3', u8'\xAF', u8'\xC3', u8'\xAE', u8'\xF0', u8'\x9F', u8'\x90', u8'\xA8'}, strings::to_u8string(u8"aeiouàçéèêëïî\U0001F428"), line_info_);
+      // The following line does not build with Visual Studio 2019 (16.10.0)
+      //collection_assert::are_equal({u8'a', u8'e', u8'i', u8'o', u8'u', u8'\xC3', u8'\xA0', u8'\xC3', u8'\xA7', u8'\xC3', u8'\xA9', u8'\xC3', u8'\xA8', u8'\xC3', u8'\xAA', u8'\xC3', u8'\xAB', u8'\xC3', u8'\xAF', u8'\xC3', u8'\xAE', u8'\xF0', u8'\x9F', u8'\x90', u8'\xA8'}, strings::to_u8string(u8"aeiouàçéèêëïî\U0001F428"), line_info_);
+      collection_assert::are_equal({u8'a', u8'e', u8'i', u8'o', u8'u', static_cast<char8_t>(0xC3), static_cast<char8_t>(0xA0), static_cast<char8_t>(0xC3), static_cast<char8_t>(0xA7), static_cast<char8_t>(0xC3), static_cast<char8_t>(0xA9), static_cast<char8_t>(0xC3), static_cast<char8_t>(0xA8), static_cast<char8_t>(0xC3), static_cast<char8_t>(0xAA), static_cast<char8_t>(0xC3), static_cast<char8_t>(0xAB), static_cast<char8_t>(0xC3), static_cast<char8_t>(0xAF), static_cast<char8_t>(0xC3), static_cast<char8_t>(0xAE), static_cast<char8_t>(0xF0), static_cast<char8_t>(0x9F), static_cast<char8_t>(0x90), static_cast<char8_t>(0xA8)}, strings::to_u8string(u8"aeiouàçéèêëïî\U0001F428"), line_info_);
     }
     
     void test_method_(to_u16string) {
