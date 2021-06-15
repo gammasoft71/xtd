@@ -1662,10 +1662,8 @@ namespace xtd {
         else if (ch <= 0xef) codepoint = ch & 0x0f;
         else codepoint = ch & 0x07;
         ++str;
-        if (((*str & 0xc0) != 0x80) && (codepoint <= 0x10ffff)) {
-          if (sizeof(wchar_t) > 2)
-            out.append(1, static_cast<wchar_t>(codepoint));
-        }
+        if (((*str & 0xc0) != 0x80) && (codepoint <= 0x10ffff))
+          out.append(1, static_cast<wchar_t>(codepoint));
       }
       return out;
     }
