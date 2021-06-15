@@ -1623,7 +1623,7 @@ namespace xtd {
     static std::u16string to_u16string(const std::string& str) {return to_u16string(str.c_str());}
     static std::u16string to_u16string(const char* str) {
       std::u16string out;
-      char32_t codepoint;
+      int32_t codepoint = 0;
       while (*str != 0) {
         unsigned char ch = static_cast<unsigned char>(*str);
         if (ch <= 0x7f) codepoint = ch;
@@ -1634,10 +1634,10 @@ namespace xtd {
         ++str;
         if (((*str & 0xc0) != 0x80) && (codepoint <= 0x10ffff)) {
           if (codepoint > 0xffff) {
-            out.append(1, static_cast<wchar_t>(0xd800 + (codepoint >> 10)));
-            out.append(1, static_cast<wchar_t>(0xdc00 + (codepoint & 0x03ff)));
+            out.append(1, static_cast<char16_t>(0xd800 + (codepoint >> 10)));
+            out.append(1, static_cast<char16_t>(0xdc00 + (codepoint & 0x03ff)));
           } else if (codepoint < 0xd800 || codepoint >= 0xe000)
-            out.append(1, static_cast<wchar_t>(codepoint));
+            out.append(1, static_cast<char16_t>(codepoint));
         }
       }
       return out;
@@ -1653,7 +1653,7 @@ namespace xtd {
     static std::u32string to_u32string(const std::string& str) {return to_u32string(str.c_str());}
     static std::u32string to_u32string(const char* str) {
       std::u32string out;
-      char32_t codepoint;
+      int32_t codepoint = 0;
       while (*str != 0) {
         unsigned char ch = static_cast<unsigned char>(*str);
         if (ch <= 0x7f) codepoint = ch;
@@ -1663,7 +1663,7 @@ namespace xtd {
         else codepoint = ch & 0x07;
         ++str;
         if (((*str & 0xc0) != 0x80) && (codepoint <= 0x10ffff))
-          out.append(1, static_cast<wchar_t>(codepoint));
+          out.append(1, static_cast<char32_t>(codepoint));
       }
       return out;
     }
@@ -1678,7 +1678,7 @@ namespace xtd {
     static std::wstring to_wstring(const std::string& str) {return to_wstring(str.c_str());}
     static std::wstring to_wstring(const char* str) {
       std::wstring out;
-      char32_t codepoint;
+      int32_t codepoint = 0;
       while (*str != 0) {
         unsigned char ch = static_cast<unsigned char>(*str);
         if (ch <= 0x7f) codepoint = ch;
