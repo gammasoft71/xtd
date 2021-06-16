@@ -61,6 +61,11 @@ namespace xtd {
         /// @return The device name associated with a display.
         /// @warning Internal use only
         static std::string device_name(size_t index);
+        /// @brief Gets the pixels per inch of the display.
+        /// @param index The screen index.
+        /// @return The pixels per inch of the diplay.
+        /// @warning Internal use only
+        static int32_t pixels_per_inch(size_t index);
         /// @brief Gets a value indicating whether a particular display is the primary device.
         /// @param index The screen index.
         /// @return true if index display is primary; otherwise, false.
@@ -71,6 +76,11 @@ namespace xtd {
         /// @return The scale factor of the diplay.
         /// @warning Internal use only
         static double scale_factor(size_t index);
+        /// @brief Gets the standard pixels per inch.
+        /// @return The standard pixels per inch.
+        /// @remarks The standard value is 72 for macOS; 96 for Windows and linux.
+        /// @warning Internal use only
+        static int32_t standard_pixels_per_inch();
         /// @brief Gets the working area of the display. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.
         /// @param index The screen index.
         /// @return A xtd::drawing::rectangle, representing the working area of the display.

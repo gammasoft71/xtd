@@ -57,12 +57,20 @@ namespace xtd {
       /// @remarks This string may contain non-printable characters.
       const std::string& device_name() const {return device_name_;}
       
+      /// @brief Gets the number of pixels per inch of the display.
+      /// @return The number of pixels per inch of the display.
+      /// @remarks See get_standard_pixels_per_inch() for more informations.
+      int32_t pixels_per_inch() const {return pixels_per_inch_;}
+      
       /// @brief Gets a value indicating whether a particular display is the primary device.
       /// @return true if this display is primary; otherwise, false.
       bool primary() const {return primary_;}
       
       /// @brief Gets the scale factor of the display.
       /// @return The scale factor of the display.
+      /// @remarks This value is computed from pixels_per_inch() for the display divided by get_standard_pixels_per_inch().
+      /// @remarks If scale factor is equal to 1.0 is a standard display; greater than 1.0 is a high DPI display.
+      /// @remarks See get_standard_pixels_per_inch() for more informations.
       double scale_factor() const {return scale_factor_;}
 
       /// @brief Gets the primary display.
@@ -126,6 +134,17 @@ namespace xtd {
       /// @return A xtd::drawing::rectangle that specifies the bounds of the display that contains the specified rectangle. In multiple display environments where no monitor contains the specified rectangle, the monitor closest to the rectangle is returned.
       static drawing::rectangle get_bounds(const drawing::rectangle& rect);
       
+      /// @brief Gets the the standard number of pixels per inch of the display.
+      /// @return The standard number of pixels per inch of the display.
+      /// @remarks In printing, DPI (dots per inch) refers to the output resolution of a printer, scanner or imagesetter, and PPI (pixels per inch) refers to the input resolution of a photograph, image or screen.
+      /// @remarks The following table shows the standard values by operating system :
+      /// |  Values and conversion            | Windows | macOS | linux |
+      /// |-----------------------------------|---------|-------|-------|
+      /// | Pixels per inch (PPI)             |      96 |    72 |    96 |
+      /// | Pixels per centimeters (pixel/cm) |      38 |    28 |    38 |
+      /// | Pitch (µm)                        |     265 |   353 |   265 |
+      static int32_t get_standard_pixels_per_inch();
+      
       /// @brief Retrieves the working area for the display that contains the largest region of the specified control. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.
       /// @param control The control for which to retrieve the working area.
       /// @return A xtd::drawing::rectangle that specifies the working area. In multiple display environments where no display contains the specified control, the display closest to the control is returned.
@@ -148,11 +167,12 @@ namespace xtd {
                                   
     private:
       screen() = default;
-      screen(int32_t bits_per_pixel, const drawing::rectangle& bounds, const std::string& device_name, bool primary, double scale_factor, const drawing::rectangle& working_area) : bits_per_pixel_(bits_per_pixel), bounds_(bounds), device_name_(device_name), primary_(primary), scale_factor_(scale_factor), working_area_(working_area) {}
+      screen(int32_t bits_per_pixel, const drawing::rectangle& bounds, const std::string& device_name, int32_t pixels_per_inch, bool primary, double scale_factor, const drawing::rectangle& working_area) : bits_per_pixel_(bits_per_pixel), bounds_(bounds), device_name_(device_name), pixels_per_inch_(pixels_per_inch), primary_(primary), scale_factor_(scale_factor), working_area_(working_area) {}
       
       int32_t bits_per_pixel_ = 0;
       drawing::rectangle bounds_;
       std::string device_name_;
+      int32_t pixels_per_inch_ = 0;
       bool primary_ = false;
       double scale_factor_ = 1.;
       drawing::rectangle working_area_;
