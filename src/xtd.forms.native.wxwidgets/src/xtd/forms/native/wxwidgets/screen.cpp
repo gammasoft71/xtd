@@ -61,7 +61,7 @@ double screen::scale_factor(size_t index) {
 
 int32_t screen::standard_pixels_per_inch() {
   application::initialize();
-  return wxDisplay::GetStdPPI().GetHeight();
+  return wxDisplay::GetStdPPIValue();
 }
 
 rectangle screen::working_area(size_t index) {
