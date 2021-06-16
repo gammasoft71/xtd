@@ -49,6 +49,11 @@ bool screen::primary(size_t index) {
   return wxDisplay(static_cast<int32_t>(index)).IsPrimary();
 }
 
+double screen::scale_factor(size_t index) {
+  application::initialize();
+  return wxDisplay(static_cast<int32_t>(index)).GetScaleFactor();
+}
+
 rectangle screen::working_area(size_t index) {
   application::initialize();
   wxRect working_area = wxDisplay(static_cast<int32_t>(index)).GetClientArea();
