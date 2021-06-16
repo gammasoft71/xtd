@@ -38,6 +38,7 @@ add_projects(
   message_dialog_show_sheet
   painting
   process_form
+  screen_informations
   settings_example2
   smileys
   stopwatch_form

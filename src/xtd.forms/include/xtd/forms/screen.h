@@ -18,7 +18,7 @@ namespace xtd {
     /// @ingroup xtd_forms components
     /// @remarks The constructor for this object is not public, so you cannot explicitly create a screen object. The object is created when you call its public methods.
     /// @par Examples
-    /// The following code example demonstrate the use of screen class.
+    /// The following code example demonstrates the use of screen class.
     /// @include screen.cpp
     /// @par Windows
     /// @image html screen_w.png
@@ -32,6 +32,21 @@ namespace xtd {
     /// @image html screen_g.png
     /// <br>
     /// @image html screen_gd.png
+    /// @par Examples
+    /// The following code example shows how to get screen informations of screen component.
+    /// @include screen_informations.cpp
+    /// @par Windows
+    /// @image html screen_informations_w.png
+    /// <br>
+    /// @image html screen_informations_wd.png
+    /// @par macOS
+    /// @image html screen_informations_m.png
+    /// <br>
+    /// @image html screen_informations_md.png
+    /// @par Gnome
+    /// @image html screen_informations_g.png
+    /// <br>
+    /// @image html screen_informations_gd.png
     class forms_export_ screen {
     public:
       /// @cond
@@ -57,6 +72,10 @@ namespace xtd {
       /// @remarks This string may contain non-printable characters.
       const std::string& device_name() const {return device_name_;}
       
+      /// @brief Gets a value indicating whether a particular display is high resolution.
+      /// @return true if this display is high resolution; otherwise, false.
+      bool high_resolution() const {return scale_factor_ > 1.;}
+
       /// @brief Gets the number of pixels per inch of the display.
       /// @return The number of pixels per inch of the display.
       /// @remarks See get_standard_pixels_per_inch() for more informations.
