@@ -172,7 +172,7 @@ namespace xtd {
       int32_t bits_per_pixel_ = 0;
       drawing::rectangle bounds_;
       std::string device_name_;
-      int32_t pixels_per_inch_ = 0;
+      int32_t pixels_per_inch_ = 96;
       bool primary_ = false;
       double scale_factor_ = 1.;
       drawing::rectangle working_area_;
