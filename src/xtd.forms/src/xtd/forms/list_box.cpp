@@ -4,9 +4,12 @@
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/list_box.h>
+#include <xtd/forms/native/toolkit.h>
 #include <xtd/forms/native/window_styles.h>
 #include <xtd/forms/native/list_box_styles.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/drawing/pens.h>
+#include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/list_box.h"
 
 using namespace std;
@@ -155,6 +158,14 @@ void list_box::on_handle_created(const event_args& e) {
 void list_box::on_selected_value_changed(const event_args& e) {
   list_control::text(selected_item_.value());
   list_control::on_selected_value_changed(e);
+}
+
+void list_box::on_paint(paint_event_args& e) {
+  list_control::on_paint(e);
+  
+  // Workaround : on macOS with wxWidgets toolkit, retina display, dark mode enabled and border style is not none, the border is not show.
+  if (environment::os_version().is_macos_platform() && native::toolkit::name() == "wxwidgets" && screen::from_handle(handle()).scale_factor() > 1. && application::dark_mode_enabled() && border_style_ != forms::border_style::none)
+    e.graphics().draw_rectangle(xtd::drawing::pens::white(), xtd::drawing::rectangle::inflate(e.clip_rectangle(), {-2, -2}));
 }
 
 void list_box::wnd_proc(message& message) {
