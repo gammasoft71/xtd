@@ -61,6 +61,10 @@ namespace xtd {
       /// @return true if this display is primary; otherwise, false.
       bool primary() const {return primary_;}
       
+      /// @brief Gets the scale factor of the display.
+      /// @return The scale factor of the display.
+      double scale_factor() const {return scale_factor_;}
+
       /// @brief Gets the primary display.
       /// @return The primary display.
       /// @remarks For a single display system, the primary display is the only display.
@@ -144,12 +148,13 @@ namespace xtd {
                                   
     private:
       screen() = default;
-      screen(int32_t bits_per_pixel, const drawing::rectangle& bounds, const std::string& device_name, bool primary, const drawing::rectangle& working_area) : bits_per_pixel_(bits_per_pixel), bounds_(bounds), device_name_(device_name), primary_(primary), working_area_(working_area) {}
+      screen(int32_t bits_per_pixel, const drawing::rectangle& bounds, const std::string& device_name, bool primary, double scale_factor, const drawing::rectangle& working_area) : bits_per_pixel_(bits_per_pixel), bounds_(bounds), device_name_(device_name), primary_(primary), scale_factor_(scale_factor), working_area_(working_area) {}
       
       int32_t bits_per_pixel_ = 0;
       drawing::rectangle bounds_;
       std::string device_name_;
       bool primary_ = false;
+      double scale_factor_ = 1.;
       drawing::rectangle working_area_;
     };                           
   }
