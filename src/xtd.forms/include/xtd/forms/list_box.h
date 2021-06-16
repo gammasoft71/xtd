@@ -140,8 +140,6 @@ namespace xtd {
 
       void on_handle_created(const event_args& e) override;
       
-      void on_paint(paint_event_args& e) override;
-
       void on_selected_value_changed(const event_args& e) override;
 
       void wnd_proc(message& message) override;
