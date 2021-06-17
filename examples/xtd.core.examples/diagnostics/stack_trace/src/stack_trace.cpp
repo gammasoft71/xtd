@@ -3,27 +3,27 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-void test3() {
+void method3() {
   console::write_line("stack_trace:");
   console::write_line(stack_trace());
 }
 
-void test2() {
-  test3();
+void method2() {
+  method3();
 }
 
-void test1() {
-  test2();
+void method1() {
+  method2();
 }
 
 int main() {
-  test1();
+  method1();
 }
 
 // This code produces the following output :
 //
 // stack_trace:
-//    at test3()
-//    at test2()
-//    at test1()
+//    at method3()
+//    at method2()
+//    at method1()
 //    at main

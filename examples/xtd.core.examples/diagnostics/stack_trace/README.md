@@ -20,8 +20,8 @@ xtdc run
 
 ```
 stack_trace:
-   at test3()
-   at test2()
-   at test1()
+   at method3()
+   at method2()
+   at method1()
    at main
 ```
