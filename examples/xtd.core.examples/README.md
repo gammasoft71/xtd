@@ -69,6 +69,19 @@
 * [format_with_alignment](format/format_with_alignment/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with specified alignment args.
 * [format_with_order](format/format_with_order/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with specified order args.
 
+## [Keywords examples](keywords/README.md)
+
+* [block_scope](keywords/block_scope/README.md) shows how to use [xtd::block_scope](../../../src/xtd.core/include/xtd/block_scope.h) method.
+* [current_stack_frame](keywords/current_stack_frame/README.md) shows how to use [xtd::diagnostics::stack_frame(../../../src/xtd.core/include/xtd/diagnostics/starck_frame.h) method.
+* [csf](keywords/csf/README.md) shows how to use [xtd::diagnostics::stack_frame(../../../src/xtd.core/include/xtd/diagnostics/starck_frame.h) method.
+* [interface](keywords/interface/README.md) shows how to use [xtd::interface](../../../src/xtd.core/include/xtd/interface.h) method.
+* [interface2](keywords/interface2/README.md) shows how to use [xtd::interface](../../../src/xtd.core/include/xtd/interface.h) method.
+* [startup](keywords/startup/README.md) shows how to use [xtd::startup](../../../src/xtd.core/include/xtd/startup.h) method.
+* [static](keywords/static/README.md) shows how to use [xtd::static](../../../src/xtd.core/include/xtd/static.h) method.
+* [static_class](keywords/static_class/README.md) shows how to use [xtd::static_class](../../../src/xtd.core/include/xtd/static_class.h) method.
+* [static_class2](keywords/static_class2/README.md) shows how to use [xtd::static_class](../../../src/xtd.core/include/xtd/static_class.h) method.
+* [using](keywords/using/README.md) shows how to use [xtd::using](../../../src/xtd.core/include/xtd/using.h) method.
+
 ## [Processes](processes/README.md)
 
 * [process_start_info](processes/process_start_info/README.md) shows how to use [xtd::diagnostics:process_start_info](../../src/xtd.core/include/xtd/diagnostics/process_start_info.h) class.
