@@ -40,8 +40,12 @@ namespace xtd {
       ~stack_trace();
       /// @endcond
       
-      const frame_collection& frames() const {return data_->frames_;}
+      size_t frame_count() const {return data_->frames_.size();}
+      
+      const xtd::diagnostics::stack_frame& get_frame(size_t index) {return data_->frames_[index];}
             
+      const frame_collection& get_frames() const {return data_->frames_;}
+      
       std::string to_string() const {return to_string(0);}
 
       /// @cond

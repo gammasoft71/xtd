@@ -23,9 +23,9 @@ std::string system_exception::to_string() const noexcept {
 std::string system_exception::stack_trace_to_string() const noexcept {
   if (!stack_trace_) return information_.to_trace();
 
-  size_t skip_frames = stack_trace_->frames().size();
-  for (size_t index = 0; index < stack_trace_->frames().size(); ++index)
-    if (xtd::strings::starts_with(stack_trace_->frames()[index].method_name(), name()))
+  size_t skip_frames = stack_trace_->frame_count();
+  for (size_t index = 0; index < stack_trace_->frame_count(); ++index)
+    if (xtd::strings::starts_with(stack_trace_->get_frame(index).get_method(), name()))
       skip_frames = index;
   return stack_trace_->to_string(skip_frames + 1, information_);
 }

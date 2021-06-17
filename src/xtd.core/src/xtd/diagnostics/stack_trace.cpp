@@ -18,9 +18,9 @@ std::string stack_trace::to_string(size_t skip_frames, const caller_info& info) 
   std::string str;
   for (size_t index = skip_frames; index < data_->frames_.size(); ++index) {
     if (index > skip_frames) str += xtd::environment::new_line();
-    str += "   at " + data_->frames_[index].method_name();
-    if (index == skip_frames && info != caller_info::empty()) str += xtd::strings::format(" [0x{:X8}] in {}:line {}", data_->frames_[index].offset(), info.file_path(), info.line_number());
-    else if (!data_->frames_[index].file_path().empty()) str += xtd::strings::format(" [0x{:X8}] in {}:line {}", data_->frames_[index].offset(), data_->frames_[index].file_path(), data_->frames_[index].file_line());
+    str += "   at " + data_->frames_[index].get_method();
+    if (index == skip_frames && info != caller_info::empty()) str += xtd::strings::format(" [0x{:X8}] in {}:line {}", data_->frames_[index].get_offset(), info.file_path(), info.line_number());
+    else if (!data_->frames_[index].get_file_name().empty()) str += xtd::strings::format(" [0x{:X8}] in {}:line {}", data_->frames_[index].get_offset(), data_->frames_[index].get_file_name(), data_->frames_[index].get_file_line_number());
   }
   return str;
 }

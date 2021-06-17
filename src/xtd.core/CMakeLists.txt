@@ -198,6 +198,9 @@ add_sources(
   src/xtd/diagnostics/ostream_trace_listener.cpp
   src/xtd/diagnostics/process.cpp
   src/xtd/diagnostics/process_start_info.cpp
+  src/xtd/diagnostics/source_filter.cpp
+  src/xtd/diagnostics/source_switch.cpp
+  src/xtd/diagnostics/stack_frame.cpp
   src/xtd/diagnostics/stack_trace.cpp
   src/xtd/diagnostics/trace.cpp
   src/xtd/internal/__format_exception.cpp

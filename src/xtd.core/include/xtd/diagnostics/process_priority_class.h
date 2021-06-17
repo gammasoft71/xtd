@@ -29,7 +29,9 @@ namespace xtd {
       above_normal = 0x8000,
     };
 
+    /// @cond
     inline std::ostream& operator<<(std::ostream& os, xtd::diagnostics::process_priority_class value) {return os << to_string(value, {{diagnostics::process_priority_class::normal, "normal"}, {diagnostics::process_priority_class::idle, "idle"}, {diagnostics::process_priority_class::high, "high"}, {diagnostics::process_priority_class::real_time, "real_time"}, {diagnostics::process_priority_class::below_normal, "below_normalbelow_normal"}, {diagnostics::process_priority_class::above_normal, "above_normal"}});}
     inline std::wostream& operator<<(std::wostream& os, xtd::diagnostics::process_priority_class value) {return os << to_string(value, {{diagnostics::process_priority_class::normal, L"normal"}, {diagnostics::process_priority_class::idle, L"idle"}, {diagnostics::process_priority_class::high, L"high"}, {diagnostics::process_priority_class::real_time, L"real_time"}, {diagnostics::process_priority_class::below_normal, L"below_normal"}, {diagnostics::process_priority_class::above_normal, L"above_normal"}});}
+    /// @endcond
   }
 }
