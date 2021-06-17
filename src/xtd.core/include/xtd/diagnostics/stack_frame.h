@@ -25,49 +25,114 @@ namespace xtd {
       /// @cond
       stack_frame(const stack_frame&) = default;
       stack_frame& operator=(const stack_frame&) = default;
-      virtual ~stack_frame() {}
+      virtual ~stack_frame();
       /// @endcond
 
-      virtual const std::string& file_path() const {return file_path_;}
-      virtual stack_frame& file_path(const std::string& file_path) {
-        file_path_ = file_path;
-        return *this;
-      }
+      /// @brief Gets the column number in the file that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.
+      /// @return The file column number, or 0 (zero) if the file column number cannot be determined.
+      /// @par Examples
+      /// The following example demonstrates the use of the get_file_column_number() method. This code example is part of a larger example provided for the xtd::diagnostics::stack_frame class.
+      /// @code
+      /// // Display the stack frame properties.
+      /// stack_frame sf = st.get_frame(i);
+      /// console::write_line(" File: {}", sf.get_file_name());
+      /// console::write_line(" Line Number: {}", sf.get_file_line_number());
+      /// // Note that the column number defaults to zero when not initialized.
+      /// console::write_line(" Column Number: {}", sf.get_file_column_number());
+      /// console::write_line(" Method: {}", sf.get_method());
+      /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
+      ///   console::write_line(" Offset: {}", sf.get_offset());
+      /// @endcode
+      virtual size_t get_file_column_number() const;
       
-      virtual size_t file_line() const {return file_line_;}
-      virtual stack_frame& file_line(size_t file_line) {
-        file_line_ = file_line;
-        return *this;
-      }
+      /// @brief Gets the line number in the file that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.
+      /// @return The file line number, or 0 (zero) if the file line number cannot be determined.
+      /// @par Examples
+      /// The following example demonstrates the use of the get_file_line_number() method. This code example is part of a larger example provided for the xtd::diagnostics::stack_frame class.
+      /// @code
+      /// // Display the stack frame properties.
+      /// stack_frame sf = st.get_frame(i);
+      /// console::write_line(" File: {}", sf.get_file_name());
+      /// console::write_line(" Line Number: {}", sf.get_file_line_number());
+      /// // Note that the column number defaults to zero when not initialized.
+      /// console::write_line(" Column Number: {}", sf.get_file_column_number());
+      /// console::write_line(" Method: {}", sf.get_method());
+      /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
+      ///   console::write_line(" Offset: {}", sf.get_offset());
+      /// @endcode
+      virtual size_t get_file_line_number() const;
       
-      virtual size_t file_column() const {return file_column_;}
-      virtual stack_frame& file_column(size_t file_column) {
-        file_column_ = file_column;
-        return *this;
-      }
-
-      virtual const std::string& method_name() const {return method_name_;}
-      virtual stack_frame& method_name(const std::string& method_name) {
-        method_name_ = method_name;
-        return *this;
-      }
+      /// @brief Gets the file name that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.
+      /// @return The file name, or empty ("") if the file name cannot be determined.
+      /// @par Examples
+      /// The following example demonstrates the use of the get_file_name() method. This code example is part of a larger example provided for the xtd::diagnostics::stack_frame class.
+      /// @code
+      /// // Display the stack frame properties.
+      /// stack_frame sf = st.get_frame(i);
+      /// console::write_line(" File: {}", sf.get_file_name());
+      /// console::write_line(" Line Number: {}", sf.get_file_line_number());
+      /// // Note that the column number defaults to zero when not initialized.
+      /// console::write_line(" Column Number: {}", sf.get_file_column_number());
+      /// console::write_line(" Method: {}", sf.get_method());
+      /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
+      ///   console::write_line(" Offset: {}", sf.get_offset());
+      /// @endcode
+      virtual const std::string& get_file_name() const;
       
-      virtual size_t offset() const {return offset_;}
-      virtual stack_frame& offset(size_t offset) {
-        offset_ = offset;
-        return *this;
-      }
+      /// @brief Gets the method in which the frame is executing.
+      /// @return The method in which the frame is executing.
+      /// @par Examples
+      /// The following example demonstrates the use of the get_method() method. This code example is part of a larger example provided for the xtd::diagnostics::stack_frame class.
+      /// @code
+      /// // Display the stack frame properties.
+      /// stack_frame sf = st.get_frame(i);
+      /// console::write_line(" File: {}", sf.get_file_name());
+      /// console::write_line(" Line Number: {}", sf.get_file_line_number());
+      /// // Note that the column number defaults to zero when not initialized.
+      /// console::write_line(" Column Number: {}", sf.get_file_column_number());
+      /// console::write_line(" Method: {}", sf.get_method());
+      /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
+      ///   console::write_line(" Offset: {}", sf.get_offset());
+      /// @endcode
+      virtual const std::string& get_method() const;
       
-      virtual std::string to_string() const {return xtd::strings::format("{} at {}  in file:line:column {} : {} : {}", method_name_.empty() ? "<unknown method>" : method_name_, file_path_.empty() ? "<unknown offset>" : std::to_string(offset_), file_path_.empty() ? "<filename unknown>" : file_path_, file_line_, file_column_);}
+      /// @brief Gets the offset from the start of the code for the method that is being executed.
+      /// @return The offset from the code for the method that is being executed.
+      /// @par Examples
+      /// The following example demonstrates the use of the get_offset() method. This code example is part of a larger example provided for the xtd::diagnostics::stack_frame class.
+      /// @code
+      /// // Display the stack frame properties.
+      /// stack_frame sf = st.get_frame(i);
+      /// console::write_line(" File: {}", sf.get_file_name());
+      /// console::write_line(" Line Number: {}", sf.get_file_line_number());
+      /// // Note that the column number defaults to zero when not initialized.
+      /// console::write_line(" Column Number: {}", sf.get_file_column_number());
+      /// console::write_line(" Method: {}", sf.get_method());
+      /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
+      ///   console::write_line(" Offset: {}", sf.get_offset());
+      /// @endcode
+      virtual size_t get_offset() const;
+      
+      /// @brief Builds a readable representation of the stack trace.
+      /// @return A readable representation of the stack trace.
+      virtual std::string to_string() const;
 
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::diagnostics::stack_frame& stack_frame) noexcept {return os << stack_frame.to_string();}
       /// @endcond
 
+      /// @brief Defines the value that is returned from the get_offset() method when the offset is unknown. This field is constant.
+      /// @remarks The value of this constant is 0xFFFFFFFFFFFFFFFF.
+      static constexpr const size_t npos = 0xFFFFFFFFFFFFFFFF;
+      
+      /// @brief Defines the value that is returned from the get_offset() method when the offset is unknown. This field is constant.
+      /// @remarks The value of this constant is 0xFFFFFFFFFFFFFFFF.
+      static constexpr const size_t OFFSET_UNKNOWN = npos;
+      
     private:
       friend class stack_trace;
-      stack_frame(const std::string& file_path, size_t file_line, size_t file_column, const std::string& method_name, size_t offset) : file_path_(file_path), file_line_(file_line), file_column_(file_column), method_name_(method_name), offset_(offset) {}
-      stack_frame(const std::string& method_name, size_t offset) : method_name_(method_name), offset_(offset) {}
+      stack_frame(const std::string& file_path, size_t file_line, size_t file_column, const std::string& method_name, size_t offset);
+      stack_frame(const std::string& method_name, size_t offset);
 
       std::string file_path_;
       size_t file_line_ = 0;

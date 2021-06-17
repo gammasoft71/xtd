@@ -22,7 +22,7 @@ namespace {
   string generate_stack_trace_string_report(int32_t indent) {
     std::string report = strings::format("{}Stack trace{}", indent_string(indent), environment::new_line());
     auto stack_trace = system_report::stack_trace();
-    for (auto frame : stack_trace.frames())
+    for (auto frame : stack_trace.get_frames())
       report += strings::format("{}{}{}", indent_string(indent +1), frame, environment::new_line());
     return report + environment::new_line();
   }

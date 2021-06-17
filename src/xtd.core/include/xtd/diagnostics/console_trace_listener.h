@@ -16,7 +16,7 @@ namespace xtd {
     /// @par Examples
     /// The following example shows how to use console_trace_listener class.
     /// @include console_trace_listener.cpp
-    class console_trace_listener : public ostream_trace_listener {
+    class console_trace_listener : public xtd::diagnostics::ostream_trace_listener {
     public:
       /// @brief Initializes a new instance of the console_trace_listener class with trace output written to the standard output stream.
       /// @remarks This constructor initializes a console_trace_listener object to write messages to either the std::cout or the std::cerr stream. Its Name property is initialized to an empty string ("").
@@ -27,7 +27,7 @@ namespace xtd {
       console_trace_listener(bool use_error_stream);
       
     private:
-      using ostream_trace_listener::ostream;
+      using xtd::diagnostics::ostream_trace_listener::ostream;
     };
   }
 }

@@ -23,7 +23,9 @@ namespace xtd {
       maximized = 3,
     };
 
+    /// @cond
     inline std::ostream& operator<<(std::ostream& os, xtd::diagnostics::process_window_style value) {return os << to_string(value, {{diagnostics::process_window_style::normal, "normal"}, {diagnostics::process_window_style::hidden, "hidden"}, {diagnostics::process_window_style::minimized, "minimized"}, {diagnostics::process_window_style::maximized, "maximized"}});}
     inline std::wostream& operator<<(std::wostream& os, xtd::diagnostics::process_window_style value) {return os << to_string(value, {{diagnostics::process_window_style::normal, L"normal"}, {diagnostics::process_window_style::hidden, L"hidden"}, {diagnostics::process_window_style::minimized, L"minimized"}, {diagnostics::process_window_style::maximized, L"maximized"}});}
+    /// @endcond
   }
 }

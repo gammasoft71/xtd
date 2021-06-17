@@ -824,12 +824,12 @@ namespace xtd {
       /// @brief Gets the window state to use when the process is started.
       /// @return One of the enumeration values that indicates whether the process is started in a window that is maximized, minimized, normal (neither maximized nor minimized), or not visible. The default is xtd::diagnostics::process_window_style::normal.
       /// @exception xtd::invalid_enum_argument_exception The window style is not one of the xtd::diagnostics::process_window_style enumeration members.
-      process_window_style window_style() const;
+      xtd::diagnostics::process_window_style window_style() const;
       /// @brief Sets the window state to use when the process is started.
       /// @param value One of the enumeration values that indicates whether the process is started in a window that is maximized, minimized, normal (neither maximized nor minimized), or not visible. The default is xtd::diagnostics::process_window_style::normal.
       /// @return The current instance of process_start_info.
       /// @exception xtd::invalid_enum_argument_exception The window style is not one of the xtd::diagnostics::process_window_style enumeration members.
-      process_start_info& window_style(process_window_style value);
+      process_start_info& window_style(xtd::diagnostics::process_window_style value);
       
       /// @brief When the xtd::diagnostics::process_start_info::use_shell_execute property is false, gets or sets the working directory for the process to be started. When xtd::diagnostics::process_start_info::use_shell_execute is true, gets or sets the directory that contains the process to be started.
       /// @return When xtd::diagnostics::process_start_info::use_shell_execute is true, the fully qualified name of the directory that contains the process to be started. When the xtd::diagnostics::process_start_info::use_shell_execute property is false, the working directory for the process to be started. The default is an empty string ("").
@@ -867,7 +867,7 @@ namespace xtd {
       std::string user_name_;
       bool use_shell_execute_ = true;
       std::string verb_;
-      process_window_style window_style_ = process_window_style::normal;
+      xtd::diagnostics::process_window_style window_style_ = xtd::diagnostics::process_window_style::normal;
       std::string working_directory_;
     };
   }
