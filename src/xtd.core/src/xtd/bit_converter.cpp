@@ -145,8 +145,8 @@ string bit_converter::to_string(const vector<uint8_t>& value, size_t start_index
 
 string bit_converter::to_string(const vector<uint8_t>& value, size_t start_index, size_t length) {
   if (value.size() == 0 && start_index == 0 && length == 0) return "";
-  if (start_index >= value.size()) throw xtd::argument_out_of_range_exception(caller_info_);
-  if (start_index + length > value.size()) throw argument_out_of_range_exception(caller_info_);
+  if (start_index >= value.size()) throw xtd::argument_out_of_range_exception(current_stack_frame_);
+  if (start_index + length > value.size()) throw argument_out_of_range_exception(current_stack_frame_);
 
   string str;
   for (size_t index = start_index; index < start_index + length; index++)

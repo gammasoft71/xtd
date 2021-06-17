@@ -24,7 +24,7 @@ namespace xtd {
       private:
         enum class character_casing {normal, upper, lower};
         wx_text_box(const forms::create_params& create_params) {
-          if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, caller_info_);
+          if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
           int32_t height = create_params.height();
 #if defined(__WXGTK__)
           if (height < 32) height = 32;

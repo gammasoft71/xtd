@@ -816,7 +816,7 @@ namespace xtd {
       size_t get_child_index(intptr_t child) const {
         for (size_t index = 0;index < controls().size(); ++index)
         if (controls()[index].get().handle() == child) return index;
-        throw xtd::argument_exception(caller_info_);
+        throw xtd::argument_exception(current_stack_frame_);
       }
 
       /// @brief Retrieves the index of the specified child control within the control collection, and optionally raises an exception if the specified control is not within the control collection.

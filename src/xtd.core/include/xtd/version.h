@@ -60,7 +60,7 @@ namespace xtd {
         case 3: return version(std::stoi(versions[0]), std::stoi(versions[1]), std::stoi(versions[2]));
         case 4: return version(std::stoi(versions[0]), std::stoi(versions[1]), std::stoi(versions[2]), std::stoi(versions[3]));
       }
-      throw xtd::format_exception(caller_info_);
+      throw xtd::format_exception(current_stack_frame_);
     }
     
     static bool try_parse(const std::string& ver, version& result) noexcept {
@@ -76,7 +76,7 @@ namespace xtd {
     
     std::string to_string(size_t field_count) const {
       if (field_count > 4 || (field_count >= 3 && build_ == -1) || (field_count == 4 && revision_ == -1))
-        throw xtd::argument_exception("Field count invalid"_t, caller_info_);
+        throw xtd::argument_exception("Field count invalid"_t, current_stack_frame_);
       std::stringstream result;
       if (field_count >= 1)
         result << std::to_string(major_);

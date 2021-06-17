@@ -22,7 +22,7 @@ namespace xtd {
         friend xtd::forms::native::control;
       private:
         wx_checked_list_box(const forms::create_params& create_params) {
-          if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, caller_info_);
+          if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
           control_handler::create<wxCheckListBox>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxPoint(create_params.x(), create_params.y()), wxSize(0, 0), 0, nullptr, style_to_wx_style(create_params.style(), create_params.ex_style()));
           // Workaround : with wxWidgets version <= 3.1.4 checked item alignment error on macos...
           static_cast<wxCheckListBox*>(control())->SetSize(create_params.width(), create_params.height());

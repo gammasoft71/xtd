@@ -55,7 +55,7 @@ combo_box& combo_box::drop_down_style(combo_box_style drop_down_style) {
 
 list_control& combo_box::selected_index(size_t selected_index) {
   if (selected_index_ != selected_index) {
-    if (selected_index != npos && selected_index >= items_.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t, caller_info_);
+    if (selected_index != npos && selected_index >= items_.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t, current_stack_frame_);
     selected_index_ = selected_index;
     native::combo_box::selected_index(handle(), selected_index_);
 
