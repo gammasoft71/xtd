@@ -20,7 +20,7 @@ int main() {
 
 // This code can produce the following output:
 //
-// stack_frame: /!---OMITTED---!/current_stack_frame.cpp:15:0
+// stack_frame: /!---OMITTED---!/csf.cpp:15:0
 //
 // Message: Something happened.
 // Method name: main
