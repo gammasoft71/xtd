@@ -123,11 +123,7 @@ namespace xtd {
 
       /// @brief Defines the value that is returned from the get_offset() method when the offset is unknown. This field is constant.
       /// @remarks The value of this constant is 0xFFFFFFFFFFFFFFFF.
-      static constexpr const size_t npos = 0xFFFFFFFFFFFFFFFF;
-      
-      /// @brief Defines the value that is returned from the get_offset() method when the offset is unknown. This field is constant.
-      /// @remarks The value of this constant is 0xFFFFFFFFFFFFFFFF.
-      static constexpr const size_t OFFSET_UNKNOWN = npos;
+      static constexpr const size_t OFFSET_UNKNOWN = 0xFFFFFFFFFFFFFFFF;
       
     private:
       friend class stack_trace;
@@ -138,7 +134,7 @@ namespace xtd {
       size_t file_line_ = 0;
       size_t file_column_ = 0;
       std::string method_name_;
-      size_t offset_ = 0;
+      size_t offset_ = OFFSET_UNKNOWN;
     };
   }
 }
