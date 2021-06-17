@@ -55,7 +55,7 @@ namespace xtd {
       
     private:
       friend class xtd::system_exception;
-      std::string to_string(size_t skip_frames, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) const;
+      std::string to_string(size_t skip_frames, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::empty()) const;
       stack_trace(const std::string& str, size_t skip_frames, bool need_file_info);
       frame_collection frames_;
     };
