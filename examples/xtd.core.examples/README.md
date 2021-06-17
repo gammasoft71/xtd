@@ -29,6 +29,8 @@
 
 ## [Diagnostics](diagnostics/README.md)
 
+* [console_trace_listener](diagnostics/console_trace_listener/README.md) shows how to use [xtd::diagnostics/console_trace_listener](../../src/xtd.core/include/xtd/diagnostics/console_trace_listener.h) class.
+* [stack_frame](diagnostics/stack_frame/README.md) shows how to use [xtd::diagnostics/stack_frame](../../src/xtd.core/include/xtd/diagnostics/stack_frame.h) class.
 * [stack_trace](diagnostics/stack_trace/README.md) shows how to use [xtd::diagnostics/stack_trace](../../src/xtd.core/include/xtd/diagnostics/stack_trace.h) class.
 * [stopwatch](diagnostics/stopwatch/README.md) shows how to use [xtd::diagnostics/stopwatch](../../src/xtd.core/include/xtd/diagnostics/stopwatch.h) class.
 

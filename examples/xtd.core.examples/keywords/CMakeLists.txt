@@ -5,7 +5,8 @@ find_package(xtd REQUIRED)
 
 add_projects(
   block_scope
-  caller_info
+  current_stack_frame
+  csf
   interface
   interface2
   startup

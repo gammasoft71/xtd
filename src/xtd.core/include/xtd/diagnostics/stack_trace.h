@@ -28,6 +28,7 @@ namespace xtd {
       
       stack_trace() : stack_trace("", METHODS_TO_SKIP, false) {}
       explicit stack_trace(bool need_file_info) : stack_trace("", METHODS_TO_SKIP, need_file_info) {}
+      explicit stack_trace(const xtd::diagnostics::stack_frame& frame);
       explicit stack_trace(size_t skip_frames) : stack_trace("", skip_frames, false) {}
       stack_trace(size_t skip_frames, bool need_file_info) : stack_trace("", skip_frames, need_file_info) {}
       stack_trace(const std::exception& exception) : stack_trace(xtd::strings::full_class_name(exception), METHODS_TO_SKIP, false) {}
@@ -37,14 +38,13 @@ namespace xtd {
       /// @cond
       stack_trace(const stack_trace&) = default;
       stack_trace& operator=(const stack_trace&) = default;
-      ~stack_trace();
       /// @endcond
       
-      size_t frame_count() const {return data_->frames_.size();}
+      size_t frame_count() const {return frames_.size();}
       
-      const xtd::diagnostics::stack_frame& get_frame(size_t index) {return data_->frames_[index];}
+      const xtd::diagnostics::stack_frame& get_frame(size_t index) {return frames_[index];}
             
-      const frame_collection& get_frames() const {return data_->frames_;}
+      const frame_collection& get_frames() const {return frames_;}
       
       std::string to_string() const {return to_string(0);}
 
@@ -58,12 +58,7 @@ namespace xtd {
       friend class xtd::system_exception;
       std::string to_string(size_t skip_frames, const xtd::caller_info& info = xtd::caller_info::empty()) const;
       stack_trace(const std::string& str, size_t skip_frames, bool need_file_info);
-      void get_frames(const std::string& str, size_t skip_frames, bool need_file_info);
-      struct data {
-        frame_collection frames_;
-        intptr_t handle_ = 0;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      frame_collection frames_;
     };
   }
 }
