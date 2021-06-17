@@ -69,7 +69,7 @@
 * [format_with_alignment](format/format_with_alignment/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with specified alignment args.
 * [format_with_order](format/format_with_order/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with specified order args.
 
-## [Keywords examples](keywords/README.md)
+## [Keywords](keywords/README.md)
 
 * [block_scope](keywords/block_scope/README.md) shows how to use [xtd::block_scope](../../../src/xtd.core/include/xtd/block_scope.h) method.
 * [current_stack_frame](keywords/current_stack_frame/README.md) shows how to use [xtd::diagnostics::stack_frame(../../../src/xtd.core/include/xtd/diagnostics/starck_frame.h) method.
