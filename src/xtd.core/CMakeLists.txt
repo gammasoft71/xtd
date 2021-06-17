@@ -19,7 +19,6 @@ add_sources(
   include/xtd/bit_converter.h
   include/xtd/block_scope.h
   include/xtd/build_type.h
-  include/xtd/caller_info.h
   include/xtd/cdebug.h
   include/xtd/cnull.h
   include/xtd/compiler.h

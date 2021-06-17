@@ -80,7 +80,7 @@ namespace xtd {
     /// @remarks The next(int32_t, int32_t) overload returns random integers that range from min_value to max_value – 1. However, if max_value equals min_value, the method returns min_value.
     /// @remarks Unlike the other overloads of the next method, which return only non-negative values, this method can return a negative random integer.
     virtual int32_t next(int32_t min_value, int32_t max_value) const {
-      if (min_value > max_value) throw argument_out_of_range_exception(caller_info_);
+      if (min_value > max_value) throw argument_out_of_range_exception(current_stack_frame_);
       if (min_value == max_value) return min_value;
       return min_value + static_cast<int32_t>(std::round(sample() * std::numeric_limits<int32_t>::max())) % ((max_value - 1) - min_value + 1);
     }
@@ -94,7 +94,7 @@ namespace xtd {
     /// @remarks Unlike the other overloads of the next method, which return only non-negative values, this method can return a negative random integer.
     template<typename value_t>
     value_t next(value_t min_value, value_t max_value) const {
-      if (min_value > max_value) throw argument_out_of_range_exception(caller_info_);
+      if (min_value > max_value) throw argument_out_of_range_exception(current_stack_frame_);
       if (min_value == max_value) return min_value;
       return min_value + static_cast<value_t>(std::round(sample() * std::numeric_limits<value_t>::max())) % ((max_value - 1) - min_value + 1);
     }
@@ -109,7 +109,7 @@ namespace xtd {
     /// @exception argument_null_exception buffer is null.
     /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<uint8_t>::max().
     virtual void next_bytes(uint8_t* buffer, size_t buffer_size) const {
-      if (buffer == nullptr) throw argument_null_exception(caller_info_);
+      if (buffer == nullptr) throw argument_null_exception(current_stack_frame_);
       for (size_t index = 0; index < buffer_size; index++)
         buffer[index] = next<uint8_t>(0, std::numeric_limits<uint8_t>::max());
     }
@@ -126,7 +126,7 @@ namespace xtd {
     /// @remarks Each element of the array of values is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<value_t>::max().
     template<typename value_t>
     void next_values(value_t* buffer, size_t buffer_size) const {
-      if (buffer == nullptr) throw argument_null_exception(caller_info_);
+      if (buffer == nullptr) throw argument_null_exception(current_stack_frame_);
       for (size_t index = 0; index < buffer_size; index++)
       buffer[index] = next<value_t>(0, std::numeric_limits<value_t>::max());
     }

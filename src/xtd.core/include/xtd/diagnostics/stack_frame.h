@@ -210,3 +210,6 @@ xtd::diagnostics::stack_frame {__FILE__, __LINE__, __func__}
 /// @remarks same as #current_stack_frame_
 #define csf_ \
 xtd::diagnostics::stack_frame {__FILE__, __LINE__, __func__}
+
+#define add_ccurrent_stack_frame_(...) \
+__VA_ARGS__ __VA_ARGS_COMMA__(__VA_ARGS__) current_stack_frame_

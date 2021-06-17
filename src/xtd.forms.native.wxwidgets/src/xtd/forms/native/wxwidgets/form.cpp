@@ -79,9 +79,9 @@ void form::menu(intptr_t control, intptr_t menu) {
   }
 #endif
 
-  //if (menu != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("dialog can't have menu"_t, caller_info_);
+  //if (menu != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("dialog can't have menu"_t, current_stack_frame_);
   if (!dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) {
-    if (menu != 0) throw argument_exception("dialog can't have menu"_t, caller_info_);
+    if (menu != 0) throw argument_exception("dialog can't have menu"_t, current_stack_frame_);
     return;
   }
   static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->SetMenuBar(menu != 0 ? reinterpret_cast<wx_menu_bar*>(menu) : wx_menu_bar::create_default_menu_bar());
@@ -109,20 +109,20 @@ void form::restore(intptr_t control) {
 
 int32_t form::show_dialog(intptr_t control) {
   if (control == 0) return 0;
-  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("show_dialog work only with dialog"_t, caller_info_);
+  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("show_dialog work only with dialog"_t, current_stack_frame_);
   auto dialog = static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control());
   return dialog->ShowModal();
 }
 
 void form::show_sheet(intptr_t control) {
   if (control == 0) return;
-  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("show_sheet work only with dialog"_t, caller_info_);
+  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("show_sheet work only with dialog"_t, current_stack_frame_);
   static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())->ShowWindowModal();
 }
 
 int32_t form::show_sheet_dialog(intptr_t control) {
   if (control == 0) return 0;
-  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("show_sheet_dialog work only with dialog"_t, caller_info_);
+  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("show_sheet_dialog work only with dialog"_t, current_stack_frame_);
   auto dialog = static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control());
   
   if (!dialog->GetParent()) return dialog->ShowModal();
@@ -140,7 +140,7 @@ int32_t form::show_sheet_dialog(intptr_t control) {
 
 void form::end_dialog(intptr_t control, int32_t result) {
   if (control == 0) return;
-  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("end_dialog work only with dialog"_t, caller_info_);
+  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("end_dialog work only with dialog"_t, current_stack_frame_);
   static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())->EndModal(result);
 }
 

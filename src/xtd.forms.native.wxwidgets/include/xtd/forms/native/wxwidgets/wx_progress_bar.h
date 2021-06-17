@@ -23,7 +23,7 @@ namespace xtd {
         friend xtd::forms::native::progress_bar;
       private:
         wx_progress_bar(const forms::create_params& create_params) {
-          if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, caller_info_);
+          if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
           control_handler::create<wxGauge>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, 100, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
 #if defined(__WIN32__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {

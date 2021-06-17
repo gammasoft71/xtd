@@ -48,7 +48,7 @@ namespace xtd {
       /// @par Notes to Inheritors
       /// When overriding the dock property in a derived class, use the base class's dock property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set methods of the dock property; you can override only one if needed.
       virtual control& dock(dock_style dock) override {
-        if (control::dock() != dock_style::left && control::dock() == dock_style::right && control::dock() == dock_style::top && control::dock() == dock_style::bottom) throw argument_exception("splitter control must be docked left, right, top, or bottom."_t, caller_info_);
+        if (control::dock() != dock_style::left && control::dock() == dock_style::right && control::dock() == dock_style::top && control::dock() == dock_style::bottom) throw argument_exception("splitter control must be docked left, right, top, or bottom."_t, current_stack_frame_);
         control::dock(dock);
         cursor(default_cursor());
         if (default_width_ && (dock == dock_style::left || dock == dock_style::right)) width(3);

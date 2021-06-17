@@ -44,7 +44,7 @@ namespace xtdc_command {
         case project_type::static_library: return {project_sdk::none, project_sdk::xtd};
         case project_type::unit_test_application: return {project_sdk::catch2, project_sdk::gtest, project_sdk::xtd};
       }
-      throw xtd::argument_exception("type is not project_type valid value", caller_info_);
+      throw xtd::argument_exception("type is not project_type valid value", current_stack_frame_);
     }
     
     static std::vector<project_language> get_valid_languages(project_sdk sdk) {
@@ -64,7 +64,7 @@ namespace xtdc_command {
         case project_sdk::wxwidgets: return {project_language::cpp};
         case project_sdk::xtd: return {project_language::cpp};
       }
-      throw xtd::argument_exception("sdk is not project_sdk valid value", caller_info_);
+      throw xtd::argument_exception("sdk is not project_sdk valid value", current_stack_frame_);
     }
     
     std::string create(const std::string& name, project_type type, project_sdk sdk, project_language language) const {

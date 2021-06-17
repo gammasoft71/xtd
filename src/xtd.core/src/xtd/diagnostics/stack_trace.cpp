@@ -13,12 +13,12 @@ stack_trace::stack_trace(const std::string& str, size_t skip_frames, bool need_f
   frames_ = stack_frame::get_stack_frames(str, skip_frames + METHODS_TO_SKIP + 1, need_file_info);
 }
 
-std::string stack_trace::to_string(size_t skip_frames, const caller_info& info) const {
+std::string stack_trace::to_string(size_t skip_frames, const stack_frame& info) const {
   std::string str;
   for (size_t index = skip_frames; index < frames_.size(); ++index) {
     if (index > skip_frames) str += xtd::environment::new_line();
     str += "   at " + frames_[index].get_method();
-    if (index == skip_frames && info != caller_info::empty()) str += xtd::strings::format(" [0x{:X8}] in {}:line {}", frames_[index].get_offset(), info.file_path(), info.line_number());
+    if (index == skip_frames && info != stack_frame::empty()) str += xtd::strings::format(" [0x{:X8}] in {}:line {}", frames_[index].get_offset(), info.get_file_name(), info.get_file_line_number());
     else if (!frames_[index].get_file_name().empty()) str += xtd::strings::format(" [0x{:X8}] in {}:line {}", frames_[index].get_offset(), frames_[index].get_file_name(), frames_[index].get_file_line_number());
   }
   return str;

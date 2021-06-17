@@ -14,7 +14,6 @@
 #include "bit_converter.h"
 #include "block_scope.h"
 #include "build_type.h"
-#include "caller_info.h"
 #include "cdebug.h"
 #include "cnull.h"
 #include "compiler.h"

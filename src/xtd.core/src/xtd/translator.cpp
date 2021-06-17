@@ -85,7 +85,7 @@ void translator::parse_file(const std::filesystem::path& file, const std::string
     if (xtd::strings::starts_with(line, "#")) continue;
     if (key.empty() && xtd::strings::starts_with(line, "key ")) key = xtd::strings::trim(xtd::strings::remove(line, 0, 4), '"');
     else if (!key.empty() && xtd::strings::starts_with(line, "value ")) value = xtd::strings::trim(xtd::strings::remove(line, 0, 6), '"');
-    else throw xtd::format_exception(xtd::strings::format("file {} has an invalid format at line {}", file, line_count), caller_info_);
+    else throw xtd::format_exception(xtd::strings::format("file {} has an invalid format at line {}", file, line_count), current_stack_frame_);
     if (!key.empty() && !value.empty()) {
       add_value(language, key, value);
       key = value = "";

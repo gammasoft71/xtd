@@ -92,6 +92,7 @@ size_t stack_frame::get_offset() const {
 }
 
 string stack_frame::to_string() const {
+  if (*this == empty()) return "";
   return strings::format("{} at offset {} in file:line:column {}:{}:{}", method_name_.empty() ? "<unknown method>" : method_name_, file_name_.empty() ? "<unknown offset>" : std::to_string(offset_), file_name_.empty() ? "<filename unknown>" : file_name_, file_line_number_, file_column_number_);
 }
 
