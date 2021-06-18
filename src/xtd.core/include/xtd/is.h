@@ -2,6 +2,7 @@
 /// @brief Contains xtd::is method.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+#include <any>
 #include <limits>
 #include <stdexcept>
 #include "parse.h"
@@ -263,6 +264,16 @@ namespace xtd {
   template<>
   inline bool is<ullong_t>(ullong_t value) {
     return true;
+  }
+
+  template<typename type_t>
+  bool is(std::any value) {
+    try {
+      any_cast<type_t>(value);
+      return true;
+    } catch (const std::bad_cast&) {
+      return false;
+    }
   }
 
   template<typename type_t, typename param_t>
