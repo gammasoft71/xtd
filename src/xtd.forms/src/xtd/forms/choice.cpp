@@ -43,7 +43,7 @@ choice::choice() {
 
 list_control& choice::selected_index(size_t selected_index) {
   if (selected_index_ != selected_index) {
-    if (selected_index != npos && selected_index >= items_.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t, caller_info_);
+    if (selected_index != npos && selected_index >= items_.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t, current_stack_frame_);
     selected_index_ = selected_index;
     native::choice::selected_index(handle(), selected_index_);
 

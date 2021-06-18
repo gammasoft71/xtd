@@ -18,57 +18,57 @@ namespace xtd {
     class path_too_long_exception : public ioexception {
     public:
       /// @brief Create a new instance of class path_too_long_exception
-      /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
+      /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       /// @remarks Message is set with the default message associate to the exception.
-      path_too_long_exception(const xtd::caller_info& info = xtd::caller_info::empty()) : ioexception(default_message(), info) {}
+      path_too_long_exception(const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(default_message(), info) {}
       /// @brief Create a new instance of class path_too_long_exception
       /// @param message Message string associate to the exception.
-      /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
-      explicit path_too_long_exception(const std::string& message, const xtd::caller_info& info = xtd::caller_info::empty()) : ioexception(message, info) {}
-      /// @brief Create a new instance of class path_too_long_exception
-      /// @param message Message string associate to the exception.
-      /// @param error Error code associate to the exception.
-      /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
-      explicit path_too_long_exception(const std::string& message, const std::error_code& error, const xtd::caller_info& info = xtd::caller_info::empty()) : ioexception(message, error, info) {}
-      /// @brief Create a new instance of class path_too_long_exception
-      /// @param message Message string associate to the exception.
-      /// @param help_link Help link string associate to the exception.
-      /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
-      explicit path_too_long_exception(const std::string& message, const std::string& help_link, const xtd::caller_info& info = xtd::caller_info::empty()) : ioexception(message, help_link, info) {}
+      /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      explicit path_too_long_exception(const std::string& message, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(message, info) {}
       /// @brief Create a new instance of class path_too_long_exception
       /// @param message Message string associate to the exception.
       /// @param error Error code associate to the exception.
+      /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      explicit path_too_long_exception(const std::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(message, error, info) {}
+      /// @brief Create a new instance of class path_too_long_exception
+      /// @param message Message string associate to the exception.
       /// @param help_link Help link string associate to the exception.
-      explicit path_too_long_exception(const std::string& message, const std::error_code& error, const std::string& help_link, const xtd::caller_info& info = xtd::caller_info::empty()) : ioexception(message, error, help_link, info) {}
+      /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      explicit path_too_long_exception(const std::string& message, const std::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(message, help_link, info) {}
+      /// @brief Create a new instance of class path_too_long_exception
+      /// @param message Message string associate to the exception.
+      /// @param error Error code associate to the exception.
+      /// @param help_link Help link string associate to the exception.
+      explicit path_too_long_exception(const std::string& message, const std::error_code& error, const std::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(message, error, help_link, info) {}
       /// @brief Create a new instance of class path_too_long_exception
       /// @param inner_exception The exception that is the cause of the current exception.
-      /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
+      /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       /// @remarks Message is set with the default message associate to the exception.
-      path_too_long_exception(const std::exception& inner_exception, const xtd::caller_info& info = xtd::caller_info::empty()) : ioexception(default_message(), inner_exception, info) {}
+      path_too_long_exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(default_message(), inner_exception, info) {}
       /// @brief Create a new instance of class path_too_long_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
-      /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
-      explicit path_too_long_exception(const std::string& message, const std::exception& inner_exception, const xtd::caller_info& info = xtd::caller_info::empty()) : ioexception(message, inner_exception, info) {}
-      /// @brief Create a new instance of class path_too_long_exception
-      /// @param message Message string associate to the exception.
-      /// @param inner_exception The exception that is the cause of the current exception.
-      /// @param error Error code associate to the exception.
-      /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
-      explicit path_too_long_exception(const std::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::caller_info& info = xtd::caller_info::empty()) : ioexception(message, inner_exception, error, info) {}
-      /// @brief Create a new instance of class path_too_long_exception
-      /// @param message Message string associate to the exception.
-      /// @param inner_exception The exception that is the cause of the current exception.
-      /// @param help_link Help link string associate to the exception.
-      /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
-      explicit path_too_long_exception(const std::string& message, const std::exception& inner_exception, const std::string& help_link, const xtd::caller_info& info = xtd::caller_info::empty()) : ioexception(message, inner_exception, help_link, info) {}
+      /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      explicit path_too_long_exception(const std::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(message, inner_exception, info) {}
       /// @brief Create a new instance of class path_too_long_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param error Error code associate to the exception.
+      /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      explicit path_too_long_exception(const std::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(message, inner_exception, error, info) {}
+      /// @brief Create a new instance of class path_too_long_exception
+      /// @param message Message string associate to the exception.
+      /// @param inner_exception The exception that is the cause of the current exception.
       /// @param help_link Help link string associate to the exception.
-      /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
-      explicit path_too_long_exception(const std::string& message, const std::exception& inner_exception, const std::error_code& error, const std::string& help_link, const xtd::caller_info& info = xtd::caller_info::empty()) : ioexception(message, inner_exception, error, help_link, info) {}
+      /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      explicit path_too_long_exception(const std::string& message, const std::exception& inner_exception, const std::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(message, inner_exception, help_link, info) {}
+      /// @brief Create a new instance of class path_too_long_exception
+      /// @param message Message string associate to the exception.
+      /// @param inner_exception The exception that is the cause of the current exception.
+      /// @param error Error code associate to the exception.
+      /// @param help_link Help link string associate to the exception.
+      /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      explicit path_too_long_exception(const std::string& message, const std::exception& inner_exception, const std::error_code& error, const std::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(message, inner_exception, error, help_link, info) {}
       
       /// @cond
       path_too_long_exception(const path_too_long_exception&) = default;

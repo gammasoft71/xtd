@@ -5,45 +5,61 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 
+stack_trace::stack_trace() : stack_trace("", METHODS_TO_SKIP, false) {
+}
+
+stack_trace::stack_trace(bool need_file_info) : stack_trace("", METHODS_TO_SKIP, need_file_info) {
+}
+
+stack_trace::stack_trace(const stack_frame& frame) {
+  frames_.push_back(frame);
+}
+
 stack_trace::stack_trace(const std::string& str, size_t skip_frames, bool need_file_info) {
-  data_->handle_ = reinterpret_cast<intptr_t>(new stacktrace::call_stack(3));
-  get_frames(str, skip_frames, need_file_info);
+  frames_ = stack_frame::get_stack_frames(str, skip_frames + METHODS_TO_SKIP + 1, need_file_info);
 }
 
-stack_trace::~stack_trace() {
-  if (data_.use_count() == 1) delete reinterpret_cast<stacktrace::call_stack*>(data_->handle_);
+stack_trace::stack_trace(size_t skip_frames) : stack_trace("", skip_frames, false) {
 }
 
-std::string stack_trace::to_string(size_t skip_frames, const caller_info& info) const {
+stack_trace::stack_trace(size_t skip_frames, bool need_file_info) : stack_trace("", skip_frames, need_file_info) {
+}
+
+stack_trace::stack_trace(const std::exception& exception) : stack_trace(xtd::strings::full_class_name(exception), METHODS_TO_SKIP, false) {
+}
+
+stack_trace::stack_trace(const std::exception& exception, bool need_file_info) : stack_trace(xtd::strings::full_class_name(exception), METHODS_TO_SKIP, need_file_info) {
+}
+
+stack_trace::stack_trace(const std::exception& exception, size_t skip_frames) : stack_trace(xtd::strings::full_class_name(exception), skip_frames, false) {
+}
+
+stack_trace::stack_trace(const std::exception& exception, size_t skip_frames, bool need_file_info) : stack_trace(xtd::strings::full_class_name(exception), skip_frames, need_file_info) {
+}
+
+size_t stack_trace::frame_count() const {
+  return frames_.size();
+}
+
+const xtd::diagnostics::stack_frame& stack_trace::get_frame(size_t index) {
+  return frames_[index];
+}
+
+const stack_trace::stack_frame_collection& stack_trace::get_frames() const {
+  return frames_;
+}
+
+std::string stack_trace::to_string() const {
+  return to_string(0);
+}
+
+std::string stack_trace::to_string(size_t skip_frames, const stack_frame& stack_frame) const {
   std::string str;
-  for (size_t index = skip_frames; index < data_->frames_.size(); ++index) {
+  for (size_t index = skip_frames; index < frames_.size(); ++index) {
     if (index > skip_frames) str += xtd::environment::new_line();
-    str += "   at " + data_->frames_[index].method_name();
-    if (index == skip_frames && info != caller_info::empty()) str += xtd::strings::format(" [0x{:X8}] in {}:line {}", data_->frames_[index].offset(), info.file_path(), info.line_number());
-    else if (!data_->frames_[index].file_path().empty()) str += xtd::strings::format(" [0x{:X8}] in {}:line {}", data_->frames_[index].offset(), data_->frames_[index].file_path(), data_->frames_[index].file_line());
+    str += "   at " + frames_[index].get_method();
+    if (index == skip_frames && stack_frame != stack_frame::empty()) str += xtd::strings::format(" [0x{:X8}] in {}:line {}", frames_[index].get_offset(), stack_frame.get_file_name(), stack_frame.get_file_line_number());
+    else if (!frames_[index].get_file_name().empty()) str += xtd::strings::format(" [0x{:X8}] in {}:line {}", frames_[index].get_offset(), frames_[index].get_file_name(), frames_[index].get_file_line_number());
   }
   return str;
 }
-
-void stack_trace::get_frames(const std::string& str, size_t skip_frames, bool need_file_info) {
-  size_t skip_frames_before_str = 0;
-  if (!str.empty()) {
-    skip_frames_before_str = reinterpret_cast<stacktrace::call_stack*>(data_->handle_)->stack.size();
-    for (size_t index = 0; index < reinterpret_cast<stacktrace::call_stack*>(data_->handle_)->stack.size(); ++index) {
-      if (xtd::strings::starts_with(reinterpret_cast<stacktrace::call_stack*>(data_->handle_)->stack[index].function, str)) {
-        skip_frames_before_str = index;
-        break;
-      }
-    }
-  }
-
-  if (reinterpret_cast<stacktrace::call_stack*>(data_->handle_)->stack.size() > 0) {
-    for (size_t index = 0; index < reinterpret_cast<stacktrace::call_stack*>(data_->handle_)->stack.size() - 1; ++index) {
-      if (index > skip_frames_before_str + skip_frames) {
-        if (need_file_info) data_->frames_.push_back({reinterpret_cast<stacktrace::call_stack*>(data_->handle_)->stack[index].file, reinterpret_cast<stacktrace::call_stack*>(data_->handle_)->stack[index].line, reinterpret_cast<stacktrace::call_stack*>(data_->handle_)->stack[index].column, reinterpret_cast<stacktrace::call_stack*>(data_->handle_)->stack[index].function, reinterpret_cast<stacktrace::call_stack*>(data_->handle_)->stack[index].offset});
-        else data_->frames_.push_back({reinterpret_cast<stacktrace::call_stack*>(data_->handle_)->stack[index].function, reinterpret_cast<stacktrace::call_stack*>(data_->handle_)->stack[index].offset});
-      }
-    }
-  }
-}
-

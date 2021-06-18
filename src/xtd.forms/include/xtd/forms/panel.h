@@ -57,6 +57,8 @@ namespace xtd {
       forms::create_params create_params() const override;
       
       drawing::size measure_control() const override;
+      
+      void on_handle_created(const event_args& e) override;
 
       void on_layout(const event_args& e) override;
       

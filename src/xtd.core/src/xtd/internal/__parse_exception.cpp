@@ -5,9 +5,9 @@
 #include "../../../include/xtd/index_out_of_range_exception.h"
 
 void __throw_parse_argument_exception(const std::string& message) {
-  throw xtd::argument_exception(message, caller_info_);
+  throw xtd::argument_exception(message, current_stack_frame_);
 }
 
 void __throw_parse_index_out_of_range_exception() {
-  throw xtd::index_out_of_range_exception(caller_info_);
+  throw xtd::index_out_of_range_exception(current_stack_frame_);
 }

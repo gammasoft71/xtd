@@ -1,6 +1,7 @@
 #include <utility>
 #include <vector>
 #include <xtd/literals.h>
+#include <xtd/drawing/colors.h>
 #include <xtd/forms/application.h>
 #include <xtd/forms/form.h>
 #include <xtd/forms/label.h>
@@ -15,6 +16,8 @@ public:
   form1() {
     text("Labels and Unicode text example");
     client_size({400, 350});
+    back_color(colors::dark_cyan());
+    fore_color(colors::black());
 
     for (auto index = 0U; index < languages.size(); ++index) {
       items[index].first.location(point(10, 10 + index * 30)).parent(*this).text(languages[index].first).width(150);

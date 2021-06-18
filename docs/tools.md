@@ -6,6 +6,7 @@
 
 * [xtdc](../tools/xtdc/README.md) is project management command line tool.
 * [guidgen](../tools/guidgen/README.md) is a guid generator command line tool.
+* [sleepfor](../tools/sleepfor/README.md) is a gsleep for duration command line tool.
 
 ## GUI tools
 

@@ -36,7 +36,7 @@ namespace xtd {
             if (text[index] == '/' && text[index+1] == '*') {
               // Skip comments...
               index = xtd::strings::index_of(text, "*/", index+2);
-              if (index == text.npos) throw xtd::format_exception("expected end comment", caller_info_);
+              if (index == text.npos) throw xtd::format_exception("expected end comment", current_stack_frame_);
               index++;
               start_index = index + 1;
               continue;
@@ -52,12 +52,12 @@ namespace xtd {
               status = parse_status::selector;
             } else if (status == parse_status::key && text[index] == ':') {
               current_key = xtd::strings::trim(xtd::strings::substring(text, start_index, index - start_index));
-              if (current_key.empty()) throw xtd::format_exception("key cannot be empty", caller_info_);
+              if (current_key.empty()) throw xtd::format_exception("key cannot be empty", current_stack_frame_);
               start_index = index + 1;
               status = parse_status::value;
             } else if (status == parse_status::value && text[index] == ';') {
               auto value = xtd::strings::trim(xtd::strings::substring(text, start_index, index - start_index));
-              if (value.empty()) throw xtd::format_exception("value cannot be empty", caller_info_);
+              if (value.empty()) throw xtd::format_exception("value cannot be empty", current_stack_frame_);
               start_index = index + 1;
               current_selector.properties()[current_key] = property(value);
               status = parse_status::key;

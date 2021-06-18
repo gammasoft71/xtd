@@ -44,9 +44,24 @@ std::string screen::device_name(size_t index) {
   return device_name.empty() ? strings::format("\\\\.\\DISPLAY{}", index + 1) : device_name;
 }
 
+int32_t screen::pixels_per_inch(size_t index) {
+  application::initialize();
+  return wxDisplay(static_cast<int32_t>(index)).GetPPI().GetHeight();
+}
+
 bool screen::primary(size_t index) {
   application::initialize();
   return wxDisplay(static_cast<int32_t>(index)).IsPrimary();
+}
+
+double screen::scale_factor(size_t index) {
+  application::initialize();
+  return wxDisplay(static_cast<int32_t>(index)).GetScaleFactor();
+}
+
+int32_t screen::standard_pixels_per_inch() {
+  application::initialize();
+  return wxDisplay::GetStdPPIValue();
 }
 
 rectangle screen::working_area(size_t index) {

@@ -18,7 +18,7 @@ namespace {
     int result = IDOK;
     if ((style & MB_RETRYCANCEL) == MB_RETRYCANCEL) result = return_code == NSAlertFirstButtonReturn ? IDRETRY : IDCANCEL;
     else if ((style & MB_YESNOCANCEL) == MB_YESNOCANCEL) result = return_code == NSAlertFirstButtonReturn ? IDYES : (return_code == NSAlertSecondButtonReturn ? IDNO : IDCANCEL);
-    else if ((style & MB_YESNO) == MB_YESNO) result = return_code == NSAlertFirstButtonReturn ? IDYES : IDCANCEL;
+    else if ((style & MB_YESNO) == MB_YESNO) result = return_code == NSAlertFirstButtonReturn ? IDYES : IDNO;
     else if ((style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE) result = return_code == NSAlertFirstButtonReturn ? IDABORT : (return_code == NSAlertSecondButtonReturn ? IDRETRY : IDIGNORE);
     else if ((style & MB_OKCANCEL) == MB_OKCANCEL) result = return_code == NSAlertFirstButtonReturn ? IDOK : IDCANCEL;
     return result;

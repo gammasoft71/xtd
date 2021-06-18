@@ -15,7 +15,7 @@ public:
     if (fmt == "F") return name_ + " (" + rank_ + ")";
     if (fmt == "N") return name_;
     if (fmt == "R") return rank_;
-    throw format_exception(caller_info_);
+    throw format_exception(current_stack_frame_);
   }
 
   // Only this operator is needed for character class to be recognized by strings::format() without specified formating.

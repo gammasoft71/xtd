@@ -65,7 +65,7 @@ std::unique_ptr<drawing::brush> pen::brush() const {
     case drawing2d::pen_type::texture_fill: //return make_unique<texture_brush>(data_->color_); break;
     case drawing2d::pen_type::path_gradient: //return make_unique<drawing2d::path_gradient_brush>(data_->color_); break;
     case drawing2d::pen_type::linear_gradient: //return make_unique<drawing2d::linear_gradient_brush>(data_->color_); break;
-    default: throw xtd::argument_exception("pen type invalid"_t, caller_info_); break;
+    default: throw xtd::argument_exception("pen type invalid"_t, current_stack_frame_); break;
   }
 }
 
@@ -82,7 +82,7 @@ pen& pen::brush(const drawing::brush& brush) {
   //} else if (dynamic_cast<const drawing2d::linear_gradient_brush*>(&brush) != nullptr) {
   //  type_ = drawing2d::pen_type::linear_gradient;
   } else
-    throw xtd::argument_exception("brush invalid"_t, caller_info_);
+    throw xtd::argument_exception("brush invalid"_t, current_stack_frame_);
   return *this;
 }
 

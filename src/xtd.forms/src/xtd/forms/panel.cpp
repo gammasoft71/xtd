@@ -2,8 +2,11 @@
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/panel.h>
+#include <xtd/forms/native/toolkit.h>
 #include <xtd/forms/native/window_styles.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/drawing/pens.h>
+#include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/panel.h"
 
 using namespace xtd;
@@ -47,6 +50,16 @@ drawing::size panel::measure_control() const {
       bounds = drawing::rectangle::make_union(bounds, item.get().bounds());
   }
   return drawing::size(bounds.location() + bounds.size());
+}
+
+void panel::on_handle_created(const event_args& e) {
+  scrollable_control::on_handle_created(e);
+  
+  // Workaround : on macOS with wxWidgets toolkit, retina display, dark mode enabled, and border style is fixed 3d, the border is not show.
+  parent().value().get().paint += [this](control& sender, paint_event_args& e) {
+    if (environment::os_version().is_macos_platform() && native::toolkit::name() == "wxwidgets" && screen::from_handle(handle()).scale_factor() > 1. && application::dark_mode_enabled() && border_style_ == forms::border_style::fixed_3d)
+      e.graphics().draw_rectangle(xtd::drawing::pens::white(), xtd::drawing::rectangle::offset(xtd::drawing::rectangle::inflate(this->bounds(), {-2, -2}), {1, 1}));
+  };
 }
 
 void panel::on_layout(const event_args& e) {

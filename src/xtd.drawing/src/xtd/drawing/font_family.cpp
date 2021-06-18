@@ -9,9 +9,9 @@ using namespace xtd::drawing;
 
 font_family::font_family(const std::string& name) {
   data_->name_ = name;
-  if (data_->name_.empty()) throw xtd::argument_exception("name is an empty string"_t, caller_info_);
+  if (data_->name_.empty()) throw xtd::argument_exception("name is an empty string"_t, current_stack_frame_);
   data_->handle_ = native::font_family::create(name);
-  if (data_->handle_ == 0) throw xtd::argument_exception("name specifies a font that is not installed on the computer running the application."_t, caller_info_);
+  if (data_->handle_ == 0) throw xtd::argument_exception("name specifies a font that is not installed on the computer running the application."_t, current_stack_frame_);
 }
 
 font_family::font_family(text::generic_font_families generic_font_families) {
@@ -19,7 +19,7 @@ font_family::font_family(text::generic_font_families generic_font_families) {
     case text::generic_font_families::serif: *this = font_family(native::font_family::generic_serif_name()); break;
     case text::generic_font_families::sans_serif: *this = font_family(native::font_family::generic_sans_serif_name()); break;
     case text::generic_font_families::monospace: *this = font_family(native::font_family::generic_monospace_name()); break;
-    default: throw xtd::argument_exception("name specifies a font that is not installed on the computer running the application."_t, caller_info_);
+    default: throw xtd::argument_exception("name specifies a font that is not installed on the computer running the application."_t, current_stack_frame_);
   }
 }
 
@@ -30,7 +30,7 @@ font_family::font_family(const std::string& name, const text::font_collection& f
       return;
     }
 
-  throw xtd::argument_exception("name specifies a font that is not a part of specified font_collection."_t, caller_info_);
+  throw xtd::argument_exception("name specifies a font that is not a part of specified font_collection."_t, current_stack_frame_);
 }
 
 font_family::font_family(const font_family& value) {

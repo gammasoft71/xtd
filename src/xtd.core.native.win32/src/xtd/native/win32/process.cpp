@@ -15,6 +15,7 @@ using namespace std::filesystem;
 using namespace xtd::native;
 
 namespace {
+  map<intptr_t, tuple<intptr_t, intptr_t, wstring, wstring, wstring, wstring>> process_infos;
   class file_handle_streambuf : public std::streambuf {
   public:
     file_handle_streambuf(HANDLE file_handlle) : fille_handle_(file_handlle) {}
@@ -62,9 +63,19 @@ namespace {
     file_handle_streambuf stream_buf_;
   };
 
-  std::string shell_execute() {
-    return "explorer";
+  void initialize() {
+    static auto initilized = false;
+    if (initilized) return;
+    CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
+    initilized = true;
   }
+}
+
+int32_t process::base_priority(int32_t priority) {
+  static map<int32_t, int32_t> base_priorities {{IDLE_PRIORITY_CLASS, 4}, {BELOW_NORMAL_PRIORITY_CLASS, 6}, {NORMAL_PRIORITY_CLASS, 8}, {ABOVE_NORMAL_PRIORITY_CLASS, 10}, {HIGH_PRIORITY_CLASS, 13}, {REALTIME_PRIORITY_CLASS, 24}};
+  auto it = base_priorities.find(priority);
+  if (it == base_priorities.end()) it = base_priorities.find(NORMAL_PRIORITY_CLASS);
+  return it->second;
 }
 
 bool process::kill(intptr_t handle) {
@@ -72,13 +83,34 @@ bool process::kill(intptr_t handle) {
   return TerminateProcess(reinterpret_cast<HANDLE>(handle), static_cast<uint32_t>(-1)) != 0;
 }
 
-intptr_t process::shell_execute(const std::string& file_name, const std::string& arguments, const std::string& working_directory, int32_t process_window_style) {
-  map<int32_t, int32_t> window_styles {{PROCESS_WINDOW_STYLE_NORMAL, SW_NORMAL}, {PROCESS_WINDOW_STYLE_HIDDEN, SW_HIDE}, {PROCESS_WINDOW_STYLE_MINIMIZED, SW_SHOWMINIMIZED}, {PROCESS_WINDOW_STYLE_MAXIMIZED, SW_SHOWMAXIMIZED}};
-  HANDLE process = ShellExecute(nullptr, nullptr, win32::strings::to_wstring(file_name).c_str(), arguments != "" ? win32::strings::to_wstring(arguments).c_str() : nullptr, working_directory != "" ? win32::strings::to_wstring(working_directory).c_str() : nullptr, window_styles[process_window_style]);
-  return reinterpret_cast<intptr_t>(process);
+bool process::priority_class(intptr_t process, int32_t priority) {
+  return SetPriorityClass(reinterpret_cast<HANDLE>(process), priority) == TRUE;
+}
+
+intptr_t process::shell_execute(const std::string& verb, const std::string& file_name, const std::string& arguments, const std::string& working_directory, int32_t process_window_style) {
+  initialize();
+  static map<int32_t, int32_t> window_styles{{PROCESS_WINDOW_STYLE_NORMAL, SW_NORMAL}, {PROCESS_WINDOW_STYLE_HIDDEN, SW_HIDE}, {PROCESS_WINDOW_STYLE_MINIMIZED, SW_SHOWMINIMIZED}, {PROCESS_WINDOW_STYLE_MAXIMIZED, SW_SHOWMAXIMIZED}};
+  auto wverb = win32::strings::to_wstring(verb);
+  auto wfile_name = win32::strings::to_wstring(file_name);
+  auto warguments = win32::strings::to_wstring(arguments);
+  auto wworking_directory =  working_directory != "" ? win32::strings::to_wstring(working_directory) : filesystem::current_path().wstring();
+  SHELLEXECUTEINFO shell_execute_info = {};
+  shell_execute_info.cbSize = sizeof(SHELLEXECUTEINFO);
+  shell_execute_info.fMask = SEE_MASK_NOCLOSEPROCESS|SEE_MASK_FLAG_NO_UI;
+  shell_execute_info.hwnd = nullptr;
+  shell_execute_info.lpVerb = wverb != L"" ? wverb.c_str() : nullptr;
+  shell_execute_info.lpFile = wfile_name.c_str();
+  shell_execute_info.lpParameters = warguments != L"" ? warguments.c_str() : nullptr;
+  shell_execute_info.lpDirectory = wworking_directory.c_str();
+  shell_execute_info.nShow = window_styles[process_window_style];
+  shell_execute_info.hInstApp = nullptr;
+  if (ShellExecuteEx(&shell_execute_info) == 0) return 0;
+  process_infos[reinterpret_cast<intptr_t>(shell_execute_info.hInstApp)] = make_tuple(reinterpret_cast<intptr_t>(shell_execute_info.hProcess), 0, move(wverb), move(wfile_name), move(warguments), move(wworking_directory));
+  return reinterpret_cast<intptr_t>(shell_execute_info.hInstApp);
 }
 
 process::started_process process::start(const string& file_name, const string& arguments, const string& working_directory, int32_t process_window_style, int32_t process_creation_flags, tuple<bool, bool, bool> redirect_standard_streams) {
+  initialize();
   auto [redirect_standard_input, redirect_standard_output, redirect_standard_error] = redirect_standard_streams;
   STARTUPINFO startup_info {};
   startup_info.cb = sizeof(STARTUPINFOA);
@@ -115,15 +147,22 @@ process::started_process process::start(const string& file_name, const string& a
   if (redirect_standard_output) CloseHandle(pipe_stdout[1]);
   if (redirect_standard_error) CloseHandle(pipe_stderr[1]);
   
+  process_infos[reinterpret_cast<intptr_t>(process_information.hProcess)] = make_tuple(reinterpret_cast<intptr_t>(process_information.hProcess), reinterpret_cast<intptr_t>(process_information.hThread), L"", win32::strings::to_wstring(file_name), win32::strings::to_wstring(arguments), win32::strings::to_wstring(working_directory));
+
   return make_tuple(reinterpret_cast<intptr_t>(process_information.hProcess), static_cast<int32_t>(process_information.dwProcessId), make_unique<process_ostream>(pipe_stdin[1]), make_unique<process_istream>(pipe_stdout[0]), make_unique<process_istream>(pipe_stderr[0]));
 }
 
 bool process::wait(intptr_t process, int32_t& exit_code) {
+  initialize();
   if (process == 0) return false;
-  bool result = WaitForSingleObject(reinterpret_cast<HANDLE>(process), INFINITE) == 0;
-  if (result) GetExitCodeProcess(reinterpret_cast<HANDLE>(process), reinterpret_cast<LPDWORD>(&exit_code));
-  CloseHandle(reinterpret_cast<HANDLE>(process));
-  // @todo Get process handle thread .
-  //CloseHandle(reinterpret_cast<HANDLE>(handle_thread));
-  return result;
+  auto it = process_infos.find(process);
+  if (it == process_infos.end()) return false;
+  if (get<1>(it->second) != 0) {
+    if (WaitForSingleObject(reinterpret_cast<HANDLE>(get<0>(it->second)), INFINITE) == 0xFFFFFFFF) return false;
+    GetExitCodeProcess(reinterpret_cast<HANDLE>(get<0>(it->second)), reinterpret_cast<LPDWORD>(&exit_code));
+    CloseHandle(reinterpret_cast<HANDLE>(get<0>(it->second)));
+  }
+  if (get<1>(it->second) != 0) CloseHandle(reinterpret_cast<HANDLE>(get<1>(it->second)));
+  process_infos.erase(it);
+  return true;
 }

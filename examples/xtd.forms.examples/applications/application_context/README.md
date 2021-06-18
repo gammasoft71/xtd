@@ -1,6 +1,6 @@
 # application_context
 
-Shows how to create an application with  [xtd::forms::appplication](../../../../src/xtd_forms/include/xtd/forms/application.hpp) class with  [xtd::forms::application_context](../../../../src/xtd_forms/include/xtd/forms/application_context.hpp) class.
+Shows how to create an application with  [xtd::forms::appplication](../../../../src/xtd.forms/include/xtd/forms/application.h) class with  [xtd::forms::application_context](../../../../src/xtd.forms/include/xtd/forms/application_context.h) class.
 
 # Sources
 

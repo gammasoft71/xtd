@@ -6,6 +6,7 @@ Contains xtd command line and GUI tools.
 
 * [xtdc](xtdc) is project management command line tool.
 * [guidgen](guidgen) is a guid generator command line tool.
+* [sleepfor](sleepfor) is a sleep for duration command line tool.
 
 ## GUI tools
 

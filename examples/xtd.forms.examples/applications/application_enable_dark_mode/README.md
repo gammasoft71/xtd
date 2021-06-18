@@ -1,10 +1,10 @@
-# application
+# application_enable_dark_mode
 
-Shows how to create an application with  [xtd::forms::application](../../../../src/xtd_forms/include/xtd/forms/application.hpp) class.
+Shows how to create an application with  [xtd::forms::application::enable_dark_mode](../../../../src/xtd_forms/include/xtd/forms/application.hpp) method.
 
 # Sources
 
-[src/application.cpp](src/application.cpp)
+[src/application_enable_dark_mode.cpp](src/application_enable_dark_mode.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -20,16 +20,13 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/application_w.png)
+![Screenshot](../../../../docs/pictures/examples/application_enable_dark_mode_w.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/application_m.png)
+![Screenshot](../../../../docs/pictures/examples/application_enable_dark_mode_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/application_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/application_g.png)
-
-![Screenshot](../../../../docs/pictures/examples/application_gd.png)
+![Screenshot](../../../../docs/pictures/examples/application_enable_dark_mode_g.png)
