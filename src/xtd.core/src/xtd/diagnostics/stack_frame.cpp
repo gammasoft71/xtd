@@ -16,7 +16,7 @@ stack_frame::stack_frame() {
   }
 }
 
-stack_frame::stack_frame(int32_t skip_frame) {
+stack_frame::stack_frame(size_t skip_frame) {
   auto frames = get_stack_frames("", skip_frame, false);
   if (frames.size()) {
     file_name_ = frames[0].file_name_;
@@ -38,7 +38,7 @@ stack_frame::stack_frame(bool need_file_info) {
   }
 }
 
-stack_frame::stack_frame(int32_t skip_frame, bool need_file_info) {
+stack_frame::stack_frame(size_t skip_frame, bool need_file_info) {
   auto frames = get_stack_frames("", skip_frame, need_file_info);
   if (frames.size()) {
     file_name_ = frames[0].file_name_;
@@ -49,19 +49,19 @@ stack_frame::stack_frame(int32_t skip_frame, bool need_file_info) {
   }
 }
 
-stack_frame::stack_frame(const string& file_name, size_t line_number) : file_name_(file_name), file_line_number_(line_number) {
+stack_frame::stack_frame(const string& file_name, uint32_t line_number) : file_name_(file_name), file_line_number_(line_number) {
 }
 
-stack_frame::stack_frame(const string& file_name, size_t line_number, const string& method_name) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name) {
+stack_frame::stack_frame(const string& file_name, uint32_t line_number, const string& method_name) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name) {
 }
 
-stack_frame::stack_frame(const string& file_name, size_t line_number, const string& method_name, size_t column_number) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name), file_column_number_(column_number) {
+stack_frame::stack_frame(const string& file_name, uint32_t line_number, const string& method_name, uint32_t column_number) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name), file_column_number_(column_number) {
 }
 
-stack_frame::stack_frame(const string& file_name, size_t line_number, size_t column_number) : file_name_(file_name), file_line_number_(line_number), file_column_number_(column_number) {
+stack_frame::stack_frame(const string& file_name, uint32_t line_number, uint32_t column_number) : file_name_(file_name), file_line_number_(line_number), file_column_number_(column_number) {
 }
 
-stack_frame::stack_frame(const string& file_name, size_t line_number, const string& method_name, size_t column_number, size_t offset) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name), file_column_number_(column_number), offset_(offset) {
+stack_frame::stack_frame(const string& file_name, uint32_t line_number, const string& method_name, uint32_t column_number, uint32_t offset) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name), file_column_number_(column_number), offset_(offset) {
 }
 
 stack_frame::~stack_frame() {
@@ -71,11 +71,11 @@ stack_frame stack_frame::empty() noexcept {
   return {"", 0, "", 0, OFFSET_UNKNOWN};
 }
 
-size_t stack_frame::get_file_column_number() const {
+uint32_t stack_frame::get_file_column_number() const {
   return file_column_number_;
 }
 
-size_t stack_frame::get_file_line_number() const {
+uint32_t stack_frame::get_file_line_number() const {
   return file_line_number_;
 }
 
@@ -87,7 +87,7 @@ const string& stack_frame::get_method() const {
   return method_name_;
 }
 
-size_t stack_frame::get_offset() const {
+uint32_t stack_frame::get_offset() const {
   return offset_;
 }
 
