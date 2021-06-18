@@ -86,8 +86,8 @@ namespace xtd {
       int64_t elapsed_ticks() const;
       
       /// @brief Gets a value indicating whether the stopwatch timer is running.
-      /// @return true if the stopwatch instance is currently running and measuring elapsed time for an interval; otherwise, false.
-      /// @remarks A stopwatch instance begins running with a call to start or start_new. The instance stops running with a call to stop or reset.
+      /// @return true if the xtd::diagnostics::stopwatch instance is currently running and measuring elapsed time for an interval; otherwise, false.
+      /// @remarks A xtd::diagnostics::stopwatch instance begins running with a call to xtd::diagnostics::stopwatch::start or xtd::diagnostics::stopwatch::start_new. The instance stops running with a call to xtd::diagnostics::stopwatch::stop or xtd::diagnostics::stopwatch::reset.
       bool is_running() const;
       
       /// @brief Gets the current number of nanoseconds in the timer mechanism.
