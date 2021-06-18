@@ -19,7 +19,6 @@ add_sources(
   include/xtd/bit_converter.h
   include/xtd/block_scope.h
   include/xtd/build_type.h
-  include/xtd/caller_info.h
   include/xtd/cdebug.h
   include/xtd/cnull.h
   include/xtd/compiler.h
@@ -107,11 +106,14 @@ add_sources(
   include/xtd/collections/specialized/string_pair.h
   include/xtd/collections/specialized/string_vector.h
   include/xtd/diagnostics/console_trace_listener.h
+  include/xtd/diagnostics/data_received_event_args.h
+  include/xtd/diagnostics/data_received_event_handler.h
   include/xtd/diagnostics/debug.h
   include/xtd/diagnostics/default_trace_listener.h
   include/xtd/diagnostics/event_type_filter.h
   include/xtd/diagnostics/ostream_trace_listener.h
   include/xtd/diagnostics/process.h
+  include/xtd/diagnostics/process_priority_class.h
   include/xtd/diagnostics/process_start_info.h
   include/xtd/diagnostics/process_window_style.h
   include/xtd/diagnostics/source_filter.h
@@ -171,6 +173,7 @@ add_sources(
   include/xtd/io/string_writer.h
   include/xtd/io/text_reader.h
   include/xtd/io/text_writer.h
+  include/xtd/security/secure_string.h
   include/xtd/web/css/property.h
   include/xtd/web/css/property_map.h
   include/xtd/web/css/reader.h
@@ -194,6 +197,9 @@ add_sources(
   src/xtd/diagnostics/ostream_trace_listener.cpp
   src/xtd/diagnostics/process.cpp
   src/xtd/diagnostics/process_start_info.cpp
+  src/xtd/diagnostics/source_filter.cpp
+  src/xtd/diagnostics/source_switch.cpp
+  src/xtd/diagnostics/stack_frame.cpp
   src/xtd/diagnostics/stack_trace.cpp
   src/xtd/diagnostics/trace.cpp
   src/xtd/internal/__format_exception.cpp

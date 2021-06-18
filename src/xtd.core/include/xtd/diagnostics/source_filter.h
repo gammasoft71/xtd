@@ -20,14 +20,14 @@ namespace xtd {
     public:
       /// @brief Initializes a new instance of the source_filter class, specifying the name of the trace source.
       /// @param source The name of the trace source.
-      source_filter(const std::string& source) : source_(source) {}
+      source_filter(const std::string& source);
 
       /// @brief Gets the name of the trace source.
       /// @return The name of the trace source.
-      const std::string& source() const {return source_;}
+      const std::string& source() const;
       /// @brief Gets the name of the trace source.
       /// @param source The name of the trace source.
-      void source(const std::string& source) {source_ = source;}
+      void source(const std::string& source);
       
       /// @brief Determines whether the trace listener should trace the event.
       /// @param chache The trace_event_cache that contains information for the trace event.
@@ -37,9 +37,7 @@ namespace xtd {
       /// @param message Message to write.
       /// @param data1 A trace data object.
       /// @param data_array A trace data object.
-      bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const std::string& source, xtd::diagnostics::trace_event_type event_type, int32_t id, const std::string& message, std::any data1, const std::vector<std::any>& data_array) override {
-        return source == source_;
-      }
+      bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const std::string& source, xtd::diagnostics::trace_event_type event_type, int32_t id, const std::string& message, std::any data1, const std::vector<std::any>& data_array) override;
       
     private:
       std::string source_;

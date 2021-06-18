@@ -1,6 +1,6 @@
 # application_use_wait_cursor
 
-Shows how to create an application_use_wait_cursor with  [xtd::forms::application](../../../../src/xtd_forms/include/xtd/forms/application.hpp) class.
+Shows how to create an application_use_wait_cursor with  [xtd::forms::application::use_wait_cursor](../../../../src/xtd.forms/include/xtd/forms/application.h) method.
 
 # Sources
 

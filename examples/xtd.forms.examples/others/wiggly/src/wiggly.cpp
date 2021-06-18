@@ -24,15 +24,21 @@ namespace examples {
     void on_paint(paint_event_args& e) override {
       static const vector sins = {0, 38, 71, 92, 100, 92, 71, 38, 0, -38, -71, -92, -100, -92, -71, -38};
       auto pos = point {(e.clip_rectangle().size().width() - static_cast<int>(e.graphics().measure_string(text(), font()).width())) / 2, (e.clip_rectangle().size().height() - static_cast<int>(e.graphics().measure_string(text(), font()).height())) / 2};
-      for (auto i = 0u; i < text().length(); i++) {
+      for (auto i = 0u; i < wiggly_text.length(); i++) {
         auto index = (step + i) % sins.size();
-        e.graphics().draw_string(strings::format("{}", text()[i]), font(), solid_brush {color::from_hsb(360.0f / sins.size() * index, 1.0f, 0.75f)}, point::subtract(pos, point(0, sins[index] * font().height() / 400)));
-        pos.x(pos.x() + static_cast<int>(e.graphics().measure_string(strings::format("{}", text()[i]), font()).width()));
+        e.graphics().draw_string(strings::format("{}", wiggly_text[i]), font(), solid_brush {color::from_hsb(360.0f / sins.size() * index, 1.0f, 0.75f)}, point::subtract(pos, point(0, sins[index] * font().height() / 400)));
+        pos.x(pos.x() + static_cast<int>(e.graphics().measure_string(strings::format("{}", wiggly_text[i]), font()).width()));
       }
     }
     
+    void on_text_changed(const event_args& e) override {
+      user_control::on_text_changed(e);
+      wiggly_text = strings::to_u32string(text());
+    }
+
   private:
     forms::timer timer;
+    u32string wiggly_text;
     int step = 0;
   };
 
@@ -59,6 +65,7 @@ namespace examples {
     
   private:
     forms::text_box text_box;
+    u32string wiggly_text;
     examples::wiggly wiggly;
   };
 }

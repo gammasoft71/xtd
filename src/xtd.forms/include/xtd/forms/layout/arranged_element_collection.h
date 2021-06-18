@@ -207,7 +207,7 @@ namespace xtd {
         }
 
         void insert_at(size_t index, const value_type& value) {
-          if (index > size()) throw argument_out_of_range_exception(caller_info_);
+          if (index > size()) throw argument_out_of_range_exception(current_stack_frame_);
           insert(begin() + index, value);
         }
 
@@ -242,7 +242,7 @@ namespace xtd {
         }
         
         void erase_at(size_t index) {
-          if (index > size()) throw argument_out_of_range_exception(caller_info_);
+          if (index > size()) throw argument_out_of_range_exception(current_stack_frame_);
           erase(begin() + index);
         }
 

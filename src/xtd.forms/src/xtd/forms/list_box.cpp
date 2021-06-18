@@ -4,9 +4,12 @@
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/list_box.h>
+#include <xtd/forms/native/toolkit.h>
 #include <xtd/forms/native/window_styles.h>
 #include <xtd/forms/native/list_box_styles.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/drawing/pens.h>
+#include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/list_box.h"
 
 using namespace std;
@@ -50,7 +53,7 @@ list_box& list_box::border_style(forms::border_style border_style) {
 }
 
 list_control& list_box::selected_index(size_t selected_index) {
-  if (selected_index != npos && selected_index >= items_.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t, caller_info_);
+  if (selected_index != npos && selected_index >= items_.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t, current_stack_frame_);
   if (selected_index_ != selected_index) {
     selected_index_ = selected_index;
     native::list_box::selected_index(handle(), selected_index_);
@@ -150,6 +153,12 @@ void list_box::on_handle_created(const event_args& e) {
   if (selection_mode_ == forms::selection_mode::none) selected_index(npos);
   native::list_box::selected_index(handle(), selected_index_);
   if (selected_index_ != npos) selected_item_ = items_[selected_index_];
+  
+  // Workaround : on macOS with wxWidgets toolkit, retina display, dark mode enabled, and border style is not none, the border is not show.
+  parent().value().get().paint += [this](control& sender, paint_event_args& e) {
+    if (environment::os_version().is_macos_platform() && native::toolkit::name() == "wxwidgets" && screen::from_handle(parent().value().get().handle()).scale_factor() > 1. && application::dark_mode_enabled() && border_style_ != forms::border_style::none)
+      e.graphics().draw_rectangle(xtd::drawing::pens::white(), xtd::drawing::rectangle::offset(xtd::drawing::rectangle::inflate(this->bounds(), {-2, -2}), {1, 1}));
+  };
 }
 
 void list_box::on_selected_value_changed(const event_args& e) {

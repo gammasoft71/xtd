@@ -13,7 +13,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core diagnostics debug
-    class ostream_trace_listener : public trace_listener {
+    class ostream_trace_listener : public xtd::diagnostics::trace_listener {
     public:
       /// @brief Initializes a new instance of the ostream_trace_listener class with a specified ostream.
       /// @param ostream An std::ostream that represents the stream the ostream_trace_listener writes to.
@@ -37,14 +37,14 @@ namespace xtd {
 #endif
       }
       
-      using trace_listener::write;
+      using xtd::diagnostics::trace_listener::write;
       void write(const std::string& message) override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_(message);
 #endif
       }
       
-      using trace_listener::write_line;
+      using xtd::diagnostics::trace_listener::write_line;
       void write_line(const std::string& message) override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line_(message);

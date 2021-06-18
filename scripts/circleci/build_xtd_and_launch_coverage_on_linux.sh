@@ -1,9 +1,9 @@
 #!/bin/bash
 
 
-# clone, generate and build wxwidgets 3.1.4
+# clone, generate and build wxwidgets 3.1.5
 mkdir -p build/thirdparty/ && cd build/thirdparty
-git clone https://github.com/wxwidgets/wxwidgets.git -b v3.1.4 --depth 1
+git clone https://github.com/wxwidgets/wxwidgets.git -b v3.1.5 --depth 1
 cd wxwidgets
 git submodule update --init
 mkdir build_cmake && cd build_cmake

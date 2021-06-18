@@ -13,7 +13,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core diagnostics debug
-    class core_export_ default_trace_listener : public trace_listener {
+    class core_export_ default_trace_listener : public xtd::diagnostics::trace_listener {
     public:
       /// @brief Initializes a new instance of the default_trace_listener class with "default" as its Name property value.
       default_trace_listener();
@@ -31,10 +31,10 @@ namespace xtd {
       void close() override;
       void flush() override;
       
-      using trace_listener::write;
+      using xtd::diagnostics::trace_listener::write;
       void write(const std::string& message) override;
       
-      using trace_listener::write_line;
+      using xtd::diagnostics::trace_listener::write_line;
       void write_line(const std::string& message) override;
       
     private:

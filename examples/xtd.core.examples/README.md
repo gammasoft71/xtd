@@ -29,7 +29,10 @@
 
 ## [Diagnostics](diagnostics/README.md)
 
+* [console_trace_listener](diagnostics/console_trace_listener/README.md) shows how to use [xtd::diagnostics/console_trace_listener](../../src/xtd.core/include/xtd/diagnostics/console_trace_listener.h) class.
+* [stack_frame](diagnostics/stack_frame/README.md) shows how to use [xtd::diagnostics/stack_frame](../../src/xtd.core/include/xtd/diagnostics/stack_frame.h) class.
 * [stack_trace](diagnostics/stack_trace/README.md) shows how to use [xtd::diagnostics/stack_trace](../../src/xtd.core/include/xtd/diagnostics/stack_trace.h) class.
+* [stack_trace_simple](diagnostics/stack_trace_simple/README.md) demonstrates how to create a simple [xtd::diagnostics::stack_trace](../../src/xtd.core/include/xtd/diagnostics::stack_trace.h) class and iterate through its frames to obtain debugging and diagnostic information.
 * [stopwatch](diagnostics/stopwatch/README.md) shows how to use [xtd::diagnostics/stopwatch](../../src/xtd.core/include/xtd/diagnostics/stopwatch.h) class.
 
 ## [Environment](environment/README.md)
@@ -67,6 +70,19 @@
 * [format_with_alignment](format/format_with_alignment/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with specified alignment args.
 * [format_with_order](format/format_with_order/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with specified order args.
 
+## [Keywords](keywords/README.md)
+
+* [block_scope](keywords/block_scope/README.md) shows how to use [xtd::block_scope](../../../src/xtd.core/include/xtd/block_scope.h) method.
+* [current_stack_frame](keywords/current_stack_frame/README.md) shows how to use [xtd::diagnostics::stack_frame(../../../src/xtd.core/include/xtd/diagnostics/starck_frame.h) method.
+* [csf](keywords/csf/README.md) shows how to use [xtd::diagnostics::stack_frame(../../../src/xtd.core/include/xtd/diagnostics/starck_frame.h) method.
+* [interface](keywords/interface/README.md) shows how to use [xtd::interface](../../../src/xtd.core/include/xtd/interface.h) method.
+* [interface2](keywords/interface2/README.md) shows how to use [xtd::interface](../../../src/xtd.core/include/xtd/interface.h) method.
+* [startup](keywords/startup/README.md) shows how to use [xtd::startup](../../../src/xtd.core/include/xtd/startup.h) method.
+* [static](keywords/static/README.md) shows how to use [xtd::static](../../../src/xtd.core/include/xtd/static.h) method.
+* [static_class](keywords/static_class/README.md) shows how to use [xtd::static_class](../../../src/xtd.core/include/xtd/static_class.h) method.
+* [static_class2](keywords/static_class2/README.md) shows how to use [xtd::static_class](../../../src/xtd.core/include/xtd/static_class.h) method.
+* [using](keywords/using/README.md) shows how to use [xtd::using](../../../src/xtd.core/include/xtd/using.h) method.
+
 ## [Processes](processes/README.md)
 
 * [process_start_info](processes/process_start_info/README.md) shows how to use [xtd::diagnostics:process_start_info](../../src/xtd.core/include/xtd/diagnostics/process_start_info.h) class.
@@ -77,6 +93,19 @@
 * [random1](random/random1/README.md) shows how to use [xtd::random::next_bytes](../../src/xtd.core/include/xtd/random.h) method.
 * [random2](random/random2/README.md) shows how to use [xtd::random](../../src/xtd.core/include/xtd/random.h) class.
 * [random3](random/random3/README.md) shows how to use [xtd::random::next](../../src/xtd.core/include/xtd/random.h) method.
+
+## [strings](strings/README.md)
+
+* [compare](strings/compare/README.md) shows how to use [xtd::strings::compare](../../src/xtd.core/include/xtd/strings.h) method.
+* [compare_ignore_case](strings/compare_ignore_case/README.md) shows how to use [xtd::strings::compare](../../src/xtd.core/include/xtd/strings.h) method.
+* [concat](strings/concat/README.md) shows how to use [xtd::strings::concat](../../src/xtd.core/include/xtd/strings.h) method.
+* [concat_collection](strings/concat_collection/README.md) shows how to use [xtd::strings::concat](../../src/xtd.core/include/xtd/strings.h) method.
+* [contains](strings/contains/README.md) shows how to use [xtd::strings::contains](../../src/xtd.core/include/xtd/strings.h) method.
+* [format](strings/format/README.md) shows how to use [xtd::strings::format](../../src/xtd.core/include/xtd/strings.h) method.
+* [format_with_orderformat_with_order](strings/format_with_order/README.md) shows how to use [xtd::strings::format](../../src/xtd.core/include/xtd/strings.h) method.
+* [join](strings/join/README.md) shows how to use [xtd::strings::join](../../src/xtd.core/include/xtd/strings.h) method.
+* [split](strings/split/README.md) shows how to use [xtd::strings::split](../../src/xtd.core/include/xtd/strings.h) method.
+* [string_unicode](strings/string_unicode/README.md) shows how to use [xtd::strings](../../src/xtd.core/include/xtd/strings.h) class with unicode.
 
 ## [Web](web/README.md)
 
@@ -99,6 +128,3 @@
 * [hello_world_diagnostics2](others/hello_world_diagnostics2/README.md) The same classic first application "Hello World" on the debug output stream with another style.
 * [hello_world_environment2](others/hello_world_environment2/README.md) The same classic first application "Hello World" environment with another style.
 * [wconsole2](others/wconsole2/README.md) shows how to use [xtd::wconsole](../../src/xtd.core/include/xtd/basic_console.h) class.
-* [xtd_format](others/xtd_format/README.md) Show how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) class.
-* [xtd_format_with_order](others/others/xtd_format_with_order/README.md) Show how to use [xtd::format](../../../src/xtd.core/include/xtd/format.h) class.
-* [xtd_formatf](others/xtd_formatf/README.md) Show how to use [xtd::formatf](../../src/xtd.core/include/xtd/format.h) class.

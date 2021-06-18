@@ -43,7 +43,7 @@ std::string environment::get_environment_variable(const std::string& variable, e
     return ""; //return microsoft::win32::registry::get_value("HKEY_CURRENT_USER\\Environment", variable, "").to_string();
   if (target == environment_variable_target::machine)
     return ""; // return microsoft::win32::registry::get_value("HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Session Manager\\Environment", variable, "").to_string();
-  throw xtd::argument_exception("Invalid environment variable target value"_t, caller_info_);
+  throw xtd::argument_exception("Invalid environment variable target value"_t, current_stack_frame_);
 }
 
 std::map<std::string, std::string>& environment::get_environment_variables(environment_variable_target target) {
@@ -93,7 +93,7 @@ xtd::processor environment::processor_information() {
 }
 
 void environment::set_environment_variable(const std::string& variable, const std::string& value, environment_variable_target target) {
-  if (xtd::strings::is_empty(variable)) throw xtd::argument_exception("Environment variable name is empty"_t, caller_info_);
+  if (xtd::strings::is_empty(variable)) throw xtd::argument_exception("Environment variable name is empty"_t, current_stack_frame_);
   
   if (target == environment_variable_target::process) {
     if (xtd::strings::is_empty(value)) {
@@ -110,7 +110,7 @@ void environment::set_environment_variable(const std::string& variable, const st
     //else
     //  key.set_value(variable, value);
   } else
-    throw xtd::argument_exception("Invalid environment variable target value"_t, caller_info_);
+    throw xtd::argument_exception("Invalid environment variable target value"_t, current_stack_frame_);
 }
 
 size_t environment::system_page_size() {

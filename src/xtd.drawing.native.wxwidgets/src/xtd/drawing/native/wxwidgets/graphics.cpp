@@ -45,7 +45,7 @@ namespace {
   wxBrush to_brush(const wx_brush& brush) {
     if (brush.is_solid_brush()) return wxBrush(brush.get_solid_brush().color);
     if (brush.is_texture_brush()) return wxBrush(brush.get_texture_brush().texture);
-    throw xtd::argument_exception("brush not defined"_t, caller_info_);
+    throw xtd::argument_exception("brush not defined"_t, current_stack_frame_);
   }
 
   wxGraphicsBrush to_graphics_brush(wxGraphicsContext& graphics, const wx_brush& brush) {
@@ -59,7 +59,7 @@ namespace {
       return b;
     }
     if (brush.is_texture_brush()) return graphics.CreateBrush(wxBrush(brush.get_texture_brush().texture));
-    throw xtd::argument_exception("brush not defined"_t, caller_info_);
+    throw xtd::argument_exception("brush not defined"_t, current_stack_frame_);
   }
 }
 

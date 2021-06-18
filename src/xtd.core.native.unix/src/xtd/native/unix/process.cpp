@@ -1,6 +1,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/process.h>
 #include <xtd/native/process_creation_flags.h>
+#include <xtd/native/priority_class.h>
 #include <xtd/native/process_window_style.h>
 #include "../../../../include/xtd/native/unix/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
@@ -8,9 +9,11 @@
 #include <filesystem>
 #include <cstdlib>
 #include <functional>
+#include <map>
 #include <set>
 #include <signal.h>
 #include <unistd.h>
+#include <sys/resource.h>
 #include <sys/wait.h>
 
 using namespace std;
@@ -91,7 +94,12 @@ namespace {
   }
   
   bool is_valid_process(function<vector<string>(const string& str, const vector<char>& separators, size_t count)> splitter, const string& command_line, const string& working_directory) {
-    return exists(get_full_file_name_with_extension(splitter, command_line, working_directory));
+    auto full_file_name_with_extension = get_full_file_name_with_extension(splitter, command_line, working_directory);
+#if defined(__APPLE__)
+    return exists(full_file_name_with_extension);
+#else
+    return exists(full_file_name_with_extension) && (is_directory(full_file_name_with_extension) || (status(full_file_name_with_extension).permissions() & perms::owner_exec) != perms::owner_exec);
+#endif
   }
 
   bool is_valid_uri(const string& command_line) {
@@ -143,6 +151,20 @@ namespace {
     }
     return arguments;
   }
+  
+  bool compute_base_priority(int32_t priority, int32_t& base_priority) {
+    static map<int32_t, int32_t> base_priorities {{IDLE_PRIORITY_CLASS, PRIO_MIN}, {BELOW_NORMAL_PRIORITY_CLASS, PRIO_MIN + (PRIO_MAX - PRIO_MIN)/4}, {NORMAL_PRIORITY_CLASS, PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 2}, {ABOVE_NORMAL_PRIORITY_CLASS, PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4}, {HIGH_PRIORITY_CLASS, PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8}, {REALTIME_PRIORITY_CLASS, PRIO_MAX}};
+    auto it = base_priorities.find(priority);
+    if (it == base_priorities.end()) return false;
+    base_priority = it->second;
+    return true;
+  }
+}
+
+int32_t process::base_priority(int32_t priority) {
+  int32_t base_priority = PRIO_MIN + (PRIO_MAX - PRIO_MIN)/2;
+  compute_base_priority(priority, base_priority);
+  return base_priority;
 }
 
 bool process::kill(intptr_t process) {
@@ -150,20 +172,48 @@ bool process::kill(intptr_t process) {
   return ::kill(static_cast<pid_t>(process), SIGTERM) == 0;
 }
 
-intptr_t process::shell_execute(const string& file_name, const string& arguments, const string& working_directory, int32_t process_window_style) {
-  if (!is_valid_shell_execute_process(&unix::strings::split, file_name, working_directory)) return 0;
+bool process::priority_class(intptr_t process, int32_t priority) {
+  int32_t base_priority = PRIO_MIN + (PRIO_MAX - PRIO_MIN)/2;
+  if (compute_base_priority(priority, base_priority) == false) return false;
+  return setpriority(PRIO_PROCESS, process, base_priority) == 0;
+}
+
+intptr_t process::shell_execute(const std::string& verb, const string& file_name, const string& arguments, const string& working_directory, int32_t process_window_style) {
   pid_t process = fork();
   if (process == 0) {
-    vector<string> command_line_args;
-    command_line_args = split_arguments(arguments);
-    bool is_shell_execute = true;
-    for (auto arg : command_line_args)
-      if (!(is_shell_execute = is_valid_shell_execute_process(&unix::strings::split, arg, working_directory))) break;
+    bool is_shell_execute = is_valid_shell_execute_process(&unix::strings::split, file_name, working_directory);
     if (is_shell_execute) {
-      auto command_working_directory = working_directory != "" ? working_directory : current_path().string();
-      command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name, working_directory));
-      command_line_args.insert(command_line_args.begin(), shell_execute_command());
+      for (auto arg : split_arguments(arguments))
+        if (!(is_shell_execute = is_valid_shell_execute_process(&unix::strings::split, arg, working_directory))) break;
+    }
+    vector<string> command_line_args;
+    if (is_shell_execute) {
+#if defined(__APPLE__)
+      if (verb == "runas") {
+        if (file_name == "") return 0;
+        command_line_args.insert(command_line_args.begin(), string("do shell script \"") + file_name + (arguments != "" ? " " + arguments : "") + string("\" with administrator privileges"));
+        command_line_args.insert(command_line_args.begin(), "-e");
+        command_line_args.insert(command_line_args.begin(), "osascript");
+      } else if (verb == "print") {
+        if (file_name == "") return 0;
+        command_line_args.insert(command_line_args.begin(), file_name);
+        command_line_args.insert(command_line_args.begin(), "lpr");
+      } else
+#endif
+      if (verb == "" || verb == "open" || verb == "explore" || verb == "edit" || verb == "runas" || verb == "runasuser" || verb == "print") {
+        if (verb == "") command_line_args = split_arguments(arguments);
+        if ((verb == "open" || verb == "runas" || verb == "runasuser") && file_name == "") return 0;
+        if (verb == "explore" && (file_name == "" || !is_directory(file_name))) return 0;
+        if (verb == "edit" && (file_name == "" || !is_regular_file(file_name) || (status(file_name).permissions() & perms::owner_write) != perms::owner_write)) return 0;
+        if ((verb == "runas" || verb == "runasuser")  && (file_name == "" || (status(file_name).permissions() & perms::owner_exec) != perms::owner_exec)) return 0;
+        command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name, working_directory));
+        command_line_args.insert(command_line_args.begin(), shell_execute_command());
+      } else {
+        command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name, working_directory));
+        command_line_args.insert(command_line_args.begin(), verb);
+      }
     } else {
+      command_line_args = split_arguments(arguments);
       if (working_directory != "") current_path(working_directory);
       command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name));
     }
@@ -191,9 +241,6 @@ process::started_process process::start(const string& file_name, const string& a
   
   pid_t process = fork();
   if (process == 0) {
-    /// @todo set converted priority
-    // setpriority(PRIO_PROCESS, 0, prioriy);
-    
     if (redirect_standard_input) {
       close(pipe_stdin[1]);
       dup2(pipe_stdin[0], 0);

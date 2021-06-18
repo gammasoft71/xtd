@@ -48,7 +48,7 @@ namespace {
       case known_themed_color::window: return system_colors::window();
       case known_themed_color::window_frame: return system_colors::window_frame();
       case known_themed_color::window_text: return system_colors::window_text();
-      default: throw argument_exception("unknown know_color"_t, caller_info_);
+      default: throw argument_exception("unknown know_color"_t, current_stack_frame_);
     }
   }
 
@@ -100,7 +100,7 @@ namespace {
       case xtd::forms::known_themed_color::window: return xtd::drawing::color::from_argb(0xFF2D2D2D);
       case xtd::forms::known_themed_color::window_frame: return xtd::drawing::color::from_argb(0xFF333333);
       case xtd::forms::known_themed_color::window_text: return xtd::drawing::color::from_argb(0xFFFFFFFF);
-      default: throw argument_exception("unknown know_color"_t, caller_info_);
+      default: throw argument_exception("unknown know_color"_t, current_stack_frame_);
     }
   }
 
@@ -143,7 +143,7 @@ namespace {
       case xtd::forms::known_themed_color::window: return xtd::drawing::color::from_argb(0xFFFFFFFF);
       case xtd::forms::known_themed_color::window_frame: return xtd::drawing::color::from_argb(0xFFF1F0EE);
       case xtd::forms::known_themed_color::window_text: return xtd::drawing::color::from_argb(0xFF000000);
-      default: throw argument_exception("unknown know_color"_t, caller_info_);
+      default: throw argument_exception("unknown know_color"_t, current_stack_frame_);
     }
   }
 
@@ -190,7 +190,7 @@ namespace {
       case xtd::forms::known_themed_color::window: return xtd::drawing::color::from_argb(0xFF232629);
       case xtd::forms::known_themed_color::window_frame: return xtd::drawing::color::from_argb(0xFF31363B);
       case xtd::forms::known_themed_color::window_text: return xtd::drawing::color::from_argb(0xFFEFF0F1);
-      default: throw argument_exception("unknown know_color"_t, caller_info_);
+      default: throw argument_exception("unknown know_color"_t, current_stack_frame_);
     }
   }
 
@@ -233,7 +233,7 @@ namespace {
       case xtd::forms::known_themed_color::window: return xtd::drawing::color::from_argb(0xFFFCFCFC);
       case xtd::forms::known_themed_color::window_frame: return xtd::drawing::color::from_argb(0xFFEFF0F1);
       case xtd::forms::known_themed_color::window_text: return xtd::drawing::color::from_argb(0xFF23262);
-      default: throw argument_exception("unknown know_color"_t, caller_info_);
+      default: throw argument_exception("unknown know_color"_t, current_stack_frame_);
     }
   }
 
@@ -280,7 +280,7 @@ namespace {
       case xtd::forms::known_themed_color::window: return xtd::drawing::color::from_argb(0xFF171717);
       case xtd::forms::known_themed_color::window_frame: return xtd::drawing::color::from_argb(0xFF9A9A9A);
       case xtd::forms::known_themed_color::window_text: return xtd::drawing::color::from_argb(environment::os_version().is_windows_platform() ? 0xFFE3E3E3 : 0xD8FFFFFF);
-      default: throw argument_exception("unknown know_color"_t, caller_info_);
+      default: throw argument_exception("unknown know_color"_t, current_stack_frame_);
     }
   }
 
@@ -323,7 +323,7 @@ namespace {
       case xtd::forms::known_themed_color::window: return xtd::drawing::color::from_argb(0xFFFFFFFF);
       case xtd::forms::known_themed_color::window_frame: return xtd::drawing::color::from_argb(0xFF9A9A9A);
       case xtd::forms::known_themed_color::window_text: return xtd::drawing::color::from_argb(environment::os_version().is_windows_platform() ? 0xFF282828 : 0xD8000000);
-      default: throw argument_exception("unknown know_color"_t, caller_info_);
+      default: throw argument_exception("unknown know_color"_t, current_stack_frame_);
     }
   }
 
@@ -370,7 +370,7 @@ namespace {
       case xtd::forms::known_themed_color::window: return xtd::drawing::color::from_argb(0xFF232629);
       case xtd::forms::known_themed_color::window_frame: return xtd::drawing::color::from_argb(0xFF31363B);
       case xtd::forms::known_themed_color::window_text: return xtd::drawing::color::from_argb(0xFFEFF0F1);
-      default: throw argument_exception("unknown know_color"_t, caller_info_);
+      default: throw argument_exception("unknown know_color"_t, current_stack_frame_);
     }
   }
 
@@ -413,7 +413,7 @@ namespace {
       case xtd::forms::known_themed_color::window: return xtd::drawing::color::from_argb(0xFFFCFCFC);
       case xtd::forms::known_themed_color::window_frame: return xtd::drawing::color::from_argb(0xFFEFF0F1);
       case xtd::forms::known_themed_color::window_text: return xtd::drawing::color::from_argb(0xFF23262);
-      default: throw argument_exception("unknown know_color"_t, caller_info_);
+      default: throw argument_exception("unknown know_color"_t, current_stack_frame_);
     }
   }
 
@@ -460,7 +460,7 @@ namespace {
       case xtd::forms::known_themed_color::window: return xtd::drawing::color::from_argb(0xFF202020);
       case xtd::forms::known_themed_color::window_frame: return xtd::drawing::color::from_argb(0xFF333333);
       case xtd::forms::known_themed_color::window_text: return xtd::drawing::color::from_argb(0xFFFFFFFF);
-      default: throw argument_exception("unknown know_color"_t, caller_info_);
+      default: throw argument_exception("unknown know_color"_t, current_stack_frame_);
     }
   }
 
@@ -503,7 +503,7 @@ namespace {
       case xtd::forms::known_themed_color::window: return xtd::drawing::color::from_argb(0xFFFFFFFF);
       case xtd::forms::known_themed_color::window_frame: return xtd::drawing::color::from_argb(0xFF646464);
       case xtd::forms::known_themed_color::window_text: return xtd::drawing::color::from_argb(0xFF000000);
-      default: throw argument_exception("unknown know_color"_t, caller_info_);
+      default: throw argument_exception("unknown know_color"_t, current_stack_frame_);
     }
   }
 
@@ -550,7 +550,7 @@ namespace {
       case xtd::forms::known_themed_color::window: return xtd::drawing::color::from_argb(0xFF232629);
       case xtd::forms::known_themed_color::window_frame: return xtd::drawing::color::from_argb(0xFF31363B);
       case xtd::forms::known_themed_color::window_text: return xtd::drawing::color::from_argb(0xFFEFF0F1);
-      default: throw argument_exception("unknown know_color"_t, caller_info_);
+      default: throw argument_exception("unknown know_color"_t, current_stack_frame_);
     }
   }
 
@@ -593,7 +593,7 @@ namespace {
       case xtd::forms::known_themed_color::window: return xtd::drawing::color::from_argb(0xFFFCFCFC);
       case xtd::forms::known_themed_color::window_frame: return xtd::drawing::color::from_argb(0xFFEFF0F1);
       case xtd::forms::known_themed_color::window_text: return xtd::drawing::color::from_argb(0xFF23262);
-      default: throw argument_exception("unknown know_color"_t, caller_info_);
+      default: throw argument_exception("unknown know_color"_t, current_stack_frame_);
     }
   }
 

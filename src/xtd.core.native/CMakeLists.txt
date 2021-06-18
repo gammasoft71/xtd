@@ -22,6 +22,7 @@ add_sources(
   include/xtd/native/guid.h
   include/xtd/native/path.h
   include/xtd/native/platform_ids.h
+  include/xtd/native/priority_class.h
   include/xtd/native/process.h
   include/xtd/native/process_creation_flags.h
   include/xtd/native/process_window_style.h

@@ -172,7 +172,7 @@ namespace xtd {
           };
           if (character_ != value) {
             auto it = characters.find(value);
-            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), caller_info_);
+            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
             character_ = value;
             dot_matrix_display::set_dots(it->second);
           }
@@ -282,7 +282,7 @@ namespace xtd {
           };
           if (character_ != value) {
             auto it = characters.find(value);
-            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), caller_info_);
+            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
             character_ = value;
             fourteen_segment_display::value(it->second);
           }
@@ -372,7 +372,7 @@ namespace xtd {
           };
           if (character_ != value) {
             auto it = characters.find(value);
-            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), caller_info_);
+            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
             character_ = value;
             nine_segment_display::value(it->second);
           }
@@ -462,7 +462,7 @@ namespace xtd {
             {':', forms::segments::pc}};
           if (character_ != value) {
             auto it = characters.find(value);
-            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), caller_info_);
+            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
             character_ = value;
             seven_segment_display::value(it->second);
           }
@@ -572,7 +572,7 @@ namespace xtd {
           };
           if (character_ != value) {
             auto it = characters.find(value);
-            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), caller_info_);
+            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
             character_ = value;
             sixteen_segment_display::value(it->second);
           }
@@ -617,7 +617,7 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception if value less than 0.0 or greater than 1.0.
       /// @return Current lcd_label.
       lcd_label& back_digit_opacity(double value) {
-        if (value < 0.0 || value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t, caller_info_);
+        if (value < 0.0 || value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t, current_stack_frame_);
         if (back_digit_opacity_ != value) {
           back_digit_opacity_ = value;
           set_digits_params();
@@ -647,7 +647,7 @@ namespace xtd {
       /// @return Current lcd_label.
       /// @exception xtdd::argument_out_of_range_exception if value less than 0.
       lcd_label& digit_spacing(int32_t value) {
-        if (value < 0) throw argument_out_of_range_exception("value must be positive"_t, caller_info_);
+        if (value < 0) throw argument_out_of_range_exception("value must be positive"_t, current_stack_frame_);
         if (digit_spacing_ != value) {
           digit_spacing_ = value;
           set_digits_params();
@@ -733,7 +733,7 @@ namespace xtd {
                 case lcd_style::fourteen_segment_display: digits_.push_back(std::make_shared<fourteen_segment_display_digit>()); break;
                 case lcd_style::sixteen_segment_display: digits_.push_back(std::make_shared<sixteen_segment_display_digit>()); break;
                 case lcd_style::dot_matrix_display: digits_.push_back(std::make_shared<dot_matrix_display_digit>()); break;
-                default: throw argument_exception("lcd_style invalid", caller_info_);
+                default: throw argument_exception("lcd_style invalid", current_stack_frame_);
               }
               dynamic_cast<control*>(digits_[digits_.size() - 1].get())->parent(*this);
               dynamic_cast<control*>(digits_[digits_.size() - 1].get())->click += [this] {on_click(event_args::empty);};
@@ -760,7 +760,7 @@ namespace xtd {
           case lcd_style::fourteen_segment_display: return std::make_shared<fourteen_segment_display_digit>()->get_valid_characters();
           case lcd_style::sixteen_segment_display: return std::make_shared<sixteen_segment_display_digit>()->get_valid_characters();
           case lcd_style::dot_matrix_display: return std::make_shared<dot_matrix_display_digit>()->get_valid_characters();
-          default: throw argument_exception("lcd_style invalid", caller_info_);
+          default: throw argument_exception("lcd_style invalid", current_stack_frame_);
         }
       }
 

@@ -1,10 +1,10 @@
 # hello_world_message_box2
 
-The classic first application "Hello, World!" with  [xtd::forms::message_box](../../../../src/xtd_forms/include/xtd/forms/message_box.hpp) control.
+The classic first application "Hello, World!" with  [xtd::forms::message_box](../../../../src/xtd.forms/include/xtd/forms/message_box.h) control.
 
 # Sources
 
-[src/hello_world_message_box.cpp](src/hello_world_message_box2.cpp)
+[src/hello_world_message_box2.cpp](src/hello_world_message_box2.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

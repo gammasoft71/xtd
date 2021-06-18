@@ -14,7 +14,7 @@ public:
     text("application and exception example");
     
     // uncomment next line to throw error and catch it in main entry point
-    //throw system_exception(caller_info_);
+    //throw system_exception(current_stack_frame_);
 
     generate_handled_exception_button.auto_size(true);
     generate_handled_exception_button.location({10, 10});
@@ -44,13 +44,13 @@ public:
 private:
   void generate_handled_exception() {
     try {
-      throw operation_canceled_exception(caller_info_);
+      throw operation_canceled_exception(current_stack_frame_);
     } catch(const xtd::system_exception& e) {
       message_box::show(*this, e.message(), strings::format("Exception {} handled", e.name()));
     }
   }
   void generate_exception() {throw invalid_argument("Invalid argument");}
-  void generate_system_exception() {throw argument_out_of_range_exception(caller_info_);}
+  void generate_system_exception() {throw argument_out_of_range_exception(current_stack_frame_);}
   void generate_unknown_exception() {throw "Unknown exception occured";}
   
   button generate_handled_exception_button;

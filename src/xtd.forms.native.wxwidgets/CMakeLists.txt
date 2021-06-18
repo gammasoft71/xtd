@@ -107,6 +107,7 @@ add_sources(
   src/xtd/forms/native/wxwidgets/text_box.cpp
   src/xtd/forms/native/wxwidgets/timer.cpp
   src/xtd/forms/native/wxwidgets/toggle_button.cpp
+  src/xtd/forms/native/wxwidgets/toolkit.cpp
   src/xtd/forms/native/wxwidgets/track_bar.cpp
   src/xtd/forms/native/wxwidgets/up_down_button.cpp
   src/xtd/forms/native/wxwidgets/user_control.cpp

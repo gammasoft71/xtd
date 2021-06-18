@@ -1,10 +1,10 @@
-# application
+# application_restart
 
-Shows how to create an application with  [xtd::forms::application](../../../../src/xtd_forms/include/xtd/forms/application.hpp) class.
+Shows how to create an application with  [xtd::forms::application::restart](../../../../src/xtd.forms/include/xtd/forms/application.h) method.
 
 # Sources
 
-[src/application.cpp](src/application.cpp)
+[src/application_restart.cpp](src/application_restart.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -20,18 +20,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/application_w.png)
+![Screenshot](../../../../docs/pictures/examples/application_restart_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/application_wd.png)
+![Screenshot](../../../../docs/pictures/examples/application_restart_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/application_m.png)
+![Screenshot](../../../../docs/pictures/examples/application_restart_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/application_md.png)
+![Screenshot](../../../../docs/pictures/examples/application_restart_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/application_g.png)
+![Screenshot](../../../../docs/pictures/examples/application_restart_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/application_gd.png)
+![Screenshot](../../../../docs/pictures/examples/application_restart_gd.png)

@@ -4,8 +4,11 @@
 #include <xtd/forms/native/edit_styles.h>
 #include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/text_box.h>
+#include <xtd/forms/native/toolkit.h>
 #include <xtd/forms/native/window_styles.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/drawing/pens.h>
+#include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/text_box.h"
 
 using namespace std;
@@ -134,6 +137,12 @@ void text_box::on_handle_created(const event_args& e) {
     }
     native::text_box::text(handle(), text_.c_str());
   }
+  
+  // Workaround : on macOS with wxWidgets toolkit, retina display, dark mode enabled, border style is not none, and multiline, the border is not show.
+  parent().value().get().paint += [this](control& sender, paint_event_args& e) {
+    if (environment::os_version().is_macos_platform() && native::toolkit::name() == "wxwidgets" && screen::from_handle(parent().value().get().handle()).scale_factor() > 1. && application::dark_mode_enabled() && border_style_ != forms::border_style::none && multiline_)
+      e.graphics().draw_rectangle(xtd::drawing::pens::white(), xtd::drawing::rectangle::offset(xtd::drawing::rectangle::inflate(this->bounds(), {-2, -2}), {1, 1}));
+  };
 }
 
 void text_box::on_text_changed(const event_args& e) {

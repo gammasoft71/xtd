@@ -3,16 +3,194 @@
 using namespace std;
 using namespace xtd::diagnostics;
 
-string process_start_info::get_password_in_clear_text() const {
+process_start_info::process_start_info(const std::string& file_name) : file_name_(file_name ) {
+}
+
+process_start_info::process_start_info(const std::string& file_name, const std::string& arguments) : file_name_(file_name), arguments_(arguments) {
+}
+
+const std::string& process_start_info::arguments() const {
+  return arguments_;
+}
+
+process_start_info& process_start_info::arguments(const std::string& value) {
+  arguments_ = value;
+  return *this;
+}
+
+bool process_start_info::create_no_window() const {
+  return create_no_window_;
+}
+
+process_start_info& process_start_info::create_no_window(bool value) {
+  create_no_window_ = value;
+  return *this;
+}
+
+const std::string& process_start_info::domain() const {
+  return domain_;
+}
+
+process_start_info& process_start_info::domain(const std::string& value) {
+  domain_ = value;
+  return *this;
+}
+
+const std::map<std::string, std::string>& process_start_info::environment() const {
+  return environment_variables_;
+}
+
+std::map<std::string, std::string>& process_start_info::environment() {
+  return environment_variables_;
+}
+
+const std::map<std::string, std::string>& process_start_info::environment_variables() const {
+  return environment_variables_;
+}
+
+std::map<std::string, std::string>& process_start_info::environment_variables() {
+  return environment_variables_;
+}
+
+bool process_start_info::error_dialog() const {
+  return error_dialog_;
+}
+
+process_start_info& process_start_info::error_dialog(bool value) {
+  error_dialog_ = value;
+  return *this;
+}
+
+intptr_t process_start_info::error_dialog_parent_handle() const {
+  return error_dialog_parent_handle_;
+}
+
+process_start_info& process_start_info::error_dialog_parent_handle(intptr_t value) {
+  error_dialog_parent_handle_ = value;
+  return *this;
+}
+
+const std::string& process_start_info::file_name() const {
+  return file_name_;
+}
+
+process_start_info& process_start_info::file_name(const std::string& value) {
+  file_name_ = value;
+  return *this;
+}
+
+process_start_info& process_start_info::file_name(const std::filesystem::path& value) {
+  file_name_ = value.string();
+  return *this;
+}
+
+process_start_info& process_start_info::file_name(const char* value) {
+  file_name_ = value;
+  return *this;
+}
+
+bool process_start_info::load_user_profile() const {
+  return load_user_profile_;
+}
+
+process_start_info& process_start_info::load_user_profile(bool value) {
+  load_user_profile_ = value;
+  return *this;
+}
+
+const xtd::security::secure_string& process_start_info::pasword() const {
+  return password_;
+}
+
+process_start_info& process_start_info::pasword(const xtd::security::secure_string& value) {
+  password_ = value;
+  return *this;
+}
+
+std::string process_start_info::password_in_clear_text() const {
   //return native::security::to_unsecure_string(password_);
   return password_;
 }
 
-void process_start_info::set_password_in_clear_text(const string& password) {
-  //password_ = native::security_api::to_secure_secure_String(password);
-  password_ = password;
+process_start_info& process_start_info::password_in_clear_text(const std::string& value) {
+  //password_ = native::security_api::to_secure_secure_string(value);
+  return *this;
 }
 
-vector<string> process_start_info::get_verbs(const string& file_name) const {
+bool process_start_info::redirect_standard_error() const {
+  return redirect_standard_error_;
+}
+
+process_start_info& process_start_info::redirect_standard_error(bool value) {
+  redirect_standard_error_ = value;
+  return *this;
+}
+
+bool process_start_info::redirect_standard_input() const {
+  return redirect_standard_input_;
+}
+
+process_start_info& process_start_info::redirect_standard_input(bool value) {
+  redirect_standard_input_ = value;
+  return *this;
+}
+
+bool process_start_info::redirect_standard_output() const {
+  return redirect_standard_output_;
+}
+
+process_start_info& process_start_info::redirect_standard_output(bool value) {
+  redirect_standard_output_ = value;
+  return *this;
+}
+
+const std::string& process_start_info::user_name() const {
+  return user_name_;
+}
+
+process_start_info& process_start_info::user_name(const std::string& value) {
+  user_name_ = value;
+  return *this;
+}
+
+bool process_start_info::use_shell_execute() const {
+  return use_shell_execute_;
+}
+
+process_start_info& process_start_info::use_shell_execute(bool value) {
+  use_shell_execute_ = value;
+  return *this;
+}
+
+std::string process_start_info::verb() const {
+  return verb_;
+}
+
+process_start_info& process_start_info::verb(const std::string& value) {
+  verb_ = value;
+  return *this;
+}
+
+std::vector<std::string> process_start_info::verbs() const {
+  if (file_name_ == "") return {};
+  // return native::process:verbs(file_name_);
   return {};
+}
+
+process_window_style process_start_info::window_style() const {
+  return window_style_;
+}
+
+process_start_info& process_start_info::window_style(process_window_style value) {
+  window_style_ = value;
+  return *this;
+}
+
+const std::string& process_start_info::working_directory() const {
+  return working_directory_;
+}
+
+process_start_info& process_start_info::working_directory(const std::string& value) {
+  working_directory_ = value;
+  return *this;
 }
