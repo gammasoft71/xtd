@@ -133,5 +133,10 @@ namespace xtd {
       return false;
     }
   }
+
+  template<typename value_t, typename char_t>
+  inline bool try_parse(const char_t* str, value_t& value) {
+    return try_parse(std::basic_string<char_t>(str), value);
+  }
 }
 

@@ -9,4 +9,5 @@ add_projects(
   stack_trace
   stack_trace_simple
   stopwatch
+  stopwatch_constructor
 )
