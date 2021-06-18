@@ -58,8 +58,8 @@ namespace xtd {
       ///     }
       ///
       ///     console::write_line();
-      ///     Console::write_line("   ... throwing exception to next level ...");
-      ///     Console::write_line("-------------------------------------------------\n");
+      ///     console::write_line("   ... throwing exception to next level ...");
+      ///     console::write_line("-------------------------------------------------\n");
       ///     throw e;
       ///   }
       /// }
@@ -96,8 +96,8 @@ namespace xtd {
       ///     }
       ///
       ///     console::write_line();
-      ///     Console::write_line("   ... throwing exception to next level ...");
-      ///     Console::write_line("-------------------------------------------------\n");
+      ///     console::write_line("   ... throwing exception to next level ...");
+      ///     console::write_line("-------------------------------------------------\n");
       ///     throw e;
       ///   }
       /// }
@@ -162,8 +162,8 @@ namespace xtd {
       ///     }
       ///
       ///     console::write_line();
-      ///     Console::write_line("   ... throwing exception to next level ...");
-      ///     Console::write_line("-------------------------------------------------\n");
+      ///     console::write_line("   ... throwing exception to next level ...");
+      ///     console::write_line("-------------------------------------------------\n");
       ///     throw e;
       ///   }
       /// }
@@ -216,8 +216,8 @@ namespace xtd {
       ///     }
       ///
       ///     console::write_line();
-      ///     Console::write_line("   ... throwing exception to next level ...");
-      ///     Console::write_line("-------------------------------------------------\n");
+      ///     console::write_line("   ... throwing exception to next level ...");
+      ///     console::write_line("-------------------------------------------------\n");
       ///     throw e;
       ///   }
       /// }
@@ -254,8 +254,8 @@ namespace xtd {
       ///     }
       ///
       ///     console::write_line();
-      ///     Console::write_line("   ... throwing exception to next level ...");
-      ///     Console::write_line("-------------------------------------------------\n");
+      ///     console::write_line("   ... throwing exception to next level ...");
+      ///     console::write_line("-------------------------------------------------\n");
       ///     throw e;
       ///   }
       /// }
