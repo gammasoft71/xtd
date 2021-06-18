@@ -34,6 +34,7 @@
 * [stack_trace](diagnostics/stack_trace/README.md) shows how to use [xtd::diagnostics/stack_trace](../../src/xtd.core/include/xtd/diagnostics/stack_trace.h) class.
 * [stack_trace_simple](diagnostics/stack_trace_simple/README.md) demonstrates how to create a simple [xtd::diagnostics::stack_trace](../../src/xtd.core/include/xtd/diagnostics::stack_trace.h) class and iterate through its frames to obtain debugging and diagnostic information.
 * [stopwatch](diagnostics/stopwatch/README.md) shows how to use [xtd::diagnostics/stopwatch](../../src/xtd.core/include/xtd/diagnostics/stopwatch.h) class.
+* [stopwatch_constructor](diagnostics/stopwatch_constructor/README.md) initializes a [xtd::diagnostics::stopwatch](../../src/xtd.core/include/xtd/diagnostics::stopwatch.h) instance by using a simple class constructor.
 
 ## [Environment](environment/README.md)
 
