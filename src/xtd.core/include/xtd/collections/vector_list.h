@@ -12,6 +12,9 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core collections
+    /// @par Examples
+    /// The following example shows hows to use xtd::collections::vector_list.
+    /// @include vector_list.cpp
     using vector_list = std::vector<std::any>;
   }
 }

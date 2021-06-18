@@ -22,11 +22,12 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core diagnostics debug
     /// @remarks You can use the properties and methods in the xtd::diagnostics::debug class to instrument release builds. Instrumentation allows you to monitor the health of your application running in real-life settings. Tracing helps you isolate problems and fix them without disturbing a running system.
-    /// @remarks This class provides methods to display an assert dialog box, and to emit an assertion that will always Fail. This class provides write methods in the following variations: write, write_line, write_if, and write_line_if.
-    /// @remarks The boolean_switch and trace_switch classes provide means to dynamically control the tracing output. You can modify the values of these switches without recompiling your application. For information on using the configuration file to set a switch, see the switch class and the trace_switches topic.
-    /// @remarks You can customize the tracing output's target by adding trace_listener instances to or removing instances from the listeners collection. The listeners collection is shared by both the debug and the trace classes; adding a trace listener to either class adds the listener to both. By default, trace output is emitted using the default_trace_listener class.
-    /// @note Adding a trace listener to the listeners collection can cause an exception to be thrown while tracing, if a resource used by the trace listener is not available. The conditions and the exception thrown depend on the trace listener and cannot be enumerated in this topic. It may be useful to place calls to the debug methods in try/catch blocks to detect and handle any exceptions from trace listeners.
-    /// @remarks The debug class provides properties to get or set the level of indent, the indent_size, and whether to auto_flush after each write.
+    /// @remarks This class provides methods to display an assert dialog box, and to emit an assertion that will always fail. This class provides write methods in the following variations: xtd::diagnostics::debug::write, xtd::diagnostics::debug::write_line, xtd::diagnostics::debug::write_if, and xtd::diagnostics::debug::write_line_if.
+    /// @remarks The xtd::diagnostics::boolean_switch and xtd::diagnostics::trace_switch classes provide means to dynamically control the tracing output. You can modify the values of these switches without recompiling your application. For information on using the configuration file to set a switch, see the xtd::diagnostics::switch class and the xtd::diagnostics::trace_switches topic.
+    /// @remarks You can customize the tracing output's target by adding xtd::diagnostics::trace_listener instances to or removing instances from the xtd::diagnostics::debug::listeners collection. The xtd::diagnostics::debug::listeners collection is shared by both the xtd::diagnostics::debug and the xtd::diagnostics::trace classes; adding a trace listener to either class adds the listener to both. By default, trace output is emitted using the xtd::diagnostics::default_trace_listener class.
+    /// @note Adding a trace listener to the xtd::diagnostics::debug::listeners collection can cause an exception to be thrown while tracing, if a resource used by the trace listener is not available. The conditions and the exception thrown depend on the trace listener and cannot be enumerated in this topic. It may be useful to place calls to the debug methods in try/catch blocks to detect and handle any exceptions from trace listeners.
+    /// @remarks You can modify the level of indentation using the xtd::diagnostics::debug::indent method or the xtd::diagnostics::debug::indent_level property. To modify the indent spacing, use the xtd::diagnostics::debug::indent_size property. You can specify whether to automatically flush the output buffer after each write by setting the xtd::diagnostics::debug::auto_flush property to true.
+    /// @remarks The debug class provides properties to get or set the level of indent, the xtd::diagnostics::debug::indent_size, and whether to xtd::diagnostics::debug::auto_flush after each write.
     /// @remarks You must enable debug mode to use a trace listener. The syntax is compiler specific. If you use other than cmake to manage your build, refer to the documentation of your build nanager.
     ///  * To enable debug mode with cmake, add the add_definitions(-DDEBUG) command line in the CMakeLists.txt of your porject, or you can add #define DEBUG to the top of your file.
     /// @remarks To activete your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if defined(DEBUG) ... #endif block, and add the /DDEBUG option to the compiler command line or add #define DEBUG to the file.
@@ -36,53 +37,53 @@ namespace xtd {
     /// @ingroup xtd_core
     class core_export_ debug static_ {
     public:
-      /// @brief Get whether Flush should be called on the Listeners after every write.
-      /// @return true if Flush is called on the Listeners after every write; otherwise, false.
+      /// @brief Gets whether xtd::diagnostics::debug::flush should be called on the xtd::diagnostics::debug::Listeners after every write.
+      /// @return true if xtd::diagnostics::debug::flush is called on the xtd::diagnostics::debug::listeners after every write; otherwise, false.
       /// @remarks The default is false.
-      /// @remarks Flushing the stream will not flush its underlying encoder unless you explicitly call Flush or Close. Setting AutoFlush to true means that data will be flushed from the buffer to the stream, but the encoder state will not be flushed. This allows the encoder to keep its state (partial characters) so that it can encode the next block of characters correctly. This scenario affects UTF8 and UTF7 where certain characters can only be encoded after the encoder receives the adjacent character or characters.
+      /// @remarks Flushing the stream will not flush its underlying encoder unless you explicitly call xtd::diagnostics::debug::flush or xtd::diagnostics::debug::close. Setting xtd::diagnostics::debug::auto_flush to true means that data will be flushed from the buffer to the stream.
       static bool auto_flush();
-      /// @brief Sets whether Flush should be called on the Listeners after every write.
-      /// @param auto_flush true if Flush is called on the Listeners after every write; otherwise, false.
+      /// @brief Sets whether xtd::diagnostics::debug::flush should be called on the xtd::diagnostics::debug::Listeners after every write.
+      /// @param auto_flush true if xtd::diagnostics::debug::flush is called on the xtd::diagnostics::debug::listeners after every write; otherwise, false.
       /// @remarks The default is false.
-      /// @remarks Flushing the stream will not flush its underlying encoder unless you explicitly call Flush or Close. Setting AutoFlush to true means that data will be flushed from the buffer to the stream, but the encoder state will not be flushed. This allows the encoder to keep its state (partial characters) so that it can encode the next block of characters correctly. This scenario affects UTF8 and UTF7 where certain characters can only be encoded after the encoder receives the adjacent character or characters.
+      /// @remarks Flushing the stream will not flush its underlying encoder unless you explicitly call xtd::diagnostics::debug::flush or xtd::diagnostics::debug::close. Setting xtd::diagnostics::debug::auto_flush to true means that data will be flushed from the buffer to the stream.
       static void auto_flush(bool auto_flush);
 
       /// @brief Gets the indent level.
       /// @return The indent level. The default is zero.
-      /// @remarks The IndentLevel property represents the number of times the indent of size IndentSize is applied. This property is stored on per-thread/per-request basis.
+      /// @remarks The xtd::diagnostics::debug::indent_level property represents the number of times the indent of size xtd::diagnostics::debug::indent_size is applied. This property is stored on per-thread/per-request basis.
       static uint32_t indent_level();
       /// @brief Sets the indent level.
       /// @param indent_level The indent level. The default is zero.
-      /// @remarks The IndentLevel property represents the number of times the indent of size IndentSize is applied. This property is stored on per-thread/per-request basis.
+      /// @remarks The xtd::diagnostics::debug::indent_level property represents the number of times the indent of size xtd::diagnostics::debug::indent_size is applied. This property is stored on per-thread/per-request basis.
       static void indent_level(uint32_t indent_level);
       
       /// @brief Gets the number of spaces in an indent.
       /// @return The number of spaces in an indent. The default is four.
-      /// @remarks A ostream_trace_listener interprets this number as spaces. An event_log_trace_listener ignores this value.
+      /// @remarks A xtd::diagnostics::ostream_trace_listener interprets this number as spaces. An xtd::diagnostics::event_log_trace_listener ignores this value.
       static uint32_t indent_size();
       /// @brief Sets the number of spaces in an indent.
       /// @param indent_size The number of spaces in an indent. The default is four.
-      /// @remarks A ostream_trace_listener interprets this number as spaces. An event_log_trace_listener ignores this value.
+      /// @remarks A xtd::diagnostics::ostream_trace_listener interprets this number as spaces. An xtd::diagnostics::event_log_trace_listener ignores this value.
       static void indent_size(uint32_t indent_size);
       
       /// @brief Gets the collection of listeners that is monitoring the trace output.
-      /// @return A trace_listener_collection that represents a collection of type trace_listener monitoring the trace output.
-      /// @remarks The listeners produce formatted output from the trace output. By default, the collection contains an instance of the default_trace_listener class. If you want to remove the default listener, call the Remove method, and pass it the instance of the default_trace_listener. To redirect output to the console window, add an instance of the console_trace_listener class.
-      /// @note The Listeners collection is shared by both the Debug and the Trace classes; adding a trace listener to either class adds the listener to both.
+      /// @return A xtd::diagnostics::trace_listener_collection that represents a collection of type xtd::diagnostics::trace_listener monitoring the trace output.
+      /// @remarks The xtd::diagnostics::debug::listeners produce formatted output from the trace output. By default, the collection contains an instance of the xtd::diagnostics::default_trace_listener class. If you want to remove the default listener, call the erase method, and pass it the instance of the xtd::diagnostics::default_trace_listener. To redirect output to the console window, add an instance of the xtd::diagnostics::console_trace_listener class.
+      /// @note The xtd::diagnostics::debug::listeners collection is shared by both the xtd::diagnostics::debug and the xtd::diagnostics::trace classes; adding a trace listener to either class adds the listener to both.
       static xtd::diagnostics::trace_listener_collection& listeners();
       /// @brief Sets the collection of listeners that is monitoring the trace output.
-      /// @param listeners A trace_listener_collection that represents a collection of type trace_listener monitoring the trace output.
-      /// @remarks The listeners produce formatted output from the trace output. By default, the collection contains an instance of the default_trace_listener class. If you want to remove the default listener, call the Remove method, and pass it the instance of the default_trace_listener. To redirect output to the console window, add an instance of the console_trace_listener class.
-      /// @note The Listeners collection is shared by both the Debug and the Trace classes; adding a trace listener to either class adds the listener to both.
+      /// @paral$m listerners A xtd::diagnostics::trace_listener_collection that represents a collection of type xtd::diagnostics::trace_listener monitoring the trace output.
+      /// @remarks The xtd::diagnostics::debug::listeners produce formatted output from the trace output. By default, the collection contains an instance of the xtd::diagnostics::default_trace_listener class. If you want to remove the default listener, call the erase method, and pass it the instance of the xtd::diagnostics::default_trace_listener. To redirect output to the console window, add an instance of the xtd::diagnostics::console_trace_listener class.
+      /// @note The xtd::diagnostics::debug::listeners collection is shared by both the xtd::diagnostics::debug and the xtd::diagnostics::trace classes; adding a trace listener to either class adds the listener to both.
       static void listeners(const xtd::diagnostics::trace_listener_collection& listeners);
       
       /// @brief Gets a value indicating whether the global lock should be used.
       /// @return true if the global lock is to be used; otherwise, false. The default is true.
-      /// @remarks The global lock is always used if the trace listener is not thread safe, regardless of the value of UseGlobalLock. The IsThreadSafe property is used to determine if the listener is thread safe. The global lock is not used only if the value of UseGlobalLock is false and the value of IsThreadSafe is true. The default behavior is to use the global lock.
+      /// @remarks The global lock is always used if the trace listener is not thread safe, regardless of the value of xtd::diagnostics::debug::use_global_lock. The IsThreadSafe property is used to determine if the listener is thread safe. The global lock is not used only if the value of UseGlobalLock is false and the value of IsThreadSafe is true. The default behavior is to use the global lock.
       static bool use_global_lock();
       /// @brief Sets a value indicating whether the global lock should be used.
       /// @param use_global_lock true if the global lock is to be used; otherwise, false. The default is true.
-      /// @remarks The global lock is always used if the trace listener is not thread safe, regardless of the value of UseGlobalLock. The IsThreadSafe property is used to determine if the listener is thread safe. The global lock is not used only if the value of UseGlobalLock is false and the value of IsThreadSafe is true. The default behavior is to use the global lock.
+      /// @remarks The global lock is always used if the trace listener is not thread safe, regardless of the value of UseGlobalLock. The xtd::diagnostics::debug::is_threa_safe property is used to determine if the listener is thread safe. The global lock is not used only if the value of xtd::diagnostics::debug::use_global_lock is false and the value of xtd::diagnostics::debug::is_thread_safe is true. The default behavior is to use the global lock.
       static void use_global_lock(bool use_global_lock);
  
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
@@ -94,7 +95,7 @@ namespace xtd {
       }
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
-      /// @param message The message to send to the Listeners collection.
+      /// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
       static void assert(bool condition, const std::string& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         assert_(condition, message);
@@ -103,8 +104,8 @@ namespace xtd {
       
       /// @brief Emits the specified error message.
       /// @param message A message to emit.
-      /// @remarks The default behavior is that the default_trace_listener outputs the message to a message box when the application is running in user interface mode and to the TraceListener instances in the Listeners collection.
-      /// @note The display of the message box is dependent on the presence of the default_trace_listener. If the default_trace_listener is not in the listeners collection, the message box is not displayed. The default_trace_listener can be removed by the <clear>, the <remove>, or by calling the clear method on the listeners property (xtd::diagnostics::trace::listeners().clear()).
+      /// @remarks The default behavior is that the xtd::diagnostics::default_trace_listener outputs the message to a message box when the application is running in user interface mode and to the xtd::diagnostics::trace_listener instances in the xtd::diagnostics::debug::listeners collection.
+      /// @note The display of the message box is dependent on the presence of the xtd::diagnostics::default_trace_listener. If the xtd::diagnostics::default_trace_listener is not in the xtd::diagnostics::debug::listeners collection, the message box is not displayed. The xtd::diagnostics::default_trace_listener can be removed by the <clear>, the <erase>, or by calling the clear method on the xtd::diagnostics::debug::listeners property (xtd::diagnostics::trace::listeners().clear()).
       static void fail(const std::string& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         fail_(message);
