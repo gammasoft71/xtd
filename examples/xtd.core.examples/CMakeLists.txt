@@ -5,6 +5,7 @@ find_package(xtd REQUIRED)
 
 add_projects(
   hello_worlds
+  collections
   console
   delegates
   diagnostics
