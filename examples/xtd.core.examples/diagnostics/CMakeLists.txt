@@ -7,5 +7,6 @@ add_projects(
   console_trace_listener
   stack_frame
   stack_trace
+  stack_trace_simple
   stopwatch
 )
