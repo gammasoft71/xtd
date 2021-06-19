@@ -9,7 +9,7 @@ class xtd_core_manual_test {
 public:
   static void main() {
     debug::assert(false);
-    console::write_line("Hello, Woorld!");
+    console::write_line("Hello, World!");
   }
 };
 
