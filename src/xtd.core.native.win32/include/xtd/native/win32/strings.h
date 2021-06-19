@@ -9,11 +9,13 @@
 #include <vector>
 
 namespace xtd::native {
+  class debug;
   class environment;
   class process;
   class translator;
   namespace win32 {
     class strings final {
+      friend xtd::native::debug;
       friend xtd::native::environment;
       friend xtd::native::process;
       friend xtd::native::translator;
