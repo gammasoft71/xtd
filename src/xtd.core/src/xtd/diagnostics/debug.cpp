@@ -1,11 +1,9 @@
-#include <cassert>
-namespace {
-  void __c_assert__(bool condition) {assert(condition);}
-}
-
 #include "../../../include/xtd/diagnostics/debug.h"
 #include "../../../include/xtd/diagnostics/default_trace_listener.h"
 #include "../../../include/xtd/environment.h"
+#define __XTD_CORE_NATIVE_LIBRARY__
+#include <xtd/native/debug.h>
+#undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace std;
 using namespace xtd;
@@ -69,7 +67,7 @@ void debug::unindent() {
 }
 
 void debug::assert_(bool condition, const std::string& message) {
-  __c_assert__(condition);
+  native::debug::assert_message_box(condition, message);
   if (!condition) fail(message);
 }
 
