@@ -11,6 +11,7 @@ add_sources(
   src/argument_null_exception.cpp
   src/argument_out_of_range_exception.cpp
   src/arithmetic_exception.cpp
+  src/as.cpp
   src/bit_converter.cpp
   src/bytes_assert.h
   src/console_key_info.cpp
