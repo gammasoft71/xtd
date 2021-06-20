@@ -13,6 +13,7 @@ add_sources(
   include/xtd/argument_null_exception.h
   include/xtd/argument_out_of_range_exception.h
   include/xtd/arithmetic_exception.h
+  include/xtd/as.h
   include/xtd/background_color.h
   include/xtd/basic_console.h
   include/xtd/beep.h
