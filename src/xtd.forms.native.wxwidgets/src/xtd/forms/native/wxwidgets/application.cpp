@@ -120,6 +120,8 @@ void application::enable_visual_style() {
 void application::exit() {
   if (wxTheApp)
     wxTheApp->ExitMainLoop();
+  else
+    ::exit(EXIT_SUCCESS);
 }
 
 void application::initialize() {
