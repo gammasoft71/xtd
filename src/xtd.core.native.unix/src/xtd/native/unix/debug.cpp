@@ -7,7 +7,7 @@
 
 using namespace xtd::native;
 
-void debug::assert_message_box(bool condition, const std::string& message) {
+void debug::assert_message_box(bool condition, const std::string& caption, const std::string& message) {
   assert(condition);
 }
 
