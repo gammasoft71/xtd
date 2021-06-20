@@ -276,6 +276,11 @@ namespace xtd {
     }
   }
 
+  template<>
+  inline bool is<std::any>(std::any value) {
+    return true;
+  }
+
   template<typename type_t, typename param_t>
   bool is(const param_t* value) {
     try {
