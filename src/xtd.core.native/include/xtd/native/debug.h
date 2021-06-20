@@ -40,8 +40,9 @@ namespace xtd {
     protected:
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
+      /// @param caption The message box caption.
       /// @param message The message to show in message box.
-      static void assert_message_box(bool condition, const std::string& message);
+      static void assert_message_box(bool condition, const std::string& caption, const std::string& message);
       /// @brief Writes a specified message to the debuger output.
       /// @param message Message to write.
       /// @warning Internal use only

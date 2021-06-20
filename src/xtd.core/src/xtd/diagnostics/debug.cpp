@@ -67,8 +67,8 @@ void debug::unindent() {
 }
 
 void debug::assert_(bool condition, const std::string& message) {
-  native::debug::assert_message_box(condition, message);
   if (!condition) fail(message);
+  native::debug::assert_message_box(condition, "Assertion Failed: Abort=Quit, Retry=Debug, Ignore=Continue", strings::format("{}\n\n{}", message, stack_trace(stack_frame(true)).to_string()));
 }
 
 void debug::fail_(const std::string& message) {
