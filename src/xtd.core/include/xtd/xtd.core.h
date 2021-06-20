@@ -8,6 +8,7 @@
 #include "argument_null_exception.h"
 #include "argument_out_of_range_exception.h"
 #include "arithmetic_exception.h"
+#include "as.h"
 #include "background_color.h"
 #include "basic_console.h"
 #include "beep.h"
