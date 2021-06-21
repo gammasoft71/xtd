@@ -11,7 +11,7 @@
 
 using namespace xtd::native;
 
-int32_t debug::assert_message_box(const std::string& text, const std::string& caption) {
+int32_t debug::show_assert_dialog(const std::string& text, const std::string& caption) {
   return MessageBox(nullptr, win32::strings::to_wstring(text).c_str(), win32::strings::to_wstring(caption).c_str(), MB_ICONERROR | MB_ABORTRETRYIGNORE | MB_DEFBUTTON3);
 }
 

@@ -8,10 +8,11 @@
 
 /// @cond
 // Workaround : the standard c++ assert macro on Visual Studio shows a message box.
-#ifdef __VISUALC__
-#define xtd_debug_break() __debugbreak()
-#else
-#define xtd_debug_break() assert(false)
+#ifdef _MSC_VER
+#undef assert
+#define assert(condition) \
+  if (!condition) \
+    __debugbreak()
 #endif
 /// @endcond
 
@@ -24,10 +25,10 @@
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
 #define xtd_assert_message(condition, message) \
   if (!condition) { \
-    xtd::diagnostics::debug::fail(message); \
+    if (message != std::string("")) xtd::diagnostics::debug::fail(message); \
     auto result = xtd::diagnostics::debug::assert_dialog(xtd::strings::format("{}\n\n{}", message, xtd::diagnostics::stack_trace(xtd::diagnostics::stack_frame(csf_)))); \
     if (result == xtd::diagnostics::assert_dialog_result::abort) ::exit(EXIT_FAILURE); \
-    if (result == xtd::diagnostics::assert_dialog_result::retry) xtd_debug_break(); \
+    if (result == xtd::diagnostics::assert_dialog_result::retry) assert(condition); \
   }
 
 /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
