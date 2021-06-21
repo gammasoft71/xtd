@@ -10,4 +10,6 @@ add_projects(
   stack_trace_simple
   stopwatch
   stopwatch_constructor
+  xtd_assert
+  xtd_assert_message
 )
