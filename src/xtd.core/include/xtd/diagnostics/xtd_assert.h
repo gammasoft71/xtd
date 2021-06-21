@@ -3,16 +3,16 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cassert>
+#include <cstdlib>
 #include "assert_dialog_result.h"
 #include "../strings.h"
 
 /// @cond
-// Workaround : the standard c++ assert macro on Visual Studio shows a message box.
-#ifdef _MSC_VER
-#undef assert
-#define assert(condition) \
-  if (!condition) \
-    __debugbreak()
+// Workaround : the standard c++ abort macro on Visual Studio shows a message box.
+#if defined(_MSC_VER)
+#define __std_abort__ __debugbreak
+#else
+#define __std_abort__ std::abort
 #endif
 /// @endcond
 
@@ -24,11 +24,11 @@
 /// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
 #define xtd_assert_message(condition, message) \
-  if (!condition) { \
+  if (!(condition)) { \
     if (message != std::string("")) xtd::diagnostics::debug::fail(message); \
     auto result = xtd::diagnostics::debug::assert_dialog(xtd::strings::format("{}\n\n{}", message, xtd::diagnostics::stack_trace(xtd::diagnostics::stack_frame(csf_)))); \
     if (result == xtd::diagnostics::assert_dialog_result::abort) ::exit(EXIT_FAILURE); \
-    if (result == xtd::diagnostics::assert_dialog_result::retry) assert(condition); \
+    if (result == xtd::diagnostics::assert_dialog_result::retry) __std_abort__(); \
   }
 
 /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
