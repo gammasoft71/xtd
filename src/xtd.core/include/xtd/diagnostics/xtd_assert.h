@@ -7,46 +7,46 @@
 #include "../strings.h"
 
 /// @cond
+#define __CMD_XTD_MACRO_0_ARGS__(cmd) cmd(csf_)
+#define __CMD_XTD_MACRO_1_ARGS__(cmd, arg1) cmd(arg1, csf_)
+#define __CMD_XTD_MACRO_2_ARGS__(cmd, arg1, arg2) cmd(arg1, arg2, csf_)
+#define __CMD_XTD_MACRO_3_ARGS__(cmd, arg1, arg2, arg3) cmd(arg1, arg2, arg3, csf_)
+#define __CMD_XTD_MACRO_4_ARGS__(cmd, arg1, arg2, arg3, arg4) cmd(arg1, arg2, arg3, arg4, csf_)
+#define __GET_XTD_MACRO_LAST_ARG(arg1, arg2, arg3, arg4, arg5, ...) arg5
+#define __CMD_XTD_MACRO_MACRO_CHOOSER(cmd, ...) __GET_XTD_MACRO_LAST_ARG(__VA_ARGS__, __CMD_XTD_MACRO_4_ARGS__, __CMD_XTD_MACRO_3_ARGS__, __CMD_XTD_MACRO_2_ARGS__, __CMD_XTD_MACRO_1_ARGS__, __CMD_XTD_MACRO_0_ARGS__, )
+#define __CMD_XTD_MACRO_ARGS(cmd, ...) __CMD_XTD_MACRO_MACRO_CHOOSER(cmd, __VA_ARGS__)(cmd, __VA_ARGS__)
+/// @endcond
+
+/// @cond
 // Workaround : the std::abort function on Visual Studio shows a message box.
 #if defined(_MSC_VER)
 #define __std_abort__ __debugbreak
 #else
 #define __std_abort__ std::abort
 #endif
-/// @endcond
 
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-/// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core keywords
-/// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
-/// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
-#define xtd_assert_message_stack_frame(condition, message, stack_frame) \
+#define __assert__(condition, message, stack_frame) \
   if (!(condition)) { \
     auto result = xtd::diagnostics::debug::assert_dialog(message, stack_frame); \
     if (result == xtd::diagnostics::assert_dialog_result::abort) std::exit(EXIT_FAILURE); \
     if (result == xtd::diagnostics::assert_dialog_result::retry) __std_abort__(); \
   }
-
-/// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core keywords
-/// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
-/// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
-#define xtd_assert_message(condition, message) \
-  xtd_assert_message_stack_frame(condition, message, csf_)
-
-/// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core keywords
-/// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
-#define xtd_assert(condition) \
-  xtd_assert_message_stack_frame(condition, "", csf_)
 #else
-#define xtd_assert_message_stack_frame(condition, message, const xtd::diagnostics_stack_frame& stack_frame)
-#define xtd_assert_message(condition, message)
-#define xtd_assert(condition)
+#define __assert__(condition, message, const xtd::diagnostics_stack_frame& stack_frame)
 #endif
+/// @endcond
+
+#define cassert_(...) \
+  __da__(); \
+  __CMD_XTD_MACRO_ARGS(__assert__, __VA_ARGS__)
+
+/// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core keywords
+/// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
+/// @param message (optional) The message to send to the xtd::diagnostics::debug::listeners collection.
+/// @param stack_frame (optional) The stack frame corresponding to the generated assert.
+#define xtd_assert_(...) \
+  xtd::diagnostics::debug::cassert_(__VA_ARGS__)

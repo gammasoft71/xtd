@@ -85,8 +85,12 @@ namespace xtd {
 int main() {
   try {
     form form_main;
-    xtd_assert_message(false, "User message");
-    //xtd::diagnostics::debug::cassert(false, "User message");
+    auto index = 0;
+    //xtd_assert_(index > 0);
+    //xtd_assert_(index > 0, "index must be greather than 0");
+    //xtd::diagnostics::debug::cassert(index > 0, "index must be greather than 0");
+    xtd::diagnostics::debug::cassert_(index > 0, "index must be greather than 0");
+    //xtd::diagnostics::trace::cassert_(index > 0, "index must be greather than 0");
     form_main.text("Manual tests");
     form_main.menu(forms::main_menu::create_standard_items([&](component& sender, const event_args& e) {
       //cdebug << strings::format("Menu item [{}] clicked", sender) << endl;
