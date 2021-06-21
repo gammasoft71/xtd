@@ -7,6 +7,7 @@
 #include <string>
 #include "../core_export.h"
 #include "../static.h"
+#include "debug.h"
 #include "stack_trace.h"
 #include "trace_listener_collection.h"
 #include "xtd_assert.h"
@@ -75,12 +76,12 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the assert dialog should be show.
       /// @return true if assert dialog is to be shown; otherwise, false. The default is true.
-      /// @remarks The show assert dialog is used when xtd::diagnostics::debug::cassert or td::diagnostics::trace::cassert or #xtd_assert or #xtd_assert_message is called to ask user to ignore, continue or retry the assert.
+      /// @remarks The show assert dialog is used when xtd::diagnostics::debug::cassert or td::diagnostics::trace::cassert or #xtd_assert_ is called to ask user to ignore, continue or retry the assert.
       /// @note The xtd::diagnostics::debug::show_assert_dialog boolean is shared by both the xtd::diagnostics::debug and the xtd::diagnostics::trace classes; updating the boolean to either class modify the show assert dialog to both.
       static bool show_assert_dialog();
       /// @brief Sets a value indicating whether the assert dialog should be show.
       /// @return true if assert dialog is to be shown; otherwise, false. The default is true.
-      /// @remarks The show assert dialog is used when xtd::diagnostics::debug::cassert or td::diagnostics::trace::cassert or #xtd_assert or #xtd_assert_message is called to ask user to ignore, continue or retry the assert.
+      /// @remarks The show assert dialog is used when xtd::diagnostics::debug::cassert or td::diagnostics::trace::cassert or #xtd_assert_ is called to ask user to ignore, continue or retry the assert.
       /// @note The xtd::diagnostics::debug::show_assert_dialog boolean is shared by both the xtd::diagnostics::debug and the xtd::diagnostics::trace classes; updating the boolean to either class modify the show assert dialog to both.
       static void show_assert_dialog(bool show_assert_dialog);
 
@@ -96,22 +97,20 @@ namespace xtd {
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       static void cassert(bool condition) {
-        cassert(condition, "", csf_);
+        __assert__(condition, "", csf_);
       }
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @param message The message to send to the Listeners collection.
       static void cassert(bool condition, const std::string& message) {
-        cassert(condition, message, csf_);
+        __assert__(condition, message, csf_);
       }
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
       /// @param stack_frame The stack frame corresponding to the generated assert.
       static inline void cassert(bool condition, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-#if defined(TRACE)
-        xtd_assert_message_stack_frame(condition, message, stack_frame);
-#endif
+        __assert__(condition, message, stack_frame);
       }
 
       /// @brief Emits the specified error message.
@@ -506,8 +505,18 @@ namespace xtd {
         if (condition) write_line(message, category);
 #endif
       }
-
+      
+      /// @cond
+      static void __da__() {
+#if defined(TRACE)
+        da_();
+#endif
+      }
+      /// @endcond
+      
     private:
+      static void da_();
+
       static void trace_event(trace_event_type trace_event_type, const std::string& message) {
 #if defined(TRACE)
         for (auto listener : listeners_) {
