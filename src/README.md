@@ -5,7 +5,7 @@ Contains xtd sources.
 ## System
 
 * [xtd.core](xtd.core) library contains all fundamental classes to access Hardware, Os, System, and more.
-* [xtd.core.native](xtd.core.native) library contains internal native API definitions to access underlying operqting system used by xtd.core library.
+* [xtd.core.native](xtd.core.native) library contains internal native API definitions to access underlying operating system used by xtd.core library.
 * [xtd.core.native.unix](xtd.core.native.unix) library is based on unix operating system.
 * [xtd.core.native.win32](xtd.core.native.win32) library is based on Windows operating system.
 
