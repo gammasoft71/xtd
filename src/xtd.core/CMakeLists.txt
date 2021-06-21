@@ -106,6 +106,7 @@ add_sources(
   include/xtd/collections/specialized/string_map.h
   include/xtd/collections/specialized/string_pair.h
   include/xtd/collections/specialized/string_vector.h
+  include/xtd/diagnostics/assert_dialog_result.h
   include/xtd/diagnostics/console_trace_listener.h
   include/xtd/diagnostics/data_received_event_args.h
   include/xtd/diagnostics/data_received_event_handler.h
@@ -134,6 +135,7 @@ add_sources(
   include/xtd/diagnostics/trace_options.h
   include/xtd/diagnostics/trace_source.h
   include/xtd/diagnostics/trace_switch.h
+  include/xtd/diagnostics/xtd_assert.h
   include/xtd/internal/__binary_formater.h
   include/xtd/internal/__boolean_formater.h
   include/xtd/internal/__character_formater.h

@@ -8,6 +8,7 @@ add_include_directories(include)
 add_sources(
   include/xtd/xtd.core.native
   include/xtd/xtd.core.native.h
+  include/xtd/native/assert_dialog_results.h
   include/xtd/native/console_color.h
   include/xtd/native/console_special_key.h
   include/xtd/native/console.h

@@ -12,7 +12,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    /// @remarks The Button.DialogResult property and the form.show_dialog method use this enumeration.
+    /// @remarks The xtd::forms::button::dialog_result property and the xtd::forms::form::show_dialog method use this enumeration.
     /// @par Examples
     /// The following code example demonstrates how to display a MessageBox with the options supported by this overload of Show. After verifying that a string variable, ServerName, is empty, the example displays a MessageBox, offering the user the option to cancel the operation. If the Show method's return value evaluates to Yes, the form that displayed the MessageBox is closed.
     /// @code

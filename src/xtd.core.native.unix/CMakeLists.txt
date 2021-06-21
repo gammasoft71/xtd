@@ -6,9 +6,13 @@ include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 add_include_directories(include)
 if (APPLE)
-  add_references("-framework Foundation")
+  add_references("-framework Foundation -framework Cocoa")
 elseif (NOT ANDROID)
-  add_references(uuid pthread)
+  find_package(PkgConfig)
+  pkg_check_modules(GTK gtk+-3.0)
+  include_directories(${GTK_INCLUDE_DIRS})
+  link_directories(${GTK_LIBRARY_DIRS})
+  add_references(uuid pthread ${GTK_LIBRARIES})
 endif ()
 add_references(xtd.core.native)
 add_sources(
@@ -26,6 +30,7 @@ add_sources(
 )
 if (APPLE)
   add_sources(
+    src/xtd/native/unix/debug.mm
     src/xtd/native/unix/translator.mm
   )
 endif()

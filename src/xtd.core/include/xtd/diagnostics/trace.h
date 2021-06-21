@@ -8,9 +8,10 @@
 #include "../core_export.h"
 #include "../static.h"
 #include "trace_listener_collection.h"
+#include "xtd_assert.h"
 
 /// @cond
-#undef assert
+//#undef assert
 void __assert__(bool condition);
 /// @endcond
 
@@ -76,6 +77,17 @@ namespace xtd {
       /// @note The Listeners collection is shared by both the Debug and the Trace classes; adding a trace listener to either class adds the listener to both.
       static void listeners(const trace_listener_collection& listeners);
       
+      /// @brief Gets a value indicating whether the assert dialog should be show.
+      /// @return true if assert dialog is to be shown; otherwise, false. The default is true.
+      /// @remarks The show assert dialog is used when xtd::diagnostics::debug::cassert or td::diagnostics::trace::cassert or #xtd_assert or #xtd_assert_message is called to ask user to ignore, continue or retry the assert.
+      /// @note The xtd::diagnostics::debug::show_assert_dialog boolean is shared by both the xtd::diagnostics::debug and the xtd::diagnostics::trace classes; updating the boolean to either class modify the show assert dialog to both.
+      static bool show_assert_dialog();
+      /// @brief Sets a value indicating whether the assert dialog should be show.
+      /// @return true if assert dialog is to be shown; otherwise, false. The default is true.
+      /// @remarks The show assert dialog is used when xtd::diagnostics::debug::cassert or td::diagnostics::trace::cassert or #xtd_assert or #xtd_assert_message is called to ask user to ignore, continue or retry the assert.
+      /// @note The xtd::diagnostics::debug::show_assert_dialog boolean is shared by both the xtd::diagnostics::debug and the xtd::diagnostics::trace classes; updating the boolean to either class modify the show assert dialog to both.
+      static void show_assert_dialog(bool show_assert_dialog);
+
       /// @brief Gets a value indicating whether the global lock should be used.
       /// @return true if the global lock is to be used; otherwise, false. The default is true.
       /// @remarks The global lock is always used if the trace listener is not thread safe, regardless of the value of UseGlobalLock. The IsThreadSafe property is used to determine if the listener is thread safe. The global lock is not used only if the value of UseGlobalLock is false and the value of IsThreadSafe is true. The default behavior is to use the global lock.
@@ -87,20 +99,18 @@ namespace xtd {
       
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
-      static void assert(bool condition) {
+      static void cassert(bool condition) {
 #if defined(TRACE)
-        assert(condition, "");
+        xtd_assert(condition);
 #endif
       }
       
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @param message The message to send to the Listeners collection.
-      static void assert(bool condition, const std::string& message) {
+      static void cassert(bool condition, const std::string& message) {
 #if defined(TRACE)
-        __assert__(condition);
-        if (!condition)
-          fail(message);
+        xtd_assert_message(condition, message);
 #endif
       }
       
@@ -535,6 +545,7 @@ namespace xtd {
       inline static unsigned int indent_level_ = 0;
       inline static unsigned int indent_size_ = 4;
       static trace_listener_collection& listeners_;
+      static bool& show_assert_dialog_;
       inline static bool use_global_lock_ = true;
       static std::mutex global_lock_;
       static std::string source_name_;

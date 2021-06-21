@@ -49,16 +49,16 @@ stack_frame::stack_frame(size_t skip_frame, bool need_file_info) {
   }
 }
 
-stack_frame::stack_frame(const string& file_name, uint32_t line_number) : file_name_(file_name), file_line_number_(line_number) {
+stack_frame::stack_frame(const string& file_name, uint32_t line_number) : file_name_(file_name), file_line_number_(line_number), offset_(0) {
 }
 
-stack_frame::stack_frame(const string& file_name, uint32_t line_number, const string& method_name) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name) {
+stack_frame::stack_frame(const string& file_name, uint32_t line_number, const string& method_name) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name), offset_(0) {
 }
 
-stack_frame::stack_frame(const string& file_name, uint32_t line_number, const string& method_name, uint32_t column_number) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name), file_column_number_(column_number) {
+stack_frame::stack_frame(const string& file_name, uint32_t line_number, const string& method_name, uint32_t column_number) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name), file_column_number_(column_number), offset_(0) {
 }
 
-stack_frame::stack_frame(const string& file_name, uint32_t line_number, uint32_t column_number) : file_name_(file_name), file_line_number_(line_number), file_column_number_(column_number) {
+stack_frame::stack_frame(const string& file_name, uint32_t line_number, uint32_t column_number) : file_name_(file_name), file_line_number_(line_number), file_column_number_(column_number), offset_(0) {
 }
 
 stack_frame::stack_frame(const string& file_name, uint32_t line_number, const string& method_name, uint32_t column_number, uint32_t offset) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name), file_column_number_(column_number), offset_(offset) {

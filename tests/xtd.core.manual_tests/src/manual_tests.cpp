@@ -8,7 +8,9 @@ using namespace xtd::diagnostics;
 class xtd_core_manual_test {
 public:
   static void main() {
-    debug::assert(false, "User message");
+    xtd_assert(false);
+    //xtd_assert_message(false, "User message");
+    //debug::cassert(false, "User message");
     console::write_line("Hello, World!");
   }
 };
