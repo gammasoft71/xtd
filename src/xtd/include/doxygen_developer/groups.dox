@@ -1,6 +1,11 @@
 /// @file
 /// @brief Contains groups definitions.
 
+/// @defgroup adr assert dialog result
+/// @brief assert dialog result definitions.
+/// @warning Internal use only
+/// @ingroup native
+
 /// @defgroup arw arranged direction window
 /// @brief arranged direction window definitions.
 /// @warning Internal use only

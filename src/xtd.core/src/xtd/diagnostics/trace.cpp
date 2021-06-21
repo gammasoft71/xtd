@@ -10,8 +10,10 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 
 trace_listener_collection __listeners__ {std::make_shared<xtd::diagnostics::default_trace_listener>()};
+bool __show_assert_dialog__ {true};
 
 trace_listener_collection& trace::listeners_ = __listeners__;
+bool& trace::show_assert_dialog_ = __show_assert_dialog__;
 mutex trace::global_lock_;
 string trace::source_name_ = environment::get_command_line_args().size() == 0 ? "(unknown)" : environment::get_command_line_args()[0];
 
@@ -45,6 +47,14 @@ trace_listener_collection& trace::listeners() {
 
 void trace::listeners(const trace_listener_collection& listeners) {
   listeners_ = listeners;
+}
+
+bool trace::show_assert_dialog() {
+  return show_assert_dialog_;
+}
+
+void trace::show_assert_dialog(bool show_assert_dialog) {
+  show_assert_dialog_ = show_assert_dialog;
 }
 
 bool trace::use_global_lock() {

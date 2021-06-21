@@ -2,6 +2,7 @@
 
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/debug.h>
+#include <xtd/native/assert_dialog_results.h>
 #include "../../../../include/xtd/native/win32/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #define UNICODE
@@ -10,10 +11,8 @@
 
 using namespace xtd::native;
 
-void debug::assert_message_box(bool condition, const std::string& caption, const std::string& message) {
-  auto result = MessageBox(nullptr, win32::strings::to_wstring(message).c_str(), win32::strings::to_wstring(caption).c_str(), MB_ICONERROR | MB_ABORTRETRYIGNORE | MB_DEFBUTTON3);
-  if (result == IDABORT) exit(EXIT_FAILURE);
-  else if (result == IDRETRY) _CrtDbgBreak();
+int32_t debug::assert_message_box(const std::string& text, const std::string& caption) {
+  return MessageBox(nullptr, win32::strings::to_wstring(text).c_str(), win32::strings::to_wstring(caption).c_str(), MB_ICONERROR | MB_ABORTRETRYIGNORE | MB_DEFBUTTON3);
 }
 
 void debug::write_to_output(const std::string& message) {

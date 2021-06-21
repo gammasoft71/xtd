@@ -10,11 +10,11 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 
 extern trace_listener_collection __listeners__;
+extern bool __show_assert_dialog__;
 extern char** __diagnostics_argv;
 
-void __assert__(bool condition);
-
 trace_listener_collection& debug::listeners_ = __listeners__;
+bool& debug::show_assert_dialog_ = __show_assert_dialog__;
 mutex debug::global_lock_;
 string debug::source_name_ = environment::get_command_line_args().size() == 0 ? "(unknown)" : environment::get_command_line_args()[0];
 
@@ -50,6 +50,14 @@ void debug::listeners(const trace_listener_collection& listeners) {
   listeners_ = listeners;
 }
 
+bool debug::show_assert_dialog() {
+  return show_assert_dialog_;
+}
+
+void debug::show_assert_dialog(bool show_assert_dialog) {
+  show_assert_dialog_ = show_assert_dialog;
+}
+
 bool debug::use_global_lock() {
   return use_global_lock_;
 }
@@ -64,11 +72,6 @@ void debug::indent() {
 
 void debug::unindent() {
   if (indent_level() != 0) indent_level(indent_level() - 1);
-}
-
-void debug::assert_(bool condition, const std::string& message) {
-  if (!condition) fail(message);
-  native::debug::assert_message_box(condition, "Assertion Failed: Abort=Quit, Retry=Debug, Ignore=Continue", strings::format("{}\n\n{}", message, stack_trace(stack_frame(true)).to_string()));
 }
 
 void debug::fail_(const std::string& message) {
@@ -172,4 +175,12 @@ void debug::write_line_(const std::string& message, const std::string& category)
     }
   }
   if (auto_flush_) flush();
+}
+
+xtd::diagnostics::assert_dialog_result debug::assert_dialog(const std::string& text) {
+  return assert_dialog(text, "Assertion Failed: Abort=Quit, Retry=Debug, Ignore=Continue");
+}
+
+xtd::diagnostics::assert_dialog_result debug::assert_dialog(const std::string& text, const std::string& caption) {
+  return show_assert_dialog_ ? static_cast<xtd::diagnostics::assert_dialog_result>(native::debug::show_assert_dialog(text, caption)) : xtd::diagnostics::assert_dialog_result::retry;
 }
