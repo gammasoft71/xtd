@@ -20,6 +20,8 @@ int main() {
 // > If user clicks assert dialog 'Retry' button:
 // Start application
 // > Break the debugger on file xtd_assert.cpp line 9.
+// > If user choose continue running after break.
+// End application
 //
 // > If user clicks assert dialog 'Ignore' button:
 // Start application
