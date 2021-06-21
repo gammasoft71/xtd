@@ -97,12 +97,14 @@ namespace xtd {
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       static void cassert(bool condition) {
+        __da__();
         __assert__(condition, "", csf_);
       }
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @param message The message to send to the Listeners collection.
       static void cassert(bool condition, const std::string& message) {
+        __da__();
         __assert__(condition, message, csf_);
       }
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
@@ -110,6 +112,7 @@ namespace xtd {
       /// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
       /// @param stack_frame The stack frame corresponding to the generated assert.
       static inline void cassert(bool condition, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+        __da__();
         __assert__(condition, message, stack_frame);
       }
 

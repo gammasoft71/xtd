@@ -136,6 +136,7 @@ add_sources(
   include/xtd/diagnostics/trace_source.h
   include/xtd/diagnostics/trace_switch.h
   include/xtd/diagnostics/xtd_assert.h
+  include/xtd/internal/__assert.h
   include/xtd/internal/__binary_formater.h
   include/xtd/internal/__boolean_formater.h
   include/xtd/internal/__character_formater.h
