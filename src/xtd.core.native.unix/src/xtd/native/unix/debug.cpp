@@ -3,7 +3,6 @@
 #include <xtd/native/debug.h>
 #include <xtd/native/assert_dialog_results.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#include <cassert>
 #include <iostream>
 #include <syslog.h>
 #include <gtk/gtk.h>
