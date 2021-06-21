@@ -1,10 +1,10 @@
 # xtd_assert_message
 
-Shows how to use [xtd_assert_message](../../../../src/xtd.core/include/xtd/diagnostics/xtd_assert.h) macro.
+Shows how to use [xtd_assert_](../../../../src/xtd.core/include/xtd/diagnostics/xtd_assert.h) macro.
 
 ## Sources
 
-[src/stack_trace.cpp](src/xtd_assert.cpp)
+[src/xtd_assert_message.cpp](src/xtd_assert_message.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
