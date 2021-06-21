@@ -11,11 +11,11 @@
 using namespace xtd::native;
 
 int32_t debug::show_assert_dialog(const std::string& text, const std::string& caption) {
-  auto dialog = gtk_message_dialog_new(nullptr, GtkDialogFlags::GTK_DIALOG_MODAL, GtkMessageType::GTK_MESSAGE_ERROR, GtkButtonsType::GTK_BUTTONS_NONE, text.c_str());
+  auto dialog = gtk_message_dialog_new(nullptr, GtkDialogFlags::GTK_DIALOG_MODAL, GtkMessageType::GTK_MESSAGE_ERROR, GtkButtonsType::GTK_BUTTONS_NONE, "%s", text.c_str());
   gtk_window_set_title(GTK_WINDOW(dialog), caption.c_str());
-  gtk_dialog_add_button(dialog, "&Abort", GTK_RESPONSE_YES);
-  gtk_dialog_add_button(dialog, "&Retry", GTK_RESPONSE_NO);
-  gtk_dialog_add_button(dialog, "&Ignore", GTK_RESPONSE_CANCEL);
+  gtk_dialog_add_button(GTK_DIALOG(dialog), "&Abort", GTK_RESPONSE_YES);
+  gtk_dialog_add_button(GTK_DIALOG(dialog), "&Retry", GTK_RESPONSE_NO);
+  gtk_dialog_add_button(GTK_DIALOG(dialog), "&Ignore", GTK_RESPONSE_CANCEL);
   auto return_code = gtk_dialog_run(GTK_DIALOG(dialog));
   return return_code == GTK_RESPONSE_YES ? ADR_ABORT : (return_code == GTK_RESPONSE_NO ? ADR_RETRY : ADR_IGNORE);
 }
