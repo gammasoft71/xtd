@@ -13,7 +13,7 @@
 using namespace xtd::native;
 
 int32_t debug::show_assert_dialog(const std::string& text, const std::string& caption) {
-  NSModalResponse return_code = NSAlertFirstButtonReturn;
+  NSModalResponse return_code = NSAlertSecondButtonReturn;
   NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
   @autoreleasepool {
     NSAlert* alert = [[NSAlert alloc] init];
