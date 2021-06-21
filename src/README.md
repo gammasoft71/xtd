@@ -35,7 +35,7 @@ Contains xtd sources.
 
 ## Test
 
-* [xtd.tunit](xtd.tunit) library contains compnents needed for unit testing.
+* [xtd.tunit](xtd.tunit) library contains components needed for unit testing.
 
 ## Third parties
 
