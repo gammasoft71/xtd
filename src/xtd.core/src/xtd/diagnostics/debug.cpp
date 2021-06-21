@@ -177,10 +177,13 @@ void debug::write_line_(const std::string& message, const std::string& category)
   if (auto_flush_) flush();
 }
 
-xtd::diagnostics::assert_dialog_result debug::assert_dialog(const std::string& text) {
-  return assert_dialog(text, "Assertion Failed: Abort=Quit, Retry=Debug, Ignore=Continue");
-}
-
-xtd::diagnostics::assert_dialog_result debug::assert_dialog(const std::string& text, const std::string& caption) {
-  return show_assert_dialog_ ? static_cast<xtd::diagnostics::assert_dialog_result>(native::debug::show_assert_dialog(text, caption)) : xtd::diagnostics::assert_dialog_result::retry;
+xtd::diagnostics::assert_dialog_result debug::assert_dialog(const std::string& message, const stack_frame& stack_frrame) {
+  xtd::diagnostics::debug::write_line("---- DEBUG ASSERTION FAILED ----");
+  xtd::diagnostics::debug::write_line("---- Assert Short Message----");
+  xtd::diagnostics::debug::write_line(message);
+  xtd::diagnostics::debug::write_line("---- Assert Long Message----");
+  xtd::diagnostics::debug::write_line("");
+  xtd::diagnostics::debug::write_line(stack_trace(stack_frrame).to_string());
+  xtd::diagnostics::debug::write_line("");
+  return show_assert_dialog_ ? static_cast<xtd::diagnostics::assert_dialog_result>(native::debug::show_assert_dialog(strings::format("{}\n\n{}", message, stack_trace(stack_frrame)), "Assertion Failed: Abort=Quit, Retry=Debug, Ignore=Continue")) : assert_dialog_result::retry;
 }

@@ -7,6 +7,7 @@
 #include <string>
 #include "../core_export.h"
 #include "../static.h"
+#include "stack_trace.h"
 #include "trace_listener_collection.h"
 #include "xtd_assert.h"
 
@@ -95,20 +96,24 @@ namespace xtd {
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       static void cassert(bool condition) {
-#if defined(TRACE)
-        xtd_assert(condition);
-#endif
+        cassert(condition, "", csf_);
       }
-      
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @param message The message to send to the Listeners collection.
       static void cassert(bool condition, const std::string& message) {
+        cassert(condition, message, csf_);
+      }
+      /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
+      /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
+      /// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
+      /// @param stack_frame The stack frame corresponding to the generated assert.
+      static inline void cassert(bool condition, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
 #if defined(TRACE)
-        xtd_assert_message(condition, message);
+        xtd_assert_message_stack_frame(condition, message, stack_frame);
 #endif
       }
-      
+
       /// @brief Emits the specified error message.
       /// @param message A message to emit.
       /// @remarks The default behavior is that the default_trace_listener outputs the message to a message box when the application is running in user interface mode and to the TraceListener instances in the Listeners collection.

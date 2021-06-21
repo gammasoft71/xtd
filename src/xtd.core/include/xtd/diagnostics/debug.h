@@ -95,32 +95,34 @@ namespace xtd {
       /// @remarks The global lock is always used if the trace listener is not thread safe, regardless of the value of UseGlobalLock. The xtd::diagnostics::debug::is_threa_safe property is used to determine if the listener is thread safe. The global lock is not used only if the value of xtd::diagnostics::debug::use_global_lock is false and the value of xtd::diagnostics::debug::is_thread_safe is true. The default behavior is to use the global lock.
       static void use_global_lock(bool use_global_lock);
 
-      /// @brief Displays a message box that shows the call stack.
-      /// @param text The assert dialog text.
-      /// @return One of xtd::diagnostics::assert_dialog_result values.
-      /// @remarks Used by #xtd_assert and #xtd_assert_message.
-      /// @warning Do not use this method directly.
-      static xtd::diagnostics::assert_dialog_result assert_dialog(const std::string& text);
+      static xtd::diagnostics::assert_dialog_result assert_dialog(const std::string& text, const std::string& caption);
       /// @brief Displays a message box that shows the call stack.
       /// @param text The assert dialog text.
       /// @param caption The assert dialog caption.
       /// @return One of xtd::diagnostics::assert_dialog_result values.
       /// @remarks Used by #xtd_assert and #xtd_assert_message.
       /// @warning Do not use this method directly.
-      static xtd::diagnostics::assert_dialog_result assert_dialog(const std::string& text, const std::string& caption);
-      
+      static xtd::diagnostics::assert_dialog_result assert_dialog(const std::string& message, const xtd::diagnostics::stack_frame& stack_frrame);
+
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
-      static void cassert(bool condition) {
-        xtd_assert(condition);
+      static inline void cassert(bool condition) {
+        cassert(condition, "", csf_);
       }
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
-      static void cassert(bool condition, const std::string& message) {
-        xtd_assert_message(condition, message);
+      static inline void cassert(bool condition, const std::string& message) {
+        cassert(condition, message, csf_);
       }
-      
+      /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
+      /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
+      /// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
+      /// @param stack_frame The stack frame corresponding to the generated assert.
+      static inline void cassert(bool condition, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+        xtd_assert_message_stack_frame(condition, message, stack_frame);
+      }
+
       /// @brief Emits the specified error message.
       /// @param message A message to emit.
       /// @remarks The default behavior is that the xtd::diagnostics::default_trace_listener outputs the message to a message box when the application is running in user interface mode and to the xtd::diagnostics::trace_listener instances in the xtd::diagnostics::debug::listeners collection.
