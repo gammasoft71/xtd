@@ -10,11 +10,6 @@
 #include "trace_listener_collection.h"
 #include "xtd_assert.h"
 
-/// @cond
-//#undef assert
-void __assert__(bool condition);
-/// @endcond
-
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.

@@ -2,7 +2,6 @@
 /// @brief Contains xtd::diagnostics::debug class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <cassert>
 #include <cstdlib>
 #include "assert_dialog_result.h"
 #include "../strings.h"

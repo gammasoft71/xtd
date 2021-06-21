@@ -1,6 +1,3 @@
-#include <cassert>
-void __assert__(bool condition) {assert(condition);}
-
 #include "../../../include/xtd/diagnostics/trace.h"
 #include "../../../include/xtd/diagnostics/default_trace_listener.h"
 #include "../../../include/xtd/environment.h"
