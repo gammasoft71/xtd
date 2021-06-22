@@ -115,6 +115,9 @@ namespace xtd {
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
+      /// @par Examples
+      /// The following example shows how to use xtd::diagnostics::debug::cassert_ method.
+      /// @include debug_cassert.cpp
       static inline void cassert(bool condition, const std::string& message) {
         __da__();
         __assert__(condition, message, csf_);
@@ -469,7 +472,7 @@ namespace xtd {
 /// @include debug_cassert.cpp
 /// @par Examples
 /// The following example shows how to use xtd::diagnostics::trace::cassert_ method.
-/// @include assert_.cpp
+/// @include trace_cassert.cpp
 #define cassert_(...) \
   __da__(); \
   __CMD_CASSERT_MACRO_ARGS(__assert__, __VA_ARGS__)
@@ -482,7 +485,7 @@ namespace xtd {
 /// @param message (optional) The message to send to the xtd::diagnostics::debug::listeners collection.
 /// @par Examples
 /// The following example shows how to use #assert_ macro.
-/// @include trace_cassert.cpp
+/// @include assert_.cpp
 /// @par Examples
 /// The following example shows how to use #assert_ macro with message.
 /// @include assert_with_message.cpp
