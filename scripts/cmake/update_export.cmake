@@ -37,6 +37,7 @@ macro(xtd_update_export_file path keyword export)
       "\n"
       "/// @brief Define shared library export.\n"
       "/// @ingroup keywords\n"
+      "/// @warning Internal use only\n"
       "#define ${export}\n"
     )
   endif()
