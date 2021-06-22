@@ -4,7 +4,7 @@ Shows how to use [debug::cassert](../../../../src/xtd.core/include/xtd/diagnosti
 
 ## Sources
 
-[src/stack_trace.cpp](src/debug_cassert.cpp)
+[src/debug_cassert.cpp](src/debug_cassert.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
