@@ -55,8 +55,8 @@ public:
     //raise(SIGABRT);
     raise(SIGSEGV);
     
-    //xtd_assert_(false);
-    //xtd_assert_(false, "User message");
+    //assert_(false);
+    assert_(false, "User message");
     //debug::cassert(false, "User message");
     console::write_line("Hello, World!");
   }

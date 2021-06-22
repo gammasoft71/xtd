@@ -5,11 +5,11 @@ find_package(xtd REQUIRED)
 
 add_projects(
   console_trace_listener
+  debug_cassert
   stack_frame
   stack_trace
   stack_trace_simple
   stopwatch
   stopwatch_constructor
-  xtd_assert
-  xtd_assert_message
+  trace_cassert
 )
