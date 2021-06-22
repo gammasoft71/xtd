@@ -36,7 +36,6 @@ namespace xtd {
     /// @par Examples
     /// The following example uses debug to indicate the beginning and the end of a program's execution. The example also uses the debug::indent and debug::unindent methods to distinguish the tracing output.
     /// @include debug.cpp
-    /// @ingroup xtd_core
     class core_export_ debug static_ {
     public:
       /// @brief Gets whether xtd::diagnostics::debug::flush should be called on the xtd::diagnostics::debug::Listeners after every write.
@@ -455,17 +454,37 @@ namespace xtd {
   }
 }
 
-#ifndef cassert_
+/// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core debug keywords
+/// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
+/// @param message (optional) The message to send to the xtd::diagnostics::debug::listeners collection.
+/// @par Usage
+/// This assert can only call by xtd::diagnostics::debug and xtd::diagnostics::trace like this :
+/// * xtd::diagnostics::debug::cassert_();
+/// * xtd::diagnostics:trace::cassert_();
+/// @par Examples
+/// The following example shows how to use xtd::diagnostics::debug::cassert_ method.
+/// @include debug_cassert.cpp
+/// @par Examples
+/// The following example shows how to use xtd::diagnostics::trace::cassert_ method.
+/// @include assert_.cpp
 #define cassert_(...) \
   __da__(); \
   __CMD_CASSERT_MACRO_ARGS(__assert__, __VA_ARGS__)
-#endif
 
 /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
 /// @par Library
 /// xtd.core
-/// @ingroup xtd_core keywords
+/// @ingroup xtd_core debug keywords
 /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
 /// @param message (optional) The message to send to the xtd::diagnostics::debug::listeners collection.
+/// @par Examples
+/// The following example shows how to use #assert_ macro.
+/// @include trace_cassert.cpp
+/// @par Examples
+/// The following example shows how to use #assert_ macro with message.
+/// @include assert_with_message.cpp
 #define assert_(...) \
-xtd::diagnostics::debug::cassert_(__VA_ARGS__)
+  xtd::diagnostics::debug::cassert_(__VA_ARGS__)
