@@ -19,9 +19,16 @@ xtdc run
 # Output
 
 ```
-stack_trace:
-   at method3()
-   at method2()
-   at method1()
-   at main
+> If user clicks assert dialog 'Abort' button:
+Start application
+
+> If user clicks assert dialog 'Retry' button:
+Start application
+> Break the debugger on file xtd_assert.cpp line 9.
+> If user choose continue running after break.
+End application
+
+> If user clicks assert dialog 'Ignore' button:
+Start application
+End application
 ```
