@@ -95,6 +95,9 @@ namespace xtd {
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @param message The message to send to the Listeners collection.
+      /// @par Examples
+      /// The following example shows how to use xtd::diagnostics::trace::cassert_ method.
+      /// @include trace_cassert.cpp
       static void cassert(bool condition, const std::string& message) {
         __da__();
         __assert__(condition, message, csf_);
