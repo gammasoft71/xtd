@@ -29,7 +29,7 @@
 #define __assert__(condition, message, stack_frame) \
   if (!(condition)) { \
     auto result = xtd::diagnostics::debug::assert_dialog(message, stack_frame); \
-    if (result == xtd::diagnostics::assert_dialog_result::abort) std::exit(EXIT_FAILURE); \
+    if (result == xtd::diagnostics::assert_dialog_result::abort) xtd::environment::exit(EXIT_FAILURE); \
     if (result == xtd::diagnostics::assert_dialog_result::retry) __std_abort__(); \
   }
 #else
