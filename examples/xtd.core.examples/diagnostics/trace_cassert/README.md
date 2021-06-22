@@ -25,7 +25,7 @@ Start application
 
 > If user clicks assert dialog 'Retry' button:
 Start application
-> Break the debugger on file xtd_assert.cpp line 9.
+> Break the debugger on file trace_cassert.cpp line 13.
 > If user choose continue running after break.
 End application
 
