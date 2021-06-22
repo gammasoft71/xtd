@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <mutex>
 #include "../core_export.h"
+#include "../environment.h"
 #include "../static.h"
 #include "../strings.h"
 #include "assert_dialog_result.h"
