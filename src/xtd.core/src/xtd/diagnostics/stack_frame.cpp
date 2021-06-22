@@ -93,7 +93,7 @@ uint32_t stack_frame::get_offset() const {
 
 string stack_frame::to_string() const {
   if (*this == empty()) return "";
-  return strings::format("{} at offset {} in file:line:column {}:{}:{}", method_name_.empty() ? "<unknown method>" : method_name_, file_name_.empty() ? "<unknown offset>" : std::to_string(offset_), file_name_.empty() ? "<filename unknown>" : file_name_, file_line_number_, file_column_number_);
+  return strings::format("{} at offset {} in file:line:column {}:{}:{}", method_name_.empty() ? "<unknown method>" : method_name_, offset_ == OFFSET_UNKNOWN || file_name_.empty() ? "<unknown offset>" : std::to_string(offset_), file_name_.empty() ? "<filename unknown>" : file_name_, file_line_number_, file_column_number_);
 }
 
 //friend ostream& operator<<(ostream& os, const stack_frame& stack_frame) noexcept {
