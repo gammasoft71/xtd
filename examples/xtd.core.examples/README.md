@@ -73,6 +73,8 @@
 
 ## [Keywords](keywords/README.md)
 
+* [assert](keywords/assert_/README.md) shows how to use [assert_](../../src/xtd.core/include/xtd/assert.h) method.
+* [assert_with_message](keywords/assert_with_message/README.md) shows how to use [assert_](../../src/xtd.core/include/xtd/assert.h) method wth message.
 * [block_scope](keywords/block_scope/README.md) shows how to use [xtd::block_scope](../../../src/xtd.core/include/xtd/block_scope.h) method.
 * [current_stack_frame](keywords/current_stack_frame/README.md) shows how to use [xtd::diagnostics::stack_frame(../../../src/xtd.core/include/xtd/diagnostics/starck_frame.h) method.
 * [csf](keywords/csf/README.md) shows how to use [xtd::diagnostics::stack_frame(../../../src/xtd.core/include/xtd/diagnostics/starck_frame.h) method.
