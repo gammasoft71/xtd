@@ -4,7 +4,7 @@ Shows how to use [assert_](../../../../src/xtd.core/include/xtd/assert.h) macro.
 
 ## Sources
 
-[src/assert.cpp](src/assert.cpp)
+[src/assert_.cpp](src/assert_.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
