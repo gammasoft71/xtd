@@ -1,10 +1,10 @@
-# xtd_assert_message
+# debug_cassert
 
-Shows how to use [xtd_assert_message](../../../../src/xtd.core/include/xtd/diagnostics/xtd_assert.h) macro.
+Shows how to use [debug::cassert](../../../../src/xtd.core/include/xtd/diagnostics/debug.h) method.
 
 ## Sources
 
-[src/stack_trace.cpp](src/xtd_assert.cpp)
+[src/stack_trace.cpp](src/debug_cassert.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

@@ -2,6 +2,8 @@
 
 [This folder](.) contains keywords examples used by [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/) and more.
 
+* [assert](assert_/README.md) shows how to use [assert_](../../../src/xtd.core/include/xtd/assert.h) method.
+* [assert_with_message](assert_with_message/README.md) shows how to use [assert_](../../../src/xtd.core/include/xtd/assert.h) method wth message.
 * [block_scope](block_scope/README.md) shows how to use [xtd::block_scope](../../../src/xtd.core/include/xtd/block_scope.h) method.
 * [current_stack_frame](current_stack_frame/README.md) shows how to use [xtd::diagnostics::stack_frame(../../../src/xtd.core/include/xtd/diagnostics/starck_frame.h) method.
 * [csf](csf/README.md) shows how to use [xtd::diagnostics::stack_frame(../../../src/xtd.core/include/xtd/diagnostics/starck_frame.h) method.

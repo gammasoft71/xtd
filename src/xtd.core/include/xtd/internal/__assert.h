@@ -9,21 +9,15 @@
 
 #pragma once
 #include <cstdlib>
-#include "../diagnostics/assert_dialog_result.h"
-#include "../strings.h"
 
 /// @cond
-#define __CMD_XTD_MACRO_0_ARGS__(cmd) cmd(csf_)
-#define __CMD_XTD_MACRO_1_ARGS__(cmd, arg1) cmd(arg1, csf_)
-#define __CMD_XTD_MACRO_2_ARGS__(cmd, arg1, arg2) cmd(arg1, arg2, csf_)
-#define __CMD_XTD_MACRO_3_ARGS__(cmd, arg1, arg2, arg3) cmd(arg1, arg2, arg3, csf_)
-#define __CMD_XTD_MACRO_4_ARGS__(cmd, arg1, arg2, arg3, arg4) cmd(arg1, arg2, arg3, arg4, csf_)
-#define __GET_XTD_MACRO_LAST_ARG(arg1, arg2, arg3, arg4, arg5, ...) arg5
-#define __CMD_XTD_MACRO_MACRO_CHOOSER(cmd, ...) __GET_XTD_MACRO_LAST_ARG(__VA_ARGS__, __CMD_XTD_MACRO_4_ARGS__, __CMD_XTD_MACRO_3_ARGS__, __CMD_XTD_MACRO_2_ARGS__, __CMD_XTD_MACRO_1_ARGS__, __CMD_XTD_MACRO_0_ARGS__, )
-#define __CMD_XTD_MACRO_ARGS(cmd, ...) __CMD_XTD_MACRO_MACRO_CHOOSER(cmd, __VA_ARGS__)(cmd, __VA_ARGS__)
-/// @endcond
+#define __CMD_CASSERT_MACRO_0_ARGS__(cmd) cmd(false, "", csf_)
+#define __CMD_CASSERT_MACRO_1_ARGS__(cmd, arg1) cmd(arg1, "", csf_)
+#define __CMD_CASSERT_MACRO_2_ARGS__(cmd, arg1, arg2) cmd(arg1, arg2, csf_)
+#define __GET_CASSERT_MACRO_LAST_ARG(arg1, arg2, arg3, ...) arg3
+#define __CMD_CASSERT_MACRO_CHOOSER(cmd, ...) __GET_CASSERT_MACRO_LAST_ARG(__VA_ARGS__, __CMD_CASSERT_MACRO_2_ARGS__, __CMD_CASSERT_MACRO_1_ARGS__, __CMD_CASSERT_MACRO_0_ARGS__, )
+#define __CMD_CASSERT_MACRO_ARGS(cmd, ...) __CMD_CASSERT_MACRO_CHOOSER(cmd, __VA_ARGS__)(cmd, __VA_ARGS__)
 
-/// @cond
 // Workaround : the std::abort function on Visual Studio shows a message box.
 #if defined(_MSC_VER)
 #define __std_abort__ __debugbreak
@@ -42,7 +36,3 @@
 #define __assert__(condition, message, const xtd::diagnostics_stack_frame& stack_frame)
 #endif
 /// @endcond
-
-#define cassert_(...) \
-  __da__(); \
-  __CMD_XTD_MACRO_ARGS(__assert__, __VA_ARGS__)

@@ -330,14 +330,24 @@ EXPAND_ONLY_PREDEF     = YES # Default : NO
 SEARCH_INCLUDES        = YES
 INCLUDE_PATH           = 
 INCLUDE_FILE_PATTERNS  = 
-PREDEFINED             = "block_scope_=" \
-                         "caller_info_=xtd::caller_info {__func__, __FILE__, __LINE__}" \
+PREDEFINED             = "assert_=xtd::diagnostics::debug::cassert" \
+                         "block_scope_=" \
+                         "cassert_=cassert" \
+                         "core_export_=" \
+                         "csf_=xtd::diagnostics::stack_frame {__func__, __FILE__, __LINE__}" \
+                         "current_stack_frame_=xtd::diagnostics::stack_frame {__func__, __FILE__, __LINE__}" \
+                         "drawing_export_=" \
+                         "export_=" \
+                         "forms_export_=" \
                          "interface_=: public xtd::interface" \
                          "nameof_=std::string(#__VA_ARGS__)" \
                          "startup_=" \
                          "static_=: public xtd::static_class" \
+                         "static_class_=: public xtd::static_class" \
+                         "tunit_export_=" \
                          "typeof_=xtd::__s__::__typeof_" \
-                         "using_=" \
+                         "unused_=" \
+                         "using_="
 EXPAND_AS_DEFINED      = 
 SKIP_FUNCTION_MACROS   = YES
 

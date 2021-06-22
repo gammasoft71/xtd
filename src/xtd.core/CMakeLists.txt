@@ -14,6 +14,7 @@ add_sources(
   include/xtd/argument_out_of_range_exception.h
   include/xtd/arithmetic_exception.h
   include/xtd/as.h
+  include/xtd/assert.h
   include/xtd/background_color.h
   include/xtd/basic_console.h
   include/xtd/beep.h
@@ -135,7 +136,6 @@ add_sources(
   include/xtd/diagnostics/trace_options.h
   include/xtd/diagnostics/trace_source.h
   include/xtd/diagnostics/trace_switch.h
-  include/xtd/diagnostics/xtd_assert.h
   include/xtd/internal/__assert.h
   include/xtd/internal/__binary_formater.h
   include/xtd/internal/__boolean_formater.h

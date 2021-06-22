@@ -8,7 +8,7 @@ int main() {
   
   auto index = 0;
   console::write_line("Start application");
-  xtd_assert_(index > 0);
+  assert_(index > 0);
   console::write_line("End application");
 }
 

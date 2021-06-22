@@ -4,12 +4,15 @@
 #pragma once
 #include <cstdint>
 #include <mutex>
-#include <string>
 #include "../core_export.h"
 #include "../static.h"
+#include "../strings.h"
+#include "assert_dialog_result.h"
 #include "stack_trace.h"
 #include "trace_listener_collection.h"
-#include "xtd_assert.h"
+#define __XTD_CORE_INTERNAL__
+#include "../internal/__assert.h"
+#undef __XTD_CORE_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -77,12 +80,12 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the assert dialog should be show.
       /// @return true if assert dialog is to be shown; otherwise, false. The default is true.
-      /// @remarks The show assert dialog is used when xtd::diagnostics::debug::cassert or td::diagnostics::trace::cassert or #xtd_assert_ is called to ask user to ignore, continue or retry the assert.
+      /// @remarks The show assert dialog is used when xtd::diagnostics::debug::cassert or td::diagnostics::trace::cassert or assert_ is called to ask user to ignore, continue or retry the assert.
       /// @note The xtd::diagnostics::debug::show_assert_dialog boolean is shared by both the xtd::diagnostics::debug and the xtd::diagnostics::trace classes; updating the boolean to either class modify the show assert dialog to both.
       static bool show_assert_dialog();
       /// @brief Sets a value indicating whether the assert dialog should be show.
       /// @return true if assert dialog is to be shown; otherwise, false. The default is true.
-      /// @remarks The show assert dialog is used when xtd::diagnostics::debug::cassert or td::diagnostics::trace::cassert or #xtd_assert_ is called to ask user to ignore, continue or retry the assert.
+      /// @remarks The show assert dialog is used when xtd::diagnostics::debug::cassert or td::diagnostics::trace::cassert or assert_ is called to ask user to ignore, continue or retry the assert.
       /// @note The xtd::diagnostics::debug::show_assert_dialog boolean is shared by both the xtd::diagnostics::debug and the xtd::diagnostics::trace classes; updating the boolean to either class modify the show assert dialog to both.
       static void show_assert_dialog(bool show_assert_dialog);
 
@@ -99,7 +102,7 @@ namespace xtd {
       /// @param text The assert dialog text.
       /// @param caption The assert dialog caption.
       /// @return One of xtd::diagnostics::assert_dialog_result values.
-      /// @remarks Used by #xtd_assert_.
+      /// @remarks Used by #assert_.
       /// @warning Do not use this method directly.
       static xtd::diagnostics::assert_dialog_result assert_dialog(const std::string& message, const xtd::diagnostics::stack_frame& stack_frrame);
 
@@ -450,3 +453,18 @@ namespace xtd {
     };
   }
 }
+
+#ifndef cassert_
+#define cassert_(...) \
+  __da__(); \
+  __CMD_CASSERT_MACRO_ARGS(__assert__, __VA_ARGS__)
+#endif
+
+/// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core keywords
+/// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
+/// @param message (optional) The message to send to the xtd::diagnostics::debug::listeners collection.
+#define assert_(...) \
+xtd::diagnostics::debug::cassert_(__VA_ARGS__)
