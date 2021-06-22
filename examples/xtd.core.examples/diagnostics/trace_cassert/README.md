@@ -4,7 +4,7 @@ Shows how to use [trace::cassert_](../../../../src/xtd.core/include/xtd/diagnost
 
 ## Sources
 
-[src/stack_trace.cpp](src/trace_cassert.cpp)
+[src/trace_cassert.cpp](src/trace_cassert.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
