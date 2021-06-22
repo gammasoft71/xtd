@@ -2,8 +2,8 @@
 
 [This folder](.) contains diagnostics examples used by [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/) and more.
 
-* [debug_cassert](debug_cassert/README.md) shows how to use [xtd::diagnostics::debug::cassert](../../../src/xtd.core/include/xtd/diagnostics::debug.h) method.
 * [console_trace_listener](console_trace_listener/README.md) shows how to use [xtd::diagnostics::console_trace_listener](../../../src/xtd.core/include/xtd/diagnostics::console_trace_listener.h) class.
+* [debug_cassert](debug_cassert/README.md) shows how to use [xtd::diagnostics::debug::cassert](../../../src/xtd.core/include/xtd/diagnostics::debug.h) method.
 * [stack_frame](stack_trace/README.md) shows how to use [xtd::diagnostics::stack_frame](../../../src/xtd.core/include/xtd/diagnostics::stack_frame.h) class.
 * [stack_trace](stack_trace/README.md) shows how to use [xtd::diagnostics::stack_trace](../../../src/xtd.core/include/xtd/diagnostics::stack_trace.h) class.
 * [stack_trace_simple](stack_trace_simple/README.md) demonstrates how to create a simple [xtd::diagnostics::stack_trace](../../../src/xtd.core/include/xtd/diagnostics::stack_trace.h) class and iterate through its frames to obtain debugging and diagnostic information.
