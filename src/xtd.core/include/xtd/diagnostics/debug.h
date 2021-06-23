@@ -118,27 +118,27 @@ namespace xtd {
       /// @par Examples
       /// The following example shows how to use xtd::diagnostics::debug::cassert_ method.
       /// @include debug_cassert.cpp
-      static __forceinline void cassert(bool condition) {
+      static void cassert(bool condition) {
         if (__is_abort__(condition, "", csf_)) __std_abort__();
       }
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
-      static __forceinline void cassert(bool condition, const std::string& message) {
+      static void cassert(bool condition, const std::string& message) {
         if (__is_abort__(condition, message, csf_)) __std_abort__();
       }
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
       /// @param stack_frame The stack frame corresponding to the generated assert.
-      __forceinline static void cassert(bool condition, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+      static void cassert(bool condition, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (__is_abort__(condition, message, stack_frame)) __std_abort__();
       }
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
       /// @param stack_frame The stack frame corresponding to the generated assert.
-      __forceinline static void cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {
+      static void cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {
         if (__is_abort__(condition, "", stack_frame)) __std_abort__();
       }
 
