@@ -66,6 +66,22 @@ void trace::indent() {
   indent_level(indent_level() + 1);
 }
 
+void trace::cassert(bool condition) {
+  if (__should_aborted__(condition, "", csf_)) __std_abort__();
+}
+
+void trace::cassert(bool condition, const std::string& message) {
+  if (__should_aborted__(condition, message, csf_)) __std_abort__();
+}
+
+void trace::cassert(bool condition, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+  if (__should_aborted__(condition, message, stack_frame)) __std_abort__();
+}
+
+void trace::cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {
+  if (__should_aborted__(condition, "", stack_frame)) __std_abort__();
+}
+
 void trace::trace_error(const std::string& message) {
   trace_event(trace_event_type::error, message);
 }

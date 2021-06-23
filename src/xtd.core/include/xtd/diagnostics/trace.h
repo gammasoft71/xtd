@@ -91,28 +91,20 @@ namespace xtd {
       /// @par Examples
       /// The following example shows how to use xtd::diagnostics::trace::cassert_ method.
       /// @include trace_cassert.cpp
-      static void cassert(bool condition) {
-        if (__is_abort__(condition, "", csf_)) __std_abort__();
-      }
+      static void cassert(bool condition);
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @param message The message to send to the Listeners collection.
-      static void cassert(bool condition, const std::string& message) {
-        if (__is_abort__(condition, message, csf_)) __std_abort__();
-      }
-      /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
-      /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
-      /// @param stack_frame The stack frame corresponding to the generated assert.
-      static inline void cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {
-        if (__is_abort__(condition, "", stack_frame)) __std_abort__();
-      }
+      static void cassert(bool condition, const std::string& message);
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
       /// @param stack_frame The stack frame corresponding to the generated assert.
-      static inline void cassert(bool condition, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        if (__is_abort__(condition, message, stack_frame)) __std_abort__();
-      }
+      static void cassert(bool condition, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+      /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
+      /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
+      /// @param stack_frame The stack frame corresponding to the generated assert.
+      static void cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame);
 
       /// @brief Emits the specified error message.
       /// @param message A message to emit.
@@ -508,10 +500,10 @@ namespace xtd {
       }
       
       /// @cond
-      static inline bool __is_abort__(bool condition) { return __is_abort__(condition, "", csf_); }
-      static inline bool __is_abort__(bool condition, const std::string& message) { return __is_abort__(condition, message, csf_); }
-      static inline bool __is_abort__(bool condition, const xtd::diagnostics::stack_frame& stack_frame) { return __is_abort__(condition, "", stack_frame); }
-      static inline bool __is_abort__(bool condition, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+      static inline bool __should_aborted__(bool condition) { return __should_aborted__(condition, "", csf_); }
+      static inline bool __should_aborted__(bool condition, const std::string& message) { return __should_aborted__(condition, message, csf_); }
+      static inline bool __should_aborted__(bool condition, const xtd::diagnostics::stack_frame& stack_frame) { return __should_aborted__(condition, "", stack_frame); }
+      static inline bool __should_aborted__(bool condition, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
 #if defined(TRACE)
         auto result = xtd::diagnostics::debug::assert_dialog(condition, message, stack_frame);
         if (result == xtd::diagnostics::assert_dialog_result::abort) xtd::environment::exit(EXIT_FAILURE);

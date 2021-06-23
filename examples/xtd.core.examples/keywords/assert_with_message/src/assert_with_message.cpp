@@ -4,7 +4,7 @@ using namespace xtd;
 
 int main() {
   // Uncomment following line to remove assert dialog
-  // diagnostics::debug::show_assert_dialog(false);
+  //diagnostics::debug::show_assert_dialog(false);
   
   auto index = 0;
   console::write_line("Start application");
