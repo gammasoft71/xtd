@@ -11,7 +11,6 @@ using namespace xtd::diagnostics;
 
 extern trace_listener_collection __listeners__;
 extern bool __show_assert_dialog__;
-extern bool __dynamic_cassert__;
 extern char** __diagnostics_argv;
 
 trace_listener_collection& debug::listeners_ = __listeners__;
@@ -73,10 +72,6 @@ void debug::indent() {
 
 void debug::unindent() {
   if (indent_level() != 0) indent_level(indent_level() - 1);
-}
-
-void debug::da_() {
-  __dynamic_cassert__ = true;
 }
 
 void debug::fail_(const std::string& message) {
@@ -182,9 +177,8 @@ void debug::write_line_(const std::string& message, const std::string& category)
   if (auto_flush_) flush();
 }
 
-xtd::diagnostics::assert_dialog_result debug::assert_dialog(const std::string& message, const stack_frame& stack_frrame) {
-  if (__dynamic_cassert__ == false) return assert_dialog_result::ignore;
-  __dynamic_cassert__ = false;
+xtd::diagnostics::assert_dialog_result debug::assert_dialog(bool condition, const std::string& message, const stack_frame& stack_frrame) {
+  if (condition == true ) return assert_dialog_result::ignore;
   write_line("---- DEBUG ASSERTION FAILED ----");
   write_line("---- Assert Short Message----");
   write_line(message);

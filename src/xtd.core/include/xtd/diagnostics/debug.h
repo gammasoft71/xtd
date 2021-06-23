@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
+#include <cstdlib>
 #include <mutex>
 #include "../core_export.h"
 #include "../environment.h"
@@ -11,9 +12,15 @@
 #include "assert_dialog_result.h"
 #include "stack_trace.h"
 #include "trace_listener_collection.h"
-#define __XTD_CORE_INTERNAL__
-#include "../internal/__assert.h"
-#undef __XTD_CORE_INTERNAL__
+
+/// @cond
+// Workaround : the std::abort function on Visual Studio shows a message box.
+#if defined(_MSC_VER)
+#define __std_abort__ __debugbreak
+#else
+#define __std_abort__ std::abort
+#endif
+/// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -104,31 +111,35 @@ namespace xtd {
       /// @return One of xtd::diagnostics::assert_dialog_result values.
       /// @remarks Used by #assert_.
       /// @warning Do not use this method directly.
-      static xtd::diagnostics::assert_dialog_result assert_dialog(const std::string& message, const xtd::diagnostics::stack_frame& stack_frrame);
+      static xtd::diagnostics::assert_dialog_result assert_dialog(bool condition, const std::string& message, const xtd::diagnostics::stack_frame& stack_frrame);
 
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @par Examples
       /// The following example shows how to use xtd::diagnostics::debug::cassert_ method.
       /// @include debug_cassert.cpp
-      static inline void cassert(bool condition) {
-        __da__();
-        __assert__(condition, "", csf_);
+      static __forceinline void cassert(bool condition) {
+        if (__is_abort__(condition, "", csf_)) __std_abort__();
       }
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
-      static inline void cassert(bool condition, const std::string& message) {
-        __da__();
-        __assert__(condition, message, csf_);
+      static __forceinline void cassert(bool condition, const std::string& message) {
+        if (__is_abort__(condition, message, csf_)) __std_abort__();
       }
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
       /// @param stack_frame The stack frame corresponding to the generated assert.
-      static inline void cassert(bool condition, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        __da__();
-        __assert__(condition, message, stack_frame);
+      __forceinline static void cassert(bool condition, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+        if (__is_abort__(condition, message, stack_frame)) __std_abort__();
+      }
+      /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
+      /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
+      /// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
+      /// @param stack_frame The stack frame corresponding to the generated assert.
+      __forceinline static void cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {
+        if (__is_abort__(condition, "", stack_frame)) __std_abort__();
       }
 
       /// @brief Emits the specified error message.
@@ -427,15 +438,20 @@ namespace xtd {
       }
       
       /// @cond
-      static void __da__() {
+      static inline bool __is_abort__(bool condition) {return __is_abort__(condition, "", csf_);}
+      static inline bool __is_abort__(bool condition, const std::string& message) {return __is_abort__(condition, message, csf_);}
+      static inline bool __is_abort__(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {return __is_abort__(condition, "", stack_frame);}
+      static inline bool __is_abort__(bool condition, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        da_();
+        auto result = xtd::diagnostics::debug::assert_dialog(condition, message, stack_frame);
+        if (result == xtd::diagnostics::assert_dialog_result::abort) xtd::environment::exit(EXIT_FAILURE);
+        if (result == xtd::diagnostics::assert_dialog_result::retry) return true;
 #endif
+        return false;
       }
       /// @endcond
-      
+
     private:
-      static void da_();
       static void fail_(const std::string& message);
       static void fail_(const std::string& message, const std::string& detail_message);
       static void flush_();
@@ -456,6 +472,14 @@ namespace xtd {
     };
   }
 }
+/// @cond
+#define __CMD_CASSERT_MACRO_0_ARGS__(cmd) cmd(false, csf_)
+#define __CMD_CASSERT_MACRO_1_ARGS__(cmd, arg1) cmd(arg1, csf_)
+#define __CMD_CASSERT_MACRO_2_ARGS__(cmd, arg1, arg2) cmd(arg1, arg2, csf_)
+#define __GET_CASSERT_MACRO_LAST_ARG(arg1, arg2, arg3, ...) arg3
+#define __CMD_CASSERT_MACRO_CHOOSER(cmd, ...) __GET_CASSERT_MACRO_LAST_ARG(__VA_ARGS__, __CMD_CASSERT_MACRO_2_ARGS__, __CMD_CASSERT_MACRO_1_ARGS__, __CMD_CASSERT_MACRO_0_ARGS__, )
+#define __CMD_CASSERT_MACRO_ARGS(cmd, ...) __CMD_CASSERT_MACRO_CHOOSER(cmd, __VA_ARGS__)(cmd, __VA_ARGS__)
+/// @endcond
 
 /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
 /// @par Library
@@ -474,8 +498,7 @@ namespace xtd {
 /// The following example shows how to use xtd::diagnostics::trace::cassert_ method.
 /// @include trace_cassert.cpp
 #define cassert_(...) \
-  __da__(); \
-  __CMD_CASSERT_MACRO_ARGS(__assert__, __VA_ARGS__)
+  __CMD_CASSERT_MACRO_ARGS(cassert, __VA_ARGS__)
 
 /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
 /// @par Library
@@ -490,4 +513,5 @@ namespace xtd {
 /// The following example shows how to use #assert_ macro with message.
 /// @include assert_with_message.cpp
 #define assert_(...) \
-  xtd::diagnostics::debug::cassert_(__VA_ARGS__)
+  if (xtd::diagnostics::debug::__CMD_CASSERT_MACRO_ARGS(__is_abort__, __VA_ARGS__)) __std_abort__()
+

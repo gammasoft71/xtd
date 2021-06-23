@@ -8,7 +8,6 @@ using namespace xtd::diagnostics;
 
 trace_listener_collection __listeners__ {std::make_shared<xtd::diagnostics::default_trace_listener>()};
 bool __show_assert_dialog__ {true};
-bool __dynamic_cassert__ {false};
 
 trace_listener_collection& trace::listeners_ = __listeners__;
 bool& trace::show_assert_dialog_ = __show_assert_dialog__;
@@ -78,8 +77,3 @@ void trace::trace_warning(const std::string& message) {
 void trace::unindent() {
   if (indent_level() != 0) indent_level(indent_level() - 1);
 }
-
-void trace::da_() {
-  __dynamic_cassert__ = true;
-}
-
