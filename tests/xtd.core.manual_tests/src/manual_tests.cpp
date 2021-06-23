@@ -1,3 +1,4 @@
+#define TRACE
 #include <filesystem>
 #include <csignal>
 #include <xtd/xtd.core>
@@ -53,11 +54,14 @@ public:
 
     //abort();
     //raise(SIGABRT);
-    raise(SIGSEGV);
+    //raise(SIGSEGV);
     
     //assert_(false);
-    assert_(false, "User message");
+    //assert_(false, "User message");
+    //debug::cassert_(false);
+    //debug::cassert_(false, "User message");
     //debug::cassert(false, "User message");
+    trace::cassert_(false, "User message");
     console::write_line("Hello, World!");
   }
 };

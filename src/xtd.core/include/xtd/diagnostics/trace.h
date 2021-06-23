@@ -92,23 +92,26 @@ namespace xtd {
       /// The following example shows how to use xtd::diagnostics::trace::cassert_ method.
       /// @include trace_cassert.cpp
       static void cassert(bool condition) {
-        __da__();
-        __assert__(condition, "", csf_);
+        if (__is_abort__(condition, "", csf_)) __std_abort__();
       }
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @param message The message to send to the Listeners collection.
       static void cassert(bool condition, const std::string& message) {
-        __da__();
-        __assert__(condition, message, csf_);
+        if (__is_abort__(condition, message, csf_)) __std_abort__();
+      }
+      /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
+      /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
+      /// @param stack_frame The stack frame corresponding to the generated assert.
+      static inline void cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {
+        if (__is_abort__(condition, "", stack_frame)) __std_abort__();
       }
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
       /// @param stack_frame The stack frame corresponding to the generated assert.
       static inline void cassert(bool condition, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        __da__();
-        __assert__(condition, message, stack_frame);
+        if (__is_abort__(condition, message, stack_frame)) __std_abort__();
       }
 
       /// @brief Emits the specified error message.
@@ -505,16 +508,20 @@ namespace xtd {
       }
       
       /// @cond
-      static void __da__() {
+      static inline bool __is_abort__(bool condition) { return __is_abort__(condition, "", csf_); }
+      static inline bool __is_abort__(bool condition, const std::string& message) { return __is_abort__(condition, message, csf_); }
+      static inline bool __is_abort__(bool condition, const xtd::diagnostics::stack_frame& stack_frame) { return __is_abort__(condition, "", stack_frame); }
+      static inline bool __is_abort__(bool condition, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
 #if defined(TRACE)
-        da_();
+        auto result = xtd::diagnostics::debug::assert_dialog(condition, message, stack_frame);
+        if (result == xtd::diagnostics::assert_dialog_result::abort) xtd::environment::exit(EXIT_FAILURE);
+        if (result == xtd::diagnostics::assert_dialog_result::retry) return true;
 #endif
+        return false;
       }
       /// @endcond
-      
-    private:
-      static void da_();
 
+    private:
       static void trace_event(trace_event_type trace_event_type, const std::string& message) {
 #if defined(TRACE)
         for (auto listener : listeners_) {
