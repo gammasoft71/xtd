@@ -74,6 +74,22 @@ void debug::unindent() {
   if (indent_level() != 0) indent_level(indent_level() - 1);
 }
 
+void debug::cassert(bool condition) {
+  if (__should_aborted__(condition, "", csf_)) __std_abort__();
+}
+
+void debug::cassert(bool condition, const std::string& message) {
+  if (__should_aborted__(condition, message, csf_)) __std_abort__();
+}
+
+void debug::cassert(bool condition, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+  if (__should_aborted__(condition, message, stack_frame)) __std_abort__();
+}
+
+void debug::cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {
+  if (__should_aborted__(condition, "", stack_frame)) __std_abort__();
+}
+
 void debug::fail_(const std::string& message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
