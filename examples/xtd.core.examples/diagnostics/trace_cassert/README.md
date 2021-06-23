@@ -19,7 +19,6 @@ xtdc run
 # Output
 
 ```
-```
 > If user clicks assert dialog 'Abort' button:
 Start application
 
