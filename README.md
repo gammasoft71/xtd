@@ -1,6 +1,6 @@
 # xtd
 
-**Modern c++17/20 framework to create console, forms (GUI like WinForms) and unit test applications on Windows, macOS, Linux, iOS and android.**
+**Modern C++17/20 framework to create console, forms (GUI like WinForms) and unit test applications on Windows, macOS, Linux, iOS and android.**
 
 [![xtd](docs/pictures/xtd_header.png)](https://gammasoft71.wixsite.com/xtdpro)
 
@@ -14,15 +14,15 @@
 
 ## Features
 
-* a collection of native C++ classes libraries, to complete std;
-* written in efficient, modern C++17 / C++20;
-* and highly portable and available on many different platforms (Windows, macOS, Linux, iOS and android);
+* a collection of native C++ classes libraries, to complete std
+* written in efficient, modern C++17 / C++20
+* and highly portable and available on many different platforms (Windows, macOS, Linux, iOS and Android)
 
 For more information see:
 * [website](https://gammasoft71.wixsite.com/xtdpro)
 * [markdown documentations](https://github.com/gammasoft71/xtd/blob/master/docs/home.md)
 * [sources](https://github.com/gammasoft71/xtd) 
-* [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html).
+* [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html)
 
 ## Examples
 
