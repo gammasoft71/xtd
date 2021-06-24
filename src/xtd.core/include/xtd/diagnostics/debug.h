@@ -466,12 +466,11 @@ namespace xtd {
 }
 
 /// @cond
-#define __CMD_CASSERT_MACRO_0_ARGS__(cmd) cmd(false, csf_)
-#define __CMD_CASSERT_MACRO_1_ARGS__(cmd, arg1) cmd(arg1, csf_)
-#define __CMD_CASSERT_MACRO_2_ARGS__(cmd, arg1, arg2) cmd(arg1, arg2, csf_)
-#define __GET_CASSERT_MACRO_LAST_ARG(arg1, arg2, arg3, ...) arg3
-#define __CMD_CASSERT_MACRO_CHOOSER(cmd, ...) __GET_CASSERT_MACRO_LAST_ARG(__VA_ARGS__, __CMD_CASSERT_MACRO_2_ARGS__, __CMD_CASSERT_MACRO_1_ARGS__, __CMD_CASSERT_MACRO_0_ARGS__, )
-#define __CMD_CASSERT_MACRO_ARGS(cmd, ...) __CMD_CASSERT_MACRO_CHOOSER(cmd, __VA_ARGS__)(cmd, __VA_ARGS__)
+#define __cmd_casset_1_args__(cmd, arg1) cmd(arg1, csf_)
+#define __cmd_casset_2_args__(cmd, arg1, arg2) cmd(arg1, arg2, csf_)
+#define __get_cassert_last_arg__(arg1, arg2, arg3, ...) arg3
+#define __cmd_cassert_chooser__(cmd, ...) __get_cassert_last_arg__(__VA_ARGS__, __cmd_casset_2_args__, __cmd_casset_1_args__, )
+#define __cmd_cassert_args__(cmd, ...) __cmd_cassert_chooser__(cmd, __VA_ARGS__)(cmd, __VA_ARGS__)
 /// @endcond
 
 /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
@@ -491,7 +490,7 @@ namespace xtd {
 /// The following example shows how to use xtd::diagnostics::trace::cassert_ method.
 /// @include trace_cassert.cpp
 #define cassert_(...) \
-  __CMD_CASSERT_MACRO_ARGS(cassert, __VA_ARGS__)
+  __cmd_cassert_args__(cassert, __VA_ARGS__)
 
 /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
 /// @par Library
@@ -506,5 +505,5 @@ namespace xtd {
 /// The following example shows how to use #assert_ macro with message.
 /// @include assert_with_message.cpp
 #define assert_(...) \
-  if (xtd::diagnostics::debug::__CMD_CASSERT_MACRO_ARGS(__should_aborted__, __VA_ARGS__)) __std_abort__()
+  if (xtd::diagnostics::debug::__cmd_cassert_args__(__should_aborted__, __VA_ARGS__)) __std_abort__()
 
