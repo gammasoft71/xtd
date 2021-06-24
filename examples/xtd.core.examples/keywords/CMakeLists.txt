@@ -4,8 +4,6 @@ project(keywords)
 find_package(xtd REQUIRED)
 
 add_projects(
-  assert_
-  assert_with_message
   block_scope
   current_stack_frame
   csf
