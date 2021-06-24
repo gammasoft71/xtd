@@ -29,6 +29,8 @@
 
 ## [Diagnostics](diagnostics/README.md)
 
+* [assert](diagnostics/assert_/README.md) shows how to use [assert_](../../src/xtd.core/include/xtd/diagnostics::debug.h) macro.
+* [assert_with_message](diagnostics/assert_with_message/README.md) shows how to use [assert_](../../src/xtd.core/include/xtd/diagnostics::debug.h) macro wth message.
 * [console_trace_listener](diagnostics/console_trace_listener/README.md) shows how to use [xtd::diagnostics/console_trace_listener](../../src/xtd.core/include/xtd/diagnostics/console_trace_listener.h) class.
 * [debug_cassert](diagnostics/debug_cassert/README.md) shows how to use [xtd::diagnostics::debug::cassert](../../src/xtd.core/include/xtd/diagnostics::debug.h) method.
 * [stack_frame](diagnostics/stack_frame/README.md) shows how to use [xtd::diagnostics/stack_frame](../../src/xtd.core/include/xtd/diagnostics/stack_frame.h) class.
@@ -75,8 +77,6 @@
 
 ## [Keywords](keywords/README.md)
 
-* [assert](keywords/assert_/README.md) shows how to use [assert_](../../src/xtd.core/include/xtd/assert.h) method.
-* [assert_with_message](keywords/assert_with_message/README.md) shows how to use [assert_](../../src/xtd.core/include/xtd/assert.h) method wth message.
 * [block_scope](keywords/block_scope/README.md) shows how to use [xtd::block_scope](../../../src/xtd.core/include/xtd/block_scope.h) method.
 * [current_stack_frame](keywords/current_stack_frame/README.md) shows how to use [xtd::diagnostics::stack_frame(../../../src/xtd.core/include/xtd/diagnostics/starck_frame.h) method.
 * [csf](keywords/csf/README.md) shows how to use [xtd::diagnostics::stack_frame(../../../src/xtd.core/include/xtd/diagnostics/starck_frame.h) method.
