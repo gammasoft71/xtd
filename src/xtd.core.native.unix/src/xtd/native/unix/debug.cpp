@@ -17,6 +17,7 @@ int32_t debug::show_assert_dialog(const std::string& text, const std::string& ca
   gtk_dialog_add_button(GTK_DIALOG(dialog), "&Retry", GTK_RESPONSE_NO);
   gtk_dialog_add_button(GTK_DIALOG(dialog), "&Ignore", GTK_RESPONSE_CANCEL);
   auto return_code = gtk_dialog_run(GTK_DIALOG(dialog));
+  gtk_widget_hide(dialog);
   return return_code == GTK_RESPONSE_YES ? ADR_ABORT : (return_code == GTK_RESPONSE_NO ? ADR_RETRY : ADR_IGNORE);
 }
 
