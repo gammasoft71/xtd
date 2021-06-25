@@ -5,6 +5,7 @@ find_package(xtd REQUIRED)
 
 add_projects(
   application
+  application_and_assert
   application_and_exception
   application_context
   application_enable_dark_mode
