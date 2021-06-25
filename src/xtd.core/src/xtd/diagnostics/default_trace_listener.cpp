@@ -1,6 +1,6 @@
 #include "../../../include/xtd/diagnostics/default_trace_listener.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/debug.h>
+#include <xtd/native/debugger.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/io/file.h>
 
@@ -37,7 +37,7 @@ void default_trace_listener::write(const std::string& message) {
 
 void default_trace_listener::write_line(const std::string& message) {
   write(message + "\n");
-  native::debug::write_to_output(message_line_);
+  native::debugger::log(0, "", message_line_);
   message_line_ = "";
   need_indent(true);
 }

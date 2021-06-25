@@ -11,6 +11,18 @@
 
 using namespace xtd::native;
 
+bool debugger::is_attached() {
+  return false;
+}
+s
+bool debugger::is_logging() {
+  return true;
+}
+
+bool debugger::launch() {
+  return false;
+}
+
 int32_t debug::show_assert_dialog(const std::string& text, const std::string& caption) {
   NSModalResponse return_code = NSAlertSecondButtonReturn;
   NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
@@ -28,7 +40,7 @@ int32_t debug::show_assert_dialog(const std::string& text, const std::string& ca
   return return_code == NSAlertFirstButtonReturn ? ADR_ABORT : (return_code == NSAlertSecondButtonReturn ? ADR_RETRY : ADR_IGNORE);
 }
 
-void debug::write_to_output(const std::string& message) {
+void debug::log(int32_t level, const std::string& category, const std::string& message) {
   syslog(LOG_EMERG | LOG_USER, "%s", message.c_str());
 }
 #endif

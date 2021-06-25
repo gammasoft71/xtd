@@ -13,7 +13,7 @@ add_sources(
   include/xtd/native/console_special_key.h
   include/xtd/native/console.h
   include/xtd/native/constant_special_item_id_list.h
-  include/xtd/native/debug.h
+  include/xtd/native/debugger.h
   include/xtd/native/drive_type.h
   include/xtd/native/drive.h
   include/xtd/native/environment.h

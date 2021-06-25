@@ -101,6 +101,7 @@
 #include "collections/specialized/string_vector.h"
 #include "diagnostics/console_trace_listener.h"
 #include "diagnostics/debug.h"
+#include "diagnostics/debugger.h"
 #include "diagnostics/default_trace_listener.h"
 #include "diagnostics/event_type_filter.h"
 #include "diagnostics/ostream_trace_listener.h"
