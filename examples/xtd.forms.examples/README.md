@@ -16,6 +16,7 @@
 ## [Application](applications/README.md)
 
 * [application](applications/application/README.md) shows how to create an application with [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) class.
+* [application_and_assert](applications/application_and_assert/README.md) shows how to create an application with [xtd::forms::application](../../src/xtd_forms/include/xtd/forms/application.hpp) class and hot to manage assert.
 * [application_and_exception](applications/application_and_exception/README.md) shows how to create an application with [xtd::forms::application](../../src/xtd_forms/include/xtd/forms/application.hpp) class and hot to manage exception.
 * [application_context](applications/application_context/README.md) shows how to create an application with [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) class with [xtd::forms::application_context](../../src/xtd.forms/include/xtd/forms/application_context.h) class.
 * [application_enable_dark_mode](applications/application_enable_dark_mode/README.md) shows how to enable dark mode with [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) class with [xtd::forms::application_context](../../src/xtd.forms/include/xtd/forms/application_context.h) class.
