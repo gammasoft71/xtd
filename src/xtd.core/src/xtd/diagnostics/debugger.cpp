@@ -23,5 +23,5 @@ bool debugger::launch() {
 }
 
 void debugger::log(int level, std::string& category, const std::string& message) {
-
+  return native::debugger::log(level, category, message);
 }
