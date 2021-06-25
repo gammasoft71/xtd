@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
+#include "../tunit_export.h"
 #include "__demangle.h"
 #include "__tunit_join__items.h"
 #include "abort_error.h"
@@ -10,7 +11,6 @@
 #include "default_insert_basic_ostream_operator.h"
 #include "ignore_error.h"
 #include "line_info.h"
-#include "tunit_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -2,10 +2,10 @@
 /// @brief Contains xtd::tunit::settings class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+#include "../tunit_export.h"
 #include <chrono>
 #include <cstdlib>
 #include <string>
-#include "tunit_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

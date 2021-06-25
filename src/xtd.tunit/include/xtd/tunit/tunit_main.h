@@ -2,7 +2,7 @@
 /// @brief Contains main entry point.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include "tunit_export.h"
+#include "../tunit_export.h"
 
 /// @cond
 class tunit_export_ __tunit_main final {

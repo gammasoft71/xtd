@@ -2,13 +2,13 @@
 /// @brief Contains xtd::tunit::test_class class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+#include "../tunit_export.h"
 #include "class_initialize_attribute.h"
 #include "class_cleanup_attribute.h"
 #include "settings.h"
 #include "test_initialize_attribute.h"
 #include "test_cleanup_attribute.h"
 #include "test_method_attribute.h"
-#include "tunit_export.h"
 #include <chrono>
 #include <vector>
 
