@@ -9,6 +9,18 @@
 
 using namespace xtd::native;
 
+bool debugger::is_attached() {
+  return false;
+}
+
+bool debugger::is_logging() {
+  return true;
+}
+
+bool debugger::launch() {
+  return false;
+}
+
 int32_t debug::show_assert_dialog(const std::string& text, const std::string& caption) {
   gtk_init_check(0, nullptr);
   auto dialog = gtk_message_dialog_new(nullptr, GtkDialogFlags::GTK_DIALOG_MODAL, GtkMessageType::GTK_MESSAGE_ERROR, GtkButtonsType::GTK_BUTTONS_NONE, "%s", text.c_str());
@@ -21,7 +33,7 @@ int32_t debug::show_assert_dialog(const std::string& text, const std::string& ca
   return return_code == GTK_RESPONSE_YES ? ADR_ABORT : (return_code == GTK_RESPONSE_NO ? ADR_RETRY : ADR_IGNORE);
 }
 
-void debug::write_to_output(const std::string& message) {
+void debug::log(int32_t level, const std::string& category, const std::string& message) {
   syslog(LOG_EMERG | LOG_USER, "%s", message.c_str());
   std::cerr << message << std::flush;
 }

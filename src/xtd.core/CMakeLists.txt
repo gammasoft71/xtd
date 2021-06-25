@@ -112,6 +112,7 @@ add_sources(
   include/xtd/diagnostics/data_received_event_args.h
   include/xtd/diagnostics/data_received_event_handler.h
   include/xtd/diagnostics/debug.h
+  include/xtd/diagnostics/debugger.h
   include/xtd/diagnostics/default_trace_listener.h
   include/xtd/diagnostics/event_type_filter.h
   include/xtd/diagnostics/ostream_trace_listener.h
@@ -195,6 +196,7 @@ add_sources(
   src/xtd/types.cpp
   src/xtd/diagnostics/console_trace_listener.cpp
   src/xtd/diagnostics/debug.cpp
+  src/xtd/diagnostics/debugger.cpp
   src/xtd/diagnostics/default_trace_listener.cpp
   src/xtd/diagnostics/event_type_filter.cpp
   src/xtd/diagnostics/ostream_trace_listener.cpp

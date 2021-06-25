@@ -11,17 +11,9 @@
 #include "../static.h"
 #include "../strings.h"
 #include "assert_dialog_result.h"
+#include "debugger.h"
 #include "stack_trace.h"
 #include "trace_listener_collection.h"
-
-/// @cond
-// Workaround : the std::abort function on Visual Studio shows a message box.
-#if defined(_MSC_VER)
-#define __std_abort__ __debugbreak
-#else
-#define __std_abort__ std::abort
-#endif
-/// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -495,4 +487,4 @@ namespace xtd {
 /// The following example shows how to use #assert_ macro with message.
 /// @include assert_with_message.cpp
 #define assert_(...) \
-if (xtd::diagnostics::debug::add_last_arg_to_command_(__should_aborted__, (csf_), __VA_ARGS__)) __std_abort__()
+  if (xtd::diagnostics::debug::add_last_arg_to_command_(__should_aborted__, (csf_), __VA_ARGS__)) debug_break_()
