@@ -22,6 +22,7 @@ namespace xtd {
   /// @cond
   namespace diagnostics {
     class debug;
+    class debugger;
     class default_trace_listener;
   }
   /// @endcond
@@ -29,15 +30,20 @@ namespace xtd {
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
-    /// @brief Contains debug native API.
+    /// @brief Contains debugger native API.
     /// @par Library
     /// xtd.core.native
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
-    class core_native_export_ debug final {
+    class core_native_export_ debugger final {
       friend xtd::diagnostics::debug;
+      friend xtd::diagnostics::debugger;
       friend xtd::diagnostics::default_trace_listener;
     protected:
+      static void debug_break();
+      static bool is_attached();
+      static bool is_logging();
+      static bool launch();
       /// @brief Displays an assert dialog that shows the text.
       /// @param text The assert dialog text.
       /// @param caption The assert dialog caption.
@@ -48,7 +54,7 @@ namespace xtd {
       /// @brief Writes a specified message to the debuger output.
       /// @param message Message to write.
       /// @warning Internal use only
-      static void write_to_output(const std::string& message);
+      static void log(int32_t level, const std::string& category, const std::string& message);
     };
   }
 }

@@ -2,7 +2,7 @@
 #include "../../../include/xtd/diagnostics/default_trace_listener.h"
 #include "../../../include/xtd/environment.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/debug.h>
+#include <xtd/native/debugger.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace std;
@@ -75,19 +75,19 @@ void debug::unindent() {
 }
 
 void debug::cassert(bool condition) {
-  if (__should_aborted__(condition, "", csf_)) __std_abort__();
+  if (__should_aborted__(condition, "", csf_)) debug_break_();
 }
 
 void debug::cassert(bool condition, const std::string& message) {
-  if (__should_aborted__(condition, message, csf_)) __std_abort__();
+  if (__should_aborted__(condition, message, csf_)) debug_break_();
 }
 
 void debug::cassert(bool condition, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-  if (__should_aborted__(condition, message, stack_frame)) __std_abort__();
+  if (__should_aborted__(condition, message, stack_frame)) debug_break_();
 }
 
 void debug::cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {
-  if (__should_aborted__(condition, "", stack_frame)) __std_abort__();
+  if (__should_aborted__(condition, "", stack_frame)) debug_break_();
 }
 
 void debug::fail_(const std::string& message) {
@@ -202,5 +202,5 @@ xtd::diagnostics::assert_dialog_result debug::assert_dialog(bool condition, cons
   write_line("");
   write_line(stack_trace(stack_frrame).to_string());
   write_line("");
-  return show_assert_dialog_ ? static_cast<xtd::diagnostics::assert_dialog_result>(native::debug::show_assert_dialog(strings::format("{}\n\n{}", message, stack_trace(stack_frrame)), "Assertion Failed: Abort=Quit, Retry=Debug, Ignore=Continue")) : assert_dialog_result::retry;
+  return show_assert_dialog_ ? static_cast<xtd::diagnostics::assert_dialog_result>(native::debugger::show_assert_dialog(strings::format("{}\n\n{}", message, stack_trace(stack_frrame)), "Assertion Failed: Abort=Quit, Retry=Debug, Ignore=Continue")) : assert_dialog_result::retry;
 }
