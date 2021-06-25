@@ -1,9 +1,10 @@
 #if defined(__APPLE__)
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/debug.h>
+#include <xtd/native/debugger.h>
 #include <xtd/native/assert_dialog_results.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <iostream>
+#include <cstdlib>
 #include <syslog.h>
 #import <CoreFoundation/CoreFoundation.h>
 #import <Cocoa/Cocoa.h>
@@ -11,19 +12,23 @@
 
 using namespace xtd::native;
 
+void debugger::debug_break() {
+  std::abort();
+}
+
 bool debugger::is_attached() {
   return false;
 }
-s
+
 bool debugger::is_logging() {
   return true;
 }
 
 bool debugger::launch() {
-  return false;
+  return true;
 }
 
-int32_t debug::show_assert_dialog(const std::string& text, const std::string& caption) {
+int32_t debugger::show_assert_dialog(const std::string& text, const std::string& caption) {
   NSModalResponse return_code = NSAlertSecondButtonReturn;
   NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
   @autoreleasepool {
@@ -40,7 +45,7 @@ int32_t debug::show_assert_dialog(const std::string& text, const std::string& ca
   return return_code == NSAlertFirstButtonReturn ? ADR_ABORT : (return_code == NSAlertSecondButtonReturn ? ADR_RETRY : ADR_IGNORE);
 }
 
-void debug::log(int32_t level, const std::string& category, const std::string& message) {
+void debugger::log(int32_t level, const std::string& category, const std::string& message) {
   syslog(LOG_EMERG | LOG_USER, "%s", message.c_str());
 }
 #endif

@@ -11,7 +11,7 @@ bool debugger::is_attached() {
 }
 
 void debugger::debug_break() {
-  return native::debugger::debug_break();
+  return debug_break_();
 }
 
 bool debugger::is_logging() {
