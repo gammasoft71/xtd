@@ -5,8 +5,8 @@ project(xtd.tunit)
 include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 add_include_directories(include)
+add_references(xtd.core)
 add_sources(
-  include/xtd/add_last_arg_to_command.h
   include/xtd/tunit/__console_color.h
   include/xtd/tunit/__demangle.h
   include/xtd/tunit/__tunit_join__items.h
@@ -54,16 +54,16 @@ add_sources(
   include/xtd/tunit/valid.h
   include/xtd/xtd.tunit
   include/xtd/xtd.tunit.h
-  src/__console_color_gcc.cpp
-  src/__console_color_win32.cpp
-  src/__demangle_gcc.cpp
-  src/__demangle_win32.cpp
-  src/base_assert.cpp
-  src/settings.cpp
-  src/tunit_main.cpp
-  src/test.cpp
-  src/test_class.cpp
-  src/unit_test.cpp
+  src/xtd/tunit/__console_color_gcc.cpp
+  src/xtd/tunit/__console_color_win32.cpp
+  src/xtd/tunit/__demangle_gcc.cpp
+  src/xtd/tunit/__demangle_win32.cpp
+  src/xtd/tunit/base_assert.cpp
+  src/xtd/tunit/settings.cpp
+  src/xtd/tunit/tunit_main.cpp
+  src/xtd/tunit/test.cpp
+  src/xtd/tunit/test_class.cpp
+  src/xtd/tunit/unit_test.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})
 

@@ -6,6 +6,8 @@
 #include <limits>
 #include "../strings.h"
 
+#ifndef current_stack_frame_
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
@@ -213,3 +215,5 @@ xtd::diagnostics::stack_frame {__FILE__, __LINE__, __func__}
 
 #define add_ccurrent_stack_frame_(...) \
 __VA_ARGS__ __VA_ARGS_COMMA__(__VA_ARGS__) current_stack_frame_
+
+#endif

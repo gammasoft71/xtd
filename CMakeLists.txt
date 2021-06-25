@@ -48,12 +48,16 @@ else ()
 endif ()
 
 # Validation options
-if (XTD_BUILD_TESTS_XTD_DRAWING AND NOT XTD_BUILD_LIBRARIES_XTD_CORE)
+if (XTD_BUILD_LIBRARIES_XTD_DRAWING AND NOT XTD_BUILD_LIBRARIES_XTD_CORE)
   message(FATAL_ERROR "Build xtd.core libraries must must be set to ON: xtd.drawing depends of xtd.core")
 endif ()
 
 if (XTD_BUILD_LIBRARIES_XTD_FORMS AND NOT XTD_BUILD_LIBRARIES_XTD_DRAWING)
   message(FATAL_ERROR "Build xtd.drawing libraries must must be set to ON: xtd.drawing depends of xtd.drawing")
+endif ()
+
+if (XTD_BUILD_LIBRARIES_XTD_TUNIT AND NOT XTD_BUILD_LIBRARIES_XTD_CORE)
+  message(FATAL_ERROR "Build xtd.core libraries must must be set to ON: xtd.tunit depends of xtd.core")
 endif ()
 
 if (XTD_BUILD_TESTS_XTD_CORE AND NOT XTD_BUILD_LIBRARIES_XTD_CORE)
