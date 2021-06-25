@@ -1,5 +1,5 @@
-#include "../include/xtd/console_unit_test.h"
-#include "../include/xtd/tunit_main.h"
+#include "../include/xtd/tunit/console_unit_test.h"
+#include "../include/xtd/tunit/tunit_main.h"
 
 using namespace xtd::tunit;
 

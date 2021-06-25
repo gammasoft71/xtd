@@ -3,10 +3,10 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
+#include "../tunit_export.h"
 #include "event_listener.h"
 #include "registered_test_class.h"
 #include "settings.h"
-#include "tunit_export.h"
 #include <chrono>
 #include <iomanip>
 #include <fstream>
