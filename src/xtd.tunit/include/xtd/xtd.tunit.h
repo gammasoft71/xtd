@@ -3,7 +3,6 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
-#include "add_last_arg_to_command.h"
 #include "tunit/abort_error.h"
 #include "tunit/assert.h"
 #include "tunit/assert_error.h"
