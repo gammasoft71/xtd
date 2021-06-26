@@ -47,7 +47,7 @@ namespace xtd {
       /// @brief Launches and attaches a debugger to the process.
       /// @return true if the startup is successful or if the debugger is already attached; otherwise, false.
       /// @remarks If a debugger is already attached, nothing happens.
-      /// @remarks Debugger launch is only supported on ooperating system. On Unix and macOS operating systems, the method returns true without launching a debugger.
+      /// @remarks Debugger launch is only supported on Windows. On Unix and macOS operating systems, the method returns true without launching a debugger.
       static bool launch();
 
       /// @brief Posts a message for the attached debugger.
