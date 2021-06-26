@@ -16,6 +16,9 @@ public:
     
     // Uncomment following line to remove assert dialog
     //diagnostics::debug::show_assert_dialog(false);
+    
+    if (!debugger::is_attached())
+      debugger::launch();
 
     generate_assert_button.auto_size(true);
     generate_assert_button.location({10, 10});
@@ -50,7 +53,7 @@ private:
   
   void generate_debug_cassert() {
     auto index = 0;
-    debug::cassert_(index > 0, "Index must be greather than 0");
+    debug::cassert(index > 0, "Index must be greather than 0", csf_);
   }
   
   void generate_debug_break() {
