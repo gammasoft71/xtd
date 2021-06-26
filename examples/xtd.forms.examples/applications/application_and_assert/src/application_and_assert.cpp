@@ -17,9 +17,6 @@ public:
     // Uncomment following line to remove assert dialog
     //diagnostics::debug::show_assert_dialog(false);
     
-    if (!debugger::is_attached())
-      debugger::launch();
-
     generate_assert_button.auto_size(true);
     generate_assert_button.location({10, 10});
     generate_assert_button.parent(*this);

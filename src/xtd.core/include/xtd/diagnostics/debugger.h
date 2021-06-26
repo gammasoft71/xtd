@@ -73,6 +73,7 @@ namespace xtd {
 /// console::write_line("Hello, world.");
 /// @endcode
 #define debug_break_() \
+  if (!xtd::diagnostics::debugger::is_attached()) xtd::diagnostics::debugger::launch(); \
   __debugbreak()
 #else
 /// @brief Signals a breakpoint to an attached debugger.
@@ -86,5 +87,6 @@ namespace xtd {
 /// console::write_line("Hello, world.");
 /// @endcode
 #define debug_break_() \
+  if (!xtd::diagnostics::debugger::is_attached()) xtd::diagnostics::debugger::launch(); \
   std::abort()
 #endif
