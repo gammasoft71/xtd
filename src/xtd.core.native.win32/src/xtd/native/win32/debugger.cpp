@@ -19,10 +19,6 @@ bool debugger::is_attached() {
   return IsDebuggerPresent() != 0;
 }
 
-bool debugger::is_attached() {
-  return IsDebuggerPresent() != 0;
-}
-
 bool debugger::is_logging() {
   return is_attached();
 }
