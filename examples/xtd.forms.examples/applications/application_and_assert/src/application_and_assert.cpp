@@ -50,7 +50,7 @@ private:
   
   void generate_debug_cassert() {
     auto index = 0;
-    debug::cassert(index > 0, "Index must be greather than 0", csf_);
+    debug::cassert_(index > 0, "Index must be greather than 0");
   }
   
   void generate_debug_break() {
