@@ -16,9 +16,7 @@ intptr_t toolkit::initialize() {
   if (wxTheApp) return 0;
 #ifdef _MSC_VER
   // Workaround : Dump memory leak : Remove temporary memory check...
-  int current_crt_dbg_flag = _CrtSetDbgFlag(_CRTDBG_REPORT_FLAG);
-  current_crt_dbg_flag &= ~(_CRTDBG_ALLOC_MEM_DF|_CRTDBG_LEAK_CHECK_DF);
-  _CrtSetDbgFlag(current_crt_dbg_flag);
+  _CrtSetDbgFlag(_CRTDBG_CHECK_DEFAULT_DF);
 #endif
   wxDISABLE_DEBUG_SUPPORT();
   wxDisableAsserts();
