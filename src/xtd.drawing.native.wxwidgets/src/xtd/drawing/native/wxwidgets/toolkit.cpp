@@ -19,8 +19,6 @@ intptr_t toolkit::initialize() {
   _CrtSetDbgFlag(_CRTDBG_CHECK_DEFAULT_DF);
 #endif
   wxDISABLE_DEBUG_SUPPORT();
-  wxDisableAsserts();
-  wxLog::SetLogLevel(wxLOG_Info);
   wxSystemOptions::SetOption("osx.openfiledialog.always-show-types", 1);
   wxApp::SetInstance(new wx_application());
   int argc = 0;
