@@ -338,6 +338,7 @@ PREDEFINED             = "assert_=xtd::diagnostics::debug::cassert" \
                          "core_export_=" \
                          "csf_=xtd::diagnostics::stack_frame {__func__, __FILE__, __LINE__}" \
                          "current_stack_frame_=xtd::diagnostics::stack_frame {__func__, __FILE__, __LINE__}" \
+                         "debug_break_=" \
                          "drawing_export_=" \
                          "export_=" \
                          "forms_export_=" \

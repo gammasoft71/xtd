@@ -19,6 +19,7 @@ bool debugger::is_logging() {
 }
 
 bool debugger::launch() {
+  if (is_attached()) return true;
   return native::debugger::launch();
 }
 
