@@ -84,7 +84,7 @@ public:
 
 startup_(binomial);
 
-// This code produces the following output :
+// This code can produces the following output :
 //
 // Binomial( 20, 0 ) = 1
 // Binomial( 20, 1 ) = 20
