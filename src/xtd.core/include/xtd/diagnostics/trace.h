@@ -18,9 +18,11 @@ namespace xtd {
     /// @remarks You can customize the tracing output's target by adding trace_listener instances to or removing instances from the listeners collection. The listeners collection is shared by both the debug and the trace classes; adding a trace listener to either class adds the listener to both. By default, trace output is emitted using the default_trace_listener class.
     /// @note Adding a trace listener to the listeners collection can cause an exception to be thrown while tracing, if a resource used by the trace listener is not available. The conditions and the exception thrown depend on the trace listener and cannot be enumerated in this topic. It may be useful to place calls to the debug methods in try/catch blocks to detect and handle any exceptions from trace listeners.
     /// @remarks The debug class provides properties to get or set the level of indent, the indent_size, and whether to auto_flush after each write.
-    /// @remarks You must enable debug mode to use a trace listener. The syntax is compiler specific. If you use other than cmake to manage your build, refer to the documentation of your build nanager.
+    /// @remarks You must enable debug or trace mode to use a trace listener. The syntax is compiler specific. If you use other than cmake to manage your build, refer to the documentation of your build nanager.
     ///  * To enable debug mode with cmake, add the add_definitions(-DDEBUG) command line in the CMakeLists.txt of your porject, or you can add #define DEBUG to the top of your file.
+    ///  * To enable trace mode with cmake, add the add_definitions(-DTRACE) command line in the CMakeLists.txt of your porject, or you can add #define TRACE to the top of your file.
     /// @remarks To activete your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if defined(DEBUG) ... #endif block, and add the /DDEBUG option to the compiler command line or add #define DEBUG to the file.
+    /// @remarks To activete your code if TRACE is defined, you must enclose calls to the methods of Debug in an #if defined(TRACE) ... #endif block, and add the /DTRACE option to the compiler command line or add #define TRACE to the file.
     /// @par Examples
     /// The following example uses debug to indicate the beginning and the end of a program's execution. The example also uses the debug::indent and debug::unindent methods to distinguish the tracing output.
     /// @include debug.cpp

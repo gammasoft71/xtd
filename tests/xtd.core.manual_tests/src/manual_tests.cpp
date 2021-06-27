@@ -51,18 +51,21 @@ struct signal_catcher {
 class xtd_core_manual_test {
 public:
   static void main() {
+    console::write_line("Start app");
 
     //abort();
     //raise(SIGABRT);
     //raise(SIGSEGV);
+
+    boolean_switch bs1("data", "data_access module");
+    boolean_switch bs2("data", "data_access module", "true");
+
+    bs1.enabled(true);
+       
+    if (bs2.enabled())
+      console::write_line("  Error happened at main");
     
-    //assert_(false);
-    //assert_(false, "User message");
-    //debug::cassert_(false);
-    //debug::cassert_(false, "User message");
-    //debug::cassert(false, "User message");
-    trace::cassert_(false, "User message");
-    console::write_line("Hello, World!");
+    console::write_line("End app");
   }
 };
 
