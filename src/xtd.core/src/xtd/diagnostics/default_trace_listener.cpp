@@ -14,6 +14,14 @@ default_trace_listener::~default_trace_listener() {
   flush();
 }
 
+bool default_trace_listener::assert_ui_enabled() {
+  return assert_ui_enabled_;
+}
+
+void default_trace_listener::assert_ui_enabled(bool assert_ui_enabled) {
+  assert_ui_enabled_ = assert_ui_enabled;
+}
+
 std::string default_trace_listener::log_file_name() const {
   return log_file_name_;
 }
