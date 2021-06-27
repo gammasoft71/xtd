@@ -99,6 +99,7 @@
 #include "collections/specialized/string_map.h"
 #include "collections/specialized/string_pair.h"
 #include "collections/specialized/string_vector.h"
+#include "diagnostics/boolean_switch.h"
 #include "diagnostics/console_trace_listener.h"
 #include "diagnostics/debug.h"
 #include "diagnostics/debugger.h"

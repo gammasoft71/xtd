@@ -108,6 +108,7 @@ add_sources(
   include/xtd/collections/specialized/string_pair.h
   include/xtd/collections/specialized/string_vector.h
   include/xtd/diagnostics/assert_dialog_result.h
+  include/xtd/diagnostics/boolean_switch.h
   include/xtd/diagnostics/console_trace_listener.h
   include/xtd/diagnostics/data_received_event_args.h
   include/xtd/diagnostics/data_received_event_handler.h
@@ -194,6 +195,7 @@ add_sources(
   src/xtd/translator.cpp
   src/xtd/types.cpp
   src/xtd/types.cpp
+  src/xtd/diagnostics/boolean_switch.cpp
   src/xtd/diagnostics/console_trace_listener.cpp
   src/xtd/diagnostics/debug.cpp
   src/xtd/diagnostics/debugger.cpp

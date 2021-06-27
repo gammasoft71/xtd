@@ -25,7 +25,7 @@ namespace xtd {
       /// @cond
       switch_base(const switch_base& value) = default;
       switch_base& operator =(const switch_base& value) = default;
-      bool operator==(const switch_base& value) const {return display_name_ == value.display_name_ && description_ == value.description_ && default_switch_value_ == value.default_switch_value_ && attributes_ == value.attributes_ && switch_setting_ == value.switch_setting_ && value_ == value.value_;}
+      bool operator==(const switch_base& value) const {return display_name_ == value.display_name_ && description_ == value.description_ && attributes_ == value.attributes_ && switch_setting_ == value.switch_setting_ && value_ == value.value_;}
       bool operator!=(const switch_base& value) const {return !operator==(value);}
       /// @endcond
       /// @brief Gets the custom switch attributes
@@ -61,7 +61,7 @@ namespace xtd {
       /// @param description The description for the switch.
       /// @param default_switch_value The default value for the switch.
       /// @remarks The display_name parameter is used to set the value of the display_name property, and the description parameter is use to set the value of the description property. The default_switch_value parameter is the value for the switch if the value property is not set by code.
-      switch_base(const std::string& display_name, const std::string& description, const std::string& default_switch_value) : display_name_(display_name), description_(description), default_switch_value_(default_switch_value) {}
+      switch_base(const std::string& display_name, const std::string& description, const std::string& default_switch_value) : display_name_(display_name), description_(description), value_(default_switch_value) {}
       
       /// @brief Gets the current setting for this switch.
       /// @return The current setting for this switch. The default is zero.
@@ -80,7 +80,9 @@ namespace xtd {
       /// @remarks The on_value_changed method is called when the value of the value property is changed. The on_value_changed method parses the value of this property and converts it to an integer value, which is then used to set the switch_setting property.
       /// @par Notes to inheritors
       /// You should override the on_value_changed() method and provide a conversion operation that sets the appropriate switch_setting value for your switch.
-      const std::string& value() const {return value_;}
+      const std::string& value() const {
+        return value_;
+      }
       /// @brief Sets the value of the switch.
       /// @param value A string representing the value of the switch.
       /// @remarks The on_value_changed method is called when the value of the value property is changed. The on_value_changed method parses the value of this property and converts it to an integer value, which is then used to set the switch_setting property.
@@ -112,7 +114,6 @@ namespace xtd {
     private:
       std::string display_name_;
       std::string description_;
-      std::string default_switch_value_;
       std::map<std::string, std::string> attributes_;
       int32_t switch_setting_ = 0;
       std::string value_;
