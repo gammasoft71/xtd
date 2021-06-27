@@ -73,10 +73,8 @@ namespace xtd {
 /// debug_break_();
 /// console::write_line("Hello, world.");
 /// @endcode
-#define debug_break_() {\
-  xtd::diagnostics::debugger::launch(); \
-  __debugbreak(); \
-}
+#define debug_break_() \
+  if (xtd::diagnostics::debugger::launch()) __debugbreak()
 #else
 /// @brief Signals a breakpoint to an attached debugger.
 /// @par Library
@@ -88,10 +86,8 @@ namespace xtd {
 /// debug_break_();
 /// console::write_line("Hello, world.");
 /// @endcode
-#define debug_break_() {\
-  xtd::diagnostics::debugger::launch(); \
-  std::abort(); \
-}
+#define debug_break_() \
+  if (xtd::diagnostics::debugger::launch()) std::abort()
 #endif
 #else
 /// @brief Signals a breakpoint to an attached debugger.
