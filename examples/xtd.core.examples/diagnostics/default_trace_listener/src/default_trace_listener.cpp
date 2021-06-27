@@ -68,10 +68,8 @@ public:
       default_listener->write_line(strings::format("{}", result));
       console::write_line("{0} {1}", binomial, result);
     }
-    
-    console::write_line("Press any key to close...");
-    console::read_key();
   }
+
   static decimal calc_binomial(xtd::decimal possibilities, decimal outcomes) {
     // Calculate a binomial coefficient, and minimize the chance of overflow.
     decimal result = 1;
@@ -86,3 +84,26 @@ public:
 
 startup_(binomial);
 
+// This code produces the following output :
+//
+// Binomial( 20, 0 ) = 1
+// Binomial( 20, 1 ) = 20
+// Binomial( 20, 2 ) = 190
+// Binomial( 20, 3 ) = 1140
+// Binomial( 20, 4 ) = 4845
+// Binomial( 20, 5 ) = 15504
+// Binomial( 20, 6 ) = 38760
+// Binomial( 20, 7 ) = 77520
+// Binomial( 20, 8 ) = 125970
+// Binomial( 20, 9 ) = 167960
+// Binomial( 20, 10 ) = 184756
+// Binomial( 20, 11 ) = 167960
+// Binomial( 20, 12 ) = 125970
+// Binomial( 20, 13 ) = 77520
+// Binomial( 20, 14 ) = 38760
+// Binomial( 20, 15 ) = 15504
+// Binomial( 20, 16 ) = 4845
+// Binomial( 20, 17 ) = 1140
+// Binomial( 20, 18 ) = 190
+// Binomial( 20, 19 ) = 20
+// Binomial( 20, 20 ) = 1
