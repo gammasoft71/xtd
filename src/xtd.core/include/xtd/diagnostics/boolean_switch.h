@@ -9,7 +9,7 @@
 namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
-    /// @briefProvides a simple on/off switch that controls debugging and tracing output.
+    /// @brief Provides a simple on/off switch that controls debugging and tracing output.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
