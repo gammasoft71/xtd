@@ -211,6 +211,7 @@ add_sources(
   src/xtd/diagnostics/stack_trace.cpp
   src/xtd/diagnostics/stopwatch.cpp
   src/xtd/diagnostics/trace.cpp
+  src/xtd/diagnostics/trace_listener_collection.cpp
   src/xtd/internal/__format_exception.cpp
   src/xtd/internal/__litterals_exception.cpp
   src/xtd/internal/__opaque_console_gcc.cpp

@@ -47,25 +47,20 @@ namespace xtd {
       /// @brief Creates a new object xtd::diagnostics::trace_listener_collection with specified alllocator (optional).
       /// @param allocator The allocator associate to the collection (optional).
       /// @remarks If allocator not specified, the std::allocator<value_type> is used.
-      explicit trace_listener_collection(const allocator_type& allocator = allocator_type()) : base(allocator) {}
+      explicit trace_listener_collection(const allocator_type& allocator = allocator_type());
       /// @brief Creates a new object xtd::diagnostics::trace_listener_collection with specified initializer list.
       /// @param il The initializer list that contains xtd::diagnostics::trace_listener items to fill the collection.
-      trace_listener_collection(const std::initializer_list<value_type>& il) : base(il) {}
-
+      trace_listener_collection(const std::initializer_list<value_type>& il);
       /// @cond
-      trace_listener_collection(const base& collection) : base(collection) {}
-      trace_listener_collection(const trace_listener_collection& collection) : base(collection) {}
-      trace_listener_collection& operator=(const trace_listener_collection& collection) {
-        base::operator=(collection);
-        return *this;
-      }
+      trace_listener_collection(const base& collection);
+      trace_listener_collection(const trace_listener_collection& collection);
+      trace_listener_collection& operator=(const trace_listener_collection& collection);
       trace_listener_collection(trace_listener_collection&&) = default;
-      bool operator==(const trace_listener_collection& value) const {return reinterpret_cast<const base&>(*this) == reinterpret_cast<const base&>(value);}
-      bool operator!=(const trace_listener_collection& value) const {return !operator==(value);}
+      bool operator==(const trace_listener_collection& value) const;
+      bool operator!=(const trace_listener_collection& value) const;
       /// @endcond
       
       using base::operator[];
-
       /// @brief Gets the first xtd::diagnostics::trace_listener in the list with the specified name.
       /// @param name The name of the xtd::diagnostics::trace_listener to get from the list.
       /// @return The first xtd::diagnostics::trace_listener in the list with the given Name. This item returns empty if no xtd::diagnostics::trace_listener with the given name can be found.
@@ -81,12 +76,7 @@ namespace xtd {
       ///   debug::listeners()["default"]->write_line("User message");
       /// }
       /// @endcode
-      const_reference operator[](const std::string& name) const {
-        for(auto& item : *this)
-          if(item->name() == name) return item;
-        return empty_;
-      }
-      
+      const_reference operator[](const std::string& name) const;
       /// @brief Gets the first xtd::diagnostics::trace_listener in the list with the specified name.
       /// @param name The name of the xtd::diagnostics::trace_listener to get from the list.
       /// @return The first xtd::diagnostics::trace_listener in the list with the given Name. This item returns empty if no xtd::diagnostics::trace_listener with the given name can be found.
@@ -102,11 +92,7 @@ namespace xtd {
       ///   debug::listeners()["default"]->write_line("User message");
       /// }
       /// @endcode
-      reference operator[](const std::string& name) {
-        for(auto& item : *this)
-          if(item->name() == name) return item;
-        return empty_;
-      }
+      reference operator[](const std::string& name);
 
     private:
       inline static value_type empty_;
