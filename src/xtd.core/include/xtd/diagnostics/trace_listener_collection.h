@@ -70,6 +70,17 @@ namespace xtd {
       /// @param name The name of the xtd::diagnostics::trace_listener to get from the list.
       /// @return The first xtd::diagnostics::trace_listener in the list with the given Name. This item returns empty if no xtd::diagnostics::trace_listener with the given name can be found.
       /// @remarks The operator[] property is case-sensitive when searching for names. That is, if two listeners exist with the names "Lname" and "lname", operator[] property will find only the xtd::diagnostics::trace_listener with the xtd::diagnostics::trace_listener::name() that you specify, not both.
+      /// @par Examples
+      /// This example shows how to write "User message" text on the default trace listener of debug with name operator:
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using xtdd::diagnostics;
+      ///
+      /// int main() {
+      ///   debug::listeners()["default"]->write_line("User message");
+      /// }
+      /// @endcode
       const_reference operator[](const std::string& name) const {
         for(auto& item : *this)
           if(item->name() == name) return item;
@@ -80,6 +91,17 @@ namespace xtd {
       /// @param name The name of the xtd::diagnostics::trace_listener to get from the list.
       /// @return The first xtd::diagnostics::trace_listener in the list with the given Name. This item returns empty if no xtd::diagnostics::trace_listener with the given name can be found.
       /// @remarks The operator[] property is case-sensitive when searching for names. That is, if two listeners exist with the names "Lname" and "lname", operator[] property will find only the xtd::diagnostics::trace_listener with the xtd::diagnostics::trace_listener::name() that you specify, not both.
+      /// @par Examples
+      /// This example shows how to write "User message" text on the default trace listener of debug with name operator:
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using xtdd::diagnostics;
+      ///
+      /// int main() {
+      ///   debug::listeners()["default"]->write_line("User message");
+      /// }
+      /// @endcode
       reference operator[](const std::string& name) {
         for(auto& item : *this)
           if(item->name() == name) return item;
