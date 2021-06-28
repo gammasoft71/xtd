@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::diagnostics::debug class.
+/// @brief Contains xtd::diagnostics::debugger class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
