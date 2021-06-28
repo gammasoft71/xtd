@@ -80,7 +80,7 @@ namespace xtd {
         /// @brief Represents the constt reverse iterator type of the collection.
         using const_reverse_iterator = typename std::vector<value_type>::const_reverse_iterator;
         
-        /// @brief Creates a new object xtdd::forms::layout::arranged_element_collection with specified allocator (optional).
+        /// @brief Creates a new object xtd::forms::layout::arranged_element_collection with specified allocator (optional).
         /// @param allocator The allocator associate to the collection (optional).
         /// @remarks If allocator not specified, the std::allocator<vallue_type> is used.
         explicit arranged_element_collection(const allocator_type& allocator = allocator_type()) : collection_(allocator) {}        
