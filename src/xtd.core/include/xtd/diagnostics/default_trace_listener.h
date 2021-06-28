@@ -20,7 +20,7 @@ namespace xtd {
     /// @include default_trace_listener.cpp
     class core_export_ default_trace_listener : public xtd::diagnostics::trace_listener {
     public:
-      /// @brief Initializes a new instance of the default_trace_listener class with "default" as its Name property value.
+      /// @brief Initializes a new instance of the default_trace_listener class with "default" as its xtd::diagnostics::default_trace_listener::name property value.
       /// @par Examples
       /// The following code example removes the xtd::diagnostics::default_trace_listener provided by the application from the xtd::diagnostics::trace::listeners collection and then creates a new xtd::diagnostics::default_trace_listener and adds it to the xtd::diagnostics::trace::listeners collection.
       /// @code
