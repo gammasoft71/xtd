@@ -51,6 +51,8 @@ namespace xtd {
           
           friend std::ostream& operator<<(std::ostream& os, const item_t& value) {return os << static_cast<const type_t&>(value);}
           
+        private:
+          friend class arranged_element_collection;
           size_t pos = std::numeric_limits<size_t>::max();
           arranged_element_collection* parent = nullptr;
         };
