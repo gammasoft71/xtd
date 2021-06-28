@@ -33,58 +33,61 @@ namespace xtd {
       using pointer = typename std::allocator_traits<allocator_type>::pointer;
       /// @brief Represents the value type const pointer of the collection.
       using const_pointer = typename std::allocator_traits<allocator_type>::const_pointer;
+      /// @brief Represents the base type of the collection.
+      using base = std::vector<std::shared_ptr<trace_listener>>;
       /// @brief Represents the iterator type of the collection.
-      using iterator = typename std::vector<value_type>::iterator;
+      using iterator = typename base::iterator;
       /// @brief Represents the const iterator type of the collection.
-      using const_iterator = typename std::vector<value_type>::const_iterator;
+      using const_iterator = typename base::const_iterator;
       /// @brief Represents the reverse iterrator type of the collection.
-      using reverse_iterator = typename std::vector<value_type>::reverse_iterator;
+      using reverse_iterator = typename base::reverse_iterator;
       /// @brief Represents the constt reverse iterator type of the collection.
-      using const_reverse_iterator = typename std::vector<value_type>::const_reverse_iterator;
+      using const_reverse_iterator = typename base::const_reverse_iterator;
       
       /// @brief Creates a new object xtd::diagnostics::trace_listener_collection with specified alllocator (optional).
       /// @param allocator The allocator associate to the collection (optional).
       /// @remarks If allocator not specified, the std::allocator<value_type> is used.
-      explicit trace_listener_collection(const allocator_type& allocator = allocator_type()) : std::vector<std::shared_ptr<trace_listener>>(allocator) {}
+      explicit trace_listener_collection(const allocator_type& allocator = allocator_type()) : base(allocator) {}
       /// @brief Creates a new object xtd::diagnostics::trace_listener_collection with specified initializer list.
       /// @param il The initializer list that contains xtd::diagnostics::trace_listener items to fill the collection.
-      trace_listener_collection(const std::initializer_list<std::shared_ptr<trace_listener>>& il) : std::vector<std::shared_ptr<trace_listener>>(il) {}
+      trace_listener_collection(const std::initializer_list<value_type>& il) : base(il) {}
 
       /// @cond
-      trace_listener_collection(const std::vector<std::shared_ptr<trace_listener>>& collection) : std::vector<std::shared_ptr<trace_listener>>(collection) {}
-      trace_listener_collection(const trace_listener_collection& collection) : std::vector<std::shared_ptr<trace_listener>>(collection) {}
+      trace_listener_collection(const base& collection) : base(collection) {}
+      trace_listener_collection(const trace_listener_collection& collection) : base(collection) {}
       trace_listener_collection& operator=(const trace_listener_collection& collection) {
-        std::vector<std::shared_ptr<trace_listener>>::operator=(collection);
+        base::operator=(collection);
         return *this;
       }
       trace_listener_collection(trace_listener_collection&&) = default;
-      bool operator==(const trace_listener_collection& value) const {return reinterpret_cast<const std::vector<std::shared_ptr<trace_listener>>&>(*this) == reinterpret_cast<const std::vector<std::shared_ptr<trace_listener>>&>(value);}
+      bool operator==(const trace_listener_collection& value) const {return reinterpret_cast<const base&>(*this) == reinterpret_cast<const base&>(value);}
       bool operator!=(const trace_listener_collection& value) const {return !operator==(value);}
       /// @endcond
       
-      using std::vector<value_type>::operator[];
+      using base::operator[];
 
       /// @brief Gets the first xtd::diagnostics::trace_listener in the list with the specified name.
       /// @param name The name of the xtd::diagnostics::trace_listener to get from the list.
       /// @return The first xtd::diagnostics::trace_listener in the list with the given Name. This item returns empty if no xtd::diagnostics::trace_listener with the given name can be found.
       /// @remarks The operator[] property is case-sensitive when searching for names. That is, if two listeners exist with the names "Lname" and "lname", operator[] property will find only the xtd::diagnostics::trace_listener with the xtd::diagnostics::trace_listener::name() that you specify, not both.
-      const value_type& operator[](const std::string& name) const {
+      const_reference operator[](const std::string& name) const {
         for(auto& item : *this)
           if(item->name() == name) return item;
-        static value_type empty;
-        return empty;
+        return empty_;
       }
       
       /// @brief Gets the first xtd::diagnostics::trace_listener in the list with the specified name.
       /// @param name The name of the xtd::diagnostics::trace_listener to get from the list.
       /// @return The first xtd::diagnostics::trace_listener in the list with the given Name. This item returns empty if no xtd::diagnostics::trace_listener with the given name can be found.
       /// @remarks The operator[] property is case-sensitive when searching for names. That is, if two listeners exist with the names "Lname" and "lname", operator[] property will find only the xtd::diagnostics::trace_listener with the xtd::diagnostics::trace_listener::name() that you specify, not both.
-      value_type& operator[](const std::string& name) {
+      reference operator[](const std::string& name) {
         for(auto& item : *this)
           if(item->name() == name) return item;
-        static value_type empty;
-        return empty;
+        return empty_;
       }
+
+    private:
+      inline static value_type empty_;
     };
   }
 }
