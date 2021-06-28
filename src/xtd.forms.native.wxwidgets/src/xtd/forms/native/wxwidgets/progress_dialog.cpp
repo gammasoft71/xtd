@@ -36,17 +36,17 @@ namespace {
     
     void minimum(int32_t minimum) {
       minumum_ = minimum;
-      if (maximum_ - minumum_>= 0) SetRange(maximum_ - minumum_);
+      if (maximum_ - minumum_> 0) SetRange(maximum_ - minumum_);
     }
 
     void maximum(int32_t maximum) {
       maximum_ = maximum;
-      if (maximum_ - minumum_ >= 0) SetRange(maximum_ - minumum_);
+      if (maximum_ - minumum_ > 0) SetRange(maximum_ - minumum_);
     }
 
     void value(int32_t value) {
       value_ = value;
-      if (value_ - minumum_ >= 0) Update(value_ - minumum_);
+      if (value_ - minumum_ > 0) Update(value_ - minumum_);
     }
 
     void marquee(bool marquee, size_t animation_speed) {
