@@ -42,6 +42,9 @@ namespace xtd {
     /// @include debug.cpp
     class core_export_ debug static_ {
     public:
+      /// @brief Represents a collection of xtd::diagnostics::trace_listener.
+      using listener_collection = xtd::diagnostics::trace_listener_collection;
+      
       /// @brief Gets whether xtd::diagnostics::debug::flush should be called on the xtd::diagnostics::debug::Listeners after every write.
       /// @return true if xtd::diagnostics::debug::flush is called on the xtd::diagnostics::debug::listeners after every write; otherwise, false.
       /// @remarks The default is false.
@@ -72,15 +75,15 @@ namespace xtd {
       static void indent_size(uint32_t indent_size);
       
       /// @brief Gets the collection of listeners that is monitoring the trace output.
-      /// @return A xtd::diagnostics::trace_listener_collection that represents a collection of type xtd::diagnostics::trace_listener monitoring the trace output.
+      /// @return A xtd::diagnostics::debug::listener_collection that represents a collection of type xtd::diagnostics::trace_listener monitoring the trace output.
       /// @remarks The xtd::diagnostics::debug::listeners produce formatted output from the trace output. By default, the collection contains an instance of the xtd::diagnostics::default_trace_listener class. If you want to remove the default listener, call the erase method, and pass it the instance of the xtd::diagnostics::default_trace_listener. To redirect output to the console window, add an instance of the xtd::diagnostics::console_trace_listener class.
       /// @note The xtd::diagnostics::debug::listeners collection is shared by both the xtd::diagnostics::debug and the xtd::diagnostics::trace classes; adding a trace listener to either class adds the listener to both.
-      static xtd::diagnostics::trace_listener_collection& listeners();
+      static listener_collection& listeners();
       /// @brief Sets the collection of listeners that is monitoring the trace output.
-      /// @paral$m listerners A xtd::diagnostics::trace_listener_collection that represents a collection of type xtd::diagnostics::trace_listener monitoring the trace output.
+      /// @paral$m listerners A xtd::diagnostics::debug::listener_collection that represents a collection of type xtd::diagnostics::trace_listener monitoring the trace output.
       /// @remarks The xtd::diagnostics::debug::listeners produce formatted output from the trace output. By default, the collection contains an instance of the xtd::diagnostics::default_trace_listener class. If you want to remove the default listener, call the erase method, and pass it the instance of the xtd::diagnostics::default_trace_listener. To redirect output to the console window, add an instance of the xtd::diagnostics::console_trace_listener class.
       /// @note The xtd::diagnostics::debug::listeners collection is shared by both the xtd::diagnostics::debug and the xtd::diagnostics::trace classes; adding a trace listener to either class adds the listener to both.
-      static void listeners(const xtd::diagnostics::trace_listener_collection& listeners);
+      static void listeners(const listener_collection& listeners);
       
       /// @brief Gets a value indicating whether the assert dialog should be show.
       /// @return true if assert dialog is to be shown; otherwise, false. The default is true.
@@ -446,7 +449,7 @@ namespace xtd {
       inline static bool auto_flush_ = false;
       inline static unsigned int indent_level_ = 0;
       inline static unsigned int indent_size_ = 4;
-      static xtd::diagnostics::trace_listener_collection& listeners_;
+      static listener_collection& listeners_;
       static bool& show_assert_dialog_;
       inline static bool use_global_lock_ = true;
       static std::mutex global_lock_;

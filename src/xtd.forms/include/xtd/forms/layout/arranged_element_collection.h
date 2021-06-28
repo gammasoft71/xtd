@@ -21,7 +21,7 @@ namespace xtd {
       /// @par Library
       /// xtd.forms
       /// @ingroup xtd_forms
-      /// @remarks The arranged_element_collection class represents a collection of objects arranged on a design surface or inside a parent xtd.forms::container_control.
+      /// @remarks The xtd::forms::layout::arranged_element_collection class represents a collection of objects arranged on a design surface or inside a parent xtd.forms::container_control.
       template<typename type_t, typename sorter_t = sorter_none>
       class arranged_element_collection {
       public:
@@ -55,30 +55,43 @@ namespace xtd {
           arranged_element_collection* parent = nullptr;
         };
         
-        /// @{
-        /// Member types
+        /// @brief Represents the value type of the collection.
         using value_type = item_t;
-        using allocator_type = std::allocator<item_t>;
+        /// @brief Represents the allocator type of the collection.
+        using allocator_type = std::allocator<value_type>;
+        /// @brief Represents the size type of the collection.
         using size_type = size_t;
+        /// @brief Represents the pointer difference type of the collection.
         using difference_type = ptrdiff_t;
+        /// @brief Represents the value type reference of the collection.
         using reference = value_type&;
+        /// @brief Represents the value type const reference the collection.
         using const_reference = const value_type&;
+        /// @brief Represents the value type pointer of the collection.
         using pointer = typename std::allocator_traits<allocator_type>::pointer;
+        /// @brief Represents the value type const pointer of the collection.
         using const_pointer = typename std::allocator_traits<allocator_type>::const_pointer;
+        /// @brief Represents the iterator type of the collection.
         using iterator = typename std::vector<value_type>::iterator;
+        /// @brief Represents the const iterator type of the collection.
         using const_iterator = typename std::vector<value_type>::const_iterator;
+        /// @brief Represents the reverse iterrator type of the collection.
         using reverse_iterator = typename std::vector<value_type>::reverse_iterator;
+        /// @brief Represents the constt reverse iterator type of the collection.
         using const_reverse_iterator = typename std::vector<value_type>::const_reverse_iterator;
-        /// @}
         
-        /// @brief Creats a new object arranged_element_collection
-        explicit arranged_element_collection(const allocator_type& allocator = allocator_type()) : collection_(allocator) {}
-        
-        /// @cond
+        /// @brief Creates a new object xtdd::forms::layout::arranged_element_collection with specified allocator (optional).
+        /// @param allocator The allocator associate to the collection (optional).
+        /// @remarks If allocator not specified, the std::allocator<vallue_type> is used.
+        explicit arranged_element_collection(const allocator_type& allocator = allocator_type()) : collection_(allocator) {}        
+        /// @brief Creates a new object xtd::diagnostics::trace_listener_collection with specified initializer list.
+        /// @param il The initializer list that contains items to fill the collection.
         arranged_element_collection(const std::initializer_list<type_t>& il) {
           for (auto item : il)
             push_back(item);
         }
+
+        /// @cond
         arranged_element_collection(const std::vector<type_t>& collection) {
           for (auto item : collection)
             push_back(item);

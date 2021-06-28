@@ -28,6 +28,9 @@ namespace xtd {
     /// @include debug.cpp
     class core_export_ trace static_ {
     public:
+      /// @brief Represents a collection of xtd::diagnostics::trace_listener.
+      using listener_collection = xtd::diagnostics::trace_listener_collection;
+      
       /// @brief Get whether Flush should be called on the Listeners after every write.
       /// @return true if Flush is called on the Listeners after every write; otherwise, false.
       /// @remarks The default is false.
@@ -58,15 +61,15 @@ namespace xtd {
       static void indent_size(uint32_t indent_size);
       
       /// @brief Gets the collection of listeners that is monitoring the trace output.
-      /// @return A trace_listener_collection that represents a collection of type trace_listener monitoring the trace output.
+      /// @return A listener_collection that represents a collection of type trace_listener monitoring the trace output.
       /// @remarks The listeners produce formatted output from the trace output. By default, the collection contains an instance of the default_trace_listener class. If you want to remove the default listener, call the Remove method, and pass it the instance of the default_trace_listener. To redirect output to the console window, add an instance of the console_trace_listener class.
       /// @note The Listeners collection is shared by both the Debug and the Trace classes; adding a trace listener to either class adds the listener to both.
-      static trace_listener_collection& listeners();
+      static listener_collection& listeners();
       /// @brief Sets the collection of listeners that is monitoring the trace output.
-      /// @param listeners A trace_listener_collection that represents a collection of type trace_listener monitoring the trace output.
+      /// @param listeners A listener_collection that represents a collection of type trace_listener monitoring the trace output.
       /// @remarks The listeners produce formatted output from the trace output. By default, the collection contains an instance of the default_trace_listener class. If you want to remove the default listener, call the Remove method, and pass it the instance of the default_trace_listener. To redirect output to the console window, add an instance of the console_trace_listener class.
       /// @note The Listeners collection is shared by both the Debug and the Trace classes; adding a trace listener to either class adds the listener to both.
-      static void listeners(const trace_listener_collection& listeners);
+      static void listeners(const listener_collection& listeners);
       
       /// @brief Gets a value indicating whether the assert dialog should be show.
       /// @return true if assert dialog is to be shown; otherwise, false. The default is true.
@@ -552,7 +555,7 @@ namespace xtd {
       inline static bool auto_flush_ = false;
       inline static unsigned int indent_level_ = 0;
       inline static unsigned int indent_size_ = 4;
-      static trace_listener_collection& listeners_;
+      static listener_collection& listeners_;
       static bool& show_assert_dialog_;
       inline static bool use_global_lock_ = true;
       static std::mutex global_lock_;

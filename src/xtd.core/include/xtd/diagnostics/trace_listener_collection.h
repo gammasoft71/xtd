@@ -10,33 +10,47 @@
 namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
-    /// @brief Represents a collection of trace_listener.
+    /// @brief Represents a collection of xtd::diagnostics::trace_listener.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    class trace_listener_collection : public std::vector<std::shared_ptr<trace_listener>> {
+    /// @remarks The xtd::diagnostics::trace_listener_collection contains all methods and properties of std::vector<std::shared_ptr<xtd::diagnostics::trace_listener>>.
+    class trace_listener_collection : public std::vector<std::shared_ptr<xtd::diagnostics::trace_listener>> {
     public:
-      /// @{
-      /// Member types
+      /// @brief Represents the value type of the collection.
       using value_type = std::shared_ptr<trace_listener>;
-      using allocator_type = std::allocator<std::shared_ptr<trace_listener>>;
+      /// @brief Represents the allocator type of the collection.
+      using allocator_type = std::allocator<value_type>;
+      /// @brief Represents the size type of the collection.
       using size_type = size_t;
+      /// @brief Represents the pointer difference type of the collection.
       using difference_type = ptrdiff_t;
+      /// @brief Represents the value type reference of the collection.
       using reference = value_type&;
+      /// @brief Represents the value type const reference the collection.
       using const_reference = const value_type&;
+      /// @brief Represents the value type pointer of the collection.
       using pointer = typename std::allocator_traits<allocator_type>::pointer;
+      /// @brief Represents the value type const pointer of the collection.
       using const_pointer = typename std::allocator_traits<allocator_type>::const_pointer;
+      /// @brief Represents the iterator type of the collection.
       using iterator = typename std::vector<value_type>::iterator;
+      /// @brief Represents the const iterator type of the collection.
       using const_iterator = typename std::vector<value_type>::const_iterator;
+      /// @brief Represents the reverse iterrator type of the collection.
       using reverse_iterator = typename std::vector<value_type>::reverse_iterator;
+      /// @brief Represents the constt reverse iterator type of the collection.
       using const_reverse_iterator = typename std::vector<value_type>::const_reverse_iterator;
-      /// @}
       
-      /// @brief Creats a new object trace_listener_collection
+      /// @brief Creates a new object xtd::diagnostics::trace_listener_collection with specified alllocator (optional).
+      /// @param allocator The allocator associate to the collection (optional).
+      /// @remarks If allocator not specified, the std::allocator<value_type> is used.
       explicit trace_listener_collection(const allocator_type& allocator = allocator_type()) : std::vector<std::shared_ptr<trace_listener>>(allocator) {}
-      
-      /// @cond
+      /// @brief Creates a new object xtd::diagnostics::trace_listener_collection with specified initializer list.
+      /// @param il The initializer list that contains xtd::diagnostics::trace_listener items to fill the collection.
       trace_listener_collection(const std::initializer_list<std::shared_ptr<trace_listener>>& il) : std::vector<std::shared_ptr<trace_listener>>(il) {}
+
+      /// @cond
       trace_listener_collection(const std::vector<std::shared_ptr<trace_listener>>& collection) : std::vector<std::shared_ptr<trace_listener>>(collection) {}
       trace_listener_collection(const trace_listener_collection& collection) : std::vector<std::shared_ptr<trace_listener>>(collection) {}
       trace_listener_collection& operator=(const trace_listener_collection& collection) {
