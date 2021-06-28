@@ -190,6 +190,7 @@ add_sources(
   src/xtd/environment.cpp
   src/xtd/event_args.cpp
   src/xtd/guid.cpp
+  //src/xtd/signal_catcher.cpp
   src/xtd/strings.cpp
   src/xtd/system_exception.cpp
   src/xtd/translator.cpp
