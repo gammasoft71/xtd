@@ -17,32 +17,8 @@ namespace xtd {
     /// @remarks The xtd::diagnostics::trace_listener_collection contains all methods and properties of std::vector<std::shared_ptr<xtd::diagnostics::trace_listener>>.
     class trace_listener_collection : public std::vector<std::shared_ptr<xtd::diagnostics::trace_listener>> {
     public:
-      /// @brief Represents the value type of the collection.
-      using value_type = std::shared_ptr<trace_listener>;
-      /// @brief Represents the allocator type of the collection.
-      using allocator_type = std::allocator<value_type>;
-      /// @brief Represents the size type of the collection.
-      using size_type = size_t;
-      /// @brief Represents the pointer difference type of the collection.
-      using difference_type = ptrdiff_t;
-      /// @brief Represents the value type reference of the collection.
-      using reference = value_type&;
-      /// @brief Represents the value type const reference the collection.
-      using const_reference = const value_type&;
-      /// @brief Represents the value type pointer of the collection.
-      using pointer = typename std::allocator_traits<allocator_type>::pointer;
-      /// @brief Represents the value type const pointer of the collection.
-      using const_pointer = typename std::allocator_traits<allocator_type>::const_pointer;
       /// @brief Represents the base type of the collection.
-      using base = std::vector<std::shared_ptr<trace_listener>>;
-      /// @brief Represents the iterator type of the collection.
-      using iterator = typename base::iterator;
-      /// @brief Represents the const iterator type of the collection.
-      using const_iterator = typename base::const_iterator;
-      /// @brief Represents the reverse iterrator type of the collection.
-      using reverse_iterator = typename base::reverse_iterator;
-      /// @brief Represents the constt reverse iterator type of the collection.
-      using const_reverse_iterator = typename base::const_reverse_iterator;
+      using base = std::vector<value_type>;
       
       /// @brief Creates a new object xtd::diagnostics::trace_listener_collection with specified alllocator (optional).
       /// @param allocator The allocator associate to the collection (optional).
