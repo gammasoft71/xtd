@@ -11,17 +11,17 @@ using namespace xtd::forms::native;
 
 #if defined(__WXMSW__)
 namespace {
-HHOOK handle_hook;
-LRESULT CALLBACK callbackProc(INT ncode, WPARAM wparam, LPARAM lparam) {
-  if (ncode == HCBT_ACTIVATE) {
-    allow_dark_mode_for_window(static_cast<intptr_t>(wparam));
-    refresh_title_bar_theme_color(static_cast<intptr_t>(wparam));
-    UnhookWindowsHookEx(handle_hook);
+  HHOOK handle_hook;
+  LRESULT CALLBACK callbackProc(INT ncode, WPARAM wparam, LPARAM lparam) {
+    if (ncode == HCBT_ACTIVATE) {
+      allow_dark_mode_for_window(static_cast<intptr_t>(wparam));
+      refresh_title_bar_theme_color(static_cast<intptr_t>(wparam));
+      UnhookWindowsHookEx(handle_hook);
+    }
+    else
+      CallNextHookEx(handle_hook, ncode, wparam, lparam);
+    return 0;
   }
-  else
-    CallNextHookEx(handle_hook, ncode, wparam, lparam);
-  return 0;
-}
 }
 #endif
 
