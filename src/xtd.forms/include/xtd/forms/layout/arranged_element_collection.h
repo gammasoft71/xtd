@@ -148,10 +148,10 @@ namespace xtd {
     
         /// @brief Direct access to the underlying array.
         /// @return The underlying array.
-        value_type* data() {return collection_.data();}
+        pointer data() {return collection_.data();}
         /// @brief Direct access to the underlying array.
         /// @return The underlying array.
-        const value_type* data() const {return collection_.data();}
+        const_pointer data() const {return collection_.data();}
         
         /// @brief Access specified element.
         /// @return The requested element.
@@ -408,7 +408,7 @@ namespace xtd {
         std::vector<type_t> to_vector() const {return to_array();}
 
         /// @brief This is a special value equal to the maximum value representable by the type size_t.
-        static const size_t npos = std::numeric_limits<size_t>::max();
+        static const size_type npos = std::numeric_limits<size_type>::max();
 
       private:
         std::vector<value_type, allocator_type> collection_;
