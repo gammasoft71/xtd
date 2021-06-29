@@ -29,7 +29,6 @@ namespace xtd {
         class value_type : public type_t {
         public:
           /// @cond
-          value_type() = default;
           value_type(const value_type&) = default;
           value_type(value_type&&) = default;
           template <typename ...args_t>
@@ -52,6 +51,7 @@ namespace xtd {
                     
         private:
           friend class arranged_element_collection;
+          value_type() = default;
           size_t pos = std::numeric_limits<size_t>::max();
           arranged_element_collection* owner = nullptr;
         };
