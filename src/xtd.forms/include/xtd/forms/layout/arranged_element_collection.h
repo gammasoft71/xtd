@@ -35,14 +35,14 @@ namespace xtd {
           template <typename ...args_t>
           value_type(args_t&& ...args) : type_t(args...) {}
           value_type& operator=(const value_type& value) {
-            if (value.parent) parent = value.parent;
-            if (parent != nullptr && !parent->inserting_ && !parent->erasing_) parent->item_updated(pos, static_cast<type_t&>(const_cast<value_type&>(value)));
+            if (value.owner) owner = value.owner;
+            if (owner != nullptr && !owner->inserting_ && !owner->erasing_) owner->item_updated(pos, static_cast<type_t&>(const_cast<value_type&>(value)));
             type_t::operator=(value);
             return *this;
           }
           value_type& operator=(value_type&& value) {
-            if (value.parent) parent = value.parent;
-            if (parent != nullptr && !parent->inserting_ && !parent->erasing_) parent->item_updated(pos, static_cast<type_t&>(value));
+            if (value.owner) owner = value.owner;
+            if (owner != nullptr && !owner->inserting_ && !owner->erasing_) owner->item_updated(pos, static_cast<type_t&>(value));
             type_t::operator=(value);
             return *this;
           }
@@ -53,7 +53,7 @@ namespace xtd {
         private:
           friend class arranged_element_collection;
           size_t pos = std::numeric_limits<size_t>::max();
-          arranged_element_collection* parent = nullptr;
+          arranged_element_collection* owner = nullptr;
         };
         
         /// @brief Represents the allocator type of the collection.
@@ -124,7 +124,7 @@ namespace xtd {
         /// @exception std::out_of_range pos is greather than arranged_element_collection::size.
         reference at(size_type pos) {
           collection_[pos].pos = pos;
-          collection_[pos].parent = this;
+          collection_[pos].owner = this;
           return collection_.at(pos);
         }
         /// @brief Access specified element with bounds checking.
@@ -157,7 +157,7 @@ namespace xtd {
         /// @return The requested element.
         reference operator[](size_type pos) {
           collection_[pos].pos = pos;
-          collection_[pos].parent = this;
+          collection_[pos].owner = this;
           return collection_[pos];
         }
         /// @brief Access specified element.
@@ -253,7 +253,7 @@ namespace xtd {
           inserting_ = true;
           iterator result = collection_.insert(pos, value);
           inserting_ = false;
-          (*this)[index].parent = this;
+          (*this)[index].owner = this;
           (*this)[index].pos = index;
           item_added(index, collection_[index]);
           if (sorted_) sort();
@@ -267,7 +267,7 @@ namespace xtd {
           inserting_ = true;
           iterator result = collection_.insert(pos, value);
           inserting_ = false;
-          (*this)[index].parent = this;
+          (*this)[index].owner = this;
           (*this)[index].pos = index;
           item_added(index, collection_[index]);
           if (sorted_) sort();
@@ -281,7 +281,7 @@ namespace xtd {
           inserting_ = true;
           iterator result = collection_.insert(pos, value);
           inserting_ = false;
-          (*this)[index].parent = this;
+          (*this)[index].owner = this;
           (*this)[index].pos = index;
           item_added(index, collection_[index]);
           if (sorted_) sort();
@@ -346,7 +346,7 @@ namespace xtd {
         void push_back(const value_type& item) {
           collection_.push_back(item);
           size_t index = collection_.size() - 1;
-          (*this)[index].parent = this;
+          (*this)[index].owner = this;
           (*this)[index].pos = index;
           item_added(index, collection_[index]);
           if (sorted_) sort();
@@ -356,7 +356,7 @@ namespace xtd {
         void push_back(value_type&& item) {
           collection_.push_back(item);
           size_t index = collection_.size() - 1;
-          (*this)[index].parent = this;
+          (*this)[index].owner = this;
           (*this)[index].pos = index;
           item_added(index, collection_[index]);
           if (sorted_) sort();
