@@ -2,6 +2,7 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/folder_browser_dialog.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
 #include <wx/filefn.h>
@@ -15,6 +16,18 @@ using namespace xtd::forms::native;
 #include <ShlObj.h>
 using namespace std;
 namespace {
+  HHOOK handle_hook;
+  LRESULT CALLBACK callbackProc(INT ncode, WPARAM wparam, LPARAM lparam) {
+    if (ncode == HCBT_ACTIVATE) {
+      allow_dark_mode_for_window(static_cast<intptr_t>(wparam));
+      refresh_title_bar_theme_color(static_cast<intptr_t>(wparam));
+      UnhookWindowsHookEx(handle_hook);
+    }
+    else
+      CallNextHookEx(handle_hook, ncode, wparam, lparam);
+    return 0;
+  }
+
   int CALLBACK OnBrowserCalllback(HWND hwnd, UINT message, LPARAM lParam, LPARAM data) {
     if (message == BFFM_INITIALIZED && !wstring(reinterpret_cast<wchar_t*>(data)).empty())
       SendMessage(hwnd, BFFM_SETSELECTION, 1, data);
@@ -34,6 +47,8 @@ bool folder_browser_dialog::run_dialog(intptr_t hwnd, const std::string& descrip
   browserInfo.lpszTitle = wdescription.c_str();
 
   browserInfo.ulFlags = options;
+
+  handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
 
   PCIDLIST_ABSOLUTE result = SHBrowseForFolder(&browserInfo);
   if (result) {
