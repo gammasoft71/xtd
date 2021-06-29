@@ -14,7 +14,6 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::diagnostics::trace_listener_collection contains all methods and properties of std::vector<std::shared_ptr<xtd::diagnostics::trace_listener>>.
     class trace_listener_collection : public std::vector<std::shared_ptr<xtd::diagnostics::trace_listener>> {
     public:
       /// @brief Represents the base type of the collection.
