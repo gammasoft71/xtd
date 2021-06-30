@@ -21,6 +21,7 @@ add_projects(
   form2
   form_and_main
   form_and_thread
+  form_background_image
   form_show
   form_window_state
   group_box_and_check_box
