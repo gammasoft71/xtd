@@ -17,6 +17,7 @@
 * [font_families](font_families/README.md) demonstrates the use of xtd::drawing::font_family class.
 * [form_and_main](form_and_main/README.md) demonstrates how to use startup_ keyword.
 * [form_and_thread](form_and_thread/README.md) demonstrates how a thread can update ui with [xtd::forms::control::invoke](../../../../../src/xtd.forms/include/xtd/forms/form.h) method.
+* [form_background_image](form_background_image/README.md) demonstrates how to use [xtd::forms::forms](../../../../../src/xtd.forms/include/xtd/forms/form.h) class with image_background property.
 * [form_show](form_show/README.md) demontrate how to launch form as normal window, modeless window and modal window.
 * [form_window_state](form_window_state/README.md) demonstrates the use of [xtd::forms::form](../../../src/xtd.forms/include/xtd/forms/form.h) window state.
 * [form2](form2/README.md) represents a window or dialog box that makes up an application's user interface.
