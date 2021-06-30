@@ -20,7 +20,6 @@ namespace {
   boolean_switch show_wx_assert("wx_assert", "Shows wxAssert log", "true");
   
   void xtd_assert_handler(const wxString& file, int line, const wxString& func, const wxString& cond, const wxString& msg) {
-    /// @todo Add debug trace with boolean_switch...
     debug::write_line_if(show_wx_assert.enabled(), "wxAssert");
     debug::write_line_if(show_wx_assert.enabled(), "--------");
     debug::write_line_if(show_wx_assert.enabled(), strings::format("cond={}, msg={}", cond, msg));
