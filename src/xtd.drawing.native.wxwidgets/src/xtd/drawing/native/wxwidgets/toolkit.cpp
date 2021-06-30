@@ -23,7 +23,7 @@ namespace {
     debug::write_line_if(show_wx_assert.enabled(), "wxAssert");
     debug::write_line_if(show_wx_assert.enabled(), "--------");
     debug::write_line_if(show_wx_assert.enabled(), strings::format("cond={}, msg={}", cond, msg));
-    debug::write_line_if(show_wx_assert.enabled(), strings::format("   at {} in {}:{}}", func, file, line));
+    debug::write_line_if(show_wx_assert.enabled(), strings::format("  at {} in {}:line {}", func, file, line));
   }
 }
 
