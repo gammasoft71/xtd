@@ -36,6 +36,7 @@ intptr_t toolkit::initialize() {
   wxDISABLE_DEBUG_SUPPORT();
   original_assert_handler = wxSetAssertHandler(&xtd_assert_handler);
   wxLog::SetLogLevel(wxLOG_Info);
+  wxSystemOptions::SetOption("gtk.tlw.can-set-transparent", 1);
   wxSystemOptions::SetOption("osx.openfiledialog.always-show-types", 1);
   wxApp::SetInstance(new wx_application());
   int argc = 0;
