@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 /// @cond
 #ifndef __XTD_FORMS_NATIVE_LIBRARY__
 #error "Do not include this file: Internal use only"
@@ -639,7 +639,7 @@ namespace xtd {
         if (event.GetEventType() == wxEVT_CLOSE_WINDOW) {
           if (event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_CLOSE, 0, 0, reinterpret_cast<intptr_t>(&event))) {
             def_process_event(1, event);
-#if defined(_WIN32)
+#if !defined(__APPLE__)
             // Workarouund : Floating frame on parent frame does not close on wxEVT_CLOSE°WINDOW. Then destroys it.
             if ((event_handler_->control()->GetWindowStyle() & wxFRAME_FLOAT_ON_PARENT) == wxFRAME_FLOAT_ON_PARENT) event_handler_->destroy();
 #endif
