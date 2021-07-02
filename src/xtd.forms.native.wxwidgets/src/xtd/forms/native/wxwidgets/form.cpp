@@ -117,7 +117,11 @@ int32_t form::show_dialog(intptr_t control) {
 void form::show_sheet(intptr_t control) {
   if (control == 0) return;
   if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("show_sheet work only with dialog"_t, current_stack_frame_);
+#if defined(__APPLE__)
   static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())->ShowWindowModal();
+#else
+  static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())->ShowModal();
+#endif
 }
 
 int32_t form::show_sheet_dialog(intptr_t control) {
