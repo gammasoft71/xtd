@@ -124,7 +124,7 @@ int32_t form::show_sheet_dialog(intptr_t control) {
   if (control == 0) return 0;
   if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("show_sheet_dialog work only with dialog"_t, current_stack_frame_);
   auto dialog = static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control());
-  
+#if defined(__APPLE__)
   if (!dialog->GetParent()) return dialog->ShowModal();
   int32_t result = wxID_ANY;
   dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [&](wxWindowModalDialogEvent& event) {
@@ -136,6 +136,9 @@ int32_t form::show_sheet_dialog(intptr_t control) {
     sleep_for(100ms);
   }
   return result;
+#else
+  return dialog->ShowModal();
+#endif
 }
 
 void form::end_dialog(intptr_t control, int32_t result) {
