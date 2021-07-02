@@ -118,6 +118,7 @@ int main() {
     b1.location({10, 10});
     b1.size({200, 100});
     b1.image(button_images::from_name("gammasoft", drawing::size {64, 64}));
+    b1.click += {form_main, &form::close};
     
     button b2;
     b2.parent(form_main);
