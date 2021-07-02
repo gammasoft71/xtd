@@ -127,11 +127,16 @@ namespace xtd {
       /// @endcond
       
     public:
+      /// @brief Represents the status of an asynchronous operation.
       class async_result_invoke {
       public:
+        /// @cond
         async_result_invoke(const async_result_invoke&) = default;
         async_result_invoke(async_result_invoke&&) = default;
+        /// @endcond
         
+        /// @brief Gets a std::shared_mutex that is used to wait for an asynchronous operation to complete.
+        /// @return A std::shared_mutex that is used to wait for an asynchronous operation to complete.
         std::shared_mutex& async_mutex() {return *async_mutex_;}
         
       private:
@@ -141,7 +146,34 @@ namespace xtd {
       };
       
       /// @brief Represents a collection of controls.
-      using control_collection = layout::arranged_element_collection<control_ref>;
+      class control_collection : public xtd::forms::layout::arranged_element_collection<control_ref> {
+      public:
+        /// @brief Represents the base type of the collection.
+        using base = xtd::forms::layout::arranged_element_collection<control_ref>;
+        
+        /// @brief Creates a new object xtd::forms::control::control_collection with specified alllocator (optional).
+        /// @param allocator The allocator associate to the collection (optional).
+        /// @remarks If allocator not specified, the std::allocator<value_type> is used.
+        explicit control_collection(const allocator_type& allocator = allocator_type());
+        /// @cond
+        control_collection(const base& collection);
+        control_collection(const control_collection& collection);
+        control_collection& operator=(const control_collection& collection);
+        control_collection(control_collection&&) = default;
+        /// @endcond
+        
+        using base::operator[];
+        /// @brief Gets the first xtd::forms::control::control_collection in the list with the specified name.
+        /// @param name The name of the xtd::forms::control to get from the list.
+        /// @return The first xtd::forms::control in the list with the given Name. This item returns optional with no value if no xtd::forms::control with the given name can be found.
+        /// @remarks The operator[] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator[] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
+        std::optional<value_type> operator[](const std::string& name) const;
+        /// @brief Gets the first xtd::forms::control::control_collection in the list with the specified name.
+        /// @param name The name of the xtd::forms::control to get from the list.
+        /// @return The first xtd::forms::control in the list with the given Name. This item returns optional with no value if no xtd::forms::control with the given name can be found.
+        /// @remarks The operator[] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator[] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
+        std::optional<value_type> operator[](const std::string& name);
+      };
       
       /// @brief Initializes a new instance of the control class with default settings.
       /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.

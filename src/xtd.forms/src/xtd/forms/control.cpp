@@ -36,10 +36,10 @@ namespace {
     static bool is_reentrant(control* do_laout) {return do_layouts.find(do_laout) != do_layouts.end(); }
   private:
     control* do_layout_ = nullptr;
-    static std::set<control*> do_layouts;
+    static set<control*> do_layouts;
   };
 
-  std::set<control*> reentrant_layout::do_layouts;
+  set<control*> reentrant_layout::do_layouts;
 
   mouse_buttons wparam_to_mouse_buttons(const message& message) {
     if ((message.wparam() & MK_LBUTTON) == MK_LBUTTON)
@@ -51,9 +51,31 @@ namespace {
     return mouse_buttons::none;
   }
   
-  bool is_trace_form_or_control(const std::string& name) {
+  bool is_trace_form_or_control(const string& name) {
     return name == "9f5767d6-7a21-4ebe-adfe-2427b2024a55" || name == "d014d407-851c-49c1-a343-3380496a639a";
   }
+}
+
+control::control_collection::control_collection(const control::control_collection::allocator_type& allocator) : control::control_collection::base(allocator) {
+}
+
+control::control_collection::control_collection(const control::control_collection::base& collection) : control::control_collection::base(collection) {}
+control::control_collection::control_collection(const control::control_collection& collection) : control::control_collection::base(collection) {}
+control::control_collection& control::control_collection::operator=(const control::control_collection& collection) {
+  base::operator=(collection);
+  return *this;
+}
+
+optional<control::control_collection::value_type> control::control_collection::operator[](const string& name) const {
+  for(auto item : *this)
+    if(item.get().name() == name) return item;
+  return {};
+}
+
+optional<control::control_collection::value_type> control::control_collection::operator[](const string& name) {
+  for(auto item : *this)
+    if(item.get().name() == name) return item;
+  return {};
 }
 
 forms::keys control::modifier_keys_ = forms::keys::none;
@@ -68,7 +90,7 @@ control::control() {
   set_state(state::visible, true);
   set_style(control_styles::all_painting_in_wm_paint | control_styles::user_paint | control_styles::standard_click | control_styles::standard_double_click | control_styles::use_text_for_accessibility | control_styles::selectable, true);
   size_ = default_size();
-  controls_.item_added += [&](size_t, std::reference_wrapper<control> item) {
+  controls_.item_added += [&](size_t, reference_wrapper<control> item) {
     item.get().parent_ = handle_;
     if (handle_) {
       item.get().create_control();
@@ -77,7 +99,7 @@ control::control() {
     }
   };
   
-  controls_.item_erased += [&](size_t, std::reference_wrapper<control> item) {
+  controls_.item_erased += [&](size_t, reference_wrapper<control> item) {
     item.get().parent_ = 0;
     item.get().destroy_control();
     on_control_removed(control_event_args(item.get()));
@@ -152,7 +174,7 @@ control& control::background_image_layout(xtd::forms::image_layout background_im
 bool control::can_focus() const {
   bool visible_and_enebled = handle_ && get_state(state::visible) && get_state(state::enabled);
 
-  std::optional<std::reference_wrapper<control>> top_level_control = const_cast<control&>(*this);
+  optional<reference_wrapper<control>> top_level_control = const_cast<control&>(*this);
   while (visible_and_enebled && top_level_control.has_value() && !top_level_control.value().get().get_state(state::top_level)) {
     top_level_control = top_level_control.value().get().parent();
     if (top_level_control.has_value()) visible_and_enebled = top_level_control.value().get().get_state(state::visible) && get_state(state::enabled);
@@ -293,7 +315,7 @@ control& control::parent(nullptr_t) {
   return *this;
 }
 
-control& control::text(const std::string& text) {
+control& control::text(const string& text) {
   if (text_ != text) {
     text_ = text;
     native::control::text(handle_, text_);
@@ -302,8 +324,8 @@ control& control::text(const std::string& text) {
   return *this;
 }
 
-std::optional<std::reference_wrapper<control>> control::top_level_control() const {
-  std::optional<std::reference_wrapper<control>> top_level_control = const_cast<control&>(*this);
+optional<reference_wrapper<control>> control::top_level_control() const {
+  optional<reference_wrapper<control>> top_level_control = const_cast<control&>(*this);
   while (top_level_control.has_value() && !top_level_control.value().get().get_state(state::top_level))
     top_level_control = top_level_control.value().get().parent();
   if (top_level_control.has_value() && !top_level_control.value().get().get_state(state::top_level)) top_level_control.reset();
@@ -391,25 +413,25 @@ bool control::focus() {
   return true;
 }
 
-std::optional<std::reference_wrapper<control>> control::from_child_handle(intptr_t handle) {
+optional<reference_wrapper<control>> control::from_child_handle(intptr_t handle) {
   try {
     auto it = handles_.find(handle);
     if (it != handles_.end())
       return it->second->parent();
-    return std::optional<std::reference_wrapper<control>>();
+    return optional<reference_wrapper<control>>();
   } catch (...) {
-    return std::optional<std::reference_wrapper<control>>();
+    return optional<reference_wrapper<control>>();
   }
 }
 
-std::optional<std::reference_wrapper<control>> control::from_handle(intptr_t handle) {
+optional<reference_wrapper<control>> control::from_handle(intptr_t handle) {
   try {
     auto it = handles_.find(handle);
     if (it != handles_.end())
       return *it->second;
-    return std::optional<std::reference_wrapper<control>>();
+    return optional<reference_wrapper<control>>();
   } catch (...) {
-    return std::optional<std::reference_wrapper<control>>();
+    return optional<reference_wrapper<control>>();
   }
 }
 
@@ -424,17 +446,17 @@ bool control::is_handle_created() const {
   return handle_ != 0;
 }
 
-control::async_result_invoke control::begin_invoke(delegate<void(std::vector<std::any>)> value, const std::vector<std::any>& args) {
-  while (!xtd::forms::application::message_loop()) std::this_thread::sleep_for(10ms);
+control::async_result_invoke control::begin_invoke(delegate<void(vector<any>)> value, const vector<any>& args) {
+  while (!xtd::forms::application::message_loop()) this_thread::sleep_for(10ms);
   async_result_invoke async;
   async.async_mutex().lock();
   native::control::invoke_in_control_thread(handle_, value, args, async.async_mutex_);
-  std::this_thread::yield();
+  this_thread::yield();
   return async;
 }
 
 void control::end_invoke(async_result_invoke async) {
-  std::lock_guard<std::shared_mutex> lock(async.async_mutex());
+  lock_guard<shared_mutex> lock(async.async_mutex());
 }
 
 forms::create_params control::create_params() const {
@@ -746,7 +768,7 @@ void control::set_auto_size_mode(auto_size_mode auto_size_mode) {
   }
 }
 
-std::string control::to_string() const {
+string control::to_string() const {
   if (!name_.empty()) return strings::format("{}, name: {}", strings::full_class_name(*this), name_);
   if (!text_.empty()) return strings::format("{}, text: {}", strings::full_class_name(*this), text_);
   return strings::full_class_name(*this);
@@ -762,7 +784,7 @@ intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_
     wnd_proc(message);
     return message.result();
   /*
-  } catch(const std::exception& e) {
+  } catch(const exception& e) {
     message_box::show(from_handle(hwnd).value(), xtd::strings::format("message: {}", e.what()), xtd::strings::format("Exception {}", xtd::strings::class_name(e)), message_box_buttons::ok, message_box_icon::error);
   } catch(...) {
     message_box::show(from_handle(hwnd).value(), "message: An unknown exception occure", "Unknown Exception", message_box_buttons::ok, message_box_icon::error);
