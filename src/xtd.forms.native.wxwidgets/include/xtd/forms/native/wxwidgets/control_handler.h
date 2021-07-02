@@ -67,7 +67,7 @@ namespace xtd {
           if (handle != 0) {
             wxEvent* event = reinterpret_cast<wxEvent*>(handle);
             event->Skip(!result);
-            process_result_ = msg == WM_CLOSE ? 1 : control_t::ProcessEvent(*event);
+            process_result_ = control_t::ProcessEvent(*event);
           }
           return process_result_;
         }
@@ -100,8 +100,12 @@ namespace xtd {
           return strings::format("{} {{type={}, id={}}}", strings::full_class_name(event), to_string(event.GetEventType()), event.GetId());
         }
 
+        void def_process_event(intptr_t result, wxEvent& event) {
+          process_result_ = def_wnd_proc(0, 0, 0, 0, result, reinterpret_cast<intptr_t>(&event));
+        }
+        
         void def_process_event(wxEvent& event) {
-          process_result_ = def_wnd_proc(0, 0, 0, 0, 0, reinterpret_cast<intptr_t>(&event));
+          def_process_event(0, event);
         }
         
         bool is_clipboard_event(wxEventType event_type) const {
@@ -632,8 +636,9 @@ namespace xtd {
       template<typename control_t>
       inline void control_wrapper<control_t>::process_system_event(wxEvent& event) {
         wxWindow* window = reinterpret_cast<wxWindow*>(event.GetEventObject());
-        if (event.GetEventType() == wxEVT_CLOSE_WINDOW) static_cast<wxCloseEvent&>(event).Veto(!event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_CLOSE, 0, 0, reinterpret_cast<intptr_t>(&event)));
-        else if (event.GetEventType() == wxEVT_ACTIVATE) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_ACTIVATE, reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()), static_cast<wxActivateEvent&>(event).GetActive() ? (static_cast<wxActivateEvent&>(event).GetActivationReason() == wxActivateEvent::Reason::Reason_Mouse ? WA_CLICKACTIVE : WA_ACTIVE) : WA_INACTIVE, reinterpret_cast<intptr_t>(&event));
+        if (event.GetEventType() == wxEVT_CLOSE_WINDOW) {
+          if (event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_CLOSE, 0, 0, reinterpret_cast<intptr_t>(&event))) def_process_event(1, event);
+        } else if (event.GetEventType() == wxEVT_ACTIVATE) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_ACTIVATE, reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()), static_cast<wxActivateEvent&>(event).GetActive() ? (static_cast<wxActivateEvent&>(event).GetActivationReason() == wxActivateEvent::Reason::Reason_Mouse ? WA_CLICKACTIVE : WA_ACTIVE) : WA_INACTIVE, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_DESTROY) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_DESTROY, 0, 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_MOVE) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MOVE, 0, window->GetPosition().x + (window->GetPosition().y << 16), reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_NULL) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NULL, 0, 0, reinterpret_cast<intptr_t>(&event));

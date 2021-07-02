@@ -147,7 +147,6 @@ form& form::minimize_box(bool value) {
 }
 
 form& form::owner(const control& value) {
-  //if (!value.handle()) value.recreating_handle();
   if (owner_ != value.handle()) {
     owner_ = value.handle();
     recreate_handle();
@@ -419,10 +418,10 @@ void form::wm_close(message &message) {
       native::form::end_dialog(handle(), static_cast<int32_t>(dialog_result_));
       application::raise_leave_thread_modal(event_args::empty);
       parent_ = parent_before_show_dialog_;
+      set_state(state::modal, false);
     }
+    message.result(1);
     on_form_closed(form_closed_event_args());
-    if (!get_state(state::modal)) destroy_control();
-    set_state(state::modal, false);
   }
 }
 
