@@ -12,7 +12,7 @@ public:
     button1.location({10, 10});
     button1.parent(*this);
     button1.text("Do something...");
-    button1.click += [] {
+    button1.click += [&] {
       busy_dialog dialog;
       dialog.icon(xtd::drawing::system_icons::exclamation({64, 64}));
       dialog.text("Application busy");
@@ -20,7 +20,7 @@ public:
       dialog.back_color(xtd::drawing::color::red);
       dialog.fore_color(xtd::drawing::color::white);
       dialog.opacity(0.25);
-      dialog.show();
+      dialog.show(*this);
       for (auto count = 0; count < 500; ++count) {
         application::do_events();
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
