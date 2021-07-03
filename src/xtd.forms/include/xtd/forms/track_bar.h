@@ -121,10 +121,10 @@ namespace xtd {
       /// @remarks The Value property contains the number that represents the current position of the scroll box on the track bar.
       virtual track_bar& value(int32_t value);
 
-      /// @brief Sets the minimum and maximum values for a track_bar.
+      /// @brief Sets the minimum and maximum values for a xtd::forms::track_bar.
       /// @param min_value The lower limit of the range of the track bar.
       /// @param max_value The upper limit of the range of the track bar.
-      /// @remarks You can use this method to set the entire range for the track_bar at the same time. To set the minimum or maximum values individually, use the minimum and maximum properties. If the min_value parameter is greater than the max_value parameter, max_value is set equal to min_value.
+      /// @remarks You can use this method to set the entire range for the xtd::forms::track_bar at the same time. To set the minimum or maximum values individually, use the xtd::forms::track_bar::minimum and xtd::forms::track_bar::maximum properties. If the min_value parameter is greater than the max_value parameter, max_value is set equal to min_value.
       void set_range(int min_value, int max_value) {
         minimum(min_value);
         maximum(min_value > max_value ? min_value : max_value);
