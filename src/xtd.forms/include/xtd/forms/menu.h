@@ -111,7 +111,7 @@ namespace xtd {
       /// @brief Returns a string that represents the menu control.
       /// @return A string that represents the current menu.
       /// @remarks The to_string method returns a string that includes the type and the number of items in the menu_items property of the control.
-      std::string to_string() const;
+      virtual std::string to_string() const;
       
       /// @brief Specifies that the find_menu_item(int32_t, intptr_t) method should search for a handle.
       static constexpr const int find_handle = 0;
@@ -169,8 +169,8 @@ namespace xtd {
         std::optional<std::reference_wrapper<menu>> parent_;
         std::any tag_;
         xtd::event_handler<xtd::forms::component&> on_click_;
-        void callback() {
-          on_click_(*owner_, event_args::empty);
+        void callback(xtd::forms::menu& menu) {
+          on_click_(menu, event_args::empty);
         };
       };
       std::shared_ptr<data> data_;

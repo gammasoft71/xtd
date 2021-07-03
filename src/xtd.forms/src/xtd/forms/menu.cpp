@@ -1,3 +1,7 @@
+#define __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/native/menu.h>
+#include <xtd/forms/native/menu_item.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_exception.h>
 #include <xtd/strings.h>
 #include "../../../include/xtd/forms/menu.h"
@@ -84,7 +88,7 @@ std::optional<main_menu> menu::get_main_menu() const {
 }
 
 std::string menu::to_string() const {
-  return strings::format("{}, items.size(): {}", strings::full_class_name(*this), data_->menu_items_.size());
+  return strings::format("{}, items.size: {}", strings::full_class_name(*this), data_->menu_items_.size());
 }
 
 void menu::clone_menu(const menu& menu_src) {
@@ -117,15 +121,16 @@ void menu::recreate_menu() {
 }
 
 void menu::add_handles(const menu_item_collection& menu_items) {
-  for (auto menu_item :  menu_items) {
-    handles_[menu_item.data_->handle_] = &menu_item;
-    if (menu_item.data_->menu_items_.size() != 0)
+  for (auto& menu_item :  menu_items) {
+    if (menu_item.data_->menu_items_.size() != 0) {
+      handles_[native::menu::native_handle(menu_item.data_->handle_)] = const_cast<menu_item_collection::value_type*>(&menu_item);
       add_handles(menu_item.data_->menu_items_);
+    }
   }
 }
 
 void menu::remove_handles(const menu_item_collection& menu_items) {
-  for (auto menu_item :  menu_items) {
+  for (auto& menu_item :  menu_items) {
     handles_.erase(menu_item.data_->handle_);
     if (menu_item.data_->menu_items_.size() != 0)
       remove_handles(menu_item.data_->menu_items_);

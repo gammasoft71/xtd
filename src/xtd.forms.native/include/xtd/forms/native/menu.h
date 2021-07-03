@@ -35,14 +35,19 @@ namespace xtd {
       protected:
         /// @brief Creates menu.
         /// @param text The text associated with this menu.
-        /// @param menu_items A menu item handles array.
+        /// @param items A menu item handles array.
         /// @return The created menu handle.
         /// @warning Internal use only
         static intptr_t create(const std::string& text, const std::vector<intptr_t>& items);
         /// @brief Destroy menu.
-        /// @param main_menu Menu handle.
+        /// @param menu Menu handle.
         /// @warning Internal use only
         static void destroy(intptr_t menu);
+        /// @brief Gets native menu handle.
+        /// @param menu Menu handle.
+        /// @return The native menu handle.
+        /// @warning Internal use only
+        static intptr_t native_handle(intptr_t menu);
       };
     }
   }

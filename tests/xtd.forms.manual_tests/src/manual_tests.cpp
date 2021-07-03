@@ -2,6 +2,7 @@
 
 using namespace std;
 using namespace xtd;
+using namespace xtd::diagnostics;
 using namespace xtd::drawing;
 using namespace xtd::windows::forms;
 
@@ -82,20 +83,22 @@ namespace xtd {
   }
 }
 
+void on_menu_click(component& sender, const event_args& e) {
+  debug::write_line(strings::format("menu {} clicked", static_cast<menu_item&>(sender).text()));
+}
+
 int main() {
   try {
     form form_main;
-    auto index = 0;
-    //assert_(index > 0);
-    //assert_(index > 0, "index must be greather than 0");
-    //xtd::diagnostics::debug::cassert(index > 0);
-    xtd::diagnostics::debug::cassert(index > 0, "index must be greather than 0");
-    //xtd::diagnostics::debug::cassert_(index > 0, "index must be greather than 0");
-    //xtd::diagnostics::trace::cassert_(index > 0, "index must be greather than 0");
     form_main.text("Manual tests");
-    form_main.menu(forms::main_menu::create_standard_items([&](component& sender, const event_args& e) {
-      //cdebug << strings::format("Menu item [{}] clicked", sender) << endl;
-    }));
+    //form_main.menu(forms::main_menu::create_standard_items([&](component& sender, const event_args& e) {
+    //  //cdebug << strings::format("Menu item [{}] clicked", as<menu_item&>(sender)) << endl;
+    //}));
+    form_main.menu(main_menu {
+      {texts::file(), {
+        {texts::new_(), {on_menu_click}, menu_images::file_new(), shortcut::cmd_n},
+      }}
+    });
     
     /*
      form_main.client_size({300, 300});
@@ -112,20 +115,6 @@ int main() {
      link_label1.parent(form_main);
      link_label1.text("Gammasoft present xtd_forms examples\nNext line...");
      */
-        
-    button b1;
-    b1.parent(form_main);
-    b1.location({10, 10});
-    b1.size({200, 100});
-    b1.image(button_images::from_name("gammasoft", drawing::size {64, 64}));
-    b1.click += {form_main, &form::close};
-    
-    button b2;
-    b2.parent(form_main);
-    b2.location({10, 120});
-    b2.enabled(false);
-    b2.size({200, 100});
-    b2.image(button_images::from_name("gammasoft", drawing::size {64, 64}));
 
     application::run(form_main);
   } catch(const exception& e) {

@@ -141,3 +141,7 @@ void menu_item::destroy_menu_handle(intptr_t handle) {
 int menu_item::menu_id() const {
   return native::menu_item::menu_id(data_->handle_);
 }
+
+std::string menu_item::to_string() const {
+  return strings::format("{}, text: {}", menu::to_string(), text_);
+}
