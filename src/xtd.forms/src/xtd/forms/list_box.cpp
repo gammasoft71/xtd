@@ -57,11 +57,7 @@ list_control& list_box::selected_index(size_t selected_index) {
   if (selected_index_ != selected_index) {
     selected_index_ = selected_index;
     native::list_box::selected_index(handle(), selected_index_);
-
-    item selected_item;
-    if (selected_index_ != npos) selected_item = items_[selected_index_];
-    this->selected_item(selected_item);
-
+    if (selected_index_ != npos) selected_item_ = items_[selected_index_];
     on_selected_index_changed(event_args::empty);
   }
   return *this;
