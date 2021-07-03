@@ -25,7 +25,7 @@ namespace xtd {
       class menu;
       class wx_menu_bar;
       class wx_menu;
-
+      
       enum class wx_menu_item_kind {
         normal = 0,
         check = 1,
@@ -40,20 +40,20 @@ namespace xtd {
         friend xtd::forms::native::menu;
       private:
         wx_menu_item() = default;
-
+        
         wx_menu_item(const std::string& text, intptr_t image, wx_menu_item_kind kind, bool checked, size_t shortcut) : text_(text), shortcut_(shortcut), image_(image), kind_(kind != wx_menu_item_kind::normal ? kind : (text == "-" ? wx_menu_item_kind::separator : wx_menu_item_kind::normal)), checked_(checked) {}
-
-        wx_menu_item(const std::string& text, const std::vector<wx_menu_item>& items) : text_(text), items_(items) {}
-        wx_menu_item(const std::string& text, size_t shortcut, const std::vector<wx_menu_item>& items) : text_(text), shortcut_(shortcut), items_(items) {}
-
+        
+        wx_menu_item(const std::string& text, const std::vector<wx_menu_item*>& items) : text_(text), items_(items) {}
+        wx_menu_item(const std::string& text, size_t shortcut, const std::vector<wx_menu_item*>& items) : text_(text), shortcut_(shortcut), items_(items) {}
+        
         const std::string& text() const {return text_;}
         size_t shortcut() const {return shortcut_;}
         bool enabled() const {return enabled_;}
         intptr_t image() const {return image_;}
         wx_menu_item_kind kind() const {return kind_;}
         bool checked() const {return checked_;}
-        const std::vector<wx_menu_item>& items() const {return items_;}
-        std::vector<wx_menu_item>& items() {return items_;}
+        const std::vector<wx_menu_item*>& items() const {return items_;}
+        std::vector<wx_menu_item*>& items() {return items_;}
         
         static bool isAboutItem(const std::string& text) {
           wxString itemText = text;
@@ -94,11 +94,11 @@ namespace xtd {
           itemText.LowerCase();
           return itemText == "window";
         }
-
+        
       private:
         friend class wx_menu_bar;
         friend class wx_menu;
-
+        
         static wxWindowID MakeWindowID(const std::string& text) {
           if (isAboutItem(text)) return wxID_ABOUT;
           if (isQuitItem(text)) return wxID_EXIT;
@@ -183,152 +183,154 @@ namespace xtd {
           return text + "\t" + key;
         }
         
-        static std::tuple<wxMenu*, std::string> MakeMenu(wx_menu_item& menu_item) {
-          menu_item.menu_ = new wxMenu();
+        static std::tuple<wxMenu*, std::string> MakeMenu(wx_menu_item* menu_item) {
+          menu_item->menu_ = new wxMenu();
           auto index = 0;
           
-          for (auto& item : menu_item.items()) {
-            item.parent_ = &menu_item;
-            if (item.items().size() != 0) {
+          for (auto* item : menu_item->items()) {
+            item->parent_ = menu_item->menu_;
+            if (item->items().size() != 0) {
               auto [sub_menu, name] = MakeMenu(item);
-              menu_item.menu_->AppendSubMenu(sub_menu, item.text());
+              menu_item->menu_->AppendSubMenu(sub_menu, item->text());
             } else {
-              wxWindowID itemID = MakeWindowID(item.text());
-              item.menu_item_ = menu_item.menu_->Append(wxMenuItem::New(menu_item.menu_, itemID, MakeItemText(item.text(), item.shortcut()), "", ToItemKind(item.kind())));
-              item.index_ = index++;
-              if (item.image() != 0) item.menu_item_->SetBitmap({*reinterpret_cast<wxImage*>(item.image())});
-              if (item.kind() == wx_menu_item_kind::check || item.kind() == wx_menu_item_kind::radio) item.menu_item_->Check(item.checked());
+              item->item_id = MakeWindowID(item->text());
+              item->menu_item_ = menu_item->menu_->Append(wxMenuItem::New(menu_item->menu_, item->item_id, MakeItemText(item->text(), item->shortcut()), "", ToItemKind(item->kind())));
+              item->index_ = index++;
+              if (item->image() != 0) item->menu_item_->SetBitmap({*reinterpret_cast<wxImage*>(item->image())});
+              if (item->kind() == wx_menu_item_kind::check || item->kind() == wx_menu_item_kind::radio) item->menu_item_->Check(item->checked());
             }
           }
           
-          return std::make_tuple(menu_item.menu_, menu_item.text());
+          return std::make_tuple(menu_item->menu_, menu_item->text());
         }
-
+        
         std::string text_;
         size_t shortcut_ = VK_NONE;
         bool enabled_ = true;
         intptr_t image_ = 0;
         wx_menu_item_kind kind_ = wx_menu_item_kind::normal;
         bool checked_ = false;
-        std::vector<wx_menu_item> items_;
-        wx_menu_item* parent_ = nullptr;
+        std::vector<wx_menu_item*> items_;
+        wxMenu* parent_ = nullptr;
         wxMenuItem* menu_item_ = nullptr;
         wxMenu* menu_ = nullptr;
+        wxWindowID item_id = 0;
         size_t index_ = std::numeric_limits<size_t>::max();
       };
-    
-    class wx_menu_bar : public wxMenuBar {
-    public:
-      wx_menu_bar(const std::vector<wx_menu_item>& items) : items_(items) {
+      
+      class wx_menu_bar : public wxMenuBar {
+      public:
+        wx_menu_bar(const std::vector<wx_menu_item*>& items) : items_(items) {
 #if defined(__APPLE__)
-        auto has_window_menu = false;
-        auto has_help_menu = false;
+          auto has_window_menu = false;
+          auto has_help_menu = false;
 #endif
-
-        for (auto& menu_item : items_) {
-          auto [menu, name] = wx_menu_item::MakeMenu(menu_item);
+          
+          for (auto* menu_item : items_) {
+            auto [menu, name] = wx_menu_item::MakeMenu(menu_item);
 #if defined(__APPLE__)
-          if (wx_menu_item::isWindowItem(name)) has_window_menu = true;
-          if (wx_menu_item::isHelpItem(name)) {
-            has_help_menu = true;
-            if (!has_window_menu) {
-              has_window_menu = true;
-              Append(new wxMenu(), "&Window");
-            }          }
+            if (wx_menu_item::isWindowItem(name)) has_window_menu = true;
+            if (wx_menu_item::isHelpItem(name)) {
+              has_help_menu = true;
+              if (!has_window_menu) {
+                has_window_menu = true;
+                Append(new wxMenu(), "&Window");
+              }          }
 #endif
-          Append(menu, name);
+            Append(menu, name);
+          }
+          
+#if defined(__APPLE__)
+          if (!has_window_menu) Append(new wxMenu(), "&Window");
+          if (!has_help_menu) Append(new wxMenu(), "&Help");
+#endif
+          add_ids(items_);
         }
         
-#if defined(__APPLE__)
-        if (!has_window_menu) Append(new wxMenu(), "&Window");
-        if (!has_help_menu) Append(new wxMenu(), "&Help");
-#endif
-        add_ids(items_);
-      }
-      
-      bool Destroy() override {
-        remove_ids(items_);
-        return wxMenuBar::Destroy();
-      }
-      
-      static wx_menu_item* from_id(wxWindowID id) {
-        return ids_[id];
-      }
-      
-      const std::vector<wx_menu_item>& items() const {return items_;}
-      
-      static wx_menu_item* find_menu_from_id(wxWindowID id) {
-        auto item = ids_[id];
-        if (item == nullptr) return nullptr;
-        return item->parent_;
-      }
-      
-      static size_t find_index_from_id(wxWindowID id) {
-        auto item = ids_[id];
-        if (item == nullptr) return std::numeric_limits<size_t>::max();
-        return item->index_;
-      }
-      
-      static wxMenuBar* create_default_menu_bar() {
-        wxMenuBar* default_menu_bar = new wxMenuBar;
-        default_menu_bar->Bind(wxEVT_MENU, &on_exit_menu);
-        return default_menu_bar;
-      }
-
-    private:
-      static void on_exit_menu(wxCommandEvent& event) {
-        if (event.GetId() == wxID_EXIT) {
-          for (auto window : wxTopLevelWindows)
-            if (!window->Close())
-              return;
-          wxTheApp->ExitMainLoop();
-        } else event.Skip();
-      }
-      
-      void add_ids(std::vector<wx_menu_item>& items) {
-        for (auto& menu_item : items) {
-          if (menu_item.items().size() != 0) add_ids(menu_item.items());
-          if (menu_item.menu_item_) ids_[menu_item.menu_item_->GetId()] = &menu_item;
+        bool Destroy() override {
+          remove_ids(items_);
+          return wxMenuBar::Destroy();
         }
-      }
-      
-      void remove_ids(std::vector<wx_menu_item>& items) {
-        for (auto& menu_item : items) {
-          if (menu_item.items().size() != 0)
-            remove_ids(menu_item.items());
-          else
-            ids_.erase(menu_item.menu_item_->GetId());
+        
+        static wx_menu_item* from_id(wxWindowID id) {
+          return ids_[id];
         }
-      }
-      
-      static std::map<wxWindowID, wx_menu_item*> ids_;
-      std::vector<wx_menu_item> items_;
-    };
-    
-    class wx_menu : public wxMenu {
-    public:
-      wx_menu(const std::vector<wx_menu_item>& items) : items_(items) {
-        for (auto item : items_) {
-          if (item.items().size() != 0) {
-            auto [sub_menu, name] = wx_menu_item::MakeMenu(item);
-            AppendSubMenu(sub_menu, item.text());
-          } else {
-            wxWindowID itemID = wx_menu_item::MakeWindowID(item.text());
-            wxMenuItem* menuItem = Append(wxMenuItem::New(this, itemID, wx_menu_item::MakeItemText(item.text(), item.shortcut()), "", wx_menu_item::ToItemKind(item.kind())));
-            if (item.image() != 0) menuItem->SetBitmap({*reinterpret_cast<wxImage*>(item.image())});
-            if (item.kind() == wx_menu_item_kind::check || item.kind() == wx_menu_item_kind::radio) menuItem->Check(item.checked());
+        
+        const std::vector<wx_menu_item*>& items() const {return items_;}
+        
+        static wxMenu* find_menu_from_id(wxWindowID id) {
+          auto item = ids_[id];
+          if (item == nullptr) return nullptr;
+          return item->parent_;
+        }
+        
+        static size_t find_index_from_id(wxWindowID id) {
+          auto item = ids_[id];
+          if (item == nullptr) return std::numeric_limits<size_t>::max();
+          return item->index_;
+        }
+        
+        static wxMenuBar* create_default_menu_bar() {
+          wxMenuBar* default_menu_bar = new wxMenuBar;
+          default_menu_bar->Bind(wxEVT_MENU, &on_exit_menu);
+          return default_menu_bar;
+        }
+        
+      private:
+        static void on_exit_menu(wxCommandEvent& event) {
+          if (event.GetId() == wxID_EXIT) {
+            for (auto window : wxTopLevelWindows)
+              if (!window->Close())
+                return;
+            wxTheApp->ExitMainLoop();
+          } else event.Skip();
+        }
+        
+        void add_ids(std::vector<wx_menu_item*>& items) {
+          for (auto* menu_item : items) {
+            if (menu_item->items().size() != 0) add_ids(menu_item->items());
+            if (menu_item->menu_item_) ids_[menu_item->menu_item_->GetId()] = menu_item;
           }
         }
-      }
+        
+        void remove_ids(std::vector<wx_menu_item*>& items) {
+          for (auto* menu_item : items) {
+            if (menu_item->items().size() != 0)
+              remove_ids(menu_item->items());
+            else
+              ids_.erase(menu_item->menu_item_->GetId());
+          }
+        }
+        
+        static std::map<wxWindowID, wx_menu_item*> ids_;
+        std::vector<wx_menu_item*> items_;
+      };
       
-      bool Destroy() {
-        delete this;
-        return true;
-      }
-      
-    private:
-      std::vector<wx_menu_item> items_;
-    };
+      class wx_menu : public wxMenu {
+      public:
+        wx_menu(const std::vector<wx_menu_item*>& items) : items_(items) {
+          for (auto* item : items_) {
+            if (item->items().size() != 0) {
+              auto [sub_menu, name] = wx_menu_item::MakeMenu(item);
+              AppendSubMenu(sub_menu, item->text());
+            } else {
+              wxWindowID itemID = wx_menu_item::MakeWindowID(item->text());
+              wxMenuItem* menuItem = Append(wxMenuItem::New(this, itemID, wx_menu_item::MakeItemText(item->text(), item->shortcut()), "", wx_menu_item::ToItemKind(item->kind())));
+              if (item->image() != 0) menuItem->SetBitmap({*reinterpret_cast<wxImage*>(item->image())});
+              if (item->kind() == wx_menu_item_kind::check || item->kind() == wx_menu_item_kind::radio) menuItem->Check(item->checked());
+            }
+          }
+        }
+        
+        bool Destroy() {
+          delete this;
+          return true;
+        }
+        
+      private:
+        std::vector<wx_menu_item*> items_;
+      };
     }
   }
 }
+

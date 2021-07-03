@@ -317,6 +317,11 @@ namespace xtd {
         return *this;
       }
 
+      /// @brief Returns a string that represents the menu control.
+      /// @return A string that represents the current menu.
+      /// @remarks The to_string method returns a string that includes the type and the number of items in the menu_items property of the control.
+      std::string to_string() const override;
+
     protected:
       friend main_menu;
       friend context_menu;
