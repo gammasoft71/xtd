@@ -7,7 +7,7 @@ namespace examples {
   class form1 : public form {
   public:
     form1() {
-      text("Main menu create standard ittems example");
+      text("Main menu create standard items example");
       menu(main_menu::create_standard_items([&](component& sender, const event_args& e) {
         list_box1.items().push_back(strings::format("{} clicked", static_cast<menu_item&>(sender).text()));
         list_box1.selected_index(list_box1.items().size() - 1);
