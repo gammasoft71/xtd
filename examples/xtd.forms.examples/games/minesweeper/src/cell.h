@@ -7,7 +7,7 @@ namespace minesweeper {
   class cell : public xtd::forms::user_control {
   public:
     cell() {
-      font(xtd::drawing::font(font(), 16));
+      font(xtd::drawing::font(font(), 16, xtd::drawing::font_style::bold));
       size({30, 30});
     };
     
@@ -128,8 +128,8 @@ namespace minesweeper {
       auto x = (e.clip_rectangle().width() - mine.width()) / 2;
       auto y = (e.clip_rectangle().height() - mine.height()) / 2;
       e.graphics().draw_image(mine, x, y);
-      e.graphics().draw_line(pen(color::red, 2), 0, 0, e.clip_rectangle().width(), e.clip_rectangle().height());
-      e.graphics().draw_line(pen(color::red, 2), e.clip_rectangle().width(), 0, 0, e.clip_rectangle().height());
+      e.graphics().draw_line(pen(color::red, 3), 7, 7, e.clip_rectangle().width() - 10, e.clip_rectangle().height() - 10);
+      e.graphics().draw_line(pen(color::red, 3), e.clip_rectangle().width() - 10, 7, 7, e.clip_rectangle().height() - 10);
     }
     
     void draw_border_unchecked(xtd::forms::paint_event_args& e) {
