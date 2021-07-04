@@ -29,7 +29,7 @@ namespace examples {
           {texts::print(), {*this, &form1::on_menu_click}, menu_images::file_print(), shortcut::cmd_p},
           {texts::print_preview(), {*this, &form1::on_menu_click}, menu_images::file_print_preview()},
           {"-"},
-          {texts::exit(), {*this, &form1::on_menu_click}, menu_images::file_exit(), shortcut::alt_f4},
+          {texts::exit(), {*this, &form1::close}, menu_images::file_exit(), shortcut::alt_f4},
         }},
         {texts::edit(), {
           {texts::undo(), {*this, &form1::on_menu_click}, menu_images::edit_undo(), shortcut::cmd_z},
@@ -74,6 +74,7 @@ namespace examples {
     
     void on_menu_click(component& sender, const event_args& e) {
       list_box1.items().push_back(strings::format("{} clicked", static_cast<menu_item&>(sender).text()));
+      list_box1.selected_index(list_box1.items().size() - 1);
     }
     
   private:
