@@ -69,22 +69,18 @@ namespace minesweeper {
       using namespace xtd::drawing;
       draw_border_checked(e);
       color text_color = system_colors::control_text();
-      if (neighbors_ == 8) text_color = color::dark_gray;
-      if (neighbors_ == 7) text_color = color::black;
-      if (neighbors_ == 6) text_color = color::dark_green;
-      if (neighbors_ == 5) text_color = color::dark_red;
-      if (neighbors_ == 4) text_color = color::dark_blue;
-      if (neighbors_ == 3) text_color = color::red;
-      if (neighbors_ == 2) text_color = color::green;
-      if (neighbors_ == 1) text_color = color::blue;
+      if (neighbors_ == 8) text_color = back_color().get_brightness() < 0.5f ? color::light_gray : color::dark_gray;
+      if (neighbors_ == 7) text_color = fore_color();
+      if (neighbors_ == 6) text_color = color::from_argb(0xDE, 0x77, 0x35);
+      if (neighbors_ == 5) text_color = back_color().get_brightness() < 0.5f ? color::from_argb(0xE2, 0xCC, 0x1E) : color::brown;
+      if (neighbors_ == 4) text_color = back_color().get_brightness() < 0.5f ? color::from_argb(0xC6, 0x5E, 0x3A) : color::from_argb(0x80, 0x02, 0x80);
+      if (neighbors_ == 3) text_color = back_color().get_brightness() < 0.5f ? color::from_argb(0xD0, 0x3E, 0x3D) : color::red;
+      if (neighbors_ == 2) text_color = back_color().get_brightness() < 0.5f ? color::from_argb(0x30, 0xDC, 0x66) : color::green;
+      if (neighbors_ == 1) text_color = back_color().get_brightness() < 0.5f ? color::from_argb(0x60, 0xB0, 0xFF) : color::blue;
       if (neighbors_ != 0) {
         std::string text = std::to_string(neighbors_);
         auto x = (e.clip_rectangle().width() - e.graphics().measure_string(text, font()).width()) / 2;
         auto y = (e.clip_rectangle().height() - e.graphics().measure_string(text, font()).height()) / 2;
-        if (back_color().get_brightness() < 0.5f) {
-          e.graphics().draw_string(text, font(), solid_brush(color::light(color::light(text_color))), x - 1, y - 1);
-          e.graphics().draw_string(text, font(), solid_brush(color::dark(color::dark(text_color))), x + 1, y + 1);
-        }
         e.graphics().draw_string(text, font(), solid_brush(text_color), x, y);
       }
     }
