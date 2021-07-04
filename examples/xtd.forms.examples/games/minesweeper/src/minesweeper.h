@@ -248,9 +248,9 @@ namespace minesweeper {
         case 1: text_color = back_color().get_brightness() < 0.5f ? color::from_argb(0x60, 0xB0, 0xFF) : color::blue; break;
         case 2: text_color = back_color().get_brightness() < 0.5f ? color::from_argb(0x30, 0xDC, 0x66) : color::green; break;
         case 3: text_color = back_color().get_brightness() < 0.5f ? color::from_argb(0xD0, 0x3E, 0x3D) : color::red; break;
-        case 4: text_color = back_color().get_brightness() < 0.5f ? color::from_argb(0xC6, 0x5E, 0x3A) : color::from_argb(0x80, 0x02, 0x80); break;
+        case 4: text_color = color::from_argb(0xDE, 0x77, 0x35); break;
         case 5: text_color = back_color().get_brightness() < 0.5f ? color::from_argb(0xE2, 0xCC, 0x1E) : color::brown; break;
-        case 6: text_color = color::from_argb(0xDE, 0x77, 0x35); break;
+        case 6: text_color = back_color().get_brightness() < 0.5f ? color::from_argb(0xC6, 0x5E, 0x3A) : color::from_argb(0x80, 0x02, 0x80); break;
         case 7:  text_color = back_color().get_brightness() < 0.5f ? color::light_gray : color::dark_gray; break;
         case 8: text_color = fore_color(); break;
         default: return;
@@ -310,7 +310,10 @@ namespace minesweeper {
     void draw_border_unchecked(xtd::forms::paint_event_args& e, int x, int y) {
       using namespace xtd::drawing;
       rectangle rect(x, y, cell::width(), cell::height());
-      if (back_color().get_brightness() < 0.5f) e.graphics().fill_rectangle(solid_brush(color::light(back_color(), 0.1)), x, y, cell::width(), cell::height());
+      if (!properties::settings::default_settings().original_color()) {
+        if (back_color().get_brightness() < 0.5f) e.graphics().fill_rectangle(solid_brush(color::light(back_color(), 0.1)), x, y, cell::width(), cell::height());
+        else e.graphics().fill_rectangle(solid_brush(color::dark(back_color(), 0.1)), x, y, cell::width(), cell::height());
+      }
       e.graphics().draw_line(pen(color::light(color::light(color::light(back_color())))), rect.left(), rect.top(), rect.left() + rect.width(), rect.top());
       e.graphics().draw_line(pen(color::light(color::light(back_color()))), rect.left(), rect.top() + 1, rect.left() + rect.width(), rect.top() + 1);
       e.graphics().draw_line(pen(color::light(back_color())), rect.left() + 1, rect.top() + 2, rect.left() + rect.width(), rect.top() + 2);
