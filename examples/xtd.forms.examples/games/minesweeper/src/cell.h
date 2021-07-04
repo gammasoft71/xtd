@@ -54,6 +54,7 @@ namespace minesweeper {
     void on_paint(xtd::forms::paint_event_args& e) override {
       using namespace xtd;
       using namespace xtd::forms;
+      e.graphics().clear(back_color());
       std::map<cell_state, delegate<void(paint_event_args&)>> draw_state {{cell_state::unchecked, {*this, &cell::do_draw_unchecked}}, {cell_state::checked, {*this, &cell::do_draw_checked}}, {cell_state::flag, {*this, &cell::do_draw_flag}}, {cell_state::question, {*this, &cell::do_draw_question}}, {cell_state::mine, {*this, &cell::do_draw_mine}}, {cell_state::exploded_mine, {*this, &cell::do_draw_exploded_mine}}, {cell_state::error, {*this, &cell::do_draw_error}}};
       draw_state[state_](e);
       user_control::on_paint(e);
