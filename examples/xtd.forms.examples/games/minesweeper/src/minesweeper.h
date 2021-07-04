@@ -28,41 +28,7 @@ namespace minesweeper {
       
       update_colors();
       
-      menu({
-        {
-          "&Game"_t, {
-            {"&New games"_t, {[&] {new_game();}}, shortcut::f2},
-            {"-"},
-            {"&Beginner"_t, {[&] {change_level(level::beginner);}}, menu_item_kind::radio, as<level>(properties::settings::default_settings().level()) == level::beginner},
-            {"&Intermediate"_t, {[&] {change_level(level::intermediate);}}, menu_item_kind::radio, as<level>(properties::settings::default_settings().level()) == level::intermediate},
-            {"&Expert"_t, {[&] {change_level(level::expert);}}, menu_item_kind::radio, as<level>(properties::settings::default_settings().level()) == level::expert},
-            {"&Custom..."_t, {[&] {change_level(level::custom);}}, menu_item_kind::radio, as<level>(properties::settings::default_settings().level()) == level::custom},
-            {"-"},
-            {"&Marks [?]"_t, {[&](component& sender, const event_args& e) {
-              properties::settings::default_settings().marks(!properties::settings::default_settings().marks());
-              properties::settings::default_settings().save();
-            }}, menu_item_kind::check, true},
-            {"&Original color"_t, {[&](component& sender, const event_args& e) {
-              properties::settings::default_settings().original_color(!properties::settings::default_settings().original_color());
-              properties::settings::default_settings().save();
-              update_colors();
-            }}, menu_item_kind::check, properties::settings::default_settings().original_color()},
-            {"-"},
-            {"Best &times..."_t, {[&] {minesweeper::high_scores_dialog().show_dialog(*this);}}},
-            {"-"},
-            {texts::exit(), {overload_<>(application::exit)}},
-          }
-        },
-        {
-          texts::help(), {
-            {"&Contens"_t, {[&] {}}, shortcut::f1},
-            {"&Search for Help On..."_t, {[&] {}}},
-            {"&How to Use Help"_t, {[&] {}}},
-            {"-"},
-            {texts::about(), {*this, &form_minesweeper::show_about_dialog}}
-          }
-        },
-      });
+      menu(create_main_menu());
 
       status_panel.parent(*this);
       status_panel.height(60);
@@ -255,6 +221,42 @@ namespace minesweeper {
         checked_cell_count_++;
       }
       return cells_[cell_location.x()][cell_location.y()]->neighbors();
+    }
+    
+    xtd::forms::main_menu create_main_menu() {
+      using namespace xtd;
+      using namespace xtd::forms;
+      return {
+        {"&Game"_t, {
+          {"&New games"_t, {[&] {new_game();}}, shortcut::f2},
+          {"-"},
+          {"&Beginner"_t, {[&] {change_level(level::beginner);}}, menu_item_kind::radio, as<level>(properties::settings::default_settings().level()) == level::beginner},
+          {"&Intermediate"_t, {[&] {change_level(level::intermediate);}}, menu_item_kind::radio, as<level>(properties::settings::default_settings().level()) == level::intermediate},
+          {"&Expert"_t, {[&] {change_level(level::expert);}}, menu_item_kind::radio, as<level>(properties::settings::default_settings().level()) == level::expert},
+          {"&Custom..."_t, {[&] {change_level(level::custom);}}, menu_item_kind::radio, as<level>(properties::settings::default_settings().level()) == level::custom},
+          {"-"},
+          {"&Marks [?]"_t, {[&](component& sender, const event_args& e) {
+            properties::settings::default_settings().marks(!properties::settings::default_settings().marks());
+            properties::settings::default_settings().save();
+          }}, menu_item_kind::check, true},
+          {"&Original color"_t, {[&](component& sender, const event_args& e) {
+            properties::settings::default_settings().original_color(!properties::settings::default_settings().original_color());
+            properties::settings::default_settings().save();
+            update_colors();
+          }}, menu_item_kind::check, properties::settings::default_settings().original_color()},
+          {"-"},
+          {"Best &times..."_t, {[&] {minesweeper::high_scores_dialog().show_dialog(*this);}}},
+          {"-"},
+          {texts::exit(), {overload_<>(application::exit)}},
+        }},
+        {texts::help(), {
+          {"&Contens"_t, {[&] {}}, shortcut::f1},
+          {"&Search for Help On..."_t, {[&] {}}},
+          {"&How to Use Help"_t, {[&] {}}},
+          {"-"},
+          {texts::about(), {*this, &form_minesweeper::show_about_dialog}}
+        }},
+      };
     }
     
     void on_game_panel_paint(xtd::forms::control& sender, xtd::forms::paint_event_args& e) {
