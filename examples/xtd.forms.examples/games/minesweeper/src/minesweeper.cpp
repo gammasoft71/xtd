@@ -258,8 +258,8 @@ void form_minesweeper::draw_exploded_mine(paint_event_args& e, const rectangle& 
 void form_minesweeper::draw_error(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
   draw_border_checked(e, clip_rectangle);
   draw_mine(e, clip_rectangle, cell);
-  e.graphics().draw_line(pen(color::red, 3), clip_rectangle.left() + 7, clip_rectangle.top() + 7, clip_rectangle.left() + clip_rectangle.width() - 7, clip_rectangle.top() + clip_rectangle.height() - 7);
-  e.graphics().draw_line(pen(color::red, 3), clip_rectangle.left() + clip_rectangle.width() - 7, clip_rectangle.top() + 7, clip_rectangle.left() + 7, clip_rectangle.top() + clip_rectangle.height() - 7);
+  e.graphics().draw_line(pen(color::red, 3), clip_rectangle.left() + 7, clip_rectangle.top() + 7, clip_rectangle.right() - 7, clip_rectangle.bottom() - 7);
+  e.graphics().draw_line(pen(color::red, 3), clip_rectangle.right() - 7, clip_rectangle.top() + 7, clip_rectangle.left() + 7, clip_rectangle.bottom() - 7);
 }
 
 void form_minesweeper::draw_border_unchecked(paint_event_args& e, const rectangle& clip_rectangle) {
@@ -267,28 +267,28 @@ void form_minesweeper::draw_border_unchecked(paint_event_args& e, const rectangl
     if (back_color().get_brightness() < 0.5f) e.graphics().fill_rectangle(solid_brush(color::light(back_color(), 0.1)), clip_rectangle);
     else e.graphics().fill_rectangle(solid_brush(color::dark(back_color(), 0.1)), clip_rectangle);
   }
-  e.graphics().draw_line(pen(color::light(color::light(color::light(back_color())))), clip_rectangle.left(), clip_rectangle.top(), clip_rectangle.left() + clip_rectangle.width(), clip_rectangle.top());
-  e.graphics().draw_line(pen(color::light(color::light(back_color()))), clip_rectangle.left(), clip_rectangle.top() + 1, clip_rectangle.left() + clip_rectangle.width(), clip_rectangle.top() + 1);
-  e.graphics().draw_line(pen(color::light(back_color())), clip_rectangle.left() + 1, clip_rectangle.top() + 2, clip_rectangle.left() + clip_rectangle.width(), clip_rectangle.top() + 2);
+  e.graphics().draw_line(pen(color::light(color::light(color::light(back_color())))), clip_rectangle.left(), clip_rectangle.top(), clip_rectangle.right(), clip_rectangle.top());
+  e.graphics().draw_line(pen(color::light(color::light(back_color()))), clip_rectangle.left(), clip_rectangle.top() + 1, clip_rectangle.right(), clip_rectangle.top() + 1);
+  e.graphics().draw_line(pen(color::light(back_color())), clip_rectangle.left() + 1, clip_rectangle.top() + 2, clip_rectangle.right(), clip_rectangle.top() + 2);
   
-  e.graphics().draw_line(pen(color::light(color::light(color::light(back_color())))), clip_rectangle.left(), clip_rectangle.top(), clip_rectangle.left(), clip_rectangle.top() + clip_rectangle.height());
-  e.graphics().draw_line(pen(color::light(color::light(back_color()))), clip_rectangle.left() + 1, clip_rectangle.top() + 1, clip_rectangle.left() + 1, clip_rectangle.top() + clip_rectangle.height());
-  e.graphics().draw_line(pen(color::light(back_color())), clip_rectangle.left() + 2, clip_rectangle.top() + 2, clip_rectangle.left() + 2, clip_rectangle.top() + clip_rectangle.height());
+  e.graphics().draw_line(pen(color::light(color::light(color::light(back_color())))), clip_rectangle.left(), clip_rectangle.top(), clip_rectangle.left(), clip_rectangle.bottom());
+  e.graphics().draw_line(pen(color::light(color::light(back_color()))), clip_rectangle.left() + 1, clip_rectangle.top() + 1, clip_rectangle.left() + 1, clip_rectangle.bottom());
+  e.graphics().draw_line(pen(color::light(back_color())), clip_rectangle.left() + 2, clip_rectangle.top() + 2, clip_rectangle.left() + 2, clip_rectangle.bottom());
   
-  e.graphics().draw_line(pen(color::dark(back_color())), clip_rectangle.left() + 2, clip_rectangle.top() + clip_rectangle.height() - 3, clip_rectangle.left() + clip_rectangle.width(), clip_rectangle.top() + clip_rectangle.height() - 3);
-  e.graphics().draw_line(pen(color::dark(color::dark(back_color()))), clip_rectangle.left() + 1, clip_rectangle.top() + clip_rectangle.height() - 2, clip_rectangle.left() + clip_rectangle.width(), clip_rectangle.top() + clip_rectangle.height() - 2);
-  e.graphics().draw_line(pen(color::dark(color::dark(color::dark(back_color())))), clip_rectangle.left(), clip_rectangle.top() + clip_rectangle.height() - 1, clip_rectangle.left() + clip_rectangle.width(), clip_rectangle.top() + clip_rectangle.height() - 1);
+  e.graphics().draw_line(pen(color::dark(back_color())), clip_rectangle.left() + 2, clip_rectangle.bottom() - 3, clip_rectangle.right(), clip_rectangle.bottom() - 3);
+  e.graphics().draw_line(pen(color::dark(color::dark(back_color()))), clip_rectangle.left() + 1, clip_rectangle.bottom() - 2, clip_rectangle.right(), clip_rectangle.bottom() - 2);
+  e.graphics().draw_line(pen(color::dark(color::dark(color::dark(back_color())))), clip_rectangle.left(), clip_rectangle.bottom() - 1, clip_rectangle.right(), clip_rectangle.bottom() - 1);
   
-  e.graphics().draw_line(pen(color::dark(back_color())), clip_rectangle.left() + clip_rectangle.width() - 3, clip_rectangle.top() + 2, clip_rectangle.left() + clip_rectangle.width() - 3, clip_rectangle.top() + clip_rectangle.height() - 3);
-  e.graphics().draw_line(pen(color::dark(color::dark(back_color()))), clip_rectangle.left() + clip_rectangle.width() - 2, clip_rectangle.top() + 1, clip_rectangle.left() + clip_rectangle.width() - 2, clip_rectangle.top() + clip_rectangle.height() - 2);
-  e.graphics().draw_line(pen(color::dark(color::dark(color::dark(back_color())))), clip_rectangle.left() + clip_rectangle.width() - 1, clip_rectangle.top(), clip_rectangle.left() + clip_rectangle.width() - 1, clip_rectangle.top() + clip_rectangle.height() - 1);
+  e.graphics().draw_line(pen(color::dark(back_color())), clip_rectangle.right() - 3, clip_rectangle.top() + 2, clip_rectangle.right() - 3, clip_rectangle.bottom() - 3);
+  e.graphics().draw_line(pen(color::dark(color::dark(back_color()))), clip_rectangle.right() - 2, clip_rectangle.top() + 1, clip_rectangle.right() - 2, clip_rectangle.bottom() - 2);
+  e.graphics().draw_line(pen(color::dark(color::dark(color::dark(back_color())))), clip_rectangle.right() - 1, clip_rectangle.top(), clip_rectangle.right() - 1, clip_rectangle.bottom() - 1);
 }
 
 void form_minesweeper::draw_border_checked(paint_event_args& e, const rectangle& clip_rectangle) {
-  e.graphics().draw_line(pen(color::dark(back_color())), clip_rectangle.left(), clip_rectangle.top(), clip_rectangle.left() + clip_rectangle.width(), clip_rectangle.top());
-  e.graphics().draw_line(pen(color::dark(back_color())), clip_rectangle.left(), clip_rectangle.top(), clip_rectangle.left(), clip_rectangle.top() + clip_rectangle.height());
-  e.graphics().draw_line(pen(color::light(back_color())), clip_rectangle.left() + 1, clip_rectangle.top() + clip_rectangle.height() - 1, clip_rectangle.left() + clip_rectangle.width(), clip_rectangle.top() + clip_rectangle.height() - 1);
-  e.graphics().draw_line(pen(color::light(back_color())), clip_rectangle.left() + clip_rectangle.width() - 1, clip_rectangle.top() + 1, clip_rectangle.left() + clip_rectangle.width() - 1, clip_rectangle.top() + clip_rectangle.height() - 1);
+  e.graphics().draw_line(pen(color::dark(back_color())), clip_rectangle.left(), clip_rectangle.top(), clip_rectangle.right(), clip_rectangle.top());
+  e.graphics().draw_line(pen(color::dark(back_color())), clip_rectangle.left(), clip_rectangle.top(), clip_rectangle.left(), clip_rectangle.bottom());
+  e.graphics().draw_line(pen(color::light(back_color())), clip_rectangle.left() + 1, clip_rectangle.bottom() - 1, clip_rectangle.right(), clip_rectangle.bottom() - 1);
+  e.graphics().draw_line(pen(color::light(back_color())), clip_rectangle.right() - 1, clip_rectangle.top() + 1, clip_rectangle.right() - 1, clip_rectangle.bottom() - 1);
 }
 
 void form_minesweeper::on_game_panel_mouse_up(control& sender, const mouse_event_args& e) {
