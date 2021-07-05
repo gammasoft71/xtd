@@ -61,7 +61,7 @@ namespace minesweeper {
     xtd::forms::panel game_panel_;
     xtd::forms::timer stopwatch_timer_;
     grid_size grid_size_ {9, 9};
-    int mine_count_;
+    int mine_count_ = 0;
     row_cell cells_;
     level level_ = level::beginner;
     bool game_over_ = false;
