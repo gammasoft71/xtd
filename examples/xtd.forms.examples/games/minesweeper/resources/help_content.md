@@ -75,13 +75,20 @@ The object of Minesweeper is to correctly mark all mines as quickly as possible 
 
 #### To locate the mines
 
-1. To uncover a square, select it using the left mouse button. 
+1. To uncover a square, select it using the left mouse button.  
    If the square is a mine, you lose.
 2. If the square isn't a mine, a number appears. This number represents the number of mines in the surrounding eight squares.
-3. To mark a square as a mine, select it with the right mouse button.
+3. To mark a square as a mine, select it with the right mouse button.  
    To mark a square you are uncertain about, point to it and click twice with the right mouse button. This marks the square with a question mark (?). Later, you can either mark the square as a mine, or uncover it.
 
 ### Understanding the rules of the Game
+
+#### Follow these rules when playing Minesweeper
+
+* The playing area is a mine field, simulated by a gridd of squares. Initialy, all the squares are covered.
+* To uncover a square, point it and click the left mouse button. You continue to uncover square until only the square containing mines are coverred.
+* If you uncover a square that does not contain a mine, it either contains a number or is blank.  
+  If the square contains a number, N, tthen they are N mines in the surrounding eight squares. If the square is blank, there are no mines int the surrounding eight square.
 
 ### Using Strategies and Hints
 
