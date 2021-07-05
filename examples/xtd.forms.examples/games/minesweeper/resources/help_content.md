@@ -88,7 +88,26 @@ The object of Minesweeper is to correctly mark all mines as quickly as possible 
 * The playing area is a mine field, simulated by a gridd of squares. Initialy, all the squares are covered.
 * To uncover a square, point it and click the left mouse button. You continue to uncover square until only the square containing mines are coverred.
 * If you uncover a square that does not contain a mine, it either contains a number or is blank.  
-  If the square contains a number, N, tthen they are N mines in the surrounding eight squares. If the square is blank, there are no mines int the surrounding eight square.
+  If the square contains a number, N, then they are N mines in the surrounding eight squares. If the square is blank, there are no mines int the surrounding eight square.
+* If you uncover a blank square, the surrounding eight squares are uncovered automatically because there cannot be any mines under them.
+* If you know that a square is a mine, you can mark the square.
+* If you uncover a square that contains a mine, the game is over and all the mines are displayed.
+
+You can also "clear around" an uncovered number square whose mine has already been marked.  
+For example, two square labeled 1 may both be touching a marked square. If you clear around the uncovred square, you may uncover additional squares that do not contain mines. If you clear around a square whose mine is already marked, tthe surrounding numbered squares are uncovered.
+
+#### To clear around square
+
+* Point to the numbered square, and then click both mouse buttons as the same time.  
+  If there are other squares whose mines have been marked, they will be uncovered for you.
+* You are nott allowed to clear aroound a square if you have not marked enough mines in the surrounding eight squares, or if the square is coverred. For example, if you try to clear around a square labeled 3, and you have marked only two squares with mines, nothing will happen. Or if you try clear around an uncovered square, nothing will happen.
+* If you clear around a square, and there is an unmarked mine in the surrounding eight squares, it is uncovered and the game is over.
+* If you clear around a square whose mines are incorrectly marked and a mine is unovered, the game is over.
 
 ### Using Strategies and Hints
 
+#### Helpful hints for playing Minsweeper
+
+* If an uncovered square is labeled 1, and there is only one covered square touching it, that covered square must be a mine.
+* If an uncovered square already has the correct numberr of adjacent mines marked, clear around it.
+* Don't guess. If you can't figure out how to move, try approaching the area from a different direction or marking square with question marks.
