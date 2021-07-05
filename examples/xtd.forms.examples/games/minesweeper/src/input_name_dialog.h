@@ -2,19 +2,30 @@
 #include "level.h"
 #include <xtd/xtd>
 
+/// @brief The namespace minesweeper contains all classes and enums needed for the game.
 namespace minesweeper {
-  class input_name_dialog : public xtd::forms::form {
+  /// @brief Represent input name dialog that display input name dialog.
+  class input_name_dialog final : public xtd::forms::form {
   public:
+    /// @brief Initialize a new instance of minesweeper::input_name_dialog class.
     input_name_dialog();
     
-    minesweeper::level level() const;
-    void level(minesweeper::level level);
-    
-    std::string gammer_name() const;
-    void gammer_name(const std::string& gammer_name);
+    /// @brief Gets the level for which the gammer name is entered.
+    /// @return One of minesweeper::level values.
+    minesweeper::level level() const noexcept;
+    /// @brief Sets the level for which the gammer name is entered.
+    /// @param level One of minesweeper::level values.
+    void level(minesweeper::level level) noexcept;
+
+    /// @brief Gets the gammer name.
+    /// @return The gammer name.
+    std::string gammer_name() const noexcept;
+    /// @brief Sets the gammer name.
+    /// @param gammer_name The gammer name.
+    void gammer_name(const std::string& gammer_name) noexcept;
     
   private:
-    std::string level_to_string();
+    std::string level_to_string() noexcept;
     
     xtd::forms::label message_label_;
     xtd::forms::text_box name_text_box_;
