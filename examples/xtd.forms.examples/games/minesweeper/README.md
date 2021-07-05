@@ -15,35 +15,44 @@ Minesweeper features:
  
  If you like minesweeper, you're going to love this game!
  
+ See [help](resources/help.md) for more information.
+ 
 # Sources
 
-[src/cell.h](src/cell.h)
+* [src/cell.h](src/cell.h)
+* [src/cell.cpp](src/cell.cpp)
+* [src/cell_state.h](src/cell_state.h)
+* [src/high_scores_dialog.h](src/high_scores_dialog.h)
+* [src/high_scores_dialog.cpp](src/high_scores_dialog.cpp)
+* [src/input_name_dialog.h](src/input_name_dialog.h)
+* [src/input_name_dialog.cpp](src/input_name_dialog.cpp)
+* [src/level.h](src/level.h)
+* [src/minesweeper.h](src/minesweeper.h)
+* [src/minesweeper.cpp](src/minesweeper.cpp)
 
-[src/cell.cpp](src/cell.cpp)
+# Properties
 
-[src/cell_state.h](src/cell_state.h)
+* [properties/resources.cmake](properties/resources.cmake)
+* [properties/settings.cmake](properties/settings.cmake)
+* [properties/target_properties.cmake](properties/target_properties.cmake)
 
-[src/high_scores_dialog.h](src/high_scores_dialog.h)
+# Resources
 
-[src/high_scores_dialog.cpp](src/high_scores_dialog.cpp)
+* [resources/bomb.mp3](resources/bomb.mp3)
+* [resources/flag.png](resources/flag.png)
+* [resources/help.md](resources/help.md)
+* [resources/mine.png](resources/mine.png)
+* [resources/minesweeper.icns](resources/minesweeper.icns)
+* [resources/minesweeper.ico](resources/minesweeper.ico)
+* [resources/minesweeper.png](resources/minesweeper.png)
+* [resources/smiley1.png](resources/smiley1.png)
+* [resources/smiley2.png](resources/smiley2.png)
+* [resources/smiley3.png](resources/smiley3.png)
+* [resources/smiley4.png](resources/smiley4.png)
 
-[src/input_name_dialog.h](src/input_name_dialog.h)
+# CMake files
 
-[src/input_name_dialog.cpp](src/input_name_dialog.cpp)
-
-[src/level.h](src/level.h)
-
-[src/minesweeper.h](src/minesweeper.h)
-
-[src/minesweeper.cpp](src/minesweeper.cpp)
-
-[properties/resources.cmake](properties/resources.cmake)
-
-[properties/settings.cmake](properties/settings.cmake)
-
-[properties/target_properties.cmake](properties/target_properties.cmake)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 
