@@ -25,12 +25,12 @@ form_minesweeper::form_minesweeper() {
   status_panel_.parent(*this);
   status_panel_.height(60);
   status_panel_.paint += {*this, &form_minesweeper::on_status_panel_paint};
-  status_panel_.resize +=  {*this, &form_minesweeper::on_status_panel_resize};
+  status_panel_.resize += {*this, &form_minesweeper::on_status_panel_resize};
   
   game_panel_.parent(*this);
   game_panel_.location({0, 60});
-  game_panel_.mouse_up +=  {*this, &form_minesweeper::on_game_panel_mouse_up};
-  game_panel_.paint +=  {*this, &form_minesweeper::on_game_panel_paint};
+  game_panel_.mouse_up += {*this, &form_minesweeper::on_game_panel_mouse_up};
+  game_panel_.paint += {*this, &form_minesweeper::on_game_panel_paint};
   
   change_level(static_cast<level>(properties::settings::default_settings().level()));
   
@@ -181,16 +181,31 @@ void form_minesweeper::draw_unchecked(paint_event_args& e, const rectangle& clip
 void form_minesweeper::draw_checked(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
   draw_border_checked(e, clip_rectangle);
   color text_color;
-  switch (cell.neighbors()) {
-    case 1: text_color = back_color().get_brightness() < 0.5f ? color::from_argb(0x60, 0xB0, 0xFF) : color::blue; break;
-    case 2: text_color = back_color().get_brightness() < 0.5f ? color::from_argb(0x30, 0xDC, 0x66) : color::green; break;
-    case 3: text_color = back_color().get_brightness() < 0.5f ? color::from_argb(0xD0, 0x3E, 0x3D) : color::red; break;
-    case 4: text_color = color::from_argb(0xDE, 0x77, 0x35); break;
-    case 5: text_color = back_color().get_brightness() < 0.5f ? color::from_argb(0xE2, 0xCC, 0x1E) : color::brown; break;
-    case 6: text_color = back_color().get_brightness() < 0.5f ? color::from_argb(0xC6, 0x5E, 0x3A) : color::from_argb(0x80, 0x02, 0x80); break;
-    case 7:  text_color = back_color().get_brightness() < 0.5f ? color::light_gray : color::dark_gray; break;
-    case 8: text_color = fore_color(); break;
-    default: return;
+  
+  if (properties::settings::default_settings().original_color()) {
+    switch (cell.neighbors()) {
+      case 1: text_color = color::blue; break;
+      case 2: text_color = color::green; break;
+      case 3: text_color = color::red; break;
+      case 4: text_color = color::dark_blue; break;
+      case 5: text_color = color::dark_red; break;
+      case 6: text_color = color::dark_green; break;
+      case 7:  text_color = color::dark_gray; break;
+      case 8: text_color = color::black; break;
+      default: return;
+    }
+  } else {
+    switch (cell.neighbors()) {
+      case 1: text_color = back_color().get_brightness() < 0.5f ? color::from_argb(0x60, 0xB0, 0xFF) : color::blue; break;
+      case 2: text_color = back_color().get_brightness() < 0.5f ? color::from_argb(0x30, 0xDC, 0x66) : color::green; break;
+      case 3: text_color = back_color().get_brightness() < 0.5f ? color::from_argb(0xD0, 0x3E, 0x3D) : color::red; break;
+      case 4: text_color = back_color().get_brightness() < 0.5f ? color::from_argb(0xC6, 0x5E, 0xE9) : color::from_argb(0x80, 0x00, 0x80); break;
+      case 5: text_color = color::from_argb(0xE2, 0xCC, 0x1E); break;
+      case 6: text_color = color::from_argb(0xDE, 0x77, 0x35); break;
+      case 7:  text_color = back_color().get_brightness() < 0.5f ? color::light_gray : color::dark_gray; break;
+      case 8: text_color = fore_color(); break;
+      default: return;
+    }
   }
   std::string text = std::to_string(cell.neighbors());
   auto x = clip_rectangle.left() + (clip_rectangle.width() - e.graphics().measure_string(text, font()).width()) / 2;
