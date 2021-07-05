@@ -3,15 +3,24 @@
 #include "level.h"
 #include <xtd/xtd>
 
+/// @brief The namespace minesweeper contains all classes and enums needed for the game.
 namespace minesweeper {
-  class form_minesweeper : public xtd::forms::form {
+  /// @brief Represents the form that contains the games.
+  /// @remarks The form is composed of a status panel that contains the game evolution; and game paen that contains the cells to sweep.
+  /// @remarks The form contains to a main menu.
+  /// @remarks the game contains 81 (9 x 9) cells and 10 mines for beginner level.
+  /// @remarks the game contains 256 (16 x 16) cells and 40 mines for intermediate level.
+  /// @remarks the game contains 480 (30 x 16 cells and 99 mines for expert and custom level.
+  class form_minesweeper final : public xtd::forms::form {
     using column_cell = std::vector<cell>;
     using row_cell = std::vector<column_cell>;
     using grid_size = xtd::drawing::size;
     
   public:
+    /// @brief The main entry point for the game.
     static void main();
     
+    /// @brief Initialize a new instance of minesweeper::form_minesweeper form.
     form_minesweeper();
     
   private:

@@ -1,9 +1,12 @@
 #pragma once
 #include <xtd/xtd>
 
+/// @brief The namespace minesweeper contains all classes and enums needed for the game.
 namespace minesweeper {
-  class high_scores_dialog : public xtd::forms::form {
+  /// @brief Represent high scores dialog that display high scores dialog.
+  class high_scores_dialog final : public xtd::forms::form {
   public:
+    /// @brief Initialize a new instance of minesweeper::high_scores_dialog class.
     high_scores_dialog();
     
   private:
