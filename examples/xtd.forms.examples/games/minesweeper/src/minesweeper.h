@@ -25,25 +25,25 @@ namespace minesweeper {
 
     xtd::forms::main_menu create_main_menu();
     
-    void draw_cell(xtd::forms::paint_event_args& e, int x, int y, minesweeper::cell cell);
+    void draw_cell(xtd::forms::paint_event_args& e, const xtd::drawing::rectangle& clip_rectangle, minesweeper::cell cell);
 
-    void draw_unchecked(xtd::forms::paint_event_args& e, int x, int y, minesweeper::cell cell);
+    void draw_unchecked(xtd::forms::paint_event_args& e, const xtd::drawing::rectangle& clip_rectangle, minesweeper::cell cell);
     
-    void draw_checked(xtd::forms::paint_event_args& e, int x, int y, minesweeper::cell cell);
+    void draw_checked(xtd::forms::paint_event_args& e, const xtd::drawing::rectangle& clip_rectangle, minesweeper::cell cell);
     
-    void draw_flag(xtd::forms::paint_event_args& e, int x, int y, minesweeper::cell cell);
+    void draw_flag(xtd::forms::paint_event_args& e, const xtd::drawing::rectangle& clip_rectangle, minesweeper::cell cell);
     
-    void draw_question(xtd::forms::paint_event_args& e, int x, int y, minesweeper::cell cell);
+    void draw_question(xtd::forms::paint_event_args& e, const xtd::drawing::rectangle& clip_rectangle, minesweeper::cell cell);
     
-    void draw_mine(xtd::forms::paint_event_args& e, int x, int y, minesweeper::cell cell);
+    void draw_mine(xtd::forms::paint_event_args& e, const xtd::drawing::rectangle& clip_rectangle, minesweeper::cell cell);
     
-    void draw_exploded_mine(xtd::forms::paint_event_args& e, int x, int y, minesweeper::cell cell);
+    void draw_exploded_mine(xtd::forms::paint_event_args& e, const xtd::drawing::rectangle& clip_rectangle, minesweeper::cell cell);
     
-    void draw_error(xtd::forms::paint_event_args& e, int x, int y, minesweeper::cell cell);
+    void draw_error(xtd::forms::paint_event_args& e, const xtd::drawing::rectangle& clip_rectangle, minesweeper::cell cell);
     
-    void draw_border_unchecked(xtd::forms::paint_event_args& e, int x, int y);
+    void draw_border_unchecked(xtd::forms::paint_event_args& e, const xtd::drawing::rectangle& clip_rectangle);
     
-    void draw_border_checked(xtd::forms::paint_event_args& e, int x, int y);
+    void draw_border_checked(xtd::forms::paint_event_args& e, const xtd::drawing::rectangle& clip_rectangle);
     
     void on_game_panel_mouse_up(xtd::forms::control& sender, const xtd::forms::mouse_event_args& e);
 
@@ -59,12 +59,12 @@ namespace minesweeper {
     
     void update_colors();
 
-    xtd::forms::panel status_panel;
-    xtd::forms::lcd_label mine_count_label;
-    xtd::forms::lcd_label stopwatch_label;
-    xtd::forms::button start_game;
-    xtd::forms::panel game_panel;
-    xtd::forms::timer stopwatch;
+    xtd::forms::panel status_panel_;
+    xtd::forms::lcd_label mine_count_label_;
+    xtd::forms::lcd_label stopwatch_label_;
+    xtd::forms::button start_game_;
+    xtd::forms::panel game_panel_;
+    xtd::forms::timer stopwatch_timer_;
     grid_size grid_size_ {9, 9};
     int mine_count_;
     row_cell cells_;
