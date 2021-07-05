@@ -189,20 +189,32 @@ void form_minesweeper::draw_checked(paint_event_args& e, const rectangle& clip_r
       case 3: text_color = color::red; break;
       case 4: text_color = color::dark_blue; break;
       case 5: text_color = color::dark_red; break;
-      case 6: text_color = color::dark_green; break;
-      case 7:  text_color = color::dark_gray; break;
+      case 6: text_color = color::teal; break;
+      case 7: text_color = color::dark_magenta; break;
       case 8: text_color = color::black; break;
+      default: return;
+    }
+  } else if (back_color().get_brightness() < 0.5f) {
+    switch (cell.neighbors()) {
+      case 1: text_color = color::light_sky_blue; break;
+      case 2: text_color = color::from_argb(0x30, 0xDC, 0x66); break;
+      case 3: text_color = color::from_argb(0xD0, 0x3E, 0x3D); break;
+      case 4: text_color = color::dodger_blue; break;
+      case 5: text_color = color::orange; break;
+      case 6: text_color = color::light_sea_green; break;
+      case 7: text_color = color::from_argb(0xC6, 0x5E, 0xE9); break;
+      case 8: text_color = fore_color(); break;
       default: return;
     }
   } else {
     switch (cell.neighbors()) {
-      case 1: text_color = back_color().get_brightness() < 0.5f ? color::from_argb(0x60, 0xB0, 0xFF) : color::blue; break;
-      case 2: text_color = back_color().get_brightness() < 0.5f ? color::from_argb(0x30, 0xDC, 0x66) : color::green; break;
-      case 3: text_color = back_color().get_brightness() < 0.5f ? color::from_argb(0xD0, 0x3E, 0x3D) : color::red; break;
-      case 4: text_color = back_color().get_brightness() < 0.5f ? color::from_argb(0xC6, 0x5E, 0xE9) : color::from_argb(0x80, 0x00, 0x80); break;
-      case 5: text_color = color::from_argb(0xE2, 0xCC, 0x1E); break;
-      case 6: text_color = color::from_argb(0xDE, 0x77, 0x35); break;
-      case 7:  text_color = back_color().get_brightness() < 0.5f ? color::light_gray : color::dark_gray; break;
+      case 1: text_color = color::blue; break;
+      case 2: text_color = color::green; break;
+      case 3: text_color = color::red; break;
+      case 4: text_color = color::dodger_blue; break;
+      case 5: text_color = color::dark_orange; break;
+      case 6: text_color = color::teal; break;
+      case 7: text_color = color::dark_magenta; break;
       case 8: text_color = fore_color(); break;
       default: return;
     }
@@ -226,7 +238,8 @@ void form_minesweeper::draw_question(paint_event_args& e, const rectangle& clip_
   draw_border_unchecked(e, clip_rectangle);
   auto x = clip_rectangle.left() + (clip_rectangle.width() - e.graphics().measure_string("?", font()).width()) / 2;
   auto y = clip_rectangle.top() + (clip_rectangle.height() - e.graphics().measure_string("?", font()).height()) / 2;
-  e.graphics().draw_string("?", font(), solid_brush(fore_color()), x, y);
+  color question_color = back_color().get_brightness() < 0.5f ? color::light_sky_blue : color::blue;
+  e.graphics().draw_string("?", font(), solid_brush(question_color), x, y);
 }
 
 void form_minesweeper::draw_mine(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
