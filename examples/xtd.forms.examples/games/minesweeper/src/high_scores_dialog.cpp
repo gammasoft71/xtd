@@ -65,10 +65,10 @@ high_scores_dialog::high_scores_dialog() {
     properties::settings empty;
     properties::settings::default_settings().beginner_high_scores_name(empty.beginner_high_scores_name());
     properties::settings::default_settings().beginner_high_scores_value(empty.beginner_high_scores_value());
-    properties::settings::default_settings().beginner_high_scores_name(empty.intermediate_high_scores_name());
-    properties::settings::default_settings().beginner_high_scores_value(empty.intermediate_high_scores_value());
-    properties::settings::default_settings().beginner_high_scores_name(empty.expert_high_scores_name());
-    properties::settings::default_settings().beginner_high_scores_value(empty.expert_high_scores_value());
+    properties::settings::default_settings().intermediate_high_scores_name(empty.intermediate_high_scores_name());
+    properties::settings::default_settings().intermediate_high_scores_value(empty.intermediate_high_scores_value());
+    properties::settings::default_settings().expert_high_scores_name(empty.expert_high_scores_name());
+    properties::settings::default_settings().expert_high_scores_value(empty.expert_high_scores_value());
     properties::settings::default_settings().save();
     read_and_update_settings();
   };
