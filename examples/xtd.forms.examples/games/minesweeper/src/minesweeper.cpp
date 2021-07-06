@@ -18,25 +18,27 @@ minesweeper_form::minesweeper_form() {
   auto_size_mode(forms::auto_size_mode::grow_and_shrink);
   auto_size(true);
   font(drawing::font(font(), 16, font_style::bold));
+  icon(properties::resources::minesweeper_ico());
   menu(create_main_menu());
   text("Minesweeper"_t);
   
-  game_panel_.parent(*this);
+  game_panel_.double_buffered(true);
   game_panel_.location({0, 60});
+  game_panel_.parent(*this);
   game_panel_.mouse_up += {*this, &minesweeper_form::on_game_panel_mouse_up};
   game_panel_.paint += {*this, &minesweeper_form::on_game_panel_paint};
   
-  status_panel_.parent(*this);
   status_panel_.height(60);
+  status_panel_.parent(*this);
   status_panel_.paint += {*this, &minesweeper_form::on_status_panel_paint};
   status_panel_.resize += {*this, &minesweeper_form::on_status_panel_resize};
 
-  mine_count_label_.parent(status_panel_);
-  mine_count_label_.location({17, 17});
-  mine_count_label_.height(38);
   mine_count_label_.auto_size(true);
   mine_count_label_.back_color(color::black);
   mine_count_label_.fore_color(color::red);
+  mine_count_label_.height(38);
+  mine_count_label_.location({17, 17});
+  mine_count_label_.parent(status_panel_);
   mine_count_label_.segment_style(forms::segment_style::modern);
   mine_count_label_.text("000");
   mine_count_label_.thickness(5);
