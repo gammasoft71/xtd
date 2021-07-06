@@ -2,7 +2,7 @@
 # =============
 
 # if "true", minesweeper use original color otherwise, minesweeper use system color.
-setting(original_color bool USER "true")
+setting(original_color bool USER "false")
 setting(marks bool USER "true")
 
 # minesweeper::level :

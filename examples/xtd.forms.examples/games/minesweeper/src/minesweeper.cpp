@@ -149,7 +149,7 @@ main_menu minesweeper_form::create_main_menu() {
       {"&Marks [?]"_t, {[&](component& sender, const event_args& e) {
         properties::settings::default_settings().marks(!properties::settings::default_settings().marks());
         properties::settings::default_settings().save();
-      }}, menu_item_kind::check, true},
+      }}, menu_item_kind::check, properties::settings::default_settings().marks()},
       {"&Original color"_t, {[&](component& sender, const event_args& e) {
         properties::settings::default_settings().original_color(!properties::settings::default_settings().original_color());
         properties::settings::default_settings().save();
