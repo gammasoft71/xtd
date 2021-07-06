@@ -15,7 +15,7 @@ Minesweeper features:
  
  If you like minesweeper, you're going to love this game!
  
- See [help](resources/help.md) for more information.
+ See [help](docs/help.md) for more information.
  
 # Sources
 

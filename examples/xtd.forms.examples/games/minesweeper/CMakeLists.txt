@@ -6,6 +6,8 @@ add_sources(
   src/cell_state.h
   src/cell.h
   src/cell.cpp
+  src/custom_field_dialog.h
+  src/custom_field_dialog.cpp
   src/high_scores_dialog.h
   src/high_scores_dialog.cpp
   src/input_name_dialog.h
