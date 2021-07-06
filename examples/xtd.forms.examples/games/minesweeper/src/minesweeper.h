@@ -11,7 +11,7 @@ namespace minesweeper {
   /// @remarks the game contains 81 (9 x 9) cells and 10 mines for beginner level.
   /// @remarks the game contains 256 (16 x 16) cells and 40 mines for intermediate level.
   /// @remarks the game contains 480 (30 x 16 cells and 99 mines for expert and custom level.
-  class form_minesweeper final : public xtd::forms::form {
+  class minesweeper_form final : public xtd::forms::form {
     using column_cell = std::vector<cell>;
     using row_cell = std::vector<column_cell>;
     using grid_size = xtd::drawing::size;
@@ -21,7 +21,7 @@ namespace minesweeper {
     static void main();
     
     /// @brief Initialize a new instance of minesweeper::form_minesweeper form.
-    form_minesweeper();
+    minesweeper_form();
     
   private:
     void change_level(level l);
@@ -44,13 +44,14 @@ namespace minesweeper {
     void draw_border_unchecked(xtd::forms::paint_event_args& e, const xtd::drawing::rectangle& clip_rectangle);
     void draw_border_checked(xtd::forms::paint_event_args& e, const xtd::drawing::rectangle& clip_rectangle);
     
+    void on_about_menuu_click(xtd::forms::component& sender, const xtd::event_args& e);
+    void on_custom_menu_click(xtd::forms::component& sender, const xtd::event_args& e);
     void on_game_panel_mouse_up(xtd::forms::control& sender, const xtd::forms::mouse_event_args& e);
     void on_game_panel_paint(xtd::forms::control& sender, xtd::forms::paint_event_args& e);
     void on_status_panel_paint(xtd::forms::control& sender, xtd::forms::paint_event_args& e);
     void on_status_panel_resize(xtd::forms::control& sender, const xtd::event_args& e);
     void on_stopwatch_tick();
     
-    void show_about_dialog();
     
     void update_colors();
 

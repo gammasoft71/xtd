@@ -973,7 +973,7 @@ endmacro()
 ## @brief Adds resource to current project.
 ## @param NAME resource name to add.
 ## @param FILE resource file to add.
-## @remarks  The path can be relative from CMAKE_CURRENT_SOURCE_DIR or absolute.
+## @remarks The path can be relative from CMAKE_CURRENT_SOURCE_DIR or absolute.
 ## @remarks This method can be call more than once in the same project.
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional.
@@ -1215,7 +1215,7 @@ macro(write_settings_files)
   endif ()
 endmacro()
 
-## @brief Write resources addes with resource.
+## @brief Write resources added with resource.
 ## @remarks Internal use only.
 macro(write_resources)
   if (CMAKE_RUNTIME_OUTPUT_DIRECTORY)

@@ -1,4 +1,5 @@
 #include "minesweeper.h"
+#include "custom_field_dialog.h"
 #include "high_scores_dialog.h"
 #include "input_name_dialog.h"
 #include "../properties/resources.h"
@@ -9,11 +10,11 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-void form_minesweeper::main() {
-  application::run(form_minesweeper());
+void minesweeper_form::main() {
+  application::run(minesweeper_form());
 }
 
-form_minesweeper::form_minesweeper() {
+minesweeper_form::minesweeper_form() {
   auto_size_mode(forms::auto_size_mode::grow_and_shrink);
   auto_size(true);
   font(drawing::font(font(), 16, font_style::bold));
@@ -24,13 +25,13 @@ form_minesweeper::form_minesweeper() {
   
   status_panel_.parent(*this);
   status_panel_.height(60);
-  status_panel_.paint += {*this, &form_minesweeper::on_status_panel_paint};
-  status_panel_.resize += {*this, &form_minesweeper::on_status_panel_resize};
+  status_panel_.paint += {*this, &minesweeper_form::on_status_panel_paint};
+  status_panel_.resize += {*this, &minesweeper_form::on_status_panel_resize};
   
   game_panel_.parent(*this);
   game_panel_.location({0, 60});
-  game_panel_.mouse_up += {*this, &form_minesweeper::on_game_panel_mouse_up};
-  game_panel_.paint += {*this, &form_minesweeper::on_game_panel_paint};
+  game_panel_.mouse_up += {*this, &minesweeper_form::on_game_panel_mouse_up};
+  game_panel_.paint += {*this, &minesweeper_form::on_game_panel_paint};
   
   change_level(static_cast<level>(properties::settings::default_settings().level()));
   
@@ -56,13 +57,13 @@ form_minesweeper::form_minesweeper() {
   start_game_.image(bitmap(properties::resources::smiley1(), {24, 24}));
   start_game_.size({42, 38});
   start_game_.location({status_panel_.size().width() / 2 - 21, 17});
-  start_game_.click += {*this, &form_minesweeper::new_game};
+  start_game_.click += {*this, &minesweeper_form::new_game};
   
   stopwatch_timer_.interval_milliseconds(1000);
-  stopwatch_timer_.tick += {*this, &form_minesweeper::on_stopwatch_tick};
+  stopwatch_timer_.tick += {*this, &minesweeper_form::on_stopwatch_tick};
 }
 
-void form_minesweeper::change_level(level l) {
+void minesweeper_form::change_level(level l) {
   properties::settings::default_settings().level(static_cast<int>(l));
   properties::settings::default_settings().save();
   
@@ -81,7 +82,7 @@ void form_minesweeper::change_level(level l) {
   new_game();
 }
 
-void form_minesweeper::new_game() {
+void minesweeper_form::new_game() {
   game_panel_.visible(false);
   suspend_layout();
   game_over_ = false;
@@ -119,7 +120,7 @@ void form_minesweeper::new_game() {
   game_panel_.visible(true);
 }
 
-void form_minesweeper::check_neighbors(const point& cell_location) {
+void minesweeper_form::check_neighbors(const point& cell_location) {
   if (checked_cell(cell_location) != 0) return;
   for (auto y = cell_location.y() - 1; y <= cell_location.y() + 1; y++)
     for (auto x = cell_location.x() - 1; x <= cell_location.x() + 1; x++)
@@ -127,7 +128,7 @@ void form_minesweeper::check_neighbors(const point& cell_location) {
         check_neighbors({x, y});
 }
 
-int form_minesweeper::checked_cell(const point& cell_location) {
+int minesweeper_form::checked_cell(const point& cell_location) {
   if (cells_[cell_location.x()][cell_location.y()].state() == cell_state::unchecked) {
     cells_[cell_location.x()][cell_location.y()].state(cell_state::checked);
     checked_cell_count_++;
@@ -135,7 +136,7 @@ int form_minesweeper::checked_cell(const point& cell_location) {
   return cells_[cell_location.x()][cell_location.y()].neighbors();
 }
 
-main_menu form_minesweeper::create_main_menu() {
+main_menu minesweeper_form::create_main_menu() {
   return {
     {"&Game"_t, {
       {"&New games"_t, {[&] {new_game();}}, shortcut::f2},
@@ -143,7 +144,7 @@ main_menu form_minesweeper::create_main_menu() {
       {"&Beginner"_t, {[&] {change_level(level::beginner);}}, menu_item_kind::radio, as<level>(properties::settings::default_settings().level()) == level::beginner},
       {"&Intermediate"_t, {[&] {change_level(level::intermediate);}}, menu_item_kind::radio, as<level>(properties::settings::default_settings().level()) == level::intermediate},
       {"&Expert"_t, {[&] {change_level(level::expert);}}, menu_item_kind::radio, as<level>(properties::settings::default_settings().level()) == level::expert},
-      {"&Custom..."_t, {[&] {change_level(level::custom);}}, menu_item_kind::radio, as<level>(properties::settings::default_settings().level()) == level::custom},
+      {"&Custom..."_t, {*this, &minesweeper_form::on_custom_menu_click}, menu_item_kind::radio, as<level>(properties::settings::default_settings().level()) == level::custom},
       {"-"},
       {"&Marks [?]"_t, {[&](component& sender, const event_args& e) {
         properties::settings::default_settings().marks(!properties::settings::default_settings().marks());
@@ -164,21 +165,21 @@ main_menu form_minesweeper::create_main_menu() {
       {"&Search for Help On..."_t, {[&] {}}},
       {"&How to Use Help"_t, {[&] {}}},
       {"-"},
-      {texts::about(), {*this, &form_minesweeper::show_about_dialog}}
+      {texts::about(), {*this, &minesweeper_form::on_about_menuu_click}}
     }},
   };
 }
 
-void form_minesweeper::draw_cell(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
-  std::map<cell_state, delegate<void(paint_event_args&, const rectangle&, minesweeper::cell)>> draw_state {{cell_state::unchecked, {*this, &form_minesweeper::draw_unchecked}}, {cell_state::checked, {*this, &form_minesweeper::draw_checked}}, {cell_state::flag, {*this, &form_minesweeper::draw_flag}}, {cell_state::question, {*this, &form_minesweeper::draw_question}}, {cell_state::mine, {*this, &form_minesweeper::draw_mine}}, {cell_state::exploded_mine, {*this, &form_minesweeper::draw_exploded_mine}}, {cell_state::error, {*this, &form_minesweeper::draw_error}}};
+void minesweeper_form::draw_cell(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
+  std::map<cell_state, delegate<void(paint_event_args&, const rectangle&, minesweeper::cell)>> draw_state {{cell_state::unchecked, {*this, &minesweeper_form::draw_unchecked}}, {cell_state::checked, {*this, &minesweeper_form::draw_checked}}, {cell_state::flag, {*this, &minesweeper_form::draw_flag}}, {cell_state::question, {*this, &minesweeper_form::draw_question}}, {cell_state::mine, {*this, &minesweeper_form::draw_mine}}, {cell_state::exploded_mine, {*this, &minesweeper_form::draw_exploded_mine}}, {cell_state::error, {*this, &minesweeper_form::draw_error}}};
   draw_state[cell.state()](e, clip_rectangle, cell);
 }
 
-void form_minesweeper::draw_unchecked(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
+void minesweeper_form::draw_unchecked(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
   draw_border_unchecked(e, clip_rectangle);
 }
 
-void form_minesweeper::draw_checked(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
+void minesweeper_form::draw_checked(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
   draw_border_checked(e, clip_rectangle);
   color text_color;
   
@@ -225,7 +226,7 @@ void form_minesweeper::draw_checked(paint_event_args& e, const rectangle& clip_r
   e.graphics().draw_string(text, font(), solid_brush(text_color), x, y);
 }
 
-void form_minesweeper::draw_flag(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
+void minesweeper_form::draw_flag(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
   draw_border_unchecked(e, clip_rectangle);
   
   static image flag = bitmap(properties::resources::flag(), {16, 16});
@@ -234,7 +235,7 @@ void form_minesweeper::draw_flag(paint_event_args& e, const rectangle& clip_rect
   e.graphics().draw_image(flag, x, y);
 }
 
-void form_minesweeper::draw_question(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
+void minesweeper_form::draw_question(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
   draw_border_unchecked(e, clip_rectangle);
   auto x = clip_rectangle.left() + (clip_rectangle.width() - e.graphics().measure_string("?", font()).width()) / 2;
   auto y = clip_rectangle.top() + (clip_rectangle.height() - e.graphics().measure_string("?", font()).height()) / 2;
@@ -242,7 +243,7 @@ void form_minesweeper::draw_question(paint_event_args& e, const rectangle& clip_
   e.graphics().draw_string("?", font(), solid_brush(question_color), x, y);
 }
 
-void form_minesweeper::draw_mine(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
+void minesweeper_form::draw_mine(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
   draw_border_checked(e, clip_rectangle);
   static image mine = bitmap(properties::resources::mine(), {16, 16});
   auto x = clip_rectangle.left() + (clip_rectangle.width() - mine.width()) / 2;
@@ -250,19 +251,19 @@ void form_minesweeper::draw_mine(paint_event_args& e, const rectangle& clip_rect
   e.graphics().draw_image(mine, x, y);
 }
 
-void form_minesweeper::draw_exploded_mine(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
+void minesweeper_form::draw_exploded_mine(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
   e.graphics().fill_rectangle(brushes::red(), clip_rectangle);
   draw_mine(e, clip_rectangle, cell);
 }
 
-void form_minesweeper::draw_error(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
+void minesweeper_form::draw_error(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
   draw_border_checked(e, clip_rectangle);
   draw_mine(e, clip_rectangle, cell);
   e.graphics().draw_line(pen(color::red, 3), clip_rectangle.left() + 7, clip_rectangle.top() + 7, clip_rectangle.right() - 7, clip_rectangle.bottom() - 7);
   e.graphics().draw_line(pen(color::red, 3), clip_rectangle.right() - 7, clip_rectangle.top() + 7, clip_rectangle.left() + 7, clip_rectangle.bottom() - 7);
 }
 
-void form_minesweeper::draw_border_unchecked(paint_event_args& e, const rectangle& clip_rectangle) {
+void minesweeper_form::draw_border_unchecked(paint_event_args& e, const rectangle& clip_rectangle) {
   if (!properties::settings::default_settings().original_color()) {
     if (back_color().get_brightness() < 0.5f) e.graphics().fill_rectangle(solid_brush(color::light(back_color(), 0.1)), clip_rectangle);
     else e.graphics().fill_rectangle(solid_brush(color::dark(back_color(), 0.1)), clip_rectangle);
@@ -284,14 +285,64 @@ void form_minesweeper::draw_border_unchecked(paint_event_args& e, const rectangl
   e.graphics().draw_line(pen(color::dark(color::dark(color::dark(back_color())))), clip_rectangle.right() - 1, clip_rectangle.top(), clip_rectangle.right() - 1, clip_rectangle.bottom() - 1);
 }
 
-void form_minesweeper::draw_border_checked(paint_event_args& e, const rectangle& clip_rectangle) {
+void minesweeper_form::draw_border_checked(paint_event_args& e, const rectangle& clip_rectangle) {
   e.graphics().draw_line(pen(color::dark(back_color())), clip_rectangle.left(), clip_rectangle.top(), clip_rectangle.right(), clip_rectangle.top());
   e.graphics().draw_line(pen(color::dark(back_color())), clip_rectangle.left(), clip_rectangle.top(), clip_rectangle.left(), clip_rectangle.bottom());
   e.graphics().draw_line(pen(color::light(back_color())), clip_rectangle.left() + 1, clip_rectangle.bottom() - 1, clip_rectangle.right(), clip_rectangle.bottom() - 1);
   e.graphics().draw_line(pen(color::light(back_color())), clip_rectangle.right() - 1, clip_rectangle.top() + 1, clip_rectangle.right() - 1, clip_rectangle.bottom() - 1);
 }
 
-void form_minesweeper::on_game_panel_mouse_up(control& sender, const mouse_event_args& e) {
+void minesweeper_form::on_about_menuu_click(xtd::forms::component& sender, const xtd::event_args& e) {
+  about_dialog about_dialog;
+  about_dialog.icon(properties::resources::minesweeper_png());
+  about_dialog.name("Minesweeper"_t);
+  about_dialog.version("1.0");
+  about_dialog.long_version("1.0.0");
+  about_dialog.description("The goal of the game is to uncover all the squares\nthat do not contain mines."_t);
+  about_dialog.copyright("Copyright (c) 2021 Gammasoft.\nAll rights reserved."_t);
+  about_dialog.website("https://gammasoft71.wixsite.com/gammasoft"_t);
+  about_dialog.website_label("gammasoft website"_t);
+  about_dialog.license("MIT License\n"
+                       "\n"
+                       "Copyright (c) 2021 Gammasoft.\n"
+                       "\n"
+                       "Permission is hereby granted, free of charge, to any person obtaining\n"
+                       "a copy of this software and associated documentation files (the\n"
+                       "\"Software\"), to deal in the Software without restriction, including\n"
+                       "without limitation the rights to use, copy, modify, merge, publish,\n"
+                       "distribute, sublicense, and/or sell copies of the Software, and to\n"
+                       "permit persons to whom the Software is furnished to do so, subject\n"
+                       "to the following conditions:\n"
+                       "\n"
+                       "The above copyright notice and this permission notice shall be\n"
+                       "included in all copies or substantial portions of the Software.\n"
+                       "\n"
+                       "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF\n"
+                       "ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO\n"
+                       "THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A\n"
+                       "PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT\n"
+                       "SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR\n"
+                       "ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN\n"
+                       "ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n"
+                       "OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE\n"
+                       "OR OTHER DEALINGS IN THE SOFTWARE.\n");
+  about_dialog.show();
+}
+
+void minesweeper_form::on_custom_menu_click(xtd::forms::component& sender, const xtd::event_args& e) {
+  custom_field_dialog dialog;
+  dialog.custom_height(properties::settings::default_settings().custom_height());
+  dialog.custom_width(properties::settings::default_settings().custom_width());
+  dialog.custom_mines(properties::settings::default_settings().custom_mines());
+  dialog.show_dialog(*this);
+  properties::settings::default_settings().custom_height(dialog.custom_heght());
+  properties::settings::default_settings().custom_width(dialog.custom_width());
+  properties::settings::default_settings().custom_mines(dialog.custom_mines());
+  properties::settings::default_settings().save();
+  change_level(level::custom);
+}
+
+void minesweeper_form::on_game_panel_mouse_up(control& sender, const mouse_event_args& e) {
   if (game_over_) return;
   stopwatch_timer_.enabled(true);
   
@@ -363,7 +414,7 @@ void form_minesweeper::on_game_panel_mouse_up(control& sender, const mouse_event
   invalidate();
 }
 
-void form_minesweeper::on_game_panel_paint(control& sender, paint_event_args& e) {
+void minesweeper_form::on_game_panel_paint(control& sender, paint_event_args& e) {
   e.graphics().clear(back_color());
   e.graphics().draw_line(pen(color::light(color::light(color::light(back_color())))), 0, 0, 0, e.clip_rectangle().height());
   e.graphics().draw_line(pen(color::light(color::light(back_color()))), 1, 0, 1, e.clip_rectangle().height());
@@ -394,7 +445,7 @@ void form_minesweeper::on_game_panel_paint(control& sender, paint_event_args& e)
       draw_cell(e, {15 + x * cell::width(), 15 + y * cell::height(), cell::width(), cell::height()}, cells_[x][y]);
 }
 
-void form_minesweeper::on_status_panel_paint(control& sender, paint_event_args& e) {
+void minesweeper_form::on_status_panel_paint(control& sender, paint_event_args& e) {
   e.graphics().clear(back_color());
   e.graphics().draw_line(pen(color::light(color::light(color::light(back_color())))), 0, 0, e.clip_rectangle().width(), 0);
   e.graphics().draw_line(pen(color::light(color::light(back_color()))), 0, 1, e.clip_rectangle().width(), 1);
@@ -421,54 +472,17 @@ void form_minesweeper::on_status_panel_paint(control& sender, paint_event_args& 
   e.graphics().draw_line(pen(color::light(color::light(color::light(back_color())))), e.clip_rectangle().width() - 1 - offset, offset, e.clip_rectangle().width() - 1 - offset, e.clip_rectangle().height() - 1);
 }
 
-void form_minesweeper::on_status_panel_resize(control& sender, const event_args& e) {
+void minesweeper_form::on_status_panel_resize(control& sender, const event_args& e) {
   start_game_.location({status_panel_.size().width() / 2 - 21, 17});
   stopwatch_label_.location({status_panel_.width() - stopwatch_label_.width() - 18, 17});
 }
 
-void form_minesweeper::on_stopwatch_tick() {
+void minesweeper_form::on_stopwatch_tick() {
   if (stopwatch_count_ < 999)
     stopwatch_label_.text(strings::format("{:D3}", ++stopwatch_count_));
 }
 
-void form_minesweeper::show_about_dialog() {
-  about_dialog about_dialog;
-  about_dialog.icon(properties::resources::minesweeper_png());
-  about_dialog.name("Minesweeper"_t);
-  about_dialog.version("1.0");
-  about_dialog.long_version("1.0.0");
-  about_dialog.description("The goal of the game is to uncover all the squares\nthat do not contain mines."_t);
-  about_dialog.copyright("Copyright (c) 2021 Gammasoft.\nAll rights reserved."_t);
-  about_dialog.website("https://gammasoft71.wixsite.com/gammasoft"_t);
-  about_dialog.website_label("gammasoft website"_t);
-  about_dialog.license("MIT License\n"
-                       "\n"
-                       "Copyright (c) 2021 Gammasoft.\n"
-                       "\n"
-                       "Permission is hereby granted, free of charge, to any person obtaining\n"
-                       "a copy of this software and associated documentation files (the\n"
-                       "\"Software\"), to deal in the Software without restriction, including\n"
-                       "without limitation the rights to use, copy, modify, merge, publish,\n"
-                       "distribute, sublicense, and/or sell copies of the Software, and to\n"
-                       "permit persons to whom the Software is furnished to do so, subject\n"
-                       "to the following conditions:\n"
-                       "\n"
-                       "The above copyright notice and this permission notice shall be\n"
-                       "included in all copies or substantial portions of the Software.\n"
-                       "\n"
-                       "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF\n"
-                       "ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO\n"
-                       "THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A\n"
-                       "PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT\n"
-                       "SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR\n"
-                       "ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN\n"
-                       "ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n"
-                       "OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE\n"
-                       "OR OTHER DEALINGS IN THE SOFTWARE.\n");
-  about_dialog.show();
-}
-
-void form_minesweeper::update_colors() {
+void minesweeper_form::update_colors() {
   back_color(properties::settings::default_settings().original_color() ? color::from_argb(192, 196, 200) : default_back_color());
   fore_color(properties::settings::default_settings().original_color() ? color::black : default_fore_color());
 }
