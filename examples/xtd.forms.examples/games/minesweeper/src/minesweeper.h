@@ -43,7 +43,11 @@ namespace minesweeper {
     void draw_error(xtd::forms::paint_event_args& e, const xtd::drawing::rectangle& clip_rectangle, minesweeper::cell cell);
     void draw_border_unchecked(xtd::forms::paint_event_args& e, const xtd::drawing::rectangle& clip_rectangle);
     void draw_border_checked(xtd::forms::paint_event_args& e, const xtd::drawing::rectangle& clip_rectangle);
-    
+
+    void game_over();
+
+    void mark_cell(int x, int y);
+
     void on_about_menuu_click(xtd::forms::component& sender, const xtd::event_args& e);
     void on_custom_menu_click(xtd::forms::component& sender, const xtd::event_args& e);
     void on_game_panel_mouse_up(xtd::forms::control& sender, const xtd::forms::mouse_event_args& e);
@@ -52,14 +56,16 @@ namespace minesweeper {
     void on_status_panel_resize(xtd::forms::control& sender, const xtd::event_args& e);
     void on_stopwatch_tick();
     
-    
+    void uncover_cell(int x, int y);
     void update_colors();
 
+    void you_win();
+
+    xtd::forms::panel game_panel_;
     xtd::forms::panel status_panel_;
     xtd::forms::lcd_label mine_count_label_;
     xtd::forms::lcd_label stopwatch_label_;
     xtd::forms::button start_game_;
-    xtd::forms::panel game_panel_;
     xtd::forms::timer stopwatch_timer_;
     grid_size grid_size_ {9, 9};
     int mine_count_ = 0;

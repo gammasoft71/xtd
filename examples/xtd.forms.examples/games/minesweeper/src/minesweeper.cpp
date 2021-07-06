@@ -21,20 +21,16 @@ minesweeper_form::minesweeper_form() {
   menu(create_main_menu());
   text("Minesweeper"_t);
   
-  update_colors();
-  
-  status_panel_.parent(*this);
-  status_panel_.height(60);
-  status_panel_.paint += {*this, &minesweeper_form::on_status_panel_paint};
-  status_panel_.resize += {*this, &minesweeper_form::on_status_panel_resize};
-  
   game_panel_.parent(*this);
   game_panel_.location({0, 60});
   game_panel_.mouse_up += {*this, &minesweeper_form::on_game_panel_mouse_up};
   game_panel_.paint += {*this, &minesweeper_form::on_game_panel_paint};
   
-  change_level(static_cast<level>(properties::settings::default_settings().level()));
-  
+  status_panel_.parent(*this);
+  status_panel_.height(60);
+  status_panel_.paint += {*this, &minesweeper_form::on_status_panel_paint};
+  status_panel_.resize += {*this, &minesweeper_form::on_status_panel_resize};
+
   mine_count_label_.parent(status_panel_);
   mine_count_label_.location({17, 17});
   mine_count_label_.height(38);
@@ -42,6 +38,7 @@ minesweeper_form::minesweeper_form() {
   mine_count_label_.back_color(color::black);
   mine_count_label_.fore_color(color::red);
   mine_count_label_.segment_style(forms::segment_style::modern);
+  mine_count_label_.text("000");
   mine_count_label_.thickness(5);
   
   stopwatch_label_.parent(status_panel_);
@@ -50,8 +47,8 @@ minesweeper_form::minesweeper_form() {
   stopwatch_label_.back_color(color::black);
   stopwatch_label_.fore_color(color::red);
   stopwatch_label_.segment_style(forms::segment_style::modern);
+  stopwatch_label_.text("000");
   stopwatch_label_.thickness(5);
-  stopwatch_label_.location({status_panel_.width() - stopwatch_label_.width() - 18, 17});
   
   start_game_.parent(status_panel_);
   start_game_.image(bitmap(properties::resources::smiley1(), {24, 24}));
@@ -61,6 +58,9 @@ minesweeper_form::minesweeper_form() {
   
   stopwatch_timer_.interval_milliseconds(1000);
   stopwatch_timer_.tick += {*this, &minesweeper_form::on_stopwatch_tick};
+  
+  update_colors();
+  change_level(static_cast<level>(properties::settings::default_settings().level()));
 }
 
 void minesweeper_form::change_level(level l) {
@@ -74,17 +74,11 @@ void minesweeper_form::change_level(level l) {
   
   game_panel_.size({30 + grid_size_.width() * cell::width(), 30 + grid_size_.height() * cell::height()});
   cells_ = row_cell(grid_size_.width(), column_cell(grid_size_.height()));
-  
-  suspend_layout();
-  
-  resume_layout();
   status_panel_.width(game_panel_.width());
   new_game();
 }
 
 void minesweeper_form::new_game() {
-  game_panel_.visible(false);
-  suspend_layout();
   game_over_ = false;
   stopwatch_timer_.enabled(false);
   checked_cell_count_ = 0;
@@ -106,18 +100,17 @@ void minesweeper_form::new_game() {
     cells_[x][y].has_mine(true);
   }
   
-  for (int y = 0; y < grid_size_.height(); y++)
-    for (int x = 0; x < grid_size_.width(); x++)
-      for (int yy = y - 1; yy <= y + 1; yy++)
-        for (int xx = x - 1; xx <= x + 1; xx++)
+  for (auto y = 0; y < grid_size_.height(); y++)
+    for (auto x = 0; x < grid_size_.width(); x++)
+      for (auto yy = y - 1; yy <= y + 1; yy++)
+        for (auto xx = x - 1; xx <= x + 1; xx++)
           if (yy >= 0 && yy < grid_size_.height() && xx >= 0 && xx < grid_size_.width() && cells_[xx][yy].has_mine())
             cells_[x][y].neighbors(cells_[x][y].neighbors() + 1);
   
   mine_count_label_.text(strings::format("{:D3}", mine_count_ - flagged_mine_count_));
   stopwatch_label_.text("000");
   start_game_.image(bitmap(properties::resources::smiley1(), {24, 24}));
-  resume_layout();
-  game_panel_.visible(true);
+  invalidate();
 }
 
 void minesweeper_form::check_neighbors(const point& cell_location) {
@@ -171,7 +164,7 @@ main_menu minesweeper_form::create_main_menu() {
 }
 
 void minesweeper_form::draw_cell(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
-  std::map<cell_state, delegate<void(paint_event_args&, const rectangle&, minesweeper::cell)>> draw_state {{cell_state::unchecked, {*this, &minesweeper_form::draw_unchecked}}, {cell_state::checked, {*this, &minesweeper_form::draw_checked}}, {cell_state::flag, {*this, &minesweeper_form::draw_flag}}, {cell_state::question, {*this, &minesweeper_form::draw_question}}, {cell_state::mine, {*this, &minesweeper_form::draw_mine}}, {cell_state::exploded_mine, {*this, &minesweeper_form::draw_exploded_mine}}, {cell_state::error, {*this, &minesweeper_form::draw_error}}};
+  static std::map<cell_state, delegate<void(paint_event_args&, const rectangle&, minesweeper::cell)>> draw_state {{cell_state::unchecked, {*this, &minesweeper_form::draw_unchecked}}, {cell_state::checked, {*this, &minesweeper_form::draw_checked}}, {cell_state::flag, {*this, &minesweeper_form::draw_flag}}, {cell_state::question, {*this, &minesweeper_form::draw_question}}, {cell_state::mine, {*this, &minesweeper_form::draw_mine}}, {cell_state::exploded_mine, {*this, &minesweeper_form::draw_exploded_mine}}, {cell_state::error, {*this, &minesweeper_form::draw_error}}};
   draw_state[cell.state()](e, clip_rectangle, cell);
 }
 
@@ -220,7 +213,7 @@ void minesweeper_form::draw_checked(paint_event_args& e, const rectangle& clip_r
       default: return;
     }
   }
-  std::string text = std::to_string(cell.neighbors());
+  auto text = std::to_string(cell.neighbors());
   auto x = clip_rectangle.left() + (clip_rectangle.width() - e.graphics().measure_string(text, font()).width()) / 2;
   auto y = clip_rectangle.top() + (clip_rectangle.height() - e.graphics().measure_string(text, font()).height()) / 2;
   e.graphics().draw_string(text, font(), solid_brush(text_color), x, y);
@@ -229,7 +222,7 @@ void minesweeper_form::draw_checked(paint_event_args& e, const rectangle& clip_r
 void minesweeper_form::draw_flag(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
   draw_border_unchecked(e, clip_rectangle);
   
-  static image flag = bitmap(properties::resources::flag(), {16, 16});
+  static auto flag = bitmap(properties::resources::flag(), {16, 16});
   auto x = clip_rectangle.left() + (clip_rectangle.width() - flag.width()) / 2;
   auto y = clip_rectangle.top() + (clip_rectangle.height() - flag.height()) / 2;
   e.graphics().draw_image(flag, x, y);
@@ -245,7 +238,7 @@ void minesweeper_form::draw_question(paint_event_args& e, const rectangle& clip_
 
 void minesweeper_form::draw_mine(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
   draw_border_checked(e, clip_rectangle);
-  static image mine = bitmap(properties::resources::mine(), {16, 16});
+  static auto mine = bitmap(properties::resources::mine(), {16, 16});
   auto x = clip_rectangle.left() + (clip_rectangle.width() - mine.width()) / 2;
   auto y = clip_rectangle.top() + (clip_rectangle.height() - mine.height()) / 2;
   e.graphics().draw_image(mine, x, y);
@@ -290,6 +283,35 @@ void minesweeper_form::draw_border_checked(paint_event_args& e, const rectangle&
   e.graphics().draw_line(pen(color::dark(back_color())), clip_rectangle.left(), clip_rectangle.top(), clip_rectangle.left(), clip_rectangle.bottom());
   e.graphics().draw_line(pen(color::light(back_color())), clip_rectangle.left() + 1, clip_rectangle.bottom() - 1, clip_rectangle.right(), clip_rectangle.bottom() - 1);
   e.graphics().draw_line(pen(color::light(back_color())), clip_rectangle.right() - 1, clip_rectangle.top() + 1, clip_rectangle.right() - 1, clip_rectangle.bottom() - 1);
+}
+
+void minesweeper_form::game_over() {
+  stopwatch_timer_.enabled(false);
+  game_over_ = true;
+  start_game_.image(bitmap(properties::resources::smiley2(), {24, 24}));
+  for (auto y = 0; y < grid_size_.height(); y++) {
+    for (auto x = 0; x <grid_size_.width(); x++) {
+      if (cells_[x][y].state() == cell_state::exploded_mine) continue;
+      if (cells_[x][y].state() == cell_state::flag && !cells_[x][y].has_mine())
+        cells_[x][y].state(cell_state::error);
+      if (cells_[x][y].state() != cell_state::flag && cells_[x][y].has_mine())
+        cells_[x][y].state(cell_state::mine);
+    }
+  }
+}
+
+void minesweeper_form::mark_cell(int x, int y) {
+  auto& cell = cells_[x][y];
+  if (cell.state() == cell_state::unchecked) {
+    cell.state(cell_state::flag);
+    ++flagged_mine_count_;
+  } else if (cell.state() == cell_state::flag && properties::settings::default_settings().marks()) {
+    cell.state(cell_state::question);
+    --flagged_mine_count_;
+  } else if (cell.state() == cell_state::flag || cell.state() == cell_state::question) cell.state(cell_state::unchecked);
+  if ((mine_count_ - flagged_mine_count_) >= 0 && (mine_count_ - flagged_mine_count_) <= 999) mine_count_label_.text(strings::format("{:D3}", mine_count_ - flagged_mine_count_));
+  else if (mine_count_ - flagged_mine_count_ >= -99) mine_count_label_.text(strings::format("{:D2}", mine_count_ - flagged_mine_count_));
+  invalidate();
 }
 
 void minesweeper_form::on_about_menuu_click(xtd::forms::component& sender, const xtd::event_args& e) {
@@ -347,71 +369,11 @@ void minesweeper_form::on_game_panel_mouse_up(control& sender, const mouse_event
   stopwatch_timer_.enabled(true);
   
   if (e.location().x() < 15 || e.location().y() < 15 || e.location().x() >= (grid_size_.width() * cell::width() + 15) || e.location().y() >= (grid_size_.height() * cell::height() + 15)) return;
-  int x = (e.location().x() - 15) / cell::width();
-  int y = (e.location().y() - 15) / cell::height();
+  auto x = (e.location().x() - 15) / cell::width();
+  auto y = (e.location().y() - 15) / cell::height();
   
-  auto& cell = cells_[x][y];
-  if (e.button() == mouse_buttons::right) {
-    if (cell.state() == cell_state::unchecked) {
-      cell.state(cell_state::flag);
-      ++flagged_mine_count_;
-    } else if (cell.state() == cell_state::flag && properties::settings::default_settings().marks()) {
-      cell.state(cell_state::question);
-      --flagged_mine_count_;
-    } else if (cell.state() == cell_state::flag || cell.state() == cell_state::question) cell.state(cell_state::unchecked);
-    if ((mine_count_ - flagged_mine_count_) >= 0 && (mine_count_ - flagged_mine_count_) <= 999) mine_count_label_.text(strings::format("{:D3}", mine_count_ - flagged_mine_count_));
-    else if (mine_count_ - flagged_mine_count_ >= -99) mine_count_label_.text(strings::format("{:D2}", mine_count_ - flagged_mine_count_));
-  } else if (e.button() == mouse_buttons::left) {
-    start_game_.image(bitmap(properties::resources::smiley4(), {24, 24}));
-    application::do_events();
-    if (cell.state() == cell_state::question) cell.state(cell_state::unchecked);
-    if (cell.state() == cell_state::unchecked) {
-      if (!cell.has_mine()) {
-        check_neighbors({x, y});
-        if (grid_size_.width() * grid_size_.height() - checked_cell_count_ == mine_count_) {
-          stopwatch_timer_.enabled(false);
-          game_over_ = true;
-          start_game_.image(bitmap(properties::resources::smiley3(), {24, 24}));
-          for (int index1 = 0; index1 < grid_size_.height(); index1++)
-            for (int index2 = 0; index2 <grid_size_.width(); index2++)
-              if (cells_[index2][index1].state() != cell_state::flag && cells_[index2][index1].has_mine())
-                cells_[index2][index1].state(cell_state::mine);
-          mine_count_label_.text("000");
-          if (level_ != level::custom && stopwatch_count_ < std::map<level, int> {{level::beginner, properties::settings::default_settings().beginner_high_scores_value()}, {level::intermediate, properties::settings::default_settings().intermediate_high_scores_value()}, {level::expert, properties::settings::default_settings().expert_high_scores_value()}}[level_]) {
-            std::string gamer_name = std::map<level, std::string> {{level::beginner, properties::settings::default_settings().beginner_high_scores_name()}, {level::intermediate, properties::settings::default_settings().intermediate_high_scores_name()}, {level::expert, properties::settings::default_settings().expert_high_scores_name()}}[level_];
-            minesweeper::input_name_dialog input_name_dialog;
-            input_name_dialog.gammer_name(gamer_name);
-            input_name_dialog.level(level_);
-            if (input_name_dialog.show_dialog(*this) == dialog_result::ok)
-              gamer_name = input_name_dialog.gammer_name();
-            
-            std::map<level, delegate<void(int)>> set_settings_high_scores_values {{level::beginner, {properties::settings::default_settings(), &properties::settings::beginner_high_scores_value}}, {level::intermediate, {properties::settings::default_settings(), &properties::settings::intermediate_high_scores_value}}, {level::expert, {properties::settings::default_settings(), &properties::settings::expert_high_scores_value}}};
-            std::map<level, delegate<void(std::string)>> set_settings_high_scores_names {{level::beginner, {properties::settings::default_settings(), &properties::settings::beginner_high_scores_name}}, {level::intermediate, {properties::settings::default_settings(), &properties::settings::intermediate_high_scores_name}}, {level::expert, {properties::settings::default_settings(), &properties::settings::expert_high_scores_name}}};
-            set_settings_high_scores_values[level_](stopwatch_count_);
-            set_settings_high_scores_names[level_](gamer_name);
-            properties::settings::default_settings().save();
-            
-            minesweeper::high_scores_dialog().show_dialog(*this);
-          }
-        } else
-          start_game_.image(bitmap(properties::resources::smiley1(), {24, 24}));
-      } else {
-        stopwatch_timer_.enabled(false);
-        game_over_ = true;
-        start_game_.image(bitmap(properties::resources::smiley2(), {24, 24}));
-        for (int index1 = 0; index1 < grid_size_.height(); index1++) {
-          for (int index2 = 0; index2 <grid_size_.width(); index2++) {
-            if (cells_[index2][index1].state() == cell_state::flag && !cells_[index2][index1].has_mine())
-              cells_[index2][index1].state(cell_state::error);
-            if (cells_[index2][index1].state() != cell_state::flag && cells_[index2][index1].has_mine())
-              cells_[index2][index1].state(cell_state::mine);
-          }
-        }
-        cell.state(cell_state::exploded_mine);
-      }
-    }
-  }
-  invalidate();
+  if (e.button() == mouse_buttons::right) mark_cell(x, y);
+  else if (e.button() == mouse_buttons::left) uncover_cell(x, y);
 }
 
 void minesweeper_form::on_game_panel_paint(control& sender, paint_event_args& e) {
@@ -482,7 +444,54 @@ void minesweeper_form::on_stopwatch_tick() {
     stopwatch_label_.text(strings::format("{:D3}", ++stopwatch_count_));
 }
 
+void minesweeper_form::uncover_cell(int x, int y) {
+  start_game_.image(bitmap(properties::resources::smiley4(), {24, 24}));
+  application::do_events();
+  if (cells_[x][y].state() == cell_state::question)
+    cells_[x][y].state(cell_state::unchecked);
+  if (cells_[x][y].state() == cell_state::unchecked) {
+    if (cells_[x][y].has_mine()) {
+      cells_[x][y].state(cell_state::exploded_mine);
+      game_over();
+    } else {
+      check_neighbors({x, y});
+      if (grid_size_.width() * grid_size_.height() - checked_cell_count_ != mine_count_) start_game_.image(bitmap(properties::resources::smiley1(), {24, 24}));
+      else you_win();
+    }
+  }
+  invalidate();
+}
+
 void minesweeper_form::update_colors() {
   back_color(properties::settings::default_settings().original_color() ? color::from_argb(192, 196, 200) : default_back_color());
   fore_color(properties::settings::default_settings().original_color() ? color::black : default_fore_color());
+}
+
+void minesweeper_form::you_win() {
+  stopwatch_timer_.enabled(false);
+  game_over_ = true;
+  for (auto y = 0; y < grid_size_.height(); y++)
+    for (auto x = 0; x <grid_size_.width(); x++)
+      if (cells_[x][y].state() != cell_state::flag && cells_[x][y].has_mine())
+        cells_[x][y].state(cell_state::mine);
+
+  start_game_.image(bitmap(properties::resources::smiley3(), {24, 24}));
+  mine_count_label_.text("000");
+
+  if (level_ != level::custom && stopwatch_count_ < std::map<level, int> {{level::beginner, properties::settings::default_settings().beginner_high_scores_value()}, {level::intermediate, properties::settings::default_settings().intermediate_high_scores_value()}, {level::expert, properties::settings::default_settings().expert_high_scores_value()}}[level_]) {
+    auto gamer_name = std::map<level, std::string> {{level::beginner, properties::settings::default_settings().beginner_high_scores_name()}, {level::intermediate, properties::settings::default_settings().intermediate_high_scores_name()}, {level::expert, properties::settings::default_settings().expert_high_scores_name()}}[level_];
+    minesweeper::input_name_dialog input_name_dialog;
+    input_name_dialog.gammer_name(gamer_name);
+    input_name_dialog.level(level_);
+    if (input_name_dialog.show_dialog(*this) == dialog_result::ok)
+      gamer_name = input_name_dialog.gammer_name();
+    
+    std::map<level, delegate<void(int)>> set_settings_high_scores_values {{level::beginner, {properties::settings::default_settings(), &properties::settings::beginner_high_scores_value}}, {level::intermediate, {properties::settings::default_settings(), &properties::settings::intermediate_high_scores_value}}, {level::expert, {properties::settings::default_settings(), &properties::settings::expert_high_scores_value}}};
+    std::map<level, delegate<void(std::string)>> set_settings_high_scores_names {{level::beginner, {properties::settings::default_settings(), &properties::settings::beginner_high_scores_name}}, {level::intermediate, {properties::settings::default_settings(), &properties::settings::intermediate_high_scores_name}}, {level::expert, {properties::settings::default_settings(), &properties::settings::expert_high_scores_name}}};
+    set_settings_high_scores_values[level_](stopwatch_count_);
+    set_settings_high_scores_names[level_](gamer_name);
+    properties::settings::default_settings().save();
+    
+    minesweeper::high_scores_dialog().show_dialog(*this);
+  }
 }
