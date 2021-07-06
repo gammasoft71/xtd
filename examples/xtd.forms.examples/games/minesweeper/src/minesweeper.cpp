@@ -458,8 +458,8 @@ void minesweeper_form::uncover_cell(int x, int y) {
       if (grid_size_.width() * grid_size_.height() - checked_cell_count_ != mine_count_) start_game_.image(bitmap(properties::resources::smiley1(), {24, 24}));
       else you_win();
     }
+    invalidate();
   }
-  invalidate();
 }
 
 void minesweeper_form::update_colors() {
