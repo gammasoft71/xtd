@@ -316,6 +316,7 @@ namespace xtd {
       virtual void on_form_closing(form_closing_event_args& e) {form_closing(*this, e);}
 
       void on_layout(const event_args& e) override;
+      void on_location_changed(const event_args& e) override;
       void on_resize(const event_args& e) override;
       void wnd_proc(message& message) override;
       
