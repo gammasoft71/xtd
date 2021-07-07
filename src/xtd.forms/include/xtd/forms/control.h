@@ -550,6 +550,32 @@ namespace xtd {
         return *this;
       }
 
+      /// @brief Gets the size that is the upper limit that xtd::forms::control::get_preferred_size can specify.
+      /// @return An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
+      /// @par Exemples
+      /// The folling code shows how to set minimum size, set maximum size, move and resize a form.
+      /// @include form_resize.cpp
+      virtual const drawing::size& maximum_size() const;
+      /// @brief Sets the size that is the upper limit that xtd::forms::control::get_preferred_size can specify.
+      /// @param size An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
+      /// @par Exemples
+      /// The folling code shows how to set minimum size, set maximum size, move and resize a form.
+      /// @include form_resize.cpp
+      virtual control& maximum_size(const drawing::size& size);
+      
+      /// @brief Gets the size that is the lower limit that xtd::forms::control::get_preferred_size can specify.
+      /// @return An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
+      /// @par Exemples
+      /// The folling code shows how to set minimum size, set maximum size, move and resize a form.
+      /// @include form_resize.cpp
+      virtual const drawing::size& minimum_size() const;
+      /// @brief Sets the size that is the lower limit that xtd::forms::control::get_preferred_size can specify.
+      /// @param size An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
+      /// @par Exemples
+      /// The folling code shows how to set minimum size, set maximum size, move and resize a form.
+      /// @include form_resize.cpp
+      virtual control& minimum_size(const drawing::size& size);
+      
       /// @brief Gets a value indicating which of the modifier keys (SHIFT, CTRL, and ALT) is in a pressed state.
       /// @return A bitwise combination of the keys values. The default is none.
       static forms::keys modifier_keys() {return modifier_keys_;}
@@ -1890,6 +1916,8 @@ namespace xtd {
       intptr_t handle_ = 0;
       drawing::point location_;
       forms::padding margin_ {3};
+      drawing::size maximum_size_;
+      drawing::size minimum_size_;
       forms::padding padding_;
       static forms::keys modifier_keys_;
       static forms::mouse_buttons mouse_buttons_;
