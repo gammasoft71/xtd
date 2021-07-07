@@ -114,7 +114,6 @@ namespace xtd {
         no_zorder = 0,
         size_locked_by_os = 0,
         causes_validation = 0,
-        thread_marshall_pending = 0,
         own_ctl_brush = 0,
         exception_while_painting = 0,
         layout_sis_dirty = 0,
@@ -555,12 +554,36 @@ namespace xtd {
       /// @par Exemples
       /// The folling code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
+      /// @par Windows
+      /// @image html form_resize_w.png
+      /// <br>
+      /// @image html form_resize_wd.png
+      /// @par macOS
+      /// @image html form_resize_m.png
+      /// <br>
+      /// @image html form_resize_md.png
+      /// @par Gnome
+      /// @image html form_resize_g.png
+      /// <br>
+      /// @image html form_resize_gd.png
       virtual const drawing::size& maximum_size() const;
       /// @brief Sets the size that is the upper limit that xtd::forms::control::get_preferred_size can specify.
       /// @param size An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
       /// @par Exemples
       /// The folling code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
+      /// @par Windows
+      /// @image html form_resize_w.png
+      /// <br>
+      /// @image html form_resize_wd.png
+      /// @par macOS
+      /// @image html form_resize_m.png
+      /// <br>
+      /// @image html form_resize_md.png
+      /// @par Gnome
+      /// @image html form_resize_g.png
+      /// <br>
+      /// @image html form_resize_gd.png
       virtual control& maximum_size(const drawing::size& size);
       
       /// @brief Gets the size that is the lower limit that xtd::forms::control::get_preferred_size can specify.
@@ -568,12 +591,36 @@ namespace xtd {
       /// @par Exemples
       /// The folling code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
+      /// @par Windows
+      /// @image html form_resize_w.png
+      /// <br>
+      /// @image html form_resize_wd.png
+      /// @par macOS
+      /// @image html form_resize_m.png
+      /// <br>
+      /// @image html form_resize_md.png
+      /// @par Gnome
+      /// @image html form_resize_g.png
+      /// <br>
+      /// @image html form_resize_gd.png
       virtual const drawing::size& minimum_size() const;
       /// @brief Sets the size that is the lower limit that xtd::forms::control::get_preferred_size can specify.
       /// @param size An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
       /// @par Exemples
       /// The folling code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
+      /// @par Windows
+      /// @image html form_resize_w.png
+      /// <br>
+      /// @image html form_resize_wd.png
+      /// @par macOS
+      /// @image html form_resize_m.png
+      /// <br>
+      /// @image html form_resize_md.png
+      /// @par Gnome
+      /// @image html form_resize_g.png
+      /// <br>
+      /// @image html form_resize_gd.png
       virtual control& minimum_size(const drawing::size& size);
       
       /// @brief Gets a value indicating which of the modifier keys (SHIFT, CTRL, and ALT) is in a pressed state.
