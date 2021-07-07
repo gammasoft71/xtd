@@ -294,6 +294,33 @@ intptr_t control::handle() const {
   return handle_;
 }
 
+const drawing::size& control::maximum_size() const {
+  return maximum_size_;
+}
+
+control& control::maximum_size(const drawing::size& size) {
+  if (maximum_size_ != size) {
+    maximum_size_ = size;
+    if (size_.width() > maximum_size_.width()) width(maximum_size_.width());
+    if (size_.height() > maximum_size_.height()) height(maximum_size_.height());
+  }
+  return *this;
+}
+
+const drawing::size& control::minimum_size() const {
+  return minimum_size_;
+}
+
+control& control::minimum_size(const drawing::size& size) {
+  if (minimum_size_ != size) {
+    minimum_size_ = size;
+    if (size_.width() < minimum_size_.width()) width(minimum_size_.width());
+    if (size_.height() < minimum_size_.height()) height(minimum_size_.height());
+  }
+  return *this;
+}
+
+
 control& control::parent(const control& parent) {
   if (parent.handle_ != parent_) {
     this->parent(nullptr);
@@ -703,6 +730,10 @@ void control::on_parent_font_changed(const event_args &e) {
 }
 
 void control::on_resize(const event_args &e) {
+  if (size_.width() < minimum_size_.width()) width(minimum_size_.width());
+  if (size_.height() < minimum_size_.height()) height(minimum_size_.height());
+  if (!maximum_size_.is_empty() && size_.width() > maximum_size_.width()) width(maximum_size_.width());
+  if (!maximum_size_.is_empty() && size_.height() > maximum_size_.height()) height(maximum_size_.height());
   client_rectangle_ = native::control::client_rectangle(handle_);
   perform_layout();
   refresh();
