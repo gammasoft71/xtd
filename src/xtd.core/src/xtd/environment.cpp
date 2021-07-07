@@ -10,8 +10,10 @@
 struct __update__macos_path__ {
   __update__macos_path__() {
     if (!xtd::environment::os_version().is_macos_platform()) return;
-    for (auto path : {"/usr/local/bin", "/usr/bin", "/bin", "/usr/sbin", "/sbin", "/Library/Apple/usr/bin"})
-      if (!xtd::strings::contains(xtd::environment::get_environment_variable("PATH"), path)) xtd::environment::set_environment_variable("PATH", path+xtd::environment::get_environment_variable("PATH"));
+    /// @todo fix PATH with foreach...
+    //for (auto path : {"/usr/local/bin", "/usr/bin", "/bin", "/usr/sbin", "/sbin", "/Library/Apple/usr/bin"})
+    //  if (!xtd::strings::contains(xtd::environment::get_environment_variable("PATH"), path)) xtd::environment::set_environment_variable("PATH", path+xtd::environment::get_environment_variable("PATH"));
+    xtd::environment::set_environment_variable("PATH", "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"+xtd::environment::get_environment_variable("PATH"));
   }
 } __updmacpath__;
 
