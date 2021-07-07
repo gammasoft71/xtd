@@ -177,7 +177,7 @@ main_form::main_form() {
   open_xtd_examples_information_text_box_.anchor(anchor_styles::top|anchor_styles::bottom|anchor_styles::right);
   open_xtd_examples_information_text_box_.multiline(true);
   open_xtd_examples_information_text_box_.read_only(true);
-  open_xtd_examples_information_text_box_.word_wrap(false);
+  open_xtd_examples_information_text_box_.word_wrap(true);
 
   open_xtd_examples_information_picture_box_.parent(open_xtd_examples_panel_);
   open_xtd_examples_information_picture_box_.location({550, open_xtd_examples_panel_.size().height() - 260});
@@ -231,7 +231,7 @@ main_form::main_form() {
   open_xtd_example_console_list_box_.location({30, 110});
   open_xtd_example_console_list_box_.size(open_xtd_example_console_tab_page_.size() - xtd::drawing::size {60, 140});
   //open_xtd_example_console_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
-  for (auto item : xtd_console_examples_)
+  for (auto item : xtd_example_item::get_core_examples())
     open_xtd_example_console_list_box_.items().push_back({item.name(), item});
   open_xtd_example_console_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_console_list_box_.selected_index() != open_xtd_example_console_list_box_.npos) {
@@ -245,7 +245,7 @@ main_form::main_form() {
   open_xtd_example_forms_list_box_.location({30, 110});
   open_xtd_example_forms_list_box_.size(open_xtd_example_forms_tab_page_.size() - xtd::drawing::size {60, 140});
   //open_xtd_example_forms_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
-  for (auto item : xtd_forms_examples_)
+  for (auto item : xtd_example_item::get_forms_examples())
     open_xtd_example_forms_list_box_.items().push_back({item.name(), item});
   open_xtd_example_forms_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_forms_list_box_.selected_index() != open_xtd_example_forms_list_box_.npos) {
@@ -259,7 +259,7 @@ main_form::main_form() {
   open_xtd_example_tunit_list_box_.location({30, 110});
   open_xtd_example_tunit_list_box_.size(open_xtd_example_tunit_tab_page_.size() - xtd::drawing::size {60, 140});
   //open_xtd_example_tunit_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
-  for (auto item : xtd_tunit_examples_)
+  for (auto item : xtd_example_item::get_tunit_examples())
     open_xtd_example_tunit_list_box_.items().push_back({item.name(), item});
   open_xtd_example_tunit_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_tunit_list_box_.selected_index() != open_xtd_example_tunit_list_box_.npos) {
