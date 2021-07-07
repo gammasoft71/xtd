@@ -83,23 +83,15 @@ namespace xtd {
   }
 }
 
-void on_menu_click(component& sender, const event_args& e) {
-  debug::write_line(strings::format("menu {} clicked", static_cast<menu_item&>(sender).text()));
-}
+class manual_test_form : public form {
+public:
+  static void main() {
+    application::run(manual_test_form());
+  }
+  
+  manual_test_form() {
+    text("Manual tests");
 
-int main() {
-  try {
-    form form_main;
-    form_main.text("Manual tests");
-    //form_main.menu(forms::main_menu::create_standard_items([&](component& sender, const event_args& e) {
-    //  //cdebug << strings::format("Menu item [{}] clicked", as<menu_item&>(sender)) << endl;
-    //}));
-    form_main.menu(main_menu {
-      {texts::file(), {
-        {texts::new_(), {on_menu_click}, menu_images::file_new(), shortcut::cmd_n},
-      }}
-    });
-    
     /*
      form_main.client_size({300, 300});
      table_layout_panel table_layout_panel;
@@ -115,9 +107,8 @@ int main() {
      link_label1.parent(form_main);
      link_label1.text("Gammasoft present xtd_forms examples\nNext line...");
      */
-
-    application::run(form_main);
-  } catch(const exception& e) {
-    message_box::show(e.what(), xtd::strings::full_class_name(e));
+    
   }
-}
+};
+
+startup_(manual_test_form);
