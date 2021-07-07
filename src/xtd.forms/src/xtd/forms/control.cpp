@@ -638,7 +638,6 @@ void control::on_layout(const event_args &e) {
 }
 
 void control::on_location_changed(const event_args &e) {
-  if (handle_ && top() < screen::get_working_area(handle_).top()) top(screen::get_working_area(handle_).top());
   if (parent_ && parent().value().get().auto_size()) parent().value().get().perform_layout();
   if (can_raise_events()) location_changed(*this, e);
 }
