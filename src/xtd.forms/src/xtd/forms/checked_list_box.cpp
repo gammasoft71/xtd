@@ -61,7 +61,11 @@ list_control& checked_list_box::selected_index(size_t selected_index) {
     if (selected_index != npos && selected_index >= items_.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t, current_stack_frame_);
     selected_index_ = selected_index;
     native::checked_list_box::selected_index(handle(), selected_index_);
-    if (selected_index_ != npos) selected_item_ = items_[selected_index_];
+    
+    item selected_item;
+    if (selected_index_ != npos) selected_item = items_[selected_index_];
+    this->selected_item(selected_item);
+    
     on_selected_index_changed(event_args::empty);
   }
   return *this;
