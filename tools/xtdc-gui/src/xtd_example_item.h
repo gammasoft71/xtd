@@ -6,7 +6,7 @@
 #include <xtd/drawing/image.h>
 #include <xtd/forms/application.h>
 #include <xtd/environment.h>
-#include "../resources/noimage.xpm"
+//#include "../resources/noimage.xpm"
 
 namespace xtdc_gui {
   /// @brief Represents the project_type_item class
@@ -19,6 +19,10 @@ namespace xtdc_gui {
     const std::string& description() const noexcept {return description_;};
     const std::filesystem::path& path() const noexcept {return path_;};
     const xtd::drawing::image& picture() const noexcept {return picture_;};
+    
+    static std::vector<xtd_example_item> get_cmake_examples() {
+      return xtd_example_item::get_examples(xtd_share_path_/"examples"/"xtd.cmake.examples");
+    }
     
     static std::vector<xtd_example_item> get_core_examples() {
       return xtd_example_item::get_examples(xtd_share_path_/"examples"/"xtd.core.examples");
