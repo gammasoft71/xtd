@@ -59,16 +59,20 @@ namespace xtdc_gui {
     xtd::forms::panel open_xtd_examples_panel_;
     xtd::forms::label open_xtd_examples_title_label_;
     xtd::forms::tab_control open_xtd_example_tab_control_;
-    xtd::forms::tab_page open_xtd_example_console_tab_page_;
+    xtd::forms::tab_page open_xtd_example_core_tab_page_;
     xtd::forms::tab_page open_xtd_example_forms_tab_page_;
     xtd::forms::tab_page open_xtd_example_tunit_tab_page_;
-    xtd::forms::picture_box open_xtd_example_console_picture_box_;
+    xtd::forms::tab_page open_xtd_example_cmake_tab_page_;
+    xtd::forms::picture_box open_xtd_example_core_picture_box_;
     xtd::forms::picture_box open_xtd_example_forms_picture_box_;
     xtd::forms::picture_box open_xtd_example_tunit_picture_box_;
-    xtd::forms::label open_xtd_example_console_title_label_;
+    xtd::forms::picture_box open_xtd_example_cmake_picture_box_;
+    xtd::forms::label open_xtd_example_cmake_title_label_;
+    xtd::forms::label open_xtd_example_core_title_label_;
     xtd::forms::label open_xtd_example_forms_title_label_;
     xtd::forms::label open_xtd_example_tunit_title_label_;
-    xtd::forms::list_box open_xtd_example_console_list_box_;
+    xtd::forms::list_box open_xtd_example_cmake_list_box_;
+    xtd::forms::list_box open_xtd_example_core_list_box_;
     xtd::forms::list_box open_xtd_example_forms_list_box_;
     xtd::forms::list_box open_xtd_example_tunit_list_box_;
     xtd::forms::text_box open_xtd_examples_information_text_box_;
@@ -97,8 +101,9 @@ namespace xtdc_gui {
     xtd::forms::button next_button_;
     
     size_t current_project_type_index_ = std::numeric_limits<size_t>::max();
-    size_t current_open_xtd_example_console_list_box_index_ = 0;
+    size_t current_open_xtd_example_core_list_box_index_ = 0;
     size_t current_open_xtd_example_forms_list_box_index_ = 0;
     size_t current_open_xtd_example_tunit_list_box_index_ = 0;
+    size_t current_open_xtd_example_cmake_list_box_index_ = 0;
   };
 }
