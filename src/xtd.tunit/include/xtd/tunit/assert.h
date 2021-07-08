@@ -1282,7 +1282,7 @@ namespace xtd {
       
       /// @cond
       static void is_less_or_equal(const char* val1, const char* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (strcmp(val1, val1) <= 0)
+        if (strcmp(val1, val2) <= 0)
           succeed(message, line_info);
         else
           base_assert::fail("less than or equal to " + base_assert::to_string(val2), base_assert::to_string(val1), message, line_info);
@@ -1303,7 +1303,7 @@ namespace xtd {
       }
 
       static void is_less_or_equal(const wchar_t* val1, const wchar_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (wcscmp(val1, val1) <= 0)
+        if (wcscmp(val1, val2) <= 0)
           succeed(message, line_info);
         else
           base_assert::fail("less than or equal to " + base_assert::to_string(val2), base_assert::to_string(val1), message, line_info);
