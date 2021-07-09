@@ -81,6 +81,9 @@ namespace xtd {
       /// @return Current label instance.
       /// @remarks You can use this property to align the text within a label to match the layout of controls on your form. For example, if your controls are located to the right edge of the labels, you can set the text_align property to one of the right-aligned horizontal alignments (top_right, middle_right, bottom_right) and the text will be aligned with the right edge of the labels to align with your controls.
       virtual xtd::forms::label& text_align(xtd::forms::content_alignment text_align);
+      
+      /// @brief Occurs when the value of the xtd::forms::label::text_align property has changed.
+      event<label, event_handler<control&>> text_align_changed;
 
     protected:
       xtd::forms::create_params create_params() const override;
@@ -92,6 +95,12 @@ namespace xtd {
       void on_paint(xtd::forms::paint_event_args& e) override;
       
       void on_resize(const xtd::event_args& e) override;
+      
+      /// @brief Raises the xtd::forms::label::text_align_changed event.
+      /// @remarks Raising an event invokes the event handler through a delegate.
+      /// @par Notes to Inheritors
+      /// When overriding xtd::forms::label::on_text_align_changed in a derived class, be sure to call the base class's xtd::forms::label::on_text_align_changed method.
+      virtual void on_text_align_changed(const xtd::event_args& e);
       
       void on_text_changed(const xtd::event_args& e) override;
 

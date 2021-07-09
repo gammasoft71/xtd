@@ -37,6 +37,7 @@ label& label::text_align(content_alignment text_align) {
   if (text_align_ != text_align) {
     text_align_ = text_align;
     recreate_handle();
+    on_text_align_changed(event_args::empty);
   }
   return *this;
 }
@@ -94,6 +95,10 @@ void label::on_paint(paint_event_args& e) {
     e.graphics().draw_string(text_, font(), xtd::drawing::solid_brush(fore_color()), xtd::drawing::rectangle(0, 0, client_size().width(), client_size().height()), string_format);
   }
   control::on_paint(e);
+}
+
+void label::on_text_align_changed(const xtd::event_args& e) {
+  text_align_changed(*this, e);
 }
 
 void label::on_text_changed(const xtd::event_args& e) {
