@@ -805,7 +805,7 @@ namespace xtd {
 
       bool show_back_digit_ = true;
       std::optional<xtd::drawing::color> back_digit_color_;
-      double back_digit_opacity_ = 0.05;
+      double back_digit_opacity_ = 0.95;
       std::optional<int32_t> digit_spacing_;
       forms::lcd_style lcd_style_ = forms::lcd_style::seven_segment_display;
       forms::segment_style segment_style_ = forms::segment_style::standard;
