@@ -767,6 +767,16 @@ namespace xtd {
     protected:
       drawing::size default_size() const override {return {100, 25};}
       
+      void on_back_color_changed(const event_args& e) override {
+        control::on_back_color_changed(e);
+        invalidate();
+      }
+      
+      void on_fore_color_changed(const event_args& e) override {
+        control::on_fore_color_changed(e);
+        invalidate();
+      }
+
       void on_handle_created(const event_args& e) override {
         control::on_handle_created(e);
         set_digits_params();
