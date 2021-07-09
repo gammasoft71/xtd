@@ -45,8 +45,8 @@ namespace xtd {
       
       void draw_back_digit(drawing::graphics& graphics) override {
         seven_segment_display::draw_back_digit(graphics);
-        draw_segment_h(graphics, drawing::color::average(back_color(), back_segment_color(), 1.0 - back_segment_opacity()));
-        draw_segment_i(graphics, drawing::color::average(back_color(), back_segment_color(), 1.0 - back_segment_opacity()));
+        draw_segment_h(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
+        draw_segment_i(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
       }
       
       /// @brief Draw segment h on specified graphics with specified color.

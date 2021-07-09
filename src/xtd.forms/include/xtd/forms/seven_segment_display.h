@@ -177,13 +177,13 @@ namespace xtd {
       /// @brief Draw all background digit on specified graphics.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       virtual void draw_back_digit(drawing::graphics& graphics) {
-        draw_segment_a(graphics, drawing::color::average(back_color(), back_segment_color(), 1.0 - back_segment_opacity()));
-        draw_segment_b(graphics, drawing::color::average(back_color(), back_segment_color(), 1.0 - back_segment_opacity()));
-        draw_segment_c(graphics, drawing::color::average(back_color(), back_segment_color(), 1.0 - back_segment_opacity()));
-        draw_segment_d(graphics, drawing::color::average(back_color(), back_segment_color(), 1.0 - back_segment_opacity()));
-        draw_segment_e(graphics, drawing::color::average(back_color(), back_segment_color(), 1.0 - back_segment_opacity()));
-        draw_segment_f(graphics, drawing::color::average(back_color(), back_segment_color(), 1.0 - back_segment_opacity()));
-        draw_segment_g(graphics, drawing::color::average(back_color(), back_segment_color(), 1.0 - back_segment_opacity()));
+        draw_segment_a(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
+        draw_segment_b(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
+        draw_segment_c(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
+        draw_segment_d(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
+        draw_segment_e(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
+        draw_segment_f(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
+        draw_segment_g(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
       }
 
       /// @brief Draw segment a on specified graphics with specified color.

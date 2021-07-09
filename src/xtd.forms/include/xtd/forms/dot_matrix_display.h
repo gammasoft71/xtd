@@ -211,7 +211,7 @@ namespace xtd {
         for (int32_t y = 0; y < static_cast<int32_t>(dots_.size()); y++) {
           for (int32_t x = 0; x < static_cast<int32_t>(dots_[y].size()); x++) {
             if (dots_[y][x]) draw_dot(e.graphics(), fore_color(), {x, y});
-            else if (show_back_dot_) draw_dot(e.graphics(), drawing::color::average(back_color(), back_dot_color(), 1.0 - back_dot_opacity_), {x, y});
+            else if (show_back_dot_) draw_dot(e.graphics(), drawing::color::average(back_dot_color(), back_color(), back_dot_opacity_), {x, y});
           }
         }
         control::on_paint(e);
