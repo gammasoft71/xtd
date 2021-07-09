@@ -270,17 +270,16 @@ void control::visible(intptr_t control, bool visible) {
 void control::invalidate(intptr_t control, const drawing::rectangle& rect, bool erase_background) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->main_control()->RefreshRect(wxRect(rect.left(), rect.top(), rect.width(), rect.height()), erase_background);
+  reinterpret_cast<control_handler*>(control)->main_control()->Update();
 }
 
 void control::refresh(intptr_t control) {
   if (control == 0) return;
-  
   reinterpret_cast<control_handler*>(control)->main_control()->Refresh();
 }
 
 void control::update(intptr_t control) {
   if (control == 0) return;
-  
   reinterpret_cast<control_handler*>(control)->main_control()->Update();
 }
 
