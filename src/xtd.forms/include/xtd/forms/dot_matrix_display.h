@@ -205,6 +205,16 @@ namespace xtd {
 
     protected:
       drawing::size default_size() const override {return {25, 25};}
+      
+      void on_back_color_changed(const event_args& e) override {
+        control::on_back_color_changed(e);
+        invalidate();
+      }
+      
+      void on_fore_color_changed(const event_args& e) override {
+        control::on_fore_color_changed(e);
+        invalidate();
+      }
 
       void on_paint(paint_event_args& e) override {
         if (back_color() != default_back_color()) e.graphics().clear(back_color());
