@@ -17,10 +17,10 @@ namespace examples {
       link_label1.location({10, 10});
       link_label1.auto_size(true);
       link_label1.parent(*this);
-      link_label1.text("xtd sources on github");
+      link_label1.text("xtd Reference Guide");
       link_label1.link_clicked += [](control& sender, link_label_clicked_event_args& e) {
         e.visited(true);
-        process::start("https://github.com/gammasoft71/xtd");
+        process::start("https://codedocs.xyz/gammasoft71/xtd/index.html");
       };
 
       link_label2.location({10, 40});
