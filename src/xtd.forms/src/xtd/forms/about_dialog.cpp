@@ -5,11 +5,13 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/about_dialog.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/diagnostics/process.h>
 #include <xtd/drawing/system_icons.h>
 #include "../../../include/xtd/forms/about_dialog.h"
 #include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/form.h"
 #include "../../../include/xtd/forms/label.h"
+#include "../../../include/xtd/forms/link_label.h"
 #include "../../../include/xtd/forms/panel.h"
 #include "../../../include/xtd/forms/picture_box.h"
 #include "../../../include/xtd/forms/tab_control.h"
@@ -21,7 +23,6 @@ using namespace xtd;
 using namespace xtd::forms;
 
 namespace {
-  using link_label = label;
   class about_dialog_standard : public form {
   public:
     about_dialog_standard() {
@@ -66,9 +67,6 @@ namespace {
       label_description_.dock(dock_style::top);
 
       link_label_website_.text_align(content_alignment::middle_center);
-      link_label_website_.fore_color(theme_colors::current_theme().hot_track());
-      link_label_website_.font({link_label_website_.font(), xtd::drawing::font_style::underline});
-      link_label_website_.cursor(forms::cursors::hand());
       link_label_website_.padding(5);
       link_label_website_.dock(dock_style::top);
 
@@ -119,7 +117,11 @@ namespace {
 
       about_dialog_standard->link_label_website_.height(static_cast<int32_t>(23 * xtd::strings::split(!website_label.empty() ? website_label : website, {'\n'}).size()));
       about_dialog_standard->link_label_website_.text(!website_label.empty() ? website_label : website);
-      
+      about_dialog_standard->link_label_website_.link_clicked += [&](control& sender, link_label_clicked_event_args& e) {
+        e.visited(true);
+        diagnostics::process::start(website);
+      };
+
       about_dialog_standard->label_copyright_.height(static_cast<int32_t>(23 * xtd::strings::split(copyright, {'\n'}).size()));
       about_dialog_standard->label_copyright_.text(xtd::strings::format("{}", xtd::strings::replace(copyright, u8"(c)"_s, u8"\u00A9"_s)));
       
