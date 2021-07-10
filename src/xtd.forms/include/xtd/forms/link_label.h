@@ -17,7 +17,7 @@ namespace xtd {
     /// @brief Represents a Windows label control that can display hyperlinks.
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms forms
+    /// @ingroup xtd_forms controls
     /// @remarks
     class link_label : public label {
     public:
