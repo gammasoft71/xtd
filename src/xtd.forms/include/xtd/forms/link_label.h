@@ -68,6 +68,8 @@ namespace xtd {
       event<link_label, link_label_clicked_event_handler<control&>> link_clicked;
 
     protected:
+      xtd::drawing::size measure_control() const override;
+      
       void on_cursor_changed(const xtd::event_args& e) override;
       void on_mouse_click(const xtd::forms::mouse_event_args& e) override;
       void on_mouse_down(const xtd::forms::mouse_event_args& e) override;
