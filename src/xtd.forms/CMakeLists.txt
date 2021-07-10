@@ -128,6 +128,10 @@ add_sources(
   include/xtd/forms/label.h
   include/xtd/forms/lcd_label.h
   include/xtd/forms/lcd_style.h
+  include/xtd/forms/link_label.h
+  include/xtd/forms/link_label_clicked_event_args.h
+  include/xtd/forms/link_label_clicked_event_handler.h
+  include/xtd/forms/link.h
   include/xtd/forms/list_box.h
   include/xtd/forms/list_control.h
   include/xtd/forms/loading_indicator.h
@@ -271,6 +275,9 @@ add_sources(
   src/xtd/forms/image_list.cpp
   src/xtd/forms/input_dialog.cpp
   src/xtd/forms/label.cpp
+  src/xtd/forms/link_label.cpp
+  src/xtd/forms/link_label_clicked_event_args.cpp
+  src/xtd/forms/link.cpp
   src/xtd/forms/list_box.cpp
   src/xtd/forms/list_control.cpp
   src/xtd/forms/loading_indicator.cpp
