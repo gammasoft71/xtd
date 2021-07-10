@@ -39,15 +39,12 @@ link_label::link_label() {
   links_.item_added += [&] {
     if (links_.size() == 2 && links_[0].start() == 0 && links_[0].length() == text_.length())
       links_.erase_at(0);
-    generate_text_rects();
     invalidate();
   };
   links_.item_erased += [&] {
-    generate_text_rects();
     invalidate();
   };
   links_.item_updated += [&] {
-    generate_text_rects();
     invalidate();
   };
 }
@@ -58,6 +55,13 @@ const link_label::link_collection& link_label::links() const {
 
 link_label::link_collection& link_label::links() {
   return links_;
+}
+
+drawing::size link_label::measure_control() const {
+  rectangle bounds;
+  for (auto [rect, is_link] : generate_text_rects())
+    bounds = drawing::rectangle::make_union(bounds, rect);
+  return bounds.size() + drawing::size(2, 1) + drawing::size(border_style_ == border_style::none ? 0 : 4, border_style_ == border_style::none ? 0 : 4);
 }
 
 void link_label::on_cursor_changed(const event_args &e) {
@@ -147,13 +151,13 @@ void link_label::on_paint(paint_event_args& e) {
 
 void link_label::on_text_align_changed(const event_args& e) {
   label::on_text_changed(e);
-  generate_text_rects();
+  invalidate();
 }
 
 void link_label::on_text_changed(const event_args& e) {
   label::on_text_changed(e);
   if (links_.empty()) links_.push_back({0, text().length()});
-  generate_text_rects();
+  invalidate();
 }
 
 link_label::link& link_label::point_in_link(const xtd::drawing::point& point) {
