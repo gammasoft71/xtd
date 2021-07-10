@@ -21,6 +21,7 @@ add_projects(
   fourteen_segment_display
   label
   lcd_label
+  link_label
   list_box
   loading_indicator
   nine_segment_display

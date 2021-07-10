@@ -12,21 +12,19 @@ public:
   }
 
   form_main() {
-    background_image(xtd::drawing::system_images::from_name("xtd", xtd::drawing::size(16, 16)));
-    client_size({480, 320});
-    double_buffered(true);
-    text("Assert example");
-
-    button1.location({10, 10});
-    button1.parent(*this);
-    button1.text("Assert...");
-    button1.click += [] {
-      assert_(false, "Test assert");
-    };
+    auto_size(true);
+    auto_size_mode(forms::auto_size_mode::grow_and_shrink);
+    
+    label1.parent(*this);
+    label1.fore_color(drawing::color::lime);
+    label1.height(50);
+    label1.auto_size(true);
+    label1.lcd_style(forms::lcd_style::dot_matrix_display);
+    label1.text("MON AMOUREUSE QUE J'AIME");
   }
 
 private:
-  button button1;
+  lcd_label label1;
 };
 
 startup_(form_main);

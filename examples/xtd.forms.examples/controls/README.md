@@ -20,7 +20,7 @@
 * **hscroll_bar** represents a standard Windows horizontal scroll bar.
 * [label](label/README.md) represents a standard Windows [xtd::forms::label](../../../src/xtd.forms/include/xtd/forms/label.h).
 * [lcd_label](lcd_label/README.md) represents a [xtd::forms::lcd_label](../../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
-* **link_label** represents a Windows label control that can display hyperlinks.
+* [link_label](link_label/README.md) represents a Windows label control that can display hyperlinks.
 * [list_box](list_box/README.md) represents a Windows control to display a list of items.
 * **list_view** represents a Windows list view control, which displays a collection of items that can be displayed using one of four different views.
 * [loading_indicator](loading_indicator/README.md) represents a Windows control to display a loading indicator animation.
