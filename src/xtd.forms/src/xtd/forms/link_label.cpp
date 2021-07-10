@@ -1,3 +1,4 @@
+#include <xtd/as.h>
 #include "../../../include/xtd/forms/link_label.h"
 #include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/screen.h"
@@ -178,15 +179,15 @@ xtd::drawing::point link_label::get_text_location(size_t line_number) const {
     point text_location;
     drawing::size text_size = drawing::size::ceiling(screen::create_graphics().measure_string(line, link_font()));
     switch (text_align_) {
-      case content_alignment::top_left: text_location = point(0, text_size.height() * line_number); break;
-      case content_alignment::top_center: text_location = point(client_rectangle().width() / 2 - text_size.width() / 2, text_size.height() * line_number); break;
-      case content_alignment::top_right: text_location = point(client_rectangle().width() - text_size.width(), text_size.height() * line_number); break;
-      case content_alignment::middle_left: text_location = point(0, client_rectangle().height() / 2 - text_size.height() / 2 + text_size.height() * line_number); break;
-      case content_alignment::middle_center: text_location = point(client_rectangle().width() / 2 - text_size.width() / 2, client_rectangle().height() / 2 - text_size.height() / 2 + text_size.height() * line_number); break;
-      case content_alignment::middle_right: text_location = point(client_rectangle().width() - text_size.width(), client_rectangle().height() / 2 - text_size.height() / 2 + text_size.height() * line_number); break;
-      case content_alignment::bottom_left: text_location = point(0, client_rectangle().height() - text_size.height() + text_size.height() * line_number); break;
-      case content_alignment::bottom_center: text_location = point(client_rectangle().width() / 2 - text_size.width() / 2, client_rectangle().height() - text_size.height() + text_size.height() * line_number); break;
-      case content_alignment::bottom_right: text_location = point(client_rectangle().width() - text_size.width(), client_rectangle().height() - text_size.height() + text_size.height() * line_number); break;
+      case content_alignment::top_left: text_location = point(0, text_size.height() * as<int32_t>(line_number)); break;
+      case content_alignment::top_center: text_location = point(client_rectangle().width() / 2 - text_size.width() / 2, text_size.height() * as<int32_t>(line_number)); break;
+      case content_alignment::top_right: text_location = point(client_rectangle().width() - text_size.width(), text_size.height() * as<int32_t>(line_number)); break;
+      case content_alignment::middle_left: text_location = point(0, client_rectangle().height() / 2 - text_size.height() / 2 + text_size.height() * as<int32_t>(line_number)); break;
+      case content_alignment::middle_center: text_location = point(client_rectangle().width() / 2 - text_size.width() / 2, client_rectangle().height() / 2 - text_size.height() / 2 + text_size.height() * as<int32_t>(line_number)); break;
+      case content_alignment::middle_right: text_location = point(client_rectangle().width() - text_size.width(), client_rectangle().height() / 2 - text_size.height() / 2 + text_size.height() * as<int32_t>(line_number)); break;
+      case content_alignment::bottom_left: text_location = point(0, client_rectangle().height() - text_size.height() + text_size.height() * as<int32_t>(line_number)); break;
+      case content_alignment::bottom_center: text_location = point(client_rectangle().width() / 2 - text_size.width() / 2, client_rectangle().height() - text_size.height() + text_size.height() * as<int32_t>(line_number)); break;
+      case content_alignment::bottom_right: text_location = point(client_rectangle().width() - text_size.width(), client_rectangle().height() - text_size.height() + text_size.height() * as<int32_t>(line_number)); break;
       default: break;
     }
     if (line_number == line_index) return text_location;
