@@ -13,17 +13,25 @@ namespace xtd {
     /// @cond
     class link_label;
     /// @endcond
-    /// 
-    /// @brief Represents a link within a link_label control.
+    
+    /// @brief Represents a link within a xtd::forms::link_label control.
     /// @remarks The xtd::forms::link_label::link class defines the properties of a link within a xtd::forms::link_label control. You can use these properties to provide data to the xtd::forms::link_label::link_clicked event of the xtd::forms::link_label control to perform tasks when the link is clicked in the control. The xtd::forms::link_label::link_data property enables you to define information that the xtd::forms::link_label::link_clicked event can use to display a URL within your web browser or to open a file.
     /// @remarks In addition to information related to the link, the properties of the xtd::forms::link_label::link class also help define the text of thextd::forms::link_label::lLink and its display state. The xtd::forms::link_label::start and xtd::forms::link_label::length properties define the location and length of text from the text of the xtd::forms::link_label control to display as a link. The xtd::forms::link_label::enabled property allows you to display the link as a disabled link, and the xtd::forms::link_label::visited property can alert the user that they already visited the specified link in the current instance of the xtd::forms::link_label.
     /// @remarks You can display multiple links in a single xtd::forms::link_label control. Each xtd::forms::link_label::link is added into the xtd::forms::link_label::link_collection associated with the xtd::forms::link_label control. To obtain the collection of links defined in a xtd::forms::link_label control, use the xtd::forms::link_label::links property.
     class link {
     public:
-      /// @cond
+      /// @brief Initializes a new instance of the xtd::forms::link_label::link class.
       link() = default;
+      /// @brief Initializes a new instance of the xtd::forms::link_label::link class with the specified starting location and number of characters after the starting location within the xtd::forms::link_label.
+      /// @param start The zero-based starting location of the link area within the text of the xtd::forms::link_label.
+      /// @param length The number of characters, after the starting character, to include in the link area.
       link(size_t start, size_t length);
+      /// @brief Initializes a new instance of the xtd::forms::link_label::link class with the specified starting location, number of characters after the starting location within the xtd::forms::link_label, and the data associated with the link.
+      /// @param start The zero-based starting location of the link area within the text of the xtd::forms::link_label.
+      /// @param length The number of characters, after the starting character, to include in the link area.
+      /// @param link_data The data associated with the link.
       link(size_t start, size_t length, std::any link_data);
+      /// @cond
       link(const link&) = default;
       link(link&&) = default;
       link& operator=(const link&) = default;
