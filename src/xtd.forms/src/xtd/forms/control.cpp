@@ -92,17 +92,13 @@ control::control() {
   size_ = default_size();
   controls_.item_added += [&](size_t, reference_wrapper<control> item) {
     item.get().parent_ = handle_;
-    if (handle_) {
+    if (handle_)
       item.get().create_control();
-      item.get().on_parent_changed(event_args::empty);
-      on_control_added(control_event_args(item.get()));
-    }
   };
   
   controls_.item_erased += [&](size_t, reference_wrapper<control> item) {
     item.get().parent_ = 0;
     item.get().destroy_control();
-    on_control_removed(control_event_args(item.get()));
   };
 }
 
@@ -397,9 +393,10 @@ void control::destroy_control() {
       for(control_ref child : controls_)
         child.get().destroy_control();
       
-      if (parent_ != 0 && parent().has_value() && !parent().value().get().get_state(state::destroying))
+      if (parent_ != 0 && parent().has_value() && !parent().value().get().get_state(state::destroying)) {
+        parent().value().get().on_control_removed(control_event_args(*this));
         parent(nullptr);
-      else {
+      } else {
         for (size_t index = 0; index < top_level_controls_.size(); index++) {
           if (top_level_controls_[index].get().handle_ == handle_) {
             top_level_controls_.erase_at(index);
@@ -527,6 +524,8 @@ void control::on_background_image_layout_changed(const event_args &e) {
 }
 
 void control::on_create_control() {
+  on_parent_changed(event_args::empty);
+  if (parent_) parent().value().get().on_control_added(control_event_args(*this));
   for (auto control : controls_) {
     control.get().parent_ = handle_;
     control.get().create_control();
