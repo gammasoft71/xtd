@@ -22,8 +22,8 @@ namespace xtd {
     public:
       /// @cond
       link() = default;
-      link(int32_t start, int32_t length);
-      link(int32_t start, int32_t length, std::any link_data);
+      link(size_t start, size_t length);
+      link(size_t start, size_t length, std::any link_data);
       link(const link&) = default;
       link(link&&) = default;
       link& operator=(const link&) = default;
