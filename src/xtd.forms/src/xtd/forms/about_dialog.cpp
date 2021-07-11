@@ -29,7 +29,7 @@ namespace {
   class credits_item_panel : public horizontal_layout_panel {
   public:
     credits_item_panel() {
-      padding(10);
+      padding(5);
       controls().push_back_range({title_label_, names_label_});
       title_label_.text_align(content_alignment::top_right);
       title_label_.font({title_label_.font(), font_style::bold});
@@ -184,28 +184,28 @@ namespace {
         if (!designers.empty()) {
           about_dialog_standard->designers_.parent(about_dialog_standard->tab_page_credits_);
           about_dialog_standard->designers_.dock(dock_style::top);
-          about_dialog_standard->designers_.title("Designers");
+          about_dialog_standard->designers_.title("Artwork by");
           about_dialog_standard->designers_.names(designers);
         }
         
         if (!translators.empty()) {
           about_dialog_standard->translators_.parent(about_dialog_standard->tab_page_credits_);
           about_dialog_standard->translators_.dock(dock_style::top);
-          about_dialog_standard->translators_.title("Translators");
+          about_dialog_standard->translators_.title("Translated by");
           about_dialog_standard->translators_.names(translators);
         }
         
         if (!doc_writers.empty()) {
           about_dialog_standard->doc_writers_.parent(about_dialog_standard->tab_page_credits_);
           about_dialog_standard->doc_writers_.dock(dock_style::top);
-          about_dialog_standard->doc_writers_.title("Doc writers");
+          about_dialog_standard->doc_writers_.title("Documented by");
           about_dialog_standard->doc_writers_.names(doc_writers);
         }
         
         if (!creators.empty()) {
           about_dialog_standard->creators_.parent(about_dialog_standard->tab_page_credits_);
           about_dialog_standard->creators_.dock(dock_style::top);
-          about_dialog_standard->creators_.title("Creators");
+          about_dialog_standard->creators_.title("Created by");
           about_dialog_standard->creators_.names(creators);
         }
       }
