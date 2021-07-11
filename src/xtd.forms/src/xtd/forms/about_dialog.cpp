@@ -1,6 +1,7 @@
 #include <chrono>
 #include <memory>
 #include <thread>
+#include <vector>
 #include <xtd/literals.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/about_dialog.h>
@@ -10,6 +11,7 @@
 #include "../../../include/xtd/forms/about_dialog.h"
 #include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/form.h"
+#include "../../../include/xtd/forms/horizontal_layout_panel.h"
 #include "../../../include/xtd/forms/label.h"
 #include "../../../include/xtd/forms/link_label.h"
 #include "../../../include/xtd/forms/panel.h"
@@ -20,9 +22,59 @@
 
 using namespace std;
 using namespace xtd;
+using namespace xtd::drawing;
 using namespace xtd::forms;
 
 namespace {
+  class credits_item_panel : public horizontal_layout_panel {
+  public:
+    credits_item_panel() {
+      padding(10);
+      controls().push_back_range({title_label_, names_label_});
+      title_label_.text_align(content_alignment::top_right);
+      title_label_.font({title_label_.font(), font_style::bold});
+      names_label_.text_align(content_alignment::top_left);
+      names_label_.auto_size(true);
+      auto_size(true);
+    }
+    
+    const string title() const {return title_;}
+    credits_item_panel& title(const std::string& title) {
+      if (title_ != title) {
+        title_ = title;
+        title_label_.text(title);
+      }
+      return *this;
+    }
+    
+    const vector<string>& names() const {return names_;}
+    credits_item_panel& names(const vector<string>& names) {
+      if (names_ != names) {
+        bool first = true;
+        names_ = names;
+        names_label_.text("");
+        for (auto name : names_) {
+          names_label_.text(strings::format("{}{}{}", names_label_.text(), first ? "" :"\n", name));
+          first = false;
+        }
+      }
+      return *this;
+    }
+    
+  protected:
+    void on_create_control() override {
+      horizontal_layout_panel::on_create_control();
+      control_layout_style(title_label_, {.50f, size_type::percent});
+      control_layout_style(names_label_, {.50f, size_type::percent});
+    }
+    
+  private:
+    label title_label_;
+    label names_label_;
+    vector<string> names_;
+    string title_;
+  };
+  
   class about_dialog_standard : public form {
   public:
     about_dialog_standard() {
@@ -127,6 +179,35 @@ namespace {
       
       if (has_credit) {
         about_dialog_standard->tab_control_about_.tab_pages().push_back(about_dialog_standard->tab_page_credits_);
+        about_dialog_standard->tab_page_credits_.auto_scroll(true);
+
+        if (!designers.empty()) {
+          about_dialog_standard->designers_.parent(about_dialog_standard->tab_page_credits_);
+          about_dialog_standard->designers_.dock(dock_style::top);
+          about_dialog_standard->designers_.title("Designers");
+          about_dialog_standard->designers_.names(designers);
+        }
+        
+        if (!translators.empty()) {
+          about_dialog_standard->translators_.parent(about_dialog_standard->tab_page_credits_);
+          about_dialog_standard->translators_.dock(dock_style::top);
+          about_dialog_standard->translators_.title("Translators");
+          about_dialog_standard->translators_.names(translators);
+        }
+        
+        if (!doc_writers.empty()) {
+          about_dialog_standard->doc_writers_.parent(about_dialog_standard->tab_page_credits_);
+          about_dialog_standard->doc_writers_.dock(dock_style::top);
+          about_dialog_standard->doc_writers_.title("Doc writers");
+          about_dialog_standard->doc_writers_.names(doc_writers);
+        }
+        
+        if (!creators.empty()) {
+          about_dialog_standard->creators_.parent(about_dialog_standard->tab_page_credits_);
+          about_dialog_standard->creators_.dock(dock_style::top);
+          about_dialog_standard->creators_.title("Creators");
+          about_dialog_standard->creators_.names(creators);
+        }
       }
       
       if (has_license) {
@@ -153,6 +234,10 @@ namespace {
     label label_copyright_;
     link_label link_label_website_;
     tab_page tab_page_credits_;
+    credits_item_panel creators_;
+    credits_item_panel doc_writers_;
+    credits_item_panel translators_;
+    credits_item_panel designers_;
     tab_page tab_page_license_;
     text_box text_box_license_;
   };
