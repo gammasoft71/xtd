@@ -18,7 +18,27 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
-    /// @remarks
+    /// @remarks The xtd::forms::link_label control is similar to a xtd::forms::label control with the exception that it can display a hyperlink. Multiple hyperlinks can be specified in the text of the control. Each hyperlink can perform a different task within an application. For example, you can use a hyperlink to display a Web site in your web browser or to load a log file associated with an application.
+    /// @remarks Each hyperlink displayed in the xtd::forms::link_label control is an instance of the xtd::forms::link_label::link class. The xtd::forms::link_label::link class defines display information, state, and location of the hyperlink. In addition, the xtd::forms::link_label::link::link_data property of the xtd::forms::link_label::link class enables you to associate information, such as a URL to display, with the hyperlink. When a user clicks a hyperlink within the control, the xtd::forms::link_label::link_clicked event is raised, and the xtd::forms::link_label::link object representing the hyperlink that was clicked is passed as part of the xtd::forms::link_label_link_clicked_event_args object that is passed as a parameter to the event handler. You can use this object to obtain the xtd::forms::link_label::link object associated with the hyperlink that was clicked by the user. All hyperlinks contained within the xtd::forms::link_label control are stored in the xtd::forms::link_label::link_collection class instance for the control.
+    /// @remarks There are two ways to add a hyperlink to the the xtd::forms::link_label control. The quickest way is to specify a the xtd::forms::link_label::link_area and assign it to the the xtd::forms::link_label::link_area property. This enables you to specify a single hyperlink within the text of the control. To add multiple hyperlinks, you can use the the xtd::forms::link_label::link_collection::push_back method of the the xtd::forms::link_label::link_collection class by accessing the collection through the the xtd::forms::link_label::links property.
+    /// @remarks When a xtd::forms::link_label control is created, a default hyperlink that contains all the text within the xtd::forms::link_label control is added to the xtd::forms::link_label::link_collection. You can override this default link by specifying a new link area with the xtd::forms::link_label::link_area property, or specify a link using thextd::forms::link_label::link_collection::push_back method of the xtd::forms::link_label::link_collection. You can also remove the default hyperlink by using the xtd::forms::link_label::link_collection::erase method of the xtd::forms::link_label::link_collection class.
+    /// @remarks The xtd::forms::link_label::tab_stop property is true by default, as long as there is at least one link of greater than zero length in the Links collection. The xtd::forms::link_label control has a single xtd::forms::link_label::tab_index value. However, each link of greater than zero length gets its own tab stop, in left-to-right order. To prevent tab navigation to the xtd::forms::link_label control, set the xtd::forms::link_label::tab_stop property to false. However, be aware that adding new links to the xtd::forms::link_label::links collection will automatically set the xtd::forms::link_label::tab_stop property to true again.
+    /// @remarks The xtd::forms::link_label provides a number of properties that enable you to define the display appearance of hyperlinks in the control. The xtd::forms::link_label::active_link_color, xtd::forms::link_label::disabled_link_color, xtd::forms::link_label::link_color, and xtd::forms::link_label::visited_link_color properties define the colors used when displaying a hyperlink in various states. The xtd::forms::link_label::link_behavior property defines the display of the underline that is associated with a hyperlink.
+    /// @par Examples
+    /// The following code example demonstrate the use of link_label control.
+    /// @include link_label.cpp
+    /// @par Windows
+    /// @image html link_label_w.png
+    /// <br>
+    /// @image html link_label_wd.png
+    /// @par macOS
+    /// @image html link_label_m.png
+    /// <br>
+    /// @image html link_label_md.png
+    /// @par Gnome
+    /// @image html link_label_g.png
+    /// <br>
+    /// @image html link_label_gd.png
     class link_label : public label {
     public:
       /// @brief Represents a link within a link_label control.
@@ -60,10 +80,33 @@ namespace xtd {
        inline static value_type empty_;
       };
 
+      /// @brief Initializes a new default instance of the xtd::forms::link_label class.
       link_label();
-
+      
+      /// @brief Gets the color used to display an active link.
+      /// @return A xtd::drawing::color that represents the color to display an active link. The default color is specified by the system, typically this color is xtd::drawing::color::red in light mode and xtd::drawing::color::from_argb(0xFFD03E3D) in dark modde.
+      /// @remarks An active link is a link that is in the process of being clicked. This is similar to the depressed state of a xtd::forms::button control. You can use this property to specify the color that the link is displayed in when the link is in the process of being clicked.
+      /// @remarks There are a number of colors associated with a link. The xtd::forms::link_label::link_color specifies the color of all links displayed in the xtd::forms::link_label control. The xtd::forms::link_label::visited_link_color property enables you to specify the color of a link after it has been visited by the user. When a link is disabled, the xtd::forms::link_label::disabled_link_color is used to display the link in a disabled state.
+      /// @note When setting this property, ensure that the color you are setting the property to does not conflict with the color of the control's background or the text does not display properly. For example, if the background color of the control is xtd::drawing::color::red and this property is set to xtd::drawing::color::red, the text is not shown properly when the link is in the process of being clicked.
+      const xtd::drawing::color& active_link_color() const;
+      /// @brief Sets the color used to display an active link.
+      /// @param color A xtd::drawing::color that represents the color to display an active link. The default color is specified by the system, typically this color is xtd::drawing::color::red in light mode and xtd::drawing::color::from_argb(0xFFD03E3D) in dark modde.
+      /// @remarks An active link is a link that is in the process of being clicked. This is similar to the depressed state of a xtd::forms::button control. You can use this property to specify the color that the link is displayed in when the link is in the process of being clicked.
+      /// @remarks There are a number of colors associated with a link. The xtd::forms::link_label::link_color specifies the color of all links displayed in the xtd::forms::link_label control. The xtd::forms::link_label::visited_link_color property enables you to specify the color of a link after it has been visited by the user. When a link is disabled, the xtd::forms::link_label::disabled_link_color is used to display the link in a disabled state.
+      /// @note When setting this property, ensure that the color you are setting the property to does not conflict with the color of the control's background or the text does not display properly. For example, if the background color of the control is xtd::drawing::color::red and this property is set to xtd::drawing::color::red, the text is not shown properly when the link is in the process of being clicked.
+      link_label& active_link_color(const xtd::drawing::color& color);
+      
+      const xtd::drawing::color& disabled_link_color() const;
+      link_label& disabled_link_color(const xtd::drawing::color& color);
+      
+      const xtd::drawing::color& link_color() const;
+      link_label& link_color(const xtd::drawing::color& color);
+      
       const link_collection& links() const;
       link_collection& links();
+      
+      const xtd::drawing::color& visited_link_color() const;
+      link_label& visited_link_color(const xtd::drawing::color& color);
       
       event<link_label, link_label_clicked_event_handler<control&>> link_clicked;
 
@@ -87,7 +130,7 @@ namespace xtd {
       xtd::drawing::font link_font() const;
       bool mouse_hover_ = false;
       xtd::drawing::color active_link_color_;
-      xtd::drawing::color disable_link_color_;
+      xtd::drawing::color disabled_link_color_;
       xtd::drawing::color link_color_;
       link_collection links_;
       xtd::forms::cursor original_cursor_;

@@ -31,8 +31,8 @@ link_label::link_collection::reference link_label::link_collection::operator[](c
 }
 
 link_label::link_label() {
-  active_link_color_ = application::dark_mode_enabled() ? color::from_argb(0xD0, 0x3E, 0x3D) : xtd::drawing::color::red;
-  disable_link_color_ = application::dark_mode_enabled() ? xtd::drawing::color::from_argb(0xFF858585) : xtd::drawing::color::from_argb(0xFF858585);
+  active_link_color_ = application::dark_mode_enabled() ? color::from_argb(0xFFD03E3D) : xtd::drawing::color::red;
+  disabled_link_color_ = application::dark_mode_enabled() ? xtd::drawing::color::from_argb(0xFF858585) : xtd::drawing::color::from_argb(0xFF858585);
   link_color_ = application::dark_mode_enabled() ? xtd::drawing::color::dodger_blue : xtd::drawing::color::blue;
   visited_link_color_ = application::dark_mode_enabled() ? xtd::drawing::color::light_sky_blue : xtd::drawing::color::purple;
   override_cursor_ = xtd::forms::cursors::hand();
@@ -40,6 +40,7 @@ link_label::link_label() {
   links_.item_added += [&] {
     if (links_.size() == 2 && links_[0].start() == 0 && links_[0].length() == text_.length())
       links_.erase_at(0);
+    //tab_stop(true);
     invalidate();
   };
   links_.item_erased += [&] {
@@ -50,12 +51,60 @@ link_label::link_label() {
   };
 }
 
+const xtd::drawing::color& link_label::active_link_color() const {
+  return active_link_color_;
+}
+
+link_label& link_label::active_link_color(const xtd::drawing::color& color) {
+  if (active_link_color_ != color) {
+    active_link_color_ = color;
+    invalidate();
+  }
+  return *this;
+}
+
+const xtd::drawing::color& link_label::disabled_link_color() const {
+  return disabled_link_color_;
+}
+
+link_label& link_label::disabled_link_color(const xtd::drawing::color& color) {
+  if (active_link_color_ != color) {
+    disabled_link_color_ = color;
+    invalidate();
+  }
+  return *this;
+}
+
+const xtd::drawing::color& link_label::link_color() const {
+  return link_color_;
+}
+
+link_label& link_label::link_color(const xtd::drawing::color& color) {
+  if (link_color_ != color) {
+    link_color_ = color;
+    invalidate();
+  }
+  return *this;
+}
+
 const link_label::link_collection& link_label::links() const {
   return links_;
 }
 
 link_label::link_collection& link_label::links() {
   return links_;
+}
+
+const xtd::drawing::color& link_label::visited_link_color() const {
+  return link_color_;
+}
+
+link_label& link_label::visited_link_color(const xtd::drawing::color& color) {
+  if (visited_link_color_ != color) {
+    visited_link_color_ = color;
+    invalidate();
+  }
+  return *this;
 }
 
 drawing::size link_label::measure_control() const {
@@ -73,8 +122,9 @@ void link_label::on_cursor_changed(const event_args &e) {
 
 void link_label::on_mouse_click(const mouse_event_args& e) {
   label::on_mouse_click(e);
+  if (!enabled()) return;
   auto& link = point_in_link(e.location());
-  if (link != link_empty_) {
+  if (link != link_empty_ && link.enabled()) {
     link_label_clicked_event_args args(link, e.button());
     link_clicked(*this, args);
     if (args.visited()) {
@@ -86,6 +136,7 @@ void link_label::on_mouse_click(const mouse_event_args& e) {
 
 void link_label::on_mouse_down(const mouse_event_args& e) {
   label::on_mouse_down(e);
+  if (!enabled()) return;
   auto& link = point_in_link(e.location());
   if (link != link_empty_) {
     link.active_ = true;
@@ -95,15 +146,18 @@ void link_label::on_mouse_down(const mouse_event_args& e) {
 
 void link_label::on_mouse_up(const mouse_event_args& e) {
   label::on_mouse_up(e);
+  if (!enabled()) return;
   for (auto& link : links_)
     link.active_ = false;
   invalidate();
 }
 
 void link_label::on_mouse_move(const mouse_event_args& e) {
+  label::on_mouse_move(e);
+  if (!enabled()) return;
   mouse_hover_ = true;
   auto& link = point_in_link(e.location());
-  cursor(link != link_empty_ ? override_cursor_ : original_cursor_);
+  cursor(link != link_empty_ && link.enabled() ? override_cursor_ : original_cursor_);
   mouse_hover_ = false;
 }
 
@@ -113,27 +167,33 @@ void link_label::on_paint(paint_event_args& e) {
   size_t line_number = 0;
   size_t index = 0;
   for (auto line : strings::split(text_, {'\n'})) {
-    size_t line_index = 0;
     auto text_location = get_text_location(line_number);
+    size_t line_index = 0;
     drawing::size size_text;
     string text;
     for (auto link : links_) {
       drawing::color color = link_color_;
-      if (!enabled()) color = disable_link_color_;
+      if (!link.enabled()) color = disabled_link_color_;
       else if (link.active_) color = active_link_color_;
       else if (link.visited()) color = visited_link_color_;
 
       if (index < link.start()) {
         text = strings::substring(line, line_index, link.start() - line_index);
         size_text = drawing::size::ceiling(e.graphics().measure_string(text, font()));
-        e.graphics().draw_string(text, font(), solid_brush(fore_color()), {text_location, size_text});
+        if (enabled())
+          e.graphics().draw_string(text, font(), solid_brush(fore_color()), {text_location, size_text});
+        else
+          e.graphics().draw_string(text, font(), solid_brush(system_colors::gray_text()), {text_location, size_text});
         text_location.x(text_location.x() + size_text.width());
         line_index += text.length();
       }
       if (index <= link.start() && line.length() + index > link.start()) {
         text = strings::substring(line, link.start() - index, link.length());
         size_text = drawing::size::ceiling(e.graphics().measure_string(text, link_font()));
-        e.graphics().draw_string(text, link_font(), solid_brush(color), {text_location, size_text});
+        if (enabled())
+          e.graphics().draw_string(text, link_font(), solid_brush(color), {text_location, size_text});
+        else
+          e.graphics().draw_string(text, link_font(), solid_brush(system_colors::gray_text()), {text_location, size_text});
         text_location.x(text_location.x() + size_text.width());
         line_index = link.start() - index + text.length();
       }
@@ -142,7 +202,10 @@ void link_label::on_paint(paint_event_args& e) {
     if (line_index < line.length()) {
       text = strings::substring(line, line_index, line.length());
       size_text = drawing::size::ceiling(e.graphics().measure_string(text, font()));
-      e.graphics().draw_string(text, font(), solid_brush(fore_color()), {text_location, size_text});
+      if (enabled())
+        e.graphics().draw_string(text, font(), solid_brush(fore_color()), {text_location, size_text});
+      else
+        e.graphics().draw_string(text, font(), solid_brush(system_colors::gray_text()), {text_location, size_text});
       line_index = line.length();
     }
     index += line_index + 1;
