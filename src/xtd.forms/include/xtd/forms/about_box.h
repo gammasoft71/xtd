@@ -31,14 +31,14 @@ namespace xtd {
     /// @image html about_box_gd.png
     class forms_export_ about_box final static_ {
     public:
-      /// @brief Represents a creators collection.
-      using creators_collection = xtd::forms::about_dialog::creators_collection;
-      /// @brief Represents a designers collection.
-      using designers_collection = xtd::forms::about_dialog::designers_collection;
-      /// @brief Represents a documentt writers collection.
-      using doc_writers_collection = xtd::forms::about_dialog::doc_writers_collection;
-      /// @brief Represents a translators collection.
-      using translators_collection = xtd::forms::about_dialog::translators_collection;
+      /// @brief Represents a author collection.
+      using author_collection = xtd::forms::about_dialog::author_collection;
+      /// @brief Represents a artist collection.
+      using artist_collection = xtd::forms::about_dialog::artist_collection;
+      /// @brief Represents a documenter collection.
+      using documenter_collection = xtd::forms::about_dialog::documenter_collection;
+      /// @brief Represents a translator collection.
+      using translator_collection = xtd::forms::about_dialog::translator_collection;
 
       /// @brief Displays an about box in front of the specified window.
       /// @param owner A iwin32_window that represents the owner window of the busy box.
@@ -112,7 +112,7 @@ namespace xtd {
       /// @param website_label A string that specifies the website label to display.
       static void show(const iwin32_window& owner, const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label) {show_about_dialog(&owner, text, caption, icon, version, long_version, copyright, website, website_label);}
 
-      /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label and creators.
+      /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label and authors.
       /// @param owner A iwin32_window that represents the owner window of the busy box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
@@ -122,10 +122,10 @@ namespace xtd {
       /// @param copyright A string that specifies the copyright to display.
       /// @param website A string that specifies the website url.
       /// @param website_label A string that specifies the website label to display.
-      /// @param creators A creators_collection that specifies the creators collection.
-      static void show(const iwin32_window& owner, const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const creators_collection& creators) {show_about_dialog(&owner, text, caption, icon, version, long_version, copyright, website, website_label, creators);}
+      /// @param authors A authors_collection that specifies the authors collection.
+      static void show(const iwin32_window& owner, const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const author_collection& authors) {show_about_dialog(&owner, text, caption, icon, version, long_version, copyright, website, website_label, authors);}
 
-      /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, creators and documentation writers.
+      /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors and documentation writers.
       /// @param owner A iwin32_window that represents the owner window of the busy box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
@@ -135,11 +135,11 @@ namespace xtd {
       /// @param copyright A string that specifies the copyright to display.
       /// @param website A string that specifies the website url.
       /// @param website_label A string that specifies the website label to display.
-      /// @param creators A creators_collection that specifies the creators collection.
-      /// @param doc_writers A doc_writers_collection that specifies the documentation writers collection.
-      static void show(const iwin32_window& owner, const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const creators_collection& creators, const doc_writers_collection& doc_writers) {show_about_dialog(&owner, text, caption, icon, version, long_version, copyright, website, website_label, creators, doc_writers);}
+      /// @param authors A authors_collection that specifies the authors collection.
+      /// @param documenters A documenters_collection that specifies the documentation writers collection.
+      static void show(const iwin32_window& owner, const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const author_collection& authors, const documenter_collection& documenters) {show_about_dialog(&owner, text, caption, icon, version, long_version, copyright, website, website_label, authors, documenters);}
 
-      /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, creators, documentation writers and translators.
+      /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers and translators.
       /// @param owner A iwin32_window that represents the owner window of the busy box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
@@ -149,12 +149,12 @@ namespace xtd {
       /// @param copyright A string that specifies the copyright to display.
       /// @param website A string that specifies the website url.
       /// @param website_label A string that specifies the website label to display.
-      /// @param creators A creators_collection that specifies the creators collection.
-      /// @param doc_writers A doc_writers_collection that specifies the documentation writers collection.
+      /// @param authors A authors_collection that specifies the authors collection.
+      /// @param documenters A documenters_collection that specifies the documentation writers collection.
       /// @param translators A translators_collection that specifies the translators collection.
-      static void show(const iwin32_window& owner, const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const creators_collection& creators, const doc_writers_collection& doc_writers, const translators_collection translators) {show_about_dialog(&owner, text, caption, icon, version, long_version, copyright, website, website_label, creators, doc_writers, translators);}
+      static void show(const iwin32_window& owner, const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection translators) {show_about_dialog(&owner, text, caption, icon, version, long_version, copyright, website, website_label, authors, documenters, translators);}
 
-      /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, creators, documentation writers, translators and designers.
+      /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators and artists.
       /// @param owner A iwin32_window that represents the owner window of the busy box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
@@ -164,13 +164,13 @@ namespace xtd {
       /// @param copyright A string that specifies the copyright to display.
       /// @param website A string that specifies the website url.
       /// @param website_label A string that specifies the website label to display.
-      /// @param creators A creators_collection that specifies the creators collection.
-      /// @param doc_writers A doc_writers_collection that specifies the documentation writers collection.
+      /// @param authors A authors_collection that specifies the authors collection.
+      /// @param documenters A documenters_collection that specifies the documentation writers collection.
       /// @param translators A translators_collection that specifies the translators collection.
-      /// @param designers A designers_collection that specifies the gesigners collection.
-      static void show(const iwin32_window& owner, const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const creators_collection& creators, const doc_writers_collection& doc_writers, const translators_collection translators, const designers_collection& designers) {show_about_dialog(&owner, text, caption, icon, version, long_version, copyright, website, website_label, creators, doc_writers, translators, designers);}
+      /// @param artists A artists_collection that specifies the gesigners collection.
+      static void show(const iwin32_window& owner, const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection translators, const artist_collection& artists) {show_about_dialog(&owner, text, caption, icon, version, long_version, copyright, website, website_label, authors, documenters, translators, artists);}
 
-      /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, creators, documentation writers, translators, designers and license.
+      /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators, artists and license.
       /// @param owner A iwin32_window that represents the owner window of the busy box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
@@ -180,12 +180,12 @@ namespace xtd {
       /// @param copyright A string that specifies the copyright to display.
       /// @param website A string that specifies the website url.
       /// @param website_label A string that specifies the website label to display.
-      /// @param creators A creators_collection that specifies the creators collection.
-      /// @param doc_writers A doc_writers_collection that specifies the documentation writers collection.
+      /// @param authors A authors_collection that specifies the authors collection.
+      /// @param documenters A documenters_collection that specifies the documentation writers collection.
       /// @param translators A translators_collection that specifies the translators collection.
-      /// @param designers A designers_collection that specifies the gesigners collection.
+      /// @param artists A artists_collection that specifies the gesigners collection.
       /// @param license A string that specifies the license text to display.
-      static void show(const iwin32_window& owner, const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const creators_collection& creators, const doc_writers_collection& doc_writers, const translators_collection translators, const designers_collection& designers, const std::string& license) {show_about_dialog(&owner, text, caption, icon, version, long_version, copyright, website, website_label, creators, doc_writers, translators, designers, license);}
+      static void show(const iwin32_window& owner, const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection translators, const artist_collection& artists, const std::string& license) {show_about_dialog(&owner, text, caption, icon, version, long_version, copyright, website, website_label, authors, documenters, translators, artists, license);}
 
       /// @brief Displays a about box.
       static void show() {show_about_dialog<xtd::drawing::icon>(nullptr);}
@@ -250,7 +250,7 @@ namespace xtd {
       /// @param website_label A string that specifies the website label to display.
       static void show(const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label) {show_about_dialog(nullptr, text, caption, icon, version, long_version, copyright, website, website_label);}
       
-      /// @brief Displays a about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label and creators.
+      /// @brief Displays a about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label and authors.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -259,10 +259,10 @@ namespace xtd {
       /// @param copyright A string that specifies the copyright to display.
       /// @param website A string that specifies the website url.
       /// @param website_label A string that specifies the website label to display.
-      /// @param creators A creators_collection that specifies the creators collection.
-      static void show(const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const creators_collection& creators) {show_about_dialog(nullptr, text, caption, icon, version, long_version, copyright, website, website_label, creators);}
+      /// @param authors A authors_collection that specifies the authors collection.
+      static void show(const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const author_collection& authors) {show_about_dialog(nullptr, text, caption, icon, version, long_version, copyright, website, website_label, authors);}
       
-      /// @brief Displays a about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, creators and documentation writers.
+      /// @brief Displays a about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors and documentation writers.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -271,11 +271,11 @@ namespace xtd {
       /// @param copyright A string that specifies the copyright to display.
       /// @param website A string that specifies the website url.
       /// @param website_label A string that specifies the website label to display.
-      /// @param creators A creators_collection that specifies the creators collection.
-      /// @param doc_writers A doc_writers_collection that specifies the documentation writers collection.
-      static void show(const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const creators_collection& creators, const doc_writers_collection& doc_writers) {show_about_dialog(nullptr, text, caption, icon, version, long_version, copyright, website, website_label, creators, doc_writers);}
+      /// @param authors A authors_collection that specifies the authors collection.
+      /// @param documenters A documenters_collection that specifies the documentation writers collection.
+      static void show(const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const author_collection& authors, const documenter_collection& documenters) {show_about_dialog(nullptr, text, caption, icon, version, long_version, copyright, website, website_label, authors, documenters);}
       
-      /// @brief Displays a about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, creators, documentation writers and translators.
+      /// @brief Displays a about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers and translators.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -284,12 +284,12 @@ namespace xtd {
       /// @param copyright A string that specifies the copyright to display.
       /// @param website A string that specifies the website url.
       /// @param website_label A string that specifies the website label to display.
-      /// @param creators A creators_collection that specifies the creators collection.
-      /// @param doc_writers A doc_writers_collection that specifies the documentation writers collection.
+      /// @param authors A authors_collection that specifies the authors collection.
+      /// @param documenters A documenters_collection that specifies the documentation writers collection.
       /// @param translators A translators_collection that specifies the translators collection.
-      static void show(const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const creators_collection& creators, const doc_writers_collection& doc_writers, const translators_collection translators) {show_about_dialog(nullptr, text, caption, icon, version, long_version, copyright, website, website_label, creators, doc_writers, translators);}
+      static void show(const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection translators) {show_about_dialog(nullptr, text, caption, icon, version, long_version, copyright, website, website_label, authors, documenters, translators);}
       
-      /// @brief Displays a about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, creators, documentation writers, translators and designers.
+      /// @brief Displays a about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators and artists.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -298,13 +298,13 @@ namespace xtd {
       /// @param copyright A string that specifies the copyright to display.
       /// @param website A string that specifies the website url.
       /// @param website_label A string that specifies the website label to display.
-      /// @param creators A creators_collection that specifies the creators collection.
-      /// @param doc_writers A doc_writers_collection that specifies the documentation writers collection.
+      /// @param authors A authors_collection that specifies the authors collection.
+      /// @param documenters A documenters_collection that specifies the documentation writers collection.
       /// @param translators A translators_collection that specifies the translators collection.
-      /// @param designers A designers_collection that specifies the gesigners collection.
-      static void show(const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const creators_collection& creators, const doc_writers_collection& doc_writers, const translators_collection translators, const designers_collection& designers) {show_about_dialog(nullptr, text, caption, icon, version, long_version, copyright, website, website_label, creators, doc_writers, translators, designers);}
+      /// @param artists A artists_collection that specifies the gesigners collection.
+      static void show(const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection translators, const artist_collection& artists) {show_about_dialog(nullptr, text, caption, icon, version, long_version, copyright, website, website_label, authors, documenters, translators, artists);}
       
-      /// @brief Displays a about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, creators, documentation writers, translators, designers and license.
+      /// @brief Displays a about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators, artists and license.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -313,12 +313,12 @@ namespace xtd {
       /// @param copyright A string that specifies the copyright to display.
       /// @param website A string that specifies the website url.
       /// @param website_label A string that specifies the website label to display.
-      /// @param creators A creators_collection that specifies the creators collection.
-      /// @param doc_writers A doc_writers_collection that specifies the documentation writers collection.
+      /// @param authors A authors_collection that specifies the authors collection.
+      /// @param documenters A documenters_collection that specifies the documentation writers collection.
       /// @param translators A translators_collection that specifies the translators collection.
-      /// @param designers A designers_collection that specifies the gesigners collection.
+      /// @param artists A artists_collection that specifies the gesigners collection.
       /// @param license A string that specifies the license text to display.
-      static void show(const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const creators_collection& creators, const doc_writers_collection& doc_writers, const translators_collection translators, const designers_collection& designers, const std::string& license) {show_about_dialog(nullptr, text, caption, icon, version, long_version, copyright, website, website_label, creators, doc_writers, translators, designers, license);}
+      static void show(const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection translators, const artist_collection& artists, const std::string& license) {show_about_dialog(nullptr, text, caption, icon, version, long_version, copyright, website, website_label, authors, documenters, translators, artists, license);}
 
       /// @brief Displays a about box. The about box displays a message, title bar caption and icon.
       /// @param text A string that specifies the text to display.
@@ -371,7 +371,7 @@ namespace xtd {
       /// @param website_label A string that specifies the website label to display.
       static void show(const std::string& text, const std::string& caption, const xtd::drawing::bitmap& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label) {show_about_dialog(nullptr, text, caption, icon, version, long_version, copyright, website, website_label);}
       
-      /// @brief Displays a about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label and creators.
+      /// @brief Displays a about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label and authors.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -380,10 +380,10 @@ namespace xtd {
       /// @param copyright A string that specifies the copyright to display.
       /// @param website A string that specifies the website url.
       /// @param website_label A string that specifies the website label to display.
-      /// @param creators A creators_collection that specifies the creators collection.
-      static void show(const std::string& text, const std::string& caption, const xtd::drawing::bitmap& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const creators_collection& creators) {show_about_dialog(nullptr, text, caption, icon, version, long_version, copyright, website, website_label, creators);}
+      /// @param authors A authors_collection that specifies the authors collection.
+      static void show(const std::string& text, const std::string& caption, const xtd::drawing::bitmap& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const author_collection& authors) {show_about_dialog(nullptr, text, caption, icon, version, long_version, copyright, website, website_label, authors);}
       
-      /// @brief Displays a about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, creators and documentation writers.
+      /// @brief Displays a about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors and documentation writers.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -392,11 +392,11 @@ namespace xtd {
       /// @param copyright A string that specifies the copyright to display.
       /// @param website A string that specifies the website url.
       /// @param website_label A string that specifies the website label to display.
-      /// @param creators A creators_collection that specifies the creators collection.
-      /// @param doc_writers A doc_writers_collection that specifies the documentation writers collection.
-      static void show(const std::string& text, const std::string& caption, const xtd::drawing::bitmap& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const creators_collection& creators, const doc_writers_collection& doc_writers) {show_about_dialog(nullptr, text, caption, icon, version, long_version, copyright, website, website_label, creators, doc_writers);}
+      /// @param authors A authors_collection that specifies the authors collection.
+      /// @param documenters A documenters_collection that specifies the documentation writers collection.
+      static void show(const std::string& text, const std::string& caption, const xtd::drawing::bitmap& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const author_collection& authors, const documenter_collection& documenters) {show_about_dialog(nullptr, text, caption, icon, version, long_version, copyright, website, website_label, authors, documenters);}
       
-      /// @brief Displays a about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, creators, documentation writers and translators.
+      /// @brief Displays a about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers and translators.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -405,12 +405,12 @@ namespace xtd {
       /// @param copyright A string that specifies the copyright to display.
       /// @param website A string that specifies the website url.
       /// @param website_label A string that specifies the website label to display.
-      /// @param creators A creators_collection that specifies the creators collection.
-      /// @param doc_writers A doc_writers_collection that specifies the documentation writers collection.
+      /// @param authors A authors_collection that specifies the authors collection.
+      /// @param documenters A documenters_collection that specifies the documentation writers collection.
       /// @param translators A translators_collection that specifies the translators collection.
-      static void show(const std::string& text, const std::string& caption, const xtd::drawing::bitmap& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const creators_collection& creators, const doc_writers_collection& doc_writers, const translators_collection translators) {show_about_dialog(nullptr, text, caption, icon, version, long_version, copyright, website, website_label, creators, doc_writers, translators);}
+      static void show(const std::string& text, const std::string& caption, const xtd::drawing::bitmap& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection translators) {show_about_dialog(nullptr, text, caption, icon, version, long_version, copyright, website, website_label, authors, documenters, translators);}
       
-      /// @brief Displays a about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, creators, documentation writers, translators and designers.
+      /// @brief Displays a about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators and artists.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -419,13 +419,13 @@ namespace xtd {
       /// @param copyright A string that specifies the copyright to display.
       /// @param website A string that specifies the website url.
       /// @param website_label A string that specifies the website label to display.
-      /// @param creators A creators_collection that specifies the creators collection.
-      /// @param doc_writers A doc_writers_collection that specifies the documentation writers collection.
+      /// @param authors A authors_collection that specifies the authors collection.
+      /// @param documenters A documenters_collection that specifies the documentation writers collection.
       /// @param translators A translators_collection that specifies the translators collection.
-      /// @param designers A designers_collection that specifies the gesigners collection.
-      static void show(const std::string& text, const std::string& caption, const xtd::drawing::bitmap& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const creators_collection& creators, const doc_writers_collection& doc_writers, const translators_collection translators, const designers_collection& designers) {show_about_dialog(nullptr, text, caption, icon, version, long_version, copyright, website, website_label, creators, doc_writers, translators, designers);}
+      /// @param artists A artists_collection that specifies the gesigners collection.
+      static void show(const std::string& text, const std::string& caption, const xtd::drawing::bitmap& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection translators, const artist_collection& artists) {show_about_dialog(nullptr, text, caption, icon, version, long_version, copyright, website, website_label, authors, documenters, translators, artists);}
       
-      /// @brief Displays a about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, creators, documentation writers, translators, designers and license.
+      /// @brief Displays a about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators, artists and license.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -434,16 +434,16 @@ namespace xtd {
       /// @param copyright A string that specifies the copyright to display.
       /// @param website A string that specifies the website url.
       /// @param website_label A string that specifies the website label to display.
-      /// @param creators A creators_collection that specifies the creators collection.
-      /// @param doc_writers A doc_writers_collection that specifies the documentation writers collection.
+      /// @param authors A authors_collection that specifies the authors collection.
+      /// @param documenters A documenters_collection that specifies the documentation writers collection.
       /// @param translators A translators_collection that specifies the translators collection.
-      /// @param designers A designers_collection that specifies the gesigners collection.
+      /// @param artists A artists_collection that specifies the gesigners collection.
       /// @param license A string that specifies the license text to display.
-      static void show(const std::string& text, const std::string& caption, const xtd::drawing::bitmap& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const creators_collection& creators, const doc_writers_collection& doc_writers, const translators_collection translators, const designers_collection& designers, const std::string& license) {show_about_dialog(nullptr, text, caption, icon, version, long_version, copyright, website, website_label, creators, doc_writers, translators, designers, license);}
+      static void show(const std::string& text, const std::string& caption, const xtd::drawing::bitmap& icon, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection translators, const artist_collection& artists, const std::string& license) {show_about_dialog(nullptr, text, caption, icon, version, long_version, copyright, website, website_label, authors, documenters, translators, artists, license);}
 
     private:
       template<typename icon_t>
-      static void show_about_dialog(const iwin32_window* owner, const std::string& text = "About box..."_t, const std::string& caption = "", const icon_t& icon = icon_t::empty, const std::string& version = "", const std::string& long_version = "", const std::string& copyright = "", const std::string& website = "", const std::string& website_label = "", const creators_collection& creators = creators_collection {}, const doc_writers_collection& doc_writers = doc_writers_collection {}, const translators_collection translators = translators_collection {}, const designers_collection& designers = designers_collection {}, const std::string& license = "") {
+      static void show_about_dialog(const iwin32_window* owner, const std::string& text = "About box..."_t, const std::string& caption = "", const icon_t& icon = icon_t::empty, const std::string& version = "", const std::string& long_version = "", const std::string& copyright = "", const std::string& website = "", const std::string& website_label = "", const author_collection& authors = author_collection {}, const documenter_collection& documenters = documenter_collection {}, const translator_collection translators = translator_collection {}, const artist_collection& artists = artist_collection {}, const std::string& license = "") {
         about_dialog dialog;
         dialog.description(text);
         dialog.name(caption);
@@ -453,10 +453,10 @@ namespace xtd {
         dialog.copyright(copyright);
         dialog.website(website);
         dialog.website_label(website_label);
-        dialog.creators(creators);
-        dialog.doc_writers(doc_writers);
+        dialog.authors(authors);
+        dialog.documenters(documenters);
         dialog.translators(translators);
-        dialog.designers(designers);
+        dialog.artists(artists);
         dialog.license(license);
         owner ? dialog.show(*owner) : dialog.show();
       }

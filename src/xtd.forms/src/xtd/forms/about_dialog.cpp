@@ -133,14 +133,14 @@ namespace {
       text_box_license_.dock(dock_style::fill);
     }
     
-    static void show(intptr_t hwnd, const xtd::drawing::image& icon, const std::string& name, const std::string& description, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const std::vector<std::string>& creators, const std::vector<std::string>& designers, const std::vector<std::string>& doc_writers, const std::vector<std::string>& translators, const std::string& license) {
+    static void show(intptr_t hwnd, const xtd::drawing::image& icon, const std::string& name, const std::string& description, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const std::vector<std::string>& authors, const std::vector<std::string>& artists, const std::vector<std::string>& documenters, const std::vector<std::string>& translators, const std::string& license) {
       static std::unique_ptr<about_dialog_standard> about_dialog_standard;
       if (about_dialog_standard != nullptr) {
         about_dialog_standard->activate();
         return;
       }
       about_dialog_standard = std::make_unique<::about_dialog_standard>();
-      auto has_credit = !(creators.empty() && doc_writers.empty() && translators.empty() && designers.empty());
+      auto has_credit = !(authors.empty() && documenters.empty() && translators.empty() && artists.empty());
       auto has_license = !license.empty();
       if (icon != xtd::drawing::bitmap::empty)
         about_dialog_standard->picture_box_icon_.image(xtd::drawing::bitmap(icon, {64, 64}));
@@ -181,11 +181,11 @@ namespace {
         about_dialog_standard->tab_control_about_.tab_pages().push_back(about_dialog_standard->tab_page_credits_);
         about_dialog_standard->tab_page_credits_.auto_scroll(true);
 
-        if (!designers.empty()) {
-          about_dialog_standard->designers_.parent(about_dialog_standard->tab_page_credits_);
-          about_dialog_standard->designers_.dock(dock_style::top);
-          about_dialog_standard->designers_.title("Artwork by");
-          about_dialog_standard->designers_.names(designers);
+        if (!artists.empty()) {
+          about_dialog_standard->artists_.parent(about_dialog_standard->tab_page_credits_);
+          about_dialog_standard->artists_.dock(dock_style::top);
+          about_dialog_standard->artists_.title("Artwork by");
+          about_dialog_standard->artists_.names(artists);
         }
         
         if (!translators.empty()) {
@@ -195,18 +195,18 @@ namespace {
           about_dialog_standard->translators_.names(translators);
         }
         
-        if (!doc_writers.empty()) {
-          about_dialog_standard->doc_writers_.parent(about_dialog_standard->tab_page_credits_);
-          about_dialog_standard->doc_writers_.dock(dock_style::top);
-          about_dialog_standard->doc_writers_.title("Documented by");
-          about_dialog_standard->doc_writers_.names(doc_writers);
+        if (!documenters.empty()) {
+          about_dialog_standard->documenters_.parent(about_dialog_standard->tab_page_credits_);
+          about_dialog_standard->documenters_.dock(dock_style::top);
+          about_dialog_standard->documenters_.title("Documented by");
+          about_dialog_standard->documenters_.names(documenters);
         }
         
-        if (!creators.empty()) {
-          about_dialog_standard->creators_.parent(about_dialog_standard->tab_page_credits_);
-          about_dialog_standard->creators_.dock(dock_style::top);
-          about_dialog_standard->creators_.title("Created by");
-          about_dialog_standard->creators_.names(creators);
+        if (!authors.empty()) {
+          about_dialog_standard->authors_.parent(about_dialog_standard->tab_page_credits_);
+          about_dialog_standard->authors_.dock(dock_style::top);
+          about_dialog_standard->authors_.title("Created by");
+          about_dialog_standard->authors_.names(authors);
         }
       }
       
@@ -234,10 +234,10 @@ namespace {
     label label_copyright_;
     link_label link_label_website_;
     tab_page tab_page_credits_;
-    credits_item_panel creators_;
-    credits_item_panel doc_writers_;
+    credits_item_panel authors_;
+    credits_item_panel documenters_;
     credits_item_panel translators_;
-    credits_item_panel designers_;
+    credits_item_panel artists_;
     tab_page tab_page_license_;
     text_box text_box_license_;
   };
@@ -246,26 +246,26 @@ namespace {
 void about_dialog::reset() {
   dialog_style_ = xtd::forms::dialog_style::standard;
   icon_ = xtd::drawing::image::empty;
-  name_ = "";
-  description_ = "";
-  version_ = "";
-  long_version_ = "";
+  artists_.clear();
+  authors_.clear();
   copyright_ = "";
+  description_ = "";
+  documenters_.clear();
+  license_ = "";
+  long_version_ = "";
+  name_ = "";
+  translators_.clear();
+  version_ = "";
   website_ = "";
   website_label_ = "";
-  creators_.clear();
-  designers_.clear();
-  doc_writers_.clear();
-  translators_.clear();
-  license_ = "";
 }
 
 void about_dialog::show() {
-  if (dialog_style_ == xtd::forms::dialog_style::system) native::about_dialog::show(0, xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(icon_)), name_, description_, version_, long_version_, copyright_, website_, website_label_, creators_.to_array(), designers_.to_array(), doc_writers_.to_array(), translators_.to_array(), license_);
-  else about_dialog_standard::show(0, icon_, name_, description_, version_, long_version_, copyright_, website_, website_label_, creators_.to_array(), designers_.to_array(), doc_writers_.to_array(), translators_.to_array(), license_);
+  if (dialog_style_ == xtd::forms::dialog_style::system) native::about_dialog::show(0, xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(icon_)), name_, description_, version_, long_version_, copyright_, website_, website_label_, authors_.to_array(), artists_.to_array(), documenters_.to_array(), translators_.to_array(), license_);
+  else about_dialog_standard::show(0, icon_, name_, description_, version_, long_version_, copyright_, website_, website_label_, authors_.to_array(), artists_.to_array(), documenters_.to_array(), translators_.to_array(), license_);
 }
 
 void about_dialog::show(const iwin32_window& owner) {
-  if (dialog_style_ == xtd::forms::dialog_style::system) native::about_dialog::show(owner.handle(), xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(icon_)), name_, description_, version_, long_version_, copyright_, website_, website_label_, creators_.to_array(), designers_.to_array(), doc_writers_.to_array(), translators_.to_array(), license_);
-  else about_dialog_standard::show(owner.handle(), icon_, name_, description_, version_, long_version_, copyright_, website_, website_label_, creators_.to_array(), designers_.to_array(), doc_writers_.to_array(), translators_.to_array(), license_);
+  if (dialog_style_ == xtd::forms::dialog_style::system) native::about_dialog::show(owner.handle(), xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(icon_)), name_, description_, version_, long_version_, copyright_, website_, website_label_, authors_.to_array(), artists_.to_array(), documenters_.to_array(), translators_.to_array(), license_);
+  else about_dialog_standard::show(owner.handle(), icon_, name_, description_, version_, long_version_, copyright_, website_, website_label_, authors_.to_array(), artists_.to_array(), documenters_.to_array(), translators_.to_array(), license_);
 }

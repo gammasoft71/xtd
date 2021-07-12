@@ -23,10 +23,10 @@ public:
       about_dialog.copyright("Copyright (c) 2021 Gammasoft.\nAll rights reserved.");
       about_dialog.website("https://gammasoft71.wixsite.com/gammasoft");
       about_dialog.website_label("gammasoft website");
-      about_dialog.creators({"Gammasoft", "Contributors"});
-      about_dialog.doc_writers({"Gammasoft"});
+      about_dialog.authors({"Gammasoft", "Contributors"});
+      about_dialog.documenters({"Gammasoft"});
       about_dialog.translators({"Gammasoft", "Contributors"});
-      about_dialog.designers({"Gammasoft"});
+      about_dialog.artists({"Gammasoft"});
       about_dialog.license("MIT License\n"
                            "\n"
                            "Copyright (c) 2021 Gammasoft.\n"
