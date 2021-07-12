@@ -50,17 +50,45 @@ namespace xtd {
     /// @image html about_dialog_system_gd.png
     class forms_export_ about_dialog final : public component {
     public:
-      /// @brief Represents a creators collection.
-      using creators_collection = xtd::forms::layout::arranged_element_collection<std::string>;
-      /// @brief Represents a designers collection.
-      using designers_collection = xtd::forms::layout::arranged_element_collection<std::string>;
-      /// @brief Represents a documentt writers collection.
-      using doc_writers_collection = xtd::forms::layout::arranged_element_collection<std::string>;
-      /// @brief Represents a translators collection.
-      using translators_collection = xtd::forms::layout::arranged_element_collection<std::string>;
+      /// @brief Represents a author collection.
+      using author_collection = xtd::forms::layout::arranged_element_collection<std::string>;
+      /// @brief Represents a artist collection.
+      using artist_collection = xtd::forms::layout::arranged_element_collection<std::string>;
+      /// @brief Represents a documenter collection.
+      using documenter_collection = xtd::forms::layout::arranged_element_collection<std::string>;
+      /// @brief Represents a translator collection.
+      using translator_collection = xtd::forms::layout::arranged_element_collection<std::string>;
 
       /// @brief Initializes a new instance of the about_dialog class.
       about_dialog() = default;
+      
+      /// @brief Gets the artists array.
+      /// @return The artists array.
+      const artist_collection& artists() const {return artists_;}
+      /// @brief Gets the artists array.
+      /// @return The artists array.
+      artist_collection& artists() {return artists_;}
+      /// @brief Sets the artists array.
+      /// @param artists The artists array.
+      /// @return Current about_dialog instance.
+      about_dialog& artists(const artist_collection& artists) {
+        artists_ = artists;
+        return *this;
+      }
+
+      /// @brief Gets the authors array.
+      /// @return The author array.
+      const author_collection& authors() const {return authors_;}
+      /// @brief Gets the authors array.
+      /// @return The authors array.
+      author_collection& authors() {return authors_;}
+      /// @brief Sets the authors array.
+      /// @param authors The authors array.
+      /// @return Current about_dialog instance.
+      about_dialog& authors(const author_collection& authors) {
+        authors_ = authors;
+        return *this;
+      }
       
       /// @brief Gets the product copyright.
       /// @return The product copyright.
@@ -70,34 +98,6 @@ namespace xtd {
       /// @return Current about_dialog instance.
       about_dialog& copyright(const std::string& copyright) {
         copyright_ = copyright;
-        return *this;
-      }
-      
-      /// @brief Gets the creators array.
-      /// @return The creator array.
-      const creators_collection& creators() const {return creators_;}
-      /// @brief Gets the creators array.
-      /// @return The creator array.
-      creators_collection& creators() {return creators_;}
-      /// @brief Sets the creators array.
-      /// @param creators The creators array.
-      /// @return Current about_dialog instance.
-      about_dialog& creators(const creators_collection& creators) {
-        creators_ = creators;
-        return *this;
-      }
-      
-      /// @brief Gets the documentation writers array.
-      /// @return The documentation writers array.
-      const doc_writers_collection& doc_writers() const {return doc_writers_;}
-      /// @brief Gets the documentation writers array.
-      /// @return The designers array.
-      doc_writers_collection& doc_writers() {return doc_writers_;}
-      /// @brief Sets the documentation writers array.
-      /// @param doc_writers The documentation writers array.
-      /// @return Current about_dialog instance.
-      about_dialog& doc_writers(const doc_writers_collection& doc_writers) {
-        doc_writers_ = doc_writers;
         return *this;
       }
 
@@ -111,18 +111,18 @@ namespace xtd {
         description_ = description;
         return *this;
       }
-      
-      /// @brief Gets the designers array.
-      /// @return The designers array.
-      const designers_collection& designers() const {return designers_;}
-      /// @brief Gets the designers array.
-      /// @return The designers array.
-      designers_collection& designers() {return designers_;}
-      /// @brief Sets the designers array.
-      /// @param designers The designers array.
+
+      /// @brief Gets the documentation writers array.
+      /// @return The documentation writers array.
+      const documenter_collection& documenters() const {return documenters_;}
+      /// @brief Gets the artists array.
+      /// @return The artists array.
+      documenter_collection& documenters() {return documenters_;}
+      /// @brief Sets the documenters array.
+      /// @param documenters The documenters array.
       /// @return Current about_dialog instance.
-      about_dialog& designers(const designers_collection& designers) {
-        designers_ = designers;
+      about_dialog& documenters(const documenter_collection& documenters) {
+        documenters_ = documenters;
         return *this;
       }
 
@@ -197,14 +197,14 @@ namespace xtd {
       
       /// @brief Gets the translators array.
       /// @return The translators array.
-      const translators_collection& translators() const {return translators_;}
+      const translator_collection& translators() const {return translators_;}
       /// @brief Gets the translators array.
       /// @return The translators array.
-      translators_collection& translators() {return translators_;}
+      translator_collection& translators() {return translators_;}
       /// @brief Sets the translators array.
       /// @param translators The translators array.
       /// @return Current about_dialog instance.
-      about_dialog& translators(const translators_collection& translators) {
+      about_dialog& translators(const translator_collection& translators) {
         translators_ = translators;
         return *this;
       }
@@ -260,10 +260,10 @@ namespace xtd {
       std::string copyright_;
       std::string website_;
       std::string website_label_;
-      creators_collection creators_;
-      doc_writers_collection doc_writers_;
-      translators_collection translators_;
-      designers_collection designers_;
+      author_collection authors_;
+      documenter_collection documenters_;
+      translator_collection translators_;
+      artist_collection artists_;
       std::string license_;
     };
   }
