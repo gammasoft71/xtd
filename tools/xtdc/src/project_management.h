@@ -111,15 +111,10 @@ namespace xtdc_command {
       else generate();
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Build project aborted.";
       change_current_directory current_directory {xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path()};
-      xtd::diagnostics::process process;
       if (xtd::environment::os_version().is_windows_platform() || xtd::environment::os_version().is_macos_platform())
-        process.start_info({"cmake", xtd::strings::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::strings::format(" --target {}", target), clean_first ? " --clean-first {}" : "")});
+        launch_and_wait_process("cmake", xtd::strings::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::strings::format(" --target {}", target), clean_first ? " --clean-first {}" : ""));
       else
-        process.start_info({"cmake", xtd::strings::format("--build {}{}", build_path()/(release ? "Release" : "Debug"), target.empty() ? "" : xtd::strings::format(" --target {}", target), clean_first ? " --clean-first {}" : "")});
-      process.start_info().use_shell_execute(false);
-      process.start();
-      process.wait_for_exit();
-      last_exit_code_ = process.exit_code();
+        launch_and_wait_process("cmake", xtd::strings::format("--build {}{}", build_path()/(release ? "Release" : "Debug"), target.empty() ? "" : xtd::strings::format(" --target {}", target), clean_first ? " --clean-first {}" : ""));
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Build project aborted.";
       return xtd::strings::format("Project {} builded", path_);
     }
@@ -145,9 +140,9 @@ namespace xtdc_command {
       change_current_directory current_directory {xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path()};
       generate();
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Open project aborted.";
-      if (xtd::environment::os_version().is_windows_platform()) xtd::diagnostics::process::start(xtd::strings::format("{}.sln", (build_path()/get_name()).string())).wait_for_exit();
-      else if (xtd::environment::os_version().is_macos_platform()) xtd::diagnostics::process::start(xtd::strings::format("{}.xcodeproj", (build_path()/get_name()).string())).wait_for_exit();
-      else xtd::diagnostics::process::start(xtd::strings::format("{}.cbp", (build_path()/(release ? "Release" : "Debug")/get_name()).string())).wait_for_exit();
+      if (xtd::environment::os_version().is_windows_platform()) launch_and_wait_process(xtd::strings::format("{}.sln", (build_path()/get_name()).string()));
+      else if (xtd::environment::os_version().is_macos_platform()) launch_and_wait_process(xtd::strings::format("{}.xcodeproj", (build_path()/get_name()).string()));
+      else launch_and_wait_process(xtd::strings::format("{}.cbp", (build_path()/(release ? "Release" : "Debug")/get_name()).string()));
       return xtd::strings::format("Project {} opened", get_name());
     }
 
@@ -188,11 +183,7 @@ namespace xtdc_command {
       change_current_directory current_directory {xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path()};
       build("", false, release);
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Test project aborted.";
-      xtd::diagnostics::process process;
-      process.start_info({"ctest", xtd::strings::format("--output-on-failure --build-config {}", release ? "release" : "debug")});
-      process.start_info().use_shell_execute(false);
-      process.start();
-      process.wait_for_exit();
+      launch_and_wait_process("ctest", xtd::strings::format("--output-on-failure --build-config {}", release ? "release" : "debug"));
       return xtd::strings::format("Project {} tested", path_);
     }
     
@@ -200,7 +191,7 @@ namespace xtdc_command {
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {} does not exists or is empty! Uninstall project aborted.", path_);
       if (!std::filesystem::exists((xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path())/"install_manifest.txt")) return xtd::strings::format("File {} does not exists! Uninstall project aborted.", ((xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path())/"install_manifest.txt").string());
       change_current_directory current_directory {xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path()};
-
+      
       std::filesystem::path app_path;
       for (auto file : xtd::io::file::read_all_lines((xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path())/"install_manifest.txt")) {
         if (std::filesystem::exists({file})) {
@@ -293,11 +284,7 @@ namespace xtdc_command {
       if (system_information.size() == 0) {
         if (!std::filesystem::exists(build_path()/"xtd_si.txt")) {
           change_current_directory current_directory {build_path().string()};
-          xtd::diagnostics::process process;
-          process.start_info({"cmake", xtd::strings::format("--system-information xtd_si.txt")});
-          process.start_info().use_shell_execute(false);
-          process.start();
-          process.wait_for_exit();
+          launch_and_wait_process("cmake", xtd::strings::format("--system-information xtd_si.txt"));
         }
         system_information = xtd::io::file::read_all_lines(build_path()/"xtd_si.txt");
       }
@@ -3145,26 +3132,52 @@ namespace xtdc_command {
       std::filesystem::create_directories(build_path());
       change_current_directory current_directory {build_path()};
       if (!first_generation && name.empty()) name = get_name();
-      xtd::diagnostics::process process;
       if (xtd::environment::os_version().is_windows_platform() && (first_generation || !std::filesystem::exists(build_path()/xtd::strings::format("{}.sln", name))))
-        process.start_info({"cmake", xtd::strings::format("-S {} -B {}", path_, build_path())});
+        launch_and_wait_process("cmake", xtd::strings::format("-S {} -B {}", path_, build_path()));
       else if (xtd::environment::os_version().is_macos_platform() && (first_generation || !std::filesystem::exists(build_path()/xtd::strings::format("{}.xcodeproj", name))))
-        process.start_info({"cmake", xtd::strings::format("-S {} -B {} -G \"Xcode\"", path_, build_path())});
-      else if (xtd::environment::os_version().is_linux_platform() && (first_generation || !std::filesystem::exists(build_path()/"Debug"/xtd::strings::format("{}.cbp", name)))) {
-        std::filesystem::create_directories(build_path()/"Debug");
-        process.start_info({"cmake", xtd::strings::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, build_path()/"Debug")});
-        patch_cbp_file(name, "Debug");
-      } else if (xtd::environment::os_version().is_linux_platform() && (first_generation || !std::filesystem::exists(build_path()/"Release"/xtd::strings::format("{}.cbp", name)))) {
-        std::filesystem::create_directories(build_path()/"Release");
-        process.start_info({"cmake", xtd::strings::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, build_path()/"Release")});
-        patch_cbp_file(name, "Release");
+        launch_and_wait_process("cmake", xtd::strings::format("-S {} -B {} -G \"Xcode\"", path_, build_path()));
+      else if (xtd::environment::os_version().is_linux_platform()) {
+        if (first_generation || !std::filesystem::exists(build_path()/"Debug"/xtd::strings::format("{}.cbp", name))) {
+          change_current_directory current_directory {build_path()/"Debug"};
+          std::filesystem::create_directories(build_path()/"Debug");
+          launch_and_wait_process("cmake", xtd::strings::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, build_path()/"Debug"));
+          patch_cbp_file(name, "Debug");
+        }
+        if (first_generation || !std::filesystem::exists(build_path()/"Release"/xtd::strings::format("{}.cbp", name))) {
+          change_current_directory current_directory {build_path()/"Release"};
+          std::filesystem::create_directories(build_path()/"Release");
+          launch_and_wait_process("cmake", xtd::strings::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, build_path()/"Release"));
+          patch_cbp_file(name, "Release");
+        }
       }
-      if (process.start_info().file_name() != "") {
-        process.start_info().use_shell_execute(false);
-        process.start();
-        process.wait_for_exit();
-        last_exit_code_ = process.exit_code();
-      }
+    }
+    
+    bool is_path_already_exist_and_not_empty(const std::filesystem::path& path) const {
+      if (!std::filesystem::exists({path_})) return false;
+      if (std::filesystem::is_empty({path_})) return false;
+      if (xtd::environment::os_version().is_macos_platform() && std::count_if(std::filesystem::directory_iterator(path_), std::filesystem::directory_iterator(), [](auto item) {return item.path().filename().string() != ".DS_Store";}) == 0) return false;
+      return true;
+    }
+    
+    void launch_and_wait_process(const std::string& file_name) const {
+      launch_and_wait_process(file_name, false);
+    }
+    
+    void launch_and_wait_process(const std::string& file_name, bool shell_execute) const {
+      launch_and_wait_process(file_name, "", shell_execute);
+    }
+    
+    void launch_and_wait_process(const std::string& file_name, const std::string& arguments) const {
+      launch_and_wait_process(file_name, arguments, false);
+    }
+    
+    void launch_and_wait_process(const std::string& file_name, const std::string& arguments, bool shell_execute) const {
+      xtd::diagnostics::process process;
+      process.start_info({file_name, arguments});
+      process.start_info().use_shell_execute(shell_execute);
+      process.start();
+      process.wait_for_exit();
+      last_exit_code_ = process.exit_code();
     }
     
     void patch_cbp_file(const std::string& name, const std::string& build_config) const {
@@ -3178,13 +3191,6 @@ namespace xtdc_command {
         }
         xtd::io::file::write_all_lines(build_path()/build_config/xtd::strings::format("{}.cbp", name), cbp_file_lines);
       }
-    }
-
-    bool is_path_already_exist_and_not_empty(const std::filesystem::path& path) const {
-      if (!std::filesystem::exists({path_})) return false;
-      if (std::filesystem::is_empty({path_})) return false;
-      if (xtd::environment::os_version().is_macos_platform() && std::count_if(std::filesystem::directory_iterator(path_), std::filesystem::directory_iterator(), [](auto item) {return item.path().filename().string() != ".DS_Store";}) == 0) return false;
-      return true;
     }
     
     mutable std::filesystem::path path_ {xtd::environment::current_directory()};
