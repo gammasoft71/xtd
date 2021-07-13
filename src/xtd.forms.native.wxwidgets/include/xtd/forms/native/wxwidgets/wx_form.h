@@ -84,6 +84,11 @@ namespace xtd {
             panel_->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
 #endif
+          // Workarouond : A modal dialog wust have wxRESIZE_BORDER on linux.
+          if (xtd::environment::os_version().is_linux_platform() && (create_params.style() & WS_THICKFRAME) != WS_THICKFRAME && (create_params.ex_style() & WS_EX_MODALWINDOW) == WS_EX_MODALWINDOW) {
+            control()->SetMinSize({create_params.size().width(), create_params.size().height()});
+            control()->SetMaxSize({create_params.size().width(), create_params.size().height()});
+          }
         }
 
         static long form_style_to_wx_style(size_t style, size_t ex_style, size_t class_style, intptr_t parent) {
@@ -92,7 +97,12 @@ namespace xtd {
           if ((style & WS_MAXIMIZEBOX) == WS_MAXIMIZEBOX) wx_style |= wxMAXIMIZE_BOX;
           if ((style & WS_MINIMIZEBOX) == WS_MINIMIZEBOX) wx_style |= wxMINIMIZE_BOX;
           if ((style & WS_SYSMENU) == WS_SYSMENU) wx_style |= wxSYSTEM_MENU;
-          if ((style & WS_THICKFRAME) == WS_THICKFRAME) wx_style |= wxRESIZE_BORDER;
+
+          // Workarouond : A modal dialog wust have wxRESIZE_BORDER on linux.
+          if (environment::os_version().is_linux_platform() && (ex_style & WS_EX_MODALWINDOW) == WS_EX_MODALWINDOW)
+            wx_style |= wxRESIZE_BORDER;
+          else if ((style & WS_THICKFRAME) == WS_THICKFRAME) wx_style |= wxRESIZE_BORDER;
+
           if ((style & WS_CAPTION) == WS_CAPTION) wx_style |= wxCAPTION;
           if ((style & WS_CLIPCHILDREN) == WS_CLIPCHILDREN) wx_style |= wxCLIP_CHILDREN;
 
