@@ -140,7 +140,7 @@ namespace xtdc_command {
       change_current_directory current_directory {xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path()};
       generate();
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Open project aborted.";
-      if (xtd::environment::os_version().is_windows_platform()) launch_and_wait_process(xtd::strings::format("{}.sln", (build_path()/get_name()).string()));
+      if (xtd::environment::os_version().is_windows_platform()) launch_and_wait_process(xtd::strings::format("{}.sln", (build_path()/get_name()).string()), true);
       else if (xtd::environment::os_version().is_macos_platform()) launch_and_wait_process(xtd::strings::format("{}.xcodeproj", (build_path()/get_name()).string()), true);
       else launch_and_wait_process(xtd::strings::format("{}.cbp", (build_path()/(release ? "Release" : "Debug")/get_name()).string()), true);
       return xtd::strings::format("Project {} opened", get_name());
