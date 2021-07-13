@@ -95,11 +95,7 @@ namespace {
   
   bool is_valid_process(function<vector<string>(const string& str, const vector<char>& separators, size_t count)> splitter, const string& command_line, const string& working_directory) {
     auto full_file_name_with_extension = get_full_file_name_with_extension(splitter, command_line, working_directory);
-#if defined(__APPLE__)
     return exists(full_file_name_with_extension);
-#else
-    return exists(full_file_name_with_extension) && (is_directory(full_file_name_with_extension) || (status(full_file_name_with_extension).permissions() & perms::owner_exec) != perms::owner_exec);
-#endif
   }
 
   bool is_valid_uri(const string& command_line) {
