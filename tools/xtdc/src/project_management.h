@@ -3138,13 +3138,13 @@ namespace xtdc_command {
         launch_and_wait_process("cmake", xtd::strings::format("-S {} -B {} -G \"Xcode\"", path_, build_path()));
       else if (xtd::environment::os_version().is_linux_platform()) {
         if (first_generation || !std::filesystem::exists(build_path()/"Debug"/xtd::strings::format("{}.cbp", name))) {
-          change_current_directory current_directory {build_path()/"Debug"};
+          change_current_directory current_directory_debug {build_path()/"Debug"};
           std::filesystem::create_directories(build_path()/"Debug");
           launch_and_wait_process("cmake", xtd::strings::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, build_path()/"Debug"));
           patch_cbp_file(name, "Debug");
         }
         if (first_generation || !std::filesystem::exists(build_path()/"Release"/xtd::strings::format("{}.cbp", name))) {
-          change_current_directory current_directory {build_path()/"Release"};
+          change_current_directory current_directory_release {build_path()/"Release"};
           std::filesystem::create_directories(build_path()/"Release");
           launch_and_wait_process("cmake", xtd::strings::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, build_path()/"Release"));
           patch_cbp_file(name, "Release");
