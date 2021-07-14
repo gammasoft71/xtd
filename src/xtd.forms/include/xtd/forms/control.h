@@ -1989,6 +1989,7 @@ namespace xtd {
       control(const std::string& name, bool) {name_ = name;}
       intptr_t wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
       void wm_child_activate(message& message);
+      void wm_create(message& message);
       void wm_command(message& message);
       void wm_key_char(message& message);
       void wm_kill_focus(message& message);

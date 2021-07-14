@@ -46,6 +46,8 @@ namespace xtd {
 
       /// @brief Represent none debug.
       static const enable_debug none;
+      /// @brief Represent creation debug.
+      static const enable_debug creation;
       /// @brief Represent events debug.
       static const enable_debug events;
       /// @brief Represent key events debug.

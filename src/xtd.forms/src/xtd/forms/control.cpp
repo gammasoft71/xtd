@@ -370,14 +370,12 @@ void control::bring_to_front() {
 }
 
 void control::create_control() {
-  suspend_layout();
   if (!get_state(state::destroying) && !get_state(state::creating) && !get_state(state::created)) {
+    suspend_layout();
     set_state(state::destroyed, false);
     set_state(state::creating, true);
     create_handle();
-    if (!parent_) top_level_controls_.push_back(control_ref(*this));
-    send_message(handle_, WM_CREATE, 0, 0);
-    on_create_control();
+    send_message(handle_, WM_CREATE, 0, handle_);
     set_state(state::creating, false);
     set_state(state::created, true);
     resume_layout();
@@ -417,7 +415,9 @@ graphics control::create_graphics() const {
 
 void control::create_handle() {
   set_state(state::creating_handle, true);
-  handle_ = native::control::create(create_params());
+  auto params = create_params();
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::creation), strings::format("create handle {} with params {}", *this, params));
+  handle_ = native::control::create(params);
   on_handle_created(event_args::empty);
   set_state(state::creating_handle, false);
 }
@@ -524,6 +524,7 @@ void control::on_background_image_layout_changed(const event_args &e) {
 }
 
 void control::on_create_control() {
+  if (!parent_) top_level_controls_.push_back(control_ref(*this));
   on_parent_changed(event_args::empty);
   if (parent_) parent().value().get().on_control_added(control_event_args(*this));
   for (auto control : controls_) {
@@ -594,6 +595,7 @@ void control::on_handle_created(const event_args &e) {
   native::control::register_wnd_proc(handle_, {*this, &control::wnd_proc_});
   handles_[handle_] = this;
   if (get_state(state::client_size_setted)) native::control::client_size(handle_, client_size());
+  else native::control::size(handle_, this->size());
   if (!xtd::forms::theme_colors::current_theme().is_default() || back_color_.has_value() || back_color() != default_back_color()) native::control::back_color(handle_, back_color());
   if (cursor_.has_value() || cursor() != default_cursor()) native::control::cursor(handle_, cursor().handle());
   if (!xtd::forms::theme_colors::current_theme().is_default() || fore_color_.has_value() || fore_color() != default_fore_color()) native::control::fore_color(handle_, fore_color());
@@ -608,7 +610,9 @@ void control::on_handle_created(const event_args &e) {
   size_ = native::control::size(handle_);
 
   if (can_raise_events()) handle_created(*this, e);
-  
+
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::creation), strings::format("on handle created control={}, location={}, size={}, client_size={}", *this, location(), this->size(), client_size()));
+
   if (parent_) parent().value().get().perform_layout();
   perform_layout();
 }
@@ -827,6 +831,7 @@ void control::wnd_proc(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::events), strings::format("({}) receive message [{}]", *this, message));
   switch (message.msg()) {
       // keyboard:
+    case WM_CREATE: wm_create(message); break;
     case WM_CHAR:
     case WM_KEYDOWN:
     case WM_KEYUP:
@@ -1019,6 +1024,10 @@ void control::do_layout_with_auto_size_mode() {
       auto_size_size_.height(client_size_.height());
     client_size(auto_size_size_);
   }
+}
+
+void control::wm_create(message& message) {
+  on_create_control();
 }
 
 void control::wm_child_activate(message& message) {
