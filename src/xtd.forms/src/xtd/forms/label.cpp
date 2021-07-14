@@ -1,15 +1,21 @@
+#include <xtd/drawing/pens.h>
 #include <xtd/drawing/solid_brush.h>
+#include <xtd/drawing/system_colors.h>
 #include <xtd/drawing/string_format.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/label.h>
 #include <xtd/forms/native/static_styles.h>
+#include <xtd/forms/native/toolkit.h>
 #include <xtd/forms/native/window_styles.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/label.h"
+#include "../../../include/xtd/forms/screen.h"
 
 using namespace xtd;
+using namespace xtd::drawing;
 using namespace xtd::forms;
 
 label::label() {
@@ -77,6 +83,16 @@ void label::on_font_changed(const xtd::event_args& e) {
   if (flat_style_ != xtd::forms::flat_style::system) invalidate();
 }
 
+void label::on_handle_created(const event_args& e) {
+  control::on_handle_created(e);
+  
+  // Workaround : on macOS with wxWidgets toolkit, retina display, dark mode enabled, and border style is fixed 3d, the border is not show.
+  parent().value().get().paint += [this](control& sender, paint_event_args& e) {
+    if (environment::os_version().is_macos_platform() && native::toolkit::name() == "wxwidgets" && screen::from_handle(handle()).scale_factor() > 1. && application::dark_mode_enabled() && border_style_ == forms::border_style::fixed_3d)
+      e.graphics().draw_rectangle(xtd::drawing::pens::white(), xtd::drawing::rectangle::offset(xtd::drawing::rectangle::inflate(this->bounds(), {-2, -2}), {1, 1}));
+  };
+}
+
 void label::on_paint(paint_event_args& e) {
   if (flat_style_ != xtd::forms::flat_style::system) {
     xtd::drawing::string_format string_format;
@@ -92,7 +108,7 @@ void label::on_paint(paint_event_args& e) {
       case content_alignment::bottom_right: string_format.line_alignment(xtd::drawing::string_alignment::far); string_format.alignment(xtd::drawing::string_alignment::far); break;
       default: break;
     }
-    e.graphics().draw_string(text_, font(), xtd::drawing::solid_brush(fore_color()), xtd::drawing::rectangle(0, 0, client_size().width(), client_size().height()), string_format);
+    e.graphics().draw_string(text_, font(), xtd::drawing::solid_brush(enabled() ? fore_color() : system_colors::gray_text()), xtd::drawing::rectangle(0, 0, client_size().width(), client_size().height()), string_format);
   }
   control::on_paint(e);
 }

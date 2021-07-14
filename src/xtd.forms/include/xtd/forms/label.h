@@ -91,9 +91,8 @@ namespace xtd {
       xtd::drawing::size measure_control() const override;
       
       void on_font_changed(const xtd::event_args& e) override;
-
-      void on_paint(xtd::forms::paint_event_args& e) override;
-      
+      void on_handle_created(const event_args& e) override;
+      void on_paint(xtd::forms::paint_event_args& e) override;      
       void on_resize(const xtd::event_args& e) override;
       
       /// @brief Raises the xtd::forms::label::text_align_changed event.
