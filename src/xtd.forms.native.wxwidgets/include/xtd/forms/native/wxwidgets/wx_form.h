@@ -76,7 +76,6 @@ namespace xtd {
             control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
 #endif
-          control()->SetMinSize({75, 23});
           panel_ = new wxMainPanel(this, control(), wxID_ANY, wxDefaultPosition, wxDefaultSize, panel_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
 #if defined(__WIN32__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
@@ -84,30 +83,19 @@ namespace xtd {
             panel_->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
 #endif
-          // Workarouond : A modal dialog wust have wxRESIZE_BORDER on linux.
-          if (xtd::environment::os_version().is_linux_platform() && (create_params.style() & WS_THICKFRAME) != WS_THICKFRAME && (create_params.ex_style() & WS_EX_MODALWINDOW) == WS_EX_MODALWINDOW) {
-            control()->SetMinSize({create_params.size().width(), create_params.size().height()});
-            control()->SetMaxSize({create_params.size().width(), create_params.size().height()});
-          }
         }
 
         static long form_style_to_wx_style(size_t style, size_t ex_style, size_t class_style, intptr_t parent) {
-          long wx_style = wxTAB_TRAVERSAL;
+          long wx_style = 0;
 
           if ((style & WS_MAXIMIZEBOX) == WS_MAXIMIZEBOX) wx_style |= wxMAXIMIZE_BOX;
           if ((style & WS_MINIMIZEBOX) == WS_MINIMIZEBOX) wx_style |= wxMINIMIZE_BOX;
           if ((style & WS_SYSMENU) == WS_SYSMENU) wx_style |= wxSYSTEM_MENU;
 
-          // Workarouond : A modal dialog wust have wxRESIZE_BORDER on linux.
-          if (environment::os_version().is_linux_platform() && (ex_style & WS_EX_MODALWINDOW) == WS_EX_MODALWINDOW)
-            wx_style |= wxRESIZE_BORDER;
-          else if ((style & WS_THICKFRAME) == WS_THICKFRAME) wx_style |= wxRESIZE_BORDER;
+          if ((style & WS_THICKFRAME) == WS_THICKFRAME) wx_style |= wxRESIZE_BORDER;
 
           if ((style & WS_CAPTION) == WS_CAPTION) wx_style |= wxCAPTION;
           if ((style & WS_CLIPCHILDREN) == WS_CLIPCHILDREN) wx_style |= wxCLIP_CHILDREN;
-
-          //if ((style & WS_MAXIMIZE) == WS_MAXIMIZE) wx_style |= wxMAXIMIZE;
-          //if ((style & WS_MINIMIZE) == WS_MINIMIZE) wx_style |= wxMINIMIZE;
 
           if ((ex_style & WS_EX_APPWINDOW) != WS_EX_APPWINDOW) wx_style |= wxFRAME_NO_TASKBAR;
           if ((ex_style & WS_EX_TOOLWINDOW) == WS_EX_TOOLWINDOW) wx_style |= wxFRAME_TOOL_WINDOW;
@@ -115,20 +103,16 @@ namespace xtd {
                       
           if ((class_style & CS_NOCLOSE) != CS_NOCLOSE) wx_style |= wxCLOSE_BOX;
 
-          //if ((style & WS_HSCROLL) == WS_HSCROLL) wx_style |= wxHSCROLL;
-          //if ((style & WS_VSCROLL) == WS_VSCROLL) wx_style |= wxVSCROLL;
-          //if (((style & WS_HSCROLL) == WS_HSCROLL || (style & WS_VSCROLL) == WS_VSCROLL) && (ex_style & WS_EX_AUTOSCROLL) != WS_EX_AUTOSCROLL) wx_style |= wxALWAYS_SHOW_SB;
-
-          //cdebug << strings::format("style = 0x{:X}, ex_style = 0x{:X}, wx_style = 0x{:X}", style, ex_style, wx_style) << std::endl;
-
           if ((ex_style & WS_EX_TOPMOST) == WS_EX_TOPMOST) wx_style |= wxSTAY_ON_TOP;
           else if (parent && (style & WS_CHILD) != WS_CHILD) wx_style |= wxFRAME_FLOAT_ON_PARENT;
 
+          cdebug << strings::format("style = 0x{:X}, ex_style = 0x{:X}, wx_style = 0x{:X}", style, ex_style, wx_style) << std::endl;
+          
           return wx_style;
         }
 
         static long panel_style_to_wx_style(size_t style, size_t ex_style, size_t class_style) {
-          long wx_style = wxTAB_TRAVERSAL;
+          long wx_style = wxTAB_TRAVERSAL | wxNO_BORDER;
           
           if ((style & WS_HSCROLL) == WS_HSCROLL) wx_style |= wxHSCROLL;
           if ((style & WS_VSCROLL) == WS_VSCROLL) wx_style |= wxVSCROLL;
