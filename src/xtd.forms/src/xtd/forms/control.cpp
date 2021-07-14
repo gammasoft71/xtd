@@ -880,6 +880,8 @@ void control::recreate_handle() {
     set_state(state::recreate, true);
     for (auto control : controls()) control.get().set_state(state::parent_recreating, true);
 
+    native::control::unregister_wnd_proc(handle_);
+    handles_.erase(handle_);
     on_handle_destroyed(event_args::empty);
     intptr_t old_handle = handle_;
     handle_ = 0;
@@ -888,10 +890,7 @@ void control::recreate_handle() {
       control.get().parent_ = handle_;
       control.get().recreate_handle();
     }
-    intptr_t new_handle = handle_;
-    handle_ = old_handle;
-    destroy_handle();
-    handle_ = new_handle;
+    native::control::destroy(old_handle);
 
     for (auto control : controls()) control.get().set_state(state::parent_recreating, false);
     set_state(state::recreate, false);
