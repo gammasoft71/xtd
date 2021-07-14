@@ -225,6 +225,8 @@ control& control::enabled(bool enabled) {
   if (get_state(state::enabled) != enabled) {
     set_state(state::enabled, enabled);
     native::control::enabled(handle_, get_state(state::enabled));
+    for (auto& control : controls())
+      if (control.get().parent_) control.get().on_parent_enabled_changed(event_args::empty);
     on_enabled_changed(event_args::empty);
   }
   return *this;
@@ -712,6 +714,13 @@ void control::on_parent_cursor_changed(const event_args &e) {
     for (auto control : controls())
       control.get().on_parent_back_color_changed(event_args::empty);
   }
+}
+
+void control::on_parent_enabled_changed(const event_args &e) {
+  set_state(state::enabled, parent().value().get().enabled());
+  native::control::enabled(handle_, get_state(state::enabled));
+  for (auto control : controls())
+    control.get().on_parent_enabled_changed(event_args::empty);
 }
 
 void control::on_parent_fore_color_changed(const event_args &e) {
