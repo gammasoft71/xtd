@@ -1871,11 +1871,16 @@ namespace xtd {
       /// @ingroup events
       virtual void on_parent_changed(const event_args& e);
       
+      /// @brief Raises the xtd::control::enabled_changed event when the xttd::control::enabled property value of the control's container changes..
+      /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
+      virtual void on_parent_enabled_changed(const event_args& e);
+      
       /// @brief Raises the control::parent_fore_color_changed event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_parent_fore_color_changed(const event_args& e);
-      
+
       /// @brief Raises the control::parent_font_changed event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
