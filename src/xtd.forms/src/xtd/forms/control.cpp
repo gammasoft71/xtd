@@ -892,14 +892,14 @@ void control::recreate_handle() {
     native::control::unregister_wnd_proc(handle_);
     handles_.erase(handle_);
     on_handle_destroyed(event_args::empty);
-    intptr_t old_handle = handle_;
+    intptr_t previous_handle = handle_;
     handle_ = 0;
     create_handle();
     for (auto control : controls()) {
       control.get().parent_ = handle_;
       control.get().recreate_handle();
     }
-    native::control::destroy(old_handle);
+    native::control::destroy(previous_handle);
 
     for (auto control : controls()) control.get().set_state(state::parent_recreating, false);
     set_state(state::recreate, false);
