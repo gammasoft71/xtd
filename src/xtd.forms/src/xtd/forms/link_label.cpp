@@ -219,8 +219,8 @@ void link_label::on_text_align_changed(const event_args& e) {
 }
 
 void link_label::on_text_changed(const event_args& e) {
-  label::on_text_changed(e);
   if (links_.empty()) links_.push_back({0, text().length()});
+  label::on_text_changed(e);
   invalidate();
 }
 
