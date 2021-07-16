@@ -1,14 +1,18 @@
 #include <xtd/xtd>
 
 using namespace xtd;
+using namespace xtd::diagnostics;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 using namespace std::literals;
 
 int main() {
   form form_main;
-  form_main.client_size({1280, 850});
+  form_main.size({1024, 768});
   form_main.text("Demo forms");
+  form_main.menu(forms::main_menu::create_standard_items([&](component& sender, const event_args& e) {
+    if (static_cast<menu_item&>(sender).text() == texts::exit()) application::exit();
+  }));
   
   tab_control tab_control_main;
   tab_control_main.location({10, 10});
@@ -16,111 +20,409 @@ int main() {
   tab_control_main.size(form_main.client_size() - drawing::size(20, 20));
   tab_control_main.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
   
-  tab_page tab_page_controls;
-  tab_page_controls.parent(tab_control_main);
-  tab_page_controls.text("Controls");
-  tab_page_controls.auto_scroll(true);
+  tab_page tab_page_labels;
+  tab_page_labels.parent(tab_control_main);
+  tab_page_labels.text("Labels");
+  tab_page_labels.auto_scroll(true);
 
-  label label_one;
-  label_one.location({10, 10});
-  label_one.parent(tab_page_controls);
-  label_one.text("Label");
-  
-  label label_border_fixed_single;
-  label_border_fixed_single.border_style(forms::border_style::fixed_single);
-  label_border_fixed_single.location({120, 10});
-  label_border_fixed_single.parent(tab_page_controls);
-  label_border_fixed_single.text("Single border");
-  
-  label label_border_fixed_3d;
-  label_border_fixed_3d.border_style(forms::border_style::fixed_3d);
-  label_border_fixed_3d.location({230, 10});
-  label_border_fixed_3d.parent(tab_page_controls);
-  label_border_fixed_3d.text("3d border");
-  
-  label label_disabled;
-  label_disabled.enabled(false);
-  label_disabled.location({340, 10});
-  label_disabled.parent(tab_page_controls);
-  label_disabled.text("Disabled");
+  link_label label_label;
+  label_label.auto_size(true);
+  label_label.location({10, 10});
+  label_label.parent(tab_page_labels);
+  label_label.text("xtd::forms::label");
+  label_label.link_clicked += [] {
+    process::start("https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1label.html");
+  };
 
-  button button_enabled;
-  button_enabled.location({10, 50});
-  button_enabled.parent(tab_page_controls);
-  button_enabled.text("Click me");
-  
-  button button_flat;
-  //button_flat.button_style;
-  button_flat.location({120, 50});
-  button_flat.parent(tab_page_controls);
-  button_flat.text("Flat");
-  
-  button button_disabled;
-  button_disabled.enabled(false);
-  button_disabled.location({230, 50});
-  button_disabled.parent(tab_page_controls);
-  button_disabled.text("Disabled");
+  label default_label;
+  default_label.location({30, 40});
+  default_label.parent(tab_page_labels);
+  default_label.text("Default label");
 
-  check_box check_box_two_state;
-  check_box_two_state.checked(true);
-  check_box_two_state.location({10, 90});
-  check_box_two_state.parent(tab_page_controls);
-  check_box_two_state.text("Check box");
+  label border_fixed_single_label;
+  border_fixed_single_label.border_style(forms::border_style::fixed_single);
+  border_fixed_single_label.location({140, 40});
+  border_fixed_single_label.parent(tab_page_labels);
+  border_fixed_single_label.text("Single border");
+  border_fixed_single_label.text_align(content_alignment::middle_left);
+  
+  label border_fixed_3d_label;
+  border_fixed_3d_label.border_style(forms::border_style::fixed_3d);
+  border_fixed_3d_label.location({250, 40});
+  border_fixed_3d_label.parent(tab_page_labels);
+  border_fixed_3d_label.text("3d border");
+  border_fixed_3d_label.text_align(content_alignment::middle_left);
+
+  label disabled_label;
+  disabled_label.enabled(false);
+  disabled_label.location({360, 40});
+  disabled_label.parent(tab_page_labels);
+  disabled_label.text("Disabled label");
+  
+  label colored_label;
+  colored_label.back_color(color::blue);
+  colored_label.fore_color(color::yellow);
+  colored_label.location({470, 40});
+  colored_label.parent(tab_page_labels);
+  colored_label.text("Colored label");
+  
+  label image_label;
+  image_label.location({580, 40});
+  //image_label.image(system_images::from_name("folder-home", {16, 16}));
+  //image_label.image_align(content_alignment::middle_left);
+  image_label.parent(tab_page_labels);
+  image_label.text("Home");
+  //image_label.text_align(content_alignment::middle_right);
+
+  label multiline_label;
+  multiline_label.auto_size(true);
+  multiline_label.text_align(xtd::forms::content_alignment::middle_center);
+  multiline_label.location({690, 40});
+  multiline_label.parent(tab_page_labels);
+  multiline_label.text("Multiline label\nwith text alignment middle center");
+  
+  link_label link_label_label;
+  link_label_label.auto_size(true);
+  link_label_label.location({10, 100});
+  link_label_label.parent(tab_page_labels);
+  link_label_label.text("xtd::forms::link_label");
+  link_label_label.link_clicked += [] {
+    process::start("https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1link__label.html");
+  };
+  
+  link_label default_link_label;
+  default_link_label.location({30, 130});
+  default_link_label.parent(tab_page_labels);
+  default_link_label.text("Default label");
+  
+  link_label border_fixed_single_link_label;
+  border_fixed_single_link_label.border_style(forms::border_style::fixed_single);
+  border_fixed_single_link_label.location({140, 130});
+  border_fixed_single_link_label.parent(tab_page_labels);
+  border_fixed_single_link_label.text("Single border");
+  border_fixed_single_link_label.text_align(content_alignment::middle_left);
+
+  link_label border_fixed_3d_link_label;
+  border_fixed_3d_link_label.border_style(forms::border_style::fixed_3d);
+  border_fixed_3d_link_label.location({250, 130});
+  border_fixed_3d_link_label.parent(tab_page_labels);
+  border_fixed_3d_link_label.text("3d border");
+  border_fixed_3d_link_label.text_align(content_alignment::middle_left);
+
+  link_label disabled_link_label;
+  disabled_link_label.enabled(false);
+  disabled_link_label.location({360, 130});
+  disabled_link_label.parent(tab_page_labels);
+  disabled_link_label.text("Disabled link");
+  
+  link_label colored_link_label;
+  colored_link_label.back_color(color::blue);
+  colored_link_label.link_color(color::yellow);
+  colored_link_label.active_link_color(color::lime);
+  colored_link_label.location({470, 130});
+  colored_link_label.parent(tab_page_labels);
+  colored_link_label.text("Colored link");
+  
+  link_label multiline_link_label;
+  multiline_link_label.auto_size(true);
+  multiline_link_label.location({580, 130});
+  multiline_link_label.parent(tab_page_labels);
+  multiline_link_label.text("Multi link label");
+  multiline_link_label.links().push_back({0, 5});
+  multiline_link_label.links().push_back({11, 5});
+
+  link_label lcd_label_label;
+  lcd_label_label.auto_size(true);
+  lcd_label_label.location({10, 190});
+  lcd_label_label.parent(tab_page_labels);
+  lcd_label_label.text("xtd::forms::lcd_label");
+  lcd_label_label.link_clicked += [] {
+    process::start("https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1lcd__label.html");
+  };
+
+  lcd_label default_lcd_label;
+  default_lcd_label.auto_size(true);
+  default_lcd_label.location({30, 220});
+  default_lcd_label.parent(tab_page_labels);
+  default_lcd_label.text("1234567890");
+  
+  lcd_label dot_matrix_lcd_label;
+  dot_matrix_lcd_label.auto_size(true);
+  dot_matrix_lcd_label.location({180, 220});
+  dot_matrix_lcd_label.parent(tab_page_labels);
+  dot_matrix_lcd_label.text("ABCDEFG");
+  dot_matrix_lcd_label.lcd_style(forms::lcd_style::dot_matrix_display);
+
+  lcd_label disabled_lcd_label;
+  disabled_lcd_label.auto_size(true);
+  disabled_lcd_label.location({350, 220});
+  disabled_lcd_label.parent(tab_page_labels);
+  disabled_lcd_label.text("1234567890");
+  disabled_lcd_label.enabled(false);
+
+  lcd_label colored_lcd_label;
+  colored_lcd_label.auto_size(true);
+  colored_lcd_label.back_color(color::blue);
+  colored_lcd_label.fore_color(color::yellow);
+  colored_lcd_label.location({500, 220});
+  colored_lcd_label.parent(tab_page_labels);
+  colored_lcd_label.text("1234567890");
+
+  tab_page tab_page_buttons;
+  tab_page_buttons.parent(tab_control_main);
+  tab_page_buttons.text("Buttons");
+  tab_page_buttons.auto_scroll(true);
+
+  link_label button_label;
+  button_label.auto_size(true);
+  button_label.location({10, 10});
+  button_label.parent(tab_page_buttons);
+  button_label.text("xtd::forms::button");
+  button_label.link_clicked += [] {
+    process::start("https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html");
+  };
+
+  button default_button;
+  default_button.location({30, 40});
+  default_button.parent(tab_page_buttons);
+  default_button.text("Button");
+  
+  button flat_button;
+  flat_button.flat_style(xtd::forms::flat_style::flat);
+  flat_button.location({120, 40});
+  flat_button.parent(tab_page_buttons);
+  flat_button.text("Flat");
+  
+  button popup_button;
+  popup_button.flat_style(xtd::forms::flat_style::popup);
+  popup_button.location({210, 40});
+  popup_button.parent(tab_page_buttons);
+  popup_button.text("Popup");
+  
+  button image_button;
+  image_button.location({300, 40});
+  image_button.width(100);
+  image_button.image(button_images::from_name("folder-home"));
+  image_button.image_align(content_alignment::middle_left);
+  image_button.parent(tab_page_buttons);
+  image_button.text("Home");
+
+  button colored_button;
+  colored_button.back_color(color::blue);
+  colored_button.fore_color(color::yellow);
+  colored_button.location({415, 40});
+  colored_button.parent(tab_page_buttons);
+  colored_button.text("Colored");
+
+  button disabled_button;
+  disabled_button.enabled(false);
+  disabled_button.location({505, 40});
+  disabled_button.parent(tab_page_buttons);
+  disabled_button.text("Disabled");
+
+  link_label toggle_button_label;
+  toggle_button_label.auto_size(true);
+  toggle_button_label.location({10, 100});
+  toggle_button_label.parent(tab_page_buttons);
+  toggle_button_label.text("xtd::forms::toggle_button");
+  toggle_button_label.link_clicked += [] {
+    process::start("https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1toggle__button.html");
+  };
+  
+  toggle_button default_toggle_button;
+  default_toggle_button.location({30, 130});
+  default_toggle_button.parent(tab_page_buttons);
+  default_toggle_button.text("Toggle");
+  
+  toggle_button flat_toggle_button;
+  flat_toggle_button.flat_style(xtd::forms::flat_style::flat);
+  flat_toggle_button.location({150, 130});
+  flat_toggle_button.parent(tab_page_buttons);
+  flat_toggle_button.text("Flat");
+  
+  toggle_button popup_toggle_button;
+  popup_toggle_button.flat_style(xtd::forms::flat_style::flat);
+  popup_toggle_button.location({270, 130});
+  popup_toggle_button.parent(tab_page_buttons);
+  popup_toggle_button.text("Popup");
+  
+  toggle_button image_toggle_button;
+  image_toggle_button.location({390, 130});
+  image_toggle_button.image(button_images::from_name("folder-home"));
+  image_toggle_button.image_align(content_alignment::middle_left);
+  image_toggle_button.parent(tab_page_buttons);
+  image_toggle_button.text("Home");
+ 
+  toggle_button colored_toggle_button;
+  colored_toggle_button.back_color(color::blue);
+  colored_toggle_button.fore_color(color::yellow);
+  colored_toggle_button.location({510, 130});
+  colored_toggle_button.parent(tab_page_buttons);
+  colored_toggle_button.text("Colored");
+
+  toggle_button disabled_toggle_button;
+  disabled_toggle_button.enabled(false);
+  disabled_toggle_button.location({630, 130});
+  disabled_toggle_button.parent(tab_page_buttons);
+  disabled_toggle_button.text("Disabled");
+
+  link_label swicth_button_label;
+  swicth_button_label.auto_size(true);
+  swicth_button_label.location({10, 190});
+  swicth_button_label.parent(tab_page_buttons);
+  swicth_button_label.text("xtd::forms::switch_button");
+  swicth_button_label.link_clicked += [] {
+    process::start("https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1switch__button.html");
+  };
+  
+  switch_button default_swicth_button;
+  default_swicth_button.location({30, 220});
+  default_swicth_button.parent(tab_page_buttons);
+  default_swicth_button.checked(true);
+  
+  switch_button rectangle_swicth_button;
+  rectangle_swicth_button.location({120, 220});
+  rectangle_swicth_button.parent(tab_page_buttons);
+  rectangle_swicth_button.checked(true);
+  rectangle_swicth_button.rounded(false);
+  
+  switch_button colored_swicth_button;
+  colored_swicth_button.slider_color(color::yellow);
+  colored_swicth_button.checked_back_color(color::blue);
+  colored_swicth_button.location({210, 220});
+  colored_swicth_button.parent(tab_page_buttons);
+  colored_swicth_button.checked(true);
+  colored_swicth_button.show_text(true);
+
+  switch_button colored_rectangle_swicth_button;
+  colored_rectangle_swicth_button.slider_color(color::yellow);
+  colored_rectangle_swicth_button.checked_back_color(color::blue);
+  colored_rectangle_swicth_button.fore_color(color::white);
+  colored_rectangle_swicth_button.location({300, 220});
+  colored_rectangle_swicth_button.parent(tab_page_buttons);
+  colored_rectangle_swicth_button.rounded(false);
+  colored_rectangle_swicth_button.checked(true);
+  colored_rectangle_swicth_button.show_text(true);
+
+  switch_button disabled_swicth_button;
+  disabled_swicth_button.location({390, 220});
+  disabled_swicth_button.parent(tab_page_buttons);
+  disabled_swicth_button.enabled(false);
+
+  switch_button disabled_rectangle_swicth_button;
+  disabled_rectangle_swicth_button.location({480, 220});
+  disabled_rectangle_swicth_button.parent(tab_page_buttons);
+  disabled_rectangle_swicth_button.rounded(false);
+  disabled_rectangle_swicth_button.enabled(false);
+
+  link_label check_box_label;
+  check_box_label.auto_size(true);
+  check_box_label.location({10, 280});
+  check_box_label.parent(tab_page_buttons);
+  check_box_label.text("xtd::forms::check_box");
+  check_box_label.link_clicked += [] {
+    process::start("https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1check__box.html");
+  };
+
+  check_box default_check_box;
+  default_check_box.checked(true);
+  default_check_box.location({30, 310});
+  default_check_box.parent(tab_page_buttons);
+  default_check_box.text("Check box");
   
   check_box check_box_three_state;
   check_box_three_state.check_state(forms::check_state::indeterminate);
   check_box_three_state.three_state(true);
-  check_box_three_state.location({120, 90});
-  check_box_three_state.parent(tab_page_controls);
+  check_box_three_state.location({140, 310});
+  check_box_three_state.parent(tab_page_buttons);
   check_box_three_state.text("Three state");
   
   check_box check_box_button;
   check_box_button.appearance(forms::appearance::button);
-  check_box_button.location({230, 90});
-  check_box_button.parent(tab_page_controls);
+  check_box_button.location({250, 310});
+  check_box_button.parent(tab_page_buttons);
   check_box_button.text("button");
   
+  check_box image_check_box;
+  image_check_box.location({360, 310});
+  image_check_box.image(button_images::from_name("folder-home"));
+  image_check_box.image_align(content_alignment::middle_left);
+  image_check_box.parent(tab_page_buttons);
+  image_check_box.text("Home");
+  image_check_box.text_align(content_alignment::middle_center);
+
+  check_box colored_check_box;
+  colored_check_box.location({470, 310});
+  colored_check_box.back_color(color::blue);
+  colored_check_box.fore_color(color::yellow);
+  colored_check_box.parent(tab_page_buttons);
+  colored_check_box.text("Colored");
+
   check_box check_box_disabled;
   check_box_disabled.enabled(false);
-  check_box_disabled.location({340, 90});
-  check_box_disabled.parent(tab_page_controls);
+  check_box_disabled.location({580, 310});
+  check_box_disabled.parent(tab_page_buttons);
   check_box_disabled.text("Disabled");
   
   check_box check_box_button_disabled;
   check_box_button_disabled.appearance(forms::appearance::button);
   check_box_button_disabled.enabled(false);
-  check_box_button_disabled.location({450, 90});
-  check_box_button_disabled.parent(tab_page_controls);
+  check_box_button_disabled.location({690, 310});
+  check_box_button_disabled.parent(tab_page_buttons);
   check_box_button_disabled.text("button");
+
+  link_label radio_button_label;
+  radio_button_label.auto_size(true);
+  radio_button_label.location({10, 370});
+  radio_button_label.parent(tab_page_buttons);
+  radio_button_label.text("xtd::forms::radio_button");
+  radio_button_label.link_clicked += [] {
+    process::start("https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1radio__button.html");
+  };
 
   radio_button radio_button_one;
   radio_button_one.checked(true);
-  radio_button_one.location({10, 130});
-  radio_button_one.parent(tab_page_controls);
+  radio_button_one.location({30, 400});
+  radio_button_one.parent(tab_page_buttons);
   radio_button_one.text("radio 1");
 
   radio_button radio_button_two;
-  radio_button_two.location({120, 130});
-  radio_button_two.parent(tab_page_controls);
+  radio_button_two.location({140, 400});
+  radio_button_two.parent(tab_page_buttons);
   radio_button_two.text("radio 2");
 
   radio_button radio_button_button;
   radio_button_button.appearance(forms::appearance::button);
-  radio_button_button.location({230, 130});
-  radio_button_button.parent(tab_page_controls);
+  radio_button_button.location({250, 400});
+  radio_button_button.parent(tab_page_buttons);
   radio_button_button.text("radio 3");
   
+  radio_button image_radio_button;
+  image_radio_button.location({360, 400});
+  image_radio_button.image(button_images::from_name("folder-home"));
+  image_radio_button.image_align(content_alignment::middle_left);
+  image_radio_button.parent(tab_page_buttons);
+  image_radio_button.text("Home");
+  image_radio_button.text_align(content_alignment::middle_center);
+  
+  radio_button colored_radio_button;
+  colored_radio_button.location({470, 400});
+  colored_radio_button.back_color(color::blue);
+  colored_radio_button.fore_color(color::yellow);
+  colored_radio_button.parent(tab_page_buttons);
+  colored_radio_button.text("Colored");
+
   radio_button radio_button_disabled;
   radio_button_disabled.enabled(false);
-  radio_button_disabled.location({340, 130});
-  radio_button_disabled.parent(tab_page_controls);
+  radio_button_disabled.location({580, 400});
+  radio_button_disabled.parent(tab_page_buttons);
   radio_button_disabled.text("Disabled");
   
   radio_button radio_button_button_disabled;
   radio_button_button_disabled.enabled(false);
   radio_button_button_disabled.appearance(forms::appearance::button);
-  radio_button_button_disabled.location({450, 130});
-  radio_button_button_disabled.parent(tab_page_controls);
+  radio_button_button_disabled.location({690, 400});
+  radio_button_button_disabled.parent(tab_page_buttons);
   radio_button_button_disabled.text("Disabled");
   
   tab_page tab_page_texts;
