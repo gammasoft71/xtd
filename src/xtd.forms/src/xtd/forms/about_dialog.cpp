@@ -81,6 +81,8 @@ namespace {
       maximize_box(false);
       minimize_box(false);
       client_size({476, 300});
+      maximum_size(size());
+      minimum_size(size());
       //form_border_style(forms::form_border_style::fixed_dialog);
       start_position(form_start_position::center_screen);
 
@@ -153,6 +155,11 @@ namespace {
         about_dialog_standard->tab_control_about_.tab_pages().push_back(about_dialog_standard->tab_page_about_);
         about_dialog_standard->tab_page_about_.controls().push_back(about_dialog_standard->panel_about_);
       } else {
+        about_dialog_standard->maximum_size({0, 0});
+        about_dialog_standard->minimum_size({0, 0});
+        about_dialog_standard->client_size({476, 250});
+        about_dialog_standard->maximum_size(about_dialog_standard->size());
+        about_dialog_standard->minimum_size(about_dialog_standard->size());
         about_dialog_standard->controls().push_back_range({about_dialog_standard->panel_about_, about_dialog_standard->label_name_, about_dialog_standard->picture_box_icon_});
       }
 
