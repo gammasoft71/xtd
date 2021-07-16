@@ -168,6 +168,57 @@ int main() {
   colored_lcd_label.parent(tab_page_labels);
   colored_lcd_label.text("1234567890");
 
+  tab_page tab_page_texts;
+  tab_page_texts.parent(tab_control_main);
+  tab_page_texts.text("Texts");
+  tab_page_texts.auto_scroll(true);
+  
+  link_label text_box_label;
+  text_box_label.auto_size(true);
+  text_box_label.location({10, 10});
+  text_box_label.parent(tab_page_texts);
+  text_box_label.text("xtd::forms::text_box");
+  text_box_label.link_clicked += [] {
+    process::start("https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1text__box.html");
+  };
+  
+  text_box default_text_box;
+  default_text_box.location({30, 40});
+  default_text_box.parent(tab_page_texts);
+  default_text_box.text("Default text");
+  
+  text_box read_only_text_box;
+  read_only_text_box.location({140, 40});
+  read_only_text_box.parent(tab_page_texts);
+  read_only_text_box.text("Read only text");
+  read_only_text_box.read_only(true);
+  
+  text_box system_password_text_box;
+  system_password_text_box.location({250, 40});
+  system_password_text_box.parent(tab_page_texts);
+  system_password_text_box.text("Password");
+  system_password_text_box.use_system_password_char(true);
+  
+  text_box colored_text_box;
+  colored_text_box.location({360, 40});
+  colored_text_box.back_color(color::blue);
+  colored_text_box.fore_color(color::yellow);
+  colored_text_box.parent(tab_page_texts);
+  colored_text_box.text("Colored");
+  
+  text_box disabled_text_box;
+  disabled_text_box.location({470, 40});
+  disabled_text_box.parent(tab_page_texts);
+  disabled_text_box.text("Disabled");
+  disabled_text_box.enabled(false);
+  
+  text_box multiline_text_box;
+  multiline_text_box.location({30, 80});
+  multiline_text_box.size({540, 200});
+  multiline_text_box.multiline(true);
+  multiline_text_box.parent(tab_page_texts);
+  multiline_text_box.text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.\n\nUt velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius, ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus sapien eros vitae ligula. Pellentesque rhoncus nunc et augue. Integer id felis. Curabitur aliquet pellentesque diam. Integer quis metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi vel erat non mauris convallis vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus, convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat. Proin feugiat, augue non elementum posuere, metus purus iaculis lectus, et tristique ligula justo vitae magna.\n\nAliquam convallis sollicitudin purus. Praesent aliquam, enim at fermentum mollis, ligula massa adipiscing nisl, ac euismod nibh nisl eu lectus. Fusce vulputate sem at sapien. Vivamus leo. Aliquam euismod libero eu enim. Nulla nec felis sed leo placerat imperdiet. Aenean suscipit nulla in justo. Suspendisse cursus rutrum augue. Nulla tincidunt tincidunt mi. Curabitur iaculis, lorem vel rhoncus faucibus, felis magna fermentum augue, et ultricies lacus lorem varius purus. Curabitur eu amet.\n");
+
   tab_page tab_page_buttons;
   tab_page_buttons.parent(tab_control_main);
   tab_page_buttons.text("Buttons");
@@ -424,50 +475,166 @@ int main() {
   radio_button_button_disabled.location({690, 400});
   radio_button_button_disabled.parent(tab_page_buttons);
   radio_button_button_disabled.text("Disabled");
-  
-  tab_page tab_page_texts;
-  tab_page_texts.parent(tab_control_main);
-  tab_page_texts.text("Texts");
-  tab_page_texts.auto_scroll(true);
+
+  link_label command_link_button_label;
+  command_link_button_label.auto_size(true);
+  command_link_button_label.location({10, 460});
+  command_link_button_label.parent(tab_page_buttons);
+  command_link_button_label.text("xtd::forms::command_link_button");
+  command_link_button_label.link_clicked += [] {
+    process::start("https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1link__label.html");
+  };
+
+  command_link_button default_command_link_button;
+  default_command_link_button.location({30, 490});
+  default_command_link_button.parent(tab_page_buttons);
+  default_command_link_button.text("Command link\nButton");
+
+  command_link_button image_command_link_button;
+  image_command_link_button.location({250, 490});
+  image_command_link_button.parent(tab_page_buttons);
+  image_command_link_button.text("Home\nThe user home folder");
+  image_command_link_button.image(button_images::from_name("folder-home"));
+
+  command_link_button colored_command_link_button;
+  colored_command_link_button.location({470, 490});
+  colored_command_link_button.back_color(color::blue);
+  colored_command_link_button.fore_color(color::yellow);
+  colored_command_link_button.parent(tab_page_buttons);
+  colored_command_link_button.text("Colored\nCommand link button");
+
+  command_link_button disabled_command_link_button;
+  disabled_command_link_button.location({690, 490});
+  disabled_command_link_button.parent(tab_page_buttons);
+  disabled_command_link_button.text("Disabled\nCommand link button");
+  disabled_command_link_button.enabled(false);
+
+  link_label up_down_button_label;
+  up_down_button_label.auto_size(true);
+  up_down_button_label.location({10, 570});
+  up_down_button_label.parent(tab_page_buttons);
+  up_down_button_label.text("xtd::forms::up_down_button");
+  up_down_button_label.link_clicked += [] {
+    process::start("https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1up__down__button.html");
+  };
+
+  up_down_button default_up_down_button;
+  default_up_down_button.location({30, 600});
+  default_up_down_button.parent(tab_page_buttons);
+
+  up_down_button colored_up_down_button;
+  colored_up_down_button.back_color(color::blue);
+  colored_up_down_button.fore_color(color::yellow);
+  colored_up_down_button.location({120, 600});
+  colored_up_down_button.parent(tab_page_buttons);
+
+  up_down_button disabled_up_down_button;
+  disabled_up_down_button.location({210, 600});
+  disabled_up_down_button.parent(tab_page_buttons);
+  disabled_up_down_button.enabled(false);
+
+  tab_page tab_page_pickers;
+  tab_page_pickers.parent(tab_control_main);
+  tab_page_pickers.text("Pickers");
+  tab_page_pickers.auto_scroll(true);
+
+  link_label color_picker_label;
+  color_picker_label.auto_size(true);
+  color_picker_label.location({10, 10});
+  color_picker_label.parent(tab_page_pickers);
+  color_picker_label.text("xtd::forms::color_picker");
+  color_picker_label.link_clicked += [] {
+    process::start("https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1color__picker.html");
+  };
+
+  color_picker default_color_picker;
+  default_color_picker.location({30, 40});
+  default_color_picker.parent(tab_page_pickers);
+  //default_color_picker.color(tab_page_pickers.fore_color());
 
   tab_page tab_page_lists;
   tab_page_lists.parent(tab_control_main);
   tab_page_lists.text("Lists");
   tab_page_lists.auto_scroll(true);
 
+  link_label list_box_label;
+  list_box_label.auto_size(true);
+  list_box_label.location({10, 10});
+  list_box_label.parent(tab_page_lists);
+  list_box_label.text("xtd::forms::list_box");
+  list_box_label.link_clicked += [] {
+    process::start("https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1list__box.html");
+  };
+
   list_box list_box_items;
   list_box_items.items().push_back_range({"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
-  list_box_items.location({10, 10});
+  list_box_items.location({30, 40});
   list_box_items.parent(tab_page_lists);
   list_box_items.selected_index(1);
   list_box_items.size({200, 300});
   
-  list_box list_box_disabled;
-  list_box_disabled.enabled(false);
-  list_box_disabled.items().push_back_range({"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
-  list_box_disabled.location({220, 10});
-  list_box_disabled.parent(tab_page_lists);
-  list_box_disabled.selected_index(1);
-  list_box_disabled.size({200, 300});
+  list_box colored_list_box;
+  colored_list_box.back_color(color::blue);
+  colored_list_box.fore_color(color::yellow);
+  colored_list_box.items().push_back_range({"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
+  colored_list_box.location({240, 40});
+  colored_list_box.parent(tab_page_lists);
+  colored_list_box.selected_index(1);
+  colored_list_box.size({200, 300});
   
-  checked_list_box checked_list_box_items;
-  checked_list_box_items.items().push_back_range({{"Item 1", true}, {"Item 2", true}, {"Item 3", false}, {"Item 4", false}, {"Item 5", true}, {"Item 6", true}, {"Item 7", false}, {"Item 8", false}, {"Item 9", true}, {"Item 10", true}});
-  checked_list_box_items.location({10, 320});
-  checked_list_box_items.parent(tab_page_lists);
-  checked_list_box_items.selected_index(2);
-  checked_list_box_items.size({200, 300});
+  list_box disabled_list_box;
+  disabled_list_box.enabled(false);
+  disabled_list_box.items().push_back_range({"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
+  disabled_list_box.location({450, 40});
+  disabled_list_box.parent(tab_page_lists);
+  disabled_list_box.selected_index(1);
+  disabled_list_box.size({200, 300});
+
+  link_label checked_list_box_label;
+  checked_list_box_label.auto_size(true);
+  checked_list_box_label.location({10, 350});
+  checked_list_box_label.parent(tab_page_lists);
+  checked_list_box_label.text("xtd::forms::checked_list_box");
+  checked_list_box_label.link_clicked += [] {
+    process::start("https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1checked__list__box.html");
+  };
+
+  checked_list_box default_checked_list_box;
+  default_checked_list_box.items().push_back_range({{"Item 1", true}, {"Item 2", true}, {"Item 3", false}, {"Item 4", false}, {"Item 5", true}, {"Item 6", true}, {"Item 7", false}, {"Item 8", false}, {"Item 9", true}, {"Item 10", true}});
+  default_checked_list_box.location({30, 380});
+  default_checked_list_box.parent(tab_page_lists);
+  default_checked_list_box.selected_index(2);
+  default_checked_list_box.size({200, 300});
+
+  checked_list_box colored_checked_list_box;
+  colored_checked_list_box.back_color(color::blue);
+  colored_checked_list_box.fore_color(color::yellow);
+  colored_checked_list_box.items().push_back_range({{"Item 1", true}, {"Item 2", true}, {"Item 3", false}, {"Item 4", false}, {"Item 5", true}, {"Item 6", true}, {"Item 7", false}, {"Item 8", false}, {"Item 9", true}, {"Item 10", true}});
+  colored_checked_list_box.location({240, 380});
+  colored_checked_list_box.parent(tab_page_lists);
+  colored_checked_list_box.selected_index(2);
+  colored_checked_list_box.size({200, 300});
   
-  checked_list_box checked_list_box_disabled;
-  checked_list_box_disabled.enabled(false);
-  checked_list_box_disabled.items().push_back_range({{"Item 1", true}, {"Item 2", true}, {"Item 3", false}, {"Item 4", false}, {"Item 5", true}, {"Item 6", true}, {"Item 7", false}, {"Item 8", false}, {"Item 9", true}, {"Item 10", true}});
-  checked_list_box_disabled.location({220, 320});
-  checked_list_box_disabled.parent(tab_page_lists);
-  checked_list_box_disabled.selected_index(2);
-  checked_list_box_disabled.size({200, 300});
-  
+  checked_list_box disabled_checked_list_box;
+  disabled_checked_list_box.enabled(false);
+  disabled_checked_list_box.items().push_back_range({{"Item 1", true}, {"Item 2", true}, {"Item 3", false}, {"Item 4", false}, {"Item 5", true}, {"Item 6", true}, {"Item 7", false}, {"Item 8", false}, {"Item 9", true}, {"Item 10", true}});
+  disabled_checked_list_box.location({450, 380});
+  disabled_checked_list_box.parent(tab_page_lists);
+  disabled_checked_list_box.selected_index(2);
+  disabled_checked_list_box.size({200, 300});
+
+  link_label combo_box_label;
+  combo_box_label.auto_size(true);
+  combo_box_label.location({10, 690});
+  combo_box_label.parent(tab_page_lists);
+  combo_box_label.text("xtd::forms::combo_box");
+  combo_box_label.link_clicked += [] {
+    process::start("https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1combo__box.html");
+  };
+
   combo_box combo_box_drop_down;
   combo_box_drop_down.items().push_back_range({"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
-  combo_box_drop_down.location({10, 630});
+  combo_box_drop_down.location({30, 720});
   combo_box_drop_down.parent(tab_page_lists);
   combo_box_drop_down.selected_index(2);
   combo_box_drop_down.width(200);
@@ -475,7 +642,7 @@ int main() {
   combo_box combo_box_drop_down_list;
   combo_box_drop_down_list.drop_down_style(combo_box_style::drop_down_list);
   combo_box_drop_down_list.items().push_back_range({"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
-  combo_box_drop_down_list.location({220, 630});
+  combo_box_drop_down_list.location({240, 720});
   combo_box_drop_down_list.parent(tab_page_lists);
   combo_box_drop_down_list.selected_index(2);
   combo_box_drop_down_list.width(200);
@@ -483,15 +650,10 @@ int main() {
   combo_box combo_box_simple;
   combo_box_simple.drop_down_style(combo_box_style::simple);
   combo_box_simple.items().push_back_range({"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
-  combo_box_simple.location({430, 630});
+  combo_box_simple.location({450, 720});
   combo_box_simple.parent(tab_page_lists);
   combo_box_simple.selected_index(2);
   combo_box_simple.width(200);
-
-  tab_page tab_page_pickers;
-  tab_page_pickers.parent(tab_control_main);
-  tab_page_pickers.text("Pickers");
-  tab_page_pickers.auto_scroll(true);
 
   tab_page tab_page_containers;
   tab_page_containers.parent(tab_control_main);
