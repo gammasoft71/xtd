@@ -615,8 +615,8 @@ void control::on_handle_created(const event_args &e) {
 
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::creation), strings::format("on handle created control={}, location={}, size={}, client_size={}", *this, location(), this->size(), client_size()));
 
-  if (parent_) parent().value().get().perform_layout();
-  perform_layout();
+  if (!get_state(control::state::recreate) && parent_) parent().value().get().perform_layout();
+  if (!get_state(control::state::recreate)) perform_layout();
 }
 
 void control::on_handle_destroyed(const event_args &e) {
