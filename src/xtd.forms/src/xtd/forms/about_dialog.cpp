@@ -100,8 +100,7 @@ namespace {
       tab_page_credits_.auto_scroll(true);
 
       tab_page_license_.text("License"_t);
-      tab_page_license_.controls().push_back(text_box_license_);
-
+ 
       tab_control_about_.padding(5);
       tab_control_about_.dock(dock_style::fill);
 
