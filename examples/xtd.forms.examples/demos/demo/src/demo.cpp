@@ -550,7 +550,21 @@ int main() {
   color_picker default_color_picker;
   default_color_picker.location({30, 40});
   default_color_picker.parent(tab_page_pickers);
-  //default_color_picker.color(tab_page_pickers.fore_color());
+
+  color_picker colored_color_picker;
+  colored_color_picker.back_color(color::blue);
+  colored_color_picker.location({140, 40});
+  colored_color_picker.parent(tab_page_pickers);
+
+  color_picker disabled_color_picker;
+  disabled_color_picker.enabled(false);
+  disabled_color_picker.location({250, 40});
+  disabled_color_picker.parent(tab_page_pickers);
+
+  tab_page tab_page_sliders;
+  tab_page_sliders.parent(tab_control_main);
+  tab_page_sliders.text("Sliders");
+  tab_page_sliders.auto_scroll(true);
 
   tab_page tab_page_lists;
   tab_page_lists.parent(tab_control_main);
@@ -654,6 +668,11 @@ int main() {
   combo_box_simple.parent(tab_page_lists);
   combo_box_simple.selected_index(2);
   combo_box_simple.width(200);
+
+  tab_page tab_page_misc;
+  tab_page_misc.parent(tab_control_main);
+  tab_page_misc.text("Misc");
+  tab_page_misc.auto_scroll(true);
 
   tab_page tab_page_containers;
   tab_page_containers.parent(tab_control_main);
