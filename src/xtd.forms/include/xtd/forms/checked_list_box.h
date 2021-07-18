@@ -208,7 +208,7 @@ namespace xtd {
       void set_item_text(size_t index, const std::string& text);
       
       /// @brief Occurs when the checked state of an item changes.
-      event<checked_list_box, item_check_event_handler<control&>> item_check;
+      event<checked_list_box, item_check_event_handler> item_check;
 
     protected:
       bool allow_selection() override {return selection_mode_ != forms::selection_mode::none;}

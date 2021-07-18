@@ -285,11 +285,11 @@ namespace xtd {
 
       /// @brief Occurs after the form is closed.
       /// @ingroup events
-      event<form, form_closed_event_handler<control&>> form_closed;
+      event<form, form_closed_event_handler> form_closed;
       
       /// @brief Occurs before the form is closed.
       /// @ingroup events
-      event<form, form_closing_event_handler<control&>> form_closing;
+      event<form, form_closing_event_handler> form_closing;
 
     protected:
       friend class application;

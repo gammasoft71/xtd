@@ -108,7 +108,7 @@ namespace xtd {
       const xtd::drawing::color& visited_link_color() const;
       link_label& visited_link_color(const xtd::drawing::color& color);
       
-      event<link_label, link_label_clicked_event_handler<control&>> link_clicked;
+      event<link_label, link_label_clicked_event_handler> link_clicked;
 
     protected:
       xtd::drawing::size measure_control() const override;
