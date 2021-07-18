@@ -97,11 +97,11 @@ namespace xtd {
 
       /// @brief Occurs when the user clicks the Help button on a common dialog box.
       /// @ingroup events
-      event<common_dialog, help_event_handler<component&>> help_request;
+      event<common_dialog, help_event_handler> help_request;
 
       /// @brief Occurs when the user close a common dialog box with dialog close button or other dialog buttons.
       /// @ingroup events
-      event<common_dialog, dialog_closed_event_handler<component&>> dialog_closed;
+      event<common_dialog, dialog_closed_event_handler> dialog_closed;
       
     protected:
       /// @cond

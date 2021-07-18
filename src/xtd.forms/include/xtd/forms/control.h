@@ -1151,11 +1151,11 @@ namespace xtd {
 
       /// @brief Occurs when a new control is added to the control::control_collection.
       /// @ingroup events
-      event<control, control_event_handler<control&>> control_added;
+      event<control, control_event_handler> control_added;
       
       /// @brief Occurs when a new control is removed to the control::control_collection.
       /// @ingroup events
-      event<control, control_event_handler<control&>> control_removed;
+      event<control, control_event_handler> control_removed;
       
       /// @brief Occurs when the value of the dock property changes.
       /// @ingroup events
@@ -1266,7 +1266,7 @@ namespace xtd {
       /// @image html key_events_g.png
       /// <br>
       /// @image html key_events_gd.png
-      event<control, key_event_handler<control&>> key_down;
+      event<control, key_event_handler> key_down;
       
       /// @brief Occurs when a character. space or backspace key is pressed while the control has focus.
       /// @ingroup events
@@ -1292,7 +1292,7 @@ namespace xtd {
       /// @image html key_events_g.png
       /// <br>
       /// @image html key_events_gd.png
-      event<control, key_press_event_handler<control&>> key_press;
+      event<control, key_press_event_handler> key_press;
       
       /// @brief Occurs when a key is released while the control has focus.
       /// @ingroup events
@@ -1316,7 +1316,7 @@ namespace xtd {
       /// @image html key_events_g.png
       /// <br>
       /// @image html key_events_gd.png
-      event<control, key_event_handler<control&>> key_up;
+      event<control, key_event_handler> key_up;
       
       /// @brief Occurs when a control should reposition its child controls.
       /// @ingroup events
@@ -1376,7 +1376,7 @@ namespace xtd {
       /// @image html mouse_events_g.png
       /// <br>
       /// @image html mouse_events_gd.png
-      event<control, mouse_event_handler<control&>> mouse_click;
+      event<control, mouse_event_handler> mouse_click;
       
       /// @brief Occurs when the control is double clicked by the mouse.
       /// @ingroup events
@@ -1408,7 +1408,7 @@ namespace xtd {
       /// @image html mouse_events_g.png
       /// <br>
       /// @image html mouse_events_gd.png
-      event<control, mouse_event_handler<control&>> mouse_double_click;
+      event<control, mouse_event_handler> mouse_double_click;
       
       /// @brief Occurs when the mouse pointer is over the control and a mouse button is pressed.
       /// @ingroup events
@@ -1434,7 +1434,7 @@ namespace xtd {
       /// @image html mouse_events_g.png
       /// <br>
       /// @image html mouse_events_gd.png
-      event<control, mouse_event_handler<control&>> mouse_down;
+      event<control, mouse_event_handler> mouse_down;
       
       /// @brief Occurs when the mouse pointer enters the control.
       /// @ingroup events
@@ -1487,7 +1487,7 @@ namespace xtd {
       /// @image html mouse_events_g.png
       /// <br>
       /// @image html mouse_events_gd.png
-      event<control, mouse_event_handler<control&>> mouse_horizontal_wheel;
+      event<control, mouse_event_handler> mouse_horizontal_wheel;
       
       /// @brief Occurs when the mouse pointer leaves the control.
       /// @ingroup events
@@ -1539,7 +1539,7 @@ namespace xtd {
       /// @image html mouse_events_g.png
       /// <br>
       /// @image html mouse_events_gd.png
-      event<control, mouse_event_handler<control&>> mouse_move;
+      event<control, mouse_event_handler> mouse_move;
       
       /// @brief Occurs when the mouse pointer is over the control and a mouse button is released.
       /// @ingroup events
@@ -1565,7 +1565,7 @@ namespace xtd {
       /// @image html mouse_events_g.png
       /// <br>
       /// @image html mouse_events_gd.png
-      event<control, mouse_event_handler<control&>> mouse_up;
+      event<control, mouse_event_handler> mouse_up;
       
       /// @brief Occurs when the mouse wheel moves while the control has focus.
       /// @ingroup events
@@ -1592,7 +1592,7 @@ namespace xtd {
       /// @image html mouse_events_g.png
       /// <br>
       /// @image html mouse_events_gd.png
-      event<control, mouse_event_handler<control&>> mouse_wheel;
+      event<control, mouse_event_handler> mouse_wheel;
       
       /// @brief Occurs when the control is redrawn.
       /// @ingroup events
@@ -1613,7 +1613,7 @@ namespace xtd {
       /// @image html form_paint_g.png
       /// <br>
       /// @image html form_paint_gd.png
-      event<control, paint_event_handler<control&>> paint;
+      event<control, paint_event_handler> paint;
       
       /// @brief Occurs when the value of the parent property changes.
       /// @ingroup events

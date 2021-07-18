@@ -96,7 +96,7 @@ namespace xtd {
       
       /// @brief Occurs when the user close an exception dialog box with dialog close button or other dialog buttons.
       /// @ingroup events
-      event<exception_dialog, dialog_closed_event_handler<exception_dialog&>> dialog_closed;
+      event<exception_dialog, dialog_closed_event_handler> dialog_closed;
 
     protected:
       /// @brief Raises the close event.
