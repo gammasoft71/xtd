@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <limits>
 #include <ostream>
+#include <xtd/object.h>
 #include <xtd/strings.h>
 #include "../drawing_export.h"
 #include "brush.h"
@@ -42,7 +43,7 @@ namespace xtd {
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    class drawing_export_ graphics {
+    class drawing_export_ graphics : public object {
     public:
       /// @cond
       graphics(const graphics& value);
@@ -225,7 +226,7 @@ namespace xtd {
 
       void translate_clip(float dx, float dy) {translate_clip(static_cast<int32_t>(dx), static_cast<int32_t>(dy));}
 
-      std::string to_string() const {return strings::full_class_name(*this);}
+      std::string to_string() const noexcept override {return strings::full_class_name(*this);}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::graphics& graphics) noexcept {

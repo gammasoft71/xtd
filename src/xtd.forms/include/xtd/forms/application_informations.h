@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <string>
+#include <xtd/object.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -27,7 +28,7 @@ namespace xtd {
     /// @image html application_informations_g.png
     /// <br>
     /// @image html application_informations_gd.png
-    class application_informations {
+    class application_informations : public object {
     public:
       /// @brief Gets the company name associated with the application.
       /// @return The company name.

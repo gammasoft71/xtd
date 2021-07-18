@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <string>
 #include <vector>
+#include <xtd/object.h>
 #include <xtd/drawing/rectangle.h>
 #include "control.h"
 
@@ -47,7 +48,7 @@ namespace xtd {
     /// @image html screen_informations_g.png
     /// <br>
     /// @image html screen_informations_gd.png
-    class forms_export_ screen {
+    class forms_export_ screen : public object {
     public:
       /// @cond
       screen(const screen&) = default;

@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <memory>
+#include <xtd/object.h>
 #include <xtd/strings.h>
 #include "../forms_export.h"
 
@@ -32,7 +33,7 @@ namespace xtd {
     /// @image html settings_example_g.png
     /// <br>
     /// @image html settings_example_gd.png
-    class forms_export_ settings {
+    class forms_export_ settings : public object {
     public:
       /// @brief Initializes a new instance of settings class.
       settings();

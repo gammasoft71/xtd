@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <ostream>
+#include <xtd/object.h>
 #include <xtd/strings.h>
 #include "../drawing_export.h"
 #include "size_f.h"
@@ -19,7 +20,7 @@ namespace xtd {
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    class drawing_export_ size {
+    class drawing_export_ size : public object {
     public:
       /// @brief Gets a Size class that has a Height and Width value of 0. This field is constant.
       static const xtd::drawing::size empty;
@@ -97,7 +98,7 @@ namespace xtd {
 
       /// @brief Creates a human-readable string that represents this size class.
       /// @return string A string that represents this size.
-      std::string to_string() const {return "{width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";}
+      std::string to_string() const noexcept override {return "{width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";}
  
       /// @brief Converts the specified size_f to a size by truncating the values of the size_f.
       /// @param value The size_f to convert.

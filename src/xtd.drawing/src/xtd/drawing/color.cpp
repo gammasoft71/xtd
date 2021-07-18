@@ -487,7 +487,7 @@ known_color color::to_known_color() const {
   return known_color_;
 }
 
-string color::to_string() const {
+string color::to_string() const noexcept {
   if (empty_) return "color [empty]";
   if (name_ != strings::format("{:X8}", argb_) && name_ != "0") return strings::format("color [{0}]", name());
   return strings::format("color [a={}, r={}, g={}, b={}]", a(), r(), g(), b());

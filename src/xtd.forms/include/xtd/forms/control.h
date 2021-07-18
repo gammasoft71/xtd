@@ -1062,7 +1062,7 @@ namespace xtd {
       
       /// @brief Returns a string containing the name of the control, if any.
       /// @return A string containing the name of the control, if any, or class name if the control is unnamed.
-      virtual std::string to_string() const;
+      std::string to_string() const noexcept override;
       
       /// @brief Causes the control to redraw the invalidated regions within its client area.
       /// @remarks Executes any pending requests for painting.

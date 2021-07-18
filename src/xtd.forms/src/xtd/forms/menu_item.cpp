@@ -142,6 +142,6 @@ int menu_item::menu_id() const {
   return native::menu_item::menu_id(data_->handle_);
 }
 
-std::string menu_item::to_string() const {
+std::string menu_item::to_string() const noexcept {
   return strings::format("{}, text: {}", menu::to_string(), text_);
 }

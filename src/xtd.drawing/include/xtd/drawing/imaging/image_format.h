@@ -6,6 +6,7 @@
 #include <ostream>
 #include <string>
 #include <xtd/guid.h>
+#include <xtd/object.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -18,7 +19,7 @@ namespace xtd {
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing
-      class image_format final {
+      class image_format final : public object {
       public:
         /// @cond
         image_format() = default;
@@ -182,7 +183,7 @@ namespace xtd {
 
         /// @brief Converts this image_format object to a human-readable string.
         /// @return A string that represents this image_format object.
-        virtual std::string to_string() const {return strings::format("[image_format: {}]", guid_);}
+        std::string to_string() const noexcept override {return strings::format("[image_format: {}]", guid_);}
         
         /// @cond
         friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::imaging::image_format& image_format) noexcept {

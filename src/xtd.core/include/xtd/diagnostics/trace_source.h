@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <map>
+#include "../object.h"
 #include "default_trace_listener.h"
 #include "source_levels.h"
 #include "source_switch.h"
@@ -26,7 +27,7 @@ namespace xtd {
     /// @remarks The trace_event_type enumeration is used to define the event type of the trace message. Trace filters use the trace_event_type to determine if a trace listener should produce the trace message.
     /// @remarks The trace listeners can optionally have an additional layer of filtering through a trace filter. If a trace listener has an associated filter, the listener calls the should_trace method on that filter to determine whether or not to produce the trace information.
     /// @remarks The trace listeners use the values of the trace class properties indent, indent_size, and  auto_flush to format trace output.
-    class trace_source {
+    class trace_source : public object {
     public:
       /// @brief Initializes a new instance of the Trace_Source class, using the specified name for the source.
       /// @param name The name of the source (typically, the name of the application).

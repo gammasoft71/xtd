@@ -4,6 +4,7 @@
 #pragma once
 #include <cstdint>
 #include <limits>
+#include "../object.h"
 #include "../strings.h"
 
 #ifndef current_stack_frame_
@@ -25,7 +26,7 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates the use of the StackFrame class to provide the stack frame information for a stack trace.
     /// @include stack_frame.cpp
-    class stack_frame {
+    class stack_frame : public object {
     public:
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class.
       stack_frame();
@@ -166,7 +167,7 @@ namespace xtd {
       
       /// @brief Builds a readable representation of the stack trace.
       /// @return A readable representation of the stack trace.
-      virtual std::string to_string() const;
+      virtual std::string to_string() const noexcept;
 
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::diagnostics::stack_frame& stack_frame) noexcept {return os << stack_frame.to_string();}

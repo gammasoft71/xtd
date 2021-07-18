@@ -9,6 +9,7 @@
 #include <sstream>
 #include <string>
 #include "../core_export.h"
+#include "../static.h"
 /// @todo remove comment when drive_into.h will be create
 //#include "drive_into.h"
 #include "file.h"
@@ -23,12 +24,8 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core io
-    class core_export_ path {
+    class core_export_ path static_ {
     public:
-      /// @cond
-      path() = delete;
-      /// @endcond
-      
       /// @brief Provides a platform-specific alternate character used to separate directory levels in a path string that reflects a hierarchical file system organization.
       /// @return char_t character used to separate directory levels.
       /// @remarks This method can have the same value as directory_separator_char. alt_directory_separator_char and directory_separator_char are both valid for separating directory levels in a path string.

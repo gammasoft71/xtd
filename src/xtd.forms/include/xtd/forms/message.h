@@ -7,6 +7,7 @@
 #include <sstream>
 #include <cstdint>
 #include <string>
+#include <xtd/object.h>
 #include "../forms_export.h"
 
 namespace xtd {
@@ -18,7 +19,7 @@ namespace xtd {
     /// @remarks The message structure wraps messages that Windows sends. You can use this structure to wrap a message and assign it to the window procedure to be dispatched. You can also use this structure to get information about a message the system sends to your application or controls.
     /// @remarks You cannot create the message directly. Instead, use the create method. For the sake of efficiency, the message uses its pool of existing Messages instead of instantiating a new one, if possible. However, if a message is not available in the pool, a new one is instantiated.
     /// @remarks Windows message are simulate on macOS and linux.
-    class forms_export_ message {
+    class forms_export_ message : public object {
     public:
       /// @cond
       message() = default;
@@ -94,7 +95,7 @@ namespace xtd {
       
       /// @brief Returns a string that represents the current message.
       /// @return A std::string that represents the current message.
-      std::string to_string() const;
+      std::string to_string() const noexcept override;
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::forms::message& message) noexcept {

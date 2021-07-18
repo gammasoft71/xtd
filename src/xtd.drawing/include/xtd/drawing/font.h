@@ -7,6 +7,7 @@
 #include <ostream>
 #include <stdexcept>
 #include <vector>
+#include <xtd/object.h>
 #include <xtd/strings.h>
 #include "../drawing_export.h"
 #include "font_family.h"
@@ -33,7 +34,7 @@ namespace xtd {
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    class drawing_export_ font final {
+    class drawing_export_ font final : public object {
     public:
       /// @brief Initializes a new Font that uses the specified existing xtd::drawing::font and size.
       /// @param prototype The existing xtd::drawing::font from which to create the new xtd::drawing::font.
@@ -159,7 +160,7 @@ namespace xtd {
       
       /// @brief Converts this font_family to a human-readable string representation.
       /// @return The string that represents this font_family.
-      std::string to_string() const {
+      std::string to_string() const noexcept override {
         //return strings::format("[{}: ]", strings::class_name(*this));
         return strings::format("[{}: name={}, size={}, units={}, gdi_char_set={}, gdi_vertical_font={}]", strings::class_name(*this), data_->font_family_.name(), data_->size_, (int32_t)data_->unit_, data_->gdi_char_set_, data_->gdi_vertical_font_);
       }

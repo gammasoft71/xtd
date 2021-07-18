@@ -13,6 +13,7 @@
 #undef __XTD_CORE_INTERNAL__
 /// @endcond
 #include "istring.h"
+#include "static.h"
 #include "string_comparison.h"
 #include "string_split_options.h"
 
@@ -54,12 +55,8 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  class core_export_ strings {
+  class core_export_ strings static_ {
   public:
-    /// @cond
-    strings() = delete;
-    /// @endcond
-    
     /// @brief Gets the fully qualified class name of the objec_t, including the namespace of the objec_t.
     /// @return The fully qualified class name of the objec_t, including the namespace of the objec_t.
     /// @remarks For example, the fully qualified name of the strings type is xtd::strings.

@@ -4,6 +4,7 @@
 #pragma once
 #include <cstdint>
 #include <ostream>
+#include <xtd/object.h>
 #include <xtd/strings.h>
 #include "../drawing_export.h"
 #include "hotkey_prefix.h"
@@ -20,7 +21,7 @@ namespace xtd {
     /// xtd.drawing
     /// @ingroup xtd_drawing
     /// @remarks Many common formats are provided through the string_format_flags enumeration. string_format objects can be changed.
-    class drawing_export_ string_format final {
+    class drawing_export_ string_format final : public object {
     public:
       /// @brief Initializes a new string_format object.
       /// @remarks The following table shows initial property values for an instance of string_format class.

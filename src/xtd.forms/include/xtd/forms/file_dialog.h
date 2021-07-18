@@ -294,7 +294,7 @@ namespace xtd {
 
       /// @brief Provides a string version of this object.
       /// @return A string version of this object.
-      std::string to_string() const {
+      std::string to_string() const noexcept override {
         return strings::format("{}: title: {}, filename: {}", strings::full_class_name(*this), title_, file_name_);
       }
 

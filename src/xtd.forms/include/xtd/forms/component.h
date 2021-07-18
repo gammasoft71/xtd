@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
+#include <xtd/object.h>
 #include "../forms_export.h"
 #include "../forms_namespace_aliases.h"
 
@@ -15,7 +16,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms components
     /// @remarks component is the base class for all components and controls.
-    class component {
+    class component : public xtd::object {
     public:
       
     protected:

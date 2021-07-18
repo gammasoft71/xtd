@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
+#include <xtd/object.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -14,7 +15,7 @@ namespace xtd {
     /// @ingroup xtd_forms interfaces
     /// @remarks This interface allows an application to capture a message before it is dispatched to a control or form.
     /// @remarks A class that implements the imessage_filter interface can be added to the application's message pump to filter out a message or perform other operations before the message is dispatched to a form or control. To add the message filter to an application's message pump, use the add_message_filter method in the application class.
-    class imessage_filter  {
+    class imessage_filter : public object {
     public:
       /// @brief Filters out a message before it is dispatched.
       /// @param m The message to be dispatched. You cannot modify this message.

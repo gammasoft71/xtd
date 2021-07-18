@@ -2,6 +2,7 @@
 /// @brief Contains xtd::forms::control_layout_style class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+#include <xtd/object.h>
 #include <xtd/strings.h>
 #include "content_alignment.h"
 #include "size_type.h"
@@ -14,7 +15,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    class control_layout_style {
+    class control_layout_style : public object {
     protected:
       /// @brief Initialises a new instance of control layout style class.
       control_layout_style() = default;
@@ -85,7 +86,7 @@ namespace xtd {
 
       /// @brief Returns a string that represent xtd::forms::control_layout_style.
       /// @return A string containing that represent xtd::forms::control_layout_style.
-      virtual std::string to_string() const {return strings::format("control_layout_style=[expanded={}, align={}, size_type={}]", expanded_, align_, size_type_);}
+      std::string to_string() const noexcept override {return strings::format("control_layout_style=[expanded={}, align={}, size_type={}]", expanded_, align_, size_type_);}
       
       /// @cond
       bool operator==(const control_layout_style& value) const {return size_type_ == value.size_type_ && expanded_ == value.expanded_;}

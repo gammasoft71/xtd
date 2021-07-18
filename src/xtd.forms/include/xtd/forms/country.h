@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "../forms_export.h"
+#include <xtd/object.h>
 #include <xtd/strings.h>
 #include <xtd/static.h>
 #include <xtd/drawing/bitmap.h>
@@ -34,7 +35,7 @@ namespace xtd {
     /// @image html countries_g.png
     /// <br>
     /// @image html countries_gd.png
-    class forms_export_ country {
+    class forms_export_ country : public object {
     public:
       /// @cond
       country() = default;
@@ -90,7 +91,7 @@ namespace xtd {
 
       /// @brief Returns a string containing the name, alpha codes and numeric code of the country.
       /// @return A string containing the name, alpha codes and numeric code of the country.
-      virtual std::string to_string() const;
+      virtual std::string to_string() const noexcept override;
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::forms::country& country) noexcept {

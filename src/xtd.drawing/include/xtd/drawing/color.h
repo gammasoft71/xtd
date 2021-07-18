@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <ostream>
 #include <string>
+#include <xtd/object.h>
 #include "../drawing_export.h"
 #include "known_color.h"
 
@@ -32,7 +33,7 @@ namespace xtd {
     ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
     /// }
     /// @endcode
-    class drawing_export_ color {
+    class drawing_export_ color : public object {
     public:
       /// @brief Represents a color that is null.
       static const xtd::drawing::color empty;
@@ -1183,7 +1184,7 @@ namespace xtd {
       ///   }
       /// }
       /// @endcode
-      std::string to_string() const;
+      std::string to_string() const noexcept override;
       
     private:
       explicit color(uint32_t argb) : argb_(argb), name_(argb ? strings::format("{:X8}", argb) : "0"), empty_(false) {}

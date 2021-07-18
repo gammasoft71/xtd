@@ -2,6 +2,7 @@
 /// @brief Contains xtd::forms::application_context class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+#include <xtd/object.h>
 #include "form.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -32,7 +33,7 @@ namespace xtd {
     /// @image html application_context_g.png
     /// <br>
     /// @image html application_context_gd.png
-    class application_context {
+    class application_context : public object {
     public:
       /// @brief Initializes a new instance of the application_context class with no context.
       application_context() = default;

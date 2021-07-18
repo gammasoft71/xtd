@@ -6,11 +6,12 @@
 #include <optional>
 #include <stdexcept>
 #include <system_error>
-#include <xtd/strings.h>
-#include "diagnostics/stack_frame.h"
 #include "core_export.h"
-#include "diagnostics/stack_trace.h"
 #include "literals.h"
+#include "object.h"
+#include "strings.h"
+#include "diagnostics/stack_frame.h"
+#include "diagnostics/stack_trace.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -18,7 +19,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core exceptions
-  class core_export_ system_exception : public std::exception {
+  class core_export_ system_exception : public object, public std::exception {
   public:
     /// @brief Optional reference wrapper on std::eception
     using exception_ref = std::optional<std::reference_wrapper<const std::exception>>;
@@ -124,7 +125,7 @@ namespace xtd {
     
     /// @brief Returns a string that represents the current exception.
     /// @return A string that represents the current exception.
-    virtual std::string to_string() const noexcept;
+    std::string to_string() const noexcept override;
 
     /// @cond
     friend std::ostream& operator<<(std::ostream& os, const xtd::system_exception& e) noexcept {
