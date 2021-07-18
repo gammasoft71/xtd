@@ -57,7 +57,7 @@ main_form::main_form() {
   startup_open_recent_projects_list_box_.location({50, 175});
   startup_open_recent_projects_list_box_.size({500, startup_panel_.size().height() - 175});
   startup_open_recent_projects_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
-  startup_open_recent_projects_list_box_.key_down += [&](control& sender, key_event_args& e) {
+  startup_open_recent_projects_list_box_.key_down += [&](object& sender, key_event_args& e) {
     if (e.key_code() == keys::del && startup_open_recent_projects_list_box_.selected_index() != startup_open_recent_projects_list_box_.npos)
       delete_from_open_recent_projects(xtd::strings::split(properties::settings::default_settings().open_recent_propjects(), {';'})[startup_open_recent_projects_list_box_.selected_index()]);
   };
@@ -339,7 +339,7 @@ main_form::main_form() {
   create_create_recent_projects_list_box_.double_click += [&] {
     if (create_panel_.visible()) next_button_.perform_click();
   };
-  create_create_recent_projects_list_box_.key_down += [&](control& sender, key_event_args& e) {
+  create_create_recent_projects_list_box_.key_down += [&](object& sender, key_event_args& e) {
     if (e.key_code() == keys::del && create_create_recent_projects_list_box_.selected_index() != create_create_recent_projects_list_box_.npos)
       delete_from_create_recent_projects(xtd::parse<size_t>(xtd::strings::split(properties::settings::default_settings().create_recent_propjects(), {';'})[startup_open_recent_projects_list_box_.selected_index()]));
   };
@@ -540,7 +540,7 @@ main_form::main_form() {
         std::filesystem::copy(file, target_path/file.path().filename());
       //message_box::show(*this, strings::format("Open example \"{}\" in {}.", xtd_example.name(), target_path.string()));
       background_worker_ = std::make_unique<background_worker>();
-      background_worker_->do_work += [&](component& sender, do_work_event_args& e) {
+      background_worker_->do_work += [&](object& sender, do_work_event_args& e) {
         begin_invoke([&] {
           progress_dialog_ = std::make_unique<progress_dialog>();
           progress_dialog_->text(strings::format("Opening {} example", std::any_cast<std::filesystem::path>(e.argument()).filename()));
@@ -638,7 +638,7 @@ void main_form::new_project(const std::string& project_path, size_t project_type
 void main_form::new_project(const std::string& project_path, project_type type, project_language language, project_sdk sdk) {
   add_to_open_recent_projects(project_path);
   background_worker_ = std::make_unique<background_worker>();
-  background_worker_->do_work += [&](component& sender, do_work_event_args& e) {
+  background_worker_->do_work += [&](object& sender, do_work_event_args& e) {
     std::tuple<std::string, std::string, std::filesystem::path> new_project = std::any_cast<std::tuple<std::string, std::string, std::filesystem::path>>(e.argument());
     begin_invoke([&] {
       progress_dialog_ = std::make_unique<progress_dialog>();
@@ -664,7 +664,7 @@ void main_form::new_project(const std::string& project_path, project_type type, 
 void main_form::open_project(const std::string& project_path) {
   add_to_open_recent_projects(project_path);
   background_worker_ = std::make_unique<background_worker>();
-  background_worker_->do_work += [&](component& sender, do_work_event_args& e) {
+  background_worker_->do_work += [&](object& sender, do_work_event_args& e) {
     begin_invoke([&] {
       progress_dialog_ = std::make_unique<progress_dialog>();
       progress_dialog_->text(strings::format("Opening {} project", std::any_cast<std::filesystem::path>(e.argument()).filename()));
@@ -688,7 +688,7 @@ void main_form::open_project(const std::string& project_path) {
 void main_form::run_project(const std::string& project_path) {
   add_to_open_recent_projects(project_path);
   background_worker_ = std::make_unique<background_worker>();
-  background_worker_->do_work += [&](component& sender, do_work_event_args& e) {
+  background_worker_->do_work += [&](object& sender, do_work_event_args& e) {
     begin_invoke([&] {
       progress_dialog_ = std::make_unique<progress_dialog>();
       progress_dialog_->text(strings::format("Running {} project", std::any_cast<std::filesystem::path>(e.argument()).filename()));
