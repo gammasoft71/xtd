@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <ostream>
 #include <string>
+#include <xtd/object.h>
 #include "../drawing_export.h"
 #include "point_f.h"
 #include "size_f.h"
@@ -21,7 +22,7 @@ namespace xtd {
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    class drawing_export_ rectangle_f {
+    class drawing_export_ rectangle_f : public object {
     public:
       static const rectangle_f empty;
       
@@ -118,7 +119,7 @@ namespace xtd {
         return result;
       }
       
-      std::string to_string() const {return "{x=" + std::to_string(x_) + ", y=" + std::to_string(y_) + ", width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";}
+      std::string to_string() const noexcept override {return "{x=" + std::to_string(x_) + ", y=" + std::to_string(y_) + ", width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::rectangle_f& rectangle) noexcept {return os << rectangle.to_string();}

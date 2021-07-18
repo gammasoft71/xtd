@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "basic_console.h"
+#include "object.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -11,7 +12,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   /// @see xtd::basic_console<char_t>::beep(unsigned int frequency, unsigned int duration) method.
-  class beep final {
+  class beep final : public object {
   public:
     /// @brief Plays the sound of a beep through the console speaker.
     /// @remarks By default, the beep plays at a frequency of 800 hertz for a duration of 200 milliseconds

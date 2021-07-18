@@ -4,6 +4,7 @@
 #pragma once
 #include <ostream>
 #include <string>
+#include <xtd/object.h>
 #include "../drawing_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -18,7 +19,7 @@ namespace xtd {
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    class drawing_export_ size_f {
+    class drawing_export_ size_f : public object {
     public:
       /// @brief Gets a Size class that has a Height and Width value of 0. This field is constant.
       static const xtd::drawing::size_f empty;
@@ -85,7 +86,7 @@ namespace xtd {
 
       /// @brief Creates a human-readable string that represents this size class.
       /// @return string A string that represents this size.
-      std::string to_string() const {return "{width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";}
+      std::string to_string() const noexcept override {return "{width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::size_f& size) noexcept {

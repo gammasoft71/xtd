@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/environment.h>
+#include <xtd/object.h>
 #include <xtd/strings.h>
 #include "../forms_export.h"
 #include "theme_style.h"
@@ -11,7 +12,7 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    class forms_export_ theme_base {
+    class forms_export_ theme_base : public object {
     public:
       /// @cond
       theme_base(const theme_base&) = default;
@@ -38,7 +39,7 @@ namespace xtd {
       
       bool is_default() const {return is_default_;}
       
-      std::string to_string() const {return xtd::strings::format("[name={}, style={}, is_default={}] ", name_, theme_style_, is_default_);}
+      std::string to_string() const noexcept override {return xtd::strings::format("[name={}, style={}, is_default={}] ", name_, theme_style_, is_default_);}
       
       static std::string default_theme_name() {return xtd::environment::os_version().desktop_environment() == "" ? fallback_theme_name() :  xtd::environment::os_version().desktop_environment();}
       

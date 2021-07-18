@@ -9,6 +9,7 @@
 #include <vector>
 #include <filesystem>
 #include "../core_export.h"
+#include "../static.h"
 #include "file_attributes.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -19,12 +20,8 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core io
-    class core_export_ file {
+    class core_export_ file static_ {
     public:
-      /// @cond
-      file() = delete;
-      /// @endcond
-      
       /// @brief Appends lines to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.
       /// @param path The file to write to.
       /// @param contents The lines to append to the file.

@@ -8,6 +8,7 @@
 #include <stdexcept>
 #include <vector>
 #include "argument_null_exception.h"
+#include "object.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -16,7 +17,7 @@ namespace xtd {
   class delegate;
 
   template<typename result_t>
-  class delegate<result_t()> {
+  class delegate<result_t()> : public object {
   public:
     using function_t = std::function <result_t()>;
     
@@ -171,7 +172,7 @@ namespace xtd {
   /// The following example shows how to define a delegate named myMethoddelegate. Instances of this delegate are created for an instance method && a static method of the nested mySampleClass class. The delegate for the instance method requires an instance of mySampleClass. The mySampleClass instance is saved in a variable named mySC.
   /// @include delegate.cpp
   template<typename result_t, typename... arguments_t>
-  class delegate<result_t(arguments_t...)> {
+  class delegate<result_t(arguments_t...)> : public object {
   public:
     /// @brief function_t pointer type
     using no_arguments_function_t = std::function <result_t()>;

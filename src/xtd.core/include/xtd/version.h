@@ -9,6 +9,7 @@
 #include "collections/specialized/string_vector.h"
 #include "argument_exception.h"
 #include "format_exception.h"
+#include "object.h"
 
 /// @cond
 #undef major
@@ -21,7 +22,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  class version final {
+  class version final : public object {
   public:
     version() noexcept = default;
     version(int major, int minor) noexcept : major_(major), minor_(minor) {}

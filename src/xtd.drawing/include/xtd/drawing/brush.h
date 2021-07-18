@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <memory>
 #include <ostream>
+#include <xtd/object.h>
 #include <xtd/strings.h>
 #include "../drawing_export.h"
 
@@ -21,7 +22,7 @@ namespace xtd {
     /// xtd.drawing
     /// @ingroup xtd_drawing
     /// @remarks This is an abstract base class and cannot be instantiated. To create a brush object, use classes derived from xtd::drawing::brush, such as xtd::drawing::solid_brush, xtd::drawing::texture_brush, and xtd::drawing::drawing2d::linear_gradient_brush.
-    class drawing_export_ brush {
+    class drawing_export_ brush : public object {
     public:
       //static const brush null;
       
@@ -35,7 +36,7 @@ namespace xtd {
       
       /// @brief Converts this brush object to a human-readable string.
       /// @return A string that represents this brush object.
-      std::string to_string() const {return strings::full_class_name(*this);}
+      std::string to_string() const noexcept override {return strings::full_class_name(*this);}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::brush& brush) noexcept {

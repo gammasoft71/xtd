@@ -5,6 +5,7 @@
 #include <vector>
 #include "build_type.h"
 #include "compiler_id.h"
+#include "object.h"
 #include "strings.h"
 #include "version.h"
 
@@ -17,7 +18,7 @@ namespace xtd {
   /// @remarks The compiler class contains information about c++ libraries.
   /// @remarks For information about current c++ libraries, retrieve the compiler object returned by the xtd::environment::compiler_version method.
   /// @remarks By design, the operating_system class is not a general purpose means of describing an operating system, and you cannot derive a more inclusive type from the operating_system class. If you need a type to contain other information about C++ libraries, create your own type, then include a field of typecompiler and any additional fields or methods that you require.
-  class compiler final {
+  class compiler final : public object {
   public:
     compiler(xtd::compiler_id compiler_id) : compiler_id_(compiler_id) {}
     

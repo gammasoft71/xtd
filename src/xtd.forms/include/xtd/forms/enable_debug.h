@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
+#include <xtd/object.h>
 #include <xtd/static.h>
 #include <xtd/diagnostics/trace_switch.h>
 #include "../forms_export.h"
@@ -31,7 +32,7 @@ namespace xtd {
     /// @image html enable_debug_g.png
     /// <br>
     /// @image html enable_debug_gd.png
-    class forms_export_ enable_debug {
+    class forms_export_ enable_debug : public object {
     public:
       /// @cond
       enable_debug() = default;

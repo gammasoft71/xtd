@@ -69,6 +69,6 @@ void cursor::show() {
   native::cursor::show();
 }
 
-std::string cursor::to_string() const {
+std::string cursor::to_string() const noexcept {
   return strings::format("[cursor: {}]", data_->name_ != "" ? data_->name_ : strings::full_class_name(*this));
 }

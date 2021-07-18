@@ -125,7 +125,7 @@ namespace xtd {
 
       /// @brief Returns a string that represent xtd::forms::control_layout_style.
       /// @return A string containing that represent xtd::forms::control_layout_style.
-      std::string to_string() const override {return strings::format("vertical_control_layout_style=[expanded={}, align={}, size_type={}, height={}]", expanded(), align(), size_type(), height_);}
+      std::string to_string() const noexcept override {return strings::format("vertical_control_layout_style=[expanded={}, align={}, size_type={}, height={}]", expanded(), align(), size_type(), height_);}
       
       /// @cond
       bool operator==(const vertical_control_layout_style& value) const {return height_ == value.height_ && control_layout_style::operator==(value);}

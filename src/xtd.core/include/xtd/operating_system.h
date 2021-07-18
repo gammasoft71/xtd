@@ -4,6 +4,7 @@
 #pragma once
 #include <map>
 #include <vector>
+#include "object.h"
 #include "platform_id.h"
 #include "strings.h"
 #include "version.h"
@@ -17,7 +18,7 @@ namespace xtd {
   /// @remarks The operating_system class contains information about an operating system.
   /// @remarks For information about the current runtime operating system, retrieve the operating_system object returned by the xtd::environment::os_version method.
   /// @remarks By design, the operating_system class is not a general purpose means of describing an operating system, and you cannot derive a more inclusive type from the operating_system class. If you need a type to contain other information about an operating system, create your own type, then include a field of type operating_system and any additional fields or methods that you require.
-  class operating_system final {
+  class operating_system final : public object {
   public:
     /// @brief Initializes a new instance of the operating_system class, using the specified platform identifier value and version object.
     /// @param platform One of the xtd::platform_id values that indicates the operating system platform.

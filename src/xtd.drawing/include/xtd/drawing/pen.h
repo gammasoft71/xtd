@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <memory>
 #include <ostream>
+#include <xtd/object.h>
 #include <xtd/strings.h>
 #include "../drawing_export.h"
 #include "drawing2d/pen_alignment.h"
@@ -25,7 +26,7 @@ namespace xtd {
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    class drawing_export_ pen final {
+    class drawing_export_ pen final : public object {
     public:
       /// @brief Initializes a new instance of the xtd::drawing::pen class.
       pen();
@@ -91,7 +92,7 @@ namespace xtd {
       float width() const {return data_->width_;}
       xtd::drawing::pen& width(float width);
       
-      std::string to_string() const {return strings::full_class_name(*this);}
+      std::string to_string() const noexcept override {return strings::full_class_name(*this);}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::pen& pen) noexcept {

@@ -9,6 +9,7 @@
 #include "argument_out_of_range_exception.h"
 #include "core_export.h"
 #include "environment.h"
+#include "object.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -31,7 +32,7 @@ namespace xtd {
   /// @par Examples
   /// The following example generates a random integer that it uses as an index to retrieve a string value from an array.
   /// @include random3.cpp
-  class random {
+  class random : public object {
   public:
     /// @brief Initializes a new instance of the random class, using a default generated seed value
     random() : generator_(static_cast<uint32_t>(environment::tick_count().count())) {}

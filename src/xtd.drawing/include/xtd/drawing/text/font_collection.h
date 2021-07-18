@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <vector>
+#include <xtd/object.h>
 #include <xtd/strings.h>
 #include "../font_family.h"
 
@@ -17,7 +18,7 @@ namespace xtd {
       /// xtd.drawing
       /// @ingroup xtd_drawing
       /// @remarks The xtd::drawing::text::font_collection allows you to get a list of the font families contained in the collection with its families property. For additional information on fonts and text, including example code, see Using fonts and text.
-      class font_collection {
+      class font_collection : public object {
       public:
         /// @brief Gets the array of FontFamily objects associated with this FontCollection.
         /// @return Array<FontFamily> An array of FontFamily objects.

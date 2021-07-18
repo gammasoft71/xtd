@@ -8,6 +8,7 @@
 #include <mutex>
 #include <string>
 #include "../core_export.h"
+#include "../object.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -22,7 +23,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core io
-    class core_export_ text_reader {
+    class core_export_ text_reader : public object {
     public:
       /// @cond
       virtual ~text_reader() {}

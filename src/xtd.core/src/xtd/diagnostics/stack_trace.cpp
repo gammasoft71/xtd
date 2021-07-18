@@ -49,11 +49,11 @@ const stack_trace::stack_frame_collection& stack_trace::get_frames() const {
   return frames_;
 }
 
-std::string stack_trace::to_string() const {
+std::string stack_trace::to_string() const noexcept {
   return to_string(0);
 }
 
-std::string stack_trace::to_string(size_t skip_frames, const stack_frame& stack_frame) const {
+std::string stack_trace::to_string(size_t skip_frames, const stack_frame& stack_frame) const noexcept {
   std::string str;
   for (size_t index = skip_frames; index < frames_.size(); ++index) {
     if (index > skip_frames) str += xtd::environment::new_line();

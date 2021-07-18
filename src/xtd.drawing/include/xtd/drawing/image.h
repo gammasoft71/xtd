@@ -7,6 +7,7 @@
 #include <memory>
 #include <iostream>
 #include <string>
+#include <xtd/object.h>
 #include "../drawing_export.h"
 #include "imaging/color_palette.h"
 #include "imaging/frame_dimension.h"
@@ -28,7 +29,7 @@ namespace xtd {
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
     /// @remarks To draw an image on a Windows Form, you should use one of the draw_image methods.
-    class drawing_export_ image {
+    class drawing_export_ image : public object {
     public:
       /// @cond
       image() = default;

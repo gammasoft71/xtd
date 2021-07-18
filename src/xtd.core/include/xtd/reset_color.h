@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "basic_console.h"
+#include "object.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -11,7 +12,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   /// @see xtd::basic_console<char_t>::reset_color() method.
-  class reset_color final {
+  class reset_color final : public object {
   public:
     reset_color() = default;
     

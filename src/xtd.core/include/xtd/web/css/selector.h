@@ -2,13 +2,14 @@
 /// @brief Contains xtd::web::css::selector class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+#include "../../object.h"
 #include "property_map.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   namespace web {
     namespace css {
-      class selector {
+      class selector : public object {
       public:
         explicit selector(const std::string& name) : name_(name) {}
         

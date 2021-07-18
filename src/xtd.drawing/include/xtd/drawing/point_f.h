@@ -6,6 +6,7 @@
 #include <ostream>
 #include <string>
 #include <string>
+#include <xtd/object.h>
 #include "../drawing_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -20,7 +21,7 @@ namespace xtd {
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    class drawing_export_ point_f {
+    class drawing_export_ point_f : public object {
     public:
       static const point_f empty;
       
@@ -45,7 +46,7 @@ namespace xtd {
         y_ += dy;
       }
 
-      std::string to_string() const {return "{x=" + std::to_string(x_) + ", y=" + std::to_string(y_) + "}";}
+      std::string to_string() const noexcept override {return "{x=" + std::to_string(x_) + ", y=" + std::to_string(y_) + "}";}
       
       float x() const {return x_;}
       

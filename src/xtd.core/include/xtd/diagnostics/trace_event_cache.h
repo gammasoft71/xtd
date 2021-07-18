@@ -6,7 +6,8 @@
 #include <string>
 #include <thread>
 #include <vector>
-#include <xtd/strings.h>
+#include "../object.h"
+#include "../strings.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -16,7 +17,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    class trace_event_cache {
+    class trace_event_cache : public object {
     public:
       //using clock = std::chrono::high_resolution_clock;
       using clock = std::chrono::system_clock;

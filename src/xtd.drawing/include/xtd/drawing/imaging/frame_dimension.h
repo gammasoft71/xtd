@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <ostream>
 #include <xtd/guid.h>
+#include <xtd/object.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -17,7 +18,7 @@ namespace xtd {
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing
-      class frame_dimension final {
+      class frame_dimension final : public object {
       public:
         /// @brief Initializes a new instance of the FrameDimension class using the specified Guid structure.
         /// @param guid A Guid structure that contains a GUID for this frame_dimension object.

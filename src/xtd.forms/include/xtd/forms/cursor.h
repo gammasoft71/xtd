@@ -5,6 +5,7 @@
 #include <any>
 #include <cstdint>
 #include <memory>
+#include <xtd/object.h>
 #include <xtd/drawing/bitmap.h>
 #include <xtd/drawing/point.h>
 #include <xtd/drawing/size.h>
@@ -41,7 +42,7 @@ namespace xtd {
     /// @image html cursors_g.png
     /// <br>
     /// @image html cursors_gd.png
-    class forms_export_ cursor {
+    class forms_export_ cursor : public object {
     public:
       /// @brief Initializes a new instance of the cursor class.
       cursor();
@@ -123,7 +124,7 @@ namespace xtd {
       
       /// @brief Returns a string containing the name of the cursor.
       /// @return A string containing the name of the cursor.
-      std::string to_string() const;
+      std::string to_string() const noexcept override;
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const cursor& value) noexcept {return os << value.to_string();}

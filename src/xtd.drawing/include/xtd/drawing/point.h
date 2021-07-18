@@ -4,6 +4,7 @@
 #pragma once
 #include <cstdint>
 #include <ostream>
+#include <xtd/object.h>
 #include <xtd/strings.h>
 #include "../drawing_export.h"
 #include "point_f.h"
@@ -42,7 +43,7 @@ namespace xtd {
     ///   }
     /// }
     /// @endcode
-    class drawing_export_ point {
+    class drawing_export_ point : public object {
     public:
       /// @brief Represents a point that has x and y values set to zero.
       static const point empty;
@@ -288,7 +289,7 @@ namespace xtd {
 
       /// @brief Converts this point to a human-readable string.
       /// @return A string that represents this point.
-      std::string to_string() const {return  strings::format("{{x={}, y={}}}", x_, y_);}
+      std::string to_string() const noexcept override {return  strings::format("{{x={}, y={}}}", x_, y_);}
 
       /// @brief Converts the specified point_f to a point by truncating the values of the point_f.
       /// @param value The point_f to convert.

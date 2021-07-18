@@ -5,11 +5,12 @@
 #include <map>
 #include <vector>
 #include "architecture_id.h"
+#include "object.h"
 #include "strings.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  class processor final {
+  class processor final : public object {
   public:
     processor(xtd::architecture_id architecture, bool is_64_bit, uint32_t core_count) : architecture_(architecture), is_64_bit_(is_64_bit), core_count_(core_count) {}
 

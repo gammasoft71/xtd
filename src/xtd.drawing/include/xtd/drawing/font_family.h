@@ -7,6 +7,7 @@
 #include <ostream>
 #include <stdexcept>
 #include <vector>
+#include <xtd/object.h>
 #include <xtd/strings.h>
 #include "../drawing_export.h"
 #include "font_style.h"
@@ -25,7 +26,7 @@ namespace xtd {
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
     /// @brief Defines a group of type faces having a similar basic design and certain variations in styles. This class cannot be inherited.
-    class drawing_export_ font_family final {
+    class drawing_export_ font_family final : public object {
     public:
       /// @brief Initializes a new xtd::drawing::font_family with the specified name.
       /// @param name The name of the new xtd::drawing::font_family.
@@ -104,7 +105,7 @@ namespace xtd {
 
       /// @brief Converts this font_family to a human-readable string representation.
       /// @return The string that represents this font_family.
-      std::string to_string() const {return strings::format("[{}: name={}]", strings::class_name(*this), data_->name_);}
+      std::string to_string() const noexcept override {return strings::format("[{}: name={}]", strings::class_name(*this), data_->name_);}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::font_family& font_family) noexcept {

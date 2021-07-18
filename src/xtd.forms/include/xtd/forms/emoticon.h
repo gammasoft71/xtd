@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "../forms_export.h"
+#include <xtd/object.h>
 #include <xtd/static.h>
 #include <ostream>
 #include <string>
@@ -31,7 +32,7 @@ namespace xtd {
     /// @image html emoticons_g.png
     /// <br>
     /// @image html emoticons_gd.png
-    class forms_export_ emoticon {
+    class forms_export_ emoticon : public object {
     public:
       /// @brief Represents an empty emoticon.
       static const emoticon empty();
@@ -114,7 +115,7 @@ namespace xtd {
 
       /// @brief Returns a string containing the codepoints of the emoticons.
       /// @return A string containing the codepoints of the emoticon. Empty string ("") for none codepoints.
-      std::string to_string() const {
+      std::string to_string() const noexcept override {
         std::string result;
         for (auto codepoint : codepoints_) {
           if (codepoint < 0x80) {

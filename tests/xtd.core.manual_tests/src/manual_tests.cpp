@@ -4,7 +4,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-class xtd_core_manual_test {
+class xtd_core_manual_test : public object {
 public:
   static void main() {
     console::write_line("Hello, World!");

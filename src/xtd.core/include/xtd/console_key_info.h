@@ -6,6 +6,7 @@
 #include <iostream>
 #include "console_key.h"
 #include "console_modifiers.h"
+#include "object.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -14,7 +15,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   /// @see Console
-  class console_key_info final {
+  class console_key_info final : public object {
   public:
     /// @brief Create a new instance of console_key_info class.
     /// @remarks This type is not intended to be created by users. Instead, it is returned to the user in response to calling the Console::ReadKey method.

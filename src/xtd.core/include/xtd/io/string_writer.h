@@ -34,7 +34,7 @@ namespace xtd {
         stream_.flush();
       }
  
-      std::string to_string() const {return stream_.str();}
+      std::string to_string() const noexcept override {return stream_.str();}
       
       /// @brief Writes the specified string value to the text stream.
       /// @param value The value to write
