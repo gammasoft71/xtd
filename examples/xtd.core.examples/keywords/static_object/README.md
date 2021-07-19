@@ -1,10 +1,10 @@
-# static_class2
+# static_object
 
 Shows how to use [xtd::static](../../../../src/xtd.core/include/xtd/static.h) class.
 
 ## Sources
 
-[src/static_class2.cpp](src/static_class2.cpp)
+[src/static_class.cpp](src/static_object.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

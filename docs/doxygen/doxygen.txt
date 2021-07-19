@@ -343,8 +343,8 @@ PREDEFINED             = "assert_=xtd::diagnostics::debug::cassert" \
                          "interface_=: public xtd::interface" \
                          "nameof_=std::string(#__VA_ARGS__)" \
                          "startup_=" \
-                         "static_=: public xtd::static_class" \
-                         "static_class_=: public xtd::static_class" \
+                         "static_=: public xtd::static_object" \
+                         "static_object_=: public xtd::static_object" \
                          "tunit_export_=" \
                          "typeof_=xtd::__s__::__typeof_" \
                          "unused_=" \
