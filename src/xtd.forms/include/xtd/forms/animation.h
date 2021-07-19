@@ -17,7 +17,7 @@ namespace xtd {
     /// @ingroup xtd_forms controls
     /// @par Examples
     /// The following code example demonstrate the use of animation control.
-    /// @include loading_indicator.cpp
+    /// @include animattion.cpp
     /// @par Windows
     /// @image html animation_w.png
     /// <br>
