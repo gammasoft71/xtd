@@ -20,7 +20,7 @@ namespace examples {
       for (auto color : {color::dark_magenta, color::dark_cyan, color::brown, color::dark_blue, color::dark_green, color::dark_red, color::gray, color::dark_gray, color::magenta, color::cyan, color::yellow, color::blue, color::green, color::red, color::white, color::black}) {
         shared_ptr<panel> panel_color = control::create<panel>(panel_colors_container, {0, 0}, {32, 32}, color);
         panel_color->dock(dock_style::left);
-        panel_color->click += {*this, &form1::choose_current_color};
+        panel_color->click += event_handler(*this, &form1::choose_current_color);
         panel_colors.push_back(panel_color);
       }
       current_color = panel_colors[panel_colors.size() - 1]->back_color();

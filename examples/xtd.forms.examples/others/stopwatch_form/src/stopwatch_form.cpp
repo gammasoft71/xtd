@@ -28,22 +28,22 @@ public:
     start_stop.parent(*this);
     start_stop.location({10, 80});
     start_stop.text("Start");
-    start_stop.click += {*this, &stop_watch_form::on_start_stop_click};
+    start_stop.click += event_handler(*this, &stop_watch_form::on_start_stop_click);
     
     pause_resume.parent(*this);
     pause_resume.location({100, 80});
     pause_resume.text("Pause");
     pause_resume.enabled(false);
-    pause_resume.click += {*this, &stop_watch_form::on_pause_resume_click};
+    pause_resume.click += event_handler(*this, &stop_watch_form::on_pause_resume_click);
     
     reset.parent(*this);
     reset.location({190, 80});
     reset.text("Reset");
     reset.enabled(false);
-    reset.click += {*this, &stop_watch_form::on_reset_click};
+    reset.click += event_handler(*this, &stop_watch_form::on_reset_click);
     
     timer_chrono.interval(11ms);
-    timer_chrono.tick += {*this, &stop_watch_form::on_timer_tick};
+    timer_chrono.tick += event_handler(*this, &stop_watch_form::on_timer_tick);
   }
   
 private:

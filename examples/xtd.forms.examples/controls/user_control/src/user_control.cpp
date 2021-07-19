@@ -56,31 +56,31 @@ namespace examples {
       operations[0].status(operation_status::succeed);
       operations[0].text("First operation");
       operations[0].location({5, 5});
-      operations[0].click += {*this, &form1::on_operation_click};
+      operations[0].click += event_handler(*this, &form1::on_operation_click);
       
       operations[1].parent(*this);
       operations[1].status(operation_status::failed);
       operations[1].text("Second operation");
       operations[1].location({5, 35});
-      operations[1].click += {*this, &form1::on_operation_click};
+      operations[1].click += event_handler(*this, &form1::on_operation_click);
 
       operations[2].parent(*this);
       operations[2].status(operation_status::running);
       operations[2].text("Third operation");
       operations[2].location({5, 65});
-      operations[2].click += {*this, &form1::on_operation_click};
+      operations[2].click += event_handler(*this, &form1::on_operation_click);
 
       operations[3].parent(*this);
       operations[3].status(operation_status::none);
       operations[3].text("Fourth operation");
       operations[3].location({5, 95});
-      operations[3].click += {*this, &form1::on_operation_click};
+      operations[3].click += event_handler(*this, &form1::on_operation_click);
 
       operations[4].parent(*this);
       operations[4].status(operation_status::none);
       operations[4].text("Fifth operation");
       operations[4].location({5, 125});
-      operations[4].click += {*this, &form1::on_operation_click};
+      operations[4].click += event_handler(*this, &form1::on_operation_click);
     }
     
   private:

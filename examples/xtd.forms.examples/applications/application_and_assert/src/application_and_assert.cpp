@@ -21,25 +21,25 @@ public:
     generate_assert_button.location({10, 10});
     generate_assert_button.parent(*this);
     generate_assert_button.text("Generate assert_");
-    generate_assert_button.click += {*this, &main_form::generate_assert};
+    generate_assert_button.click += event_handler(*this, &main_form::generate_assert);
 
     generate_debug_dassert_button.auto_size(true);
     generate_debug_dassert_button.location({10, 40});
     generate_debug_dassert_button.parent(*this);
     generate_debug_dassert_button.text("Generate debug::cassert_");
-    generate_debug_dassert_button.click += {*this, &main_form::generate_debug_cassert};
+    generate_debug_dassert_button.click += event_handler(*this, &main_form::generate_debug_cassert);
 
     generate_debug_break_button.auto_size(true);
     generate_debug_break_button.location({10, 70});
     generate_debug_break_button.parent(*this);
     generate_debug_break_button.text("Generate debug_break_");
-    generate_debug_break_button.click += {*this, &main_form::generate_debug_break};
+    generate_debug_break_button.click += event_handler(*this, &main_form::generate_debug_break);
 
     generate_debugger_debug_break_button.auto_size(true);
     generate_debugger_debug_break_button.location({10, 100});
     generate_debugger_debug_break_button.parent(*this);
     generate_debugger_debug_break_button.text("Generate debugger::debug break");
-    generate_debugger_debug_break_button.click += {*this, &main_form::generate_debugger_debug_break};
+    generate_debugger_debug_break_button.click += event_handler(*this, &main_form::generate_debugger_debug_break);
   }
   
 private:

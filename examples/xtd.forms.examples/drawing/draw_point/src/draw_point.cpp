@@ -1,6 +1,7 @@
 #include <xtd/xtd>
 
 using namespace std;
+using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
@@ -17,7 +18,7 @@ namespace examples {
       text("Draw point example");
       
       generate_colored_points_timer.interval_milliseconds(100);
-      generate_colored_points_timer.tick += {*this, &form1::generate_colored_points};
+      generate_colored_points_timer.tick += event_handler(*this, &form1::generate_colored_points);
       generate_colored_points_timer.start();
     }
     
