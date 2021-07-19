@@ -35,12 +35,12 @@ namespace game_of_life {
       button_next_.parent(*this);
       button_next_.text("Next");
       button_next_.location({100, 10});
-      button_next_.click += {*this, & form_game_of_life::next};
+      button_next_.click += xtd::event_handler(*this, & form_game_of_life::next);
       
       button_clear_.parent(*this);
       button_clear_.text("Clear");
       button_clear_.location({190, 10});
-      button_clear_.click += {*this, & form_game_of_life::clear};
+      button_clear_.click += xtd::event_handler(*this, & form_game_of_life::clear);
       
       choice_figures_.parent(*this);
       choice_figures_.items().push_back_range({{"Figure", figure_delegate(*this, &form_game_of_life::nothing)}, {"Random cells", figure_delegate(*this, &form_game_of_life::random)}, {"Blinker", figure_delegate(*this, &form_game_of_life::blinker)}, {"Toad", figure_delegate(*this, &form_game_of_life::toad)}, {"beacon", figure_delegate(*this, &form_game_of_life::beacon)}, {"galaxy", figure_delegate(*this, &form_game_of_life::galaxy)}, {"Pulsar", figure_delegate(*this, &form_game_of_life::pulsar)}, {"Penta-decathlon", figure_delegate(*this, &form_game_of_life::penta_decathlon)}, {"Glider", figure_delegate(*this, &form_game_of_life::glider)}, {"Small exploder", figure_delegate(*this, &form_game_of_life::small_exploder)}, {"Exploder", figure_delegate(*this, &form_game_of_life::exploder)}, {"Lightweight spaceship", figure_delegate(*this, &form_game_of_life::lightweight_spaceship)}, {"Middleweight spaceship", figure_delegate(*this, &form_game_of_life::middleweight_spaceship)}, {"Heavyweight spaceship", figure_delegate(*this, &form_game_of_life::heavyweight_spaceship)}, {"Fireship", figure_delegate(*this, &form_game_of_life::fireship)}, {"Tumbler", figure_delegate(*this, &form_game_of_life::tumbler)}, {"Gosper glider gun", figure_delegate(*this, &form_game_of_life::gosper_glider_gun)}, {"Simkin glider gun", figure_delegate(*this, &form_game_of_life::simkin_glider_gun)}});

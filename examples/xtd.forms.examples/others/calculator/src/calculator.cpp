@@ -28,7 +28,7 @@ namespace calculator {
       font(xtd::drawing::font(font(), 16));
       auto_size_mode(forms::auto_size_mode::grow_and_shrink);
       auto_size(true);
-      key_press += {*this, &form_main::form_main_key_press};
+      key_press += key_press_event_handler(*this, &form_main::form_main_key_press);
       
       result.bounds({0, 0, 240, 60});
       result.font(xtd::drawing::font(font(), font().size() * 2));
@@ -42,7 +42,7 @@ namespace calculator {
       button_clear.location({0, 60});
       button_clear.text("C");
       button_clear.size({60, 50});
-      button_clear.click += {*this, &form_main::button_clear_click};
+      button_clear.click += event_handler(*this, &form_main::button_clear_click);
       
       button_plus_minus.parent(*this);
       button_plus_minus.back_color(drawing::color::from_argb(64, 64, 64));
@@ -50,7 +50,7 @@ namespace calculator {
       button_plus_minus.location({60, 60});
       button_plus_minus.text("±");
       button_plus_minus.size({60, 50});
-      button_plus_minus.click += {*this, &form_main::button_plus_minus_click};
+      button_plus_minus.click += event_handler(*this, &form_main::button_plus_minus_click);
       
       button_percent.parent(*this);
       button_percent.back_color(drawing::color::from_argb(64, 64, 64));
@@ -58,7 +58,7 @@ namespace calculator {
       button_percent.location({120, 60});
       button_percent.text("%");
       button_percent.size({60, 50});
-      button_percent.click += {*this, &form_main::button_percent_click};
+      button_percent.click += event_handler(*this, &form_main::button_percent_click);
       
       button_decimal.parent(*this);
       button_decimal.back_color(drawing::color::from_argb(102, 102, 102));
@@ -66,7 +66,7 @@ namespace calculator {
       button_decimal.location({120, 260});
       button_decimal.text(".");
       button_decimal.size({60, 50});
-      button_decimal.click += {*this, &form_main::button_number_click};
+      button_decimal.click += event_handler(*this, &form_main::button_number_click);
       
       vector<xtd::drawing::point> button_number_locations = {{0, 260}, {0, 210}, {60, 210}, {120, 210}, {0, 160}, {60, 160}, {120, 160}, {0, 110}, {60, 110}, {120, 110}};
       for (int i = 0; i < 10; i++) {
@@ -76,7 +76,7 @@ namespace calculator {
         button_numbers[i].text(strings::format("{}", i));
         button_numbers[i].location(button_number_locations[i]);
         button_numbers[i].size({60, 50});
-        button_numbers[i].click += {*this, &form_main::button_number_click};
+        button_numbers[i].click += event_handler(*this, &form_main::button_number_click);
       }
       button_numbers[0].width(120);
       
@@ -89,7 +89,7 @@ namespace calculator {
         button_operators[i].text(button_operator_texts[i]);
         button_operators[i].location(button_operator_locations[i]);
         button_operators[i].size({60, 50});
-        button_operators[i].click += {*this, &form_main::button_operator_click};
+        button_operators[i].click += event_handler(*this, &form_main::button_operator_click);
       }
     }
     

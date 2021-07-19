@@ -40,7 +40,7 @@ custom_field_dialog::custom_field_dialog() {
   custom_height_label_.parent(*this);
   custom_height_label_.text("Height:"_t);
 
-  custom_height_text_box_.key_press += {*this, &custom_field_dialog::on_text_box_key_press};
+  custom_height_text_box_.key_press += key_press_event_handler(*this, &custom_field_dialog::on_text_box_key_press);
   custom_height_text_box_.location({85, 65});
   custom_height_text_box_.parent(*this);
   custom_height_text_box_.text(strings::format("{}", custom_height_));
@@ -51,7 +51,7 @@ custom_field_dialog::custom_field_dialog() {
   custom_width_label_.parent(*this);
   custom_width_label_.text("Width:"_t);
   
-  custom_width_text_box_.key_press += {*this, &custom_field_dialog::on_text_box_key_press};
+  custom_width_text_box_.key_press += key_press_event_handler(*this, &custom_field_dialog::on_text_box_key_press);
   custom_width_text_box_.location({85, 95});
   custom_width_text_box_.parent(*this);
   custom_width_text_box_.text(strings::format("{}", custom_width_));
@@ -62,7 +62,7 @@ custom_field_dialog::custom_field_dialog() {
   custom_mines_label_.parent(*this);
   custom_mines_label_.text("Mines:"_t);
   
-  custom_mines_text_box_.key_press += {*this, &custom_field_dialog::on_text_box_key_press};
+  custom_mines_text_box_.key_press += key_press_event_handler(*this, &custom_field_dialog::on_text_box_key_press);
   custom_mines_text_box_.location({85, 125});
   custom_mines_text_box_.parent(*this);
   custom_mines_text_box_.text(strings::format("{}", custom_mines_));

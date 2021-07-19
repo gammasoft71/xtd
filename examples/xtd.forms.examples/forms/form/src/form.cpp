@@ -15,7 +15,7 @@ public:
     button_close.text("Close");
     button_close.auto_size(true);
     button_close.location({10, 10});
-    button_close.click += {*this, &form::close};
+    button_close.click += event_handler(*this, &form::close);
     
     button_exit.parent(*this);
     button_exit.text("Exit");

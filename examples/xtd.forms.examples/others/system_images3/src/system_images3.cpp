@@ -45,7 +45,7 @@ namespace example {
       choice_theme.items().push_back("default_theme");
       choice_theme.items().push_back_range(theme::theme_names());
       choice_theme.selected_index(0);
-      choice_theme.selected_index_changed += {*this, &form1::update_form};
+      choice_theme.selected_index_changed += event_handler(*this, &form1::update_form);
 
       choice_context.bounds({300, 10, 280, 25});
       choice_context.items().push_back_range(system_images::contexts());

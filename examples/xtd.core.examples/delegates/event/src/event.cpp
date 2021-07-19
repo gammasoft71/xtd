@@ -39,7 +39,7 @@ int main() {
   button button1;
   
   button1.text_changed += [](xtd::object& sender, const xtd::event_args& e)  {
-    std::cout << "text_changed [text=" << sender.text() << "]" << std::endl;
+    std::cout << "text_changed [text=" << as<control>(sender).text() << "]" << std::endl;
   };
   
   button1.click += []  {

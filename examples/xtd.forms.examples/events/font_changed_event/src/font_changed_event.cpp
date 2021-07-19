@@ -11,13 +11,13 @@ namespace examples {
       radio_button1.name("radio_button1");
       radio_button1.size({150, 25});
       radio_button1.text("button1");
-      radio_button1.font_changed += {*this, &form1::radio_button1_font_changed};
+      radio_button1.font_changed += event_handler(*this, &form1::radio_button1_font_changed);
 
       radio_button2.location({0, 39});
       radio_button2.name("radio_button2");
       radio_button2.size({150, 17});
       radio_button2.text("Change button1 font");
-      radio_button2.checked_changed += {*this, &form1::radio_button2_checked_changed};
+      radio_button2.checked_changed += event_handler(*this, &form1::radio_button2_checked_changed);
 
       client_size({292, 273});
       controls().push_back_range({radio_button1, radio_button2});

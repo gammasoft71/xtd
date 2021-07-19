@@ -25,13 +25,13 @@ minesweeper_form::minesweeper_form() {
   game_panel_.double_buffered(true);
   game_panel_.location({0, 60});
   game_panel_.parent(*this);
-  game_panel_.mouse_up += {*this, &minesweeper_form::on_game_panel_mouse_up};
-  game_panel_.paint += {*this, &minesweeper_form::on_game_panel_paint};
+  game_panel_.mouse_up += mouse_event_handler(*this, &minesweeper_form::on_game_panel_mouse_up);
+  game_panel_.paint += paint_event_handler(*this, &minesweeper_form::on_game_panel_paint);
   
   status_panel_.height(60);
   status_panel_.parent(*this);
-  status_panel_.paint += {*this, &minesweeper_form::on_status_panel_paint};
-  status_panel_.resize += {*this, &minesweeper_form::on_status_panel_resize};
+  status_panel_.paint += paint_event_handler(*this, &minesweeper_form::on_status_panel_paint);
+  status_panel_.resize += event_handler(*this, &minesweeper_form::on_status_panel_resize);
 
   mine_count_label_.auto_size(true);
   mine_count_label_.back_color(color::black);
@@ -56,10 +56,10 @@ minesweeper_form::minesweeper_form() {
   start_game_.image(bitmap(properties::resources::smiley1(), {24, 24}));
   start_game_.size({42, 38});
   start_game_.location({status_panel_.size().width() / 2 - 21, 17});
-  start_game_.click += {*this, &minesweeper_form::new_game};
+  start_game_.click += event_handler(*this, &minesweeper_form::new_game);
   
   stopwatch_timer_.interval_milliseconds(1000);
-  stopwatch_timer_.tick += {*this, &minesweeper_form::on_stopwatch_tick};
+  stopwatch_timer_.tick += event_handler(*this, &minesweeper_form::on_stopwatch_tick);
   
   update_colors();
   change_level(static_cast<level>(properties::settings::default_settings().level()));
