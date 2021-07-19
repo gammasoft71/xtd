@@ -4,6 +4,7 @@ project(controls)
 find_package(xtd REQUIRED)
 
 add_projects(
+  animation
   button
   buttons
   check_box

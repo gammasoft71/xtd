@@ -26,6 +26,7 @@
 
 ## [Controls](controls/README.md)
 
+* [animation](controls/animation/README.md) represents a [xtd::forms::animation](../../src/xtd.forms/include/xtd/forms/animation.h) control.
 * [button](controls/button/README.md) represents a Windows [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) control.
 * [buttons](controls/buttons/README.md) Show how to use buttons factory with [xtd::forms::buttons](../../src/xtd.forms/include/xtd/forms/buttons.h) control.
 * [check_box](controls/check_box/README.md) represents a Windows [xtd::forms::check_box](../../src/xtd.forms/include/xtd/forms/check_box.h) control.

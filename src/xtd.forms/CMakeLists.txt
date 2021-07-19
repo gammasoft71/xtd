@@ -12,6 +12,9 @@ add_sources(
   include/xtd/forms/about_box.h
   include/xtd/forms/about_dialog.h
   include/xtd/forms/anchor_styles.h
+  include/xtd/forms/animation_update_event_args.h
+  include/xtd/forms/animation_update_event_handler.h
+  include/xtd/forms/animation.h
   include/xtd/forms/appearance.h
   include/xtd/forms/application.h
   include/xtd/forms/application_context.h
@@ -234,6 +237,7 @@ add_sources(
   include/xtd/forms/visual_styles/radio_button_state.h
   include/xtd/forms/visual_styles/toggle_button_state.h
   src/xtd/forms/about_dialog.cpp
+  src/xtd/forms/animation.cpp
   src/xtd/forms/application.cpp
   src/xtd/forms/background_worker.cpp
   src/xtd/forms/busy_dialog.cpp
