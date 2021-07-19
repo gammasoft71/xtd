@@ -1,6 +1,6 @@
 # xtd
 
-**Modern C++17/20 framework to create console (CLI), forms (GUI like WinForms) and tunit (unit test) applications on Windows, macOS, Linux, iOS and android.**
+**Modern C++17/20 framework to create console (CLI), forms (GUI like WinForms) and tunit (unit tests) applications on Windows, macOS, Linux, iOS and android.**
 
 [![xtd](docs/pictures/xtd_header.png)](https://gammasoft71.wixsite.com/xtdpro)
 
@@ -29,7 +29,7 @@ For more information see:
 
 The classic first application 'Hello World'.
 
-### Console
+### Console (CLI)
 
 hello_world_console.cpp:
 
@@ -70,7 +70,7 @@ xtdc run
 Hello, World!
 ```
 
-### Forms
+### Forms (GUI like WinForms)
 
 hello_world_forms.cpp:
 
@@ -134,7 +134,7 @@ xtdc run
 
 ![Screenshot](docs/pictures/examples/hello_world_message_box_gd.png)
 
-### Unit tests
+### tunit (Unit tests)
 
 hello_world_test.cpp:
 
