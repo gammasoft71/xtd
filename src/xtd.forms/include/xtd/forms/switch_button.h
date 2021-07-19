@@ -134,7 +134,7 @@ namespace xtd {
 
       /// @brief Occurs when the value of the checked property changes.
       /// @ingroup events
-      event<switch_button, event_handler<control&>> checked_changed;
+      event<switch_button, event_handler> checked_changed;
 
     protected:
       /// @brief Raises the switch_button::checked_changed event.

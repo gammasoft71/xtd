@@ -25,75 +25,75 @@ namespace {
 //xtd::delegate<void(const std::string&)> process::message_box_message_;
 
 bool process::error_data_received_event::is_empty() const noexcept {
-  return data_received_event_handler<process&>::is_empty();
+  return data_received_event_handler::is_empty();
 }
 
-data_received_event_handler<process&>& process::error_data_received_event::operator+=(const data_received_event_handler<process&>& handler) noexcept {
+data_received_event_handler& process::error_data_received_event::operator+=(const data_received_event_handler& handler) noexcept {
   data_->error_data_received_callback_+=(handler);
-  return data_received_event_handler<process&>::operator+=(handler);
+  return data_received_event_handler::operator+=(handler);
 }
 
-data_received_event_handler<process&>& process::error_data_received_event::operator+=(const typename data_received_event_handler<process&>::function_t& function) noexcept {
+data_received_event_handler& process::error_data_received_event::operator+=(const typename data_received_event_handler::function_t& function) noexcept {
   data_->error_data_received_callback_+=(function);
-  return data_received_event_handler<process&>::operator+=(function);
+  return data_received_event_handler::operator+=(function);
 }
 
-data_received_event_handler<process&>& process::error_data_received_event::operator-=(const data_received_event_handler<process&>& handler) noexcept {
+data_received_event_handler& process::error_data_received_event::operator-=(const data_received_event_handler& handler) noexcept {
   data_->error_data_received_callback_-=(handler);
-  return data_received_event_handler<process&>::operator-=(handler);
+  return data_received_event_handler::operator-=(handler);
 }
 
-data_received_event_handler<process&>& process::error_data_received_event::operator-=(const typename data_received_event_handler<process&>::function_t& function) noexcept {
+data_received_event_handler& process::error_data_received_event::operator-=(const typename data_received_event_handler::function_t& function) noexcept {
   data_->error_data_received_callback_-=(function);
-  return data_received_event_handler<process&>::operator-=(function);
+  return data_received_event_handler::operator-=(function);
 }
 
 bool process::exit_event::is_empty() const noexcept {
-  return event_handler<process&>::is_empty();
+  return event_handler::is_empty();
 }
 
-event_handler<process&>& process::exit_event::operator+=(const event_handler<process&>& handler) noexcept {
+event_handler& process::exit_event::operator+=(const event_handler& handler) noexcept {
   data_->exit_callback_+=(handler);
-  return event_handler<process&>::operator+=(handler);
+  return event_handler::operator+=(handler);
 }
 
-event_handler<process&>& process::exit_event::operator+=(const typename event_handler<process&>::function_t& function) noexcept {
+event_handler& process::exit_event::operator+=(const typename event_handler::function_t& function) noexcept {
   data_->exit_callback_+=(function);
-  return event_handler<process&>::operator+=(function);
+  return event_handler::operator+=(function);
 }
 
-event_handler<process&>& process::exit_event::operator-=(const event_handler<process&>& handler) noexcept {
+event_handler& process::exit_event::operator-=(const event_handler& handler) noexcept {
   data_->exit_callback_-=(handler);
-  return event_handler<process&>::operator-=(handler);
+  return event_handler::operator-=(handler);
 }
 
-event_handler<process&>& process::exit_event::operator-=(const typename event_handler<process&>::function_t& function) noexcept {
+event_handler& process::exit_event::operator-=(const typename event_handler::function_t& function) noexcept {
   data_->exit_callback_-=(function);
-  return event_handler<process&>::operator-=(function);
+  return event_handler::operator-=(function);
 }
 
 bool process::output_data_received_event::is_empty() const noexcept {
-  return data_received_event_handler<process&>::is_empty();
+  return data_received_event_handler::is_empty();
 }
 
-data_received_event_handler<process&>& process::output_data_received_event::operator+=(const data_received_event_handler<process&>& handler) noexcept {
+data_received_event_handler& process::output_data_received_event::operator+=(const data_received_event_handler& handler) noexcept {
   data_->output_data_received_callback_+=(handler);
-  return data_received_event_handler<process&>::operator+=(handler);
+  return data_received_event_handler::operator+=(handler);
 }
 
-data_received_event_handler<process&>& process::output_data_received_event::operator+=(const typename data_received_event_handler<process&>::function_t& function) noexcept {
+data_received_event_handler& process::output_data_received_event::operator+=(const typename data_received_event_handler::function_t& function) noexcept {
   data_->output_data_received_callback_+=(function);
-  return data_received_event_handler<process&>::operator+=(function);
+  return data_received_event_handler::operator+=(function);
 }
 
-data_received_event_handler<process&>& process::output_data_received_event::operator-=(const data_received_event_handler<process&>& handler) noexcept {
+data_received_event_handler& process::output_data_received_event::operator-=(const data_received_event_handler& handler) noexcept {
   data_->output_data_received_callback_-=(handler);
-  return data_received_event_handler<process&>::operator-=(handler);
+  return data_received_event_handler::operator-=(handler);
 }
 
-data_received_event_handler<process&>& process::output_data_received_event::operator-=(const typename data_received_event_handler<process&>::function_t& function) noexcept {
+data_received_event_handler& process::output_data_received_event::operator-=(const typename data_received_event_handler::function_t& function) noexcept {
   data_->output_data_received_callback_-=(function);
-  return data_received_event_handler<process&>::operator-=(function);
+  return data_received_event_handler::operator-=(function);
 }
 
 process::process() {

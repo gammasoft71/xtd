@@ -46,8 +46,8 @@ namespace examples {
         color->tag(colors_.size());
         colors_.push_back(color);
         controls().push_back(*color);
-        color->click += [&](control& sender, const event_args& e) {
-          selected_index(colors_.size() - 1 - std::any_cast<size_t>(sender.tag()));
+        color->click += [&](object& sender, const event_args& e) {
+          selected_index(colors_.size() - 1 - std::any_cast<size_t>(as<control>(sender).tag()));
         };
       }
     }
@@ -68,8 +68,8 @@ namespace examples {
       }
     }
 
-    event<color_chooser, event_handler<control&>> selected_index_changed;
-    event<color_chooser, event_handler<control&>> selected_color_changed;
+    event<color_chooser, event_handler> selected_index_changed;
+    event<color_chooser, event_handler> selected_color_changed;
 
     static const size_t npos = std::numeric_limits<size_t>::max();
 
@@ -214,7 +214,7 @@ namespace examples {
       }
     }
     
-    event<color_editor, event_handler<control&>> color_changed;
+    event<color_editor, event_handler> color_changed;
 
   protected:
     void on_color_changed(const event_args& e) {

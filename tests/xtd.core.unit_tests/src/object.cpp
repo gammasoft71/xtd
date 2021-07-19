@@ -27,26 +27,6 @@ namespace unit_tests {
       assert::is_true_(object::equals(object1, object1));
     }
     
-    void test_method_(equality_operator_to_another_object) {
-      assert::is_false_(object() == object());
-    }
-    
-    void test_method_(equality_operator_to_the_same_object) {
-      object object1;
-      object& object2 = object1;
-      assert::is_true_(object1 == object2);
-    }
-    
-    void test_method_(inequality_operator_to_another_object) {
-      assert::is_true_(object() != object());
-    }
-    
-    void test_method_(inequality_operator_to_the_same_object) {
-      object object1;
-      object& object2 = object1;
-      assert::is_false_(object1 != object2);
-    }
-    
     void test_method_(get_type_on_object) {
       //assert::are_equal_("xtd::object", object().get_type().full_name());
     }

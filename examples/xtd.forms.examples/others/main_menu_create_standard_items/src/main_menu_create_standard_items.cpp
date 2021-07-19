@@ -8,7 +8,7 @@ namespace examples {
   public:
     form1() {
       text("Main menu create standard items example");
-      menu(main_menu::create_standard_items([&](component& sender, const event_args& e) {
+      menu(main_menu::create_standard_items([&](object& sender, const event_args& e) {
         list_box1.items().push_back(strings::format("{} clicked", static_cast<menu_item&>(sender).text()));
         list_box1.selected_index(list_box1.items().size() - 1);
         if (static_cast<menu_item&>(sender).text() == texts::exit()) application::exit();

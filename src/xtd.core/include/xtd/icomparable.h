@@ -23,7 +23,7 @@ namespace xtd {
     /// | Less than zero    | This instance is less than obj.    |
     /// | Zero              | This instance is equal to obj.     |
     /// | Greater than zero | This instance is greater than obj. |
-    virtual int32_t compare_to(const object& obj) const = 0;
+    virtual int32_t compare_to(const object& obj) const noexcept = 0;
     
     /// @brief Compares the current instance with another object of the same type.
     /// @param obj An object to compare with this instance.
@@ -34,14 +34,18 @@ namespace xtd {
     /// | Less than zero    | This instance is less than obj.    |
     /// | Zero              | This instance is equal to obj.     |
     /// | Greater than zero | This instance is greater than obj. |
-    virtual int32_t compare_to(const type_t& obj) const = 0;
+    virtual int32_t compare_to(const type_t& obj) const noexcept = 0;
     
     ///@cond
     // Not correct for an interface but necessary for C++ language.
-    bool operator<(const type_t& obj) const { return compare_to(obj) < 0; }
-    bool operator<=(const type_t& obj) const { return compare_to(obj) <= 0; }
-    bool operator>(const type_t& obj) const { return compare_to(obj) > 0; }
-    bool operator>=(const type_t& obj) const { return compare_to(obj) >= 0; }
+    bool operator<(const object& obj) const noexcept { return compare_to(obj) < 0; }
+    bool operator<=(const object& obj) const noexcept { return compare_to(obj) <= 0; }
+    bool operator>(const object& obj) const noexcept { return compare_to(obj) > 0; }
+    bool operator>=(const object& obj) const noexcept { return compare_to(obj) >= 0; }
+    bool operator<(const type_t& obj) const noexcept { return compare_to(obj) < 0; }
+    bool operator<=(const type_t& obj) const noexcept { return compare_to(obj) <= 0; }
+    bool operator>(const type_t& obj) const noexcept { return compare_to(obj) > 0; }
+    bool operator>=(const type_t& obj) const noexcept { return compare_to(obj) >= 0; }
     ///@endcond
   };
 }

@@ -30,7 +30,7 @@ namespace examples {
     }
     
   private:
-    void on_combo_box_click(control& sender, const xtd::event_args& e) {
+    void on_combo_box_click(object& sender, const xtd::event_args& e) {
       combo_box1.selected_index(static_cast<combo_box&>(sender).selected_index());
       combo_box2.selected_index(static_cast<combo_box&>(sender).selected_index());
       combo_box3.selected_index(static_cast<combo_box&>(sender).selected_index());

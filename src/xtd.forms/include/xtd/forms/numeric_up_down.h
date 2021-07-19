@@ -110,7 +110,7 @@ namespace xtd {
 
       /// @brief Occurs when the value property has been changed in some way.
       /// @ingroup events
-      event<numeric_up_down, event_handler<control&>> value_changed;
+      event<numeric_up_down, event_handler> value_changed;
       
     protected:
       drawing::color default_back_color() const override {return xtd::forms::theme_colors::current_theme().window();}

@@ -2,6 +2,7 @@
 /// @brief Contains project_type_item_control class.
 #pragma once
 #include <limits>
+#include <xtd/as.h>
 #include <xtd/drawing/bitmap.h>
 #include "project_type_item_control.h"
 #include "../resources/catch2.xpm"
@@ -71,8 +72,8 @@ namespace xtdc_gui {
         item_control->dock(xtd::forms::dock_style::top);
         item_control->tag(project_type_item_controls_.size());
         project_type_item_controls_.push_back(item_control);
-        item_control->click += [&](control& sender, const xtd::event_args& e) {
-          selected_index(project_type_item_controls_.size() - 1 - std::any_cast<size_t>(sender.tag()));
+        item_control->click += [&](object& sender, const xtd::event_args& e) {
+          selected_index(project_type_item_controls_.size() - 1 - std::any_cast<size_t>(as<control>(sender).tag()));
         };
       }
       
@@ -104,8 +105,8 @@ namespace xtdc_gui {
       selected_index(npos);
     }
     
-    xtd::event<project_type_items_control, xtd::event_handler<xtd::forms::control&>> selected_index_changed;
-    xtd::event<project_type_items_control, xtd::event_handler<xtd::forms::control&>> selected_project_type_item_changed;
+    xtd::event<project_type_items_control, xtd::event_handler> selected_index_changed;
+    xtd::event<project_type_items_control, xtd::event_handler> selected_project_type_item_changed;
     
     void perform_double_click() {on_double_click(xtd::event_args::empty);}
     

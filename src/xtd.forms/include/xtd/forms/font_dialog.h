@@ -231,7 +231,7 @@ namespace xtd {
       /// @brief Occurs when the user clicks the Apply button in the font dialog box.
       /// @ingroup events
       /// @remarks Every time the Apply button is clicked, another apply event is raised.
-      event<font_dialog, event_handler<component&>> apply;
+      event<font_dialog, event_handler> apply;
       
       /// @brief Resets all dialog box options to their default values.
       /// @remarks When the options are reset, the strikethrough, underline, and color effects are enabled. The fonts listed include only the screen fonts supported by the system.

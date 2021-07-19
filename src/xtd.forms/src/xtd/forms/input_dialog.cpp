@@ -142,7 +142,7 @@ void input_dialog::run_sheet(intptr_t owner) {
   else {
     if (dialog_style_ == xtd::forms::dialog_style::standard) {
       std::shared_ptr<input_dialog_standard> dialog = std::make_shared<input_dialog_standard>(text_, message_, value_, character_casing_, multiline_, use_system_password_char_, word_wrap_);
-      dialog->form_closed += [&, dialog](control& sender, const form_closed_event_args& e) {
+      dialog->form_closed += [&, dialog](object& sender, const form_closed_event_args& e) {
         if (dialog->dialog_result() == dialog_result::ok) value_ = dialog->value();
         on_dialog_closed(dialog_closed_event_args(dialog->dialog_result()));
       };

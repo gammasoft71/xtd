@@ -81,7 +81,7 @@ namespace xtd {
       void on_paint(xtd::forms::paint_event_args& e) override;
       
     private:
-      void on_timer_tick(timer& timer, const xtd::event_args& e);
+      void on_timer_tick(object& timer, const xtd::event_args& e);
     
       bool is_running_ = false;
       xtd::forms::loading_indicator_style loading_indicator_style_ = xtd::forms::loading_indicator_style::standard;

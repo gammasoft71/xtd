@@ -95,21 +95,21 @@ namespace examples {
       panel_painting.back_color(color::white_smoke);
       panel_painting.size({picture.width() * zoom, picture.height() * zoom});
 
-      panel_painting.mouse_down += [&](control& sender, const mouse_event_args& e) {
+      panel_painting.mouse_down += [&](object& sender, const mouse_event_args& e) {
         if (e.x()/zoom >= 0 && e.x()/zoom < picture.width() && e.y()/zoom >= 0 && e.y()/zoom < picture.height()) {
           picture.set_pixel(e.x()/zoom, e.y()/zoom, e.button() == mouse_buttons::left ? current_color : color::from_argb(0, 0, 0, 0));
           panel_painting.invalidate(rectangle(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom));
         }
       };
       
-      panel_painting.mouse_move += [&](control& sender, const mouse_event_args& e) {
+      panel_painting.mouse_move += [&](object& sender, const mouse_event_args& e) {
         if (e.button() == mouse_buttons::left && e.x()/zoom >= 0 && e.x()/zoom < picture.width() && e.y()/zoom >= 0 && e.y()/zoom < picture.height()) {
           picture.set_pixel(e.x()/zoom, e.y()/zoom, current_color);
           panel_painting.invalidate(rectangle(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom));
         }
       };
 
-      panel_painting.paint += [&](control& sender, paint_event_args& e) {
+      panel_painting.paint += [&](object& sender, paint_event_args& e) {
         for (auto y = 0; y < panel_painting.client_size().height(); y += zoom)
           for (auto x = 0; x < panel_painting.client_size().width(); x += zoom)
             if (picture.get_pixel(x/zoom, y/zoom) != color::from_argb(0, 0, 0, 0))
@@ -124,10 +124,10 @@ namespace examples {
     }
   
   private:
-    void choose_current_color(control& sender, const event_args& e) {
+    void choose_current_color(object& sender, const event_args& e) {
       for (auto panel : panel_colors)
-        panel->border_style(panel->handle() != sender.handle() ? forms::border_style::none : forms::border_style::fixed_single);
-      current_color = sender.back_color();
+        panel->border_style(panel->handle() != as<control>(sender).handle() ? forms::border_style::none : forms::border_style::fixed_single);
+      current_color = as<control>(sender).back_color();
     }
 
     int zoom = 20;

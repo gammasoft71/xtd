@@ -106,7 +106,7 @@ namespace xtd {
       
       /// @brief Occurs when the value of the accepts_return property has changed.
       /// @ingroup events
-      event<text_box, event_handler<control&>> accepts_return_changed;
+      event<text_box, event_handler> accepts_return_changed;
 
       void append_text(const std::string& value) override;
       

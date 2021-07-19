@@ -18,7 +18,7 @@ namespace examples {
     
     void value(double value) {text(xtd::to_string(value, "G"));}
     
-    event<numeric_text_box, event_handler<control&>> value_changed;
+    event<numeric_text_box, event_handler> value_changed;
 
   protected:
     void on_key_press(key_press_event_args& e) override {

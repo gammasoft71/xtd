@@ -56,7 +56,7 @@ void panel::on_handle_created(const event_args& e) {
   scrollable_control::on_handle_created(e);
   
   // Workaround : on macOS with wxWidgets toolkit, retina display, dark mode enabled, and border style is fixed 3d, the border is not show.
-  parent().value().get().paint += [this](control& sender, paint_event_args& e) {
+  parent().value().get().paint += [this](object& sender, paint_event_args& e) {
     if (environment::os_version().is_macos_platform() && native::toolkit::name() == "wxwidgets" && screen::from_handle(handle()).scale_factor() > 1. && application::dark_mode_enabled() && border_style_ == forms::border_style::fixed_3d)
       e.graphics().draw_rectangle(xtd::drawing::pens::white(), xtd::drawing::rectangle::offset(xtd::drawing::rectangle::inflate(this->bounds(), {-2, -2}), {1, 1}));
   };

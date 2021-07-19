@@ -10,7 +10,7 @@ int main() {
   form form_main;
   form_main.size({1024, 768});
   form_main.text("Demo forms");
-  form_main.menu(forms::main_menu::create_standard_items([&](component& sender, const event_args& e) {
+  form_main.menu(forms::main_menu::create_standard_items([&](object& sender, const event_args& e) {
     if (static_cast<menu_item&>(sender).text() == texts::exit()) application::exit();
   }));
   

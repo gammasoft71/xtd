@@ -93,7 +93,7 @@ namespace calculator {
       }
     }
     
-    void form_main_key_press(control& sender, key_press_event_args& e) {
+    void form_main_key_press(object& sender, key_press_event_args& e) {
       if (e.key_char() >= '0' && e.key_char() <= '9') {
         button_numbers[e.key_char() - '0'].perform_click();
         e.handled(true);
@@ -115,34 +115,34 @@ namespace calculator {
       }
     }
     
-    void back_space_key_press(control& sender, const event_args& e) {
+    void back_space_key_press(object& sender, const event_args& e) {
       if (result.text().length() > 0) result.text(strings::remove(result.text(), result.text().length() - 1));
       if (result.text().length() == 0 || result.text() == "-") button_clear_click(sender, e);
     }
     
-    void button_clear_click(control& sender, const event_args& e) {
+    void button_clear_click(object& sender, const event_args& e) {
       result.text("0");
       first_operand.reset();
       second_operand.reset();
       operation = operators::none;
     }
     
-    void button_percent_click(control& sender, const event_args& e) {
+    void button_percent_click(object& sender, const event_args& e) {
       result.text(strings::format("{}", parse<double>(result.text()) / 100));
     }
     
-    void button_plus_minus_click(control& sender, const event_args& e) {
+    void button_plus_minus_click(object& sender, const event_args& e) {
       if (result.text() != "0" && result.text() != "0.") result.text(strings::format("{}", -parse<double>(result.text())));
     }
     
-    void button_number_click(control& sender, const event_args& e) {
-      if ((sender.handle() == button_decimal.handle() && strings::contains(result.text(), ".")) || (result.text() == "0" && sender.handle() == button_numbers[0].handle())) return;
-      if ((first_operand.has_value() && first_operand == parse<double>(result.text())) || (result.text() == "0" && sender.handle() != button_decimal.handle())) result.text("");
+    void button_number_click(object& sender, const event_args& e) {
+      if ((as<control>(sender).handle() == button_decimal.handle() && strings::contains(result.text(), ".")) || (result.text() == "0" && as<control>(sender).handle() == button_numbers[0].handle())) return;
+      if ((first_operand.has_value() && first_operand == parse<double>(result.text())) || (result.text() == "0" && as<control>(sender).handle() != button_decimal.handle())) result.text("");
       if (second_operand.has_value()) second_operand.reset();
-      result.text(result.text() + sender.text());
+      result.text(result.text() + as<control>(sender).text());
     }
     
-    void button_operator_click(control& sender, const event_args& e) {
+    void button_operator_click(object& sender, const event_args& e) {
       if (!first_operand.has_value()) first_operand = parse<double>(result.text());
       else {
         if (!second_operand.has_value()) second_operand = parse<double>(result.text());
@@ -156,7 +156,7 @@ namespace calculator {
         }
         first_operand = parse<double>(result.text());
       }
-      operation = map<string, operators> {{"÷", operators::divide}, {"x", operators::multiply}, {"-", operators::subtract}, {"+", operators::add}, {"=", operation}}[sender.text()];
+      operation = map<string, operators> {{"÷", operators::divide}, {"x", operators::multiply}, {"-", operators::subtract}, {"+", operators::add}, {"=", operation}}[as<control>(sender).text()];
     }
     
   private:

@@ -168,7 +168,7 @@ namespace xtd {
     /// | Less than zero    | This instance is less than obj.    |
     /// | Zero              | This instance is equal to obj.     |
     /// | Greater than zero | This instance is greater than obj. |
-    virtual int32_t compare_to(const object& obj) const override {
+    virtual int32_t compare_to(const object& obj) const noexcept override {
       if (!dynamic_cast<const guid*>(&obj)) return 1;
       return compare_to(static_cast<const guid&>(obj));
     }
@@ -182,7 +182,7 @@ namespace xtd {
     /// | Less than zero    | This instance is less than obj.    |
     /// | Zero              | This instance is equal to obj.     |
     /// | Greater than zero | This instance is greater than obj. |
-    virtual int32_t compare_to(const guid& value) const override {
+    virtual int32_t compare_to(const guid& value) const noexcept override {
       for (size_t i = 0; i < data_.size(); i++)
         if (data_[i] > value.data_[i]) return 1;
         else if (data_[i] < value.data_[i]) return -1;

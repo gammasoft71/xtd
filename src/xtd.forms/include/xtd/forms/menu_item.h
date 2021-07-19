@@ -116,21 +116,21 @@ namespace xtd {
       /// @param on_click The event_handler that handles the Click event for this menu item.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
-      menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click);
+      menu_item(const std::string& text, const xtd::event_handler& on_click);
       /// @brief Initializes a new instance of the class with a specified caption, event handler, and associated shortcut key for the menu item.
       /// @param text The caption for the menu item.
       /// @param on_click The event_handler that handles the Click event for this menu item.
       /// @param shortcut One of the xtd::forms::shortcut values.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
-      menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, xtd::forms::shortcut shortcut);
+      menu_item(const std::string& text, const xtd::event_handler& on_click, xtd::forms::shortcut shortcut);
       /// @brief Initializes a new instance of the class with a specified caption, event handler, and image menu item.
       /// @param text The caption for the menu item.
       /// @param on_click The event_handler that handles the Click event for this menu item.
       /// @param image A xtd::drawing::image menu item.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
-      menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, const xtd::drawing::image& image);
+      menu_item(const std::string& text, const xtd::event_handler& on_click, const xtd::drawing::image& image);
       /// @brief Initializes a new instance of the class with a specified caption, event handler, and image menu item, and associated shortcut key for the menu item.
       /// @param text The caption for the menu item.
       /// @param on_click The event_handler that handles the Click event for this menu item.
@@ -138,14 +138,14 @@ namespace xtd {
       /// @param shortcut One of the xtd::forms::shortcut values.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
-      menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, const xtd::drawing::image& image, xtd::forms::shortcut shortcut);
+      menu_item(const std::string& text, const xtd::event_handler& on_click, const xtd::drawing::image& image, xtd::forms::shortcut shortcut);
       /// @brief Initializes a new instance of the class with a specified caption, event handler, and kind the menu item.
       /// @param text The caption for the menu item.
       /// @param on_click The event_handler that handles the Click event for this menu item.
       /// @param kind One of the xtd::forms::menu_item_kind value.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
-      menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, xtd::forms::menu_item_kind kind);
+      menu_item(const std::string& text, const xtd::event_handler& on_click, xtd::forms::menu_item_kind kind);
       /// @brief Initializes a new instance of the class with a specified caption, event handler, kind the menu item, and associated shortcut key for the menu item.
       /// @param text The caption for the menu item.
       /// @param on_click The event_handler that handles the Click event for this menu item.
@@ -153,7 +153,7 @@ namespace xtd {
       /// @param shortcut One of the xtd::forms::shortcut values.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
-      menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, xtd::forms::menu_item_kind kind, xtd::forms::shortcut shortcut);
+      menu_item(const std::string& text, const xtd::event_handler& on_click, xtd::forms::menu_item_kind kind, xtd::forms::shortcut shortcut);
       /// @brief Initializes a new instance of the class with a specified caption, event handler, image menu item, and kind the menu item.
       /// @param text The caption for the menu item.
       /// @param on_click The event_handler that handles the Click event for this menu item.
@@ -161,7 +161,7 @@ namespace xtd {
       /// @param kind One of the xtd::forms::menu_item_kind value.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
-      menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind);
+      menu_item(const std::string& text, const xtd::event_handler& on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind);
       /// @brief Initializes a new instance of the class with a specified caption, event handler, image menu item, kind the menu item, and associated shortcut key for the menu item.
       /// @param text The caption for the menu item.
       /// @param on_click The event_handler that handles the Click event for this menu item.
@@ -170,7 +170,7 @@ namespace xtd {
       /// @param shortcut One of the xtd::forms::shortcut values.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
-      menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, xtd::forms::shortcut shortcut);
+      menu_item(const std::string& text, const xtd::event_handler& on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, xtd::forms::shortcut shortcut);
       /// @brief Initializes a new instance of the class with a specified caption, event handler, kind the menu item and checked.
       /// @param text The caption for the menu item.
       /// @param on_click The event_handler that handles the Click event for this menu item.
@@ -178,7 +178,7 @@ namespace xtd {
       /// @param checked true if there is a check mark next to the menu item; otherwise, false. The default is false.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
-      menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, xtd::forms::menu_item_kind kind, bool checked);
+      menu_item(const std::string& text, const xtd::event_handler& on_click, xtd::forms::menu_item_kind kind, bool checked);
       /// @brief Initializes a new instance of the class with a specified caption, event handler, kind the menu item, checked, and associated shortcut key for the menu item.
       /// @param text The caption for the menu item.
       /// @param on_click The event_handler that handles the Click event for this menu item.
@@ -187,7 +187,7 @@ namespace xtd {
       /// @param shortcut One of the xtd::forms::shortcut values.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
-      menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut);
+      menu_item(const std::string& text, const xtd::event_handler& on_click, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut);
       /// @brief Initializes a new instance of the class with a specified caption, event handler, image menu item, kind the menu item, and checked
       /// @param text The caption for the menu item.
       /// @param on_click The event_handler that handles the Click event for this menu item.
@@ -196,7 +196,7 @@ namespace xtd {
       /// @param checked true if there is a check mark next to the menu item; otherwise, false. The default is false.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
-      menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked);
+      menu_item(const std::string& text, const xtd::event_handler& on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked);
       /// @brief Initializes a new instance of the class with a specified caption, event handler, image menu item, kind the menu item, checked, and associated shortcut key for the menu item.
       /// @param text The caption for the menu item.
       /// @param on_click The event_handler that handles the Click event for this menu item.
@@ -206,29 +206,29 @@ namespace xtd {
       /// @param shortcut One of the xtd::forms::shortcut values.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
-      menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut);
+      menu_item(const std::string& text, const xtd::event_handler& on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut);
 
       /// @cond
       template<typename delegate_type>
-      menu_item(const std::string& text, delegate_type on_click) {menu_item(text, xtd::event_handler<xtd::forms::component&>(on_click));}
+      menu_item(const std::string& text, delegate_type on_click) {menu_item(text, xtd::event_handler(on_click));}
       template<typename delegate_type>
-      menu_item(const std::string& text, delegate_type on_click, xtd::forms::shortcut shortcut) {menu_item(text, xtd::event_handler<xtd::forms::component&>(on_click), shortcut);}
+      menu_item(const std::string& text, delegate_type on_click, xtd::forms::shortcut shortcut) {menu_item(text, xtd::event_handler(on_click), shortcut);}
       template<typename delegate_type>
-      menu_item(const std::string& text, delegate_type on_click, const xtd::drawing::image& image) {menu_item(text, xtd::event_handler<xtd::forms::component&>(on_click), image);}
+      menu_item(const std::string& text, delegate_type on_click, const xtd::drawing::image& image) {menu_item(text, xtd::event_handler(on_click), image);}
       template<typename delegate_type>
-      menu_item(const std::string& text, delegate_type on_click, const xtd::drawing::image& image, xtd::forms::shortcut shortcut) {menu_item(text, xtd::event_handler<xtd::forms::component&>(on_click), image, shortcut);}
+      menu_item(const std::string& text, delegate_type on_click, const xtd::drawing::image& image, xtd::forms::shortcut shortcut) {menu_item(text, xtd::event_handler(on_click), image, shortcut);}
       template<typename delegate_type>
-      menu_item(const std::string& text, delegate_type on_click, xtd::forms::menu_item_kind kind) {menu_item(text, xtd::event_handler<xtd::forms::component&>(on_click), kind);}
+      menu_item(const std::string& text, delegate_type on_click, xtd::forms::menu_item_kind kind) {menu_item(text, xtd::event_handler(on_click), kind);}
       template<typename delegate_type>
-      menu_item(const std::string& text, delegate_type on_click, xtd::forms::menu_item_kind kind, xtd::forms::shortcut shortcut) {menu_item(text, xtd::event_handler<xtd::forms::component&>(on_click), kind, shortcut);}
+      menu_item(const std::string& text, delegate_type on_click, xtd::forms::menu_item_kind kind, xtd::forms::shortcut shortcut) {menu_item(text, xtd::event_handler(on_click), kind, shortcut);}
       template<typename delegate_type>
-      menu_item(const std::string& text, delegate_type on_click, xtd::forms::menu_item_kind kind, bool checked) {menu_item(text, xtd::event_handler<xtd::forms::component&>(on_click), kind, checked);}
+      menu_item(const std::string& text, delegate_type on_click, xtd::forms::menu_item_kind kind, bool checked) {menu_item(text, xtd::event_handler(on_click), kind, checked);}
       template<typename delegate_type>
-      menu_item(const std::string& text, delegate_type on_click, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut) {menu_item(text, xtd::event_handler<xtd::forms::component&>(on_click), kind, checked, shortcut);}
+      menu_item(const std::string& text, delegate_type on_click, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut) {menu_item(text, xtd::event_handler(on_click), kind, checked, shortcut);}
       template<typename delegate_type>
-      menu_item(const std::string& text, delegate_type on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked) {menu_item(text, xtd::event_handler<xtd::forms::component&>(on_click), image, kind, checked);}
+      menu_item(const std::string& text, delegate_type on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked) {menu_item(text, xtd::event_handler(on_click), image, kind, checked);}
       template<typename delegate_type>
-      menu_item(const std::string& text, delegate_type on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut) {menu_item(text, xtd::event_handler<xtd::forms::component&>(on_click), image, kind, checked, shortcut);}
+      menu_item(const std::string& text, delegate_type on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut) {menu_item(text, xtd::event_handler(on_click), image, kind, checked, shortcut);}
       /// @endcond
 
       /// @brief Initializes a new instance of the class with a specified caption and an array of submenu items defined for the menu item.

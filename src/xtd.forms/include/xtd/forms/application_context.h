@@ -78,7 +78,7 @@ namespace xtd {
 
       /// @brief Occurs when the message loop of the thread should be terminated, by calling exit_thread().
       /// @ingroup events
-      event<application_context, event_handler<const application_context&>> thread_exit;
+      event<application_context, event_handler> thread_exit;
       
       /// @brief Terminates the message loop of the thread.
       /// @remarks This method calls exit_thread_core.
@@ -95,7 +95,7 @@ namespace xtd {
       /// @param sender The object that raised the event.
       /// @param e The event_args that contains the event data.
       /// @remarks The default implementation of this method calls exit_thread_core.
-      virtual void on_main_form_closed(const control& sender, const event_args& e) {
+      virtual void on_main_form_closed(object& sender, const event_args& e) {
         if (!main_form_->visible()) {
           if (!main_form_->can_close_) main_form_->close();
           if (main_form_->can_close_) {
