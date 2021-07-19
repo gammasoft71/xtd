@@ -19,11 +19,17 @@ namespace examples {
       fish_animation.dock(dock_style::fill);
       fish_animation.frames_per_second(60);
       fish_animation.start();
+      fish_animation.click += event_handler(*this, &form1::on_fish_animation_click);
       fish_animation.updated += animation_updated_event_handler(*this, &form1::on_fish_animation_updated);
       fish_animation.paint += paint_event_handler(*this, &form1::on_fish_animation_paint);
     }
     
   private:
+    void on_fish_animation_click(object& sender, const event_args& e) {
+      if (fish_animation.is_running()) fish_animation.stop();
+      else fish_animation.start();
+    }
+    
     void on_fish_animation_updated(object& sender, const animation_updated_event_args& e) {
       debug::write_line(strings::format("frame_counter={}, elapsed_milliseconds={}", e.frame_counter(), e.elapsed_milliseconds()));
     }
