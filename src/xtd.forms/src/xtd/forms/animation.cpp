@@ -12,7 +12,7 @@ animation::animation() {
   frames_timer_.tick += {*this, &animation::on_frames_timer_tick};
 }
 
-int32_t animation::elapsed_millliseconds() const {
+int64_t animation::elapsed_millliseconds() const {
   return stopwatch_.elapsed_nanoseconds();
 }
 

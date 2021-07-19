@@ -39,7 +39,7 @@ namespace xtd {
       
       /// @brief Gets the elapsed time for the current frame, in milliseconds.
       /// @return A long integer representing the elapsed time for the current frame, in milliseconds.
-      virtual int32_t elapsed_millliseconds() const;
+      virtual int64_t elapsed_millliseconds() const;
       
       /// @brief Gets the current frame counter value.
       /// @return The current frame counter value.
