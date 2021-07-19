@@ -32,11 +32,11 @@ namespace examples {
     
     void on_fish_animation_paint(object& sender, paint_event_args& e) {
       e.graphics().clear(fish_animation.back_color());
-      static const int fish_length = 16;
+      static const auto fish_length = 16;
       for (auto i = 0; i < fish_length; ++i) {
-        auto radius = 100 + 10 * std::sin(static_cast<float>(fish_animation.frame_counter()) * 0.1f + static_cast<float>(i) * 0.5f);
-        auto point = point_f(static_cast<float>(e.clip_rectangle().width()) / 2.0f + 1.5f * radius * std::sin(static_cast<float>(fish_animation.frame_counter()) * 0.02f + static_cast<float>(i) * 0.12f), static_cast<float>(e.clip_rectangle().height()) / 2.0f + 1.0f * radius * std::cos(static_cast<float>(fish_animation.frame_counter()) * 0.04f + static_cast<float>(i) * 0.12f));
-        e.graphics().fill_ellipse(solid_brush(fish_animation.fore_color()), point.x() - static_cast<float>(i), point.y() - static_cast<float>(i), 2.0f + 2.0f * static_cast<float>(i), 2.0f + 2.0f * static_cast<float>(i));
+        auto radius = 100 + 10 * sin(static_cast<float>(fish_animation.frame_counter()) * 0.1f + as<float>(i) * 0.5f);
+        auto point = point_f(static_cast<float>(e.clip_rectangle().width()) / 2.0f + 1.5f * radius * sin(as<float>(fish_animation.frame_counter()) * 0.02f + as<float>(i) * 0.12f), as<float>(e.clip_rectangle().height()) / 2.0f + 1.0f * radius * cos(as<float>(fish_animation.frame_counter()) * 0.04f + as<float>(i) * 0.12f));
+        e.graphics().fill_ellipse(solid_brush(fish_animation.fore_color()), point.x() - as<float>(i), point.y() - as<float>(i), 2.0f + 2.0f * as<float>(i), 2.0f + 2.0f * as<float>(i));
       }
     }
     
