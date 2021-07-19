@@ -1,6 +1,6 @@
 # xtd
 
-**Modern C++17/20 framework to create console (CLI), forms (GUI like WinForms) and unit test applications on Windows, macOS, Linux, iOS and android.**
+**Modern C++17/20 framework to create console (CLI), forms (GUI like WinForms) and tunit (unit test) applications on Windows, macOS, Linux, iOS and android.**
 
 [![xtd](docs/pictures/xtd_header.png)](https://gammasoft71.wixsite.com/xtdpro)
 
