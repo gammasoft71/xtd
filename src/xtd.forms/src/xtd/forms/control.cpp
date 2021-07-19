@@ -903,6 +903,7 @@ void control::recreate_handle() {
 
     for (auto control : controls()) control.get().set_state(state::parent_recreating, false);
     set_state(state::recreate, false);
+    perform_layout();
   }
 }
 
