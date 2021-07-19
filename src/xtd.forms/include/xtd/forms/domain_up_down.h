@@ -119,11 +119,11 @@ namespace xtd {
       
       /// @brief Occurs when the selected_item property has been changed.
       /// @ingroup events
-      event<domain_up_down, event_handler<control&>> selected_item_changed;
+      event<domain_up_down, event_handler> selected_item_changed;
 
       /// @brief Occurs when the value property has been changed.
       /// @ingroup events
-      event<domain_up_down, event_handler<control&>> value_changed;
+      event<domain_up_down, event_handler> value_changed;
 
       /// @brief This is a special value equal to the maximum value representable by the type size_t.
       static const size_t npos = std::numeric_limits<size_t>::max();

@@ -15,7 +15,6 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core events
-    template<typename sender_t>
-    using data_received_event_handler = xtd::delegate<void(sender_t sender, const xtd::diagnostics::data_received_event_args& e)>;
+     using data_received_event_handler = xtd::delegate<void(object& sender, const xtd::diagnostics::data_received_event_args& e)>;
   }
 }

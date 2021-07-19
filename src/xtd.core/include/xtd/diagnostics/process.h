@@ -44,7 +44,7 @@ namespace xtd {
       /// xtd.core
       /// @remarks Used by xtd::diagnostics::process::exited, xtd::diagnostics::process::error_data_recaived and xtd::diagnostics::process::output_data_received events.
       /// @ingroup xtd_core events
-      class error_data_received_event : protected xtd::diagnostics::data_received_event_handler<process&> {
+      class error_data_received_event : protected xtd::diagnostics::data_received_event_handler {
         friend process;
         void set_data(data* data) {data_ = data;}
       public:
@@ -55,39 +55,39 @@ namespace xtd {
         /// @brief Adds an handler to the event.
         /// @param handler Handler to add.
         /// @return The current event instance.
-        xtd::diagnostics::data_received_event_handler<process&>& operator+=(const xtd::diagnostics::data_received_event_handler<process&>& handler) noexcept;
+        xtd::diagnostics::data_received_event_handler& operator+=(const xtd::diagnostics::data_received_event_handler& handler) noexcept;
         
         /// @brief Adds a function to the event.
         /// @param function Function to add.
         /// @return The current event instance.
-        xtd::diagnostics::data_received_event_handler<process&>& operator+=(const typename xtd::diagnostics::data_received_event_handler<process&>::function_t& function) noexcept;
+        xtd::diagnostics::data_received_event_handler& operator+=(const typename xtd::diagnostics::data_received_event_handler::function_t& function) noexcept;
         
         /// @brief Adds a function to the event.
         /// @param function Function to add.
         /// @return The current event instance.
         template<typename fn_t>
-        xtd::diagnostics::data_received_event_handler<process&>& operator+=(fn_t function) noexcept {
+        xtd::diagnostics::data_received_event_handler& operator+=(fn_t function) noexcept {
           data_->error_data_received_callback_+=(function);
-          return xtd::diagnostics::data_received_event_handler<process&>::operator+=(function);
+          return xtd::diagnostics::data_received_event_handler::operator+=(function);
         }
         
         /// @brief Removes an handler to the event.
         /// @param handler Handler to remove.
         /// @return The current event instance.
-        xtd::diagnostics::data_received_event_handler<process&>& operator-=(const xtd::diagnostics::data_received_event_handler<process&>& handler) noexcept;
+        xtd::diagnostics::data_received_event_handler& operator-=(const xtd::diagnostics::data_received_event_handler& handler) noexcept;
         
         /// @brief Removes a function to the event.
         /// @param function Function to remove.
         /// @return The current event instance.
-        xtd::diagnostics::data_received_event_handler<process&>& operator-=(const typename xtd::diagnostics::data_received_event_handler<process&>::function_t& function) noexcept;
+        xtd::diagnostics::data_received_event_handler& operator-=(const typename xtd::diagnostics::data_received_event_handler::function_t& function) noexcept;
         
         /// @brief Removes a function to the event.
         /// @param function Function to remove.
         /// @return The current event instance.
         template<typename fn_t>
-        xtd::diagnostics::data_received_event_handler<process&>& operator -=(fn_t function) noexcept {
+        xtd::diagnostics::data_received_event_handler& operator -=(fn_t function) noexcept {
           data_->error_data_received_callback_-=(function);
-          return data_received_event_handler<process&>::operator-=(function);
+          return data_received_event_handler::operator-=(function);
         }
         
       private:
@@ -99,7 +99,7 @@ namespace xtd {
       /// xtd.core
       /// @remarks Used by xtd::diagnostics::process::exited event.
       /// @ingroup xtd_core events
-      class exit_event : protected xtd::event_handler<process&> {
+      class exit_event : protected xtd::event_handler {
         friend process;
         void set_data(data* data) {data_ = data;}
       public:
@@ -110,39 +110,39 @@ namespace xtd {
         /// @brief Adds an handler to the event.
         /// @param handler Handler to add.
         /// @return The current event instance.
-        xtd::event_handler<process&>& operator+=(const xtd::event_handler<process&>& handler) noexcept;
+        xtd::event_handler& operator+=(const xtd::event_handler& handler) noexcept;
         
         /// @brief Adds a function to the event.
         /// @param function Function to add.
         /// @return The current event instance.
-        xtd::event_handler<process&>& operator+=(const typename xtd::event_handler<process&>::function_t& function) noexcept;
+        xtd::event_handler& operator+=(const typename xtd::event_handler::function_t& function) noexcept;
         
         /// @brief Adds a function to the event.
         /// @param function Function to add.
         /// @return The current event instance.
         template<typename fn_t>
-        xtd::event_handler<process&>& operator+=(fn_t function) noexcept {
+        xtd::event_handler& operator+=(fn_t function) noexcept {
           data_->exit_callback_+=(function);
-          return xtd::event_handler<process&>::operator+=(function);
+          return xtd::event_handler::operator+=(function);
         }
         
         /// @brief Removes an handler to the event.
         /// @param handler Handler to remove.
         /// @return The current event instance.
-        xtd::event_handler<process&>& operator-=(const xtd::event_handler<process&>& handler) noexcept;
+        xtd::event_handler& operator-=(const xtd::event_handler& handler) noexcept;
         
         /// @brief Removes a function to the event.
         /// @param function Function to remove.
         /// @return The current event instance.
-        xtd::event_handler<process&>& operator-=(const typename xtd::event_handler<process&>::function_t& function) noexcept;
+        xtd::event_handler& operator-=(const typename xtd::event_handler::function_t& function) noexcept;
         
         /// @brief Removes a function to the event.
         /// @param function Function to remove.
         /// @return The current event instance.
         template<typename fn_t>
-        xtd::event_handler<process&>& operator -=(fn_t function) noexcept {
+        xtd::event_handler& operator -=(fn_t function) noexcept {
           data_->exit_callback_-=(function);
-          return xtd::event_handler<process&>::operator-=(function);
+          return xtd::event_handler::operator-=(function);
         }
         
       private:
@@ -154,7 +154,7 @@ namespace xtd {
       /// xtd.core
       /// @remarks Used by xtd::diagnostics::process::exited, xtd::diagnostics::process::error_data_recaived and xtd::diagnostics::process::output_data_received events.
       /// @ingroup xtd_core events
-      class output_data_received_event : protected xtd::diagnostics::data_received_event_handler<process&> {
+      class output_data_received_event : protected xtd::diagnostics::data_received_event_handler {
         friend process;
         void set_data(data* data) {data_ = data;}
       public:
@@ -165,39 +165,39 @@ namespace xtd {
         /// @brief Adds an handler to the event.
         /// @param handler Handler to add.
         /// @return The current event instance.
-        xtd::diagnostics::data_received_event_handler<process&>& operator+=(const xtd::diagnostics::data_received_event_handler<process&>& handler) noexcept;
+        xtd::diagnostics::data_received_event_handler& operator+=(const xtd::diagnostics::data_received_event_handler& handler) noexcept;
         
         /// @brief Adds a function to the event.
         /// @param function Function to add.
         /// @return The current event instance.
-        xtd::diagnostics::data_received_event_handler<process&>& operator+=(const typename xtd::diagnostics::data_received_event_handler<process&>::function_t& function) noexcept;
+        xtd::diagnostics::data_received_event_handler& operator+=(const typename xtd::diagnostics::data_received_event_handler::function_t& function) noexcept;
         
         /// @brief Adds a function to the event.
         /// @param function Function to add.
         /// @return The current event instance.
         template<typename fn_t>
-        xtd::diagnostics::data_received_event_handler<process&>& operator+=(fn_t function) noexcept {
+        xtd::diagnostics::data_received_event_handler& operator+=(fn_t function) noexcept {
           data_->output_data_received_callback_+=(function);
-          return xtd::diagnostics::data_received_event_handler<process&>::operator+=(function);
+          return xtd::diagnostics::data_received_event_handler::operator+=(function);
         }
         
         /// @brief Removes an handler to the event.
         /// @param handler Handler to remove.
         /// @return The current event instance.
-        xtd::diagnostics::data_received_event_handler<process&>& operator-=(const xtd::diagnostics::data_received_event_handler<process&>& handler) noexcept;
+        xtd::diagnostics::data_received_event_handler& operator-=(const xtd::diagnostics::data_received_event_handler& handler) noexcept;
         
         /// @brief Removes a function to the event.
         /// @param function Function to remove.
         /// @return The current event instance.
-        xtd::diagnostics::data_received_event_handler<process&>& operator-=(const typename xtd::diagnostics::data_received_event_handler<process&>::function_t& function) noexcept;
+        xtd::diagnostics::data_received_event_handler& operator-=(const typename xtd::diagnostics::data_received_event_handler::function_t& function) noexcept;
         
         /// @brief Removes a function to the event.
         /// @param function Function to remove.
         /// @return The current event instance.
         template<typename fn_t>
-        xtd::diagnostics::data_received_event_handler<process&>& operator -=(fn_t function) noexcept {
+        xtd::diagnostics::data_received_event_handler& operator -=(fn_t function) noexcept {
           data_->output_data_received_callback_-=(function);
-          return xtd::diagnostics::data_received_event_handler<process&>::operator-=(function);
+          return xtd::diagnostics::data_received_event_handler::operator-=(function);
         }
         
       private:
@@ -433,7 +433,7 @@ namespace xtd {
       ///   p.start_info().redirect_standard_output(true);
       ///   string e_out;
       ///   p.start_info().redirect_standard_error(true);
-      ///   p.error_data_recaived += [&](process& sender, const data_received_event_args& e) {
+      ///   p.error_data_recaived += [&](object& sender, const data_received_event_args& e) {
       ///     e_out += e.data();
       ///   };
       ///   p.start_info().file_name("write_500_lines");
@@ -623,7 +623,7 @@ namespace xtd {
       ///   p.start_info().redirect_standard_output(true);
       ///   string e_out;
       ///   p.start_info().redirect_standard_error(true);
-      ///   p.error_data_recaived += [&](process& sender, const data_received_event_args& e) {
+      ///   p.error_data_recaived += [&](object& sender, const data_received_event_args& e) {
       ///     e_out += e.data();
       ///   };
       ///   p.start_info().file_name("write_500_lines");
@@ -804,9 +804,9 @@ namespace xtd {
         process::time_point exit_time_;
         bool enable_raising_events_ = false;
         std::optional<int32_t> exit_code_;
-        event_handler<process&> exit_callback_;
-        data_received_event_handler<process&> error_data_received_callback_;
-        data_received_event_handler<process&> output_data_received_callback_;
+        event_handler exit_callback_;
+        data_received_event_handler error_data_received_callback_;
+        data_received_event_handler output_data_received_callback_;
         std::exception_ptr exception_pointer_;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();

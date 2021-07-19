@@ -103,7 +103,7 @@ namespace xtd {
 
       /// @brief Occurs when the drop_down_style property has changed.
       /// @ingroup events
-      event<combo_box, event_handler<control&>> drop_down_style_changed;
+      event<combo_box, event_handler> drop_down_style_changed;
       
     protected:
       forms::create_params create_params() const override;

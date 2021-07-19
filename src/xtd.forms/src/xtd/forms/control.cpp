@@ -811,7 +811,7 @@ void control::set_auto_size_mode(auto_size_mode auto_size_mode) {
   }
 }
 
-string control::to_string() const {
+string control::to_string() const noexcept {
   if (!name_.empty()) return strings::format("{}, name: {}", strings::full_class_name(*this), name_);
   if (!text_.empty()) return strings::format("{}, text: {}", strings::full_class_name(*this), text_);
   return strings::full_class_name(*this);
@@ -939,7 +939,7 @@ void control::set_client_size_core(int32_t width, int32_t height) {
   on_resize(event_args::empty);
 }
 
-void control::on_parent_size_changed(const control& sender, const event_args& e) {
+void control::on_parent_size_changed(object& sender, const event_args& e) {
   if (!get_state(state::layout_deferred) && !reentrant_layout::is_reentrant(this)) {
     perform_layout();
     parent_size_ = parent().value().get().get_state(state::client_size_setted) ? parent().value().get().client_size() :  parent().value().get().size();

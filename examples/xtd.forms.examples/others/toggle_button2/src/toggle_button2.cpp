@@ -40,7 +40,7 @@ public:
   }
   
 private:
-  void update_color(control& sender, const event_args& e) {
+  void update_color(object& sender, const event_args& e) {
     static std::map<check_state, uint8_t> color_levels = {{check_state::unchecked, 0_u8}, {check_state::checked, 255_u8}, {check_state::indeterminate, 128_u8}};
     panel_color.back_color(color::from_argb(color_levels[button_red.check_state()], color_levels[button_green.check_state()], color_levels[button_blue.check_state()]));
   }

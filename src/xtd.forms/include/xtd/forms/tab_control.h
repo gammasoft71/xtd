@@ -83,7 +83,7 @@ namespace xtd {
 
       /// @brief Occurs when the selected_index property has changed.
       /// @ingroup events
-      event<tab_control, event_handler<control&>> selected_index_changed;
+      event<tab_control, event_handler> selected_index_changed;
 
       /// @brief This is a special value equal to the maximum value representable by the type size_t.
       static const size_t npos = std::numeric_limits<size_t>::max();

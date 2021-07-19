@@ -260,7 +260,7 @@ namespace xtd {
       ///   p.start_info().redirect_standard_output(true);
       ///   string e_out;
       ///   p.start_info().redirect_standard_error(true);
-      ///   p.error_data_recaived += [&](process& sender, const data_received_event_args& e) {
+      ///   p.error_data_recaived += [&](object& sender, const data_received_event_args& e) {
       ///     e_out += e.data();
       ///   };
       ///   p.start_info().file_name("write_500_lines");
@@ -369,7 +369,7 @@ namespace xtd {
       ///   p.start_info().redirect_standard_output(true);
       ///   string e_out;
       ///   p.start_info().redirect_standard_error(true);
-      ///   p.error_data_recaived += [&](process& sender, const data_received_event_args& e) {
+      ///   p.error_data_recaived += [&](object& sender, const data_received_event_args& e) {
       ///     e_out += e.data();
       ///   };
       ///   p.start_info().file_name("write_500_lines");
@@ -621,7 +621,7 @@ namespace xtd {
       ///   p.start_info().redirect_standard_output(true);
       ///   string e_out;
       ///   p.start_info().redirect_standard_error(true);
-      ///   p.error_data_recaived += [&](process& sender, const data_received_event_args& e) {
+      ///   p.error_data_recaived += [&](object& sender, const data_received_event_args& e) {
       ///     e_out += e.data();
       ///   };
       ///   p.start_info().file_name("write_500_lines");
@@ -745,7 +745,7 @@ namespace xtd {
       ///   p.start_info().redirect_standard_output(true);
       ///   string e_out;
       ///   p.start_info().redirect_standard_error(true);
-      ///   p.error_data_recaived += [&](process& sender, const data_received_event_args& e) {
+      ///   p.error_data_recaived += [&](object& sender, const data_received_event_args& e) {
       ///     e_out += e.data();
       ///   };
       ///   p.start_info().file_name("write_500_lines");

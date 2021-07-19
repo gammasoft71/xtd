@@ -98,23 +98,23 @@ void main_menu::wm_click(message& message) {
   menu.data_->callback(menu);
 }
 
-xtd::forms::main_menu main_menu::create_standard_items(const xtd::event_handler<xtd::forms::component&>& on_click) {
+xtd::forms::main_menu main_menu::create_standard_items(const xtd::event_handler& on_click) {
   return create_standard_items(theme_images::current_theme(), menu_images::size(), on_click);
 }
 
-xtd::forms::main_menu main_menu::create_standard_items(const drawing::size& size, const xtd::event_handler<xtd::forms::component&>& on_click) {
+xtd::forms::main_menu main_menu::create_standard_items(const drawing::size& size, const xtd::event_handler& on_click) {
   return create_standard_items(theme_images::current_theme(), size, on_click);
 }
 
-xtd::forms::main_menu main_menu::create_standard_items(const std::string& theme, const xtd::event_handler<xtd::forms::component&>& on_click) {
+xtd::forms::main_menu main_menu::create_standard_items(const std::string& theme, const xtd::event_handler& on_click) {
   return create_standard_items(theme_images::current_theme(), menu_images::size(), on_click);
 }
 
-xtd::forms::main_menu main_menu::create_standard_items(const std::string& theme, const drawing::size& size, const xtd::event_handler<xtd::forms::component&>& on_click) {
+xtd::forms::main_menu main_menu::create_standard_items(const std::string& theme, const drawing::size& size, const xtd::event_handler& on_click) {
   return create_standard_items(theme_images::theme_from_name(theme), size, on_click);
 }
 
-xtd::forms::main_menu main_menu::create_standard_items(const xtd::forms::theme_images& theme, const drawing::size& size, const xtd::event_handler<xtd::forms::component&>& on_click) {
+xtd::forms::main_menu main_menu::create_standard_items(const xtd::forms::theme_images& theme, const drawing::size& size, const xtd::event_handler& on_click) {
   return  {
     {
       texts::file(), {

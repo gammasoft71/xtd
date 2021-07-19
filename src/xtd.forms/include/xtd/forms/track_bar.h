@@ -137,11 +137,11 @@ namespace xtd {
       
       /// @brief Occurs when either a mouse or keyboard action moves the scroll box.
       /// @ingroup events
-      event<track_bar, event_handler<control&>> scroll;
+      event<track_bar, event_handler> scroll;
 
       /// @brief Occurs when the value property of a track bar changes, either by movement of the scroll box or by manipulation in code.
       /// @ingroup events
-      event<track_bar, event_handler<control&>> value_changed;
+      event<track_bar, event_handler> value_changed;
       
     protected:
       /// @brief Gets the required creation parameters when the control handle is created.

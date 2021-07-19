@@ -95,11 +95,11 @@ namespace xtd {
 
       /// @brief Occurs when either a mouse or keyboard action moves the scroll box.
       /// @ingroup events
-      event<up_down_button, event_handler<control&>> scroll;
+      event<up_down_button, event_handler> scroll;
 
       /// @brief Occurs when the value of the value property changes.
       /// @ingroup events
-      event<up_down_button, event_handler<control&>> value_changed;
+      event<up_down_button, event_handler> value_changed;
       
     protected:
       

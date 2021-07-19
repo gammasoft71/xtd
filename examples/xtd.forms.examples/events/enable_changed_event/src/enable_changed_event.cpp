@@ -25,11 +25,11 @@ namespace examples {
     }
     
   private:
-    void radio_button1_enabled_changed(const control& sender, const event_args& e) {
+    void radio_button1_enabled_changed(object& sender, const event_args& e) {
       message_box::show("This button has been disabled.");
     }
 
-    void radio_button2_checked_changed(const control& sender, const event_args& e) {
+    void radio_button2_checked_changed(object& sender, const event_args& e) {
       radio_button1.enabled(false);
     }
     

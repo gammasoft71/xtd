@@ -113,6 +113,6 @@ void custom_field_dialog::custom_mines(int value) noexcept {
   custom_mines_text_box_.text(strings::format("{}", custom_mines_));
 }
 
-void custom_field_dialog::on_text_box_key_press(xtd::forms::control& sender, xtd::forms::key_press_event_args& e) {
+void custom_field_dialog::on_text_box_key_press(object& sender, xtd::forms::key_press_event_args& e) {
   e.handled(!isdigit(e.key_char()));
 }

@@ -170,19 +170,19 @@ namespace xtd {
       
       /// @brief Occurs when the value of the accepts_tab property has changed.
       /// @ingroup events
-      event<text_box_base, event_handler<control&>> accepts_tab_changed;
+      event<text_box_base, event_handler> accepts_tab_changed;
       
       /// @brief Occurs when the value of the accepts_tab border_style has changed.
       /// @ingroup events
-      event<text_box_base, event_handler<control&>> border_style_changed;
+      event<text_box_base, event_handler> border_style_changed;
       
       /// @brief Occurs when the value of the accepts_tab border_style has changed.
       /// @ingroup events
-      event<text_box_base, event_handler<control&>> multiline_changed;
+      event<text_box_base, event_handler> multiline_changed;
       
       /// @brief Occurs when the value of the read_only property has changed.
       /// @ingroup events
-      event<text_box_base, event_handler<control&>> read_only_changed;
+      event<text_box_base, event_handler> read_only_changed;
 
     protected:
       /// @brief initializes a new instance of the text_box_base class.

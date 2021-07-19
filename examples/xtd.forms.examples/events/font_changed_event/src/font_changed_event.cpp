@@ -25,11 +25,11 @@ namespace examples {
     }
     
   private:
-    void radio_button1_font_changed(const control& sender, const event_args& e) {
+    void radio_button1_font_changed(object& sender, const event_args& e) {
       message_box::show("The font has been chenged.");
     }
 
-    void radio_button2_checked_changed(const control& sender, const event_args& e) {
+    void radio_button2_checked_changed(object& sender, const event_args& e) {
       radio_button1.font({radio_button1.font().font_family(), 15.0f, drawing::font_style::bold|drawing::font_style::italic, drawing::graphics_unit::point, 0});
     }
     

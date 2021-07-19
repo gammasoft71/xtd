@@ -277,11 +277,11 @@ namespace xtd {
       
       /// @brief Occurs when the form is activated in code or by the user.
       /// @ingroup events
-      event<form, event_handler<control&>> activated;
+      event<form, event_handler> activated;
       
       /// @brief Occurs when the form loses focus and is no longer the active form.
       /// @ingroup events
-      event<form, event_handler<control&>> deactivate;
+      event<form, event_handler> deactivate;
 
       /// @brief Occurs after the form is closed.
       /// @ingroup events

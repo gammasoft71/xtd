@@ -36,7 +36,7 @@ namespace xtd {
     /// bool non_number_entered = false;
     ///
     /// // Handle the KeyDown event to determine the type of character entered into the control.
-    /// void text_box1_key_down(const control& sender, key_event_args& e) {
+    /// void text_box1_key_down(object& sender, key_event_args& e) {
     ///   // Initialize the flag to false.
     ///   non_number_entered = false;
     ///
@@ -60,7 +60,7 @@ namespace xtd {
     ///
     /// // This event occurs after the KeyDown event and can be used to prevent
     /// // characters from entering the control.
-    /// void text_box1_key_press(const control& sender, key_press_event_args& e) {
+    /// void text_box1_key_press(object& sender, key_press_event_args& e) {
     ///   // Check for the flag being set in the key_down event.
     ///   if (non_number_entered == true) {
     ///     // Stop the character from being entered into the control since it is non-numerical.

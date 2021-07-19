@@ -141,11 +141,11 @@ main_menu minesweeper_form::create_main_menu() {
       {"&Expert"_t, {[&] {change_level(level::expert);}}, menu_item_kind::radio, as<level>(properties::settings::default_settings().level()) == level::expert},
       {"&Custom..."_t, {*this, &minesweeper_form::on_custom_menu_click}, menu_item_kind::radio, as<level>(properties::settings::default_settings().level()) == level::custom},
       {"-"},
-      {"&Marks [?]"_t, {[&](component& sender, const event_args& e) {
+      {"&Marks [?]"_t, {[&](object& sender, const event_args& e) {
         properties::settings::default_settings().marks(!properties::settings::default_settings().marks());
         properties::settings::default_settings().save();
       }}, menu_item_kind::check, properties::settings::default_settings().marks()},
-      {"&Original color"_t, {[&](component& sender, const event_args& e) {
+      {"&Original color"_t, {[&](object& sender, const event_args& e) {
         properties::settings::default_settings().original_color(!properties::settings::default_settings().original_color());
         properties::settings::default_settings().save();
         update_colors();
@@ -316,7 +316,7 @@ void minesweeper_form::mark_cell(int x, int y) {
   invalidate();
 }
 
-void minesweeper_form::on_about_menuu_click(xtd::forms::component& sender, const xtd::event_args& e) {
+void minesweeper_form::on_about_menuu_click(object& sender, const xtd::event_args& e) {
   about_dialog about_dialog;
   about_dialog.icon(properties::resources::minesweeper_png());
   about_dialog.name("Minesweeper"_t);
@@ -353,7 +353,7 @@ void minesweeper_form::on_about_menuu_click(xtd::forms::component& sender, const
   about_dialog.show();
 }
 
-void minesweeper_form::on_custom_menu_click(xtd::forms::component& sender, const xtd::event_args& e) {
+void minesweeper_form::on_custom_menu_click(object& sender, const xtd::event_args& e) {
   custom_field_dialog dialog;
   dialog.custom_height(properties::settings::default_settings().custom_height());
   dialog.custom_width(properties::settings::default_settings().custom_width());
@@ -366,7 +366,7 @@ void minesweeper_form::on_custom_menu_click(xtd::forms::component& sender, const
   change_level(level::custom);
 }
 
-void minesweeper_form::on_game_panel_mouse_up(control& sender, const mouse_event_args& e) {
+void minesweeper_form::on_game_panel_mouse_up(object& sender, const mouse_event_args& e) {
   if (game_over_) return;
   stopwatch_timer_.enabled(true);
   
@@ -378,7 +378,7 @@ void minesweeper_form::on_game_panel_mouse_up(control& sender, const mouse_event
   else if (e.button() == mouse_buttons::left) uncover_cell(x, y);
 }
 
-void minesweeper_form::on_game_panel_paint(control& sender, paint_event_args& e) {
+void minesweeper_form::on_game_panel_paint(object& sender, paint_event_args& e) {
   e.graphics().clear(back_color());
   e.graphics().draw_line(pen(color::light(color::light(color::light(back_color())))), 0, 0, 0, e.clip_rectangle().height());
   e.graphics().draw_line(pen(color::light(color::light(back_color()))), 1, 0, 1, e.clip_rectangle().height());
@@ -409,7 +409,7 @@ void minesweeper_form::on_game_panel_paint(control& sender, paint_event_args& e)
       draw_cell(e, {15 + x * cell::width(), 15 + y * cell::height(), cell::width(), cell::height()}, cells_[x][y]);
 }
 
-void minesweeper_form::on_status_panel_paint(control& sender, paint_event_args& e) {
+void minesweeper_form::on_status_panel_paint(object& sender, paint_event_args& e) {
   e.graphics().clear(back_color());
   e.graphics().draw_line(pen(color::light(color::light(color::light(back_color())))), 0, 0, e.clip_rectangle().width(), 0);
   e.graphics().draw_line(pen(color::light(color::light(back_color()))), 0, 1, e.clip_rectangle().width(), 1);
@@ -436,7 +436,7 @@ void minesweeper_form::on_status_panel_paint(control& sender, paint_event_args& 
   e.graphics().draw_line(pen(color::light(color::light(color::light(back_color())))), e.clip_rectangle().width() - 1 - offset, offset, e.clip_rectangle().width() - 1 - offset, e.clip_rectangle().height() - 1);
 }
 
-void minesweeper_form::on_status_panel_resize(control& sender, const event_args& e) {
+void minesweeper_form::on_status_panel_resize(object& sender, const event_args& e) {
   start_game_.location({status_panel_.size().width() / 2 - 21, 17});
   stopwatch_label_.location({status_panel_.width() - stopwatch_label_.width() - 18, 17});
 }

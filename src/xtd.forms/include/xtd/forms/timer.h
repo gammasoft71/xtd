@@ -51,7 +51,7 @@ namespace xtd {
       /// @brief Occurs when the specified timer interval has elapsed and the timer is enabled.
       /// @ingroup events
       /// @remarks Calling the Assert method on the xtd::diadnostics::debug class from within the tick event may not behave as expected, as displaying the assertion dialog box may cause Windows to raise the tick event repeatedly. We recommend that you refrain from testing assertions within this event, and use the write, write_if, write_line, or write_line_if methods instead.
-      event<timer, event_handler<timer&>> tick;
+      event<timer, event_handler> tick;
 
       /// @brief Gets whether the timer is running.
       /// @return true if the timer is currently enabled; otherwise, false. The default is false.

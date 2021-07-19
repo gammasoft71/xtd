@@ -413,7 +413,7 @@ namespace xtd {
       friend class input_dialog;
       friend class message_box;
 
-      static void on_app_thread_exit(const application_context& sender, const event_args& e);
+      static void on_app_thread_exit(object& sender, const event_args& e);
       static bool on_app_thread_exception();
       static void raise_enter_thread_modal(const event_args& e);
       static void raise_leave_thread_modal(const event_args& e);

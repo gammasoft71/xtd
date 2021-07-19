@@ -70,7 +70,7 @@ namespace xtd {
       
       /// @brief Occurs when the expanded property changes.
       /// @ingroup events
-      xtd::event<collapsible_panel, xtd::event_handler<control&>> expanded_changed;
+      xtd::event<collapsible_panel, xtd::event_handler> expanded_changed;
 
     protected:
       forms::create_params create_params() const override;

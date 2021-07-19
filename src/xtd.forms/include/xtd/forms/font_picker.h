@@ -54,7 +54,7 @@ namespace xtd {
       
       /// @brief Occurs when the value of the font property changes.
       /// @ingroup events
-      event<font_picker, event_handler<control&>> font_changed;
+      event<font_picker, event_handler> font_changed;
 
     protected:
       forms::create_params create_params() const override;

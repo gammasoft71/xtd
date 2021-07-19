@@ -1085,22 +1085,22 @@ namespace xtd {
       /// @brief Occurs when the value of the auto_size property changes.
       /// @ingroup events
       /// @remarks This event is raised if the auto_size property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> auto_size_changed;
+      event<control, event_handler> auto_size_changed;
 
       /// @brief Occurs when the value of the back_color property changes.
       /// @ingroup events
       /// @remarks This event is raised if the back_color property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> back_color_changed;
+      event<control, event_handler> back_color_changed;
 
       /// @brief Occurs when the value of the background_image property changes.
       /// @ingroup events
       /// @remarks This event is raised if the background_image property is changed by either a programmatic modification or user interaction
-      event<control, event_handler<control&>> background_image_changed;
+      event<control, event_handler> background_image_changed;
       
       /// @brief Occurs when the value of the background_image_layouot property changes.
       /// @ingroup events
       /// @remarks This event is raised if the background_image_layout property is changed by either a programmatic modification or user interaction
-      event<control, event_handler<control&>> background_image_layout_changed;
+      event<control, event_handler> background_image_layout_changed;
       
       /// @brief Occurs when the control is clicked.
       /// @ingroup events
@@ -1137,17 +1137,17 @@ namespace xtd {
       /// @image html mouse_events_g.png
       /// <br>
       /// @image html mouse_events_gd.png
-      event<control, event_handler<control&>> click;
+      event<control, event_handler> click;
       
       /// @brief Occurs when the value of the client_size property changes.
       /// @ingroup events
       /// @remarks This event is raised if the client_size property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> client_size_changed;
+      event<control, event_handler> client_size_changed;
         
       /// @brief Occurs when the value of the cursor property changes.
       /// @ingroup events
       /// @remarks This event is raised if the cursor property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> cursor_changed;
+      event<control, event_handler> cursor_changed;
 
       /// @brief Occurs when a new control is added to the control::control_collection.
       /// @ingroup events
@@ -1160,7 +1160,7 @@ namespace xtd {
       /// @brief Occurs when the value of the dock property changes.
       /// @ingroup events
       /// @remarks This event is raised if the dock property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> dock_changed;
+      event<control, event_handler> dock_changed;
         
       /// @brief Occurs when the control is double-clicked.
       /// @ingroup events
@@ -1196,7 +1196,7 @@ namespace xtd {
       /// @image html mouse_events_g.png
       /// <br>
       /// @image html mouse_events_gd.png
-      event<control, event_handler<control&>> double_click;
+      event<control, event_handler> double_click;
 
       /// @brief Occurs when the control receives focus.
       /// @ingroup events
@@ -1217,32 +1217,32 @@ namespace xtd {
       /// @remarks If the causes_validation property is set to false, the xtd::forms::control::validating and xtd::forms::control::validated events are suppressed.
       /// @remarks Note The got_focus and lost_focus events are low-level focus events that are tied to the WM_KILLFOCUS and WM_SETFOCUS Windows messages. Typically, the got_focus and lost_focus events are only used when updating when writing custom controls. Instead the enter and leave events should be used for all controls except the xtd::forms::form class, which uses the activated and deactivate events.
       /// @warning Do not attempt to set focus from within the enter, got_focus, leave, lost_focus, validating, or validated event handlers. Doing so can cause your application or the operating system to stop responding.
-      event<control, event_handler<control&>> got_focus;
+      event<control, event_handler> got_focus;
       
       /// @brief Occurs when a handle is created for the control.
       /// @ingroup events
       /// @remarks A handle is created when the xtd::forms::control is displayed for the first time. For example, if a xtd::forms::control is created that has visible set to false, the handle_created event will not be raised until visible is set to true.
-      event<control, event_handler<control&>> handle_created;
+      event<control, event_handler> handle_created;
       
       /// @brief Occurs when the control's handle is in the process of being destroyed.
       /// @ingroup events
       /// @remarks During the handle_destroyed event, the control is still a valid Windows control and the handle can be recreated by calling the recreate_handle method.
-      event<control, event_handler<control&>> handle_destroyed;
+      event<control, event_handler> handle_destroyed;
       
       /// @brief Occurs when the value of the enabled property changes.
       /// @ingroup events
       /// @remarks This event is raised if the enabled property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> enabled_changed;
+      event<control, event_handler> enabled_changed;
 
       /// @brief Occurs when the value of the fore_color property changes.
       /// @ingroup events
       /// @remarks This event is raised if the fore_color property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> fore_color_changed;
+      event<control, event_handler> fore_color_changed;
       
       /// @brief Occurs when the value of the font property changes.
       /// @ingroup events
       /// @remarks This event is raised if the font property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> font_changed;
+      event<control, event_handler> font_changed;
       
       /// @brief Occurs when a key is pressed while the control has focus.
       /// @ingroup events
@@ -1321,12 +1321,12 @@ namespace xtd {
       /// @brief Occurs when a control should reposition its child controls.
       /// @ingroup events
       /// @remarks The layout event occurs when child controls are added or removed, when the bounds of the control changes, and when other changes occur that can affect the layout of the control. The layout event can be suppressed using the suspend_layout and resume_layout methods. Suspending layout enables you to perform multiple actions on a control without having to perform a layout for each change. For example, if you resize and move a control, each operation would raise a layout event.
-      event<control, event_handler<control&>> layout;
+      event<control, event_handler> layout;
       
       /// @brief Occurs when the value of the location property changes.
       /// @ingroup events
       /// @remarks This event is raised if the location property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> location_changed;
+      event<control, event_handler> location_changed;
       
       /// @brief Occurs when the control loses focus.
       /// @ingroup events
@@ -1348,7 +1348,7 @@ namespace xtd {
       /// @remarks If the cancel property of the xtd::forms::cancel_event_args is set to true in the vvalidating event delegate, all events that would usually occur after the validating event are suppressed.
       /// @remarks Note The got_focus and lost_focus events are low-level focus events that are tied to the WM_KILLFOCUS and WM_SETFOCUS Windows messages. Typically, the got_focus and lost_focus events are only used when updating when writing custom controls. Instead the enter and leave events should be used for all controls except the xtd::forms::form class, which uses the activated and deactivate events.
       /// @warning Do not attempt to set focus from within the enter, got_focus, leave, lost_focus, validating, or validated event handlers. Doing so can cause your application or the operating system to stop responding.
-      event<control, event_handler<control&>> lost_focus;
+      event<control, event_handler> lost_focus;
       
       /// @brief Occurs when the control is clicked by the mouse.
       /// @ingroup events
@@ -1460,7 +1460,7 @@ namespace xtd {
       /// @image html mouse_events_g.png
       /// <br>
       /// @image html mouse_events_gd.png
-      event<control, event_handler<control&>> mouse_enter;
+      event<control, event_handler> mouse_enter;
       
       /// @brief Occurs when the mouse hoirontal wheel moves while the control has focus.
       /// @ingroup events
@@ -1513,7 +1513,7 @@ namespace xtd {
       /// @image html mouse_events_g.png
       /// <br>
       /// @image html mouse_events_gd.png
-      event<control, event_handler<control&>> mouse_leave;
+      event<control, event_handler> mouse_leave;
       
       /// @brief Occurs when the mouse pointer is moved over the control.
       /// @ingroup events
@@ -1618,7 +1618,7 @@ namespace xtd {
       /// @brief Occurs when the value of the parent property changes.
       /// @ingroup events
       /// @remarks This event is raised if the parent property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> parent_changed;
+      event<control, event_handler> parent_changed;
       
       /// @brief Occurs when the control is resized.
       /// @ingroup events
@@ -1639,22 +1639,22 @@ namespace xtd {
       /// @image html dot_matrix_display_g.png
       /// <br>
       /// @image html dot_matrix_display_gd.png
-      event<control, event_handler<control&>> resize;
+      event<control, event_handler> resize;
         
       /// @brief Occurs when the value of the size property changes.
       /// @ingroup events
       /// @remarks This event is raised if the size property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> size_changed;
+      event<control, event_handler> size_changed;
 
       /// @brief Occurs when the value of the text property changes.
       /// @ingroup events
       /// @remarks This event is raised if the text property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> text_changed;
+      event<control, event_handler> text_changed;
       
       /// @brief Occurs when the value of the visible property changes.
       /// @ingroup events
       /// @remarks This event is raised if the visible property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> visible_changed;
+      event<control, event_handler> visible_changed;
 
     protected:
       friend class application;
@@ -1987,7 +1987,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      void on_parent_size_changed(const control& sender, const event_args& e);
+      void on_parent_size_changed(object& sender, const event_args& e);
       void do_layout_childs_with_dock_style();
       void do_layout_with_auto_size_mode();
       void do_layout_with_anchor_styles();

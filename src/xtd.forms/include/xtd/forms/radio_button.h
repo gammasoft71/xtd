@@ -91,11 +91,11 @@ namespace xtd {
 
       /// @brief Occurs when the appearance property value changes.
       /// @ingroup events
-      event<radio_button, event_handler<control&>> appearance_changed;
+      event<radio_button, event_handler> appearance_changed;
 
       /// @brief Occurs when the value of the checked property changes.
       /// @ingroup events
-      event<radio_button, event_handler<control&>> checked_changed;
+      event<radio_button, event_handler> checked_changed;
 
     protected:
       /// @brief Gets the required creation parameters when the control handle is created.

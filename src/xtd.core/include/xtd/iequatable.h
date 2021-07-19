@@ -25,5 +25,13 @@ namespace xtd {
     /// @param obj An object to compare with this object.
     /// @return true if the current object is equal to the other parameter; otherwise, false.
     virtual bool equals(const object&) const noexcept = 0;
+    
+    ///@cond
+    // Not correct for an interface but necessary for C++ language.
+    friend bool operator==(const type_t& a, const type_t& b) {return a.equals(b);}
+    friend bool operator!=(const type_t& a, const type_t& b) {return !a.equals(b);}
+    friend bool operator==(const type_t& a, const object& b) {return a.equals(b);}
+    friend bool operator!=(const type_t& a, const object& b) {return !a.equals(b);}
+    /// @endcond
   };
 }

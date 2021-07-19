@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-class control {
+class control : public xtd::object {
 public:
   control() = default;
 
@@ -14,7 +14,7 @@ public:
     }
   }
   
-  xtd::event<control, xtd::event_handler<control&>> text_changed;
+  xtd::event<control, xtd::event_handler> text_changed;
 
 protected:
   void on_text_changed(const xtd::event_args& e) {text_changed(*this, e);}
@@ -27,7 +27,7 @@ class button : public control {
 public:
   button() = default;
 
-  xtd::event<button, xtd::event_handler<control&>> click;
+  xtd::event<button, xtd::event_handler> click;
   
   void perform_click() {on_click(xtd::event_args::empty);}
   
@@ -38,7 +38,7 @@ protected:
 int main() {
   button button1;
   
-  button1.text_changed += [](control& sender, const xtd::event_args& e)  {
+  button1.text_changed += [](xtd::object& sender, const xtd::event_args& e)  {
     std::cout << "text_changed [text=" << sender.text() << "]" << std::endl;
   };
   

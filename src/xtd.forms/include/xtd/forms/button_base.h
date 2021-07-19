@@ -102,7 +102,7 @@ namespace xtd {
       /// @brief Occurs when the value of the image property changes.
       /// @ingroup events
       /// @remarks This event is raised if the image property is changed by either a programmatic modification or user interaction.
-      event<button_base, event_handler<control&>> image_changed;
+      event<button_base, event_handler> image_changed;
 
     protected:
       /// @brief Initializes a new instance of the ButtonBase class.

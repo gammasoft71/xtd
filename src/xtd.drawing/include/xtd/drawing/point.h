@@ -82,7 +82,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use the Equality operator and how to construct a point from a size or two integers. It also demonstrates how to use the x and y properties. This example is designed to be used with Windows Forms (xtd.forms). Paste the code into a form that contains a button named button1, and associate the button1_click method with the button's click event.
       /// @code
-      /// void button1_Click(const control& sender, const event_args& e) {
+      /// void button1_click(object& sender, const event_args& e) {
       ///   // Construct a new point with integers.
       ///   point point1(100, 100);
       ///
@@ -105,7 +105,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use the Equality operator and how to construct a point from a size or two integers. It also demonstrates how to use the x and y properties. This example is designed to be used with Windows Forms (xtd.forms). Paste the code into a form that contains a button named button1, and associate the button1_click method with the button's click event.
       /// @code
-      /// void button1_Click(const control& sender, const event_args& e) {
+      /// void button1_click(object& sender, const event_args& e) {
       ///   // Construct a new point with integers.
       ///   point point1(100, 100);
       ///
@@ -138,7 +138,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use the Equality operator and how to construct a point from a size or two integers. It also demonstrates how to use the x and y properties. This example is designed to be used with Windows Forms (xtd.forms). Paste the code into a form that contains a button named button1, and associate the button1_click method with the button's click event.
       /// @code
-      /// void button1_Click(const control& sender, const event_args& e) {
+      /// void button1_click(object& sender, const event_args& e) {
       ///   // Construct a new point with integers.
       ///   point point1(100, 100);
       ///
@@ -161,7 +161,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use the Equality operator and how to construct a point from a size or two integers. It also demonstrates how to use the x and y properties. This example is designed to be used with Windows Forms (xtd.forms). Paste the code into a form that contains a button named button1, and associate the button1_click method with the button's click event.
       /// @code
-      /// void button1_Click(const control& sender, const event_args& e) {
+      /// void button1_click(object& sender, const event_args& e) {
       ///   // Construct a new point with integers.
       ///   point point1(100, 100);
       ///
@@ -184,7 +184,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use the Equality operator and how to construct a point from a size or two integers. It also demonstrates how to use the x and y properties. This example is designed to be used with Windows Forms (xtd.forms). Paste the code into a form that contains a button named button1, and associate the button1_click method with the button's click event.
       /// @code
-      /// void button1_Click(const control& sender, const event_args& e) {
+      /// void button1_Click(object& sender, const event_args& e) {
       ///   // Construct a new point with integers.
       ///   point point1(100, 100);
       ///
@@ -207,7 +207,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use the Equality operator and how to construct a point from a size or two integers. It also demonstrates how to use the x and y properties. This example is designed to be used with Windows Forms (xtd.forms). Paste the code into a form that contains a button named button1, and associate the button1_click method with the button's click event.
       /// @code
-      /// void button1_Click(const control& sender, const event_args& e) {
+      /// void button1_Click(object& sender, const event_args& e) {
       ///   // Construct a new point with integers.
       ///   point point1(100, 100);
       ///

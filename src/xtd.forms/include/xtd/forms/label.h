@@ -83,7 +83,7 @@ namespace xtd {
       virtual xtd::forms::label& text_align(xtd::forms::content_alignment text_align);
       
       /// @brief Occurs when the value of the xtd::forms::label::text_align property has changed.
-      event<label, event_handler<control&>> text_align_changed;
+      event<label, event_handler> text_align_changed;
 
     protected:
       xtd::forms::create_params create_params() const override;

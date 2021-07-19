@@ -18,7 +18,7 @@ namespace examples {
       link_label1.auto_size(true);
       link_label1.parent(*this);
       link_label1.text("xtd Reference Guide");
-      link_label1.link_clicked += [](control& sender, link_label_clicked_event_args& e) {
+      link_label1.link_clicked += [](object& sender, link_label_clicked_event_args& e) {
         e.visited(true);
         process::start("https://codedocs.xyz/gammasoft71/xtd/index.html");
       };
@@ -29,7 +29,7 @@ namespace examples {
       link_label2.text("Gammasoft presents xtd framework");
       link_label2.links().push_back({0, 9, "https://gammasoft71.wixsite.com/gammasoft"_s});
       link_label2.links().push_back({19, 3, "https://gammasoft71.wixsite.com/xtdpro"_s});
-      link_label2.link_clicked += [](control& sender, link_label_clicked_event_args& e) {
+      link_label2.link_clicked += [](object& sender, link_label_clicked_event_args& e) {
         e.visited(true);
         process::start(as<string>(e.link().link_data()));
       };
@@ -39,7 +39,7 @@ namespace examples {
       link_label3.parent(*this);
       link_label3.text("Put your temporary files in the temp directory");
       link_label3.links().push_back({32, 4, temp_directory_path()});
-      link_label3.link_clicked += [](control& sender, link_label_clicked_event_args& e) {
+      link_label3.link_clicked += [](object& sender, link_label_clicked_event_args& e) {
         process::start(as<path>(e.link().link_data()).string());
       };
     }

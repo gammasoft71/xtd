@@ -27,8 +27,6 @@ namespace xtd {
     object(const object&) = default;
     object& operator=(const object&) = default;
     virtual ~object() = default;
-    bool operator==(const object& obj) const noexcept {return equals(obj);}
-    bool operator!=(const object& obj) const noexcept {return !operator==(obj);}
     friend std::ostream& operator <<(std::ostream& os, const object& obj) noexcept {return os << obj.to_string();}
     /// @endcond
 
