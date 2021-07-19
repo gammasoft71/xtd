@@ -4,7 +4,7 @@ using namespace std;
 using namespace xtd;
 
 namespace examples {
-  class program final : public static_class {
+  class program static_object_ {
   public:
     static string to_string() {return "program";}
   };
