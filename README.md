@@ -135,7 +135,7 @@ xtdc run
 
 ![Screenshot](docs/pictures/examples/hello_world_message_box_gd.png)
 
-### tunit (Unit tests)
+### tunit (Unit tests like Microsoft Unit Testing Framework)
 
 hello_world_test.cpp:
 
