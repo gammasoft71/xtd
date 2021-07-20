@@ -6,6 +6,7 @@
 #include "control.h"
 #include "content_alignment.h"
 #include "image_list.h"
+#include "flat_button_appearance.h"
 #include "flat_style.h"
 #include "text_format_flags.h"
 
@@ -43,6 +44,13 @@ namespace xtd {
           auto_ellipsis_ = false;
         return *this;
       }
+
+      /// @brief Gets the appearance of the border and the colors used to indicate check state and mouse state.
+      /// @return The xtd::forms::flat_button_appearance appearance.
+      const xtd::forms::flat_button_appearance& flat_appearance() const {return flat_appearance_;}
+      /// @brief Gets the appearance of the border and the colors used to indicate check state and mouse state.
+      /// @return The xtd::forms::flat_button_appearance appearance.
+      xtd::forms::flat_button_appearance& flat_appearance() {return flat_appearance_;}
 
       /// @brief Gets the flat style appearance of the button control.
       /// @return One of the xtd::forms::flat_style values. The default value is xtd::forms::flat_style::standard.
@@ -194,6 +202,7 @@ namespace xtd {
       xtd::drawing::rectangle compute_image_bounds(const xtd::drawing::rectangle& rectangle);
 
       bool auto_ellipsis_ = false;
+      xtd::forms::flat_button_appearance flat_appearance_;
       xtd::forms::flat_style flat_style_ = xtd::forms::flat_style::standard;
       xtd::drawing::image image_ = xtd::drawing::image::empty;
       xtd::forms::image_list image_list_ = xtd::forms::image_list::empty;

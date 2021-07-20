@@ -70,6 +70,24 @@ public:
   manual_test_form() {
     text("Manual tests");
 
+    button1.parent(*this);
+    button1.location({10, 10});
+    button1.text("button1");
+    
+    button2.parent(*this);
+    button2.location({120, 10});
+    button2.text("button2");
+
+    button3.parent(*this);
+    button3.location({10, 50});
+    button3.text("button3");
+    button3.flat_style(xtd::forms::flat_style::flat);
+    
+    button4.parent(*this);
+    button4.location({120, 50});
+    button4.text("button4");
+    button4.flat_style(xtd::forms::flat_style::popup);
+
     /*
      form_main.client_size({300, 300});
      table_layout_panel table_layout_panel;
@@ -77,6 +95,12 @@ public:
      table_layout_panel.dock(dock_style::fill);
      */
   }
+  
+private:
+  button button1;
+  button button2;
+  button button3;
+  button button4;
 };
 
 startup_(manual_test_form);
