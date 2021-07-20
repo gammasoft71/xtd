@@ -292,7 +292,7 @@ int main() {
   flat_toggle_button.text("Flat");
   
   toggle_button popup_toggle_button;
-  popup_toggle_button.flat_style(xtd::forms::flat_style::flat);
+  popup_toggle_button.flat_style(xtd::forms::flat_style::popup);
   popup_toggle_button.location({270, 130});
   popup_toggle_button.parent(tab_page_buttons);
   popup_toggle_button.text("Popup");
