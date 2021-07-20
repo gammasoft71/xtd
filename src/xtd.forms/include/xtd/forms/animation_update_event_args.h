@@ -14,15 +14,15 @@ namespace xtd {
     /// @ingroup xtd_forms events
     class animation_updated_event_args : public xtd::event_args {
     public:
-      animation_updated_event_args(int32_t frame_counter, int32_t elapsed_milliseconds) : frame_counter_(frame_counter), elapsed_milliseconds_(elapsed_milliseconds) {}
+      animation_updated_event_args(int32_t frame_counter, int64_t elapsed_milliseconds) : frame_counter_(frame_counter), elapsed_milliseconds_(elapsed_milliseconds) {}
       
-      int32_t elapsed_milliseconds() const {return elapsed_milliseconds_;}
+      int64_t elapsed_milliseconds() const {return elapsed_milliseconds_;}
       
       int32_t frame_counter() const {return frame_counter_;}
       
     private:
       int32_t frame_counter_ = 0;
-      int32_t elapsed_milliseconds_ = 0;
+      int64_t elapsed_milliseconds_ = 0;
     };
   }
 }
