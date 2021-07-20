@@ -22,6 +22,8 @@ namespace xtd {
         hot,
         /// @brief The button is pressed.
         pressed,
+        /// @brief The button is checked.
+        checked,
         /// @brief The button is disabled.
         disabled,
         /// @brief The button has the default appearance.
