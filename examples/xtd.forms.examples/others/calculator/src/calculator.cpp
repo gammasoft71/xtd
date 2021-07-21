@@ -25,7 +25,7 @@ namespace calculator {
       text("Calculator");
       back_color(drawing::color::from_argb(44, 44, 47));
       fore_color(drawing::color::white);
-      font(xtd::drawing::font(font(), 16));
+      font(xtd::drawing::font(xtd::drawing::font_family::generic_sans_serif(), 16));
       auto_size_mode(forms::auto_size_mode::grow_and_shrink);
       auto_size(true);
       key_press += key_press_event_handler(*this, &form_main::form_main_key_press);
@@ -175,6 +175,10 @@ namespace calculator {
         first_operand = parse<double>(result.text());
       }
       operation = map<string, operators> {{"÷", operators::divide}, {"x", operators::multiply}, {"-", operators::subtract}, {"+", operators::add}, {"=", operation}}[as<control>(sender).text()];
+      if (as<control>(sender).text() != "=") {
+        if (second_operand.has_value()) first_operand.reset();
+        second_operand.reset();
+      }
     }
     
   private:
