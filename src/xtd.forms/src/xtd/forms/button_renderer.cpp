@@ -435,7 +435,7 @@ void button_renderer::draw_flat_button_dark(graphics g, const rectangle& bounds,
   
   g.fill_rectangle(solid_brush(button_color), bounds.x(), bounds.y(), bounds.width(), bounds.height());
   if (flat_appearance.border_size()) g.draw_rectangle(pen(border_color, static_cast<float>(flat_appearance.border_size())), bounds);
-  if (focused) g.draw_rectangle(pen(active_border_color, 1), rectangle::offset(rectangle::inflate(bounds, drawing::size(flat_appearance.border_size() - 1, flat_appearance.border_size() - 1)), drawing::size(static_cast<float>(flat_appearance.border_size()), static_cast<float>(flat_appearance.border_size()))));
+  if (focused) g.draw_rectangle(pen(active_border_color, 1), rectangle::offset(rectangle::inflate(bounds, drawing::size(flat_appearance.border_size() - 1, flat_appearance.border_size() - 1)), drawing::size(flat_appearance.border_size(), flat_appearance.border_size())));
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, bounds, flags);
