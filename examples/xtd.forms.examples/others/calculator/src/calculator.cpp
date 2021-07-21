@@ -25,7 +25,7 @@ namespace calculator {
       text("Calculator");
       back_color(drawing::color::from_argb(44, 44, 47));
       fore_color(drawing::color::white);
-      font(xtd::drawing::font(xtd::drawing::font_family::generic_sans_serif(), 16));
+      font(xtd::drawing::font(xtd::drawing::font_family::generic_sans_serif(), 15));
       auto_size_mode(forms::auto_size_mode::grow_and_shrink);
       auto_size(true);
       key_press += key_press_event_handler(*this, &form_main::form_main_key_press);
@@ -54,7 +54,8 @@ namespace calculator {
       button_plus_minus.flat_appearance().border_color(drawing::color::from_argb(44, 44, 47));
       button_plus_minus.flat_style(xtd::forms::flat_style::flat);
       button_plus_minus.location({60, 60});
-      button_plus_minus.text("±");
+      //button_plus_minus.text("±");
+      button_plus_minus.text("+/-");
       button_plus_minus.size({60, 50});
       button_plus_minus.click += event_handler(*this, &form_main::button_plus_minus_click);
       
