@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::link_label class.
+/// @brief Contains xtd::forms::link class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <any>
@@ -20,7 +20,7 @@ namespace xtd {
     /// @remarks You can display multiple links in a single xtd::forms::link_label control. Each xtd::forms::link_label::link is added into the xtd::forms::link_label::link_collection associated with the xtd::forms::link_label control. To obtain the collection of links defined in a xtd::forms::link_label control, use the xtd::forms::link_label::links property.
     class link : public object {
     public:
-      /// @brief Initializes a new instance of the xtd::forms::link_label::link class.
+      /// @brief Initializes a new instance of the xtd::forms::link class.
       link() = default;
       /// @brief Initializes a new instance of the xtd::forms::link_label::link class with the specified starting location and number of characters after the starting location within the xtd::forms::link_label.
       /// @param start The zero-based starting location of the link area within the text of the xtd::forms::link_label.
