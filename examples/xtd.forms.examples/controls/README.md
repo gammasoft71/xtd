@@ -18,7 +18,7 @@
 * [dot_matrix_display](dot_matrix_display/README.md) represents a [xtd::forms::fourteen_segment_display](../../../src/xtd.forms/include/xtd/forms/dot_matrix_display.h) control.
 * [font_picker](font_picker/README.md) represents a Windows control that allows the user to select and display a font.
 * [fourteen_segment_display](fourteen_segment_display/README.md) represents a [xtd::forms::fourteen_segment_display](../../../src/xtd.forms/include/xtd/forms/fourteen_segment_display.h) control.
-* [hscroll_bar](hscroll_bar/RREEADME.md) represents a standard Windows horizontal scroll bar.
+* [hscroll_bar](hscroll_bar/README.md) represents a standard Windows horizontal scroll bar.
 * [label](label/README.md) represents a standard Windows [xtd::forms::label](../../../src/xtd.forms/include/xtd/forms/label.h).
 * [lcd_label](lcd_label/README.md) represents a [xtd::forms::lcd_label](../../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
 * [link_label](link_label/README.md) represents a Windows label control that can display hyperlinks.
@@ -47,5 +47,5 @@
 * **tree_view** displays a hierarchical collection of labeled items, each represented by a TreeNode.
 * [up_down_button](up_down_button/README.md) represents a Windows spin button.
 * [user_control](user_control/README.md) defines the base class for user controls.
-* [vscroll_bar](vscroll_bar/RREEADME.md) represents a standard Windows vertical scroll bar.
+* [vscroll_bar](vscroll_bar/README.md) represents a standard Windows vertical scroll bar.
 * **web_browser** enables the user to navigate Web pages inside your form.
