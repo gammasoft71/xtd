@@ -1,12 +1,11 @@
 # numeric_up_down
 
-demonstrates the use of [xtd::forms::numeric_up_down](../../../../src/xtd_forms/include/xtd/forms/numeric_up_down.hpp) control.
+demonstrates the use of [xtd::forms::numeric_up_down](../../../../src/xtd.forms/include/xtd/forms/numeric_up_down.h) control.
 
 # Sources
 
-[src/numeric_up_down.cpp](src/numeric_up_down.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/numeric_up_down.cpp](src/numeric_up_down.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

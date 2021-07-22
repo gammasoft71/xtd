@@ -4,9 +4,8 @@ demonstrates the use of [xtd::forms::link_label](../../../../src/xtd.forms/inclu
 
 # Sources
 
-[src/link_label.cpp](src/link_label.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/link_label.cpp](src/link_label.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

@@ -1,12 +1,11 @@
 # choice
 
-demonstrates the use of [xtd::forms::choice](../../../../src/xtd_forms/include/xtd/forms/choice.hpp) control.
+demonstrates the use of [xtd::forms::choice](../../../../src/xtd.forms/include/xtd/forms/choice.h) control.
 
 # Sources
 
-[src/choice.cpp](src/choice.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/choice.cpp](src/choice.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

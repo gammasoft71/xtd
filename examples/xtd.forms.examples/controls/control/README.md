@@ -1,12 +1,11 @@
 # control
 
-demonstrates the use of [xtd::forms::control](../../../../src/xtd_forms/include/xtd/forms/control.hpp) control.
+demonstrates the use of [xtd::forms::control](../../../../src/xtd.forms/include/xtd/forms/control.h) control.
 
 # Sources
 
-[src/control.cpp](src/control.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/control.cpp](src/control.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

@@ -1,12 +1,11 @@
 # color_picker
 
-demonstrates the use of [xtd::forms::color_picker](../../../../src/xtd_forms/include/xtd/forms/color_picker.hpp) control.
+demonstrates the use of [xtd::forms::color_picker](../../../../src/xtd.forms/include/xtd/forms/color_picker.h) control.
 
 # Sources
 
-[src/color_picker.cpp](src/color_picker.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/color_picker.cpp](src/color_picker.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 
