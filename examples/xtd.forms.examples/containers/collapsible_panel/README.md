@@ -1,12 +1,11 @@
 # collapsible_panel
 
-demonstrates the use of [xtd::forms::collapsible_panel](../../../../src/xtd_forms/include/xtd/forms/collapsible_panel.hpp) container.
+demonstrates the use of [xtd::forms::collapsible_panel](../../../../src/xtd.forms/include/xtd/forms/collapsible_panel.h) container.
 
 # Sources
 
-[src/collapsible_panel.cpp](src/collapsible_panel.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/collapsible_panel.cpp](src/collapsible_panel.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

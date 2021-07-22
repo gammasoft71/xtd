@@ -1,12 +1,11 @@
 # panel
 
-demonstrates the use of [xtd::forms::panel](../../../../src/xtd_forms/include/xtd/forms/panel.hpp) container.
+demonstrates the use of [xtd::forms::panel](../../../../src/xtd.forms/include/xtd/forms/panel.h) container.
 
 # Sources
 
-[src/panel.cpp](src/panel.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/panel.cpp](src/panel.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 
