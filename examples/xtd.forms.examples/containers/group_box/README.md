@@ -1,12 +1,11 @@
 # group_box
 
-demonstrates the use of [xtd::forms::group_box](../../../../src/xtd_forms/include/xtd/forms/group_box.hpp) container.
+demonstrates the use of [xtd::forms::group_box](../../../../src/xtd.forms/include/xtd/forms/group_box.h) container.
 
 # Sources
 
-[src/group_box.cpp](src/group_box.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/group_box.cpp](src/group_box.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

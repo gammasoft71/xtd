@@ -1,12 +1,11 @@
 # vertical_layout_panel
 
-demonstrates the use of [xtd::forms::vertical_layout_panel](../../../../src/xtd_forms/include/xtd/forms/vertical_layout_panel.hpp) container.
+demonstrates the use of [xtd::forms::vertical_layout_panel](../../../../src/xtd.forms/include/xtd/forms/vertical_layout_panel.h) container.
 
 # Sources
 
-[src/vertical_layout_panel.cpp](src/vertical_layout_panel.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/vertical_layout_panel.cpp](src/vertical_layout_panel.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 
