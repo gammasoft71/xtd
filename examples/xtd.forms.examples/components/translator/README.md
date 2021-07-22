@@ -4,17 +4,12 @@ demonstrates the use of [xtd::forms::translator](../../../../src/xtd.core/includ
 
 # Sources
 
-[src/translator.cpp](src/translator.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
-
-[locale/en/locale.strings](locale/en/locale.strings)
-
-[locale/es/locale.strings](locale/es/locale.strings)
-
-[locale/fr/locale.strings](locale/fr/locale.strings)
-
-[locale/ru/locale.strings](locale/ru/locale.strings)
+* [src/translator.cpp](src/translator.cpp)
+* [locale/en/locale.strings](locale/en/locale.strings)
+* [locale/es/locale.strings](locale/es/locale.strings)
+* [locale/fr/locale.strings](locale/fr/locale.strings)
+* [locale/ru/locale.strings](locale/ru/locale.strings)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

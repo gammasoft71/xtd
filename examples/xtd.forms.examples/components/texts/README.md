@@ -1,12 +1,11 @@
 # texts
 
-demonstrates the use of [xtd::forms::texts](../../../../src/xtd_forms/include/xtd/forms/texts.hpp) strings.
+demonstrates the use of [xtd::forms::texts](../../../../src/xtd.forms/include/xtd/forms/texts.h) strings.
 
 # Sources
 
-[src/texts.cpp](src/texts.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/texts.cpp](src/texts.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

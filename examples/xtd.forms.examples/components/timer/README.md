@@ -1,12 +1,11 @@
 # timer
 
-demonstrates the use of [xtd::forms::timer](../../../../src/xtd_forms/include/xtd/forms/timer.h) component.
+demonstrates the use of [xtd::forms::timer](../../../../src/xtd.forms/include/xtd/forms/timer.h) component.
 
 # Sources
 
-[src/timer.cpp](src/timer.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/timer.cpp](src/timer.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

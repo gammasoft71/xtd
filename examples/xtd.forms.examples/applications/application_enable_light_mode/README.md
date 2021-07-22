@@ -1,12 +1,11 @@
 # application_enable_light_mode
 
-Shows how to create an application with  [xtd::forms::application::enable_light_mode](../../../../src/xtd_forms/include/xtd/forms/application.hpp) method.
+Shows how to create an application with  [xtd::forms::application::enable_light_mode](../../../../src/xtd.forms/include/xtd/forms/application.h) method.
 
 # Sources
 
-[src/application_enable_light_mode.cpp](src/application_enable_light_mode.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/application_enable_light_mode.cpp](src/application_enable_light_mode.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 
