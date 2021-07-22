@@ -35,6 +35,7 @@
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_picture_box.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_progress_bar.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_radio_button.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_scroll_bar.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_switch_button.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_tab_control.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_tab_page.h"
@@ -99,6 +100,7 @@ intptr_t control::create(const forms::create_params& create_params) {
   if (create_params.class_name() == "picturebox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_picture_box(create_params)));
   if (create_params.class_name() == "progressbar") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_progress_bar(create_params)));
   if (create_params.class_name() == "radiobutton") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_radio_button(create_params)));
+  if (create_params.class_name() == "scrollbar") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_scroll_bar(create_params)));
   if (create_params.class_name() == "switchbutton") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_switch_button(create_params)));
   if (create_params.class_name() == "tabcontrol") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_tab_control(create_params)));
   if (create_params.class_name() == "tabpage") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_tab_page(create_params)));
