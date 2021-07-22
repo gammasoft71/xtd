@@ -1,10 +1,10 @@
-# draw_elipse
+# draw_ellipse
 
 shows how to draw ellipse in paint event.
 
 # Sources
 
-* [src/draw_elipse.cpp](src/draw_elipse.cpp)
+* [src/draw_ellipse.cpp](src/draw_ellipse.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/draw_elipse_w.png)
+![Screenshot](../../../../docs/pictures/examples/draw_ellipse_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/draw_elipse_wd.png)
+![Screenshot](../../../../docs/pictures/examples/draw_ellipse_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/draw_elipse_m.png)
+![Screenshot](../../../../docs/pictures/examples/draw_ellipse_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/draw_elipse_md.png)
+![Screenshot](../../../../docs/pictures/examples/draw_ellipse_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/draw_elipse_g.png)
+![Screenshot](../../../../docs/pictures/examples/draw_ellipse_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/draw_elipse_gd.png)
+![Screenshot](../../../../docs/pictures/examples/draw_ellipse_gd.png)

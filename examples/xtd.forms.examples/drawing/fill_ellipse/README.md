@@ -1,10 +1,10 @@
-# fill_elipse
+# fill_ellipse
 
 shows how to fill elipse in paint event.
 
 # Sources
 
-* [src/fill_elipse.cpp](src/fill_elipse.cpp)
+* [src/fill_ellipse.cpp](src/fill_ellipse.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/fill_elipse_w.png)
+![Screenshot](../../../../docs/pictures/examples/fill_ellipse_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/fill_elipse_wd.png)
+![Screenshot](../../../../docs/pictures/examples/fill_ellipse_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/fill_elipse_m.png)
+![Screenshot](../../../../docs/pictures/examples/fill_ellipse_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/fill_elipse_md.png)
+![Screenshot](../../../../docs/pictures/examples/fill_ellipse_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/fill_elipse_g.png)
+![Screenshot](../../../../docs/pictures/examples/fill_ellipse_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/fill_elipse_gd.png)
+![Screenshot](../../../../docs/pictures/examples/fill_ellipse_gd.png)
