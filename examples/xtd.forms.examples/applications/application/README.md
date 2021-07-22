@@ -4,9 +4,8 @@ Shows how to create an application with  [xtd::forms::application](../../../../s
 
 # Sources
 
-[src/application.cpp](src/application.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/application.cpp](src/application.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

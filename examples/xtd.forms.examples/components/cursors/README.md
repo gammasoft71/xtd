@@ -1,12 +1,11 @@
 # cursors
 
-demonstrates the use of [xtd::forms::cursor](../../../../src/xtd_forms/include/xtd/forms/cursor.hpp) component.
+demonstrates the use of [xtd::forms::cursor](../../../../src/xtd.forms/include/xtd/forms/cursor.h) component.
 
 # Sources
 
-[src/cursors.cpp](src/cursors.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/cursors.cpp](src/cursors.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

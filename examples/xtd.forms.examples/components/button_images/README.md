@@ -1,12 +1,11 @@
 # button_images
 
-demonstrates the use of [xtd::forms::button_images](../../../../src/xtd_forms/include/xtd/forms/button_images.hpp) control.
+demonstrates the use of [xtd::forms::button_images](../../../../src/xtd.forms/include/xtd/forms/button_images.h) control.
 
 # Sources
 
-[src/button_images.cpp](src/button_images.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/button_images.cpp](src/button_images.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

@@ -4,9 +4,8 @@ Shows how to launch process from forms.
 
 # Sources
 
-[src/process_form.cpp](src/process_form.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/process_form.cpp](src/process_form.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 
