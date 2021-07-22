@@ -4,9 +4,8 @@ demonstrates the use of [xtd::forms::message_dialog](../../../../src/xtd.forms/i
 
 # Sources
 
-[src/message_dialog.cpp](src/message_dialog.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/message_dialog.cpp](src/message_dialog.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

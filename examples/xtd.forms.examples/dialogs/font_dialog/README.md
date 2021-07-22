@@ -1,12 +1,11 @@
 # font_dialog
 
-demonstrates the use of [xtd::forms::font_dialog](../../../../src/xtd_forms/include/xtd/forms/font_dialog.hpp) dialog.
+demonstrates the use of [xtd::forms::font_dialog](../../../../src/xtd.forms/include/xtd/forms/font_dialog.h) dialog.
 
 # Sources
 
-[src/font_dialog.cpp](src/font_dialog.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/font_dialog.cpp](src/font_dialog.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

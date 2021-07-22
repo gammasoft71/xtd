@@ -1,12 +1,11 @@
 # save_file_dialog
 
-demonstrates the use of [xtd::forms::save_file_dialog](../../../../src/xtd_forms/include/xtd/forms/save_file_dialog.hpp) dialog.
+demonstrates the use of [xtd::forms::save_file_dialog](../../../../src/xtd.forms/include/xtd/forms/save_file_dialog.h) dialog.
 
 # Sources
 
-[src/save_file_dialog.cpp](src/save_file_dialog.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/save_file_dialog.cpp](src/save_file_dialog.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 
