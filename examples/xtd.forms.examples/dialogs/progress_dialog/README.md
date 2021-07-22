@@ -1,12 +1,11 @@
 # about_dialog
 
-demonstrates the use of [xtd::forms::progress_dialog](../../../../src/xtd.forms/include/xtd/forms/progress_dialog.hpp) dialog.
+demonstrates the use of [xtd::forms::progress_dialog](../../../../src/xtd.forms/include/xtd/forms/progress_dialog.h) dialog.
 
 # Sources
 
-[progress_dialog.cpp](progress_dialog.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/progress_dialog.cpp](src/progress_dialog.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 
