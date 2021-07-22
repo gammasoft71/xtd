@@ -46,6 +46,7 @@
 * [events](xtd.forms.examples/events/README.md) contains events examples.
 * [User Controls](xtd.forms.examples/user_controls/README.md) contains custom controls examples.
 * [User dialogs](xtd.forms.examples/user_dialogs/README.md) contains custom dialogs examples.
+* [Drawing](xtd.forms.examples/drawing/README.md) contains drawing examples.
 * [Games](xtd.forms.examples/games/README.md) contains games examples.
 * [Others](xtd.forms.examples/others/README.md) contains others examples.
 
