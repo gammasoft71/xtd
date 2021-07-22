@@ -29,8 +29,7 @@ namespace xtd {
       /// @ingroup xtd_forms_native native
       /// @remarks No member for the moment.
       /// @warning Internal use only
-      class scroll_bar final static_ {
-        // class forms_native_export_ hscroll_bar final static_ {
+      class forms_native_export_ scroll_bar final static_ {
         friend xtd::forms::scroll_bar;
       protected:
         /// @brief Sets a value to be added to or subtracted from the value property when the scroll box is moved a large distance.

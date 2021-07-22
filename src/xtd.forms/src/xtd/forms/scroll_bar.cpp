@@ -13,6 +13,7 @@ int32_t scroll_bar::large_change() const {
 }
 
 scroll_bar& scroll_bar::large_change(int32_t large_change) {
+  if (large_change < 0) throw argument_out_of_range_exception(csf_);
   if (large_change_ != large_change)
     large_change_ = large_change;
   return *this;
@@ -43,6 +44,7 @@ int32_t scroll_bar::small_change() const {
 }
 
 scroll_bar& scroll_bar::small_change(int32_t small_change) {
+  if (small_change < 0) throw argument_out_of_range_exception(csf_);
   if (small_change_ != small_change)
     small_change_ = small_change;
   return *this;
@@ -53,6 +55,7 @@ int32_t scroll_bar::value() const {
 }
 
 scroll_bar& scroll_bar::value(int32_t value) {
+  if (value < minimum_ || value > maximum_) throw argument_out_of_range_exception(csf_);
   if (value_ != value) {
     value_ = value;
     native::scroll_bar::value(handle(), value);
