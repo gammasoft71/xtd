@@ -194,7 +194,7 @@
 
 ## [Drawing](drawing/README.md)
 
-* [drawing_image](drawing_image/README.md) shows how to drawing an [xtd::drawing::image](../../src/xtd.drawing/include/xtd/drawing/image.h) in paint event.
+* [drawing_image](drawing/drawing_image/README.md) shows how to drawing an [xtd::drawing::image](../../src/xtd.drawing/include/xtd/drawing/image.h) in paint event.
 
 ## [Games](games/README.md)
 
