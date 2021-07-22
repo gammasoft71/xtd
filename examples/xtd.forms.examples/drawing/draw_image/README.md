@@ -1,6 +1,6 @@
 # draw_image
 
-shows how to drawing an [xtd::drawing::image](../../../../src/xtd.drawing/include/xtd/drawing/image.h) in paint event.
+shows how to draw image in paint event.
 
 # Sources
 
