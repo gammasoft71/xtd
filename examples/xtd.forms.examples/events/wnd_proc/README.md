@@ -1,12 +1,11 @@
 # wnd_proc
 
-demonstrates the use of [wnd_proc](../src/xtd_forms/include/xtd/forms/control.hpp) method..
+demonstrates the use of [wnd_proc](../src/xtd.forms/include/xtd/forms/control.h) method..
 
 # Sources
 
-[src/wnd_proc.cpp](src/wnd_proc.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/wnd_proc.cpp](src/wnd_proc.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

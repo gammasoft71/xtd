@@ -1,12 +1,11 @@
 # application_idle
 
-demonstrates the use of [idle](../../../../src/xtd_forms/include/xtd/forms/application.hpp) event.
+demonstrates the use of [idle](../../../../src/xtd.forms/include/xtd/forms/application.h) event.
 
 # Sources
 
-[src/application_idle.cpp](src/application_idle.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/application_idle.cpp](src/application_idle.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

@@ -1,12 +1,11 @@
 # send_message_to_form
 
-demonstrates some events received by [form](../../../../src/xtd_forms/include/xtd/forms/form.hpp).
+demonstrates some events received by [form](../../../../src/xtd.forms/include/xtd/forms/form.h).
 
 # Sources
 
-[src/send_message_to_form.cpp](src/send_message_to_form.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/send_message_to_form.cpp](src/send_message_to_form.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

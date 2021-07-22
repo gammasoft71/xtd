@@ -1,12 +1,11 @@
 # move_form
 
-demonstrates the use of [mouse_click](../../../../src/xtd_forms/include/xtd/forms/control.hpp) event.
+demonstrates the use of [mouse_click](../../../../src/xtd.forms/include/xtd/forms/control.h) event.
 
 # Sources
 
-[src/move_form.cpp](src/move_form.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/move_form.cpp](src/move_form.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 
