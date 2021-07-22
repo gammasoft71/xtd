@@ -1,12 +1,11 @@
 # radio_button
 
-demonstrates the use of [xtd::forms::radio_button](../../../../src/xtd_forms/include/xtd/forms/radio_button.hpp) control.
+demonstrates the use of [xtd::forms::radio_button](../../../../src/xtd.forms/include/xtd/forms/radio_button.h) control.
 
 # Sources
 
-[src/radio_button.cpp](src/radio_button.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/radio_button.cpp](src/radio_button.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

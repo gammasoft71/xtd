@@ -1,12 +1,11 @@
 # dot_matrix_display
 
-demonstrates how to use [xtd::forms::dot_matrix_display](../../../../src/xtd_forms/include/xtd/forms/dot_matrix_display.hpp) control.
+demonstrates how to use [xtd::forms::dot_matrix_display](../../../../src/xtd.forms/include/xtd/forms/dot_matrix_display.h) control.
 
 # Sources
 
-[src/dot_matrix_display.cpp](src/dot_matrix_display.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/dot_matrix_display.cpp](src/dot_matrix_display.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

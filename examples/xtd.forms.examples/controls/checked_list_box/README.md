@@ -1,12 +1,11 @@
 # checked_list_box
 
-demonstrates the use of [xtd::forms::checked_list_box](../../../../src/xtd_forms/include/xtd/forms/checked_list_box.hpp) control.
+demonstrates the use of [xtd::forms::checked_list_box](../../../../src/xtd.forms/include/xtd/forms/checked_list_box.h) control.
 
 # Sources
 
-[src/checked_list_box.cpp](src/checked_list_box.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/checked_list_box.cpp](src/checked_list_box.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

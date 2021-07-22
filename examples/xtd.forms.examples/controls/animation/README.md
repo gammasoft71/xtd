@@ -4,9 +4,8 @@ demonstrates the use of [xtd::forms::animation](../../../../src/xtd.forms/includ
 
 # Sources
 
-[src/animation.cpp](src/animation.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/animation.cpp](src/animation.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

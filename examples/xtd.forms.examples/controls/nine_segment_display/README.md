@@ -1,12 +1,11 @@
 # nine_segment_display
 
-demonstrates how to use [xtd::forms::nine_segment_display](../../../../src/xtd_forms/include/xtd/forms/nine_segment_display.hpp) control.
+demonstrates how to use [xtd::forms::nine_segment_display](../../../../src/xtd.forms/include/xtd/forms/nine_segment_display.h) control.
 
 # Sources
 
-[src/nine_segment_display.cpp](src/nine_segment_display.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/nine_segment_display.cpp](src/nine_segment_display.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

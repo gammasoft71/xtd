@@ -1,12 +1,11 @@
 # progress_bar
 
-demonstrates the use of [xtd::forms::progress_bar](../../../../src/xtd_forms/include/xtd/forms/progress_bar.hpp) control.
+demonstrates the use of [xtd::forms::progress_bar](../../../../src/xtd.forms/include/xtd/forms/progress_bar.h) control.
 
 # Sources
 
-[src/progress_bar.cpp](src/progress_bar.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/progress_bar.cpp](src/progress_bar.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

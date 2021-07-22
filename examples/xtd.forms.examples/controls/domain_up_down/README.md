@@ -1,12 +1,11 @@
 # domain_up_down
 
-demonstrates the use of [xtd::forms::domain_up_down](../../../../src/xtd_forms/include/xtd/forms/domain_up_down.hpp) control.
+demonstrates the use of [xtd::forms::domain_up_down](../../../../src/xtd.forms/include/xtd/forms/domain_up_down.h) control.
 
 # Sources
 
-[src/domain_up_down.cpp](src/domain_up_down.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/domain_up_down.cpp](src/domain_up_down.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

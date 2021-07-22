@@ -1,12 +1,11 @@
 # check_box
 
-demonstrates the use of [xtd::forms::check_box](../../../../src/xtd_forms/include/xtd/forms/check_box.hpp) control.
+demonstrates the use of [xtd::forms::check_box](../../../../src/xtd.forms/include/xtd/forms/check_box.h) control.
 
 # Sources
 
-[src/check_box.cpp](src/check_box.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/check_box.cpp](src/check_box.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

@@ -1,12 +1,11 @@
 # user_control
 
-demonstrates the use of [xtd::forms::user_control](../../../../src/xtd_forms/include/xtd/forms/user_control.hpp) control.
+demonstrates the use of [xtd::forms::user_control](../../../../src/xtd.forms/include/xtd/forms/user_control.h) control.
 
 # Sources
 
-[src/user_control.cpp](src/user_control.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/user_control.cpp](src/user_control.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

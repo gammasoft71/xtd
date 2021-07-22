@@ -4,9 +4,8 @@ demonstrates the use of [xtd::forms::vscroll_bar](../../../../src/xtd.forms/incl
 
 # Sources
 
-[src/vscroll_bar.cpp](src/vscroll_bar.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/vscroll_bar.cpp](src/vscroll_bar.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 
