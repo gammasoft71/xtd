@@ -113,6 +113,7 @@ namespace xtd {
         /// | xtd::forms::picture_box         | "picturebox"                          | window_styles.h bitwise combinaison                           |
         /// | xtd::forms::progress_bar        | "progressbar"                         | progress_bar_styles.h and window_styles.h bitwise combinaison |
         /// | xtd::forms::radio_button        | "radiobutton"                         | button_styles.h and window_styles.h bitwise combinaison       |
+        /// | xtd::forms::scrollbar           | "scrollbar"                           | scroll_bar_styles.h and window_styles.h bitwise combinaison   |
         /// | xtd::forms::switch_button       | "switchbutton"                        | button_styles.h and window_styles.h bitwise combinaison       |
         /// | xtd::forms::tab_control         | "tabcontrol"                          | tab_control_styles.h and window_styles.h bitwise combinaison  |
         /// | xtd::forms::tab_page            | "tabpage"                             | window_styles.h bitwise combinaison                           |
