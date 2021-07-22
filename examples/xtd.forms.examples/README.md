@@ -192,6 +192,10 @@
 
 * [user_dialog](user_dialogs/user_dialog/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) as dialog.
 
+## [Drawing](drawing/README.md)
+
+* [drawing_image](drawing_image/README.md) shows how to drawing an [xtd::drawing::image](../../src/xtd.drawing/include/xtd/drawing/image.h) in paint event.
+
 ## [Games](games/README.md)
 
 * [game_of_life](games/game_of_life/README.md) The Game of Life is not your typical computer game. It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.
