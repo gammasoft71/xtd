@@ -1,6 +1,6 @@
 # hscroll_bar
 
-demonstrates the use of [xtd::forms::hscroll_bar](../../../../src/xtd_forms/include/xtd/forms/hscroll_bar.hpp) control.
+demonstrates the use of [xtd::forms::hscroll_bar](../../../../src/xtd.forms/include/xtd/forms/hscroll_bar.h) control.
 
 # Sources
 
