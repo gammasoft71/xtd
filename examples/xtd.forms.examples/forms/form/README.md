@@ -1,12 +1,11 @@
 # form
 
-demonstrates the use of [xtd::forms::form](../../../../src/xtd_forms/include/xtd/forms/form.hpp) container.
+demonstrates the use of [xtd::forms::form](../../../../src/xtd.forms/include/xtd/forms/form.h) container.
 
 # Sources
 
-[src/form.cpp](src/form.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/form.cpp](src/form.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 
