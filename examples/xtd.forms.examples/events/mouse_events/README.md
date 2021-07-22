@@ -1,12 +1,11 @@
 # mouse_events
 
-demonstrates some events received by [form](../../../../src/xtd_forms/include/xtd/forms/form.hpp).
+demonstrates some events received by [form](../../../../src/xtd.forms/include/xtd/forms/form.h).
 
 # Sources
 
-[src/mouse_events.cpp](src/mouse_events.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/mouse_events.cpp](src/mouse_events.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 
