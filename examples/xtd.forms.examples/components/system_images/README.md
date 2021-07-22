@@ -1,6 +1,6 @@
 # system_images
 
-demonstrates the use of [xtd::drawing::system_images](../../../../xtd.drawing/include/xtd/drawing/system_images.h) component.
+demonstrates the use of [xtd::drawing::system_images](../../../../src/xtd.drawing/include/xtd/drawing/system_images.h) component.
 
 # Sources
 
