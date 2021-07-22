@@ -199,10 +199,10 @@
 * [draw_line](draw_line/README.md) shows how to draw line in paint event.
 * [draw_point](drawing/draw_point/README.md) shows how to draw point in paint event.
 * [draw_rectangle](drawing/draw_rectangle/README.md) shows how to draw rectangle in paint event.
-* [draw_roounded_rectangle](drawing/draw_rounded_rectangle/README.md) shows how to draw roounded rectangle in paint event.
+* [draw_rounded_rectangle](drawing/draw_rounded_rectangle/README.md) shows how to draw rounded rectangle in paint event.
 * [fill_ellipse](drawing/fill_ellipse/README.md) shows how to fill ellipse in paint event.
 * [fill_rectangle](drawing/fill_rectangle/README.md) shows how to fill rectangle in paint event.
-* [fill_roounded_rectangle](drawing/fill_rounded_rectangle/README.md) shows how to fill roounded rectangle in paint event.
+* [fill_rounded_rectangle](drawing/fill_rounded_rectangle/README.md) shows how to fill rounded rectangle in paint event.
 
 ## [Games](games/README.md)
 
