@@ -1,6 +1,6 @@
 # vscroll_bar
 
-demonstrates the use of [xtd::forms::vscroll_bar](../../../../src/xtd_forms/include/xtd/forms/vscroll_bar.hpp) control.
+demonstrates the use of [xtd::forms::vscroll_bar](../../../../src/xtd.forms/include/xtd/forms/vscroll_bar.h) control.
 
 # Sources
 
