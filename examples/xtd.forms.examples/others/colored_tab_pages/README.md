@@ -1,12 +1,11 @@
 # colored_tab_pages
 
-demonstrates the use of [xtd::forms::tab_page](../../../../src/xtd_forms/include/xtd/forms/tab_page.hpp) control with unicode text.
+demonstrates the use of [xtd::forms::tab_page](../../../../src/xtd.forms/include/xtd/forms/tab_page.h) control with unicode text.
 
 # Sources
 
-[src/colored_tab_pages.cpp](src/colored_tab_pages.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/colored_tab_pages.cpp](src/colored_tab_pages.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

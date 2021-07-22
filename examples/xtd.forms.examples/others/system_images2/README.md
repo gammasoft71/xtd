@@ -1,12 +1,11 @@
 # system_images2
 
-demonstrates the use of **xtd::drawing::system_image** component.
+demonstrates the use of [xtd::drawing::system_images](../../../../src/xtd.drawing/include/xtd/drawing/system_images.h) component.
 
 # Sources
 
-[src/system_images2.cpp](src/system_images2.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/system_images2.cpp](src/system_images2.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

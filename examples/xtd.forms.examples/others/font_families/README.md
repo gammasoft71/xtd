@@ -4,9 +4,8 @@ demonstrates the use of xtd::drawing::font_families class.
 
 # Sources
 
-[src/font_families.cpp](src/font_families.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/font_families.cpp](src/font_families.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

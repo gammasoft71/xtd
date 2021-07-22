@@ -4,9 +4,8 @@ The Wiggly example shows how to animate a user control using timer and timer::ev
 
 # Sources
 
-[src/wiggly.cpp](src/wiggly.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/wiggly.cpp](src/wiggly.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

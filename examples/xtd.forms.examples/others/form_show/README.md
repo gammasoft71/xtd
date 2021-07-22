@@ -4,9 +4,8 @@ This example demontrate how to launch form as normal window, modeless window and
 
 # Sources
 
-[src/form_show.cpp](src/form_show.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/form_show.cpp](src/form_show.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

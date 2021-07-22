@@ -1,12 +1,11 @@
 # text_box_password
 
-demonstrates the use of [xtd::forms::text_box_password](../../../../src/xtd_forms/include/xtd/forms/text_box_password.hpp) control.
+demonstrates the use of [xtd::forms::text_box_password](../../../../src/xtd.forms/include/xtd/forms/text_box_password.h) control.
 
 # Sources
 
-[src/text_box_password.cpp](src/text_box_password.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/text_box_password.cpp](src/text_box_password.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

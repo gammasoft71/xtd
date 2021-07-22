@@ -1,12 +1,11 @@
 # clock
 
-demonstrates the use of [xtd::forms::lcd_label](../../../../src/xtd_forms/include/xtd/forms/lcd_label.hpp) control.
+demonstrates the use of [xtd::forms::lcd_label](../../../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
 
 # Sources
 
-[src/clock.cpp](src/clock.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/clock.cpp](src/clock.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

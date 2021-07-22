@@ -1,12 +1,11 @@
 # group_box_and_check_box
 
-demonstrates the use of [xtd::forms::group_box](../../../../src/xtd_forms/include/xtd/forms/group_box.hpp) container and  [xtd::forms::check_box](../../../../src/xtd_forms/include/xtd/forms/check_box.hpp) control.
+demonstrates the use of [xtd::forms::group_box](../../../../src/xtd.forms/include/xtd/forms/group_box.h) container and  [xtd::forms::check_box](../../../../src/xtd.forms/include/xtd/forms/check_box.h) control.
 
 # Sources
 
-[src/group_box_and_check_box.cpp](src/group_box_and_check_box.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/group_box_and_check_box.cpp](src/group_box_and_check_box.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

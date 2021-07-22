@@ -1,12 +1,11 @@
 # text_box_multiline
 
-demonstrates the use of [xtd::forms::text_box_multiline](../../../../src/xtd_forms/include/xtd/forms/text_box_multiline.hpp) control.
+demonstrates the use of [xtd::forms::text_box_multiline](../../../../src/xtd.forms/include/xtd/forms/text_box_multiline.h) control.
 
 # Sources
 
-[src/text_box_multiline.cpp](src/text_box_multiline.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/text_box_multiline.cpp](src/text_box_multiline.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

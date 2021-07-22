@@ -1,12 +1,11 @@
 # screen_informations
 
-shows how to get screen informations of [xtd::forms::screen](../../../../src/xtd_forms/include/xtd/forms/screen.hpp) component.
+shows how to get screen informations of [xtd::forms::screen](../../../../src/xtd.forms/include/xtd/forms/screen.h) component.
 
 # Sources
 
-[src/screen_informations.cpp](src/screen_informations.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/screen_informations.cpp](src/screen_informations.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 
