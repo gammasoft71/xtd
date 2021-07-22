@@ -4,9 +4,8 @@ demonstrates how to use of [xtd::forms::form](../../../../src/xtd.forms/include/
 
 # Sources
 
-[src/form_background_image.cpp](src/form_background_image.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/form_background_image.cpp](src/form_background_image.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

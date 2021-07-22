@@ -1,12 +1,11 @@
 # form_window_state
 
-demonstrates the use of [xtd::forms::form](../../../../src/xtd_forms/include/xtd/forms/form.hpp) window state.
+demonstrates the use of [xtd::forms::form](../../../../src/xtd.forms/include/xtd/forms/form.h) window state.
 
 # Sources
 
-[src/form_window_state.cpp](src/form_window_state.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/form_window_state.cpp](src/form_window_state.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

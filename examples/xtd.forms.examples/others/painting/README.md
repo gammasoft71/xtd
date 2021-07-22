@@ -1,12 +1,11 @@
 # painting
 
-demonstrates the use of [xtd::forms::form](../../../../src/xtd_forms/include/xtd/forms/form.hpp), [xtd::forms::panel](../../../../src/xtd_forms/include/xtd/forms/panel.hpp), [xtd::forms::track_bar](../../../../src/xtd_forms/include/xtd/forms/track_bar.hpp) and  [xtd::forms::button](../../../../src/xtd_forms/include/xtd/forms/button.hpp)  controls with mouse_down, mouse_move and paint events.
+demonstrates the use of [xtd::forms::form](../../../../src/xtd.forms/include/xtd/forms/form.h), [xtd::forms::panel](../../../../src/xtd.forms/include/xtd/forms/panel.h), [xtd::forms::track_bar](../../../../src/xtd.forms/include/xtd/forms/track_bar.h) and [xtd::forms::button](../../../../src/xtd.forms/include/xtd/forms/button.h) controls with mouse_down, mouse_move and paint events.
 
 # Sources
 
-[src/painting.cpp](src/painting.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/painting.cpp](src/painting.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

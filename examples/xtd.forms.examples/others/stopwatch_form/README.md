@@ -1,6 +1,6 @@
 # stopwatch_form
 
-demonstrates the use of [xtd::forms::button](../../../../src/xtd_forms/include/xtd/forms/button.hpp), [xtd::forms::label](../../../../src/xtd_forms/include/xtd/forms/label.hpp) controls and [xtd::forms::timer](../../../../src/xtd_forms/include/xtd/forms/timer.hpp) component.
+demonstrates the use of [xtd::forms::button](../../../../src/xtd.forms/include/xtd/forms/button.h), [xtd::forms::label](../../../../src/xtd.forms/include/xtd/forms/label.h) controls and [xtd::forms::timer](../../../../src/xtd.forms/include/xtd/forms/timer.h) component.
 
 # Sources
 

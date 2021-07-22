@@ -1,12 +1,11 @@
 # lcd_label_with_fourteen_segment
 
-demonstrates how to use [xtd::forms::lcd_label_with_fourtenn_segment](../../../../src/xtd_forms/include/xtd/forms/lcd_label_with_fourteen_segment.hpp) control.
+demonstrates how to use [xtd::forms::lcd_label_with_fourtenn_segment](../../../../src/xtd.forms/include/xtd/forms/lcd_label_with_fourteen_segment.h) control.
 
 # Sources
 
-[src/lcd_label_with_fourteen_segment.cpp](src/lcd_label_with_fourteen_segment.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/lcd_label_with_fourteen_segment.cpp](src/lcd_label_with_fourteen_segment.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

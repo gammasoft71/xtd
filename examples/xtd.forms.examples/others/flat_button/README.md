@@ -1,6 +1,6 @@
 # flat_button
 
-demonstrates the use of [xtd::forms::button](../../../../src/xtd_forms/include/xtd/forms/button.hpp) control with flat style.
+demonstrates the use of [xtd::forms::button](../../../../src/xtd.forms/include/xtd/forms/button.h) control with flat style.
 
 # Sources
 

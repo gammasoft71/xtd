@@ -1,12 +1,11 @@
 # message_dialog_show_sheet
 
-demonstrates the use of [xtd::forms::message_dialog](../../../../src/xtd_forms/include/xtd/forms/message_dialog.hpp) dialog.
+demonstrates the use of [xtd::forms::message_dialog](../../../../src/xtd.forms/include/xtd/forms/message_dialog.h) dialog.
 
 # Sources
 
-[src/message_box.cpp](src/message_dialog_show_sheet.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/message_box.cpp](src/message_dialog_show_sheet.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

@@ -1,12 +1,11 @@
 # colored_forms
 
-demonstrates the use of [xtd::forms::form](../../../../src/xtd_forms/include/xtd/forms/form.hpp) control with unicode text.
+demonstrates the use of [xtd::forms::form](../../../../src/xtd.forms/include/xtd/forms/form.h) control with unicode text.
 
 # Sources
 
-[src/colored_forms.cpp](src/colored_forms.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/colored_forms.cpp](src/colored_forms.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

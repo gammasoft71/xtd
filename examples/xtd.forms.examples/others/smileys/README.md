@@ -1,12 +1,11 @@
 # smileys
 
-demonstrates the use of [xtd::forms::label](../../../../src/xtd_forms/include/xtd/forms/label.hpp) control.
+demonstrates the use of [xtd::forms::label](../../../../src/xtd.forms/include/xtd/forms/label.h) control.
 
 # Sources
 
-[src/smileys.cpp](src/smileys.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/smileys.cpp](src/smileys.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 
