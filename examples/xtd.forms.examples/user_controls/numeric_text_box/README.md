@@ -1,12 +1,11 @@
 # numeric_text_box
 
-demonstrates how to create a custom control with [xtd::forms::text_box](../../../../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
+demonstrates how to create a custom control with [xtd::forms::text_box](../../../../src/xtd.forms/include/xtd/forms/text_box.h) control.
 
 # Sources
 
-[src/numeric_text_box.cpp](src/numeric_text_box.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/numeric_text_box.cpp](src/numeric_text_box.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

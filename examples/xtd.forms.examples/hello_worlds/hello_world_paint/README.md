@@ -4,9 +4,8 @@ The classic first application "Hello, Wrold!" with GDI+ drawing objects.
 
 # Sources
 
-[src/hello_world_paint.cpp](src/hello_world_paint.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/hello_world_paint.cpp](src/hello_world_paint.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 
