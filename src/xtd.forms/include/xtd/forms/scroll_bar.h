@@ -15,14 +15,6 @@ namespace xtd {
     // class forms_export_ scroll_bar : public control {
     class scroll_bar : public control {
     public:
-      /// @brief Occurs when either a mouse or keyboard action moves the scroll box.
-      /// @ingroup events
-      event<scroll_bar, event_handler> scroll;
-      
-      /// @brief Occurs when the value property of a track bar changes, either by movement of the scroll box or by manipulation in code.
-      /// @ingroup events
-      event<scroll_bar, event_handler> value_changed;
-      
       virtual int32_t large_change() const;
       virtual scroll_bar& large_change(int32_t large_change);
       
@@ -37,6 +29,14 @@ namespace xtd {
 
       virtual int32_t value() const;
       virtual scroll_bar& value(int32_t value);
+
+      /// @brief Occurs when either a mouse or keyboard action moves the scroll box.
+      /// @ingroup events
+      event<scroll_bar, event_handler> scroll;
+      
+      /// @brief Occurs when the value property of a scroll bar changes, either by movement of the scroll box or by manipulation in code.
+      /// @ingroup events
+      event<scroll_bar, event_handler> value_changed;
 
     protected:
       /// @brief Intializes a new instance of scroll_bar class.

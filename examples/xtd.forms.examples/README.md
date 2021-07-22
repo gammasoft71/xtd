@@ -151,7 +151,7 @@
 * [image_list](components/image_list/README.md) provides methods to manage a collection of Image objects. This class cannot be inherited.
 * **message_queue** provides access to a queue on a Message Queuing server.
 * **performance_counter** represents a Windows NT performance counter component.
-* **process** provides access to local and remote processes and enables you to start and stop local system processes.
+* [process](components/process_form/README.md) provides access to local and remote processes and enables you to start and stop local system processes.
 * [radio_button_renderer](components/radio_button_renderer/README.md) show how to use [xtd::forms::radio_button_renderer](../../src/xtd.forms/include/xtd/forms/radio_button_renderer.h) renderer.
 * [screen](components/screen/README.md) represents a display device or multiple display devices on a single system.
 * [settings](components/settings_example/README.md) represents settings application.
@@ -230,7 +230,6 @@
 * [lcd_label_with_sixteen_segment](others/lcd_label_with_sixteen_segment/README.md) representsthe use of [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
 * [lcd_label2](others/lcd_label2/README.md) representsthe use of [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
 * [painting](others/painting/README.md) demonstrates the use of xtd::forms::form, xtd::forms::panel, [xtd::forms::track_bar](../../src/xtd.forms/include/xtd/forms/track_bar.h) and [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) controls with mouse_down, mouse_move and paint events..
-* [process_form](others/process_form/README.md) shows how to launch process from forms.
 * [screen_informations](others/screen_informations/README.md) shows how to get screen information of [xtd::forms::screen](../../src/xtd_forms/include/xtd/forms/screen.hpp) control.
 * [settings2](others/settings_example2/README.md) represents settings application.
 * [smileys](others/smileys/README.md) demonstrates the use of [xtd::forms::label](../../src/xtd.forms/include/xtd/forms/label.h) control.
