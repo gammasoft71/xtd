@@ -40,7 +40,6 @@ add_projects(
   main_menu_create_standard_items
   message_dialog_show_sheet
   painting
-  process_form
   screen_informations
   settings_example2
   smileys
