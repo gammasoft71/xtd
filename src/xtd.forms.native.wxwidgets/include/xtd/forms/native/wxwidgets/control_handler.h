@@ -11,7 +11,6 @@
 #include <set>
 #include <thread>
 #include <xtd/delegate.h>
-#include <xtd/interface.h>
 #include <xtd/object.h>
 #include <xtd/diagnostics/debug.h>
 #include <xtd/drawing/size.h>
@@ -49,12 +48,13 @@ namespace xtd {
     namespace native {
       class control_handler;
 
-      class icontrol_wrapper interface_{
+      class icontrol_wrapper {
         friend control_handler;
       protected:
+        virtual ~icontrol_wrapper() {}
         virtual void reset_handler() = 0;
       };
-
+      
       template<typename control_t>
       class control_wrapper : public control_t, public icontrol_wrapper {
         friend control_handler;
