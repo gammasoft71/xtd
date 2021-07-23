@@ -43,7 +43,7 @@ namespace xtd {
       explicit application_context(const form& main_form) {this->main_form(main_form);}
 
       /// @cond
-      virtual ~application_context() {
+      ~application_context() {
         if (main_form_ != nullptr) main_form_->handle_destroyed -= {*this, &application_context::on_main_form_closed};
       }
       /// @endcond

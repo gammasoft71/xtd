@@ -35,7 +35,7 @@ namespace xtd {
       image() = default;
       image(const image& image) = default;
       image& operator=(const image& image) = default;
-      virtual ~image();
+      ~image();
       bool operator==(const image& image) const {return data_->handle_ == image.data_->handle_;}
       bool operator!=(const image& image) const {return !operator==(image);}
       /// @endcond

@@ -21,7 +21,7 @@ namespace xtd {
     friend std::ostream& operator <<(std::ostream& os, const processor& processor) noexcept {return os << processor.to_string();}
     /// @endcond
     
-    /// @brief Gets a System::xtd::platform_id enumeration value that identifies the operating system platform.
+    /// @brief Gets a xtd::platform_id enumeration value that identifies the operating system platform.
     /// @return xtd::platform_id One of the xtd::platform_id values.
     xtd::architecture_id architecture() const noexcept {return architecture_;}
 

@@ -36,10 +36,6 @@ namespace xtd {
       /// @brief Generates a click event for the control.
       /// @remarks This method is called for the button that has focus, or for the default button (if no other button has focus) when the user presses the ENTER key. This method is also called when the user presses the ESC key if the button is set as the cancel button.
       virtual void perform_click() = 0;
-      
-      /// @cond
-      virtual ~ibutton_control() = default;
-      /// @endcond
     };
   }
 }

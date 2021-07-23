@@ -23,10 +23,6 @@ namespace xtd {
     /// @remarks Filters that inherit from the trace_filter class can be used by trace listeners that inherit from the trace_listener class to perform filtering of events being traced. trace_filter contains a single method, should_trace, which takes event data and returns a flag indicating whether the event should be traced.
     class trace_filter : public object {
     public:
-      /// @cond
-      virtual ~trace_filter() {}
-      /// @endcond
-      
       /// @brief When overridden in a derived class, determines whether the trace listener should trace the event.
       /// @param chache The trace_event_cache that contains information for the trace event.
       /// @param source The name of the source.
@@ -47,7 +43,7 @@ namespace xtd {
       /// @param event_type One of the trace_event_type values specifying the type of event that has caused the trace
       /// @param id A trace identifier number.
       /// @param message Message to write.
-      bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const std::string& source, xtd::diagnostics::trace_event_type event_type, int32_t id, const std::string& message) {return should_trace(cache, source, event_type, id, message, nullptr, {});}
+      bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const std::string& source, xtd::diagnostics::trace_event_type event_type, int32_t id, const std::string& message);
       /// @brief determines whether the trace listener should trace the event.
       /// @param chache The trace_event_cache that contains information for the trace event.
       /// @param source The name of the source.
@@ -55,7 +51,7 @@ namespace xtd {
       /// @param id A trace identifier number.
       /// @param message Message to write.
       /// @param data1 A trace data object.
-      bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const std::string& source, xtd::diagnostics::trace_event_type event_type, int32_t id, const std::string& message, std::any data1) {return should_trace(cache, source, event_type, id, message, data1, {});}
+      bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const std::string& source, xtd::diagnostics::trace_event_type event_type, int32_t id, const std::string& message, std::any data1);
     };
   }
 }

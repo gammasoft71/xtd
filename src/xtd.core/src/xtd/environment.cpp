@@ -66,7 +66,7 @@ std::string environment::get_folder_path(environment::special_folder folder, env
   //if (option == environment::special_folder_option::none)
   //  return !xtd::io::directory::exists(path) ? "" :  path;
   
-  //if (!System::IO::Directory::Exists(path))
+  //if (!xtd::io::directory::exists(path))
   //  xtd::io::directory::create_directory(path);
   
   return path;

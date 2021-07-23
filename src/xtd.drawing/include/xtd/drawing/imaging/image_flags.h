@@ -13,7 +13,7 @@ namespace xtd {
     /// @brief The xtd.drawing.imaging namespace provides advanced GDI+ imaging functionality. Basic graphics functionality is provided by the xtd.drawing namespace.
     /// @remarks The metafile class provides methods for recording and saving metafiles. The encoder class enables users to extend GDI+ to support any image format. The property_item class provides methods for storing and retrieving metadata in image files.
     namespace imaging {
-      /// @brief Specifies the attributes of the pixel data contained in an System::Drawing::Image object. The xtd::drawing:iImage::flags property returns a member of this enumeration.
+      /// @brief Specifies the attributes of the pixel data contained in an xtd::drawing::image object. The xtd::drawing:iImage::flags property returns a member of this enumeration.
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing

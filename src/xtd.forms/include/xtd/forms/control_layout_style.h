@@ -47,10 +47,6 @@ namespace xtd {
       /// @param align One of the content_alignment values..
       control_layout_style(bool expanded, xtd::forms::content_alignment align) : expanded_(expanded), align_(align) {}
 
-      /// @cond
-      virtual ~control_layout_style() = default;
-      /// @endcond
-
     public:
       /// @brief Gets a flag indicating how a control should be sized relative to its containing layout container.
       /// @return One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::absolute.

@@ -19,7 +19,6 @@ namespace xtd {
       theme_base& operator=(const theme_base&) = default;
       bool operator==(const theme_base& value) const {return name_ == value.name_ && theme_style_ == value.theme_style_ && is_default_ == value.is_default();}
       bool operator!=(const theme_base& value) const {return !operator==(value);}
-      virtual ~theme_base() = default;
       friend std::ostream& operator<<(std::ostream& os, const theme_base& theme) noexcept {return os << theme.to_string();}
       /// @endcond
       
