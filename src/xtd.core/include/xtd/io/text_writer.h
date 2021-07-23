@@ -26,10 +26,6 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ text_writer : public object {
     public:
-      /// @cond
-      virtual ~text_writer() {}
-      /// @endcond
-      
       /// @brief Gets the line terminator string used by the current text_writer.
       const std::string& new_line() const {return new_line_;}
       /// @brief Sets the line terminator string used by the current text_writer.

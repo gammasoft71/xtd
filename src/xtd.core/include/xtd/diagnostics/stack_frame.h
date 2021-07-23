@@ -73,7 +73,6 @@ namespace xtd {
       stack_frame& operator=(const stack_frame&) = default;
       bool operator==(const stack_frame& sf) const {return file_name_ == sf.file_name_ && file_line_number_ == sf.file_line_number_ && method_name_ == sf.method_name_ && file_column_number_ == sf.file_column_number_ && offset_ == sf.offset_;}
       bool operator!=(const stack_frame& sf) const {return !operator==(sf);}
-      virtual ~stack_frame();
       /// @endcond
       
       /// @brief Return an empty stack frame.

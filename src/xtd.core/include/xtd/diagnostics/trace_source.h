@@ -31,56 +31,44 @@ namespace xtd {
     public:
       /// @brief Initializes a new instance of the Trace_Source class, using the specified name for the source.
       /// @param name The name of the source (typically, the name of the application).
-      explicit trace_source(const std::string& name) : name_(name) {}
+      explicit trace_source(const std::string& name);
       /// @brief Initializes a new instance of the Trace_Source class, using the specified name for the source.
       /// @param name The name of the source (typically, the name of the application).
       /// @param default_level A bitwise combination of the enumeration values that specifies the default source level at which to trace
-      explicit trace_source(const std::string& name, xtd::diagnostics::source_levels default_levels) : name_(name), switch_levels_(default_levels) {
-        source_switch_.level(switch_levels_);
-      }
+      explicit trace_source(const std::string& name, xtd::diagnostics::source_levels default_levels);
 
       /// @brief Gets the collection of trace listeners for the trace source.
       /// @return A trace_listener_collection that contains the active trace listeners associated with the source.
       /// @remarks Use this property to access and perform operations on the trace listeners.
-      xtd::diagnostics::trace_listener_collection& listeners() {return listeners_;}
+      xtd::diagnostics::trace_listener_collection& listeners();
       
       /// @brief Sets the collection of trace listeners for the trace source.
       /// @param listeners A trace_listener_collection that contains the active trace listeners associated with the source.
       /// @remarks Use this property to access and perform operations on the trace listeners.
-      void listeners(const xtd::diagnostics::trace_listener_collection& listeners) {listeners_ = listeners;}
+      void listeners(const xtd::diagnostics::trace_listener_collection& listeners);
 
       /// @brief Gets the name of the trace source.
       /// @return The name of the trace source.
-      const std::string& name() const {return name_;}
+      const std::string& name() const;
       
       /// @brief Gets the source switch value.
       /// @return A SourceSwitch object representing the source switch value.
       /// @remarks The source_switch property allows the filtering of messages before the trace source calls the listeners.
       /// @remarks The switch is used to check whether trace calls should be generated or ignored. Each trace method calls the should_trace method of the source_switch to determine whether to proceed with the trace. If the call returns true, the listeners are called.
-      const xtd::diagnostics::source_switch& source_switch() const {return source_switch_;}
+      const xtd::diagnostics::source_switch& source_switch() const;
       /// @brief Sets the source switch value.
       /// @param source_switch A SourceSwitch object representing the source switch value.
       /// @remarks The source_switch property allows the filtering of messages before the trace source calls the listeners.
       /// @remarks The switch is used to check whether trace calls should be generated or ignored. Each trace method calls the should_trace method of the source_switch to determine whether to proceed with the trace. If the call returns true, the listeners are called.
-      void source_switch(const xtd::diagnostics::source_switch& source_switch) {
-        if (source_switch_ != source_switch) {
-          source_switch_ = source_switch;
-        }
-      }
+      void source_switch(const xtd::diagnostics::source_switch& source_switch);
             
       /// @brief Closes all the trace listeners in the trace listener collection.
       /// @remarks The close method calls the close method of each trace listener in the listeners collection.
-      void close() {
-        for (auto listener : listeners_)
-          listener->close();
-      }
+      void close();
       
       /// @brief Flushes all the trace listeners in the trace listener collection.
       /// @remarks The flush method calls the flush method of each trace listener in the listeners collection.
-      void flush() {
-        for (auto listener : listeners_)
-          listener->flush();
-      }
+      void flush();
       
       /// @brief Writes trace data to the trace listeners in the Listeners collection using the specified event type, event identifier, and trace data.
       /// @param event_type One of the enumeration values that specifies the event type of the trace data.
@@ -154,7 +142,7 @@ namespace xtd {
       /// @param message The informative message to write.
       /// @remarks The trace_information method provides an informational message intended to be read by users and not by tools.
       /// @remarks trace_information(const std::dtring&, calls the trace_event(const trace_eventType&, Int32_t, const std::string&, ...objects_t) method, setting event_type to trace_event_type.Information and passing the message content as an object array with formatting information. The trace_event(const trace_event_type, Int32_t, std::string&) method in turn calls the trace_event(const trace_event_cache&, const std::string&, trace_event_type, Int32_t, const std::string&) method of each trace listener.
-      void trace_information(const std::string& message) {trace_event(trace_event_type::information, 0, message);}
+      void trace_information(const std::string& message);
       
       /// @brief Writes an informational message to the trace listeners in the listeners collection using the specified object array and formatting information.
       /// @param format A composite format string that contains text intermixed with zero or more format items, which correspond to objects in the args array.

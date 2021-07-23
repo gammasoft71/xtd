@@ -58,7 +58,7 @@ namespace xtd {
       /// @cond
       pen(const xtd::drawing::pen& value);
       pen& operator=(const xtd::drawing::pen& value);
-      virtual ~pen();
+      ~pen();
       bool operator==(const xtd::drawing::pen& value) const {return data_->alignment_ == value.data_->alignment_ && data_->type_ == value.data_->type_;}
       bool operator!=(const xtd::drawing::pen& value) const {return !operator==(value);}
       /// @endcond

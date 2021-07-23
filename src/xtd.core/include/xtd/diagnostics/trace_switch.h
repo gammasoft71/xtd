@@ -18,34 +18,48 @@ namespace xtd {
     /// @remarks You can set the level of a trace_switch through the application configuration file and then use the configured trace_switch level in your application. Alternately, you can create a trace_switch in your code and set the level directly to instrument a specific section of code.
     class trace_switch : public xtd::diagnostics::switch_base {
     public:
-      trace_switch(const std::string& display_name, const std::string& description) : switch_base(display_name, description) {}
-      trace_switch(const std::string& display_name, const std::string& description, const std::string& default_switch_value) : switch_base(display_name, description, default_switch_value) {}
+      /// @brief Initializes a new instance of the xtd::diagnostics::trace_switch class, using the specified display name and description.
+      /// @param display_name The name to display on a user interface.
+      /// @param description The description of the switch.
+      /// @remarks he xtd::diagnostics::trace_switch class provides the xtd::diagnostics::trace_switch::trace_error, xtd::diagnostics::trace_switch::trace_warning, xtd::diagnostics::trace_switch::trace_info, and xtd::diagnostics::trace_switcht::trace_verbose properties to test the Level of the switch. The xtd::diagnostics::trace_switch::level property gets or sets the switch's xtd::diagnostics::trace_level.
+      /// @note To improve performance, you can make xtd::diagnostics::trace_switch members static in your class.
+      trace_switch(const std::string& display_name, const std::string& description);
+      /// @brief Initializes a new instance of the xtd::diagnostics::trace_switch class, using the specified display name, description, and default value for the switch.
+      /// @param display_name The name to display on a user interface.
+      /// @param description The description of the switch.
+      /// @param default_switch_value The default value of the switch.
+      /// @remarks The display_name parameter is used to set the value of the xtd::diagnostics::trace_switch::display_name property, the description parameter is use to set the value of the xtd::diagnostics::trace_switch::description property, and the default_switch_value parameter is saved as a field and used to initialize the xtd::diagnostics::trace_switch::value property on first reference.
+      trace_switch(const std::string& display_name, const std::string& description, const std::string& default_switch_value);
 
-      xtd::diagnostics::trace_level level() const {return static_cast<xtd::diagnostics::trace_level>(switch_setting());}
-      void level(xtd::diagnostics::trace_level level) {switch_setting(static_cast<int32_t>(level));}
+      /// @brief Gets the trace level that determines the messages the switch allows.
+      /// @return One of the xtd::diagnostics::trace_level values that specifies the level of messages that are allowed by the switch.
+      /// @remarks Setting this property updates the xtd::diagnostics::trace_switch::trace_error, xtd::diagnostics::trace_switch::trace_warning, xtd::diagnostics::trace_switch::trace_info, and xtd::diagnostics::trace_switch::trace_verbose properties to reflect the new value.
+      xtd::diagnostics::trace_level level() const;
+      /// @brief Sets the trace level that determines the messages the switch allows.
+      /// @param level One of the xtd::diagnostics::trace_level values that specifies the level of messages that are allowed by the switch.
+      /// @remarks Setting this property updates the xtd::diagnostics::trace_switch::trace_error, xtd::diagnostics::trace_switch::trace_warning, xtd::diagnostics::trace_switch::trace_info, and xtd::diagnostics::trace_switch::trace_verbose properties to reflect the new value.
+      void level(xtd::diagnostics::trace_level level);
       
-      bool trace_error() const {return static_cast<int32_t>(level()) >= static_cast<int32_t>(xtd::diagnostics::trace_level::error);}
-      bool trace_info() const {return static_cast<int32_t>(level()) >= static_cast<int32_t>(xtd::diagnostics::trace_level::info);}
-      bool trace_verbose() const {return static_cast<int32_t>(level()) == static_cast<int32_t>(xtd::diagnostics::trace_level::verbose);}
-      bool trace_warning() const {return static_cast<int32_t>(level()) >= static_cast<int32_t>(xtd::diagnostics::trace_level::warning);}
+      /// @brief Gets a value indicating whether the switch allows error-handling messages.
+      /// @return true if the xtd::diagnostics::trace_switch::level property is set to xtd::diagnostics::trace_level::error, xtd::diagnostics::trace_level::warning, xtd::diagnostics::trace_level::info, or xtd::diagnostics::trace_level::verbose; otherwise, false.
+      bool trace_error() const;
+
+      /// @brief Gets a value indicating whether the switch allows informational messages.
+      /// @return true if the xtd::diagnostics::trace_switch::level property is set to xtd::diagnostics::trace_level::info, or xtd::diagnostics::trace_level::verbose; otherwise, false.
+      bool trace_info() const;
+
+      /// @brief Gets a value indicating whether the switch allows all messages.
+      /// @return true if the xtd::diagnostics::trace_switch::level property is set to xtd::diagnostics::trace_level::verbose; otherwise, false.
+      bool trace_verbose() const;
+
+      /// @brief Gets a value indicating whether the switch allows warning messages.
+      /// @return true if the xtd::diagnostics::trace_switch::level property is set to xtd::diagnostics::trace_level::warning, xtd::diagnostics::trace_level::info, or xtd::diagnostics::trace_level::verbose; otherwise, false.
+      bool trace_warning() const;
 
     protected:
-      void on_switch_setting_changed() override {
-        switch_base::on_switch_setting_changed();
-        int32_t level = switch_setting();
-        if (level < static_cast<int32_t>(xtd::diagnostics::trace_level::off)) {
-          //xtd::diagnostics::debug::write_line<std::string>(std::string("trace_switch level too low"), display_name());
-          switch_setting(static_cast<int32_t>(xtd::diagnostics::trace_level::off));
-        } else if (level > static_cast<int32_t>(xtd::diagnostics::trace_level::verbose)) {
-          //xtd::diagnostics::debug::write_line<std::string>(std::string("trace_switch level too high"), display_name());
-          switch_setting(static_cast<int32_t>(xtd::diagnostics::trace_level::verbose));
-        }
-      }
+      void on_switch_setting_changed() override;
       
-      void on_value_changed() override {
-        switch_base::on_value_changed();
-        switch_setting(static_cast<int32_t>(xtd::parse<xtd::diagnostics::trace_level>(value())));
-      }
+      void on_value_changed() override;
     };
   }
 }

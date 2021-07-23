@@ -45,10 +45,6 @@ namespace xtd {
     /// @param random_device A random device value.
     explicit random(std::random_device& random_device) : generator_(random_device()) {}
     
-    /// @cond
-    virtual ~random() = default;
-    /// @endcond
-
     /// @brief Returns a nonnegative random number.
     /// @return A 32-bit signed integer greater than or equal to zero and less than std::numeric_limits<int32_t>::max())
     virtual int32_t next() const {return next(std::numeric_limits<int32_t>::max());}

@@ -72,7 +72,7 @@ namespace xtd {
       /// @return Operating system platform iidentifier (see platform_ids.h file).
       /// @warning Internal use only
       static int32_t get_os_platform_id();
-      /// @brief Gets a System::Version object that identifies the operating system.
+      /// @brief Gets a xtd::cersion object that identifies the operating system.
       /// @param major return the major version.
       /// @param minor return the minor version, build, and revision numbers for the operating system.
       /// @param build return the build.

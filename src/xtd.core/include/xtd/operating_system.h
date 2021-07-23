@@ -91,7 +91,7 @@ namespace xtd {
       return operating_system_names[platform_];
     }
 
-    /// @brief Gets a System::xtd::platform_id enumeration value that identifies the operating system platform.
+    /// @brief Gets a xtd::platform_id enumeration value that identifies the operating system platform.
     /// @return xtd::platform_id One of the xtd::platform_id values.
     xtd::platform_id platform() const noexcept {return platform_;}
     
@@ -101,7 +101,7 @@ namespace xtd {
     /// @remarks The service pack version, if available, is already correctly formatted for display.
     std::string service_pack() const noexcept {return service_pack_;}
     
-    /// @brief Gets a System::Version object that identifies the operating system.
+    /// @brief Gets a xtd::version object that identifies the operating system.
     /// @return Version A Version object that describes the major version, minor version, build, and revision numbers for the operating system.
     /// @remarks For Window system only: See http://msdn.microsoft.com/library/windows/desktop/ms724832.aspx on the Windows Dev Center for a list of Windows operating system versions and their corresponding version numbers.
     const xtd::version& version() const noexcept {return version_;}

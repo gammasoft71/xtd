@@ -311,7 +311,7 @@ namespace xtd {
       /// @remarks This method calls the write method of the trace listener.
       static void write_if(bool condition, const object_t& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        if (condition) write_(message);
+        if (condition) write_(xtd::strings::format("", message));
 #endif
       }
       /// @brief Writes a category name and message to the trace listeners in the Listeners collection if a condition is true.
@@ -323,7 +323,7 @@ namespace xtd {
       template<typename object_t>
       static void write_if(bool condition, const object_t& message, const std::string& category) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        if (condition) write_(message, category);
+        if (condition) write_(xtd::strings::format("", message), category);
 #endif
       }
       
@@ -333,7 +333,7 @@ namespace xtd {
       /// @remarks This method calls the write method of the trace listener.
       static void write_line() {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        write_line("");
+        write_line_("");
 #endif
       }
       /// @brief Writes a message followed by a line terminator to the trace listeners in the listeners collection.

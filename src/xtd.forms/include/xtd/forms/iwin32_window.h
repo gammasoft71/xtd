@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
+#include <xtd/interface.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -13,16 +14,12 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms interfaces
     /// @remarks This interface is implemented on objects that expose Win32 HWND handles. The resultant handle can be used with Windows API calls.
-    class iwin32_window  {
+    class iwin32_window interface_  {
     public:
       /// @brief Gets the handle to the window represented by the implementer.
       /// @return A handle to the window represented by the implementer.
       /// @remarks Depending on the implementer, the value of the Handle property could change during the life of the window.
       virtual intptr_t handle() const = 0;
-      
-      /// @cond
-      virtual ~iwin32_window() = default;
-      /// @endcond
     };
   }
 }

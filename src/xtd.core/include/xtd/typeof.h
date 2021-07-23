@@ -32,7 +32,6 @@ namespace xtd {
   /// std::string type2 = typeof_(i);
   /// @endcode
   /// @remarks The typeof_ operator cannot be overloaded.
-  /// @see System::Type
   #define typeof_ \
     xtd::__s__::__typeof_
 }

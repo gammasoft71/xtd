@@ -23,10 +23,6 @@ namespace xtd {
       /// @brief Initialises a new instance of the compnent class.
       component() = default;
       
-      /// @cond
-      virtual ~component() = default;
-      /// @endcond
-      
       /// @brief Gets a value indicating whether the component can raise an event.
       /// @return true if the component can raise events; otherwise, false. The default is true.
       /// @remarks The default implementation of this property always returns true. Classes that inherit from the Component class should override this property to provide the ability to disable the raising of events.

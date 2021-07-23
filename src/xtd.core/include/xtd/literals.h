@@ -152,7 +152,7 @@ namespace xtd {
     return static_cast<char32_t>(c);
   }
 
-  /// @brief Used to convert specified value into System::String.
+  /// @brief Used to convert specified value into std::string.
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -166,7 +166,7 @@ namespace xtd {
   }
 
 #if defined(__cpp_lib_char8_t)
-  /// @brief Used to convert specified value into System::String.
+  /// @brief Used to convert specified value into std::string.
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -179,7 +179,7 @@ namespace xtd {
     return std::string(s, s + n);
   }
 #endif
-  /// @brief Used to convert specified value into System::String.
+  /// @brief Used to convert specified value into std::string.
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -191,7 +191,7 @@ namespace xtd {
   inline std::string operator""_s(const char16_t* s, size_t n) {
     return xtd::strings::format("{}", s);
   }
-  /// @brief Used to convert specified value into System::String.
+  /// @brief Used to convert specified value into std::string.
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -203,7 +203,7 @@ namespace xtd {
   inline std::string operator""_s(const char32_t* s, size_t n) {
     return xtd::strings::format("{}", s);
   }
-  /// @brief Used to convert specified value into System::String.
+  /// @brief Used to convert specified value into std::string.
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -741,7 +741,7 @@ namespace xtd {
     return xtd::parse<uint64_t>(std::string(s, s + n));
   }
 
-  /// @brief Used to convert specified value into System::String.
+  /// @brief Used to convert specified value into std::string.
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -755,7 +755,7 @@ namespace xtd {
   }
   
 #if defined(__cpp_lib_char8_t)
-  /// @brief Used to convert specified value into System::String.
+  /// @brief Used to convert specified value into std::string.
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals

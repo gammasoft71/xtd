@@ -39,7 +39,6 @@ namespace xtd {
     public:
       /// @cond
       country() = default;
-      virtual ~country() = default;
       bool operator==(const country& value) const {return name_ == value.name_ && alpha_2_code_ == value.alpha_2_code_ && alpha_3_code_ == value.alpha_3_code_ && numeric_code_ == value.numeric_code_;}
       bool operator!=(const country& value) const {return !operator==(value);}
       /// @endcond

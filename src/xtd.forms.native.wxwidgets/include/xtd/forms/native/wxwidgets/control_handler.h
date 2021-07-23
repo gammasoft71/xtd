@@ -11,6 +11,8 @@
 #include <set>
 #include <thread>
 #include <xtd/delegate.h>
+#include <xtd/interface.h>
+#include <xtd/object.h>
 #include <xtd/diagnostics/debug.h>
 #include <xtd/drawing/size.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
@@ -47,10 +49,9 @@ namespace xtd {
     namespace native {
       class control_handler;
 
-      class icontrol_wrapper {
+      class icontrol_wrapper interface_{
         friend control_handler;
       protected:
-        virtual ~icontrol_wrapper() {}
         virtual void reset_handler() = 0;
       };
 
@@ -376,10 +377,10 @@ namespace xtd {
         bool functionKeyModifierIsDown = false;
       };
 
-      class control_handler {
+      class control_handler : xtd::object {
       public:
         control_handler() = default;
-        virtual ~control_handler() {
+        ~control_handler() {
           if (dynamic_cast<icontrol_wrapper*>(control_)) reinterpret_cast<icontrol_wrapper*>(control_)->reset_handler();
         }
 

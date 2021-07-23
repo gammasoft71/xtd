@@ -64,9 +64,6 @@ stack_frame::stack_frame(const string& file_name, uint32_t line_number, uint32_t
 stack_frame::stack_frame(const string& file_name, uint32_t line_number, const string& method_name, uint32_t column_number, uint32_t offset) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name), file_column_number_(column_number), offset_(offset) {
 }
 
-stack_frame::~stack_frame() {
-}
-
 stack_frame stack_frame::empty() noexcept {
   return {"", 0, "", 0, OFFSET_UNKNOWN};
 }

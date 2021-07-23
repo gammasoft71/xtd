@@ -220,7 +220,7 @@ namespace xtd {
       
       /// @brief Returns the extension of the specified path string.
       /// @param path The path string from which to get the extension.
-      /// @return A System::string containing the extension of the specified path (including the ".") or System::string.Empty.
+      /// @return A std::string containing the extension of the specified path (including the ".") or std::string::empty.
       /// @remarks If path is empty, GetExtension returns string empty. If path does not have extension information, GetExtension returns string empty ("").
       template<typename char_t>
       static std::basic_string<char_t> get_extension(const std::basic_string<char_t>& path) {
