@@ -20,29 +20,25 @@ namespace xtd {
       string_writer() = default;
       /// @brief Initializes a new instance of the stream_writer class for the specified string.
       /// @param str base string.
-      string_writer(const std::string& str) {write(str);}
+      string_writer(const std::string& str);
+      
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
-      const std::ostream& base_stream() const {return stream_;}
+      const std::ostream& base_stream() const;
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
-      std::ostream& base_stream() {return stream_;}
+      std::ostream& base_stream();
 
       /// @brief Clears all buffers for the current writer and causes any buffered data to be written to the underlying device.
       /// @remarks This default method does nothing, but derived classes can virtual the method to provide the appropriate functionality
-      void flush() override {
-        stream_.flush();
-      }
+      void flush() override;
  
-      std::string to_string() const noexcept override {return stream_.str();}
+      std::string to_string() const noexcept override;
       
       /// @brief Writes the specified string value to the text stream.
       /// @param value The value to write
       /// @exception io::ioexception An I/O error occurs.
-      void write(const std::string& value) override {
-        stream_.write(value.c_str(), value.length());
-      }
-
+      void write(const std::string& value) override;
     private:
       std::stringstream stream_;
     };
