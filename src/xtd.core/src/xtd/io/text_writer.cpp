@@ -2,15 +2,15 @@
 
 using namespace xtd::io;
 
-const std::string& text_writer::new_line() const {
+const std::string& text_writer::new_line() const noexcept {
   return new_line_;
 }
 
-void text_writer::new_line(const std::string& new_line) {
+void text_writer::new_line(const std::string& new_line) noexcept {
   new_line_ = new_line;
 }
 
-null_text_writer& text_writer::null() {
+null_text_writer& text_writer::null() noexcept {
   static null_text_writer null_text_writer;
   return null_text_writer;
 }
@@ -21,7 +21,7 @@ void text_writer::close() {
 void text_writer::flush() {
 }
 
-synchronized_text_writer text_writer::synchronised(text_writer& writer) {
+synchronized_text_writer text_writer::synchronised(text_writer& writer) noexcept {
   return synchronized_text_writer(writer);
 }
 

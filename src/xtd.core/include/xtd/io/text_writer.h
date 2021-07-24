@@ -27,14 +27,14 @@ namespace xtd {
     class core_export_ text_writer : public object {
     public:
       /// @brief Gets the line terminator string used by the current text_writer.
-      const std::string& new_line() const;
+      const std::string& new_line() const noexcept;
       /// @brief Sets the line terminator string used by the current text_writer.
-      void new_line(const std::string& new_line);
+      void new_line(const std::string& new_line) noexcept;
 
       /// @brief Provides a text_writer with no backing store that can be written to, but not read from.
       /// @remarks Use null to redirect output to a stream that will not consume any operating system resources.
       /// @remarks When the text_writer::write methods are invoked on null, the call simply returns, and no data is actually written to any backing store.
-      static null_text_writer& null();
+      static null_text_writer& null() noexcept;
       
       /// @brief Closes the xtd::io::text_reader and releases any system resources associated with the text_reader
       virtual void close();
@@ -46,7 +46,7 @@ namespace xtd {
       /// @brief Creates a thread-safe (synchronized) wrapper around the specified text_writer object.
       /// @param reader The TextReader object to synchronize.
       /// @return text_writer A thread-safe text_writer object.
-      static synchronized_text_writer synchronised(text_writer& writer);
+      static synchronized_text_writer synchronised(text_writer& writer) noexcept;
 
       /// @brief Writes the specified string value to the text stream.
       /// @param value The value to write.

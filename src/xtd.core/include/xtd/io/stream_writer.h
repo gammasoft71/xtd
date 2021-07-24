@@ -19,39 +19,29 @@ namespace xtd {
     public:
       /// @brief Initializes a new instance of the stream_writer class for the specified file name.
       /// @param path The complete file path to be read.
-      stream_writer(const std::string& path) : stream_(new std::ofstream(path)), delete_when_destroy_(true) {}
+      stream_writer(const std::string& path);
       /// @brief Initializes a new instance of the stream_writer class for the specified stream.
       /// @param stream The stream to be read.
-      stream_writer(std::ostream& stream) : stream_(&stream) {}
+      stream_writer(std::ostream& stream);
       /// @cond
-      ~stream_writer() {
-        if (delete_when_destroy_ && stream_) delete stream_;
-      }
+      ~stream_writer();
       /// @endcond
       
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
-      std::optional<std::reference_wrapper<std::ostream>> base_stream() const {return stream_ ? std::optional<std::reference_wrapper<std::ostream>>(*stream_) : std::optional<std::reference_wrapper<std::ostream>>();}
+      std::optional<std::reference_wrapper<std::ostream>> base_stream() const;
       
       /// @brief Closes the stream_writer object and the underlying stream, and releases any system resources associated with the reader.
-      void close() override {
-        if (stream_ && dynamic_cast<std::ofstream*>(stream_)) static_cast<std::ofstream*>(stream_)->close();
-        if (delete_when_destroy_ && stream_) delete stream_;
-        stream_ = nullptr;
-      }
+      void close() override;
       
       /// @brief Clears all buffers for the current writer and causes any buffered data to be written to the underlying device.
       /// @remarks This default method does nothing, but derived classes can virtual the method to provide the appropriate functionality
-      void flush() override {
-        if (stream_) stream_->flush();
-      }
+      void flush() override;
  
       /// @brief Writes the specified string value to the text stream.
       /// @param value The value to write
       /// @exception io::ioexception An I/O error occurs.
-      void write(const std::string& value) override {
-        if (stream_) stream_->write(value.c_str(), value.length());
-      }
+      void write(const std::string& value) override;
 
     private:
       std::ostream* stream_ = nullptr;

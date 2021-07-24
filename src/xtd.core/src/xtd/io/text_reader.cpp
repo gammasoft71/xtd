@@ -2,7 +2,7 @@
 
 using namespace xtd::io;
 
-null_text_reader& text_reader::null() {
+null_text_reader& text_reader::null() noexcept {
   static null_text_reader null_text_reader;
   return null_text_reader;
 }
@@ -49,7 +49,7 @@ std::string text_reader::read_to_end() {
   return text;
 }
 
-synchronized_text_reader text_reader::synchronised(text_reader& reader) {
+synchronized_text_reader text_reader::synchronised(text_reader& reader) noexcept {
   return synchronized_text_reader(reader);
 }
 
