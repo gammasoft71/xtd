@@ -24,10 +24,10 @@ namespace xtd {
       
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
-      const std::ostream& base_stream() const;
+      const std::ostream& base_stream() const noexcept;
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
-      std::ostream& base_stream();
+      std::ostream& base_stream() noexcept;
 
       /// @brief Clears all buffers for the current writer and causes any buffered data to be written to the underlying device.
       /// @remarks This default method does nothing, but derived classes can virtual the method to provide the appropriate functionality

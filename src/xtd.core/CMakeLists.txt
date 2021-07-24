@@ -225,6 +225,8 @@ add_sources(
   src/xtd/internal/__parse_exception.cpp
   src/xtd/io/file.cpp
   src/xtd/io/path.cpp
+  src/xtd/io/stream_reader.cpp
+  src/xtd/io/stream_writer.cpp
   src/xtd/io/string_reader.cpp
   src/xtd/io/string_writer.cpp
   src/xtd/io/text_reader.cpp

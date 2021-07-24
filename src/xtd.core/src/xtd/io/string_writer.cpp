@@ -7,11 +7,11 @@ string_writer::string_writer(const string& str) {
   write(str);
 }
 
-const ostream& string_writer::base_stream() const {
+const ostream& string_writer::base_stream() const noexcept {
   return stream_;
 }
 
-ostream& string_writer::base_stream() {
+ostream& string_writer::base_stream() noexcept {
   return stream_;
 }
 

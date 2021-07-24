@@ -19,46 +19,33 @@ namespace xtd {
     public:
       /// @brief Initializes a new instance of the stream_reader class for the specified file name.
       /// @param path The complete file path to be read.
-      stream_reader(const std::string& path) : stream_(new std::ifstream(path)), delete_when_destroy_(true) {}
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters as defined by xtd::io::path::invalid_path_chars.
+      stream_reader(const std::string& path);
       /// @brief Initializes a new instance of the stream_reader class for the specified stream.
       /// @param stream The stream to be read.
-      stream_reader(std::istream& stream) : stream_(&stream) {}
+      stream_reader(std::istream& stream);
       /// @cond
-      ~stream_reader() {
-        if (delete_when_destroy_ && stream_) delete stream_;
-      }
+      ~stream_reader();
       /// @endcond
       
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
-      std::optional<std::reference_wrapper<std::istream>> base_stream() const {return stream_ ? std::optional<std::reference_wrapper<std::istream>>(*stream_) : std::optional<std::reference_wrapper<std::istream>>();}
+      std::optional<std::reference_wrapper<std::istream>> base_stream() const;
       
       /// @brief Gets a value that indicates whether the current stream position is at the end of the stream.
       /// @return true if the current stream position is at the end of the stream; otherwise false.
-      bool end_of_stream() const {return peek() == EOF;}
+      bool end_of_stream() const;
       
       /// @brief Closes the stream_reader object and the underlying stream, and releases any system resources associated with the reader.
-      void close() override {
-        if (stream_ && dynamic_cast<std::ifstream*>(stream_)) static_cast<std::ifstream*>(stream_)->close();
-        if (delete_when_destroy_ && stream_) delete stream_;
-        stream_ = nullptr;
-      }
+      void close() override;
 
       /// @brief Reads the next character without changing the state of the reader or the character source. Returns the next available character without actually reading it from the input stream.
       /// @return An integer representing the next character to be read, or EOF if no more characters are available or the stream does not support seeking.
-      int32_t peek() const override {
-        if (!stream_) return EOF;
-        int value = stream_->peek();
-        return value;
-      }
+      int32_t peek() const override;
       
       /// @brief Reads the next character from the input stream and advances the character position by one character.
       /// @return The next character from the input stream, or EOF if no more characters are available.
-      int32_t read() override {
-        if (!stream_) return EOF;
-        int value = stream_->get();
-        return value;
-      }
+      int32_t read() override;
       
     private:
       std::istream* stream_ = nullptr;

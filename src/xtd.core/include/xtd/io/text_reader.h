@@ -30,7 +30,7 @@ namespace xtd {
       /// @remarks read and peek methods return EOF.
       /// @remarks read_block method returns zero.
       /// @remarks read_line and read_to_end methods return a string Empty.
-      static null_text_reader& null();
+      static null_text_reader& null() noexcept;
       
       /// @brief Closes the xtd::io::text_reader and releases any system resources associated with the text_reader
       virtual void close();
@@ -69,7 +69,7 @@ namespace xtd {
       /// @brief Creates a thread-safe (synchronized) wrapper around the specified text_reader object.
       /// @param reader The text_reader object to synchronize.
       /// @return text_reader A thread-safe text_reader object.
-      static synchronized_text_reader synchronised(text_reader& reader);
+      static synchronized_text_reader synchronised(text_reader& reader) noexcept;
       
     protected:
       /// @brief Initializes a new instance of the xtd::io::text_reader class.
