@@ -122,5 +122,58 @@ namespace xtd {
     /// @param str string to convert.
     /// @return The converted string.
     static xtd::ustring to_ustring(char32_t* str) noexcept;
+
+    /// @brief Converts std::string to std::u8string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static std::u8string to_u8string(const std::string& str) noexcept;
+    /// @brief Converts const char* to std::u8string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static std::u8string to_u8string(const char* str) noexcept;
+    /// @brief Converts char* to std::u8string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static std::u8string to_u8string(char* str) noexcept;
+    /// @brief Converts xtd::ustring to std::u8string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static std::u8string to_u8string(const xtd::ustring& str) noexcept;
+    /// @brief Converts std::u8string to std::u8string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static std::u8string to_u8string(const std::u8string& str) noexcept;
+    /// @brief Converts const char8_t* to std::u8string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static std::u8string to_u8string(const char8_t* str) noexcept;
+    /// @brief Converts char8_t* to std::u8string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static std::u8string to_u8string(char8_t* str) noexcept;
+    /// @brief Converts std::u16string to std::u8string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static std::u8string to_u8string(const std::u16string& str) noexcept;
+    /// @brief Converts const char16_t* to std::u8string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static std::u8string to_u8string(const char16_t* str) noexcept;
+    /// @brief Converts char16_t* to std::u8string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static std::u8string to_u8string(char16_t* str) noexcept;
+    /// @brief Converts std::u32string to std::u8string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static std::u8string to_u8string(const std::u32string& str) noexcept;
+    /// @brief Converts const char32_t* to std::u8string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static std::u8string to_u8string(const char32_t* str) noexcept;
+    /// @brief Converts char32_t* to std::u8string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static std::u8string to_u8string(char32_t* str) noexcept;
   };
 }
