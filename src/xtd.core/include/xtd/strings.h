@@ -12,7 +12,6 @@
 #include "internal/__sprintf.h"
 #undef __XTD_CORE_INTERNAL__
 /// @endcond
-#include "istring.h"
 #include "static.h"
 #include "string_comparison.h"
 #include "string_split_options.h"
@@ -69,6 +68,9 @@ namespace xtd {
     template<typename object_t>
     static std::string full_class_name(const object_t& object) {return demangle(typeid(object).name());}
 
+    /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.
+    /// @return The fully qualified class name of the objec_t, including the namespace of the specified object.
+    /// @remarks For example, the fully qualified name of the strings type is xtd::strings.
     static std::string full_class_name(const std::type_info& info) {return demangle(info.name());}
 
     /// @brief Gets the class name of the object_t.
@@ -83,6 +85,9 @@ namespace xtd {
     template<typename object_t>
     static std::string class_name(const object_t& object) {return get_class_name(full_class_name(object));}
 
+    /// @brief Gets the class name of the specified object.
+    /// @return The class name of the specified object.
+    /// @remarks For example, the name of the strings type is strings.
     static std::string class_name(const std::type_info& info) {return get_class_name(full_class_name(info));}
 
     /// @brief Compares two specified String objects and returns an integer that indicates their relative position in the sort order.
@@ -195,8 +200,6 @@ namespace xtd {
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
     template<typename char_t>
     static int compare(const std::basic_string<char_t>& str_a, size_t index_a, const std::basic_string<char_t>& str_b, size_t index_b, size_t length, bool ignore_case) noexcept {
-      std::basic_string<char_t> sa(str_a.substr(index_a, length));
-      std::basic_string<char_t> sb(str_b.substr(index_b, length));
       return compare(str_a, index_a, str_b, index_b, length, ignore_case ? xtd::string_comparison::ordinal_ignore_case : xtd::string_comparison::ordinal);
     }
     
@@ -1852,10 +1855,8 @@ namespace xtd {
     template<typename arg_t>
     static auto convert_param(arg_t&& arg) noexcept {
       if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::string>::value) return std::forward<arg_t>(arg).c_str();
-      else if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, xtd::istring>::value) return std::forward<arg_t>(arg).c_str();
       else if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::wstring>::value) return std::forward<arg_t>(arg).c_str();
-      else if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, xtd::iwstring>::value) return std::forward<arg_t>(arg).c_str();
-      else return std::forward<arg_t>(arg);
+       else return std::forward<arg_t>(arg);
     }
     
     static std::string get_class_name(const std::string& full_name) {
