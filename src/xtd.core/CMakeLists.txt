@@ -56,7 +56,6 @@ add_sources(
   include/xtd/invalid_operation_exception.h
   include/xtd/invalid_program_exception.h
   include/xtd/is.h
-  include/xtd/istring.h
   include/xtd/language_id.h
   include/xtd/length_exception.h
   include/xtd/literals.h
@@ -95,6 +94,7 @@ add_sources(
   include/xtd/underflow_exception.h
   include/xtd/unused.h
   include/xtd/using.h
+  include/xtd/ustring.h
   include/xtd/va_args_comma.h
   include/xtd/version.h
   include/xtd/wconsole.h
@@ -190,12 +190,14 @@ add_sources(
   src/xtd/environment.cpp
   src/xtd/event_args.cpp
   src/xtd/guid.cpp
+  src/xtd/object.cpp
 # src/xtd/signal_catcher.cpp
   src/xtd/strings.cpp
   src/xtd/system_exception.cpp
   src/xtd/translator.cpp
   src/xtd/types.cpp
   src/xtd/types.cpp
+  src/xtd/ustring.cpp
   src/xtd/diagnostics/boolean_switch.cpp
   src/xtd/diagnostics/console_trace_listener.cpp
   src/xtd/diagnostics/debug.cpp

@@ -50,7 +50,6 @@
 #include "invalid_operation_exception.h"
 #include "invalid_program_exception.h"
 #include "is.h"
-#include "istring.h"
 #include "language_id.h"
 #include "length_exception.h"
 #include "literals.h"
