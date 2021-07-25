@@ -935,10 +935,6 @@ namespace xtd {
     /// @param length The number of characters in the substring.
     /// @return A string equivalent to the substring of length length that begins at start_index in this instance, or Empty if start_index is equal to the length of this instance and length is zero.
     ustring substring(size_t start_index, size_t length) const noexcept;
-
-    /// @brief Returns a copy of the current string converted to lowercase.
-    /// @return A new string in lowercase.
-    ustring to_lower() const noexcept;
     
     /// @brief Copies the characters in this instance to a Unicode character array.
     /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty String, the returned array is empty and has a zero length.
@@ -955,6 +951,10 @@ namespace xtd {
     /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty String, the returned array is empty and has a zero length.
     std::vector<value_type> to_array(size_t start_index, size_t length) const noexcept;
 
+    /// @brief Returns a copy of the current string converted to lowercase.
+    /// @return A new string in lowercase.
+    ustring to_lower() const noexcept;
+
     //ustring to_string() const noexcept override;
     std::string to_string() const noexcept override;
 
@@ -962,6 +962,60 @@ namespace xtd {
     /// @return A new string in uppercase.
     ustring to_upper() const noexcept;
     
+    /// @brief Removes all leading and trailing occurrences of white-space characters from the specifed String.
+    /// @param str String to trim end.
+    /// @param trim_char A character to remove.
+    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the start and te and of the specified String.
+    ustring trim() const noexcept;
+    
+    /// @brief Removes all eading and trailing occurrences of a character specified from the specifed String .
+    /// @param str String to trim start.
+    /// @param trim_char A character to remove.
+    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the start and the end of the specofoed String.
+    ustring trim(value_type trim_char) const noexcept;
+    
+    /// @brief Removes all eading and trailing occurrences of a set of characters specified in an array from the specified String.
+    /// @param str String to trim end.
+    /// @param trim_chars An array of characters to remove.
+    /// @return The String that remains after all occurrences of the characters in the trim_chars parameter are removed from the start and the edn of the specified String.
+    ustring trim(const std::vector<value_type>& trim_chars) const noexcept;
+    
+    /// @brief Removes all trailing occurrences of white-space characters from the specifed String.
+    /// @param str String to trim end.
+    /// @param trim_char A character to remove.
+    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the end of the specified String.
+    ustring trim_end() const noexcept;
+    
+    /// @brief Removes all trailing occurrences of a character specified from the specifed String .
+    /// @param str String to trim start.
+    /// @param trim_char A character to remove.
+    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the end of the specofoed String.
+    ustring trim_end(value_type trim_char) const noexcept;
+    
+    /// @brief Removes all trailing occurrences of a set of characters specified in an array from the specified String.
+    /// @param str String to trim end.
+    /// @param trim_chars An array of characters to remove.
+    /// @return The String that remains after all occurrences of the characters in the trim_chars parameter are removed from the end of the specified String.
+    ustring trim_end(const std::vector<value_type>& trim_chars) const noexcept;
+    
+    /// @brief Removes all leading occurrences of white-space characters from the specifed String.
+    /// @param str String to trim start.
+    /// @param trim_char A character to remove.
+    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the start of the specified String.
+    ustring trim_start() const noexcept;
+    
+    /// @brief Removes all leading occurrences of a character specified from the specifed String .
+    /// @param str String to trim start.
+    /// @param trim_char A character to remove.
+    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the start of the specofoed String.
+    ustring trim_start(value_type trim_char) const noexcept;
+    
+    /// @brief Removes all leading occurrences of a set of characters specified in an array from the specified String.
+    /// @param str String to trim start.
+    /// @param trim_chars An array of characters to remove.
+    /// @return The String that remains after all occurrences of the characters in the trim_chars parameter are removed from the start of the specified String.
+    ustring trim_start(const std::vector<value_type>& trim_chars) const noexcept;
+
     /// @cond
     friend std::ostream& operator<<(std::ostream& os, const ustring& str) {return os << (reinterpret_cast<const char*>(str.c_str()));}
     /// @endcond
