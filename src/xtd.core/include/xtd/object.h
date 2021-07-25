@@ -9,7 +9,7 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @cond
-  class uustring;
+  class ustring;
   /// @endcond
   
   /// @brief Supports all classes in the xtd class hierarchy and provides low-level services to derived classes.
@@ -85,6 +85,7 @@ namespace xtd {
     /// The following code example demonstrates what to_string returns.
     /// @include object_to_string.cpp
     virtual std::string to_string() const noexcept;
+    //virtual ustring to_string() const noexcept;
   };
 }
 

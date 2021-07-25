@@ -24,73 +24,85 @@ void __throw_ustring_format_exception_start_colon() {
 ustring::ustring() noexcept {
 }
 
-ustring::ustring(const allocator_type& allocator) noexcept : basic_string<char8_t>(allocator) {
+ustring::ustring(const allocator_type& allocator) noexcept : basic_string<value_type>(allocator) {
 }
 
-ustring::ustring(size_t count, char8_t character) : basic_string<char8_t>(count, character) {
+ustring::ustring(size_t count, value_type character) : basic_string<value_type>(count, character) {
 }
 
-ustring::ustring(size_t count, char8_t character, const allocator_type& allocator) : basic_string<char8_t>(count, character, allocator) {
+ustring::ustring(size_t count, value_type character, const allocator_type& allocator) : basic_string<value_type>(count, character, allocator) {
 }
 
-ustring::ustring(const ustring& str, size_t index, size_t count) : basic_string<char8_t>(str, index, count) {
+ustring::ustring(const ustring& str, size_t index, size_t count) : basic_string<value_type>(str, index, count) {
 }
 
-ustring::ustring(const ustring& str, size_t index, size_t count, const allocator_type& allocator) : basic_string<char8_t>(str, index, count, allocator) {
+ustring::ustring(const ustring& str, size_t index, size_t count, const allocator_type& allocator) : basic_string<value_type>(str, index, count, allocator) {
 }
 
-ustring::ustring(const ustring& str, size_t index) : basic_string<char8_t>(str, index) {
+ustring::ustring(const ustring& str, size_t index) : basic_string<value_type>(str, index) {
 }
 
-ustring::ustring(const ustring& str, size_t index, const allocator_type& allocator) : basic_string<char8_t>(str, index, allocator) {
+ustring::ustring(const ustring& str, size_t index, const allocator_type& allocator) : basic_string<value_type>(str, index, allocator) {
 }
 
-ustring::ustring(const char8_t* str, size_t count) : basic_string<char8_t>(str, count) {
+ustring::ustring(const value_type* str, size_t count) : basic_string<value_type>(str, count) {
 }
 
-ustring::ustring(const char8_t* str, size_t count, const allocator_type& allocator) : basic_string<char8_t>(str, count, allocator) {
+ustring::ustring(const value_type* str, size_t count, const allocator_type& allocator) : basic_string<value_type>(str, count, allocator) {
 }
 
-ustring::ustring(const char8_t* str) : basic_string<char8_t>(str) {
+ustring::ustring(const value_type* str) : basic_string<value_type>(str) {
 }
 
-ustring::ustring(const char8_t* str, const allocator_type& allocator) : basic_string<char8_t>(str, allocator) {
+ustring::ustring(const value_type* str, const allocator_type& allocator) : basic_string<value_type>(str, allocator) {
 }
 
-ustring::ustring(const char* str) : basic_string<char8_t>(reinterpret_cast<const char8_t*>(str)) {
+ustring::ustring(const char* str) : basic_string<value_type>(reinterpret_cast<const value_type*>(str)) {
 }
 
-ustring::ustring(const char* str, const allocator_type& allocator) : basic_string<char8_t>(reinterpret_cast<const char8_t*>(str), allocator) {
+ustring::ustring(const char* str, const allocator_type& allocator) : basic_string<value_type>(reinterpret_cast<const value_type*>(str), allocator) {
 }
 
-ustring::ustring(const ustring& str) noexcept : basic_string<char8_t>(str) {
+ustring::ustring(value_type* str) : basic_string<value_type>(str) {
 }
 
-ustring::ustring(const ustring& str, const allocator_type& allocator) noexcept : basic_string<char8_t>(str, allocator) {
+ustring::ustring(value_type* str, const allocator_type& allocator) : basic_string<value_type>(str, allocator) {
 }
 
-ustring::ustring(const basic_string<char8_t>& str) noexcept : basic_string<char8_t>(str) {
+ustring::ustring(char* str) : basic_string<value_type>(reinterpret_cast<const value_type*>(str)) {
 }
 
-ustring::ustring(const basic_string<char8_t>& str, const allocator_type& allocator) noexcept : basic_string<char8_t>(str, allocator) {
+ustring::ustring(char* str, const allocator_type& allocator) : basic_string<value_type>(reinterpret_cast<const value_type*>(str), allocator) {
 }
 
-ustring::ustring(const std::string& str) noexcept : basic_string<char8_t>(reinterpret_cast<const char8_t*>(str.c_str())) {
+ustring::ustring(const ustring& str) noexcept : basic_string<value_type>(str) {
 }
 
-ustring::ustring(const std::string& str, const allocator_type& allocator) noexcept : basic_string<char8_t>((char8_t*)str.c_str(), allocator) {
+ustring::ustring(const ustring& str, const allocator_type& allocator) noexcept : basic_string<value_type>(str, allocator) {
 }
 
-ustring::ustring(ustring&& str) noexcept : basic_string<char8_t>(str) {
+ustring::ustring(const basic_string<value_type>& str) noexcept : basic_string<value_type>(str) {
 }
 
-ustring::ustring(ustring&& str, const allocator_type& allocator) noexcept : basic_string<char8_t>(str, allocator) {
+ustring::ustring(const basic_string<value_type>& str, const allocator_type& allocator) noexcept : basic_string<value_type>(str, allocator) {
 }
 
-ustring::ustring(initializer_list<char8_t> il) : basic_string<char8_t>(il) {
+ustring::ustring(const std::string& str) noexcept : basic_string<value_type>(reinterpret_cast<const value_type*>(str.c_str())) {
 }
 
-ustring::ustring(initializer_list<char8_t> il, const allocator_type& allocator) : basic_string<char8_t>(il, allocator) {
+ustring::ustring(const std::string& str, const allocator_type& allocator) noexcept : basic_string<value_type>((value_type*)str.c_str(), allocator) {
+}
+
+ustring::ustring(ustring&& str) noexcept : basic_string<value_type>(str) {
+}
+
+ustring::ustring(ustring&& str, const allocator_type& allocator) noexcept : basic_string<value_type>(str, allocator) {
+}
+
+ustring::ustring(initializer_list<value_type> il) : basic_string<value_type>(il) {
+}
+
+ustring::ustring(initializer_list<value_type> il, const allocator_type& allocator) : basic_string<value_type>(il, allocator) {
 }
 
 ustring::ustring(initializer_list<char> il) {
@@ -98,7 +110,7 @@ ustring::ustring(initializer_list<char> il) {
     push_back(c);
 }
 
-ustring::ustring(initializer_list<char> il, const allocator_type& allocator) : basic_string<char8_t>(allocator) {
+ustring::ustring(initializer_list<char> il, const allocator_type& allocator) : basic_string<value_type>(allocator) {
   for (auto& c : il)
     push_back(c);
 }
@@ -133,16 +145,16 @@ ustring& ustring::operator=(const std::initializer_list<value_type>& il) {
   return *this;
 }
 
-const char8_t& ustring::operator[](size_t index) {
-  return basic_string<char8_t>::operator[](index);
+const ustring::value_type& ustring::operator[](size_t index) {
+  return basic_string<value_type>::operator[](index);
 }
 
-const char8_t& ustring::operator[](size_t index) const {
-  return basic_string<char8_t>::operator[](index);
+const ustring::value_type& ustring::operator[](size_t index) const {
+  return basic_string<value_type>::operator[](index);
 }
 
 ustring ustring::substr(size_type index, size_type count) const {
-  return basic_string<char8_t>::substr(index, count);
+  return basic_string<value_type>::substr(index, count);
 }
 
 int ustring::compare(const ustring& str_a, const ustring& str_b) noexcept {
@@ -327,6 +339,150 @@ ustring ustring::insert(size_t start_index, const ustring& value) const noexcept
 
 bool ustring::is_empty() const noexcept {
   return basic_string<value_type>::empty();
+}
+
+size_t ustring::last_index_of(value_type value) const noexcept {
+  return last_index_of(value, 0, size());
+}
+
+size_t ustring::last_index_of(const ustring& value) const noexcept {
+  return last_index_of(value, 0, size());
+}
+
+size_t ustring::last_index_of(value_type value, size_t start_index) const noexcept {
+  return last_index_of(value, start_index, size() - start_index);
+}
+
+size_t ustring::last_index_of(const ustring& value, size_t start_index) const noexcept {
+  return last_index_of(value, start_index, size() - start_index);
+}
+
+size_t ustring::last_index_of(value_type value, size_t start_index, size_t count) const noexcept {
+  size_t result = rfind(value, start_index + count - 1);
+  return result < start_index ? npos : result;
+}
+
+size_t ustring::last_index_of(const ustring& value, size_t start_index, size_t count) const noexcept {
+  size_t result = rfind(value, start_index + count - value.size());
+  return result < start_index ? npos : result;
+}
+
+size_t ustring::last_index_of_any(const std::vector<value_type>& values) const noexcept {
+  return last_index_of_any(values, 0, size());
+}
+
+size_t ustring::last_index_of_any(const std::vector<value_type>& values, size_t start_index) const noexcept {
+  return last_index_of_any(values, start_index, size() - start_index);
+}
+
+size_t ustring::last_index_of_any(const std::vector<value_type>& values, size_t start_index, size_t count) const noexcept {
+  size_t index = size() - 1;
+  for (const_reverse_iterator it = crbegin(); it != crend(); ++it) {
+    if (index-- > start_index + count) continue;
+    if (index + 1 < start_index) break;
+    if (std::find(values.begin(), values.end(), *it) != values.end()) return index + 1;
+  }
+  return npos;
+}
+
+size_t ustring::last_index_of_any(const std::initializer_list<value_type>& values) noexcept {
+  return last_index_of_any(std::vector<value_type>(values));
+}
+
+size_t ustring::last_index_of_any(const std::initializer_list<value_type>& values, size_t start_index) noexcept {
+  return last_index_of_any(std::vector<value_type>(values), start_index);
+}
+
+size_t ustring::last_index_of_any(const std::initializer_list<value_type>& values, size_t start_index, size_t count) noexcept {
+  return last_index_of_any(std::vector<value_type>(values), start_index, count);
+}
+
+ustring ustring::pad_left(size_t total_width) const noexcept {
+  return pad_left(total_width, static_cast<value_type>(0x20));
+}
+
+ustring ustring::pad_left(size_t total_width, value_type padding_char) const noexcept {
+  if (total_width < size()) return *this;
+  return ustring(total_width - size(), padding_char).append(*this);
+}
+
+ustring ustring::pad_right(size_t total_width) const noexcept {return pad_right(total_width, static_cast<value_type>(0x20));}
+
+ustring ustring::pad_right(size_t total_width, value_type padding_char) const noexcept {
+  if (total_width < size()) return *this;
+  ustring result(*this);
+  return result.append(total_width - size(), padding_char);
+}
+
+ustring ustring::remove(size_t start_index) const noexcept {
+  return remove(start_index, size() - start_index);
+}
+
+ustring ustring::remove(size_t start_index, size_t count) const noexcept {
+  if (start_index > size()) return *this;
+  ustring result(*this);
+  return result.erase(start_index, count);
+}
+
+ustring ustring::replace(value_type old_char, value_type new_char) const noexcept {
+  return replace(ustring(1, old_char), ustring(1, new_char));
+}
+
+ustring ustring::replace(const ustring& old_string, const ustring& new_string) const noexcept {
+  ustring result(*this);
+  auto old_size = old_string.length();
+  auto new_size = new_string.length();
+  size_t index = 0;
+  while (true) {
+    index = result.find(old_string, index);
+    if (index == npos) break;
+    if (old_size == new_size) result.replace(index, old_size, new_string);
+    else {
+      result.erase(index, old_string.size());
+      result.insert(index, new_string);
+    }
+    index += new_string.size();
+  }
+  return result;
+}
+
+std::vector<ustring> ustring::split(const std::vector<value_type>& separators, size_t count, string_split_options options) const noexcept {
+  if (count == 0) return {};
+  if (count == 1) return {*this};
+  
+  std::vector<ustring> list;
+  ustring sub_string;
+  std::vector<value_type> split_char_separators = separators.size() == 0 ? std::vector<value_type> {9, 10, 11, 12, 13, 32} : separators;
+  for (const_iterator it = begin(); it != end(); it++) {
+    bool is_separator =  std::find(split_char_separators.begin(), split_char_separators.end(), *it) != split_char_separators.end();
+    if (!is_separator) sub_string.append(ustring(1, *it));
+    if ((static_cast<size_t>(it - begin()) == length() - 1 || is_separator) && (sub_string.length() > 0 || (sub_string.length() == 0 && options != string_split_options::remove_empty_entries))) {
+      if (list.size() == count - 1) {
+        list.push_back(sub_string + ustring(c_str(), it - begin() + (is_separator ? 0 : 1), length() - (it - begin()) + (is_separator ? 0 : 1)));
+        return list;
+      }
+      list.push_back(sub_string);
+      sub_string.clear();
+    }
+  }
+  
+  return list;
+}
+
+std::vector<ustring> ustring::split() const noexcept {
+  return split(std::vector<value_type> {9, 10, 11, 12, 13, 32}, std::numeric_limits<size_t>::max(), string_split_options::none);
+}
+
+std::vector<ustring> ustring::split(const std::vector<value_type>& separators) const noexcept {
+  return split(separators, std::numeric_limits<size_t>::max(), string_split_options::none);
+}
+
+std::vector<ustring> ustring::split(const std::vector<value_type>& separators, string_split_options options) const noexcept {
+  return split(separators, std::numeric_limits<size_t>::max(), options);
+}
+
+std::vector<ustring> ustring::split(const std::vector<value_type>& separators, size_t count) const noexcept {
+  return split(separators, count, string_split_options::none);
 }
 
 ustring ustring::to_lower() const noexcept {

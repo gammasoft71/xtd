@@ -3,6 +3,7 @@
 #pragma once
 #include <string>
 #include "string_comparison.h"
+#include "string_split_options.h"
 #include "types.h"
 #include "object.h"
 /// @cond
@@ -13,6 +14,10 @@
 #include "internal/__sprintf.h"
 #undef __XTD_CORE_INTERNAL__
 /// @endcond
+
+#if !defined(_WIN32)
+#include <cxxabi.h>
+#endif
 
 /// @cond
 template<typename ...args_t>
@@ -95,6 +100,20 @@ namespace xtd {
     ustring(const char* str, const allocator_type& allocator);
     
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
+    ustring(value_type* str);
+    /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
+    /// @param str The string to copy.
+    /// @param allocator The allocator to use for all memory allocations of this string.
+    ustring(value_type* str, const allocator_type& allocator);
+    
+    /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
+    ustring(char* str);
+    /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
+    /// @param str The string to copy.
+    /// @param allocator The allocator to use for all memory allocations of this string.
+    ustring(char* str, const allocator_type& allocator);
+    
+    /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     /// @param str The string to copy.
     ustring(const ustring& str) noexcept;
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy and allocator.
@@ -155,6 +174,7 @@ namespace xtd {
     ustring(std::initializer_list<char> il, const allocator_type& allocator);
     
     /// @cond
+    /*
     template<typename type_t>
     ustring(const type_t& object) : std::basic_string<value_type>(object) {}
     template<typename type_t>
@@ -167,6 +187,7 @@ namespace xtd {
     ustring(const type_t& object, size_t count) : std::basic_string<value_type>(object, 0, count) {}
     template<typename type_t>
     ustring(const type_t& object, size_t count, const allocator_type& allocator) : std::basic_string<value_type>(object, 0, count, allocator) {}
+     */
     
     ustring& operator=(const ustring& str);
     ustring& operator=(value_type character);
@@ -181,8 +202,44 @@ namespace xtd {
     ustring substr(size_type index = 0, size_type count = npos) const;
     /// @endcond
     
+    /// @brief Gets the fully qualified class name of the objec_t, including the namespace of the objec_t.
+    /// @return The fully qualified class name of the objec_t, including the namespace of the objec_t.
+    /// @remarks For example, the fully qualified name of the strings type is xtd::strings.
+    template<typename object_t>
+    static ustring full_class_name() {return demangle(typeid(object_t).name());}
+    
+    /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.
+    /// @return The fully qualified class name of the objec_t, including the namespace of the specified object.
+    /// @remarks For example, the fully qualified name of the strings type is xtd::strings.
+    template<typename object_t>
+    static ustring full_class_name(const object_t& object) {return demangle(typeid(object).name());}
+    
+    /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.
+    /// @return The fully qualified class name of the objec_t, including the namespace of the specified object.
+    /// @remarks For example, the fully qualified name of the strings type is xtd::strings.
+    static ustring full_class_name(const std::type_info& info) {return demangle(info.name());}
+    
+    /// @brief Gets the class name of the object_t.
+    /// @return The class name of the object_t.
+    /// @remarks For example, the name of the strings type is strings.
+    template<typename object_t>
+    static ustring class_name() {return get_class_name(full_class_name<object_t>());}
+    
+    /// @brief Gets the class name of the specified object.
+    /// @return The class name of the specified object.
+    /// @remarks For example, the name of the strings type is strings.
+    template<typename object_t>
+    static ustring class_name(const object_t& object) {return get_class_name(full_class_name(object));}
+    
+    /// @brief Gets the class name of the specified object.
+    /// @return The class name of the specified object.
+    /// @remarks For example, the name of the strings type is strings.
+    static ustring class_name(const std::type_info& info) {return get_class_name(full_class_name(info));}
+    
+
+    
     using std::basic_string<value_type>::compare;
-    /// @brief Compares two specified String objects and returns an integer that indicates their relative position in the sort order.
+    /// @brief Compares two specified string objects and returns an integer that indicates their relative position in the sort order.
     /// @param str_a The first string to compare.
     /// @param str_b The second string to compare.
     /// @return A 32-bit signed integer that indicates the lexical relationship between the two comparands.
@@ -192,7 +249,7 @@ namespace xtd {
     /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
     static int compare(const ustring& str_a, const ustring& str_b) noexcept;
-    /// @brief Compares two specified String objects, ignoring or honoring their case, and returns an integer that indicates their relative position in the sort order.
+    /// @brief Compares two specified string objects, ignoring or honoring their case, and returns an integer that indicates their relative position in the sort order.
     /// @param str_a The first string to compare.
     /// @param str_b The second string to compare.
     /// @param ignore_case true to ignore case during the comparison; otherwise, false.
@@ -204,7 +261,7 @@ namespace xtd {
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
     static int compare(const ustring& str_a, const ustring& str_b, bool ignore_case) noexcept;
     
-    /// @brief Compares two specified String objects using the specified rules, and returns an integer that indicates their relative position in the sort order.
+    /// @brief Compares two specified string objects using the specified rules, and returns an integer that indicates their relative position in the sort order.
     /// @param str_a The first string to compare.
     /// @param str_b The second string to compare.
     /// @param comparison_type One of the enumeration values that specifies the rules to use in the comparison.
@@ -215,7 +272,7 @@ namespace xtd {
     /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
     static int compare(const ustring& str_a, const ustring& str_b, xtd::string_comparison comparison_type) noexcept;
-    /// @brief Compares substrings of two specified String objects and returns an integer that indicates their relative position in the sort order.
+    /// @brief Compares substrings of two specified string objects and returns an integer that indicates their relative position in the sort order.
     /// @param str_a The first string to use in the comparison.
     /// @param index_a The position of the substring within str_a.
     /// @param str_b The second string to use in the comparison.
@@ -228,7 +285,7 @@ namespace xtd {
     /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
     static int compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length) noexcept;
-    /// @brief Compares substrings of two specified String objects, ignoring or honoring their case, and returns an integer that indicates their relative position in the sort order.
+    /// @brief Compares substrings of two specified string objects, ignoring or honoring their case, and returns an integer that indicates their relative position in the sort order.
     /// @param str_a The first string to use in the comparison.
     /// @param index_a The position of the substring within str_a.
     /// @param str_b The second string to use in the comparison.
@@ -242,7 +299,7 @@ namespace xtd {
     /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
     static int compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length, bool ignore_case) noexcept;
-    /// @brief Compares substrings of two specified String objects using the specified rules, and returns an integer that indicates their relative position in the sort order.
+    /// @brief Compares substrings of two specified string objects using the specified rules, and returns an integer that indicates their relative position in the sort order.
     /// @param str_a The first string to use in the comparison.
     /// @param index_a The position of the substring within str_a.
     /// @param str_b The second string to use in the comparison.
@@ -280,7 +337,7 @@ namespace xtd {
     /// @param str_a The first string to concatenate.
     /// @param str_b The second string to concatenate.
     /// @param str_c The third string to concatenate.
-    /// @return String The concatenation of str_a, str_b and str_c.
+    /// @return string The concatenation of str_a, str_b and str_c.
     static ustring concat(const ustring& str_a, const ustring& str_b, const ustring& str_c) noexcept;
     
     /// @brief Concatenates three specified instances of object.
@@ -296,7 +353,7 @@ namespace xtd {
     /// @brief Concatenates two specified instances of string.
     /// @param str_a The first string to concatenate.
     /// @param str_b The second string to concatenate.
-    /// @return String The concatenation of str_a and str_b.
+    /// @return string The concatenation of str_a and str_b.
     static ustring concat(const ustring& str_a, const ustring& str_b) noexcept;
     
     /// @brief Concatenates two specified instances of object.
@@ -349,8 +406,30 @@ namespace xtd {
     static ustring concat(value_t value) noexcept {
       return format("{}", value);
     }
-    
-    /// @brief Returns a value indicating whether a specified substring occurs within the specified string.
+
+    /// @brief Gets demangled string of name,.
+    /// @return The demangled string of name.
+    static ustring demangle(const ustring& name) {
+#if defined(_WIN32)
+      ustring result = name;
+      for (auto& item : {"enum ", "class ", "union ", "struct "})
+        result = result.replace(item, "");
+      return result;
+#else
+      class auto_delete_char_pointer {
+      public:
+        auto_delete_char_pointer(char* value) : value_(value) {}
+        ~auto_delete_char_pointer() {free(value_);}
+        char* operator()() const {return value_;}
+      private:
+        char* value_;
+      };
+      int32_t status = 0;
+      return auto_delete_char_pointer(abi::__cxa_demangle(reinterpret_cast<const char*>(name.c_str()), 0, 0, &status))();
+#endif
+    }
+
+    /// @brief Returns a value indicating whether a specified substring occurs within this string.
     /// @param value The string to seek.
     /// @return true if the value parameter occurs within this string, or if value is the empty string (""); otherwise, false.
     bool contains(const ustring& value) const noexcept;
@@ -359,19 +438,17 @@ namespace xtd {
     /// @remarks The value of this method is the zero-length string, "".
     static ustring empty() noexcept;
 
-    /// @brief Determines whether the end of the specified string matches the specified char_t.
-    /// @param str The string to match.
+    /// @brief Determines whether the end of this string matches the specified character.
     /// @param value The char_t to compare to the substring at the end of this instance.
     /// @return true if value matches the end of this instance; otherwise, false.
     bool ends_with(value_type value) const noexcept;
 
-    /// @brief Determines whether the end of the specified string matches the specified char_t.
-    /// @param str The string to match.
+    /// @brief Determines whether the end of this string matches the specified character.
     /// @param value The char_t to compare to the substring at the end of this instance.
     /// @return true if value matches the end of this instance; otherwise, false.
     bool ends_with(char value) const noexcept;
     
-    /// @brief Determines whether the end of the specified string matches the specified string.
+    /// @brief Determines whether the end of this string matches the specified string.
     /// @param value The string to compare to the substring at the end of this instance.
     /// @return true if value matches the end of this instance; otherwise, false.
     bool ends_with(const ustring& value) noexcept;
@@ -381,7 +458,7 @@ namespace xtd {
     /// @return bool true if value matches the end of the specified string; otherwise, false.
     bool ends_with(const ustring& value, bool ignore_case) noexcept;
     
-    /// @brief Determines whether the end of the specified string matches the specified string when compared using the specified comparison option.
+    /// @brief Determines whether the end of this string matches the specified string when compared using the specified comparison option.
     /// @param comparison_type One of the enumeration values that determines how this string and value are compared.
     /// @return bool true if value matches the end of the specified string; otherwise, false.
     bool ends_with(const ustring& value, xtd::string_comparison comparison_type) noexcept;
@@ -468,67 +545,58 @@ namespace xtd {
     /// @return A hash code.
     size_t get_hash_code() const noexcept override;
 
-    /// @brief Reports the index of the first occurrence of the specified character in the sêcified tring.
-    /// @param str A String to find index of.
-    /// @param value A Unicode character to seek
-    /// @return size_t The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    /// @brief Reports the index of the first occurrence of the specified character in this string.
+    /// @param value An unicode character to seek
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     size_t index_of(value_type value) const noexcept;
     
-    /// @brief Reports the index of the first occurrence of the specified string in the specified string.
-    /// @param str A String to find index of.
-    /// @param value A Unicode character to seek
-    /// @return size_t The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    /// @brief Reports the index of the first occurrence of the specified string in this string.
+    /// @param value An unicode character to seek
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     size_t index_of(const ustring& value) const noexcept;
 
-    /// @brief Reports the index of the first occurrence of the specified character in the spexified string. The search starts at a specified character position.
-    /// @param str A String to find index of.
-    /// @param value A Unicode character to seek
+    /// @brief Reports the index of the first occurrence of the specified character in this string. The search starts at a specified character position.
+    /// @param value An unicode character to seek
     /// @param start_index The search starting position
-    /// @return size_t The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     size_t index_of(value_type value, size_t start_index) const noexcept;
     
-    /// @brief Reports the index of the first occurrence of the specified character in the spexified string. The search starts at a specified character position.
-    /// @param str A String to find index of.
-    /// @param value A Unicode character to seek
+    /// @brief Reports the index of the first occurrence of the specified character in this string. The search starts at a specified character position.
+    /// @param value An unicode character to seek
     /// @param start_index The search starting position
-    /// @return size_t The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     size_t index_of(const ustring& value, size_t start_index) const noexcept;
 
-    /// @brief Reports the index of the first occurrence of the specified character in the spexified string. The search starts at a specified character position and examines a specified number of character positions.
-    /// @param str A String to find index of.
-    /// @param value A Unicode character to seek
+    /// @brief Reports the index of the first occurrence of the specified character in this string. The search starts at a specified character position and examines a specified number of character positions.
+    /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @param count The number of character positions to examine
-    /// @return size_t The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     size_t index_of(value_type value, size_t start_index, size_t count) const noexcept;
     
-    /// @brief Reports the index of the first occurrence of the specified character in the spexified string. The search starts at a specified character position and examines a specified number of character positions.
-    /// @param str A String to find index of.
-    /// @param value A Unicode character to seek
+    /// @brief Reports the index of the first occurrence of the specified character in this string. The search starts at a specified character position and examines a specified number of character positions.
+    /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @param count The number of character positions to examine
-    /// @return size_t The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     size_t index_of(const ustring& value, size_t start_index, size_t count) const noexcept;
 
     /// @brief Reports the index of the first occurrence in this instance of any character in a specified array of characters.
-    /// @param str A String to find index of any.
-    /// @param values A Unicode character array containing one or more characters to seek
-    /// @return size_t The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
+    /// @param values An unicode character array containing one or more characters to seek
+    /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
     size_t index_of_any(const std::vector<value_type>& values) noexcept;
     
     /// @brief Reports the index of the first occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
-    /// @param str A String to find index of any.
-    /// @param values A Unicode character array containing one or more characters to seek
+    /// @param values An unicode character array containing one or more characters to seek
     /// @param start_index The search starting position
-    /// @return size_t The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
+    /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
     size_t index_of_any(const std::vector<value_type>& values, size_t start_index) noexcept;
     
     /// @brief Reports the index of the first occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
-    /// @param str A String to find index of any.
-    /// @param values A Unicode character array containing one or more characters to seek
+    /// @param values An unicode character array containing one or more characters to seek
     /// @param start_index The search starting position
     /// @param count The number of character positions to examine.
-    /// @return size_t The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
+    /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
     size_t index_of_any(const std::vector<value_type>& values, size_t start_index, size_t count) noexcept;
     
     /// @cond
@@ -537,44 +605,43 @@ namespace xtd {
     size_t index_of_any(const std::initializer_list<value_type>& values, size_t start_index, size_t count) noexcept;
     /// @endcond
     
-    /// @brief Inserts a specified instance of String at a specified index position in this instance.
+    /// @brief Inserts a specified instance of string at a specified index position in this instance.
     /// @param start_index The index position of the insertion.
-    /// @param value The String to insert.
-    /// @return String A new String equivalent to this instance but with value inserted at position start_index.
+    /// @param value The string to insert.
+    /// @return A new string equivalent to this instance but with value inserted at position start_index.
     /// @remarks If start_index is equal to the length of this instance, value is appended to the end of this instance.
     /// @remarks For example, the return value of "abc".Insert(2, "XYZ") is "abXYZc".
     ustring insert(size_t start_index, const ustring& value) const noexcept;
     
-    /// @brief Indicates whether the specified string is an empty string ("").
-    /// @param str The string to test.
+    /// @brief Indicates whether this string is an empty string ("").
     /// @return true if the value parameter is null or an empty string (""); otherwise, false.
     bool is_empty() const noexcept;
 
-    /// @brief Concatenates a specified separator String between each element of a specified Object array, yielding a single concatenated String.
-    /// @param separator A String separator.
+    /// @brief Concatenates a specified separator string between each element of a specified object array, yielding a single concatenated string.
+    /// @param separator A string separator.
     /// @param values An array of Object.
-    /// @return A String consisting of the elements of value interspersed with the separator String.
+    /// @return A string consisting of the elements of value interspersed with the separator string.
     /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
     /// @remarks stream << operator is called on each object to generate the content.
     template<typename collection_t>
     static ustring join(const ustring separator, const collection_t& values) noexcept {return join(separator, values, 0, values.size());}
     
-    /// @brief Concatenates a specified separator String between each element of a specified Object array, yielding a single concatenated String.
-    /// @param separator A String separator.
+    /// @brief Concatenates a specified separator string between each element of a specified object array, yielding a single concatenated string.
+    /// @param separator A string separator.
     /// @param values An array of Object.
     /// @param start_index The first array element in value to use.
-    /// @return A String consisting of the elements of value interspersed with the separator String.
+    /// @return A string consisting of the elements of value interspersed with the separator string.
     /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
     /// @remarks stream << operator is called on each object to generate the content.
     template<typename collection_t>
     static ustring join(const ustring& separator, const collection_t& values, size_t index) noexcept {return join(separator, values, index, values.size()-index);}
     
-    /// @brief Concatenates a specified separator String between each element of a specified Object array, yielding a single concatenated String.
-    /// @param separator A String separator.
+    /// @brief Concatenates a specified separator string between each element of a specified Object array, yielding a single concatenated string.
+    /// @param separator A string separator.
     /// @param values An array of Object.
     /// @param start_index The first array element in value to use.
     /// @param count The number of elements of value to use.
-    /// @return A String consisting of the elements of value interspersed with the separator String.
+    /// @return A string consisting of the elements of value interspersed with the separator string.
     /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
     /// @remarks stream << operator is called on each object to generate the content.
     template<typename collection_t>
@@ -590,7 +657,7 @@ namespace xtd {
       }
       return result;
     }
-    
+
     /// @cond
     template<typename value_t>
     static ustring join(const ustring& separator, const std::initializer_list<value_t>& values) noexcept {return join(separator, std::vector<value_t>(values));}
@@ -599,6 +666,175 @@ namespace xtd {
     template<typename value_t>
     static ustring join(const ustring& separator, const std::initializer_list<value_t>& values, size_t index, size_t count) noexcept {return join(separator, std::vector<value_t>(values), index, count);}
     /// @endcond
+
+    /// @brief Reports the index of the last occurrence of the specified character in this tring.
+    /// @param value An unicode character to seek
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    size_t last_index_of(value_type value) const noexcept;
+    
+    /// @brief Reports the index of the last occurrence of the specified string in this string.
+    /// @param value An unicode character to seek
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    size_t last_index_of(const ustring& value) const noexcept;
+    
+    /// @brief Reports the index of the last occurrence of the specified character in this string. The search starts at a specified character position.
+    /// @param value An unicode character to seek
+    /// @param start_index The search starting position
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    size_t last_index_of(value_type value, size_t start_index) const noexcept;
+    
+    /// @brief Reports the index of the last occurrence of the specified character in this string. The search starts at a specified character position.
+    /// @param value An unicode character to seek
+    /// @param start_index The search starting position
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    size_t last_index_of(const ustring& value, size_t start_index) const noexcept;
+    
+    /// @brief Reports the index of the last occurrence of the specified character in this string. The search starts at a specified character position and examines a specified number of character positions.
+    /// @param str A string to find last index of.
+    /// @param value An unicode character to seek
+    /// @param start_index The search starting position
+    /// @param count The number of character positions to examine
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    size_t last_index_of(value_type value, size_t start_index, size_t count) const noexcept;
+    
+    /// @brief Reports the index of the last occurrence of the specified character in this string. The search starts at a specified character position and examines a specified number of character positions.
+    /// @param value An unicode character to seek
+    /// @param start_index The search starting position
+    /// @param count The number of character positions to examine
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    size_t last_index_of(const ustring& value, size_t start_index, size_t count) const noexcept;
+
+    /// @brief Reports the index of the last occurrence in this instance of any character in a specified array of characters.
+    /// @param values An unicode character array containing one or more characters to seek
+    /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
+    size_t last_index_of_any(const std::vector<value_type>& values) const noexcept;
+    
+    /// @brief Reports the index of the last occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
+    /// @param values An unicode character array containing one or more characters to seek
+    /// @param start_index The search starting position
+    /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
+    size_t last_index_of_any(const std::vector<value_type>& values, size_t start_index) const noexcept;
+    
+    /// @brief Reports the index of the last occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
+    /// @param values An unicode character array containing one or more characters to seek
+    /// @param start_index The search starting position
+    /// @param count The number of character positions to examine.
+    /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
+    size_t last_index_of_any(const std::vector<value_type>& values, size_t start_index, size_t count) const noexcept;
+    
+    /// @cond
+    size_t last_index_of_any(const std::initializer_list<value_type>& values) noexcept;
+    size_t last_index_of_any(const std::initializer_list<value_type>& values, size_t start_index) noexcept;
+    size_t last_index_of_any(const std::initializer_list<value_type>& values, size_t start_index, size_t count) noexcept;
+    /// @endcond
+    
+    /// @brief Right-aligns the characters in this string, padding with spaces on the left for a specified total length.
+    /// @param total_width The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.
+    /// @return A new string that is equivalent to the specified string, but right-aligned and padded on the left with as many spaces as needed to create a length of total_width. Or, if total_width is less than the length of the specified string, a new string object that is identical to the specified string.
+    /// @remarks An unicode space is defined as hexadecimal 0x20.
+    /// @remarks The pad_left(const std::basic_string<char_t>&, int) method pads the beginning of the returned string. This means that, when used with right-to-left languages, it pads the right portion of the string..
+    ustring pad_left(size_t total_width) const noexcept;
+    
+    /// @brief Right-aligns the characters in this string, padding with spaces on the left for a specified total length.
+    /// @param total_width The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.
+    /// @param paddingChar An unicode padding character.
+    /// @return A new string that is equivalent to the specified string, but right-aligned and padded on the left with as many spaces as needed to create a length of total_width. Or, if total_width is less than the length of the specified string, a new string object that is identical the specified string.
+    /// @remarks An unicode space is defined as hexadecimal 0x20.
+    /// @remarks The pad_left(const std::basic_string<char_t>&, int) method pads the beginning of the returned string. This means that, when used with right-to-left languages, it pads the right portion of the string..
+    ustring pad_left(size_t total_width, value_type padding_char) const noexcept;
+
+    /// @brief Left-aligns the characters in this string, padding with spaces on the right for a specified total length.
+    /// @param totalWidth The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.
+    /// @return A new string that is equivalent to the specified string, but left-aligned and padded on the right with as many spaces as needed to create a length of totalWidth. Or, if totalWidth is less than the length of the specified string, a new string object that is identical to the specified string.
+    /// @remarks An unicode space is defined as hexadecimal 0x20.
+    /// @remarks The PadRight(const std::basic_string<char_t>&, int) method pads the end of the returned string. This means that, when used with right-to-left languages, it pads the left portion of the string..
+    ustring pad_right(size_t total_width) const noexcept;
+    
+    /// @brief Left-aligns the characters in this string, padding with spaces on the right for a specified total length.
+    /// @param totalWidth The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.
+    /// @param paddingChar An unicode padding character.
+    /// @return A new string that is equivalent to the specified string, but left-aligned and padded on the tight with as many spaces as needed to create a length of totalWidth. Or, if totalWidth is less than the length of the specified string, a new string object that is identical to the specified string.
+    /// @remarks An unicode space is defined as hexadecimal 0x20.
+    /// @remarks The xtd::ustring::pad_right method pads the end of the returned string. This means that, when used with right-to-left languages, it pads the left portion of the string..
+    ustring pad_right(size_t total_width, value_type padding_char) const noexcept;
+
+    /// @brief Deletes all the characters from this string beginning at a specified position and continuing through the last position.
+    /// @param start_index The position to begin deleting characters.
+    /// @return A new string object that is equivalent to this string less the removed characters.
+    ustring remove(size_t start_index) const noexcept;
+    
+    /// @brief Deletes all the characters from this string beginning at a specified position and continuing through the last position.
+    /// @param start_index The position to begin deleting characters.
+    /// @param count The number of characters to delete.
+    /// @return A new string object that is equivalent to this string less the removed characters.
+    ustring remove(size_t start_index, size_t count) const noexcept;
+
+    /// @brief Replaces all occurrences of a specified char_t in this string with another specified char_t.
+    /// @param old_char A char_t to be replaced.
+    /// @param new_char A char_t to replace all occurrences of old_char.
+    /// @return A new string equivalent to the specified string but with all instances of old_char replaced with new_char.
+    ustring replace(value_type old_char, value_type new_char) const noexcept;
+    
+    /// @brief Replaces all occurrences of a specified string in this string with another specified string.
+    /// @param old_string A string to be replaced.
+    /// @param new_string A string to replace all occurrences of old_string.
+    /// @return A new string equivalent to the specified string but with all instances of old_string replaced with new_string.
+    /// @remarks If new_string is empty, all occurrences of old_string are removed
+    ustring replace(const ustring& old_string, const ustring& new_string) const noexcept;
+
+    /// @brief Splits this string into a maximum number of substrings based on the characters in an array.
+    /// @param separators A character array that delimits the substrings in this string, an empty array that contains no delimiters.
+    /// @param count The maximum number of substrings to return.
+    /// @param options xtd::string_split_options::remove_empty_entries to omit empty array elements from the array returned; or None to include empty array elements in the array returned.
+    /// @return An array whose elements contain the substrings in this string that are delimited by one or more characters in separators. For more information, see the Remarks section.
+    /// @remarks Delimiter characters are not included in the elements of the returned array.
+    /// @remarks If the specified string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified string.
+    /// @remarks If the count parameter is zero, or the options parameter is remove_empty_entries and the length of the specified string is zero, an empty array is returned.
+    /// @remarks Each element of separator defines a separate delimiter character. If the options parameter is None, and two delimiters are adjacent or a delimiter is found at the beginning or end of the specified string, the corresponding array element contains an empty string.
+    /// @remarks If there are more than count substrings in the specified string, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in the specified string are returned in the last element of the return value.
+    /// @remarks If count is greater than the number of substrings, the available substrings are returned.
+    std::vector<ustring> split(const std::vector<value_type>& separators, size_t count, string_split_options options) const noexcept;
+    
+    /// @brief Splits this string into substrings that are based on the default white-space characters. White-space characters are defined by the c++ standard and return true if they are passed to the std::isspace() or std::iswspace() method.
+    /// @return An array whose elements contain the substrings in this string that are delimited by one or more characters in white-space separators. For more information, see the Remarks section.
+    /// @remarks Delimiter characters are not included in the elements of the returned array.
+    /// @remarks If the specified string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified string.
+    std::vector<ustring> split() const noexcept;
+    
+    /// @brief Splits this string into substrings that are based on the characters in an array.
+    /// @param separators A character array that delimits the substrings in this string, an empty array that contains no delimiters.
+    /// @return An array whose elements contain the substrings in this string that are delimited by one or more characters in separators. For more information, see the Remarks section.
+    /// @remarks Delimiter characters are not included in the elements of the returned array.
+    /// @remarks If the specified string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified string.
+    std::vector<ustring> split(const std::vector<value_type>& separators) const noexcept;
+    
+    /// @brief Splits this string into substrings based on the characters in an array. You can specify whether the substrings include empty array elements.
+    /// @param separators A character array that delimits the substrings in this string, an empty array that contains no delimiters.
+    /// @param options xtd::string_split_options::remove_empty_entries to omit empty array elements from the array returned; or None to include empty array elements in the array returned.
+    /// @return An array whose elements contain the substrings in this string that are delimited by one or more characters in separators. For more information, see the Remarks section.
+    /// @remarks Delimiter characters are not included in the elements of the returned array.
+    /// @remarks If the specified string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified string.
+    /// @remarks If the specified string does not contain any of the characters in separator, the returned array consists of a single element that contains the specified string.
+    /// @remarks If the options parameter is remove_empty_entries and the length of the specified string is zero, the method returns an empty array.
+    /// @remarks Each element of separator defines a separate delimiter that consists of a single character. If the options argument is none, and two delimiters are adjacent or a delimiter is found at the beginning or end of the specified string, the corresponding array element contains empty string. For example, if separator includes two elements, "-" and "_", the value of the string instance is "-_aa-_", and the value of the options argument is None, the method returns a string array with the following five elements:
+    ///   1. empty string, which represents the empty string that precedes the "-" character at index 0.
+    ///   2. empty string, which represents the empty string between the "-" character at index 0 and the "_" character at index 1.
+    ///   3. "aa",
+    ///   4. empty string, which represents the empty string that follows the "_" character at index 4.
+    ///   5. empty string, which represents the empty string that follows the "-" character at index 5.
+    /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the c++ standard and return true if they are passed to the std::isspace() or std::iswspace() method.
+    /// @remarks If count is greater than the number of substrings, the available substrings are returned.
+    std::vector<ustring> split(const std::vector<value_type>& separators, string_split_options options) const noexcept;
+    
+    /// Splits this string into a maximum number of substrings based on the characters in an array. You also specify the maximum number of substrings to return.
+    /// @param separators A character array that delimits the substrings in this string, an empty array that contains no delimiters.
+    /// @param count The maximum number of substrings to return.
+    /// @remarks Delimiter characters are not included in the elements of the returned array.
+    /// @remarks If the specified string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified string.
+    /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the Unicode standard and return true if they are passed to the char_t.IsWhiteSpace method.
+    /// @remarks Each element of separator defines a separate delimiter character. If two delimiters are adjacent, or a delimiter is found at the beginning or end of the specified string, the corresponding array element contains empty string.
+    /// @remarks If there are more than count substrings in the specified string, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in the specified string are returned in the last element of the return value.
+    std::vector<ustring> split(const std::vector<value_type>& separators, size_t count) const noexcept;
     
     /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
     /// @param fmt A composite format string.
@@ -623,7 +859,7 @@ namespace xtd {
     /// | a         | Hexadecimal floating point, lowercase                                                                                                                    | -0xc.90fep-2 |
     /// | A         | Hexadecimal floating point, uppercase                                                                                                                    | -0XC.90FEP-2 |
     /// | c         | Character                                                                                                                                                | a            |
-    /// | s         | String of characters                                                                                                                                     | sample       |
+    /// | s         | string of characters                                                                                                                                     | sample       |
     /// | p         | Pointer address                                                                                                                                          | b8000000     |
     /// | n         | Nothing printed. The corresponding argument must be a pointer to a signed int. The number of characters written so far is stored in the pointed location |              |
     /// | %         | A % followed by another % character will write a single % to the stream.                                                                                 | %            |
@@ -661,15 +897,33 @@ namespace xtd {
     /// @remarks you can use std::string or std::wstring with format param %%s.
     template<typename ... args_t>
     static ustring sprintf(const ustring& fmt, args_t&& ... args) noexcept {return __sprintf(reinterpret_cast<const char*>(fmt.c_str()), std::forward<args_t>(args) ...);}
+    
+    /// @brief Retrieves a substring from this instance. The substring starts at a specified character position and has a specified length.
+    /// @param str string to substring.
+    /// @param start_index The zero-based starting character position of a substring in this instance.
+    /// @return A string equivalent to the substring of length length that begins at start_index in this instance, or Empty if start_index is equal to the length of this instance and length is zero.
+    ustring substring(size_t start_index) const noexcept {
+      if (start_index >= size()) return "";
+      return substr(start_index);
+    }
+    
+    /// @brief Retrieves a substring from this instance. The substring starts at a specified character position and has a specified length.
+    /// @param start_index The zero-based starting character position of a substring in this instance.
+    /// @param length The number of characters in the substring.
+    /// @return A string equivalent to the substring of length length that begins at start_index in this instance, or Empty if start_index is equal to the length of this instance and length is zero.
+    ustring substring(size_t start_index, size_t length) const noexcept {
+      if (start_index >= size()) return "";
+      return substr(start_index, length);
+    }
 
     /// @brief Returns a copy of the current string converted to lowercase.
-    /// @return String A new String in lowercase.
+    /// @return A new string in lowercase.
     ustring to_lower() const noexcept;
     
     std::string to_string() const noexcept override;
     
     /// @brief Returns a copy of the current string converted to uppercase.
-    /// @return String A new String in uppercase.
+    /// @return A new string in uppercase.
     ustring to_upper() const noexcept;
     
     /// @cond
@@ -677,6 +931,13 @@ namespace xtd {
     /// @endcond
     
   private:
+    static ustring get_class_name(const ustring& full_name) {
+      size_t length = full_name.last_index_of("<");
+      if (length == npos) length = full_name.length();
+      if (full_name.last_index_of("::", 0, length) == npos) return full_name;
+      return full_name.substring(full_name.last_index_of("::", 0, length) + 2);
+    }
+
     using std::basic_string<value_type>::assign;
     using std::basic_string<value_type>::reserve;
     using std::basic_string<value_type>::shrink_to_fit;
