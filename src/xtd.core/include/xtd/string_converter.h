@@ -32,7 +32,7 @@ namespace xtd {
     /// @brief Converts xtd::ustring to std::string.
     /// @param str string to convert.
     /// @return The converted string.
-    static std::string to_string(const ustring& str) noexcept;
+    static std::string to_string(const xtd::ustring& str) noexcept;
     /// @brief Converts std::u8string to std::string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -73,54 +73,54 @@ namespace xtd {
     /// @brief Converts std::string to xtd::ustring.
     /// @param str string to convert.
     /// @return The converted string.
-    static ustring to_ustring(const std::string& str) noexcept;
+    static xtd::ustring to_ustring(const std::string& str) noexcept;
     /// @brief Converts const char* to xtd::ustring.
     /// @param str string to convert.
     /// @return The converted string.
-    static ustring to_ustring(const char* str) noexcept;
+    static xtd::ustring to_ustring(const char* str) noexcept;
     /// @brief Converts char* to xtd::ustring.
     /// @param str string to convert.
     /// @return The converted string.
-    static ustring to_ustring(char* str) noexcept;
+    static xtd::ustring to_ustring(char* str) noexcept;
     /// @brief Converts xtd::ustring to xtd::ustring.
     /// @param str string to convert.
     /// @return The converted string.
-    static const ustring& to_ustring(const ustring& str) noexcept;
+    static const xtd::ustring& to_ustring(const xtd::ustring& str) noexcept;
     /// @brief Converts std::u8string to xtd::ustring.
     /// @param str string to convert.
     /// @return The converted string.
-    static ustring to_ustring(const std::u8string& str) noexcept;
+    static xtd::ustring to_ustring(const std::u8string& str) noexcept;
     /// @brief Converts const char8_t* to xtd::ustring.
     /// @param str string to convert.
     /// @return The converted string.
-    static ustring to_ustring(const char8_t* str) noexcept;
+    static xtd::ustring to_ustring(const char8_t* str) noexcept;
     /// @brief Converts char8_t* to xtd::ustring.
     /// @param str string to convert.
     /// @return The converted string.
-    static ustring to_ustring(char8_t* str) noexcept;
+    static xtd::ustring to_ustring(char8_t* str) noexcept;
     /// @brief Converts std::u16string to xtd::ustring.
     /// @param str string to convert.
     /// @return The converted string.
-    static ustring to_ustring(const std::u16string& str) noexcept;
+    static xtd::ustring to_ustring(const std::u16string& str) noexcept;
     /// @brief Converts const char16_t* to xtd::ustring.
     /// @param str string to convert.
     /// @return The converted string.
-    static ustring to_ustring(const char16_t* str) noexcept;
+    static xtd::ustring to_ustring(const char16_t* str) noexcept;
     /// @brief Converts char16_t* to xtd::ustring.
     /// @param str string to convert.
     /// @return The converted string.
-    static ustring to_ustring(char16_t* str) noexcept;
+    static xtd::ustring to_ustring(char16_t* str) noexcept;
     /// @brief Converts std::u32string to xtd::ustring.
     /// @param str string to convert.
     /// @return The converted string.
-    static ustring to_ustring(const std::u32string& str) noexcept;
+    static xtd::ustring to_ustring(const std::u32string& str) noexcept;
     /// @brief Converts const char32_t* to xtd::ustring.
     /// @param str string to convert.
     /// @return The converted string.
-    static ustring to_ustring(const char32_t* str) noexcept;
+    static xtd::ustring to_ustring(const char32_t* str) noexcept;
     /// @brief Converts char32_t* to xtd::ustring.
     /// @param str string to convert.
     /// @return The converted string.
-    static ustring to_ustring(char32_t* str) noexcept;
+    static xtd::ustring to_ustring(char32_t* str) noexcept;
   };
 }
