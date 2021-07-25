@@ -1,4 +1,5 @@
 #include "../../include/xtd/object.h"
+#include "../../include/xtd/ustring.h"
 #include "../../include/xtd/strings.h"
 
 using namespace std;
@@ -24,3 +25,7 @@ bool object::reference_equals(const object& object_a, const object& object_b) no
 std::string object::to_string() const noexcept {
   return strings::full_class_name(*this);
 }
+
+//ustring object::to_string() const noexcept {
+//  return ustring::full_class_name(*this);
+//}

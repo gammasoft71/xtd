@@ -88,6 +88,7 @@
 #include "underflow_exception.h"
 #include "unused.h"
 #include "using.h"
+#include "ustring.h"
 #include "va_args_comma.h"
 #include "version.h"
 #include "wconsole.h"
