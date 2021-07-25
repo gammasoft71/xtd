@@ -20,7 +20,7 @@ namespace xtd {
     static_object() = delete;
   };
 
-  /// @brief This keyword is use to represent a static objcct. A static object can't be instancied (constructors are deleted).
+  /// @brief This keyword is use to represent a static object. A static object can't be instancied (constructors are deleted).
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core keywords
