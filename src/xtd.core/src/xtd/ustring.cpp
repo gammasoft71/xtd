@@ -513,12 +513,6 @@ ustring ustring::substring(size_t start_index, size_t length) const noexcept {
   return substr(start_index, length);
 }
 
-ustring ustring::to_lower() const noexcept {
-  ustring result;
-  for(auto c : *this) result.push_back(static_cast<value_type>(tolower(c)));
-  return result;
-}
-
 std::vector<ustring::value_type> ustring::to_array() const noexcept {
   return to_array(0, size());
 }
@@ -533,6 +527,12 @@ std::vector<ustring::value_type> ustring::to_array(size_t start_index, size_t le
   return {begin() + start_index, begin() + start_index + length};
 }
 
+ustring ustring::to_lower() const noexcept {
+  ustring result;
+  for(auto c : *this) result.push_back(static_cast<value_type>(tolower(c)));
+  return result;
+}
+
 string ustring::to_string() const noexcept {
   return reinterpret_cast<const char*>(c_str());
 }
@@ -544,5 +544,48 @@ string ustring::to_string() const noexcept {
 ustring ustring::to_upper() const noexcept {
   ustring result;
   for(auto c : *this) result.push_back(static_cast<value_type>(toupper(c)));
+  return result;
+}
+
+ustring ustring::trim() const noexcept {
+  return trim(std::vector<value_type> {9, 10, 11, 12, 13, 32});
+}
+
+ustring ustring::trim(value_type trim_char) const noexcept {
+  return trim(std::vector<value_type> {trim_char});
+}
+
+ustring ustring::trim(const std::vector<value_type>& trim_chars) const noexcept {
+  return trim_start(trim_chars).trim_end(trim_chars);
+}
+
+ustring ustring::trim_end() const noexcept {
+  return trim_end(std::vector<value_type> {9, 10, 11, 12, 13, 32});
+}
+
+ustring ustring::trim_end(value_type trim_char) const noexcept {
+  return trim_end(std::vector<value_type> {trim_char});
+}
+
+ustring ustring::trim_end(const std::vector<value_type>& trim_chars) const noexcept {
+  if (!size()) return *this;
+  ustring result(*this);
+  while (std::find(trim_chars.begin(), trim_chars.end(), result[result.size() - 1]) != trim_chars.end())
+    result.erase(result.size() - 1, 1);
+  return result;
+}
+
+ustring ustring::trim_start() const noexcept {
+  return trim_start(std::vector<value_type> {9, 10, 11, 12, 13, 32});
+}
+
+ustring ustring::trim_start(value_type trim_char) const noexcept {
+  return trim_start(std::vector<value_type> {trim_char});
+}
+
+ustring ustring::trim_start(const std::vector<value_type>& trim_chars) const noexcept {
+  ustring result(*this);
+  while (std::find(trim_chars.begin(), trim_chars.end(), result[0]) != trim_chars.end())
+    result.erase(0, 1);
   return result;
 }
