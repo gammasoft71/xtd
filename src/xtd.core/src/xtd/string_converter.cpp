@@ -87,6 +87,21 @@ string string_converter::to_string(char32_t* str) noexcept {
   return to_string(u32string(str));
 }
 
+string string_converter::to_string(const wstring& str) noexcept {
+  string result;
+  for(auto c : str)
+    result += codepoint_to_string<char>(c);
+  return result;
+}
+
+string string_converter::to_string(const wchar_t* str) noexcept {
+  return to_string(wstring(str));
+}
+
+string string_converter::to_string(wchar_t* str) noexcept {
+  return to_string(wstring(str));
+}
+
 ustring string_converter::to_ustring(const string& str) noexcept {
   return str;
 }
@@ -136,6 +151,18 @@ ustring string_converter::to_ustring(const char32_t* str) noexcept {
 }
 
 ustring string_converter::to_ustring(char32_t* str) noexcept {
+  return str;
+}
+
+ustring string_converter::to_ustring(const wstring& str) noexcept {
+  return str;
+}
+
+ustring string_converter::to_ustring(const wchar_t* str) noexcept {
+  return str;
+}
+
+ustring string_converter::to_ustring(wchar_t* str) noexcept {
   return str;
 }
 
@@ -195,6 +222,21 @@ u8string string_converter::to_u8string(const char32_t* str) noexcept {
 
 u8string string_converter::to_u8string(char32_t* str) noexcept {
   return to_u8string(u32string(str));
+}
+
+u8string string_converter::to_u8string(const wstring& str) noexcept {
+  u8string result;
+  for(auto c : str)
+    result += codepoint_to_string<char8_t>(c);
+  return result;
+}
+
+u8string string_converter::to_u8string(const wchar_t* str) noexcept {
+  return to_u8string(wstring(str));
+}
+
+u8string string_converter::to_u8string(wchar_t* str) noexcept {
+  return to_u8string(wstring(str));
 }
 
 u16string string_converter::to_u16string(const string& str) noexcept {
@@ -264,5 +306,17 @@ u16string string_converter::to_u16string(const char32_t* str) noexcept {
 }
 
 u16string string_converter::to_u16string(char32_t* str) noexcept {
+  return to_u16string(to_ustring(str));
+}
+
+u16string string_converter::to_u16string(const wstring& str) noexcept {
+  return to_u16string(to_ustring(str));
+}
+
+u16string string_converter::to_u16string(const wchar_t* str) noexcept {
+  return to_u16string(to_ustring(str));
+}
+
+u16string string_converter::to_u16string(wchar_t* str) noexcept {
   return to_u16string(to_ustring(str));
 }

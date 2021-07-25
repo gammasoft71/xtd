@@ -69,7 +69,19 @@ namespace xtd {
     /// @param str string to convert.
     /// @return The converted string.
     static std::string to_string(char32_t* str) noexcept;
-    
+    /// @brief Converts std::wstring to std::string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static std::string to_string(const std::wstring& str) noexcept;
+    /// @brief Converts const wchar_t* to std::string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static std::string to_string(const wchar_t* str) noexcept;
+    /// @brief Converts wchar_t* to std::string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static std::string to_string(wchar_t* str) noexcept;
+
     /// @brief Converts std::string to xtd::ustring.
     /// @param str string to convert.
     /// @return The converted string.
@@ -122,6 +134,18 @@ namespace xtd {
     /// @param str string to convert.
     /// @return The converted string.
     static xtd::ustring to_ustring(char32_t* str) noexcept;
+    /// @brief Converts std::wstring to xtd::ustring.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static xtd::ustring to_ustring(const std::wstring& str) noexcept;
+    /// @brief Converts const wchar_t* to xtd::ustring.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static xtd::ustring to_ustring(const wchar_t* str) noexcept;
+    /// @brief Converts wchar_t* to xtd::ustring.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static xtd::ustring to_ustring(wchar_t* str) noexcept;
 
     /// @brief Converts std::string to std::u8string.
     /// @param str string to convert.
@@ -175,6 +199,18 @@ namespace xtd {
     /// @param str string to convert.
     /// @return The converted string.
     static std::u8string to_u8string(char32_t* str) noexcept;
+    /// @brief Converts std::wstring to std::u8string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static std::u8string to_u8string(const std::wstring& str) noexcept;
+    /// @brief Converts const wchar_t* to std::u8string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static std::u8string to_u8string(const wchar_t* str) noexcept;
+    /// @brief Converts wchar_t* to std::u8string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static std::u8string to_u8string(wchar_t* str) noexcept;
 
     /// @brief Converts std::string to std::u16string.
     /// @param str string to convert.
@@ -228,5 +264,17 @@ namespace xtd {
     /// @param str string to convert.
     /// @return The converted string.
     static std::u16string to_u16string(char32_t* str) noexcept;
+    /// @brief Converts std::wstring to std::to_u16string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static std::u16string to_u16string(const std::wstring& str) noexcept;
+    /// @brief Converts const wchar_t* to std::to_u16string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static std::u16string to_u16string(const wchar_t* str) noexcept;
+    /// @brief Converts wchar_t* to std::to_u16string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    static std::u16string to_u16string(wchar_t* str) noexcept;
   };
 }
