@@ -60,6 +60,7 @@ add_sources(
   src/ticks.cpp
   src/time_out_exception.cpp
   src/underflow_exception.cpp
+  src/ustring.cpp
   src/version.cpp
   src/wstring_boolean_format.cpp
   src/wstring_date_time_format.cpp
