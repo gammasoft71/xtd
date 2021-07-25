@@ -485,15 +485,61 @@ std::vector<ustring> ustring::split(const std::vector<value_type>& separators, s
   return split(separators, count, string_split_options::none);
 }
 
+bool ustring::starts_with(value_type value) const noexcept {
+  return starts_with(value, false);
+}
+
+bool ustring::starts_with(value_type value, bool ignore_case) const noexcept {
+  if (ignore_case) return to_lower().find(static_cast<value_type>(tolower(value))) == 0;
+  return find(value) == 0;
+}
+
+bool ustring::starts_with(const ustring& value) const noexcept {
+  return starts_with(value, false);
+}
+
+bool ustring::starts_with(const ustring& value, bool ignore_case) const noexcept {
+  if (ignore_case) return to_lower().find(value.to_lower()) == 0;
+  return find(value) == 0;
+}
+
+ustring ustring::substring(size_t start_index) const noexcept {
+  if (start_index >= size()) return "";
+  return substr(start_index);
+}
+
+ustring ustring::substring(size_t start_index, size_t length) const noexcept {
+  if (start_index >= size()) return "";
+  return substr(start_index, length);
+}
+
 ustring ustring::to_lower() const noexcept {
   ustring result;
   for(auto c : *this) result.push_back(static_cast<value_type>(tolower(c)));
   return result;
 }
 
+std::vector<ustring::value_type> ustring::to_array() const noexcept {
+  return to_array(0, size());
+}
+
+std::vector<ustring::value_type> ustring::to_array(size_t start_index) const noexcept {
+  return to_array(start_index, size() - start_index);
+}
+
+std::vector<ustring::value_type> ustring::to_array(size_t start_index, size_t length) const noexcept {
+  if (start_index >= size()) return {};
+  if (start_index + length >= size()) return {begin() + start_index, end()};
+  return {begin() + start_index, begin() + start_index + length};
+}
+
 string ustring::to_string() const noexcept {
   return reinterpret_cast<const char*>(c_str());
 }
+
+//ustring ustring::to_string() const noexcept {
+//  return *this;
+//}
 
 ustring ustring::to_upper() const noexcept {
   ustring result;

@@ -898,30 +898,66 @@ namespace xtd {
     template<typename ... args_t>
     static ustring sprintf(const ustring& fmt, args_t&& ... args) noexcept {return __sprintf(reinterpret_cast<const char*>(fmt.c_str()), std::forward<args_t>(args) ...);}
     
+    /// @brief Determines whether the beginning of this instance of String matches a specified String.
+    /// @param value A String to compare to.
+    /// @return bool true if value matches the beginning of the specified string; otherwise, false.
+    /// @remarks This method compares value to the substring at the beginning of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified string.
+    bool starts_with(value_type value) const noexcept;
+    
+    /// @brief Determines whether the beginning of this instance of String matches a specified String, ignoring or honoring their case.
+    /// @param value A String to compare to.
+    /// @param ignore_case true to ignore case when comparing the specified string and value; otherwise, false
+    /// @return bool true if value matches the beginning of the specified string; otherwise, false.
+    /// @remarks This method compares value to the substring at the beginning of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified string.
+    bool starts_with(value_type value, bool ignore_case) const noexcept;
+    
+    /// @brief Determines whether the beginning of this instance of String matches a specified String.
+    /// @param value A String to compare to.
+    /// @return bool true if value matches the beginning of the specified string; otherwise, false.
+    /// @remarks This method compares value to the substring at the beginning of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified string.
+    bool starts_with(const ustring& value) const noexcept;
+    
+    /// @brief Determines whether the beginning of this instance of String matches a specified String, ignoring or honoring their case.
+    /// @param value A String to compare to.
+    /// @param ignore_case true to ignore case when comparing the specified string and value; otherwise, false
+    /// @return bool true if value matches the beginning of the specified string; otherwise, false.
+    /// @remarks This method compares value to the substring at the beginning of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified string.
+    bool starts_with(const ustring& value, bool ignore_case) const noexcept;
+
     /// @brief Retrieves a substring from this instance. The substring starts at a specified character position and has a specified length.
     /// @param str string to substring.
     /// @param start_index The zero-based starting character position of a substring in this instance.
     /// @return A string equivalent to the substring of length length that begins at start_index in this instance, or Empty if start_index is equal to the length of this instance and length is zero.
-    ustring substring(size_t start_index) const noexcept {
-      if (start_index >= size()) return "";
-      return substr(start_index);
-    }
+    ustring substring(size_t start_index) const noexcept;
     
     /// @brief Retrieves a substring from this instance. The substring starts at a specified character position and has a specified length.
     /// @param start_index The zero-based starting character position of a substring in this instance.
     /// @param length The number of characters in the substring.
     /// @return A string equivalent to the substring of length length that begins at start_index in this instance, or Empty if start_index is equal to the length of this instance and length is zero.
-    ustring substring(size_t start_index, size_t length) const noexcept {
-      if (start_index >= size()) return "";
-      return substr(start_index, length);
-    }
+    ustring substring(size_t start_index, size_t length) const noexcept;
 
     /// @brief Returns a copy of the current string converted to lowercase.
     /// @return A new string in lowercase.
     ustring to_lower() const noexcept;
     
-    std::string to_string() const noexcept override;
+    /// @brief Copies the characters in this instance to a Unicode character array.
+    /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty String, the returned array is empty and has a zero length.
+    std::vector<value_type> to_array() const noexcept;
     
+    /// @brief Copies the characters in this instance to a Unicode character array starting at specitied index.
+    /// @param start_index The starting position of string to convert.
+    /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty String, the returned array is empty and has a zero length.
+    std::vector<value_type> to_array(size_t start_index) const noexcept;
+    
+    /// @brief Copies the characters in this instance to a Unicode character array starting at specitied index with specified legnth.
+    /// @param start_index The starting position of string to convert.
+    /// @param length The length of the string to convert
+    /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty String, the returned array is empty and has a zero length.
+    std::vector<value_type> to_array(size_t start_index, size_t length) const noexcept;
+
+    //ustring to_string() const noexcept override;
+    std::string to_string() const noexcept override;
+
     /// @brief Returns a copy of the current string converted to uppercase.
     /// @return A new string in uppercase.
     ustring to_upper() const noexcept;
