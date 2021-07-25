@@ -57,22 +57,10 @@ ustring::ustring(const value_type* str) : basic_string<value_type>(str) {
 ustring::ustring(const value_type* str, const allocator_type& allocator) : basic_string<value_type>(str, allocator) {
 }
 
-ustring::ustring(const char* str) : basic_string<value_type>(reinterpret_cast<const value_type*>(str)) {
-}
-
-ustring::ustring(const char* str, const allocator_type& allocator) : basic_string<value_type>(reinterpret_cast<const value_type*>(str), allocator) {
-}
-
 ustring::ustring(value_type* str) : basic_string<value_type>(str) {
 }
 
 ustring::ustring(value_type* str, const allocator_type& allocator) : basic_string<value_type>(str, allocator) {
-}
-
-ustring::ustring(char* str) : basic_string<value_type>(reinterpret_cast<const value_type*>(str)) {
-}
-
-ustring::ustring(char* str, const allocator_type& allocator) : basic_string<value_type>(reinterpret_cast<const value_type*>(str), allocator) {
 }
 
 ustring::ustring(const ustring& str) noexcept : basic_string<value_type>(str) {
@@ -81,16 +69,88 @@ ustring::ustring(const ustring& str) noexcept : basic_string<value_type>(str) {
 ustring::ustring(const ustring& str, const allocator_type& allocator) noexcept : basic_string<value_type>(str, allocator) {
 }
 
-ustring::ustring(const basic_string<value_type>& str) noexcept : basic_string<value_type>(str) {
-}
-
-ustring::ustring(const basic_string<value_type>& str, const allocator_type& allocator) noexcept : basic_string<value_type>(str, allocator) {
-}
-
 ustring::ustring(const std::string& str) noexcept : basic_string<value_type>(reinterpret_cast<const value_type*>(str.c_str())) {
 }
 
 ustring::ustring(const std::string& str, const allocator_type& allocator) noexcept : basic_string<value_type>((value_type*)str.c_str(), allocator) {
+}
+
+ustring::ustring(const char* str) : basic_string<value_type>(reinterpret_cast<const value_type*>(str)) {
+}
+
+ustring::ustring(const char* str, const allocator_type& allocator) : basic_string<value_type>(reinterpret_cast<const value_type*>(str), allocator) {
+}
+
+ustring::ustring(char* str) : basic_string<value_type>(reinterpret_cast<const value_type*>(str)) {
+}
+
+ustring::ustring(char* str, const allocator_type& allocator) : basic_string<value_type>(reinterpret_cast<const value_type*>(str), allocator) {
+}
+
+ustring::ustring(const u8string& str) noexcept : basic_string<value_type>(str) {
+}
+
+ustring::ustring(const u8string& str, const allocator_type& allocator) noexcept : basic_string<value_type>(str, allocator) {
+}
+
+ustring::ustring(const std::u16string& str) noexcept : ustring(str, allocator_type()) {
+}
+
+ustring::ustring(const std::u16string& str, const allocator_type& allocator) noexcept : basic_string<value_type>(allocator) {
+  for (auto c : str)
+    *this += codepoint_to_string(c);
+}
+
+ustring::ustring(const char16_t* str) : ustring(u16string(str)) {
+}
+
+ustring::ustring(const char16_t* str, const allocator_type& allocator) : ustring(u16string(str), allocator) {
+}
+
+ustring::ustring(char16_t* str) : ustring(u16string(str)) {
+}
+
+ustring::ustring(char16_t* str, const allocator_type& allocator) : ustring(u16string(str), allocator) {
+}
+
+ustring::ustring(const std::u32string& str) noexcept : ustring(str, allocator_type()) {
+}
+
+ustring::ustring(const std::u32string& str, const allocator_type& allocator) noexcept : basic_string<value_type>(allocator) {
+  for (auto c : str)
+    *this += codepoint_to_string(c);
+}
+
+ustring::ustring(const char32_t* str) : ustring(u32string(str)) {
+}
+
+ustring::ustring(const char32_t* str, const allocator_type& allocator) : ustring(u32string(str), allocator) {
+}
+
+ustring::ustring(char32_t* str) : ustring(u32string(str)) {
+}
+
+ustring::ustring(char32_t* str, const allocator_type& allocator) : ustring(u32string(str), allocator) {
+}
+
+ustring::ustring(const std::wstring& str) noexcept : ustring(str, allocator_type()) {
+}
+
+ustring::ustring(const std::wstring& str, const allocator_type& allocator) noexcept : basic_string<value_type>(allocator) {
+  for (auto c : str)
+    *this += codepoint_to_string(c);
+}
+
+ustring::ustring(const wchar_t* str) : ustring(wstring(str)) {
+}
+
+ustring::ustring(const wchar_t* str, const allocator_type& allocator) : ustring(wstring(str), allocator) {
+}
+
+ustring::ustring(wchar_t* str) : ustring(wstring(str)) {
+}
+
+ustring::ustring(wchar_t* str, const allocator_type& allocator) : ustring(wstring(str), allocator) {
 }
 
 ustring::ustring(ustring&& str) noexcept : basic_string<value_type>(str) {
@@ -588,4 +648,31 @@ ustring ustring::trim_start(const std::vector<value_type>& trim_chars) const noe
   while (std::find(trim_chars.begin(), trim_chars.end(), result[0]) != trim_chars.end())
     result.erase(0, 1);
   return result;
+}
+
+ustring ustring::codepoint_to_string(char32_t codepoint) {
+  ustring result;
+  if (codepoint < 0x80) {
+    result.push_back(static_cast<value_type>(codepoint));
+  } else  if (codepoint < 0x800) {
+    result.push_back(static_cast<value_type>((codepoint >> 6) | 0xc0));
+    result.push_back(static_cast<value_type>((codepoint & 0x3f) | 0x80));
+  } else if (codepoint < 0x10000) {
+    result.push_back(static_cast<value_type>((codepoint >> 12) | 0xe0));
+    result.push_back(static_cast<value_type>(((codepoint >> 6) & 0x3f) | 0x80));
+    result.push_back(static_cast<value_type>((codepoint & 0x3f) | 0x80));
+  } else {
+    result.push_back(static_cast<value_type>((codepoint >> 18) | 0xf0));
+    result.push_back(static_cast<value_type>(((codepoint >> 12) & 0x3f) | 0x80));
+    result.push_back(static_cast<value_type>(((codepoint >> 6) & 0x3f) | 0x80));
+    result.push_back(static_cast<value_type>((codepoint & 0x3f) | 0x80));
+  }
+  return result;
+}
+
+ustring ustring::get_class_name(const ustring& full_name) {
+  size_t length = full_name.last_index_of("<");
+  if (length == npos) length = full_name.length();
+  if (full_name.last_index_of("::", 0, length) == npos) return full_name;
+  return full_name.substring(full_name.last_index_of("::", 0, length) + 2);
 }
