@@ -2313,5 +2313,299 @@ namespace xtd {
   inline std::wstring as<std::wstring>(char32_t* value) {
     return convert_string::to_wstring(value);
   }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  template<typename new_type_t>
+  new_type_t as(const std::wstring& value) {
+    try {
+      return dynamic_cast<const new_type_t&>(value);
+    } catch (const std::exception& e) {
+      throw invalid_cast_exception(e.what(), csf_);
+    }
+    throw std::bad_cast();
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring s1 = L"Gammasoft";
+  /// string s2 = as<string>(s1);
+  /// @endcode
+  template<>
+  inline std::string as<std::string>(const std::wstring& value) {
+    return convert_string::to_string(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring s1 = L"Gammasoft";
+  /// ustring s2 = as<ustring>(s1);
+  /// @endcode
+  template<>
+  inline xtd::ustring as<xtd::ustring>(const std::wstring& value) {
+    return convert_string::to_ustring(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring s1 = L"Gammasoft";
+  /// u8string s2 = as<u8string>(s1);
+  /// @endcode
+  template<>
+  inline std::u8string as<std::u8string>(const std::wstring& value) {
+    return convert_string::to_u8string(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring s1 = L"Gammasoft";
+  /// u16string s2 = as<u16string>(s1);
+  /// @endcode
+  template<>
+  inline std::u16string as<std::u16string>(const std::wstring& value) {
+    return convert_string::to_u16string(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring s1 = L"Gammasoft";
+  /// u32string s2 = as<u32string>(s1);
+  /// @endcode
+  template<>
+  inline std::u32string as<std::u32string>(const std::wstring& value) {
+    return convert_string::to_u32string(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring s1 = L"Gammasoft";
+  /// wstring s2 = as<wstring>(s1);
+  /// @endcode
+  template<>
+  inline std::wstring as<std::wstring>(const std::wstring& value) {
+    return convert_string::to_wstring(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// const wchar_t* c1 = L"Gammasoft";
+  /// intptr_t handle = as<intptr_t>(c1);
+  /// @endcode
+  template<typename new_type_t>
+  new_type_t as(const wchar_t* value) {
+    return reinterpret_cast<new_type_t>(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// const wchar_t* c1 = L"Gammasoft";
+  /// string s1 = as<string>(c1);
+  /// @endcode
+  template<>
+  inline std::string as<std::string>(const wchar_t* value) {
+    return convert_string::to_string(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// const wchar_t* c1 = L"Gammasoft";
+  /// ustring s1 = as<ustring>(c1);
+  /// @endcode
+  template<>
+  inline xtd::ustring as<xtd::ustring>(const wchar_t* value) {
+    return convert_string::to_ustring(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// const wchar_t* c1 = L"Gammasoft";
+  /// u8string s1 = as<u8string>(c1);
+  /// @endcode
+  template<>
+  inline std::u8string as<std::u8string>(const wchar_t* value) {
+    return convert_string::to_u8string(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// const wchar_t* c1 = L"Gammasoft";
+  /// u16string s1 = as<u16string>(c1);
+  /// @endcode
+  template<>
+  inline std::u16string as<std::u16string>(const wchar_t* value) {
+    return convert_string::to_u16string(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// const wchar_t* c1 = L"Gammasoft";
+  /// u32string s1 = as<u32string>(c1);
+  /// @endcode
+  template<>
+  inline std::u32string as<std::u32string>(const wchar_t* value) {
+    return convert_string::to_u32string(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// const wchar_t* c1 = L"Gammasoft";
+  /// wstring s1 = as<wstring>(c1);
+  /// @endcode
+  template<>
+  inline std::wstring as<std::wstring>(const wchar_t* value) {
+    return convert_string::to_wstring(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wchar_t* c1 = L"Gammasoft";
+  /// intptr_t handle = as<intptr_t>(c1);
+  /// @endcode
+  template<typename new_type_t>
+  new_type_t as(wchar_t* value) {
+    return reinterpret_cast<new_type_t>(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wchar_t* c1 = L"Gammasoft";
+  /// string s1 = as<string>(c1);
+  /// @endcode
+  template<>
+  inline std::string as<std::string>(wchar_t* value) {
+    return convert_string::to_string(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wchar_t* c1 = L"Gammasoft";
+  /// ustring s1 = as<ustring>(c1);
+  /// @endcode
+  template<>
+  inline xtd::ustring as<xtd::ustring>(wchar_t* value) {
+    return convert_string::to_ustring(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wchar_t* c1 = L"Gammasoft";
+  /// u8string s1 = as<u8string>(c1);
+  /// @endcode
+  template<>
+  inline std::u8string as<std::u8string>(wchar_t* value) {
+    return convert_string::to_u8string(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wchar_t* c1 = L"Gammasoft";
+  /// u16string s1 = as<u16string>(c1);
+  /// @endcode
+  template<>
+  inline std::u16string as<std::u16string>(wchar_t* value) {
+    return convert_string::to_u16string(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wchar_t* c1 = L"Gammasoft";
+  /// u32string s1 = as<u32string>(c1);
+  /// @endcode
+  template<>
+  inline std::u32string as<std::u32string>(wchar_t* value) {
+    return convert_string::to_u32string(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wchar_t* c1 = L"Gammasoft";
+  /// wstring s1 = as<wstring>(c1);
+  /// @endcode
+  template<>
+  inline std::wstring as<std::wstring>(wchar_t* value) {
+    return convert_string::to_wstring(value);
+  }
 
 }
