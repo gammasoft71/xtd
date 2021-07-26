@@ -76,6 +76,7 @@
 #include "string_comparison.h"
 #include "string_split_options.h"
 #include "strings.h"
+#include "convert_string.h"
 #include "system_exception.h"
 #include "tick.h"
 #include "ticks.h"
