@@ -1151,7 +1151,7 @@ namespace xtd {
   new_type_t as(const char* value) {
     return reinterpret_cast<new_type_t>(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Library
   /// xtd.core
@@ -1161,11 +1161,11 @@ namespace xtd {
   /// const char* c1 = "Gammasoft";
   /// string s1 = as<string>(c1);
   /// @endcode
- template<>
+  template<>
   inline std::string as<std::string>(const char* value) {
     return convert_string::to_string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Library
   /// xtd.core
@@ -1179,7 +1179,7 @@ namespace xtd {
   inline xtd::ustring as<xtd::ustring>(const char* value) {
     return convert_string::to_ustring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Library
   /// xtd.core
@@ -1193,7 +1193,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(const char* value) {
     return convert_string::to_u8string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Library
   /// xtd.core
@@ -1207,7 +1207,7 @@ namespace xtd {
   inline std::u16string as<std::u16string>(const char* value) {
     return convert_string::to_u16string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Library
   /// xtd.core
@@ -1221,7 +1221,7 @@ namespace xtd {
   inline std::u32string as<std::u32string>(const char* value) {
     return convert_string::to_u32string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Library
   /// xtd.core
@@ -1233,6 +1233,104 @@ namespace xtd {
   /// @endcode
   template<>
   inline std::wstring as<std::wstring>(const char* value) {
+    return convert_string::to_wstring(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char* c1 = "Gammasoft";
+  /// intptr_t handle = as<intptr_t>(c1);
+  /// @endcode
+  template<typename new_type_t>
+  new_type_t as(char* value) {
+    return reinterpret_cast<new_type_t>(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char* c1 = "Gammasoft";
+  /// string s1 = as<string>(c1);
+  /// @endcode
+  template<>
+  inline std::string as<std::string>(char* value) {
+    return convert_string::to_string(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char* c1 = "Gammasoft";
+  /// ustring s1 = as<ustring>(c1);
+  /// @endcode
+  template<>
+  inline xtd::ustring as<xtd::ustring>(char* value) {
+    return convert_string::to_ustring(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char* c1 = "Gammasoft";
+  /// u8string s1 = as<u8string>(c1);
+  /// @endcode
+  template<>
+  inline std::u8string as<std::u8string>(char* value) {
+    return convert_string::to_u8string(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char* c1 = "Gammasoft";
+  /// u16string s1 = as<u16string>(c1);
+  /// @endcode
+  template<>
+  inline std::u16string as<std::u16string>(char* value) {
+    return convert_string::to_u16string(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char* c1 = "Gammasoft";
+  /// u32string s1 = as<u32string>(c1);
+  /// @endcode
+  template<>
+  inline std::u32string as<std::u32string>(char* value) {
+    return convert_string::to_u32string(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char* c1 = "Gammasoft";
+  /// wstring s1 = as<wstring>(c1);
+  /// @endcode
+  template<>
+  inline std::wstring as<std::wstring>(char* value) {
     return convert_string::to_wstring(value);
   }
 
