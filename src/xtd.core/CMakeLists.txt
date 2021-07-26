@@ -33,6 +33,7 @@ add_sources(
   include/xtd/console_key_info.h
   include/xtd/console_modifiers.h
   include/xtd/console_special_key.h
+  include/xtd/convert_string.h
   include/xtd/cpp_language.h
   include/xtd/ctrace.h
   include/xtd/debugstreambuf.h
@@ -80,7 +81,6 @@ add_sources(
   include/xtd/startup.h
   include/xtd/static.h
   include/xtd/string_comparison.h
-  include/xtd/string_converter.h
   include/xtd/string_split_options.h
   include/xtd/strings.h
   include/xtd/system_exception.h
@@ -188,12 +188,12 @@ add_sources(
   include/xtd/web/css/writer.h
   src/xtd/environment_version.cpp
   src/xtd/bit_converter.cpp
+  src/xtd/convert_string.cpp
   src/xtd/environment.cpp
   src/xtd/event_args.cpp
   src/xtd/guid.cpp
   src/xtd/object.cpp
 # src/xtd/signal_catcher.cpp
-  src/xtd/string_converter.cpp
   src/xtd/strings.cpp
   src/xtd/system_exception.cpp
   src/xtd/translator.cpp
