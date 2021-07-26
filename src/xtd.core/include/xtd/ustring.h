@@ -6,6 +6,7 @@
 #include "string_split_options.h"
 #include "types.h"
 #include "object.h"
+#include "parse.h"
 /// @cond
 #define __XTD_CORE_INTERNAL__
 #include "internal/__generic_stream_output.h"
@@ -271,6 +272,9 @@ namespace xtd {
     const value_type& operator[](size_t index) const;
     ustring substr(size_type index = 0, size_type count = npos) const;
     /// @endcond
+    
+    /// @todo Remove when all std::sttring replaced by ustring.
+    operator std::string() const {return reinterpret_cast<const char*>(c_str());}
     
     /// @brief Gets the fully qualified class name of the objec_t, including the namespace of the objec_t.
     /// @return The fully qualified class name of the objec_t, including the namespace of the objec_t.
@@ -966,7 +970,7 @@ namespace xtd {
     /// @remarks Note regarding the c specifier: it takes an int (or wint_t) as argument, but performs the proper conversion to a char value (or a wchar_t) before formatting it for output.
     /// @remarks you can use std::string or std::wstring with format param %%s.
     template<typename ... args_t>
-    static ustring sprintf(const ustring& fmt, args_t&& ... args) noexcept {return __sprintf(reinterpret_cast<const char*>(fmt.c_str()), std::forward<args_t>(args) ...);}
+    static ustring sprintf(const ustring& fmt, args_t&& ... args) noexcept {return __sprintf(reinterpret_cast<const char*>(fmt.c_str()), convert_param(std::forward<args_t>(args) ...));}
     
     /// @brief Determines whether the beginning of this instance of String matches a specified String.
     /// @param value A String to compare to.
@@ -1085,12 +1089,34 @@ namespace xtd {
     /// @param trim_chars An array of characters to remove.
     /// @return The String that remains after all occurrences of the characters in the trim_chars parameter are removed from the start of the specified String.
     ustring trim_start(const std::vector<value_type>& trim_chars) const noexcept;
+    
+    template<typename value_t>
+    static value_t parse(const ustring& str) {
+      return xtd::parse<value_t>(str);
+    }
+    
+    template<typename value_t>
+    static bool try_parse(const ustring& str, value_t& value) {
+      try {
+        value = parse<value_t>(str);
+        return true;
+      } catch(...) {
+        return false;
+      }
+    }
 
     /// @cond
     friend std::ostream& operator<<(std::ostream& os, const ustring& str) {return os << (reinterpret_cast<const char*>(str.c_str()));}
     /// @endcond
     
   private:
+    template<typename arg_t>
+    static auto convert_param(arg_t&& arg) noexcept {
+      if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::string>::value) return std::forward<arg_t>(arg).c_str();
+      else if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::wstring>::value) return std::forward<arg_t>(arg).c_str();
+      else return std::forward<arg_t>(arg);
+    }
+    
     static ustring codepoint_to_string(char32_t codepoint);
     static ustring get_class_name(const ustring& full_name);
 

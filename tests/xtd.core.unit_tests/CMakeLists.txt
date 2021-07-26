@@ -15,6 +15,7 @@ add_sources(
   src/bit_converter.cpp
   src/bytes_assert.h
   src/console_key_info.cpp
+  src/convert_string.cpp
   src/divided_by_zero_exception.cpp
   src/domain_exception.cpp
   src/delegate.cpp
@@ -54,7 +55,6 @@ add_sources(
   src/string_object_format.cpp
   src/string_object_format_without_xtd_to_string.cpp
   src/string_string_format.cpp
-  src/strings.cpp
   src/system_exception.cpp
   src/tick.cpp
   src/ticks.cpp
