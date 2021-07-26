@@ -44,6 +44,10 @@ public:
 private:
   char value_ = 0;
 };
+
+namespace std {
+  using u8string=basic_string<char8_t>;
+}
 #endif
 
 using decimal_t = long double;

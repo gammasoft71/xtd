@@ -181,12 +181,12 @@ ustring& ustring::operator=(const ustring& str) {
 }
 
 ustring& ustring::operator=(value_type character) {
-  *this = format("{}", character);
+  *this = ustring(1, character);
   return  *this;;
 }
 
 ustring& ustring::operator=(char character) {
-  *this = format("{}", character);
+  *this = ustring(1, character);
   return  *this;;
 }
 

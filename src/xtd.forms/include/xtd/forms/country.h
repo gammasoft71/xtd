@@ -4,7 +4,7 @@
 #pragma once
 #include "../forms_export.h"
 #include <xtd/object.h>
-#include <xtd/strings.h>
+#include <xtd/convert_string.h>
 #include <xtd/static.h>
 #include <xtd/drawing/bitmap.h>
 
@@ -103,9 +103,7 @@ namespace xtd {
       
       static const std::vector<std::string> enclosed_letters;
       country(const std::string& name, const std::string& alpha_2_code, const std::string& alpha_3_code, int numeric_code) : name_(name), alpha_2_code_(alpha_2_code), alpha_3_code_(alpha_3_code), numeric_code_(numeric_code), emoticon_(enclosed_letters[alpha_2_code[0] - 'A'] + enclosed_letters[alpha_2_code[1] - 'A']) {}
-#if defined(__cpp_lib_char8_t)
-      country(const std::u8string& name, const std::string& alpha_2_code, const std::string& alpha_3_code, int numeric_code) : name_(xtd::strings::to_string(name)), alpha_2_code_(alpha_2_code), alpha_3_code_(alpha_3_code), numeric_code_(numeric_code), emoticon_(enclosed_letters[alpha_2_code[0] - 'A'] + enclosed_letters[alpha_2_code[1] - 'A']) {}
-#endif
+      country(const std::u8string& name, const std::string& alpha_2_code, const std::string& alpha_3_code, int numeric_code) : name_(xtd::convert_string::to_string(name)), alpha_2_code_(alpha_2_code), alpha_3_code_(alpha_3_code), numeric_code_(numeric_code), emoticon_(enclosed_letters[alpha_2_code[0] - 'A'] + enclosed_letters[alpha_2_code[1] - 'A']) {}
 
       std::string name_;
       std::string alpha_2_code_;

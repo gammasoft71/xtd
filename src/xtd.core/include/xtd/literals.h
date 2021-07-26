@@ -165,7 +165,6 @@ namespace xtd {
     return std::string(s, s + n);
   }
 
-#if defined(__cpp_lib_char8_t)
   /// @brief Used to convert specified value into std::string.
   /// @par Library
   /// xtd.core
@@ -178,7 +177,7 @@ namespace xtd {
   inline std::string operator""_s(const char8_t* s, size_t n) {
     return std::string(s, s + n);
   }
-#endif
+
   /// @brief Used to convert specified value into std::string.
   /// @par Library
   /// xtd.core
@@ -754,7 +753,6 @@ namespace xtd {
     return std::wstring(s, s + n);
   }
   
-#if defined(__cpp_lib_char8_t)
   /// @brief Used to convert specified value into std::string.
   /// @par Library
   /// xtd.core
@@ -767,7 +765,6 @@ namespace xtd {
   inline std::wstring operator""_ws(const char8_t* s, size_t n) {
     return std::wstring(s, s + n);
   }
-#endif
   
   /// @brief Used to convert specified value into std::string.
   /// @par Library
@@ -799,11 +796,9 @@ namespace xtd {
     return xtd::translator::translate(s);
   }
   
-#if defined(__cpp_lib_char8_t)
   inline std::string operator""_t(const char8_t* s, size_t n) {
     return xtd::translator::translate({s, s + n});
   }
-#endif
   
   inline std::string operator""_t(const char16_t* s, size_t n) {
     return xtd::translator::translate(xtd::strings::format("{}", s));
