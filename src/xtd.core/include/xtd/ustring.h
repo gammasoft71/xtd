@@ -970,7 +970,7 @@ namespace xtd {
     /// @remarks Note regarding the c specifier: it takes an int (or wint_t) as argument, but performs the proper conversion to a char value (or a wchar_t) before formatting it for output.
     /// @remarks you can use std::string or std::wstring with format param %%s.
     template<typename ... args_t>
-    static ustring sprintf(const ustring& fmt, args_t&& ... args) noexcept {return __sprintf(reinterpret_cast<const char*>(fmt.c_str()), convert_param(std::forward<args_t>(args) ...));}
+    static ustring sprintf(const ustring& fmt, args_t&& ... args) noexcept {return __sprintf(reinterpret_cast<const char*>(fmt.c_str()), convert_param(std::forward<args_t>(args)) ...);}
     
     /// @brief Determines whether the beginning of this instance of String matches a specified String.
     /// @param value A String to compare to.
