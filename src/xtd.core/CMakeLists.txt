@@ -223,6 +223,7 @@ add_sources(
   src/xtd/diagnostics/trace_source.cpp 
   src/xtd/diagnostics/trace_switch.cpp 
   src/xtd/internal/__format_exception.cpp
+  src/xtd/internal/__format_stringer.cpp
   src/xtd/internal/__litterals_exception.cpp
   src/xtd/internal/__opaque_console_gcc.cpp
   src/xtd/internal/__opaque_console_win32.cpp

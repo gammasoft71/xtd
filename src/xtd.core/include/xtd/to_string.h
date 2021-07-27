@@ -97,6 +97,10 @@ namespace xtd {
 
   /// @cond
   inline std::string to_string(const char*  value, const std::string& fmt, const std::locale& loc) {return __string_formater(fmt, value, loc);}
+  inline std::string to_string(const char8_t*  value, const std::string& fmt, const std::locale& loc) {return __string_formater(fmt, value, loc);}
+  inline std::string to_string(const char16_t*  value, const std::string& fmt, const std::locale& loc) {return __string_formater(fmt, value, loc);}
+  inline std::string to_string(const char32_t*  value, const std::string& fmt, const std::locale& loc) {return __string_formater(fmt, value, loc);}
+  inline std::string to_string(const wchar_t* value, const std::string& fmt, const std::locale& loc) {return __string_formater(fmt, value, loc);}
   /// @endcond
   
   template<typename value_t>

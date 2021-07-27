@@ -25,14 +25,12 @@ namespace unit_tests {
       assert::are_equal(L"string", ustring::format(L"{0,0}", L"string"));
     }
     
-    /// @todo fix it... see test_string_string_format
-    //void test_method_(format_string_with_invalid_format) {
-    //  assert::are_equal(L"string", ustring::format(L"{0:invalid}", L"string"));
-    //}
+    void test_method_(format_string_with_invalid_format) {
+      assert::are_equal(L"string", ustring::format(L"{0:invalid}", L"string"));
+    }
     
-    /// @todo fix it... see test_string_string_format
-    //void test_method_(format_string_with_decimal_format) {
-    //  assert::are_equal(L"string", ustring::format(L"{0:D}", L"string"));
-    //}
+    void test_method_(format_string_with_decimal_format) {
+      assert::are_equal(L"string", ustring::format(L"{0:D}", L"string"));
+    }
   };
 }
