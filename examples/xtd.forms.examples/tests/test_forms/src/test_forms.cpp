@@ -20,7 +20,7 @@ public:
     label1.height(50);
     label1.auto_size(true);
     label1.lcd_style(forms::lcd_style::dot_matrix_display);
-    label1.text("MON AMOUREUSE QUE J'AIME");
+    label1.text("LCD DISPLAY");
   }
 
 private:
