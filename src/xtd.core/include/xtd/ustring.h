@@ -265,10 +265,26 @@ namespace xtd {
     ustring& operator=(const std::initializer_list<value_type>& il);
     template<typename type_t>
     ustring operator=(const type_t& object) {return std::basic_string<value_type>::assign(object);}
-    bool operator==(const ustring& other) const {return std::basic_string<value_type>(*this) == std::basic_string<value_type>(other);}
-    bool operator!=(const ustring& other) const {return !operator==(other);}
-    bool operator==(const value_type* other) const {return std::basic_string<value_type>(*this) == other;}
-    bool operator!=(const value_type* other) const {return !operator==(other);}
+    bool operator==(const ustring& other) const;
+    bool operator!=(const ustring& other) const;
+    bool operator==(const value_type* other) const;
+    bool operator!=(const value_type* other) const;
+    bool operator==(const std::string other) const;
+    bool operator!=(const std::string other) const;
+    bool operator==(const char* other) const;
+    bool operator!=(const char* other) const;
+    bool operator==(const std::u16string other) const;
+    bool operator!=(const std::u16string other) const;
+    bool operator==(const char16_t* other) const;
+    bool operator!=(const char16_t* other) const;
+    bool operator==(const std::u32string other) const;
+    bool operator!=(const std::u32string other) const;
+    bool operator==(const char32_t* other) const;
+    bool operator!=(const char32_t* other) const;
+    bool operator==(const std::wstring other) const;
+    bool operator!=(const std::wstring other) const;
+    bool operator==(const wchar_t* other) const;
+    bool operator!=(const wchar_t* other) const;
     const value_type& operator[](size_t index);
     const value_type& operator[](size_t index) const;
     ustring substr(size_type index = 0, size_type count = npos) const;
