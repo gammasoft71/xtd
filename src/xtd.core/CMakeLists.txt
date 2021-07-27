@@ -196,6 +196,7 @@ add_sources(
 # src/xtd/signal_catcher.cpp
   src/xtd/strings.cpp
   src/xtd/system_exception.cpp
+  src/xtd/to_string.cpp
   src/xtd/translator.cpp
   src/xtd/types.cpp
   src/xtd/types.cpp

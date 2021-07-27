@@ -20,6 +20,8 @@
 
 /// @cond
 namespace xtd {
+  class ustring;
+
   template<typename value_t>
   inline std::string to_string(const value_t& value, const std::string& fmt, const std::locale& loc);
   template<>
@@ -153,12 +155,6 @@ namespace xtd {
     return to_string(value, values);
   }
 }
-
-/// @cond
-namespace xtd {
-  class ustring;
-}
-/// @endcond
 
 template<typename char_t>
 inline std::basic_string<char_t> __codepoint_to_string(char32_t codepoint) {
