@@ -88,5 +88,3 @@ namespace xtd {
     //virtual ustring to_string() const noexcept;
   };
 }
-
-#include "ustring.h"
