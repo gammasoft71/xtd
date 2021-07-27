@@ -334,7 +334,7 @@ namespace xtd {
       /// @endcode
       template<typename expected_t, typename actual_t>
       static void are_equal(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (std::equal(expected.begin(), expected.end(), actual.begin(), actual.end()) == false)
+        if (std::equal(actual.begin(), actual.end(), expected.begin(), expected.end()) == false)
           base_assert::fail(base_assert::join_items(expected), base_assert::join_items(actual), message, line_info);
         else
           assert::succeed(message, line_info);
@@ -349,7 +349,7 @@ namespace xtd {
       static void are_equal(const std::initializer_list<item_t>& expected, const std::initializer_list<item_t>& actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
       template<typename item_t>
       static void are_equal(const std::initializer_list<item_t>& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (std::equal(expected.begin(), expected.end(), actual.begin(), actual.end()) == false)
+        if (std::equal(actual.begin(), actual.end(), expected.begin(), expected.end()) == false)
           base_assert::fail(base_assert::join_items(expected), base_assert::join_items(actual), message, line_info);
         else
           assert::succeed(message, line_info);
@@ -364,7 +364,7 @@ namespace xtd {
       static void are_equal(const collection_t& expected, const std::initializer_list<item_t>& actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
       template<typename collection_t, typename item_t>
       static void are_equal(const collection_t& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (std::equal(expected.begin(), expected.end(), actual.begin(), actual.end()) == false)
+        if (std::equal(actual.begin(), actual.end(), expected.begin(), expected.end()) == false)
           base_assert::fail(base_assert::join_items(expected), base_assert::join_items(actual), message, line_info);
         else
           assert::succeed(message, line_info);
@@ -379,7 +379,7 @@ namespace xtd {
       static void are_equal(const std::initializer_list<item_t>& expected, const collection_t& actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
       template<typename item_t, typename collection_t>
       static void are_equal(const std::initializer_list<item_t>& expected, const collection_t& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (std::equal(expected.begin(), expected.end(), actual.begin(), actual.end()) == false)
+        if (std::equal(actual.begin(), actual.end(), expected.begin(), expected.end()) == false)
           base_assert::fail(base_assert::join_items(expected), base_assert::join_items(actual), message, line_info);
         else
           assert::succeed(message, line_info);
@@ -445,7 +445,7 @@ namespace xtd {
         std::sort(expect_sorted.begin(), expect_sorted.end());
         expected_t actual_sorted = actual;
         std::sort(actual_sorted.begin(), actual_sorted.end());
-        if (std::equal(expect_sorted.begin(), expect_sorted.end(), actual_sorted.begin(), actual_sorted.end()) == false)
+        if (std::equal(actual_sorted.begin(), actual_sorted.end(), expect_sorted.begin(), expect_sorted.end()) == false)
           base_assert::fail("equivalent " + base_assert::join_items(expected), base_assert::join_items(actual), message, line_info);
         else
           assert::succeed(message, line_info);
@@ -464,7 +464,7 @@ namespace xtd {
         std::sort(expect_sorted.begin(), expect_sorted.end());
         std::vector<actual_t> actual_sorted = actual;
         std::sort(actual_sorted.begin(), actual_sorted.end());
-        if (std::equal(expect_sorted.begin(), expect_sorted.end(), actual_sorted.begin(), actual_sorted.end()) == false)
+        if (std::equal(actual_sorted.begin(), actual_sorted.end(), expect_sorted.begin(), expect_sorted.end()) == false)
           base_assert::fail("equivalent " + base_assert::join_items(expected), base_assert::join_items(actual), message, line_info);
         else
           assert::succeed(message, line_info);
@@ -483,7 +483,7 @@ namespace xtd {
         std::sort(expect_sorted.begin(), expect_sorted.end());
         std::vector<item_t> actual_sorted = actual;
         std::sort(actual_sorted.begin(), actual_sorted.end());
-        if (std::equal(expect_sorted.begin(), expect_sorted.end(), actual_sorted.begin(), actual_sorted.end()) == false)
+        if (std::equal(actual_sorted.begin(), actual_sorted.end(), expect_sorted.begin(), expect_sorted.end()) == false)
           base_assert::fail("equivalent " + base_assert::join_items(expected), base_assert::join_items(actual), message, line_info);
         else
           assert::succeed(message, line_info);
@@ -502,7 +502,7 @@ namespace xtd {
         std::sort(expect_sorted.begin(), expect_sorted.end());
         collection_t actual_sorted = actual;
         std::sort(actual_sorted.begin(), actual_sorted.end());
-        if (std::equal(expect_sorted.begin(), expect_sorted.end(), actual_sorted.begin(), actual_sorted.end()) == false)
+        if (std::equal(actual_sorted.begin(), actual_sorted.end(), expect_sorted.begin(), expect_sorted.end()) == false)
           base_assert::fail("equivalent " + base_assert::join_items(expected), base_assert::join_items(actual), message, line_info);
         else
           assert::succeed(message, line_info);
@@ -564,7 +564,7 @@ namespace xtd {
       /// @endcode
       template<typename expected_t, typename actual_t>
       static void are_not_equal(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (std::equal(expected.begin(), expected.end(), actual.begin(), actual.end()) == true)
+        if (std::equal(actual.begin(), actual.end(), expected.begin(), expected.end()) == true)
           base_assert::fail("not " + base_assert::join_items(expected), base_assert::join_items(actual), message, line_info);
         else
           assert::succeed(message, line_info);
@@ -579,7 +579,7 @@ namespace xtd {
       static void are_not_equal(const std::initializer_list<item_t>& expected, const std::initializer_list<item_t>& actual, const std::string& message) {are_not_equal(expected, actual, message, line_info());}
       template<typename item_t>
       static void are_not_equal(const std::initializer_list<item_t>& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (std::equal(expected.begin(), expected.end(), actual.begin(), actual.end()) == true)
+        if (std::equal(actual.begin(), actual.end(), expected.begin(), expected.end()) == true)
           base_assert::fail("not " + base_assert::join_items(expected), base_assert::join_items(actual), message, line_info);
         else
           assert::succeed(message, line_info);
@@ -594,7 +594,7 @@ namespace xtd {
       static void are_not_equal(const collection_t& expected, const std::initializer_list<item_t>& actual, const std::string& message) {are_not_equal(expected, actual, message, line_info());}
       template<typename collection_t, typename item_t>
       static void are_not_equal(const collection_t& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (std::equal(expected.begin(), expected.end(), actual.begin(), actual.end()) == true)
+        if (std::equal(actual.begin(), actual.end(), expected.begin(), expected.end()) == true)
           base_assert::fail("not " + base_assert::join_items(expected), base_assert::join_items(actual), message, line_info);
         else
           assert::succeed(message, line_info);
@@ -609,7 +609,7 @@ namespace xtd {
       static void are_not_equal(const std::initializer_list<item_t>& expected, const collection_t& actual, const std::string& message) {are_not_equal(expected, actual, message, line_info());}
       template<typename item_t, typename collection_t>
       static void are_not_equal(const std::initializer_list<item_t>& expected, const collection_t& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (std::equal(expected.begin(), expected.end(), actual.begin(), actual.end()) == true)
+        if (std::equal(actual.begin(), actual.end(), expected.begin(), expected.end()) == true)
           base_assert::fail("not " + base_assert::join_items(expected), base_assert::join_items(actual), message, line_info);
         else
           assert::succeed(message, line_info);
@@ -675,7 +675,7 @@ namespace xtd {
         std::sort(expect_sorted.begin(), expect_sorted.end());
         expected_t actual_sorted = actual;
         std::sort(actual_sorted.begin(), actual_sorted.end());
-        if (std::equal(expect_sorted.begin(), expect_sorted.end(), actual_sorted.begin(), actual_sorted.end()) == true)
+        if (std::equal(actual_sorted.begin(), actual_sorted.end(), expect_sorted.begin(), expect_sorted.end()) == true)
           base_assert::fail("not equivalent " + base_assert::join_items(expected), base_assert::join_items(actual), message, line_info);
         else
           assert::succeed(message, line_info);
@@ -694,7 +694,7 @@ namespace xtd {
         std::sort(expect_sorted.begin(), expect_sorted.end());
         std::vector<actual_t> actual_sorted = actual;
         std::sort(actual_sorted.begin(), actual_sorted.end());
-        if (std::equal(expect_sorted.begin(), expect_sorted.end(), actual_sorted.begin(), actual_sorted.end()) == true)
+        if (std::equal(actual_sorted.begin(), actual_sorted.end(), expect_sorted.begin(), expect_sorted.end()) == true)
           base_assert::fail("not equivalent " + base_assert::join_items(expected), base_assert::join_items(actual), message, line_info);
         else
           assert::succeed(message, line_info);
@@ -713,7 +713,7 @@ namespace xtd {
         std::sort(expect_sorted.begin(), expect_sorted.end());
         std::vector<item_t> actual_sorted = actual;
         std::sort(actual_sorted.begin(), actual_sorted.end());
-        if (std::equal(expect_sorted.begin(), expect_sorted.end(), actual_sorted.begin(), actual_sorted.end()) == true)
+        if (std::equal(actual_sorted.begin(), actual_sorted.end(), expect_sorted.begin(), expect_sorted.end()) == true)
           base_assert::fail("not equivalent " + base_assert::join_items(expected), base_assert::join_items(actual), message, line_info);
         else
           assert::succeed(message, line_info);
@@ -732,7 +732,7 @@ namespace xtd {
         std::sort(expect_sorted.begin(), expect_sorted.end());
         collection_t actual_sorted = actual;
         std::sort(actual_sorted.begin(), actual_sorted.end());
-        if (std::equal(expect_sorted.begin(), expect_sorted.end(), actual_sorted.begin(), actual_sorted.end()) == true)
+        if (std::equal(actual_sorted.begin(), actual_sorted.end(), expect_sorted.begin(), expect_sorted.end()) == true)
           base_assert::fail("not equivalent " + base_assert::join_items(expected), base_assert::join_items(actual), message, line_info);
         else
           assert::succeed(message, line_info);
