@@ -9,6 +9,7 @@
 
 #include <chrono>
 #include <cctype>
+#include <cstddef>
 #include <cstdint>
 #include <iomanip>
 #include <locale>
@@ -153,6 +154,12 @@ namespace xtd {
   }
 }
 
+/// @cond
+namespace xtd {
+  class ustring;
+}
+/// @endcond
+
 template<typename char_t>
 inline std::basic_string<char_t> __codepoint_to_string(char32_t codepoint) {
   std::basic_string<char_t> result;
@@ -231,10 +238,29 @@ std::basic_ostream<char_t>& operator<<(std::basic_ostream<char_t>& os, const std
   return os << xtd::to_string(value, std::basic_string<char_t> {'G'}, std::locale());
 }
 
+template<typename value_t>
+std::string __format_stringer_to_std_string(value_t value) {
+  std::basic_stringstream<char> ss;
+  ss << value;
+  return ss.str();
+}
+
+std::string __format_stringer_to_std_string(const char* str);
+std::string __format_stringer_to_std_string(const char8_t* str);
+std::string __format_stringer_to_std_string(const char16_t* str);
+std::string __format_stringer_to_std_string(const char32_t* str);
+std::string __format_stringer_to_std_string(const wchar_t* str);
+std::string __format_stringer_to_std_string(const std::string& str);
+std::string __format_stringer_to_std_string(const xtd::ustring& str);
+std::string __format_stringer_to_std_string(const std::u8string& str);
+std::string __format_stringer_to_std_string(const std::u16string& str);
+std::string __format_stringer_to_std_string(const std::u32string& str);
+std::string __format_stringer_to_std_string(const std::wstring& str);
+
 template<typename char_t, typename value_t>
 inline std::basic_string<char_t> __format_stringer(value_t value) {
   std::basic_stringstream<char_t> ss;
-  ss << value;
+  ss << __format_stringer_to_std_string(value).c_str();
   return ss.str();
 }
 
