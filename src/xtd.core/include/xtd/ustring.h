@@ -7,6 +7,7 @@
 #include "types.h"
 #include "object.h"
 #include "parse.h"
+#include "to_string.h"
 /// @cond
 #define __XTD_CORE_INTERNAL__
 #include "internal/__generic_stream_output.h"
@@ -1134,9 +1135,6 @@ namespace xtd {
   };
 }
 
-#include <xtd/parse.h>
-#include <xtd/to_string.h>
-
 /// @cond
 template<typename arg_t>
 void __ustring_extract_format_arg(std::string& fmt, size_t& index, std::vector<__format_information<char>>& formats, arg_t&& arg) {
@@ -1144,7 +1142,7 @@ void __ustring_extract_format_arg(std::string& fmt, size_t& index, std::vector<_
   for (auto& format : formats) {
     format.location += offset;
     if (format.index == index) {
-      std::string arg_str = format.format.empty() ? __format_stringer<char, arg_t>(arg) : xtd::to_string(arg, format.format);
+      xtd::ustring arg_str = format.format.empty() ? __format_stringer<char, arg_t>(arg) : xtd::to_string(arg, format.format);
       
       if (!format.alignment.empty()) {
         int alignment = 0;
@@ -1153,8 +1151,8 @@ void __ustring_extract_format_arg(std::string& fmt, size_t& index, std::vector<_
         } catch(...) {
           __throw_ustring_format_exception();
         }
-        if (alignment > 0) arg_str = xtd::strings::pad_left(arg_str, alignment);
-        else if (alignment < 0) arg_str = xtd::strings::pad_right(arg_str, -alignment);
+        if (alignment > 0) arg_str = arg_str.pad_left(alignment);
+        else if (alignment < 0) arg_str = arg_str.pad_right(-alignment);
       }
       fmt.insert(format.location, arg_str);
       offset += arg_str.size();

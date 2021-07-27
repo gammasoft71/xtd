@@ -12,9 +12,11 @@
 #include "internal/__sprintf.h"
 #undef __XTD_CORE_INTERNAL__
 /// @endcond
+#include "parse.h"
 #include "static.h"
 #include "string_comparison.h"
 #include "string_split_options.h"
+#include "to_string.h"
 
 #include <algorithm>
 #include <bitset>
@@ -1758,9 +1760,6 @@ namespace xtd {
     }
   };
 }
-
-#include "parse.h"
-#include "to_string.h"
 
 template<typename char_t, typename arg_t>
 void __extract_format_arg(std::basic_string<char_t>& fmt, size_t& index, std::vector<__format_information<char_t>>& formats, arg_t&& arg) {
