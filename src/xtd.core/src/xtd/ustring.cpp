@@ -205,6 +205,85 @@ ustring& ustring::operator=(const std::initializer_list<value_type>& il) {
   return *this;
 }
 
+bool ustring::operator==(const ustring& other) const {
+  return std::basic_string<value_type>(*this) == std::basic_string<value_type>(other);
+}
+
+bool ustring::operator!=(const ustring& other) const {
+  return !operator==(other);
+}
+
+bool ustring::operator==(const value_type* other) const {
+  return std::basic_string<value_type>(*this) == other;
+}
+
+bool ustring::operator!=(const value_type* other) const {
+  return !operator==(other);
+}
+
+bool ustring::operator==(const std::string other) const {
+  return *this == ustring(other);
+}
+
+bool ustring::operator!=(const std::string other) const {
+  return !operator==(other);
+}
+
+bool ustring::operator==(const char* other) const {
+  return *this == ustring(other);
+}
+
+bool ustring::operator!=(const char* other) const {
+  return !operator==(other);
+}
+
+bool ustring::operator==(const std::u16string other) const {
+  return *this == ustring(other);
+}
+bool ustring::operator!=(const std::u16string other) const {
+  return !operator==(other);
+}
+
+bool ustring::operator==(const char16_t* other) const {
+  return *this == ustring(other);
+}
+
+bool ustring::operator!=(const char16_t* other) const {
+  return !operator==(other);
+}
+
+bool ustring::operator==(const std::u32string other) const {
+  return *this == ustring(other);
+}
+
+bool ustring::operator!=(const std::u32string other) const {
+  return !operator==(other);
+}
+
+bool ustring::operator==(const char32_t* other) const {
+  return *this == ustring(other);
+}
+
+bool ustring::operator!=(const char32_t* other) const {
+  return !operator==(other);
+}
+
+bool ustring::operator==(const std::wstring other) const {
+  return *this == ustring(other);
+}
+
+bool ustring::operator!=(const std::wstring other) const {
+  return !operator==(other);
+}
+
+bool ustring::operator==(const wchar_t* other) const {
+  return *this == ustring(other);
+}
+
+bool ustring::operator!=(const wchar_t* other) const {
+  return !operator==(other);
+}
+
 const ustring::value_type& ustring::operator[](size_t index) {
   return basic_string<value_type>::operator[](index);
 }
