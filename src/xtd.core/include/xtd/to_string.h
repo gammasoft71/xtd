@@ -81,9 +81,6 @@ namespace xtd {
   inline std::string to_string(const std::chrono::duration<type_t, Period>& value, const std::string& fmt, const std::locale& loc) {return __duration_formater(fmt, value, loc);}
 
   template<>
-  inline std::string to_string(const std::string& value, const std::string& fmt, const std::locale& loc) {return __string_formater(fmt, value, loc);}
-
-  template<>
   inline std::string to_string(const char8_t& value, const std::string& fmt, const std::locale& loc) {return __character_formater(fmt, value, loc);}
 
   template<>
@@ -96,11 +93,17 @@ namespace xtd {
   inline std::string to_string(const wchar_t& value, const std::string& fmt, const std::locale& loc) {return __character_formater(fmt, value, loc);}
 
   /// @cond
-  inline std::string to_string(const char*  value, const std::string& fmt, const std::locale& loc) {return __string_formater(fmt, value, loc);}
-  inline std::string to_string(const char8_t*  value, const std::string& fmt, const std::locale& loc) {return __string_formater(fmt, value, loc);}
-  inline std::string to_string(const char16_t*  value, const std::string& fmt, const std::locale& loc) {return __string_formater(fmt, value, loc);}
-  inline std::string to_string(const char32_t*  value, const std::string& fmt, const std::locale& loc) {return __string_formater(fmt, value, loc);}
-  inline std::string to_string(const wchar_t* value, const std::string& fmt, const std::locale& loc) {return __string_formater(fmt, value, loc);}
+  std::string to_string(const char* value, const std::string& fmt, const std::locale& loc);
+  std::string to_string(const char8_t* value, const std::string& fmt, const std::locale& loc);
+  std::string to_string(const char16_t* value, const std::string& fmt, const std::locale& loc);
+  std::string to_string(const char32_t* value, const std::string& fmt, const std::locale& loc);
+  std::string to_string(const wchar_t* value, const std::string& fmt, const std::locale& loc);
+  std::string to_string(const std::string& value, const std::string& fmt, const std::locale& loc);
+  std::string to_string(const xtd::ustring& value, const std::string& fmt, const std::locale& loc);
+  std::string to_string(const std::u8string& value, const std::string& fmt, const std::locale& loc);
+  std::string to_string(const std::u16string& value, const std::string& fmt, const std::locale& loc);
+  std::string to_string(const std::u32string& value, const std::string& fmt, const std::locale& loc);
+  std::string to_string(const std::wstring& value, const std::string& fmt, const std::locale& loc);
   /// @endcond
   
   template<typename value_t>
