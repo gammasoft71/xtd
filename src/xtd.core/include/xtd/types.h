@@ -49,23 +49,27 @@ namespace std {
   using u8string=basic_string<char8_t>;
 }
 #endif
-
-using decimal_t = long double;
-using single_t = float;
-using ushort_t = unsigned short;
-using ulong_t = unsigned long;
-
-#if defined(__linux__) && defined(_LP64)
-using llong_t = long long int;
-using ullong_t = unsigned long long int;
-#else
-using llong_t = long;
-using ullong_t = unsigned long;
-#endif
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @cond
+  using byte_t = uint8_t;
+  using decimal_t = long double;
+  using sbyte_t = int8_t;
+  using single_t = float;
+  using ushort_t = unsigned short;
+  using ulong_t = unsigned long;
+  
+#if defined(__linux__) && defined(_LP64)
+  using llong_t = long long int;
+  using ullong_t = unsigned long long int;
+#else
+  using llong_t = long;
+  using ullong_t = unsigned long;
+#endif
+  /// @endcond
+
   /// @brief Represents a 8-bit unsigned integer.
   /// @par Library
   /// xtd.core
