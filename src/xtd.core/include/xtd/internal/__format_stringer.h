@@ -235,7 +235,7 @@ std::basic_ostream<char_t>& operator<<(std::basic_ostream<char_t>& os, const std
 }
 
 template<typename value_t>
-std::string __format_stringer_to_std_string(value_t value) {
+std::string __format_stringer_to_std_string(const value_t& value) {
   std::basic_stringstream<char> ss;
   ss << value;
   return ss.str();
