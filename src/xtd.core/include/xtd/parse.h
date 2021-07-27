@@ -9,7 +9,7 @@
 #undef __XTD_CORE_INTERNAL__
 /// @endcond
 #include "number_styles.h"
-#include "strings.h"
+#include <string>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -111,8 +111,13 @@ namespace xtd {
 
   template<>
   inline bool parse<bool>(const std::string& str) {
-    if (xtd::strings::trim(xtd::strings::to_lower(str)) != "true" && xtd::strings::trim(xtd::strings::to_lower(str)) != "1" && xtd::strings::trim(xtd::strings::to_lower(str)) != "false" && xtd::strings::trim(xtd::strings::to_lower(str)) != "0")  __throw_parse_argument_exception("Invalid string format");
-    return xtd::strings::trim(xtd::strings::to_lower(str)) == "true" || xtd::strings::trim(xtd::strings::to_lower(str)) == "1";
+    std::string lower_str = str;
+    while(lower_str.size() > 0 && (lower_str[0] == 9 || lower_str[0] == 10 || lower_str[0] == 11 || lower_str[0] == 12 || lower_str[0] == 13 || lower_str[0] == 32))
+      lower_str.erase(0, 1);
+    for (auto& c : lower_str)
+      c = static_cast<char>(std::tolower(c));
+    if (lower_str != "true" && lower_str != "1" && lower_str != "false" && lower_str != "0")  __throw_parse_argument_exception("Invalid string format");
+    return lower_str == "true" || lower_str == "1";
   }
 
   template<typename value_t>
