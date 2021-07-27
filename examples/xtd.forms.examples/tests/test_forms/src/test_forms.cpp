@@ -3,12 +3,12 @@
 using namespace xtd;
 using namespace xtd::io;
 using namespace xtd::diagnostics;
-using namespace xtd::forms;
+using namespace xtd::windows::forms;
 
 class form_main : public form {
 public:
   static void main() {
-    xtd::forms::application::run(form_main());
+    xtd::windows::forms::application::run(form_main());
   }
 
   form_main() {
