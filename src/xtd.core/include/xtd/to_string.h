@@ -82,7 +82,7 @@ namespace xtd {
 
   template<>
   inline std::string to_string(const std::string& value, const std::string& fmt, const std::locale& loc) {return __string_formater(fmt, value, loc);}
-  
+
   template<>
   inline std::string to_string(const char8_t& value, const std::string& fmt, const std::locale& loc) {return __character_formater(fmt, value, loc);}
 

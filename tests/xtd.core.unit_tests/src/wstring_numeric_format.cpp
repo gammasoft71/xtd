@@ -1,4 +1,4 @@
-#include <xtd/strings.h>
+#include <xtd/ustring.h>
 #include <xtd/format_exception.h>
 #include <xtd/xtd.tunit>
 
@@ -42,328 +42,349 @@ namespace unit_tests {
     }
     
     void test_method_(format_with_default_argument) {
-      assert::are_equal(L"42", strings::format(L"{0}", static_cast<Value>(42)));
+      if (std::is_same<Value, char>::value)
+        assert::are_equal(L"*", ustring::format(L"{0}", static_cast<Value>(42)));
+      else
+        assert::are_equal(L"42", ustring::format(L"{0}", static_cast<Value>(42)));
     }
 
     void test_method_(format_without_format_argument_separator) {
-      assert::throws<format_exception>([]{strings::format(L"{0D}", static_cast<Value>(42));});
+      assert::throws<format_exception>([]{ustring::format(L"{0D}", static_cast<Value>(42));});
     }
     
     void test_method_(format_with_left_alignment) {
-      assert::are_equal(L"  42", strings::format(L"{0,4}", static_cast<Value>(42)));
+      if (std::is_same<Value, char>::value)
+        assert::are_equal(L"   *", ustring::format(L"{0,4}", static_cast<Value>(42)));
+      else
+        assert::are_equal(L"  42", ustring::format(L"{0,4}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_left_alignment_with_plus) {
-      assert::are_equal(L"  42", strings::format(L"{0,+4}", static_cast<Value>(42)));
+      if (std::is_same<Value, char>::value)
+        assert::are_equal(L"   *", ustring::format(L"{0,+4}", static_cast<Value>(42)));
+      else
+        assert::are_equal(L"  42", ustring::format(L"{0,+4}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_left_alignment_to_zero) {
-      assert::are_equal(L"42", strings::format(L"{0,0}", static_cast<Value>(42)));
+      if (std::is_same<Value, char>::value)
+        assert::are_equal(L"*", ustring::format(L"{0,0}", static_cast<Value>(42)));
+      else
+        assert::are_equal(L"42", ustring::format(L"{0,0}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_right_alignment) {
-      assert::are_equal(L"42  ", strings::format(L"{0,-4}", static_cast<Value>(42)));
+      if (std::is_same<Value, char>::value)
+        assert::are_equal(L"*   ", ustring::format(L"{0,-4}", static_cast<Value>(42)));
+      else
+        assert::are_equal(L"42  ", ustring::format(L"{0,-4}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_right_alignment_to_zero) {
-      assert::are_equal(L"42", strings::format(L"{0,-0}", static_cast<Value>(42)));
+      if (std::is_same<Value, char>::value)
+        assert::are_equal(L"*", ustring::format(L"{0,-0}", static_cast<Value>(42)));
+      else
+        assert::are_equal(L"42", ustring::format(L"{0,-0}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_alignment_empty) {
-      assert::are_equal(L"42", strings::format(L"{0,}", static_cast<Value>(42)));
+      if (std::is_same<Value, char>::value)
+        assert::are_equal(L"*", ustring::format(L"{0,}", static_cast<Value>(42)));
+      else
+        assert::are_equal(L"42", ustring::format(L"{0,}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_alignment_invalid) {
-      assert::throws<format_exception>([]{strings::format(L"{0,a}", static_cast<Value>(42));});
+      assert::throws<format_exception>([]{ustring::format(L"{0,a}", static_cast<Value>(42));});
     }
     
     void test_method_(format_with_binary_argument) {
-      assert::are_equal(L"101010", strings::format(L"{0:b}", static_cast<Value>(42)));
+      assert::are_equal(L"101010", ustring::format(L"{0:b}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_binary_argument_and_one_digit_precision) {
-      assert::are_equal(L"00101010", strings::format(L"{0:B8}", static_cast<Value>(42)));
+      assert::are_equal(L"00101010", ustring::format(L"{0:B8}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_binary_argument_and_two_digits_precision) {
-      assert::are_equal(L"0000101010", strings::format(L"{0:B10}", static_cast<Value>(42)));
+      assert::are_equal(L"0000101010", ustring::format(L"{0:B10}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_binary_argument_and_three_digits_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:B100}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:B100}", static_cast<Value>(42));});
     }
     
     void test_method_(format_with_binary_argument_and_negative_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:B-3}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:B-3}", static_cast<Value>(42));});
     }
     
     void test_method_(format_with_binary_argument_and_invalid_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:Ba}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:Ba}", static_cast<Value>(42));});
     }
     
     void test_method_(format_with_currency_argument) {
-      assert::are_equal(L"$42.00", strings::format(L"{0:c}", static_cast<Value>(42)));
+      assert::are_equal(L"$42.00", ustring::format(L"{0:c}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_currency_argument_and_one_digit_precision) {
-      assert::are_not_equal(L"$42.00000", strings::format(L"{0:C5}", static_cast<Value>(42)), "The precision of currency format  is ignored");
-      assert::are_equal(L"$42.00", strings::format(L"{0:C5}", static_cast<Value>(42)), "The precision of currency format is ignored");
+      assert::are_not_equal(L"$42.00000", ustring::format(L"{0:C5}", static_cast<Value>(42)), "The precision of currency format  is ignored");
+      assert::are_equal(L"$42.00", ustring::format(L"{0:C5}", static_cast<Value>(42)), "The precision of currency format is ignored");
     }
     
     void test_method_(format_with_currency_argument_and_two_digits_precision) {
-      assert::are_not_equal(L"$42.00000", strings::format(L"{0:C10}", static_cast<Value>(42)), "The precision of currency format  is ignored");
-      assert::are_equal(L"$42.00", strings::format(L"{0:C10}", static_cast<Value>(42)), "The precision of currency format is ignored");
+      assert::are_not_equal(L"$42.00000", ustring::format(L"{0:C10}", static_cast<Value>(42)), "The precision of currency format  is ignored");
+      assert::are_equal(L"$42.00", ustring::format(L"{0:C10}", static_cast<Value>(42)), "The precision of currency format is ignored");
     }
 
     void test_method_(format_with_currency_argument_and_three_digits_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:C100}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:C100}", static_cast<Value>(42));});
     }
     
     void test_method_(format_with_currency_argument_and_negative_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:C-5}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:C-5}", static_cast<Value>(42));});
     }
   
     void test_method_(format_with_currency_argument_and_invalid_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:Ca}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:Ca}", static_cast<Value>(42));});
     }
 
     void test_method_(format_with_decimal_argument) {
-      assert::are_equal(L"42", strings::format(L"{0:d}", static_cast<Value>(42)));
+      assert::are_equal(L"42", ustring::format(L"{0:d}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_decimal_argument_and_one_digit_precision) {
-      assert::are_equal(L"00042", strings::format(L"{0:D5}", static_cast<Value>(42)));
+      assert::are_equal(L"00042", ustring::format(L"{0:D5}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_decimal_argument_and_two_digits_precision) {
-      assert::are_equal(L"0000000042", strings::format(L"{0:D10}", static_cast<Value>(42)));
+      assert::are_equal(L"0000000042", ustring::format(L"{0:D10}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_decimal_argument_and_three_digits_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:D100}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:D100}", static_cast<Value>(42));});
     }
 
     void test_method_(format_with_decimal_argument_and_negative_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:D-5}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:D-5}", static_cast<Value>(42));});
     }
     
     void test_method_(format_with_decimal_argument_and_invalid_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:Da}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:Da}", static_cast<Value>(42));});
     }
 
     void test_method_(format_negative_with_decimal_argument_and_one_digit_precision) {
       if(std::is_signed<Value>::value)
-        assert::are_equal(L"-000123", strings::format(L"{0:D6}", static_cast<Value>(-123)));
+        assert::are_equal(L"-000123", ustring::format(L"{0:D6}", static_cast<Value>(-123)));
     }
     
     void test_method_(format_negative_with_decimal_argument_and_two_digits_precision) {
       if (std::is_signed<Value>::value)
-        assert::are_equal(L"-0000000123", strings::format(L"{0:D10}", static_cast<Value>(-123)));
+        assert::are_equal(L"-0000000123", ustring::format(L"{0:D10}", static_cast<Value>(-123)));
     }
     
     void test_method_(format_negative_with_decimal_argument_and_three_digits_precision) {
       if (std::is_signed<Value>::value)
-        assert::throws<xtd::format_exception>([]{strings::format(L"{0:D100}", static_cast<Value>(-123));});
+        assert::throws<xtd::format_exception>([]{ustring::format(L"{0:D100}", static_cast<Value>(-123));});
     }
     
     void test_method_(format_negative_with_decimal_argument_and_negative_precision) {
       if (std::is_signed<Value>::value)
-        assert::throws<xtd::format_exception>([]{strings::format(L"{0:D-6}", static_cast<Value>(-123));});
+        assert::throws<xtd::format_exception>([]{ustring::format(L"{0:D-6}", static_cast<Value>(-123));});
     }
     
     void test_method_(format_with_exponencial_argument) {
-      assert::are_equal(L"4.200000e+01", strings::format(L"{0:e}", static_cast<Value>(42)));
+      assert::are_equal(L"4.200000e+01", ustring::format(L"{0:e}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_exponencial_argument_and_one_digit_precision) {
-      assert::are_equal(L"4.20000000E+01", strings::format(L"{0:E8}", static_cast<Value>(42)));
+      assert::are_equal(L"4.20000000E+01", ustring::format(L"{0:E8}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_exponencial_argument_and_two_digits_precision) {
-      assert::are_equal(L"4.2000000000E+01", strings::format(L"{0:E10}", static_cast<Value>(42)));
+      assert::are_equal(L"4.2000000000E+01", ustring::format(L"{0:E10}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_exponencial_argument_and_three_digits_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:E100}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:E100}", static_cast<Value>(42));});
     }
 
     void test_method_(format_with_exponencial_argument_and_nagetive_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:E-10}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:E-10}", static_cast<Value>(42));});
     }
     
     void test_method_(format_with_exponencial_argument_and_invalid_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:Ea}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:Ea}", static_cast<Value>(42));});
     }
     
     void test_method_(format_with_fixed_point_argument) {
-      assert::are_equal(L"42.00", strings::format(L"{0:f}", static_cast<Value>(42)));
+      assert::are_equal(L"42.00", ustring::format(L"{0:f}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_fixed_point_argument_and_one_digit_precision) {
-      assert::are_equal(L"42.0000", strings::format(L"{0:F4}", static_cast<Value>(42)));
+      assert::are_equal(L"42.0000", ustring::format(L"{0:F4}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_fixed_point_argument_and_two_digits_precision) {
-      assert::are_equal(L"42.0000000000", strings::format(L"{0:F10}", static_cast<Value>(42)));
+      assert::are_equal(L"42.0000000000", ustring::format(L"{0:F10}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_fixed_point_argument_and_three_digits_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:F100}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:F100}", static_cast<Value>(42));});
     }
 
     void test_method_(format_with_fixed_point_argument_and_negative_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:F-4}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:F-4}", static_cast<Value>(42));});
     }
     
     void test_method_(format_with_fixed_point_argument_and_invalid_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:Fa}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:Fa}", static_cast<Value>(42));});
     }
     
     void test_method_(format_with_general_argument) {
-      assert::are_equal(L"42", strings::format(L"{0:g}", static_cast<Value>(42)));
+      assert::are_equal(L"42", ustring::format(L"{0:g}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_general_argument_and_one_digit_precision) {
-      assert::are_equal(L"42", strings::format(L"{0:G2}", static_cast<Value>(42)));
+      assert::are_equal(L"42", ustring::format(L"{0:G2}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_general_argument_and_two_digits_precision) {
-      assert::are_equal(L"42", strings::format(L"{0:G10}", static_cast<Value>(42)));
+      assert::are_equal(L"42", ustring::format(L"{0:G10}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_general_argument_and_three_digits_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:G100}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:G100}", static_cast<Value>(42));});
     }
     
     void test_method_(format_with_general_argument_and_negative_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:G-2}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:G-2}", static_cast<Value>(42));});
     }
 
     void test_method_(format_with_general_argument_and_invalid_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:Ga}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:Ga}", static_cast<Value>(42));});
     }
     
     void test_method_(format_with_number_argument) {
       if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
-        assert::are_equal(L"123.00", strings::format(L"{0:n}", static_cast<Value>(123)));
+        assert::are_equal(L"123.00", ustring::format(L"{0:n}", static_cast<Value>(123)));
       else if (std::is_same<Value, short>::value || std::is_same<Value, unsigned short>::value)
-        assert::are_equal(L"1,234.00", strings::format(L"{0:n}", static_cast<Value>(1234)));
+        assert::are_equal(L"1,234.00", ustring::format(L"{0:n}", static_cast<Value>(1234)));
       else
-        assert::are_equal(L"1,234,567.00", strings::format(L"{0:n}", static_cast<Value>(1234567)));
+        assert::are_equal(L"1,234,567.00", ustring::format(L"{0:n}", static_cast<Value>(1234567)));
     }
     
     void test_method_(format_with_number_argument_and_one_digit_precision) {
       if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
-        assert::are_equal(L"123.0000", strings::format(L"{0:N4}", static_cast<Value>(123)));
+        assert::are_equal(L"123.0000", ustring::format(L"{0:N4}", static_cast<Value>(123)));
       else if (std::is_same<Value, short>::value || std::is_same<Value, unsigned short>::value)
-        assert::are_equal(L"1,234.0000", strings::format(L"{0:N4}", static_cast<Value>(1234)));
+        assert::are_equal(L"1,234.0000", ustring::format(L"{0:N4}", static_cast<Value>(1234)));
       else
-        assert::are_equal(L"1,234,567.0000", strings::format(L"{0:N4}", static_cast<Value>(1234567)));
+        assert::are_equal(L"1,234,567.0000", ustring::format(L"{0:N4}", static_cast<Value>(1234567)));
     }
     
     void test_method_(format_with_number_argument_and_two_digits_precision) {
       if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
-        assert::are_equal(L"123.0000000000", strings::format(L"{0:N10}", static_cast<Value>(123)));
+        assert::are_equal(L"123.0000000000", ustring::format(L"{0:N10}", static_cast<Value>(123)));
       else if (std::is_same<Value, short>::value || std::is_same<Value, unsigned short>::value)
-        assert::are_equal(L"1,234.0000000000", strings::format(L"{0:N10}", static_cast<Value>(1234)));
+        assert::are_equal(L"1,234.0000000000", ustring::format(L"{0:N10}", static_cast<Value>(1234)));
       else
-        assert::are_equal(L"1,234,567.0000000000", strings::format(L"{0:N10}", static_cast<Value>(1234567)));
+        assert::are_equal(L"1,234,567.0000000000", ustring::format(L"{0:N10}", static_cast<Value>(1234567)));
     }
     
     void test_method_(format_with_number_argument_and_three_digits_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:N100}", static_cast<Value>(123));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:N100}", static_cast<Value>(123));});
     }
 
     void test_method_(format_with_number_argument_and_negative_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:N-4}", static_cast<Value>(123));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:N-4}", static_cast<Value>(123));});
     }
 
     void test_method_(format_with_number_argument_and_invalid_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:Na}", static_cast<Value>(123));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:Na}", static_cast<Value>(123));});
     }
     
     void test_method_(format_with_octal_argument) {
-      assert::are_equal(L"52", strings::format(L"{0:o}", static_cast<Value>(42)));
+      assert::are_equal(L"52", ustring::format(L"{0:o}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_octal_argument_and_one_digit_precision) {
-      assert::are_equal(L"00052", strings::format(L"{0:O5}", static_cast<Value>(42)));
+      assert::are_equal(L"00052", ustring::format(L"{0:O5}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_octal_argument_and_two_digits_precision) {
-      assert::are_equal(L"0000000052", strings::format(L"{0:O10}", static_cast<Value>(42)));
+      assert::are_equal(L"0000000052", ustring::format(L"{0:O10}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_octal_argument_and_three_digits_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:O100}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:O100}", static_cast<Value>(42));});
     }
 
     void test_method_(format_with_octal_argument_and_negative_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:O-5}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:O-5}", static_cast<Value>(42));});
     }
     
     void test_method_(format_with_octal_argument_and_invalid_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:Oa}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:Oa}", static_cast<Value>(42));});
     }
     
     void test_method_(format_with_percent_argument) {
-      assert::are_equal(L"100.00 %", strings::format(L"{0:p}", static_cast<Value>(1)));
+      assert::are_equal(L"100.00 %", ustring::format(L"{0:p}", static_cast<Value>(1)));
     }
     
     void test_method_(format_with_percent_argument_and_one_digit_precision) {
-      assert::are_equal(L"600.0000 %", strings::format(L"{0:P4}", static_cast<Value>(6)));
+      assert::are_equal(L"600.0000 %", ustring::format(L"{0:P4}", static_cast<Value>(6)));
     }
     
     void test_method_(format_with_percent_argument_and_two_digits_precision) {
-      assert::are_equal(L"600.0000000000 %", strings::format(L"{0:P10}", static_cast<Value>(6)));
+      assert::are_equal(L"600.0000000000 %", ustring::format(L"{0:P10}", static_cast<Value>(6)));
     }
     
     void test_method_(format_with_percent_argument_and_three_digits_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:P100}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:P100}", static_cast<Value>(42));});
     }
 
     void test_method_(format_with_percent_argument_and_negative_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:P-4}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:P-4}", static_cast<Value>(42));});
     }
     
     void test_method_(format_with_percent_argument_and_invalid_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:Pa}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:Pa}", static_cast<Value>(42));});
     }
     
     void test_method_(format_with_hexadecimal_argument) {
-      assert::are_equal(L"2a", strings::format(L"{0:x}", static_cast<Value>(42)));
+      assert::are_equal(L"2a", ustring::format(L"{0:x}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_hexadecimal_argument_and_one_digit_precision) {
-      assert::are_equal(L"002A", strings::format(L"{0:X4}", static_cast<Value>(42)));
+      assert::are_equal(L"002A", ustring::format(L"{0:X4}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_hexadecimal_argument_and_two_digits_precision) {
-      assert::are_equal(L"000000002A", strings::format(L"{0:X10}", static_cast<Value>(42)));
+      assert::are_equal(L"000000002A", ustring::format(L"{0:X10}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_hexadecimal_argument_and_three_digits_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:X100}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:X100}", static_cast<Value>(42));});
     }
     
     void test_method_(format_with_hexadecimal_argument_and_negative_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:X-4}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:X-4}", static_cast<Value>(42));});
     }
     
     void test_method_(format_with_hexadecimal_argument_and_invalid_precision) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:Xa}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:Xa}", static_cast<Value>(42));});
     }
     
     void test_method_(format_with_alignment_before_format) {
-      assert::are_equal(L"    42", strings::format(L"{0,6:D}", static_cast<Value>(42)));
+      assert::are_equal(L"    42", ustring::format(L"{0,6:D}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_alignment_after_format) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:D,6}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:D,6}", static_cast<Value>(42));});
     }
 
     void test_method_(format_with_invalid_format) {
-      assert::throws<xtd::format_exception>([]{strings::format(L"{0:V}", static_cast<Value>(42));});
+      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:V}", static_cast<Value>(42));});
     }
   };
 }
