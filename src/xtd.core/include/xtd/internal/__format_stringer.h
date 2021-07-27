@@ -9,13 +9,13 @@
 
 #include <chrono>
 #include <cctype>
+#include <cstdint>
 #include <iomanip>
 #include <locale>
 #include <map>
 #include <sstream>
 #include <string>
 #include <vector>
-#include "../types.h"
 
 /// @cond
 namespace xtd {
