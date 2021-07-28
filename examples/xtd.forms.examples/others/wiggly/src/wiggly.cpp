@@ -26,14 +26,14 @@ namespace examples {
       auto pos = point {(e.clip_rectangle().size().width() - static_cast<int>(e.graphics().measure_string(text(), font()).width())) / 2, (e.clip_rectangle().size().height() - static_cast<int>(e.graphics().measure_string(text(), font()).height())) / 2};
       for (auto i = 0u; i < wiggly_text.length(); i++) {
         auto index = (step + i) % sins.size();
-        e.graphics().draw_string(strings::format("{}", wiggly_text[i]), font(), solid_brush {color::from_hsb(360.0f / sins.size() * index, 1.0f, 0.75f)}, point::subtract(pos, point(0, sins[index] * font().height() / 400)));
-        pos.x(pos.x() + static_cast<int>(e.graphics().measure_string(strings::format("{}", wiggly_text[i]), font()).width()));
+        e.graphics().draw_string(ustring::format("{}", wiggly_text[i]), font(), solid_brush {color::from_hsb(360.0f / sins.size() * index, 1.0f, 0.75f)}, point::subtract(pos, point(0, sins[index] * font().height() / 400)));
+        pos.x(pos.x() + static_cast<int>(e.graphics().measure_string(ustring::format("{}", wiggly_text[i]), font()).width()));
       }
     }
     
     void on_text_changed(const event_args& e) override {
       user_control::on_text_changed(e);
-      wiggly_text = strings::to_u32string(text());
+      wiggly_text = convert_string::to_u32string(text());
     }
 
   private:

@@ -83,9 +83,9 @@ high_scores_dialog::high_scores_dialog() {
 }
 
 void high_scores_dialog::read_and_update_settings() {
-  beginner_score_label_.text(strings::format("{} seconds"_t, properties::settings::default_settings().beginner_high_scores_value()));
-  intermediate_score_label_.text(strings::format("{} seconds"_t, properties::settings::default_settings().intermediate_high_scores_value()));
-  expert_score_label_.text(strings::format("{} seconds"_t, properties::settings::default_settings().expert_high_scores_value()));
+  beginner_score_label_.text(ustring::format("{} seconds"_t, properties::settings::default_settings().beginner_high_scores_value()));
+  intermediate_score_label_.text(ustring::format("{} seconds"_t, properties::settings::default_settings().intermediate_high_scores_value()));
+  expert_score_label_.text(ustring::format("{} seconds"_t, properties::settings::default_settings().expert_high_scores_value()));
   
   beginner_name_label_.text(properties::settings::default_settings().beginner_high_scores_name());
   intermediate_name_label_.text(properties::settings::default_settings().intermediate_high_scores_name());

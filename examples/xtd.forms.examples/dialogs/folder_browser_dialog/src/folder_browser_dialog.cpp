@@ -17,7 +17,7 @@ public:
       dialog.selected_path(selected_path);
       if (dialog.show_sheet_dialog(*this) == forms::dialog_result::ok) {
         selected_path = dialog.selected_path();
-        label1.text(strings::format("Path = {}", selected_path));
+        label1.text(ustring::format("Path = {}", selected_path));
       }
     };
 

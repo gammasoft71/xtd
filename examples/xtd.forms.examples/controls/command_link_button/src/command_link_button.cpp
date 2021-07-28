@@ -17,7 +17,7 @@ namespace examples {
       command_link_button1.location({30, 30});
       command_link_button1.size({240, 60});
       command_link_button1.click += [&] {
-        label1.text(strings::format("command link button 1 clicked {} times", ++command_link_button1_clicked));
+        label1.text(ustring::format("command link button 1 clicked {} times", ++command_link_button1_clicked));
       };
       
       label1.parent(*this);

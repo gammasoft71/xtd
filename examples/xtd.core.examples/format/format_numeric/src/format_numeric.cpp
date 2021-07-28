@@ -5,27 +5,27 @@ using namespace xtd;
 
 int main() {
   locale::global(locale("en_US.UTF-8")); // change to us for currency
-  cout << strings::format("{}", 42) << endl;
-  cout << strings::format("0b{:b8}", 42) << endl;
-  cout << strings::format("0b{:B8}", 42) << endl;
-  cout << strings::format("{:c}", 42) << endl;
-  cout << strings::format("{:C}", 42) << endl;
-  cout << strings::format("{:d}", 42) << endl;
-  cout << strings::format("{:D}", 42) << endl;
-  cout << strings::format("{:e}", 42) << endl;
-  cout << strings::format("{:E}", 42) << endl;
-  cout << strings::format("{:f}", 42) << endl;
-  cout << strings::format("{:F}", 42) << endl;
-  cout << strings::format("{:g}", 42) << endl;
-  cout << strings::format("{:G}", 42) << endl;
-  cout << strings::format("0{:o}", 42) << endl;
-  cout << strings::format("0{:O}", 42) << endl;
-  cout << strings::format("{:n}", 42) << endl;
-  cout << strings::format("{:N}", 42) << endl;
-  cout << strings::format("{:p}", 42) << endl;
-  cout << strings::format("{:P}", 42) << endl;
-  cout << strings::format("0x{:x4}", 42) << endl;
-  cout << strings::format("0x{:X4}", 42) << endl;
+  cout << ustring::format("{}", 42) << endl;
+  cout << ustring::format("0b{:b8}", 42) << endl;
+  cout << ustring::format("0b{:B8}", 42) << endl;
+  cout << ustring::format("{:c}", 42) << endl;
+  cout << ustring::format("{:C}", 42) << endl;
+  cout << ustring::format("{:d}", 42) << endl;
+  cout << ustring::format("{:D}", 42) << endl;
+  cout << ustring::format("{:e}", 42) << endl;
+  cout << ustring::format("{:E}", 42) << endl;
+  cout << ustring::format("{:f}", 42) << endl;
+  cout << ustring::format("{:F}", 42) << endl;
+  cout << ustring::format("{:g}", 42) << endl;
+  cout << ustring::format("{:G}", 42) << endl;
+  cout << ustring::format("0{:o}", 42) << endl;
+  cout << ustring::format("0{:O}", 42) << endl;
+  cout << ustring::format("{:n}", 42) << endl;
+  cout << ustring::format("{:N}", 42) << endl;
+  cout << ustring::format("{:p}", 42) << endl;
+  cout << ustring::format("{:P}", 42) << endl;
+  cout << ustring::format("0x{:x4}", 42) << endl;
+  cout << ustring::format("0x{:X4}", 42) << endl;
 }
 
 // This code produces the following output :

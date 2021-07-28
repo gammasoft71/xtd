@@ -8,7 +8,7 @@ int main() {
   form.text("Click anywhere on the form");
   form.mouse_click += [&](object& sender, const mouse_event_args& e) {
     if (e.button() == mouse_buttons::left)
-      message_box::show(form, strings::format("The form is clicked at {}", e.location()), "form_click");
+      message_box::show(form, ustring::format("The form is clicked at {}", e.location()), "form_click");
   };
   application::run(form);
 }

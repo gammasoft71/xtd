@@ -8,7 +8,7 @@ namespace examples {
   class program {
   public:
     static void main(const std::vector<std::string>& args) {
-      cout << strings::format("args = {}", strings::join(", ", args)) << endl;
+      cout << ustring::format("args = {}", ustring::join(", ", args)) << endl;
       environment::exit_code(42);
     }
   };

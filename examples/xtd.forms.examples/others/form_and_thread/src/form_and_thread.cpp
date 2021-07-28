@@ -25,7 +25,7 @@ public:
           counter++;
           /// call invoke method to update ui in the main thread.
           messages.begin_invoke([&] {
-            messages.items().push_back(xtd::strings::format("thread: {}, counter: {}", user_thread_id, counter));
+            messages.items().push_back(xtd::ustring::format("thread: {}, counter: {}", user_thread_id, counter));
             messages.selected_index(messages.items().size() - 1);
           });
         }

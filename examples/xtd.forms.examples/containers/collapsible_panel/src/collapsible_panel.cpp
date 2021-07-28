@@ -29,7 +29,7 @@ public:
     button_add.location({10, 0});
     button_add.text("Add");
     button_add.click += [&] {
-      auto item = control::create<label>(collapsible_panel2, strings::format("item{}", ++count));
+      auto item = control::create<label>(collapsible_panel2, ustring::format("item{}", ++count));
       item->dock(dock_style::top);
       control_items.push_back(move(item));
     };

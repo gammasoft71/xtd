@@ -11,15 +11,15 @@ public:
     text("Key events example");
     
     key_down += [&](object& sender, key_event_args& e) {
-      ctrace << strings::format("key_down={{key_code={}, key_data=[{}], value=0x{:X4}, modifiers=[{}]}}", e.key_code(), e.key_data(), e.key_value(), e.modifiers()) << endl;
+      ctrace << ustring::format("key_down={{key_code={}, key_data=[{}], value=0x{:X4}, modifiers=[{}]}}", e.key_code(), e.key_data(), e.key_value(), e.modifiers()) << endl;
     };
     
     key_press += [&](object& sender, key_press_event_args& e) {
-      ctrace << strings::format("key_press={{key_char={}}}", e.key_char() == 0 ? "[none]" : strings::format("'{}'", e.key_char())) << endl;
+      ctrace << ustring::format("key_press={{key_char={}}}", e.key_char() == 0 ? "[none]" : ustring::format("'{}'", e.key_char())) << endl;
     };
     
     key_up += [&](object& sender, key_event_args& e) {
-      ctrace << strings::format("key_up={{key_code={}, key_data=[{}], value=0x{:X4}, modifiers=[{}]}}", e.key_code(), e.key_data(), e.key_value(), e.modifiers()) << endl;
+      ctrace << ustring::format("key_up={{key_code={}, key_data=[{}], value=0x{:X4}, modifiers=[{}]}}", e.key_code(), e.key_data(), e.key_value(), e.modifiers()) << endl;
       if (e.modifiers() == keys::none) ctrace << endl;
     };
   }

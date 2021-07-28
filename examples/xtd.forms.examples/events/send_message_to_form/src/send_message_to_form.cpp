@@ -37,7 +37,7 @@ public:
     
     notifier.something_ready += [&] {
       static auto counter = 0;
-      list_box_messages.items().push_back(strings::format("Something ready notified {} times", ++counter));
+      list_box_messages.items().push_back(ustring::format("Something ready notified {} times", ++counter));
       list_box_messages.selected_index(list_box_messages.items().size() - 1);
     };
     

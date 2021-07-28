@@ -5,7 +5,7 @@ using namespace std;
 using namespace xtd;
 
 int main() {
-  string strings = strings::join(", ", {"One", "Two", "Three", "Four", "Five"});
+  string strings = ustring::join(", ", {"One", "Two", "Three", "Four", "Five"});
   cout << strings << endl;
 }
 

@@ -22,7 +22,7 @@ namespace font_family_example {
       list_box_font_families.bounds({20, 60, 360, 420});
       
       std::vector<drawing::font_family> font_families = drawing::font_family::families();
-      label_font_famlies_count.text(strings::format("There are {0} font families :", font_families.size()));
+      label_font_famlies_count.text(ustring::format("There are {0} font families :", font_families.size()));
       for (drawing::font_family fontFamily : font_families)
         list_box_font_families.items().push_back(fontFamily.name());
     }

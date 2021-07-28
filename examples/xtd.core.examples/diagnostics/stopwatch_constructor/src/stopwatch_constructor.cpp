@@ -16,7 +16,7 @@ int main() {
   nanoseconds ns = stopwatch.elapsed();
   
   // Format and display the duration value.
-  string elapsed_time = strings::format("{0:H}:{0:M}:{0:S}.{1:D2}", ns, duration_cast<milliseconds>(ns).count() % 1000 / 10);
+  string elapsed_time = ustring::format("{0:H}:{0:M}:{0:S}.{1:D2}", ns, duration_cast<milliseconds>(ns).count() % 1000 / 10);
   console::write_line("RunTime " + elapsed_time);
 }
 

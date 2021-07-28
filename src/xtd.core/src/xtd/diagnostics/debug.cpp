@@ -90,7 +90,7 @@ void debug::cassert(bool condition, const xtd::diagnostics::stack_frame& stack_f
   if (__should_aborted__(condition, "", stack_frame)) debug_break_();
 }
 
-void debug::fail_(const std::string& message) {
+void debug::fail__(const std::string& message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -104,7 +104,7 @@ void debug::fail_(const std::string& message) {
   if (auto_flush_) flush();
 }
 
-void debug::fail_(const std::string& message, const std::string& detail_message) {
+void debug::fail__(const std::string& message, const std::string& detail_message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);

@@ -19,7 +19,7 @@ public:
       dialog.filter("Text Files (*.txt)|*.txt|All Files (*.*)|*.*");
       if (dialog.show_sheet_dialog(*this) == forms::dialog_result::ok) {
         file_name = dialog.file_name();
-        label1.text(strings::format("File = {}", file_name));
+        label1.text(ustring::format("File = {}", file_name));
       }
     };
 

@@ -6,7 +6,7 @@ using namespace xtd;
 
 int main() {
   for (size_t index = 0; index < 10; index++)
-    cout << strings::format("{:X}", guid::new_guid()) << endl;
+    cout << ustring::format("{:X}", guid::new_guid()) << endl;
 }
 
 // This code can produces the following output:

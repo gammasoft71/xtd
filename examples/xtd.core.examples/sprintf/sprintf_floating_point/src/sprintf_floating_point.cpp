@@ -4,17 +4,17 @@ using namespace std;
 using namespace xtd;
 
 int main() {
-  cout << strings::sprintf("%f", 12.345) << endl;
-  cout << strings::sprintf("%F", 12.345) << endl;
-  cout << strings::sprintf("%e", 12.345) << endl;
-  cout << strings::sprintf("%E", 12.345) << endl;
-  cout << strings::sprintf("%g", 12.345) << endl;
-  cout << strings::sprintf("%G", 12.345) << endl;
-  cout << strings::sprintf("0x%a", 12.345) << endl;
-  cout << strings::sprintf("0x%A", 12.345) << endl;
-  cout << strings::sprintf("%f", std::numeric_limits<double>::infinity()) << endl;
-  cout << strings::sprintf("%f", std::numeric_limits<double>::quiet_NaN()) << endl;
-  cout << strings::sprintf("%f", std::numeric_limits<double>::signaling_NaN()) << endl;
+  cout << ustring::sprintf("%f", 12.345) << endl;
+  cout << ustring::sprintf("%F", 12.345) << endl;
+  cout << ustring::sprintf("%e", 12.345) << endl;
+  cout << ustring::sprintf("%E", 12.345) << endl;
+  cout << ustring::sprintf("%g", 12.345) << endl;
+  cout << ustring::sprintf("%G", 12.345) << endl;
+  cout << ustring::sprintf("0x%a", 12.345) << endl;
+  cout << ustring::sprintf("0x%A", 12.345) << endl;
+  cout << ustring::sprintf("%f", std::numeric_limits<double>::infinity()) << endl;
+  cout << ustring::sprintf("%f", std::numeric_limits<double>::quiet_NaN()) << endl;
+  cout << ustring::sprintf("%f", std::numeric_limits<double>::signaling_NaN()) << endl;
 }
 
 // This code produces the following output :

@@ -5,17 +5,17 @@ using namespace std::literals;
 using namespace xtd;
 
 int main() {
-  cout << strings::format("{}", "string") << endl;
-  cout << strings::format("{}", u8"string") << endl;
-  cout << strings::format("{}", L"string") << endl;
-  cout << strings::format("{}", u"string") << endl;
-  cout << strings::format("{}", U"string") << endl;
-  cout << strings::format("{}", "string"s) << endl;
-  cout << strings::format("{}", u8"string"s) << endl;
-  cout << strings::format("{}", L"string"s) << endl;
-  cout << strings::format("{}", u"string"s) << endl;
-  cout << strings::format("{}", U"string"s) << endl;
-  cout << strings::format("{:anything}", "string") << endl;
+  cout << ustring::format("{}", "string") << endl;
+  cout << ustring::format("{}", u8"string") << endl;
+  cout << ustring::format("{}", L"string") << endl;
+  cout << ustring::format("{}", u"string") << endl;
+  cout << ustring::format("{}", U"string") << endl;
+  cout << ustring::format("{}", "string"s) << endl;
+  cout << ustring::format("{}", u8"string"s) << endl;
+  cout << ustring::format("{}", L"string"s) << endl;
+  cout << ustring::format("{}", u"string"s) << endl;
+  cout << ustring::format("{}", U"string"s) << endl;
+  cout << ustring::format("{:anything}", "string") << endl;
 }
 
 // This code produces the following output :

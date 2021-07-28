@@ -23,7 +23,7 @@ namespace examples {
       radio_button2.text("Radio 2");
       
       radio_button3.checked_changed += [&] {
-        label1.text(strings::format("Radio 3 checked = {}", radio_button3.checked()));
+        label1.text(ustring::format("Radio 3 checked = {}", radio_button3.checked()));
       };
       radio_button3.checked(true);
       radio_button3.location({30, 90});

@@ -109,7 +109,7 @@ void minesweeper_form::new_game() {
           if (yy >= 0 && yy < grid_size_.height() && xx >= 0 && xx < grid_size_.width() && cells_[xx][yy].has_mine())
             cells_[x][y].neighbors(cells_[x][y].neighbors() + 1);
   
-  mine_count_label_.text(strings::format("{:D3}", mine_count_ - flagged_mine_count_));
+  mine_count_label_.text(ustring::format("{:D3}", mine_count_ - flagged_mine_count_));
   stopwatch_label_.text("000");
   start_game_.image(bitmap(properties::resources::smiley1(), {24, 24}));
   invalidate();
@@ -311,8 +311,8 @@ void minesweeper_form::mark_cell(int x, int y) {
     cell.state(cell_state::question);
     --flagged_mine_count_;
   } else if (cell.state() == cell_state::flag || cell.state() == cell_state::question) cell.state(cell_state::unchecked);
-  if ((mine_count_ - flagged_mine_count_) >= 0 && (mine_count_ - flagged_mine_count_) <= 999) mine_count_label_.text(strings::format("{:D3}", mine_count_ - flagged_mine_count_));
-  else if (mine_count_ - flagged_mine_count_ >= -99) mine_count_label_.text(strings::format("{:D2}", mine_count_ - flagged_mine_count_));
+  if ((mine_count_ - flagged_mine_count_) >= 0 && (mine_count_ - flagged_mine_count_) <= 999) mine_count_label_.text(ustring::format("{:D3}", mine_count_ - flagged_mine_count_));
+  else if (mine_count_ - flagged_mine_count_ >= -99) mine_count_label_.text(ustring::format("{:D2}", mine_count_ - flagged_mine_count_));
   invalidate();
 }
 
@@ -443,7 +443,7 @@ void minesweeper_form::on_status_panel_resize(object& sender, const event_args& 
 
 void minesweeper_form::on_stopwatch_tick() {
   if (stopwatch_count_ < 999)
-    stopwatch_label_.text(strings::format("{:D3}", ++stopwatch_count_));
+    stopwatch_label_.text(ustring::format("{:D3}", ++stopwatch_count_));
 }
 
 void minesweeper_form::uncover_cell(int x, int y) {

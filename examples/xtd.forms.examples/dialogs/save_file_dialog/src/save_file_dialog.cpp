@@ -17,7 +17,7 @@ public:
       dialog.file_name("MyFile.txt");
       dialog.filter("Text Files (*.txt)|*.txt;*.md|All Files (*.*)|*.*");
       if (dialog.show_sheet_dialog(*this) == dialog_result::ok)
-        label1.text(strings::format("File = {0}", dialog.file_name()));
+        label1.text(ustring::format("File = {0}", dialog.file_name()));
     };
 
     label1.parent(*this);
