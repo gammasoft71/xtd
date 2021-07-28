@@ -2,8 +2,8 @@
 /// @brief Contains xtd::tunit::ignore_error exception.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+#include <xtd/ustring.h>
 #include <stdexcept>
-#include <string>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -17,7 +17,7 @@ namespace xtd {
     public:
       /// @brief Create a new instance of ignore_error class.
       /// @param message Message string associate to the error.
-      explicit ignore_error(const std::string& message) : message_(message) {}
+      explicit ignore_error(const xtd::ustring& message) : message_(message) {}
 
       /// @brief Create a new instance of ignore_error class.
       /// @param message Message string associate to the error.

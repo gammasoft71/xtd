@@ -54,7 +54,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_equal(23, int(24), "User message..."); // test fails.
       /// @endcode
       template<typename expected_t, typename actual_t>
-      static void are_equal(const expected_t& expected, const actual_t& actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
+      static void are_equal(const expected_t& expected, const actual_t& actual, const xtd::ustring& message) {are_equal(expected, actual, message, line_info());}
       
       /// @brief Valids that two type are equal.
       /// @param expected the expected value.
@@ -67,7 +67,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_equal(23, int(24), "User message...", line_info_); // test fails.
       /// @endcode
       template<typename expected_t, typename actual_t>
-      static void are_equal(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void are_equal(const expected_t& expected, const actual_t& actual, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::are_equal(expected, actual, message, line_info);
         } catch (...) {
@@ -76,7 +76,7 @@ namespace xtd {
       }
       
       /// @cond
-      static void are_equal(const char* expected, const char* actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void are_equal(const char* expected, const char* actual, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try{
           assert::are_equal(expected, actual, message, line_info);
         } catch (...) {
@@ -84,7 +84,7 @@ namespace xtd {
         }
       }
       
-      static void are_equal(const char16_t* expected, const char16_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void are_equal(const char8_t* expected, const char8_t* actual, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::are_equal(expected, actual, message, line_info);
         } catch (...) {
@@ -92,7 +92,7 @@ namespace xtd {
         }
       }
       
-      static void are_equal(const char32_t* expected, const char32_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void are_equal(const char16_t* expected, const char16_t* actual, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::are_equal(expected, actual, message, line_info);
         } catch (...) {
@@ -100,7 +100,7 @@ namespace xtd {
         }
       }
 
-      static void are_equal(const wchar_t* expected, const wchar_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void are_equal(const char32_t* expected, const char32_t* actual, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::are_equal(expected, actual, message, line_info);
         } catch (...) {
@@ -108,7 +108,15 @@ namespace xtd {
         }
       }
 
-      static void are_equal(float expected, float actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void are_equal(const wchar_t* expected, const wchar_t* actual, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
+        try {
+          assert::are_equal(expected, actual, message, line_info);
+        } catch (...) {
+          base_assert::error();
+        }
+      }
+
+      static void are_equal(float expected, float actual, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::are_equal(expected, actual, message, line_info);
         } catch (...) {
@@ -116,7 +124,7 @@ namespace xtd {
         }
       }
       
-      static void are_equal(double expected, double actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void are_equal(double expected, double actual, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::are_equal(expected, actual, message, line_info);
         } catch (...) {
@@ -124,7 +132,7 @@ namespace xtd {
         }
       }
       
-      static void are_equal(long double expected, long double actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void are_equal(long double expected, long double actual, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::are_equal(expected, actual, message, line_info);
         } catch (...) {
@@ -169,7 +177,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_equal_(0.00008f, f, 0.0000000000001f, "User message..."); // test ok.
       /// xtd::tunit::valid::are_equal_(0.00008f, f, 0.00000000000001f, "User message..."); // test fails.
       /// @endcode
-      static void are_equal(float expected, float& actual, float tolerance, const std::string& message) {are_equal(expected, actual, tolerance, message, line_info());}
+      static void are_equal(float expected, float& actual, float tolerance, const xtd::ustring& message) {are_equal(expected, actual, tolerance, message, line_info());}
       
       /// @brief Valids that two type are equal.
       /// @param expected the expected value.
@@ -183,7 +191,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_equal_(0.00008f, f, 0.0000000000001f, "User message...", line_info_); // test ok.
       /// xtd::tunit::valid::are_equal_(0.00008f, f, 0.00000000000001f, "User message...", line_info_); // test fails.
       /// @endcode
-      static void are_equal(float expected, float actual, float tolerance, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void are_equal(float expected, float actual, float tolerance, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::are_equal(expected, actual, tolerance, message, line_info);
         } catch (...) {
@@ -227,7 +235,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_equal_(0.00008, d, 0.0000000000001, "User message..."); // test ok.
       /// xtd::tunit::valid::are_equal_(0.00008, d, 0.00000000000001, "User message..."); // test fails.
       /// @endcode
-      static void are_equal(double expected, double actual, double tolerance, const std::string& message) {are_equal(expected, actual, tolerance, message, line_info());}
+      static void are_equal(double expected, double actual, double tolerance, const xtd::ustring& message) {are_equal(expected, actual, tolerance, message, line_info());}
       
       /// @brief Valids that two type are equal.
       /// @param expected the expected value.
@@ -241,7 +249,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_equal_(0.00008, d, 0.0000000000001, "User message...", line_info_); // test ok.
       /// xtd::tunit::valid::are_equal_(0.00008, d, 0.00000000000001, "User message...", line_info_); // test fails.
       /// @endcode
-      static void are_equal(double expected, double actual, double tolerance, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void are_equal(double expected, double actual, double tolerance, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::are_equal(expected, actual, tolerance, message, line_info);
         } catch (...) {
@@ -285,7 +293,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_equal_(0.00008l, ld, 0.0000000000001l, "User message..."); // test ok.
       /// xtd::tunit::valid::are_equal_(0.00008l, ld, 0.00000000000001l, "User message..."); // test fails.
       /// @endcode
-      static void are_equal(long double expected, long double actual, long double tolerance, const std::string& message) {are_equal(expected, actual, tolerance, message, line_info());}
+      static void are_equal(long double expected, long double actual, long double tolerance, const xtd::ustring& message) {are_equal(expected, actual, tolerance, message, line_info());}
       
       /// @brief Valids that two type are equal.
       /// @param expected the expected value.
@@ -299,7 +307,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_equal_(0.00008l, ld, 0.0000000000001l, "User message...", line_info_); // test ok.
       /// xtd::tunit::valid::are_equal_(0.00008l, ld, 0.00000000000001l, "User message...", line_info_); // test fails.
       /// @endcode
-      static void are_equal(long double expected, long double actual, long double tolerance, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void are_equal(long double expected, long double actual, long double tolerance, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::are_equal(expected, actual, tolerance, message, line_info);
         } catch (...) {
@@ -340,7 +348,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_not_equal(24, int(24), "User message..."); // test fails.
       /// @endcode
       template<typename expected_t, typename actual_t>
-      static void are_not_equal(const expected_t& expected, const actual_t& actual, const std::string& message) {are_not_equal(expected, actual, message, line_info());}
+      static void are_not_equal(const expected_t& expected, const actual_t& actual, const xtd::ustring& message) {are_not_equal(expected, actual, message, line_info());}
       
       /// @brief Valids that two type are not equal.
       /// @param expected the expected value.
@@ -353,7 +361,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_not_equal(24, int(24), "User message...", line_info_); // test fails.
       /// @endcode
       template<typename expected_t, typename actual_t>
-      static void are_not_equal(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void are_not_equal(const expected_t& expected, const actual_t& actual, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::are_not_equal(expected, actual, message, line_info);
         } catch (...) {
@@ -362,15 +370,7 @@ namespace xtd {
       }
 
       /// @cond
-      static void are_not_equal(const char* expected, const char* actual, const std::string& message, const xtd::tunit::line_info& line_info) {
-        try {
-          assert::are_not_equal(expected, actual, message, line_info);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-
-      static void are_not_equal(const char16_t* expected, const char16_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void are_not_equal(const char* expected, const char* actual, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::are_not_equal(expected, actual, message, line_info);
         } catch (...) {
@@ -378,7 +378,7 @@ namespace xtd {
         }
       }
       
-      static void are_not_equal(const char32_t* expected, const char32_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void are_not_equal(const char8_t* expected, const char8_t* actual, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::are_not_equal(expected, actual, message, line_info);
         } catch (...) {
@@ -386,7 +386,23 @@ namespace xtd {
         }
       }
       
-      static void are_not_equal(const wchar_t* expected, const wchar_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void are_not_equal(const char16_t* expected, const char16_t* actual, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
+        try {
+          assert::are_not_equal(expected, actual, message, line_info);
+        } catch (...) {
+          base_assert::error();
+        }
+      }
+      
+      static void are_not_equal(const char32_t* expected, const char32_t* actual, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
+        try {
+          assert::are_not_equal(expected, actual, message, line_info);
+        } catch (...) {
+          base_assert::error();
+        }
+      }
+      
+      static void are_not_equal(const wchar_t* expected, const wchar_t* actual, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::are_not_equal(expected, actual, message, line_info);
         } catch (...) {
@@ -437,7 +453,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_not_same(b, a, "User message..."); // test fails.
       /// @endcode
       template<typename expected_t, typename actual_t>
-      static void are_not_same(const expected_t& expected, const actual_t& actual, const std::string& message) {are_not_same(expected, actual, message, line_info());}
+      static void are_not_same(const expected_t& expected, const actual_t& actual, const xtd::ustring& message) {are_not_same(expected, actual, message, line_info());}
       
       /// @brief Valids that two objects do refer to differents objects.
       /// @param expected the expected value.
@@ -453,7 +469,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_not_same(b, a, "User message...", line_info); // test fails.
       /// @endcode
       template<typename expected_t, typename actual_t>
-      static void are_not_same(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void are_not_same(const expected_t& expected, const actual_t& actual, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::are_not_same(expected, actual, message, line_info);
         } catch (...) {
@@ -503,7 +519,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_same(c, a, "User message..."); // test fails.
       /// @endcode
       template<typename expected_t, typename actual_t>
-      static void are_same(const expected_t& expected, const actual_t& actual, const std::string& message) {are_same(expected, actual, message, line_info());}
+      static void are_same(const expected_t& expected, const actual_t& actual, const xtd::ustring& message) {are_same(expected, actual, message, line_info());}
       
       /// @brief Valids that two objects do refer to differents objects.
       /// @param expected the expected value.
@@ -519,7 +535,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_same(c, a, "User message...", line_info_); // test fails.
       /// @endcode
       template<typename expected_t, typename actual_t>
-      static void are_same(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void are_same(const expected_t& expected, const actual_t& actual, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::are_same(expected, actual, message, line_info);
         } catch (...) {
@@ -563,7 +579,7 @@ namespace xtd {
       /// xtd::tunit::valid::contains(4, v1, "User message..."); // test fails.
       /// @endcode
       template<typename item_t, typename collection_t>
-      static void contains(const item_t& item, const collection_t& collection, const std::string& message) {contains(item, collection, message, line_info());}
+      static void contains(const item_t& item, const collection_t& collection, const xtd::ustring& message) {contains(item, collection, message, line_info());}
       
       /// @brief Valids that collection contains an item.
       /// @param item object to verify.
@@ -577,7 +593,7 @@ namespace xtd {
       /// xtd::tunit::valid::contains(4, v1, "User message...", line_info_); // test fails.
       /// @endcode
       template<typename item_t, typename collection_t>
-      static void contains(const item_t& item, const collection_t& collection, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void contains(const item_t& item, const collection_t& collection, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::contains(item, collection, message, line_info);
         } catch (...) {
@@ -591,9 +607,9 @@ namespace xtd {
       template<typename item_t, typename value_t>
       static void contains(const item_t& item, const std::initializer_list<value_t>& values, const xtd::tunit::line_info& line_info) {contains(item, values, "", line_info);}
       template<typename item_t, typename value_t>
-      static void contains(const item_t& item, const std::initializer_list<value_t>& values, const std::string& message) {contains(item, values, message, line_info());}
+      static void contains(const item_t& item, const std::initializer_list<value_t>& values, const xtd::ustring& message) {contains(item, values, message, line_info());}
       template<typename item_t, typename value_t>
-      static void contains(const item_t& item, const std::initializer_list<value_t>& values, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void contains(const item_t& item, const std::initializer_list<value_t>& values, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::contains(item, values, message, line_info);
         } catch (...) {
@@ -601,7 +617,7 @@ namespace xtd {
         }
       }
       
-      static void contains(char item, const char* values, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void contains(char item, const char* values, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::contains(item, values, message, line_info);
         } catch (...) {
@@ -609,7 +625,7 @@ namespace xtd {
         }
       }
       
-      static void contains(char16_t item, const char16_t* values, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void contains(char8_t item, const char8_t* values, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::contains(item, values, message, line_info);
         } catch (...) {
@@ -617,7 +633,15 @@ namespace xtd {
         }
       }
       
-      static void contains(char32_t item, const char32_t* values, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void contains(char16_t item, const char16_t* values, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
+        try {
+          assert::contains(item, values, message, line_info);
+        } catch (...) {
+          base_assert::error();
+        }
+      }
+      
+      static void contains(char32_t item, const char32_t* values, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::contains(item, values, message, line_info);
         } catch (...) {
@@ -625,7 +649,7 @@ namespace xtd {
         }
       }
 
-      static void contains(wchar_t item, const wchar_t* values, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void contains(wchar_t item, const wchar_t* values, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::contains(item, values, message, line_info);
         } catch (...) {
@@ -664,7 +688,7 @@ namespace xtd {
       /// xtd::tunit::valid::does_not_throw([&] {v1.at(2);}, "User message..."); // test ok.
       /// xtd::tunit::valid::does_not_throw([&] {v1.at(5);}, "User message..."); // test fails.
       /// @endcode
-      static void does_not_throw(const std::function<void()>& statement, const std::string& message) {does_not_throw(statement, message, line_info());}
+      static void does_not_throw(const std::function<void()>& statement, const xtd::ustring& message) {does_not_throw(statement, message, line_info());}
       
       /// @brief Valids that the staement does not throw an exception.
       /// @param statement The statement that verify.
@@ -676,7 +700,7 @@ namespace xtd {
       /// xtd::tunit::valid::does_not_throw([&] {v1.at(2);}, "User message...", line_info_); // test ok.
       /// xtd::tunit::valid::does_not_throw([&] {v1.at(5);}, "User message...", line_info_); // test fails.
       /// @endcode
-      static void does_not_throw(const std::function<void()>& statement, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void does_not_throw(const std::function<void()>& statement, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::does_not_throw(statement, message, line_info);
         } catch (...) {
@@ -720,7 +744,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_empty(v2, "User message..."); // test fails.
       /// @endcode
       template<typename value_t>
-      static void is_empty(const value_t& value, const std::string& message) {is_empty(value, message, line_info());}
+      static void is_empty(const value_t& value, const xtd::ustring& message) {is_empty(value, message, line_info());}
       
       /// @brief Valids that collection contains an item.
       /// @param value The value to check is empty.
@@ -734,7 +758,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_empty(v2, "User message...", line_info_); // test fails.
       /// @endcode
       template<typename value_t>
-      static void is_empty(const value_t& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_empty(const value_t& value, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_empty(value, message, line_info);
         } catch (...) {
@@ -748,9 +772,9 @@ namespace xtd {
       template<typename value_t>
       static void is_empty(const std::initializer_list<value_t>& value, const xtd::tunit::line_info& line_info) {is_empty(value, "", line_info);}
       template<typename value_t>
-      static void is_empty(const std::initializer_list<value_t>& value, const std::string& message) {is_empty(value, message, line_info());}
+      static void is_empty(const std::initializer_list<value_t>& value, const xtd::ustring& message) {is_empty(value, message, line_info());}
       template<typename value_t>
-      static void is_empty(const std::initializer_list<value_t>& values, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_empty(const std::initializer_list<value_t>& values, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_empty(values, message, line_info);
         } catch (...) {
@@ -758,7 +782,7 @@ namespace xtd {
         }
       }
       
-      static void is_empty(const char* value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_empty(const char* value, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_empty(value, message, line_info);
         } catch (...) {
@@ -766,7 +790,7 @@ namespace xtd {
         }
       }
       
-      static void is_empty(const char16_t* value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_empty(const char8_t* value, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_empty(value, message, line_info);
         } catch (...) {
@@ -774,7 +798,15 @@ namespace xtd {
         }
       }
       
-      static void is_empty(const char32_t* value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_empty(const char16_t* value, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
+        try {
+          assert::is_empty(value, message, line_info);
+        } catch (...) {
+          base_assert::error();
+        }
+      }
+      
+      static void is_empty(const char32_t* value, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_empty(value, message, line_info);
         } catch (...) {
@@ -782,7 +814,7 @@ namespace xtd {
         }
       }
 
-      static void is_empty(const wchar_t* value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_empty(const wchar_t* value, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_empty(value, message, line_info);
         } catch (...) {
@@ -824,7 +856,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_false(std::empty(s1), "User message..."); // test ok.
       /// xtd::tunit::valid::is_false(std::empty(s2), "User message..."); // test fails.
       /// @endcode
-      static void is_false(bool condition, const std::string& message) {is_false(condition, message, line_info());}
+      static void is_false(bool condition, const xtd::ustring& message) {is_false(condition, message, line_info());}
       
       /// @brief Valids that a condition is false.
       /// @param condition The condition to check is false.
@@ -837,7 +869,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_false(std::empty(s1), "User message...", line_info_); // test ok.
       /// xtd::tunit::valid::is_false(std::empty(s2), "User message...", line_info_); // test fails.
       /// @endcode
-      static void is_false(bool condition, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_false(bool condition, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_false(condition, message, line_info);
         } catch (...) {
@@ -878,7 +910,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_greater(24, 48, "User message..."); // test fails.
       /// @endcode
       template<typename value1_t, typename value2_t>
-      static void is_greater(const value1_t& val1, const value2_t& val2, const std::string& message) {is_greater(val1, val2, message, line_info());}
+      static void is_greater(const value1_t& val1, const value2_t& val2, const xtd::ustring& message) {is_greater(val1, val2, message, line_info());}
       
       /// @brief Valids that the first value is greater than the second value.
       /// @param val1 the first value.
@@ -891,7 +923,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_greater(24, 48, "User message...", line_info_); // test fails.
       /// @endcode
       template<typename value1_t, typename value2_t>
-      static void is_greater(const value1_t& val1, const value2_t& val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_greater(const value1_t& val1, const value2_t& val2, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_greater(val1, val2, message, line_info);
         } catch (...) {
@@ -900,7 +932,23 @@ namespace xtd {
       }
       
       /// @cond
-      static void is_greater(const char* val1, const char* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_greater(const char* val1, const char* val2, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
+        try {
+          assert::is_greater(val1, val2, message, line_info);
+        } catch (...) {
+          base_assert::error();
+        }
+      }
+      
+      static void is_greater(const char8_t* val1, const char8_t* val2, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
+        try {
+          assert::is_greater(val1, val2, message, line_info);
+        } catch (...) {
+          base_assert::error();
+        }
+      }
+      
+      static void is_greater(const char16_t* val1, const char16_t* val2, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_greater(val1, val2, message, line_info);
         } catch (...) {
@@ -908,7 +956,7 @@ namespace xtd {
         }
       }
 
-      static void is_greater(const char16_t* val1, const char16_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_greater(const char32_t* val1, const char32_t* val2, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_greater(val1, val2, message, line_info);
         } catch (...) {
@@ -916,15 +964,7 @@ namespace xtd {
         }
       }
 
-      static void is_greater(const char32_t* val1, const char32_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
-        try {
-          assert::is_greater(val1, val2, message, line_info);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-
-      static void is_greater(const wchar_t* val1, const wchar_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_greater(const wchar_t* val1, const wchar_t* val2, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_greater(val1, val2, message, line_info);
         } catch (...) {
@@ -969,7 +1009,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_greater_or_equal(24, 48, "User message..."); // test fails.
       /// @endcode
       template<typename value1_t, typename value2_t>
-      static void is_greater_or_equal(const value1_t& val1, const value2_t& val2, const std::string& message) {is_greater_or_equal(val1, val2, message, line_info());}
+      static void is_greater_or_equal(const value1_t& val1, const value2_t& val2, const xtd::ustring& message) {is_greater_or_equal(val1, val2, message, line_info());}
       
       /// @brief Valids that the first value is greater than or equal to the second value.
       /// @param val1 the first value.
@@ -983,7 +1023,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_greater_or_equal(24, 48, "User message...", line_info_); // test fails.
       /// @endcode
       template<typename value1_t, typename value2_t>
-      static void is_greater_or_equal(const value1_t& val1, const value2_t& val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_greater_or_equal(const value1_t& val1, const value2_t& val2, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_greater_or_equal(val1, val2, message, line_info);
         } catch (...) {
@@ -992,15 +1032,7 @@ namespace xtd {
       }
       
       /// @cond
-      static void is_greater_or_equal(const char* val1, const char* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
-        try {
-          assert::is_greater_or_equal(val1, val2, message, line_info);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-
-      static void is_greater_or_equal(const char16_t* val1, const char16_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_greater_or_equal(const char* val1, const char* val2, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_greater_or_equal(val1, val2, message, line_info);
         } catch (...) {
@@ -1008,7 +1040,23 @@ namespace xtd {
         }
       }
       
-      static void is_greater_or_equal(const char32_t* val1, const char32_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_greater_or_equal(const char8_t* val1, const char8_t* val2, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
+        try {
+          assert::is_greater_or_equal(val1, val2, message, line_info);
+        } catch (...) {
+          base_assert::error();
+        }
+      }
+      
+      static void is_greater_or_equal(const char16_t* val1, const char16_t* val2, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
+        try {
+          assert::is_greater_or_equal(val1, val2, message, line_info);
+        } catch (...) {
+          base_assert::error();
+        }
+      }
+      
+      static void is_greater_or_equal(const char32_t* val1, const char32_t* val2, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_greater_or_equal(val1, val2, message, line_info);
         } catch (...) {
@@ -1016,7 +1064,7 @@ namespace xtd {
         }
       }
 
-      static void is_greater_or_equal(const wchar_t* val1, const wchar_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_greater_or_equal(const wchar_t* val1, const wchar_t* val2, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_greater_or_equal(val1, val2, message, line_info);
         } catch (...) {
@@ -1058,7 +1106,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_instance_of<std::bad_cast>(except, "User message..."); test fails
       /// @endcode
       template<typename type_t, typename value_t>
-      static void is_instance_of(const value_t& value, const std::string& message) {is_instance_of<type_t>(value, message, line_info());}
+      static void is_instance_of(const value_t& value, const xtd::ustring& message) {is_instance_of<type_t>(value, message, line_info());}
       
       /// @brief Valids that an object is of the type supplied or a derived type.
       /// @param value The object to verify
@@ -1071,7 +1119,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_instance_of<std::bad_cast>(except, "User message...", line_info_); test fails
       /// @endcode
       template<typename type_t, typename value_t>
-      static void is_instance_of(const value_t& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_instance_of(const value_t& value, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_instance_of<type_t>(value, message, line_info);
         } catch (...) {
@@ -1112,7 +1160,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_less(24, 12, "User message..."); // test fails.
       /// @endcode
       template<typename value1_t, typename value2_t>
-      static void is_less(const value1_t& val1, const value2_t& val2, const std::string& message) {is_less(val1, val2, message, line_info());}
+      static void is_less(const value1_t& val1, const value2_t& val2, const xtd::ustring& message) {is_less(val1, val2, message, line_info());}
       
       /// @brief Valids that the first value is is_less than the second value.
       /// @param val1 the first value.
@@ -1125,7 +1173,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_less(24, 12, "User message...", line_info_); // test fails.
       /// @endcode
       template<typename value1_t, typename value2_t>
-      static void is_less(const value1_t& val1, const value2_t& val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_less(const value1_t& val1, const value2_t& val2, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_less(val1, val2, message, line_info);
         } catch (...) {
@@ -1134,15 +1182,7 @@ namespace xtd {
       }
       
       /// @cond
-      static void is_less(const char* val1, const char* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
-        try {
-          assert::is_less(val1, val2, message, line_info);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-
-      static void is_less(const char16_t* val1, const char16_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_less(const char* val1, const char* val2, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_less(val1, val2, message, line_info);
         } catch (...) {
@@ -1150,7 +1190,23 @@ namespace xtd {
         }
       }
       
-      static void is_less(const char32_t* val1, const char32_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_less(const char8_t* val1, const char8_t* val2, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
+        try {
+          assert::is_less(val1, val2, message, line_info);
+        } catch (...) {
+          base_assert::error();
+        }
+      }
+      
+      static void is_less(const char16_t* val1, const char16_t* val2, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
+        try {
+          assert::is_less(val1, val2, message, line_info);
+        } catch (...) {
+          base_assert::error();
+        }
+      }
+      
+      static void is_less(const char32_t* val1, const char32_t* val2, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_less(val1, val2, message, line_info);
         } catch (...) {
@@ -1158,7 +1214,7 @@ namespace xtd {
         }
       }
 
-      static void is_less(const wchar_t* val1, const wchar_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_less(const wchar_t* val1, const wchar_t* val2, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_less(val1, val2, message, line_info);
         } catch (...) {
@@ -1203,7 +1259,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_less_or_equal(24, 12, "User message..."); // test fails.
       /// @endcode
       template<typename value1_t, typename value2_t>
-      static void is_less_or_equal(const value1_t& val1, const value2_t& val2, const std::string& message) {is_less_or_equal(val1, val2, message, line_info());}
+      static void is_less_or_equal(const value1_t& val1, const value2_t& val2, const xtd::ustring& message) {is_less_or_equal(val1, val2, message, line_info());}
       
       /// @brief Valids that the first value is is_less than or equal to the second value.
       /// @param val1 the first value.
@@ -1217,7 +1273,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_less_or_equal(24, 12, "User message...", line_info_); // test fails.
       /// @endcode
       template<typename value1_t, typename value2_t>
-      static void is_less_or_equal(const value1_t& val1, const value2_t& val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_less_or_equal(const value1_t& val1, const value2_t& val2, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_less_or_equal(val1, val2, message, line_info);
         } catch (...) {
@@ -1226,15 +1282,7 @@ namespace xtd {
       }
       
       /// @cond
-      static void is_less_or_equal(const char* val1, const char* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
-        try {
-          assert::is_less_or_equal(val1, val2, message, line_info);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-
-      static void is_less_or_equal(const char16_t* val1, const char16_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_less_or_equal(const char* val1, const char* val2, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_less_or_equal(val1, val2, message, line_info);
         } catch (...) {
@@ -1242,7 +1290,23 @@ namespace xtd {
         }
       }
       
-      static void is_less_or_equal(const char32_t* val1, const char32_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_less_or_equal(const char8_t* val1, const char8_t* val2, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
+        try {
+          assert::is_less_or_equal(val1, val2, message, line_info);
+        } catch (...) {
+          base_assert::error();
+        }
+      }
+      
+      static void is_less_or_equal(const char16_t* val1, const char16_t* val2, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
+        try {
+          assert::is_less_or_equal(val1, val2, message, line_info);
+        } catch (...) {
+          base_assert::error();
+        }
+      }
+      
+      static void is_less_or_equal(const char32_t* val1, const char32_t* val2, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_less_or_equal(val1, val2, message, line_info);
         } catch (...) {
@@ -1250,7 +1314,7 @@ namespace xtd {
         }
       }
 
-      static void is_less_or_equal(const wchar_t* val1, const wchar_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_less_or_equal(const wchar_t* val1, const wchar_t* val2, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_less_or_equal(val1, val2, message, line_info);
         } catch (...) {
@@ -1292,7 +1356,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_NaN(v1, "User message..."); // test ok.
       /// xtd::tunit::valid::is_NaN(v2, "User message..."); // test fails.
       /// @endcode
-      static void is_NaN(double value, const std::string& message) {is_NaN(value, message, line_info());}
+      static void is_NaN(double value, const xtd::ustring& message) {is_NaN(value, message, line_info());}
       
       /// @brief Valids that a value is NaN.
       /// @param value The value to check is NaN.
@@ -1305,7 +1369,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_NaN(v1, "User message...", line_info_); // test ok.
       /// xtd::tunit::valid::is_NaN(v2, "User message...", line_info_); // test fails.
       /// @endcode
-      static void is_NaN(double value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_NaN(double value, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_NaN(value, message, line_info);
         } catch (...) {
@@ -1346,7 +1410,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_NaN(v1, "User message..."); // test ok.
       /// xtd::tunit::valid::is_NaN(v2, "User message..."); // test fails.
       /// @endcode
-      static void is_NaN(long double value, const std::string& message) {is_NaN(value, message, line_info());}
+      static void is_NaN(long double value, const xtd::ustring& message) {is_NaN(value, message, line_info());}
       
       /// @brief Valids that a value is NaN.
       /// @param value The value to check is NaN.
@@ -1359,7 +1423,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_NaN(v1, "User message...", line_info_); // test ok.
       /// xtd::tunit::valid::is_NaN(v2, "User message...", line_info_); // test fails.
       /// @endcode
-      static void is_NaN(long double value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_NaN(long double value, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_NaN(value, message, line_info);
         } catch (...) {
@@ -1400,7 +1464,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_NaN(v1, "User message..."); // test ok.
       /// xtd::tunit::valid::is_NaN(v2, "User message..."); // test fails.
       /// @endcode
-      static void is_NaN(float value, const std::string& message) {is_NaN(value, message, line_info());}
+      static void is_NaN(float value, const xtd::ustring& message) {is_NaN(value, message, line_info());}
       
       /// @brief Valids that a value is NaN.
       /// @param value The value to check is NaN.
@@ -1413,7 +1477,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_NaN(v1, "User message...", line_info_); // test ok.
       /// xtd::tunit::valid::is_NaN(v2, "User message...", line_info_); // test fails.
       /// @endcode
-      static void is_NaN(float value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_NaN(float value, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_NaN(value, message, line_info);
         } catch (...) {
@@ -1457,7 +1521,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_negative(i2, "User message..."); // test fails.
       /// @endcode
       template<typename value_t>
-      static void is_negative(const value_t& value, const std::string& message) {is_negative(value, message, line_info());}
+      static void is_negative(const value_t& value, const xtd::ustring& message) {is_negative(value, message, line_info());}
       
       /// @brief Valids that ta condition is negative.
       /// @param value The value to check is negative.
@@ -1471,7 +1535,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_negative(i2, "User message...", line_info_); // test fails.
       /// @endcode
       template<typename value_t>
-      static void is_negative(const value_t& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_negative(const value_t& value, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_negative(value, message, line_info);
         } catch (...) {
@@ -1515,7 +1579,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_empty(v2, "User message..."); // test fails.
       /// @endcode
       template<typename value_t>
-      static void is_not_empty(const value_t& value, const std::string& message) {is_not_empty(value, message, line_info());}
+      static void is_not_empty(const value_t& value, const xtd::ustring& message) {is_not_empty(value, message, line_info());}
       
       /// @brief Valids that collection does not contain any item.
       /// @param value The value to check is empty.
@@ -1529,7 +1593,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_empty(v2, "User message...", line_info_); // test fails.
       /// @endcode
       template<typename value_t>
-      static void is_not_empty(const value_t& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_not_empty(const value_t& value, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_not_empty(value, message, line_info);
         } catch (...) {
@@ -1543,9 +1607,9 @@ namespace xtd {
       template<typename value_t>
       static void is_not_empty(const std::initializer_list<value_t>& value, const xtd::tunit::line_info& line_info) {is_not_empty(value, "", line_info);}
       template<typename value_t>
-      static void is_not_empty(const std::initializer_list<value_t>& value, const std::string& message) {is_not_empty(value, message, line_info());}
+      static void is_not_empty(const std::initializer_list<value_t>& value, const xtd::ustring& message) {is_not_empty(value, message, line_info());}
       template<typename value_t>
-      static void is_not_empty(const std::initializer_list<value_t>& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_not_empty(const std::initializer_list<value_t>& value, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_not_empty(value, message, line_info);
         } catch (...) {
@@ -1553,7 +1617,7 @@ namespace xtd {
         }
       }
       
-      static void is_not_empty(const char* value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_not_empty(const char* value, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_not_empty(value, message, line_info);
         } catch (...) {
@@ -1561,7 +1625,7 @@ namespace xtd {
         }
       }
       
-      static void is_not_empty(const char16_t* value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_not_empty(const char8_t* value, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_not_empty(value, message, line_info);
         } catch (...) {
@@ -1569,7 +1633,15 @@ namespace xtd {
         }
       }
       
-      static void is_not_empty(const char32_t* value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_not_empty(const char16_t* value, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
+        try {
+          assert::is_not_empty(value, message, line_info);
+        } catch (...) {
+          base_assert::error();
+        }
+      }
+      
+      static void is_not_empty(const char32_t* value, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_not_empty(value, message, line_info);
         } catch (...) {
@@ -1577,7 +1649,7 @@ namespace xtd {
         }
       }
 
-      static void is_not_empty(const wchar_t* value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_not_empty(const wchar_t* value, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_not_empty(value, message, line_info);
         } catch (...) {
@@ -1619,7 +1691,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_instance_of<std::logic_error>(except, "User message..."); test fails
       /// @endcode
       template<typename type_t, typename value_t>
-      static void is_not_instance_of(const value_t& value, const std::string& message) {is_not_instance_of<type_t>(value, message, line_info());}
+      static void is_not_instance_of(const value_t& value, const xtd::ustring& message) {is_not_instance_of<type_t>(value, message, line_info());}
       
       /// @brief Valids that an object is not of the type supplied or a derived type.
       /// @param value The object to verify
@@ -1632,7 +1704,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_instance_of<std::logic_error>(except, "User message...", line_info_); test fails
       /// @endcode
       template<typename type_t, typename value_t>
-      static void is_not_instance_of(const value_t& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_not_instance_of(const value_t& value, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_not_instance_of<type_t>(value, message, line_info);
         } catch (...) {
@@ -1679,7 +1751,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_null(s2, "User message..."); // test fails.
       /// @endcode
       template<typename pointer_t>
-      static void is_not_null(const pointer_t* pointer, const std::string& message) {is_not_null(pointer, message, line_info());}
+      static void is_not_null(const pointer_t* pointer, const xtd::ustring& message) {is_not_null(pointer, message, line_info());}
       
       /// @brief Valids that the pointer is not null.
       /// @param pointer The pointer to check is null.
@@ -1694,7 +1766,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_null(s2, "User message...", line_info_); // test fails.
       /// @endcode
       template<typename pointer_t>
-      static void is_not_null(const pointer_t* pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_not_null(const pointer_t* pointer, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_not_null(pointer, message, line_info);
         } catch (...) {
@@ -1738,7 +1810,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_null(s2, "User message..."); // test fails.
       /// @endcode
       template<typename pointer_t>
-      static void is_not_null(const std::unique_ptr<pointer_t>& pointer, const std::string& message) {is_not_null(pointer, message, line_info());}
+      static void is_not_null(const std::unique_ptr<pointer_t>& pointer, const xtd::ustring& message) {is_not_null(pointer, message, line_info());}
       
       /// @brief Valids that the pointer is not null.
       /// @param pointer The pointer to check is null.
@@ -1752,7 +1824,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_null(s2, "User message...", line_info_); // test fails.
       /// @endcode
       template<typename pointer_t>
-      static void is_not_null(const std::unique_ptr<pointer_t>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_not_null(const std::unique_ptr<pointer_t>& pointer, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_not_null(pointer, message, line_info);
         } catch (...) {
@@ -1796,7 +1868,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_null(s2, "User message..."); // test fails.
       /// @endcode
       template<typename pointer_t>
-      static void is_not_null(const std::shared_ptr<pointer_t>& pointer, const std::string& message) {is_not_null(pointer, message, line_info());}
+      static void is_not_null(const std::shared_ptr<pointer_t>& pointer, const xtd::ustring& message) {is_not_null(pointer, message, line_info());}
       
       /// @brief Valids that the pointer is not null.
       /// @param pointer The pointer to check is null.
@@ -1810,7 +1882,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_null(s2, "User message...", line_info_); // test fails.
       /// @endcode
       template<typename pointer_t>
-      static void is_not_null(const std::shared_ptr<pointer_t>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_not_null(const std::shared_ptr<pointer_t>& pointer, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_not_null(pointer, message, line_info);
         } catch (...) {
@@ -1860,7 +1932,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_null(s2, "User message..."); // test ok.
       /// @endcode
       template<typename pointer_t>
-      static void is_not_null(const std::weak_ptr<pointer_t>& pointer, const std::string& message) {is_not_null(pointer, message, line_info());}
+      static void is_not_null(const std::weak_ptr<pointer_t>& pointer, const xtd::ustring& message) {is_not_null(pointer, message, line_info());}
       
       /// @brief Valids that the pointer is not null.
       /// @param pointer The pointer to check is null.
@@ -1876,7 +1948,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_null(s2, "User message...", line_info_); // test ok.
       /// @endcode
       template<typename pointer_t>
-      static void is_not_null(const std::weak_ptr<pointer_t>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {assert::succeed(message, line_info);}
+      static void is_not_null(const std::weak_ptr<pointer_t>& pointer, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {assert::succeed(message, line_info);}
       
       /// @brief Valids that the pointer is not null.
       /// @param pointer The pointer to check is null.
@@ -1905,7 +1977,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::valid::is_not_null(nullptr, "User message..."); // test fails.
       /// @endcode
-      static void is_not_null(std::nullptr_t pointer, const std::string& message) {is_not_null(pointer, message, line_info());}
+      static void is_not_null(std::nullptr_t pointer, const xtd::ustring& message) {is_not_null(pointer, message, line_info());}
       
       /// @brief Valids that the pointer is not null.
       /// @param pointer The pointer to check is null.
@@ -1916,7 +1988,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::valid::is_not_null(nullptr, "User message...", line_info_); // test fails.
       /// @endcode
-      static void is_not_null(std::nullptr_t pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_not_null(std::nullptr_t pointer, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_not_null(pointer, message, line_info);
         } catch (...) {
@@ -1960,7 +2032,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_zero(i2, "User message..."); // test fails.
       /// @endcode
       template<typename value_t>
-      static void is_not_zero(const value_t& value, const std::string& message) {is_not_zero(value, message, line_info());}
+      static void is_not_zero(const value_t& value, const xtd::ustring& message) {is_not_zero(value, message, line_info());}
       
       /// @brief Valids that ta condition is not zero.
       /// @param value The value to check is not zero.
@@ -1974,7 +2046,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_zero(i2, "User message...", line_info_); // test fails.
       /// @endcode
       template<typename value_t>
-      static void is_not_zero(const value_t& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_not_zero(const value_t& value, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_zero(value, message, line_info);
         } catch (...) {
@@ -2021,7 +2093,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_null(s2, "User message..."); // test fails.
       /// @endcode
       template<typename pointer_t>
-      static void is_null(const pointer_t* pointer, const std::string& message) {is_null(pointer, message, line_info());}
+      static void is_null(const pointer_t* pointer, const xtd::ustring& message) {is_null(pointer, message, line_info());}
       
       /// @brief Valids that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -2036,7 +2108,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_null(s2, "User message...", line_info_); // test fails.
       /// @endcode
       template<typename pointer_t>
-      static void is_null(const pointer_t* pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_null(const pointer_t* pointer, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_null(pointer, message, line_info);
         } catch (...) {
@@ -2080,7 +2152,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_null(s2, "User message..."); // test fails.
       /// @endcode
       template<typename pointer_t>
-      static void is_null(const std::unique_ptr<pointer_t>& pointer, const std::string& message) {is_null(pointer, message, line_info());}
+      static void is_null(const std::unique_ptr<pointer_t>& pointer, const xtd::ustring& message) {is_null(pointer, message, line_info());}
       
       /// @brief Valids that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -2094,7 +2166,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_null(s2, "User message...", line_info_); // test fails.
       /// @endcode
       template<typename pointer_t>
-      static void is_null(const std::unique_ptr<pointer_t>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_null(const std::unique_ptr<pointer_t>& pointer, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_null(pointer, message, line_info);
         } catch (...) {
@@ -2138,7 +2210,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_null(s2, "User message..."); // test fails.
       /// @endcode
       template<typename pointer_t>
-      static void is_null(const std::shared_ptr<pointer_t>& pointer, const std::string& message) {is_null(pointer, message, line_info());}
+      static void is_null(const std::shared_ptr<pointer_t>& pointer, const xtd::ustring& message) {is_null(pointer, message, line_info());}
       
       /// @brief Valids that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -2152,7 +2224,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_null(s2, "User message...", line_info_); // test fails.
       /// @endcode
       template<typename pointer_t>
-      static void is_null(const std::shared_ptr<pointer_t>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_null(const std::shared_ptr<pointer_t>& pointer, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_null(pointer, message, line_info);
         } catch (...) {
@@ -2202,7 +2274,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_null(s2, "User message..."); // test fails.
       /// @endcode
       template<typename pointer_t>
-      static void is_null(const std::weak_ptr<pointer_t>& pointer, const std::string& message) {is_null(pointer, message, line_info());}
+      static void is_null(const std::weak_ptr<pointer_t>& pointer, const xtd::ustring& message) {is_null(pointer, message, line_info());}
       
       /// @brief Valids that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -2218,7 +2290,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_null(s2, "User message...", line_info_); // test fails.
       /// @endcode
       template<typename pointer_t>
-      static void is_null(const std::weak_ptr<pointer_t>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_null(const std::weak_ptr<pointer_t>& pointer, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_null(pointer, message, line_info);
         } catch (...) {
@@ -2253,7 +2325,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::valid::is_null(nullptr, "User message..."); // test ok.
       /// @endcode
-      static void is_null(std::nullptr_t pointer, const std::string& message) {is_null(pointer, message, line_info());}
+      static void is_null(std::nullptr_t pointer, const xtd::ustring& message) {is_null(pointer, message, line_info());}
       
       /// @brief Valids that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -2264,7 +2336,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::valid::is_null(nullptr, "User message...", line_info_); // test ok.
       /// @endcode
-      static void is_null(std::nullptr_t pointer, const std::string& message, const xtd::tunit::line_info& line_info) {assert::succeed(message, line_info);}
+      static void is_null(std::nullptr_t pointer, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {assert::succeed(message, line_info);}
       
       /// @brief Valids that ta condition is positive.
       /// @param value The value to check is positive.
@@ -2302,7 +2374,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_positive(i2, "User message..."); // test fails.
       /// @endcode
       template<typename value_t>
-      static void is_positive(const value_t& value, const std::string& message) {is_positive(value, message, line_info());}
+      static void is_positive(const value_t& value, const xtd::ustring& message) {is_positive(value, message, line_info());}
       
       /// @brief Valids that ta condition is positive.
       /// @param value The value to check is positive.
@@ -2316,7 +2388,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_positive(i2, "User message...", line_info_); // test fails.
       /// @endcode
       template<typename value_t>
-      static void is_positive(const value_t& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_positive(const value_t& value, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_positive(value, message, line_info);
         } catch (...) {
@@ -2357,7 +2429,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_false(std::empty(s1), "User message..."); // test ok.
       /// xtd::tunit::valid::is_false(std::empty(s2), "User message..."); // test fails.
       /// @endcode
-      static void is_true(bool condition, const std::string& message) {is_true(condition, message, line_info());}
+      static void is_true(bool condition, const xtd::ustring& message) {is_true(condition, message, line_info());}
       
       /// @brief Valids that a condition is true.
       /// @param condition The condition to check is true.
@@ -2370,7 +2442,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_false(std::empty(s1), "User message...", line_info_); // test ok.
       /// xtd::tunit::valid::is_false(std::empty(s2), "User message...", line_info_); // test fails.
       /// @endcode
-      static void is_true(bool condition, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_true(bool condition, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_true(condition, message, line_info);
         } catch (...) {
@@ -2414,7 +2486,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_zero(i2, "User message..."); // test fails.
       /// @endcode
       template<typename value_t>
-      static void is_zero(const value_t& value, const std::string& message) {is_zero(value, message, line_info());}
+      static void is_zero(const value_t& value, const xtd::ustring& message) {is_zero(value, message, line_info());}
       
       /// @brief Valids that ta condition is zero.
       /// @param value The value to check is zero.
@@ -2428,7 +2500,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_zero(i2, "User message...", line_info_); // test fails.
       /// @endcode
       template<typename value_t>
-      static void is_zero(const value_t& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void is_zero(const value_t& value, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::is_zero(value, message, line_info);
         } catch (...) {
@@ -2472,7 +2544,7 @@ namespace xtd {
       /// xtd::tunit::valid::throws<std::out_of_range>([&] {v1.at(2);}, "User message..."); // test fails.
       /// @endcode
       template<typename exception_t>
-      static void throws(const std::function<void()>& statement, const std::string& message) {throws<exception_t>(statement, message, line_info());}
+      static void throws(const std::function<void()>& statement, const xtd::ustring& message) {throws<exception_t>(statement, message, line_info());}
       
       /// @brief Valids that the statement throws a particular exception when called.
       /// @tparam exception_t The exception type that must be throw.
@@ -2486,7 +2558,7 @@ namespace xtd {
       /// xtd::tunit::valid::throws<std::out_of_range>([&] {v1.at(2);}, "User message...", line_info_); // test fails.
       /// @endcode
       template<typename exception_t>
-      static void throws(const std::function<void()>& statement, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void throws(const std::function<void()>& statement, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::throws<exception_t>(statement, message, line_info);
         } catch (...) {
@@ -2524,7 +2596,7 @@ namespace xtd {
       /// xtd::tunit::valid::throws_any([&] {v1.at(5);}, "User message..."); // test ok.
       /// xtd::tunit::valid::throws_any([&] {v1.at(2);}, "User message..."); // test fails.
       /// @endcode
-      static void throws_any(const std::function<void()>& statement, const std::string& message) {throws_any(statement, message, line_info());}
+      static void throws_any(const std::function<void()>& statement, const xtd::ustring& message) {throws_any(statement, message, line_info());}
       
       /// @brief Valids that the staement does not throw an exception.
       /// @param statement The statement that verify.
@@ -2536,7 +2608,7 @@ namespace xtd {
       /// xtd::tunit::valid::throws_any([&] {v1.at(5);}, "User message...", line_info_); // test ok.
       /// xtd::tunit::valid::throws_any([&] {v1.at(2);}, "User message...", line_info_); // test fails.
       /// @endcode
-      static void throws_any(const std::function<void()>& statement, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void throws_any(const std::function<void()>& statement, const xtd::ustring& message, const xtd::tunit::line_info& line_info) {
         try {
           assert::throws_any(statement, message, line_info);
         } catch (...) {
