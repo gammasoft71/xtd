@@ -36,7 +36,7 @@ int main() {
   timer.tick += [&] {
     auto time_str = ustring::format(show_seconds ? "{:t}" : "{:v}", std::chrono::system_clock::now());
     auto time = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
-    if (!show_seconds && std::localtime(&time)->tm_sec % 2) time_str = time_str.replace(, ':', ' ');
+    if (!show_seconds && std::localtime(&time)->tm_sec % 2) time_str = time_str.replace(':', ' ');
     label.text(time_str);
     if (center_to_screen_next_time) form_main.center_to_screen();
     center_to_screen_next_time = false;
