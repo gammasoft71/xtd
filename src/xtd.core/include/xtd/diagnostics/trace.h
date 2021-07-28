@@ -117,7 +117,7 @@ namespace xtd {
       /// @note The display of the message box is dependent on the presence of the default_trace_listener. If the default_trace_listener is not in the listeners collection, the message box is not displayed. The default_trace_listener can be removed by the <clear>, the <remove>, or by calling the clear method on the listeners property (xtd::diagnostics::trace::listeners().clear()).
       static void fail(const std::string& message) {
 #if defined(TRACE)
-        fail_(message);
+        fail__(message);
 #endif
       }
       /// @brief Emits an error message and a detailed error message.
@@ -127,7 +127,7 @@ namespace xtd {
       /// @note The display of the message box is dependent on the presence of the default_trace_listener. If the default_trace_listener is not in the listeners collection, the message box is not displayed. The default_trace_listener can be removed by the <clear>, the <remove>, or by calling the clear method on the listeners property (xtd::diagnostics::trace::listeners().clear()).
       static void fail(const std::string& message, const std::string& detail_message) {
 #if defined(TRACE)
-        fail_(message, detail_message)
+        fail__(message, detail_message);
 #endif
       }
       
@@ -422,8 +422,8 @@ namespace xtd {
       /// @endcond
 
     private:
-      static void fail_(const std::string& message);
-      static void fail_(const std::string& message, const std::string& detail_message);
+      static void fail__(const std::string& message);
+      static void fail__(const std::string& message, const std::string& detail_message);
       static void flush_();
       static void trace_event_(trace_event_type trace_event_type, const std::string& message);
       static void write_(const std::string& message);

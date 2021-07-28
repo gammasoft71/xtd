@@ -23,7 +23,7 @@ namespace examples {
   protected:
     void on_key_press(key_press_event_args& e) override {
       text_box::on_key_press(e);
-      e.handled((!isdigit(e.key_char()) && e.key_char() != '.') || (e.key_char() == '.' && strings::index_of(text(), '.') != string::npos));
+      e.handled((!isdigit(e.key_char()) && e.key_char() != '.') || (e.key_char() == '.' && text().index_of('.') != string::npos));
     }
     
     void on_text_changed(const event_args& e) override {
@@ -48,7 +48,7 @@ namespace examples {
       numeric_text_box1.value(42);
       numeric_text_box1.location({10, 10});
       numeric_text_box1.value_changed += [&] {
-        ctrace << strings::format("value_changed [value={}]", numeric_text_box1.value()) << endl;
+        ctrace << ustring::format("value_changed [value={}]", numeric_text_box1.value()) << endl;
       };
     }
     

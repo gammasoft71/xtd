@@ -19,7 +19,7 @@ namespace examples {
       vscroll_bar2.maximum(20);
       vscroll_bar2.value(10);
       vscroll_bar2.scroll += [&] {
-        xtd::diagnostics::debug::write_line(xtd::strings::format("vscrolbar2 value = {}", vscroll_bar2.value()));
+        xtd::diagnostics::debug::write_line(xtd::ustring::format("vscrolbar2 value = {}", vscroll_bar2.value()));
       };
     }
     

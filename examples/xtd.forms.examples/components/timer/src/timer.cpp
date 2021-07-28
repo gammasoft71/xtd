@@ -26,7 +26,7 @@ namespace examples {
 
       timer1.interval(100ms);
       timer1.tick += [&](object& sender, const event_args& e) {
-        label1.text(strings::format("{:F1}", ++counter / 10.0));
+        label1.text(ustring::format("{:F1}", ++counter / 10.0));
       };
 
       text("Timer example");

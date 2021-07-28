@@ -12,7 +12,7 @@ public:
 
   string to_string() const noexcept {return name_ + " (" + rank_ + ")";}
   
-  // Only this operator is needed for character class to be recognized by strings::format() without specified formating.
+  // Only this operator is needed for character class to be recognized by ustring::format() without specified formating.
   friend ostream& operator<<(ostream& os, const character& value) noexcept {return os << value.to_string();}
   
 private:
@@ -24,7 +24,7 @@ using characters = vector<character>;
 
 int main() {
   for (auto c : characters {{"Jean-Luc Picard", "Captain"}, {"William Riker", "Commander"}, {"Data", "Commander"}, {"Beverly Crusher", "Commander"}, {"Geordi La Forge", "Lieutenant Commander"}, {"Worf", "Lieutenant Commander"}, {"Tasha Yar", "Lieutenant"}})
-    cout << strings::format("{}", c) << endl;
+    cout << ustring::format("{}", c) << endl;
 }
 
 // This code produces the following output :

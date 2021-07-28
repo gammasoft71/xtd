@@ -41,7 +41,7 @@ namespace examples {
     }
     
     void on_fish_animation_updated(object& sender, const animation_updated_event_args& e) {
-      debug::write_line(strings::format("frame_counter={}, elapsed_milliseconds={}", e.frame_counter(), e.elapsed_milliseconds()));
+      debug::write_line(ustring::format("frame_counter={}, elapsed_milliseconds={}", e.frame_counter(), e.elapsed_milliseconds()));
     }
 
     animation fish_animation;

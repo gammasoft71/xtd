@@ -11,7 +11,7 @@ int main(int argc, char* argv[]) {
   //
   if ((argc == 2) && (x = atoi(argv[1])) && ((x >= 1) && (x <= 9))) {
     for (int i = 1; i <= x; i++) {
-      cout << strings::format("Beep number {}.", i) << beep() << endl;
+      cout << ustring::format("Beep number {}.", i) << beep() << endl;
       sleep_for(milliseconds(100));
     }
   } else

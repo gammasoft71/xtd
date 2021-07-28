@@ -19,7 +19,7 @@ namespace examples {
       hscroll_bar2.value(10);
       hscroll_bar2.width(220);
       hscroll_bar2.scroll += [&] {
-        xtd::diagnostics::debug::write_line(xtd::strings::format("hscrolbar2 value = {}", hscroll_bar2.value()));
+        xtd::diagnostics::debug::write_line(xtd::ustring::format("hscrolbar2 value = {}", hscroll_bar2.value()));
       };
     }
     

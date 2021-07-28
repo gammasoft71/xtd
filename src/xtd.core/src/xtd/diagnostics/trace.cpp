@@ -86,7 +86,7 @@ void trace::unindent() {
   if (indent_level() != 0) indent_level(indent_level() - 1);
 }
 
-void trace::fail_(const std::string& message) {
+void trace::fail__(const std::string& message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -100,7 +100,7 @@ void trace::fail_(const std::string& message) {
   if (auto_flush_) flush();
 }
 
-void trace::fail_(const std::string& message, const std::string& detail_message) {
+void trace::fail__(const std::string& message, const std::string& detail_message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);

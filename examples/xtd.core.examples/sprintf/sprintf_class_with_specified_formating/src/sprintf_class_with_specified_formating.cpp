@@ -23,7 +23,7 @@ private:
   string rank_;
 };
 
-// Only this method is needed for character class to be recognized by strings::format() with specified formating (F, N or R).
+// Only this method is needed for character class to be recognized by ustring::format() with specified formating (F, N or R).
 template<>
 string xtd::to_string(const character& value, const string& fmt, const locale& loc) {return value.to_string(fmt);}
 
@@ -31,10 +31,10 @@ using characters = vector<character>;
 
 int main() {
   character c("Jean-Luc Picard", "Captain");
-  cout << strings::sprintf("%s", c.to_string()) << endl;
-  cout << strings::sprintf("%s", c.to_string("F")) << endl;
-  cout << strings::sprintf("%s", c.to_string("N")) << endl;
-  cout << strings::sprintf("%s", c.to_string("R")) << endl;
+  cout << ustring::sprintf("%s", c.to_string()) << endl;
+  cout << ustring::sprintf("%s", c.to_string("F")) << endl;
+  cout << ustring::sprintf("%s", c.to_string("N")) << endl;
+  cout << ustring::sprintf("%s", c.to_string("R")) << endl;
 }
 
 // This code produces the following output :

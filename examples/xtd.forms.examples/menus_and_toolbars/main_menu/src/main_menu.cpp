@@ -73,7 +73,7 @@ namespace examples {
     }
     
     void on_menu_click(object& sender, const event_args& e) {
-      list_box1.items().push_back(strings::format("{} clicked", static_cast<menu_item&>(sender).text()));
+      list_box1.items().push_back(ustring::format("{} clicked", static_cast<menu_item&>(sender).text()));
       list_box1.selected_index(list_box1.items().size() - 1);
     }
     

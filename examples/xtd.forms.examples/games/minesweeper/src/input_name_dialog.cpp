@@ -25,7 +25,7 @@ input_name_dialog::input_name_dialog() {
   message_label_.location({10, 10});
   message_label_.size({180, 60});
   message_label_.text_align(content_alignment::middle_center);
-  message_label_.text(xtd::strings::format("You have the fastest time\nfor {} level.\nPlease type your name."_t, level_to_string()));
+  message_label_.text(xtd::ustring::format("You have the fastest time\nfor {} level.\nPlease type your name."_t, level_to_string()));
   
   name_text_box_.parent(*this);
   name_text_box_.location({10, 80});
@@ -49,7 +49,7 @@ minesweeper::level input_name_dialog::level() const noexcept {
 
 void input_name_dialog::level(minesweeper::level level) noexcept {
   level_ = level;
-  message_label_.text(xtd::strings::format("You have the fastest time\nfor {} level.\nPlease type your name."_t, level_to_string()));
+  message_label_.text(xtd::ustring::format("You have the fastest time\nfor {} level.\nPlease type your name."_t, level_to_string()));
 }
 
 std::string input_name_dialog::gammer_name() const noexcept {
