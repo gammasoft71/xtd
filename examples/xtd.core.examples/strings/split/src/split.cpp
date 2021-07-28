@@ -5,7 +5,7 @@ using namespace std;
 using namespace xtd;
 
 int main() {
-  vector<string> ustring = strings::split("One Two Three\tFour\nFive");
+  vector<string> strings = strings::split("One Two Three\tFour\nFive");
   
   cout << "strings.size = " << strings.size() << endl;
   for (auto s : strings)
