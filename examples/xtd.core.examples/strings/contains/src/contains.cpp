@@ -8,7 +8,7 @@ using namespace xtd;
 int main() {
   auto s = "This is a literal string";
   cout << "The string: \"" << s << "\"" << (ustring(s).contains("is") ? " contains " : " does not contain ") << "\"is\" substring." << endl;
-  cout << "The string: \"" << s << "\"" << (ustring(s)::contains("z") ? " contains " : " does not contain ") << "\"z\" character." << endl;
+  cout << "The string: \"" << s << "\"" << (ustring(s).contains("z") ? " contains " : " does not contain ") << "\"z\" character." << endl;
 }
 
 // This code produces the following output:
