@@ -72,12 +72,14 @@ namespace unit_tests {
     assert_value_("(42)", ss.str());
   }
 
+  /// @todo Remove comment when xtd.tunit will use xtd.core ostream operator.
+  /*
   void test_(test_insert_basic_output_stream_operator, test_pair) {
     auto p = std::make_pair("string", 42);
     std::stringstream ss;
     ss << p;
-    assert_value_("(\"string\", 42)", ss.str());
-  }
+    assert_value_("(string, 42)", ss.str());
+  }*/
 
   void test_(test_insert_basic_output_stream_operator, test_tuple) {
     auto t = std::make_tuple("string", 42);
