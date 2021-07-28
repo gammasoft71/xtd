@@ -135,7 +135,7 @@ namespace calculator {
     }
     
     void back_space_key_press(object& sender, const event_args& e) {
-      if (result.text().length() > 0) result.text(result.text().remove(, result.text().length() - 1));
+      if (result.text().length() > 0) result.text(as<ustring>(result.text()).remove(result.text().length() - 1));
       if (result.text().length() == 0 || result.text() == "-") button_clear_click(sender, e);
     }
     
@@ -155,7 +155,7 @@ namespace calculator {
     }
     
     void button_number_click(object& sender, const event_args& e) {
-      if ((as<control>(sender).handle() == button_decimal.handle() && result.text().contains(".")) || (result.text() == "0" && as<control>(sender).handle() == button_numbers[0].handle())) return;
+      if ((as<control>(sender).handle() == button_decimal.handle() && as<ustring>(result.text()).contains(".")) || (result.text() == "0" && as<control>(sender).handle() == button_numbers[0].handle())) return;
       if ((first_operand.has_value() && first_operand == parse<double>(result.text())) || (result.text() == "0" && as<control>(sender).handle() != button_decimal.handle())) result.text("");
       if (second_operand.has_value()) second_operand.reset();
       result.text(result.text() + as<control>(sender).text());

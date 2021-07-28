@@ -23,7 +23,7 @@ namespace examples {
   protected:
     void on_key_press(key_press_event_args& e) override {
       text_box::on_key_press(e);
-      e.handled((!isdigit(e.key_char()) && e.key_char() != '.') || (e.key_char() == '.' && text().index_of('.') != string::npos));
+      e.handled((!isdigit(e.key_char()) && e.key_char() != '.') || (e.key_char() == '.' && as<ustring>(text()).index_of('.') != string::npos));
     }
     
     void on_text_changed(const event_args& e) override {
