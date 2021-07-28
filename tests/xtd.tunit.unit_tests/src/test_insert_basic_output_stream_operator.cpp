@@ -78,13 +78,6 @@ namespace unit_tests {
     ss << p;
     assert_value_("(\"string\", 42)", ss.str());
   }
-  
-  void test_(test_insert_basic_output_stream_operator, test_tuple_empty) {
-    auto t = std::make_tuple();
-    std::stringstream ss;
-    ss << t;
-    assert_value_("()", ss.str());
-  }
 
   void test_(test_insert_basic_output_stream_operator, test_tuple) {
     auto t = std::make_tuple("string", 42);
