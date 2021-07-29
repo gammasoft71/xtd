@@ -1,6 +1,9 @@
 #if defined(_WIN32)
 
 #include "../../../include/xtd/console.h"
+#define __XTD_CORE_INTERNAL__
+#include "../../../include/xtd/internal/__opaque_console.h"
+#undef __XTD_CORE_INTERNAL__
 
 #include <csignal>
 #include <conio.h>

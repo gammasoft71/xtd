@@ -27,10 +27,46 @@ ustring::ustring() noexcept {
 ustring::ustring(const allocator_type& allocator) noexcept : basic_string<value_type>(allocator) {
 }
 
+ustring::ustring(size_t count, char character) : basic_string<value_type>(count, static_cast<value_type>(character)) {
+}
+
+ustring::ustring(size_t count, char character, const allocator_type& allocator) : basic_string<value_type>(count, static_cast<value_type>(character), allocator) {
+}
+
 ustring::ustring(size_t count, value_type character) : basic_string<value_type>(count, character) {
 }
 
 ustring::ustring(size_t count, value_type character, const allocator_type& allocator) : basic_string<value_type>(count, character, allocator) {
+}
+
+ustring::ustring(size_t count, char16_t character) {
+  for (size_t index = 0; index < count; ++index)
+    *this += codepoint_to_string(character);
+}
+
+ustring::ustring(size_t count, char16_t character, const allocator_type& allocator) : basic_string<value_type>(allocator) {
+  for (size_t index = 0; index < count; ++index)
+    *this += codepoint_to_string(character);
+}
+
+ustring::ustring(size_t count, char32_t character) {
+  for (size_t index = 0; index < count; ++index)
+    *this += codepoint_to_string(character);
+}
+
+ustring::ustring(size_t count, char32_t character, const allocator_type& allocator) : basic_string<value_type>(allocator) {
+  for (size_t index = 0; index < count; ++index)
+    *this += codepoint_to_string(character);
+}
+
+ustring::ustring(size_t count, wchar_t character) {
+  for (size_t index = 0; index < count; ++index)
+    *this += codepoint_to_string(character);
+}
+
+ustring::ustring(size_t count, wchar_t character, const allocator_type& allocator) : basic_string<value_type>(allocator) {
+  for (size_t index = 0; index < count; ++index)
+    *this += codepoint_to_string(character);
 }
 
 ustring::ustring(const ustring& str, size_t index, size_t count) : basic_string<value_type>(str, index, count) {
@@ -175,19 +211,22 @@ ustring::ustring(initializer_list<char> il, const allocator_type& allocator) : b
     push_back(c);
 }
 
-ustring& ustring::operator=(const ustring& str) {
-  assign(str);
+ustring& ustring::operator=(const std::string& str) {
+  assign(reinterpret_cast<const value_type*>(str.c_str()));
+  return *this;
+}
+ustring& ustring::operator=(const char* str) {
+  assign(reinterpret_cast<const value_type*>(str));
   return *this;
 }
 
-ustring& ustring::operator=(value_type character) {
-  *this = ustring(1, character);
-  return  *this;;
+ustring& ustring::operator=(const std::u8string& str) {
+  assign(str.c_str());
+  return *this;
 }
-
-ustring& ustring::operator=(char character) {
-  *this = ustring(1, character);
-  return  *this;;
+ustring& ustring::operator=(const ustring& str) {
+  assign(str);
+  return *this;
 }
 
 ustring& ustring::operator=(const value_type* str) {
@@ -195,9 +234,62 @@ ustring& ustring::operator=(const value_type* str) {
   return *this;
 }
 
-ustring& ustring::operator=(const char* str) {
-  assign(reinterpret_cast<const value_type*>(str));
+ustring& ustring::operator=(const std::u16string& str) {
+  clear();
+  for (auto c : str)
+    *this += codepoint_to_string(c);
   return *this;
+}
+
+ustring& ustring::operator=(const char16_t* str) {
+  return operator=(u16string(str));
+}
+
+ustring& ustring::operator=(const std::u32string& str) {
+  clear();
+  for (auto c : str)
+    *this += codepoint_to_string(c);
+  return *this;
+}
+
+ustring& ustring::operator=(const char32_t* str) {
+  return operator=(u32string(str));
+}
+
+ustring& ustring::operator=(const std::wstring& str) {
+  clear();
+  for (auto c : str)
+    *this += codepoint_to_string(c);
+  return *this;
+}
+
+ustring& ustring::operator=(const wchar_t* str) {
+  return operator=(wstring(str));
+}
+
+ustring& ustring::operator=(char character) {
+  *this = ustring(1, character);
+  return  *this;;
+}
+
+ustring& ustring::operator=(value_type character) {
+  *this = ustring(1, character);
+  return  *this;;
+}
+
+ustring& ustring::operator=(char16_t character) {
+  *this = ustring(1, character);
+  return  *this;;
+}
+
+ustring& ustring::operator=(char32_t character) {
+  *this = ustring(1, character);
+  return  *this;;
+}
+
+ustring& ustring::operator=(wchar_t character) {
+  *this = ustring(1, character);
+  return  *this;;
 }
 
 ustring& ustring::operator=(const std::initializer_list<value_type>& il) {

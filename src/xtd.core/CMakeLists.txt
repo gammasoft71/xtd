@@ -16,7 +16,6 @@ add_sources(
   include/xtd/arithmetic_exception.h
   include/xtd/as.h
   include/xtd/background_color.h
-  include/xtd/basic_console.h
   include/xtd/beep.h
   include/xtd/bit_converter.h
   include/xtd/block_scope.h
@@ -98,7 +97,6 @@ add_sources(
   include/xtd/ustring.h
   include/xtd/va_args_comma.h
   include/xtd/version.h
-  include/xtd/wconsole.h
   include/xtd/xml_syntax_exception.h
   include/xtd/xtd.core
   include/xtd/xtd.core.h
@@ -148,9 +146,6 @@ add_sources(
   include/xtd/internal/__enum_formater.h
   include/xtd/internal/__fixed_point_formater.h
   include/xtd/internal/__generic_stream_output.h
-  include/xtd/internal/__get_err_rdbuf.h
-  include/xtd/internal/__get_in_rdbuf.h
-  include/xtd/internal/__get_out_rdbuf.h
   include/xtd/internal/__format_exception.h
   include/xtd/internal/__format_information.h
   include/xtd/internal/__format_stringer.h
@@ -188,6 +183,7 @@ add_sources(
   include/xtd/web/css/writer.h
   src/xtd/environment_version.cpp
   src/xtd/bit_converter.cpp
+  src/xtd/console.cpp
   src/xtd/convert_string.cpp
   src/xtd/environment.cpp
   src/xtd/event_args.cpp

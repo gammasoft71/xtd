@@ -5,14 +5,14 @@ using namespace std;
 using namespace xtd;
 
 int main() {
-  wconsole::out << L"Hello ";
-  wconsole::out << L"World!" << endl;
-  wconsole::out << L"Enter your name: ";
-  wstring name;
-  wconsole::in >> name;
-  wconsole::out << L"Good day, ";
-  wconsole::out << name;
-  wconsole::out << L"!" << endl;
+  console::out << L"Hello ";
+  console::out << L"World!" << endl;
+  console::out << L"Enter your name: ";
+  ustring name;
+  console::in >> name;
+  console::out << L"Good day, ";
+  console::out << name;
+  console::out << L"!" << endl;
 }
 
 // This code produces the following output:
