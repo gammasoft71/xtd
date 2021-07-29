@@ -1,6 +1,5 @@
 #include <xtd/xtd>
 
-using namespace std;
 using namespace xtd;
 
 int main() {

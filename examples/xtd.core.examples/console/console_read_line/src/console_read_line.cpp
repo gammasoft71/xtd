@@ -1,14 +1,13 @@
 #include <xtd/xtd>
 #include <string>
 
-using namespace std;
 using namespace xtd;
 
 int main() {
   console::write("Hello ");
   console::write_line("World!");
   console::write("Enter your name: ");
-  string name = console::read_line();
+  ustring name = console::read_line();
   console::write("Good day, ");
   console::write(name);
   console::write_line("!");

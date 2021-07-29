@@ -21,13 +21,11 @@
 struct __console_intercept_signals;
 
 namespace xtd {
-  template<class char_t>
-  class basic_console;
+  class console;
 }
 
 class core_export_ __opaque_console final {
-  template<class char_t>
-  friend class xtd::basic_console;
+  friend class xtd::console;
   friend struct ::__console_intercept_signals;
   static xtd::console_color background_color();
   static bool background_color(xtd::console_color color);

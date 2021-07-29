@@ -2,7 +2,7 @@
 /// @brief Contains xtd::background_color class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include "basic_console.h"
+#include "console.h"
 #include "object.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -11,16 +11,15 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  /// @see xtd::basic_console<char_t>::background_color(console_color color) method.
+  /// @see xtd::console::background_color method.
   class background_color final : public object {
   public:
     explicit background_color(console_color color) : color(color) {}
     
     /// @cond
-    template<typename char_t>
-    friend std::basic_ostream<char_t>& operator <<(std::basic_ostream<char_t>& os, const background_color& color) {
-      if (os.rdbuf() == __get_out_rdbuf<char_t>() || os.rdbuf() == __get_err_rdbuf<char_t>())
-        basic_console<char_t>::background_color(color.color);
+    friend std::ostream& operator<<(std::ostream& os, const background_color& color) {
+      if (!console::is_out_redireted() && os.rdbuf() == console::out.rdbuf())
+        console::background_color(color.color);
       return os;
     }
     /// @endcond

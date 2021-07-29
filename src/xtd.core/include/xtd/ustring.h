@@ -1,13 +1,7 @@
 /// @file
 /// @brief Contains xtd::ustring class.
 #pragma once
-#include <string>
-#include "string_comparison.h"
-#include "string_split_options.h"
-#include "types.h"
-#include "object.h"
-#include "parse.h"
-#include "to_string.h"
+
 /// @cond
 #define __XTD_CORE_INTERNAL__
 #include "internal/__generic_stream_output.h"
@@ -16,6 +10,14 @@
 #include "internal/__sprintf.h"
 #undef __XTD_CORE_INTERNAL__
 /// @endcond
+
+#include <string>
+#include "string_comparison.h"
+#include "string_split_options.h"
+#include "types.h"
+#include "object.h"
+#include "parse.h"
+#include "to_string.h"
 
 #if !defined(_WIN32)
 #include <cxxabi.h>
@@ -49,6 +51,17 @@ namespace xtd {
     /// @param str The string to copy.
     /// @param count The number of copies of character.
     /// @param character The character copied.
+    ustring(size_t count, char character);
+    /// @brief Initializes a new instance of xtd::ustring with specified count copies of character and specified allocator.
+    /// @param str The string to copy.
+    /// @param count The number of copies of character.
+    /// @param character The character copied.
+    /// @param allocator The allocator to use for all memory allocations of this string.
+    ustring(size_t count, char character, const allocator_type& allocator);
+    /// @brief Initializes a new instance of xtd::ustring with specified count copies of character.
+    /// @param str The string to copy.
+    /// @param count The number of copies of character.
+    /// @param character The character copied.
     ustring(size_t count, value_type character);
     /// @brief Initializes a new instance of xtd::ustring with specified count copies of character and specified allocator.
     /// @param str The string to copy.
@@ -56,7 +69,40 @@ namespace xtd {
     /// @param character The character copied.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(size_t count, value_type character, const allocator_type& allocator);
-    
+    /// @brief Initializes a new instance of xtd::ustring with specified count copies of character.
+    /// @param str The string to copy.
+    /// @param count The number of copies of character.
+    /// @param character The character copied.
+    ustring(size_t count, char16_t character);
+    /// @brief Initializes a new instance of xtd::ustring with specified count copies of character and specified allocator.
+    /// @param str The string to copy.
+    /// @param count The number of copies of character.
+    /// @param character The character copied.
+    /// @param allocator The allocator to use for all memory allocations of this string.
+    ustring(size_t count, char16_t character, const allocator_type& allocator);
+    /// @brief Initializes a new instance of xtd::ustring with specified count copies of character.
+    /// @param str The string to copy.
+    /// @param count The number of copies of character.
+    /// @param character The character copied.
+    ustring(size_t count, char32_t character);
+    /// @brief Initializes a new instance of xtd::ustring with specified count copies of character and specified allocator.
+    /// @param str The string to copy.
+    /// @param count The number of copies of character.
+    /// @param character The character copied.
+    /// @param allocator The allocator to use for all memory allocations of this string.
+    ustring(size_t count, char32_t character, const allocator_type& allocator);
+    /// @brief Initializes a new instance of xtd::ustring with specified count copies of character.
+    /// @param str The string to copy.
+    /// @param count The number of copies of character.
+    /// @param character The character copied.
+    ustring(size_t count, wchar_t character);
+    /// @brief Initializes a new instance of xtd::ustring with specified count copies of character and specified allocator.
+    /// @param str The string to copy.
+    /// @param count The number of copies of character.
+    /// @param character The character copied.
+    /// @param allocator The allocator to use for all memory allocations of this string.
+    ustring(size_t count, wchar_t character, const allocator_type& allocator);
+
     /// @brief Initializes a new instance of xtd::ustring with specified substring at index and count characters.
     /// @param str The string to copy.
     /// @param index The index of the first substring charecter where start copy.
@@ -257,14 +303,25 @@ namespace xtd {
     ustring(const type_t& object, size_t count, const allocator_type& allocator) : std::basic_string<value_type>(object, 0, count, allocator) {}
      */
     
-    ustring& operator=(const ustring& str);
-    ustring& operator=(value_type character);
-    ustring& operator=(char character);
-    ustring& operator=(const value_type* str);
+    ustring& operator=(const std::string& str);
     ustring& operator=(const char* str);
+    ustring& operator=(const std::u8string& str);
+    ustring& operator=(const ustring& str);
+    ustring& operator=(const value_type* str);
+    ustring& operator=(const std::u16string& str);
+    ustring& operator=(const char16_t* str);
+    ustring& operator=(const std::u32string& str);
+    ustring& operator=(const char32_t* str);
+    ustring& operator=(const std::wstring& str);
+    ustring& operator=(const wchar_t* str);
+    ustring& operator=(char character);
+    ustring& operator=(value_type character);
+    ustring& operator=(char16_t character);
+    ustring& operator=(char32_t character);
+    ustring& operator=(wchar_t character);
     ustring& operator=(const std::initializer_list<value_type>& il);
     template<typename type_t>
-    ustring operator=(const type_t& object) {return std::basic_string<value_type>::assign(object);}
+    ustring& operator=(const type_t& object) {return std::basic_string<value_type>::assign(object);}
     bool operator==(const ustring& other) const;
     bool operator!=(const ustring& other) const;
     bool operator==(const value_type* other) const;
@@ -1123,7 +1180,13 @@ namespace xtd {
     }
 
     /// @cond
-    friend std::ostream& operator<<(std::ostream& os, const ustring& str) {return os << (reinterpret_cast<const char*>(str.c_str()));}
+    friend std::ostream& operator<<(std::ostream& stream, const ustring& str) {return stream << (reinterpret_cast<const char*>(str.c_str()));}
+    friend std::istream& operator>>(std::istream& stream, ustring& str) {
+      std::string s;
+      stream >> s;
+      str = s;
+      return stream;
+    }
     /// @endcond
     
   private:
