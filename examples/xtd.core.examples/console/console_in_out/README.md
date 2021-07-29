@@ -1,6 +1,6 @@
 # console_in_out
 
-Shows how to use [xtd::console::in](../../../../src/xtd.core/include/xtd/basic_console.h) and [xtd::console::out](../../../../src/xtd.core/include/xtd/basic_console.h) streams.
+Shows how to use [xtd::console::in](../../../../src/xtd.core/include/xtd/console.h) and [xtd::console::out](../../../../src/xtd.core/include/xtd/console.h) streams.
 
 # Sources
 
