@@ -1,6 +1,6 @@
 # wconsole
 
-Shows how to use [xtd::wconsole](../../../../src/xtd.core/include/xtd/basic_console.h) class.
+Shows how to use [xtd::wconsole](../../../../src/xtd.core/include/xtd/console.h) class.
 
 # Sources
 

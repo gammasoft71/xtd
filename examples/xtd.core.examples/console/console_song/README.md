@@ -1,6 +1,6 @@
 # console_song
 
-Shows how to use [xtd::console::beep](../../../../src/xtd.core/include/xtd/basic_console.h) method.
+Shows how to use [xtd::console::beep](../../../../src/xtd.core/include/xtd/console.h) method.
 
 # Sources
 
