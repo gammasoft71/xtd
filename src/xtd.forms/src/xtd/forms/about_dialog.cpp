@@ -181,7 +181,7 @@ namespace {
       };
 
       about_dialog_standard->label_copyright_.height(static_cast<int32_t>(23 * xtd::strings::split(copyright, {'\n'}).size()));
-      about_dialog_standard->label_copyright_.text(xtd::strings::format("{}", xtd::strings::replace(copyright, u8"(c)"_s, u8"\u00A9"_s)));
+      about_dialog_standard->label_copyright_.text(xtd::strings::format("{}", ustring(copyright).replace(u8"(c)"_s, u8"\u00A9"_s)));
       
       if (has_credit) {
         about_dialog_standard->tab_control_about_.tab_pages().push_back(about_dialog_standard->tab_page_credits_);
