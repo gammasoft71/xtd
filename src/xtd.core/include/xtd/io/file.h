@@ -5,18 +5,18 @@
 
 #include <cstdio>
 #include <fstream>
-#include <string>
 #include <vector>
 #include <filesystem>
 #include "../core_export.h"
 #include "../static.h"
+#include "../ustring.h"
 #include "file_attributes.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
-    /// @brief Provides static methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of std::basic_ftream objects.
+    /// @brief Provides static methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of std::ftream objects.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core io
@@ -29,10 +29,10 @@ namespace xtd {
       /// @remarks This method also returns false if path is empty or an invalid path.
       /// @remarks This method also returns false if the caller has not the required permissions.
       /// @remarks If the target file already exists, it is overwritten.
-      template<typename char_t, typename type_t>
-      static bool append_all_lines(const std::basic_string<char_t>& path, type_t contents) noexcept {
+      template<typename type_t>
+      static bool append_all_lines(const xtd::ustring& path, type_t contents) noexcept {
         try {
-          std::basic_ofstream<char_t> file(path, std::ios::app);
+          std::ofstream file(path, std::ios::app);
           for (const auto& line : contents)
             file << line << std::endl;
           return true;
@@ -64,7 +64,7 @@ namespace xtd {
       
       /// @cond
       template<typename char_t, typename type_t>
-      static bool append_all_lines(const char_t* path, type_t contents) noexcept {return append_all_lines(std::basic_string<char_t>(path), contents);}
+      static bool append_all_lines(const char_t* path, type_t contents) noexcept {return append_all_lines(xtd::ustring(path), contents);}
       /// @endcond
       
       /// @brief Appends lines to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.
@@ -74,10 +74,10 @@ namespace xtd {
       /// @remarks This method also returns false if path is empty or an invalid path.
       /// @remarks This method also returns false if the caller has not the required permissions.
       /// @remarks If the target file already exists, it is overwritten.
-      template<typename char_t, typename type_t>
-      static bool append_all_lines(const std::basic_string<char_t>& path, const std::initializer_list<type_t>& contents) noexcept {
+      template<typename type_t>
+      static bool append_all_lines(const xtd::ustring& path, const std::initializer_list<type_t>& contents) noexcept {
         try {
-          std::basic_ofstream<char_t> file(path, std::ios::app);
+          std::ofstream file(path, std::ios::app);
           for (const auto& line : contents)
             file << line << std::endl;
           return true;
@@ -109,7 +109,7 @@ namespace xtd {
       
       /// @cond
       template<typename char_t, typename type_t>
-      static bool append_all_lines(const char_t* path, const std::initializer_list<type_t>& contents) noexcept {return append_all_lines(std::basic_string<char_t>(path), contents);}
+      static bool append_all_lines(const char_t* path, const std::initializer_list<type_t>& contents) noexcept {return append_all_lines(xtd::ustring(path), contents);}
       /// @endcond
       
       
@@ -119,10 +119,10 @@ namespace xtd {
       /// @return true if the text appended; otherwise, false.
       /// @remarks This method also returns false if path is empty or an invalid path.
       /// @remarks This method also returns false if the caller has not the required permissions.
-      template<typename char_t, typename type_t>
-      static bool append_all_text(const std::basic_string<char_t>& path, type_t text) noexcept {
+      template<typename type_t>
+      static bool append_all_text(const xtd::ustring& path, type_t text) noexcept {
         try {
-          std::basic_ofstream<char_t> file(path, std::ios::app);
+          std::ofstream file(path, std::ios::app);
           file << text;
           return true;
         } catch(...) {
@@ -151,29 +151,28 @@ namespace xtd {
       
       /// @cond
       template<typename char_t, typename type_t>
-      static bool append_all_text(const char_t* path, type_t text) noexcept {return append_all_text(std::basic_string<char_t>(path), text);}
+      static bool append_all_text(const char_t* path, type_t text) noexcept {return append_all_text(xtd::ustring(path), text);}
       /// @endcond
       
-      /// @brief Creates a std::basic_ofstream that appends text to an existing file.
+      /// @brief Creates a std::ofstream that appends text to an existing file.
       /// @param path The path to the file to append to.
-      /// @return A std::basic_ofstream that appends text to an existing file.
-      /// @remarks This method also returns an empty std::basic_ofstream if path is empty or an invalid path.
-      /// @remarks This method also returns an empty std::basic_ofstream if the caller has not the required permissions.
-      template<typename char_t>
-      static std::basic_ofstream<char_t> append_text(const std::basic_string<char_t>& path) noexcept {
+      /// @return A std::ofstream that appends text to an existing file.
+      /// @remarks This method also returns an empty std::ofstream if path is empty or an invalid path.
+      /// @remarks This method also returns an empty std::ofstream if the caller has not the required permissions.
+      static std::ofstream append_text(const xtd::ustring& path) noexcept {
         try {
-          return std::basic_ofstream<char_t>(path, std::ios::app);
+          return std::ofstream(path, std::ios::app);
         } catch(...) {
-          return std::basic_ofstream<char_t>();
+          return std::ofstream();
         }
       }
 
 #if defined(__cpp_lib_filesystem)
-      /// @brief Creates a std::basic_ofstream that appends text to an existing file.
+      /// @brief Creates a std::ofstream that appends text to an existing file.
       /// @param path The path to the file to append to.
-      /// @return A std::basic_ofstream that appends text to an existing file.
-      /// @remarks This method also returns an empty std::basic_ofstream if path is empty or an invalid path.
-      /// @remarks This method also returns an empty std::basic_ofstream if the caller has not the required permissions.
+      /// @return A std::ofstream that appends text to an existing file.
+      /// @remarks This method also returns an empty std::ofstream if path is empty or an invalid path.
+      /// @remarks This method also returns an empty std::ofstream if the caller has not the required permissions.
       static std::ofstream append_text(const std::filesystem::path& path) noexcept {
         try {
           return std::ofstream(path, std::ios::app);
@@ -185,7 +184,7 @@ namespace xtd {
       
       /// @cond
       template<typename char_t>
-      static std::basic_ofstream<char_t> append_text(const char_t* path) noexcept {return append_text(std::basic_string<char_t>(path));}
+      static std::ofstream append_text(const char_t* path) noexcept {return append_text(xtd::ustring(path));}
       /// @endcond
       
       /// @brief Copies an existing file to a new file. Overwriting a file of the same name is not allowed.
@@ -194,8 +193,7 @@ namespace xtd {
       /// @return true if the text appended; otherwise, false.
       /// @remarks This method also returns false if path is empty or an invalid path.
       /// @remarks This method also returns false if the caller has not the required permissions.
-      template<typename char_t>
-      static bool copy(const std::basic_string<char_t>& src, const std::basic_string<char_t>& dest) {return copy(src, dest, true);}
+      static bool copy(const xtd::ustring& src, const xtd::ustring& dest) {return copy(src, dest, true);}
   
 #if defined(__cpp_lib_filesystem)
       /// @brief Copies an existing file to a new file. Overwriting a file of the same name is not allowed.
@@ -209,11 +207,11 @@ namespace xtd {
       
       /// @cond
       template<typename char_t>
-      static bool copy(const char_t* src, const char_t* dest) {return copy(std::basic_string<char_t>(src), std::basic_string<char_t>(dest));}
+      static bool copy(const char_t* src, const char_t* dest) {return copy(xtd::ustring(src), xtd::ustring(dest));}
       template<typename char_t>
-      static bool copy(const std::basic_string<char_t>& src, const char_t* dest) {return copy(src, std::basic_string<char_t>(dest));}
+      static bool copy(const xtd::ustring& src, const char_t* dest) {return copy(src, xtd::ustring(dest));}
       template<typename char_t>
-      static bool copy(const char_t* src, const std::basic_string<char_t> dest) {return copy(src, std::basic_string<char_t>(dest));}
+      static bool copy(const char_t* src, const xtd::ustring& dest) {return copy(xtd::ustring(src), dest);}
       /// @endcond
       
       /// @brief Copies an existing file to a new file. Overwriting a file of the same name is allowed.
@@ -223,16 +221,15 @@ namespace xtd {
       /// @return true if the text appended; otherwise, false.
       /// @remarks This method also returns false if path is empty or an invalid path.
       /// @remarks This method also returns false if the caller has not the required permissions.
-      template<typename char_t>
-      static bool copy(const std::basic_string<char_t>& src, const std::basic_string<char_t>& dest, bool overwrite) {
+      static bool copy(const xtd::ustring& src, const xtd::ustring& dest, bool overwrite) {
         try {
           if (exists(dest) && overwrite == false) return false;
 #if defined(__cpp_lib_filesystem)
-          std::filesystem::copy(src, dest, std::filesystem::copy_options::overwrite_existing);
+          std::filesystem::copy(std::filesystem::path(src), std::filesystem::path(dest), std::filesystem::copy_options::overwrite_existing);
           return true;
 #else
-          std::basic_ifstream<char_t> file_src(src, std::ios::binary);
-          std::basic_ofstream<char_t> file_dest(dest, std::ios::binary);
+          std::ifstream file_src(src, std::ios::binary);
+          std::ofstream file_dest(dest, std::ios::binary);
           file_dest << file_src.rdbuf();
           return true;
 #endif
@@ -265,33 +262,32 @@ namespace xtd {
       
       /// @cond
       template<typename char_t>
-      static bool copy(const char_t* src, const char_t* dest, bool overwrite) {return copy(std::basic_string<char_t>(src), std::basic_string<char_t>(dest), overwrite);}
+      static bool copy(const char_t* src, const char_t* dest, bool overwrite) {return copy(xtd::ustring(src), xtd::ustring(dest), overwrite);}
       template<typename char_t>
-      static bool copy(const std::basic_string<char_t>& src, const char_t* dest, bool overwrite) {return copy(src, std::basic_string<char_t>(dest), overwrite);}
+      static bool copy(const xtd::ustring& src, const char_t* dest, bool overwrite) {return copy(src, xtd::ustring(dest), overwrite);}
       template<typename char_t>
-      static bool copy(const char_t* src, const std::basic_string<char_t> dest, bool overwrite) {return copy(src, std::basic_string<char_t>(dest), overwrite);}
+      static bool copy(const char_t* src, const xtd::ustring& dest, bool overwrite) {return copy(xtd::ustring(src), dest, overwrite);}
       /// @endcond
 
       /// @brief Creates or overwrites a file in the specified path.
       /// @param The path and name of the file to create.
-      /// @return A std::basic_ofstream that provides read/write access to the file specified in path.
-      /// @remarks This method also returns an empty std::basic_ofstream if path is empty or an invalid path.
-      /// @remarks This method also returns an empty std::basic_ofstream if the caller has not the required permissions.
-      template<typename char_t>
-      static std::basic_ofstream<char_t> create(const std::basic_string<char_t>& path) noexcept {
+      /// @return A std::ofstream that provides read/write access to the file specified in path.
+      /// @remarks This method also returns an empty std::ofstream if path is empty or an invalid path.
+      /// @remarks This method also returns an empty std::ofstream if the caller has not the required permissions.
+      static std::ofstream create(const xtd::ustring& path) noexcept {
         try {
-          return std::basic_ofstream<char_t>(path, std::ios::binary | std::ios::out);
+          return std::ofstream(path, std::ios::binary | std::ios::out);
         } catch(...) {
-          return std::basic_ofstream<char_t>();
+          return std::ofstream();
         }
       }
 
 #if defined(__cpp_lib_filesystem)
       /// @brief Creates or overwrites a file in the specified path.
       /// @param The path and name of the file to create.
-      /// @return A std::basic_ofstream that provides read/write access to the file specified in path.
-      /// @remarks This method also returns an empty std::basic_ofstream if path is empty or an invalid path.
-      /// @remarks This method also returns an empty std::basic_ofstream if the caller has not the required permissions.
+      /// @return A std::ofstream that provides read/write access to the file specified in path.
+      /// @remarks This method also returns an empty std::ofstream if path is empty or an invalid path.
+      /// @remarks This method also returns an empty std::ofstream if the caller has not the required permissions.
       static std::ofstream create(const std::filesystem::path& path) noexcept {
         try {
           return std::ofstream(path, std::ios::binary | std::ios::out);
@@ -303,21 +299,20 @@ namespace xtd {
       
       /// @cond
       template<typename char_t>
-      static std::basic_ofstream<char_t> create(const char_t* path) noexcept {return create(std::basic_string<char_t>(path));}
+      static std::ofstream create(const char_t* path) noexcept {return create(xtd::ustring(path));}
       /// @endcond
       
       /// @brief Creates or opens a file for writing text.
       /// @brief Creates or overwrites a file in the specified path.
       /// @param The path and name of the file to create.
-      /// @return A std::basic_ofstream that provides read/write access to the file specified in path.
-      /// @remarks This method also returns an empty std::basic_ofstream if path is empty or an invalid path.
-      /// @remarks This method also returns an empty std::basic_ofstream if the caller has not the required permissions.
-      template<typename char_t>
-      static std::basic_ofstream<char_t> create_text(const std::basic_string<char_t>& path) noexcept {
+      /// @return A std::ofstream that provides read/write access to the file specified in path.
+      /// @remarks This method also returns an empty std::ofstream if path is empty or an invalid path.
+      /// @remarks This method also returns an empty std::ofstream if the caller has not the required permissions.
+      static std::ofstream create_text(const xtd::ustring& path) noexcept {
         try {
-          return std::basic_ofstream<char_t>(path);
+          return std::ofstream(path);
         } catch(...) {
-          return std::basic_ofstream<char_t>();
+          return std::ofstream();
         }
       }
 
@@ -325,9 +320,9 @@ namespace xtd {
       /// @brief Creates or opens a file for writing text.
       /// @brief Creates or overwrites a file in the specified path.
       /// @param The path and name of the file to create.
-      /// @return A std::basic_ofstream that provides read/write access to the file specified in path.
-      /// @remarks This method also returns an empty std::basic_ofstream if path is empty or an invalid path.
-      /// @remarks This method also returns an empty std::basic_ofstream if the caller has not the required permissions.
+      /// @return A std::ofstream that provides read/write access to the file specified in path.
+      /// @remarks This method also returns an empty std::ofstream if path is empty or an invalid path.
+      /// @remarks This method also returns an empty std::ofstream if the caller has not the required permissions.
       static std::ofstream create_text(const std::filesystem::path& path) noexcept {
         try {
           return std::ofstream(path);
@@ -339,7 +334,7 @@ namespace xtd {
       
       /// @cond
       template<typename char_t>
-      static std::basic_ofstream<char_t> create_text(const char_t* path) noexcept {return create_text(std::basic_string<char_t>(path));}
+      static std::ofstream create_text(const char_t* path) noexcept {return create_text(xtd::ustring(path));}
       /// @endcond
       
       /// @brief Determines whether the specified file exists.
@@ -347,10 +342,9 @@ namespace xtd {
       /// @return true if the caller has the required permissions and path contains the name of an existing file; otherwise, false.
       /// @remarks This method also returns false if path is empty or an invalid path.
       /// @remarks If the caller does not have sufficient permissions to read the specified file, no exception is thrown and the method returns false regardless of the existence of path.
-      template<typename char_t>
-      static bool exists(const std::basic_string<char_t>& path) noexcept {
+      static bool exists(const xtd::ustring& path) noexcept {
         try {
-          return std::basic_ifstream<char_t> {path}.good();
+          return std::ifstream(std::string(path)).good();
         } catch(...) {
           return false;
         }
@@ -373,16 +367,15 @@ namespace xtd {
       
       /// @cond
       template<typename char_t>
-      static bool exists(const char_t* path) noexcept {return exists(std::basic_string<char_t>(path));}
+      static bool exists(const char_t* path) noexcept {return exists(xtd::ustring(path));}
       /// @endcond
       
       /// @brief Gets the xtd::io::file_attributes of the file on the path.
       /// @param src The path to the file.
       /// @return The xtd::io::file_attributes of the file on the path.
       /// @remarks Return (xtd::io::file_attributes)-1, if src is string empty or src contains one or more of the invalid characters or the system could not retrieve the absolute path.
-      template<typename char_t>
-      static xtd::io::file_attributes get_attributes(const std::basic_string<char_t>& src) noexcept {
-        return get_attributes(src.c_str());
+      static xtd::io::file_attributes get_attributes(const xtd::ustring& src) noexcept {
+        return (xtd::io::file_attributes)__get_file_attributes(src.c_str());
       }
 
 #if defined(__cpp_lib_filesystem)
@@ -391,14 +384,14 @@ namespace xtd {
       /// @return The xtd::io::file_attributes of the file on the path.
       /// @remarks Return (xtd::io::file_attributes)-1, if src is string empty or src contains one or more of the invalid characters or the system could not retrieve the absolute path.
       static xtd::io::file_attributes get_attributes(const std::filesystem::path& src) noexcept {
-        return get_attributes(src.string().c_str());
+        return get_attributes(xtd::ustring(src.string()));
       }
 #endif
 
       /// @cond
       template<typename char_t>
       static xtd::io::file_attributes get_attributes(const char_t* path) noexcept {
-        return (xtd::io::file_attributes)__get_file_attributes(path);
+        return get_attributes(xtd::ustring(path));
       }
       /// @endcond
       
@@ -409,8 +402,7 @@ namespace xtd {
       /// @remarks This method also returns false if dest already exist.
       /// @remarks This method also returns false if path is empty or an invalid path.
       /// @remarks This method also returns false if the caller has not the required permissions.
-      template<typename char_t>
-      static bool move(const std::basic_string<char_t>& src, const std::basic_string<char_t>& dest) noexcept {return move(src.c_str(), dest.c_str());}
+      static bool move(const xtd::ustring& src, const xtd::ustring& dest) noexcept {return move(std::string(src).c_str(), std::string(dest).c_str());}
     
 #if defined(__cpp_lib_filesystem)
       /// @brief Moves a specified file to a new location, providing the option to specify a new file name.
@@ -420,7 +412,7 @@ namespace xtd {
       /// @remarks This method also returns false if dest already exist.
       /// @remarks This method also returns false if path is empty or an invalid path.
       /// @remarks This method also returns false if the caller has not the required permissions.
-      static bool move(const std::filesystem::path& src, const std::filesystem::path& dest) noexcept {return move(src.string(), dest.string());}
+      static bool move(const std::filesystem::path& src, const std::filesystem::path& dest) noexcept {return move(xtd::ustring(src.string()), xtd::ustring(dest.string()));}
 #endif
       
       /// @cond
@@ -432,7 +424,7 @@ namespace xtd {
           std::filesystem::rename(src, dest);
           return true;
 #else
-          return rename(src, dest) == 0;
+          return ::rename(src, dest) == 0;
 #endif
         } catch(...) {
           return false;
@@ -443,15 +435,14 @@ namespace xtd {
       /// @brief Opens a FileStream on the specified path.
       /// @param path The file to open.
       /// @param mode A std::ios::openmode value that specifies whether a file is created if one does not exist, and determines whether the contents of existing files are retained or overwritten.
-      /// @return A std::basic_fstream on the specified path.
-      /// @remarks This method also returns an empty std::basic_fstream if path is empty or an invalid path.
-      /// @remarks This method also returns an empty std::basic_fstream if the caller has not the required permissions.
-      template<typename char_t>
-      static std::basic_fstream<char_t> open(const std::basic_string<char_t>& path, std::ios::openmode mode) noexcept {
+      /// @return A std::fstream on the specified path.
+      /// @remarks This method also returns an empty std::fstream if path is empty or an invalid path.
+      /// @remarks This method also returns an empty std::fstream if the caller has not the required permissions.
+      static std::fstream open(const xtd::ustring& path, std::ios::openmode mode) noexcept {
         try {
-          return std::basic_fstream<char_t>(path, mode);
+          return std::fstream(path, mode);
         } catch(...) {
-          return std::basic_fstream<char_t>();
+          return std::fstream();
         }
       }
 
@@ -459,9 +450,9 @@ namespace xtd {
       /// @brief Opens a FileStream on the specified path.
       /// @param path The file to open.
       /// @param mode A std::ios::openmode value that specifies whether a file is created if one does not exist, and determines whether the contents of existing files are retained or overwritten.
-      /// @return A std::basic_fstream on the specified path.
-      /// @remarks This method also returns an empty std::basic_fstream if path is empty or an invalid path.
-      /// @remarks This method also returns an empty std::basic_fstream if the caller has not the required permissions.
+      /// @return A std::fstream on the specified path.
+      /// @remarks This method also returns an empty std::fstream if path is empty or an invalid path.
+      /// @remarks This method also returns an empty std::fstream if the caller has not the required permissions.
       static std::fstream open(const std::filesystem::path& path, std::ios::openmode mode) noexcept {
         try {
           return std::fstream(path, mode);
@@ -473,29 +464,28 @@ namespace xtd {
       
       /// @cond
       template<typename char_t>
-      static std::basic_fstream<char_t> open(const char_t* path, std::ios::openmode mode) noexcept {return open(std::basic_string<char_t>(path), mode);}
+      static std::fstream open(const char_t* path, std::ios::openmode mode) noexcept {return open(xtd::ustring(path), mode);}
       /// @endcond
       
       /// @brief Opens an existing file for reading.
       /// @param path The file to be opened for reading.
-      /// @return A std::basic_ifstream on the specified path.
-      /// @remarks This method also returns an empty std::basic_ifstream if path is empty or an invalid path.
-      /// @remarks This method also returns an empty std::basic_ifstream if the caller has not the required permissions.
-      template<typename char_t>
-      static std::basic_ifstream<char_t> open_read(const std::basic_string<char_t>& path) noexcept {
+      /// @return A std::ifstream on the specified path.
+      /// @remarks This method also returns an empty std::ifstream if path is empty or an invalid path.
+      /// @remarks This method also returns an empty std::ifstream if the caller has not the required permissions.
+      static std::ifstream open_read(const xtd::ustring& path) noexcept {
         try {
-          return std::basic_ifstream<char_t>(path, std::ios::binary | std::ios::in);
+          return std::ifstream(path, std::ios::binary | std::ios::in);
         } catch(...) {
-          return std::basic_ifstream<char_t>();
+          return std::ifstream();
         }
       }
       
 #if defined(__cpp_lib_filesystem)
       /// @brief Opens an existing file for reading.
       /// @param path The file to be opened for reading.
-      /// @return A std::basic_ifstream on the specified path.
-      /// @remarks This method also returns an empty std::basic_ifstream if path is empty or an invalid path.
-      /// @remarks This method also returns an empty std::basic_ifstream if the caller has not the required permissions.
+      /// @return A std::ifstream on the specified path.
+      /// @remarks This method also returns an empty std::ifstream if path is empty or an invalid path.
+      /// @remarks This method also returns an empty std::ifstream if the caller has not the required permissions.
       static std::ifstream open_read(const std::filesystem::path& path) noexcept {
         try {
           return std::ifstream(path, std::ios::binary | std::ios::in);
@@ -507,29 +497,28 @@ namespace xtd {
       
       /// @cond
       template<typename char_t>
-      static std::basic_ifstream<char_t> open_read(const char_t* path) noexcept {return open_read(std::basic_string<char_t>(path));}
+      static std::ifstream open_read(const char_t* path) noexcept {return open_read(xtd::ustring(path));}
       /// @endcond
       
       /// @brief Opens an existing file for reading.
       /// @param path The file to be opened for reading.
-      /// @return A std::basic_ifstream on the specified path.
-      /// @remarks This method also returns an empty std::basic_ifstream if path is empty or an invalid path.
-      /// @remarks This method also returns an empty std::basic_ifstream if the caller has not the required permissions.
-      template<typename char_t>
-      static std::basic_ifstream<char_t> open_text(const std::basic_string<char_t>& path) noexcept {
+      /// @return A std::ifstream on the specified path.
+      /// @remarks This method also returns an empty std::ifstream if path is empty or an invalid path.
+      /// @remarks This method also returns an empty std::ifstream if the caller has not the required permissions.
+      static std::ifstream open_text(const xtd::ustring& path) noexcept {
         try {
-          return std::basic_ifstream<char_t>(path);
+          return std::ifstream(path);
         } catch(...) {
-          return std::basic_ifstream<char_t>();
+          return std::ifstream();
         }
       }
 
 #if defined(__cpp_lib_filesystem)
       /// @brief Opens an existing file for reading.
       /// @param path The file to be opened for reading.
-      /// @return A std::basic_ifstream on the specified path.
-      /// @remarks This method also returns an empty std::basic_ifstream if path is empty or an invalid path.
-      /// @remarks This method also returns an empty std::basic_ifstream if the caller has not the required permissions.
+      /// @return A std::ifstream on the specified path.
+      /// @remarks This method also returns an empty std::ifstream if path is empty or an invalid path.
+      /// @remarks This method also returns an empty std::ifstream if the caller has not the required permissions.
       static std::ifstream open_text(const std::filesystem::path& path) noexcept {
         try {
           return std::ifstream(path);
@@ -541,29 +530,28 @@ namespace xtd {
       
       /// @cond
       template<typename char_t>
-      static std::basic_ifstream<char_t> open_text(const char_t* path) noexcept {return open_text(std::basic_string<char_t>(path));}
+      static std::ifstream open_text(const char_t* path) noexcept {return open_text(xtd::ustring(path));}
       /// @endcond
       
       /// @brief Opens an existing file for writing.
       /// @param path The file to be opened for writing.
-      /// @return A std::basic_ofstream on the specified path.
-      /// @remarks This method also returns an empty std::basic_oifstream if path is empty or an invalid path.
-      /// @remarks This method also returns an empty std::basic_ofstream if the caller has not the required permissions.
-      template<typename char_t>
-      static std::basic_ofstream<char_t> open_write(const std::basic_string<char_t>& path) noexcept {
+      /// @return A std::ofstream on the specified path.
+      /// @remarks This method also returns an empty std::oifstream if path is empty or an invalid path.
+      /// @remarks This method also returns an empty std::ofstream if the caller has not the required permissions.
+      static std::ofstream open_write(const xtd::ustring& path) noexcept {
         try {
-          return std::basic_ofstream<char_t>(path, std::ios::binary | std::ios::out);
+          return std::ofstream(path, std::ios::binary | std::ios::out);
         } catch(...) {
-          return std::basic_ofstream<char_t>();
+          return std::ofstream();
         }
       }
     
 #if defined(__cpp_lib_filesystem)
       /// @brief Opens an existing file for writing.
       /// @param path The file to be opened for writing.
-      /// @return A std::basic_ofstream on the specified path.
-      /// @remarks This method also returns an empty std::basic_oifstream if path is empty or an invalid path.
-      /// @remarks This method also returns an empty std::basic_ofstream if the caller has not the required permissions.
+      /// @return A std::ofstream on the specified path.
+      /// @remarks This method also returns an empty std::oifstream if path is empty or an invalid path.
+      /// @remarks This method also returns an empty std::ofstream if the caller has not the required permissions.
       static std::ofstream open_write(const std::filesystem::path& path) noexcept {
         try {
           return std::ofstream(path, std::ios::binary | std::ios::out);
@@ -575,11 +563,10 @@ namespace xtd {
       
       /// @cond
       template<typename char_t>
-      static std::basic_ofstream<char_t> open_write(const char_t* path) noexcept {return open_write(std::basic_string<char_t>(path));}
+      static std::ofstream open_write(const char_t* path) noexcept {return open_write(xtd::ustring(path));}
       /// @endcond
       
-      template<typename char_t>
-      static std::vector<unsigned char> read_all_bytes(const std::basic_string<char_t>& path) noexcept {
+      static std::vector<unsigned char> read_all_bytes(const xtd::ustring& path) noexcept {
         try {
           std::ifstream file(path, std::ios::binary);
           return std::vector<unsigned char> {std::istreambuf_iterator<char>(file), std::istreambuf_iterator<char>()};
@@ -600,19 +587,18 @@ namespace xtd {
 #endif
       
       template<typename char_t>
-      static std::vector<unsigned char> read_all_bytes(const char_t* path) noexcept {return read_all_bytes(std::basic_string<char_t>(path));}
+      static std::vector<unsigned char> read_all_bytes(const char_t* path) noexcept {return read_all_bytes(xtd::ustring(path));}
       
       /// @brief Opens a text file, reads all lines of the file, and then closes the file.
       /// @param path The file to open for reading.
       /// @return A String array containing all lines of the file.
       /// @remarks This method also returns an empty array if path is empty or an invalid path.
       /// @remarks If the caller does not have sufficient permissions to read the specified file, no exception is thrown and the method returns an empty array regardless of the existence of path.
-      template<typename char_t>
-      static std::vector<std::basic_string<char_t>> read_all_lines(const std::basic_string<char_t>& path) noexcept {
+      static std::vector<xtd::ustring> read_all_lines(const xtd::ustring& path) noexcept {
         try {
-          std::vector<std::basic_string<char_t>> contents;
-          std::basic_ifstream<char_t> file(path);
-          std::basic_string<char_t> line;
+          std::vector<xtd::ustring> contents;
+          std::ifstream file(path);
+          std::string line;
           while(std::getline(file, line))
             contents.push_back(line);
           return contents;
@@ -627,9 +613,9 @@ namespace xtd {
       /// @return A String array containing all lines of the file.
       /// @remarks This method also returns an empty array if path is empty or an invalid path.
       /// @remarks If the caller does not have sufficient permissions to read the specified file, no exception is thrown and the method returns an empty array regardless of the existence of path.
-      static std::vector<std::string> read_all_lines(const std::filesystem::path& path) noexcept {
+      static std::vector<xtd::ustring> read_all_lines(const std::filesystem::path& path) noexcept {
         try {
-          std::vector<std::string> contents;
+          std::vector<xtd::ustring> contents;
           std::ifstream file(path);
           std::string line;
           while(std::getline(file, line))
@@ -643,7 +629,7 @@ namespace xtd {
       
       /// @cond
       template<typename char_t>
-      static std::vector<std::basic_string<char_t>> read_all_lines(const char_t* path) noexcept {return read_all_lines(std::basic_string<char_t>(path));}
+      static std::vector<xtd::ustring> read_all_lines(const char_t* path) noexcept {return read_all_lines(xtd::ustring(path));}
       /// @endcond
       
       /// @brief Opens a text file, reads all text of the file, and then closes the file.
@@ -651,11 +637,10 @@ namespace xtd {
       /// @return A dstring containing all text of the file.
       /// @remarks This method also returns empty string if path is empty or an invalid path.
       /// @remarks If the caller does not have sufficient permissions to read the specified file, no exception is thrown and the method returns empty string regardless of the existence of file.
-      template<typename char_t>
-      static std::basic_string<char_t> read_all_text(const std::basic_string<char_t>& path) noexcept {
+       static xtd::ustring read_all_text(const xtd::ustring& path) noexcept {
         try {
-          std::basic_ifstream<char_t> file(path);
-          return std::basic_string<char_t> {std::istreambuf_iterator<char_t>(file), std::istreambuf_iterator<char_t>()};
+          std::ifstream file(path);
+          return xtd::ustring(std::istreambuf_iterator<char>(file), std::istreambuf_iterator<char>());
         } catch(...) {
           return {};
         }
@@ -679,22 +664,21 @@ namespace xtd {
 
       /// @cond
       template<typename char_t>
-      static std::basic_string<char_t> read_all_text(const char_t* path) noexcept {return read_all_text(std::basic_string<char_t>(path));}
+      static xtd::ustring read_all_text(const char_t* path) noexcept {return read_all_text(xtd::ustring(path));}
       /// @endcond
       
       /// @brief Deletes the specified file.
       /// @param path The name of the file to be deleted.
-      /// @return std::basic_ofstream An unshared std::basic_ofstream that provides access to the specified file, with the specified mode and access.
+      /// @return std::ofstream An unshared std::ofstream that provides access to the specified file, with the specified mode and access.
       /// @return true if the file is deleted; otherwise, false.
-      template<typename char_t>
-      static bool remove(const std::basic_string<char_t>& path) noexcept {return remove(path.c_str());}
+      static bool remove(const xtd::ustring& path) noexcept {return remove(std::string(path).c_str());}
       
 #if defined(__cpp_lib_filesystem)
       /// @brief Deletes the specified file.
       /// @param path The name of the file to be deleted.
-      /// @return std::basic_ofstream An unshared std::basic_ofstream that provides access to the specified file, with the specified mode and access.
+      /// @return std::ofstream An unshared std::ofstream that provides access to the specified file, with the specified mode and access.
       /// @return true if the file is deleted; otherwise, false.
-      static bool remove(const std::filesystem::path& path) noexcept {return remove(path.string());}
+      static bool remove(const std::filesystem::path& path) noexcept {return remove(xtd::ustring(path.string()));}
 #endif
 
       /// @cond
@@ -710,8 +694,7 @@ namespace xtd {
       /// @param destination_backup_file_name The name of the backup file.
       /// @param ignore_metadata_errors true to ignore merge errors (such as attributes and access control lists (ACLs)) from the replaced file to the replacement file; otherwise, false.
       /// @return false source_file_name does not exist or bad format, or destination_file_name does not exist or bad format, or if ignore_metadata_errors equal false and destination_backup_file_name bad format or on ani io error; otherwise true.
-      template<typename char_t>
-      static bool replace(const std::basic_string<char_t>& source_file_name, const std::basic_string<char_t>& destination_file_name, const std::basic_string<char_t>& destination_backup_file_name) noexcept {
+      static bool replace(const xtd::ustring& source_file_name, const xtd::ustring& destination_file_name, const xtd::ustring& destination_backup_file_name) noexcept {
         if (!exists(source_file_name) || !exists(destination_file_name)) return false;
         if (!copy(destination_file_name, destination_backup_file_name)) return false;
         if (!remove(destination_file_name)) return false;
@@ -735,19 +718,19 @@ namespace xtd {
 
       /// @cond
       template<typename char_t>
-      static bool replace(const char_t* source_file_name, const char_t* destination_file_name, const char_t* destination_backup_file_name) noexcept {return replace(std::basic_string<char_t>(source_file_name), std::basic_string<char_t>(destination_file_name), std::basic_string<char_t>(destination_backup_file_name));}
+      static bool replace(const char_t* source_file_name, const char_t* destination_file_name, const char_t* destination_backup_file_name) noexcept {return replace(xtd::ustring(source_file_name), xtd::ustring(destination_file_name), xtd::ustring(destination_backup_file_name));}
       template<typename char_t>
-      static bool replace(const std::basic_string<char_t>& source_file_name, const char_t* destination_file_name, const char_t* destination_backup_file_name) noexcept {return replace(source_file_name, std::basic_string<char_t>(destination_file_name), std::basic_string<char_t>(destination_backup_file_name));}
+      static bool replace(const xtd::ustring& source_file_name, const char_t* destination_file_name, const char_t* destination_backup_file_name) noexcept {return replace(source_file_name, xtd::ustring(destination_file_name), xtd::ustring(destination_backup_file_name));}
       template<typename char_t>
-      static bool replace(const char_t* source_file_name, const std::basic_string<char_t>& destination_file_name, const char_t* destination_backup_file_name) noexcept {return replace(std::basic_string<char_t>(source_file_name), destination_file_name, std::basic_string<char_t>(destination_backup_file_name));}
+      static bool replace(const char_t* source_file_name, const xtd::ustring& destination_file_name, const char_t* destination_backup_file_name) noexcept {return replace(xtd::ustring(source_file_name), destination_file_name, xtd::ustring(destination_backup_file_name));}
       template<typename char_t>
-      static bool replace(const char_t* source_file_name, const char_t* destination_file_name, const std::basic_string<char_t>& destination_backup_file_name) noexcept {return replace(std::basic_string<char_t>(source_file_name), std::basic_string<char_t>(destination_file_name), destination_backup_file_name);}
+      static bool replace(const char_t* source_file_name, const char_t* destination_file_name, const xtd::ustring& destination_backup_file_name) noexcept {return replace(xtd::ustring(source_file_name), xtd::ustring(destination_file_name), destination_backup_file_name);}
       template<typename char_t>
-      static bool replace(const std::basic_string<char_t>& source_file_name, const std::basic_string<char_t>& destination_file_name, const char_t* destination_backup_file_name) noexcept {return replace(source_file_name, destination_file_name, std::basic_string<char_t>(destination_backup_file_name));}
+      static bool replace(const xtd::ustring& source_file_name, const xtd::ustring& destination_file_name, const char_t* destination_backup_file_name) noexcept {return replace(source_file_name, destination_file_name, xtd::ustring(destination_backup_file_name));}
       template<typename char_t>
-      static bool replace(const std::basic_string<char_t>& source_file_name, const char_t* destination_file_name, const std::basic_string<char_t>&destination_backup_file_name) noexcept {return replace(source_file_name, std::basic_string<char_t>(destination_file_name), destination_backup_file_name);}
+      static bool replace(const xtd::ustring& source_file_name, const char_t* destination_file_name, const xtd::ustring& destination_backup_file_name) noexcept {return replace(source_file_name, xtd::ustring(destination_file_name), destination_backup_file_name);}
       template<typename char_t>
-      static bool replace(const char_t* source_file_name, const std::basic_string<char_t>& destination_file_name, const std::basic_string<char_t>& destination_backup_file_name) noexcept {return replace(std::basic_string<char_t>(source_file_name), destination_file_name, destination_backup_file_name);}
+      static bool replace(const char_t* source_file_name, const xtd::ustring& destination_file_name, const xtd::ustring& destination_backup_file_name) noexcept {return replace(xtd::ustring(source_file_name), destination_file_name, destination_backup_file_name);}
       /// @endcond
       
       /// @brief Writes lines to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.
@@ -757,10 +740,10 @@ namespace xtd {
       /// @remarks This method also returns false if path is empty or an invalid path.
       /// @remarks This method also returns false if the caller has not the required permissions.
       /// @remarks If the target file already exists, it is overwritten.
-      template<typename char_t, typename type_t>
-      static bool write_all_lines(const std::basic_string<char_t>& path, type_t contents) noexcept {
+      template<typename type_t>
+      static bool write_all_lines(const xtd::ustring& path, type_t contents) noexcept {
         try {
-          std::basic_ofstream<char_t> file(path);
+          std::ofstream file(path);
           for (const auto& line : contents)
             file << line << std::endl;
           return true;
@@ -792,7 +775,7 @@ namespace xtd {
 
       /// @cond
       template<typename char_t, typename type_t>
-      static bool write_all_lines(const char_t* path, type_t contents) noexcept {return write_all_lines(std::basic_string<char_t>(path), contents);}
+      static bool write_all_lines(const char_t* path, type_t contents) noexcept {return write_all_lines(xtd::ustring(path), contents);}
       /// @endcond
       
       /// @brief Writes lines to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.
@@ -802,10 +785,10 @@ namespace xtd {
       /// @remarks This method also returns false if path is empty or an invalid path.
       /// @remarks This method also returns false if the caller has not the required permissions.
       /// @remarks If the target file already exists, it is overwritten.
-      template<typename char_t, typename type_t>
-      static bool write_all_lines(const std::basic_string<char_t>& path, const std::initializer_list<type_t>& contents) noexcept {
+      template<typename type_t>
+      static bool write_all_lines(const xtd::ustring& path, const std::initializer_list<type_t>& contents) noexcept {
         try {
-          std::basic_ofstream<char_t> file(path);
+          std::ofstream file(path);
           for (const auto& line : contents)
             file << line << std::endl;
           return true;
@@ -837,7 +820,7 @@ namespace xtd {
 
       /// @cond
       template<typename char_t, typename type_t>
-      static bool write_all_lines(const char_t* path, const std::initializer_list<type_t>& contents) noexcept {return write_all_lines(std::basic_string<char_t>(path), contents);}
+      static bool write_all_lines(const char_t* path, const std::initializer_list<type_t>& contents) noexcept {return write_all_lines(xtd::ustring(path), contents);}
       /// @endcond
       
       /// @brief Writes text to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.
@@ -846,10 +829,10 @@ namespace xtd {
       /// @return true if the text written; otherwise, false.
       /// @remarks This method also returns false if path is empty or an invalid path.
       /// @remarks This method also returns false if the caller has not the required permissions.
-      template<typename char_t, typename type_t>
-      static bool write_all_text(const std::basic_string<char_t>& path, type_t text) noexcept {
+      template<typename type_t>
+      static bool write_all_text(const xtd::ustring& path, type_t text) noexcept {
         try {
-          std::basic_ofstream<char_t> file(path);
+          std::ofstream file(path);
           file << text;
           return true;
         } catch(...) {
@@ -878,29 +861,28 @@ namespace xtd {
       
       /// @cond
       template<typename char_t, typename type_t>
-      static bool write_all_text(const char_t* path, type_t text) noexcept {return write_all_text(std::basic_string<char_t>(path), text);}
+      static bool write_all_text(const char_t* path, type_t text) noexcept {return write_all_text(xtd::ustring(path), text);}
       /// @endcond
       
-      /// @brief Creates a std::basic_ofstream that appends text to an existing file.
+      /// @brief Creates a std::ofstream that appends text to an existing file.
       /// @param path The path to the file to write to.
-      /// @return A std::basic_ofstream that writes text to an existing file.
-      /// @remarks This method also returns an empty std::basic_ofstream if path is empty or an invalid path.
-      /// @remarks This method also returns an empty std::basic_ofstream if the caller has not the required permissions.
-      template<typename char_t>
-      static std::basic_ofstream<char_t> write_text(const std::basic_string<char_t>& path) noexcept {
+      /// @return A std::ofstream that writes text to an existing file.
+      /// @remarks This method also returns an empty std::ofstream if path is empty or an invalid path.
+      /// @remarks This method also returns an empty std::ofstream if the caller has not the required permissions.
+      static std::ofstream write_text(const xtd::ustring& path) noexcept {
         try {
-          return std::basic_ofstream<char_t>(path);
+          return std::ofstream(path);
         } catch(...) {
-          return std::basic_ofstream<char_t>();
+          return std::ofstream();
         }
       }
 
 #if defined(__cpp_lib_filesystem)
-      /// @brief Creates a std::basic_ofstream that appends text to an existing file.
+      /// @brief Creates a std::ofstream that appends text to an existing file.
       /// @param path The path to the file to write to.
-      /// @return A std::basic_ofstream that writes text to an existing file.
-      /// @remarks This method also returns an empty std::basic_ofstream if path is empty or an invalid path.
-      /// @remarks This method also returns an empty std::basic_ofstream if the caller has not the required permissions.
+      /// @return A std::ofstream that writes text to an existing file.
+      /// @remarks This method also returns an empty std::ofstream if path is empty or an invalid path.
+      /// @remarks This method also returns an empty std::ofstream if the caller has not the required permissions.
       static std::ofstream write_text(const std::filesystem::path& path) noexcept {
         try {
           return std::ofstream(path);
@@ -912,11 +894,11 @@ namespace xtd {
       
       /// @cond
       template<typename char_t>
-      static std::basic_ofstream<char_t> write_text(const char_t* path) noexcept {return write_text(std::basic_string<char_t>(path));}
+      static std::ofstream write_text(const char_t* path) noexcept {return write_text(xtd::ustring(path));}
       /// @endcond
       
     private:
-      static int __get_file_attributes(const char*path);
+      static int __get_file_attributes(const char8_t* path);
     };
   }
 }

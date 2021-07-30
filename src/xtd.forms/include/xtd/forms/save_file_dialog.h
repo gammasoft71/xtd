@@ -35,7 +35,7 @@ namespace xtd {
       
       /// @brief Opens the file with read/write permission selected by the user.
       /// @return The read/write file selected by the user.
-      std::fstream open_file() const {return io::file::open(file_name_, std::ios::binary | std::ios::in | std::ios::out);}
+      std::fstream open_file() const {return io::file::open(xtd::ustring(file_name_), std::ios::binary | std::ios::in | std::ios::out);}
 
     private:
       bool run_file_dialog(intptr_t hwnd_owner) override;

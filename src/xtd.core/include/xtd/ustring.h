@@ -320,6 +320,22 @@ namespace xtd {
     ustring& operator=(char32_t character);
     ustring& operator=(wchar_t character);
     ustring& operator=(const std::initializer_list<value_type>& il);
+    ustring operator+(const std::string& str);
+    ustring operator+(const char* str);
+    ustring operator+(const std::u8string& str);
+    ustring operator+(const ustring& str);
+    ustring operator+(const value_type* str);
+    ustring operator+(const std::u16string& str);
+    ustring operator+(const char16_t* str);
+    ustring operator+(const std::u32string& str);
+    ustring operator+(const char32_t* str);
+    ustring operator+(const std::wstring& str);
+    ustring operator+(const wchar_t* str);
+    ustring operator+(char character);
+    ustring operator+(value_type character);
+    ustring operator+(char16_t character);
+    ustring operator+(char32_t character);
+    ustring operator+(wchar_t character);
     template<typename type_t>
     ustring& operator=(const type_t& object) {return std::basic_string<value_type>::assign(object);}
     bool operator==(const ustring& other) const;
@@ -584,7 +600,7 @@ namespace xtd {
     
     /// @brief Represents the empty string.
     /// @remarks The value of this method is the zero-length string, "".
-    static ustring empty() noexcept;
+    static ustring empty_string() noexcept;
 
     /// @brief Determines whether the end of this string matches the specified character.
     /// @param value The char_t to compare to the substring at the end of this instance.
@@ -1249,4 +1265,6 @@ void __ustring_extract_format_arg(std::string& fmt, std::vector<__format_informa
   (__ustring_extract_format_arg(fmt, index, formats, args),...);
   __xtd_ustrings_unused(index); // workouround to mute gcc warning: unused-but-set-variable
 }
+
+std::ostream& operator<<(std::ostream& stream, char8_t character);
 /// @endcond

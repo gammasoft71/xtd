@@ -72,7 +72,7 @@ namespace xtdc_command {
       if (std::find(sdks.begin(), sdks.end(), sdk) == sdks.end()) return "The sdk param not valid with type param! Create project aborted.";
       auto languages = get_valid_languages(sdk);
       if (std::find(languages.begin(), languages.end(), language) == languages.end()) return "The language param not valid with sdk param! Create project aborted.";
-      if (is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {} already exists and not empty! Create project aborted.", path_);
+      if (is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} already exists and not empty! Create project aborted.", path_);
       if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return "Set your CMAKE_PREFIX_PATH environment variable to the Qt 5 installation prefix! Create project aborted.";
       std::filesystem::create_directories(std::filesystem::path {path_}/"build");
       create_doxygen_txt(name);
@@ -80,7 +80,7 @@ namespace xtdc_command {
       std::map<project_type, xtd::action<const std::string&, project_sdk, project_language, bool>> {{project_type::blank_solution, {*this, &project_management::create_blank_solution}}, {project_type::console, {*this, &project_management::create_console}}, {project_type::gui, {*this, &project_management::create_gui}}, {project_type::shared_library, {*this, &project_management::create_shared_library}}, {project_type::static_library, {*this, &project_management::create_static_library}}, {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}}[type](name, sdk, language, true);
       generate(name);
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Create project aborted.";
-      return xtd::strings::format("Project {} created", path_);
+      return xtd::ustring::format("Project {} created", path_);
     }
 
     std::string add(const std::string& name, project_type type, project_sdk sdk, project_language language) const {
@@ -88,7 +88,7 @@ namespace xtdc_command {
       if (std::find(sdks.begin(), sdks.end(), sdk) == sdks.end()) return "The sdk param not valid with type param! Add project aborted.";
       auto languages = get_valid_languages(sdk);
       if (std::find(languages.begin(), languages.end(), language) == languages.end()) return "The language param not valid with sdk param! Add project aborted.";
-      if (is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {} already exists and not empty! Add project aborted.", path_);
+      if (is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} already exists and not empty! Add project aborted.", path_);
       if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return "Set your CMAKE_PREFIX_PATH environment variable to the Qt 5 installation prefix! Add project aborted.";
       if (!std::filesystem::exists(path_.parent_path()/"CMakeLists.txt")) return xtd::strings::format("Parent directory \"{}\", is not a known project! Add project aborted.", path_.parent_path().string());
       auto lines  = xtd::io::file::read_all_lines(path_.parent_path()/"CMakeLists.txt");
@@ -169,17 +169,17 @@ namespace xtdc_command {
       return "";
     }
 
-    std::vector<std::string>& targets() const {
-      static std::vector<std::string> targets;
+    std::vector<xtd::ustring>& targets() const {
+      static std::vector<xtd::ustring> targets;
       if (targets.size() == 0)
         for (const auto& line : get_system_information())
-          if (xtd::strings::index_of(line, "_BINARY_DIR:STATIC=") != std::string::npos)
-            targets.push_back(xtd::strings::substring(line, 0, xtd::strings::index_of(line, "_BINARY_DIR:STATIC=")));
+          if (line.index_of("_BINARY_DIR:STATIC=") != xtd::ustring::npos)
+            targets.push_back(line.substring(0, line.index_of("_BINARY_DIR:STATIC=")));
       return targets;
     }
 
     std::string test(bool release) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {} does not exists or is empty! Test project aborted.", path_);
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Test project aborted.", path_);
       change_current_directory current_directory {xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path()};
       build("", false, release);
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Test project aborted.";
@@ -195,7 +195,7 @@ namespace xtdc_command {
       std::filesystem::path app_path;
       for (auto file : xtd::io::file::read_all_lines((xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path())/"install_manifest.txt")) {
         if (std::filesystem::exists({file})) {
-          if (xtd::environment::os_version().is_macos_platform() && xtd::strings::contains(file, "Contents/MacOS")) app_path = xtd::strings::remove(file, xtd::strings::index_of(file, "Contents/MacOS"));
+          if (xtd::environment::os_version().is_macos_platform() && file.contains("Contents/MacOS")) app_path = file.remove(file.index_of("Contents/MacOS"));
           std::filesystem::remove({file});
         }
       }
@@ -216,8 +216,8 @@ namespace xtdc_command {
       static std::string name;
       if (name.empty()) {
         for (const auto& line : get_system_information()) {
-          if (xtd::strings::starts_with(line, "CMAKE_PROJECT_NAME:STATIC=")) {
-            name = xtd::strings::replace(line, "CMAKE_PROJECT_NAME:STATIC=", "");
+          if (line.starts_with( "CMAKE_PROJECT_NAME:STATIC=")) {
+            name = line.replace("CMAKE_PROJECT_NAME:STATIC=", "");
             break;
           }
         }
@@ -228,15 +228,15 @@ namespace xtdc_command {
     
     std::string get_target_path(const std::string& target, bool release) const {
       for (const auto& line : get_system_information())
-        if (xtd::strings::starts_with(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", target)))
-          return make_platform_target_path({xtd::strings::replace(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", target), "")}, target, release);
+        if (line.starts_with(xtd::strings::format("{}_BINARY_DIR:STATIC=", target)))
+          return make_platform_target_path({line.replace(xtd::ustring::format("{}_BINARY_DIR:STATIC=", target), "")}, target, release);
       return (build_path()/(release ? "Release" : "Debug")/target/target).string();
     }
     
     std::string get_first_target_path(bool release) const {
       for (const auto& line : get_system_information())
-        if (xtd::strings::index_of(line, "_BINARY_DIR:STATIC=") != std::string::npos)
-          return make_platform_target_path({xtd::strings::replace(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", xtd::strings::substring(line, 0, xtd::strings::index_of(line, "_BINARY_DIR:STATIC="))), "")}, xtd::strings::substring(line, 0, xtd::strings::index_of(line, "_BINARY_DIR:STATIC=")), release);
+        if (line.index_of("_BINARY_DIR:STATIC=") != std::string::npos)
+          return make_platform_target_path({line.replace(xtd::ustring::format("{}_BINARY_DIR:STATIC=", line.substring(0, line.index_of("_BINARY_DIR:STATIC="))), "")}, line.substring(0, line.index_of("_BINARY_DIR:STATIC=")), release);
       if (xtd::environment::os_version().is_windows_platform()) return (build_path() / path_.filename() / (release ? "Release" : "Debug") / path_.filename()).string();
       return (build_path()/(release ? "Release" : "Debug")/path_.filename()/path_.filename()).string();
     }
@@ -265,7 +265,7 @@ namespace xtdc_command {
       if (!std::filesystem::exists(path)) return false;
       auto lines = xtd::io::file::read_all_lines(std::filesystem::path(xtd::environment::get_folder_path(xtd::environment::special_folder::home))/".local"/"share"/"applications"/xtd::strings::format("{}.desktop", path.filename()));
       for (auto line : lines)
-        if (xtd::strings::to_lower(line) == "terminael=false") return true;
+        if (line.to_lower() == "terminael=false") return true;
       return false;
     }
     
@@ -279,8 +279,8 @@ namespace xtdc_command {
       return is_linux_gui_app(path);
     }
     
-    std::vector<std::string>& get_system_information() const {
-      static std::vector<std::string> system_information;
+    std::vector<xtd::ustring>& get_system_information() const {
+      static std::vector<xtd::ustring> system_information;
       if (system_information.size() == 0) {
         if (!std::filesystem::exists(build_path()/"xtd_si.txt")) {
           change_current_directory current_directory {build_path().string()};

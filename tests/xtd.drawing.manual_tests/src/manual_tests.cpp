@@ -21,7 +21,7 @@ void to_ppm(const std::string& filename, const xtd::drawing::bitmap& bitmap, con
         lines.push_back(strings::format("{, 3} {, 3} {, 3}", bitmap.get_pixel(x, y).r(), bitmap.get_pixel(x, y).g(), bitmap.get_pixel(x, y).b()));
     lines.push_back("");
   }
-  xtd::io::file::write_all_lines(filename, lines);
+  xtd::io::file::write_all_lines(ustring(filename), lines);
 }
 
 void to_ppm(const std::string& filename, const color& transparent_color = color::white) {

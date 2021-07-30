@@ -9,7 +9,7 @@ using namespace xtd;
 using namespace xtd::io;
 
 stream_writer::stream_writer(const string& path) : stream_(new ofstream(path)), delete_when_destroy_(true) {
-  if (strings::index_of_any(path, path::get_invalid_path_chars()) != string::npos) throw argument_exception(csf_);
+  if (ustring(path).index_of_any(path::get_invalid_path_chars()) != string::npos) throw argument_exception(csf_);
   if (!exists(path)) throw file_not_found_exception(csf_);
 }
 

@@ -2,7 +2,7 @@
 #include <xtd/xtd.tunit>
 
 using namespace std;
-using namespace std::string_literals;
+using namespace xtd;
 using namespace xtd::io;
 using namespace xtd::tunit;
 
@@ -54,19 +54,19 @@ namespace unit_tests {
     }
     
     void test_method_(combine_two_paths) {
-      assert::are_equal("path1"s + path::directory_separator_char() + "path2"s , path::combine("path1", "path2"));
+      assert::are_equal("path1"_s + path::directory_separator_char() + "path2"_s , path::combine("path1", "path2"));
     }
     
     void test_method_(combine_three_paths) {
-      assert::are_equal("path1"s + path::directory_separator_char() + "path2"s + path::directory_separator_char() + "path3"s, path::combine("path1", "path2", "path3"));
+      assert::are_equal("path1"_s + path::directory_separator_char() + "path2"_s + path::directory_separator_char() + "path3"_s, path::combine("path1", "path2", "path3"));
     }
     
     void test_method_(combine_four_paths) {
-      assert::are_equal("path1"s + path::directory_separator_char() + "path2"s + path::directory_separator_char() + "path3"s + path::directory_separator_char() + "path4"s, path::combine("path1", "path2", "path3", "path4"));
+      assert::are_equal("path1"_s + path::directory_separator_char() + "path2"_s + path::directory_separator_char() + "path3"_s + path::directory_separator_char() + "path4"_s, path::combine("path1", "path2", "path3", "path4"));
     }
     
     void test_method_(combine_n_paths) {
-      assert::are_equal("path1"s + path::directory_separator_char() + "path2"s + path::directory_separator_char() + "path3"s + path::directory_separator_char() + "path4"s + path::directory_separator_char() + "path5"s, path::combine({"path1", "path2", "path3", "path4", "path5"}));
+      assert::are_equal("path1"_s + path::directory_separator_char() + "path2"_s + path::directory_separator_char() + "path3"_s + path::directory_separator_char() + "path4"_s + path::directory_separator_char() + "path5"_s, path::combine({"path1", "path2", "path3", "path4", "path5"}));
     }
 
     void test_method_(directory_separator_char) {

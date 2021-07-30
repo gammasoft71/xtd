@@ -8,7 +8,7 @@
 using namespace xtd;
 using namespace xtd::io;
 
-std::string path::__get_current_dirirectory() noexcept {
+xtd::ustring path::__get_current_dirirectory() noexcept {
   return std::filesystem::current_path().string();
 }
 
@@ -16,6 +16,6 @@ bool path::__is_windows_os() noexcept {
   return environment::os_version().is_windows_platform();
 }
 
-std::string path::__get_temp_path() noexcept {
+xtd::ustring path::__get_temp_path() noexcept {
   return native::path::get_temp_path();
 }

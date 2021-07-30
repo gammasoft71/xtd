@@ -31,7 +31,7 @@ void about_dialog::show(intptr_t hwnd, const xtd::drawing::icon& icon, const std
   about_info.SetName(name);
   about_info.SetDescription(description);
   about_info.SetVersion(version, long_version);
-  about_info.SetCopyright(xtd::strings::replace(copyright, u8"\u00A9"_s, u8"(c)"_s));
+  about_info.SetCopyright(std::string(xtd::ustring(copyright).replace(u8"\u00A9"_s, u8"(c)"_s)));
   if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Unix") {
     about_info.SetIcon(reinterpret_cast<wxIconBundle*>(icon.handle())->GetIcon());
     about_info.SetWebSite(website, website_label);

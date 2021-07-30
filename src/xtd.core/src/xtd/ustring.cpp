@@ -297,6 +297,100 @@ ustring& ustring::operator=(const std::initializer_list<value_type>& il) {
   return *this;
 }
 
+ustring ustring::operator+(const std::string& str) {
+  ustring result = *this;
+  result.append(ustring(str));
+  return result;
+}
+ustring ustring::operator+(const char* str) {
+  ustring result = *this;
+  result.append(ustring(str));
+  return result;
+}
+
+ustring ustring::operator+(const std::u8string& str) {
+  ustring result = *this;
+  result.append(ustring(str));
+  return result;
+}
+ustring ustring::operator+(const ustring& str) {
+  ustring result = *this;
+  result.append(str);
+  return result;
+}
+
+ustring ustring::operator+(const value_type* str) {
+  ustring result = *this;
+  result.append(str);
+  return result;
+}
+
+ustring ustring::operator+(const std::u16string& str) {
+  ustring result = *this;
+  result.append(ustring(str));
+  return result;
+}
+
+ustring ustring::operator+(const char16_t* str) {
+  ustring result = *this;
+  result.append(ustring(str));
+  return result;
+}
+
+ustring ustring::operator+(const std::u32string& str) {
+  ustring result = *this;
+  result.append(ustring(str));
+  return result;
+}
+
+ustring ustring::operator+(const char32_t* str) {
+  ustring result = *this;
+  result.append(ustring(str));
+  return result;
+}
+
+ustring ustring::operator+(const std::wstring& str) {
+  ustring result = *this;
+  result.append(ustring(str));
+  return result;
+}
+
+ustring ustring::operator+(const wchar_t* str) {
+  ustring result = *this;
+  result.append(ustring(str));
+  return result;
+}
+
+ustring ustring::operator+(char character) {
+  ustring result = *this;
+  result.append(ustring(1, character));
+  return result;
+}
+
+ustring ustring::operator+(value_type character) {
+  ustring result = *this;
+  result.append(ustring(1, character));
+  return result;
+}
+
+ustring ustring::operator+(char16_t character) {
+  ustring result = *this;
+  result.append(ustring(1, character));
+  return result;
+}
+
+ustring ustring::operator+(char32_t character) {
+  ustring result = *this;
+  result.append(ustring(1, character));
+  return result;
+}
+
+ustring ustring::operator+(wchar_t character) {
+  ustring result = *this;
+  result.append(ustring(1, character));
+  return result;
+}
+
 bool ustring::operator==(const ustring& other) const {
   return std::basic_string<value_type>(*this) == std::basic_string<value_type>(other);
 }
@@ -476,7 +570,7 @@ bool ustring::contains(const ustring& value) const noexcept {
   return find(value) != npos;
 }
 
-ustring ustring::empty() noexcept {
+ustring ustring::empty_string() noexcept {
   return {};
 }
 
@@ -846,4 +940,8 @@ ustring ustring::get_class_name(const ustring& full_name) {
   if (length == npos) length = full_name.length();
   if (full_name.last_index_of("::", 0, length) == npos) return full_name;
   return full_name.substring(full_name.last_index_of("::", 0, length) + 2);
+}
+
+std::ostream& operator<<(std::ostream& stream, char8_t character) {
+  return stream << (static_cast<char>(character));
 }
