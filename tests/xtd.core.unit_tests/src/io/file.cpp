@@ -3,6 +3,7 @@
 #include <array>
 
 using namespace std;
+using namespace xtd;
 using namespace xtd::io;
 using namespace xtd::tunit;
 
@@ -256,7 +257,7 @@ namespace unit_tests {
       ofstream existing_file(test_file_name);
       existing_file << "Line 1\nLine 2\nLine 3\n";
       existing_file.close();
-      std::vector<std::string> lines = file::read_all_lines(test_file_name);
+      std::vector<ustring> lines = file::read_all_lines(test_file_name);
       assert::are_equal_(3U, lines.size());
       assert::are_equal_("Line 1", lines[0]);
       assert::are_equal_("Line 2", lines[1]);
@@ -264,7 +265,7 @@ namespace unit_tests {
     }
     
     void test_method_(read_all_lines_with_unexisting_file) {
-      std::vector<std::string> lines = file::read_all_lines(test_file_name);
+      std::vector<ustring> lines = file::read_all_lines(test_file_name);
       assert::is_empty_(lines);
     }
     

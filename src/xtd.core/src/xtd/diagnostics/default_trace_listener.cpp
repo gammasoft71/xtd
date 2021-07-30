@@ -40,7 +40,7 @@ void default_trace_listener::flush() {
 void default_trace_listener::write(const std::string& message) {
   if (need_indent()) write_indent();
   message_line_ += message;
-  if (!log_file_name_.empty()) xtd::io::file::append_all_text(log_file_name_, message);
+  if (!log_file_name_.empty()) xtd::io::file::append_all_text(ustring(log_file_name_), message);
 }
 
 void default_trace_listener::write_line(const std::string& message) {

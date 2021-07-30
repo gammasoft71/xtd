@@ -74,17 +74,17 @@ void translator::parse_locale(const std::filesystem::path& locale_path) {
 }
 
 void translator::parse_file(const std::filesystem::path& file, const std::string& language) {
-  std::vector<std::string> lines = xtd::io::file::read_all_lines(file);
-  std::string key;
-  std::string value;
+  vector<ustring> lines = xtd::io::file::read_all_lines(file);
+  ustring key;
+  ustring value;
   int line_count = 0;
   for (auto line : lines) {
     line_count++;
     line = xtd::strings::trim(line);
-    if (line.empty()) continue;
-    if (xtd::strings::starts_with(line, "#")) continue;
-    if (key.empty() && xtd::strings::starts_with(line, "key ")) key = xtd::strings::trim(xtd::strings::remove(line, 0, 4), '"');
-    else if (!key.empty() && xtd::strings::starts_with(line, "value ")) value = xtd::strings::trim(xtd::strings::remove(line, 0, 6), '"');
+    if (line.is_empty()) continue;
+    if (line.starts_with("#")) continue;
+    if (key.empty() && line.starts_with("key ")) key = line.remove(0, 4).trim('"');
+    else if (!key.empty() && line.starts_with("value ")) value = line.remove(0, 6).trim('"');
     else throw xtd::format_exception(xtd::strings::format("file {} has an invalid format at line {}", file, line_count), current_stack_frame_);
     if (!key.empty() && !value.empty()) {
       add_value(language, key, value);

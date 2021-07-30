@@ -20,7 +20,7 @@ namespace unit_tests {
     }
 
     void test_method_(is_string_with_const_string) {
-      assert::is_true_(is<string>(""_s));
+      assert::is_true_(is<ustring>(""_s));
     }
     
     void test_method_(is_string_without_const_string) {

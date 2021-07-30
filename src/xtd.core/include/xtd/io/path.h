@@ -7,9 +7,9 @@
 #include <random>
 #include <regex>
 #include <sstream>
-#include <string>
 #include "../core_export.h"
 #include "../static.h"
+#include "../ustring.h"
 /// @todo remove comment when drive_into.h will be create
 //#include "drive_into.h"
 #include "file.h"
@@ -43,7 +43,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of the alt_directory_separator_char() property.
       /// @include directory_separator_char.cpp
-      static char alt_directory_separator_char() noexcept {return alt_directory_separator_char<char>();}
+      static char8_t alt_directory_separator_char() noexcept {return alt_directory_separator_char<char8_t>();}
       
       /// @brief Changes the extension of a path string.
       /// @param path The path information to modify. The path cannot contain any of the characters defined in GetInvalidPathchar_ts.
@@ -56,25 +56,24 @@ namespace xtd {
       /// @remarks If extension does not contain a leading period, the period is added.
       /// @remarks If path contains a multiple extension separated by multiple periods, the returned string contains the contents of path with the last period and all characters following it replaced by extension. For example, if path is "\Dir1\examples\pathtests.csx.txt" and extension is "cs", the modified path is "\Dir1\examples\pathtests.csx.cs".
       /// @remarks It is not possible to verify that the returned results are valid in all scenarios. For example, if path is empty, extension is appended.
-      template<typename char_t>
-      static std::basic_string<char_t> change_extension(const std::basic_string<char_t>& path, const std::basic_string<char_t>& extension) {
-        std::basic_string<char_t> path_without_extension = combine(get_directory_name(path), get_file_name_without_extension(path));
-        if (path_without_extension.empty() && !extension.empty()) return extension;
-        if (extension.empty()) return path_without_extension;
+       static xtd::ustring change_extension(const xtd::ustring& path, const xtd::ustring& extension) {
+         xtd::ustring path_without_extension = combine(get_directory_name(path), get_file_name_without_extension(path));
+        if (path_without_extension.is_empty() && !extension.is_empty()) return extension;
+        if (extension.is_empty()) return path_without_extension;
         std::stringstream ss;
         ss << path_without_extension;
-        if (path_without_extension[path_without_extension.size() - 1] != static_cast<char_t>('.')  && extension[0] != static_cast<char_t>('.')) ss << static_cast<char_t>('.');
+        if (path_without_extension[path_without_extension.size() - 1] != static_cast<char8_t>('.')  && extension[0] != static_cast<char8_t>('.')) ss << '.';
         ss << extension;
         return ss.str();
       }
       
       /// @cond
       template<typename char_t>
-      static std::basic_string<char_t> change_extension(const char_t* path, const char_t* extension) {return change_extension(std::basic_string<char_t>(path), std::basic_string<char_t>(extension));}
+      static std::basic_string<char_t> change_extension(const char_t* path, const char_t* extension) {return change_extension(xtd::ustring(path), xtd::ustring(extension));}
       template<typename char_t>
-      static std::basic_string<char_t> change_extension(const std::basic_string<char_t>& path, const char_t* extension) {return change_extension(path, std::basic_string<char_t>(extension));}
+      static std::basic_string<char_t> change_extension(const xtd::ustring& path, const char_t* extension) {return change_extension(path, xtd::ustring(extension));}
       template<typename char_t>
-      static std::basic_string<char_t> change_extension(const char_t* path, const std::basic_string<char_t>& extension) {return change_extension(std::basic_string<char_t>(path), extension);}
+      static std::basic_string<char_t> change_extension(const char_t* path, const xtd::ustring& extension) {return change_extension(xtd::ustring(path), extension);}
       /// @endcond
       
       /// @brief Combines two path strings.
@@ -82,28 +81,27 @@ namespace xtd {
       /// @param path2 The second path.
       /// @return A string containing the combined paths. If one of the specified paths is a zero-length string, this method returns the other path. If path2 contains an absolute path, this method returns path2.
       /// @remarks an empty string if path contains one or more of the invalid characters.
-      template<typename char_t>
-      static std::basic_string<char_t> combine(const std::basic_string<char_t>& path1, const std::basic_string<char_t>& path2) {
+      static xtd::ustring combine(const xtd::ustring& path1, const xtd::ustring& path2) {
         // if (path1.IndexOfAny(GetInvalidPathchar_ts()) != -1 || path2.IndexOfAny(GetInvalidPathchar_ts()) != -1)  return {};
-        if (path2.empty()) return path1;
-        if (path1.empty() || is_path_rooted(path2)) return path2;
+        if (path2.is_empty()) return path1;
+        if (path1.is_empty() || is_path_rooted(path2)) return path2;
         
-        std::basic_stringstream<char_t> ss;
+        std::stringstream ss;
         ss << path1;
-        if (path1[path1.size() - 1] != directory_separator_char()) ss <<  directory_separator_char<char_t>();
+        if (path1[path1.size() - 1] != directory_separator_char()) ss <<  directory_separator_char<char>();
         ss << path2;
         return ss.str();
       }
       
       /// @cond
       template<typename char_t>
-      static std::basic_string<char_t> combine(const char_t* path1, const char_t* path2) noexcept {return combine(std::basic_string<char_t>(path1), std::basic_string<char_t>(path2));}
+      static xtd::ustring combine(const char_t* path1, const char_t* path2) noexcept {return combine(xtd::ustring(path1), xtd::ustring(path2));}
       template<typename char_t>
-      static std::basic_string<char_t> combine(const std::basic_string<char_t>& path1, const char_t* path2) noexcept {return combine(path1, std::basic_string<char_t>(path2));}
+      static xtd::ustring combine(const xtd::ustring& path1, const char_t* path2) noexcept {return combine(path1, xtd::ustring(path2));}
       template<typename char_t>
-      static std::basic_string<char_t> combine(const char_t* path1, const std::basic_string<char_t>& path2) noexcept {return combine(std::basic_string<char_t>(path1), path2);}
+      static xtd::ustring combine(const char_t* path1, const xtd::ustring& path2) noexcept {return combine(xtd::ustring(path1), path2);}
       template<typename type_t>
-      static std::string combine(type_t path1, type_t path2) noexcept {return combine(std::string(path1), std::string(path2));}
+      static xtd::ustring combine(type_t path1, type_t path2) noexcept {return combine(xtd::ustring(path1), xtd::ustring(path2));}
       /// @endcond
       
       /// @brief Combines three path strings.
@@ -133,48 +131,29 @@ namespace xtd {
       /// @param paths The path array.
       /// @return A string containing the combined paths. If one of the specified paths is a zero-length string, this method returns the other path. If path2 contains an absolute path, this method returns path2.
       /// @remarks an empty string if path contains one or more of the invalid characters.
-      template<typename char_t, typename path_t>
-      static std::basic_string<char_t> combine(path_t paths) noexcept {
-        std::basic_string<char_t> result;
-        for (auto path : paths)
-          result = combine(result, path);
-        return result;
-      }
-      
-      /// @cond
       template<typename path_t>
-      static std::basic_string<char> combine(path_t paths) noexcept {
-        std::basic_string<char> result;
+      static xtd::ustring combine(path_t paths) noexcept {
+        xtd::ustring result;
         for (auto path : paths)
           result = combine(result, path);
         return result;
       }
-      /// @endcond
       
       /// @brief Combines path strings array.
       /// @param paths The path array.
       /// @return A string containing the combined paths. If one of the specified paths is a zero-length string, this method returns the other path. If path2 contains an absolute path, this method returns path2.
       /// @remarks an empty string if path contains one or more of the invalid characters.
-      template<typename char_t>
-      static std::basic_string<char_t> combine(const std::initializer_list<std::basic_string<char_t>>& paths) noexcept {
-        std::basic_string<char_t> result;
+      static xtd::ustring combine(const std::initializer_list<xtd::ustring>& paths) noexcept {
+        xtd::ustring result;
         for (auto path : paths)
           result = combine(result, path);
         return result;
       }
       
       /// @cond
-      template<typename char_t, typename path_t>
-      static std::basic_string<char_t> combine(const std::initializer_list<path_t>& paths) noexcept {
-        std::basic_string<char_t> result;
-        for (auto path : paths)
-          result = combine(result, path);
-        return result;
-      }
-      
       template<typename path_t>
-      static std::basic_string<char> combine(const std::initializer_list<path_t>& paths) noexcept {
-        std::basic_string<char> result;
+      static xtd::ustring combine(const std::initializer_list<path_t>& paths) noexcept {
+        xtd::ustring result;
         for (auto path : paths)
           result = combine(result, path);
         return result;
@@ -198,107 +177,103 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of the directory_separator_char() property.
       /// @include directory_separator_char.cpp
-      static char directory_separator_char() noexcept {return directory_separator_char<char>();}
+      static char8_t directory_separator_char() noexcept {return directory_separator_char<char8_t>();}
       
       /// @brief Returns the directory information for the specified path string.
       /// @param path the path of a file or directory.
       /// @return A string containing directory information for path, or null if path denotes a root directory, is the empty string ("").
       /// @remarks Returns string empty if path does not contain directory information.
-      template<typename char_t>
-      static std::basic_string<char_t> get_directory_name(const std::basic_string<char_t>& path) {
-        size_t index = path.rfind(directory_separator_char<char_t>());
-        if (index == std::basic_string<char_t>::npos) index = path.rfind(alt_directory_separator_char<char_t>());
-        if (index == std::basic_string<char_t>::npos) return {};
-        std::basic_string<char_t> directory = path.substr(0, index);
+      static xtd::ustring get_directory_name(const xtd::ustring& path) {
+        size_t index = path.rfind(directory_separator_char());
+        if (index == xtd::ustring::npos) index = path.last_index_of(alt_directory_separator_char());
+        if (index == xtd::ustring::npos) return {};
+        xtd::ustring directory = path.substring(0, index);
         return directory;
       }
       
       /// @cond
       template<typename char_t>
-      static std::basic_string<char_t> get_directory_name(const char_t* path) {return get_directory_name(std::basic_string<char_t>(path));}
+      static std::basic_string<char_t> get_directory_name(const char_t* path) {return get_directory_name(xtd::ustring(path));}
       /// @endcond
       
       /// @brief Returns the extension of the specified path string.
       /// @param path The path string from which to get the extension.
       /// @return A std::string containing the extension of the specified path (including the ".") or std::string::empty.
       /// @remarks If path is empty, GetExtension returns string empty. If path does not have extension information, GetExtension returns string empty ("").
-      template<typename char_t>
-      static std::basic_string<char_t> get_extension(const std::basic_string<char_t>& path) {
-        std::basic_string<char_t> file = get_file_name(path);
-        size_t index = file.rfind('.');
-        return index == std::basic_string<char_t>::npos ? "" : file.substr(index);
+      static xtd::ustring get_extension(const xtd::ustring& path) {
+        xtd::ustring file = get_file_name(path);
+        size_t index = file.last_index_of('.');
+        return index == xtd::ustring::npos ? "" : file.substring(index);
       }
       
       /// @cond
       template<typename char_t>
-      static std::basic_string<char_t> get_extension(const char_t* path) {return get_extension(std::basic_string<char_t>(path));}
+      static std::basic_string<char_t> get_extension(const char_t* path) {return get_extension(xtd::ustring(path));}
       /// @endcond
       
       /// @brief Returns the file name and extension of the specified path string.
       /// @param path The path string from which to obtain the file name and extension.
       /// @return The characters after the last directory separator character in path. If the last character of path is a directory or volume separator character, this method returns string empty ("").
       /// @remarks The separator characters used to determine the start of the file name are directory_separator_char and alt_directory_separator_char.
-      template<typename char_t>
-      static std::basic_string<char_t> get_file_name(const std::basic_string<char_t>& path) {
-        size_t index = path.rfind(directory_separator_char<char_t>());
-        if (index ==std::basic_string<char_t>::npos) index = path.rfind(alt_directory_separator_char<char_t>());
-        return (index ==std::basic_string<char_t>::npos) ? path : path.substr(index + 1);
+       static xtd::ustring get_file_name(const xtd::ustring& path) {
+        size_t index = path.last_index_of(directory_separator_char());
+        if (index == xtd::ustring::npos) index = path.rfind(alt_directory_separator_char());
+        return (index == xtd::ustring::npos) ? path : path.substring(index + 1);
       }
       
       /// @cond
       template<typename char_t>
-      static std::basic_string<char_t> get_file_name(const char_t* path) {return get_file_name(std::basic_string<char_t>(path));}
+      static xtd::ustring get_file_name(const char_t* path) {return get_file_name(xtd::ustring(path));}
       /// @endcond
       
-      template<typename char_t>
-      static std::basic_string<char_t> get_file_name_without_extension(const std::basic_string<char_t>& path) {
-        std::basic_string<char_t> file = get_file_name(path);
-        size_t index = file.rfind('.');
-        return (index == std::basic_string<char_t>::npos) ? file : file.substr(0, index);
+      static xtd::ustring get_file_name_without_extension(const xtd::ustring& path) {
+        xtd::ustring file = get_file_name(path);
+        size_t index = file.last_index_of('.');
+        return (index == xtd::ustring::npos) ? file : file.substring(0, index);
       }
       
       /// @cond
       template<typename char_t>
-      static std::basic_string<char_t> get_file_name_without_extension(const char_t* path) {return get_file_name_without_extension(std::basic_string<char_t>(path));}
+      static xtd::ustring get_file_name_without_extension(const char_t* path) {return get_file_name_without_extension(xtd::ustring(path));}
       /// @endcond
       
       /// @brief Returns the absolute path for the specified path string.
       /// @param path The file or directory for which to obtain absolute path information.
       /// @return A string containing the fully qualified location of path, such as "C:\\MyFile.txt".
-      template<typename char_t>
-      static std::basic_string<char_t> get_full_path(const std::basic_string<char_t>& path) {
-        std::basic_regex<char_t> r(std::basic_string<char_t>("(\\") + directory_separator_char<char_t>() + alt_directory_separator_char<char_t>() + std::basic_string<char_t>(")+"));
-        std::vector<std::basic_string<char_t>> directories;
-        for (std::sregex_token_iterator it(path.begin(), path.end(), r, -1), end; it != end; ++it)
-          if (*it != "") directories.push_back(*it);
+      static xtd::ustring get_full_path(const xtd::ustring& path) {
+        std::string path_str = path;
+        std::basic_regex<char> r(std::string("(\\") + directory_separator_char<char>() + alt_directory_separator_char<char>() + std::string(")+"));
+        std::vector<xtd::ustring> directories;
+        for (std::sregex_token_iterator it(path_str.begin(), path_str.end(), r, -1), end; it != end; ++it)
+          if (*it != "") directories.push_back(it->str());
         
-        std::basic_string<char_t> fullPath;
+        xtd::ustring full_path;
         
-        if (path[0] != directory_separator_char<char_t>() && path[0] != alt_directory_separator_char<char_t>()) fullPath = __get_current_dirirectory();
+        if (path[0] != directory_separator_char() && path[0] != alt_directory_separator_char()) full_path = __get_current_dirirectory();
         for (auto item : directories) {
-          if (item == ".." && fullPath.rfind(directory_separator_char<char_t>()) != -1)
-            fullPath = fullPath.substr(0, fullPath.rfind(directory_separator_char<char_t>()));
-          else if (item == ".." && fullPath.rfind(alt_directory_separator_char<char_t>()) != -1)
-            fullPath = fullPath.substr(0, fullPath.rfind(alt_directory_separator_char<char_t>()));
+          if (item == ".." && full_path.last_index_of(directory_separator_char()) != xtd::ustring::npos)
+            full_path = full_path.substr(0, full_path.last_index_of(directory_separator_char()));
+          else if (item == ".." && full_path.last_index_of(alt_directory_separator_char()) != xtd::ustring::npos)
+            full_path = full_path.substr(0, full_path.last_index_of(alt_directory_separator_char()));
           else if (item != ".") {
-            std::basic_stringstream<char_t> ss;
-            ss << fullPath<< directory_separator_char<char_t>() << item;
-            fullPath = ss.str();
+            std::stringstream ss;
+            ss << full_path << directory_separator_char() << item;
+            full_path = ss.str();
           }
         }
         
-        if (path[path.size() - 1] == directory_separator_char<char_t>()) {
-          std::basic_stringstream<char_t> ss;
-          ss << fullPath << directory_separator_char<char_t>();
-          fullPath = ss.str();
+        if (path[path.size() - 1] == directory_separator_char()) {
+          std::stringstream ss;
+          ss << full_path << directory_separator_char();
+          full_path = ss.str();
         }
         
-        return fullPath;
+        return full_path;
       }
       
       /// @cond
       template<typename char_t>
-      static std::basic_string<char_t> get_full_path(const char_t* path) {return get_full_path(std::basic_string<char_t>(path));}
+      static std::basic_string<char_t> get_full_path(const char_t* path) {return get_full_path(xtd::ustring(path));}
       /// @endcond;
       
       /// @brief Gets an array containing the characters that are not allowed in path names.
@@ -310,53 +285,45 @@ namespace xtd {
       /// @brief Gets an array containing the characters that are not allowed in path names.
       /// @return An array containing the characters that are not allowed in path names.
       /// @remarks The array returned from this method is not guaranteed to contain the complete set of characters that are invalid in file and directory names. The full set of invalid characters can vary by file system. For example, on Windows-based desktop platforms, invalid path characters might include ASCII/Unicode characters 1 through 31, as well as quote ("), less than (<), greater than (>), pipe (|), backspace (\b), null (\0) and tab (\t).
-      static std::vector<char> get_invalid_path_chars() noexcept {return get_invalid_path_chars<char>();}
+      static std::vector<char8_t> get_invalid_path_chars() noexcept {return get_invalid_path_chars<char8_t>();}
       
       /// @brief Gets the root directory information of the specified path.
       /// @param path The path from which to obtain root directory information.
       /// @return A string containing the root directory of path, such as "C:\", or null if
       /// @return path is null, or an empty string if path does not contain root directory
       /// @return information.
-      template<typename char_t>
-      static std::basic_string<char_t> get_path_root(const std::basic_string<char_t>& path) {return is_path_rooted(path) ? path.substr(0, __get_index_path_rooted(path) + 1) : "";}
+      static xtd::ustring get_path_root(const xtd::ustring& path) {return is_path_rooted(path) ? path.substr(0, __get_index_path_rooted(path) + 1) : "";}
       
       /// @cond
       template<typename char_t>
-      static std::basic_string<char_t> get_path_root(const char_t* path) noexcept {return get_path_root(std::basic_string<char_t>(path));}
+      static std::basic_string<char_t> get_path_root(const char_t* path) noexcept {return get_path_root(xtd::ustring(path));}
       /// @endcond
       
       /// @brief Returns a random folder name or file name.
       /// @return A random folder name or file name.
       /// @remarks The get_random_file_name method returns a cryptographically strong, random string that can be used as either a folder name or a file name. Unlike GetTempFileName, get_random_file_name does not create a file. When the security of your file system is paramount, this method should be used instead of GetTempFileName.
-      template<typename char_t>
-      static std::basic_string<char_t> get_random_file_name() {
-        static std::basic_string<char_t> valid_chars = {static_cast<char_t>('"'), static_cast<char_t>('1'), static_cast<char_t>('2'), static_cast<char_t>('3'), static_cast<char_t>('4'), static_cast<char_t>('5'), static_cast<char_t>('6'), static_cast<char_t>('7'), static_cast<char_t>('8'), static_cast<char_t>('9'), static_cast<char_t>('0'), static_cast<char_t>('a'), static_cast<char_t>('b'), static_cast<char_t>('c'), static_cast<char_t>('d'), static_cast<char_t>('e'), static_cast<char_t>('f'), static_cast<char_t>('g'), static_cast<char_t>('h'), static_cast<char_t>('i'), static_cast<char_t>('j'), static_cast<char_t>('k'), static_cast<char_t>('l'), static_cast<char_t>('m'), static_cast<char_t>('n'), static_cast<char_t>('o'), static_cast<char_t>('p'), static_cast<char_t>('q'), static_cast<char_t>('r'), static_cast<char_t>('s'), static_cast<char_t>('t'), static_cast<char_t>('u'), static_cast<char_t>('v'), static_cast<char_t>('w'), static_cast<char_t>('x'), static_cast<char_t>('y'), static_cast<char_t>('z')};
+      static xtd::ustring get_random_file_name() {
+        static xtd::ustring valid_chars = {static_cast<char8_t>('1'), static_cast<char8_t>('2'), static_cast<char8_t>('3'), static_cast<char8_t>('4'), static_cast<char8_t>('5'), static_cast<char8_t>('6'), static_cast<char8_t>('7'), static_cast<char8_t>('8'), static_cast<char8_t>('9'), static_cast<char8_t>('0'), static_cast<char8_t>('a'), static_cast<char8_t>('b'), static_cast<char8_t>('c'), static_cast<char8_t>('d'), static_cast<char8_t>('e'), static_cast<char8_t>('f'), static_cast<char8_t>('g'), static_cast<char8_t>('h'), static_cast<char8_t>('i'), static_cast<char8_t>('j'), static_cast<char8_t>('k'), static_cast<char8_t>('l'), static_cast<char8_t>('m'), static_cast<char8_t>('n'), static_cast<char8_t>('o'), static_cast<char8_t>('p'), static_cast<char8_t>('q'), static_cast<char8_t>('r'), static_cast<char8_t>('s'), static_cast<char8_t>('t'), static_cast<char8_t>('u'), static_cast<char8_t>('v'), static_cast<char8_t>('w'), static_cast<char8_t>('x'), static_cast<char8_t>('y'), static_cast<char8_t>('z')};
         std::random_device rand;
-        std::basic_string<char_t> random_file_name;
+        xtd::ustring random_file_name;
         
         for (size_t i = 0; i < 11; i++) {
           random_file_name += valid_chars[std::uniform_int_distribution<size_t> {0, valid_chars.size() - 1}(rand)];
           if (i == 7)
-            random_file_name += static_cast<char_t>('.');
+            random_file_name += static_cast<char8_t>('.');
         }
         
         return random_file_name;
       }
-      
-      /// @brief Returns a random folder name or file name.
-      /// @return A random folder name or file name.
-      /// @remarks The get_random_file_name method returns a cryptographically strong, random string that can be used as either a folder name or a file name. Unlike GetTempFileName, get_random_file_name does not create a file. When the security of your file system is paramount, this method should be used instead of GetTempFileName.
-      static std::string get_random_file_name() {return get_random_file_name<char>();}
-      
+            
       /// @brief Creates a uniquely named, zero-byte temporary file on disk and returns the full path of that file.
       /// @return The full path of the temporary file.
       /// @remarks This method creates a temporary file with a .TMP file extension. The temporary file is created within the user’s temporary folder, which is the path returned by the GetTempPath method.
       /// @remarks The GetTempFileName method will raise an IOException if it is used to create more than 65535 files without deleting previous temporary files.
       /// @remarks The GetTempFileName method will raise an IOException if no unique temporary file name is available. To resolve this error, delete all unneeded temporary files.
-      template<typename char_t>
-      static std::basic_string<char_t> get_temp_file_name() {
-        static std::basic_string<char_t> valid_chars = {static_cast<char_t>('1'), static_cast<char_t>('2'), static_cast<char_t>('3'), static_cast<char_t>('4'), static_cast<char_t>('5'), static_cast<char_t>('6'), static_cast<char_t>('7'), static_cast<char_t>('8'), static_cast<char_t>('9'), static_cast<char_t>('0'), static_cast<char_t>('a'), static_cast<char_t>('b'), static_cast<char_t>('c'), static_cast<char_t>('d'), static_cast<char_t>('e'), static_cast<char_t>('f')};
-        std::basic_string<char_t> temp_file_name;
+      static xtd::ustring get_temp_file_name() {
+        static xtd::ustring valid_chars = {static_cast<char8_t>('1'), static_cast<char8_t>('2'), static_cast<char8_t>('3'), static_cast<char8_t>('4'), static_cast<char8_t>('5'), static_cast<char8_t>('6'), static_cast<char8_t>('7'), static_cast<char8_t>('8'), static_cast<char8_t>('9'), static_cast<char8_t>('0'), static_cast<char8_t>('a'), static_cast<char8_t>('b'), static_cast<char8_t>('c'), static_cast<char8_t>('d'), static_cast<char8_t>('e'), static_cast<char8_t>('f')};
+        xtd::ustring temp_file_name;
         do {
           static std::random_device rand;
           temp_file_name = "tmp";
@@ -367,19 +334,12 @@ namespace xtd {
             else
               temp_file_name += valid_chars[std::uniform_int_distribution<size_t> {0, valid_chars.size() - 1}(rand)];
           }
-          temp_file_name += ".tmp";
+          temp_file_name += u8".tmp";
         } while (file::exists(combine(get_temp_path(), temp_file_name)));
         file::create(combine(get_temp_path(), temp_file_name));
         return combine(get_temp_path(), temp_file_name);
       }
       
-      /// @brief Creates a uniquely named, zero-byte temporary file on disk and returns the full path of that file.
-      /// @return The full path of the temporary file.
-      /// @remarks This method creates a temporary file with a .TMP file extension. The temporary file is created within the user’s temporary folder, which is the path returned by the GetTempPath method.
-      /// @remarks The GetTempFileName method will raise an IOException if it is used to create more than 65535 files without deleting previous temporary files.
-      /// @remarks The GetTempFileName method will raise an IOException if no unique temporary file name is available. To resolve this error, delete all unneeded temporary files.
-      static std::string get_temp_file_name() {return get_temp_file_name<char>();}
-      
       /// @brief Returns the path of the current user's temporary folder.
       /// @return string The path to the temporary folder, ending with a backslash.
       /// @remarks This method checks for the existence of environment variables in the following order and uses the first path found:
@@ -387,31 +347,20 @@ namespace xtd {
       /// * The path specified by the TEMP environment variable.
       /// * The path specified by the USERPROFILE environment variable.
       /// * The Windows directory.
-      template<typename char_t>
-      static std::basic_string<char_t> get_temp_path() noexcept {
+      static xtd::ustring get_temp_path() noexcept {
         return __get_temp_path();
       }
-      
-      /// @brief Returns the path of the current user's temporary folder.
-      /// @return string The path to the temporary folder, ending with a backslash.
-      /// @remarks This method checks for the existence of environment variables in the following order and uses the first path found:
-      /// * The path specified by the TMP environment variable.
-      /// * The path specified by the TEMP environment variable.
-      /// * The path specified by the USERPROFILE environment variable.
-      /// * The Windows directory.
-      static std::string get_temp_path() noexcept {return get_temp_path<char>();}
       
       /// @brief Determines whether a path includes a file name extension.
       /// @param path The path to search for an extension.
       /// @return true if the characters that follow the last directory separator (\\ or /)
       /// @return or volume separator (:) in the path include a period (.) followed by one
       /// @return or more characters; otherwise, false.
-      template<typename char_t>
-      static bool has_extension(const std::basic_string<char_t>& path) {return !get_extension(path).empty();}
+      static bool has_extension(const xtd::ustring& path) {return !get_extension(path).is_empty();}
       
       /// @cond
       template<typename char_t>
-      static bool has_extension(const char_t* path) {return has_extension(std::basic_string<char_t>(path));}
+      static bool has_extension(const char_t* path) {return has_extension(xtd::ustring(path));}
       /// @endcond
       
       /// @brief Gets a value indicating whether the specified path string contains absolute or relative path information.
@@ -419,12 +368,11 @@ namespace xtd {
       /// @return true if path contains an absolute path; otherwise, false.
       /// @remarks This method also returns false if path is empty or an invalid path.
       /// @remarks If the caller does not have sufficient permissions to read the specified file, no exception is thrown and the method returns false regardless of the existence of path.
-      template<typename char_t>
-      static bool is_path_rooted(const std::basic_string<char_t>& path) {return __get_index_path_rooted(path) != -1;}
+       static bool is_path_rooted(const xtd::ustring& path) {return __get_index_path_rooted(path) != -1;}
       
       /// @cond
       template<typename char_t>
-      static bool is_path_rooted(const char* path) noexcept {return is_path_rooted(std::basic_string<char_t>(path));}
+      static bool is_path_rooted(const char* path) noexcept {return is_path_rooted(xtd::ustring(path));}
       /// @endcond
       
       /// @brief A platform-specific separator character used to separate path strings in environment variables.
@@ -438,7 +386,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of the PathSeparator() property.
       /// @include directory_separator_char.cpp
-      static char path_separator() noexcept {return path_separator<char>();}
+      static char8_t path_separator() noexcept {return path_separator<char8_t>();}
       
       /// @brief Provides a platform-specific volume separator character.
       /// @par Examples
@@ -451,15 +399,14 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of the volume_separator_char() property.
       /// @include directory_separator_char.cpp
-      static char volume_separator_char() noexcept {return  volume_separator_char<char>();}
+      static char8_t volume_separator_char() noexcept {return  volume_separator_char<char8_t>();}
       
     private:
-      static std::string __get_current_dirirectory() noexcept;
-      static std::string __get_temp_path() noexcept;
+      static xtd::ustring __get_current_dirirectory() noexcept;
+      static xtd::ustring __get_temp_path() noexcept;
       static bool __is_windows_os() noexcept;
 
-      template<typename char_t>
-      static bool __is_drive(const std::basic_string<char_t>& path) noexcept {
+      static bool __is_drive(const xtd::ustring& path) noexcept {
         /// @todo remove comment when drive_info::get_drives will be create
         /*
          for (auto drive : drive_info::get_drives())
@@ -469,10 +416,9 @@ namespace xtd {
         return false;
       }
       
-      template<typename char_t>
-      static int __get_index_path_rooted(const std::basic_string<char_t>& path) {
+      static int __get_index_path_rooted(const xtd::ustring& path) {
         size_t index = path.find(directory_separator_char());
-        return (index == std::basic_string<char_t>::npos || index == path.size() || (index != 0 && !__is_drive(path.substr(0, index + 1)))) ? -1 : static_cast<int>(index);
+        return (index == xtd::ustring::npos || index == path.size() || (index != 0 && !__is_drive(path.substring(0, index + 1)))) ? -1 : static_cast<int>(index);
       }
     };
   }

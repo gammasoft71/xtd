@@ -35,7 +35,7 @@ namespace xtd {
       
       /// @brief Opens the file with read only permission selected by the user.
       /// @return The read only file selected by the user.
-      std::ifstream open_file() const {return io::file::open_read(file_name_);}
+      std::ifstream open_file() const {return io::file::open_read(xtd::ustring(file_name_));}
  
       /// @brief Gets a value indicating whether the dialog box allows multiple files to be selected.
       /// @return true if the dialog box allows multiple files to be selected together or concurrently; otherwise, false. The default value is false.

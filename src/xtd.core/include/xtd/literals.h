@@ -13,6 +13,7 @@
 #include "strings.h"
 #include "translator.h"
 #include "types.h"
+#include "ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -161,8 +162,8 @@ namespace xtd {
   /// std::string s = "This is a "_s + "simple test"_s;
   /// std::cout << s << std::endl;
   /// @endcode
-  inline std::string operator""_s(const char* s, size_t n) {
-    return std::string(s, s + n);
+  inline xtd::ustring operator""_s(const char* s, size_t n) {
+    return xtd::ustring(s, s + n);
   }
 
   /// @brief Used to convert specified value into std::string.
@@ -174,8 +175,8 @@ namespace xtd {
   /// std::string s = u8"This is a "_s + u8"simple test"_s;
   /// std::cout << s << std::endl;
   /// @endcode
-  inline std::string operator""_s(const char8_t* s, size_t n) {
-    return std::string(s, s + n);
+  inline xtd::ustring operator""_s(const char8_t* s, size_t n) {
+    return xtd::ustring(s, s + n);
   }
 
   /// @brief Used to convert specified value into std::string.
@@ -187,8 +188,8 @@ namespace xtd {
   /// std::string s = U"This is a "_s + U"simple test"_s;
   /// std::cout << s << std::endl;
   /// @endcode
-  inline std::string operator""_s(const char16_t* s, size_t n) {
-    return xtd::strings::format("{}", s);
+  inline xtd::ustring operator""_s(const char16_t* s, size_t n) {
+    return xtd::ustring(s, s + n);
   }
   /// @brief Used to convert specified value into std::string.
   /// @par Library
@@ -199,8 +200,8 @@ namespace xtd {
   /// std::string s = u"This is a "_s + u"simple test"_s;
   /// std::cout << s << std::endl;
   /// @endcode
-  inline std::string operator""_s(const char32_t* s, size_t n) {
-    return xtd::strings::format("{}", s);
+  inline xtd::ustring operator""_s(const char32_t* s, size_t n) {
+    return xtd::ustring(s, s + n);
   }
   /// @brief Used to convert specified value into std::string.
   /// @par Library
@@ -211,8 +212,8 @@ namespace xtd {
   /// std::string s = L"This is a "_s + L"simple test"_s;
   /// std::cout << s << std::endl;
   /// @endcode
-  inline std::string operator""_s(const wchar_t* s, size_t n) {
-    return xtd::strings::format("{}", s);
+  inline xtd::ustring operator""_s(const wchar_t* s, size_t n) {
+    return xtd::ustring(s, s + n);
   }
 
   /// @brief Used to convert specified value into std::string.

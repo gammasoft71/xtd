@@ -1,10 +1,10 @@
-# vector_list
+# vector_list2
 
-Shows how to use [vector_list](../../../../src/xtd.core/include/xtd/collections/vector_list.h) class.
+Shows how to use [xtd::collections::vector_list](../../../../src/xtd.core/include/xtd/collections/vector_list.h) class.
 
 ## Sources
 
-[src/vector_list.cpp](src/vector_list.cpp)
+[src/vector_list.cpp](src/vector_list2.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
