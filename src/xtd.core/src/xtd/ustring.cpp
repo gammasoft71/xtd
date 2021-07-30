@@ -27,16 +27,16 @@ ustring::ustring() noexcept {
 ustring::ustring(const allocator_type& allocator) noexcept : basic_string<value_type>(allocator) {
 }
 
-ustring::ustring(size_t count, char character) : basic_string<value_type>(count, static_cast<value_type>(character)) {
-}
-
-ustring::ustring(size_t count, char character, const allocator_type& allocator) : basic_string<value_type>(count, static_cast<value_type>(character), allocator) {
-}
-
 ustring::ustring(size_t count, value_type character) : basic_string<value_type>(count, character) {
 }
 
 ustring::ustring(size_t count, value_type character, const allocator_type& allocator) : basic_string<value_type>(count, character, allocator) {
+}
+
+ustring::ustring(size_t count, char8_t character) : basic_string<value_type>(count, static_cast<value_type>(character)) {
+}
+
+ustring::ustring(size_t count, char8_t character, const allocator_type& allocator) : basic_string<value_type>(count, static_cast<value_type>(character), allocator) {
 }
 
 ustring::ustring(size_t count, char16_t character) {
@@ -105,28 +105,28 @@ ustring::ustring(const ustring& str) noexcept : basic_string<value_type>(str) {
 ustring::ustring(const ustring& str, const allocator_type& allocator) noexcept : basic_string<value_type>(str, allocator) {
 }
 
-ustring::ustring(const std::string& str) noexcept : basic_string<value_type>(reinterpret_cast<const value_type*>(str.c_str())) {
+ustring::ustring(const std::string& str) noexcept : basic_string<value_type>(str) {
 }
 
 ustring::ustring(const std::string& str, const allocator_type& allocator) noexcept : basic_string<value_type>((value_type*)str.c_str(), allocator) {
 }
 
-ustring::ustring(const char* str) : basic_string<value_type>(reinterpret_cast<const value_type*>(str)) {
+ustring::ustring(const u8string& str) noexcept : basic_string<value_type>(reinterpret_cast<const value_type*>(str.c_str())) {
 }
 
-ustring::ustring(const char* str, const allocator_type& allocator) : basic_string<value_type>(reinterpret_cast<const value_type*>(str), allocator) {
+ustring::ustring(const u8string& str, const allocator_type& allocator) noexcept : basic_string<value_type>(reinterpret_cast<const value_type*>(str.c_str()), allocator) {
 }
 
-ustring::ustring(char* str) : basic_string<value_type>(reinterpret_cast<const value_type*>(str)) {
+ustring::ustring(const char8_t* str) : basic_string<value_type>(reinterpret_cast<const value_type*>(str)) {
 }
 
-ustring::ustring(char* str, const allocator_type& allocator) : basic_string<value_type>(reinterpret_cast<const value_type*>(str), allocator) {
+ustring::ustring(const char8_t* str, const allocator_type& allocator) : basic_string<value_type>(reinterpret_cast<const value_type*>(str), allocator) {
 }
 
-ustring::ustring(const u8string& str) noexcept : basic_string<value_type>(str) {
+ustring::ustring(char8_t* str) : basic_string<value_type>(reinterpret_cast<const value_type*>(str)) {
 }
 
-ustring::ustring(const u8string& str, const allocator_type& allocator) noexcept : basic_string<value_type>(str, allocator) {
+ustring::ustring(char8_t* str, const allocator_type& allocator) : basic_string<value_type>(reinterpret_cast<const value_type*>(str), allocator) {
 }
 
 ustring::ustring(const std::u16string& str) noexcept : ustring(str, allocator_type()) {
@@ -201,36 +201,68 @@ ustring::ustring(initializer_list<value_type> il) : basic_string<value_type>(il)
 ustring::ustring(initializer_list<value_type> il, const allocator_type& allocator) : basic_string<value_type>(il, allocator) {
 }
 
-ustring::ustring(initializer_list<char> il) {
+ustring::ustring(initializer_list<char8_t> il) {
   for (auto& c : il)
-    push_back(c);
+    push_back(static_cast<value_type>(c));
 }
 
-ustring::ustring(initializer_list<char> il, const allocator_type& allocator) : basic_string<value_type>(allocator) {
+ustring::ustring(initializer_list<char8_t> il, const allocator_type& allocator) : basic_string<value_type>(allocator) {
   for (auto& c : il)
-    push_back(c);
+    push_back(static_cast<value_type>(c));
 }
 
-ustring& ustring::operator=(const std::string& str) {
-  assign(reinterpret_cast<const value_type*>(str.c_str()));
-  return *this;
-}
-ustring& ustring::operator=(const char* str) {
-  assign(reinterpret_cast<const value_type*>(str));
-  return *this;
+ustring::ustring(initializer_list<char16_t> il) {
+  for (auto& c : il)
+    *this += codepoint_to_string(c);
 }
 
-ustring& ustring::operator=(const std::u8string& str) {
-  assign(str.c_str());
-  return *this;
+ustring::ustring(initializer_list<char16_t> il, const allocator_type& allocator) : basic_string<value_type>(allocator) {
+  for (auto& c : il)
+    *this += codepoint_to_string(c);
 }
+
+ustring::ustring(initializer_list<char32_t> il) {
+  for (auto& c : il)
+    *this += codepoint_to_string(c);
+}
+
+ustring::ustring(initializer_list<wchar_t> il, const allocator_type& allocator) : basic_string<value_type>(allocator) {
+  for (auto& c : il)
+    *this += codepoint_to_string(c);
+}
+
+ustring::ustring(initializer_list<wchar_t> il) {
+  for (auto& c : il)
+    *this += codepoint_to_string(c);
+}
+
+ustring::ustring(initializer_list<char32_t> il, const allocator_type& allocator) : basic_string<value_type>(allocator) {
+  for (auto& c : il)
+    *this += codepoint_to_string(c);
+}
+
 ustring& ustring::operator=(const ustring& str) {
   assign(str);
   return *this;
 }
 
+ustring& ustring::operator=(const std::string& str) {
+  assign(str.c_str());
+  return *this;
+}
+
 ustring& ustring::operator=(const value_type* str) {
   assign(str);
+  return *this;
+}
+
+ustring& ustring::operator=(const std::u8string& str) {
+  assign(reinterpret_cast<const value_type*>(str.c_str()));
+  return *this;
+}
+
+ustring& ustring::operator=(const char8_t* str) {
+  assign(reinterpret_cast<const value_type*>(str));
   return *this;
 }
 
@@ -267,12 +299,12 @@ ustring& ustring::operator=(const wchar_t* str) {
   return operator=(wstring(str));
 }
 
-ustring& ustring::operator=(char character) {
+ustring& ustring::operator=(value_type character) {
   *this = ustring(1, character);
   return  *this;;
 }
 
-ustring& ustring::operator=(value_type character) {
+ustring& ustring::operator=(char8_t character) {
   *this = ustring(1, character);
   return  *this;;
 }
@@ -297,14 +329,45 @@ ustring& ustring::operator=(const std::initializer_list<value_type>& il) {
   return *this;
 }
 
+ustring& ustring::operator=(const std::initializer_list<char8_t>& il) {
+  for (auto c : il)
+    *this += codepoint_to_string(c);
+  return *this;
+}
+
+ustring& ustring::operator=(const std::initializer_list<char16_t>& il) {
+  for (auto c : il)
+    *this += codepoint_to_string(c);
+  return *this;
+}
+
+ustring& ustring::operator=(const std::initializer_list<char32_t>& il) {
+  for (auto c : il)
+    *this += codepoint_to_string(c);
+  return *this;
+}
+
+ustring& ustring::operator=(const std::initializer_list<wchar_t>& il) {
+  for (auto c : il)
+    *this += codepoint_to_string(c);
+  return *this;
+}
+
+ustring ustring::operator+(const ustring& str) {
+  ustring result = *this;
+  result.append(str);
+  return result;
+}
+
 ustring ustring::operator+(const std::string& str) {
   ustring result = *this;
   result.append(ustring(str));
   return result;
 }
-ustring ustring::operator+(const char* str) {
+
+ustring ustring::operator+(const value_type* str) {
   ustring result = *this;
-  result.append(ustring(str));
+  result.append(str);
   return result;
 }
 
@@ -313,15 +376,10 @@ ustring ustring::operator+(const std::u8string& str) {
   result.append(ustring(str));
   return result;
 }
-ustring ustring::operator+(const ustring& str) {
-  ustring result = *this;
-  result.append(str);
-  return result;
-}
 
-ustring ustring::operator+(const value_type* str) {
+ustring ustring::operator+(const char8_t* str) {
   ustring result = *this;
-  result.append(str);
+  result.append(ustring(str));
   return result;
 }
 
@@ -361,13 +419,13 @@ ustring ustring::operator+(const wchar_t* str) {
   return result;
 }
 
-ustring ustring::operator+(char character) {
+ustring ustring::operator+(value_type character) {
   ustring result = *this;
   result.append(ustring(1, character));
   return result;
 }
 
-ustring ustring::operator+(value_type character) {
+ustring ustring::operator+(char8_t character) {
   ustring result = *this;
   result.append(ustring(1, character));
   return result;
@@ -399,14 +457,6 @@ bool ustring::operator!=(const ustring& other) const {
   return !operator==(other);
 }
 
-bool ustring::operator==(const value_type* other) const {
-  return std::basic_string<value_type>(*this) == other;
-}
-
-bool ustring::operator!=(const value_type* other) const {
-  return !operator==(other);
-}
-
 bool ustring::operator==(const std::string other) const {
   return *this == ustring(other);
 }
@@ -415,17 +465,26 @@ bool ustring::operator!=(const std::string other) const {
   return !operator==(other);
 }
 
-bool ustring::operator==(const char* other) const {
+bool ustring::operator==(const value_type* other) const {
+  return std::basic_string<value_type>(*this) == other;
+}
+
+bool ustring::operator!=(const value_type* other) const {
+  return !operator==(other);
+}
+
+bool ustring::operator==(const char8_t* other) const {
   return *this == ustring(other);
 }
 
-bool ustring::operator!=(const char* other) const {
+bool ustring::operator!=(const char8_t* other) const {
   return !operator==(other);
 }
 
 bool ustring::operator==(const std::u16string other) const {
   return *this == ustring(other);
 }
+
 bool ustring::operator!=(const std::u16string other) const {
   return !operator==(other);
 }
@@ -538,7 +597,7 @@ ustring ustring::concat(const std::vector<const value_type*>& values) noexcept {
   return result;
 }
 
-ustring ustring::concat(const std::vector<const char*>& values) noexcept {
+ustring ustring::concat(const std::vector<const char8_t*>& values) noexcept {
   ustring result;
   for (const auto& item : values)
     result += ustring(item);
@@ -559,7 +618,7 @@ ustring ustring::concat(const std::initializer_list<const value_type*>& values) 
   return result;
 }
 
-ustring ustring::concat(const std::initializer_list<const char*>& values) noexcept {
+ustring ustring::concat(const std::initializer_list<const char8_t*>& values) noexcept {
   ustring result;
   for (const auto& item : values)
     result += ustring(item);
@@ -578,7 +637,7 @@ bool ustring::ends_with(value_type value) const noexcept {
   return rfind(value) == size() - 1;
 }
 
-bool ustring::ends_with(char value) const noexcept {
+bool ustring::ends_with(char8_t value) const noexcept {
   return rfind(value) == size() - 1;
 }
 
@@ -859,7 +918,7 @@ ustring ustring::to_lower() const noexcept {
 }
 
 string ustring::to_string() const noexcept {
-  return reinterpret_cast<const char*>(c_str());
+  return *this;
 }
 
 //ustring ustring::to_string() const noexcept {
@@ -940,8 +999,4 @@ ustring ustring::get_class_name(const ustring& full_name) {
   if (length == npos) length = full_name.length();
   if (full_name.last_index_of("::", 0, length) == npos) return full_name;
   return full_name.substring(full_name.last_index_of("::", 0, length) + 2);
-}
-
-std::ostream& operator<<(std::ostream& stream, char8_t character) {
-  return stream << (static_cast<char>(character));
 }

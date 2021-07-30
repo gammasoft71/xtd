@@ -43,7 +43,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of the alt_directory_separator_char() property.
       /// @include directory_separator_char.cpp
-      static char8_t alt_directory_separator_char() noexcept {return alt_directory_separator_char<char8_t>();}
+      static char alt_directory_separator_char() noexcept {return alt_directory_separator_char<char>();}
       
       /// @brief Changes the extension of a path string.
       /// @param path The path information to modify. The path cannot contain any of the characters defined in GetInvalidPathchar_ts.
@@ -62,7 +62,7 @@ namespace xtd {
         if (extension.is_empty()) return path_without_extension;
         std::stringstream ss;
         ss << path_without_extension;
-        if (path_without_extension[path_without_extension.size() - 1] != static_cast<char8_t>('.')  && extension[0] != static_cast<char8_t>('.')) ss << '.';
+        if (path_without_extension[path_without_extension.size() - 1] != '.'  && extension[0] != '.') ss << '.';
         ss << extension;
         return ss.str();
       }
@@ -88,7 +88,7 @@ namespace xtd {
         
         std::stringstream ss;
         ss << path1;
-        if (path1[path1.size() - 1] != directory_separator_char()) ss <<  directory_separator_char<char>();
+        if (path1[path1.size() - 1] != directory_separator_char()) ss <<  directory_separator_char();
         ss << path2;
         return ss.str();
       }
@@ -177,7 +177,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of the directory_separator_char() property.
       /// @include directory_separator_char.cpp
-      static char8_t directory_separator_char() noexcept {return directory_separator_char<char8_t>();}
+      static char directory_separator_char() noexcept {return directory_separator_char<char>();}
       
       /// @brief Returns the directory information for the specified path string.
       /// @param path the path of a file or directory.
@@ -285,7 +285,7 @@ namespace xtd {
       /// @brief Gets an array containing the characters that are not allowed in path names.
       /// @return An array containing the characters that are not allowed in path names.
       /// @remarks The array returned from this method is not guaranteed to contain the complete set of characters that are invalid in file and directory names. The full set of invalid characters can vary by file system. For example, on Windows-based desktop platforms, invalid path characters might include ASCII/Unicode characters 1 through 31, as well as quote ("), less than (<), greater than (>), pipe (|), backspace (\b), null (\0) and tab (\t).
-      static std::vector<char8_t> get_invalid_path_chars() noexcept {return get_invalid_path_chars<char8_t>();}
+      static std::vector<char> get_invalid_path_chars() noexcept {return get_invalid_path_chars<char>();}
       
       /// @brief Gets the root directory information of the specified path.
       /// @param path The path from which to obtain root directory information.
@@ -303,14 +303,14 @@ namespace xtd {
       /// @return A random folder name or file name.
       /// @remarks The get_random_file_name method returns a cryptographically strong, random string that can be used as either a folder name or a file name. Unlike GetTempFileName, get_random_file_name does not create a file. When the security of your file system is paramount, this method should be used instead of GetTempFileName.
       static xtd::ustring get_random_file_name() {
-        static xtd::ustring valid_chars = {static_cast<char8_t>('1'), static_cast<char8_t>('2'), static_cast<char8_t>('3'), static_cast<char8_t>('4'), static_cast<char8_t>('5'), static_cast<char8_t>('6'), static_cast<char8_t>('7'), static_cast<char8_t>('8'), static_cast<char8_t>('9'), static_cast<char8_t>('0'), static_cast<char8_t>('a'), static_cast<char8_t>('b'), static_cast<char8_t>('c'), static_cast<char8_t>('d'), static_cast<char8_t>('e'), static_cast<char8_t>('f'), static_cast<char8_t>('g'), static_cast<char8_t>('h'), static_cast<char8_t>('i'), static_cast<char8_t>('j'), static_cast<char8_t>('k'), static_cast<char8_t>('l'), static_cast<char8_t>('m'), static_cast<char8_t>('n'), static_cast<char8_t>('o'), static_cast<char8_t>('p'), static_cast<char8_t>('q'), static_cast<char8_t>('r'), static_cast<char8_t>('s'), static_cast<char8_t>('t'), static_cast<char8_t>('u'), static_cast<char8_t>('v'), static_cast<char8_t>('w'), static_cast<char8_t>('x'), static_cast<char8_t>('y'), static_cast<char8_t>('z')};
+        static xtd::ustring valid_chars = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
         std::random_device rand;
         xtd::ustring random_file_name;
         
         for (size_t i = 0; i < 11; i++) {
           random_file_name += valid_chars[std::uniform_int_distribution<size_t> {0, valid_chars.size() - 1}(rand)];
           if (i == 7)
-            random_file_name += static_cast<char8_t>('.');
+            random_file_name += '.';
         }
         
         return random_file_name;
@@ -322,7 +322,7 @@ namespace xtd {
       /// @remarks The GetTempFileName method will raise an IOException if it is used to create more than 65535 files without deleting previous temporary files.
       /// @remarks The GetTempFileName method will raise an IOException if no unique temporary file name is available. To resolve this error, delete all unneeded temporary files.
       static xtd::ustring get_temp_file_name() {
-        static xtd::ustring valid_chars = {static_cast<char8_t>('1'), static_cast<char8_t>('2'), static_cast<char8_t>('3'), static_cast<char8_t>('4'), static_cast<char8_t>('5'), static_cast<char8_t>('6'), static_cast<char8_t>('7'), static_cast<char8_t>('8'), static_cast<char8_t>('9'), static_cast<char8_t>('0'), static_cast<char8_t>('a'), static_cast<char8_t>('b'), static_cast<char8_t>('c'), static_cast<char8_t>('d'), static_cast<char8_t>('e'), static_cast<char8_t>('f')};
+        static xtd::ustring valid_chars = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'a', 'b', 'c', 'd', 'e', 'f'};
         xtd::ustring temp_file_name;
         do {
           static std::random_device rand;
@@ -334,7 +334,7 @@ namespace xtd {
             else
               temp_file_name += valid_chars[std::uniform_int_distribution<size_t> {0, valid_chars.size() - 1}(rand)];
           }
-          temp_file_name += u8".tmp";
+          temp_file_name += ".tmp";
         } while (file::exists(combine(get_temp_path(), temp_file_name)));
         file::create(combine(get_temp_path(), temp_file_name));
         return combine(get_temp_path(), temp_file_name);
@@ -386,7 +386,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of the PathSeparator() property.
       /// @include directory_separator_char.cpp
-      static char8_t path_separator() noexcept {return path_separator<char8_t>();}
+      static char path_separator() noexcept {return path_separator<char>();}
       
       /// @brief Provides a platform-specific volume separator character.
       /// @par Examples
@@ -399,7 +399,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of the volume_separator_char() property.
       /// @include directory_separator_char.cpp
-      static char8_t volume_separator_char() noexcept {return  volume_separator_char<char8_t>();}
+      static char volume_separator_char() noexcept {return  volume_separator_char<char>();}
       
     private:
       static xtd::ustring __get_current_dirirectory() noexcept;

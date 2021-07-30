@@ -42,7 +42,7 @@ string convert_string::to_string(char* str) noexcept {
 }
 
 string convert_string::to_string(const ustring& str) noexcept {
-  return reinterpret_cast<const char*>(str.c_str());
+  return str;
 }
 
 string convert_string::to_string(const u8string& str) noexcept {
@@ -119,11 +119,11 @@ const ustring& convert_string::to_ustring(const ustring& str) noexcept {
 }
 
 ustring convert_string::to_ustring(const u8string& str) noexcept {
-  return str;
+  return reinterpret_cast<const char*>(str.c_str());
 }
 
 ustring convert_string::to_ustring(const char8_t* str) noexcept {
-  return str;
+  return reinterpret_cast<const char*>(str);
 }
 
 ustring convert_string::to_ustring(char8_t* str) noexcept {
@@ -179,7 +179,7 @@ u8string convert_string::to_u8string(char* str) noexcept {
 }
 
 u8string convert_string::to_u8string(const ustring& str) noexcept {
-  return str;
+  return reinterpret_cast<const char8_t*>(str.c_str());
 }
 
 const u8string& convert_string::to_u8string(const u8string& str) noexcept {

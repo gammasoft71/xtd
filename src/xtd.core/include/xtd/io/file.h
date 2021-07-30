@@ -225,7 +225,7 @@ namespace xtd {
         try {
           if (exists(dest) && overwrite == false) return false;
 #if defined(__cpp_lib_filesystem)
-          std::filesystem::copy(std::filesystem::path(src), std::filesystem::path(dest), std::filesystem::copy_options::overwrite_existing);
+          std::filesystem::copy(std::filesystem::path(std::string(src)), std::filesystem::path(std::string(dest)), std::filesystem::copy_options::overwrite_existing);
           return true;
 #else
           std::ifstream file_src(src, std::ios::binary);
@@ -898,7 +898,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      static int __get_file_attributes(const char8_t* path);
+      static int __get_file_attributes(const char* path);
     };
   }
 }
