@@ -449,6 +449,142 @@ ustring ustring::operator+(wchar_t character) {
   return result;
 }
 
+ustring ustring::operator+(const std::initializer_list<value_type>& il) {
+  ustring result = *this;
+  result.append(ustring(il));
+  return result;
+}
+
+ustring ustring::operator+(const std::initializer_list<char8_t>& il) {
+  ustring result = *this;
+  result.append(ustring(il));
+  return result;
+}
+
+ustring ustring::operator+(const std::initializer_list<char16_t>& il) {
+  ustring result = *this;
+  result.append(ustring(il));
+  return result;
+}
+
+ustring ustring::operator+(const std::initializer_list<char32_t>& il) {
+  ustring result = *this;
+  result.append(ustring(il));
+  return result;
+}
+
+ustring ustring::operator+(const std::initializer_list<wchar_t>& il) {
+  ustring result = *this;
+  result.append(ustring(il));
+  return result;
+}
+
+ustring& ustring::operator+=(const ustring& str) {
+  *this = *this + str;
+  return *this;
+}
+
+ustring& ustring::operator+=(const std::string& str) {
+  *this = *this + str;
+  return *this;
+}
+
+ustring& ustring::operator+=(const value_type* str) {
+  *this = *this + str;
+  return *this;
+}
+
+ustring& ustring::operator+=(const std::u8string& str) {
+  *this = *this + str;
+  return *this;
+}
+
+ustring& ustring::operator+=(const char8_t* str) {
+  *this = *this + str;
+  return *this;
+}
+
+ustring& ustring::operator+=(const std::u16string& str) {
+  *this = *this + str;
+  return *this;
+}
+
+ustring& ustring::operator+=(const char16_t* str) {
+  *this = *this + str;
+  return *this;
+}
+
+ustring& ustring::operator+=(const std::u32string& str) {
+  *this = *this + str;
+  return *this;
+}
+
+ustring& ustring::operator+=(const char32_t* str) {
+  *this = *this + str;
+  return *this;
+}
+
+ustring& ustring::operator+=(const std::wstring& str) {
+  *this = *this + str;
+  return *this;
+}
+
+ustring& ustring::operator+=(const wchar_t* str) {
+  *this = *this + str;
+  return *this;
+}
+
+ustring& ustring::operator+=(value_type character) {
+  *this = *this + character;
+  return *this;
+}
+
+ustring& ustring::operator+=(char8_t character) {
+  *this = *this + character;
+  return *this;
+}
+
+ustring& ustring::operator+=(char16_t character) {
+  *this = *this + character;
+  return *this;
+}
+
+ustring& ustring::operator+=(char32_t character) {
+  *this = *this + character;
+  return *this;
+}
+
+ustring& ustring::operator+=(wchar_t character) {
+  *this = *this + character;
+  return *this;
+}
+
+ustring& ustring::operator+=(const std::initializer_list<value_type>& il) {
+  *this = *this + il;
+  return *this;
+}
+
+ustring& ustring::operator+=(const std::initializer_list<char8_t>& il) {
+  *this = *this + il;
+  return *this;
+}
+
+ustring& ustring::operator+=(const std::initializer_list<char16_t>& il) {
+  *this = *this + il;
+  return *this;
+}
+
+ustring& ustring::operator+=(const std::initializer_list<char32_t>& il) {
+  *this = *this + il;
+  return *this;
+}
+
+ustring& ustring::operator+=(const std::initializer_list<wchar_t>& il) {
+  *this = *this + il;
+  return *this;
+}
+
+
 bool ustring::operator==(const ustring& other) const {
   return std::basic_string<value_type>(*this) == std::basic_string<value_type>(other);
 }
