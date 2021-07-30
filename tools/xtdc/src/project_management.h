@@ -194,9 +194,9 @@ namespace xtdc_command {
       
       std::filesystem::path app_path;
       for (auto file : xtd::io::file::read_all_lines((xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path())/"install_manifest.txt")) {
-        if (std::filesystem::exists({file})) {
+        if (std::filesystem::exists(std::filesystem::path(std::string(file)))) {
           if (xtd::environment::os_version().is_macos_platform() && file.contains("Contents/MacOS")) app_path = file.remove(file.index_of("Contents/MacOS"));
-          std::filesystem::remove({file});
+          std::filesystem::remove(std::filesystem::path(std::string(file)));
         }
       }
       

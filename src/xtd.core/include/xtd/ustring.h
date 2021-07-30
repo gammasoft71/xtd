@@ -24,8 +24,11 @@
 #endif
 
 /// @cond
+namespace xtd {
+  class ustring;
+}
 template<typename ...args_t>
-void __ustring_extract_format_arg(std::string& fmt, std::vector<__format_information<char>>& format, args_t&&... args);
+void __ustring_extract_format_arg(xtd::ustring& fmt, std::vector<__format_information<char>>& format, args_t&&... args);
 void __throw_ustring_format_exception();
 void __throw_ustring_format_exception_close_bracket();
 void __throw_ustring_format_exception_open_bracket();
@@ -39,7 +42,7 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @remarks A string is a sequential collection of characters that's used to represent text. A xtd::ustring object is a sequential collection of xtd::char8 objects that represent a string; a xtd::char8 object corresponds to a UTF-8 code unit. The value of the xtd::utring object is the content of the sequential collection of xtd::char8 objects, and unlike std::basic_string that value is immutable (that is, it is read-only).
   /// @remarks if you want the same mutable string class, you can use xtd::text::ustring_builder class.
-  class ustring : public object, public std::basic_string<char8_t> {
+  class ustring : public object, public std::basic_string<char> {
   public:
     /// @brief Initializes a new instance of xtd::ustring.
     ustring() noexcept;
@@ -51,17 +54,6 @@ namespace xtd {
     /// @param str The string to copy.
     /// @param count The number of copies of character.
     /// @param character The character copied.
-    ustring(size_t count, char character);
-    /// @brief Initializes a new instance of xtd::ustring with specified count copies of character and specified allocator.
-    /// @param str The string to copy.
-    /// @param count The number of copies of character.
-    /// @param character The character copied.
-    /// @param allocator The allocator to use for all memory allocations of this string.
-    ustring(size_t count, char character, const allocator_type& allocator);
-    /// @brief Initializes a new instance of xtd::ustring with specified count copies of character.
-    /// @param str The string to copy.
-    /// @param count The number of copies of character.
-    /// @param character The character copied.
     ustring(size_t count, value_type character);
     /// @brief Initializes a new instance of xtd::ustring with specified count copies of character and specified allocator.
     /// @param str The string to copy.
@@ -69,6 +61,17 @@ namespace xtd {
     /// @param character The character copied.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(size_t count, value_type character, const allocator_type& allocator);
+    /// @brief Initializes a new instance of xtd::ustring with specified count copies of character.
+    /// @param str The string to copy.
+    /// @param count The number of copies of character.
+    /// @param character The character copied.
+    ustring(size_t count, char8_t character);
+    /// @brief Initializes a new instance of xtd::ustring with specified count copies of character and specified allocator.
+    /// @param str The string to copy.
+    /// @param count The number of copies of character.
+    /// @param character The character copied.
+    /// @param allocator The allocator to use for all memory allocations of this string.
+    ustring(size_t count, char8_t character, const allocator_type& allocator);
     /// @brief Initializes a new instance of xtd::ustring with specified count copies of character.
     /// @param str The string to copy.
     /// @param count The number of copies of character.
@@ -164,20 +167,6 @@ namespace xtd {
     ustring(const std::string& str, const allocator_type& allocator) noexcept;
     
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
-    ustring(const char* str);
-    /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
-    /// @param str The string to copy.
-    /// @param allocator The allocator to use for all memory allocations of this string.
-    ustring(const char* str, const allocator_type& allocator);
-
-    /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
-    ustring(char* str);
-    /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
-    /// @param str The string to copy.
-    /// @param allocator The allocator to use for all memory allocations of this string.
-    ustring(char* str, const allocator_type& allocator);
-    
-    /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     /// @param str The string to copy.
     ustring(const std::u8string& str) noexcept;
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy and allocator.
@@ -185,6 +174,20 @@ namespace xtd {
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const std::u8string& str, const allocator_type& allocator) noexcept;
     
+    /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
+    ustring(const char8_t* str);
+    /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
+    /// @param str The string to copy.
+    /// @param allocator The allocator to use for all memory allocations of this string.
+    ustring(const char8_t* str, const allocator_type& allocator);
+    
+    /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
+    ustring(char8_t* str);
+    /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
+    /// @param str The string to copy.
+    /// @param allocator The allocator to use for all memory allocations of this string.
+    ustring(char8_t* str, const allocator_type& allocator);
+
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     /// @param str The string to copy.
     ustring(const std::u16string& str) noexcept;
@@ -281,12 +284,36 @@ namespace xtd {
     
     /// @brief Initializes a new instance of xtd::ustring with specified initializer list.
     /// @param il The initalizer list to fill.
-    ustring(std::initializer_list<char> il);
+    ustring(std::initializer_list<char8_t> il);
     /// @brief Initializes a new instance of xtd::ustring with specified initializer list and allocator.
     /// @param il The initalizer list to fill.
     /// @param allocator The allocator to use for all memory allocations of this string.
-    ustring(std::initializer_list<char> il, const allocator_type& allocator);
+    ustring(std::initializer_list<char8_t> il, const allocator_type& allocator);
     
+    /// @brief Initializes a new instance of xtd::ustring with specified initializer list.
+    /// @param il The initalizer list to fill.
+    ustring(std::initializer_list<char16_t> il);
+    /// @brief Initializes a new instance of xtd::ustring with specified initializer list and allocator.
+    /// @param il The initalizer list to fill.
+    /// @param allocator The allocator to use for all memory allocations of this string.
+    ustring(std::initializer_list<char16_t> il, const allocator_type& allocator);
+    
+    /// @brief Initializes a new instance of xtd::ustring with specified initializer list.
+    /// @param il The initalizer list to fill.
+    ustring(std::initializer_list<char32_t> il);
+    /// @brief Initializes a new instance of xtd::ustring with specified initializer list and allocator.
+    /// @param il The initalizer list to fill.
+    /// @param allocator The allocator to use for all memory allocations of this string.
+    ustring(std::initializer_list<char32_t> il, const allocator_type& allocator);
+    
+    /// @brief Initializes a new instance of xtd::ustring with specified initializer list.
+    /// @param il The initalizer list to fill.
+    ustring(std::initializer_list<wchar_t> il);
+    /// @brief Initializes a new instance of xtd::ustring with specified initializer list and allocator.
+    /// @param il The initalizer list to fill.
+    /// @param allocator The allocator to use for all memory allocations of this string.
+    ustring(std::initializer_list<wchar_t> il, const allocator_type& allocator);
+
     /// @cond
     /*
     template<typename type_t>
@@ -303,49 +330,69 @@ namespace xtd {
     ustring(const type_t& object, size_t count, const allocator_type& allocator) : std::basic_string<value_type>(object, 0, count, allocator) {}
      */
     
-    ustring& operator=(const std::string& str);
-    ustring& operator=(const char* str);
-    ustring& operator=(const std::u8string& str);
     ustring& operator=(const ustring& str);
+    ustring& operator=(const std::string& str);
     ustring& operator=(const value_type* str);
+    ustring& operator=(const std::u8string& str);
+    ustring& operator=(const char8_t* str);
     ustring& operator=(const std::u16string& str);
     ustring& operator=(const char16_t* str);
     ustring& operator=(const std::u32string& str);
     ustring& operator=(const char32_t* str);
     ustring& operator=(const std::wstring& str);
     ustring& operator=(const wchar_t* str);
-    ustring& operator=(char character);
+
     ustring& operator=(value_type character);
+    ustring& operator=(char8_t character);
     ustring& operator=(char16_t character);
     ustring& operator=(char32_t character);
     ustring& operator=(wchar_t character);
     ustring& operator=(const std::initializer_list<value_type>& il);
-    ustring operator+(const std::string& str);
-    ustring operator+(const char* str);
-    ustring operator+(const std::u8string& str);
+    ustring& operator=(const std::initializer_list<char8_t>& il);
+    ustring& operator=(const std::initializer_list<char16_t>& il);
+    ustring& operator=(const std::initializer_list<char32_t>& il);
+    ustring& operator=(const std::initializer_list<wchar_t>& il);
+    template<typename type_t>
+    ustring& operator=(const type_t& object) {return std::basic_string<value_type>::assign(object);}
+
     ustring operator+(const ustring& str);
+    ustring operator+(const std::string& str);
     ustring operator+(const value_type* str);
+    ustring operator+(const std::u8string& str);
+    ustring operator+(const char8_t* str);
     ustring operator+(const std::u16string& str);
     ustring operator+(const char16_t* str);
     ustring operator+(const std::u32string& str);
     ustring operator+(const char32_t* str);
     ustring operator+(const std::wstring& str);
     ustring operator+(const wchar_t* str);
-    ustring operator+(char character);
     ustring operator+(value_type character);
+    ustring operator+(char8_t character);
     ustring operator+(char16_t character);
     ustring operator+(char32_t character);
     ustring operator+(wchar_t character);
+    ustring operator+(const std::initializer_list<value_type>& il);
+    ustring operator+(const std::initializer_list<char8_t>& il);
+    ustring operator+(const std::initializer_list<char16_t>& il);
+    ustring operator+(const std::initializer_list<char32_t>& il);
+    ustring operator+(const std::initializer_list<wchar_t>& il);
     template<typename type_t>
-    ustring& operator=(const type_t& object) {return std::basic_string<value_type>::assign(object);}
+    ustring operator+(const type_t& object) {
+      ustring result(*this);
+      result.append(object);
+      return result;
+    }
+
     bool operator==(const ustring& other) const;
     bool operator!=(const ustring& other) const;
-    bool operator==(const value_type* other) const;
-    bool operator!=(const value_type* other) const;
     bool operator==(const std::string other) const;
     bool operator!=(const std::string other) const;
-    bool operator==(const char* other) const;
-    bool operator!=(const char* other) const;
+    bool operator==(const value_type* other) const;
+    bool operator!=(const value_type* other) const;
+    bool operator==(const std::u8string other) const;
+    bool operator!=(const std::u8string other) const;
+    bool operator==(const char8_t* other) const;
+    bool operator!=(const char8_t* other) const;
     bool operator==(const std::u16string other) const;
     bool operator!=(const std::u16string other) const;
     bool operator==(const char16_t* other) const;
@@ -360,11 +407,8 @@ namespace xtd {
     bool operator!=(const wchar_t* other) const;
     const value_type& operator[](size_t index);
     const value_type& operator[](size_t index) const;
-    ustring substr(size_type index = 0, size_type count = npos) const;
-    /// @endcond
-    
-    /// @todo Remove when all std::sttring replaced by ustring.
-    operator std::string() const {return reinterpret_cast<const char*>(c_str());}
+    ustring substr(size_type index = 0, size_type count = npos) const;    
+   /// @endcond
     
     /// @brief Gets the fully qualified class name of the objec_t, including the namespace of the objec_t.
     /// @return The fully qualified class name of the objec_t, including the namespace of the objec_t.
@@ -536,10 +580,10 @@ namespace xtd {
     
     /// @cond
     static ustring concat(const std::vector<const value_type*>& values) noexcept;
-    static ustring concat(const std::vector<const char*>& values) noexcept;
+    static ustring concat(const std::vector<const char8_t*>& values) noexcept;
     static ustring concat(const std::initializer_list<ustring>& values) noexcept;
     static ustring concat(const std::initializer_list<const value_type*>& values) noexcept;
-    static ustring concat(const std::initializer_list<const char*>& values) noexcept;
+    static ustring concat(const std::initializer_list<const char8_t*>& values) noexcept;
     /// @endcond
     
     /// @brief Concatenates the string representations of the elements in a specified object array.
@@ -589,7 +633,7 @@ namespace xtd {
         char* value_;
       };
       int32_t status = 0;
-      return auto_delete_char_pointer(abi::__cxa_demangle(reinterpret_cast<const char*>(name.c_str()), 0, 0, &status))();
+      return auto_delete_char_pointer(abi::__cxa_demangle(name.c_str(), 0, 0, &status))();
 #endif
     }
 
@@ -610,7 +654,7 @@ namespace xtd {
     /// @brief Determines whether the end of this string matches the specified character.
     /// @param value The char_t to compare to the substring at the end of this instance.
     /// @return true if value matches the end of this instance; otherwise, false.
-    bool ends_with(char value) const noexcept;
+    bool ends_with(char8_t value) const noexcept;
     
     /// @brief Determines whether the end of this string matches the specified string.
     /// @param value The string to compare to the substring at the end of this instance.
@@ -635,21 +679,20 @@ namespace xtd {
     /// @remarks for more information about format see @ref FormatPage "Format".
     template<typename ...args_t>
     static ustring format(const ustring& fmt, args_t&&... args) {
-      std::string result;
+      ustring result;
       size_t index = 0;
-      std::string sfmt = reinterpret_cast<const char*>(fmt.c_str());
       std::vector<__format_information<char>> formats;
-      typename std::string::const_iterator begin_format_iterator =  sfmt.cend();
-      typename std::string::const_iterator end_format_iterator =  sfmt.cend();
-      for (typename std::string::const_iterator iterator = sfmt.cbegin(); iterator != sfmt.cend(); ++iterator) {
+      typename ustring::const_iterator begin_format_iterator =  fmt.cend();
+      typename ustring::const_iterator end_format_iterator =  fmt.cend();
+      for (typename ustring::const_iterator iterator = fmt.cbegin(); iterator != fmt.cend(); ++iterator) {
         if (*iterator == '{') {
           ++iterator;
           if (*iterator == '{')
             result += *iterator;
           else {
             begin_format_iterator = iterator;
-            while (*iterator != '}' && iterator != sfmt.end()) ++iterator;
-            if (iterator == sfmt.end())
+            while (*iterator != '}' && iterator != fmt.end()) ++iterator;
+            if (iterator == fmt.end())
               __throw_ustring_format_exception_open_bracket();
             end_format_iterator = iterator;
             __format_information<char> fi;
@@ -692,7 +735,7 @@ namespace xtd {
             formats.push_back(fi);
           }
         } else if (*iterator == '}') {
-          if (++iterator == sfmt.cend())
+          if (++iterator == fmt.cend())
             __throw_ustring_format_exception_close_bracket();
           if (*iterator != '}')
             __throw_ustring_format_exception_close_bracket();
@@ -1048,8 +1091,8 @@ namespace xtd {
     /// @remarks The length sub-specifier modifies the length of the data type. This is a chart showing the types used to interpret the corresponding arguments with and without length specifier (if a different type is used, the proper type promotion or conversion is performed, if allowed):
     /// | length | d i           | u o x X                | f F e E g G a A | c     | s        | p     | n              |
     /// |--------|---------------|------------------------|-----------------|-------|----------|-------|----------------|
-    /// | (none) | int           | unsigned int           | double          | int   | char*    | void* | int*           |
-    /// | hh     | signed char   | unsigned char          |                 |       |          |       | unsigned char* |
+    /// | (none) | int           | unsigned int           | double          | int   | char8_t*    | void* | int*           |
+    /// | hh     | signed char8_t   | unsigned char8_t          |                 |       |          |       | unsigned char8_t* |
     /// | h      | short int     | unsigned short int     |                 |       |          |       | short int*     |
     /// | l      | long int      | unsigned long int      |                 | win_t | wchar_t* |       | long int*      |
     /// | ll     | long long int | unsigned long long int |                 |       |          |       | long long int* |
@@ -1057,10 +1100,10 @@ namespace xtd {
     /// | z      | size_t        | size_t                 |                 |       |          |       | size_t*        |
     /// | t      | ptrdiff_t     | ptrdiff_t              |                 |       |          |       | ptrdiff_t*     |
     /// | L      |               |                        | long double     |       |          |       |                |
-    /// @remarks Note regarding the c specifier: it takes an int (or wint_t) as argument, but performs the proper conversion to a char value (or a wchar_t) before formatting it for output.
+    /// @remarks Note regarding the c specifier: it takes an int (or wint_t) as argument, but performs the proper conversion to a char8_t value (or a wchar_t) before formatting it for output.
     /// @remarks you can use std::string or std::wstring with format param %%s.
     template<typename ... args_t>
-    static ustring sprintf(const ustring& fmt, args_t&& ... args) noexcept {return __sprintf(reinterpret_cast<const char*>(fmt.c_str()), convert_param(std::forward<args_t>(args)) ...);}
+    static ustring sprintf(const ustring& fmt, args_t&& ... args) noexcept {return __sprintf(fmt.c_str(), convert_param(std::forward<args_t>(args)) ...);}
     
     /// @brief Determines whether the beginning of this instance of String matches a specified String.
     /// @param value A String to compare to.
@@ -1196,7 +1239,7 @@ namespace xtd {
     }
 
     /// @cond
-    friend std::ostream& operator<<(std::ostream& stream, const ustring& str) {return stream << (reinterpret_cast<const char*>(str.c_str()));}
+    friend std::ostream& operator<<(std::ostream& stream, const ustring& str) {return stream << str.c_str();}
     friend std::istream& operator>>(std::istream& stream, ustring& str) {
       std::string s;
       stream >> s;
@@ -1220,7 +1263,6 @@ namespace xtd {
     using std::basic_string<value_type>::reserve;
     using std::basic_string<value_type>::shrink_to_fit;
     using std::basic_string<value_type>::clear;
-    using std::basic_string<value_type>::insert;
     using std::basic_string<value_type>::erase;
     using std::basic_string<value_type>::push_back;
     using std::basic_string<value_type>::pop_back;
@@ -1260,11 +1302,9 @@ template <typename ...args_t>
 void __xtd_ustrings_unused(args_t&& ... args) {}
 
 template<typename ...args_t>
-void __ustring_extract_format_arg(std::string& fmt, std::vector<__format_information<char>>& formats, args_t&&... args) {
+void __ustring_extract_format_arg(xtd::ustring& fmt, std::vector<__format_information<char>>& formats, args_t&&... args) {
   size_t index = 0;
   (__ustring_extract_format_arg(fmt, index, formats, args),...);
   __xtd_ustrings_unused(index); // workouround to mute gcc warning: unused-but-set-variable
 }
-
-std::ostream& operator<<(std::ostream& stream, char8_t character);
 /// @endcond
