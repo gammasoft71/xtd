@@ -39,7 +39,7 @@ namespace xtd {
   /// @brief Represents text as a sequence of UTF-8 code units.
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core
+  /// @ingroup xtd_core system
   /// @remarks A string is a sequential collection of characters that's used to represent text. A xtd::ustring object is a sequential collection of xtd::char8 objects that represent a string; a xtd::char8 object corresponds to a UTF-8 code unit. The value of the xtd::utring object is the content of the sequential collection of xtd::char8 objects, and unlike std::basic_string that value is immutable (that is, it is read-only).
   /// @remarks if you want the same mutable string class, you can use xtd::text::ustring_builder class.
   class ustring : public object, public std::basic_string<char> {
@@ -381,6 +381,33 @@ namespace xtd {
       ustring result(*this);
       result.append(object);
       return result;
+    }
+
+    ustring& operator+=(const ustring& str);
+    ustring& operator+=(const std::string& str);
+    ustring& operator+=(const value_type* str);
+    ustring& operator+=(const std::u8string& str);
+    ustring& operator+=(const char8_t* str);
+    ustring& operator+=(const std::u16string& str);
+    ustring& operator+=(const char16_t* str);
+    ustring& operator+=(const std::u32string& str);
+    ustring& operator+=(const char32_t* str);
+    ustring& operator+=(const std::wstring& str);
+    ustring& operator+=(const wchar_t* str);
+    ustring& operator+=(value_type character);
+    ustring& operator+=(char8_t character);
+    ustring& operator+=(char16_t character);
+    ustring& operator+=(char32_t character);
+    ustring& operator+=(wchar_t character);
+    ustring& operator+=(const std::initializer_list<value_type>& il);
+    ustring& operator+=(const std::initializer_list<char8_t>& il);
+    ustring& operator+=(const std::initializer_list<char16_t>& il);
+    ustring& operator+=(const std::initializer_list<char32_t>& il);
+    ustring& operator+=(const std::initializer_list<wchar_t>& il);
+    template<typename type_t>
+    ustring& operator+=(const type_t& object) {
+      *this = *this + ustring(object);
+      return *this;
     }
 
     bool operator==(const ustring& other) const;
