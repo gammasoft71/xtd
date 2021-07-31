@@ -218,8 +218,6 @@ color color::from_hsl(float hue, float saturation, float lightness) {
     return v1;
   };
   
-  if (saturation == 0) return color::from_argb(255, static_cast<uint8_t>(lightness * 255.0f), static_cast<uint8_t>(lightness * 255.0f), static_cast<uint8_t>(lightness * 255.0f));
-
   hue = hue / 360.0f;
   float v2 = (lightness < 0.5f) ? (lightness * (1 + saturation)) : ((lightness + saturation) - (lightness * saturation));
   float v1 = 2 * lightness - v2;
