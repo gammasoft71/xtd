@@ -43,7 +43,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of the alt_directory_separator_char() property.
       /// @include directory_separator_char.cpp
-      static char alt_directory_separator_char() noexcept {return alt_directory_separator_char<char>();}
+      static char alt_directory_separator_char() noexcept;
       
       /// @brief Changes the extension of a path string.
       /// @param path The path information to modify. The path cannot contain any of the characters defined in GetInvalidPathchar_ts.
@@ -56,16 +56,7 @@ namespace xtd {
       /// @remarks If extension does not contain a leading period, the period is added.
       /// @remarks If path contains a multiple extension separated by multiple periods, the returned string contains the contents of path with the last period and all characters following it replaced by extension. For example, if path is "\Dir1\examples\pathtests.csx.txt" and extension is "cs", the modified path is "\Dir1\examples\pathtests.csx.cs".
       /// @remarks It is not possible to verify that the returned results are valid in all scenarios. For example, if path is empty, extension is appended.
-       static xtd::ustring change_extension(const xtd::ustring& path, const xtd::ustring& extension) {
-         xtd::ustring path_without_extension = combine(get_directory_name(path), get_file_name_without_extension(path));
-        if (path_without_extension.is_empty() && !extension.is_empty()) return extension;
-        if (extension.is_empty()) return path_without_extension;
-        std::stringstream ss;
-        ss << path_without_extension;
-        if (path_without_extension[path_without_extension.size() - 1] != '.'  && extension[0] != '.') ss << '.';
-        ss << extension;
-        return ss.str();
-      }
+      static xtd::ustring change_extension(const xtd::ustring& path, const xtd::ustring& extension);
       
       /// @cond
       template<typename char_t>
@@ -81,17 +72,7 @@ namespace xtd {
       /// @param path2 The second path.
       /// @return A string containing the combined paths. If one of the specified paths is a zero-length string, this method returns the other path. If path2 contains an absolute path, this method returns path2.
       /// @remarks an empty string if path contains one or more of the invalid characters.
-      static xtd::ustring combine(const xtd::ustring& path1, const xtd::ustring& path2) {
-        // if (path1.IndexOfAny(GetInvalidPathchar_ts()) != -1 || path2.IndexOfAny(GetInvalidPathchar_ts()) != -1)  return {};
-        if (path2.is_empty()) return path1;
-        if (path1.is_empty() || is_path_rooted(path2)) return path2;
-        
-        std::stringstream ss;
-        ss << path1;
-        if (path1[path1.size() - 1] != directory_separator_char()) ss <<  directory_separator_char();
-        ss << path2;
-        return ss.str();
-      }
+      static xtd::ustring combine(const xtd::ustring& path1, const xtd::ustring& path2);
       
       /// @cond
       template<typename char_t>
@@ -143,12 +124,7 @@ namespace xtd {
       /// @param paths The path array.
       /// @return A string containing the combined paths. If one of the specified paths is a zero-length string, this method returns the other path. If path2 contains an absolute path, this method returns path2.
       /// @remarks an empty string if path contains one or more of the invalid characters.
-      static xtd::ustring combine(const std::initializer_list<xtd::ustring>& paths) noexcept {
-        xtd::ustring result;
-        for (auto path : paths)
-          result = combine(result, path);
-        return result;
-      }
+      static xtd::ustring combine(const std::initializer_list<xtd::ustring>& paths) noexcept;
       
       /// @cond
       template<typename path_t>
@@ -177,19 +153,13 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of the directory_separator_char() property.
       /// @include directory_separator_char.cpp
-      static char directory_separator_char() noexcept {return directory_separator_char<char>();}
+      static char directory_separator_char() noexcept;
       
       /// @brief Returns the directory information for the specified path string.
       /// @param path the path of a file or directory.
       /// @return A string containing directory information for path, or null if path denotes a root directory, is the empty string ("").
       /// @remarks Returns string empty if path does not contain directory information.
-      static xtd::ustring get_directory_name(const xtd::ustring& path) {
-        size_t index = path.rfind(directory_separator_char());
-        if (index == xtd::ustring::npos) index = path.last_index_of(alt_directory_separator_char());
-        if (index == xtd::ustring::npos) return {};
-        xtd::ustring directory = path.substring(0, index);
-        return directory;
-      }
+      static xtd::ustring get_directory_name(const xtd::ustring& path);
       
       /// @cond
       template<typename char_t>
@@ -200,11 +170,7 @@ namespace xtd {
       /// @param path The path string from which to get the extension.
       /// @return A std::string containing the extension of the specified path (including the ".") or std::string::empty.
       /// @remarks If path is empty, GetExtension returns string empty. If path does not have extension information, GetExtension returns string empty ("").
-      static xtd::ustring get_extension(const xtd::ustring& path) {
-        xtd::ustring file = get_file_name(path);
-        size_t index = file.last_index_of('.');
-        return index == xtd::ustring::npos ? "" : file.substring(index);
-      }
+      static xtd::ustring get_extension(const xtd::ustring& path);
       
       /// @cond
       template<typename char_t>
@@ -215,22 +181,14 @@ namespace xtd {
       /// @param path The path string from which to obtain the file name and extension.
       /// @return The characters after the last directory separator character in path. If the last character of path is a directory or volume separator character, this method returns string empty ("").
       /// @remarks The separator characters used to determine the start of the file name are directory_separator_char and alt_directory_separator_char.
-       static xtd::ustring get_file_name(const xtd::ustring& path) {
-        size_t index = path.last_index_of(directory_separator_char());
-        if (index == xtd::ustring::npos) index = path.rfind(alt_directory_separator_char());
-        return (index == xtd::ustring::npos) ? path : path.substring(index + 1);
-      }
+      static xtd::ustring get_file_name(const xtd::ustring& path);
       
       /// @cond
       template<typename char_t>
       static xtd::ustring get_file_name(const char_t* path) {return get_file_name(xtd::ustring(path));}
       /// @endcond
       
-      static xtd::ustring get_file_name_without_extension(const xtd::ustring& path) {
-        xtd::ustring file = get_file_name(path);
-        size_t index = file.last_index_of('.');
-        return (index == xtd::ustring::npos) ? file : file.substring(0, index);
-      }
+      static xtd::ustring get_file_name_without_extension(const xtd::ustring& path);
       
       /// @cond
       template<typename char_t>
@@ -240,36 +198,7 @@ namespace xtd {
       /// @brief Returns the absolute path for the specified path string.
       /// @param path The file or directory for which to obtain absolute path information.
       /// @return A string containing the fully qualified location of path, such as "C:\\MyFile.txt".
-      static xtd::ustring get_full_path(const xtd::ustring& path) {
-        std::string path_str = path;
-        std::basic_regex<char> r(std::string("(\\") + directory_separator_char<char>() + alt_directory_separator_char<char>() + std::string(")+"));
-        std::vector<xtd::ustring> directories;
-        for (std::sregex_token_iterator it(path_str.begin(), path_str.end(), r, -1), end; it != end; ++it)
-          if (*it != "") directories.push_back(it->str());
-        
-        xtd::ustring full_path;
-        
-        if (path[0] != directory_separator_char() && path[0] != alt_directory_separator_char()) full_path = __get_current_dirirectory();
-        for (auto item : directories) {
-          if (item == ".." && full_path.last_index_of(directory_separator_char()) != xtd::ustring::npos)
-            full_path = full_path.substr(0, full_path.last_index_of(directory_separator_char()));
-          else if (item == ".." && full_path.last_index_of(alt_directory_separator_char()) != xtd::ustring::npos)
-            full_path = full_path.substr(0, full_path.last_index_of(alt_directory_separator_char()));
-          else if (item != ".") {
-            std::stringstream ss;
-            ss << full_path << directory_separator_char() << item;
-            full_path = ss.str();
-          }
-        }
-        
-        if (path[path.size() - 1] == directory_separator_char()) {
-          std::stringstream ss;
-          ss << full_path << directory_separator_char();
-          full_path = ss.str();
-        }
-        
-        return full_path;
-      }
+      static xtd::ustring get_full_path(const xtd::ustring& path);
       
       /// @cond
       template<typename char_t>
@@ -285,14 +214,14 @@ namespace xtd {
       /// @brief Gets an array containing the characters that are not allowed in path names.
       /// @return An array containing the characters that are not allowed in path names.
       /// @remarks The array returned from this method is not guaranteed to contain the complete set of characters that are invalid in file and directory names. The full set of invalid characters can vary by file system. For example, on Windows-based desktop platforms, invalid path characters might include ASCII/Unicode characters 1 through 31, as well as quote ("), less than (<), greater than (>), pipe (|), backspace (\b), null (\0) and tab (\t).
-      static std::vector<char> get_invalid_path_chars() noexcept {return get_invalid_path_chars<char>();}
+      static std::vector<char> get_invalid_path_chars() noexcept;
       
       /// @brief Gets the root directory information of the specified path.
       /// @param path The path from which to obtain root directory information.
       /// @return A string containing the root directory of path, such as "C:\", or null if
       /// @return path is null, or an empty string if path does not contain root directory
       /// @return information.
-      static xtd::ustring get_path_root(const xtd::ustring& path) {return is_path_rooted(path) ? path.substr(0, __get_index_path_rooted(path) + 1) : "";}
+      static xtd::ustring get_path_root(const xtd::ustring& path);
       
       /// @cond
       template<typename char_t>
@@ -302,43 +231,14 @@ namespace xtd {
       /// @brief Returns a random folder name or file name.
       /// @return A random folder name or file name.
       /// @remarks The get_random_file_name method returns a cryptographically strong, random string that can be used as either a folder name or a file name. Unlike GetTempFileName, get_random_file_name does not create a file. When the security of your file system is paramount, this method should be used instead of GetTempFileName.
-      static xtd::ustring get_random_file_name() {
-        static xtd::ustring valid_chars = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-        std::random_device rand;
-        xtd::ustring random_file_name;
-        
-        for (size_t i = 0; i < 11; i++) {
-          random_file_name += valid_chars[std::uniform_int_distribution<size_t> {0, valid_chars.size() - 1}(rand)];
-          if (i == 7)
-            random_file_name += '.';
-        }
-        
-        return random_file_name;
-      }
+      static xtd::ustring get_random_file_name();
             
       /// @brief Creates a uniquely named, zero-byte temporary file on disk and returns the full path of that file.
       /// @return The full path of the temporary file.
       /// @remarks This method creates a temporary file with a .TMP file extension. The temporary file is created within the user’s temporary folder, which is the path returned by the GetTempPath method.
       /// @remarks The GetTempFileName method will raise an IOException if it is used to create more than 65535 files without deleting previous temporary files.
       /// @remarks The GetTempFileName method will raise an IOException if no unique temporary file name is available. To resolve this error, delete all unneeded temporary files.
-      static xtd::ustring get_temp_file_name() {
-        static xtd::ustring valid_chars = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'a', 'b', 'c', 'd', 'e', 'f'};
-        xtd::ustring temp_file_name;
-        do {
-          static std::random_device rand;
-          temp_file_name = "tmp";
-          
-          for (size_t i = 0; i < 8; i++) {
-            if (i == 0)
-              temp_file_name += valid_chars[std::uniform_int_distribution<size_t> {0, 9}(rand)];
-            else
-              temp_file_name += valid_chars[std::uniform_int_distribution<size_t> {0, valid_chars.size() - 1}(rand)];
-          }
-          temp_file_name += ".tmp";
-        } while (file::exists(combine(get_temp_path(), temp_file_name)));
-        file::create(combine(get_temp_path(), temp_file_name));
-        return combine(get_temp_path(), temp_file_name);
-      }
+      static xtd::ustring get_temp_file_name();
       
       /// @brief Returns the path of the current user's temporary folder.
       /// @return string The path to the temporary folder, ending with a backslash.
@@ -347,16 +247,14 @@ namespace xtd {
       /// * The path specified by the TEMP environment variable.
       /// * The path specified by the USERPROFILE environment variable.
       /// * The Windows directory.
-      static xtd::ustring get_temp_path() noexcept {
-        return __get_temp_path();
-      }
+      static xtd::ustring get_temp_path() noexcept;
       
       /// @brief Determines whether a path includes a file name extension.
       /// @param path The path to search for an extension.
       /// @return true if the characters that follow the last directory separator (\\ or /)
       /// @return or volume separator (:) in the path include a period (.) followed by one
       /// @return or more characters; otherwise, false.
-      static bool has_extension(const xtd::ustring& path) {return !get_extension(path).is_empty();}
+      static bool has_extension(const xtd::ustring& path);
       
       /// @cond
       template<typename char_t>
@@ -368,7 +266,7 @@ namespace xtd {
       /// @return true if path contains an absolute path; otherwise, false.
       /// @remarks This method also returns false if path is empty or an invalid path.
       /// @remarks If the caller does not have sufficient permissions to read the specified file, no exception is thrown and the method returns false regardless of the existence of path.
-       static bool is_path_rooted(const xtd::ustring& path) {return __get_index_path_rooted(path) != -1;}
+      static bool is_path_rooted(const xtd::ustring& path);
       
       /// @cond
       template<typename char_t>
@@ -386,7 +284,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of the PathSeparator() property.
       /// @include directory_separator_char.cpp
-      static char path_separator() noexcept {return path_separator<char>();}
+      static char path_separator() noexcept;
       
       /// @brief Provides a platform-specific volume separator character.
       /// @par Examples
@@ -399,27 +297,12 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of the volume_separator_char() property.
       /// @include directory_separator_char.cpp
-      static char volume_separator_char() noexcept {return  volume_separator_char<char>();}
+      static char volume_separator_char() noexcept;
       
     private:
-      static xtd::ustring __get_current_dirirectory() noexcept;
-      static xtd::ustring __get_temp_path() noexcept;
+      static int __get_index_path_rooted(const xtd::ustring& path);
       static bool __is_windows_os() noexcept;
-
-      static bool __is_drive(const xtd::ustring& path) noexcept {
-        /// @todo remove comment when drive_info::get_drives will be create
-        /*
-         for (auto drive : drive_info::get_drives())
-         if (drive.name() == path)
-         return true;
-         */
-        return false;
-      }
-      
-      static int __get_index_path_rooted(const xtd::ustring& path) {
-        size_t index = path.find(directory_separator_char());
-        return (index == xtd::ustring::npos || index == path.size() || (index != 0 && !__is_drive(path.substring(0, index + 1)))) ? -1 : static_cast<int>(index);
-      }
+      static bool __is_drive(const xtd::ustring& path) noexcept;      
     };
   }
 }
