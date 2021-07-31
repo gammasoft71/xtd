@@ -13,8 +13,8 @@ public:
     if (size == 1) return bytes[0];
 
     uint32_t codepoint = 0;
-    xtd::byte_t offset = 0;
-    xtd::byte_t rest = size - 1;
+    size_t offset = 0;
+    size_t rest = size - 1;
     for (size_t i = 0; i < size; i += 1) {
       if (i == 0)  { // head byte
         if (size == 1)

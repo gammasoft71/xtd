@@ -195,7 +195,7 @@ namespace xtdc_command {
       std::filesystem::path app_path;
       for (auto file : xtd::io::file::read_all_lines((xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path())/"install_manifest.txt")) {
         if (std::filesystem::exists(std::filesystem::path(std::string(file)))) {
-          if (xtd::environment::os_version().is_macos_platform() && file.contains("Contents/MacOS")) app_path = file.remove(file.index_of("Contents/MacOS"));
+          if (xtd::environment::os_version().is_macos_platform() && file.contains("Contents/MacOS")) app_path = std::string(file.remove(file.index_of("Contents/MacOS")));
           std::filesystem::remove(std::filesystem::path(std::string(file)));
         }
       }
@@ -229,14 +229,14 @@ namespace xtdc_command {
     std::string get_target_path(const std::string& target, bool release) const {
       for (const auto& line : get_system_information())
         if (line.starts_with(xtd::strings::format("{}_BINARY_DIR:STATIC=", target)))
-          return make_platform_target_path({line.replace(xtd::ustring::format("{}_BINARY_DIR:STATIC=", target), "")}, target, release);
+          return make_platform_target_path({std::string(line.replace(xtd::ustring::format("{}_BINARY_DIR:STATIC=", target), ""))}, target, release);
       return (build_path()/(release ? "Release" : "Debug")/target/target).string();
     }
     
     std::string get_first_target_path(bool release) const {
       for (const auto& line : get_system_information())
         if (line.index_of("_BINARY_DIR:STATIC=") != std::string::npos)
-          return make_platform_target_path({line.replace(xtd::ustring::format("{}_BINARY_DIR:STATIC=", line.substring(0, line.index_of("_BINARY_DIR:STATIC="))), "")}, line.substring(0, line.index_of("_BINARY_DIR:STATIC=")), release);
+          return make_platform_target_path({std::string(line.replace(xtd::ustring::format("{}_BINARY_DIR:STATIC=", line.substring(0, line.index_of("_BINARY_DIR:STATIC="))), ""))}, line.substring(0, line.index_of("_BINARY_DIR:STATIC=")), release);
       if (xtd::environment::os_version().is_windows_platform()) return (build_path() / path_.filename() / (release ? "Release" : "Debug") / path_.filename()).string();
       return (build_path()/(release ? "Release" : "Debug")/path_.filename()/path_.filename()).string();
     }

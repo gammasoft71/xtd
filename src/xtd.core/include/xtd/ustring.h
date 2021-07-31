@@ -471,8 +471,6 @@ namespace xtd {
     /// @remarks For example, the name of the strings type is strings.
     static ustring class_name(const std::type_info& info) {return get_class_name(full_class_name(info));}
     
-
-    
     using std::basic_string<value_type>::compare;
     /// @brief Compares two specified string objects and returns an integer that indicates their relative position in the sort order.
     /// @param str_a The first string to compare.
