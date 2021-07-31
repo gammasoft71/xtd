@@ -1283,7 +1283,6 @@ namespace xtd {
       else return std::forward<arg_t>(arg);
     }
     
-    static ustring codepoint_to_string(char32_t codepoint);
     static ustring get_class_name(const ustring& full_name);
 
     using std::basic_string<value_type>::assign;

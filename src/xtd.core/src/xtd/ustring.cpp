@@ -1,4 +1,5 @@
 #include "../../include/xtd/ustring.h"
+#include "../../include/xtd/convert_string.h"
 #include "../../include/xtd/format_exception.h"
 #include "../../include/xtd/diagnostics/stack_frame.h"
 
@@ -40,33 +41,27 @@ ustring::ustring(size_t count, char8_t character, const allocator_type& allocato
 }
 
 ustring::ustring(size_t count, char16_t character) {
-  for (size_t index = 0; index < count; ++index)
-    *this += codepoint_to_string(character);
+  *this = convert_string::to_ustring(u16string(count, character));
 }
 
 ustring::ustring(size_t count, char16_t character, const allocator_type& allocator) : basic_string<value_type>(allocator) {
-  for (size_t index = 0; index < count; ++index)
-    *this += codepoint_to_string(character);
+  *this = convert_string::to_ustring(u16string(count, character));
 }
 
 ustring::ustring(size_t count, char32_t character) {
-  for (size_t index = 0; index < count; ++index)
-    *this += codepoint_to_string(character);
+  *this = convert_string::to_ustring(u32string(count, character));
 }
 
 ustring::ustring(size_t count, char32_t character, const allocator_type& allocator) : basic_string<value_type>(allocator) {
-  for (size_t index = 0; index < count; ++index)
-    *this += codepoint_to_string(character);
+  *this = convert_string::to_ustring(u32string(count, character));
 }
 
 ustring::ustring(size_t count, wchar_t character) {
-  for (size_t index = 0; index < count; ++index)
-    *this += codepoint_to_string(character);
+  *this = convert_string::to_ustring(wstring(count, character));
 }
 
 ustring::ustring(size_t count, wchar_t character, const allocator_type& allocator) : basic_string<value_type>(allocator) {
-  for (size_t index = 0; index < count; ++index)
-    *this += codepoint_to_string(character);
+  *this = convert_string::to_ustring(wstring(count, character));
 }
 
 ustring::ustring(const ustring& str, size_t index, size_t count) : basic_string<value_type>(str, index, count) {
@@ -133,8 +128,7 @@ ustring::ustring(const std::u16string& str) noexcept : ustring(str, allocator_ty
 }
 
 ustring::ustring(const std::u16string& str, const allocator_type& allocator) noexcept : basic_string<value_type>(allocator) {
-  for (auto c : str)
-    *this += codepoint_to_string(c);
+  *this = convert_string::to_ustring(str);
 }
 
 ustring::ustring(const char16_t* str) : ustring(u16string(str)) {
@@ -153,8 +147,7 @@ ustring::ustring(const std::u32string& str) noexcept : ustring(str, allocator_ty
 }
 
 ustring::ustring(const std::u32string& str, const allocator_type& allocator) noexcept : basic_string<value_type>(allocator) {
-  for (auto c : str)
-    *this += codepoint_to_string(c);
+  *this = convert_string::to_ustring(str);
 }
 
 ustring::ustring(const char32_t* str) : ustring(u32string(str)) {
@@ -173,8 +166,7 @@ ustring::ustring(const std::wstring& str) noexcept : ustring(str, allocator_type
 }
 
 ustring::ustring(const std::wstring& str, const allocator_type& allocator) noexcept : basic_string<value_type>(allocator) {
-  for (auto c : str)
-    *this += codepoint_to_string(c);
+  *this = convert_string::to_ustring(str);
 }
 
 ustring::ustring(const wchar_t* str) : ustring(wstring(str)) {
@@ -212,33 +204,27 @@ ustring::ustring(initializer_list<char8_t> il, const allocator_type& allocator) 
 }
 
 ustring::ustring(initializer_list<char16_t> il) {
-  for (auto& c : il)
-    *this += codepoint_to_string(c);
+  *this = convert_string::to_ustring(u16string(il));
 }
 
 ustring::ustring(initializer_list<char16_t> il, const allocator_type& allocator) : basic_string<value_type>(allocator) {
-  for (auto& c : il)
-    *this += codepoint_to_string(c);
+  *this = convert_string::to_ustring(u16string(il));
 }
 
 ustring::ustring(initializer_list<char32_t> il) {
-  for (auto& c : il)
-    *this += codepoint_to_string(c);
-}
-
-ustring::ustring(initializer_list<wchar_t> il, const allocator_type& allocator) : basic_string<value_type>(allocator) {
-  for (auto& c : il)
-    *this += codepoint_to_string(c);
-}
-
-ustring::ustring(initializer_list<wchar_t> il) {
-  for (auto& c : il)
-    *this += codepoint_to_string(c);
+  *this = convert_string::to_ustring(u32string(il));
 }
 
 ustring::ustring(initializer_list<char32_t> il, const allocator_type& allocator) : basic_string<value_type>(allocator) {
-  for (auto& c : il)
-    *this += codepoint_to_string(c);
+  *this = convert_string::to_ustring(u32string(il));
+}
+
+ustring::ustring(initializer_list<wchar_t> il) {
+  *this = convert_string::to_ustring(wstring(il));
+}
+
+ustring::ustring(initializer_list<wchar_t> il, const allocator_type& allocator) : basic_string<value_type>(allocator) {
+  *this = convert_string::to_ustring(wstring(il));
 }
 
 ustring& ustring::operator=(const ustring& str) {
@@ -268,8 +254,7 @@ ustring& ustring::operator=(const char8_t* str) {
 
 ustring& ustring::operator=(const std::u16string& str) {
   clear();
-  for (auto c : str)
-    *this += codepoint_to_string(c);
+  *this = convert_string::to_ustring(str);
   return *this;
 }
 
@@ -279,8 +264,7 @@ ustring& ustring::operator=(const char16_t* str) {
 
 ustring& ustring::operator=(const std::u32string& str) {
   clear();
-  for (auto c : str)
-    *this += codepoint_to_string(c);
+  *this = convert_string::to_ustring(str);
   return *this;
 }
 
@@ -290,8 +274,7 @@ ustring& ustring::operator=(const char32_t* str) {
 
 ustring& ustring::operator=(const std::wstring& str) {
   clear();
-  for (auto c : str)
-    *this += codepoint_to_string(c);
+  *this = convert_string::to_ustring(str);
   return *this;
 }
 
@@ -331,25 +314,25 @@ ustring& ustring::operator=(const std::initializer_list<value_type>& il) {
 
 ustring& ustring::operator=(const std::initializer_list<char8_t>& il) {
   for (auto c : il)
-    *this += codepoint_to_string(c);
+    *this += static_cast<value_type>(c);
   return *this;
 }
 
 ustring& ustring::operator=(const std::initializer_list<char16_t>& il) {
-  for (auto c : il)
-    *this += codepoint_to_string(c);
+  clear();
+  *this = convert_string::to_ustring(u16string(il));
   return *this;
 }
 
 ustring& ustring::operator=(const std::initializer_list<char32_t>& il) {
-  for (auto c : il)
-    *this += codepoint_to_string(c);
+  clear();
+  *this = convert_string::to_ustring(u32string(il));
   return *this;
 }
 
 ustring& ustring::operator=(const std::initializer_list<wchar_t>& il) {
-  for (auto c : il)
-    *this += codepoint_to_string(c);
+  clear();
+  *this = convert_string::to_ustring(wstring(il));
   return *this;
 }
 
@@ -1107,26 +1090,6 @@ ustring ustring::trim_start(const std::vector<value_type>& trim_chars) const noe
   ustring result(*this);
   while (std::find(trim_chars.begin(), trim_chars.end(), result[0]) != trim_chars.end())
     result.erase(0, 1);
-  return result;
-}
-
-ustring ustring::codepoint_to_string(char32_t codepoint) {
-  ustring result;
-  if (codepoint < 0x80) {
-    result.push_back(static_cast<value_type>(codepoint));
-  } else  if (codepoint < 0x800) {
-    result.push_back(static_cast<value_type>((codepoint >> 6) | 0xc0));
-    result.push_back(static_cast<value_type>((codepoint & 0x3f) | 0x80));
-  } else if (codepoint < 0x10000) {
-    result.push_back(static_cast<value_type>((codepoint >> 12) | 0xe0));
-    result.push_back(static_cast<value_type>(((codepoint >> 6) & 0x3f) | 0x80));
-    result.push_back(static_cast<value_type>((codepoint & 0x3f) | 0x80));
-  } else {
-    result.push_back(static_cast<value_type>((codepoint >> 18) | 0xf0));
-    result.push_back(static_cast<value_type>(((codepoint >> 12) & 0x3f) | 0x80));
-    result.push_back(static_cast<value_type>(((codepoint >> 6) & 0x3f) | 0x80));
-    result.push_back(static_cast<value_type>((codepoint & 0x3f) | 0x80));
-  }
   return result;
 }
 
