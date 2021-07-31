@@ -176,7 +176,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   inline xtd::ustring operator""_s(const char8_t* s, size_t n) {
-    return xtd::ustring(s, s + n);
+    return xtd::ustring(std::u8string(s, s + n));
   }
 
   /// @brief Used to convert specified value into std::string.
@@ -189,7 +189,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   inline xtd::ustring operator""_s(const char16_t* s, size_t n) {
-    return xtd::ustring(s, s + n);
+    return xtd::ustring(std::u16string(s, s + n));
   }
   /// @brief Used to convert specified value into std::string.
   /// @par Library
@@ -201,7 +201,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   inline xtd::ustring operator""_s(const char32_t* s, size_t n) {
-    return xtd::ustring(s, s + n);
+    return xtd::ustring(std::u32string(s, s + n));
   }
   /// @brief Used to convert specified value into std::string.
   /// @par Library
@@ -213,7 +213,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   inline xtd::ustring operator""_s(const wchar_t* s, size_t n) {
-    return xtd::ustring(s, s + n);
+    return xtd::ustring(std::wstring(s, s + n));
   }
 
   /// @brief Used to convert specified value into std::string.

@@ -103,8 +103,8 @@ void translator::initialize() {
   if (language_initialized == language_ || language_values_.find(language_) != language_values_.end()) return;
     
  parse_locale(path(__XTD_INSTALL_PATH__)/"share"/"xtd"/"locale");
-  if (xtd::environment::os_version().is_macos_platform()) parse_locale(path(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]))/".."/"Resources"/"locale");
-  else parse_locale(path(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]))/"locale");
+  if (xtd::environment::os_version().is_macos_platform()) parse_locale(path(std::string(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0])))/".."/"Resources"/"locale");
+  else parse_locale(path(std::string(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0])))/"locale");
   /*
   if (xtd::environment::os_version().is_macos_platform()) parse_locale(path(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]))/".."/"Resources");
   else if (xtd::environment::os_version().is_linux_platform()) parse_locale(path("usr")/"share"/"locale");
