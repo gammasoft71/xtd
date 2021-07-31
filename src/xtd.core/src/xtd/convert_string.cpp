@@ -4,28 +4,38 @@ using namespace std;
 using namespace xtd;
 
 namespace {
-  template<typename char_t>
-  basic_string<char_t> codepoint_to_string(char32_t codepoint) noexcept {
-    basic_string<char_t> result;
-    if (codepoint < 0x80) {
-      result.push_back(static_cast<char_t>(codepoint));
+  template<typename target_t, typename source_t>
+  basic_string<target_t> convert_to_string(const basic_string<source_t>& str) noexcept {
+    basic_string<target_t> out;
+    unsigned int codepoint = 0;
+    for (auto character : str) {
+      if (character >= 0xd800 && character <= 0xdbff)
+        codepoint = ((character - 0xd800) << 10) + 0x10000;
+      else  {
+        if (character >= 0xdc00 && character <= 0xdfff)
+          codepoint |= character - 0xdc00;
+        else
+          codepoint = character;
+        
+        if (codepoint <= 0x7f)
+          out.append(1, static_cast<target_t>(codepoint));
+        else if (codepoint <= 0x7ff) {
+          out.append(1, static_cast<target_t>(0xc0 | ((codepoint >> 6) & 0x1f)));
+          out.append(1, static_cast<target_t>(0x80 | (codepoint & 0x3f)));
+        } else if (codepoint <= 0xffff) {
+          out.append(1, static_cast<target_t>(0xe0 | ((codepoint >> 12) & 0x0f)));
+          out.append(1, static_cast<target_t>(0x80 | ((codepoint >> 6) & 0x3f)));
+          out.append(1, static_cast<target_t>(0x80 | (codepoint & 0x3f)));
+        } else {
+          out.append(1, static_cast<target_t>(0xf0 | ((codepoint >> 18) & 0x07)));
+          out.append(1, static_cast<target_t>(0x80 | ((codepoint >> 12) & 0x3f)));
+          out.append(1, static_cast<target_t>(0x80 | ((codepoint >> 6) & 0x3f)));
+          out.append(1, static_cast<target_t>(0x80 | (codepoint & 0x3f)));
+        }
+        codepoint = 0;
+      }
     }
-    else  if (codepoint < 0x800) {
-      result.push_back(static_cast<char_t>((codepoint >> 6) | 0xc0));
-      result.push_back(static_cast<char_t>((codepoint & 0x3f) | 0x80));
-    }
-    else if (codepoint < 0x10000) {
-      result.push_back(static_cast<char_t>((codepoint >> 12) | 0xe0));
-      result.push_back(static_cast<char_t>(((codepoint >> 6) & 0x3f) | 0x80));
-      result.push_back(static_cast<char_t>((codepoint & 0x3f) | 0x80));
-    }
-    else {
-      result.push_back(static_cast<char_t>((codepoint >> 18) | 0xf0));
-      result.push_back(static_cast<char_t>(((codepoint >> 12) & 0x3f) | 0x80));
-      result.push_back(static_cast<char_t>(((codepoint >> 6) & 0x3f) | 0x80));
-      result.push_back(static_cast<char_t>((codepoint & 0x3f) | 0x80));
-    }
-    return result;
+    return out;
   }
 }
 
@@ -58,10 +68,7 @@ string convert_string::to_string(char8_t* str) noexcept {
 }
 
 string convert_string::to_string(const u16string& str) noexcept {
-  string result;
-  for(auto c : str)
-    result += codepoint_to_string<char>(c);
-  return result;
+  return convert_to_string<char>(str);
 }
 
 string convert_string::to_string(const char16_t* str) noexcept {
@@ -73,10 +80,7 @@ string convert_string::to_string(char16_t* str) noexcept {
 }
 
 string convert_string::to_string(const u32string& str) noexcept {
-  string result;
-  for(auto c : str)
-    result += codepoint_to_string<char>(c);
-  return result;
+  return convert_to_string<char>(str);
 }
 
 string convert_string::to_string(const char32_t* str) noexcept {
@@ -88,10 +92,7 @@ string convert_string::to_string(char32_t* str) noexcept {
 }
 
 string convert_string::to_string(const wstring& str) noexcept {
-  string result;
-  for(auto c : str)
-    result += codepoint_to_string<char>(c);
-  return result;
+  return convert_to_string<char>(str);
 }
 
 string convert_string::to_string(const wchar_t* str) noexcept {
@@ -127,43 +128,43 @@ ustring convert_string::to_ustring(const char8_t* str) noexcept {
 }
 
 ustring convert_string::to_ustring(char8_t* str) noexcept {
-  return str;
+  return reinterpret_cast<char*>(str);
 }
 
 ustring convert_string::to_ustring(const u16string& str) noexcept {
-  return str;
+  return to_string(str);
 }
 
 ustring convert_string::to_ustring(const char16_t* str) noexcept {
-  return str;
+  return to_string(u16string(str));
 }
 
 ustring convert_string::to_ustring(char16_t* str) noexcept {
-  return str;
+  return to_string(u16string(str));
 }
 
 ustring convert_string::to_ustring(const u32string& str) noexcept {
-  return str;
+  return to_string(str);
 }
 
 ustring convert_string::to_ustring(const char32_t* str) noexcept {
-  return str;
+  return to_string(u32string(str));
 }
 
 ustring convert_string::to_ustring(char32_t* str) noexcept {
-  return str;
+  return to_string(u32string(str));
 }
 
 ustring convert_string::to_ustring(const wstring& str) noexcept {
-  return str;
+  return to_string(str);
 }
 
 ustring convert_string::to_ustring(const wchar_t* str) noexcept {
-  return str;
+  return to_string(wstring(str));
 }
 
 ustring convert_string::to_ustring(wchar_t* str) noexcept {
-  return str;
+  return to_string(wstring(str));
 }
 
 u8string convert_string::to_u8string(const string& str) noexcept {
@@ -195,10 +196,7 @@ u8string convert_string::to_u8string(char8_t* str) noexcept {
 }
 
 u8string convert_string::to_u8string(const u16string& str) noexcept {
-  u8string result;
-  for(auto c : str)
-    result += codepoint_to_string<char8_t>(c);
-  return result;
+  return convert_to_string<char8_t>(str);
 }
 
 u8string convert_string::to_u8string(const char16_t* str) noexcept {
@@ -210,10 +208,7 @@ u8string convert_string::to_u8string(char16_t* str) noexcept {
 }
 
 u8string convert_string::to_u8string(const u32string& str) noexcept {
-  u8string result;
-  for(auto c : str)
-    result += codepoint_to_string<char8_t>(c);
-  return result;
+  return convert_to_string<char8_t>(str);
 }
 
 u8string convert_string::to_u8string(const char32_t* str) noexcept {
@@ -225,10 +220,7 @@ u8string convert_string::to_u8string(char32_t* str) noexcept {
 }
 
 u8string convert_string::to_u8string(const wstring& str) noexcept {
-  u8string result;
-  for(auto c : str)
-    result += codepoint_to_string<char8_t>(c);
-  return result;
+  return convert_to_string<char8_t>(str);
 }
 
 u8string convert_string::to_u8string(const wchar_t* str) noexcept {
