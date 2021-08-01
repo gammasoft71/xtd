@@ -74,7 +74,7 @@ void translator::parse_locale(const std::filesystem::path& locale_path) {
 }
 
 void translator::parse_file(const std::filesystem::path& file, const std::string& language) {
-  vector<ustring> lines = xtd::io::file::read_all_lines(file);
+  vector<ustring> lines = xtd::io::file::read_all_lines(file.string());
   ustring key;
   ustring value;
   int line_count = 0;
