@@ -32,11 +32,11 @@ public:
     return codepoint;
   }
   
-  static size_t get_format(xtd::byte_t b) noexcept {
-    if (b >> 7 == 0) return 1; // 0xxxxxxx
-    if (b >> 5 == 110) return 2; // 110xxxxx
-    if (b >> 4 == 1110) return 3; // 1110xxxx
-    if (b >> 3 == 11110) return 4; // 11110xxx
+  static size_t get_format(int32_t codepoint) noexcept {
+    if (codepoint >> 7 == 0) return 1; // 0xxxxxxx
+    if (codepoint >> 5 == 110) return 2; // 110xxxxx
+    if (codepoint >> 4 == 1110) return 3; // 1110xxxx
+    if (codepoint >> 3 == 11110) return 4; // 11110xxx
     return 1;
   }
   
