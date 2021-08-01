@@ -66,7 +66,17 @@ file_attributes file::get_attributes(const ustring& src) noexcept {
 }
 
 bool file::move(const ustring& src, const ustring& dest) noexcept {
-  return move(string(src).c_str(), string(dest).c_str());
+  try {
+    if (exists(dest)) return false;
+#if defined(__cpp_lib_filesystem)
+    std::filesystem::rename(src.c_str(), dest.c_str());
+    return true;
+#else
+    return ::rename(src.c_str(), dest.c_str()) == 0;
+#endif
+  } catch(...) {
+    return false;
+  }
 }
 
 fstream file::open(const ustring& path, ios::openmode mode) noexcept {
@@ -133,7 +143,7 @@ ustring file::read_all_text(const ustring& path) noexcept {
 }
 
 bool file::remove(const ustring& path) noexcept {
-  return remove(string(path).c_str());
+  return ::remove(path.c_str()) == 0;
 }
 
 bool file::replace(const ustring& source_file_name, const ustring& destination_file_name, const ustring& destination_backup_file_name) noexcept {
