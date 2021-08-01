@@ -137,10 +137,7 @@ void file::replace(const ustring& source_file_name, const ustring& destination_f
   move(source_file_name, destination_file_name);
 }
 
-ofstream file::write_text(const ustring& path) noexcept {
-  try {
-    return ofstream(path);
-  } catch(...) {
-    return ofstream();
-  }
+ofstream file::write_text(const ustring& path) {
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
+  return ofstream(path);
 }
