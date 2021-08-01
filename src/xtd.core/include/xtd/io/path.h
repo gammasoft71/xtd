@@ -58,32 +58,12 @@ namespace xtd {
       /// @remarks It is not possible to verify that the returned results are valid in all scenarios. For example, if path is empty, extension is appended.
       static xtd::ustring change_extension(const xtd::ustring& path, const xtd::ustring& extension);
       
-      /// @cond
-      template<typename char_t>
-      static std::basic_string<char_t> change_extension(const char_t* path, const char_t* extension) {return change_extension(xtd::ustring(path), xtd::ustring(extension));}
-      template<typename char_t>
-      static std::basic_string<char_t> change_extension(const xtd::ustring& path, const char_t* extension) {return change_extension(path, xtd::ustring(extension));}
-      template<typename char_t>
-      static std::basic_string<char_t> change_extension(const char_t* path, const xtd::ustring& extension) {return change_extension(xtd::ustring(path), extension);}
-      /// @endcond
-      
       /// @brief Combines two path strings.
       /// @param path1 The first path.
       /// @param path2 The second path.
       /// @return A string containing the combined paths. If one of the specified paths is a zero-length string, this method returns the other path. If path2 contains an absolute path, this method returns path2.
       /// @remarks an empty string if path contains one or more of the invalid characters.
       static xtd::ustring combine(const xtd::ustring& path1, const xtd::ustring& path2);
-      
-      /// @cond
-      template<typename char_t>
-      static xtd::ustring combine(const char_t* path1, const char_t* path2) noexcept {return combine(xtd::ustring(path1), xtd::ustring(path2));}
-      template<typename char_t>
-      static xtd::ustring combine(const xtd::ustring& path1, const char_t* path2) noexcept {return combine(path1, xtd::ustring(path2));}
-      template<typename char_t>
-      static xtd::ustring combine(const char_t* path1, const xtd::ustring& path2) noexcept {return combine(xtd::ustring(path1), path2);}
-      template<typename type_t>
-      static xtd::ustring combine(type_t path1, type_t path2) noexcept {return combine(xtd::ustring(path1), xtd::ustring(path2));}
-      /// @endcond
       
       /// @brief Combines three path strings.
       /// @param path1 The first path.
@@ -126,16 +106,6 @@ namespace xtd {
       /// @remarks an empty string if path contains one or more of the invalid characters.
       static xtd::ustring combine(const std::initializer_list<xtd::ustring>& paths) noexcept;
       
-      /// @cond
-      template<typename path_t>
-      static xtd::ustring combine(const std::initializer_list<path_t>& paths) noexcept {
-        xtd::ustring result;
-        for (auto path : paths)
-          result = combine(result, path);
-        return result;
-      }
-      /// @endcond
-      
       /// @brief Provides a platform-specific character used to separate directory levels in a path string that reflects a hierarchical file system organization.
       /// @return char_t Platform-specific character used to separate directory levels.
       /// @remarks alt_directory_separator_char and directory_separator_char are both valid for separating directory levels in a path string.
@@ -161,21 +131,11 @@ namespace xtd {
       /// @remarks Returns string empty if path does not contain directory information.
       static xtd::ustring get_directory_name(const xtd::ustring& path);
       
-      /// @cond
-      template<typename char_t>
-      static std::basic_string<char_t> get_directory_name(const char_t* path) {return get_directory_name(xtd::ustring(path));}
-      /// @endcond
-      
       /// @brief Returns the extension of the specified path string.
       /// @param path The path string from which to get the extension.
       /// @return A std::string containing the extension of the specified path (including the ".") or std::string::empty.
       /// @remarks If path is empty, GetExtension returns string empty. If path does not have extension information, GetExtension returns string empty ("").
       static xtd::ustring get_extension(const xtd::ustring& path);
-      
-      /// @cond
-      template<typename char_t>
-      static std::basic_string<char_t> get_extension(const char_t* path) {return get_extension(xtd::ustring(path));}
-      /// @endcond
       
       /// @brief Returns the file name and extension of the specified path string.
       /// @param path The path string from which to obtain the file name and extension.
@@ -183,27 +143,12 @@ namespace xtd {
       /// @remarks The separator characters used to determine the start of the file name are directory_separator_char and alt_directory_separator_char.
       static xtd::ustring get_file_name(const xtd::ustring& path);
       
-      /// @cond
-      template<typename char_t>
-      static xtd::ustring get_file_name(const char_t* path) {return get_file_name(xtd::ustring(path));}
-      /// @endcond
-      
       static xtd::ustring get_file_name_without_extension(const xtd::ustring& path);
-      
-      /// @cond
-      template<typename char_t>
-      static xtd::ustring get_file_name_without_extension(const char_t* path) {return get_file_name_without_extension(xtd::ustring(path));}
-      /// @endcond
       
       /// @brief Returns the absolute path for the specified path string.
       /// @param path The file or directory for which to obtain absolute path information.
       /// @return A string containing the fully qualified location of path, such as "C:\\MyFile.txt".
       static xtd::ustring get_full_path(const xtd::ustring& path);
-      
-      /// @cond
-      template<typename char_t>
-      static std::basic_string<char_t> get_full_path(const char_t* path) {return get_full_path(xtd::ustring(path));}
-      /// @endcond;
       
       /// @brief Gets an array containing the characters that are not allowed in path names.
       /// @return An array containing the characters that are not allowed in path names.
@@ -222,11 +167,6 @@ namespace xtd {
       /// @return path is null, or an empty string if path does not contain root directory
       /// @return information.
       static xtd::ustring get_path_root(const xtd::ustring& path);
-      
-      /// @cond
-      template<typename char_t>
-      static std::basic_string<char_t> get_path_root(const char_t* path) noexcept {return get_path_root(xtd::ustring(path));}
-      /// @endcond
       
       /// @brief Returns a random folder name or file name.
       /// @return A random folder name or file name.
@@ -256,22 +196,12 @@ namespace xtd {
       /// @return or more characters; otherwise, false.
       static bool has_extension(const xtd::ustring& path);
       
-      /// @cond
-      template<typename char_t>
-      static bool has_extension(const char_t* path) {return has_extension(xtd::ustring(path));}
-      /// @endcond
-      
       /// @brief Gets a value indicating whether the specified path string contains absolute or relative path information.
       /// @param path The path to test.
       /// @return true if path contains an absolute path; otherwise, false.
       /// @remarks This method also returns false if path is empty or an invalid path.
       /// @remarks If the caller does not have sufficient permissions to read the specified file, no exception is thrown and the method returns false regardless of the existence of path.
       static bool is_path_rooted(const xtd::ustring& path);
-      
-      /// @cond
-      template<typename char_t>
-      static bool is_path_rooted(const char* path) noexcept {return is_path_rooted(xtd::ustring(path));}
-      /// @endcond
       
       /// @brief A platform-specific separator character used to separate path strings in environment variables.
       /// @par Examples
