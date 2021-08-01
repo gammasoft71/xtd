@@ -17,7 +17,10 @@ stream_reader::stream_reader(istream& stream) : stream_(&stream) {
 }
 
 stream_reader::~stream_reader() {
-  if (delete_when_destroy_ && stream_) delete stream_;
+  if (delete_when_destroy_ && stream_) {
+    if (stream_ && dynamic_cast<ifstream*>(stream_)) static_cast<ifstream*>(stream_)->close();
+    delete stream_;
+  }
 }
 
 optional<reference_wrapper<istream>> stream_reader::base_stream() const {

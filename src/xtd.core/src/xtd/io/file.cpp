@@ -1,4 +1,8 @@
+#include "../../../include/xtd/argument_exception.h"
+#include "../../../include/xtd/diagnostics/stack_frame.h"
 #include "../../../include/xtd/io/file.h"
+#include "../../../include/xtd/io/file_not_found_exception.h"
+#include "../../../include/xtd/io/path.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/file.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
@@ -7,50 +11,34 @@ using namespace std;
 using namespace xtd;
 using namespace io;
 
-ofstream file::append_text(const ustring& path) noexcept {
-  try {
-    return ofstream(path, ios::app);
-  } catch(...) {
-    return ofstream();
-  }
+ofstream file::append_text(const ustring& path) {
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
+  if (!exists(string(path))) throw file_not_found_exception(csf_);
+  return ofstream(path, ios::out|ios::app);
 }
 
-bool file::copy(const ustring& src, const ustring& dest) {
+void file::copy(const ustring& src, const ustring& dest) {
   return copy(src, dest, true);
 }
 
-bool file::copy(const ustring& src, const ustring& dest, bool overwrite) {
-  try {
-    if (exists(dest) && overwrite == false) return false;
-#if defined(__cpp_lib_filesystem)
-    filesystem::copy(filesystem::path(string(src)), filesystem::path(string(dest)), filesystem::copy_options::overwrite_existing);
-    return true;
-#else
-    ifstream file_src(src, ios::binary);
-    ofstream file_dest(dest, ios::binary);
-    file_dest << file_src.rdbuf();
-    return true;
-#endif
-  }
-  catch (...) {
-    return false;
-  }
+void file::copy(const ustring& src, const ustring& dest, bool overwrite) {
+  if (src.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
+  if (dest.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
+  if (!exists(string(src))) throw file_not_found_exception(csf_);
+  if (exists(dest) && overwrite == false) throw argument_exception(csf_);
+  ifstream file_src(src, ios::binary);
+  ofstream file_dest(dest, ios::binary);
+  file_dest << file_src.rdbuf();
 }
 
-ofstream file::create(const ustring& path) noexcept {
-  try {
-    return ofstream(path, ios::binary | ios::out);
-  } catch(...) {
-    return ofstream();
-  }
+ofstream file::create(const ustring& path) {
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
+  return ofstream(path, ios::binary | ios::out);
 }
 
-ofstream file::create_text(const ustring& path) noexcept {
-  try {
-    return ofstream(path);
-  } catch(...) {
-    return ofstream();
-  }
+ofstream file::create_text(const ustring& path) {
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
+  return ofstream(path);
 }
 
 bool file::exists(const ustring& path) noexcept {
@@ -61,19 +49,15 @@ bool file::exists(const ustring& path) noexcept {
   }
 }
 
-file_attributes file::get_attributes(const ustring& src) noexcept {
+file_attributes file::get_attributes(const ustring& src) {
+  if (!exists(string(src))) throw file_not_found_exception(csf_);
   return (file_attributes) native::file::get_attributes(src.c_str());
 }
 
 bool file::move(const ustring& src, const ustring& dest) noexcept {
   try {
     if (exists(dest)) return false;
-#if defined(__cpp_lib_filesystem)
-    std::filesystem::rename(src.c_str(), dest.c_str());
-    return true;
-#else
     return ::rename(src.c_str(), dest.c_str()) == 0;
-#endif
   } catch(...) {
     return false;
   }
@@ -146,11 +130,11 @@ bool file::remove(const ustring& path) noexcept {
   return ::remove(path.c_str()) == 0;
 }
 
-bool file::replace(const ustring& source_file_name, const ustring& destination_file_name, const ustring& destination_backup_file_name) noexcept {
-  if (!exists(source_file_name) || !exists(destination_file_name)) return false;
-  if (!copy(destination_file_name, destination_backup_file_name)) return false;
-  if (!remove(destination_file_name)) return false;
-  return move(source_file_name, destination_file_name);
+void file::replace(const ustring& source_file_name, const ustring& destination_file_name, const ustring& destination_backup_file_name) {
+  if (!exists(source_file_name) || !exists(destination_file_name)) throw file_not_found_exception(csf_);
+  copy(destination_file_name, destination_backup_file_name);
+  remove(destination_file_name);
+  move(source_file_name, destination_file_name);
 }
 
 ofstream file::write_text(const ustring& path) noexcept {

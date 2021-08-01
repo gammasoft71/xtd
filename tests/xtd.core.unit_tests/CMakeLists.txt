@@ -87,6 +87,7 @@ add_sources(
   src/io/ioexception.cpp
   src/io/path.cpp
   src/io/path_too_long_exception.cpp
+  src/io/stream_writer.cpp
   src/io/string_reader.cpp
 )
 target_type(TEST_APPLICATION)
