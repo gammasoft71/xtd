@@ -18,7 +18,7 @@ namespace xtd {
     public:
       /// @brief Initializes a new instance of the stream_reader class for the specified file name.
       /// @param path The complete file path to be read.
-      string_reader(const std::string& input);
+      string_reader(const xtd::ustring& input);
       
       /// @brief Reads the next character without changing the state of the reader or the character source. Returns the next available character without actually reading it from the input stream.
       /// @return An integer representing the next character to be read, or EOF if no more characters are available or the stream does not support seeking.

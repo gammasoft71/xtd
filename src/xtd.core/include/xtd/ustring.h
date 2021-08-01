@@ -816,25 +816,25 @@ namespace xtd {
     /// @brief Reports the index of the first occurrence in this instance of any character in a specified array of characters.
     /// @param values An unicode character array containing one or more characters to seek
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
-    size_t index_of_any(const std::vector<value_type>& values) noexcept;
+    size_t index_of_any(const std::vector<value_type>& values) const noexcept;
     
     /// @brief Reports the index of the first occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
     /// @param values An unicode character array containing one or more characters to seek
     /// @param start_index The search starting position
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
-    size_t index_of_any(const std::vector<value_type>& values, size_t start_index) noexcept;
+    size_t index_of_any(const std::vector<value_type>& values, size_t start_index) const noexcept;
     
     /// @brief Reports the index of the first occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
     /// @param values An unicode character array containing one or more characters to seek
     /// @param start_index The search starting position
     /// @param count The number of character positions to examine.
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
-    size_t index_of_any(const std::vector<value_type>& values, size_t start_index, size_t count) noexcept;
+    size_t index_of_any(const std::vector<value_type>& values, size_t start_index, size_t count) const noexcept;
     
     /// @cond
-    size_t index_of_any(const std::initializer_list<value_type>& values) noexcept;
-    size_t index_of_any(const std::initializer_list<value_type>& values, size_t start_index) noexcept;
-    size_t index_of_any(const std::initializer_list<value_type>& values, size_t start_index, size_t count) noexcept;
+    size_t index_of_any(const std::initializer_list<value_type>& values) const noexcept;
+    size_t index_of_any(const std::initializer_list<value_type>& values, size_t start_index) const noexcept;
+    size_t index_of_any(const std::initializer_list<value_type>& values, size_t start_index, size_t count) const noexcept;
     /// @endcond
     
     /// @brief Inserts a specified instance of string at a specified index position in this instance.
@@ -955,9 +955,9 @@ namespace xtd {
     size_t last_index_of_any(const std::vector<value_type>& values, size_t start_index, size_t count) const noexcept;
     
     /// @cond
-    size_t last_index_of_any(const std::initializer_list<value_type>& values) noexcept;
-    size_t last_index_of_any(const std::initializer_list<value_type>& values, size_t start_index) noexcept;
-    size_t last_index_of_any(const std::initializer_list<value_type>& values, size_t start_index, size_t count) noexcept;
+    size_t last_index_of_any(const std::initializer_list<value_type>& values) const noexcept;
+    size_t last_index_of_any(const std::initializer_list<value_type>& values, size_t start_index) const noexcept;
+    size_t last_index_of_any(const std::initializer_list<value_type>& values, size_t start_index, size_t count) const noexcept;
     /// @endcond
     
     /// @brief Right-aligns the characters in this string, padding with spaces on the left for a specified total length.

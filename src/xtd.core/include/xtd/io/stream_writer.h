@@ -19,7 +19,7 @@ namespace xtd {
     public:
       /// @brief Initializes a new instance of the stream_writer class for the specified file name.
       /// @param path The complete file path to be read.
-      stream_writer(const std::string& path);
+      stream_writer(const xtd::ustring& path);
       /// @brief Initializes a new instance of the stream_writer class for the specified stream.
       /// @param stream The stream to be read.
       stream_writer(std::ostream& stream);
@@ -41,7 +41,7 @@ namespace xtd {
       /// @brief Writes the specified string value to the text stream.
       /// @param value The value to write
       /// @exception io::ioexception An I/O error occurs.
-      void write(const std::string& value) override;
+      void write(const xtd::ustring& value) override;
 
     private:
       std::ostream* stream_ = nullptr;

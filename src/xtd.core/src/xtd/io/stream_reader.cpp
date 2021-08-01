@@ -8,9 +8,9 @@ using namespace std::filesystem;
 using namespace xtd;
 using namespace xtd::io;
 
-stream_reader::stream_reader(const string& path) : stream_(new ifstream(path)), delete_when_destroy_(true) {
-  if (strings::trim(path, ' ').length() == 0 || ustring(path).index_of_any(path::get_invalid_path_chars()) != string::npos) throw argument_exception(csf_);
-  if (!exists(path)) throw file_not_found_exception(csf_);
+stream_reader::stream_reader(const ustring& path) : stream_(new ifstream(path)), delete_when_destroy_(true) {
+  if (path.trim(' ').length() == 0 || path.index_of_any(path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
+  if (!exists(string(path))) throw file_not_found_exception(csf_);
 }
 
 stream_reader::stream_reader(istream& stream) : stream_(&stream) {

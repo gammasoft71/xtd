@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd::io;
 
-string_reader::string_reader(const string& input) : stream_(input) {
+string_reader::string_reader(const ustring& input) : stream_(input) {
 }
 
 int32_t string_reader::peek() const {

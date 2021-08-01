@@ -1,5 +1,6 @@
 #include "../../../include/xtd/io/text_reader.h"
 
+using namespace xtd;
 using namespace xtd::io;
 
 null_text_reader& text_reader::null() noexcept {
@@ -31,8 +32,8 @@ int32_t text_reader::read_block(char* buffer, int32_t index, int32_t count) {
   return read(buffer, index, count);
 }
 
-std::string text_reader::read_line() {
-  std::string line;
+ustring text_reader::read_line() {
+  ustring line;
   for (int32_t current = read(); current != EOF && current != '\n'; current = read()) {
     if (current == '\r') continue;
     line += static_cast<char>(current);
@@ -40,7 +41,7 @@ std::string text_reader::read_line() {
   return line;
 }
 
-std::string text_reader::read_to_end() {
+ustring text_reader::read_to_end() {
   std::string text;
   for (int32_t current = read(); current != EOF; current = read()) {
     if (current == '\r') continue;
