@@ -20,7 +20,7 @@ namespace xtd {
       string_writer() = default;
       /// @brief Initializes a new instance of the stream_writer class for the specified string.
       /// @param str base string.
-      string_writer(const std::string& str);
+      string_writer(const xtd::ustring& str);
       
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
@@ -38,7 +38,7 @@ namespace xtd {
       /// @brief Writes the specified string value to the text stream.
       /// @param value The value to write
       /// @exception io::ioexception An I/O error occurs.
-      void write(const std::string& value) override;
+      void write(const xtd::ustring& value) override;
     private:
       std::stringstream stream_;
     };

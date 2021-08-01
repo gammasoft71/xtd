@@ -9,6 +9,7 @@
 #include <string>
 #include "../core_export.h"
 #include "../object.h"
+#include "../ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -59,12 +60,12 @@ namespace xtd {
       
       /// @brief Reads a line of characters from the current stream and returns the data as a string.
       /// @return The next line from the input stream, or the empty string if all characters have been read.
-      virtual std::string read_line();
+      virtual xtd::ustring read_line();
       
       /// @brief Reads all characters from the current position to the end of the text_reader and returns them as one string.
       /// @return A string containing all characters from the current position to the end of the text_reader.
       /// @exception io::ioexception An I/O error occurs.
-      virtual std::string read_to_end();
+      virtual xtd::ustring read_to_end();
       
       /// @brief Creates a thread-safe (synchronized) wrapper around the specified text_reader object.
       /// @param reader The text_reader object to synchronize.

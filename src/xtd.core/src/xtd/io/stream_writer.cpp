@@ -8,9 +8,9 @@ using namespace std::filesystem;
 using namespace xtd;
 using namespace xtd::io;
 
-stream_writer::stream_writer(const string& path) : stream_(new ofstream(path)), delete_when_destroy_(true) {
-  if (ustring(path).index_of_any(path::get_invalid_path_chars()) != string::npos) throw argument_exception(csf_);
-  if (!exists(path)) throw file_not_found_exception(csf_);
+stream_writer::stream_writer(const ustring& path) : stream_(new ofstream(path)), delete_when_destroy_(true) {
+  if (path.index_of_any(path::get_invalid_path_chars()) != string::npos) throw argument_exception(csf_);
+  if (!exists(string(path))) throw file_not_found_exception(csf_);
 }
 
 stream_writer::stream_writer(ostream& stream) : stream_(&stream) {
@@ -34,6 +34,6 @@ void stream_writer::flush() {
   if (stream_) stream_->flush();
 }
 
-void stream_writer::write(const std::string& value) {
+void stream_writer::write(const ustring& value) {
   if (stream_) stream_->write(value.c_str(), value.length());
 }

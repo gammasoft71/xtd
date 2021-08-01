@@ -804,15 +804,15 @@ size_t ustring::index_of(const ustring& value, size_t start_index, size_t count)
   return result > start_index + count ? npos : result;
 }
 
-size_t ustring::index_of_any(const std::vector<value_type>& values) noexcept {
+size_t ustring::index_of_any(const std::vector<value_type>& values) const noexcept {
   return index_of_any(values, 0, size());
 }
 
-size_t ustring::index_of_any(const std::vector<value_type>& values, size_t start_index) noexcept {
+size_t ustring::index_of_any(const std::vector<value_type>& values, size_t start_index) const noexcept {
   return index_of_any(values, start_index, size() - start_index);
 }
 
-size_t ustring::index_of_any(const std::vector<value_type>& values, size_t start_index, size_t count) noexcept {
+size_t ustring::index_of_any(const std::vector<value_type>& values, size_t start_index, size_t count) const noexcept {
   size_t index = 0;
   for (const auto& item : *this) {
     if (index++ < start_index) continue;
@@ -822,15 +822,15 @@ size_t ustring::index_of_any(const std::vector<value_type>& values, size_t start
   return npos;
 }
 
-size_t ustring::index_of_any(const std::initializer_list<value_type>& values) noexcept {
+size_t ustring::index_of_any(const std::initializer_list<value_type>& values) const noexcept {
   return index_of_any(std::vector<value_type>(values));
 }
 
-size_t ustring::index_of_any(const std::initializer_list<value_type>& values, size_t start_index) noexcept {
+size_t ustring::index_of_any(const std::initializer_list<value_type>& values, size_t start_index) const noexcept {
   return index_of_any(std::vector<value_type>(values), start_index);
 }
 
-size_t ustring::index_of_any(const std::initializer_list<value_type>& values, size_t start_index, size_t count) noexcept {
+size_t ustring::index_of_any(const std::initializer_list<value_type>& values, size_t start_index, size_t count) const noexcept {
   return index_of_any(std::vector<value_type>(values), start_index, count);
 }
 
@@ -888,15 +888,15 @@ size_t ustring::last_index_of_any(const std::vector<value_type>& values, size_t 
   return npos;
 }
 
-size_t ustring::last_index_of_any(const std::initializer_list<value_type>& values) noexcept {
+size_t ustring::last_index_of_any(const std::initializer_list<value_type>& values) const noexcept {
   return last_index_of_any(std::vector<value_type>(values));
 }
 
-size_t ustring::last_index_of_any(const std::initializer_list<value_type>& values, size_t start_index) noexcept {
+size_t ustring::last_index_of_any(const std::initializer_list<value_type>& values, size_t start_index) const noexcept {
   return last_index_of_any(std::vector<value_type>(values), start_index);
 }
 
-size_t ustring::last_index_of_any(const std::initializer_list<value_type>& values, size_t start_index, size_t count) noexcept {
+size_t ustring::last_index_of_any(const std::initializer_list<value_type>& values, size_t start_index, size_t count) const noexcept {
   return last_index_of_any(std::vector<value_type>(values), start_index, count);
 }
 

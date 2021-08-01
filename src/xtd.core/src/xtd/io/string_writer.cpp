@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd::io;
 
-string_writer::string_writer(const string& str) {
+string_writer::string_writer(const ustring& str) {
   write(str);
 }
 
@@ -23,6 +23,6 @@ string string_writer::to_string() const noexcept {
   return stream_.str();
 }
 
-void string_writer::write(const string& value) {
+void string_writer::write(const ustring& value) {
   stream_.write(value.c_str(), value.length());
 }
