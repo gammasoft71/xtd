@@ -58,7 +58,7 @@ namespace xtdc_gui {
     
     static std::string get_description(const std::filesystem::path& readme_md) {
       if (!std::filesystem::exists(readme_md)) return "";
-      auto content = xtd::io::file::read_all_lines(readme_md);
+      auto content = xtd::io::file::read_all_lines(readme_md.string());
       if (content.size() < 2) return "";
       return content[2];
     }
