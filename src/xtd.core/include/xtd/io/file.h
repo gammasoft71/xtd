@@ -11,6 +11,8 @@
 #include "../static.h"
 #include "../ustring.h"
 #include "file_attributes.h"
+#include "stream_reader.h"
+#include "stream_writer.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -26,95 +28,79 @@ namespace xtd {
       /// @param path The file to write to.
       /// @param contents The lines to append to the file.
       /// @return true if the text appended; otherwise, false.
-      /// @remarks This method also returns false if path is empty or an invalid path.
-      /// @remarks This method also returns false if the caller has not the required permissions.
+      /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path.
+      /// @exception xtd::io::ioexception the handle of the specified file cannot be opened.
       /// @remarks If the target file already exists, it is overwritten.
       template<typename type_t>
-      static bool append_all_lines(const xtd::ustring& path, type_t contents) noexcept {
-        try {
-          std::ofstream file(path, std::ios::app);
-          for (const auto& line : contents)
-            file << line << std::endl;
-          return true;
-        } catch(...) {
-          return false;
-        }
+      static void append_all_lines(const xtd::ustring& path, type_t contents) {
+        xtd::io::stream_writer sw(path, true);
+        for (const auto& line : contents)
+          sw.write_line(line);
       }
       
       /// @brief Appends lines to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.
       /// @param path The file to write to.
       /// @param contents The lines to append to the file.
       /// @return true if the text appended; otherwise, false.
-      /// @remarks This method also returns false if path is empty or an invalid path.
-      /// @remarks This method also returns false if the caller has not the required permissions.
+      /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path.
+      /// @exception xtd::io::ioexception the handle of the specified file cannot be opened.
       /// @remarks If the target file already exists, it is overwritten.
       template<typename type_t>
-      static bool append_all_lines(const xtd::ustring& path, const std::initializer_list<type_t>& contents) noexcept {
-        try {
-          std::ofstream file(path, std::ios::app);
-          for (const auto& line : contents)
-            file << line << std::endl;
-          return true;
-        } catch(...) {
-          return false;
-        }
+      static void append_all_lines(const xtd::ustring& path, const std::initializer_list<type_t>& contents) {
+        xtd::io::stream_writer sw(path, true);
+        for (const auto& line : contents)
+          sw.write_line(line);
       }
       
       /// @brief Appends text to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.
       /// @param path The file to write to.
       /// @param contents The text to append to the file.
       /// @return true if the text appended; otherwise, false.
-      /// @remarks This method also returns false if path is empty or an invalid path.
-      /// @remarks This method also returns false if the caller has not the required permissions.
+      /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path.
+      /// @exception xtd::io::ioexception the handle of the specified file cannot be opened.
       template<typename type_t>
-      static bool append_all_text(const xtd::ustring& path, type_t text) noexcept {
-        try {
-          std::ofstream file(path, std::ios::app);
-          file << text;
-          return true;
-        } catch(...) {
-          return false;
-        }
+      static void append_all_text(const xtd::ustring& path, type_t text) {
+        xtd::io::stream_writer sw(path, true);
+        sw.write(text);
       }
       
       /// @brief Creates a std::ofstream that appends text to an existing file.
       /// @param path The path to the file to append to.
       /// @return A std::ofstream that appends text to an existing file.
-      /// @remarks This method also returns an empty std::ofstream if path is empty or an invalid path.
-      /// @remarks This method also returns an empty std::ofstream if the caller has not the required permissions.
-      static std::ofstream append_text(const xtd::ustring& path) noexcept;
+      /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path.
+      /// @exception xtd::io::ioexception the handle of the specified file cannot be opened.
+      static std::ofstream append_text(const xtd::ustring& path);
       
       /// @brief Copies an existing file to a new file. Overwriting a file of the same name is not allowed.
       /// @param src The file to be opened for reading.
       /// @param dest The name of the destination file. This cannot be a directory or an existing file.
-      /// @return true if the text appended; otherwise, false.
-      /// @remarks This method also returns false if path is empty or an invalid path.
-      /// @remarks This method also returns false if the caller has not the required permissions.
-      static bool copy(const xtd::ustring& src, const xtd::ustring& dest);
+      /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path.
+      /// @exception xtd::io::file_not_found_exception if file src does not exists.
+      /// @exception xtd::io::ioexception the handle of the specified file cannot be opened.
+      static void copy(const xtd::ustring& src, const xtd::ustring& dest);
   
       /// @brief Copies an existing file to a new file. Overwriting a file of the same name is allowed.
       /// @param src The file to be opened for reading.
       /// @param dest The name of the destination file. This cannot be a directory.
       /// @param overwrite true if the destination file can be overwritten; otherwise, false.
-      /// @return true if the text appended; otherwise, false.
-      /// @remarks This method also returns false if path is empty or an invalid path.
-      /// @remarks This method also returns false if the caller has not the required permissions.
-      static bool copy(const xtd::ustring& src, const xtd::ustring& dest, bool overwrite);
+      /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path -or- file dest exists.
+      /// @exception xtd::io::ioexception the handle of the specified file cannot be opened.
+      static void copy(const xtd::ustring& src, const xtd::ustring& dest, bool overwrite);
       
       /// @brief Creates or overwrites a file in the specified path.
       /// @param The path and name of the file to create.
       /// @return A std::ofstream that provides read/write access to the file specified in path.
-      /// @remarks This method also returns an empty std::ofstream if path is empty or an invalid path.
-      /// @remarks This method also returns an empty std::ofstream if the caller has not the required permissions.
-      static std::ofstream create(const xtd::ustring& path) noexcept;
+      /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path -or- file dest exists.
+      /// @exception xtd::io::ioexception the handle of the specified file cannot be created.
+      static std::ofstream create(const xtd::ustring& path);
 
       /// @brief Creates or opens a file for writing text.
       /// @brief Creates or overwrites a file in the specified path.
       /// @param The path and name of the file to create.
       /// @return A std::ofstream that provides read/write access to the file specified in path.
-      /// @remarks This method also returns an empty std::ofstream if path is empty or an invalid path.
-      /// @remarks This method also returns an empty std::ofstream if the caller has not the required permissions.
-      static std::ofstream create_text(const xtd::ustring& path) noexcept;
+      /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path -or- file dest exists.
+      /// @exception xtd::io::ioexception the handle of the specified file cannot be created.
+      static std::ofstream create_text(const xtd::ustring& path);
 
       /// @brief Determines whether the specified file exists.
       /// @param path The file to check.
@@ -126,8 +112,8 @@ namespace xtd {
       /// @brief Gets the xtd::io::file_attributes of the file on the path.
       /// @param src The path to the file.
       /// @return The xtd::io::file_attributes of the file on the path.
-      /// @remarks Return (xtd::io::file_attributes)-1, if src is string empty or src contains one or more of the invalid characters or the system could not retrieve the absolute path.
-      static xtd::io::file_attributes get_attributes(const xtd::ustring& src) noexcept;
+      /// @exception xtd::io::file_not_found_exception if file src does not exists.
+      static xtd::io::file_attributes get_attributes(const xtd::ustring& src);
 
       /// @brief Moves a specified file to a new location, providing the option to specify a new file name.
       /// @param src The name of the file to move.
@@ -198,7 +184,7 @@ namespace xtd {
       /// @param destination_backup_file_name The name of the backup file.
       /// @param ignore_metadata_errors true to ignore merge errors (such as attributes and access control lists (ACLs)) from the replaced file to the replacement file; otherwise, false.
       /// @return false source_file_name does not exist or bad format, or destination_file_name does not exist or bad format, or if ignore_metadata_errors equal false and destination_backup_file_name bad format or on ani io error; otherwise true.
-      static bool replace(const xtd::ustring& source_file_name, const xtd::ustring& destination_file_name, const xtd::ustring& destination_backup_file_name) noexcept;
+      static void replace(const xtd::ustring& source_file_name, const xtd::ustring& destination_file_name, const xtd::ustring& destination_backup_file_name);
 
       /// @brief Writes lines to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.
       /// @param path The file to write to.
