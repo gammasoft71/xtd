@@ -394,8 +394,8 @@ namespace unit_tests {
     }
     
     void test_method_(write_all_lines) {
-      assert::is_true(file::write_all_lines(test_file_name, {"Line 1"}), line_info_);
-      assert::is_true(file::write_all_lines(test_file_name, {"Line 2", "Line 3"}), line_info_);
+      assert::does_not_throw([] {file::write_all_lines(test_file_name, {"Line 1"});}, line_info_);
+      assert::does_not_throw([] {file::write_all_lines(test_file_name, {"Line 2", "Line 3"});}, line_info_);
       
       ifstream file(test_file_name);
       string contents {istreambuf_iterator<char> {file}, istreambuf_iterator<char> {}};
@@ -403,8 +403,8 @@ namespace unit_tests {
     }
 
     void test_method_(write_all_text) {
-      assert::is_true(file::write_all_text(test_file_name, "This is a text "), line_info_);
-      assert::is_true(file::write_all_text(test_file_name, "to write"), line_info_);
+      assert::does_not_throw([] {file::write_all_text(test_file_name, "This is a text ");}, line_info_);
+      assert::does_not_throw([] {file::write_all_text(test_file_name, "to write");}, line_info_);
       
       ifstream file(test_file_name);
       string contents {istreambuf_iterator<char> {file}, istreambuf_iterator<char> {}};

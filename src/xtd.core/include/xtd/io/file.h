@@ -190,63 +190,48 @@ namespace xtd {
       /// @param path The file to write to.
       /// @param contents The lines to write to the file.
       /// @return true if the text written; otherwise, false.
-      /// @remarks This method also returns false if path is empty or an invalid path.
-      /// @remarks This method also returns false if the caller has not the required permissions.
+      /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path.
+      /// @exception xtd::io::ioexception the handle of the specified file cannot be opened.
       /// @remarks If the target file already exists, it is overwritten.
       template<typename type_t>
-      static bool write_all_lines(const xtd::ustring& path, type_t contents) noexcept {
-        try {
-          std::ofstream file(path);
-          for (const auto& line : contents)
-            file << line << std::endl;
-          return true;
-        } catch(...) {
-          return false;
-        }
+      static void write_all_lines(const xtd::ustring& path, type_t contents) {
+        xtd::io::stream_writer sw(path);
+        for (const auto& line : contents)
+          sw.write_line(line);
       }
  
       /// @brief Writes lines to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.
       /// @param path The file to write to.
       /// @param contents The lines to write to the file.
       /// @return true if the text written; otherwise, false.
-      /// @remarks This method also returns false if path is empty or an invalid path.
-      /// @remarks This method also returns false if the caller has not the required permissions.
+      /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path.
+      /// @exception xtd::io::ioexception the handle of the specified file cannot be opened.
       /// @remarks If the target file already exists, it is overwritten.
       template<typename type_t>
-      static bool write_all_lines(const xtd::ustring& path, const std::initializer_list<type_t>& contents) noexcept {
-        try {
-          std::ofstream file(path);
-          for (const auto& line : contents)
-            file << line << std::endl;
-          return true;
-        } catch(...) {
-          return false;
-        }
+      static void write_all_lines(const xtd::ustring& path, const std::initializer_list<type_t>& contents) {
+        xtd::io::stream_writer sw(path);
+        for (const auto& line : contents)
+          sw.write_line(line);
       }
 
       /// @brief Writes text to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.
       /// @param path The file to write to.
       /// @param contents The text to write to the file.
       /// @return true if the text written; otherwise, false.
-      /// @remarks This method also returns false if path is empty or an invalid path.
-      /// @remarks This method also returns false if the caller has not the required permissions.
+      /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path.
+      /// @exception xtd::io::ioexception the handle of the specified file cannot be opened.
       template<typename type_t>
-      static bool write_all_text(const xtd::ustring& path, type_t text) noexcept {
-        try {
-          std::ofstream file(path);
-          file << text;
-          return true;
-        } catch(...) {
-          return false;
-        }
+      static void write_all_text(const xtd::ustring& path, type_t text) {
+        xtd::io::stream_writer sw(path);
+        sw.write(text);
       }
    
       /// @brief Creates a std::ofstream that appends text to an existing file.
       /// @param path The path to the file to write to.
       /// @return A std::ofstream that writes text to an existing file.
-      /// @remarks This method also returns an empty std::ofstream if path is empty or an invalid path.
-      /// @remarks This method also returns an empty std::ofstream if the caller has not the required permissions.
-      static std::ofstream write_text(const xtd::ustring& path) noexcept;
+      /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path.
+      /// @exception xtd::io::ioexception the handle of the specified file cannot be opened.
+      static std::ofstream write_text(const xtd::ustring& path);
     };
   }
 }
