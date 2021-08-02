@@ -119,64 +119,76 @@ namespace xtd {
       /// @param src The name of the file to move.
       /// @param dest The new path for the file.
       /// @return true if the file moved; otherwise, false.
-      /// @remarks This method also returns false if dest already exist.
-      /// @remarks This method also returns false if path is empty or an invalid path.
-      /// @remarks This method also returns false if the caller has not the required permissions.
-      static bool move(const xtd::ustring& src, const xtd::ustring& dest) noexcept;
+      /// @exception xtd::argument_exception if dest already exist.
+      /// @exception xtd::io::ioexception if path is empty or an invalid path.
+      /// @exception xtd::io::ioexception if the caller has not the required permissions.
+      static void move(const xtd::ustring& src, const xtd::ustring& dest);
       
       /// @brief Opens a FileStream on the specified path.
       /// @param path The file to open.
       /// @param mode A std::ios::openmode value that specifies whether a file is created if one does not exist, and determines whether the contents of existing files are retained or overwritten.
       /// @return A std::fstream on the specified path.
-      /// @remarks This method also returns an empty std::fstream if path is empty or an invalid path.
-      /// @remarks This method also returns an empty std::fstream if the caller has not the required permissions.
-      static std::fstream open(const xtd::ustring& path, std::ios::openmode mode) noexcept;
+      /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path.
+      /// @exception xtd::io::ioexception the handle of the specified file cannot be opened.
+      static std::fstream open(const xtd::ustring& path, std::ios::openmode mode);
 
       /// @brief Opens an existing file for reading.
       /// @param path The file to be opened for reading.
       /// @return A std::ifstream on the specified path.
-      /// @remarks This method also returns an empty std::ifstream if path is empty or an invalid path.
-      /// @remarks This method also returns an empty std::ifstream if the caller has not the required permissions.
-      static std::ifstream open_read(const xtd::ustring& path) noexcept;
+      /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path.
+      /// @exception xtd::io::ioexception the handle of the specified file cannot be opened.
+      static std::ifstream open_read(const xtd::ustring& path);
       
       /// @brief Opens an existing file for reading.
       /// @param path The file to be opened for reading.
       /// @return A std::ifstream on the specified path.
-      /// @remarks This method also returns an empty std::ifstream if path is empty or an invalid path.
-      /// @remarks This method also returns an empty std::ifstream if the caller has not the required permissions.
-      static std::ifstream open_text(const xtd::ustring& path) noexcept;
+      /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path.
+      /// @exception xtd::io::ioexception the handle of the specified file cannot be opened.
+      static std::ifstream open_text(const xtd::ustring& path);
 
       /// @brief Opens an existing file for writing.
       /// @param path The file to be opened for writing.
       /// @return A std::ofstream on the specified path.
-      /// @remarks This method also returns an empty std::oifstream if path is empty or an invalid path.
-      /// @remarks This method also returns an empty std::ofstream if the caller has not the required permissions.
-      static std::ofstream open_write(const xtd::ustring& path) noexcept;
+      /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path.
+      /// @exception xtd::io::ioexception the handle of the specified file cannot be opened.
+      static std::ofstream open_write(const xtd::ustring& path);
     
-      static std::vector<uint8_t> read_all_bytes(const xtd::ustring& path) noexcept;
+      /// @brief Opens a binary file, reads the contents of the file into a byte array, and then closes the file.
+      /// @param path The file to open for reading.
+      /// @return A byte array containing the contents of the file.
+      /// @exception xtd::io::file_not_found_exception if path does not exists.
+      /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path.
+      /// @exception xtd::io::ioexception the handle of the specified file cannot be opened.
+      static std::vector<uint8_t> read_all_bytes(const xtd::ustring& path);
 
+      /// @brief Opens a binary file, reads the contents of the file into a byte array, and then closes the file.
+      /// @param path The file to open for reading.
+      /// @return A byte array containing the contents of the file.
+      /// @exception xtd::io::file_not_found_exception if path does not exists.
+      /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path.
+      /// @exception xtd::io::ioexception the handle of the specified file cannot be opened.
       template<typename char_t>
-      static std::vector<uint8_t> read_all_bytes(const char_t* path) noexcept {return read_all_bytes(xtd::ustring(path));}
+      static std::vector<uint8_t> read_all_bytes(const char_t* path) {return read_all_bytes(xtd::ustring(path));}
       
       /// @brief Opens a text file, reads all lines of the file, and then closes the file.
       /// @param path The file to open for reading.
       /// @return A String array containing all lines of the file.
       /// @remarks This method also returns an empty array if path is empty or an invalid path.
       /// @remarks If the caller does not have sufficient permissions to read the specified file, no exception is thrown and the method returns an empty array regardless of the existence of path.
-      static std::vector<xtd::ustring> read_all_lines(const xtd::ustring& path) noexcept;
+      static std::vector<xtd::ustring> read_all_lines(const xtd::ustring& path);
 
       /// @brief Opens a text file, reads all text of the file, and then closes the file.
       /// @param path The file to open for reading.
       /// @return A dstring containing all text of the file.
       /// @remarks This method also returns empty string if path is empty or an invalid path.
       /// @remarks If the caller does not have sufficient permissions to read the specified file, no exception is thrown and the method returns empty string regardless of the existence of file.
-      static xtd::ustring read_all_text(const xtd::ustring& path) noexcept;
+      static xtd::ustring read_all_text(const xtd::ustring& path);
 
       /// @brief Deletes the specified file.
       /// @param path The name of the file to be deleted.
       /// @return std::ofstream An unshared std::ofstream that provides access to the specified file, with the specified mode and access.
       /// @return true if the file is deleted; otherwise, false.
-      static bool remove(const xtd::ustring& path) noexcept;
+      static void remove(const xtd::ustring& path);
       
       /// @brief Replaces the contents of a specified file with the contents of another file, deleting the original file, and creating a backup of the replaced file and optionally ignores merge errors.
       /// @param source_file_name The name of a file that replaces the file specified by destination_file_name.
