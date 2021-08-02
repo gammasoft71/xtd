@@ -28,7 +28,7 @@ void settings::reset(intptr_t config) {
 
 std::string settings::read(intptr_t config, const std::string& key, const std::string& default_value) {
   if (!config) return "";
-  return reinterpret_cast<wxConfig*>(config)->Read(key, {default_value.c_str(), wxMBConvUTF8()}).utf8_str().data();
+  return reinterpret_cast<wxConfig*>(config)->Read(key, {default_value.c_str(), wxMBConvUTF8()}).utf8_string();
 }
 
 void settings::save(intptr_t config) {

@@ -40,7 +40,7 @@ rectangle screen::bounds(size_t index) {
 
 std::string screen::device_name(size_t index) {
   application::initialize();
-  std::string device_name = wxDisplay(static_cast<int32_t>(index)).GetName().utf8_str().data();
+  std::string device_name = wxDisplay(static_cast<int32_t>(index)).GetName().utf8_string();
   return device_name.empty() ? strings::format("\\\\.\\DISPLAY{}", index + 1) : device_name;
 }
 
