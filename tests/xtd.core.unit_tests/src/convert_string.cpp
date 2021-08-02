@@ -258,8 +258,8 @@ namespace unit_tests {
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0x1F428)}, convert_string::to_wstring("aeiouàçéèêëïî\U0001F428"), line_info_);
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0x1F428)}, convert_string::to_wstring(const_cast<char*>("aeiouàçéèêëïî\U0001F428")), line_info_);
       } else {
-        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD87D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring("aeiouàçéèêëïî\U0001F428"), line_info_);
-        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD87D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(const_cast<char*>("aeiouàçéèêëïî\U0001F428")), line_info_);
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD83D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring("aeiouàçéèêëïî\U0001F428"), line_info_);
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD83D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(const_cast<char*>("aeiouàçéèêëïî\U0001F428")), line_info_);
       }
     }
     
@@ -268,8 +268,8 @@ namespace unit_tests {
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0x1F428)}, convert_string::to_wstring(u8"aeiouàçéèêëïî\U0001F428"), line_info_);
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0x1F428)}, convert_string::to_wstring(const_cast<char8_t*>(u8"aeiouàçéèêëïî\U0001F428")), line_info_);
       } else {
-        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD87D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(u8"aeiouàçéèêëïî\U0001F428"), line_info_);
-        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD87D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(const_cast<char8_t*>(u8"aeiouàçéèêëïî\U0001F428")), line_info_);
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD83D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(u8"aeiouàçéèêëïî\U0001F428"), line_info_);
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD83D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(const_cast<char8_t*>(u8"aeiouàçéèêëïî\U0001F428")), line_info_);
       }
     }
     
@@ -278,8 +278,8 @@ namespace unit_tests {
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0x1F428)}, convert_string::to_wstring(u"aeiouàçéèêëïî\U0001F428"), line_info_);
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0x1F428)}, convert_string::to_wstring(const_cast<char16_t*>(u"aeiouàçéèêëïî\U0001F428")), line_info_);
       } else {
-        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD87D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(u"aeiouàçéèêëïî\U0001F428"), line_info_);
-        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD87D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(const_cast<char16_t*>(u"aeiouàçéèêëïî\U0001F428")), line_info_);
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD83D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(u"aeiouàçéèêëïî\U0001F428"), line_info_);
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD83D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(const_cast<char16_t*>(u"aeiouàçéèêëïî\U0001F428")), line_info_);
       }
     }
     
@@ -288,8 +288,8 @@ namespace unit_tests {
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0x1F428)}, convert_string::to_wstring(U"aeiouàçéèêëïî\U0001F428"), line_info_);
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0x1F428)}, convert_string::to_wstring(const_cast<char32_t*>(U"aeiouàçéèêëïî\U0001F428")), line_info_);
       } else {
-        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD87D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(U"aeiouàçéèêëïî\U0001F428"), line_info_);
-        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD87D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(const_cast<char32_t*>(U"aeiouàçéèêëïî\U0001F428")), line_info_);
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD83D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(U"aeiouàçéèêëïî\U0001F428"), line_info_);
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD83D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(const_cast<char32_t*>(U"aeiouàçéèêëïî\U0001F428")), line_info_);
       }
     }
     
@@ -298,8 +298,8 @@ namespace unit_tests {
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0x1F428)}, convert_string::to_wstring(L"aeiouàçéèêëïî\U0001F428"), line_info_);
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0x1F428)}, convert_string::to_wstring(const_cast<wchar_t*>(L"aeiouàçéèêëïî\U0001F428")), line_info_);
       } else {
-        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD87D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(L"aeiouàçéèêëïî\U0001F428"), line_info_);
-        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD87D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(const_cast<wchar_t*>(L"aeiouàçéèêëïî\U0001F428")), line_info_);
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD83D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(L"aeiouàçéèêëïî\U0001F428"), line_info_);
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD83D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(const_cast<wchar_t*>(L"aeiouàçéèêëïî\U0001F428")), line_info_);
       }
     }
     
@@ -307,42 +307,42 @@ namespace unit_tests {
       if (sizeof(wchar_t) > 2)
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0x1F428)}, convert_string::to_wstring(ustring("aeiouàçéèêëïî\U0001F428")), line_info_);
       else
-        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD87D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(ustring("aeiouàçéèêëïî\U0001F428")), line_info_);
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD83D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(ustring("aeiouàçéèêëïî\U0001F428")), line_info_);
     }
     
     void test_method_(string_to_wstring) {
       if (sizeof(wchar_t) > 2)
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0x1F428)}, convert_string::to_wstring(string("aeiouàçéèêëïî\U0001F428")), line_info_);
       else
-        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD87D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(string("aeiouàçéèêëïî\U0001F428")), line_info_);
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD83D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(string("aeiouàçéèêëïî\U0001F428")), line_info_);
     }
     
     void test_method_(u8string_to_wstring) {
       if (sizeof(wchar_t) > 2)
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0x1F428)}, convert_string::to_wstring(u8string(u8"aeiouàçéèêëïî\U0001F428")), line_info_);
       else
-        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD87D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(u8string(u8"aeiouàçéèêëïî\U0001F428")), line_info_);
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD83D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(u8string(u8"aeiouàçéèêëïî\U0001F428")), line_info_);
     }
     
     void test_method_(u16string_to_wstring) {
       if (sizeof(wchar_t) > 2)
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0x1F428)}, convert_string::to_wstring(u16string(u"aeiouàçéèêëïî\U0001F428")), line_info_);
       else
-        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD87D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(u16string(u"aeiouàçéèêëïî\U0001F428")), line_info_);
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD83D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(u16string(u"aeiouàçéèêëïî\U0001F428")), line_info_);
     }
     
     void test_method_(u32string_to_wstring) {
       if (sizeof(wchar_t) > 2)
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0x1F428)}, convert_string::to_wstring(u32string(U"aeiouàçéèêëïî\U0001F428")), line_info_);
       else
-        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD87D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(u32string(U"aeiouàçéèêëïî\U0001F428")), line_info_);
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD83D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(u32string(U"aeiouàçéèêëïî\U0001F428")), line_info_);
     }
     
     void test_method_(wstring_to_wstring) {
       if (sizeof(wchar_t) > 2)
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0x1F428)}, convert_string::to_wstring(wstring(L"aeiouàçéèêëïî\U0001F428")), line_info_);
       else
-        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD87D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(wstring(L"aeiouàçéèêëïî\U0001F428")), line_info_);
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar_t>(0xD83D), static_cast<wchar_t>(0xDC28)}, convert_string::to_wstring(wstring(L"aeiouàçéèêëïî\U0001F428")), line_info_);
     }
   };
 }
