@@ -144,10 +144,10 @@ size_t image::frame_resolutions(intptr_t image) {
 float image::horizontal_resolution(intptr_t image) {
   if (!reinterpret_cast<wxImage*>(image)->HasOption(wxIMAGE_OPTION_RESOLUTIONX))
     return 96.0f;
-  float horizontal_resolution = xtd::strings::parse<float>(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONX).utf8_str().data());
+  float horizontal_resolution = xtd::strings::parse<float>(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONX).utf8_string());
   if (!reinterpret_cast<wxImage*>(image)->HasOption(wxIMAGE_OPTION_RESOLUTIONUNIT))
     return horizontal_resolution;
-  if (xtd::strings::parse<int>(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONUNIT).utf8_str().data()) == wxIMAGE_RESOLUTION_CM)
+  if (xtd::strings::parse<int>(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONUNIT).utf8_string()) == wxIMAGE_RESOLUTION_CM)
     horizontal_resolution *= 2.54f;
   return horizontal_resolution;
 }
@@ -184,10 +184,10 @@ void image::size(intptr_t image, int32_t& width, int32_t& height) {
 float image::vertical_resolution(intptr_t image) {
   if (!reinterpret_cast<wxImage*>(image)->HasOption(wxIMAGE_OPTION_RESOLUTIONY))
     return 96.0f;
-  float vertical_resolution = xtd::strings::parse<float>(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONY).utf8_str().data());
+  float vertical_resolution = xtd::strings::parse<float>(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONY).utf8_string());
   if (!reinterpret_cast<wxImage*>(image)->HasOption(wxIMAGE_OPTION_RESOLUTIONUNIT))
     return vertical_resolution;
-  if (xtd::strings::parse<int>(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONUNIT).utf8_str().data()) == wxIMAGE_RESOLUTION_CM)
+  if (xtd::strings::parse<int>(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONUNIT).utf8_string()) == wxIMAGE_RESOLUTION_CM)
     vertical_resolution *= 2.54f;
   return vertical_resolution;
 }

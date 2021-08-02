@@ -251,7 +251,7 @@ void control::size(intptr_t control, const drawing::size& size) {
 
 std::string control::text(intptr_t control) {
   if (control == 0) return {};
-  return reinterpret_cast<control_handler*>(control)->control()->GetLabel().utf8_str().data();
+  return reinterpret_cast<control_handler*>(control)->control()->GetLabel().utf8_string();
 }
 
 void control::text(intptr_t control, const std::string& text) {
