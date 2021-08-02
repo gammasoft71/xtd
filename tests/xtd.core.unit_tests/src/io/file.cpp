@@ -134,7 +134,7 @@ namespace unit_tests {
     
     void test_method_(move) {
       assert::does_not_throw([] {file::append_all_text(test_file_name, "Text");}, line_info_);
-      assert::is_true(file::move(test_file_name, "file2.txt"), line_info_);
+      assert::does_not_throw([] {file::move(test_file_name, "file2.txt");}, line_info_);
       
       assert::is_false(ifstream(test_file_name).good(), line_info_);
       ifstream file("file2.txt");
@@ -148,7 +148,7 @@ namespace unit_tests {
       existing_file << "Existing";
       existing_file.close();
       assert::does_not_throw([] {file::append_all_text(test_file_name, "Text");}, line_info_);
-      assert::is_false(file::move(test_file_name, "file2.txt"), line_info_);
+      assert::throws<argument_exception>([] {file::move(test_file_name, "file2.txt");}, line_info_);
       
       assert::is_true(ifstream(test_file_name).good(), line_info_);
       ifstream file(test_file_name);
@@ -172,9 +172,7 @@ namespace unit_tests {
     }
     
     void test_method_(open_mode_in_without_existing_file) {
-      fstream file = file::open(test_file_name, ios::in);
-      
-      assert::is_false(file.good(), line_info_);
+      assert::throws<file_not_found_exception>([] {file::open(test_file_name, ios::in);}, line_info_);
     }
     
     void test_method_(open_mode_out) {
@@ -206,9 +204,7 @@ namespace unit_tests {
     }
     
     void test_method_(open_read_without_existing_file) {
-      ifstream file = file::open_read(test_file_name);
-      
-      assert::is_false(file.good(), line_info_);
+      assert::throws<file_not_found_exception>([] {file::open_read(test_file_name);}, line_info_);
     }
     
     void test_method_(open_text_with_existing_file) {
@@ -223,9 +219,7 @@ namespace unit_tests {
     }
     
     void test_method_(open_text_without_existing_file) {
-      ifstream file = file::open_text(test_file_name);
-      
-      assert::is_false(file.good(), line_info_);
+      assert::throws<file_not_found_exception>([] {file::open_text(test_file_name);}, line_info_);
     }
     
     void test_method_(open_write) {
@@ -249,8 +243,7 @@ namespace unit_tests {
     }
     
     void test_method_(read_all_bytes_with_unexisting_file) {
-      std::vector<unsigned char> bytes = file::read_all_bytes(test_file_name);
-      assert::is_empty(bytes, line_info_);
+      assert::throws<file_not_found_exception>([] {file::read_all_bytes(test_file_name);}, line_info_);
     }
     
     void test_method_(read_all_lines) {
@@ -265,8 +258,7 @@ namespace unit_tests {
     }
     
     void test_method_(read_all_lines_with_unexisting_file) {
-      std::vector<ustring> lines = file::read_all_lines(test_file_name);
-      assert::is_empty(lines, line_info_);
+      assert::throws<file_not_found_exception>([] {file::read_all_lines(test_file_name);}, line_info_);
     }
     
     void test_method_(read_all_text) {
@@ -278,15 +270,14 @@ namespace unit_tests {
     }
     
     void test_method_(read_all_text_with_unexisting_file) {
-      std::string text = file::read_all_text(test_file_name);
-      assert::is_empty(text, line_info_);
+      assert::throws<file_not_found_exception>([] {file::read_all_text(test_file_name);}, line_info_);
     }
     
     void test_method_(remove) {
       ofstream existing_file(test_file_name);
       existing_file.close();
       assert::is_true(ifstream(test_file_name).good(), line_info_);
-      file::remove(test_file_name);
+      assert::does_not_throw([] {file::remove(test_file_name);}, line_info_);
       
       assert::is_false(ifstream(test_file_name).good(), line_info_);
     }

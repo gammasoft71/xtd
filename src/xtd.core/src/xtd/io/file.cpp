@@ -54,80 +54,57 @@ file_attributes file::get_attributes(const ustring& src) {
   return (file_attributes) native::file::get_attributes(src.c_str());
 }
 
-bool file::move(const ustring& src, const ustring& dest) noexcept {
-  try {
-    if (exists(dest)) return false;
-    return ::rename(src.c_str(), dest.c_str()) == 0;
-  } catch(...) {
-    return false;
-  }
+void file::move(const ustring& src, const ustring& dest) {
+  if (exists(dest)) throw argument_exception(csf_);
+  if (::rename(src.c_str(), dest.c_str()) != 0) throw ioexception(csf_);
 }
 
-fstream file::open(const ustring& path, ios::openmode mode) noexcept {
-  try {
-    return fstream(path, mode);
-  } catch(...) {
-    return fstream();
-  }
+fstream file::open(const ustring& path, ios::openmode mode) {
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
+  if ((mode & ios::in) == ios::in && !exists(string(path))) throw file_not_found_exception(csf_);
+  return fstream(path, mode);
 }
 
-ifstream file::open_read(const ustring& path) noexcept {
-  try {
-    return ifstream(path, ios::binary | ios::in);
-  } catch(...) {
-    return ifstream();
-  }
+ifstream file::open_read(const ustring& path) {
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
+  if (!exists(string(path))) throw file_not_found_exception(csf_);
+  return ifstream(path, ios::binary | ios::in);
 }
 
-ifstream file::open_text(const ustring& path) noexcept {
-  try {
-    return ifstream(path);
-  } catch(...) {
-    return ifstream();
-  }
+ifstream file::open_text(const ustring& path) {
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
+  if (!exists(string(path))) throw file_not_found_exception(csf_);
+  return ifstream(path);
 }
 
-ofstream file::open_write(const ustring& path) noexcept {
-  try {
-    return ofstream(path, ios::binary | ios::out);
-  } catch(...) {
-    return ofstream();
-  }
+ofstream file::open_write(const ustring& path) {
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
+  return ofstream(path, ios::binary | ios::out);
 }
 
-vector<uint8_t> file::read_all_bytes(const ustring& path) noexcept {
-  try {
-    ifstream file(path, ios::binary);
-    return vector<uint8_t> {istreambuf_iterator<char>(file), istreambuf_iterator<char>()};
-  } catch(...) {
-    return {};
-  }
+vector<uint8_t> file::read_all_bytes(const ustring& path) {
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
+  if (!exists(string(path))) throw file_not_found_exception(csf_);
+  ifstream file(path, ios::binary);
+  return vector<uint8_t> {istreambuf_iterator<char>(file), istreambuf_iterator<char>()};
 }
 
-vector<ustring> file::read_all_lines(const ustring& path) noexcept {
-  try {
-    vector<ustring> contents;
-    ifstream file(path);
-    string line;
-    while(getline(file, line))
-      contents.push_back(line);
-    return contents;
-  } catch(...) {
-    return {};
-  }
+vector<ustring> file::read_all_lines(const ustring& path) {
+  vector<ustring> contents;
+  stream_reader sr(path);
+  while (!sr.end_of_stream())
+    contents.push_back(sr.read_line());
+  return contents;
 }
 
-ustring file::read_all_text(const ustring& path) noexcept {
-  try {
-    ifstream file(path);
-    return ustring(istreambuf_iterator<char>(file), istreambuf_iterator<char>());
-  } catch(...) {
-    return {};
-  }
+ustring file::read_all_text(const ustring& path) {
+  vector<ustring> contents;
+  stream_reader sr(path);
+  return sr.read_to_end();
 }
 
-bool file::remove(const ustring& path) noexcept {
-  return ::remove(path.c_str()) == 0;
+void file::remove(const ustring& path) {
+  if (::remove(path.c_str()) != 0) throw ioexception(csf_);
 }
 
 void file::replace(const ustring& source_file_name, const ustring& destination_file_name, const ustring& destination_backup_file_name) {
