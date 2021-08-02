@@ -43,7 +43,7 @@ ofstream file::create_text(const ustring& path) {
 
 bool file::exists(const ustring& path) noexcept {
   try {
-    return ifstream(string(path)).good();
+    return native::file::get_attributes(path) != -1;
   } catch(...) {
     return false;
   }
