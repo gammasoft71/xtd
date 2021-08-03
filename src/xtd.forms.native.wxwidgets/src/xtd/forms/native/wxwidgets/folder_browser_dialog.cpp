@@ -87,7 +87,7 @@ namespace {
 bool folder_browser_dialog::run_dialog(intptr_t hwnd, const std::string& description, environment::special_folder root_folder, std::string& selected_path, size_t options) {
   wxWindowPtr<DirDialog> dialog(new DirDialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), wxString(xtd::convert_string::to_wstring(description)), wxString(xtd::convert_string::to_wstring((!selected_path.empty() && wxDirExists(wxString(xtd::convert_string::to_wstring(selected_path))) ? selected_path : environment::get_folder_path(root_folder)))), wxDD_DEFAULT_STYLE));
   if (dialog->ShowModal() != wxID_OK) return false;
-  selected_path = xtd::convert_string::to_string(dialog->GetPath().ToStdWstring());
+  selected_path = xtd::convert_string::to_string(dialog->GetPath().c_str().AsWChar());
   return true;
 }
 
@@ -95,7 +95,7 @@ void folder_browser_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed
   wxWindowPtr<DirDialog> dialog(new DirDialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), wxString(xtd::convert_string::to_wstring(description)), wxString(xtd::convert_string::to_wstring((!selected_path.empty() && wxDirExists(wxString(xtd::convert_string::to_wstring(selected_path))) ? selected_path : environment::get_folder_path(root_folder)))), wxDD_DEFAULT_STYLE));
   dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [dialog, on_dialog_closed, &selected_path](wxWindowModalDialogEvent& event) {
     auto result = event.GetReturnCode() == wxID_OK;
-    selected_path = xtd::convert_string::to_string(dialog->GetPath().ToStdWstring());
+    selected_path = xtd::convert_string::to_string(dialog->GetPath().c_str().AsWChar());
     on_dialog_closed(result);
   });
   dialog->ShowWindowModal();
