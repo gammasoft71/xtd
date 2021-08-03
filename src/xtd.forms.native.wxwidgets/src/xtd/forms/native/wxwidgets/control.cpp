@@ -1,6 +1,7 @@
 #include <codecvt>
 #include <map>
 #include <stdexcept>
+#include <xtd/convert_string.h>
 #include <xtd/environment.h>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/drawing/system_fonts.h>
@@ -251,12 +252,12 @@ void control::size(intptr_t control, const drawing::size& size) {
 
 std::string control::text(intptr_t control) {
   if (control == 0) return {};
-  return reinterpret_cast<control_handler*>(control)->control()->GetLabel().utf8_string();
+  return xtd::convert_string::to_string(reinterpret_cast<control_handler*>(control)->control()->GetLabel().ToStdWstring());
 }
 
 void control::text(intptr_t control, const std::string& text) {
   if (control == 0) return;
-  reinterpret_cast<control_handler*>(control)->control()->SetLabel({text.c_str(), wxMBConvUTF8()});
+  reinterpret_cast<control_handler*>(control)->control()->SetLabel(wxString(convert_string::to_wstring(text)));
 }
 
 bool control::visible(intptr_t control) {

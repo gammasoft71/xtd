@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <cmath>
+#include <xtd/convert_string.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/font.h>
 #include <xtd/drawing/native/font_family.h>
@@ -43,7 +44,7 @@ std::string font_family::generic_serif_name() {
   wxFontInfo font_info;
   font_info.Family(wxFONTFAMILY_ROMAN);
   wxFont font(font_info);
-  return font.GetFaceName().utf8_string();
+  return xtd::convert_string::to_string(font.GetFaceName().ToStdWstring());
    */
 #if defined(__WXMSW__)
   return "Times New Roman";
@@ -61,7 +62,7 @@ std::string font_family::generic_sans_serif_name() {
   wxFontInfo font_info;
   font_info.Family(wxFONTFAMILY_SWISS);
   wxFont font(font_info);
-  return font.GetFaceName().utf8_string();
+  return xtd::convert_string::to_string(font.GetFaceName().ToStdWstring());
    */
 #if defined(__WXMSW__)
   return "Microsoft Sans Serif";
@@ -79,7 +80,7 @@ std::string font_family::generic_monospace_name() {
   wxFontInfo font_info;
   font_info.Family(wxFONTFAMILY_TELETYPE);
   wxFont font(font_info);
-  return font.GetFaceName().utf8_string();
+  return fxtd::convert_string::to_string(ont.GetFaceName().ToStdWstring());
    */
 #if defined(__WXMSW__)
   return "Courier New";
@@ -95,7 +96,7 @@ std::string font_family::generic_monospace_name() {
 std::vector<std::string> font_family::installed_font_families() {
   std::vector<std::string> families;
   for (const wxString& name : wxFontEnumerator::GetFacenames())
-    if (name[0] != '@') families.push_back(name.utf8_string());
+    if (name[0] != '@') families.push_back(xtd::convert_string::to_string(name.ToStdWstring()));
   std::sort(families.begin(), families.end());
   return families;
 }

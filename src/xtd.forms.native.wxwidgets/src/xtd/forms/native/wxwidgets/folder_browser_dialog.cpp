@@ -1,3 +1,4 @@
+#include <xtd/convert_string.h>
 #include <xtd/forms/browser_info_flags.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/folder_browser_dialog.h>
@@ -41,9 +42,9 @@ bool folder_browser_dialog::run_dialog(intptr_t hwnd, const std::string& descrip
   PIDLIST_ABSOLUTE pidlRoot;
   SHGetSpecialFolderLocation(reinterpret_cast<HWND>(hwnd), static_cast<int>(root_folder), &pidlRoot);
   browserInfo.lpfn = OnBrowserCalllback;
-  wstring wselected_path = wxString(selected_path.c_str(), wxMBConvUTF8()).ToStdWstring();
+  wstring wselected_path = xtd::convert_string::to_wstring(selected_path);
   browserInfo.lParam = reinterpret_cast<LPARAM>(wselected_path.c_str());
-  wstring wdescription = wxString(description.c_str(), wxMBConvUTF8()).ToStdWstring();
+  wstring wdescription = xtd::convert_string::to_wstring(description);
   browserInfo.lpszTitle = wdescription.c_str();
 
   browserInfo.ulFlags = options;
@@ -84,17 +85,17 @@ namespace {
 }
 
 bool folder_browser_dialog::run_dialog(intptr_t hwnd, const std::string& description, environment::special_folder root_folder, std::string& selected_path, size_t options) {
-  wxWindowPtr<DirDialog> dialog(new DirDialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), {description.c_str(), wxMBConvUTF8()}, {(!selected_path.empty() && wxDirExists({selected_path.c_str(), wxMBConvUTF8()}) ? selected_path : environment::get_folder_path(root_folder)).c_str(), wxMBConvUTF8()}, wxDD_DEFAULT_STYLE));
+  wxWindowPtr<DirDialog> dialog(new DirDialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), wxString(xtd::convert_string::to_wstring(description)), wxString(xtd::convert_string::to_wstring((!selected_path.empty() && wxDirExists(wxString(xtd::convert_string::to_wstring(selected_path))) ? selected_path : environment::get_folder_path(root_folder)))), wxDD_DEFAULT_STYLE));
   if (dialog->ShowModal() != wxID_OK) return false;
-  selected_path = dialog->GetPath().utf8_string();
+  selected_path = xtd::convert_string::to_string(dialog->GetPath().ToStdWstring());
   return true;
 }
 
 void folder_browser_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const std::string& description, environment::special_folder root_folder, std::string& selected_path, size_t options) {
-  wxWindowPtr<DirDialog> dialog(new DirDialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), {description.c_str(), wxMBConvUTF8()}, {(!selected_path.empty() && wxDirExists({selected_path.c_str(), wxMBConvUTF8()}) ? selected_path : environment::get_folder_path(root_folder)).c_str(), wxMBConvUTF8()}, wxDD_DEFAULT_STYLE));
+  wxWindowPtr<DirDialog> dialog(new DirDialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), wxString(xtd::convert_string::to_wstring(description)), wxString(xtd::convert_string::to_wstring((!selected_path.empty() && wxDirExists(wxString(xtd::convert_string::to_wstring(selected_path))) ? selected_path : environment::get_folder_path(root_folder)))), wxDD_DEFAULT_STYLE));
   dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [dialog, on_dialog_closed, &selected_path](wxWindowModalDialogEvent& event) {
     auto result = event.GetReturnCode() == wxID_OK;
-    selected_path = dialog->GetPath().utf8_string();
+    selected_path = xtd::convert_string::to_string(dialog->GetPath().ToStdWstring());
     on_dialog_closed(result);
   });
   dialog->ShowWindowModal();

@@ -8,6 +8,7 @@
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/convert_string.h>
 #include <wx/app.h>
 #include <wx/msgdlg.h>
 #include <wx/windowptr.h>
@@ -81,7 +82,7 @@ namespace {
 
 int32_t message_box::show(intptr_t control, const std::string& text, const std::string& caption, uint32_t style, bool display_help_button) {
   native::application::initialize(); // Must be first
-  wxMessageDialog dialog(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control(), {text.c_str(), wxMBConvUTF8()}, {caption.c_str(), wxMBConvUTF8()}, convert_to_buttons(style) + convert_to_icon(style) + convert_to_option(style) + (display_help_button ? wxHELP : 0));
+  wxMessageDialog dialog(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control(), wxString(convert_string::to_wstring(text)), wxString(xtd::convert_string::to_wstring(caption)), convert_to_buttons(style) + convert_to_icon(style) + convert_to_option(style) + (display_help_button ? wxHELP : 0));
   set_button_labels(dialog, style);
   return convert_to_dialog_result(dialog.ShowModal(), style);
 }

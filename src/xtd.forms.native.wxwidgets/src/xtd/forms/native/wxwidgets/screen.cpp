@@ -1,4 +1,5 @@
 #define __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/convert_string.h>
 #include <xtd/drawing/native/hdc_wrapper.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #define __XTD_FORMS_NATIVE_LIBRARY__
@@ -40,7 +41,7 @@ rectangle screen::bounds(size_t index) {
 
 std::string screen::device_name(size_t index) {
   application::initialize();
-  std::string device_name = wxDisplay(static_cast<int32_t>(index)).GetName().utf8_string();
+  std::string device_name = xtd::convert_string::to_string(wxDisplay(static_cast<int32_t>(index)).GetName().ToStdWstring());
   return device_name.empty() ? strings::format("\\\\.\\DISPLAY{}", index + 1) : device_name;
 }
 

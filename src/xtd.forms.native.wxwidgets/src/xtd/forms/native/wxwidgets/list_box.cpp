@@ -1,5 +1,6 @@
 #include <limits>
 #include <stdexcept>
+#include <xtd/convert_string.h>
 #include <xtd/drawing/system_colors.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
@@ -29,7 +30,7 @@ void list_box::end_update(intptr_t control) {
 
 void list_box::insert_item(intptr_t control, size_t index, const std::string& value) {
   if (control == 0) return;
-  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert({value.c_str(), wxMBConvUTF8()}, static_cast<int32_t>(index));
+  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(wxString(xtd::convert_string::to_wstring(value)), static_cast<int32_t>(index));
 }
 
 size_t list_box::selected_index(intptr_t control) {
@@ -59,5 +60,5 @@ vector<size_t> list_box::selected_indices(intptr_t control) {
 
 void list_box::update_item(intptr_t control, size_t index, const std::string& value) {
   if (control == 0) return;
-  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetString(static_cast<int32_t>(index), {value.c_str(), wxMBConvUTF8()});
+  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetString(static_cast<int32_t>(index), wxString(xtd::convert_string::to_wstring(value)));
 }
