@@ -65,7 +65,6 @@ namespace examples {
     
   private:
     forms::text_box text_box;
-    u32string wiggly_text;
     examples::wiggly wiggly;
   };
 }
