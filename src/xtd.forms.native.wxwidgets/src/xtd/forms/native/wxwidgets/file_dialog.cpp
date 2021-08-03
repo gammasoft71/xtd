@@ -53,7 +53,7 @@ namespace {
 #if defined(__APPLE__)
         file_names.push_back(path::combine(xtd::convert_string::to_string(dialog.GetDirectory().ToStdWstring()), xtd::convert_string::to_string(file.ToStdWstring())));
 #else
-      file_names.push_back(xtd::convert_string::to_string(file.toStdWString()));
+      file_names.push_back(xtd::convert_string::to_string(file.ToStdWstring()));
 #endif
       file_name = file_names[0];
     }
