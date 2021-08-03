@@ -1,3 +1,4 @@
+#include <xtd/convert_string.h>
 #include <xtd/drawing/system_colors.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control.h>
@@ -189,8 +190,8 @@ void text_box::wm_set_text(message &message) {
     on_text_changed(event_args::empty);
   } else {
     def_wnd_proc(message);
-    if (text_ != reinterpret_cast<const char*>(message.lparam())) {
-      text_ = reinterpret_cast<const char*>(message.lparam());
+    if (text_ != convert_string::to_string(reinterpret_cast<const wchar_t*>(message.lparam()))) {
+      text_ = convert_string::to_string(reinterpret_cast<const wchar_t*>(message.lparam()));
       on_text_changed(event_args::empty);
     }
   }

@@ -44,7 +44,7 @@ std::string font_family::generic_serif_name() {
   wxFontInfo font_info;
   font_info.Family(wxFONTFAMILY_ROMAN);
   wxFont font(font_info);
-  return xtd::convert_string::to_string(font.GetFaceName().ToStdWstring());
+  return xtd::convert_string::to_string(font.GetFaceName().c_str().AsWChar());
    */
 #if defined(__WXMSW__)
   return "Times New Roman";
@@ -62,7 +62,7 @@ std::string font_family::generic_sans_serif_name() {
   wxFontInfo font_info;
   font_info.Family(wxFONTFAMILY_SWISS);
   wxFont font(font_info);
-  return xtd::convert_string::to_string(font.GetFaceName().ToStdWstring());
+  return xtd::convert_string::to_string(font.GetFaceName().c_str().AsWChar());
    */
 #if defined(__WXMSW__)
   return "Microsoft Sans Serif";
@@ -80,7 +80,7 @@ std::string font_family::generic_monospace_name() {
   wxFontInfo font_info;
   font_info.Family(wxFONTFAMILY_TELETYPE);
   wxFont font(font_info);
-  return fxtd::convert_string::to_string(ont.GetFaceName().ToStdWstring());
+  return fxtd::convert_string::to_string(ont.GetFaceName().c_str().AsWChar());
    */
 #if defined(__WXMSW__)
   return "Courier New";
@@ -96,7 +96,7 @@ std::string font_family::generic_monospace_name() {
 std::vector<std::string> font_family::installed_font_families() {
   std::vector<std::string> families;
   for (const wxString& name : wxFontEnumerator::GetFacenames())
-    if (name[0] != '@') families.push_back(xtd::convert_string::to_string(name.ToStdWstring()));
+    if (name[0] != '@') families.push_back(xtd::convert_string::to_string(name.c_str().AsWChar()));
   std::sort(families.begin(), families.end());
   return families;
 }

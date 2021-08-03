@@ -29,7 +29,7 @@ void settings::reset(intptr_t config) {
 
 std::string settings::read(intptr_t config, const std::string& key, const std::string& default_value) {
   if (!config) return "";
-  return xtd::convert_string::to_string(reinterpret_cast<wxConfig*>(config)->Read(key, wxString(xtd::convert_string::to_wstring(default_value))).ToStdWstring());
+  return xtd::convert_string::to_string(reinterpret_cast<wxConfig*>(config)->Read(key, wxString(xtd::convert_string::to_wstring(default_value))).c_str().AsWChar());
 }
 
 void settings::save(intptr_t config) {

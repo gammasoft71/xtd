@@ -45,15 +45,15 @@ namespace {
 
   void get_results(const FileDialog& dialog, size_t options, std::string& file_name, std::vector<std::string>& file_names) {
     if ((options & OFN_ALLOWMULTISELECT) != OFN_ALLOWMULTISELECT)
-      file_name = xtd::convert_string::to_string(dialog.GetPath().ToStdWstring());
+      file_name = xtd::convert_string::to_string(dialog.GetPath().c_str().AsWChar());
     else {
       wxArrayString files;
       dialog.GetFilenames(files);
       for (wxString file : files)
 #if defined(__APPLE__)
-        file_names.push_back(path::combine(xtd::convert_string::to_string(dialog.GetDirectory().ToStdWstring()), xtd::convert_string::to_string(file.ToStdWstring())));
+        file_names.push_back(path::combine(xtd::convert_string::to_string(dialog.GetDirectory().c_str().AsWChar()), xtd::convert_string::to_string(file.c_str().AsWChar())));
 #else
-      file_names.push_back(xtd::convert_string::to_string(file.ToStdWstring()));
+      file_names.push_back(xtd::convert_string::to_string(file.c_str().AsWChar()));
 #endif
       file_name = file_names[0];
     }

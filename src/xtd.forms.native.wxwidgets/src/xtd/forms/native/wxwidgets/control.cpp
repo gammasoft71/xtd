@@ -252,12 +252,13 @@ void control::size(intptr_t control, const drawing::size& size) {
 
 std::string control::text(intptr_t control) {
   if (control == 0) return {};
-  return xtd::convert_string::to_string(reinterpret_cast<control_handler*>(control)->control()->GetLabel().ToStdWstring());
+  return xtd::convert_string::to_string(reinterpret_cast<control_handler*>(control)->control()->GetLabel().c_str().AsWChar());
 }
 
 void control::text(intptr_t control, const std::string& text) {
   if (control == 0) return;
-  reinterpret_cast<control_handler*>(control)->control()->SetLabel(wxString(convert_string::to_wstring(text)));
+  auto w_text = convert_string::to_wstring(text);
+  reinterpret_cast<control_handler*>(control)->control()->SetLabel(wxString(w_text));
 }
 
 bool control::visible(intptr_t control) {

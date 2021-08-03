@@ -37,7 +37,7 @@ void text_box::select(intptr_t control, size_t start, size_t length) {
 }
 std::string text_box::text(intptr_t control) {
   if (control == 0) return {};
-  return xtd::convert_string::to_string(static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetValue().ToStdWstring());
+  return xtd::convert_string::to_string(static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetValue().c_str().AsWChar());
 }
 
 void text_box::text(intptr_t control, const std::string& text) {
