@@ -2,6 +2,7 @@
 #include <xtd/drawing/native/icon.h>
 #include <xtd/drawing/native/toolkit.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/convert_string.h>
 #include <xtd/strings.h>
 #include <atomic>
 #include <wx/bitmap.h>
@@ -63,7 +64,7 @@ namespace {
 
 intptr_t icon::create(const std::string& filename) {
   toolkit::initialize(); // Must be first
-  return reinterpret_cast<intptr_t>(new wxIconBundle({filename.c_str(), wxMBConvUTF8()}));
+  return reinterpret_cast<intptr_t>(new wxIconBundle(wxString(convert_string::to_wstring(filename))));
 }
 
 intptr_t icon::create(std::istream& stream) {
@@ -99,7 +100,7 @@ void icon::destroy(intptr_t icon) {
 }
 
 void icon::save(intptr_t icon, const std::string& filename) {
-  //reinterpret_cast<wxImage*>(image)->SaveFile({filename.c_str(), wxMBConvUTF8()});
+  //reinterpret_cast<wxImage*>(image)->SaveFile(wxString(convert_string::to_wstring(filename)));
 }
 
 void icon::save(intptr_t icon, std::ostream& stream) {

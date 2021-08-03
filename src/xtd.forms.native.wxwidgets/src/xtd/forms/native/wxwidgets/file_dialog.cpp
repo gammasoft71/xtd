@@ -1,4 +1,5 @@
 #include <xtd/io/path.h>
+#include <xtd/convert_string.h>
 #include <xtd/forms/open_file_name_flags.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/file_dialog.h>
@@ -37,22 +38,22 @@ namespace {
     if ((options & OFN_SHOWPREVIEW) == OFN_SHOWPREVIEW) wx_style |= wxFD_PREVIEW;
     if ((options & OFN_ALLOWMULTISELECT) == OFN_ALLOWMULTISELECT) wx_style |= wxFD_MULTIPLE;
     if ((options & OFN_FORCESHOWHIDDEN) == OFN_FORCESHOWHIDDEN) wx_style |= wxFD_SHOW_HIDDEN;
-    wxWindowPtr<FileDialog> file_dialog(new FileDialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), {title.c_str(), wxMBConvUTF8()}, {initial_directory.c_str(), wxMBConvUTF8()}, {file_name.c_str(), wxMBConvUTF8()}, {filter.c_str(), wxMBConvUTF8()}, wx_style));
+    wxWindowPtr<FileDialog> file_dialog(new FileDialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), wxString(xtd::convert_string::to_wstring(title)), wxString(xtd::convert_string::to_wstring(initial_directory)), wxString(xtd::convert_string::to_wstring(file_name)), wxString(xtd::convert_string::to_wstring(filter)), wx_style));
     file_dialog->SetFilterIndex(static_cast<int32_t>(filter_index - 1));
     return file_dialog;
   }
 
   void get_results(const FileDialog& dialog, size_t options, std::string& file_name, std::vector<std::string>& file_names) {
     if ((options & OFN_ALLOWMULTISELECT) != OFN_ALLOWMULTISELECT)
-      file_name = dialog.GetPath().utf8_string();
+      file_name = xtd::convert_string::to_string(dialog.GetPath().ToStdWstring());
     else {
       wxArrayString files;
       dialog.GetFilenames(files);
       for (wxString file : files)
 #if defined(__APPLE__)
-        file_names.push_back(path::combine(dialog.GetDirectory().utf8_string(), file.utf8_string()));
+        file_names.push_back(path::combine(xtd::convert_string::to_string(dialog.GetDirectory().ToStdWstring()), xtd::convert_string::to_string(file.ToStdWstring())));
 #else
-      file_names.push_back(file.utf8_string());
+      file_names.push_back(xtd::convert_string::to_string(file.toStdWString()));
 #endif
       file_name = file_names[0];
     }

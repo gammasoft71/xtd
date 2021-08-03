@@ -69,14 +69,19 @@ public:
   
   manual_test_form() {
     text("Manual tests");
-
-    hscroll_bar1.parent(*this);
-    hscroll_bar1.location({30, 40});
     
-    hscroll_bar2.parent(*this);
-    hscroll_bar2.location({30, 80});
-    hscroll_bar2.width(220);
-
+    label1.parent(*this);
+    label1.location({10, 10});
+    label1.auto_size(true);
+    label1.text(as<string>(u8"àçéèêëïî@°_#§$ù£€æœøπµ©®∞\\\""));
+    diagnostics::debug::write_line(as<string>(ustring::format("label1={}", label1.text())));
+    
+    text_box1.parent(*this);
+    text_box1.location({10, 40});
+    text_box1.width(220);
+    text_box1.text(as<string>(u8"àçéèêëïî@°_#§$ù£€æœøπµ©®∞\\\""));
+    diagnostics::debug::write_line(as<string>(ustring::format("text_box1={}", text_box1.text())));
+    
     /*
      form_main.client_size({300, 300});
      table_layout_panel table_layout_panel;
@@ -86,8 +91,8 @@ public:
   }
   
 private:
-  hscroll_bar hscroll_bar1;
-  hscroll_bar hscroll_bar2;
+  label label1;
+  text_box text_box1;
 };
 
 startup_(manual_test_form);

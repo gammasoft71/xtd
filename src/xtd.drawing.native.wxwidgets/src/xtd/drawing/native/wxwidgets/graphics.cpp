@@ -1,6 +1,7 @@
 #include <cmath>
 #include <vector>
 #include <xtd/argument_exception.h>
+#include <xtd/convert_string.h>
 #include <xtd/strings.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/graphics.h>
@@ -167,11 +168,11 @@ void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font,
     wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc();
     dc.SetFont(*reinterpret_cast<wxFont*>(font));
     dc.SetTextForeground({ r, g, b, a });
-    dc.DrawText({ text.c_str(), wxMBConvUTF8() }, x, y);
+    dc.DrawText(wxString(convert_string::to_wstring(text)), x, y);
   } else {
     wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
     graphics.SetFont(*reinterpret_cast<wxFont*>(font), { r, g, b, a });
-    graphics.DrawText({ text.c_str(), wxMBConvUTF8() }, x, y);
+    graphics.DrawText(wxString(convert_string::to_wstring(text)), x, y);
   }
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
@@ -184,13 +185,13 @@ void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font,
     dc.SetClippingRegion({ x, y }, { w, h });
     dc.SetFont(*reinterpret_cast<wxFont*>(font));
     dc.SetTextForeground({ r, g, b, a });
-    dc.DrawText({ text.c_str(), wxMBConvUTF8() }, x, y);
+    dc.DrawText(wxString(convert_string::to_wstring(text)), x, y);
     dc.DestroyClippingRegion();
   } else {
     wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
     graphics.Clip(x, y, w, h);
     graphics.SetFont(*reinterpret_cast<wxFont*>(font), { r, g, b, a });
-    graphics.DrawText({ text.c_str(), wxMBConvUTF8() }, x, y);
+    graphics.DrawText(wxString(convert_string::to_wstring(text)), x, y);
     graphics.ResetClip();
   }
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
@@ -254,13 +255,13 @@ void graphics::measure_string(intptr_t hdc, const std::string &text, intptr_t fo
     // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::GetTextExtent doesn't work witth unicode on Windows.
     if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") {
       reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetFont(*reinterpret_cast<wxFont*>(font));
-      wxSize line_size = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().GetTextExtent({string.c_str(), wxMBConvUTF8()});
+      wxSize line_size = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().GetTextExtent(wxString(convert_string::to_wstring(string)));
       line_width = line_size.GetWidth();
       line_height = line_size.GetHeight();
     } else {
       wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
       graphics.SetFont(*reinterpret_cast<wxFont*>(font), { 0, 0, 0 });
-      graphics.GetTextExtent({ string.c_str(), wxMBConvUTF8() }, &line_width, &line_height);
+      graphics.GetTextExtent(wxString(convert_string::to_wstring(string)), &line_width, &line_height);
     }
     width = std::max(width, static_cast<int32_t>(line_width));
     height += static_cast<int32_t>(line_height);
