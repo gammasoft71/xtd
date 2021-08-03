@@ -85,8 +85,8 @@ namespace xtd::native {
           ++str;
           if (((*str & 0xc0) != 0x80) && (codepoint <= 0x10ffff)) {
             if (codepoint > 0xffff) {
-              out.append(1, static_cast<wchar_t>(0xd800 + (codepoint >> 10)));
-              out.append(1, static_cast<wchar_t>(0xdc00 + (codepoint & 0x03ff)));
+              out.append(1, static_cast<wchar_t>(0xd800 + (static_cast<char16_t>(codepoint) >> 10)));
+              out.append(1, static_cast<wchar_t>(0xdc00 + (static_cast<char16_t>(codepoint) & 0x03ff)));
             } else if (codepoint < 0xd800 || codepoint >= 0xe000)
               out.append(1, static_cast<wchar_t>(codepoint));
           }
