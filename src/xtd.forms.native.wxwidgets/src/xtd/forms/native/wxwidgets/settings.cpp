@@ -1,7 +1,7 @@
 #if !defined(_WIN32)
 #include <unistd.h>
-#include <xtd/convert_string.h>
 #endif
+#include <xtd/convert_string.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/settings.h>
