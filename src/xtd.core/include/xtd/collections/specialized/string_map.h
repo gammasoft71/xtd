@@ -2,7 +2,7 @@
 /// @brief Contains xtd::collections::specialized::string_map typedef.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <string>
+#include "../../ustring.h"
 #include <map>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -15,7 +15,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core collections
-      using string_map = std::map<std::string, std::string>;
+      using string_map = std::map<xtd::ustring, xtd::ustring>;
     }
   }
 }
