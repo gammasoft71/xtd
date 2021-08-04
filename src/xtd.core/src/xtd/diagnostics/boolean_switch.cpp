@@ -2,12 +2,13 @@
 #include "../../../include/xtd/format_exception.h"
 
 using namespace std;
+using namespace xtd;
 using namespace xtd::diagnostics;
 
-boolean_switch::boolean_switch(const string& display_name, const string& description) : switch_base(display_name, description) {
+boolean_switch::boolean_switch(const ustring& display_name, const ustring& description) : switch_base(display_name, description) {
 }
 
-boolean_switch::boolean_switch(const string& display_name, const string& description, const string& default_switch_value) : switch_base(display_name, description, default_switch_value) {
+boolean_switch::boolean_switch(const ustring& display_name, const ustring& description, const ustring& default_switch_value) : switch_base(display_name, description, default_switch_value) {
 
 }
 
@@ -20,7 +21,7 @@ bool boolean_switch::enabled() const {
     else if (try_parse(this->value(), int_value) == true)
       enabled_ = int_value != 0;
     else
-      throw format_exception("Input string was not in a correct format.", csf_);
+      throw format_exception("Input xtd::ustring was not in a correct format.", csf_);
   }
   return enabled_.value();
 }

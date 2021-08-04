@@ -11,30 +11,30 @@ bool switch_base::operator!=(const switch_base& value) const {
   return !operator==(value);
 }
 
-const std::map<std::string, std::string>& switch_base::attributes() const {
+const std::map<ustring, ustring>& switch_base::attributes() const {
   return attributes_;
 }
 
-std::map<std::string, std::string>& switch_base::attributes() {
+std::map<ustring, ustring>& switch_base::attributes() {
   return attributes_;
 }
 
-void switch_base::attributes(const std::map<std::string, std::string>& attributes) {
+void switch_base::attributes(const std::map<ustring, ustring>& attributes) {
   attributes_ = attributes;
 }
 
-const std::string& switch_base::description() const {
+const ustring& switch_base::description() const {
   return description_;
 }
 
-const std::string& switch_base::display_name() const {
+const ustring& switch_base::display_name() const {
   return display_name_;
 }
 
-switch_base::switch_base(const std::string& display_name, const std::string& description) : display_name_(display_name), description_(description) {
+switch_base::switch_base(const ustring& display_name, const ustring& description) : display_name_(display_name), description_(description) {
 }
 
-switch_base::switch_base(const std::string& display_name, const std::string& description, const std::string& default_switch_value) : display_name_(display_name), description_(description), value_(default_switch_value) {
+switch_base::switch_base(const ustring& display_name, const ustring& description, const ustring& default_switch_value) : display_name_(display_name), description_(description), value_(default_switch_value) {
 }
 
 int32_t switch_base::switch_setting() const {
@@ -48,18 +48,18 @@ void switch_base::switch_setting(int32_t switch_setting) {
   }
 }
 
-const std::string& switch_base::value() const {
+const ustring& switch_base::value() const {
   return value_;
 }
 
-void switch_base::value(const std::string& value) {
+void switch_base::value(const ustring& value) {
   if (value_ != value) {
     value_ = value;
     on_value_changed();
   }
 }
 
-std::vector<std::string> switch_base::get_supported_attributes() const {
+std::vector<ustring> switch_base::get_supported_attributes() const {
   return {};
 }
 
