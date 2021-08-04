@@ -54,7 +54,7 @@ namespace xtd {
       std::regex rgx("\\.");
       xtd::collections::specialized::string_vector versions;
       for (std::sregex_token_iterator it(ver.begin(), ver.end(), rgx, -1), end; it != end; ++it)
-        versions.push_back(*it);
+        versions.push_back(it->str());
       
       switch (versions.size()) {
         case 2: return version(std::stoi(versions[0]), std::stoi(versions[1]));

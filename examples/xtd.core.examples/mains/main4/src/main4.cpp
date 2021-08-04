@@ -6,7 +6,7 @@ using namespace xtd;
 namespace examples {
   class program {
   public:
-        static int main(const vector<string>& args) {
+        static int main(const vector<ustring>& args) {
       // Write arguments to the console output
       for (string arg : args)
         console::write_line(arg);

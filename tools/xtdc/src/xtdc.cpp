@@ -15,7 +15,7 @@ using namespace xtd;
 namespace xtdc_command {
   class xtdc final static_ {
   public:
-    static int main(const vector<string>& args) {
+    static int main(const vector<ustring>& args) {
       if (args.size() == 0) {
         cout << strings::join("\n", get_help()) << endl;
         return -1;
@@ -25,7 +25,7 @@ namespace xtdc_command {
       auto show_info = false;
       auto show_version = false;
       string invalid_option;
-      vector<string> command_args;
+      vector<ustring> command_args;
       if (process_xtdc_arguments(args, show_help, show_info, show_version, command_args, invalid_option) == false) {
         if (!invalid_option.empty())
           cout << strings::format("Unknown option: {0}", invalid_option) << endl;
@@ -45,7 +45,7 @@ namespace xtdc_command {
     static string get_base_path() noexcept {return "";}
   #endif
 
-    static vector<string> get_help() noexcept {
+    static vector<ustring> get_help() noexcept {
       return {
         "",
         "Usage: xtdc [<options> | command [<command-argument>] [<command-options>]]",
@@ -79,14 +79,14 @@ namespace xtdc_command {
       };
     }
     
-    static vector<string> get_add_help() noexcept {
+    static vector<ustring> get_add_help() noexcept {
       return {
         "Add new project to project.",
         "Usage: add [options]",
       };
     }
 
-    static vector<string> get_build_help() noexcept {
+    static vector<ustring> get_build_help() noexcept {
       return {
         "Builds a project.",
         "Usage: build [path] [<options>]",
@@ -109,7 +109,7 @@ namespace xtdc_command {
       };
     }
     
-    static vector<string> get_clean_help() noexcept {
+    static vector<ustring> get_clean_help() noexcept {
       return {
         "Clean build output(s).",
         "Usage: clean [path] [<options>]",
@@ -130,7 +130,7 @@ namespace xtdc_command {
       };
     }
     
-    static vector<string> get_install_help() noexcept {
+    static vector<ustring> get_install_help() noexcept {
       return {
         "Install a project.",
         "Usage: install [path] [<options>]",
@@ -151,7 +151,7 @@ namespace xtdc_command {
       };
     }
     
-    static vector<string> get_open_help() noexcept {
+    static vector<ustring> get_open_help() noexcept {
       return {
         "Open a project in default ide.",
         "Usage: open [path] [<options>]",
@@ -172,7 +172,7 @@ namespace xtdc_command {
       };
     }
     
-    static vector<string> get_new_help() noexcept {
+    static vector<ustring> get_new_help() noexcept {
       return {
         "Initialize project.",
         "Usage: new [template-short-name] [path] [<options>]",
@@ -208,7 +208,7 @@ namespace xtdc_command {
       };
     }
 
-    static vector<string> get_update_help() noexcept {
+    static vector<ustring> get_update_help() noexcept {
       return {
         "Regenrates a project.",
         "Usage: update [path] [<options>]",
@@ -229,7 +229,7 @@ namespace xtdc_command {
       };
     }
 
-    static vector<string> get_run_help() noexcept {
+    static vector<ustring> get_run_help() noexcept {
       return {
         "Compiles and immediately executes a project.",
         "Usage: run [path] [<options>]",
@@ -252,7 +252,7 @@ namespace xtdc_command {
       };
     }
 
-    static vector<string> get_targets_help() noexcept {
+    static vector<ustring> get_targets_help() noexcept {
       return {
         "List project targets.",
         "Usage: targets [path] [<options>]",
@@ -271,7 +271,7 @@ namespace xtdc_command {
       };
     }
 
-    static vector<string> get_test_help() noexcept {
+    static vector<ustring> get_test_help() noexcept {
       return {
         "Runs unit tests using the test runner specified in the project.",
         "Usage: test [path] [<options>]",
@@ -292,7 +292,7 @@ namespace xtdc_command {
       };
     }
     
-    static vector<string> get_uninstall_help() noexcept {
+    static vector<ustring> get_uninstall_help() noexcept {
       return {
         "Uninstall a project.",
         "Usage: uninstall [path] [<options>]",
@@ -313,7 +313,7 @@ namespace xtdc_command {
       };
     }
     
-    static vector<string> get_info() noexcept {
+    static vector<ustring> get_info() noexcept {
       return {
         "",
         "xtdc:",
@@ -348,7 +348,7 @@ namespace xtdc_command {
 #endif
     }
     
-    static int add(const vector<string>& args) {
+    static int add(const vector<ustring>& args) {
       auto show_help = false;
       string invalid_option;
       string type;
@@ -379,7 +379,7 @@ namespace xtdc_command {
       return 0;
     }
     
-    static int build(const vector<string>& args) {
+    static int build(const vector<ustring>& args) {
       bool show_help = false;
       string invalid_option;
       bool clean_first = false;
@@ -403,7 +403,7 @@ namespace xtdc_command {
       return 0;
     }
     
-    static int clean(const vector<string>& args) {
+    static int clean(const vector<ustring>& args) {
       bool show_help = false;
       string invalid_option;
       bool release = false;
@@ -425,12 +425,12 @@ namespace xtdc_command {
       return 0;
     }
     
-    static int help(const vector<string>& args) {
+    static int help(const vector<ustring>& args) {
       cout << strings::join("\n", get_help()) << endl;
       return 0;
     }
     
-    static int install(const vector<string>& args) {
+    static int install(const vector<ustring>& args) {
       bool show_help = false;
       string invalid_option;
       bool release = false;
@@ -452,7 +452,7 @@ namespace xtdc_command {
       return 0;
     }
 
-    static int new_project(const vector<string>& args) {
+    static int new_project(const vector<ustring>& args) {
       auto show_help = false;
       string invalid_option;
       string type;
@@ -483,7 +483,7 @@ namespace xtdc_command {
       return 0;
     }
 
-    static int open(const vector<string>& args) {
+    static int open(const vector<ustring>& args) {
       bool show_help = false;
       string invalid_option;
       bool release = false;
@@ -505,7 +505,7 @@ namespace xtdc_command {
       return 0;
     }
     
-    static int update(const vector<string>& args) {
+    static int update(const vector<ustring>& args) {
       bool show_help = false;
       string invalid_option;
       string target;
@@ -527,7 +527,7 @@ namespace xtdc_command {
       return 0;
     }
 
-    static int run(const vector<string>& args) {
+    static int run(const vector<ustring>& args) {
       bool show_help = false;
       string invalid_option;
       bool release = false;
@@ -550,7 +550,7 @@ namespace xtdc_command {
       return 0;
     }
     
-    static int targets(const vector<string>& args) {
+    static int targets(const vector<ustring>& args) {
       bool show_help = false;
       string invalid_option;
       string path;
@@ -571,7 +571,7 @@ namespace xtdc_command {
       return 0;
     }
 
-    static int test(const vector<string>& args) {
+    static int test(const vector<ustring>& args) {
       bool show_help = false;
       string invalid_option;
       bool release = false;
@@ -593,7 +593,7 @@ namespace xtdc_command {
       return 0;
     }
     
-    static int uninstall(const vector<string>& args) {
+    static int uninstall(const vector<ustring>& args) {
       bool show_help = false;
       string invalid_option;
       bool release = false;
@@ -615,27 +615,27 @@ namespace xtdc_command {
       return 0;
     }
     
-    static int documentation(const vector<string>& args) {
+    static int documentation(const vector<ustring>& args) {
       xtd::diagnostics::process::start("https://github.com/gammasoft71/xtd/blob/master/docs/home.md").wait_for_exit();
       return 0;
     }
     
-    static int examples(const vector<string>& args) {
+    static int examples(const vector<ustring>& args) {
       xtd::diagnostics::process::start("https://github.com/gammasoft71/xtd/blob/master/examples/README.md").wait_for_exit();
       return 0;
     }
     
-    static int guide(const vector<string>& args) {
+    static int guide(const vector<ustring>& args) {
       xtd::diagnostics::process::start("https://codedocs.xyz/gammasoft71/xtd/index.html").wait_for_exit();
       return 0;
     }
     
-    static int web(const vector<string>& args) {
+    static int web(const vector<ustring>& args) {
       xtd::diagnostics::process::start("https://gammasoft71.wixsite.com/gammasoft").wait_for_exit();
       return 0;
     }
     
-    static bool process_xtdc_arguments(const vector<string>& args, bool& show_help, bool& show_info, bool& show_version, vector<string>& command_args, string& invalid_option) {
+    static bool process_xtdc_arguments(const vector<ustring>& args, bool& show_help, bool& show_info, bool& show_version, vector<ustring>& command_args, string& invalid_option) {
       for (size_t i = 0; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -644,7 +644,7 @@ namespace xtdc_command {
         else if (args[i] == "-v" || args[i] == "--version")
           show_version = true;
         else if (!strings::starts_with(args[i], '-')) {
-          command_args = vector<string>(args.size() - i);
+          command_args = vector<ustring>(args.size() - i);
           command_args = {args.begin() + i, args.end()};
           i = args.size();
         } else if (strings::starts_with(args[i], '-')) {
@@ -655,7 +655,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_add_arguments(const vector<string>& args, bool& show_help, string& type, string& name, string& path, string& sdk, string& invalid_option) {
+    static bool process_add_arguments(const vector<ustring>& args, bool& show_help, string& type, string& name, string& path, string& sdk, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help") {
           show_help = true;
@@ -678,7 +678,7 @@ namespace xtdc_command {
       return true;
     }
 
-    static bool process_build_arguments(const vector<string>& args, bool& show_help, bool& clean_first, bool& release, string& target, string& path, string& invalid_option) {
+    static bool process_build_arguments(const vector<ustring>& args, bool& show_help, bool& clean_first, bool& release, string& target, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -700,7 +700,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_clean_arguments(const vector<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
+    static bool process_clean_arguments(const vector<ustring>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -718,7 +718,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_install_arguments(const vector<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
+    static bool process_install_arguments(const vector<ustring>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -736,7 +736,7 @@ namespace xtdc_command {
       return true;
     }
 
-    static bool process_open_arguments(const vector<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
+    static bool process_open_arguments(const vector<ustring>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -754,7 +754,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_new_arguments(const vector<string>& args, bool& show_help, string& type, string& name, string& path, string& sdk, string& invalid_option) {
+    static bool process_new_arguments(const vector<ustring>& args, bool& show_help, string& type, string& name, string& path, string& sdk, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help") {
           show_help = true;
@@ -777,7 +777,7 @@ namespace xtdc_command {
       return true;
     }
 
-    static bool process_update_arguments(const vector<string>& args, bool& show_help, string& target, string& path, string& invalid_option) {
+    static bool process_update_arguments(const vector<ustring>& args, bool& show_help, string& target, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -793,7 +793,7 @@ namespace xtdc_command {
       return true;
     }
 
-    static bool process_run_arguments(const vector<string>& args, bool& show_help, bool& release, string& target, string& path, string& invalid_option) {
+    static bool process_run_arguments(const vector<ustring>& args, bool& show_help, bool& release, string& target, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -813,7 +813,7 @@ namespace xtdc_command {
       return true;
     }
 
-    static bool process_targets_arguments(const vector<string>& args, bool& show_help, string& path, string& invalid_option) {
+    static bool process_targets_arguments(const vector<ustring>& args, bool& show_help, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -827,7 +827,7 @@ namespace xtdc_command {
       return true;
     }
 
-    static bool process_test_arguments(const vector<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
+    static bool process_test_arguments(const vector<ustring>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -845,7 +845,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_uninstall_arguments(const vector<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
+    static bool process_uninstall_arguments(const vector<ustring>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -863,20 +863,20 @@ namespace xtdc_command {
       return true;
     }
     
-    static int invalid_command(const vector<string>& command_args) {
+    static int invalid_command(const vector<ustring>& command_args) {
       cout << "Invalid command" << endl;
       cout << strings::join("\n", get_help()) << endl;
       return -1;
     }
 
-    static int run_commands(bool show_help, bool show_info, bool show_version, string invalid_option, const vector<string>& command_args) {
+    static int run_commands(bool show_help, bool show_info, bool show_version, string invalid_option, const vector<ustring>& command_args) {
       if (show_version || show_info || show_help) {
         cout << get_version() << endl;
         if (show_info) cout << strings::join("\n", get_info()) << endl;
         if (show_help) cout << strings::join("\n", get_help()) << endl;
         return 0;
       }
-      static map<string, function<int(const vector<string>&)>> commands {{"add", add}, {"build", build}, {"clean", clean}, {"documentation", documentation}, {"examples", examples}, {"guide", guide}, {"help", help}, {"install", install}, {"new", new_project}, {"open", open}, {"update", update}, {"run", run}, {"targets", targets}, {"test", test}, {"uninstall", uninstall}, {"web", web}};
+      static map<ustring, function<int(const vector<ustring>&)>> commands {{"add", add}, {"build", build}, {"clean", clean}, {"documentation", documentation}, {"examples", examples}, {"guide", guide}, {"help", help}, {"install", install}, {"new", new_project}, {"open", open}, {"update", update}, {"run", run}, {"targets", targets}, {"test", test}, {"uninstall", uninstall}, {"web", web}};
       auto it = commands.find(command_args[0]);
       if (it == commands.end()) return invalid_command(command_args);
       return it->second(command_args);

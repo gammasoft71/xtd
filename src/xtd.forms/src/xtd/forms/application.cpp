@@ -289,7 +289,7 @@ void application::run(const form& form) {
   application_context context(form);
   application::run(context);
   if (restart_asked) {
-    std::vector<string> command_line_args = environment::get_command_line_args();
+    std::vector<ustring> command_line_args = environment::get_command_line_args();
     char** argv = new char* [command_line_args.size() + 1];
     for (size_t index = 0; index < command_line_args.size(); index++)
     argv[index] = command_line_args[index].data();

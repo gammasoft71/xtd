@@ -40,7 +40,8 @@ void environment::exit_code(int value) {
 }
 
 xtd::collections::specialized::string_vector environment::get_command_line_args() {
-  return native::environment::get_command_line_args();
+  auto args = native::environment::get_command_line_args();
+  return {args.begin(), args.end()};
 }
 
 std::string environment::get_environment_variable(const std::string& variable, environment_variable_target target) {

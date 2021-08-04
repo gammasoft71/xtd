@@ -8,7 +8,7 @@ using namespace xtd;
 namespace guidgen {
   class program final static_ {
   public:
-    static int main(const vector<string>& args) {
+    static int main(const vector<ustring>& args) {
       string format = "";
       int count = 1;
       bool show_help = false;
@@ -58,7 +58,7 @@ namespace guidgen {
       return strings::format("guidgen version {}, © {:L} by Gammasoft", environment::version(), chrono::system_clock::now());
     }
 
-    static bool process_arguments(const vector<string>& args, string& format, int& count, bool& show_version, bool& show_help) {
+    static bool process_arguments(const vector<ustring>& args, string& format, int& count, bool& show_version, bool& show_help) {
       for (size_t index = 0; index < args.size(); index += 1) {
         vector<string> format_types {"N", "D", "B", "P", "X"};
         if ((args[index] == "-f" || args[index] == "--format") && index + 1 < args.size() && std::count(format_types.begin(), format_types.end(), args[index + 1]))
