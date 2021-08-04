@@ -1,7 +1,8 @@
 /// @file
-/// @brief Contains xtd::io::file_attributes enum class.
+/// @brief Contains file_attributes enum class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+#include "../ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -41,21 +42,21 @@ namespace xtd {
       /// @brief The file or directory is encrypted. For a file, this means that all data in the file is encrypted. For a directory, this means that encryption is the default for newly created files and directories.
       encrypted = 0x4000
     };
+
+    /// @cond
+    inline file_attributes& operator^=(file_attributes& lhs, file_attributes rhs) {lhs = static_cast<file_attributes>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
+    inline file_attributes& operator&=(file_attributes& lhs, file_attributes rhs) {lhs = static_cast<file_attributes>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}
+    inline file_attributes& operator|=(file_attributes& lhs, file_attributes rhs) {lhs = static_cast<file_attributes>(static_cast<int>(lhs) | static_cast<int>(rhs)); return lhs;}
+    inline file_attributes& operator+=(file_attributes& lhs, file_attributes rhs) {lhs = static_cast<file_attributes>(static_cast<int>(lhs) + static_cast<int>(rhs)); return lhs;}
+    inline file_attributes& operator-=(file_attributes& lhs, file_attributes rhs) {lhs = static_cast<file_attributes>(static_cast<int>(lhs) - static_cast<int>(rhs)); return lhs;}
+    inline file_attributes operator^(file_attributes lhs, file_attributes rhs) {return static_cast<file_attributes>(static_cast<int>(lhs) ^ static_cast<int>(rhs));}
+    inline file_attributes operator&(file_attributes lhs, file_attributes rhs) {return static_cast<file_attributes>(static_cast<int>(lhs) & static_cast<int>(rhs));}
+    inline file_attributes operator|(file_attributes lhs, file_attributes rhs) {return static_cast<file_attributes>(static_cast<int>(lhs) | static_cast<int>(rhs));}
+    inline file_attributes operator+(file_attributes lhs, file_attributes rhs) {return static_cast<file_attributes>(static_cast<int>(lhs) + static_cast<int>(rhs));}
+    inline file_attributes operator-(file_attributes lhs, file_attributes rhs) {return static_cast<file_attributes>(static_cast<int>(lhs) - static_cast<int>(rhs));}
+    inline file_attributes operator~(file_attributes lhs) {return static_cast<file_attributes>(~static_cast<int>(lhs));}
+    inline std::ostream& operator<<(std::ostream& os, file_attributes value) {return os << to_string(value, {{file_attributes::read_only, "read_only"}, {file_attributes::hidden, "hidden"}, {file_attributes::system, "system"}, {file_attributes::directory, "directory"}, {file_attributes::device, "device"}, {file_attributes::normal, "normal"}, {file_attributes::temporary, "temporary"}, {file_attributes::sparse_file, "sparse_file"}, {file_attributes::reparse_point, "reparse_point"}, {file_attributes::compressed, "compressed"}, {file_attributes::offline, "offline"}, {file_attributes::not_content_indexed, "not_content_indexed"}, {file_attributes::encrypted, "encrypted"}});}
+    inline std::wostream& operator<<(std::wostream& os, file_attributes value) {return os << to_string(value, {{file_attributes::read_only, L"read_only"}, {file_attributes::hidden, L"hidden"}, {file_attributes::system, L"system"}, {file_attributes::directory, L"directory"}, {file_attributes::device, L"device"}, {file_attributes::normal, L"normal"}, {file_attributes::temporary, L"temporary"}, {file_attributes::sparse_file, L"sparse_file"}, {file_attributes::reparse_point, L"reparse_point"}, {file_attributes::compressed, L"compressed"}, {file_attributes::offline, L"offline"}, {file_attributes::not_content_indexed, L"not_content_indexed"}, {file_attributes::encrypted, L"encrypted"}});}
+    /// @endcond
   }
 }
-
-/// @cond
-inline xtd::io::file_attributes& operator^=(xtd::io::file_attributes& lhs, xtd::io::file_attributes rhs) {lhs = static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
-inline xtd::io::file_attributes& operator&=(xtd::io::file_attributes& lhs, xtd::io::file_attributes rhs) {lhs = static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}
-inline xtd::io::file_attributes& operator|=(xtd::io::file_attributes& lhs, xtd::io::file_attributes rhs) {lhs = static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) | static_cast<int>(rhs)); return lhs;}
-inline xtd::io::file_attributes& operator+=(xtd::io::file_attributes& lhs, xtd::io::file_attributes rhs) {lhs = static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) + static_cast<int>(rhs)); return lhs;}
-inline xtd::io::file_attributes& operator-=(xtd::io::file_attributes& lhs, xtd::io::file_attributes rhs) {lhs = static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) - static_cast<int>(rhs)); return lhs;}
-
-inline xtd::io::file_attributes operator^(xtd::io::file_attributes lhs, xtd::io::file_attributes rhs) {return static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) ^ static_cast<int>(rhs));}
-inline xtd::io::file_attributes operator&(xtd::io::file_attributes lhs, xtd::io::file_attributes rhs) {return static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) & static_cast<int>(rhs));}
-inline xtd::io::file_attributes operator|(xtd::io::file_attributes lhs, xtd::io::file_attributes rhs) {return static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) | static_cast<int>(rhs));}
-inline xtd::io::file_attributes operator+(xtd::io::file_attributes lhs, xtd::io::file_attributes rhs) {return static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) + static_cast<int>(rhs));}
-inline xtd::io::file_attributes operator-(xtd::io::file_attributes lhs, xtd::io::file_attributes rhs) {return static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) - static_cast<int>(rhs));}
-
-inline xtd::io::file_attributes operator~(xtd::io::file_attributes lhs) {return static_cast<xtd::io::file_attributes>(~static_cast<int>(lhs));}
-/// @endcond
