@@ -6,7 +6,7 @@ using namespace xtd;
 namespace examples {
   class program {
   public:
-    static int main(const vector<string>& args) {
+    static int main(const vector<ustring>& args) {
       int number;
       if (args.size() != 1 || try_parse(args[0], number) == false || number < 0 || number > 20) {
         cout << "Please enter an integer argument betwween 0 and 20." << endl;

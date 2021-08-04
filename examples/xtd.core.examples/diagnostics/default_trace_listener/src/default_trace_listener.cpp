@@ -8,7 +8,7 @@ class binomial {
 public:
   // args(0) is the number of possibilities for binomial coefficients.
   // args(1) is the file specification for the trace log file.
-  static void main(const vector<string>& args) {
+  static void main(const vector<ustring>& args) {
     decimal possibilities;
     decimal iter;
     
