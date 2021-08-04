@@ -22,7 +22,7 @@ namespace {
 
 // This delehgate will be initialized by __init_process_message_box_message__ in xtd.forns/src/xtd/forms/appllication.cpp file.
 // This operation can be done only if xtd.forms lib is present.
-//xtd::delegate<void(const std::string&)> process::message_box_message_;
+//xtd::delegate<void(const xtd::ustring&)> process::message_box_message_;
 
 bool process::error_data_received_event::is_empty() const noexcept {
   return data_received_event_handler::is_empty();
@@ -154,7 +154,7 @@ int32_t process::id() const {
   return data_->id_;
 }
 
-std::string process::machine_name() const {
+ustring process::machine_name() const {
   if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(current_stack_frame_);
   return data_->machine_name_;
 }
@@ -174,7 +174,7 @@ process& process::priority_class(process_priority_class value) {
   return *this;
 }
 
-std::string process::process_name() const {
+ustring process::process_name() const {
   if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(current_stack_frame_);
   return path::get_file_name_without_extension(data_->start_info_.file_name());
 }
@@ -284,11 +284,11 @@ process process::start(const process_start_info &start_info) {
   return process;
 }
 
-process process::start(const std::string& file_name) {
+process process::start(const ustring& file_name) {
   return start(process_start_info(file_name));
 }
 
-process process::start(const std::string& file_name, const std::string& arguments) {
+process process::start(const ustring& file_name, const ustring& arguments) {
   return start(process_start_info(file_name, arguments));
 }
 
