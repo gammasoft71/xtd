@@ -52,12 +52,12 @@ namespace xtd {
       /// @return A xtd::diagnostics::trace_listener trace listener. In this case a xtd::forms::control_trace_listener.
       xtd::diagnostics::trace_listener& trace_listener() {return *listener_;}
       
-      void write(const std::string& debug) override {
+      void write(const xtd::ustring& debug) override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         trace_form_base::write(debug);
 #endif
       }
-      void write_line(const std::string& debug) override {
+      void write_line(const xtd::ustring& debug) override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         trace_form_base::write_line(debug);
 #endif

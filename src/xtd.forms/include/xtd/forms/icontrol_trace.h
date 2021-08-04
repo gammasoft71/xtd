@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/interface.h>
+#include <xtd/ustring.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -16,11 +17,11 @@ namespace xtd {
     public:
       /// @brief Write debug or trace message on this instance control.
       /// @param message A string that tcontains the debug oor trace message.
-      virtual void write(const std::string& message) = 0;
+      virtual void write(const xtd::ustring& message) = 0;
 
       /// @brief Write debug or trace message on this instance control followed by line terminator.
       /// @param message A string that tcontains the debug oor trace message.
-      virtual void write_line(const std::string& message) = 0;
+      virtual void write_line(const xtd::ustring& message) = 0;
 
       /// @brief Flushes the output buffer and causes buffered data to write to the contrtol.
       virtual void flush() = 0;
