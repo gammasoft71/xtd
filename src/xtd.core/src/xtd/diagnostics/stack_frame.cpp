@@ -1,5 +1,4 @@
 #include "../../../include/xtd/diagnostics/stack_frame.h"
-#include "../../../include/xtd/strings.h"
 #include <call_stack.h>
 
 using namespace std;
@@ -50,19 +49,19 @@ stack_frame::stack_frame(size_t skip_frame, bool need_file_info) {
   }
 }
 
-stack_frame::stack_frame(const string& file_name, uint32_t line_number) : file_name_(file_name), file_line_number_(line_number) {
+stack_frame::stack_frame(const ustring& file_name, uint32_t line_number) : file_name_(file_name), file_line_number_(line_number) {
 }
 
-stack_frame::stack_frame(const string& file_name, uint32_t line_number, const string& method_name) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name) {
+stack_frame::stack_frame(const ustring& file_name, uint32_t line_number, const ustring& method_name) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name) {
 }
 
-stack_frame::stack_frame(const string& file_name, uint32_t line_number, const string& method_name, uint32_t column_number) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name), file_column_number_(column_number) {
+stack_frame::stack_frame(const ustring& file_name, uint32_t line_number, const ustring& method_name, uint32_t column_number) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name), file_column_number_(column_number) {
 }
 
-stack_frame::stack_frame(const string& file_name, uint32_t line_number, uint32_t column_number) : file_name_(file_name), file_line_number_(line_number), file_column_number_(column_number) {
+stack_frame::stack_frame(const ustring& file_name, uint32_t line_number, uint32_t column_number) : file_name_(file_name), file_line_number_(line_number), file_column_number_(column_number) {
 }
 
-stack_frame::stack_frame(const string& file_name, uint32_t line_number, const string& method_name, uint32_t column_number, uint32_t offset) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name), file_column_number_(column_number), offset_(offset) {
+stack_frame::stack_frame(const ustring& file_name, uint32_t line_number, const ustring& method_name, uint32_t column_number, uint32_t offset) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name), file_column_number_(column_number), offset_(offset) {
 }
 
 stack_frame stack_frame::empty() noexcept {
@@ -77,11 +76,11 @@ uint32_t stack_frame::get_file_line_number() const {
   return file_line_number_;
 }
 
-const string& stack_frame::get_file_name() const {
+const ustring& stack_frame::get_file_name() const {
   return file_name_;
 }
 
-const string& stack_frame::get_method() const {
+const ustring& stack_frame::get_method() const {
   return method_name_;
 }
 
@@ -98,13 +97,13 @@ ustring stack_frame::to_string() const noexcept {
 //  return os << stack_frame.to_string();
 //}
 
-std::vector<stack_frame> stack_frame::get_stack_frames(const std::string& str, size_t skip_frames, bool need_file_info) {
+std::vector<stack_frame> stack_frame::get_stack_frames(const ustring& str, size_t skip_frames, bool need_file_info) {
   stacktrace::call_stack call_stack(4);
   size_t skip_frames_before_str = 0;
   if (!str.empty()) {
     skip_frames_before_str = call_stack.stack.size();
     for (size_t index = 0; index < call_stack.stack.size(); ++index) {
-      if (xtd::strings::starts_with(call_stack.stack[index].function, str)) {
+      if (call_stack.stack[index].function.starts_with(str)) {
         skip_frames_before_str = index;
         break;
       }
