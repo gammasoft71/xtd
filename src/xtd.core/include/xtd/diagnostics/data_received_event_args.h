@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "../event_args.h"
-#include <string>
+#include "../ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -21,7 +21,7 @@ namespace xtd {
       
       /// @brief Initializes a new instance of the data_received_event_args class.
       /// @param data The line that was written by an associated Process to its redirected xtd::diagnostics::process::standard_output or xtd::diagnostics::process::standard_error stream.
-      data_received_event_args(const std::string& data) : data_(data) {}
+      data_received_event_args(const xtd::ustring& data) : data_(data) {}
       
       /// @cond
       data_received_event_args(const data_received_event_args&) = default;
@@ -30,10 +30,10 @@ namespace xtd {
       
       /// @brief Gets the line of characters that was written to a redirected Process output stream.
       /// @return true if the current process should resume when the event handler concludes; false if the current process should terminate. The default value is false; the current process terminates when the event handler returns. If true, the current process continues.
-      const std::string& data() const {return data_;}
+      const xtd::ustring& data() const {return data_;}
       
     private:
-      std::string data_;
+      xtd::ustring data_;
     };
   }
 }
