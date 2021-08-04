@@ -43,30 +43,30 @@ namespace xtd {
       /// @brief Initializes a new instance of the StackFrame class that contains only the given file name, and line number.
       /// @param file_name The file name.
       /// @param line_numer The line number in the specified file.
-      stack_frame(const std::string& file_name, uint32_t line_number);
+      stack_frame(const xtd::ustring& file_name, uint32_t line_number);
       /// @brief Initializes a new instance of the StackFrame class that contains only the given file name, line number, and method name.
       /// @param file_name The file name.
       /// @param line_numer The line number in the specified file.
       /// @param method_name The method name.
-      stack_frame(const std::string& file_name, uint32_t line_number, const std::string& method_name);
+      stack_frame(const xtd::ustring& file_name, uint32_t line_number, const xtd::ustring& method_name);
       /// @brief Initializes a new instance of the StackFrame class that contains only the given file name, line number, and column number.
       /// @param file_name The file name.
       /// @param line_numer The line number in the specified file.
       /// @param method_name The method name.
       /// @param offset The offset from the code for the method that is being executed.
-      stack_frame(const std::string& file_name, uint32_t line_number, const std::string& method_name, uint32_t column_number);
+      stack_frame(const xtd::ustring& file_name, uint32_t line_number, const xtd::ustring& method_name, uint32_t column_number);
       /// @brief Initializes a new instance of the StackFrame class that contains only the given file name, line number, and column number.
       /// @param file_name The file name.
       /// @param line_numer The line number in the specified file.
       /// @param method_name The method name.
       /// @param column_number The column number in the specified file.
-      stack_frame(const std::string& file_name, uint32_t line_number, uint32_t column_number);
+      stack_frame(const xtd::ustring& file_name, uint32_t line_number, uint32_t column_number);
       /// @brief Initializes a new instance of the StackFrame class that contains only the given file name, line number, column number, method name, and ofsset.
       /// @param file_name The file name.
       /// @param line_numer The line number in the specified file.
       /// @param method_name The method name.
       /// @param offset The offset from the code for the method that is being executed.
-      stack_frame(const std::string& file_name, uint32_t line_number, const std::string& method_name, uint32_t column_number, uint32_t offset);
+      stack_frame(const xtd::ustring& file_name, uint32_t line_number, const xtd::ustring& method_name, uint32_t column_number, uint32_t offset);
       /// @cond
       stack_frame(const stack_frame&) = default;
       stack_frame(stack_frame&&) = default;
@@ -128,7 +128,7 @@ namespace xtd {
       /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
       ///   console::write_line(" Offset: {}", sf.get_offset());
       /// @endcode
-      virtual const std::string& get_file_name() const;
+      virtual const xtd::ustring& get_file_name() const;
       
       /// @brief Gets the method in which the frame is executing.
       /// @return The method in which the frame is executing.
@@ -145,7 +145,7 @@ namespace xtd {
       /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
       ///   console::write_line(" Offset: {}", sf.get_offset());
       /// @endcode
-      virtual const std::string& get_method() const;
+      virtual const xtd::ustring& get_method() const;
       
       /// @brief Gets the offset from the start of the code for the method that is being executed.
       /// @return The offset from the code for the method that is being executed.
@@ -178,11 +178,11 @@ namespace xtd {
       
     private:
       friend class stack_trace;
-      static std::vector<stack_frame> get_stack_frames(const std::string& str, size_t skip_frames, bool need_file_info);
+      static std::vector<stack_frame> get_stack_frames(const xtd::ustring& str, size_t skip_frames, bool need_file_info);
 
-      std::string file_name_;
+      xtd::ustring file_name_;
       uint32_t file_line_number_ = 0;
-      std::string method_name_;
+      xtd::ustring method_name_;
       uint32_t file_column_number_ = 0;
       uint32_t offset_ = OFFSET_UNKNOWN;
     };
