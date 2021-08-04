@@ -9,7 +9,7 @@
 #include "../core_export.h"
 #include "../environment.h"
 #include "../static.h"
-#include "../strings.h"
+#include "../ustring.h"
 #include "assert_dialog_result.h"
 #include "debugger.h"
 #include "stack_trace.h"
@@ -114,12 +114,12 @@ namespace xtd {
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
-      static void cassert(bool condition, const std::string& message);
+      static void cassert(bool condition, const xtd::ustring& message);
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
       /// @param stack_frame The stack frame corresponding to the generated assert.
-      static void cassert(bool condition, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void cassert(bool condition, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @param stack_frame The stack frame corresponding to the generated assert.
@@ -129,7 +129,7 @@ namespace xtd {
       /// @param message A message to emit.
       /// @remarks The default behavior is that the xtd::diagnostics::default_trace_listener outputs the message to a message box when the application is running in user interface mode and to the xtd::diagnostics::trace_listener instances in the xtd::diagnostics::debug::listeners collection.
       /// @note The display of the message box is dependent on the presence of the xtd::diagnostics::default_trace_listener. If the xtd::diagnostics::default_trace_listener is not in the xtd::diagnostics::debug::listeners collection, the message box is not displayed. The xtd::diagnostics::default_trace_listener can be removed by the <clear>, the <erase>, or by calling the clear method on the xtd::diagnostics::debug::listeners property (xtd::diagnostics::trace::listeners().clear()).
-      static void fail(const std::string& message) {
+      static void fail(const xtd::ustring& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         fail__(message);
 #endif
@@ -139,7 +139,7 @@ namespace xtd {
       /// @param detail_message A detailed message to emit.
       /// @remarks The default behavior is that the default_trace_listener outputs the message to a message box when the application is running in user interface mode and to the TraceListener instances in the Listeners collection.
       /// @note The display of the message box is dependent on the presence of the default_trace_listener. If the default_trace_listener is not in the listeners collection, the message box is not displayed. The default_trace_listener can be removed by the <clear>, the <remove>, or by calling the clear method on the listeners property (xtd::diagnostics::trace::listeners().clear()).
-      static void fail(const std::string& message, const std::string& detail_message) {
+      static void fail(const xtd::ustring& message, const xtd::ustring& detail_message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         fail__(message, detail_message);
 #endif
@@ -158,7 +158,7 @@ namespace xtd {
       /// @brief Writes a message followed by a line terminator to the trace listeners in the listeners collection.
       /// @param message The message to write.
       /// @remarks The default line terminator is a carriage return followed by a line feed. By default, the output is written to an instance of default_trace_listener.
-      static void print(const std::string& message) {
+      static void print(const xtd::ustring& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line_(message);
 #endif
@@ -168,16 +168,16 @@ namespace xtd {
       /// @param ...args An object array containing zero or more objects to format.
       /// @exception xtd::format_exception format is invalid. -or- The number that indicates an argument to format is less than zero, or greater than or equal to the number of specified objects to format.
       template<typename ...args_t>
-      static void print(const std::string& format, args_t&&... args) {
+      static void print(const xtd::ustring& format, args_t&&... args) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        write_line_(xtd::strings::format(format, args...));
+        write_line_(xtd::ustring::format(format, args...));
 #endif
       }
       /// @cond
       template<typename ...args_t>
       static void print(const char* format, args_t&&... args) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        write_line_(xtd::strings::format(format, args...));
+        write_line_(xtd::ustring::format(format, args...));
 #endif
       }
       /// @endcond
@@ -185,7 +185,7 @@ namespace xtd {
       /// @brief Writes an error message to the trace listeners in the Listeners collection using the specified message.
       /// @param message The informative message to write.
       /// @remarks trace_error calls the trace_event method for each trace listener, with the trace event type error, passing the informative message as the message string.
-      static void trace_error(const std::string& message) {
+      static void trace_error(const xtd::ustring& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         trace_event_(trace_event_type::error, message);
 #endif
@@ -195,16 +195,16 @@ namespace xtd {
       /// @param ...args An object array containing zero or more objects to format.
       /// @remarks trace_error calls the trace_event methods in the trace listeners with the trace event type error, passing the message content as an object array with formatting information.
       template<typename ...objects_t>
-      static void trace_error(const std::string& message, const objects_t& ... args) {
+      static void trace_error(const xtd::ustring& message, const objects_t& ... args) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        trace_event_(trace_event_type::error, xtd::strings::format(message, args...));
+        trace_event_(trace_event_type::error, xtd::ustring::format(message, args...));
 #endif
       }
       
       /// @brief Writes an informational message to the trace listeners in the listeners collection using the specified message.
       /// @param message The informative message to write.
       /// @remarks trace_information calls the trace_event method for each trace listener, with the trace event type information, passing the informative message as the message string.
-      static void trace_information(const std::string& message) {
+      static void trace_information(const xtd::ustring& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         trace_event_(trace_event_type::information, message);
 #endif
@@ -214,16 +214,16 @@ namespace xtd {
       /// @param ...args An object array containing zero or more objects to format.
       /// @remarks trace_information calls the trace_event methods in the trace listeners with the trace event type information, passing the message content as an object array with formatting information.
       template<typename ...objects_t>
-      static void trace_information(const std::string& message, const objects_t& ... args) {
+      static void trace_information(const xtd::ustring& message, const objects_t& ... args) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        trace_event_(trace_event_type::information, xtd::strings::format(message, args...));
+        trace_event_(trace_event_type::information, xtd::ustring::format(message, args...));
 #endif
       }
 
       /// @brief Writes a warning message to the trace listeners in the listeners collection using the specified message.
       /// @param message The informative message to write.
       /// @remarks trace_warning calls the trace_event method for each trace listener with the trace event type Warning, passing the informative message as the message string.
-      static void trace_warning(const std::string& message) {
+      static void trace_warning(const xtd::ustring& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         trace_event_(trace_event_type::warning, message);
 #endif
@@ -233,9 +233,9 @@ namespace xtd {
       /// @param ...args An object array containing zero or more objects to format.
       /// @remarks trace_warning calls the trace_event methods in the trace listeners with the trace event type Warning, passing the message content as an object array with formatting information.
       template<typename ...objects_t>
-      static void trace_warning(const std::string& message, const objects_t& ... args) {
+      static void trace_warning(const xtd::ustring& message, const objects_t& ... args) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        trace_event_(trace_event_type::warning, xtd::strings::format(message, args...));
+        trace_event_(trace_event_type::warning, xtd::ustring::format(message, args...));
 #endif
       }
 
@@ -246,7 +246,7 @@ namespace xtd {
       /// @param message A message to write.
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
-      static void write(const std::string& message) {
+      static void write(const xtd::ustring& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_(message);
 #endif
@@ -258,7 +258,7 @@ namespace xtd {
       template<typename object_t>
       static void write(const object_t& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        write_(xtd::strings::format("", message));
+        write_(xtd::ustring::format("", message));
 #endif
       }
       /// @brief Writes a category name and message to the trace listeners in the listeners collection.
@@ -268,9 +268,9 @@ namespace xtd {
       /// @remarks Use the category parameter to group output messages.
       /// @remarks This method calls the write method of the trace listener.
       template<typename object_t>
-      static void write(const object_t& message, const std::string& category) {
+      static void write(const object_t& message, const xtd::ustring& category) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        write_(xtd::strings::format("", message), category);
+        write_(xtd::ustring::format("", message), category);
 #endif
       }
       /// @brief Writes a formatted string to the trace listeners in the listeners collection.
@@ -279,16 +279,16 @@ namespace xtd {
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
       template<typename ...args_t>
-      static void write(const std::string& format, args_t&&... args) {
+      static void write(const xtd::ustring& format, args_t&&... args) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        write_(strings::format(format, args...));
+        write_(ustring::format(format, args...));
 #endif
       }
       /// @cond
       template<typename ...args_t>
       static void write(const char* format, args_t&&... args) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        write_(strings::format(format, args...));
+        write_(ustring::format(format, args...));
 #endif
       }
       /// @endcond
@@ -298,7 +298,7 @@ namespace xtd {
       /// @param message A message to write.
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
-      static void write_if(bool condition, const std::string& message) {
+      static void write_if(bool condition, const xtd::ustring& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         if (condition) write_(message);
 #endif
@@ -311,7 +311,7 @@ namespace xtd {
       /// @remarks This method calls the write method of the trace listener.
       static void write_if(bool condition, const object_t& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        if (condition) write_(xtd::strings::format("", message));
+        if (condition) write_(xtd::ustring::format("", message));
 #endif
       }
       /// @brief Writes a category name and message to the trace listeners in the Listeners collection if a condition is true.
@@ -321,9 +321,9 @@ namespace xtd {
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
       template<typename object_t>
-      static void write_if(bool condition, const object_t& message, const std::string& category) {
+      static void write_if(bool condition, const object_t& message, const xtd::ustring& category) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        if (condition) write_(xtd::strings::format("", message), category);
+        if (condition) write_(xtd::ustring::format("", message), category);
 #endif
       }
       
@@ -340,7 +340,7 @@ namespace xtd {
       /// @param message A message to write.
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
-      static void write_line(const std::string& message) {
+      static void write_line(const xtd::ustring& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line_(message);
 #endif
@@ -352,7 +352,7 @@ namespace xtd {
       template<typename object_t>
       static void write_line(const object_t& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        write_line_(xtd::strings::format("", message));
+        write_line_(xtd::ustring::format("", message));
 #endif
       }
       /// @brief Writes a category name and message followed by a line terminator to the trace listeners in the listeners collection.
@@ -362,9 +362,9 @@ namespace xtd {
       /// @remarks Use the category parameter to group output messages.
       /// @remarks This method calls the write method of the trace listener.
       template<typename object_t>
-      static void write_line(const object_t& message, const std::string& category) {
+      static void write_line(const object_t& message, const xtd::ustring& category) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        write_line_(xtd::strings::format("", message), category);
+        write_line_(xtd::ustring::format("", message), category);
 #endif
       }
       /// @brief Writes a formatted string followed by a line terminator to the trace listeners in the listeners collection.
@@ -372,16 +372,16 @@ namespace xtd {
       /// @param ...args An object array containing zero or more objects to format.
       /// @exception xtd::format_exception format is invalid. -or- The number that indicates an argument to format is less than zero, or greater than or equal to the number of specified objects to format.
       template<typename ...args_t>
-      static void write_line(const std::string& format, args_t&&... args) {
+      static void write_line(const xtd::ustring& format, args_t&&... args) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        write_line_(strings::format(format, args...));
+        write_line_(ustring::format(format, args...));
 #endif
       }
       /// @cond
       template<typename ...args_t>
       static void write_line(const char* format, args_t&&... args) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        write_line_(strings::format(format, args...));
+        write_line_(ustring::format(format, args...));
 #endif
       }
       /// @endcond
@@ -391,7 +391,7 @@ namespace xtd {
       /// @param message A message to write.
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
-      static void write_line_if(bool condition, const std::string& message) {
+      static void write_line_if(bool condition, const xtd::ustring& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         if (condition) write_line_(message);
 #endif
@@ -414,7 +414,7 @@ namespace xtd {
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
       template<typename object_t>
-      static void write_line_if(bool condition, const object_t& message, const std::string& category) {
+      static void write_line_if(bool condition, const object_t& message, const xtd::ustring& category) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         if (condition) write_line_(message, category);
 #endif
@@ -422,9 +422,9 @@ namespace xtd {
       
       /// @cond
       static inline bool __should_aborted__(bool condition) {return __should_aborted__(condition, "", csf_);}
-      static inline bool __should_aborted__(bool condition, const std::string& message) {return __should_aborted__(condition, message, csf_);}
+      static inline bool __should_aborted__(bool condition, const xtd::ustring& message) {return __should_aborted__(condition, message, csf_);}
       static inline bool __should_aborted__(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {return __should_aborted__(condition, "", stack_frame);}
-      static inline bool __should_aborted__(bool condition, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+      static inline bool __should_aborted__(bool condition, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         auto result = xtd::diagnostics::debug::assert_dialog(condition, message, stack_frame);
         if (result == xtd::diagnostics::assert_dialog_result::abort) xtd::environment::exit(EXIT_FAILURE);
@@ -436,15 +436,15 @@ namespace xtd {
 
     private:
       friend trace;
-      static xtd::diagnostics::assert_dialog_result assert_dialog(bool condition, const std::string& message, const xtd::diagnostics::stack_frame& stack_frrame);
-      static void fail__(const std::string& message);
-      static void fail__(const std::string& message, const std::string& detail_message);
+      static xtd::diagnostics::assert_dialog_result assert_dialog(bool condition, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frrame);
+      static void fail__(const xtd::ustring& message);
+      static void fail__(const xtd::ustring& message, const xtd::ustring& detail_message);
       static void flush_();
-      static void trace_event_(trace_event_type trace_event_type, const std::string& message);
-      static void write_(const std::string& message);
-      static void write_(const std::string& message, const std::string& category);
-      static void write_line_(const std::string& message);
-      static void write_line_(const std::string& message, const std::string& category);
+      static void trace_event_(trace_event_type trace_event_type, const xtd::ustring& message);
+      static void write_(const xtd::ustring& message);
+      static void write_(const xtd::ustring& message, const xtd::ustring& category);
+      static void write_line_(const xtd::ustring& message);
+      static void write_line_(const xtd::ustring& message, const xtd::ustring& category);
 
       inline static bool auto_flush_ = false;
       inline static unsigned int indent_level_ = 0;
@@ -453,7 +453,7 @@ namespace xtd {
       static bool& show_assert_dialog_;
       inline static bool use_global_lock_ = true;
       static std::mutex global_lock_;
-      static std::string source_name_;
+      static xtd::ustring source_name_;
     };
   }
 }

@@ -12,7 +12,7 @@ bool __show_assert_dialog__ {true};
 trace_listener_collection& trace::listeners_ = __listeners__;
 bool& trace::show_assert_dialog_ = __show_assert_dialog__;
 mutex trace::global_lock_;
-string trace::source_name_ = environment::get_command_line_args().size() == 0 ? "(unknown)" : environment::get_command_line_args()[0];
+ustring trace::source_name_ = environment::get_command_line_args().size() == 0 ? "(unknown)" : environment::get_command_line_args()[0];
 
 bool trace::auto_flush() {
   return auto_flush_;
@@ -70,11 +70,11 @@ void trace::cassert(bool condition) {
   if (__should_aborted__(condition, "", csf_)) __std_abort__();
 }
 
-void trace::cassert(bool condition, const std::string& message) {
+void trace::cassert(bool condition, const ustring& message) {
   if (__should_aborted__(condition, message, csf_)) __std_abort__();
 }
 
-void trace::cassert(bool condition, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+void trace::cassert(bool condition, const ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   if (__should_aborted__(condition, message, stack_frame)) __std_abort__();
 }
 
@@ -86,7 +86,7 @@ void trace::unindent() {
   if (indent_level() != 0) indent_level(indent_level() - 1);
 }
 
-void trace::fail__(const std::string& message) {
+void trace::fail__(const ustring& message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -100,7 +100,7 @@ void trace::fail__(const std::string& message) {
   if (auto_flush_) flush();
 }
 
-void trace::fail__(const std::string& message, const std::string& detail_message) {
+void trace::fail__(const ustring& message, const ustring& detail_message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -119,7 +119,7 @@ void trace::flush_() {
     listener->flush();
 }
 
-void trace::trace_event_(trace_event_type trace_event_type, const std::string& message) {
+void trace::trace_event_(trace_event_type trace_event_type, const ustring& message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -133,7 +133,7 @@ void trace::trace_event_(trace_event_type trace_event_type, const std::string& m
   if (auto_flush_) flush();
 }
 
-void trace::write_(const std::string& message) {
+void trace::write_(const ustring& message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -147,7 +147,7 @@ void trace::write_(const std::string& message) {
   if (auto_flush_) flush();
 }
 
-void trace::write_(const std::string& message, const std::string& category) {
+void trace::write_(const ustring& message, const ustring& category) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -161,7 +161,7 @@ void trace::write_(const std::string& message, const std::string& category) {
   if (auto_flush_) flush();
 }
 
-void trace::write_line_(const std::string& message) {
+void trace::write_line_(const ustring& message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -175,7 +175,7 @@ void trace::write_line_(const std::string& message) {
   if (auto_flush_) flush();
 }
 
-void trace::write_line_(const std::string& message, const std::string& category) {
+void trace::write_line_(const ustring& message, const ustring& category) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
