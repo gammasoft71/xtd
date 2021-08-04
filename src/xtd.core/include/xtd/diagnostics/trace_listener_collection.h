@@ -51,7 +51,7 @@ namespace xtd {
       ///   debug::listeners()["default"]->write_line("User message");
       /// }
       /// @endcode
-      const_reference operator[](const std::string& name) const;
+      const_reference operator[](const xtd::ustring& name) const;
       /// @brief Gets the first xtd::diagnostics::trace_listener in the list with the specified name.
       /// @param name The name of the xtd::diagnostics::trace_listener to get from the list.
       /// @return The first xtd::diagnostics::trace_listener in the list with the given Name. This item returns empty if no xtd::diagnostics::trace_listener with the given name can be found.
@@ -67,7 +67,7 @@ namespace xtd {
       ///   debug::listeners()["default"]->write_line("User message");
       /// }
       /// @endcode
-      reference operator[](const std::string& name);
+      reference operator[](const xtd::ustring& name);
 
     private:
       inline static value_type empty_;

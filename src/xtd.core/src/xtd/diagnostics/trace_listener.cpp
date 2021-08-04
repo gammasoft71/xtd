@@ -65,15 +65,15 @@ void trace_listener::thread_safe(bool thread_safe) {
 
 void trace_listener::write_event_cache(const trace_event_cache& event_cache) {
   if (((int)trace_output_options_ & (int)xtd::diagnostics::trace_options::process_id) == (int)xtd::diagnostics::trace_options::process_id)
-    write_line(xtd::strings::format("{0}ProcessId={1}", ustring(indent_size_, ' '), event_cache.process_id()));
+    write_line(ustring::format("{0}ProcessId={1}", ustring(indent_size_, ' '), event_cache.process_id()));
   if (((int)trace_output_options_ & (int)xtd::diagnostics::trace_options::logical_operation_stack) == (int)xtd::diagnostics::trace_options::logical_operation_stack)
-    write_line(xtd::strings::format("{0}LogicalOperationStack={1}", ustring(indent_size_, ' '), xtd::strings::join(", ", event_cache.logical_operation_stack())));
+    write_line(ustring::format("{0}LogicalOperationStack={1}", ustring(indent_size_, ' '), ustring::join(", ", event_cache.logical_operation_stack())));
   if (((int)trace_output_options_ & (int)xtd::diagnostics::trace_options::thread_id) == (int)xtd::diagnostics::trace_options::thread_id)
-    write_line(xtd::strings::format("{0}ThreadId={1}", ustring(indent_size_, ' '), event_cache.thread_id()));
+    write_line(ustring::format("{0}ThreadId={1}", ustring(indent_size_, ' '), event_cache.thread_id()));
   if (((int)trace_output_options_ & (int)xtd::diagnostics::trace_options::date_time) == (int)xtd::diagnostics::trace_options::date_time)
-    write_line(xtd::strings::format("{0}DateTime={1:D}T{1:T}", ustring(indent_size_, ' '), event_cache.date_time()));
+    write_line(ustring::format("{0}DateTime={1:D}T{1:T}", ustring(indent_size_, ' '), event_cache.date_time()));
   if (((int)trace_output_options_ & (int)xtd::diagnostics::trace_options::timestamp) == (int)xtd::diagnostics::trace_options::timestamp)
-    write_line(xtd::strings::format("{0}Timestamp={1}", ustring(indent_size_, ' '), event_cache.timestamp()));
+    write_line(ustring::format("{0}Timestamp={1}", ustring(indent_size_, ' '), event_cache.timestamp()));
   if (((int)trace_output_options_ & (int)xtd::diagnostics::trace_options::callstack) == (int)xtd::diagnostics::trace_options::callstack)
-    write_line(xtd::strings::format("{0}Callstack={1}", ustring(indent_size_, ' '), event_cache.call_stack()));
+    write_line(ustring::format("{0}Callstack={1}", ustring(indent_size_, ' '), event_cache.call_stack()));
 }
