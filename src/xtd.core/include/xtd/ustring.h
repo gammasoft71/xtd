@@ -1058,7 +1058,7 @@ namespace xtd {
     /// @remarks If count is greater than the number of substrings, the available substrings are returned.
     std::vector<ustring> split(const std::vector<value_type>& separators, string_split_options options) const noexcept;
     
-    /// Splits this string into a maximum number of substrings based on the characters in an array. You also specify the maximum number of substrings to return.
+    /// @brief Splits this string into a maximum number of substrings based on the characters in an array. You also specify the maximum number of substrings to return.
     /// @param separators A character array that delimits the substrings in this string, an empty array that contains no delimiters.
     /// @param count The maximum number of substrings to return.
     /// @remarks Delimiter characters are not included in the elements of the returned array.

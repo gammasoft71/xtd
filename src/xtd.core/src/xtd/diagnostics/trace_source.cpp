@@ -3,10 +3,10 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-trace_source::trace_source(const std::string& name) : name_(name) {
+trace_source::trace_source(const ustring& name) : name_(name) {
 }
 
-trace_source::trace_source::trace_source(const std::string& name, xtd::diagnostics::source_levels default_levels) : name_(name), switch_levels_(default_levels) {
+trace_source::trace_source::trace_source(const ustring& name, xtd::diagnostics::source_levels default_levels) : name_(name), switch_levels_(default_levels) {
   source_switch_.level(switch_levels_);
 }
 
@@ -18,7 +18,7 @@ void trace_source::listeners(const xtd::diagnostics::trace_listener_collection& 
   listeners_ = listeners;
 }
 
-const std::string& trace_source::name() const {
+const ustring& trace_source::name() const {
   return name_;
 }
 
@@ -42,6 +42,6 @@ void trace_source::flush() {
     listener->flush();
 }
 
-void trace_source::trace_information(const std::string& message) {
+void trace_source::trace_information(const ustring& message) {
   trace_event(trace_event_type::information, 0, message);
 }
