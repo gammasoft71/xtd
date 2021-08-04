@@ -6,7 +6,6 @@
 #include <limits>
 #include <stdexcept>
 #include "parse.h"
-#include "strings.h"
 #include "types.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

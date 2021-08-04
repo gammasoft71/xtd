@@ -146,11 +146,11 @@ namespace xtd {
     /// @remarks "{CA761232-ED42-11CE-BACD-00AA0057B223}"
     /// @remarks "(CA761232-ED42-11CE-BACD-00AA0057B223)"
     /// @remarks "{0xCA761232, 0xED42, 0x11CE, {0xBA, 0xCD, 0x00, 0xAA, 0x00, 0x57, 0xB2, 0x23}}"
-    guid(const std::string& guid) {
-      std::string simple = xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(guid, "0x", ""), ",", ""), "-", ""), "(", ""), ")", ""), "{", ""), "}", "");
+    guid(const ustring& guid) {
+      ustring simple = guid.replace("0x", "").replace(",", "").replace("-", "").replace("(", "").replace(")", "").replace("{", "").replace("}", "");
       for (size_t i = 0; i < data_.size(); i ++) {
-        data_[i] = xtd::parse<uint8_t>(xtd::strings::substring(simple, 0, 2), xtd::number_styles::hex_number);
-        simple = xtd::strings::remove(simple, 0, 2);
+        data_[i] = xtd::parse<uint8_t>(simple.substring(0, 2), xtd::number_styles::hex_number);
+        simple = simple.remove(0, 2);
       }
     }
 
@@ -231,10 +231,10 @@ namespace xtd {
     /// |           | (00000000-0000-0000-0000-000000000000)                                                                                                      |
     /// | X         | Four hexadecimal values enclosed in braces, where the fourth value is a subset of eight hexadecimal values that is also enclosed in braces: |
     /// |           | {0x00000000,0x0000,0x0000,{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}                                                                         |
-    std::string to_string(std::string format) const {
-      format = format.empty() ? "d" : xtd::strings::to_lower(format);
+    ustring to_string(ustring format) const {
+      format = format.empty() ? "d" : format.to_lower();
       
-      if (format.size() != 1 || xtd::strings::index_of("ndbpx", format) == std::string::npos)
+      if (format.size() != 1 || ustring("ndbpx").index_of(format) == ustring::npos)
         throw xtd::format_exception(current_stack_frame_);
       
       bool hyphens = format != "n" && format != "x";
@@ -242,7 +242,7 @@ namespace xtd {
       bool parentheses = format == "p";
       bool hexadecimal = format == "x";
       
-      std::string result;
+      ustring result;
       for (size_t index = 0; index < data_.size(); index++) {
         if (hexadecimal && (index == 4 || index == 6 || (index >= 8 && index <= 15)))
           result += ",";

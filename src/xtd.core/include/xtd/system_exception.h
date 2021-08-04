@@ -117,7 +117,7 @@ namespace xtd {
     
     /// @brief Get full class name the exception
     /// @return A string represent a full class name of the exception
-    virtual const xtd::ustring& name() const noexcept {return (name_ = xtd::strings::full_class_name(*this));}
+    virtual const xtd::ustring& name() const noexcept {return (name_ = xtd::ustring::full_class_name(*this));}
     
     /// @brief Gets a string representation of the immediate frames on the call stack.
     /// @return A string that describes the immediate frames of the call stack.

@@ -3193,7 +3193,7 @@ namespace xtdc_command {
       }
     }
     
-    mutable std::filesystem::path path_ {xtd::environment::current_directory()};
+    mutable std::filesystem::path path_ {std::string(xtd::environment::current_directory())};
     mutable int32_t last_exit_code_ = EXIT_SUCCESS;
   };
 }
