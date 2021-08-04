@@ -166,7 +166,7 @@ namespace xtd {
       
       /// @brief Builds a readable representation of the stack trace.
       /// @return A readable representation of the stack trace.
-      virtual std::string to_string() const noexcept;
+      std::string to_string() const noexcept override;
 
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::diagnostics::stack_frame& stack_frame) noexcept {return os << stack_frame.to_string();}
