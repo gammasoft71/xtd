@@ -168,7 +168,7 @@ bool console::output_code_page(int32_t code_page) {
 }
 
 ustring console::read_line() {
-  std::string result;
+  ustring result;
   in >> result;
   return result;
 }

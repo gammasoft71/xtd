@@ -2,14 +2,14 @@
 /// @brief Contains xtd::console class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
 #include "console_cancel_event_handler.h"
 #include "console_color.h"
 #include "console_key_info.h"
 #include "console_special_key.h"
-#include <xtd/event.h>
-#include <xtd/static.h>
-#include <xtd/types.h>
+#include "event.h"
+#include "static.h"
+#include "types.h"
+#include "ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
