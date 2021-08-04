@@ -7,6 +7,7 @@
 #include <mutex>
 #include "../core_export.h"
 #include "../static.h"
+#include "../ustring.h"
 
 /// @cond
 // Workaround : the std::abort function on Visual Studio shows a message box.
@@ -56,7 +57,7 @@ namespace xtd {
       /// @param message The message to show.
       /// @remarks If there is no debugger attached, this method has no effect. The debugger might or might not report the message, depending upon its settings.
       /// @note The category parameter is limited to 256 characters. std::strings longer than 256 characters are truncated.
-      static void log(int level, std::string& category, const std::string& message);
+      static void log(int level, xtd::ustring& category, const xtd::ustring& message);
     };
   }
 }

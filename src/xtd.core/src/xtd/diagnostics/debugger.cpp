@@ -23,6 +23,6 @@ bool debugger::launch() {
   return native::debugger::launch();
 }
 
-void debugger::log(int level, std::string& category, const std::string& message) {
+void debugger::log(int level, ustring& category, const ustring& message) {
   return native::debugger::log(level, category, message);
 }
