@@ -33,7 +33,7 @@ namespace xtd {
       const char* what() const noexcept {return message_.c_str();}
       
     private:
-      std::string message_;
+      xtd::ustring message_;
     };
   }
 }
