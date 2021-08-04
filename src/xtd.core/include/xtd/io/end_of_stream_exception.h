@@ -24,22 +24,22 @@ namespace xtd {
       /// @brief Create a new instance of class end_of_stream_exception
       /// @param message Message string associate to the exception.
       /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-      explicit end_of_stream_exception(const std::string& message, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(message, info) {}
+      explicit end_of_stream_exception(const xtd::ustring& message, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(message, info) {}
       /// @brief Create a new instance of class end_of_stream_exception
       /// @param message Message string associate to the exception.
       /// @param error Error code associate to the exception.
       /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-      explicit end_of_stream_exception(const std::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(message, error, info) {}
+      explicit end_of_stream_exception(const xtd::ustring& message, const std::error_code& error, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(message, error, info) {}
       /// @brief Create a new instance of class end_of_stream_exception
       /// @param message Message string associate to the exception.
       /// @param help_link Help link string associate to the exception.
       /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-      explicit end_of_stream_exception(const std::string& message, const std::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(message, help_link, info) {}
+      explicit end_of_stream_exception(const xtd::ustring& message, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(message, help_link, info) {}
       /// @brief Create a new instance of class end_of_stream_exception
       /// @param message Message string associate to the exception.
       /// @param error Error code associate to the exception.
       /// @param help_link Help link string associate to the exception.
-      explicit end_of_stream_exception(const std::string& message, const std::error_code& error, const std::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(message, error, help_link, info) {}
+      explicit end_of_stream_exception(const xtd::ustring& message, const std::error_code& error, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(message, error, help_link, info) {}
       /// @brief Create a new instance of class end_of_stream_exception
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
@@ -49,26 +49,26 @@ namespace xtd {
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-      explicit end_of_stream_exception(const std::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(message, inner_exception, info) {}
+      explicit end_of_stream_exception(const xtd::ustring& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(message, inner_exception, info) {}
       /// @brief Create a new instance of class end_of_stream_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param error Error code associate to the exception.
       /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-      explicit end_of_stream_exception(const std::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(message, inner_exception, error, info) {}
+      explicit end_of_stream_exception(const xtd::ustring& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(message, inner_exception, error, info) {}
       /// @brief Create a new instance of class end_of_stream_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param help_link Help link string associate to the exception.
       /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-      explicit end_of_stream_exception(const std::string& message, const std::exception& inner_exception, const std::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(message, inner_exception, help_link, info) {}
+      explicit end_of_stream_exception(const xtd::ustring& message, const std::exception& inner_exception, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(message, inner_exception, help_link, info) {}
       /// @brief Create a new instance of class end_of_stream_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param error Error code associate to the exception.
       /// @param help_link Help link string associate to the exception.
       /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-      explicit end_of_stream_exception(const std::string& message, const std::exception& inner_exception, const std::error_code& error, const std::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(message, inner_exception, error, help_link, info) {}
+      explicit end_of_stream_exception(const xtd::ustring& message, const std::exception& inner_exception, const std::error_code& error, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : ioexception(message, inner_exception, error, help_link, info) {}
       
       /// @cond
       end_of_stream_exception(const end_of_stream_exception&) = default;

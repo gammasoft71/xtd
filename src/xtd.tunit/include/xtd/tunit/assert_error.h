@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <stdexcept>
-#include <string>
+#include <xtd/ustring.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -17,7 +17,7 @@ namespace xtd {
     public:
       /// @brief Create a new instance of assert_error class.
       /// @param message Message string associate to the error.
-      explicit assert_error(const std::string& message) : message_(message) {}
+      explicit assert_error(const xtd::ustring& message) : message_(message) {}
 
       /// @brief Create a new instance of assert_error class.
       /// @param message Message string associate to the error.
@@ -33,7 +33,7 @@ namespace xtd {
       const char* what() const noexcept {return message_.c_str();}
       
     private:
-      std::string message_;
+      xtd::ustring message_;
     };
   }
 }
