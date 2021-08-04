@@ -2,8 +2,8 @@
 /// @brief Contains xtd::collections::specialized::string_pair typedef.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <string>
 #include <utility>
+#include "../../ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -15,7 +15,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core collections
-      using string_pair = std::pair<std::string, std::string>;
+      using string_pair = std::pair<xtd::ustring, xtd::ustring>;
     }
   }
 }
