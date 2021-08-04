@@ -46,7 +46,7 @@ namespace xtd {
       using trace_listener::write;
       /// @brief Writes the message to the listener you create when you implement the trace_listener class.
       /// @param message A string you want to write.
-      void write(const std::string& message) override {
+      void write(const xtd::ustring& message) override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         if (need_indent()) write_indent();
         if (control_trace_) control_trace_->write(message);
@@ -56,7 +56,7 @@ namespace xtd {
       using trace_listener::write_line;
       /// @brief Writes the message to the listener you create when you implement the trace_listener class.
       /// @param message A string you want to write.
-      void write_line(const std::string& message) override {
+      void write_line(const xtd::ustring& message) override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         //write(message + "\n");
         if (need_indent()) write_indent();

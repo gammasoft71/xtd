@@ -28,11 +28,11 @@ namespace xtd {
       
       /// @brief Gets the string used to separate date and/or time from trace text.
       /// @return A string that represent separator. By default is "|".
-      virtual const std::string& header_separator() const {return header_separator_;}
+      virtual const xtd::ustring& header_separator() const {return header_separator_;}
       /// @brief Sets the string used to separate date and/or time from trace text.
       /// @param header_separator A string that represent separator. By default is "|".
       /// @return Current trace_form_base.
-      virtual trace_form_base& header_separator(const std::string& header_separator) {
+      virtual trace_form_base& header_separator(const xtd::ustring& header_separator) {
         if (header_separator_ != header_separator_) {
           header_separator_ = header_separator;
           update_format();
@@ -73,7 +73,7 @@ namespace xtd {
    protected:
       /// @brief Initializes a new instance of the trace_form_base class with spefied caption text.
       /// @param text A string that represent the caption text oof the debug form.
-      trace_form_base(const std::string& text) {
+      trace_form_base(const xtd::ustring& text) {
         name("9f5767d6-7a21-4ebe-adfe-2427b2024a55");
         text_.name("d014d407-851c-49c1-a343-3380496a639a");
 
@@ -98,14 +98,14 @@ namespace xtd {
 
       /// @brief Writes trace string to the multiline text.
       /// @param trace A string to write.
-      virtual void write(const std::string& trace) {
+      virtual void write(const xtd::ustring& trace) {
         if (need_header()) write_header();
         text_.append_text(trace);
       }
       
       /// @brief Writes trace string to the multiline text followed by a line terminator.
       /// @param trace A string to write.
-      virtual void write_line(const std::string& trace) {
+      virtual void write_line(const xtd::ustring& trace) {
         write(trace);
         text_.append_text(environment::new_line());
         need_header(true);
@@ -146,8 +146,8 @@ namespace xtd {
       bool need_header_ = true;
       bool show_date_ = true;
       bool show_time_ = true;
-      std::string format_ = "{0}";
-      std::string header_separator_ = "|";
+      xtd::ustring format_ = "{0}";
+      xtd::ustring header_separator_ = "|";
       xtd::forms::text_box text_;
     };
   }

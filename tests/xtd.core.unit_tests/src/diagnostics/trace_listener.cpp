@@ -10,20 +10,20 @@ namespace unit_tests {
     class unit_test_trace_listener : public trace_listener {
     public:
       unit_test_trace_listener() = default;
-      std::string result() const {return string_stream.str();}
+      xtd::ustring result() const {return string_stream.str();}
       
       void close() override {}
       void flush() override {}
       
       using trace_listener::write;
-      void write(const std::string& message) override {
+      void write(const xtd::ustring& message) override {
         if (need_indent())
           write_indent();
         string_stream << message;
       }
 
       using trace_listener::write_line;
-      void write_line(const std::string& message) override {
+      void write_line(const xtd::ustring& message) override {
         write(message);
         string_stream << std::endl;
         need_indent(true);
@@ -103,7 +103,7 @@ namespace unit_tests {
     
     void test_method_(trace_data_with_string_aarray) {
       unit_test_trace_listener trace_listener;
-      trace_listener.trace_data(xtd::diagnostics::trace_event_cache(), "source", xtd::diagnostics::trace_event_type::error, 1, std::vector<std::string> {"one", "two"});
+      trace_listener.trace_data(xtd::diagnostics::trace_event_cache(), "source", xtd::diagnostics::trace_event_type::error, 1, std::vector<xtd::ustring> {"one", "two"});
       assert::are_equal_("source error: 1 : one, two\n", trace_listener.result());
     }
     
