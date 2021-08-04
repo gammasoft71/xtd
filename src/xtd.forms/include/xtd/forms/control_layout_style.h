@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/object.h>
-#include <xtd/strings.h>
+#include <xtd/ustring.h>
 #include "content_alignment.h"
 #include "size_type.h"
 
@@ -82,7 +82,7 @@ namespace xtd {
 
       /// @brief Returns a string that represent xtd::forms::control_layout_style.
       /// @return A string containing that represent xtd::forms::control_layout_style.
-      std::string to_string() const noexcept override {return strings::format("control_layout_style=[expanded={}, align={}, size_type={}]", expanded_, align_, size_type_);}
+      xtd::ustring to_string() const noexcept override {return ustring::format("control_layout_style=[expanded={}, align={}, size_type={}]", expanded_, align_, size_type_);}
       
       /// @cond
       bool operator==(const control_layout_style& value) const {return size_type_ == value.size_type_ && expanded_ == value.expanded_;}

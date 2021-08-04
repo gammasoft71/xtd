@@ -6,7 +6,7 @@
 #include <limits>
 #include <ostream>
 #include <xtd/object.h>
-#include <xtd/strings.h>
+#include <xtd/ustring.h>
 #include "../drawing_export.h"
 #include "brush.h"
 #include "solid_brush.h"
@@ -226,7 +226,7 @@ namespace xtd {
 
       void translate_clip(float dx, float dy) {translate_clip(static_cast<int32_t>(dx), static_cast<int32_t>(dy));}
 
-      std::string to_string() const noexcept override {return strings::full_class_name(*this);}
+      xtd::ustring to_string() const noexcept override {return ustring::full_class_name(*this);}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::graphics& graphics) noexcept {

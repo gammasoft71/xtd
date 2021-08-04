@@ -5,6 +5,7 @@
 #include <ostream>
 #include <xtd/object.h>
 #include <xtd/strings.h>
+#include <xtd/ustring.h>
 #include "../drawing_export.h"
 #include "size_f.h"
 
@@ -98,7 +99,7 @@ namespace xtd {
 
       /// @brief Creates a human-readable string that represents this size class.
       /// @return string A string that represents this size.
-      std::string to_string() const noexcept override {return "{width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";}
+      xtd::ustring to_string() const noexcept override {return "{width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";}
  
       /// @brief Converts the specified size_f to a size by truncating the values of the size_f.
       /// @param value The size_f to convert.

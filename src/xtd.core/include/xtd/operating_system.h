@@ -6,7 +6,7 @@
 #include <vector>
 #include "object.h"
 #include "platform_id.h"
-#include "strings.h"
+#include "ustring.h"
 #include "version.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -118,7 +118,7 @@ namespace xtd {
     
     /// @brief Converts the value of this operating_system object to its equivalent string representation.
     /// @return The string representation of the values returned by the platform, version, and service_pack methods.
-    std::string to_string() const noexcept {return version_string();}
+    xtd::ustring to_string() const noexcept {return version_string();}
     
   private:
     xtd::platform_id platform_ = xtd::platform_id::unknown;

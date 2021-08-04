@@ -8,6 +8,7 @@
 #include <cstdint>
 #include <string>
 #include <xtd/object.h>
+#include <xtd/ustring.h>
 #include "../forms_export.h"
 
 namespace xtd {
@@ -95,7 +96,7 @@ namespace xtd {
       
       /// @brief Returns a string that represents the current message.
       /// @return A std::string that represents the current message.
-      std::string to_string() const noexcept override;
+      xtd::ustring to_string() const noexcept override;
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::forms::message& message) noexcept {

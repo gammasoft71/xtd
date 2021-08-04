@@ -6,7 +6,7 @@
 #include <memory>
 #include <ostream>
 #include <xtd/object.h>
-#include <xtd/strings.h>
+#include <xtd/ustring.h>
 #include "../drawing_export.h"
 #include "drawing2d/pen_alignment.h"
 #include "drawing2d/pen_type.h"
@@ -92,7 +92,7 @@ namespace xtd {
       float width() const {return data_->width_;}
       xtd::drawing::pen& width(float width);
       
-      std::string to_string() const noexcept override {return strings::full_class_name(*this);}
+      xtd::ustring to_string() const noexcept override {return ustring::full_class_name(*this);}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::pen& pen) noexcept {

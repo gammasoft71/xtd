@@ -9,7 +9,7 @@
 #include "icomparable.h"
 #include "iequatable.h"
 #include "object.h"
-#include <xtd/strings.h>
+#include "ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -212,7 +212,7 @@ namespace xtd {
     /// xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
     /// where the value of the GUID is represented as a series of lowercase hexadecimal digits in groups of 8, 4, 4, 4, and 12 digits and separated by hyphens. An example of a return value is "382c74c3-721d-4f34-80e5-57657b6cbc27". To convert the hexadecimal digits from a through f to uppercase, call the string.ToString method on the returned string.
     /// @remarks This method provides a default GUID format that is sufficient for typical use; however, other versions of this method that take a format parameter provide a few common format variations.
-    std::string to_string() const noexcept override {return to_string("D");}
+    xtd::ustring to_string() const noexcept override {return to_string("D");}
     
     /// @brief Returns a string representation of the value of this Guid instance, according to the provided format specifier.
     /// @param format A single format specifier that indicates how to format the value of this Guid. The format parameter can be "N", "D", "B", "P", or "X". If format is null or an empty string (""), "D" is used.

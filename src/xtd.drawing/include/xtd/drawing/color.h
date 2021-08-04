@@ -6,6 +6,7 @@
 #include <ostream>
 #include <string>
 #include <xtd/object.h>
+#include <xtd/ustring.h>
 #include "../drawing_export.h"
 #include "known_color.h"
 
@@ -1184,7 +1185,7 @@ namespace xtd {
       ///   }
       /// }
       /// @endcode
-      std::string to_string() const noexcept override;
+      xtd::ustring to_string() const noexcept override;
       
     private:
       explicit color(uint32_t argb) : argb_(argb), name_(argb ? strings::format("{:X8}", argb) : "0"), empty_(false) {}

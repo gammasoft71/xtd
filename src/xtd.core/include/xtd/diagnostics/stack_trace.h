@@ -7,6 +7,7 @@
 #include <vector>
 #include "../core_export.h"
 #include "../object.h"
+#include "../ustring.h"
 #include "stack_frame.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -290,7 +291,7 @@ namespace xtd {
       /// stack_trace st(fr);
       /// debug::write_line(strings::format("{}\n{}", fr.get_method(), st.to_string());
       /// @endcode
-      std::string to_string() const noexcept;
+      xtd::ustring to_string() const noexcept;
 
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::diagnostics::stack_trace& stack_trace) noexcept {return os << stack_trace.to_string();}

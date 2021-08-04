@@ -7,6 +7,7 @@
 #include <ostream>
 #include <string>
 #include <xtd/object.h>
+#include <xtd/ustring.h>
 #include "../drawing_export.h"
 #include "point.h"
 #include "size.h"
@@ -124,7 +125,7 @@ namespace xtd {
       
       static rectangle trunc(const rectangle_f& rect) {return rectangle(static_cast<int32_t>(std::trunc(rect.x())), static_cast<int32_t>(std::trunc(rect.y())), static_cast<int32_t>(std::trunc(rect.width())), static_cast<int32_t>(std::trunc(rect.height())));}
       
-      std::string to_string() const noexcept override {return "{x=" + std::to_string(x_) + ", y=" + std::to_string(y_) + ", width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";}
+      xtd::ustring to_string() const noexcept override {return "{x=" + std::to_string(x_) + ", y=" + std::to_string(y_) + ", width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";}
 
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::rectangle& rectangle) noexcept {return os << rectangle.to_string();}

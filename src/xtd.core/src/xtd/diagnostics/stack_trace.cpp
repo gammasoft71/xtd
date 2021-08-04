@@ -49,7 +49,7 @@ const stack_trace::stack_frame_collection& stack_trace::get_frames() const {
   return frames_;
 }
 
-std::string stack_trace::to_string() const noexcept {
+ustring stack_trace::to_string() const noexcept {
   return to_string(0);
 }
 
@@ -58,8 +58,8 @@ std::string stack_trace::to_string(size_t skip_frames, const stack_frame& stack_
   for (size_t index = skip_frames; index < frames_.size(); ++index) {
     if (index > skip_frames) str += xtd::environment::new_line();
     str += "   at " + frames_[index].get_method();
-    if (index == skip_frames && stack_frame != stack_frame::empty()) str += xtd::strings::format(" {}in {}:line {}", frames_[index].get_offset() != stack_frame::OFFSET_UNKNOWN ? strings::format("[0x{:X8}] ", frames_[index].get_offset()) : "", stack_frame.get_file_name(), stack_frame.get_file_line_number());
-    else if (!frames_[index].get_file_name().empty()) str += xtd::strings::format(" {}in {}:line {}", frames_[index].get_offset() != stack_frame::OFFSET_UNKNOWN ? strings::format("[0x{:X8}] ", frames_[index].get_offset()) : "", frames_[index].get_file_name(), frames_[index].get_file_line_number());
+    if (index == skip_frames && stack_frame != stack_frame::empty()) str += ustring::format(" {}in {}:line {}", frames_[index].get_offset() != stack_frame::OFFSET_UNKNOWN ? strings::format("[0x{:X8}] ", frames_[index].get_offset()) : "", stack_frame.get_file_name(), stack_frame.get_file_line_number());
+    else if (!frames_[index].get_file_name().empty()) str += ustring::format(" {}in {}:line {}", frames_[index].get_offset() != stack_frame::OFFSET_UNKNOWN ? strings::format("[0x{:X8}] ", frames_[index].get_offset()) : "", frames_[index].get_file_name(), frames_[index].get_file_line_number());
   }
   return str;
 }

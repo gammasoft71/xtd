@@ -5,7 +5,7 @@
 #include <ostream>
 #include <string>
 #include "../../object.h"
-#include "../../strings.h"
+#include "../../ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -44,7 +44,7 @@ namespace xtd {
         int64_t to_int64() const {return xtd::parse<int64_t>(value_);}
         intptr_t to_intptr() const {return xtd::parse<intptr_t>(value_);}
         float to_single() const {return xtd::parse<float>(value_);}
-        std::string to_string() const noexcept override {return value_;}
+        xtd::ustring to_string() const noexcept override {return value_;}
         uint8_t to_uint8() const {return xtd::parse<uint8_t>(value_);}
         uint16_t to_uint16() const {return xtd::parse<uint16_t>(value_);}
         uint32_t to_uint32() const {return xtd::parse<uint32_t>(value_);}

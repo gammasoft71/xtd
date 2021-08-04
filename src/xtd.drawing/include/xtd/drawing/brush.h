@@ -6,7 +6,7 @@
 #include <memory>
 #include <ostream>
 #include <xtd/object.h>
-#include <xtd/strings.h>
+#include <xtd/ustring.h>
 #include "../drawing_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -36,7 +36,7 @@ namespace xtd {
       
       /// @brief Converts this brush object to a human-readable string.
       /// @return A string that represents this brush object.
-      std::string to_string() const noexcept override {return strings::full_class_name(*this);}
+      xtd::ustring to_string() const noexcept override {return ustring::full_class_name(*this);}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::brush& brush) noexcept {

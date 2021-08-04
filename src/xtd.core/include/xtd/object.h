@@ -84,7 +84,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates what to_string returns.
     /// @include object_to_string.cpp
-    virtual std::string to_string() const noexcept;
-    //virtual ustring to_string() const noexcept;
+    virtual xtd::ustring to_string() const noexcept;
   };
 }

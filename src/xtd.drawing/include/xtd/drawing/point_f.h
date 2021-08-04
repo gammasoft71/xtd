@@ -7,6 +7,7 @@
 #include <string>
 #include <string>
 #include <xtd/object.h>
+#include <xtd/ustring.h>
 #include "../drawing_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -46,7 +47,7 @@ namespace xtd {
         y_ += dy;
       }
 
-      std::string to_string() const noexcept override {return "{x=" + std::to_string(x_) + ", y=" + std::to_string(y_) + "}";}
+      xtd::ustring to_string() const noexcept override {return "{x=" + std::to_string(x_) + ", y=" + std::to_string(y_) + "}";}
       
       float x() const {return x_;}
       
