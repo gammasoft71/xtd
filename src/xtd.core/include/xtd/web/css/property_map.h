@@ -9,7 +9,7 @@
 namespace xtd {
   namespace web {
     namespace css {
-      using property_map = std::map<std::string, xtd::web::css::property>;
+      using property_map = std::map<xtd::ustring, xtd::web::css::property>;
     }
   }
 }

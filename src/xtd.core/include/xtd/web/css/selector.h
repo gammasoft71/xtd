@@ -11,7 +11,7 @@ namespace xtd {
     namespace css {
       class selector : public object {
       public:
-        explicit selector(const std::string& name) : name_(name) {}
+        explicit selector(const xtd::ustring& name) : name_(name) {}
         
         /// @cond
         selector() = default;
@@ -19,15 +19,15 @@ namespace xtd {
         selector& operator=(const selector&) = default;
         /// @endcond
         
-        const std::string& name() const {return name_;}
-        void name(const std::string& name) {name_ = name;}
+        const xtd::ustring& name() const {return name_;}
+        void name(const xtd::ustring& name) {name_ = name;}
 
         const xtd::web::css::property_map& properties() const {return properties_;}
         void properties(const xtd::web::css::property_map& properties) {properties_ = properties;}
         xtd::web::css::property_map& properties() {return properties_;}
 
       private:
-        std::string name_;
+        xtd::ustring name_;
         xtd::web::css::property_map properties_;
       };
     }
