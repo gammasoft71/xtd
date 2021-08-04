@@ -1,5 +1,6 @@
 #include "../../include/xtd/environment.h"
 #include "../../include/xtd/argument_exception.h"
+#include "../../include/xtd/convert_string.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/environment.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
@@ -12,23 +13,24 @@ struct __update__macos_path__ {
     if (!xtd::environment::os_version().is_macos_platform()) return;
     /// @todo fix PATH with foreach...
     //for (auto path : {"/usr/local/bin", "/usr/bin", "/bin", "/usr/sbin", "/sbin", "/Library/Apple/usr/bin"})
-    //  if (!xtd::strings::contains(xtd::environment::get_environment_variable("PATH"), path)) xtd::environment::set_environment_variable("PATH", path+xtd::environment::get_environment_variable("PATH"));
+    //  if (!xtd::environment::get_environment_variable("PATH"), path).contains() xtd::environment::set_environment_variable("PATH", path+xtd::environment::get_environment_variable("PATH"));
     xtd::environment::set_environment_variable("PATH", "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"+xtd::environment::get_environment_variable("PATH"));
   }
 } __updmacpath__;
 
+using namespace std;
 using namespace xtd;
 
 namespace {
   int exit_code = 0;
 }
 
-std::string environment::current_directory() {
+ustring environment::current_directory() {
   return std::filesystem::current_path().string();
 }
 
-void environment::current_directory(const std::string& directory_name) {
-  std::filesystem::current_path(directory_name);
+void environment::current_directory(const ustring& directory_name) {
+  std::filesystem::current_path(as<std::string>(directory_name));
 }
 
 int environment::exit_code() {
@@ -44,7 +46,7 @@ xtd::collections::specialized::string_vector environment::get_command_line_args(
   return {args.begin(), args.end()};
 }
 
-std::string environment::get_environment_variable(const std::string& variable, environment_variable_target target) {
+ustring environment::get_environment_variable(const ustring& variable, environment_variable_target target) {
   if (target == environment_variable_target::process)
     return native::environment::get_environment_variable(variable);
   if (target == environment_variable_target::user)
@@ -54,15 +56,15 @@ std::string environment::get_environment_variable(const std::string& variable, e
   throw xtd::argument_exception("Invalid environment variable target value"_t, current_stack_frame_);
 }
 
-std::map<std::string, std::string>& environment::get_environment_variables(environment_variable_target target) {
+map<string, string>& environment::get_environment_variables(environment_variable_target target) {
   if (target == environment_variable_target::process) return native::environment::get_environment_variables(ENVIRONMENT_VARIABLE_TARGET_PROCESS);
   if(target == environment_variable_target::user) return native::environment::get_environment_variables(ENVIRONMENT_VARIABLE_TARGET_USER);
   if(target == environment_variable_target::machine) return native::environment::get_environment_variables(ENVIRONMENT_VARIABLE_TARGET_MACHINE);
   throw argument_exception("Invalid environment variable target value"_t);
 }
 
-std::string environment::get_folder_path(environment::special_folder folder, environment::special_folder_option option) {
-  std::string path = native::environment::get_know_folder_path(static_cast<int>(folder));
+ustring environment::get_folder_path(environment::special_folder folder, environment::special_folder_option option) {
+  ustring path = native::environment::get_know_folder_path(static_cast<int>(folder));
   
   //if (option == environment::special_folder_option::none)
   //  return !xtd::io::directory::exists(path) ? "" :  path;
@@ -73,11 +75,11 @@ std::string environment::get_folder_path(environment::special_folder folder, env
   return path;
 }
 
-std::string environment::machine_name() {
+ustring environment::machine_name() {
   return native::environment::get_machine_name();
 }
 
-std::string environment::new_line() {
+ustring environment::new_line() {
   return native::environment::new_line();
 }
 
@@ -100,11 +102,11 @@ xtd::processor environment::processor_information() {
   return proc;
 }
 
-void environment::set_environment_variable(const std::string& variable, const std::string& value, environment_variable_target target) {
-  if (xtd::strings::is_empty(variable)) throw xtd::argument_exception("Environment variable name is empty"_t, current_stack_frame_);
+void environment::set_environment_variable(const ustring& variable, const ustring& value, environment_variable_target target) {
+  if (variable.is_empty()) throw xtd::argument_exception("Environment variable name is empty"_t, current_stack_frame_);
   
   if (target == environment_variable_target::process) {
-    if (xtd::strings::is_empty(value)) {
+    if (value.is_empty()) {
       get_environment_variables().erase(variable);
       native::environment::unset_environment_variable(variable);
     } else {
@@ -113,7 +115,7 @@ void environment::set_environment_variable(const std::string& variable, const st
     }
   } else if(target == environment_variable_target::user || target == environment_variable_target::machine) {
     //microsoft::win32::registry_key key = target == environment_variable_target::user ? microsoft::win32::registry::current_user().create_sub_key("Environment") : microsoft::win32::registry::local_machine().create_sub_key("System").create_sub_key("CurrentControlSet").create_sub_key("Control").create_sub_key("Session Manager").create_sub_key("Environment");
-    //if (xtd::strings::is_empty(value))
+    //if (value.is_empty())
     //  key.delete_value(variable);
     //else
     //  key.set_value(variable, value);
@@ -129,10 +131,10 @@ std::chrono::milliseconds environment::tick_count() {
   return std::chrono::milliseconds(native::environment::get_tick_count());
 }
 
-std::string environment::user_domain_name() {
+ustring environment::user_domain_name() {
   return native::environment::get_user_domain_name();
 }
 
-std::string environment::user_name() {
+ustring environment::user_name() {
   return native::environment::get_user_name();
 }

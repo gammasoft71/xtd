@@ -7,8 +7,6 @@
 #include <thread>
 #include <vector>
 
-#include <xtd/strings.h>
-
 #include "argument_exception.h"
 #include "compiler.h"
 #include "core_export.h"
@@ -19,6 +17,7 @@
 #include "platform_id.h"
 #include "processor.h"
 #include "static.h"
+#include "ustring.h"
 #include "version.h"
 #include "collections/specialized/string_vector.h"
 #include "diagnostics/stack_trace.h"
@@ -203,7 +202,7 @@ namespace xtd {
     /// @remarks This method provides access to the program name and any arguments specified on the command line when the current process was started.
     /// @remarks The program name can include path information, but is not required to do so. Use the get_command_line_args method to retrieve the command-line information parsed and stored in an array of strings.
     /// @remarks The maximum size of the command-line buffer is not set to a specific number of characters; it varies depending on the operating system that is running on the computer.
-    static std::string command_line() {return xtd::strings::join(" ", get_command_line_args());}
+    static xtd::ustring command_line() {return xtd::ustring::join(" ", get_command_line_args());}
     
     /// @brief Gets an cpp_standard object that contains the current c++ standard identifier and version number.
     /// @return An object that contains the c++ standard identifier and version number.
@@ -220,13 +219,13 @@ namespace xtd {
     }
 
     /// @brief Gets the fully qualified path of the current working directory.
-    /// @return std::string A string containing a directory path.
+    /// @return xtd::ustring A string containing a directory path.
     /// @remarks By definition, if this process starts in the root directory of a local or network drive, the value returned by this method is the drive name followed by a trailing slash (for example, "C:\"). If this process starts in a subdirectory, the value returned by this method is the drive and subdirectory path, without a trailing slash (for example, "C:\mySubDirectory").
-    static std::string current_directory();
+    static xtd::ustring current_directory();
     
     /// @brief Sets the fully qualified path of the current working directory.
     /// @param directory_name A string containing a directory path.
-    static void current_directory(const std::string& directory_name);
+    static void current_directory(const xtd::ustring& directory_name);
     
     /// @brief Gets a unique identifier for the current thread.
     /// @return A std::thread::id that represents a unique identifier for this thread.
@@ -264,21 +263,21 @@ namespace xtd {
     
     /// @brief Retrieves the value of an environment variable from the current process.
     /// @param variable The name of the environment variable.
-    /// @return std::string The value of the environment variable specified by variable, or empty "" if the environment variable is not found.
-    /// @remarks The get_environment_variable(std::string) method retrieves an environment variable from the environment block of the current process only. It is equivalent to calling the get_environment_variable(std::string, xtd::environment_variable_target) method with a target value of xtd::environment_variable_target.process.
+    /// @return xtd::ustring The value of the environment variable specified by variable, or empty "" if the environment variable is not found.
+    /// @remarks The get_environment_variable(xtd::ustring) method retrieves an environment variable from the environment block of the current process only. It is equivalent to calling the get_environment_variable(xtd::ustring, xtd::environment_variable_target) method with a target value of xtd::environment_variable_target.process.
     /// @remarks To retrieve all environment variables along with their values, call the get_environment_variables method.
     /// @remarks Environment variable names are case-sensitive on Linux and macOS but are not case-sensitive on Windows.
-    static std::string get_environment_variable(const std::string& variable) {return get_environment_variable(variable, environment_variable_target::process);}
+    static xtd::ustring get_environment_variable(const xtd::ustring& variable) {return get_environment_variable(variable, environment_variable_target::process);}
     
     /// @brief Retrieves the value of an environment variable from the current process or from the Windows operating system registry key for the current user or local machine.
     /// @param variable The name of an environment variable.
     /// @param target One of the EnvironmentVariableTarget values.
     /// @exception std::invaloid_argument target is not a valid environment_variable_target value.
-    /// @return std::string The value of the environment variable specified by the variable and target parameters, or empty "" if the environment variable is not found.
+    /// @return xtd::ustring The value of the environment variable specified by the variable and target parameters, or empty "" if the environment variable is not found.
     /// @remarks To retrieve all environment variables along with their values, call the get_environment_variables method.
     /// @remarks Environment variable names are case-sensitive on Linux and macOS but are not case-sensitive on Windows.
     /// @todo Add xtd::registry and uncomment lines.
-    static std::string get_environment_variable(const std::string& variable, environment_variable_target target);
+    static xtd::ustring get_environment_variable(const xtd::ustring& variable, environment_variable_target target);
 
     /// @brief Retrieves all environment variable names and their values from the current process.
     /// @return std::map A dictionary that contains all environment variable names and their values; otherwise, an empty dictionary if no environment variables are found.
@@ -297,7 +296,7 @@ namespace xtd {
     /// @param folder One of enumeration values that identifies a system special folder.
     /// @return The path to the specified system special folder, if that folder physically exists on your computer; otherwise, an empty string ("").
     /// @remarks This method retrieves the path to a system special folder, such as Program Files, Programs, System, or Startup, which can be used to access common information. Special folders are set by default by the system, or explicitly by the user, when installing a version of Windows.
-    static std::string get_folder_path(environment::special_folder folder) {return get_folder_path(folder, environment::special_folder_option::none);}
+    static xtd::ustring get_folder_path(environment::special_folder folder) {return get_folder_path(folder, environment::special_folder_option::none);}
     
     /// @brief Gets the path to the system special folder that is identified by the specified enumeration, and uses a specified option for accessing special folders.
     /// @param folder One of the enumeration values that identifies a system special folder.
@@ -305,7 +304,7 @@ namespace xtd {
     /// @return The path to the specified system special folder, if that folder physically exists on your computer; otherwise, an empty string ("").
     /// @remarks This method retrieves the path to a system special folder, such as Program Files, Programs, System, or Startup, which can be used to access common information. Special folders are set by default by the system, or explicitly by the user, when installing a version of Windows.
     /// @todo Add xtd::io::directory and uncomment lines.
-    static std::string get_folder_path(environment::special_folder folder, environment::special_folder_option option);
+    static xtd::ustring get_folder_path(environment::special_folder folder, environment::special_folder_option option);
     
     /// @brief Returns an array of string containing the names of the logical drives on the current computer.
     /// @return An array of strings where each element contains the name of a logical drive. For example, if the computer's hard drive is the first logical drive, the first element returned is "C:\".
@@ -323,21 +322,21 @@ namespace xtd {
     /// @param name A string containing the names of zero or more environment variables. Each environment variable is quoted with the percent sign character (%).
     /// @return A string with each environment variable replaced by its value.
     /// @remarks Replacement only occurs for environment variables that are set. For example, suppose name is "MyENV = %MyENV%". If the environment variable, MyENV, is set to 42, this method returns "MyENV = 42". If MyENV is not set, no change occurs; this method returns "MyENV = %MyENV%".
-    static std::string expand_environment_variables(const std::string& name) {
-      std::string buffer = name;
-      std::string result;
+    static xtd::ustring expand_environment_variables(const xtd::ustring& name) {
+      xtd::ustring buffer = name;
+      xtd::ustring result;
       
-      size_t index = xtd::strings::index_of(buffer, '%');
-      while (index != std::string::npos && xtd::strings::index_of(buffer, '%', index + 1) != std::string::npos) {
-        result += xtd::strings::substring(buffer, 0, index);
-        buffer = xtd::strings::remove(buffer, 0, index + 1);
-        index = xtd::strings::index_of(buffer, '%');
-        if (get_environment_variable(xtd::strings::substring(buffer, 0, index)) != "")
-          result += get_environment_variable(xtd::strings::substring(buffer, 0, index));
+      size_t index = buffer.index_of('%');
+      while (index != xtd::ustring::npos && buffer.index_of('%', index + 1) != xtd::ustring::npos) {
+        result += buffer.substring(0, index);
+        buffer = buffer.remove(0, index + 1);
+        index = buffer.index_of('%');
+        if (get_environment_variable(buffer.substring(0, index)) != "")
+          result += get_environment_variable(buffer.substring(0, index));
         else
-          result += xtd::strings::format("%{0}%", xtd::strings::substring(buffer, 0, index));
-        buffer = xtd::strings::remove(buffer, 0, index + 1);
-        index = xtd::strings::index_of(buffer, '%');
+          result += xtd::ustring::format("%{0}%", buffer.substring(0, index));
+        buffer = buffer.remove(0, index + 1);
+        index = buffer.index_of('%');
       }
       result += buffer;
       return result;
@@ -354,11 +353,11 @@ namespace xtd {
     /// @brief Gets the NetBIOS name of this local computer.
     /// @return A string containing the name of this computer.
     /// @remarks The name of this computer is established at system startup when the name is read from the registry. If this computer is a node in a cluster, the name of the node is returned.
-    static std::string machine_name();
+    static xtd::ustring machine_name();
     
     /// @brief Gets the newline string defined for this environment.
     /// @return A string containing "\r\n" for non-Unix platforms, or a string containing "\n" for Unix platforms.
-    static std::string new_line();
+    static xtd::ustring new_line();
 
     /// @brief Inserts a new-line character and flushes the stream.
     /// @param os Output stream object affected. Because this function is a manipulator, it is designed to be used alone with no arguments in conjunction with the insertion (<<) operations on output streams (see example below).
@@ -385,33 +384,33 @@ namespace xtd {
     /// @brief Creates, modifies, or deletes an environment variable stored in the current process.
     /// @param variable The name of an environment variable.
     /// @param value A value to assign to variable.
-    /// @remarks Calling this method is equivalent to calling the set_environment_variable(std::string, std::string, environment_variable_target) overload with a value of environment_variable_target::process for the target argument.
+    /// @remarks Calling this method is equivalent to calling the set_environment_variable(xtd::ustring, xtd::ustring, environment_variable_target) overload with a value of environment_variable_target::process for the target argument.
     /// @remarks If the value argument is not empty and the environment variable named by the variable parameter does not exist, the environment variable is created and assigned the contents of value. If it does exist, its value is modified. Because the environment variable is defined in the environment block of the current process only, it does not persist after the process has ended.
     /// @remarks If value is empty and the environment variable named by variable exists, the environment variable is deleted. If variable does not exist, no error occurs even though the operation cannot be performed.
-    static void set_environment_variable(const std::string& variable, const std::string& value) {
+    static void set_environment_variable(const xtd::ustring& variable, const xtd::ustring& value) {
       set_environment_variable(variable, value, environment_variable_target::process);
     }
     
     /// @brief Creates, modifies, or deletes an environment variable stored in the current process or in the Windows operating system registry key reserved for the current user or local machine.
     /// @param variable The name of an environment variable.
     /// @param value A value to assign to variable.
-    /// @remarks The set_environment_variable(std::string, std::string, environment_variable_target) method lets you define an environment variable that is available to the current process (the environment_variable_target::process value). Environment variables that are unique to the current process environment block persist only until the process ends.
-    /// @remarks In addition, on Windows systems only, the set_environment_variable(std::string, std::string, environment_variable_target) method lets you define an environment variable that is available to all processes that run on a machine (the environment_variable_target::machine value) and to all processes run by a user (the environment_variable_target::user value). Per-machine and per-user environment variables are copied into the environment block of the current process.
+    /// @remarks The set_environment_variable(xtd::ustring, xtd::ustring, environment_variable_target) method lets you define an environment variable that is available to the current process (the environment_variable_target::process value). Environment variables that are unique to the current process environment block persist only until the process ends.
+    /// @remarks In addition, on Windows systems only, the set_environment_variable(xtd::ustring, xtd::ustring, environment_variable_target) method lets you define an environment variable that is available to all processes that run on a machine (the environment_variable_target::machine value) and to all processes run by a user (the environment_variable_target::user value). Per-machine and per-user environment variables are copied into the environment block of the current process.
     /// @remarks If the value argument is not empty and the environment variable named by the variable argument does not exist, the environment variable is created and assigned the contents of value. If it does exist, its value is modified.
     /// @remarks If value is empty and the environment variable named by variable exists, the environment variable is deleted. If variable does not exist, no error occurs even though the operation cannot be performed.
     /// @todo Add xtd::registry and uncomment lines.
-    static void set_environment_variable(const std::string& variable, const std::string& value, environment_variable_target target);
+    static void set_environment_variable(const xtd::ustring& variable, const xtd::ustring& value, environment_variable_target target);
 
     /// @brief Gets current stack trace information.
     /// @return A string containing stack trace information. This value can be empty "".
-    static std::string stack_trace() {
+    static xtd::ustring stack_trace() {
       return xtd::diagnostics::stack_trace(true).to_string();
     }
     
     /// @brief Gets the fully qualified path of the system directory.
     /// @return A string containing a directory path.
     /// @remarks An example of the value returned is the string "C:\Windows".
-    static std::string system_directory() {return get_folder_path(environment::special_folder::system);}
+    static xtd::ustring system_directory() {return get_folder_path(environment::special_folder::system);}
 
     /// @brief Gets the number of bytes in the operating system's memory page.
     /// @return The number of bytes in the system memory page.
@@ -423,7 +422,7 @@ namespace xtd {
     
     /// @brief Gets the network domain name associated with the current user.
     /// @return The network domain name associated with the current user.
-    static std::string user_domain_name();
+    static xtd::ustring user_domain_name();
     
     /// @brief Gets a value indicating whether the current process is running in user interactive mode.
     /// @return bool true if the current process is running in user interactive mode; otherwise, false.
@@ -434,7 +433,7 @@ namespace xtd {
     
     /// @brief Gets the user name of the person who is currently logged on to the operating system.
     /// @return The user name of the person who is logged on to the operating system.
-    static std::string user_name();
+    static xtd::ustring user_name();
     
     /// @brief Gets a version consisting of the major, minor, build, and revision numbers of the xtd framework.
     /// @return The version of the xttd framework.
