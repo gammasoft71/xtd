@@ -37,14 +37,14 @@ namespace xtd {
       /// @param file_name_ An application or document with which to start a process.
       /// @remarks The file name is any application or document. In this case, a document is defined to be any file type that has an open or default action associated with it. You can view registered file types and their associated applications for your computer by using the Folder Options dialog box, which is available through the operating system. The Advanced button leads to a dialog box that shows whether there is an open action associated with a specific registered file type.
       /// @remarks You can change the xtd::diagnostics::process_start_info::file_name property after you call this constructor, up to the time that the process starts. After you start the process, changing these values has no effect.
-      explicit process_start_info(const std::string& file_name);
+      explicit process_start_info(const xtd::ustring& file_name);
       
       /// @brief Initializes a new instance of the xtd::diagnostics::process_start_info class, specifies an application file name with which to start the process, and specifies a set of command-line arguments_ to pass to the application.
       /// @param file_name  An application with which to start a process.
       /// @param arguments Command-line arguments to pass to the application when the process starts.
       /// @remarks The file name is any application or document. In this case, a document is defined to be any file type that has an open or default action associated with it. You can view registered file types and their associated applications for your computer by using the Folder Options dialog box, which is available through the operating system. The Advanced button leads to a dialog box that shows whether there is an open action associated with a specific registered file type.
       /// @remarks You can change the xtd::diagnostics::process_start_info::file_name or xtd::diagnostics::process_start_info::arguments properties after you call this constructor, up to the time that the process starts. After you start the process, changing these values has no effect.
-      process_start_info(const std::string& file_name, const std::string& arguments);
+      process_start_info(const xtd::ustring& file_name, const xtd::ustring& arguments);
       
       /// @cond
       process_start_info(const process_start_info& process_start_info) = default;
@@ -53,11 +53,11 @@ namespace xtd {
       
       /// @brief Gets the set of command-line arguments to use when starting the application.
       /// @return File type–specific arguments that the system can associate with the application specified in the xtd::diagnostics::process_start_info::file_name property. The default is an empty string ("").
-      const std::string& arguments() const;
+      const xtd::ustring& arguments() const;
       /// @brief Sets the set of command-line arguments to use when starting the application.
       /// @param value File type–specific arguments that the system can associate with the application specified in the xtd::diagnostics::process_start_info::file_name property. The default is an empty string ("").
       /// @return The current instance of process_start_info.
-      process_start_info& arguments(const std::string& value);
+      process_start_info& arguments(const xtd::ustring& value);
       
       /// @brief Gets a value indicating whether to start the process in a new window.
       /// @return true if the process should be started without creating a new window to contain it; otherwise, false. The default is false.
@@ -70,32 +70,32 @@ namespace xtd {
       process_start_info& create_no_window(bool value);
       
       /// @brief Gets a value that identifies the domain to use when starting the process.
-      /// @return string The Active Directory Domain to use when starting the process. The xtd::diagnostics::process_start_info::domain property is primarily of interest to users within enterprise environments that use Active Directory.
-      const std::string& domain() const;
+      /// @return The Active Directory Domain to use when starting the process. The xtd::diagnostics::process_start_info::domain property is primarily of interest to users within enterprise environments that use Active Directory.
+      const xtd::ustring& domain() const;
       /// @brief Sets a value that identifies the domain to use when starting the process.
-      /// @param value string The Active Directory Domain to use when starting the process. The xtd::diagnostics::process_start_info::domain property is primarily of interest to users within enterprise environments that use Active Directory.
+      /// @param value The Active Directory Domain to use when starting the process. The xtd::diagnostics::process_start_info::domain property is primarily of interest to users within enterprise environments that use Active Directory.
       /// @return The current instance of process_start_info.
-      process_start_info& domain(const std::string& value);
+      process_start_info& domain(const xtd::ustring& value);
       
       /// @brief Gets the environment variables that apply to this process and its child processes.
-      /// @return std::map<std::string, std::string> A generic dictionary containing the environment variables that apply to this process and its child processes.
+      /// @return std::map<xtd::ustring, xtd::ustring> A generic dictionary containing the environment variables that apply to this process and its child processes.
       /// @remarks The environment variables contain search paths for files, directories for temporary files, application-specific options, and other similar information. Although you cannot directly set the xtd::diagnostics::process_start_info::environment property, you can modify the generic dictionary returned by the property. For example, the following code adds a TempPath environment variable: @verbatim my_process.start_info().environment().insert({"TempPath", "C:\\Temp"}); @endverbatim. You must set the xtd::diagnostics::process_start_info::use_shell_execute property to false to start the process after changing the xtd::diagnostics::process_start_info::environment property. If xtd::diagnostics::process_start_info:use_shell_execute is true, an xtd::invalid_operation_exception is thrown when the xtd::diagnostics::process::start method is called.
       /// @remarks An applications, using the xtd::diagnostics::process_start_info::environment property is the same as using the xtd::diagnostics::process_start_info::environment_variables property.
-      const std::map<std::string, std::string>& environment() const;
+      const std::map<xtd::ustring, xtd::ustring>& environment() const;
       /// @brief Gets the environment variables that apply to this process and its child processes.
-      /// @return std::map<std::string, std::string> A generic dictionary containing the environment variables that apply to this process and its child processes.
+      /// @return std::map<xtd::ustring, xtd::ustring> A generic dictionary containing the environment variables that apply to this process and its child processes.
       /// @remarks The environment variables contain search paths for files, directories for temporary files, application-specific options, and other similar information. Although you cannot directly set the xtd::diagnostics::process_start_info::environment property, you can modify the generic dictionary returned by the property. For example, the following code adds a TempPath environment variable: @verbatim my_process.start_info().environment().insert({"TempPath", "C:\\Temp"}); @endverbatim. You must set the xtd::diagnostics::process_start_info::use_shell_execute property to false to start the process after changing the xtd::diagnostics::process_start_info::environment property. If xtd::diagnostics::process_start_info:use_shell_execute is true, an xtd::invalid_operation_exception is thrown when the xtd::diagnostics::process::start method is called.
       /// @remarks An applications, using the xtd::diagnostics::process_start_info::environment property is the same as using the xtd::diagnostics::process_start_info::environment_variables property.
-      std::map<std::string, std::string>& environment();
+      std::map<xtd::ustring, xtd::ustring>& environment();
 
       /// @brief Gets search paths for files, directories for temporary files, application-specific options, and other similar information.
-      /// @return std::map<std::string, std::string> A string dictionary that provides environment variables that apply to this process and child processes. The default is empty.
+      /// @return std::map<xtd::ustring, xtd::ustring> A string dictionary that provides environment variables that apply to this process and child processes. The default is empty.
       /// @remarks Although you cannot set the xtd::diagnostics::process_start_info::environment_variables property, you can modify the generic disctionary returned by the property. For example, the following code adds a TempPath environment variable: @verbatim my_process.startInfo().environment_variables().insert({"TempPath", "C:\\Temp"}); @endverbatim. You must set the xtd::diagnostics::process_start_info::use_shell_execute property to false to start the process after changing the xtd::diagnostics::process_start_info::environment_variables property. If xtd::diagnostics::process_start_info::use_shell_execute is true, an xtd::invalid_operation_exception is thrown when the xtd::diagnostics::process::start method is called.
-      const std::map<std::string, std::string>& environment_variables() const;
+      const std::map<xtd::ustring, xtd::ustring>& environment_variables() const;
       /// @brief Gets search paths for files, directories for temporary files, application-specific options, and other similar information.
-      /// @return std::map<std::string, std::string> A string dictionary that provides environment variables that apply to this process and child processes. The default is empty.
+      /// @return std::map<xtd::ustring, xtd::ustring> A string dictionary that provides environment variables that apply to this process and child processes. The default is empty.
       /// @remarks Although you cannot set the xtd::diagnostics::process_start_info::environment_variables property, you can modify the generic disctionary returned by the property. For example, the following code adds a TempPath environment variable: @verbatim my_process.startInfo().environment_variables().insert({"TempPath", "C:\\Temp"}); @endverbatim. You must set the xtd::diagnostics::process_start_info::use_shell_execute property to false to start the process after changing the xtd::diagnostics::process_start_info::environment_variables property. If xtd::diagnostics::process_start_info::use_shell_execute is true, an xtd::invalid_operation_exception is thrown when the xtd::diagnostics::process::start method is called.
-      std::map<std::string, std::string>& environment_variables();
+      std::map<xtd::ustring, xtd::ustring>& environment_variables();
 
       /// @brief Gets a value indicating whether an error dialog box is displayed to the user if the process cannot be started.
       /// @return true if an error dialog box should be displayed on the screen if the process cannot be started; otherwise, false. The default is false.
@@ -121,13 +121,13 @@ namespace xtd {
       /// @return The name of the application to start, or the name of a document of a file type that is associated with an application and that has a default open action available to it. The default is an empty string ("").
       /// @remarks You must set at least the xtd::diagnostics::process_start_info::file_name property before you start the process. The file name is any application or document. A document is defined to be any file type that has an open or default action associated with it. You can view registered file types and their associated applications for your computer by using the Folder Options dialog box, which is available through the operating system. The Advanced button leads to a dialog box that shows whether there is an open action associated with a specific registered file type.
       /// @remarks The set of file types available to you depends in part on the value of the xtd::diagnostics::process_start_info::use_shell_execute property. If xtd::diagnostics::process_start_info::use_shell_execute is true, you can start any document and perform operations on the file, such as printing, with the xtd::diagnostics::process component. When xtd::diagnostics::process_start_info::use_shell_execute is false, you can start only executables with the xtd::diagnostics::process component.
-      const std::string& file_name() const;
+      const xtd::ustring& file_name() const;
       /// @brief Sets the application or document to start.
       /// @param value string The name of the application to start, or the name of a document of a file type that is associated with an application and that has a default open action available to it. The default is an empty string ("").
       /// @return The current instance of process_start_info.
       /// @remarks You must set at least the xtd::diagnostics::process_start_info::file_name property before you start the process. The file name is any application or document. A document is defined to be any file type that has an open or default action associated with it. You can view registered file types and their associated applications for your computer by using the Folder Options dialog box, which is available through the operating system. The Advanced button leads to a dialog box that shows whether there is an open action associated with a specific registered file type.
       /// @remarks The set of file types available to you depends in part on the value of the xtd::diagnostics::process_start_info::use_shell_execute property. If xtd::diagnostics::process_start_info::use_shell_execute is true, you can start any document and perform operations on the file, such as printing, with the xtd::diagnostics::process component. When xtd::diagnostics::process_start_info::use_shell_execute is false, you can start only executables with the xtd::diagnostics::process component.
-      process_start_info& file_name(const std::string& value);
+      process_start_info& file_name(const xtd::ustring& value);
       /// @brief Sets the application or document to start.
       /// @param value string The name of the application to start, or the name of a document of a file type that is associated with an application and that has a default open action available to it. The default is an empty string ("").
       /// @return The current instance of process_start_info.
@@ -155,7 +155,7 @@ namespace xtd {
       /// @par Important
       /// The xtd::diagnostics::process_start_info::working_directory property must be set if xtd::diagnostics::process_start_info::user_name and xtd::diagnostics::process_start_info::password are provided. If the property is not set, the default working directory is %SYSTEMROOT%\system32.
       /// @note Setting the xtd::diagnostics::process_start_info::domain, xtd::diagnostics::process_start_info::user_name, and the xtd::diagnostics::process_start_info::password properties in a xtd::diagnostics::process_start_info object is the recommended practice for starting a process with user credentials.
-      /// @remarks A xtd::security::secure_string object is like a std::string object in that it has a text value. However, the value of a xtd::security::secure_string object is automatically encrypted, it can be modified until your application marks it as read-only, and it can be deleted from computer memory by either your application.
+      /// @remarks A xtd::security::secure_string object is like a xtd::ustring object in that it has a text value. However, the value of a xtd::security::secure_string object is automatically encrypted, it can be modified until your application marks it as read-only, and it can be deleted from computer memory by either your application.
       /// @note If you provide a value for the xtd::diagnostics::process_start_info::password property, the xtd::diagnostics::process_start_info::use_shell_execute property must be false, o an xtd::invalid_operation_exception will be thrown when the xtd::diagnostics::process::start(process_start_info) method is called.
       const xtd::security::secure_string& pasword() const;
       /// @brief Sets a secure string that contains the user password to use when starting the process.
@@ -164,17 +164,17 @@ namespace xtd {
       /// @par Important
       /// The xtd::diagnostics::process_start_info::working_directory property must be set if xtd::diagnostics::process_start_info::user_name and xtd::diagnostics::process_start_info::password are provided. If the property is not set, the default working directory is %SYSTEMROOT%\system32.
       /// @note Setting the xtd::diagnostics::process_start_info::domain, xtd::diagnostics::process_start_info::user_name, and the xtd::diagnostics::process_start_info::password properties in a xtd::diagnostics::process_start_info object is the recommended practice for starting a process with user credentials.
-      /// @remarks A xtd::security::secure_string object is like a std::string object in that it has a text value. However, the value of a xtd::security::secure_string object is automatically encrypted, it can be modified until your application marks it as read-only, and it can be deleted from computer memory by either your application.
+      /// @remarks A xtd::security::secure_string object is like a xtd::ustring object in that it has a text value. However, the value of a xtd::security::secure_string object is automatically encrypted, it can be modified until your application marks it as read-only, and it can be deleted from computer memory by either your application.
       /// @note If you provide a value for the xtd::diagnostics::process_start_info::password property, the xtd::diagnostics::process_start_info::use_shell_execute property must be false, o an xtd::invalid_operation_exception will be thrown when the xtd::diagnostics::process::start(process_start_info) method is called.
       process_start_info& pasword(const xtd::security::secure_string& value);
 
       /// @brief Gets the user password in clear text to use when starting the process.
       /// @return The user password in clear text.
-      std::string password_in_clear_text() const;
+      xtd::ustring password_in_clear_text() const;
       /// @brief Sets the user password in clear text to use when starting the process.
       /// @param value string The user password in clear text.
       /// @return The current instance of process_start_info.
-      process_start_info& password_in_clear_text(const std::string& value);
+      process_start_info& password_in_clear_text(const xtd::ustring& value);
       
       /// @brief Gets a value that indicates whether the error output of an application is written to the xtd::diagnostics::process::standard_error stream.
       /// @return true if error output should be written to xtd::diagnostics::process::standard_error; otherwise, false. The default is false.
@@ -775,14 +775,14 @@ namespace xtd {
       /// @par Important
       /// The xtd::diagnostics::process_start_info::working_directory property must be set if xtd::diagnostics::process_start_info::user_name and xtd::diagnostics::process_start_info::password are provided. If the property is not set, the default working directory is %SYSTEMROOT%\system32.
       /// @remarks If the xtd::diagnostics::process_start_info::user_name property is not an empty string, the xtd::diagnostics::process_start_info::use_shell_execute property must be false, or an xtd::invalid_operation_exception will be thrown when the xtd::diagnostics::process::.start(xtd::diagnostics::process_start_info) method is called.
-      const std::string& user_name() const;
+      const xtd::ustring& user_name() const;
       /// @brief Sets the user name to be used when starting the process.
       /// @param value The user name to use when starting the process.
       /// @return The current instance of process_start_info.
       /// @par Important
       /// The xtd::diagnostics::process_start_info::working_directory property must be set if xtd::diagnostics::process_start_info::user_name and xtd::diagnostics::process_start_info::password are provided. If the property is not set, the default working directory is %SYSTEMROOT%\system32.
       /// @remarks If the xtd::diagnostics::process_start_info::user_name property is not an empty string, the xtd::diagnostics::process_start_info::use_shell_execute property must be false, or an xtd::invalid_operation_exception will be thrown when the xtd::diagnostics::process::.start(xtd::diagnostics::process_start_info) method is called.
-      process_start_info& user_name(const std::string& value);
+      process_start_info& user_name(const xtd::ustring& value);
       
       /// @brief Gets a value indicating whether to use the operating system shell to start the process.
       /// @return true if the shell should be used when starting the process; false if the process should be created directly from the executable file. The default is true.
@@ -808,19 +808,19 @@ namespace xtd {
       /// @return The action to take with the file that the process opens. The default is an empty string (""), which signifies no action.
       /// @remarks Each file name extension has its own set of verbs, which can be obtained by using the Verbs property. For example, the "print" verb will print a document specified by using FileName. The default verb can be specified by using an empty string (""). Examples of verbs are "Edit", "Open", "OpenAsReadOnly", "Print", and "Printto". You should use only verbs that appear in the set of verbs returned by the xtd::diagnostics::process_start_info::verbs property.
       /// @remarks When you use the xtd::diagnostics::process_start_info::verb property, you must include the file name extension when you set the value of the xtd::diagnostics::process_start_info::file_name property. The file name does not need to have an extension if you manually enter a value for the xtd::diagnostics::process_start_info::verb property.
-      std::string verb() const;
+      xtd::ustring verb() const;
       /// @brief Sts the verb to use when opening the application or document specified by the FileName property.
       /// @param value The action to take with the file that the process opens. The default is an empty string (""), which signifies no action.
       /// @return The current instance of process_start_info.
       /// @remarks Each file name extension has its own set of verbs, which can be obtained by using the Verbs property. For example, the "print" verb will print a document specified by using FileName. The default verb can be specified by using an empty string (""). Examples of verbs are "Edit", "Open", "OpenAsReadOnly", "Print", and "Printto". You should use only verbs that appear in the set of verbs returned by the xtd::diagnostics::process_start_info::verbs property.
       /// @remarks When you use the xtd::diagnostics::process_start_info::verb property, you must include the file name extension when you set the value of the xtd::diagnostics::process_start_info::file_name property. The file name does not need to have an extension if you manually enter a value for the xtd::diagnostics::process_start_info::verb property.
-      process_start_info& verb(const std::string& value);
+      process_start_info& verb(const xtd::ustring& value);
       
       /// @brief Gets the set of verbs associated with the type of file specified by the xtd::diagnostics::process_start_info::file_name property.
       /// @return The actions that the system can apply to the file indicated by the xtd::diagnostics::process_start_info::file_name property.
       /// @remarks The xtd::diagnostics::process_start_info::verbs property enables you to determine the verbs that can be used with the file specified by the xtd::diagnostics::process_start_info::file_name property. You can set the xtd::diagnostics::process_start_info::verb property to the value of any verb in the set. Examples of verbs are "Edit", "Open", "OpenAsReadOnly", "Print", and "Printto".
       /// @remarks When you use the xtd::diagnostics::process_start_info::verbs property, you must include the file name extension when you set the value of the xtd::diagnostics::process_start_info::file_name property. The file name extension determines the set of possible verbs.
-      std::vector<std::string> verbs() const;
+      std::vector<xtd::ustring> verbs() const;
       
       /// @brief Gets the window state to use when the process is started.
       /// @return One of the enumeration values that indicates whether the process is started in a window that is maximized, minimized, normal (neither maximized nor minimized), or not visible. The default is xtd::diagnostics::process_window_style::normal.
@@ -840,7 +840,7 @@ namespace xtd {
       /// @remarks The xtd::diagnostics::process_start_info::working_directory property behaves differently when xtd::diagnostics::process_start_info::use_shell_execute is true than when xtd::diagnostics::process_start_info::use_shell_execute is false. When xtd::diagnostics::process_start_info::use_shell_execute is true, the xtd::diagnostics::process_start_info::working_directory property specifies the location of the executable. If xtd::diagnostics::process_start_info::working_directory is an empty string, the current directory is understood to contain the executable.
       /// @note When xtd::diagnostics::process_start_info::use_shell_execute is true, the working directory of the application that starts the executable is also the working directory of the executable.
       /// @remarks When xtd::diagnostics::process_start_info::use_shell_execute is false, the xtd::diagnostics::process_start_info::working_directory property is not used to find the executable. Instead, its value applies to the process that is started and only has meaning within the context of the new process.
-      const std::string& working_directory() const;
+      const xtd::ustring& working_directory() const;
       /// @brief When the xtd::diagnostics::process_start_info::use_shell_execute property is false, gets or sets the working directory for the process to be started. When xtd::diagnostics::process_start_info::use_shell_execute is true, gets or sets the directory that contains the process to be started.
       /// @param value When xtd::diagnostics::process_start_info::use_shell_execute is true, the fully qualified name of the directory that contains the process to be started. When the xtd::diagnostics::process_start_info::use_shell_execute property is false, the working directory for the process to be started. The default is an empty string ("").
       /// @return The current instance of process_start_info.
@@ -850,26 +850,26 @@ namespace xtd {
       /// @remarks The xtd::diagnostics::process_start_info::working_directory property behaves differently when xtd::diagnostics::process_start_info::use_shell_execute is true than when xtd::diagnostics::process_start_info::use_shell_execute is false. When xtd::diagnostics::process_start_info::use_shell_execute is true, the xtd::diagnostics::process_start_info::working_directory property specifies the location of the executable. If xtd::diagnostics::process_start_info::working_directory is an empty string, the current directory is understood to contain the executable.
       /// @note When xtd::diagnostics::process_start_info::use_shell_execute is true, the working directory of the application that starts the executable is also the working directory of the executable.
       /// @remarks When xtd::diagnostics::process_start_info::use_shell_execute is false, the xtd::diagnostics::process_start_info::working_directory property is not used to find the executable. Instead, its value applies to the process that is started and only has meaning within the context of the new process.
-      process_start_info& working_directory(const std::string& value);
+      process_start_info& working_directory(const xtd::ustring& value);
       
     private:
-      std::string file_name_;
-      std::string arguments_;
+      xtd::ustring file_name_;
+      xtd::ustring arguments_;
       bool create_no_window_ = false;
-      std::string domain_;
+      xtd::ustring domain_;
       bool error_dialog_ = false;
       intptr_t error_dialog_parent_handle_ = 0;
-      std::map<std::string, std::string> environment_variables_;
+      std::map<xtd::ustring, xtd::ustring> environment_variables_;
       bool load_user_profile_ = false;
       xtd::security::secure_string password_;
       bool redirect_standard_error_ = false;
       bool redirect_standard_input_ = false;
       bool redirect_standard_output_ = false;
-      std::string user_name_;
+      xtd::ustring user_name_;
       bool use_shell_execute_ = true;
-      std::string verb_;
+      xtd::ustring verb_;
       xtd::diagnostics::process_window_style window_style_ = xtd::diagnostics::process_window_style::normal;
-      std::string working_directory_;
+      xtd::ustring working_directory_;
     };
   }
 }

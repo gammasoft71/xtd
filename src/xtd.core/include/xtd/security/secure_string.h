@@ -4,6 +4,7 @@
 #pragma once
 #include <any>
 #include <utility>
+#include "../ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -13,6 +14,6 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core security
-    using secure_string = std::string;
+    using secure_string = xtd::ustring;
   }
 }
