@@ -37,13 +37,13 @@ namespace xtd {
     
     static bool is_64_bit() noexcept {return sizeof(size_t) == 8;}
 
-    std::string name() const noexcept {
-      static std::map<xtd::compiler_id, std::string> names {{compiler_id::unknown, "<unknown>"}, {compiler_id::microsoft_visual_studio, "Microsoft Visual Studio"}, {compiler_id::clang, "clang"}, {compiler_id::gcc, "gcc"}};
+    xtd::ustring name() const noexcept {
+      static std::map<xtd::compiler_id, xtd::ustring> names {{compiler_id::unknown, "<unknown>"}, {compiler_id::microsoft_visual_studio, "Microsoft Visual Studio"}, {compiler_id::clang, "clang"}, {compiler_id::gcc, "gcc"}};
       return names[compiler_id()];
     }
     
-    std::string version_string() const noexcept {
-      return strings::format("{} {}", name(), version());
+    xtd::ustring version_string() const noexcept {
+      return ustring::format("{} {}", name(), version());
     }
     
     const xtd::version& version() const noexcept {return version_;}
