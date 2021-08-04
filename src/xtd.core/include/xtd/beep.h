@@ -21,7 +21,7 @@ namespace xtd {
     /// @brief Plays the sound of a beep of a specified frequency and duration through the console speaker.
     /// @param frequency The frequency of the beep, ranging from 37 to 32767 hertz
     /// @param duration The duration of the beep measured in milliseconds
-    beep(unsigned int frequency, unsigned int duration) : frequency_(frequency), duration_(duration) {}
+    beep(uint32_t frequency, uint32_t duration) : frequency_(frequency), duration_(duration) {}
     
     /// @cond
     friend std::ostream& operator<<(std::ostream& os, const beep& b) {
@@ -32,7 +32,7 @@ namespace xtd {
     /// @endcond
     
   private:
-    unsigned int frequency_ {800};
-    unsigned int duration_ {200};
+    uint32_t frequency_ {800};
+    uint32_t duration_ {200};
   };
 }

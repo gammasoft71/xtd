@@ -135,21 +135,23 @@ uint64_t bit_converter::to_uint64(const vector<uint8_t>& value, size_t start_ind
   return static_cast<uint64_t>(value.at(start_index)) + (static_cast<uint64_t>(value.at(start_index + 1)) << 8) + (static_cast<uint64_t>(value.at(start_index + 2)) << 16) + (static_cast<uint64_t>(value.at(start_index + 3)) << 24) + (static_cast<uint64_t>(value.at(start_index + 4)) << 32) + (static_cast<uint64_t>(value.at(start_index + 5)) << 40) + (static_cast<uint64_t>(value.at(start_index + 6)) << 48) + (static_cast<uint64_t>(value.at(start_index + 7)) << 56);
 }
 
-string bit_converter::to_string(const vector<uint8_t>& value) {
+ustring bit_converter::to_string(const vector<uint8_t>& value) {
   return to_string(value, 0, value.size());
 }
 
-string bit_converter::to_string(const vector<uint8_t>& value, size_t start_index) {
+ustring bit_converter::to_string(const vector<uint8_t>& value, size_t start_index) {
   return to_string(value, start_index, value.size() - start_index);
 }
 
-string bit_converter::to_string(const vector<uint8_t>& value, size_t start_index, size_t length) {
+ustring bit_converter::to_string(const vector<uint8_t>& value, size_t start_index, size_t length) {
   if (value.size() == 0 && start_index == 0 && length == 0) return "";
   if (start_index >= value.size()) throw xtd::argument_out_of_range_exception(current_stack_frame_);
   if (start_index + length > value.size()) throw argument_out_of_range_exception(current_stack_frame_);
 
-  string str;
-  for (size_t index = start_index; index < start_index + length; index++)
-    str.append(strings::format("{:X2}", value[index])).append(index < start_index + length - 1 ? "-" : "");
+  ustring str;
+  for (size_t index = start_index; index < start_index + length; index++) {
+    str += ustring::format("{:X2}", value[index]);
+    str += index < (start_index + length - 1) ? "-" : "";
+  }
   return str;
 }
