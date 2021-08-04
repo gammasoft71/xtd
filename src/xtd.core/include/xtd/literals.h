@@ -10,7 +10,6 @@
 #include <limits>
 #include <stdexcept>
 #include "parse.h"
-#include "strings.h"
 #include "translator.h"
 #include "types.h"
 #include "ustring.h"
@@ -226,7 +225,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   inline std::string operator""_s(long double s) {
-    return xtd::strings::format("{}", s);
+    return xtd::ustring::format("{}", s);
   }
 
   /// @brief Used to convert specified value into std::string.
@@ -239,7 +238,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   inline std::string operator""_s(unsigned long long s) {
-    return xtd::strings::format("{}", s);
+    return xtd::ustring::format("{}", s);
   }
 
   /// @brief Used to convert specified value into std::string.
@@ -252,7 +251,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   inline std::string operator""_sb(unsigned long long s) {
-    return xtd::strings::format("{:b}", s);
+    return xtd::ustring::format("{:b}", s);
   }
 
   /// @brief Used to convert specified value into std::string.
@@ -265,7 +264,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   inline std::string operator""_sb2(unsigned long long s) {
-    return xtd::strings::format("{:b2}", s);
+    return xtd::ustring::format("{:b2}", s);
   }
 
   /// @brief Used to convert specified value into std::string.
@@ -278,7 +277,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   inline std::string operator""_sb4(unsigned long long s) {
-    return xtd::strings::format("{:b4}", s);
+    return xtd::ustring::format("{:b4}", s);
   }
 
   /// @brief Used to convert specified value into std::string.
@@ -291,7 +290,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   inline std::string operator""_sb8(unsigned long long s) {
-    return xtd::strings::format("{:b8}", s);
+    return xtd::ustring::format("{:b8}", s);
   }
 
   /// @brief Used to convert specified value into std::string.
@@ -304,7 +303,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   inline std::string operator""_sb16(unsigned long long s) {
-    return xtd::strings::format("{:b16}", s);
+    return xtd::ustring::format("{:b16}", s);
   }
 
   /// @brief Used to convert specified value into std::string.
@@ -317,7 +316,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   inline std::string operator""_sb32(unsigned long long s) {
-    return xtd::strings::format("{:b32}", s);
+    return xtd::ustring::format("{:b32}", s);
   }
 
   /// @brief Used to convert specified value into std::string.
@@ -330,7 +329,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   inline std::string operator""_sb64(unsigned long long s) {
-    return xtd::strings::format("{:b64}", s);
+    return xtd::ustring::format("{:b64}", s);
   }
 
   /// @brief Used to convert specified value into std::string.
@@ -343,7 +342,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   inline std::string operator""_sx(unsigned long long s) {
-    return xtd::strings::format("{:x}", s);
+    return xtd::ustring::format("{:x}", s);
   }
 
   /// @brief Used to convert specified value into std::string.
@@ -356,7 +355,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   inline std::string operator""_sx2(unsigned long long s) {
-    return xtd::strings::format("{:x2}", s);
+    return xtd::ustring::format("{:x2}", s);
   }
 
   /// @brief Used to convert specified value into std::string.
@@ -369,7 +368,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   inline std::string operator""_sx4(unsigned long long s) {
-    return xtd::strings::format("{:x4}", s);
+    return xtd::ustring::format("{:x4}", s);
   }
 
   /// @brief Used to convert specified value into std::string.
@@ -382,7 +381,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   inline std::string operator""_sx8(unsigned long long s) {
-    return xtd::strings::format("{:x8}", s);
+    return xtd::ustring::format("{:x8}", s);
   }
 
   /// @brief Used to convert specified value into std::string.
@@ -395,7 +394,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   inline std::string operator""_sX(unsigned long long s) {
-    return xtd::strings::format("{:X}", s);
+    return xtd::ustring::format("{:X}", s);
   }
 
   /// @brief Used to convert specified value into std::string.
@@ -408,7 +407,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   inline std::string operator""_sX2(unsigned long long s) {
-    return xtd::strings::format("{:X2}", s);
+    return xtd::ustring::format("{:X2}", s);
   }
 
   /// @brief Used to convert specified value into std::string.
@@ -421,7 +420,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   inline std::string operator""_sX4(unsigned long long s) {
-    return xtd::strings::format("{:X4}", s);
+    return xtd::ustring::format("{:X4}", s);
   }
 
   /// @brief Used to convert specified value into std::string.
@@ -434,7 +433,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   inline std::string operator""_sX8(unsigned long long s) {
-    return xtd::strings::format("{:X8}", s);
+    return xtd::ustring::format("{:X8}", s);
   }
 
   /// @brief Used to convert specified value into byte.
@@ -741,58 +740,6 @@ namespace xtd {
     return xtd::parse<uint64_t>(std::string(s, s + n));
   }
 
-  /// @brief Used to convert specified value into std::string.
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core literals
-  /// @par Examples
-  /// @code
-  /// std::string s = "This is a "_s + "simple test"_s;
-  /// std::cout << s << std::endl;
-  /// @endcode
-  inline std::wstring operator""_ws(const wchar_t* s, size_t n) {
-    return std::wstring(s, s + n);
-  }
-  
-  /// @brief Used to convert specified value into std::string.
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core literals
-  /// @par Examples
-  /// @code
-  /// std::string s = u8"This is a "_s + u8"simple test"_s;
-  /// std::cout << s << std::endl;
-  /// @endcode
-  inline std::wstring operator""_ws(const char8_t* s, size_t n) {
-    return std::wstring(s, s + n);
-  }
-  
-  /// @brief Used to convert specified value into std::string.
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core literals
-  /// @par Examples
-  /// @code
-  /// std::string s = "This is a "_s + "simple test"_s;
-  /// std::cout << s << std::endl;
-  /// @endcode
-  inline std::wstring operator""_ws(long double s) {
-    return xtd::strings::format(L"{}", s);
-  }
-  
-  /// @brief Used to convert specified value into std::string.
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core literals
-  /// @par Examples
-  /// @code
-  /// std::string s = 49_s;
-  /// std::cout << s << std::endl;
-  /// @endcode
-  inline std::wstring operator""_ws(unsigned long long s) {
-    return xtd::strings::format(L"{}", s);
-  }
-
   inline const char* operator""_t(const char* s, size_t n) {
     return xtd::translator::translate(s);
   }
@@ -802,14 +749,14 @@ namespace xtd {
   }
   
   inline std::string operator""_t(const char16_t* s, size_t n) {
-    return xtd::translator::translate(xtd::strings::format("{}", s));
+    return xtd::translator::translate(xtd::ustring::format("{}", s));
   }
   
   inline std::string operator""_t(const char32_t* s, size_t n) {
-    return xtd::translator::translate(xtd::strings::format("{}", s));
+    return xtd::translator::translate(xtd::ustring::format("{}", s));
   }
   
   inline std::string operator""_t(const wchar_t* s, size_t n) {
-    return xtd::translator::translate(xtd::strings::format("{}", s));
+    return xtd::translator::translate(xtd::ustring::format("{}", s));
   }
 }
