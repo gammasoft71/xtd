@@ -124,7 +124,7 @@ namespace xtd {
       
       /// @brief Returns a string containing the name of the cursor.
       /// @return A string containing the name of the cursor.
-      std::string to_string() const noexcept override;
+      xtd::ustring to_string() const noexcept override;
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const cursor& value) noexcept {return os << value.to_string();}

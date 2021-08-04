@@ -8,7 +8,7 @@
 #include <stdexcept>
 #include <vector>
 #include <xtd/object.h>
-#include <xtd/strings.h>
+#include <xtd/ustring.h>
 #include "../drawing_export.h"
 #include "font_style.h"
 #include "text/generic_font_families.h"
@@ -105,7 +105,7 @@ namespace xtd {
 
       /// @brief Converts this font_family to a human-readable string representation.
       /// @return The string that represents this font_family.
-      std::string to_string() const noexcept override {return strings::format("[{}: name={}]", strings::class_name(*this), data_->name_);}
+      xtd::ustring to_string() const noexcept override {return ustring::format("[{}: name={}]", ustring::class_name(*this), data_->name_);}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::font_family& font_family) noexcept {

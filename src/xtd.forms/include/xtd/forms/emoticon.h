@@ -5,6 +5,7 @@
 #include "../forms_export.h"
 #include <xtd/object.h>
 #include <xtd/static.h>
+#include <xtd/ustring.h>
 #include <ostream>
 #include <string>
 #include <vector>
@@ -115,7 +116,7 @@ namespace xtd {
 
       /// @brief Returns a string containing the codepoints of the emoticons.
       /// @return A string containing the codepoints of the emoticon. Empty string ("") for none codepoints.
-      std::string to_string() const noexcept override {
+      xtd::ustring to_string() const noexcept override {
         std::string result;
         for (auto codepoint : codepoints_) {
           if (codepoint < 0x80) {

@@ -811,9 +811,9 @@ void control::set_auto_size_mode(auto_size_mode auto_size_mode) {
   }
 }
 
-string control::to_string() const noexcept {
-  if (!name_.empty()) return strings::format("{}, name: {}", strings::full_class_name(*this), name_);
-  if (!text_.empty()) return strings::format("{}, text: {}", strings::full_class_name(*this), text_);
+ustring control::to_string() const noexcept {
+  if (!name_.empty()) return ustring::format("{}, name: {}", ustring::full_class_name(*this), name_);
+  if (!text_.empty()) return ustring::format("{}, text: {}", ustring::full_class_name(*this), text_);
   return strings::full_class_name(*this);
 }
 

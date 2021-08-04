@@ -33,7 +33,7 @@ namespace xtd {
       /// @remarks This default method does nothing, but derived classes can virtual the method to provide the appropriate functionality
       void flush() override;
  
-      std::string to_string() const noexcept override;
+      xtd::ustring to_string() const noexcept override;
       
       /// @brief Writes the specified string value to the text stream.
       /// @param value The value to write

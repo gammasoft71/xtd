@@ -1,4 +1,5 @@
 #include "../../include/xtd/console.h"
+#include "../../include/xtd/strings.h"
 #include "../../include/xtd/environment.h"
 #include "../../include/xtd/system_exception.h"
 #include "../../include/xtd/diagnostics/stack_trace.h"
@@ -13,11 +14,11 @@ system_exception::system_exception(const std::string& message, const std::except
   //if (!stack_trace_.size()) stack_trace_.push_back(information_.to_string());
 }
 
-std::string system_exception::to_string() const noexcept {
+ustring system_exception::to_string() const noexcept {
   if (message().empty() && stack_trace().empty()) return name();
-  if (message().empty()) return xtd::strings::format("{}\n{}", name(), stack_trace());
-  if (stack_trace().empty()) return xtd::strings::format("{} : {}", name(), message());
-  return xtd::strings::format("{} : {}\n{}", name(), message(), stack_trace());
+  if (message().empty()) return xtd::ustring::format("{}\n{}", name(), stack_trace());
+  if (stack_trace().empty()) return xtd::ustring::format("{} : {}", name(), message());
+  return xtd::ustring::format("{} : {}\n{}", name(), message(), stack_trace());
 }
 
 std::string system_exception::stack_trace_to_string() const noexcept {

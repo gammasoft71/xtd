@@ -4,7 +4,7 @@
 #pragma once
 #include <xtd/environment.h>
 #include <xtd/object.h>
-#include <xtd/strings.h>
+#include <xtd/ustring.h>
 #include "../forms_export.h"
 #include "theme_style.h"
 
@@ -38,7 +38,7 @@ namespace xtd {
       
       bool is_default() const {return is_default_;}
       
-      std::string to_string() const noexcept override {return xtd::strings::format("[name={}, style={}, is_default={}] ", name_, theme_style_, is_default_);}
+      xtd::ustring to_string() const noexcept override {return xtd::ustring::format("[name={}, style={}, is_default={}] ", name_, theme_style_, is_default_);}
       
       static std::string default_theme_name() {return xtd::environment::os_version().desktop_environment() == "" ? fallback_theme_name() :  xtd::environment::os_version().desktop_environment();}
       

@@ -4,7 +4,7 @@
 #pragma once
 #include <cstdint>
 #include <xtd/object.h>
-#include <xtd/strings.h>
+#include <xtd/ustring.h>
 #include "../forms_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -139,7 +139,7 @@ namespace xtd {
       /// @brief Returns a string that represents the current padding.
       /// @return A string that represents the current padding.
       /// @remarks This method returns a string containing the labeled values of the padding for all four edges.
-      std::string to_string() const noexcept override {return xtd::strings::format("padding [all={}, left={}, top={}, right={}, bottom={}]", all_, left_, top_, right_, bottom_);}
+      xtd::ustring to_string() const noexcept override {return xtd::ustring::format("padding [all={}, left={}, top={}, right={}, bottom={}]", all_, left_, top_, right_, bottom_);}
       
       /// @cond
       bool operator==(const padding& p) const {return all_ == p.all_ && left_ == p.left_ && top_ == p.top_ && right_ == p.right_ && bottom_ == p.bottom_;}

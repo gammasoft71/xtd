@@ -5,6 +5,7 @@
 #include <ostream>
 #include <string>
 #include <xtd/object.h>
+#include <xtd/ustring.h>
 #include "../drawing_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -86,7 +87,7 @@ namespace xtd {
 
       /// @brief Creates a human-readable string that represents this size class.
       /// @return string A string that represents this size.
-      std::string to_string() const noexcept override {return "{width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";}
+      xtd::ustring to_string() const noexcept override {return "{width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::size_f& size) noexcept {

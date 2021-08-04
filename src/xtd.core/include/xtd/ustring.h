@@ -1188,7 +1188,7 @@ namespace xtd {
     ustring to_lower() const noexcept;
 
     //ustring to_string() const noexcept override;
-    std::string to_string() const noexcept override;
+    ustring to_string() const noexcept override;
 
     /// @brief Returns a copy of the current string converted to uppercase.
     /// @return A new string in uppercase.

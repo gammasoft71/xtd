@@ -10,6 +10,7 @@
 #include "argument_exception.h"
 #include "format_exception.h"
 #include "object.h"
+#include "ustring.h"
 
 /// @cond
 #undef major
@@ -73,7 +74,7 @@ namespace xtd {
       }
     }
     
-    std::string to_string() const noexcept {return to_string(2 + (build_ != -1 ? 1 : 0) + (revision_ != -1 ? 1 : 0));}
+    xtd::ustring to_string() const noexcept {return to_string(2 + (build_ != -1 ? 1 : 0) + (revision_ != -1 ? 1 : 0));}
     
     std::string to_string(size_t field_count) const {
       if (field_count > 4 || (field_count >= 3 && build_ == -1) || (field_count == 4 && revision_ == -1))

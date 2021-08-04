@@ -91,7 +91,7 @@ namespace xtd {
       /// @brief Returns a string that represents the track_bar control.
       /// @return A string that represents the current progress_bar.
       /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
-      std::string to_string() const noexcept override {return strings::format("{}, minimum: {}, maximum: {}, value: {}", strings::full_class_name(*this), minimum_, maximum_, value_);}
+      xtd::ustring to_string() const noexcept override {return ustring::format("{}, minimum: {}, maximum: {}, value: {}", ustring::full_class_name(*this), minimum_, maximum_, value_);}
 
       /// @brief Occurs when either a mouse or keyboard action moves the scroll box.
       /// @ingroup events

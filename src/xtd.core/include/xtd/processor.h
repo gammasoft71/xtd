@@ -6,7 +6,7 @@
 #include <vector>
 #include "architecture_id.h"
 #include "object.h"
-#include "strings.h"
+#include "ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -52,7 +52,7 @@ namespace xtd {
     
     /// @brief Converts the value of this processor object to its equivalent string representation.
     /// @return The string representation of the values returned by the platform, version, and service_pack methods.
-    std::string to_string() const noexcept {return architecture_string();}
+    xtd::ustring to_string() const noexcept {return architecture_string();}
     
   private:
     xtd::architecture_id architecture_ = xtd::architecture_id::unknown;

@@ -1036,7 +1036,7 @@ ustring ustring::to_lower() const noexcept {
   return result;
 }
 
-string ustring::to_string() const noexcept {
+ustring ustring::to_string() const noexcept {
   return *this;
 }
 

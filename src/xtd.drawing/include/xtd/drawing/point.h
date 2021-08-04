@@ -6,6 +6,7 @@
 #include <ostream>
 #include <xtd/object.h>
 #include <xtd/strings.h>
+#include <xtd/ustring.h>
 #include "../drawing_export.h"
 #include "point_f.h"
 
@@ -289,7 +290,7 @@ namespace xtd {
 
       /// @brief Converts this point to a human-readable string.
       /// @return A string that represents this point.
-      std::string to_string() const noexcept override {return  strings::format("{{x={}, y={}}}", x_, y_);}
+      xtd::ustring to_string() const noexcept override {return  ustring::format("{{x={}, y={}}}", x_, y_);}
 
       /// @brief Converts the specified point_f to a point by truncating the values of the point_f.
       /// @param value The point_f to convert.

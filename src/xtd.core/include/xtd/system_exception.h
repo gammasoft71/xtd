@@ -9,7 +9,7 @@
 #include "core_export.h"
 #include "literals.h"
 #include "object.h"
-#include "strings.h"
+#include "ustring.h"
 #include "diagnostics/stack_frame.h"
 #include "diagnostics/stack_trace.h"
 
@@ -125,7 +125,7 @@ namespace xtd {
     
     /// @brief Returns a string that represents the current exception.
     /// @return A string that represents the current exception.
-    std::string to_string() const noexcept override;
+    xtd::ustring to_string() const noexcept override;
 
     /// @cond
     friend std::ostream& operator<<(std::ostream& os, const xtd::system_exception& e) noexcept {

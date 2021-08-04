@@ -4,6 +4,7 @@
 #pragma once
 #include "../forms_export.h"
 #include <xtd/object.h>
+#include <xtd/ustring.h>
 #include <xtd/convert_string.h>
 #include <xtd/static.h>
 #include <xtd/drawing/bitmap.h>
@@ -90,7 +91,7 @@ namespace xtd {
 
       /// @brief Returns a string containing the name, alpha codes and numeric code of the country.
       /// @return A string containing the name, alpha codes and numeric code of the country.
-      virtual std::string to_string() const noexcept override;
+      virtual xtd::ustring to_string() const noexcept override;
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::forms::country& country) noexcept {

@@ -87,8 +87,8 @@ std::optional<main_menu> menu::get_main_menu() const {
   return {};
 }
 
-std::string menu::to_string() const noexcept {
-  return strings::format("{}, items.size: {}", strings::full_class_name(*this), data_->menu_items_.size());
+ustring menu::to_string() const noexcept {
+  return ustring::format("{}, items.size: {}", ustring::full_class_name(*this), data_->menu_items_.size());
 }
 
 void menu::clone_menu(const menu& menu_src) {

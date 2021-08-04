@@ -5,7 +5,7 @@
 #include <cstdint>
 #include <limits>
 #include "../object.h"
-#include "../strings.h"
+#include "../ustring.h"
 
 #ifndef current_stack_frame_
 
@@ -166,7 +166,7 @@ namespace xtd {
       
       /// @brief Builds a readable representation of the stack trace.
       /// @return A readable representation of the stack trace.
-      std::string to_string() const noexcept override;
+      xtd::ustring to_string() const noexcept override;
 
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::diagnostics::stack_frame& stack_frame) noexcept {return os << stack_frame.to_string();}

@@ -44,7 +44,7 @@ country country::from_numeric_code(int numeric_code) {
   return countries[numeric_code];
 }
 
-std::string country::to_string() const noexcept {
+ustring country::to_string() const noexcept {
   if (*this == empty()) return "country [empty]";
-  return strings::format("country [name={}, alpha_2_code={}, alpha_3_code={}, numeric_code={}]", name(), alpha_2_code(), alpha_3_code(), numeric_code());
+  return ustring::format("country [name={}, alpha_2_code={}, alpha_3_code={}, numeric_code={}]", name(), alpha_2_code(), alpha_3_code(), numeric_code());
 }
