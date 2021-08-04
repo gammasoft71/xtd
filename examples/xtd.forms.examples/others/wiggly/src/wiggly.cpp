@@ -1,7 +1,6 @@
 #include <xtd/xtd>
 
 using namespace std;
-using namespace std::literals;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
@@ -13,10 +12,7 @@ namespace examples {
       back_color(system_colors::window());
       font({font(), font().size() + 12});
       timer.interval(60ms);
-      timer.tick += [&] {
-        step++;
-        invalidate();
-      };
+      timer.tick += event_handler(*this, &wiggly::on_timer_tick);
       timer.enabled(true);
     }
 
@@ -33,10 +29,15 @@ namespace examples {
     
     void on_text_changed(const event_args& e) override {
       user_control::on_text_changed(e);
-      wiggly_text = convert_string::to_u32string(text());
+      wiggly_text = as<u32string>(text());
     }
 
   private:
+    void on_timer_tick(object& sender, const event_args& e) {
+      step++;
+      invalidate();
+    }
+
     forms::timer timer;
     u32string wiggly_text;
     int step = 0;
