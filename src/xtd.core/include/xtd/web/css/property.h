@@ -3,7 +3,6 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <ostream>
-#include <string>
 #include "../../object.h"
 #include "../../ustring.h"
 
@@ -14,25 +13,25 @@ namespace xtd {
       class property : public object{
       public:
         property() = default;
-        explicit property(const std::string& value) : value_(value) {}
-        operator std::string() {return value_;}
+        explicit property(const xtd::ustring& value) : value_(value) {}
+        operator xtd::ustring() {return value_;}
         
-        static property from(bool value) {return property(strings::format("{}", value));}
-        static property from(double value) {return property(strings::format("{}", value));}
-        static property from(float value) {return property(strings::format("{}", value));}
-        static property from(int8_t value) {return property(strings::format("{}", value));}
-        static property from(int16_t value) {return property(strings::format("{}", value));}
-        static property from(int32_t value) {return property(strings::format("{}", value));}
-        static property from(int64_t value) {return property(strings::format("{}", value));}
-        static property from(const std::string& value) {return property(strings::format("{}", value));}
-        static property from(uint8_t value) {return property(strings::format("{}", value));}
-        static property from(uint16_t value) {return property(strings::format("{}", value));}
-        static property from(uint32_t value) {return property(strings::format("{}", value));}
-        static property from(uint64_t value) {return property(strings::format("{}", value));}
+        static property from(bool value) {return property(ustring::format("{}", value));}
+        static property from(double value) {return property(ustring::format("{}", value));}
+        static property from(float value) {return property(ustring::format("{}", value));}
+        static property from(int8_t value) {return property(ustring::format("{}", value));}
+        static property from(int16_t value) {return property(ustring::format("{}", value));}
+        static property from(int32_t value) {return property(ustring::format("{}", value));}
+        static property from(int64_t value) {return property(ustring::format("{}", value));}
+        static property from(const xtd::ustring& value) {return property(ustring::format("{}", value));}
+        static property from(uint8_t value) {return property(ustring::format("{}", value));}
+        static property from(uint16_t value) {return property(ustring::format("{}", value));}
+        static property from(uint32_t value) {return property(ustring::format("{}", value));}
+        static property from(uint64_t value) {return property(ustring::format("{}", value));}
         template<typename value_t>
-        static property from(value_t value) {return property(strings::format("{}", value));}
+        static property from(value_t value) {return property(ustring::format("{}", value));}
         
-        const std::string& value() const {return value_;}
+        const xtd::ustring& value() const {return value_;}
         template<typename value_t>
         uintptr_t value() const {return xtd::parse<value_t>(value_);}
 
@@ -56,7 +55,7 @@ namespace xtd {
         friend std::ostream& operator <<(std::ostream& os, const property& property) noexcept {return os << property.to_string();}
         
       private:
-        std::string value_;
+        xtd::ustring value_;
       };
     }
   }

@@ -16,7 +16,7 @@ namespace xtd {
       public:
         writer(std::ostream& stream) : text_writer_(new xtd::io::stream_writer(stream)) {}
         writer(xtd::io::text_writer& text_writer) : text_writer_(&text_writer), delete_when_destroy_(false) {}
-        writer(const std::string& path) : text_writer_(new xtd::io::stream_writer(path)) {}
+        writer(const xtd::ustring& path) : text_writer_(new xtd::io::stream_writer(path)) {}
         ~writer() {
           if (delete_when_destroy_ && text_writer_) delete text_writer_;
         }

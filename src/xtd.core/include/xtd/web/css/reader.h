@@ -17,12 +17,12 @@ namespace xtd {
       public:
         reader(std::istream& stream) {parse_text(xtd::io::stream_reader(stream).read_to_end());}
         reader(xtd::io::text_reader& text_reader) {parse_text(text_reader.read_to_end());}
-        reader(const std::string& text) {parse_text(text);}
+        reader(const xtd::ustring& text) {parse_text(text);}
         
         const xtd::web::css::selector_map& selectors() const {return selectors_;}
         
       private:
-        void parse_text(std::string text) {
+        void parse_text(xtd::ustring text) {
           enum class parse_status {
             selector,
             key,
@@ -31,19 +31,19 @@ namespace xtd {
           parse_status status = parse_status::selector;
           size_t start_index = 0;
           xtd::web::css::selector current_selector;
-          std::string current_selector_name;
-          std::string current_key;
+          xtd::ustring current_selector_name;
+          xtd::ustring current_key;
           for (size_t index = 0; index < text.size(); index++) {
             if (text[index] == '/' && text[index+1] == '*') {
               // Skip comments...
-              index = xtd::strings::index_of(text, "*/", index+2);
+              index = text.index_of("*/", index+2);
               if (index == text.npos) throw xtd::format_exception("expected end comment", current_stack_frame_);
               index++;
               start_index = index + 1;
               continue;
             } else if (status == parse_status::selector && text[index] == '{') {
-              current_selector_name = xtd::strings::trim(xtd::strings::substring(text, start_index, index - start_index));
-              current_selector.name(xtd::strings::trim(xtd::strings::substring(text, start_index, index - start_index)));
+              current_selector_name = text.substring(start_index, index - start_index).trim();
+              current_selector.name(text.substring(start_index, index - start_index).trim());
               start_index = index + 1;
               status = parse_status::key;
             } else if (status == parse_status::key && text[index] == '}') {
@@ -52,12 +52,12 @@ namespace xtd {
               start_index = index + 1;
               status = parse_status::selector;
             } else if (status == parse_status::key && text[index] == ':') {
-              current_key = xtd::strings::trim(xtd::strings::substring(text, start_index, index - start_index));
+              current_key = text.substring(start_index, index - start_index).trim();
               if (current_key.empty()) throw xtd::format_exception("key cannot be empty", current_stack_frame_);
               start_index = index + 1;
               status = parse_status::value;
             } else if (status == parse_status::value && text[index] == ';') {
-              auto value = xtd::strings::trim(xtd::strings::substring(text, start_index, index - start_index));
+              auto value = text.substring(start_index, index - start_index).trim();
               if (value.empty()) throw xtd::format_exception("value cannot be empty", current_stack_frame_);
               start_index = index + 1;
               current_selector.properties()[current_key] = property(value);
