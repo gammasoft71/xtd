@@ -1,7 +1,7 @@
 #include "../../include/xtd/translator.h"
 #include "../../include/xtd/environment.h"
 #include "../../include/xtd/format_exception.h"
-#include "../../include/xtd/strings.h"
+#include "../../include/xtd/ustring.h"
 #include "../../include/xtd/collections/specialized/string_map.h"
 #include "../../include/xtd/io/file.h"
 #include "../../include/xtd/io/path.h"
@@ -29,7 +29,7 @@ xtd::ustring translator::language() {
 
 void translator::language(const xtd::ustring& language) {
   initialize(); // Must be first
-  language_ = xtd::strings::to_lower(language);
+  language_ = language.to_lower();
 }
 
 std::vector<xtd::ustring> translator::languages() {
@@ -63,7 +63,7 @@ void translator::parse_locale(const xtd::ustring& locale_path) {
   std::filesystem::path std_path(std::string(locale_path).c_str());
   if (!std::filesystem::exists(std_path) || !std::filesystem::is_directory(std_path)) return;
   for (auto locale_item : std::filesystem::directory_iterator(std_path)) {
-    if (!locale_item.is_directory() || language_ != xtd::strings::to_lower(locale_item.path().filename().string())) continue;
+    if (!locale_item.is_directory() || language_ != xtd::ustring(locale_item.path().filename().string()).to_lower()) continue;
     for (auto language_item : std::filesystem::directory_iterator(locale_item.path()))
       if (language_item.path().extension() == ".strings") parse_file(language_item.path().string(), language_);
   }
@@ -76,12 +76,12 @@ void translator::parse_file(const xtd::ustring& file, const xtd::ustring& langua
   int line_count = 0;
   for (auto line : lines) {
     line_count++;
-    line = xtd::strings::trim(line);
+    line = line.trim();
     if (line.is_empty()) continue;
     if (line.starts_with("#")) continue;
     if (key.empty() && line.starts_with("key ")) key = line.remove(0, 4).trim('"');
     else if (!key.empty() && line.starts_with("value ")) value = line.remove(0, 6).trim('"');
-    else throw xtd::format_exception(xtd::strings::format("file {} has an invalid format at line {}", file, line_count), current_stack_frame_);
+    else throw xtd::format_exception(xtd::ustring::format("file {} has an invalid format at line {}", file, line_count), current_stack_frame_);
     if (!key.empty() && !value.empty()) {
       add_value(language, key, value);
       key = value = "";
@@ -91,7 +91,7 @@ void translator::parse_file(const xtd::ustring& file, const xtd::ustring& langua
 
 void translator::initialize() {
   if (language_.empty()) {
-    if (!std::locale().name().empty() && std::locale().name() != "C") language_ = xtd::strings::to_lower(xtd::strings::substring(std::locale().name(), 0, 2));
+    if (!std::locale().name().empty() && std::locale().name() != "C") language_ = ustring(std::locale().name()).substring(0, 2).to_lower();
     else language_ = system_language();
   }
   

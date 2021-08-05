@@ -1,3 +1,4 @@
+#include <xtd/convert_string.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/font.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
@@ -5,6 +6,7 @@
 #include <wx/dcscreen.h>
 #include <wx/font.h>
 
+using namespace xtd;
 using namespace xtd::drawing::native;
 
 namespace {
@@ -24,8 +26,8 @@ namespace {
   }
 }
 
-intptr_t font::create(const std::string& name, float em_size, bool bold, bool italic, bool underline, bool strikeout, uint8_t gdi_char_set, bool gdi_vertical_font) {
-  wxFont* font = new wxFont(points_to_native_font_graphics_untit(em_size), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, name == ".AppleSystemUIFont" ? "" : name);
+intptr_t font::create(const ustring& name, float em_size, bool bold, bool italic, bool underline, bool strikeout, uint8_t gdi_char_set, bool gdi_vertical_font) {
+  wxFont* font = new wxFont(points_to_native_font_graphics_untit(em_size), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, name == ".AppleSystemUIFont" ? L"" : convert_string::to_wstring(name));
   font->SetPointSize(points_to_native_font_graphics_untit(em_size));
   font->SetStrikethrough(strikeout);
   return reinterpret_cast<intptr_t>(font);
@@ -47,9 +49,9 @@ int32_t font::dpi() {
   return ::dpi();
 }
 
-void font::get_information(intptr_t font, std::string& name, float& em_size, bool& bold, bool& italic, bool& underline, bool& strikeout, uint8_t& gdi_char_set, bool& gdi_vertical_font) {
+void font::get_information(intptr_t font, ustring& name, float& em_size, bool& bold, bool& italic, bool& underline, bool& strikeout, uint8_t& gdi_char_set, bool& gdi_vertical_font) {
   wxFont* wx_font = reinterpret_cast<wxFont*>(font);
-  name = wx_font->GetFaceName();
+  name = wx_font->GetFaceName().c_str().AsWChar();
   em_size = native_font_graphics_untit_to_points(static_cast<float>(wx_font->GetPointSize()));
   bold = wx_font->GetWeight() > wxFontWeight::wxFONTWEIGHT_NORMAL;
   italic = wx_font->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL;

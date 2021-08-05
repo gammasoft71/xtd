@@ -1,6 +1,5 @@
 #include "../../include/xtd/object.h"
 #include "../../include/xtd/ustring.h"
-#include "../../include/xtd/strings.h"
 
 using namespace std;
 using namespace xtd;

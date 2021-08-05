@@ -34,16 +34,16 @@ namespace xtd {
         friend xtd::drawing::text::installed_font_collection;
         friend xtd::drawing::font_family;
       protected:
-        static intptr_t create(const std::string& name);
+        static intptr_t create(const xtd::ustring& name);
         static void destroy(intptr_t font_family);
-        static std::string generic_serif_name();
-        static std::string generic_sans_serif_name();
-        static std::string generic_monospace_name();
-        static std::vector<std::string> installed_font_families();
+        static xtd::ustring generic_serif_name();
+        static xtd::ustring generic_sans_serif_name();
+        static xtd::ustring generic_monospace_name();
+        static std::vector<xtd::ustring> installed_font_families();
         static int32_t get_cell_ascent(intptr_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout);
         static int32_t get_cell_descent(intptr_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout);
         static int32_t get_line_spacing(intptr_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout);
-        static std::string get_name(intptr_t font_family, int32_t language);
+        static xtd::ustring get_name(intptr_t font_family, int32_t language);
         static bool is_style_avaible(intptr_t font_family, bool bold, bool italic, bool underline, bool strikeout);
       };
     }

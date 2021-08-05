@@ -48,7 +48,7 @@ font::font(std::string family_name, float em_size, font_style style, graphics_un
 
 font::font(intptr_t handle) {
   data_->handle_ = handle;
-  std::string family_name;
+  ustring family_name;
   bool bold = false, italic = false, underline = false, strikeout = false;
   native::font::get_information(data_->handle_, family_name, data_->size_, bold, italic, underline, strikeout, data_->gdi_char_set_, data_->gdi_vertical_font_);
   try {
@@ -102,7 +102,7 @@ int32_t font::height() const {
 font font::from_hdc(const intptr_t hdc) {
   font font;
   font.data_->handle_ = native::font::create_from_hdc(hdc);
-  std::string family_name;
+  ustring family_name;
   bool bold = false, italic = false, underline = false, strikeout = false;
   native::font::get_information(font.data_->handle_, family_name, font.data_->size_, bold, italic, underline, strikeout, font.data_->gdi_char_set_, font.data_->gdi_vertical_font_);
   try {

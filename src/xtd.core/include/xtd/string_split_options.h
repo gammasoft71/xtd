@@ -7,11 +7,11 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {
-  /// @brief Specifies whether applicable strings::Split method overloads include or omit empty substrings from the return value.
+  /// @brief Specifies whether applicable xtd::ustring::split method overloads include or omit empty substrings from the return value.
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  /// @see xtd::strings
+  /// @see xtd::ustring
   enum class string_split_options {
     /// @brief The return value includes array elements that contain an empty string.
     none,

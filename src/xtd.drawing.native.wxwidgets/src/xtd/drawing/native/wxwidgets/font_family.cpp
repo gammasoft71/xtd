@@ -10,8 +10,8 @@
 #include <wx/fontenum.h>
 #include <wx/dcscreen.h>
 
+using namespace xtd;
 using namespace xtd::drawing::native;
-
 
 namespace {
 #if defined(__APPLE__)
@@ -30,73 +30,73 @@ namespace {
 #endif
 }
 
-intptr_t font_family::create(const std::string& name) {
-  if (name == ".AppleSystemUIFont") return reinterpret_cast<intptr_t>(new std::string(name));
-  return wxFontEnumerator::IsValidFacename(name) ? reinterpret_cast<intptr_t>(new std::string(name)) : 0;
+intptr_t font_family::create(const ustring& name) {
+  if (name == ".AppleSystemUIFont") return reinterpret_cast<intptr_t>(new ustring(name));
+  return wxFontEnumerator::IsValidFacename(name) ? reinterpret_cast<intptr_t>(new ustring(name)) : 0;
 }
 
 void font_family::destroy(intptr_t font_family) {
-  delete reinterpret_cast<std::string*>(font_family);
+  delete reinterpret_cast<ustring*>(font_family);
 }
 
-std::string font_family::generic_serif_name() {
+ustring font_family::generic_serif_name() {
   /*
   wxFontInfo font_info;
   font_info.Family(wxFONTFAMILY_ROMAN);
   wxFont font(font_info);
-  return xtd::convert_string::to_string(font.GetFaceName().c_str().AsWChar());
+  return font.GetFaceName().c_str().AsWChar();
    */
 #if defined(__WXMSW__)
-  return "Times New Roman";
+  return L"Times New Roman";
 #elif defined(__APPLE__)
-  return "Times New Roman";
+  return L"Times New Roman";
 #elif defined(__WXGTK__)
-  return "Serif";
+  return L"Serif";
 #else
-  return "Serif";
+  return L"Serif";
 #endif
 }
 
-std::string font_family::generic_sans_serif_name() {
+ustring font_family::generic_sans_serif_name() {
   /*
   wxFontInfo font_info;
   font_info.Family(wxFONTFAMILY_SWISS);
   wxFont font(font_info);
-  return xtd::convert_string::to_string(font.GetFaceName().c_str().AsWChar());
+  return font.GetFaceName().c_str().AsWChar();
    */
 #if defined(__WXMSW__)
-  return "Microsoft Sans Serif";
+  return L"Microsoft Sans Serif";
 #elif defined(__APPLE__)
-  return "Arial";
+  return L"Arial";
 #elif defined(__WXGTK__)
-  return "Sans";
+  return L"Sans";
 #else
-  return "Sans";
+  return L"Sans";
 #endif
 }
 
-std::string font_family::generic_monospace_name() {
+ustring font_family::generic_monospace_name() {
   /*
   wxFontInfo font_info;
   font_info.Family(wxFONTFAMILY_TELETYPE);
   wxFont font(font_info);
-  return fxtd::convert_string::to_string(ont.GetFaceName().c_str().AsWChar());
+  return font.GetFaceName().c_str().AsWChar();
    */
 #if defined(__WXMSW__)
-  return "Courier New";
+  return L"Courier New";
 #elif defined(__APPLE__)
-  return "Courier";
+  return L"Courier";
 #elif defined(__WXGTK__)
-  return "Monospace";
+  return L"Monospace";
 #else
-  return "Monospace";
+  return L"Monospace";
 #endif
 }
 
-std::vector<std::string> font_family::installed_font_families() {
-  std::vector<std::string> families;
+std::vector<ustring> font_family::installed_font_families() {
+  std::vector<ustring> families;
   for (const wxString& name : wxFontEnumerator::GetFacenames())
-    if (name[0] != '@') families.push_back(xtd::convert_string::to_string(name.c_str().AsWChar()));
+    if (name[0] != '@') families.push_back(name.c_str().AsWChar());
   std::sort(families.begin(), families.end());
   return families;
 }
@@ -104,7 +104,7 @@ std::vector<std::string> font_family::installed_font_families() {
 int32_t font_family::get_cell_ascent(intptr_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout) {
   if (!wxTheApp) return em_height;
   wxScreenDC hdc;
-  wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, *reinterpret_cast<std::string*>(font_family));
+  wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, convert_string::to_wstring(*reinterpret_cast<ustring*>(font_family)));
   font.SetStrikethrough(strikeout);
   wxFont default_font = hdc.GetFont();
   hdc.SetFont(font);
@@ -116,7 +116,7 @@ int32_t font_family::get_cell_ascent(intptr_t font_family, int32_t em_height, bo
 int32_t font_family::get_cell_descent(intptr_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout) {
   if (!wxTheApp) return 0;
   wxScreenDC hdc;
-  wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, *reinterpret_cast<std::string*>(font_family));
+  wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, convert_string::to_wstring(*reinterpret_cast<ustring*>(font_family)));
   font.SetStrikethrough(strikeout);
   wxFont default_font = hdc.GetFont();
   hdc.SetFont(font);
@@ -128,7 +128,7 @@ int32_t font_family::get_cell_descent(intptr_t font_family, int32_t em_height, b
 int32_t font_family::get_line_spacing(intptr_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout) {
   if (!wxTheApp) return em_height;
   wxScreenDC hdc;
-  wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, *reinterpret_cast<std::string*>(font_family));
+  wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, convert_string::to_wstring(*reinterpret_cast<ustring*>(font_family)));
   font.SetStrikethrough(strikeout);
   wxFont default_font = hdc.GetFont();
   hdc.SetFont(font);
@@ -137,8 +137,8 @@ int32_t font_family::get_line_spacing(intptr_t font_family, int32_t em_height, b
   return std::round(static_cast<double>(metrics.height + metrics.externalLeading) / metrics.height * em_height);
 }
 
-std::string font_family::get_name(intptr_t font_family, int32_t language) {
-  return *reinterpret_cast<std::string*>(font_family);
+ustring font_family::get_name(intptr_t font_family, int32_t language) {
+  return *reinterpret_cast<ustring*>(font_family);
 }
 
 bool font_family::is_style_avaible(intptr_t font_family, bool bold, bool italic, bool underline, bool strikeout) {

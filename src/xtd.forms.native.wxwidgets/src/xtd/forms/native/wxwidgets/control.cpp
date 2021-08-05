@@ -257,8 +257,7 @@ std::string control::text(intptr_t control) {
 
 void control::text(intptr_t control, const std::string& text) {
   if (control == 0) return;
-  auto w_text = convert_string::to_wstring(text);
-  reinterpret_cast<control_handler*>(control)->control()->SetLabel(wxString(w_text));
+  reinterpret_cast<control_handler*>(control)->control()->SetLabel(convert_string::to_wstring(text));
 }
 
 bool control::visible(intptr_t control) {

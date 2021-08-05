@@ -439,36 +439,36 @@ namespace xtd {
     
     /// @brief Gets the fully qualified class name of the objec_t, including the namespace of the objec_t.
     /// @return The fully qualified class name of the objec_t, including the namespace of the objec_t.
-    /// @remarks For example, the fully qualified name of the strings type is xtd::strings.
+    /// @remarks For example, the fully qualified name of the ustring type is xtd::ustring.
     template<typename object_t>
     static ustring full_class_name() {return demangle(typeid(object_t).name());}
     
     /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.
     /// @return The fully qualified class name of the objec_t, including the namespace of the specified object.
-    /// @remarks For example, the fully qualified name of the strings type is xtd::strings.
+    /// @remarks For example, the fully qualified name of the ustring type is xtd::ustring.
     template<typename object_t>
     static ustring full_class_name(const object_t& object) {return demangle(typeid(object).name());}
     
     /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.
     /// @return The fully qualified class name of the objec_t, including the namespace of the specified object.
-    /// @remarks For example, the fully qualified name of the strings type is xtd::strings.
+    /// @remarks For example, the fully qualified name of the ustring type is xtd::ustring.
     static ustring full_class_name(const std::type_info& info) {return demangle(info.name());}
     
     /// @brief Gets the class name of the object_t.
     /// @return The class name of the object_t.
-    /// @remarks For example, the name of the strings type is strings.
+    /// @remarks For example, the name of the ustring type is ustring.
     template<typename object_t>
     static ustring class_name() {return get_class_name(full_class_name<object_t>());}
     
     /// @brief Gets the class name of the specified object.
     /// @return The class name of the specified object.
-    /// @remarks For example, the name of the strings type is strings.
+    /// @remarks For example, the name of the ustring type is ustring.
     template<typename object_t>
     static ustring class_name(const object_t& object) {return get_class_name(full_class_name(object));}
     
     /// @brief Gets the class name of the specified object.
     /// @return The class name of the specified object.
-    /// @remarks For example, the name of the strings type is strings.
+    /// @remarks For example, the name of the ustring type is ustring.
     static ustring class_name(const std::type_info& info) {return get_class_name(full_class_name(info));}
     
     using std::basic_string<value_type>::compare;

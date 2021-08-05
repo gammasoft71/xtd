@@ -13,7 +13,7 @@ namespace xtd {
   /// @code
   /// // values is released automatically after the end closure }.
   /// block_scope_(auto values = {1, 2, 3, 4, 5}) {
-  ///   cout << strings::join(", ", values) << endl;
+  ///   cout << ustring::join(", ", values) << endl;
   /// }
   /// @endcode
   /// @remarks same as #using_
