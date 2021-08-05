@@ -29,22 +29,22 @@ namespace xtd {
       static xtd::drawing::image image_missing() {return image_missing(default_size());}
       static xtd::drawing::image image_missing(const xtd::drawing::size& size) {return from_name("image-missing", size);}
 
-      static xtd::drawing::image from_name(const std::string& name) {return from_name(default_theme(), name, default_size());}
-      static xtd::drawing::image from_name(const std::string& name, const xtd::drawing::size& size) {return from_name(default_theme(), name, size);}
-      static xtd::drawing::image from_name(const std::string& theme, const std::string& name) {return from_name(theme, name, default_size());}
-      static xtd::drawing::image from_name(const std::string& theme, const std::string& name, const xtd::drawing::size& size);
+      static xtd::drawing::image from_name(const xtd::ustring& name) {return from_name(default_theme(), name, default_size());}
+      static xtd::drawing::image from_name(const xtd::ustring& name, const xtd::drawing::size& size) {return from_name(default_theme(), name, size);}
+      static xtd::drawing::image from_name(const xtd::ustring& theme, const xtd::ustring& name) {return from_name(theme, name, default_size());}
+      static xtd::drawing::image from_name(const xtd::ustring& theme, const xtd::ustring& name, const xtd::drawing::size& size);
 
-      static std::vector<std::string> contexts();
-      static std::map<std::string, std::vector<std::string>> context_names();
-      static std::vector<std::string> names();
-      static std::vector<std::string> names(const std::string& context) {return context_names()[context];}
+      static std::vector<xtd::ustring> contexts();
+      static std::map<xtd::ustring, std::vector<xtd::ustring>> context_names();
+      static std::vector<xtd::ustring> names();
+      static std::vector<xtd::ustring> names(const xtd::ustring& context) {return context_names()[context];}
       static std::vector<xtd::drawing::size> sizes();
       
     private:
       friend class system_icons;
-      static std::string default_theme();
-      static std::string fallback_theme();
-      static std::vector<std::string> themes();
+      static xtd::ustring default_theme();
+      static xtd::ustring fallback_theme();
+      static std::vector<xtd::ustring> themes();
     };
   }
 }

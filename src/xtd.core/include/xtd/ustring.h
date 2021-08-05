@@ -684,17 +684,17 @@ namespace xtd {
     /// @brief Determines whether the end of this string matches the specified string.
     /// @param value The string to compare to the substring at the end of this instance.
     /// @return true if value matches the end of this instance; otherwise, false.
-    bool ends_with(const ustring& value) noexcept;
+    bool ends_with(const ustring& value) const noexcept;
     
     /// @brief Determines whether the end of this string instance matches the specified string when compared using the specified culture.
     /// @param ignore_case true to ignore case during the comparison; otherwise, false.
     /// @return bool true if value matches the end of the specified string; otherwise, false.
-    bool ends_with(const ustring& value, bool ignore_case) noexcept;
+    bool ends_with(const ustring& value, bool ignore_case) const noexcept;
     
     /// @brief Determines whether the end of this string matches the specified string when compared using the specified comparison option.
     /// @param comparison_type One of the enumeration values that determines how this string and value are compared.
     /// @return bool true if value matches the end of the specified string; otherwise, false.
-    bool ends_with(const ustring& value, xtd::string_comparison comparison_type) noexcept;
+    bool ends_with(const ustring& value, xtd::string_comparison comparison_type) const noexcept;
 
     /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
     /// @param fmt A composite format string.

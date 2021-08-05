@@ -5,7 +5,7 @@
 #include <cstdint>
 #include <memory>
 #include <xtd/object.h>
-#include <xtd/strings.h>
+#include <xtd/ustring.h>
 #include "../drawing_export.h"
 #include "bitmap.h"
 
@@ -22,7 +22,7 @@ namespace xtd {
       icon() = default;
       ~icon();
 
-      explicit icon(const std::string& filename);
+      explicit icon(const xtd::ustring& filename);
 
       explicit icon(std::istream& stream);
 
@@ -43,7 +43,7 @@ namespace xtd {
 
       static icon empty;
 
-      void save(const std::string& filename) const;
+      void save(const xtd::ustring& filename) const;
       void save(std::ostream& stream) const;
       
       static icon from_bitmap(const bitmap& bitmap);

@@ -760,15 +760,15 @@ bool ustring::ends_with(char8_t value) const noexcept {
   return rfind(value) == size() - 1;
 }
 
-bool ustring::ends_with(const ustring& value) noexcept {
+bool ustring::ends_with(const ustring& value) const noexcept {
   return ends_with(value, false);
 }
 
-bool ustring::ends_with(const ustring& value, bool ignore_case) noexcept {
+bool ustring::ends_with(const ustring& value, bool ignore_case) const noexcept {
   return ends_with(value, ignore_case ? xtd::string_comparison::ordinal_ignore_case : xtd::string_comparison::ordinal);
 }
 
-bool ustring::ends_with(const ustring& value, xtd::string_comparison comparison_type) noexcept {
+bool ustring::ends_with(const ustring& value, xtd::string_comparison comparison_type) const noexcept {
   if (comparison_type == xtd::string_comparison::ordinal_ignore_case)
     return to_lower().rfind(value.to_lower()) + value.to_lower().size() == size();
   return rfind(value) + value.size() == size();

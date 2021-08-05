@@ -2,7 +2,7 @@
 #include <vector>
 #include <xtd/argument_exception.h>
 #include <xtd/convert_string.h>
-#include <xtd/strings.h>
+#include <xtd/ustring.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/graphics.h>
 #include "../../../../../include/xtd/drawing/native/hdc_wrapper.h"
@@ -249,7 +249,7 @@ void graphics::measure_string(intptr_t hdc, const ustring &text, intptr_t font, 
   if (!hdc) return;
   width = 0;
   height = 0;
-  auto strings = xtd::strings::split(text, { '\n' });
+  auto strings = text.split({ '\n' });
   for (auto string : strings) {
     double line_width = 0, line_height = 0;
     // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::GetTextExtent doesn't work witth unicode on Windows.

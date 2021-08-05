@@ -4,7 +4,6 @@
 #pragma once
 #include <ostream>
 #include <xtd/object.h>
-#include <xtd/strings.h>
 #include <xtd/ustring.h>
 #include "../drawing_export.h"
 #include "size_f.h"
@@ -120,7 +119,7 @@ namespace xtd {
 
   template<>
   inline drawing::size parse<drawing::size>(const std::string& str) {
-    auto values = xtd::strings::split(xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(str, "}", ""), " height=", ""), "{width=", ""), {','});
+    auto values = xtd::ustring(str).replace("}", "").replace(" height=", "").replace("{width=", "").split({','});
     return {xtd::parse<int32_t>(values[0]), xtd::parse<int32_t>(values[1])};
   }
 }
