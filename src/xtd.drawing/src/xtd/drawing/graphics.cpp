@@ -2,7 +2,6 @@
 #include "../../../include/xtd/drawing/bitmap.h"
 #include "../../../include/xtd/drawing/graphics.h"
 #include "../../../include/xtd/drawing/solid_brush.h"
-#include <xtd/strings.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/graphics.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
@@ -12,7 +11,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 
 namespace {
-  std::string get_hotkey_prefix_locations(const std::string& str, std::vector<size_t>& locations) {
+  ustring get_hotkey_prefix_locations(const ustring& str, std::vector<size_t>& locations) {
     size_t offset = 0;
     for (auto index = 0U; index < str.size(); index++) {
       if (str[index] == '&' && str[index+1] != '&') {
@@ -22,9 +21,9 @@ namespace {
         ++index;
       }
     }
-    auto new_str = xtd::strings::replace(str, "&&", "&");
+    auto new_str = str.replace("&&", "&");
     for (auto index = 0U; index < locations.size(); ++index)
-      new_str = xtd::strings::remove(new_str, locations[index], 1);
+      new_str = new_str.remove(locations[index], 1);
     return new_str;
   }
 }
@@ -85,12 +84,12 @@ void graphics::draw_rounded_rectangle(const pen& pen, int32_t x, int32_t y, int3
   native::graphics::draw_rounded_rectangle(data_->handle_, pen.data_->handle_, x, y, width, height, radius);
 }
 
-void graphics::draw_string(const std::string& text, const font& font, const brush& brush, float x, float y, const string_format& format) {
+void graphics::draw_string(const ustring& text, const font& font, const brush& brush, float x, float y, const string_format& format) {
   if (dynamic_cast<const solid_brush*>(&brush) != nullptr)
     native::graphics::draw_string(data_->handle_, text, font.data_->handle_, static_cast<int32_t>(x), static_cast<int32_t>(y), static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
 }
 
-void graphics::draw_string(const std::string& text, const font& font, const brush& brush, const rectangle_f& layout_rectangle, const string_format& format) {
+void graphics::draw_string(const ustring& text, const font& font, const brush& brush, const rectangle_f& layout_rectangle, const string_format& format) {
   if (dynamic_cast<const solid_brush*>(&brush) != nullptr) {
     auto text_size = measure_string(text, font);
     auto y = layout_rectangle.y();
@@ -104,7 +103,7 @@ void graphics::draw_string(const std::string& text, const font& font, const brus
       height -= (layout_rectangle.height() - text_size.height());
     }
 
-    auto lines = xtd::strings::split(text, {'\n'});
+    auto lines = text.split({'\n'});
     for (auto line : lines) {
       if (line.empty()) line = " ";
       vector<size_t> hotkey_prefix_locations;
@@ -125,9 +124,9 @@ void graphics::draw_string(const std::string& text, const font& font, const brus
       else {
         /*
           for (auto index  = 0; index <hotkey_prefix_locations.size(); ++index) {
-            g.draw_string(strings::substring(text_without_hotkey_prefix, hotkey_prefix_locations[index], 1), xtd::drawing::font(font, font_style::underline), solid_brush(text_color), button_rect, to_string_format(flags));
+            g.draw_string(text_without_hotkey_prefix.substring(hotkey_prefix_locations[index], 1), xtd::drawing::font(font, font_style::underline), solid_brush(text_color), button_rect, to_string_format(flags));
             auto chunk_size = (index+1 < hotkey_prefix_locations.size() ? hotkey_prefix_locations[index+1] : text_without_hotkey_prefix.size()) - hotkey_prefix_locations[index] - 1;
-            g.draw_string(strings::substring(text_without_hotkey_prefix, hotkey_prefix_locations[index], chunk_size), font, solid_brush(text_color), button_rect, to_string_format(flags));
+            g.draw_string(text_without_hotkey_prefi.substring(hotkey_prefix_locations[index], chunk_size), font, solid_brush(text_color), button_rect, to_string_format(flags));
           }
          */
          native::graphics::draw_string(data_->handle_, drawable_line, font.data_->handle_, static_cast<int32_t>(x), static_cast<int32_t>(y), static_cast<int32_t>(width), static_cast<int32_t>(height), static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
@@ -158,7 +157,7 @@ graphics graphics::from_image(const image& image) {
   return graphics(native::graphics::from_image(image.handle()));
 }
 
-size_f graphics::measure_string(const std::string &text, const font &font) {
+size_f graphics::measure_string(const ustring &text, const font &font) {
   int32_t width = 0;
   int32_t height = 0;
   native::graphics::measure_string(data_->handle_, text, font.handle(), width, height);

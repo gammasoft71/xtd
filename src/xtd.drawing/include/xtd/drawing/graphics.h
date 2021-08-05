@@ -189,12 +189,12 @@ namespace xtd {
       void draw_rounded_rectangle(const xtd::drawing::pen& pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t radius);
       void draw_rounded_rectangle(const xtd::drawing::pen& pen, float x, float y, float width, float height, float radius) {draw_rounded_rectangle(pen, static_cast<int32_t>(x), static_cast<int32_t>(y), static_cast<int32_t>(width), static_cast<int32_t>(height), static_cast<int32_t>(radius));}
 
-      void draw_string(const std::string& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& layout_rectangle, const string_format& format);
-      void draw_string(const std::string& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& layout_rectangle) {draw_string(text, font, brush, layout_rectangle, string_format());}
-      void draw_string(const std::string& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, const string_format& format) {draw_string(text, font, brush, point.x(), point.y(), format);}
-      void draw_string(const std::string& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point) {draw_string(text, font, brush, point.x(), point.y(), string_format());}
-      void draw_string(const std::string& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y, const string_format& format);
-      void draw_string(const std::string& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y) {draw_string(text, font, brush, x, y, string_format());}
+      void draw_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& layout_rectangle, const string_format& format);
+      void draw_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& layout_rectangle) {draw_string(text, font, brush, layout_rectangle, string_format());}
+      void draw_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, const string_format& format) {draw_string(text, font, brush, point.x(), point.y(), format);}
+      void draw_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point) {draw_string(text, font, brush, point.x(), point.y(), string_format());}
+      void draw_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y, const string_format& format);
+      void draw_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y) {draw_string(text, font, brush, x, y, string_format());}
 
       void fill_ellipse(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect) {fill_ellipse(brush, rect.x(), rect.y(), rect.width(), rect.height());}
       void fill_ellipse(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect) {fill_ellipse(brush, rect.x(), rect.y(), rect.width(), rect.height());}
@@ -218,7 +218,7 @@ namespace xtd {
 
       static graphics from_image(const xtd::drawing::image& image);
       
-      size_f measure_string(const std::string& text, const xtd::drawing::font& font);
+      size_f measure_string(const xtd::ustring& text, const xtd::drawing::font& font);
       
       void rotate_transform(float angle);
 
