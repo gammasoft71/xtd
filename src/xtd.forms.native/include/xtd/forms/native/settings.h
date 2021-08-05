@@ -9,8 +9,8 @@
 /// @endcond
 
 #include <cstdint>
-#include <string>
 #include <xtd/static.h>
+#include <xtd/ustring.h>
 #include <xtd/forms_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -38,7 +38,7 @@ namespace xtd {
         /// @brief Create settings.
         /// @return The settings handle created.
         /// @warning Internal use only
-        static intptr_t create(const std::string& product_name, const std::string& company_name);
+        static intptr_t create(const xtd::ustring& product_name, const xtd::ustring& company_name);
         /// @brief Destroy settings.
         /// @param settings Settings handle.
         /// @warning Internal use only
@@ -53,7 +53,7 @@ namespace xtd {
         /// @param default_value A string used if value not found.
         /// @return A string that represent the value associate to the key.
         /// @warning Internal use only
-        static std::string read(intptr_t settings, const std::string& key, const std::string& default_value);
+        static xtd::ustring read(intptr_t settings, const xtd::ustring& key, const xtd::ustring& default_value);
         /// @brief Save settings.
         /// @param settings Settings handle.
         /// @warning Internal use only
@@ -63,7 +63,7 @@ namespace xtd {
         /// @param key The key used to write a value.
         /// @param value A string to write.
         /// @warning Internal use only
-        static void write(intptr_t settings, const std::string& key, const std::string& value);
+        static void write(intptr_t settings, const xtd::ustring& key, const xtd::ustring& value);
       };
     }
   }

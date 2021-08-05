@@ -107,8 +107,8 @@ int32_t system_information::caret_width() {
 #endif
 }
 
-std::string system_information::computer_name() {
-  return xtd::environment::machine_name();;
+ustring system_information::computer_name() {
+  return xtd::environment::machine_name();
 }
 
 xtd::drawing::size system_information::cursor_size() {

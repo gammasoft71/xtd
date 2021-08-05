@@ -8,6 +8,7 @@
 #endif
 /// @endcond
 
+#include <xtd/ustring.h>
 #include <xtd/version.h>
 #include <xtd/forms_native_export.h>
 
@@ -32,10 +33,10 @@ namespace xtd {
       public:
         /// @brief Get the name of the toolkit
         /// @return The name of the toolkit
-        static std::string name();
+        static xtd::ustring name();
         /// @brief Get the description of the toolkit
         /// @return The description of the toolkit
-        static std::string description();
+        static xtd::ustring description();
         /// @brief Get the version of the toolkit
         /// @return The version of the toolkit
         static xtd::version version();
