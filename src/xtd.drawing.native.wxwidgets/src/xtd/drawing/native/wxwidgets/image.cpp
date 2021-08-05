@@ -86,7 +86,7 @@ void image::color_palette(intptr_t image, std::vector<std::tuple<uint8_t, uint8_
   flags = 0;
 }
 
-intptr_t image::create(const std::string& filename) {
+intptr_t image::create(const ustring& filename) {
   toolkit::initialize(); // Must be first
   return reinterpret_cast<intptr_t>(new wxImage(wxString(convert_string::to_wstring(filename))));
 }
@@ -208,11 +208,11 @@ void image::set_pixel(intptr_t image, int32_t x, int32_t y, uint8_t a, uint8_t r
   reinterpret_cast<wxImage*>(image)->SetRGB(x, y, r, g, b);
 }
 
-void image::save(intptr_t image, const std::string& filename) {
+void image::save(intptr_t image, const ustring& filename) {
   reinterpret_cast<wxImage*>(image)->SaveFile(wxString(convert_string::to_wstring(filename)));
 }
 
-void image::save(intptr_t image, const std::string& filename, size_t raw_format) {
+void image::save(intptr_t image, const ustring& filename, size_t raw_format) {
   reinterpret_cast<wxImage*>(image)->SaveFile(wxString(convert_string::to_wstring(filename)), to_bitmap_type(raw_format));
 }
 

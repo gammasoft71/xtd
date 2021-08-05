@@ -2,6 +2,7 @@
 #include <fstream>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/icon.h>
+#include <xtd/drawing/native/image_format.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 
 using namespace xtd;
@@ -39,7 +40,7 @@ void icon::save(const std::string& filename) const {
 }
 
 void icon::save(std::ostream& stream) const {
-  native::icon::save(data_->handle_, stream);
+  native::icon::save(data_->handle_, stream, IFM_ICO);
 }
 
 icon icon::from_bitmap(const bitmap& bitmap) {
