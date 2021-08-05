@@ -5,7 +5,7 @@
 #include <xtd/environment.h>
 #include <xtd/drawing/point.h>
 #include <xtd/io/path.h>
-#include <xtd/strings.h>
+#include <xtd/ustring.h>
 #include <wx/cursor.h>
 #include <wx/image.h>
 
@@ -25,8 +25,8 @@ namespace {
   }
 
   static intptr_t create_cursor_from_resources(const std::string& name, const xtd::drawing::point& hot_spot ) {
-    if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path(), "cursors", xtd::strings::format("{}{}.png", name, get_os_potfix())))) return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_DEFAULT));
-    wxImage image(std::string(xtd::io::path::combine(forms_resource_path(), "cursors", xtd::strings::format("{}{}.png", name, get_os_potfix()))));
+    if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path(), "cursors", xtd::ustring::format("{}{}.png", name, get_os_potfix())))) return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_DEFAULT));
+    wxImage image(std::string(xtd::io::path::combine(forms_resource_path(), "cursors", xtd::ustring::format("{}{}.png", name, get_os_potfix()))));
     image.SetOption(wxIMAGE_OPTION_CUR_HOTSPOT_X, hot_spot.x());
     image.SetOption(wxIMAGE_OPTION_CUR_HOTSPOT_Y, hot_spot.y());
     wxCursor* cursor = new wxCursor(image);
