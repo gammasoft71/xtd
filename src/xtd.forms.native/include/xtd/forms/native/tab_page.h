@@ -10,6 +10,7 @@
 
 #include "../create_params.h"
 #include <xtd/static.h>
+#include <xtd/ustring.h>
 #include <xtd/forms_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -42,7 +43,7 @@ namespace xtd {
         /// @param control Tab page window handle.
         /// @param text The text string.
         /// @warning Internal use only
-        static void text(intptr_t control, const std::string& text);
+        static void text(intptr_t control, const xtd::ustring& text);
       };
     }
   }

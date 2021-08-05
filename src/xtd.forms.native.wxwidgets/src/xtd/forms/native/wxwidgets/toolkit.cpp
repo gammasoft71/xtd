@@ -5,11 +5,11 @@
 using namespace xtd;
 using namespace xtd::forms::native;
 
-std::string toolkit::name() {
+ustring toolkit::name() {
   return "wxwidgets";
 }
 
-std::string toolkit::description() {
+ustring toolkit::description() {
   return "This library is based on wxWidgets 3.1.5 (https://www.wxwidgets.org) toolkit.";
 }
 
