@@ -3,7 +3,6 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <ostream>
-#include <string>
 #include <xtd/object.h>
 #include <xtd/ustring.h>
 #include "../drawing_export.h"

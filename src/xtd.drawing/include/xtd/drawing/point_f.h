@@ -5,7 +5,6 @@
 #include <cstdint>
 #include <ostream>
 #include <string>
-#include <string>
 #include <xtd/object.h>
 #include <xtd/ustring.h>
 #include "../drawing_export.h"

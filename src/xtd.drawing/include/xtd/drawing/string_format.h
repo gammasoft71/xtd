@@ -5,7 +5,6 @@
 #include <cstdint>
 #include <ostream>
 #include <xtd/object.h>
-#include <xtd/strings.h>
 #include "../drawing_export.h"
 #include "hotkey_prefix.h"
 #include "string_alignment.h"

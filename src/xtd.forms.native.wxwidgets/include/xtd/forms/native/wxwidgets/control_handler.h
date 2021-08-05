@@ -94,11 +94,11 @@ namespace xtd {
             {wxEVT_COMMAND_LEFT_CLICK, "wxEVT_COMMAND_LEFT_CLICK"}, {wxEVT_COMMAND_LEFT_DCLICK, "wxEVT_COMMAND_LEFT_DCLICK"}, {wxEVT_COMMAND_RIGHT_CLICK, "wxEVT_COMMAND_RIGHT_CLICK"}, {wxEVT_COMMAND_RIGHT_DCLICK, "wxEVT_COMMAND_RIGHT_DCLICK"}, {wxEVT_COMMAND_SET_FOCUS, "wxEVT_COMMAND_SET_FOCUS"}, {wxEVT_COMMAND_KILL_FOCUS, "wxEVT_COMMAND_KILL_FOCUS"}, {wxEVT_COMMAND_ENTER, "wxEVT_COMMAND_ENTER"},
             {wxEVT_HELP, "wxEVT_HELP"}, {wxEVT_DETAILED_HELP, "wxEVT_DETAILED_HELP"},};
           auto it = eventTypes.find(eventType);
-          return strings::format("{} (0x{:X})", it == eventTypes.end() ? "<Unknown>" : it->second, eventType);
+          return ustring::format("{} (0x{:X})", it == eventTypes.end() ? "<Unknown>" : it->second, eventType);
         }
 
         static std::string to_string(const wxEvent& event) {
-          return strings::format("{} {{type={}, id={}}}", strings::full_class_name(event), to_string(event.GetEventType()), event.GetId());
+          return ustring::format("{} {{type={}, id={}}}", ustring::full_class_name(event), to_string(event.GetEventType()), event.GetId());
         }
 
         void def_process_event(intptr_t result, wxEvent& event) {
