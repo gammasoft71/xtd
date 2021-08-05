@@ -135,7 +135,7 @@ namespace xtd {
       /// @brief Gets the file names of all selected files in the dialog box.
       /// @return An array of type string, containing the file names of all selected files in the dialog box.
       /// @remarks Each file name includes both the file path and the extension. If no files are selected, this method returns an empty array.
-      virtual const std::vector<std::string> file_names() const {return file_names_;}
+      virtual const std::vector<xtd::ustring> file_names() const {return file_names_;}
 
       /// @brief Gets the current file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box.
       /// @return The file filtering options available in the dialog box.
@@ -320,8 +320,8 @@ namespace xtd {
 
       bool auto_upgrade_enabled_ = true;
       std::string default_ext_ = "";
-      std::string file_name_ = "";
-      std::vector<std::string> file_names_;
+      xtd::ustring file_name_ = "";
+      std::vector<xtd::ustring> file_names_;
       std::string filter_ = "";
       size_t filter_index_ = 1;
       std::string initial_directory_ = "";

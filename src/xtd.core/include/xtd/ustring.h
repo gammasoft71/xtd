@@ -126,7 +126,7 @@ namespace xtd {
     /// @param index The index of the first substring charecter where start copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const ustring& str, size_t index, const allocator_type& allocator);
-    
+
     /// @brief Initializes a new instance of xtd::ustring with specified substring and count characters.
     /// @param count The number of substring characters to copy.
     ustring(const value_type* str, size_t count);
@@ -341,6 +341,7 @@ namespace xtd {
     ustring& operator=(const char32_t* str);
     ustring& operator=(const std::wstring& str);
     ustring& operator=(const wchar_t* str);
+    ustring& operator=(ustring&& str) noexcept;
 
     ustring& operator=(value_type character);
     ustring& operator=(char8_t character);
@@ -352,8 +353,8 @@ namespace xtd {
     ustring& operator=(const std::initializer_list<char16_t>& il);
     ustring& operator=(const std::initializer_list<char32_t>& il);
     ustring& operator=(const std::initializer_list<wchar_t>& il);
-    template<typename type_t>
-    ustring& operator=(const type_t& object) {return std::basic_string<value_type>::assign(object);}
+    //template<typename type_t>
+    //ustring& operator=(const type_t& object) {return std::basic_string<value_type>::assign(object);}
 
     ustring operator+(const ustring& str);
     ustring operator+(const std::string& str);

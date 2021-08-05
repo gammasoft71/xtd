@@ -41,8 +41,8 @@ namespace xtd {
             });
 
             switch (character_casing_) {
-              case character_casing::upper: static_cast<wxTextCtrl*>(control())->SetValue(wxString(xtd::convert_string::to_wstring(xtd::strings::to_upper(create_params.caption()).c_str()))); break;
-              case character_casing::lower: static_cast<wxTextCtrl*>(control())->SetValue(wxString(xtd::convert_string::to_wstring(xtd::strings::to_lower(create_params.caption()).c_str()))); break;
+              case character_casing::upper: static_cast<wxTextCtrl*>(control())->SetValue(wxString(xtd::convert_string::to_wstring(create_params.caption().to_upper()))); break;
+              case character_casing::lower: static_cast<wxTextCtrl*>(control())->SetValue(wxString(xtd::convert_string::to_wstring(create_params.caption().to_lower()))); break;
               default: break;
             }
           }

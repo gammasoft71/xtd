@@ -250,12 +250,12 @@ void control::size(intptr_t control, const drawing::size& size) {
   reinterpret_cast<control_handler*>(control)->SetSize(size.width(), size.height());
 }
 
-std::string control::text(intptr_t control) {
+ustring control::text(intptr_t control) {
   if (control == 0) return {};
   return xtd::convert_string::to_string(reinterpret_cast<control_handler*>(control)->control()->GetLabel().c_str().AsWChar());
 }
 
-void control::text(intptr_t control, const std::string& text) {
+void control::text(intptr_t control, const ustring& text) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->control()->SetLabel(convert_string::to_wstring(text));
 }

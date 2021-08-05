@@ -282,6 +282,11 @@ ustring& ustring::operator=(const wchar_t* str) {
   return operator=(wstring(str));
 }
 
+ustring& ustring::operator=(ustring&& str) noexcept {
+  std::basic_string<value_type>::operator=(str);
+  return *this;
+}
+
 ustring& ustring::operator=(value_type character) {
   *this = ustring(1, character);
   return  *this;;

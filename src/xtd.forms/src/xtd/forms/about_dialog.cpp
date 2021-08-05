@@ -47,8 +47,8 @@ namespace {
       return *this;
     }
     
-    const vector<string>& names() const {return names_;}
-    credits_item_panel& names(const vector<string>& names) {
+    const vector<ustring>& names() const {return names_;}
+    credits_item_panel& names(const vector<ustring>& names) {
       if (names_ != names) {
         bool first = true;
         names_ = names;
@@ -71,7 +71,7 @@ namespace {
   private:
     label title_label_;
     label names_label_;
-    vector<string> names_;
+    vector<ustring> names_;
     string title_;
   };
   
@@ -134,7 +134,7 @@ namespace {
       text_box_license_.dock(dock_style::fill);
     }
     
-    static void show(intptr_t hwnd, const xtd::drawing::image& icon, const std::string& name, const std::string& description, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const std::vector<std::string>& authors, const std::vector<std::string>& artists, const std::vector<std::string>& documenters, const std::vector<std::string>& translators, const std::string& license) {
+    static void show(intptr_t hwnd, const xtd::drawing::image& icon, const std::string& name, const std::string& description, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const std::vector<ustring>& authors, const std::vector<ustring>& artists, const std::vector<ustring>& documenters, const std::vector<ustring>& translators, const std::string& license) {
       static std::unique_ptr<about_dialog_standard> about_dialog_standard;
       if (about_dialog_standard != nullptr) {
         about_dialog_standard->activate();
