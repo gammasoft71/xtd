@@ -1,3 +1,4 @@
+#include <xtd/convert_string.h>
 #include <xtd/forms/progress_dialog_flags.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/progress_dialog.h>
@@ -27,7 +28,7 @@ namespace {
 
   class wx_progress_dialog : public wxProgressDialog {
   public:
-    wx_progress_dialog(const std::string& title, const std::string& message, int32_t maximum = 100, wxWindow* parent = nullptr, int32_t style = wxPD_APP_MODAL | wxPD_AUTO_HIDE) : wxProgressDialog(title, message, maximum, parent, style) {
+    wx_progress_dialog(const ustring& title, const ustring& message, int32_t maximum = 100, wxWindow* parent = nullptr, int32_t style = wxPD_APP_MODAL | wxPD_AUTO_HIDE) : wxProgressDialog(convert_string::to_wstring(title), convert_string::to_wstring(message), maximum, parent, style) {
       timer_marquee.Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {
         if (event.GetTimer().GetId() == timer_marquee.GetId())
           Pulse();
@@ -55,11 +56,11 @@ namespace {
       else timer_marquee.Stop();
     }
     
-    void message(const std::string& message) {
-      if (!timer_marquee.IsRunning()) Update(value_, message);
+    void message(const ustring& message) {
+      if (!timer_marquee.IsRunning()) Update(value_, convert_string::to_wstring(message));
       else {
         timer_marquee.Stop();
-        Pulse(message);
+        Pulse(convert_string::to_wstring(message));
         timer_marquee.Start(animation_speed_);
       }
     }
@@ -97,7 +98,7 @@ bool progress_dialog::cancelled(intptr_t dialog) {
   return reinterpret_cast<wx_progress_dialog*>(dialog)->WasCancelled();
 }
 
-intptr_t progress_dialog::create(intptr_t hwnd, const std::string& text, const std::string& message, const std::vector<std::string>& informations, size_t animation_speed, int32_t minimum, int32_t maximum, int32_t value, size_t options) {
+intptr_t progress_dialog::create(intptr_t hwnd, const ustring& text, const ustring& message, const std::vector<ustring>& informations, size_t animation_speed, int32_t minimum, int32_t maximum, int32_t value, size_t options) {
 #if defined(__WXMSW__)
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
 #endif
@@ -114,7 +115,7 @@ void progress_dialog::destroy(intptr_t dialog) {
   delete reinterpret_cast<wx_progress_dialog*>(dialog);
 }
 
-void progress_dialog::informations(intptr_t dialog, const std::vector<std::string>& informations) {
+void progress_dialog::informations(intptr_t dialog, const std::vector<ustring>& informations) {
   // doesn't exists on wxWidgets
 }
 
@@ -128,7 +129,7 @@ void progress_dialog::maximum(intptr_t dialog, int32_t maximum) {
   reinterpret_cast<wx_progress_dialog*>(dialog)->maximum(maximum);
 }
 
-void progress_dialog::message(intptr_t dialog, const std::string& message) {
+void progress_dialog::message(intptr_t dialog, const ustring& message) {
   if (dialog == 0) return;
   reinterpret_cast<wx_progress_dialog*>(dialog)->message(message);
 }

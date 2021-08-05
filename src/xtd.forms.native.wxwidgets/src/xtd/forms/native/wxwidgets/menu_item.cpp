@@ -11,7 +11,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-intptr_t menu_item::create(const std::string& text, const xtd::drawing::image& image, int32_t kind, bool checked, size_t shortcut) {
+intptr_t menu_item::create(const ustring& text, const xtd::drawing::image& image, int32_t kind, bool checked, size_t shortcut) {
   static map<int32_t, wx_menu_item_kind> kinds = {{MI_NORMAL, wx_menu_item_kind::normal}, {MI_CHECK, wx_menu_item_kind::check}, {MI_RADIO, wx_menu_item_kind::radio}, {MI_DROPDOWN, wx_menu_item_kind::drop_down}, {MI_SEPARATOR, wx_menu_item_kind::separator}};
   return reinterpret_cast<intptr_t>(new wx_menu_item(text, image.handle(), kinds[kind], checked, shortcut));
 }

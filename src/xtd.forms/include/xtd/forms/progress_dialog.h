@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::progress_dialog dialog.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <string>
+#include <xtd/ustring.h>
 #include <xtd/forms/progress_dialog_flags.h>
 #include "component.h"
 #include "dialog_style.h"
@@ -61,11 +61,11 @@ namespace xtd {
       
       /// @brief Gets the information texts.
       /// @return The information texts.
-      const std::vector<std::string>& informations() const {return informations_;}
+      const std::vector<xtd::ustring>& informations() const {return informations_;}
       /// @brief Sets the information texts.
       /// @param informations The information texts.
       /// @return Current progress_dialog instance.
-      progress_dialog& informations(const std::vector<std::string>& informations);
+      progress_dialog& informations(const std::vector<xtd::ustring>& informations);
 
       /// @brief Gets a value that Indicates progress by continuously scrolling a block across a progress_bar in a marquee fashion.
       /// @return truee is marquee; otherwise false. The default is false.
@@ -232,7 +232,7 @@ namespace xtd {
       
       xtd::forms::dialog_style dialog_style_ = xtd::forms::dialog_style::system;
       intptr_t handle_ = 0;
-      std::vector<std::string> informations_;
+      std::vector<xtd::ustring> informations_;
       size_t marquee_animation_speed_ = 100;
       int32_t maximum_ = 100;
       std::string message_;
