@@ -161,7 +161,7 @@ void graphics::draw_rounded_rectangle(intptr_t hdc, intptr_t pen, int32_t x, int
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
-void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font, int32_t x, int32_t y, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
+void graphics::draw_string(intptr_t hdc, const ustring& text, intptr_t font, int32_t x, int32_t y, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
   if (!hdc) return;
   // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::DrawText doesn't work witth unicode on Windows.
   if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") {
@@ -177,7 +177,7 @@ void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font,
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
-void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font, int32_t x, int32_t y, int32_t w, int32_t h, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
+void graphics::draw_string(intptr_t hdc, const ustring& text, intptr_t font, int32_t x, int32_t y, int32_t w, int32_t h, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
   if (!hdc) return;
   // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::DrawText doesn't work witth unicode on Windows.
   if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") {
@@ -245,7 +245,7 @@ intptr_t graphics::from_image(intptr_t image) {
   return reinterpret_cast<intptr_t>(hdc_wrapper);
 }
 
-void graphics::measure_string(intptr_t hdc, const std::string &text, intptr_t font, int32_t &width, int32_t &height) {
+void graphics::measure_string(intptr_t hdc, const ustring &text, intptr_t font, int32_t &width, int32_t &height) {
   if (!hdc) return;
   width = 0;
   height = 0;

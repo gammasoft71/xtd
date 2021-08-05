@@ -1,5 +1,6 @@
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/icon.h>
+#include <xtd/drawing/native/image_format.h>
 #include <xtd/drawing/native/toolkit.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/convert_string.h>
@@ -60,9 +61,15 @@ namespace {
   private:
     std::ostream &stream_;
   };
+
+  wxBitmapType to_bitmap_type(size_t raw_format) {
+    static std::map<size_t, wxBitmapType> raw_formats {{IFM_BMP, wxBITMAP_TYPE_BMP}, {IFM_MEMORY_BMP, wxBITMAP_TYPE_BMP_RESOURCE}, {IFM_ICO, wxBITMAP_TYPE_ICO}, {IFM_MEMORY_ICO, wxBITMAP_TYPE_ICO_RESOURCE}, {IFM_CUR, wxBITMAP_TYPE_CUR}, {IFM_MEMORY_CUR, wxBITMAP_TYPE_CUR_RESOURCE}, {IFM_XBM, wxBITMAP_TYPE_XBM}, {IFM_MEMORY_XBM, wxBITMAP_TYPE_XBM_DATA}, {IFM_XPM, wxBITMAP_TYPE_XPM}, {IFM_MEMORY_XPM, wxBITMAP_TYPE_XPM_DATA}, {IFM_TIFF, wxBITMAP_TYPE_TIFF}, {IFM_MEMORY_TIFF, wxBITMAP_TYPE_TIFF_RESOURCE}, {IFM_GIF, wxBITMAP_TYPE_GIF}, {IFM_MEMORY_GIF, wxBITMAP_TYPE_GIF_RESOURCE}, {IFM_PNG, wxBITMAP_TYPE_PNG}, {IFM_MEMORY_PNG, wxBITMAP_TYPE_PNG_RESOURCE}, {IFM_JPEG, wxBITMAP_TYPE_JPEG}, {IFM_MEMORY_JPEG, wxBITMAP_TYPE_JPEG_RESOURCE}, {IFM_PNM, wxBITMAP_TYPE_PNM}, {IFM_MEMORY_PNM, wxBITMAP_TYPE_PNM_RESOURCE}, {IFM_PCX, wxBITMAP_TYPE_PCX}, {IFM_MEMORY_PCX, wxBITMAP_TYPE_PCX_RESOURCE}, {IFM_PICT, wxBITMAP_TYPE_PICT}, {IFM_MEMORY_PICT, wxBITMAP_TYPE_PICT_RESOURCE}, {IFM_ICON, wxBITMAP_TYPE_ICON}, {IFM_MEMORY_ICON, wxBITMAP_TYPE_ICON_RESOURCE}, {IFM_ANI, wxBITMAP_TYPE_ANI}, {IFM_IIF, wxBITMAP_TYPE_IFF}, {IFM_TGA, wxBITMAP_TYPE_TGA}, {IFM_MACCUR, wxBITMAP_TYPE_MACCURSOR}, {IFM_MEMORY_MACCUR, wxBITMAP_TYPE_MACCURSOR_RESOURCE}};
+    auto it = raw_formats.find(raw_format);
+    return it == raw_formats.end() ? wxBitmapType::wxBITMAP_TYPE_ANY : it->second;
+  }
 }
 
-intptr_t icon::create(const std::string& filename) {
+intptr_t icon::create(const ustring& filename) {
   toolkit::initialize(); // Must be first
   return reinterpret_cast<intptr_t>(new wxIconBundle(wxString(convert_string::to_wstring(filename))));
 }
@@ -99,13 +106,13 @@ void icon::destroy(intptr_t icon) {
   delete reinterpret_cast<wxImage*>(icon);
 }
 
-void icon::save(intptr_t icon, const std::string& filename) {
-  //reinterpret_cast<wxImage*>(image)->SaveFile(wxString(convert_string::to_wstring(filename)));
+void icon::save(intptr_t icon, const ustring& filename) {
+  reinterpret_cast<wxImage*>(icon)->SaveFile(wxString(convert_string::to_wstring(filename)));
 }
 
-void icon::save(intptr_t icon, std::ostream& stream) {
+void icon::save(intptr_t icon, std::ostream& stream, size_t raw_format) {
   StdOutputStreamAdapter output_stream(stream);
-  //reinterpret_cast<wxImage*>(image)->SaveFile(output_stream, to_bitmap_type(raw_format));
+  reinterpret_cast<wxImage*>(icon)->SaveFile(output_stream, to_bitmap_type(raw_format));
 }
 
 intptr_t icon::to_image(intptr_t icon) {

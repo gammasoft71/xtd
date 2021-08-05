@@ -6,7 +6,6 @@
 /// @endcond
 
 #include <cstdint>
-#include <string>
 #include <vector>
 #include <xtd/static.h>
 #include <xtd/ustring.h>
