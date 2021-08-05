@@ -744,19 +744,19 @@ namespace xtd {
     return xtd::translator::translate(s);
   }
   
-  inline std::string operator""_t(const char8_t* s, size_t n) {
-    return xtd::translator::translate({s, s + n});
+  inline xtd::ustring operator""_t(const char8_t* s, size_t n) {
+    return xtd::translator::translate(xtd::ustring(s, s + n));
   }
   
-  inline std::string operator""_t(const char16_t* s, size_t n) {
+  inline xtd::ustring operator""_t(const char16_t* s, size_t n) {
     return xtd::translator::translate(xtd::ustring::format("{}", s));
   }
   
-  inline std::string operator""_t(const char32_t* s, size_t n) {
+  inline xtd::ustring operator""_t(const char32_t* s, size_t n) {
     return xtd::translator::translate(xtd::ustring::format("{}", s));
   }
   
-  inline std::string operator""_t(const wchar_t* s, size_t n) {
+  inline xtd::ustring operator""_t(const wchar_t* s, size_t n) {
     return xtd::translator::translate(xtd::ustring::format("{}", s));
   }
 }
