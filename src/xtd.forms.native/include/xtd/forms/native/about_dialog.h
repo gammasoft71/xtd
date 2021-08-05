@@ -9,9 +9,9 @@
 /// @endcond
 
 #include <cstdint>
-#include <string>
 #include <vector>
 #include <xtd/static.h>
+#include <xtd/ustring.h>
 #include <xtd/drawing/icon.h>
 #include <xtd/forms_native_export.h>
 
@@ -50,7 +50,7 @@ namespace xtd {
         /// @param designers A designers_collection that specifies the gesigners collection.
         /// @param license A string that specifies the license text to display.
         /// @warning Internal use only
-        static void show(intptr_t hwnd, const xtd::drawing::icon& icon, const std::string& name, const std::string& description, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const std::vector<std::string>& creators, const std::vector<std::string>& designers, const std::vector<std::string>& doc_writers, const std::vector<std::string>& translators, const std::string& license);
+        static void show(intptr_t hwnd, const xtd::drawing::icon& icon, const xtd::ustring& name, const xtd::ustring& description, const xtd::ustring& version, const xtd::ustring& long_version, const xtd::ustring& copyright, const xtd::ustring& website, const xtd::ustring& website_label, const std::vector<xtd::ustring>& creators, const std::vector<xtd::ustring>& designers, const std::vector<xtd::ustring>& doc_writers, const std::vector<xtd::ustring>& translators, const xtd::ustring& license);
       };
     }
   }

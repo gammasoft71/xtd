@@ -192,7 +192,7 @@ namespace xtd {
       std::string message_;
       std::string text_;
       bool use_system_password_char_ = false;
-      std::string value_;
+      xtd::ustring value_;
       bool word_wrap_ = true;
       /// @endcond
     };

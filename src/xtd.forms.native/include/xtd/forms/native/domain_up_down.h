@@ -10,6 +10,7 @@
 
 #include "../create_params.h"
 #include <xtd/static.h>
+#include <xtd/ustring.h>
 #include <xtd/forms_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -49,7 +50,7 @@ namespace xtd {
         /// @param index The item index to insert.
         /// @param value The text value.
         /// @warning Internal use only
-        static void insert_item(intptr_t control, size_t index, const std::string& value);
+        static void insert_item(intptr_t control, size_t index, const xtd::ustring& value);
         /// @brief Gets selected item index.
         /// @param control Domain up down window handle.
         /// @return The selected item index.
@@ -65,7 +66,7 @@ namespace xtd {
         /// @param index The item index to update.
         /// @param value The text value.
         /// @warning Internal use only
-        static void update_item(intptr_t control, size_t index, const std::string& value);
+        static void update_item(intptr_t control, size_t index, const xtd::ustring& value);
       };
     }
   }

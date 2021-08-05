@@ -31,11 +31,11 @@ namespace xtd {
       
       /// @brief Gets the control's initial text.
       /// @return The control's initial text.
-      const std::string& caption() const {return caption_;}      
+      const xtd::ustring& caption() const {return caption_;}
       /// @brief Gets the control's initial text.
       /// @param caption The control's initial text.
       /// @return Current create_params instance.
-      create_params& caption(const std::string& caption) {
+      create_params& caption(const xtd::ustring& caption) {
         caption_ = caption;
         return *this;
       }
@@ -43,12 +43,12 @@ namespace xtd {
       /// @brief Gets the name of the Windows class to derive the control from.
       /// @return The name of the Windows class to derive the control from.
       /// @remarks The default value for this property is empty (""), indicating that the control is not derived from an existing control class. To derive from an existing control class, store the system class name in this property. For example, to derive from the standard Button control, set this property to "button".
-      const std::string& class_name() const {return class_name_;}
+      const xtd::ustring& class_name() const {return class_name_;}
       /// @brief Sets the name of the Windows class to derive the control from.
       /// @param class_name The name of the Windows class to derive the control from.
       /// @return Current create_param instance.
       /// @remarks The default value for this property is empty (""), indicating that the control is not derived from an existing control class. To derive from an existing control class, store the system class name in this property. For example, to derive from the standard Button control, set this property to "button".
-      create_params& class_name(const std::string& class_name) {
+      create_params& class_name(const xtd::ustring& class_name) {
         class_name_ = class_name;
         return *this;
       }
@@ -184,15 +184,15 @@ namespace xtd {
 
       /// @brief Returns a string that represents the current object.
       /// @return A string that represents the current object.
-      std::string to_string() const {return ustring::format("create_params {{'{}' , '{}', 0x{:X}, 0x{:X}, {{{}, {}, {}, {}}}}}", class_name_, caption_, style_, ex_style_, location_.x(), location_.y(), size_.width(), size_.height());}
+      xtd::ustring to_string() const {return ustring::format("create_params {{'{}' , '{}', 0x{:X}, 0x{:X}, {{{}, {}, {}, {}}}}}", class_name_, caption_, style_, ex_style_, location_.x(), location_.y(), size_.width(), size_.height());}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const create_params& create_params) noexcept {return os << create_params.to_string();}
       /// @endcond
 
     private:
-      std::string caption_;
-      std::string class_name_;
+      xtd::ustring caption_;
+      xtd::ustring class_name_;
       size_t class_style_ = 0;
       size_t ex_style_ = 0;
       drawing::point location_ = {-1, -1};

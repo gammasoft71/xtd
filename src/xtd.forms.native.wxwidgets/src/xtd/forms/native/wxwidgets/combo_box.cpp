@@ -28,9 +28,9 @@ void combo_box::end_update(intptr_t control) {
   reinterpret_cast<control_handler*>(control)->control()->Thaw();
 }
 
-void combo_box::insert_item(intptr_t control, size_t index, const std::string& value) {
+void combo_box::insert_item(intptr_t control, size_t index, const ustring& value) {
   if (control == 0) return;
-  static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(wxString(xtd::convert_string::to_wstring(value)), static_cast<int32_t>(index));
+  static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(xtd::convert_string::to_wstring(value), static_cast<int32_t>(index));
 }
 
 size_t combo_box::selected_index(intptr_t control) {
@@ -43,7 +43,7 @@ void combo_box::selected_index(intptr_t control, size_t index) {
   return static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(static_cast<int32_t>(index));
 }
 
-void combo_box::update_item(intptr_t control, size_t index, const std::string& value) {
+void combo_box::update_item(intptr_t control, size_t index, const ustring& value) {
   if (control == 0) return;
-  static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->SetString(static_cast<int32_t>(index), wxString(xtd::convert_string::to_wstring(value)));
+  static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->SetString(static_cast<int32_t>(index), xtd::convert_string::to_wstring(value));
 }

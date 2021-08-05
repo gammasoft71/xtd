@@ -120,7 +120,7 @@ namespace xtd {
 
       std::string description_;
       environment::special_folder root_folder_ = environment::special_folder::desktop;
-      std::string selected_path_;
+      xtd::ustring selected_path_;
       size_t options_ =  BIF_RETURNONLYFSDIRS | BIF_NEWDIALOGSTYLE;
     };
   }

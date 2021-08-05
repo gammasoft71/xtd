@@ -11,6 +11,7 @@
 #include "../create_params.h"
 #include <vector>
 #include <xtd/static.h>
+#include <xtd/ustring.h>
 #include <xtd/forms_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -63,7 +64,7 @@ namespace xtd {
         /// @param value The text value.
         /// @param check_state The check state value : BST_UNCHECKED or BST_CHECKED or BST_INDETERMINATE.
         /// @warning Internal use only
-        static void insert_item(intptr_t control, size_t index, const std::string& value, int32_t check_state);
+        static void insert_item(intptr_t control, size_t index, const xtd::ustring& value, int32_t check_state);
         /// @brief Gets selected item index.
         /// @param control Checked list box window handle.
         /// @return The selected item index.
@@ -85,7 +86,7 @@ namespace xtd {
         /// @param value The text value.
         /// @param check_state The check state value : BST_UNCHECKED or BST_CHECKED or BST_INDETERMINATE.
         /// @warning Internal use only
-        static void update_item(intptr_t control, size_t index, const std::string& value, int32_t check_state);
+        static void update_item(intptr_t control, size_t index, const xtd::ustring& value, int32_t check_state);
       };
     }
   }

@@ -13,6 +13,7 @@
 #include <xtd/delegate.h>
 #include <xtd/environment.h>
 #include <xtd/static.h>
+#include <xtd/ustring.h>
 #include <xtd/forms_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -43,7 +44,7 @@ namespace xtd {
         /// @return true if the user clicks OK in the dialog box; otherwise, false.
         /// @remarks If result is true, the selected_path parameter contains the new selected path.
         /// @warning Internal use only
-        static bool run_dialog(intptr_t hwnd, const std::string& description, environment::special_folder root_folder, std::string& selected_path, size_t options);
+        static bool run_dialog(intptr_t hwnd, const xtd::ustring& description, environment::special_folder root_folder, xtd::ustring& selected_path, size_t options);
         /// @brief Shows async dialog as sheet.
         /// @param hwnd Parent window handle.
         /// @param description The description to display.
@@ -53,7 +54,7 @@ namespace xtd {
         /// @return true if the user clicks OK in the dialog box; otherwise, false.
         /// @remarks When dialog closed and if result is true, the selected_path parameter contains the new selected path.
         /// @warning Internal use only
-        static void run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const std::string& description, environment::special_folder root_folder, std::string& selected_path, size_t options);
+        static void run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const xtd::ustring& description, environment::special_folder root_folder, xtd::ustring& selected_path, size_t options);
       };
     }
   }

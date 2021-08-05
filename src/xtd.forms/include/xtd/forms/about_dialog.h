@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::about_dialog dialog.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <string>
 #include <xtd/delegate.h>
+#include <xtd/ustring.h>
 #include <xtd/drawing/icon.h>
 #include "component.h"
 #include "dialog_style.h"
@@ -51,13 +51,13 @@ namespace xtd {
     class forms_export_ about_dialog final : public component {
     public:
       /// @brief Represents a author collection.
-      using author_collection = xtd::forms::layout::arranged_element_collection<std::string>;
+      using author_collection = xtd::forms::layout::arranged_element_collection<xtd::ustring>;
       /// @brief Represents a artist collection.
-      using artist_collection = xtd::forms::layout::arranged_element_collection<std::string>;
+      using artist_collection = xtd::forms::layout::arranged_element_collection<xtd::ustring>;
       /// @brief Represents a documenter collection.
-      using documenter_collection = xtd::forms::layout::arranged_element_collection<std::string>;
+      using documenter_collection = xtd::forms::layout::arranged_element_collection<xtd::ustring>;
       /// @brief Represents a translator collection.
-      using translator_collection = xtd::forms::layout::arranged_element_collection<std::string>;
+      using translator_collection = xtd::forms::layout::arranged_element_collection<xtd::ustring>;
 
       /// @brief Initializes a new instance of the about_dialog class.
       about_dialog() = default;

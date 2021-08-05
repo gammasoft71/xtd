@@ -49,9 +49,9 @@ image system_images::from_name(const ustring& theme, const ustring& name, const 
   static vector<drawing::size> default_sizes = {{1024, 1024}, {512, 512}, {256, 256}, {128, 128}, {96, 96}, {64, 64}, {48, 48}, {32, 32}, {24, 24}, {16, 16}};
   static vector<string> default_size_names = {"1024x1024", "512x512", "256x256", "128x128", "96x96", "64x64", "48x48", "32x32", "24x24", "16x16"};
   auto dark_mode = (system_colors::window().get_lightness() < 0.5 && !theme.ends_with(" (light)")) || theme.ends_with(" (dark)");
-  auto theme_name = string(theme.replace(" (dark)", "").replace(" (light)", ""));
+  string theme_name = theme.replace(" (dark)", "").replace(" (light)", "");
 
-  auto theme_path = exists(system_images_resource_path()/theme_name) ? system_images_resource_path()/theme_name : system_images_resource_path()/default_theme();
+  auto theme_path = exists(system_images_resource_path()/theme_name) ? system_images_resource_path()/theme_name : system_images_resource_path()/string(default_theme());
   auto it_sizes = find(default_sizes.begin(), default_sizes.end(), get_closed_size(size));
   
   if (theme == default_theme()) {
