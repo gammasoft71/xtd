@@ -5,8 +5,8 @@
 
 #include "environment.h"
 #include "static.h"
-#include "strings.h"
 #include "system_exception.h"
+#include "ustring.h"
 #include "collections/specialized/string_vector.h"
 #include "console.h"
 #if defined(__CMAKE_TARGET_TYPE__) && __CMAKE_TARGET_TYPE__ == 2 // 2 == GUI_APPLICATION
@@ -19,9 +19,9 @@
 inline void __startup_catch_exception__(const std::exception& e) {xtd::forms::application::open_forms().size() > 0 ? xtd::forms::exception_box::show(xtd::forms::application::open_forms()[0].get(), e, xtd::forms::application::product_name()) : xtd::forms::exception_box::show(e, xtd::forms::application::product_name());}
 inline void __startup_catch_exception__() {xtd::forms::application::open_forms().size() > 0 ? xtd::forms::exception_box::show(xtd::forms::application::open_forms()[0].get(), xtd::forms::application::product_name()) : xtd::forms::exception_box::show(xtd::forms::application::product_name());}
 #else
-inline void __startup_catch_exception__(const std::exception& e) {std::cerr << std::endl << xtd::strings::format("Unhandled exception: {}", e.what()) << std::endl;}
-inline void __startup_catch_exception__(const xtd::system_exception& e) { std::cerr << std::endl << xtd::strings::format("Unhandled exception: {}", e) << std::endl;}
-inline void __startup_catch_exception__() { std::cerr << std::endl << xtd::strings::format("Unhandled exception: Unknown exception occured") << std::endl;}
+inline void __startup_catch_exception__(const std::exception& e) {std::cerr << std::endl << xtd::ustring::format("Unhandled exception: {}", e.what()) << std::endl;}
+inline void __startup_catch_exception__(const xtd::system_exception& e) { std::cerr << std::endl << xtd::ustring::format("Unhandled exception: {}", e) << std::endl;}
+inline void __startup_catch_exception__() { std::cerr << std::endl << xtd::ustring::format("Unhandled exception: Unknown exception occured") << std::endl;}
 #endif
 /// @endcond
 

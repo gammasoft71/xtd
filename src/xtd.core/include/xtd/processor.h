@@ -35,14 +35,14 @@ namespace xtd {
     
     /// @brief Gets the concatenated string representation of the platform identifier.
     /// @return The string representation of the values returned by the platform.
-    std::string name() const noexcept {
-      static std::map<xtd::architecture_id, std::string> processor_names {{architecture_id::x86, "Intel or AMD"}, {architecture_id::arm, "ARM"}, {architecture_id::unknown, "<Unknown>"}};
+    xtd::ustring name() const noexcept {
+      static std::map<xtd::architecture_id, xtd::ustring> processor_names {{architecture_id::x86, "Intel or AMD"}, {architecture_id::arm, "ARM"}, {architecture_id::unknown, "<Unknown>"}};
       return processor_names[architecture_];
     }
 
-    std::string architecture_string() const noexcept {
+    xtd::ustring architecture_string() const noexcept {
       if (!architecture_string_.empty()) return architecture_string_;
-      architecture_string_ = strings::format("{}", architecture_);
+      architecture_string_ = ustring::format("{}", architecture_);
       if (is_64_bit_) {
         if (architecture_ == architecture_id::x86) architecture_string_ += "_";
         architecture_string_ += "64";
@@ -58,6 +58,6 @@ namespace xtd {
     xtd::architecture_id architecture_ = xtd::architecture_id::unknown;
     bool is_64_bit_ = false;
     uint32_t core_count_ = 1;
-    mutable std::string architecture_string_;
+    mutable xtd::ustring architecture_string_;
   };
 }

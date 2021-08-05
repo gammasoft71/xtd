@@ -2,7 +2,7 @@
 /// @brief Contains #typeof_ keyword.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/strings.h>
+#include "ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -10,12 +10,12 @@ namespace xtd {
   namespace __s__ {
     template<typename type_t>
     std::string __typeof_() {
-      return xtd::strings::full_class_name<type_t>();
+      return xtd::ustring::full_class_name<type_t>();
     }
 
     template<typename type_t>
     std::string __typeof_(const type_t& value) {
-      return xtd::strings::full_class_name(value);
+      return xtd::ustring::full_class_name(value);
     }
   }
   /// @endcond

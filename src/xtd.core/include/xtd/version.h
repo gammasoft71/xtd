@@ -51,7 +51,7 @@ namespace xtd {
     
     int revision() const noexcept {return revision_;}
     
-    static version parse(const std::string& ver) {
+    static version parse(const xtd::ustring& ver) {
       std::regex rgx("\\.");
       xtd::collections::specialized::string_vector versions;
       for (std::sregex_token_iterator it(ver.begin(), ver.end(), rgx, -1), end; it != end; ++it)
@@ -65,7 +65,7 @@ namespace xtd {
       throw xtd::format_exception(current_stack_frame_);
     }
     
-    static bool try_parse(const std::string& ver, version& result) noexcept {
+    static bool try_parse(const xtd::ustring& ver, version& result) noexcept {
       try {
         result = parse(ver);
         return true;
@@ -76,7 +76,7 @@ namespace xtd {
     
     xtd::ustring to_string() const noexcept {return to_string(2 + (build_ != -1 ? 1 : 0) + (revision_ != -1 ? 1 : 0));}
     
-    std::string to_string(size_t field_count) const {
+    xtd::ustring to_string(size_t field_count) const {
       if (field_count > 4 || (field_count >= 3 && build_ == -1) || (field_count == 4 && revision_ == -1))
         throw xtd::argument_exception("Field count invalid"_t, current_stack_frame_);
       std::stringstream result;
