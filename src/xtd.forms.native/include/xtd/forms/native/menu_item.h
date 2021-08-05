@@ -10,6 +10,7 @@
 
 #include "../create_params.h"
 #include <xtd/static.h>
+#include <xtd/ustring.h>
 #include <xtd/drawing/image.h>
 #include <xtd/forms_native_export.h>
 
@@ -40,7 +41,7 @@ namespace xtd {
         /// @param shortcut A bittwise virtual key and virtual key modifiers shortcut associate with this menu_item.
         /// @return The created menu handle.
         /// @warning Internal use only
-        static intptr_t create(const std::string& text, const xtd::drawing::image& image, int32_t kind, bool checked, size_t shortcut);
+        static intptr_t create(const xtd::ustring& text, const xtd::drawing::image& image, int32_t kind, bool checked, size_t shortcut);
         /// @brief Destroy menu_item.
         /// @param menu_item Menu item handle.
         /// @warning Internal use only

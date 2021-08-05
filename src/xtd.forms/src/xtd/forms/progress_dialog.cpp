@@ -21,7 +21,7 @@ bool progress_dialog::skipped() const {
   return native::progress_dialog::skipped(handle_);
 }
 
-progress_dialog& progress_dialog::informations(const std::vector<std::string>& informations) {
+progress_dialog& progress_dialog::informations(const std::vector<xtd::ustring>& informations) {
   if (informations_ != informations) {
     informations_ = informations;
     if (handle_) native::progress_dialog::informations(handle_, informations_);

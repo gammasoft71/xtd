@@ -12,6 +12,7 @@
 #include <string>
 #include <xtd/delegate.h>
 #include <xtd/static.h>
+#include <xtd/ustring.h>
 #include <xtd/forms_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -41,7 +42,7 @@ namespace xtd {
         /// @param display_help_button true to show the Help button; otherwise, false.
         /// @return A dialog box ids.
         /// @warning Internal use only
-        static int32_t show(intptr_t hwnd, const std::string& text, const std::string& caption, uint32_t options, bool display_help_button);
+        static int32_t show(intptr_t hwnd, const xtd::ustring& text, const xtd::ustring& caption, uint32_t options, bool display_help_button);
         /// @brief Shows async dialog as sheet.
         /// @param on_dialog_closed a dialog close delegate to call when the dialog is closed.
         /// @param hwnd Parent window handle.
@@ -50,7 +51,7 @@ namespace xtd {
         /// @param options A bitwise of message box styles.
         /// @param display_help_button true to show the Help button; otherwise, false.
         /// @warning Internal use only
-        static void show_sheet(xtd::delegate<void(int32_t)> on_dialog_closed, intptr_t hwnd, const std::string& text, const std::string& caption, uint32_t options, bool display_help_button);
+        static void show_sheet(xtd::delegate<void(int32_t)> on_dialog_closed, intptr_t hwnd, const xtd::ustring& text, const xtd::ustring& caption, uint32_t options, bool display_help_button);
       };
     }
   }
