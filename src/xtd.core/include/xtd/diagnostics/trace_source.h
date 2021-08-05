@@ -134,7 +134,7 @@ namespace xtd {
 #if defined(TRACE)
         if (source_switch_.should_trace(event_type))
           for (auto listener : listeners_)
-            listener->trace_event(trace_event_cache(), name_, event_type, id, xtd::strings::format(format, args...));
+            listener->trace_event(trace_event_cache(), name_, event_type, id, xtd::ustring::format(format, args...));
 #endif
       }
     
