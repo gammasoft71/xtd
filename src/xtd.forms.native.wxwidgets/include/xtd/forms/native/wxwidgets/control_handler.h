@@ -476,7 +476,7 @@ namespace xtd {
       inline bool control_wrapper<control_t>::ProcessEvent(wxEvent& event) {
         if (event_handler_ == nullptr) return false;
         if (static_cast<xtd::drawing::native::wx_application*>(wxTheApp)->exceptionStored) return  process_result_;
-        //diagnostics::debug::write_line_if(event.GetEventType() != wxEVT_UPDATE_UI && event.GetEventType() != wxEVT_IDLE, strings::format("control_wrapper<{}>::ProcessEvent {}", strings::full_class_name<control_t>(), to_string(event)));
+        //diagnostics::debug::write_line_if(event.GetEventType() != wxEVT_UPDATE_UI && event.GetEventType() != wxEVT_IDLE, ustring::format("control_wrapper<{}>::ProcessEvent {}", ustring::full_class_name<control_t>(), to_string(event)));
         if (event.GetEventType() == wxEVT_DESTROY) {
           //def_process_event(event);
           return process_result_;

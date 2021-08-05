@@ -7,7 +7,7 @@
 #include <string>
 #include <xtd/drawing/point.h>
 #include <xtd/drawing/size.h>
-#include <xtd/strings.h>
+#include <xtd/ustring.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -184,7 +184,7 @@ namespace xtd {
 
       /// @brief Returns a string that represents the current object.
       /// @return A string that represents the current object.
-      std::string to_string() const {return strings::format("create_params {{'{}' , '{}', 0x{:X}, 0x{:X}, {{{}, {}, {}, {}}}}}", class_name_, caption_, style_, ex_style_, location_.x(), location_.y(), size_.width(), size_.height());}
+      std::string to_string() const {return ustring::format("create_params {{'{}' , '{}', 0x{:X}, 0x{:X}, {{{}, {}, {}, {}}}}}", class_name_, caption_, style_, ex_style_, location_.x(), location_.y(), size_.width(), size_.height());}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const create_params& create_params) noexcept {return os << create_params.to_string();}

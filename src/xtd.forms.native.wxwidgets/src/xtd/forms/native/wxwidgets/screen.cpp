@@ -7,7 +7,7 @@
 #include <xtd/forms/native/screen.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/strings.h>
+#include <xtd/ustring.h>
 #include <wx/dcscreen.h>
 #include <wx/display.h>
 
@@ -42,7 +42,7 @@ rectangle screen::bounds(size_t index) {
 std::string screen::device_name(size_t index) {
   application::initialize();
   std::string device_name = xtd::convert_string::to_string(wxDisplay(static_cast<int32_t>(index)).GetName().c_str().AsWChar());
-  return device_name.empty() ? strings::format("\\\\.\\DISPLAY{}", index + 1) : device_name;
+  return device_name.empty() ? ustring::format("\\\\.\\DISPLAY{}", index + 1) : device_name;
 }
 
 int32_t screen::pixels_per_inch(size_t index) {
