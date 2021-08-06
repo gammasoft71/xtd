@@ -17,8 +17,8 @@ namespace xtd {
       using color_getter = xtd::delegate<xtd::drawing::color(xtd::forms::known_themed_color)>;
 
       theme_colors() = default;
-      theme_colors(const std::string& name, const color_getter& kown_themed_color_to_color) : theme_base(name), color_getter_(kown_themed_color_to_color) {}
-      theme_colors(const std::string& name, xtd::forms::theme_style theme_style, const color_getter& color_getter) : theme_base(name, theme_style), color_getter_(color_getter) {}
+      theme_colors(const xtd::ustring& name, const color_getter& kown_themed_color_to_color) : theme_base(name), color_getter_(kown_themed_color_to_color) {}
+      theme_colors(const xtd::ustring& name, xtd::forms::theme_style theme_style, const color_getter& color_getter) : theme_base(name, theme_style), color_getter_(color_getter) {}
       /// @cond
       theme_colors(const theme_colors&) = default;
       theme_colors& operator=(const theme_colors&) = default;
@@ -73,14 +73,14 @@ namespace xtd {
         return current_theme_;
       }
       static void current_theme(const theme_colors& theme_color) {current_theme_ = theme_color;}
-      static void current_theme(const std::string& name) {current_theme(theme_from_name(name));}
+      static void current_theme(const xtd::ustring& name) {current_theme(theme_from_name(name));}
 
       static theme_colors default_theme() {return theme_from_name(default_theme_name());}
       
-      static theme_colors theme_from_name(const std::string& theme_color_name);
+      static theme_colors theme_from_name(const xtd::ustring& theme_color_name);
 
     private:
-      theme_colors(const std::string& name, xtd::forms::theme_style theme_style, const color_getter& color_getter, bool is_default) : theme_base(name, theme_style, is_default), color_getter_(color_getter) {}
+      theme_colors(const xtd::ustring& name, xtd::forms::theme_style theme_style, const color_getter& color_getter, bool is_default) : theme_base(name, theme_style, is_default), color_getter_(color_getter) {}
       color_getter color_getter_;
       static theme_colors current_theme_;
     };

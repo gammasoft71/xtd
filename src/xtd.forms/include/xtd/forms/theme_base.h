@@ -24,8 +24,8 @@ namespace xtd {
       
       using theme_name_collection = std::vector<xtd::ustring>;
 
-      virtual const std::string& name() const {return name_;}
-      theme_base& name(const std::string& name) {
+      virtual const xtd::ustring& name() const {return name_;}
+      theme_base& name(const xtd::ustring& name) {
         name_ = name;
         return *this;
       }
@@ -40,9 +40,9 @@ namespace xtd {
       
       xtd::ustring to_string() const noexcept override {return xtd::ustring::format("[name={}, style={}, is_default={}] ", name_, theme_style_, is_default_);}
       
-      static std::string default_theme_name() {return xtd::environment::os_version().desktop_environment() == "" ? fallback_theme_name() :  xtd::environment::os_version().desktop_environment();}
+      static xtd::ustring default_theme_name() {return xtd::environment::os_version().desktop_environment() == "" ? fallback_theme_name() :  xtd::environment::os_version().desktop_environment();}
       
-      static std::string fallback_theme_name() {return "symbolic";}
+      static xtd::ustring fallback_theme_name() {return "symbolic";}
       
       static const theme_name_collection& theme_names() {return theme_names_;}
       
@@ -50,9 +50,9 @@ namespace xtd {
       
     protected:
       theme_base() = default;
-      explicit theme_base(const std::string& name) : name_(name) {}
-      theme_base(const std::string& name, xtd::forms::theme_style theme_style) : name_(name), theme_style_(theme_style) {}
-      theme_base(const std::string& name, xtd::forms::theme_style theme_style, bool is_default) : name_(name), theme_style_(theme_style), is_default_(is_default) {}
+      explicit theme_base(const xtd::ustring& name) : name_(name) {}
+      theme_base(const xtd::ustring& name, xtd::forms::theme_style theme_style) : name_(name), theme_style_(theme_style) {}
+      theme_base(const xtd::ustring& name, xtd::forms::theme_style theme_style, bool is_default) : name_(name), theme_style_(theme_style), is_default_(is_default) {}
       
       theme_base& is_default(bool is_default) {
         is_default_ = is_default;
@@ -61,7 +61,7 @@ namespace xtd {
       
 
     private:
-      std::string name_;
+      xtd::ustring name_;
       xtd::forms::theme_style theme_style_ = xtd::forms::theme_style::undefined;
       bool is_default_ = false;
       static theme_name_collection theme_names_;
@@ -81,8 +81,8 @@ namespace xtd {
     class theme final : public theme_base {
     public:
       theme() = default;
-      explicit theme(const std::string& name) : theme_base(name) {}
-      theme(const std::string& name, xtd::forms::theme_style theme_style) : theme_base(name, theme_style) {}
+      explicit theme(const xtd::ustring& name) : theme_base(name) {}
+      theme(const xtd::ustring& name, xtd::forms::theme_style theme_style) : theme_base(name, theme_style) {}
       /// @cond
       theme(const theme&) = default;
       theme& operator=(const theme&) = default;
@@ -97,14 +97,14 @@ namespace xtd {
         return current_theme_;
       }
       static void current_theme(const theme& theme) {current_theme_ = theme;}
-      static void current_theme(const std::string& name) {current_theme_ = theme_from_name(name);}
+      static void current_theme(const xtd::ustring& name) {current_theme_ = theme_from_name(name);}
       
       static theme default_theme() {return theme_from_name(default_theme_name());}
       
-      static theme theme_from_name(const std::string& theme_name);
+      static theme theme_from_name(const xtd::ustring& theme_name);
       
     private:
-      theme(const std::string& name, xtd::forms::theme_style theme_style, bool is_default) : theme_base(name, theme_style, is_default) {}
+      theme(const xtd::ustring& name, xtd::forms::theme_style theme_style, bool is_default) : theme_base(name, theme_style, is_default) {}
       static theme current_theme_;
     };
   }
@@ -121,7 +121,7 @@ using namespace xtd::forms;
 const theme theme::empty {};
 theme theme::current_theme_;
 
-theme theme::theme_from_name(const std::string& name) {
+theme theme::theme_from_name(const xtd::ustring& name) {
   if (name == default_theme_name()) return theme(default_theme_name(), theme_style::system_auto);
   if (name == "gnome") return theme("gnome", theme_style::system_auto);
   if (name == "gnome (dark)") return theme("gnome (dark)", theme_style::dark);
