@@ -66,7 +66,7 @@ main_form::main_form() {
 
   startup_open_recent_projects_list_box_.double_click += [&] {
     if (startup_open_recent_projects_list_box_.selected_index() != startup_open_recent_projects_list_box_.npos) {
-      if (!std::filesystem::exists(xtd::strings::split(properties::settings::default_settings().open_recent_propjects(), {';'})[startup_open_recent_projects_list_box_.selected_index()])) message_box::show(*this, xtd::strings::format("Project \"{}\" does not exists!", properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]), "Open project", message_box_buttons::ok, message_box_icon::error);
+      if (!std::filesystem::exists(xtd::strings::split(properties::settings::default_settings().open_recent_propjects(), {';'})[startup_open_recent_projects_list_box_.selected_index()])) message_box::show(*this, xtd::ustring::format("Project \"{}\" does not exists!", properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]), "Open project", message_box_buttons::ok, message_box_icon::error);
       else open_project(xtd::strings::split(properties::settings::default_settings().open_recent_propjects(), {';'})[startup_open_recent_projects_list_box_.selected_index()]);
     }
   };
@@ -501,15 +501,15 @@ main_form::main_form() {
       configure_project_type_title_label_.text(create_project_type_items_control_.project_type_items()[current_project_type_index_].name());
       auto project_name = std::map<project_type, std::string> {{project_type::gui, "gui_app"}, {project_type::console, "console_app"}, {project_type::shared_library, "class_library"}, {project_type::static_library, "class_library"}, {project_type::unit_tests_project, "unit_test_project"}, {project_type::solution_file, "solution_file"}}[create_project_type_items_control_.project_type_items()[current_project_type_index_].project_type()];
       auto index = 1;
-      while (std::filesystem::exists(std::filesystem::path {std::string(configure_project_location_text_box_.text())}/xtd::strings::format("{}{}", project_name, index))) index++;
-      configure_project_name_text_box_.text(xtd::strings::format("{}{}", project_name, index));
+      while (std::filesystem::exists(std::filesystem::path {std::string(configure_project_location_text_box_.text())}/xtd::ustring::format("{}{}", project_name, index))) index++;
+      configure_project_name_text_box_.text(xtd::ustring::format("{}{}", project_name, index));
       previous_button_.text("&Back");
       next_button_.text("&Create");
       create_panel_.visible(false);
       configure_panel_.visible(true);
     } else if (configure_panel_.visible()) {
       auto project_path = std::filesystem::path {std::filesystem::path {std::string(configure_project_location_text_box_.text())}/std::string(configure_project_name_text_box_.text())}.string();
-      if (std::filesystem::exists(project_path)) message_box::show(*this, xtd::strings::format("Project \"{}\" already exists!", project_path), "Create project", message_box_buttons::ok, message_box_icon::error);
+      if (std::filesystem::exists(project_path)) message_box::show(*this, xtd::ustring::format("Project \"{}\" already exists!", project_path), "Create project", message_box_buttons::ok, message_box_icon::error);
       else {
         new_project(project_path, current_project_type_index_);
         startup_panel_.visible(true);
@@ -540,17 +540,17 @@ main_form::main_form() {
       std::filesystem::create_directories(target_path);
       for (auto file : std::filesystem::directory_iterator(xtd_example.path()))
         std::filesystem::copy(file, target_path/file.path().filename());
-      //message_box::show(*this, strings::format("Open example \"{}\" in {}.", xtd_example.name(), target_path.string()));
+      //message_box::show(*this, ustring::format("Open example \"{}\" in {}.", xtd_example.name(), target_path.string()));
       background_worker_ = std::make_unique<background_worker>();
       background_worker_->do_work += [&](object& sender, do_work_event_args& e) {
         begin_invoke([&] {
           progress_dialog_ = std::make_unique<progress_dialog>();
-          progress_dialog_->text(strings::format("Opening {} example", std::any_cast<std::filesystem::path>(e.argument()).filename()));
+          progress_dialog_->text(ustring::format("Opening {} example", std::any_cast<std::filesystem::path>(e.argument()).filename()));
           progress_dialog_->message("Please wait...");
           progress_dialog_->marquee(true);
           progress_dialog_->show_sheet_dialog(*this);
         });
-        process::start(process_start_info().file_name("xtdc").arguments(strings::format("open {}", std::any_cast<std::filesystem::path>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
+        process::start(process_start_info().file_name("xtdc").arguments(ustring::format("open {}", std::any_cast<std::filesystem::path>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
       };
       background_worker_->run_worker_completed += [&] {
         begin_invoke([&] {
@@ -570,7 +570,7 @@ main_form::main_form() {
 void main_form::delete_from_create_recent_projects(size_t create_project_items_index) {
   auto create_recent_projects = xtd::strings::split(properties::settings::default_settings().create_recent_propjects(), {';'});
   create_recent_projects.erase(std::find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)));
-  properties::settings::default_settings().create_recent_propjects(xtd::strings::join(";", create_recent_projects));
+  properties::settings::default_settings().create_recent_propjects(xtd::ustring::join(";", create_recent_projects));
   properties::settings::default_settings().save();
   init_create_create_recent_projects_list_box();
 }
@@ -578,7 +578,7 @@ void main_form::delete_from_create_recent_projects(size_t create_project_items_i
 void main_form::delete_from_open_recent_projects(const std::string& project_path) {
   auto open_recent_projects = xtd::strings::split(properties::settings::default_settings().open_recent_propjects(), {';'});
   open_recent_projects.erase(std::find(open_recent_projects.begin(), open_recent_projects.end(), project_path));
-  properties::settings::default_settings().open_recent_propjects(xtd::strings::join(";", open_recent_projects));
+  properties::settings::default_settings().open_recent_propjects(xtd::ustring::join(";", open_recent_projects));
   properties::settings::default_settings().save();
   init_startup_open_recent_projects_list_box();
 }
@@ -600,7 +600,7 @@ void main_form::init_create_create_recent_projects_list_box() {
 void main_form::init_startup_open_recent_projects_list_box() {
   startup_open_recent_projects_list_box_.items().clear();
   for (auto item : xtd::strings::split(properties::settings::default_settings().open_recent_propjects(), {';'}))
-    startup_open_recent_projects_list_box_.items().push_back(xtd::strings::format("{} ({})", std::filesystem::path(item).stem().string(), item));
+    startup_open_recent_projects_list_box_.items().push_back(xtd::ustring::format("{} ({})", std::filesystem::path(item).stem().string(), item));
   startup_open_recent_projects_list_box_.selected_index(startup_open_recent_projects_list_box_.items().size() == 0 ? -1 : 0);
 }
 
@@ -611,7 +611,7 @@ void main_form::add_to_create_recent_projects(size_t create_project_items_index)
     create_recent_projects.erase(std::find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)));
   
   create_recent_projects.push_front(std::to_string(create_project_items_index));
-  properties::settings::default_settings().create_recent_propjects(xtd::strings::join(";", std::vector<std::string> {create_recent_projects.begin(), create_recent_projects.end()}));
+  properties::settings::default_settings().create_recent_propjects(xtd::ustring::join(";", std::vector<std::string> {create_recent_projects.begin(), create_recent_projects.end()}));
   properties::settings::default_settings().save();
   
   init_create_create_recent_projects_list_box();
@@ -624,7 +624,7 @@ void main_form::add_to_open_recent_projects(const std::string& project_path) {
     open_recent_projects.erase(std::find(open_recent_projects.begin(), open_recent_projects.end(), project_path));
 
   open_recent_projects.push_front(project_path);
-  properties::settings::default_settings().open_recent_propjects(xtd::strings::join(";", std::vector<std::string> {open_recent_projects.begin(), open_recent_projects.end()}));
+  properties::settings::default_settings().open_recent_propjects(xtd::ustring::join(";", std::vector<std::string> {open_recent_projects.begin(), open_recent_projects.end()}));
   properties::settings::default_settings().open_propject_folder(project_path);
   properties::settings::default_settings().save();
 
@@ -644,13 +644,13 @@ void main_form::new_project(const std::string& project_path, project_type type, 
     std::tuple<std::string, std::string, std::filesystem::path> new_project = std::any_cast<std::tuple<std::string, std::string, std::filesystem::path>>(e.argument());
     begin_invoke([&] {
       progress_dialog_ = std::make_unique<progress_dialog>();
-      progress_dialog_->text(strings::format("Creating {} project", std::get<2>(new_project).filename()));
+      progress_dialog_->text(ustring::format("Creating {} project", std::get<2>(new_project).filename()));
       progress_dialog_->message("Please wait...");
       progress_dialog_->marquee(true);
       progress_dialog_->show_sheet_dialog(*this);
     });
-    process::start(process_start_info().file_name("xtdc").arguments(strings::format("new {} -s {} {}", std::get<0>(new_project), std::get<1>(new_project), std::get<2>(new_project)).c_str()).use_shell_execute(false).create_no_window(true)).wait_for_exit();
-    process::start(process_start_info().file_name("xtdc").arguments(strings::format("open {}", std::get<2>(new_project)).c_str()).use_shell_execute(false).create_no_window(true)).wait_for_exit();
+    process::start(process_start_info().file_name("xtdc").arguments(ustring::format("new {} -s {} {}", std::get<0>(new_project), std::get<1>(new_project), std::get<2>(new_project)).c_str()).use_shell_execute(false).create_no_window(true)).wait_for_exit();
+    process::start(process_start_info().file_name("xtdc").arguments(ustring::format("open {}", std::get<2>(new_project)).c_str()).use_shell_execute(false).create_no_window(true)).wait_for_exit();
   };;
   background_worker_->run_worker_completed += [&] {
     begin_invoke([&] {
@@ -669,12 +669,12 @@ void main_form::open_project(const std::string& project_path) {
   background_worker_->do_work += [&](object& sender, do_work_event_args& e) {
     begin_invoke([&] {
       progress_dialog_ = std::make_unique<progress_dialog>();
-      progress_dialog_->text(strings::format("Opening {} project", std::any_cast<std::filesystem::path>(e.argument()).filename()));
+      progress_dialog_->text(ustring::format("Opening {} project", std::any_cast<std::filesystem::path>(e.argument()).filename()));
       progress_dialog_->message("Please wait...");
       progress_dialog_->marquee(true);
       progress_dialog_->show_sheet_dialog(*this);
     });
-    process::start(process_start_info().file_name("xtdc").arguments(strings::format("open {}", std::any_cast<std::filesystem::path>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
+    process::start(process_start_info().file_name("xtdc").arguments(ustring::format("open {}", std::any_cast<std::filesystem::path>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
   };
   background_worker_->run_worker_completed += [&] {
     begin_invoke([&] {
@@ -693,12 +693,12 @@ void main_form::run_project(const std::string& project_path) {
   background_worker_->do_work += [&](object& sender, do_work_event_args& e) {
     begin_invoke([&] {
       progress_dialog_ = std::make_unique<progress_dialog>();
-      progress_dialog_->text(strings::format("Running {} project", std::any_cast<std::filesystem::path>(e.argument()).filename()));
+      progress_dialog_->text(ustring::format("Running {} project", std::any_cast<std::filesystem::path>(e.argument()).filename()));
       progress_dialog_->message("Please wait...");
       progress_dialog_->marquee(true);
       progress_dialog_->show_sheet_dialog(*this);
     });
-    process::start(process_start_info().file_name("xtdc").arguments(strings::format("run {}", std::any_cast<std::filesystem::path>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
+    process::start(process_start_info().file_name("xtdc").arguments(ustring::format("run {}", std::any_cast<std::filesystem::path>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
   };
   background_worker_->run_worker_completed += [&] {
     begin_invoke([&] {
