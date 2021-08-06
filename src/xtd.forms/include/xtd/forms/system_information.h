@@ -85,7 +85,7 @@ namespace xtd {
       /// @return The name of this computer.
       /// @remarks The ComputerName property retrieves the NetBIOS name of the local computer. This is accomplished with a call into the native System Information function GetComputerName. This name is established at system startup_, when the system reads it from the registry. If the local computer is a node in a cluster, ComputerName returns the name of the cluster virtual server.
       /// @remarks You can use the computer_name method to determine the name of the computer that is displayed to other users on a network.
-      static std::string computer_name();
+      static xtd::ustring computer_name();
 
       /// @brief Gets the maximum size, in pixels, that a cursor can occupy.
       /// @return A size that indicates the maximum dimensions of a cursor in pixels.

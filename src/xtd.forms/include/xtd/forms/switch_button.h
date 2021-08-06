@@ -162,7 +162,7 @@ namespace xtd {
         drawing::color button_back_color = checked_ ? checked_back_color() : xtd::forms::theme_colors::current_theme().gray_text();
         drawing::color text_color = checked_ ? fore_color() : drawing::color::average(button_back_color, fore_color(), .33);
         drawing::color slider_color = this->slider_color();
-        std::string text = checked_ ? "ON" : "OFF";
+        xtd::ustring text = checked_ ? "ON" : "OFF";
 
         if (!enabled()) {
           button_back_color = drawing::color::average(back_color(), button_back_color, .33);

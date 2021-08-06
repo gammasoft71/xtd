@@ -15,7 +15,7 @@ settings::~settings() {
     native::settings::destroy(data_->settings_);
 }
 
-std::string settings::read_string(const std::string &key, const std::string &default_value) {
+xtd::ustring settings::read_string(const xtd::ustring &key, const xtd::ustring &default_value) {
   return native::settings::read(data_->settings_, key, default_value);
 }
 
@@ -27,6 +27,6 @@ void settings::save() {
   native::settings::save(data_->settings_);
 }
 
-void settings::write_string(const std::string &key, const std::string &value) {
+void settings::write_string(const xtd::ustring &key, const xtd::ustring &value) {
   native::settings::write(data_->settings_, key, value);
 }

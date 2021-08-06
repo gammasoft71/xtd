@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::shortcut enum class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/strings.h>
+#include <xtd/ustring.h>
 #include "keys.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

@@ -4,6 +4,7 @@
 #pragma once
 #include <utility>
 #include <vector>
+#include "control_ref.h"
 #include "vertical_control_layout_style.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
