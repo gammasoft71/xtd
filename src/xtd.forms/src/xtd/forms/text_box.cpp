@@ -107,7 +107,7 @@ drawing::size text_box::measure_control() const {
   return drawing::size(client_size_.width(), static_cast<int32_t>(font().get_height()) + 2 + (border_style_ == border_style::none ? 0 : 4));
 }
 
-void text_box::append_text(const std::string& value) {
+void text_box::append_text(const xtd::ustring& value) {
   native::text_box::append(handle_, value);
 }
 
