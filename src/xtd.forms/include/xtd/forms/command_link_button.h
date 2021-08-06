@@ -47,7 +47,7 @@ namespace xtd {
       /// @param text A string that represent control text
       /// @param supplementary_text A string thatt represent supplementary text.
       /// @remarks Is equavant to call text property with text and spplementary_text separed by "\n".
-      virtual control& texts(const std::string& text, const std::string& supplementary_text) {return this->text(strings::format("{}{}{}", text, environment::new_line(), supplementary_text));}
+      virtual control& texts(const xtd::ustring& text, const xtd::ustring& supplementary_text) {return this->text(strings::format("{}{}{}", text, environment::new_line(), supplementary_text));}
 
       drawing::size default_size() const override {return {200, 60};}
       

@@ -15,7 +15,7 @@ namespace {
 
 cursor cursor::none(0, false, "none");
 
-cursor::cursor(intptr_t handle, bool destroyable, const std::string& name) {
+cursor::cursor(intptr_t handle, bool destroyable, const xtd::ustring& name) {
   data_->handle_ = handle;
   data_->destroyable_ = destroyable;
   data_->name_ = name;

@@ -138,13 +138,13 @@ namespace xtd {
     private:
       friend class xtd::forms::cursors;
       cursor(const xtd::drawing::bitmap& bitmap, const xtd::drawing::point& hot_spot);
-      cursor(intptr_t handle, bool destroyable, const std::string& name);
+      cursor(intptr_t handle, bool destroyable, const xtd::ustring& name);
 
       struct data {
         intptr_t handle_ = 0;
         bool destroyable_ = true;
         xtd::drawing::point hot_spot_;
-        std::string name_;
+        xtd::ustring name_;
         xtd::drawing::size size_;
         std::any tag_;
       };

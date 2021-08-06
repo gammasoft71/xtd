@@ -42,29 +42,29 @@ namespace xtd {
         item() = default;
         /// @brief Initializes a new instance of the item class with specified value.
         /// @param value a string that represent the item.
-        item(const std::string& value) : list_box::item(value) {}
+        item(const xtd::ustring& value) : list_box::item(value) {}
         /// @brief Initializes a new instance of the item class with specified value and check state.
         /// @param value a string that represent the item.
         /// @param checked a bool that represent check state.
-        item(const std::string& value, bool checked) : list_box::item(value), check_state_(checked ? forms::check_state::checked : forms::check_state::unchecked) {}
+        item(const xtd::ustring& value, bool checked) : list_box::item(value), check_state_(checked ? forms::check_state::checked : forms::check_state::unchecked) {}
         /// @brief Initializes a new instance of the item class with specified value and checked state.
         /// @param value a string that represent the item.
         /// @param check_state a bool that represent check state.
-        item(const std::string& value, forms::check_state check_state) : list_box::item(value), check_state_(check_state) {}
+        item(const xtd::ustring& value, forms::check_state check_state) : list_box::item(value), check_state_(check_state) {}
         /// @brief Initializes a new instance of the item class with specified value and tag.
         /// @param value a string that represent the item.
         /// @param tag an object that contains data about the item.
-        item(const std::string& value, const std::any& tag) : list_box::item(value, tag) {}
+        item(const xtd::ustring& value, const std::any& tag) : list_box::item(value, tag) {}
         /// @brief Initializes a new instance of the item class with specified value, check state and tag.
         /// @param value a string that represent the item.
         /// @param checked a bool that represent check state.
         /// @param tag an object that contains data about the item.
-        item(const std::string& value, bool checked, const std::any& tag) : list_box::item(value, tag), check_state_(checked ? forms::check_state::checked : forms::check_state::unchecked) {}
+        item(const xtd::ustring& value, bool checked, const std::any& tag) : list_box::item(value, tag), check_state_(checked ? forms::check_state::checked : forms::check_state::unchecked) {}
         /// @brief Initializes a new instance of the item class with specified value, check state and tag.
         /// @param value a string that represent the item.
         /// @param checked a bool that represent check state.
         /// @param tag an object that contains data about the item.
-        item(const std::string& value, forms::check_state check_state, const std::any& tag) : list_box::item(value, tag), check_state_(check_state) {}
+        item(const xtd::ustring& value, forms::check_state check_state, const std::any& tag) : list_box::item(value, tag), check_state_(check_state) {}
         
         /// @cond
         item(const char* value) : list_box::item(value) {}
@@ -187,7 +187,7 @@ namespace xtd {
       /// @brief Returns the text value of the current item.
       /// @param index The index of the item.
       /// @return A string that represent the text value of tthe current item.
-      const std::string& get_item_text(size_t index) const;
+      const xtd::ustring& get_item_text(size_t index) const;
 
       /// @brief Sets check_state for the item at the specified index to checked.
       /// @param index The index of the item to set the check state for.
@@ -205,7 +205,7 @@ namespace xtd {
       /// @brief Sets the text value of the item at the specified index.
       /// @param index The index of the item to set the check state for.
       /// @param text A string that represent the text value.
-      void set_item_text(size_t index, const std::string& text);
+      void set_item_text(size_t index, const xtd::ustring& text);
       
       /// @brief Occurs when the checked state of an item changes.
       event<checked_list_box, item_check_event_handler> item_check;
