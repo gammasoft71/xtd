@@ -340,7 +340,7 @@ control& control::parent(nullptr_t) {
   return *this;
 }
 
-control& control::text(const string& text) {
+control& control::text(const ustring& text) {
   if (text_ != text) {
     text_ = text;
     native::control::text(handle_, text_);

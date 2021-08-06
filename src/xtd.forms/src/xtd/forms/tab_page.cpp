@@ -38,7 +38,7 @@ tab_page& tab_page::image_index(int32_t value) {
   return *this;
 }
 
-control& tab_page::text(const std::string& text) {
+control& tab_page::text(const ustring& text) {
   if (text_ != text) {
     if (parent().has_value())
       if (parent().has_value()) native::tab_page::text(handle(), text);

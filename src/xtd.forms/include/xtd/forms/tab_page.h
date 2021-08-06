@@ -70,7 +70,7 @@ namespace xtd {
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
       /// @return Current control instance.
-      control& text(const std::string& text) override;
+      control& text(const xtd::ustring& text) override;
 
       void destroy_handle() override;
 

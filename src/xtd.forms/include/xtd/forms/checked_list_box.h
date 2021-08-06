@@ -160,7 +160,7 @@ namespace xtd {
       using list_box::text;
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
-      control& text(const std::string& text) override {
+      control& text(const xtd::ustring& text) override {
         selected_item_ = {text};
         return *this;
       }

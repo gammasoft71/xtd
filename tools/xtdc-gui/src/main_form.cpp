@@ -499,14 +499,14 @@ main_form::main_form() {
       configure_project_type_title_label_.text(create_project_type_items_control_.project_type_items()[current_project_type_index_].name());
       auto project_name = std::map<project_type, std::string> {{project_type::gui, "gui_app"}, {project_type::console, "console_app"}, {project_type::shared_library, "class_library"}, {project_type::static_library, "class_library"}, {project_type::unit_tests_project, "unit_test_project"}, {project_type::solution_file, "solution_file"}}[create_project_type_items_control_.project_type_items()[current_project_type_index_].project_type()];
       auto index = 1;
-      while (std::filesystem::exists(std::filesystem::path {configure_project_location_text_box_.text()}/xtd::strings::format("{}{}", project_name, index))) index++;
+      while (std::filesystem::exists(std::filesystem::path {std::string(configure_project_location_text_box_.text())}/xtd::strings::format("{}{}", project_name, index))) index++;
       configure_project_name_text_box_.text(xtd::strings::format("{}{}", project_name, index));
       previous_button_.text("&Back");
       next_button_.text("&Create");
       create_panel_.visible(false);
       configure_panel_.visible(true);
     } else if (configure_panel_.visible()) {
-      auto project_path = std::filesystem::path {std::filesystem::path {configure_project_location_text_box_.text()}/configure_project_name_text_box_.text()}.string();
+      auto project_path = std::filesystem::path {std::filesystem::path {std::string(configure_project_location_text_box_.text())}/std::string(configure_project_name_text_box_.text())}.string();
       if (std::filesystem::exists(project_path)) message_box::show(*this, xtd::strings::format("Project \"{}\" already exists!", project_path), "Create project", message_box_buttons::ok, message_box_icon::error);
       else {
         new_project(project_path, current_project_type_index_);

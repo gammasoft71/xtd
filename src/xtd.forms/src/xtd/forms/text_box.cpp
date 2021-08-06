@@ -49,12 +49,12 @@ size_t text_box::selection_start() const {
   return text_box_base::selection_start();
 }
 
-const std::string& text_box::text() const {
+const ustring& text_box::text() const {
   if (!use_system_password_char_ && password_char_) return text_;
   return text_box_base::text();
 }
 
-control& text_box::text(const std::string& text) {
+control& text_box::text(const ustring& text) {
   if (text_ != text) {
     text_ = text;
     if (!use_system_password_char_ && password_char_) {

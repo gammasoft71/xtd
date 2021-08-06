@@ -720,7 +720,7 @@ namespace xtd {
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
       /// @return Current control.
-      control& text(const std::string& value) override {
+      control& text(const xtd::ustring& value) override {
         if (text_ != value) {
           suspend_layout();
           std::wstring str = std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().from_bytes(value.c_str());
