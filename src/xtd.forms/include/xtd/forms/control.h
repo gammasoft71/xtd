@@ -166,12 +166,12 @@ namespace xtd {
         /// @param name The name of the xtd::forms::control to get from the list.
         /// @return The first xtd::forms::control in the list with the given Name. This item returns optional with no value if no xtd::forms::control with the given name can be found.
         /// @remarks The operator[] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator[] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
-        std::optional<value_type> operator[](const std::string& name) const;
+        std::optional<value_type> operator[](const xtd::ustring& name) const;
         /// @brief Gets the first xtd::forms::control::control_collection in the list with the specified name.
         /// @param name The name of the xtd::forms::control to get from the list.
         /// @return The first xtd::forms::control in the list with the given Name. This item returns optional with no value if no xtd::forms::control with the given name can be found.
         /// @remarks The operator[] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator[] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
-        std::optional<value_type> operator[](const std::string& name);
+        std::optional<value_type> operator[](const xtd::ustring& name);
       };
       
       /// @brief Initializes a new instance of the control class with default settings.
@@ -181,7 +181,7 @@ namespace xtd {
       /// @param text The text displayed by the control.
       /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       /// @remarks This version of the control constructor sets the initial text property value to the text parameter value.
-      explicit control(const std::string& text) : control() {
+      explicit control(const xtd::ustring& text) : control() {
         this->text(text);
       }
       /// @brief nitializes a new instance of the control class as a child control, with specific text.
@@ -189,7 +189,7 @@ namespace xtd {
       /// @param text The text displayed by the control.
       /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       /// @remarks This version of the control constructor sets the initial text property value to the text parameter value. The constructor also adds the control to the parent control's control::control_collection.
-      explicit control(const control& parent, const std::string& text) : control() {
+      explicit control(const control& parent, const xtd::ustring& text) : control() {
         this->parent(parent);
         this->text(text);
       }
@@ -201,7 +201,7 @@ namespace xtd {
       /// @param height The height of the control, in pixels. The value is assigned to the height property.
       /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       /// @remarks This version of the control constructor sets the initial text property value to the text parameter value. The initial size and location of the control are determined by the left, top, width and height parameter values.
-      explicit control(const std::string& text, int32_t left, int32_t top, int32_t width, int32_t height) : control() {
+      explicit control(const xtd::ustring& text, int32_t left, int32_t top, int32_t width, int32_t height) : control() {
         this->text(text);
         this->left(left);
         this->top(top);
@@ -217,7 +217,7 @@ namespace xtd {
       /// @param height The height of the control, in pixels. The value is assigned to the height property.
       /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       /// @remarks This version of the control constructor sets the initial text property value to the text parameter value. The constructor also adds the control to the parent control's control::control_collection. The initial size and location of the control are determined by the left, top, width and height parameter values.
-      explicit control(const control& parent, const std::string& text, int32_t left, int32_t top, int32_t width, int32_t height) : control() {
+      explicit control(const control& parent, const xtd::ustring& text, int32_t left, int32_t top, int32_t width, int32_t height) : control() {
         this->parent(parent);
         this->text(text);
         this->left(left);
@@ -369,7 +369,7 @@ namespace xtd {
       
       /// @brief Gets the name of the company or creator of the application containing the control.
       /// @return The company name or creator of the application containing the control.
-      virtual std::string compagny_name() const {return "Gammasoft";}
+      virtual xtd::ustring compagny_name() const {return "Gammasoft";}
       
       /// @brief Gets the collection of controls contained within the control.
       /// @return A control::control_collection representing the collection of controls contained within the control.
@@ -633,11 +633,11 @@ namespace xtd {
       
       /// @brief Gets the name of the control.
       /// @return The name of the control. The default is an empty string ("").
-      virtual const std::string& name() const {return name_;}
+      virtual const xtd::ustring& name() const {return name_;}
       /// @brief Sets the name of the control.
       /// @param name The name of the control. The default is an empty string ("").
       /// @return Current control.
-      virtual control& name(const std::string& name) {
+      virtual control& name(const xtd::ustring& name) {
         name_ = name;
         return*this;
       }
@@ -668,7 +668,7 @@ namespace xtd {
 
       /// @brief Gets the product name of the assembly containing the control.
       /// @return The product name of the assembly containing the control.
-      virtual std::string product_name() const {return "xtd";}
+      virtual xtd::ustring product_name() const {return "xtd";}
       
       /// @brief Gets a value indicating whether the control is currently re-creating its handle.
       /// @return true if the control is currently re-creating its handle; otherwise, false.
@@ -1974,7 +1974,7 @@ namespace xtd {
       static forms::keys modifier_keys_;
       static forms::mouse_buttons mouse_buttons_;
       bool mouse_in_ = false;
-      std::string name_;
+      xtd::ustring name_;
       intptr_t parent_ = 0;
       drawing::size parent_size_;
       drawing::size size_;
