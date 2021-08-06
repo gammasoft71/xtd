@@ -1,5 +1,4 @@
 #if defined(__APPLE__)
-#include <xtd/strings.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/dialog_box_identifiers.h>
