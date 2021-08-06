@@ -20,124 +20,124 @@ namespace {
   }
     
   string generate_stack_trace_string_report(int32_t indent) {
-    std::string report = strings::format("{}Stack trace{}", indent_string(indent), environment::new_line());
+    std::string report = ustring::format("{}Stack trace{}", indent_string(indent), environment::new_line());
     auto stack_trace = system_report::stack_trace();
     for (auto frame : stack_trace.get_frames())
-      report += strings::format("{}{}{}", indent_string(indent +1), frame, environment::new_line());
+      report += ustring::format("{}{}{}", indent_string(indent +1), frame, environment::new_line());
     return report + environment::new_line();
   }
 
   string generate_libraries_string_report(int32_t indent) {
-    std::string report = strings::format("{}xtd libraries{}", indent_string(indent), environment::new_line());
+    std::string report = ustring::format("{}xtd libraries{}", indent_string(indent), environment::new_line());
     for (auto library : system_report::xtd_libraries()) {
-      report += strings::format("{}{}{}", indent_string(indent + 1), library.name(), environment::new_line());
-      report += strings::format("{}Version: {}{}", indent_string(indent + 2), library.version(), environment::new_line());
-      report += strings::format("{}include path: {}{}", indent_string(indent + 2), library.include_path(), environment::new_line());
-      report += strings::format("{}library path: {}{}", indent_string(indent + 2), library.library_path(), environment::new_line());
-      report += strings::format("{}resources path: {}{}", indent_string(indent + 2), library.resources_path(), environment::new_line());
+      report += ustring::format("{}{}{}", indent_string(indent + 1), library.name(), environment::new_line());
+      report += ustring::format("{}Version: {}{}", indent_string(indent + 2), library.version(), environment::new_line());
+      report += ustring::format("{}include path: {}{}", indent_string(indent + 2), library.include_path(), environment::new_line());
+      report += ustring::format("{}library path: {}{}", indent_string(indent + 2), library.library_path(), environment::new_line());
+      report += ustring::format("{}resources path: {}{}", indent_string(indent + 2), library.resources_path(), environment::new_line());
     }
     return report + environment::new_line();
   }
   
   string generate_processor_string_report(int32_t indent) {
-    std::string report = strings::format("{}Processor{}", indent_string(indent), environment::new_line());
+    std::string report = ustring::format("{}Processor{}", indent_string(indent), environment::new_line());
     auto processor = system_report::processor();
-    report += strings::format("{}Name: {}{}", indent_string(indent + 1), processor.name(), environment::new_line());
-    report += strings::format("{}Architecture: {}{}", indent_string(indent + 1), processor.architecture_string(), environment::new_line());
-    report += strings::format("{}Core count: {}{}", indent_string(indent + 1), processor.core_count(), environment::new_line());
-    report += strings::format("{}64 bit: {}{}", indent_string(indent + 1), processor.is_64_bit(), environment::new_line());
+    report += ustring::format("{}Name: {}{}", indent_string(indent + 1), processor.name(), environment::new_line());
+    report += ustring::format("{}Architecture: {}{}", indent_string(indent + 1), processor.architecture_string(), environment::new_line());
+    report += ustring::format("{}Core count: {}{}", indent_string(indent + 1), processor.core_count(), environment::new_line());
+    report += ustring::format("{}64 bit: {}{}", indent_string(indent + 1), processor.is_64_bit(), environment::new_line());
     return report + environment::new_line();
   }
   
   string generate_operating_system_string_report(int32_t indent) {
-    std::string report = strings::format("{}Operating System{}", indent_string(indent), environment::new_line());
+    std::string report = ustring::format("{}Operating System{}", indent_string(indent), environment::new_line());
     auto operating_system = system_report::operating_system();
-    report += strings::format("{}Name: {}{}", indent_string(indent + 1), operating_system.name(), environment::new_line());
-    report += strings::format("{}Version: {}{}", indent_string(indent + 1), operating_system.version(), environment::new_line());
-    report += strings::format("{}Service pack: {}{}", indent_string(indent + 1), operating_system.service_pack(), environment::new_line());
-    report += strings::format("{}Desktop environment: {}{}", indent_string(indent + 1), operating_system.desktop_environment(), environment::new_line());
-    report += strings::format("{}64 bit: {}{}", indent_string(indent + 1), operating_system.is_64_bit(), environment::new_line());
+    report += ustring::format("{}Name: {}{}", indent_string(indent + 1), operating_system.name(), environment::new_line());
+    report += ustring::format("{}Version: {}{}", indent_string(indent + 1), operating_system.version(), environment::new_line());
+    report += ustring::format("{}Service pack: {}{}", indent_string(indent + 1), operating_system.service_pack(), environment::new_line());
+    report += ustring::format("{}Desktop environment: {}{}", indent_string(indent + 1), operating_system.desktop_environment(), environment::new_line());
+    report += ustring::format("{}64 bit: {}{}", indent_string(indent + 1), operating_system.is_64_bit(), environment::new_line());
     return report + environment::new_line();
   }
   
   string generate_compiler_string_report(int32_t indent) {
-    std::string report = strings::format("{}Compiler{}", indent_string(indent), environment::new_line());
+    std::string report = ustring::format("{}Compiler{}", indent_string(indent), environment::new_line());
     auto compiler = system_report::compiler();
-    report += strings::format("{}Name: {}{}", indent_string(indent + 1), compiler.name(), environment::new_line());
-    report += strings::format("{}Version: {}{}", indent_string(indent + 1), compiler.version(), environment::new_line());
-    report += strings::format("{}Mode: {}{}", indent_string(indent + 1), compiler.is_build_type_debug() ? "Debug" : "Release", environment::new_line());
-    report += strings::format("{}64 bit: {}{}", indent_string(indent + 1), compiler.is_64_bit(), environment::new_line());
+    report += ustring::format("{}Name: {}{}", indent_string(indent + 1), compiler.name(), environment::new_line());
+    report += ustring::format("{}Version: {}{}", indent_string(indent + 1), compiler.version(), environment::new_line());
+    report += ustring::format("{}Mode: {}{}", indent_string(indent + 1), compiler.is_build_type_debug() ? "Debug" : "Release", environment::new_line());
+    report += ustring::format("{}64 bit: {}{}", indent_string(indent + 1), compiler.is_64_bit(), environment::new_line());
     return report + environment::new_line();
   }
   
   string generate_language_string_report(int32_t indent) {
-    std::string report = strings::format("{}Language{}", indent_string(indent), environment::new_line());
+    std::string report = ustring::format("{}Language{}", indent_string(indent), environment::new_line());
     auto language = system_report::language();
-    report += strings::format("{}Name: {}{}", indent_string(indent + 1), language.name(), environment::new_line());
-    report += strings::format("{}Version: {}{}", indent_string(indent + 1), language.version(), environment::new_line());
-    report += strings::format("{}Experimental: {}{}", indent_string(indent + 1), language.is_experimental_language(), environment::new_line());
-    report += strings::format("{}Supported: {}{}", indent_string(indent + 1), language.is_supported(), environment::new_line());
+    report += ustring::format("{}Name: {}{}", indent_string(indent + 1), language.name(), environment::new_line());
+    report += ustring::format("{}Version: {}{}", indent_string(indent + 1), language.version(), environment::new_line());
+    report += ustring::format("{}Experimental: {}{}", indent_string(indent + 1), language.is_experimental_language(), environment::new_line());
+    report += ustring::format("{}Supported: {}{}", indent_string(indent + 1), language.is_supported(), environment::new_line());
     return report + environment::new_line();
   }
   
   string generate_locale_string_report(int32_t indent) {
-    std::string report = strings::format("{}Locale{}", indent_string(indent), environment::new_line());
+    std::string report = ustring::format("{}Locale{}", indent_string(indent), environment::new_line());
     auto locale = system_report::locale();
-    report += strings::format("{}Name: {}{}", indent_string(indent + 1), locale.name(), environment::new_line());
+    report += ustring::format("{}Name: {}{}", indent_string(indent + 1), locale.name(), environment::new_line());
     return report + environment::new_line();
   }
 
   string generate_environment_variables_string_report(int32_t indent) {
-    std::string report = strings::format("{}Environment variables{}", indent_string(indent), environment::new_line());
+    std::string report = ustring::format("{}Environment variables{}", indent_string(indent), environment::new_line());
     for (auto environment_variable : system_report::environment_variables())
-      report += strings::format("{}{}={}{}", indent_string(indent + 1), environment_variable.first, environment_variable.second, environment::new_line());
+      report += ustring::format("{}{}={}{}", indent_string(indent + 1), environment_variable.first, environment_variable.second, environment::new_line());
     return report + environment::new_line();
   }
 
   string generate_special_folders_string_report(int32_t indent) {
-    std::string report = strings::format("{}Special folders{}", indent_string(indent), environment::new_line());
+    std::string report = ustring::format("{}Special folders{}", indent_string(indent), environment::new_line());
     for (auto special_folder : system_report::special_folders())
-      report += strings::format("{}{}: {}{}", indent_string(indent + 1), special_folder.first, special_folder.second, environment::new_line());
+      report += ustring::format("{}{}: {}{}", indent_string(indent + 1), special_folder.first, special_folder.second, environment::new_line());
     return report + environment::new_line();
   }
 
   string generate_system_colors_string_report(int32_t indent) {
-    std::string report = strings::format("{}System colors{}", indent_string(indent), environment::new_line());
+    std::string report = ustring::format("{}System colors{}", indent_string(indent), environment::new_line());
     for (auto system_color : system_report::system_colors())
-      report += strings::format("{}{}: {}{}", indent_string(indent + 1), system_color.first, system_color.second, environment::new_line());
+      report += ustring::format("{}{}: {}{}", indent_string(indent + 1), system_color.first, system_color.second, environment::new_line());
     return report + environment::new_line();
   }
 
   string generate_generic_font_families_string_report(int32_t indent) {
-    std::string report = strings::format("{}Generic font families{}", indent_string(indent), environment::new_line());
+    std::string report = ustring::format("{}Generic font families{}", indent_string(indent), environment::new_line());
     for (auto font_family : system_report::generic_font_families())
-      report += strings::format("{}{}: {}{}", indent_string(indent + 1), font_family.first, font_family.second, environment::new_line());
+      report += ustring::format("{}{}: {}{}", indent_string(indent + 1), font_family.first, font_family.second, environment::new_line());
     return report + environment::new_line();
   }
 
   string generate_system_fonts_string_report(int32_t indent) {
-    std::string report = strings::format("{}System fonts{}", indent_string(indent), environment::new_line());
+    std::string report = ustring::format("{}System fonts{}", indent_string(indent), environment::new_line());
     for (auto system_font : system_report::system_fonts())
-      report += strings::format("{}{}: {}{}", indent_string(indent + 1), system_font.first, system_font.second, environment::new_line());
+      report += ustring::format("{}{}: {}{}", indent_string(indent + 1), system_font.first, system_font.second, environment::new_line());
     return report + environment::new_line();
   }
 
   string generate_screens_report(int32_t indent) {
-    std::string report = strings::format("{}Screens{}", indent_string(indent), environment::new_line());
+    std::string report = ustring::format("{}Screens{}", indent_string(indent), environment::new_line());
     for (auto screen : system_report::screens()) {
-      report += strings::format("{}{}{}", indent_string(indent + 1), screen.device_name(), environment::new_line());
-      report += strings::format("{}Bounds: {}{}", indent_string(indent + 2), screen.bounds(), environment::new_line());
-      report += strings::format("{}Working area: {}{}", indent_string(indent + 2), screen.working_area(), environment::new_line());
-      report += strings::format("{}Bits per pixel: {}{}", indent_string(indent + 2), screen.bits_per_pixel(), environment::new_line());
-      report += strings::format("{}Primary screen: {}{}", indent_string(indent + 2), screen.primary(), environment::new_line());
+      report += ustring::format("{}{}{}", indent_string(indent + 1), screen.device_name(), environment::new_line());
+      report += ustring::format("{}Bounds: {}{}", indent_string(indent + 2), screen.bounds(), environment::new_line());
+      report += ustring::format("{}Working area: {}{}", indent_string(indent + 2), screen.working_area(), environment::new_line());
+      report += ustring::format("{}Bits per pixel: {}{}", indent_string(indent + 2), screen.bits_per_pixel(), environment::new_line());
+      report += ustring::format("{}Primary screen: {}{}", indent_string(indent + 2), screen.primary(), environment::new_line());
     }
     return report + environment::new_line();
   }
 
   string generate_system_informations_string_report(int32_t indent) {
-    std::string report = strings::format("{}System informations{}", indent_string(indent), environment::new_line());
+    std::string report = ustring::format("{}System informations{}", indent_string(indent), environment::new_line());
     for (auto system_information : system_report::system_informations())
-      report += strings::format("{}{}: {}{}", indent_string(indent + 1), system_information.first, system_information.second, environment::new_line());
+      report += ustring::format("{}{}: {}{}", indent_string(indent + 1), system_information.first, system_information.second, environment::new_line());
     return report + environment::new_line();
   }
 }
@@ -171,38 +171,38 @@ system_report::system_font_collection system_report::system_fonts() noexcept {
 
 system_report::system_information_collection system_report::system_informations() noexcept {
   return {
-    {"Active window tracking delay", strings::format("{}", forms::system_information::active_window_tracking_delay())},
-    {"Active", strings::format("{}", forms::system_information::active_window_tracking_delay())},
-    {"Arrange direction", strings::format("{}", forms::system_information::arrange_direction())},
-    {"Arrange starting position", strings::format("{}", forms::system_information::arrange_starting_position())},
-    {"Boot mode", strings::format("{}", forms::system_information::boot_mode())},
-    {"Border 3d size", strings::format("{}", forms::system_information::border_3d_size())},
-    {"Border multiplier factor", strings::format("{}", forms::system_information::border_multiplier_factor())},
-    {"Border size", strings::format("{}", forms::system_information::border_size())},
-    {"Caption button size", strings::format("{}", forms::system_information::caption_button_size())},
-    {"Caption height", strings::format("{}", forms::system_information::caption_height())},
-    {"Caret blink time", strings::format("{}", forms::system_information::caret_blink_time())},
-    {"Caret width", strings::format("{}", forms::system_information::caret_width())},
-    {"Computer name", strings::format("{}", forms::system_information::computer_name())},
-    {"Cursor size", strings::format("{}", forms::system_information::cursor_size())},
-    {"DBCS enabled", strings::format("{}", forms::system_information::dbcs_enabled())},
-    {"Debug os", strings::format("{}", forms::system_information::debug_os())},
-    {"Double click size", strings::format("{}", forms::system_information::double_click_size())},
-    {"Double_click time", strings::format("{}", forms::system_information::double_click_time())},
-    {"Drag full windows", strings::format("{}", forms::system_information::drag_full_windows())},
-    {"Drag size", strings::format("{}", forms::system_information::drag_size())},
-    {"Fixed frame border size", strings::format("{}", forms::system_information::fixed_frame_border_size())},
-    {"Font smoothing contrast", strings::format("{}", forms::system_information::font_smoothing_contrast())},
-    {"Font smoothing type", strings::format("{}", forms::system_information::font_smoothing_type())},
-    //{"Frame border size", strings::format("{}", forms::system_information::frame_border_size())},
-    //{"High contrast", strings::format("{}", forms::system_information::high_contrast())},
-    //{"Horizontal focus thickness", strings::format("{}", forms::system_information::horizontal_focus_thickness())},
-    //{"Horizontal resize border thickness", strings::format("{}", forms::system_information::horizontal_resize_border_thickness())},
-    //{"Horizontal scroll bar arrow width", strings::format("{}", forms::system_information::horizontal_scroll_bar_arrow_width())},
-    {"Horizontal scroll bar height", strings::format("{}", forms::system_information::horizontal_scroll_bar_height())},
-    //{"Horizontal scroll bar bhumb width", strings::format("{}", forms::system_information::horizontal_scroll_bar_bhumb_width())},
-    //{"icon_horizontal_spacing", strings::format("{}", forms::system_information::icon_horizontal_spacing())},
-    //{"Active", strings::format("{}", forms::system_information::active_window_tracking_delay())},
+    {"Active window tracking delay", ustring::format("{}", forms::system_information::active_window_tracking_delay())},
+    {"Active", ustring::format("{}", forms::system_information::active_window_tracking_delay())},
+    {"Arrange direction", ustring::format("{}", forms::system_information::arrange_direction())},
+    {"Arrange starting position", ustring::format("{}", forms::system_information::arrange_starting_position())},
+    {"Boot mode", ustring::format("{}", forms::system_information::boot_mode())},
+    {"Border 3d size", ustring::format("{}", forms::system_information::border_3d_size())},
+    {"Border multiplier factor", ustring::format("{}", forms::system_information::border_multiplier_factor())},
+    {"Border size", ustring::format("{}", forms::system_information::border_size())},
+    {"Caption button size", ustring::format("{}", forms::system_information::caption_button_size())},
+    {"Caption height", ustring::format("{}", forms::system_information::caption_height())},
+    {"Caret blink time", ustring::format("{}", forms::system_information::caret_blink_time())},
+    {"Caret width", ustring::format("{}", forms::system_information::caret_width())},
+    {"Computer name", ustring::format("{}", forms::system_information::computer_name())},
+    {"Cursor size", ustring::format("{}", forms::system_information::cursor_size())},
+    {"DBCS enabled", ustring::format("{}", forms::system_information::dbcs_enabled())},
+    {"Debug os", ustring::format("{}", forms::system_information::debug_os())},
+    {"Double click size", ustring::format("{}", forms::system_information::double_click_size())},
+    {"Double_click time", ustring::format("{}", forms::system_information::double_click_time())},
+    {"Drag full windows", ustring::format("{}", forms::system_information::drag_full_windows())},
+    {"Drag size", ustring::format("{}", forms::system_information::drag_size())},
+    {"Fixed frame border size", ustring::format("{}", forms::system_information::fixed_frame_border_size())},
+    {"Font smoothing contrast", ustring::format("{}", forms::system_information::font_smoothing_contrast())},
+    {"Font smoothing type", ustring::format("{}", forms::system_information::font_smoothing_type())},
+    //{"Frame border size", ustring::format("{}", forms::system_information::frame_border_size())},
+    //{"High contrast", ustring::format("{}", forms::system_information::high_contrast())},
+    //{"Horizontal focus thickness", ustring::format("{}", forms::system_information::horizontal_focus_thickness())},
+    //{"Horizontal resize border thickness", ustring::format("{}", forms::system_information::horizontal_resize_border_thickness())},
+    //{"Horizontal scroll bar arrow width", ustring::format("{}", forms::system_information::horizontal_scroll_bar_arrow_width())},
+    {"Horizontal scroll bar height", ustring::format("{}", forms::system_information::horizontal_scroll_bar_height())},
+    //{"Horizontal scroll bar bhumb width", ustring::format("{}", forms::system_information::horizontal_scroll_bar_bhumb_width())},
+    //{"icon_horizontal_spacing", ustring::format("{}", forms::system_information::icon_horizontal_spacing())},
+    //{"Active", ustring::format("{}", forms::system_information::active_window_tracking_delay())},
   };
 }
 

@@ -101,7 +101,7 @@ namespace xtd {
       /// The following code example gets this property and displays its value in a text box. The example requires that textBox1 has been placed on a form.
       /// @code
       /// void PrintCompanyName() {
-      ///   textBox1.Text(xtd;;strings::format("The company name is: {0}", application::company_name);
+      ///   textBox1.Text(xtd::ustring::format("The company name is: {0}", application::company_name);
       /// }
       /// @endcode
       static xtd::ustring company_name();

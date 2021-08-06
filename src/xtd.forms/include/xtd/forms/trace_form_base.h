@@ -115,7 +115,7 @@ namespace xtd {
       /// @param trace A string to write.
       virtual void write_header() {
         auto now =  std::chrono::system_clock::now();
-        text_.append_text(xtd::strings::format(format_, now, (std::chrono::duration_cast<std::chrono::microseconds>(now.time_since_epoch())).count() % 1000000, header_separator_));
+        text_.append_text(xtd::ustring::format(format_, now, (std::chrono::duration_cast<std::chrono::microseconds>(now.time_since_epoch())).count() % 1000000, header_separator_));
         need_header_ = false;
       }
       

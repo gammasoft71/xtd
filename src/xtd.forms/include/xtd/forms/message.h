@@ -95,7 +95,7 @@ namespace xtd {
       type get_lparam() { return reinterpret_cast<type>(lparam_); }
       
       /// @brief Returns a string that represents the current message.
-      /// @return A std::string that represents the current message.
+      /// @return A xtd::ustring that represents the current message.
       xtd::ustring to_string() const noexcept override;
       
       /// @cond

@@ -3,7 +3,6 @@
 #include <xtd/forms/native/menu_item.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_exception.h>
-#include <xtd/strings.h>
 #include "../../../include/xtd/forms/menu.h"
 #include "../../../include/xtd/forms/context_menu.h"
 #include "../../../include/xtd/forms/main_menu.h"

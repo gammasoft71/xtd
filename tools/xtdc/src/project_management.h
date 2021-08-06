@@ -90,64 +90,64 @@ namespace xtdc_command {
       if (std::find(languages.begin(), languages.end(), language) == languages.end()) return "The language param not valid with sdk param! Add project aborted.";
       if (is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} already exists and not empty! Add project aborted.", path_);
       if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return "Set your CMAKE_PREFIX_PATH environment variable to the Qt 5 installation prefix! Add project aborted.";
-      if (!std::filesystem::exists(path_.parent_path()/"CMakeLists.txt")) return xtd::strings::format("Parent directory \"{}\", is not a known project! Add project aborted.", path_.parent_path().string());
+      if (!std::filesystem::exists(path_.parent_path()/"CMakeLists.txt")) return xtd::ustring::format("Parent directory \"{}\", is not a known project! Add project aborted.", path_.parent_path().string());
       auto lines  = xtd::io::file::read_all_lines((path_.parent_path()/"CMakeLists.txt").string());
       if (std::find_if(lines.begin(), lines.end(), [](const std::string& value) {return xtd::strings::contains(value, "find_package(xtd");}) != lines.end() && sdk != project_sdk::xtd) return "The sdk param not valid with current project sdk! Add project aborted.";
       if (std::find_if(lines.begin(), lines.end(), [](const std::string& value) {return xtd::strings::contains(value, "find_package(xtd");}) == lines.end() && sdk == project_sdk::xtd) return "The sdk param not valid with current project sdk! Add project aborted.";
      
-      lines.push_back(xtd::strings::format("{}({})", std::find_if(lines.begin(), lines.end(), [](const std::string& value) {return xtd::strings::contains(value, "find_package(xtd");}) != lines.end() ? "add_projects" : "add_subdirectory", path_.stem().string()));
+      lines.push_back(xtd::ustring::format("{}({})", std::find_if(lines.begin(), lines.end(), [](const std::string& value) {return xtd::strings::contains(value, "find_package(xtd");}) != lines.end() ? "add_projects" : "add_subdirectory", path_.stem().string()));
       std::map<project_type, xtd::action<const std::string&, project_sdk, project_language, bool>> {{project_type::blank_solution, {*this, &project_management::create_blank_solution}}, {project_type::console, {*this, &project_management::create_console}}, {project_type::gui, {*this, &project_management::create_gui}}, {project_type::shared_library, {*this, &project_management::create_shared_library}}, {project_type::static_library, {*this, &project_management::create_static_library}}, {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}}[type](name, sdk, language, false);
       auto project_path = path_;
       path_ = path_.parent_path();
       xtd::io::file::write_all_lines((path_/"CMakeLists.txt").string(), lines);
       generate(name);
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Add project aborted.";
-      return xtd::strings::format("Project {} added", project_path);
+      return xtd::ustring::format("Project {} added", project_path);
     }
     
     std::string build(const std::string& target, bool clean_first, bool release) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {} does not exists or is empty! Build project aborted.", path_);
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Build project aborted.", path_);
       if (clean_first) clean(release);
       else generate();
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Build project aborted.";
       change_current_directory current_directory {xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path()};
       if (xtd::environment::os_version().is_windows_platform() || xtd::environment::os_version().is_macos_platform())
-        launch_and_wait_process("cmake", xtd::strings::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::strings::format(" --target {}", target), clean_first ? " --clean-first {}" : ""));
+        launch_and_wait_process("cmake", xtd::ustring::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::ustring::format(" --target {}", target), clean_first ? " --clean-first {}" : ""));
       else
-        launch_and_wait_process("cmake", xtd::strings::format("--build {}{}", build_path()/(release ? "Release" : "Debug"), target.empty() ? "" : xtd::strings::format(" --target {}", target), clean_first ? " --clean-first {}" : ""));
+        launch_and_wait_process("cmake", xtd::ustring::format("--build {}{}", build_path()/(release ? "Release" : "Debug"), target.empty() ? "" : xtd::ustring::format(" --target {}", target), clean_first ? " --clean-first {}" : ""));
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Build project aborted.";
-      return xtd::strings::format("Project {} builded", path_);
+      return xtd::ustring::format("Project {} builded", path_);
     }
 
     std::string clean(bool release) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {} does not exists or is empty! Clean project aborted.", path_);
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Clean project aborted.", path_);
       std::filesystem::remove_all(xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path());
       generate();
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Clean project aborted.";
-      return xtd::strings::format("Project {} cleaned", path_);
+      return xtd::ustring::format("Project {} cleaned", path_);
     }
     
     std::string install(bool release) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {} does not exists or is empty! Install project aborted.", path_);
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Install project aborted.", path_);
       change_current_directory current_directory {xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path()};
       build("install", false, release);
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Install project aborted.";
-      return xtd::strings::format("Project {} installed", path_);
+      return xtd::ustring::format("Project {} installed", path_);
     }
     
     std::string open(bool release) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {} does not exists or is empty! Open project aborted.", path_);
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Open project aborted.", path_);
       change_current_directory current_directory {xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path()};
       generate();
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Open project aborted.";
-      if (xtd::environment::os_version().is_windows_platform()) launch_and_wait_process(xtd::strings::format("{}.sln", (build_path()/get_name()).string()), true);
-      else if (xtd::environment::os_version().is_macos_platform()) launch_and_wait_process(xtd::strings::format("{}.xcodeproj", (build_path()/get_name()).string()), true);
-      else launch_and_wait_process(xtd::strings::format("{}.cbp", (build_path()/(release ? "Release" : "Debug")/get_name()).string()), true);
-      return xtd::strings::format("Project {} opened", get_name());
+      if (xtd::environment::os_version().is_windows_platform()) launch_and_wait_process(xtd::ustring::format("{}.sln", (build_path()/get_name()).string()), true);
+      else if (xtd::environment::os_version().is_macos_platform()) launch_and_wait_process(xtd::ustring::format("{}.xcodeproj", (build_path()/get_name()).string()), true);
+      else launch_and_wait_process(xtd::ustring::format("{}.cbp", (build_path()/(release ? "Release" : "Debug")/get_name()).string()), true);
+      return xtd::ustring::format("Project {} opened", get_name());
     }
 
     std::string update(const std::string& target) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {} does not exists or is empty! Update project aborted.", path_);
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Update project aborted.", path_);
       change_current_directory current_directory {build_path()};
       generate(target);
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Update project aborted.";
@@ -155,7 +155,7 @@ namespace xtdc_command {
     }
 
     std::string run(const std::string& target, bool release) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {} does not exists or is empty! Run project aborted.", path_);
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Run project aborted.", path_);
       build(target, false, release);
       change_current_directory current_directory {xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path()};
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Run project aborted.";
@@ -183,13 +183,13 @@ namespace xtdc_command {
       change_current_directory current_directory {xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path()};
       build("", false, release);
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Test project aborted.";
-      launch_and_wait_process("ctest", xtd::strings::format("--output-on-failure --build-config {}", release ? "release" : "debug"));
-      return xtd::strings::format("Project {} tested", path_);
+      launch_and_wait_process("ctest", xtd::ustring::format("--output-on-failure --build-config {}", release ? "release" : "debug"));
+      return xtd::ustring::format("Project {} tested", path_);
     }
     
     std::string uninstall(bool release) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {} does not exists or is empty! Uninstall project aborted.", path_);
-      if (!std::filesystem::exists((xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path())/"install_manifest.txt")) return xtd::strings::format("File {} does not exists! Uninstall project aborted.", ((xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path())/"install_manifest.txt").string());
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Uninstall project aborted.", path_);
+      if (!std::filesystem::exists((xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path())/"install_manifest.txt")) return xtd::ustring::format("File {} does not exists! Uninstall project aborted.", ((xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path())/"install_manifest.txt").string());
       change_current_directory current_directory {xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path()};
       
       std::filesystem::path app_path;
@@ -202,7 +202,7 @@ namespace xtdc_command {
       
       std::filesystem::remove((xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path())/"install_manifest.txt");
       if (!app_path.empty()) std::filesystem::remove_all(app_path);
-      return xtd::strings::format("Project {} uninstalled", path_);
+      return xtd::ustring::format("Project {} uninstalled", path_);
     }
 
   private:
@@ -228,7 +228,7 @@ namespace xtdc_command {
     
     std::string get_target_path(const std::string& target, bool release) const {
       for (const auto& line : get_system_information())
-        if (line.starts_with(xtd::strings::format("{}_BINARY_DIR:STATIC=", target)))
+        if (line.starts_with(xtd::ustring::format("{}_BINARY_DIR:STATIC=", target)))
           return make_platform_target_path({std::string(line.replace(xtd::ustring::format("{}_BINARY_DIR:STATIC=", target), ""))}, target, release);
       return (build_path()/(release ? "Release" : "Debug")/target/target).string();
     }
@@ -242,10 +242,10 @@ namespace xtdc_command {
     }
     
     std::string make_platform_target_path(const std::filesystem::path& path, const std::string& target, bool release) const {
-      if (xtd::environment::os_version().is_windows_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/xtd::strings::format("{}.exe", target)))
-        return (path/(release ? "Release" : "Debug")/xtd::strings::format("{}.exe", target)).string();
-      else if (xtd::environment::os_version().is_macos_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/xtd::strings::format("{}.app", target)))
-        return (path/(release ? "Release" : "Debug")/xtd::strings::format("{}.app", target)).string();
+      if (xtd::environment::os_version().is_windows_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/xtd::ustring::format("{}.exe", target)))
+        return (path/(release ? "Release" : "Debug")/xtd::ustring::format("{}.exe", target)).string();
+      else if (xtd::environment::os_version().is_macos_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/xtd::ustring::format("{}.app", target)))
+        return (path/(release ? "Release" : "Debug")/xtd::ustring::format("{}.app", target)).string();
       else if (xtd::environment::os_version().is_macos_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/target))
         return (path/(release ? "Release" : "Debug")/target).string();
       else if (xtd::environment::os_version().is_linux_platform() && std::filesystem::exists(path/target))
@@ -263,7 +263,7 @@ namespace xtdc_command {
     
     bool is_linux_gui_app(const std::filesystem::path& path) const {
       if (!std::filesystem::exists(path)) return false;
-      auto lines = xtd::io::file::read_all_lines((std::filesystem::path(std::string(xtd::environment::get_folder_path(xtd::environment::special_folder::home)))/".local"/"share"/"applications"/xtd::strings::format("{}.desktop", path.filename())).string());
+      auto lines = xtd::io::file::read_all_lines((std::filesystem::path(std::string(xtd::environment::get_folder_path(xtd::environment::special_folder::home)))/".local"/"share"/"applications"/xtd::ustring::format("{}.desktop", path.filename())).string());
       for (auto line : lines)
         if (line.to_lower() == "terminael=false") return true;
       return false;
@@ -284,7 +284,7 @@ namespace xtdc_command {
       if (system_information.size() == 0) {
         if (!std::filesystem::exists(build_path()/"xtd_si.txt")) {
           change_current_directory current_directory {build_path().string()};
-          launch_and_wait_process("cmake", xtd::strings::format("--system-information xtd_si.txt"));
+          launch_and_wait_process("cmake", xtd::ustring::format("--system-information xtd_si.txt"));
         }
         system_information = xtd::io::file::read_all_lines((build_path()/"xtd_si.txt").string());
       }
@@ -308,7 +308,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
+        xtd::ustring::format("project({})", name),
         "",
         "# Install",
         "install_package()",
@@ -327,7 +327,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
+        xtd::ustring::format("project({})", name),
         "find_package(xtd REQUIRED)",
         "",
         "# Install",
@@ -357,8 +357,8 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
-        xtd::strings::format("add_subdirectory({})", name)
+        xtd::ustring::format("project({})", name),
+        xtd::ustring::format("add_subdirectory({})", name)
       };
       xtd::io::file::write_all_lines((path_/"CMakeLists.txt").string(), lines);
     }
@@ -368,7 +368,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Project",
-        xtd::strings::format("project({} VERSION 1.0.0)", name),
+        xtd::ustring::format("project({} VERSION 1.0.0)", name),
         "set(SOURCES",
         "  src/program.c",
         ")",
@@ -383,18 +383,18 @@ namespace xtdc_command {
         "add_executable(${PROJECT_NAME} ${SOURCES})",
         "",
         "# Install",
-        xtd::strings::format("install(DIRECTORY include/. DESTINATION include/{})", name),
-        xtd::strings::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name),
+        xtd::ustring::format("install(DIRECTORY include/. DESTINATION include/{})", name),
+        xtd::ustring::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name),
         "  \"include(CMakeFindDependencyMacro)\\n\"",
         "  \"include(\\\"\\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\\\")\\n\"",
         "  \"\\n\"",
-        xtd::strings::format("  \"get_filename_component({}_INCLUDE_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../include\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
-        xtd::strings::format("  \"get_filename_component({}_LIBRARIES_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../lib\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::ustring::format("  \"get_filename_component({}_INCLUDE_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../include\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::ustring::format("  \"get_filename_component({}_LIBRARIES_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../lib\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
         "  \"\\n\"",
-        xtd::strings::format("  \"set({}_LIBRARIES {})\\n\"", xtd::strings::to_upper(name), name),
-        xtd::strings::format("  \"set({}_FOUND TRUE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::ustring::format("  \"set({}_LIBRARIES {})\\n\"", xtd::strings::to_upper(name), name),
+        xtd::ustring::format("  \"set({}_FOUND TRUE)\\n\"", xtd::strings::to_upper(name)),
         ")",
-        xtd::strings::format("install(FILES ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake DESTINATION cmake)", name),
+        xtd::ustring::format("install(FILES ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake DESTINATION cmake)", name),
         "install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb DESTINATION bin CONFIGURATIONS Debug OPTIONAL)",
         "install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb DESTINATION bin CONFIGURATIONS Release OPTIONAL)",
         "install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME} DESTINATION bin)",
@@ -429,8 +429,8 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
-        xtd::strings::format("add_subdirectory({})", name)
+        xtd::ustring::format("project({})", name),
+        xtd::ustring::format("add_subdirectory({})", name)
       };
       xtd::io::file::write_all_lines((path_/"CMakeLists.txt").string(), lines);
     }
@@ -440,7 +440,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Project",
-        xtd::strings::format("project({} VERSION 1.0.0)", name),
+        xtd::ustring::format("project({} VERSION 1.0.0)", name),
         "set(SOURCES",
         "  src/program.cpp",
         ")",
@@ -485,8 +485,8 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
-        xtd::strings::format("add_subdirectory({})", name)
+        xtd::ustring::format("project({})", name),
+        xtd::ustring::format("add_subdirectory({})", name)
       };
       xtd::io::file::write_all_lines((path_/"CMakeLists.txt").string(), lines);
     }
@@ -496,7 +496,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({} VERSION 1.0.0 LANGUAGES CSharp)", name),
+        xtd::ustring::format("project({} VERSION 1.0.0 LANGUAGES CSharp)", name),
         "include(CSharpUtilities)",
         "set(SOURCES",
         "  src/Program.cs",
@@ -520,7 +520,7 @@ namespace xtdc_command {
         "using System;",
         "",
         "/// @brief Represents the namespace that contains application objects.",
-        xtd::strings::format("namespace {} {{", name),
+        xtd::ustring::format("namespace {} {{", name),
         "  /// @brief Represents the main class.",
         "  class Program {",
         "    /// @brief The main entry point for the application.",
@@ -546,8 +546,8 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
-        xtd::strings::format("add_subdirectory({})", name)
+        xtd::ustring::format("project({})", name),
+        xtd::ustring::format("add_subdirectory({})", name)
       };
       xtd::io::file::write_all_lines((path_/"CMakeLists.txt").string(), lines);
     }
@@ -557,7 +557,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({} VERSION 1.0.0)", name),
+        xtd::ustring::format("project({} VERSION 1.0.0)", name),
         "set(SOURCES",
         "  src/Program.m",
         ")",
@@ -604,10 +604,10 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
+        xtd::ustring::format("project({})", name),
         "find_package(xtd REQUIRED)",
         "add_projects(",
-        xtd::strings::format("  {}", name),
+        xtd::ustring::format("  {}", name),
         ")",
         "",
         "# Install",
@@ -618,9 +618,9 @@ namespace xtdc_command {
     
     void create_xtd_console_application_properties(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines{
-        xtd::strings::format("target_default_namespace(\"{}\")", name),
-        xtd::strings::format("target_name(\"{}\")", name),
-        xtd::strings::format("target_startup(\"{}::program\" src/program.h)", name),
+        xtd::ustring::format("target_default_namespace(\"{}\")", name),
+        xtd::ustring::format("target_name(\"{}\")", name),
+        xtd::ustring::format("target_startup(\"{}::program\" src/program.h)", name),
       };
       
       xtd::io::file::write_all_lines((path/"properties"/"target_properties.cmake").string(), lines);
@@ -631,7 +631,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Project",
-        xtd::strings::format("project({})", name),
+        xtd::ustring::format("project({})", name),
         "find_package(xtd REQUIRED)",
         "add_sources(",
         "  src/program.h",
@@ -655,7 +655,7 @@ namespace xtdc_command {
         "#include <vector>",
         "",
         "/// @brief Represents the namespace that contains application objects.",
-        xtd::strings::format("namespace {} {{", name),
+        xtd::ustring::format("namespace {} {{", name),
         "  /// @brief Represents the main class.",
         "  class program {",
         "  public:",
@@ -675,7 +675,7 @@ namespace xtdc_command {
         "",
         "using namespace std;",
         "using namespace xtd;",
-        xtd::strings::format("using namespace {};", name),
+        xtd::ustring::format("using namespace {};", name),
         "",
         "void program::main(const vector<string>& args) {",
         "  console::write_line(\"Hello, World!\");",
@@ -703,8 +703,8 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
-        xtd::strings::format("add_subdirectory({})", name)
+        xtd::ustring::format("project({})", name),
+        xtd::ustring::format("add_subdirectory({})", name)
       };
       xtd::io::file::write_all_lines((path_/"CMakeLists.txt").string(), lines);
     }
@@ -714,7 +714,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({} VERSION 1.0.0)", name),
+        xtd::ustring::format("project({} VERSION 1.0.0)", name),
         "set(SOURCES",
         "  src/Window1.h",
         "  src/Window1.m",
@@ -725,9 +725,9 @@ namespace xtdc_command {
         "# Options",
         "set(CMAKE_EXE_LINKER_FLAGS \"${CMAKE_EXE_LINKER_FLAGS} -framework Cocoa\")",
         "set(MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION})",
-        xtd::strings::format("set(MACOSX_BUNDLE_COPYRIGHT \"Copyright © {:L}\")", std::chrono::system_clock::now()),
-        xtd::strings::format("set(MACOSX_BUNDLE_INFO_STRING \"{} application\")", name),
-        xtd::strings::format("set(MACOSX_BUNDLE_GUI_IDENTIFIER \"org.Company.{}\")", name),
+        xtd::ustring::format("set(MACOSX_BUNDLE_COPYRIGHT \"Copyright © {:L}\")", std::chrono::system_clock::now()),
+        xtd::ustring::format("set(MACOSX_BUNDLE_INFO_STRING \"{} application\")", name),
+        xtd::ustring::format("set(MACOSX_BUNDLE_GUI_IDENTIFIER \"org.Company.{}\")", name),
         "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
         "",
         "# Application properties",
@@ -806,8 +806,8 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
-        xtd::strings::format("add_subdirectory({})", name)
+        xtd::ustring::format("project({})", name),
+        xtd::ustring::format("add_subdirectory({})", name)
       };
       xtd::io::file::write_all_lines((path_/"CMakeLists.txt).string()").string(), lines);
     }
@@ -817,7 +817,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({} VERSION 1.0.0)", name),
+        xtd::ustring::format("project({} VERSION 1.0.0)", name),
         "set(SOURCES",
         "  src/Window1.h",
         "  src/Window1.cpp",
@@ -847,7 +847,7 @@ namespace xtdc_command {
         "#pragma once",
         "#include <FL/Fl_Window.H>",
         "",
-        xtd::strings::format("namespace {} {{", name),
+        xtd::ustring::format("namespace {} {{", name),
         "  /// @brief Represent the main window",
         "  class Window1 : public Fl_Window {",
         "  public:",
@@ -864,7 +864,7 @@ namespace xtdc_command {
       std::vector<std::string> lines {
         "#include \"Window1.h\"",
         "",
-        xtd::strings::format("using namespace {};", name),
+        xtd::ustring::format("using namespace {};", name),
         "",
         "Window1::Window1() : Fl_Window(100, 100, 800, 450, \"Window1\") {",
         "}",
@@ -878,7 +878,7 @@ namespace xtdc_command {
         "#include \"Window1.h\"",
         "#include <FL/Fl.H>",
         "",
-        xtd::strings::format("using namespace {};", name),
+        xtd::ustring::format("using namespace {};", name),
         "",
         "// The main entry point for the application.",
         "int main(int argc, char* argv[]) {",
@@ -903,8 +903,8 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
-        xtd::strings::format("add_subdirectory({})", name)
+        xtd::ustring::format("project({})", name),
+        xtd::ustring::format("add_subdirectory({})", name)
       };
       xtd::io::file::write_all_lines((path_/"CMakeLists.txt").string(), lines);
     }
@@ -914,7 +914,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({} VERSION 1.0.0)", name),
+        xtd::ustring::format("project({} VERSION 1.0.0)", name),
         "set(SOURCES",
         "  src/program.c",
         ")",
@@ -969,8 +969,8 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
-        xtd::strings::format("add_subdirectory({})", name)
+        xtd::ustring::format("project({})", name),
+        xtd::ustring::format("add_subdirectory({})", name)
       };
       xtd::io::file::write_all_lines((path_/"CMakeLists.txt").string(), lines);
     }
@@ -980,7 +980,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({} VERSION 1.0.0)", name),
+        xtd::ustring::format("project({} VERSION 1.0.0)", name),
         "set(SOURCES",
         "  src/program.c",
         ")",
@@ -1037,8 +1037,8 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
-        xtd::strings::format("add_subdirectory({})", name)
+        xtd::ustring::format("project({})", name),
+        xtd::ustring::format("add_subdirectory({})", name)
       };
       xtd::io::file::write_all_lines((path_/"CMakeLists.txt").string(), lines);
     }
@@ -1048,7 +1048,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({} VERSION 1.0.0)", name),
+        xtd::ustring::format("project({} VERSION 1.0.0)", name),
         "set(SOURCES",
         "  src/Window1.h",
         "  src/Window1.cpp",
@@ -1079,7 +1079,7 @@ namespace xtdc_command {
         "/// @brief Contains Window1 class.",
         "#include <gtkmm.h>",
         "",
-        xtd::strings::format("namespace {} {{", name),
+        xtd::ustring::format("namespace {} {{", name),
         "  /// @brief Represent the main window",
         "  class Window1 : public Gtk::Window {",
         "  public:",
@@ -1097,7 +1097,7 @@ namespace xtdc_command {
         "#include \"Window1.h\"",
         "",
         "using namespace Gtk;",
-        xtd::strings::format("using namespace {};", name),
+        xtd::ustring::format("using namespace {};", name),
         "",
         "Window1::Window1() {",
         "  set_title(\"Window1\");",
@@ -1106,7 +1106,7 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines((path/"src"/xtd::strings::format("{}.cpp", name)).string(), lines);
+      xtd::io::file::write_all_lines((path/"src"/xtd::ustring::format("{}.cpp", name)).string(), lines);
     }
     
     void create_gtkmm_gui_main(const std::string& name, const std::filesystem::path& path) const {
@@ -1114,12 +1114,12 @@ namespace xtdc_command {
         "#include \"Window1.h\"",
         "",
         "using namespace Gtk;",
-        xtd::strings::format("using namespace {};", name),
+        xtd::ustring::format("using namespace {};", name),
         "",
         "// The main entry point for the application.",
         "int main(int argc, char* argv[]) {",
         "  auto application = Application::create(argc, argv);",
-        xtd::strings::format("  {}::Window1 window1;", name),
+        xtd::ustring::format("  {}::Window1 window1;", name),
         "  window1.show_all();",
         "  return application->run(window1);",
         "}",
@@ -1146,8 +1146,8 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
-        xtd::strings::format("add_subdirectory({})", name)
+        xtd::ustring::format("project({})", name),
+        xtd::ustring::format("add_subdirectory({})", name)
       };
       xtd::io::file::write_all_lines((path_/"CMakeLists.txt").string(), lines);
     }
@@ -1155,9 +1155,9 @@ namespace xtdc_command {
     void create_qt5_gui_solution_qmake_pro(const std::string& name) const {
       std::vector<std::string> lines {
         "TEMPLATE = subdirs",
-        xtd::strings::format("SUBDIRS = {}", name),
+        xtd::ustring::format("SUBDIRS = {}", name),
       };
-      xtd::io::file::write_all_lines((path_/xtd::strings::format("{}.pro", name)).string(), lines);
+      xtd::io::file::write_all_lines((path_/xtd::ustring::format("{}.pro", name)).string(), lines);
     }
 
     void create_qt5_gui_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
@@ -1165,7 +1165,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({} VERSION 1.0.0)", name),
+        xtd::ustring::format("project({} VERSION 1.0.0)", name),
         "set(SOURCES",
         "  src/Window1.h",
         "  src/Window1.cpp",
@@ -1198,7 +1198,7 @@ namespace xtdc_command {
         "SOURCES = src/Window1.cpp src/Program.cpp",
       };
       
-      xtd::io::file::write_all_lines((path/xtd::strings::format("{}.pro", name)).string(), lines);
+      xtd::io::file::write_all_lines((path/xtd::ustring::format("{}.pro", name)).string(), lines);
     }
 
     void create_qt5_gui_include(const std::string& name, const std::filesystem::path& path) const {
@@ -1208,7 +1208,7 @@ namespace xtdc_command {
         "#pragma once",
         "#include <QMainWindow>",
         "",
-        xtd::strings::format("namespace {} {{", name),
+        xtd::ustring::format("namespace {} {{", name),
         "  /// @brief Represent the main window",
         "  class Window1 : public QMainWindow {",
         "    Q_OBJECT",
@@ -1226,7 +1226,7 @@ namespace xtdc_command {
       std::vector<std::string> lines {
         "#include \"Window1.h\"",
         "",
-        xtd::strings::format("using namespace {};", name),
+        xtd::ustring::format("using namespace {};", name),
         "",
         "Window1::Window1() {",
         "  setWindowTitle(\"Window1\");",
@@ -1243,7 +1243,7 @@ namespace xtdc_command {
         "#include \"Window1.h\"",
         "#include <QApplication>",
         "",
-        xtd::strings::format("using namespace {};", name),
+        xtd::ustring::format("using namespace {};", name),
         "",
         "// The main entry point for the application.",
         "int main(int argc, char* argv[]) {",
@@ -1269,8 +1269,8 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
-        xtd::strings::format("add_subdirectory({})", name)
+        xtd::ustring::format("project({})", name),
+        xtd::ustring::format("add_subdirectory({})", name)
       };
       xtd::io::file::write_all_lines((path_/"CMakeLists.txt").string(), lines);
     }
@@ -1280,7 +1280,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({} VERSION 1.0.0)", name),
+        xtd::ustring::format("project({} VERSION 1.0.0)", name),
         "set(SOURCES",
         "  src/Program.c",
         ")",
@@ -1342,8 +1342,8 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
-        xtd::strings::format("add_subdirectory({})", name)
+        xtd::ustring::format("project({})", name),
+        xtd::ustring::format("add_subdirectory({})", name)
       };
       xtd::io::file::write_all_lines((path_/"CMakeLists.txt").string(), lines);
     }
@@ -1353,7 +1353,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({} VERSION 1.0.0 LANGUAGES CSharp)", name),
+        xtd::ustring::format("project({} VERSION 1.0.0 LANGUAGES CSharp)", name),
         "include(CSharpUtilities)",
         "set(SOURCES",
         "  src/Program.cs",
@@ -1385,7 +1385,7 @@ namespace xtdc_command {
         "using System.Windows.Forms;",
         "",
         "/// @brief Represents the namespace that contains application objects.",
-        xtd::strings::format("namespace {} {{", name),
+        xtd::ustring::format("namespace {} {{", name),
         "  /// @brief Represents the Form1 class.",
         "  class Form1 : Form {",
         "    /// @brief Initializes a new instance of the Form1 class.",
@@ -1423,8 +1423,8 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
-        xtd::strings::format("add_subdirectory({})", name)
+        xtd::ustring::format("project({})", name),
+        xtd::ustring::format("add_subdirectory({})", name)
       };
       xtd::io::file::write_all_lines((path_/"CMakeLists.txt").string(), lines);
     }
@@ -1434,7 +1434,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({} VERSION 1.0.0 LANGUAGES CSharp)", name),
+        xtd::ustring::format("project({} VERSION 1.0.0 LANGUAGES CSharp)", name),
         "include(CSharpUtilities)",
         "set(SOURCES",
         "  src/App.config",
@@ -1476,7 +1476,7 @@ namespace xtdc_command {
       std::vector<std::string> lines {
         "using System.Windows;",
         "",
-        xtd::strings::format("namespace {} {{", name),
+        xtd::ustring::format("namespace {} {{", name),
         "  public partial class Window1 : Window {",
         "    public Window1() {",
         "      InitializeComponent();",
@@ -1489,12 +1489,12 @@ namespace xtdc_command {
       
     void create_wpf_gui_window1_xaml(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
-        xtd::strings::format("<Window x:Class=\"{}.Window1\"", name),
+        xtd::ustring::format("<Window x:Class=\"{}.Window1\"", name),
         "        xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"",
         "        xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"",
         "        xmlns:d=\"http://schemas.microsoft.com/expression/blend/2008\"",
         "        xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\"",
-        xtd::strings::format("        xmlns:local=\"clr-namespace:{}\"", name),
+        xtd::ustring::format("        xmlns:local=\"clr-namespace:{}\"", name),
         "        mc:Ignorable=\"d\"",
         "        Title=\"Window1\" Height=\"450\" Width=\"800\">",
         "    <Grid>",
@@ -1522,7 +1522,7 @@ namespace xtdc_command {
       std::vector<std::string> lines {
         "using System.Windows;",
         "",
-        xtd::strings::format("namespace {} {{", name),
+        xtd::ustring::format("namespace {} {{", name),
         "  public partial class App : Application {",
         "  }",
         "}",
@@ -1532,10 +1532,10 @@ namespace xtdc_command {
 
     void create_wpf_gui_application_xaml(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
-        xtd::strings::format("<Application x:Class=\"{}.App\"", name),
+        xtd::ustring::format("<Application x:Class=\"{}.App\"", name),
         "        xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"",
         "        xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"",
-        xtd::strings::format("    xmlns:local=\"clr-namespace:{}\"", name),
+        xtd::ustring::format("    xmlns:local=\"clr-namespace:{}\"", name),
         "        StartupUri=\"src\\Window1.xaml\">",
         "    <Application.Resources>",
         "",
@@ -1560,8 +1560,8 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
-        xtd::strings::format("add_subdirectory({})", name)
+        xtd::ustring::format("project({})", name),
+        xtd::ustring::format("add_subdirectory({})", name)
       };
       xtd::io::file::write_all_lines((path_/"CMakeLists.txt").string(), lines);
     }
@@ -1571,7 +1571,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({} VERSION 1.0.0)", name),
+        xtd::ustring::format("project({} VERSION 1.0.0)", name),
         "set(SOURCES",
         "  src/Frame1.h",
         "  src/Frame1.cpp",
@@ -1601,7 +1601,7 @@ namespace xtdc_command {
         "#pragma once",
         "#include <wx/frame.h>",
         "",
-        xtd::strings::format("namespace {} {{", name),
+        xtd::ustring::format("namespace {} {{", name),
         "  /// @brief Represent the main window",
         "  class Frame1 : public wxFrame {",
         "  public:",
@@ -1618,7 +1618,7 @@ namespace xtdc_command {
       std::vector<std::string> lines {
         "#include \"Frame1.h\"",
         "",
-        xtd::strings::format("using namespace {};", name),
+        xtd::ustring::format("using namespace {};", name),
         "",
         "Frame1::Frame1() : wxFrame(nullptr, wxID_ANY, \"Frame1\", wxDefaultPosition, {800, 450}) {",
         "}",
@@ -1632,7 +1632,7 @@ namespace xtdc_command {
         "#include \"Frame1.h\"",
         "#include <wx/app.h>",
         "",
-        xtd::strings::format("namespace {} {{", name),
+        xtd::ustring::format("namespace {} {{", name),
         "  // Represent the application",
         "  class Application : public wxApp {",
         "    bool OnInit() override {",
@@ -1643,7 +1643,7 @@ namespace xtdc_command {
         "}",
         "",
         "// The main entry point for the application.",
-        xtd::strings::format("wxIMPLEMENT_APP({}::Application);", name),
+        xtd::ustring::format("wxIMPLEMENT_APP({}::Application);", name),
       };
       
       xtd::io::file::write_all_lines((path/"src"/"Program.cpp").string(), lines);
@@ -1653,9 +1653,9 @@ namespace xtdc_command {
       std::filesystem::create_directories(create_solution ? path_/name/"properties" : path_/"properties");
       std::filesystem::create_directories(create_solution ? path_/name/"resources" : path_/"resources");
       std::filesystem::create_directories(create_solution ? path_/name/"src" : path_/"src");
-      std::filesystem::copy(get_base_path()/"share"/"xtd"/"resources"/"icons"/"xtd_forms.icns", path_/(create_solution ? name : "" )/"resources"/xtd::strings::format("{}.icns", name));
-      std::filesystem::copy(get_base_path()/"share"/"xtd"/"resources"/"icons"/"xtd_forms.ico", path_/(create_solution ? name : "" )/"resources"/xtd::strings::format("{}.ico", name));
-      std::filesystem::copy(get_base_path()/"share"/"xtd"/"resources"/"icons"/"xtd_forms.png", path_/(create_solution ? name : "" )/"resources"/xtd::strings::format("{}.png", name));
+      std::filesystem::copy(get_base_path()/"share"/"xtd"/"resources"/"icons"/"xtd_forms.icns", path_/(create_solution ? name : "" )/"resources"/xtd::ustring::format("{}.icns", name));
+      std::filesystem::copy(get_base_path()/"share"/"xtd"/"resources"/"icons"/"xtd_forms.ico", path_/(create_solution ? name : "" )/"resources"/xtd::ustring::format("{}.ico", name));
+      std::filesystem::copy(get_base_path()/"share"/"xtd"/"resources"/"icons"/"xtd_forms.png", path_/(create_solution ? name : "" )/"resources"/xtd::ustring::format("{}.png", name));
       if (create_solution) create_xtd_gui_solution_cmakelists_txt(name);
       create_xtd_gui_application_properties(name, create_solution ? path_/name : path_);
       create_xtd_gui_cmakelists_txt(name, create_solution ? path_/name : path_);
@@ -1668,10 +1668,10 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
+        xtd::ustring::format("project({})", name),
         "find_package(xtd REQUIRED)",
         "add_projects(",
-        xtd::strings::format("  {}", name),
+        xtd::ustring::format("  {}", name),
         ")",
         "",
         "# Install",
@@ -1682,10 +1682,10 @@ namespace xtdc_command {
     
     void create_xtd_gui_application_properties(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines{
-        xtd::strings::format("target_default_namespace(\"{}\")", name),
-        xtd::strings::format("target_icon(resources/{})", name),
-        xtd::strings::format("target_name(\"{}\")", name),
-        xtd::strings::format("target_startup(\"{}::form1\" src/form1.h)", name),
+        xtd::ustring::format("target_default_namespace(\"{}\")", name),
+        xtd::ustring::format("target_icon(resources/{})", name),
+        xtd::ustring::format("target_name(\"{}\")", name),
+        xtd::ustring::format("target_startup(\"{}::form1\" src/form1.h)", name),
       };
       
       xtd::io::file::write_all_lines((path/"properties"/"target_properties.cmake").string(), lines);
@@ -1696,7 +1696,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Project",
-        xtd::strings::format("project({})", name),
+        xtd::ustring::format("project({})", name),
         "find_package(xtd REQUIRED)",
         "add_sources(",
         "  src/form1.h",
@@ -1719,7 +1719,7 @@ namespace xtdc_command {
         "#include <xtd/xtd.forms>",
         "",
         "/// @brief Represents the namespace that contains application objects.",
-        xtd::strings::format("namespace {} {{", name),
+        xtd::ustring::format("namespace {} {{", name),
         "  /// @brief Represents the main form.",
         "  class form1 : public xtd::forms::form {",
         "  public:",
@@ -1740,7 +1740,7 @@ namespace xtdc_command {
         "#include \"form1.h\"",
         "",
         "using namespace xtd::forms;",
-        xtd::strings::format("using namespace {};", name),
+        xtd::ustring::format("using namespace {};", name),
         "",
         "form1::form1() {",
         "  text(\"form1\");",
@@ -1777,8 +1777,8 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
-        xtd::strings::format("add_subdirectory({})", name)
+        xtd::ustring::format("project({})", name),
+        xtd::ustring::format("add_subdirectory({})", name)
       };
       xtd::io::file::write_all_lines((path_/"CMakeLists.txt").string(), lines);
     }
@@ -1788,7 +1788,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Project",
-        xtd::strings::format("project({} VERSION 1.0.0)", name),
+        xtd::ustring::format("project({} VERSION 1.0.0)", name),
         "set(INCLUDES",
         "  include/export.h",
         "  include/file1.h",
@@ -1803,25 +1803,25 @@ namespace xtdc_command {
         "set(CMAKE_C_STANDARD 11)",
         "set(CMAKE_C_STANDARD_REQUIRED ON)",
         "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
-        xtd::strings::format("add_definitions(-D{0}_EXPORT)", xtd::strings::to_upper(name)),
+        xtd::ustring::format("add_definitions(-D{0}_EXPORT)", xtd::strings::to_upper(name)),
         "",
         "# Application properties",
         "add_library(${PROJECT_NAME} SHARED ${INCLUDES} ${SOURCES})",
         "target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> $<INSTALL_INTERFACE:include>)",
         "",
         "# Install",
-        xtd::strings::format("install(DIRECTORY include/. DESTINATION include/{})", name),
-        xtd::strings::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name),
+        xtd::ustring::format("install(DIRECTORY include/. DESTINATION include/{})", name),
+        xtd::ustring::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name),
         "  \"include(CMakeFindDependencyMacro)\\n\"",
         "  \"include(\\\"\\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\\\")\\n\"",
         "  \"\\n\"",
-        xtd::strings::format("  \"get_filename_component({}_INCLUDE_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../include\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
-        xtd::strings::format("  \"get_filename_component({}_LIBRARIES_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../lib\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::ustring::format("  \"get_filename_component({}_INCLUDE_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../include\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::ustring::format("  \"get_filename_component({}_LIBRARIES_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../lib\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
         "  \"\\n\"",
-        xtd::strings::format("  \"set({}_LIBRARIES {})\\n\"", xtd::strings::to_upper(name), name),
-        xtd::strings::format("  \"set({}_FOUND TRUE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::ustring::format("  \"set({}_LIBRARIES {})\\n\"", xtd::strings::to_upper(name), name),
+        xtd::ustring::format("  \"set({}_FOUND TRUE)\\n\"", xtd::strings::to_upper(name)),
         ")",
-        xtd::strings::format("install(FILES ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake DESTINATION cmake)", name),
+        xtd::ustring::format("install(FILES ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake DESTINATION cmake)", name),
         "install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb DESTINATION lib CONFIGURATIONS Debug OPTIONAL)",
         "install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb DESTINATION lib CONFIGURATIONS Release OPTIONAL)",
         "install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME} DESTINATION lib)",
@@ -1843,7 +1843,7 @@ namespace xtdc_command {
         "/** ",
         " * @brief Represent do_stuff method.",
         " */",
-        xtd::strings::format("{}_export_ void do_stuff();", xtd::strings::to_lower(name)),
+        xtd::ustring::format("{}_export_ void do_stuff();", xtd::strings::to_lower(name)),
       };
       
       xtd::io::file::write_all_lines((path/"include"/"file1.h").string(), lines);
@@ -1859,16 +1859,16 @@ namespace xtdc_command {
         "",
         "/** @cond */",
         "#if defined(WIN32)",
-        xtd::strings::format("#  if defined({}_EXPORT)", xtd::strings::to_upper(name)),
-        xtd::strings::format("#    define {}_export_ __declspec(dllexport)", xtd::strings::to_lower(name)),
+        xtd::ustring::format("#  if defined({}_EXPORT)", xtd::strings::to_upper(name)),
+        xtd::ustring::format("#    define {}_export_ __declspec(dllexport)", xtd::strings::to_lower(name)),
         "#  else",
-        xtd::strings::format("#    define {}_export_ __declspec(dllimport)", xtd::strings::to_lower(name)),
+        xtd::ustring::format("#    define {}_export_ __declspec(dllimport)", xtd::strings::to_lower(name)),
         "#  endif",
         "#else",
-        xtd::strings::format("#  if defined({}_EXPORT)", xtd::strings::to_upper(name)),
-        xtd::strings::format("#    define {}_export_ __attribute__((visibility (\"default\")))", xtd::strings::to_lower(name)),
+        xtd::ustring::format("#  if defined({}_EXPORT)", xtd::strings::to_upper(name)),
+        xtd::ustring::format("#    define {}_export_ __attribute__((visibility (\"default\")))", xtd::strings::to_lower(name)),
         "#  else",
-        xtd::strings::format("#    define {}_export_", xtd::strings::to_lower(name)),
+        xtd::ustring::format("#    define {}_export_", xtd::strings::to_lower(name)),
         "#  endif",
         "#endif",
         "/** @endcond */",
@@ -1903,8 +1903,8 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
-        xtd::strings::format("add_subdirectory({})", name)
+        xtd::ustring::format("project({})", name),
+        xtd::ustring::format("add_subdirectory({})", name)
       };
       xtd::io::file::write_all_lines((path_/"CMakeLists.txt").string(), lines);
     }
@@ -1914,7 +1914,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Project",
-        xtd::strings::format("project({} VERSION 1.0.0)", name),
+        xtd::ustring::format("project({} VERSION 1.0.0)", name),
         "set(INCLUDES",
         "  include/class1.h",
         "  include/export.h",
@@ -1929,25 +1929,25 @@ namespace xtdc_command {
         "set(CMAKE_CXX_STANDARD 17)",
         "set(CMAKE_CXX_STANDARD_REQUIRED ON)",
         "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
-        xtd::strings::format("add_definitions(-D{0}_EXPORT)", xtd::strings::to_upper(name)),
+        xtd::ustring::format("add_definitions(-D{0}_EXPORT)", xtd::strings::to_upper(name)),
         "",
         "# Application properties",
         "add_library(${PROJECT_NAME} SHARED ${INCLUDES} ${SOURCES})",
         "target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> $<INSTALL_INTERFACE:include>)",
         "",
         "# Install",
-        xtd::strings::format("install(DIRECTORY include/. DESTINATION include/{})", name),
-        xtd::strings::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name),
+        xtd::ustring::format("install(DIRECTORY include/. DESTINATION include/{})", name),
+        xtd::ustring::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name),
         "  \"include(CMakeFindDependencyMacro)\\n\"",
         "  \"include(\\\"\\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\\\")\\n\"",
         "  \"\\n\"",
-        xtd::strings::format("  \"get_filename_component({}_INCLUDE_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../include\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
-        xtd::strings::format("  \"get_filename_component({}_LIBRARIES_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../lib\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::ustring::format("  \"get_filename_component({}_INCLUDE_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../include\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::ustring::format("  \"get_filename_component({}_LIBRARIES_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../lib\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
         "  \"\\n\"",
-        xtd::strings::format("  \"set({}_LIBRARIES {})\\n\"", xtd::strings::to_upper(name), name),
-        xtd::strings::format("  \"set({}_FOUND TRUE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::ustring::format("  \"set({}_LIBRARIES {})\\n\"", xtd::strings::to_upper(name), name),
+        xtd::ustring::format("  \"set({}_FOUND TRUE)\\n\"", xtd::strings::to_upper(name)),
         ")",
-        xtd::strings::format("install(FILES ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake DESTINATION cmake)", name),
+        xtd::ustring::format("install(FILES ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake DESTINATION cmake)", name),
         "install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb DESTINATION lib CONFIGURATIONS Debug OPTIONAL)",
         "install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb DESTINATION lib CONFIGURATIONS Release OPTIONAL)",
         "install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME} DESTINATION lib)",
@@ -1965,9 +1965,9 @@ namespace xtdc_command {
         "#include \"export.h\"",
         "",
         "/// @brief Represents the namespace that contains library objects.",
-        xtd::strings::format("namespace {} {{", name),
+        xtd::ustring::format("namespace {} {{", name),
         "  /// @brief Represents the class1 class.",
-        xtd::strings::format("  class {}_export_ class1 {{", xtd::strings::to_lower(name)),
+        xtd::ustring::format("  class {}_export_ class1 {{", xtd::strings::to_lower(name)),
         "  public:",
         "    /// @brief Initializes a new instance of the class1 class.",
         "    class1();",
@@ -1986,16 +1986,16 @@ namespace xtdc_command {
         "",
         "/// @cond",
         "#if defined(WIN32)",
-        xtd::strings::format("#  if defined({}_EXPORT)", xtd::strings::to_upper(name)),
-        xtd::strings::format("#    define {}_export_ __declspec(dllexport)", xtd::strings::to_lower(name)),
+        xtd::ustring::format("#  if defined({}_EXPORT)", xtd::strings::to_upper(name)),
+        xtd::ustring::format("#    define {}_export_ __declspec(dllexport)", xtd::strings::to_lower(name)),
         "#  else",
-        xtd::strings::format("#    define {}_export_ __declspec(dllimport)", xtd::strings::to_lower(name)),
+        xtd::ustring::format("#    define {}_export_ __declspec(dllimport)", xtd::strings::to_lower(name)),
         "#  endif",
         "#else",
-        xtd::strings::format("#  if defined({}_EXPORT)", xtd::strings::to_upper(name)),
-        xtd::strings::format("#    define {}_export_ __attribute__((visibility (\"default\")))", xtd::strings::to_lower(name)),
+        xtd::ustring::format("#  if defined({}_EXPORT)", xtd::strings::to_upper(name)),
+        xtd::ustring::format("#    define {}_export_ __attribute__((visibility (\"default\")))", xtd::strings::to_lower(name)),
         "#  else",
-        xtd::strings::format("#    define {}_export_", xtd::strings::to_lower(name)),
+        xtd::ustring::format("#    define {}_export_", xtd::strings::to_lower(name)),
         "#  endif",
         "#endif",
         "/// @endcond",
@@ -2008,7 +2008,7 @@ namespace xtdc_command {
       std::vector<std::string> lines {
         "#include \"../include/class1.h\"",
         "",
-        xtd::strings::format("using namespace {};", name),
+        xtd::ustring::format("using namespace {};", name),
         "",
         "class1::class1() {",
         "}",
@@ -2029,8 +2029,8 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
-        xtd::strings::format("add_subdirectory({})", name)
+        xtd::ustring::format("project({})", name),
+        xtd::ustring::format("add_subdirectory({})", name)
       };
       xtd::io::file::write_all_lines((path_/"CMakeLists.txt").string(), lines);
     }
@@ -2040,7 +2040,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({} VERSION 1.0.0 LANGUAGES CSharp)", name),
+        xtd::ustring::format("project({} VERSION 1.0.0 LANGUAGES CSharp)", name),
         "include(CSharpUtilities)",
         "set(SOURCES",
         "  src/Class1.cs",
@@ -2054,18 +2054,18 @@ namespace xtdc_command {
         "add_library(${PROJECT_NAME} SHARED ${SOURCES})",
         "",
         "# Install",
-        xtd::strings::format("install(DIRECTORY include/. DESTINATION include/{})", name),
-        xtd::strings::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name),
+        xtd::ustring::format("install(DIRECTORY include/. DESTINATION include/{})", name),
+        xtd::ustring::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name),
         "  \"include(CMakeFindDependencyMacro)\\n\"",
         "  \"include(\\\"\\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\\\")\\n\"",
         "  \"\\n\"",
-        xtd::strings::format("  \"get_filename_component({}_INCLUDE_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../include\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
-        xtd::strings::format("  \"get_filename_component({}_LIBRARIES_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../lib\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::ustring::format("  \"get_filename_component({}_INCLUDE_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../include\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::ustring::format("  \"get_filename_component({}_LIBRARIES_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../lib\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
         "  \"\\n\"",
-        xtd::strings::format("  \"set({}_LIBRARIES {})\\n\"", xtd::strings::to_upper(name), name),
-        xtd::strings::format("  \"set({}_FOUND TRUE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::ustring::format("  \"set({}_LIBRARIES {})\\n\"", xtd::strings::to_upper(name), name),
+        xtd::ustring::format("  \"set({}_FOUND TRUE)\\n\"", xtd::strings::to_upper(name)),
         ")",
-        xtd::strings::format("install(FILES ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake DESTINATION cmake)", name),
+        xtd::ustring::format("install(FILES ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake DESTINATION cmake)", name),
         "install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb DESTINATION lib CONFIGURATIONS Debug OPTIONAL)",
         "install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb DESTINATION lib CONFIGURATIONS Release OPTIONAL)",
         "install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME} DESTINATION lib)",
@@ -2082,7 +2082,7 @@ namespace xtdc_command {
         "using System;",
         "",
         "/// @brief Represents the namespace that contains library objects.",
-        xtd::strings::format("namespace {} {{", name),
+        xtd::ustring::format("namespace {} {{", name),
         "  /// @brief Represents the main class.",
         "  public class Class1 {",
         "    /// @brief Initializes a new instance of the class1 class.",
@@ -2110,8 +2110,8 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
-        xtd::strings::format("add_subdirectory({})", name)
+        xtd::ustring::format("project({})", name),
+        xtd::ustring::format("add_subdirectory({})", name)
       };
       xtd::io::file::write_all_lines((path_/"CMakeLists.txt").string(), lines);
     }
@@ -2121,7 +2121,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({} VERSION 1.0.0)", name),
+        xtd::ustring::format("project({} VERSION 1.0.0)", name),
         "set(HEADERS",
         "  include/Class1.h",
         "  include/Export.h",
@@ -2131,7 +2131,7 @@ namespace xtdc_command {
         ")",
         "source_group(include FILES ${HEADERS})",
         "source_group(src FILES ${SOURCES})",
-        xtd::strings::format("add_definitions(-D{0}_EXPORT)", xtd::strings::to_upper(name)),
+        xtd::ustring::format("add_definitions(-D{0}_EXPORT)", xtd::strings::to_upper(name)),
         "",
         "# Options",
         "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
@@ -2141,18 +2141,18 @@ namespace xtdc_command {
         "target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> $<INSTALL_INTERFACE:include>)",
         "",
         "# Install",
-        xtd::strings::format("install(DIRECTORY include/. DESTINATION include/{})", name),
-        xtd::strings::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name),
+        xtd::ustring::format("install(DIRECTORY include/. DESTINATION include/{})", name),
+        xtd::ustring::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name),
         "  \"include(CMakeFindDependencyMacro)\\n\"",
         "  \"include(\\\"\\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\\\")\\n\"",
         "  \"\\n\"",
-        xtd::strings::format("  \"get_filename_component({}_INCLUDE_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../include\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
-        xtd::strings::format("  \"get_filename_component({}_LIBRARIES_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../lib\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::ustring::format("  \"get_filename_component({}_INCLUDE_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../include\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::ustring::format("  \"get_filename_component({}_LIBRARIES_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../lib\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
         "  \"\\n\"",
-        xtd::strings::format("  \"set({}_LIBRARIES {})\\n\"", xtd::strings::to_upper(name), name),
-        xtd::strings::format("  \"set({}_FOUND TRUE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::ustring::format("  \"set({}_LIBRARIES {})\\n\"", xtd::strings::to_upper(name), name),
+        xtd::ustring::format("  \"set({}_FOUND TRUE)\\n\"", xtd::strings::to_upper(name)),
         ")",
-        xtd::strings::format("install(FILES ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake DESTINATION cmake)", name),
+        xtd::ustring::format("install(FILES ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake DESTINATION cmake)", name),
         "install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME} DESTINATION lib)",
         "install(EXPORT ${PROJECT_NAME} DESTINATION cmake)",
       };
@@ -2163,10 +2163,10 @@ namespace xtdc_command {
     void create_objectivec_shared_library_export(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "#pragma once",
-        xtd::strings::format("#if defined({0}_EXPORT)", xtd::strings::to_upper(name)),
-        xtd::strings::format("#  define {0}_export_ __attribute__((visibility (\"default\")))", xtd::strings::to_lower(name)),
+        xtd::ustring::format("#if defined({0}_EXPORT)", xtd::strings::to_upper(name)),
+        xtd::ustring::format("#  define {0}_export_ __attribute__((visibility (\"default\")))", xtd::strings::to_lower(name)),
         "#else",
-        xtd::strings::format("#  define {0}_export_", xtd::strings::to_lower(name)),
+        xtd::ustring::format("#  define {0}_export_", xtd::strings::to_lower(name)),
         "#endif",
       };
       
@@ -2178,7 +2178,7 @@ namespace xtdc_command {
         "#import \"Export.h\"",
         "#import <Foundation/Foundation.h>",
         "",
-        xtd::strings::format("{0}_export_ @interface Class1 : NSObject", xtd::strings::to_lower(name)),
+        xtd::ustring::format("{0}_export_ @interface Class1 : NSObject", xtd::strings::to_lower(name)),
         "",
         "@end",
       };
@@ -2215,10 +2215,10 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
+        xtd::ustring::format("project({})", name),
         "find_package(xtd REQUIRED)",
         "add_projects(",
-        xtd::strings::format("  {}", name),
+        xtd::ustring::format("  {}", name),
         ")",
         "",
         "# Install",
@@ -2229,8 +2229,8 @@ namespace xtdc_command {
     
     void create_xtd_shared_library_application_properties(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines{
-        xtd::strings::format("target_default_namespace(\"{}\")", name),
-        xtd::strings::format("target_name(\"{}\")", name),
+        xtd::ustring::format("target_default_namespace(\"{}\")", name),
+        xtd::ustring::format("target_name(\"{}\")", name),
       };
       
       xtd::io::file::write_all_lines((path/"properties"/"target_properties.cmake").string(), lines);
@@ -2241,7 +2241,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Project",
-        xtd::strings::format("project({})", name),
+        xtd::ustring::format("project({})", name),
         "find_package(xtd REQUIRED)",
         "add_include_directories(include)",
         "add_sources(",
@@ -2267,9 +2267,9 @@ namespace xtdc_command {
         "#include \"export.h\"",
         "",
         "/// @brief Represents the namespace that contains library objects.",
-        xtd::strings::format("namespace {} {{", name),
+        xtd::ustring::format("namespace {} {{", name),
         "  /// @brief Represents the class1 class.",
-        xtd::strings::format("  class {}_export_ class1 {{", xtd::strings::to_lower(name)),
+        xtd::ustring::format("  class {}_export_ class1 {{", xtd::strings::to_lower(name)),
         "  public:",
         "    /// @brief Initializes a new instance of the class1 class.",
         "    class1();",
@@ -2288,16 +2288,16 @@ namespace xtdc_command {
         "",
         "/// @cond",
         "#if defined(WIN32)",
-        xtd::strings::format("#  if defined({}_EXPORT)", xtd::strings::to_upper(name)),
-        xtd::strings::format("#    define {}_export_ __declspec(dllexport)", xtd::strings::to_lower(name)),
+        xtd::ustring::format("#  if defined({}_EXPORT)", xtd::strings::to_upper(name)),
+        xtd::ustring::format("#    define {}_export_ __declspec(dllexport)", xtd::strings::to_lower(name)),
         "#  else",
-        xtd::strings::format("#    define {}_export_ __declspec(dllimport)", xtd::strings::to_lower(name)),
+        xtd::ustring::format("#    define {}_export_ __declspec(dllimport)", xtd::strings::to_lower(name)),
         "#  endif",
         "#else",
-        xtd::strings::format("#  if defined({}_EXPORT)", xtd::strings::to_upper(name)),
-        xtd::strings::format("#    define {}_export_ __attribute__((visibility (\"default\")))", xtd::strings::to_lower(name)),
+        xtd::ustring::format("#  if defined({}_EXPORT)", xtd::strings::to_upper(name)),
+        xtd::ustring::format("#    define {}_export_ __attribute__((visibility (\"default\")))", xtd::strings::to_lower(name)),
         "#  else",
-        xtd::strings::format("#    define {}_export_", xtd::strings::to_lower(name)),
+        xtd::ustring::format("#    define {}_export_", xtd::strings::to_lower(name)),
         "#  endif",
         "#endif",
         "/// @endcond",
@@ -2310,7 +2310,7 @@ namespace xtdc_command {
       std::vector<std::string> lines {
         "#include \"../include/class1.h\"",
         "",
-        xtd::strings::format("using namespace {};", name),
+        xtd::ustring::format("using namespace {};", name),
         "",
         "class1::class1() {",
         "}",
@@ -2340,8 +2340,8 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
-        xtd::strings::format("add_subdirectory({})", name),
+        xtd::ustring::format("project({})", name),
+        xtd::ustring::format("add_subdirectory({})", name),
         "",
         "# Install",
         "set(INSTALL_PROJECT_NAME ${PROJECT_NAME})",
@@ -2354,7 +2354,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Project",
-        xtd::strings::format("project({} VERSION 1.0.0)", name),
+        xtd::ustring::format("project({} VERSION 1.0.0)", name),
         "set(INCLUDES",
         "  include/file1.h",
         ")",
@@ -2377,18 +2377,18 @@ namespace xtdc_command {
         "if (NOT INSTALL_PROJECT_NAME)",
         "  set(INSTALL_PROJECT_NAME ${PROJECT_NAME})",
         "endif()",
-        xtd::strings::format("install(DIRECTORY include/. DESTINATION include/{})", name),
-        xtd::strings::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name),
+        xtd::ustring::format("install(DIRECTORY include/. DESTINATION include/{})", name),
+        xtd::ustring::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name),
         "  \"include(CMakeFindDependencyMacro)\\n\"",
         "  \"include(\\\"\\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\\\")\\n\"",
         "  \"\\n\"",
-        xtd::strings::format("  \"get_filename_component({}_INCLUDE_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../include\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
-        xtd::strings::format("  \"get_filename_component({}_LIBRARIES_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../lib\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::ustring::format("  \"get_filename_component({}_INCLUDE_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../include\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::ustring::format("  \"get_filename_component({}_LIBRARIES_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../lib\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
         "  \"\\n\"",
-        xtd::strings::format("  \"set({}_LIBRARIES {})\\n\"", xtd::strings::to_upper(name), name),
-        xtd::strings::format("  \"set({}_FOUND TRUE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::ustring::format("  \"set({}_LIBRARIES {})\\n\"", xtd::strings::to_upper(name), name),
+        xtd::ustring::format("  \"set({}_FOUND TRUE)\\n\"", xtd::strings::to_upper(name)),
         ")",
-        xtd::strings::format("install(FILES ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake DESTINATION cmake)", name),
+        xtd::ustring::format("install(FILES ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake DESTINATION cmake)", name),
         "install(FILES $<TARGET_FILE_DIR:${INSTALL_PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb DESTINATION lib CONFIGURATIONS Debug OPTIONAL)",
         "install(FILES $<TARGET_FILE_DIR:${INSTALL_PROJECT_NAME}>/${PROJECT_NAME}.pdb DESTINATION lib CONFIGURATIONS Release OPTIONAL)",
         "install(TARGETS ${INSTALL_PROJECT_NAME} EXPORT ${PROJECT_NAME} DESTINATION lib)",
@@ -2440,8 +2440,8 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
-        xtd::strings::format("add_subdirectory({})", name)
+        xtd::ustring::format("project({})", name),
+        xtd::ustring::format("add_subdirectory({})", name)
       };
       xtd::io::file::write_all_lines((path_/"CMakeLists.txt").string(), lines);
     }
@@ -2451,7 +2451,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Project",
-        xtd::strings::format("project({} VERSION 1.0.0)", name),
+        xtd::ustring::format("project({} VERSION 1.0.0)", name),
         "set(INCLUDES",
         "  include/class1.h",
         ")",
@@ -2471,18 +2471,18 @@ namespace xtdc_command {
         "target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> $<INSTALL_INTERFACE:include>)",
         "",
         "# Install",
-        xtd::strings::format("install(DIRECTORY include/. DESTINATION include/{})", name),
-        xtd::strings::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name),
+        xtd::ustring::format("install(DIRECTORY include/. DESTINATION include/{})", name),
+        xtd::ustring::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name),
         "  \"include(CMakeFindDependencyMacro)\\n\"",
         "  \"include(\\\"\\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\\\")\\n\"",
         "  \"\\n\"",
-        xtd::strings::format("  \"get_filename_component({}_INCLUDE_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../include\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
-        xtd::strings::format("  \"get_filename_component({}_LIBRARIES_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../lib\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::ustring::format("  \"get_filename_component({}_INCLUDE_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../include\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::ustring::format("  \"get_filename_component({}_LIBRARIES_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../lib\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
         "  \"\\n\"",
-        xtd::strings::format("  \"set({}_LIBRARIES {})\\n\"", xtd::strings::to_upper(name), name),
-        xtd::strings::format("  \"set({}_FOUND TRUE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::ustring::format("  \"set({}_LIBRARIES {})\\n\"", xtd::strings::to_upper(name), name),
+        xtd::ustring::format("  \"set({}_FOUND TRUE)\\n\"", xtd::strings::to_upper(name)),
         ")",
-        xtd::strings::format("install(FILES ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake DESTINATION cmake)", name),
+        xtd::ustring::format("install(FILES ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake DESTINATION cmake)", name),
         "install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb DESTINATION lib CONFIGURATIONS Debug OPTIONAL)",
         "install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb DESTINATION lib CONFIGURATIONS Release OPTIONAL)",
         "install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME} DESTINATION lib)",
@@ -2499,7 +2499,7 @@ namespace xtdc_command {
         "#pragma once",
         "",
         "/// @brief Represents the namespace that contains library objects.",
-        xtd::strings::format("namespace {} {{", name),
+        xtd::ustring::format("namespace {} {{", name),
         "  /// @brief Represents the class1 class.",
         "  class class1 {",
         "  public:",
@@ -2516,7 +2516,7 @@ namespace xtdc_command {
       std::vector<std::string> lines {
         "#include \"../include/class1.h\"",
         "",
-        xtd::strings::format("using namespace {};", name),
+        xtd::ustring::format("using namespace {};", name),
         "",
         "class1::class1() {",
         "}",
@@ -2543,8 +2543,8 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
-        xtd::strings::format("add_subdirectory({})", name)
+        xtd::ustring::format("project({})", name),
+        xtd::ustring::format("add_subdirectory({})", name)
       };
       xtd::io::file::write_all_lines((path_/"CMakeLists.txt").string(), lines);
     }
@@ -2554,7 +2554,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({} VERSION 1.0.0)", name),
+        xtd::ustring::format("project({} VERSION 1.0.0)", name),
         "set(HEADERS",
         "  include/Class1.h",
         ")",
@@ -2572,18 +2572,18 @@ namespace xtdc_command {
         "target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> $<INSTALL_INTERFACE:include>)",
         "",
         "# Install",
-        xtd::strings::format("install(DIRECTORY include/. DESTINATION include/{})", name),
-        xtd::strings::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name),
+        xtd::ustring::format("install(DIRECTORY include/. DESTINATION include/{})", name),
+        xtd::ustring::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name),
         "  \"include(CMakeFindDependencyMacro)\\n\"",
         "  \"include(\\\"\\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\\\")\\n\"",
         "  \"\\n\"",
-        xtd::strings::format("  \"get_filename_component({}_INCLUDE_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../include\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
-        xtd::strings::format("  \"get_filename_component({}_LIBRARIES_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../lib\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::ustring::format("  \"get_filename_component({}_INCLUDE_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../include\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::ustring::format("  \"get_filename_component({}_LIBRARIES_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../lib\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
         "  \"\\n\"",
-        xtd::strings::format("  \"set({}_LIBRARIES {})\\n\"", xtd::strings::to_upper(name), name),
-        xtd::strings::format("  \"set({}_FOUND TRUE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::ustring::format("  \"set({}_LIBRARIES {})\\n\"", xtd::strings::to_upper(name), name),
+        xtd::ustring::format("  \"set({}_FOUND TRUE)\\n\"", xtd::strings::to_upper(name)),
         ")",
-        xtd::strings::format("install(FILES ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake DESTINATION cmake)", name),
+        xtd::ustring::format("install(FILES ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake DESTINATION cmake)", name),
         "install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME} DESTINATION lib)",
         "install(EXPORT ${PROJECT_NAME} DESTINATION cmake)",
       };
@@ -2631,10 +2631,10 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
+        xtd::ustring::format("project({})", name),
         "find_package(xtd REQUIRED)",
         "add_projects(",
-        xtd::strings::format("  {}", name),
+        xtd::ustring::format("  {}", name),
         ")",
         "",
         "# Install",
@@ -2645,8 +2645,8 @@ namespace xtdc_command {
     
     void create_xtd_static_library_application_properties(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines{
-        xtd::strings::format("target_default_namespace(\"{}\")", name),
-        xtd::strings::format("target_name(\"{}\")", name),
+        xtd::ustring::format("target_default_namespace(\"{}\")", name),
+        xtd::ustring::format("target_name(\"{}\")", name),
       };
       
       xtd::io::file::write_all_lines((path/"properties"/"target_properties.cmake").string(), lines);
@@ -2657,7 +2657,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Project",
-        xtd::strings::format("project({})", name),
+        xtd::ustring::format("project({})", name),
         "find_package(xtd REQUIRED)",
         "add_include_directories(include)",
         "add_sources(",
@@ -2681,7 +2681,7 @@ namespace xtdc_command {
         "#pragma once",
         "",
         "/// @brief Represents the namespace that contains library objects.",
-        xtd::strings::format("namespace {} {{", name),
+        xtd::ustring::format("namespace {} {{", name),
         "  /// @brief Represents the class1 class.",
         "  class class1 {",
         "  public:",
@@ -2698,7 +2698,7 @@ namespace xtdc_command {
       std::vector<std::string> lines {
         "#include \"../include/class1.h\"",
         "",
-        xtd::strings::format("using namespace {};", name),
+        xtd::ustring::format("using namespace {};", name),
         "",
         "class1::class1() {",
         "}",
@@ -2724,9 +2724,9 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
+        xtd::ustring::format("project({})", name),
         "enable_testing()",
-        xtd::strings::format("add_subdirectory({})", name)
+        xtd::ustring::format("add_subdirectory({})", name)
       };
       xtd::io::file::write_all_lines((path_/"CMakeLists.txt").string(), lines);
     }
@@ -2736,7 +2736,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Project",
-        xtd::strings::format("project({} VERSION 1.0.0)", name),
+        xtd::ustring::format("project({} VERSION 1.0.0)", name),
         "find_package(Catch2 REQUIRED)",
         "set(SOURCES",
         "  src/main.cpp",
@@ -2763,7 +2763,7 @@ namespace xtdc_command {
       std::vector<std::string> lines {
         "#include <catch2/catch.hpp>",
         "",
-        xtd::strings::format("namespace {} {{", name),
+        xtd::ustring::format("namespace {} {{", name),
         "  TEST_CASE(\"unit_test1::test_method1\") {",
         "    REQUIRE(true);",
         "    WARN(\"Hello, World!\");",
@@ -2795,9 +2795,9 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
+        xtd::ustring::format("project({})", name),
         "enable_testing()",
-        xtd::strings::format("add_subdirectory({})", name)
+        xtd::ustring::format("add_subdirectory({})", name)
       };
       xtd::io::file::write_all_lines((path_/"CMakeLists.txt").string(), lines);
     }
@@ -2807,7 +2807,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Project",
-        xtd::strings::format("project({} VERSION 1.0.0)", name),
+        xtd::ustring::format("project({} VERSION 1.0.0)", name),
         "find_package(GTest REQUIRED)",
         "set(SOURCES",
         "  src/unit_test1.cpp",
@@ -2836,7 +2836,7 @@ namespace xtdc_command {
       std::vector<std::string> lines {
         "#include <gtest/gtest.h>",
         "",
-        xtd::strings::format("namespace {} {{", name),
+        xtd::ustring::format("namespace {} {{", name),
         "  TEST(unit_test1, test_method1) {",
         "    ASSERT_TRUE(false) << \"Hello, World!\";",
         "  }",
@@ -2873,10 +2873,10 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Solution",
-        xtd::strings::format("project({})", name),
+        xtd::ustring::format("project({})", name),
         "find_package(xtd REQUIRED)",
         "add_projects(",
-        xtd::strings::format("  {}", name),
+        xtd::ustring::format("  {}", name),
         ")",
         "",
         "# Install",
@@ -2887,9 +2887,9 @@ namespace xtdc_command {
     
     void create_xtd_unit_test_application_application_properties(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines{
-        xtd::strings::format("target_default_namespace(\"{}\")", name),
-        xtd::strings::format("target_name(\"{}\")", name),
-        xtd::strings::format("target_startup(tunit_main_)", name),
+        xtd::ustring::format("target_default_namespace(\"{}\")", name),
+        xtd::ustring::format("target_name(\"{}\")", name),
+        xtd::ustring::format("target_startup(tunit_main_)", name),
       };
       
       xtd::io::file::write_all_lines((path/"properties"/"target_properties.cmake").string(), lines);
@@ -2900,7 +2900,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.3)",
         "",
         "# Project",
-        xtd::strings::format("project({})", name),
+        xtd::ustring::format("project({})", name),
         "find_package(xtd REQUIRED)",
         "add_sources(",
         "  src/unit_test1.cpp",
@@ -2920,7 +2920,7 @@ namespace xtdc_command {
         "",
         "using namespace xtd::tunit;",
         "",
-        xtd::strings::format("namespace {} {{", name),
+        xtd::ustring::format("namespace {} {{", name),
         "  class test_class_(unit_test1) {",
         "  public:",
         "    void test_method_(test_method1) {",
@@ -2939,7 +2939,7 @@ namespace xtdc_command {
         "# Project related configuration options",
         "#---------------------------------------------------------------------------",
         "",
-        xtd::strings::format("PROJECT_NAME           = \"{} - Reference Guide\"", name),
+        xtd::ustring::format("PROJECT_NAME           = \"{} - Reference Guide\"", name),
         "PROJECT_NUMBER         = 0.1.0",
         "PROJECT_BRIEF          = ",
         "PROJECT_LOGO           = ",
@@ -3120,7 +3120,7 @@ namespace xtdc_command {
     
     void create_readme_md(const std::string& name) const {
       std::vector<std::string> lines {
-        xtd::strings::format("# {}", name),
+        xtd::ustring::format("# {}", name),
       };
       xtd::io::file::write_all_lines((path_/"README.md").string(), lines);
     }
@@ -3132,21 +3132,21 @@ namespace xtdc_command {
       std::filesystem::create_directories(build_path());
       change_current_directory current_directory {build_path()};
       if (!first_generation && name.empty()) name = get_name();
-      if (xtd::environment::os_version().is_windows_platform() && (first_generation || !std::filesystem::exists(build_path()/xtd::strings::format("{}.sln", name))))
-        launch_and_wait_process("cmake", xtd::strings::format("-S {} -B {}", path_, build_path()));
-      else if (xtd::environment::os_version().is_macos_platform() && (first_generation || !std::filesystem::exists(build_path()/xtd::strings::format("{}.xcodeproj", name))))
-        launch_and_wait_process("cmake", xtd::strings::format("-S {} -B {} -G \"Xcode\"", path_, build_path()));
+      if (xtd::environment::os_version().is_windows_platform() && (first_generation || !std::filesystem::exists(build_path()/xtd::ustring::format("{}.sln", name))))
+        launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {}", path_, build_path()));
+      else if (xtd::environment::os_version().is_macos_platform() && (first_generation || !std::filesystem::exists(build_path()/xtd::ustring::format("{}.xcodeproj", name))))
+        launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} -G \"Xcode\"", path_, build_path()));
       else if (xtd::environment::os_version().is_linux_platform()) {
-        if (first_generation || !std::filesystem::exists(build_path()/"Debug"/xtd::strings::format("{}.cbp", name))) {
+        if (first_generation || !std::filesystem::exists(build_path()/"Debug"/xtd::ustring::format("{}.cbp", name))) {
           change_current_directory current_directory_debug {build_path()/"Debug"};
           std::filesystem::create_directories(build_path()/"Debug");
-          launch_and_wait_process("cmake", xtd::strings::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, build_path()/"Debug"));
+          launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, build_path()/"Debug"));
           patch_cbp_file(name, "Debug");
         }
-        if (first_generation || !std::filesystem::exists(build_path()/"Release"/xtd::strings::format("{}.cbp", name))) {
+        if (first_generation || !std::filesystem::exists(build_path()/"Release"/xtd::ustring::format("{}.cbp", name))) {
           change_current_directory current_directory_release {build_path()/"Release"};
           std::filesystem::create_directories(build_path()/"Release");
-          launch_and_wait_process("cmake", xtd::strings::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, build_path()/"Release"));
+          launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, build_path()/"Release"));
           patch_cbp_file(name, "Release");
         }
       }
@@ -3182,14 +3182,14 @@ namespace xtdc_command {
     
     void patch_cbp_file(const std::string& name, const std::string& build_config) const {
       if (xtd::strings::contains(xtd::io::file::read_all_text(std::filesystem::exists((path_/name/"CMakeLists.txt").string()) ? (path_/name/"CMakeLists.txt").string() : (path_/"CMakeLists.txt").string()), "GUI_APPLICATION")) {
-        auto cbp_file_lines = xtd::io::file::read_all_lines((build_path()/build_config/xtd::strings::format("{}.cbp", name)).string());
-        for (auto iterator = std::find(cbp_file_lines.begin(), cbp_file_lines.end(), xtd::strings::format("\t\t\t<Target title=\"{}\">", name)); iterator != cbp_file_lines.end(); ++iterator) {
+        auto cbp_file_lines = xtd::io::file::read_all_lines((build_path()/build_config/xtd::ustring::format("{}.cbp", name)).string());
+        for (auto iterator = std::find(cbp_file_lines.begin(), cbp_file_lines.end(), xtd::ustring::format("\t\t\t<Target title=\"{}\">", name)); iterator != cbp_file_lines.end(); ++iterator) {
           if (*iterator == "\t\t\t\t<Option type=\"1\"/>") {
             *iterator = "\t\t\t\t<Option type=\"0\"/>";
             break;
           }
         }
-        xtd::io::file::write_all_lines((build_path()/build_config/xtd::strings::format("{}.cbp", name)).string(), cbp_file_lines);
+        xtd::io::file::write_all_lines((build_path()/build_config/xtd::ustring::format("{}.cbp", name)).string(), cbp_file_lines);
       }
     }
     

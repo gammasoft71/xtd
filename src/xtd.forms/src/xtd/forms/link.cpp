@@ -10,11 +10,11 @@ link::link(size_t start, size_t length) : length_(length), start_(start) {
 link::link(size_t start, size_t length, std::any link_data) : length_(length), link_data_(link_data), start_(start) {
 }
 
-const std::string& link::description() const {
+const xtd::ustring& link::description() const {
   return description_;
 }
 
-link& link::description(const std::string& value) {
+link& link::description(const xtd::ustring& value) {
   description_ = value;
   return *this;
 }
@@ -43,11 +43,11 @@ link& link::link_data(std::any value) {
   return *this;
 }
 
-const std::string& link::name() const {
+const xtd::ustring& link::name() const {
   return name_;
 }
 
-link& link::name(const std::string& value) {
+link& link::name(const xtd::ustring& value) {
   name_ = value;
   return *this;
 }

@@ -53,7 +53,7 @@ namespace sleepfor {
     }
     
     static string get_version() {
-      return strings::format("sleepfor version {}, © {:L} by Gammasoft", environment::version(), chrono::system_clock::now());
+      return ustring::format("sleepfor version {}, © {:L} by Gammasoft", environment::version(), chrono::system_clock::now());
     }
 
     static bool process_arguments(const vector<ustring>& args, int32_t& duration, period_type& type, bool& indefinitely, bool& show_version, bool& show_help) {
