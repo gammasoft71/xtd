@@ -1,8 +1,8 @@
+[![xtd](docs/pictures/logo.png)](https://gammasoft71.wixsite.com/xtdpro)
+
 # xtd
 
 **Modern C++17/20 framework to create console (CLI), forms (GUI like WinForms) and tunit (unit tests like Microsoft Unit Testing Framework) applications on Windows, macOS, Linux, iOS and android.**
-
-[![xtd](docs/pictures/logo.png)](https://gammasoft71.wixsite.com/xtdpro)
 
 ## Continuous Integration build status
 
