@@ -3,342 +3,342 @@
 
 using namespace xtd::forms;
 
-std::string texts::abort() {
+xtd::ustring texts::abort() {
   return "&Abort"_t;
 }
 
-std::string texts::about() {
+xtd::ustring texts::about() {
   return "&About"_t;
 }
 
-std::string texts::actual_size() {
+xtd::ustring texts::actual_size() {
   return "&Actual Size"_t;
 }
 
-std::string texts::add() {
+xtd::ustring texts::add() {
   return "Add"_t;
 }
 
-std::string texts::alignment() {
+xtd::ustring texts::alignment() {
   return "Alignment"_t;
 }
 
-std::string texts::align_left() {
+xtd::ustring texts::align_left() {
   return "Align Left"_t;
 }
 
-std::string texts::align_right() {
+xtd::ustring texts::align_right() {
   return "Align Right"_t;
 }
 
-std::string texts::apply() {
+xtd::ustring texts::apply() {
   return "&Apply"_t;
 }
 
-std::string texts::ascending() {
+xtd::ustring texts::ascending() {
   return "&Ascending"_t;
 }
 
-std::string texts::back() {
+xtd::ustring texts::back() {
   return "&Back"_t;
 }
 
-std::string texts::bold() {
+xtd::ustring texts::bold() {
   return "&Bold"_t;
 }
 
-std::string texts::bottom() {
+xtd::ustring texts::bottom() {
   return "&Bottom"_t;
 }
 
-std::string texts::cancel() {
+xtd::ustring texts::cancel() {
   return "&Cancel"_t;
 }
 
-std::string texts::cdrom() {
+xtd::ustring texts::cdrom() {
   return "&CD-Rom"_t;
 }
 
-std::string texts::centered() {
+xtd::ustring texts::centered() {
   return "Centered"_t;
 }
 
-std::string texts::clear() {
+xtd::ustring texts::clear() {
   return "&Clear"_t;
 }
 
-std::string texts::close() {
+xtd::ustring texts::close() {
   return "&Close"_t;
 }
 
-std::string texts::color() {
+xtd::ustring texts::color() {
   return "&Color"_t;
 }
 
-std::string texts::contents() {
+xtd::ustring texts::contents() {
   return "&Contents"_t;
 }
 
-std::string texts::convert() {
+xtd::ustring texts::convert() {
   return "&Convert"_t;
 }
 
-std::string texts::copy() {
+xtd::ustring texts::copy() {
   return "&Copy"_t;
 }
 
-std::string texts::customize() {
+xtd::ustring texts::customize() {
   return "&Customize"_t;
 }
 
-std::string texts::cut() {
+xtd::ustring texts::cut() {
   return "Cu&t"_t;
 }
 
-std::string texts::del() {
+xtd::ustring texts::del() {
   return "&Delete"_t;
 }
 
-std::string texts::descending() {
+xtd::ustring texts::descending() {
   return "&Descending"_t;
 }
 
-std::string texts::down() {
+xtd::ustring texts::down() {
   return "&Down"_t;
 }
 
-std::string texts::edit() {
+xtd::ustring texts::edit() {
   return "&Edit"_t;
 }
 
-std::string texts::execute() {
+xtd::ustring texts::execute() {
   return "&Execute"_t;
 }
 
-std::string texts::exit() {
+xtd::ustring texts::exit() {
   return "E&xit"_t;
 }
 
-std::string texts::file() {
+xtd::ustring texts::file() {
   return "&File"_t;
 }
 
-std::string texts::find() {
+xtd::ustring texts::find() {
   return "&Find..."_t;
 }
 
-std::string texts::first() {
+xtd::ustring texts::first() {
   return "&First"_t;
 }
 
-std::string texts::floppy() {
+xtd::ustring texts::floppy() {
   return "&Floppy"_t;
 }
 
-std::string texts::font() {
+xtd::ustring texts::font() {
   return "&Font"_t;
 }
 
-std::string texts::forward() {
+xtd::ustring texts::forward() {
   return "&Forward"_t;
 }
 
-std::string texts::harddisk() {
+xtd::ustring texts::harddisk() {
   return "&Harddisk"_t;
 }
 
-std::string texts::help() {
+xtd::ustring texts::help() {
   return "&Help"_t;
 }
 
-std::string texts::home() {
+xtd::ustring texts::home() {
   return "&Home"_t;
 }
 
-std::string texts::ignore() {
+xtd::ustring texts::ignore() {
   return "&Ignore"_t;
 }
 
-std::string texts::indent() {
+xtd::ustring texts::indent() {
   return "Indent"_t;
 }
 
-std::string texts::index() {
+xtd::ustring texts::index() {
   return "&Index"_t;
 }
 
-std::string texts::info() {
+xtd::ustring texts::info() {
   return "&Info"_t;
 }
 
-std::string texts::italic() {
+xtd::ustring texts::italic() {
   return "&Italic"_t;
 }
 
-std::string texts::justified() {
+xtd::ustring texts::justified() {
   return "Justified"_t;
 }
 
-std::string texts::jump_to() {
+xtd::ustring texts::jump_to() {
   return "&Jump to"_t;
 }
 
-std::string texts::last() {
+xtd::ustring texts::last() {
   return "&Last"_t;
 }
 
-std::string texts::network() {
+xtd::ustring texts::network() {
   return "&Network"_t;
 }
 
-std::string texts::new_() {
+xtd::ustring texts::new_() {
   return "&New"_t;
 }
 
-std::string texts::next() {
+xtd::ustring texts::next() {
   return "&Next"_t;
 }
 
-std::string texts::no() {
+xtd::ustring texts::no() {
   return "&No"_t;
 }
 
-std::string texts::ok() {
+xtd::ustring texts::ok() {
   return "&OK"_t;
 }
 
-std::string texts::open() {
+xtd::ustring texts::open() {
   return "&Open..."_t;
 }
 
-std::string texts::options() {
+xtd::ustring texts::options() {
   return "&Options"_t;
 }
 
-std::string texts::paste() {
+xtd::ustring texts::paste() {
   return "&Paste"_t;
 }
 
-std::string texts::preferences() {
+xtd::ustring texts::preferences() {
   return "&Preferences"_t;
 }
 
-std::string texts::previous() {
+xtd::ustring texts::previous() {
   return "&Previous"_t;
 }
 
-std::string texts::print() {
+xtd::ustring texts::print() {
   return "&Print..."_t;
 }
 
-std::string texts::print_preview() {
+xtd::ustring texts::print_preview() {
   return "Print pre&view"_t;
 }
 
-std::string texts::properties() {
+xtd::ustring texts::properties() {
   return "&Properties"_t;
 }
 
-std::string texts::quit() {
+xtd::ustring texts::quit() {
   return "&Quit"_t;
 }
 
-std::string texts::redo() {
+xtd::ustring texts::redo() {
   return "&Redo"_t;
 }
 
-std::string texts::refresh() {
+xtd::ustring texts::refresh() {
   return "Refresh"_t;
 }
 
-std::string texts::remove() {
+xtd::ustring texts::remove() {
   return "Remove"_t;
 }
 
-std::string texts::replace() {
+xtd::ustring texts::replace() {
   return "Rep&lace..."_t;
 }
 
-std::string texts::retry() {
+xtd::ustring texts::retry() {
   return "&Retry"_t;
 }
 
-std::string texts::revert_to_saved() {
+xtd::ustring texts::revert_to_saved() {
   return "Revert to Saved"_t;
 }
 
-std::string texts::save() {
+xtd::ustring texts::save() {
   return "&Save"_t;
 }
 
-std::string texts::save_as() {
+xtd::ustring texts::save_as() {
   return "Save &As..."_t;
 }
 
-std::string texts::search() {
+xtd::ustring texts::search() {
   return "&Search"_t;
 }
 
-std::string texts::select_all() {
+xtd::ustring texts::select_all() {
   return "Select &All"_t;
 }
 
-std::string texts::spell_check() {
+xtd::ustring texts::spell_check() {
   return "&Spell Check"_t;
 }
 
-std::string texts::stop() {
+xtd::ustring texts::stop() {
   return "&Stop"_t;
 }
 
-std::string texts::strikeout() {
+xtd::ustring texts::strikeout() {
   return "&Strikeout"_t;
 }
 
-std::string texts::tools() {
+xtd::ustring texts::tools() {
   return "&Tools"_t;
 }
 
-std::string texts::top() {
+xtd::ustring texts::top() {
   return "&Top"_t;
 }
 
-std::string texts::undelete() {
+xtd::ustring texts::undelete() {
   return "Undelete"_t;
 }
 
-std::string texts::underline() {
+xtd::ustring texts::underline() {
   return "&Underline"_t;
 }
 
-std::string texts::undo() {
+xtd::ustring texts::undo() {
   return "&Undo"_t;
 }
 
-std::string texts::unindent() {
+xtd::ustring texts::unindent() {
   return "Unindent"_t;
 }
 
-std::string texts::up() {
+xtd::ustring texts::up() {
   return "&Up"_t;
 }
 
-std::string texts::view() {
+xtd::ustring texts::view() {
   return "&View"_t;
 }
 
-std::string texts::yes() {
+xtd::ustring texts::yes() {
   return "&Yes"_t;
 }
 
-std::string texts::zoom_in() {
+xtd::ustring texts::zoom_in() {
   return "Zoom &In"_t;
 }
 
-std::string texts::zoom_out() {
+xtd::ustring texts::zoom_out() {
   return "Zoom &Out"_t;
 }
 
-std::string texts::zoom_to_fit() {
+xtd::ustring texts::zoom_to_fit() {
   return "Zoom to &Fit"_t;
 }

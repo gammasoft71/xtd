@@ -48,15 +48,15 @@ namespace xtd {
       /// @brief Gets the lines of text in a text box control.
       /// @return An array of strings that contains the text in a text box control.
       /// @remarks Each element in the array becomes a line of text in the text box control. If the multiline property of the text box control is set to true and a newline character appears in the text, the text following the newline character is added to a new element in the array and displayed on a separate line.
-      std::vector<std::string> lines() const {
-        return strings::split(text(), {'\n'});
+      std::vector<xtd::ustring> lines() const {
+        return text().split({'\n'});
       }
       /// @brief Sets the lines of text in a text box control.
       /// @param lines An array of strings that contains the text in a text box control.
       /// @return Current text_box_base instance.
       /// @remarks Each element in the array becomes a line of text in the text box control. If the multiline property of the text box control is set to true and a newline character appears in the text, the text following the newline character is added to a new element in the array and displayed on a separate line.
-      text_box_base& lines(const std::vector<std::string>& lines) {
-        text(strings::join("\n", lines));
+      text_box_base& lines(const std::vector<xtd::ustring>& lines) {
+        text(xtd::ustring::join("\n", lines));
         return *this;
       }
       
@@ -136,7 +136,7 @@ namespace xtd {
 
       /// @brief Appends text to the current text of a text box.
       /// @param value The text to append to the current contents of the text box.
-      virtual void append_text(const std::string& value) {
+      virtual void append_text(const xtd::ustring& value) {
         suspend_layout();
         text(text() + value);
         select(text().size(), 0);

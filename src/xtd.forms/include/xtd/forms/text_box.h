@@ -108,7 +108,7 @@ namespace xtd {
       /// @ingroup events
       event<text_box, event_handler> accepts_return_changed;
 
-      void append_text(const std::string& value) override;
+      void append_text(const xtd::ustring& value) override;
       
       void select(size_t start, size_t length) override;
 
