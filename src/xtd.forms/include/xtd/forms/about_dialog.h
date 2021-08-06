@@ -92,22 +92,22 @@ namespace xtd {
       
       /// @brief Gets the product copyright.
       /// @return The product copyright.
-      std::string copyright() const {return copyright_;}
+      xtd::ustring copyright() const {return copyright_;}
       /// @brief Sets the product description.
       /// @param copyright The description copyright.
       /// @return Current about_dialog instance.
-      about_dialog& copyright(const std::string& copyright) {
+      about_dialog& copyright(const xtd::ustring& copyright) {
         copyright_ = copyright;
         return *this;
       }
 
       /// @brief Gets the product description.
       /// @return The product description.
-      std::string description() const {return description_;}
+      xtd::ustring description() const {return description_;}
       /// @brief Sets the product description.
       /// @param description The product description.
       /// @return Current about_dialog instance.
-      about_dialog& description(const std::string& description) {
+      about_dialog& description(const xtd::ustring& description) {
         description_ = description;
         return *this;
       }
@@ -164,33 +164,33 @@ namespace xtd {
 
       /// @brief Gets the product license.
       /// @return The product license.
-      std::string license() const {return license_;}
+      xtd::ustring license() const {return license_;}
       /// @brief Sets the product license.
       /// @param name The product license.
       /// @return Current about_dialog instance.
-      about_dialog& license(const std::string& license) {
+      about_dialog& license(const xtd::ustring& license) {
         license_ = license;
         return *this;
       }
 
       /// @brief Gets the product long version.
       /// @return The product long version.
-      std::string long_version() const {return long_version_;}
+      xtd::ustring long_version() const {return long_version_;}
       /// @brief Sets the product long version.
       /// @param version The version version.
       /// @return Current about_dialog instance.
-      about_dialog& long_version(const std::string& long_version) {
+      about_dialog& long_version(const xtd::ustring& long_version) {
         long_version_ = long_version;
         return *this;
       }
 
       /// @brief Gets the product name.
       /// @return The product name.
-      std::string name() const {return name_;}
+      xtd::ustring name() const {return name_;}
       /// @brief Sets the product name.
       /// @param name The product name.
       /// @return Current about_dialog instance.
-      about_dialog& name(const std::string& name) {
+      about_dialog& name(const xtd::ustring& name) {
         name_ = name;
         return *this;
       }
@@ -211,33 +211,33 @@ namespace xtd {
 
       /// @brief Gets the product version.
       /// @return The product version.
-      std::string version() const {return version_;}
+      xtd::ustring version() const {return version_;}
       /// @brief Sets the product version.
       /// @param version The version version.
       /// @return Current about_dialog instance.
-      about_dialog& version(const std::string& version) {
+      about_dialog& version(const xtd::ustring& version) {
         version_ = version;
         return *this;
       }
       
       /// @brief Gets the product website.
       /// @return The website.
-      std::string website() const {return website_;}
+      xtd::ustring website() const {return website_;}
       /// @brief Sets the product website.
       /// @param website The  product website.
       /// @return Current about_dialog instance.
-      about_dialog& website(const std::string& website) {
+      about_dialog& website(const xtd::ustring& website) {
         website_ = website;
         return *this;
       }
       
       /// @brief Gets the product website label.
       /// @return The product website label.
-      std::string website_label() const {return website_label_;}
+      xtd::ustring website_label() const {return website_label_;}
       /// @brief Sets the product website label.
       /// @param website_label The product website label.
       /// @return Current about_dialog instance.
-      about_dialog& website_label(const std::string& website_label) {
+      about_dialog& website_label(const xtd::ustring& website_label) {
         website_label_ = website_label;
         return *this;
       }
@@ -253,18 +253,18 @@ namespace xtd {
     private:
       xtd::forms::dialog_style dialog_style_ = xtd::forms::dialog_style::standard;
       xtd::drawing::image icon_;
-      std::string name_;
-      std::string version_;
-      std::string long_version_;
-      std::string description_;
-      std::string copyright_;
-      std::string website_;
-      std::string website_label_;
+      xtd::ustring name_;
+      xtd::ustring version_;
+      xtd::ustring long_version_;
+      xtd::ustring description_;
+      xtd::ustring copyright_;
+      xtd::ustring website_;
+      xtd::ustring website_label_;
       author_collection authors_;
       documenter_collection documenters_;
       translator_collection translators_;
       artist_collection artists_;
-      std::string license_;
+      xtd::ustring license_;
     };
   }
 }

@@ -28,8 +28,8 @@ struct __init_process_message_box_message__ {
     xtd::diagnostics::process::message_box_message_ = {*this, &__init_process_message_box_message__::__show_message_box__};
   }
   
-  void __show_message_box__(const std::string& file_name) {
-    xtd::forms::message_box::show(xtd::strings::format("{} cannot find '{}'. Make sure you typed the name correctly, and try again.", xtd::environment::os_version().name(), file_name), file_name, xtd::forms::message_box_buttons::ok, xtd::forms::message_box_icon::error);
+  void __show_message_box__(const ustring& file_name) {
+    xtd::forms::message_box::show(ustring::format("{} cannot find '{}'. Make sure you typed the name correctly, and try again.", xtd::environment::os_version().name(), file_name), file_name, xtd::forms::message_box_buttons::ok, xtd::forms::message_box_icon::error);
   }
   
   void __force_compiler_optimizer_to_create_object__() {
@@ -81,8 +81,8 @@ bool application::allow_quit() {
   return native::application::allow_quit();
 }
 
-std::string application::common_app_data_path() {
-  std::string common_app_data_path = io::path::combine({environment::get_folder_path(environment::special_folder::common_application_data), company_name(), product_name(), product_version()});
+xtd::ustring application::common_app_data_path() {
+  xtd::ustring common_app_data_path = io::path::combine({environment::get_folder_path(environment::special_folder::common_application_data), company_name(), product_name(), product_version()});
   //if (!io::directory::exists(common_app_data_path))
   //  io::directory::create_directory(common_app_data_path);
   return common_app_data_path;
@@ -94,16 +94,16 @@ microsoft::win32::registry_key application::common_app_data_registry() {
 }
  */
 
-std::string application::company_name() {
-  if (!strings::is_empty(application_informations::company_name())) return application_informations::company_name();
+xtd::ustring application::company_name() {
+  if (!application_informations::company_name().is_empty()) return application_informations::company_name();
   return product_name();
 }
 
-std::string application::executable_name() {
+xtd::ustring application::executable_name() {
   return io::path::get_file_name(application::executable_path());
 }
 
-std::string application::executable_path() {
+xtd::ustring application::executable_path() {
   if (environment::get_command_line_args().size() == 0) return "";
   return environment::get_command_line_args()[0];
 }
@@ -129,23 +129,23 @@ const form_collection application::open_forms() {
    */
 }
 
-std::string application::product_name() {
-  if (!strings::is_empty(application_informations::product_name())) return application_informations::product_name();
+xtd::ustring application::product_name() {
+  if (!application_informations::product_name().is_empty()) return application_informations::product_name();
   return io::path::get_file_name_without_extension(executable_path());
 }
 
-std::string application::product_version() {
-  if (!strings::is_empty(application_informations::product_version())) return application_informations::product_version();
+xtd::ustring application::product_version() {
+  if (!application_informations::product_version().is_empty()) return application_informations::product_version();
   return "0.0.0.0";
 }
 
-std::string application::startup_path() {
+xtd::ustring application::startup_path() {
   if (environment::get_command_line_args().size() == 0) return "";
   return io::path::get_directory_name(environment::get_command_line_args()[0]);
 }
 
-std::string application::user_app_data_path() {
-  std::string user_app_data_path = io::path::combine({environment::get_folder_path(environment::special_folder::application_data), company_name(), product_name(), product_version()});
+xtd::ustring application::user_app_data_path() {
+  xtd::ustring user_app_data_path = io::path::combine({environment::get_folder_path(environment::special_folder::application_data), company_name(), product_name(), product_version()});
   //if (!io::directory::exists(user_app_data_path))
   //  io::directory::create_directory(user_app_data_path);
   return user_app_data_path;
@@ -301,7 +301,7 @@ void application::run(const form& form) {
   }
 }
 
-void application::theme(const std::string& theme_name) {
+void application::theme(const xtd::ustring& theme_name) {
   application::theme(xtd::forms::theme::theme_from_name(theme_name));
 }
 
@@ -318,7 +318,7 @@ const xtd::forms::theme& application::theme() {
   return xtd::forms::theme::current_theme();
 }
 
-const std::vector<std::string>& application::theme_names() {
+const std::vector<xtd::ustring>& application::theme_names() {
   return theme::theme_names();
 }
 
