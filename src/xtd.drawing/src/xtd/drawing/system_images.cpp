@@ -51,7 +51,7 @@ image system_images::from_name(const ustring& theme, const ustring& name, const 
   auto dark_mode = (system_colors::window().get_lightness() < 0.5 && !theme.ends_with(" (light)")) || theme.ends_with(" (dark)");
   string theme_name = theme.replace(" (dark)", "").replace(" (light)", "");
 
-  auto theme_path = exists(system_images_resource_path()/theme_name) ? system_images_resource_path()/theme_name : system_images_resource_path()/string(default_theme());
+  auto theme_path = exists(system_images_resource_path()/theme_name) ? system_images_resource_path()/theme_name : system_images_resource_path()/default_theme().c_str();
   auto it_sizes = find(default_sizes.begin(), default_sizes.end(), get_closed_size(size));
   
   if (theme == default_theme()) {
@@ -60,25 +60,25 @@ image system_images::from_name(const ustring& theme, const ustring& name, const 
   }
 
   if (dark_mode) {
-    if (exists(theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png"))) return bitmap((theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png")).string());
+    if (exists(theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png").c_str())) return bitmap((theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png").c_str()).string());
     for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
-      if (exists(theme_path/default_size_names[it - default_sizes.begin()]/(name + "-dark.png"))) return bitmap(bitmap((theme_path/default_size_names[it - default_sizes.begin()]/(name + "-dark.png")).string()), *it_sizes);
+      if (exists(theme_path/default_size_names[it - default_sizes.begin()]/(name + "-dark.png").c_str())) return bitmap(bitmap((theme_path/default_size_names[it - default_sizes.begin()]/(name + "-dark.png").c_str()).string()), *it_sizes);
   }
   
-  if (exists(theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png"))) return bitmap((theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png")).string());
+  if (exists(theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png").c_str())) return bitmap((theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png").c_str()).string());
   for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
-    if (exists(theme_path/default_size_names[it - default_sizes.begin()]/(name + ".png"))) return bitmap(bitmap((theme_path/default_size_names[it - default_sizes.begin()]/(name + ".png")).string()), *it_sizes);
+    if (exists(theme_path/default_size_names[it - default_sizes.begin()]/(name + ".png").c_str())) return bitmap(bitmap((theme_path/default_size_names[it - default_sizes.begin()]/(name + ".png").c_str()).string()), *it_sizes);
   
   
   if (dark_mode) {
-    if (exists(system_images_resource_path()/fallback_theme()/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png"))) return bitmap((system_images_resource_path()/fallback_theme()/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png")).string());
+    if (exists(system_images_resource_path()/fallback_theme().c_str()/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png").c_str())) return bitmap((system_images_resource_path()/fallback_theme().c_str()/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png").c_str()).string());
     for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
-      if (exists(system_images_resource_path()/fallback_theme()/default_size_names[it - default_sizes.begin()]/(name + "-dark.png"))) return bitmap(bitmap((system_images_resource_path()/fallback_theme()/default_size_names[it - default_sizes.begin()]/(name + "-dark.png")).string()), *it_sizes);
+      if (exists(system_images_resource_path()/fallback_theme().c_str()/default_size_names[it - default_sizes.begin()]/(name + "-dark.png").c_str())) return bitmap(bitmap((system_images_resource_path()/fallback_theme().c_str()/default_size_names[it - default_sizes.begin()]/(name + "-dark.png").c_str()).string()), *it_sizes);
   }
 
-  if (exists(system_images_resource_path()/fallback_theme()/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png"))) return bitmap((system_images_resource_path()/fallback_theme()/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png")).string());
+  if (exists(system_images_resource_path()/fallback_theme().c_str()/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png").c_str())) return bitmap((system_images_resource_path()/fallback_theme().c_str()/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png").c_str()).string());
   for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
-    if (exists(system_images_resource_path()/fallback_theme()/default_size_names[it - default_sizes.begin()]/(name + ".png"))) return bitmap(bitmap((system_images_resource_path()/fallback_theme()/default_size_names[it - default_sizes.begin()]/(name + ".png")).string()), *it_sizes);
+    if (exists(system_images_resource_path()/fallback_theme().c_str()/default_size_names[it - default_sizes.begin()]/(name + ".png").c_str())) return bitmap(bitmap((system_images_resource_path()/fallback_theme().c_str()/default_size_names[it - default_sizes.begin()]/(name + ".png").c_str()).string()), *it_sizes);
 
   return image::empty;
 }
