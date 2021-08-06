@@ -10,7 +10,6 @@
 #include <xtd/drawing/system_colors.h>
 #include <xtd/forms/create_params.h>
 #include <xtd/forms/native/edit_styles.h>
-#include <xtd/strings.h>
 #include <wx/textctrl.h>
 #include "control_handler.h"
 
