@@ -1,4 +1,4 @@
-[![xtd](docs/pictures/logo.png)](https://gammasoft71.wixsite.com/xtdpro)
+[![logo](docs/pictures/logo.png)](https://gammasoft71.wixsite.com/xtdpro)
 
 # xtd
 
