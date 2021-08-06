@@ -17,7 +17,7 @@ namespace xtdc_command {
   public:
     static int main(const vector<ustring>& args) {
       if (args.size() == 0) {
-        cout << strings::join("\n", get_help()) << endl;
+        cout << ustring::join("\n", get_help()) << endl;
         return -1;
       }
       
@@ -28,10 +28,10 @@ namespace xtdc_command {
       vector<ustring> command_args;
       if (process_xtdc_arguments(args, show_help, show_info, show_version, command_args, invalid_option) == false) {
         if (!invalid_option.empty())
-          cout << strings::format("Unknown option: {0}", invalid_option) << endl;
+          cout << ustring::format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
-        cout << strings::join("\n", get_help()) << endl;
+        cout << ustring::join("\n", get_help()) << endl;
         return -1;
       }
       
@@ -317,12 +317,12 @@ namespace xtdc_command {
       return {
         "",
         "xtdc:",
-        strings::format("  Version: {}", get_version_number()),
+        ustring::format("  Version: {}", get_version_number()),
         "",
         "System Environment:",
-        strings::format("  OS Name:    {}", get_os_name()),
-        strings::format("  OS Version: {}", environment::os_version().version().to_string(2)),
-        strings::format("  Base Path:  {}", get_base_path())
+        ustring::format("  OS Name:    {}", get_os_name()),
+        ustring::format("  OS Version: {}", environment::os_version().version().to_string(2)),
+        ustring::format("  Base Path:  {}", get_base_path())
       };
     }
 
@@ -332,7 +332,7 @@ namespace xtdc_command {
     }
 
     static string get_version() noexcept {
-      return strings::format("xtdc version {}, © {:L} by Gammasoft", get_version_number(), chrono::system_clock::now());
+      return ustring::format("xtdc version {}, © {:L} by Gammasoft", get_version_number(), chrono::system_clock::now());
     }
     
     static string get_version_number() noexcept {
@@ -357,10 +357,10 @@ namespace xtdc_command {
       string path;
       if (!process_add_arguments(args, show_help, type, name, path, sdk, invalid_option)) {
         if (!invalid_option.empty())
-          cout << strings::format("Unknown option: {0}", invalid_option) << endl;
+          cout << ustring::format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
-        cout << strings::join("\n", get_add_help()) << endl;
+        cout << ustring::join("\n", get_add_help()) << endl;
         return -1;
       }
       if (type.empty()) type = "gui";
@@ -369,7 +369,7 @@ namespace xtdc_command {
       if (path.empty()) path = environment::current_directory();
 
       if (show_help)
-        cout << strings::join("\n", get_add_help()) << endl;
+        cout << ustring::join("\n", get_add_help()) << endl;
       else {
         xtdc_command::project_type project_type = map<string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}}[type];
         xtdc_command::project_sdk project_sdk = map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}}[sdk];
@@ -388,14 +388,14 @@ namespace xtdc_command {
       string path;
       if (!process_build_arguments(args, show_help, clean_first, release, target, path, invalid_option)) {
         if (!invalid_option.empty())
-          cout << strings::format("Unknown option: {0}", invalid_option) << endl;
+          cout << ustring::format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
-        cout << strings::join("\n", get_build_help()) << endl;
+        cout << ustring::join("\n", get_build_help()) << endl;
         return -1;
       }
       if (show_help)
-        cout << strings::join("\n", get_build_help()) << endl;
+        cout << ustring::join("\n", get_build_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
         cout << project_management(filesystem::absolute(filesystem::path(path))).build(target, clean_first, release) << endl;
@@ -410,14 +410,14 @@ namespace xtdc_command {
       string path;
       if (!process_clean_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
-          cout << strings::format("Unknown option: {0}", invalid_option) << endl;
+          cout << ustring::format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
-        cout << strings::join("\n", get_clean_help()) << endl;
+        cout << ustring::join("\n", get_clean_help()) << endl;
         return -1;
       }
       if (show_help)
-        cout << strings::join("\n", get_clean_help()) << endl;
+        cout << ustring::join("\n", get_clean_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
         cout << project_management(filesystem::absolute(filesystem::path(path))).clean(release) << endl;
@@ -426,7 +426,7 @@ namespace xtdc_command {
     }
     
     static int help(const vector<ustring>& args) {
-      cout << strings::join("\n", get_help()) << endl;
+      cout << ustring::join("\n", get_help()) << endl;
       return 0;
     }
     
@@ -437,14 +437,14 @@ namespace xtdc_command {
       string path;
       if (!process_install_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
-          cout << strings::format("Unknown option: {0}", invalid_option) << endl;
+          cout << ustring::format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
-        cout << strings::join("\n", get_install_help()) << endl;
+        cout << ustring::join("\n", get_install_help()) << endl;
         return -1;
       }
       if (show_help)
-        cout << strings::join("\n", get_install_help()) << endl;
+        cout << ustring::join("\n", get_install_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
         cout << project_management(filesystem::absolute(filesystem::path(path))).install(release) << endl;
@@ -461,10 +461,10 @@ namespace xtdc_command {
       string path;
       if (!process_new_arguments(args, show_help, type, name, path, sdk, invalid_option)) {
         if (!invalid_option.empty())
-          cout << strings::format("Unknown option: {0}", invalid_option) << endl;
+          cout << ustring::format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
-        cout << strings::join("\n", get_new_help()) << endl;
+        cout << ustring::join("\n", get_new_help()) << endl;
         return -1;
       }
       if (type.empty()) type = "gui";
@@ -473,7 +473,7 @@ namespace xtdc_command {
       if (path.empty()) path = environment::current_directory();
 
       if (show_help)
-        cout << strings::join("\n", get_new_help()) << endl;
+        cout << ustring::join("\n", get_new_help()) << endl;
       else {
         xtdc_command::project_type project_type = map<string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}}[type];
         xtdc_command::project_sdk project_sdk = map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}}[sdk];
@@ -490,14 +490,14 @@ namespace xtdc_command {
       string path;
       if (!process_open_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
-          cout << strings::format("Unknown option: {0}", invalid_option) << endl;
+          cout << ustring::format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
-        cout << strings::join("\n", get_open_help()) << endl;
+        cout << ustring::join("\n", get_open_help()) << endl;
         return -1;
       }
       if (show_help)
-        cout << strings::join("\n", get_open_help()) << endl;
+        cout << ustring::join("\n", get_open_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
         cout << project_management(filesystem::absolute(filesystem::path(path))).open(release) << endl;
@@ -512,14 +512,14 @@ namespace xtdc_command {
       string path;
       if (!process_update_arguments(args, show_help, target, path, invalid_option)) {
         if (!invalid_option.empty())
-          cout << strings::format("Unknown option: {0}", invalid_option) << endl;
+          cout << ustring::format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
-        cout << strings::join("\n", get_update_help()) << endl;
+        cout << ustring::join("\n", get_update_help()) << endl;
         return -1;
       }
       if (show_help)
-        cout << strings::join("\n", get_update_help()) << endl;
+        cout << ustring::join("\n", get_update_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
         cout << project_management(filesystem::absolute(filesystem::path(path))).update(target) << endl;
@@ -535,14 +535,14 @@ namespace xtdc_command {
       string path;
       if (!process_run_arguments(args, show_help, release, target, path, invalid_option)) {
         if (!invalid_option.empty())
-          cout << strings::format("Unknown option: {0}", invalid_option) << endl;
+          cout << ustring::format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
-        cout << strings::join("\n", get_run_help()) << endl;
+        cout << ustring::join("\n", get_run_help()) << endl;
         return -1;
       }
       if (show_help)
-        cout << strings::join("\n", get_run_help()) << endl;
+        cout << ustring::join("\n", get_run_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
         cout << project_management(filesystem::absolute(filesystem::path(path))).run(target, release) << endl;
@@ -556,17 +556,17 @@ namespace xtdc_command {
       string path;
       if (!process_targets_arguments(args, show_help, path, invalid_option)) {
         if (!invalid_option.empty())
-          cout << strings::format("Unknown option: {0}", invalid_option) << endl;
+          cout << ustring::format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
-        cout << strings::join("\n", get_targets_help()) << endl;
+        cout << ustring::join("\n", get_targets_help()) << endl;
         return -1;
       }
       if (show_help)
-        cout << strings::join("\n", get_targets_help()) << endl;
+        cout << ustring::join("\n", get_targets_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
-        cout << xtd::strings::join(", ", project_management(filesystem::absolute(filesystem::path(path))).targets()) << endl;
+        cout << xtd::ustring::join(", ", project_management(filesystem::absolute(filesystem::path(path))).targets()) << endl;
       }
       return 0;
     }
@@ -578,14 +578,14 @@ namespace xtdc_command {
       string path;
       if (!process_test_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
-          cout << strings::format("Unknown option: {0}", invalid_option) << endl;
+          cout << ustring::format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
-        cout << strings::join("\n", get_test_help()) << endl;
+        cout << ustring::join("\n", get_test_help()) << endl;
         return -1;
       }
       if (show_help)
-        cout << strings::join("\n", get_test_help()) << endl;
+        cout << ustring::join("\n", get_test_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
         cout << project_management(filesystem::absolute(filesystem::path(path))).test(release) << endl;
@@ -600,14 +600,14 @@ namespace xtdc_command {
       string path;
       if (!process_uninstall_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
-          cout << strings::format("Unknown option: {0}", invalid_option) << endl;
+          cout << ustring::format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
-        cout << strings::join("\n", get_uninstall_help()) << endl;
+        cout << ustring::join("\n", get_uninstall_help()) << endl;
         return -1;
       }
       if (show_help)
-        cout << strings::join("\n", get_uninstall_help()) << endl;
+        cout << ustring::join("\n", get_uninstall_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
         cout << project_management(filesystem::absolute(filesystem::path(path))).uninstall(release) << endl;
@@ -865,15 +865,15 @@ namespace xtdc_command {
     
     static int invalid_command(const vector<ustring>& command_args) {
       cout << "Invalid command" << endl;
-      cout << strings::join("\n", get_help()) << endl;
+      cout << ustring::join("\n", get_help()) << endl;
       return -1;
     }
 
     static int run_commands(bool show_help, bool show_info, bool show_version, string invalid_option, const vector<ustring>& command_args) {
       if (show_version || show_info || show_help) {
         cout << get_version() << endl;
-        if (show_info) cout << strings::join("\n", get_info()) << endl;
-        if (show_help) cout << strings::join("\n", get_help()) << endl;
+        if (show_info) cout << ustring::join("\n", get_info()) << endl;
+        if (show_help) cout << ustring::join("\n", get_help()) << endl;
         return 0;
       }
       static map<ustring, function<int(const vector<ustring>&)>> commands {{"add", add}, {"build", build}, {"clean", clean}, {"documentation", documentation}, {"examples", examples}, {"guide", guide}, {"help", help}, {"install", install}, {"new", new_project}, {"open", open}, {"update", update}, {"run", run}, {"targets", targets}, {"test", test}, {"uninstall", uninstall}, {"web", web}};
