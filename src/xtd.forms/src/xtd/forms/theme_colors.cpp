@@ -605,7 +605,7 @@ namespace {
 const theme_colors theme_colors::empty {};
 theme_colors theme_colors::current_theme_;
 
-theme_colors theme_colors::theme_from_name(const std::string& name) {
+theme_colors theme_colors::theme_from_name(const xtd::ustring& name) {
   if (name == default_theme_name()) return theme_colors(default_theme_name(), theme_style::system_auto, {system_color_getter}, true);
   if (name == "gnome") return theme_colors("gnome", theme_style::system_auto, {gnome_color_getter});
   if (name == "gnome (dark)") return theme_colors("gnome (dark)", theme_style::dark, {gnome_dark_color_getter});
