@@ -71,7 +71,7 @@ namespace xtd {
       /// @brief Gets the device name associated with a display.
       /// @return The device name associated with a display.
       /// @remarks This string may contain non-printable characters.
-      const std::string& device_name() const {return device_name_;}
+      const xtd::ustring& device_name() const {return device_name_;}
       
       /// @brief Gets a value indicating whether a particular display is high resolution.
       /// @return true if this display is high resolution; otherwise, false.
@@ -187,11 +187,11 @@ namespace xtd {
                                   
     private:
       screen() = default;
-      screen(int32_t bits_per_pixel, const drawing::rectangle& bounds, const std::string& device_name, int32_t pixels_per_inch, bool primary, double scale_factor, const drawing::rectangle& working_area) : bits_per_pixel_(bits_per_pixel), bounds_(bounds), device_name_(device_name), pixels_per_inch_(pixels_per_inch), primary_(primary), scale_factor_(scale_factor), working_area_(working_area) {}
+      screen(int32_t bits_per_pixel, const drawing::rectangle& bounds, const xtd::ustring& device_name, int32_t pixels_per_inch, bool primary, double scale_factor, const drawing::rectangle& working_area) : bits_per_pixel_(bits_per_pixel), bounds_(bounds), device_name_(device_name), pixels_per_inch_(pixels_per_inch), primary_(primary), scale_factor_(scale_factor), working_area_(working_area) {}
       
       int32_t bits_per_pixel_ = 0;
       drawing::rectangle bounds_;
-      std::string device_name_;
+      xtd::ustring device_name_;
       int32_t pixels_per_inch_ = 96;
       bool primary_ = false;
       double scale_factor_ = 1.;
