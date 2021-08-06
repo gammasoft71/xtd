@@ -36,11 +36,11 @@ namespace xtd {
          item() = default;
          /// @brief Initializes a new instance of the item class with specified value.
          /// @param value a string that represent the item.
-         item(const std::string& value) : value_(value) {}
+         item(const xtd::ustring& value) : value_(value) {}
          /// @brief Initializes a new instance of the item class with specified value and tag.
          /// @param value a string that represent the item.
          /// @param tag an object that contains data about the item.
-         item(const std::string& value, const std::any& tag) : value_(value), tag_(tag) {}
+         item(const xtd::ustring& value, const std::any& tag) : value_(value), tag_(tag) {}
          /// @cond
          item(const char* value) : value_(value) {}
          item(const item& value) = default;
@@ -55,8 +55,8 @@ namespace xtd {
          /// @endcond
          
          /// @brief Gets the value of the item.
-         /// @return A std::string that represent the value of item.
-         virtual const std::string& value() const {return value_;}
+         /// @return A xtd::ustring that represent the value of item.
+         virtual const xtd::ustring& value() const {return value_;}
          
          /// @brief Gets the tag of the item.
          /// @return A std::any that represent the tag of item.
@@ -64,10 +64,10 @@ namespace xtd {
          
          /// @brief Returns a string containing the vakue of the item.
          /// @return A string containing the value of the item.
-         std::string to_string() const {return value_;}
+         xtd::ustring to_string() const {return value_;}
 
        private:
-         std::string value_;
+         xtd::ustring value_;
          std::any tag_;
        };
       
