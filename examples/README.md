@@ -2,7 +2,7 @@
 
 [This folder](.) contains all examples used by [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/) and more.
 
-[![xtd](../docs/pictures/xtd_header.png)](https://gammasoft71.wixsite.com/xtdpro)
+[![xtd](../docs/pictures/logo.png)](https://gammasoft71.wixsite.com/xtdpro)
 
 ## [xtd.core](xtd.core.examples/README.md)
 
