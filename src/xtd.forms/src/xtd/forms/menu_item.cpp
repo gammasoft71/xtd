@@ -11,115 +11,115 @@ menu_item::menu_item() : menu(menu::menu_item_collection {}) {
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text) : menu(menu::menu_item_collection {}), text_(text) {
+menu_item::menu_item(const xtd::ustring& text) : menu(menu::menu_item_collection {}), text_(text) {
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text, xtd::forms::shortcut shortcut) : menu(menu::menu_item_collection {}), text_(text), shortcut_(shortcut) {
+menu_item::menu_item(const xtd::ustring& text, xtd::forms::shortcut shortcut) : menu(menu::menu_item_collection {}), text_(text), shortcut_(shortcut) {
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text, const xtd::drawing::image& image) : menu(menu::menu_item_collection {}), text_(text),image_(image)  {
+menu_item::menu_item(const xtd::ustring& text, const xtd::drawing::image& image) : menu(menu::menu_item_collection {}), text_(text),image_(image)  {
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text, const xtd::drawing::image& image, xtd::forms::shortcut shortcut) : menu(menu::menu_item_collection {}), text_(text),image_(image), shortcut_(shortcut) {
+menu_item::menu_item(const xtd::ustring& text, const xtd::drawing::image& image, xtd::forms::shortcut shortcut) : menu(menu::menu_item_collection {}), text_(text),image_(image), shortcut_(shortcut) {
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text, xtd::forms::menu_item_kind kind) : menu(menu::menu_item_collection {}), text_(text), kind_(kind) {
+menu_item::menu_item(const xtd::ustring& text, xtd::forms::menu_item_kind kind) : menu(menu::menu_item_collection {}), text_(text), kind_(kind) {
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text, xtd::forms::menu_item_kind kind, xtd::forms::shortcut shortcut) : menu(menu::menu_item_collection {}), text_(text), kind_(kind), shortcut_(shortcut) {
+menu_item::menu_item(const xtd::ustring& text, xtd::forms::menu_item_kind kind, xtd::forms::shortcut shortcut) : menu(menu::menu_item_collection {}), text_(text), kind_(kind), shortcut_(shortcut) {
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind) : menu(menu::menu_item_collection {}), text_(text), image_(image), kind_(kind) {
+menu_item::menu_item(const xtd::ustring& text, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind) : menu(menu::menu_item_collection {}), text_(text), image_(image), kind_(kind) {
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, xtd::forms::shortcut shortcut) : menu(menu::menu_item_collection {}), text_(text), image_(image), kind_(kind), shortcut_(shortcut) {
+menu_item::menu_item(const xtd::ustring& text, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, xtd::forms::shortcut shortcut) : menu(menu::menu_item_collection {}), text_(text), image_(image), kind_(kind), shortcut_(shortcut) {
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text, xtd::forms::menu_item_kind kind, bool checked) : menu(menu::menu_item_collection {}), text_(text), kind_(kind), checked_(checked) {
+menu_item::menu_item(const xtd::ustring& text, xtd::forms::menu_item_kind kind, bool checked) : menu(menu::menu_item_collection {}), text_(text), kind_(kind), checked_(checked) {
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut) : menu(menu::menu_item_collection {}), text_(text), kind_(kind), checked_(checked), shortcut_(shortcut) {
+menu_item::menu_item(const xtd::ustring& text, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut) : menu(menu::menu_item_collection {}), text_(text), kind_(kind), checked_(checked), shortcut_(shortcut) {
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked) : menu(menu::menu_item_collection {}), text_(text), image_(image), kind_(kind), checked_(checked) {
+menu_item::menu_item(const xtd::ustring& text, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked) : menu(menu::menu_item_collection {}), text_(text), image_(image), kind_(kind), checked_(checked) {
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut) : menu(menu::menu_item_collection {}), text_(text), image_(image), kind_(kind), checked_(checked), shortcut_(shortcut) {
+menu_item::menu_item(const xtd::ustring& text, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut) : menu(menu::menu_item_collection {}), text_(text), image_(image), kind_(kind), checked_(checked), shortcut_(shortcut) {
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text, const xtd::event_handler& on_click) : menu(menu::menu_item_collection {}), text_(text) {
+menu_item::menu_item(const xtd::ustring& text, const xtd::event_handler& on_click) : menu(menu::menu_item_collection {}), text_(text) {
   data_->on_click_ = on_click;
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text, const xtd::event_handler& on_click, xtd::forms::shortcut shortcut) : menu(menu::menu_item_collection {}), text_(text), shortcut_(shortcut) {
+menu_item::menu_item(const xtd::ustring& text, const xtd::event_handler& on_click, xtd::forms::shortcut shortcut) : menu(menu::menu_item_collection {}), text_(text), shortcut_(shortcut) {
   data_->on_click_ = on_click;
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text, const xtd::event_handler& on_click, const xtd::drawing::image& image) : menu(menu::menu_item_collection {}), text_(text),image_(image)  {
+menu_item::menu_item(const xtd::ustring& text, const xtd::event_handler& on_click, const xtd::drawing::image& image) : menu(menu::menu_item_collection {}), text_(text),image_(image)  {
   data_->on_click_ = on_click;
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text, const xtd::event_handler& on_click, const xtd::drawing::image& image, xtd::forms::shortcut shortcut) : menu(menu::menu_item_collection {}), text_(text),image_(image), shortcut_(shortcut) {
+menu_item::menu_item(const xtd::ustring& text, const xtd::event_handler& on_click, const xtd::drawing::image& image, xtd::forms::shortcut shortcut) : menu(menu::menu_item_collection {}), text_(text),image_(image), shortcut_(shortcut) {
   data_->on_click_ = on_click;
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text, const xtd::event_handler& on_click, xtd::forms::menu_item_kind kind) : menu(menu::menu_item_collection {}), text_(text), kind_(kind) {
+menu_item::menu_item(const xtd::ustring& text, const xtd::event_handler& on_click, xtd::forms::menu_item_kind kind) : menu(menu::menu_item_collection {}), text_(text), kind_(kind) {
   data_->on_click_ = on_click;
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text, const xtd::event_handler& on_click, xtd::forms::menu_item_kind kind, xtd::forms::shortcut shortcut) : menu(menu::menu_item_collection {}), text_(text), kind_(kind), shortcut_(shortcut) {
+menu_item::menu_item(const xtd::ustring& text, const xtd::event_handler& on_click, xtd::forms::menu_item_kind kind, xtd::forms::shortcut shortcut) : menu(menu::menu_item_collection {}), text_(text), kind_(kind), shortcut_(shortcut) {
   data_->on_click_ = on_click;
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text, const xtd::event_handler& on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind) : menu(menu::menu_item_collection {}), text_(text), image_(image), kind_(kind) {
+menu_item::menu_item(const xtd::ustring& text, const xtd::event_handler& on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind) : menu(menu::menu_item_collection {}), text_(text), image_(image), kind_(kind) {
   data_->on_click_ = on_click;
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text, const xtd::event_handler& on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, xtd::forms::shortcut shortcut) : menu(menu::menu_item_collection {}), text_(text), image_(image), kind_(kind), shortcut_(shortcut) {
+menu_item::menu_item(const xtd::ustring& text, const xtd::event_handler& on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, xtd::forms::shortcut shortcut) : menu(menu::menu_item_collection {}), text_(text), image_(image), kind_(kind), shortcut_(shortcut) {
   data_->on_click_ = on_click;
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text, const xtd::event_handler& on_click, xtd::forms::menu_item_kind kind, bool checked) : menu(menu::menu_item_collection {}), text_(text), kind_(kind), checked_(checked) {
+menu_item::menu_item(const xtd::ustring& text, const xtd::event_handler& on_click, xtd::forms::menu_item_kind kind, bool checked) : menu(menu::menu_item_collection {}), text_(text), kind_(kind), checked_(checked) {
   data_->on_click_ = on_click;
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text, const xtd::event_handler& on_click, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut) : menu(menu::menu_item_collection {}), text_(text), kind_(kind), checked_(checked), shortcut_(shortcut) {
+menu_item::menu_item(const xtd::ustring& text, const xtd::event_handler& on_click, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut) : menu(menu::menu_item_collection {}), text_(text), kind_(kind), checked_(checked), shortcut_(shortcut) {
   data_->on_click_ = on_click;
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text, const xtd::event_handler& on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked) : menu(menu::menu_item_collection {}), text_(text), image_(image), kind_(kind), checked_(checked) {
+menu_item::menu_item(const xtd::ustring& text, const xtd::event_handler& on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked) : menu(menu::menu_item_collection {}), text_(text), image_(image), kind_(kind), checked_(checked) {
   data_->on_click_ = on_click;
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text, const xtd::event_handler& on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut) : menu(menu::menu_item_collection {}), text_(text), image_(image), kind_(kind), checked_(checked), shortcut_(shortcut) {
+menu_item::menu_item(const xtd::ustring& text, const xtd::event_handler& on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut) : menu(menu::menu_item_collection {}), text_(text), image_(image), kind_(kind), checked_(checked), shortcut_(shortcut) {
   data_->on_click_ = on_click;
   data_->handle_ = create_menu_handle();
 }
 
-menu_item::menu_item(const std::string& text, const std::vector<menu_item>& items) : menu(items), text_(text) {
+menu_item::menu_item(const xtd::ustring& text, const std::vector<menu_item>& items) : menu(items), text_(text) {
   data_->handle_ = create_menu_handle();
 }
 

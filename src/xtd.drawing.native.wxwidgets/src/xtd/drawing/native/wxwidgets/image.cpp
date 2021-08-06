@@ -6,7 +6,6 @@
 #include <xtd/drawing/native/toolkit.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/convert_string.h>
-#include <xtd/strings.h>
 #include <atomic>
 #include <wx/image.h>
 #include <wx/palette.h>

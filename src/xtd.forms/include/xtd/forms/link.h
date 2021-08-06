@@ -5,6 +5,7 @@
 #include <any>
 #include <tuple>
 #include <xtd/object.h>
+#include <xtd/ustring.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -40,12 +41,12 @@ namespace xtd {
       /// @endcond
 
       /// @brief Gets a text description of the link.
-      /// @return A std::string representing a text description of the link.
-      const std::string& description() const;
+      /// @return A xtd::ustring representing a text description of the link.
+      const xtd::ustring& description() const;
       /// @brief Sets a text description of the link.
-      /// @param value A std::string representing a text description of the link.
+      /// @param value A xtd::ustring representing a text description of the link.
       /// @return The current instance of xtd::forms::link_label::link.
-      link& description(const std::string& value);
+      link& description(const xtd::ustring& value);
       
       /// @brief Gets a value indicating whether the link is enabled.
       /// @return true if the link is enabled; otherwise, false.
@@ -78,12 +79,12 @@ namespace xtd {
       link& link_data(std::any value);
       
       /// @brief Gets the name of the xtd::forms::link_label::link.
-      /// @return A std::string representing the name of the xtd::forms::link_label::link. The default value is the empty string ("").
-      const std::string& name() const;
+      /// @return A xtd::ustring representing the name of the xtd::forms::link_label::link. The default value is the empty string ("").
+      const xtd::ustring& name() const;
       /// @brief Sets the name of the xtd::forms::link_label::link.
-      /// @param value A std::string representing the name of the xtd::forms::link_label::link. The default value is the empty string ("").
+      /// @param value A xtd::ustring representing the name of the xtd::forms::link_label::link. The default value is the empty string ("").
       /// @return The current instance of xtd::forms::link_label::link.
-      link& name(const std::string& value);
+      link& name(const xtd::ustring& value);
 
       /// @brief Gets the starting location of the link within the text of the xtd::forms::link_label::link.
       /// @return The location within the text of the the xtd::forms::link_label control where the link starts.
@@ -117,11 +118,11 @@ namespace xtd {
 
     private:
       friend link_label;
-      std::string description_;
+      xtd::ustring description_;
       bool enabled_ = true;
       size_t length_ = 0;
       std::any link_data_;
-      std::string name_;
+      xtd::ustring name_;
       size_t start_ = 0;
       std::any tag_;
       bool visited_ = false;

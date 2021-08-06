@@ -17,7 +17,7 @@ using namespace xtd::forms;
 namespace {
   class input_dialog_standard : public form {
   public:
-    input_dialog_standard(const std::string& text, const std::string& message, const std::string& value, xtd::forms::character_casing character_casing, bool multiline, bool use_system_password_char, bool word_wrap) {
+    input_dialog_standard(const xtd::ustring& text, const xtd::ustring& message, const xtd::ustring& value, xtd::forms::character_casing character_casing, bool multiline, bool use_system_password_char, bool word_wrap) {
       auto offset_multiline = multiline ? 100 : 0;
       
       icon(xtd::drawing::icon::empty);
@@ -65,7 +65,7 @@ namespace {
       input_text_box_.focus();
     }
     
-    std::string value() const {return input_text_box_.text();}
+    xtd::ustring value() const {return input_text_box_.text();}
 
     forms::dialog_result show_dialog() override {
       start_position(form_start_position::center_screen);
@@ -115,8 +115,8 @@ void input_dialog::reset() {
 
 bool input_dialog::run_dialog(intptr_t owner) {
   switch (character_casing_) {
-    case xtd::forms::character_casing::upper: value_ = xtd::strings::to_upper(value_); break;
-    case xtd::forms::character_casing::lower: value_ = xtd::strings::to_lower(value_); break;
+    case xtd::forms::character_casing::upper: value_ = value_.to_upper(); break;
+    case xtd::forms::character_casing::lower: value_ = value_.to_lower(); break;
     default: break;
   }
   if (dialog_style_ == xtd::forms::dialog_style::standard) {
@@ -133,8 +133,8 @@ bool input_dialog::run_dialog(intptr_t owner) {
 
 void input_dialog::run_sheet(intptr_t owner) {
   switch (character_casing_) {
-    case xtd::forms::character_casing::upper: value_ = xtd::strings::to_upper(value_); break;
-    case xtd::forms::character_casing::lower: value_ = xtd::strings::to_lower(value_); break;
+    case xtd::forms::character_casing::upper: value_ = value_.to_upper(); break;
+    case xtd::forms::character_casing::lower: value_ = value_.to_lower(); break;
     default: break;
   }
   if (!owner)

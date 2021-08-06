@@ -74,13 +74,13 @@ namespace xtd {
       /// @param theme The theme of menu item image.
       /// @param on_click an event handler to respond on lick event.
       /// @return new main menu instance.
-      static xtd::forms::main_menu create_standard_items(const std::string& theme, const xtd::event_handler& on_click);
+      static xtd::forms::main_menu create_standard_items(const xtd::ustring& theme, const xtd::event_handler& on_click);
       /// @brief A factory to create a main menu with specified theme, image size and on click event handler.
       /// @param theme The theme of menu item image.
       /// @param image_size A xttd::drawing::size that represent the menu item image size.
       /// @param on_click an event handler to respond on lick event.
       /// @return new main menu instance.
-      static xtd::forms::main_menu create_standard_items(const std::string& theme, const xtd::drawing::size& size, const xtd::event_handler& on_click);
+      static xtd::forms::main_menu create_standard_items(const xtd::ustring& theme, const xtd::drawing::size& size, const xtd::event_handler& on_click);
       /// @brief A factory to create a main menu with specified theme, image size and on click event handler.
       /// @param theme The theme of menu item image.
       /// @param image_size A xttd::drawing::size that represent the menu item image size.
@@ -94,9 +94,9 @@ namespace xtd {
       template<typename on_click_type>
       static xtd::forms::main_menu create_standard_items(const xtd::drawing::size& size, on_click_type on_click) {return create_standard_items(size, xtd::event_handler(on_click));}
       template<typename on_click_type>
-      static xtd::forms::main_menu create_standard_items(const std::string& theme, on_click_type on_click) {return create_standard_items(theme, xtd::event_handler(on_click));}
+      static xtd::forms::main_menu create_standard_items(const xtd::ustring& theme, on_click_type on_click) {return create_standard_items(theme, xtd::event_handler(on_click));}
       template<typename on_click_type>
-      static xtd::forms::main_menu create_standard_items(const std::string& theme, const xtd::drawing::size& size, on_click_type on_click) {return create_standard_items(theme, size, xtd::event_handler(on_click));}
+      static xtd::forms::main_menu create_standard_items(const xtd::ustring& theme, const xtd::drawing::size& size, on_click_type on_click) {return create_standard_items(theme, size, xtd::event_handler(on_click));}
       template<typename on_click_type>
       static xtd::forms::main_menu create_standard_items(const xtd::forms::theme_images& theme, const xtd::drawing::size& size, on_click_type on_click) {return create_standard_items(theme, size, xtd::event_handler(on_click));}
       /// @endcond

@@ -71,13 +71,13 @@ namespace xtd {
       /// @brief Gets the name of the menu.
       /// @return A string representing the name.
       /// @remarks At design time, this property is set to the programmatic identifier of the control. However, this property has no bearing on the control at run time.
-      const std::string& name() const {return data_->name_;}
+      const xtd::ustring& name() const {return data_->name_;}
 
       /// @brief Sets the name of the menu.
       /// @param value A string representing the name.
       /// @return Current menu class.
       /// @remarks At design time, this property is set to the programmatic identifier of the control. However, this property has no bearing on the control at run time.
-      menu& name(const std::string& value) {
+      menu& name(const xtd::ustring& value) {
         data_->name_ = value;
         return *this;
       }
@@ -165,7 +165,7 @@ namespace xtd {
         menu_item_collection menu_items_;
         std::unique_ptr<menu_item> mdi_list_item_;
         std::optional<std::reference_wrapper<menu>> main_menu_;
-        std::string name_;
+        xtd::ustring name_;
         std::optional<std::reference_wrapper<menu>> parent_;
         std::any tag_;
         xtd::event_handler on_click_;

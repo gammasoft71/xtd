@@ -47,7 +47,7 @@ namespace xtdc_gui {
         if (group_item.is_directory()) {
           for (auto item : std::filesystem::directory_iterator(group_item)) {
             if (item.is_directory() && item.path().stem().string() != "src") {
-              examples.push_back({xtd::strings::format("{} - {}", group_item.path().filename().string(), item.path().filename().string()), get_description(item.path() / "README.md"), item.path().string(), get_picture(item.path().stem().string())});
+              examples.push_back({xtd::ustring::format("{} - {}", group_item.path().filename().string(), item.path().filename().string()), get_description(item.path() / "README.md"), item.path().string(), get_picture(item.path().stem().string())});
             }
           }
         }

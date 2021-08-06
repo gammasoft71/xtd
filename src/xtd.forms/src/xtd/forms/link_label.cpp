@@ -18,13 +18,13 @@ link_label::link_collection& link_label::link_collection::operator=(const link_l
   return *this;
 }
 
-link_label::link_collection::const_reference link_label::link_collection::operator[](const string& name) const {
+link_label::link_collection::const_reference link_label::link_collection::operator[](const ustring& name) const {
   for(auto& item : *this)
     if(item.name() == name) return item;
   return empty_;
 }
 
-link_label::link_collection::reference link_label::link_collection::operator[](const string& name) {
+link_label::link_collection::reference link_label::link_collection::operator[](const ustring& name) {
   for(auto& item : *this)
     if(item.name() == name) return item;
   return empty_;
@@ -166,11 +166,11 @@ void link_label::on_paint(paint_event_args& e) {
   
   size_t line_number = 0;
   size_t index = 0;
-  for (auto line : strings::split(text_, {'\n'})) {
+  for (auto line : text_.split({'\n'})) {
     auto text_location = get_text_location(line_number);
     size_t line_index = 0;
     drawing::size size_text;
-    string text;
+    ustring text;
     for (auto link : links_) {
       drawing::color color = link_color_;
       if (!link.enabled()) color = disabled_link_color_;
@@ -178,7 +178,7 @@ void link_label::on_paint(paint_event_args& e) {
       else if (link.visited()) color = visited_link_color_;
 
       if (index < link.start()) {
-        text = strings::substring(line, line_index, link.start() - line_index);
+        text = line.substring(line_index, link.start() - line_index);
         size_text = drawing::size::ceiling(e.graphics().measure_string(text, font()));
         if (enabled())
           e.graphics().draw_string(text, font(), solid_brush(fore_color()), {text_location, size_text});
@@ -188,7 +188,7 @@ void link_label::on_paint(paint_event_args& e) {
         line_index += text.length();
       }
       if (index <= link.start() && line.length() + index > link.start()) {
-        text = strings::substring(line, link.start() - index, link.length());
+        text = line.substring(link.start() - index, link.length());
         size_text = drawing::size::ceiling(e.graphics().measure_string(text, link_font()));
         if (enabled())
           e.graphics().draw_string(text, link_font(), solid_brush(color), {text_location, size_text});
@@ -200,7 +200,7 @@ void link_label::on_paint(paint_event_args& e) {
     }
     
     if (line_index < line.length()) {
-      text = strings::substring(line, line_index, line.length());
+      text = line.substring(line_index, line.length());
       size_text = drawing::size::ceiling(e.graphics().measure_string(text, font()));
       if (enabled())
         e.graphics().draw_string(text, font(), solid_brush(fore_color()), {text_location, size_text});
@@ -237,7 +237,7 @@ link_label::link& link_label::point_in_link(const xtd::drawing::point& point) {
 
 xtd::drawing::point link_label::get_text_location(size_t line_number) const {
   size_t line_index = 0;
-  for (auto line : strings::split(text_, {'\n'})) {
+  for (auto line : text_.split({'\n'})) {
     std::vector<std::tuple<xtd::drawing::rectangle, bool>> text_rects;
     point text_location;
     drawing::size text_size = drawing::size::ceiling(screen::create_graphics().measure_string(line, link_font()));
@@ -263,21 +263,21 @@ std::vector<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text
  
   size_t line_number = 0;
   size_t index = 0;
-  for (auto line : strings::split(text_, {'\n'})) {
+  for (auto line : text_.split({'\n'})) {
     size_t line_index = 0;
     auto text_location = get_text_location(line_number);
     drawing::size size_text;
-    string text;
+    ustring text;
     for (auto link : links_) {
       if (index < link.start()) {
-        text = strings::substring(line, line_index, link.start() - line_index);
+        text = line.substring(line_index, link.start() - line_index);
         size_text = drawing::size::ceiling(screen::create_graphics().measure_string(text, font()));
         text_rects.push_back({{text_location, size_text}, false});
         text_location.x(text_location.x() + size_text.width());
         line_index += text.length();
       }
       if (index <= link.start() && line.length() + index > link.start()) {
-        text = strings::substring(line, link.start() - index, link.length());
+        text = line.substring(link.start() - index, link.length());
         size_text = drawing::size::ceiling(screen::create_graphics().measure_string(text, link_font()));
         text_rects.push_back({{text_location, size_text}, true});
         text_location.x(text_location.x() + size_text.width());
@@ -286,7 +286,7 @@ std::vector<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text
     }
     
     if (line_index < line.length()) {
-      text = strings::substring(line, line_index, line.length());
+      text = line.substring(line_index, line.length());
       size_text = drawing::size::ceiling(screen::create_graphics().measure_string(text, font()));
       text_rects.push_back({{text_location, size_text}, false});
       line_index = line.length();

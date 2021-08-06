@@ -3,7 +3,6 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <vector>
-#include <xtd/strings.h>
 #include "../../drawing_export.h"
 #include "font_collection.h"
 

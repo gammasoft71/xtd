@@ -5,7 +5,6 @@
 #include <cstdint>
 #include <limits>
 #include <xtd/event_args.h>
-#include <xtd/strings.h>
 #include "check_state.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

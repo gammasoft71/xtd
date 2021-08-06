@@ -124,11 +124,11 @@ namespace xtd {
       
       /// @brief Gets the text message.
       /// @return The text message.
-      std::string messsage() const {return message_;}
+      xtd::ustring messsage() const {return message_;}
       /// @brief Sets the text message.
       /// @param message The text message.
       /// @return Current message_dialog instance.
-      message_dialog& message(const std::string& message) {
+      message_dialog& message(const xtd::ustring& message) {
         if (message_ != message)
           message_ = message;
         return *this;
@@ -136,11 +136,11 @@ namespace xtd {
       
       /// @brief Gets the dialog caption text.
       /// @return The current dialog caption text.
-      std::string text() const {return text_;}
+      xtd::ustring text() const {return text_;}
       /// @brief Sets the dialog caption text.
       /// @param text The new dialog caption text.
       /// @return Current message_dialog instance.
-      message_dialog& text(const std::string& text) {
+      message_dialog& text(const xtd::ustring& text) {
         if (text_ != text)
           text_ = text;
         return *this;
@@ -186,8 +186,8 @@ namespace xtd {
       bool display_help_button_ = false;
       xtd::forms::message_dialog_icon icon_ = xtd::forms::message_dialog_icon::none;
       xtd::forms::message_dialog_options options_ = static_cast<xtd::forms::message_dialog_options>(0);
-      std::string message_;
-      std::string text_;
+      xtd::ustring message_;
+      xtd::ustring text_;
     };
   }
 }

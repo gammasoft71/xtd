@@ -54,7 +54,7 @@ namespace xtd {
       class idigit interface_ {
       public:
         virtual wchar_t get_character() const = 0;
-        virtual std::string get_valid_characters() const = 0;
+        virtual xtd::ustring get_valid_characters() const = 0;
         virtual int32_t get_thickness() const = 0;
 
         virtual void set_back_digit_color(const xtd::drawing::color& value) = 0;
@@ -71,7 +71,7 @@ namespace xtd {
         dot_matrix_display_digit() = default;
         
         wchar_t get_character() const override {return character_;}
-        std::string get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/%\\_°\"'[](){}<>| .,:;!?&$€";}
+        xtd::ustring get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/%\\_°\"'[](){}<>| .,:;!?&$€";}
         int32_t get_thickness() const override {return dot_matrix_display::thickness();}
         
         void set_back_digit_color(const xtd::drawing::color& value) override {dot_matrix_display::back_dot_color(value);}
@@ -173,7 +173,7 @@ namespace xtd {
           };
           if (character_ != value) {
             auto it = characters.find(value);
-            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
+            if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
             character_ = value;
             dot_matrix_display::set_dots(it->second);
           }
@@ -192,7 +192,7 @@ namespace xtd {
         fourteen_segment_display_digit() = default;
         
         wchar_t get_character() const override {return character_;}
-        std::string get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/\\_°\"'[]()| .,:";}
+        xtd::ustring get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/\\_°\"'[]()| .,:";}
         int32_t get_thickness() const override {return fourteen_segment_display::thickness();}
         
         void set_back_digit_color(const xtd::drawing::color& value) override {fourteen_segment_display::back_segment_color(value);}
@@ -283,7 +283,7 @@ namespace xtd {
           };
           if (character_ != value) {
             auto it = characters.find(value);
-            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
+            if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
             character_ = value;
             fourteen_segment_display::value(it->second);
           }
@@ -302,7 +302,7 @@ namespace xtd {
         nine_segment_display_digit() = default;
         
         wchar_t get_character() const override {return character_;}
-        std::string get_valid_characters() const override {return "0123456789ABCDEFGHIJLNOPQRSTUYabcdefghijlnopqrstuy=-_°\"'[]| .,:";}
+        xtd::ustring get_valid_characters() const override {return "0123456789ABCDEFGHIJLNOPQRSTUYabcdefghijlnopqrstuy=-_°\"'[]| .,:";}
         int32_t get_thickness() const override {return nine_segment_display::thickness();}
         
         void set_back_digit_color(const xtd::drawing::color& value) override {nine_segment_display::back_segment_color(value);}
@@ -373,7 +373,7 @@ namespace xtd {
           };
           if (character_ != value) {
             auto it = characters.find(value);
-            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
+            if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
             character_ = value;
             nine_segment_display::value(it->second);
           }
@@ -392,7 +392,7 @@ namespace xtd {
         seven_segment_display_digit() = default;
 
         wchar_t get_character() const override {return character_;}
-        std::string get_valid_characters() const override {return "0123456789ABCDEFGHIJLNOPQRSTUYabcdefghijlnopqrstuy=-_°\"'[]| .,:";}
+        xtd::ustring get_valid_characters() const override {return "0123456789ABCDEFGHIJLNOPQRSTUYabcdefghijlnopqrstuy=-_°\"'[]| .,:";}
         int32_t get_thickness() const override {return seven_segment_display::thickness();}
 
         void set_back_digit_color(const xtd::drawing::color& value) override {seven_segment_display::back_segment_color(value);}
@@ -463,7 +463,7 @@ namespace xtd {
             {':', forms::segments::pc}};
           if (character_ != value) {
             auto it = characters.find(value);
-            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
+            if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
             character_ = value;
             seven_segment_display::value(it->second);
           }
@@ -482,7 +482,7 @@ namespace xtd {
         sixteen_segment_display_digit() = default;
         
         wchar_t get_character() const override {return character_;}
-        std::string get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/\\_°\"'[]()| .,:";}
+        xtd::ustring get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/\\_°\"'[]()| .,:";}
         int32_t get_thickness() const override {return sixteen_segment_display::thickness();}
         
         void set_back_digit_color(const xtd::drawing::color& value) override {sixteen_segment_display::back_segment_color(value);}
@@ -573,7 +573,7 @@ namespace xtd {
           };
           if (character_ != value) {
             auto it = characters.find(value);
-            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
+            if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
             character_ = value;
             sixteen_segment_display::value(it->second);
           }
@@ -665,7 +665,7 @@ namespace xtd {
       lcd_label& lcd_style(forms::lcd_style value) {
         if (lcd_style_ != value) {
           lcd_style_ = value;
-          std::string current_text = text();
+          xtd::ustring current_text = text();
           text("");
           text(current_text);
         }
@@ -754,7 +754,7 @@ namespace xtd {
       /// @brief Gets valid characters.
       /// @return A sttring tthat represent valid characters.
       /// @remarks The valid characters are different according to lcd_style.
-      std::string valid_characters() {
+      xtd::ustring valid_characters() {
         switch (lcd_style_) {
           case lcd_style::seven_segment_display: return std::make_shared<seven_segment_display_digit>()->get_valid_characters();
           case lcd_style::nine_segment_display: return std::make_shared<nine_segment_display_digit>()->get_valid_characters();

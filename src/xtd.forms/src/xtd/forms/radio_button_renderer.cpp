@@ -23,16 +23,16 @@ namespace {
         ++index;
       }
     }
-    auto new_str = xtd::strings::replace(str, "&&", "&");
+    auto new_str = str.replace("&&", "&");
     for (auto index = 0U; index < locations.size(); ++index)
-      new_str = xtd::strings::remove(new_str, locations[index], 1);
+      new_str = new_str.remove(locations[index], 1);
     return new_str;
   }
 
   void draw_string(graphics g, const ustring& text, const font& font, const color& text_color, const rectangle_f& button_rect, text_format_flags flags) {
     vector<size_t> hotkey_prefix_locations;
-    string text_without_hotkey_prefix = get_hotkey_prefix_locations(text, hotkey_prefix_locations);
-    if ((flags & text_format_flags::prefix_only) == text_format_flags::prefix_only && hotkey_prefix_locations.size()) g.draw_string(strings::substring(text_without_hotkey_prefix, hotkey_prefix_locations[0], 1), xtd::drawing::font(font, font_style::underline), solid_brush(text_color), button_rect, control_paint::string_format(flags));
+    ustring text_without_hotkey_prefix = get_hotkey_prefix_locations(text, hotkey_prefix_locations);
+    if ((flags & text_format_flags::prefix_only) == text_format_flags::prefix_only && hotkey_prefix_locations.size()) g.draw_string(text_without_hotkey_prefix.substring(hotkey_prefix_locations[0], 1), xtd::drawing::font(font, font_style::underline), solid_brush(text_color), button_rect, control_paint::string_format(flags));
     else g.draw_string(text, font, solid_brush(text_color), button_rect, control_paint::string_format(flags));
   }
 }
