@@ -1,4 +1,4 @@
-#include <xtd/strings.h>
+#include <xtd/ustring.h>
 #include <xtd/argument_exception.h>
 #include <xtd/xtd.tunit>
 

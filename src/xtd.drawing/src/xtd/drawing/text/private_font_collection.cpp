@@ -12,7 +12,7 @@ using namespace xtd::drawing::text;
 private_font_collection::private_font_collection() {
 }
 
-void private_font_collection::add_font_file(const std::string& filename) {
+void private_font_collection::add_font_file(const xtd::ustring& filename) {
   throw xtd::not_implemented_exception(current_stack_frame_);
 }
 

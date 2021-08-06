@@ -4,7 +4,7 @@
 #pragma once
 #include <cstdint>
 #include <vector>
-#include <xtd/strings.h>
+#include <xtd/ustring.h>
 #include "../../drawing_export.h"
 #include "font_collection.h"
 
@@ -27,7 +27,7 @@ namespace xtd {
         /// @brief Adds a font from the specified file to this xtd::drawing::text::private_font_collection.
         /// @param filename A string that contains the file name of the font to add.
         /// @exception std::invalid_argument The specified font is not supported or the font file cannot be found.
-        void add_font_file(const std::string& filename);
+        void add_font_file(const xtd::ustring& filename);
         
         /// @brief Adds a font contained in system memory to this td::drawing::text::private_font_collection.
         /// @param memory The memory address of the font to add.
