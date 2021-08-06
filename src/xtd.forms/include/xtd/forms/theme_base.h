@@ -22,7 +22,7 @@ namespace xtd {
       friend std::ostream& operator<<(std::ostream& os, const theme_base& theme) noexcept {return os << theme.to_string();}
       /// @endcond
       
-      using theme_name_collection = std::vector<std::string>;
+      using theme_name_collection = std::vector<xtd::ustring>;
 
       virtual const std::string& name() const {return name_;}
       theme_base& name(const std::string& name) {

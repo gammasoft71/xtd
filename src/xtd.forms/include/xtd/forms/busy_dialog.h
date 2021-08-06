@@ -78,22 +78,22 @@ namespace xtd {
       
       /// @brief Gets the dialog title.
       /// @return The dialog title.
-      const std::string& text() const {return text_;}
+      const xtd::ustring& text() const {return text_;}
       /// @brief Sets the dialog title.
       /// @param text The dialog title.
       /// @return Current busy_dialog instance.
-      busy_dialog& text(const std::string& text) {
+      busy_dialog& text(const xtd::ustring& text) {
         text_ = text;
         return *this;
       }
       
       /// @brief Gets the product description.
       /// @return The product description.
-      const std::string& description() const {return description_;}
+      const xtd::ustring& description() const {return description_;}
       /// @brief Sets the product description.
       /// @param description The product description.
       /// @return Current busy_dialog instance.
-      busy_dialog& description(const std::string& description) {
+      busy_dialog& description(const xtd::ustring& description) {
         description_ = description;
         return *this;
       }
@@ -152,8 +152,8 @@ namespace xtd {
       xtd::forms::dialog_style dialog_style_ = xtd::forms::dialog_style::system;
       xtd::drawing::color fore_color_ = xtd::forms::theme_colors::current_theme().control_text();
       xtd::drawing::image icon_;
-      std::string text_;
-      std::string description_;
+      xtd::ustring text_;
+      xtd::ustring description_;
       double opacity_ = 0.;
       bool native_ = false;
       intptr_t handle_ = 0;
