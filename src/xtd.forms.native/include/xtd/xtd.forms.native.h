@@ -11,7 +11,6 @@
 #include <xtd/xtd.core>
 #include <xtd/xtd.drawing>
 
-#include <xtd/strings.h>
 #include "forms/create_params.h"
 #include "forms/choose_color_flags.h"
 #include "forms/choose_font_flags.h"
