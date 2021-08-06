@@ -99,11 +99,11 @@ namespace xtd {
       
       /// @brief Gets the message text.
       /// @return The message text.
-      const std::string& message() const {return message_;}
+      const xtd::ustring& message() const {return message_;}
       /// @brief Sets the message text.
       /// @param description The message text.
       /// @return Current progress_dialog instance.
-      progress_dialog& message(const std::string& message);
+      progress_dialog& message(const xtd::ustring& message);
       
       /// @brief Gets the minimum value of the range of the control.
       /// @return The minimum value of the range. The default is 0.
@@ -169,11 +169,11 @@ namespace xtd {
 
       /// @brief Gets the dialog title.
       /// @return The dialog title.
-      const std::string& text() const {return text_;}
+      const xtd::ustring& text() const {return text_;}
       /// @brief Sets the dialog title.
       /// @param copyright The dialog title.
       /// @return Current progress_dialog instance.
-      progress_dialog& text(const std::string& text) {
+      progress_dialog& text(const xtd::ustring& text) {
         if (text_ != text) {
           text_ = text;
           recreate_dialog();
@@ -235,13 +235,13 @@ namespace xtd {
       std::vector<xtd::ustring> informations_;
       size_t marquee_animation_speed_ = 100;
       int32_t maximum_ = 100;
-      std::string message_;
+      xtd::ustring message_;
       int32_t minimum_ = 0;
       bool native_ = false;
       size_t options_ = PROGDLG_NORMAL|PROGDLG_NOCANCEL|PROGDLG_NOSKIP;
       const iwin32_window* owner_ = nullptr;
       int32_t step_ = 10;
-      std::string text_;
+      xtd::ustring text_;
       int32_t value_ = 0;
     };
   }

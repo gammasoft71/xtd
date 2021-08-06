@@ -94,12 +94,12 @@ namespace xtd {
       /// @brief Gets the default file name extension.
       /// @return The default file name extension. The returned string does not include the period. The default value is an empty string ("").
       /// @remarks When the user of your application specifies a file name without an extension, the file_dialog appends an extension to the file name. The extension that is used is determined by the filter and default_ext properties. If a filter is selected in the file_dialog and the filter specifies an extension, then that extension is used. If the filter selected uses a wildcard in place of the extension, then the extension specified in the default_ext property is used.
-      virtual const std::string& default_ext() const {return default_ext_;}
+      virtual const xtd::ustring& default_ext() const {return default_ext_;}
       /// @brief Sets the default file name extension.
       /// @param value The default file name extension. The returned string does not include the period. The default value is an empty string ("").
       /// @remarks When the user of your application specifies a file name without an extension, the file_dialog appends an extension to the file name. The extension that is used is determined by the filter and default_ext properties. If a filter is selected in the file_dialog and the filter specifies an extension, then that extension is used. If the filter selected uses a wildcard in place of the extension, then the extension specified in the default_ext property is used.
       /// @return Current file_dialog.
-      virtual file_dialog& default_ext(const std::string& value) {
+      virtual file_dialog& default_ext(const xtd::ustring& value) {
         default_ext_ = value;
         return *this;
       }
@@ -120,14 +120,14 @@ namespace xtd {
       /// @remarks The file name includes both the file path and the extension. If no files are selected, this method returns an empty string ("").
       /// @remarks When used from the save_file_dialog class, this property represents the file being saved; when used from the open_file_dialog class, it represents the file being opened.
       /// @remarks This property can only be the name of one selected file. If you want to return an array containing the names of all selected files in a multiple-selection dialog box, use file_names.
-      virtual const std::string& file_name() const {return file_name_;}
+      virtual const xtd::ustring& file_name() const {return file_name_;}
       /// @brief Sets a string containing the file name selected in the file dialog box.
       /// @param value The file name selected in the file dialog box. The default value is an empty string ("").
       /// @return Current file_dialog.
       /// @remarks The file name includes both the file path and the extension. If no files are selected, this method returns an empty string ("").
       /// @remarks When used from the save_file_dialog class, this property represents the file being saved; when used from the open_file_dialog class, it represents the file being opened.
       /// @remarks This property can only be the name of one selected file. If you want to return an array containing the names of all selected files in a multiple-selection dialog box, use file_names.
-      virtual file_dialog& file_name(const std::string& value) {
+      virtual file_dialog& file_name(const xtd::ustring& value) {
         file_name_ = value;
         return *this;
       }
@@ -145,7 +145,7 @@ namespace xtd {
       /// @remarks You can add several filter patterns to a filter by separating the file types with semicolons, for example:
       /// @verbatim Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.* @endverbatim
       /// @remarks Use the filter_index property to set which filtering option is shown first to the user.
-      virtual const std::string& filter() const {return filter_;}
+      virtual const xtd::ustring& filter() const {return filter_;}
       /// @brief Sets the current file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box.
       /// @param value The file filtering options available in the dialog box.
       /// @return Current file_dialog.
@@ -155,7 +155,7 @@ namespace xtd {
       /// @remarks You can add several filter patterns to a filter by separating the file types with semicolons, for example:
       /// @verbatim Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.* @endverbatim
       /// @remarks Use the filter_index property to set which filtering option is shown first to the user.
-      virtual file_dialog& filter(const std::string& value) {
+      virtual file_dialog& filter(const xtd::ustring& value) {
         filter_ = value;
         return *this;
       }
@@ -182,7 +182,7 @@ namespace xtd {
       /// * A path read from a persistent source, such as an application setting, a Registry or a string resource in the application.
       /// * Standard Windows, macOs or linux system and user paths, such as Program Files, MyDocuments, MyMusic, and so on (which you can obtain using the xtd::environment::get_folder_path method)
       /// * A path related to the current application, such as its startup directory (which you can obtain using properties on the xtd::forms::application object).
-      virtual const std::string& initial_directory() const {return initial_directory_;}
+      virtual const xtd::ustring& initial_directory() const {return initial_directory_;}
       /// @brief Sets the initial directory displayed by the file dialog box.
       /// @param value The initial directory displayed by the file dialog box. The default is an empty string ("").
       /// @return Current file_dialog.
@@ -191,7 +191,7 @@ namespace xtd {
       /// * A path read from a persistent source, such as an application setting, a Registry or a string resource in the application.
       /// * Standard Windows, macOs or linux system and user paths, such as Program Files, MyDocuments, MyMusic, and so on (which you can obtain using the xtd::environment::get_folder_path method)
       /// * A path related to the current application, such as its startup directory (which you can obtain using properties on the xtd::forms::application object).
-      virtual file_dialog& initial_directory(const std::string& value) {
+      virtual file_dialog& initial_directory(const xtd::ustring& value) {
         initial_directory_ = value;
         return *this;
       }
@@ -265,12 +265,12 @@ namespace xtd {
       /// @brief Gets the file dialog box title.
       /// @return The file dialog box title. The default value is an empty string ("").
       /// @remarks The string is placed in the title bar of the dialog box. If the title is an empty string, the system uses a default title, which is either "Save As" or "Open".
-      virtual const std::string& title() const {return title_;}
+      virtual const xtd::ustring& title() const {return title_;}
       /// @brief Sets the file dialog box title.
       /// @param value The file dialog box title. The default value is an empty string ("").
       /// @return Current file_dialog.
       /// @remarks The string is placed in the title bar of the dialog box. If the title is an empty string, the system uses a default title, which is either "Save As" or "Open".
-      virtual file_dialog& title(const std::string& value) {
+      virtual file_dialog& title(const xtd::ustring& value) {
         title_ = value;
         return *this;
       }
@@ -319,15 +319,15 @@ namespace xtd {
       void set_option(size_t flag, bool value) {options_ = value ? options_ | flag : options_ & ~flag;}
 
       bool auto_upgrade_enabled_ = true;
-      std::string default_ext_ = "";
+      xtd::ustring default_ext_ = "";
       xtd::ustring file_name_ = "";
       std::vector<xtd::ustring> file_names_;
-      std::string filter_ = "";
+      xtd::ustring filter_ = "";
       size_t filter_index_ = 1;
-      std::string initial_directory_ = "";
+      xtd::ustring initial_directory_ = "";
       size_t options_ = OFN_HIDEREADONLY | OFN_PATHMUSTEXIST | OFN_ADDEXTENSION;
       bool support_multi_dotted_extensions_ = true;
-      std::string title_ = "";
+      xtd::ustring title_ = "";
       /// @endcond
       
     private:

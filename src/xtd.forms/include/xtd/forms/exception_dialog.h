@@ -71,11 +71,11 @@ namespace xtd {
 
       /// @brief Gets the dialog caption text.
       /// @return The current dialog caption text.
-      std::string text() const {return text_;}
+      xtd::ustring text() const {return text_;}
       /// @brief Sets the dialog caption text.
       /// @param text The new dialog caption text.
       /// @return Current input_dialog instance.
-      exception_dialog& text(const std::string& text) {
+      exception_dialog& text(const xtd::ustring& text) {
         if (text_ != text)
           text_ = text;
         return *this;
@@ -111,7 +111,7 @@ namespace xtd {
       xtd::forms::dialog_result dialog_result_ = xtd::forms::dialog_result::none;
       xtd::forms::dialog_style dialog_style_ = xtd::forms::dialog_style::standard;
       const std::exception* exception_ = nullptr;
-      std::string text_;
+      xtd::ustring text_;
     };
   }
 }
