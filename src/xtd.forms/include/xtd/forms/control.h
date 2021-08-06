@@ -710,11 +710,11 @@ namespace xtd {
       
       /// @brief Gets the text associated with this control.
       /// @return The text associated with this control.
-      virtual const std::string& text() const {return text_;}
+      virtual const xtd::ustring& text() const {return text_;}
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
       /// @return Current control.
-      virtual control& text(const std::string& text);
+      virtual control& text(const xtd::ustring& text);
 
       /// @brief Gets the distance, in pixels, between the top edge of the control and the top edge of its container's client area.
       /// @return An Int32_t representing the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
@@ -836,7 +836,7 @@ namespace xtd {
       /// @param fore_color A xtd::drawing::color that represent foreground color of the control.
       /// @return New control created.
       template<typename control_t>
-      static std::unique_ptr<control_t> create(const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
+      static std::unique_ptr<control_t> create(const xtd::ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
         std::unique_ptr<control_t> item = std::make_unique<control_t>();
         item->text(text);
         if (location != drawing::point {-1, -1}) item->location(location);
@@ -855,7 +855,7 @@ namespace xtd {
       /// @param fore_color A xtd::drawing::color that represent foreground color of the control.
       /// @return New control created.
       template<typename control_t>
-      static std::unique_ptr<control_t> create(const control& parent, const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
+      static std::unique_ptr<control_t> create(const control& parent, const xtd::ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
         std::unique_ptr<control_t> item = std::make_unique<control_t>();
         item->parent(parent);
         item->text(text);
@@ -1981,7 +1981,7 @@ namespace xtd {
       control::state state_ = state::empty;
       control_styles style_ = control_styles::none;
       std::any tag_;
-      std::string text_;
+      xtd::ustring text_;
       static std::map<intptr_t, control*> handles_;
       static control_collection top_level_controls_;
       /// @endcond
@@ -1991,7 +1991,7 @@ namespace xtd {
       void do_layout_childs_with_dock_style();
       void do_layout_with_auto_size_mode();
       void do_layout_with_anchor_styles();
-      control(const std::string& name, bool) {name_ = name;}
+      control(const xtd::ustring& name, bool) {name_ = name;}
       intptr_t wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
       void wm_child_activate(message& message);
       void wm_create(message& message);

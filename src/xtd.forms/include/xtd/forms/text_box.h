@@ -91,8 +91,8 @@ namespace xtd {
       /// @remarks If no text is selected in the control, this property indicates the insertion point, or caret, for new text. If you set this property to a location beyond the length of the text in the control, the selection start position will be placed after the last character. When text is selected in the text box control, changing this property might decrease the value of the SelectionLength property. If the remaining text in the control after the position indicated by the selection_start property is less than the value of the selection_length property, the value of the selection_length property is automatically decreased. The value of the selection_start property never causes an increase in the selection_length property.
       size_t selection_start() const override;
       
-      const std::string& text() const override;
-      control& text(const std::string& text) override;
+      const xtd::ustring& text() const override;
+      control& text(const xtd::ustring& text) override;
       
       /// @brief Gets a value indicating whether the text in the TextBox control should appear as the default password character.
       /// @return true if the text in the TextBox control should appear as the default password character; otherwise, false.
