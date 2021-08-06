@@ -66,7 +66,7 @@ progress_dialog& progress_dialog::minimum(int32_t minimum) {
   return *this;
 }
 
-progress_dialog& progress_dialog::message(const std::string& message) {
+progress_dialog& progress_dialog::message(const xtd::ustring& message) {
   if (message_ != message) {
     message_ = message;
     if (handle_) native::progress_dialog::message(handle_, message_);
@@ -145,7 +145,7 @@ void progress_dialog::recreate_dialog() {
 
 void progress_dialog::reset() {
   dialog_style_ = xtd::forms::dialog_style::system;
-  std::vector<std::string> informations_;
+  informations_.clear();
   marquee_animation_speed_ = 100;
   maximum_ = 100;
   message_ = "";

@@ -341,127 +341,127 @@ ustring& ustring::operator=(const std::initializer_list<wchar_t>& il) {
   return *this;
 }
 
-ustring ustring::operator+(const ustring& str) {
+ustring ustring::operator+(const ustring& str) const {
   ustring result = *this;
   result.append(str);
   return result;
 }
 
-ustring ustring::operator+(const std::string& str) {
+ustring ustring::operator+(const std::string& str) const {
   ustring result = *this;
   result.append(ustring(str));
   return result;
 }
 
-ustring ustring::operator+(const value_type* str) {
+ustring ustring::operator+(const value_type* str) const {
   ustring result = *this;
   result.append(str);
   return result;
 }
 
-ustring ustring::operator+(const std::u8string& str) {
+ustring ustring::operator+(const std::u8string& str) const {
   ustring result = *this;
   result.append(ustring(str));
   return result;
 }
 
-ustring ustring::operator+(const char8_t* str) {
+ustring ustring::operator+(const char8_t* str) const {
   ustring result = *this;
   result.append(ustring(str));
   return result;
 }
 
-ustring ustring::operator+(const std::u16string& str) {
+ustring ustring::operator+(const std::u16string& str) const {
   ustring result = *this;
   result.append(ustring(str));
   return result;
 }
 
-ustring ustring::operator+(const char16_t* str) {
+ustring ustring::operator+(const char16_t* str) const {
   ustring result = *this;
   result.append(ustring(str));
   return result;
 }
 
-ustring ustring::operator+(const std::u32string& str) {
+ustring ustring::operator+(const std::u32string& str) const {
   ustring result = *this;
   result.append(ustring(str));
   return result;
 }
 
-ustring ustring::operator+(const char32_t* str) {
+ustring ustring::operator+(const char32_t* str) const {
   ustring result = *this;
   result.append(ustring(str));
   return result;
 }
 
-ustring ustring::operator+(const std::wstring& str) {
+ustring ustring::operator+(const std::wstring& str) const {
   ustring result = *this;
   result.append(ustring(str));
   return result;
 }
 
-ustring ustring::operator+(const wchar_t* str) {
+ustring ustring::operator+(const wchar_t* str) const {
   ustring result = *this;
   result.append(ustring(str));
   return result;
 }
 
-ustring ustring::operator+(value_type character) {
+ustring ustring::operator+(value_type character) const {
   ustring result = *this;
   result.append(ustring(1, character));
   return result;
 }
 
-ustring ustring::operator+(char8_t character) {
+ustring ustring::operator+(char8_t character) const {
   ustring result = *this;
   result.append(ustring(1, character));
   return result;
 }
 
-ustring ustring::operator+(char16_t character) {
+ustring ustring::operator+(char16_t character) const {
   ustring result = *this;
   result.append(ustring(1, character));
   return result;
 }
 
-ustring ustring::operator+(char32_t character) {
+ustring ustring::operator+(char32_t character) const {
   ustring result = *this;
   result.append(ustring(1, character));
   return result;
 }
 
-ustring ustring::operator+(wchar_t character) {
+ustring ustring::operator+(wchar_t character) const {
   ustring result = *this;
   result.append(ustring(1, character));
   return result;
 }
 
-ustring ustring::operator+(const std::initializer_list<value_type>& il) {
+ustring ustring::operator+(const std::initializer_list<value_type>& il) const {
   ustring result = *this;
   result.append(ustring(il));
   return result;
 }
 
-ustring ustring::operator+(const std::initializer_list<char8_t>& il) {
+ustring ustring::operator+(const std::initializer_list<char8_t>& il) const {
   ustring result = *this;
   result.append(ustring(il));
   return result;
 }
 
-ustring ustring::operator+(const std::initializer_list<char16_t>& il) {
+ustring ustring::operator+(const std::initializer_list<char16_t>& il) const {
   ustring result = *this;
   result.append(ustring(il));
   return result;
 }
 
-ustring ustring::operator+(const std::initializer_list<char32_t>& il) {
+ustring ustring::operator+(const std::initializer_list<char32_t>& il) const {
   ustring result = *this;
   result.append(ustring(il));
   return result;
 }
 
-ustring ustring::operator+(const std::initializer_list<wchar_t>& il) {
+ustring ustring::operator+(const std::initializer_list<wchar_t>& il) const {
   ustring result = *this;
   result.append(ustring(il));
   return result;
