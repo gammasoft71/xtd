@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::character_casing enum class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/strings.h>
+#include <xtd/ustring.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, upper, and more.
 namespace xtd {
