@@ -40,7 +40,7 @@ namespace xtd {
         return *this;
       }
 
-      const std::string& name() const override {return form::name();}
+      const xtd::ustring& name() const override {return form::name();}
       
       /// @brief Gets a vallue indicate if date is showing before trace text.
       /// @return true is date showing; otherwise false. By default is true.
