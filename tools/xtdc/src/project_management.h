@@ -193,9 +193,9 @@ namespace xtdc_command {
       
       std::filesystem::path app_path;
       for (auto file : xtd::io::file::read_all_lines(((xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path())/"install_manifest.txt").string())) {
-        if (std::filesystem::exists(std::filesystem::path(xtd::ustring(file)))) {
-          if (xtd::environment::os_version().is_macos_platform() && file.contains("Contents/MacOS")) app_path = xtd::ustring(file.remove(file.index_of("Contents/MacOS")));
-          std::filesystem::remove(std::filesystem::path(xtd::ustring(file)));
+        if (std::filesystem::exists(std::filesystem::path(file.c_str()))) {
+          if (xtd::environment::os_version().is_macos_platform() && file.contains("Contents/MacOS")) app_path = file.remove(file.index_of("Contents/MacOS")).c_str();
+          std::filesystem::remove(std::filesystem::path(file.c_str()));
         }
       }
       
@@ -228,14 +228,14 @@ namespace xtdc_command {
     xtd::ustring get_target_path(const xtd::ustring& target, bool release) const {
       for (const auto& line : get_system_information())
         if (line.starts_with(xtd::ustring::format("{}_BINARY_DIR:STATIC=", target)))
-          return make_platform_target_path({xtd::ustring(line.replace(xtd::ustring::format("{}_BINARY_DIR:STATIC=", target), ""))}, target, release);
+          return make_platform_target_path({line.replace(xtd::ustring::format("{}_BINARY_DIR:STATIC=", target), "").c_str()}, target, release);
       return (build_path()/(release ? "Release" : "Debug")/target.c_str()/target.c_str()).string();
     }
     
     xtd::ustring get_first_target_path(bool release) const {
       for (const auto& line : get_system_information())
         if (line.index_of("_BINARY_DIR:STATIC=") != xtd::ustring::npos)
-          return make_platform_target_path({xtd::ustring(line.replace(xtd::ustring::format("{}_BINARY_DIR:STATIC=", line.substring(0, line.index_of("_BINARY_DIR:STATIC="))), ""))}, line.substring(0, line.index_of("_BINARY_DIR:STATIC=")), release);
+          return make_platform_target_path({line.replace(xtd::ustring::format("{}_BINARY_DIR:STATIC=", line.substring(0, line.index_of("_BINARY_DIR:STATIC="))), "").c_str()}, line.substring(0, line.index_of("_BINARY_DIR:STATIC=")), release);
       if (xtd::environment::os_version().is_windows_platform()) return (build_path() / path_.filename() / (release ? "Release" : "Debug") / path_.filename()).string();
       return (build_path()/(release ? "Release" : "Debug")/path_.filename()/path_.filename()).string();
     }
@@ -262,7 +262,7 @@ namespace xtdc_command {
     
     bool is_linux_gui_app(const std::filesystem::path& path) const {
       if (!std::filesystem::exists(path)) return false;
-      auto lines = xtd::io::file::read_all_lines((std::filesystem::path(xtd::ustring(xtd::environment::get_folder_path(xtd::environment::special_folder::home)))/".local"/"share"/"applications"/xtd::ustring::format("{}.desktop", path.filename()).c_str()).string());
+      auto lines = xtd::io::file::read_all_lines((std::filesystem::path(xtd::environment::get_folder_path(xtd::environment::special_folder::home).c_str())/".local"/"share"/"applications"/xtd::ustring::format("{}.desktop", path.filename()).c_str()).string());
       for (auto line : lines)
         if (line.to_lower() == "terminael=false") return true;
       return false;
@@ -3192,7 +3192,7 @@ namespace xtdc_command {
       }
     }
     
-    mutable std::filesystem::path path_ {xtd::ustring(xtd::environment::current_directory())};
+    mutable std::filesystem::path path_ {xtd::environment::current_directory().c_str()};
     mutable int32_t last_exit_code_ = EXIT_SUCCESS;
   };
 }
