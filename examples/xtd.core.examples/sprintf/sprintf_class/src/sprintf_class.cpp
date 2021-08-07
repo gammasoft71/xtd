@@ -5,16 +5,16 @@ using namespace xtd;
 
 class character {
 public:
-  character(const string& name, const string& rank) noexcept : name_(name), rank_(rank) {}
+  character(const ustring& name, const ustring& rank) noexcept : name_(name), rank_(rank) {}
   
-  const string& name() const noexcept {return name_;}
-  const string& rank() const noexcept {return rank_;}
+  const ustring& name() const noexcept {return name_;}
+  const ustring& rank() const noexcept {return rank_;}
 
-  string to_string() const noexcept {return name_ + " (" + rank_ + ")";}
+  ustring to_string() const noexcept {return name_ + " (" + rank_ + ")";}
   
 private:
-  string name_;
-  string rank_;
+  ustring name_;
+  ustring rank_;
 };
 
 using characters = vector<character>;

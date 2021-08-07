@@ -19,18 +19,18 @@ namespace minesweeper {
 
     /// @brief Gets the gammer name.
     /// @return The gammer name.
-    std::string gammer_name() const noexcept;
+    xtd::ustring gammer_name() const noexcept;
     /// @brief Sets the gammer name.
     /// @param gammer_name The gammer name.
-    void gammer_name(const std::string& gammer_name) noexcept;
+    void gammer_name(const xtd::ustring& gammer_name) noexcept;
     
   private:
-    std::string level_to_string() noexcept;
+    xtd::ustring level_to_string() noexcept;
     
     xtd::forms::label message_label_;
     xtd::forms::text_box name_text_box_;
     xtd::forms::button ok_button_;
     minesweeper::level level_ = level::beginner;
-    std::string gammer_name_ = xtd::translator::translate("Anonymous");
+    xtd::ustring gammer_name_ = xtd::translator::translate("Anonymous");
   };
 }

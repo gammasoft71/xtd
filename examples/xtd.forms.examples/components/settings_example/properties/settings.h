@@ -26,7 +26,7 @@ namespace settings_example::properties {
     xtd::drawing::size size() const {return size_;}
     void size(xtd::drawing::size value) {size_ = value;}
 
-    std::string text() {return "Settings example";}
+    xtd::ustring text() {return "Settings example";}
 
     void reload() {
       back_color_ = settings_.read("back_color", back_color_);

@@ -8,7 +8,7 @@ namespace examples {
   public:
         static void main(const vector<ustring>& args) {
       // Write arguments to the console output
-      for (string arg : args)
+      for (ustring arg : args)
         console::write_line(arg);
 
       // return 42

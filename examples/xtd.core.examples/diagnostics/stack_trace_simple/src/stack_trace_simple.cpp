@@ -1,6 +1,5 @@
 #include <xtd/xtd>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 
@@ -25,7 +24,7 @@ private:
       } catch (const system_exception& e) {
         // Create a StackTrace that captures filename, line number and column information.
         stack_trace st(true);
-        string stack_indent = "";
+        ustring stack_indent = "";
         for (size_t i = 0; i < st.frame_count(); i++) {
           // Note that at this level, there are four stack frames, one for each method invocation.
           stack_frame sf = st.get_frame(i);

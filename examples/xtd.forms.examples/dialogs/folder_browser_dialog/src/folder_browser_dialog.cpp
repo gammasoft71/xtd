@@ -30,7 +30,7 @@ public:
 private:
   button button1;
   label label1;
-  string selected_path;
+  ustring selected_path;
 };
 
 int main() {

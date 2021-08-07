@@ -120,7 +120,7 @@ namespace xtd {
       /// @param args The arguments to write witth format
       /// @exception io::ioexception An I/O error occurs.
       template<typename ... args_t>
-      void write(const std::string& fmt, args_t&& ... args) noexcept {write(xtd::ustring::format(fmt, std::forward<args_t>(args)...));}
+      void write(const xtd::ustring& fmt, args_t&& ... args) noexcept {write(xtd::ustring::format(fmt, std::forward<args_t>(args)...));}
       
       /// @brief Writes new line to the text stream.
       /// @exception io::ioexception An I/O error occurs.
@@ -198,7 +198,7 @@ namespace xtd {
       /// @param args The arguments to write witth format.
       /// @exception io::ioexception An I/O error occurs.
       template<typename ... args_t>
-      void write_line(const std::string& fmt, args_t&& ... args) noexcept {write_line(xtd::ustring::format(fmt, std::forward<args_t>(args)...));}
+      void write_line(const xtd::ustring& fmt, args_t&& ... args) noexcept {write_line(xtd::ustring::format(fmt, std::forward<args_t>(args)...));}
 
     protected:
       /// @brief Initializes a new instance of the xtd::io::text_writer class.

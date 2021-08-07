@@ -32,7 +32,7 @@ public:
 private:
   button button1;
   label label1;
-  string file_name;
+  ustring file_name;
 };
 
 int main() {
