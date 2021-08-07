@@ -837,7 +837,7 @@ namespace xtdc_command {
           release = true;
         else if (path.empty())
           path = args[i];
-        else if (strings::starts_with(args[i], '-')) {
+        else if (args[i].starts_with('-')) {
           invalid_option = args[i];;
           return false;
         }
