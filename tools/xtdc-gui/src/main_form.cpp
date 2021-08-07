@@ -19,8 +19,6 @@
 #include <xtd/forms/message_box.h>
 #include <xtd/forms/theme_images.h>
 
-#include <xtd/strings.h>
-
 using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
