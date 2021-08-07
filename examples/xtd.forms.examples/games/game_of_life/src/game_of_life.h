@@ -200,7 +200,7 @@ namespace game_of_life {
       }
     }
     
-    void fill_figure(const std::vector<std::string>& figure) {
+    void fill_figure(const std::vector<xtd::ustring>& figure) {
       auto height = static_cast<int>(figure.size());
       auto width = 0U;
       for (auto line : figure)

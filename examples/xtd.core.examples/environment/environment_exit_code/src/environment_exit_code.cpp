@@ -8,7 +8,7 @@ namespace examples {
   public:
     // The main entry point for the application.
      static void main() {
-      vector<string> args = environment::get_command_line_args();
+      vector<ustring> args = environment::get_command_line_args();
       if (args.size() == 1)
         environment::exit_code(ECANCELED);
       else {

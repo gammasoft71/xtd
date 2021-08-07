@@ -4,34 +4,34 @@
 using namespace std;
 using namespace xtd;
 
-std::string date_time_to_string(const std::string& format, const tm& tm) {
-  std::string result(255, 0);
+ustring date_time_to_string(const ustring& format, const tm& tm) {
+  string result(255, 0);
   strftime(result.data(), result.size(), ("%" + format).c_str(), &tm);
   result.shrink_to_fit();
   return result;
 }
 
-std::string date_time_to_string(const std::string& format, const time_t& time) {
+ustring date_time_to_string(const ustring& format, const time_t& time) {
   auto tm = localtime(&time);
   return date_time_to_string(format, *tm);
 }
 
-std::string date_time_to_string(const std::string& format, const std::chrono::system_clock::time_point& tp) {
+ustring date_time_to_string(const ustring& format, const chrono::system_clock::time_point& tp) {
   auto time = std::chrono::system_clock::to_time_t(tp);
   return date_time_to_string(format, time);
 }
 
-std::string date_time_to_string(const tm& tm) {
+ustring date_time_to_string(const tm& tm) {
   return date_time_to_string("c", tm);
 }
 
-std::string date_time_to_string(const time_t& time) {
+ustring date_time_to_string(const time_t& time) {
   auto tm = localtime(&time);
   return date_time_to_string(*tm);
 }
 
-std::string date_time_to_string(const std::chrono::system_clock::time_point& tp) {
-  auto time = std::chrono::system_clock::to_time_t(tp);
+ustring date_time_to_string(const chrono::system_clock::time_point& tp) {
+  auto time = chrono::system_clock::to_time_t(tp);
   return date_time_to_string(time);
 }
 

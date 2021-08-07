@@ -5,13 +5,13 @@ using namespace xtd;
 
 class character {
 public:
-  character(const string& name, const string& rank) noexcept : name_(name), rank_(rank) {}
+  character(const ustring& name, const ustring& rank) noexcept : name_(name), rank_(rank) {}
   
-  const string& name() const noexcept {return name_;}
-  const string& rank() const noexcept {return rank_;}
+  const ustring& name() const noexcept {return name_;}
+  const ustring& rank() const noexcept {return rank_;}
 
-  string to_string() const noexcept {return to_string("F");}
-  string to_string(const string& fmt) const {
+  ustring to_string() const noexcept {return to_string("F");}
+  ustring to_string(const ustring& fmt) const {
     if (fmt == "F") return name_ + " (" + rank_ + ")";
     if (fmt == "N") return name_;
     if (fmt == "R") return rank_;
@@ -22,8 +22,8 @@ public:
   friend ostream& operator<<(ostream& os, const character& value) noexcept {return os << value.to_string();}
   
 private:
-  string name_;
-  string rank_;
+  ustring name_;
+  ustring rank_;
 };
 
 // Only this method is needed for character class to be recognized by ustring::format() with specified formating (F, N or R).

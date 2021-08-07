@@ -31,7 +31,7 @@ namespace examples {
       user_control::on_paint(e);
       auto status_rectangle = rectangle {1, 1, 28, 28};
       e.graphics().fill_rectangle(solid_brush(color::dark(back_color())), status_rectangle);
-      auto status_string = std::map<operation_status, std::string> {{operation_status::none, u8""_s}, {operation_status::running, u8"☞"_s}, {operation_status::succeed, u8"√"_s}, {operation_status::failed, u8"X"_s}}[status()];
+      auto status_string = std::map<operation_status, ustring> {{operation_status::none, u8""}, {operation_status::running, u8"☞"}, {operation_status::succeed, u8"√"}, {operation_status::failed, u8"X"}}[status()];
       auto status_brush = solid_brush(std::map<operation_status, color> {{operation_status::none, fore_color()}, {operation_status::running, color::yellow}, {operation_status::succeed, color::green}, {operation_status::failed, color::red}}[status()]);
       e.graphics().draw_string(status_string, drawing::font(default_font(), 18, font_style::italic), status_brush, status_rectangle, string_format().alignment(string_alignment::center).line_alignment(string_alignment::center));
       e.graphics().draw_line(pen(color::dark(color::dark(back_color()))), status_rectangle.location(), point(status_rectangle.width(), 1));

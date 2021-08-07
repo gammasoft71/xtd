@@ -32,7 +32,7 @@ public:
         if (possibilities < 0 || possibilities > MAX_POSSIBILITIES)
           throw new system_exception(ustring::format("The number of possibilities must be in the range 0..{}.", MAX_POSSIBILITIES));
       } catch (const system_exception& ex) {
-        string fail_message = ustring::format("\"{}\" is not a valid number of possibilities.", args[0]);
+        ustring fail_message = ustring::format("\"{}\" is not a valid number of possibilities.", args[0]);
         default_listener->fail(fail_message, ex.message());
         if (!default_listener->assert_ui_enabled())
           console::write_line(fail_message + "\n" + ex.message());
@@ -40,7 +40,7 @@ public:
       }
     } else {
       // Report that the required argument is not present.
-      const string ENTER_PARAM = "Enter the number of possibilities as a command line argument.";
+      const ustring ENTER_PARAM = "Enter the number of possibilities as a command line argument.";
       default_listener->fail(ENTER_PARAM);
       if (!default_listener->assert_ui_enabled())
         console::write_line(ENTER_PARAM);
@@ -49,13 +49,13 @@ public:
     
     for (iter = 0; iter <= possibilities; iter++) {
       decimal result;
-      string binomial;
+      ustring binomial;
       
       // Compute the next binomial coefficient and handle all exceptions.
       try {
         result = calc_binomial(possibilities, iter);
       } catch (const system_exception& ex) {
-        string fail_message = ustring::format("An exception was raised when calculating Binomial( {}, {} ).", possibilities, iter);
+        ustring fail_message = ustring::format("An exception was raised when calculating Binomial( {}, {} ).", possibilities, iter);
         default_listener->fail(fail_message, ex.message());
         if (!default_listener->assert_ui_enabled())
           console::write_line(fail_message + "\n" + ex.message());

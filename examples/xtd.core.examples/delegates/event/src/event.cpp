@@ -6,8 +6,8 @@ class control : public xtd::object {
 public:
   control() = default;
 
-  const std::string& text() const {return text_;}
-  void text(const std::string& text) {
+  const xtd::ustring& text() const {return text_;}
+  void text(const xtd::ustring& text) {
     if (text_ != text) {
       text_ = text;
       on_text_changed(xtd::event_args::empty);
@@ -20,7 +20,7 @@ protected:
   void on_text_changed(const xtd::event_args& e) {text_changed(*this, e);}
   
 private:
-  std::string text_;
+  xtd::ustring text_;
 };
 
 class button : public control {

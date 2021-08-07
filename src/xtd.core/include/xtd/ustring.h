@@ -356,27 +356,6 @@ namespace xtd {
     //template<typename type_t>
     //ustring& operator=(const type_t& object) {return std::basic_string<value_type>::assign(object);}
 
-    ustring operator+(const ustring& str) const;
-    ustring operator+(const std::string& str) const;
-    ustring operator+(const value_type* str) const;
-    ustring operator+(const std::u8string& str) const;
-    ustring operator+(const char8_t* str) const;
-    ustring operator+(const std::u16string& str) const;
-    ustring operator+(const char16_t* str) const;
-    ustring operator+(const std::u32string& str) const;
-    ustring operator+(const char32_t* str) const;
-    ustring operator+(const std::wstring& str) const;
-    ustring operator+(const wchar_t* str) const;
-    ustring operator+(value_type character) const;
-    ustring operator+(char8_t character) const;
-    ustring operator+(char16_t character) const;
-    ustring operator+(char32_t character) const;
-    ustring operator+(wchar_t character) const;
-    ustring operator+(const std::initializer_list<value_type>& il) const;
-    ustring operator+(const std::initializer_list<char8_t>& il) const;
-    ustring operator+(const std::initializer_list<char16_t>& il) const;
-    ustring operator+(const std::initializer_list<char32_t>& il) const;
-    ustring operator+(const std::initializer_list<wchar_t>& il) const;
     template<typename type_t>
     ustring operator+(const type_t& object) const {
       ustring result(*this);
@@ -1272,8 +1251,254 @@ namespace xtd {
       str = s;
       return stream;
     }
-    /// @endcond
     
+    friend ustring operator+(const ustring& str_a, const ustring& str_b) {
+      ustring result = str_a;
+      result.append(str_b);
+      return result;
+    }
+    
+    friend ustring operator+(const ustring& str_a, const std::string& str_b) {
+      ustring result = str_a;
+      result.append(ustring(str_b));
+      return result;
+    }
+
+    friend ustring operator+(const ustring& str_a, const value_type* str_b) {
+      ustring result = str_a;
+      result.append(ustring(str_b));
+      return result;
+    }
+
+    friend ustring operator+(const ustring& str_a, const std::u8string& str_b) {
+      ustring result = str_a;
+      result.append(ustring(str_b));
+      return result;
+    }
+
+    friend ustring operator+(const ustring& str_a, const char8_t* str_b) {
+      ustring result = str_a;
+      result.append(ustring(str_b));
+      return result;
+    }
+
+    friend ustring operator+(const ustring& str_a, const std::u16string& str_b) {
+      ustring result = str_a;
+      result.append(ustring(str_b));
+      return result;
+    }
+
+    friend ustring operator+(const ustring& str_a, const char16_t* str_b) {
+      ustring result = str_a;
+      result.append(ustring(str_b));
+      return result;
+    }
+
+    friend ustring operator+(const ustring& str_a, const std::u32string& str_b) {
+      ustring result = str_a;
+      result.append(ustring(str_b));
+      return result;
+    }
+
+    friend ustring operator+(const ustring& str_a, const char32_t* str_b) {
+      ustring result = str_a;
+      result.append(ustring(str_b));
+      return result;
+    }
+
+    friend ustring operator+(const ustring& str_a, const std::wstring& str_b) {
+      ustring result = str_a;
+      result.append(ustring(str_b));
+      return result;
+    }
+
+    friend ustring operator+(const ustring& str_a, const wchar_t* str_b) {
+      ustring result = str_a;
+      result.append(ustring(str_b));
+      return result;
+    }
+
+    friend ustring operator+(const ustring& str_a, value_type character) {
+      ustring result = str_a;
+      result.append(ustring(1, character));
+      return result;
+    }
+    
+    friend ustring operator+(const ustring& str_a, char8_t character) {
+      ustring result = str_a;
+      result.append(ustring(1, character));
+      return result;
+    }
+
+    friend ustring operator+(const ustring& str_a, char16_t character) {
+      ustring result = str_a;
+      result.append(ustring(1, character));
+      return result;
+    }
+
+    friend ustring operator+(const ustring& str_a, char32_t character) {
+      ustring result = str_a;
+      result.append(ustring(1, character));
+      return result;
+    }
+
+    friend ustring operator+(const ustring& str_a, wchar_t character) {
+      ustring result = str_a;
+      result.append(ustring(1, character));
+      return result;
+    }
+
+    friend ustring operator+(const ustring& str_a, const std::initializer_list<value_type>& il) {
+      ustring result = str_a;
+      result.append(ustring(il));
+      return result;
+    }
+
+    friend ustring operator+(const ustring& str_a, const std::initializer_list<char8_t>& il) {
+      ustring result = str_a;
+      result.append(ustring(il));
+      return result;
+    }
+
+    friend ustring operator+(const ustring& str_a, const std::initializer_list<char16_t>& il) {
+      ustring result = str_a;
+      result.append(ustring(il));
+      return result;
+    }
+
+    friend ustring operator+(const ustring& str_a, const std::initializer_list<char32_t>& il) {
+      ustring result = str_a;
+      result.append(ustring(il));
+      return result;
+    }
+
+    friend ustring operator+(const ustring& str_a, const std::initializer_list<wchar_t>& il) {
+      ustring result = str_a;
+      result.append(ustring(il));
+      return result;
+    }
+
+    friend ustring operator+(const std::string& str_a, const ustring& str_b) {
+      ustring result(str_a);
+      result.append(str_b);
+      return result;
+    }
+    
+    friend ustring operator+(const value_type* str_a, const ustring& str_b) {
+      ustring result(str_a);
+      result.append(str_b);
+      return result;
+    }
+
+    friend ustring operator+(const std::u8string& str_a, const ustring& str_b) {
+      ustring result(str_a);
+      result.append(str_b);
+      return result;
+    }
+
+    friend ustring operator+(const char8_t* str_a, const ustring& str_b) {
+      ustring result(str_a);
+      result.append(str_b);
+      return result;
+    }
+
+    friend ustring operator+(const std::u16string& str_a, const ustring& str_b) {
+      ustring result(str_a);
+      result.append(str_b);
+      return result;
+    }
+
+    friend ustring operator+(const char16_t* str_a, const ustring& str_b) {
+      ustring result(str_a);
+      result.append(str_b);
+      return result;
+    }
+
+    friend ustring operator+(const std::u32string& str_a, const ustring& str_b) {
+      ustring result(str_a);
+      result.append(str_b);
+      return result;
+    }
+
+    friend ustring operator+(const char32_t* str_a, const ustring& str_b) {
+      ustring result(str_a);
+      result.append(str_b);
+      return result;
+    }
+
+    friend ustring operator+(const std::wstring& str_a, const ustring& str_b) {
+      ustring result(str_a);
+      result.append(str_b);
+      return result;
+    }
+
+    friend ustring operator+(const wchar_t* str_a, const ustring& str_b) {
+      ustring result(str_a);
+      result.append(str_b);
+      return result;
+    }
+
+    friend ustring operator+(value_type character, const ustring& str_b) {
+      ustring result(1, character);
+      result.append(str_b);
+      return result;
+    }
+
+    friend ustring operator+(char8_t character, const ustring& str_b) {
+      ustring result(1, character);
+      result.append(str_b);
+      return result;
+    }
+
+    friend ustring operator+(char16_t character, const ustring& str_b) {
+      ustring result(1, character);
+      result.append(str_b);
+      return result;
+    }
+
+    friend ustring operator+(char32_t character, const ustring& str_b) {
+      ustring result(1, character);
+      result.append(str_b);
+      return result;
+    }
+
+    friend ustring operator+(wchar_t character, const ustring& str_b) {
+      ustring result(1, character);
+      result.append(str_b);
+      return result;
+    }
+
+    friend ustring operator+(const std::initializer_list<value_type>& il, const ustring& str_b) {
+      ustring result(il);
+      result.append(str_b);
+      return result;
+    }
+
+    friend ustring operator+(const std::initializer_list<char8_t>& il, const ustring& str_b) {
+      ustring result(il);
+      result.append(str_b);
+      return result;
+    }
+
+    friend ustring operator+(const std::initializer_list<char16_t>& il, const ustring& str_b) {
+      ustring result(il);
+      result.append(str_b);
+      return result;
+    }
+
+    friend ustring operator+(const std::initializer_list<char32_t>& il, const ustring& str_b) {
+      ustring result(il);
+      result.append(str_b);
+      return result;
+    }
+
+    friend ustring operator+(const std::initializer_list<wchar_t>& il, const ustring& str_b) {
+      ustring result(il);
+      result.append(str_b);
+      return result;
+    }
+    /// @endcond
+
   private:
     template<typename arg_t>
     static auto convert_param(arg_t&& arg) noexcept {

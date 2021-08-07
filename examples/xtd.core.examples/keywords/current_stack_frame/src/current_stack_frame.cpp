@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-void trace_message(const string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+void trace_message(const ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   console::write_line("stack_frame: {}\n", stack_frame);
   console::write_line("Message: {}", message);
   console::write_line("Method: {}", stack_frame.get_method());
