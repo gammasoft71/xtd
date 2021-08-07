@@ -242,13 +242,13 @@ namespace xtdc_command {
     }
     
     std::string make_platform_target_path(const std::filesystem::path& path, const std::string& target, bool release) const {
-      if (xtd::environment::os_version().is_windows_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/xtd::ustring::format("{}.exe", target)))
-        return (path/(release ? "Release" : "Debug")/xtd::ustring::format("{}.exe", target)).string();
-      else if (xtd::environment::os_version().is_macos_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/xtd::ustring::format("{}.app", target)))
-        return (path/(release ? "Release" : "Debug")/xtd::ustring::format("{}.app", target)).string();
-      else if (xtd::environment::os_version().is_macos_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/target))
-        return (path/(release ? "Release" : "Debug")/target).string();
-      else if (xtd::environment::os_version().is_linux_platform() && std::filesystem::exists(path/target))
+      if (xtd::environment::os_version().is_windows_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/xtd::ustring::format("{}.exe", target).c_str()))
+        return (path/(release ? "Release" : "Debug")/xtd::ustring::format("{}.exe", target).c_str()).string();
+      else if (xtd::environment::os_version().is_macos_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/xtd::ustring::format("{}.app", target).c_str()))
+        return (path/(release ? "Release" : "Debug")/xtd::ustring::format("{}.app", target).c_str()).string();
+      else if (xtd::environment::os_version().is_macos_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/target.c_str()))
+        return (path/(release ? "Release" : "Debug")/target.c_str()).string();
+      else if (xtd::environment::os_version().is_linux_platform() && std::filesystem::exists(path/target.c_str()))
         return (path/target).string();
       return "";
     }
@@ -263,14 +263,14 @@ namespace xtdc_command {
     
     bool is_linux_gui_app(const std::filesystem::path& path) const {
       if (!std::filesystem::exists(path)) return false;
-      auto lines = xtd::io::file::read_all_lines((std::filesystem::path(std::string(xtd::environment::get_folder_path(xtd::environment::special_folder::home)))/".local"/"share"/"applications"/xtd::ustring::format("{}.desktop", path.filename())).string());
+      auto lines = xtd::io::file::read_all_lines((std::filesystem::path(std::string(xtd::environment::get_folder_path(xtd::environment::special_folder::home)))/".local"/"share"/"applications"/xtd::ustring::format("{}.desktop", path.filename()).c_str()).string());
       for (auto line : lines)
         if (line.to_lower() == "terminael=false") return true;
       return false;
     }
     
     bool is_macos_gui_app(const std::filesystem::path& path) const {
-      return std::filesystem::path(path).has_extension() && std::filesystem::path(path).extension().string() == ".app";
+      return std::filesystem::path(path).has_extension() && std::filesystem::path(path.c_str()).extension().string() == ".app";
     }
     
     bool is_gui(const std::filesystem::path& path) const {
@@ -1106,7 +1106,7 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines((path/"src"/xtd::ustring::format("{}.cpp", name)).string(), lines);
+      xtd::io::file::write_all_lines((path/"src"/xtd::ustring::format("{}.cpp", name).c_str()).string(), lines);
     }
     
     void create_gtkmm_gui_main(const std::string& name, const std::filesystem::path& path) const {
@@ -1157,7 +1157,7 @@ namespace xtdc_command {
         "TEMPLATE = subdirs",
         xtd::ustring::format("SUBDIRS = {}", name),
       };
-      xtd::io::file::write_all_lines((path_/xtd::ustring::format("{}.pro", name)).string(), lines);
+      xtd::io::file::write_all_lines((path_/xtd::ustring::format("{}.pro", name).c_str()).string(), lines);
     }
 
     void create_qt5_gui_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
@@ -1198,7 +1198,7 @@ namespace xtdc_command {
         "SOURCES = src/Window1.cpp src/Program.cpp",
       };
       
-      xtd::io::file::write_all_lines((path/xtd::ustring::format("{}.pro", name)).string(), lines);
+      xtd::io::file::write_all_lines((path/xtd::ustring::format("{}.pro", name).c_str()).string(), lines);
     }
 
     void create_qt5_gui_include(const std::string& name, const std::filesystem::path& path) const {
@@ -1653,9 +1653,9 @@ namespace xtdc_command {
       std::filesystem::create_directories(create_solution ? path_/name/"properties" : path_/"properties");
       std::filesystem::create_directories(create_solution ? path_/name/"resources" : path_/"resources");
       std::filesystem::create_directories(create_solution ? path_/name/"src" : path_/"src");
-      std::filesystem::copy(get_base_path()/"share"/"xtd"/"resources"/"icons"/"xtd_forms.icns", path_/(create_solution ? name : "" )/"resources"/xtd::ustring::format("{}.icns", name));
-      std::filesystem::copy(get_base_path()/"share"/"xtd"/"resources"/"icons"/"xtd_forms.ico", path_/(create_solution ? name : "" )/"resources"/xtd::ustring::format("{}.ico", name));
-      std::filesystem::copy(get_base_path()/"share"/"xtd"/"resources"/"icons"/"xtd_forms.png", path_/(create_solution ? name : "" )/"resources"/xtd::ustring::format("{}.png", name));
+      std::filesystem::copy(get_base_path()/"share"/"xtd"/"resources"/"icons"/"xtd_forms.icns", path_/(create_solution ? name : "" )/"resources"/xtd::ustring::format("{}.icns", name).c_str());
+      std::filesystem::copy(get_base_path()/"share"/"xtd"/"resources"/"icons"/"xtd_forms.ico", path_/(create_solution ? name : "" )/"resources"/xtd::ustring::format("{}.ico", name).c_str());
+      std::filesystem::copy(get_base_path()/"share"/"xtd"/"resources"/"icons"/"xtd_forms.png", path_/(create_solution ? name : "" )/"resources"/xtd::ustring::format("{}.png", name).c_str());
       if (create_solution) create_xtd_gui_solution_cmakelists_txt(name);
       create_xtd_gui_application_properties(name, create_solution ? path_/name : path_);
       create_xtd_gui_cmakelists_txt(name, create_solution ? path_/name : path_);
@@ -3132,18 +3132,18 @@ namespace xtdc_command {
       std::filesystem::create_directories(build_path());
       change_current_directory current_directory {build_path()};
       if (!first_generation && name.empty()) name = get_name();
-      if (xtd::environment::os_version().is_windows_platform() && (first_generation || !std::filesystem::exists(build_path()/xtd::ustring::format("{}.sln", name))))
+      if (xtd::environment::os_version().is_windows_platform() && (first_generation || !std::filesystem::exists(build_path()/xtd::ustring::format("{}.sln", name).c_str())))
         launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {}", path_, build_path()));
-      else if (xtd::environment::os_version().is_macos_platform() && (first_generation || !std::filesystem::exists(build_path()/xtd::ustring::format("{}.xcodeproj", name))))
+      else if (xtd::environment::os_version().is_macos_platform() && (first_generation || !std::filesystem::exists(build_path()/xtd::ustring::format("{}.xcodeproj", name).c_str())))
         launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} -G \"Xcode\"", path_, build_path()));
       else if (xtd::environment::os_version().is_linux_platform()) {
-        if (first_generation || !std::filesystem::exists(build_path()/"Debug"/xtd::ustring::format("{}.cbp", name))) {
+        if (first_generation || !std::filesystem::exists(build_path()/"Debug"/xtd::ustring::format("{}.cbp", name).c_str())) {
           change_current_directory current_directory_debug {build_path()/"Debug"};
           std::filesystem::create_directories(build_path()/"Debug");
           launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, build_path()/"Debug"));
           patch_cbp_file(name, "Debug");
         }
-        if (first_generation || !std::filesystem::exists(build_path()/"Release"/xtd::ustring::format("{}.cbp", name))) {
+        if (first_generation || !std::filesystem::exists(build_path()/"Release"/xtd::ustring::format("{}.cbp", name).c_str())) {
           change_current_directory current_directory_release {build_path()/"Release"};
           std::filesystem::create_directories(build_path()/"Release");
           launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, build_path()/"Release"));
@@ -3182,14 +3182,14 @@ namespace xtdc_command {
     
     void patch_cbp_file(const std::string& name, const std::string& build_config) const {
       if (xtd::strings::contains(xtd::io::file::read_all_text(std::filesystem::exists((path_/name/"CMakeLists.txt").string()) ? (path_/name/"CMakeLists.txt").string() : (path_/"CMakeLists.txt").string()), "GUI_APPLICATION")) {
-        auto cbp_file_lines = xtd::io::file::read_all_lines((build_path()/build_config/xtd::ustring::format("{}.cbp", name)).string());
+        auto cbp_file_lines = xtd::io::file::read_all_lines((build_path()/build_config/xtd::ustring::format("{}.cbp", name).c_str()).string());
         for (auto iterator = std::find(cbp_file_lines.begin(), cbp_file_lines.end(), xtd::ustring::format("\t\t\t<Target title=\"{}\">", name)); iterator != cbp_file_lines.end(); ++iterator) {
           if (*iterator == "\t\t\t\t<Option type=\"1\"/>") {
             *iterator = "\t\t\t\t<Option type=\"0\"/>";
             break;
           }
         }
-        xtd::io::file::write_all_lines((build_path()/build_config/xtd::ustring::format("{}.cbp", name)).string(), cbp_file_lines);
+        xtd::io::file::write_all_lines((build_path()/build_config/xtd::ustring::format("{}.cbp", name).c_str()).string(), cbp_file_lines);
       }
     }
     
