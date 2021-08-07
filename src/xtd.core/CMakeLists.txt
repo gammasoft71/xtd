@@ -81,7 +81,6 @@ add_sources(
   include/xtd/static.h
   include/xtd/string_comparison.h
   include/xtd/string_split_options.h
-  include/xtd/strings.h
   include/xtd/system_exception.h
   include/xtd/tick.h
   include/xtd/ticks.h
@@ -190,7 +189,6 @@ add_sources(
   src/xtd/guid.cpp
   src/xtd/object.cpp
 # src/xtd/signal_catcher.cpp
-  src/xtd/strings.cpp
   src/xtd/system_exception.cpp
   src/xtd/to_string.cpp
   src/xtd/translator.cpp
