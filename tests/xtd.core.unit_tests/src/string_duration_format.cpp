@@ -75,7 +75,10 @@ namespace unit_tests {
     }
 
     void test_method_(format_with_alternative_full_argument) {
-      assert::are_equal("1:2:03:32:024000500", xtd::ustring::format("{0:f}", 26h + 3min + 32s + 24ms + 500ns));
+      if (environment::os_version().is_64_bit())
+        assert::are_equal("1:2:03:32:024000500", xtd::ustring::format("{0:f}", 26h + 3min + 32s + 24ms + 500ns));
+      else
+        assert::are_equal("1:2:03:32:000000000", xtd::ustring::format("{0:f}", 26h + 3min + 32s + 24ms + 500ns));
     }
     
     void test_method_(format_with_alternative_full_argument_without_days_milliseconds_and_nanoseconds) {
@@ -83,7 +86,10 @@ namespace unit_tests {
     }
 
     void test_method_(format_with_full_argument) {
-      assert::are_equal("1:02:03:32:024000500", xtd::ustring::format("{0:F}", 26h + 3min + 32s + 24ms + 500ns));
+      if (environment::os_version().is_64_bit())
+        assert::are_equal("1:02:03:32:024000500", xtd::ustring::format("{0:F}", 26h + 3min + 32s + 24ms + 500ns));
+      else
+        assert::are_equal("1:02:03:32:000000000", xtd::ustring::format("{0:F}", 26h + 3min + 32s + 24ms + 500ns));
     }
     
     void test_method_(format_with_full_argument_without_days_milliseconds_and_nanoseconds) {
