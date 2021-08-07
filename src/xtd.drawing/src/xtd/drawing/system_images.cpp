@@ -26,7 +26,6 @@
 // *   light folder item gradient : fg(69, 181, 232), bg(101, 197, 240)
 // *   dark folder item gradient : fg(78, 139, 182), bg(94, 153, 185)
 
-
 using namespace std;
 using namespace std::filesystem;
 using namespace xtd;
@@ -68,7 +67,6 @@ image system_images::from_name(const ustring& theme, const ustring& name, const 
   if (exists(theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png").c_str())) return bitmap((theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png").c_str()).string());
   for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
     if (exists(theme_path/default_size_names[it - default_sizes.begin()]/(name + ".png").c_str())) return bitmap(bitmap((theme_path/default_size_names[it - default_sizes.begin()]/(name + ".png").c_str()).string()), *it_sizes);
-  
   
   if (dark_mode) {
     if (exists(system_images_resource_path()/fallback_theme().c_str()/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png").c_str())) return bitmap((system_images_resource_path()/fallback_theme().c_str()/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png").c_str()).string());
