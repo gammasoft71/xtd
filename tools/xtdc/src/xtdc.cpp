@@ -643,11 +643,11 @@ namespace xtdc_command {
           show_info = true;
         else if (args[i] == "-v" || args[i] == "--version")
           show_version = true;
-        else if (!strings::starts_with(args[i], '-')) {
+        else if (!args[i].starts_with('-')) {
           command_args = vector<ustring>(args.size() - i);
           command_args = {args.begin() + i, args.end()};
           i = args.size();
-        } else if (strings::starts_with(args[i], '-')) {
+        } else if (args[i].starts_with('-')) {
           invalid_option = args[i];;
           return false;
         }
@@ -665,7 +665,7 @@ namespace xtdc_command {
         } else if (args[i] == "-s" || args[i] == "--sdk") {
           if (i+1 >= args.size()) return false;
           sdk = args[++i];
-        } else if (strings::starts_with(args[i], '-')) {
+        } else if (args[i].starts_with('-')) {
           invalid_option = args[i];;
           return false;
         } else if (type.empty()) {
@@ -692,7 +692,7 @@ namespace xtdc_command {
           target = args[++i];
         else if (path.empty())
           path = args[i];
-        else if (strings::starts_with(args[i], '-')) {
+        else if (args[i].starts_with('-')) {
           invalid_option = args[i];;
           return false;
         }
@@ -710,7 +710,7 @@ namespace xtdc_command {
           release = true;
         else if (path.empty())
           path = args[i];
-        else if (strings::starts_with(args[i], '-')) {
+        else if (args[i].starts_with('-')) {
           invalid_option = args[i];;
           return false;
         }
@@ -728,7 +728,7 @@ namespace xtdc_command {
           release = true;
         else if (path.empty())
           path = args[i];
-        else if (strings::starts_with(args[i], '-')) {
+        else if (args[i].starts_with('-')) {
           invalid_option = args[i];;
           return false;
         }
@@ -746,7 +746,7 @@ namespace xtdc_command {
           release = true;
         else if (path.empty())
           path = args[i];
-        else if (strings::starts_with(args[i], '-')) {
+        else if (args[i].starts_with('-')) {
           invalid_option = args[i];;
           return false;
         }
@@ -764,7 +764,7 @@ namespace xtdc_command {
         } else if (args[i] == "-s" || args[i] == "--sdk") {
           if (i+1 >= args.size()) return false;
           sdk = args[++i];
-        } else if (strings::starts_with(args[i], '-')) {
+        } else if (args[i].starts_with('-')) {
           invalid_option = args[i];;
           return false;
         } else if (type.empty())
@@ -785,7 +785,7 @@ namespace xtdc_command {
           target = args[++i];
         else if (path.empty())
           path = args[i];
-        else if (strings::starts_with(args[i], '-')) {
+        else if (args[i].starts_with('-')) {
           invalid_option = args[i];;
           return false;
         }
@@ -805,7 +805,7 @@ namespace xtdc_command {
           target = args[++i];
         else if (path.empty())
           path = args[i];
-        else if (strings::starts_with(args[i], '-')) {
+        else if (args[i].starts_with('-')) {
           invalid_option = args[i];;
           return false;
         }
@@ -819,7 +819,7 @@ namespace xtdc_command {
           show_help = true;
         else if (path.empty())
           path = args[i];
-        else if (strings::starts_with(args[i], '-')) {
+        else if (args[i].starts_with('-')) {
           invalid_option = args[i];;
           return false;
         }
@@ -855,7 +855,7 @@ namespace xtdc_command {
           release = true;
         else if (path.empty())
           path = args[i];
-        else if (strings::starts_with(args[i], '-')) {
+        else if (args[i].starts_with('-')) {
           invalid_option = args[i];;
           return false;
         }

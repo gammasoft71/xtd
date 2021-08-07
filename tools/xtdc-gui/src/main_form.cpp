@@ -61,13 +61,13 @@ main_form::main_form() {
   startup_open_recent_projects_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
   startup_open_recent_projects_list_box_.key_down += [&](object& sender, key_event_args& e) {
     if (e.key_code() == keys::del && startup_open_recent_projects_list_box_.selected_index() != startup_open_recent_projects_list_box_.npos)
-      delete_from_open_recent_projects(xtd::strings::split(properties::settings::default_settings().open_recent_propjects(), {';'})[startup_open_recent_projects_list_box_.selected_index()]);
+      delete_from_open_recent_projects(properties::settings::default_settings().open_recent_propjects().split({';'})[startup_open_recent_projects_list_box_.selected_index()]);
   };
 
   startup_open_recent_projects_list_box_.double_click += [&] {
     if (startup_open_recent_projects_list_box_.selected_index() != startup_open_recent_projects_list_box_.npos) {
-      if (!std::filesystem::exists(xtd::strings::split(properties::settings::default_settings().open_recent_propjects(), {';'})[startup_open_recent_projects_list_box_.selected_index()])) message_box::show(*this, xtd::ustring::format("Project \"{}\" does not exists!", properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]), "Open project", message_box_buttons::ok, message_box_icon::error);
-      else open_project(xtd::strings::split(properties::settings::default_settings().open_recent_propjects(), {';'})[startup_open_recent_projects_list_box_.selected_index()]);
+      if (!std::filesystem::exists(properties::settings::default_settings().open_recent_propjects().split({';'})[startup_open_recent_projects_list_box_.selected_index()].c_str())) message_box::show(*this, xtd::ustring::format("Project \"{}\" does not exists!", properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]), "Open project", message_box_buttons::ok, message_box_icon::error);
+      else open_project(properties::settings::default_settings().open_recent_propjects().split({';'})[startup_open_recent_projects_list_box_.selected_index()]);
     }
   };
   
@@ -334,7 +334,7 @@ main_form::main_form() {
       next_button_.enabled(false);
     else {
       create_project_type_items_control_.selected_index(create_project_type_items_control_.npos);
-      current_project_type_index_ = xtd::parse<size_t>(xtd::strings::split(properties::settings::default_settings().create_recent_propjects(), {';'})[create_create_recent_projects_list_box_.selected_index()]);
+      current_project_type_index_ = xtd::parse<size_t>(properties::settings::default_settings().create_recent_propjects().split({';'})[create_create_recent_projects_list_box_.selected_index()]);
       next_button_.enabled(true);
     }
   };
@@ -343,7 +343,7 @@ main_form::main_form() {
   };
   create_create_recent_projects_list_box_.key_down += [&](object& sender, key_event_args& e) {
     if (e.key_code() == keys::del && create_create_recent_projects_list_box_.selected_index() != create_create_recent_projects_list_box_.npos)
-      delete_from_create_recent_projects(xtd::parse<size_t>(xtd::strings::split(properties::settings::default_settings().create_recent_propjects(), {';'})[startup_open_recent_projects_list_box_.selected_index()]));
+      delete_from_create_recent_projects(xtd::parse<size_t>(properties::settings::default_settings().create_recent_propjects().split({';'})[startup_open_recent_projects_list_box_.selected_index()]));
   };
 
   create_language_choice_.parent(create_panel_);
@@ -568,7 +568,7 @@ main_form::main_form() {
 }
 
 void main_form::delete_from_create_recent_projects(size_t create_project_items_index) {
-  auto create_recent_projects = xtd::strings::split(properties::settings::default_settings().create_recent_propjects(), {';'});
+  auto create_recent_projects = properties::settings::default_settings().create_recent_propjects().split({';'});
   create_recent_projects.erase(std::find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)));
   properties::settings::default_settings().create_recent_propjects(xtd::ustring::join(";", create_recent_projects));
   properties::settings::default_settings().save();
@@ -576,7 +576,7 @@ void main_form::delete_from_create_recent_projects(size_t create_project_items_i
 }
 
 void main_form::delete_from_open_recent_projects(const std::string& project_path) {
-  auto open_recent_projects = xtd::strings::split(properties::settings::default_settings().open_recent_propjects(), {';'});
+  auto open_recent_projects = properties::settings::default_settings().open_recent_propjects().split({';'});
   open_recent_projects.erase(std::find(open_recent_projects.begin(), open_recent_projects.end(), project_path));
   properties::settings::default_settings().open_recent_propjects(xtd::ustring::join(";", open_recent_projects));
   properties::settings::default_settings().save();
@@ -592,20 +592,20 @@ void main_form::init() {
 void main_form::init_create_create_recent_projects_list_box() {
   auto project_type_items = create_project_type_items_control_.project_type_items();
   create_create_recent_projects_list_box_.items().clear();
-  for (auto item : xtd::strings::split(properties::settings::default_settings().create_recent_propjects(), {';'}))
+  for (auto item : properties::settings::default_settings().create_recent_propjects().split({';'}))
     create_create_recent_projects_list_box_.items().push_back(project_type_items[xtd::parse<size_t>(item)].name());
   create_create_recent_projects_list_box_.selected_index(create_create_recent_projects_list_box_.items().size() == 0 ? -1 : 0);
 }
 
 void main_form::init_startup_open_recent_projects_list_box() {
   startup_open_recent_projects_list_box_.items().clear();
-  for (auto item : xtd::strings::split(properties::settings::default_settings().open_recent_propjects(), {';'}))
-    startup_open_recent_projects_list_box_.items().push_back(xtd::ustring::format("{} ({})", std::filesystem::path(item).stem().string(), item));
+  for (auto item : properties::settings::default_settings().open_recent_propjects().split({';'}))
+    startup_open_recent_projects_list_box_.items().push_back(xtd::ustring::format("{} ({})", std::filesystem::path(item.c_str()).stem().string(), item));
   startup_open_recent_projects_list_box_.selected_index(startup_open_recent_projects_list_box_.items().size() == 0 ? -1 : 0);
 }
 
 void main_form::add_to_create_recent_projects(size_t create_project_items_index) {
-  auto create_recent_projects_from_settings = xtd::strings::split(properties::settings::default_settings().create_recent_propjects(), {';'});
+  auto create_recent_projects_from_settings = properties::settings::default_settings().create_recent_propjects().split({';'});
   std::list<std::string> create_recent_projects {create_recent_projects_from_settings.begin(), create_recent_projects_from_settings.end()};
   if (std::find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)) != create_recent_projects.end())
     create_recent_projects.erase(std::find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)));
@@ -618,7 +618,7 @@ void main_form::add_to_create_recent_projects(size_t create_project_items_index)
 }
 
 void main_form::add_to_open_recent_projects(const std::string& project_path) {
-  auto open_recent_projects_from_settings = xtd::strings::split(properties::settings::default_settings().open_recent_propjects(), {';'});
+  auto open_recent_projects_from_settings = properties::settings::default_settings().open_recent_propjects().split({';'});
   std::list<std::string> open_recent_projects {open_recent_projects_from_settings.begin(), open_recent_projects_from_settings.end()};
   if (std::find(open_recent_projects.begin(), open_recent_projects.end(), project_path) != open_recent_projects.end())
     open_recent_projects.erase(std::find(open_recent_projects.begin(), open_recent_projects.end(), project_path));
