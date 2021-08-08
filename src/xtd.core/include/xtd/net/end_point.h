@@ -18,7 +18,7 @@ namespace xtd {
     /// @brief Identifies a network address. This is an abstract class.
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core net
+    /// @ingroup xtd_core
     class core_export_ end_point : public xtd::object {
     public:
       /// @cond
