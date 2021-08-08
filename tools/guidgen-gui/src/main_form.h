@@ -58,7 +58,7 @@ namespace guidgen_gui {
           
           for (int count = 0; count < (count_numeric_up_down_.text() == "" ? count_numeric_up_down_.value() : parse<int>(count_numeric_up_down_.text())); count++) {
             begin_invoke([&] {
-              result_text_box_.append_text(xtd::guid::new_guid().to_string(any_cast<string>(format_choice_.selected_item().tag())));
+              result_text_box_.append_text(xtd::guid::new_guid().to_string(any_cast<ustring>(format_choice_.selected_item().tag())));
               result_text_box_.append_text(environment::new_line());
             });
           }
