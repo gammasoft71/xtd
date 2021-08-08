@@ -5,7 +5,7 @@
 ///
 /// <b>Modern c++17/20 framework to create console, forms (GUI like WinForms) and unit test applications on Windows, macOS, Linux, iOS and android.</b>
 ///
-/// @image html xtd_header.png
+/// @image html logo.png
 ///
 /// @section FeaturesSection Features
 ///   * a collection of native C++ classes libraries, to complete std;
