@@ -1,0 +1,36 @@
+#define __XTD_CORE_NATIVE_LIBRARY__
+#include <xtd/native/socket.h>
+#include <xtd/native/address_families.h>
+#undef __XTD_CORE_NATIVE_LIBRARY__
+#include <map>
+#include <fcntl.h>
+#include <poll.h>
+#include <unistd.h>
+#include <netinet/in.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/ioctl.h>
+
+using namespace xtd::native;
+
+int32_t socket::address_family_to_native(int32_t address_family) {
+#if defined(__APPLE__)
+  static std::map<int32_t, int32_t> address_families = {{ADDRESS_FAMILY_UNIX, AF_UNIX}, {ADDRESS_FAMILY_INTER_NETWORK, AF_INET}, {ADDRESS_FAMILY_IMP_LINK, AF_IMPLINK}, {ADDRESS_FAMILY_PUP, AF_PUP}, {ADDRESS_FAMILY_CHAOS, AF_CHAOS}, {ADDRESS_FAMILY_NS, AF_NS}, {ADDRESS_FAMILY_ISO, AF_ISO}, {ADDRESS_FAMILY_ECMA, AF_ECMA}, {ADDRESS_FAMILY_DATA_KIT, AF_DATAKIT}, {ADDRESS_FAMILY_CCITT, AF_CCITT}, {ADDRESS_FAMILY_SNA, AF_SNA}, {ADDRESS_FAMILY_DEC_NET, AF_DECnet}, {ADDRESS_FAMILY_DATA_LINK, AF_DLI}, {ADDRESS_FAMILY_LAT, AF_LAT}, {ADDRESS_FAMILY_HYPER_CHANNEL, AF_HYLINK}, {ADDRESS_FAMILY_APPLE_TALK, AF_APPLETALK}, {ADDRESS_FAMILY_NET_BIOS, AF_NETBIOS}, {ADDRESS_FAMILY_ATM, AF_NATM}, {ADDRESS_FAMILY_INTER_NETWORK_V6, AF_INET6}, {ADDRESS_FAMILY_MAX, AF_MAX}};
+#else
+  static std::map<int32_t, int32_t> address_families = {{ADDRESS_FAMILY_UNIX, AF_UNIX}, {ADDRESS_FAMILY_INTER_NETWORK, AF_INET}, {ADDRESS_FAMILY_SNA, AF_SNA}, {ADDRESS_FAMILY_DEC_NET, AF_DECnet}, {ADDRESS_FAMILY_APPLE_TALK, AF_APPLETALK}, {ADDRESS_FAMILY_INTER_NETWORK_V6, AF_INET6}, {ADDRESS_FAMILY_MAX, AF_MAX}};
+#endif
+  auto it = address_families.find(address_family);
+  if (it == address_families.end()) return AF_UNSPEC;
+  return it->second;
+}
+
+int32_t socket::native_to_address_family(int32_t address_family) {
+#if defined(__APPLE__)
+  static std::map<int32_t, int32_t> address_families = {{AF_UNIX, ADDRESS_FAMILY_UNIX}, {AF_INET, ADDRESS_FAMILY_INTER_NETWORK}, {AF_IMPLINK, ADDRESS_FAMILY_IMP_LINK}, {AF_PUP, ADDRESS_FAMILY_PUP}, {AF_CHAOS, ADDRESS_FAMILY_CHAOS}, {AF_NS, ADDRESS_FAMILY_NS}, {AF_ISO, ADDRESS_FAMILY_ISO}, {AF_ECMA, ADDRESS_FAMILY_ECMA}, {AF_DATAKIT, ADDRESS_FAMILY_DATA_KIT}, {AF_CCITT, ADDRESS_FAMILY_CCITT}, {AF_SNA, ADDRESS_FAMILY_SNA}, {AF_DECnet, ADDRESS_FAMILY_DEC_NET}, {AF_DLI, ADDRESS_FAMILY_DATA_LINK}, {AF_LAT, ADDRESS_FAMILY_LAT}, {AF_HYLINK, ADDRESS_FAMILY_HYPER_CHANNEL}, {AF_APPLETALK, ADDRESS_FAMILY_APPLE_TALK}, {AF_NETBIOS, ADDRESS_FAMILY_NET_BIOS}, {AF_NATM, ADDRESS_FAMILY_ATM}, {AF_INET6, ADDRESS_FAMILY_INTER_NETWORK_V6}, {AF_MAX, ADDRESS_FAMILY_MAX}};
+#else
+  static std::map<int32_t, int32_t> address_families = {{AF_UNIX, ADDRESS_FAMILY_UNIX}, {AF_INET, ADDRESS_FAMILY_INTER_NETWORK}, {AF_SNA, ADDRESS_FAMILY_SNA}, {AF_DECnet, ADDRESS_FAMILY_DEC_NET}, {AF_APPLETALK, ADDRESS_FAMILY_APPLE_TALK}, {AF_INET6, ADDRESS_FAMILY_INTER_NETWORK_V6}, {AF_MAX, ADDRESS_FAMILY_MAX}};
+#endif
+  auto it = address_families.find(address_family);
+  if (it == address_families.end()) return ADDRESS_FAMILY_UNSPECIFIED;
+  return it->second;
+}

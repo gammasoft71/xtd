@@ -89,5 +89,7 @@ add_sources(
   src/io/path_too_long_exception.cpp
   src/io/stream_writer.cpp
   src/io/string_reader.cpp
+  src/net/end_point.cpp
+  src/net/socket_address.cpp
 )
 target_type(TEST_APPLICATION)
