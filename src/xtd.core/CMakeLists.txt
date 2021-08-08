@@ -173,6 +173,9 @@ add_sources(
   include/xtd/io/string_writer.h
   include/xtd/io/text_reader.h
   include/xtd/io/text_writer.h
+  include/xtd/net/end_point.h
+  include/xtd/net/socket_address.h
+  include/xtd/net/sockets/address_family.h
   include/xtd/security/secure_string.h
   include/xtd/web/css/property.h
   include/xtd/web/css/property_map.h
@@ -231,6 +234,8 @@ add_sources(
   src/xtd/io/string_writer.cpp
   src/xtd/io/text_reader.cpp
   src/xtd/io/text_writer.cpp
+  src/xtd/net/end_point.cpp
+  src/xtd/net/socket_address.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})
 

@@ -8,13 +8,15 @@
 #endif
 /// @endcond
 
-#include "native/console.h"
+#include "native/address_families.h"
+#include "native/assert_dialog_results.h"
 #include "native/console_color.h"
+#include "native/console.h"
 #include "native/console_special_key.h"
 #include "native/constant_special_item_id_list.h"
-#include "native/debug.h"
-#include "native/drive.h"
+#include "native/debugger.h"
 #include "native/drive_type.h"
+#include "native/drive.h"
 #include "native/environment.h"
 #include "native/environment_variable_target.h"
 #include "native/file.h"
@@ -25,4 +27,5 @@
 #include "native/process.h"
 #include "native/process_creation_flags.h"
 #include "native/process_window_style.h"
+#include "native/socket.h"
 #include "native/translator.h"

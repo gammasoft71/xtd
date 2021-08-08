@@ -1,6 +1,11 @@
 /// @file
 /// @brief Contains groups definitions.
 
+/// @defgroup address_family aadress family
+/// @brief address family definitions.
+/// @warning Internal use only
+/// @ingroup native
+
 /// @defgroup adr assert dialog result
 /// @brief assert dialog result definitions.
 /// @warning Internal use only
@@ -129,6 +134,10 @@
 /// @defgroup native native API
 /// @brief Native API for access to underlying operating systems and toolkits.
 /// @warning Internal use only
+
+/// @defgroup net net
+/// @brief Provides a simple programming interface for many of the protocols used on networks today. The xtd::net::web_request and xtd::net::web_response classes form the basis of what are called pluggable protocols, an implementation of network services that enables you to develop applications that use Internet resources without worrying about the specific details of the individual protocols.
+/// @ingroup system
 
 /// @defgroup ofn open file flags
 /// @brief open file flags definitions.
