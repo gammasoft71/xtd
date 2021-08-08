@@ -144,6 +144,7 @@
 #include "io/text_writer.h"
 #include "net/cookie_exception.h"
 #include "net/end_point.h"
+#include "net/ip_address.h"
 #include "net/socket_address.h"
 #include "net/sockets/address_family.h"
 #include "net/sockets/iocontrol_code.h"
