@@ -20,7 +20,7 @@ namespace xtd {
     /// @ingroup xtd_core net
     class core_export_ ip_address : public xtd::object {
     public:
-      /// @brief Initializes a new instance of the xtd::net::ip_aAddress.
+      /// @brief Initializes a new instance of the xtd::net::ip_address.
       /// @remarks ip_address is initialized by default value (as none).
       ip_address() = default;
       
@@ -30,17 +30,17 @@ namespace xtd {
       /// @endcond
       
       /// @brief Gets the address family of the IP address.
-      /// @return Returns InterNetwork for IPv4 or InterNetworkV6 for IPv6.
+      /// @return Returns sockets::address_family::inter_network for IPv4 or sockets::address_family::inter_network_v6 for IPv6.
       sockets::address_family address_family() const;
       
       /// @brief Gets the IPv6 address scope identifier.
       /// @return A int64_t that specifies the scope of the address.
-      /// @exception xtd::net::sockets::socket_exception address_family = address_family_inter_network
+      /// @exception xtd::net::sockets::socket_exception if address_family = sockets::address_family::inter_network
       /// @exception xtd::argument_out_of_range_exception scope_id < 0 or scope_id > 0x00000000FFFFFFFF.
       int64_t scope_id() const;
       /// @brief Sets the IPv6 address scope identifier.
       /// @param value A int64_t that specifies the scope of the address.
-      /// @exception xtd::net::sockets::socket_exception address_family = address_family_inter_network
+      /// @exception xtd::net::sockets::socket_exception if address_family = sockets::address_family::inter_network
       /// @exception xtd::argument_out_of_range_exception scope_id < 0 or scope_id > 0x00000000FFFFFFFF.
       ip_address& scope_id(int64_t value);
 
