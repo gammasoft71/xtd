@@ -21,7 +21,7 @@ namespace xtd {
     /// @brief Stores serialized information from end_point derived classes.
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core net
+    /// @ingroup xtd_core
     /// @remarks The first 2 bytes of the underlying buffer are reserved for the xtd::net::sockets::address_family enumerated value. When the xtd::net::socket_address is used to store a serialized xtd::net::ipend_point, the third and fourth bytes are used to store port number information. The next bytes are used to store the IP address. You can access any information within this underlying byte buffer by referring to its index position; the byte buffer uses zero-based indexing. You can also use the xtd::net::socket_address::family and xtd::net::socket_address::size properties to get the xtd::net::sockets::address_family value and the buffer size, respectively. To view any of this information as a string, use the xtd::net::socket_address::to_string method.
     class core_export_ socket_address : public xtd::object {
     public:

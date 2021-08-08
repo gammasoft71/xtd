@@ -17,6 +17,7 @@ public:
     maximize_box(false);
     minimize_box(false);
     control_box(false);
+    top_most(true);
     form_border_style(forms::form_border_style::none);
     opacity(0.5);
 
