@@ -173,6 +173,7 @@ add_sources(
   include/xtd/io/string_writer.h
   include/xtd/io/text_reader.h
   include/xtd/io/text_writer.h
+  include/xtd/net/cookie_exception.h
   include/xtd/net/end_point.h
   include/xtd/net/socket_address.h
   include/xtd/net/sockets/address_family.h

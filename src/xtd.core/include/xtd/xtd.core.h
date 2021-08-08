@@ -142,6 +142,7 @@
 #include "io/string_writer.h"
 #include "io/text_reader.h"
 #include "io/text_writer.h"
+#include "net/cookie_exception.h"
 #include "net/end_point.h"
 #include "net/socket_address.h"
 #include "net/sockets/address_family.h"
