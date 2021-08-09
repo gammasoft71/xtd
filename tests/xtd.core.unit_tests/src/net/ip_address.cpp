@@ -174,6 +174,7 @@ namespace unit_tests {
     void test_method_(parse_ip_v6) {
       assert::are_equal("2001:0:5ef5:73b8:2c2c:3028:2a4e:b283", ip_address::parse("2001:0:5ef5:73b8:2c2c:3028:2a4e:b283").to_string(), line_info_);
       assert::are_equal("2001:0:5ef5:73b8:2c2c:3028:2a4e:b283", ip_address::parse("2001::5ef5:73b8:2c2c:3028:2a4e:b283").to_string(), line_info_);
+      assert::are_equal("2001:0:5ef5:73b8:2c2c:3028:2a4e:b283", ip_address::parse("[2001::5ef5:73b8:2c2c:3028:2a4e:b283]").to_string(), line_info_);
       assert::are_equal("2001:0:5ef5:73b8:2c2c:3028:2a4e:b283%15", ip_address::parse("2001:0:5ef5:73b8:2c2c:3028:2a4e:b283%15").to_string(), line_info_);
     }
 
