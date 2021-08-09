@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "../../system_exception.h"
+#include "socket_error.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -71,7 +72,11 @@ namespace xtd {
         /// @param help_link Help link string associate to the exception.
         /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
         explicit socket_exception(const xtd::ustring& message, const std::exception& inner_exception, const std::error_code& error, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, error, help_link, info) {}
-        
+        /// @brief Create a new instance of class socket_exception
+        /// @param error One of xtd::net::sockets::socket_error values .
+        /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+        explicit socket_exception(const xtd::net::sockets::socket_error& error, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(default_message(), std::error_code(static_cast<int32_t>(error), std::system_category()), info) {}
+
         /// @cond
         socket_exception(const socket_exception&) = default;
         socket_exception& operator=(const socket_exception&) = default;
