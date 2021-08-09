@@ -166,7 +166,7 @@ bool ip_address::is_loopback(const ip_address& address) {
 
 ip_address ip_address::map_to_ip_v4() const noexcept {
   if (address_family_ == sockets::address_family::inter_network) return *this;
-  uint64_t address = address = (((static_cast<uint64_t>(numbers_[6]) & 0x0000FF00u) >> 8) | ((static_cast<uint64_t>(numbers_[6]) & 0x000000FFu) << 8)) | ((((static_cast<uint64_t>(numbers_[7]) & 0x0000FF00u) >> 8) | ((static_cast<uint64_t>(numbers_[7]) & 0x000000FFu) << 8)) << 16);
+  uint64_t address = (((static_cast<uint64_t>(numbers_[6]) & 0x0000FF00u) >> 8) | ((static_cast<uint64_t>(numbers_[6]) & 0x000000FFu) << 8)) | ((((static_cast<uint64_t>(numbers_[7]) & 0x0000FF00u) >> 8) | ((static_cast<uint64_t>(numbers_[7]) & 0x000000FFu) << 8)) << 16);
   return ip_address(address);
 }
 
