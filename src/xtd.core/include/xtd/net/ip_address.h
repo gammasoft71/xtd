@@ -111,8 +111,8 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception scope_id > 0x00000000FFFFFFFF.
       ip_address& scope_id(uint64_t value);
 
-      bool equals(const object& other) const noexcept override {return dynamic_cast<const ip_address*>(&other) && equals(static_cast<const ip_address&>(other));}
-      bool equals(const ip_address& other) const noexcept override {return address_ == other.address_ && numbers_ == other.numbers_ && scope_id_ == other.scope_id_ && address_family_ == other.address_family_;}
+      bool equals(const object& other) const noexcept override;
+      bool equals(const ip_address& other) const noexcept override;
       
       /// @brief Provides a copy of the IPAddress as an array of bytes.
       /// @return  A byte array.

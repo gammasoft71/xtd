@@ -98,6 +98,13 @@ ip_address& ip_address::scope_id(uint64_t value) {
   return *this;
 }
 
+bool ip_address::equals(const object& other) const noexcept {
+  return dynamic_cast<const ip_address*>(&other) && equals(static_cast<const ip_address&>(other));
+}
+bool ip_address::equals(const ip_address& other) const noexcept {
+  return address_ == other.address_ && numbers_ == other.numbers_ && scope_id_ == other.scope_id_ && address_family_ == other.address_family_;
+}
+
 vector<byte_t> ip_address::get_address_bytes() const {
   vector<byte_t> bytes;
   if (address_family_ == sockets::address_family::inter_network) {
