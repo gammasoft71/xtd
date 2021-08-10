@@ -27,7 +27,8 @@ namespace xtd {
       ip_host_entry(ip_host_entry&& ip_host_entry) = default;
       ip_host_entry(const ip_host_entry& ip_host_entry) = default;
       ip_host_entry& operator=(const ip_host_entry&) = default;
-      /// @endcond
+      friend std::ostream& operator <<(std::ostream& os, const ip_host_entry& host_entry) noexcept {return os << host_entry.to_string();}
+     /// @endcond
       
       /// @brief Get List of IP addresses that are associated with a host.
       /// @return An xtd::net::ip_address array of IP addresses that are associated with a host.

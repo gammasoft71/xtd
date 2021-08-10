@@ -36,6 +36,7 @@ namespace xtd {
       dns_end_point(dns_end_point&&) = default;
       dns_end_point(const dns_end_point&) = default;
       dns_end_point& operator=(const dns_end_point&) = default;
+      friend std::ostream& operator <<(std::ostream& os, const dns_end_point& end_point) noexcept {return os << end_point.to_string();}
       /// @endcond
       
       /// @brief Gets the host name or string representation of the Internet Protocol (IP) address of the host.
@@ -45,10 +46,6 @@ namespace xtd {
       /// @brief Gets the port number of the endpoint.
       /// @return An integer value in the range xtd::net::ip_end_point::min_port to xtd::net::ip_end_point::max_port indicating the port number of the endpoint.
       uint16_t port() const noexcept;
-      
-      /// @brief Serializes endpoint information into a xtd::net::socket_address instance.
-      /// @exception xtd::not_implemented_exception Throw always exception.
-      xtd::net::socket_address serialize() const override;
       
       /// @brief Returns a string that represents the current object.
       /// @return string A string that represents the current object.

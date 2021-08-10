@@ -22,8 +22,9 @@ namespace xtd {
     class core_export_ end_point : public xtd::object {
     public:
       /// @cond
-       end_point(const end_point& end_point);
-       end_point& operator=(const end_point&) = default;
+      end_point(const end_point& end_point);
+      end_point& operator=(const end_point&) = default;
+      friend std::ostream& operator <<(std::ostream& os, const end_point& end_point) noexcept {return os << end_point.to_string();}
       /// @endcond
       
       /// @brief Creates an xtd::net::end_point instance from a socket_address instance.
