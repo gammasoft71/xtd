@@ -17,7 +17,7 @@ namespace xtd {
     /// @brief Provides a container class for Internet host address information.
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core net
+    /// @ingroup xtd_core
     class core_export_ ip_host_entry : public xtd::object {
     public:
       /// @brief Initializes a new instance of the xtd::net::ip_host_entry.
