@@ -42,7 +42,6 @@ const byte_t& socket_address::operator[](size_t index) const {
 }
 
 ustring socket_address::to_string() const noexcept {
-  vector<int32_t> values(bytes_.begin(), bytes_.end());
-  return ustring::format("{}:{}:{{{}}}", address_family(), size(), size() <= 2 ? "" : ustring::join(",", values, 2, size() - 2));
+  return ustring::format("{}:{}:{{{}}}", address_family(), size(), size() <= 2 ? "" : ustring::join(",", bytes_, 2, size() - 2));
 }
 
