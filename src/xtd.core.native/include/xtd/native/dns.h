@@ -14,7 +14,7 @@
 #include <vector>
 
 /// @cond
-class __xtd__hostent__;
+class __using_dns__;
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -35,15 +35,15 @@ namespace xtd {
     /// @warning Internal use only
     class core_native_export_ dns final {
       friend xtd::net::dns;
-      friend __xtd__hostent__;
+      friend __using_dns__;
     protected:
+      /// @brief Closes the file /etc/hosts.
+      /// @warning Internal use only
+      static void cleanup();
       /// @brief Destroy host handle.
       /// @param host The host handle to destroy.
       /// @warning Internal use only
       static void destroy(intptr_t host);
-      /// @brief Closes the file /etc/hosts.
-      /// @warning Internal use only
-      static void end_hostent();
       /// @brief Gets host by host IP address.
       /// @param host_address The host IP address to resolve.
       /// @param host_address_type The  address family (see address_families.h) to resolve.
@@ -76,9 +76,8 @@ namespace xtd {
       /// @warning Internal use only
       static int32_t get_host_name(std::string& host_name);
       /// @brief Opens the file /etc/hosts.
-      /// @param stay_open if true the file /etc/hosts will not be closed after each call; otherwise the file /etc/hosts will be closed after each call.
       /// @warning Internal use only
-      static void set_hostent(bool stay_open);
+      static void startup();
     };
   }
 }

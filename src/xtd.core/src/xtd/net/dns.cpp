@@ -10,10 +10,10 @@ using namespace xtd::net;
 using namespace xtd::net::sockets;
 
 
-class __xtd__hostent__ {
+class __using_dns__ {
 public:
-  __xtd__hostent__() {native::dns::set_hostent(true);}
-  ~__xtd__hostent__() {native::dns::end_hostent();}
+  __using_dns__() {native::dns::startup();}
+  ~__using_dns__() {native::dns::cleanup();}
 };
 
 vector<ip_address> dns::get_host_addresses(const ustring& host_name_or_address) {
@@ -26,7 +26,7 @@ ip_host_entry dns::get_host_entry(const ip_address& address) {
 }
 
 ip_host_entry dns::get_host_entry(const ustring& host_name_or_address) {
-  __xtd__hostent__ hostent;
+  __using_dns__ hostent;
   ip_address host_address;
   intptr host;
   if (ip_address::try_parse(host_name_or_address, host_address) == false) {
@@ -50,7 +50,7 @@ ip_host_entry dns::get_host_entry(const ustring& host_name_or_address) {
 }
 
 ustring dns::get_host_name() {
-  __xtd__hostent__ hotent;
+  __using_dns__ hotent;
   string host_name;
   if (native::dns::get_host_name(host_name) != 0) throw invalid_operation_exception(csf_);
   return host_name;

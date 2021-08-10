@@ -14,12 +14,12 @@ namespace {
   mutex dns_mutex;
 }
 
-void dns::destroy(intptr_t host) {
-  delete (hostent*)host;
+void dns::cleanup() {
+  WSACleanup();
 }
 
-void dns::end_hostent() {
-  WSACleanup();
+void dns::destroy(intptr_t host) {
+  delete (hostent*)host;
 }
 
 intptr_t dns::get_host_by_address(const string& host_address, int32_t host_address_type) {
@@ -67,7 +67,7 @@ int32_t dns::get_host_name(string& host_name) {
   return result;
 }
 
-void dns::set_hostent(bool stay_open) {
+void dns::startup() {
   static WORD version_requested = MAKEWORD(2, 2);
   static WSADATA wsa_data = {0};
   WSAStartup(version_requested, &wsa_data);
