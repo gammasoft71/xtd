@@ -51,7 +51,7 @@ ip_address::ip_address(const vector<byte_t>& address, int64 scope_id) : address_
 ip_address::ip_address(byte_t quad_part_address1, byte_t quad_part_address2, byte_t quad_part_address3, byte_t quad_part_address4) : address_((quad_part_address4 << 24 | quad_part_address3 <<16 | quad_part_address2 << 8| quad_part_address1) & 0x0FFFFFFFF) {
 }
 
-ip_address::ip_address(const std::vector<uint16_t>& numbers, int64_t scope_id) : numbers_(numbers), scope_id_(scope_id), address_family_(sockets::address_family::inter_network_v6) {
+ip_address::ip_address(const std::vector<uint16_t>& numbers, int64_t scope_id) : numbers_(numbers), scope_id_(static_cast<uint32_t>(scope_id)), address_family_(sockets::address_family::inter_network_v6) {
 }
 
 sockets::address_family ip_address::address_family() const noexcept {
