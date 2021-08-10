@@ -93,6 +93,7 @@ add_sources(
   src/net/dns_end_point.cpp
   src/net/end_point.cpp
   src/net/ip_address.cpp
+  src/net/ip_end_point.cpp
   src/net/ip_host_entry.cpp
   src/net/socket_address.cpp
 )

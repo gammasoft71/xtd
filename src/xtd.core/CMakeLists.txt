@@ -178,6 +178,7 @@ add_sources(
   include/xtd/net/dns_end_point.h
   include/xtd/net/end_point.h
   include/xtd/net/ip_address.h
+  include/xtd/net/ip_end_point.h
   include/xtd/net/ip_host_entry.h
   include/xtd/net/socket_address.h
   include/xtd/net/sockets/address_family.h
@@ -251,6 +252,7 @@ add_sources(
   src/xtd/net/dns_end_point.cpp
   src/xtd/net/end_point.cpp
   src/xtd/net/ip_address.cpp
+  src/xtd/net/ip_end_point.cpp
   src/xtd/net/ip_host_entry.cpp
   src/xtd/net/socket_address.cpp
 )

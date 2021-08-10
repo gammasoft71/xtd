@@ -28,10 +28,6 @@ uint16_t dns_end_point::port() const noexcept {
   return port_;
 }
 
-xtd::net::socket_address dns_end_point::serialize() const {
-  throw not_implemented_exception(csf_);
-}
-
 xtd::ustring dns_end_point::to_string() const noexcept {
-  return ustring::format("{}/{}:{}", address_family_, host_, port_);
+  return ustring::format("{}/{}:{:D}", address_family_, host_, port_);
 }
