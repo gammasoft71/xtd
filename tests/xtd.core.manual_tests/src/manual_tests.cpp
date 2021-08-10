@@ -122,18 +122,7 @@ using namespace xtd::io;
 class xtd_core_manual_test : public object {
 public:
   static void main() {
-    using_(stream_writer sw("file.txt"))
-      sw.write_line("Line 1");
-  
-    using_(stream_writer sw("file.txt", true)) {
-      sw.write_line("Line 2");
-      sw.write_line("Line 3");
-    }
-
-    using_(stream_reader sr("file.txt")) {
-      console::write(sr.read_to_end());
-    }
-    
+    console::write_line(ustring::join(", ", vector<byte_t> {8, 3, 0, 24, 255}));
     console::write_line("Hello, World!");
   }
 };

@@ -239,9 +239,7 @@ ip_address ip_address::parse(const ustring& str) {
 
 ustring ip_address::to_string() const noexcept {
   if (address_family_ == sockets::address_family::inter_network) {
-    auto bytes = get_address_bytes();
-    vector<uint32_t> values (bytes.begin(), bytes.end());
-    return ustring::join(".", values);
+    return ustring::join(".", get_address_bytes());
   }
   
   ustring str;
