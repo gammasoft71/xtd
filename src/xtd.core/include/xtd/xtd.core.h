@@ -143,6 +143,8 @@
 #include "io/text_reader.h"
 #include "io/text_writer.h"
 #include "net/cookie_exception.h"
+#include "net/dns.h"
+#include "net/dns_end_point.h"
 #include "net/end_point.h"
 #include "net/ip_address.h"
 #include "net/ip_host_entry.h"

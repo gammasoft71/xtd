@@ -90,6 +90,7 @@ add_sources(
   src/io/stream_writer.cpp
   src/io/string_reader.cpp
   src/net/dns.cpp
+  src/net/dns_end_point.cpp
   src/net/end_point.cpp
   src/net/ip_address.cpp
   src/net/ip_host_entry.cpp
