@@ -31,13 +31,17 @@ namespace unit_tests {
     
     void test_method_(get_host_entry_from_local_host_address_string) {
       ip_host_entry host_entry = dns::get_host_entry("127.0.0.1");
+#if !_WIN32
       assert::are_equal("localhost", host_entry.host_name().to_lower(), line_info_);
+#endif
       collection_assert::are_equal({ip_address(127, 0, 0, 1)}, host_entry.address_list());
     }
 
     void test_method_(get_host_entry_from_local_host_name) {
       ip_host_entry host_entry = dns::get_host_entry("localhost");
+#if !_WIN32
       assert::are_equal("localhost", host_entry.host_name().to_lower(), line_info_);
+#endif
       collection_assert::are_equal({ip_address(127, 0, 0, 1)}, host_entry.address_list());
    }
     
@@ -49,13 +53,13 @@ namespace unit_tests {
     
     void test_method_(get_host_entry_from_host_address) {
       ip_host_entry host_entry = dns::get_host_entry(dns::get_host_entry(dns::get_host_name()).address_list()[0]);
-      assert::are_equal(dns::get_host_name().to_lower(), host_entry.host_name().to_lower(), line_info_);
+      string_assert::starts_with(dns::get_host_name().to_lower(), host_entry.host_name().to_lower(), line_info_);
       assert::is_greater_or_equal(host_entry.address_list().size(), 1U, line_info_);
     }
     
     void test_method_(get_host_entry_from_host_address_string) {
       ip_host_entry host_entry = dns::get_host_entry(dns::get_host_entry(dns::get_host_name()).address_list()[0].to_string());
-      assert::are_equal(dns::get_host_name().to_lower(), host_entry.host_name().to_lower(), line_info_);
+      string_assert::starts_with(dns::get_host_name().to_lower(), host_entry.host_name().to_lower(), line_info_);
       assert::is_greater_or_equal(host_entry.address_list().size(), 1U, line_info_);
     }
   };
