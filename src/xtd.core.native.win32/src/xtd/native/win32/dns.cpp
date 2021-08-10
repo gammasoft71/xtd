@@ -19,7 +19,7 @@ void dns::destroy(intptr_t host) {
 }
 
 void dns::end_hostent() {
-  // Does not exists on Windows
+  WSACleanup();
 }
 
 intptr_t dns::get_host_by_address(const string& host_address, int32_t host_address_type) {
@@ -68,5 +68,7 @@ int32_t dns::get_host_name(string& host_name) {
 }
 
 void dns::set_hostent(bool stay_open) {
-  // Does not exists on Windows
+  static WORD version_requested = MAKEWORD(2, 2);
+  static WSADATA wsa_data = {0};
+  WSAStartup(version_requested, &wsa_data);
 }
