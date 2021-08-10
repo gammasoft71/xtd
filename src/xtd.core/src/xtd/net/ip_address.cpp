@@ -11,16 +11,15 @@ using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 
-ip_address ip_address::any {0x0000000000000000LL};
-ip_address ip_address::broadcast {0x00000000FFFFFFFFLL};
+ip_address ip_address::any {0x00000000LL};
+ip_address ip_address::broadcast {0xFFFFFFFFLL};
 ip_address ip_address::ip_v6_any {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
 ip_address ip_address::ip_v6_loopback {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}};
 ip_address ip_address::ip_v6_none {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-ip_address ip_address::loopback {0x000000000100007FLL};
-ip_address ip_address::none {0x00000000FFFFFFFFLL};
+ip_address ip_address::loopback {0x0100007FLL};
+ip_address ip_address::none {0xFFFFFFFFLL};
 
-ip_address::ip_address(int64_t address) {
-  if (address < 0 || address > 0x0000000FFFFFFFFLL) throw argument_out_of_range_exception(csf_);
+ip_address::ip_address(uint32_t address) {
   address_ = static_cast<int32_t>(address);
 }
 
@@ -39,11 +38,10 @@ ip_address::ip_address(const vector<byte_t>& address) {
   }
 }
 
-ip_address::ip_address(const vector<byte_t>& address, int64 scope_id) : address_family_(sockets::address_family::inter_network_v6) {
+ip_address::ip_address(const vector<byte_t>& address, uint32_t scope_id) : address_family_(sockets::address_family::inter_network_v6) {
   if (address.size() != 16) throw argument_exception(csf_);
-  if (scope_id < 0 || scope_id > 0x00000000FFFFFFFFLL) throw argument_out_of_range_exception(csf_);
   
-  scope_id_ = static_cast<int32_t>(scope_id);
+  scope_id_ = scope_id;
    for (auto index = 0U; index < number_of_numbers_; index++)
     numbers_[index] = (static_cast<int16_t>(address[index * 2]) << 8) + static_cast<int16_t>(address[(index * 2) + 1]);
 }
@@ -51,7 +49,7 @@ ip_address::ip_address(const vector<byte_t>& address, int64 scope_id) : address_
 ip_address::ip_address(byte_t quad_part_address1, byte_t quad_part_address2, byte_t quad_part_address3, byte_t quad_part_address4) : address_((quad_part_address4 << 24 | quad_part_address3 <<16 | quad_part_address2 << 8| quad_part_address1) & 0x0FFFFFFFF) {
 }
 
-ip_address::ip_address(const std::vector<uint16_t>& numbers, int64_t scope_id) : numbers_(numbers), scope_id_(static_cast<uint32_t>(scope_id)), address_family_(sockets::address_family::inter_network_v6) {
+ip_address::ip_address(const std::vector<uint16_t>& numbers, uint32_t scope_id) : numbers_(numbers), scope_id_(scope_id), address_family_(sockets::address_family::inter_network_v6) {
 }
 
 sockets::address_family ip_address::address_family() const noexcept {
@@ -85,14 +83,13 @@ bool ip_address::is_ip_v6_teredo() const noexcept {
   return address_family_ == sockets::address_family::inter_network_v6 && numbers_[0] == 0x2001 && numbers_[1] == 0;
 }
 
-uint64_t ip_address::scope_id() const {
+uint32_t ip_address::scope_id() const {
   if (address_family_ == sockets::address_family::inter_network) throw socket_exception(socket_error::operation_not_supported, csf_);
   return scope_id_;
 }
 
-ip_address& ip_address::scope_id(uint64_t value) {
+ip_address& ip_address::scope_id(uint32_t value) {
   if (address_family_ == sockets::address_family::inter_network) throw socket_exception(socket_error::operation_not_supported, csf_);
-  if (value > 0xFFFFFFFF) throw argument_out_of_range_exception(csf_);
   
   scope_id_ = static_cast<uint32_t>(value);
   return *this;
@@ -166,7 +163,7 @@ bool ip_address::is_loopback(const ip_address& address) {
 
 ip_address ip_address::map_to_ip_v4() const noexcept {
   if (address_family_ == sockets::address_family::inter_network) return *this;
-  uint64_t address = (((static_cast<uint64_t>(numbers_[6]) & 0x0000FF00u) >> 8) | ((static_cast<uint64_t>(numbers_[6]) & 0x000000FFu) << 8)) | ((((static_cast<uint64_t>(numbers_[7]) & 0x0000FF00u) >> 8) | ((static_cast<uint64_t>(numbers_[7]) & 0x000000FFu) << 8)) << 16);
+  uint32_t address = (((static_cast<uint32_t>(numbers_[6]) & 0x0000FF00u) >> 8) | ((static_cast<uint32_t>(numbers_[6]) & 0x000000FFu) << 8)) | ((((static_cast<uint32_t>(numbers_[7]) & 0x0000FF00u) >> 8) | ((static_cast<uint32_t>(numbers_[7]) & 0x000000FFu) << 8)) << 16);
   return ip_address(address);
 }
 

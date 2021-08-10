@@ -175,6 +175,7 @@ add_sources(
   include/xtd/io/text_writer.h
   include/xtd/net/cookie_exception.h
   include/xtd/net/dns.h
+  include/xtd/net/dns_end_point.h
   include/xtd/net/end_point.h
   include/xtd/net/ip_address.h
   include/xtd/net/ip_host_entry.h
@@ -247,6 +248,7 @@ add_sources(
   src/xtd/io/text_reader.cpp
   src/xtd/io/text_writer.cpp
   src/xtd/net/dns.cpp
+  src/xtd/net/dns_end_point.cpp
   src/xtd/net/end_point.cpp
   src/xtd/net/ip_address.cpp
   src/xtd/net/ip_host_entry.cpp
