@@ -19,7 +19,7 @@ void dns::destroy(intptr_t host) {
 }
 
 void dns::end_hostent() {
-  endhostent();
+  // Does not exists on Windows
 }
 
 intptr_t dns::get_host_by_address(const string& host_address, int32_t host_address_type) {
@@ -68,5 +68,5 @@ int32_t dns::get_host_name(string& host_name) {
 }
 
 void dns::set_hostent(bool stay_open) {
-  sethostent(stay_open);
+  // Does not exists on Windows
 }
