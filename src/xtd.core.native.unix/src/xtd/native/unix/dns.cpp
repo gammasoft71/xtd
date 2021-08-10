@@ -14,18 +14,16 @@ using namespace xtd::native;
 
 namespace {
   mutex dns_mutex;
-#if defined(__ANDROID__)
-  void sethostent(int) {}
-  void endhostent() {}
+}
+
+void dns::cleanup() {
+#if !defined(__ANDROID__)
+  endhostent();
 #endif
 }
 
 void dns::destroy(intptr_t host) {
   delete (hostent*)host;
-}
-
-void dns::end_hostent() {
-  endhostent();
 }
 
 intptr_t dns::get_host_by_address(const string& host_address, int32_t host_address_type) {
@@ -73,6 +71,8 @@ int32_t dns::get_host_name(string& host_name) {
   return result;
 }
 
-void dns::set_hostent(bool stay_open) {
-  sethostent(stay_open);
+void dns::startup() {
+#if !defined(__ANDROID__)
+  sethostent(true);
+#endif
 }
