@@ -27,13 +27,13 @@ ip_host_entry dns::get_host_entry(const ip_address& address) {
 
 ip_host_entry dns::get_host_entry(const ustring& host_name_or_address) {
   __xtd__hostent__ hostent;
-  ip_address address;
+  ip_address host_address;
   intptr host;
-  if (ip_address::try_parse(host_name_or_address, address) == false) {
+  if (ip_address::try_parse(host_name_or_address, host_address) == false) {
     host = native::dns::get_host_by_name(host_name_or_address);
     if (host == 0) throw invalid_operation_exception(csf_);
   } else {
-    host = native::dns::get_host_by_address(address.to_string(), static_cast<int32_t>(address.address_family()));
+    host = native::dns::get_host_by_address(host_address.to_string(), static_cast<int32_t>(host_address.address_family()));
     if (host == 0) throw invalid_operation_exception(csf_);
   }
   
