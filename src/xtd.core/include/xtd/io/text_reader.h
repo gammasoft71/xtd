@@ -64,7 +64,7 @@ namespace xtd {
       
       /// @brief Reads all characters from the current position to the end of the text_reader and returns them as one string.
       /// @return A string containing all characters from the current position to the end of the text_reader.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       virtual xtd::ustring read_to_end();
       
       /// @brief Creates a thread-safe (synchronized) wrapper around the specified text_reader object.

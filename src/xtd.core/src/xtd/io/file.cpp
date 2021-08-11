@@ -56,7 +56,7 @@ file_attributes file::get_attributes(const ustring& src) {
 
 void file::move(const ustring& src, const ustring& dest) {
   if (exists(dest)) throw argument_exception(csf_);
-  if (::rename(src.c_str(), dest.c_str()) != 0) throw ioexception(csf_);
+  if (::rename(src.c_str(), dest.c_str()) != 0) throw io_exception(csf_);
 }
 
 fstream file::open(const ustring& path, ios::openmode mode) {
@@ -104,7 +104,7 @@ ustring file::read_all_text(const ustring& path) {
 }
 
 void file::remove(const ustring& path) {
-  if (::remove(path.c_str()) != 0) throw ioexception(csf_);
+  if (::remove(path.c_str()) != 0) throw io_exception(csf_);
 }
 
 void file::replace(const ustring& source_file_name, const ustring& destination_file_name, const ustring& destination_backup_file_name) {

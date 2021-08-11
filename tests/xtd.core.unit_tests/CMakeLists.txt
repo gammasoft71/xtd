@@ -84,7 +84,7 @@ add_sources(
   src/io/file_format_exception.cpp
   src/io/file_load_exception.cpp
   src/io/file_not_found_exception.cpp
-  src/io/ioexception.cpp
+  src/io/io_exception.cpp
   src/io/path.cpp
   src/io/path_too_long_exception.cpp
   src/io/stream_writer.cpp

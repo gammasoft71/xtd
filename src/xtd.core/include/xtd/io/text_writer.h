@@ -50,153 +50,153 @@ namespace xtd {
 
       /// @brief Writes the specified string value to the text stream.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       virtual void write(const xtd::ustring& value);
       
       /// @brief Writes the specified bool value to the text stream.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write(bool value);
       
       /// @brief Writes the specified double value to the text stream.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write(double value);
       
       /// @brief Writes the specified float value to the text stream.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write(float value);
       
       /// @brief Writes the specified int8_t value to the text stream.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write(int8_t value);
 
       /// @brief Writes the specified int16_t value to the text stream.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write(int16_t value);
       
       /// @brief Writes the specified int32_t value to the text stream.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write(int32_t value);
       
       /// @brief Writes the specified int64_t value to the text stream.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write(int64_t value);
       
       /// @brief Writes the specified uint8_t value to the text stream.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write(uint8_t value);
       
       /// @brief Writes the specified uint16_t value to the text stream.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write(uint16_t value);
       
       /// @brief Writes the specified uint32_t value to the text stream.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write(uint32_t value);
       
       /// @brief Writes the specified uint64_t value to the text stream.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write(uint64_t value);
 
       /// @brief Writes the specified value_t value to the text stream.
       /// @tparam value_t The type of value to write.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       template<typename value_t>
       void write(value_t value) {write(xtd::ustring::format("{}", value));}
 
       /// @brief Writes the specified arguments with specified format to the text stream.
       /// @param format The arguments format to write.
       /// @param args The arguments to write witth format
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       template<typename ... args_t>
       void write(const xtd::ustring& fmt, args_t&& ... args) noexcept {write(xtd::ustring::format(fmt, std::forward<args_t>(args)...));}
       
       /// @brief Writes new line to the text stream.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write_line();
       
       /// @brief Writes the specified string value and new line to the text stream.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write_line(const xtd::ustring& value);
       
       /// @brief Writes the specified bool value and new line to the text stream.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write_line(bool value);
       
       /// @brief Writes the specified double value and new line to the text stream.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write_line(double value);
       
       /// @brief Writes the specified float value and new line to the text stream.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write_line(float value);
       
       /// @brief Writes the specified int8_t value and new line to the text stream.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write_line(int8_t value);
       
       /// @brief Writes the specified int16_t value and new line to the text stream.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write_line(int16_t value);
       
       /// @brief Writes the specified int32_t value and new line to the text stream.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write_line(int32_t value);
       
       /// @brief Writes the specified int64_t value and new line to the text stream.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write_line(int64_t value);
       
       /// @brief Writes the specified uint8_t value and new line to the text stream.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write_line(uint8_t value);
       
       /// @brief Writes the specified uint16_t value and new line to the text stream.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write_line(uint16_t value);
       
       /// @brief Writes the specified uint32_t value and new line to the text stream.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write_line(uint32_t value);
       
       /// @brief Writes the specified uint64_t value and new line to the text stream.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write_line(uint64_t value);
 
       /// @brief Writes the specified value_t value and new line to the text stream.
       /// @tparam value_t The type of value to write.
       /// @param value The value to write.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       template<typename value_t>
       void write_line(value_t value) {write_line(xtd::ustring::format("{}", value));}
 
       /// @brief Writes the specified arguments with specified format to the text stream.
       /// @param format The arguments format to write.
       /// @param args The arguments to write witth format.
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       template<typename ... args_t>
       void write_line(const xtd::ustring& fmt, args_t&& ... args) noexcept {write_line(xtd::ustring::format(fmt, std::forward<args_t>(args)...));}
 
