@@ -89,12 +89,16 @@ add_sources(
   src/io/path_too_long_exception.cpp
   src/io/stream_writer.cpp
   src/io/string_reader.cpp
+  src/net/cookie_exception.cpp
   src/net/dns.cpp
   src/net/dns_end_point.cpp
   src/net/end_point.cpp
   src/net/ip_address.cpp
   src/net/ip_end_point.cpp
   src/net/ip_host_entry.cpp
+  src/net/protocol_violation_exception.cpp
   src/net/socket_address.cpp
+  src/net/web_exception.cpp
+  src/net/sockets/socket_exception.cpp
 )
 target_type(TEST_APPLICATION)
