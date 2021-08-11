@@ -118,11 +118,15 @@ public:
 using namespace std;
 using namespace xtd;
 using namespace xtd::io;
+using namespace xtd::net;
 
 class xtd_core_manual_test : public object {
 public:
   static void main() {
-    console::write_line(ustring::join(", ", vector<byte_t> {8, 3, 0, 24, 255}));
+    ip_host_entry host_entry = dns::get_host_entry("www.github.com");
+    console::write_line("{}", host_entry.host_name());
+    console::write_line("{}", ustring::join(", ", host_entry.address_list()));
+    console::write_line("{}", ustring::join(", ", host_entry.aliases()));
     console::write_line("Hello, World!");
   }
 };
