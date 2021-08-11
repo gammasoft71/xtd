@@ -149,6 +149,7 @@
 #include "net/ip_address.h"
 #include "net/ip_end_point.h"
 #include "net/ip_host_entry.h"
+#include "net/network_credential.h"
 #include "net/protocol_violation_exception.h"
 #include "net/socket_address.h"
 #include "net/web_exception.h"

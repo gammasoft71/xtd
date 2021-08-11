@@ -96,6 +96,7 @@ add_sources(
   src/net/ip_address.cpp
   src/net/ip_end_point.cpp
   src/net/ip_host_entry.cpp
+  src/net/network_credential.cpp
   src/net/protocol_violation_exception.cpp
   src/net/socket_address.cpp
   src/net/web_exception.cpp

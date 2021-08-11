@@ -180,6 +180,7 @@ add_sources(
   include/xtd/net/ip_address.h
   include/xtd/net/ip_end_point.h
   include/xtd/net/ip_host_entry.h
+  include/xtd/net/network_credential.h
   include/xtd/net/protocol_violation_exception.h
   include/xtd/net/web_exception.h
   include/xtd/net/socket_address.h
@@ -256,6 +257,7 @@ add_sources(
   src/xtd/net/ip_address.cpp
   src/xtd/net/ip_end_point.cpp
   src/xtd/net/ip_host_entry.cpp
+  src/xtd/net/network_credential.cpp
   src/xtd/net/socket_address.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})
