@@ -164,7 +164,7 @@ add_sources(
   include/xtd/io/file_format_exception.h
   include/xtd/io/file_load_exception.h
   include/xtd/io/file_not_found_exception.h
-  include/xtd/io/ioexception.h
+  include/xtd/io/io_exception.h
   include/xtd/io/path.h
   include/xtd/io/path_too_long_exception.h
   include/xtd/io/stream_reader.h

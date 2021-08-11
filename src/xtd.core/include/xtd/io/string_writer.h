@@ -37,7 +37,7 @@ namespace xtd {
       
       /// @brief Writes the specified string value to the text stream.
       /// @param value The value to write
-      /// @exception io::ioexception An I/O error occurs.
+      /// @exception io::io_exception An I/O error occurs.
       void write(const xtd::ustring& value) override;
     private:
       std::stringstream stream_;
