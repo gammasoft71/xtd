@@ -39,8 +39,8 @@ unique_ptr<end_point> ip_end_point::create(const socket_address& socket_address)
   
   uint16_t port = static_cast<uint16_t>((socket_address[2] << 8 & 0xFF00) | (socket_address[3]));
   
-  if (address_family_ == address_family::inter_network) {
-    vector<byte_t> address(8);
+  if (address_family_ == address_family::inter_network_v6) {
+    vector<byte_t> address(16);
     for (auto i = 0U; i < address.size(); i++)
       address[i] = socket_address[i + 8];
     uint32_t scope = static_cast<uint32_t>((socket_address[27] << 24) + (socket_address[26] << 16) + (socket_address[25] << 8) + (socket_address[24]));
@@ -74,6 +74,6 @@ socket_address ip_end_point::serialize() const {
 }
 
 ustring ip_end_point::to_string() const noexcept {
-  if (address_family_ == address_family::inter_network_v6) return ustring::format("[{}] :{}", address_, port_);
+  if (address_family_ == address_family::inter_network_v6) return ustring::format("[{}]:{}", address_, port_);
   return ustring::format("{}:{}", address_, port_);
 }

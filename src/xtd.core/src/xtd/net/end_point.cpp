@@ -5,9 +5,6 @@ using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 
-end_point::end_point(const end_point& end_point) : address_family_(end_point.address_family_) {
-}
-
 sockets::address_family end_point::address_family() const noexcept {
   return address_family_;
 }
