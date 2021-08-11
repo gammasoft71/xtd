@@ -33,6 +33,7 @@ namespace xtd {
       ip_end_point(const xtd::net::ip_address& address, uint16_t port);
 
       /// @cond
+      ip_end_point() = default;
       ip_end_point(ip_end_point&&) = default;
       ip_end_point(const ip_end_point&) = default;
       ip_end_point& operator=(const ip_end_point&) = default;
