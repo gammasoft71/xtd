@@ -46,10 +46,10 @@ namespace unit_tests {
       assert::are_equal("255.255.255.255", ip_address().to_string(), line_info_);
     }
     
-    void test_method_(constructor_with_int64_t) {
-      assert::are_equal("0.0.0.0", ip_address(static_cast<int64_t>(0x0000000000000000LL)).to_string(), line_info_);
-      assert::are_equal("255.255.255.255", ip_address(static_cast<int64_t>(0x00000000FFFFFFFFLL)).to_string(), line_info_);
-      assert::are_equal("172.0.10.35", ip_address(static_cast<int64_t>(0x00000000230A00ACLL)).to_string(), line_info_);
+    void test_method_(constructor_with_uint32_t) {
+      assert::are_equal("0.0.0.0", ip_address(0x00000000).to_string(), line_info_);
+      assert::are_equal("255.255.255.255", ip_address(0xFFFFFFFF).to_string(), line_info_);
+      assert::are_equal("172.0.10.35", ip_address(0x230A00AC).to_string(), line_info_);
     }
     
     void test_method_(copy_constructor) {
