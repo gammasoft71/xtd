@@ -2,6 +2,7 @@
 
 using namespace xtd;
 using namespace xtd::diagnostics;
+using namespace xtd::security;
 
 process_start_info::process_start_info(const ustring& file_name) : file_name_(file_name ) {
 }
@@ -108,12 +109,11 @@ process_start_info& process_start_info::pasword(const xtd::security::secure_stri
 }
 
 ustring process_start_info::password_in_clear_text() const {
-  //return native::security::to_unsecure_string(password_);
-  return password_;
+   return password_.to_unsecure_string();
 }
 
 process_start_info& process_start_info::password_in_clear_text(const ustring& value) {
-  //password_ = native::security_api::to_secure_secure_string(value);
+  password_ = secure_string(value.c_str(), value.size());
   return *this;
 }
 

@@ -259,6 +259,7 @@ add_sources(
   src/xtd/net/ip_host_entry.cpp
   src/xtd/net/network_credential.cpp
   src/xtd/net/socket_address.cpp
+  src/xtd/security/secure_string.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})
 
