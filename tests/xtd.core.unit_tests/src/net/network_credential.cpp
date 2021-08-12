@@ -12,7 +12,7 @@ namespace unit_tests {
       network_credential nc;
       assert::is_empty(nc.user_name(), line_info_);
       assert::is_empty(nc.password(), line_info_);
-      assert::is_empty(nc.secure_password(), line_info_);
+      assert::is_zero(nc.secure_password().size(), line_info_);
       assert::is_empty(nc.domain(), line_info_);
     }
 
@@ -20,7 +20,7 @@ namespace unit_tests {
       network_credential nc("gammasoft", "sysadmin!nimdasys");
       assert::are_equal("gammasoft", nc.user_name(), line_info_);
       assert::are_equal("sysadmin!nimdasys", nc.password(), line_info_);
-      // assert::is_empty(nc.secure_password(), line_info_);
+      assert::are_equal("sysadmin!nimdasys", nc.secure_password().to_unsecure_string(), line_info_);
       assert::is_empty(nc.domain(), line_info_);
     }
 
@@ -28,7 +28,7 @@ namespace unit_tests {
       network_credential nc("gammasoft", "sysadmin!nimdasys", "domain");
       assert::are_equal("gammasoft", nc.user_name(), line_info_);
       assert::are_equal("sysadmin!nimdasys", nc.password(), line_info_);
-      // assert::is_empty(nc.secure_password(), line_info_);
+      assert::are_equal("sysadmin!nimdasys", nc.secure_password().to_unsecure_string(), line_info_);
       assert::are_equal("domain", nc.domain(), line_info_);
     }
   };

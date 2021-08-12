@@ -4,7 +4,6 @@
 using namespace std;
 using namespace xtd;
 
-
 bool object::equals(const object& obj) const noexcept {
   return this == &obj;
 }

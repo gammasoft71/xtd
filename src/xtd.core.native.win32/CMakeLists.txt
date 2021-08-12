@@ -13,6 +13,7 @@ add_sources(
   include/xtd/xtd.core.native.win32
   include/xtd/native/win32/strings.h
   src/xtd/native/win32/console.cpp
+  src/xtd/native/win32/cryptography.cpp
   src/xtd/native/win32/debugger.cpp
   src/xtd/native/win32/dns.cpp
   src/xtd/native/win32/environment.cpp

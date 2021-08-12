@@ -119,15 +119,15 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::io;
 using namespace xtd::net;
+using namespace xtd::security;
 
 class xtd_core_manual_test : public object {
 public:
   static void main() {
-    ip_host_entry host_entry = dns::get_host_entry("www.github.com");
-    console::write_line("{}", host_entry.host_name());
-    console::write_line("{}", ustring::join(", ", host_entry.address_list()));
-    console::write_line("{}", ustring::join(", ", host_entry.aliases()));
-    console::write_line("Hello, World!");
+    secure_string sc("Hello, World!", 13);
+    console::write_line(sc.to_unsecure_string());
+    std::empty("");
+    //console::write_line("Hello, World!");
   }
 };
 
