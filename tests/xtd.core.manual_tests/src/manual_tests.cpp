@@ -124,9 +124,7 @@ using namespace xtd::security;
 class xtd_core_manual_test : public object {
 public:
   static void main() {
-    secure_string sc("Hello, World!", 13);
-    console::write_line(sc.to_unsecure_string());
-    //console::write_line("Hello, World!");
+    console::write_line("Hello, World!");
   }
 };
 
