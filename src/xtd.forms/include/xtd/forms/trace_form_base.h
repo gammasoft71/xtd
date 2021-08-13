@@ -90,6 +90,14 @@ namespace xtd {
         update_format();
       }
       
+      void on_back_color_changed(const xtd::event_args& e) override {
+        text_.back_color(back_color());
+      }
+      
+      void on_fore_color_changed(const xtd::event_args& e) override {
+        text_.fore_color(fore_color());
+      }
+
       void on_form_closing(form_closing_event_args& e) override {
         e.cancel(true);
         window_state(form_window_state::minimized);
