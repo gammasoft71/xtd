@@ -30,7 +30,7 @@ vector<uint8_t> cryptography::machine_guid() {
   guid_str = guid_str.erase(guid_str.find("\n")).substr(guid_str.find("=") + 2);
 #else
   guid_str = create_process("{ uname -n ; cat /proc/meminfo | head -n1 ; cat /proc/cpuinfo ; } | md5sum");
-  guid_str = guid_str.erase(guid_str.find("\n"), 2);
+  guid_str = guid_str.erase(guid_str.find("\n") - 1);
 #endif
   if (guid_str.empty())
     guid_str = "30395f0e-d6aa-4a5e-b4af-6f90a608c605"; // fallback
