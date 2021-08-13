@@ -126,7 +126,6 @@ public:
   static void main() {
     secure_string sc("Hello, World!", 13);
     console::write_line(sc.to_unsecure_string());
-    std::empty("");
     //console::write_line("Hello, World!");
   }
 };
