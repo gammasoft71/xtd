@@ -35,10 +35,7 @@ vector<uint8_t> cryptography::machine_guid() {
   if (guid_str.empty())
     guid_str = "30395f0e-d6aa-4a5e-b4af-6f90a608c605"; // fallback
   for(auto index = 0U; guid_str[index] != 0; ++index)
-    if (guid_str[index] == '-' || guid_str[index] == ' ' || guid_str[index] == '"') {
-      if (index < guid_str.size() -1) guid_str.erase(index, 1);
-      else guid_str.resize(guid_str.size() - 1);
-    }
+    if (guid_str[index] == '-' || guid_str[index] == ' ' || guid_str[index] == '"') guid_str.erase(index, 1);
   cout << "[" << guid_str << "]" << endl;
   for(auto index = 0U; index < guid_str.size(); index += 2)
     bytes.push_back(static_cast<uint8_t>(stoi(guid_str.substr(index, 2), 0, 16)));
