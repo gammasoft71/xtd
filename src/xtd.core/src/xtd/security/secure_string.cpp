@@ -20,7 +20,7 @@ namespace {
 
   ustring decript(const xtd::guid& guid, const byte_t value[], size_t length) {
     // https://kylewbanks.com/blog/Simple-XOR-Encryption-Decryption-in-Cpp
-    return ustring(reinterpret_cast<const char*>(encript(guid, reinterpret_cast<const char*>(value), length).data()));
+    return ustring(reinterpret_cast<const char*>(encript(guid, reinterpret_cast<const char*>(value), length).data()), length);
   }
 }
 
