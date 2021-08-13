@@ -10,7 +10,7 @@ namespace {
   string get_machine_guid_str() {
     char value[255];
     DWORD value_size = sizeof(value);
-    return RegGetValueA(HKEY_LOCAL_MACHINE, "SOFTWARE\\Microsoft\\Cryptography", "MachineGuid", RRF_RT_REG_SZ, nulllptr, value, &value_size) == 0 ? value : "";
+    return RegGetValueA(HKEY_LOCAL_MACHINE, "SOFTWARE\\Microsoft\\Cryptography", "MachineGuid", RRF_RT_REG_SZ, nullptr, value, &value_size) == 0 ? value : "";
   }
 }
 
