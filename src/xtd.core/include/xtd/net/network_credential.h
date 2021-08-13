@@ -23,11 +23,11 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::net::network_credential class.
       network_credential() = default;
       /// @brief Initializes a new instance of the xtd::net::network_credential class with the specified user name and password.
-      //network_credential(const xtd::ustring& user_name, const xtd::security::secure_string& password);
+      network_credential(const xtd::ustring& user_name, const xtd::security::secure_string& password);
       /// @brief Initializes a new instance of the xtd::net::network_credential class with the specified user name and password.
       network_credential(const xtd::ustring& user_name, const xtd::ustring& password);
       /// @brief Initializes a new instance of the xtd::net::network_credential class with the specified user name, password and domain.
-      //network_credential(const xtd::ustring& user_name, const xtd::security::secure_string& password, const xtd::ustring& domain);
+      network_credential(const xtd::ustring& user_name, const xtd::security::secure_string& password, const xtd::ustring& domain);
       /// @brief Initializes a new instance of the xtd::net::network_credential class with the specified user name, password and domain.
       network_credential(const xtd::ustring& user_name, const xtd::ustring& password, const xtd::ustring& domain);
 

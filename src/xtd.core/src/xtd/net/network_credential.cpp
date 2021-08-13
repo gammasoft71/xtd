@@ -5,14 +5,14 @@ using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::security;
 
-//network_credential::network_credential(const xtd::ustring& user_name, const xtd::security::secure_string& password) : user_name_(user_name), password_(password) {
-//}
+network_credential::network_credential(const xtd::ustring& user_name, const xtd::security::secure_string& password) : user_name_(user_name), password_(password) {
+}
 
 network_credential::network_credential(const xtd::ustring& user_name, const xtd::ustring& password) : user_name_(user_name), password_(password.c_str(), password.size()) {
 }
 
-//network_credential::network_credential(const xtd::ustring& user_name, const xtd::security::secure_string& password, const xtd::ustring& domain) : user_name_(user_name), password_(password), domain_(domain) {
-//}
+network_credential::network_credential(const xtd::ustring& user_name, const xtd::security::secure_string& password, const xtd::ustring& domain) : user_name_(user_name), password_(password), domain_(domain) {
+}
 
 network_credential::network_credential(const xtd::ustring& user_name, const xtd::ustring& password, const xtd::ustring& domain) : user_name_(user_name), password_(password.c_str(), password.size()), domain_(domain) {
 }
