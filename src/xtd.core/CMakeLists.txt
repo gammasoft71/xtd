@@ -186,6 +186,7 @@ add_sources(
   include/xtd/net/socket_address.h
   include/xtd/net/sockets/address_family.h
   include/xtd/net/sockets/io_control_code.h
+  include/xtd/net/sockets/ip_v6_multicast_option.h
   include/xtd/net/sockets/protocol_family.h
   include/xtd/net/sockets/protocol_type.h
   include/xtd/net/sockets/select_mode.h
@@ -259,6 +260,7 @@ add_sources(
   src/xtd/net/ip_host_entry.cpp
   src/xtd/net/network_credential.cpp
   src/xtd/net/socket_address.cpp
+  src/xtd/net/sockets/ip_v6_multicast_option.cpp
   src/xtd/security/secure_string.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})
