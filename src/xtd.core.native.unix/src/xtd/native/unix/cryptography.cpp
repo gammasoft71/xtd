@@ -1,6 +1,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/cryptography.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#include <iostream>
 #include <unistd.h>
 
 using namespace std;
@@ -33,6 +34,7 @@ vector<uint8_t> cryptography::machine_guid() {
 #endif
   if (guid_str.empty())
     guid_str = "30395f0e-d6aa-4a5e-b4af-6f90a608c605"; // fallback
+  cout << "[" << guid_str << "]" << endl;
   for(auto index = 0U; guid_str[index] != 0; ++index)
     if (guid_str[index] == '-' || guid_str[index] == ' ' || guid_str[index] == '"') guid_str.erase(index, 1);
   for(auto index = 0U; index < guid_str.size(); index += 2)
