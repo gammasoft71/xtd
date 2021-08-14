@@ -166,6 +166,7 @@
 #include "net/sockets/socket_exception.h"
 #include "net/sockets/socket_flags.h"
 #include "net/sockets/socket_information_options.h"
+#include "net/sockets/socket_option_level.h"
 #include "net/sockets/socket_option_name.h"
 #include "net/sockets/socket_shutdown.h"
 #include "net/sockets/socket_type.h"
