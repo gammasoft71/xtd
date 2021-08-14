@@ -29,8 +29,10 @@ namespace xtd {
         both = 2
       };
 
+      /// @cond
       inline std::ostream& operator<<(std::ostream& os, socket_shutdown value) {return os << to_string(value, {{socket_shutdown::receive, "receive"}, {socket_shutdown::send, "send"}, {socket_shutdown::both, "both"}});}
       inline std::wostream& operator<<(std::wostream& os, socket_shutdown value) {return os << to_string(value, {{socket_shutdown::receive, L"receive"}, {socket_shutdown::send, L"send"}, {socket_shutdown::both, L"both"}});}
+      /// @endcond
     }
   }
 }

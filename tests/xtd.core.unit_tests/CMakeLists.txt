@@ -101,6 +101,7 @@ add_sources(
   src/net/socket_address.cpp
   src/net/web_exception.cpp
   src/net/sockets/ip_v6_multicast_option.cpp
+  src/net/sockets/linger_option.cpp
   src/net/sockets/multicast_option.cpp
   src/net/sockets/socket_exception.cpp
   src/security/secure_string.cpp

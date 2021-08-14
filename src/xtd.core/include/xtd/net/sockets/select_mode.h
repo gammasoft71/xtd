@@ -29,8 +29,10 @@ namespace xtd {
         select_error = 2
       };
 
+      /// @cond
       inline std::ostream& operator<<(std::ostream& os, select_mode value) {return os << to_string(value, {{select_mode::select_read, "select_read"}, {select_mode::select_write, "select_write"}, {select_mode::select_error, "select_error"}});}
       inline std::wostream& operator<<(std::wostream& os, select_mode value) {return os << to_string(value, {{select_mode::select_read, L"select_read"}, {select_mode::select_write, L"select_write"}, {select_mode::select_error, L"select_error"}});}
+      /// @endcond
     }
   }
 }
