@@ -196,6 +196,7 @@ add_sources(
   include/xtd/net/sockets/socket_error.h
   include/xtd/net/sockets/socket_exception.h
   include/xtd/net/sockets/socket_flags.h
+  include/xtd/net/sockets/socket_information.h
   include/xtd/net/sockets/socket_information_options.h
   include/xtd/net/sockets/socket_option_level.h
   include/xtd/net/sockets/socket_option_name.h
@@ -272,6 +273,7 @@ add_sources(
   src/xtd/net/sockets/ip_v6_multicast_option.cpp
   src/xtd/net/sockets/linger_option.cpp
   src/xtd/net/sockets/multicast_option.cpp
+  src/xtd/net/sockets/socket_information.cpp
   src/xtd/security/secure_string.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})

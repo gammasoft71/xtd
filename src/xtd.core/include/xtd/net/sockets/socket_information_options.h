@@ -33,6 +33,17 @@ namespace xtd {
       };
 
       /// @cond
+      inline socket_information_options& operator^=(socket_information_options& lhs, socket_information_options rhs) {lhs = static_cast<socket_information_options>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
+      inline socket_information_options& operator&=(socket_information_options& lhs, socket_information_options rhs) {lhs = static_cast<socket_information_options>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}
+      inline socket_information_options& operator|=(socket_information_options& lhs, socket_information_options rhs) {lhs = static_cast<socket_information_options>(static_cast<int>(lhs) | static_cast<int>(rhs)); return lhs;}
+      inline socket_information_options& operator+=(socket_information_options& lhs, socket_information_options rhs) {lhs = static_cast<socket_information_options>(static_cast<int>(lhs) + static_cast<int>(rhs)); return lhs;}
+      inline socket_information_options& operator-=(socket_information_options& lhs, socket_information_options rhs) {lhs = static_cast<socket_information_options>(static_cast<int>(lhs) - static_cast<int>(rhs)); return lhs;}
+      inline socket_information_options operator^(socket_information_options lhs, socket_information_options rhs) {return static_cast<socket_information_options>(static_cast<int>(lhs) ^ static_cast<int>(rhs));}
+      inline socket_information_options operator&(socket_information_options lhs, socket_information_options rhs) {return static_cast<socket_information_options>(static_cast<int>(lhs) & static_cast<int>(rhs));}
+      inline socket_information_options operator|(socket_information_options lhs, socket_information_options rhs) {return static_cast<socket_information_options>(static_cast<int>(lhs) | static_cast<int>(rhs));}
+      inline socket_information_options operator+(socket_information_options lhs, socket_information_options rhs) {return static_cast<socket_information_options>(static_cast<int>(lhs) + static_cast<int>(rhs));}
+      inline socket_information_options operator-(socket_information_options lhs, socket_information_options rhs) {return static_cast<socket_information_options>(static_cast<int>(lhs) - static_cast<int>(rhs));}
+      inline socket_information_options operator~(socket_information_options lhs) {return static_cast<socket_information_options>(~static_cast<int>(lhs));}
       inline std::ostream& operator<<(std::ostream& os, socket_information_options value) {return os << to_string(value, {{socket_information_options::none, "none"}, {socket_information_options::non_blocking, "non_blocking"}, {socket_information_options::connected, "connected"}, {socket_information_options::listening, "listening"}, {socket_information_options::use_only_overlapped_io, "use_only_overlapped_io"}});}
       inline std::wostream& operator<<(std::wostream& os, socket_information_options value) {return os << to_string(value, {{socket_information_options::none, L"none"}, {socket_information_options::non_blocking, L"non_blocking"}, {socket_information_options::connected, L"connected"}, {socket_information_options::listening, L"listening"}, {socket_information_options::use_only_overlapped_io, L"use_only_overlapped_io"}});}
       /// @endcond

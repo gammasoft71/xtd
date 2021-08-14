@@ -104,6 +104,7 @@ add_sources(
   src/net/sockets/linger_option.cpp
   src/net/sockets/multicast_option.cpp
   src/net/sockets/socket_exception.cpp
+  src/net/sockets/socket_information.cpp
   src/security/secure_string.cpp
 )
 target_type(TEST_APPLICATION)
