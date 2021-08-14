@@ -186,6 +186,7 @@ add_sources(
   include/xtd/net/socket_address.h
   include/xtd/net/sockets/address_family.h
   include/xtd/net/sockets/io_control_code.h
+  include/xtd/net/sockets/ip_protection_level.h
   include/xtd/net/sockets/ip_v6_multicast_option.h
   include/xtd/net/sockets/linger_option.h
   include/xtd/net/sockets/multicast_option.h
