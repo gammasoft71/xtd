@@ -124,6 +124,7 @@ using namespace xtd::security;
 class xtd_core_manual_test : public object {
 public:
   static void main() {
+    console::write_line("0x{:X}", numeric_limits<uint32_t>::max());
     console::write_line("Hello, World!");
   }
 };
