@@ -165,6 +165,7 @@
 #include "net/sockets/socket_flags.h"
 #include "net/sockets/socket_information_options.h"
 #include "net/sockets/socket_shutdown.h"
+#include "net/sockets/socket_type.h"
 #include "web/css/property.h"
 #include "web/css/property_map.h"
 #include "web/css/reader.h"
