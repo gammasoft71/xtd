@@ -32,8 +32,10 @@ namespace xtd {
         use_only_overlapped_io = 0x08,
       };
 
+      /// @cond
       inline std::ostream& operator<<(std::ostream& os, socket_information_options value) {return os << to_string(value, {{socket_information_options::none, "none"}, {socket_information_options::non_blocking, "non_blocking"}, {socket_information_options::connected, "connected"}, {socket_information_options::listening, "listening"}, {socket_information_options::use_only_overlapped_io, "use_only_overlapped_io"}});}
       inline std::wostream& operator<<(std::wostream& os, socket_information_options value) {return os << to_string(value, {{socket_information_options::none, L"none"}, {socket_information_options::non_blocking, L"non_blocking"}, {socket_information_options::connected, L"connected"}, {socket_information_options::listening, L"listening"}, {socket_information_options::use_only_overlapped_io, L"use_only_overlapped_io"}});}
+      /// @endcond
     }
   }
 }

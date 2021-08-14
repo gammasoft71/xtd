@@ -42,8 +42,10 @@ namespace xtd {
         partial = 0x8000,
       };
 
+      /// @cond
       inline std::ostream& operator<<(std::ostream& os, socket_flags value) {return os << to_string(value, {{socket_flags::none, "none"}, {socket_flags::out_of_band, "out_of_band"}, {socket_flags::peek, "peek"}, {socket_flags::dont_route, "dont_route"}, {socket_flags::max_io_vector_length, "max_io_vector_length"}, {socket_flags::truncated, "truncated"}, {socket_flags::control_data_truncated, "control_data_truncated"}, {socket_flags::broadcast, "broadcast"}, {socket_flags::multicast, "multicast"}, {socket_flags::partial, "partial"}});}
       inline std::wostream& operator<<(std::wostream& os, socket_flags value) {return os << to_string(value, {{socket_flags::none, L"none"}, {socket_flags::out_of_band, L"out_of_band"}, {socket_flags::peek, L"peek"}, {socket_flags::dont_route, L"dont_route"}, {socket_flags::max_io_vector_length, L"max_io_vector_length"}, {socket_flags::truncated, L"truncated"}, {socket_flags::control_data_truncated, L"control_data_truncated"}, {socket_flags::broadcast, L"broadcast"}, {socket_flags::multicast, L"multicast"}, {socket_flags::partial, L"partial"}});}
+      /// @endcond
     }
   }
 }
