@@ -194,6 +194,7 @@ add_sources(
   include/xtd/net/sockets/socket_error.h
   include/xtd/net/sockets/socket_exception.h
   include/xtd/net/sockets/socket_flags.h
+  include/xtd/net/sockets/socket_information_options.h
   include/xtd/security/secure_string.h
   include/xtd/web/css/property.h
   include/xtd/web/css/property_map.h
