@@ -1,6 +1,6 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/dns.h>
-#include <xtd/native/address_families.h>
+#include <xtd/native/address_family_constants.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <mutex>
 #include <netdb.h>

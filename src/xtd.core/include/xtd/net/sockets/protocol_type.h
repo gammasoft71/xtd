@@ -20,7 +20,7 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core
       enum class protocol_type {
-        /// @brief Specifies an unknown Socket type.
+        /// @brief Specifies an unknown protocol.
         unknown = -1,
         /// @brief IPv6 Hop by Hop Options header.
         ip_v6_hop_by_hop_options = 0,
