@@ -15,12 +15,15 @@ namespace {
 }
 
 vector<uint8_t> cryptography::machine_guid() {
-  vector<uint8_t> bytes;
   string guid_str = get_machine_guid_str();
-  if (guid_str.empty())
-    guid_str = "30395f0e-d6aa-4a5e-b4af-6f90a608c605"; // fallback
+
+  static const string guid_fallback = "30395f0ed6aa4a5eb4af6f90a608c605";
+  static const string hex_chars = "0123456789ABCDDEF";
   for(auto index = 0U; guid_str[index] != 0; ++index)
-    if (guid_str[index] == '-') guid_str.erase(index, 1);
+    if (hex_chars.find(toupper(guid_str[index])) == hex_chars.npos)  guid_str.erase(index--, 1);
+  if (guid_str.size() != 32) guid_str = guid_fallback;
+
+  vector<uint8_t> bytes;
   for (auto index = 0U; index < guid_str.size(); index += 2)
     bytes.push_back(static_cast<uint8_t>(stoi(guid_str.substr(index, 2), 0, 16)));
   return bytes;
