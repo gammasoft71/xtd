@@ -46,7 +46,7 @@ namespace xtd {
       static void destroy(intptr_t host);
       /// @brief Gets host by host IP address.
       /// @param host_address The host IP address to resolve.
-      /// @param host_address_type The  address family (see address_families.h) to resolve.
+      /// @param host_address_type The  address family (see address_family_constants.h) to resolve.
       /// @return The host handle.
       /// @warning Internal use only
       static intptr_t get_host_by_address(const std::string& host_address, int32_t host_address_type);
