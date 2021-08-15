@@ -32,7 +32,8 @@ namespace xtd {
     class core_native_export_ cryptography final {
       friend xtd::security::secure_string;
     protected:
-      /// @brief Closes the file /etc/hosts.
+      /// @brief Gets the macine GUID.
+      /// @return A byte array that contains the machine GUID.
       /// @warning Internal use only
       static std::vector<uint8_t> machine_guid();
     };

@@ -29,7 +29,7 @@ vector<uint8_t> cryptography::machine_guid() {
   string guid_str = create_process("{ uname -n ; cat /proc/meminfo | head -n1 ; cat /proc/cpuinfo ; } | md5sum");
 #endif
 
-  static const string guid_fallback = "30395f0e-d6aa-4a5e-b4af-6f90a608c605";
+  static const string guid_fallback = "30395f0ed6aa4a5eb4af6f90a608c605";
   static const string hex_chars = "0123456789ABCDDEF";
   for(auto index = 0U; guid_str[index] != 0; ++index)
     if (hex_chars.find(toupper(guid_str[index])) == hex_chars.npos)  guid_str.erase(index--, 1);
