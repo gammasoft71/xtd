@@ -19,6 +19,7 @@
 #include <sys/ioctl.h>
 
 using namespace xtd::native;
+
 namespace {
   static int32_t native_to_socket_error(int32_t error) {
 #if defined(__APPLE__)
@@ -133,7 +134,7 @@ int32_t socket::destroy(intptr_t handle) {
 
 int32_t socket::get_available(intptr_t handle) {
   int32_t nbr_bytes_available = 0;
-  if (::ioctl(static_cast<int32_t>(handle), FIONREAD, &nbr_bytes_available) != 0) return -1;
+  if (ioctl(static_cast<int32_t>(handle), FIONREAD, &nbr_bytes_available) != 0) return -1;
   return nbr_bytes_available;
 }
 
@@ -151,9 +152,9 @@ bool socket::get_os_supports_ip_v6() {
 
 int32_t socket::get_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, intptr_t option, size_t& option_length) {
   if (socket_option_level == SOCKET_OPTION_LEVEL_SOCKET && (socket_option_name == SOCKET_OPTION_NAME_SEND_TIMEOUT || socket_option_name == SOCKET_OPTION_NAME_RECEIVE_TIMEOUT)) {
-    timeval tv = {0, 0};
-    int32_t result = ::getsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), &tv, reinterpret_cast<socklen_t*>(&option_length));
-    *reinterpret_cast<int32_t*>(option) = static_cast<int32_t>(tv.tv_sec * 1000 + tv.tv_usec / 1000);
+    timeval timeout = {0, 0};
+    int32_t result = ::getsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), &timeout, reinterpret_cast<socklen_t*>(&option_length));
+    *reinterpret_cast<int32_t*>(option) = static_cast<int32_t>(timeout.tv_sec * 1000 + timeout.tv_usec / 1000);
     return result;
   }
   
@@ -225,12 +226,8 @@ int32_t socket::select(std::vector<intptr_t>& check_read, std::vector<intptr_t>&
     FD_SET(static_cast<int32_t>(check_error[i]), &error_fds);
   if (check_error.size() > nfds) nfds = check_error.size();
   
-  timeval tv;
-  if (microseconds != -1) {
-    tv.tv_sec = microseconds / 1000000;
-    tv.tv_usec = microseconds % 1000000;
-  }
-  int32_t result = ::select(static_cast<int32_t>(nfds + 1), &read_fds, &write_fds, &error_fds, &tv);
+  timeval timeout {microseconds / 1000000, microseconds % 1000000};
+  int32_t result = ::select(static_cast<int32_t>(nfds + 1), &read_fds, &write_fds, &error_fds, microseconds == -1 ? nullptr : &timeout);
   
   for (auto i = 0U; i < check_read.size(); i++) {
     FD_CLR(static_cast<int32_t>(check_read[i]), &read_fds);
@@ -273,8 +270,8 @@ int32_t socket::set_blocking(intptr_t handle, bool blocking) {
 
 int32_t socket::set_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, intptr_t option, size_t option_length) {
   if (socket_option_level == SOCKET_OPTION_LEVEL_SOCKET && (socket_option_name == SOCKET_OPTION_NAME_SEND_TIMEOUT || socket_option_name == SOCKET_OPTION_NAME_RECEIVE_TIMEOUT)) {
-    timeval tv = {*reinterpret_cast<int32_t*>(option) / 1000, *reinterpret_cast<int32_t*>(option) % 1000 * 1000};
-    return ::setsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), &tv, sizeof(timeval));
+    timeval timeout = {*reinterpret_cast<int32_t*>(option) / 1000, *reinterpret_cast<int32_t*>(option) % 1000 * 1000};
+    return ::setsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), &timeout, sizeof(timeval));
   }
   return setsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), reinterpret_cast<void*>(option), static_cast<socklen_t>(option_length));
 }
