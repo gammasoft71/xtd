@@ -87,7 +87,7 @@ int32_t socket::destroy(intptr_t handle) {
 
 size_t socket::get_available(intptr_t handle) {
   u_long nbr_bytes_available = 0;
-  if (::ioctlsocket(static_cast<SOCKET>(handle), FIONREAD, &nbr_bytes_available) != 0) return -1;
+  if (::ioctlsocket(static_cast<SOCKET>(handle), FIONREAD, &nbr_bytes_available) != 0) return static_cast<size_t>(-1);
   return static_cast<size_t>(nbr_bytes_available);
 }
 
