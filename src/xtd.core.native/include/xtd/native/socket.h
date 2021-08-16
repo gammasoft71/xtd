@@ -12,6 +12,10 @@
 #include <string>
 #include <vector>
 
+/// @cond
+class __using_socket__;
+/// @endcond
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @cond
@@ -32,6 +36,7 @@ namespace xtd {
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
     class core_native_export_ socket final {
+      friend __using_socket__;
       friend xtd::net::socket_address;
       friend xtd::net::sockets::socket;
     protected:
@@ -89,11 +94,11 @@ namespace xtd {
       /// @brief Indicates whether the underlying operating system and network adaptors support Internet Protocol version 4 (IPv4).
       /// @return bool true if the operating system and network adaptors support the IPv4 protocol; otherwise, false.
       /// @warning Internal use only
-      static bool get_os_supports_ip_v4();
+      static bool get_os_supports_ip_v4() noexcept;
       /// @brief Indicates whether the underlying operating system and network adaptors support Internet Protocol version 6 (IPv6).
       /// @return bool true if the operating system and network adaptors support the IPv6 protocol; otherwise, false.
       /// @warning Internal use only
-      static bool get_os_supports_ip_v6();
+      static bool get_os_supports_ip_v6() noexcept;
       /// @brief Gets options on socket.
       /// @param handle The socket handle.
       /// @param socket_option_level One of socket option level values (see socket_option_level_constants.h).
@@ -183,7 +188,7 @@ namespace xtd {
       /// @param option_length Contains the option value size.
       /// @return Zero (0) if succeed; otherwise on error.
       /// @warning Internal use only
-      static int32_t set_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, intptr_t option, size_t option_length);
+      static int32_t set_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, void* option, size_t option_length);
       /// @brief Shut down part of a full-duplex connection.
       /// @param handle The socket handle.
       /// @param how One of socket shutdown values (see socket_shutdown_constants.h).
