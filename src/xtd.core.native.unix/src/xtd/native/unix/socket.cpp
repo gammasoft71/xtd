@@ -132,10 +132,10 @@ int32_t socket::destroy(intptr_t handle) {
   return ::close(static_cast<int32_t>(handle));
 }
 
-int32_t socket::get_available(intptr_t handle) {
+size_t socket::get_available(intptr_t handle) {
   int32_t nbr_bytes_available = 0;
   if (ioctl(static_cast<int32_t>(handle), FIONREAD, &nbr_bytes_available) != 0) return -1;
-  return nbr_bytes_available;
+  return static_cast<size_t>(nbr_bytes_available);
 }
 
 int32_t socket::get_last_error() {
@@ -150,7 +150,7 @@ bool socket::get_os_supports_ip_v6() {
   return true;
 }
 
-int32_t socket::get_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, intptr_t option, size_t& option_length) {
+int32_t socket::get_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, void* option, size_t& option_length) {
   if (socket_option_level == SOCKET_OPTION_LEVEL_SOCKET && (socket_option_name == SOCKET_OPTION_NAME_SEND_TIMEOUT || socket_option_name == SOCKET_OPTION_NAME_RECEIVE_TIMEOUT)) {
     timeval timeout = {0, 0};
     int32_t result = ::getsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), &timeout, reinterpret_cast<socklen_t*>(&option_length));
@@ -158,7 +158,7 @@ int32_t socket::get_socket_option(intptr_t handle, int32_t socket_option_level, 
     return result;
   }
   
-  return ::getsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), reinterpret_cast<void*>(option), reinterpret_cast<socklen_t*>(&option_length));
+  return ::getsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), option, reinterpret_cast<socklen_t*>(&option_length));
 }
 
 int32_t socket::io_conttrol(intptr_t handle, int32_t io_control, std::vector<uint8_t>& option_in_value, std::vector<uint8_t>& option_out_value) {

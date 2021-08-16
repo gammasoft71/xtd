@@ -41,6 +41,7 @@ add_sources(
   src/numeric_parse_none.cpp
   src/numeric_parse_number.cpp
   src/object.cpp
+  src/object_closed_exception.cpp
   src/operation_canceled_exception.cpp
   src/overflow_exception.cpp
   src/parse.cpp
@@ -103,6 +104,7 @@ add_sources(
   src/net/sockets/ip_v6_multicast_option.cpp
   src/net/sockets/linger_option.cpp
   src/net/sockets/multicast_option.cpp
+  src/net/sockets/socket.cpp
   src/net/sockets/socket_exception.cpp
   src/net/sockets/socket_information.cpp
   src/security/secure_string.cpp

@@ -66,6 +66,7 @@ add_sources(
   include/xtd/null_pointer_exception.h
   include/xtd/number_styles.h
   include/xtd/object.h
+  include/xtd/object_closed_exception.h
   include/xtd/operation_canceled_exception.h
   include/xtd/operating_system.h
   include/xtd/overflow_exception.h
@@ -193,6 +194,7 @@ add_sources(
   include/xtd/net/sockets/protocol_family.h
   include/xtd/net/sockets/protocol_type.h
   include/xtd/net/sockets/select_mode.h
+  include/xtd/net/sockets/socket.h
   include/xtd/net/sockets/socket_error.h
   include/xtd/net/sockets/socket_exception.h
   include/xtd/net/sockets/socket_flags.h
@@ -273,6 +275,7 @@ add_sources(
   src/xtd/net/sockets/ip_v6_multicast_option.cpp
   src/xtd/net/sockets/linger_option.cpp
   src/xtd/net/sockets/multicast_option.cpp
+  src/xtd/net/sockets/socket.cpp
   src/xtd/net/sockets/socket_information.cpp
   src/xtd/security/secure_string.cpp
 )
