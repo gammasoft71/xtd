@@ -305,7 +305,7 @@ constexpr int32_t SOCKET_OPTION_NAME_HOP_LIMIT = 21;
 /// @ingroup xtd_core_native socket_option_name
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t SOCKET_OPTION_NAME_IP_PROTECT_LEVEL = 22;
+constexpr int32_t SOCKET_OPTION_NAME_IP_PROTECT_LEVEL = 23;
 
 /// @brief Indicates if a socket created for the AF_INET6 address family is restricted to IPv6 communications only. Sockets created for the AF_INET6 address family may be used for both IPv6 and IPv4 communications. Some applications may want to restrict their use of a socket created for the AF_INET6 address family to IPv6 communications only. When this value is non-zero (the default on Windows), a socket created for the AF_INET6 address family can be used to send and receive IPv6 packets only. When this value is zero, a socket created for the AF_INET6 address family can be used to send and receive packets to and from an IPv6 address or an IPv4 address. Note that the ability to interact with an IPv4 address requires the use of IPv4 mapped addresses. This socket option is supported on Windows Vista or later.
 /// @par Library
@@ -313,7 +313,7 @@ constexpr int32_t SOCKET_OPTION_NAME_IP_PROTECT_LEVEL = 22;
 /// @ingroup xtd_core_native socket_option_name
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t SOCKET_OPTION_NAME_IP_V6_ONLY = 23;
+constexpr int32_t SOCKET_OPTION_NAME_IP_V6_ONLY = 27;
 
 /// @brief Disables the Nagle algorithm for send coalescing.
 /// @par Library

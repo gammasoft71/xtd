@@ -49,6 +49,9 @@ namespace xtd {
       public:
         /// @brief Initializes a new instance of the xtd::net::sockets::socket class.
         socket() = default;
+        
+        socket(xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type);
+        socket(xtd::net::sockets::address_family address_family, xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type);
 
         /// @cond
         socket(socket&& socket) = default;
@@ -106,6 +109,29 @@ namespace xtd {
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         socket& dont_fragment(bool value);
+
+        /// @brief Gets a value that specifies whether the xtd::net::sockets::socket is a dual-mode socket used for both IPv4 and IPv6.
+        /// @return true if the xtd::net::sockets::socket is a dual-mode socket; otherwise, false. The default is true if the socket was created by calling the xtd::net::sockets::socket::xtd::net::sockets::socket(xtd::net::sockets::socket_type, xtd::net::sockets::protocol_type) constructor and the operating system supports IPv6; otherwise, the default is false.
+        /// @exception xtd::not_suupported_exception The socket is not in the xtd::net::sockets::adddress_family::inter_network_v6 family.
+        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        bool dual_mode() const;
+        /// @brief SGets a value that specifies whether the xtd::net::sockets::socket is a dual-mode socket used for both IPv4 and IPv6.
+        /// @param value true if the xtd::net::sockets::socket is a dual-mode socket; otherwise, false. The default is true if the socket was created by calling the xtd::net::sockets::socket::xtd::net::sockets::socket(xtd::net::sockets::socket_type, xtd::net::sockets::protocol_type) constructor and the operating system supports IPv6; otherwise, the default is false.
+        /// @return This current instance.
+        /// @exception xtd::not_suupported_exception The socket is not in the xtd::net::sockets::adddress_family::inter_network_v6 family.
+        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        socket& dual_mode(bool value);
+        
+        bool enable_broadcast() const;
+        socket& enable_broadcast(bool value);
+        
+        intptr_t handle() const noexcept;
+
+        bool os_supports_ip_v4() const noexcept;
+        
+        bool os_supports_ip_v6() const noexcept;
 
         /// @brief Returns the value of a specified xtd::net::sockets::socket option, represented as integer.
         /// @param socket_option_level One of the xtd::net::sockets::socket_option_level values.
@@ -242,7 +268,7 @@ namespace xtd {
         ///   * xtd::net::sockets::socket_option_name::multicast_loopback
         ///   * xtd::net::sockets::socket_option_name::multicast_time_to_live
         ///   * xtd::net::sockets::socket_option_name::use_loopback
-        /// * xtd::net::sockets::socket_option_level::rcp options that can be set using this overload:
+        /// * xtd::net::sockets::socket_option_level::tcp options that can be set using this overload:
         ///   * xtd::net::sockets::socket_option_name::bsd_urgent
         ///   * xtd::net::sockets::socket_option_name::expedited
         ///   * xtd::net::sockets::socket_option_name::no_delay
@@ -256,7 +282,6 @@ namespace xtd {
         void set_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name, int32_t option_value);
 
       private:
-        static void check_set_option_permisson(xtd::net::sockets::socket_option_level option_level, xtd::net::sockets::socket_option_name option_name);
         static xtd::net::sockets::socket_error get_last_error();
         struct data {
           xtd::net::sockets::address_family address_family = xtd::net::sockets::address_family::unspecified;

@@ -16,7 +16,7 @@ using namespace xtd::native;
 
 namespace {
   static int32_t protocol_type_to_native(int32_t protocol_type) {
-    static std::map<int32_t, int32_t> protocol_types = {{PROTOCOL_TYPE_UNKNWON, IPPROTO_IP}, {PROTOCOL_TYPE_IP, IPPROTO_IP}, {PROTOCOL_TYPE_ICMP, IPPROTO_ICMP}, {PROTOCOL_TYPE_IGMP, IPPROTO_IGMP}, {PROTOCOL_TYPE_GGP, IPPROTO_GGP}, {PROTOCOL_TYPE_IP_V4, IPPROTO_IPV4}, {PROTOCOL_TYPE_TCP, IPPROTO_TCP}, {PROTOCOL_TYPE_PUP, IPPROTO_PUP}, {PROTOCOL_TYPE_UDP, IPPROTO_UDP}, {PROTOCOL_TYPE_IDP, IPPROTO_IDP}, {PROTOCOL_TYPE_IP_V6, IPPROTO_IPV6}, {PROTOCOL_TYPE_IP_V6_ROUTING_HEADER, IPPROTO_ROUTING}, {PROTOCOL_TYPE_IP_V6_FRAGMENT_HEADER, IPPROTO_FRAGMENT}, {PROTOCOL_TYPE_IP_SEC_ENCAPSULATING_SECURITY_PAYLOAD, IPPROTO_ESP}, {PROTOCOL_TYPE_IP_SEC_AUTHENTIFICATION_HEADER, IPPROTO_AH}, {PROTOCOL_TYPE_ICMP_V6, IPPROTO_ICMPV6}, {PROTOCOL_TYPE_IP_V6_NO_NEXT_HEADER, IPPROTO_NONE}, {PROTOCOL_TYPE_IP_V6_DESTINATION_OPTIONS, IPPROTO_DSTOPTS}, {PROTOCOL_TYPE_ND, IPPROTO_ND}, {PROTOCOL_TYPE_RAW, IPPROTO_RAW}, {PROTOCOL_TYPE_SPX, IPPROTO_IP}, {PROTOCOL_TYPE_SPX_2, IPPROTO_IP}};
+    static std::map<int32_t, int32_t> protocol_types = {{PROTOCOL_TYPE_UNKNWON, IPPROTO_IP}, {PROTOCOL_TYPE_IP, IPPROTO_IP}, {PROTOCOL_TYPE_ICMP, IPPROTO_ICMP}, {PROTOCOL_TYPE_IGMP, IPPROTO_IGMP}, {PROTOCOL_TYPE_GGP, IPPROTO_GGP}, {PROTOCOL_TYPE_IP_V4, IPPROTO_IPV4}, {PROTOCOL_TYPE_IP_V6, IPPROTO_IPV6}, {PROTOCOL_TYPE_TCP, IPPROTO_TCP}, {PROTOCOL_TYPE_PUP, IPPROTO_PUP}, {PROTOCOL_TYPE_UDP, IPPROTO_UDP}, {PROTOCOL_TYPE_IDP, IPPROTO_IDP}, {PROTOCOL_TYPE_IP_V6, IPPROTO_IPV6}, {PROTOCOL_TYPE_IP_V6_ROUTING_HEADER, IPPROTO_ROUTING}, {PROTOCOL_TYPE_IP_V6_FRAGMENT_HEADER, IPPROTO_FRAGMENT}, {PROTOCOL_TYPE_IP_SEC_ENCAPSULATING_SECURITY_PAYLOAD, IPPROTO_ESP}, {PROTOCOL_TYPE_IP_SEC_AUTHENTIFICATION_HEADER, IPPROTO_AH}, {PROTOCOL_TYPE_ICMP_V6, IPPROTO_ICMPV6}, {PROTOCOL_TYPE_IP_V6_NO_NEXT_HEADER, IPPROTO_NONE}, {PROTOCOL_TYPE_IP_V6_DESTINATION_OPTIONS, IPPROTO_DSTOPTS}, {PROTOCOL_TYPE_ND, IPPROTO_ND}, {PROTOCOL_TYPE_RAW, IPPROTO_RAW}, {PROTOCOL_TYPE_SPX, IPPROTO_IP}, {PROTOCOL_TYPE_SPX_2, IPPROTO_IP}};
     auto it = protocol_types.find(protocol_type);
     if (it == protocol_types.end()) return IPPROTO_IP;
     return it->second;
@@ -30,7 +30,7 @@ namespace {
   }
 
   static int32_t socket_option_level_to_native(int32_t socket_option_level) {
-    static std::map<int32_t, int32_t> socket_option_levels = {{SOCKET_OPTION_LEVEL_SOCKET, SOL_SOCKET}, {SOCKET_OPTION_LEVEL_IP, SOL_SOCKET}, {SOCKET_OPTION_LEVEL_IP_V6, SOL_SOCKET}, {SOCKET_OPTION_LEVEL_TCP, SOL_SOCKET}, {SOCKET_OPTION_LEVEL_UDP, SOL_SOCKET}};
+    static std::map<int32_t, int32_t> socket_option_levels = {{SOCKET_OPTION_LEVEL_SOCKET, SOL_SOCKET}, {SOCKET_OPTION_LEVEL_IP, IPPROTO_IP}, {SOCKET_OPTION_LEVEL_IP_V6, IPPROTO_IPV6}, {SOCKET_OPTION_LEVEL_TCP, IPPROTO_TCP}, {SOCKET_OPTION_LEVEL_UDP, IPPROTO_UDP}};
     auto it = socket_option_levels.find(socket_option_level);
     if (it == socket_option_levels.end()) return SOL_SOCKET;
     return it->second;
@@ -95,11 +95,11 @@ int32_t socket::get_last_error() {
   return WSAGetLastError();
 }
 
-bool socket::get_os_supports_ip_v4() {
+bool socket::get_os_supports_ip_v4() noexcept {
   return true;
 }
 
-bool socket::get_os_supports_ip_v6() {
+bool socket::get_os_supports_ip_v6() noexcept {
   return true;
 }
 
@@ -203,7 +203,7 @@ int32_t socket::set_blocking(intptr_t handle, bool blocking) {
   return ioctlsocket(static_cast<SOCKET>(handle), FIONBIO, &mode);
 }
 
-int32_t socket::set_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, intptr_t option, size_t option_length) {
+int32_t socket::set_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, void* option, size_t option_length) {
   return setsockopt(static_cast<SOCKET>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), reinterpret_cast<char*>(option), static_cast<int32_t>(option_length));
 }
 
