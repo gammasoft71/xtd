@@ -17,6 +17,9 @@ namespace xtd {
   /// @cond
   namespace net {
     class socket_address;
+    namespace sockets {
+      class socket;
+    }
   }
   // @endcond
 
@@ -30,6 +33,7 @@ namespace xtd {
     /// @warning Internal use only
     class core_native_export_ socket final {
       friend xtd::net::socket_address;
+      friend xtd::net::sockets::socket;
     protected:
       /// @brief Gets the native address family value corresponding to xtd address family.
       /// @return The native address family value corresponding to xtd address family (see address_family_constants.h).
@@ -77,7 +81,7 @@ namespace xtd {
       /// @return The number of bytes of data received from the network and available to be read.
       /// @remarks Return -1 if error.
       /// @warning Internal use only
-      static int32_t get_available(intptr_t handle);
+      static size_t get_available(intptr_t handle);
       /// @brief Gets last error.
       /// @return One of socket error value (see socket_error_constants.h).
       /// @warning Internal use only
@@ -98,7 +102,7 @@ namespace xtd {
       /// @param option_length The option size will contains the size of option value.
       /// @return Zero (0) if succeed; otherwise on error.
       /// @warning Internal use only
-      static int32_t get_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, intptr_t option, size_t& option_length);
+      static int32_t get_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, void* option, size_t& option_length);
       /// @brief Sets low-level operating modes for the Socket using the IOControlCode enumeration to specify control codes.
       /// @param handle The socket handle.
       /// @param io_control A io control code value that specifies the control code of the operation to perform (see io_control_code_constants.h).

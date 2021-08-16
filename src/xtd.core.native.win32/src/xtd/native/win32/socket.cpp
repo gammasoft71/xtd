@@ -85,10 +85,10 @@ int32_t socket::destroy(intptr_t handle) {
   return ::closesocket(static_cast<SOCKET>(handle));
 }
 
-int32_t socket::get_available(intptr_t handle) {
+size_t socket::get_available(intptr_t handle) {
   u_long nbr_bytes_available = 0;
   if (::ioctlsocket(static_cast<SOCKET>(handle), FIONREAD, &nbr_bytes_available) != 0) return -1;
-  return nbr_bytes_available;
+  return static_cast<size_t>(nbr_bytes_available);
 }
 
 int32_t socket::get_last_error() {
@@ -103,7 +103,7 @@ bool socket::get_os_supports_ip_v6() {
   return true;
 }
 
-int32_t socket::get_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, intptr_t option, size_t& option_length) {
+int32_t socket::get_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, void* option, size_t& option_length) {
   return ::getsockopt(static_cast<SOCKET>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), reinterpret_cast<char*>(option), reinterpret_cast<int32_t*>(&option_length));
 }
 
