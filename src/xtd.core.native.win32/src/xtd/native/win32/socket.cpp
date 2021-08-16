@@ -61,7 +61,7 @@ int32_t socket::native_to_address_family(int32_t address_family) {
 intptr_t socket::accept(intptr_t handle, std::vector<uint8_t>& socket_address) {
   int32_t address_length = static_cast<int32_t>(socket_address.size());
   intptr_t socket = static_cast<intptr_t>(::accept(static_cast<SOCKET>(handle), reinterpret_cast<SOCKADDR*>(socket_address.data()), &address_length));
-  if (socket_address.size() != address_length) socket_address.resize(address_length);
+  if (socket_address.size() != static_cast<size_t>(address_length)) socket_address.resize(static_cast<size_t>(address_length));
   return socket;
 }
 
@@ -140,7 +140,7 @@ int32_t socket::receive(intptr_t handle, std::vector<uint8_t>& buffer, size_t of
 int32_t socket::receive_from(intptr_t handle, std::vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags, std::vector<uint8_t>& socket_address) {
   int32_t address_length = static_cast<int32_t>(socket_address.size());
   int32_t result = static_cast<int32_t>(::recvfrom(static_cast<SOCKET>(handle), reinterpret_cast<char*>(&buffer.data()[offset]), static_cast<int32_t>(size), flags, reinterpret_cast<SOCKADDR*>(socket_address.data()), &address_length));
-  if (socket_address.size() != address_length) socket_address.resize(address_length);
+  if (socket_address.size() != static_cast<size_t>(address_length)) socket_address.resize(static_cast<size_t>(address_length));
   return result;
 }
 
