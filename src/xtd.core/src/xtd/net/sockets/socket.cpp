@@ -190,7 +190,16 @@ const std::unique_ptr<xtd::net::end_point>& socket::remote_end_point() const {
 void socket::close() {
   data_->connected = false;
   if (data_->handle != 0 && native::socket::destroy(data_->handle) != 0) throw socket_exception(get_last_error(), csf_);
-  data_ = make_shared<data>();
+  data_->address_family = xtd::net::sockets::address_family::unspecified;
+  data_->blocking = true;
+  data_->connected = false;
+  data_->handle = 0;
+  data_->is_bound = false;
+  data_->listening = false;
+  data_->local_end_point.reset();
+  data_->protocol_type = xtd::net::sockets::protocol_type::unspecified;
+  data_->remote_end_point.reset();
+  data_->socket_type = xtd::net::sockets::socket_type::unknown;
 }
 
 size_t socket::get_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, intptr_t option_value, size_t size_option_value) const {
