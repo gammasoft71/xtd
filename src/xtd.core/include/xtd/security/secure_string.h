@@ -13,7 +13,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core security
-    class secure_string : public xtd::object {
+    class secure_string final : public xtd::object {
     public:
       /// @brief Initializes a new instance of the xtd::security::secure_string class.
       secure_string() = default;

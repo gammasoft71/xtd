@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
+#include <memory>
 #include "../../core_export.h"
 #include "../../argument_exception.h"
 #include "../../as.h"
