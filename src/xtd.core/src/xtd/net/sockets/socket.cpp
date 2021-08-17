@@ -157,7 +157,7 @@ xtd::net::sockets::protocol_type socket::protocol_type() const noexcept {
   return data_->protocol_type;
 }
 
-size_t socket::get_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, void* option_value) const {
+size_t socket::get_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, intptr_t option_value) const {
   if (data_->handle == 0) throw object_closed_exception(csf_);
   size_t size  = 0;
   if (native::socket::get_raw_socket_option(data_->handle, socket_option_level, socket_option_name, option_value, size) != 0) throw socket_exception(get_last_error(), csf_);
@@ -169,7 +169,7 @@ int32_t socket::get_socket_option(xtd::net::sockets::socket_option_level socket_
   if (data_->handle == 0) throw object_closed_exception(csf_);
   int32_t result = 0;
   size_t size = 0;
-  if (native::socket::get_socket_option(data_->handle, static_cast<int32_t>(socket_option_level), static_cast<int32_t>(socket_option_name), &result, size) != 0) throw socket_exception(get_last_error(), csf_);
+  if (native::socket::get_socket_option(data_->handle, static_cast<int32_t>(socket_option_level), static_cast<int32_t>(socket_option_name), reinterpret_cast<intptr_t>(&result), size) != 0) throw socket_exception(get_last_error(), csf_);
   return result;
 }
 
@@ -207,7 +207,7 @@ void socket::set_socket_option(xtd::net::sockets::socket_option_level socket_opt
 void socket::set_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name, int32_t option_value) {
   if (socket_option_name == xtd::net::sockets::socket_option_name::linger || socket_option_name == xtd::net::sockets::socket_option_name::add_membership || socket_option_name == xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
   if (data_->handle == 0) throw object_closed_exception(csf_);
-  if (native::socket::set_socket_option(data_->handle, static_cast<int32_t>(socket_option_level), static_cast<int32_t>(socket_option_name), &option_value, sizeof(int32_t)) != 0) throw socket_exception(get_last_error(), csf_);
+  if (native::socket::set_socket_option(data_->handle, static_cast<int32_t>(socket_option_level), static_cast<int32_t>(socket_option_name), reinterpret_cast<intptr_t>(&option_value), sizeof(int32_t)) != 0) throw socket_exception(get_last_error(), csf_);
 }
 
 void socket::set_socket_option(xtd::net::sockets::linger_option option_value) {
@@ -227,9 +227,9 @@ void socket::set_socket_option(xtd::net::sockets::socket_option_name socket_opti
   if (native::socket::set_socket_ip_v6_multicast_option(data_->handle, static_cast<int32_t>(socket_option_name), option_value.group().get_address_bytes(), option_value.interface_index()) != 0) throw socket_exception(get_last_error(), csf_);
 }
 
-void socket::set_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, void* option_value, size_t option_value_size) {
+void socket::set_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, intptr_t option_value, size_t option_value_size) {
   if (data_->handle == 0) throw object_closed_exception(csf_);
-  if (native::socket::set_raw_socket_option(data_->handle, socket_option_level, socket_option_name, &option_value, option_value_size) != 0) throw socket_exception(get_last_error(), csf_);
+  if (native::socket::set_raw_socket_option(data_->handle, socket_option_level, socket_option_name, reinterpret_cast<intptr_t>(&option_value), option_value_size) != 0) throw socket_exception(get_last_error(), csf_);
 }
 
 socket_error socket::get_last_error() {

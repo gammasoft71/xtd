@@ -285,7 +285,7 @@ namespace xtd {
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exceptionxtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
-        size_t get_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, void* option_value) const;
+        size_t get_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, intptr_t option_value) const;
 
         /// @brief Returns the value of a specified xtd::net::sockets::socket option, represented as integer.
         /// @param socket_option_level One of the xtd::net::sockets::socket_option_level values.
@@ -424,7 +424,7 @@ namespace xtd {
         /// @remarks In general, the SetSocketOption method should be used whenever setting a Socket option.
         /// @remarks The SetRawSocketOption(Int32, Int32, ReadOnlySpan<Byte>) method should be used only when SocketOptionLevel and SocketOptionName do not expose the required option.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        void set_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, void* option_value, size_t option_value_size);
+        void set_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, intptr_t option_value, size_t option_value_size);
         
       private:
         static xtd::net::sockets::socket_error get_last_error();
