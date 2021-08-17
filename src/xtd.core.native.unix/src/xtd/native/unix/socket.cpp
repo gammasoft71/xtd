@@ -150,11 +150,11 @@ bool socket::get_os_supports_ip_v6() noexcept {
   return true;
 }
 
-int32_t socket::get_raw_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, void* option, size_t& option_length) {
-  return ::getsockopt(static_cast<int32_t>(handle), socket_option_level, socket_option_name, option, reinterpret_cast<socklen_t*>(&option_length));
+int32_t socket::get_raw_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, intptr_t option, size_t& option_length) {
+  return ::getsockopt(static_cast<int32_t>(handle), socket_option_level, socket_option_name, reinterpret_cast<void*>(option), reinterpret_cast<socklen_t*>(&option_length));
 }
 
-int32_t socket::get_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, void* option, size_t& option_length) {
+int32_t socket::get_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, intptr_t option, size_t& option_length) {
   if (socket_option_level == SOCKET_OPTION_LEVEL_SOCKET && (socket_option_name == SOCKET_OPTION_NAME_SEND_TIMEOUT || socket_option_name == SOCKET_OPTION_NAME_RECEIVE_TIMEOUT)) {
     timeval timeout = {0, 0};
     int32_t result = ::getsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), &timeout, reinterpret_cast<socklen_t*>(&option_length));
@@ -162,7 +162,7 @@ int32_t socket::get_socket_option(intptr_t handle, int32_t socket_option_level, 
     return result;
   }
   
-  return ::getsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), option, reinterpret_cast<socklen_t*>(&option_length));
+  return ::getsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), reinterpret_cast<void*>(option), reinterpret_cast<socklen_t*>(&option_length));
 }
 
 int32_t socket::get_socket_linger_option(intptr_t handle, bool& enabled, uint32_t& linger_time) {
@@ -312,16 +312,16 @@ int32_t socket::set_blocking(intptr_t handle, bool blocking) {
   return result;
 }
 
-int32_t socket::set_raw_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, const void* option, size_t option_length) {
-  return setsockopt(static_cast<int32_t>(handle), socket_option_level, socket_option_name, option, static_cast<socklen_t>(option_length));
+int32_t socket::set_raw_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, intptr_t option, size_t option_length) {
+  return setsockopt(static_cast<int32_t>(handle), socket_option_level, socket_option_name, reinterpret_cast<const void*>(option), static_cast<socklen_t>(option_length));
 }
 
-int32_t socket::set_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, const void* option, size_t option_length) {
+int32_t socket::set_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, intptr_t option, size_t option_length) {
   if (socket_option_level == SOCKET_OPTION_LEVEL_SOCKET && (socket_option_name == SOCKET_OPTION_NAME_SEND_TIMEOUT || socket_option_name == SOCKET_OPTION_NAME_RECEIVE_TIMEOUT)) {
     timeval timeout = {*reinterpret_cast<const int32_t*>(option) / 1000, *reinterpret_cast<const int32_t*>(option) % 1000 * 1000};
     return ::setsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), &timeout, sizeof(timeval));
   }
-  return setsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), option, static_cast<socklen_t>(option_length));
+  return setsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), reinterpret_cast<const void*>(option), static_cast<socklen_t>(option_length));
 }
 
 int32_t socket::set_socket_linger_option(intptr_t handle, bool enabled, uint32_t linger_time) {
