@@ -57,6 +57,7 @@ namespace xtd {
         /// @cond
         socket(socket&& socket) = default;
         socket(const socket& socket) = default;
+        ~socket();
         socket& operator=(const socket&) = default;
         friend std::ostream& operator <<(std::ostream& os, const socket& mo) noexcept {return os << mo.to_string();}
         /// @endcond
@@ -216,7 +217,7 @@ namespace xtd {
         socket& linger_state(const xtd::net::sockets::linger_option& value);
 
         /// @brief Gets the local endpoint.
-        /// @return The EndPoint that the xtd::net::sockets::socket is using for communications.
+        /// @return The xtd::net::end_point that the xtd::net::sockets::socket is using for communications.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks The xtd::net::sockets::socket::local_end_point property gets an xtd::net::end_point that contains the local IP address and port number to which your xtd::net::sockets::socket is bound. You must cast this xtd::net::end_point to an xtd::net::ip_end_point before retrieving any information. You can then call the xtd::net::ip_end_point::address method to retrieve the local xtd::net::ip_address, and the xtd::net::ip_end_point::port method to retrieve the local port number.
         /// @remarks The xtd::net::sockets::socket::local_end_point property is usually set after you make a call to the xtd::net::sockets::socket::bind method. If you allow the system to assign your socket's local IP address and port number, the xtd::net::sockets::socket::local_end_point property will be set after the first I/O operation. For connection-oriented protocols, the first I/O operation would be a call to the xtd::net::sockets::socket::connect or xtd::net::sockets::socket::accept method. For connectionless protocols, the first I/O operation would be any of the send or receive calls.
@@ -276,7 +277,54 @@ namespace xtd {
         /// @return One of the ProtocolType values.
         /// @remarks The xtd::net::sockets::socket::protocol_type property is set when thextd::net::sockets::socket is created, and specifies the protocol used by that xtd::net::sockets::socket.
         xtd::net::sockets::protocol_type protocol_type() const noexcept;
+        
+        /// @brief Gets a value that specifies the size of the receive buffer of the xtd::net::sockets::socket.
+        /// @return An size_t that contains the size, in bytes, of the receive buffer. The default is 8192.
+        /// @remarks A larger buffer size potentially reduces the number of empty acknowledgements (TCP packets with no data portion), but might also delay the recognition of connection difficulties. Consider increasing the buffer size if you are transferring large files, or you are using a high bandwidth, high latency connection (such as a satellite broadband provider.)
+        /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        size_t receive_buffer_size() const;
+        /// @brief Sets a value that specifies the size of the receive buffer of the xtd::net::sockets::socket.
+        /// @param value An size_t that contains the size, in bytes, of the receive buffer. The default is 8192.
+        /// @return This current instance.
+        /// @remarks A larger buffer size potentially reduces the number of empty acknowledgements (TCP packets with no data portion), but might also delay the recognition of connection difficulties. Consider increasing the buffer size if you are transferring large files, or you are using a high bandwidth, high latency connection (such as a satellite broadband provider.)
+        /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        socket& receive_buffer_size(size_t value);
 
+        /// @brief Gets a value that specifies the amount of time after which a synchronous xtd::net::sockets::socket::receive call will time out.
+        /// @return The time-out value, in milliseconds. The default value is 0, which indicates an infinite time-out period. Specifying -1 also indicates an infinite time-out period.
+        /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks This option applies to synchronous xtd::net::sockets::socket::receive calls only. If the time-out period is exceeded, the xtd::net::sockets::socket::receive method will throw a xtd::net::sockets::socket_exception.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        int32_t receive_timeout() const;
+        /// @brief Sets a value that specifies the amount of time after which a synchronous xtd::net::sockets::socket::receive call will time out.
+        /// @param value The time-out value, in milliseconds. The default value is 0, which indicates an infinite time-out period. Specifying -1 also indicates an infinite time-out period.
+        /// @return This current instance.
+        /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @exception xtd::argument_out_of_range_exception The value specified for a set operation is less than -1.
+        /// @remarks This option applies to synchronous xtd::net::sockets::socket::receive calls only. If the time-out period is exceeded, the xtd::net::sockets::socket::receive method will throw a xtd::net::sockets::socket_exception.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        socket& receive_timeout(int32_t value);
+        
+        /// @brief Gets the remote endpoint.
+        /// @return The xtd::net::end_point with which the xtd::net::sockets::socket is communicating.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks If you are using a connection-oriented protocol, the xtd::net::sockets::socket::remote_end_point property gets the xtd::net::sockets::end_point that contains the remote IP address and port number to which the xtd::net::sockets::socket is connected. If you are using a connectionless protocol, xtd::net::sockets::socket::remote_end_point contains the default remote IP address and port number with which the xtd::net::sockets::socket will communicate. You must cast this xtd::net::end_point to an xtd::net::ip_end_point before retrieving any information. You can then call the xtd::net::ip_end_point::address method to retrieve the remote xtd::net::ip_address, and the xtd::net::ip_end_point::port method to retrieve the remote port number.
+        /// @remarks The xtd::net::sockets::socket::remote_end_point is set after a call to either xtd::net::sockets::socket::accept or xtd::net::sockets::socke::connect. If you try to access this property earlier, xtd::net::sockets::socket::remote_end_point will throw a xtd::net::sockets::socket_exception. If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
+        const std::unique_ptr<xtd::net::end_point>& remote_end_point() const;
+
+        /// @brief Closes the xtd::net::sockets::socket connection and releases all associated resources.
+        /// @remarks The xtd::net::sockets::socket::close method closes the remote host connection and releases all resources associated with the xtd::net::sockets::socket. Upon closing, the xtd::net::sockets::socket::connected property is set to false.
+        /// @remarks For connection-oriented protocols, it is recommended that you call xtd::net::sockets::socket::shutdown before calling the xtd::net::sockets::socket::close method. This ensures that all data is sent and received on the connected socket before it is closed.
+        /// @remarks If you need to call xtd::net::sockets::socket::close without first calling xtd::net::sockets::socket::shutdown, you can ensure that data queued for outgoing transmission will be sent by setting the xtd::net::sockets::socket::dont_linger xtd::net::sockets::socket option to false and specifying a non-zero time-out interval. xtd::net::sockets::socket::close will then block until this data is sent or until the specified time-out expires. If you set xtd::net::sockets::socket::dont_linger to false and specify a zero time-out interval, xtd::net::sockets::socket::close releases the connection and automatically discards outgoing queued data.
+        /// @note To set the xtd::net::sockets::socket::dont_linger socket option to false, create a xtd::net::sockets::linger_option, set the xtd::net::sockets::linger_option::enabled property to true, and set the xtd::net::sockets::linger_option::linger_time property to the desired time out period. Use this xtd::net::sockets::linger_option along with the xtd::net::sockets::socket::dont_linger socket option to call the xtd::net::sockets::socket::set_socket_linger_option method.
+        void close();
+        
         /// @brief Gets a socket option value using platform-specific level and name identifiers.
         /// @param socket_option_level The platform-defined option level.
         /// @param socket_option_name The platform-defined option name.
@@ -285,7 +333,7 @@ namespace xtd {
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exceptionxtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
-        size_t get_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, intptr_t option_value) const;
+        size_t get_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, intptr_t option_value, size_t size_option_value) const;
 
         /// @brief Returns the value of a specified xtd::net::sockets::socket option, represented as integer.
         /// @param socket_option_level One of the xtd::net::sockets::socket_option_level values.
