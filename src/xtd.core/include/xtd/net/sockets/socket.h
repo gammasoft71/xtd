@@ -129,7 +129,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         socket& dual_mode(bool value);
         
-        /// @brief Gets a bool value that specifies whether the xtd::net::sockets::socket can send or receive broadcast packets.
+        /// @brief Gets a boolean value that specifies whether the xtd::net::sockets::socket can send or receive broadcast packets.
         /// @return true if the xtd::net::sockets::socket allows broadcast packets; otherwise, false. The default is false.
         /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
@@ -146,12 +146,131 @@ namespace xtd {
         /// @remarks Setting this property on a Transmission Control Protocol (TCP) socket will have no effect.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         socket& enable_broadcast(bool value);
-        
+
+        /// @brief Gets a boolean value that specifies whether the xtd::net::sockets::socket allows only one process to bind to a port.
+        /// @return true if the xtd::net::sockets::socket allows only one socket to bind to a specific port; otherwise, false. The default is true for Windows Server 2003 and Windows XP Service Pack 2, and false for all other versions.
+        /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks If xtd::net::sockets::socket::exclusive_address_use is false, multiple sockets can use the xtd::net::sockets::socket::bind method to bind to a specific port; however only one of the sockets can perform operations on the network traffic sent to the port. If more than one socket attempts to use the xtd::net::sockets::socket::bind method to bind to a particular port, then the one with the more specific IP address will handle the network traffic sent to that port.
+        /// @remarks If xtd::net::sockets::socket::exclusive_address_use is true, the first use of the xtd::net::sockets::socket::bind method to attempt to bind to a particular port, regardless of Internet Protocol (IP) address, will succeed; all subsequent uses of the Bind method to attempt to bind to that port will fail until the original bound socket is destroyed.
+        /// @remarks This property must be set before xtd::net::sockets::socket::bind is called; otherwise an xtd::invalid_operation_exception will be thrown.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        bool exclusive_address_use() const;
+        /// @brief Gets a boolean value that specifies whether the xtd::net::sockets::socket allows only one process to bind to a port.
+        /// @param value true if the xtd::net::sockets::socket allows only one socket to bind to a specific port; otherwise, false. The default is true for Windows Server 2003 and Windows XP Service Pack 2, and false for all other versions.
+        /// @return This current instance.
+        /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @exception xtd::invalid_operation_exception xtd::net::sockets::socket::bind has been called for this xtd::net::sockets::socket.
+        /// @remarks If xtd::net::sockets::socket::exclusive_address_use is false, multiple sockets can use the xtd::net::sockets::socket::bind method to bind to a specific port; however only one of the sockets can perform operations on the network traffic sent to the port. If more than one socket attempts to use the xtd::net::sockets::socket::bind method to bind to a particular port, then the one with the more specific IP address will handle the network traffic sent to that port.
+        /// @remarks If xtd::net::sockets::socket::exclusive_address_use is true, the first use of the xtd::net::sockets::socket::bind method to attempt to bind to a particular port, regardless of Internet Protocol (IP) address, will succeed; all subsequent uses of the Bind method to attempt to bind to that port will fail until the original bound socket is destroyed.
+        /// @remarks This property must be set before xtd::net::sockets::socket::bind is called; otherwise an xtd::invalid_operation_exception will be thrown.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        socket& exclusive_address_use(bool value);
+
+        /// @brief Gets the operating system handle for the xtd::net::sockets::socket.
+        /// @return An intptr_t that represents the operating system handle for the xtd::net::sockets::socket.
         intptr_t handle() const noexcept;
 
-        bool os_supports_ip_v4() const noexcept;
+        /// @brief Gets a value that indicates whether the xtd::net::sockets::socket is bound to a specific local port.
+        /// @return true if the xtd::net::sockets::socket is bound to a local port; otherwise, false.
+        /// @remarks A socket is considered bound to a local port if it is explicitly bound by calling the xtd::net::sockets::socket::bind method, or implicitly bound by calling members like xtd::net::sockets::socket::connect, xtd::net::sockets::socket::send_to, or xtd::net::sockets::socket::receive_from, which use an ephemeral local port (a free port greater than 1024, selected by the operating system.) Servers use the xtd::net::sockets::socket::bind method to bind to a well-known port so that clients may connect to them.
+        bool is_bound() const noexcept;
         
-        bool os_supports_ip_v6() const noexcept;
+        /// @brief Gets a value that specifies whether the xtd::net::sockets::socket will delay closing a socket in an attempt to send all pending data.
+        /// @return A xtd::net::sockets::sockets::linger_option that specifies how to linger while closing a socket.
+        /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks The xtd::net::sockets::socket::linger_state property changes the way xtd::net::sockets::socket::close method behaves. This property when set modifies the conditions under which the connection can be reset by Winsock. Connection resets can still occur based on the IP protocol behavior.
+        /// @remarks This property controls the length of time that a connection-oriented connection will remain open after a call to xtd::net::sockets::socket::close when data remains to be sent.
+        /// @remarks When you call methods to send data to a peer, this data is placed in the outgoing network buffer. This property can be used to ensure that this data is sent to the remote host before the xtd::net::sockets::socket::close method drops the connection.
+        /// @remarks To enable lingering, create a xtd::net::sockets::linger_option instance containing the desired values, and set the xtd::net::sockets::socket::linger_state property to this instance.
+        /// @remarks The following table describes the behavior of the xtd::net::sockets::socket::close method for the possible values of the xtd::net::sockets::inger_option::enabled property and the xtd::net::sockets::lingeer_option::linger_time property stored in the xtd::net::sockets::socket::linger_state property.
+        /// | xtd::net::sockets::linger_state::enabled | xtd::net::sockets::linger_state::linger_time | Behavior                                                                                                                          |
+        /// |------------------------------------------|----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+        /// | false (disabled), the default value      | The time-out is not applicable, (default).   | Attempts to send pending data until the default IP protocol time-out expires.                                                     |
+        /// | true (enabled)                           | A nonzero time-out.                          | Attempts to send pending data until the specified time-out expires, and if the attempt fails, then Winsock resets the connection. |
+        /// | true (enabled)                           | A zero time-out.                             | Discards any pending data. For connection-oriented socket (TCP, for example), Winsock resets the connection.                      |
+        /// @remarks The IP stack computes the default IP protocol time-out period to use based on the round trip time of the connection. In most cases, the time-out computed by the stack is more relevant than one defined by an application. This is the default behavior for a socket when the xtd::net::sockets::socket::linger_state property is not set.
+        /// @remarks When the xtd::net::sockets::linger_option::linger_time property stored in the xtd::net::sockets::socket::linger_state property is set greater than the default IP protocol time-out, the default IP protocol time-out will still apply and override.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        xtd::net::sockets::linger_option linger_state() const;
+        /// @brief Sets a value that specifies whether the xtd::net::sockets::socket will delay closing a socket in an attempt to send all pending data.
+        /// @param value A xtd::net::sockets::sockets::linger_option that specifies how to linger while closing a socket.
+        /// @return This current instance.
+        /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks The xtd::net::sockets::socket::linger_state property changes the way xtd::net::sockets::socket::close method behaves. This property when set modifies the conditions under which the connection can be reset by Winsock. Connection resets can still occur based on the IP protocol behavior.
+        /// @remarks This property controls the length of time that a connection-oriented connection will remain open after a call to xtd::net::sockets::socket::close when data remains to be sent.
+        /// @remarks When you call methods to send data to a peer, this data is placed in the outgoing network buffer. This property can be used to ensure that this data is sent to the remote host before the xtd::net::sockets::socket::close method drops the connection.
+        /// @remarks To enable lingering, create a xtd::net::sockets::linger_option instance containing the desired values, and set the xtd::net::sockets::socket::linger_state property to this instance.
+        /// @remarks The following table describes the behavior of the xtd::net::sockets::socket::close method for the possible values of the xtd::net::sockets::inger_option::enabled property and the xtd::net::sockets::lingeer_option::linger_time property stored in the xtd::net::sockets::socket::linger_state property.
+        /// | xtd::net::sockets::linger_state::enabled | xtd::net::sockets::linger_state::linger_time | Behavior                                                                                                                          |
+        /// |------------------------------------------|----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+        /// | false (disabled), the default value      | The time-out is not applicable, (default).   | Attempts to send pending data until the default IP protocol time-out expires.                                                     |
+        /// | true (enabled)                           | A nonzero time-out.                          | Attempts to send pending data until the specified time-out expires, and if the attempt fails, then Winsock resets the connection. |
+        /// | true (enabled)                           | A zero time-out.                             | Discards any pending data. For connection-oriented socket (TCP, for example), Winsock resets the connection.                      |
+        /// @remarks The IP stack computes the default IP protocol time-out period to use based on the round trip time of the connection. In most cases, the time-out computed by the stack is more relevant than one defined by an application. This is the default behavior for a socket when the xtd::net::sockets::socket::linger_state property is not set.
+        /// @remarks When the xtd::net::sockets::linger_option::linger_time property stored in the xtd::net::sockets::socket::linger_state property is set greater than the default IP protocol time-out, the default IP protocol time-out will still apply and override.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        socket& linger_state(const xtd::net::sockets::linger_option& value);
+
+        /// @brief Gets the local endpoint.
+        /// @return The EndPoint that the xtd::net::sockets::socket is using for communications.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks The xtd::net::sockets::socket::local_end_point property gets an xtd::net::end_point that contains the local IP address and port number to which your xtd::net::sockets::socket is bound. You must cast this xtd::net::end_point to an xtd::net::ip_end_point before retrieving any information. You can then call the xtd::net::ip_end_point::address method to retrieve the local xtd::net::ip_address, and the xtd::net::ip_end_point::port method to retrieve the local port number.
+        /// @remarks The xtd::net::sockets::socket::local_end_point property is usually set after you make a call to the xtd::net::sockets::socket::bind method. If you allow the system to assign your socket's local IP address and port number, the xtd::net::sockets::socket::local_end_point property will be set after the first I/O operation. For connection-oriented protocols, the first I/O operation would be a call to the xtd::net::sockets::socket::connect or xtd::net::sockets::socket::accept method. For connectionless protocols, the first I/O operation would be any of the send or receive calls.
+        const std::unique_ptr<xtd::net::end_point>& local_end_point() const;
+        
+        /// @brief Gets a value that specifies whether outgoing multicast packets are delivered to the sending application.
+        /// @return true if the xtd::net::sockets::socket receives outgoing multicast packets; otherwise, false.
+        /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @exception xtd::not_supported_exception he Socket is not in the xtd::net::sockets::address_family::inter_network or xtd::net::sockets::address_family::inter_network_v6 families.
+        /// @remarks Multicast is a scalable method for many-to-many communication on the Internet. A process subscribes to a multicast address; then, any packets sent by a subscribed process are received by every other process subscribed to the multicast address.
+        /// @remarks Setting this property on a Transmission Control Protocol (TCP) socket has no effect.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        bool multicast_loopback() const;
+        /// @brief Sets a value that specifies whether outgoing multicast packets are delivered to the sending application.
+        /// @param value true if the xtd::net::sockets::socket receives outgoing multicast packets; otherwise, false.
+        /// @return This current instance.
+        /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @exception xtd::not_supported_exception he Socket is not in the xtd::net::sockets::address_family::inter_network or xtd::net::sockets::address_family::inter_network_v6 families.
+        /// @remarks Multicast is a scalable method for many-to-many communication on the Internet. A process subscribes to a multicast address; then, any packets sent by a subscribed process are received by every other process subscribed to the multicast address.
+        /// @remarks Setting this property on a Transmission Control Protocol (TCP) socket has no effect.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        socket& multicast_loopback(bool value);
+        
+        /// @brief Gets a boolean value that specifies whether the stream xtd::net::sockets::socket is using the Nagle algorithm.
+        /// @return false if the xtd::net::sockets::socket uses the Nagle algorithm; otherwise, true. The default is false.
+        /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks The Nagle algorithm is designed to reduce network traffic by causing the socket to buffer small packets and then combine and send them in one packet under certain circumstances. A TCP packet consists of 40 bytes of header plus the data being sent. When small packets of data are sent with TCP, the overhead resulting from the TCP header can become a significant part of the network traffic. On heavily loaded networks, the congestion resulting from this overhead can result in lost datagrams and retransmissions, as well as excessive propagation time caused by congestion. The Nagle algorithm inhibits the sending of new TCP segments when new outgoing data arrives from the user if any previously transmitted data on the connection remains unacknowledged.
+        /// @remarks The majority of network applications should use the Nagle algorithm.
+        /// @remarks Setting this property on a User Datagram Protocol (UDP) socket will have no effect.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        bool no_delay() const;
+        /// @brief Gets a boolean value that specifies whether the stream xtd::net::sockets::socket is using the Nagle algorithm.
+        /// @param value false if the xtd::net::sockets::socket uses the Nagle algorithm; otherwise, true. The default is false.
+        /// @return This current instance.
+        /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks The Nagle algorithm is designed to reduce network traffic by causing the socket to buffer small packets and then combine and send them in one packet under certain circumstances. A TCP packet consists of 40 bytes of header plus the data being sent. When small packets of data are sent with TCP, the overhead resulting from the TCP header can become a significant part of the network traffic. On heavily loaded networks, the congestion resulting from this overhead can result in lost datagrams and retransmissions, as well as excessive propagation time caused by congestion. The Nagle algorithm inhibits the sending of new TCP segments when new outgoing data arrives from the user if any previously transmitted data on the connection remains unacknowledged.
+        /// @remarks The majority of network applications should use the Nagle algorithm.
+        /// @remarks Setting this property on a User Datagram Protocol (UDP) socket will have no effect.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        socket& no_delay(bool value);
+        
+        /// @brief Indicates whether the underlying operating system and network adaptors support Internet Protocol version 4 (IPv4).
+        /// @return true if the operating system and network adaptors support the IPv4 protocol; otherwise, false.
+        /// @remarks The operating system may support both IPv4 and IPv6 protocols.
+        static bool os_supports_ip_v4() noexcept;
+        
+        /// @brief Indicates whether the underlying operating system and network adaptors support Internet Protocol version 6 (IPv6).
+        /// @return true if the operating system and network adaptors support the IPv6 protocol; otherwise, false.
+        /// @remarks The operating system may support both IPv4 and IPv6 protocols.
+        static bool os_supports_ip_v6() noexcept;
 
         /// @brief Gets a socket option value using platform-specific level and name identifiers.
         /// @param socket_option_level The platform-defined option level.
@@ -307,9 +426,9 @@ namespace xtd {
         struct data {
           xtd::net::sockets::address_family address_family = xtd::net::sockets::address_family::unspecified;
           bool blocking = true;
-          bool bound = false;
           bool connected = false;
           intptr_t handle = 0;
+          bool is_bound = false;
           bool listening = false;
           std::unique_ptr<xtd::net::end_point> local_end_point;
           xtd::net::sockets::protocol_type protocol_type = xtd::net::sockets::protocol_type::unspecified;

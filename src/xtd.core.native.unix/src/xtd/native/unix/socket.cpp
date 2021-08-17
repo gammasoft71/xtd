@@ -165,7 +165,47 @@ int32_t socket::get_socket_option(intptr_t handle, int32_t socket_option_level, 
   return ::getsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), option, reinterpret_cast<socklen_t*>(&option_length));
 }
 
-int32_t socket::io_conttrol(intptr_t handle, int32_t io_control, std::vector<uint8_t>& option_in_value, std::vector<uint8_t>& option_out_value) {
+int32_t socket::get_socket_linger_option(intptr_t handle, bool& enabled, uint32_t& linger_time) {
+  linger l {static_cast<int32_t>(enabled), static_cast<int32_t>(linger_time)};
+  size_t linger_size = 0;
+  int32_t result = ::getsockopt(static_cast<int32_t>(handle), SOL_SOCKET, SO_LINGER, &l, reinterpret_cast<socklen_t*>(&linger_size));
+  if (result == 0) {
+    enabled = static_cast<bool>(l.l_onoff);
+    linger_time = static_cast<uint32_t>(l.l_linger);
+  }
+  return result;
+}
+
+int32_t socket::get_socket_multicast_option(intptr_t handle, int32_t socket_option_name, uint32_t& multicast_address, uint32_t& interface_index) {
+  struct multicast {
+    uint32_t multicast_address;
+    uint32_t interface_index;
+  } m;
+  size_t multicast_size = 0;
+  int32_t result = getsockopt(static_cast<int32_t>(handle), IPPROTO_IP, socket_option_name_to_native(socket_option_name), &m, reinterpret_cast<socklen_t*>(&multicast_size));
+  if (result == 0) {
+    multicast_address = m.multicast_address;
+    interface_index = m.interface_index;
+  }
+  return result;
+}
+
+int32_t socket::get_socket_ip_v6_multicast_option(intptr_t handle, int32_t socket_option_name, std::vector<uint8_t>& multicast_address, uint32_t& interface_index) {
+  struct multicast {
+    uint8_t multicast_address[16];
+    uint32_t interface_index;
+  } m;
+  size_t multicast_size = 0;
+  int32_t result = getsockopt(static_cast<int32_t>(handle), IPPROTO_IP, socket_option_name_to_native(socket_option_name), &m, reinterpret_cast<socklen_t*>(&multicast_size));
+  if (result == 0) {
+    for (auto index = 0U; index < multicast_address.size(); ++index)
+      multicast_address[index] = m.multicast_address[index];
+    interface_index = m.interface_index;
+  }
+  return result;
+}
+
+int32_t socket::io_control(intptr_t handle, int32_t io_control, std::vector<uint8_t>& option_in_value, std::vector<uint8_t>& option_out_value) {
   return -1;
 }
 
@@ -282,6 +322,30 @@ int32_t socket::set_socket_option(intptr_t handle, int32_t socket_option_level, 
     return ::setsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), &timeout, sizeof(timeval));
   }
   return setsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), option, static_cast<socklen_t>(option_length));
+}
+
+int32_t socket::set_socket_linger_option(intptr_t handle, bool enabled, uint32_t linger_time) {
+  linger l {static_cast<int32_t>(enabled), static_cast<int32_t>(linger_time)};
+  return setsockopt(static_cast<int32_t>(handle), SOL_SOCKET, SO_LINGER, &l, static_cast<socklen_t>(sizeof(linger)));
+}
+
+int32_t socket::set_socket_multicast_option(intptr_t handle, int32_t socket_option_name, uint32_t multicast_address, uint32_t interface_index) {
+  struct multicast {
+    uint32_t multicast_address;
+    uint32_t interface_index;
+  } m {multicast_address, interface_index};
+  return setsockopt(static_cast<int32_t>(handle), IPPROTO_TCP, socket_option_name_to_native(socket_option_name), &m, static_cast<socklen_t>(sizeof(multicast)));
+}
+
+int32_t socket::set_socket_ip_v6_multicast_option(intptr_t handle, int32_t socket_option_name, const std::vector<uint8_t>& multicast_address, uint32_t interface_index) {
+  struct multicast {
+    uint8_t multicast_address[16];
+    uint32_t interface_index;
+  } m;
+  for (auto index = 0U; index < multicast_address.size(); ++index)
+    m.multicast_address[index] = multicast_address[index];
+  m.interface_index = interface_index;
+  return setsockopt(static_cast<int32_t>(handle), IPPROTO_IP, socket_option_name_to_native(socket_option_name), &m, static_cast<socklen_t>(sizeof(multicast)));
 }
 
 int32_t socket::shutdown(intptr_t handle, int32_t how) {
