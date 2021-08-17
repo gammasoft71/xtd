@@ -1,4 +1,5 @@
 #include "../../../../include/xtd/bit_converter.h"
+#include "../../../../include/xtd/argument_out_of_range_exception.h"
 #include "../../../../include/xtd/invalid_operation_exception.h"
 #include "../../../../include/xtd/object_closed_exception.h"
 #include "../../../../include/xtd/net/sockets/socket.h"
@@ -29,6 +30,10 @@ socket::socket(xtd::net::sockets::address_family address_family, xtd::net::socke
   data_->protocol_type = protocol_type;
   data_->handle = native::socket::create(static_cast<int32_t>(address_family), static_cast<int32_t>(socket_type), static_cast<int32_t>(protocol_type));
   if (data_->handle == static_cast<intptr_t>(-1)) throw socket_exception(get_last_error(), csf_);
+}
+
+socket::~socket() {
+  if (data_.unique()) close();
 }
 
 address_family socket::address_family() const noexcept {
@@ -126,6 +131,7 @@ const std::unique_ptr<xtd::net::end_point>& socket::local_end_point() const {
 }
 
 bool socket::multicast_loopback() const {
+  if (data_->handle == 0) throw object_closed_exception(csf_);
   if (data_->address_family != address_family::inter_network && data_->address_family != address_family::inter_network_v6) throw not_supported_exception(csf_);
   return as<bool>(get_socket_option(xtd::net::sockets::socket_option_level::ip, xtd::net::sockets::socket_option_name::multicast_loopback));
 }
@@ -157,7 +163,37 @@ xtd::net::sockets::protocol_type socket::protocol_type() const noexcept {
   return data_->protocol_type;
 }
 
-size_t socket::get_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, intptr_t option_value) const {
+size_t socket::receive_buffer_size() const {
+  return as<size_t>(get_socket_option(xtd::net::sockets::socket_option_level::socket, xtd::net::sockets::socket_option_name::receive_buffer));
+}
+
+socket& socket::receive_buffer_size(size_t value) {
+  set_socket_option(xtd::net::sockets::socket_option_level::socket, xtd::net::sockets::socket_option_name::receive_buffer, as<int32_t>(value));
+  return *this;
+}
+
+int32_t socket::receive_timeout() const {
+  return get_socket_option(xtd::net::sockets::socket_option_level::socket, xtd::net::sockets::socket_option_name::receive_timeout);
+}
+
+socket& socket::receive_timeout(int32_t value) {
+  if (value < -1) throw argument_out_of_range_exception(csf_);
+  set_socket_option(xtd::net::sockets::socket_option_level::socket, xtd::net::sockets::socket_option_name::receive_timeout, value);
+  return *this;
+}
+
+const std::unique_ptr<xtd::net::end_point>& socket::remote_end_point() const {
+  if (data_->handle == 0) throw object_closed_exception(csf_);
+  return data_->remote_end_point;
+}
+
+void socket::close() {
+  data_->connected = false;
+  if (data_->handle != 0 && native::socket::destroy(data_->handle) != 0) throw socket_exception(get_last_error(), csf_);
+  data_ = make_shared<data>();
+}
+
+size_t socket::get_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, intptr_t option_value, size_t size_option_value) const {
   if (data_->handle == 0) throw object_closed_exception(csf_);
   size_t size  = 0;
   if (native::socket::get_raw_socket_option(data_->handle, socket_option_level, socket_option_name, option_value, size) != 0) throw socket_exception(get_last_error(), csf_);
@@ -165,15 +201,16 @@ size_t socket::get_raw_socket_option(int32_t socket_option_level, int32_t socket
 }
 
 int32_t socket::get_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name) const {
-  if (socket_option_name == xtd::net::sockets::socket_option_name::linger || socket_option_name == xtd::net::sockets::socket_option_name::add_membership || socket_option_name == xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
   if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (socket_option_name == xtd::net::sockets::socket_option_name::linger || socket_option_name == xtd::net::sockets::socket_option_name::add_membership || socket_option_name == xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
   int32_t result = 0;
-  size_t size = 0;
+  size_t size = sizeof(int32_t);
   if (native::socket::get_socket_option(data_->handle, static_cast<int32_t>(socket_option_level), static_cast<int32_t>(socket_option_name), reinterpret_cast<intptr_t>(&result), size) != 0) throw socket_exception(get_last_error(), csf_);
   return result;
 }
 
 xtd::net::sockets::linger_option socket::get_socket_linger_option() const {
+  if (data_->handle == 0) throw object_closed_exception(csf_);
   bool enabled = false;
   uint32_t linger_time = 0;
   if (native::socket::get_socket_linger_option(data_->handle, enabled, linger_time) != 0) throw socket_exception(get_last_error(), csf_);
@@ -181,18 +218,22 @@ xtd::net::sockets::linger_option socket::get_socket_linger_option() const {
 }
 
 xtd::net::sockets::multicast_option socket::get_socket_multicast_option(xtd::net::sockets::socket_option_name socket_option_name) const {
+  if (data_->handle == 0) throw object_closed_exception(csf_);
   if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
   uint32_t multicast_address = 0;
   uint32_t interface_index = 0;
   if (native::socket::get_socket_multicast_option(data_->handle, static_cast<int32_t>(socket_option_name), multicast_address, interface_index) != 0) throw socket_exception(get_last_error(), csf_);
-  if (!bit_converter::is_little_endian) {
-    multicast_address = ((multicast_address << 24) | ((multicast_address & 0x0000FF00) << 8) | ((multicast_address >> 8) & 0x0000FF00) | (multicast_address >> 24));
-    interface_index = ((interface_index << 24) | ((interface_index & 0x0000FF00) << 8) | ((interface_index >> 8) & 0x0000FF00) | (interface_index >> 24));
-  }
+  //if (!bit_converter::is_little_endian) {
+  //  //multicast_address = ((multicast_address << 24) | ((multicast_address & 0x0000FF00) << 8) | ((multicast_address >> 8) & 0x0000FF00) | (multicast_address >> 24));
+  //  //interface_index = ((interface_index << 24) | ((interface_index & 0x0000FF00) << 8) | ((interface_index >> 8) & 0x0000FF00) | (interface_index >> 24));
+  //}
+  multicast_address = ip_address::network_to_host_order(multicast_address);
+  interface_index = ip_address::network_to_host_order(interface_index);
   return multicast_option(ip_address(multicast_address), interface_index);
 }
 
 xtd::net::sockets::ip_v6_multicast_option socket::get_socket_ip_v6_multicast_option(xtd::net::sockets::socket_option_name socket_option_name) const {
+  if (data_->handle == 0) throw object_closed_exception(csf_);
   if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
   vector<uint8_t> multicast_address;
   uint32_t interface_index = 0;
@@ -205,8 +246,8 @@ void socket::set_socket_option(xtd::net::sockets::socket_option_level socket_opt
 }
 
 void socket::set_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name, int32_t option_value) {
-  if (socket_option_name == xtd::net::sockets::socket_option_name::linger || socket_option_name == xtd::net::sockets::socket_option_name::add_membership || socket_option_name == xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
   if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (socket_option_name == xtd::net::sockets::socket_option_name::linger || socket_option_name == xtd::net::sockets::socket_option_name::add_membership || socket_option_name == xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
   if (native::socket::set_socket_option(data_->handle, static_cast<int32_t>(socket_option_level), static_cast<int32_t>(socket_option_name), reinterpret_cast<intptr_t>(&option_value), sizeof(int32_t)) != 0) throw socket_exception(get_last_error(), csf_);
 }
 
@@ -216,6 +257,7 @@ void socket::set_socket_option(xtd::net::sockets::linger_option option_value) {
 }
 
 void socket::set_socket_option(xtd::net::sockets::socket_option_name socket_option_name, xtd::net::sockets::multicast_option option_value) {
+  if (data_->handle == 0) throw object_closed_exception(csf_);
   if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
   uint32_t multicast_address = option_value.group().address_;
   uint32_t interface_index = option_value.local_adress() != ip_address::none ? option_value.local_adress().address_ : ip_address::host_to_network_order(option_value.interface_index());
@@ -223,6 +265,7 @@ void socket::set_socket_option(xtd::net::sockets::socket_option_name socket_opti
 }
 
 void socket::set_socket_option(xtd::net::sockets::socket_option_name socket_option_name, xtd::net::sockets::ip_v6_multicast_option option_value) {
+  if (data_->handle == 0) throw object_closed_exception(csf_);
   if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
   if (native::socket::set_socket_ip_v6_multicast_option(data_->handle, static_cast<int32_t>(socket_option_name), option_value.group().get_address_bytes(), option_value.interface_index()) != 0) throw socket_exception(get_last_error(), csf_);
 }
