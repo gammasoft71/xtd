@@ -117,6 +117,29 @@ namespace xtd {
       /// @return Zero (0) if succeed; otherwise on error.
       /// @warning Internal use only
       static int32_t get_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, void* option, size_t& option_length);
+      /// @brief Gets linger option on socket.
+      /// @param handle The socket handle.
+      /// @param enabled Indicates whether to linger after the socket is closed..
+      /// @param linger_time The amount of time to remain connected after calling the socket close method if data remains to be sent.
+      /// @return Zero (0) if succeed; otherwise on error.
+      /// @warning Internal use only
+      static int32_t get_socket_linger_option(intptr_t handle, bool& enabled, uint32_t& linger_time);
+      /// @brief Gets multicast option on socket.
+      /// @param handle The socket handle.
+      /// @param socket_option_name One of socket option name values (see socket_option_name_constants.h).
+      /// @param multicast_address The local IP address associated with a multicast group.
+      /// @param interface_index The interface index that is associated with a multicast group.
+      /// @return Zero (0) if succeed; otherwise on error.
+      /// @warning Internal use only
+      static int32_t get_socket_multicast_option(intptr_t handle, int32_t socket_option_name, uint32_t& multicast_address, uint32_t& interface_index);
+      /// @brief Gets IP v6 multicast option on socket.
+      /// @param handle The socket handle.
+      /// @param socket_option_name One of socket option name values (see socket_option_name_constants.h).
+      /// @param multicast_address The local IP address associated with a multicast group.
+      /// @param interface_index The interface index that is associated with a multicast group.
+      /// @return Zero (0) if succeed; otherwise on error.
+      /// @warning Internal use only
+      static int32_t get_socket_ip_v6_multicast_option(intptr_t handle, int32_t socket_option_name, std::vector<uint8_t>& multicast_address, uint32_t& interface_index);
       /// @brief Sets low-level operating modes for the Socket using the IOControlCode enumeration to specify control codes.
       /// @param handle The socket handle.
       /// @param io_control A io control code value that specifies the control code of the operation to perform (see io_control_code_constants.h).
@@ -124,7 +147,7 @@ namespace xtd {
       /// @param option_out_value An array of type byte that contains the output data returned by the operation.
       /// @return Zero (0) if succeed; otherwise on error.
       /// @warning Internal use only
-      static int32_t io_conttrol(intptr_t handle, int32_t io_control, std::vector<uint8_t>& option_in_value, std::vector<uint8_t>& option_out_value);
+      static int32_t io_control(intptr_t handle, int32_t io_control, std::vector<uint8_t>& option_in_value, std::vector<uint8_t>& option_out_value);
       /// @brief Llistens for connections on a socket.
       /// @param handle The socket handle.
       /// @param backlog The maximum length for the queue of pending connections.
@@ -207,6 +230,30 @@ namespace xtd {
       /// @return Zero (0) if succeed; otherwise on error.
       /// @warning Internal use only
       static int32_t set_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, void* option, size_t option_length);
+      /// @brief Sets linger option on socket.
+      /// @param handle The socket handle.
+      /// @param enabled Indicates whether to linger after the socket is closed..
+      /// @param linger_time The amount of time to remain connected after calling the socket close method if data remains to be sent.
+      /// @return Zero (0) if succeed; otherwise on error.
+      /// @warning Internal use only
+      static int32_t set_socket_linger_option(intptr_t handle, bool enabled, uint32_t linger_time);
+      /// @brief Sets multicast option on socket.
+      /// @param handle The socket handle.
+      /// @param socket_option_name One of socket option name values (see socket_option_name_constants.h).
+      /// @param multicast_address The local IP address associated with a multicast group.
+      /// @param interface_index The interface index that is associated with a multicast group.
+      /// @return Zero (0) if succeed; otherwise on error.
+      /// @warning Internal use only
+      static int32_t set_socket_multicast_option(intptr_t handle, int32_t socket_option_name, uint32_t multicast_address, uint32_t interface_index);
+      /// @brief Sets IP v6 multicast option on socket.
+      /// @param handle The socket handle.
+      /// @param socket_option_name One of socket option name values (see socket_option_name_constants.h).
+      /// @param multicast_address The local IP address associated with a multicast group.
+      /// @param interface_index The interface index that is associated with a multicast group.
+      /// @param linger_time The amount of time to remain connected after calling the socket close method if data remains to be sent.
+      /// @return Zero (0) if succeed; otherwise on error.
+      /// @warning Internal use only
+      static int32_t set_socket_ip_v6_multicast_option(intptr_t handle, int32_t socket_option_name, const std::vector<uint8_t>& multicast_address, uint32_t interface_index);
       /// @brief Shut down part of a full-duplex connection.
       /// @param handle The socket handle.
       /// @param how One of socket shutdown values (see socket_shutdown_constants.h).
