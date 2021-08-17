@@ -220,7 +220,7 @@ namespace xtd {
       /// @param option_length Contains the option value size.
       /// @return Zero (0) if succeed; otherwise on error.
       /// @warning Internal use only
-      static int32_t set_raw_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, void* option, size_t option_length);
+      static int32_t set_raw_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, const void* option, size_t option_length);
       /// @brief Sets options on socket.
       /// @param handle The socket handle.
       /// @param socket_option_level One of socket option level values (see socket_option_level_constants.h).
@@ -229,7 +229,7 @@ namespace xtd {
       /// @param option_length Contains the option value size.
       /// @return Zero (0) if succeed; otherwise on error.
       /// @warning Internal use only
-      static int32_t set_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, void* option, size_t option_length);
+      static int32_t set_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, const void* option, size_t option_length);
       /// @brief Sets linger option on socket.
       /// @param handle The socket handle.
       /// @param enabled Indicates whether to linger after the socket is closed..
