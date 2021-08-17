@@ -103,6 +103,10 @@ bool socket::get_os_supports_ip_v6() noexcept {
   return true;
 }
 
+int32_t socket::get_raw_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, void* option, size_t& option_length) {
+  return ::getsockopt(static_cast<SOCKET>(handle), socket_option_level, socket_option_name, reinterpret_cast<char*>(option), reinterpret_cast<int32_t*>(&option_length));
+}
+
 int32_t socket::get_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, void* option, size_t& option_length) {
   return ::getsockopt(static_cast<SOCKET>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), reinterpret_cast<char*>(option), reinterpret_cast<int32_t*>(&option_length));
 }
@@ -201,6 +205,10 @@ int32_t socket::send_to(intptr_t handle, const std::vector<uint8_t>& buffer, siz
 int32_t socket::set_blocking(intptr_t handle, bool blocking) {
   u_long mode = blocking ? 0 : 1;
   return ioctlsocket(static_cast<SOCKET>(handle), FIONBIO, &mode);
+}
+
+int32_t socket::set_raw_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, void* option, size_t option_length) {
+  return setsockopt(static_cast<SOCKET>(handle), socket_option_level, socket_option_name, reinterpret_cast<char*>(option), static_cast<int32_t>(option_length));
 }
 
 int32_t socket::set_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, void* option, size_t option_length) {

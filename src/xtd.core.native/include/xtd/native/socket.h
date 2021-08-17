@@ -101,9 +101,18 @@ namespace xtd {
       static bool get_os_supports_ip_v6() noexcept;
       /// @brief Gets options on socket.
       /// @param handle The socket handle.
+      /// @param socket_option_level The platform-defined option level.
+      /// @param socket_option_name The platform-defined option name.
+      /// @param option The option is a result paramter of that is filled with the option value.
+      /// @param option_length The option size will contains the size of option value.
+      /// @return Zero (0) if succeed; otherwise on error.
+      /// @warning Internal use only
+      static int32_t get_raw_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, void* option, size_t& option_length);
+      /// @brief Gets options on socket.
+      /// @param handle The socket handle.
       /// @param socket_option_level One of socket option level values (see socket_option_level_constants.h).
       /// @param socket_option_name One of socket option name values (see socket_option_name_constants.h).
-      /// @param option The option is a result paramter of thatt is filled with the option value.
+      /// @param option The option is a result paramter of that is filled with the option value.
       /// @param option_length The option size will contains the size of option value.
       /// @return Zero (0) if succeed; otherwise on error.
       /// @warning Internal use only
@@ -180,6 +189,15 @@ namespace xtd {
       /// @return Zero (0) if succeed; otherwise on error.
       /// @warning Internal use only
       static int32_t set_blocking(intptr_t handle, bool blocking);
+      /// @brief Sets options on socket.
+      /// @param handle The socket handle.
+      /// @param socket_option_level The platform-defined option name.
+      /// @param socket_option_name The value to which the option should be set.
+      /// @param option Contains the option value.
+      /// @param option_length Contains the option value size.
+      /// @return Zero (0) if succeed; otherwise on error.
+      /// @warning Internal use only
+      static int32_t set_raw_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, void* option, size_t option_length);
       /// @brief Sets options on socket.
       /// @param handle The socket handle.
       /// @param socket_option_level One of socket option level values (see socket_option_level_constants.h).

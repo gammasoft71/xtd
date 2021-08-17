@@ -101,6 +101,7 @@ namespace xtd {
         /// @exception xtd::not_suupported_exception The socket is not in the xtd::net::sockets::adddress_family::inter_network family.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         bool dont_fragment() const;
         /// @brief Sets a value that specifies whether the xtd::net::sockets::socket allows Internet Protocol (IP) datagrams to be fragmented.
         /// @param value true if the Socket doesn't allow datagram fragmentation; otherwise, false. The default is true.
@@ -108,6 +109,7 @@ namespace xtd {
         /// @exception xtd::not_suupported_exception The socket is not in the xtd::net::sockets::adddress_family::inter_network family.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         socket& dont_fragment(bool value);
 
         /// @brief Gets a value that specifies whether the xtd::net::sockets::socket is a dual-mode socket used for both IPv4 and IPv6.
@@ -115,16 +117,33 @@ namespace xtd {
         /// @exception xtd::not_suupported_exception The socket is not in the xtd::net::sockets::adddress_family::inter_network_v6 family.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         bool dual_mode() const;
-        /// @brief SGets a value that specifies whether the xtd::net::sockets::socket is a dual-mode socket used for both IPv4 and IPv6.
+        /// @brief Sets a value that specifies whether the xtd::net::sockets::socket is a dual-mode socket used for both IPv4 and IPv6.
         /// @param value true if the xtd::net::sockets::socket is a dual-mode socket; otherwise, false. The default is true if the socket was created by calling the xtd::net::sockets::socket(xtd::net::sockets::socket_type, xtd::net::sockets::protocol_type) constructor and the operating system supports IPv6; otherwise, the default is false.
         /// @return This current instance.
         /// @exception xtd::not_suupported_exception The socket is not in the xtd::net::sockets::adddress_family::inter_network_v6 family.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         socket& dual_mode(bool value);
         
+        /// @brief Gets a bool value that specifies whether the xtd::net::sockets::socket can send or receive broadcast packets.
+        /// @return true if the xtd::net::sockets::socket allows broadcast packets; otherwise, false. The default is false.
+        /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks Broadcasting is limited to a specific subnet, and must use User Datagram Protocol (UDP.) For Internet Protocol version 4, you can broadcast to your local subnet by sending a packet to 255.255.255.255; or you can use the directed broadcast address, which is the network portion of an Internet Protocol (IP) address with all bits set in the host portion. For example, if your IP address is 192.168.1.40 (a Class C address, with a netmask of 255.255.255.0 -- the network portion is the first three octets, and the host portion is the last octet), your directed broadcast address is 192.168.1.255.
+        /// @remarks Setting this property on a Transmission Control Protocol (TCP) socket will have no effect.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         bool enable_broadcast() const;
+        /// @brief Sets a bool value that specifies whether the xtd::net::sockets::socket can send or receive broadcast packets.
+        /// @param value true if the xtd::net::sockets::socket allows broadcast packets; otherwise, false. The default is false.
+        /// @return This current instance.
+        /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks Broadcasting is limited to a specific subnet, and must use User Datagram Protocol (UDP.) For Internet Protocol version 4, you can broadcast to your local subnet by sending a packet to 255.255.255.255; or you can use the directed broadcast address, which is the network portion of an Internet Protocol (IP) address with all bits set in the host portion. For example, if your IP address is 192.168.1.40 (a Class C address, with a netmask of 255.255.255.0 -- the network portion is the first three octets, and the host portion is the last octet), your directed broadcast address is 192.168.1.255.
+        /// @remarks Setting this property on a Transmission Control Protocol (TCP) socket will have no effect.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         socket& enable_broadcast(bool value);
         
         intptr_t handle() const noexcept;
@@ -133,70 +152,15 @@ namespace xtd {
         
         bool os_supports_ip_v6() const noexcept;
 
-        /// @brief Returns the value of a specified xtd::net::sockets::socket option, represented as integer.
-        /// @param socket_option_level One of the xtd::net::sockets::socket_option_level values.
-        /// @param socket_option_name One of the xtd::net::sockets::socket_option_name values.
-        /// @return An object that represents the value of the option.
+        /// @brief Gets a socket option value using platform-specific level and name identifiers.
+        /// @param socket_option_level The platform-defined option level.
+        /// @param socket_option_name The platform-defined option name.
+        /// @param option_value The pointer into which the retrieved option value should be stored.
+        /// @return The number of bytes written into option_value for a successfully retrieved value.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
-        /// @remarks xtd::net::sockets::socket options determine the behavior of the current Socket. Use this overload to get the xtd::net::sockets::socket_option_name::linger, xtd::net::sockets::socket_option_name::add_membership, and xtd::net::sockets::socket_option_name::xtd::net::sockets::socket_option_name::drop_membership xtd::net::sockets::socket options. For the xtd::net::sockets::socket_option_name::llinger option, use xtd::net::sockets::socket_option_level::socket for the option_level parameter. For xtd::net::sockets::socket_option_name::add_membership and xtd::net::sockets::socket_option_name::drop_membership, use xtd::net::sockets::socket_option_level::ip. If you want to set the value of any of the options listed above, use the xtd::net::sockets::socket_option_name::xtd::net::sockets::socket::set_socket_option method.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exceptionxtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
-        template<typename value_t>
-        value_t get_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name) const {
-          throw xtd::argument_exception(csf_);
-        }
-        
-        /// @brief Returns the value of a specified xtd::net::sockets::socket option, represented as integer.
-        /// @param socket_option_level One of the xtd::net::sockets::socket_option_level values.
-        /// @param socket_option_name One of the xtd::net::sockets::socket_option_name values.
-        /// @return An object that represents the value of the option.
-        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
-        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
-        /// @remarks xtd::net::sockets::socket options determine the behavior of the current Socket. Use this overload to get the xtd::net::sockets::socket_option_name::linger, xtd::net::sockets::socket_option_name::add_membership, and xtd::net::sockets::socket_option_name::xtd::net::sockets::socket_option_name::drop_membership xtd::net::sockets::socket options. For the xtd::net::sockets::socket_option_name::llinger option, use xtd::net::sockets::socket_option_level::socket for the option_level parameter. For xtd::net::sockets::socket_option_name::add_membership and xtd::net::sockets::socket_option_name::drop_membership, use xtd::net::sockets::socket_option_level::ip. If you want to set the value of any of the options listed above, use the xtd::net::sockets::socket_option_name::xtd::net::sockets::socket::set_socket_option method.
-        /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exceptionxtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
-        template<>
-        int32_t get_socket_option<int32_t>(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name) const {
-          return get_socket_option(socket_option_level, socket_option_name);
-        }
-        
-        /// @brief Returns the value of a specified xtd::net::sockets::socket option, represented as integer.
-        /// @param socket_option_level One of the xtd::net::sockets::socket_option_level values.
-        /// @param socket_option_name One of the xtd::net::sockets::socket_option_name values.
-        /// @return An object that represents the value of the option.
-        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
-        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
-        /// @remarks xtd::net::sockets::socket options determine the behavior of the current Socket. Use this overload to get the xtd::net::sockets::socket_option_name::linger, xtd::net::sockets::socket_option_name::add_membership, and xtd::net::sockets::socket_option_name::xtd::net::sockets::socket_option_name::drop_membership xtd::net::sockets::socket options. For the xtd::net::sockets::socket_option_name::llinger option, use xtd::net::sockets::socket_option_level::socket for the option_level parameter. For xtd::net::sockets::socket_option_name::add_membership and xtd::net::sockets::socket_option_name::drop_membership, use xtd::net::sockets::socket_option_level::ip. If you want to set the value of any of the options listed above, use the xtd::net::sockets::socket_option_name::xtd::net::sockets::socket::set_socket_option method.
-        /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exceptionxtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
-        template<>
-        xtd::net::sockets::linger_option get_socket_option<xtd::net::sockets::linger_option>(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name) const {
-          throw xtd::not_implemented_exception(csf_);
-        }
-        
-        /// @brief Returns the value of a specified xtd::net::sockets::socket option, represented as integer.
-        /// @param socket_option_level One of the xtd::net::sockets::socket_option_level values.
-        /// @param socket_option_name One of the xtd::net::sockets::socket_option_name values.
-        /// @return An object that represents the value of the option.
-        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
-        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
-        /// @remarks xtd::net::sockets::socket options determine the behavior of the current Socket. Use this overload to get the xtd::net::sockets::socket_option_name::linger, xtd::net::sockets::socket_option_name::add_membership, and xtd::net::sockets::socket_option_name::xtd::net::sockets::socket_option_name::drop_membership xtd::net::sockets::socket options. For the xtd::net::sockets::socket_option_name::llinger option, use xtd::net::sockets::socket_option_level::socket for the option_level parameter. For xtd::net::sockets::socket_option_name::add_membership and xtd::net::sockets::socket_option_name::drop_membership, use xtd::net::sockets::socket_option_level::ip. If you want to set the value of any of the options listed above, use the xtd::net::sockets::socket_option_name::xtd::net::sockets::socket::set_socket_option method.
-        /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exceptionxtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
-        template<>
-        xtd::net::sockets::multicast_option get_socket_option<xtd::net::sockets::multicast_option>(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name) const {
-          throw xtd::not_implemented_exception(csf_);
-        }
-        
-        /// @brief Returns the value of a specified xtd::net::sockets::socket option, represented as integer.
-        /// @param socket_option_level One of the xtd::net::sockets::socket_option_level values.
-        /// @param socket_option_name One of the xtd::net::sockets::socket_option_name values.
-        /// @return An object that represents the value of the option.
-        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
-        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
-        /// @remarks xtd::net::sockets::socket options determine the behavior of the current Socket. Use this overload to get the xtd::net::sockets::socket_option_name::linger, xtd::net::sockets::socket_option_name::add_membership, and xtd::net::sockets::socket_option_name::xtd::net::sockets::socket_option_name::drop_membership xtd::net::sockets::socket options. For the xtd::net::sockets::socket_option_name::llinger option, use xtd::net::sockets::socket_option_level::socket for the option_level parameter. For xtd::net::sockets::socket_option_name::add_membership and xtd::net::sockets::socket_option_name::drop_membership, use xtd::net::sockets::socket_option_level::ip. If you want to set the value of any of the options listed above, use the xtd::net::sockets::socket_option_name::xtd::net::sockets::socket::set_socket_option method.
-        /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exceptionxtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
-        template<>
-        xtd::net::sockets::ip_v6_multicast_option get_socket_option<xtd::net::sockets::ip_v6_multicast_option>(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name) const {
-          throw xtd::not_implemented_exception(csf_);
-        }
+        size_t get_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, void* option_value) const;
 
         /// @brief Returns the value of a specified xtd::net::sockets::socket option, represented as integer.
         /// @param socket_option_level One of the xtd::net::sockets::socket_option_level values.
@@ -204,11 +168,35 @@ namespace xtd {
         /// @return An object that represents the value of the option.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
-        /// @remarks xtd::net::sockets::socket options determine the behavior of the current Socket. Use this overload to get the xtd::net::sockets::socket_option_name::linger, xtd::net::sockets::socket_option_name::add_membership, and xtd::net::sockets::socket_option_name::xtd::net::sockets::socket_option_name::drop_membership xtd::net::sockets::socket options. For the xtd::net::sockets::socket_option_name::llinger option, use xtd::net::sockets::socket_option_level::socket for the option_level parameter. For xtd::net::sockets::socket_option_name::add_membership and xtd::net::sockets::socket_option_name::drop_membership, use xtd::net::sockets::socket_option_level::ip. If you want to set the value of any of the options listed above, use the xtd::net::sockets::socket_option_name::xtd::net::sockets::socket::set_socket_option method.
+        /// @remarks xtd::net::sockets::socket options determine the behavior of the current xtd::net::sockets::socket.
+        /// @remarks Use xtd::net::sockets::socket::get_socket_linger_option to get the xtd::net::sockets::socket_option_name::linger.
+        /// @remarks Use xtd::net::sockets::socket::get_socket_multicast_option xtd::net::sockets::socket_option_name::add_membership, and xtd::net::sockets::socket_option_name::xtd::net::sockets::socket_option_name::drop_membership xtd::net::sockets::socket options for IP v4 socket.
+        /// @remarks Use xtd::net::sockets::socket::get_socket_ip_v6__multicast_option xtd::net::sockets::socket_option_name::add_membership, and xtd::net::sockets::socket_option_name::xtd::net::sockets::socket_option_name::drop_membership xtd::net::sockets::socket options for IP v6 socket.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exceptionxtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
         int32_t get_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name) const;
-        
-        /// @brief Sets the specified Socket option to the specified integer value.
+        /// @brief Returns the linger xtd::net::sockets::socket option, represented as xtd::net::sockets::linger_option.
+        /// @return An xtd::net::sockets::linger_option that represents the value of the linger option.
+        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks xtd::net::sockets::socket options determine the behavior of the current xtd::net::sockets::socket. Use this overload to get the xtd::net::sockets::socket_option_name::linger, xtd::net::sockets::socket_option_name::add_membership, and xtd::net::sockets::socket_option_name::xtd::net::sockets::socket_option_name::drop_membership xtd::net::sockets::socket options. For the xtd::net::sockets::socket_option_name::llinger option, use xtd::net::sockets::socket_option_level::socket for the option_level parameter. For xtd::net::sockets::socket_option_name::add_membership and xtd::net::sockets::socket_option_name::drop_membership, use xtd::net::sockets::socket_option_level::ip. If you want to set the value of any of the options listed above, use the xtd::net::sockets::socket_option_name::xtd::net::sockets::socket::set_socket_option method.
+        /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exceptionxtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
+        xtd::net::sockets::linger_option get_socket_linger_option() const;
+        /// @brief Returns the multicast xtd::net::sockets::socket option, represented as xtd::net::sockets::multicast_option.
+        /// @param socket_option_name One of the xtd::net::sockets::socket_option_name values. Only xtd::net::sockets::socket_option_name::add_membership and xtd::net::sockets::socket_option_name::drop_membership values are accexpted.
+        /// @return An xtd::net::sockets::linger_option that represents the value of the multicast option.
+        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exceptionxtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
+        xtd::net::sockets::multicast_option get_socket_multicast_option(xtd::net::sockets::socket_option_name socket_option_name) const;
+        /// @brief Returns the multicast xtd::net::sockets::socket option, represented as xtd::net::sockets::ip_v6_multicast_option.
+        /// @param socket_option_name One of the xtd::net::sockets::socket_option_name values. Only xtd::net::sockets::socket_option_name::add_membership and xtd::net::sockets::socket_option_name::drop_membership values are accexpted.
+        /// @return An xtd::net::sockets::linger_option that represents the value of the multicast option.
+        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exceptionxtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
+        xtd::net::sockets::ip_v6_multicast_option get_socket_ip_v6_multicast_option(xtd::net::sockets::socket_option_name socket_option_name) const;
+
+        /// @brief Sets the specified xtd::net::sockets::socket option to the specified integer value.
         /// @param socket_option_level One of the xtd::net::sockets::socket_option_level values.
         /// @param socket_option_name One of the xtd::net::sockets::socket_option_name values.
         /// @param option_value A value of the option.
@@ -239,7 +227,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         void set_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name, bool option_value);
         
-        /// @brief Sets the specified Socket option to the specified integer value.
+        /// @brief Sets the specified xtd::net::sockets::socket option to the specified integer value.
         /// @param socket_option_level One of the xtd::net::sockets::socket_option_level values.
         /// @param socket_option_name One of the xtd::net::sockets::socket_option_name values.
         /// @param option_value A value of the option.
@@ -280,7 +268,39 @@ namespace xtd {
         /// @remarks <br />For more information on these options, refer to the xtd::net::sockets::socket_option_name enumeration.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         void set_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name, int32_t option_value);
+        /// @brief Sets the linger xtd::net::sockets::socket option to the specified integer value.
+        /// @param option_value A value of the option.
+        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        void set_socket_option(xtd::net::sockets::linger_option option_value);
+        /// @brief Sets the linger xtd::net::sockets::socket option to the specified integer value.
+        /// @param socket_option_name One of the xtd::net::sockets::socket_option_name values. Only xtd::net::sockets::socket_option_name::add_membership and xtd::net::sockets::socket_option_name::drop_membership values are accexpted.
+        /// @param option_value A value of the option.
+        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        void set_socket_option(xtd::net::sockets::socket_option_name socket_option_name, xtd::net::sockets::multicast_option option_value);
+        /// @brief Sets the linger xtd::net::sockets::socket option to the specified integer value.
+        /// @param socket_option_name One of the xtd::net::sockets::socket_option_name values. Only xtd::net::sockets::socket_option_name::add_membership and xtd::net::sockets::socket_option_name::drop_membership values are accexpted.
+        /// @param option_value A value of the option.
+        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        void set_socket_option(xtd::net::sockets::socket_option_name socket_option_name, xtd::net::sockets::ip_v6_multicast_option option_value);
 
+        /// @brief Sets a socket option value using platform-specific level and name identifiers.
+        /// @param socket_option_level The platform-defined option name.
+        /// @param socket_option_name The platform-defined option name.
+        /// @param option_value A pointer of the option value.
+        /// @param size_option_value The size of the option value.
+        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks In general, the SetSocketOption method should be used whenever setting a Socket option.
+        /// @remarks The SetRawSocketOption(Int32, Int32, ReadOnlySpan<Byte>) method should be used only when SocketOptionLevel and SocketOptionName do not expose the required option.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        void set_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, void* option_value, size_t option_value_size);
+        
       private:
         static xtd::net::sockets::socket_error get_last_error();
         struct data {
