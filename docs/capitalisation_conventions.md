@@ -107,7 +107,7 @@ public:
 * **Members** : end by _
 
 ```c++
-struct unsigned_integer_value_type {
+struct unsigned_integer {
   ...
 private:
   uint32_t value_;
