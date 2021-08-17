@@ -24,7 +24,7 @@ namespace unit_tests {
 
     void test_method_(constructor_with_socket_type_stream_and_protocol_type_tcp) {
       socket s(socket_type::stream, protocol_type::tcp);
-      if (s.os_supports_ip_v6()) assert::are_equal(address_family::inter_network_v6, s.address_family(), line_info_);
+      if (socket::os_supports_ip_v6()) assert::are_equal(address_family::inter_network_v6, s.address_family(), line_info_);
       else assert::are_equal(address_family::inter_network, s.address_family(), line_info_);
       assert::is_zero(s.available(), line_info_);
       assert::is_true(s.blocking(), line_info_);

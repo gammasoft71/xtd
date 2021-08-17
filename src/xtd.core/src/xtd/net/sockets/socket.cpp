@@ -153,6 +153,10 @@ bool socket::os_supports_ip_v6() noexcept {
   return native::socket::get_os_supports_ip_v6();
 }
 
+xtd::net::sockets::protocol_type socket::protocol_type() const noexcept {
+  return data_->protocol_type;
+}
+
 size_t socket::get_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, void* option_value) const {
   if (data_->handle == 0) throw object_closed_exception(csf_);
   size_t size  = 0;

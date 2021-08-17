@@ -271,6 +271,11 @@ namespace xtd {
         /// @return true if the operating system and network adaptors support the IPv6 protocol; otherwise, false.
         /// @remarks The operating system may support both IPv4 and IPv6 protocols.
         static bool os_supports_ip_v6() noexcept;
+        
+        /// @brief Gets the protocol type of the xtd::net::sockets::socket.
+        /// @return One of the ProtocolType values.
+        /// @remarks The xtd::net::sockets::socket::protocol_type property is set when thextd::net::sockets::socket is created, and specifies the protocol used by that xtd::net::sockets::socket.
+        xtd::net::sockets::protocol_type protocol_type() const noexcept;
 
         /// @brief Gets a socket option value using platform-specific level and name identifiers.
         /// @param socket_option_level The platform-defined option level.

@@ -312,13 +312,13 @@ int32_t socket::set_blocking(intptr_t handle, bool blocking) {
   return result;
 }
 
-int32_t socket::set_raw_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, void* option, size_t option_length) {
+int32_t socket::set_raw_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, const void* option, size_t option_length) {
   return setsockopt(static_cast<int32_t>(handle), socket_option_level, socket_option_name, option, static_cast<socklen_t>(option_length));
 }
 
-int32_t socket::set_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, void* option, size_t option_length) {
+int32_t socket::set_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, const void* option, size_t option_length) {
   if (socket_option_level == SOCKET_OPTION_LEVEL_SOCKET && (socket_option_name == SOCKET_OPTION_NAME_SEND_TIMEOUT || socket_option_name == SOCKET_OPTION_NAME_RECEIVE_TIMEOUT)) {
-    timeval timeout = {*reinterpret_cast<int32_t*>(option) / 1000, *reinterpret_cast<int32_t*>(option) % 1000 * 1000};
+    timeval timeout = {*reinterpret_cast<const int32_t*>(option) / 1000, *reinterpret_cast<const int32_t*>(option) % 1000 * 1000};
     return ::setsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), &timeout, sizeof(timeval));
   }
   return setsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), option, static_cast<socklen_t>(option_length));
