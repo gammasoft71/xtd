@@ -150,6 +150,10 @@ bool socket::get_os_supports_ip_v6() noexcept {
   return true;
 }
 
+int32_t socket::get_raw_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, void* option, size_t& option_length) {
+  return ::getsockopt(static_cast<int32_t>(handle), socket_option_level, socket_option_name, option, reinterpret_cast<socklen_t*>(&option_length));
+}
+
 int32_t socket::get_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, void* option, size_t& option_length) {
   if (socket_option_level == SOCKET_OPTION_LEVEL_SOCKET && (socket_option_name == SOCKET_OPTION_NAME_SEND_TIMEOUT || socket_option_name == SOCKET_OPTION_NAME_RECEIVE_TIMEOUT)) {
     timeval timeout = {0, 0};
@@ -266,6 +270,10 @@ int32_t socket::set_blocking(intptr_t handle, bool blocking) {
   }
   
   return result;
+}
+
+int32_t socket::set_raw_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, void* option, size_t option_length) {
+  return setsockopt(static_cast<int32_t>(handle), socket_option_level, socket_option_name, option, static_cast<socklen_t>(option_length));
 }
 
 int32_t socket::set_socket_option(intptr_t handle, int32_t socket_option_level, int32_t socket_option_name, void* option, size_t option_length) {

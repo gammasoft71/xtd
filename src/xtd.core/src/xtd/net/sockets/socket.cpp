@@ -103,13 +103,34 @@ bool socket::os_supports_ip_v6() const noexcept {
   return native::socket::get_os_supports_ip_v6();
 }
 
-int32_t socket::get_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name) const {
+size_t socket::get_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, void* option_value) const {
   if (data_->handle == 0) throw object_closed_exception(csf_);
+  size_t size  = 0;
+  if (native::socket::get_raw_socket_option(data_->handle, socket_option_level, socket_option_name, option_value, size) != 0) throw socket_exception(get_last_error(), csf_);
+  return size;
+}
+
+int32_t socket::get_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name) const {
   if (socket_option_name == xtd::net::sockets::socket_option_name::linger || socket_option_name == xtd::net::sockets::socket_option_name::add_membership || socket_option_name == xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception(csf_);
   int32_t result = 0;
-  size_t size  = sizeof(int32_t);
+  size_t size = 0;
   if (native::socket::get_socket_option(data_->handle, static_cast<int32_t>(socket_option_level), static_cast<int32_t>(socket_option_name), &result, size) != 0) throw socket_exception(get_last_error(), csf_);
   return result;
+}
+
+xtd::net::sockets::linger_option socket::get_socket_linger_option() const {
+  throw xtd::not_implemented_exception(csf_);
+}
+
+xtd::net::sockets::multicast_option socket::get_socket_multicast_option(xtd::net::sockets::socket_option_name socket_option_name) const {
+  if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
+  throw xtd::not_implemented_exception(csf_);
+}
+
+xtd::net::sockets::ip_v6_multicast_option socket::get_socket_ip_v6_multicast_option(xtd::net::sockets::socket_option_name socket_option_name) const {
+  if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
+  throw xtd::not_implemented_exception(csf_);
 }
 
 void socket::set_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name, bool option_value) {
@@ -117,8 +138,28 @@ void socket::set_socket_option(xtd::net::sockets::socket_option_level socket_opt
 }
 
 void socket::set_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name, int32_t option_value) {
+  if (socket_option_name == xtd::net::sockets::socket_option_name::linger || socket_option_name == xtd::net::sockets::socket_option_name::add_membership || socket_option_name == xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
   if (data_->handle == 0) throw object_closed_exception(csf_);
   if (native::socket::set_socket_option(data_->handle, static_cast<int32_t>(socket_option_level), static_cast<int32_t>(socket_option_name), &option_value, sizeof(int32_t)) != 0) throw socket_exception(get_last_error(), csf_);
+}
+
+void socket::set_socket_option(xtd::net::sockets::linger_option option_value) {
+  throw xtd::not_implemented_exception(csf_);
+}
+
+void socket::set_socket_option(xtd::net::sockets::socket_option_name socket_option_name, xtd::net::sockets::multicast_option option_value) {
+  if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
+  throw xtd::not_implemented_exception(csf_);
+}
+
+void socket::set_socket_option(xtd::net::sockets::socket_option_name socket_option_name, xtd::net::sockets::ip_v6_multicast_option option_value) {
+  if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
+  throw xtd::not_implemented_exception(csf_);
+}
+
+void socket::set_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, void* option_value, size_t option_value_size) {
+  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (native::socket::set_raw_socket_option(data_->handle, socket_option_level, socket_option_name, &option_value, option_value_size) != 0) throw socket_exception(get_last_error(), csf_);
 }
 
 socket_error socket::get_last_error() {
