@@ -99,14 +99,14 @@ namespace xtd {
         bool connected() const noexcept;
 
         /// @brief Gets a value that specifies whether the xtd::net::sockets::socket allows Internet Protocol (IP) datagrams to be fragmented.
-        /// @return true if the Socket doesn't allow datagram fragmentation; otherwise, false. The default is true.
+        /// @return true if the xtd::net::sockets::socket doesn't allow datagram fragmentation; otherwise, false. The default is true.
         /// @exception xtd::not_suupported_exception The socket is not in the xtd::net::sockets::adddress_family::inter_network family.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         bool dont_fragment() const;
         /// @brief Sets a value that specifies whether the xtd::net::sockets::socket allows Internet Protocol (IP) datagrams to be fragmented.
-        /// @param value true if the Socket doesn't allow datagram fragmentation; otherwise, false. The default is true.
+        /// @param value true if the xtd::net::sockets::socket doesn't allow datagram fragmentation; otherwise, false. The default is true.
         /// @return This current instance.
         /// @exception xtd::not_suupported_exception The socket is not in the xtd::net::sockets::adddress_family::inter_network family.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
@@ -227,7 +227,7 @@ namespace xtd {
         /// @return true if the xtd::net::sockets::socket receives outgoing multicast packets; otherwise, false.
         /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
-        /// @exception xtd::not_supported_exception he Socket is not in the xtd::net::sockets::address_family::inter_network or xtd::net::sockets::address_family::inter_network_v6 families.
+        /// @exception xtd::not_supported_exception The xtd::net::sockets::socket is not in the xtd::net::sockets::address_family::inter_network or xtd::net::sockets::address_family::inter_network_v6 families.
         /// @remarks Multicast is a scalable method for many-to-many communication on the Internet. A process subscribes to a multicast address; then, any packets sent by a subscribed process are received by every other process subscribed to the multicast address.
         /// @remarks Setting this property on a Transmission Control Protocol (TCP) socket has no effect.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
@@ -237,7 +237,7 @@ namespace xtd {
         /// @return This current instance.
         /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
-        /// @exception xtd::not_supported_exception he Socket is not in the xtd::net::sockets::address_family::inter_network or xtd::net::sockets::address_family::inter_network_v6 families.
+        /// @exception xtd::not_supported_exception The xtd::net::sockets::socket is not in the xtd::net::sockets::address_family::inter_network or xtd::net::sockets::address_family::inter_network_v6 families.
         /// @remarks Multicast is a scalable method for many-to-many communication on the Internet. A process subscribes to a multicast address; then, any packets sent by a subscribed process are received by every other process subscribed to the multicast address.
         /// @remarks Setting this property on a Transmission Control Protocol (TCP) socket has no effect.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
@@ -360,7 +360,7 @@ namespace xtd {
         /// @return The TTL value.
         /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
-        /// @exception xtd::not_supported_exception he Socket is not in the xtd::net::sockets::address_family::inter_network or xtd::net::sockets::address_family::inter_network_v6 families.
+        /// @exception xtd::not_supported_exception he xtd::net::sockets::socket is not in the xtd::net::sockets::address_family::inter_network or xtd::net::sockets::address_family::inter_network_v6 families.
         /// @remarks The TTL value indicates the maximum number of routers the packet can traverse before the router discards the packet and an Internet Control Message Protocol (ICMP) "TTL exceeded" error message is returned to the sender.
         /// @remarks The TTL value may be set to a value from 0 to 255. When this property is not set, the default TTL value for a socket is 32.
         /// @remarks Setting this property on a Transmission Control Protocol (TCP) socket is ignored by the TCP/IP stack if a successful connection has been established using the socket.
@@ -371,7 +371,7 @@ namespace xtd {
         /// @return This current instance.
         /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
-        /// @exception xtd::not_supported_exception he Socket is not in the xtd::net::sockets::address_family::inter_network or xtd::net::sockets::address_family::inter_network_v6 families.
+        /// @exception xtd::not_supported_exception he xtd::net::sockets::socket is not in the xtd::net::sockets::address_family::inter_network or xtd::net::sockets::address_family::inter_network_v6 families.
         /// @remarks The TTL value indicates the maximum number of routers the packet can traverse before the router discards the packet and an Internet Control Message Protocol (ICMP) "TTL exceeded" error message is returned to the sender.
         /// @remarks The TTL value may be set to a value from 0 to 255. When this property is not set, the default TTL value for a socket is 32.
         /// @remarks Setting this property on a Transmission Control Protocol (TCP) socket is ignored by the TCP/IP stack if a successful connection has been established using the socket.
@@ -435,9 +435,9 @@ namespace xtd {
         /// @param option_value A value of the option.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
-        /// @remarks xtd::net::sockets::socket options determine the behavior of the current Socket. For an option with a Boolean data type, specify a nonzero value to enable the option, and a zero value to disable the option. For an option with an integer data type, specify the appropriate value. Socket options are grouped by level of protocol support.
+        /// @remarks xtd::net::sockets::socket options determine the behavior of the current xtd::net::sockets::socket. For an option with a Boolean data type, specify a nonzero value to enable the option, and a zero value to disable the option. For an option with an integer data type, specify the appropriate value. Socket options are grouped by level of protocol support.
         /// @remarks xtd::net::sockets::socket options are grouped by level of protocol support.
-        /// @remarks Listed below are the various Socket options that can be set using this overload. These options are grouped by the appropriate SocketOptionLevel value. If you intend to set any of these options, be sure to use the appropriate SocketOptionLevel value for the optionLevel parameter. The option you choose to set must be specified in the optionName parameter. If you want to get the current value of any of the options listed, use the GetSocketOption method.
+        /// @remarks Listed below are the various xtd::net::sockets::socket options that can be set using this overload. These options are grouped by the appropriate SocketOptionLevel value. If you intend to set any of these options, be sure to use the appropriate SocketOptionLevel value for the optionLevel parameter. The option you choose to set must be specified in the optionName parameter. If you want to get the current value of any of the options listed, use the GetSocketOption method.
         ///  * xtd::net::sockets::socket_option_level::socket options that can be set using this overload:
         ///    * xtd::net::sockets::socket_option_name::accept_connection
         ///    * xtd::net::sockets::socket_option_name::broadcast
@@ -529,7 +529,7 @@ namespace xtd {
         /// @param size_option_value The size of the option value.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
-        /// @remarks In general, the SetSocketOption method should be used whenever setting a Socket option.
+        /// @remarks In general, the SetSocketOption method should be used whenever setting a xtd::net::sockets::socket option.
         /// @remarks The SetRawSocketOption(Int32, Int32, ReadOnlySpan<Byte>) method should be used only when SocketOptionLevel and SocketOptionName do not expose the required option.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         void set_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, intptr_t option_value, size_t option_value_size);
