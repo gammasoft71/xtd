@@ -29,7 +29,7 @@ namespace xtd {
 A special case is made for two-letter acronyms in which both letters are not separed, as shown in the following identifier:
 
 ```c++
-iostream
+io_stream
 ```
 
 * **Naming** :
@@ -107,10 +107,10 @@ public:
 * **Members** : end by _
 
 ```c++
-struct uint32 {
+struct unsigned_integer {
   ...
 private:
-  uint value_;
+  uint32_t value_;
 };
  
 struct date_time {
