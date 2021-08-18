@@ -10,11 +10,11 @@ namespace unit_tests {
   public:
     void test_method_(default_creator) {
       file_load_exception e;
-      assert::are_equal_(std::system_category(), e.error().category());
+      assert::are_equal_(std::system_category(), e.error_code().category());
       assert::is_false_(e.inner_exception().has_value());
       assert::is_empty(e.file_path());
       assert::is_empty(e.help_link());
-      assert::are_equal_(0, e.error().value());
+      assert::are_equal_(0, e.error_code().value());
       assert::are_equal_(0U, e.line_numer());
       assert::is_empty(e.member_name());
       assert::are_equal_("Could not load the specified file.", e.message());
@@ -27,11 +27,11 @@ namespace unit_tests {
     void test_method_(default_creator_with_current_stack_frame) {
       auto info = current_stack_frame_;
       file_load_exception e(info);
-      assert::are_equal_(std::system_category(), e.error().category());
+      assert::are_equal_(std::system_category(), e.error_code().category());
       assert::is_false_(e.inner_exception().has_value());
       assert::are_equal_(info.get_file_name(), e.file_path());
       assert::is_empty_(e.help_link());
-      assert::are_equal_(0, e.error().value());
+      assert::are_equal_(0, e.error_code().value());
       assert::are_equal_(info.get_file_line_number(), e.line_numer());
       assert::are_equal_(info.get_method(), e.member_name());
       assert::are_equal_("Could not load the specified file.", e.message());
@@ -43,8 +43,8 @@ namespace unit_tests {
     
     void test_method_(creator_with_empty_message) {
       file_load_exception e("");
-      assert::are_equal_(0, e.error().value());
-      assert::are_equal_(std::system_category(), e.error().category());
+      assert::are_equal_(0, e.error_code().value());
+      assert::are_equal_(std::system_category(), e.error_code().category());
       assert::is_empty(e.file_path());
       assert::is_empty(e.help_link());
       assert::is_false_(e.inner_exception().has_value());
@@ -62,9 +62,9 @@ namespace unit_tests {
       file_load_exception e("", info);
       assert::are_equal_(info.get_file_name(), e.file_path());
       assert::is_empty_(e.help_link());
-      assert::are_equal_(0, e.error().value());
+      assert::are_equal_(0, e.error_code().value());
       assert::is_false_(e.inner_exception().has_value());
-      assert::are_equal_(std::system_category(), e.error().category());
+      assert::are_equal_(std::system_category(), e.error_code().category());
       assert::are_equal_(info.get_file_line_number(), e.line_numer());
       assert::are_equal_(info.get_method(), e.member_name());
       assert::are_equal_("", e.message());
@@ -76,8 +76,8 @@ namespace unit_tests {
 
     void test_method_(creator_with_message) {
       file_load_exception e("Test excpetion message.");
-      assert::are_equal_(0, e.error().value());
-      assert::are_equal_(std::system_category(), e.error().category());
+      assert::are_equal_(0, e.error_code().value());
+      assert::are_equal_(std::system_category(), e.error_code().category());
       assert::is_empty(e.file_path());
       assert::is_empty(e.help_link());
       assert::is_false_(e.inner_exception().has_value());
@@ -95,9 +95,9 @@ namespace unit_tests {
       file_load_exception e("Test excpetion message.", info);
       assert::are_equal_(info.get_file_name(), e.file_path());
       assert::is_empty_(e.help_link());
-      assert::are_equal_(0, e.error().value());
+      assert::are_equal_(0, e.error_code().value());
       assert::is_false_(e.inner_exception().has_value());
-      assert::are_equal_(std::system_category(), e.error().category());
+      assert::are_equal_(std::system_category(), e.error_code().category());
       assert::are_equal_(info.get_file_line_number(), e.line_numer());
       assert::are_equal_(info.get_method(), e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
@@ -110,8 +110,8 @@ namespace unit_tests {
     void test_method_(creator_with_message_error_and_stack_frame) {
       auto info = current_stack_frame_;
       file_load_exception e("Test excpetion message.", std::error_code(EBUSY, std::generic_category()), info);
-      assert::are_equal_(EBUSY, e.error().value());
-      assert::are_equal_(std::generic_category(), e.error().category());
+      assert::are_equal_(EBUSY, e.error_code().value());
+      assert::are_equal_(std::generic_category(), e.error_code().category());
       assert::are_equal_(info.get_file_name(), e.file_path());
       assert::is_empty_(e.help_link());
       assert::is_false_(e.inner_exception().has_value());
@@ -127,8 +127,8 @@ namespace unit_tests {
     void test_method_(creator_with_message_help_link_and_stack_frame) {
       auto info = current_stack_frame_;
       file_load_exception e("Test excpetion message.", "https://codedocs.xyz/gammasoft71/xtd_core/", info);
-      assert::are_equal_(0, e.error().value());
-      assert::are_equal_(std::system_category(), e.error().category());
+      assert::are_equal_(0, e.error_code().value());
+      assert::are_equal_(std::system_category(), e.error_code().category());
       assert::are_equal_(info.get_file_name(), e.file_path());
       assert::are_equal_("https://codedocs.xyz/gammasoft71/xtd_core/", e.help_link());
       assert::is_false_(e.inner_exception().has_value());
@@ -144,8 +144,8 @@ namespace unit_tests {
     void test_method_(creator_with_message_error_help_link_and_stack_frame) {
       auto info = current_stack_frame_;
       file_load_exception e("Test excpetion message.", std::error_code(EBUSY, std::generic_category()), "https://codedocs.xyz/gammasoft71/xtd_core/", info);
-      assert::are_equal_(EBUSY, e.error().value());
-      assert::are_equal_(std::generic_category(), e.error().category());
+      assert::are_equal_(EBUSY, e.error_code().value());
+      assert::are_equal_(std::generic_category(), e.error_code().category());
       assert::are_equal_(info.get_file_name(), e.file_path());
       assert::are_equal_("https://codedocs.xyz/gammasoft71/xtd_core/", e.help_link());
       assert::is_false_(e.inner_exception().has_value());
@@ -161,8 +161,8 @@ namespace unit_tests {
     void test_method_(creator_with_message_and_inner_exception) {
       system_exception inner_exception;
       file_load_exception e("Test excpetion message.", inner_exception);
-      assert::are_equal_(0, e.error().value());
-      assert::are_equal_(std::system_category(), e.error().category());
+      assert::are_equal_(0, e.error_code().value());
+      assert::are_equal_(std::system_category(), e.error_code().category());
       assert::is_empty(e.file_path());
       assert::is_empty(e.help_link());
       assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get());
@@ -182,10 +182,10 @@ namespace unit_tests {
       file_load_exception e("Test excpetion message.", inner_exception, info);
       assert::are_equal_(info.get_file_name(), e.file_path());
       assert::is_empty_(e.help_link());
-      assert::are_equal_(0, e.error().value());
+      assert::are_equal_(0, e.error_code().value());
       assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get());
       assert::are_equal_(inner_exception.what(), e.inner_exception().value().get().what());
-      assert::are_equal_(std::system_category(), e.error().category());
+      assert::are_equal_(std::system_category(), e.error_code().category());
       assert::are_equal_(info.get_file_line_number(), e.line_numer());
       assert::are_equal_(info.get_method(), e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
@@ -199,8 +199,8 @@ namespace unit_tests {
       system_exception inner_exception;
       auto info = current_stack_frame_;
       file_load_exception e("Test excpetion message.", inner_exception, std::error_code(EBUSY, std::generic_category()), info);
-      assert::are_equal_(EBUSY, e.error().value());
-      assert::are_equal_(std::generic_category(), e.error().category());
+      assert::are_equal_(EBUSY, e.error_code().value());
+      assert::are_equal_(std::generic_category(), e.error_code().category());
       assert::are_equal_(info.get_file_name(), e.file_path());
       assert::is_empty_(e.help_link());
       assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get());
@@ -218,8 +218,8 @@ namespace unit_tests {
       system_exception inner_exception;
       auto info = current_stack_frame_;
       file_load_exception e("Test excpetion message.", inner_exception, "https://codedocs.xyz/gammasoft71/xtd_core/", info);
-      assert::are_equal_(0, e.error().value());
-      assert::are_equal_(std::system_category(), e.error().category());
+      assert::are_equal_(0, e.error_code().value());
+      assert::are_equal_(std::system_category(), e.error_code().category());
       assert::are_equal_(info.get_file_name(), e.file_path());
       assert::are_equal_("https://codedocs.xyz/gammasoft71/xtd_core/", e.help_link());
       assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get());
@@ -237,8 +237,8 @@ namespace unit_tests {
       system_exception inner_exception;
       auto info = current_stack_frame_;
       file_load_exception e("Test excpetion message.", inner_exception, std::error_code(EBUSY, std::generic_category()), "https://codedocs.xyz/gammasoft71/xtd_core/", info);
-      assert::are_equal_(EBUSY, e.error().value());
-      assert::are_equal_(std::generic_category(), e.error().category());
+      assert::are_equal_(EBUSY, e.error_code().value());
+      assert::are_equal_(std::generic_category(), e.error_code().category());
       assert::are_equal_(info.get_file_name(), e.file_path());
       assert::are_equal_("https://codedocs.xyz/gammasoft71/xtd_core/", e.help_link());
       assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get());
@@ -256,8 +256,8 @@ namespace unit_tests {
       system_exception inner_exception;
       auto info = current_stack_frame_;
       file_load_exception e = file_load_exception("Test excpetion message.", inner_exception, std::error_code(EBUSY, std::generic_category()), "https://codedocs.xyz/gammasoft71/xtd_core/", info);
-      assert::are_equal_(EBUSY, e.error().value());
-      assert::are_equal_(std::generic_category(), e.error().category());
+      assert::are_equal_(EBUSY, e.error_code().value());
+      assert::are_equal_(std::generic_category(), e.error_code().category());
       assert::are_equal_(info.get_file_name(), e.file_path());
       assert::are_equal_("https://codedocs.xyz/gammasoft71/xtd_core/", e.help_link());
       assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get());
@@ -276,8 +276,8 @@ namespace unit_tests {
       auto info = current_stack_frame_;
       file_load_exception e;
       e = file_load_exception("Test excpetion message.", inner_exception, std::error_code(EBUSY, std::generic_category()), "https://codedocs.xyz/gammasoft71/xtd_core/", info);
-      assert::are_equal_(EBUSY, e.error().value());
-      assert::are_equal_(std::generic_category(), e.error().category());
+      assert::are_equal_(EBUSY, e.error_code().value());
+      assert::are_equal_(std::generic_category(), e.error_code().category());
       assert::are_equal_(info.get_file_name(), e.file_path());
       assert::are_equal_("https://codedocs.xyz/gammasoft71/xtd_core/", e.help_link());
       assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get());

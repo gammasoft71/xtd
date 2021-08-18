@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::net::ip_v6_multicast_option class.
+/// @brief Contains xtd::net::sockets::ip_v6_multicast_option class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 

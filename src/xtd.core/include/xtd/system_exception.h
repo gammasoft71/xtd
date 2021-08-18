@@ -97,7 +97,7 @@ namespace xtd {
 
     /// @brief Get error associate to the exception
     /// @return An error_code represent a Error associate to the exception
-    virtual std::error_code error() const noexcept {return error_;}
+    virtual std::error_code error_code() const noexcept {return error_;}
     
     /// @brief Gets the exception instance that caused the current exception.
     /// @return An instance of exception that describes the error that caused the current exception. The inner_exception property returns the same value as was passed into the constructor, or a null reference if the inner exception value was not supplied to the constructor.
