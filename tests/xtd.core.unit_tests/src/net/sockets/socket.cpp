@@ -58,10 +58,9 @@ namespace unit_tests {
       assert::is_false(s.exclusive_address_use(), line_info_);
       assert::is_not_zero(s.handle(), line_info_);
       assert::is_false(s.is_bound(), line_info_);
-      // Must be fixed on Windows
-      //linger_option linger = s.linger_state();
-      //assert::is_false(linger.enabled(), line_info_);
-      //assert::is_zero(linger.linger_time(), line_info_);
+      linger_option linger = s.linger_state();
+      assert::is_false(linger.enabled(), line_info_);
+      assert::is_zero(linger.linger_time(), line_info_);
       assert::is_null(s.local_end_point(), line_info_);
       assert::throws<socket_exception>([&]{s.multicast_loopback();}, line_info_);
       assert::is_false(s.no_delay(), line_info_);
@@ -89,10 +88,9 @@ namespace unit_tests {
       assert::is_false(s.exclusive_address_use(), line_info_);
       assert::is_not_zero(s.handle(), line_info_);
       assert::is_false(s.is_bound(), line_info_);
-      // Must be fixed on Windows
-      //linger_option linger = s.linger_state();
-      //assert::is_false(linger.enabled(), line_info_);
-      //assert::is_zero(linger.linger_time(), line_info_);
+      linger_option linger = s.linger_state();
+      assert::is_false(linger.enabled(), line_info_);
+      assert::is_zero(linger.linger_time(), line_info_);
       assert::is_null(s.local_end_point(), line_info_);
       assert::throws<socket_exception>([&]{s.multicast_loopback();}, line_info_);
       assert::is_false(s.no_delay(), line_info_);
