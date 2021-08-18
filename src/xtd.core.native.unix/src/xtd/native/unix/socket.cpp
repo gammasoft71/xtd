@@ -457,13 +457,6 @@ int32_t socket::get_socket_option(intptr_t handle, int32_t socket_option_level, 
     return result;
   }
   
-  if (socket_option_name == SOCKET_OPTION_NAME_EXCLUSIVE_ADDRESS_USE)  {
-    int32_t value = 0;
-    int32_t result = ::getsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), reinterpret_cast<void*>(value), reinterpret_cast<socklen_t*>(&option_length));
-    *reinterpret_cast<int32_t*>(option) = !value;
-    return result;
-  }
-  
   return ::getsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), reinterpret_cast<void*>(option), reinterpret_cast<socklen_t*>(&option_length));
 }
 

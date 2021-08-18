@@ -55,7 +55,7 @@ namespace unit_tests {
       assert::throws<not_supported_exception>([&]{s.dont_fragment();}, line_info_);
       assert::is_true(s.dual_mode(), line_info_);
       assert::is_false(s.enable_broadcast(), line_info_);
-      assert::is_true(s.exclusive_address_use(), line_info_);
+      assert::is_false(s.exclusive_address_use(), line_info_);
       assert::is_not_zero(s.handle(), line_info_);
       assert::is_false(s.is_bound(), line_info_);
       linger_option linger = s.linger_state();
@@ -84,7 +84,7 @@ namespace unit_tests {
       assert::is_false(s.dont_fragment(), line_info_);
       assert::throws<not_supported_exception>([&]{s.dual_mode();}, line_info_);
       assert::is_false(s.enable_broadcast(), line_info_);
-      assert::is_true(s.exclusive_address_use(), line_info_);
+      assert::is_false(s.exclusive_address_use(), line_info_);
       assert::is_not_zero(s.handle(), line_info_);
       assert::is_false(s.is_bound(), line_info_);
       linger_option linger = s.linger_state();
@@ -113,7 +113,7 @@ namespace unit_tests {
       assert::is_false(s.dont_fragment(), line_info_);
       assert::throws<not_supported_exception>([&]{s.dual_mode();}, line_info_);
       assert::is_false(s.enable_broadcast(), line_info_);
-      assert::is_true(s.exclusive_address_use(), line_info_);
+      assert::is_false(s.exclusive_address_use(), line_info_);
       assert::is_not_zero(s.handle(), line_info_);
       assert::is_false(s.is_bound(), line_info_);
       linger_option linger = s.linger_state();
