@@ -96,16 +96,16 @@ int32_t socket::get_last_error() {
 }
 
 bool socket::get_os_supports_ip_v4() noexcept {
-  int32_t s = ::socket(AF_INET, SOCK_STREAM, IPPROTO_IP);
-  if (s == -1) return false;
-  close(s);
+  SOCKET s = ::socket(AF_INET, SOCK_STREAM, IPPROTO_IP);
+  if (s == INVALID_SOCKET) return false;
+  closesocket(s);
   return true;
 }
 
 bool socket::get_os_supports_ip_v6() noexcept {
-  int32_t s = ::socket(AF_INET6, SOCK_STREAM, IPPROTO_IP);
-  if (s == -1) return false;
-  close(s);
+  SOCKET s = ::socket(AF_INET6, SOCK_STREAM, IPPROTO_IP);
+  if (s == INVALID_SOCKET) return false;
+  closesocket(s);
   return true;
 }
 
