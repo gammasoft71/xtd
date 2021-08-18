@@ -254,6 +254,7 @@ size_t socket::get_raw_socket_option(int32_t socket_option_level, int32_t socket
 
 int32_t socket::get_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name) const {
   if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (socket_option_name == xtd::net::sockets::socket_option_name::broadcast && data_->socket_type != xtd::net::sockets::socket_type::dgram) throw socket_exception(socket_error::protocol_not_supported, csf_);
   if (socket_option_name == xtd::net::sockets::socket_option_name::linger || socket_option_name == xtd::net::sockets::socket_option_name::add_membership || socket_option_name == xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
   int32_t result = 0;
   size_t size = sizeof(int32_t);
@@ -263,6 +264,7 @@ int32_t socket::get_socket_option(xtd::net::sockets::socket_option_level socket_
 
 xtd::net::sockets::linger_option socket::get_socket_linger_option() const {
   if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (data_->socket_type == xtd::net::sockets::socket_type::dgram) throw socket_exception(socket_error::protocol_not_supported, csf_);
   bool enabled = false;
   uint32_t linger_time = 0;
   if (native::socket::get_socket_linger_option(data_->handle, enabled, linger_time) != 0) throw socket_exception(get_last_error(), csf_);
@@ -299,12 +301,14 @@ void socket::set_socket_option(xtd::net::sockets::socket_option_level socket_opt
 
 void socket::set_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name, int32_t option_value) {
   if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (socket_option_name == xtd::net::sockets::socket_option_name::broadcast && data_->socket_type != xtd::net::sockets::socket_type::dgram) throw socket_exception(socket_error::protocol_not_supported, csf_);
   if (socket_option_name == xtd::net::sockets::socket_option_name::linger || socket_option_name == xtd::net::sockets::socket_option_name::add_membership || socket_option_name == xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
   if (native::socket::set_socket_option(data_->handle, static_cast<int32_t>(socket_option_level), static_cast<int32_t>(socket_option_name), reinterpret_cast<intptr_t>(&option_value), sizeof(int32_t)) != 0) throw socket_exception(get_last_error(), csf_);
 }
 
 void socket::set_socket_option(xtd::net::sockets::linger_option option_value) {
   if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (data_->socket_type == xtd::net::sockets::socket_type::dgram) throw socket_exception(socket_error::protocol_not_supported, csf_);
   if (native::socket::set_socket_linger_option(data_->handle, option_value.enabled(), option_value.linger_time()) != 0) throw socket_exception(get_last_error(), csf_);
 }
 
