@@ -1,4 +1,4 @@
-#Minesweeper parameters
+# Minesweeper parameters
 
 ## Colors
 
