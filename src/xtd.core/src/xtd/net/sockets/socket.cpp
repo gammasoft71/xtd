@@ -21,7 +21,11 @@ public:
 } __using_socket_instance__;
 
 socket::socket(xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type) : socket(native::socket::get_os_supports_ip_v6() ? address_family::inter_network_v6 : address_family::inter_network, socket_type, protocol_type)  {
-  if (data_->address_family == address_family::inter_network_v6) dual_mode(true);
+  try {
+    if (data_->address_family == address_family::inter_network_v6) dual_mode(true);
+  } catch(const socket_exception& e) {
+    if (static_cast<socket_error>(e.error_code().value()) != socket_error::operation_not_supported) throw ;
+  }
 }
 
 socket::socket(xtd::net::sockets::address_family address_family, xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type) {

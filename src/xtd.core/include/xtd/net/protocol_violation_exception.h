@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::io::protocol_violation_exception exception.
+/// @brief Contains xtd::net::protocol_violation_exception exception.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "../format_exception.h"

@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains file_attributes enum class.
+/// @brief Contains xtd::io::file_attributes enum class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "../ustring.h"

@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::assert_dialog_result enum class.
+/// @brief Contains xtd::diagnostics::assert_dialog_result enum class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "../ustring.h"

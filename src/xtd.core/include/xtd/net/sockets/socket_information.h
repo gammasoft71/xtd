@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::net::socket_information class.
+/// @brief Contains xtd::net::sockets::socket_information class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 

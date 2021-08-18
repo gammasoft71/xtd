@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains Switch::System::Net::socket_address class.
+/// @brief Contains xtd::net::socket_address class.
 #pragma once
 
 #include <vector>

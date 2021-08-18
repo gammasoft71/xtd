@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::net::linger_option class.
+/// @brief Contains xtd::net::sockets::linger_option class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
