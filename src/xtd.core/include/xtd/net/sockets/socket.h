@@ -280,17 +280,17 @@ namespace xtd {
         
         /// @brief Gets a value that specifies the size of the receive buffer of the xtd::net::sockets::socket.
         /// @return An size_t that contains the size, in bytes, of the receive buffer. The default is 8192.
-        /// @remarks A larger buffer size potentially reduces the number of empty acknowledgements (TCP packets with no data portion), but might also delay the recognition of connection difficulties. Consider increasing the buffer size if you are transferring large files, or you are using a high bandwidth, high latency connection (such as a satellite broadband provider.)
         /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks A larger buffer size potentially reduces the number of empty acknowledgements (TCP packets with no data portion), but might also delay the recognition of connection difficulties. Consider increasing the buffer size if you are transferring large files, or you are using a high bandwidth, high latency connection (such as a satellite broadband provider.)
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         size_t receive_buffer_size() const;
         /// @brief Sets a value that specifies the size of the receive buffer of the xtd::net::sockets::socket.
         /// @param value An size_t that contains the size, in bytes, of the receive buffer. The default is 8192.
         /// @return This current instance.
-        /// @remarks A larger buffer size potentially reduces the number of empty acknowledgements (TCP packets with no data portion), but might also delay the recognition of connection difficulties. Consider increasing the buffer size if you are transferring large files, or you are using a high bandwidth, high latency connection (such as a satellite broadband provider.)
         /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks A larger buffer size potentially reduces the number of empty acknowledgements (TCP packets with no data portion), but might also delay the recognition of connection difficulties. Consider increasing the buffer size if you are transferring large files, or you are using a high bandwidth, high latency connection (such as a satellite broadband provider.)
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         socket& receive_buffer_size(size_t value);
 
@@ -318,6 +318,66 @@ namespace xtd {
         /// @remarks The xtd::net::sockets::socket::remote_end_point is set after a call to either xtd::net::sockets::socket::accept or xtd::net::sockets::socke::connect. If you try to access this property earlier, xtd::net::sockets::socket::remote_end_point will throw a xtd::net::sockets::socket_exception. If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
         const std::unique_ptr<xtd::net::end_point>& remote_end_point() const;
 
+        /// @brief Gets a value that specifies the size of the send buffer of the xtd::net::sockets::socket.
+        /// @return An size_t that contains the size, in bytes, of the send buffer. The default is 8192.
+        /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks A larger buffer size might delay the recognition of connection difficulties. Consider increasing the buffer size if you are transferring large files, or you are using a high bandwidth, high latency connection (such as a satellite broadband provider.)
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        size_t send_buffer_size() const;
+        /// @brief Sets a value that specifies the size of the send buffer of the xtd::net::sockets::socket.
+        /// @param value An size_t that contains the size, in bytes, of the send buffer. The default is 8192.
+        /// @return This current instance.
+        /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks A larger buffer size might delay the recognition of connection difficulties. Consider increasing the buffer size if you are transferring large files, or you are using a high bandwidth, high latency connection (such as a satellite broadband provider.)
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        socket& send_buffer_size(size_t value);
+        
+        /// @brief Gets a value that specifies the amount of time after which a synchronous xtd::net::sockets::socket::send call will time out.
+        /// @return The time-out value, in milliseconds. If you set the property with a value between 1 and 499, the value will be changed to 500. The default value is 0, which indicates an infinite time-out period. Specifying -1 also indicates an infinite time-out period.
+        /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks This option applies to synchronous Send calls only. If the time-out period is exceeded, the Send method will throw a SocketException.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        int32_t send_timeout() const;
+        /// @brief Sets a value that specifies the amount of time after which a synchronous xtd::net::sockets::socket::send call will time out.
+        /// @param value The time-out value, in milliseconds. If you set the property with a value between 1 and 499, the value will be changed to 500. The default value is 0, which indicates an infinite time-out period. Specifying -1 also indicates an infinite time-out period.
+        /// @return This current instance.
+        /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @exception xtd::argument_out_of_range_exception The value specified for a set operation is less than -1.
+        /// @remarks This option applies to synchronous Send calls only. If the time-out period is exceeded, the Send method will throw a SocketException.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        socket& send_timeout(int32_t value);
+
+        /// @brief Gets the type of the xtd::net::sockets::socket.
+        /// @return One of the xtd::net::sockets::socket_type values.
+        /// @remarks xtd::net::sockets::socket::socket_type is read-only and is set when the xtd::net::sockets::socket is created.
+        xtd::net::sockets::socket_type socket_type() const noexcept;
+
+        /// @brief Gets a value that specifies the Time To Live (TTL) value of Internet Protocol (IP) packets sent by the xtd::net::sockets::socket.
+        /// @return The TTL value.
+        /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @exception xtd::not_supported_exception he Socket is not in the xtd::net::sockets::address_family::inter_network or xtd::net::sockets::address_family::inter_network_v6 families.
+        /// @remarks The TTL value indicates the maximum number of routers the packet can traverse before the router discards the packet and an Internet Control Message Protocol (ICMP) "TTL exceeded" error message is returned to the sender.
+        /// @remarks The TTL value may be set to a value from 0 to 255. When this property is not set, the default TTL value for a socket is 32.
+        /// @remarks Setting this property on a Transmission Control Protocol (TCP) socket is ignored by the TCP/IP stack if a successful connection has been established using the socket.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        byte_t ttl() const;
+        /// @brief Sets a value that specifies the Time To Live (TTL) value of Internet Protocol (IP) packets sent by the xtd::net::sockets::socket.
+        /// @param value The TTL value.
+        /// @return This current instance.
+        /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @exception xtd::not_supported_exception he Socket is not in the xtd::net::sockets::address_family::inter_network or xtd::net::sockets::address_family::inter_network_v6 families.
+        /// @remarks The TTL value indicates the maximum number of routers the packet can traverse before the router discards the packet and an Internet Control Message Protocol (ICMP) "TTL exceeded" error message is returned to the sender.
+        /// @remarks The TTL value may be set to a value from 0 to 255. When this property is not set, the default TTL value for a socket is 32.
+        /// @remarks Setting this property on a Transmission Control Protocol (TCP) socket is ignored by the TCP/IP stack if a successful connection has been established using the socket.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        socket& ttl(byte_t value);
+        
         /// @brief Closes the xtd::net::sockets::socket connection and releases all associated resources.
         /// @remarks The xtd::net::sockets::socket::close method closes the remote host connection and releases all resources associated with the xtd::net::sockets::socket. Upon closing, the xtd::net::sockets::socket::connected property is set to false.
         /// @remarks For connection-oriented protocols, it is recommended that you call xtd::net::sockets::socket::shutdown before calling the xtd::net::sockets::socket::close method. This ensures that all data is sent and received on the connected socket before it is closed.
