@@ -389,7 +389,7 @@ int32_t socket::address_family_to_native(int32_t address_family) {
   };
 #endif
   auto it = address_families.find(address_family);
-  if (it == address_families.end()) return -1;
+  if (it == address_families.end()) return AF_UNSPEC;
   return it->second;
 }
 
@@ -462,7 +462,7 @@ int32_t socket::native_to_address_family(int32_t address_family) {
   };
 #endif
   auto it = address_families.find(address_family);
-  if (it == address_families.end()) return ADDRESS_FAMILY_UNKNOWN;
+  if (it == address_families.end()) return ADDRESS_FAMILY_UNSPECIFIED;
   return it->second;
 }
 
