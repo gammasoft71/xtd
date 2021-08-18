@@ -99,11 +99,11 @@ process_start_info& process_start_info::load_user_profile(bool value) {
   return *this;
 }
 
-const xtd::security::secure_string& process_start_info::pasword() const {
+const xtd::security::secure_string& process_start_info::password() const {
   return password_;
 }
 
-process_start_info& process_start_info::pasword(const xtd::security::secure_string& value) {
+process_start_info& process_start_info::password(const xtd::security::secure_string& value) {
   password_ = value;
   return *this;
 }
