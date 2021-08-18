@@ -20,12 +20,17 @@ public:
   ~__using_socket__() {native::socket::cleanup();}
 } __using_socket_instance__;
 
+socket::socket(intptr_t handle) {
+  if (handle == 0) throw argument_exception(csf_);
+  data_->handle = handle;
+}
+
+socket::socket(const socket_information& socket_information) {
+  throw not_implemented_exception(csf_);
+}
+
 socket::socket(xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type) : socket(native::socket::get_os_supports_ip_v6() ? address_family::inter_network_v6 : address_family::inter_network, socket_type, protocol_type)  {
-  try {
-    if (data_->address_family == address_family::inter_network_v6) dual_mode(true);
-  } catch(const socket_exception& e) {
-    if (static_cast<socket_error>(e.error_code().value()) != socket_error::operation_not_supported) throw ;
-  }
+  if (data_->address_family == address_family::inter_network_v6) dual_mode(true);
 }
 
 socket::socket(xtd::net::sockets::address_family address_family, xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type) {
@@ -255,6 +260,7 @@ size_t socket::get_raw_socket_option(int32_t socket_option_level, int32_t socket
 int32_t socket::get_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name) const {
   if (data_->handle == 0) throw object_closed_exception(csf_);
   if (socket_option_name == xtd::net::sockets::socket_option_name::broadcast && data_->socket_type != xtd::net::sockets::socket_type::dgram) throw socket_exception(socket_error::protocol_not_supported, csf_);
+  if (socket_option_name == xtd::net::sockets::socket_option_name::multicast_loopback && data_->socket_type != xtd::net::sockets::socket_type::dgram) throw socket_exception(socket_error::protocol_not_supported, csf_);
   if (socket_option_name == xtd::net::sockets::socket_option_name::linger || socket_option_name == xtd::net::sockets::socket_option_name::add_membership || socket_option_name == xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
   int32_t result = 0;
   size_t size = sizeof(int32_t);
@@ -302,6 +308,7 @@ void socket::set_socket_option(xtd::net::sockets::socket_option_level socket_opt
 void socket::set_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name, int32_t option_value) {
   if (data_->handle == 0) throw object_closed_exception(csf_);
   if (socket_option_name == xtd::net::sockets::socket_option_name::broadcast && data_->socket_type != xtd::net::sockets::socket_type::dgram) throw socket_exception(socket_error::protocol_not_supported, csf_);
+  if (socket_option_name == xtd::net::sockets::socket_option_name::multicast_loopback && data_->socket_type != xtd::net::sockets::socket_type::dgram) throw socket_exception(socket_error::protocol_not_supported, csf_);
   if (socket_option_name == xtd::net::sockets::socket_option_name::linger || socket_option_name == xtd::net::sockets::socket_option_name::add_membership || socket_option_name == xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
   if (native::socket::set_socket_option(data_->handle, static_cast<int32_t>(socket_option_level), static_cast<int32_t>(socket_option_name), reinterpret_cast<intptr_t>(&option_value), sizeof(int32_t)) != 0) throw socket_exception(get_last_error(), csf_);
 }

@@ -20,6 +20,7 @@
 #include "ip_v6_multicast_option.h"
 #include "protocol_type.h"
 #include "socket_error.h"
+#include "socket_information.h"
 #include "socket_option_level.h"
 #include "socket_option_name.h"
 #include "socket_type.h"
@@ -35,7 +36,7 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core net
       /// @remarks The xtd::net::sockets::socket class provides a rich set of methods and properties for network communications. The xtd::net::sockets::socket class allows you to perform both synchronous and asynchronous data transfer using any of the communication protocols listed in the xtd::net::sockets::protocol_type enumeration.
-      /// @remarks The xtd::net::sockets::socket class follows the xttd naming pattern for asynchronous methods. For example, the synchronous xtd::net::sockets::receive method corresponds to the asynchronous xtd::net::sockets::begin_receive and xtd::net::sockets::end_receive methods.
+      /// @remarks The xtd::net::sockets::socket class follows the xtd naming pattern for asynchronous methods. For example, the synchronous xtd::net::sockets::receive method corresponds to the asynchronous xtd::net::sockets::begin_receive and xtd::net::sockets::end_receive methods.
       /// @remarks If your application only requires one thread during execution, use the following methods, which are designed for synchronous operation mode.
       /// * If you are using a connection-oriented protocol such as TCP, your server can listen for connections using the xtd::net::sockets::socket::listen method. The xtd::net::sockets::socket::xtd::net::sockets::socket::accept method processes any incoming connection requests and returns a xtd::net::sockets::socket that you can use to communicate data with the remote host. Use this returned xtd::net::sockets::socket to call the xtd::net::sockets::socket::send or xtd::net::sockets::socket::receive method. Call the xtd::net::sockets::socket::bind method prior to calling the xtd::net::sockets::socket::listen method if you want to specify the local IP address and port number. Use a port number of zero if you want the underlying service provider to assign a free port for you. If you want to connect to a listening host, call the xtd::net::sockets::socket::connect method. To communicate data, call the xtd::net::sockets::socket::send or xtd::net::sockets::socket::receive method.
       /// * If you are using a connectionless protocol such as UDP, you do not need to listen for connections at all. Call the xtd::net::sockets::socket::receive_from method to accept any incoming datagrams. Use the xtd::net::sockets::socket::send_to method to send datagrams to a remote host.
@@ -51,9 +52,31 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::net::sockets::socket class.
         socket() = default;
         
+        /// @brief Initializes a new instance of the xtd::net::sockets::socket class for the specified socket handle.
+        /// @param handle The socket handle for the socket that the xtd::net::sockets::socket object will encapsulate.
+        /// @exception xtd::argument_exception The handle is invalid.
+        /// @remarks This method populates the xtd::net::sockets::socket instance with data gathered from the supplied inttptr_tt. Different operating systems provide varying levels of support for querying a socket handle or file descriptor for its properties and configuration. Some of the public APIs on the resulting xtd::net::sockets::socket instance may differ based on operating system, such as xtd::net::sockets::socket::protocol_type and xtd::net::sockets::socket::blocking.
+        socket(intptr_t handle);
+        /// @brief Initializes a new instance of the xtd::net::sockets::socket class using the specified value returned from xtd::net::sockets::socket::duplicate_and_close.
+        /// @param socket_informattion The socket information returned by xtd::net::sockets::socket::duplicate_and_close.
+        /// @remarks If you call the xtd::net::sockets::socket constructor multiple times with the same byte array as the argument for each call, you will create multiple xtd::net::sockets::socket with the same underlying socket. This practice is strongly discouraged.
+        socket(const xtd::net::sockets::socket_information& socket_informattion);
+        /// @brief Initializes a new instance of the xtd::net::sockets::socket class using the specified socket type and protocol. If the operating system supports IPv6, this constructor creates a dual-mode socket; otherwise, it creates an IPv4 socket.
+        /// @param socket_type One of the xtd::net::sockets::socket_type values.
+        /// @param protocol_type One of the xtd::net::sockets::protocol_type values.
+        /// @exception xtd::net:sockets::socket_exception The combination of socket_type and protocol_type results in an invalid socket.
+        /// @remarks The socket_type parameter specifies the type of the xtd::net::sockets::socket class and the protocol_type parameter specifies the protocol used by xtd::net::sockets::socket. The two parameters are not independent. Often the xtd::net::sockets::socket type is implicit in the protocol. If the combination of xtd::net::sockets::socket type and protocol type results in an invalid xtd::net::sockets::socket, this constructor throws a xtd::net::sockets::socket_exception.
+        /// @note If this constructor throws a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
         socket(xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type);
+        /// @brief Initializes a new instance of the xtd::net::sockets::socket class using the specified address family, socket type and protocol.
+        /// @param address_family One of the xtd::net::sockets::address_family values.
+        /// @param socket_type One of the xtd::net::sockets::socket_type values.
+        /// @param protocol_type One of the xtd::net::sockets::protocol_type values.
+        /// @exception xtd::net:sockets::socket_exception The combination of address_family, socket_type and protocol_type results in an invalid socket.
+        /// @remarks The address_family parameter specifies the addressing scheme that the xtd::net::sockets::socket class uses, the socket_type parameter specifies the type of the xtd::net::sockets::socket class, and the protocol_type parameter specifies the protocol used by xtd::net::sockets::socket. The three parameters are not independent. Some address families restrict which protocols can be used with them, and often the xtd::net::sockets::socket type is implicit in the protocol. If the combination of address family, xtd::net::sockets::socket type, and protocol type results in an invalid xtd::net::sockets::socket, this constructor throws a xtd::net::sockets::socket_exception.
+        /// @note If this constructor throws a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
         socket(xtd::net::sockets::address_family address_family, xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type);
-
+        
         /// @cond
         socket(socket&& socket) = default;
         socket(const socket& socket) = default;
@@ -274,7 +297,7 @@ namespace xtd {
         static bool os_supports_ip_v6() noexcept;
         
         /// @brief Gets the protocol type of the xtd::net::sockets::socket.
-        /// @return One of the ProtocolType values.
+        /// @return One of the xtd::net::sockets::protocol_type values.
         /// @remarks The xtd::net::sockets::socket::protocol_type property is set when thextd::net::sockets::socket is created, and specifies the protocol used by that xtd::net::sockets::socket.
         xtd::net::sockets::protocol_type protocol_type() const noexcept;
         
