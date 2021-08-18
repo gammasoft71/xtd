@@ -157,7 +157,7 @@ namespace xtd {
       /// @note Setting the xtd::diagnostics::process_start_info::domain, xtd::diagnostics::process_start_info::user_name, and the xtd::diagnostics::process_start_info::password properties in a xtd::diagnostics::process_start_info object is the recommended practice for starting a process with user credentials.
       /// @remarks A xtd::security::secure_string object is like a xtd::ustring object in that it has a text value. However, the value of a xtd::security::secure_string object is automatically encrypted, it can be modified until your application marks it as read-only, and it can be deleted from computer memory by either your application.
       /// @note If you provide a value for the xtd::diagnostics::process_start_info::password property, the xtd::diagnostics::process_start_info::use_shell_execute property must be false, o an xtd::invalid_operation_exception will be thrown when the xtd::diagnostics::process::start(process_start_info) method is called.
-      const xtd::security::secure_string& pasword() const;
+      const xtd::security::secure_string& password() const;
       /// @brief Sets a secure string that contains the user password to use when starting the process.
       /// @param value The user password to use when starting the process.
       /// @return The current instance of process_start_info.
@@ -166,7 +166,7 @@ namespace xtd {
       /// @note Setting the xtd::diagnostics::process_start_info::domain, xtd::diagnostics::process_start_info::user_name, and the xtd::diagnostics::process_start_info::password properties in a xtd::diagnostics::process_start_info object is the recommended practice for starting a process with user credentials.
       /// @remarks A xtd::security::secure_string object is like a xtd::ustring object in that it has a text value. However, the value of a xtd::security::secure_string object is automatically encrypted, it can be modified until your application marks it as read-only, and it can be deleted from computer memory by either your application.
       /// @note If you provide a value for the xtd::diagnostics::process_start_info::password property, the xtd::diagnostics::process_start_info::use_shell_execute property must be false, o an xtd::invalid_operation_exception will be thrown when the xtd::diagnostics::process::start(process_start_info) method is called.
-      process_start_info& pasword(const xtd::security::secure_string& value);
+      process_start_info& password(const xtd::security::secure_string& value);
 
       /// @brief Gets the user password in clear text to use when starting the process.
       /// @return The user password in clear text.
