@@ -119,7 +119,7 @@ int32_t socket::get_socket_option(intptr_t handle, int32_t socket_option_level, 
 
 int32_t socket::get_socket_linger_option(intptr_t handle, bool& enabled, uint32_t& linger_time) {
   LINGER l {static_cast<u_short>(enabled), static_cast<u_short>(linger_time)};
-  size_t linger_size = 0;
+  size_t linger_size = sizeof(LINGER);
   int32_t result = ::getsockopt(static_cast<SOCKET>(handle), SOL_SOCKET, SO_LINGER, reinterpret_cast<char*>(&l), reinterpret_cast<int32_t*>(&linger_size));
   if (result == 0) {
     enabled = static_cast<bool>(l.l_onoff);
@@ -133,7 +133,7 @@ int32_t socket::get_socket_multicast_option(intptr_t handle, int32_t socket_opti
     uint32_t multicast_address;
     uint32_t interface_index;
   } m;
-  size_t multicast_size = 0;
+  size_t multicast_size = sizeof(multicast);
   int32_t result = getsockopt(static_cast<SOCKET>(handle), IPPROTO_IP, socket_option_name_to_native(socket_option_name), reinterpret_cast<char*>(&m), reinterpret_cast<int32_t*>(&multicast_size));
   if (result == 0) {
     multicast_address = m.multicast_address;
@@ -147,7 +147,7 @@ int32_t socket::get_socket_ip_v6_multicast_option(intptr_t handle, int32_t socke
     uint8_t multicast_address[16];
     uint32_t interface_index;
   } m;
-  size_t multicast_size = 0;
+  size_t multicast_size = sizeof(multicast);
   int32_t result = getsockopt(static_cast<SOCKET>(handle), IPPROTO_IP, socket_option_name_to_native(socket_option_name), reinterpret_cast<char*>(&m), reinterpret_cast<int32_t*>(&multicast_size));
   if (result == 0) {
     for (auto index = 0U; index < multicast_address.size(); ++index)
