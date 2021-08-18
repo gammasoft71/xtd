@@ -37,7 +37,7 @@ socket::socket(xtd::net::sockets::address_family address_family, xtd::net::socke
 }
 
 socket::~socket() {
-  if (data_.unique()) close();
+  if (data_.use_count() == 1) close();
 }
 
 address_family socket::address_family() const noexcept {
