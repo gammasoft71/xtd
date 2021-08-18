@@ -39,6 +39,10 @@ namespace unit_tests {
       assert::throws<object_closed_exception>([&]{s.receive_buffer_size();}, line_info_);
       assert::throws<object_closed_exception>([&]{s.receive_timeout();}, line_info_);
       assert::throws<object_closed_exception>([&]{s.remote_end_point();}, line_info_);
+      assert::throws<object_closed_exception>([&]{s.send_buffer_size();}, line_info_);
+      assert::throws<object_closed_exception>([&]{s.send_timeout();}, line_info_);
+      assert::are_equal(socket_type::unknown, s.socket_type(), line_info_);
+      assert::throws<object_closed_exception>([&]{s.ttl();}, line_info_);
     }
 
     void test_method_(constructor_with_socket_type_stream_and_protocol_type_tcp) {
@@ -64,6 +68,10 @@ namespace unit_tests {
       assert::is_not_zero(s.receive_buffer_size(), line_info_);
       assert::is_zero(s.receive_timeout(), line_info_);
       assert::is_null(s.remote_end_point(), line_info_);
+      assert::is_not_zero(s.send_buffer_size(), line_info_);
+      assert::is_zero(s.send_timeout(), line_info_);
+      assert::are_equal(socket_type::stream, s.socket_type(), line_info_);
+      assert::is_not_zero(s.ttl(), line_info_);
     }
 
     void test_method_(constructor_with_address_family_internet_network_socket_type_stream_and_protocol_type_tcp) {
@@ -89,6 +97,10 @@ namespace unit_tests {
       assert::is_not_zero(s.receive_buffer_size(), line_info_);
       assert::is_zero(s.receive_timeout(), line_info_);
       assert::is_null(s.remote_end_point(), line_info_);
+      assert::is_not_zero(s.send_buffer_size(), line_info_);
+      assert::is_zero(s.send_timeout(), line_info_);
+      assert::are_equal(socket_type::stream, s.socket_type(), line_info_);
+      assert::is_not_zero(s.ttl(), line_info_);
     }
 
     void test_method_(constructor_with_address_family_internet_network_socket_type_dgram_and_protocol_type_udp) {
@@ -115,6 +127,10 @@ namespace unit_tests {
       assert::is_not_zero(s.receive_buffer_size(), line_info_);
       assert::is_zero(s.receive_timeout(), line_info_);
       assert::is_null(s.remote_end_point(), line_info_);
+      assert::is_not_zero(s.send_buffer_size(), line_info_);
+      assert::is_zero(s.send_timeout(), line_info_);
+      assert::are_equal(socket_type::dgram, s.socket_type(), line_info_);
+      assert::is_not_zero(s.ttl(), line_info_);
     }
     
     void test_method_(set_receive_buffer_size) {
@@ -122,6 +138,27 @@ namespace unit_tests {
       socket s(address_family::inter_network, socket_type::stream, protocol_type::tcp);
       s.receive_buffer_size(4242);
       assert::are_equal(4242U, s.receive_buffer_size(), line_info_);
+    }
+    
+    void test_method_(set_receive_timeout) {
+      assume::is_true(socket::os_supports_ip_v4());
+      socket s(address_family::inter_network, socket_type::stream, protocol_type::tcp);
+      s.receive_timeout(1000);
+      assert::are_equal(1000, s.receive_timeout(), line_info_);
+    }
+
+    void test_method_(set_send_buffer_size) {
+      assume::is_true(socket::os_supports_ip_v4());
+      socket s(address_family::inter_network, socket_type::stream, protocol_type::tcp);
+      s.send_buffer_size(4242);
+      assert::are_equal(4242U, s.send_buffer_size(), line_info_);
+    }
+    
+    void test_method_(set_send_timeout) {
+      assume::is_true(socket::os_supports_ip_v4());
+      socket s(address_family::inter_network, socket_type::stream, protocol_type::tcp);
+      s.send_timeout(1000);
+      assert::are_equal(1000, s.send_timeout(), line_info_);
     }
   };
 }

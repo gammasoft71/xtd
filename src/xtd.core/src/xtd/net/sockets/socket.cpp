@@ -187,6 +187,45 @@ const std::unique_ptr<xtd::net::end_point>& socket::remote_end_point() const {
   return data_->remote_end_point;
 }
 
+size_t socket::send_buffer_size() const {
+  return as<size_t>(get_socket_option(xtd::net::sockets::socket_option_level::socket, xtd::net::sockets::socket_option_name::send_buffer));
+}
+
+socket& socket::send_buffer_size(size_t value) {
+  set_socket_option(xtd::net::sockets::socket_option_level::socket, xtd::net::sockets::socket_option_name::send_buffer, as<int32_t>(value));
+  return *this;
+}
+
+int32_t socket::send_timeout() const {
+  return get_socket_option(xtd::net::sockets::socket_option_level::socket, xtd::net::sockets::socket_option_name::send_timeout);
+}
+
+socket& socket::send_timeout(int32_t value) {
+  if (value < -1) throw argument_out_of_range_exception(csf_);
+  if (value >= 1 && value <= 499) value = 500;
+  set_socket_option(xtd::net::sockets::socket_option_level::socket, xtd::net::sockets::socket_option_name::send_timeout, value);
+  return *this;
+}
+
+xtd::net::sockets::socket_type socket::socket_type() const noexcept {
+  return data_->socket_type;
+}
+
+byte_t socket::ttl() const {
+  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (data_->address_family == address_family::inter_network) return as<byte_t>(get_socket_option(xtd::net::sockets::socket_option_level::ip, xtd::net::sockets::socket_option_name::ip_time_to_live));
+  if (data_->address_family == address_family::inter_network_v6) return as<byte_t>(get_socket_option(xtd::net::sockets::socket_option_level::ip_v6, xtd::net::sockets::socket_option_name::ip_time_to_live));
+  throw not_supported_exception(csf_);
+}
+
+socket& socket::ttl(byte_t value) {
+  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (data_->address_family == address_family::inter_network) set_socket_option(xtd::net::sockets::socket_option_level::ip, xtd::net::sockets::socket_option_name::ip_time_to_live, as<int32_t>(value));
+  else if (data_->address_family == address_family::inter_network_v6) set_socket_option(xtd::net::sockets::socket_option_level::ip_v6, xtd::net::sockets::socket_option_name::ip_time_to_live, as<int32_t>(value));
+  else throw not_supported_exception(csf_);
+  return *this;
+}
+
 void socket::close() {
   data_->connected = false;
   if (data_->handle != 0 && native::socket::destroy(data_->handle) != 0) throw socket_exception(get_last_error(), csf_);
