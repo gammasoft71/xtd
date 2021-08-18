@@ -11,9 +11,9 @@ namespace unit_tests {
   public:
     void test_method_(create_socket_address_with_address_family_unnown) {
       socket_address sa(address_family::unknown);
-      assert::are_equal(address_family::unknown, sa.address_family(), line_info_);
+      assert::are_equal(address_family::unspecified, sa.address_family(), line_info_);
       assert::are_equal(32U, sa.size(), line_info_);
-      assert::are_equal("unknown:32:{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}", sa.to_string(), line_info_);
+      assert::are_equal("unspecified:32:{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}", sa.to_string(), line_info_);
     }
 
     void test_method_(create_socket_address_with_address_family_unspecified) {
