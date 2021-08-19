@@ -31,6 +31,10 @@ namespace xtd {
   namespace net {
     /// @brief The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface for developers who need to tightly control access to the network.
     namespace sockets {
+      /// @cond
+      class socket_aync_event_args;
+      /// @endcond
+      
       /// @brief Implements the Berkeley sockets interface.
       /// @par Library
       /// xtd.core
@@ -50,7 +54,7 @@ namespace xtd {
       class core_export_ socket : public xtd::object {
       public:
         /// @brief Initializes a new instance of the xtd::net::sockets::socket class.
-        socket() = default;
+        socket();
         
         /// @brief Initializes a new instance of the xtd::net::sockets::socket class for the specified socket handle.
         /// @param handle The socket handle for the socket that the xtd::net::sockets::socket object will encapsulate.
@@ -78,8 +82,8 @@ namespace xtd {
         socket(xtd::net::sockets::address_family address_family, xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type);
         
         /// @cond
-        socket(socket&& socket) = default;
-        socket(const socket& socket) = default;
+        socket(socket&&) = default;
+        socket(const socket&) = default;
         ~socket();
         socket& operator=(const socket&) = default;
         friend std::ostream& operator <<(std::ostream& os, const socket& mo) noexcept {return os << mo.to_string();}
@@ -401,6 +405,17 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         socket& ttl(byte_t value);
         
+        /// @brief Creates a new xtd::net::sockets::socket for a newly created connection.
+        /// @return A xtd::net::sockets::socket for a newly created connection.
+        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @exception xtd::invalid_operation_exception The accepting socket is not listening for connections. You must call xtd::net::sockets::socket::bind and xtd::net::sockets::socket::listen before calling xtd::net::sockets::socket::accept().
+        /// @remarks xtd::net::sockets::socket::accept synchronously extracts the first pending connection request from the connection request queue of the listening socket, and then creates and returns a new xtd::net::sockets::socket. You cannot use this returned xtd::net::sockets::socket to accept any additional connections from the connection queue. However, you can call the xtd::net::sockets::socket::remote_end_point method of the returned xtd::net::sockets::socket to identify the remote host's network address and port number.
+        /// @remarks In blocking mode, xtd::net::sockets::socket::accept blocks until an incoming connection attempt is queued. Once a connection is accepted, the original xtd::net::sockets::socket continues queuing incoming connection requests until you close it.
+        /// @remarks If you call this method using a non-blocking xtd::net::sockets::socket, and no connection requests are queued, xtd::net::sockets::socket::accept throws a xtd::net::sockets::socket_exception. If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        /// @note Before calling the xtd::net::sockets::socket::accept method, you must first call the xtd::net::sockets::socket::listen method to listen for and queue incoming connection requests.
+        socket accept();
+
         /// @brief Closes the xtd::net::sockets::socket connection and releases all associated resources.
         /// @remarks The xtd::net::sockets::socket::close method closes the remote host connection and releases all resources associated with the xtd::net::sockets::socket. Upon closing, the xtd::net::sockets::socket::connected property is set to false.
         /// @remarks For connection-oriented protocols, it is recommended that you call xtd::net::sockets::socket::shutdown before calling the xtd::net::sockets::socket::close method. This ensures that all data is sent and received on the connected socket before it is closed.
@@ -559,20 +574,9 @@ namespace xtd {
         
       private:
         static xtd::net::sockets::socket_error get_last_error();
-        struct data {
-          xtd::net::sockets::address_family address_family = xtd::net::sockets::address_family::unspecified;
-          bool blocking = true;
-          bool connected = false;
-          intptr_t handle = 0;
-          bool is_bound = false;
-          bool listening = false;
-          std::unique_ptr<xtd::net::end_point> local_end_point;
-          xtd::net::sockets::protocol_type protocol_type = xtd::net::sockets::protocol_type::unspecified;
-          std::unique_ptr<xtd::net::end_point> remote_end_point;
-          xtd::net::sockets::socket_type socket_type = xtd::net::sockets::socket_type::unknown;
-        };
+        struct data;
         
-        std::shared_ptr<data> data_ = std::make_shared<data>();
+        std::shared_ptr<data> data_;
       };
     }
   }

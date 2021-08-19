@@ -2,7 +2,9 @@
 #include "../../../../include/xtd/argument_out_of_range_exception.h"
 #include "../../../../include/xtd/invalid_operation_exception.h"
 #include "../../../../include/xtd/object_closed_exception.h"
+#include "../../../../include/xtd/net/ip_end_point.h"
 #include "../../../../include/xtd/net/sockets/socket.h"
+#include "../../../../include/xtd/net/sockets/socket_async_event_args.h"
 #include "../../../../include/xtd/net/sockets/socket_error.h"
 #include "../../../../include/xtd/net/sockets/socket_exception.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
@@ -20,12 +22,31 @@ public:
   ~__using_socket__() {native::socket::cleanup();}
 } __using_socket_instance__;
 
+struct socket::data {
+  xtd::net::sockets::address_family address_family = xtd::net::sockets::address_family::unspecified;
+  bool blocking = true;
+  bool connected = false;
+  intptr_t handle = 0;
+  bool is_bound = false;
+  bool listening = false;
+  std::unique_ptr<xtd::net::end_point> local_end_point;
+  xtd::net::sockets::protocol_type protocol_type = xtd::net::sockets::protocol_type::unspecified;
+  std::unique_ptr<xtd::net::end_point> remote_end_point;
+  xtd::net::sockets::socket_aync_event_args socket_aync_event_args;
+  xtd::net::sockets::socket_type socket_type = xtd::net::sockets::socket_type::unknown;
+};
+
+socket::socket() {
+  data_ = std::make_shared<data>();
+}
 socket::socket(intptr_t handle) {
+  data_ = std::make_shared<data>();
   if (handle == 0) throw argument_exception(csf_);
   data_->handle = handle;
 }
 
 socket::socket(const socket_information& socket_information) {
+  data_ = std::make_shared<data>();
   throw not_implemented_exception(csf_);
 }
 
@@ -34,6 +55,7 @@ socket::socket(xtd::net::sockets::socket_type socket_type, xtd::net::sockets::pr
 }
 
 socket::socket(xtd::net::sockets::address_family address_family, xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type) {
+  data_ = std::make_shared<data>();
   data_->address_family = address_family;
   data_->socket_type = socket_type;
   data_->protocol_type = protocol_type;
@@ -233,6 +255,25 @@ socket& socket::ttl(byte_t value) {
   else if (data_->address_family == address_family::inter_network_v6) set_socket_option(xtd::net::sockets::socket_option_level::ip_v6, xtd::net::sockets::socket_option_name::ip_time_to_live, as<int32_t>(value));
   else throw not_supported_exception(csf_);
   return *this;
+}
+
+socket socket::accept() {
+  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (data_->is_bound == false || data_->listening == false) throw invalid_operation_exception(csf_);
+  
+  socket_address address(data_->address_family);
+  intptr_t new_socket_handle = native::socket::accept(data_->handle, address.bytes_);
+  if (new_socket_handle == static_cast<intptr_t>(-1)) throw socket_exception(get_last_error(), csf_);
+  
+  data_->connected = true;
+
+  socket new_socket(new_socket_handle);
+  new_socket.data_->address_family = data_->address_family;
+  new_socket.data_->connected = true;
+  new_socket.data_->local_end_point = ip_end_point(0, 0).create(address);
+  new_socket.data_->protocol_type = data_->protocol_type;
+  new_socket.data_->socket_type = data_->socket_type;
+  return new_socket;
 }
 
 void socket::close() {
