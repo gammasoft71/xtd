@@ -3,10 +3,15 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
+#include <any>
+#include <memory>
+#include <vector>
 #include "../../event_args.h"
 #include "ip_packet_information.h"
 #include "socket.h"
+#include "socket_flags.h"
 #include "socket_async_operation.h"
+#include "send_packets_element.h"
 #include "transmit_file_options.h"
 
 /// @cond
@@ -58,8 +63,14 @@ namespace xtd {
         xtd::net::sockets::socket_async_operation last_operation = xtd::net::sockets::socket_async_operation::none;
         std::vector<byte_t> memory_buffer_;
         size_t offset_ = 0;
-        ip_packet_information receive_message_from_packet_info_;
+        xtd::net::sockets::ip_packet_information receive_message_from_packet_info_;
         std::unique_ptr<xtd::net::end_point> remote_end_point_;
+        std::vector<xtd::net::sockets::send_packets_element> send_packets_elements_;
+        xtd::net::sockets::transmit_file_options send_packets_flags_ = xtd::net::sockets::transmit_file_options::use_default_worker_thread;
+        size_t send_packets_send_size_ = 0;
+        xtd::net::sockets::socket_error socket_error_ = xtd::net::sockets::socket_error::success;
+        xtd::net::sockets::socket_flags socket_flags_ = xtd::net::sockets::socket_flags::none;
+        std::any user_token_;
       };
     }
   }
