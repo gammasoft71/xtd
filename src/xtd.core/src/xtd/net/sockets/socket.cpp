@@ -32,7 +32,7 @@ struct socket::data {
   std::unique_ptr<xtd::net::end_point> local_end_point;
   xtd::net::sockets::protocol_type protocol_type = xtd::net::sockets::protocol_type::unspecified;
   std::unique_ptr<xtd::net::end_point> remote_end_point;
-  xtd::net::sockets::socket_aync_event_args socket_aync_event_args;
+  std::unique_ptr<xtd::net::sockets::socket_aync_event_args> socket_aync_event_args;
   xtd::net::sockets::socket_type socket_type = xtd::net::sockets::socket_type::unknown;
 };
 
