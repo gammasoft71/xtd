@@ -1,3 +1,4 @@
+#include <thread>
 #include "../../../../include/xtd/bit_converter.h"
 #include "../../../../include/xtd/argument_out_of_range_exception.h"
 #include "../../../../include/xtd/invalid_operation_exception.h"
@@ -32,7 +33,7 @@ struct socket::data {
   std::unique_ptr<xtd::net::end_point> local_end_point;
   xtd::net::sockets::protocol_type protocol_type = xtd::net::sockets::protocol_type::unspecified;
   std::unique_ptr<xtd::net::end_point> remote_end_point;
-  std::unique_ptr<xtd::net::sockets::socket_aync_event_args> socket_aync_event_args;
+  std::unique_ptr<xtd::net::sockets::socket_async_event_args> socket_aync_event_args;
   xtd::net::sockets::socket_type socket_type = xtd::net::sockets::socket_type::unknown;
 };
 
@@ -274,6 +275,23 @@ socket socket::accept() {
   new_socket.data_->protocol_type = data_->protocol_type;
   new_socket.data_->socket_type = data_->socket_type;
   return new_socket;
+}
+
+bool socket::accept_async(xtd::net::sockets::socket_async_event_args& e) {
+  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (data_->is_bound == false || data_->listening == false) throw invalid_operation_exception(csf_);
+  
+  std::thread thread([](xtd::net::sockets::socket_async_event_args* e, xtd::net::sockets::address_family address_family, xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type) {
+    if (e->accept_socket_.data_->address_family == xtd::net::sockets::address_family::unknown && e->accept_socket_.data_->socket_type == xtd::net::sockets::socket_type::unknown && e->accept_socket_.data_->protocol_type == xtd::net::sockets::protocol_type::unknown) {
+      e->accept_socket_.data_->address_family = address_family;
+      e->accept_socket_.data_->socket_type = socket_type;
+      e->accept_socket_.data_->protocol_type = protocol_type;
+      e->connect_socket_ = e->accept_socket_.accept();
+       e->on_complet(*e);
+    }
+  }, &e, data_->address_family, data_->socket_type, data_->protocol_type);
+  thread.detach();
+  return false;
 }
 
 void socket::close() {
