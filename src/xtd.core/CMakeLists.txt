@@ -15,6 +15,7 @@ add_sources(
   include/xtd/argument_out_of_range_exception.h
   include/xtd/arithmetic_exception.h
   include/xtd/as.h
+  include/xtd/async_callback.h
   include/xtd/background_color.h
   include/xtd/beep.h
   include/xtd/bit_converter.h
@@ -48,6 +49,7 @@ add_sources(
   include/xtd/format_exception.h
   include/xtd/func.h
   include/xtd/guid.h
+  include/xtd/iasync_result.h
   include/xtd/icomparable.h
   include/xtd/iequatable.h
   include/xtd/index_out_of_range_exception.h
