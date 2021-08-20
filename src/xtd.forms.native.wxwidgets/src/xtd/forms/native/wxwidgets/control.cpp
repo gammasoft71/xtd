@@ -205,12 +205,13 @@ void control::font(intptr_t control, const drawing::font& font) {
   reinterpret_cast<control_handler*>(control)->control()->SetFont(*reinterpret_cast<wxFont*>(font.handle()));
 }
 
-void control::invoke_in_control_thread(intptr_t control, delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args, std::shared_ptr<std::shared_mutex> invoked) {
+void control::invoke_in_control_thread(intptr_t control, delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args, std::shared_ptr<std::shared_mutex> invoked, std::shared_ptr<bool> completed) {
   if (control == 0 || !wxTheApp || !wxTheApp->IsMainLoopRunning() || !reinterpret_cast<control_handler*>(control)->control()->GetEvtHandlerEnabled()) {
     invoked->unlock();
   } else {
     reinterpret_cast<control_handler*>(control)->control()->CallAfter([=] {
       invoker(args);
+      *completed = true;
       invoked->unlock();
     });
   }

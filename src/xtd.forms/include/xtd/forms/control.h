@@ -8,11 +8,11 @@
 #include <functional>
 #include <map>
 #include <memory>
-#include <shared_mutex>
 #include <optional>
 #include <string>
 #include <thread>
 #include <vector>
+#include <xtd/iasync_result.h>
 #include <xtd/drawing/color.h>
 #include <xtd/drawing/font.h>
 #include <xtd/drawing/point.h>
@@ -125,25 +125,20 @@ namespace xtd {
       };
       /// @endcond
       
-    public:
-      /// @brief Represents the status of an asynchronous operation.
-      class async_result_invoke {
+      class async_result_invoke : public xtd::iasync_result {
       public:
-        /// @cond
-        async_result_invoke(const async_result_invoke&) = default;
-        async_result_invoke(async_result_invoke&&) = default;
-        /// @endcond
+        async_result_invoke(xtd::object* async_state) : async_state_(async_state) {}
+        const xtd::object& async_state() const noexcept override {return *async_state_;}
+        std::shared_mutex& async_mutex() override {return *async_mutex_;}
+        bool completed_synchronously() const noexcept override {return false;}
+        bool is_completed() const noexcept override {return *is_completed_;};
         
-        /// @brief Gets a std::shared_mutex that is used to wait for an asynchronous operation to complete.
-        /// @return A std::shared_mutex that is used to wait for an asynchronous operation to complete.
-        std::shared_mutex& async_mutex() {return *async_mutex_;}
-        
-      private:
-        async_result_invoke() = default;
-        friend class control;
+        xtd::object* async_state_ = nullptr;
+        std::shared_ptr<bool> is_completed_ = std::make_shared<bool>(false);
         std::shared_ptr<std::shared_mutex> async_mutex_ = std::make_shared<std::shared_mutex>();
       };
       
+    public:
       /// @brief Represents a collection of controls.
       class control_collection : public xtd::forms::layout::arranged_element_collection<control_ref> {
       public:
@@ -774,20 +769,20 @@ namespace xtd {
       /// @brief Executes the specified delegate asynchronously on the thread that the control's underlying handle was created on.
       /// @param value A delegate to a method that takes no parameters.
       /// @return An async_result_invoke that represents the result of the begin_invoke(delegate) operation.
-      async_result_invoke begin_invoke(delegate<void()> value) {return begin_invoke(delegate<void(std::vector<std::any>)>(value), {});}
+      std::shared_ptr<xtd::iasync_result> begin_invoke(delegate<void()> value) {return begin_invoke(delegate<void(std::vector<std::any>)>(value), {});}
       
       /// @brief Executes the specified delegate asynchronously with the specified arguments, on the thread that the control's underlying handle was created on.
       /// @param value A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
       /// @param args An array of objects to pass as arguments to the given method. This can be empty if no arguments are needed.
       /// @return An async_result_invoke that represents the result of the begin_invoke(delegate) operation.
-      async_result_invoke begin_invoke(delegate<void(std::vector<std::any>)> value, const std::vector<std::any>& args);
+      std::shared_ptr<xtd::iasync_result> begin_invoke(delegate<void(std::vector<std::any>)> value, const std::vector<std::any>& args);
       
       /// @cond
       template<typename delegate_t>
-      async_result_invoke begin_invoke(delegate_t value, const std::vector<std::any>& args) {return begin_invoke(delegate<void(std::vector<std::any>)>(value), args);}
+      std::shared_ptr<xtd::iasync_result> begin_invoke(delegate_t value, const std::vector<std::any>& args) {return begin_invoke(delegate<void(std::vector<std::any>)>(value), args);}
       
       template<typename delegate_t>
-      async_result_invoke begin_invoke(delegate_t value) {return begin_invoke(delegate<void(std::vector<std::any>)>(value), {});}
+      std::shared_ptr<xtd::iasync_result> begin_invoke(delegate_t value) {return begin_invoke(delegate<void(std::vector<std::any>)>(value), {});}
       /// @endcond
 
       /// @brief Brings the control to the front of the z-order.
@@ -896,7 +891,7 @@ namespace xtd {
 
       /// @brief Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.
       /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke(delegate).
-      void end_invoke(async_result_invoke async);
+      void end_invoke(std::shared_ptr<xtd::iasync_result> async);
 
       /// @brief Sets input focus to the control.
       /// @return true if the input focus request was successful; otherwise, false.

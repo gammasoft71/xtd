@@ -471,17 +471,17 @@ bool control::is_handle_created() const {
   return handle_ != 0;
 }
 
-control::async_result_invoke control::begin_invoke(delegate<void(vector<any>)> value, const vector<any>& args) {
+shared_ptr<iasync_result> control::begin_invoke(delegate<void(vector<any>)> value, const vector<any>& args) {
   while (!xtd::forms::application::message_loop()) this_thread::sleep_for(10ms);
-  async_result_invoke async;
-  async.async_mutex().lock();
-  native::control::invoke_in_control_thread(handle_, value, args, async.async_mutex_);
+  shared_ptr<async_result_invoke> async = make_shared<async_result_invoke>(this);
+  async->async_mutex().lock();
+  native::control::invoke_in_control_thread(handle_, value, args, async->async_mutex_, async->is_completed_);
   this_thread::yield();
   return async;
 }
 
-void control::end_invoke(async_result_invoke async) {
-  lock_guard<shared_mutex> lock(async.async_mutex());
+void control::end_invoke(shared_ptr<iasync_result> async) {
+  lock_guard<shared_mutex> lock(async->async_mutex());
 }
 
 forms::create_params control::create_params() const {
