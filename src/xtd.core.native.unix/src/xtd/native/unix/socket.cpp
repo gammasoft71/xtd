@@ -396,7 +396,7 @@ int32_t socket::address_family_to_native(int32_t address_family) {
 int32_t socket::native_to_address_family(int32_t address_family) {
 #if defined(__APPLE__)
   static std::map<int32_t, int32_t> address_families = {
-    {-1, ADDRESS_FAMILY_UNKNOWN},
+    //{-1, ADDRESS_FAMILY_UNKNOWN},
     {AF_UNSPEC, ADDRESS_FAMILY_UNSPECIFIED},
     {AF_UNIX, ADDRESS_FAMILY_UNIX},
     {AF_INET, ADDRESS_FAMILY_INTER_NETWORK},
@@ -429,7 +429,7 @@ int32_t socket::native_to_address_family(int32_t address_family) {
   };
 #else
   static std::map<int32_t, int32_t> address_families = {
-    {-1, ADDRESS_FAMILY_UNKNOWN},
+    //{-1, ADDRESS_FAMILY_UNKNOWN},
     {AF_UNSPEC, ADDRESS_FAMILY_UNSPECIFIED},
     {AF_UNIX, ADDRESS_FAMILY_UNIX},
     {AF_INET, ADDRESS_FAMILY_INTER_NETWORK},

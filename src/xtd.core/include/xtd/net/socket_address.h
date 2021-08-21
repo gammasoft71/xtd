@@ -14,7 +14,7 @@ namespace xtd {
   /// @brief The xtd::net namespace provides a simple programming interface for many of the protocols used on networks today. The xtd::net::web_request and xtd::net::web_response classes form the basis of what are called pluggable protocols, an implementation of network services that enables you to develop applications that use Internet resources without worrying about the specific details of the individual protocols.
   namespace net {
     /// @cond
-    class ipend_point;
+    class ip_end_point;
     namespace sockets {class socket;}
     /// @endcond
     
@@ -70,7 +70,7 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       
     private:
-      friend class ipend_point;
+      friend class ip_end_point;
       friend class sockets::socket;
       std::vector<byte_t> bytes_;
     };
