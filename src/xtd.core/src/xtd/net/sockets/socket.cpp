@@ -294,6 +294,14 @@ bool socket::accept_async(xtd::net::sockets::socket_async_event_args& e) {
   return false;
 }
 
+void socket::bind_(std::unique_ptr<xtd::net::end_point>&& local_end_point) {
+  if (data_->handle == 0) throw object_closed_exception(csf_);
+  data_->local_end_point = std::move(local_end_point);
+  xtd::net::socket_address socket_address = data_->local_end_point->serialize();
+  if (native::socket::bind(data_->handle, socket_address.bytes_) != 0) throw socket_exception(get_last_error(), csf_);
+  data_->is_bound = true;
+}
+
 void socket::close() {
   data_->connected = false;
   if (data_->handle != 0 && native::socket::destroy(data_->handle) != 0) throw socket_exception(get_last_error(), csf_);
@@ -358,6 +366,13 @@ xtd::net::sockets::ip_v6_multicast_option socket::get_socket_ip_v6_multicast_opt
   uint32_t interface_index = 0;
   if (native::socket::get_socket_ip_v6_multicast_option(data_->handle, static_cast<int32_t>(socket_option_name), multicast_address, interface_index) != 0) throw socket_exception(get_last_error(), csf_);
   return ip_v6_multicast_option(ip_address(multicast_address), interface_index);
+}
+
+void socket::listen(size_t backlog) {
+  if (data_->handle == 0) throw object_closed_exception(csf_);
+  //if (data_->is_bound == false) throw socket_exception(socket_error::not_connected, csf_);
+  native::socket::listen(data_->handle, backlog);
+  data_->listening = true;
 }
 
 void socket::set_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name, bool option_value) {

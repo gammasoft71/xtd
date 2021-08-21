@@ -7,6 +7,7 @@
 #include "../../core_export.h"
 #include "../../argument_exception.h"
 #include "../../as.h"
+#include "../../iasync_result.h"
 #include "../../not_implemented_exception.h"
 #include "../../not_supported_exception.h"
 #include "../../object.h"
@@ -52,6 +53,19 @@ namespace xtd {
       /// @remarks The xtd::net::sockets::socket class allows you to configure your xtd::net::sockets::socket using the xtd::net::sockets::socket::set_socket_option method. Retrieve these settings using the xtd::net::sockets::socket::get_socket_option method.
       /// @note If you are writing a relatively simple application and do not require maximum performance, consider using xtd::net::sockets::tcp_client, xtd::net::sockets::tcp_listener, and xtd::net::sockets::udp_client. These classes provide a simpler and more user-friendly interface to xtd::net::sockets::socket communications.
       class core_export_ socket : public xtd::object {
+        class async_result_accept : public xtd::iasync_result {
+        public:
+          async_result_accept(xtd::object* async_state) : async_state_(async_state) {}
+          const xtd::object& async_state() const noexcept override {return *async_state_;}
+          std::shared_mutex& async_mutex() override {return *async_mutex_;}
+          bool completed_synchronously() const noexcept override {return false;}
+          bool is_completed() const noexcept override {return *is_completed_;};
+          
+          xtd::object* async_state_ = nullptr;
+          std::shared_ptr<bool> is_completed_ = std::make_shared<bool>(false);
+          std::shared_ptr<std::shared_mutex> async_mutex_ = std::make_shared<std::shared_mutex>();
+        };
+        
       public:
         /// @brief Initializes a new instance of the xtd::net::sockets::socket class.
         socket();
@@ -180,7 +194,7 @@ namespace xtd {
         /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks If xtd::net::sockets::socket::exclusive_address_use is false, multiple sockets can use the xtd::net::sockets::socket::bind method to bind to a specific port; however only one of the sockets can perform operations on the network traffic sent to the port. If more than one socket attempts to use the xtd::net::sockets::socket::bind method to bind to a particular port, then the one with the more specific IP address will handle the network traffic sent to that port.
-        /// @remarks If xtd::net::sockets::socket::exclusive_address_use is true, the first use of the xtd::net::sockets::socket::bind method to attempt to bind to a particular port, regardless of Internet Protocol (IP) address, will succeed; all subsequent uses of the Bind method to attempt to bind to that port will fail until the original bound socket is destroyed.
+        /// @remarks If xtd::net::sockets::socket::exclusive_address_use is true, the first use of the xtd::net::sockets::socket::bind method to attempt to bind to a particular port, regardless of Internet Protocol (IP) address, will succeed; all subsequent uses of the xtd::net::sockets::socket::bind method to attempt to bind to that port will fail until the original bound socket is destroyed.
         /// @remarks This property must be set before xtd::net::sockets::socket::bind is called; otherwise an xtd::invalid_operation_exception will be thrown.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         bool exclusive_address_use() const;
@@ -191,7 +205,7 @@ namespace xtd {
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @exception xtd::invalid_operation_exception xtd::net::sockets::socket::bind has been called for this xtd::net::sockets::socket.
         /// @remarks If xtd::net::sockets::socket::exclusive_address_use is false, multiple sockets can use the xtd::net::sockets::socket::bind method to bind to a specific port; however only one of the sockets can perform operations on the network traffic sent to the port. If more than one socket attempts to use the xtd::net::sockets::socket::bind method to bind to a particular port, then the one with the more specific IP address will handle the network traffic sent to that port.
-        /// @remarks If xtd::net::sockets::socket::exclusive_address_use is true, the first use of the xtd::net::sockets::socket::bind method to attempt to bind to a particular port, regardless of Internet Protocol (IP) address, will succeed; all subsequent uses of the Bind method to attempt to bind to that port will fail until the original bound socket is destroyed.
+        /// @remarks If xtd::net::sockets::socket::exclusive_address_use is true, the first use of the xtd::net::sockets::socket::bind method to attempt to bind to a particular port, regardless of Internet Protocol (IP) address, will succeed; all subsequent uses of the xtd::net::sockets::socket::bind method to attempt to bind to that port will fail until the original bound socket is destroyed.
         /// @remarks This property must be set before xtd::net::sockets::socket::bind is called; otherwise an xtd::invalid_operation_exception will be thrown.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         socket& exclusive_address_use(bool value);
@@ -435,6 +449,22 @@ namespace xtd {
         /// @remarks The xtd::net::sockets::socket_async_event_args::completed event can occur in some cases when no connection has been accepted and cause the xtd::net::sockets::socket_async_event_args::socket_error property to be set to xtd::net::sockets::socket_error::connection_reset. This can occur as a result of port scanning using a half-open SYN type scan (a SYN -> SYN-ACK -> RST sequence). Applications using the xtd::net::sockets::socket::accept_async method should be prepared to handle this condition.
         bool accept_async(xtd::net::sockets::socket_async_event_args& e);
 
+        /// @brief Associates a xtd::net::sockets::socket with a local endpoint.
+        /// @param localEndPoint The local xtd::net::sockets::end_point to associate with the xtd::net::sockets::socket.
+        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks Use the xtd::net::sockets::socket::bind method if you need to use a specific local endpoint. You must call xtd::net::sockets::socket::bind before you can call the Listen method. You do not need to call xtd::net::sockets::socket::bind before using the xtd::net::sockets::socket::connect method unless you need to use a specific local endpoint. You can use the xtd::net::sockets::socket::bind method on both connectionless and connection-oriented protocols.
+        /// @remarks Before calling xtd::net::sockets::socket::bind, you must first create the local xtd::net::ip_end_point from which you intend to communicate data. If you do not care which local address is assigned, you can create an xtd::net::ip_end_point using xtd::net::ip_address::any as the address parameter, and the underlying service provider will assign the most appropriate network address. This might help simplify your application if you have multiple network interfaces. If you do not care which local port is used, you can create an xtd::net::ip_end_point using 0 for the port number. In this case, the service provider will assign an available port number between 1024 and 5000.
+        /// @remarks If you use the above approach, you can discover what local network address and port number has been assigned by calling the xtd::net::sockets::socket::local_dnd_point. If you are using a connection-oriented protocol, xtd::net::sockets::socket::local_end_point will not return the locally assigned network address until after you have made a call to the xtd::net::sockets::socket::connect or xtd::net::sockets::socket::end_connect method. If you are using a connectionless protocol, you will not have access to this information until you have completed a send or receive.
+        /// @remarks If a UDP socket wants to receive interface information on received packets, the xtd::net::sockets::socket::set_socket_option method should be explicitly called with the socket option set to xtd::net::sockets::socket_opttion_name::packet_information immediately after calling the xtd::net::sockets::socket::bind method.
+        /// @note If you intend to receive multicast datagrams, you must call the xtd::net::sockets::socket::bind method with a multicast port number.
+        /// @note You must call the xtd::net::sockets::socket::bind method if you intend to receive connectionless datagrams using the xtd::net::sockets::socket::receive_from method.
+        /// @note If you receive a xtd::net::sockets::socket_exception when calling the xtd::net::sockets::socket::bind method, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        template<typename end_point_t>
+        void bind(const end_point_t& local_end_point) {
+          bind_(local_end_point.template memberwise_clone<end_point_t>());
+        }
+
         /// @brief Closes the xtd::net::sockets::socket connection and releases all associated resources.
         /// @remarks The xtd::net::sockets::socket::close method closes the remote host connection and releases all resources associated with the xtd::net::sockets::socket. Upon closing, the xtd::net::sockets::socket::connected property is set to false.
         /// @remarks For connection-oriented protocols, it is recommended that you call xtd::net::sockets::socket::shutdown before calling the xtd::net::sockets::socket::close method. This ensures that all data is sent and received on the connected socket before it is closed.
@@ -485,6 +515,16 @@ namespace xtd {
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exceptionxtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
         xtd::net::sockets::ip_v6_multicast_option get_socket_ip_v6_multicast_option(xtd::net::sockets::socket_option_name socket_option_name) const;
+
+        /// @brief Places a xtd::net::sockets::socket in a listening state.
+        /// @param backlog The maximum length of the pending connections queue.
+        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks xtd::net::sockets::socket::listen causes a connection-oriented xtd::net::sockets::socket to listen for incoming connection attempts. The backlog parameter specifies the number of incoming connections that can be queued for acceptance. To determine the maximum number of connections you can specify, retrieve the xtd::net::sockets::socket_option_name::max_connections value. xtd::net::sockets::socket::listen does not block.
+        /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exceptionxtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
+        /// @note You must call the xtd::net::sockets::socket::bind method before calling xtd::net::sockets::socket::listen, or xtd::net::sockets::socket::listen will throw axtd::net::sockets::socket_exception.
+        /// @note The backlog parameter is limited to different values depending on the Operating System. You may specify a higher value, but the backlog will be limited based on the Operating System.
+        void listen(size_t backlog);
 
         /// @brief Sets the specified xtd::net::sockets::socket option to the specified integer value.
         /// @param socket_option_level One of the xtd::net::sockets::socket_option_level values.
@@ -593,6 +633,7 @@ namespace xtd {
         
       private:
         static xtd::net::sockets::socket_error get_last_error();
+        void bind_(std::unique_ptr<xtd::net::end_point>&& local_end_point);
         struct data;
         
         std::shared_ptr<data> data_;

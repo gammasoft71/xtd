@@ -68,7 +68,7 @@ namespace xtd {
     /// The following code example shows how to copy an instance of a class using memberwise_clone.
     /// @include object_memberwise_clone.cpp
     template<typename object_t>
-    std::shared_ptr<object> memberwise_clone() const {return std::make_shared<object_t>(dynamic_cast<const object_t&>(*this));}
+    std::unique_ptr<object_t> memberwise_clone() const {return std::make_unique<object_t>(dynamic_cast<const object_t&>(*this));}
     
     /// @brief Determines whether the specified object instances are the same instance.
     /// @param object_a The first object to compare.
