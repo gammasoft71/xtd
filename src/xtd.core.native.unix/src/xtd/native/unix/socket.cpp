@@ -586,8 +586,8 @@ int32_t socket::io_control(intptr_t handle, int32_t io_control, std::vector<uint
   return -1;
 }
 
-int32_t socket::listen(intptr_t handle, int32_t backlog) {
-  return ::listen(static_cast<int32_t>(handle), backlog);
+int32_t socket::listen(intptr_t handle, size_t backlog) {
+  return ::listen(static_cast<int32_t>(handle), static_cast<int32_t>(backlog));
 }
 
 int32_t socket::poll(intptr_t handle, int32_t microseconds, int32_t mode) {
