@@ -132,11 +132,37 @@ namespace unit_tests {
       assert::is_not_zero(s.ttl(), line_info_);
     }
     
+    void test_method_(bind_with_bad_socket) {
+      socket s;
+      assert::throws<object_closed_exception>([&]{s.bind(ip_end_point(ip_address(127, 0, 0, 1), 9400));}, line_info_);
+    }
+    
+    void test_method_(bind_socket_type_stream_and_protocol_type_tcp_socket) {
+      assume::is_true(socket::os_supports_ip_v6());
+      socket s(address_family::inter_network_v6, socket_type::stream, protocol_type::tcp);
+      //s.bind(ip_end_point(ip_address::ip_v6_any, 9400));
+      //assert::is_true(s.is_bound(), line_info_);
+    }
+
+    void test_method_(bind_with_address_family_internet_network_socket_type_stream_and_protocol_type_tcp_socket) {
+      assume::is_true(socket::os_supports_ip_v4());
+      socket s(address_family::inter_network, socket_type::stream, protocol_type::tcp);
+      s.bind(ip_end_point(ip_address::any, 9400));
+      assert::is_true(s.is_bound(), line_info_);
+    }
+
+    void test_method_(bind_with_address_family_internet_network_socket_type_dgram_and_protocol_type_udp_socket) {
+      assume::is_true(socket::os_supports_ip_v4());
+      socket s(address_family::inter_network, socket_type::dgram, protocol_type::udp);
+      s.bind(ip_end_point(ip_address::any, 9400));
+      assert::is_true(s.is_bound(), line_info_);
+    }
+
     void test_method_(set_receive_buffer_size) {
       assume::is_true(socket::os_supports_ip_v4());
       socket s(address_family::inter_network, socket_type::stream, protocol_type::tcp);
       s.receive_buffer_size(4242);
-      // Fix on linux
+      // Fix on linux receive 8484U value ???
       //assert::are_equal(4242U, s.receive_buffer_size(), line_info_);
     }
     
@@ -151,7 +177,7 @@ namespace unit_tests {
       assume::is_true(socket::os_supports_ip_v4());
       socket s(address_family::inter_network, socket_type::stream, protocol_type::tcp);
       s.send_buffer_size(4242);
-      /// Fix on linux
+      // Fix on linux receive 8484U value ???
       //assert::are_equal(4242U, s.send_buffer_size(), line_info_);
     }
     
