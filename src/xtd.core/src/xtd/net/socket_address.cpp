@@ -16,8 +16,13 @@ socket_address::socket_address(sockets::address_family address_family) : socket_
 
 socket_address::socket_address(sockets::address_family address_family, size_t buffer_size) : bytes_(buffer_size) {
   if (buffer_size < 2) throw argument_out_of_range_exception(csf_);
-  bytes_[0] = static_cast<byte_t>(native::socket::address_family_to_native(static_cast<int32_t>(address_family)));
-  bytes_[1] = 0;
+  if (bit_converter::is_little_endian) {
+    bytes_[0] = static_cast<byte_t>(native::socket::address_family_to_native(static_cast<int32_t>(address_family)));
+    bytes_[1] = static_cast<byte_t>(native::socket::address_family_to_native(static_cast<int32_t>(address_family)) >> 8);
+  } else {
+    bytes_[0] =  static_cast<byte_t>(native::socket::address_family_to_native(static_cast<int32_t>(address_family)) >> 8);
+    bytes_[1] = static_cast<byte_t>(native::socket::address_family_to_native(static_cast<int32_t>(address_family)));
+  }
 }
 
 socket_address::socket_address(const vector<byte_t>& buffer) : bytes_(buffer) {

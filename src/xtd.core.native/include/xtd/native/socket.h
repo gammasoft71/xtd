@@ -153,7 +153,7 @@ namespace xtd {
       /// @param backlog The maximum length for the queue of pending connections.
       /// @return Zero (0) if succeed; otherwise on error.
       /// @warning Internal use only
-      static int32_t listen(intptr_t handle, int32_t backlog);
+      static int32_t listen(intptr_t handle, size_t backlog);
       /// @brief Synchronous I/O multiplexing
       /// @param handle The socket handle.
       /// @param microseconds Timeout in microseconds.
