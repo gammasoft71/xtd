@@ -29,7 +29,10 @@ socket_address::socket_address(const vector<byte_t>& buffer) : bytes_(buffer) {
 }
 
 sockets::address_family socket_address::address_family() const {
-  return static_cast<sockets::address_family>(native::socket::native_to_address_family(bytes_[0]));
+  if (bit_converter::is_little_endian)
+    return static_cast<sockets::address_family>(native::socket::native_to_address_family(bytes_[0] | (static_cast<int32_t>(bytes_[1]) << 8)));
+  else
+    return static_cast<sockets::address_family>(native::socket::native_to_address_family((static_cast<int32_t>(bytes_[0]) << 8) | bytes_[1]));
 }
 
 size_t socket_address::size() const {

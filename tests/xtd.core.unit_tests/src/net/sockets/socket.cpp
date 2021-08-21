@@ -140,11 +140,7 @@ namespace unit_tests {
     void test_method_(bind_socket_type_stream_and_protocol_type_tcp_socket) {
       assume::is_true(socket::os_supports_ip_v6());
       socket s(address_family::inter_network_v6, socket_type::stream, protocol_type::tcp);
-      try {
-        s.bind(ip_end_point(ip_address::ip_v6_any, 9400));
-      } catch(const socket_exception& e) {
-        console::write_line("exceptio : {}, error {}", e, static_cast<socket_error>(e.error_code().value()));
-      }
+      s.bind(ip_end_point(ip_address::ip_v6_any, 9400));
       assert::is_true(s.is_bound(), line_info_);
     }
 
