@@ -74,7 +74,37 @@ namespace unit_tests {
       // The ttl value is zero on Circle CI. (this is not an error).
       // assert::is_not_zero(s.ttl(), line_info_);
     }
-
+    
+    void test_method_(constructor_with_address_family_internet_network_v6_socket_type_stream_and_protocol_type_tcp) {
+      assume::is_true(socket::os_supports_ip_v6());
+      socket s(socket_type::stream, protocol_type::tcp);
+      assert::are_equal(address_family::inter_network_v6, s.address_family(), line_info_);
+      assert::is_zero(s.available(), line_info_);
+      assert::is_true(s.blocking(), line_info_);
+      assert::is_false(s.connected(), line_info_);
+      assert::throws<not_supported_exception>([&]{s.dont_fragment();}, line_info_);
+      assert::is_true(s.dual_mode(), line_info_);
+      assert::throws<socket_exception>([&] {s.enable_broadcast();}, line_info_);
+      assert::is_false(s.exclusive_address_use(), line_info_);
+      assert::is_not_zero(s.handle(), line_info_);
+      assert::is_false(s.is_bound(), line_info_);
+      linger_option linger = s.linger_state();
+      assert::is_false(linger.enabled(), line_info_);
+      assert::is_zero(linger.linger_time(), line_info_);
+      assert::is_null(s.local_end_point(), line_info_);
+      assert::throws<socket_exception>([&]{s.multicast_loopback();}, line_info_);
+      assert::is_false(s.no_delay(), line_info_);
+      assert::are_equal(protocol_type::tcp, s.protocol_type(), line_info_);
+      assert::is_not_zero(s.receive_buffer_size(), line_info_);
+      assert::is_zero(s.receive_timeout(), line_info_);
+      assert::is_null(s.remote_end_point(), line_info_);
+      assert::is_not_zero(s.send_buffer_size(), line_info_);
+      assert::is_zero(s.send_timeout(), line_info_);
+      assert::are_equal(socket_type::stream, s.socket_type(), line_info_);
+      // The ttl value is zero on Circle CI. (this is not an error).
+      // assert::is_not_zero(s.ttl(), line_info_);
+    }
+    
     void test_method_(constructor_with_address_family_internet_network_socket_type_stream_and_protocol_type_tcp) {
       assume::is_true(socket::os_supports_ip_v4());
       socket s(address_family::inter_network, socket_type::stream, protocol_type::tcp);
@@ -140,22 +170,83 @@ namespace unit_tests {
     void test_method_(bind_socket_type_stream_and_protocol_type_tcp_socket) {
       assume::is_true(socket::os_supports_ip_v6());
       socket s(address_family::inter_network_v6, socket_type::stream, protocol_type::tcp);
-      s.bind(ip_end_point(ip_address::ip_v6_any, 9400));
+      s.bind(ip_end_point(ip_address::ip_v6_any, 4242));
+      assert::is_true(s.is_bound(), line_info_);
+    }
+
+    void test_method_(bind_with_address_family_internet_network_v6_socket_type_stream_and_protocol_type_tcp_socket) {
+      assume::is_true(socket::os_supports_ip_v6());
+      socket s(address_family::inter_network_v6, socket_type::stream, protocol_type::tcp);
+      s.bind(ip_end_point(ip_address::ip_v6_any, 4242));
       assert::is_true(s.is_bound(), line_info_);
     }
 
     void test_method_(bind_with_address_family_internet_network_socket_type_stream_and_protocol_type_tcp_socket) {
       assume::is_true(socket::os_supports_ip_v4());
       socket s(address_family::inter_network, socket_type::stream, protocol_type::tcp);
-      s.bind(ip_end_point(ip_address::any, 9400));
+      s.bind(ip_end_point(ip_address::any, 4242));
+      assert::is_true(s.is_bound(), line_info_);
+    }
+
+    void test_method_(bind_with_address_family_internet_network_v6_socket_type_dgram_and_protocol_type_udp_socket) {
+      assume::is_true(socket::os_supports_ip_v6());
+      socket s(address_family::inter_network_v6, socket_type::dgram, protocol_type::udp);
+      s.bind(ip_end_point(ip_address::ip_v6_any, 4242));
       assert::is_true(s.is_bound(), line_info_);
     }
 
     void test_method_(bind_with_address_family_internet_network_socket_type_dgram_and_protocol_type_udp_socket) {
       assume::is_true(socket::os_supports_ip_v4());
       socket s(address_family::inter_network, socket_type::dgram, protocol_type::udp);
-      s.bind(ip_end_point(ip_address::any, 9400));
+      s.bind(ip_end_point(ip_address::any, 4242));
       assert::is_true(s.is_bound(), line_info_);
+    }
+
+    void test_method_(bind_with_empty_socket) {
+      assume::is_true(socket::os_supports_ip_v4());
+      socket s;
+      assert::throws<object_closed_exception>([&]{s.bind(ip_end_point(ip_address::any, 9400));}, line_info_);
+      assert::is_false(s.is_bound(), line_info_);
+    }
+
+    void test_method_(listen_with_bind_socket_type_stream_and_protocol_type_tcp_socket) {
+      assume::is_true(socket::os_supports_ip_v6());
+      socket s(address_family::inter_network_v6, socket_type::stream, protocol_type::tcp);
+      s.bind(ip_end_point(ip_address::ip_v6_any, 4242));
+      assert::does_not_throw([&]{s.listen(10);}, line_info_);
+    }
+
+    void test_method_(listen_with_bind_with_address_family_internet_v6_network_socket_type_stream_and_protocol_type_tcp_socket) {
+      assume::is_true(socket::os_supports_ip_v6());
+      socket s(address_family::inter_network_v6, socket_type::stream, protocol_type::tcp);
+      s.bind(ip_end_point(ip_address::ip_v6_any, 9400));
+      assert::does_not_throw([&]{s.listen(10);}, line_info_);
+    }
+
+    void test_method_(listen_with_bind_with_address_family_internet_network_socket_type_stream_and_protocol_type_tcp_socket) {
+      assume::is_true(socket::os_supports_ip_v4());
+      socket s(address_family::inter_network, socket_type::stream, protocol_type::tcp);
+      s.bind(ip_end_point(ip_address::any, 9400));
+      assert::does_not_throw([&]{s.listen(10);}, line_info_);
+    }
+
+    void test_method_(listen_with_bind_with_address_family_internet_network_socket_type_dgram_and_protocol_type_udp_socket) {
+      assume::is_true(socket::os_supports_ip_v4());
+      socket s(address_family::inter_network, socket_type::dgram, protocol_type::udp);
+      s.bind(ip_end_point(ip_address::any, 4242));
+      assert::throws<socket_exception>([&]{s.listen(10);}, line_info_);
+    }
+
+    void test_method_(listen_with_empty_socket) {
+      assume::is_true(socket::os_supports_ip_v4());
+      socket s;
+      assert::throws<object_closed_exception>([&]{s.listen(10);}, line_info_);
+    }
+
+    void test_method_(listen_without_bind) {
+      assume::is_true(socket::os_supports_ip_v4());
+      socket s(address_family::inter_network, socket_type::stream, protocol_type::tcp);
+      assert::throws<socket_exception>([&]{s.listen(10);}, line_info_);
     }
 
     void test_method_(set_receive_buffer_size) {
@@ -186,6 +277,60 @@ namespace unit_tests {
       socket s(address_family::inter_network, socket_type::stream, protocol_type::tcp);
       s.send_timeout(1000);
       assert::are_equal(1000, s.send_timeout(), line_info_);
+    }
+    
+    void test_method_(accept_and_connect_with_address_family_internet_v6_network_socket_type_stream_and_protocol_type_tcp_socket) {
+      assume::is_true(socket::os_supports_ip_v6());
+      bool server_accepted_client = false;
+      bool client_connected = false;
+      socket server_socket(address_family::inter_network_v6, socket_type::stream, protocol_type::tcp);
+      thread server([&] {
+        server_socket.bind(ip_end_point(ip_address::ip_v6_any, 4242));
+        server_socket.listen(10);
+        server_socket.accept();
+        server_accepted_client = true;
+      });
+      
+      socket client_socket(address_family::inter_network_v6, socket_type::stream, protocol_type::tcp);
+      thread client([&] {
+        client_socket.connect(ip_address::ip_v6_loopback, 4242);
+        client_connected = true;
+      });
+      
+      server.join();
+      client.join();
+      
+      assert::is_true(server_accepted_client, line_info_);
+      assert::is_true(client_connected, line_info_);
+      assert::is_true(server_socket.connected(), line_info_);
+      assert::is_true(client_socket.connected(), line_info_);
+    }
+    
+    void test_method_(accept_and_connect_with_address_family_internet_v4_network_socket_type_stream_and_protocol_type_tcp_socket) {
+      assume::is_true(socket::os_supports_ip_v4());
+      bool server_accepted_client = false;
+      bool client_connected = false;
+      socket server_socket(address_family::inter_network, socket_type::stream, protocol_type::tcp);
+      thread server([&] {
+        server_socket.bind(ip_end_point(ip_address::any, 4242));
+        server_socket.listen(10);
+        server_socket.accept();
+        server_accepted_client = true;
+      });
+      
+      socket client_socket(address_family::inter_network, socket_type::stream, protocol_type::tcp);
+      thread client([&] {
+        client_socket.connect(ip_address::loopback, 4242);
+        client_connected = true;
+      });
+      
+      server.join();
+      client.join();
+      
+      assert::is_true(server_accepted_client, line_info_);
+      assert::is_true(client_connected, line_info_);
+      assert::is_true(server_socket.connected(), line_info_);
+      assert::is_true(client_socket.connected(), line_info_);
     }
   };
 }
