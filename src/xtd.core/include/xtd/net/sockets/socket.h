@@ -477,11 +477,11 @@ namespace xtd {
          connect_(remote_end_point.template memberwise_clone<end_point_t>());
         }
         
-        void connect(const xtd::net::ip_address& address, uint32_t port);
+        void connect(const xtd::net::ip_address& address, uint16_t port);
         
-        void connect(const std::vector<xtd::net::ip_address>& addresses, uint32_t port);
+        void connect(const std::vector<xtd::net::ip_address>& addresses, uint16_t port);
         
-        void connect(const xtd::ustring& host, uint32_t port);
+        void connect(const xtd::ustring& host, uint16_t port);
 
         /// @brief Gets a socket option value using platform-specific level and name identifiers.
         /// @param socket_option_level The platform-defined option level.
@@ -643,7 +643,7 @@ namespace xtd {
         void set_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, intptr_t option_value, size_t option_value_size);
         
       private:
-        static xtd::net::sockets::socket_error get_last_error();
+        static xtd::net::sockets::socket_error get_last_error_();
         void bind_(std::unique_ptr<xtd::net::end_point>&& local_end_point);
         void connect_(std::unique_ptr<xtd::net::end_point>&& remote_end_point);
         struct data;
