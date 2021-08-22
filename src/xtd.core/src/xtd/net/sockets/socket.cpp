@@ -3,6 +3,7 @@
 #include "../../../../include/xtd/argument_out_of_range_exception.h"
 #include "../../../../include/xtd/invalid_operation_exception.h"
 #include "../../../../include/xtd/object_closed_exception.h"
+#include "../../../../include/xtd/net/dns.h"
 #include "../../../../include/xtd/net/ip_end_point.h"
 #include "../../../../include/xtd/net/sockets/socket.h"
 #include "../../../../include/xtd/net/sockets/socket_async_event_args.h"
@@ -25,11 +26,12 @@ public:
 
 struct socket::data {
   xtd::net::sockets::address_family address_family = xtd::net::sockets::address_family::unspecified;
-  bool blocking = true;
-  bool connected = false;
+  bool will_block = true;
+  bool is_connected = false;
+  bool is_disconnected = false;
   intptr_t handle = 0;
   bool is_bound = false;
-  bool listening = false;
+  bool is_listening = false;
   std::unique_ptr<xtd::net::end_point> local_end_point;
   xtd::net::sockets::protocol_type protocol_type = xtd::net::sockets::protocol_type::unspecified;
   std::unique_ptr<xtd::net::end_point> remote_end_point;
@@ -81,18 +83,18 @@ size_t socket::available() const {
 
 bool socket::blocking() const {
   if (data_->handle == 0) throw object_closed_exception(csf_);
-  return data_->blocking;
+  return data_->will_block;
 }
 
 socket& socket::blocking(bool value) {
   if (data_->handle == 0) throw object_closed_exception(csf_);
   if (native::socket::set_blocking(data_->handle, value) != 0) throw socket_exception(get_last_error(), csf_);
-  data_->blocking = value;
+  data_->will_block = value;
   return *this;
 }
 
 bool socket::connected() const noexcept {
-  return data_->connected;
+  return data_->is_connected;
 }
 
 bool socket::dont_fragment() const {
@@ -195,6 +197,21 @@ xtd::net::sockets::protocol_type socket::protocol_type() const noexcept {
   return data_->protocol_type;
 }
 
+void socket::connect(const xtd::net::ip_address& address, uint32_t port) {
+  connect_(std::make_unique<ip_end_point>(ip_end_point(address, port)));
+}
+
+void socket::connect(const std::vector<ip_address>& addresses, uint32_t port) {
+  for (ip_address address : addresses) {
+    if (data_->is_connected == false)
+      connect(address, port);
+  }
+}
+
+void socket::connect(const xtd::ustring& host, uint32 port) {
+  connect(dns::get_host_addresses(host), port);
+}
+
 size_t socket::receive_buffer_size() const {
   return as<size_t>(get_socket_option(xtd::net::sockets::socket_option_level::socket, xtd::net::sockets::socket_option_name::receive_buffer));
 }
@@ -260,18 +277,18 @@ socket& socket::ttl(byte_t value) {
 
 socket socket::accept() {
   if (data_->handle == 0) throw object_closed_exception(csf_);
-  if (data_->is_bound == false || data_->listening == false) throw invalid_operation_exception(csf_);
+  if (data_->is_bound == false || data_->is_listening == false) throw invalid_operation_exception(csf_);
   
   socket_address address(data_->address_family);
   intptr_t new_socket_handle = native::socket::accept(data_->handle, address.bytes_);
   if (new_socket_handle == static_cast<intptr_t>(-1)) throw socket_exception(get_last_error(), csf_);
   
-  data_->connected = true;
+  data_->is_connected = true;
 
   socket new_socket(new_socket_handle);
   new_socket.data_->address_family = data_->address_family;
-  new_socket.data_->connected = true;
-  new_socket.data_->local_end_point = ip_end_point(0, 0).create(address);
+  new_socket.data_->is_connected = true;
+  new_socket.data_->local_end_point = data_->local_end_point->create(address);
   new_socket.data_->protocol_type = data_->protocol_type;
   new_socket.data_->socket_type = data_->socket_type;
   return new_socket;
@@ -279,7 +296,7 @@ socket socket::accept() {
 
 bool socket::accept_async(xtd::net::sockets::socket_async_event_args& e) {
   if (data_->handle == 0) throw object_closed_exception(csf_);
-  if (data_->is_bound == false || data_->listening == false) throw invalid_operation_exception(csf_);
+  if (data_->is_bound == false || data_->is_listening == false) throw invalid_operation_exception(csf_);
   
   std::thread thread([](xtd::net::sockets::socket_async_event_args* e, xtd::net::sockets::address_family address_family, xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type) {
     if (e->accept_socket_.data_->address_family == xtd::net::sockets::address_family::unknown && e->accept_socket_.data_->socket_type == xtd::net::sockets::socket_type::unknown && e->accept_socket_.data_->protocol_type == xtd::net::sockets::protocol_type::unknown) {
@@ -302,15 +319,23 @@ void socket::bind_(std::unique_ptr<xtd::net::end_point>&& local_end_point) {
   data_->is_bound = true;
 }
 
+void socket::connect_(std::unique_ptr<xtd::net::end_point>&& remote_end_point) {
+  if (data_->handle == 0) throw object_closed_exception(csf_);
+  data_->remote_end_point = std::move(remote_end_point);
+  xtd::net::socket_address socket_address = data_->remote_end_point->serialize();
+  if (native::socket::connect(data_->handle, socket_address.bytes_) != 0) throw socket_exception(get_last_error(), csf_);
+  data_->is_connected = true;
+}
+
 void socket::close() {
-  data_->connected = false;
+  data_->is_connected = false;
   if (data_->handle != 0 && native::socket::destroy(data_->handle) != 0) throw socket_exception(get_last_error(), csf_);
   data_->address_family = xtd::net::sockets::address_family::unspecified;
-  data_->blocking = true;
-  data_->connected = false;
+  data_->will_block = true;
+  data_->is_connected = false;
   data_->handle = 0;
   data_->is_bound = false;
-  data_->listening = false;
+  data_->is_listening = false;
   data_->local_end_point.reset();
   data_->protocol_type = xtd::net::sockets::protocol_type::unspecified;
   data_->remote_end_point.reset();
@@ -370,9 +395,9 @@ xtd::net::sockets::ip_v6_multicast_option socket::get_socket_ip_v6_multicast_opt
 
 void socket::listen(size_t backlog) {
   if (data_->handle == 0) throw object_closed_exception(csf_);
-  //if (data_->is_bound == false) throw socket_exception(socket_error::not_connected, csf_);
-  native::socket::listen(data_->handle, backlog);
-  data_->listening = true;
+  if (data_->is_bound == false) throw socket_exception(socket_error::not_connected, csf_);
+  if (native::socket::listen(data_->handle, backlog) != 0) throw socket_exception(get_last_error(), csf_);
+  data_->is_listening = true;
 }
 
 void socket::set_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name, bool option_value) {

@@ -473,10 +473,9 @@ intptr_t socket::accept(intptr_t handle, vector<uint8_t>& socket_address) {
 #endif
   socklen_t address_length = static_cast<socklen_t>(socket_address.size());
   intptr_t socket = static_cast<intptr_t>(::accept(static_cast<int32_t>(handle), reinterpret_cast<sockaddr*>(socket_address.data()), &address_length));
-  if (socket_address.size() != address_length) socket_address.resize(address_length);
+  //if (socket_address.size() != address_length) socket_address.resize(address_length);
 #if defined(__APPLE__)
-  if (socket != static_cast<intptr_t>(-1))
-    swap(socket_address[0], socket_address[1]);
+  swap(socket_address[0], socket_address[1]);
 #endif
   return socket;
 }
@@ -631,11 +630,9 @@ int32_t socket::receive_from(intptr_t handle, vector<uint8_t>& buffer, size_t of
 #endif
   socklen_t address_length = static_cast<socklen_t>(socket_address.size());
   int32_t result = static_cast<int32_t>(::recvfrom(static_cast<int32_t>(handle), &buffer.data()[offset], size, flags, reinterpret_cast<sockaddr*>(socket_address.data()), &address_length));
-  if (socket_address.size() != address_length) socket_address.resize(address_length);
-
+  //if (socket_address.size() != address_length) socket_address.resize(address_length);
 #if defined(__APPLE__)
-  if (result != static_cast<intptr_t>(-1))
-    swap(socket_address[0], socket_address[1]);
+  swap(socket_address[0], socket_address[1]);
 #endif
   
   if (result == -1 && errno == EBADF) errno = EINTR;

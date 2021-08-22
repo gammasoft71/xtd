@@ -471,7 +471,18 @@ namespace xtd {
         /// @remarks If you need to call xtd::net::sockets::socket::close without first calling xtd::net::sockets::socket::shutdown, you can ensure that data queued for outgoing transmission will be sent by setting the xtd::net::sockets::socket::dont_linger xtd::net::sockets::socket option to false and specifying a non-zero time-out interval. xtd::net::sockets::socket::close will then block until this data is sent or until the specified time-out expires. If you set xtd::net::sockets::socket::dont_linger to false and specify a zero time-out interval, xtd::net::sockets::socket::close releases the connection and automatically discards outgoing queued data.
         /// @note To set the xtd::net::sockets::socket::dont_linger socket option to false, create a xtd::net::sockets::linger_option, set the xtd::net::sockets::linger_option::enabled property to true, and set the xtd::net::sockets::linger_option::linger_time property to the desired time out period. Use this xtd::net::sockets::linger_option along with the xtd::net::sockets::socket::dont_linger socket option to call the xtd::net::sockets::socket::set_socket_linger_option method.
         void close();
+
+        template<typename end_point_t>
+        void connect(const end_point_t& remote_end_point) {
+         connect_(remote_end_point.template memberwise_clone<end_point_t>());
+        }
         
+        void connect(const xtd::net::ip_address& address, uint32_t port);
+        
+        void connect(const std::vector<xtd::net::ip_address>& addresses, uint32_t port);
+        
+        void connect(const xtd::ustring& host, uint32_t port);
+
         /// @brief Gets a socket option value using platform-specific level and name identifiers.
         /// @param socket_option_level The platform-defined option level.
         /// @param socket_option_name The platform-defined option name.
@@ -634,6 +645,7 @@ namespace xtd {
       private:
         static xtd::net::sockets::socket_error get_last_error();
         void bind_(std::unique_ptr<xtd::net::end_point>&& local_end_point);
+        void connect_(std::unique_ptr<xtd::net::end_point>&& remote_end_point);
         struct data;
         
         std::shared_ptr<data> data_;
