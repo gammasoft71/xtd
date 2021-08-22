@@ -71,7 +71,7 @@ namespace unit_tests {
       assert::is_not_zero(s.send_buffer_size(), line_info_);
       assert::is_zero(s.send_timeout(), line_info_);
       assert::are_equal(socket_type::stream, s.socket_type(), line_info_);
-      // The ttl value is zero on Circlle CI. (this is not an error).
+      // The ttl value is zero on Circle CI. (this is not an error).
       // assert::is_not_zero(s.ttl(), line_info_);
     }
 

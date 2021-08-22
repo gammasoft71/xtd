@@ -18,12 +18,13 @@
 #include <sys/socket.h>
 #include <sys/ioctl.h>
 
+using namespace std;
 using namespace xtd::native;
 
 namespace {
   static int32_t native_to_socket_error(int32_t error) {
 #if defined(__APPLE__)
-    static std::map<int32_t, int32_t> socket_errors {
+    static map<int32_t, int32_t> socket_errors {
       {0, SOCKET_ERROR_SUCCESS},
       {EINTR, SOCKET_ERROR_INTERRUPTED},
       {EACCES, SOCKET_ERROR_ACCESS_DENIED},
@@ -63,7 +64,7 @@ namespace {
       {EOPNOTSUPP, SOCKET_ERROR_SOCKET_NOT_SUPPORTED}
     };
 #else
-    static std::map<int32_t, int32_t> socket_errors {
+    static map<int32_t, int32_t> socket_errors {
       {0, SOCKET_ERROR_SUCCESS},
       {EINTR, SOCKET_ERROR_INTERRUPTED},
       {EACCES, SOCKET_ERROR_ACCESS_DENIED},
@@ -108,7 +109,7 @@ namespace {
   
   static int32_t protocol_type_to_native(int32_t protocol_type) {
 #if defined(__APPLE__)
-    static std::map<int32_t, int32_t> protocol_types = {
+    static map<int32_t, int32_t> protocol_types = {
       //{PROTOCOL_TYPE_UNKNWON, IPPROTO_},
       //{PROTOCOL_TYPE_IP_V6_HOP_BY_HOP_OPTIONS, IPPROTO_},
       //{PROTOCOL_TYPE_UNSPECIFIED, IPPROTO_},
@@ -136,7 +137,7 @@ namespace {
       //{PROTOCOL_TYPE_SPX_2, IPPROTO_},
     };
 #else
-    static std::map<int32_t, int32_t> protocol_types = {
+    static map<int32_t, int32_t> protocol_types = {
       //{PROTOCOL_TYPE_UNKNWON, IPPROTO_},
       //{PROTOCOL_TYPE_IP_V6_HOP_BY_HOP_OPTIONS, IPPROTO_},
       //{PROTOCOL_TYPE_UNSPECIFIED, IPPROTO_},
@@ -171,7 +172,7 @@ namespace {
   
   static int32_t socket_option_level_to_native(int32_t socket_option_level) {
 #if defined(__APPLE__)
-    static std::map<int32_t, int32_t> socket_option_levels = {
+    static map<int32_t, int32_t> socket_option_levels = {
       {SOCKET_OPTION_LEVEL_SOCKET, SOL_SOCKET},
       {SOCKET_OPTION_LEVEL_IP, IPPROTO_IP},
       {SOCKET_OPTION_LEVEL_IP_V6, IPPROTO_IPV6},
@@ -179,7 +180,7 @@ namespace {
       {SOCKET_OPTION_LEVEL_UDP, IPPROTO_UDP}
     };
 #else
-    static std::map<int32_t, int32_t> socket_option_levels = {
+    static map<int32_t, int32_t> socket_option_levels = {
       {SOCKET_OPTION_LEVEL_SOCKET, SOL_SOCKET},
       {SOCKET_OPTION_LEVEL_IP, IPPROTO_IP},
       {SOCKET_OPTION_LEVEL_IP_V6, IPPROTO_IPV6},
@@ -194,7 +195,7 @@ namespace {
 
   static int32_t socket_option_name_to_native(int32_t socket_option_name) {
 #if defined(__APPLE__)
-    static std::map<int32_t, int32_t> socket_option_names = {
+    static map<int32_t, int32_t> socket_option_names = {
       {SOCKET_OPTION_NAME_DEBUG, SO_DEBUG},
       {SOCKET_OPTION_NAME_ACCEPT_CONNECTION, SO_ACCEPTCONN},
       {SOCKET_OPTION_NAME_REUSE_ADDRESS, SO_REUSEADDR},
@@ -241,7 +242,7 @@ namespace {
       //{SOCKET_OPTION_NAME_UPDATE_CONNECT_CONTEXT, ...},
     };
 #else
-    static std::map<int32_t, int32_t> socket_option_names = {
+    static map<int32_t, int32_t> socket_option_names = {
       {SOCKET_OPTION_NAME_DEBUG, SO_DEBUG},
       {SOCKET_OPTION_NAME_ACCEPT_CONNECTION, SO_ACCEPTCONN},
       {SOCKET_OPTION_NAME_REUSE_ADDRESS, SO_REUSEADDR},
@@ -295,7 +296,7 @@ namespace {
   
   static int32_t socket_type_to_native(int32_t socket_type) {
 #if defined(__APPLE__)
-    static std::map<int32_t, int32_t> socket_types = {{SOCKET_TYPE_UNKNWON, SOCK_STREAM},
+    static map<int32_t, int32_t> socket_types = {{SOCKET_TYPE_UNKNWON, SOCK_STREAM},
       //{SOCKET_TYPE_UNKNWON, SOCK_},
       {SOCKET_TYPE_STREAM, SOCK_STREAM},
       {SOCKET_TYPE_DGRAM, SOCK_DGRAM},
@@ -304,7 +305,7 @@ namespace {
       {SOCKET_TYPE_SEQPACKET, SOCK_SEQPACKET}
     };
 #else
-    static std::map<int32_t, int32_t> socket_types = {
+    static map<int32_t, int32_t> socket_types = {
       {SOCKET_TYPE_UNKNWON, SOCK_STREAM | SOCK_CLOEXEC},
       {SOCKET_TYPE_STREAM, SOCK_STREAM | SOCK_CLOEXEC},
       {SOCKET_TYPE_DGRAM, SOCK_DGRAM | SOCK_CLOEXEC},
@@ -321,7 +322,7 @@ namespace {
 
 int32_t socket::address_family_to_native(int32_t address_family) {
 #if defined(__APPLE__)
-  static std::map<int32_t, int32_t> address_families = {
+  static map<int32_t, int32_t> address_families = {
     {ADDRESS_FAMILY_UNKNOWN, -1},
     {ADDRESS_FAMILY_UNSPECIFIED, AF_UNSPEC},
     {ADDRESS_FAMILY_UNIX, AF_UNIX},
@@ -354,7 +355,7 @@ int32_t socket::address_family_to_native(int32_t address_family) {
     {ADDRESS_FAMILY_MAX, AF_MAX}
   };
 #else
-  static std::map<int32_t, int32_t> address_families = {
+  static map<int32_t, int32_t> address_families = {
     {ADDRESS_FAMILY_UNKNOWN, -1},
     {ADDRESS_FAMILY_UNSPECIFIED, AF_UNSPEC},
     {ADDRESS_FAMILY_UNIX, AF_UNIX},
@@ -395,7 +396,7 @@ int32_t socket::address_family_to_native(int32_t address_family) {
 
 int32_t socket::native_to_address_family(int32_t address_family) {
 #if defined(__APPLE__)
-  static std::map<int32_t, int32_t> address_families = {
+  static map<int32_t, int32_t> address_families = {
     //{-1, ADDRESS_FAMILY_UNKNOWN},
     {AF_UNSPEC, ADDRESS_FAMILY_UNSPECIFIED},
     {AF_UNIX, ADDRESS_FAMILY_UNIX},
@@ -428,7 +429,7 @@ int32_t socket::native_to_address_family(int32_t address_family) {
     {AF_MAX, ADDRESS_FAMILY_MAX}
   };
 #else
-  static std::map<int32_t, int32_t> address_families = {
+  static map<int32_t, int32_t> address_families = {
     //{-1, ADDRESS_FAMILY_UNKNOWN},
     {AF_UNSPEC, ADDRESS_FAMILY_UNSPECIFIED},
     {AF_UNIX, ADDRESS_FAMILY_UNIX},
@@ -466,29 +467,42 @@ int32_t socket::native_to_address_family(int32_t address_family) {
   return it->second;
 }
 
-intptr_t socket::accept(intptr_t handle, std::vector<uint8_t>& socket_address) {
+intptr_t socket::accept(intptr_t handle, vector<uint8_t>& socket_address) {
+#if defined(__APPLE__)
+  swap(socket_address[0], socket_address[1]);
+#endif
   socklen_t address_length = static_cast<socklen_t>(socket_address.size());
   intptr_t socket = static_cast<intptr_t>(::accept(static_cast<int32_t>(handle), reinterpret_cast<sockaddr*>(socket_address.data()), &address_length));
   if (socket_address.size() != address_length) socket_address.resize(address_length);
 #if defined(__APPLE__)
-  if (socket != static_cast<intptr_t>(-1)) {
-    socket_address[0] = socket_address[1];
-    socket_address[1] = 0;
-  }
+  if (socket != static_cast<intptr_t>(-1))
+    swap(socket_address[0], socket_address[1]);
 #endif
   return socket;
 }
 
-int32_t socket::bind(intptr_t handle, const std::vector<uint8_t>& socket_address) {
-  return ::bind(static_cast<int32_t>(handle), reinterpret_cast<const sockaddr*>(socket_address.data()), static_cast<socklen_t>(socket_address.size()));
+int32_t socket::bind(intptr_t handle, const vector<uint8_t>& socket_address) {
+#if defined(__APPLE__)
+  vector<uint8_t> address = socket_address;
+  swap(address[0], address[1]);
+#else
+  auto& address = socket_address;
+#endif
+  return ::bind(static_cast<int32_t>(handle), reinterpret_cast<const sockaddr*>(address.data()), static_cast<socklen_t>(address.size()));
 }
 
 void socket::cleanup() {
   // Nothing to do on linux and macOS.
 }
 
-int32_t socket::connect(intptr_t handle, const std::vector<uint8_t>& socket_address) {
-  return ::connect(static_cast<int32_t>(handle), reinterpret_cast<const sockaddr*>(socket_address.data()), socket_address.size());
+int32_t socket::connect(intptr_t handle, const vector<uint8_t>& socket_address) {
+#if defined(__APPLE__)
+  vector<uint8_t> address = socket_address;
+  swap(address[0], address[1]);
+#else
+  auto& address = socket_address;
+#endif
+  return ::connect(static_cast<int32_t>(handle), reinterpret_cast<const sockaddr*>(address.data()), address.size());
 }
 
 intptr_t socket::create(int32_t address_family, int32_t socket_type, int32_t protocol_type) {
@@ -567,7 +581,7 @@ int32_t socket::get_socket_multicast_option(intptr_t handle, int32_t socket_opti
   return result;
 }
 
-int32_t socket::get_socket_ip_v6_multicast_option(intptr_t handle, int32_t socket_option_name, std::vector<uint8_t>& multicast_address, uint32_t& interface_index) {
+int32_t socket::get_socket_ip_v6_multicast_option(intptr_t handle, int32_t socket_option_name, vector<uint8_t>& multicast_address, uint32_t& interface_index) {
   struct multicast {
     uint8_t multicast_address[16];
     uint32_t interface_index;
@@ -582,7 +596,7 @@ int32_t socket::get_socket_ip_v6_multicast_option(intptr_t handle, int32_t socke
   return result;
 }
 
-int32_t socket::io_control(intptr_t handle, int32_t io_control, std::vector<uint8_t>& option_in_value, std::vector<uint8_t>& option_out_value) {
+int32_t socket::io_control(intptr_t handle, int32_t io_control, vector<uint8_t>& option_in_value, vector<uint8_t>& option_out_value) {
   return -1;
 }
 
@@ -604,21 +618,24 @@ int32_t socket::poll(intptr_t handle, int32_t microseconds, int32_t mode) {
   return ::poll(&poll_fd, 1, microseconds);
 }
 
-int32_t socket::receive(intptr_t handle, std::vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags) {
+int32_t socket::receive(intptr_t handle, vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags) {
   int32_t result = static_cast<int32_t>(::recv(static_cast<int32_t>(handle), &buffer.data()[offset], size, flags));
   if (result == -1 && errno == EBADF) errno = EINTR;
   if (result == -1 && errno == EAGAIN) errno = ETIMEDOUT;
   return result;
 }
 
-int32_t socket::receive_from(intptr_t handle, std::vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags, std::vector<uint8_t>& socket_address) {
+int32_t socket::receive_from(intptr_t handle, vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags, vector<uint8_t>& socket_address) {
+#if defined(__APPLE__)
+  swap(socket_address[0], socket_address[1]);
+#endif
   socklen_t address_length = static_cast<socklen_t>(socket_address.size());
   int32_t result = static_cast<int32_t>(::recvfrom(static_cast<int32_t>(handle), &buffer.data()[offset], size, flags, reinterpret_cast<sockaddr*>(socket_address.data()), &address_length));
   if (socket_address.size() != address_length) socket_address.resize(address_length);
 
 #if defined(__APPLE__)
-  socket_address[0] = socket_address[1];
-  socket_address[1] = 0;
+  if (result != static_cast<intptr_t>(-1))
+    swap(socket_address[0], socket_address[1]);
 #endif
   
   if (result == -1 && errno == EBADF) errno = EINTR;
@@ -626,7 +643,7 @@ int32_t socket::receive_from(intptr_t handle, std::vector<uint8_t>& buffer, size
   return result;
 }
 
-int32_t socket::select(std::vector<intptr_t>& check_read, std::vector<intptr_t>& check_write, std::vector<intptr_t>& check_error, int32_t microseconds) {
+int32_t socket::select(vector<intptr_t>& check_read, vector<intptr_t>& check_write, vector<intptr_t>& check_error, int32_t microseconds) {
   size_t nfds = 0;
   
   fd_set read_fds;
@@ -668,12 +685,18 @@ int32_t socket::select(std::vector<intptr_t>& check_read, std::vector<intptr_t>&
   return result;
 }
 
-int32_t socket::send(intptr_t handle, const std::vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags) {
+int32_t socket::send(intptr_t handle, const vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags) {
   return static_cast<int32_t>(::send(static_cast<int32_t>(handle), &buffer.data()[offset], size, flags));
 }
 
-int32_t socket::send_to(intptr_t handle, const std::vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags, const std::vector<uint8_t>& socket_address) {
-  return static_cast<int32_t>(::sendto(static_cast<int32_t>(handle), &buffer.data()[offset], size, flags, reinterpret_cast<const sockaddr*>(socket_address.data()), static_cast<socklen_t>(socket_address.size())));
+int32_t socket::send_to(intptr_t handle, const vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags, const vector<uint8_t>& socket_address) {
+#if defined(__APPLE__)
+  vector<uint8_t> address = socket_address;
+  swap(address[0], address[1]);
+#else
+  auto& address = socket_address;
+#endif
+  return static_cast<int32_t>(::sendto(static_cast<int32_t>(handle), &buffer.data()[offset], size, flags, reinterpret_cast<const sockaddr*>(address.data()), static_cast<socklen_t>(address.size())));
 }
 
 int32_t socket::set_blocking(intptr_t handle, bool blocking) {
@@ -718,7 +741,7 @@ int32_t socket::set_socket_multicast_option(intptr_t handle, int32_t socket_opti
   return setsockopt(static_cast<int32_t>(handle), IPPROTO_TCP, socket_option_name_to_native(socket_option_name), &m, static_cast<socklen_t>(sizeof(multicast)));
 }
 
-int32_t socket::set_socket_ip_v6_multicast_option(intptr_t handle, int32_t socket_option_name, const std::vector<uint8_t>& multicast_address, uint32_t interface_index) {
+int32_t socket::set_socket_ip_v6_multicast_option(intptr_t handle, int32_t socket_option_name, const vector<uint8_t>& multicast_address, uint32_t interface_index) {
   struct multicast {
     uint8_t multicast_address[16];
     uint32_t interface_index;
