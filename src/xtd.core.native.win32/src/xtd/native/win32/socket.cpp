@@ -12,32 +12,33 @@
 #include <Winsock2.h>
 #include <Windows.h>
 
+using namespace std;
 using namespace xtd::native;
 
 namespace {
   static int32_t protocol_type_to_native(int32_t protocol_type) {
-    static std::map<int32_t, int32_t> protocol_types = {{PROTOCOL_TYPE_UNKNWON, IPPROTO_IP}, {PROTOCOL_TYPE_IP, IPPROTO_IP}, {PROTOCOL_TYPE_ICMP, IPPROTO_ICMP}, {PROTOCOL_TYPE_IGMP, IPPROTO_IGMP}, {PROTOCOL_TYPE_GGP, IPPROTO_GGP}, {PROTOCOL_TYPE_IP_V4, IPPROTO_IPV4}, {PROTOCOL_TYPE_IP_V6, IPPROTO_IPV6}, {PROTOCOL_TYPE_TCP, IPPROTO_TCP}, {PROTOCOL_TYPE_PUP, IPPROTO_PUP}, {PROTOCOL_TYPE_UDP, IPPROTO_UDP}, {PROTOCOL_TYPE_IDP, IPPROTO_IDP}, {PROTOCOL_TYPE_IP_V6, IPPROTO_IPV6}, {PROTOCOL_TYPE_IP_V6_ROUTING_HEADER, IPPROTO_ROUTING}, {PROTOCOL_TYPE_IP_V6_FRAGMENT_HEADER, IPPROTO_FRAGMENT}, {PROTOCOL_TYPE_IP_SEC_ENCAPSULATING_SECURITY_PAYLOAD, IPPROTO_ESP}, {PROTOCOL_TYPE_IP_SEC_AUTHENTIFICATION_HEADER, IPPROTO_AH}, {PROTOCOL_TYPE_ICMP_V6, IPPROTO_ICMPV6}, {PROTOCOL_TYPE_IP_V6_NO_NEXT_HEADER, IPPROTO_NONE}, {PROTOCOL_TYPE_IP_V6_DESTINATION_OPTIONS, IPPROTO_DSTOPTS}, {PROTOCOL_TYPE_ND, IPPROTO_ND}, {PROTOCOL_TYPE_RAW, IPPROTO_RAW}, {PROTOCOL_TYPE_SPX, IPPROTO_IP}, {PROTOCOL_TYPE_SPX_2, IPPROTO_IP}};
+    static map<int32_t, int32_t> protocol_types = {{PROTOCOL_TYPE_UNKNWON, IPPROTO_IP}, {PROTOCOL_TYPE_IP, IPPROTO_IP}, {PROTOCOL_TYPE_ICMP, IPPROTO_ICMP}, {PROTOCOL_TYPE_IGMP, IPPROTO_IGMP}, {PROTOCOL_TYPE_GGP, IPPROTO_GGP}, {PROTOCOL_TYPE_IP_V4, IPPROTO_IPV4}, {PROTOCOL_TYPE_IP_V6, IPPROTO_IPV6}, {PROTOCOL_TYPE_TCP, IPPROTO_TCP}, {PROTOCOL_TYPE_PUP, IPPROTO_PUP}, {PROTOCOL_TYPE_UDP, IPPROTO_UDP}, {PROTOCOL_TYPE_IDP, IPPROTO_IDP}, {PROTOCOL_TYPE_IP_V6, IPPROTO_IPV6}, {PROTOCOL_TYPE_IP_V6_ROUTING_HEADER, IPPROTO_ROUTING}, {PROTOCOL_TYPE_IP_V6_FRAGMENT_HEADER, IPPROTO_FRAGMENT}, {PROTOCOL_TYPE_IP_SEC_ENCAPSULATING_SECURITY_PAYLOAD, IPPROTO_ESP}, {PROTOCOL_TYPE_IP_SEC_AUTHENTIFICATION_HEADER, IPPROTO_AH}, {PROTOCOL_TYPE_ICMP_V6, IPPROTO_ICMPV6}, {PROTOCOL_TYPE_IP_V6_NO_NEXT_HEADER, IPPROTO_NONE}, {PROTOCOL_TYPE_IP_V6_DESTINATION_OPTIONS, IPPROTO_DSTOPTS}, {PROTOCOL_TYPE_ND, IPPROTO_ND}, {PROTOCOL_TYPE_RAW, IPPROTO_RAW}, {PROTOCOL_TYPE_SPX, IPPROTO_IP}, {PROTOCOL_TYPE_SPX_2, IPPROTO_IP}};
     auto it = protocol_types.find(protocol_type);
     if (it == protocol_types.end()) return IPPROTO_IP;
     return it->second;
   }
 
   static int32_t socket_option_name_to_native(int32_t socket_option_name) {
-    static std::map<int32_t, int32_t> socket_option_names = {{SOCKET_OPTION_NAME_DEBUG, SO_DEBUG}, {SOCKET_OPTION_NAME_ACCEPT_CONNECTION, SO_ACCEPTCONN}, {SOCKET_OPTION_NAME_REUSE_ADDRESS, SO_REUSEADDR}, {SOCKET_OPTION_NAME_KEEP_ALIVE, SO_KEEPALIVE}, {SOCKET_OPTION_NAME_DONT_ROUTE, SO_DONTROUTE}, {SOCKET_OPTION_NAME_BROADCAST, SO_BROADCAST}, {SOCKET_OPTION_NAME_USE_LOOPBACK, SO_USELOOPBACK}, {SOCKET_OPTION_NAME_LINGER, SO_LINGER}, {SOCKET_OPTION_NAME_OUT_OF_BAND_INLINE, SO_OOBINLINE}, {SOCKET_OPTION_NAME_SEND_BUFFER, SO_SNDBUF}, {SOCKET_OPTION_NAME_RECEIVE_BUFFER, SO_RCVBUF}, {SOCKET_OPTION_NAME_SEND_LOW_WATER, SO_SNDLOWAT}, {SOCKET_OPTION_NAME_RECEIVE_LOW_WATER, SO_RCVLOWAT}, {SOCKET_OPTION_NAME_SEND_TIMEOUT, SO_SNDTIMEO}, {SOCKET_OPTION_NAME_RECEIVE_TIMEOUT, SO_RCVTIMEO}, {SOCKET_OPTION_NAME_ERROR, SO_ERROR}, {SOCKET_OPTION_NAME_TYPE, SO_TYPE}};
+    static map<int32_t, int32_t> socket_option_names = {{SOCKET_OPTION_NAME_DEBUG, SO_DEBUG}, {SOCKET_OPTION_NAME_ACCEPT_CONNECTION, SO_ACCEPTCONN}, {SOCKET_OPTION_NAME_REUSE_ADDRESS, SO_REUSEADDR}, {SOCKET_OPTION_NAME_KEEP_ALIVE, SO_KEEPALIVE}, {SOCKET_OPTION_NAME_DONT_ROUTE, SO_DONTROUTE}, {SOCKET_OPTION_NAME_BROADCAST, SO_BROADCAST}, {SOCKET_OPTION_NAME_USE_LOOPBACK, SO_USELOOPBACK}, {SOCKET_OPTION_NAME_LINGER, SO_LINGER}, {SOCKET_OPTION_NAME_OUT_OF_BAND_INLINE, SO_OOBINLINE}, {SOCKET_OPTION_NAME_SEND_BUFFER, SO_SNDBUF}, {SOCKET_OPTION_NAME_RECEIVE_BUFFER, SO_RCVBUF}, {SOCKET_OPTION_NAME_SEND_LOW_WATER, SO_SNDLOWAT}, {SOCKET_OPTION_NAME_RECEIVE_LOW_WATER, SO_RCVLOWAT}, {SOCKET_OPTION_NAME_SEND_TIMEOUT, SO_SNDTIMEO}, {SOCKET_OPTION_NAME_RECEIVE_TIMEOUT, SO_RCVTIMEO}, {SOCKET_OPTION_NAME_ERROR, SO_ERROR}, {SOCKET_OPTION_NAME_TYPE, SO_TYPE}};
     auto it = socket_option_names.find(socket_option_name);
     if (it == socket_option_names.end()) return socket_option_name;
     return it->second;
   }
 
   static int32_t socket_option_level_to_native(int32_t socket_option_level) {
-    static std::map<int32_t, int32_t> socket_option_levels = {{SOCKET_OPTION_LEVEL_SOCKET, SOL_SOCKET}, {SOCKET_OPTION_LEVEL_IP, IPPROTO_IP}, {SOCKET_OPTION_LEVEL_IP_V6, IPPROTO_IPV6}, {SOCKET_OPTION_LEVEL_TCP, IPPROTO_TCP}, {SOCKET_OPTION_LEVEL_UDP, IPPROTO_UDP}};
+    static map<int32_t, int32_t> socket_option_levels = {{SOCKET_OPTION_LEVEL_SOCKET, SOL_SOCKET}, {SOCKET_OPTION_LEVEL_IP, IPPROTO_IP}, {SOCKET_OPTION_LEVEL_IP_V6, IPPROTO_IPV6}, {SOCKET_OPTION_LEVEL_TCP, IPPROTO_TCP}, {SOCKET_OPTION_LEVEL_UDP, IPPROTO_UDP}};
     auto it = socket_option_levels.find(socket_option_level);
     if (it == socket_option_levels.end()) return SOL_SOCKET;
     return it->second;
   }
 
   static int32_t socket_type_to_native(int32_t socket_type) {
-    static std::map<int32_t, int32_t> socket_types = {{SOCKET_TYPE_UNKNWON, SOCK_STREAM}, {SOCKET_TYPE_STREAM, SOCK_STREAM}, {SOCKET_TYPE_DGRAM, SOCK_DGRAM}, {SOCKET_TYPE_RAW, SOCK_RAW}, {SOCKET_TYPE_RDM, SOCK_RDM}, {SOCKET_TYPE_SEQPACKET, SOCK_SEQPACKET}};
+    static map<int32_t, int32_t> socket_types = {{SOCKET_TYPE_UNKNWON, SOCK_STREAM}, {SOCKET_TYPE_STREAM, SOCK_STREAM}, {SOCKET_TYPE_DGRAM, SOCK_DGRAM}, {SOCKET_TYPE_RAW, SOCK_RAW}, {SOCKET_TYPE_RDM, SOCK_RDM}, {SOCKET_TYPE_SEQPACKET, SOCK_SEQPACKET}};
     auto it = socket_types.find(socket_type);
     if (it == socket_types.end()) return SOCK_STREAM;
     return it->second;
@@ -45,27 +46,27 @@ namespace {
 }
 
 int32_t socket::address_family_to_native(int32_t address_family) {
-  static std::map<int32_t, int32_t> address_families = {{ADDRESS_FAMILY_UNIX, AF_UNIX}, {ADDRESS_FAMILY_INTER_NETWORK, AF_INET}, {ADDRESS_FAMILY_IMP_LINK, AF_IMPLINK}, {ADDRESS_FAMILY_PUP, AF_PUP}, {ADDRESS_FAMILY_CHAOS, AF_CHAOS}, {ADDRESS_FAMILY_NS, AF_NS}, {ADDRESS_FAMILY_ISO, AF_ISO}, {ADDRESS_FAMILY_ECMA, AF_ECMA}, {ADDRESS_FAMILY_DATA_KIT, AF_DATAKIT}, {ADDRESS_FAMILY_CCITT, AF_CCITT}, {ADDRESS_FAMILY_SNA, AF_SNA}, {ADDRESS_FAMILY_DEC_NET, AF_DECnet}, {ADDRESS_FAMILY_DATA_LINK, AF_DLI}, {ADDRESS_FAMILY_LAT, AF_LAT}, {ADDRESS_FAMILY_HYPER_CHANNEL, AF_HYLINK}, {ADDRESS_FAMILY_APPLE_TALK, AF_APPLETALK}, {ADDRESS_FAMILY_NET_BIOS, AF_NETBIOS}, {ADDRESS_FAMILY_VOICE_VIEW, AF_VOICEVIEW}, {ADDRESS_FAMILY_FIRE_FOX, AF_FIREFOX}, {ADDRESS_FAMILY_BANYAN, AF_BAN}, {ADDRESS_FAMILY_ATM, AF_ATM}, {ADDRESS_FAMILY_INTER_NETWORK_V6, AF_INET6}, {ADDRESS_FAMILY_CLUSTER, AF_CLUSTER}, {ADDRESS_FAMILY_IEEE12844, AF_12844}, {ADDRESS_FAMILY_IRDA, AF_IRDA}, {ADDRESS_FAMILY_NETWORK_DESIGNERS, AF_NETDES}, {ADDRESS_FAMILY_MAX, AF_MAX}};
+  static map<int32_t, int32_t> address_families = {{ADDRESS_FAMILY_UNIX, AF_UNIX}, {ADDRESS_FAMILY_INTER_NETWORK, AF_INET}, {ADDRESS_FAMILY_IMP_LINK, AF_IMPLINK}, {ADDRESS_FAMILY_PUP, AF_PUP}, {ADDRESS_FAMILY_CHAOS, AF_CHAOS}, {ADDRESS_FAMILY_NS, AF_NS}, {ADDRESS_FAMILY_ISO, AF_ISO}, {ADDRESS_FAMILY_ECMA, AF_ECMA}, {ADDRESS_FAMILY_DATA_KIT, AF_DATAKIT}, {ADDRESS_FAMILY_CCITT, AF_CCITT}, {ADDRESS_FAMILY_SNA, AF_SNA}, {ADDRESS_FAMILY_DEC_NET, AF_DECnet}, {ADDRESS_FAMILY_DATA_LINK, AF_DLI}, {ADDRESS_FAMILY_LAT, AF_LAT}, {ADDRESS_FAMILY_HYPER_CHANNEL, AF_HYLINK}, {ADDRESS_FAMILY_APPLE_TALK, AF_APPLETALK}, {ADDRESS_FAMILY_NET_BIOS, AF_NETBIOS}, {ADDRESS_FAMILY_VOICE_VIEW, AF_VOICEVIEW}, {ADDRESS_FAMILY_FIRE_FOX, AF_FIREFOX}, {ADDRESS_FAMILY_BANYAN, AF_BAN}, {ADDRESS_FAMILY_ATM, AF_ATM}, {ADDRESS_FAMILY_INTER_NETWORK_V6, AF_INET6}, {ADDRESS_FAMILY_CLUSTER, AF_CLUSTER}, {ADDRESS_FAMILY_IEEE12844, AF_12844}, {ADDRESS_FAMILY_IRDA, AF_IRDA}, {ADDRESS_FAMILY_NETWORK_DESIGNERS, AF_NETDES}, {ADDRESS_FAMILY_MAX, AF_MAX}};
   auto it = address_families.find(address_family);
   if (it == address_families.end()) return AF_UNSPEC;
   return it->second;
 }
 
 int32_t socket::native_to_address_family(int32_t address_family) {
-  static std::map<int32_t, int32_t> address_families = {{AF_UNIX, ADDRESS_FAMILY_UNIX}, {AF_INET, ADDRESS_FAMILY_INTER_NETWORK}, {AF_IMPLINK, ADDRESS_FAMILY_IMP_LINK}, {AF_PUP, ADDRESS_FAMILY_PUP}, {AF_CHAOS, ADDRESS_FAMILY_CHAOS}, {AF_NS, ADDRESS_FAMILY_NS}, {AF_ISO, ADDRESS_FAMILY_ISO}, {AF_ECMA, ADDRESS_FAMILY_ECMA}, {AF_DATAKIT, ADDRESS_FAMILY_DATA_KIT}, {AF_CCITT, ADDRESS_FAMILY_CCITT}, {AF_SNA, ADDRESS_FAMILY_SNA}, {AF_DECnet, ADDRESS_FAMILY_DEC_NET}, {AF_DLI, ADDRESS_FAMILY_DATA_LINK}, {AF_LAT, ADDRESS_FAMILY_LAT}, {AF_HYLINK, ADDRESS_FAMILY_HYPER_CHANNEL}, {AF_APPLETALK, ADDRESS_FAMILY_APPLE_TALK}, {AF_NETBIOS, ADDRESS_FAMILY_NET_BIOS}, {AF_VOICEVIEW, ADDRESS_FAMILY_VOICE_VIEW}, {AF_FIREFOX, ADDRESS_FAMILY_FIRE_FOX}, {AF_BAN, ADDRESS_FAMILY_BANYAN}, {AF_ATM, ADDRESS_FAMILY_ATM}, {AF_INET6, ADDRESS_FAMILY_INTER_NETWORK_V6}, {AF_CLUSTER, ADDRESS_FAMILY_CLUSTER}, {AF_12844, ADDRESS_FAMILY_IEEE12844}, {AF_IRDA, ADDRESS_FAMILY_IRDA}, {AF_NETDES, ADDRESS_FAMILY_NETWORK_DESIGNERS}, {AF_MAX, ADDRESS_FAMILY_MAX}};
+  static map<int32_t, int32_t> address_families = {{AF_UNIX, ADDRESS_FAMILY_UNIX}, {AF_INET, ADDRESS_FAMILY_INTER_NETWORK}, {AF_IMPLINK, ADDRESS_FAMILY_IMP_LINK}, {AF_PUP, ADDRESS_FAMILY_PUP}, {AF_CHAOS, ADDRESS_FAMILY_CHAOS}, {AF_NS, ADDRESS_FAMILY_NS}, {AF_ISO, ADDRESS_FAMILY_ISO}, {AF_ECMA, ADDRESS_FAMILY_ECMA}, {AF_DATAKIT, ADDRESS_FAMILY_DATA_KIT}, {AF_CCITT, ADDRESS_FAMILY_CCITT}, {AF_SNA, ADDRESS_FAMILY_SNA}, {AF_DECnet, ADDRESS_FAMILY_DEC_NET}, {AF_DLI, ADDRESS_FAMILY_DATA_LINK}, {AF_LAT, ADDRESS_FAMILY_LAT}, {AF_HYLINK, ADDRESS_FAMILY_HYPER_CHANNEL}, {AF_APPLETALK, ADDRESS_FAMILY_APPLE_TALK}, {AF_NETBIOS, ADDRESS_FAMILY_NET_BIOS}, {AF_VOICEVIEW, ADDRESS_FAMILY_VOICE_VIEW}, {AF_FIREFOX, ADDRESS_FAMILY_FIRE_FOX}, {AF_BAN, ADDRESS_FAMILY_BANYAN}, {AF_ATM, ADDRESS_FAMILY_ATM}, {AF_INET6, ADDRESS_FAMILY_INTER_NETWORK_V6}, {AF_CLUSTER, ADDRESS_FAMILY_CLUSTER}, {AF_12844, ADDRESS_FAMILY_IEEE12844}, {AF_IRDA, ADDRESS_FAMILY_IRDA}, {AF_NETDES, ADDRESS_FAMILY_NETWORK_DESIGNERS}, {AF_MAX, ADDRESS_FAMILY_MAX}};
   auto it = address_families.find(address_family);
   if (it == address_families.end()) return ADDRESS_FAMILY_UNSPECIFIED;
   return it->second;
 }
 
-intptr_t socket::accept(intptr_t handle, std::vector<uint8_t>& socket_address) {
+intptr_t socket::accept(intptr_t handle, vector<uint8_t>& socket_address) {
   int32_t address_length = static_cast<int32_t>(socket_address.size());
   intptr_t socket = static_cast<intptr_t>(::accept(static_cast<SOCKET>(handle), reinterpret_cast<SOCKADDR*>(socket_address.data()), &address_length));
   if (socket_address.size() != static_cast<size_t>(address_length)) socket_address.resize(static_cast<size_t>(address_length));
   return socket;
 }
 
-int32_t socket::bind(intptr_t handle, const std::vector<uint8_t>& socket_address) {
+int32_t socket::bind(intptr_t handle, const vector<uint8_t>& socket_address) {
   return ::bind(static_cast<SOCKET>(handle), reinterpret_cast<const SOCKADDR*>(socket_address.data()), static_cast<int32_t>(socket_address.size()));
 }
 
@@ -73,7 +74,7 @@ void socket::cleanup() {
   WSACleanup();
 }
 
-int32_t socket::connect(intptr_t handle, const std::vector<uint8_t>& socket_address) {
+int32_t socket::connect(intptr_t handle, const vector<uint8_t>& socket_address) {
   return ::connect(static_cast<SOCKET>(handle), reinterpret_cast<const SOCKADDR*>(socket_address.data()), static_cast<int32_t>(socket_address.size()));
 }
 
@@ -142,7 +143,7 @@ int32_t socket::get_socket_multicast_option(intptr_t handle, int32_t socket_opti
   return result;
 }
 
-int32_t socket::get_socket_ip_v6_multicast_option(intptr_t handle, int32_t socket_option_name, std::vector<uint8_t>& multicast_address, uint32_t& interface_index) {
+int32_t socket::get_socket_ip_v6_multicast_option(intptr_t handle, int32_t socket_option_name, vector<uint8_t>& multicast_address, uint32_t& interface_index) {
   struct multicast {
     uint8_t multicast_address[16];
     uint32_t interface_index;
@@ -157,7 +158,7 @@ int32_t socket::get_socket_ip_v6_multicast_option(intptr_t handle, int32_t socke
   return result;
 }
 
-int32_t socket::io_control(intptr_t handle, int32_t io_control, std::vector<uint8_t>& option_in_value, std::vector<uint8_t>& option_out_value) {
+int32_t socket::io_control(intptr_t handle, int32_t io_control, vector<uint8_t>& option_in_value, vector<uint8_t>& option_out_value) {
   size_t option_out_value_size = 0;
   int32_t result = WSAIoctl(static_cast<SOCKET>(handle), io_control, option_in_value.data(), static_cast<int32_t>(option_in_value.size()), option_out_value.data(), static_cast<int32_t>(option_out_value.size()), reinterpret_cast<LPDWORD>(&option_out_value_size), nullptr, nullptr);
   if (option_out_value.size() != option_out_value_size) option_out_value.resize(option_out_value_size);
@@ -183,18 +184,18 @@ int32_t socket::poll(intptr_t handle, int32_t microseconds, int32_t mode) {
   }
 }
 
-int32_t socket::receive(intptr_t handle, std::vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags) {
+int32_t socket::receive(intptr_t handle, vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags) {
   return static_cast<int32_t>(::recv(static_cast<SOCKET>(handle), reinterpret_cast<char*>(&buffer.data()[offset]), static_cast<int32_t>(size), flags));
 }
 
-int32_t socket::receive_from(intptr_t handle, std::vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags, std::vector<uint8_t>& socket_address) {
+int32_t socket::receive_from(intptr_t handle, vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags, vector<uint8_t>& socket_address) {
   int32_t address_length = static_cast<int32_t>(socket_address.size());
   int32_t result = static_cast<int32_t>(::recvfrom(static_cast<SOCKET>(handle), reinterpret_cast<char*>(&buffer.data()[offset]), static_cast<int32_t>(size), flags, reinterpret_cast<SOCKADDR*>(socket_address.data()), &address_length));
   if (socket_address.size() != static_cast<size_t>(address_length)) socket_address.resize(static_cast<size_t>(address_length));
   return result;
 }
 
-int32_t socket::select(std::vector<intptr_t>& check_read, std::vector<intptr_t>& check_write, std::vector<intptr_t>& check_error, int32_t microseconds) {
+int32_t socket::select(vector<intptr_t>& check_read, vector<intptr_t>& check_write, vector<intptr_t>& check_error, int32_t microseconds) {
   size_t nfds = 0;
 
   fd_set read_fds;
@@ -240,11 +241,11 @@ int32_t socket::select(std::vector<intptr_t>& check_read, std::vector<intptr_t>&
   return result;
 }
 
-int32_t socket::send(intptr_t handle, const std::vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags) {
+int32_t socket::send(intptr_t handle, const vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags) {
   return static_cast<int32_t>(::send(static_cast<SOCKET>(handle), reinterpret_cast<const char*>(&buffer.data()[offset]), static_cast<int32_t>(size), flags));
 }
 
-int32_t socket::send_to(intptr_t handle, const std::vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags, const std::vector<uint8_t>& socket_address) {
+int32_t socket::send_to(intptr_t handle, const vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags, const vector<uint8_t>& socket_address) {
   return static_cast<int32_t>(::sendto(static_cast<SOCKET>(handle), reinterpret_cast<const char*>(&buffer.data()[offset]), static_cast<int32_t>(size), flags, reinterpret_cast<const SOCKADDR*>(socket_address.data()), static_cast<int32_t>(socket_address.size())));
 }
 
@@ -274,7 +275,7 @@ int32_t socket::set_socket_multicast_option(intptr_t handle, int32_t socket_opti
   return setsockopt(static_cast<SOCKET>(handle), IPPROTO_TCP, socket_option_name_to_native(socket_option_name), reinterpret_cast<const char*>(&m), static_cast<int32_t>(sizeof(multicast)));
 }
 
-int32_t socket::set_socket_ip_v6_multicast_option(intptr_t handle, int32_t socket_option_name, const std::vector<uint8_t>& multicast_address, uint32_t interface_index) {
+int32_t socket::set_socket_ip_v6_multicast_option(intptr_t handle, int32_t socket_option_name, const vector<uint8_t>& multicast_address, uint32_t interface_index) {
   struct multicast {
     uint8_t multicast_address[16];
     uint32_t interface_index;

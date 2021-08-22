@@ -85,13 +85,8 @@ namespace unit_tests {
 
     void test_method_(socket_address_value_operator) {
       socket_address sa(address_family::inter_network);
-      if (bit_converter::is_little_endian) {
-        assert::are_equal(0, sa[0], line_info_);
-        assert::are_equal(static_cast<byte_t>(address_family::inter_network), sa[1], line_info_);
-      } else {
-        assert::are_equal(static_cast<byte_t>(address_family::inter_network), sa[0], line_info_);
-        assert::are_equal(0, sa[1], line_info_);
-      }
+      assert::are_equal(static_cast<byte_t>(address_family::inter_network), sa[0], line_info_);
+      assert::are_equal(0, sa[1], line_info_);
       assert::are_equal(0, sa[24], line_info_);
       sa[24] = 42;
       assert::are_equal(42, sa[24], line_info_);
