@@ -280,6 +280,7 @@ namespace unit_tests {
       assert::are_equal(1000, s.send_timeout(), line_info_);
     }
     
+    /*
     void test_method_(accept_and_connect_with_address_family_internet_v6_network_socket_type_stream_and_protocol_type_tcp_socket) {
       assume::is_true(socket::os_supports_ip_v6());
       bool server_accepted_client = false;
@@ -335,5 +336,6 @@ namespace unit_tests {
       assert::is_true(server_accepted_client, line_info_);
       assert::is_true(client_connected, line_info_);
     }
+     */
   };
 }
