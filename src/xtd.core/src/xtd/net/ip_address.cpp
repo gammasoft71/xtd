@@ -13,9 +13,9 @@ using namespace xtd::net::sockets;
 
 ip_address ip_address::any {0x00000000LL};
 ip_address ip_address::broadcast {0xFFFFFFFFLL};
-ip_address ip_address::ip_v6_any {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-ip_address ip_address::ip_v6_loopback {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}};
-ip_address ip_address::ip_v6_none {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
+ip_address ip_address::ip_v6_any {vector<byte_t> {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
+ip_address ip_address::ip_v6_loopback {vector<byte_t> {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}};
+ip_address ip_address::ip_v6_none {vector<byte_t> {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
 ip_address ip_address::loopback {0x0100007FLL};
 ip_address ip_address::none {0xFFFFFFFFLL};
 

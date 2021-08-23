@@ -24,6 +24,7 @@
 #include "socket_information.h"
 #include "socket_option_level.h"
 #include "socket_option_name.h"
+#include "socket_shutdown.h"
 #include "socket_type.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -482,7 +483,9 @@ namespace xtd {
         void connect(const std::vector<xtd::net::ip_address>& addresses, uint16_t port);
         
         void connect(const xtd::ustring& host, uint16_t port);
-
+        
+        void disconnect(bool reuse_socket);
+        
         /// @brief Gets a socket option value using platform-specific level and name identifiers.
         /// @param socket_option_level The platform-defined option level.
         /// @param socket_option_name The platform-defined option name.
@@ -641,11 +644,13 @@ namespace xtd {
         /// @remarks The SetRawSocketOption(Int32, Int32, ReadOnlySpan<Byte>) method should be used only when SocketOptionLevel and SocketOptionName do not expose the required option.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         void set_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, intptr_t option_value, size_t option_value_size);
+       
+        void shutdown(xtd::net::sockets::socket_shutdown how);
         
       private:
         static xtd::net::sockets::socket_error get_last_error_();
-        void bind_(std::unique_ptr<xtd::net::end_point>&& local_end_point);
-        void connect_(std::unique_ptr<xtd::net::end_point>&& remote_end_point);
+        void bind_(std::unique_ptr<xtd::net::end_point> local_end_point);
+        void connect_(std::unique_ptr<xtd::net::end_point> remote_end_point);
         struct data;
         
         std::shared_ptr<data> data_;

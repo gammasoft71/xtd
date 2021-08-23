@@ -1,4 +1,4 @@
-#include "../../../include/xtd/argument_exception.h"
+#include "../../../include/xtd/argument_out_of_range_exception.h"
 #include "../../../include/xtd/bit_converter.h"
 #include "../../../include/xtd/net/ip_end_point.h"
 #include "../../../include/xtd/net/sockets/socket_exception.h"
@@ -56,22 +56,23 @@ unique_ptr<end_point> ip_end_point::create(const socket_address& socket_address)
 socket_address ip_end_point::serialize() const {
   socket_address result(address_family_, address_family_ == address_family::inter_network ? 16 : 28);
   size_t index = 2;
-  for (byte b : bit_converter::get_bytes(ip_address::host_to_network_order(port_)))
+  for (byte_t b : bit_converter::get_bytes(ip_address::host_to_network_order(port_)))
     result[index++] = b;
   
   if (address_.address_family() == address_family::inter_network_v6) {
-    index = 24;
-    //for (byte b : bit_converter::get_bytes(ip_address::host_to_network_order(address_.scope_id())))
-    for (byte b : bit_converter::get_bytes(address_.scope_id()))
+    index = 8;
+    for (byte_t b : address_.get_address_bytes())
       result[index++] = b;
-    auto address_bytes = address_.get_address_bytes();
-    for (auto i = 0U; i < address_bytes.size(); i++)
-      result[8 + i] = address_bytes[i];
+    //for (byte b : bit_converter::get_bytes(ip_address::host_to_network_order(address_.scope_id())))
+    for (byte_t b : bit_converter::get_bytes(address_.scope_id()))
+      result[index++] = b;
   } else {
-    auto address_bytes = address_.get_address_bytes();
-    for (auto i = 0U; i < address_bytes.size(); i++)
-      result[4 + i] = address_bytes[i];
+    index = 4;
+    for (byte_t b : address_.get_address_bytes())
+      result[index++] = b;
   }
+  
+  if (index > result.size()) throw argument_out_of_range_exception(csf_);
   
   return result;
 }
