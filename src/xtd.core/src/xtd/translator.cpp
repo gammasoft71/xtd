@@ -90,6 +90,9 @@ void translator::parse_file(const xtd::ustring& file, const xtd::ustring& langua
 }
 
 void translator::initialize() {
+  static mutex mutex_init;
+  lock_guard<mutex> lock(mutex_init);
+
   if (language_.empty()) {
     if (!std::locale().name().empty() && std::locale().name() != "C") language_ = ustring(std::locale().name()).substring(0, 2).to_lower();
     else language_ = system_language();
