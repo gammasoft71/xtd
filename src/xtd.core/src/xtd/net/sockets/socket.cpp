@@ -85,7 +85,7 @@ socket::socket(xtd::net::sockets::address_family address_family, xtd::net::socke
 
 socket::~socket() {
   if (data_.use_count() == 1) {
-    if (data_->handle != 0) shutdown(xtd::net::sockets::socket_shutdown::both);
+    if (data_->handle != 0 && data_->is_connected) shutdown(xtd::net::sockets::socket_shutdown::both);
     close();
   }
 }
