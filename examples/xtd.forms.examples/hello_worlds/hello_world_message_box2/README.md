@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/hello_world_message_box2_w.png)
+![Screenshot](../../../../docs/pictures/examples/hello_world_message_box_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/hello_world_message_box2_wd.png)
+![Screenshot](../../../../docs/pictures/examples/hello_world_message_box_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/hello_world_message_box2_m.png)
+![Screenshot](../../../../docs/pictures/examples/hello_world_message_box_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/hello_world_message_box2_md.png)
+![Screenshot](../../../../docs/pictures/examples/hello_world_message_box_md.png)
 
 ## Linux Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/hello_world_message_box2_g.png)
+![Screenshot](../../../../docs/pictures/examples/hello_world_message_box_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/hello_world_message_box2_gd.png)
+![Screenshot](../../../../docs/pictures/examples/hello_world_message_box_gd.png)
