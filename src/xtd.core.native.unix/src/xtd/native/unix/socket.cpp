@@ -482,12 +482,13 @@ intptr_t socket::accept(intptr_t handle, vector<uint8_t>& socket_address) {
 
 int32_t socket::bind(intptr_t handle, const vector<uint8_t>& socket_address) {
 #if defined(__APPLE__)
-  vector<uint8_t> address = socket_address;
-  swap(address[0], address[1]);
-#else
-  auto& address = socket_address;
+  swap(const_cast<vector<uint8_t>&>(socket_address)[0], const_cast<vector<uint8_t>&>(socket_address)[1]);
 #endif
-  return ::bind(static_cast<int32_t>(handle), reinterpret_cast<const sockaddr*>(address.data()), static_cast<socklen_t>(address.size()));
+  auto result = ::bind(static_cast<int32_t>(handle), reinterpret_cast<const sockaddr*>(socket_address.data()), static_cast<socklen_t>(socket_address.size()));
+#if defined(__APPLE__)
+  swap(const_cast<vector<uint8_t>&>(socket_address)[0], const_cast<vector<uint8_t>&>(socket_address)[1]);
+#endif
+  return result;
 }
 
 void socket::cleanup() {
@@ -496,12 +497,13 @@ void socket::cleanup() {
 
 int32_t socket::connect(intptr_t handle, const vector<uint8_t>& socket_address) {
 #if defined(__APPLE__)
-  vector<uint8_t> address = socket_address;
-  swap(address[0], address[1]);
-#else
-  auto& address = socket_address;
+  swap(const_cast<vector<uint8_t>&>(socket_address)[0], const_cast<vector<uint8_t>&>(socket_address)[1]);
 #endif
-  return ::connect(static_cast<int32_t>(handle), reinterpret_cast<const sockaddr*>(address.data()), address.size());
+  auto result = ::connect(static_cast<int32_t>(handle), reinterpret_cast<const sockaddr*>(socket_address.data()), socket_address.size());
+#if defined(__APPLE__)
+  swap(const_cast<vector<uint8_t>&>(socket_address)[0], const_cast<vector<uint8_t>&>(socket_address)[1]);
+#endif
+  return result;
 }
 
 intptr_t socket::create(int32_t address_family, int32_t socket_type, int32_t protocol_type) {
@@ -688,12 +690,13 @@ int32_t socket::send(intptr_t handle, const vector<uint8_t>& buffer, size_t offs
 
 int32_t socket::send_to(intptr_t handle, const vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags, const vector<uint8_t>& socket_address) {
 #if defined(__APPLE__)
-  vector<uint8_t> address = socket_address;
-  swap(address[0], address[1]);
-#else
-  auto& address = socket_address;
+  swap(const_cast<vector<uint8_t>&>(socket_address)[0], const_cast<vector<uint8_t>&>(socket_address)[1]);
 #endif
-  return static_cast<int32_t>(::sendto(static_cast<int32_t>(handle), &buffer.data()[offset], size, flags, reinterpret_cast<const sockaddr*>(address.data()), static_cast<socklen_t>(address.size())));
+  auto result = static_cast<int32_t>(::sendto(static_cast<int32_t>(handle), &buffer.data()[offset], size, flags, reinterpret_cast<const sockaddr*>(socket_address.data()), static_cast<socklen_t>(socket_address.size())));
+#if defined(__APPLE__)
+  swap(const_cast<vector<uint8_t>&>(socket_address)[0], const_cast<vector<uint8_t>&>(socket_address)[1]);
+#endif
+  return result;
 }
 
 int32_t socket::set_blocking(intptr_t handle, bool blocking) {
