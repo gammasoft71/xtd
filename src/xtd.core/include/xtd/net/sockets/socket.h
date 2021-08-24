@@ -468,7 +468,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception when calling the xtd::net::sockets::socket::bind method, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         template<typename end_point_t>
         void bind(const end_point_t& local_end_point) {
-          bind_(local_end_point.template memberwise_clone<end_point_t>());
+          bind_(std::make_unique<end_point_t>(local_end_point));
         }
 
         /// @brief Closes the xtd::net::sockets::socket connection and releases all associated resources.
@@ -489,7 +489,7 @@ namespace xtd {
         /// @note If the socket has been previously disconnected, then you cannot use this method to restore the connection. Use one of the asynchronous xtd::net::sockets::socket::begin_connect methods to reconnect. This is a limitation of the underlying provider.
         template<typename end_point_t>
         void connect(const end_point_t& remote_end_point) {
-         connect_(remote_end_point.template memberwise_clone<end_point_t>());
+         connect_(std::make_unique<end_point_t>(remote_end_point));
         }
         
         /// @brief Establishes a connection to a remote host. The host is specified by an IP address and a port number.
@@ -779,37 +779,6 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         /// @note The xtd::net::sockets::sockets::address_family of the xtd::net::end_point used in xtd::net::sockets::socket::receive_from needs to match the xtd::net::sockets::sockets::address_family of the xtd::net::end_point used in xtd::net::sockets::sockets::socket::send_to.
         size_t receive_from(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point);
-
-        /// @brief Sets the specified xtd::net::sockets::socket option to the specified integer value.
-        /// @param socket_option_level One of the xtd::net::sockets::socket_option_level values.
-        /// @param socket_option_name One of the xtd::net::sockets::socket_option_name values.
-        /// @param option_value A value of the option.
-        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
-        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
-        /// @remarks xtd::net::sockets::socket options determine the behavior of the current xtd::net::sockets::socket. For an option with a Boolean data type, specify a nonzero value to enable the option, and a zero value to disable the option. For an option with an integer data type, specify the appropriate value. xtd::net::sockets::socket options are grouped by level of protocol support.
-        /// @remarks xtd::net::sockets::socket options are grouped by level of protocol support.
-        /// @remarks Listed below are the various xtd::net::sockets::socket options that can be set using this overload. These options are grouped by the appropriate SocketOptionLevel value. If you intend to set any of these options, be sure to use the appropriate SocketOptionLevel value for the optionLevel parameter. The option you choose to set must be specified in the optionName parameter. If you want to get the current value of any of the options listed, use the GetSocketOption method.
-        ///  * xtd::net::sockets::socket_option_level::socket options that can be set using this overload:
-        ///    * xtd::net::sockets::socket_option_name::accept_connection
-        ///    * xtd::net::sockets::socket_option_name::broadcast
-        ///    * xtd::net::sockets::socket_option_name::dont_linger
-        ///    * xtd::net::sockets::socket_option_name::debug
-        ///    * xtd::net::sockets::socket_option_name::keep_alive
-        ///    * xtd::net::sockets::socket_option_name::out_of_band_inline
-        ///    * xtd::net::sockets::socket_option_name::reuse_address
-        ///  * xtd::net::sockets::socket_option_level::ip options that can be set using this overload:
-        ///    * xtd::net::sockets::socket_option_name::header_included
-        ///    * xtd::net::sockets::socket_option_name::multicast_loopback
-        ///    * xtd::net::sockets::socket_option_name::use_loopback
-        ///  * xtd::net::sockets::socket_option_level::tcp options that can be set using this overload:
-        ///    * xtd::net::sockets::socket_option_name::bsd_urgent
-        ///    * xtd::net::sockets::socket_option_name::expedited
-        ///    * xtd::net::sockets::socket_option_name::no_delay
-        ///  * xtd::net::sockets::socket_option_level::udp options that can be set using this overload :
-        ///    * xtd::net::sockets::socket_option_name::no_checksum
-        /// @remarks <br />For more information on these options, refer to the xtd::net::sockets::socket_option_name enumeration.
-        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        void set_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name, bool option_value);
  
         /// @brief Determines the status of one or more sockets.
         /// @param check_read An array of xtd::net::sockets::socket instances to check for readability.
@@ -908,6 +877,98 @@ namespace xtd {
         /// @remarks If you are using a connection-oriented protocol, xtd::net::sockets::socket::send will block until all of the bytes in the buffer are sent, unless a time-out was set by using xtd::net::sockets::socket::send_timeout. If the time-out value was exceeded, the xtd::net::sockets::socket::send call will throw a xtd::net::sockets::socket_exception. In nonblocking mode, xtd::net::sockets::socket::send may complete successfully even if it sends less than the number of bytes in the buffer. It is your application's responsibility to keep track of the number of bytes sent and to retry the operation until the application sends the bytes in the buffer. There is also no guarantee that the data you send will appear on the network immediately. To increase network efficiency, the underlying system may delay transmission until a significant amount of outgoing data is collected. A successful completion of the Send method means that the underlying system has had room to buffer your data for a network send.
         /// @note The successful completion of a send does not indicate that the data was successfully delivered. If no buffer space is available within the transport system to hold the data to be transmitted, send will block unless the socket has been placed in nonblocking mode.
         size_t send(const std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error_code);
+        
+        /// @brief Sends data to the specified endpoint.
+        /// @param buffer An array of type byte that contains the data to be sent.
+        /// @param remote_end_point The EndPoint that represents the destination for the data.
+        /// @return The number of bytes sent.
+        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks In this overload, the buffer offset defaults to 0, the number of bytes to send defaults to the size of the buffer parameter, and the xtd::net::sockets::socket_flags value defaults to xtd::net::sockets::socket_flags::none.
+        /// @remarks If you are using a connectionless protocol, you do not need to establish a default remote host with the xtd::net::sockets::socket::connect method prior to calling xtd::net::sockets::socket::send_to. You only need to do this if you intend to call the xtd::net::sockets::socket::send method. If you do call the xtd::net::sockets::socket::connect method prior to calling xtd::net::sockets::socket::send_tto, the remote_end_point parameter will override the specified default remote host for that send operation only. You are also not required to call the xtd::net::sockets::socket::bind method, because the underlying service provider will assign the most appropriate local network address and port number. If you need to identify the assigned local network address and port number, you can use the xtd::net::sockets::socket::local_end_point property after the xtd::net::sockets::socket::send_to method successfully completes.
+        /// @remarks Although intended for connectionless protocols, xtd::net::sockets::socket::send_to also works with connection-oriented protocols. If you are using a connection-oriented protocol, you must first establish a remote host connection by calling the xtd::net::sockets::socket::connect method or accept an incoming connection request using the xtd::net::sockets::socket::accept method. If you do not establish or accept a remote host connection, xtd::net::sockets::socket::send_to will throw a xtd::net::sockets::socket_exception. You can also establish a default remote host for a connectionless protocol prior to calling the xtd::net::sockets::socket::send_to method. In either of these cases, xtd::net::sockets::socket::send_to will ignore the remote_end_point parameter and only send data to the connected or default remote host.
+        /// @remarks Blocking sockets will block until the all of the bytes in the buffer are sent. Since a nonblocking xtd::net::sockets::socket completes immediately, it might not send all of the bytes in the buffer. It is your application's responsibility to keep track of the number of bytes sent and to retry the operation until the application sends all of the bytes in the buffer. There is also no guarantee that the data you send will appear on the network immediately. To increase network efficiency, the underlying system may delay transmission until a significant amount of outgoing data is collected. A successful completion of the xtd::net::sockets::socket::send_to method means that the underlying system has had room to buffer your data for a network send.
+        /// @remarks If you are using a connectionless protocol in blocking mode, xtd::net::sockets::socket::send_to will block until the datagram is sent. If you want to send data to a broadcast address, you must first call the xtd::net::sockets::socket::set_socket_option method and set the socket option to xtd::net::sockets::socket_option_name::broadcast. You must also be sure that the number of bytes sent does not exceed the maximum packet size of the underlying service provider. If it does, the datagram will not be sent and xtd::net::sockets::socket::send_to will throw a xtd::net::sockets::socket_exception.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        size_t send_to(const std::vector<byte_t>& buffer, const xtd::net::end_point& remote_end_point);
+        /// @brief Sends data to a specific endpoint using the specified xtd::net::sockets::socket_flags.
+        /// @param socket_flags A bitwise combination of the xtd::net::sockets::socket_flags values.
+        /// @param buffer An array of type byte that contains the data to be sent.
+        /// @param remote_end_point The EndPoint that represents the destination for the data.
+        /// @return The number of bytes sent.
+        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks IIn this overload, the buffer offset defaults to 0, and the number of bytes to send defaults to the size of the buffer. If you specify the xtd::net::sockets::socket_flags::dont_route flag as the socket_flags parameter, the data you are sending will not be routed.
+        /// @remarks If you are using a connectionless protocol, you do not need to establish a default remote host with the xtd::net::sockets::socket::connect method prior to calling xtd::net::sockets::socket::send_to. You only need to do this if you intend to call the xtd::net::sockets::socket::send method. If you do call the xtd::net::sockets::socket::connect method prior to calling xtd::net::sockets::socket::send_tto, the remote_end_point parameter will override the specified default remote host for that send operation only. You are also not required to call the xtd::net::sockets::socket::bind method, because the underlying service provider will assign the most appropriate local network address and port number. If you need to identify the assigned local network address and port number, you can use the xtd::net::sockets::socket::local_end_point property after the xtd::net::sockets::socket::send_to method successfully completes.
+        /// @remarks Although intended for connectionless protocols, xtd::net::sockets::socket::send_to also works with connection-oriented protocols. If you are using a connection-oriented protocol, you must first establish a remote host connection by calling the xtd::net::sockets::socket::connect method or accept an incoming connection request using the xtd::net::sockets::socket::accept method. If you do not establish or accept a remote host connection, xtd::net::sockets::socket::send_to will throw a xtd::net::sockets::socket_exception. You can also establish a default remote host for a connectionless protocol prior to calling the xtd::net::sockets::socket::send_to method. In either of these cases, xtd::net::sockets::socket::send_to will ignore the remote_end_point parameter and only send data to the connected or default remote host.
+        /// @remarks Blocking sockets will block until the all of the bytes in the buffer are sent. Since a nonblocking xtd::net::sockets::socket completes immediately, it might not send all of the bytes in the buffer. It is your application's responsibility to keep track of the number of bytes sent and to retry the operation until the application sends all of the bytes in the buffer. There is also no guarantee that the data you send will appear on the network immediately. To increase network efficiency, the underlying system may delay transmission until a significant amount of outgoing data is collected. A successful completion of the xtd::net::sockets::socket::send_to method means that the underlying system has had room to buffer your data for a network send.
+        /// @remarks If you are using a connectionless protocol in blocking mode, xtd::net::sockets::socket::send_to will block until the datagram is sent. If you want to send data to a broadcast address, you must first call the xtd::net::sockets::socket::set_socket_option method and set the socket option to xtd::net::sockets::socket_option_name::broadcast. You must also be sure that the number of bytes sent does not exceed the maximum packet size of the underlying service provider. If it does, the datagram will not be sent and xtd::net::sockets::socket::send_to will throw a xtd::net::sockets::socket_exception.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        size_t send_to(const std::vector<byte_t>& buffer, xtd::net::sockets::socket_flags socket_flags, const xtd::net::end_point& remote_end_point);
+        /// @brief Sends the specified number of bytes of data to the specified endpoint using the specified xtd::net::sockets::socket_flags.
+        /// @param buffer An array of type byte that contains the data to be sent.
+        /// @param size The number of bytes to send.
+        /// @param socket_flags A bitwise combination of the xtd::net::sockets::socket_flags values.
+        /// @param remote_end_point The EndPoint that represents the destination for the data.
+        /// @return The number of bytes sent.
+        /// @exception xtd::argument_out_of_range_exception size is less than 0 or exceeds the size of the buffer.
+        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks In this overload, the buffer offset defaults to 0. If you specify the xtd::net::sockets::socket_flags::dont_route flag as the socket_flags parameter, the data you are sending will not be routed.
+        /// @remarks If you are using a connectionless protocol, you do not need to establish a default remote host with the xtd::net::sockets::socket::connect method prior to calling xtd::net::sockets::socket::send_to. You only need to do this if you intend to call the xtd::net::sockets::socket::send method. If you do call the xtd::net::sockets::socket::connect method prior to calling xtd::net::sockets::socket::send_tto, the remote_end_point parameter will override the specified default remote host for that send operation only. You are also not required to call the xtd::net::sockets::socket::bind method, because the underlying service provider will assign the most appropriate local network address and port number. If you need to identify the assigned local network address and port number, you can use the xtd::net::sockets::socket::local_end_point property after the xtd::net::sockets::socket::send_to method successfully completes.
+        /// @remarks Although intended for connectionless protocols, xtd::net::sockets::socket::send_to also works with connection-oriented protocols. If you are using a connection-oriented protocol, you must first establish a remote host connection by calling the xtd::net::sockets::socket::connect method or accept an incoming connection request using the xtd::net::sockets::socket::accept method. If you do not establish or accept a remote host connection, xtd::net::sockets::socket::send_to will throw a xtd::net::sockets::socket_exception. You can also establish a default remote host for a connectionless protocol prior to calling the xtd::net::sockets::socket::send_to method. In either of these cases, xtd::net::sockets::socket::send_to will ignore the remote_end_point parameter and only send data to the connected or default remote host.
+        /// @remarks Blocking sockets will block until the all of the bytes in the buffer are sent. Since a nonblocking xtd::net::sockets::socket completes immediately, it might not send all of the bytes in the buffer. It is your application's responsibility to keep track of the number of bytes sent and to retry the operation until the application sends all of the bytes in the buffer. There is also no guarantee that the data you send will appear on the network immediately. To increase network efficiency, the underlying system may delay transmission until a significant amount of outgoing data is collected. A successful completion of the xtd::net::sockets::socket::send_to method means that the underlying system has had room to buffer your data for a network send.
+        /// @remarks If you are using a connectionless protocol in blocking mode, xtd::net::sockets::socket::send_to will block until the datagram is sent. If you want to send data to a broadcast address, you must first call the xtd::net::sockets::socket::set_socket_option method and set the socket option to xtd::net::sockets::socket_option_name::broadcast. You must also be sure that the number of bytes sent does not exceed the maximum packet size of the underlying service provider. If it does, the datagram will not be sent and xtd::net::sockets::socket::send_to will throw a xtd::net::sockets::socket_exception.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        size_t send_to(const std::vector<byte_t>& buffer, size_t size, xtd::net::sockets::socket_flags socket_flags, const xtd::net::end_point& remote_end_point);
+        /// @brief Sends the specified number of bytes of data to the specified endpoint, starting at the specified location in the buffer, and using the specified xtd::net::sockets::socket_flags.
+        /// @param buffer An array of type byte that contains the data to be sent.
+        /// @param offset The position in the data buffer at which to begin sending data.
+        /// @param size The number of bytes to send.
+        /// @param socket_flags A bitwise combination of the xtd::net::sockets::socket_flags values.
+        /// @param remote_end_point The EndPoint that represents the destination for the data.
+        /// @return The number of bytes sent.
+        /// @exception xtd::argument_out_of_range_exception size is less than 0 or exceeds the size of the buffer.
+        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks In this overload, if you specify the xtd::net::sockets::socket_flags::dont_route flag as the socket_flags parameter, the data you are sending will not be routed.
+        /// @remarks If you are using a connectionless protocol, you do not need to establish a default remote host with the xtd::net::sockets::socket::connect method prior to calling xtd::net::sockets::socket::send_to. You only need to do this if you intend to call the xtd::net::sockets::socket::send method. If you do call the xtd::net::sockets::socket::connect method prior to calling xtd::net::sockets::socket::send_tto, the remote_end_point parameter will override the specified default remote host for that send operation only. You are also not required to call the xtd::net::sockets::socket::bind method, because the underlying service provider will assign the most appropriate local network address and port number. If you need to identify the assigned local network address and port number, you can use the xtd::net::sockets::socket::local_end_point property after the xtd::net::sockets::socket::send_to method successfully completes.
+        /// @remarks Although intended for connectionless protocols, xtd::net::sockets::socket::send_to also works with connection-oriented protocols. If you are using a connection-oriented protocol, you must first establish a remote host connection by calling the xtd::net::sockets::socket::connect method or accept an incoming connection request using the xtd::net::sockets::socket::accept method. If you do not establish or accept a remote host connection, xtd::net::sockets::socket::send_to will throw a xtd::net::sockets::socket_exception. You can also establish a default remote host for a connectionless protocol prior to calling the xtd::net::sockets::socket::send_to method. In either of these cases, xtd::net::sockets::socket::send_to will ignore the remote_end_point parameter and only send data to the connected or default remote host.
+        /// @remarks Blocking sockets will block until the all of the bytes in the buffer are sent. Since a nonblocking xtd::net::sockets::socket completes immediately, it might not send all of the bytes in the buffer. It is your application's responsibility to keep track of the number of bytes sent and to retry the operation until the application sends all of the bytes in the buffer. There is also no guarantee that the data you send will appear on the network immediately. To increase network efficiency, the underlying system may delay transmission until a significant amount of outgoing data is collected. A successful completion of the xtd::net::sockets::socket::send_to method means that the underlying system has had room to buffer your data for a network send.
+        /// @remarks If you are using a connectionless protocol in blocking mode, xtd::net::sockets::socket::send_to will block until the datagram is sent. If you want to send data to a broadcast address, you must first call the xtd::net::sockets::socket::set_socket_option method and set the socket option to xtd::net::sockets::socket_option_name::broadcast. You must also be sure that the number of bytes sent does not exceed the maximum packet size of the underlying service provider. If it does, the datagram will not be sent and xtd::net::sockets::socket::send_to will throw a xtd::net::sockets::socket_exception.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        size_t send_to(const std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, const xtd::net::end_point& remote_end_point);
+
+        /// @brief Sets the specified xtd::net::sockets::socket option to the specified integer value.
+        /// @param socket_option_level One of the xtd::net::sockets::socket_option_level values.
+        /// @param socket_option_name One of the xtd::net::sockets::socket_option_name values.
+        /// @param option_value A value of the option.
+        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks xtd::net::sockets::socket options determine the behavior of the current xtd::net::sockets::socket. For an option with a Boolean data type, specify a nonzero value to enable the option, and a zero value to disable the option. For an option with an integer data type, specify the appropriate value. xtd::net::sockets::socket options are grouped by level of protocol support.
+        /// @remarks xtd::net::sockets::socket options are grouped by level of protocol support.
+        /// @remarks Listed below are the various xtd::net::sockets::socket options that can be set using this overload. These options are grouped by the appropriate SocketOptionLevel value. If you intend to set any of these options, be sure to use the appropriate SocketOptionLevel value for the optionLevel parameter. The option you choose to set must be specified in the optionName parameter. If you want to get the current value of any of the options listed, use the GetSocketOption method.
+        ///  * xtd::net::sockets::socket_option_level::socket options that can be set using this overload:
+        ///    * xtd::net::sockets::socket_option_name::accept_connection
+        ///    * xtd::net::sockets::socket_option_name::broadcast
+        ///    * xtd::net::sockets::socket_option_name::dont_linger
+        ///    * xtd::net::sockets::socket_option_name::debug
+        ///    * xtd::net::sockets::socket_option_name::keep_alive
+        ///    * xtd::net::sockets::socket_option_name::out_of_band_inline
+        ///    * xtd::net::sockets::socket_option_name::reuse_address
+        ///  * xtd::net::sockets::socket_option_level::ip options that can be set using this overload:
+        ///    * xtd::net::sockets::socket_option_name::header_included
+        ///    * xtd::net::sockets::socket_option_name::multicast_loopback
+        ///    * xtd::net::sockets::socket_option_name::use_loopback
+        ///  * xtd::net::sockets::socket_option_level::tcp options that can be set using this overload:
+        ///    * xtd::net::sockets::socket_option_name::bsd_urgent
+        ///    * xtd::net::sockets::socket_option_name::expedited
+        ///    * xtd::net::sockets::socket_option_name::no_delay
+        ///  * xtd::net::sockets::socket_option_level::udp options that can be set using this overload :
+        ///    * xtd::net::sockets::socket_option_name::no_checksum
+        /// @remarks <br />For more information on these options, refer to the xtd::net::sockets::socket_option_name enumeration.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        void set_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name, bool option_value);
 
         /// @brief Sets the specified xtd::net::sockets::socket option to the specified integer value.
         /// @param socket_option_level One of the xtd::net::sockets::socket_option_level values.
