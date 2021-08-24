@@ -598,6 +598,8 @@ int32_t socket::get_socket_ip_v6_multicast_option(intptr_t handle, int32_t socke
 }
 
 int32_t socket::io_control(intptr_t handle, int32_t io_control, vector<uint8_t>& option_in_value, vector<uint8_t>& option_out_value) {
+  // Not implemented
+  errno = ENOTSUP;
   return -1;
 }
 
