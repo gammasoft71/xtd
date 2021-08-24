@@ -484,9 +484,8 @@ size_t socket::receive_from(vector<byte_t>& buffer, size_t size, socket_flags so
 size_t socket::receive_from(vector<byte_t>& buffer, size_t offset, size_t size, socket_flags socket_flags, end_point& remote_end_point) {
   if (offset + size > buffer.size()) throw argument_out_of_range_exception(csf_);
   if (data_->handle == 0) throw object_closed_exception(csf_);
-  
   socket_address socket_address = remote_end_point.serialize();
-  int32_t number_of_bytes_received = native::socket::receive_from(data_->handle, buffer, offset, size, static_cast<int32_t>(socket_flags), socket_address.bytes_);
+  auto number_of_bytes_received = native::socket::receive_from(data_->handle, buffer, offset, size, static_cast<int32_t>(socket_flags), socket_address.bytes_);
   if (number_of_bytes_received == -1) throw socket_exception(get_last_error_(), csf_);
   return static_cast<size_t>(number_of_bytes_received);
 }
@@ -522,6 +521,33 @@ size_t socket::select(std::vector<socket>& check_read,std::vector<socket>& check
   update_check_sockets(check_error, check_error_handles);
 
   return static_cast<size_t>(status);
+}
+
+size_t socket::send(const vector<byte_t>& buffer) {
+  return send(buffer, 0, buffer.size(), socket_flags::none);
+}
+
+size_t socket::send(const vector<byte_t>& buffer, socket_flags socket_flags) {
+  return send(buffer, 0, buffer.size(), socket_flags);
+}
+
+size_t socket::send(const vector<byte_t>& buffer, size_t size, socket_flags socket_flags) {
+  return send(buffer, 0, size, socket_flags);
+}
+
+size_t socket::send(const vector<byte_t>& buffer, size_t offset, size_t size, socket_flags socket_flags) {
+  socket_error error_code = socket_error::success;
+  auto number_of_bytes_sent = send(buffer, offset, size, socket_flags, error_code);
+  if (error_code != socket_error::success) throw socket_exception(get_last_error_(), csf_);
+  return number_of_bytes_sent;
+}
+
+size_t socket::send(const vector<byte_t>& buffer, size_t offset, size_t size, socket_flags socket_flags, socket_error& error_code) {
+  if (offset + size > buffer.size()) throw argument_out_of_range_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception(csf_);
+  int32_t number_of_bytes_sent = native::socket::send(data_->handle, buffer, offset, size, static_cast<int32>(socket_flags));
+  error_code = number_of_bytes_sent == -1 ? get_last_error_() : socket_error::success;
+  return static_cast<size_t>(number_of_bytes_sent);
 }
 
 void socket::set_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name, bool option_value) {
