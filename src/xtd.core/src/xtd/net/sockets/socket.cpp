@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <thread>
 #include "../../../../include/xtd/bit_converter.h"
 #include "../../../../include/xtd/argument_out_of_range_exception.h"
@@ -488,6 +489,39 @@ size_t socket::receive_from(vector<byte_t>& buffer, size_t offset, size_t size, 
   int32_t number_of_bytes_received = native::socket::receive_from(data_->handle, buffer, offset, size, static_cast<int32_t>(socket_flags), socket_address.bytes_);
   if (number_of_bytes_received == -1) throw socket_exception(get_last_error_(), csf_);
   return static_cast<size_t>(number_of_bytes_received);
+}
+
+size_t socket::select(std::vector<socket>& check_read,std::vector<socket>& check_write, std::vector<socket>& check_error, int32_t microseconds) {
+  if (check_read.size() == 0 && check_write.size() == 0 && check_error.size() == 0) throw argument_exception(csf_);
+  
+  vector<intptr_t> check_read_handles;
+  for (auto s : check_read)
+    check_read_handles.push_back(s.data_->handle);
+  
+  vector<intptr_t> check_write_handles;
+  for (auto s : check_write)
+    check_write_handles.push_back(s.data_->handle);
+
+  vector<intptr_t> check_error_handles;
+  for (auto s : check_error)
+    check_error_handles.push_back(s.data_->handle);
+
+  int32_t status = native::socket::select(check_read_handles, check_write_handles, check_error_handles, microseconds);
+  if (status < 0) throw socket_exception(get_last_error_(), csf_);
+  
+  auto update_check_sockets = [](auto& sockets, auto& handles) {
+    vector<socket> socket_to_remove;
+    for (size_t i = 0; i < handles.size(); i++)
+      if (handles[i] == 0) socket_to_remove.push_back(sockets[i]);
+    for (auto item : socket_to_remove)
+      remove(sockets.begin(), sockets.end(), item);
+  };
+  
+  update_check_sockets(check_read, check_read_handles);
+  update_check_sockets(check_write, check_write_handles);
+  update_check_sockets(check_error, check_error_handles);
+
+  return static_cast<size_t>(status);
 }
 
 void socket::set_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name, bool option_value) {
