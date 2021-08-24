@@ -383,7 +383,7 @@ namespace xtd {
         /// @return The time-out value, in milliseconds. If you set the property with a value between 1 and 499, the value will be changed to 500. The default value is 0, which indicates an infinite time-out period. Specifying -1 also indicates an infinite time-out period.
         /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
-        /// @remarks This option applies to synchronous Send calls only. If the time-out period is exceeded, the Send method will throw a SocketException.
+        /// @remarks This option applies to synchronous Send calls only. If the time-out period is exceeded, the Send method will throw a xtd::net::sockets::socket::socket_exception.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         int32_t send_timeout() const;
         /// @brief Sets a value that specifies the amount of time after which a synchronous xtd::net::sockets::socket::send call will time out.
@@ -392,7 +392,7 @@ namespace xtd {
         /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @exception xtd::argument_out_of_range_exception The value specified for a set operation is less than -1.
-        /// @remarks This option applies to synchronous Send calls only. If the time-out period is exceeded, the Send method will throw a SocketException.
+        /// @remarks This option applies to synchronous Send calls only. If the time-out period is exceeded, the Send method will throw a xtd::net::sockets::socket::socket_exception.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         socket& send_timeout(int32_t value);
 
@@ -638,7 +638,7 @@ namespace xtd {
         size_t receive(std::vector<byte_t>& buffer);
         
         /// @brief Receives data from a bound xtd::net::sockets::socket into a receive buffer, using the specified xtd::net::sockets::socket_flags.
-        /// @param buffer An array of type Byte that is the storage location for the received data.
+        /// @param buffer An array of type byte that is the storage location for the received data.
         /// @param socket_flags A bitwise combination of the xtd::net::sockets::socket_flags values.
         /// @return The number of bytes received.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
@@ -653,9 +653,9 @@ namespace xtd {
         size_t receive(std::vector<byte_t>& buffer, xtd::net::sockets::socket_flags socket_flags);
         
         /// @brief Receives the specified number of bytes of data from a bound xtd::net::sockets::socket into a receive buffer, using the specified xtd::net::sockets::socket_flags.
-        /// @param buffer An array of type Byte that is the storage location for the received data.
+        /// @param buffer An array of type byte that is the storage location for the received data.
         /// @param size The number of bytes to receive.
-        /// @param socket_flags A bitwise combination of the SocketFlags values.
+        /// @param socket_flags A bitwise combination of the xtd::net::sockets::socket_flags values.
         /// @return The number of bytes received.
         /// @exception xtd::argument_out_of_range_exception size is less than 0 or exceeds the size of the buffer.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
@@ -670,10 +670,10 @@ namespace xtd {
         size_t receive(std::vector<byte_t>& buffer, size_t size, xtd::net::sockets::socket_flags socket_flags);
         
         /// @brief Receives the specified number of bytes from a bound xtd::net::sockets::socket into the specified offset position of the receive buffer, using the specified xtd::net::sockets::socket_flags.
-        /// @param buffer An array of type Byte that is the storage location for the received data.
+        /// @param buffer An array of type byte that is the storage location for the received data.
         /// @param offset The location in buffer to store the received data.
         /// @param size The number of bytes to receive.
-        /// @param socket_flags A bitwise combination of the SocketFlags values.
+        /// @param socket_flags A bitwise combination of the xtd::net::sockets::socket_flags values.
         /// @return The number of bytes received.
         /// @exception xtd::argument_out_of_range_exception size is less than 0 or exceeds the size of the buffer.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
@@ -687,10 +687,10 @@ namespace xtd {
         size_t receive(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags);
         
         /// @brief Receives the specified number of bytes from a bound xtd::net::sockets::socket into the specified offset position of the receive buffer, using the specified xtd::net::sockets::socket_flags.
-        /// @param buffer An array of type Byte that is the storage location for the received data.
+        /// @param buffer An array of type byte that is the storage location for the received data.
         /// @param offset The location in buffer to store the received data.
         /// @param size The number of bytes to receive.
-        /// @param socket_flags A bitwise combination of the SocketFlags values.
+        /// @param socket_flags A bitwise combination of the xtd::net::sockets::socket_flags values.
         /// @param errorCode A SocketError object that stores the socket error.
         /// @return The number of bytes received.
         /// @exception xtd::argument_out_of_range_exception size is less than 0 or exceeds the size of the buffer.
@@ -702,6 +702,81 @@ namespace xtd {
         /// @remarks If you are using a connectionless xtd::net::sockets::socket, xtd::net::sockets::socket::receive will read the first queued datagram from the destination address you specify in the xtd::net::sockets::socket::connect method. If the datagram you receive is larger than the size of the buffer parameter, buffer gets filled with the first part of the message, the excess data is lost and a xtd::net::sockets::socket::socket_exception is thrown.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         size_t receive(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error);
+        
+        /// @brief Receives data from a bound xtd::net::sockets::socket into a receive buffer.
+        /// @param buffer An array of type byte that is the storage location for the received data.
+        /// @param remote_end_point the remote host
+        /// @return The number of bytes received.
+        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks The xtd::net::sockets::socket::receive_from method reads data into the buffer parameter, returns the number of bytes successfully read, and captures the remote host endpoint from which the data was sent. This method is useful if you intend to receive connectionless datagrams from an unknown host or multiple hosts.
+        /// @remarks This overload only requires you to provide a receive buffer, and an xtd::net::end_point that represents the remote host. The buffer offset defaults to 0. The size defaults to the size of the buffer parameter and the xtd::net::sockets::socket_flags value defaults to xtd::net::sockets::socket_flags::none.
+        /// @note Before calling xtd::net::sockets::socket::receive_from, you must explicitly bind the xtd::net::sockets::socket to a local endpoint using the xtd::net::sockets::socket::bind method. If you do not, xtd::net::sockets::socket::receive_from will throw a xtd::net::sockets::socket::socket_exception.
+        /// @remarks With connectionless protocols, xtd::net::sockets::socket::receive_from will read the first enqueued datagram received into the local network buffer. If the datagram you receive is larger than the size of buffer, the xtd::net::sockets::socket::receive_from method will fill buffer with as much of the message as is possible, and throw a xtd::net::sockets::socket::socket_exception. If you are using an unreliable protocol, the excess data will be lost. If you are using a reliable protocol, the excess data will be retained by the service provider and you can retrieve it by calling the xtd::net::sockets::socket::receive_from method with a large enough buffer.
+        /// @remarks If no data is available for reading, the xtd::net::sockets::socket::receive_from method will block until data is available. If you are in non-blocking mode, and there is no data available in the in the protocol stack buffer, the xtd::net::sockets::socket::receive_from method will complete immediately and throw a xtd::net::sockets::socket::socket_exception. You can use the xtd::net::sockets::socket::socket::available property to determine if data is available for reading. When xtd::net::sockets::socket::socket::available is non-zero, retry the receive operation.
+        /// @remarks Although xtd::net::sockets::socket::receive_from is intended for connectionless protocols, you can use a connection-oriented protocol as well. If you choose to do so, you must first either establish a remote host connection by calling the xtd::net::sockets::socket::socket::connect method or accept an incoming remote host connection by calling the xtd::net::sockets::socket::socket::accept method. If you do not establish or accept a connection before calling the xtd::net::sockets::socket::receive_from method, you will get a xtd::net::sockets::socket::socket_exception. You can also establish a default remote host for a connectionless protocol prior to calling the xtd::net::sockets::socket::receive_from method. In either of these cases, the xtd::net::sockets::socket::receive_from method will ignore the remote_end_pooint parameter and only receive data from the connected or default remote host.
+        /// @remarks With connection-oriented sockets, xtd::net::sockets::socket::receive_from will read as much data as is available up to the size of buffer. If the remote host shuts down the xtd::net::sockets::socket connection with the xtd::net::sockets::socket::socket::shutdown method, and all available data has been received, the xtd::net::sockets::socket::receive_from method will complete immediately and return zero bytes.
+        /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        /// @note The xtd::net::sockets::sockets::address_family of the xtd::net::end_point used in xtd::net::sockets::socket::receive_from needs to match the xtd::net::sockets::sockets::address_family of the xtd::net::end_point used in xtd::net::sockets::sockets::socket::send_to.
+        size_t receive_from(std::vector<byte_t>& buffer, xtd::net::end_point& remote_end_point);
+        
+        /// @brief Receives data from a bound xtd::net::sockets::socket into a receive buffer.
+        /// @param buffer An array of type byte that is the storage location for the received data.
+        /// @param socket_flags A bitwise combination of the xtd::net::sockets::socket_flags values.
+        /// @param remote_end_point the remote host
+        /// @return The number of bytes received.
+        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks The xtd::net::sockets::socket::receive_from method reads data into the buffer parameter, returns the number of bytes successfully read, and captures the remote host endpoint from which the data was sent. This method is useful if you intend to receive connectionless datagrams from an unknown host or multiple hosts.
+        /// @remarks This overload only requires you to provide a receive buffer, the necessary xtd::net::sockets::socket_flags, and an xtd::net::end_point that represents the remote host. The offset defaults to 0 and the size defaults to the size of the buffer parameter.
+        /// @note Before calling xtd::net::sockets::socket::receive_from, you must explicitly bind the xtd::net::sockets::socket to a local endpoint using the xtd::net::sockets::socket::bind method. If you do not, xtd::net::sockets::socket::receive_from will throw a xtd::net::sockets::socket::socket_exception.
+        /// @remarks With connectionless protocols, xtd::net::sockets::socket::receive_from will read the first enqueued datagram received into the local network buffer. If the datagram you receive is larger than the size of buffer, the xtd::net::sockets::socket::receive_from method will fill buffer with as much of the message as is possible, and throw a xtd::net::sockets::socket::socket_exception. If you are using an unreliable protocol, the excess data will be lost. If you are using a reliable protocol, the excess data will be retained by the service provider and you can retrieve it by calling the xtd::net::sockets::socket::receive_from method with a large enough buffer.
+        /// @remarks If no data is available for reading, the xtd::net::sockets::socket::receive_from method will block until data is available. If you are in non-blocking mode, and there is no data available in the in the protocol stack buffer, the xtd::net::sockets::socket::receive_from method will complete immediately and throw a xtd::net::sockets::socket::socket_exception. You can use the xtd::net::sockets::socket::socket::available property to determine if data is available for reading. When xtd::net::sockets::socket::socket::available is non-zero, retry the receive operation.
+        /// @remarks Although xtd::net::sockets::socket::receive_from is intended for connectionless protocols, you can use a connection-oriented protocol as well. If you choose to do so, you must first either establish a remote host connection by calling the xtd::net::sockets::socket::socket::connect method or accept an incoming remote host connection by calling the xtd::net::sockets::socket::socket::accept method. If you do not establish or accept a connection before calling the xtd::net::sockets::socket::receive_from method, you will get a xtd::net::sockets::socket::socket_exception. You can also establish a default remote host for a connectionless protocol prior to calling the xtd::net::sockets::socket::receive_from method. In either of these cases, the xtd::net::sockets::socket::receive_from method will ignore the remote_end_pooint parameter and only receive data from the connected or default remote host.
+        /// @remarks With connection-oriented sockets, xtd::net::sockets::socket::receive_from will read as much data as is available up to the size of buffer. If the remote host shuts down the xtd::net::sockets::socket connection with the xtd::net::sockets::socket::socket::shutdown method, and all available data has been received, the xtd::net::sockets::socket::receive_from method will complete immediately and return zero bytes.
+        /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        /// @note The xtd::net::sockets::sockets::address_family of the xtd::net::end_point used in xtd::net::sockets::socket::receive_from needs to match the xtd::net::sockets::sockets::address_family of the xtd::net::end_point used in xtd::net::sockets::sockets::socket::send_to.
+        size_t receive_from(std::vector<byte_t>& buffer, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point);
+        
+        /// @brief Receives data from a bound xtd::net::sockets::socket into a receive buffer.
+        /// @param buffer An array of type byte that is the storage location for the received data.
+        /// @param size The number of bytes to receive.
+        /// @param socket_flags A bitwise combination of the xtd::net::sockets::socket_flags values.
+        /// @param remote_end_point the remote host
+        /// @return The number of bytes received.
+        /// @exception xtd::argument_out_of_range_exception size is less than 0 or exceeds the size of the buffer.
+        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks The xtd::net::sockets::socket::receive_from method reads data into the buffer parameter, returns the number of bytes successfully read, and captures the remote host endpoint from which the data was sent. This method is useful if you intend to receive connectionless datagrams from an unknown host or multiple hosts.
+        /// @remarks This overload only requires you to provide a receive buffer, the number of bytes you want to receive, the necessary xtd::net::sockets::socket_flags, and an xtd::net::end_point that represents the remote host. The buffer offset defaults to 0.
+        /// @note Before calling xtd::net::sockets::socket::receive_from, you must explicitly bind the xtd::net::sockets::socket to a local endpoint using the xtd::net::sockets::socket::bind method. If you do not, xtd::net::sockets::socket::receive_from will throw a xtd::net::sockets::socket::socket_exception.
+        /// @remarks With connectionless protocols, xtd::net::sockets::socket::receive_from will read the first enqueued datagram received into the local network buffer. If the datagram you receive is larger than the size of buffer, the xtd::net::sockets::socket::receive_from method will fill buffer with as much of the message as is possible, and throw a xtd::net::sockets::socket::socket_exception. If you are using an unreliable protocol, the excess data will be lost. If you are using a reliable protocol, the excess data will be retained by the service provider and you can retrieve it by calling the xtd::net::sockets::socket::receive_from method with a large enough buffer.
+        /// @remarks If no data is available for reading, the xtd::net::sockets::socket::receive_from method will block until data is available. If you are in non-blocking mode, and there is no data available in the in the protocol stack buffer, the xtd::net::sockets::socket::receive_from method will complete immediately and throw a xtd::net::sockets::socket::socket_exception. You can use the xtd::net::sockets::socket::socket::available property to determine if data is available for reading. When xtd::net::sockets::socket::socket::available is non-zero, retry the receive operation.
+        /// @remarks Although xtd::net::sockets::socket::receive_from is intended for connectionless protocols, you can use a connection-oriented protocol as well. If you choose to do so, you must first either establish a remote host connection by calling the xtd::net::sockets::socket::socket::connect method or accept an incoming remote host connection by calling the xtd::net::sockets::socket::socket::accept method. If you do not establish or accept a connection before calling the xtd::net::sockets::socket::receive_from method, you will get a xtd::net::sockets::socket::socket_exception. You can also establish a default remote host for a connectionless protocol prior to calling the xtd::net::sockets::socket::receive_from method. In either of these cases, the xtd::net::sockets::socket::receive_from method will ignore the remote_end_pooint parameter and only receive data from the connected or default remote host.
+        /// @remarks With connection-oriented sockets, xtd::net::sockets::socket::receive_from will read as much data as is available up to the size of buffer. If the remote host shuts down the xtd::net::sockets::socket connection with the xtd::net::sockets::socket::socket::shutdown method, and all available data has been received, the xtd::net::sockets::socket::receive_from method will complete immediately and return zero bytes.
+        /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        /// @note The xtd::net::sockets::sockets::address_family of the xtd::net::end_point used in xtd::net::sockets::socket::receive_from needs to match the xtd::net::sockets::sockets::address_family of the xtd::net::end_point used in xtd::net::sockets::sockets::socket::send_to.
+        size_t receive_from(std::vector<byte_t>& buffer, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point);
+        
+        /// @brief Receives data from a bound xtd::net::sockets::socket into a receive buffer.
+        /// @param buffer An array of type byte that is the storage location for the received data.
+        /// @param offset The position in the buffer parameter to store the received data.
+        /// @param size The number of bytes to receive.
+        /// @param socket_flags A bitwise combination of the xtd::net::sockets::socket_flags values.
+        /// @param remote_end_point the remote host
+        /// @return The number of bytes received.
+        /// @exception xtd::argument_out_of_range_exception size is less than 0 or exceeds the size of the buffer.
+        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks The xtd::net::sockets::socket::receive_from method reads data into the buffer parameter, returns the number of bytes successfully read, and captures the remote host endpoint from which the data was sent. This method is useful if you intend to receive connectionless datagrams from an unknown host or multiple hosts.
+        /// @note Before calling xtd::net::sockets::socket::receive_from, you must explicitly bind the xtd::net::sockets::socket to a local endpoint using the xtd::net::sockets::socket::bind method. If you do not, xtd::net::sockets::socket::receive_from will throw a xtd::net::sockets::socket::socket_exception.
+        /// @remarks With connectionless protocols, xtd::net::sockets::socket::receive_from will read the first enqueued datagram received into the local network buffer. If the datagram you receive is larger than the size of buffer, the xtd::net::sockets::socket::receive_from method will fill buffer with as much of the message as is possible, and throw a xtd::net::sockets::socket::socket_exception. If you are using an unreliable protocol, the excess data will be lost. If you are using a reliable protocol, the excess data will be retained by the service provider and you can retrieve it by calling the xtd::net::sockets::socket::receive_from method with a large enough buffer.
+        /// @remarks If no data is available for reading, the xtd::net::sockets::socket::receive_from method will block until data is available. If you are in non-blocking mode, and there is no data available in the in the protocol stack buffer, the xtd::net::sockets::socket::receive_from method will complete immediately and throw a xtd::net::sockets::socket::socket_exception. You can use the xtd::net::sockets::socket::socket::available property to determine if data is available for reading. When xtd::net::sockets::socket::socket::available is non-zero, retry the receive operation.
+        /// @remarks Although xtd::net::sockets::socket::receive_from is intended for connectionless protocols, you can use a connection-oriented protocol as well. If you choose to do so, you must first either establish a remote host connection by calling the xtd::net::sockets::socket::socket::connect method or accept an incoming remote host connection by calling the xtd::net::sockets::socket::socket::accept method. If you do not establish or accept a connection before calling the xtd::net::sockets::socket::receive_from method, you will get a xtd::net::sockets::socket::socket_exception. You can also establish a default remote host for a connectionless protocol prior to calling the xtd::net::sockets::socket::receive_from method. In either of these cases, the xtd::net::sockets::socket::receive_from method will ignore the remote_end_pooint parameter and only receive data from the connected or default remote host.
+        /// @remarks With connection-oriented sockets, xtd::net::sockets::socket::receive_from will read as much data as is available up to the size of buffer. If the remote host shuts down the xtd::net::sockets::socket connection with the xtd::net::sockets::socket::socket::shutdown method, and all available data has been received, the xtd::net::sockets::socket::receive_from method will complete immediately and return zero bytes.
+        /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        /// @note The xtd::net::sockets::sockets::address_family of the xtd::net::end_point used in xtd::net::sockets::socket::receive_from needs to match the xtd::net::sockets::sockets::address_family of the xtd::net::end_point used in xtd::net::sockets::sockets::socket::send_to.
+        size_t receive_from(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point);
 
         /// @brief Sets the specified xtd::net::sockets::socket option to the specified integer value.
         /// @param socket_option_level One of the xtd::net::sockets::socket_option_level values.
@@ -804,7 +879,7 @@ namespace xtd {
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks In general, the SetSocketOption method should be used whenever setting a xtd::net::sockets::socket option.
-        /// @remarks The SetRawSocketOption(Int32, Int32, ReadOnlySpan<Byte>) method should be used only when SocketOptionLevel and SocketOptionName do not expose the required option.
+        /// @remarks The SetRawSocketOption(Int32, Int32, ReadOnlySpan<byte>) method should be used only when SocketOptionLevel and SocketOptionName do not expose the required option.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         void set_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, intptr_t option_value, size_t option_value_size);
        
