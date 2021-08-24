@@ -468,6 +468,28 @@ size_t socket::receive(vector<byte_t>& buffer, size_t offset, size_t size, socke
   return static_cast<size_t>(number_of_bytes_received);
 }
 
+size_t socket::receive_from(vector<byte_t>& buffer, end_point& remote_end_point) {
+  return receive_from(buffer, 0, buffer.size(), socket_flags::none, remote_end_point);
+}
+
+size_t socket::receive_from(vector<byte_t>& buffer, socket_flags socket_flags, end_point& remote_end_point) {
+  return receive_from(buffer, 0, buffer.size(), socket_flags, remote_end_point);
+}
+
+size_t socket::receive_from(vector<byte_t>& buffer, size_t size, socket_flags socket_flags, end_point& remote_end_point) {
+  return receive_from(buffer, 0, size, socket_flags, remote_end_point);
+}
+
+size_t socket::receive_from(vector<byte_t>& buffer, size_t offset, size_t size, socket_flags socket_flags, end_point& remote_end_point) {
+  if (offset + size > buffer.size()) throw argument_out_of_range_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception(csf_);
+  
+  socket_address socket_address = remote_end_point.serialize();
+  int32_t number_of_bytes_received = native::socket::receive_from(data_->handle, buffer, offset, size, static_cast<int32_t>(socket_flags), socket_address.bytes_);
+  if (number_of_bytes_received == -1) throw socket_exception(get_last_error_(), csf_);
+  return static_cast<size_t>(number_of_bytes_received);
+}
+
 void socket::set_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name, bool option_value) {
   set_socket_option(socket_option_level, socket_option_name, as<int32_t>(option_value));
 }
