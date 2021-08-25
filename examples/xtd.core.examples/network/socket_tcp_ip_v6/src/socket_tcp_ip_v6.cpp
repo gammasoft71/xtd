@@ -14,6 +14,7 @@ int main() {
     server_socket.bind(ip_end_point(ip_address::ip_v6_any, 9400));
     server_socket.listen(10);
     socket new_socket = server_socket.accept();
+
     while (!terminate) {
       vector<byte_t> buffer(256);
       size_t number_of_byte_received = new_socket.receive(buffer);
@@ -24,6 +25,7 @@ int main() {
   thread client([&] {
     socket client_socket(address_family::inter_network_v6, socket_type::stream, protocol_type::tcp);
     client_socket.connect(ip_address::ip_v6_loopback, 9400);
+    
     int counter = 1;
     while (!terminate) {
       ustring str = ustring::format("counter={}", counter++);
