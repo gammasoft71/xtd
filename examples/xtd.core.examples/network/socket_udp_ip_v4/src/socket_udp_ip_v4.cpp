@@ -12,6 +12,7 @@ int main() {
   thread server([&] {
     socket server_socket(address_family::inter_network, socket_type::dgram, protocol_type::udp);
     server_socket.bind(ip_end_point(ip_address::any, 9400));
+    
     while (!terminate) {
       vector<byte_t> buffer(256);
       ip_end_point incoming_end_point;
@@ -23,12 +24,14 @@ int main() {
   
   thread client([&] {
     socket client_socket(address_family::inter_network, socket_type::dgram, protocol_type::udp);
+    
     int counter = 1;
     while (!terminate) {
       ustring str = ustring::format("counter={}", counter++);
       client_socket.send_to(vector<byte_t>(str.begin(), str.end()), ip_end_point(ip_address::loopback, 9400));
       this_thread::sleep_for(50ms);
     }
+    
     client_socket.send_to(vector<byte_t> {0xFF}, ip_end_point(ip_address::loopback, 9400));
   });
 
