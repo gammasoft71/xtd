@@ -14,6 +14,7 @@ add_projects(
   guid
   keywords
   mains
+  network
   processes
   random
   sprintf
