@@ -1,10 +1,10 @@
-# dns_get_host_addresses
+# dns_get_host_entry
 
 Shows how to use [xtd::net::dns](../../../../src/xtd.core/include/xtd/net/dns.h) class.
 
 ## Sources
 
-[src/dns_get_host_addresses.cpp](src/dns_get_host_addresses.cpp)
+[src/dns_get_host_entry.cpp](src/dns_get_host_entry.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
