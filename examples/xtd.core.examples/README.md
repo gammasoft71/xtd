@@ -88,8 +88,9 @@
 * [static_class2](keywords/static_class2/README.md) shows how to use [xtd::static_class](../../src/xtd.core/include/xtd/static_class.h) method.
 * [using](keywords/using/README.md) shows how to use [xtd::using](../../src/xtd.core/include/xtd/using.h) method.
 
-## [Netowrk](network/README.md)
+## [Network](network/README.md)
 
+* [dns_get_host_addresses](network/dns_get_host_addresses/README.md) shows hows how to use [xtd::net::dns](../../src/xtd.core/include/xtd/net/dns.h) class.
 * [socket_tcp_ip_v4](network/socket_tcp_ip_v4/README.md) shows hows how to use [xtd::net::sockets::socket](../../src/xtd.core/include/xtd/net/sockets/socket.h) class.
 * [socket_tcp_ip_v6](network/socket_tcp_ip_v6/README.md) shows hows how to use [xtd::net::sockets::socket](../../src/xtd.core/include/xtd/net/sockets/socket.h) class.
 * [socket_udp_ip_v4](network/socket_udp_ip_v4/README.md) shows hows how to use [xtd::net::sockets::socket](../../src/xtd.core/include/xtd/net/sockets/socket.h) class.
