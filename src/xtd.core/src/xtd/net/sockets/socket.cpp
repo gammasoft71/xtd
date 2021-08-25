@@ -40,10 +40,10 @@ struct socket::data {
   intptr_t handle = 0;
   bool is_bound = false;
   bool is_listening = false;
-  std::unique_ptr<xtd::net::end_point> local_end_point;
+  std::shared_ptr<xtd::net::end_point> local_end_point;
   xtd::net::sockets::protocol_type protocol_type = xtd::net::sockets::protocol_type::unspecified;
-  std::unique_ptr<xtd::net::end_point> remote_end_point;
-  std::unique_ptr<xtd::net::sockets::socket_async_event_args> socket_aync_event_args;
+  std::shared_ptr<xtd::net::end_point> remote_end_point;
+  std::shared_ptr<xtd::net::sockets::socket_async_event_args> socket_aync_event_args;
   xtd::net::sockets::socket_type socket_type = xtd::net::sockets::socket_type::unknown;
 };
 
@@ -180,7 +180,7 @@ socket& socket::linger_state(const xtd::net::sockets::linger_option& value) {
   return *this;
 }
 
-const std::unique_ptr<xtd::net::end_point>& socket::local_end_point() const {
+std::shared_ptr<xtd::net::end_point> socket::local_end_point() const {
   if (data_->handle == 0) throw object_closed_exception(csf_);
   return data_->local_end_point;
 }
@@ -237,7 +237,7 @@ socket& socket::receive_timeout(int32_t value) {
   return *this;
 }
 
-const std::unique_ptr<xtd::net::end_point>& socket::remote_end_point() const {
+std::shared_ptr<xtd::net::end_point> socket::remote_end_point() const {
   if (data_->handle == 0) throw object_closed_exception(csf_);
   return data_->remote_end_point;
 }
@@ -615,13 +615,13 @@ void socket::shutdown(socket_shutdown how) {
   data_->is_disconnected = true;
 }
 
-void socket::bind_(std::unique_ptr<xtd::net::end_point> local_end_point) {
+void socket::bind_(std::shared_ptr<xtd::net::end_point> local_end_point) {
   debug::write_if(show_debug_socket.enabled(), ustring::format("socket::bind() : socket=[{}] local_end_point=[{}]", data_->handle, *local_end_point));
   if (data_->handle == 0) {
     debug::write_line_if(show_debug_socket.enabled(), " error=[object_close]");
     throw object_closed_exception(csf_);
   }
-  data_->local_end_point = std::move(local_end_point);
+  data_->local_end_point = local_end_point;
   xtd::net::socket_address socket_address = data_->local_end_point->serialize();
   if (native::socket::bind(data_->handle, socket_address.bytes_) != 0) {
     debug::write_line_if(show_debug_socket.enabled(), ustring::format(" error=[{}]", get_last_error_()));
@@ -631,13 +631,13 @@ void socket::bind_(std::unique_ptr<xtd::net::end_point> local_end_point) {
   data_->is_bound = true;
 }
 
-void socket::connect_(std::unique_ptr<xtd::net::end_point> remote_end_point) {
+void socket::connect_(std::shared_ptr<xtd::net::end_point> remote_end_point) {
   debug::write_if(show_debug_socket.enabled(), ustring::format("socket::connect() : socket=[{}] remote_end_point=[{}]", data_->handle, *remote_end_point));
   if (data_->handle == 0) {
     debug::write_line_if(show_debug_socket.enabled(), " error=[object_close]");
     throw object_closed_exception(csf_);
   }
-  data_->remote_end_point = std::move(remote_end_point);
+  data_->remote_end_point = remote_end_point;
   xtd::net::socket_address socket_address = data_->remote_end_point->serialize();
   if (native::socket::connect(data_->handle, socket_address.bytes_) != 0) {
     debug::write_line_if(show_debug_socket.enabled(), ustring::format(" error=[{}]", get_last_error_()));

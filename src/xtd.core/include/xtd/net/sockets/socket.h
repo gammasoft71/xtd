@@ -268,7 +268,7 @@ namespace xtd {
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks The xtd::net::sockets::socket::local_end_point property gets an xtd::net::end_point that contains the local IP address and port number to which your xtd::net::sockets::socket is bound. You must cast this xtd::net::end_point to an xtd::net::ip_end_point before retrieving any information. You can then call the xtd::net::ip_end_point::address method to retrieve the local xtd::net::ip_address, and the xtd::net::ip_end_point::port method to retrieve the local port number.
         /// @remarks The xtd::net::sockets::socket::local_end_point property is usually set after you make a call to the xtd::net::sockets::socket::bind method. If you allow the system to assign your socket's local IP address and port number, the xtd::net::sockets::socket::local_end_point property will be set after the first I/O operation. For connection-oriented protocols, the first I/O operation would be a call to the xtd::net::sockets::socket::connect or xtd::net::sockets::socket::accept method. For connectionless protocols, the first I/O operation would be any of the send or receive calls.
-        const std::unique_ptr<xtd::net::end_point>& local_end_point() const;
+        std::shared_ptr<xtd::net::end_point> local_end_point() const;
         
         /// @brief Gets a value that specifies whether outgoing multicast packets are delivered to the sending application.
         /// @return true if the xtd::net::sockets::socket receives outgoing multicast packets; otherwise, false.
@@ -363,7 +363,7 @@ namespace xtd {
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks If you are using a connection-oriented protocol, the xtd::net::sockets::socket::remote_end_point property gets the xtd::net::sockets::end_point that contains the remote IP address and port number to which the xtd::net::sockets::socket is connected. If you are using a connectionless protocol, xtd::net::sockets::socket::remote_end_point contains the default remote IP address and port number with which the xtd::net::sockets::socket will communicate. You must cast this xtd::net::end_point to an xtd::net::ip_end_point before retrieving any information. You can then call the xtd::net::ip_end_point::address method to retrieve the remote xtd::net::ip_address, and the xtd::net::ip_end_point::port method to retrieve the remote port number.
         /// @remarks The xtd::net::sockets::socket::remote_end_point is set after a call to either xtd::net::sockets::socket::accept or xtd::net::sockets::socke::connect. If you try to access this property earlier, xtd::net::sockets::socket::remote_end_point will throw a xtd::net::sockets::socket_exception. If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
-        const std::unique_ptr<xtd::net::end_point>& remote_end_point() const;
+        std::shared_ptr<xtd::net::end_point> remote_end_point() const;
 
         /// @brief Gets a value that specifies the size of the send buffer of the xtd::net::sockets::socket.
         /// @return An size_t that contains the size, in bytes, of the send buffer. The default is 8192.
@@ -468,7 +468,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception when calling the xtd::net::sockets::socket::bind method, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         template<typename end_point_t>
         void bind(const end_point_t& local_end_point) {
-          bind_(std::make_unique<end_point_t>(local_end_point));
+          bind_(std::make_shared<end_point_t>(local_end_point));
         }
 
         /// @brief Closes the xtd::net::sockets::socket connection and releases all associated resources.
@@ -489,7 +489,7 @@ namespace xtd {
         /// @note If the socket has been previously disconnected, then you cannot use this method to restore the connection. Use one of the asynchronous xtd::net::sockets::socket::begin_connect methods to reconnect. This is a limitation of the underlying provider.
         template<typename end_point_t>
         void connect(const end_point_t& remote_end_point) {
-         connect_(std::make_unique<end_point_t>(remote_end_point));
+         connect_(std::make_shared<end_point_t>(remote_end_point));
         }
         
         /// @brief Establishes a connection to a remote host. The host is specified by an IP address and a port number.
@@ -1067,8 +1067,8 @@ namespace xtd {
         
       private:
         static xtd::net::sockets::socket_error get_last_error_();
-        void bind_(std::unique_ptr<xtd::net::end_point> local_end_point);
-        void connect_(std::unique_ptr<xtd::net::end_point> remote_end_point);
+        void bind_(std::shared_ptr<xtd::net::end_point> local_end_point);
+        void connect_(std::shared_ptr<xtd::net::end_point> remote_end_point);
         struct data;
         
         std::shared_ptr<data> data_;
