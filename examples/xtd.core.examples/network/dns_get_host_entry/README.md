@@ -19,6 +19,10 @@ xtdc run
 # Output
 
 ```
-www.google.com addresses:
-  * 216.58.208.100
+ip host entry for : github.com
+  - host_name : github.com
+  - address list :
+    * 140.82.121.3
+  - aliases :
+    * www.github.com
 ```
