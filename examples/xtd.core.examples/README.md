@@ -91,6 +91,7 @@
 ## [Network](network/README.md)
 
 * [dns_get_host_addresses](network/dns_get_host_addresses/README.md) shows hows how to use [xtd::net::dns](../../src/xtd.core/include/xtd/net/dns.h) class.
+* [dns_get_host_entry](network/dns_get_host_entry/README.md) shows hows how to use [xtd::net::dns](../../src/xtd.core/include/xtd/net/dns.h) class.
 * [socket_tcp_ip_v4](network/socket_tcp_ip_v4/README.md) shows hows how to use [xtd::net::sockets::socket](../../src/xtd.core/include/xtd/net/sockets/socket.h) class.
 * [socket_tcp_ip_v6](network/socket_tcp_ip_v6/README.md) shows hows how to use [xtd::net::sockets::socket](../../src/xtd.core/include/xtd/net/sockets/socket.h) class.
 * [socket_udp_ip_v4](network/socket_udp_ip_v4/README.md) shows hows how to use [xtd::net::sockets::socket](../../src/xtd.core/include/xtd/net/sockets/socket.h) class.
