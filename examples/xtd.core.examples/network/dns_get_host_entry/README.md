@@ -19,7 +19,7 @@ xtdc run
 # Output
 
 ```
-ip host entry for : github.com
+ip host entry for : www.github.com
   - host_name : github.com
   - address list :
     * 140.82.121.3
