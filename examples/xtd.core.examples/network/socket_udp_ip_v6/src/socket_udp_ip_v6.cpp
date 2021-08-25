@@ -41,7 +41,7 @@ int main() {
   client.join();
 }
 
-// This code produces the following output with colors:
+// This code produces the following output:
 //
 // counter=1
 // counter=2
