@@ -1,7 +1,6 @@
 #include <xtd/net/sockets/socket.h>
 #include <xtd/object_closed_exception.h>
 #include <xtd/xtd.tunit>
-#include <chrono>
 
 using namespace std;
 using namespace xtd;
@@ -278,64 +277,6 @@ namespace unit_tests {
       socket s(address_family::inter_network, socket_type::stream, protocol_type::tcp);
       s.send_timeout(1000);
       assert::are_equal(1000, s.send_timeout(), line_info_);
-    }
-    
-    /*
-    void test_method_(accept_and_connect_with_address_family_internet_v6_network_socket_type_stream_and_protocol_type_tcp_socket) {
-      assume::is_true(socket::os_supports_ip_v6());
-      bool server_accepted_client = false;
-      bool client_connected = false;
-      thread server([&] {
-        socket server_socket(address_family::inter_network_v6, socket_type::stream, protocol_type::tcp);
-        server_socket.bind(ip_end_point(ip_address::ip_v6_any, 9400));
-        server_socket.listen(10);
-        socket new_socket = server_socket.accept();
-        server_accepted_client = new_socket.connected();
-        this_thread::sleep_for(chrono::milliseconds(50));
-      });
-      
-      this_thread::yield();
-
-      thread client([&] {
-        socket client_socket(address_family::inter_network_v6, socket_type::stream, protocol_type::tcp);
-        client_socket.connect(ip_address::ip_v6_loopback, 9400);
-        client_connected = client_socket.connected();
-      });
-      
-      server.join();
-      client.join();
-
-      assert::is_true(server_accepted_client, line_info_);
-      assert::is_true(client_connected, line_info_);
-    }
-     */
-    
-    void test_method_(accept_and_connect_with_address_family_internet_v4_network_socket_type_stream_and_protocol_type_tcp_socket) {
-      assume::is_true(socket::os_supports_ip_v4());
-      bool server_accepted_client = false;
-      bool client_connected = false;
-      thread server([&] {
-        socket server_socket(address_family::inter_network, socket_type::stream, protocol_type::tcp);
-        server_socket.bind(ip_end_point(ip_address::any, 9400));
-        server_socket.listen(10);
-        socket new_socket = server_socket.accept();
-        server_accepted_client = new_socket.connected();
-        this_thread::sleep_for(chrono::milliseconds(50));
-      });
-
-      this_thread::yield();
-
-      thread client([&] {
-        socket client_socket(address_family::inter_network, socket_type::stream, protocol_type::tcp);
-        client_socket.connect(ip_address::loopback, 9400);
-        client_connected = client_socket.connected();
-      });
-      
-      server.join();
-      client.join();
-
-      assert::is_true(server_accepted_client, line_info_);
-      assert::is_true(client_connected, line_info_);
     }
   };
 }
