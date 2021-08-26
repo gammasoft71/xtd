@@ -7,6 +7,7 @@
 #include "../../core_export.h"
 #include "../../argument_exception.h"
 #include "../../as.h"
+#include "../../async_callback.h"
 #include "../../iasync_result.h"
 #include "../../not_implemented_exception.h"
 #include "../../not_supported_exception.h"
@@ -57,17 +58,18 @@ namespace xtd {
       /// @remarks The xtd::net::sockets::socket class allows you to configure your xtd::net::sockets::socket using the xtd::net::sockets::socket::set_socket_option method. Retrieve these settings using the xtd::net::sockets::socket::get_socket_option method.
       /// @note If you are writing a relatively simple application and do not require maximum performance, consider using xtd::net::sockets::tcp_client, xtd::net::sockets::tcp_listener, and xtd::net::sockets::udp_client. These classes provide a simpler and more user-friendly interface to xtd::net::sockets::socket communications.
       class core_export_ socket : public xtd::object {
-        class async_result_accept : public xtd::iasync_result {
+        class async_result_socket : public xtd::iasync_result {
         public:
-          async_result_accept(xtd::object* async_state) : async_state_(async_state) {}
-          const xtd::object& async_state() const noexcept override {return *async_state_;}
-          std::shared_mutex& async_mutex() override {return *async_mutex_;}
+          async_result_socket(std::any async_state) : async_state_(async_state) {}
+          std::any async_state() const noexcept override {return async_state_;}
+          std::shared_mutex& async_mutex() override {return async_mutex_;}
           bool completed_synchronously() const noexcept override {return false;}
-          bool is_completed() const noexcept override {return *is_completed_;};
+          bool is_completed() const noexcept override {return is_completed_;};
           
-          xtd::object* async_state_ = nullptr;
-          std::shared_ptr<bool> is_completed_ = std::make_shared<bool>(false);
-          std::shared_ptr<std::shared_mutex> async_mutex_ = std::make_shared<std::shared_mutex>();
+          std::any async_state_;
+          bool is_completed_ = false;
+          std::shared_mutex async_mutex_;
+          std::any data_;
         };
         
       public:
@@ -455,6 +457,16 @@ namespace xtd {
         /// @remarks The xtd::net::sockets::socket_async_event_args::completed event can occur in some cases when no connection has been accepted and cause the xtd::net::sockets::socket_async_event_args::socket_error property to be set to xtd::net::sockets::socket_error::connection_reset. This can occur as a result of port scanning using a half-open SYN type scan (a SYN -> SYN-ACK -> RST sequence). Applications using the xtd::net::sockets::socket::accept_async method should be prepared to handle this condition.
         bool accept_async(xtd::net::sockets::socket_async_event_args& e);
 
+        std::shared_ptr<xtd::iasync_result> begin_accept(xtd::async_callback callback, const std::any& state);
+       
+        template<typename end_point_t>
+        std::shared_ptr<xtd::iasync_result> begin_connect(const end_point_t& remote_end_point, xtd::async_callback callback, const std::any& state) {
+          return begin_connect_(std::make_shared<end_point_t>(remote_end_point), callback, state);
+        }
+        std::shared_ptr<xtd::iasync_result> begin_connect(const xtd::net::ip_address& address, uint16_t port, xtd::async_callback callback, const std::any& state);
+        std::shared_ptr<xtd::iasync_result> begin_connect(const std::vector<xtd::net::ip_address>& addresses, uint16_t port, xtd::async_callback callback, const std::any& state);
+        std::shared_ptr<xtd::iasync_result> begin_connect(const xtd::ustring& host, uint16_t port, xtd::async_callback callback, const std::any& state);
+
         /// @brief Associates a xtd::net::sockets::socket with a local endpoint.
         /// @param localEndPoint The local xtd::net::sockets::end_point to associate with the xtd::net::sockets::socket.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
@@ -539,6 +551,10 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception when calling the xtd::net::sockets::socket::bind method, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         void disconnect(bool reuse_socket);
         
+        socket end_accept(std::shared_ptr<xtd::iasync_result> ar);
+        
+        void end_connect(std::shared_ptr<xtd::iasync_result> ar);
+
         /// @brief Gets a socket option value using platform-specific level and name identifiers.
         /// @param socket_option_level The platform-defined option level.
         /// @param socket_option_name The platform-defined option name.
@@ -609,7 +625,17 @@ namespace xtd {
         /// @note You must call the xtd::net::sockets::socket::bind method before calling xtd::net::sockets::socket::listen, or xtd::net::sockets::socket::listen will throw axtd::net::sockets::socket_exception.
         /// @note The backlog parameter is limited to different values depending on the Operating System. You may specify a higher value, but the backlog will be limited based on the Operating System.
         void listen(size_t backlog);
-
+        
+        /// @brief Places a xtd::net::sockets::socket in a listening state.
+        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
+        /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
+        /// @remarks The maximum length of the pending connections queue is determined automatically.
+        /// @remarks xtd::net::sockets::socket::listen causes a connection-oriented xtd::net::sockets::socket to listen for incoming connection attempts. The backlog parameter specifies the number of incoming connections that can be queued for acceptance. To determine the maximum number of connections you can specify, retrieve the xtd::net::sockets::socket_option_name::max_connections value. xtd::net::sockets::socket::listen does not block.
+        /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exceptionxtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
+        /// @note You must call the xtd::net::sockets::socket::bind method before calling xtd::net::sockets::socket::listen, or xtd::net::sockets::socket::listen will throw axtd::net::sockets::socket_exception.
+        /// @note The backlog parameter is limited to different values depending on the Operating System. You may specify a higher value, but the backlog will be limited based on the Operating System.
+        void listen();
+        
         /// @brief Determines the status of the xtd::net::sockets::socket.
         /// @param micro_seconds The time to wait for a response, in microseconds.
         /// @param mode One of the xtd::net::sockets::select_mode values.
@@ -1067,6 +1093,7 @@ namespace xtd {
         
       private:
         static xtd::net::sockets::socket_error get_last_error_();
+        std::shared_ptr<xtd::iasync_result> begin_connect_(std::shared_ptr<xtd::net::end_point> remote_end_point, xtd::async_callback callback, const std::any& state);
         void bind_(std::shared_ptr<xtd::net::end_point> local_end_point);
         void connect_(std::shared_ptr<xtd::net::end_point> remote_end_point);
         struct data;

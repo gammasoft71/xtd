@@ -25,7 +25,7 @@ namespace xtd {
     /// Implement this property to allow the caller of an asynchronous operation to obtain an application-defined object specified at the start of the operation.
     /// @par Notes to Callers
     /// This object can be used to pass state information for the asynchronous operation to an AsyncCallback that you provide.
-    virtual const xtd::object& async_state() const noexcept = 0;
+    virtual std::any async_state() const noexcept = 0;
     
     /// @brief Gets a std::mutex that is used to wait for an asynchronous operation to complete.
     /// @return A std::mutex that is used to wait for an asynchronous operation to complete.

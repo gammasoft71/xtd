@@ -127,13 +127,13 @@ namespace xtd {
       
       class async_result_invoke : public xtd::iasync_result {
       public:
-        async_result_invoke(xtd::object* async_state) : async_state_(async_state) {}
-        const xtd::object& async_state() const noexcept override {return *async_state_;}
+        async_result_invoke(std::any async_state) : async_state_(async_state) {}
+        std::any async_state() const noexcept override {return async_state_;}
         std::shared_mutex& async_mutex() override {return *async_mutex_;}
         bool completed_synchronously() const noexcept override {return false;}
         bool is_completed() const noexcept override {return *is_completed_;};
         
-        xtd::object* async_state_ = nullptr;
+        std::any async_state_;
         std::shared_ptr<bool> is_completed_ = std::make_shared<bool>(false);
         std::shared_ptr<std::shared_mutex> async_mutex_ = std::make_shared<std::shared_mutex>();
       };

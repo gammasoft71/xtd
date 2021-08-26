@@ -12,13 +12,13 @@ int main() {
   thread server([&] {
     socket server_socket(address_family::inter_network, socket_type::stream, protocol_type::tcp);
     server_socket.bind(ip_end_point(ip_address::any, 9400));
-    server_socket.listen(10);
+    server_socket.listen();
     socket new_socket = server_socket.accept();
 
     while (!terminate) {
       vector<byte_t> buffer(256);
       size_t number_of_byte_received = new_socket.receive(buffer);
-      console::write_line(ustring(buffer.begin(), buffer.begin() + number_of_byte_received));
+      if (number_of_byte_received) console::write_line(ustring(buffer.begin(), buffer.begin() + number_of_byte_received));
     }
   });
   

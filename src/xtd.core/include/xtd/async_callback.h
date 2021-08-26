@@ -13,5 +13,5 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  using async_callback = delegate<void(const xtd::iasync_result& ar)>;
+  using async_callback = delegate<void(std::shared_ptr<xtd::iasync_result> ar)>;
 }
