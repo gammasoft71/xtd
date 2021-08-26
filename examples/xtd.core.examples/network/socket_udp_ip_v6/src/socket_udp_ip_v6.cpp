@@ -7,13 +7,13 @@ using namespace xtd::net;
 using namespace xtd::net::sockets;
 
 int main() {
-  bool terminate = false;
+  bool terminate_app = false;
   
   thread server([&] {
     socket server_socket(address_family::inter_network_v6, socket_type::dgram, protocol_type::udp);
     server_socket.bind(ip_end_point(ip_address::ip_v6_any, 9400));
     
-    while (!terminate) {
+    while (!terminate_app) {
       vector<byte_t> buffer(256);
       ip_end_point incoming_end_point;
       size_t number_of_byte_received = server_socket.receive_from(buffer, incoming_end_point);
@@ -26,7 +26,7 @@ int main() {
     socket client_socket(address_family::inter_network_v6, socket_type::dgram, protocol_type::udp);
     
     int counter = 1;
-    while (!terminate) {
+    while (!terminate_app) {
       ustring str = ustring::format("counter={}", counter++);
       client_socket.send_to(vector<byte_t>(str.begin(), str.end()), ip_end_point(ip_address::ip_v6_loopback, 9400));
       this_thread::sleep_for(50ms);
@@ -36,7 +36,7 @@ int main() {
   });
 
   console::read_key();
-  terminate = true;
+  terminate_app = true;
   server.join();
   client.join();
 }
