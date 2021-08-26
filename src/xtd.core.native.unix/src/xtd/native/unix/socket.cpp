@@ -237,7 +237,8 @@ int32_t socket::io_control(intptr_t handle, int32_t io_control, vector<uint8_t>&
 }
 
 int32_t socket::listen(intptr_t handle, size_t backlog) {
-  return ::listen(static_cast<int32_t>(handle), static_cast<int32_t>(backlog));
+  int32_t backlog_value = backlog != static_cast<size_t>(-1) ? static_cast<int32_t>(backlog) : SOMAXCONN;
+  return ::listen(static_cast<int32_t>(handle), backlog_value);
 }
 
 int32_t socket::poll(intptr_t handle, int32_t microseconds, int32_t mode) {

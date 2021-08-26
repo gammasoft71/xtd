@@ -43,7 +43,6 @@ struct socket::data {
   std::shared_ptr<xtd::net::end_point> local_end_point;
   xtd::net::sockets::protocol_type protocol_type = xtd::net::sockets::protocol_type::unspecified;
   std::shared_ptr<xtd::net::end_point> remote_end_point;
-  std::shared_ptr<xtd::net::sockets::socket_async_event_args> socket_aync_event_args;
   xtd::net::sockets::socket_type socket_type = xtd::net::sockets::socket_type::unknown;
 };
 
@@ -315,6 +314,35 @@ bool socket::accept_async(xtd::net::sockets::socket_async_event_args& e) {
   return false;
 }
 
+std::shared_ptr<xtd::iasync_result> socket::begin_accept(xtd::async_callback callback, const std::any& state) {
+  std::shared_ptr<async_result_socket> ar = make_shared<async_result_socket>(state);
+  ar->async_mutex().lock();
+  thread accept_thread([](socket s, std::shared_ptr<async_result_socket> ar, xtd::async_callback callback) {
+    ar->data_ = s.accept();
+    ar->is_completed_ = true;
+    ar->async_mutex().unlock();
+    callback(ar);
+  }, *this, ar, callback);
+  accept_thread.detach();
+  return ar;
+}
+
+std::shared_ptr<xtd::iasync_result> socket::begin_connect(const xtd::net::ip_address& address, uint16_t port, xtd::async_callback callback, const std::any& state) {
+  return begin_connect_(make_unique<ip_end_point>(ip_end_point(address, port)), callback, state);
+}
+
+std::shared_ptr<xtd::iasync_result> socket::begin_connect(const std::vector<xtd::net::ip_address>& addresses, uint16_t port, xtd::async_callback callback, const std::any& state) {
+  for (ip_address address : addresses) {
+    if (data_->is_connected == false)
+      return begin_connect(address, port, callback, state);
+  }
+  throw argument_exception(csf_);
+}
+
+std::shared_ptr<xtd::iasync_result> socket::begin_connect(const xtd::ustring& host, uint16_t port, xtd::async_callback callback, const std::any& state) {
+  return begin_connect(dns::get_host_addresses(host), port, callback, state);
+}
+
 void socket::close() {
   debug::write_if(show_debug_socket.enabled(), ustring::format("socket::close() : socket=[{}]", data_->handle));
   if (data_->handle != 0 && native::socket::destroy(data_->handle) != 0) {
@@ -343,6 +371,7 @@ void socket::connect(const std::vector<ip_address>& addresses, uint16_t port) {
     if (data_->is_connected == false)
       connect(address, port);
   }
+  throw argument_exception(csf_);
 }
 
 void socket::connect(const xtd::ustring& host, uint16_t port) {
@@ -363,6 +392,17 @@ void socket::disconnect(bool reuse_socket) {
     data_->handle = native::socket::create(static_cast<int32_t>(data_->address_family), static_cast<int32_t>(data_->socket_type), static_cast<int32_t>(data_->protocol_type));
     if (data_->handle == static_cast<intptr_t>(-1)) throw socket_exception(get_last_error_(), csf_);
   }
+}
+
+socket socket::end_accept(std::shared_ptr<xtd::iasync_result> ar) {
+  if (ar == nullptr) throw argument_null_exception(csf_);
+  lock_guard<shared_mutex> lock(ar->async_mutex());
+  return as<socket>(as<async_result_socket>(ar)->data_);
+}
+
+void socket::end_connect(std::shared_ptr<xtd::iasync_result> ar) {
+  if (ar == nullptr) throw argument_null_exception(csf_);
+  lock_guard<shared_mutex> lock(ar->async_mutex());
 }
 
 size_t socket::get_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, intptr_t option_value, size_t size_option_value) const {
@@ -432,6 +472,10 @@ void socket::listen(size_t backlog) {
   if (data_->is_bound == false) throw socket_exception(socket_error::not_connected, csf_);
   if (native::socket::listen(data_->handle, backlog) != 0) throw socket_exception(get_last_error_(), csf_);
   data_->is_listening = true;
+}
+
+void socket::listen() {
+listen(static_cast<size_t>(-1));
 }
 
 bool socket::pool(int32_t micro_seconds, xtd::net::sockets::select_mode mode) {
@@ -613,6 +657,19 @@ void socket::shutdown(socket_shutdown how) {
   if (native::socket::shutdown(data_->handle, static_cast<int32_t>(how)) != 0) throw socket_exception(get_last_error_(), csf_);
   data_->is_connected = false;
   data_->is_disconnected = true;
+}
+
+std::shared_ptr<xtd::iasync_result> socket::begin_connect_(std::shared_ptr<xtd::net::end_point> remote_end_point, xtd::async_callback callback, const std::any& state) {
+  std::shared_ptr<async_result_socket> ar = make_shared<async_result_socket>(state);
+  ar->async_mutex().lock();
+  thread accept_thread([](socket s, std::shared_ptr<xtd::net::end_point> remote_end_point, std::shared_ptr<async_result_socket> ar, xtd::async_callback callback) {
+    s.connect_(remote_end_point);
+    ar->is_completed_ = true;
+    ar->async_mutex().unlock();
+    callback(ar);
+  }, *this, remote_end_point, ar, callback);
+  accept_thread.detach();
+  return ar;
 }
 
 void socket::bind_(std::shared_ptr<xtd::net::end_point> local_end_point) {

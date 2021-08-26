@@ -473,7 +473,7 @@ bool control::is_handle_created() const {
 
 shared_ptr<iasync_result> control::begin_invoke(delegate<void(vector<any>)> value, const vector<any>& args) {
   while (!xtd::forms::application::message_loop()) this_thread::sleep_for(10ms);
-  shared_ptr<async_result_invoke> async = make_shared<async_result_invoke>(this);
+  shared_ptr<async_result_invoke> async = make_shared<async_result_invoke>(std::reference_wrapper(*this));
   async->async_mutex().lock();
   native::control::invoke_in_control_thread(handle_, value, args, async->async_mutex_, async->is_completed_);
   this_thread::yield();

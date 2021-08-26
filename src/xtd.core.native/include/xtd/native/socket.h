@@ -148,7 +148,7 @@ namespace xtd {
       /// @return Zero (0) if succeed; otherwise on error.
       /// @warning Internal use only
       static int32_t io_control(intptr_t handle, int32_t io_control, std::vector<uint8_t>& option_in_value, std::vector<uint8_t>& option_out_value);
-      /// @brief Llistens for connections on a socket.
+      /// @brief Listens for connections on a socket.
       /// @param handle The socket handle.
       /// @param backlog The maximum length for the queue of pending connections.
       /// @return Zero (0) if succeed; otherwise on error.
