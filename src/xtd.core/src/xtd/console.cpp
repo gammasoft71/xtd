@@ -1,5 +1,6 @@
 #include <cstring>
 #include <iostream>
+#include <mutex>
 #include "../../include/xtd/console.h"
 #define __XTD_CORE_INTERNAL__
 #include "../../include/xtd/internal/__generic_stream_output.h"
@@ -10,6 +11,7 @@ using namespace std;
 using namespace xtd;
 
 namespace {
+  std::mutex console_mutex;
   std::streambuf* __get_err_rdbuf() {
     static std::streambuf* rdbuf = std::cerr.rdbuf();
     return rdbuf;
@@ -262,9 +264,19 @@ void console::window_width(int32 width) {
 }
 
 void console::write_line() {
-  out << std::endl << std::flush;
+  write_line_("");
 }
 
 void console::__internal_cancel_key_press__(console_cancel_event_args& e) {
   cancel_key_press(e);
+}
+
+void console::write_(const ustring& value) {
+  lock_guard<mutex> lock(console_mutex);
+  out << value;
+}
+
+void console::write_line_(const ustring& value) {
+  lock_guard<mutex> lock(console_mutex);
+  out << value << std::endl << std::flush;
 }

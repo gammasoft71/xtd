@@ -328,18 +328,18 @@ namespace xtd {
     /// @tparam arg_t The type of the value to write.
     /// @param value The value to write,
     template<typename arg_t>
-    static void write(arg_t&& value) {out << xtd::ustring::format("{}",  value);}
+    static void write(arg_t&& value) {write_(xtd::ustring::format("{}",  value));}
     
     /// @cond
     template<typename type_t>
-    static void write(std::initializer_list<type_t>&& il) {out << xtd::ustring::format("{}", il);}
+    static void write(std::initializer_list<type_t>&& il) {write_(xtd::ustring::format("{}", il));}
     /// @endcond
     
     /// @brief Writes the text representation of the specified listt of values to the standard output stream using the specified format information.
     /// @tparam ...args_t Types of the values to write.
     /// @param values Values to write,
     template<typename ... args_t>
-    static void write(const xtd::ustring& fmt, args_t&& ... values) {out << xtd::ustring::format(fmt, std::forward<args_t>(values)...);}
+    static void write(const xtd::ustring& fmt, args_t&& ... values) {write_(xtd::ustring::format(fmt, std::forward<args_t>(values)...));}
     
     /// @brief Writes the current line terminator to the standard output stream using the specified format information.
     static void write_line();
@@ -348,21 +348,24 @@ namespace xtd {
     /// @tparam arg_t The type of the value to write.
     /// @param value The value to write,
     template<typename arg_t>
-    static void write_line(arg_t&& value) {out << xtd::ustring::format("{}", value) << std::endl << std::flush;}
+    static void write_line(arg_t&& value) {write_line_(xtd::ustring::format("{}", value));}
     
     /// @cond
     template<typename type_t>
-    static void write_line(const std::initializer_list<type_t>& il) {out << xtd::ustring::format("{}", il) << std::endl << std::flush;}
+    static void write_line(const std::initializer_list<type_t>& il) {write_line_(xtd::ustring::format("{}", il));}
     /// @endcond
     
     /// @brief Writes the text representation of the specified listt of values, followed by the current line terminator, to the standard output stream using the specified format information.
     /// @tparam ...args_t Types of the values to write.
     /// @param values Values to write,
     template<typename ... args_t>
-    static void write_line(const xtd::ustring& fmt, args_t&& ... values) {out << xtd::ustring::format(fmt, std::forward<args_t>(values)...) << std::endl << std::flush;}
+    static void write_line(const xtd::ustring& fmt, args_t&& ... values) {write_line_(xtd::ustring::format(fmt, std::forward<args_t>(values)...));}
     
     /// @cond
     static void __internal_cancel_key_press__(xtd::console_cancel_event_args& e);
     /// @endcond
+  private:
+    static void write_(const ustring& value);
+    static void write_line_(const ustring& value);
   };
 }
