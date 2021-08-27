@@ -467,6 +467,8 @@ namespace xtd {
         std::shared_ptr<xtd::iasync_result> begin_connect(const std::vector<xtd::net::ip_address>& addresses, uint16_t port, xtd::async_callback callback, const std::any& state);
         std::shared_ptr<xtd::iasync_result> begin_connect(const xtd::ustring& host, uint16_t port, xtd::async_callback callback, const std::any& state);
 
+        std::shared_ptr<xtd::iasync_result> begin_disconnect(bool reuse_socket, xtd::async_callback callback, const std::any& state);
+        
         /// @brief Associates a xtd::net::sockets::socket with a local endpoint.
         /// @param localEndPoint The local xtd::net::sockets::end_point to associate with the xtd::net::sockets::socket.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
@@ -554,7 +556,9 @@ namespace xtd {
         socket end_accept(std::shared_ptr<xtd::iasync_result> ar);
         
         void end_connect(std::shared_ptr<xtd::iasync_result> ar);
-
+        
+        void end_disconnect(std::shared_ptr<xtd::iasync_result> ar);
+        
         /// @brief Gets a socket option value using platform-specific level and name identifiers.
         /// @param socket_option_level The platform-defined option level.
         /// @param socket_option_name The platform-defined option name.
