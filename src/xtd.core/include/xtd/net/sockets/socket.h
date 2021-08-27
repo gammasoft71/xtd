@@ -76,6 +76,31 @@ namespace xtd {
           std::exception_ptr exception_;
         };
         
+        class async_result_accept : public async_result_socket {
+        public:
+          async_result_accept(std::any async_state) : async_result_socket(async_state) {}
+        };
+        
+        class async_result_connect : public async_result_socket {
+        public:
+          async_result_connect(std::any async_state) : async_result_socket(async_state) {}
+        };
+        
+        class async_result_disconnect : public async_result_socket {
+        public:
+          async_result_disconnect(std::any async_state) : async_result_socket(async_state) {}
+        };
+        
+        class async_result_receive : public async_result_socket {
+        public:
+          async_result_receive(std::any async_state) : async_result_socket(async_state) {}
+        };
+        
+        class async_result_receive_from : public async_result_socket {
+        public:
+          async_result_receive_from(std::any async_state) : async_result_socket(async_state) {}
+        };
+
       public:
         /// @brief Initializes a new instance of the xtd::net::sockets::socket class.
         socket();
@@ -476,7 +501,7 @@ namespace xtd {
         std::shared_ptr<xtd::iasync_result> begin_receive(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::async_callback callback, const std::any& state);
         std::shared_ptr<xtd::iasync_result> begin_receive(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error, xtd::async_callback callback, const std::any& state);
         
-        std::shared_ptr<xtd::iasync_result> begin_rreceive_from(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state);
+        std::shared_ptr<xtd::iasync_result> begin_receive_from(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state);
         
         /// @brief Associates a xtd::net::sockets::socket with a local endpoint.
         /// @param localEndPoint The local xtd::net::sockets::end_point to associate with the xtd::net::sockets::socket.
