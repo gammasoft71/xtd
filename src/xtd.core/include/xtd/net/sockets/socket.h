@@ -71,6 +71,8 @@ namespace xtd {
           bool is_completed_ = false;
           std::shared_mutex async_mutex_;
           std::any data_;
+          xtd::net::sockets::socket_error error_code_ = xtd::net::sockets::socket_error::success;
+          std::exception_ptr exception_;
         };
         
       public:
@@ -470,6 +472,9 @@ namespace xtd {
 
         std::shared_ptr<xtd::iasync_result> begin_disconnect(bool reuse_socket, xtd::async_callback callback, const std::any& state);
         
+        std::shared_ptr<xtd::iasync_result> begin_receive(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::async_callback callback, const std::any& state);
+        std::shared_ptr<xtd::iasync_result> begin_receive(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error, xtd::async_callback callback, const std::any& state);
+        
         /// @brief Associates a xtd::net::sockets::socket with a local endpoint.
         /// @param localEndPoint The local xtd::net::sockets::end_point to associate with the xtd::net::sockets::socket.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
@@ -559,6 +564,9 @@ namespace xtd {
         void end_connect(std::shared_ptr<xtd::iasync_result> ar);
         
         void end_disconnect(std::shared_ptr<xtd::iasync_result> ar);
+       
+        size_t end_receive(std::shared_ptr<xtd::iasync_result> ar);
+        size_t end_receive(std::shared_ptr<xtd::iasync_result> ar, xtd::net::sockets::socket_error& error);
         
         /// @brief Gets a socket option value using platform-specific level and name identifiers.
         /// @param socket_option_level The platform-defined option level.
