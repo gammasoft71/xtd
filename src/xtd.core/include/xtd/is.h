@@ -4,6 +4,7 @@
 #pragma once
 #include <any>
 #include <limits>
+#include <memory>
 #include <stdexcept>
 #include "parse.h"
 #include "types.h"
@@ -308,5 +309,16 @@ namespace xtd {
   template<typename type_t, typename param_t>
   bool is(param_t& value) {
     return is<type_t>(&value);
+  }
+
+  template<typename new_type_t, typename current_type_t>
+  bool is(std::shared_ptr<current_type_t>& value) {
+    try {
+      dynamic_pointer_cast<new_type_t>(value);
+      return true;
+    } catch (const std::exception& e) {
+      return false;
+    }
+    return false;
   }
 }
