@@ -371,6 +371,7 @@ std::shared_ptr<xtd::iasync_result> socket::begin_disconnect(bool reuse_socket, 
   accept_thread.detach();
   return ar;
 }
+
 std::shared_ptr<xtd::iasync_result> socket::begin_receive(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::async_callback callback, const std::any& state) {
   if (offset + size > buffer.size()) throw argument_out_of_range_exception(csf_);
   if (data_->handle == 0) throw object_closed_exception(csf_);
@@ -403,6 +404,28 @@ std::shared_ptr<xtd::iasync_result> socket::begin_receive(std::vector<byte_t>& b
   thread accept_thread([](socket s, std::vector<byte_t>* buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, std::shared_ptr<async_result_socket> ar, xtd::async_callback callback) {
     try {
       ar->data_ = s.receive(*buffer, offset, size, socket_flags, ar->error_code_);
+      ar->is_completed_ = true;
+      ar->async_mutex().unlock();
+      callback(ar);
+    } catch(...) {
+      ar->error_code_ = s.get_last_error_();
+      ar->exception_ = current_exception();
+    }
+  }, *this, &buffer, offset, size, socket_flags, ar, callback);
+  accept_thread.detach();
+  return ar;
+}
+
+std::shared_ptr<xtd::iasync_result> socket::begin_rreceive_from(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state) {
+  if (offset + size > buffer.size()) throw argument_out_of_range_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception(csf_);
+  
+  std::shared_ptr<async_result_socket> ar = make_shared<async_result_socket>(state);
+  ar->async_mutex().lock();
+  thread accept_thread([](socket s, std::vector<byte_t>* buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, std::shared_ptr<async_result_socket> ar, xtd::async_callback callback) {
+    try {
+      ar->end_point_ = make_shared<ip_end_point>();
+      ar->data_ = s.receive_from(*buffer, offset, size, socket_flags, *ar->end_point_);
       ar->is_completed_ = true;
       ar->async_mutex().unlock();
       callback(ar);
@@ -497,6 +520,14 @@ size_t socket::end_receive(std::shared_ptr<xtd::iasync_result> ar, xtd::net::soc
   lock_guard<shared_mutex> lock(ar->async_mutex());
   if (as<async_result_socket>(ar)->exception_) rethrow_exception(as<async_result_socket>(ar)->exception_);
   error = as<async_result_socket>(ar)->error_code_;
+  return as<size_t>(as<async_result_socket>(ar)->data_);
+}
+
+size_t socket::end_receive_from(std::shared_ptr<xtd::iasync_result> ar, std::shared_ptr<xtd::net::end_point>& end_point) {
+  if (ar == nullptr) throw argument_null_exception(csf_);
+  lock_guard<shared_mutex> lock(ar->async_mutex());
+  if (as<async_result_socket>(ar)->exception_) rethrow_exception(as<async_result_socket>(ar)->exception_);
+  end_point = as<async_result_socket>(ar)->end_point_;
   return as<size_t>(as<async_result_socket>(ar)->data_);
 }
 
