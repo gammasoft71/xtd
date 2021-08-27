@@ -18,6 +18,7 @@
 #include "../ip_address.h"
 #include "address_family.h"
 #include "io_control_code.h"
+#include "ip_packet_information.h"
 #include "linger_option.h"
 #include "multicast_option.h"
 #include "ip_v6_multicast_option.h"
@@ -810,6 +811,8 @@ namespace xtd {
         /// @note The xtd::net::sockets::sockets::address_family of the xtd::net::end_point used in xtd::net::sockets::socket::receive_from needs to match the xtd::net::sockets::sockets::address_family of the xtd::net::end_point used in xtd::net::sockets::sockets::socket::send_to.
         size_t receive_from(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point);
  
+        size_t receive_message_from(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::net::sockets::ip_packet_information& ip_packet_information);
+        
         /// @brief Determines the status of one or more sockets.
         /// @param check_read An array of xtd::net::sockets::socket instances to check for readability.
         /// @param check_write An array of xtd::net::sockets::socket instances to check for writability.

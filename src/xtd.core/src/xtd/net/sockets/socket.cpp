@@ -552,6 +552,21 @@ size_t socket::receive_from(vector<byte_t>& buffer, size_t offset, size_t size, 
   return static_cast<size_t>(number_of_bytes_received);
 }
 
+size_t socket::receive_message_from(vector<byte_t>& buffer, size_t offset, size_t size, socket_flags socket_flags, end_point& remote_end_point, ip_packet_information& ip_packet_information) {
+  if (offset + size > buffer.size()) throw argument_out_of_range_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception(csf_);
+  socket_address socket_address = remote_end_point.serialize();
+  auto number_of_bytes_received = native::socket::receive_from(data_->handle, buffer, offset, size, static_cast<int32_t>(socket_flags), socket_address.bytes_);
+  if (number_of_bytes_received == -1) throw socket_exception(get_last_error_(), csf_);
+
+  if (data_->address_family == address_family::inter_network)
+    ip_packet_information.address_ = ip_address(vector<byte_t>(socket_address.bytes_.begin() + 4, socket_address.bytes_.begin() + 8));
+  if (data_->address_family == address_family::inter_network_v6)
+    ip_packet_information.address_ = ip_address(vector<byte_t>(socket_address.bytes_.begin() + 8, socket_address.bytes_.begin() + 24), bit_converter::to_uint32(socket_address.bytes_, 25));
+
+  return static_cast<size_t>(number_of_bytes_received);
+}
+
 size_t socket::select(std::vector<socket>& check_read,std::vector<socket>& check_write, std::vector<socket>& check_error, int32_t microseconds) {
   if (check_read.size() == 0 && check_write.size() == 0 && check_error.size() == 0) throw argument_exception(csf_);
   
