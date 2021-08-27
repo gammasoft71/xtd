@@ -343,6 +343,19 @@ std::shared_ptr<xtd::iasync_result> socket::begin_connect(const xtd::ustring& ho
   return begin_connect(dns::get_host_addresses(host), port, callback, state);
 }
 
+std::shared_ptr<xtd::iasync_result> socket::begin_disconnect(bool reuse_socket, xtd::async_callback callback, const std::any& state) {
+  std::shared_ptr<async_result_socket> ar = make_shared<async_result_socket>(state);
+  ar->async_mutex().lock();
+  thread accept_thread([](socket s, bool reuse_socket, std::shared_ptr<async_result_socket> ar, xtd::async_callback callback) {
+    s.disconnect(reuse_socket);
+    ar->is_completed_ = true;
+    ar->async_mutex().unlock();
+    callback(ar);
+  }, *this, reuse_socket, ar, callback);
+  accept_thread.detach();
+  return ar;
+}
+
 void socket::close() {
   debug::write_if(show_debug_socket.enabled(), ustring::format("socket::close() : socket=[{}]", data_->handle));
   if (data_->handle != 0 && native::socket::destroy(data_->handle) != 0) {
@@ -401,6 +414,11 @@ socket socket::end_accept(std::shared_ptr<xtd::iasync_result> ar) {
 }
 
 void socket::end_connect(std::shared_ptr<xtd::iasync_result> ar) {
+  if (ar == nullptr) throw argument_null_exception(csf_);
+  lock_guard<shared_mutex> lock(ar->async_mutex());
+}
+
+void socket::end_disconnect(std::shared_ptr<xtd::iasync_result> ar) {
   if (ar == nullptr) throw argument_null_exception(csf_);
   lock_guard<shared_mutex> lock(ar->async_mutex());
 }
