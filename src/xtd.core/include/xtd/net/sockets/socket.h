@@ -59,7 +59,7 @@ namespace xtd {
       /// @remarks The xtd::net::sockets::socket class allows you to configure your xtd::net::sockets::socket using the xtd::net::sockets::socket::set_socket_option method. Retrieve these settings using the xtd::net::sockets::socket::get_socket_option method.
       /// @note If you are writing a relatively simple application and do not require maximum performance, consider using xtd::net::sockets::tcp_client, xtd::net::sockets::tcp_listener, and xtd::net::sockets::udp_client. These classes provide a simpler and more user-friendly interface to xtd::net::sockets::socket communications.
       class core_export_ socket : public xtd::object {
-        class async_result_socket : public xtd::iasync_result {
+        class async_result_socket : public xtd::object, public xtd::iasync_result {
         public:
           async_result_socket(std::any async_state) : async_state_(async_state) {}
           std::any async_state() const noexcept override {return async_state_;}
@@ -70,8 +70,6 @@ namespace xtd {
           std::any async_state_;
           bool is_completed_ = false;
           std::shared_mutex async_mutex_;
-          std::any data_;
-          std::shared_ptr<xtd::net::end_point> end_point_;
           xtd::net::sockets::socket_error error_code_ = xtd::net::sockets::socket_error::success;
           std::exception_ptr exception_;
         };
@@ -79,6 +77,7 @@ namespace xtd {
         class async_result_accept : public async_result_socket {
         public:
           async_result_accept(std::any async_state) : async_result_socket(async_state) {}
+          std::any socket_;
         };
         
         class async_result_connect : public async_result_socket {
@@ -94,11 +93,28 @@ namespace xtd {
         class async_result_receive : public async_result_socket {
         public:
           async_result_receive(std::any async_state) : async_result_socket(async_state) {}
+          size_t number_of_bytes_received_ = 0;
         };
         
         class async_result_receive_from : public async_result_socket {
         public:
           async_result_receive_from(std::any async_state) : async_result_socket(async_state) {}
+          std::shared_ptr<xtd::net::end_point> end_point_;
+          size_t number_of_bytes_received_ = 0;
+        };
+        
+        class async_result_receive_message_from : public async_result_socket {
+        public:
+          async_result_receive_message_from(std::any async_state) : async_result_socket(async_state) {}
+          std::shared_ptr<xtd::net::end_point> end_point_;
+          size_t number_of_bytes_received_ = 0;
+          xtd::net::sockets::ip_packet_information ip_packet_information_;
+        };
+        
+        class async_result_send : public async_result_socket {
+        public:
+          async_result_send(std::any async_state) : async_result_socket(async_state) {}
+          size_t number_of_bytes_sent_ = 0;
         };
 
       public:
@@ -503,6 +519,11 @@ namespace xtd {
         
         std::shared_ptr<xtd::iasync_result> begin_receive_from(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state);
         
+        std::shared_ptr<xtd::iasync_result> begin_receive_message_from(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state);
+        
+        std::shared_ptr<xtd::iasync_result> begin_send(const std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::async_callback callback, const std::any& state);
+        std::shared_ptr<xtd::iasync_result> begin_send(const std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error, xtd::async_callback callback, const std::any& state);
+
         /// @brief Associates a xtd::net::sockets::socket with a local endpoint.
         /// @param localEndPoint The local xtd::net::sockets::end_point to associate with the xtd::net::sockets::socket.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
@@ -597,7 +618,12 @@ namespace xtd {
         size_t end_receive(std::shared_ptr<xtd::iasync_result> ar, xtd::net::sockets::socket_error& error);
 
         size_t end_receive_from(std::shared_ptr<xtd::iasync_result> ar, std::shared_ptr<xtd::net::end_point>& end_point);
-
+        
+        size_t end_receive_message_from(std::shared_ptr<xtd::iasync_result> ar, std::shared_ptr<xtd::net::end_point>& end_point, xtd::net::sockets::ip_packet_information& ip_packet_information);
+        
+        size_t end_send(std::shared_ptr<xtd::iasync_result> ar);
+        size_t end_send(std::shared_ptr<xtd::iasync_result> ar, xtd::net::sockets::socket_error& error);
+        
         /// @brief Gets a socket option value using platform-specific level and name identifiers.
         /// @param socket_option_level The platform-defined option level.
         /// @param socket_option_name The platform-defined option name.
