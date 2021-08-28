@@ -116,6 +116,12 @@ namespace xtd {
           async_result_send(std::any async_state) : async_result_socket(async_state) {}
           size_t number_of_bytes_sent_ = 0;
         };
+        
+        class async_result_send_to : public async_result_socket {
+        public:
+          async_result_send_to(std::any async_state) : async_result_socket(async_state) {}
+          size_t number_of_bytes_sent_ = 0;
+        };
 
       public:
         /// @brief Initializes a new instance of the xtd::net::sockets::socket class.
@@ -524,6 +530,8 @@ namespace xtd {
         std::shared_ptr<xtd::iasync_result> begin_send(const std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::async_callback callback, const std::any& state);
         std::shared_ptr<xtd::iasync_result> begin_send(const std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error, xtd::async_callback callback, const std::any& state);
 
+        std::shared_ptr<xtd::iasync_result> begin_send_to(const std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, const xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state);
+
         /// @brief Associates a xtd::net::sockets::socket with a local endpoint.
         /// @param localEndPoint The local xtd::net::sockets::end_point to associate with the xtd::net::sockets::socket.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
@@ -623,7 +631,9 @@ namespace xtd {
         
         size_t end_send(std::shared_ptr<xtd::iasync_result> ar);
         size_t end_send(std::shared_ptr<xtd::iasync_result> ar, xtd::net::sockets::socket_error& error);
-        
+
+        size_t end_send_to(std::shared_ptr<xtd::iasync_result> ar);
+
         /// @brief Gets a socket option value using platform-specific level and name identifiers.
         /// @param socket_option_level The platform-defined option level.
         /// @param socket_option_name The platform-defined option name.
