@@ -163,6 +163,7 @@
 #include "net/sockets/ip_v6_multicast_option.h"
 #include "net/sockets/linger_option.h"
 #include "net/sockets/multicast_option.h"
+#include "net/sockets/network_stream.h"
 #include "net/sockets/protocol_family.h"
 #include "net/sockets/protocol_type.h"
 #include "net/sockets/select_mode.h"

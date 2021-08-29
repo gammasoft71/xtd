@@ -194,6 +194,7 @@ add_sources(
   include/xtd/net/sockets/ip_v6_multicast_option.h
   include/xtd/net/sockets/linger_option.h
   include/xtd/net/sockets/multicast_option.h
+  include/xtd/net/sockets/network_stream.h
   include/xtd/net/sockets/protocol_family.h
   include/xtd/net/sockets/protocol_type.h
   include/xtd/net/sockets/select_mode.h
@@ -283,6 +284,7 @@ add_sources(
   src/xtd/net/sockets/ip_v6_multicast_option.cpp
   src/xtd/net/sockets/linger_option.cpp
   src/xtd/net/sockets/multicast_option.cpp
+  src/xtd/net/sockets/network_stream.cpp
   src/xtd/net/sockets/send_packets_element.cpp
   src/xtd/net/sockets/socket.cpp
   src/xtd/net/sockets/socket_async_event_args.cpp
