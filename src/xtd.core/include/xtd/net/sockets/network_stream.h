@@ -13,6 +13,9 @@ namespace xtd {
     /// @brief The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface for developers who need to tightly control access to the network.
     namespace sockets {
       /// @brief Provides the underlying stream of data for network access.
+      /// @par Library
+      /// xtd.core
+      /// @ingroup xtd_core net
       /// @remarks The xtd::net::sockets::network_stream class provides methods for sending and receiving data over sttd::iostrream sockets in blocking mode. You can use the xtd::net::sockets::network_stream class for both synchronous and asynchronous data transfer.
       /// @remarks To create a xtd::net::sockets::network_stream, you must provide a connected xtd::net::sockets::socket. By default, closing the xtd::net::sockets::network_stream does not close the provided xtd::net::sockets::socket. If you want the xtd::net::sockets::network_stream to have permission to close the provided xtd::net::sockets::socket, you must specify true for the value of the owns_socket parameter.
       /// @remarks Use the std::iostream::write and std::iostream::read methods for simple single thread synchronous blocking I/O.
