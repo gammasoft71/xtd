@@ -7,7 +7,7 @@ using namespace xtd::net;
 using namespace xtd::net::sockets;
 
 int main() {
-  bool terminate_app = false;
+  auto terminate_app = false;
   
   auto on_server_accept = [&](shared_ptr<iasync_result> ar) {
     xtd::net::sockets::socket socket = as<xtd::net::sockets::socket>(ar->async_state()).end_accept(ar);
@@ -23,9 +23,9 @@ int main() {
     xtd::net::sockets::socket socket = as<xtd::net::sockets::socket>(ar->async_state());
     socket.end_connect(ar);
     
-    int counter = 1;
+    auto counter = 1;
     while (!terminate_app) {
-      ustring str = ustring::format("socket={}, counter={}", socket.handle(), counter++);
+      auto str = ustring::format("socket={}, counter={}", socket.handle(), counter++);
       socket.send(vector<byte_t>(str.begin(), str.end()));
       this_thread::sleep_for(50ms);
     }

@@ -7,7 +7,7 @@ using namespace xtd::net;
 using namespace xtd::net::sockets;
 
 int main() {
-  bool terminate_app = false;
+  auto terminate_app = false;
   
   thread server([&] {
     socket server_socket(address_family::inter_network, socket_type::dgram, protocol_type::udp);
@@ -25,9 +25,9 @@ int main() {
   thread client([&] {
     socket client_socket(address_family::inter_network, socket_type::dgram, protocol_type::udp);
     
-    int counter = 1;
+    auto counter = 1;
     while (!terminate_app) {
-      ustring str = ustring::format("counter={}", counter++);
+      auto str = ustring::format("counter={}", counter++);
       client_socket.send_to(vector<byte_t>(str.begin(), str.end()), ip_end_point(ip_address::loopback, 9400));
       this_thread::sleep_for(50ms);
     }
