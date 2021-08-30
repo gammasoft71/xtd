@@ -179,6 +179,7 @@
 #include "net/sockets/socket_option_name.h"
 #include "net/sockets/socket_shutdown.h"
 #include "net/sockets/socket_type.h"
+#include "net/sockets/tcp_client.h"
 #include "net/sockets/transmit_file_options.h"
 #include "web/css/property.h"
 #include "web/css/property_map.h"

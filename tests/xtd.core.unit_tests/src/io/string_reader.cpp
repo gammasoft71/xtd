@@ -19,13 +19,13 @@ namespace unit_tests {
     
     void test_method_(read_buffer_with_empty_string) {
       vector<char> buffer(10);
-      assert::are_equal(0, string_reader("").text_reader::read(buffer.data(), 0, 10), line_info_);
+      assert::are_equal(0U, string_reader("").text_reader::read(buffer, 0, 10), line_info_);
       collection_assert::are_equal({'\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0'}, buffer, line_info_);
     }
     
     void test_method_(read_block_with_empty_string) {
       vector<char> buffer(10);
-      assert::are_equal(0, string_reader("").text_reader::read_block(buffer.data(), 0, 10), line_info_);
+      assert::are_equal(0U, string_reader("").text_reader::read_block(buffer, 0, 10), line_info_);
       collection_assert::are_equal({'\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0'}, buffer, line_info_);
     }
     
@@ -47,13 +47,13 @@ namespace unit_tests {
     
     void test_method_(read_buffer_with_one_char_string) {
       vector<char> buffer(10);
-      assert::are_equal(1, string_reader("a").text_reader::read(buffer.data(), 0, 10), line_info_);
+      assert::are_equal(1U, string_reader("a").text_reader::read(buffer, 0, 10), line_info_);
       collection_assert::are_equal({'a', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0'}, buffer, line_info_);
     }
     
     void test_method_(read_block_with_one_char_string) {
       vector<char> buffer(10);
-      assert::are_equal(1, string_reader("a").text_reader::read_block(buffer.data(), 0, 10), line_info_);
+      assert::are_equal(1U, string_reader("a").text_reader::read_block(buffer, 0, 10), line_info_);
       collection_assert::are_equal({'a', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0'}, buffer, line_info_);
     }
     
@@ -75,13 +75,13 @@ namespace unit_tests {
     
     void test_method_(read_buffer_with_multi_char_string) {
       vector<char> buffer(10);
-      assert::are_equal(10, string_reader("abcdefghijklmno").text_reader::read(buffer.data(), 0, 10), line_info_);
+      assert::are_equal(10U, string_reader("abcdefghijklmno").text_reader::read(buffer, 0, 10), line_info_);
       collection_assert::are_equal({'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'}, buffer, line_info_);
     }
     
     void test_method_(read_block_with_multi_char_string) {
       vector<char> buffer(10);
-      assert::are_equal(10, string_reader("abcdefghijklmno").text_reader::read_block(buffer.data(), 0, 10), line_info_);
+      assert::are_equal(10U, string_reader("abcdefghijklmno").text_reader::read_block(buffer, 0, 10), line_info_);
       collection_assert::are_equal({'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'}, buffer, line_info_);
     }
     
@@ -103,13 +103,13 @@ namespace unit_tests {
     
     void test_method_(read_buffer_with_multi_line_string) {
       vector<char> buffer(10);
-      assert::are_equal(10, string_reader("Line 1\nLine 2\nLine 3").text_reader::read(buffer.data(), 0, 10), line_info_);
+      assert::are_equal(10U, string_reader("Line 1\nLine 2\nLine 3").text_reader::read(buffer, 0, 10), line_info_);
       collection_assert::are_equal({'L', 'i', 'n', 'e', ' ', '1', '\n', 'L', 'i', 'n'}, buffer, line_info_);
     }
     
     void test_method_(read_block_with_multi_line_string) {
       vector<char> buffer(10);
-      assert::are_equal(10, string_reader("Line 1\nLine 2\nLine 3").text_reader::read_block(buffer.data(), 0, 10), line_info_);
+      assert::are_equal(10U, string_reader("Line 1\nLine 2\nLine 3").text_reader::read_block(buffer, 0, 10), line_info_);
       collection_assert::are_equal({'L', 'i', 'n', 'e', ' ', '1', '\n', 'L', 'i', 'n'}, buffer, line_info_);
     }
     

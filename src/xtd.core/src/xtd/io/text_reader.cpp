@@ -1,4 +1,5 @@
 #include "../../../include/xtd/io/text_reader.h"
+#include "../../../include/xtd/argument_out_of_range_exception.h"
 
 using namespace xtd;
 using namespace xtd::io;
@@ -19,8 +20,9 @@ int32_t text_reader::read() {
   return EOF;
 }
 
-int32_t text_reader::read(char* buffer, int32_t index, int32_t count) {
-  for (auto i = 0; i < count; i++) {
+size_t text_reader::read(std::vector<char>& buffer, size_t index, size_t count) {
+  if (index + count > buffer.size()) throw argument_out_of_range_exception(csf_);
+  for (auto i = 0U; i < count; i++) {
     auto current = read();
     if (current == EOF) return i;
     buffer[index + i] = static_cast<char>(current);
@@ -28,7 +30,7 @@ int32_t text_reader::read(char* buffer, int32_t index, int32_t count) {
   return count;
 }
 
-int32_t text_reader::read_block(char* buffer, int32_t index, int32_t count) {
+size_t text_reader::read_block(std::vector<char>& buffer, size_t index, size_t count) {
   return read(buffer, index, count);
 }
 
