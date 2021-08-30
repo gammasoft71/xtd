@@ -24,6 +24,9 @@ namespace xtd {
       /// * Create a xtd::net::sockets::tcp_client and call one of the three available xtd::net::sockets::tcp_client::connect methods.
       /// * Create a xtd::net::sockets::tcp_client using the host name and port number of the remote host. This constructor will automatically attempt a connection.
       /// @note If you want to send connectionless datagrams in synchronous blocking mode, use the xtd::net::sockets::udp_client class.
+      /// @par Examples
+      /// The following example shows how to use xtd::net::sockets::tcp_client class with xtd::net::sockets::network_stream, xtd::net::sockets::socket, xtd::io::stream_reader and xtd::io::stream_writer classes.
+      /// @include tcp_client.cpp
       class tcp_client : public xtd::object {
       public:
         /// @brief Initializes a new instance of the xtd::net::sockets::tcp_client class.
