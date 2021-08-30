@@ -6,31 +6,31 @@ using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 
-bool terminate_app = false;
-
-void on_server_accept(shared_ptr<iasync_result> ar) {
-  xtd::net::sockets::socket socket = as<xtd::net::sockets::socket>(ar->async_state()).end_accept(ar);
-
-  while (!terminate_app) {
-    vector<byte_t> buffer(256);
-    size_t number_of_byte_received = socket.receive(buffer);
-    if (number_of_byte_received) console::write_line(ustring(buffer.begin(), buffer.begin() + number_of_byte_received));
-  }
-}
-
-void on_client_connect(shared_ptr<iasync_result> ar) {
-  xtd::net::sockets::socket socket = as<xtd::net::sockets::socket>(ar->async_state());
-  socket.end_connect(ar);
-  
-  int counter = 1;
-  while (!terminate_app) {
-    ustring str = ustring::format("socket={}, counter={}", socket.handle(), counter++);
-    socket.send(vector<byte_t>(str.begin(), str.end()));
-    this_thread::sleep_for(50ms);
-  }
-}
-
 int main() {
+  bool terminate_app = false;
+  
+  auto on_server_accept = [&](shared_ptr<iasync_result> ar) {
+    xtd::net::sockets::socket socket = as<xtd::net::sockets::socket>(ar->async_state()).end_accept(ar);
+    
+    while (!terminate_app) {
+      vector<byte_t> buffer(256);
+      size_t number_of_byte_received = socket.receive(buffer);
+      if (number_of_byte_received) console::write_line(ustring(buffer.begin(), buffer.begin() + number_of_byte_received));
+    }
+  };
+
+  auto on_client_connect = [&](shared_ptr<iasync_result> ar) {
+    xtd::net::sockets::socket socket = as<xtd::net::sockets::socket>(ar->async_state());
+    socket.end_connect(ar);
+    
+    int counter = 1;
+    while (!terminate_app) {
+      ustring str = ustring::format("socket={}, counter={}", socket.handle(), counter++);
+      socket.send(vector<byte_t>(str.begin(), str.end()));
+      this_thread::sleep_for(50ms);
+    }
+  };
+
   const size_t client_count = 10;
   
   socket server_socket(address_family::inter_network, socket_type::stream, protocol_type::tcp);
