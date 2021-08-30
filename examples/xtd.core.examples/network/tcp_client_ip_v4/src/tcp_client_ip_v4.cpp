@@ -11,10 +11,9 @@ int main() {
   auto terminate_app = false;
   
   thread server([&] {
-    socket server_socket(address_family::inter_network, socket_type::stream, protocol_type::tcp);
-    server_socket.bind(ip_end_point(ip_address::any, 9400));
-    server_socket.listen();
-    network_stream stream(server_socket.accept());
+    auto listener = tcp_listener::create(9400);
+    listener.start();
+    auto stream = listener.accept_tcp_client().get_stream();
     stream_reader reader(stream);
     
     while (!terminate_app)
@@ -22,8 +21,9 @@ int main() {
   });
   
   thread client([&] {
-    network_stream stream(socket(address_family::inter_network, socket_type::stream, protocol_type::tcp));
-    stream.socket().connect(ip_address::loopback, 9400);
+    tcp_client client;
+    client.connect(ip_address::loopback, 9400);
+    auto stream = client.get_stream();
     stream_writer writer(stream);
     
     auto counter = 1;

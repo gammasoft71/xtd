@@ -735,7 +735,7 @@ void socket::listen() {
 listen(static_cast<size_t>(-1));
 }
 
-bool socket::pool(int32_t micro_seconds, xtd::net::sockets::select_mode mode) {
+bool socket::poll(int32_t micro_seconds, xtd::net::sockets::select_mode mode) {
   if (data_->handle == 0) throw object_closed_exception(csf_);
   int32_t result = native::socket::poll(data_->handle, micro_seconds, static_cast<int32_t>(mode));
   if (result == -1) throw socket_exception(get_last_error_(), csf_);

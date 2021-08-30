@@ -1,10 +1,10 @@
-# tcp_client
+# tcp_client_ip_v4
 
 Shows how to use [xtd::net::sockets::tcp_client](../../../../src/xtd.core/include/xtd/net/sockets/tcp_client.h) class.
 
 ## Sources
 
-[src/tcp_client.cpp](src/tcp_client.cpp)
+[src/tcp_client_ip_v4.cpp](src/tcp_client_ip_v4.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

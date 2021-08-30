@@ -15,6 +15,10 @@ namespace xtd {
   namespace net {
     /// @brief The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface for developers who need to tightly control access to the network.
     namespace sockets {
+      /// @cond
+      class tcp_listener;
+      /// @endcond
+
       /// @brief Provides client connections for TCP network services.
       /// @par Library
       /// xtd.core
@@ -25,8 +29,11 @@ namespace xtd {
       /// * Create a xtd::net::sockets::tcp_client using the host name and port number of the remote host. This constructor will automatically attempt a connection.
       /// @note If you want to send connectionless datagrams in synchronous blocking mode, use the xtd::net::sockets::udp_client class.
       /// @par Examples
-      /// The following example shows how to use xtd::net::sockets::tcp_client class with xtd::net::sockets::network_stream, xtd::net::sockets::socket, xtd::io::stream_reader and xtd::io::stream_writer classes.
-      /// @include tcp_client.cpp
+      /// The following example shows how to use IPv4 xtd::net::sockets::tcp_client class with xtd::net::sockets::network_stream, xtd::net::sockets::socket, xtd::io::stream_reader and xtd::io::stream_writer classes.
+      /// @include tcp_client_ip_v4.cpp
+      /// @par Examples
+      /// The following example shows how to use IPv6 xtd::net::sockets::tcp_client class with xtd::net::sockets::network_stream, xtd::net::sockets::socket, xtd::io::stream_reader and xtd::io::stream_writer classes.
+      /// @include tcp_client_ip_v6.cpp
       class tcp_client : public xtd::object {
       public:
         /// @brief Initializes a new instance of the xtd::net::sockets::tcp_client class.
@@ -319,6 +326,8 @@ namespace xtd {
         tcp_client& active(bool value) noexcept;
         
       private:
+        friend tcp_listener;
+        tcp_client(const xtd::net::sockets::socket& socket);
         struct data;
         std::shared_ptr<data> data_;
       };

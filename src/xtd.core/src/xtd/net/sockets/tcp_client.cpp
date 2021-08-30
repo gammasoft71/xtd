@@ -34,7 +34,7 @@ tcp_client::tcp_client(const xtd::ustring& hostname, uint16_t port) {
 }
 
 tcp_client::~tcp_client() {
-  close();
+  if (data_.use_count() == 1) close();
 }
 
 size_t tcp_client::available() const {
@@ -173,4 +173,10 @@ bool tcp_client::active() const noexcept {
 tcp_client& tcp_client::active(bool value) noexcept {
   data_->active = value;
   return *this;
+}
+
+tcp_client::tcp_client(const xtd::net::sockets::socket& socket) {
+  data_ = make_shared<data>();
+  data_->client_socket = socket;
+  active(true);
 }

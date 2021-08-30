@@ -1060,7 +1060,7 @@ namespace xtd {
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks The xtd::net::sockets::socket::poll method checks the state of the xtd::net::sockets::socket. Specify xtd::net::sockets::select_mode::select_read for the select_mode parameter to determine if the xtd::net::sockets::socket is readable. Specify xtd::net::sockets::select_mode::select_write to determine if the xtd::net::sockets::socket is writable. Use SelectMode.SelectError to detect an error condition. Poll will block execution until the specified time period, measured in microseconds, elapses. Set the microSeconds parameter to a negative integer if you would like to wait indefinitely for a response. If you want to check the status of multiple sockets, you might prefer to use the xtd::net::sockets::socket::select method.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exceptionxtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
-        bool pool(int32_t micro_seconds, xtd::net::sockets::select_mode mode);
+        bool poll(int32_t micro_seconds, xtd::net::sockets::select_mode mode);
 
         /// @brief Receives data from a bound xtd::net::sockets::socket into a receive buffer.
         /// @param buffer An array of type byte that is the storage location for the received data.
