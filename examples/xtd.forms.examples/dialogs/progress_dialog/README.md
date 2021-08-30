@@ -1,4 +1,4 @@
-# about_dialog
+# progress_dialog
 
 demonstrates the use of [xtd::forms::progress_dialog](../../../../src/xtd.forms/include/xtd/forms/progress_dialog.h) dialog.
 
