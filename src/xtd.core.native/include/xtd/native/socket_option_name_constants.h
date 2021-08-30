@@ -321,7 +321,7 @@ constexpr int32_t SOCKET_OPTION_NAME_IP_V6_ONLY = 27;
 /// @ingroup xtd_core_native socket_option_name
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t SOCKET_OPTION_NAME_NO_DILAY = 1;
+constexpr int32_t SOCKET_OPTION_NAME_NO_DELAY = 1;
 
 /// @brief Use urgent data as defined in RFC-1222. This option can be set only once; after it is set, it cannot be turned off.
 /// @par Library

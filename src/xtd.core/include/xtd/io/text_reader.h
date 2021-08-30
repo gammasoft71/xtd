@@ -49,14 +49,14 @@ namespace xtd {
       /// @param index The position in buffer at which to begin writing.
       /// @param count The maximum number of characters to read.
       /// @return The number of characters that have been read. The number will be less than or equal to count, depending on whether all input characters have been read.
-      virtual int32_t read(char* buffer, int32_t index, int32_t count);
+      virtual size_t read(std::vector<char>& buffer, size_t index, size_t count);
       
       /// @brief Reads a specified maximum number of characters from the current text reader and writes the data to a buffer, beginning at the specified index.
       /// @param buffer When this method returns, this parameter contains the specified character array with the values between index and (index + count -1) replaced by the characters read from the current source.
       /// @param index The position in buffer at which to begin writing.
       /// @param count The maximum number of characters to read.
       /// @return The number of characters that have been read. The number will be less than or equal to count, depending on whether all input characters have been read.
-      virtual int32_t read_block(char* buffer, int32_t index, int32_t count);
+      virtual size_t read_block(std::vector<char>& buffer, size_t index, size_t count);
       
       /// @brief Reads a line of characters from the current stream and returns the data as a string.
       /// @return The next line from the input stream, or the empty string if all characters have been read.
