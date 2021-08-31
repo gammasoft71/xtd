@@ -938,7 +938,7 @@ namespace xtd {
       
       /// @brief Invalidates the entire surface of the control and causes the control to be redrawn.
       /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
-      virtual void invalidate() const {invalidate({{0, 0}, client_size()}, true);}
+      virtual void invalidate() const {invalidate({{0, 0}, client_size()}, false);}
 
       /// @brief Invalidates a specific region of the control and causes a paint message to be sent to the control. Optionally, invalidates the child controls assigned to the control.
       /// @param invalidate_children true to invalidate the control's child controls; otherwise, false.
@@ -948,7 +948,7 @@ namespace xtd {
       /// @brief Invalidates the specified region of the control (adds it to the control's update region, which is the area that will be repainted at the next paint operation), and causes a paint message to be sent to the control.
       /// @param rect A xtd::drawing::rectangle that represents the region to invalidate.
       /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
-      virtual void invalidate(const drawing::rectangle& rect) const {invalidate(rect, true);}
+      virtual void invalidate(const drawing::rectangle& rect) const {invalidate(rect, false);}
       
       /// @brief Invalidates the specified region of the control (adds it to the control's update region, which is the area that will be repainted at the next paint operation), and causes a paint message to be sent to the control. Optionally, invalidates the child controls assigned to the control.
       /// @param rect A xtd::drawing::rectangle that represents the region to invalidate.
