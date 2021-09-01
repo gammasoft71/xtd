@@ -214,6 +214,7 @@ add_sources(
   include/xtd/net/sockets/tcp_client.h
   include/xtd/net/sockets/tcp_listener.h
   include/xtd/net/sockets/transmit_file_options.h
+  include/xtd/net/sockets/udp_client.h
   include/xtd/security/secure_string.h
   include/xtd/web/css/property.h
   include/xtd/web/css/property_map.h
@@ -293,6 +294,7 @@ add_sources(
   src/xtd/net/sockets/socket_information.cpp
   src/xtd/net/sockets/tcp_client.cpp
   src/xtd/net/sockets/tcp_listener.cpp
+  src/xtd/net/sockets/udp_client.cpp
   src/xtd/security/secure_string.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})

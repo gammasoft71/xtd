@@ -888,6 +888,13 @@ size_t socket::send_to(const vector<byte_t>& buffer, size_t offset, size_t size,
   return static_cast<int32_t>(number_of_bytes_sent);
 }
 
+void socket::set_ip_protection_level(ip_protection_level level) {
+  if (level == ip_protection_level::unspecified) throw argument_exception(csf_);
+  if (data_->address_family == address_family::inter_network_v6) set_socket_option(socket_option_level::ip_v6, socket_option_name::ip_protection_level, static_cast<int32_t>(level));
+  else if (data_->address_family == address_family::inter_network) set_socket_option(socket_option_level::ip, socket_option_name::ip_protection_level, static_cast<int32_t>(level));
+  else throw not_supported_exception(csf_);
+}
+
 void socket::set_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name, bool option_value) {
   set_socket_option(socket_option_level, socket_option_name, as<int32_t>(option_value));
 }

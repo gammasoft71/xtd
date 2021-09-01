@@ -14,4 +14,6 @@ add_projects(
   socket_udp_ip_v6
   tcp_client_ip_v4
   tcp_client_ip_v6
+  udp_client_ip_v4
+  udp_client_ip_v6
 )
