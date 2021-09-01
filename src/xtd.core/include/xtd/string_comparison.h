@@ -5,7 +5,7 @@
 
 #include <ostream>
 
-/// @brief The xtd namespace contains all fundamental classes to access console.
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Specifies the culture, case, and sort rules to be used by certain overloads of the xtd::ustring::compare method
   /// @par Library
