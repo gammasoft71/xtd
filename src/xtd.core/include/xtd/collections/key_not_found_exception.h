@@ -8,6 +8,8 @@
 namespace xtd {
   namespace collections {
     /// @brief The exception that is thrown when the key specified for accessing an element in a collection does not match any key in the collection.
+    /// @par Namespace
+    /// xtd::collections
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core exceptions
