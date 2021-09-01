@@ -9,6 +9,8 @@ namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief The exception that is thrown when part of a file or directory cannot be found.
+    /// @par Namespace
+    /// xtd::io
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core exceptions
