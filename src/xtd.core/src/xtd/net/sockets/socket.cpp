@@ -826,13 +826,11 @@ size_t socket::select(std::vector<socket>& check_read,std::vector<socket>& check
   if (status < 0) throw socket_exception(get_last_error_(), csf_);
   
   auto update_check_sockets = [](auto& sockets, auto& handles) {
-    vector<socket> socket_to_remove;
     for (size_t i = 0; i < handles.size(); i++)
-      if (handles[i] == 0) socket_to_remove.push_back(sockets[i]);
-    for (auto item : socket_to_remove)
-      remove(sockets.begin(), sockets.end(), item);
+        if (handles[i] == 0) 
+           sockets.erase(sockets.begin() + i);
   };
-  
+
   update_check_sockets(check_read, check_read_handles);
   update_check_sockets(check_write, check_write_handles);
   update_check_sockets(check_error, check_error_handles);
