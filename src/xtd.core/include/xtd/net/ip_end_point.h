@@ -12,6 +12,8 @@ namespace xtd {
   namespace net {
     /// @brief Represents a network endpoint as an IP address and a port number.
     /// @remarks The xtd::net::ip_end_point class contains the host and local or remote port information needed by an application to connect to a service on a host. By combining the host's IP address and port number of a service, the ip_end_point class forms a connection point to a service.
+    /// @par Namespace
+    /// xtd::net
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core

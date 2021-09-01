@@ -44,6 +44,8 @@ namespace xtd {
       /// @endcond
       
       /// @brief Implements the Berkeley sockets interface.
+      /// @par Namespace
+      /// xtd::net::sockets
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core net
