@@ -827,8 +827,8 @@ size_t socket::select(std::vector<socket>& check_read,std::vector<socket>& check
   
   auto update_check_sockets = [](auto& sockets, auto& handles) {
     for (size_t i = 0; i < handles.size(); i++)
-        if (handles[i] == 0) 
-           sockets.erase(sockets.begin() + i);
+      if (handles[i] == 0)
+        sockets.erase(sockets.begin() + i);
   };
 
   update_check_sockets(check_read, check_read_handles);
