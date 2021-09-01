@@ -22,10 +22,13 @@ namespace xtd {
       class font_collection;
     }
     /// @endcond
+
+    /// @brief Defines a group of type faces having a similar basic design and certain variations in styles. This class cannot be inherited.
+    /// @par Namespace
+    /// xtd::drawing
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    /// @brief Defines a group of type faces having a similar basic design and certain variations in styles. This class cannot be inherited.
     class drawing_export_ font_family final : public object {
     public:
       /// @brief Initializes a new xtd::drawing::font_family with the specified name.

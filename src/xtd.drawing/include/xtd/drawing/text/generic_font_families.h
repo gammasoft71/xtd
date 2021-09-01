@@ -11,6 +11,8 @@ namespace xtd {
     /// @brief The xtd::drawing::text namespace provides advanced GDI+ typography functionality.
     namespace text {
       /// @brief Specifies a generic font_family object.
+      /// @par Namespace
+      /// xtd::drawing::text
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing

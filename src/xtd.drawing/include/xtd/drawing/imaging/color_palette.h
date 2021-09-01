@@ -19,6 +19,8 @@ namespace xtd {
     /// @remarks The metafile class provides methods for recording and saving metafiles. The encoder class enables users to extend GDI+ to support any image format. The property_item class provides methods for storing and retrieving metadata in image files.
     namespace imaging {
       /// @brief Defines an array of colors that make up a color palette. The colors are 32-bit ARGB colors. Not inheritable.
+      /// @par Namespace
+      /// xtd::drawing::imaging
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing

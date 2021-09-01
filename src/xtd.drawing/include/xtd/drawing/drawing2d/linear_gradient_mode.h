@@ -11,6 +11,11 @@ namespace xtd {
     /// @brief The xtd::.drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing2d {
       /// @brief Specifies the direction of a linear gradient.
+      /// @par Namespace
+      /// xtd::drawing::drawing2d
+      /// @par Library
+      /// xtd.drawing
+      /// @ingroup xtd_drawing
       enum class linear_gradient_mode {
         /// @brief Specifies a gradient from left to right.
         horizontal = 0,

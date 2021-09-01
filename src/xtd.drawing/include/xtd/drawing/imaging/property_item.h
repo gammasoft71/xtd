@@ -14,6 +14,8 @@ namespace xtd {
     /// @remarks The metafile class provides methods for recording and saving metafiles. The encoder class enables users to extend GDI+ to support any image format. The property_item class provides methods for storing and retrieving metadata in image files.
     namespace imaging {
       /// @brief Encapsulates a metadata property to be included in an image file. Not inheritable.
+      /// @par Namespace
+      /// xtd::drawing::imaging
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing

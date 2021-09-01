@@ -18,6 +18,8 @@ namespace xtd {
     /// @brief The xtd::.drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing2d {
       /// @brief Defines a rectangular brush with a hatch style, a foreground color, and a background color. This class cannot be inherited.
+      /// @par Namespace
+      /// xtd::drawing::drawing2d
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing drawing

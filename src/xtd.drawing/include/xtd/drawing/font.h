@@ -31,6 +31,8 @@ namespace xtd {
     /// @endcond
     
     /// @brief Defines a particular format for text, including font face, size, and style attributes. This class cannot be inherited.
+    /// @par Namespace
+    /// xtd::drawing
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing

@@ -11,6 +11,8 @@ namespace xtd {
     /// @brief The xtd::drawing::text namespace provides advanced GDI+ typography functionality.
     namespace text {
       /// @brief Specifies the type of display for hot-key prefixes that relate to text.
+      /// @par Namespace
+      /// xtd::drawing::text
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing
