@@ -182,6 +182,7 @@
 #include "net/sockets/tcp_client.h"
 #include "net/sockets/tcp_listener.h"
 #include "net/sockets/transmit_file_options.h"
+#include "net/sockets/udp_client.h"
 #include "web/css/property.h"
 #include "web/css/property_map.h"
 #include "web/css/reader.h"

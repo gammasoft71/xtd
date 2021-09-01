@@ -19,6 +19,7 @@
 #include "address_family.h"
 #include "io_control_code.h"
 #include "ip_packet_information.h"
+#include "ip_protection_level.h"
 #include "linger_option.h"
 #include "multicast_option.h"
 #include "ip_v6_multicast_option.h"
@@ -1378,6 +1379,19 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         size_t send_to(const std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, const xtd::net::end_point& remote_end_point);
 
+        /// @brief Sets the IP protection level on a socket.
+        /// @param level The IP protection level to set on this socket.The IP protection level to set on this socket.
+        /// @exception xtd::argument_exception The level argument is set to xtd::net::sockets::ip_protection_level::unspecified.
+        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
+        /// @exception xtd::not_supported_exception The socket is not in the xtd::net::sockets::address_family::inter_network_v6 or xtd::net::sockets::address_family::inter_network address families.
+        /// @remarks The xtd::net::sockets::socket::set_ip_protection_level method enables restricting an a IPv6 or IP socket to listen on a specified scope, such as addresses with the same link local or site local prefix. This socket option enables applications to place access restrictions on IPv6 or IP sockets. Such restrictions enable an application running on a private LAN to simply and robustly harden itself against external attacks. This socket option can also be used to remove access restrictions if the level parameter is set to xtd::net::sockets::ip_protection_levelxtd::net::sockets::ip_protection_level::unrestricted. This socket option widens or narrows the scope of a listening socket, enabling unrestricted access from public and private users when appropriate, or restricting access only to the same site, as required.
+        /// @remarks This socket option has defined protection levels specified in the xtd::net::sockets::ip_protection_level enumeration.
+        /// @remarks The xtd::net::sockets::socket::set_ip_protection_level method is used to enable or disable Network Address Traversal (NAT) for a xtd::net::sockets::socket instance. NAT traversal may be provided using Teredo, 6to4, or an ISATAP tunnel.
+        /// @remarks When the level parameter is set to xtd::net::sockets::ip_protection_level::edge_restricted, or xtd::net::sockets::ip_protection_level::restricted, this explicitly disables NAT traversal for a xtd::net::sockets::socket instance.
+        /// @remarks When the level parameter is set to xtd::net::sockets::ip_protection_level::edge_restricted, this may allow NAT traversal for a xtd::net::sockets::socket depending on firewall rules in place on the system.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        void set_ip_protection_level(xtd::net::sockets::ip_protection_level level);
+        
         /// @brief Sets the specified xtd::net::sockets::socket option to the specified integer value.
         /// @param socket_option_level One of the xtd::net::sockets::socket_option_level values.
         /// @param socket_option_name One of the xtd::net::sockets::socket_option_name values.

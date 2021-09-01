@@ -47,6 +47,7 @@ socket tcp_client::client() const noexcept {
 
 tcp_client& tcp_client::client(const socket& value) noexcept {
   data_->client_socket = value;
+  active(data_->client_socket.connected());
   return *this;
 }
 
@@ -178,5 +179,5 @@ tcp_client& tcp_client::active(bool value) noexcept {
 tcp_client::tcp_client(const xtd::net::sockets::socket& socket) {
   data_ = make_shared<data>();
   data_->client_socket = socket;
-  active(true);
+  active(data_->client_socket.connected());
 }
