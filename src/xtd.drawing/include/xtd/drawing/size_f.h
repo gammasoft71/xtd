@@ -16,6 +16,8 @@ namespace xtd {
     /// @endcond
     
     /// @brief Stores an ordered pair of flooating-point, which specify a height and width.
+    /// @par Namespace
+    /// xtd::drawing
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing

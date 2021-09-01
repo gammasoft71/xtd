@@ -17,6 +17,8 @@ namespace xtd {
     /// @endcond
 
     /// @brief Each property of the system_images class is an image object for Windows system-wide images. This class cannot be inherited.
+    /// @par Namespace
+    /// xtd::drawing
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing

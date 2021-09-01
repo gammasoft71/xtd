@@ -11,6 +11,8 @@ namespace xtd {
     /// @brief The xtd::.drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing2d {
       /// @brief SSpecifies the alignment of a xtd::drawing::pen object in relation to the theoretical, zero-width line.
+      /// @par Namespace
+      /// xtd::drawing::drawing2d
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing

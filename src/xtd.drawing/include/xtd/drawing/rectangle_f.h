@@ -20,6 +20,8 @@ namespace xtd {
     /// @endcond
 
     /// @brief Stores a set of four floating-points that represent the location and size of a rectangle.
+    /// @par Namespace
+    /// xtd::drawing
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
