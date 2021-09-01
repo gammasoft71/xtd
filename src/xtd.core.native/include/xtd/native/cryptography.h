@@ -19,12 +19,14 @@ namespace xtd {
   namespace security {
     class secure_string;
   }
-  // @endcond
+  /// @endcond
 
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
     /// @brief Contains cryptography native API.
+    /// @par Namespace
+    /// xtd::native
     /// @par Library
     /// xtd.core.native
     /// @ingroup xtd_core_native native
