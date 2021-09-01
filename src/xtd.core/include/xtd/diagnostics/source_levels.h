@@ -9,6 +9,8 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Specifies the levels of trace messages filtered by the source switch and event type filter. This enumeration has a flags attribute that allows a bitwise combination of its member values.
+    /// @par Namespace
+    /// xtd::diagnostics
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core

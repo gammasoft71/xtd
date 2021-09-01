@@ -12,6 +12,8 @@ namespace xtd {
     /// @brief Represents the method that will handle the xtd::diagnostics::process::output_data_received and xtd::diagnostics::process::error_data_received event of a Process.
     /// @param sender The source of the event.
     /// @param e A xtd::diagnostics::process::data_received_event_args that contains the event data.
+    /// @par Namespace
+    /// xtd::diagnostics
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core events
