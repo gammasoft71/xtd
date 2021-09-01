@@ -5,7 +5,7 @@
 
 #include <ostream>
 
-/// @brief The xtd namespace contains all fundamental classes to access console.
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Specifies whether applicable xtd::ustring::split method overloads include or omit empty substrings from the return value.
   /// @par Library
