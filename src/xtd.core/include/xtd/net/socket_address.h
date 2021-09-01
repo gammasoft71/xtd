@@ -19,6 +19,8 @@ namespace xtd {
     /// @endcond
     
     /// @brief Stores serialized information from end_point derived classes.
+    /// @par Namespace
+    /// xtd::net
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core

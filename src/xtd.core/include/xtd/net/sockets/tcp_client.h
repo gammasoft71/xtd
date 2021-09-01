@@ -20,6 +20,8 @@ namespace xtd {
       /// @endcond
 
       /// @brief Provides client connections for TCP network services.
+      /// @par Namespace
+      /// xtd::net::sockets
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core net

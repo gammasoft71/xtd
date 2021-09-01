@@ -9,6 +9,8 @@ namespace xtd {
   /// @brief The xtd::net namespace provides a simple programming interface for many of the protocols used on networks today. The xtd::net::web_request and xtd::net::web_response classes form the basis of what are called pluggable protocols, an implementation of network services that enables you to develop applications that use Internet resources without worrying about the specific details of the individual protocols.
   namespace net {
     /// @brief The exception that is thrown when an error is made adding a xtd::net::cookie to a xtd::net::cookie_container.
+    /// @par Namespace
+    /// xtd::net
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core exceptions

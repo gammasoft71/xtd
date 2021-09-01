@@ -27,6 +27,11 @@ namespace xtd {
     /// @brief The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface for developers who need to tightly control access to the network.
     namespace sockets {
       /// @brief Represents an asynchronous socket operation.
+      /// @par Namespace
+      /// xtd::net::sockets
+      /// @par Library
+      /// xtd.core
+      /// @ingroup xtd_core
       /// @remarks The xtd::net::sockets::socket_async_event_args class is part of a set of enhancements to the xtd::net::sockets::socket class that provide an alternative asynchronous pattern that can be used by specialized high-performance socket applications. This class was specifically designed for network server applications that require high performance. An application can use the enhanced asynchronous pattern exclusively or only in targeted hot areas (for example, when receiving large amounts of data).
       /// @remarks The main feature of these enhancements is the avoidance of the repeated allocation and synchronization of objects during high-volume asynchronous socket I/O. The Begin/End design pattern currently implemented by the xtd::net::sockets::socket class requires a xtd::iasync_result object be allocated for each asynchronous socket operation.
       /// @remarks In the new xtd::net::sockets::socket class enhancements, asynchronous socket operations are described by reusable xtd::net::sockets::socket_async_event_args objects allocated and maintained by the application. High-performance socket applications know best the amount of overlapped socket operations that must be sustained. The application can create as many of the xtd::net::sockets::socket_async_event_args objects that it needs. For example, if a server application needs to have 15 socket accept operations outstanding at all times to support incoming client connection rates, it can allocate 15 reusable xtd::net::sockets::socket_async_event_args objects for that purpose.

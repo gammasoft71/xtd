@@ -17,6 +17,8 @@ namespace xtd {
     namespace sockets {
       /// @brief The TransmitFileOptions enumeration defines values used in file transfer requests.
       /// @remarks This enumeration has a flags attribute that allows a bitwise combination of its member values.
+      /// @par Namespace
+      /// xtd::net::sockets
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core
