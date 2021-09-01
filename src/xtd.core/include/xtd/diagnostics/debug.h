@@ -24,6 +24,8 @@ namespace xtd {
     /// @endcond
     ///
     /// @brief Provides a set of methods and properties that help you debug the execution of your code. This class cannot be inherited.
+    /// @par Namespace
+    /// xtd::diagnostics
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core diagnostics debug
