@@ -31,6 +31,8 @@ namespace xtd {
     /// @endcond
     
     /// @brief Contains environment native API.
+    /// @par Namespace
+    /// xtd::native
     /// @par Library
     /// xtd.core.native
     /// @ingroup xtd_core_native native

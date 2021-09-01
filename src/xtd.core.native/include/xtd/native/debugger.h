@@ -31,6 +31,8 @@ namespace xtd {
   /// @warning Internal use only
   namespace native {
     /// @brief Contains debugger native API.
+    /// @par Namespace
+    /// xtd::native
     /// @par Library
     /// xtd.core.native
     /// @ingroup xtd_core_native native
