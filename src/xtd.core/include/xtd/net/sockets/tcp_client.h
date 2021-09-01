@@ -300,7 +300,7 @@ namespace xtd {
 
         /// @brief Ends a pending asynchronous connection attempt.
         /// @param result An xtd::iasync_result object returned by a call to xtd::net::sockets::tcp_client::client::begin_connect.
-        /// @exception argument_exception asyncResult was not returned by a call to the xtd::net::sockets::socket::begin_connect method.
+        /// @exception argument_exception async_result was not returned by a call to the xtd::net::sockets::socket::begin_connect method.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks This method blocks until the operation is complete. To perform this operation synchronously, use a xtd::net::sockets::tcp_client::connect method.
