@@ -10,6 +10,8 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents the string container converter class.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
@@ -1036,6 +1038,8 @@ namespace xtd {
   };
  
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1050,6 +1054,8 @@ namespace xtd {
   }
 
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1064,6 +1070,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1078,6 +1086,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1092,6 +1102,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1106,6 +1118,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1120,6 +1134,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1134,6 +1150,8 @@ namespace xtd {
   }
 
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1148,6 +1166,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1162,6 +1182,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1176,6 +1198,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1190,6 +1214,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1204,6 +1230,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1218,6 +1246,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1232,6 +1262,8 @@ namespace xtd {
   }
 
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1246,6 +1278,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1260,6 +1294,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1274,6 +1310,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1288,6 +1326,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1302,6 +1342,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1316,6 +1358,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1330,6 +1374,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1349,6 +1395,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1363,6 +1411,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1377,6 +1427,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1391,6 +1443,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1405,6 +1459,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1419,6 +1475,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1433,6 +1491,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1447,6 +1507,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1461,6 +1523,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1475,6 +1539,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1489,6 +1555,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1503,6 +1571,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1517,6 +1587,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1531,6 +1603,8 @@ namespace xtd {
   }
 
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1545,6 +1619,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1559,6 +1635,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1573,6 +1651,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1587,6 +1667,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1601,6 +1683,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1615,6 +1699,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1629,6 +1715,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1643,6 +1731,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1657,6 +1747,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1671,6 +1763,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1685,6 +1779,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1699,6 +1795,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1713,6 +1811,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1727,6 +1827,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1741,6 +1843,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1755,6 +1859,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1769,6 +1875,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1783,6 +1891,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1797,6 +1907,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1811,6 +1923,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1825,6 +1939,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1839,6 +1955,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1853,6 +1971,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1867,6 +1987,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1881,6 +2003,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1895,6 +2019,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1909,6 +2035,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1923,6 +2051,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1937,6 +2067,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1951,6 +2083,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1965,6 +2099,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1979,6 +2115,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -1993,6 +2131,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2007,6 +2147,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2021,6 +2163,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2035,6 +2179,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2049,6 +2195,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2063,6 +2211,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2077,6 +2227,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2091,6 +2243,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2105,6 +2259,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2119,6 +2275,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2133,6 +2291,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2147,6 +2307,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2161,6 +2323,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2175,6 +2339,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2189,6 +2355,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2203,6 +2371,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2217,6 +2387,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2231,6 +2403,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2245,6 +2419,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2259,6 +2435,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2273,6 +2451,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2287,6 +2467,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2301,6 +2483,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2315,6 +2499,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2329,6 +2515,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2343,6 +2531,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2357,6 +2547,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2371,6 +2563,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2385,6 +2579,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2399,6 +2595,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2413,6 +2611,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2427,6 +2627,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2441,6 +2643,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2455,6 +2659,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2469,6 +2675,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2483,6 +2691,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2497,6 +2707,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2511,6 +2723,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2525,6 +2739,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2539,6 +2755,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2553,6 +2771,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2567,6 +2787,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2581,6 +2803,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -2595,6 +2819,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core

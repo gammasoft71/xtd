@@ -6,6 +6,8 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represent a static object. A static class can't be instancied (constructors are deleted).
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -21,6 +23,8 @@ namespace xtd {
   };
 
   /// @brief This keyword is use to represent a static object. A static object can't be instancied (constructors are deleted).
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core keywords
@@ -35,6 +39,8 @@ namespace xtd {
     : xtd::static_object
 
   /// @brief This keyword is use to represent a static object. A static object can't be instancied (constructors are deleted).
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core keywords

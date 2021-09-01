@@ -15,30 +15,54 @@ namespace xtd {
   /// @cond
   template<typename result_t>
   class delegate;
+  /// @endcond
 
+  /// @brief Represents a delegate, which is a data structure that refers to a static method or to a class instance && an instance method of that class.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// The following example shows how to define a delegate named myMethoddelegate. Instances of this delegate are created for an instance method && a static method of the nested mySampleClass class. The delegate for the instance method requires an instance of mySampleClass. The mySampleClass instance is saved in a variable named mySC.
+  /// @include delegate.cpp
   template<typename result_t>
   class delegate<result_t()> : public object {
   public:
+    /// @brief function_t pointer type
     using function_t = std::function <result_t()>;
     
+    /// @brief Initializes an empty delegate.
     delegate() = default;
+    /// @brief Initializes a delegate that invokes the specified delegate instance.
+    /// @param delegate The delegate instance.
     delegate(const delegate& delegate) noexcept : functions_(delegate.functions_) {}
+    /// @cond
     delegate(const function_t& function) noexcept { functions_.push_back(function); }
     delegate& operator=(const delegate& delegate) noexcept {
       functions_ = delegate.functions_;
       return *this;
     }
+    /// @endcond
     
+    /// @brief Initializes a delegate that invokes the specified instance method on the specified class instance.
+    /// @param object the class instance.
+    /// @param function the method instance.
     template<typename object1_t, typename object2_t>
     delegate(const object1_t& object, result_t(object2_t::*method)() const) noexcept {
       functions_.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object))));
     }
-
+    /// @brief Initializes a delegate that invokes the specified instance method on the specified class instance.
+    /// @param object the class instance.
+    /// @param function the method instance.
     template<typename object1_t, typename object2_t>
     delegate(const object1_t& object, result_t(object2_t::*method)()) noexcept {
       functions_.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object))));
     }
 
+    /// @brief invokes the method represented by the current delegate.
+    /// @param arguments The paramter list.
+    /// @return result_t The return value.
     result_t operator()() const {
       if (functions_.size() == 0) return result_t();
       
@@ -50,12 +74,23 @@ namespace xtd {
       return functions_.back()();
     }
 
+    /// @brief Gets the delegates array
+    /// @return The delagetes array.
     const std::vector<function_t>& functions() const {return functions_;}
     
+    /// @brief Clear delegates array.
     void clear() {functions_.clear();}
 
+    /// @brief invokes the method represented by the current delegate.
+    /// @param arguments The paramter list.
+    /// @return result_t The return value.
     result_t invoke() const { return operator()(); }
     
+    /// @brief Concatenates the invocation lists of an array of delegates.
+    /// @param delagates The array of delegates to combine.
+    /// @return Delegte A new delegate with an invocation list that concatenates the invocation lists of the delegates in the delegates array. Returns null if delegates is null, if delegates contains zero elements, || if every entry in delegates is null.
+    /// @remarks If the delegates array contains entries that are null, those entries are ignored.
+    /// @remarks The invocation list can contain duplicate entries; that is, entries that refer to the same method on the same object.
     static delegate combine(const std::vector<delegate>& delegates) noexcept {
       delegate result;
       for (const delegate& delegate : delegates) {
@@ -65,6 +100,11 @@ namespace xtd {
       return result;
     }
     
+    /// @brief Concatenates the invocation lists of two delegates.
+    /// @param a The delegate whose invocation list comes first.
+    /// @param b The delegate whose invocation list comes second.
+    /// @return delegateType A new delegate with an invocation list that concatenates the invocation lists of a and b in that order. Returns a if b is null, returns b if a is a null reference, and returns a null reference if both a and b are null references.
+    /// @remarks The invocation list can contain duplicate entries; that is, entries that refer to the same method on the same object.
     static delegate combine(const delegate& a, const delegate& b) noexcept {
       delegate result =  a;
       for (const function_t& function : b.functions_)
@@ -72,8 +112,15 @@ namespace xtd {
       return result;
     }
     
+    /// @brief Return if the delegate is empty.
+    /// @return bool Return true if delegate is empty; otherwhise false.
     bool is_empty() const noexcept { return functions_.size() == 0; }
     
+    /// @brief removes the last occurrence of the invocation list of a delegate from the invocation list of another delegate.
+    /// @param source The delegate from which to remove the invocation list of value.
+    /// @param value The delegate that supplies the invocation list to remove from the invocation list of source.
+    /// @return delegate A new delegate with an invocation list formed by taking the invocation list of source and removing the last occurrence of the invocation list of value, if the invocation list of value is found within the invocation list of source. Returns source if value is null || if the invocation list of value is ! found within the invocation list of source. Returns a null reference if the invocation list of value is equal to the invocation list of source || if source is a null reference.
+    /// @remarks If the invocation list of value matches a contiguous set of elements in the invocation list of source, then the invocation list of value is said to occur within the invocation list of source. If the invocation list of value occurs more than once in the invocation list of source, the last occurrence is removed.
     static delegate remove(const delegate& source, const delegate& value) noexcept {
       delegate result = source;
       for (const function_t& function : value.functions_) {
@@ -89,6 +136,11 @@ namespace xtd {
       return result;
     }
     
+    /// @brief removes all occurrences of the invocation list of a delegate from the invocation list of another delegate.
+    /// @param source The delegate from which to remove the invocation list of value.
+    /// @param value The delegate that supplies the invocation list to remove from the invocation list of source.
+    /// @return delegate A new delegate with an invocation list formed by taking the invocation list of source && removing all occurrences of the invocation list of value, if the invocation list of value is found within the invocation list of source. Returns source if value is null || if the invocation list of value is ! found within the invocation list of source. Returns a null reference if the invocation list of value is equal to the invocation list of source, if source contains only a series of invocation lists that are equal to the invocation list of value, || if source is a null reference.
+    /// @remarks If the invocation list of value matches a contiguous set of elements in the invocation list of source, then the invocation list of value is said to occur within the invocation list of source. If the invocation list of value occurs more than once in the invocation list of source, all occurrences are removed.
     static delegate remove_all(const delegate& source, const delegate& value) noexcept {
       delegate result = source;
       for (const function_t& function : value.functions_) {
@@ -103,6 +155,9 @@ namespace xtd {
       return result;
     }
     
+    /// @brief Determines whether this instance and another specified delegateType object have the same value.
+    /// @param value The delegateType to compare.
+    /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
     bool operator ==(const delegate& delegate) const noexcept {
       if (functions_.size() != delegate.functions_.size())
         return false;
@@ -114,6 +169,9 @@ namespace xtd {
       return true;
     }
     
+    /// @brief Determines whether this instance and another specified delegateType object have the same value.
+    /// @param value The delegateType to compare.
+    /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
     bool operator !=(const delegate& delegate) const { return !operator==(delegate); }
     
     delegate& operator=(const function_t& function) noexcept {
@@ -122,6 +180,7 @@ namespace xtd {
       return *this;
     }
     
+    /// @cond
     delegate& operator+=(const delegate& delegate) noexcept {
       *this = delegate::combine(*this, delegate);
       return *this;
@@ -147,6 +206,7 @@ namespace xtd {
       *this = delegate::remove(*this, delegate(function));
       return *this;
     }
+    // @endcond
     
   private:
     static bool are_equals(const std::function<result_t()>& fct1, const std::function<result_t()>& fct2) noexcept {
@@ -162,9 +222,10 @@ namespace xtd {
     
     std::vector<function_t> functions_;
   };
-  /// @endcond
   
   /// @brief Represents a delegate, which is a data structure that refers to a static method or to a class instance && an instance method of that class.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -174,13 +235,13 @@ namespace xtd {
   template<typename result_t, typename... arguments_t>
   class delegate<result_t(arguments_t...)> : public object {
   public:
-    /// @brief function_t pointer type
+    /// @brief no_arguments_function_t pointer type
     using no_arguments_function_t = std::function <result_t()>;
+    /// @brief function_t pointer type
     using function_t = std::function <result_t(arguments_t...)>;
 
     /// @brief Initializes an empty delegate.
     delegate() = default;
-
     /// @brief Initializes a delegate that invokes the specified delegate instance.
     /// @param delegate The delegate instance.
     delegate(const delegate& delegate) noexcept : no_arguments_functions_(delegate.no_arguments_functions_), functions_(delegate.functions_) {}
@@ -345,10 +406,15 @@ namespace xtd {
       return functions_.back()(arguments...);
     }
     
+    /// @brief Gets the no arguuments delegates array
+    /// @return The delagetes array.
     const std::vector<no_arguments_function_t>& no_arguments_functions() const {return no_arguments_functions_;}
     
+    /// @brief Gets the delegates array
+    /// @return The delagetes array.
     const std::vector<function_t>& functions() const {return functions_;}
     
+    /// @brief Clear delegates array.
     void clear() {
       no_arguments_functions_.clear();
       functions_.clear();
@@ -476,6 +542,7 @@ namespace xtd {
     /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
     bool operator!=(const delegate& delegate) const { return !operator==(delegate); }
 
+    /// @cond
     template<typename type_t>
     delegate& operator=(const type_t& function) noexcept {
       no_arguments_functions_.clear();
@@ -539,6 +606,7 @@ namespace xtd {
       *this = delegate::remove(*this, delegate(function));
       return *this;
     }
+    /// @endcond
 
   private:
     static bool are_equals(const std::function<result_t(arguments_t...)>& fct1, const std::function<result_t(arguments_t...)>& fct2) noexcept {

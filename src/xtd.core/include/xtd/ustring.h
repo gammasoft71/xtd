@@ -37,6 +37,8 @@ void __throw_ustring_format_exception_start_colon();
 
 namespace xtd {
   /// @brief Represents text as a sequence of UTF-8 code units.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system

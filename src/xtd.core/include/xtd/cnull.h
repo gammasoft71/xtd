@@ -14,5 +14,11 @@ int __get_file_attributes(const char*path);
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @brief Provides a null std::ostream.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   inline std::ostream cnull(nullptr);
 }

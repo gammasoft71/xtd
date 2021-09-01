@@ -17,6 +17,8 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -30,6 +32,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -43,6 +47,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -55,6 +61,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -68,6 +76,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -81,6 +91,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -93,6 +105,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into char32._t
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -105,6 +119,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into char32._t
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -117,6 +133,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into char32._t
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -129,6 +147,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into char32._t
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -141,6 +161,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into char32._t
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -153,6 +175,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into std::string.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -166,6 +190,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into std::string.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -179,6 +205,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into std::string.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -191,6 +219,8 @@ namespace xtd {
     return xtd::ustring(std::u16string(s, s + n));
   }
   /// @brief Used to convert specified value into std::string.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -203,6 +233,8 @@ namespace xtd {
     return xtd::ustring(std::u32string(s, s + n));
   }
   /// @brief Used to convert specified value into std::string.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -216,6 +248,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into std::string.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -229,6 +263,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into std::string.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -242,6 +278,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into std::string.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -255,6 +293,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into std::string.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -268,6 +308,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into std::string.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -281,6 +323,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into std::string.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -294,6 +338,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into std::string.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -307,6 +353,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into std::string.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -320,6 +368,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into std::string.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -333,6 +383,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into std::string.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -346,6 +398,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into std::string.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -359,6 +413,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into std::string.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -372,6 +428,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into std::string.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -385,6 +443,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into std::string.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -398,6 +458,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into std::string.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -411,6 +473,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into std::string.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -424,6 +488,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into std::string.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -437,6 +503,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -450,6 +518,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -463,6 +533,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -475,6 +547,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -488,6 +562,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -501,6 +577,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -513,6 +591,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -526,6 +606,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -539,6 +621,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -551,6 +635,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -564,6 +650,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -577,6 +665,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -589,6 +679,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -602,6 +694,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -615,6 +709,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -627,6 +723,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -640,6 +738,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -653,6 +753,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -665,6 +767,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -678,6 +782,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -691,6 +797,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -703,6 +811,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -716,6 +826,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
@@ -729,6 +841,8 @@ namespace xtd {
   }
 
   /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals
