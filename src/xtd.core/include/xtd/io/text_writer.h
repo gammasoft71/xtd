@@ -21,6 +21,8 @@ namespace xtd {
     /// @endcond
 
     /// @brief Represents a writer that can write a sequential series of characters.
+    /// @par Namespace
+    /// xtd::io
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core io
