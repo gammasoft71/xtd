@@ -15,6 +15,8 @@ namespace xtd {
   /// @brief Supports all classes in the xtd class hierarchy and provides low-level services to derived classes.
   /// This is the ultimate base class of all classes in the xtd.
   /// It is the root of the type hierarchy.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core

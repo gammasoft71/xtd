@@ -10,6 +10,8 @@ namespace xtd {
   /// @brief Represents the method that will handle the cancel_key_press event of a xtd::console.
   /// @param sender The source of the event.
   /// @param e A xtd::console_cancel_event_args object that contains the event data.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core events

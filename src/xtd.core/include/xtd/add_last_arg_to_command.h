@@ -23,6 +23,8 @@
 /// @param command The variadic arguments command.
 /// @param last_arg The last argument to add to variadic arguments
 /// @param ... Variadic arguments.
+/// @par Namespace
+/// xtd
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core

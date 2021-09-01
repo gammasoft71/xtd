@@ -12,6 +12,8 @@ namespace xtd {
   /// @brief Represents the method that will handle an event that has no event data.
   /// @param sender The source of the event.
   /// @param e An object that contains no event data.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core events

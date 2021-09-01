@@ -21,6 +21,8 @@ namespace xtd {
   /// @endcond
 
   /// @brief Used to obtain the type string for a type. A typeof_ expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core keywords

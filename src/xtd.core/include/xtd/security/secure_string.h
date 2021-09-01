@@ -10,6 +10,8 @@ namespace xtd {
   /// @brief Provides the underlying structure of the common language runtime security system, including base classes for permissions.
   namespace security {
     /// @brief Represents text that should be kept confidential, such as by deleting it from computer memory when no longer needed. This class cannot be inherited.
+    /// @par Namespace
+    /// xtd::security
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core security

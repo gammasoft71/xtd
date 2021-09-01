@@ -43,6 +43,8 @@ namespace xtd {
   /// @endcond
   
   /// @brief Return true if specified value is the specified bool. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -59,6 +61,8 @@ namespace xtd {
   }
   
   /// @brief Return true if specified value is the specified decimal_t. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -75,6 +79,8 @@ namespace xtd {
   }
   
   /// @brief Return true if specified value is the specified double. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -91,6 +97,8 @@ namespace xtd {
   }
   
   /// @brief Return true if specified value is the specified float. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -107,6 +115,8 @@ namespace xtd {
   }
   
   /// @brief Return true if specified value is the specified int8_t. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -123,6 +133,8 @@ namespace xtd {
   }
 
   /// @brief Return true if specified value is the specified int16_t. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -139,6 +151,8 @@ namespace xtd {
   }
   
   /// @brief Return true if specified value is the specified int32_t. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -155,6 +169,8 @@ namespace xtd {
   }
   
   /// @brief Return true if specified value is the specified int64_t. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -171,6 +187,8 @@ namespace xtd {
   }
 
   /// @brief Return true if specified value is the specified llong_t. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -187,6 +205,8 @@ namespace xtd {
   }
  
   /// @brief Return true if specified value is the specified uint8_t. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -203,6 +223,8 @@ namespace xtd {
   }
   
   /// @brief Return true if specified value is the specified uint16_t. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -219,6 +241,8 @@ namespace xtd {
   }
     
   /// @brief Return true if specified value is the specified uint32_t. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -235,6 +259,8 @@ namespace xtd {
   }
   
   /// @brief Return true if specified value is the specified uint64_t. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -251,6 +277,8 @@ namespace xtd {
   }
   
   /// @brief Return true if specified value is the specified ullong_t. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
