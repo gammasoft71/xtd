@@ -6,7 +6,7 @@
 #include "../tunit_export.h"
 #include "assert.h"
 #include "assert_error.h"
-#include "line_info.h"
+#include <xtd/diagnostics/stack_frame.h>
 #include <functional>
 #include <chrono>
 #include <string>
@@ -32,8 +32,8 @@ namespace xtd {
 
     public:
       test() = default;
-      test(const std::string& name, const std::function<void()>& method, const xtd::tunit::line_info& caller) noexcept : test(name, method, false, caller) {}
-      test(const std::string& name, const std::function<void()>& method, bool ignore, const xtd::tunit::line_info& info) noexcept :  info_(info), method_(method), name_(name), status_(ignore ? test_status::ignored : test_status::not_started) {}
+      test(const std::string& name, const std::function<void()>& method, const xtd::diagnostics::stack_frame& caller) noexcept : test(name, method, false, caller) {}
+      test(const std::string& name, const std::function<void()>& method, bool ignore, const xtd::diagnostics::stack_frame& stack_frame) noexcept :  stack_frame_(stack_frame), method_(method), name_(name), status_(ignore ? test_status::ignored : test_status::not_started) {}
       
       bool aborted() const noexcept {return status_ == test_status::aborted;}
       
@@ -49,7 +49,7 @@ namespace xtd {
       
       bool succeed() const noexcept {return status_ == test_status::succeed;}
       
-      const xtd::tunit::line_info line_info() const noexcept {return info_;}
+      const xtd::diagnostics::stack_frame stack_frame() const noexcept {return stack_frame_;}
       
       std::function<void()> method() const noexcept {return method_;}
       
@@ -87,7 +87,7 @@ namespace xtd {
       static const unit_test* current_unit_test_;
       std::string actual_;
       std::string expect_;
-      xtd::tunit::line_info info_;
+      xtd::diagnostics::stack_frame stack_frame_ = xtd::diagnostics::stack_frame::empty();
       std::string message_;
       std::function<void()> method_;
       std::string name_;

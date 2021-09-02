@@ -5,7 +5,7 @@ namespace unit_tests {
   class test_class_(test_assert_abort_aborted) {
   public:
     void test_method_(test_case_aborted) {
-      xtd::tunit::assert::abort(xtd::tunit::line_info {"test_assert_abort_aborted.cpp", 8});
+      xtd::tunit::assert::abort(xtd::diagnostics::stack_frame {"test_assert_abort_aborted.cpp", 8});
     }
   };
 }

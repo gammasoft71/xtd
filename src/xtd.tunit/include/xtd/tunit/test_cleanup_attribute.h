@@ -11,10 +11,10 @@ namespace xtd {
     class test_cleanup_attribute {
     public:
       template<typename test_class_t>
-      test_cleanup_attribute(const std::string& name, test_class_t& test_class, void (*method)()) noexcept :  test_cleanup_attribute(name, test_class, method, xtd::tunit::line_info()) {}
+      test_cleanup_attribute(const std::string& name, test_class_t& test_class, void (*method)()) noexcept :  test_cleanup_attribute(name, test_class, method, xtd::diagnostics::stack_frame()) {}
       
       template<typename test_class_t>
-      test_cleanup_attribute(const std::string& name, test_class_t& test_class, void (*method)(), const xtd::tunit::line_info& caller) noexcept {test_class.add_test_cleanup({name, method, caller});}
+      test_cleanup_attribute(const std::string& name, test_class_t& test_class, void (*method)(), const xtd::diagnostics::stack_frame& caller) noexcept {test_class.add_test_cleanup({name, method, caller});}
     };
   }
 }
@@ -23,6 +23,6 @@ namespace xtd {
   __##method_name##_unused() = delete; \
   class __test_cleanup_attribute : public xtd::tunit::test_cleanup_attribute { \
   public:\
-    template<typename test_class> __test_cleanup_attribute(test_class& test) : test_cleanup_attribute(#method_name, test, &test_class::method_name, {__func__, __FILE__, __LINE__}) {} \
+    template<typename test_class> __test_cleanup_attribute(test_class& test) : test_cleanup_attribute(#method_name, test, &test_class::method_name, {__FILE__, __LINE__, __func__}) {} \
   } __test_cleanup_attribute {*this}; \
   static void method_name()
