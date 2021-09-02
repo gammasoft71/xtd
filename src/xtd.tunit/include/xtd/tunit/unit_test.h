@@ -24,6 +24,8 @@ namespace xtd {
     /// @endcond
 
     /// @brief The template class.
+    /// @par Namespace
+    /// xtd::tunit
     /// @par Library
     /// xtd.tunit
     /// @ingroup xtd_tunit
