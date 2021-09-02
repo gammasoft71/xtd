@@ -16,6 +16,8 @@ namespace xtd {
     /// @endcond
 
     /// @brief Displays a dialog box from which the user can select a file.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms

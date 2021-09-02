@@ -17,6 +17,8 @@ namespace xtd {
     /// @endcond
 
     /// @brief Provides data for the paint event.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events

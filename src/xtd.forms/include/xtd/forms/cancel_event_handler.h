@@ -13,6 +13,8 @@ namespace xtd {
     /// @brief Represents the method that handles a cancelable event.
     /// @param sender The source of the event.
     /// @param e A cancel_event_args that contains the event data.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events

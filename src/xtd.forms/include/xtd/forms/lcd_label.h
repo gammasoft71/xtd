@@ -17,6 +17,8 @@
 namespace xtd {
   namespace forms {
     /// @brief Represents a lcd label.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls

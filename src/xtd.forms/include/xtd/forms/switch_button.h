@@ -8,6 +8,8 @@
 namespace xtd {
   namespace forms {
     /// @brief Represents a standard Windows switch button.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls

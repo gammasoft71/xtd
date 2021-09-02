@@ -12,11 +12,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a Windows check_box.
-    /// @par Appearance
-    /// | Mode  | Windows                              | macOS                                | Gnome                                |
-    /// |-------|--------------------------------------|--------------------------------------|--------------------------------------|
-    /// | Light | @image html control_check_box_w.png  | @image html control_check_box_m.png  | @image html control_check_box_g.png  |
-    /// | Dark  | @image html control_check_box_wd.png | @image html control_check_box_md.png | @image html control_check_box_gd.png |
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
@@ -28,6 +25,11 @@ namespace xtd {
     /// @remarks The flat_style property determines the style and appearance of the control. If the flat_style property is set to flat_style::system, the user's operating system determines the appearance of the control.
     /// @note When the flat_style property is set to flat_style::system, the check_align property is ignored and the control is displayed using the content_alignment::middle_left or content_alignment::middle_right alignment. If the check_align property is set to one of the right alignments, the control is displayed using the content_alignment::middle_right alignment; otherwise, it is displayed using the content_alignment::middle_left alignment.
     /// @remarks The following describes an indeterminate state: You have a check_box that determines if the selected text in a rich_text_box is bold. When you select text you can click the check_box to bold the selection. Likewise, when you select some text, the check_box displays whether the selected text is bold. If your selected text contains text that is bold and normal, the check_box will have an indeterminate state.
+    /// @par Appearance
+    /// | Mode  | Windows                              | macOS                                | Gnome                                |
+    /// |-------|--------------------------------------|--------------------------------------|--------------------------------------|
+    /// | Light | @image html control_check_box_w.png  | @image html control_check_box_m.png  | @image html control_check_box_g.png  |
+    /// | Dark  | @image html control_check_box_wd.png | @image html control_check_box_md.png | @image html control_check_box_gd.png |
     /// @par Examples
     /// The following code example demonstrate the use of check_box control.
     /// @include check_box.cpp

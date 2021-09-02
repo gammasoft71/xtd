@@ -18,6 +18,8 @@ namespace xtd {
     /// @endcond
   
     /// @brief Represents an individual item that is displayed within a main_menu or context_menu.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms menus_and_toolbars

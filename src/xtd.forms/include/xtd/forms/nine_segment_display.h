@@ -7,6 +7,8 @@
 namespace xtd {
   namespace forms {
     /// @brief represent a nine segment display class
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
