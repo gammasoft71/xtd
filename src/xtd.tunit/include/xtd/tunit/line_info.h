@@ -10,6 +10,8 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @brief line_info information class is used to store current file, current line and current function information.
+    /// @par Namespace
+    /// xtd::tunit
     /// @par Examples
     /// The following example shows how to use the line_info
     /// @include line_info.cpp

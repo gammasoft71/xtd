@@ -9,6 +9,8 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @brief The assume class contains a collection of static methods that implement the most common assertions used in xtd::tUnit.
+    /// @par Namespace
+    /// xtd::tunit
     /// @par Library
     /// xtd.tunit
     /// @ingroup xtd_tunit
