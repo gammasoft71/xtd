@@ -5,7 +5,7 @@ namespace unit_tests {
   class test_class_(test_assert_is_succeed_succeed) {
   public:
     void test_method_(test_case_succeed) {
-      xtd::tunit::assert::succeed(xtd::tunit::line_info {"test_assert_is_succeed_succeed.cpp", 8});
+      xtd::tunit::assert::succeed(xtd::diagnostics::stack_frame {"test_assert_is_succeed_succeed.cpp", 8});
     }
   };
 }

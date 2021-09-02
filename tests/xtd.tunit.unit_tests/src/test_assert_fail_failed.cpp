@@ -5,7 +5,7 @@ namespace unit_tests {
   class test_class_(test_assert_fail_failed) {
   public:
     void test_method_(test_case_failed) {
-      xtd::tunit::assert::fail(xtd::tunit::line_info {"test_assert_fail_failed.cpp", 8});
+      xtd::tunit::assert::fail(xtd::diagnostics::stack_frame {"test_assert_fail_failed.cpp", 8});
     }
   };
 }

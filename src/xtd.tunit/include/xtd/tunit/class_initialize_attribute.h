@@ -21,15 +21,15 @@ namespace xtd {
       /// @param test_class xtd::tunit::class_test containing initialize method.
       /// @param method Initialize class method.
       template<typename test_class_t>
-      class_initialize_attribute(const std::string& name, test_class_t& test_class, void (*method)()) noexcept :  class_initialize_attribute(name, test_class, method, xtd::tunit::line_info()) {}
+      class_initialize_attribute(const std::string& name, test_class_t& test_class, void (*method)()) noexcept :  class_initialize_attribute(name, test_class, method, xtd::diagnostics::stack_frame()) {}
       
       /// @brief Creates new instance of classinitialize_attribute attribute.
       /// @param name Name of attribute
       /// @param test_class xtd::tunit::class_test containing initialize method.
       /// @param method Initialize class method.
-      /// @param line_info Contains information about current file and current line.
+      /// @param stack_frame Contains information about current file and current line.
       template<typename test_class_t>
-      class_initialize_attribute(const std::string& name, test_class_t& test_class, void (*method)(), const xtd::tunit::line_info& caller) noexcept {test_class.add_class_initialize({name, method, caller});}
+      class_initialize_attribute(const std::string& name, test_class_t& test_class, void (*method)(), const xtd::diagnostics::stack_frame& caller) noexcept {test_class.add_class_initialize({name, method, caller});}
     };
   }
 }
@@ -43,7 +43,7 @@ namespace xtd {
   __##method_name##_static() {} \
   class __class_initialize_attribute : public xtd::tunit::class_initialize_attribute { \
   public:\
-    template<typename test_class> __class_initialize_attribute(test_class& test) : class_initialize_attribute(#method_name, test, &method_name, {__func__, __FILE__, __LINE__}) {__##method_name##_static();} \
+    template<typename test_class> __class_initialize_attribute(test_class& test) : class_initialize_attribute(#method_name, test, &method_name, {__FILE__, __LINE__, __func__}) {__##method_name##_static();} \
   } __class_initialize_attribute {*this}; \
   static void method_name()
 
