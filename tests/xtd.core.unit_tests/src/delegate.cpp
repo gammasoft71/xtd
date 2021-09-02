@@ -11,17 +11,17 @@ namespace unit_tests {
   public:
     void test_method_(create_empty_delegate_and_test_is_empty) {
       delegate<void()> d;
-      assert::is_true(d.is_empty());
+      assert::is_true(d.is_empty(), csf_);
     }
 
     void test_method_(create_empty_delegate_and_invoke_it) {
       delegate<void()> d;
-      assert::does_not_throw_([&] {d.invoke();});
+      assert::does_not_throw([&] {d.invoke();}, csf_);
     }
 
     void test_method_(create_empty_delegate_and_invoke_it_with_functor) {
       delegate<void()> d;
-      assert::does_not_throw_([&] {d();});
+      assert::does_not_throw([&] {d();}, csf_);
     }
 
     static string static_method1() {
@@ -30,17 +30,17 @@ namespace unit_tests {
     
     void test_method_(create_delegate_with_static_method_and_test_is_empty) {
       delegate<string()> d(static_method1);
-      assert::is_false(d.is_empty());
+      assert::is_false(d.is_empty(), csf_);
     }
     
     void test_method_(create_delegate_with_static_method_and_invoke_it) {
       delegate<string()> d(static_method1);
-      assert::are_equal("static_method1", d.invoke());
+      assert::are_equal("static_method1", d.invoke(), csf_);
     }
     
     void test_method_(create_delegate_with_static_method_and_invoke_it_with_functor) {
       delegate<string()> d(static_method1);
-      assert::are_equal("static_method1", d());
+      assert::are_equal("static_method1", d(), csf_);
     }
     
     class container {
@@ -57,52 +57,52 @@ namespace unit_tests {
     void test_method_(create_delegate_with_member_method_and_test_is_empty) {
       container c;
       delegate<string()> d = {c, &container::member_method1};
-      assert::is_false(d.is_empty());
+      assert::is_false(d.is_empty(), csf_);
     }
     
     void test_method_(create_delegate_with_member_method_and_invoke_it) {
       container c;
       delegate<string()> d = {c, &container::member_method1};
-      assert::are_equal("member_method1", d.invoke());
+      assert::are_equal("member_method1", d.invoke(), csf_);
     }
     
     void test_method_(create_delegate_with_member_method_and_invoke_it_with_functor) {
       container c;
       delegate<string()> d = {c, &container::member_method1};
-      assert::are_equal("member_method1", d());
+      assert::are_equal("member_method1", d(), csf_);
     }
     
     void test_method_(create_delegate_with_functor_method_and_test_is_empty) {
       container c;
       delegate<string()> d(c);
-      assert::is_false(d.is_empty());
+      assert::is_false(d.is_empty(), csf_);
     }
     
     void test_method_(create_delegate_with_functor_method_and_invoke_it) {
       container c;
       delegate<string()> d(c);
-      assert::are_equal("functor_method1", d.invoke());
+      assert::are_equal("functor_method1", d.invoke(), csf_);
     }
     
     void test_method_(create_delegate_with_functor_method_and_invoke_it_with_functor) {
       container c;
       delegate<string()> delegate(c);
-      assert::are_equal("functor_method1", delegate());
+      assert::are_equal("functor_method1", delegate(), csf_);
     }
     
     void test_method_(create_delegate_with_lambda_expression_and_test_is_empty) {
       delegate<string()> d([]()->string {return "lambda_expression1";});
-      assert::is_false(d.is_empty());
+      assert::is_false(d.is_empty(), csf_);
     }
     
     void test_method_(create_delegate_with_lambda_expression_and_invoke_it) {
       delegate<string()> d([]()->string {return "lambda_expression1";});
-      assert::are_equal("lambda_expression1", d.invoke());
+      assert::are_equal("lambda_expression1", d.invoke(), csf_);
     }
     
     void test_method_(create_delegate_with_lambda_expression_and_invoke_it_with_functor) {
       delegate<string()> d([]()->string {return "lambda_expression1";});
-      assert::are_equal("lambda_expression1", d());
+      assert::are_equal("lambda_expression1", d(), csf_);
     }
   };
 }

@@ -10,7 +10,7 @@ namespace unit_tests {
   class test_class_(test_parse) {
   public:
     void test_method_(parse_string) {
-      assert::are_equal("string", xtd::parse<string>("string"));
+      assert::are_equal("string", xtd::parse<string>("string"), csf_);
     }
   };
 }

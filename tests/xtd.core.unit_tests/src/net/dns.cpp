@@ -16,12 +16,12 @@ namespace unit_tests {
     
     void test_method_(get_host_addresses_from_local_host_addrress_strring) {
       vector<ip_address> addresses = dns::get_host_addresses("127.0.0.1");
-      collection_assert::are_equal({ip_address(127, 0, 0, 1)}, addresses);
+      collection_assert::are_equal({ip_address(127, 0, 0, 1)}, addresses, csf_);
     }
     
     void test_method_(get_host_addresses_from_local_host_name) {
       vector<ip_address> addresses = dns::get_host_addresses("localhost");
-      collection_assert::are_equal({ip_address(127, 0, 0, 1)}, addresses);
+      collection_assert::are_equal({ip_address(127, 0, 0, 1)}, addresses, csf_);
     }
 
     void test_method_(get_host_addresses_from_host_name) {
@@ -35,7 +35,7 @@ namespace unit_tests {
       // On Windows the local host name is the computer host name!
       assert::are_equal("localhost", host_entry.host_name().to_lower(), csf_);
 #endif
-      collection_assert::are_equal({ip_address(127, 0, 0, 1)}, host_entry.address_list());
+      collection_assert::are_equal({ip_address(127, 0, 0, 1)}, host_entry.address_list(), csf_);
     }
 
     void test_method_(get_host_entry_from_local_host_name) {
@@ -44,7 +44,7 @@ namespace unit_tests {
       // On Windows the local host name is the computer host name!
       assert::are_equal("localhost", host_entry.host_name().to_lower(), csf_);
 #endif
-      collection_assert::are_equal({ip_address(127, 0, 0, 1)}, host_entry.address_list());
+      collection_assert::are_equal({ip_address(127, 0, 0, 1)}, host_entry.address_list(), csf_);
    }
     
     void test_method_(get_host_entry_from_host_name) {

@@ -11,14 +11,14 @@ namespace unit_tests {
       arithmetic_exception e;
       assert::are_equal_(std::system_category(), e.error_code().category());
       assert::is_false_(e.inner_exception().has_value());
-      assert::is_empty(e.file_path());
-      assert::is_empty(e.help_link());
+      assert::is_empty_(e.file_path());
+      assert::is_empty_(e.help_link());
       assert::are_equal_(0, e.error_code().value());
       assert::are_equal_(0U, e.line_numer());
-      assert::is_empty(e.member_name());
+      assert::is_empty_(e.member_name());
       assert::are_equal_("Overflow or underflow in the arithmetic operation.", e.message());
       assert::are_equal_("xtd::arithmetic_exception", e.name());
-      assert::is_empty(e.stack_trace());
+      assert::is_empty_(e.stack_trace());
       assert::are_equal_("xtd::arithmetic_exception : Overflow or underflow in the arithmetic operation.", e.to_string());
       assert::are_equal_("Overflow or underflow in the arithmetic operation.", e.what());
     }
@@ -44,14 +44,14 @@ namespace unit_tests {
       arithmetic_exception e("");
       assert::are_equal_(0, e.error_code().value());
       assert::are_equal_(std::system_category(), e.error_code().category());
-      assert::is_empty(e.file_path());
-      assert::is_empty(e.help_link());
+      assert::is_empty_(e.file_path());
+      assert::is_empty_(e.help_link());
       assert::is_false_(e.inner_exception().has_value());
       assert::are_equal_(0U, e.line_numer());
-      assert::is_empty(e.member_name());
+      assert::is_empty_(e.member_name());
       assert::are_equal_("", e.message());
       assert::are_equal_("xtd::arithmetic_exception", e.name());
-      assert::is_empty(e.stack_trace());
+      assert::is_empty_(e.stack_trace());
       assert::are_equal_("xtd::arithmetic_exception", e.to_string());
       assert::are_equal_("xtd::arithmetic_exception", e.what());
     }
@@ -77,14 +77,14 @@ namespace unit_tests {
       arithmetic_exception e("Test excpetion message.");
       assert::are_equal_(0, e.error_code().value());
       assert::are_equal_(std::system_category(), e.error_code().category());
-      assert::is_empty(e.file_path());
-      assert::is_empty(e.help_link());
+      assert::is_empty_(e.file_path());
+      assert::is_empty_(e.help_link());
       assert::is_false_(e.inner_exception().has_value());
       assert::are_equal_(0U, e.line_numer());
-      assert::is_empty(e.member_name());
+      assert::is_empty_(e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
       assert::are_equal_("xtd::arithmetic_exception", e.name());
-      assert::is_empty(e.stack_trace());
+      assert::is_empty_(e.stack_trace());
       assert::are_equal_("xtd::arithmetic_exception : Test excpetion message.", e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
@@ -162,15 +162,15 @@ namespace unit_tests {
       arithmetic_exception e("Test excpetion message.", inner_exception);
       assert::are_equal_(0, e.error_code().value());
       assert::are_equal_(std::system_category(), e.error_code().category());
-      assert::is_empty(e.file_path());
-      assert::is_empty(e.help_link());
+      assert::is_empty_(e.file_path());
+      assert::is_empty_(e.help_link());
       assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get());
       assert::are_equal_(inner_exception.what(), e.inner_exception().value().get().what());
       assert::are_equal_(0U, e.line_numer());
-      assert::is_empty(e.member_name());
+      assert::is_empty_(e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
       assert::are_equal_("xtd::arithmetic_exception", e.name());
-      assert::is_empty(e.stack_trace());
+      assert::is_empty_(e.stack_trace());
       assert::are_equal_("xtd::arithmetic_exception : Test excpetion message.", e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }

@@ -72,12 +72,12 @@ namespace unit_tests {
     
     void test_method_(end_point_create) {
       tend_point ep;
-      assert::throws<not_implemented_exception>([&]{ep.create(socket_address(address_family::inter_network));});
+      assert::throws<not_implemented_exception>([&]{ep.create(socket_address(address_family::inter_network));}, csf_);
     }
     
     void test_method_(end_point_serialize) {
       tend_point ep;
-      assert::throws<not_implemented_exception>([&]{ep.serialize();});
+      assert::throws<not_implemented_exception>([&]{ep.serialize();}, csf_);
     }
   };
 }
