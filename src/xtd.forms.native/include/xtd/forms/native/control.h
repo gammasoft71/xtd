@@ -50,6 +50,8 @@ namespace xtd {
       /// @endcond
 
       /// @brief Contains control native API.
+      /// @par Namespace
+      /// xtd::forms::native
       /// @par Library
       /// xtd.forms.native
       /// @ingroup xtd_forms_native native
