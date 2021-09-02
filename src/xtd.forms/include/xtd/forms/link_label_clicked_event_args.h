@@ -16,6 +16,8 @@ namespace xtd {
     /// @endcond
 
     /// @brief Represents a Windows label control that can display hyperlinks.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms forms

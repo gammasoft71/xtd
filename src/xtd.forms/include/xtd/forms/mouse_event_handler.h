@@ -13,6 +13,8 @@ namespace xtd {
     /// @brief Represents the method that will handle the MouseDown, MouseUp, or MouseMove event of a form, control, or other component.
     /// @param sender The source of the event.
     /// @param e A xtd::forms::mouse_event_args that contains the event data.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events

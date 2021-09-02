@@ -15,6 +15,8 @@ namespace xtd {
     /// @endcond
 
     /// @brief Represents a common dialog box that displays exception box.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms dialogs

@@ -24,6 +24,8 @@ namespace xtd {
     /// @warning Internal use only
     namespace native {
       /// @brief Contains icon native API.
+      /// @par Namespace
+      /// xtd::drawing::native
       /// @par Library
       /// xtd.drawing.native
       /// @ingroup xtd_drawing_native native

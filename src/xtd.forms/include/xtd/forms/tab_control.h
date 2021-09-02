@@ -15,6 +15,8 @@ namespace xtd {
     /// @endcond
   
     /// @brief Manages a related set of tab pages.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms containers

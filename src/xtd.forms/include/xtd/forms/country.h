@@ -18,6 +18,8 @@ namespace xtd {
     /// @endcond
 
     /// @brief Represent a country with name, alpha codes, numeric code, emoticon and flag.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms components

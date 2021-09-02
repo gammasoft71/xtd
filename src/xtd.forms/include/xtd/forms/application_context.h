@@ -14,6 +14,8 @@ namespace xtd {
     /// @endcond
     
     /// @brief Specifies the contextual information about an application thread.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms application

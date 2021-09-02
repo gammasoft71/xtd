@@ -10,6 +10,13 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @brief Implements the basic functionality required by text controls.
+    /// @par Namespace
+    /// xtd::forms
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms
+    /// @remarks This class implements the core features of text manipulation controls, such as xtd::forms::text_box and xtd::forms::rich_text_box. These include text selection, xtd::forms::clipboard functionality, multiline text control support, and many events.
     class text_box_base : public control {
     public:
       /// @brief Gets a value indicating whether pressing the TAB key in a multiline text box control types a TAB character in the control instead of moving the focus to the next control in the tab order.

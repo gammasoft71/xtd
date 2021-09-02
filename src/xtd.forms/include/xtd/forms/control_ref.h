@@ -13,18 +13,24 @@ namespace xtd {
     /// @endcond
     
     /// @brief Represents a control reference.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
     using control_ref = std::reference_wrapper<control>;
     
     /// @brief Represents a const control reference.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
     using const_control_ref = std::reference_wrapper<const control>;
 
     /// @brief Represents less comparator for control_ref.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
@@ -39,6 +45,8 @@ namespace xtd {
     };
 
     /// @brief Represents less comparator for const const_control_ref.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms

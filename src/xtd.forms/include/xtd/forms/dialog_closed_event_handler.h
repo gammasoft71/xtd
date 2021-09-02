@@ -10,6 +10,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Provides handler for a dialog closed event.
+    /// @par Namespace
+    /// xtd::forms
     /// @param sender The source of the event.
     /// @param e An dialog_closed_event_args that contains event data.
     /// @par Library

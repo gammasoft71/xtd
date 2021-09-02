@@ -14,6 +14,8 @@ namespace xtd {
     /// @brief Represents the method that will handle the key_press event of a control.
     /// @param sender The source of the event.
     /// @param e A key_press_event_args that contains the event data.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events

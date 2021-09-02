@@ -13,6 +13,8 @@ namespace xtd {
     /// @brief Represents the method that will handle the control_added and control_removed events of the control class.
     /// @param sender The source of the event.
     /// @param e A control_event_args that contains the event data.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events

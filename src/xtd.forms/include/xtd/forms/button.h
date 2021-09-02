@@ -14,11 +14,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a Windows button control.
-    /// @par Appearance
-    /// | Mode  | Windows                           | macOS                             | Gnome                             |
-    /// |-------|-----------------------------------|-----------------------------------|-----------------------------------|
-    /// | Light | @image html control_button_w.png  | @image html control_button_m.png  | @image html control_button_g.png  |
-    /// | Dark  | @image html control_button_wd.png | @image html control_button_md.png | @image html control_button_gd.png |
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
@@ -27,6 +24,11 @@ namespace xtd {
     /// @remarks When you display a form using the show_dialog method, you can use the dialog_result property of a button to specify the return value of show_dialog.
     /// @remarks You can change the button's appearance. For example, to make it appear flat for a Web look, set the flat_style property to flat_style::flat. The flat_style property can also be set to flat_style::popup, which appears flat until the mouse pointer passes over the button; then the button takes on the standard Windows button appearance.
     /// @note If the control that has focus accepts and processes the ENTER key press, the button does not process it. For example, if a multiline text_box or another button has focus, that control processes the ENTER key press instead of the accept button.
+    /// @par Appearance
+    /// | Mode  | Windows                           | macOS                             | Gnome                             |
+    /// |-------|-----------------------------------|-----------------------------------|-----------------------------------|
+    /// | Light | @image html control_button_w.png  | @image html control_button_m.png  | @image html control_button_g.png  |
+    /// | Dark  | @image html control_button_wd.png | @image html control_button_md.png | @image html control_button_gd.png |
     /// @par Examples
     /// The following code example demonstrate the use of button control.
     /// @include button.cpp

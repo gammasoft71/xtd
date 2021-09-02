@@ -52,6 +52,8 @@ namespace xtd {
     /// @endcond
     
     /// @brief Defines the base class for controls, which are components with visual representation.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
@@ -310,7 +312,7 @@ namespace xtd {
       /// @remarks The bounds of the control include the nonclient elements such as scroll bars, borders, title bars, and menus.
       virtual drawing::rectangle bounds() const {return {location_, size_};}
       /// @brief Sets the size and location of the control including its nonclient elements, in pixels, relative to the parent control.
-      /// @param A rectangle in pixels relative to the parent control that represents the size and location of the control including its nonclient elements.
+      /// @param bounds A rectangle in pixels relative to the parent control that represents the size and location of the control including its nonclient elements.
       /// @return Current control.
       /// @remarks The bounds of the control include the nonclient elements such as scroll bars, borders, title bars, and menus. The Set_bounds_core method is called to set the bounds property. The bounds property is not always changed through its set method so you should override the set_bounds_core method to ensure that your code is executed when the bounds property is set.
       virtual control& bounds(const drawing::rectangle& bounds) {
@@ -319,7 +321,7 @@ namespace xtd {
       }
       
       /// @brief Gets a value indicating whether the control can receive focus.
-      /// @brief true if the control can receive focus; otherwise, false.
+      /// @return true if the control can receive focus; otherwise, false.
       /// @remarks In order for a control to receive input focus, the control must have a handle assigned to it, and the visible and enabled properties must both be set to true for both the control and all its parent controls, and the control must be a form or the control's outermost parent must be a form.
       virtual bool can_focus() const;
       

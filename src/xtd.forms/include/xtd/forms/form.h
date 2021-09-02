@@ -26,6 +26,8 @@ namespace xtd {
     /// @endcond
     
     /// @brief Represents a window or dialog box that makes up an application's user interface.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms forms

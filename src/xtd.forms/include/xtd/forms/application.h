@@ -27,6 +27,8 @@ namespace xtd {
     /// @endcond
 
     /// @brief Represents a collection of form objects.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
