@@ -8,6 +8,7 @@
 #include <stdexcept>
 #include "parse.h"
 #include "types.h"
+#include "unused.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -342,7 +343,7 @@ namespace xtd {
   template<typename new_type_t, typename current_type_t>
   bool is(std::shared_ptr<current_type_t>& value) {
     try {
-      dynamic_pointer_cast<new_type_t>(value);
+      unused_(dynamic_pointer_cast<new_type_t>(value));
       return true;
     } catch (const std::exception& e) {
       return false;
