@@ -10,9 +10,9 @@ namespace unit_tests {
   public:
     void test_method_(create_process_start_info) {
       process_start_info si;
-      assert::are_equal_("", si.file_name());
-      assert::are_equal_("", si.arguments());
-      assert::is_true_(si.use_shell_execute());
+      assert::are_equal("", si.file_name(), csf_);
+      assert::are_equal("", si.arguments(), csf_);
+      assert::is_true(si.use_shell_execute(), csf_);
     }
   };
 }
