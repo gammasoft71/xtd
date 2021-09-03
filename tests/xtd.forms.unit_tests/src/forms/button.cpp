@@ -18,7 +18,7 @@ namespace unit_tests {
         click_control_check += 1;
       };
       button.perform_click();
-      assert::are_equal_(1, click_control_check);
+      assert::are_equal(1, click_control_check, csf_);
     }
 
     /*
@@ -33,7 +33,7 @@ namespace unit_tests {
         click_control_check += 1;
       };
       send_message(button.handle(), WM_COMMAND, BN_CLICKED, button.handle());
-      assert::are_equal_(1, click_control_check);
+      assert::are_equal(1, click_control_check, csf_);
     }*/
     
     void test_method_(set_client_size) {
@@ -41,7 +41,7 @@ namespace unit_tests {
       button button;
       button.parent(form);
       button.client_size({100, 50});
-      assert::are_equal_(size(100, 50), button.client_size());
+      assert::are_equal(size(100, 50), button.client_size(), csf_);
     }
     
     void test_method_(set_size) {
@@ -49,7 +49,7 @@ namespace unit_tests {
       button button;
       button.parent(form);
       button.size({100, 50});
-      assert::are_equal_(size(100, 50), button.size());
+      assert::are_equal(size(100, 50), button.size(), csf_);
     }
   };
 }

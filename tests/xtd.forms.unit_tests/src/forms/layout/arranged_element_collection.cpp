@@ -24,7 +24,7 @@ namespace unit_tests {
         assert::fail(ustring::format("updated index = {}, value = {}", index, value), csf_);
       };
       
-      assert::is_true_(items.empty());
+      assert::is_true(items.empty(), csf_);
     }
     
     void test_method_(push_back_item) {
@@ -32,8 +32,8 @@ namespace unit_tests {
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string& value) {
         if (added_control_check == 0) {
-          assert::are_equal_(0U, index);
-          assert::are_equal_("a", value);
+          assert::are_equal(0U, index, csf_);
+          assert::are_equal("a", value, csf_);
           added_control_check += 1;
         } else
           assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
@@ -47,10 +47,10 @@ namespace unit_tests {
       
       items.push_back("a");
       
-      assert::is_false_(items.empty());
-      assert::are_equal_(1U, items.size());
-      assert::are_equal_("a", items[0]);
-      assert::are_equal_(1U, added_control_check);
+      assert::is_false(items.empty(), csf_);
+      assert::are_equal(1U, items.size(), csf_);
+      assert::are_equal("a", items[0], csf_);
+      assert::are_equal(1U, added_control_check, csf_);
     }
     
     void test_method_(push_back_items) {
@@ -58,16 +58,16 @@ namespace unit_tests {
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string& value) {
         if (added_control_check == 0) {
-          assert::are_equal_(0U, index);
-          assert::are_equal_("a", value);
+          assert::are_equal(0U, index, csf_);
+          assert::are_equal("a", value, csf_);
           added_control_check += 1;
         } else if (added_control_check == 1) {
-          assert::are_equal_(1U, index);
-          assert::are_equal_("b", value);
+          assert::are_equal(1U, index, csf_);
+          assert::are_equal("b", value, csf_);
           added_control_check += 2;
         } else if (added_control_check == 3) {
-          assert::are_equal_(2U, index);
-          assert::are_equal_("c", value);
+          assert::are_equal(2U, index, csf_);
+          assert::are_equal("c", value, csf_);
           added_control_check += 3;
         } else
           assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
@@ -83,12 +83,12 @@ namespace unit_tests {
       items.push_back("b");
       items.push_back("c");
       
-      assert::is_false_(items.empty());
-      assert::are_equal_(3U, items.size());
-      assert::are_equal_("a", items[0]);
-      assert::are_equal_("b", items[1]);
-      assert::are_equal_("c", items[2]);
-      assert::are_equal_(6U, added_control_check);
+      assert::is_false(items.empty(), csf_);
+      assert::are_equal(3U, items.size(), csf_);
+      assert::are_equal("a", items[0], csf_);
+      assert::are_equal("b", items[1], csf_);
+      assert::are_equal("c", items[2], csf_);
+      assert::are_equal(6U, added_control_check, csf_);
     }
     
     void test_method_(push_back_range_item) {
@@ -96,8 +96,8 @@ namespace unit_tests {
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string& value) {
          if (added_control_check == 0) {
-          assert::are_equal_(0U, index);
-          assert::are_equal_("a", value);
+          assert::are_equal(0U, index, csf_);
+          assert::are_equal("a", value, csf_);
            added_control_check += 1;
         } else
           assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
@@ -111,10 +111,10 @@ namespace unit_tests {
 
       items.push_back_range({"a"});
 
-      assert::is_false_(items.empty());
-      assert::are_equal_(1U, items.size());
-      assert::are_equal_("a", items[0]);
-      assert::are_equal_(1U, added_control_check);
+      assert::is_false(items.empty(), csf_);
+      assert::are_equal(1U, items.size(), csf_);
+      assert::are_equal("a", items[0], csf_);
+      assert::are_equal(1U, added_control_check, csf_);
     }
     
     void test_method_(push_back_range_items) {
@@ -122,16 +122,16 @@ namespace unit_tests {
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string& value) {
         if (added_control_check == 0) {
-          assert::are_equal_(0U, index);
-          assert::are_equal_("a", value);
+          assert::are_equal(0U, index, csf_);
+          assert::are_equal("a", value, csf_);
           added_control_check += 1;
         } else if (added_control_check == 1) {
-          assert::are_equal_(1U, index);
-          assert::are_equal_("b", value);
+          assert::are_equal(1U, index, csf_);
+          assert::are_equal("b", value, csf_);
           added_control_check += 2;
         } else if (added_control_check == 3) {
-          assert::are_equal_(2U, index);
-          assert::are_equal_("c", value);
+          assert::are_equal(2U, index, csf_);
+          assert::are_equal("c", value, csf_);
           added_control_check += 3;
         } else
           assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
@@ -145,12 +145,12 @@ namespace unit_tests {
 
       items.push_back_range({"a", "b", "c"});
       
-      assert::is_false_(items.empty());
-      assert::are_equal_(3U, items.size());
-      assert::are_equal_("a", items[0]);
-      assert::are_equal_("b", items[1]);
-      assert::are_equal_("c", items[2]);
-      assert::are_equal_(6U, added_control_check);
+      assert::is_false(items.empty(), csf_);
+      assert::are_equal(3U, items.size(), csf_);
+      assert::are_equal("a", items[0], csf_);
+      assert::are_equal("b", items[1], csf_);
+      assert::are_equal("c", items[2], csf_);
+      assert::are_equal(6U, added_control_check, csf_);
     }
     
     void test_method_(insert_item) {
@@ -158,20 +158,20 @@ namespace unit_tests {
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string& value) {
          if (added_control_check == 0) {
-          assert::are_equal_(0U, index);
-          assert::are_equal_("a", value);
+          assert::are_equal(0U, index, csf_);
+          assert::are_equal("a", value, csf_);
            added_control_check += 1;
         } else if (added_control_check == 1) {
-          assert::are_equal_(1U, index);
-          assert::are_equal_("b", value);
+          assert::are_equal(1U, index, csf_);
+          assert::are_equal("b", value, csf_);
           added_control_check += 2;
         } else if (added_control_check == 3) {
-          assert::are_equal_(2U, index);
-          assert::are_equal_("c", value);
+          assert::are_equal(2U, index, csf_);
+          assert::are_equal("c", value, csf_);
           added_control_check += 3;
         } else if (added_control_check == 6) {
-          assert::are_equal_(1U, index);
-          assert::are_equal_("z", value);
+          assert::are_equal(1U, index, csf_);
+          assert::are_equal("z", value, csf_);
           added_control_check += 4;
         } else
           assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
@@ -185,16 +185,16 @@ namespace unit_tests {
 
       items.push_back_range({"a", "b", "c"});
       
-      assert::are_equal_(6U, added_control_check);
+      assert::are_equal(6U, added_control_check, csf_);
       
       items.insert(items.cbegin() + 1, "z");
       
-      assert::are_equal_(4U, items.size());
-      assert::are_equal_("a", items[0]);
-      assert::are_equal_("z", items[1]);
-      assert::are_equal_("b", items[2]);
-      assert::are_equal_("c", items[3]);
-      assert::are_equal_(10U, added_control_check);
+      assert::are_equal(4U, items.size(), csf_);
+      assert::are_equal("a", items[0], csf_);
+      assert::are_equal("z", items[1], csf_);
+      assert::are_equal("b", items[2], csf_);
+      assert::are_equal("c", items[3], csf_);
+      assert::are_equal(10U, added_control_check, csf_);
     }
       
     void test_method_(insert_item_in_first) {
@@ -202,12 +202,12 @@ namespace unit_tests {
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string& value) {
         if (added_control_check == 0) {
-          assert::are_equal_(0U, index);
-          assert::are_equal_("a", value);
+          assert::are_equal(0U, index, csf_);
+          assert::are_equal("a", value, csf_);
           added_control_check += 1;
         } else if (added_control_check == 1) {
-          assert::are_equal_(0U, index);
-          assert::are_equal_("z", value);
+          assert::are_equal(0U, index, csf_);
+          assert::are_equal("z", value, csf_);
           added_control_check += 2;
         } else
           assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
@@ -222,9 +222,9 @@ namespace unit_tests {
       items.push_back("a");
       items.insert(items.cbegin(), "z");
 
-      assert::are_equal_("z", items[0]);
-      assert::are_equal_("a", items[1]);
-      assert::are_equal_(3U, added_control_check);
+      assert::are_equal("z", items[0], csf_);
+      assert::are_equal("a", items[1], csf_);
+      assert::are_equal(3U, added_control_check, csf_);
     }
         
     void test_method_(insert_item_in_last) {
@@ -232,12 +232,12 @@ namespace unit_tests {
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string& value) {
         if (added_control_check == 0) {
-          assert::are_equal_(0U, index);
-          assert::are_equal_("a", value);
+          assert::are_equal(0U, index, csf_);
+          assert::are_equal("a", value, csf_);
           added_control_check += 1;
         } else if (added_control_check == 1) {
-          assert::are_equal_(1U, index);
-          assert::are_equal_("z", value);
+          assert::are_equal(1U, index, csf_);
+          assert::are_equal("z", value, csf_);
           added_control_check += 2;
         } else
           assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
@@ -252,9 +252,9 @@ namespace unit_tests {
       items.push_back("a");
       items.insert(items.cbegin() + 1, "z");
 
-      assert::are_equal_("a", items[0]);
-      assert::are_equal_("z", items[1]);
-      assert::are_equal_(3U, added_control_check);
+      assert::are_equal("a", items[0], csf_);
+      assert::are_equal("z", items[1], csf_);
+      assert::are_equal(3U, added_control_check, csf_);
     }
 
     void test_method_(insert_at_item) {
@@ -262,20 +262,20 @@ namespace unit_tests {
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string& value) {
          if (added_control_check == 0) {
-          assert::are_equal_(0U, index);
-          assert::are_equal_("a", value);
+          assert::are_equal(0U, index, csf_);
+          assert::are_equal("a", value, csf_);
            added_control_check += 1;
         } else if (added_control_check == 1) {
-          assert::are_equal_(1U, index);
-          assert::are_equal_("b", value);
+          assert::are_equal(1U, index, csf_);
+          assert::are_equal("b", value, csf_);
           added_control_check += 2;
         } else if (added_control_check == 3) {
-          assert::are_equal_(2U, index);
-          assert::are_equal_("c", value);
+          assert::are_equal(2U, index, csf_);
+          assert::are_equal("c", value, csf_);
           added_control_check += 3;
         } else if (added_control_check == 6) {
-          assert::are_equal_(1U, index);
-          assert::are_equal_("z", value);
+          assert::are_equal(1U, index, csf_);
+          assert::are_equal("z", value, csf_);
           added_control_check += 4;
         } else
           assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
@@ -289,22 +289,22 @@ namespace unit_tests {
 
       items.push_back_range({"a", "b", "c"});
       
-      assert::are_equal_(6U, added_control_check);
+      assert::are_equal(6U, added_control_check, csf_);
       
       items.insert_at(1, "z");
       
-      assert::are_equal_(4U, items.size());
-      assert::are_equal_("a", items[0]);
-      assert::are_equal_("z", items[1]);
-      assert::are_equal_("b", items[2]);
-      assert::are_equal_("c", items[3]);
-      assert::are_equal_(10U, added_control_check);
+      assert::are_equal(4U, items.size(), csf_);
+      assert::are_equal("a", items[0], csf_);
+      assert::are_equal("z", items[1], csf_);
+      assert::are_equal("b", items[2], csf_);
+      assert::are_equal("c", items[3], csf_);
+      assert::are_equal(10U, added_control_check, csf_);
     }
         
     void test_method_(insert_at_item_width_bad_index) {
       arranged_element_collection<std::string> items;
       items.push_back_range({"a", "b", "c"});
-      assert::throws_(argument_out_of_range_exception, [&] {items.insert_at(items.npos, "z");});
+      assert::throws<argument_out_of_range_exception>([&] {items.insert_at(items.npos, "z");}, csf_);
     }
       
     void test_method_(insert_at_item_in_first) {
@@ -312,12 +312,12 @@ namespace unit_tests {
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string& value) {
         if (added_control_check == 0) {
-          assert::are_equal_(0U, index);
-          assert::are_equal_("a", value);
+          assert::are_equal(0U, index, csf_);
+          assert::are_equal("a", value, csf_);
           added_control_check += 1;
         } else if (added_control_check == 1) {
-          assert::are_equal_(0U, index);
-          assert::are_equal_("z", value);
+          assert::are_equal(0U, index, csf_);
+          assert::are_equal("z", value, csf_);
           added_control_check += 2;
         } else
           assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
@@ -332,9 +332,9 @@ namespace unit_tests {
       items.push_back("a");
       items.insert_at(0, "z");
 
-      assert::are_equal_("z", items[0]);
-      assert::are_equal_("a", items[1]);
-      assert::are_equal_(3U, added_control_check);
+      assert::are_equal("z", items[0], csf_);
+      assert::are_equal("a", items[1], csf_);
+      assert::are_equal(3U, added_control_check, csf_);
     }
         
     void test_method_(insert_at_item_in_last) {
@@ -342,12 +342,12 @@ namespace unit_tests {
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string& value) {
         if (added_control_check == 0) {
-          assert::are_equal_(0U, index);
-          assert::are_equal_("a", value);
+          assert::are_equal(0U, index, csf_);
+          assert::are_equal("a", value, csf_);
           added_control_check += 1;
         } else if (added_control_check == 1) {
-          assert::are_equal_(1U, index);
-          assert::are_equal_("z", value);
+          assert::are_equal(1U, index, csf_);
+          assert::are_equal("z", value, csf_);
           added_control_check += 2;
         } else
           assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
@@ -362,9 +362,9 @@ namespace unit_tests {
       items.push_back("a");
       items.insert_at(1, "z");
 
-      assert::are_equal_("a", items[0]);
-      assert::are_equal_("z", items[1]);
-      assert::are_equal_(3U, added_control_check);
+      assert::are_equal("a", items[0], csf_);
+      assert::are_equal("z", items[1], csf_);
+      assert::are_equal(3U, added_control_check, csf_);
     }
     
     void test_method_(erase_item) {
@@ -376,8 +376,8 @@ namespace unit_tests {
       };
       items.item_erased += [&](size_t index, std::string& value) {
         if (erased_control_check == 0) {
-          assert::are_equal_(1U, index);
-          assert::are_equal_("b", value);
+          assert::are_equal(1U, index, csf_);
+          assert::are_equal("b", value, csf_);
           erased_control_check += 1;
         } else
           assert::fail(ustring::format("erased index = {}, value = {}", index, value), csf_);
@@ -388,11 +388,11 @@ namespace unit_tests {
 
       items.erase_at(1);
 
-      assert::are_equal_("a", items[0]);
-      assert::are_equal_("c", items[1]);
-      assert::are_equal_("d", items[2]);
-      assert::are_equal_("e", items[3]);
-      assert::are_equal_(1U, erased_control_check);
+      assert::are_equal("a", items[0], csf_);
+      assert::are_equal("c", items[1], csf_);
+      assert::are_equal("d", items[2], csf_);
+      assert::are_equal("e", items[3], csf_);
+      assert::are_equal(1U, erased_control_check);
     }
       
     void test_method_(erase_all_items) {
@@ -404,24 +404,24 @@ namespace unit_tests {
       };
       items.item_erased += [&](size_t index, std::string& value) {
         if (erased_control_check == 0) {
-          assert::are_equal_(1U, index);
-          assert::are_equal_("b", value);
+          assert::are_equal(1U, index, csf_);
+          assert::are_equal("b", value, csf_);
           erased_control_check += 1;
         } else if (erased_control_check == 1) {
-          assert::are_equal_(2U, index);
-          assert::are_equal_("d", value);
+          assert::are_equal(2U, index, csf_);
+          assert::are_equal("d", value, csf_);
           erased_control_check += 2;
         } else if (erased_control_check == 3) {
-          assert::are_equal_(1U, index);
-          assert::are_equal_("c", value);
+          assert::are_equal(1U, index, csf_);
+          assert::are_equal("c", value, csf_);
           erased_control_check += 3;
         } else if (erased_control_check == 6) {
-          assert::are_equal_(0U, index);
-          assert::are_equal_("a", value);
+          assert::are_equal(0U, index, csf_);
+          assert::are_equal("a", value, csf_);
           erased_control_check += 4;
         } else if (erased_control_check == 10) {
-          assert::are_equal_(0U, index);
-          assert::are_equal_("e", value);
+          assert::are_equal(0U, index, csf_);
+          assert::are_equal("e", value, csf_);
           erased_control_check += 5;
         } else
           assert::fail(ustring::format("erased index = {}, value = {}", index, value), csf_);
@@ -436,8 +436,8 @@ namespace unit_tests {
       items.erase_at(0);
       items.erase_at(0);
 
-      assert::is_true_(items.empty());
-      assert::are_equal_(15U, erased_control_check);
+      assert::is_true(items.empty(), csf_);
+      assert::are_equal(15U, erased_control_check);
     }
       
     void test_method_(erase_item_first) {
@@ -449,8 +449,8 @@ namespace unit_tests {
       };
       items.item_erased += [&](size_t index, std::string& value) {
         if (erased_control_check == 0) {
-          assert::are_equal_(0U, index);
-          assert::are_equal_("a", value);
+          assert::are_equal(0U, index, csf_);
+          assert::are_equal("a", value, csf_);
           erased_control_check += 1;
         } else
           assert::fail(ustring::format("erased index = {}, value = {}", index, value), csf_);
@@ -461,11 +461,11 @@ namespace unit_tests {
 
       items.erase_at(0);
 
-      assert::are_equal_("b", items[0]);
-      assert::are_equal_("c", items[1]);
-      assert::are_equal_("d", items[2]);
-      assert::are_equal_("e", items[3]);
-      assert::are_equal_(1U, erased_control_check);
+      assert::are_equal("b", items[0], csf_);
+      assert::are_equal("c", items[1], csf_);
+      assert::are_equal("d", items[2], csf_);
+      assert::are_equal("e", items[3], csf_);
+      assert::are_equal(1U, erased_control_check);
     }
       
     void test_method_(erase_item_last) {
@@ -477,8 +477,8 @@ namespace unit_tests {
       };
       items.item_erased += [&](size_t index, std::string& value) {
         if (erased_control_check == 0) {
-          assert::are_equal_(4U, index);
-          assert::are_equal_("e", value);
+          assert::are_equal(4U, index, csf_);
+          assert::are_equal("e", value, csf_);
           erased_control_check += 1;
         } else
           assert::fail(ustring::format("erased index = {}, value = {}", index, value), csf_);
@@ -489,17 +489,17 @@ namespace unit_tests {
 
       items.erase_at(4);
 
-      assert::are_equal_("a", items[0]);
-      assert::are_equal_("b", items[1]);
-      assert::are_equal_("c", items[2]);
-      assert::are_equal_("d", items[3]);
-      assert::are_equal_(1U, erased_control_check);
+      assert::are_equal("a", items[0], csf_);
+      assert::are_equal("b", items[1], csf_);
+      assert::are_equal("c", items[2], csf_);
+      assert::are_equal("d", items[3], csf_);
+      assert::are_equal(1U, erased_control_check);
     }
         
     void test_method_(erase_at_item_width_bad_index) {
       arranged_element_collection<std::string> items;
       items.push_back_range({"a", "b", "c"});
-      assert::throws_(argument_out_of_range_exception, [&] {items.erase_at(items.npos);});
+      assert::throws<argument_out_of_range_exception>([&] {items.erase_at(items.npos);}, csf_);
     }
 
     void test_method_(update_item) {
@@ -514,8 +514,8 @@ namespace unit_tests {
       };
       items.item_updated += [&](size_t index, std::string& value) {
         if (updated_control_check == 0) {
-          assert::are_equal_(1U, index);
-          assert::are_equal_("z", value);
+          assert::are_equal(1U, index, csf_);
+          assert::are_equal("z", value, csf_);
           updated_control_check += 1;
         } else
           assert::fail(ustring::format("updated index = {}, value = {}", index, value), csf_);
@@ -523,12 +523,12 @@ namespace unit_tests {
 
       items[1] = "z";
 
-      assert::are_equal_("a", items[0]);
-      assert::are_equal_("z", items[1]);
-      assert::are_equal_("c", items[2]);
-      assert::are_equal_("d", items[3]);
-      assert::are_equal_("e", items[4]);
-      assert::are_equal_(1U, updated_control_check);
+      assert::are_equal("a", items[0], csf_);
+      assert::are_equal("z", items[1], csf_);
+      assert::are_equal("c", items[2], csf_);
+      assert::are_equal("d", items[3], csf_);
+      assert::are_equal("e", items[4], csf_);
+      assert::are_equal(1U, updated_control_check);
     }
 
     void test_method_(using_std_sort_two_items) {
@@ -547,8 +547,8 @@ namespace unit_tests {
 
       std::sort(items.begin(), items.end());
       
-      assert::are_equal_("a", items[0]);
-      assert::are_equal_("z", items[1]);
+      assert::are_equal("a", items[0], csf_);
+      assert::are_equal("z", items[1], csf_);
     }
     
     void test_method_(using_std_sort_four_items) {
@@ -567,10 +567,10 @@ namespace unit_tests {
 
       std::sort(items.begin(), items.end());
       
-      assert::are_equal_("a", items[0]);
-      assert::are_equal_("b", items[1]);
-      assert::are_equal_("c", items[2]);
-      assert::are_equal_("d", items[3]);
+      assert::are_equal("a", items[0], csf_);
+      assert::are_equal("b", items[1], csf_);
+      assert::are_equal("c", items[2], csf_);
+      assert::are_equal("d", items[3], csf_);
     }
     
     void test_method_(using_std_sort_Twelve_items_with_duplicates) {
@@ -589,18 +589,18 @@ namespace unit_tests {
 
       std::sort(items.begin(), items.end());
       
-      assert::are_equal_("a", items[0]);
-      assert::are_equal_("b", items[1]);
-      assert::are_equal_("b", items[2]);
-      assert::are_equal_("c", items[3]);
-      assert::are_equal_("d", items[4]);
-      assert::are_equal_("f", items[5]);
-      assert::are_equal_("f", items[6]);
-      assert::are_equal_("g", items[7]);
-      assert::are_equal_("h", items[8]);
-      assert::are_equal_("i", items[9]);
-      assert::are_equal_("j", items[10]);
-      assert::are_equal_("k", items[11]);
+      assert::are_equal("a", items[0], csf_);
+      assert::are_equal("b", items[1], csf_);
+      assert::are_equal("b", items[2], csf_);
+      assert::are_equal("c", items[3], csf_);
+      assert::are_equal("d", items[4], csf_);
+      assert::are_equal("f", items[5], csf_);
+      assert::are_equal("f", items[6], csf_);
+      assert::are_equal("g", items[7], csf_);
+      assert::are_equal("h", items[8], csf_);
+      assert::are_equal("i", items[9], csf_);
+      assert::are_equal("j", items[10], csf_);
+      assert::are_equal("k", items[11], csf_);
     }
 
     void test_method_(using_std_swap) {
@@ -616,12 +616,12 @@ namespace unit_tests {
       };
       items.item_updated += [&](size_t index, std::string& value) {
         if (updated_control_check == 0) {
-          assert::are_equal_(0U, index);
-          assert::are_equal_("a", value);
+          assert::are_equal(0U, index, csf_);
+          assert::are_equal("a", value, csf_);
           updated_control_check += 1;
         } else if (updated_control_check == 1) {
-          assert::are_equal_(1U, index);
-          assert::are_equal_("z", value);
+          assert::are_equal(1U, index, csf_);
+          assert::are_equal("z", value, csf_);
           updated_control_check += 2;
         } else
           assert::fail(ustring::format("updated index = {}, value = {}", index, value), csf_);
@@ -629,9 +629,9 @@ namespace unit_tests {
 
       std::swap(items[0], items[1]);
       
-      assert::are_equal_("a", items[0]);
-      assert::are_equal_("z", items[1]);
-      assert::are_equal_(3U, updated_control_check);
+      assert::are_equal("a", items[0], csf_);
+      assert::are_equal("z", items[1], csf_);
+      assert::are_equal(3U, updated_control_check);
     }
     
     void test_method_(using_std_double_swap) {
@@ -647,20 +647,20 @@ namespace unit_tests {
       };
       items.item_updated += [&](size_t index, std::string& value) {
         if (updated_control_check == 0) {
-          assert::are_equal_(0U, index);
-          assert::are_equal_("a", value);
+          assert::are_equal(0U, index, csf_);
+          assert::are_equal("a", value, csf_);
           updated_control_check += 1;
         } else if (updated_control_check == 1) {
-          assert::are_equal_(1U, index);
-          assert::are_equal_("z", value);
+          assert::are_equal(1U, index, csf_);
+          assert::are_equal("z", value, csf_);
           updated_control_check += 2;
         } else if (updated_control_check == 3) {
-          assert::are_equal_(0U, index);
-          assert::are_equal_("z", value);
+          assert::are_equal(0U, index, csf_);
+          assert::are_equal("z", value, csf_);
           updated_control_check += 3;
         } else if (updated_control_check == 6) {
-          assert::are_equal_(1U, index);
-          assert::are_equal_("a", value);
+          assert::are_equal(1U, index, csf_);
+          assert::are_equal("a", value, csf_);
           updated_control_check += 4;
         } else
           assert::fail(ustring::format("updated index = {}, value = {}", index, value), csf_);
@@ -669,9 +669,9 @@ namespace unit_tests {
       std::swap(items[0], items[1]);
       std::swap(items[0], items[1]);
 
-      assert::are_equal_("z", items[0]);
-      assert::are_equal_("a", items[1]);
-      assert::are_equal_(10U, updated_control_check);
+      assert::are_equal("z", items[0], csf_);
+      assert::are_equal("a", items[1], csf_);
+      assert::are_equal(10U, updated_control_check);
     }
   };
 }
