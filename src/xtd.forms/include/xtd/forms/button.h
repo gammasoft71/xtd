@@ -25,10 +25,26 @@ namespace xtd {
     /// @remarks You can change the button's appearance. For example, to make it appear flat for a Web look, set the flat_style property to flat_style::flat. The flat_style property can also be set to flat_style::popup, which appears flat until the mouse pointer passes over the button; then the button takes on the standard Windows button appearance.
     /// @note If the control that has focus accepts and processes the ENTER key press, the button does not process it. For example, if a multiline text_box or another button has focus, that control processes the ENTER key press instead of the accept button.
     /// @par Appearance
-    /// | Mode  | Windows                           | macOS                             | Gnome                             |
-    /// |-------|-----------------------------------|-----------------------------------|-----------------------------------|
-    /// | Light | @image html control_button_w.png  | @image html control_button_m.png  | @image html control_button_g.png  |
-    /// | Dark  | @image html control_button_wd.png | @image html control_button_md.png | @image html control_button_gd.png |
+    /// <table align="center" border="1" cellpadding="0" cellspacing="0" bordercolor="#374E7F" style="width:100%">
+    ///   <tr>
+    ///     <th bgcolor="#374E7F" style="width:100px">Mode</th>
+    ///     <th bgcolor="#374E7F">Windows</th>
+    ///     <th bgcolor="#374E7F">macOS</th>
+    ///     <th bgcolor="#374E7F">Gnome</th>
+    ///   </tr>
+    ///   <tr>
+    ///     <th align="center">Light</th>
+    ///     <td align="center"><img src="control_button_w.png"></img></td>
+    ///     <td align="center"><img src="control_button_m.png"></img></td>
+    ///     <td align="center"><img src="control_button_g.png"></img></td>
+    ///   </tr>
+    ///   <tr>
+    ///     <th align="center">Dark</th>
+    ///     <td align="center"><img src="control_button_wd.png"></img></td>
+    ///     <td align="center"><img src="control_button_md.png"></img></td>
+    ///     <td align="center"><img src="control_button_gd.png"></img></td>
+    ///   </tr>
+    /// </table>
     /// @par Examples
     /// The following code example demonstrate the use of button control.
     /// @include button.cpp
