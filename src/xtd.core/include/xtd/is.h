@@ -345,7 +345,7 @@ namespace xtd {
     try {
       unused_(dynamic_pointer_cast<new_type_t>(value));
       return true;
-    } catch (const std::exception& e) {
+    } catch (const std::exception&) {
       return false;
     }
     return false;
