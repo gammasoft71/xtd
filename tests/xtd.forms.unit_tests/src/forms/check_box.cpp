@@ -14,7 +14,7 @@ namespace unit_tests {
       check_box check_box;
       check_box.parent(form);
       check_box.client_size({100, 50});
-      assert::are_equal_(size(100, 50), check_box.client_size());
+      assert::are_equal(size(100, 50), check_box.client_size(), csf_);
     }
     
     void test_method_(set_size) {
@@ -22,7 +22,7 @@ namespace unit_tests {
       check_box check_box;
       check_box.parent(form);
       check_box.size({100, 50});
-      assert::are_equal_(size(100, 50), check_box.size());
+      assert::are_equal(size(100, 50), check_box.size(), csf_);
     }
   };
 }
