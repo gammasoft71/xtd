@@ -825,11 +825,11 @@ size_t socket::select(std::vector<socket>& check_read,std::vector<socket>& check
   int32_t status = native::socket::select(check_read_handles, check_write_handles, check_error_handles, microseconds);
   if (status < 0) throw socket_exception(get_last_error_(), csf_);
   
-  auto update_check_sockets = [](auto& sockets, auto& handles) {
-    for (size_t i = 0; i < handles.size(); i++)
-      if (handles[i] == 0)
-        sockets.erase(sockets.begin() + i);
-  };
+	auto update_check_sockets = [](auto& sockets, auto& handles) {
+		for (size_t i = 0, j = 0; i < handles.size() && j < sockets.size(); ++i, ++j)
+			if (handles[i] == 0)
+				sockets.erase(sockets.begin() + j--);
+	};
 
   update_check_sockets(check_read, check_read_handles);
   update_check_sockets(check_write, check_write_handles);
