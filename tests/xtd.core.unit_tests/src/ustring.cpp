@@ -10,7 +10,7 @@ namespace unit_tests {
   public:
     void test_method_(default_constructor) {
       ustring s;
-      assert::is_zero(s.length());
+      assert::is_zero(s.length(), csf_);
       assert::is_true(s.is_empty(), csf_);
     }
 

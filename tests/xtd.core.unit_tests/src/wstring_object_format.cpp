@@ -40,31 +40,31 @@ namespace unit_tests {
   class test_class_(test_wstring_object_format) {
   public:
     void test_method_(format_point_with_default_argument) {
-      assert::are_equal(L"(42, 24)", xtd::ustring::format(L"{0}", point {42, 24}));
+      assert::are_equal(L"(42, 24)", xtd::ustring::format(L"{0}", point {42, 24}), csf_);
     }
     
     void test_method_(format_point_with_left_alignment) {
-      assert::are_equal(L"  (42, 24)", ustring::format(L"{0,10}", point {42, 24}));
+      assert::are_equal(L"  (42, 24)", ustring::format(L"{0,10}", point {42, 24}), csf_);
     }
     
     void test_method_(format_point_with_right_alignment) {
-      assert::are_equal(L"(42, 24)  ", ustring::format(L"{0, -10}", point {42, 24}));
+      assert::are_equal(L"(42, 24)  ", ustring::format(L"{0, -10}", point {42, 24}), csf_);
     }
     
     void test_method_(format_point_with_zero_alignment) {
-      assert::are_equal(L"(42, 24)", ustring::format(L"{0,0}", point {42, 24}));
+      assert::are_equal(L"(42, 24)", ustring::format(L"{0,0}", point {42, 24}), csf_);
     }
     
     void test_method_(format_point_with_general_argument) {
-      assert::are_equal(L"(42, 24)", xtd::ustring::format(L"{0:G}", point {42, 24}));
+      assert::are_equal(L"(42, 24)", xtd::ustring::format(L"{0:G}", point {42, 24}), csf_);
     }
     
     void test_method_(format_point_with_label_argument) {
-      assert::are_equal(L"(x=42, y=24)", xtd::ustring::format(L"{0:l}", point {42, 24}));
+      assert::are_equal(L"(x=42, y=24)", xtd::ustring::format(L"{0:l}", point {42, 24}), csf_);
     }
     
     void test_method_(format_point_with_label_uppercase_argument) {
-      assert::are_equal(L"(X=42, Y=24)", xtd::ustring::format(L"{0:L}", point {42, 24}));
+      assert::are_equal(L"(X=42, Y=24)", xtd::ustring::format(L"{0:L}", point {42, 24}), csf_);
     }
     
     void test_method_(format_point_with_invalid_argument) {
