@@ -326,7 +326,7 @@ namespace xtd {
         /// @exception xtd::object_closed_exception The underlying xtd::net::sockets::socket has been closed.
         /// @remarks The xtd::net::sockets::udp_client::drop_multicast_group method withdraws the xtd::net::sockets::udp_client from the multicast group identified by the specified xtd::net::ip_address. After calling the xtd::net::sockets::udp_client::drop_multicast_group method, the underlying xtd::net::sockets::socket sends an Internet Group Management Protocol (IGMP) packet to the router, removing the router from the multicast group. After a xtd::net::sockets::udp_client withdraws from the group, it will no longer be able to receive datagrams sent to that group.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        void dropo_multicast_group(const xtd::net::ip_address& multicast_address, size_t if_index);
+        void dropo_multicast_group(const xtd::net::ip_address& multicast_address, uint32_t if_index);
 
         /// @brief Ends a pending asynchronous receive.
         /// @param async_result An xtd::iasync_result object returned by a call to xtd::net::sockets::udp_client::begin_receive(xtd::async_callback, Object).
