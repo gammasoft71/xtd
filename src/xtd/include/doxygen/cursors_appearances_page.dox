@@ -17,267 +17,267 @@
 ///   <tr>
 ///     <td>Application starting</td>
 ///     <td>xtd::forms::cursors::app_starting</td>
-///     <td>@image html app_starting_w.png</img></td>
-///     <td>@image html app_starting_m.png</img></td>
-///     <td>@image html app_starting_g.png</img></td>
+///     <td>@image html app_starting_w.png</td>
+///     <td>@image html app_starting_m.png</td>
+///     <td>@image html app_starting_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Arrow</td>
 ///     <td>xtd::forms::cursors::arrow</td>
-///     <td>@image html arrow_w.png</img></td>
-///     <td>@image html arrow_m.png</img></td>
-///     <td>@image html arrow_g.png</img></td>
+///     <td>@image html arrow_w.png</td>
+///     <td>@image html arrow_m.png</td>
+///     <td>@image html arrow_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Cell</td>
 ///     <td>xtd::forms::cursors::cell</td>
-///     <td>@image html cell_w.png</img></td>
-///     <td>@image html cell_m.png</img></td>
-///     <td>@image html cell_g.png</img></td>
+///     <td>@image html cell_w.png</td>
+///     <td>@image html cell_m.png</td>
+///     <td>@image html cell_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Closed hand</td>
 ///     <td>xtd::forms::cursors::closed_hand</td>
-///     <td>@image html closed_hand_w.png</img></td>
-///     <td>@image html closed_hand_m.png</img></td>
-///     <td>@image html closed_hand_g.png</img></td>
+///     <td>@image html closed_hand_w.png</td>
+///     <td>@image html closed_hand_m.png</td>
+///     <td>@image html closed_hand_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Contextual menu</td>
 ///     <td>xtd::forms::cursors::contextual_menu</td>
-///     <td>@image html contextual_menu_w.png</img></td>
-///     <td>@image html contextual_menu_m.png</img></td>
-///     <td>@image html contextual_menu_g.png</img></td>
+///     <td>@image html contextual_menu_w.png</td>
+///     <td>@image html contextual_menu_m.png</td>
+///     <td>@image html contextual_menu_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Cross</td>
 ///     <td>xtd::forms::cursors::cross</td>
-///     <td>@image html cross_w.png</img></td>
-///     <td>@image html cross_m.png</img></td>
-///     <td>@image html cross_g.png</img></td>
+///     <td>@image html cross_w.png</td>
+///     <td>@image html cross_m.png</td>
+///     <td>@image html cross_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Default</td>
 ///     <td>xtd::forms::cursors::default_cursor</td>
-///     <td>@image html default_cursor_w.png</img></td>
-///     <td>@image html default_cursor_m.png</img></td>
-///     <td>@image html default_cursor_g.png</img></td>
+///     <td>@image html default_cursor_w.png</td>
+///     <td>@image html default_cursor_m.png</td>
+///     <td>@image html default_cursor_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Disappearing item</td>
 ///     <td>xtd::forms::cursors::disappearing_item</td>
-///     <td>@image html disappearing_item_w.png</img></td>
-///     <td>@image html disappearing_item_m.png</img></td>
-///     <td>@image html disappearing_item_g.png</img></td>
+///     <td>@image html disappearing_item_w.png</td>
+///     <td>@image html disappearing_item_m.png</td>
+///     <td>@image html disappearing_item_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Drag copy</td>
 ///     <td>xtd::forms::cursors::drag_copy</td>
-///     <td>@image html drag_copy_w.png</img></td>
-///     <td>@image html drag_copy_m.png</img></td>
-///     <td>@image html drag_copy_g.png</img></td>
+///     <td>@image html drag_copy_w.png</td>
+///     <td>@image html drag_copy_m.png</td>
+///     <td>@image html drag_copy_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Drag link</td>
 ///     <td>xtd::forms::cursors::drag_link</td>
-///     <td>@image html drag_link_w.png</img></td>
-///     <td>@image html drag_link_m.png</img></td>
-///     <td>@image html drag_link_g.png</img></td>
+///     <td>@image html drag_link_w.png</td>
+///     <td>@image html drag_link_m.png</td>
+///     <td>@image html drag_link_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Hand</td>
 ///     <td>xtd::forms::cursors::hand</td>
-///     <td>@image html hand_w.png</img></td>
-///     <td>@image html hand_m.png</img></td>
-///     <td>@image html hand_g.png</img></td>
+///     <td>@image html hand_w.png</td>
+///     <td>@image html hand_m.png</td>
+///     <td>@image html hand_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Help</td>
 ///     <td>xtd::forms::cursors::help</td>
-///     <td>@image html help_w.png</img></td>
-///     <td>@image html help_m.png</img></td>
-///     <td>@image html help_g.png</img></td>
+///     <td>@image html help_w.png</td>
+///     <td>@image html help_m.png</td>
+///     <td>@image html help_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Horizonatal split</td>
 ///     <td>xtd::forms::cursors::hsplit</td>
-///     <td>@image html hsplit_w.png</img></td>
-///     <td>@image html hsplit_m.png</img></td>
-///     <td>@image html hsplit_g.png</img></td>
+///     <td>@image html hsplit_w.png</td>
+///     <td>@image html hsplit_m.png</td>
+///     <td>@image html hsplit_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>I beam</td>
 ///     <td>xtd::forms::cursors::ibeam</td>
-///     <td>@image html ibeam_w.png</img></td>
-///     <td>@image html ibeam_m.png</img></td>
-///     <td>@image html ibeam_g.png</img></td>
+///     <td>@image html ibeam_w.png</td>
+///     <td>@image html ibeam_m.png</td>
+///     <td>@image html ibeam_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>No</td>
 ///     <td>xtd::forms::cursors::no</td>
-///     <td>@image html no_w.png</img></td>
-///     <td>@image html no_m.png</img></td>
-///     <td>@image html no_g.png</img></td>
+///     <td>@image html no_w.png</td>
+///     <td>@image html no_m.png</td>
+///     <td>@image html no_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>No move 2d</td>
 ///     <td>xtd::forms::cursors::no_move_2d</td>
-///     <td>@image html no_move_2d_w.png</img></td>
-///     <td>@image html no_move_2d_m.png</img></td>
-///     <td>@image html no_move_2d_g.png</img></td>
+///     <td>@image html no_move_2d_w.png</td>
+///     <td>@image html no_move_2d_m.png</td>
+///     <td>@image html no_move_2d_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>No move horizontal</td>
 ///     <td>xtd::forms::cursors::no_move_horiz</td>
-///     <td>@image html no_move_horiz_w.png</img></td>
-///     <td>@image html no_move_horiz_m.png</img></td>
-///     <td>@image html no_move_horiz_g.png</img></td>
+///     <td>@image html no_move_horiz_w.png</td>
+///     <td>@image html no_move_horiz_m.png</td>
+///     <td>@image html no_move_horiz_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>No move vertical</td>
 ///     <td>xtd::forms::cursors::no_move_vert</td>
-///     <td>@image html no_move_vert_w.png</img></td>
-///     <td>@image html no_move_vert_m.png</img></td>
-///     <td>@image html no_move_vert_g.png</img></td>
+///     <td>@image html no_move_vert_w.png</td>
+///     <td>@image html no_move_vert_m.png</td>
+///     <td>@image html no_move_vert_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Open hand</td>
 ///     <td>xtd::forms::cursors::open_hand</td>
-///     <td>@image html open_hand_w.png</img></td>
-///     <td>@image html open_hand_m.png</img></td>
-///     <td>@image html open_hand_g.png</img></td>
+///     <td>@image html open_hand_w.png</td>
+///     <td>@image html open_hand_m.png</td>
+///     <td>@image html open_hand_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Pan east</td>
 ///     <td>xtd::forms::cursors::pan_east</td>
-///     <td>@image html pan_east_w.png</img></td>
-///     <td>@image html pan_east_m.png</img></td>
-///     <td>@image html pan_east_g.png</img></td>
+///     <td>@image html pan_east_w.png</td>
+///     <td>@image html pan_east_m.png</td>
+///     <td>@image html pan_east_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Pan north east</td>
 ///     <td>xtd::forms::cursors::pan_ne</td>
-///     <td>@image html pan_ne_w.png</img></td>
-///     <td>@image html pan_ne_m.png</img></td>
-///     <td>@image html pan_ne_g.png</img></td>
+///     <td>@image html pan_ne_w.png</td>
+///     <td>@image html pan_ne_m.png</td>
+///     <td>@image html pan_ne_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Pan north</td>
 ///     <td>xtd::forms::cursors::pan_north</td>
-///     <td>@image html pan_north_w.png</img></td>
-///     <td>@image html pan_north_m.png</img></td>
-///     <td>@image html pan_north_g.png</img></td>
+///     <td>@image html pan_north_w.png</td>
+///     <td>@image html pan_north_m.png</td>
+///     <td>@image html pan_north_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Pan north west</td>
 ///     <td>xtd::forms::cursors::pan_nw</td>
-///     <td>@image html pan_nw_w.png</img></td>
-///     <td>@image html pan_nw_m.png</img></td>
-///     <td>@image html pan_nw_g.png</img></td>
+///     <td>@image html pan_nw_w.png</td>
+///     <td>@image html pan_nw_m.png</td>
+///     <td>@image html pan_nw_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Pan south east</td>
 ///     <td>xtd::forms::cursors::pan_se</td>
-///     <td>@image html pan_se_w.png</img></td>
-///     <td>@image html pan_se_m.png</img></td>
-///     <td>@image html pan_se_g.png</img></td>
+///     <td>@image html pan_se_w.png</td>
+///     <td>@image html pan_se_m.png</td>
+///     <td>@image html pan_se_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Pan south</td>
 ///     <td>xtd::forms::cursors::pan_south</td>
-///     <td>@image html pan_south_w.png</img></td>
-///     <td>@image html pan_south_m.png</img></td>
-///     <td>@image html pan_south_g.png</img></td>
+///     <td>@image html pan_south_w.png</td>
+///     <td>@image html pan_south_m.png</td>
+///     <td>@image html pan_south_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Pan south west</td>
 ///     <td>xtd::forms::cursors::pan_sw</td>
-///     <td>@image html pan_sw_w.png</img></td>
-///     <td>@image html pan_sw_m.png</img></td>
-///     <td>@image html pan_sw_g.png</img></td>
+///     <td>@image html pan_sw_w.png</td>
+///     <td>@image html pan_sw_m.png</td>
+///     <td>@image html pan_sw_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Pan west</td>
 ///     <td>xtd::forms::cursors::pan_west</td>
-///     <td>@image html pan_west_w.png</img></td>
-///     <td>@image html pan_west_m.png</img></td>
-///     <td>@image html pan_west_g.png</img></td>
+///     <td>@image html pan_west_w.png</td>
+///     <td>@image html pan_west_m.png</td>
+///     <td>@image html pan_west_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Size all</td>
 ///     <td>xtd::forms::cursors::size_all</td>
-///     <td>@image html size_all_w.png</img></td>
-///     <td>@image html size_all_m.png</img></td>
-///     <td>@image html size_all_g.png</img></td>
+///     <td>@image html size_all_w.png</td>
+///     <td>@image html size_all_m.png</td>
+///     <td>@image html size_all_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Size north-east south-west</td>
 ///     <td>xtd::forms::cursors::size_nesw</td>
-///     <td>@image html size_nesw_w.png</img></td>
-///     <td>@image html size_nesw_m.png</img></td>
-///     <td>@image html size_nesw_g.png</img></td>
+///     <td>@image html size_nesw_w.png</td>
+///     <td>@image html size_nesw_m.png</td>
+///     <td>@image html size_nesw_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Size north south</td>
 ///     <td>xtd::forms::cursors::size_ns</td>
-///     <td>@image html size_ns_w.png</img></td>
-///     <td>@image html size_ns_m.png</img></td>
-///     <td>@image html size_ns_g.png</img></td>
+///     <td>@image html size_ns_w.png</td>
+///     <td>@image html size_ns_m.png</td>
+///     <td>@image html size_ns_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Size north-west south-east</td>
 ///     <td>xtd::forms::cursors::size_nwse</td>
-///     <td>@image html size_nwse_w.png</img></td>
-///     <td>@image html size_nwse_m.png</img></td>
-///     <td>@image html size_nwse_g.png</img></td>
+///     <td>@image html size_nwse_w.png</td>
+///     <td>@image html size_nwse_m.png</td>
+///     <td>@image html size_nwse_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Size west east</td>
 ///     <td>xtd::forms::cursors::size_we</td>
-///     <td>@image html size_we_w.png</img></td>
-///     <td>@image html size_we_m.png</img></td>
-///     <td>@image html size_we_g.png</img></td>
+///     <td>@image html size_we_w.png</td>
+///     <td>@image html size_we_m.png</td>
+///     <td>@image html size_we_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Up arrow</td>
 ///     <td>xtd::forms::cursors::up_arrow</td>
-///     <td>@image html up_arrow_w.png</img></td>
-///     <td>@image html up_arrow_m.png</img></td>
-///     <td>@image html up_arrow_g.png</img></td>
+///     <td>@image html up_arrow_w.png</td>
+///     <td>@image html up_arrow_m.png</td>
+///     <td>@image html up_arrow_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Vertical I beam</td>
 ///     <td>xtd::forms::cursors::vibeam</td>
-///     <td>@image html vibeam_w.png</img></td>
-///     <td>@image html vibeam_m.png</img></td>
-///     <td>@image html vibeam_g.png</img></td>
+///     <td>@image html vibeam_w.png</td>
+///     <td>@image html vibeam_m.png</td>
+///     <td>@image html vibeam_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Vertical split</td>
 ///     <td>xtd::forms::cursors::vsplit</td>
-///     <td>@image html vsplit_w.png</img></td>
-///     <td>@image html vsplit_m.png</img></td>
-///     <td>@image html vsplit_g.png</img></td>
+///     <td>@image html vsplit_w.png</td>
+///     <td>@image html vsplit_m.png</td>
+///     <td>@image html vsplit_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Wait</td>
 ///     <td>xtd::forms::cursors::wait_cursor</td>
-///     <td>@image html wait_cursor_w.png</img></td>
-///     <td>@image html wait_cursor_m.png</img></td>
-///     <td>@image html wait_cursor_g.png</img></td>
+///     <td>@image html wait_cursor_w.png</td>
+///     <td>@image html wait_cursor_m.png</td>
+///     <td>@image html wait_cursor_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Zoom in</td>
 ///     <td>xtd::forms::cursors::zoom_in</td>
-///     <td>@image html zoom_in_w.png</img></td>
-///     <td>@image html zoom_in_m.png</img></td>
-///     <td>@image html zoom_in_g.png</img></td>
+///     <td>@image html zoom_in_w.png</td>
+///     <td>@image html zoom_in_m.png</td>
+///     <td>@image html zoom_in_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Zoom out</td>
 ///     <td>xtd::forms::cursors::zoom_out</td>
-///     <td>@image html zoom_out_w.png</img></td>
-///     <td>@image html zoom_out_m.png</img></td>
-///     <td>@image html zoom_out_g.png</img></td>
+///     <td>@image html zoom_out_w.png</td>
+///     <td>@image html zoom_out_m.png</td>
+///     <td>@image html zoom_out_g.png</td>
 ///   </tr>
 /// </table>

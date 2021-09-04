@@ -30,15 +30,15 @@ namespace xtd {
     ///   </tr>
     ///   <tr>
     ///     <th>Light</th>
-    ///     <td>@image html dialog_about_dialog_w.png</img></td>
-    ///     <td>@image html dialog_about_dialog_m.png</img></td>
-    ///     <td>@image html dialog_about_dialog_g.png</img></td>
+    ///     <td>@image html dialog_about_dialog_w.png</td>
+    ///     <td>@image html dialog_about_dialog_m.png</td>
+    ///     <td>@image html dialog_about_dialog_g.png</td>
     ///   </tr>
     ///   <tr>
     ///     <th>Dark</th>
-    ///     <td>@image html dialog_about_dialog_wd.png</img></td>
-    ///     <td>@image html dialog_about_dialog_md.png</img></td>
-    ///     <td>@image html dialog_about_dialog_gd.png</img></td>
+    ///     <td>@image html dialog_about_dialog_wd.png</td>
+    ///     <td>@image html dialog_about_dialog_md.png</td>
+    ///     <td>@image html dialog_about_dialog_gd.png</td>
     ///   </tr>
     /// </table>
     /// @par Examples
