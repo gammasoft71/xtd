@@ -18,18 +18,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of check_boxes control factory.
     /// @include check_boxes.cpp
-    /// @par Windows
-    /// @image html check_boxescheck_boxes_w.png
-    /// <br>
-    /// @image html check_boxes_wd.png
-    /// @par macOS
-    /// @image html check_boxescheck_boxes_m.png
-    /// <br>
-    /// @image html check_boxes_md.png
-    /// @par Gnome
-    /// @image html check_boxes_g.png
-    /// <br>
-    /// @image html check_boxes_gd.png
     class check_boxes final static_ {
     public:
       /// @brief Create a system-defined check_box that represent abort check_box.

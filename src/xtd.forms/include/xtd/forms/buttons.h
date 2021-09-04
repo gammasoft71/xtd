@@ -18,18 +18,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of buttons control factory.
     /// @include buttons.cpp
-    /// @par Windows
-    /// @image html buttons_w.png
-    /// <br>
-    /// @image html buttons_wd.png
-    /// @par macOS
-    /// @image html buttons_m.png
-    /// <br>
-    /// @image html buttons_md.png
-    /// @par Gnome
-    /// @image html buttons_g.png
-    /// <br>
-    /// @image html buttons_gd.png
     class buttons final static_ {
     public:
       /// @brief Create a system-defined button that represent abort button.

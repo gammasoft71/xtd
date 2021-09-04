@@ -18,18 +18,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of application_informations class.
     /// @include application_informations.cpp
-    /// @par Windows
-    /// @image html application_informations_w.png
-    /// <br>
-    /// @image html application_informations_wd.png
-    /// @par macOS
-    /// @image html application_informations_m.png
-    /// <br>
-    /// @image html application_informations_md.png
-    /// @par Gnome
-    /// @image html application_informations_g.png
-    /// <br>
-    /// @image html application_informations_gd.png
     class application_informations : public object {
     public:
       /// @brief Gets the company name associated with the application.

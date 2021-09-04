@@ -17,21 +17,30 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
+    /// @par Appearance
+    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+    ///   <tr>
+    ///     <th style="width:100px"></th>
+    ///     <th><b>Windows</b></th>
+    ///     <th><b>macOS</b></th>
+    ///     <th><b>Gnome</b></th>
+    ///   </tr>
+    ///   <tr>
+    ///     <th>Light</th>
+    ///     <td>@image html dialog_about_dialog_w.png</img></td>
+    ///     <td>@image html dialog_about_dialog_m.png</img></td>
+    ///     <td>@image html dialog_about_dialog_g.png</img></td>
+    ///   </tr>
+    ///   <tr>
+    ///     <th>Dark</th>
+    ///     <td>@image html dialog_about_dialog_wd.png</img></td>
+    ///     <td>@image html dialog_about_dialog_md.png</img></td>
+    ///     <td>@image html dialog_about_dialog_gd.png</img></td>
+    ///   </tr>
+    /// </table>
     /// @par Examples
     /// The following code example demonstrate the use of about_box dialog.
     /// @include about_box.cpp
-    /// @par Windows
-    /// @image html about_box_w.png
-    /// <br>
-    /// @image html about_box_wd.png
-    /// @par macOS
-    /// @image html about_box_m.png
-    /// <br>
-    /// @image html about_box_md.png
-    /// @par Gnome
-    /// @image html about_box_g.png
-    /// <br>
-    /// @image html about_box_gd.png
     class forms_export_ about_box final static_ {
     public:
       /// @brief Represents a author collection.

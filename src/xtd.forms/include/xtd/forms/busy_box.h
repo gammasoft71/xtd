@@ -19,18 +19,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of busy_box dialog.
     /// @include busy_box.cpp
-    /// @par Windows
-    /// @image html busy_box_w.png
-    /// <br>
-    /// @image html busy_box_wd.png
-    /// @par macOS
-    /// @image html busy_box_m.png
-    /// <br>
-    /// @image html busy_box_md.png
-    /// @par Gnome
-    /// @image html busy_box_g.png
-    /// <br>
-    /// @image html busy_box_gd.png
     class forms_export_ busy_box final static_ {
     public:
       /// @brief Hides a busy box in front.

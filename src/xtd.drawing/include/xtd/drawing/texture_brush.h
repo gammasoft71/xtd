@@ -19,18 +19,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of texture_brush class.
     /// @include fill_rectangle.cpp
-    /// @par Windows
-    /// @image html fill_rectangle_w.png
-    /// <br>
-    /// @image html fill_rectangle_wd.png
-    /// @par macOS
-    /// @image html fill_rectangle_m.png
-    /// <br>
-    /// @image html fill_rectangle_md.png
-    /// @par Gnome
-    /// @image html fill_rectangle_g.png
-    /// <br>
-    /// @image html fill_rectangle_gd.png
     class drawing_export_ texture_brush final : public brush {
     public:
       texture_brush();

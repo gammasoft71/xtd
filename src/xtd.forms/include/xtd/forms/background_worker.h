@@ -28,18 +28,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of background_worker component.
     /// @include background_worker.cpp
-    /// @par Windows
-    /// @image html background_worker_w.png
-    /// <br>
-    /// @image html background_worker_wd.png
-    /// @par macOS
-    /// @image html background_worker_m.png
-    /// <br>
-    /// @image html background_worker_md.png
-    /// @par Gnome
-    /// @image html background_worker_g.png
-    /// <br>
-    /// @image html background_worker_gd.png
     class forms_export_ background_worker : public component {
     public:
       /// @brief Initializes a new instance of the background_worker class.
