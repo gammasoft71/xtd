@@ -1,0 +1,1258 @@
+/// @file
+/// @brief Contains countries flags page.
+
+/// @page CountriesFlagsPage Countries flags
+/// @brief Contains countries flags.
+/// Shows xtd::forms::countries flags.
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <th><b>Name</b></th>
+///     <th><b>Value</b></th>
+///     <th><b>Flags</b></th>
+///   </tr>
+///   <tr>
+///     <td>Afghanistan</td>
+///     <td>xtd::forms::countries::afghanistan
+///     <td>@image html af.png</td>
+///   </tr>
+///   <tr>
+///     <td>Åland Islands</td>
+///     <td>xtd::forms::countries::aland_islands
+///     <td>@image html ax.png</td>
+///   </tr>
+///   <tr>
+///     <td>Albania</td>
+///     <td>xtd::forms::countries::albania
+///     <td>@image html al.png</td>
+///   </tr>
+///   <tr>
+///     <td>Algeria</td>
+///     <td>xtd::forms::countries::algeria
+///     <td>@image html dz.png</td>
+///   </tr>
+///   <tr>
+///     <td>American Samoa</td>
+///     <td>xtd::forms::countries::american_samoa
+///     <td>@image html as.png</td>
+///   </tr>
+///   <tr>
+///     <td>Andorra</td>
+///     <td>xtd::forms::countries::andorra
+///     <td>@image html ad.png</td>
+///   </tr>
+///   <tr>
+///     <td>Angola</td>
+///     <td>xtd::forms::countries::angola
+///     <td>@image html ao.png</td>
+///   </tr>
+///   <tr>
+///     <td>Anguilla</td>
+///     <td>xtd::forms::countries::anguilla
+///     <td>@image html ai.png</td>
+///   </tr>
+///   <tr>
+///     <td>Antarctica</td>
+///     <td>xtd::forms::countries::antarctica
+///     <td>@image html aq.png</td>
+///   </tr>
+///   <tr>
+///     <td>Antigua and Barbuda</td>
+///     <td>xtd::forms::countries::antigua_and_barbuda
+///     <td>@image html ag.png</td>
+///   </tr>
+///   <tr>
+///     <td>Argentina</td>
+///     <td>xtd::forms::countries::argentina
+///     <td>@image html ar.png</td>
+///   </tr>
+///   <tr>
+///     <td>Armenia</td>
+///     <td>xtd::forms::countries::armenia
+///     <td>@image html am.png</td>
+///   </tr>
+///   <tr>
+///     <td>Aruba</td>
+///     <td>xtd::forms::countries::aruba
+///     <td>@image html aw.png</td>
+///   </tr>
+///   <tr>
+///     <td>Australia</td>
+///     <td>xtd::forms::countries::australia
+///     <td>@image html au.png</td>
+///   </tr>
+///   <tr>
+///     <td>Austria</td>
+///     <td>xtd::forms::countries::austria
+///     <td>@image html at.png</td>
+///   </tr>
+///   <tr>
+///     <td>Azerbaijan</td>
+///     <td>xtd::forms::countries::azerbaijan
+///     <td>@image html az.png</td>
+///   </tr>
+///   <tr>
+///     <td>Bahamas</td>
+///     <td>xtd::forms::countries::bahamas
+///     <td>@image html bs.png</td>
+///   </tr>
+///   <tr>
+///     <td>Bahrain</td>
+///     <td>xtd::forms::countries::bahrain
+///     <td>@image html bh.png</td>
+///   </tr>
+///   <tr>
+///     <td>Bangladesh</td>
+///     <td>xtd::forms::countries::bangladesh
+///     <td>@image html bd.png</td>
+///   </tr>
+///   <tr>
+///     <td>Barbados</td>
+///     <td>xtd::forms::countries::barbados
+///     <td>@image html bb.png</td>
+///   </tr>
+///   <tr>
+///     <td>Belarus</td>
+///     <td>xtd::forms::countries::belarus
+///     <td>@image html by.png</td>
+///   </tr>
+///   <tr>
+///     <td>Belgium</td>
+///     <td>xtd::forms::countries::belgium
+///     <td>@image html be.png</td>
+///   </tr>
+///   <tr>
+///     <td>Belize</td>
+///     <td>xtd::forms::countries::belize
+///     <td>@image html bz.png</td>
+///   </tr>
+///   <tr>
+///     <td>Benin</td>
+///     <td>xtd::forms::countries::benin
+///     <td>@image html bj.png</td>
+///   </tr>
+///   <tr>
+///     <td>Bermuda</td>
+///     <td>xtd::forms::countries::bermuda
+///     <td>@image html bm.png</td>
+///   </tr>
+///   <tr>
+///     <td>Bhutan</td>
+///     <td>xtd::forms::countries::bhutan
+///     <td>@image html bt.png</td>
+///   </tr>
+///   <tr>
+///     <td>Bolivia (Plurinational State of)</td>
+///     <td>xtd::forms::countries::bolivia
+///     <td>@image html bo.png</td>
+///   </tr>
+///   <tr>
+///     <td>Bonaire, Sint Eustatius and Saba</td>
+///     <td>xtd::forms::countries::bonaire_sint_eustatius_and_saba
+///     <td>@image html bq.png</td>
+///   </tr>
+///   <tr>
+///     <td>Bosnia and Herzegovina</td>
+///     <td>xtd::forms::countries::bosnia_and_herzegovina
+///     <td>@image html ba.png</td>
+///   </tr>
+///   <tr>
+///     <td>Botswana</td>
+///     <td>xtd::forms::countries::botswana
+///     <td>@image html bw.png</td>
+///   </tr>
+///   <tr>
+///     <td>Bouvet Island</td>
+///     <td>xtd::forms::countries::bouvet_island
+///     <td>@image html bv.png</td>
+///   </tr>
+///   <tr>
+///     <td>Brazil</td>
+///     <td>xtd::forms::countries::brazil
+///     <td>@image html br.png</td>
+///   </tr>
+///   <tr>
+///     <td>British Indian Ocean Territory</td>
+///     <td>xtd::forms::countries::british_indian_ocean_territory
+///     <td>@image html io.png</td>
+///   </tr>
+///   <tr>
+///     <td>Brunei Darussalam</td>
+///     <td>xtd::forms::countries::brunei_darussalam
+///     <td>@image html bn.png</td>
+///   </tr>
+///   <tr>
+///     <td>Bulgaria</td>
+///     <td>xtd::forms::countries::bulgaria
+///     <td>@image html bg.png</td>
+///   </tr>
+///   <tr>
+///     <td>Burkina Faso</td>
+///     <td>xtd::forms::countries::burkina_faso
+///     <td>@image html bf.png</td>
+///   </tr>
+///   <tr>
+///     <td>Burundi</td>
+///     <td>xtd::forms::countries::burundi
+///     <td>@image html bi.png</td>
+///   </tr>
+///   <tr>
+///     <td>Cabo Verde</td>
+///     <td>xtd::forms::countries::cabo_verde
+///     <td>@image html cv.png</td>
+///   </tr>
+///   <tr>
+///     <td>Cambodia</td>
+///     <td>xtd::forms::countries::cambodia
+///     <td>@image html kh.png</td>
+///   </tr>
+///   <tr>
+///     <td>Cameroon</td>
+///     <td>xtd::forms::countries::cameroon
+///     <td>@image html cm.png</td>
+///   </tr>
+///   <tr>
+///     <td>Canada</td>
+///     <td>xtd::forms::countries::canada
+///     <td>@image html ca.png</td>
+///   </tr>
+///   <tr>
+///     <td>Cayman Islands</td>
+///     <td>xtd::forms::countries::cayman_islands
+///     <td>@image html ky.png</td>
+///   </tr>
+///   <tr>
+///     <td>Central African Republic</td>
+///     <td>xtd::forms::countries::central_african_republic
+///     <td>@image html cf.png</td>
+///   </tr>
+///   <tr>
+///     <td>Chad</td>
+///     <td>xtd::forms::countries::chad
+///     <td>@image html td.png</td>
+///   </tr>
+///   <tr>
+///     <td>Chile</td>
+///     <td>xtd::forms::countries::chile
+///     <td>@image html cl.png</td>
+///   </tr>
+///   <tr>
+///     <td>China</td>
+///     <td>xtd::forms::countries::china
+///     <td>@image html cn.png</td>
+///   </tr>
+///   <tr>
+///     <td>Christmas Island</td>
+///     <td>xtd::forms::countries::christmas_island
+///     <td>@image html cx.png</td>
+///   </tr>
+///   <tr>
+///     <td>Cocos (Keeling) Islands</td>
+///     <td>xtd::forms::countries::cocos_keeling_islands
+///     <td>@image html cc.png</td>
+///   </tr>
+///   <tr>
+///     <td>Colombia</td>
+///     <td>xtd::forms::countries::colombia
+///     <td>@image html co.png</td>
+///   </tr>
+///   <tr>
+///     <td>Comoros</td>
+///     <td>xtd::forms::countries::comoros
+///     <td>@image html km.png</td>
+///   </tr>
+///   <tr>
+///     <td>Congo</td>
+///     <td>xtd::forms::countries::congo
+///     <td>@image html cg.png</td>
+///   </tr>
+///   <tr>
+///     <td>Congo, Democratic Republic of the</td>
+///     <td>xtd::forms::countries::democratic_republic_of_the_congo
+///     <td>@image html cd.png</td>
+///   </tr>
+///   <tr>
+///     <td>Cook Islands</td>
+///     <td>xtd::forms::countries::cook_islands
+///     <td>@image html ck.png</td>
+///   </tr>
+///   <tr>
+///     <td>Costa Rica</td>
+///     <td>xtd::forms::countries::costa_rica
+///     <td>@image html cr.png</td>
+///   </tr>
+///   <tr>
+///     <td>Côte d'Ivoire</td>
+///     <td>xtd::forms::countries::cote_d_ivoire
+///     <td>@image html ci.png</td>
+///   </tr>
+///   <tr>
+///     <td>Croatia</td>
+///     <td>xtd::forms::countries::croatia
+///     <td>@image html hr.png</td>
+///   </tr>
+///   <tr>
+///     <td>Cuba</td>
+///     <td>xtd::forms::countries::cuba
+///     <td>@image html cu.png</td>
+///   </tr>
+///   <tr>
+///     <td>Curaçao</td>
+///     <td>xtd::forms::countries::curacao
+///     <td>@image html cw.png</td>
+///   </tr>
+///   <tr>
+///     <td>Cyprus</td>
+///     <td>xtd::forms::countries::cyprus
+///     <td>@image html cy.png</td>
+///   </tr>
+///   <tr>
+///     <td>Czechia</td>
+///     <td>xtd::forms::countries::czechia
+///     <td>@image html cz.png</td>
+///   </tr>
+///   <tr>
+///     <td>Denmark</td>
+///     <td>xtd::forms::countries::denmark
+///     <td>@image html dk.png</td>
+///   </tr>
+///   <tr>
+///     <td>Djibouti</td>
+///     <td>xtd::forms::countries::djibouti
+///     <td>@image html dj.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dominica</td>
+///     <td>xtd::forms::countries::dominica
+///     <td>@image html dm.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dominican Republic</td>
+///     <td>xtd::forms::countries::dominican_republic
+///     <td>@image html do.png</td>
+///   </tr>
+///   <tr>
+///     <td>Ecuador</td>
+///     <td>xtd::forms::countries::ecuador
+///     <td>@image html ec.png</td>
+///   </tr>
+///   <tr>
+///     <td>Egypt</td>
+///     <td>xtd::forms::countries::egypt
+///     <td>@image html eg.png</td>
+///   </tr>
+///   <tr>
+///     <td>El Salvador</td>
+///     <td>xtd::forms::countries::el_salvador
+///     <td>@image html sv.png</td>
+///   </tr>
+///   <tr>
+///     <td>Equatorial Guinea</td>
+///     <td>xtd::forms::countries::equatorial_guinea
+///     <td>@image html gq.png</td>
+///   </tr>
+///   <tr>
+///     <td>Eritrea</td>
+///     <td>xtd::forms::countries::eritrea
+///     <td>@image html er.png</td>
+///   </tr>
+///   <tr>
+///     <td>Estonia</td>
+///     <td>xtd::forms::countries::estonia
+///     <td>@image html ee.png</td>
+///   </tr>
+///   <tr>
+///     <td>Eswatini</td>
+///     <td>xtd::forms::countries::eswatini
+///     <td>@image html sz.png</td>
+///   </tr>
+///   <tr>
+///     <td>Ethiopia</td>
+///     <td>xtd::forms::countries::ethiopia
+///     <td>@image html et.png</td>
+///   </tr>
+///   <tr>
+///     <td>Falkland Islands (Malvinas)</td>
+///     <td>xtd::forms::countries::falkland_islands
+///     <td>@image html fk.png</td>
+///   </tr>
+///   <tr>
+///     <td>Faroe Islands</td>
+///     <td>xtd::forms::countries::faroe_islands
+///     <td>@image html fo.png</td>
+///   </tr>
+///   <tr>
+///     <td>Fiji</td>
+///     <td>xtd::forms::countries::fiji
+///     <td>@image html fj.png</td>
+///   </tr>
+///   <tr>
+///     <td>Finland</td>
+///     <td>xtd::forms::countries::finland
+///     <td>@image html fi.png</td>
+///   </tr>
+///   <tr>
+///     <td>France</td>
+///     <td>xtd::forms::countries::france
+///     <td>@image html fr.png</td>
+///   </tr>
+///   <tr>
+///     <td>French Guiana</td>
+///     <td>xtd::forms::countries::french_guiana
+///     <td>@image html gf.png</td>
+///   </tr>
+///   <tr>
+///     <td>French Polynesia</td>
+///     <td>xtd::forms::countries::french_polynesia
+///     <td>@image html pf.png</td>
+///   </tr>
+///   <tr>
+///     <td>French Southern Territories</td>
+///     <td>xtd::forms::countries::french_southern_territories
+///     <td>@image html tf.png</td>
+///   </tr>
+///   <tr>
+///     <td>Gabon</td>
+///     <td>xtd::forms::countries::gabon
+///     <td>@image html ga.png</td>
+///   </tr>
+///   <tr>
+///     <td>Gambia</td>
+///     <td>xtd::forms::countries::gambia
+///     <td>@image html gm.png</td>
+///   </tr>
+///   <tr>
+///     <td>Georgia</td>
+///     <td>xtd::forms::countries::georgia
+///     <td>@image html ge.png</td>
+///   </tr>
+///   <tr>
+///     <td>Germany</td>
+///     <td>xtd::forms::countries::germany
+///     <td>@image html de.png</td>
+///   </tr>
+///   <tr>
+///     <td>Ghana</td>
+///     <td>xtd::forms::countries::ghana
+///     <td>@image html gh.png</td>
+///   </tr>
+///   <tr>
+///     <td>Gibraltar</td>
+///     <td>xtd::forms::countries::gibraltar
+///     <td>@image html gi.png</td>
+///   </tr>
+///   <tr>
+///     <td>Greece</td>
+///     <td>xtd::forms::countries::greece
+///     <td>@image html gr.png</td>
+///   </tr>
+///   <tr>
+///     <td>Greenland</td>
+///     <td>xtd::forms::countries::greenland
+///     <td>@image html gl.png</td>
+///   </tr>
+///   <tr>
+///     <td>Grenada</td>
+///     <td>xtd::forms::countries::grenada
+///     <td>@image html gd.png</td>
+///   </tr>
+///   <tr>
+///     <td>Guadeloupe</td>
+///     <td>xtd::forms::countries::guadeloupe
+///     <td>@image html gp.png</td>
+///   </tr>
+///   <tr>
+///     <td>Guam</td>
+///     <td>xtd::forms::countries::guam
+///     <td>@image html gu.png</td>
+///   </tr>
+///   <tr>
+///     <td>Guatemala</td>
+///     <td>xtd::forms::countries::guatemala
+///     <td>@image html gt.png</td>
+///   </tr>
+///   <tr>
+///     <td>Guernsey</td>
+///     <td>xtd::forms::countries::guernsey
+///     <td>@image html gg.png</td>
+///   </tr>
+///   <tr>
+///     <td>Guinea</td>
+///     <td>xtd::forms::countries::guinea
+///     <td>@image html gn.png</td>
+///   </tr>
+///   <tr>
+///     <td>Guinea-Bissau</td>
+///     <td>xtd::forms::countries::guinea_bissau
+///     <td>@image html gw.png</td>
+///   </tr>
+///   <tr>
+///     <td>Guyana</td>
+///     <td>xtd::forms::countries::guyana
+///     <td>@image html gy.png</td>
+///   </tr>
+///   <tr>
+///     <td>Haiti</td>
+///     <td>xtd::forms::countries::haiti
+///     <td>@image html ht.png</td>
+///   </tr>
+///   <tr>
+///     <td>Heard Island and McDonald Islands</td>
+///     <td>xtd::forms::countries::heard_island_and_mcdonald_islands
+///     <td>@image html hm.png</td>
+///   </tr>
+///   <tr>
+///     <td>Holy See</td>
+///     <td>xtd::forms::countries::holy_see
+///     <td>@image html va.png</td>
+///   </tr>
+///   <tr>
+///     <td>Honduras</td>
+///     <td>xtd::forms::countries::honduras
+///     <td>@image html hn.png</td>
+///   </tr>
+///   <tr>
+///     <td>Hong Kong</td>
+///     <td>xtd::forms::countries::hong_kong
+///     <td>@image html hk.png</td>
+///   </tr>
+///   <tr>
+///     <td>Hungary</td>
+///     <td>xtd::forms::countries::hungary
+///     <td>@image html hu.png</td>
+///   </tr>
+///   <tr>
+///     <td>Iceland</td>
+///     <td>xtd::forms::countries::iceland
+///     <td>@image html is.png</td>
+///   </tr>
+///   <tr>
+///     <td>India</td>
+///     <td>xtd::forms::countries::india
+///     <td>@image html in.png</td>
+///   </tr>
+///   <tr>
+///     <td>Indonesia</td>
+///     <td>xtd::forms::countries::indonesia
+///     <td>@image html id.png</td>
+///   </tr>
+///   <tr>
+///     <td>Iran (Islamic Republic of)</td>
+///     <td>xtd::forms::countries::iran
+///     <td>@image html ir.png</td>
+///   </tr>
+///   <tr>
+///     <td>Iraq</td>
+///     <td>xtd::forms::countries::iraq
+///     <td>@image html iq.png</td>
+///   </tr>
+///   <tr>
+///     <td>Ireland</td>
+///     <td>xtd::forms::countries::ireland
+///     <td>@image html ie.png</td>
+///   </tr>
+///   <tr>
+///     <td>Isle of Man</td>
+///     <td>xtd::forms::countries::isle_of_man
+///     <td>@image html im.png</td>
+///   </tr>
+///   <tr>
+///     <td>Israel</td>
+///     <td>xtd::forms::countries::israel
+///     <td>@image html il.png</td>
+///   </tr>
+///   <tr>
+///     <td>Italy</td>
+///     <td>xtd::forms::countries::italy
+///     <td>@image html it.png</td>
+///   </tr>
+///   <tr>
+///     <td>Jamaica</td>
+///     <td>xtd::forms::countries::jamaica
+///     <td>@image html jm.png</td>
+///   </tr>
+///   <tr>
+///     <td>Japan</td>
+///     <td>xtd::forms::countries::japan
+///     <td>@image html jp.png</td>
+///   </tr>
+///   <tr>
+///     <td>Jersey</td>
+///     <td>xtd::forms::countries::jersey
+///     <td>@image html je.png</td>
+///   </tr>
+///   <tr>
+///     <td>Jordan</td>
+///     <td>xtd::forms::countries::jordan
+///     <td>@image html jo.png</td>
+///   </tr>
+///   <tr>
+///     <td>Kazakhstan</td>
+///     <td>xtd::forms::countries::kazakhstan
+///     <td>@image html kz.png</td>
+///   </tr>
+///   <tr>
+///     <td>Kenya</td>
+///     <td>xtd::forms::countries::kenya
+///     <td>@image html ke.png</td>
+///   </tr>
+///   <tr>
+///     <td>Kiribati</td>
+///     <td>xtd::forms::countries::kiribati
+///     <td>@image html ki.png</td>
+///   </tr>
+///   <tr>
+///     <td>Korea (Democratic People's Republic of)</td>
+///     <td>xtd::forms::countries::north_korea
+///     <td>@image html kp.png</td>
+///   </tr>
+///   <tr>
+///     <td>Korea, Republic of</td>
+///     <td>xtd::forms::countries::south_korea
+///     <td>@image html kr.png</td>
+///   </tr>
+///   <tr>
+///     <td>Kuwait</td>
+///     <td>xtd::forms::countries::kuwait
+///     <td>@image html kw.png</td>
+///   </tr>
+///   <tr>
+///     <td>Kyrgyzstan</td>
+///     <td>xtd::forms::countries::kyrgyzstan
+///     <td>@image html kg.png</td>
+///   </tr>
+///   <tr>
+///     <td>Lao People's Democratic Republic</td>
+///     <td>xtd::forms::countries::lao_people_s_democratic_republic
+///     <td>@image html la.png</td>
+///   </tr>
+///   <tr>
+///     <td>Latvia</td>
+///     <td>xtd::forms::countries::latvia
+///     <td>@image html lv.png</td>
+///   </tr>
+///   <tr>
+///     <td>Lebanon</td>
+///     <td>xtd::forms::countries::lebanon
+///     <td>@image html lb.png</td>
+///   </tr>
+///   <tr>
+///     <td>Lesotho</td>
+///     <td>xtd::forms::countries::lesotho
+///     <td>@image html ls.png</td>
+///   </tr>
+///   <tr>
+///     <td>Liberia</td>
+///     <td>xtd::forms::countries::liberia
+///     <td>@image html lr.png</td>
+///   </tr>
+///   <tr>
+///     <td>Libya</td>
+///     <td>xtd::forms::countries::libya
+///     <td>@image html ly.png</td>
+///   </tr>
+///   <tr>
+///     <td>Liechtenstein</td>
+///     <td>xtd::forms::countries::liechtenstein
+///     <td>@image html li.png</td>
+///   </tr>
+///   <tr>
+///     <td>Lithuania</td>
+///     <td>xtd::forms::countries::lithuania
+///     <td>@image html lt.png</td>
+///   </tr>
+///   <tr>
+///     <td>Luxembourg</td>
+///     <td>xtd::forms::countries::luxembourg
+///     <td>@image html lu.png</td>
+///   </tr>
+///   <tr>
+///     <td>Macao</td>
+///     <td>xtd::forms::countries::macao
+///     <td>@image html mo.png</td>
+///   </tr>
+///   <tr>
+///     <td>Madagascar</td>
+///     <td>xtd::forms::countries::madagascar
+///     <td>@image html mg.png</td>
+///   </tr>
+///   <tr>
+///     <td>Malawi</td>
+///     <td>xtd::forms::countries::malawi
+///     <td>@image html mw.png</td>
+///   </tr>
+///   <tr>
+///     <td>Malaysia</td>
+///     <td>xtd::forms::countries::malaysia
+///     <td>@image html my.png</td>
+///   </tr>
+///   <tr>
+///     <td>Maldives</td>
+///     <td>xtd::forms::countries::maldives
+///     <td>@image html mv.png</td>
+///   </tr>
+///   <tr>
+///     <td>Mali</td>
+///     <td>xtd::forms::countries::mali
+///     <td>@image html ml.png</td>
+///   </tr>
+///   <tr>
+///     <td>Malta</td>
+///     <td>xtd::forms::countries::malta
+///     <td>@image html mt.png</td>
+///   </tr>
+///   <tr>
+///     <td>Marshall Islands</td>
+///     <td>xtd::forms::countries::marshall_islands
+///     <td>@image html mh.png</td>
+///   </tr>
+///   <tr>
+///     <td>Martinique</td>
+///     <td>xtd::forms::countries::martinique
+///     <td>@image html mq.png</td>
+///   </tr>
+///   <tr>
+///     <td>Mauritania</td>
+///     <td>xtd::forms::countries::mauritania
+///     <td>@image html mr.png</td>
+///   </tr>
+///   <tr>
+///     <td>Mauritius</td>
+///     <td>xtd::forms::countries::mauritius
+///     <td>@image html mu.png</td>
+///   </tr>
+///   <tr>
+///     <td>Mayotte</td>
+///     <td>xtd::forms::countries::mayotte
+///     <td>@image html yt.png</td>
+///   </tr>
+///   <tr>
+///     <td>Mexico</td>
+///     <td>xtd::forms::countries::mexico
+///     <td>@image html mx.png</td>
+///   </tr>
+///   <tr>
+///     <td>Micronesia (Federated States of)</td>
+///     <td>xtd::forms::countries::federated_states_of_micronesia
+///     <td>@image html fm.png</td>
+///   </tr>
+///   <tr>
+///     <td>Moldova, Republic of</td>
+///     <td>xtd::forms::countries::moldova
+///     <td>@image html md.png</td>
+///   </tr>
+///   <tr>
+///     <td>Monaco</td>
+///     <td>xtd::forms::countries::monaco
+///     <td>@image html mc.png</td>
+///   </tr>
+///   <tr>
+///     <td>Mongolia</td>
+///     <td>xtd::forms::countries::mongolia
+///     <td>@image html mn.png</td>
+///   </tr>
+///   <tr>
+///     <td>Montenegro</td>
+///     <td>xtd::forms::countries::montenegro
+///     <td>@image html me.png</td>
+///   </tr>
+///   <tr>
+///     <td>Montserrat</td>
+///     <td>xtd::forms::countries::montserrat
+///     <td>@image html ms.png</td>
+///   </tr>
+///   <tr>
+///     <td>Morocco</td>
+///     <td>xtd::forms::countries::morocco
+///     <td>@image html ma.png</td>
+///   </tr>
+///   <tr>
+///     <td>Mozambique</td>
+///     <td>xtd::forms::countries::mozambique
+///     <td>@image html mz.png</td>
+///   </tr>
+///   <tr>
+///     <td>Myanmar</td>
+///     <td>xtd::forms::countries::myanmar
+///     <td>@image html mm.png</td>
+///   </tr>
+///   <tr>
+///     <td>Namibia</td>
+///     <td>xtd::forms::countries::namibia
+///     <td>@image html na.png</td>
+///   </tr>
+///   <tr>
+///     <td>Nauru</td>
+///     <td>xtd::forms::countries::nauru
+///     <td>@image html nr.png</td>
+///   </tr>
+///   <tr>
+///     <td>Nepal</td>
+///     <td>xtd::forms::countries::nepal
+///     <td>@image html np.png</td>
+///   </tr>
+///   <tr>
+///     <td>Netherlands</td>
+///     <td>xtd::forms::countries::netherlands
+///     <td>@image html nl.png</td>
+///   </tr>
+///   <tr>
+///     <td>New Caledonia</td>
+///     <td>xtd::forms::countries::new_caledonia
+///     <td>@image html nc.png</td>
+///   </tr>
+///   <tr>
+///     <td>New Zealand</td>
+///     <td>xtd::forms::countries::new_zealand
+///     <td>@image html nz.png</td>
+///   </tr>
+///   <tr>
+///     <td>Nicaragua</td>
+///     <td>xtd::forms::countries::nicaragua
+///     <td>@image html ni.png</td>
+///   </tr>
+///   <tr>
+///     <td>Niger</td>
+///     <td>xtd::forms::countries::niger
+///     <td>@image html ne.png</td>
+///   </tr>
+///   <tr>
+///     <td>Nigeria</td>
+///     <td>xtd::forms::countries::nigeria
+///     <td>@image html ng.png</td>
+///   </tr>
+///   <tr>
+///     <td>Niue</td>
+///     <td>xtd::forms::countries::niue
+///     <td>@image html nu.png</td>
+///   </tr>
+///   <tr>
+///     <td>Norfolk Island</td>
+///     <td>xtd::forms::countries::norfolk_island
+///     <td>@image html nf.png</td>
+///   </tr>
+///   <tr>
+///     <td>North Macedonia</td>
+///     <td>xtd::forms::countries::north_macedonia
+///     <td>@image html mk.png</td>
+///   </tr>
+///   <tr>
+///     <td>Northern Mariana Islands</td>
+///     <td>xtd::forms::countries::northern_mariana_islands
+///     <td>@image html mp.png</td>
+///   </tr>
+///   <tr>
+///     <td>Norway</td>
+///     <td>xtd::forms::countries::norway
+///     <td>@image html no.png</td>
+///   </tr>
+///   <tr>
+///     <td>Oman</td>
+///     <td>xtd::forms::countries::oman
+///     <td>@image html om.png</td>
+///   </tr>
+///   <tr>
+///     <td>Pakistan</td>
+///     <td>xtd::forms::countries::pakistan
+///     <td>@image html pk.png</td>
+///   </tr>
+///   <tr>
+///     <td>Palau</td>
+///     <td>xtd::forms::countries::palau
+///     <td>@image html pw.png</td>
+///   </tr>
+///   <tr>
+///     <td>Palestine, State of</td>
+///     <td>xtd::forms::countries::state_of_palestine
+///     <td>@image html ps.png</td>
+///   </tr>
+///   <tr>
+///     <td>Panama</td>
+///     <td>xtd::forms::countries::panama
+///     <td>@image html pa.png</td>
+///   </tr>
+///   <tr>
+///     <td>Papua New Guinea</td>
+///     <td>xtd::forms::countries::papua_new_guinea
+///     <td>@image html pg.png</td>
+///   </tr>
+///   <tr>
+///     <td>Paraguay</td>
+///     <td>xtd::forms::countries::paraguay
+///     <td>@image html py.png</td>
+///   </tr>
+///   <tr>
+///     <td>Peru</td>
+///     <td>xtd::forms::countries::peru
+///     <td>@image html pe.png</td>
+///   </tr>
+///   <tr>
+///     <td>Philippines</td>
+///     <td>xtd::forms::countries::philippines
+///     <td>@image html ph.png</td>
+///   </tr>
+///   <tr>
+///     <td>Pitcairn</td>
+///     <td>xtd::forms::countries::pitcairn
+///     <td>@image html pn.png</td>
+///   </tr>
+///   <tr>
+///     <td>Poland</td>
+///     <td>xtd::forms::countries::poland
+///     <td>@image html pl.png</td>
+///   </tr>
+///   <tr>
+///     <td>Portugal</td>
+///     <td>xtd::forms::countries::portugal
+///     <td>@image html pt.png</td>
+///   </tr>
+///   <tr>
+///     <td>Puerto Rico</td>
+///     <td>xtd::forms::countries::puerto_rico
+///     <td>@image html pr.png</td>
+///   </tr>
+///   <tr>
+///     <td>Qatar</td>
+///     <td>xtd::forms::countries::qatar
+///     <td>@image html qa.png</td>
+///   </tr>
+///   <tr>
+///     <td>Réunion</td>
+///     <td>xtd::forms::countries::reunion
+///     <td>@image html re.png</td>
+///   </tr>
+///   <tr>
+///     <td>Romania</td>
+///     <td>xtd::forms::countries::romania
+///     <td>@image html ro.png</td>
+///   </tr>
+///   <tr>
+///     <td>Russian Federation</td>
+///     <td>xtd::forms::countries::russian_federation
+///     <td>@image html ru.png</td>
+///   </tr>
+///   <tr>
+///     <td>Rwanda</td>
+///     <td>xtd::forms::countries::rwanda
+///     <td>@image html rw.png</td>
+///   </tr>
+///   <tr>
+///     <td>Saint Barthélemy</td>
+///     <td>xtd::forms::countries::saint_barthelemy
+///     <td>@image html bl.png</td>
+///   </tr>
+///   <tr>
+///     <td>Saint Helena, Ascension and Tristan da Cunha</td>
+///     <td>xtd::forms::countries::saint_helena_ascension_and_tristan_da_cunha
+///     <td>@image html sh.png</td>
+///   </tr>
+///   <tr>
+///     <td>Saint Kitts and Nevis</td>
+///     <td>xtd::forms::countries::saint_kitts_and_nevis
+///     <td>@image html kn.png</td>
+///   </tr>
+///   <tr>
+///     <td>Saint Lucia</td>
+///     <td>xtd::forms::countries::saint_lucia
+///     <td>@image html lc.png</td>
+///   </tr>
+///   <tr>
+///     <td>Saint Martin (French part)</td>
+///     <td>xtd::forms::countries::saint_martin_french_part
+///     <td>@image html mf.png</td>
+///   </tr>
+///   <tr>
+///     <td>Saint Pierre and Miquelon</td>
+///     <td>xtd::forms::countries::saint_pierre_and_miquelon
+///     <td>@image html pm.png</td>
+///   </tr>
+///   <tr>
+///     <td>Saint Vincent and the Grenadines</td>
+///     <td>xtd::forms::countries::saint_vincent_and_the_grenadines
+///     <td>@image html vc.png</td>
+///   </tr>
+///   <tr>
+///     <td>Samoa</td>
+///     <td>xtd::forms::countries::samoa
+///     <td>@image html ws.png</td>
+///   </tr>
+///   <tr>
+///     <td>San Marino</td>
+///     <td>xtd::forms::countries::san_marino
+///     <td>@image html sm.png</td>
+///   </tr>
+///   <tr>
+///     <td>Sao Tome and Principe</td>
+///     <td>xtd::forms::countries::sao_tome_and_principe
+///     <td>@image html st.png</td>
+///   </tr>
+///   <tr>
+///     <td>Saudi Arabia</td>
+///     <td>xtd::forms::countries::saudi_arabia
+///     <td>@image html sa.png</td>
+///   </tr>
+///   <tr>
+///     <td>Senegal</td>
+///     <td>xtd::forms::countries::senegal
+///     <td>@image html sn.png</td>
+///   </tr>
+///   <tr>
+///     <td>Serbia</td>
+///     <td>xtd::forms::countries::serbia
+///     <td>@image html rs.png</td>
+///   </tr>
+///   <tr>
+///     <td>Seychelles</td>
+///     <td>xtd::forms::countries::seychelles
+///     <td>@image html sc.png</td>
+///   </tr>
+///   <tr>
+///     <td>Sierra Leone</td>
+///     <td>xtd::forms::countries::sierra_leone
+///     <td>@image html sl.png</td>
+///   </tr>
+///   <tr>
+///     <td>Singapore</td>
+///     <td>xtd::forms::countries::singapore
+///     <td>@image html sg.png</td>
+///   </tr>
+///   <tr>
+///     <td>Sint Maarten (Dutch part)</td>
+///     <td>xtd::forms::countries::sint_maarten_dutch_part
+///     <td>@image html sx.png</td>
+///   </tr>
+///   <tr>
+///     <td>Slovakia</td>
+///     <td>xtd::forms::countries::slovakia
+///     <td>@image html sk.png</td>
+///   </tr>
+///   <tr>
+///     <td>Slovenia</td>
+///     <td>xtd::forms::countries::slovenia
+///     <td>@image html si.png</td>
+///   </tr>
+///   <tr>
+///     <td>Solomon Islands</td>
+///     <td>xtd::forms::countries::solomon_islands
+///     <td>@image html sb.png</td>
+///   </tr>
+///   <tr>
+///     <td>Somalia</td>
+///     <td>xtd::forms::countries::somalia
+///     <td>@image html so.png</td>
+///   </tr>
+///   <tr>
+///     <td>South Africa</td>
+///     <td>xtd::forms::countries::south_africa
+///     <td>@image html za.png</td>
+///   </tr>
+///   <tr>
+///     <td>South Georgia and the South Sandwich Islands</td>
+///     <td>xtd::forms::countries::south_georgia_and_the_south_sandwich_islands
+///     <td>@image html gs.png</td>
+///   </tr>
+///   <tr>
+///     <td>South Sudan</td>
+///     <td>xtd::forms::countries::south_sudan
+///     <td>@image html ss.png</td>
+///   </tr>
+///   <tr>
+///     <td>Spain</td>
+///     <td>xtd::forms::countries::spain
+///     <td>@image html es.png</td>
+///   </tr>
+///   <tr>
+///     <td>Sri Lanka</td>
+///     <td>xtd::forms::countries::sri_lanka
+///     <td>@image html lk.png</td>
+///   </tr>
+///   <tr>
+///     <td>Sudan</td>
+///     <td>xtd::forms::countries::sudan
+///     <td>@image html sd.png</td>
+///   </tr>
+///   <tr>
+///     <td>Suriname</td>
+///     <td>xtd::forms::countries::suriname
+///     <td>@image html sr.png</td>
+///   </tr>
+///   <tr>
+///     <td>Svalbard and Jan Mayen</td>
+///     <td>xtd::forms::countries::svalbard_and_jan_mayen
+///     <td>@image html sj.png</td>
+///   </tr>
+///   <tr>
+///     <td>Sweden</td>
+///     <td>xtd::forms::countries::sweden
+///     <td>@image html se.png</td>
+///   </tr>
+///   <tr>
+///     <td>Switzerland</td>
+///     <td>xtd::forms::countries::switzerland
+///     <td>@image html ch.png</td>
+///   </tr>
+///   <tr>
+///     <td>Syrian Arab Republic</td>
+///     <td>xtd::forms::countries::syrian_arab_republic
+///     <td>@image html sy.png</td>
+///   </tr>
+///   <tr>
+///     <td>Taiwan, Province of China</td>
+///     <td>xtd::forms::countries::taiwan_china
+///     <td>@image html tw.png</td>
+///   </tr>
+///   <tr>
+///     <td>Tajikistan</td>
+///     <td>xtd::forms::countries::tajikistan
+///     <td>@image html tj.png</td>
+///   </tr>
+///   <tr>
+///     <td>Tanzania, United Republic of</td>
+///     <td>xtd::forms::countries::tanzania
+///     <td>@image html tz.png</td>
+///   </tr>
+///   <tr>
+///     <td>Thailand</td>
+///     <td>xtd::forms::countries::thailand
+///     <td>@image html th.png</td>
+///   </tr>
+///   <tr>
+///     <td>Timor-Leste</td>
+///     <td>xtd::forms::countries::timor_leste
+///     <td>@image html tl.png</td>
+///   </tr>
+///   <tr>
+///     <td>Togo</td>
+///     <td>xtd::forms::countries::togo
+///     <td>@image html tg.png</td>
+///   </tr>
+///   <tr>
+///     <td>Tokelau</td>
+///     <td>xtd::forms::countries::tokelau
+///     <td>@image html tk.png</td>
+///   </tr>
+///   <tr>
+///     <td>Tonga</td>
+///     <td>xtd::forms::countries::tonga
+///     <td>@image html to.png</td>
+///   </tr>
+///   <tr>
+///     <td>Trinidad and Tobago</td>
+///     <td>xtd::forms::countries::trinidad_and_tobago
+///     <td>@image html tt.png</td>
+///   </tr>
+///   <tr>
+///     <td>Tunisia</td>
+///     <td>xtd::forms::countries::tunisia
+///     <td>@image html tn.png</td>
+///   </tr>
+///   <tr>
+///     <td>Turkey</td>
+///     <td>xtd::forms::countries::turkey
+///     <td>@image html tr.png</td>
+///   </tr>
+///   <tr>
+///     <td>Turkmenistan</td>
+///     <td>xtd::forms::countries::turkmenistan
+///     <td>@image html tm.png</td>
+///   </tr>
+///   <tr>
+///     <td>Turks and Caicos Islands</td>
+///     <td>xtd::forms::countries::turks_and_caicos_islands
+///     <td>@image html tc.png</td>
+///   </tr>
+///   <tr>
+///     <td>Tuvalu</td>
+///     <td>xtd::forms::countries::tuvalu
+///     <td>@image html tv.png</td>
+///   </tr>
+///   <tr>
+///     <td>Uganda</td>
+///     <td>xtd::forms::countries::uganda
+///     <td>@image html ug.png</td>
+///   </tr>
+///   <tr>
+///     <td>Ukraine</td>
+///     <td>xtd::forms::countries::ukraine
+///     <td>@image html ua.png</td>
+///   </tr>
+///   <tr>
+///     <td>United Arab Emirates</td>
+///     <td>xtd::forms::countries::united_arab_emirates
+///     <td>@image html ae.png</td>
+///   </tr>
+///   <tr>
+///     <td>United Kingdom of Great Britain and Northern Ireland</td>
+///     <td>xtd::forms::countries::united_kingdom_of_great_britain_and_northern_ireland
+///     <td>@image html gb.png</td>
+///   </tr>
+///   <tr>
+///     <td>United States of America</td>
+///     <td>xtd::forms::countries::united_states_of_america
+///     <td>@image html us.png</td>
+///   </tr>
+///   <tr>
+///     <td>United States Minor Outlying Islands</td>
+///     <td>xtd::forms::countries::united_states_minor_outlying_islands
+///     <td>@image html um.png</td>
+///   </tr>
+///   <tr>
+///     <td>Uruguay</td>
+///     <td>xtd::forms::countries::uruguay
+///     <td>@image html uy.png</td>
+///   </tr>
+///   <tr>
+///     <td>Uzbekistan</td>
+///     <td>xtd::forms::countries::uzbekistan
+///     <td>@image html uz.png</td>
+///   </tr>
+///   <tr>
+///     <td>Vanuatu</td>
+///     <td>xtd::forms::countries::vanuatu
+///     <td>@image html vu.png</td>
+///   </tr>
+///   <tr>
+///     <td>Venezuela (Bolivarian Republic of)</td>
+///     <td>xtd::forms::countries::venezuela
+///     <td>@image html ve.png</td>
+///   </tr>
+///   <tr>
+///     <td>Viet Nam</td>
+///     <td>xtd::forms::countries::viet_nam
+///     <td>@image html vn.png</td>
+///   </tr>
+///   <tr>
+///     <td>Virgin Islands (British)</td>
+///     <td>xtd::forms::countries::british_virgin_islands
+///     <td>@image html vg.png</td>
+///   </tr>
+///   <tr>
+///     <td>Virgin Islands (U.S.)</td>
+///     <td>xtd::forms::countries::united_states_virgin_islands
+///     <td>@image html vi.png</td>
+///   </tr>
+///   <tr>
+///     <td>Wallis and Futuna</td>
+///     <td>xtd::forms::countries::wallis_and_futuna
+///     <td>@image html wf.png</td>
+///   </tr>
+///   <tr>
+///     <td>Western Sahara</td>
+///     <td>xtd::forms::countries::western_sahara
+///     <td>@image html eh.png</td>
+///   </tr>
+///   <tr>
+///     <td>Yemen</td>
+///     <td>xtd::forms::countries::yemen
+///     <td>@image html ye.png</td>
+///   </tr>
+///   <tr>
+///     <td>Zambia</td>
+///     <td>xtd::forms::countries::zambia
+///     <td>@image html zm.png</td>
+///   </tr>
+///   <tr>
+///     <td>Zimbabwe</td>
+///     <td>xtd::forms::countries::zimbabwe
+///     <td>@image html zw.png</td>
+///   </tr>
+/// </table>

@@ -164,8 +164,7 @@ HTML_FILE_EXTENSION    = .html
 HTML_HEADER            = html_header.html
 HTML_FOOTER            = html_footer.html
 HTML_STYLESHEET        = 
-HTML_EXTRA_STYLESHEET  = custom.css \
-                         custom_dark_theme.css
+HTML_EXTRA_STYLESHEET  = custom.css custom_dark_theme.css doxygen_html_style.css custom_images.css
 HTML_EXTRA_FILES       = favicon.png
 HTML_COLORSTYLE_HUE    = 220
 HTML_COLORSTYLE_SAT    = 100

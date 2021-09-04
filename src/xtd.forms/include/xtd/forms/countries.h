@@ -20,12 +20,16 @@ namespace xtd {
     class forms_export_ countries final static_ {
     public:
       /// @brief A system-defined country object.
+      /// @image html af.png
       static const country afghanistan();
       /// @brief A system-defined country object.
+      /// @image html ax.png
       static const country aland_islands();
       /// @brief A system-defined country object.
+      /// @image html al.png
       static const country albania();
       /// @brief A system-defined country object.
+      /// @image html dz.png
       static const country algeria();
       /// @brief A system-defined country object.
       static const country american_samoa();

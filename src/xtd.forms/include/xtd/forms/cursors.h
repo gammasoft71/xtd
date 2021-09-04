@@ -30,9 +30,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html app_starting_w.png</img></td>
-      ///     <td>@image html app_starting_m.png</img></td>
-      ///     <td>@image html app_starting_g.png</img></td>
+      ///     <td>@image html app_starting_w.png</td>
+      ///     <td>@image html app_starting_m.png</td>
+      ///     <td>@image html app_starting_g.png</td>
       ///   </tr>
       /// </table>
       static cursor app_starting();
@@ -47,9 +47,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html arrow_w.png</img></td>
-      ///     <td>@image html arrow_m.png</img></td>
-      ///     <td>@image html arrow_g.png</img></td>
+      ///     <td>@image html arrow_w.png</td>
+      ///     <td>@image html arrow_m.png</td>
+      ///     <td>@image html arrow_g.png</td>
       ///   </tr>
       /// </table>
       static cursor arrow();
@@ -64,9 +64,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html closed_hand_w.png</img></td>
-      ///     <td>@image html closed_hand_m.png</img></td>
-      ///     <td>@image html closed_hand_g.png</img></td>
+      ///     <td>@image html closed_hand_w.png</td>
+      ///     <td>@image html closed_hand_m.png</td>
+      ///     <td>@image html closed_hand_g.png</td>
       ///   </tr>
       /// </table>
       static cursor closed_hand();
@@ -81,9 +81,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html contextual_menu_w.png</img></td>
-      ///     <td>@image html contextual_menu_m.png</img></td>
-      ///     <td>@image html contextual_menu_g.png</img></td>
+      ///     <td>@image html contextual_menu_w.png</td>
+      ///     <td>@image html contextual_menu_m.png</td>
+      ///     <td>@image html contextual_menu_g.png</td>
       ///   </tr>
       /// </table>
       static cursor contextual_menu();
@@ -98,9 +98,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html cell_w.png</img></td>
-      ///     <td>@image html cell_m.png</img></td>
-      ///     <td>@image html cell_g.png</img></td>
+      ///     <td>@image html cell_w.png</td>
+      ///     <td>@image html cell_m.png</td>
+      ///     <td>@image html cell_g.png</td>
       ///   </tr>
       /// </table>
       static cursor cell();
@@ -115,9 +115,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html cross_w.png</img></td>
-      ///     <td>@image html cross_m.png</img></td>
-      ///     <td>@image html cross_g.png</img></td>
+      ///     <td>@image html cross_w.png</td>
+      ///     <td>@image html cross_m.png</td>
+      ///     <td>@image html cross_g.png</td>
       ///   </tr>
       /// </table>
       static cursor cross();
@@ -132,9 +132,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html default_cursor_w.png</img></td>
-      ///     <td>@image html default_cursor_m.png</img></td>
-      ///     <td>@image html default_cursor_g.png</img></td>
+      ///     <td>@image html default_cursor_w.png</td>
+      ///     <td>@image html default_cursor_m.png</td>
+      ///     <td>@image html default_cursor_g.png</td>
       ///   </tr>
       /// </table>
       static cursor default_cursor();
@@ -149,9 +149,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html disappearing_item_w.png</img></td>
-      ///     <td>@image html disappearing_item_m.png</img></td>
-      ///     <td>@image html disappearing_item_g.png</img></td>
+      ///     <td>@image html disappearing_item_w.png</td>
+      ///     <td>@image html disappearing_item_m.png</td>
+      ///     <td>@image html disappearing_item_g.png</td>
       ///   </tr>
       /// </table>
       static cursor disappearing_item();
@@ -166,9 +166,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html drag_copy_w.png</img></td>
-      ///     <td>@image html drag_copy_m.png</img></td>
-      ///     <td>@image html drag_copy_g.png</img></td>
+      ///     <td>@image html drag_copy_w.png</td>
+      ///     <td>@image html drag_copy_m.png</td>
+      ///     <td>@image html drag_copy_g.png</td>
       ///   </tr>
       /// </table>
       static cursor drag_copy();
@@ -183,9 +183,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html drag_link_w.png</img></td>
-      ///     <td>@image html drag_link_m.png</img></td>
-      ///     <td>@image html drag_link_g.png</img></td>
+      ///     <td>@image html drag_link_w.png</td>
+      ///     <td>@image html drag_link_m.png</td>
+      ///     <td>@image html drag_link_g.png</td>
       ///   </tr>
       /// </table>
       static cursor drag_link();
@@ -200,9 +200,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html hand_w.png</img></td>
-      ///     <td>@image html hand_m.png</img></td>
-      ///     <td>@image html hand_g.png</img></td>
+      ///     <td>@image html hand_w.png</td>
+      ///     <td>@image html hand_m.png</td>
+      ///     <td>@image html hand_g.png</td>
       ///   </tr>
       /// </table>
       static cursor hand();
@@ -217,9 +217,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html help_w.png</img></td>
-      ///     <td>@image html help_m.png</img></td>
-      ///     <td>@image html help_g.png</img></td>
+      ///     <td>@image html help_w.png</td>
+      ///     <td>@image html help_m.png</td>
+      ///     <td>@image html help_g.png</td>
       ///   </tr>
       /// </table>
       static cursor help();
@@ -234,9 +234,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html hsplit_w.png</img></td>
-      ///     <td>@image html hsplit_m.png</img></td>
-      ///     <td>@image html hsplit_g.png</img></td>
+      ///     <td>@image html hsplit_w.png</td>
+      ///     <td>@image html hsplit_m.png</td>
+      ///     <td>@image html hsplit_g.png</td>
       ///   </tr>
       /// </table>
       static cursor hsplit();
@@ -251,9 +251,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html ibeam_w.png</img></td>
-      ///     <td>@image html ibeam_m.png</img></td>
-      ///     <td>@image html ibeam_g.png</img></td>
+      ///     <td>@image html ibeam_w.png</td>
+      ///     <td>@image html ibeam_m.png</td>
+      ///     <td>@image html ibeam_g.png</td>
       ///   </tr>
       /// </table>
       static cursor ibeam();
@@ -268,9 +268,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html no_w.png</img></td>
-      ///     <td>@image html no_m.png</img></td>
-      ///     <td>@image html no_g.png</img></td>
+      ///     <td>@image html no_w.png</td>
+      ///     <td>@image html no_m.png</td>
+      ///     <td>@image html no_g.png</td>
       ///   </tr>
       /// </table>
       static cursor no();
@@ -285,9 +285,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html no_drag_w.png</img></td>
-      ///     <td>@image html no_drag_m.png</img></td>
-      ///     <td>@image html no_drag_g.png</img></td>
+      ///     <td>@image html no_drag_w.png</td>
+      ///     <td>@image html no_drag_m.png</td>
+      ///     <td>@image html no_drag_g.png</td>
       ///   </tr>
       /// </table>
       static cursor no_drag();
@@ -302,9 +302,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html no_move_2d_w.png</img></td>
-      ///     <td>@image html no_move_2d_m.png</img></td>
-      ///     <td>@image html no_move_2d_g.png</img></td>
+      ///     <td>@image html no_move_2d_w.png</td>
+      ///     <td>@image html no_move_2d_m.png</td>
+      ///     <td>@image html no_move_2d_g.png</td>
       ///   </tr>
       /// </table>
       static cursor no_move_2d();
@@ -319,9 +319,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html no_move_horiz_w.png</img></td>
-      ///     <td>@image html no_move_horiz_m.png</img></td>
-      ///     <td>@image html no_move_horiz_g.png</img></td>
+      ///     <td>@image html no_move_horiz_w.png</td>
+      ///     <td>@image html no_move_horiz_m.png</td>
+      ///     <td>@image html no_move_horiz_g.png</td>
       ///   </tr>
       /// </table>
       static cursor no_move_horiz();
@@ -336,9 +336,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html no_move_vert_w.png</img></td>
-      ///     <td>@image html no_move_vert_m.png</img></td>
-      ///     <td>@image html no_move_vert_g.png</img></td>
+      ///     <td>@image html no_move_vert_w.png</td>
+      ///     <td>@image html no_move_vert_m.png</td>
+      ///     <td>@image html no_move_vert_g.png</td>
       ///   </tr>
       /// </table>
       static cursor no_move_vert();
@@ -353,9 +353,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html open_hand_w.png</img></td>
-      ///     <td>@image html open_hand_m.png</img></td>
-      ///     <td>@image html open_hand_g.png</img></td>
+      ///     <td>@image html open_hand_w.png</td>
+      ///     <td>@image html open_hand_m.png</td>
+      ///     <td>@image html open_hand_g.png</td>
       ///   </tr>
       /// </table>
       static cursor open_hand();
@@ -370,9 +370,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html pan_east_w.png</img></td>
-      ///     <td>@image html pan_east_m.png</img></td>
-      ///     <td>@image html pan_east_g.png</img></td>
+      ///     <td>@image html pan_east_w.png</td>
+      ///     <td>@image html pan_east_m.png</td>
+      ///     <td>@image html pan_east_g.png</td>
       ///   </tr>
       /// </table>
       static cursor pan_east();
@@ -387,9 +387,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html pan_ne_w.png</img></td>
-      ///     <td>@image html pan_ne_m.png</img></td>
-      ///     <td>@image html pan_ne_g.png</img></td>
+      ///     <td>@image html pan_ne_w.png</td>
+      ///     <td>@image html pan_ne_m.png</td>
+      ///     <td>@image html pan_ne_g.png</td>
       ///   </tr>
       /// </table>
       static cursor pan_ne();
@@ -404,9 +404,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html pan_north_w.png</img></td>
-      ///     <td>@image html pan_north_m.png</img></td>
-      ///     <td>@image html pan_north_g.png</img></td>
+      ///     <td>@image html pan_north_w.png</td>
+      ///     <td>@image html pan_north_m.png</td>
+      ///     <td>@image html pan_north_g.png</td>
       ///   </tr>
       /// </table>
       static cursor pan_north();
@@ -421,9 +421,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html pan_nw_w.png</img></td>
-      ///     <td>@image html pan_nw_m.png</img></td>
-      ///     <td>@image html pan_nw_g.png</img></td>
+      ///     <td>@image html pan_nw_w.png</td>
+      ///     <td>@image html pan_nw_m.png</td>
+      ///     <td>@image html pan_nw_g.png</td>
       ///   </tr>
       /// </table>
       static cursor pan_nw();
@@ -438,9 +438,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html pan_se_w.png</img></td>
-      ///     <td>@image html pan_se_m.png</img></td>
-      ///     <td>@image html pan_se_g.png</img></td>
+      ///     <td>@image html pan_se_w.png</td>
+      ///     <td>@image html pan_se_m.png</td>
+      ///     <td>@image html pan_se_g.png</td>
       ///   </tr>
       /// </table>
       static cursor pan_se();
@@ -455,9 +455,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html pan_south_w.png</img></td>
-      ///     <td>@image html pan_south_m.png</img></td>
-      ///     <td>@image html pan_south_g.png</img></td>
+      ///     <td>@image html pan_south_w.png</td>
+      ///     <td>@image html pan_south_m.png</td>
+      ///     <td>@image html pan_south_g.png</td>
       ///   </tr>
       /// </table>
       static cursor pan_south();
@@ -472,9 +472,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html pan_sw_w.png</img></td>
-      ///     <td>@image html pan_sw_m.png</img></td>
-      ///     <td>@image html pan_sw_g.png</img></td>
+      ///     <td>@image html pan_sw_w.png</td>
+      ///     <td>@image html pan_sw_m.png</td>
+      ///     <td>@image html pan_sw_g.png</td>
       ///   </tr>
       /// </table>
       static cursor pan_sw();
@@ -489,9 +489,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html pan_west_w.png</img></td>
-      ///     <td>@image html pan_west_m.png</img></td>
-      ///     <td>@image html pan_west_g.png</img></td>
+      ///     <td>@image html pan_west_w.png</td>
+      ///     <td>@image html pan_west_m.png</td>
+      ///     <td>@image html pan_west_g.png</td>
       ///   </tr>
       /// </table>
       static cursor pan_west();
@@ -506,9 +506,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html size_all_w.png</img></td>
-      ///     <td>@image html size_all_m.png</img></td>
-      ///     <td>@image html size_all_g.png</img></td>
+      ///     <td>@image html size_all_w.png</td>
+      ///     <td>@image html size_all_m.png</td>
+      ///     <td>@image html size_all_g.png</td>
       ///   </tr>
       /// </table>
       static cursor size_all();
@@ -523,9 +523,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html size_nesw_w.png</img></td>
-      ///     <td>@image html size_nesw_m.png</img></td>
-      ///     <td>@image html size_nesw_g.png</img></td>
+      ///     <td>@image html size_nesw_w.png</td>
+      ///     <td>@image html size_nesw_m.png</td>
+      ///     <td>@image html size_nesw_g.png</td>
       ///   </tr>
       /// </table>
       static cursor size_nesw();
@@ -540,9 +540,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html size_ns_w.png</img></td>
-      ///     <td>@image html size_ns_m.png</img></td>
-      ///     <td>@image html size_ns_g.png</img></td>
+      ///     <td>@image html size_ns_w.png</td>
+      ///     <td>@image html size_ns_m.png</td>
+      ///     <td>@image html size_ns_g.png</td>
       ///   </tr>
       /// </table>
       static cursor size_ns();
@@ -557,9 +557,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html size_nwse_w.png</img></td>
-      ///     <td>@image html size_nwse_m.png</img></td>
-      ///     <td>@image html size_nwse_g.png</img></td>
+      ///     <td>@image html size_nwse_w.png</td>
+      ///     <td>@image html size_nwse_m.png</td>
+      ///     <td>@image html size_nwse_g.png</td>
       ///   </tr>
       /// </table>
       static cursor size_nwse();
@@ -574,9 +574,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html size_we_w.png</img></td>
-      ///     <td>@image html size_we_m.png</img></td>
-      ///     <td>@image html size_we_g.png</img></td>
+      ///     <td>@image html size_we_w.png</td>
+      ///     <td>@image html size_we_m.png</td>
+      ///     <td>@image html size_we_g.png</td>
       ///   </tr>
       /// </table>
       static cursor size_we();
@@ -591,9 +591,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html up_arrow_w.png</img></td>
-      ///     <td>@image html up_arrow_m.png</img></td>
-      ///     <td>@image html up_arrow_g.png</img></td>
+      ///     <td>@image html up_arrow_w.png</td>
+      ///     <td>@image html up_arrow_m.png</td>
+      ///     <td>@image html up_arrow_g.png</td>
       ///   </tr>
       /// </table>
       static cursor up_arrow();
@@ -608,9 +608,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html vibeam_w.png</img></td>
-      ///     <td>@image html vibeam_m.png</img></td>
-      ///     <td>@image html vibeam_g.png</img></td>
+      ///     <td>@image html vibeam_w.png</td>
+      ///     <td>@image html vibeam_m.png</td>
+      ///     <td>@image html vibeam_g.png</td>
       ///   </tr>
       /// </table>
       static cursor vibeam();
@@ -625,9 +625,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html vsplit_w.png</img></td>
-      ///     <td>@image html vsplit_m.png</img></td>
-      ///     <td>@image html vsplit_g.png</img></td>
+      ///     <td>@image html vsplit_w.png</td>
+      ///     <td>@image html vsplit_m.png</td>
+      ///     <td>@image html vsplit_g.png</td>
       ///   </tr>
       /// </table>
       static cursor vsplit();
@@ -642,9 +642,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html wait_cursor_w.png</img></td>
-      ///     <td>@image html wait_cursor_m.png</img></td>
-      ///     <td>@image html wait_cursor_g.png</img></td>
+      ///     <td>@image html wait_cursor_w.png</td>
+      ///     <td>@image html wait_cursor_m.png</td>
+      ///     <td>@image html wait_cursor_g.png</td>
       ///   </tr>
       /// </table>
       static cursor wait_cursor();
@@ -659,9 +659,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html zoom_in_w.png</img></td>
-      ///     <td>@image html zoom_in_m.png</img></td>
-      ///     <td>@image html zoom_in_g.png</img></td>
+      ///     <td>@image html zoom_in_w.png</td>
+      ///     <td>@image html zoom_in_m.png</td>
+      ///     <td>@image html zoom_in_g.png</td>
       ///   </tr>
       /// </table>
       static cursor zoom_in();
@@ -676,9 +676,9 @@ namespace xtd {
       ///     <th><b>Gnome</b></th>
       ///   </tr>
       ///   <tr>
-      ///     <td>@image html zoom_out_w.png</img></td>
-      ///     <td>@image html zoom_out_m.png</img></td>
-      ///     <td>@image html zoom_out_g.png</img></td>
+      ///     <td>@image html zoom_out_w.png</td>
+      ///     <td>@image html zoom_out_m.png</td>
+      ///     <td>@image html zoom_out_g.png</td>
       ///   </tr>
       /// </table>
       static cursor zoom_out();

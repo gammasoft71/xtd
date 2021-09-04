@@ -35,15 +35,15 @@ namespace xtd {
     ///   </tr>
     ///   <tr>
     ///     <th>Light</th>
-    ///     <td>@image html control_check_box_w.png</img></td>
-    ///     <td>@image html control_check_box_m.png</img></td>
-    ///     <td>@image html control_check_box_g.png</img></td>
+    ///     <td>@image html control_check_box_w.png</td>
+    ///     <td>@image html control_check_box_m.png</td>
+    ///     <td>@image html control_check_box_g.png</td>
     ///   </tr>
     ///   <tr>
     ///     <th>Dark</th>
-    ///     <td>@image html control_check_box_wd.png</img></td>
-    ///     <td>@image html control_check_box_md.png</img></td>
-    ///     <td>@image html control_check_box_gd.png</img></td>
+    ///     <td>@image html control_check_box_wd.png</td>
+    ///     <td>@image html control_check_box_md.png</td>
+    ///     <td>@image html control_check_box_gd.png</td>
     ///   </tr>
     /// </table>
     /// @par Examples
