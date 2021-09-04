@@ -18,18 +18,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of horizontal_layout_panel container.
     /// @include horizontal_layout_panel.cpp
-    /// @par Windows
-    /// @image html horizontal_layout_panel_w.png
-    /// <br>
-    /// @image html horizontal_layout_panel_wd.png
-    /// @par macOS
-    /// @image html horizontal_layout_panel_m.png
-    /// <br>
-    /// @image html horizontal_layout_panel_md.png
-    /// @par Gnome
-    /// @image html horizontal_layout_panel_g.png
-    /// <br>
-    /// @image html horizontal_layout_panel_gd.png
     class horizontal_layout_panel : public panel {
     public:
       /// @brief Initialises a new instance of horizontal layout panel class.

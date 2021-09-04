@@ -23,18 +23,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of tab_control container.
     /// @include tab_control.cpp
-    /// @par Windows
-    /// @image html tab_control_w.png
-    /// <br>
-    /// @image html tab_control_wd.png
-    /// @par macOS
-    /// @image html tab_control_m.png
-    /// <br>
-    /// @image html tab_control_md.png
-    /// @par Gnome
-    /// @image html tab_control_g.png
-    /// <br>
-    /// @image html tab_control_gd.png
     class forms_export_ tab_control : public control {
     public:
       /// @brief Initializes a new instance of the tab_control class.

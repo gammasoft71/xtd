@@ -19,18 +19,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of folder_browser_dialog dialog.
     /// @include folder_browser_dialog.cpp
-    /// @par Windows
-    /// @image html folder_browser_dialog_w.png
-    /// <br>
-    /// @image html folder_browser_dialog_wd.png
-    /// @par macOS
-    /// @image html folder_browser_dialog_m.png
-    /// <br>
-    /// @image html folder_browser_dialog_md.png
-    /// @par Gnome
-    /// @image html folder_browser_dialog_g.png
-    /// <br>
-    /// @image html folder_browser_dialog_gd.png
     class forms_export_ folder_browser_dialog final : public common_dialog {
     public:
       /// @brief Initializes a new instance of the folder_browser_dialog class.

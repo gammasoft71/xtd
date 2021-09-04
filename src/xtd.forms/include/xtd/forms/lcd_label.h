@@ -25,33 +25,9 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of lcd_label control.
     /// @include lcd_label.cpp
-    /// @par Windows
-    /// @image html lcd_label_w.png
-    /// <br>
-    /// @image html lcd_label_wd.png
-    /// @par macOS
-    /// @image html lcd_label_m.png
-    /// <br>
-    /// @image html lcd_label_md.png
-    /// @par Gnome
-    /// @image html lcd_label_g.png
-    /// <br>
-    /// @image html lcd_label_gd.png
     /// @par Examples
     /// The following code example demonstrate the use of lcd_label control.
     /// @include lcd_label2.cpp
-    /// @par Windows
-    /// @image html lcd_label2_w.png
-    /// <br>
-    /// @image html lcd_label2_wd.png
-    /// @par macOS
-    /// @image html lcd_label2_m.png
-    /// <br>
-    /// @image html lcd_label2_md.png
-    /// @par Gnome
-    /// @image html lcd_label2_g.png
-    /// <br>
-    /// @image html lcd_label2_gd.png
     class lcd_label : public control {
       class idigit interface_ {
       public:

@@ -21,18 +21,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of progress_dialog dialog.
     /// @include progress_dialog.cpp
-    /// @par Windows
-    /// @image html progress_dialog_w.png
-    /// <br>
-    /// @image html progress_dialog_wd.png
-    /// @par macOS
-    /// @image html progress_dialog_m.png
-    /// <br>
-    /// @image html progress_dialog_md.png
-    /// @par Gnome
-    /// @image html progress_dialog_g.png
-    /// <br>
-    /// @image html progress_dialog_gd.png
     class forms_export_ progress_dialog  final : public component {
     public:
       /// @brief Initializes a new instance of the progress_dialog class.

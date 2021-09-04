@@ -22,18 +22,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of debug_form form.
     /// @include debug_form.cpp
-    /// @par Windows
-    /// @image html debug_form_w.png
-    /// <br>
-    /// @image html debug_form_wd.png
-    /// @par macOS
-    /// @image html debug_form_m.png
-    /// <br>
-    /// @image html debug_form_md.png
-    /// @par Gnome
-    /// @image html debug_form_g.png
-    /// <br>
-    /// @image html debug_form_gd.png
     class debug_form final : public xtd::forms::icontrol_trace, public xtd::forms::trace_form_base {
     public:
       /// @brief Initializes a new instance of the debug_form class.

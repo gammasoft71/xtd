@@ -64,18 +64,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of control control.
     /// @include control.cpp
-    /// @par Windows
-    /// @image html control_w.png
-    /// <br>
-    /// @image html control_wd.png
-    /// @par macOS
-    /// @image html control_m.png
-    /// <br>
-    /// @image html control_md.png
-    /// @par Gnome
-    /// @image html control_g.png
-    /// <br>
-    /// @image html control_gd.png
     class forms_export_ control : public component, public iwin32_window {
     protected:
       /// @cond
@@ -551,36 +539,12 @@ namespace xtd {
       /// @par Exemples
       /// The folling code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
-      /// @par Windows
-      /// @image html form_resize_w.png
-      /// <br>
-      /// @image html form_resize_wd.png
-      /// @par macOS
-      /// @image html form_resize_m.png
-      /// <br>
-      /// @image html form_resize_md.png
-      /// @par Gnome
-      /// @image html form_resize_g.png
-      /// <br>
-      /// @image html form_resize_gd.png
       virtual const drawing::size& maximum_size() const;
       /// @brief Sets the size that is the upper limit that xtd::forms::control::get_preferred_size can specify.
       /// @param size An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
       /// @par Exemples
       /// The folling code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
-      /// @par Windows
-      /// @image html form_resize_w.png
-      /// <br>
-      /// @image html form_resize_wd.png
-      /// @par macOS
-      /// @image html form_resize_m.png
-      /// <br>
-      /// @image html form_resize_md.png
-      /// @par Gnome
-      /// @image html form_resize_g.png
-      /// <br>
-      /// @image html form_resize_gd.png
       virtual control& maximum_size(const drawing::size& size);
       
       /// @brief Gets the size that is the lower limit that xtd::forms::control::get_preferred_size can specify.
@@ -588,36 +552,12 @@ namespace xtd {
       /// @par Exemples
       /// The folling code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
-      /// @par Windows
-      /// @image html form_resize_w.png
-      /// <br>
-      /// @image html form_resize_wd.png
-      /// @par macOS
-      /// @image html form_resize_m.png
-      /// <br>
-      /// @image html form_resize_md.png
-      /// @par Gnome
-      /// @image html form_resize_g.png
-      /// <br>
-      /// @image html form_resize_gd.png
       virtual const drawing::size& minimum_size() const;
       /// @brief Sets the size that is the lower limit that xtd::forms::control::get_preferred_size can specify.
       /// @param size An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
       /// @par Exemples
       /// The folling code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
-      /// @par Windows
-      /// @image html form_resize_w.png
-      /// <br>
-      /// @image html form_resize_wd.png
-      /// @par macOS
-      /// @image html form_resize_m.png
-      /// <br>
-      /// @image html form_resize_md.png
-      /// @par Gnome
-      /// @image html form_resize_g.png
-      /// <br>
-      /// @image html form_resize_gd.png
       virtual control& minimum_size(const drawing::size& size);
       
       /// @brief Gets a value indicating which of the modifier keys (SHIFT, CTRL, and ALT) is in a pressed state.
@@ -1122,18 +1062,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @par Windows
-      /// @image html mouse_events_w.png
-      /// <br>
-      /// @image html mouse_events_wd.png
-      /// @par macOS
-      /// @image html mouse_events_d.png
-      /// <br>
-      /// @image html mouse_events_md.png
-      /// @par Gnome
-      /// @image html mouse_events_g.png
-      /// <br>
-      /// @image html mouse_events_gd.png
       event<control, event_handler> click;
       
       /// @brief Occurs when the value of the client_size property changes.
@@ -1181,18 +1109,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @par Windows
-      /// @image html mouse_events_w.png
-      /// <br>
-      /// @image html mouse_events_wd.png
-      /// @par macOS
-      /// @image html mouse_events_d.png
-      /// <br>
-      /// @image html mouse_events_md.png
-      /// @par Gnome
-      /// @image html mouse_events_g.png
-      /// <br>
-      /// @image html mouse_events_gd.png
       event<control, event_handler> double_click;
 
       /// @brief Occurs when the control receives focus.
@@ -1251,18 +1167,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control keyboard events.
       /// @include key_events.cpp
-      /// @par Windows
-      /// @image html key_events_w.png
-      /// <br>
-      /// @image html key_events_wd.png
-      /// @par macOS
-      /// @image html key_events_d.png
-      /// <br>
-      /// @image html key_events_md.png
-      /// @par Gnome
-      /// @image html key_events_g.png
-      /// <br>
-      /// @image html key_events_gd.png
       event<control, key_event_handler> key_down;
       
       /// @brief Occurs when a character. space or backspace key is pressed while the control has focus.
@@ -1277,18 +1181,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control keyboard events.
       /// @include key_events.cpp
-      /// @par Windows
-      /// @image html key_events_w.png
-      /// <br>
-      /// @image html key_events_wd.png
-      /// @par macOS
-      /// @image html key_events_d.png
-      /// <br>
-      /// @image html key_events_md.png
-      /// @par Gnome
-      /// @image html key_events_g.png
-      /// <br>
-      /// @image html key_events_gd.png
       event<control, key_press_event_handler> key_press;
       
       /// @brief Occurs when a key is released while the control has focus.
@@ -1301,18 +1193,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control keyboard events.
       /// @include key_events.cpp
-      /// @par Windows
-      /// @image html key_events_w.png
-      /// <br>
-      /// @image html key_events_wd.png
-      /// @par macOS
-      /// @image html key_events_d.png
-      /// <br>
-      /// @image html key_events_md.png
-      /// @par Gnome
-      /// @image html key_events_g.png
-      /// <br>
-      /// @image html key_events_gd.png
       event<control, key_event_handler> key_up;
       
       /// @brief Occurs when a control should reposition its child controls.
@@ -1361,18 +1241,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @par Windows
-      /// @image html mouse_events_w.png
-      /// <br>
-      /// @image html mouse_events_wd.png
-      /// @par macOS
-      /// @image html mouse_events_d.png
-      /// <br>
-      /// @image html mouse_events_md.png
-      /// @par Gnome
-      /// @image html mouse_events_g.png
-      /// <br>
-      /// @image html mouse_events_gd.png
       event<control, mouse_event_handler> mouse_click;
       
       /// @brief Occurs when the control is double clicked by the mouse.
@@ -1393,18 +1261,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @par Windows
-      /// @image html mouse_events_w.png
-      /// <br>
-      /// @image html mouse_events_wd.png
-      /// @par macOS
-      /// @image html mouse_events_d.png
-      /// <br>
-      /// @image html mouse_events_md.png
-      /// @par Gnome
-      /// @image html mouse_events_g.png
-      /// <br>
-      /// @image html mouse_events_gd.png
       event<control, mouse_event_handler> mouse_double_click;
       
       /// @brief Occurs when the mouse pointer is over the control and a mouse button is pressed.
@@ -1419,18 +1275,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @par Windows
-      /// @image html mouse_events_w.png
-      /// <br>
-      /// @image html mouse_events_wd.png
-      /// @par macOS
-      /// @image html mouse_events_d.png
-      /// <br>
-      /// @image html mouse_events_md.png
-      /// @par Gnome
-      /// @image html mouse_events_g.png
-      /// <br>
-      /// @image html mouse_events_gd.png
       event<control, mouse_event_handler> mouse_down;
       
       /// @brief Occurs when the mouse pointer enters the control.
@@ -1445,18 +1289,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @par Windows
-      /// @image html mouse_events_w.png
-      /// <br>
-      /// @image html mouse_events_wd.png
-      /// @par macOS
-      /// @image html mouse_events_d.png
-      /// <br>
-      /// @image html mouse_events_md.png
-      /// @par Gnome
-      /// @image html mouse_events_g.png
-      /// <br>
-      /// @image html mouse_events_gd.png
       event<control, event_handler> mouse_enter;
       
       /// @brief Occurs when the mouse hoirontal wheel moves while the control has focus.
@@ -1472,18 +1304,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @par Windows
-      /// @image html mouse_events_w.png
-      /// <br>
-      /// @image html mouse_events_wd.png
-      /// @par macOS
-      /// @image html mouse_events_d.png
-      /// <br>
-      /// @image html mouse_events_md.png
-      /// @par Gnome
-      /// @image html mouse_events_g.png
-      /// <br>
-      /// @image html mouse_events_gd.png
       event<control, mouse_event_handler> mouse_horizontal_wheel;
       
       /// @brief Occurs when the mouse pointer leaves the control.
@@ -1498,18 +1318,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @par Windows
-      /// @image html mouse_events_w.png
-      /// <br>
-      /// @image html mouse_events_wd.png
-      /// @par macOS
-      /// @image html mouse_events_d.png
-      /// <br>
-      /// @image html mouse_events_md.png
-      /// @par Gnome
-      /// @image html mouse_events_g.png
-      /// <br>
-      /// @image html mouse_events_gd.png
       event<control, event_handler> mouse_leave;
       
       /// @brief Occurs when the mouse pointer is moved over the control.
@@ -1524,18 +1332,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @par Windows
-      /// @image html mouse_events_w.png
-      /// <br>
-      /// @image html mouse_events_wd.png
-      /// @par macOS
-      /// @image html mouse_events_d.png
-      /// <br>
-      /// @image html mouse_events_md.png
-      /// @par Gnome
-      /// @image html mouse_events_g.png
-      /// <br>
-      /// @image html mouse_events_gd.png
       event<control, mouse_event_handler> mouse_move;
       
       /// @brief Occurs when the mouse pointer is over the control and a mouse button is released.
@@ -1550,18 +1346,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @par Windows
-      /// @image html mouse_events_w.png
-      /// <br>
-      /// @image html mouse_events_wd.png
-      /// @par macOS
-      /// @image html mouse_events_d.png
-      /// <br>
-      /// @image html mouse_events_md.png
-      /// @par Gnome
-      /// @image html mouse_events_g.png
-      /// <br>
-      /// @image html mouse_events_gd.png
       event<control, mouse_event_handler> mouse_up;
       
       /// @brief Occurs when the mouse wheel moves while the control has focus.
@@ -1577,18 +1361,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @par Windows
-      /// @image html mouse_events_w.png
-      /// <br>
-      /// @image html mouse_events_wd.png
-      /// @par macOS
-      /// @image html mouse_events_d.png
-      /// <br>
-      /// @image html mouse_events_md.png
-      /// @par Gnome
-      /// @image html mouse_events_g.png
-      /// <br>
-      /// @image html mouse_events_gd.png
       event<control, mouse_event_handler> mouse_wheel;
       
       /// @brief Occurs when the control is redrawn.
@@ -1598,18 +1370,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control paint events.
       /// @include form_paint.cpp
-      /// @par Windows
-      /// @image html form_paint_w.png
-      /// <br>
-      /// @image html form_paint_wd.png
-      /// @par macOS
-      /// @image html form_paint_d.png
-      /// <br>
-      /// @image html form_paint_md.png
-      /// @par Gnome
-      /// @image html form_paint_g.png
-      /// <br>
-      /// @image html form_paint_gd.png
       event<control, paint_event_handler> paint;
       
       /// @brief Occurs when the value of the parent property changes.
@@ -1624,18 +1384,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control resize event.
       /// @include dot_matrix_display.cpp
-      /// @par Windows
-      /// @image html dot_matrix_display_w.png
-      /// <br>
-      /// @image html dot_matrix_display_wd.png
-      /// @par macOS
-      /// @image html dot_matrix_display_m.png
-      /// <br>
-      /// @image html dot_matrix_display_md.png
-      /// @par Gnome
-      /// @image html dot_matrix_display_g.png
-      /// <br>
-      /// @image html dot_matrix_display_gd.png
       event<control, event_handler> resize;
         
       /// @brief Occurs when the value of the size property changes.

@@ -21,18 +21,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of numeric up down control.
     /// @include numeric_up_down.cpp
-    /// @par Windows
-    /// @image html numeric_up_down_w.png
-    /// <br>
-    /// @image html numeric_up_down_wd.png
-    /// @par macOS
-    /// @image html numeric_up_down_m.png
-    /// <br>
-    /// @image html numeric_up_down_md.png
-    /// @par Gnome
-    /// @image html numeric_up_down_g.png
-    /// <br>
-    /// @image html numeric_up_down_gd.png
     class forms_export_ numeric_up_down : public up_down_base {
     public:
       /// @brief Initializes a new instance of the numeric_up_down class.

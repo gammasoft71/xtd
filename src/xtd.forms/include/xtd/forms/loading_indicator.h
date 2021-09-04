@@ -20,33 +20,9 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of loading indicator control.
     /// @include loading_indicator.cpp
-    /// @par Windows
-    /// @image html loading_indicator_w.png
-    /// <br>
-    /// @image html loading_indicator_wd.png
-    /// @par macOS
-    /// @image html loading_indicator_m.png
-    /// <br>
-    /// @image html loading_indicator_md.png
-    /// @par Gnome
-    /// @image html loading_indicator_g.png
-    /// <br>
-    /// @image html loading_indicator_gd.png
     /// @par Examples
     /// The following code example demonstrate the use of loading_indicator control.
     /// @include hello_world_loading_indicator.cpp
-    /// @par Windows
-    /// @image html hello_world_loading_indicator_w.png
-    /// <br>
-    /// @image html hello_world_loading_indicator_wd.png
-    /// @par macOS
-    /// @image html hello_world_loading_indicator_m.png
-    /// <br>
-    /// @image html hello_world_loading_indicator_md.png
-    /// @par Gnome
-    /// @image html hello_world_loading_indicator_g.png
-    /// <br>
-    /// @image html hello_world_loading_indicator_gd.png
     class forms_export_ loading_indicator : public control {
     public:
       /// @brief Initializee a new instance of loading_indicator class.

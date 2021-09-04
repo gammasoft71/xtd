@@ -23,18 +23,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of exception_box dialog.
     /// @include exception_box.cpp
-    /// @par Windows
-    /// @image html exception_box_w.png
-    /// <br>
-    /// @image html exception_box_wd.png
-    /// @par macOS
-    /// @image html exception_box_m.png
-    /// <br>
-    /// @image html exception_box_md.png
-    /// @par Gnome
-    /// @image html exception_box_g.png
-    /// <br>
-    /// @image html exception_box_gd.png
     class exception_box final static_ {
     public:
       /// @brief Displays a exception box in front of the specified window. The exception box displays an unknown excpetion.

@@ -22,18 +22,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of trace_form form.
     /// @include trace_form.cpp
-    /// @par Windows
-    /// @image html trace_form_w.png
-    /// <br>
-    /// @image html trace_form_wd.png
-    /// @par macOS
-    /// @image html trace_form_m.png
-    /// <br>
-    /// @image html trace_form_md.png
-    /// @par Gnome
-    /// @image html trace_form_g.png
-    /// <br>
-    /// @image html trace_form_gd.png
     class trace_form final : public xtd::forms::icontrol_trace, public xtd::forms::trace_form_base {
     public:
       /// @brief Initializes a new instance of the trace_form class.

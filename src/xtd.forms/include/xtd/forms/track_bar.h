@@ -22,18 +22,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of track_bar control.
     /// @include track_bar.cpp
-    /// @par Windows
-    /// @image html track_bar_w.png
-    /// <br>
-    /// @image html track_bar_wd.png
-    /// @par macOS
-    /// @image html track_bar_m.png
-    /// <br>
-    /// @image html track_bar_md.png
-    /// @par Gnome
-    /// @image html track_bar_g.png
-    /// <br>
-    /// @image html track_bar_gd.png
     class forms_export_ track_bar : public control {
     public:
       /// @brief Initializes a new instance of the track_bar class.

@@ -24,18 +24,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of combo box control.
     /// @include combo_box.cpp
-    /// @par Windows
-    /// @image html combo_box_w.png
-    /// <br>
-    /// @image html combo_box_wd.png
-    /// @par macOS
-    /// @image html combo_box_m.png
-    /// <br>
-    /// @image html combo_box_md.png
-    /// @par Gnome
-    /// @image html combo_box_g.png
-    /// <br>
-    /// @image html combo_box_gd.png
     class forms_export_ combo_box : public list_control {
     public:
       /// @brief Initializes a new instance of the combo_box class.

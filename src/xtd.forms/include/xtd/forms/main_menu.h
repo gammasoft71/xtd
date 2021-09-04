@@ -24,33 +24,9 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of main_menu control.
     /// @include main_menu.cpp
-    /// @par Windows
-    /// @image html main_menu_w.png
-    /// <br>
-    /// @image html main_menu_wd.png
-    /// @par macOS
-    /// @image html main_menu_m.png
-    /// <br>
-    /// @image html main_menu_md.png
-    /// @par Gnome
-    /// @image html main_menu_g.png
-    /// <br>
-    /// @image html main_menu_gd.png
     /// @par Examples
     /// The following code example demonstrate the use of main_menu::create_standard_items factroy.
     /// @include main_menu_create_standard_items.cpp
-    /// @par Windows
-    /// @image html main_menu_create_standard_items_w.png
-    /// <br>
-    /// @image html main_menu_create_standard_itemsmain_menu_create_standard_items_wd.png
-    /// @par macOS
-    /// @image html main_menu_create_standard_items_m.png
-    /// <br>
-    /// @image html main_menu_create_standard_items_md.png
-    /// @par Gnome
-    /// @image html main_menu_create_standard_items_g.png
-    /// <br>
-    /// @image html main_menu_create_standard_items_gd.png
     class forms_export_ main_menu : public menu {
     public:
       /// @brief Initialize a new instance of main_menu class.

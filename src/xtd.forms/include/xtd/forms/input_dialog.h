@@ -21,48 +21,12 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of input_dialog dialog.
     /// @include input_dialog.cpp
-    /// @par Windows
-    /// @image html input_dialog_w.png
-    /// <br>
-    /// @image html input_dialog_wd.png
-    /// @par macOS
-    /// @image html input_dialog_m.png
-    /// <br>
-    /// @image html input_dialog_md.png
-    /// @par Gnome
-    /// @image html input_dialog_g.png
-    /// <br>
-    /// @image html input_dialog_gd.png
     /// @par Examples
     /// The following code example demonstrate the use of input_dialog dialog with multiline.
     /// @include input_dialog_multiline.cpp
-    /// @par Windows
-    /// @image html input_dialog_multiline_w.png
-    /// <br>
-    /// @image html input_dialog_multiline_wd.png
-    /// @par macOS
-    /// @image html input_dialog_multiline_m.png
-    /// <br>
-    /// @image html input_dialog_multiline_md.png
-    /// @par Gnome
-    /// @image html input_dialog_multiline_g.png
-    /// <br>
-    /// @image html input_dialog_multiline_gd.png
     /// @par Examples
     /// The following code example demonstrate the use of input_dialog dialog with password.
     /// @include input_dialog_password.cpp
-    /// @par Windows
-    /// @image html input_dialog_password_w.png
-    /// <br>
-    /// @image html input_dialog_password_wd.png
-    /// @par macOS
-    /// @image html input_dialog_passwordpassword_m.png
-    /// <br>
-    /// @image html input_dialog_password_md.png
-    /// @par Gnome
-    /// @image html input_dialog_password_g.png
-    /// <br>
-    /// @image html input_dialog_multiline_gd.png
     class forms_export_ input_dialog : public common_dialog {
     public:
       /// @brief Initializes a new instance of the input_dialog class.

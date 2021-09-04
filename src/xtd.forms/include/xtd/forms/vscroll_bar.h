@@ -17,18 +17,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of vscroll_bar control.
     /// @include vscroll_bar.cpp
-    /// @par Windows
-    /// @image html vscroll_bar_w.png
-    /// <br>
-    /// @image html vscroll_bar_wd.png
-    /// @par macOS
-    /// @image html vscroll_bar_m.png
-    /// <br>
-    /// @image html vscroll_bar_md.png
-    /// @par Gnome
-    /// @image html vscroll_bar_g.png
-    /// <br>
-    /// @image html vscroll_bar_gd.png
     class forms_export_ vscroll_bar : public scroll_bar {
     public:
       /// @brief Initializee a new instance of vscroll_bar class.

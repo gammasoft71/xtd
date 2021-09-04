@@ -27,18 +27,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of exception_dialog dialog.
     /// @include exception_dialog.cpp
-    /// @par Windows
-    /// @image html exception_dialog_w.png
-    /// <br>
-    /// @image html exception_dialog_wd.png
-    /// @par macOS
-    /// @image html exception_dialog_m.png
-    /// <br>
-    /// @image html exception_dialog_md.png
-    /// @par Gnome
-    /// @image html exception_dialog_g.png
-    /// <br>
-    /// @image html exception_dialog_gd.png
     class forms_export_ exception_dialog final : public component {
     public:
       /// @brief Initializes a new instance of the exception_dialog class.

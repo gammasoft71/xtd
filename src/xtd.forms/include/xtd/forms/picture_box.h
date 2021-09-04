@@ -21,18 +21,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of picture box control.
     /// @include picture_box.cpp
-    /// @par Windows
-    /// @image html picture_box_w.png
-    /// <br>
-    /// @image html picture_box_wd.png
-    /// @par macOS
-    /// @image html picture_box_m.png
-    /// <br>
-    /// @image html picture_box_md.png
-    /// @par Gnome
-    /// @image html picture_box_g.png
-    /// <br>
-    /// @image html picture_box_gd.png
     class forms_export_ picture_box : public control {
     public:
       picture_box();

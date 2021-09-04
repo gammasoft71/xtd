@@ -15,18 +15,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of fourteen segment display control.
     /// @include fourteen_segment_display.cpp
-    /// @par Windows
-    /// @image html fourteen_segment_display_w.png
-    /// <br>
-    /// @image html fourteen_segment_display_wd.png
-    /// @par macOS
-    /// @image html fourteen_segment_display_m.png
-    /// <br>
-    /// @image html fourteen_segment_display_md.png
-    /// @par Gnome
-    /// @image html fourteen_segment_display_g.png
-    /// <br>
-    /// @image html fourteen_segment_display_gd.png
     class fourteen_segment_display : public seven_segment_display {
     public:
       /// @brief Initialize a new instance of fourteen_segment_display class.

@@ -22,18 +22,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of enable_debug class.
     /// @include enable_debug.cpp
-    /// @par Windows
-    /// @image html enable_debug_w.png
-    /// <br>
-    /// @image html enable_debug_wd.png
-    /// @par macOS
-    /// @image html enable_debug_m.png
-    /// <br>
-    /// @image html enable_debug_md.png
-    /// @par Gnome
-    /// @image html enable_debug_g.png
-    /// <br>
-    /// @image html enable_debug_gd.png
     class forms_export_ enable_debug : public object {
     public:
       /// @cond

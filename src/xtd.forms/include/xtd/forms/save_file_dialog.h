@@ -18,18 +18,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of save_file_dialog dialog.
     /// @include save_file_dialog.cpp
-    /// @par Windows
-    /// @image html save_file_dialog_w.png
-    /// <br>
-    /// @image html save_file_dialog_wd.png
-    /// @par macOS
-    /// @image html save_file_dialog_m.png
-    /// <br>
-    /// @image html save_file_dialog_md.png
-    /// @par Gnome
-    /// @image html save_file_dialog_g.png
-    /// <br>
-    /// @image html save_file_dialog_gd.png
     class forms_export_ save_file_dialog final : public file_dialog {
     public:
       /// @brief Initializes a new instance of the save_file_dialog class.

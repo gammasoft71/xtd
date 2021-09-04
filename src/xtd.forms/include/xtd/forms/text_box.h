@@ -19,18 +19,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of text box control.
     /// @include text_box.cpp
-    /// @par Windows
-    /// @image html text_box_w.png
-    /// <br>
-    /// @image html text_box_wd.png
-    /// @par macOS
-    /// @image html text_box_m.png
-    /// <br>
-    /// @image html text_box_md.png
-    /// @par Gnome
-    /// @image html text_box_g.png
-    /// <br>
-    /// @image html text_box_gd.png
     class forms_export_ text_box : public text_box_base {
     public:
       /// @brief initializes a new instance of the text_box class.

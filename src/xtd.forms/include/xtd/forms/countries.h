@@ -17,18 +17,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of countries component.
     /// @include countries.cpp
-    /// @par Windows
-    /// @image html countries_w.png
-    /// <br>
-    /// @image html countries_wd.png
-    /// @par macOS
-    /// @image html countries_m.png
-    /// <br>
-    /// @image html countries_md.png
-    /// @par Gnome
-    /// @image html countries_g.png
-    /// <br>
-    /// @image html countries_gd.png
     class forms_export_ countries final static_ {
     public:
       /// @brief A system-defined country object.

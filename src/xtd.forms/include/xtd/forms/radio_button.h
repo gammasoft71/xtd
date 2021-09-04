@@ -23,18 +23,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of radio_button control.
     /// @include radio_button.cpp
-    /// @par Windows
-    /// @image html radio_button_w.png
-    /// <br>
-    /// @image html radio_button_wd.png
-    /// @par macOS
-    /// @image html radio_button_m.png
-    /// <br>
-    /// @image html radio_button_md.png
-    /// @par Gnome
-    /// @image html radio_button_g.png
-    /// <br>
-    /// @image html radio_button_gd.png
     class forms_export_ radio_button : public button_base {
     public:
       /// @brief Initializes a new instance of the radio_button class.

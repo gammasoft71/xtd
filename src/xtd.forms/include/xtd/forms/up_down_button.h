@@ -18,18 +18,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of up down button control.
     /// @include up_down_button.cpp
-    /// @par Windows
-    /// @image html up_down_button_w.png
-    /// <br>
-    /// @image html up_down_button_wd.png
-    /// @par macOS
-    /// @image html up_down_button_m.png
-    /// <br>
-    /// @image html up_down_button_md.png
-    /// @par Gnome
-    /// @image html up_down_button_g.png
-    /// <br>
-    /// @image html up_down_button_gd.png
     class forms_export_ up_down_button : public button_base {
     public:
       /// @brief Initializes a new instance of up_down_button class.

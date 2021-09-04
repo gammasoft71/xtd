@@ -27,18 +27,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of toggle_button control.
     /// @include toggle_button.cpp
-    /// @par Windows
-    /// @image html toggle_button_w.png
-    /// <br>
-    /// @image html toggle_button_wd.png
-    /// @par macOS
-    /// @image html toggle_button_m.png
-    /// <br>
-    /// @image html toggle_button_md.png
-    /// @par Gnome
-    /// @image html toggle_button_g.png
-    /// <br>
-    /// @image html toggle_button_gd.png
     class forms_export_ toggle_button : public button_base {
     public:
       /// @brief Initializes a new instance of the CheckBox class.

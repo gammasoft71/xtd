@@ -26,18 +26,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of timer component.
     /// @include timer.cpp
-    /// @par Windows
-    /// @image html timer_w.png
-    /// <br>
-    /// @image html timer_wd.png
-    /// @par macOS
-    /// @image html timer_m.png
-    /// <br>
-    /// @image html timer_md.png
-    /// @par Gnome
-    /// @image html timer_g.png
-    /// <br>
-    /// @image html timer_gd.png
     class forms_export_ timer final : public component {
     public:
       /// @brief Initializes a new instance of the timer class.

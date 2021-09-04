@@ -22,18 +22,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of choice control.
     /// @include choice.cpp
-    /// @par Windows
-    /// @image html choice_w.png
-    /// <br>
-    /// @image html choice_wd.png
-    /// @par macOS
-    /// @image html choice_m.png
-    /// <br>
-    /// @image html choice_md.png
-    /// @par Gnome
-    /// @image html choice_g.png
-    /// <br>
-    /// @image html choice_gd.png
     class forms_export_ choice : public list_control {
     public:
       /// @brief Initializes a new instance of the choice class.

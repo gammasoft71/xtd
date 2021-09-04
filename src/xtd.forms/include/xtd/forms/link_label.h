@@ -29,18 +29,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of link_label control.
     /// @include link_label.cpp
-    /// @par Windows
-    /// @image html link_label_w.png
-    /// <br>
-    /// @image html link_label_wd.png
-    /// @par macOS
-    /// @image html link_label_m.png
-    /// <br>
-    /// @image html link_label_md.png
-    /// @par Gnome
-    /// @image html link_label_g.png
-    /// <br>
-    /// @image html link_label_gd.png
     class link_label : public label {
     public:
       /// @brief Represents a link within a link_label control.

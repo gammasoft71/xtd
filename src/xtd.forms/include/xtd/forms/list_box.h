@@ -20,18 +20,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of list_box control.
     /// @include list_box.cpp
-    /// @par Windows
-    /// @image html list_box_w.png
-    /// <br>
-    /// @image html list_box_wd.png
-    /// @par macOS
-    /// @image html list_box_m.png
-    /// <br>
-    /// @image html list_box_md.png
-    /// @par Gnome
-    /// @image html list_box_g.png
-    /// <br>
-    /// @image html list_box_gd.png
     class forms_export_ list_box : public list_control {
     public:
       /// @brief Represents the collection containing the indexes to the selected items in a list_box.

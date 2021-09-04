@@ -19,18 +19,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of texts class.
     /// @include texts.cpp
-    /// @par Windows
-    /// @image html texts_w.png
-    /// <br>
-    /// @image html texts_wd.png
-    /// @par macOS
-    /// @image html texts_m.png
-    /// <br>
-    /// @image html texts_md.png
-    /// @par Gnome
-    /// @image html texts_g.png
-    /// <br>
-    /// @image html texts_gd.png
     class forms_export_ texts final static_ {
     public:
       /// @brief Gets a system-defined text that has a string value of "&Abort". This field is constant.

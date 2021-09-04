@@ -23,33 +23,9 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of screen class.
     /// @include screen.cpp
-    /// @par Windows
-    /// @image html screen_w.png
-    /// <br>
-    /// @image html screen_wd.png
-    /// @par macOS
-    /// @image html screen_m.png
-    /// <br>
-    /// @image html screen_md.png
-    /// @par Gnome
-    /// @image html screen_g.png
-    /// <br>
-    /// @image html screen_gd.png
     /// @par Examples
     /// The following code example shows how to get screen informations of screen component.
     /// @include screen_informations.cpp
-    /// @par Windows
-    /// @image html screen_informations_w.png
-    /// <br>
-    /// @image html screen_informations_wd.png
-    /// @par macOS
-    /// @image html screen_informations_m.png
-    /// <br>
-    /// @image html screen_informations_md.png
-    /// @par Gnome
-    /// @image html screen_informations_g.png
-    /// <br>
-    /// @image html screen_informations_gd.png
     class forms_export_ screen : public object {
     public:
       /// @cond

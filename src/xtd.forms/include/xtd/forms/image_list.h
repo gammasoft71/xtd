@@ -22,18 +22,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of image_list class.
     /// @include image_list.cpp
-    /// @par Windows
-    /// @image html image_list_w.png
-    /// <br>
-    /// @image html image_list_wd.png
-    /// @par macOS
-    /// @image html image_list_m.png
-    /// <br>
-    /// @image html image_list_md.png
-    /// @par Gnome
-    /// @image html image_list_g.png
-    /// <br>
-    /// @image html image_list_gd.png
     class forms_export_ image_list final : public component {
     public:
       /// @brief Encapsulates the collection of xtd::drawing::image objects in an image_list.
