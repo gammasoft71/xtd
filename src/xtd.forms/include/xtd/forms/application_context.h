@@ -23,18 +23,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of application and application_context classes.
     /// @include application_context.cpp
-    /// @par Windows
-    /// @image html application_context_w.png
-    /// <br>
-    /// @image html application_context_wd.png
-    /// @par macOS
-    /// @image html application_context_m.png
-    /// <br>
-    /// @image html application_context_md.png
-    /// @par Gnome
-    /// @image html application_context_g.png
-    /// <br>
-    /// @image html application_context_gd.png
     class application_context : public object {
     public:
       /// @brief Initializes a new instance of the application_context class with no context.

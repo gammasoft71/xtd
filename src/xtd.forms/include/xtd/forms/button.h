@@ -48,33 +48,9 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of button control.
     /// @include button.cpp
-    /// @par Windows
-    /// @image html button_w.png
-    /// <br>
-    /// @image html button_wd.png
-    /// @par macOS
-    /// @image html button_m.png
-    /// <br>
-    /// @image html button_md.png
-    /// @par Gnome
-    /// @image html button_g.png
-    /// <br>
-    /// @image html button_gd.png
     /// @par Examples
     /// The following code example demonstrate the use of button control witth bitmap.
     /// @include bitmap_button.cpp
-    /// @par Windows
-    /// @image html bitmap_button_w.png
-    /// <br>
-    /// @image html bitmap_button_wd.png
-    /// @par macOS
-    /// @image html bitmap_button_m.png
-    /// <br>
-    /// @image html bitmap_button_md.png
-    /// @par Gnome
-    /// @image html bitmap_button_g.png
-    /// <br>
-    /// @image html bitmap_button_gd.png
     class forms_export_ button : public ibutton_control, public button_base {
     public:
       /// @brief Initializes a new instance of the button class.

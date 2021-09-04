@@ -48,33 +48,9 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of application class.
     /// @include application.cpp
-    /// @par Windows
-    /// @image html application_w.png
-    /// <br>
-    /// @image html application_wd.png
-    /// @par macOS
-    /// @image html application_m.png
-    /// <br>
-    /// @image html application_md.png
-    /// @par Gnome
-    /// @image html application_g.png
-    /// <br>
-    /// @image html application_gd.png
     /// @par Examples
     ///  How to manage exception with application class.
     /// @include application_and_exception.cpp
-    /// @par Windows
-    /// @image html application_and_exception_w.png
-    /// <br>
-    /// @image html application_and_exception_wd.png
-    /// @par macOS
-    /// @image html application_and_exception_m.png
-    /// <br>
-    /// @image html application_and_exception_md.png
-    /// @par Gnome
-    /// @image html application_and_exception_g.png
-    /// <br>
-    /// @image html application_and_exception_gd.png
     class forms_export_ application final static_ {
     public:
       /// @brief Gets a value indicating whether the caller can quit this application.
@@ -165,18 +141,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of application use wait cursor property.
       /// @include application_use_wait_cursor.cpp
-      /// @par Windows
-      /// @image html application_use_wait_cursor_w.png
-      /// <br>
-      /// @image html application_use_wait_cursor_wd.png
-      /// @par macOS
-      /// @image html application_use_wait_cursor_m.png
-      /// <br>
-      /// @image html application_use_wait_cursor_md.png
-      /// @par Gnome
-      /// @image html application_use_wait_cursor_g.png
-      /// <br>
-      /// @image html application_use_wait_cursor_gd.png
       static bool use_wait_cursor();
       
       /// @brief Sets whether the wait cursor is used for all open forms of the application.
@@ -185,18 +149,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of application use wait cursor property.
       /// @include application_use_wait_cursor.cpp
-      /// @par Windows
-      /// @image html application_use_wait_cursor_w.png
-      /// <br>
-      /// @image html application_use_wait_cursor_wd.png
-      /// @par macOS
-      /// @image html application_use_wait_cursor_m.png
-      /// <br>
-      /// @image html application_use_wait_cursor_md.png
-      /// @par Gnome
-      /// @image html application_use_wait_cursor_g.png
-      /// <br>
-      /// @image html application_use_wait_cursor_gd.png
       static void use_wait_cursor(bool use_wait_cursor);
       
       /// @brief Adds a message filter to monitor Windows messages as they are routed to their destinations.
@@ -274,18 +226,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of application restart method.
       /// @include application_restart.cpp
-      /// @par Windows
-      /// @image html application_restart_w.png
-      /// <br>
-      /// @image html application_restart_wd.png
-      /// @par macOS
-      /// @image html application_restart_m.png
-      /// <br>
-      /// @image html application_restart_md.png
-      /// @par Gnome
-      /// @image html application_restart_g.png
-      /// <br>
-      /// @image html application_restart_gd.png
       static void restart();
       
       /// @brief Begins running a standard application message loop on the current thread, without a form.
@@ -302,18 +242,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of application run method.
       /// @include application_context.cpp
-      /// @par Windows
-      /// @image html application_context_w.png
-      /// <br>
-      /// @image html application_context_wd.png
-      /// @par macOS
-      /// @image html application_context_m.png
-      /// <br>
-      /// @image html application_context_md.png
-      /// @par Gnome
-      /// @image html application_context_g.png
-      /// <br>
-      /// @image html application_context_gd.png
       static void run(application_context& context);
       
       /// @brief Begins running a standard application message loop on the current thread, and makes the specified form visible.
@@ -323,18 +251,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of application run method.
       /// @include application.cpp
-      /// @par Windows
-      /// @image html application_w.png
-      /// <br>
-      /// @image html application_wd.png
-      /// @par macOS
-      /// @image html application_m.png
-      /// <br>
-      /// @image html application_md.png
-      /// @par Gnome
-      /// @image html application_g.png
-      /// <br>
-      /// @image html application_gd.png
       static void run(const form& main_form);
       
       static void theme(const xtd::ustring& theme_name);
@@ -378,18 +294,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of application idle event.
       /// @include application_idle.cpp
-      /// @par Windows
-      /// @image html application_idle_w.png
-      /// <br>
-      /// @image html application_idle_wd.png
-      /// @par macOS
-      /// @image html application_idle_m.png
-      /// <br>
-      /// @image html application_idle_md.png
-      /// @par Gnome
-      /// @image html application_idle_g.png
-      /// <br>
-      /// @image html application_idle_gd.png
       static event<application, delegate<void(const event_args&)>> idle;
 
       /// @brief Occurs when the application is about to leave a modal state.
