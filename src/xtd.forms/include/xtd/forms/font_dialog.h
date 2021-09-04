@@ -24,18 +24,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of font_dialog dialog.
     /// @include font_dialog.cpp
-    /// @par Windows
-    /// @image html font_dialog_w.png
-    /// <br>
-    /// @image html font_dialog_wd.png
-    /// @par macOS
-    /// @image html font_dialog_m.png
-    /// <br>
-    /// @image html font_dialog_md.png
-    /// @par Gnome
-    /// @image html font_dialog_g.png
-    /// <br>
-    /// @image html font_dialog_gd.png
     class forms_export_ font_dialog : public common_dialog {
     public:
       /// @brief Initializes a new instance of the font_dialog class.

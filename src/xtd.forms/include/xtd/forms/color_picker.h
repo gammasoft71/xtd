@@ -19,18 +19,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of color_picker picker.
     /// @include color_picker.cpp
-    /// @par Windows
-    /// @image html color_picker_w.png
-    /// <br>
-    /// @image html color_picker_wd.png
-    /// @par macOS
-    /// @image html color_picker_m.png
-    /// <br>
-    /// @image html color_picker_md.png
-    /// @par Gnome
-    /// @image html color_picker_g.png
-    /// <br>
-    /// @image html color_picker_gd.png
     class forms_export_ color_picker : public control {
     public:
       /// @brief Initializes a new instance of the color_picker class.

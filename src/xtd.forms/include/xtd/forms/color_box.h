@@ -19,18 +19,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of color_box dialog.
     /// @include color_box.cpp
-    /// @par Windows
-    /// @image html color_box_w.png
-    /// <br>
-    /// @image html color_box_wd.png
-    /// @par macOS
-    /// @image html color_box_m.png
-    /// <br>
-    /// @image html color_box_md.png
-    /// @par Gnome
-    /// @image html color_box_g.png
-    /// <br>
-    /// @image html color_box_gd.png
     class color_box final static_ {
     public:
       /// @brief Displays a color box in front of the specified window. The color box displays a color.

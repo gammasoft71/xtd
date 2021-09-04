@@ -18,18 +18,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of collapsible_panel container.
     /// @include collapsible_panel.cpp
-    /// @par Windows
-    /// @image html collapsible_panel_w.png
-    /// <br>
-    /// @image html collapsible_panel_wd.png
-    /// @par macOS
-    /// @image html collapsible_panel_m.png
-    /// <br>
-    /// @image html collapsible_panel_md.png
-    /// @par Gnome
-    /// @image html collapsible_panel_g.png
-    /// <br>
-    /// @image html collapsible_panel_gd.png
     class forms_export_ collapsible_panel : public control {
     public:
       /// @brief Initializes a new instance of the collapsible_panel class.

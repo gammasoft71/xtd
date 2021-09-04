@@ -31,18 +31,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of message_dialog dialog.
     /// @include message_dialog.cpp
-    /// @par Windows
-    /// @image html message_dialog_w.png
-    /// <br>
-    /// @image html message_dialog_wd.png
-    /// @par macOS
-    /// @image html message_dialog_m.png
-    /// <br>
-    /// @image html message_dialog_md.png
-    /// @par Gnome
-    /// @image html message_dialog_g.png
-    /// <br>
-    /// @image html message_dialog_gd.png
     class forms_export_ message_dialog final : public component {
     public:
       /// @brief Initializes a new instance of the message_dialog class.

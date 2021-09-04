@@ -23,18 +23,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of checked_list_box control.
     /// @include checked_list_box.cpp
-    /// @par Windows
-    /// @image html checked_list_box_w.png
-    /// <br>
-    /// @image html checked_list_box_wd.png
-    /// @par macOS
-    /// @image html checked_list_box_m.png
-    /// <br>
-    /// @image html checked_list_box_md.png
-    /// @par Gnome
-    /// @image html checked_list_box_g.png
-    /// <br>
-    /// @image html checked_list_box_gd.png
     class forms_export_ checked_list_box : public list_box {
     public:
       /// @brief Represent an item contained in the checked_list_box::object_collection collection.

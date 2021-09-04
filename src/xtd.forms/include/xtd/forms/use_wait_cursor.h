@@ -19,18 +19,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of use_wait_cursor class.
     /// @include use_wait_cursor.cpp
-    /// @par Windows
-    /// @image html use_wait_cursor_w.png
-    /// <br>
-    /// @image html use_wait_cursor_wd.png
-    /// @par macOS
-    /// @image html use_wait_cursor_m.png
-    /// <br>
-    /// @image html use_wait_cursor_md.png
-    /// @par Gnome
-    /// @image html use_wait_cursor_g.png
-    /// <br>
-    /// @image html use_wait_cursor_gd.png
     class use_wait_cursor : public object {
     public:
       /// @brief Initializes a new instance of use_wait_cursor class.

@@ -20,18 +20,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of split_container container.
     /// @include split_container.cpp
-    /// @par Windows
-    /// @image html split_container_w.png
-    /// <br>
-    /// @image html split_container_wd.png
-    /// @par macOS
-    /// @image html split_container_m.png
-    /// <br>
-    /// @image html split_container_md.png
-    /// @par Gnome
-    /// @image html split_container_g.png
-    /// <br>
-    /// @image html split_container_gd.png
     class forms_export_ split_container : public  xtd::forms::scrollable_control {
     public:
       /// @brief Initializes a new instance of the split_container class.

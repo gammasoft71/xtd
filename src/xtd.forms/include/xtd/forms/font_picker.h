@@ -17,18 +17,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of font_picker picker.
     /// @include font_picker.cpp
-    /// @par Windows
-    /// @image html font_picker_w.png
-    /// <br>
-    /// @image html font_picker_wd.png
-    /// @par macOS
-    /// @image html font_picker_m.png
-    /// <br>
-    /// @image html font_picker_md.png
-    /// @par Gnome
-    /// @image html font_picker_g.png
-    /// <br>
-    /// @image html font_picker_gd.png
     class forms_export_ font_picker : public control {
     public:
       /// @brief Initializes a new instance of the font_picker class.

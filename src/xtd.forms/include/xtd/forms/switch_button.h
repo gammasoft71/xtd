@@ -16,18 +16,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of switch button control.
     /// @include switch_button.cpp
-    /// @par Windows
-    /// @image html switch_button_w.png
-    /// <br>
-    /// @image html switch_button_wd.png
-    /// @par macOS
-    /// @image html switch_button_m.png
-    /// <br>
-    /// @image html switch_button_md.png
-    /// @par Gnome
-    /// @image html switch_button_g.png
-    /// <br>
-    /// @image html switch_button_gd.png
     class switch_button : public button_base {
     public:
       /// Initialize new instance of switch_button class.

@@ -22,18 +22,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of emoticon class.
     /// @include emoticons.cpp
-    /// @par Windows
-    /// @image html emoticons_w.png
-    /// <br>
-    /// @image html emoticons_wd.png
-    /// @par macOS
-    /// @image html emoticons_m.png
-    /// <br>
-    /// @image html emoticons_md.png
-    /// @par Gnome
-    /// @image html emoticons_g.png
-    /// <br>
-    /// @image html emoticons_gd.png
     class forms_export_ emoticon : public object {
     public:
       /// @brief Represents an empty emoticon.

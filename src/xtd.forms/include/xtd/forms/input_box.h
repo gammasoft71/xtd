@@ -19,18 +19,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of input_box dialog.
     /// @include input_box.cpp
-    /// @par Windows
-    /// @image html input_box_w.png
-    /// <br>
-    /// @image html input_box_wd.png
-    /// @par macOS
-    /// @image html input_box_m.png
-    /// <br>
-    /// @image html input_box_md.png
-    /// @par Gnome
-    /// @image html input_box_g.png
-    /// <br>
-    /// @image html input_box_gd.png
     class input_box final static_ {
     public:
       /// @brief Displays an input box in front of the specified window. The input box displays a text value.

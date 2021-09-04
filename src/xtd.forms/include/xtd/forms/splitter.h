@@ -19,18 +19,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of splitter control.
     /// @include splitter.cpp
-    /// @par Windows
-    /// @image html splitter_w.png
-    /// <br>
-    /// @image html splitter_wd.png
-    /// @par macOS
-    /// @image html splitter_m.png
-    /// <br>
-    /// @image html splitter_md.png
-    /// @par Gnome
-    /// @image html splitter_g.png
-    /// <br>
-    /// @image html splitter_gd.png
     class forms_export_ splitter : public xtd::forms::control {
     public:
       /// @brief Initializes a new instance of the splitter class.

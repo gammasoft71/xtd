@@ -23,18 +23,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of settings class.
     /// @include settings_example.cpp
-    /// @par Windows
-    /// @image html settings_example_w.png
-    /// <br>
-    /// @image html settings_example_wd.png
-    /// @par macOS
-    /// @image html settings_example_m.png
-    /// <br>
-    /// @image html settings_example_md.png
-    /// @par Gnome
-    /// @image html settings_example_g.png
-    /// <br>
-    /// @image html settings_example_gd.png
     class forms_export_ settings : public object {
     public:
       /// @brief Initializes a new instance of settings class.

@@ -20,7 +20,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of animation control.
     /// @include animation.cpp
-    /// @par Windows
     class animation : public xtd::forms::control {
     public:
       /// @brief Initializee a new instance of animation class.

@@ -37,18 +37,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of form control.
     /// @include form.cpp
-    /// @par Windows
-    /// @image html form_w.png
-    /// <br>
-    /// @image html form_wd.png
-    /// @par macOS
-    /// @image html form_m.png
-    /// <br>
-    /// @image html form_md.png
-    /// @par Gnome
-    /// @image html form_g.png
-    /// <br>
-    /// @image html form_gd.png
     class forms_export_ form : public container_control {
     public:
       /// @brief Initializes a new instance of the Form class.

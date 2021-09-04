@@ -18,18 +18,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of radio_button control facttory.
     /// @include radio_buttons.cpp
-    /// @par Windows
-    /// @image html radio_buttons_w.png
-    /// <br>
-    /// @image html radio_buttons_wd.png
-    /// @par macOS
-    /// @image html radio_buttons_m.png
-    /// <br>
-    /// @image html radio_buttons_md.png
-    /// @par Gnome
-    /// @image html radio_buttons_g.png
-    /// <br>
-    /// @image html radio_buttons_gd.png
     class forms_export_ radio_buttons final static_ {
     public:
       /// @brief Create a system-defined radio_button that represent abort radio_button.

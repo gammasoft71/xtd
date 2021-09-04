@@ -19,18 +19,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of date_time_picker picker.
     /// @include date_time_picker.cpp
-    /// @par Windows
-    /// @image html date_time_picker_w.png
-    /// <br>
-    /// @image html date_time_picker_wd.png
-    /// @par macOS
-    /// @image html date_time_picker_m.png
-    /// <br>
-    /// @image html date_time_picker_md.png
-    /// @par Gnome
-    /// @image html date_time_picker_g.png
-    /// <br>
-    /// @image html date_time_picker_gd.png
     class forms_export_ date_time_picker : public control {
     public:
       /// @brief Initializes a new instance of the date_time_picker class.

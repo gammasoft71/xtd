@@ -20,18 +20,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of command link button control.
     /// @include command_link_button.cpp
-    /// @par Windows
-    /// @image html command_link_button_w.png
-    /// <br>
-    /// @image html command_link_button_wd.png
-    /// @par macOS
-    /// @image html command_link_button_m.png
-    /// <br>
-    /// @image html command_link_button_md.png
-    /// @par Gnome
-    /// @image html command_link_button_g.png
-    /// <br>
-    /// @image html command_link_button_gd.png
     class forms_export_ command_link_button : public button_base {
     public:
       /// @brief Initializes a new instance of the button class.

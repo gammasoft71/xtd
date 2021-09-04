@@ -32,18 +32,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of cursor component.
     /// @include cursors.cpp
-    /// @par Windows
-    /// @image html cursors_w.png
-    /// <br>
-    /// @image html cursors_wd.png
-    /// @par macOS
-    /// @image html cursors_m.png
-    /// <br>
-    /// @image html cursors_md.png
-    /// @par Gnome
-    /// @image html cursors_g.png
-    /// <br>
-    /// @image html cursors_gd.png
     class forms_export_ cursor : public object {
     public:
       /// @brief Initializes a new instance of the cursor class.
