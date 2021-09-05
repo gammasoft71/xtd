@@ -376,7 +376,7 @@ namespace xtd {
         /// @note There are several multicast address ranges to choose from. Refer to the IETF RFC 2375.
         /// @note You cannot call xtd::net::sockets::udp_client::join_multicast_group on a xtd::net::sockets::udp_client constructed without a specific local port (that is, using the xtd::net::sockets::udp_client() or xtd::net::sockets::udp_client(xtd::net::sockets::address_family) constructor).
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        void join_multicast_group(size_t if_index, const xtd::net::ip_address& multicast_address);
+        void join_multicast_group(uint32_t if_index, const xtd::net::ip_address& multicast_address);
         /// @brief Adds a xtd::net::sockets::udp_client to a multicast group with the specified Time to Live (TTL).
         /// @param multicast_address The multicast xtd::net::ip_address of the group you want to join.
         /// @param ttl The Time to Live (TTL), measured in router hops.
