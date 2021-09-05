@@ -77,76 +77,112 @@ namespace xtd {
       /// @image html bd.png
       static const country bangladesh();
       /// @brief A system-defined country object.
+      /// @image html bb.png
       static const country barbados();
       /// @brief A system-defined country object.
+      /// @image html by.png
       static const country belarus();
       /// @brief A system-defined country object.
+      /// @image html be.png
       static const country belgium();
       /// @brief A system-defined country object.
+      /// @image html bz.png
       static const country belize();
       /// @brief A system-defined country object.
+      /// @image html bj.png
       static const country benin();
       /// @brief A system-defined country object.
+      /// @image html md.png
       static const country bermuda();
       /// @brief A system-defined country object.
+      /// @image html bt.png
       static const country bhutan();
       /// @brief A system-defined country object.
+      /// @image html bo.png
       static const country bolivia();
       /// @brief A system-defined country object.
+      /// @image html bq.png
       static const country bonaire_sint_eustatius_and_saba();
       /// @brief A system-defined country object.
+      /// @image html ba.png
       static const country bosnia_and_herzegovina();
       /// @brief A system-defined country object.
+      /// @image html bw.png
       static const country botswana();
       /// @brief A system-defined country object.
+      /// @image html bv.png
       static const country bouvet_island();
       /// @brief A system-defined country object.
+      /// @image html br.png
       static const country brazil();
       /// @brief A system-defined country object.
+      /// @image html iot.png
       static const country british_indian_ocean_territory();
       /// @brief A system-defined country object.
+      /// @image html bn.png
       static const country brunei_darussalam();
       /// @brief A system-defined country object.
+      /// @image html bg.png
       static const country bulgaria();
       /// @brief A system-defined country object.
+      /// @image html bf.png
       static const country burkina_faso();
       /// @brief A system-defined country object.
+      /// @image html bi.png
       static const country burundi();
       /// @brief A system-defined country object.
+      /// @image html cv.png
       static const country cabo_verde();
       /// @brief A system-defined country object.
+      /// @image html kh.png
       static const country cambodia();
       /// @brief A system-defined country object.
+      /// @image html cm.png
       static const country cameroon();
       /// @brief A system-defined country object.
+      /// @image html ca.png
       static const country canada();
       /// @brief A system-defined country object.
+      /// @image html ky.png
       static const country cayman_islands();
       /// @brief A system-defined country object.
+      /// @image html cf.png
       static const country central_african_republic();
       /// @brief A system-defined country object.
+      /// @image html td.png
       static const country chad();
       /// @brief A system-defined country object.
+      /// @image html cl.png
       static const country chile();
       /// @brief A system-defined country object.
+      /// @image html cn.png
       static const country china();
       /// @brief A system-defined country object.
+      /// @image html cx.png
       static const country christmas_island();
       /// @brief A system-defined country object.
+      /// @image html cc.png
       static const country cocos_keeling_islands();
       /// @brief A system-defined country object.
+      /// @image html co.png
       static const country colombia();
       /// @brief A system-defined country object.
+      /// @image html km.png
       static const country comoros();
       /// @brief A system-defined country object.
+      /// @image html cg.png
       static const country congo();
       /// @brief A system-defined country object.
+      /// @image html cd.png
       static const country democratic_republic_of_the_congo();
       /// @brief A system-defined country object.
+      /// @image html ck.png
       static const country cook_islands();
       /// @brief A system-defined country object.
+      /// @image html cr.png
       static const country costa_rica();
       /// @brief A system-defined country object.
+      /// @image html ci.png
       static const country cote_d_ivoire();
       /// @brief A system-defined country object.
       static const country croatia();
