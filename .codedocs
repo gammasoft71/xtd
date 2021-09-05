@@ -113,8 +113,7 @@ HAVE_DOT = NO
 # HTML_COLORSTYLE_SAT =
 # HTML_DYNAMIC_SECTIONS =
 HTML_EXTRA_FILES = docs/doxygen/favicon.png
-HTML_EXTRA_STYLESHEET = docs/doxygen/custom.css \
-                        docs/doxygen/custom_dark_theme.css
+HTML_EXTRA_STYLESHEET = docs/doxygen/custom.css docs/doxygen/custom_dark_theme.css docs/doxygen/custom_images.css
 HTML_FOOTER = docs/doxygen/html_footer.html
 HTML_HEADER = docs/doxygen/html_header.html
 # HTML_INDEX_NUM_ENTRIES =
