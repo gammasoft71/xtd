@@ -238,7 +238,7 @@ void udp_client::join_multicast_group(const xtd::net::ip_address& multicast_addr
   else data_->client_socket.set_socket_option(socket_option_name::add_membership, ip_v6_multicast_option(multicast_address));
 }
 
-void udp_client::join_multicast_group(size_t if_index, const xtd::net::ip_address& multicast_address) {
+void udp_client::join_multicast_group(uint32_t if_index, const xtd::net::ip_address& multicast_address) {
   if (data_->client_socket.address_family() != address_family::inter_network_v6) throw socket_exception(socket_error::operation_not_supported, csf_);
   data_->client_socket.set_socket_option(socket_option_name::add_membership, ip_v6_multicast_option(multicast_address, if_index));
 }
