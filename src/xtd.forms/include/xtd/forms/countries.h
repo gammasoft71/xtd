@@ -32,34 +32,49 @@ namespace xtd {
       /// @image html dz.png
       static const country algeria();
       /// @brief A system-defined country object.
+      /// @image html as.png
       static const country american_samoa();
       /// @brief A system-defined country object.
+      /// @image html ad.png
       static const country andorra();
       /// @brief A system-defined country object.
+      /// @image html ao.png
       static const country angola();
       /// @brief A system-defined country object.
+      /// @image html ai.png
       static const country anguilla();
       /// @brief A system-defined country object.
+      /// @image html aq.png
       static const country antarctica();
       /// @brief A system-defined country object.
+      /// @image html ag.png
       static const country antigua_and_barbuda();
       /// @brief A system-defined country object.
+      /// @image html ar.png
       static const country argentina();
       /// @brief A system-defined country object.
+      /// @image html am.png
       static const country armenia();
       /// @brief A system-defined country object.
+      /// @image html aw.png
       static const country aruba();
       /// @brief A system-defined country object.
+      /// @image html au.png
       static const country australia();
       /// @brief A system-defined country object.
+      /// @image html at.png
       static const country austria();
       /// @brief A system-defined country object.
+      /// @image html az.png
       static const country azerbaijan();
       /// @brief A system-defined country object.
+      /// @image html bs.png
       static const country bahamas();
       /// @brief A system-defined country object.
+      /// @image html bh.png
       static const country bahrain();
       /// @brief A system-defined country object.
+      /// @image html bd.png
       static const country bangladesh();
       /// @brief A system-defined country object.
       static const country barbados();
