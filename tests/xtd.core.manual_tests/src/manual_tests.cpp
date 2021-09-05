@@ -1,4 +1,5 @@
 #include <xtd/xtd.core>
+#include <xtd/xtd.forms.h>
 
 class encoding {
   
@@ -124,8 +125,20 @@ using namespace xtd::security;
 class xtd_core_manual_test : public object {
 public:
   static void main() {
-    console::write_line("0x{:X}", numeric_limits<uint32_t>::max());
-    console::write_line("Hello, World!");
+    ///   <tr>
+    ///     <td>Afghanistan</td>
+    ///     <td>xtd::forms::countries::afghanistan</td>
+    ///     <td>@image html af.png</td>
+    ///   </tr>
+
+    for (auto country : xtd::forms::countries::get_countries()) {
+      console::write_line(
+        "///   <tr>\n"
+        "///     <td>{}</td>\n"
+        "///     <td>xtd::forms::countries::{}\n"
+        "///     <td>@image html {}.png</td>\n"
+        "///   </tr>\n///", country.name(), country.name().to_lower().replace(" ", "_").replace("(", "").replace(")", ""), country.alpha_2_code().to_lower());
+    }
   }
 };
 
