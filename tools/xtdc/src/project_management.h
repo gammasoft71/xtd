@@ -650,7 +650,7 @@ namespace xtdc_command {
         "/// @file",
         "/// @brief Contains program class.",
         "#pragma once",
-        "#include <string>",
+        "#include <xtd/ustring.h>",
         "#include <vector>",
         "",
         "/// @brief Represents the namespace that contains application objects.",
@@ -676,7 +676,7 @@ namespace xtdc_command {
         "using namespace xtd;",
         xtd::ustring::format("using namespace {};", name),
         "",
-        "void program::main(const vector<string>& args) {",
+        "void program::main(const vector<ustring>& args) {",
         "  console::write_line(\"Hello, World!\");",
         "}",
       };
