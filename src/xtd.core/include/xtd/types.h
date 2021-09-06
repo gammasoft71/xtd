@@ -55,6 +55,7 @@ namespace std {
 namespace xtd {
   /// @cond
   using byte_t = uint8_t;
+  using char_t = char;
   using decimal_t = long double;
   using sbyte_t = int8_t;
   using single_t = float;
