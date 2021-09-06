@@ -15,6 +15,7 @@ add_sources(
   src/bit_converter.cpp
   src/bytes_assert.h
   src/console_key_info.cpp
+  src/convert.cpp
   src/convert_string.cpp
   src/divided_by_zero_exception.cpp
   src/domain_exception.cpp
