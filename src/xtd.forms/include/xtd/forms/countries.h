@@ -656,10 +656,10 @@ namespace xtd {
       /// @image html sd.png
       static const country sudan();
       /// @brief A system-defined country object.
-      /// @image html sj.png
+      /// @image html sr.png
       static const country suriname();
       /// @brief A system-defined country object.
-      /// @image html se.png
+      /// @image html sj.png
       static const country svalbard_and_jan_mayen();
       /// @brief A system-defined country object.
       /// @image html se.png
