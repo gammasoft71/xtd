@@ -18,6 +18,339 @@ namespace xtd {
   /// @remarks This class cannot be inherited.
   class convert static_ {
   public:
+    /// @brief Convert std::any to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// std::any value = true;
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(std::any value) noexcept;
+    /// @brief Convert bool to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @code
+    /// bool value = true;
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(bool value) noexcept;
+    /// @brief Convert byte_t to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @code
+    /// byte_t value = 42;
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(byte_t value) noexcept;
+    /// @brief Convert char to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @code
+    /// char value = 'a';
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(char value) noexcept;
+    /// @brief Convert char8_t to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @exception xtd::invalid_cast_exception throws always exception.
+    /// @code
+    /// char8_t value = u8'a';
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(char8_t value);
+    /// @brief Convert char16_t to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @code
+    /// char16_t value = u'a';
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(char16_t value) noexcept;
+    /// @brief Convert char32_t to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @code
+    /// char32_t value = U'a';
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(char32_t value) noexcept;
+    /// @brief Convert wchar_t to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @code
+    /// wchar_t value = L'a';
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(wchar_t value) noexcept;
+    /// @brief Convert decimal_t to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @code
+    /// decimal_t value = 42.50l;
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(decimal_t value) noexcept;
+    /// @brief Convert double to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// double value = 42.50;
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(double value) noexcept;
+    /// @brief Convert float to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @brief Convert double to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// float value = 42.50f;
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(float value) noexcept;
+    /// @brief Convert int16_t to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// int16_t value = 42;
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(int16_t value) noexcept;
+    /// @brief Convert int32_t to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// int32_t value = 42;
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(int32_t value) noexcept;
+    /// @brief Convert int64_t to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// int6_4t value = 42l;
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(int64_t value) noexcept;
+    /// @brief Convert llong_t to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// llong_t value = 42ll;
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(llong_t value) noexcept;
+    /// @brief Convert sbyte_t to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// sbyte_t value = 42;
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(sbyte_t value) noexcept;
+    /// @brief Convert uint16_t to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// uint16_t value = 42u;
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(uint16_t value) noexcept;
+    /// @brief Convert uint32_t to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// uint32_t value = 42u;
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(uint32_t value) noexcept;
+    /// @brief Convert uint64_t to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// uint64_t value = 42ul;
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(uint64_t value) noexcept;
+    /// @brief Convert llong_t to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// ullong_t value = 42ull;
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(ullong_t value) noexcept;
+    /// @brief Convert string to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// ustring value = "42";
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(const xtd::ustring& value) noexcept;
+    /// @brief Convert string to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// string value = "42";
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(const std::string& value) noexcept;
+    /// @brief Convert string to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// u8string value = u8"42";
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(const std::u8string& value) noexcept;
+    /// @brief Convert string to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// u16string value = u"42";
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(const std::u16string& value) noexcept;
+    /// @brief Convert string to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// u32string value = U"42";
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(const std::u32string& value) noexcept;
+    /// @brief Convert string to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// wstring value = L"42";
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(const std::wstring& value) noexcept;
+    /// @brief Convert string to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// const char* value = "42";
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(const char* value) noexcept;
+    /// @brief Convert string to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// char* value = "42";
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(char* value) noexcept;
+    /// @brief Convert string to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// const char8_t* value = u8"42";
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(const char8_t* value) noexcept;
+    /// @brief Convert string to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// char8_t* value = u8"42";
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(char8_t* value) noexcept;
+    /// @brief Convert string to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// const char16_t* value = u"42";
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(const char16_t* value) noexcept;
+    /// @brief Convert string to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// char16_t* value = u"42";
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(char16_t* value) noexcept;
+    /// @brief Convert string to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// const char32_t* value = U"42";
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(const char32_t* value) noexcept;
+    /// @brief Convert string to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// char32_t* value = U"42";
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(char32_t* value) noexcept;
+    /// @brief Convert string to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// const wchar_t* value = L"42";
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(const wchar_t* value) noexcept;
+    /// @brief Convert string to std::any.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// wchar_t* value = L"42";
+    /// any result = convert::to_any(value);
+    /// @endcode
+    static std::any to_any(wchar_t* value) noexcept;
+    /// @brief Convert type_t to bool.
+    /// @param value object to convert.
+    /// @return A new std::any object converted from value.
+    /// @par Examples
+    /// @code
+    /// address_family value = address_family::inter_network;
+    /// any result = convert::to_any(value);
+    /// @endcode
+    template<typename type_t>
+    static std::any to_any(type_t value) {
+      return std::any(value);
+    }
+
     /// @brief Convert std::any to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
@@ -47,47 +380,47 @@ namespace xtd {
     /// @brief Convert char to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
+    /// @exception xtd::invalid_cast_exception throws always exception.
     /// @code
     /// char value = 'a';
     /// bool result = convert::to_boolean(value);
     /// @endcode
-    /// @exception xtd::invalid_cast_exception throws always exception.
     static bool to_boolean(char value);
     /// @brief Convert char8_t to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
+    /// @exception xtd::invalid_cast_exception throws always exception.
     /// @code
     /// char8_t value = u8'a';
     /// bool result = convert::to_boolean(value);
     /// @endcode
-    /// @exception xtd::invalid_cast_exception throws always exception.
     static bool to_boolean(char8_t value);
     /// @brief Convert char16_t to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
+    /// @exception xtd::invalid_cast_exception throws always exception.
     /// @code
     /// char16_t value = u'a';
     /// bool result = convert::to_boolean(value);
     /// @endcode
-    /// @exception xtd::invalid_cast_exception throws always exception.
     static bool to_boolean(char16_t value);
     /// @brief Convert char32_t to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
+    /// @exception xtd::invalid_cast_exception throws always exception.
     /// @code
     /// char32_t value = U'a';
     /// bool result = convert::to_boolean(value);
     /// @endcode
-    /// @exception xtd::invalid_cast_exception throws always exception.
     static bool to_boolean(char32_t value);
     /// @brief Convert wchar_t to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
+    /// @exception xtd::invalid_cast_exception throws always exception.
     /// @code
     /// wchar_t value = L'a';
     /// bool result = convert::to_boolean(value);
     /// @endcode
-    /// @exception xtd::invalid_cast_exception throws always exception.
     static bool to_boolean(wchar_t value);
     /// @brief Convert decimal_t to bool.
     /// @param value object to convert.
@@ -367,14 +700,14 @@ namespace xtd {
     /// address_family value = address_family::inter_network;
     /// bool result = convert::to_boolean(value);
     /// @endcode
-template<typename type_t>
+    template<typename type_t>
     static bool to_boolean(type_t value) {
       return static_cast<bool>(value);
     }
-
+    
     /// @brief Convert std::any to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @par Examples
     /// @code
     /// std::any value = 42;
@@ -383,7 +716,7 @@ template<typename type_t>
     static byte_t to_byte(std::any value);
     /// @brief Convert bool to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @par Examples
     /// @code
     /// bool value = true;
@@ -392,7 +725,7 @@ template<typename type_t>
     static byte_t to_byte(bool value) noexcept;
     /// @brief Convert byte_t to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @par Examples
     /// @code
     /// byte_t value = 42;
@@ -401,7 +734,7 @@ template<typename type_t>
     static byte_t to_byte(byte_t value) noexcept;
     /// @brief Convert char to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @par Examples
     /// @code
     /// char value = 'a';
@@ -410,7 +743,7 @@ template<typename type_t>
     static byte_t to_byte(char value) noexcept;
     /// @brief Convert char8_t to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @par Examples
     /// @code
     /// char8_t value = u8'a';
@@ -419,7 +752,7 @@ template<typename type_t>
     static byte_t to_byte(char8_t value) noexcept;
     /// @brief Convert char16_t to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
@@ -429,7 +762,7 @@ template<typename type_t>
     static byte_t to_byte(char16_t value);
     /// @brief Convert char32_t to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
@@ -439,7 +772,7 @@ template<typename type_t>
     static byte_t to_byte(char32_t value);
     /// @brief Convert char32_t to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
@@ -450,7 +783,7 @@ template<typename type_t>
     /// @brief Convert decimal_t to byte.
     /// @param value object to convert.
     /// @remarks The result is rounded.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @par Examples
     /// @code
     /// decimal_t value = 42.50l;
@@ -459,7 +792,7 @@ template<typename type_t>
     static byte_t to_byte(decimal_t value);
     /// @brief Convert double to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @remarks The result is rounded.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
@@ -470,7 +803,7 @@ template<typename type_t>
     static byte_t to_byte(double value);
     /// @brief Convert float to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @remarks The result is rounded.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
@@ -481,7 +814,7 @@ template<typename type_t>
     static byte_t to_byte(float value);
     /// @brief Convert int16_t to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
@@ -491,7 +824,7 @@ template<typename type_t>
     static byte_t to_byte(int16_t value);
     /// @brief Convert int32_t to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
@@ -501,7 +834,7 @@ template<typename type_t>
     static byte_t to_byte(int32_t value);
     /// @brief Convert int64_t to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
@@ -511,7 +844,7 @@ template<typename type_t>
     static byte_t to_byte(int64_t value);
     /// @brief Convert llong_t to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
@@ -521,7 +854,7 @@ template<typename type_t>
     static byte_t to_byte(llong_t value);
     /// @brief Convert sbyte_t to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is less than 0.
     /// @par Examples
     /// @code
@@ -531,7 +864,7 @@ template<typename type_t>
     static byte_t to_byte(sbyte_t value);
     /// @brief Convert uint16_t to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
     /// @par Examples
     /// @code
@@ -541,7 +874,7 @@ template<typename type_t>
     static byte_t to_byte(uint16_t value);
     /// @brief Convert uint32_t to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
     /// @par Examples
     /// @code
@@ -551,7 +884,7 @@ template<typename type_t>
     static byte_t to_byte(uint32_t value);
     /// @brief Convert uint64_t to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
     /// @par Examples
     /// @code
@@ -561,7 +894,7 @@ template<typename type_t>
     static byte_t to_byte(uint64_t value);
     /// @brief Convert llong_t to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
     /// @par Examples
     /// @code
@@ -571,7 +904,7 @@ template<typename type_t>
     static byte_t to_byte(ullong_t value);
     /// @brief Convert string to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
@@ -581,7 +914,7 @@ template<typename type_t>
     static byte_t to_byte(const xtd::ustring& value);
     /// @brief Convert string to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
@@ -591,7 +924,7 @@ template<typename type_t>
     static byte_t to_byte(const std::string& value);
     /// @brief Convert string to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
@@ -601,7 +934,7 @@ template<typename type_t>
     static byte_t to_byte(const std::u8string& value);
     /// @brief Convert string to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
@@ -611,7 +944,7 @@ template<typename type_t>
     static byte_t to_byte(const std::u16string& value);
     /// @brief Convert string to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
@@ -621,7 +954,7 @@ template<typename type_t>
     static byte_t to_byte(const std::u32string& value);
     /// @brief Convert string to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
@@ -631,7 +964,7 @@ template<typename type_t>
     static byte_t to_byte(const std::wstring& value);
     /// @brief Convert string to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
@@ -641,7 +974,7 @@ template<typename type_t>
     static byte_t to_byte(const char* value);
     /// @brief Convert string to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
@@ -651,7 +984,7 @@ template<typename type_t>
     static byte_t to_byte(char* value);
     /// @brief Convert string to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
@@ -661,7 +994,7 @@ template<typename type_t>
     static byte_t to_byte(const char8_t* value);
     /// @brief Convert string to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
@@ -671,7 +1004,7 @@ template<typename type_t>
     static byte_t to_byte(char8_t* value);
     /// @brief Convert string to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
@@ -681,7 +1014,7 @@ template<typename type_t>
     static byte_t to_byte(const char16_t* value);
     /// @brief Convert string to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
@@ -691,7 +1024,7 @@ template<typename type_t>
     static byte_t to_byte(char16_t* value);
     /// @brief Convert string to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
@@ -701,7 +1034,7 @@ template<typename type_t>
     static byte_t to_byte(const char32_t* value);
     /// @brief Convert string to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
@@ -711,7 +1044,7 @@ template<typename type_t>
     static byte_t to_byte(char32_t* value);
     /// @brief Convert string to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
@@ -721,7 +1054,7 @@ template<typename type_t>
     static byte_t to_byte(const wchar_t* value);
     /// @brief Convert string to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
@@ -731,7 +1064,7 @@ template<typename type_t>
     static byte_t to_byte(wchar_t* value);
     /// @brief Convert type_t to byte.
     /// @param value object to convert.
-    /// @return A new bool object converted from value.
+    /// @return A new byte_t object converted from value.
     /// @par Examples
     /// @code
     /// address_family value = address_family::inter_network;

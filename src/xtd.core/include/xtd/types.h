@@ -32,13 +32,20 @@ public:
   char8_t& operator--() {value_ -= 1; return *this;}
   char8_t operator--(int) {char8_t result(*this); --(*this); return result;}
   
+  bool operator==(char8_t c) const {return value_ == c.value_;}
+  bool operator!=(char8_t c) const {return value_ != c.value_;}
+  bool operator<(char8_t c) const {return value_ < c.value_;}
+  bool operator>(char8_t c) const {return value_ > c.value_;}
+  bool operator<=(char8_t c) const {return value_ <= c.value_;}
+  bool operator>=(char8_t c) const {return value_ >= c.value_;}
+  
   bool operator==(char c) const {return value_ == c;}
   bool operator!=(char c) const {return value_ != c;}
   bool operator<(char c) const {return value_ < c;}
   bool operator>(char c) const {return value_ > c;}
   bool operator<=(char c) const {return value_ <= c;}
   bool operator>=(char c) const {return value_ >= c;}
-  
+
   friend std::ostream& operator <<(std::ostream& os, const char8_t& c) noexcept {return os << std::to_string(static_cast<int32_t>(c.value_));}
   
 private:
