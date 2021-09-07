@@ -153,7 +153,6 @@ add_sources(
   include/xtd/internal/__format_exception.h
   include/xtd/internal/__format_information.h
   include/xtd/internal/__format_stringer.h
-  include/xtd/internal/__literals_exception.h
   include/xtd/internal/__natural_formater.h
   include/xtd/internal/__numeric_formater.h
   include/xtd/internal/__opaque_console.h
@@ -235,6 +234,7 @@ add_sources(
   src/xtd/environment.cpp
   src/xtd/event_args.cpp
   src/xtd/guid.cpp
+  src/xtd/literals.cpp
   src/xtd/object.cpp
 # src/xtd/signal_catcher.cpp
   src/xtd/system_exception.cpp
@@ -267,7 +267,6 @@ add_sources(
   src/xtd/diagnostics/trace_switch.cpp 
   src/xtd/internal/__format_exception.cpp
   src/xtd/internal/__format_stringer.cpp
-  src/xtd/internal/__litterals_exception.cpp
   src/xtd/internal/__opaque_console_gcc.cpp
   src/xtd/internal/__opaque_console_win32.cpp
   src/xtd/internal/__parse_exception.cpp
