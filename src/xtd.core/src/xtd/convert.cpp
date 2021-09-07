@@ -6,6 +6,147 @@
 using namespace std;
 using namespace xtd;
 
+std::any convert::to_any(any value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(bool value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(byte_t value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(char value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(char8_t value) {
+  //return value;
+  throw invalid_cast_exception(csf_);
+}
+
+std::any convert::to_any(char16_t value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(char32_t value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(wchar_t value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(decimal_t value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(double value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(float value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(int16_t value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(int32_t value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(int64_t value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(llong_t value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(sbyte_t value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(uint16_t value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(uint32_t value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(uint64_t value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(ullong_t value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(const ustring& value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(const string& value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(const u8string& value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(const u16string& value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(const u32string& value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(const wstring& value) noexcept {
+  return value;
+}
+
+std::any convert::to_any(const char* value) noexcept {
+  return ustring(value);
+}
+
+std::any convert::to_any(char* value) noexcept {
+  return ustring(value);
+}
+
+std::any convert::to_any(const char8_t* value) noexcept {
+  return ustring(value);
+}
+
+std::any convert::to_any(const char16_t* value) noexcept {
+  return ustring(value);
+}
+
+std::any convert::to_any(char16_t* value) noexcept {
+  return ustring(value);
+}
+
+std::any convert::to_any(const char32_t* value) noexcept {
+  return ustring(value);
+}
+
+std::any convert::to_any(char32_t* value) noexcept {
+  return ustring(value);
+}
+
+std::any convert::to_any(const wchar_t* value) noexcept {
+  return ustring(value);
+}
+
+std::any convert::to_any(wchar_t* value) noexcept {
+  return ustring(value);
+}
+
 bool convert::to_boolean(any value) {
   try {
     return any_cast<bool>(value);
@@ -230,22 +371,22 @@ byte_t convert::to_byte(sbyte_t value) {
 }
 
 byte_t convert::to_byte(uint16_t value) {
-  if (value > static_cast<llong_t>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
+  if (value > static_cast<uint32_t>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
   return static_cast<byte_t>(value);
 }
 
 byte_t convert::to_byte(uint32_t value) {
-  if (value > static_cast<llong_t>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
+  if (value > static_cast<uint32_t>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
   return static_cast<byte_t>(value);
 }
 
 byte_t convert::to_byte(uint64_t value) {
-  if (value > static_cast<llong_t>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
+  if (value > static_cast<uint64_t>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
   return static_cast<byte_t>(value);
 }
 
 byte_t convert::to_byte(ullong_t value) {
-  if (value > static_cast<llong_t>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
+  if (value > static_cast<ullong_t>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
   return static_cast<byte_t>(value);
 }
 
