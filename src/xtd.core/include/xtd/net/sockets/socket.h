@@ -6,7 +6,6 @@
 #include <memory>
 #include "../../core_export.h"
 #include "../../argument_exception.h"
-#include "../../as.h"
 #include "../../async_callback.h"
 #include "../../iasync_result.h"
 #include "../../not_implemented_exception.h"

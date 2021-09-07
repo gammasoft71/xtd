@@ -59,6 +59,7 @@ namespace xtd {
   using decimal_t = long double;
   using sbyte_t = int8_t;
   using single_t = float;
+  using uchar_t = unsigned char;
   using ushort_t = unsigned short;
   using ulong_t = unsigned long;
   

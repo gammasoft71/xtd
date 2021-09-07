@@ -3,6 +3,7 @@
 #include "../../../../include/xtd/bit_converter.h"
 #include "../../../../include/xtd/argument_out_of_range_exception.h"
 #include "../../../../include/xtd/invalid_operation_exception.h"
+#include "../../../../include/xtd/as.h"
 #include "../../../../include/xtd/is.h"
 #include "../../../../include/xtd/object_closed_exception.h"
 #include "../../../../include/xtd/diagnostics/boolean_switch.h"
