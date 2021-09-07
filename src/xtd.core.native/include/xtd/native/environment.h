@@ -38,6 +38,7 @@ namespace xtd {
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
     class core_native_export_ environment final {
+      environment() = delete;
       friend xtd::environment;
       friend xtd::native::translator;
     protected:

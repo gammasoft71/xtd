@@ -38,6 +38,7 @@ namespace xtd {
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
     class core_native_export_ debugger final {
+      debugger() = delete;
       friend xtd::diagnostics::debug;
       friend xtd::diagnostics::debugger;
       friend xtd::diagnostics::default_trace_listener;

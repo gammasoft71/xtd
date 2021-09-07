@@ -28,6 +28,7 @@ namespace xtd {
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
     class core_native_export_ translator final {
+      translator() = delete;
       friend xtd::translator;
     protected:
       /// @brief Gets the system language.

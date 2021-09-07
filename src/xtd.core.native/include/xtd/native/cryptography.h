@@ -32,6 +32,7 @@ namespace xtd {
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
     class core_native_export_ cryptography final {
+      cryptography() = delete;
       friend xtd::security::secure_string;
     protected:
       /// @brief Gets the macine GUID.

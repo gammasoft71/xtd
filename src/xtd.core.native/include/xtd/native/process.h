@@ -33,6 +33,7 @@ namespace xtd {
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
     class core_native_export_ process final {
+      process() = delete;
       friend xtd::diagnostics::process;
     protected:
       /// @brief Contains the created process hande and created standard streams :

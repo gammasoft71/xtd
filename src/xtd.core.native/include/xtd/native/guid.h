@@ -34,6 +34,7 @@ namespace xtd {
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
     class core_native_export_ guid final {
+      guid() = delete;
       friend xtd::guid;
     protected:
       /// @brief Generates a globally unique identifier (GUID).
