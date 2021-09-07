@@ -15,6 +15,9 @@ namespace xtd {
   //                                                                                     generic
 
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -25,7 +28,6 @@ namespace xtd {
   /// std::any value = 42;
   /// int result = as<int>(value);
   /// @endcode
-  /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<typename new_type_t>
   new_type_t as(std::any value) {
     try {
@@ -36,6 +38,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -52,6 +56,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -68,6 +74,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -84,6 +92,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -100,6 +110,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -116,6 +128,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -132,6 +146,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -148,6 +164,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -164,6 +182,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -180,6 +200,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -196,6 +218,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -212,6 +236,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -228,6 +254,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -244,6 +272,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -260,6 +290,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -276,6 +308,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -292,6 +326,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -308,6 +344,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -324,6 +362,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -340,6 +380,9 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
+  /// @exception xtd::invalid_cast_exception value bad type
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -361,6 +404,9 @@ namespace xtd {
   }
 
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
+  /// @exception xtd::invalid_cast_exception value bad type
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -377,6 +423,9 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
+  /// @exception xtd::invalid_cast_exception value bad type
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -393,6 +442,9 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
+  /// @exception xtd::invalid_cast_exception value bad type
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -409,6 +461,9 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
+  /// @exception xtd::invalid_cast_exception value bad type
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -425,6 +480,9 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
+  /// @exception xtd::invalid_cast_exception value bad type
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -441,6 +499,8 @@ namespace xtd {
   }
 
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -457,6 +517,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -473,6 +535,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -489,6 +553,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -505,6 +571,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -521,6 +589,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -537,6 +607,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -553,6 +625,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -569,6 +643,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -585,6 +661,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new new_type_t object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -604,6 +682,9 @@ namespace xtd {
   //                                                                 xtd::convert specialization
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -614,13 +695,14 @@ namespace xtd {
   /// std::any value = true;
   /// bool result = as<bool>(value);
   /// @endcode
-  /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<>
   inline bool as<bool>(std::any value) {
     return xtd::convert::to_boolean(value);
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -637,6 +719,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -653,6 +737,9 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -663,13 +750,15 @@ namespace xtd {
   /// char value = 'a';
   /// bool result = as<bool>(value);
   /// @endcode
-  /// @exception xtd::invalid_cast_exception throw always exception.
   template<>
   inline bool as<bool>(char value) {
     return xtd::convert::to_boolean(value);
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -680,13 +769,15 @@ namespace xtd {
   /// char8_t value = u8'a';
   /// bool result = as<bool>(value);
   /// @endcode
-  /// @exception xtd::invalid_cast_exception throw always exception.
   template<>
   inline bool as<bool>(char8_t value) {
     return xtd::convert::to_boolean(value);
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -697,13 +788,15 @@ namespace xtd {
   /// char16_t value = u'a';
   /// bool result = as<bool>(value);
   /// @endcode
-  /// @exception xtd::invalid_cast_exception throw always exception.
   template<>
   inline bool as<bool>(char16_t value) {
     return xtd::convert::to_boolean(value);
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -714,13 +807,15 @@ namespace xtd {
   /// char32_t value = u'a';
   /// bool result = as<bool>(value);
   /// @endcode
-  /// @exception xtd::invalid_cast_exception throw always exception.
   template<>
   inline bool as<bool>(char32_t value) {
     return xtd::convert::to_boolean(value);
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -731,13 +826,14 @@ namespace xtd {
   /// wchar_t value = u'a';
   /// bool result = as<bool>(value);
   /// @endcode
-  /// @exception xtd::invalid_cast_exception throw always exception.
   template<>
   inline bool as<bool>(wchar_t value) {
     return xtd::convert::to_boolean(value);
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -748,14 +844,14 @@ namespace xtd {
   /// decimal_t value = 42.50l;
   /// bool result = as<bool>(value);
   /// @endcode
-  /// @remarks The result is rounded.
-  /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
   template<>
   inline bool as<bool>(decimal_t value) {
     return xtd::convert::to_boolean(value);
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -766,14 +862,14 @@ namespace xtd {
   /// double value = 42.50;
   /// bool result = as<bool>(value);
   /// @endcode
-  /// @remarks The result is rounded.
-  /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
   template<>
   inline bool as<bool>(double value) {
     return xtd::convert::to_boolean(value);
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -784,14 +880,14 @@ namespace xtd {
   /// float value = 42.50f;
   /// bool result = as<bool>(value);
   /// @endcode
-  /// @remarks The result is rounded.
-  /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
   template<>
   inline bool as<bool>(float value) {
     return xtd::convert::to_boolean(value);
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -802,13 +898,14 @@ namespace xtd {
   /// int16_t value = 42;
   /// bool result = as<bool>(value);
   /// @endcode
-  /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
   template<>
   inline bool as<bool>(int16_t value) {
     return xtd::convert::to_boolean(value);
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -819,13 +916,14 @@ namespace xtd {
   /// int32_t value = 42;
   /// bool result = as<bool>(value);
   /// @endcode
-  /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
   template<>
   inline bool as<bool>(int32_t value) {
     return xtd::convert::to_boolean(value);
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -836,13 +934,14 @@ namespace xtd {
   /// int64_t value = 42l;
   /// bool result = as<bool>(value);
   /// @endcode
-  /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
   template<>
   inline bool as<bool>(int64_t value) {
     return xtd::convert::to_boolean(value);
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -853,13 +952,14 @@ namespace xtd {
   /// llong_t value = 42ll;
   /// bool result = as<bool>(value);
   /// @endcode
-  /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
   template<>
   inline bool as<bool>(llong_t value) {
     return xtd::convert::to_boolean(value);
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -870,13 +970,14 @@ namespace xtd {
   /// sbyte_t value = 42ll;
   /// bool result = as<bool>(value);
   /// @endcode
-  /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
   template<>
   inline bool as<bool>(sbyte_t value) {
     return xtd::convert::to_boolean(value);
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -887,13 +988,14 @@ namespace xtd {
   /// uint16_t value = 42u;
   /// bool result = as<bool>(value);
   /// @endcode
-  /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
   template<>
   inline bool as<bool>(uint16_t value) {
     return xtd::convert::to_boolean(value);
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -904,13 +1006,14 @@ namespace xtd {
   /// uint32_t value = 42u;
   /// bool result = as<bool>(value);
   /// @endcode
-  /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
   template<>
   inline bool as<bool>(uint32_t value) {
     return xtd::convert::to_boolean(value);
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -921,13 +1024,14 @@ namespace xtd {
   /// uint64_t value = 42ul;
   /// bool result = as<bool>(value);
   /// @endcode
-  /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
   template<>
   inline bool as<bool>(uint64_t value) {
     return xtd::convert::to_boolean(value);
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -938,13 +1042,15 @@ namespace xtd {
   /// ullong_t value = 42ull;
   /// bool result = as<bool>(value);
   /// @endcode
-  /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
   template<>
   inline bool as<bool>(ullong_t value) {
     return xtd::convert::to_boolean(value);
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -955,13 +1061,15 @@ namespace xtd {
   /// ustring value = "42";
   /// bool result = as<bool>(value);
   /// @endcode
-  /// @exception xtd::aegument_exception value does noot represent a bool.
   template<>
   inline bool as<bool>(const xtd::ustring& value) {
     return xtd::convert::to_boolean(value);
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -972,13 +1080,15 @@ namespace xtd {
   /// string value = "42";
   /// bool result = as<bool>(value);
   /// @endcode
-  /// @exception xtd::aegument_exception value does noot represent a bool.
   template<>
   inline bool as<bool>(const std::string& value) {
     return xtd::convert::to_boolean(value);
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -989,13 +1099,15 @@ namespace xtd {
   /// u8string value = u8"42";
   /// bool result = as<bool>(value);
   /// @endcode
-  /// @exception xtd::aegument_exception value does noot represent a bool.
   template<>
   inline bool as<bool>(const std::u8string& value) {
     return xtd::convert::to_boolean(value);
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1006,13 +1118,15 @@ namespace xtd {
   /// u16string value = u"42";
   /// bool result = as<bool>(value);
   /// @endcode
-  /// @exception xtd::aegument_exception value does noot represent a bool.
   template<>
   inline bool as<bool>(const std::u16string& value) {
     return xtd::convert::to_boolean(value);
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1023,13 +1137,15 @@ namespace xtd {
   /// u32string value = U"42";
   /// bool result = as<bool>(value);
   /// @endcode
-  /// @exception xtd::aegument_exception value does noot represent a bool.
   template<>
   inline bool as<bool>(const std::u32string& value) {
     return xtd::convert::to_boolean(value);
   }
   
   /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1040,9 +1156,198 @@ namespace xtd {
   /// wstring value = L"42";
   /// bool result = as<bool>(value);
   /// @endcode
-  /// @exception xtd::aegument_exception value does noot represent a bool.
   template<>
   inline bool as<bool>(const std::wstring& value) {
+    return xtd::convert::to_boolean(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// const char* value = "42";
+  /// bool result = as<bool>(value);
+  /// @endcode
+  template<>
+  inline bool as<bool>(const char* value) {
+    return xtd::convert::to_boolean(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char* value = "42";
+  /// bool result = as<bool>(value);
+  /// @endcode
+  template<>
+  inline bool as<bool>(char* value) {
+    return xtd::convert::to_boolean(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// const char8_t* value = u8"42";
+  /// bool result = as<bool>(value);
+  /// @endcode
+  template<>
+  inline bool as<bool>(const char8_t* value) {
+    return xtd::convert::to_boolean(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char8_t* value = u8"42";
+  /// bool result = as<bool>(value);
+  /// @endcode
+  template<>
+  inline bool as<bool>(char8_t* value) {
+    return xtd::convert::to_boolean(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// const char16_t* value = u"42";
+  /// bool result = as<bool>(value);
+  /// @endcode
+  template<>
+  inline bool as<bool>(const char16_t* value) {
+    return xtd::convert::to_boolean(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char16_t* value = u"42";
+  /// bool result = as<bool>(value);
+  /// @endcode
+  template<>
+  inline bool as<bool>(char16_t* value) {
+    return xtd::convert::to_boolean(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// const char32_t* value = U"42";
+  /// bool result = as<bool>(value);
+  /// @endcode
+  template<>
+  inline bool as<bool>(const char32_t* value) {
+    return xtd::convert::to_boolean(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char32_t* value = U"42";
+  /// bool result = as<bool>(value);
+  /// @endcode
+  template<>
+  inline bool as<bool>(char32_t* value) {
+    return xtd::convert::to_boolean(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// const wchar_t* value = L"42";
+  /// bool result = as<bool>(value);
+  /// @endcode
+  template<>
+  inline bool as<bool>(const wchar_t* value) {
+    return xtd::convert::to_boolean(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wchar_t* value = L"42";
+  /// bool result = as<bool>(value);
+  /// @endcode
+  template<>
+  inline bool as<bool>(wchar_t* value) {
     return xtd::convert::to_boolean(value);
   }
 
