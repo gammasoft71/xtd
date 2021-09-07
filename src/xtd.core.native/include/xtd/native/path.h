@@ -31,6 +31,7 @@ namespace xtd {
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
     class core_native_export_ path final {
+      path() = delete;
       friend xtd::io::path;
     protected:
       /// @brief Gets temp path.

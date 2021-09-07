@@ -27,6 +27,7 @@ namespace xtd {
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
     class core_native_export_ console final {
+      console() = delete;
     protected:
       /// @brief Gets the background color of the console.
       /// @return the background console color.

@@ -32,6 +32,7 @@ namespace xtd {
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
     class core_native_export_ file final {
+      file() = delete;
       friend xtd::io::file;
     protected:
       /// @brief Gets the file attributes.

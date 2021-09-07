@@ -36,6 +36,7 @@ namespace xtd {
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
     class core_native_export_ dns final {
+      dns() = delete;
       friend xtd::net::dns;
       friend __using_dns__;
     protected:

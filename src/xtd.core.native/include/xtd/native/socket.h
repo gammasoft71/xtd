@@ -38,6 +38,7 @@ namespace xtd {
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
     class core_native_export_ socket final {
+      socket() = delete;
       friend __using_socket__;
       friend xtd::net::socket_address;
       friend xtd::net::sockets::socket;
