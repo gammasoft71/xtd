@@ -1,6 +1,7 @@
 #include "../../../../include/xtd/net/sockets/tcp_listener.h"
 #include "../../../../include/xtd/net/sockets/socket_exception.h"
 #include "../../../../include/xtd/invalid_operation_exception.h"
+#include "../../../../include/xtd/as.h"
 #include "../../../../include/xtd/is.h"
 #include <thread>
 

@@ -34,6 +34,7 @@ add_sources(
   include/xtd/console_modifiers.h
   include/xtd/console_special_key.h
   include/xtd/convert.h
+  include/xtd/convert_pointer.h
   include/xtd/convert_string.h
   include/xtd/cpp_language.h
   include/xtd/ctrace.h
@@ -229,6 +230,7 @@ add_sources(
   src/xtd/bit_converter.cpp
   src/xtd/console.cpp
   src/xtd/convert.cpp
+  src/xtd/convert_pointer.cpp
   src/xtd/convert_string.cpp
   src/xtd/environment.cpp
   src/xtd/event_args.cpp

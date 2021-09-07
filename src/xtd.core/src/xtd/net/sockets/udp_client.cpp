@@ -2,6 +2,7 @@
 #include "../../../../include/xtd/net/sockets/socket_error.h"
 #include "../../../../include/xtd/net/sockets/socket_exception.h"
 #include "../../../../include/xtd/net/dns.h"
+#include "../../../../include/xtd/as.h"
 #include "../../../../include/xtd/is.h"
 #include <thread>
 
