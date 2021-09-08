@@ -484,17 +484,17 @@ char convert::to_char(char8_t value) noexcept {
 }
 
 char convert::to_char(char16_t value) {
-  if (value > static_cast<char16_t>(numeric_limits<char>::max())) throw overflow_exception(csf_);
+  if (value > static_cast<char16_t>(255)) throw overflow_exception(csf_);
   return static_cast<char>(value);
 }
 
 char convert::to_char(char32_t value) {
-  if (value > static_cast<char32_t>(numeric_limits<char>::max())) throw overflow_exception(csf_);
+  if (value > static_cast<char32_t>(255)) throw overflow_exception(csf_);
   return static_cast<char>(value);
 }
 
 char convert::to_char(wchar_t value) {
-  if (value > static_cast<wchar_t>(numeric_limits<char>::max())) throw overflow_exception(csf_);
+  if (value > static_cast<wchar_t>(255)) throw overflow_exception(csf_);
   return static_cast<char>(value);
 }
 
@@ -515,47 +515,47 @@ char convert::to_char(float value) {
 
 char convert::to_char(int16_t value) {
   if (value < 0 || value > 255) throw overflow_exception(csf_);
-  return static_cast<byte_t>(value);
+  return static_cast<char>(value);
 }
 
 char convert::to_char(int32_t value) {
   if (value < 0 || value > 255) throw overflow_exception(csf_);
-  return static_cast<byte_t>(value);
+  return static_cast<char>(value);
 }
 
 char convert::to_char(int64_t value) {
   if (value < 0l || value > 255l) throw overflow_exception(csf_);
-  return static_cast<byte_t>(value);
+  return static_cast<char>(value);
 }
 
 char convert::to_char(llong_t value) {
   if (value < 0l || value > 255l) throw overflow_exception(csf_);
-  return static_cast<byte_t>(value);
+  return static_cast<char>(value);
 }
 
 char convert::to_char(sbyte_t value) {
   if (value < 0) throw overflow_exception(csf_);
-  return static_cast<byte_t>(value);
+  return static_cast<char>(value);
 }
 
 char convert::to_char(uint16_t value) {
   if (value > 255u) throw overflow_exception(csf_);
-  return static_cast<byte_t>(value);
+  return static_cast<char>(value);
 }
 
 char convert::to_char(uint32_t value) {
   if (value > 255u) throw overflow_exception(csf_);
-  return static_cast<byte_t>(value);
+  return static_cast<char>(value);
 }
 
 char convert::to_char(uint64_t value) {
   if (value > 255lu) throw overflow_exception(csf_);
-  return static_cast<byte_t>(value);
+  return static_cast<char>(value);
 }
 
 char convert::to_char(ullong_t value) {
   if (value > 255llu) throw overflow_exception(csf_);
-  return static_cast<byte_t>(value);
+  return static_cast<char>(value);
 }
 
 char convert::to_char(const ustring& value) {
@@ -634,6 +634,181 @@ char convert::to_char(const wchar_t* value) {
 }
 
 char convert::to_char(wchar_t* value) {
+  if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char8_t convert::to_char8(any value) {
+  throw invalid_cast_exception(csf_);
+}
+
+char8_t convert::to_char8(bool value) {
+  throw invalid_cast_exception(csf_);
+}
+
+char8_t convert::to_char8(byte_t value) noexcept {
+  return static_cast<char8_t>(value);
+}
+
+char8_t convert::to_char8(char value) noexcept {
+  return value;
+}
+
+char8_t convert::to_char8(char8_t value) noexcept {
+  return static_cast<char8_t>(value);
+}
+
+char8_t convert::to_char8(char16_t value) {
+  if (value > static_cast<char16_t>(255)) throw overflow_exception(csf_);
+  return static_cast<char8_t>(value);
+}
+
+char8_t convert::to_char8(char32_t value) {
+  if (value > static_cast<char32_t>(255)) throw overflow_exception(csf_);
+  return static_cast<char8_t>(value);
+}
+
+char8_t convert::to_char8(wchar_t value) {
+  if (value > static_cast<wchar_t>(255)) throw overflow_exception(csf_);
+  return static_cast<char8_t>(value);
+}
+
+char8_t convert::to_char8(decimal_t value) {
+  if (value < 0.0l || value > 255.0l) throw overflow_exception(csf_);
+  return static_cast<char8_t>(round(value));
+}
+
+char8_t convert::to_char8(double value) {
+  if (value < 0.0 || value > 255.0) throw overflow_exception(csf_);
+  return static_cast<char8_t>(round(value));
+}
+
+char8_t convert::to_char8(float value) {
+  if (value < 0.0f || value > 255.0f) throw overflow_exception(csf_);
+  return static_cast<char8_t>(round(value));
+}
+
+char8_t convert::to_char8(int16_t value) {
+  if (value < 0 || value > 255) throw overflow_exception(csf_);
+  return static_cast<char8_t>(value);
+}
+
+char8_t convert::to_char8(int32_t value) {
+  if (value < 0 || value > 255) throw overflow_exception(csf_);
+  return static_cast<char8_t>(value);
+}
+
+char8_t convert::to_char8(int64_t value) {
+  if (value < 0l || value > 255l) throw overflow_exception(csf_);
+  return static_cast<char8_t>(value);
+}
+
+char8_t convert::to_char8(llong_t value) {
+  if (value < 0l || value > 255l) throw overflow_exception(csf_);
+  return static_cast<char8_t>(value);
+}
+
+char8_t convert::to_char8(sbyte_t value) {
+  if (value < 0) throw overflow_exception(csf_);
+  return static_cast<char8_t>(value);
+}
+
+char8_t convert::to_char8(uint16_t value) {
+  if (value > 255u) throw overflow_exception(csf_);
+  return static_cast<char8_t>(value);
+}
+
+char8_t convert::to_char8(uint32_t value) {
+  if (value > 255u) throw overflow_exception(csf_);
+  return static_cast<char8_t>(value);
+}
+
+char8_t convert::to_char8(uint64_t value) {
+  if (value > 255lu) throw overflow_exception(csf_);
+  return static_cast<char8_t>(value);
+}
+
+char8_t convert::to_char8(ullong_t value) {
+  if (value > 255llu) throw overflow_exception(csf_);
+  return static_cast<char8_t>(value);
+}
+
+char8_t convert::to_char8(const ustring& value) {
+  if (value.size() != 1) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char8_t convert::to_char8(const string& value) {
+  if (value.size() != 1) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char8_t convert::to_char8(const u8string& value) {
+  if (value.size() != 1) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char8_t convert::to_char8(const u16string& value) {
+  if (value.size() != 1) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char8_t convert::to_char8(const u32string& value) {
+  if (value.size() != 1) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char8_t convert::to_char8(const wstring& value) {
+  if (value.size() != 1) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char8_t convert::to_char8(const char* value) {
+  if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char8_t convert::to_char8(char* value) {
+  if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char8_t convert::to_char8(const char8_t* value) {
+  if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char8_t convert::to_char8(char8_t* value) {
+  if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char8_t convert::to_char8(const char16_t* value) {
+  if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char8_t convert::to_char8(char16_t* value) {
+  if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char8_t convert::to_char8(const char32_t* value) {
+  if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char8_t convert::to_char8(char32_t* value) {
+  if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char8_t convert::to_char8(const wchar_t* value) {
+  if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char8_t convert::to_char8(wchar_t* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
