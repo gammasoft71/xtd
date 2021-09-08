@@ -407,5 +407,140 @@ namespace unit_tests {
       value = -1;
       assert::throws<overflow_exception>([&]{convert::to_byte(value);}, csf_);
     }
+    
+    void test_method_(to_byte_from_uint16) {
+      uint16_t value = 42u;
+      assert::are_equal(42u, convert::to_byte(value), csf_);
+      value = 0u;
+      assert::is_zero(convert::to_byte(value), csf_);
+      value = 256u;
+      assert::throws<overflow_exception>([&]{convert::to_byte(value);}, csf_);
+    }
+    
+    void test_method_(to_byte_from_uint32) {
+      uint32_t value = 42u;
+      assert::are_equal(42u, convert::to_byte(value), csf_);
+      value = 0u;
+      assert::is_zero(convert::to_byte(value), csf_);
+      value = 256u;
+      assert::throws<overflow_exception>([&]{convert::to_byte(value);}, csf_);
+    }
+    
+    void test_method_(to_byte_from_uint64) {
+      uint64_t value = 42lu;
+      assert::are_equal(42u, convert::to_byte(value), csf_);
+      value = 0lu;
+      assert::is_zero(convert::to_byte(value), csf_);
+      value = 256lu;
+      assert::throws<overflow_exception>([&]{convert::to_byte(value);}, csf_);
+    }
+    
+    void test_method_(to_byte_from_ullong) {
+      ullong_t value = 42llu;
+      assert::are_equal(42u, convert::to_byte(value), csf_);
+      value = 0llu;
+      assert::is_zero(convert::to_byte(value), csf_);
+      value = 256llu;
+      assert::throws<overflow_exception>([&]{convert::to_byte(value);}, csf_);
+    }
+    
+    void test_method_(to_byte_from_ustring) {
+      ustring value = "42";
+      assert::are_equal(42u, convert::to_byte(value), csf_);
+      value = "0";
+      assert::is_zero(convert::to_byte(value), csf_);
+      value = "bad value";
+      assert::throws<argument_exception>([&]{convert::to_byte(value);}, csf_);
+    }
+    
+    void test_method_(to_byte_from_string) {
+      string value = "42";
+      assert::are_equal(42u, convert::to_byte(value), csf_);
+      value = "0";
+      assert::is_zero(convert::to_byte(value), csf_);
+      value = "bad value";
+      assert::throws<argument_exception>([&]{convert::to_byte(value);}, csf_);
+    }
+
+    void test_method_(to_byte_from_u8string) {
+      u8string value = u8"42";
+      assert::are_equal(42u, convert::to_byte(value), csf_);
+      value = u8"0";
+      assert::is_zero(convert::to_byte(value), csf_);
+      value = u8"bad value";
+      assert::throws<argument_exception>([&]{convert::to_byte(value);}, csf_);
+    }
+    
+    void test_method_(to_byte_from_u16string) {
+      u16string value = u"42";
+      assert::are_equal(42u, convert::to_byte(value), csf_);
+      value = u"0";
+      assert::is_zero(convert::to_byte(value), csf_);
+      value = u"bad value";
+      assert::throws<argument_exception>([&]{convert::to_byte(value);}, csf_);
+    }
+    
+    void test_method_(to_byte_from_u32string) {
+      u32string value = U"42";
+      assert::are_equal(42u, convert::to_byte(value), csf_);
+      value = U"0";
+      assert::is_zero(convert::to_byte(value), csf_);
+      value = U"bad value";
+      assert::throws<argument_exception>([&]{convert::to_byte(value);}, csf_);
+    }
+    
+    void test_method_(to_byte_from_wstring) {
+      wstring value = L"42";
+      assert::are_equal(42u, convert::to_byte(value), csf_);
+      value = L"0";
+      assert::is_zero(convert::to_byte(value), csf_);
+      value = L"bad value";
+      assert::throws<argument_exception>([&]{convert::to_byte(value);}, csf_);
+    }
+    
+    void test_method_(to_byte_from_literal_char) {
+      const char* value = "42";
+      assert::are_equal(42u, convert::to_byte(value), csf_);
+      value = "0";
+      assert::is_zero(convert::to_byte(value), csf_);
+      value = "bad value";
+      assert::throws<argument_exception>([&]{convert::to_byte(value);}, csf_);
+    }
+    
+    void test_method_(to_byte_from_literal_char8) {
+      const char8_t* value = u8"42";
+      assert::are_equal(42u, convert::to_byte(value), csf_);
+      value = u8"0";
+      assert::is_zero(convert::to_byte(value), csf_);
+      value = u8"bad value";
+      assert::throws<argument_exception>([&]{convert::to_byte(value);}, csf_);
+    }
+    
+    void test_method_(to_byte_from_literal_char16) {
+      const char16_t* value = u"42";
+      assert::are_equal(42u, convert::to_byte(value), csf_);
+      value = u"0";
+      assert::is_zero(convert::to_byte(value), csf_);
+      value = u"bad value";
+      assert::throws<argument_exception>([&]{convert::to_byte(value);}, csf_);
+    }
+    
+    void test_method_(to_byte_from_literal_char32) {
+      const char32_t* value = U"42";
+      assert::are_equal(42u, convert::to_byte(value), csf_);
+      value = U"0";
+      assert::is_zero(convert::to_byte(value), csf_);
+      value = U"bad value";
+      assert::throws<argument_exception>([&]{convert::to_byte(value);}, csf_);
+    }
+    
+    void test_method_(to_byte_from_literal_wchar) {
+      const wchar_t* value = L"42";
+      assert::are_equal(42u, convert::to_byte(value), csf_);
+      value = L"0";
+      assert::is_zero(convert::to_byte(value), csf_);
+      value = L"bad value";
+      assert::throws<argument_exception>([&]{convert::to_byte(value);}, csf_);
+    }
   };
 }
