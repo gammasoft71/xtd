@@ -1093,5 +1093,273 @@ namespace unit_tests {
       value = L"ab";
       assert::throws<format_exception>([&]{convert::to_char8(value);}, csf_);
     }
+
+    void test_method_(to_char16_from_any) {
+      any value = u'a';
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = u'\0';
+      assert::is_zero(convert::to_char16(value), csf_);
+    }
+    
+    void test_method_(to_char16_from_any_failed) {
+      any value = "not a char";
+      assert::throws<invalid_cast_exception>([&]{convert::to_char16(value);}, csf_);
+    }
+    
+    void test_method_(to_char16_from_bool) {
+      bool value = true;
+      assert::throws<invalid_cast_exception>([&]{convert::to_char16(value);}, csf_);
+    }
+    
+    void test_method_(to_char16_from_byte) {
+      byte_t value = 97;
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_char16(value), csf_);
+    }
+    
+    void test_method_(to_char16_from_char) {
+      char value = 'a';
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_char16(value), csf_);
+    }
+    
+    void test_method_(to_char16_from_char8) {
+      char8_t value = u8'a';
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_char16(value), csf_);
+    }
+    
+    void test_method_(to_char16_from_char16) {
+      char16_t value = u'a';
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_char16(value), csf_);
+    }
+    
+    void test_method_(to_char16_from_char32) {
+      char32_t value = U'a';
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_char16(value), csf_);
+      value = U'\U0001FFFF';
+      assert::throws<overflow_exception>([&]{convert::to_char16(value);}, csf_);
+    }
+    
+    void test_method_(to_char16_from_wchar) {
+      wchar_t value = L'a';
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_char16(value), csf_);
+    }
+    
+    void test_method_(to_char16_from_decimal) {
+      decimal_t value = 97.0l;
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = 97.49l;
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = 97.50l;
+      assert::are_equal(u'b', convert::to_char16(value), csf_);
+      value = 0.0l;
+      assert::is_zero(convert::to_char16(value), csf_);
+      value = -0.1l;
+      assert::throws<overflow_exception>([&]{convert::to_char16(value);}, csf_);
+      value = 65536.0l;
+      assert::throws<overflow_exception>([&]{convert::to_char16(value);}, csf_);
+    }
+    
+    void test_method_(to_char16_from_double) {
+      double value = 97.0;
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = 97.49;
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = 97.50;
+      assert::are_equal(u'b', convert::to_char16(value), csf_);
+      value = 0.0;
+      assert::is_zero(convert::to_char16(value), csf_);
+      value = -0.1;
+      assert::throws<overflow_exception>([&]{convert::to_char16(value);}, csf_);
+      value = 65536.0;
+      assert::throws<overflow_exception>([&]{convert::to_char16(value);}, csf_);
+    }
+    
+    void test_method_(to_char16_from_float) {
+      float value = 97.0f;
+      assert::are_equal(u8'a', convert::to_char16(value), csf_);
+      value = 97.49f;
+      assert::are_equal(u8'a', convert::to_char16(value), csf_);
+      value = 97.50f;
+      assert::are_equal(u8'b', convert::to_char16(value), csf_);
+      value = 0.0f;
+      assert::is_zero(convert::to_char16(value), csf_);
+      value = -0.1f;
+      assert::throws<overflow_exception>([&]{convert::to_char16(value);}, csf_);
+      value = 65536.0f;
+      assert::throws<overflow_exception>([&]{convert::to_char16(value);}, csf_);
+    }
+    
+    void test_method_(to_char16_from_int16) {
+      int16_t value = 97;
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_char16(value), csf_);
+      value = -1;
+      assert::throws<overflow_exception>([&]{convert::to_char16(value);}, csf_);
+    }
+    
+    void test_method_(to_char16_from_int32) {
+      int32_t value = 97;
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_char16(value), csf_);
+      value = -1;
+      assert::throws<overflow_exception>([&]{convert::to_char16(value);}, csf_);
+      value = 65536;
+      assert::throws<overflow_exception>([&]{convert::to_char16(value);}, csf_);
+    }
+    
+    void test_method_(to_char16_from_int64) {
+      int64_t value = 97l;
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = 0l;
+      assert::is_zero(convert::to_char16(value), csf_);
+      value = -1l;
+      assert::throws<overflow_exception>([&]{convert::to_char16(value);}, csf_);
+      value = 65536l;
+      assert::throws<overflow_exception>([&]{convert::to_char16(value);}, csf_);
+    }
+    
+    void test_method_(to_char16_from_llong) {
+      llong_t value = 97ll;
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = 0ll;
+      assert::is_zero(convert::to_char16(value), csf_);
+      value = -1ll;
+      assert::throws<overflow_exception>([&]{convert::to_char16(value);}, csf_);
+      value = 65536ll;
+      assert::throws<overflow_exception>([&]{convert::to_char16(value);}, csf_);
+    }
+    
+    void test_method_(to_char16_from_sbyte) {
+      sbyte_t value = 97;
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_char16(value), csf_);
+      value = -1;
+      assert::throws<overflow_exception>([&]{convert::to_char16(value);}, csf_);
+    }
+    
+    void test_method_(to_char16_from_uint16) {
+      uint16_t value = 97u;
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = 0u;
+      assert::is_zero(convert::to_char16(value), csf_);
+    }
+    
+    void test_method_(to_char16_from_uint32) {
+      uint32_t value = 97u;
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = 0u;
+      assert::is_zero(convert::to_char16(value), csf_);
+      value = 65536u;
+      assert::throws<overflow_exception>([&]{convert::to_char16(value);}, csf_);
+    }
+    
+    void test_method_(to_char16_from_uint64) {
+      uint64_t value = 97lu;
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = 0lu;
+      assert::is_zero(convert::to_char16(value), csf_);
+      value = 65536lu;
+      assert::throws<overflow_exception>([&]{convert::to_char16(value);}, csf_);
+    }
+    
+    void test_method_(to_char16_from_ullong) {
+      ullong_t value = 97llu;
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = 0llu;
+      assert::is_zero(convert::to_char16(value), csf_);
+      value = 65536llu;
+      assert::throws<overflow_exception>([&]{convert::to_char16(value);}, csf_);
+    }
+    
+    void test_method_(to_char16_from_ustring) {
+      ustring value = "a";
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = "ab";
+      assert::throws<format_exception>([&]{convert::to_char16(value);}, csf_);
+    }
+    
+    void test_method_(to_char16_from_string) {
+      string value = "a";
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = "ab";
+      assert::throws<format_exception>([&]{convert::to_char16(value);}, csf_);
+    }
+    
+    void test_method_(to_char16_from_u8string) {
+      u8string value = u8"a";
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = u8"ab";
+      assert::throws<format_exception>([&]{convert::to_char16(value);}, csf_);
+    }
+    
+    void test_method_(to_char16_from_u16string) {
+      u16string value = u"a";
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = u"ab";
+      assert::throws<format_exception>([&]{convert::to_char16(value);}, csf_);
+    }
+    
+    void test_method_(to_char16_from_u32string) {
+      u32string value = U"a";
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = U"ab";
+      assert::throws<format_exception>([&]{convert::to_char16(value);}, csf_);
+    }
+    
+    void test_method_(to_char16_from_wstring) {
+      wstring value = L"a";
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = L"ab";
+      assert::throws<format_exception>([&]{convert::to_char16(value);}, csf_);
+    }
+    
+    void test_method_(to_char16_from_literal_char) {
+      const char* value = "a";
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = "ab";
+      assert::throws<format_exception>([&]{convert::to_char16(value);}, csf_);
+    }
+    
+    void test_method_(to_char16_from_literal_char8) {
+      const char8_t* value = u8"a";
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = u8"ab";
+      assert::throws<format_exception>([&]{convert::to_char16(value);}, csf_);
+    }
+    
+    void test_method_(to_char16_from_literal_char16) {
+      const char16_t* value = u"a";
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = u"ab";
+      assert::throws<format_exception>([&]{convert::to_char16(value);}, csf_);
+    }
+    
+    void test_method_(to_char16_from_literal_char32) {
+      const char32_t* value = U"a";
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = U"ab";
+      assert::throws<format_exception>([&]{convert::to_char16(value);}, csf_);
+    }
+    
+    void test_method_(to_char16_from_literal_wchar) {
+      const wchar_t* value = L"a";
+      assert::are_equal(u'a', convert::to_char16(value), csf_);
+      value = L"ab";
+      assert::throws<format_exception>([&]{convert::to_char16(value);}, csf_);
+    }
   };
 }
