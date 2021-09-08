@@ -10,6 +10,20 @@
 using namespace std;
 using namespace xtd;
 
+byte_t xtd::operator""_b(long double n) {
+  if (n < static_cast<long double>(numeric_limits<byte_t>::min()) || n > static_cast<long double>(numeric_limits<byte_t>::max())) throw argument_out_of_range_exception(csf_);
+  return static_cast<byte_t>(n);
+}
+
+byte_t xtd::operator""_b(unsigned long long n) {
+  if (n < static_cast<unsigned long long>(numeric_limits<byte_t>::min()) || n > static_cast<unsigned long long>(numeric_limits<byte_t>::max())) throw argument_out_of_range_exception(csf_);
+  return static_cast<byte_t>(n);
+}
+
+byte_t xtd::operator""_b(const char* s, size_t n) {
+  return parse<uint8_t>(ustring(s, s + n));
+}
+
 double xtd::operator""_d(long double n) {
   if (n < static_cast<long double>(-numeric_limits<double>::max()) || n > static_cast<long double>(numeric_limits<double>::max())) throw argument_out_of_range_exception(csf_);
   return static_cast<double>(n);

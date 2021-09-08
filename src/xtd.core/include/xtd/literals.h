@@ -15,6 +15,42 @@ namespace xtd {
   /// @ingroup xtd_core literals
   /// @par Examples
   /// @code
+  /// std::cout << 1.6_b << std::endl;
+  /// @endcode
+  byte_t operator""_b(long double n);
+  
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << 54_b << std::endl;
+  /// @endcode
+  byte_t operator""_b(unsigned long long n);
+  
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << "125"_b << std::endl;
+  /// @endcode
+  byte_t operator""_b(const char* s, size_t n);
+    
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
   /// std::cout << 1.6_d << std::endl;
   /// @endcode
   double operator""_d(long double n);
