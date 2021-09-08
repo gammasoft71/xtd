@@ -18,6 +18,7 @@
 * written in efficient, modern C++17 / C++20
 * and highly portable and available on many different platforms (Windows, macOS, Linux, iOS and Android)
 * API close to the .net API with a modern C++ approach and full integration with the std standard.
+* [MIT License](https://github.com/gammasoft71/xtd/blob/master/docs/license.md)
 
 For more information see:
 * [website](https://gammasoft71.wixsite.com/xtdpro)
@@ -25,7 +26,6 @@ For more information see:
 * [sources](https://github.com/gammasoft71/xtd) 
 * [project](https://sourceforge.net/projects/xtdpro/) 
 * [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html)
-* [MIT License](https://github.com/gammasoft71/xtd/blob/master/docs/license.md)
 
 ## Examples
 
