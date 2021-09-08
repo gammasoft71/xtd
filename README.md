@@ -14,13 +14,14 @@
 
 ## Features
 
+* Free and open-source (see [MIT License](https://github.com/gammasoft71/xtd/blob/master/docs/license.md))
 * a collection of native C++ classes libraries, to complete std
 * written in efficient, modern C++17 / C++20
 * and highly portable and available on many different platforms (Windows, macOS, Linux, iOS and Android)
 * API close to the .net API with a modern C++ approach and full integration with the std standard.
-* Free and open-source (see [MIT License](https://github.com/gammasoft71/xtd/blob/master/docs/license.md))
 
 For more information see:
+
 * [website](https://gammasoft71.wixsite.com/xtdpro)
 * [markdown documentations](https://github.com/gammasoft71/xtd/blob/master/docs/home.md)
 * [sources](https://github.com/gammasoft71/xtd) 
