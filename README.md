@@ -25,6 +25,7 @@ For more information see:
 * [sources](https://github.com/gammasoft71/xtd) 
 * [project](https://sourceforge.net/projects/xtdpro/) 
 * [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html)
+* [MIT License](https://github.com/gammasoft71/xtd/blob/master/docs/license.md)
 
 ## Examples
 
