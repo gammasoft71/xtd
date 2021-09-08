@@ -1863,13 +1863,12 @@ namespace xtd {
     /// @brief Convert char16_t to char16.
     /// @param value object to convert.
     /// @return A new char16_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// char16_t value = u'a';
     /// char16_t result = convert::to_char16(value);
     /// @endcode
-    static char16_t to_char16(char16_t value);
+    static char16_t to_char16(char16_t value) noexcept;
     /// @brief Convert char32_t to char16.
     /// @param value object to convert.
     /// @return A new char16_t object converted from value.
@@ -1883,13 +1882,12 @@ namespace xtd {
     /// @brief Convert char32_t to char16.
     /// @param value object to convert.
     /// @return A new char16_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// wchar_t value = L'a';
     /// char16_t result = convert::to_char16(value);
     /// @endcode
-    static char16_t to_char16(wchar_t value);
+    static char16_t to_char16(wchar_t value) noexcept;
     /// @brief Convert decimal_t to char16.
     /// @param value object to convert.
     /// @remarks The result is rounded.
@@ -1975,13 +1973,12 @@ namespace xtd {
     /// @brief Convert uint16_t to char16.
     /// @param value object to convert.
     /// @return A new char16_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
     /// @par Examples
     /// @code
     /// uint16_t value = 42u;
     /// char16_t result = convert::to_char16(value);
     /// @endcode
-    static char16_t to_char16(uint16_t value);
+    static char16_t to_char16(uint16_t value) noexcept;
     /// @brief Convert uint32_t to char16.
     /// @param value object to convert.
     /// @return A new char16_t object converted from value.
@@ -2233,33 +2230,30 @@ namespace xtd {
     /// @brief Convert char16_t to char32.
     /// @param value object to convert.
     /// @return A new char32_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// char16_t value = u'a';
     /// char32_t result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(char16_t value);
+    static char32_t to_char32(char16_t value) noexcept;
     /// @brief Convert char32_t to char32.
     /// @param value object to convert.
     /// @return A new char32_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// char32_t value = U'a';
     /// char32_t result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(char32_t value);
+    static char32_t to_char32(char32_t value) noexcept;
     /// @brief Convert char32_t to char32.
     /// @param value object to convert.
     /// @return A new char32_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// wchar_t value = L'a';
     /// char32_t result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(wchar_t value);
+    static char32_t to_char32(wchar_t value) noexcept;
     /// @brief Convert decimal_t to char32.
     /// @param value object to convert.
     /// @remarks The result is rounded.
@@ -2345,23 +2339,21 @@ namespace xtd {
     /// @brief Convert uint16_t to char32.
     /// @param value object to convert.
     /// @return A new char32_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
     /// @par Examples
     /// @code
     /// uint16_t value = 42u;
     /// char32_t result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(uint16_t value);
+    static char32_t to_char32(uint16_t value) noexcept;
     /// @brief Convert uint32_t to char32.
     /// @param value object to convert.
     /// @return A new char32_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
     /// @par Examples
     /// @code
     /// uint32_t value = 42u;
     /// char32_t result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(uint32_t value);
+    static char32_t to_char32(uint32_t value) noexcept;
     /// @brief Convert uint64_t to char32.
     /// @param value object to convert.
     /// @return A new char32_t object converted from value.
@@ -2552,6 +2544,373 @@ namespace xtd {
     /// @endcode
     template<typename type_t>
     static char32_t to_char32(type_t value) {
+      return static_cast<byte_t>(value);
+    }
+    
+    /// @brief Convert std::any to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// std::any value = 42;
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(std::any value);
+    /// @brief Convert bool to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// bool value = true;
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(bool value);
+    /// @brief Convert byte_t to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// byte_t value = 42;
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(byte_t value) noexcept;
+    /// @brief Convert char to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// char value = 'a';
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(char value) noexcept;
+    /// @brief Convert char8_t to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// char8_t value = u8'a';
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(char8_t value) noexcept;
+    /// @brief Convert char16_t to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// char16_t value = u'a';
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(char16_t value) noexcept;
+    /// @brief Convert char32_t to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @par Examples
+    /// @code
+    /// char32_t value = U'a';
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(char32_t value);
+    /// @brief Convert char32_t to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// wchar_t value = L'a';
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(wchar_t value) noexcept;
+    /// @brief Convert decimal_t to wchar.
+    /// @param value object to convert.
+    /// @remarks The result is rounded.
+    /// @return A new wchar_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// decimal_t value = 42.50l;
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(decimal_t value);
+    /// @brief Convert double to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @remarks The result is rounded.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @par Examples
+    /// @code
+    /// double value = 42.50;
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(double value);
+    /// @brief Convert float to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @remarks The result is rounded.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @par Examples
+    /// @code
+    /// float value = 42.50f;
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(float value);
+    /// @brief Convert int16_t to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @par Examples
+    /// @code
+    /// int16_t value = 42;
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(int16_t value);
+    /// @brief Convert int32_t to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @par Examples
+    /// @code
+    /// int32_t value = 42;
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(int32_t value);
+    /// @brief Convert int64_t to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @par Examples
+    /// @code
+    /// int64_t value = 42l;
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(int64_t value);
+    /// @brief Convert llong_t to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @par Examples
+    /// @code
+    /// llong_t value = 42ll;
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(llong_t value);
+    /// @brief Convert sbyte_t to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is less than 0.
+    /// @par Examples
+    /// @code
+    /// sbyte_t value = 42;
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(sbyte_t value);
+    /// @brief Convert uint16_t to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// uint16_t value = 42u;
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(uint16_t value) noexcept;
+    /// @brief Convert uint32_t to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @par Examples
+    /// @code
+    /// uint32_t value = 42u;
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(uint32_t value);
+    /// @brief Convert uint64_t to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @par Examples
+    /// @code
+    /// uint64t value = 42ul;
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(uint64_t value);
+    /// @brief Convert llong_t to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @par Examples
+    /// @code
+    /// ullong_t value = 42ull;
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(ullong_t value);
+    /// @brief Convert string to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// ustring value = "42";
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(const xtd::ustring& value);
+    /// @brief Convert string to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// string value = "42";
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(const std::string& value);
+    /// @brief Convert string to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// u8string value = u8"42";
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(const std::u8string& value);
+    /// @brief Convert string to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// u16string value = u"42";
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(const std::u16string& value);
+    /// @brief Convert string to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// u32string value = U"42";
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(const std::u32string& value);
+    /// @brief Convert string to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// wstring value = L"42";
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(const std::wstring& value);
+    /// @brief Convert string to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char* value = "42";
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(const char* value);
+    /// @brief Convert string to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char* value = "42";
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(char* value);
+    /// @brief Convert string to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char8_t* value = u8"42";
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(const char8_t* value);
+    /// @brief Convert string to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char8_t* value = u8"42";
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(char8_t* value);
+    /// @brief Convert string to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char16_t* value = u"42";
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(const char16_t* value);
+    /// @brief Convert string to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char16_t* value = u"42";
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(char16_t* value);
+    /// @brief Convert string to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char32_t* value = U"42";
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(const char32_t* value);
+    /// @brief Convert string to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char32_t* value = U"42";
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(char32_t* value);
+    /// @brief Convert string to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const wchar_t* value = L"42";
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(const wchar_t* value);
+    /// @brief Convert string to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// wchar_t* value = L"42";
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    static wchar_t to_wchar(wchar_t* value);
+    /// @brief Convert type_t to wchar.
+    /// @param value object to convert.
+    /// @return A new wchar_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// address_family value = address_family::inter_network;
+    /// wchar_t result = convert::to_wchar(value);
+    /// @endcode
+    template<typename type_t>
+    static wchar_t to_wchar(type_t value) {
       return static_cast<byte_t>(value);
     }
   };
