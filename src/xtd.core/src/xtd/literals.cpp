@@ -23,13 +23,11 @@ byte_t xtd::operator""_b(const char* s, size_t n) {
 }
 
 double xtd::operator""_d(long double n) {
-  if (n < static_cast<long double>(-numeric_limits<double>::max()) || n > static_cast<long double>(numeric_limits<double>::max())) throw argument_out_of_range_exception(csf_);
-  return static_cast<double>(n);
+  return as<double>(n);
 }
 
 double xtd::operator""_d(unsigned long long n) {
-  if (n < static_cast<unsigned long long>(-numeric_limits<double>::max()) || n > static_cast<unsigned long long>(numeric_limits<double>::max())) throw argument_out_of_range_exception(csf_);
-  return static_cast<double>(n);
+  return as<double>(n);
 }
 
 double xtd::operator""_d(const char* s, size_t n) {
@@ -37,13 +35,11 @@ double xtd::operator""_d(const char* s, size_t n) {
 }
 
 float xtd::operator""_f(long double n) {
-  if (n < static_cast<long double>(-numeric_limits<float>::max()) || n > static_cast<long double>(numeric_limits<float>::max())) throw argument_out_of_range_exception(csf_);
-  return static_cast<float>(n);
+  return as<float>(n);
 }
 
 float xtd::operator""_f(unsigned long long n) {
-  if (n < static_cast<unsigned long long>(-numeric_limits<float>::max()) || n > static_cast<unsigned long long>(numeric_limits<float>::max())) throw argument_out_of_range_exception(csf_);
-  return static_cast<float>(n);
+  return as<float>(n);
 }
 
 float xtd::operator""_f(const char* s, size_t n) {
@@ -51,11 +47,11 @@ float xtd::operator""_f(const char* s, size_t n) {
 }
 
 char32_t xtd::operator""_c(char c) {
-  return static_cast<char32_t>(c);
+  return as<char32_t>(c);
 }
 
 char32_t xtd::operator""_c(char16_t c) {
-  return static_cast<char32_t>(c);
+  return as<char32_t>(c);
 }
 
 char32_t xtd::operator""_c(char32_t c) {
@@ -63,11 +59,11 @@ char32_t xtd::operator""_c(char32_t c) {
 }
 
 char32_t xtd::operator""_c(wchar_t c) {
-  return static_cast<char32_t>(c);
+  return as<char32_t>(c);
 }
 
 char32_t xtd::operator""_c(unsigned long long c) {
-  return static_cast<char32_t>(c);
+  return as<char32_t>(c);
 }
 
 ustring xtd::operator""_s(const char* s, size_t n) {
@@ -159,13 +155,11 @@ ustring xtd::operator""_sX8(unsigned long long s) {
 }
 
 int8_t xtd::operator""_s8(long double n) {
-  if (n < static_cast<long double>(numeric_limits<int8_t>::min()) || n > static_cast<long double>(numeric_limits<int8_t>::max())) throw argument_out_of_range_exception(csf_);
-  return static_cast<int8_t>(n);
+  return as<int8_t>(n);
 }
 
 int8_t xtd::operator""_s8(unsigned long long n) {
-  if (static_cast<long long>(n) < numeric_limits<int8_t>::min() || static_cast<long long>(n) > numeric_limits<int8_t>::max()) throw argument_out_of_range_exception(csf_);
-  return static_cast<int8_t>(n);
+  return as<int8_t>(n);
 }
 
 int8_t xtd::operator""_s8(const char* s, size_t n) {
@@ -173,13 +167,11 @@ int8_t xtd::operator""_s8(const char* s, size_t n) {
 }
 
 int16_t xtd::operator""_s16(long double n) {
-  if (n < static_cast<long double>(numeric_limits<int16_t>::min()) || n > static_cast<long double>(numeric_limits<int16_t>::max())) throw argument_out_of_range_exception(csf_);
-  return static_cast<int16_t>(n);
+  return as<int16_t>(n);
 }
 
 int16_t xtd::operator""_s16(unsigned long long n) {
-  if (static_cast<long long>(n) < numeric_limits<int16_t>::min() || static_cast<long long>(n) > numeric_limits<int16_t>::max()) throw argument_out_of_range_exception(csf_);
-  return static_cast<int16_t>(n);
+  return as<int16_t>(n);
 }
 
 int16_t xtd::operator""_s16(const char* s, size_t n) {
@@ -187,13 +179,11 @@ int16_t xtd::operator""_s16(const char* s, size_t n) {
 }
 
 int32_t xtd::operator""_s32(long double n) {
-  if (n < static_cast<long double>(numeric_limits<int32_t>::min()) || n > static_cast<long double>(numeric_limits<int32_t>::max())) throw argument_out_of_range_exception(csf_);
-  return static_cast<int32_t>(n);
+  return as<int32_t>(n);
 }
 
 int32_t xtd::operator""_s32(unsigned long long n) {
-  if (static_cast<long long>(n) < numeric_limits<int32_t>::min() || static_cast<long long>(n) > numeric_limits<int32_t>::max()) throw argument_out_of_range_exception(csf_);
-  return static_cast<int32_t>(n);
+  return as<int32_t>(n);
 }
 
 int32_t xtd::operator""_s32(const char* s, size_t n) {
@@ -201,13 +191,11 @@ int32_t xtd::operator""_s32(const char* s, size_t n) {
 }
 
 int64_t xtd::operator""_s64(long double n) {
-  if (n < static_cast<long double>(numeric_limits<int64_t>::min()) || n > static_cast<long double>(numeric_limits<int64_t>::max())) throw argument_out_of_range_exception(csf_);
-  return static_cast<int64_t>(n);
+  return as<int64_t>(n);
 }
 
 int64_t xtd::operator""_s64(unsigned long long n) {
-  if (static_cast<long long>(n) < numeric_limits<int64_t>::min() || static_cast<long long>(n) > numeric_limits<int64_t>::max()) throw argument_out_of_range_exception(csf_);
-  return static_cast<int64_t>(n);
+  return as<int64_t>(n);
 }
 
 int64_t xtd::operator""_s64(const char* s, size_t n) {
@@ -227,13 +215,11 @@ uint8_t xtd::operator""_u8(const char* s, size_t n) {
 }
 
 uint16_t xtd::operator""_u16(long double n) {
-  if (n < static_cast<long double>(numeric_limits<uint16_t>::min()) || n > static_cast<long double>(numeric_limits<uint16_t>::max())) throw argument_out_of_range_exception(csf_);
-  return static_cast<uint16_t>(n);
+  return as<uint16_t>(n);
 }
 
 uint16_t xtd::operator""_u16(unsigned long long n) {
-  if (n < static_cast<unsigned long long>(numeric_limits<uint16_t>::min()) || n > static_cast<unsigned long long>(numeric_limits<uint16_t>::max())) throw argument_out_of_range_exception(csf_);
-  return static_cast<uint16_t>(n);
+  return as<uint16_t>(n);
 }
 
 uint16_t xtd::operator""_u16(const char* s, size_t n) {
@@ -241,13 +227,11 @@ uint16_t xtd::operator""_u16(const char* s, size_t n) {
 }
 
 uint32_t xtd::operator""_u32(long double n) {
-  if (n < static_cast<long double>(numeric_limits<uint32_t>::min()) || n > static_cast<long double>(numeric_limits<uint32_t>::max())) throw argument_out_of_range_exception(csf_);
-  return static_cast<uint32_t>(n);
+  return as<uint32_t>(n);
 }
 
 uint32_t xtd::operator""_u32(unsigned long long n) {
-  if (n < static_cast<unsigned long long>(numeric_limits<uint32_t>::min()) || n > static_cast<unsigned long long>(numeric_limits<uint32_t>::max())) throw argument_out_of_range_exception(csf_);
-  return static_cast<uint32_t>(n);
+  return as<uint32_t>(n);
 }
 
 uint32_t xtd::operator""_u32(const char* s, size_t n) {
@@ -255,13 +239,11 @@ uint32_t xtd::operator""_u32(const char* s, size_t n) {
 }
 
 uint64_t xtd::operator""_u64(long double n) {
-  if (n < static_cast<long double>(numeric_limits<uint64_t>::min()) || n > static_cast<long double>(numeric_limits<uint64_t>::max())) throw argument_out_of_range_exception(csf_);
-  return static_cast<uint64_t>(n);
+  return as<uint64_t>(n);
 }
 
 uint64_t xtd::operator""_u64(unsigned long long n) {
-  if (n < static_cast<unsigned long long>(numeric_limits<uint64_t>::min()) || n > static_cast<unsigned long long>(numeric_limits<uint64_t>::max())) throw argument_out_of_range_exception(csf_);
-  return static_cast<uint64_t>(n);
+  return as<uint64_t>(n);
 }
 
 uint64_t xtd::operator""_u64(const char* s, size_t n) {
@@ -277,13 +259,13 @@ ustring xtd::operator""_t(const char8_t* s, size_t n) {
 }
 
 ustring xtd::operator""_t(const char16_t* s, size_t n) {
-  return translator::translate(ustring::format("{}", s));
+  return translator::translate(ustring(s, s + n));
 }
 
 ustring xtd::operator""_t(const char32_t* s, size_t n) {
-  return translator::translate(ustring::format("{}", s));
+  return translator::translate(ustring(s, s + n));
 }
 
 ustring xtd::operator""_t(const wchar_t* s, size_t n) {
-  return translator::translate(ustring::format("{}", s));
+  return translator::translate(ustring(s, s + n));
 }
