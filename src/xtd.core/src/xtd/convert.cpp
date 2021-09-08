@@ -539,22 +539,22 @@ char convert::to_char(sbyte_t value) {
 }
 
 char convert::to_char(uint16_t value) {
-  if (value < 0u || value > 255u) throw overflow_exception(csf_);
+  if (value > 255u) throw overflow_exception(csf_);
   return static_cast<byte_t>(value);
 }
 
 char convert::to_char(uint32_t value) {
-  if (value < 0u || value > 255u) throw overflow_exception(csf_);
+  if (value > 255u) throw overflow_exception(csf_);
   return static_cast<byte_t>(value);
 }
 
 char convert::to_char(uint64_t value) {
-  if (value < 0lu || value > 255lu) throw overflow_exception(csf_);
+  if (value > 255lu) throw overflow_exception(csf_);
   return static_cast<byte_t>(value);
 }
 
 char convert::to_char(ullong_t value) {
-  if (value < 0llu || value > 255llu) throw overflow_exception(csf_);
+  if (value > 255llu) throw overflow_exception(csf_);
   return static_cast<byte_t>(value);
 }
 
