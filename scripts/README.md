@@ -10,7 +10,7 @@ Contains cmake, CI, install and tests scrips.
 
 ## Installation
 
-* [install](install) contains install scrips for OS. Read [installation](../docs/download.md) for more information.
+* [install](install) contains install scrips for OS. Read [installation](../docs/downloads.md) for more information.
 
 ## Tests
 
