@@ -1,3 +1,4 @@
+#include <filesystem>
 #include "../../../include/xtd/argument_exception.h"
 #include "../../../include/xtd/io/file_not_found_exception.h"
 #include "../../../include/xtd/io/path.h"
