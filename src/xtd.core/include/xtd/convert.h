@@ -1814,5 +1814,375 @@ namespace xtd {
     static char8_t to_char8(type_t value) {
       return static_cast<byte_t>(value);
     }
+    
+    /// @brief Convert std::any to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// std::any value = 42;
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(std::any value);
+    /// @brief Convert bool to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// bool value = true;
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(bool value);
+    /// @brief Convert byte_t to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// byte_t value = 42;
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(byte_t value) noexcept;
+    /// @brief Convert char to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// char value = 'a';
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(char value) noexcept;
+    /// @brief Convert char8_t to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// char8_t value = u8'a';
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(char8_t value) noexcept;
+    /// @brief Convert char16_t to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @par Examples
+    /// @code
+    /// char16_t value = u'a';
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(char16_t value);
+    /// @brief Convert char32_t to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @par Examples
+    /// @code
+    /// char32_t value = U'a';
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(char32_t value);
+    /// @brief Convert char32_t to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @par Examples
+    /// @code
+    /// wchar_t value = L'a';
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(wchar_t value);
+    /// @brief Convert decimal_t to char16.
+    /// @param value object to convert.
+    /// @remarks The result is rounded.
+    /// @return A new char16_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// decimal_t value = 42.50l;
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(decimal_t value);
+    /// @brief Convert double to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @remarks The result is rounded.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @par Examples
+    /// @code
+    /// double value = 42.50;
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(double value);
+    /// @brief Convert float to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @remarks The result is rounded.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @par Examples
+    /// @code
+    /// float value = 42.50f;
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(float value);
+    /// @brief Convert int16_t to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @par Examples
+    /// @code
+    /// int16_t value = 42;
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(int16_t value);
+    /// @brief Convert int32_t to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @par Examples
+    /// @code
+    /// int32_t value = 42;
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(int32_t value);
+    /// @brief Convert int64_t to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @par Examples
+    /// @code
+    /// int64_t value = 42l;
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(int64_t value);
+    /// @brief Convert llong_t to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @par Examples
+    /// @code
+    /// llong_t value = 42ll;
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(llong_t value);
+    /// @brief Convert sbyte_t to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is less than 0.
+    /// @par Examples
+    /// @code
+    /// sbyte_t value = 42;
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(sbyte_t value);
+    /// @brief Convert uint16_t to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @par Examples
+    /// @code
+    /// uint16_t value = 42u;
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(uint16_t value);
+    /// @brief Convert uint32_t to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @par Examples
+    /// @code
+    /// uint32_t value = 42u;
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(uint32_t value);
+    /// @brief Convert uint64_t to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @par Examples
+    /// @code
+    /// uint64t value = 42ul;
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(uint64_t value);
+    /// @brief Convert llong_t to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @par Examples
+    /// @code
+    /// ullong_t value = 42ull;
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(ullong_t value);
+    /// @brief Convert string to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// ustring value = "42";
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(const xtd::ustring& value);
+    /// @brief Convert string to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// string value = "42";
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(const std::string& value);
+    /// @brief Convert string to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// u8string value = u8"42";
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(const std::u8string& value);
+    /// @brief Convert string to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// u16string value = u"42";
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(const std::u16string& value);
+    /// @brief Convert string to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// u32string value = U"42";
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(const std::u32string& value);
+    /// @brief Convert string to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// wstring value = L"42";
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(const std::wstring& value);
+    /// @brief Convert string to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char* value = "42";
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(const char* value);
+    /// @brief Convert string to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char* value = "42";
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(char* value);
+    /// @brief Convert string to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char8_t* value = u8"42";
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(const char8_t* value);
+    /// @brief Convert string to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char8_t* value = u8"42";
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(char8_t* value);
+    /// @brief Convert string to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char16_t* value = u"42";
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(const char16_t* value);
+    /// @brief Convert string to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char16_t* value = u"42";
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(char16_t* value);
+    /// @brief Convert string to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char32_t* value = U"42";
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(const char32_t* value);
+    /// @brief Convert string to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char32_t* value = U"42";
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(char32_t* value);
+    /// @brief Convert string to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const wchar_t* value = L"42";
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(const wchar_t* value);
+    /// @brief Convert string to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// wchar_t* value = L"42";
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    static char16_t to_char16(wchar_t* value);
+    /// @brief Convert type_t to char16.
+    /// @param value object to convert.
+    /// @return A new char16_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// address_family value = address_family::inter_network;
+    /// char16_t result = convert::to_char16(value);
+    /// @endcode
+    template<typename type_t>
+    static char16_t to_char16(type_t value) {
+      return static_cast<byte_t>(value);
+    }
   };
 }

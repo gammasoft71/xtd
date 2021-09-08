@@ -529,7 +529,7 @@ char convert::to_char(int64_t value) {
 }
 
 char convert::to_char(llong_t value) {
-  if (value < 0l || value > 255l) throw overflow_exception(csf_);
+  if (value < 0ll || value > 255ll) throw overflow_exception(csf_);
   return static_cast<char>(value);
 }
 
@@ -651,11 +651,11 @@ char8_t convert::to_char8(byte_t value) noexcept {
 }
 
 char8_t convert::to_char8(char value) noexcept {
-  return value;
+  return static_cast<char8_t>(value);
 }
 
 char8_t convert::to_char8(char8_t value) noexcept {
-  return static_cast<char8_t>(value);
+  return value;
 }
 
 char8_t convert::to_char8(char16_t value) {
@@ -704,7 +704,7 @@ char8_t convert::to_char8(int64_t value) {
 }
 
 char8_t convert::to_char8(llong_t value) {
-  if (value < 0l || value > 255l) throw overflow_exception(csf_);
+  if (value < 0ll || value > 255ll) throw overflow_exception(csf_);
   return static_cast<char8_t>(value);
 }
 
@@ -809,6 +809,188 @@ char8_t convert::to_char8(const wchar_t* value) {
 }
 
 char8_t convert::to_char8(wchar_t* value) {
+  if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char16_t convert::to_char16(any value) {
+  try {
+    return any_cast<char16_t>(value);
+  } catch(...) {
+    try {
+      return *any_cast<char16_t*>(value);
+    } catch(...) {
+      throw invalid_cast_exception(csf_);
+    }
+  }
+}
+
+char16_t convert::to_char16(bool value) {
+  throw invalid_cast_exception(csf_);
+}
+
+char16_t convert::to_char16(byte_t value) noexcept {
+  return static_cast<char16_t>(value);
+}
+
+char16_t convert::to_char16(char value) noexcept {
+  return static_cast<char16_t>(value);
+}
+
+char16_t convert::to_char16(char8_t value) noexcept {
+  return static_cast<char16_t>(value);
+}
+
+char16_t convert::to_char16(char16_t value) {
+  return value;
+}
+
+char16_t convert::to_char16(char32_t value) {
+  if (value > static_cast<char32_t>(65535)) throw overflow_exception(csf_);
+  return static_cast<char16_t>(value);
+}
+
+char16_t convert::to_char16(wchar_t value) {
+  if (value > static_cast<wchar_t>(65535)) throw overflow_exception(csf_);
+  return static_cast<char8_t>(value);
+}
+
+char16_t convert::to_char16(decimal_t value) {
+  if (value < 0.0l || value > 65535.0l) throw overflow_exception(csf_);
+  return static_cast<char16_t>(round(value));
+}
+
+char16_t convert::to_char16(double value) {
+  if (value < 0.0 || value > 65535.0) throw overflow_exception(csf_);
+  return static_cast<char16_t>(round(value));
+}
+
+char16_t convert::to_char16(float value) {
+  if (value < 0.0f || value > 65535.0f) throw overflow_exception(csf_);
+  return static_cast<char16_t>(round(value));
+}
+
+char16_t convert::to_char16(int16_t value) {
+  if (value < 0) throw overflow_exception(csf_);
+  return value;
+}
+
+char16_t convert::to_char16(int32_t value) {
+  if (value < 0 || value > 65535) throw overflow_exception(csf_);
+  return static_cast<char16_t>(value);
+}
+
+char16_t convert::to_char16(int64_t value) {
+  if (value < 0l || value > 65535l) throw overflow_exception(csf_);
+  return static_cast<char16_t>(value);
+}
+
+char16_t convert::to_char16(llong_t value) {
+  if (value < 0ll || value > 65535ll) throw overflow_exception(csf_);
+  return static_cast<char16_t>(value);
+}
+
+char16_t convert::to_char16(sbyte_t value) {
+  if (value < 0) throw overflow_exception(csf_);
+  return static_cast<char16_t>(value);
+}
+
+char16_t convert::to_char16(uint16_t value) {
+  if (value > 65535u) throw overflow_exception(csf_);
+  return static_cast<char16_t>(value);
+}
+
+char16_t convert::to_char16(uint32_t value) {
+  if (value > 65535u) throw overflow_exception(csf_);
+  return static_cast<char16_t>(value);
+}
+
+char16_t convert::to_char16(uint64_t value) {
+  if (value > 65535lu) throw overflow_exception(csf_);
+  return static_cast<char16_t>(value);
+}
+
+char16_t convert::to_char16(ullong_t value) {
+  if (value > 65535llu) throw overflow_exception(csf_);
+  return static_cast<char16_t>(value);
+}
+
+char16_t convert::to_char16(const ustring& value) {
+  if (value.size() != 1) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char16_t convert::to_char16(const string& value) {
+  if (value.size() != 1) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char16_t convert::to_char16(const u8string& value) {
+  if (value.size() != 1) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char16_t convert::to_char16(const u16string& value) {
+  if (value.size() != 1) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char16_t convert::to_char16(const u32string& value) {
+  if (value.size() != 1) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char16_t convert::to_char16(const wstring& value) {
+  if (value.size() != 1) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char16_t convert::to_char16(const char* value) {
+  if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char16_t convert::to_char16(char* value) {
+  if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char16_t convert::to_char16(const char8_t* value) {
+  if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char16_t convert::to_char16(char8_t* value) {
+  if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char16_t convert::to_char16(const char16_t* value) {
+  if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char16_t convert::to_char16(char16_t* value) {
+  if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char16_t convert::to_char16(const char32_t* value) {
+  if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char16_t convert::to_char16(char32_t* value) {
+  if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char16_t convert::to_char16(const wchar_t* value) {
+  if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
+  return to_char(value[0]);
+}
+
+char16_t convert::to_char16(wchar_t* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
