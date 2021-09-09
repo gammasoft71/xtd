@@ -250,17 +250,17 @@ const char* xtd::operator""_t(const char* s, size_t n) {
 }
 
 ustring xtd::operator""_t(const char8_t* s, size_t n) {
-  return translator::translate(ustring(s, s + n));
+  return translator::translate(u8string(s, s + n));
 }
 
 ustring xtd::operator""_t(const char16_t* s, size_t n) {
-  return translator::translate(ustring(s, s + n));
+  return translator::translate(u16string(s, s + n));
 }
 
 ustring xtd::operator""_t(const char32_t* s, size_t n) {
-  return translator::translate(ustring(s, s + n));
+  return translator::translate(u32string(s, s + n));
 }
 
 ustring xtd::operator""_t(const wchar_t* s, size_t n) {
-  return translator::translate(ustring(s, s + n));
+  return translator::translate(wstring(s, s + n));
 }
