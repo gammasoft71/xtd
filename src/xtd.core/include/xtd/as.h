@@ -6041,6 +6041,676 @@ namespace xtd {
     return xtd::convert::to_decimal(value);
   }
 
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// std::any value = true;
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(std::any value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// bool value = true;
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(bool value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// byte_t value = 42;
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(byte_t value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char value = 'a';
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(char value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char8_t value = u8'a';
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(char8_t value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char16_t value = u'a';
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(char16_t value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char32_t value = u'a';
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(char32_t value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wchar_t value = u'a';
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(wchar_t value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// decimal_t value = 42.50l;
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(decimal_t value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// double value = 42.50;
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(double value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// float value = 42.50f;
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(float value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// int16_t value = 42;
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(int16_t value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// int32_t value = 42;
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(int32_t value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// int64_t value = 42l;
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(int64_t value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// llong_t value = 42ll;
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(llong_t value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// sbyte_t value = 42ll;
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(sbyte_t value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// uint16_t value = 42u;
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(uint16_t value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// uint32_t value = 42u;
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(uint32_t value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// uint64_t value = 42ul;
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(uint64_t value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// ullong_t value = 42ull;
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(ullong_t value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// ustring value = "42";
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(const xtd::ustring& value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// string value = "42";
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(const std::string& value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u8string value = u8"42";
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(const std::u8string& value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u16string value = u"42";
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(const std::u16string& value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u32string value = U"42";
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(const std::u32string& value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring value = L"42";
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(const std::wstring& value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// const char* value = "42";
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(const char* value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char* value = "42";
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(char* value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// const char8_t* value = u8"42";
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(const char8_t* value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char8_t* value = u8"42";
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(char8_t* value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// const char16_t* value = u"42";
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(const char16_t* value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char16_t* value = u"42";
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(char16_t* value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// const char32_t* value = U"42";
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(const char32_t* value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char32_t* value = U"42";
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(char32_t* value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// const wchar_t* value = L"42";
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(const wchar_t* value) {
+    return xtd::convert::to_double(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wchar_t* value = L"42";
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(wchar_t* value) {
+    return xtd::convert::to_double(value);
+  }
+
   // ___________________________________________________________________________________________
   //                                                         xtd::convert_pointer specialization
   
