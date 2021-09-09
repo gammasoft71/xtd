@@ -2110,3 +2110,153 @@ int32_t convert::to_int32(const wchar_t* value) {
 int32_t convert::to_int32(wchar_t* value) {
   return ustring::parse<int32_t>(value);
 }
+
+int64_t convert::to_int64(any value) {
+  try {
+    return any_cast<int64_t>(value);
+  } catch(...) {
+    throw invalid_cast_exception(csf_);
+  }
+}
+
+int64_t convert::to_int64(bool value) noexcept {
+  return static_cast<int64_t>(value);
+}
+
+int64_t convert::to_int64(byte_t value) noexcept {
+  return static_cast<int64_t>(value);
+}
+
+int64_t convert::to_int64(char value) noexcept {
+  return static_cast<int64_t>(value);
+}
+
+int64_t convert::to_int64(char8_t value) noexcept {
+  return static_cast<int64_t>(value);
+}
+
+int64_t convert::to_int64(char16_t value) noexcept {
+  return static_cast<int64_t>(value);
+}
+
+int64_t convert::to_int64(char32_t value) noexcept {
+  return static_cast<int64_t>(value);
+}
+
+int64_t convert::to_int64(wchar_t value) noexcept {
+  return static_cast<int64_t>(value);
+}
+
+int64_t convert::to_int64(decimal_t value) noexcept {
+  return static_cast<int64_t>(round(value));
+}
+
+int64_t convert::to_int64(double value) noexcept {
+  return static_cast<int64_t>(round(value));
+}
+
+int64_t convert::to_int64(float value) noexcept {
+  return static_cast<int64_t>(round(value));
+}
+
+int64_t convert::to_int64(int16_t value) noexcept {
+  return static_cast<int64_t>(value);
+}
+
+int64_t convert::to_int64(int32_t value) noexcept {
+  return static_cast<int64_t>(value);
+}
+
+int64_t convert::to_int64(int64_t value) noexcept {
+  return static_cast<int64_t>(value);
+}
+
+int64_t convert::to_int64(llong_t value) noexcept {
+  return static_cast<int64_t>(value);
+}
+
+int64_t convert::to_int64(sbyte_t value) noexcept {
+  return static_cast<int64_t>(value);
+}
+
+int64_t convert::to_int64(uint16_t value) noexcept {
+  return static_cast<int64_t>(value);
+}
+
+int64_t convert::to_int64(uint32_t value) noexcept {
+  return static_cast<int64_t>(value);
+}
+
+int64_t convert::to_int64(uint64_t value) {
+  if (value > static_cast<uint64_t>(numeric_limits<int64_t>::max())) throw overflow_exception(csf_);
+  return static_cast<int64_t>(value);
+}
+
+int64_t convert::to_int64(ullong_t value) {
+  if (value > static_cast<ullong_t>(numeric_limits<int64_t>::max())) throw overflow_exception(csf_);
+  return static_cast<int64_t>(value);
+}
+
+int64_t convert::to_int64(const ustring& value) {
+  return ustring::parse<int64_t>(value);
+}
+
+int64_t convert::to_int64(const string& value) {
+  return ustring::parse<int64_t>(value);
+}
+
+int64_t convert::to_int64(const u8string& value) {
+  return ustring::parse<int64_t>(value);
+}
+
+int64_t convert::to_int64(const u16string& value) {
+  return ustring::parse<int64_t>(value);
+}
+
+int64_t convert::to_int64(const u32string& value) {
+  return ustring::parse<int64_t>(value);
+}
+
+int64_t convert::to_int64(const wstring& value) {
+  return ustring::parse<int64_t>(value);
+}
+
+int64_t convert::to_int64(const char* value) {
+  return ustring::parse<int64_t>(value);
+}
+
+int64_t convert::to_int64(char* value) {
+  return ustring::parse<int64_t>(value);
+}
+
+int64_t convert::to_int64(const char8_t* value) {
+  return ustring::parse<int64_t>(value);
+}
+
+int64_t convert::to_int64(char8_t* value) {
+  return ustring::parse<int64_t>(value);
+}
+
+int64_t convert::to_int64(const char16_t* value) {
+  return ustring::parse<int64_t>(value);
+}
+
+int64_t convert::to_int64(char16_t* value) {
+  return ustring::parse<int64_t>(value);
+}
+
+int64_t convert::to_int64(const char32_t* value) {
+  return ustring::parse<int64_t>(value);
+}
+
+int64_t convert::to_int64(char32_t* value) {
+  return ustring::parse<int64_t>(value);
+}
+
+int64_t convert::to_int64(const wchar_t* value) {
+  return ustring::parse<int64_t>(value);
+}
+
+int64_t convert::to_int64(wchar_t* value) {
+  return ustring::parse<int64_t>(value);
+}
