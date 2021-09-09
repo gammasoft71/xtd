@@ -2260,3 +2260,153 @@ int64_t convert::to_int64(const wchar_t* value) {
 int64_t convert::to_int64(wchar_t* value) {
   return ustring::parse<int64_t>(value);
 }
+
+llong_t convert::to_llong(any value) {
+  try {
+    return any_cast<llong_t>(value);
+  } catch(...) {
+    throw invalid_cast_exception(csf_);
+  }
+}
+
+llong_t convert::to_llong(bool value) noexcept {
+  return static_cast<llong_t>(value);
+}
+
+llong_t convert::to_llong(byte_t value) noexcept {
+  return static_cast<llong_t>(value);
+}
+
+llong_t convert::to_llong(char value) noexcept {
+  return static_cast<llong_t>(value);
+}
+
+llong_t convert::to_llong(char8_t value) noexcept {
+  return static_cast<llong_t>(value);
+}
+
+llong_t convert::to_llong(char16_t value) noexcept {
+  return static_cast<llong_t>(value);
+}
+
+llong_t convert::to_llong(char32_t value) noexcept {
+  return static_cast<llong_t>(value);
+}
+
+llong_t convert::to_llong(wchar_t value) noexcept {
+  return static_cast<llong_t>(value);
+}
+
+llong_t convert::to_llong(decimal_t value) noexcept {
+  return static_cast<llong_t>(round(value));
+}
+
+llong_t convert::to_llong(double value) noexcept {
+  return static_cast<llong_t>(round(value));
+}
+
+llong_t convert::to_llong(float value) noexcept {
+  return static_cast<llong_t>(round(value));
+}
+
+llong_t convert::to_llong(int16_t value) noexcept {
+  return static_cast<llong_t>(value);
+}
+
+llong_t convert::to_llong(int32_t value) noexcept {
+  return static_cast<llong_t>(value);
+}
+
+llong_t convert::to_llong(int64_t value) noexcept {
+  return static_cast<llong_t>(value);
+}
+
+llong_t convert::to_llong(llong_t value) noexcept {
+  return static_cast<llong_t>(value);
+}
+
+llong_t convert::to_llong(sbyte_t value) noexcept {
+  return static_cast<llong_t>(value);
+}
+
+llong_t convert::to_llong(uint16_t value) noexcept {
+  return static_cast<llong_t>(value);
+}
+
+llong_t convert::to_llong(uint32_t value) noexcept {
+  return static_cast<llong_t>(value);
+}
+
+llong_t convert::to_llong(uint64_t value) {
+  if (value > static_cast<uint64_t>(numeric_limits<llong_t>::max())) throw overflow_exception(csf_);
+  return static_cast<int64_t>(value);
+}
+
+llong_t convert::to_llong(ullong_t value) {
+  if (value > static_cast<ullong_t>(numeric_limits<llong_t>::max())) throw overflow_exception(csf_);
+  return static_cast<llong_t>(value);
+}
+
+llong_t convert::to_llong(const ustring& value) {
+  return ustring::parse<llong_t>(value);
+}
+
+llong_t convert::to_llong(const string& value) {
+  return ustring::parse<llong_t>(value);
+}
+
+llong_t convert::to_llong(const u8string& value) {
+  return ustring::parse<llong_t>(value);
+}
+
+llong_t convert::to_llong(const u16string& value) {
+  return ustring::parse<llong_t>(value);
+}
+
+llong_t convert::to_llong(const u32string& value) {
+  return ustring::parse<llong_t>(value);
+}
+
+llong_t convert::to_llong(const wstring& value) {
+  return ustring::parse<llong_t>(value);
+}
+
+llong_t convert::to_llong(const char* value) {
+  return ustring::parse<llong_t>(value);
+}
+
+llong_t convert::to_llong(char* value) {
+  return ustring::parse<llong_t>(value);
+}
+
+llong_t convert::to_llong(const char8_t* value) {
+  return ustring::parse<llong_t>(value);
+}
+
+llong_t convert::to_llong(char8_t* value) {
+  return ustring::parse<int64_t>(value);
+}
+
+llong_t convert::to_llong(const char16_t* value) {
+  return ustring::parse<llong_t>(value);
+}
+
+llong_t convert::to_llong(char16_t* value) {
+  return ustring::parse<llong_t>(value);
+}
+
+llong_t convert::to_llong(const char32_t* value) {
+  return ustring::parse<llong_t>(value);
+}
+
+llong_t convert::to_llong(char32_t* value) {
+  return ustring::parse<llong_t>(value);
+}
+
+llong_t convert::to_llong(const wchar_t* value) {
+  return ustring::parse<llong_t>(value);
+}
+
+llong_t convert::to_llong(wchar_t* value) {
+  return ustring::parse<llong_t>(value);
+}

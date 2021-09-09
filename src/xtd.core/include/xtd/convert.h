@@ -5075,5 +5075,363 @@ namespace xtd {
     static int64_t to_int64(type_t value) noexcept {
       return static_cast<int64_t>(value);
     }
+    
+    /// @brief Convert std::any to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// std::any value = 42;
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(std::any value);
+    /// @brief Convert bool to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// bool value = true;
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(bool value) noexcept;
+    /// @brief Convert byte_t to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// byte_t value = 42;
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(byte_t value) noexcept;
+    /// @brief Convert char to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// char value = 'a';
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(char value) noexcept;
+    /// @brief Convert char8_t to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// char8_t value = u8'a';
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(char8_t value) noexcept;
+    /// @brief Convert char16_t to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// char16_t value = u'a';
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(char16_t value) noexcept;
+    /// @brief Convert char32_t to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// char32_t value = U'a';
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(char32_t value) noexcept;
+    /// @brief Convert char32_t to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// wchar_t value = L'a';
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(wchar_t value) noexcept;
+    /// @brief Convert decimal_t to int32.
+    /// @param value object to convert.
+    /// @remarks The result is rounded.
+    /// @return A new llong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// decimal_t value = 42.50l;
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(decimal_t value) noexcept;
+    /// @brief Convert double to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @remarks The result is rounded.
+    /// @par Examples
+    /// @code
+    /// double value = 42.50;
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(double value) noexcept;
+    /// @brief Convert float to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @remarks The result is rounded.
+    /// @par Examples
+    /// @code
+    /// float value = 42.50f;
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(float value) noexcept;
+    /// @brief Convert int16_t to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// int16_t value = 42;
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(int16_t value) noexcept;
+    /// @brief Convert int32_t to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// int32_t value = 42;
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(int32_t value) noexcept;
+    /// @brief Convert int64_t to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// int64_t value = 42l;
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(int64_t value) noexcept;
+    /// @brief Convert llong_t to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// llong_t value = 42ll;
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(llong_t value) noexcept;
+    /// @brief Convert sbyte_t to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// sbyte_t value = 42;
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(sbyte_t value) noexcept;
+    /// @brief Convert uint16_t to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// uint16_t value = 42u;
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(uint16_t value) noexcept;
+    /// @brief Convert uint32_t to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// uint32_t value = 42u;
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(uint32_t value) noexcept;
+    /// @brief Convert uint64_t to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @par Examples
+    /// @code
+    /// uint64t value = 42ul;
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(uint64_t value);
+    /// @brief Convert llong_t to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @par Examples
+    /// @code
+    /// ullong_t value = 42ull;
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(ullong_t value);
+    /// @brief Convert string to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// ustring value = "42";
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(const xtd::ustring& value);
+    /// @brief Convert string to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// string value = "42";
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(const std::string& value);
+    /// @brief Convert string to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// u8string value = u8"42";
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(const std::u8string& value);
+    /// @brief Convert string to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// u16string value = u"42";
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(const std::u16string& value);
+    /// @brief Convert string to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// u32string value = U"42";
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(const std::u32string& value);
+    /// @brief Convert string to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// wstring value = L"42";
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(const std::wstring& value);
+    /// @brief Convert string to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char* value = "42";
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(const char* value);
+    /// @brief Convert string to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char* value = "42";
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(char* value);
+    /// @brief Convert string to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char8_t* value = u8"42";
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(const char8_t* value);
+    /// @brief Convert string to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char8_t* value = u8"42";
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(char8_t* value);
+    /// @brief Convert string to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char16_t* value = u"42";
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(const char16_t* value);
+    /// @brief Convert string to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char16_t* value = u"42";
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(char16_t* value);
+    /// @brief Convert string to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char32_t* value = U"42";
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(const char32_t* value);
+    /// @brief Convert string to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char32_t* value = U"42";
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(char32_t* value);
+    /// @brief Convert string to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const wchar_t* value = L"42";
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(const wchar_t* value);
+    /// @brief Convert string to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// wchar_t* value = L"42";
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    static llong_t to_llong(wchar_t* value);
+    /// @brief Convert type_t to int32.
+    /// @param value object to convert.
+    /// @return A new llong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// address_family value = address_family::inter_network;
+    /// llong_t result = convert::to_llong(value);
+    /// @endcode
+    template<typename type_t>
+    static llong_t to_llong(type_t value) noexcept {
+      return static_cast<llong_t>(value);
+    }
   };
 }
