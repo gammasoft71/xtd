@@ -1,11 +1,6 @@
 #include "../../include/xtd/as.h"
-#include "../../include/xtd/argument_out_of_range_exception.h"
-#include "../../include/xtd/literals.h"
 #include "../../include/xtd/parse.h"
 #include "../../include/xtd/translator.h"
-#include <cmath>
-#include <limits>
-#include <stdexcept>
 
 using namespace std;
 using namespace xtd;

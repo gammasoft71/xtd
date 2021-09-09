@@ -8,7 +8,173 @@ using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test_convert) {
+    enum class values {
+      zero,
+      one,
+      two
+    };
+    
   public:
+    void test_method_(to_any_from_any) {
+      any value = 42;
+      assert::are_equal(42, any_cast<int>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_bool) {
+      bool value = true;
+      assert::is_true(any_cast<bool>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_byte) {
+      byte_t value = 42;
+      assert::are_equal(42u, any_cast<byte_t>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_char) {
+      char value = 'a';
+      assert::are_equal('a', any_cast<char>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_char8) {
+      char8_t value = u8'a';
+      assert::throws<invalid_cast_exception>([&]{convert::to_any(value);}, csf_);
+    }
+    
+    void test_method_(to_any_from_char16) {
+      char16_t value = u'a';
+      assert::are_equal(u'a', any_cast<char16_t>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_char32) {
+      char32_t value = U'a';
+      assert::are_equal(U'a', any_cast<char32_t>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_wchar) {
+      wchar_t value = L'a';
+      assert::are_equal(L'a', any_cast<wchar_t>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_decimal) {
+      decimal_t value = 42.0l;
+      assert::are_equal(42.0l, any_cast<decimal_t>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_double) {
+      double value = 42.0;
+      assert::are_equal(42.0, any_cast<double>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_float) {
+      float value = 42.0f;
+      assert::are_equal(42.0f, any_cast<float>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_int16) {
+      int16_t value = 42;
+      assert::are_equal(42, any_cast<int16_t>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_int32) {
+      int32_t value = 42;
+      assert::are_equal(42, any_cast<int32_t>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_int64) {
+      int64_t value = 42l;
+      assert::are_equal(42l, any_cast<int64_t>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_llong) {
+      llong_t value = 42ll;
+      assert::are_equal(42ll, any_cast<llong_t>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_sbyte) {
+      sbyte_t value = 42;
+      assert::are_equal(42, any_cast<sbyte_t>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_uint16) {
+      uint16_t value = 42u;
+      assert::are_equal(42u, any_cast<uint16_t>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_uint32) {
+      uint32_t value = 42u;
+      assert::are_equal(42u, any_cast<uint32_t>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_uint64) {
+      uint64_t value = 42lu;
+      assert::are_equal(42lu, any_cast<uint64_t>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_ullong) {
+      ullong_t value = 42llu;
+      assert::are_equal(42llu, any_cast<ullong_t>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_ustring) {
+      ustring value = "42";
+      assert::are_equal("42", any_cast<ustring>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_string) {
+      string value = "42";
+      assert::are_equal("42", any_cast<string>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_u8string) {
+      u8string value = u8"42";
+      assert::are_equal(u8"42", any_cast<u8string>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_u16string) {
+      u16string value = u"42";
+      assert::are_equal(u"42", any_cast<u16string>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_u32string) {
+      u32string value = U"42";
+      assert::are_equal(U"42", any_cast<u32string>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_wstring) {
+      wstring value = L"42";
+      assert::are_equal(L"42", any_cast<wstring>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_literal_char) {
+      const char* value = "42";
+      assert::are_equal("42", any_cast<const char*>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_literal_char8) {
+      const char8_t* value = u8"42";
+      assert::throws<invalid_cast_exception>([&]{convert::to_any(value);}, csf_);
+    }
+    
+    void test_method_(to_any_from_literal_char16) {
+      const char16_t* value = u"42";
+      assert::are_equal(u"42", any_cast<const char16_t*>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_literal_char32) {
+      const char32_t* value = U"42";
+      assert::are_equal(U"42", any_cast<const char32_t*>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_literal_wchar) {
+      const wchar_t* value = L"42";
+      assert::are_equal(L"42", any_cast<const wchar_t*>(convert::to_any(value)), csf_);
+    }
+    
+    void test_method_(to_any_from_values) {
+      values value = values::two;
+      assert::are_equal(values::two, any_cast<values>(convert::to_any(value)), csf_);
+    }
+
     void test_method_(to_boolean_from_any) {
       any value = true;
       assert::is_true(convert::to_boolean(value), csf_);
@@ -241,6 +407,13 @@ namespace unit_tests {
       assert::is_false(convert::to_boolean(value), csf_);
       value = L"bad value";
       assert::throws<argument_exception>([&]{convert::to_boolean(value);}, csf_);
+    }
+
+    void test_method_(to_boolean_from_values) {
+      values value = values::two;
+      assert::is_true(convert::to_boolean(value), csf_);
+      value = values::zero;
+      assert::is_false(convert::to_boolean(value), csf_);
     }
 
     void test_method_(to_byte_from_any) {
@@ -543,6 +716,13 @@ namespace unit_tests {
       assert::throws<argument_exception>([&]{convert::to_byte(value);}, csf_);
     }
 
+    void test_method_(to_byte_from_values) {
+      values value = values::two;
+      assert::are_equal(2, convert::to_byte(value), csf_);
+      value = values::zero;
+      assert::is_zero(convert::to_byte(value), csf_);
+    }
+
     void test_method_(to_char_from_any) {
       any value = 'a';
       assert::are_equal('a', convert::to_char(value), csf_);
@@ -817,6 +997,13 @@ namespace unit_tests {
       assert::are_equal('a', convert::to_char(value), csf_);
       value = L"ab";
       assert::throws<format_exception>([&]{convert::to_char(value);}, csf_);
+    }
+
+    void test_method_(to_char_from_values) {
+      values value = values::two;
+      assert::are_equal('\2', convert::to_char(value), csf_);
+      value = values::zero;
+      assert::is_zero(convert::to_char(value), csf_);
     }
 
     void test_method_(to_char8_from_any) {
@@ -1094,6 +1281,13 @@ namespace unit_tests {
       assert::throws<format_exception>([&]{convert::to_char8(value);}, csf_);
     }
 
+    void test_method_(to_char8_from_values) {
+      values value = values::two;
+      assert::are_equal(u8'\2', convert::to_char8(value), csf_);
+      value = values::zero;
+      assert::is_zero(convert::to_char8(value), csf_);
+    }
+
     void test_method_(to_char16_from_any) {
       any value = u'a';
       assert::are_equal(u'a', convert::to_char16(value), csf_);
@@ -1362,6 +1556,13 @@ namespace unit_tests {
       assert::throws<format_exception>([&]{convert::to_char16(value);}, csf_);
     }
 
+    void test_method_(to_char16_from_values) {
+      values value = values::two;
+      assert::are_equal(u'\2', convert::to_char16(value), csf_);
+      value = values::zero;
+      assert::is_zero(convert::to_char16(value), csf_);
+    }
+
     void test_method_(to_char32_from_any) {
       any value = U'a';
       assert::are_equal(U'a', convert::to_char32(value), csf_);
@@ -1620,6 +1821,13 @@ namespace unit_tests {
       assert::are_equal(U'a', convert::to_char32(value), csf_);
       value = L"ab";
       assert::throws<format_exception>([&]{convert::to_char32(value);}, csf_);
+    }
+
+    void test_method_(to_char32_from_values) {
+      values value = values::two;
+      assert::are_equal(U'\2', convert::to_char32(value), csf_);
+      value = values::zero;
+      assert::is_zero(convert::to_char32(value), csf_);
     }
 
     void test_method_(to_wchar_from_any) {
@@ -1888,6 +2096,265 @@ namespace unit_tests {
       assert::are_equal(L'a', convert::to_wchar(value), csf_);
       value = L"ab";
       assert::throws<format_exception>([&]{convert::to_wchar(value);}, csf_);
+    }
+
+    void test_method_(to_wchar_from_values) {
+      values value = values::two;
+      assert::are_equal(L'\2', convert::to_wchar(value), csf_);
+      value = values::zero;
+      assert::is_zero(convert::to_wchar(value), csf_);
+    }
+
+    void test_method_(to_decimal_from_any) {
+      any value = 42.0l;
+      assert::are_equal(42.0l, convert::to_decimal(value), csf_);
+      value = 0.0l;
+      assert::is_zero(convert::to_decimal(value), csf_);
+    }
+    
+    void test_method_(to_decimal_from_any_failed) {
+      any value = "not a byte";
+      assert::throws<invalid_cast_exception>([&]{convert::to_decimal(value);}, csf_);
+    }
+    
+    void test_method_(to_decimal_from_bool) {
+      bool value = true;
+      assert::are_equal(1.0l, convert::to_decimal(value), csf_);
+      value = false;
+      assert::is_zero(convert::to_decimal(value), csf_);
+    }
+    
+    void test_method_(to_decimal_from_byte) {
+      byte_t value = 42;
+      assert::are_equal(42.0l, convert::to_decimal(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_decimal(value), csf_);
+    }
+    
+    void test_method_(to_decimal_from_char) {
+      char value = 'a';
+      assert::are_equal(97.0l, convert::to_decimal(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_decimal(value), csf_);
+    }
+    
+    void test_method_(to_decimal_from_char8) {
+      char8_t value = u8'a';
+      assert::are_equal(97.0l, convert::to_decimal(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_decimal(value), csf_);
+    }
+    
+    void test_method_(to_decimal_from_char16) {
+      char16_t value = u'a';
+      assert::are_equal(97.0l, convert::to_decimal(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_decimal(value), csf_);
+    }
+    
+    void test_method_(to_decimal_from_char32) {
+      char32_t value = U'a';
+      assert::are_equal(97.0l, convert::to_decimal(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_decimal(value), csf_);
+    }
+    
+    void test_method_(to_decimal_from_wchar) {
+      wchar_t value = L'a';
+      assert::are_equal(97.0l, convert::to_decimal(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_decimal(value), csf_);
+    }
+    
+    void test_method_(to_decimal_from_decimal) {
+      decimal_t value = 42.0l;
+      assert::are_equal(42.0l, convert::to_decimal(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_decimal(value), csf_);
+    }
+    
+    void test_method_(to_decimal_from_double) {
+      double value = 42.0;
+      assert::are_equal(42.0l, convert::to_decimal(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_decimal(value), csf_);
+
+    }
+    
+    void test_method_(to_decimal_from_float) {
+      float value = 42.0f;
+      assert::are_equal(42.0l, convert::to_decimal(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_decimal(value), csf_);
+    }
+    
+    void test_method_(to_decimal_from_int16) {
+      int16_t value = 42;
+      assert::are_equal(42.0l, convert::to_decimal(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_decimal(value), csf_);
+    }
+    
+    void test_method_(to_decimal_from_int32) {
+      int32_t value = 42;
+      assert::are_equal(42.0l, convert::to_decimal(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_decimal(value), csf_);
+    }
+    
+    void test_method_(to_decimal_from_int64) {
+      int64_t value = 42l;
+      assert::are_equal(42.0l, convert::to_decimal(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_decimal(value), csf_);
+    }
+    
+    void test_method_(to_decimal_from_llong) {
+      llong_t value = 42ll;
+      assert::are_equal(42.0l, convert::to_decimal(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_decimal(value), csf_);
+    }
+    
+    void test_method_(to_decimal_from_sbyte) {
+      sbyte_t value = 42;
+      assert::are_equal(42.0l, convert::to_decimal(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_decimal(value), csf_);
+    }
+    
+    void test_method_(to_decimal_from_uint16) {
+      uint16_t value = 42u;
+      assert::are_equal(42.0l, convert::to_decimal(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_decimal(value), csf_);
+    }
+    
+    void test_method_(to_decimal_from_uint32) {
+      uint32_t value = 42u;
+      assert::are_equal(42.0l, convert::to_decimal(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_decimal(value), csf_);
+    }
+    
+    void test_method_(to_decimal_from_uint64) {
+      uint64_t value = 42lu;
+      assert::are_equal(42.0l, convert::to_decimal(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_decimal(value), csf_);
+    }
+    
+    void test_method_(to_decimal_from_ullong) {
+      ullong_t value = 42llu;
+      assert::are_equal(42.0l, convert::to_decimal(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_decimal(value), csf_);
+    }
+    
+    void test_method_(to_decimal_from_ustring) {
+      ustring value = "42.0";
+      assert::are_equal(42.0l, convert::to_decimal(value), csf_);
+      value = "0";
+      assert::is_zero(convert::to_decimal(value), csf_);
+      value = "bad value";
+      assert::throws<argument_exception>([&]{convert::to_decimal(value);}, csf_);
+    }
+    
+    void test_method_(to_decimal_from_string) {
+      string value = "42.0";
+      assert::are_equal(42.0l, convert::to_decimal(value), csf_);
+      value = "0";
+      assert::is_zero(convert::to_decimal(value), csf_);
+      value = "bad value";
+      assert::throws<argument_exception>([&]{convert::to_decimal(value);}, csf_);
+    }
+    
+    void test_method_(to_decimal_from_u8string) {
+      u8string value = u8"42.0";
+      assert::are_equal(42.0l, convert::to_decimal(value), csf_);
+      value = u8"0";
+      assert::is_zero(convert::to_decimal(value), csf_);
+      value = u8"bad value";
+      assert::throws<argument_exception>([&]{convert::to_decimal(value);}, csf_);
+    }
+    
+    void test_method_(to_decimal_from_u16string) {
+      u16string value = u"42.0";
+      assert::are_equal(42.0l, convert::to_decimal(value), csf_);
+      value = u"0";
+      assert::is_zero(convert::to_decimal(value), csf_);
+      value = u"bad value";
+      assert::throws<argument_exception>([&]{convert::to_decimal(value);}, csf_);
+    }
+    
+    void test_method_(to_decimal_from_u32string) {
+      u32string value = U"42.0";
+      assert::are_equal(42.0l, convert::to_decimal(value), csf_);
+      value = U"0";
+      assert::is_zero(convert::to_decimal(value), csf_);
+      value = U"bad value";
+      assert::throws<argument_exception>([&]{convert::to_decimal(value);}, csf_);
+    }
+    
+    void test_method_(to_decimal_from_wstring) {
+      wstring value = L"42.0";
+      assert::are_equal(42.0l, convert::to_decimal(value), csf_);
+      value = L"0";
+      assert::is_zero(convert::to_decimal(value), csf_);
+      value = L"bad value";
+      assert::throws<argument_exception>([&]{convert::to_decimal(value);}, csf_);
+    }
+    
+    void test_method_(to_decimal_from_literal_char) {
+      const char* value = "42.0";
+      assert::are_equal(42u, convert::to_decimal(value), csf_);
+      value = "0";
+      assert::is_zero(convert::to_decimal(value), csf_);
+      value = "bad value";
+      assert::throws<argument_exception>([&]{convert::to_decimal(value);}, csf_);
+    }
+    
+    void test_method_(to_decimal_from_literal_char8) {
+      const char8_t* value = u8"42.0";
+      assert::are_equal(42.0l, convert::to_decimal(value), csf_);
+      value = u8"0";
+      assert::is_zero(convert::to_decimal(value), csf_);
+      value = u8"bad value";
+      assert::throws<argument_exception>([&]{convert::to_decimal(value);}, csf_);
+    }
+    
+    void test_method_(to_decimal_from_literal_char16) {
+      const char16_t* value = u"42.0";
+      assert::are_equal(42.0l, convert::to_decimal(value), csf_);
+      value = u"0";
+      assert::is_zero(convert::to_decimal(value), csf_);
+      value = u"bad value";
+      assert::throws<argument_exception>([&]{convert::to_decimal(value);}, csf_);
+    }
+    
+    void test_method_(to_decimal_from_literal_char32) {
+      const char32_t* value = U"42.0";
+      assert::are_equal(42.0l, convert::to_decimal(value), csf_);
+      value = U"0";
+      assert::is_zero(convert::to_decimal(value), csf_);
+      value = U"bad value";
+      assert::throws<argument_exception>([&]{convert::to_decimal(value);}, csf_);
+    }
+    
+    void test_method_(to_decimal_from_literal_wchar) {
+      const wchar_t* value = L"42.0";
+      assert::are_equal(42.0l, convert::to_decimal(value), csf_);
+      value = L"0";
+      assert::is_zero(convert::to_decimal(value), csf_);
+      value = L"bad value";
+      assert::throws<argument_exception>([&]{convert::to_decimal(value);}, csf_);
+    }
+    
+    void test_method_(to_decimal_from_values) {
+      values value = values::two;
+      assert::are_equal(2.0l, convert::to_decimal(value), csf_);
+      value = values::zero;
+      assert::is_zero(convert::to_decimal(value), csf_);
     }
   };
 }
