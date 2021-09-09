@@ -3629,7 +3629,363 @@ namespace xtd {
     /// @endcode
     template<typename type_t>
     static double to_double(type_t value) noexcept {
-      return static_cast<decimal_t>(value);
+      return static_cast<double>(value);
+    }
+    
+    /// @brief Convert std::any to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @par Examples
+    /// @code
+    /// std::any value = 42;
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(std::any value);
+    /// @brief Convert bool to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @par Examples
+    /// @code
+    /// bool value = true;
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(bool value) noexcept;
+    /// @brief Convert byte_t to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @par Examples
+    /// @code
+    /// byte_t value = 42;
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(byte_t value) noexcept;
+    /// @brief Convert char to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @par Examples
+    /// @code
+    /// char value = 'a';
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(char value) noexcept;
+    /// @brief Convert char8_t to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @par Examples
+    /// @code
+    /// char8_t value = u8'a';
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(char8_t value) noexcept;
+    /// @brief Convert char16_t to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @par Examples
+    /// @code
+    /// char16_t value = u'a';
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(char16_t value) noexcept;
+    /// @brief Convert char32_t to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @par Examples
+    /// @code
+    /// char32_t value = U'a';
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(char32_t value) noexcept;
+    /// @brief Convert char32_t to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @par Examples
+    /// @code
+    /// wchar_t value = L'a';
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(wchar_t value) noexcept;
+    /// @brief Convert decimal_t to single.
+    /// @param value object to convert.
+    /// @remarks The result is rounded.
+    /// @return A new float object converted from value.
+    /// @par Examples
+    /// @code
+    /// decimal_t value = 42.50l;
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(decimal_t value) noexcept;
+    /// @brief Convert double to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @remarks The result is rounded.
+    /// @par Examples
+    /// @code
+    /// double value = 42.50;
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(double value) noexcept;
+    /// @brief Convert float to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @remarks The result is rounded.
+    /// @par Examples
+    /// @code
+    /// float value = 42.50f;
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(float value) noexcept;
+    /// @brief Convert int16_t to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @par Examples
+    /// @code
+    /// int16_t value = 42;
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(int16_t value) noexcept;
+    /// @brief Convert int32_t to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @par Examples
+    /// @code
+    /// int32_t value = 42;
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(int32_t value) noexcept;
+    /// @brief Convert int64_t to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @par Examples
+    /// @code
+    /// int64_t value = 42l;
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(int64_t value) noexcept;
+    /// @brief Convert llong_t to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @par Examples
+    /// @code
+    /// llong_t value = 42ll;
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(llong_t value) noexcept;
+    /// @brief Convert sbyte_t to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @par Examples
+    /// @code
+    /// sbyte_t value = 42;
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(sbyte_t value) noexcept;
+    /// @brief Convert uint16_t to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @par Examples
+    /// @code
+    /// uint16_t value = 42u;
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(uint16_t value) noexcept;
+    /// @brief Convert uint32_t to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @par Examples
+    /// @code
+    /// uint32_t value = 42u;
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(uint32_t value) noexcept;
+    /// @brief Convert uint64_t to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @par Examples
+    /// @code
+    /// uint64t value = 42ul;
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(uint64_t value) noexcept;
+    /// @brief Convert llong_t to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @par Examples
+    /// @code
+    /// ullong_t value = 42ull;
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(ullong_t value) noexcept;
+    /// @brief Convert string to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// ustring value = "42";
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(const xtd::ustring& value);
+    /// @brief Convert string to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// string value = "42";
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(const std::string& value);
+    /// @brief Convert string to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// u8string value = u8"42";
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(const std::u8string& value);
+    /// @brief Convert string to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// u16string value = u"42";
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(const std::u16string& value);
+    /// @brief Convert string to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// u32string value = U"42";
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(const std::u32string& value);
+    /// @brief Convert string to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// wstring value = L"42";
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(const std::wstring& value);
+    /// @brief Convert string to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char* value = "42";
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(const char* value);
+    /// @brief Convert string to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char* value = "42";
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(char* value);
+    /// @brief Convert string to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char8_t* value = u8"42";
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(const char8_t* value);
+    /// @brief Convert string to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char8_t* value = u8"42";
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(char8_t* value);
+    /// @brief Convert string to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char16_t* value = u"42";
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(const char16_t* value);
+    /// @brief Convert string to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char16_t* value = u"42";
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(char16_t* value);
+    /// @brief Convert string to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char32_t* value = U"42";
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(const char32_t* value);
+    /// @brief Convert string to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char32_t* value = U"42";
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(char32_t* value);
+    /// @brief Convert string to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const wchar_t* value = L"42";
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(const wchar_t* value);
+    /// @brief Convert string to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// wchar_t* value = L"42";
+    /// float result = convert::to_single(value);
+    /// @endcode
+    static float to_single(wchar_t* value);
+    /// @brief Convert type_t to single.
+    /// @param value object to convert.
+    /// @return A new float object converted from value.
+    /// @par Examples
+    /// @code
+    /// address_family value = address_family::inter_network;
+    /// float result = convert::to_single(value);
+    /// @endcode
+    template<typename type_t>
+    static float to_single(type_t value) noexcept {
+      return static_cast<float>(value);
     }
   };
 }
