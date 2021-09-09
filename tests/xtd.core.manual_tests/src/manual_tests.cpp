@@ -126,7 +126,7 @@ class xtd_core_manual_test : public object {
 public:
   static void main() {
     console::write_line("Hello, World!");
-    console::write_line("{}", numeric_limits<int16_t>::max());
+    console::write_line("{}", numeric_limits<int32_t>::max());
   }
 };
 
