@@ -1,7 +1,7 @@
 /// @file
 /// @brief Contains CMake page.
 
-/// @page CMake CMake
+/// @page CMake CMake commands
 /// @brief Caintains specific CMake commands to manage project, assembly informations and application properties.
 ///
 /// These specific CMake commands are automaticaly added when you add find_package(xtd REQUIRED) to your CMakeLists.txt file.
