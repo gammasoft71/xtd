@@ -1648,3 +1648,151 @@ double convert::to_double(const wchar_t* value) {
 double convert::to_double(wchar_t* value) {
   return ustring::parse<double>(value);
 }
+
+float convert::to_single(any value) {
+  try {
+    return any_cast<float>(value);
+  } catch(...) {
+    throw invalid_cast_exception(csf_);
+  }
+}
+
+float convert::to_single(bool value) noexcept {
+  return static_cast<float>(value);
+}
+
+float convert::to_single(byte_t value) noexcept {
+  return static_cast<float>(value);
+}
+
+float convert::to_single(char value) noexcept {
+  return static_cast<float>(value);
+}
+
+float convert::to_single(char8_t value) noexcept {
+  return static_cast<float>(value);
+}
+
+float convert::to_single(char16_t value) noexcept {
+  return static_cast<float>(value);
+}
+
+float convert::to_single(char32_t value) noexcept {
+  return static_cast<float>(value);
+}
+
+float convert::to_single(wchar_t value) noexcept {
+  return static_cast<float>(value);
+}
+
+float convert::to_single(decimal_t value) noexcept {
+  return static_cast<float>(value);
+}
+
+float convert::to_single(double value) noexcept {
+  return static_cast<float>(value);
+}
+
+float convert::to_single(float value) noexcept {
+  return value;
+}
+
+float convert::to_single(int16_t value) noexcept {
+  return static_cast<float>(value);
+}
+
+float convert::to_single(int32_t value) noexcept {
+  return static_cast<float>(value);
+}
+
+float convert::to_single(int64_t value) noexcept {
+  return static_cast<float>(value);
+}
+
+float convert::to_single(llong_t value) noexcept {
+  return static_cast<float>(value);
+}
+
+float convert::to_single(sbyte_t value) noexcept {
+  return static_cast<float>(value);
+}
+
+float convert::to_single(uint16_t value) noexcept {
+  return static_cast<float>(value);
+}
+
+float convert::to_single(uint32_t value) noexcept {
+  return static_cast<float>(value);
+}
+
+float convert::to_single(uint64_t value) noexcept {
+  return static_cast<float>(value);
+}
+
+float convert::to_single(ullong_t value) noexcept {
+  return static_cast<float>(value);
+}
+
+float convert::to_single(const ustring& value) {
+  return ustring::parse<float>(value);
+}
+
+float convert::to_single(const string& value) {
+  return ustring::parse<float>(value);
+}
+
+float convert::to_single(const u8string& value) {
+  return ustring::parse<float>(value);
+}
+
+float convert::to_single(const u16string& value) {
+  return ustring::parse<float>(value);
+}
+
+float convert::to_single(const u32string& value) {
+  return ustring::parse<float>(value);
+}
+
+float convert::to_single(const wstring& value) {
+  return ustring::parse<float>(value);
+}
+
+float convert::to_single(const char* value) {
+  return ustring::parse<float>(value);
+}
+
+float convert::to_single(char* value) {
+  return ustring::parse<float>(value);
+}
+
+float convert::to_single(const char8_t* value) {
+  return ustring::parse<float>(value);
+}
+
+float convert::to_single(char8_t* value) {
+  return ustring::parse<float>(value);
+}
+
+float convert::to_single(const char16_t* value) {
+  return ustring::parse<float>(value);
+}
+
+float convert::to_single(char16_t* value) {
+  return ustring::parse<float>(value);
+}
+
+float convert::to_single(const char32_t* value) {
+  return ustring::parse<float>(value);
+}
+
+float convert::to_single(char32_t* value) {
+  return ustring::parse<float>(value);
+}
+
+float convert::to_single(const wchar_t* value) {
+  return ustring::parse<float>(value);
+}
+
+float convert::to_single(wchar_t* value) {
+  return ustring::parse<float>(value);
+}
