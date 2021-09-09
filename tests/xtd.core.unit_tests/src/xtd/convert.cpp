@@ -1701,8 +1701,6 @@ namespace unit_tests {
       assert::is_zero(convert::to_char32(value), csf_);
       value = -1ll;
       assert::throws<overflow_exception>([&]{convert::to_char32(value);}, csf_);
-      value = 4294967296ll;
-      assert::throws<overflow_exception>([&]{convert::to_char32(value);}, csf_);
     }
     
     void test_method_(to_char32_from_sbyte) {
@@ -1742,8 +1740,6 @@ namespace unit_tests {
       assert::are_equal(U'a', convert::to_char32(value), csf_);
       value = 0llu;
       assert::is_zero(convert::to_char32(value), csf_);
-      value = 4294967296llu;
-      assert::throws<overflow_exception>([&]{convert::to_char32(value);}, csf_);
     }
     
     void test_method_(to_char32_from_ustring) {
@@ -3272,8 +3268,6 @@ namespace unit_tests {
       assert::are_equal(42, convert::to_int32(value), csf_);
       value = 0ll;
       assert::is_zero(convert::to_int32(value), csf_);
-      value = 2147483648ll;
-      assert::throws<overflow_exception>([&]{convert::to_int32(value);}, csf_);
     }
     
     void test_method_(to_int32_from_sbyte) {
@@ -3580,8 +3574,6 @@ namespace unit_tests {
       assert::are_equal(42l, convert::to_int64(value), csf_);
       value = 0llu;
       assert::is_zero(convert::to_int64(value), csf_);
-      value = 9223372036854775808llu;
-      assert::throws<overflow_exception>([&]{convert::to_int64(value);}, csf_);
     }
     
     void test_method_(to_int64_from_ustring) {
@@ -3955,6 +3947,297 @@ namespace unit_tests {
       assert::are_equal(2ll, convert::to_llong(value), csf_);
       value = values::zero;
       assert::is_zero(convert::to_llong(value), csf_);
+    }
+
+    void test_method_(to_sbyte_from_any) {
+      any value = static_cast<sbyte_t>(42);
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = static_cast<sbyte_t>(0);
+      assert::is_zero(convert::to_sbyte(value), csf_);
+    }
+    
+    void test_method_(to_sbyte_from_any_failed) {
+      any value = "not a byte";
+      assert::throws<invalid_cast_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_bool) {
+      bool value = true;
+      assert::are_equal(1, convert::to_sbyte(value), csf_);
+      value = false;
+      assert::is_zero(convert::to_sbyte(value), csf_);
+    }
+    
+    void test_method_(to_sbyte_from_byte) {
+      byte_t value = 42;
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_sbyte(value), csf_);
+    }
+    
+    void test_method_(to_sbyte_from_char) {
+      char value = 'a';
+      assert::are_equal(97, convert::to_sbyte(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_sbyte(value), csf_);
+    }
+    
+    void test_method_(to_sbyte_from_char8) {
+      char8_t value = u8'a';
+      assert::are_equal(97, convert::to_sbyte(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_sbyte(value), csf_);
+    }
+    
+    void test_method_(to_sbyte_from_char16) {
+      char16_t value = u'a';
+      assert::are_equal(97, convert::to_sbyte(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = u'\u0080';
+      assert::throws<overflow_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_char32) {
+      char32_t value = U'a';
+      assert::are_equal(97, convert::to_sbyte(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = U'\U00000080';
+      assert::throws<overflow_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_wchar) {
+      wchar_t value = L'a';
+      assert::are_equal(97, convert::to_sbyte(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = L'\x0080';
+      assert::throws<overflow_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_decimal) {
+      decimal_t value = 42.0l;
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = 42.49l;
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = 42.50l;
+      assert::are_equal(43, convert::to_sbyte(value), csf_);
+      value = 0.0l;
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = 128.0l;
+      assert::throws<overflow_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_double) {
+      double value = 42.0;
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = 42.49;
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = 42.50;
+      assert::are_equal(43, convert::to_sbyte(value), csf_);
+      value = 0.0;
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = 128.0;
+      assert::throws<overflow_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_float) {
+      float value = 42.0f;
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = 42.49f;
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = 42.50f;
+      assert::are_equal(43, convert::to_sbyte(value), csf_);
+      value = 0.0f;
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = 128.0f;
+      assert::throws<overflow_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_int16) {
+      int16_t value = 42;
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = 128;
+      assert::throws<overflow_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_int32) {
+      int32_t value = 42;
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = 128;
+      assert::throws<overflow_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_int64) {
+      int64_t value = 42l;
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = 0l;
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = 128l;
+      assert::throws<overflow_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_llong) {
+      llong_t value = 42ll;
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = 0ll;
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = 128ll;
+      assert::throws<overflow_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_sbyte) {
+      sbyte_t value = 42;
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = 0;
+      assert::is_zero(convert::to_sbyte(value), csf_);
+    }
+    
+    void test_method_(to_sbyte_from_uint16) {
+      uint16_t value = 42u;
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = 0u;
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = 128u;
+      assert::throws<overflow_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_uint32) {
+      uint32_t value = 42u;
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = 0u;
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = 128u;
+      assert::throws<overflow_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_uint64) {
+      uint64_t value = 42lu;
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = 0lu;
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = 128lu;
+      assert::throws<overflow_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_ullong) {
+      ullong_t value = 42llu;
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = 0llu;
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = 128llu;
+      assert::throws<overflow_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_ustring) {
+      ustring value = "42";
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = "0";
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = "bad value";
+      assert::throws<argument_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_string) {
+      string value = "42";
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = "0";
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = "bad value";
+      assert::throws<argument_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_u8string) {
+      u8string value = u8"42";
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = u8"0";
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = u8"bad value";
+      assert::throws<argument_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_u16string) {
+      u16string value = u"42";
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = u"0";
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = u"bad value";
+      assert::throws<argument_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_u32string) {
+      u32string value = U"42";
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = U"0";
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = U"bad value";
+      assert::throws<argument_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_wstring) {
+      wstring value = L"42";
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = L"0";
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = L"bad value";
+      assert::throws<argument_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_literal_char) {
+      const char* value = "42";
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = "0";
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = "bad value";
+      assert::throws<argument_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_literal_char8) {
+      const char8_t* value = u8"42";
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = u8"0";
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = u8"bad value";
+      assert::throws<argument_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_literal_char16) {
+      const char16_t* value = u"42";
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = u"0";
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = u"bad value";
+      assert::throws<argument_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_literal_char32) {
+      const char32_t* value = U"42";
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = U"0";
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = U"bad value";
+      assert::throws<argument_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_literal_wchar) {
+      const wchar_t* value = L"42";
+      assert::are_equal(42, convert::to_sbyte(value), csf_);
+      value = L"0";
+      assert::is_zero(convert::to_sbyte(value), csf_);
+      value = L"bad value";
+      assert::throws<argument_exception>([&]{convert::to_sbyte(value);}, csf_);
+    }
+    
+    void test_method_(to_sbyte_from_values) {
+      values value = values::two;
+      assert::are_equal(2, convert::to_sbyte(value), csf_);
+      value = values::zero;
+      assert::is_zero(convert::to_sbyte(value), csf_);
     }
   };
 }

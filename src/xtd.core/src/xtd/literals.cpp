@@ -206,23 +206,23 @@ int8_t xtd::operator""_s8(unsigned long long n) {
 }
 
 int8_t xtd::operator""_s8(const char* s, size_t n) {
-  return parse<int8_t>(ustring(s, s + n));
+  return as<int8_t>(ustring(s, s + n));
 }
 
 int8_t xtd::operator""_s8(const char8_t* s, size_t n) {
-  return parse<int8_t>(ustring(s, s + n));
+  return as<int8_t>(ustring(s, s + n));
 }
 
 int8_t xtd::operator""_s8(const char16_t* s, size_t n) {
-  return parse<int8_t>(u16string(s, s + n));
+  return as<int8_t>(u16string(s, s + n));
 }
 
 int8_t xtd::operator""_s8(const char32_t* s, size_t n) {
-  return parse<int8_t>(u32string(s, s + n));
+  return as<int8_t>(u32string(s, s + n));
 }
 
 int8_t xtd::operator""_s8(const wchar_t* s, size_t n) {
-  return parse<int8_t>(wstring(s, s + n));
+  return as<int8_t>(wstring(s, s + n));
 }
 
 int16_t xtd::operator""_s16(long double n) {
