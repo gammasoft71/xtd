@@ -223,7 +223,7 @@ End 2 tests from 1 test case ran. (0 ms total)
 * Fork the project and use a pull request for adding your contribution.
 * If you detect a problem or a defect you can add an [issue here](https://github.com/gammasoft71/xtd/issues).
 
-***Your feedback is important for the evolution of the project.***
+**Your feedback is important for the evolution of the project.**
 
 ## Gallery
 
