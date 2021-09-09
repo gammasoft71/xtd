@@ -42,23 +42,23 @@ double xtd::operator""_d(unsigned long long n) {
 }
 
 double xtd::operator""_d(const char* s, size_t n) {
-  return parse<double>(ustring(s, s + n));
+  return as<double>(ustring(s, s + n));
 }
 
 double xtd::operator""_d(const char8_t* s, size_t n) {
-  return parse<double>(ustring(s, s + n));
+  return as<double>(ustring(s, s + n));
 }
 
 double xtd::operator""_d(const char16_t* s, size_t n) {
-  return parse<double>(u16string(s, s + n));
+  return as<double>(u16string(s, s + n));
 }
 
 double xtd::operator""_d(const char32_t* s, size_t n) {
-  return parse<double>(u32string(s, s + n));
+  return as<double>(u32string(s, s + n));
 }
 
 double xtd::operator""_d(const wchar_t* s, size_t n) {
-  return parse<double>(wstring(s, s + n));
+  return as<double>(wstring(s, s + n));
 }
 
 float xtd::operator""_f(long double n) {
@@ -70,23 +70,23 @@ float xtd::operator""_f(unsigned long long n) {
 }
 
 float xtd::operator""_f(const char* s, size_t n) {
-  return parse<float>(ustring(s, s + n));
+  return as<float>(ustring(s, s + n));
 }
 
 float xtd::operator""_f(const char8_t* s, size_t n) {
-  return parse<float>(ustring(s, s + n));
+  return as<float>(ustring(s, s + n));
 }
 
 float xtd::operator""_f(const char16_t* s, size_t n) {
-  return parse<float>(u16string(s, s + n));
+  return as<float>(u16string(s, s + n));
 }
 
 float xtd::operator""_f(const char32_t* s, size_t n) {
-  return parse<float>(u32string(s, s + n));
+  return as<float>(u32string(s, s + n));
 }
 
 float xtd::operator""_f(const wchar_t* s, size_t n) {
-  return parse<float>(wstring(s, s + n));
+  return as<float>(wstring(s, s + n));
 }
 
 char32_t xtd::operator""_c(char c) {
