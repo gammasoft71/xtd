@@ -1850,7 +1850,7 @@ int16_t convert::to_int16(float value) {
 }
 
 int16_t convert::to_int16(int16_t value) noexcept {
-  return static_cast<int16_t>(value);
+  return value;
 }
 
 int16_t convert::to_int16(int32_t value) {
@@ -1954,4 +1954,159 @@ int16_t convert::to_int16(const wchar_t* value) {
 
 int16_t convert::to_int16(wchar_t* value) {
   return ustring::parse<int16_t>(value);
+}
+
+int32_t convert::to_int32(any value) {
+  try {
+    return any_cast<int32_t>(value);
+  } catch(...) {
+    throw invalid_cast_exception(csf_);
+  }
+}
+
+int32_t convert::to_int32(bool value) noexcept {
+  return static_cast<int32_t>(value);
+}
+
+int32_t convert::to_int32(byte_t value) noexcept {
+  return static_cast<int32_t>(value);
+}
+
+int32_t convert::to_int32(char value) noexcept {
+  return static_cast<int32_t>(value);
+}
+
+int32_t convert::to_int32(char8_t value) noexcept {
+  return static_cast<int32_t>(value);
+}
+
+int32_t convert::to_int32(char16_t value) noexcept {
+  return static_cast<int32_t>(value);
+}
+
+int32_t convert::to_int32(char32_t value) noexcept {
+  return static_cast<int32_t>(value);
+}
+
+int32_t convert::to_int32(wchar_t value) noexcept {
+  return static_cast<int32_t>(value);
+}
+
+int32_t convert::to_int32(decimal_t value) {
+  if (value < static_cast<decimal_t>(numeric_limits<int32_t>::min()) || value > static_cast<decimal_t>(numeric_limits<int32_t>::max())) throw overflow_exception(csf_);
+  return static_cast<int32_t>(round(value));
+}
+
+int32_t convert::to_int32(double value) {
+  if (value < static_cast<double>(numeric_limits<int32_t>::min()) || value > static_cast<double>(numeric_limits<int32_t>::max())) throw overflow_exception(csf_);
+  return static_cast<int32_t>(round(value));
+}
+
+int32_t convert::to_int32(float value) noexcept {
+  return static_cast<int32_t>(round(value));
+}
+
+int32_t convert::to_int32(int16_t value) noexcept {
+  return static_cast<int32_t>(value);
+}
+
+int32_t convert::to_int32(int32_t value) noexcept {
+  return value;
+}
+
+int32_t convert::to_int32(int64_t value) {
+  if (value < static_cast<int64_t>(numeric_limits<int32_t>::min()) || value > static_cast<int64_t>(numeric_limits<int32_t>::max())) throw overflow_exception(csf_);
+  return static_cast<int32_t>(value);
+}
+
+int32_t convert::to_int32(llong_t value) {
+  if (value < static_cast<llong_t>(numeric_limits<int32_t>::min()) || value > static_cast<llong_t>(numeric_limits<int32_t>::max())) throw overflow_exception(csf_);
+  return static_cast<int32_t>(value);
+}
+
+int32_t convert::to_int32(sbyte_t value) noexcept {
+  return static_cast<int32_t>(value);
+}
+
+int32_t convert::to_int32(uint16_t value) noexcept {
+  return static_cast<int32_t>(value);
+}
+
+int32_t convert::to_int32(uint32_t value) {
+  if (value > static_cast<uint32_t>(numeric_limits<int32_t>::max())) throw overflow_exception(csf_);
+  return static_cast<int32_t>(value);
+}
+
+int32_t convert::to_int32(uint64_t value) {
+  if (value > static_cast<uint64_t>(numeric_limits<int32_t>::max())) throw overflow_exception(csf_);
+  return static_cast<int32_t>(value);
+}
+
+int32_t convert::to_int32(ullong_t value) {
+  if (value > static_cast<ullong_t>(numeric_limits<int32_t>::max())) throw overflow_exception(csf_);
+  return static_cast<int32_t>(value);
+}
+
+int32_t convert::to_int32(const ustring& value) {
+  return ustring::parse<int32_t>(value);
+}
+
+int32_t convert::to_int32(const string& value) {
+  return ustring::parse<int32_t>(value);
+}
+
+int32_t convert::to_int32(const u8string& value) {
+  return ustring::parse<int32_t>(value);
+}
+
+int32_t convert::to_int32(const u16string& value) {
+  return ustring::parse<int32_t>(value);
+}
+
+int32_t convert::to_int32(const u32string& value) {
+  return ustring::parse<int32_t>(value);
+}
+
+int32_t convert::to_int32(const wstring& value) {
+  return ustring::parse<int32_t>(value);
+}
+
+int32_t convert::to_int32(const char* value) {
+  return ustring::parse<int32_t>(value);
+}
+
+int32_t convert::to_int32(char* value) {
+  return ustring::parse<int32_t>(value);
+}
+
+int32_t convert::to_int32(const char8_t* value) {
+  return ustring::parse<int32_t>(value);
+}
+
+int32_t convert::to_int32(char8_t* value) {
+  return ustring::parse<int32_t>(value);
+}
+
+int32_t convert::to_int32(const char16_t* value) {
+  return ustring::parse<int32_t>(value);
+}
+
+int32_t convert::to_int32(char16_t* value) {
+  return ustring::parse<int32_t>(value);
+}
+
+int32_t convert::to_int32(const char32_t* value) {
+  return ustring::parse<int32_t>(value);
+}
+
+int32_t convert::to_int32(char32_t* value) {
+  return ustring::parse<int32_t>(value);
+}
+
+int32_t convert::to_int32(const wchar_t* value) {
+  return ustring::parse<int32_t>(value);
+}
+
+int32_t convert::to_int32(wchar_t* value) {
+  return ustring::parse<int32_t>(value);
 }
