@@ -14,7 +14,7 @@
 
 ## Features
 
-* Free and open-source (see [MIT License](https://github.com/gammasoft71/xtd/blob/master/docs/license.md))
+* Free and open-source ([MIT License](https://github.com/gammasoft71/xtd/blob/master/docs/license.md))
 * a collection of native C++ classes libraries, to complete std
 * written in efficient, modern C++17 / C++20
 * and highly portable and available on many different platforms (Windows, macOS, Linux, iOS and Android)
