@@ -14,6 +14,6 @@
 
 * First read [Code of conduct](CODE_OF_CONDUCT.md) and the [design guidelines](docs/design_guidelines.md) to make sure your contribution follows the rules.
 * [Fork](https://github.com/gammasoft71/xtd/fork) the project and use a pull request for adding your contribution.
-* If you detect a problem or a defect you can add an [issue here](https://github.com/gammasoft71/xtd/issues).
+* If you detect a problem or a defect you can add an [issue](https://github.com/gammasoft71/xtd/issues).
 
 **Your feedback is important for the evolution of the project.**
