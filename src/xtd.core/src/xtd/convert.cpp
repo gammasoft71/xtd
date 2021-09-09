@@ -113,39 +113,45 @@ std::any convert::to_any(const wstring& value) noexcept {
 }
 
 std::any convert::to_any(const char* value) noexcept {
-  return ustring(value);
+  return value;
 }
 
 std::any convert::to_any(char* value) noexcept {
-  return ustring(value);
+  return value;
 }
 
-std::any convert::to_any(const char8_t* value) noexcept {
-  return ustring(value);
+std::any convert::to_any(const char8_t* value) {
+  //return value;
+  throw invalid_cast_exception(csf_);
+}
+
+std::any convert::to_any(char8_t* value) {
+  //return value;
+  throw invalid_cast_exception(csf_);
 }
 
 std::any convert::to_any(const char16_t* value) noexcept {
-  return ustring(value);
+  return value;
 }
 
 std::any convert::to_any(char16_t* value) noexcept {
-  return ustring(value);
+  return value;
 }
 
 std::any convert::to_any(const char32_t* value) noexcept {
-  return ustring(value);
+  return value;
 }
 
 std::any convert::to_any(char32_t* value) noexcept {
-  return ustring(value);
+  return value;
 }
 
 std::any convert::to_any(const wchar_t* value) noexcept {
-  return ustring(value);
+  return value;
 }
 
 std::any convert::to_any(wchar_t* value) noexcept {
-  return ustring(value);
+  return value;
 }
 
 bool convert::to_boolean(any value) {
@@ -459,11 +465,7 @@ char convert::to_char(any value) {
   try {
     return any_cast<char>(value);
   } catch(...) {
-    try {
-      return *any_cast<char*>(value);
-    } catch(...) {
-      throw invalid_cast_exception(csf_);
-    }
+    throw invalid_cast_exception(csf_);
   }
 }
 
@@ -1349,4 +1351,152 @@ wchar_t convert::to_wchar(const wchar_t* value) {
 wchar_t convert::to_wchar(wchar_t* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
+}
+
+decimal_t convert::to_decimal(any value) {
+  try {
+    return any_cast<decimal_t>(value);
+  } catch(...) {
+    throw invalid_cast_exception(csf_);
+  }
+}
+
+decimal_t convert::to_decimal(bool value) noexcept {
+  return static_cast<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(byte_t value) noexcept {
+  return static_cast<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(char value) noexcept {
+  return static_cast<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(char8_t value) noexcept {
+  return static_cast<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(char16_t value) noexcept {
+  return static_cast<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(char32_t value) noexcept {
+  return static_cast<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(wchar_t value) noexcept {
+  return static_cast<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(decimal_t value) noexcept {
+  return value;
+}
+
+decimal_t convert::to_decimal(double value) noexcept {
+  return static_cast<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(float value) noexcept {
+  return static_cast<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(int16_t value) noexcept {
+  return static_cast<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(int32_t value) noexcept {
+  return static_cast<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(int64_t value) noexcept {
+  return static_cast<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(llong_t value) noexcept {
+  return static_cast<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(sbyte_t value) noexcept {
+  return static_cast<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(uint16_t value) noexcept {
+  return static_cast<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(uint32_t value) noexcept {
+  return static_cast<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(uint64_t value) noexcept {
+  return static_cast<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(ullong_t value) noexcept {
+  return static_cast<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(const ustring& value) {
+  return ustring::parse<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(const string& value) {
+  return ustring::parse<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(const u8string& value) {
+  return ustring::parse<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(const u16string& value) {
+  return ustring::parse<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(const u32string& value) {
+  return ustring::parse<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(const wstring& value) {
+  return ustring::parse<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(const char* value) {
+  return ustring::parse<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(char* value) {
+  return ustring::parse<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(const char8_t* value) {
+  return ustring::parse<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(char8_t* value) {
+  return ustring::parse<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(const char16_t* value) {
+  return ustring::parse<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(char16_t* value) {
+  return ustring::parse<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(const char32_t* value) {
+  return ustring::parse<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(char32_t* value) {
+  return ustring::parse<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(const wchar_t* value) {
+  return ustring::parse<decimal_t>(value);
+}
+
+decimal_t convert::to_decimal(wchar_t* value) {
+  return ustring::parse<decimal_t>(value);
 }

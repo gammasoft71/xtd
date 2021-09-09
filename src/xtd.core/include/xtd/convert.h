@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <any>
+#include "invalid_cast_exception.h"
 #include "static.h"
 #include "types.h"
 #include "ustring.h"
@@ -274,7 +275,7 @@ namespace xtd {
     /// const char8_t* value = u8"42";
     /// any result = convert::to_any(value);
     /// @endcode
-    static std::any to_any(const char8_t* value) noexcept;
+    static std::any to_any(const char8_t* value);
     /// @brief Convert string to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
@@ -283,7 +284,7 @@ namespace xtd {
     /// char8_t* value = u8"42";
     /// any result = convert::to_any(value);
     /// @endcode
-    static std::any to_any(char8_t* value) noexcept;
+    static std::any to_any(char8_t* value);
     /// @brief Convert string to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
@@ -348,7 +349,11 @@ namespace xtd {
     /// @endcode
     template<typename type_t>
     static std::any to_any(type_t value) {
-      return std::any(value);
+      try {
+        return std::any(value);
+      } catch(...) {
+        throw xtd::invalid_cast_exception(csf_);
+      }
     }
 
     /// @brief Convert std::any to bool.
@@ -701,7 +706,7 @@ namespace xtd {
     /// bool result = convert::to_boolean(value);
     /// @endcode
     template<typename type_t>
-    static bool to_boolean(type_t value) {
+    static bool to_boolean(type_t value) noexcept {
       return static_cast<bool>(value);
     }
     
@@ -783,6 +788,7 @@ namespace xtd {
     /// @brief Convert decimal_t to byte.
     /// @param value object to convert.
     /// @remarks The result is rounded.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @return A new byte_t object converted from value.
     /// @par Examples
     /// @code
@@ -1071,7 +1077,7 @@ namespace xtd {
     /// byte_t result = convert::to_byte(value);
     /// @endcode
     template<typename type_t>
-    static byte_t to_byte(type_t value) {
+    static byte_t to_byte(type_t value) noexcept {
       return static_cast<byte_t>(value);
     }
     
@@ -1441,8 +1447,8 @@ namespace xtd {
     /// char result = convert::to_char(value);
     /// @endcode
     template<typename type_t>
-    static char to_char(type_t value) {
-      return static_cast<byte_t>(value);
+    static char to_char(type_t value) noexcept {
+      return static_cast<char>(value);
     }
     
     /// @brief Convert std::any to char8.
@@ -1811,8 +1817,8 @@ namespace xtd {
     /// char8_t result = convert::to_char8(value);
     /// @endcode
     template<typename type_t>
-    static char8_t to_char8(type_t value) {
-      return static_cast<byte_t>(value);
+    static char8_t to_char8(type_t value) noexcept {
+      return static_cast<char8_t>(value);
     }
     
     /// @brief Convert std::any to char16.
@@ -2178,8 +2184,8 @@ namespace xtd {
     /// char16_t result = convert::to_char16(value);
     /// @endcode
     template<typename type_t>
-    static char16_t to_char16(type_t value) {
-      return static_cast<byte_t>(value);
+    static char16_t to_char16(type_t value) noexcept {
+      return static_cast<char16_t>(value);
     }
     
     /// @brief Convert std::any to char32.
@@ -2543,8 +2549,8 @@ namespace xtd {
     /// char32_t result = convert::to_char32(value);
     /// @endcode
     template<typename type_t>
-    static char32_t to_char32(type_t value) {
-      return static_cast<byte_t>(value);
+    static char32_t to_char32(type_t value) noexcept {
+      return static_cast<char32_t>(value);
     }
     
     /// @brief Convert std::any to wchar.
@@ -2910,8 +2916,364 @@ namespace xtd {
     /// wchar_t result = convert::to_wchar(value);
     /// @endcode
     template<typename type_t>
-    static wchar_t to_wchar(type_t value) {
-      return static_cast<byte_t>(value);
+    static wchar_t to_wchar(type_t value) noexcept {
+      return static_cast<wchar_t>(value);
+    }
+    
+    /// @brief Convert std::any to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// std::any value = 42;
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(std::any value);
+    /// @brief Convert bool to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// bool value = true;
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(bool value) noexcept;
+    /// @brief Convert byte_t to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// byte_t value = 42;
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(byte_t value) noexcept;
+    /// @brief Convert char to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// char value = 'a';
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(char value) noexcept;
+    /// @brief Convert char8_t to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// char8_t value = u8'a';
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(char8_t value) noexcept;
+    /// @brief Convert char16_t to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// char16_t value = u'a';
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(char16_t value) noexcept;
+    /// @brief Convert char32_t to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// char32_t value = U'a';
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(char32_t value) noexcept;
+    /// @brief Convert char32_t to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// wchar_t value = L'a';
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(wchar_t value) noexcept;
+    /// @brief Convert decimal_t to decimal.
+    /// @param value object to convert.
+    /// @remarks The result is rounded.
+    /// @return A new decimal_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// decimal_t value = 42.50l;
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(decimal_t value) noexcept;
+    /// @brief Convert double to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @remarks The result is rounded.
+    /// @par Examples
+    /// @code
+    /// double value = 42.50;
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(double value) noexcept;
+    /// @brief Convert float to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @remarks The result is rounded.
+    /// @par Examples
+    /// @code
+    /// float value = 42.50f;
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(float value) noexcept;
+    /// @brief Convert int16_t to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// int16_t value = 42;
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(int16_t value) noexcept;
+    /// @brief Convert int32_t to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// int32_t value = 42;
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(int32_t value) noexcept;
+    /// @brief Convert int64_t to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// int64_t value = 42l;
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(int64_t value) noexcept;
+    /// @brief Convert llong_t to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// llong_t value = 42ll;
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(llong_t value) noexcept;
+    /// @brief Convert sbyte_t to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// sbyte_t value = 42;
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(sbyte_t value) noexcept;
+    /// @brief Convert uint16_t to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// uint16_t value = 42u;
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(uint16_t value) noexcept;
+    /// @brief Convert uint32_t to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// uint32_t value = 42u;
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(uint32_t value) noexcept;
+    /// @brief Convert uint64_t to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// uint64t value = 42ul;
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(uint64_t value) noexcept;
+    /// @brief Convert llong_t to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// ullong_t value = 42ull;
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(ullong_t value) noexcept;
+    /// @brief Convert string to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// ustring value = "42";
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(const xtd::ustring& value);
+    /// @brief Convert string to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// string value = "42";
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(const std::string& value);
+    /// @brief Convert string to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// u8string value = u8"42";
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(const std::u8string& value);
+    /// @brief Convert string to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// u16string value = u"42";
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(const std::u16string& value);
+    /// @brief Convert string to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// u32string value = U"42";
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(const std::u32string& value);
+    /// @brief Convert string to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// wstring value = L"42";
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(const std::wstring& value);
+    /// @brief Convert string to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char* value = "42";
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(const char* value);
+    /// @brief Convert string to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char* value = "42";
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(char* value);
+    /// @brief Convert string to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char8_t* value = u8"42";
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(const char8_t* value);
+    /// @brief Convert string to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char8_t* value = u8"42";
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(char8_t* value);
+    /// @brief Convert string to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char16_t* value = u"42";
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(const char16_t* value);
+    /// @brief Convert string to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char16_t* value = u"42";
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(char16_t* value);
+    /// @brief Convert string to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char32_t* value = U"42";
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(const char32_t* value);
+    /// @brief Convert string to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char32_t* value = U"42";
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(char32_t* value);
+    /// @brief Convert string to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const wchar_t* value = L"42";
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(const wchar_t* value);
+    /// @brief Convert string to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// wchar_t* value = L"42";
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    static decimal_t to_decimal(wchar_t* value);
+    /// @brief Convert type_t to decimal.
+    /// @param value object to convert.
+    /// @return A new decimal_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// address_family value = address_family::inter_network;
+    /// decimal_t result = convert::to_decimal(value);
+    /// @endcode
+    template<typename type_t>
+    static decimal_t to_decimal(type_t value) noexcept {
+      return static_cast<decimal_t>(value);
     }
   };
 }
