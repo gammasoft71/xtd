@@ -6711,6 +6711,676 @@ namespace xtd {
     return xtd::convert::to_double(value);
   }
 
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// std::any value = true;
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(std::any value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// bool value = true;
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(bool value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// byte_t value = 42;
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(byte_t value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char value = 'a';
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(char value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char8_t value = u8'a';
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(char8_t value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char16_t value = u'a';
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(char16_t value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char32_t value = u'a';
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(char32_t value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wchar_t value = u'a';
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(wchar_t value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// decimal_t value = 42.50l;
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(decimal_t value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// double value = 42.50;
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(double value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// float value = 42.50f;
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(float value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// int16_t value = 42;
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(int16_t value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// int32_t value = 42;
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(int32_t value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// int64_t value = 42l;
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(int64_t value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// llong_t value = 42ll;
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(llong_t value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// sbyte_t value = 42ll;
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(sbyte_t value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// uint16_t value = 42u;
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(uint16_t value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// uint32_t value = 42u;
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(uint32_t value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// uint64_t value = 42ul;
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(uint64_t value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// ullong_t value = 42ull;
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(ullong_t value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// ustring value = "42";
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(const xtd::ustring& value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// string value = "42";
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(const std::string& value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u8string value = u8"42";
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(const std::u8string& value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u16string value = u"42";
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(const std::u16string& value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u32string value = U"42";
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(const std::u32string& value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring value = L"42";
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(const std::wstring& value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// const char* value = "42";
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(const char* value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char* value = "42";
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(char* value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// const char8_t* value = u8"42";
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(const char8_t* value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char8_t* value = u8"42";
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(char8_t* value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// const char16_t* value = u"42";
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(const char16_t* value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char16_t* value = u"42";
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(char16_t* value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// const char32_t* value = U"42";
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(const char32_t* value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// char32_t* value = U"42";
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(char32_t* value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// const wchar_t* value = L"42";
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(const wchar_t* value) {
+    return xtd::convert::to_single(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::aegument_exception value does not represent a bool.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wchar_t* value = L"42";
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(wchar_t* value) {
+    return xtd::convert::to_single(value);
+  }
+
   // ___________________________________________________________________________________________
   //                                                         xtd::convert_pointer specialization
   
