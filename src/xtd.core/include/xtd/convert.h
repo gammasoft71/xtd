@@ -3275,5 +3275,361 @@ namespace xtd {
     static decimal_t to_decimal(type_t value) noexcept {
       return static_cast<decimal_t>(value);
     }
+    
+    /// @brief Convert std::any to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @par Examples
+    /// @code
+    /// std::any value = 42;
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(std::any value);
+    /// @brief Convert bool to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @par Examples
+    /// @code
+    /// bool value = true;
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(bool value) noexcept;
+    /// @brief Convert byte_t to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @par Examples
+    /// @code
+    /// byte_t value = 42;
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(byte_t value) noexcept;
+    /// @brief Convert char to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @par Examples
+    /// @code
+    /// char value = 'a';
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(char value) noexcept;
+    /// @brief Convert char8_t to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @par Examples
+    /// @code
+    /// char8_t value = u8'a';
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(char8_t value) noexcept;
+    /// @brief Convert char16_t to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @par Examples
+    /// @code
+    /// char16_t value = u'a';
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(char16_t value) noexcept;
+    /// @brief Convert char32_t to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @par Examples
+    /// @code
+    /// char32_t value = U'a';
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(char32_t value) noexcept;
+    /// @brief Convert char32_t to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @par Examples
+    /// @code
+    /// wchar_t value = L'a';
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(wchar_t value) noexcept;
+    /// @brief Convert decimal_t to double.
+    /// @param value object to convert.
+    /// @remarks The result is rounded.
+    /// @return A new double object converted from value.
+    /// @par Examples
+    /// @code
+    /// decimal_t value = 42.50l;
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(decimal_t value) noexcept;
+    /// @brief Convert double to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @remarks The result is rounded.
+    /// @par Examples
+    /// @code
+    /// double value = 42.50;
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(double value) noexcept;
+    /// @brief Convert float to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @remarks The result is rounded.
+    /// @par Examples
+    /// @code
+    /// float value = 42.50f;
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(float value) noexcept;
+    /// @brief Convert int16_t to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @par Examples
+    /// @code
+    /// int16_t value = 42;
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(int16_t value) noexcept;
+    /// @brief Convert int32_t to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @par Examples
+    /// @code
+    /// int32_t value = 42;
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(int32_t value) noexcept;
+    /// @brief Convert int64_t to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @par Examples
+    /// @code
+    /// int64_t value = 42l;
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(int64_t value) noexcept;
+    /// @brief Convert llong_t to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @par Examples
+    /// @code
+    /// llong_t value = 42ll;
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(llong_t value) noexcept;
+    /// @brief Convert sbyte_t to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @par Examples
+    /// @code
+    /// sbyte_t value = 42;
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(sbyte_t value) noexcept;
+    /// @brief Convert uint16_t to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @par Examples
+    /// @code
+    /// uint16_t value = 42u;
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(uint16_t value) noexcept;
+    /// @brief Convert uint32_t to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @par Examples
+    /// @code
+    /// uint32_t value = 42u;
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(uint32_t value) noexcept;
+    /// @brief Convert uint64_t to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @par Examples
+    /// @code
+    /// uint64t value = 42ul;
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(uint64_t value) noexcept;
+    /// @brief Convert llong_t to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @par Examples
+    /// @code
+    /// ullong_t value = 42ull;
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(ullong_t value) noexcept;
+    /// @brief Convert string to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// ustring value = "42";
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(const xtd::ustring& value);
+    /// @brief Convert string to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// string value = "42";
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(const std::string& value);
+    /// @brief Convert string to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// u8string value = u8"42";
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(const std::u8string& value);
+    /// @brief Convert string to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// u16string value = u"42";
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(const std::u16string& value);
+    /// @brief Convert string to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// u32string value = U"42";
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(const std::u32string& value);
+    /// @brief Convert string to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// wstring value = L"42";
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(const std::wstring& value);
+    /// @brief Convert string to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char* value = "42";
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(const char* value);
+    /// @brief Convert string to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char* value = "42";
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(char* value);
+    /// @brief Convert string to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char8_t* value = u8"42";
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(const char8_t* value);
+    /// @brief Convert string to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char8_t* value = u8"42";
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(char8_t* value);
+    /// @brief Convert string to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char16_t* value = u"42";
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(const char16_t* value);
+    /// @brief Convert string to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char16_t* value = u"42";
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(char16_t* value);
+    /// @brief Convert string to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char32_t* value = U"42";
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(const char32_t* value);
+    /// @brief Convert string to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char32_t* value = U"42";
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(char32_t* value);
+    /// @brief Convert string to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const wchar_t* value = L"42";
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(const wchar_t* value);
+    /// @brief Convert string to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// wchar_t* value = L"42";
+    /// double result = convert::to_double(value);
+    /// @endcode
+    static double to_double(wchar_t* value);
+    /// @brief Convert type_t to double.
+    /// @param value object to convert.
+    /// @return A new double object converted from value.
+    /// @par Examples
+    /// @code
+    /// address_family value = address_family::inter_network;
+    /// double result = convert::to_double(value);
+    /// @endcode
+    template<typename type_t>
+    static double to_double(type_t value) noexcept {
+      return static_cast<decimal_t>(value);
+    }
   };
 }

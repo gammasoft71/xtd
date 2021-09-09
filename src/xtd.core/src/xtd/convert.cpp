@@ -1500,3 +1500,151 @@ decimal_t convert::to_decimal(const wchar_t* value) {
 decimal_t convert::to_decimal(wchar_t* value) {
   return ustring::parse<decimal_t>(value);
 }
+
+double convert::to_double(any value) {
+  try {
+    return any_cast<double>(value);
+  } catch(...) {
+    throw invalid_cast_exception(csf_);
+  }
+}
+
+double convert::to_double(bool value) noexcept {
+  return static_cast<double>(value);
+}
+
+double convert::to_double(byte_t value) noexcept {
+  return static_cast<double>(value);
+}
+
+double convert::to_double(char value) noexcept {
+  return static_cast<double>(value);
+}
+
+double convert::to_double(char8_t value) noexcept {
+  return static_cast<double>(value);
+}
+
+double convert::to_double(char16_t value) noexcept {
+  return static_cast<double>(value);
+}
+
+double convert::to_double(char32_t value) noexcept {
+  return static_cast<double>(value);
+}
+
+double convert::to_double(wchar_t value) noexcept {
+  return static_cast<double>(value);
+}
+
+double convert::to_double(decimal_t value) noexcept {
+  return static_cast<double>(value);
+}
+
+double convert::to_double(double value) noexcept {
+  return value;
+}
+
+double convert::to_double(float value) noexcept {
+  return static_cast<double>(value);
+}
+
+double convert::to_double(int16_t value) noexcept {
+  return static_cast<double>(value);
+}
+
+double convert::to_double(int32_t value) noexcept {
+  return static_cast<double>(value);
+}
+
+double convert::to_double(int64_t value) noexcept {
+  return static_cast<double>(value);
+}
+
+double convert::to_double(llong_t value) noexcept {
+  return static_cast<double>(value);
+}
+
+double convert::to_double(sbyte_t value) noexcept {
+  return static_cast<double>(value);
+}
+
+double convert::to_double(uint16_t value) noexcept {
+  return static_cast<double>(value);
+}
+
+double convert::to_double(uint32_t value) noexcept {
+  return static_cast<double>(value);
+}
+
+double convert::to_double(uint64_t value) noexcept {
+  return static_cast<double>(value);
+}
+
+double convert::to_double(ullong_t value) noexcept {
+  return static_cast<double>(value);
+}
+
+double convert::to_double(const ustring& value) {
+  return ustring::parse<double>(value);
+}
+
+double convert::to_double(const string& value) {
+  return ustring::parse<double>(value);
+}
+
+double convert::to_double(const u8string& value) {
+  return ustring::parse<double>(value);
+}
+
+double convert::to_double(const u16string& value) {
+  return ustring::parse<double>(value);
+}
+
+double convert::to_double(const u32string& value) {
+  return ustring::parse<double>(value);
+}
+
+double convert::to_double(const wstring& value) {
+  return ustring::parse<double>(value);
+}
+
+double convert::to_double(const char* value) {
+  return ustring::parse<double>(value);
+}
+
+double convert::to_double(char* value) {
+  return ustring::parse<double>(value);
+}
+
+double convert::to_double(const char8_t* value) {
+  return ustring::parse<double>(value);
+}
+
+double convert::to_double(char8_t* value) {
+  return ustring::parse<double>(value);
+}
+
+double convert::to_double(const char16_t* value) {
+  return ustring::parse<double>(value);
+}
+
+double convert::to_double(char16_t* value) {
+  return ustring::parse<double>(value);
+}
+
+double convert::to_double(const char32_t* value) {
+  return ustring::parse<double>(value);
+}
+
+double convert::to_double(char32_t* value) {
+  return ustring::parse<double>(value);
+}
+
+double convert::to_double(const wchar_t* value) {
+  return ustring::parse<double>(value);
+}
+
+double convert::to_double(wchar_t* value) {
+  return ustring::parse<double>(value);
+}
