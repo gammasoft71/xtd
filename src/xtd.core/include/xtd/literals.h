@@ -42,7 +42,55 @@ namespace xtd {
   /// std::cout << "125"_b << std::endl;
   /// @endcode
   byte_t operator""_b(const char* s, size_t n);
-    
+  
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << u8"125"_b << std::endl;
+  /// @endcode
+  byte_t operator""_b(const char8_t* s, size_t n);
+  
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << u"125"_b << std::endl;
+  /// @endcode
+  byte_t operator""_b(const char16_t* s, size_t n);
+  
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << U"125"_b << std::endl;
+  /// @endcode
+  byte_t operator""_b(const char32_t* s, size_t n);
+  
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << L"125"_b << std::endl;
+  /// @endcode
+  byte_t operator""_b(const wchar_t* s, size_t n);
+
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
   /// xtd
@@ -87,6 +135,54 @@ namespace xtd {
   /// @ingroup xtd_core literals
   /// @par Examples
   /// @code
+  /// std::cout << u8"125"_d << std::endl;
+  /// @endcode
+  double operator""_d(const char8_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << u"125"_d << std::endl;
+  /// @endcode
+  double operator""_d(const char16_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << U"125"_d << std::endl;
+  /// @endcode
+  double operator""_d(const char32_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << L"125"_d << std::endl;
+  /// @endcode
+  double operator""_d(const wchar_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
   /// std::cout << 1.6_f << std::endl;
   /// @endcode
   float operator""_f(long double n);
@@ -114,6 +210,54 @@ namespace xtd {
   /// std::cout << "125"_f << std::endl;
   /// @endcode
   float operator""_f(const char* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << u8"125"_f << std::endl;
+  /// @endcode
+  float operator""_f(const char8_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << u"125"_f << std::endl;
+  /// @endcode
+  float operator""_f(const char16_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << U"125"_f << std::endl;
+  /// @endcode
+  float operator""_f(const char32_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << L"125"_f << std::endl;
+  /// @endcode
+  float operator""_f(const wchar_t* s, size_t n);
 
   /// @brief Used to convert specified value into char32._t
   /// @par Namespace
@@ -505,6 +649,54 @@ namespace xtd {
   /// @ingroup xtd_core literals
   /// @par Examples
   /// @code
+  /// std::cout << u8"125"_s8 << std::endl;
+  /// @endcode
+  int8_t operator""_s8(const char8_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << u"125"_s8 << std::endl;
+  /// @endcode
+  int8_t operator""_s8(const char16_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << U"125"_s8 << std::endl;
+  /// @endcode
+  int8_t operator""_s8(const char32_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << L"125"_s8 << std::endl;
+  /// @endcode
+  int8_t operator""_s8(const wchar_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
   /// std::cout << 1.6_s16 << std::endl;
   /// @endcode
   int16_t operator""_s16(long double n);
@@ -532,6 +724,54 @@ namespace xtd {
   /// std::cout << "125"_s16 << std::endl;
   /// @endcode
   int16_t operator""_s16(const char* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << u8"125"_s16 << std::endl;
+  /// @endcode
+  int16_t operator""_s16(const char8_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << u"125"_s16 << std::endl;
+  /// @endcode
+  int16_t operator""_s16(const char16_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << U"125"_s16 << std::endl;
+  /// @endcode
+  int16_t operator""_s16(const char32_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << L"125"_s16 << std::endl;
+  /// @endcode
+  int16_t operator""_s16(const wchar_t* s, size_t n);
 
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -577,6 +817,54 @@ namespace xtd {
   /// @ingroup xtd_core literals
   /// @par Examples
   /// @code
+  /// std::cout << u8"125"_s32 << std::endl;
+  /// @endcode
+  int32_t operator""_s32(const char8_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << u"125"_s32 << std::endl;
+  /// @endcode
+  int32_t operator""_s32(const char16_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << U"125"_s32 << std::endl;
+  /// @endcode
+  int32_t operator""_s32(const char32_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << L"125"_s32 << std::endl;
+  /// @endcode
+  int32_t operator""_s32(const wchar_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
   /// std::cout << 1.6_s64 << std::endl;
   /// @endcode
   int64_t operator""_s64(long double n);
@@ -604,6 +892,54 @@ namespace xtd {
   /// std::cout << "125"_s64 << std::endl;
   /// @endcode
   int64_t operator""_s64(const char* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << u8"125"_s64 << std::endl;
+  /// @endcode
+  int64_t operator""_s64(const char8_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << u"125"_s64 << std::endl;
+  /// @endcode
+  int64_t operator""_s64(const char16_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << U"125"_s64 << std::endl;
+  /// @endcode
+  int64_t operator""_s64(const char32_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << L"125"_s64 << std::endl;
+  /// @endcode
+  int64_t operator""_s64(const wchar_t* s, size_t n);
 
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -649,6 +985,54 @@ namespace xtd {
   /// @ingroup xtd_core literals
   /// @par Examples
   /// @code
+  /// std::cout << u8"125"_u8 << std::endl;
+  /// @endcode
+  uint8_t operator""_u8(const char8_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << u"125"_u8 << std::endl;
+  /// @endcode
+  uint8_t operator""_u8(const char16_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << U"125"_u8 << std::endl;
+  /// @endcode
+  uint8_t operator""_u8(const char32_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << L"125"_u8 << std::endl;
+  /// @endcode
+  uint8_t operator""_u8(const wchar_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
   /// std::cout << 1.6_u16 << std::endl;
   /// @endcode
   uint16_t operator""_u16(long double n);
@@ -676,6 +1060,54 @@ namespace xtd {
   /// std::cout << "125"_u16 << std::endl;
   /// @endcode
   uint16_t operator""_u16(const char* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << u8"125"_u16 << std::endl;
+  /// @endcode
+  uint16_t operator""_u16(const char8_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << u"125"_u16 << std::endl;
+  /// @endcode
+  uint16_t operator""_u16(const char16_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << U"125"_u16 << std::endl;
+  /// @endcode
+  uint16_t operator""_u16(const char32_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << L"125"_u16 << std::endl;
+  /// @endcode
+  uint16_t operator""_u16(const wchar_t* s, size_t n);
 
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -721,6 +1153,54 @@ namespace xtd {
   /// @ingroup xtd_core literals
   /// @par Examples
   /// @code
+  /// std::cout << u8"125"_u32 << std::endl;
+  /// @endcode
+  uint32_t operator""_u32(const char8_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << u"125"_u32 << std::endl;
+  /// @endcode
+  uint32_t operator""_u32(const char16_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << U"125"_u32 << std::endl;
+  /// @endcode
+  uint32_t operator""_u32(const char32_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << L"125"_u32 << std::endl;
+  /// @endcode
+  uint32_t operator""_u32(const wchar_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
   /// std::cout << 1.6_u64 << std::endl;
   /// @endcode
   uint64_t operator""_u64(long double n);
@@ -749,13 +1229,91 @@ namespace xtd {
   /// @endcode
   uint64_t operator""_u64(const char* s, size_t n);
 
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << u8"125"_u64 << std::endl;
+  /// @endcode
+  uint64_t operator""_u64(const char8_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << u"125"_u64 << std::endl;
+  /// @endcode
+  uint64_t operator""_u64(const char16_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << U"125"_u64 << std::endl;
+  /// @endcode
+  uint64_t operator""_u64(const char32_t* s, size_t n);
+
+  /// @brief Used to convert specified value into byte.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << L"125"_u64 << std::endl;
+  /// @endcode
+  uint64_t operator""_u64(const wchar_t* s, size_t n);
+
+  /// @brief Used to translate specified string into locale.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals translate
   const char* operator""_t(const char* s, size_t n);
   
+  /// @brief Used to translate specified string into locale.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals translate
   xtd::ustring operator""_t(const char8_t* s, size_t n);
   
+  /// @brief Used to translate specified string into locale.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals translate
   xtd::ustring operator""_t(const char16_t* s, size_t n);
   
+  /// @brief Used to translate specified string into locale.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals translate
   xtd::ustring operator""_t(const char32_t* s, size_t n);
   
+  /// @brief Used to translate specified string into locale.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals translate
   xtd::ustring operator""_t(const wchar_t* s, size_t n);
 }
