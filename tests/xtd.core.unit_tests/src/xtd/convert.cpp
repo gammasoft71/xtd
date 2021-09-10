@@ -3418,9 +3418,9 @@ namespace unit_tests {
     }
 
     void test_method_(to_int64_from_any) {
-      any value = 42ll;
+      any value = static_cast<int64_t>(42);
       assert::are_equal(42l, convert::to_int64(value), csf_);
-      value = 0ll;
+      value = static_cast<int64_t>(0);
       assert::is_zero(convert::to_int64(value), csf_);
     }
     
