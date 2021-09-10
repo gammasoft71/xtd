@@ -3046,3 +3046,159 @@ uint64_t convert::to_uint64(const wchar_t* value) {
 uint64_t convert::to_uint64(wchar_t* value) {
   return ustring::parse<uint64_t>(value);
 }
+
+ullong_t convert::to_ullong(any value) {
+  try {
+    return any_cast<ullong_t>(value);
+  } catch(...) {
+    throw invalid_cast_exception(csf_);
+  }
+}
+
+ullong_t convert::to_ullong(bool value) noexcept {
+  return static_cast<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(byte_t value) noexcept {
+  return static_cast<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(char value) noexcept {
+  return static_cast<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(char8_t value) noexcept {
+  return static_cast<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(char16_t value) noexcept {
+  return static_cast<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(char32_t value) noexcept {
+  return static_cast<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(wchar_t value) noexcept {
+  return static_cast<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(decimal_t value) {
+  if (value < static_cast<decimal_t>(numeric_limits<ullong_t>::min()) || value > static_cast<decimal_t>(numeric_limits<ullong_t>::max())) throw overflow_exception(csf_);
+  return static_cast<ullong_t>(round(value));
+}
+
+ullong_t convert::to_ullong(double value) {
+  if (value < static_cast<double>(numeric_limits<ullong_t>::min())) throw overflow_exception(csf_);
+  return static_cast<ullong_t>(round(value));
+}
+
+ullong_t convert::to_ullong(float value) {
+  if (value < static_cast<float>(numeric_limits<ullong_t>::min())) throw overflow_exception(csf_);
+  return static_cast<ullong_t>(round(value));
+}
+
+ullong_t convert::to_ullong(int16_t value) {
+  if (value < static_cast<int16_t>(numeric_limits<ullong_t>::min())) throw overflow_exception(csf_);
+  return static_cast<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(int32_t value) {
+  if (value < static_cast<int32_t>(numeric_limits<ullong_t>::min())) throw overflow_exception(csf_);
+  return static_cast<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(int64_t value) {
+  if (value < static_cast<int64_t>(numeric_limits<ullong_t>::min())) throw overflow_exception(csf_);
+  return static_cast<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(llong_t value) {
+  if (value < static_cast<llong_t>(numeric_limits<ullong_t>::min())) throw overflow_exception(csf_);
+  return static_cast<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(sbyte_t value) {
+  if (value < static_cast<sbyte_t>(numeric_limits<ullong_t>::min())) throw overflow_exception(csf_);
+  return static_cast<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(uint16_t value) noexcept {
+  return static_cast<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(uint32_t value) noexcept {
+  return static_cast<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(uint64_t value) noexcept {
+  return static_cast<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(ullong_t value) noexcept {
+  return value;
+}
+
+ullong_t convert::to_ullong(const ustring& value) {
+  return ustring::parse<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(const string& value) {
+  return ustring::parse<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(const u8string& value) {
+  return ustring::parse<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(const u16string& value) {
+  return ustring::parse<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(const u32string& value) {
+  return ustring::parse<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(const wstring& value) {
+  return ustring::parse<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(const char* value) {
+  return ustring::parse<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(char* value) {
+  return ustring::parse<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(const char8_t* value) {
+  return ustring::parse<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(char8_t* value) {
+  return ustring::parse<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(const char16_t* value) {
+  return ustring::parse<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(char16_t* value) {
+  return ustring::parse<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(const char32_t* value) {
+  return ustring::parse<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(char32_t* value) {
+  return ustring::parse<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(const wchar_t* value) {
+  return ustring::parse<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(wchar_t* value) {
+  return ustring::parse<ullong_t>(value);
+}
