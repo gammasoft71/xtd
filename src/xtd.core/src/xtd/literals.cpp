@@ -1,5 +1,4 @@
 #include "../../include/xtd/as.h"
-#include "../../include/xtd/parse.h"
 #include "../../include/xtd/translator.h"
 
 using namespace std;
@@ -402,23 +401,23 @@ uint64_t xtd::operator""_u64(unsigned long long n) {
 }
 
 uint64_t xtd::operator""_u64(const char* s, size_t n) {
-  return parse<uint64_t>(ustring(s, s + n));
+  return as<uint64_t>(ustring(s, s + n));
 }
 
 uint64_t xtd::operator""_u64(const char8_t* s, size_t n) {
-  return parse<uint64_t>(ustring(s, s + n));
+  return as<uint64_t>(ustring(s, s + n));
 }
 
 uint64_t xtd::operator""_u64(const char16_t* s, size_t n) {
-  return parse<uint64_t>(u16string(s, s + n));
+  return as<uint64_t>(u16string(s, s + n));
 }
 
 uint64_t xtd::operator""_u64(const char32_t* s, size_t n) {
-  return parse<uint64_t>(u32string(s, s + n));
+  return as<uint64_t>(u32string(s, s + n));
 }
 
 uint64_t xtd::operator""_u64(const wchar_t* s, size_t n) {
-  return parse<uint64_t>(wstring(s, s + n));
+  return as<uint64_t>(wstring(s, s + n));
 }
 
 const char* xtd::operator""_t(const char* s, size_t n) {
