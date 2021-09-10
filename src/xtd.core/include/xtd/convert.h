@@ -6902,5 +6902,369 @@ namespace xtd {
     static uint64_t to_uint64(type_t value) noexcept {
       return static_cast<uint64_t>(value);
     }
+    
+    /// @brief Convert std::any to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// std::any value = 42;
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(std::any value);
+    /// @brief Convert bool to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// bool value = true;
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(bool value) noexcept;
+    /// @brief Convert byte_t to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// byte_t value = 42;
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(byte_t value) noexcept;
+    /// @brief Convert char to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// char value = 'a';
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(char value) noexcept;
+    /// @brief Convert char8_t to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// char8_t value = u8'a';
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(char8_t value) noexcept;
+    /// @brief Convert char16_t to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// char16_t value = u'a';
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(char16_t value) noexcept;
+    /// @brief Convert char32_t to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// char32_t value = U'a';
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(char32_t value) noexcept;
+    /// @brief Convert char32_t to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// wchar_t value = L'a';
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(wchar_t value) noexcept;
+    /// @brief Convert decimal_t to ullong.
+    /// @param value object to convert.
+    /// @remarks The result is rounded.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @return A new ullong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// decimal_t value = 42.50l;
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(decimal_t value);
+    /// @brief Convert double to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @remarks The result is rounded.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @par Examples
+    /// @code
+    /// double value = 42.50;
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(double value);
+    /// @brief Convert float to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @remarks The result is rounded.
+    /// @par Examples
+    /// @code
+    /// float value = 42.50f;
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(float value);
+    /// @brief Convert int16_t to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @par Examples
+    /// @code
+    /// int16_t value = 42;
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(int16_t value);
+    /// @brief Convert int32_t to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @par Examples
+    /// @code
+    /// int32_t value = 42;
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(int32_t value);
+    /// @brief Convert int64_t to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @par Examples
+    /// @code
+    /// int64_t value = 42l;
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(int64_t value);
+    /// @brief Convert llong_t to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @par Examples
+    /// @code
+    /// llong_t value = 42ll;
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(llong_t value);
+    /// @brief Convert sbyte_t to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @par Examples
+    /// @code
+    /// sbyte_t value = 42;
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(sbyte_t value);
+    /// @brief Convert uint16_t to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// uint16_t value = 42u;
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(uint16_t value) noexcept;
+    /// @brief Convert uint32_t to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// uint32_t value = 42u;
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(uint32_t value) noexcept;
+    /// @brief Convert uint64_t to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @par Examples
+    /// @code
+    /// uint64t value = 42ul;
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(uint64_t value) noexcept;
+    /// @brief Convert llong_t to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// ullong_t value = 42ull;
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(ullong_t value) noexcept;
+    /// @brief Convert string to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// ustring value = "42";
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(const xtd::ustring& value);
+    /// @brief Convert string to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// string value = "42";
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(const std::string& value);
+    /// @brief Convert string to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// u8string value = u8"42";
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(const std::u8string& value);
+    /// @brief Convert string to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// u16string value = u"42";
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(const std::u16string& value);
+    /// @brief Convert string to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// u32string value = U"42";
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(const std::u32string& value);
+    /// @brief Convert string to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// wstring value = L"42";
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(const std::wstring& value);
+    /// @brief Convert string to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char* value = "42";
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(const char* value);
+    /// @brief Convert string to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char* value = "42";
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(char* value);
+    /// @brief Convert string to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char8_t* value = u8"42";
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(const char8_t* value);
+    /// @brief Convert string to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char8_t* value = u8"42";
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(char8_t* value);
+    /// @brief Convert string to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char16_t* value = u"42";
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(const char16_t* value);
+    /// @brief Convert string to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char16_t* value = u"42";
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(char16_t* value);
+    /// @brief Convert string to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const char32_t* value = U"42";
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(const char32_t* value);
+    /// @brief Convert string to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// char32_t* value = U"42";
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(char32_t* value);
+    /// @brief Convert string to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// const wchar_t* value = L"42";
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(const wchar_t* value);
+    /// @brief Convert string to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @par Examples
+    /// @code
+    /// wchar_t* value = L"42";
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    static ullong_t to_ullong(wchar_t* value);
+    /// @brief Convert type_t to ullong.
+    /// @param value object to convert.
+    /// @return A new ullong_t object converted from value.
+    /// @par Examples
+    /// @code
+    /// address_family value = address_family::inter_network;
+    /// ullong_t result = convert::to_ullong(value);
+    /// @endcode
+    template<typename type_t>
+    static ullong_t to_ullong(type_t value) noexcept {
+      return static_cast<uint64_t>(value);
+    }
   };
 }
