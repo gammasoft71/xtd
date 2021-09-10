@@ -12,7 +12,8 @@ add_sources(
   include/xtd/xtd
   include/xtd/xtd.h
   src/xtd/system_report.cpp
-  include/doxygen/cmake_page.dox
+  include/doxygen/cmake_build_options_page.dox
+  include/doxygen/cmake_commands_page.dox
   include/doxygen/controls_appearances_page.dox
   include/doxygen/cursors_appearances_page.dox
   include/doxygen/dialogs_appearances_page.dox
