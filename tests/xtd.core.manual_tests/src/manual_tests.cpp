@@ -118,15 +118,11 @@ public:
 
 using namespace std;
 using namespace xtd;
-using namespace xtd::io;
-using namespace xtd::net;
-using namespace xtd::security;
 
 class xtd_core_manual_test : public object {
 public:
   static void main() {
     console::write_line("Hello, World!");
-    console::write_line("{}", numeric_limits<int64_t>::max());
   }
 };
 

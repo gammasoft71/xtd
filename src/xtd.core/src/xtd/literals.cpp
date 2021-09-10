@@ -374,23 +374,23 @@ uint32_t xtd::operator""_u32(unsigned long long n) {
 }
 
 uint32_t xtd::operator""_u32(const char* s, size_t n) {
-  return parse<uint32_t>(ustring(s, s + n));
+  return as<uint32_t>(ustring(s, s + n));
 }
 
 uint32_t xtd::operator""_u32(const char8_t* s, size_t n) {
-  return parse<uint32_t>(ustring(s, s + n));
+  return as<uint32_t>(ustring(s, s + n));
 }
 
 uint32_t xtd::operator""_u32(const char16_t* s, size_t n) {
-  return parse<uint32_t>(u16string(s, s + n));
+  return as<uint32_t>(u16string(s, s + n));
 }
 
 uint32_t xtd::operator""_u32(const char32_t* s, size_t n) {
-  return parse<uint32_t>(u32string(s, s + n));
+  return as<uint32_t>(u32string(s, s + n));
 }
 
 uint32_t xtd::operator""_u32(const wchar_t* s, size_t n) {
-  return parse<uint32_t>(wstring(s, s + n));
+  return as<uint32_t>(wstring(s, s + n));
 }
 
 uint64_t xtd::operator""_u64(long double n) {
