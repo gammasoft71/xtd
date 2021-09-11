@@ -626,6 +626,14 @@ namespace unit_tests {
       assert::throws<argument_exception>([&]{convert::to_byte(value);}, csf_);
     }
     
+    void test_method_(to_byte_from_ustring_with_base) {
+      assert::are_equal(42u, convert::to_byte("0b101010", 2), csf_);
+      assert::are_equal(42u, convert::to_byte(u8"052", 8), csf_);
+      assert::are_equal(42u, convert::to_byte(u"42", 10), csf_);
+      assert::are_equal(42u, convert::to_byte(U"2A", 16), csf_);
+      assert::throws<argument_exception>([&]{convert::to_byte(L"42", 4);}, csf_);
+    }
+
     void test_method_(to_byte_from_string) {
       string value = "42";
       assert::are_equal(42u, convert::to_byte(value), csf_);
@@ -3045,6 +3053,14 @@ namespace unit_tests {
       assert::throws<argument_exception>([&]{convert::to_int16(value);}, csf_);
     }
     
+    void test_method_(to_int16_from_ustring_with_base) {
+      assert::are_equal(42, convert::to_int16("0b101010", 2), csf_);
+      assert::are_equal(42, convert::to_int16(u8"052", 8), csf_);
+      assert::are_equal(42, convert::to_int16(u"42", 10), csf_);
+      assert::are_equal(42, convert::to_int16(U"2A", 16), csf_);
+      assert::throws<argument_exception>([&]{convert::to_int16(L"42", 4);}, csf_);
+    }
+
     void test_method_(to_int16_from_string) {
       string value = "42";
       assert::are_equal(42, convert::to_int16(value), csf_);
@@ -3320,6 +3336,14 @@ namespace unit_tests {
       assert::throws<argument_exception>([&]{convert::to_int32(value);}, csf_);
     }
     
+    void test_method_(to_int32_from_ustring_with_base) {
+      assert::are_equal(42, convert::to_int32("0b101010", 2), csf_);
+      assert::are_equal(42, convert::to_int32(u8"052", 8), csf_);
+      assert::are_equal(42, convert::to_int32(u"42", 10), csf_);
+      assert::are_equal(42, convert::to_int32(U"2A", 16), csf_);
+      assert::throws<argument_exception>([&]{convert::to_int32(L"42", 4);}, csf_);
+    }
+
     void test_method_(to_int32_from_string) {
       string value = "42";
       assert::are_equal(42, convert::to_int32(value), csf_);
@@ -3585,6 +3609,14 @@ namespace unit_tests {
       assert::throws<argument_exception>([&]{convert::to_int64(value);}, csf_);
     }
     
+    void test_method_(to_int64_from_ustring_with_base) {
+      assert::are_equal(42, convert::to_int64("0b101010", 2), csf_);
+      assert::are_equal(42, convert::to_int64(u8"052", 8), csf_);
+      assert::are_equal(42, convert::to_int64(u"42", 10), csf_);
+      assert::are_equal(42, convert::to_int64(U"2A", 16), csf_);
+      assert::throws<argument_exception>([&]{convert::to_int64(L"42", 4);}, csf_);
+    }
+
     void test_method_(to_int64_from_string) {
       string value = "42";
       assert::are_equal(42l, convert::to_int64(value), csf_);
@@ -3852,6 +3884,14 @@ namespace unit_tests {
       assert::throws<argument_exception>([&]{convert::to_llong(value);}, csf_);
     }
     
+    void test_method_(to_llong_from_ustring_with_base) {
+      assert::are_equal(42, convert::to_llong("0b101010", 2), csf_);
+      assert::are_equal(42, convert::to_llong(u8"052", 8), csf_);
+      assert::are_equal(42, convert::to_llong(u"42", 10), csf_);
+      assert::are_equal(42, convert::to_llong(U"2A", 16), csf_);
+      assert::throws<argument_exception>([&]{convert::to_llong(L"42", 4);}, csf_);
+    }
+
     void test_method_(to_llong_from_string) {
       string value = "42";
       assert::are_equal(42ll, convert::to_llong(value), csf_);
@@ -4143,6 +4183,14 @@ namespace unit_tests {
       assert::throws<argument_exception>([&]{convert::to_sbyte(value);}, csf_);
     }
     
+    void test_method_(to_sbyte_from_ustring_with_base) {
+      assert::are_equal(42, convert::to_sbyte("0b101010", 2), csf_);
+      assert::are_equal(42, convert::to_sbyte(u8"052", 8), csf_);
+      assert::are_equal(42, convert::to_sbyte(u"42", 10), csf_);
+      assert::are_equal(42, convert::to_sbyte(U"2A", 16), csf_);
+      assert::throws<argument_exception>([&]{convert::to_sbyte(L"42", 4);}, csf_);
+    }
+
     void test_method_(to_sbyte_from_string) {
       string value = "42";
       assert::are_equal(42, convert::to_sbyte(value), csf_);
@@ -4426,6 +4474,14 @@ namespace unit_tests {
       assert::throws<argument_exception>([&]{convert::to_uint16(value);}, csf_);
     }
     
+    void test_method_(to_uint16_from_ustring_with_base) {
+      assert::are_equal(42u, convert::to_uint16("0b101010", 2), csf_);
+      assert::are_equal(42u, convert::to_uint16(u8"052", 8), csf_);
+      assert::are_equal(42u, convert::to_uint16(u"42", 10), csf_);
+      assert::are_equal(42u, convert::to_uint16(U"2A", 16), csf_);
+      assert::throws<argument_exception>([&]{convert::to_uint16(L"42", 4);}, csf_);
+    }
+
     void test_method_(to_uint16_from_string) {
       string value = "42";
       assert::are_equal(42u, convert::to_uint16(value), csf_);
@@ -4701,6 +4757,14 @@ namespace unit_tests {
       assert::throws<argument_exception>([&]{convert::to_uint32(value);}, csf_);
     }
     
+    void test_method_(to_uint32_from_ustring_with_base) {
+      assert::are_equal(42u, convert::to_uint32("0b101010", 2), csf_);
+      assert::are_equal(42u, convert::to_uint32(u8"052", 8), csf_);
+      assert::are_equal(42u, convert::to_uint32(u"42", 10), csf_);
+      assert::are_equal(42u, convert::to_uint32(U"2A", 16), csf_);
+      assert::throws<argument_exception>([&]{convert::to_uint32(L"42", 4);}, csf_);
+    }
+
     void test_method_(to_uint32_from_string) {
       string value = "42";
       assert::are_equal(42u, convert::to_uint32(value), csf_);
@@ -4964,6 +5028,14 @@ namespace unit_tests {
       assert::throws<argument_exception>([&]{convert::to_uint64(value);}, csf_);
     }
     
+    void test_method_(to_uint64_from_ustring_with_base) {
+      assert::are_equal(42u, convert::to_uint64("0b101010", 2), csf_);
+      assert::are_equal(42u, convert::to_uint64(u8"052", 8), csf_);
+      assert::are_equal(42u, convert::to_uint64(u"42", 10), csf_);
+      assert::are_equal(42u, convert::to_uint64(U"2A", 16), csf_);
+      assert::throws<argument_exception>([&]{convert::to_uint64(L"42", 4);}, csf_);
+    }
+
     void test_method_(to_uint64_from_string) {
       string value = "42";
       assert::are_equal(42u, convert::to_uint64(value), csf_);
@@ -5227,6 +5299,14 @@ namespace unit_tests {
       assert::throws<argument_exception>([&]{convert::to_ullong(value);}, csf_);
     }
     
+    void test_method_(to_ullong_from_ustring_with_base) {
+      assert::are_equal(42u, convert::to_ullong("0b101010", 2), csf_);
+      assert::are_equal(42u, convert::to_ullong(u8"052", 8), csf_);
+      assert::are_equal(42u, convert::to_ullong(u"42", 10), csf_);
+      assert::are_equal(42u, convert::to_ullong(U"2A", 16), csf_);
+      assert::throws<argument_exception>([&]{convert::to_ullong(L"42", 4);}, csf_);
+    }
+
     void test_method_(to_ullong_from_string) {
       string value = "42";
       assert::are_equal(42llu, convert::to_ullong(value), csf_);

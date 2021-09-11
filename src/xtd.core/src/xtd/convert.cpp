@@ -1,4 +1,5 @@
 #include <cmath>
+#include "../../include/xtd/argument_exception.h"
 #include "../../include/xtd/format_exception.h"
 #include "../../include/xtd/invalid_cast_exception.h"
 #include "../../include/xtd/overflow_exception.h"
@@ -399,6 +400,16 @@ byte_t convert::to_byte(ullong_t value) {
 
 byte_t convert::to_byte(const ustring& value) {
   return ustring::parse<byte_t>(value);
+}
+
+byte_t convert::to_byte(const ustring& value, byte_t from_base) {
+  switch (from_base) {
+    case 2: return parse<byte_t>(value, number_styles::binary_number); break;
+    case 8: return parse<byte_t>(value, number_styles::octal_number); break;
+    case 10: return parse<byte_t>(value, number_styles::integer); break;
+    case 16: return parse<byte_t>(value, number_styles::hex_number); break;
+    default: throw argument_exception(csf_);
+  }
 }
 
 byte_t convert::to_byte(const string& value) {
@@ -1896,6 +1907,16 @@ int16_t convert::to_int16(const ustring& value) {
   return ustring::parse<int16_t>(value);
 }
 
+int16_t convert::to_int16(const ustring& value, byte_t from_base) {
+  switch (from_base) {
+    case 2: return parse<int16_t>(value, number_styles::binary_number); break;
+    case 8: return parse<int16_t>(value, number_styles::octal_number); break;
+    case 10: return parse<int16_t>(value, number_styles::integer); break;
+    case 16: return parse<int16_t>(value, number_styles::hex_number); break;
+    default: throw argument_exception(csf_);
+  }
+}
+
 int16_t convert::to_int16(const string& value) {
   return ustring::parse<int16_t>(value);
 }
@@ -2051,6 +2072,16 @@ int32_t convert::to_int32(const ustring& value) {
   return ustring::parse<int32_t>(value);
 }
 
+int32_t convert::to_int32(const ustring& value, byte_t from_base) {
+  switch (from_base) {
+    case 2: return parse<int32_t>(value, number_styles::binary_number); break;
+    case 8: return parse<int32_t>(value, number_styles::octal_number); break;
+    case 10: return parse<int32_t>(value, number_styles::integer); break;
+    case 16: return parse<int32_t>(value, number_styles::hex_number); break;
+    default: throw argument_exception(csf_);
+  }
+}
+
 int32_t convert::to_int32(const string& value) {
   return ustring::parse<int32_t>(value);
 }
@@ -2201,6 +2232,16 @@ int64_t convert::to_int64(const ustring& value) {
   return ustring::parse<int64_t>(value);
 }
 
+int64_t convert::to_int64(const ustring& value, byte_t from_base) {
+  switch (from_base) {
+    case 2: return parse<int64_t>(value, number_styles::binary_number); break;
+    case 8: return parse<int64_t>(value, number_styles::octal_number); break;
+    case 10: return parse<int64_t>(value, number_styles::integer); break;
+    case 16: return parse<int64_t>(value, number_styles::hex_number); break;
+    default: throw argument_exception(csf_);
+  }
+}
+
 int64_t convert::to_int64(const string& value) {
   return ustring::parse<int64_t>(value);
 }
@@ -2349,6 +2390,16 @@ llong_t convert::to_llong(ullong_t value) {
 
 llong_t convert::to_llong(const ustring& value) {
   return ustring::parse<llong_t>(value);
+}
+
+llong_t convert::to_llong(const ustring& value, byte_t from_base) {
+  switch (from_base) {
+    case 2: return parse<llong_t>(value, number_styles::binary_number); break;
+    case 8: return parse<llong_t>(value, number_styles::octal_number); break;
+    case 10: return parse<llong_t>(value, number_styles::integer); break;
+    case 16: return parse<llong_t>(value, number_styles::hex_number); break;
+    default: throw argument_exception(csf_);
+  }
 }
 
 llong_t convert::to_llong(const string& value) {
@@ -2513,6 +2564,16 @@ sbyte_t convert::to_sbyte(const ustring& value) {
   return ustring::parse<sbyte_t>(value);
 }
 
+sbyte_t convert::to_sbyte(const ustring& value, byte_t from_base) {
+  switch (from_base) {
+    case 2: return parse<sbyte_t>(value, number_styles::binary_number); break;
+    case 8: return parse<sbyte_t>(value, number_styles::octal_number); break;
+    case 10: return parse<sbyte_t>(value, number_styles::integer); break;
+    case 16: return parse<sbyte_t>(value, number_styles::hex_number); break;
+    default: throw argument_exception(csf_);
+  }
+}
+
 sbyte_t convert::to_sbyte(const string& value) {
   return ustring::parse<sbyte_t>(value);
 }
@@ -2673,6 +2734,16 @@ uint16_t convert::to_uint16(const ustring& value) {
   return ustring::parse<uint16_t>(value);
 }
 
+uint16_t convert::to_uint16(const ustring& value, byte_t from_base) {
+  switch (from_base) {
+    case 2: return parse<uint16_t>(value, number_styles::binary_number); break;
+    case 8: return parse<uint16_t>(value, number_styles::octal_number); break;
+    case 10: return parse<uint16_t>(value, number_styles::integer); break;
+    case 16: return parse<uint16_t>(value, number_styles::hex_number); break;
+    default: throw argument_exception(csf_);
+  }
+}
+
 uint16_t convert::to_uint16(const string& value) {
   return ustring::parse<uint16_t>(value);
 }
@@ -2829,6 +2900,16 @@ uint32_t convert::to_uint32(ullong_t value) {
 
 uint32_t convert::to_uint32(const ustring& value) {
   return ustring::parse<uint32_t>(value);
+}
+
+uint32_t convert::to_uint32(const ustring& value, byte_t from_base) {
+  switch (from_base) {
+    case 2: return parse<uint32_t>(value, number_styles::binary_number); break;
+    case 8: return parse<uint32_t>(value, number_styles::octal_number); break;
+    case 10: return parse<uint32_t>(value, number_styles::integer); break;
+    case 16: return parse<uint32_t>(value, number_styles::hex_number); break;
+    default: throw argument_exception(csf_);
+  }
 }
 
 uint32_t convert::to_uint32(const string& value) {
@@ -2991,6 +3072,16 @@ uint64_t convert::to_uint64(const string& value) {
   return ustring::parse<uint64_t>(value);
 }
 
+uint64_t convert::to_uint64(const ustring& value, byte_t from_base) {
+  switch (from_base) {
+    case 2: return parse<uint64_t>(value, number_styles::binary_number); break;
+    case 8: return parse<uint64_t>(value, number_styles::octal_number); break;
+    case 10: return parse<uint64_t>(value, number_styles::integer); break;
+    case 16: return parse<uint64_t>(value, number_styles::hex_number); break;
+    default: throw argument_exception(csf_);
+  }
+}
+
 uint64_t convert::to_uint64(const u8string& value) {
   return ustring::parse<uint64_t>(value);
 }
@@ -3141,6 +3232,16 @@ ullong_t convert::to_ullong(ullong_t value) noexcept {
 
 ullong_t convert::to_ullong(const ustring& value) {
   return ustring::parse<ullong_t>(value);
+}
+
+ullong_t convert::to_ullong(const ustring& value, byte_t from_base) {
+  switch (from_base) {
+    case 2: return parse<ullong_t>(value, number_styles::binary_number); break;
+    case 8: return parse<ullong_t>(value, number_styles::octal_number); break;
+    case 10: return parse<ullong_t>(value, number_styles::integer); break;
+    case 16: return parse<ullong_t>(value, number_styles::hex_number); break;
+    default: throw argument_exception(csf_);
+  }
 }
 
 ullong_t convert::to_ullong(const string& value) {
