@@ -204,141 +204,23 @@ namespace xtd {
     /// any result = convert::to_any(value);
     /// @endcode
     static std::any to_any(const xtd::ustring& value) noexcept;
-    /// @brief Convert string to std::any.
-    /// @param value object to convert.
-    /// @return A new std::any object converted from value.
-    /// @par Examples
-    /// @code
-    /// string value = "42";
-    /// any result = convert::to_any(value);
-    /// @endcode
+    /// @cond
     static std::any to_any(const std::string& value) noexcept;
-    /// @brief Convert string to std::any.
-    /// @param value object to convert.
-    /// @return A new std::any object converted from value.
-    /// @par Examples
-    /// @code
-    /// u8string value = u8"42";
-    /// any result = convert::to_any(value);
-    /// @endcode
     static std::any to_any(const std::u8string& value) noexcept;
-    /// @brief Convert string to std::any.
-    /// @param value object to convert.
-    /// @return A new std::any object converted from value.
-    /// @par Examples
-    /// @code
-    /// u16string value = u"42";
-    /// any result = convert::to_any(value);
-    /// @endcode
     static std::any to_any(const std::u16string& value) noexcept;
-    /// @brief Convert string to std::any.
-    /// @param value object to convert.
-    /// @return A new std::any object converted from value.
-    /// @par Examples
-    /// @code
-    /// u32string value = U"42";
-    /// any result = convert::to_any(value);
-    /// @endcode
     static std::any to_any(const std::u32string& value) noexcept;
-    /// @brief Convert string to std::any.
-    /// @param value object to convert.
-    /// @return A new std::any object converted from value.
-    /// @par Examples
-    /// @code
-    /// wstring value = L"42";
-    /// any result = convert::to_any(value);
-    /// @endcode
     static std::any to_any(const std::wstring& value) noexcept;
-    /// @brief Convert string to std::any.
-    /// @param value object to convert.
-    /// @return A new std::any object converted from value.
-    /// @par Examples
-    /// @code
-    /// const char* value = "42";
-    /// any result = convert::to_any(value);
-    /// @endcode
     static std::any to_any(const char* value) noexcept;
-    /// @brief Convert string to std::any.
-    /// @param value object to convert.
-    /// @return A new std::any object converted from value.
-    /// @par Examples
-    /// @code
-    /// char* value = "42";
-    /// any result = convert::to_any(value);
-    /// @endcode
     static std::any to_any(char* value) noexcept;
-    /// @brief Convert string to std::any.
-    /// @param value object to convert.
-    /// @return A new std::any object converted from value.
-    /// @par Examples
-    /// @code
-    /// const char8_t* value = u8"42";
-    /// any result = convert::to_any(value);
-    /// @endcode
     static std::any to_any(const char8_t* value);
-    /// @brief Convert string to std::any.
-    /// @param value object to convert.
-    /// @return A new std::any object converted from value.
-    /// @par Examples
-    /// @code
-    /// char8_t* value = u8"42";
-    /// any result = convert::to_any(value);
-    /// @endcode
     static std::any to_any(char8_t* value);
-    /// @brief Convert string to std::any.
-    /// @param value object to convert.
-    /// @return A new std::any object converted from value.
-    /// @par Examples
-    /// @code
-    /// const char16_t* value = u"42";
-    /// any result = convert::to_any(value);
-    /// @endcode
     static std::any to_any(const char16_t* value) noexcept;
-    /// @brief Convert string to std::any.
-    /// @param value object to convert.
-    /// @return A new std::any object converted from value.
-    /// @par Examples
-    /// @code
-    /// char16_t* value = u"42";
-    /// any result = convert::to_any(value);
-    /// @endcode
     static std::any to_any(char16_t* value) noexcept;
-    /// @brief Convert string to std::any.
-    /// @param value object to convert.
-    /// @return A new std::any object converted from value.
-    /// @par Examples
-    /// @code
-    /// const char32_t* value = U"42";
-    /// any result = convert::to_any(value);
-    /// @endcode
     static std::any to_any(const char32_t* value) noexcept;
-    /// @brief Convert string to std::any.
-    /// @param value object to convert.
-    /// @return A new std::any object converted from value.
-    /// @par Examples
-    /// @code
-    /// char32_t* value = U"42";
-    /// any result = convert::to_any(value);
-    /// @endcode
     static std::any to_any(char32_t* value) noexcept;
-    /// @brief Convert string to std::any.
-    /// @param value object to convert.
-    /// @return A new std::any object converted from value.
-    /// @par Examples
-    /// @code
-    /// const wchar_t* value = L"42";
-    /// any result = convert::to_any(value);
-    /// @endcode
     static std::any to_any(const wchar_t* value) noexcept;
-    /// @brief Convert string to std::any.
-    /// @param value object to convert.
-    /// @return A new std::any object converted from value.
-    /// @par Examples
-    /// @code
-    /// wchar_t* value = L"42";
-    /// any result = convert::to_any(value);
-    /// @endcode
     static std::any to_any(wchar_t* value) noexcept;
+    /// @endcond
     /// @brief Convert type_t to bool.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
@@ -547,156 +429,23 @@ namespace xtd {
     /// bool result = convert::to_boolean(value);
     /// @endcode
     static bool to_boolean(const xtd::ustring& value);
-    /// @brief Convert string to bool.
-    /// @param value object to convert.
-    /// @return A new bool object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a bool.
-    /// @par Examples
-    /// @code
-    /// string value = "42";
-    /// bool result = convert::to_boolean(value);
-    /// @endcode
+    /// @cond
     static bool to_boolean(const std::string& value);
-    /// @brief Convert string to bool.
-    /// @param value object to convert.
-    /// @return A new bool object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a bool.
-    /// @par Examples
-    /// @code
-    /// u8string value = u8"42";
-    /// bool result = convert::to_boolean(value);
-    /// @endcode
     static bool to_boolean(const std::u8string& value);
-    /// @brief Convert string to bool.
-    /// @param value object to convert.
-    /// @return A new bool object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a bool.
-    /// @par Examples
-    /// @code
-    /// u16string value = u"42";
-    /// bool result = convert::to_boolean(value);
-    /// @endcode
     static bool to_boolean(const std::u16string& value);
-    /// @brief Convert string to bool.
-    /// @param value object to convert.
-    /// @return A new bool object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a bool.
-    /// @par Examples
-    /// @code
-    /// u32string value = U"42";
-    /// bool result = convert::to_boolean(value);
-    /// @endcode
     static bool to_boolean(const std::u32string& value);
-    /// @brief Convert string to bool.
-    /// @param value object to convert.
-    /// @return A new bool object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a bool.
-    /// @par Examples
-    /// @code
-    /// wstring value = L"42";
-    /// bool result = convert::to_boolean(value);
-    /// @endcode
     static bool to_boolean(const std::wstring& value);
-    /// @brief Convert string to bool.
-    /// @param value object to convert.
-    /// @return A new bool object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a bool.
-    /// @par Examples
-    /// @code
-    /// const char* value = "42";
-    /// bool result = convert::to_boolean(value);
-    /// @endcode
     static bool to_boolean(const char* value);
-    /// @brief Convert string to bool.
-    /// @param value object to convert.
-    /// @return A new bool object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a bool.
-    /// @par Examples
-    /// @code
-    /// char* value = "42";
-    /// bool result = convert::to_boolean(value);
-    /// @endcode
     static bool to_boolean(char* value);
-    /// @brief Convert string to bool.
-    /// @param value object to convert.
-    /// @return A new bool object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a bool.
-    /// @par Examples
-    /// @code
-    /// const char8_t* value = u8"42";
-    /// bool result = convert::to_boolean(value);
-    /// @endcode
     static bool to_boolean(const char8_t* value);
-    /// @brief Convert string to bool.
-    /// @param value object to convert.
-    /// @return A new bool object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a bool.
-    /// @par Examples
-    /// @code
-    /// char8_t* value = u8"42";
-    /// bool result = convert::to_boolean(value);
-    /// @endcode
     static bool to_boolean(char8_t* value);
-    /// @brief Convert string to bool.
-    /// @param value object to convert.
-    /// @return A new bool object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a bool.
-    /// @par Examples
-    /// @code
-    /// const char16_t* value = u"42";
-    /// bool result = convert::to_boolean(value);
-    /// @endcode
     static bool to_boolean(const char16_t* value);
-    /// @brief Convert string to bool.
-    /// @param value object to convert.
-    /// @return A new bool object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a bool.
-    /// @par Examples
-    /// @code
-    /// char16_t* value = u"42";
-    /// bool result = convert::to_boolean(value);
-    /// @endcode
     static bool to_boolean(char16_t* value);
-    /// @brief Convert string to bool.
-    /// @param value object to convert.
-    /// @return A new bool object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a bool.
-    /// @par Examples
-    /// @code
-    /// const char32_t* value = U"42";
-    /// bool result = convert::to_boolean(value);
-    /// @endcode
     static bool to_boolean(const char32_t* value);
-    /// @brief Convert string to bool.
-    /// @param value object to convert.
-    /// @return A new bool object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a bool.
-    /// @par Examples
-    /// @code
-    /// char32_t* value = U"42";
-    /// bool result = convert::to_boolean(value);
-    /// @endcode
     static bool to_boolean(char32_t* value);
-    /// @brief Convert string to bool.
-    /// @param value object to convert.
-    /// @return A new bool object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a bool.
-    /// @par Examples
-    /// @code
-    /// const wchar_t* value = L"42";
-    /// bool result = convert::to_boolean(value);
-    /// @endcode
     static bool to_boolean(const wchar_t* value);
-    /// @brief Convert string to bool.
-    /// @param value object to convert.
-    /// @return A new bool object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a bool.
-    /// @par Examples
-    /// @code
-    /// wchar_t* value = L"42";
-    /// bool result = convert::to_boolean(value);
-    /// @endcode
     static bool to_boolean(wchar_t* value);
+    /// @endcond
     /// @brief Convert type_t to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
@@ -920,154 +669,32 @@ namespace xtd {
     static byte_t to_byte(const xtd::ustring& value);
     /// @brief Convert string to byte.
     /// @param value object to convert.
+    /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
     /// @return A new byte_t object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
-    /// string value = "42";
+    /// ustring value = "42";
     /// byte_t result = convert::to_byte(value);
     /// @endcode
+    static byte_t to_byte(const xtd::ustring& value, byte_t from_base);
+    /// @cond
     static byte_t to_byte(const std::string& value);
-    /// @brief Convert string to byte.
-    /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u8string value = u8"42";
-    /// byte_t result = convert::to_byte(value);
-    /// @endcode
     static byte_t to_byte(const std::u8string& value);
-    /// @brief Convert string to byte.
-    /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u16string value = u"42";
-    /// byte_t result = convert::to_byte(value);
-    /// @endcode
     static byte_t to_byte(const std::u16string& value);
-    /// @brief Convert string to byte.
-    /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u32string value = U"42";
-    /// byte_t result = convert::to_byte(value);
-    /// @endcode
     static byte_t to_byte(const std::u32string& value);
-    /// @brief Convert string to byte.
-    /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wstring value = L"42";
-    /// byte_t result = convert::to_byte(value);
-    /// @endcode
     static byte_t to_byte(const std::wstring& value);
-    /// @brief Convert string to byte.
-    /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char* value = "42";
-    /// byte_t result = convert::to_byte(value);
-    /// @endcode
     static byte_t to_byte(const char* value);
-    /// @brief Convert string to byte.
-    /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char* value = "42";
-    /// byte_t result = convert::to_byte(value);
-    /// @endcode
     static byte_t to_byte(char* value);
-    /// @brief Convert string to byte.
-    /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char8_t* value = u8"42";
-    /// byte_t result = convert::to_byte(value);
-    /// @endcode
     static byte_t to_byte(const char8_t* value);
-    /// @brief Convert string to byte.
-    /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char8_t* value = u8"42";
-    /// byte_t result = convert::to_byte(value);
-    /// @endcode
     static byte_t to_byte(char8_t* value);
-    /// @brief Convert string to byte.
-    /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char16_t* value = u"42";
-    /// byte_t result = convert::to_byte(value);
-    /// @endcode
     static byte_t to_byte(const char16_t* value);
-    /// @brief Convert string to byte.
-    /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char16_t* value = u"42";
-    /// byte_t result = convert::to_byte(value);
-    /// @endcode
     static byte_t to_byte(char16_t* value);
-    /// @brief Convert string to byte.
-    /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char32_t* value = U"42";
-    /// byte_t result = convert::to_byte(value);
-    /// @endcode
     static byte_t to_byte(const char32_t* value);
-    /// @brief Convert string to byte.
-    /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char32_t* value = U"42";
-    /// byte_t result = convert::to_byte(value);
-    /// @endcode
     static byte_t to_byte(char32_t* value);
-    /// @brief Convert string to byte.
-    /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const wchar_t* value = L"42";
-    /// byte_t result = convert::to_byte(value);
-    /// @endcode
     static byte_t to_byte(const wchar_t* value);
-    /// @brief Convert string to byte.
-    /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wchar_t* value = L"42";
-    /// byte_t result = convert::to_byte(value);
-    /// @endcode
     static byte_t to_byte(wchar_t* value);
+    /// @endcond
     /// @brief Convert type_t to byte.
     /// @param value object to convert.
     /// @return A new byte_t object converted from value.
@@ -1288,156 +915,23 @@ namespace xtd {
     /// char result = convert::to_char(value);
     /// @endcode
     static char to_char(const xtd::ustring& value);
-    /// @brief Convert string to char.
-    /// @param value object to convert.
-    /// @return A new char object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// string value = "42";
-    /// char result = convert::to_char(value);
-    /// @endcode
+    /// @cond
     static char to_char(const std::string& value);
-    /// @brief Convert string to char.
-    /// @param value object to convert.
-    /// @return A new char object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u8string value = u8"42";
-    /// char result = convert::to_char(value);
-    /// @endcode
     static char to_char(const std::u8string& value);
-    /// @brief Convert string to char.
-    /// @param value object to convert.
-    /// @return A new char object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u16string value = u"42";
-    /// char result = convert::to_char(value);
-    /// @endcode
     static char to_char(const std::u16string& value);
-    /// @brief Convert string to char.
-    /// @param value object to convert.
-    /// @return A new char object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u32string value = U"42";
-    /// char result = convert::to_char(value);
-    /// @endcode
     static char to_char(const std::u32string& value);
-    /// @brief Convert string to char.
-    /// @param value object to convert.
-    /// @return A new char object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wstring value = L"42";
-    /// char result = convert::to_char(value);
-    /// @endcode
     static char to_char(const std::wstring& value);
-    /// @brief Convert string to char.
-    /// @param value object to convert.
-    /// @return A new char object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char* value = "42";
-    /// char result = convert::to_char(value);
-    /// @endcode
     static char to_char(const char* value);
-    /// @brief Convert string to char.
-    /// @param value object to convert.
-    /// @return A new char object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char* value = "42";
-    /// char result = convert::to_char(value);
-    /// @endcode
     static char to_char(char* value);
-    /// @brief Convert string to char.
-    /// @param value object to convert.
-    /// @return A new char object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char8_t* value = u8"42";
-    /// char result = convert::to_char(value);
-    /// @endcode
     static char to_char(const char8_t* value);
-    /// @brief Convert string to char.
-    /// @param value object to convert.
-    /// @return A new char object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char8_t* value = u8"42";
-    /// char result = convert::to_char(value);
-    /// @endcode
     static char to_char(char8_t* value);
-    /// @brief Convert string to char.
-    /// @param value object to convert.
-    /// @return A new char object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char16_t* value = u"42";
-    /// char result = convert::to_char(value);
-    /// @endcode
     static char to_char(const char16_t* value);
-    /// @brief Convert string to char.
-    /// @param value object to convert.
-    /// @return A new char object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char16_t* value = u"42";
-    /// char result = convert::to_char(value);
-    /// @endcode
     static char to_char(char16_t* value);
-    /// @brief Convert string to char.
-    /// @param value object to convert.
-    /// @return A new char object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char32_t* value = U"42";
-    /// char result = convert::to_char(value);
-    /// @endcode
     static char to_char(const char32_t* value);
-    /// @brief Convert string to char.
-    /// @param value object to convert.
-    /// @return A new char object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char32_t* value = U"42";
-    /// char result = convert::to_char(value);
-    /// @endcode
     static char to_char(char32_t* value);
-    /// @brief Convert string to char.
-    /// @param value object to convert.
-    /// @return A new char object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const wchar_t* value = L"42";
-    /// char result = convert::to_char(value);
-    /// @endcode
     static char to_char(const wchar_t* value);
-    /// @brief Convert string to char.
-    /// @param value object to convert.
-    /// @return A new char object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wchar_t* value = L"42";
-    /// char result = convert::to_char(value);
-    /// @endcode
     static char to_char(wchar_t* value);
+    /// @endcond
     /// @brief Convert type_t to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
@@ -1658,156 +1152,23 @@ namespace xtd {
     /// char8_t result = convert::to_char8(value);
     /// @endcode
     static char8_t to_char8(const xtd::ustring& value);
-    /// @brief Convert string to char8.
-    /// @param value object to convert.
-    /// @return A new char8_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// string value = "42";
-    /// char8_t result = convert::to_char8(value);
-    /// @endcode
+    /// @cond
     static char8_t to_char8(const std::string& value);
-    /// @brief Convert string to char8.
-    /// @param value object to convert.
-    /// @return A new char8_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u8string value = u8"42";
-    /// char8_t result = convert::to_char8(value);
-    /// @endcode
     static char8_t to_char8(const std::u8string& value);
-    /// @brief Convert string to char8.
-    /// @param value object to convert.
-    /// @return A new char8_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u16string value = u"42";
-    /// char8_t result = convert::to_char8(value);
-    /// @endcode
     static char8_t to_char8(const std::u16string& value);
-    /// @brief Convert string to char8.
-    /// @param value object to convert.
-    /// @return A new char8_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u32string value = U"42";
-    /// char8_t result = convert::to_char8(value);
-    /// @endcode
     static char8_t to_char8(const std::u32string& value);
-    /// @brief Convert string to char8.
-    /// @param value object to convert.
-    /// @return A new char8_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wstring value = L"42";
-    /// char8_t result = convert::to_char8(value);
-    /// @endcode
     static char8_t to_char8(const std::wstring& value);
-    /// @brief Convert string to char8.
-    /// @param value object to convert.
-    /// @return A new char8_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char* value = "42";
-    /// char8_t result = convert::to_char8(value);
-    /// @endcode
     static char8_t to_char8(const char* value);
-    /// @brief Convert string to char8.
-    /// @param value object to convert.
-    /// @return A new char8_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char* value = "42";
-    /// char8_t result = convert::to_char8(value);
-    /// @endcode
     static char8_t to_char8(char* value);
-    /// @brief Convert string to char8.
-    /// @param value object to convert.
-    /// @return A new char8_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char8_t* value = u8"42";
-    /// char8_t result = convert::to_char8(value);
-    /// @endcode
     static char8_t to_char8(const char8_t* value);
-    /// @brief Convert string to char8.
-    /// @param value object to convert.
-    /// @return A new char8_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char8_t* value = u8"42";
-    /// char8_t result = convert::to_char8(value);
-    /// @endcode
     static char8_t to_char8(char8_t* value);
-    /// @brief Convert string to char8.
-    /// @param value object to convert.
-    /// @return A new char8_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char16_t* value = u"42";
-    /// char8_t result = convert::to_char8(value);
-    /// @endcode
     static char8_t to_char8(const char16_t* value);
-    /// @brief Convert string to char8.
-    /// @param value object to convert.
-    /// @return A new char8_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char16_t* value = u"42";
-    /// char8_t result = convert::to_char8(value);
-    /// @endcode
     static char8_t to_char8(char16_t* value);
-    /// @brief Convert string to char8.
-    /// @param value object to convert.
-    /// @return A new char8_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char32_t* value = U"42";
-    /// char8_t result = convert::to_char8(value);
-    /// @endcode
     static char8_t to_char8(const char32_t* value);
-    /// @brief Convert string to char8.
-    /// @param value object to convert.
-    /// @return A new char8_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char32_t* value = U"42";
-    /// char8_t result = convert::to_char8(value);
-    /// @endcode
     static char8_t to_char8(char32_t* value);
-    /// @brief Convert string to char8.
-    /// @param value object to convert.
-    /// @return A new char8_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const wchar_t* value = L"42";
-    /// char8_t result = convert::to_char8(value);
-    /// @endcode
     static char8_t to_char8(const wchar_t* value);
-    /// @brief Convert string to char8.
-    /// @param value object to convert.
-    /// @return A new char8_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wchar_t* value = L"42";
-    /// char8_t result = convert::to_char8(value);
-    /// @endcode
     static char8_t to_char8(wchar_t* value);
+    /// @endcond
     /// @brief Convert type_t to char8.
     /// @param value object to convert.
     /// @return A new char8_t object converted from value.
@@ -2025,156 +1386,23 @@ namespace xtd {
     /// char16_t result = convert::to_char16(value);
     /// @endcode
     static char16_t to_char16(const xtd::ustring& value);
-    /// @brief Convert string to char16.
-    /// @param value object to convert.
-    /// @return A new char16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// string value = "42";
-    /// char16_t result = convert::to_char16(value);
-    /// @endcode
+    /// @cond
     static char16_t to_char16(const std::string& value);
-    /// @brief Convert string to char16.
-    /// @param value object to convert.
-    /// @return A new char16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u8string value = u8"42";
-    /// char16_t result = convert::to_char16(value);
-    /// @endcode
     static char16_t to_char16(const std::u8string& value);
-    /// @brief Convert string to char16.
-    /// @param value object to convert.
-    /// @return A new char16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u16string value = u"42";
-    /// char16_t result = convert::to_char16(value);
-    /// @endcode
     static char16_t to_char16(const std::u16string& value);
-    /// @brief Convert string to char16.
-    /// @param value object to convert.
-    /// @return A new char16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u32string value = U"42";
-    /// char16_t result = convert::to_char16(value);
-    /// @endcode
     static char16_t to_char16(const std::u32string& value);
-    /// @brief Convert string to char16.
-    /// @param value object to convert.
-    /// @return A new char16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wstring value = L"42";
-    /// char16_t result = convert::to_char16(value);
-    /// @endcode
     static char16_t to_char16(const std::wstring& value);
-    /// @brief Convert string to char16.
-    /// @param value object to convert.
-    /// @return A new char16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char* value = "42";
-    /// char16_t result = convert::to_char16(value);
-    /// @endcode
     static char16_t to_char16(const char* value);
-    /// @brief Convert string to char16.
-    /// @param value object to convert.
-    /// @return A new char16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char* value = "42";
-    /// char16_t result = convert::to_char16(value);
-    /// @endcode
     static char16_t to_char16(char* value);
-    /// @brief Convert string to char16.
-    /// @param value object to convert.
-    /// @return A new char16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char8_t* value = u8"42";
-    /// char16_t result = convert::to_char16(value);
-    /// @endcode
     static char16_t to_char16(const char8_t* value);
-    /// @brief Convert string to char16.
-    /// @param value object to convert.
-    /// @return A new char16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char8_t* value = u8"42";
-    /// char16_t result = convert::to_char16(value);
-    /// @endcode
     static char16_t to_char16(char8_t* value);
-    /// @brief Convert string to char16.
-    /// @param value object to convert.
-    /// @return A new char16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char16_t* value = u"42";
-    /// char16_t result = convert::to_char16(value);
-    /// @endcode
     static char16_t to_char16(const char16_t* value);
-    /// @brief Convert string to char16.
-    /// @param value object to convert.
-    /// @return A new char16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char16_t* value = u"42";
-    /// char16_t result = convert::to_char16(value);
-    /// @endcode
     static char16_t to_char16(char16_t* value);
-    /// @brief Convert string to char16.
-    /// @param value object to convert.
-    /// @return A new char16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char32_t* value = U"42";
-    /// char16_t result = convert::to_char16(value);
-    /// @endcode
     static char16_t to_char16(const char32_t* value);
-    /// @brief Convert string to char16.
-    /// @param value object to convert.
-    /// @return A new char16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char32_t* value = U"42";
-    /// char16_t result = convert::to_char16(value);
-    /// @endcode
     static char16_t to_char16(char32_t* value);
-    /// @brief Convert string to char16.
-    /// @param value object to convert.
-    /// @return A new char16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const wchar_t* value = L"42";
-    /// char16_t result = convert::to_char16(value);
-    /// @endcode
     static char16_t to_char16(const wchar_t* value);
-    /// @brief Convert string to char16.
-    /// @param value object to convert.
-    /// @return A new char16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wchar_t* value = L"42";
-    /// char16_t result = convert::to_char16(value);
-    /// @endcode
     static char16_t to_char16(wchar_t* value);
+    /// @endcond
     /// @brief Convert type_t to char16.
     /// @param value object to convert.
     /// @return A new char16_t object converted from value.
@@ -2390,156 +1618,23 @@ namespace xtd {
     /// char32_t result = convert::to_char32(value);
     /// @endcode
     static char32_t to_char32(const xtd::ustring& value);
-    /// @brief Convert string to char32.
-    /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// string value = "42";
-    /// char32_t result = convert::to_char32(value);
-    /// @endcode
+    /// @cond
     static char32_t to_char32(const std::string& value);
-    /// @brief Convert string to char32.
-    /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u8string value = u8"42";
-    /// char32_t result = convert::to_char32(value);
-    /// @endcode
     static char32_t to_char32(const std::u8string& value);
-    /// @brief Convert string to char32.
-    /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u16string value = u"42";
-    /// char32_t result = convert::to_char32(value);
-    /// @endcode
     static char32_t to_char32(const std::u16string& value);
-    /// @brief Convert string to char32.
-    /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u32string value = U"42";
-    /// char32_t result = convert::to_char32(value);
-    /// @endcode
     static char32_t to_char32(const std::u32string& value);
-    /// @brief Convert string to char32.
-    /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wstring value = L"42";
-    /// char32_t result = convert::to_char32(value);
-    /// @endcode
     static char32_t to_char32(const std::wstring& value);
-    /// @brief Convert string to char32.
-    /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char* value = "42";
-    /// char32_t result = convert::to_char32(value);
-    /// @endcode
     static char32_t to_char32(const char* value);
-    /// @brief Convert string to char32.
-    /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char* value = "42";
-    /// char32_t result = convert::to_char32(value);
-    /// @endcode
     static char32_t to_char32(char* value);
-    /// @brief Convert string to char32.
-    /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char8_t* value = u8"42";
-    /// char32_t result = convert::to_char32(value);
-    /// @endcode
     static char32_t to_char32(const char8_t* value);
-    /// @brief Convert string to char32.
-    /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char8_t* value = u8"42";
-    /// char32_t result = convert::to_char32(value);
-    /// @endcode
     static char32_t to_char32(char8_t* value);
-    /// @brief Convert string to char32.
-    /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char16_t* value = u"42";
-    /// char32_t result = convert::to_char32(value);
-    /// @endcode
     static char32_t to_char32(const char16_t* value);
-    /// @brief Convert string to char32.
-    /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char16_t* value = u"42";
-    /// char32_t result = convert::to_char32(value);
-    /// @endcode
     static char32_t to_char32(char16_t* value);
-    /// @brief Convert string to char32.
-    /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char32_t* value = U"42";
-    /// char32_t result = convert::to_char32(value);
-    /// @endcode
     static char32_t to_char32(const char32_t* value);
-    /// @brief Convert string to char32.
-    /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char32_t* value = U"42";
-    /// char32_t result = convert::to_char32(value);
-    /// @endcode
     static char32_t to_char32(char32_t* value);
-    /// @brief Convert string to char32.
-    /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const wchar_t* value = L"42";
-    /// char32_t result = convert::to_char32(value);
-    /// @endcode
     static char32_t to_char32(const wchar_t* value);
-    /// @brief Convert string to char32.
-    /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wchar_t* value = L"42";
-    /// char32_t result = convert::to_char32(value);
-    /// @endcode
     static char32_t to_char32(wchar_t* value);
+    /// @endcond
     /// @brief Convert type_t to char32.
     /// @param value object to convert.
     /// @return A new char32_t object converted from value.
@@ -2757,156 +1852,23 @@ namespace xtd {
     /// wchar_t result = convert::to_wchar(value);
     /// @endcode
     static wchar_t to_wchar(const xtd::ustring& value);
-    /// @brief Convert string to wchar.
-    /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// string value = "42";
-    /// wchar_t result = convert::to_wchar(value);
-    /// @endcode
+    /// @cond
     static wchar_t to_wchar(const std::string& value);
-    /// @brief Convert string to wchar.
-    /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u8string value = u8"42";
-    /// wchar_t result = convert::to_wchar(value);
-    /// @endcode
     static wchar_t to_wchar(const std::u8string& value);
-    /// @brief Convert string to wchar.
-    /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u16string value = u"42";
-    /// wchar_t result = convert::to_wchar(value);
-    /// @endcode
     static wchar_t to_wchar(const std::u16string& value);
-    /// @brief Convert string to wchar.
-    /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u32string value = U"42";
-    /// wchar_t result = convert::to_wchar(value);
-    /// @endcode
     static wchar_t to_wchar(const std::u32string& value);
-    /// @brief Convert string to wchar.
-    /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wstring value = L"42";
-    /// wchar_t result = convert::to_wchar(value);
-    /// @endcode
     static wchar_t to_wchar(const std::wstring& value);
-    /// @brief Convert string to wchar.
-    /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char* value = "42";
-    /// wchar_t result = convert::to_wchar(value);
-    /// @endcode
     static wchar_t to_wchar(const char* value);
-    /// @brief Convert string to wchar.
-    /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char* value = "42";
-    /// wchar_t result = convert::to_wchar(value);
-    /// @endcode
     static wchar_t to_wchar(char* value);
-    /// @brief Convert string to wchar.
-    /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char8_t* value = u8"42";
-    /// wchar_t result = convert::to_wchar(value);
-    /// @endcode
     static wchar_t to_wchar(const char8_t* value);
-    /// @brief Convert string to wchar.
-    /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char8_t* value = u8"42";
-    /// wchar_t result = convert::to_wchar(value);
-    /// @endcode
     static wchar_t to_wchar(char8_t* value);
-    /// @brief Convert string to wchar.
-    /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char16_t* value = u"42";
-    /// wchar_t result = convert::to_wchar(value);
-    /// @endcode
     static wchar_t to_wchar(const char16_t* value);
-    /// @brief Convert string to wchar.
-    /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char16_t* value = u"42";
-    /// wchar_t result = convert::to_wchar(value);
-    /// @endcode
     static wchar_t to_wchar(char16_t* value);
-    /// @brief Convert string to wchar.
-    /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char32_t* value = U"42";
-    /// wchar_t result = convert::to_wchar(value);
-    /// @endcode
     static wchar_t to_wchar(const char32_t* value);
-    /// @brief Convert string to wchar.
-    /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char32_t* value = U"42";
-    /// wchar_t result = convert::to_wchar(value);
-    /// @endcode
     static wchar_t to_wchar(char32_t* value);
-    /// @brief Convert string to wchar.
-    /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const wchar_t* value = L"42";
-    /// wchar_t result = convert::to_wchar(value);
-    /// @endcode
     static wchar_t to_wchar(const wchar_t* value);
-    /// @brief Convert string to wchar.
-    /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wchar_t* value = L"42";
-    /// wchar_t result = convert::to_wchar(value);
-    /// @endcode
     static wchar_t to_wchar(wchar_t* value);
+    /// @endcond
     /// @brief Convert type_t to wchar.
     /// @param value object to convert.
     /// @return A new wchar_t object converted from value.
@@ -3113,156 +2075,23 @@ namespace xtd {
     /// decimal_t result = convert::to_decimal(value);
     /// @endcode
     static decimal_t to_decimal(const xtd::ustring& value);
-    /// @brief Convert string to decimal.
-    /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// string value = "42";
-    /// decimal_t result = convert::to_decimal(value);
-    /// @endcode
+    /// @cond
     static decimal_t to_decimal(const std::string& value);
-    /// @brief Convert string to decimal.
-    /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u8string value = u8"42";
-    /// decimal_t result = convert::to_decimal(value);
-    /// @endcode
     static decimal_t to_decimal(const std::u8string& value);
-    /// @brief Convert string to decimal.
-    /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u16string value = u"42";
-    /// decimal_t result = convert::to_decimal(value);
-    /// @endcode
     static decimal_t to_decimal(const std::u16string& value);
-    /// @brief Convert string to decimal.
-    /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u32string value = U"42";
-    /// decimal_t result = convert::to_decimal(value);
-    /// @endcode
     static decimal_t to_decimal(const std::u32string& value);
-    /// @brief Convert string to decimal.
-    /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wstring value = L"42";
-    /// decimal_t result = convert::to_decimal(value);
-    /// @endcode
     static decimal_t to_decimal(const std::wstring& value);
-    /// @brief Convert string to decimal.
-    /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char* value = "42";
-    /// decimal_t result = convert::to_decimal(value);
-    /// @endcode
     static decimal_t to_decimal(const char* value);
-    /// @brief Convert string to decimal.
-    /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char* value = "42";
-    /// decimal_t result = convert::to_decimal(value);
-    /// @endcode
     static decimal_t to_decimal(char* value);
-    /// @brief Convert string to decimal.
-    /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char8_t* value = u8"42";
-    /// decimal_t result = convert::to_decimal(value);
-    /// @endcode
     static decimal_t to_decimal(const char8_t* value);
-    /// @brief Convert string to decimal.
-    /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char8_t* value = u8"42";
-    /// decimal_t result = convert::to_decimal(value);
-    /// @endcode
     static decimal_t to_decimal(char8_t* value);
-    /// @brief Convert string to decimal.
-    /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char16_t* value = u"42";
-    /// decimal_t result = convert::to_decimal(value);
-    /// @endcode
     static decimal_t to_decimal(const char16_t* value);
-    /// @brief Convert string to decimal.
-    /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char16_t* value = u"42";
-    /// decimal_t result = convert::to_decimal(value);
-    /// @endcode
     static decimal_t to_decimal(char16_t* value);
-    /// @brief Convert string to decimal.
-    /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char32_t* value = U"42";
-    /// decimal_t result = convert::to_decimal(value);
-    /// @endcode
     static decimal_t to_decimal(const char32_t* value);
-    /// @brief Convert string to decimal.
-    /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char32_t* value = U"42";
-    /// decimal_t result = convert::to_decimal(value);
-    /// @endcode
     static decimal_t to_decimal(char32_t* value);
-    /// @brief Convert string to decimal.
-    /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const wchar_t* value = L"42";
-    /// decimal_t result = convert::to_decimal(value);
-    /// @endcode
     static decimal_t to_decimal(const wchar_t* value);
-    /// @brief Convert string to decimal.
-    /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wchar_t* value = L"42";
-    /// decimal_t result = convert::to_decimal(value);
-    /// @endcode
     static decimal_t to_decimal(wchar_t* value);
+    /// @endcond
     /// @brief Convert type_t to decimal.
     /// @param value object to convert.
     /// @return A new decimal_t object converted from value.
@@ -3469,156 +2298,23 @@ namespace xtd {
     /// double result = convert::to_double(value);
     /// @endcode
     static double to_double(const xtd::ustring& value);
-    /// @brief Convert string to double.
-    /// @param value object to convert.
-    /// @return A new double object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// string value = "42";
-    /// double result = convert::to_double(value);
-    /// @endcode
+    /// @cond
     static double to_double(const std::string& value);
-    /// @brief Convert string to double.
-    /// @param value object to convert.
-    /// @return A new double object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u8string value = u8"42";
-    /// double result = convert::to_double(value);
-    /// @endcode
     static double to_double(const std::u8string& value);
-    /// @brief Convert string to double.
-    /// @param value object to convert.
-    /// @return A new double object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u16string value = u"42";
-    /// double result = convert::to_double(value);
-    /// @endcode
     static double to_double(const std::u16string& value);
-    /// @brief Convert string to double.
-    /// @param value object to convert.
-    /// @return A new double object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u32string value = U"42";
-    /// double result = convert::to_double(value);
-    /// @endcode
     static double to_double(const std::u32string& value);
-    /// @brief Convert string to double.
-    /// @param value object to convert.
-    /// @return A new double object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wstring value = L"42";
-    /// double result = convert::to_double(value);
-    /// @endcode
     static double to_double(const std::wstring& value);
-    /// @brief Convert string to double.
-    /// @param value object to convert.
-    /// @return A new double object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char* value = "42";
-    /// double result = convert::to_double(value);
-    /// @endcode
     static double to_double(const char* value);
-    /// @brief Convert string to double.
-    /// @param value object to convert.
-    /// @return A new double object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char* value = "42";
-    /// double result = convert::to_double(value);
-    /// @endcode
     static double to_double(char* value);
-    /// @brief Convert string to double.
-    /// @param value object to convert.
-    /// @return A new double object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char8_t* value = u8"42";
-    /// double result = convert::to_double(value);
-    /// @endcode
     static double to_double(const char8_t* value);
-    /// @brief Convert string to double.
-    /// @param value object to convert.
-    /// @return A new double object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char8_t* value = u8"42";
-    /// double result = convert::to_double(value);
-    /// @endcode
     static double to_double(char8_t* value);
-    /// @brief Convert string to double.
-    /// @param value object to convert.
-    /// @return A new double object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char16_t* value = u"42";
-    /// double result = convert::to_double(value);
-    /// @endcode
     static double to_double(const char16_t* value);
-    /// @brief Convert string to double.
-    /// @param value object to convert.
-    /// @return A new double object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char16_t* value = u"42";
-    /// double result = convert::to_double(value);
-    /// @endcode
     static double to_double(char16_t* value);
-    /// @brief Convert string to double.
-    /// @param value object to convert.
-    /// @return A new double object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char32_t* value = U"42";
-    /// double result = convert::to_double(value);
-    /// @endcode
     static double to_double(const char32_t* value);
-    /// @brief Convert string to double.
-    /// @param value object to convert.
-    /// @return A new double object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char32_t* value = U"42";
-    /// double result = convert::to_double(value);
-    /// @endcode
     static double to_double(char32_t* value);
-    /// @brief Convert string to double.
-    /// @param value object to convert.
-    /// @return A new double object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const wchar_t* value = L"42";
-    /// double result = convert::to_double(value);
-    /// @endcode
     static double to_double(const wchar_t* value);
-    /// @brief Convert string to double.
-    /// @param value object to convert.
-    /// @return A new double object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wchar_t* value = L"42";
-    /// double result = convert::to_double(value);
-    /// @endcode
     static double to_double(wchar_t* value);
+    /// @endcond
     /// @brief Convert type_t to double.
     /// @param value object to convert.
     /// @return A new double object converted from value.
@@ -3825,156 +2521,23 @@ namespace xtd {
     /// float result = convert::to_single(value);
     /// @endcode
     static float to_single(const xtd::ustring& value);
-    /// @brief Convert string to single.
-    /// @param value object to convert.
-    /// @return A new float object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// string value = "42";
-    /// float result = convert::to_single(value);
-    /// @endcode
+    /// @cond
     static float to_single(const std::string& value);
-    /// @brief Convert string to single.
-    /// @param value object to convert.
-    /// @return A new float object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u8string value = u8"42";
-    /// float result = convert::to_single(value);
-    /// @endcode
     static float to_single(const std::u8string& value);
-    /// @brief Convert string to single.
-    /// @param value object to convert.
-    /// @return A new float object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u16string value = u"42";
-    /// float result = convert::to_single(value);
-    /// @endcode
     static float to_single(const std::u16string& value);
-    /// @brief Convert string to single.
-    /// @param value object to convert.
-    /// @return A new float object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u32string value = U"42";
-    /// float result = convert::to_single(value);
-    /// @endcode
     static float to_single(const std::u32string& value);
-    /// @brief Convert string to single.
-    /// @param value object to convert.
-    /// @return A new float object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wstring value = L"42";
-    /// float result = convert::to_single(value);
-    /// @endcode
     static float to_single(const std::wstring& value);
-    /// @brief Convert string to single.
-    /// @param value object to convert.
-    /// @return A new float object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char* value = "42";
-    /// float result = convert::to_single(value);
-    /// @endcode
     static float to_single(const char* value);
-    /// @brief Convert string to single.
-    /// @param value object to convert.
-    /// @return A new float object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char* value = "42";
-    /// float result = convert::to_single(value);
-    /// @endcode
     static float to_single(char* value);
-    /// @brief Convert string to single.
-    /// @param value object to convert.
-    /// @return A new float object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char8_t* value = u8"42";
-    /// float result = convert::to_single(value);
-    /// @endcode
     static float to_single(const char8_t* value);
-    /// @brief Convert string to single.
-    /// @param value object to convert.
-    /// @return A new float object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char8_t* value = u8"42";
-    /// float result = convert::to_single(value);
-    /// @endcode
     static float to_single(char8_t* value);
-    /// @brief Convert string to single.
-    /// @param value object to convert.
-    /// @return A new float object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char16_t* value = u"42";
-    /// float result = convert::to_single(value);
-    /// @endcode
     static float to_single(const char16_t* value);
-    /// @brief Convert string to single.
-    /// @param value object to convert.
-    /// @return A new float object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char16_t* value = u"42";
-    /// float result = convert::to_single(value);
-    /// @endcode
     static float to_single(char16_t* value);
-    /// @brief Convert string to single.
-    /// @param value object to convert.
-    /// @return A new float object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char32_t* value = U"42";
-    /// float result = convert::to_single(value);
-    /// @endcode
     static float to_single(const char32_t* value);
-    /// @brief Convert string to single.
-    /// @param value object to convert.
-    /// @return A new float object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char32_t* value = U"42";
-    /// float result = convert::to_single(value);
-    /// @endcode
     static float to_single(char32_t* value);
-    /// @brief Convert string to single.
-    /// @param value object to convert.
-    /// @return A new float object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const wchar_t* value = L"42";
-    /// float result = convert::to_single(value);
-    /// @endcode
     static float to_single(const wchar_t* value);
-    /// @brief Convert string to single.
-    /// @param value object to convert.
-    /// @return A new float object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wchar_t* value = L"42";
-    /// float result = convert::to_single(value);
-    /// @endcode
     static float to_single(wchar_t* value);
+    /// @endcond
     /// @brief Convert type_t to single.
     /// @param value object to convert.
     /// @return A new float object converted from value.
@@ -4194,154 +2757,32 @@ namespace xtd {
     static int16_t to_int16(const xtd::ustring& value);
     /// @brief Convert string to int16.
     /// @param value object to convert.
-    /// @return A new int16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
+    /// @return A new intt16_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a int16.
     /// @par Examples
     /// @code
-    /// string value = "42";
+    /// ustring value = "42";
     /// int16_t result = convert::to_int16(value);
     /// @endcode
+    static int16_t to_int16(const xtd::ustring& value, byte_t from_base);
+    /// @cond
     static int16_t to_int16(const std::string& value);
-    /// @brief Convert string to int16.
-    /// @param value object to convert.
-    /// @return A new int16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u8string value = u8"42";
-    /// int16_t result = convert::to_int16(value);
-    /// @endcode
     static int16_t to_int16(const std::u8string& value);
-    /// @brief Convert string to int16.
-    /// @param value object to convert.
-    /// @return A new int16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u16string value = u"42";
-    /// int16_t result = convert::to_int16(value);
-    /// @endcode
     static int16_t to_int16(const std::u16string& value);
-    /// @brief Convert string to int16.
-    /// @param value object to convert.
-    /// @return A new int16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u32string value = U"42";
-    /// int16_t result = convert::to_int16(value);
-    /// @endcode
     static int16_t to_int16(const std::u32string& value);
-    /// @brief Convert string to int16.
-    /// @param value object to convert.
-    /// @return A new int16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wstring value = L"42";
-    /// int16_t result = convert::to_int16(value);
-    /// @endcode
     static int16_t to_int16(const std::wstring& value);
-    /// @brief Convert string to int16.
-    /// @param value object to convert.
-    /// @return A new int16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char* value = "42";
-    /// int16_t result = convert::to_int16(value);
-    /// @endcode
     static int16_t to_int16(const char* value);
-    /// @brief Convert string to int16.
-    /// @param value object to convert.
-    /// @return A new int16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char* value = "42";
-    /// int16_t result = convert::to_int16(value);
-    /// @endcode
     static int16_t to_int16(char* value);
-    /// @brief Convert string to int16.
-    /// @param value object to convert.
-    /// @return A new int16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char8_t* value = u8"42";
-    /// int16_t result = convert::to_int16(value);
-    /// @endcode
     static int16_t to_int16(const char8_t* value);
-    /// @brief Convert string to int16.
-    /// @param value object to convert.
-    /// @return A new int16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char8_t* value = u8"42";
-    /// int16_t result = convert::to_int16(value);
-    /// @endcode
     static int16_t to_int16(char8_t* value);
-    /// @brief Convert string to int16.
-    /// @param value object to convert.
-    /// @return A new int16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char16_t* value = u"42";
-    /// int16_t result = convert::to_int16(value);
-    /// @endcode
     static int16_t to_int16(const char16_t* value);
-    /// @brief Convert string to int16.
-    /// @param value object to convert.
-    /// @return A new int16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char16_t* value = u"42";
-    /// int16_t result = convert::to_int16(value);
-    /// @endcode
     static int16_t to_int16(char16_t* value);
-    /// @brief Convert string to int16.
-    /// @param value object to convert.
-    /// @return A new int16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char32_t* value = U"42";
-    /// int16_t result = convert::to_int16(value);
-    /// @endcode
     static int16_t to_int16(const char32_t* value);
-    /// @brief Convert string to int16.
-    /// @param value object to convert.
-    /// @return A new int16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char32_t* value = U"42";
-    /// int16_t result = convert::to_int16(value);
-    /// @endcode
     static int16_t to_int16(char32_t* value);
-    /// @brief Convert string to int16.
-    /// @param value object to convert.
-    /// @return A new int16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const wchar_t* value = L"42";
-    /// int16_t result = convert::to_int16(value);
-    /// @endcode
     static int16_t to_int16(const wchar_t* value);
-    /// @brief Convert string to int16.
-    /// @param value object to convert.
-    /// @return A new int16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wchar_t* value = L"42";
-    /// int16_t result = convert::to_int16(value);
-    /// @endcode
     static int16_t to_int16(wchar_t* value);
+    /// @endcond
     /// @brief Convert type_t to int16.
     /// @param value object to convert.
     /// @return A new int16_t object converted from value.
@@ -4557,154 +2998,32 @@ namespace xtd {
     static int32_t to_int32(const xtd::ustring& value);
     /// @brief Convert string to int32.
     /// @param value object to convert.
-    /// @return A new int32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
+    /// @return A new intt32_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a int32.
     /// @par Examples
     /// @code
-    /// string value = "42";
+    /// ustring value = "42";
     /// int32_t result = convert::to_int32(value);
     /// @endcode
+    static int32_t to_int32(const xtd::ustring& value, byte_t from_base);
+    /// @cond
     static int32_t to_int32(const std::string& value);
-    /// @brief Convert string to int32.
-    /// @param value object to convert.
-    /// @return A new int32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u8string value = u8"42";
-    /// int32_t result = convert::to_int32(value);
-    /// @endcode
     static int32_t to_int32(const std::u8string& value);
-    /// @brief Convert string to int32.
-    /// @param value object to convert.
-    /// @return A new int32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u16string value = u"42";
-    /// int32_t result = convert::to_int32(value);
-    /// @endcode
     static int32_t to_int32(const std::u16string& value);
-    /// @brief Convert string to int32.
-    /// @param value object to convert.
-    /// @return A new int32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u32string value = U"42";
-    /// int32_t result = convert::to_int32(value);
-    /// @endcode
     static int32_t to_int32(const std::u32string& value);
-    /// @brief Convert string to int32.
-    /// @param value object to convert.
-    /// @return A new int32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wstring value = L"42";
-    /// int32_t result = convert::to_int32(value);
-    /// @endcode
     static int32_t to_int32(const std::wstring& value);
-    /// @brief Convert string to int32.
-    /// @param value object to convert.
-    /// @return A new int32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char* value = "42";
-    /// int32_t result = convert::to_int32(value);
-    /// @endcode
     static int32_t to_int32(const char* value);
-    /// @brief Convert string to int32.
-    /// @param value object to convert.
-    /// @return A new int32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char* value = "42";
-    /// int32_t result = convert::to_int32(value);
-    /// @endcode
     static int32_t to_int32(char* value);
-    /// @brief Convert string to int32.
-    /// @param value object to convert.
-    /// @return A new int32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char8_t* value = u8"42";
-    /// int32_t result = convert::to_int32(value);
-    /// @endcode
     static int32_t to_int32(const char8_t* value);
-    /// @brief Convert string to int32.
-    /// @param value object to convert.
-    /// @return A new int32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char8_t* value = u8"42";
-    /// int32_t result = convert::to_int32(value);
-    /// @endcode
     static int32_t to_int32(char8_t* value);
-    /// @brief Convert string to int32.
-    /// @param value object to convert.
-    /// @return A new int32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char16_t* value = u"42";
-    /// int32_t result = convert::to_int32(value);
-    /// @endcode
     static int32_t to_int32(const char16_t* value);
-    /// @brief Convert string to int32.
-    /// @param value object to convert.
-    /// @return A new int32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char16_t* value = u"42";
-    /// int32_t result = convert::to_int32(value);
-    /// @endcode
     static int32_t to_int32(char16_t* value);
-    /// @brief Convert string to int32.
-    /// @param value object to convert.
-    /// @return A new int32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char32_t* value = U"42";
-    /// int32_t result = convert::to_int32(value);
-    /// @endcode
     static int32_t to_int32(const char32_t* value);
-    /// @brief Convert string to int32.
-    /// @param value object to convert.
-    /// @return A new int32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char32_t* value = U"42";
-    /// int32_t result = convert::to_int32(value);
-    /// @endcode
     static int32_t to_int32(char32_t* value);
-    /// @brief Convert string to int32.
-    /// @param value object to convert.
-    /// @return A new int32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const wchar_t* value = L"42";
-    /// int32_t result = convert::to_int32(value);
-    /// @endcode
     static int32_t to_int32(const wchar_t* value);
-    /// @brief Convert string to int32.
-    /// @param value object to convert.
-    /// @return A new int32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wchar_t* value = L"42";
-    /// int32_t result = convert::to_int32(value);
-    /// @endcode
     static int32_t to_int32(wchar_t* value);
+    /// @endcond
     /// @brief Convert type_t to int32.
     /// @param value object to convert.
     /// @return A new int32_t object converted from value.
@@ -4915,154 +3234,32 @@ namespace xtd {
     static int64_t to_int64(const xtd::ustring& value);
     /// @brief Convert string to int64.
     /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
+    /// @return A new intt64_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a int64.
     /// @par Examples
     /// @code
-    /// string value = "42";
-    /// int64_t result = convert::to_int64(value);
+    /// ustring value = "42";
+    /// int16_t result = convert::to_int16(value);
     /// @endcode
+    static int64_t to_int64(const xtd::ustring& value, byte_t from_base);
+    /// @cond
     static int64_t to_int64(const std::string& value);
-    /// @brief Convert string to int64.
-    /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u8string value = u8"42";
-    /// int64_t result = convert::to_int64(value);
-    /// @endcode
     static int64_t to_int64(const std::u8string& value);
-    /// @brief Convert string to int64.
-    /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u16string value = u"42";
-    /// int64_t result = convert::to_int64(value);
-    /// @endcode
     static int64_t to_int64(const std::u16string& value);
-    /// @brief Convert string to int64.
-    /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u32string value = U"42";
-    /// int64_t result = convert::to_int64(value);
-    /// @endcode
     static int64_t to_int64(const std::u32string& value);
-    /// @brief Convert string to int64.
-    /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wstring value = L"42";
-    /// int64_t result = convert::to_int64(value);
-    /// @endcode
     static int64_t to_int64(const std::wstring& value);
-    /// @brief Convert string to int64.
-    /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char* value = "42";
-    /// int64_t result = convert::to_int64(value);
-    /// @endcode
     static int64_t to_int64(const char* value);
-    /// @brief Convert string to int64.
-    /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char* value = "42";
-    /// int64_t result = convert::to_int64(value);
-    /// @endcode
     static int64_t to_int64(char* value);
-    /// @brief Convert string to int64.
-    /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char8_t* value = u8"42";
-    /// int64_t result = convert::to_int64(value);
-    /// @endcode
     static int64_t to_int64(const char8_t* value);
-    /// @brief Convert string to int64.
-    /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char8_t* value = u8"42";
-    /// int64_t result = convert::to_int64(value);
-    /// @endcode
     static int64_t to_int64(char8_t* value);
-    /// @brief Convert string to int64.
-    /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char16_t* value = u"42";
-    /// int64_t result = convert::to_int64(value);
-    /// @endcode
     static int64_t to_int64(const char16_t* value);
-    /// @brief Convert string to int64.
-    /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char16_t* value = u"42";
-    /// int64_t result = convert::to_int64(value);
-    /// @endcode
     static int64_t to_int64(char16_t* value);
-    /// @brief Convert string to int64.
-    /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char32_t* value = U"42";
-    /// int64_t result = convert::to_int64(value);
-    /// @endcode
     static int64_t to_int64(const char32_t* value);
-    /// @brief Convert string to int64.
-    /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char32_t* value = U"42";
-    /// int64_t result = convert::to_int64(value);
-    /// @endcode
     static int64_t to_int64(char32_t* value);
-    /// @brief Convert string to int64.
-    /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const wchar_t* value = L"42";
-    /// int64_t result = convert::to_int64(value);
-    /// @endcode
     static int64_t to_int64(const wchar_t* value);
-    /// @brief Convert string to int64.
-    /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wchar_t* value = L"42";
-    /// int64_t result = convert::to_int64(value);
-    /// @endcode
     static int64_t to_int64(wchar_t* value);
+    /// @endcond
     /// @brief Convert type_t to int64.
     /// @param value object to convert.
     /// @return A new int64_t object converted from value.
@@ -5273,154 +3470,32 @@ namespace xtd {
     static llong_t to_llong(const xtd::ustring& value);
     /// @brief Convert string to llong.
     /// @param value object to convert.
+    /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
     /// @return A new llong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @exception xtd::atgument_exception value does not represent a llong.
     /// @par Examples
     /// @code
-    /// string value = "42";
+    /// ustring value = "42";
     /// llong_t result = convert::to_llong(value);
     /// @endcode
+    static llong_t to_llong(const xtd::ustring& value, byte_t from_base);
+    /// @cond
     static llong_t to_llong(const std::string& value);
-    /// @brief Convert string to llong.
-    /// @param value object to convert.
-    /// @return A new llong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u8string value = u8"42";
-    /// llong_t result = convert::to_llong(value);
-    /// @endcode
     static llong_t to_llong(const std::u8string& value);
-    /// @brief Convert string to llong.
-    /// @param value object to convert.
-    /// @return A new llong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u16string value = u"42";
-    /// llong_t result = convert::to_llong(value);
-    /// @endcode
     static llong_t to_llong(const std::u16string& value);
-    /// @brief Convert string to llong.
-    /// @param value object to convert.
-    /// @return A new llong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u32string value = U"42";
-    /// llong_t result = convert::to_llong(value);
-    /// @endcode
     static llong_t to_llong(const std::u32string& value);
-    /// @brief Convert string to llong.
-    /// @param value object to convert.
-    /// @return A new llong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wstring value = L"42";
-    /// llong_t result = convert::to_llong(value);
-    /// @endcode
     static llong_t to_llong(const std::wstring& value);
-    /// @brief Convert string to llong.
-    /// @param value object to convert.
-    /// @return A new llong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char* value = "42";
-    /// llong_t result = convert::to_llong(value);
-    /// @endcode
     static llong_t to_llong(const char* value);
-    /// @brief Convert string to llong.
-    /// @param value object to convert.
-    /// @return A new llong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char* value = "42";
-    /// llong_t result = convert::to_llong(value);
-    /// @endcode
     static llong_t to_llong(char* value);
-    /// @brief Convert string to llong.
-    /// @param value object to convert.
-    /// @return A new llong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char8_t* value = u8"42";
-    /// llong_t result = convert::to_llong(value);
-    /// @endcode
     static llong_t to_llong(const char8_t* value);
-    /// @brief Convert string to llong.
-    /// @param value object to convert.
-    /// @return A new llong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char8_t* value = u8"42";
-    /// llong_t result = convert::to_llong(value);
-    /// @endcode
     static llong_t to_llong(char8_t* value);
-    /// @brief Convert string to llong.
-    /// @param value object to convert.
-    /// @return A new llong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char16_t* value = u"42";
-    /// llong_t result = convert::to_llong(value);
-    /// @endcode
     static llong_t to_llong(const char16_t* value);
-    /// @brief Convert string to llong.
-    /// @param value object to convert.
-    /// @return A new llong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char16_t* value = u"42";
-    /// llong_t result = convert::to_llong(value);
-    /// @endcode
     static llong_t to_llong(char16_t* value);
-    /// @brief Convert string to llong.
-    /// @param value object to convert.
-    /// @return A new llong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char32_t* value = U"42";
-    /// llong_t result = convert::to_llong(value);
-    /// @endcode
     static llong_t to_llong(const char32_t* value);
-    /// @brief Convert string to llong.
-    /// @param value object to convert.
-    /// @return A new llong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char32_t* value = U"42";
-    /// llong_t result = convert::to_llong(value);
-    /// @endcode
     static llong_t to_llong(char32_t* value);
-    /// @brief Convert string to llong.
-    /// @param value object to convert.
-    /// @return A new llong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const wchar_t* value = L"42";
-    /// llong_t result = convert::to_llong(value);
-    /// @endcode
     static llong_t to_llong(const wchar_t* value);
-    /// @brief Convert string to llong.
-    /// @param value object to convert.
-    /// @return A new llong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wchar_t* value = L"42";
-    /// llong_t result = convert::to_llong(value);
-    /// @endcode
     static llong_t to_llong(wchar_t* value);
+    /// @endcond
     /// @brief Convert type_t to llong.
     /// @param value object to convert.
     /// @return A new llong_t object converted from value.
@@ -5644,154 +3719,32 @@ namespace xtd {
     static sbyte_t to_sbyte(const xtd::ustring& value);
     /// @brief Convert string to sbyte.
     /// @param value object to convert.
+    /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
     /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @exception xtd::atgument_exception value does not represent a sbyte.
     /// @par Examples
     /// @code
-    /// string value = "42";
+    /// ustring value = "42";
     /// sbyte_t result = convert::to_sbyte(value);
     /// @endcode
+    static sbyte_t to_sbyte(const xtd::ustring& value, byte_t from_base);
+    /// @cond
     static sbyte_t to_sbyte(const std::string& value);
-    /// @brief Convert string to sbyte.
-    /// @param value object to convert.
-    /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u8string value = u8"42";
-    /// sbyte_t result = convert::to_sbyte(value);
-    /// @endcode
     static sbyte_t to_sbyte(const std::u8string& value);
-    /// @brief Convert string to sbyte.
-    /// @param value object to convert.
-    /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u16string value = u"42";
-    /// sbyte_t result = convert::to_sbyte(value);
-    /// @endcode
     static sbyte_t to_sbyte(const std::u16string& value);
-    /// @brief Convert string to sbyte.
-    /// @param value object to convert.
-    /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u32string value = U"42";
-    /// sbyte_t result = convert::to_sbyte(value);
-    /// @endcode
     static sbyte_t to_sbyte(const std::u32string& value);
-    /// @brief Convert string to sbyte.
-    /// @param value object to convert.
-    /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wstring value = L"42";
-    /// sbyte_t result = convert::to_sbyte(value);
-    /// @endcode
     static sbyte_t to_sbyte(const std::wstring& value);
-    /// @brief Convert string to sbyte.
-    /// @param value object to convert.
-    /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char* value = "42";
-    /// sbyte_t result = convert::to_sbyte(value);
-    /// @endcode
     static sbyte_t to_sbyte(const char* value);
-    /// @brief Convert string to sbyte.
-    /// @param value object to convert.
-    /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char* value = "42";
-    /// sbyte_t result = convert::to_sbyte(value);
-    /// @endcode
     static sbyte_t to_sbyte(char* value);
-    /// @brief Convert string to sbyte.
-    /// @param value object to convert.
-    /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char8_t* value = u8"42";
-    /// sbyte_t result = convert::to_sbyte(value);
-    /// @endcode
     static sbyte_t to_sbyte(const char8_t* value);
-    /// @brief Convert string to sbyte.
-    /// @param value object to convert.
-    /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char8_t* value = u8"42";
-    /// sbyte_t result = convert::to_sbyte(value);
-    /// @endcode
     static sbyte_t to_sbyte(char8_t* value);
-    /// @brief Convert string to sbyte.
-    /// @param value object to convert.
-    /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char16_t* value = u"42";
-    /// sbyte_t result = convert::to_sbyte(value);
-    /// @endcode
     static sbyte_t to_sbyte(const char16_t* value);
-    /// @brief Convert string to sbyte.
-    /// @param value object to convert.
-    /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char16_t* value = u"42";
-    /// sbyte_t result = convert::to_sbyte(value);
-    /// @endcode
     static sbyte_t to_sbyte(char16_t* value);
-    /// @brief Convert string to sbyte.
-    /// @param value object to convert.
-    /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char32_t* value = U"42";
-    /// sbyte_t result = convert::to_sbyte(value);
-    /// @endcode
     static sbyte_t to_sbyte(const char32_t* value);
-    /// @brief Convert string to sbyte.
-    /// @param value object to convert.
-    /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char32_t* value = U"42";
-    /// sbyte_t result = convert::to_sbyte(value);
-    /// @endcode
     static sbyte_t to_sbyte(char32_t* value);
-    /// @brief Convert string to sbyte.
-    /// @param value object to convert.
-    /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const wchar_t* value = L"42";
-    /// sbyte_t result = convert::to_sbyte(value);
-    /// @endcode
     static sbyte_t to_sbyte(const wchar_t* value);
-    /// @brief Convert string to sbyte.
-    /// @param value object to convert.
-    /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wchar_t* value = L"42";
-    /// sbyte_t result = convert::to_sbyte(value);
-    /// @endcode
     static sbyte_t to_sbyte(wchar_t* value);
+    /// @endcond
     /// @brief Convert type_t to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte_t object converted from value.
@@ -6012,154 +3965,32 @@ namespace xtd {
     static uint16_t to_uint16(const xtd::ustring& value);
     /// @brief Convert string to uint16.
     /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
+    /// @return A new intt16_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a uint16.
     /// @par Examples
     /// @code
-    /// string value = "42";
-    /// uint16_t result = convert::to_uint16(value);
+    /// ustring value = "42";
+    /// uint16_t result = convert::to_uuint16(value);
     /// @endcode
+    static uint16_t to_uint16(const xtd::ustring& value, byte_t from_base);
+    /// @cond
     static uint16_t to_uint16(const std::string& value);
-    /// @brief Convert string to uint16.
-    /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u8string value = u8"42";
-    /// uint16_t result = convert::to_uint16(value);
-    /// @endcode
     static uint16_t to_uint16(const std::u8string& value);
-    /// @brief Convert string to uint16.
-    /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u16string value = u"42";
-    /// uint16_t result = convert::to_uint16(value);
-    /// @endcode
     static uint16_t to_uint16(const std::u16string& value);
-    /// @brief Convert string to uint16.
-    /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u32string value = U"42";
-    /// uint16_t result = convert::to_uint16(value);
-    /// @endcode
     static uint16_t to_uint16(const std::u32string& value);
-    /// @brief Convert string to uint16.
-    /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wstring value = L"42";
-    /// uint16_t result = convert::to_uint16(value);
-    /// @endcode
     static uint16_t to_uint16(const std::wstring& value);
-    /// @brief Convert string to uint16.
-    /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char* value = "42";
-    /// uint16_t result = convert::to_uint16(value);
-    /// @endcode
     static uint16_t to_uint16(const char* value);
-    /// @brief Convert string to uint16.
-    /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char* value = "42";
-    /// uint16_t result = convert::to_uint16(value);
-    /// @endcode
     static uint16_t to_uint16(char* value);
-    /// @brief Convert string to uint16.
-    /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char8_t* value = u8"42";
-    /// uint16_t result = convert::to_uint16(value);
-    /// @endcode
     static uint16_t to_uint16(const char8_t* value);
-    /// @brief Convert string to uint16.
-    /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char8_t* value = u8"42";
-    /// uint16_t result = convert::to_uint16(value);
-    /// @endcode
     static uint16_t to_uint16(char8_t* value);
-    /// @brief Convert string to uint16.
-    /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char16_t* value = u"42";
-    /// uint16_t result = convert::to_uint16(value);
-    /// @endcode
     static uint16_t to_uint16(const char16_t* value);
-    /// @brief Convert string to uint16.
-    /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char16_t* value = u"42";
-    /// uint16_t result = convert::to_uint16(value);
-    /// @endcode
     static uint16_t to_uint16(char16_t* value);
-    /// @brief Convert string to uint16.
-    /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char32_t* value = U"42";
-    /// uint16_t result = convert::to_uint16(value);
-    /// @endcode
     static uint16_t to_uint16(const char32_t* value);
-    /// @brief Convert string to uint16.
-    /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char32_t* value = U"42";
-    /// uint16_t result = convert::to_uint16(value);
-    /// @endcode
     static uint16_t to_uint16(char32_t* value);
-    /// @brief Convert string to uint16.
-    /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const wchar_t* value = L"42";
-    /// uint16_t result = convert::to_uint16(value);
-    /// @endcode
     static uint16_t to_uint16(const wchar_t* value);
-    /// @brief Convert string to uint16.
-    /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wchar_t* value = L"42";
-    /// uint16_t result = convert::to_uint16(value);
-    /// @endcode
     static uint16_t to_uint16(wchar_t* value);
+    /// @endcond
     /// @brief Convert type_t to uint16.
     /// @param value object to convert.
     /// @return A new uint16_t object converted from value.
@@ -6378,154 +4209,32 @@ namespace xtd {
     static uint32_t to_uint32(const xtd::ustring& value);
     /// @brief Convert string to uint32.
     /// @param value object to convert.
-    /// @return A new uint32_t object converted from value.
+    /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
+    /// @return A new uintt32_t object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
-    /// string value = "42";
+    /// ustring value = "42";
     /// uint32_t result = convert::to_uint32(value);
     /// @endcode
+    static uint32_t to_uint32(const xtd::ustring& value, byte_t from_base);
+    /// @cond
     static uint32_t to_uint32(const std::string& value);
-    /// @brief Convert string to uint32.
-    /// @param value object to convert.
-    /// @return A new uint32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u8string value = u8"42";
-    /// uint32_t result = convert::to_uint32(value);
-    /// @endcode
     static uint32_t to_uint32(const std::u8string& value);
-    /// @brief Convert string to uint32.
-    /// @param value object to convert.
-    /// @return A new uint32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u16string value = u"42";
-    /// uint32_t result = convert::to_uint32(value);
-    /// @endcode
     static uint32_t to_uint32(const std::u16string& value);
-    /// @brief Convert string to uint32.
-    /// @param value object to convert.
-    /// @return A new uint32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u32string value = U"42";
-    /// uint32_t result = convert::to_uint32(value);
-    /// @endcode
     static uint32_t to_uint32(const std::u32string& value);
-    /// @brief Convert string to uint32.
-    /// @param value object to convert.
-    /// @return A new uint32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wstring value = L"42";
-    /// uint32_t result = convert::to_uint32(value);
-    /// @endcode
     static uint32_t to_uint32(const std::wstring& value);
-    /// @brief Convert string to uint32.
-    /// @param value object to convert.
-    /// @return A new uint32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char* value = "42";
-    /// uint32_t result = convert::to_uint32(value);
-    /// @endcode
     static uint32_t to_uint32(const char* value);
-    /// @brief Convert string to uint32.
-    /// @param value object to convert.
-    /// @return A new uint32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char* value = "42";
-    /// uint32_t result = convert::to_uint32(value);
-    /// @endcode
     static uint32_t to_uint32(char* value);
-    /// @brief Convert string to uint32.
-    /// @param value object to convert.
-    /// @return A new uint32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char8_t* value = u8"42";
-    /// uint32_t result = convert::to_uint32(value);
-    /// @endcode
     static uint32_t to_uint32(const char8_t* value);
-    /// @brief Convert string to uint32.
-    /// @param value object to convert.
-    /// @return A new uint32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char8_t* value = u8"42";
-    /// uint32_t result = convert::to_uint32(value);
-    /// @endcode
     static uint32_t to_uint32(char8_t* value);
-    /// @brief Convert string to uint32.
-    /// @param value object to convert.
-    /// @return A new uint32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char16_t* value = u"42";
-    /// uint32_t result = convert::to_uint32(value);
-    /// @endcode
     static uint32_t to_uint32(const char16_t* value);
-    /// @brief Convert string to uint32.
-    /// @param value object to convert.
-    /// @return A new uint32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char16_t* value = u"42";
-    /// uint32_t result = convert::to_uint32(value);
-    /// @endcode
     static uint32_t to_uint32(char16_t* value);
-    /// @brief Convert string to uint32.
-    /// @param value object to convert.
-    /// @return A new uint32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char32_t* value = U"42";
-    /// uint32_t result = convert::to_uint32(value);
-    /// @endcode
     static uint32_t to_uint32(const char32_t* value);
-    /// @brief Convert string to uint32.
-    /// @param value object to convert.
-    /// @return A new uint32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char32_t* value = U"42";
-    /// uint32_t result = convert::to_uint32(value);
-    /// @endcode
     static uint32_t to_uint32(char32_t* value);
-    /// @brief Convert string to uint32.
-    /// @param value object to convert.
-    /// @return A new uint32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const wchar_t* value = L"42";
-    /// uint32_t result = convert::to_uint32(value);
-    /// @endcode
     static uint32_t to_uint32(const wchar_t* value);
-    /// @brief Convert string to uint32.
-    /// @param value object to convert.
-    /// @return A new uint32_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wchar_t* value = L"42";
-    /// uint32_t result = convert::to_uint32(value);
-    /// @endcode
     static uint32_t to_uint32(wchar_t* value);
+    /// @endcond
     /// @brief Convert type_t to uint32.
     /// @param value object to convert.
     /// @return A new uint32_t object converted from value.
@@ -6742,154 +4451,32 @@ namespace xtd {
     static uint64_t to_uint64(const xtd::ustring& value);
     /// @brief Convert string to uint64.
     /// @param value object to convert.
-    /// @return A new uint64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
+    /// @return A new intt16_t object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a uint64.
     /// @par Examples
     /// @code
-    /// string value = "42";
-    /// uint64_t result = convert::to_uint64(value);
+    /// ustring value = "42";
+    /// uuint64_t result = convert::to_uint64(value);
     /// @endcode
+    static uint64_t to_uint64(const xtd::ustring& value, byte_t from_base);
+    /// @cond
     static uint64_t to_uint64(const std::string& value);
-    /// @brief Convert string to uint64.
-    /// @param value object to convert.
-    /// @return A new uint64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u8string value = u8"42";
-    /// uint64_t result = convert::to_uint64(value);
-    /// @endcode
     static uint64_t to_uint64(const std::u8string& value);
-    /// @brief Convert string to uint64.
-    /// @param value object to convert.
-    /// @return A new uint64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u16string value = u"42";
-    /// uint64_t result = convert::to_uint64(value);
-    /// @endcode
     static uint64_t to_uint64(const std::u16string& value);
-    /// @brief Convert string to uint64.
-    /// @param value object to convert.
-    /// @return A new uint64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u32string value = U"42";
-    /// uint64_t result = convert::to_uint64(value);
-    /// @endcode
     static uint64_t to_uint64(const std::u32string& value);
-    /// @brief Convert string to uint64.
-    /// @param value object to convert.
-    /// @return A new uint64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wstring value = L"42";
-    /// uint64_t result = convert::to_uint64(value);
-    /// @endcode
     static uint64_t to_uint64(const std::wstring& value);
-    /// @brief Convert string to uint64.
-    /// @param value object to convert.
-    /// @return A new uint64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char* value = "42";
-    /// uint64_t result = convert::to_uint64(value);
-    /// @endcode
     static uint64_t to_uint64(const char* value);
-    /// @brief Convert string to uint64.
-    /// @param value object to convert.
-    /// @return A new uint64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char* value = "42";
-    /// uint64_t result = convert::to_uint64(value);
-    /// @endcode
     static uint64_t to_uint64(char* value);
-    /// @brief Convert string to uint64.
-    /// @param value object to convert.
-    /// @return A new uint64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char8_t* value = u8"42";
-    /// uint64_t result = convert::to_uint64(value);
-    /// @endcode
     static uint64_t to_uint64(const char8_t* value);
-    /// @brief Convert string to uint64.
-    /// @param value object to convert.
-    /// @return A new uint64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char8_t* value = u8"42";
-    /// uint64_t result = convert::to_uint64(value);
-    /// @endcode
     static uint64_t to_uint64(char8_t* value);
-    /// @brief Convert string to uint64.
-    /// @param value object to convert.
-    /// @return A new uint64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char16_t* value = u"42";
-    /// uint64_t result = convert::to_uint64(value);
-    /// @endcode
     static uint64_t to_uint64(const char16_t* value);
-    /// @brief Convert string to uint64.
-    /// @param value object to convert.
-    /// @return A new uint64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char16_t* value = u"42";
-    /// uint64_t result = convert::to_uint64(value);
-    /// @endcode
     static uint64_t to_uint64(char16_t* value);
-    /// @brief Convert string to uint64.
-    /// @param value object to convert.
-    /// @return A new uint64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char32_t* value = U"42";
-    /// uint64_t result = convert::to_uint64(value);
-    /// @endcode
     static uint64_t to_uint64(const char32_t* value);
-    /// @brief Convert string to uint64.
-    /// @param value object to convert.
-    /// @return A new uint64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char32_t* value = U"42";
-    /// uint64_t result = convert::to_uint64(value);
-    /// @endcode
     static uint64_t to_uint64(char32_t* value);
-    /// @brief Convert string to uint64.
-    /// @param value object to convert.
-    /// @return A new uint64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const wchar_t* value = L"42";
-    /// uint64_t result = convert::to_uint64(value);
-    /// @endcode
     static uint64_t to_uint64(const wchar_t* value);
-    /// @brief Convert string to uint64.
-    /// @param value object to convert.
-    /// @return A new uint64_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wchar_t* value = L"42";
-    /// uint64_t result = convert::to_uint64(value);
-    /// @endcode
     static uint64_t to_uint64(wchar_t* value);
+    /// @cond
     /// @brief Convert type_t to uint64.
     /// @param value object to convert.
     /// @return A new uint64_t object converted from value.
@@ -7106,154 +4693,32 @@ namespace xtd {
     static ullong_t to_ullong(const xtd::ustring& value);
     /// @brief Convert string to ullong.
     /// @param value object to convert.
+    /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
     /// @return A new ullong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
+    /// @exception xtd::atgument_exception value does not represent a ullong.
     /// @par Examples
     /// @code
-    /// string value = "42";
+    /// ustring value = "42";
     /// ullong_t result = convert::to_ullong(value);
     /// @endcode
+    static ullong_t to_ullong(const xtd::ustring& value, byte_t from_base);
+    /// @cond
     static ullong_t to_ullong(const std::string& value);
-    /// @brief Convert string to ullong.
-    /// @param value object to convert.
-    /// @return A new ullong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u8string value = u8"42";
-    /// ullong_t result = convert::to_ullong(value);
-    /// @endcode
     static ullong_t to_ullong(const std::u8string& value);
-    /// @brief Convert string to ullong.
-    /// @param value object to convert.
-    /// @return A new ullong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u16string value = u"42";
-    /// ullong_t result = convert::to_ullong(value);
-    /// @endcode
     static ullong_t to_ullong(const std::u16string& value);
-    /// @brief Convert string to ullong.
-    /// @param value object to convert.
-    /// @return A new ullong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// u32string value = U"42";
-    /// ullong_t result = convert::to_ullong(value);
-    /// @endcode
     static ullong_t to_ullong(const std::u32string& value);
-    /// @brief Convert string to ullong.
-    /// @param value object to convert.
-    /// @return A new ullong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wstring value = L"42";
-    /// ullong_t result = convert::to_ullong(value);
-    /// @endcode
     static ullong_t to_ullong(const std::wstring& value);
-    /// @brief Convert string to ullong.
-    /// @param value object to convert.
-    /// @return A new ullong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char* value = "42";
-    /// ullong_t result = convert::to_ullong(value);
-    /// @endcode
     static ullong_t to_ullong(const char* value);
-    /// @brief Convert string to ullong.
-    /// @param value object to convert.
-    /// @return A new ullong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char* value = "42";
-    /// ullong_t result = convert::to_ullong(value);
-    /// @endcode
     static ullong_t to_ullong(char* value);
-    /// @brief Convert string to ullong.
-    /// @param value object to convert.
-    /// @return A new ullong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char8_t* value = u8"42";
-    /// ullong_t result = convert::to_ullong(value);
-    /// @endcode
     static ullong_t to_ullong(const char8_t* value);
-    /// @brief Convert string to ullong.
-    /// @param value object to convert.
-    /// @return A new ullong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char8_t* value = u8"42";
-    /// ullong_t result = convert::to_ullong(value);
-    /// @endcode
     static ullong_t to_ullong(char8_t* value);
-    /// @brief Convert string to ullong.
-    /// @param value object to convert.
-    /// @return A new ullong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char16_t* value = u"42";
-    /// ullong_t result = convert::to_ullong(value);
-    /// @endcode
     static ullong_t to_ullong(const char16_t* value);
-    /// @brief Convert string to ullong.
-    /// @param value object to convert.
-    /// @return A new ullong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char16_t* value = u"42";
-    /// ullong_t result = convert::to_ullong(value);
-    /// @endcode
     static ullong_t to_ullong(char16_t* value);
-    /// @brief Convert string to ullong.
-    /// @param value object to convert.
-    /// @return A new ullong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const char32_t* value = U"42";
-    /// ullong_t result = convert::to_ullong(value);
-    /// @endcode
     static ullong_t to_ullong(const char32_t* value);
-    /// @brief Convert string to ullong.
-    /// @param value object to convert.
-    /// @return A new ullong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// char32_t* value = U"42";
-    /// ullong_t result = convert::to_ullong(value);
-    /// @endcode
     static ullong_t to_ullong(char32_t* value);
-    /// @brief Convert string to ullong.
-    /// @param value object to convert.
-    /// @return A new ullong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// const wchar_t* value = L"42";
-    /// ullong_t result = convert::to_ullong(value);
-    /// @endcode
     static ullong_t to_ullong(const wchar_t* value);
-    /// @brief Convert string to ullong.
-    /// @param value object to convert.
-    /// @return A new ullong_t object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a byte.
-    /// @par Examples
-    /// @code
-    /// wchar_t* value = L"42";
-    /// ullong_t result = convert::to_ullong(value);
-    /// @endcode
     static ullong_t to_ullong(wchar_t* value);
+    /// @endcond
     /// @brief Convert type_t to ullong.
     /// @param value object to convert.
     /// @return A new ullong_t object converted from value.

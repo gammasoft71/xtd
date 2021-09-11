@@ -123,6 +123,7 @@ class xtd_core_manual_test : public object {
 public:
   static void main() {
     console::write_line("Hello, World!");
+    console::write_line("value = {}", convert::to_byte(u8"0x0A", 16));
   }
 };
 
