@@ -7,6 +7,7 @@ add_projects(
   hello_worlds
   collections
   console
+  convert
   delegates
   diagnostics
   environment

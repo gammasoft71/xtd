@@ -3303,3 +3303,251 @@ ullong_t convert::to_ullong(const wchar_t* value) {
 ullong_t convert::to_ullong(wchar_t* value) {
   return ustring::parse<ullong_t>(value);
 }
+
+ustring convert::to_string(any value) {
+  try {
+    return any_cast<ustring>(value);
+  } catch(...) {
+    throw invalid_cast_exception(csf_);
+  }
+}
+
+ustring convert::to_string(bool value) noexcept {
+  return ustring::format("{}", value);
+}
+
+ustring convert::to_string(byte_t value) noexcept {
+  return ustring::format("{}", value);
+}
+
+ustring convert::to_string(byte_t value, byte_t from_base) {
+  switch (from_base) {
+    case 2: return ustring::format("{:B}", value); break;
+    case 8: return ustring::format("{:O}", value); break;
+    case 10: return ustring::format("{:D}", value); break;
+    case 16: return ustring::format("{:X}", value); break;
+    default: throw argument_exception(csf_);
+  }
+}
+
+ustring convert::to_string(char value) noexcept {
+  return ustring::format("{}", value);
+}
+
+ustring convert::to_string(char8_t value) noexcept {
+  return ustring::format("{}", value);
+}
+
+ustring convert::to_string(char16_t value) noexcept {
+  return ustring::format("{}", value);
+}
+
+ustring convert::to_string(char32_t value) noexcept {
+  return ustring::format("{}", value);
+}
+
+ustring convert::to_string(wchar_t value) noexcept {
+  return ustring::format("{}", value);
+}
+
+ustring convert::to_string(decimal_t value) {
+  return ustring::format("{}", value);
+}
+
+ustring convert::to_string(double value) {
+  return ustring::format("{}", value);
+}
+
+ustring convert::to_string(float value) {
+  return ustring::format("{}", value);
+}
+
+ustring convert::to_string(int16_t value) {
+  return ustring::format("{}", value);
+}
+
+ustring convert::to_string(int16_t value, byte_t from_base) {
+  switch (from_base) {
+    case 2: return ustring::format("{:B}", value); break;
+    case 8: return ustring::format("{:O}", value); break;
+    case 10: return ustring::format("{:D}", value); break;
+    case 16: return ustring::format("{:X}", value); break;
+    default: throw argument_exception(csf_);
+  }
+}
+
+ustring convert::to_string(int32_t value) {
+  return ustring::format("{}", value);
+}
+
+ustring convert::to_string(int32_t value, byte_t from_base) {
+  switch (from_base) {
+    case 2: return ustring::format("{:B}", value); break;
+    case 8: return ustring::format("{:O}", value); break;
+    case 10: return ustring::format("{:D}", value); break;
+    case 16: return ustring::format("{:X}", value); break;
+    default: throw argument_exception(csf_);
+  }
+}
+
+ustring convert::to_string(int64_t value) {
+  return ustring::format("{}", value);
+}
+
+ustring convert::to_string(int64_t value, byte_t from_base) {
+  switch (from_base) {
+    case 2: return ustring::format("{:B}", value); break;
+    case 8: return ustring::format("{:O}", value); break;
+    case 10: return ustring::format("{:D}", value); break;
+    case 16: return ustring::format("{:X}", value); break;
+    default: throw argument_exception(csf_);
+  }
+}
+
+ustring convert::to_string(llong_t value) {
+  return ustring::format("{}", value);
+}
+
+ustring convert::to_string(llong_t value, byte_t from_base) {
+  switch (from_base) {
+    case 2: return ustring::format("{:B}", value); break;
+    case 8: return ustring::format("{:O}", value); break;
+    case 10: return ustring::format("{:D}", value); break;
+    case 16: return ustring::format("{:X}", value); break;
+    default: throw argument_exception(csf_);
+  }
+}
+
+ustring convert::to_string(sbyte_t value) {
+  return ustring::format("{}", value);
+}
+
+ustring convert::to_string(sbyte_t value, byte_t from_base) {
+  switch (from_base) {
+    case 2: return ustring::format("{:B}", value); break;
+    case 8: return ustring::format("{:O}", value); break;
+    case 10: return ustring::format("{:D}", value); break;
+    case 16: return ustring::format("{:X}", value); break;
+    default: throw argument_exception(csf_);
+  }
+}
+
+ustring convert::to_string(uint16_t value) noexcept {
+  return ustring::format("{}", value);
+}
+
+ustring convert::to_string(uint16_t value, byte_t from_base) {
+  switch (from_base) {
+    case 2: return ustring::format("{:B}", value); break;
+    case 8: return ustring::format("{:O}", value); break;
+    case 10: return ustring::format("{:D}", value); break;
+    case 16: return ustring::format("{:X}", value); break;
+    default: throw argument_exception(csf_);
+  }
+}
+
+ustring convert::to_string(uint32_t value) noexcept {
+  return ustring::format("{}", value);
+}
+
+ustring convert::to_string(uint32_t value, byte_t from_base) {
+  switch (from_base) {
+    case 2: return ustring::format("{:B}", value); break;
+    case 8: return ustring::format("{:O}", value); break;
+    case 10: return ustring::format("{:D}", value); break;
+    case 16: return ustring::format("{:X}", value); break;
+    default: throw argument_exception(csf_);
+  }
+}
+
+ustring convert::to_string(uint64_t value) noexcept {
+  return ustring::format("{}", value);
+}
+
+ustring convert::to_string(uint64_t value, byte_t from_base) {
+  switch (from_base) {
+    case 2: return ustring::format("{:B}", value); break;
+    case 8: return ustring::format("{:O}", value); break;
+    case 10: return ustring::format("{:D}", value); break;
+    case 16: return ustring::format("{:X}", value); break;
+    default: throw argument_exception(csf_);
+  }
+}
+
+ustring convert::to_string(ullong_t value) noexcept {
+  return ustring::format("{}", value);
+}
+
+ustring convert::to_string(ullong_t value, byte_t from_base) {
+  switch (from_base) {
+    case 2: return ustring::format("{:B}", value); break;
+    case 8: return ustring::format("{:O}", value); break;
+    case 10: return ustring::format("{:D}", value); break;
+    case 16: return ustring::format("{:X}", value); break;
+    default: throw argument_exception(csf_);
+  }
+}
+
+ustring convert::to_string(const ustring& value) {
+  return value;
+}
+
+ustring convert::to_string(const string& value) {
+  return value;
+}
+
+ustring convert::to_string(const u8string& value) {
+  return value;
+}
+
+ustring convert::to_string(const u16string& value) {
+  return value;
+}
+
+ustring convert::to_string(const u32string& value) {
+  return value;
+}
+
+ustring convert::to_string(const wstring& value) {
+  return value;
+}
+
+ustring convert::to_string(const char* value) {
+  return value;
+}
+
+ustring convert::to_string(char* value) {
+  return value;
+}
+
+ustring convert::to_string(const char8_t* value) {
+  return value;
+}
+
+ustring convert::to_string(char8_t* value) {
+  return value;
+}
+
+ustring convert::to_string(const char16_t* value) {
+  return value;
+}
+
+ustring convert::to_string(char16_t* value) {
+  return value;
+}
+
+ustring convert::to_string(const char32_t* value) {
+  return value;
+}
+
+ustring convert::to_string(char32_t* value) {
+  return value;
+}
+
+ustring convert::to_string(const wchar_t* value) {
+  return value;
+}
+
+ustring convert::to_string(wchar_t* value) {
+  return value;
+}

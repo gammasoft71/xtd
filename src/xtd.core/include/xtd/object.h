@@ -88,4 +88,8 @@ namespace xtd {
     /// @include object_to_string.cpp
     virtual xtd::ustring to_string() const noexcept;
   };
+  
+  /// @cond
+  std::ostream& operator <<(std::ostream& os, const object& obj) noexcept;
+  /// @endcond
 }

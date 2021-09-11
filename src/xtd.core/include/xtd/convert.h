@@ -4729,7 +4729,348 @@ namespace xtd {
     /// @endcode
     template<typename type_t>
     static ullong_t to_ullong(type_t value) noexcept {
-      return static_cast<uint64_t>(value);
+      return static_cast<ullong_t>(value);
+    }
+    
+    /// @brief Convert std::any to ustring.
+    /// @param value object to convert.
+    /// @return A new ustring object converted from value.
+    /// @par Examples
+    /// @code
+    /// std::any value = 42;
+    /// ustring result = convert::to_string(value);
+    /// @endcode
+    static ustring to_string(std::any value);
+    /// @brief Convert bool to ustring.
+    /// @param value object to convert.
+    /// @return A new ustring object converted from value.
+    /// @par Examples
+    /// @code
+    /// bool value = true;
+    /// ustring result = convert::to_string(value);
+    /// @endcode
+    static ustring to_string(bool value) noexcept;
+    /// @brief Convert byte_t to ustring.
+    /// @param value object to convert.
+    /// @return A new ustring object converted from value.
+    /// @par Examples
+    /// @code
+    /// byte_t value = 42;
+    /// ustring result = convert::to_string(value);
+    /// @endcode
+    static ustring to_string(byte_t value) noexcept;
+    /// @brief Convert string to ustring.
+    /// @param value object to convert.
+    /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
+    /// @return A new ustring object converted from value.
+    /// @exception xtd::atgument_exception from_base is not 2 or 8 or 10 orr 16.
+    /// @par Examples
+    /// @code
+    /// byte_t value = 42;
+    /// ustring result = convert::to_string(value, 16);
+    /// @endcode
+    static ustring to_string(byte_t value, byte_t from_base);
+    /// @brief Convert char to ustring.
+    /// @param value object to convert.
+    /// @return A new ustring object converted from value.
+    /// @par Examples
+    /// @code
+    /// char value = 'a';
+    /// ustring result = convert::to_string(value);
+    /// @endcode
+    static ustring to_string(char value) noexcept;
+    /// @brief Convert char8_t to ustring.
+    /// @param value object to convert.
+    /// @return A new ustring object converted from value.
+    /// @par Examples
+    /// @code
+    /// char8_t value = u8'a';
+    /// ustring result = convert::to_string(value);
+    /// @endcode
+    static ustring to_string(char8_t value) noexcept;
+    /// @brief Convert char16_t to ustring.
+    /// @param value object to convert.
+    /// @return A new ustring object converted from value.
+    /// @par Examples
+    /// @code
+    /// char16_t value = u'a';
+    /// ustring result = convert::to_string(value);
+    /// @endcode
+    static ustring to_string(char16_t value) noexcept;
+    /// @brief Convert char32_t to ustring.
+    /// @param value object to convert.
+    /// @return A new ustring object converted from value.
+    /// @par Examples
+    /// @code
+    /// char32_t value = U'a';
+    /// ustring result = convert::to_string(value);
+    /// @endcode
+    static ustring to_string(char32_t value) noexcept;
+    /// @brief Convert char32_t to ustring.
+    /// @param value object to convert.
+    /// @return A new ustring object converted from value.
+    /// @par Examples
+    /// @code
+    /// wchar_t value = L'a';
+    /// ustring result = convert::to_string(value);
+    /// @endcode
+    static ustring to_string(wchar_t value) noexcept;
+    /// @brief Convert decimal_t to ustring.
+    /// @param value object to convert.
+    /// @remarks The result is rounded.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @return A new ustring object converted from value.
+    /// @par Examples
+    /// @code
+    /// decimal_t value = 42.50l;
+    /// ustring result = convert::to_string(value);
+    /// @endcode
+    static ustring to_string(decimal_t value);
+    /// @brief Convert double to ustring.
+    /// @param value object to convert.
+    /// @return A new ustring object converted from value.
+    /// @remarks The result is rounded.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @par Examples
+    /// @code
+    /// double value = 42.50;
+    /// ustring result = convert::to_string(value);
+    /// @endcode
+    static ustring to_string(double value);
+    /// @brief Convert float to ustring.
+    /// @param value object to convert.
+    /// @return A new ustring object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @remarks The result is rounded.
+    /// @par Examples
+    /// @code
+    /// float value = 42.50f;
+    /// ustring result = convert::to_string(value);
+    /// @endcode
+    static ustring to_string(float value);
+    /// @brief Convert int16_t to ustring.
+    /// @param value object to convert.
+    /// @return A new ustring object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @par Examples
+    /// @code
+    /// int16_t value = 42;
+    /// ustring result = convert::to_string(value);
+    /// @endcode
+    static ustring to_string(int16_t value);
+    /// @brief Convert string to ustring.
+    /// @param value object to convert.
+    /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
+    /// @return A new ustring object converted from value.
+    /// @exception xtd::atgument_exception from_base is not 2 or 8 or 10 orr 16.
+    /// @par Examples
+    /// @code
+    /// int16_t value = 42;
+    /// ustring result = convert::to_string(value, 16);
+    /// @endcode
+    static ustring to_string(int16_t value, byte_t from_base);
+    /// @brief Convert int32_t to ustring.
+    /// @param value object to convert.
+    /// @return A new ustring object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @par Examples
+    /// @code
+    /// int32_t value = 42;
+    /// ustring result = convert::to_string(value);
+    /// @endcode
+    static ustring to_string(int32_t value);
+    /// @brief Convert string to ustring.
+    /// @param value object to convert.
+    /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
+    /// @return A new ustring object converted from value.
+    /// @exception xtd::atgument_exception from_base is not 2 or 8 or 10 orr 16.
+    /// @par Examples
+    /// @code
+    /// int32_t value = 42;
+    /// ustring result = convert::to_string(value, 16);
+    /// @endcode
+    static ustring to_string(int32_t value, byte_t from_base);
+    /// @brief Convert int64_t to ustring.
+    /// @param value object to convert.
+    /// @return A new ustring object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @par Examples
+    /// @code
+    /// int64_t value = 42l;
+    /// ustring result = convert::to_string(value);
+    /// @endcode
+    static ustring to_string(int64_t value);
+    /// @brief Convert string to ustring.
+    /// @param value object to convert.
+    /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
+    /// @return A new ustring object converted from value.
+    /// @exception xtd::atgument_exception from_base is not 2 or 8 or 10 orr 16.
+    /// @par Examples
+    /// @code
+    /// int64_t value = 42;
+    /// ustring result = convert::to_string(value, 16);
+    /// @endcode
+    static ustring to_string(int64_t value, byte_t from_base);
+    /// @brief Convert llong_t to ustring.
+    /// @param value object to convert.
+    /// @return A new ustring object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @par Examples
+    /// @code
+    /// llong_t value = 42ll;
+    /// ustring result = convert::to_string(value);
+    /// @endcode
+    static ustring to_string(llong_t value);
+    /// @brief Convert string to ustring.
+    /// @param value object to convert.
+    /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
+    /// @return A new ustring object converted from value.
+    /// @exception xtd::atgument_exception from_base is not 2 or 8 or 10 orr 16.
+    /// @par Examples
+    /// @code
+    /// llong_t value = 42;
+    /// ustring result = convert::to_string(value, 16);
+    /// @endcode
+    static ustring to_string(llong_t value, byte_t from_base);
+    /// @brief Convert sbyte_t to ustring.
+    /// @param value object to convert.
+    /// @return A new ustring object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @par Examples
+    /// @code
+    /// sbyte_t value = 42;
+    /// ustring result = convert::to_string(value);
+    /// @endcode
+    static ustring to_string(sbyte_t value);
+    /// @brief Convert string to ustring.
+    /// @param value object to convert.
+    /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
+    /// @return A new ustring object converted from value.
+    /// @exception xtd::atgument_exception from_base is not 2 or 8 or 10 orr 16.
+    /// @par Examples
+    /// @code
+    /// sbyte_t value = 42;
+    /// ustring result = convert::to_string(value, 16);
+    /// @endcode
+    static ustring to_string(sbyte_t value, byte_t from_base);
+    /// @brief Convert uint16_t to ustring.
+    /// @param value object to convert.
+    /// @return A new ustring object converted from value.
+    /// @par Examples
+    /// @code
+    /// uint16_t value = 42u;
+    /// ustring result = convert::to_string(value);
+    /// @endcode
+    static ustring to_string(uint16_t value) noexcept;
+    /// @brief Convert string to ustring.
+    /// @param value object to convert.
+    /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
+    /// @return A new ustring object converted from value.
+    /// @exception xtd::atgument_exception from_base is not 2 or 8 or 10 orr 16.
+    /// @par Examples
+    /// @code
+    /// uint16_t value = 42u;
+    /// ustring result = convert::to_string(value, 16);
+    /// @endcode
+    static ustring to_string(uint16_t value, byte_t from_base);
+    /// @brief Convert uint32_t to ustring.
+    /// @param value object to convert.
+    /// @return A new ustring object converted from value.
+    /// @par Examples
+    /// @code
+    /// uint32_t value = 42u;
+    /// ustring result = convert::to_string(value);
+    /// @endcode
+    static ustring to_string(uint32_t value) noexcept;
+    /// @brief Convert string to ustring.
+    /// @param value object to convert.
+    /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
+    /// @return A new ustring object converted from value.
+    /// @exception xtd::atgument_exception from_base is not 2 or 8 or 10 orr 16.
+    /// @par Examples
+    /// @code
+    /// uint32_t value = 42;
+    /// ustring result = convert::to_string(value, 16);
+    /// @endcode
+    static ustring to_string(uint32_t value, byte_t from_base);
+    /// @brief Convert uint64_t to ustring.
+    /// @param value object to convert.
+    /// @return A new ustring object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @par Examples
+    /// @code
+    /// uint64t value = 42u;
+    /// ustring result = convert::to_string(value);
+    /// @endcode
+    static ustring to_string(uint64_t value) noexcept;
+    /// @brief Convert string to ustring.
+    /// @param value object to convert.
+    /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
+    /// @return A new ustring object converted from value.
+    /// @exception xtd::atgument_exception from_base is not 2 or 8 or 10 orr 16.
+    /// @par Examples
+    /// @code
+    /// uint64_t value = 42ul;
+    /// ustring result = convert::to_string(value, 16);
+    /// @endcode
+    static ustring to_string(uint64_t value, byte_t from_base);
+    /// @brief Convert llong_t to ustring.
+    /// @param value object to convert.
+    /// @return A new ustring object converted from value.
+    /// @par Examples
+    /// @code
+    /// ullong_t value = 42ull;
+    /// ustring result = convert::to_string(value);
+    /// @endcode
+    static ustring to_string(ullong_t value) noexcept;
+    /// @brief Convert string to ustring.
+    /// @param value object to convert.
+    /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
+    /// @return A new ustring object converted from value.
+    /// @exception xtd::atgument_exception from_base is not 2 or 8 or 10 orr 16.
+    /// @par Examples
+    /// @code
+    /// ullong_t value = 42ull;
+    /// ustring result = convert::to_string(value, 16);
+    /// @endcode
+    static ustring to_string(ullong_t value, byte_t from_base);
+    /// @brief Convert string to ustring.
+    /// @param value object to convert.
+    /// @return A new ustring object converted from value.
+    /// @par Examples
+    /// @code
+    /// ustring value = "42";
+    /// ustring result = convert::to_string(value);
+    /// @endcode
+    static ustring to_string(const xtd::ustring& value);
+    /// @cond
+    static ustring to_string(const std::string& value);
+    static ustring to_string(const std::u8string& value);
+    static ustring to_string(const std::u16string& value);
+    static ustring to_string(const std::u32string& value);
+    static ustring to_string(const std::wstring& value);
+    static ustring to_string(const char* value);
+    static ustring to_string(char* value);
+    static ustring to_string(const char8_t* value);
+    static ustring to_string(char8_t* value);
+    static ustring to_string(const char16_t* value);
+    static ustring to_string(char16_t* value);
+    static ustring to_string(const char32_t* value);
+    static ustring to_string(char32_t* value);
+    static ustring to_string(const wchar_t* value);
+    static ustring to_string(wchar_t* value);
+    /// @endcond
+    /// @brief Convert type_t to ustring.
+    /// @param value object to convert.
+    /// @return A new ustring object converted from value.
+    /// @par Examples
+    /// @code
+    /// address_family value = address_family::inter_network;
+    /// ustring result = convert::to_string(value);
+    /// @endcode
+    template<typename type_t>
+    static ustring to_string(type_t value) noexcept {
+      return ustring::format("{}", value);
     }
   };
 }
