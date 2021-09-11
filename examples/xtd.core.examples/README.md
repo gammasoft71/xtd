@@ -27,6 +27,11 @@
 * [console_unicode](console/console_unicode/README.md) shows how to use [xtd::console](../../src/xtd.core/include/xtd/console.h) with unicode characters.
 * [wconsole](console/wconsole/README.md) shows how to use [xtd::wconsole](../../src/xtd.core/include/xtd/console.h) class.
 
+## [Convert](convert/README.md)
+
+* [as](convert/as/README.md) shows how to use [xtd::guid](../../src/xtd.core/include/xtd/as.h) operator.
+* [to_byte](convert/to_byte/README.md) shows how to use [xtd::convert](../../src/xtd.core/include/xtd/convert.h) class.
+
 ## [Diagnostics](diagnostics/README.md)
 
 * [assert](diagnostics/assert_/README.md) shows how to use [assert_](../../src/xtd.core/include/xtd/diagnostics::debug.h) macro.
@@ -74,6 +79,10 @@
 * [format_unordered_associative_containers](format/format_unordered_associative_containers/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with associative containers (std::unordered_set, std::unordered_multiset, sttd::unordered_map and std::unordered_multimap).
 * [format_with_alignment](format/format_with_alignment/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with specified alignment args.
 * [format_with_order](format/format_with_order/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with specified order args.
+
+## [Guid](guid/README.md)
+
+* [guid](guid/guid/README.md) shows how to use [xtd::guid](../../src/xtd.core/include/xtd/guid.h) class.
 
 ## [Keywords](keywords/README.md)
 
