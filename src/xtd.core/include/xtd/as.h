@@ -8137,7 +8137,7 @@ namespace xtd {
   inline int16_t as<int16_t>(wchar_t* value) {
     return xtd::convert::to_int16(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int32_t object converted from value.

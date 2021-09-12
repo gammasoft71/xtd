@@ -77,7 +77,7 @@ namespace examples {
       numeric_up_down_zoom.set_range(1, 50);
       numeric_up_down_zoom.value(zoom);
       numeric_up_down_zoom.value_changed += [&] {
-        zoom = static_cast<int>(numeric_up_down_zoom.value());
+        zoom = as<int>(numeric_up_down_zoom.value());
         track_bar_zoom.value(zoom);
         panel_painting.size({picture.width() * zoom, picture.height() * zoom});
         panel_painting.invalidate();

@@ -16,8 +16,8 @@ protected:
     form::wnd_proc(message);
     
     switch (message.msg()) {
-      case WM_ACTIVATE: ctrace << ustring::format("WM_ACTIVATE [activate={}]", static_cast<bool>(message.lparam())) << endl; break;
-      case WM_ACTIVATEAPP: ctrace << ustring::format("WM_ACTIVATEAPP [activate={}, threat={}]", static_cast<bool>(message.wparam()), message.lparam()) << endl; break;
+      case WM_ACTIVATE: ctrace << ustring::format("WM_ACTIVATE [activate={}]", as<bool>(message.lparam())) << endl; break;
+      case WM_ACTIVATEAPP: ctrace << ustring::format("WM_ACTIVATEAPP [activate={}, threat={}]", as<bool>(message.wparam()), message.lparam()) << endl; break;
       case WM_CANCELMODE: ctrace << "WM_CANCELMODE" << endl; break;
       case WM_CLOSE: ctrace << "WM_CLOSE" << endl; break;
       case WM_COMMAND: ctrace << ustring::format("WM_COMMAND [type=0x{:X8}, control={}]", message.wparam(), message.lparam()) << endl; break;
@@ -46,7 +46,7 @@ protected:
       case WM_RBUTTONUP: ctrace << ustring::format("WM_RBUTTONUP [Buttons={}, x={}, y={}]", message.wparam(), LOWORD(message.lparam()), HIWORD(message.lparam())) << endl; break;
       case WM_SETFOCUS: ctrace << "WM_SETFOCUS" << endl; break;
       case WM_SETTEXT: ctrace << ustring::format("WM_SETTEXT [text=\"{}\"]", reinterpret_cast<char*>(message.lparam())) << endl; break;
-      case WM_SHOWWINDOW: ctrace << ustring::format("WM_SHOWWINDOW [show={}]", static_cast<bool>(message.wparam())) << endl; break;
+      case WM_SHOWWINDOW: ctrace << ustring::format("WM_SHOWWINDOW [show={}]", as<bool>(message.wparam())) << endl; break;
       case WM_SIZE: ctrace << ustring::format("WM_SIZE [type={}, width={}, heignt={}]", message.wparam(), LOWORD(message.lparam()), HIWORD(message.lparam())) << endl; break;
       case WM_XBUTTONDBLCLK: ctrace << ustring::format("WM_XBUTTONDBLCLK [Buttons={}, x={}, y={}]", message.wparam(), LOWORD(message.lparam()), HIWORD(message.lparam())) << endl; break;
       case WM_XBUTTONDOWN: ctrace << ustring::format("WM_XBUTTONDOWN [Buttons={}, x={}, y={}]", message.wparam(), LOWORD(message.lparam()), HIWORD(message.lparam())) << endl; break;
