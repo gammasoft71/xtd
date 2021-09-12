@@ -53,7 +53,7 @@ namespace example {
       button_sheet.click += [&] {
         auto dialog = control::create<form>("dialog show sheet", {}, {250, 100});
         dialog->key_up += [&](object& control, key_event_args& e) {
-          if (e.key_code() == keys::escape) static_cast<form&>(control).close();
+          if (e.key_code() == keys::escape) as<form&>(control).close();
         };
         dialog->show_sheet(*this);
         dialogs.push_back(move(dialog));
@@ -63,7 +63,7 @@ namespace example {
       button_sheet_modal.click += [&] {
         auto dialog = control::create<form>("dialog show sheet modal", {}, {250, 100});
         dialog->key_up += [&](object& control, key_event_args& e) {
-          if (e.key_code() == keys::escape) static_cast<form&>(control).close();
+          if (e.key_code() == keys::escape) as<form&>(control).close();
         };
         dialog->show_sheet_dialog(*this);
       };

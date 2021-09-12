@@ -201,10 +201,10 @@ namespace game_of_life {
     }
     
     void fill_figure(const std::vector<xtd::ustring>& figure) {
-      auto height = static_cast<int>(figure.size());
+      auto height = xtd::as<int>(figure.size());
       auto width = 0U;
       for (auto line : figure)
-        if (line.length() > width) width = static_cast<int>(line.length());
+        if (line.length() > width) width = xtd::as<int>(line.length());
       
       auto start_x = (panel_grid_.client_size().width() / zoom_ / 2) - (width / 2);
       auto y = (panel_grid_.client_size().height() / zoom_ / 2) - (height / 2);

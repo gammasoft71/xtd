@@ -25,8 +25,8 @@ namespace examples {
     
   private:
     void on_choice_click(object& sender, const xtd::event_args& e) {
-      choice1.selected_index(static_cast<choice&>(sender).selected_index());
-      choice2.selected_index(static_cast<choice&>(sender).selected_index());
+      choice1.selected_index(as<choice&>(sender).selected_index());
+      choice2.selected_index(as<choice&>(sender).selected_index());
     }
     choice choice1;
     choice choice2;

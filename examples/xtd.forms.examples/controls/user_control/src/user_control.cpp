@@ -85,7 +85,7 @@ namespace examples {
     
   private:
     void on_operation_click(object& sender, const event_args& e) {
-      examples::operation& operation = static_cast<examples::operation&>(sender);
+      examples::operation& operation = as<examples::operation&>(sender);
       switch (operation.status()) {
         case operation_status::none: operation.status(operation_status::running); break;
         case operation_status::running: operation.status(operation_status::succeed); break;
