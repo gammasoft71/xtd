@@ -123,14 +123,10 @@ class xtd_core_manual_test : public object {
 public:
   static void main() {
     console::write_line("Hello, World!");
-    auto value = 42;
-    console::write_line("value = {}", convert::to_string(value));
-    console::write_line("value = 0b{}", convert::to_string(value, 2));
-    console::write_line("value = 0{}", convert::to_string(value, 8));
-    console::write_line("value = {}", convert::to_string(value, 10));
-    console::write_line("value = 0x{}", convert::to_string(value, 16));
-
-    console::write_line("value = {}", as<ustring>("Hello, World!"));
+    version v(1, 2, 3);
+    console::write_line("v = {}", v);
+    object& o = v;
+    console::write_line("o = {}", o);
   }
 };
 
