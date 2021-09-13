@@ -1522,6 +1522,50 @@ namespace xtd {
     using std::basic_string<value_type>::replace;
     using std::basic_string<value_type>::resize;
   };
+
+  /// @brief Converts a signed integer to xtd::ustring.
+  /// @param val A numeric value to convert.
+  /// @return A string holding the converted value.
+  ustring to_ustring(int val);
+  /// @brief Converts an unsigned integer to xtd::ustring.
+  /// @param val A numeric value to convert.
+  /// @return A string holding the converted value.
+  ustring to_ustring(unsigned val);
+  /// @brief Converts a signed integer to xtd::ustring.
+  /// @param val A numeric value to convert.
+  /// @return A string holding the converted value.
+  ustring to_ustring(long val);
+  /// @brief Converts an unsigned integer to xtd::ustring.
+  /// @param val A numeric value to convert.
+  /// @return A string holding the converted value.
+  ustring to_ustring(unsigned long val);
+  /// @brief Converts a signed integer to xtd::ustring.
+  /// @param val A numeric value to convert.
+  /// @return A string holding the converted value.
+  ustring to_ustring(long long val);
+  /// @brief Converts an unsigned integer to xtd::ustring.
+  /// @param val A numeric value to convert.
+  /// @return A string holding the converted value.
+  ustring to_ustring(unsigned long long val);
+  /// @brief Converts a floating point to xtd::ustring.
+  /// @param val A numeric value to convert.
+  /// @return A string holding the converted value.
+  ustring to_ustring(float val);
+  /// @brief Converts a floating point integer to xtd::ustring.
+  /// @param val A numeric value to convert.
+  /// @return A string holding the converted value.
+  ustring to_ustring(double val);
+  /// @brief Converts a floating point to xtd::ustring.
+  /// @param val A numeric value to convert.
+  /// @return A string holding the converted value.
+  ustring to_ustring(long double val);
+  /// @brief Converts a type_t to xtd::ustring.
+  /// @param val A type_t value to convert.
+  /// @return A string holding the converted value.
+  template <typename type_t>
+  ustring to_ustring(type_t val) {
+    return ustring::format("{}", val);
+  }
 }
 
 /// @cond

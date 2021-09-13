@@ -978,3 +978,39 @@ ustring ustring::get_class_name(const ustring& full_name) {
   if (full_name.last_index_of("::", 0, length) == npos) return full_name;
   return full_name.substring(full_name.last_index_of("::", 0, length) + 2);
 }
+
+ustring xtd::to_ustring(int val) {
+  return ustring::format("{}", val);
+}
+
+ustring xtd::to_ustring(unsigned val) {
+  return ustring::format("{}", val);
+}
+
+ustring xtd::to_ustring(long val) {
+  return ustring::format("{}", val);
+}
+
+ustring xtd::to_ustring(unsigned long val) {
+  return ustring::format("{}", val);
+}
+
+ustring xtd::to_ustring(long long val) {
+  return ustring::format("{}", val);
+}
+
+ustring xtd::to_ustring(unsigned long long val) {
+  return ustring::format("{}", val);
+}
+
+ustring xtd::to_ustring(float val) {
+  return ustring::format("{}", val);
+}
+
+ustring xtd::to_ustring(double val) {
+  return ustring::format("{}", val);
+}
+
+ustring xtd::to_ustring(long double val) {
+  return ustring::format("{}", val);
+}
