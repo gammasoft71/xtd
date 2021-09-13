@@ -3551,3 +3551,187 @@ ustring convert::to_string(const wchar_t* value) {
 ustring convert::to_string(wchar_t* value) {
   return value;
 }
+
+ustring convert::to_ustring(any value) {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(bool value) noexcept {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(byte_t value) noexcept {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(byte_t value, byte_t from_base) {
+  return to_string(value, from_base);
+}
+
+ustring convert::to_ustring(char value) noexcept {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(char8_t value) noexcept {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(char16_t value) noexcept {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(char32_t value) noexcept {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(wchar_t value) noexcept {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(decimal_t value) {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(double value) {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(float value) {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(int16_t value) {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(int16_t value, byte_t from_base) {
+  return to_string(value, from_base);
+}
+
+ustring convert::to_ustring(int32_t value) {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(int32_t value, byte_t from_base) {
+  return to_string(value, from_base);
+}
+
+ustring convert::to_ustring(int64_t value) {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(int64_t value, byte_t from_base) {
+  return to_string(value, from_base);
+}
+
+ustring convert::to_ustring(llong_t value) {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(llong_t value, byte_t from_base) {
+  return to_string(value, from_base);
+}
+
+ustring convert::to_ustring(sbyte_t value) {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(sbyte_t value, byte_t from_base) {
+  return to_string(value, from_base);
+}
+
+ustring convert::to_ustring(uint16_t value) noexcept {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(uint16_t value, byte_t from_base) {
+  return to_string(value, from_base);
+}
+
+ustring convert::to_ustring(uint32_t value) noexcept {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(uint32_t value, byte_t from_base) {
+  return to_string(value, from_base);
+}
+
+ustring convert::to_ustring(uint64_t value) noexcept {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(uint64_t value, byte_t from_base) {
+  return to_string(value, from_base);
+}
+
+ustring convert::to_ustring(ullong_t value) noexcept {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(ullong_t value, byte_t from_base) {
+  return to_string(value, from_base);
+}
+
+ustring convert::to_ustring(const ustring& value) {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(const string& value) {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(const u8string& value) {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(const u16string& value) {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(const u32string& value) {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(const wstring& value) {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(const char* value) {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(char* value) {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(const char8_t* value) {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(char8_t* value) {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(const char16_t* value) {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(char16_t* value) {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(const char32_t* value) {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(char32_t* value) {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(const wchar_t* value) {
+  return to_string(value);
+}
+
+ustring convert::to_ustring(wchar_t* value) {
+  return to_string(value);
+}
