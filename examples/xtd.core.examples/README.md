@@ -34,6 +34,15 @@
 * [to_int32](convert/to_int32/README.md) shows how to use [xtd::convert](../../src/xtd.core/include/xtd/convert.h) class.
 * [to_ustring](convert/to_ustring/README.md) shows how to use [xtd::convert](../../src/xtd.core/include/xtd/convert.h) class.
 
+# [Delegates](delegates/README.md)
+
+* [action](delegates/action/README.md) shows how to use [xtd::action](../../src/xtd.core/include/xtd/action.h) alias.
+* [delegate](delegates/delegate/README.md) shows how to use [xtd::delegate](../../src/xtd.core/include/xtd/delegate.h) class.
+* [delegate_lambda](delegates/delegate_lambda/README.md) shows how to use [xtd::delegate](../../src/xtd.core/include/xtd/delegate.h) class.
+* [delegate_member_method](delegates/delegate_member_method/README.md) shows how to use [xtd::delegate](../../src/xtd.core/include/xtd/delegate.h) class.
+* [delegate_multicast](delegates/delegate_multicast/README.md) shows how to use [xtd::delegate](../../src/xtd.core/include/xtd/delegate.h) class.
+* [event](delegates/event/README.md) shows how to use [xtd::event](../../src/xtd.core/include/xtd/event.h) class.
+
 ## [Diagnostics](diagnostics/README.md)
 
 * [assert](diagnostics/assert_/README.md) shows how to use [assert_](../../src/xtd.core/include/xtd/diagnostics::debug.h) macro.
