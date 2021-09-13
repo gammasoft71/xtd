@@ -11,6 +11,14 @@ int main() {
   console::write_line("convert::to_byte(value)    = {}", convert::to_byte(value));
   console::write_line();
   
+  console::write_line("Convert float to byte :");
+  console::write_line("-----------------------");
+  auto float_value = 42.5f;
+  console::write_line("static_cast<byte_t>(float_value) = {}", static_cast<byte_t>(float_value));
+  console::write_line("as<byte_t>(float_value)          = {}", as<byte_t>(float_value));
+  console::write_line("convert::to_byte(float_value)    = {}", convert::to_byte(float_value));
+  console::write_line();
+  
   console::write_line("Convert string to byte :");
   console::write_line("------------------------");
   auto string_value = "42";
@@ -51,6 +59,12 @@ int main() {
 // static_cast<byte_t>(value) = 42
 // as<byte_t>(value)          = 42
 // convert::to_byte(value)    = 42
+//
+// Convert float to byte :
+// -----------------------
+// static_cast<byte_t>(float_value) = 42
+// as<byte_t>(float_value)          = 43
+// convert::to_byte(float_value)    = 43
 //
 // Convert string to byte :
 // ------------------------

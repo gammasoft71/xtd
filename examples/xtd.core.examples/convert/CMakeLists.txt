@@ -6,5 +6,6 @@ find_package(xtd REQUIRED)
 add_projects(
   as
   to_byte
+  to_int32
 )
 

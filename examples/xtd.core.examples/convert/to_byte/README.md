@@ -25,6 +25,12 @@ static_cast<byte_t>(value) = 42
 as<byte_t>(value)          = 42
 convert::to_byte(value)    = 42
 
+Convert float to byte :
+-----------------------
+static_cast<byte_t>(float_value) = 42
+as<byte_t>(float_value)          = 43
+convert::to_byte(float_value)    = 43
+
 Convert string to byte :
 ------------------------
 parse<byte_t>(string_value))   = 42
