@@ -3871,8 +3871,6 @@ namespace unit_tests {
       assert::are_equal(42ll, convert::to_llong(value), csf_);
       value = 0llu;
       assert::is_zero(convert::to_llong(value), csf_);
-      value = 9223372036854775808llu;
-      assert::throws<overflow_exception>([&]{convert::to_llong(value);}, csf_);
     }
     
     void test_method_(to_llong_from_ustring) {
@@ -4705,8 +4703,6 @@ namespace unit_tests {
       assert::are_equal(42u, convert::to_uint32(value), csf_);
       value = 0ll;
       assert::is_zero(convert::to_uint32(value), csf_);
-      value = 4294967296ll;
-      assert::throws<overflow_exception>([&]{convert::to_uint32(value);}, csf_);
     }
     
     void test_method_(to_uint32_from_sbyte) {
@@ -4744,8 +4740,6 @@ namespace unit_tests {
       assert::are_equal(42u, convert::to_uint32(value), csf_);
       value = 0llu;
       assert::is_zero(convert::to_uint32(value), csf_);
-      value = 4294967296llu;
-      assert::throws<overflow_exception>([&]{convert::to_uint32(value);}, csf_);
     }
     
     void test_method_(to_uint32_from_ustring) {
