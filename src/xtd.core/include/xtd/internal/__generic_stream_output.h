@@ -13,6 +13,7 @@
 #include <optional>
 #include <deque>
 #include <stdexcept>
+#include <functional>
 #include <forward_list>
 #include <iostream>
 #include <iomanip>
