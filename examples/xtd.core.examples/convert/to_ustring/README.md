@@ -33,6 +33,13 @@ as<ustring>(float_value)           = 42.5
 convert::to_ustring(float_value)   = 42.5
 ustring::format("{}", float_value) = 42.5
 
+Convert any to ustring :
+------------------------
+to_ustring(any_value)            = 42
+as<ustring>(any_value)           = 42
+convert::to_ustring(any_value)   = 42
+ustring::format("{}", any_value) = 42
+
 Convert const char16_t to ustring :
 -----------------------------------
 to_ustring(wstring_value)                        = A string value

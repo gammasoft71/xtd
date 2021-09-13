@@ -3305,11 +3305,7 @@ ullong_t convert::to_ullong(wchar_t* value) {
 }
 
 ustring convert::to_string(any value) {
-  try {
-    return any_cast<ustring>(value);
-  } catch(...) {
-    throw invalid_cast_exception(csf_);
-  }
+  return ustring::format("{}", value);
 }
 
 ustring convert::to_string(bool value) noexcept {

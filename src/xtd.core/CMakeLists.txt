@@ -9,6 +9,7 @@ add_references(xtd.3rdparty.call_stack ${XTD_CORE_NATIVE_LIBRARY})
 add_sources(
   include/xtd/action.h
   include/xtd/add_last_arg_to_command.h
+  include/xtd/any.h
   include/xtd/architecture_id.h
   include/xtd/argument_exception.h
   include/xtd/argument_null_exception.h
@@ -226,6 +227,7 @@ add_sources(
 )
 add_sources(
   src/xtd/environment_version.cpp
+  src/xtd/any.cpp
   src/xtd/bit_converter.cpp
   src/xtd/console.cpp
   src/xtd/convert.cpp

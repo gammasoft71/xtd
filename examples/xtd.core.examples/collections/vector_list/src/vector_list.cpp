@@ -7,8 +7,8 @@ using namespace xtd::collections;
 
 template<typename collection_t>
 void print_values(const collection_t& my_list) {
-  for (any obj : my_list)
-    if (is<string>(obj)) console::write("   {0}",  as<string>(obj));
+  for (auto obj : my_list)
+    console::write("   {0}", obj);
   console::write_line();
 }
 

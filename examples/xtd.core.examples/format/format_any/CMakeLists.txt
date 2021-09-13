@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.3)
 
-project(vector_list2)
+project(format_any)
 find_package(xtd REQUIRED)
-add_sources(src/vector_list2.cpp)
+add_sources(src/format_any.cpp)
 target_type(CONSOLE_APPLICATION)

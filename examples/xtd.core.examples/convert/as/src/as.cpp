@@ -14,10 +14,10 @@ int main() {
   ustring s2 = as<ustring>(i);
   console::write_line("i = {0}, convert::to_string(i) = {1}, as<ustring>(i) = {2}", i, s1, s2);
   
-  any a = "string"_s;
+  any a = "string";
   s1 = convert::to_string(a);
   s2 = as<ustring>(a);
-  console::write_line("a = {0}, convert::to_string(a) = {1}, as<ustring>(a) = {2}", any_cast<ustring>(a), s1, s2);
+  console::write_line("a = {0}, convert::to_string(a) = {1}, as<ustring>(a) = {2}", a, s1, s2);
   
   shared_ptr<object> value = make_shared<ustring>("a");
   shared_ptr<ustring> value2 = as<ustring>(value);
