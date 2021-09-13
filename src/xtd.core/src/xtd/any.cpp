@@ -1,6 +1,6 @@
+#include "../../include/xtd/ustring.h"
 #include "../../include/xtd/any.h"
 #include "../../include/xtd/types.h"
-#include "../../include/xtd/ustring.h"
 
 using namespace std;
 using namespace xtd;
@@ -34,7 +34,7 @@ std::unordered_map<std::type_index, std::function<std::string(std::any const&)>>
   __to_any_stringer__<const wchar_t*>([](const wchar_t* value)->std::string {return ustring::format("{}", value);}),
   __to_any_stringer__<char*>([](char* value)->std::string {return ustring::format("{}", value);}),
   //__to_any_stringer__<char8_t*>([](char8_t* value)->std::string {return ustring::format("{}", value);}),
-  __to_any_stringer__<char16_t*>([](char16_t* value)->std::string {return ustring::format("{}", value);}),
-  __to_any_stringer__<char32_t*>([](char32_t* value)->std::string {return ustring::format("{}", value);}),
-  __to_any_stringer__<wchar_t*>([](wchar_t* value)->std::string {return ustring::format("{}", value);}),
+  //__to_any_stringer__<char16_t*>([](char16_t* value)->std::string {return ustring::format("{}", value);}),
+  //__to_any_stringer__<char32_t*>([](char32_t* value)->std::string {return ustring::format("{}", value);}),
+  //__to_any_stringer__<wchar_t*>([](wchar_t* value)->std::string {return ustring::format("{}", value);}),
 };
