@@ -31,6 +31,7 @@
 
 * [as](convert/as/README.md) shows how to use [xtd::guid](../../src/xtd.core/include/xtd/as.h) operator.
 * [to_byte](convert/to_byte/README.md) shows how to use [xtd::convert](../../src/xtd.core/include/xtd/convert.h) class.
+* [to_int32](convert/to_int32/README.md) shows how to use [xtd::convert](../../src/xtd.core/include/xtd/convert.h) class.
 
 ## [Diagnostics](diagnostics/README.md)
 
