@@ -1,5 +1,6 @@
 #include <xtd/xtd>
 
+using namespace std;
 using namespace xtd;
 
 int main() {
@@ -19,6 +20,14 @@ int main() {
   console::write_line("convert::to_int32(float_value)    = {}", convert::to_int32(float_value));
   console::write_line();
   
+  console::write_line("Convert any to int :");
+  console::write_line("--------------------");
+  auto any_value = make_any<int32_t>(42);
+  console::write_line("any_cast<int32_t>(any_value) = {}", any_cast<int32_t>(any_value));
+  console::write_line("as<int32_t>(any_value)       = {}", as<int32_t>(any_value));
+  console::write_line("convert::to_int32(any_value) = {}", convert::to_int32(any_value));
+  console::write_line();
+
   console::write_line("Convert string to int :");
   console::write_line("-----------------------");
   auto string_value = "42";
@@ -26,7 +35,7 @@ int main() {
   console::write_line("as<int32_t>(string_value)       = {}", as<int32_t>(string_value));
   console::write_line("convert::to_int32(string_value) = {}", convert::to_int32(string_value));
   console::write_line();
-  
+
   console::write_line("Convert hexa string to int :");
   console::write_line("----------------------------");
   auto string_hex_value = "0x2A";
@@ -49,7 +58,6 @@ int main() {
   } catch(const overflow_exception& e) {
     console::write_line("(ERROR) convert::to_int32 : Overflow exception");
   }
-  console::write_line();
 }
 
 // This code can produces the following output:
@@ -65,6 +73,12 @@ int main() {
 // static_cast<int32_t>(float_value) = 42
 // as<int32_t>(float_value)          = 43
 // convert::to_int32(float_value)    = 43
+//
+// Convert any to int :
+// --------------------
+// any_cast<int32_t>(any_value) = 42
+// as<int32_t>(any_value)       = 42
+// convert::to_int32(any_value) = 42
 //
 // Convert string to int :
 // -----------------------

@@ -7,5 +7,6 @@ add_projects(
   as
   to_byte
   to_int32
+  to_ustring
 )
 
