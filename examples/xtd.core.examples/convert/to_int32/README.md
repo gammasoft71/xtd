@@ -47,5 +47,5 @@ Convert unsigned int to int with overflow :
 -------------------------------------------
 static_cast<int32_t>(overflow_value) = -2147483648
 (ERROR) as : Overflow exception
-(ERROR) convert::to_byte : Overflow exception
+(ERROR) convert::to_int32 : Overflow exception
 ```
