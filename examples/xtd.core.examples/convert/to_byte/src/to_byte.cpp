@@ -1,5 +1,6 @@
 #include <xtd/xtd>
 
+using namespace std;
 using namespace xtd;
 
 int main() {
@@ -19,6 +20,14 @@ int main() {
   console::write_line("convert::to_byte(float_value)    = {}", convert::to_byte(float_value));
   console::write_line();
   
+  console::write_line("Convert any to byte :");
+  console::write_line("---------------------");
+  auto any_value = make_any<byte_t>(42);
+  console::write_line("any_cast<byte_t>(any_value) = {}", any_cast<byte_t>(any_value));
+  console::write_line("as<byte_t>(any_value)       = {}", as<byte_t>(any_value));
+  console::write_line("convert::to_byte(any_value) = {}", convert::to_byte(any_value));
+  console::write_line();
+
   console::write_line("Convert string to byte :");
   console::write_line("------------------------");
   auto string_value = "42";
@@ -49,7 +58,6 @@ int main() {
   } catch(const overflow_exception& e) {
     console::write_line("(ERROR) convert::to_byte : Overflow exception");
   }
-  console::write_line();
 }
 
 // This code can produces the following output:
@@ -71,6 +79,12 @@ int main() {
 // parse<byte_t>(string_value))   = 42
 // as<byte_t>(string_value)       = 42
 // convert::to_byte(string_value) = 42
+//
+// Convert any to byte :
+// ---------------------
+// any_cast<byte_t>(any_value) = 42
+// as<byte_t>(any_value)       = 42
+// convert::to_byte(any_value) = 42
 //
 // Convert hexa string to byte :
 // -----------------------------

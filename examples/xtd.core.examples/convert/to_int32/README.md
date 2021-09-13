@@ -31,6 +31,12 @@ static_cast<int32_t>(float_value) = 42
 as<int32_t>(float_value)          = 43
 convert::to_int32(float_value)    = 43
 
+Convert any to int :
+--------------------
+any_cast<int32_t>(any_value) = 42
+as<int32_t>(any_value)       = 42
+convert::to_int32(any_value) = 42
+
 Convert string to int :
 -----------------------
 parse<int32_t>(string_value))   = 42
