@@ -5,6 +5,7 @@ find_package(xtd REQUIRED)
 
 add_projects(
   format
+  format_any
   format_associative_containers
   format_boolean
   format_character

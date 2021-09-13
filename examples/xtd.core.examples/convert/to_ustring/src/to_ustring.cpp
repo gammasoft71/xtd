@@ -22,6 +22,15 @@ int main() {
   console::write_line("ustring::format(\"{{}}\", float_value) = {}", ustring::format("{}", float_value));
   console::write_line();
 
+  console::write_line("Convert any to ustring :");
+  console::write_line("------------------------");
+  auto any_value = make_any<int>(42);
+  console::write_line("to_ustring(any_value)            = {}", to_ustring(any_value));
+  console::write_line("as<ustring>(any_value)           = {}", as<ustring>(any_value));
+  console::write_line("convert::to_ustring(any_value)   = {}", convert::to_ustring(any_value));
+  console::write_line("ustring::format(\"{{}}\", any_value) = {}", ustring::format("{}", any_value));
+  console::write_line();
+
   console::write_line("Convert const char16_t to ustring :");
   console::write_line("-----------------------------------");
   auto const_char16_t_value = u"A string value";
@@ -55,6 +64,13 @@ int main() {
 // static_cast<int32_t>(float_value) = 42
 // as<int32_t>(float_value)          = 43
 // convert::to_int32(float_value)    = 43
+//
+// Convert any to ustring :
+// ------------------------
+// to_ustring(any_value)            = 42
+// as<ustring>(any_value)           = 42
+// convert::to_ustring(any_value)   = 42
+// ustring::format("{}", any_value) = 42
 //
 // Convert string to int :
 // -----------------------

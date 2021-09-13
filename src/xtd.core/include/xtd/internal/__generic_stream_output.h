@@ -8,6 +8,7 @@
 #endif
 /// @endcond
 
+#include <any>
 #include <array>
 #include <optional>
 #include <deque>
@@ -19,6 +20,8 @@
 #include <map>
 #include <set>
 #include <tuple>
+#include <typeindex>
+#include <type_traits>
 #include <unordered_map>
 #include <unordered_set>
 #include <utility>
@@ -26,6 +29,8 @@
 #include <vector>
 
 /// @cond
+extern std::unordered_map<std::type_index, std::function<std::string(std::any const&)>> __any_stringer__;
+
 /*
 template <typename char_t, typename char_traits_t, typename type_t>
 std::basic_ostream<char_t, char_traits_t>& operator<<(std::basic_ostream<char_t, char_traits_t>& os, const type_t& value) {
@@ -182,4 +187,12 @@ template <typename char_t, typename char_traits_t, typename key_t, typename pred
 inline std::basic_ostream<char_t, char_traits_t>& operator<<(std::basic_ostream<char_t, char_traits_t>& os, const std::unordered_set<key_t, pred_t, allocator_t>& values) {
   return __xtd_console_print_associative_container(os, values.begin(), values.end());
 }
+
+template <typename char_t, typename char_traits_t>
+inline std::basic_ostream<char_t, char_traits_t>& operator<<(std::basic_ostream<char_t, char_traits_t>& os, std::any value) {
+  if (const auto it = __any_stringer__.find(std::type_index(value.type())); it != __any_stringer__.cend())
+    return os << it->second(value);
+  return os << "(unregistered)";
+}
+
 /// @endcond
