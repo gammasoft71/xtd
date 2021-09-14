@@ -4,5 +4,6 @@ project(exceptions)
 find_package(xtd REQUIRED)
 
 add_projects(
+  exception_ptr
   system_exception
 )
