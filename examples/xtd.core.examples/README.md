@@ -70,6 +70,7 @@
 
 ## [Exceptions](exceptions/README.md)
 
+* [exception_ptr](exception_ptr/README.md) shows how to use std::exception_ptr and [invalid_operation_exception](../../src/xtd.core/include/xtd/invalid_operation_exception.h) exception.
 * [system_exception](exceptions/system_exception/README.md) shows how to use [xtd::system_exception](../../src/xtd.core/include/xtd/system_exception.h) exception.
 
 ## [Format](format/README.md)
