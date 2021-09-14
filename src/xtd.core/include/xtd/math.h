@@ -11,7 +11,7 @@ namespace xtd {
   /// xtd
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core
+  /// @ingroup xtd_core system
   /// @remarks This class cannot be inherited.
   /// @par Examples
   /// The following example uses several mathematical and trigonometric functions from the xtd::math class to calculate the inner angles of a trapezoid.
