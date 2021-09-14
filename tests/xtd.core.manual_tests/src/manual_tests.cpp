@@ -122,11 +122,10 @@ using namespace xtd;
 class xtd_core_manual_test : public object {
 public:
   static void main() {
-    console::write_line("Hello, World!");
-    version v(1, 2, 3);
-    console::write_line("v = {}", v);
-    object& o = v;
-    console::write_line("o = {}", o);
+    //console::write_line("Hello, World!");
+    console::write_line("numeric_limits<double>::max() = {}", numeric_limits<double>::max());
+    console::write_line("numeric_limits<double>::min() = {}", numeric_limits<double>::min());
+    console::write_line("-numeric_limits<double>::max() = {}", -numeric_limits<double>::max());
   }
 };
 
