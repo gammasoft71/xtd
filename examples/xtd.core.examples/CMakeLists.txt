@@ -11,6 +11,7 @@ add_projects(
   delegates
   diagnostics
   environment
+  exceptions
   format
   guid
   keywords
