@@ -29,8 +29,6 @@ int main() {
 
 // This code can produces the following output :
 //
-// Exception occured :
-// -------------------
 // xtd::invalid_operation_exception : Ouch there are an exception !
 //    at main::$_0::operator()() const [0x0000C1F0] in /|---OMITTED---|/exception_ptr/src/exception_ptr.cpp:line 13
 //    at decltype(std::__1::forward<main::$_0>(fp)()) std::__1::__invoke<main::$_0>(main::$_0&&) [0x0000C180] in /|---OMITTED---|/exception_ptr/Debug/exception_ptr:line 0
