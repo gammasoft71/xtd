@@ -1,5 +1,7 @@
 #include "../../include/xtd/math.h"
 #include "../../include/xtd/overflow_exception.h"
+#include <cmath>
+#include <cstdlib>
 #include <limits>
 
 using namespace std;

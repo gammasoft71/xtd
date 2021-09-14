@@ -28,14 +28,14 @@ namespace xtd {
     /// @remarks The value of this field is 2.7182818284590451.
     static constexpr double tau = 2.7182818284590451;
 
-    /// @brief Returns the absolute value of a double-precision floating-point number
+    /// @brief Returns the absolute value of a decimal number
     /// @param value A number in the range -std::numeric_limit<decimal_t>::max() <= value <= std::numeric_limit<decimal_t>::max().
-    /// @return A double-precision floating-point number, x, such that 0 <= x <= std::numeric_limit<decimal_t>::max()std::numeric_limit<decimal_t>::max().
+    /// @return A decimal number, x, such that 0 <= x <= std::numeric_limit<decimal_t>::max()std::numeric_limit<decimal_t>::max().
     static decimal_t abs(decimal_t value);
     
     /// @brief Returns the absolute value of a double-precision floating-point number
     /// @param value A number in the range -std::numeric_limit<double>::max() <= value <= std::numeric_limit<double>::max().
-    /// @return double A double-precision floating-point number, x, such that 0 <= x <= std::numeric_limit<douuble>::max().
+    /// @return A double-precision floating-point number, x, such that 0 <= x <= std::numeric_limit<douuble>::max().
     static double abs(double value);
     
     /// @brief Returns the absolute value of a single-precision floating-point number
