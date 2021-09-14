@@ -4,7 +4,7 @@ Shows how to use [argument_exception](../../../../src/xtd.core/include/xtd/argum
 
 ## Sources
 
-[src/system_exception.cpp](src/system_exception.cpp)
+[src/argument_exception.cpp](src/argument_exception.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
