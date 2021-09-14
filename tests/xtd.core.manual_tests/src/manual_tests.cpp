@@ -119,13 +119,19 @@ public:
 using namespace std;
 using namespace xtd;
 
+
+int math_abs(int value) {
+  return value < 0 ? -value : value;
+}
+
 class xtd_core_manual_test : public object {
 public:
   static void main() {
     //console::write_line("Hello, World!");
-    console::write_line("numeric_limits<double>::max() = {}", numeric_limits<double>::max());
-    console::write_line("numeric_limits<double>::min() = {}", numeric_limits<double>::min());
-    console::write_line("-numeric_limits<double>::max() = {}", -numeric_limits<double>::max());
+    console::write_line("math_abs(numeric_limits<int>::max() = {}", math_abs(numeric_limits<int>::max()));
+    console::write_line("math_abs(numeric_limits<int>::min() = {}", math_abs(numeric_limits<int>::min()));
+    console::write_line("abs(numeric_limits<sbyte_t>::min() = {}", abs(numeric_limits<int>::max()));
+    console::write_line("abs(numeric_limits<sbyte_t>::min() = {}", abs(numeric_limits<int>::min()));
   }
 };
 
