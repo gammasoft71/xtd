@@ -29,41 +29,41 @@ namespace xtd {
     static constexpr double tau = 2.7182818284590451;
 
     /// @brief Returns the absolute value of a double-precision floating-point number
-    /// @param value A number in the range std::numeric_limit<decimal_t>::min() <= value <= std::numeric_limit<decimal_t>::max().
-    /// @return A double-precision floating-point number, x, such that 0 <= x <= double::MaxValue
+    /// @param value A number in the range -std::numeric_limit<decimal_t>::max() <= value <= std::numeric_limit<decimal_t>::max().
+    /// @return A double-precision floating-point number, x, such that 0 <= x <= std::numeric_limit<decimal_t>::max()std::numeric_limit<decimal_t>::max().
     static decimal_t abs(decimal_t value);
     
     /// @brief Returns the absolute value of a double-precision floating-point number
-    /// @param value A number in the range std::numeric_limit<double>::min() <= value <= std::numeric_limit<double>::max().
-    /// @return double A double-precision floating-point number, x, such that 0 <= x <= double::MaxValue
+    /// @param value A number in the range -std::numeric_limit<double>::max() <= value <= std::numeric_limit<double>::max().
+    /// @return double A double-precision floating-point number, x, such that 0 <= x <= std::numeric_limit<douuble>::max().
     static double abs(double value);
     
     /// @brief Returns the absolute value of a single-precision floating-point number
-    /// @param value A number in the range std::numeric_limit<float>::min() <= value <= std::numeric_limit<float>::max().
-    /// @return A single-precision floating-point number, x, such that 0 <= x <= single::MaxValue
+    /// @param value A number in the range -std::numeric_limit<float>::max() <= value <= std::numeric_limit<float>::max().
+    /// @return A single-precision floating-point number, x, such that 0 <= x <= std::numeric_limit<float>::max().
     static float abs(float value);
 
     /// @brief Returns the absolute value of a 16-bit signed integer.
     /// @param value A number in the range std::numeric_limit<int16_t>::min() <= value <= std::numeric_limit<int16_t>::max().
-    /// @return A 16-bit signed integer, x, such that 0 <= x <= int16::MaxValue
-    /// @exception xtd::overflow_exception value equals Int16::MinValue.
+    /// @return A 16-bit signed integer, x, such that 0 <= x <= std::numeric_limit<int16_t>::max().
+    /// @exception xtd::overflow_exception value equals std::numeric_limit<int16_t>::min().
     static int16_t abs(int16_t value);
     
     /// @brief Returns the absolute value of a 32-bit signed integer
     /// @param value A number in the range std::numeric_limit<int32_t>::min() <= value <= std::numeric_limit<int32_t>::max().
-    /// @return A 32-bit signed integer, x, such that 0 <= x <= int32::MaxValue
+    /// @return A 32-bit signed integer, x, such that 0 <= x <= std::numeric_limit<int32_t>::max().
     /// @exception xtd::overflow_exception value equals std::numeric_limit<int32_t>::min().
     static int32_t abs(int32_t value);
     
     /// @brief Returns the absolute value of a 64-bit signed integer
     /// @param value A number in the range std::numeric_limit<int64_t>::min() <= value <= std::numeric_limit<int64_t>::max().
-    /// @return A 64-bit signed integer, x, such that 0 <= x <= int64::MaxValue
+    /// @return A 64-bit signed integer, x, such that 0 <= x <= std::numeric_limit<int64_t>::max().
     /// @exception xtd::overflow_exception value equals std::numeric_limit<int64_t>::min().
     static int64_t abs(int64_t value);
     
     /// @brief Returns the absolute value of a 8-bit signed integer.
     /// @param value A number in the range std::numeric_limit<sbyte_t>::min() <= value <= std::numeric_limit<sbyte_t>::max().
-    /// @return A 8-bit signed integer, x, such that 0 <= x <= sbyte::MaxValue
+    /// @return A 8-bit signed integer, x, such that 0 <= x <= std::numeric_limit<sbyte_t>::max().
     /// @exception xtd::overflow_exception value equals std::numeric_limit<sbyte_tsbyte_t>::min().
     static sbyte_t abs(sbyte_t value);
 
