@@ -68,6 +68,10 @@
 * [environment_stack_trace](environment/environment_stack_trace/README.md) shows how to use [xtd::environment::stack_trace](../../src/xtd.core/include/xtd/environment.h) method.
 * [environment_tick_count](environment/environment_tick_count/README.md) shows how to use [xtd::environment::tick_count](../../src/xtd.core/include/xtd/environment.h) method.
 
+# [Exceptions](exceptions/README.md)
+
+* [system_exception](exceptions/system_exception/README.md) shows how to use [xtd::system_exception](../../src/xtd.core/include/xtd/system_exception.h) exception.
+
 ## [Format](format/README.md)
 
 * [format](format/format/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method.
