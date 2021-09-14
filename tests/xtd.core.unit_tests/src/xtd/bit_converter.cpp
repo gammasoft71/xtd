@@ -97,7 +97,7 @@ namespace unit_tests {
         bytes_assert::are_equal(0x52, 0xD3, 0xBB, 0xBC, 0xE8, 0x7E, 0x3D, 0x7E, bytes, csf_);
       }
       
-      using_(vector<uint8_t> bytes = bit_converter::get_bytes(-std::numeric_limits<double>::max())) {
+      using_(vector<uint8_t> bytes = bit_converter::get_bytes(std::numeric_limits<double>::lowest())) {
         bytes_assert::are_equal(0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xEF, 0xFF, bytes, csf_);
       }
       
@@ -143,7 +143,7 @@ namespace unit_tests {
         bytes_assert::are_equal(0xF0, 0xD8, bytes, csf_);
       }
       
-      using_(vector<uint8_t> bytes = bit_converter::get_bytes(std::numeric_limits<int16_t>::min())) {
+      using_(vector<uint8_t> bytes = bit_converter::get_bytes(std::numeric_limits<int16_t>::lowest())) {
         bytes_assert::are_equal(0x00, 0x80, bytes, csf_);
       }
       
@@ -181,7 +181,7 @@ namespace unit_tests {
         bytes_assert::are_equal(0x00, 0x36, 0x65, 0xC4, bytes, csf_);
       }
       
-      using_(vector<uint8_t> bytes = bit_converter::get_bytes(std::numeric_limits<int32_t>::min())) {
+      using_(vector<uint8_t> bytes = bit_converter::get_bytes(std::numeric_limits<int32_t>::lowest())) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x80, bytes, csf_);
       }
       
@@ -231,7 +231,7 @@ namespace unit_tests {
         bytes_assert::are_equal(0x00, 0x00, 0x9C, 0x58, 0x4C, 0x49, 0x1F, 0xF2, bytes, csf_);
       }
       
-      using_(vector<uint8_t> bytes = bit_converter::get_bytes(std::numeric_limits<int64_t>::min())) {
+      using_(vector<uint8_t> bytes = bit_converter::get_bytes(std::numeric_limits<int64_t>::lowest())) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, bytes, csf_);
       }
       
@@ -286,7 +286,7 @@ namespace unit_tests {
       }
 
       
-      using_(vector<uint8_t> bytes = bit_converter::get_bytes(-std::numeric_limits<float>::max())) {
+      using_(vector<uint8_t> bytes = bit_converter::get_bytes(std::numeric_limits<float>::lowest())) {
         bytes_assert::are_equal(0xFF, 0xFF, 0x7F, 0xFF, bytes, csf_);
       }
       
@@ -328,7 +328,7 @@ namespace unit_tests {
         bytes_assert::are_equal(0x00, 0x00, bytes, csf_);
       }
             
-      using_(vector<uint8_t> bytes = bit_converter::get_bytes(std::numeric_limits<uint16_t>::min())) {
+      using_(vector<uint8_t> bytes = bit_converter::get_bytes(std::numeric_limits<uint16_t>::lowest())) {
         bytes_assert::are_equal(0x00, 0x00, bytes, csf_);
       }
 
@@ -354,7 +354,7 @@ namespace unit_tests {
         bytes_assert::are_equal(0x00, 0xCA, 0x9A, 0x3B, bytes, csf_);
       }
       
-      using_(vector<uint8_t> bytes = bit_converter::get_bytes(std::numeric_limits<uint32_t>::min())) {
+      using_(vector<uint8_t> bytes = bit_converter::get_bytes(std::numeric_limits<uint32_t>::lowest())) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
@@ -388,7 +388,7 @@ namespace unit_tests {
         bytes_assert::are_equal(0x00, 0x00, 0xE8, 0x89, 0x04, 0x23, 0xC7, 0x8A, bytes, csf_);
       }
       
-      using_(vector<uint8_t> bytes = bit_converter::get_bytes(std::numeric_limits<uint64_t>::min())) {
+      using_(vector<uint8_t> bytes = bit_converter::get_bytes(std::numeric_limits<uint64_t>::lowest())) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
@@ -440,7 +440,7 @@ namespace unit_tests {
       assert::are_equal(1.2345678901234567, bit_converter::to_double({0xFB, 0x59, 0x8C, 0x42, 0xCA, 0xC0, 0xF3, 0x3F}, 0), csf_);
       assert::are_equal(1.2345678901234569, bit_converter::to_double({0xFC, 0x59, 0x8C, 0x42, 0xCA, 0xC0, 0xF3, 0x3F}, 0), csf_);
       assert::are_equal(1.23456789012345678E+300, bit_converter::to_double({0x52, 0xD3, 0xBB, 0xBC, 0xE8, 0x7E, 0x3D, 0x7E}, 0), csf_);
-      assert::are_equal(-std::numeric_limits<double>::max(), bit_converter::to_double({0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xEF, 0xFF}, 0), csf_);
+      assert::are_equal(std::numeric_limits<double>::lowest(), bit_converter::to_double({0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xEF, 0xFF}, 0), csf_);
       assert::are_equal(std::numeric_limits<double>::max(), bit_converter::to_double({0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xEF, 0x7F}, 0), csf_);
       assert::are_equal(DBL_EPSILON, bit_converter::to_double({0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xB0, 0x3C}, 0), csf_);
       assert::is_true(isnan(bit_converter::to_double({0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF8, 0x7F}, 0)), csf_);
@@ -457,7 +457,7 @@ namespace unit_tests {
       assert::are_equal(-15, bit_converter::to_int16({0xF1, 0xFF}, 0), csf_);
       assert::are_equal(10000, bit_converter::to_int16({0x10, 0x27}, 0), csf_);
       assert::are_equal(-10000, bit_converter::to_int16({0xF0, 0xD8}, 0), csf_);
-      assert::are_equal(std::numeric_limits<int16_t>::min(), bit_converter::to_int16({0x00, 0x80}, 0), csf_);
+      assert::are_equal(std::numeric_limits<int16_t>::lowest(), bit_converter::to_int16({0x00, 0x80}, 0), csf_);
       assert::are_equal(std::numeric_limits<int16_t>::max(), bit_converter::to_int16({0xFF, 0x7F}, 0), csf_);
     }
     
@@ -472,7 +472,7 @@ namespace unit_tests {
       assert::are_equal(-1048576, bit_converter::to_int32({0x00, 0x00, 0xF0, 0xFF}, 0), csf_);
       assert::are_equal(1000000000, bit_converter::to_int32({0x00, 0xCA, 0x9A, 0x3B}, 0), csf_);
       assert::are_equal(-1000000000, bit_converter::to_int32({0x00, 0x36, 0x65, 0xC4}, 0), csf_);
-      assert::are_equal(std::numeric_limits<int32_t>::min(), bit_converter::to_int32({0x00, 0x00, 0x00, 0x80}, 0), csf_);
+      assert::are_equal(std::numeric_limits<int32_t>::lowest(), bit_converter::to_int32({0x00, 0x00, 0x00, 0x80}, 0), csf_);
       assert::are_equal(std::numeric_limits<int32_t>::max(), bit_converter::to_int32({0xFF, 0xFF, 0xFF, 0x7F}, 0), csf_);
     }
     
@@ -490,7 +490,7 @@ namespace unit_tests {
       assert::are_equal(-0xAAAAAAAAAAAALL, bit_converter::to_int64({0x56, 0x55, 0x55, 0x55, 0x55, 0x55, 0xFF, 0xFF}, 0), csf_);
       assert::are_equal(1000000000000000000LL, bit_converter::to_int64({0x00, 0x00, 0x64, 0xA7, 0xB3, 0xB6, 0xE0, 0x0D}, 0), csf_);
       assert::are_equal(-1000000000000000000LL, bit_converter::to_int64({0x00, 0x00, 0x9C, 0x58, 0x4C, 0x49, 0x1F, 0xF2}, 0), csf_);
-      assert::are_equal(std::numeric_limits<int64_t>::min(), bit_converter::to_int64({0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80}, 0), csf_);
+      assert::are_equal(std::numeric_limits<int64_t>::lowest(), bit_converter::to_int64({0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80}, 0), csf_);
       assert::are_equal(std::numeric_limits<int64_t>::max(), bit_converter::to_int64({0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x7F}, 0), csf_);
     }
     
@@ -509,7 +509,7 @@ namespace unit_tests {
       assert::are_equal(1.2345673f, bit_converter::to_single({0x4D, 0x06, 0x9E, 0x3F}, 0), csf_);
       assert::are_equal(1.2345677f, bit_converter::to_single({0x50, 0x06, 0x9E, 0x3F}, 0), csf_);
       assert::are_equal(1.23456789E+35f, bit_converter::to_single({0x1E, 0x37, 0xBE, 0x79}, 0), csf_);
-      assert::are_equal(-std::numeric_limits<float>::max(), bit_converter::to_single({0xFF, 0xFF, 0x7F, 0xFF}, 0), csf_);
+      assert::are_equal(std::numeric_limits<float>::lowest(), bit_converter::to_single({0xFF, 0xFF, 0x7F, 0xFF}, 0), csf_);
       assert::are_equal(std::numeric_limits<float>::max(), bit_converter::to_single({0xFF, 0xFF, 0x7F, 0x7F}, 0), csf_);
       assert::are_equal(FLT_EPSILON, bit_converter::to_single({0x00, 0x00, 0x00, 0x34}, 0), csf_);
       assert::is_true(isnan(bit_converter::to_single({0x00, 0x00, 0xC0, 0x7F}, 0)), csf_);
@@ -578,7 +578,7 @@ namespace unit_tests {
       assert::are_equal(1023, bit_converter::to_uint16({0xFF, 0x03}, 0), csf_);
       assert::are_equal(10000, bit_converter::to_uint16({0x10, 0x27}, 0), csf_);
       assert::are_equal(0, bit_converter::to_uint16({0x00, 0x00}, 0), csf_);
-      assert::are_equal(std::numeric_limits<uint16_t>::min(), bit_converter::to_uint16({0x00, 0x00}, 0), csf_);
+      assert::are_equal(std::numeric_limits<uint16_t>::lowest(), bit_converter::to_uint16({0x00, 0x00}, 0), csf_);
       assert::are_equal(std::numeric_limits<uint16_t>::max(), bit_converter::to_uint16({0xFF, 0xFF}, 0), csf_);
     }
     
@@ -590,7 +590,7 @@ namespace unit_tests {
       assert::are_equal(1023U, bit_converter::to_uint32({0xFF, 0x03, 0x00, 0x00}, 0), csf_);
       assert::are_equal(0x100000U, bit_converter::to_uint32({0x00, 0x00, 0x10, 0x00}, 0), csf_);
       assert::are_equal(1000000000U, bit_converter::to_uint32({0x00, 0xCA, 0x9A, 0x3B}, 0), csf_);
-      assert::are_equal(std::numeric_limits<uint32_t>::min(), bit_converter::to_uint32({0x00, 0x00, 0x00, 0x00}, 0), csf_);
+      assert::are_equal(std::numeric_limits<uint32_t>::lowest(), bit_converter::to_uint32({0x00, 0x00, 0x00, 0x00}, 0), csf_);
       assert::are_equal(std::numeric_limits<uint32_t>::max(), bit_converter::to_uint32({0xFF, 0xFF, 0xFF, 0xFF}, 0), csf_);
     }
     
@@ -604,7 +604,7 @@ namespace unit_tests {
       assert::are_equal(0xAAAAAAAAAAAAULL, bit_converter::to_uint64({0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0x00, 0x00}, 0));
       assert::are_equal(1000000000000000000ULL, bit_converter::to_uint64({0x00, 0x00, 0x64, 0xA7, 0xB3, 0xB6, 0xE0, 0x0D}, 0));
       assert::are_equal(10000000000000000000ULL, bit_converter::to_uint64({0x00, 0x00, 0xE8, 0x89, 0x04, 0x23, 0xC7, 0x8A}, 0));
-      assert::are_equal(std::numeric_limits<uint64_t>::min(), bit_converter::to_uint64({0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0));
+      assert::are_equal(std::numeric_limits<uint64_t>::lowest(), bit_converter::to_uint64({0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0));
       assert::are_equal(std::numeric_limits<uint64_t>::max(), bit_converter::to_uint64({0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}, 0));
     }
   };
