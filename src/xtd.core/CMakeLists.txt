@@ -64,6 +64,7 @@ add_sources(
   include/xtd/language_id.h
   include/xtd/length_exception.h
   include/xtd/literals.h
+  include/xtd/math.h
   include/xtd/nameof.h
   include/xtd/not_finite_number_exception.h
   include/xtd/not_implemented_exception.h
@@ -237,6 +238,7 @@ add_sources(
   src/xtd/event_args.cpp
   src/xtd/guid.cpp
   src/xtd/literals.cpp
+  src/xtd/math.cpp
   src/xtd/object.cpp
 # src/xtd/signal_catcher.cpp
   src/xtd/system_exception.cpp

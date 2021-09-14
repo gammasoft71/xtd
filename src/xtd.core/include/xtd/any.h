@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::as method.
+/// @brief Contains xtd::any method.
 #pragma once
 #include <any>
 #include <functional>

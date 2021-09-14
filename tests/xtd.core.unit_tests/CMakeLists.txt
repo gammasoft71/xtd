@@ -32,6 +32,7 @@ add_sources(
   src/xtd/is.cpp
   src/xtd/length_exception.cpp
   src/xtd/literals.cpp
+  src/xtd/math.cpp
   src/xtd/not_finite_number_exception.cpp
   src/xtd/not_implemented_exception.cpp
   src/xtd/not_supported_exception.cpp
