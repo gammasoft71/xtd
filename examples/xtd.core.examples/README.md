@@ -37,6 +37,9 @@
 # [Delegates](delegates/README.md)
 
 * [action](delegates/action/README.md) shows how to use [xtd::action](../../src/xtd.core/include/xtd/action.h) alias.
+* [action1](delegates/action1/README.md) shows how to simplify code by instantiating the action delegate instead of explicitly defining a new delegate and assigning a named method to it.
+* [action2](delegates/action2/README.md) shows how to simplify code by instantiating the action delegate instead of explicitly defining a new delegate and assigning a named method to it.
+* [action3](action3/README.md) shows how to simplify code by instantiating the action delegate instead of explicitly defining a new delegate and assigning a named method to it.
 * [delegate](delegates/delegate/README.md) shows how to use [xtd::delegate](../../src/xtd.core/include/xtd/delegate.h) class.
 * [delegate_lambda](delegates/delegate_lambda/README.md) shows how to use [xtd::delegate](../../src/xtd.core/include/xtd/delegate.h) class.
 * [delegate_member_method](delegates/delegate_member_method/README.md) shows how to use [xtd::delegate](../../src/xtd.core/include/xtd/delegate.h) class.
