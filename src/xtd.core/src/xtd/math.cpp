@@ -88,6 +88,16 @@ double math::degrees_to_radians(double degrees) {
   return degrees * (math::pi / 180);
 }
 
+int32_t math::div_rem(int32_t dividend, int32_t divisor, int32_t& remainder) {
+  remainder = dividend % divisor;
+  return dividend / divisor;
+}
+
+int64_t math::div_rem(int64_t dividend, int64_t divisor, int64_t& remainder) {
+  remainder = dividend % divisor;
+  return dividend / divisor;
+}
+
 bool math::is_infinity(double value) {
   return is_negative_infinity(value) || is_positive_infinity(value);
 }
