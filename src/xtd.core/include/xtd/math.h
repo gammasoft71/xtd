@@ -3,6 +3,7 @@
 #pragma once
 #include "static.h"
 #include "types.h"
+#include <limits>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -21,9 +22,27 @@ namespace xtd {
     /// @brief Represents the natural logarithmic base, specified by the constant, e. This field is constant.
     /// @remarks The value of this field is 2.7182818284590452354.
     static constexpr double e = 2.7182818284590452354;
+    /// @brief Represents the smallest positive Double value greater than zero. This field is constant.
+    /// @remarks The value of this field is 4.94066e-324.
+    static constexpr double epsilon = 4.94066e-324;
+    /// @brief Represents the largest possible value of double. This field is constant.
+    /// @remarks The value of this field is  1.7976931348623157E+308.
+    static constexpr double max_value = std::numeric_limits<double>::max();
+    /// @brief Represents the smallest possible value of double. This field is constant.
+    /// @remarks The value of this field is -1.7976931348623157E+308.
+    static constexpr double min_value = std::numeric_limits<double>::lowest();
+    /// @brief Represents not a number (NaN). This field is constant.
+    /// @remarks The value of this field is std::numeric_limits<double>::quiet_NaN().
+    static constexpr double NaN = std::numeric_limits<double>::quiet_NaN();
+    /// @brief Represents negative infinity. This field is constant.
+    /// @remarks The value of this field is -std::numeric_limits<double>::infinity().
+    static constexpr double negative_infinity = -std::numeric_limits<double>::infinity();
     /// @brief Represents the ratio of the circumference of a circle to its diameter, specified by the constant, π. This field is constant.
     /// @remarks The value of this field is 3.14159265358979323846.
     static constexpr double pi = 3.14159265358979323846;
+    /// @brief Represents positive infinity. This field is constant.
+    /// @remarks The value of this field is std::numeric_limits<double>::infinity().
+    static constexpr double positive_infinity = std::numeric_limits<double>::infinity();
     /// @brief Represents the number of radians in one turn, specified by the constant, τ.
     /// @remarks The value of this field is 2.7182818284590451.
     static constexpr double tau = 2.7182818284590451;
@@ -112,22 +131,22 @@ namespace xtd {
 
     /// @brief Returns the smallest integer greater than or equal to the specified double-precision floating-point number.
     /// @param value A double-precision floating-point number.
-    /// @return The smallest integer greater than or equal to value. If value is equal to std::numeric_limits<double>::quiet_NaN(), -std::numeric_limits<double>::infinity(), or std::numeric_limits<double>::infinity(), that value is returned.
+    /// @return The smallest integer greater than or equal to value. If value is equal to xtd::math::NaN, xtd::math::negative_infinity, or xtd::math::positive_infinity, that value is returned.
     static decimal ceiling(decimal value);
     
     /// @brief Returns the smallest integer greater than or equal to the specified double-precision floating-point number.
     /// @param value A double-precision floating-point number.
-    /// @return The smallest integer greater than or equal to value. If value is equal to std::numeric_limits<double>::quiet_NaN(), -std::numeric_limits<double>::infinity(), or std::numeric_limits<double>::infinity(), that value is returned.
+    /// @return The smallest integer greater than or equal to value. If value is equal to xtd::math::NaN, xtd::math::negative_infinity, or xtd::math::positive_infinity, that value is returned.
     static double ceiling(double value);
     
     /// @brief Returns the cosine of the specified angle.
     /// @param value An angle, measured in radians.
-    /// @return The cosine of value. If value is equal to std::numeric_limits<double>::quiet_NaN(), -std::numeric_limits<double>::infinity(), or std::numeric_limits<double>::infinity(), this method returns NaN.
+    /// @return The cosine of value. If value is equal to xtd::math::NaN, xtd::math::negative_infinity, or xtd::math::positive_infinity, this method returns xtd::math::NaN.
     static double cos(double value);
     
     /// @brief Returns the hyperbolic cosine of the specified angle.
     /// @param value An angle, measured in radians.
-    /// @return The hyperbolic cosine of value. If value is equal to -std::numeric_limits<double>::infinity() or std::numeric_limits<double>::infinity(), std::numeric_limits<double>::infinity() is returned. If value is equal to std::numeric_limits<double>::quiet_NaN(), std::numeric_limits<double>::quiet_NaN() is returned.
+    /// @return The hyperbolic cosine of value. If value is equal to xtd::math::negative_infinity() or xtd::math::posittive_:infinity, xtd::math::positive_infinity is returned. If value is equal to xtd::math::NaN, xtd::math::NaN is returned.
     static double cosh(double value);
 
     /// @brief Convert degrees to radians.
@@ -137,17 +156,17 @@ namespace xtd {
 
     /// @brief Returns a value indicating whether the specified number evaluates to negative or positive infinity.
     /// @param value A double-precision floating-point number.
-    /// @return true if value evaluates to std::numeric_limits<double>::infinity() or -std::numeric_limits<double>::infinity(); otherwise, false.
+    /// @return true if value evaluates to xtd::math::positive_infinity or xtd::math::negative_infinity; otherwise, false.
     static bool is_infinity(double value);
     
     /// @brief Returns a value indicating whether the specified number evaluates to negative infinity.
     /// @param value A double-precision floating-point number.
-    /// @return true if value evaluates to -std::numeric_limits<double>::infinity(); otherwise, false.
+    /// @return true if value evaluates to xtd::math::negative_infinity; otherwise, false.
     static bool is_negative_infinity(double value);
 
     /// @brief Returns a value indicating whether the specified number evaluates to positive infinity.
     /// @param value A double-precision floating-point number.
-    /// @return true if value evaluates to std::numeric_limits<double>::infinity(); otherwise, false.
+    /// @return true if value evaluates to xtd::math::positive_infinity; otherwise, false.
     static bool is_positive_infinity(double value);
 
     /// @brief Returns a value indicating whether the specified number evaluates to not a number.
