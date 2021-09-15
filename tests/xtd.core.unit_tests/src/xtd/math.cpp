@@ -659,11 +659,114 @@ namespace unit_tests {
       assert::are_equal(12.0, math::round(11.9), csf_);
     }
     
-    void test_method_(round_decimals) {
+    void test_method_(round_decimal) {
       assert::are_equal(11.58, math::round(11.581, 2), csf_);
       assert::are_equal(11.58, math::round(11.584, 2), csf_);
       assert::are_equal(11.59, math::round(11.585, 2), csf_);
       assert::are_equal(11.59, math::round(11.589, 2), csf_);
+    }
+
+    void test_method_(sign_decimal) {
+      assert::are_equal(-1.0l, math::sign(-10.0l), csf_);
+      assert::are_equal(0.0l, math::sign(0.0l), csf_);
+      assert::are_equal(1.0l, math::sign(10.0l), csf_);
+      assert::throws<arithmetic_exception>([]{math::sign(numeric_limits<decimal_t>::quiet_NaN());}, csf_);
+    }
+
+    void test_method_(sign_double) {
+      assert::are_equal(-1.0, math::sign(-10.0), csf_);
+      assert::are_equal(0.0, math::sign(0.0), csf_);
+      assert::are_equal(1.0, math::sign(10.0), csf_);
+      assert::throws<arithmetic_exception>([]{math::sign(math::NaN);}, csf_);
+    }
+
+    void test_method_(sign_int16) {
+      assert::are_equal(-1, math::sign(as<int16_t>(-10)), csf_);
+      assert::are_equal(0, math::sign(as<int16_t>(0)), csf_);
+      assert::are_equal(1, math::sign(as<int16_t>(10)), csf_);
+    }
+    
+    void test_method_(sign_int32) {
+      assert::are_equal(-1, math::sign(-10), csf_);
+      assert::are_equal(0, math::sign(0), csf_);
+      assert::are_equal(1, math::sign(10), csf_);
+    }
+    
+    void test_method_(sign_int64) {
+      assert::are_equal(-1, math::sign(as<int64_t>(-10)), csf_);
+      assert::are_equal(0, math::sign(as<int64_t>(0)), csf_);
+      assert::are_equal(1, math::sign(as<int64_t>(10)), csf_);
+    }
+    
+    void test_method_(sign_sbyte) {
+      assert::are_equal(-1, math::sign(as<sbyte>(-10)), csf_);
+      assert::are_equal(0, math::sign(as<sbyte>(0)), csf_);
+      assert::are_equal(1, math::sign(as<sbyte>(10)), csf_);
+    }
+    
+    void test_method_(sign_single) {
+      assert::are_equal(-1.0f, math::sign(-10.0f), csf_);
+      assert::are_equal(0.0f, math::sign(0.0f), csf_);
+      assert::are_equal(1.0f, math::sign(10.0f), csf_);
+      assert::throws<arithmetic_exception>([]{math::sign(numeric_limits<float>::quiet_NaN());}, csf_);
+    }
+    
+    void test_method_(sin) {
+      assert::are_equal(0.0, math::sin(math::degrees_to_radians(0.0)), csf_);
+      assert::are_equal(0.707106781186547, math::sin(math::degrees_to_radians(45)), .0000000001, csf_);
+      assert::are_equal(1.0, math::sin(math::degrees_to_radians(90.0)), csf_);
+      assert::is_NaN(math::sin(math::NaN), csf_);
+      assert::is_NaN(math::sin(math::negative_infinity), csf_);
+      assert::is_NaN(math::sin(math::positive_infinity), csf_);
+    }
+    
+    void test_method_(sinh) {
+      assert::are_equal(0.0, math::sinh(0.0));
+      assert::are_equal(2.30129890230729, math::sinh(math::degrees_to_radians(90)), .00000000000001, csf_);
+      assert::is_true(math::is_positive_infinity(math::sinh(math::positive_infinity)), csf_);
+      assert::is_true(math::is_negative_infinity(math::sinh(math::negative_infinity)), csf_);
+      assert::is_NaN(math::sinh(math::NaN), csf_);
+    }
+
+    void test_method_(sqrt) {
+      assert::are_equal(0.0, math::sqrt(0.0), csf_);
+      assert::are_equal(1.0, math::sqrt(1.0), csf_);
+      assert::are_equal(2.0, math::sqrt(4.0), csf_);
+      assert::are_equal(3.0, math::sqrt(9.0), csf_);
+      assert::is_NaN(math::sqrt(-1.0), csf_);
+      assert::is_NaN(math::sqrt(math::NaN), csf_);
+      assert::is_true(math::is_positive_infinity(math::sqrt(math::positive_infinity)), csf_);
+    }
+    
+    void test_method_(tan) {
+      assert::are_equal(0.0, math::tan(0.0), csf_);
+      assert::is_NaN(math::tan(math::NaN), csf_);
+      assert::is_NaN(math::tan(math::negative_infinity), csf_);
+      assert::is_NaN(math::tan(math::positive_infinity), csf_);
+    }
+    
+    void test_method_(tanh) {
+      assert::are_equal(-1.0, math::tanh(math::negative_infinity), csf_);
+      assert::are_equal(1.0, math::tanh(math::positive_infinity), csf_);
+      assert::is_NaN(math::tanh(math::NaN), csf_);
+    }
+    
+    void test_method_(truncate_decimal) {
+      assert::are_equal(0.0l, math::truncate(0.0l));
+      assert::are_equal(1.0l, math::truncate(1.0l));
+      assert::are_equal(2.0l, math::truncate(2.4l));
+      assert::are_equal(2.0l, math::truncate(2.8l));
+      assert::are_equal(-1.0l, math::truncate(-1.0l));
+      assert::are_equal(-2.0l, math::truncate(-2.4l));
+    }
+    
+    void test_method_(truncate_double) {
+      assert::are_equal(0.0, math::truncate(0.0));
+      assert::are_equal(1.0, math::truncate(1.0));
+      assert::are_equal(2.0, math::truncate(2.4));
+      assert::are_equal(2.0, math::truncate(2.8));
+      assert::are_equal(-1.0, math::truncate(-1.0));
+      assert::are_equal(-2.0, math::truncate(-2.4));
     }
   };
 }
