@@ -61,7 +61,7 @@ double math::atan(double value) {
 }
 
 double math::atan2(double y, double x) {
-  return is_infinity(y) && is_infinity(x) ? numeric_limits<double>::quiet_NaN() : std::atan2(y, x);
+  return is_infinity(y) && is_infinity(x) ? NaN : std::atan2(y, x);
 }
 
 int64_t math::big_mul(int32_t a, int32_t b) {
@@ -93,11 +93,11 @@ bool math::is_infinity(double value) {
 }
 
 bool math::is_negative_infinity(double value) {
-  return value <= -numeric_limits<double>::infinity();
+  return value <= negative_infinity;
 }
 
 bool math::is_positive_infinity(double value) {
-  return value >= numeric_limits<double>::infinity();
+  return value >= positive_infinity;
 }
 
 bool math::is_NaN(double value) {
