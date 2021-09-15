@@ -154,6 +154,20 @@ namespace xtd {
     /// @return A converted degrees from radians.
     static double degrees_to_radians(double degrees);
 
+    /// @brief Calculates the quotient of two 32-bit signed integers and also returns the remainder in an output parameter.
+    /// @param dividend The dividend.
+    /// @param divisor The divisor.
+    /// @param remainder An angle, measured in radians.
+    /// @return The remainder.
+    static int32_t div_rem(int32_t dividend, int32_t divisor, int32_t& remainder);
+    
+    /// @brief Calculates the quotient of two 64-bit signed integers and also returns the remainder in an output parameter.
+    /// @param dividend The dividend.
+    /// @param divisor The divisor.
+    /// @param remainder An angle, measured in radians.
+    /// @return The remainder.
+    static int64_t div_rem(int64_t dividend, int64_t divisor, int64_t& remainder);
+
     /// @brief Returns a value indicating whether the specified number evaluates to negative or positive infinity.
     /// @param value A double-precision floating-point number.
     /// @return true if value evaluates to xtd::math::positive_infinity or xtd::math::negative_infinity; otherwise, false.

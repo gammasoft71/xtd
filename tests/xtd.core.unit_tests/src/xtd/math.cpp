@@ -77,9 +77,9 @@ namespace unit_tests {
 
     void test_method_(abs_int16) {
       assert::are_equal(numeric_limits<int16_t>::max(), math::abs(numeric_limits<int16_t>::max()), csf_);
-      assert::are_equal(static_cast<int16_t>(10328), math::abs(static_cast<int16_t>(10328)), csf_);
-      assert::are_equal(static_cast<int16_t>(0), math::abs(static_cast<int16_t>(0)), csf_);
-      assert::are_equal(static_cast<int16_t>(1476), math::abs(static_cast<int16_t>(-1476)), csf_);
+      assert::are_equal(as<int16_t>(10328), math::abs(as<int16_t>(10328)), csf_);
+      assert::are_equal(as<int16_t>(0), math::abs(as<int16_t>(0)), csf_);
+      assert::are_equal(as<int16_t>(1476), math::abs(as<int16_t>(-1476)), csf_);
       assert::throws<overflow_exception>([] {math::abs(numeric_limits<int16_t>::lowest());}, csf_);
     }
     
@@ -93,17 +93,17 @@ namespace unit_tests {
     
     void test_method_(abs_int64) {
       assert::are_equal(numeric_limits<int64_t>::max(), math::abs(numeric_limits<int64_t>::max()), csf_);
-      assert::are_equal(static_cast<int64_t>(109013), math::abs(static_cast<int64_t>(109013)), csf_);
-      assert::are_equal(static_cast<int64_t>(0), math::abs(static_cast<int64_t>(0)), csf_);
-      assert::are_equal(static_cast<int64_t>(6871982), math::abs(static_cast<int64_t>(-6871982)), csf_);
+      assert::are_equal(as<int64_t>(109013), math::abs(as<int64_t>(109013)), csf_);
+      assert::are_equal(as<int64_t>(0), math::abs(as<int64_t>(0)), csf_);
+      assert::are_equal(as<int64_t>(6871982), math::abs(as<int64_t>(-6871982)), csf_);
       assert::throws<overflow_exception>([] {math::abs(numeric_limits<int64_t>::lowest());}, csf_);
     }
     
     void test_method_(abs_sbyte) {
       assert::are_equal(numeric_limits<sbyte_t>::max(), math::abs(numeric_limits<sbyte_t>::max()), csf_);
-      assert::are_equal(static_cast<sbyte_t>(98), math::abs(static_cast<sbyte_t>(98)), csf_);
-      assert::are_equal(static_cast<sbyte_t>(0), math::abs(static_cast<sbyte_t>(0)), csf_);
-      assert::are_equal(static_cast<sbyte_t>(32), math::abs(static_cast<sbyte_t>(-32)), csf_);
+      assert::are_equal(as<sbyte_t>(98), math::abs(as<sbyte_t>(98)), csf_);
+      assert::are_equal(as<sbyte_t>(0), math::abs(as<sbyte_t>(0)), csf_);
+      assert::are_equal(as<sbyte_t>(32), math::abs(as<sbyte_t>(-32)), csf_);
       assert::throws<overflow_exception>([] {math::abs(numeric_limits<sbyte_t>::lowest());}, csf_);
     }
     
@@ -205,6 +205,110 @@ namespace unit_tests {
       assert::are_equal(3.14159265358979, math::degrees_to_radians(180.0), .00000000000001, csf_);
       assert::are_equal(4.71238898038469, math::degrees_to_radians(270.0), .00000000000001, csf_);
       assert::are_equal(6.28318530717959, math::degrees_to_radians(360.0), .00000000000001, csf_);
+    }
+
+    void test_method_(div_rem_int32) {
+      using_(int32_t remainder = 0) {
+        assert::are_equal(1073741, math::div_rem(numeric_limits<int32_t>::max(), as<int32_t>(2000), remainder), csf_);
+        assert::are_equal(1647, remainder, csf_);
+      }
+      
+      using_(int32_t remainder = 0) {
+        assert::are_equal(6, math::div_rem(as<int32_t>(13952), as<int32_t>(2000), remainder), csf_);
+        assert::are_equal(1952, remainder, csf_);
+      }
+      
+      using_(int32_t remainder = 0) {
+        assert::are_equal(0, math::div_rem(as<int32_t>(0), as<int32_t>(2000), remainder), csf_);
+        assert::are_equal(0, remainder, csf_);
+      }
+      
+      using_(int32_t remainder = 0) {
+        assert::are_equal(-7, math::div_rem(as<int32_t>(-14032), as<int32_t>(2000), remainder), csf_);
+        assert::are_equal(-32, remainder, csf_);
+      }
+      
+      using_(int32_t remainder = 0) {
+        assert::are_equal(-1073741, math::div_rem(numeric_limits<int32_t>::lowest(), as<int32_t>(2000), remainder), csf_);
+        assert::are_equal(-1648, remainder, csf_);
+      }
+      
+      using_(int32_t remainder = 0) {
+        assert::are_equal(-1073741, math::div_rem(numeric_limits<int32_t>::max(), as<int32_t>(-2000), remainder), csf_);
+        assert::are_equal(1647, remainder, csf_);
+      }
+      
+      using_(int32_t remainder = 0) {
+        assert::are_equal(-6, math::div_rem(as<int32_t>(13952), as<int32_t>(-2000), remainder), csf_);
+        assert::are_equal(1952, remainder, csf_);
+      }
+      
+      using_(int32_t remainder = 0) {
+        assert::are_equal(0, math::div_rem(as<int32_t>(0), as<int32_t>(-2000), remainder), csf_);
+        assert::are_equal(0, remainder, csf_);
+      }
+      
+      using_(int32_t remainder = 0) {
+        assert::are_equal(7, math::div_rem(as<int32_t>(-14032), as<int32_t>(-2000), remainder), csf_);
+        assert::are_equal(-32, remainder, csf_);
+      }
+      
+      using_(int32_t remainder = 0) {
+        assert::are_equal(1073741, math::div_rem(numeric_limits<int32_t>::lowest(), as<int32_t>(-2000), remainder), csf_);
+        assert::are_equal(-1648, remainder, csf_);
+      }
+    }
+    
+    void test_method_(div_rem_int64) {
+      using_(int64_t remainder = 0) {
+        assert::are_equal(4611686018427387LL, math::div_rem(numeric_limits<int64_t>::max(), as<int64_t>(2000), remainder), csf_);
+        assert::are_equal(1807, remainder, csf_);
+      }
+      
+      using_(int64_t remainder = 0) {
+        assert::are_equal(6, math::div_rem(as<int64_t>(13952), as<int64_t>(2000), remainder), csf_);
+        assert::are_equal(1952, remainder, csf_);
+      }
+      
+      using_(int64_t remainder = 0) {
+        assert::are_equal(0, math::div_rem(as<int64_t>(0), as<int64_t>(2000), remainder), csf_);
+        assert::are_equal(0, remainder, csf_);
+      }
+      
+      using_(int64_t remainder = 0) {
+        assert::are_equal(-7, math::div_rem(as<int64_t>(-14032), as<int64_t>(2000), remainder), csf_);
+        assert::are_equal(-32, remainder, csf_);
+      }
+      
+      using_(int64_t remainder = 0) {
+        assert::are_equal(-4611686018427387LL, math::div_rem(numeric_limits<int64_t>::lowest(), as<int64_t>(2000), remainder), csf_);
+        assert::are_equal(-1808, remainder, csf_);
+      }
+      
+      using_(int64_t remainder = 0) {
+        assert::are_equal(-4611686018427387LL, math::div_rem(numeric_limits<int64_t>::max(), as<int64_t>(-2000), remainder), csf_);
+        assert::are_equal(1807, remainder, csf_);
+      }
+      
+      using_(int64_t remainder = 0) {
+        assert::are_equal(-6, math::div_rem(as<int64_t>(13952), as<int64_t>(-2000), remainder), csf_);
+        assert::are_equal(1952, remainder, csf_);
+      }
+      
+      using_(int64_t remainder = 0) {
+        assert::are_equal(0, math::div_rem(as<int64_t>(0), as<int64_t>(-2000), remainder), csf_);
+        assert::are_equal(0, remainder, csf_);
+      }
+      
+      using_(int64_t remainder = 0) {
+        assert::are_equal(7, math::div_rem(as<int64_t>(-14032), as<int64_t>(-2000), remainder), csf_);
+        assert::are_equal(-32, remainder, csf_);
+      }
+      
+      using_(int64_t remainder = 0) {
+        assert::are_equal(4611686018427387LL, math::div_rem(numeric_limits<int64_t>::lowest(), as<int64_t>(-2000), remainder), csf_);
+        assert::are_equal(-1808, remainder, csf_);
+      }
     }
 
     void test_method_(is_infinity) {
