@@ -56,6 +56,7 @@
 #include "language_id.h"
 #include "length_exception.h"
 #include "literals.h"
+#include "math.h"
 #include "nameof.h"
 #include "not_finite_number_exception.h"
 #include "not_implemented_exception.h"
