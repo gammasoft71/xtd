@@ -97,17 +97,17 @@ namespace xtd {
 
     /// @brief Returns the angle whose cosine is the specified number.
     /// @param value A number representing a cosine, where -1 <= value <= 1.
-    /// @return An angle, A, measured in radians, such that 0 <= A <= PI. -or- NaN if value < -1 or d > 1.
+    /// @return An angle, A, measured in radians, such that 0 <= A <= PI. -or- math::NaN if value < -1 or d > 1.
     static double acos(double value);
     
     /// @brief Returns the angle whose sine is the specified number.
     /// @param value A number representing a sine, where -1 <= value <= 1.
-    /// @return An angle, A, measured in radians, such that -PI/2 <= A <= PI/2. -or- NaN if value < -1 or d > 1.
+    /// @return An angle, A, measured in radians, such that -PI/2 <= A <= PI/2. -or- math::NaN if value < -1 or d > 1.
     static double asin(double value);
     
     /// @brief Returns the angle whose tangent is the specified number.
     /// @param value A number representing a tangent.
-    /// @return An angle, A, measured in radians, such that -PI/2 <= ? <= PI/2. -or- NaN if value equals NaN, -PI/2 rounded to double precision (-1.5707963267949) if d equals NegativeInfinity, or PI/2 rounded to double precision (1.5707963267949) if d equals PositiveInfinity
+    /// @return An angle, A, measured in radians, such that -PI/2 <= ? <= PI/2. -or- math::NaN if value equals math::NaN, -PI/2 rounded to double precision (-1.5707963267949) if d equals math::negative_infinity, or PI/2 rounded to double precision (1.5707963267949) if d equals math::positive_infinity
     static double atan(double value);
     
     /// @brief Returns the angle whose tangent is the specified number.
@@ -230,7 +230,7 @@ namespace xtd {
     /// @brief Returns the logarithm of a specified number in a specified base.
     /// @param a The number whose logarithm is to be found.
     /// @param new_base The base of the logarithm.
-    /// @return One of the values in the following table. (+Infinity denotes PositiveInfinity, -Infinity denotes NegativeInfinity, and NaN denotes NaN.)
+    /// @return One of the values in the following table. (+Infinity denotes math::positive_infinity, -Infinity denotes math::negative_infinity, and math::NaN denotes math::NaN.)
     /// | a                                | new_base                                | Return value                 |
     /// |----------------------------------|-----------------------------------------| -----------------------------|
     /// | a > 0                            | (0 < new_base < 1) -or- (new_base > 1)  | log new_base (a)             |
@@ -417,6 +417,31 @@ namespace xtd {
     /// @param b The second of two 64-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is smaller.
     static ullong_t min(ullong_t a, ullong_t b);
+
+    /// @brief Returns a specified number raised to the specified power.
+    /// @param x A double-precision floating-point number to be raised to a power.
+    /// @param y A double-precision floating-point number that specifies a power.
+    /// @return The number x raised to the power y.
+    /// @remarks The following table indicates the return value when various values or ranges of values are specified for the x and y parameters. For more information, see Double::math::positive_infinity, Double::math::negative_infinity, and Double::NaN.
+    /// | Parameters                                                                                                       | Return value            |
+    /// |------------------------------------------------------------------------------------------------------------------|-------------------------|
+    /// | x or y = math::NaN.                                                                                              | math::NaN               |
+    /// | x = Any value except math::NaN; y = 0.                                                                           | 1                       |
+    /// | x = math::negative_infinity; y < 0.                                                                              | 0                       |
+    /// | x = math::negative_infinity; y is positive odd integer.                                                          | math::negative_infinity |
+    /// | x = math::negative_infinity; y is positive but not an odd integer.                                               | math::positive_infinity |
+    /// | x < 0 but not math::negative_infinity; y is not an integer, math::negative_infinity, or math::positive_infinity. | math::NaN               |
+    /// | x = -1; y = math::negative_infinity or math::positive_infinity.                                                  | math::NaN               |
+    /// | -1 < x < 1; y = math::negative_infinity.                                                                         | math::positive_infinity |
+    /// | -1 < x < 1; y = math::positive_infinity.                                                                         | 0                       |
+    /// | x < -1 or x > 1; y = math::negative_infinity.                                                                    | 0                       |
+    /// | x < -1 or x > 1; y = math::positive_infinity.                                                                    | math::positive_infinity |
+    /// | x = 0; y < 0.                                                                                                    | math::positive_infinity |
+    /// | x = 0; y > 0.                                                                                                    | 0                       |
+    /// | x = 1; y is any value except math::NaN.                                                                          | 1                       |
+    /// | x = math::positive_infinity; y < 0                                                                               | 0                       |
+    /// | x = math::positive_infinity; y > 0.                                                                              | math::positive_infinity |
+    static double pow(double x, double y);
 
     /// @brief Convert radians to degrees.
     /// @param radians A double-precision floating-point number.
