@@ -415,6 +415,41 @@ namespace unit_tests {
       assert::is_false(math::is_NaN(math::positive_infinity), csf_);
     }
 
+    void test_method_(log) {
+      assert::are_equal(0.18232155679395459, math::log(1.2), 0.0000000000000001, csf_);
+      assert::is_true(math::is_negative_infinity(math::log(0)), csf_);
+      assert::is_NaN(math::log(-1), csf_);
+      assert::is_NaN(math::log(math::NaN), csf_);
+      assert::is_true(math::is_positive_infinity(math::log(math::positive_infinity)), csf_);
+    }
+    
+    void test_method_(log_with_new_base) {
+      assert::are_equal(3.0, math::log(8.0, 2.0), csf_);
+      assert::are_equal(2.0, math::log(100.0, 10.0), csf_);
+      assert::are_equal(4.0, math::log(65536, 16), csf_);
+      assert::is_NaN(math::log(-1, 10), csf_);
+      assert::is_NaN(math::log(100, -1), csf_);
+      assert::is_NaN(math::log(2, 0), csf_);
+      assert::is_NaN(math::log(2, math::positive_infinity), csf_);
+      assert::is_NaN(math::log(math::NaN, 10), csf_);
+      assert::is_NaN(math::log(100, math::NaN), csf_);
+      assert::is_NaN(math::log(100, 1), csf_);
+      assert::is_true(math::is_positive_infinity(math::log(0, 0.5)), csf_);
+      assert::is_true(math::is_positive_infinity(math::log(math::positive_infinity, 2)), csf_);
+      assert::is_true(math::is_negative_infinity(math::log(0, 2)), csf_);
+      assert::is_true(math::is_negative_infinity(math::log(math::positive_infinity, 0.5)), csf_);
+    }
+    
+    void test_method_(log10) {
+      assert::are_equal(0.0, math::log10(1), csf_);
+      assert::are_equal(1.0, math::log10(10), csf_);
+      assert::are_equal(3.0, math::log10(1000), csf_);
+      assert::is_true(math::is_negative_infinity(math::log10(0)), csf_);
+      assert::is_NaN(math::log10(-1), csf_);
+      assert::is_NaN(math::log10(math::NaN), csf_);
+      assert::is_true(math::is_positive_infinity(math::log10(math::positive_infinity)), csf_);
+    }
+
     void test_method_(radians_to_degrees) {
       assert::are_equal(-360.0, math::radians_to_degrees(-6.28318530717959), .000000001, csf_);
       assert::are_equal(-270.0, math::radians_to_degrees(-4.71238898038469), .000000001, csf_);

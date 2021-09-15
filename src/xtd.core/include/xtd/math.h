@@ -25,6 +25,9 @@ namespace xtd {
     /// @brief Represents the smallest positive Double value greater than zero. This field is constant.
     /// @remarks The value of this field is 4.94066e-324.
     static constexpr double epsilon = 4.94066e-324;
+    /// @brief Represents infinity. This field is constant.
+    /// @remarks The value of this field is std::numeric_limits<double>::infinity().
+    static constexpr double infinity = std::numeric_limits<double>::infinity();
     /// @brief Represents the largest possible value of double. This field is constant.
     /// @remarks The value of this field is  1.7976931348623157E+308.
     static constexpr double max_value = std::numeric_limits<double>::max();
@@ -36,13 +39,13 @@ namespace xtd {
     static constexpr double NaN = std::numeric_limits<double>::quiet_NaN();
     /// @brief Represents negative infinity. This field is constant.
     /// @remarks The value of this field is -std::numeric_limits<double>::infinity().
-    static constexpr double negative_infinity = -std::numeric_limits<double>::infinity();
+    static constexpr double negative_infinity = -infinity;
     /// @brief Represents the ratio of the circumference of a circle to its diameter, specified by the constant, π. This field is constant.
     /// @remarks The value of this field is 3.14159265358979323846.
     static constexpr double pi = 3.14159265358979323846;
     /// @brief Represents positive infinity. This field is constant.
     /// @remarks The value of this field is std::numeric_limits<double>::infinity().
-    static constexpr double positive_infinity = std::numeric_limits<double>::infinity();
+    static constexpr double positive_infinity = +infinity;
     /// @brief Represents the number of radians in one turn, specified by the constant, τ.
     /// @remarks The value of this field is 2.7182818284590451.
     static constexpr double tau = 2.7182818284590451;
@@ -210,6 +213,54 @@ namespace xtd {
     /// @param value A double-precision floating-point number.
     /// @return true if value evaluates to not a number; otherwise, false.
     static bool is_NaN(double value);
+
+    /// @brief Returns the natural (base e) logarithm of a specified number.
+    /// @param value A number whose logarithm is to be found.
+    /// @return One of the values in the following table.
+    /// | value parameter                       | Return value                                                  |
+    /// |---------------------------------------|---------------------------------------------------------------|
+    /// | Positive                              | The natural logarithm of d; that is, ln value, or log e value |
+    /// | Zero                                  | xtd::math::negative_infinity                                  |
+    /// | Negative                              | xtd::math::NaN                                                |
+    /// | Equal to xtd::math::NaN               | xtd::math::NaN                                                |
+    /// | Equal to xtd::math::positive_infinity | xtd::math::positive_infinity                                  |
+    /// @remarks Parameter value is specified as a base 10 number.
+    static double log(double value);
+    
+    /// @brief Returns the logarithm of a specified number in a specified base.
+    /// @param a The number whose logarithm is to be found.
+    /// @param new_base The base of the logarithm.
+    /// @return One of the values in the following table. (+Infinity denotes PositiveInfinity, -Infinity denotes NegativeInfinity, and NaN denotes NaN.)
+    /// | a                                | new_base                                | Return value                 |
+    /// |----------------------------------|-----------------------------------------| -----------------------------|
+    /// | a > 0                            | (0 < new_base < 1) -or- (new_base > 1)  | log new_base (a)             |
+    /// | a < 0                            | (any value)                             | xtd::math::NaN               |
+    /// | (any value)                      | new_base < 0                            | xtd::math::NaN               |
+    /// | a != 1                           | new_base = 0                            | xtd::math::NaN               |
+    /// | a != 1                           | new_base = xtd::math::positive_infinity | xtd::math::NaN               |
+    /// | a = xtd::math::NaN               | (any value)                             | xtd::math::NaN               |
+    /// | (any value)                      | new_base = xtd::math::NaN               | xtd::math::NaN               |
+    /// | (any value)                      | new_base = 1                            | xtd::math::NaN               |
+    /// | a = 0                            | 0 < new_base < 1                        | xtd::math::positive_infinity |
+    /// | a = 0                            | new_base > 1                            | xtd::math::negative_infinity |
+    /// | a = xtd::math::positive_infinity | 0 < new_base < 1                        | xtd::math::negative_infinity |
+    /// | a = xtd::math::positive_infinity | new_base > 1                            | xtd::math::positive_infinity |
+    /// | a = 1                            | new_base = 0                            | 0                            |
+    /// | a = 1                            | new_base = xtd::math::positive_infinity | 0                            |
+    static double log(double a, double new_base);
+    
+    /// @brief Returns the base 10 logarithm of a specified number.
+    /// @param value A number whose logarithm is to be found.
+    /// @return One of the values in the following table.
+    /// | value parameter                       | Return value                                                  |
+    /// |---------------------------------------|---------------------------------------------------------------|
+    /// | Positive                              | The natural logarithm of d; that is, ln value, or log e value |
+    /// | Zero                                  | xtd::math::negative_infinity                                  |
+    /// | Negative                              | xtd::math::NaN                                                |
+    /// | Equal to xtd::math::NaN               | xtd::math::NaN                                                |
+    /// | Equal to xtd::math::positive_infinity | xtd::math::positive_infinity                                  |
+    /// @remarks Parameter value is specified as a base 10 number.
+    static double log10(double value);
 
     /// @brief Convert radians to degrees.
     /// @param radians A double-precision floating-point number.
