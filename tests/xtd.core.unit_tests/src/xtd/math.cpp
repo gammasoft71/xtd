@@ -311,6 +311,38 @@ namespace unit_tests {
       }
     }
 
+    void test_method_(exp) {
+      assert::are_equal(1.0, math::exp(0.0), csf_);
+      assert::are_equal(148.413159, math::exp(5.0), .000001, csf_);
+      assert::is_NaN(math::exp(math::NaN), csf_);
+      assert::is_true(math::is_positive_infinity(math::exp(math::positive_infinity)), csf_);
+      assert::are_equal(0.0, math::exp(math::negative_infinity), csf_);
+    }
+    
+    void test_method_(ieee_remainder) {
+      assert::are_equal(-1.0, math::ieee_remainder(3.0, 2.0), csf_);
+      assert::are_equal(0.0, math::ieee_remainder(4.0, 2.0), csf_);
+      assert::are_equal(1.0, math::ieee_remainder(10.0, 3.0), csf_);
+      assert::are_equal(-1.0, math::ieee_remainder(11.0, 3.0), csf_);
+      assert::are_equal(-1.0, math::ieee_remainder(27.0, 4.0), csf_);
+      assert::are_equal(-2.0, math::ieee_remainder(28.0, 5.0), csf_);
+      assert::are_equal(1.8, math::ieee_remainder(17.8, 4.0), .000000000000001, csf_);
+      assert::are_equal(1.4, math::ieee_remainder(17.8, 4.1), .00000000000001, csf_);
+      assert::are_equal(0.0999999999999979, math::ieee_remainder(-16.3, 4.1), .000000000000001, csf_);
+      assert::are_equal(1.4, math::ieee_remainder(17.8, -4.1), .00000000000001, csf_);
+      assert::are_equal(-1.4, math::ieee_remainder(-17.8, -4.1), .00000000000001, csf_);
+      assert::is_NaN(math::ieee_remainder(12.0, 0.0), csf_);
+    }
+    
+    void test_method_(floor) {
+      assert::are_equal(7.0, math::floor(7.03), csf_);
+      assert::are_equal(7.0, math::floor(7.64), csf_);
+      assert::are_equal(0.0, math::floor(0.12), csf_);
+      assert::are_equal(-1.0, math::floor(-0.12), csf_);
+      assert::are_equal(-8.0, math::floor(-7.1), csf_);
+      assert::are_equal(-8.0, math::floor(-7.6), csf_);
+    }
+
     void test_method_(is_infinity) {
       assert::is_false(math::is_infinity(0.0), csf_);
       assert::is_false(math::is_infinity(1.0), csf_);

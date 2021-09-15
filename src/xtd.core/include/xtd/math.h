@@ -168,6 +168,29 @@ namespace xtd {
     /// @return The remainder.
     static int64_t div_rem(int64_t dividend, int64_t divisor, int64_t& remainder);
 
+    /// @brief Returns e raised to the specified power.
+    /// @param value A number specifying a power.
+    /// @return The number e raised to the power d. If value equals xtd::math::NaN or xtd::math::positive_infinity, that value is returned. If value equals xtd::math::negative_infinity, 0 is returned.
+    static double exp(double value);
+    
+    /// @brief Returns the largest integer less than or equal to the specified decimal number.
+    /// @param value A double-precision floating-point number.
+    /// @return The largest integer less than or equal to value.
+    static decimal_t floor(decimal_t value);
+    
+    /// @brief Returns the largest integer less than or equal to the specified decimal number.
+    /// @param value A double-precision floating-point number.
+    /// @return The largest integer less than or equal to value.
+    static double floor(double value);
+    
+    /// @brief Returns the remainder resulting from the division of a specified number by another specified number.
+    /// @param dividend A dividend.
+    /// @param divisor A divisor.
+    /// @return A number equal to x - (y Q), where Q is the quotient of x / y rounded to the nearest integer (if x / y falls halfway between two integers, the even integer is returned).
+    /// * If x - (y Q) is zero, the value +0 is returned if x is positive, or -0 if x is negative.
+    /// * If y = 0, xtd::math::NaN is returned.
+    static double ieee_remainder(double dividend, double divisor);
+
     /// @brief Returns a value indicating whether the specified number evaluates to negative or positive infinity.
     /// @param value A double-precision floating-point number.
     /// @return true if value evaluates to xtd::math::positive_infinity or xtd::math::negative_infinity; otherwise, false.
