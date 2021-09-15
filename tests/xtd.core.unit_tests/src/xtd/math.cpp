@@ -69,9 +69,9 @@ namespace unit_tests {
     
     void test_method_(abs_int64) {
       assert::are_equal(numeric_limits<int64_t>::max(), math::abs(numeric_limits<int64_t>::max()), csf_);
-      assert::are_equal(109013ll, math::abs(109013ll));
-      assert::are_equal(0ll, math::abs(0ll));
-      assert::are_equal(6871982ll, math::abs(-6871982ll));
+      assert::are_equal(static_cast<int64_t>(109013), math::abs(static_cast<int64_t>(109013)));
+      assert::are_equal(static_cast<int64_t>(0), math::abs(static_cast<int64_t>(0)));
+      assert::are_equal(static_cast<int64_t>(6871982), math::abs(static_cast<int64_t>(-6871982)));
       assert::throws<overflow_exception>([] {math::abs(numeric_limits<int64_t>::lowest());}, csf_);
     }
     
@@ -81,6 +81,14 @@ namespace unit_tests {
       assert::are_equal(static_cast<sbyte_t>(0), math::abs(static_cast<sbyte_t>(0)));
       assert::are_equal(static_cast<sbyte_t>(32), math::abs(static_cast<sbyte_t>(-32)));
       assert::throws<overflow_exception>([] {math::abs(numeric_limits<sbyte_t>::lowest());}, csf_);
+    }
+    
+    void test_method_(abs_llong) {
+      assert::are_equal(numeric_limits<llong_t>::max(), math::abs(numeric_limits<llong_t>::max()), csf_);
+      assert::are_equal(109013ll, math::abs(109013ll));
+      assert::are_equal(0ll, math::abs(0ll));
+      assert::are_equal(6871982ll, math::abs(-6871982ll));
+      assert::throws<overflow_exception>([] {math::abs(numeric_limits<llong_t>::lowest());}, csf_);
     }
   };
 }
