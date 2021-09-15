@@ -450,6 +450,162 @@ namespace unit_tests {
       assert::is_true(math::is_positive_infinity(math::log10(math::positive_infinity)), csf_);
     }
 
+    void test_method_(max_byte) {
+      assert::are_equal(52u, math::max(as<byte_t>(2), as<byte_t>(52)), csf_);
+      assert::are_equal(22u, math::max(as<byte_t>(22), as<byte_t>(5))), csf_;
+      assert::are_equal(16u, math::max(as<byte_t>(16), as<byte_t>(16)), csf_);
+    }
+    
+    void test_method_(max_decimal) {
+      assert::are_equal(52.0l, math::max(2.0l, 52.0l), csf_);
+      assert::are_equal(22.0l, math::max(22.0l, 5.0l)), csf_;
+      assert::are_equal(16.0l, math::max(16.0l, 16.0l), csf_);
+    }
+
+    void test_method_(max_double) {
+      assert::are_equal(52, math::max(2.0, 52.0), csf_);
+      assert::are_equal(22, math::max(22.0, 5.0), csf_);
+      assert::are_equal(16, math::max(16.0, 16.0), csf_);
+    }
+
+    void test_method_(max_int16) {
+      assert::are_equal(52, math::max(as<int16_t>(2), as<int16_t>(52)), csf_);
+      assert::are_equal(22, math::max(as<int16_t>(22), as<int16_t>(5))), csf_;
+      assert::are_equal(16, math::max(as<int16_t>(16), as<int16_t>(16)), csf_);
+    }
+    
+    void test_method_(max_int32) {
+      assert::are_equal(52, math::max(2, 52), csf_);
+      assert::are_equal(22, math::max(22, 5), csf_);
+      assert::are_equal(16, math::max(16, 16), csf_);
+    }
+    
+    void test_method_(max_int64) {
+      assert::are_equal(52, math::max(as<int64_t>(2), as<int64_t>(52)), csf_);
+      assert::are_equal(22, math::max(as<int64_t>(22), as<int64_t>(5)), csf_);
+      assert::are_equal(16, math::max(as<int64_t>(16), as<int64_t>(16)), csf_);
+    }
+    
+    void test_method_(max_llong) {
+      assert::are_equal(52, math::max(as<llong_t>(2), as<llong_t>(52)), csf_);
+      assert::are_equal(22, math::max(as<llong_t>(22), as<llong_t>(5)), csf_);
+      assert::are_equal(16, math::max(as<llong_t>(16), as<llong_t>(16)), csf_);
+    }
+
+    void test_method_(max_sbyte) {
+      assert::are_equal(52, math::max(as<sbyte_t>(2), as<sbyte_t>(52)), csf_);
+      assert::are_equal(22, math::max(as<sbyte_t>(22), as<sbyte_t>(5)), csf_);
+      assert::are_equal(16, math::max(as<sbyte_t>(16), as<sbyte_t>(16)), csf_);
+    }
+    
+    void test_method_(max_single) {
+      assert::are_equal(52.0f, math::max(2.0f, 52.0f), csf_);
+      assert::are_equal(22.0f, math::max(22.0f, 5.0f), csf_);
+      assert::are_equal(16.0f, math::max(16.0f, 16.0f), csf_);
+    }
+    
+    void test_method_(max_uint16) {
+      assert::are_equal(52u, math::max(as<uint16_t>(2), as<uint16_t>(52)), csf_);
+      assert::are_equal(22u, math::max(as<uint16_t>(22), as<uint16_t>(5)), csf_);
+      assert::are_equal(16u, math::max(as<uint16_t>(16), as<uint16_t>(16)), csf_);
+    }
+    
+    void test_method_(max_uint32) {
+      assert::are_equal(52u, math::max(2u, 52u), csf_);
+      assert::are_equal(22u, math::max(22u, 5u), csf_);
+      assert::are_equal(16u, math::max(16u, 16u), csf_);
+    }
+    
+    void test_method_(max_uint64) {
+      assert::are_equal(52u, math::max(as<uint64_t>(2), as<uint64_t>(52)), csf_);
+      assert::are_equal(22u, math::max(as<uint64_t>(22), as<uint64_t>(5)), csf_);
+      assert::are_equal(16u, math::max(as<uint64_t>(16), as<uint64_t>(16)), csf_);
+    }
+    
+    void test_method_(max_ullong) {
+      assert::are_equal(52u, math::max(as<ullong_t>(2), as<ullong_t>(52)), csf_);
+      assert::are_equal(22u, math::max(as<ullong_t>(22), as<ullong_t>(5)), csf_);
+      assert::are_equal(16u, math::max(as<ullong_t>(16), as<ullong_t>(16)), csf_);
+    }
+
+    void test_method_(min_byte) {
+      assert::are_equal(2u, math::min(as<byte_t>(2), as<byte_t>(52)), csf_);
+      assert::are_equal(5u, math::min(as<byte_t>(22), as<byte_t>(5)), csf_);
+      assert::are_equal(16u, math::min(as<byte_t>(16), as<byte_t>(16)), csf_);
+    }
+    
+    void test_method_(min_decimal) {
+      assert::are_equal(2.0l, math::min(2.0l, 52.0l), csf_);
+      assert::are_equal(5.0l, math::min(22.0l, 5.0l), csf_);
+      assert::are_equal(16.0l, math::min(16.0l, 16.0l), csf_);
+    }
+    
+    void test_method_(min_double) {
+      assert::are_equal(2.0, math::min(2.0, 52.0), csf_);
+      assert::are_equal(5.0, math::min(22.0, 5.0), csf_);
+      assert::are_equal(16.0, math::min(16.0, 16.0), csf_);
+    }
+
+    void test_method_(min_int16) {
+      assert::are_equal(2, math::min(as<int16_t>(2), as<int16_t>(52)), csf_);
+      assert::are_equal(5, math::min(as<int16_t>(22), as<int16_t>(5)), csf_);
+      assert::are_equal(16, math::min(as<int16_t>(16), as<int16_t>(16)), csf_);
+    }
+    
+    void test_method_(min_int32) {
+      assert::are_equal(2, math::min(2, 52), csf_);
+      assert::are_equal(5, math::min(22, 5), csf_);
+      assert::are_equal(16, math::min(16, 16), csf_);
+    }
+    
+    void test_method_(min_int64) {
+      assert::are_equal(2, math::min(as<int64_t>(2), as<int64_t>(52)), csf_);
+      assert::are_equal(5, math::min(as<int64_t>(22), as<int64_t>(5)), csf_);
+      assert::are_equal(16, math::min(as<int64_t>(16), as<int64_t>(16)), csf_);
+    }
+    
+    void test_method_(min_llong) {
+      assert::are_equal(2, math::min(as<llong_t>(2), as<llong_t>(52)), csf_);
+      assert::are_equal(5, math::min(as<llong_t>(22), as<llong_t>(5)), csf_);
+      assert::are_equal(16, math::min(as<llong_t>(16), as<llong_t>(16)), csf_);
+    }
+    
+    void test_method_(min_sbyte) {
+      assert::are_equal(2, math::min(as<sbyte_t>(2), as<sbyte_t>(52)), csf_);
+      assert::are_equal(5, math::min(as<sbyte_t>(22), as<sbyte_t>(5)), csf_);
+      assert::are_equal(16, math::min(as<sbyte_t>(16), as<sbyte_t>(16)), csf_);
+    }
+    
+    void test_method_(min_single) {
+      assert::are_equal(2.0f, math::min(2.0f, 52.0f), csf_);
+      assert::are_equal(5.0f, math::min(22.0f, 5.0f), csf_);
+      assert::are_equal(16.0f, math::min(16.0f, 16.0f), csf_);
+    }
+    
+    void test_method_(min_uint16) {
+      assert::are_equal(2u, math::min(as<uint16_t>(2), as<uint16_t>(52)), csf_);
+      assert::are_equal(5u, math::min(as<uint16_t>(22), as<uint16_t>(5)), csf_);
+      assert::are_equal(16u, math::min(as<uint16_t>(16), as<uint16_t>(16)), csf_);
+    }
+    
+    void test_method_(min_uint32) {
+      assert::are_equal(2u, math::min(2u, 52u), csf_);
+      assert::are_equal(5u, math::min(22u, 5u), csf_);
+      assert::are_equal(16u, math::min(16u, 16u), csf_);
+    }
+    
+    void test_method_(min_uint64) {
+      assert::are_equal(2u, math::min(as<uint64_t>(2), as<uint64_t>(52)), csf_);
+      assert::are_equal(5u, math::min(as<uint64_t>(22), as<uint64_t>(5)), csf_);
+      assert::are_equal(16u, math::min(as<uint64_t>(16), as<uint64_t>(16)), csf_);
+    }
+    
+    void test_method_(min_ullong) {
+      assert::are_equal(2u, math::min(as<ullong_t>(2), as<ullong_t>(52)), csf_);
+      assert::are_equal(5u, math::min(as<ullong_t>(22), as<ullong_t>(5)), csf_);
+      assert::are_equal(16u, math::min(as<ullong_t>(16), as<ullong_t>(16)), csf_);
+    }
+
     void test_method_(radians_to_degrees) {
       assert::are_equal(-360.0, math::radians_to_degrees(-6.28318530717959), .000000001, csf_);
       assert::are_equal(-270.0, math::radians_to_degrees(-4.71238898038469), .000000001, csf_);
