@@ -249,6 +249,10 @@ ullong_t math::min(ullong_t a, ullong_t b) {
   return a < b ? a : b;
 }
 
+double math::pow(double x, double y) {
+  return std::pow(x, y);
+}
+
 double math::radians_to_degrees(double radians) {
   return radians * (180 / math::pi);
 }

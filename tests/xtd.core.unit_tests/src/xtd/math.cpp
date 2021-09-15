@@ -606,6 +606,28 @@ namespace unit_tests {
       assert::are_equal(16u, math::min(as<ullong_t>(16), as<ullong_t>(16)), csf_);
     }
 
+    void test_method_(pow) {
+      assert::are_equal(8, math::pow(2, 3), csf_);
+      assert::is_NaN(math::pow(math::NaN, 3), csf_);
+      assert::is_NaN(math::pow(2, math::NaN), csf_);
+      assert::are_equal(1, math::pow(2, 0), csf_);
+      assert::are_equal(0, math::pow(math::negative_infinity, -1), csf_);
+      assert::is_true(math::is_negative_infinity(math::pow(math::negative_infinity, 11)), csf_);
+      assert::is_true(math::is_positive_infinity(math::pow(math::negative_infinity, 10)), csf_);
+      assert::is_NaN(math::pow(-1, 0.5), csf_);
+      assert::is_true(math::is_positive_infinity(math::pow(0, math::negative_infinity)), csf_);
+      assert::are_equal(0, math::pow(0, math::positive_infinity), csf_);
+      assert::are_equal(0, math::pow(-2, math::negative_infinity), csf_);
+      assert::are_equal(0, math::pow(2, math::negative_infinity), csf_);
+      assert::is_true(math::is_positive_infinity(math::pow(-2, math::positive_infinity)), csf_);
+      assert::is_true(math::is_positive_infinity(math::pow(2, math::positive_infinity)), csf_);
+      assert::is_true(math::is_positive_infinity(math::pow(0, -1)), csf_);
+      assert::are_equal(0, math::pow(0, 1), csf_);
+      assert::are_equal(1, math::pow(1, 3), csf_);
+      assert::are_equal(0, math::pow(math::positive_infinity, -1), csf_);
+      assert::is_true(math::is_positive_infinity(math::pow(math::positive_infinity, 1)), csf_);
+    }
+
     void test_method_(radians_to_degrees) {
       assert::are_equal(-360.0, math::radians_to_degrees(-6.28318530717959), .000000001, csf_);
       assert::are_equal(-270.0, math::radians_to_degrees(-4.71238898038469), .000000001, csf_);
