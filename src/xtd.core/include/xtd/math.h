@@ -262,6 +262,162 @@ namespace xtd {
     /// @remarks Parameter value is specified as a base 10 number.
     static double log10(double value);
 
+    /// @brief Returns the larger of two 8-bit unsigned integers.
+    /// @param a The first of two 8-bit unsigned integers to compare.
+    /// @param b The second of two 8-bit unsigned integers to compare.
+    /// @return Parameter a or b, whichever is larger.
+    static byte_t max(byte_t a, byte_t b);
+    
+    /// @brief Returns the larger of two double single.
+    /// @param a The first of two double single to compare.
+    /// @param b The second of two double single to compare.
+    /// @return Parameter a or b, whichever is larger.
+    static decimal_t max(decimal_t a, decimal_t b);
+    
+    /// @brief Returns the larger of two double single.
+    /// @param a The first of two double single to compare.
+    /// @param b The second of two double single to compare.
+    /// @return Parameter a or b, whichever is larger.
+    static double max(double a, double b);
+    
+    /// @brief Returns the larger of two 16-bit signed integers.
+    /// @param a The first of two 16-bit signed integers to compare.
+    /// @param b The second of two 16-bit signed integers to compare.
+    /// @return Parameter a or b, whichever is larger.
+    static int16_t max(int16_t a, int16_t b);
+    
+    /// @brief Returns the larger of two 32-bit signed integers.
+    /// @param a The first of two 32-bit signed integers to compare.
+    /// @param b The second of two 32-bit signed integers to compare.
+    /// @return Parameter a or b, whichever is larger.
+    static int32_t max(int32_t a, int32_t b);
+    
+    /// @brief Returns the larger of two 64-bit signed integers.
+    /// @param a The first of two 64-bit signed integers to compare.
+    /// @param b The second of two 64-bit signed integers to compare.
+    /// @return Parameter a or b, whichever is larger.
+    static int64_t max(int64_t a, int64_t b);
+    
+    /// @brief Returns the larger of two 64-bit signed integers.
+    /// @param a The first of two 64-bit signed integers to compare.
+    /// @param b The second of two 64-bit signed integers to compare.
+    /// @return Parameter a or b, whichever is larger.
+    static llong_t max(llong_t a, llong_t b);
+
+    /// @brief Returns the larger of two 8-bit signed integers.
+    /// @param a The first of two 8-bit signed integers to compare.
+    /// @param b The second of two 8-bit signed integers to compare.
+    /// @return Parameter a or b, whichever is larger.
+    static sbyte_t max(sbyte_t a, sbyte_t b);
+    
+    /// @brief Returns the larger of two single single.
+    /// @param a The first of two signle single to compare.
+    /// @param b The second of two single single to compare.
+    /// @return Parameter a or b, whichever is larger.
+    static float max(float a, float b);
+    
+    /// @brief Returns the larger of two 16-bit unsigned integers.
+    /// @param a The first of two 16-bit unsigned integers to compare.
+    /// @param b The second of two 16-bit unsigned integers to compare.
+    /// @return Parameter a or b, whichever is larger.
+    static uint16_t max(uint16_t a, uint16_t b);
+    
+    /// @brief Returns the larger of two 32-bit unsigned integers.
+    /// @param a The first of two 32-bit unsigned integers to compare.
+    /// @param b The second of two 32-bit unsigned integers to compare.
+    /// @return Parameter a or b, whichever is larger.
+    static uint32_t max(uint32_t a, uint32_t b);
+    
+    /// @brief Returns the larger of two 64-bit unsigned integers.
+    /// @param a The first of two 64-bit unsigned integers to compare.
+    /// @param b The second of two 64-bit unsigned integers to compare.
+    /// @return Parameter a or b, whichever is larger.
+    static uint64_t max(uint64_t a, uint64_t b);
+    
+    /// @brief Returns the larger of two 64-bit unsigned integers.
+    /// @param a The first of two 64-bit unsigned integers to compare.
+    /// @param b The second of two 64-bit unsigned integers to compare.
+    /// @return Parameter a or b, whichever is larger.
+    static ullong_t max(ullong_t a, ullong_t b);
+
+    /// @brief Returns the smaller of two 8-bit unsigned integers.
+    /// @param a The first of two 8-bit unsigned integers to compare.
+    /// @param b The second of two 8-bit unsigned integers to compare.
+    /// @return Parameter a or b, whichever is smaller.
+    static byte_t min(byte_t a, byte_t b);
+    
+    /// @brief Returns the smaller of two double single.
+    /// @param a The first of two double single to compare.
+    /// @param b The second of two double single to compare.
+    /// @return Parameter a or b, whichever is smaller.
+    static decimal_t min(decimal_t a, decimal_t b);
+    
+    /// @brief Returns the smaller of two double single.
+    /// @param a The first of two double single to compare.
+    /// @param b The second of two double single to compare.
+    /// @return Parameter a or b, whichever is smaller.
+    static double min(double a, double b);
+    
+    /// @brief Returns the smaller of two 16-bit signed integers.
+    /// @param a The first of two 16-bit signed integers to compare.
+    /// @param b The second of two 16-bit signed integers to compare.
+    /// @return Parameter a or b, whichever is smaller.
+    static int16_t min(int16_t a, int16_t b);
+    
+    /// @brief Returns the smaller of two 32-bit signed integers.
+    /// @param a The first of two 32-bit signed integers to compare.
+    /// @param b The second of two 32-bit signed integers to compare.
+    /// @return Parameter a or b, whichever is smaller.
+    static int32_t min(int32_t a, int32_t b);
+    
+    /// @brief Returns the smaller of two 64-bit signed integers.
+    /// @param a The first of two 64-bit signed integers to compare.
+    /// @param b The second of two 64-bit signed integers to compare.
+    /// @return Parameter a or b, whichever is smaller.
+    static int64_t min(int64_t a, int64_t b);
+    
+    /// @brief Returns the smaller of two 64-bit signed integers.
+    /// @param a The first of two 64-bit signed integers to compare.
+    /// @param b The second of two 64-bit signed integers to compare.
+    /// @return Parameter a or b, whichever is smaller.
+    static llong_t min(llong_t a, llong_t b);
+
+    /// @brief Returns the smaller of two 8-bit signed integers.
+    /// @param a The first of two 8-bit signed integers to compare.
+    /// @param b The second of two 8-bit signed integers to compare.
+    /// @return Parameter a or b, whichever is smaller.
+    static sbyte_t min(sbyte_t a, sbyte_t b);
+    
+    /// @brief Returns the smaller of two single single.
+    /// @param a The first of two signle single to compare.
+    /// @param b The second of two single single to compare.
+    /// @return Parameter a or b, whichever is smaller.
+    static float min(float a, float b);
+    
+    /// @brief Returns the smaller of two 16-bit unsigned integers.
+    /// @param a The first of two 16-bit unsigned integers to compare.
+    /// @param b The second of two 16-bit unsigned integers to compare.
+    /// @return Parameter a or b, whichever is smaller.
+    static uint16_t min(uint16_t a, uint16_t b);
+    
+    /// @brief Returns the smaller of two 32-bit unsigned integers.
+    /// @param a The first of two 32-bit unsigned integers to compare.
+    /// @param b The second of two 32-bit unsigned integers to compare.
+    /// @return Parameter a or b, whichever is smaller.
+    static uint32_t min(uint32 a, uint32 b);
+    
+    /// @brief Returns the smaller of two 64-bit unsigned integers.
+    /// @param a The first of two 64-bit unsigned integers to compare.
+    /// @param b The second of two 64-bit unsigned integers to compare.
+    /// @return Parameter a or b, whichever is smaller.
+    static uint64 min(uint64_t a, uint64_t b);
+    
+    /// @brief Returns the smaller of two 64-bit unsigned integers.
+    /// @param a The first of two 64-bit unsigned integers to compare.
+    /// @param b The second of two 64-bit unsigned integers to compare.
+    /// @return Parameter a or b, whichever is smaller.
+    static ullong_t min(ullong_t a, ullong_t b);
+
     /// @brief Convert radians to degrees.
     /// @param radians A double-precision floating-point number.
     /// @return A converted radians from degrees.
