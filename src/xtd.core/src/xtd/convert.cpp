@@ -1,9 +1,9 @@
-#include <cmath>
+#include "../../include/xtd/convert.h"
 #include "../../include/xtd/argument_exception.h"
 #include "../../include/xtd/format_exception.h"
 #include "../../include/xtd/invalid_cast_exception.h"
 #include "../../include/xtd/overflow_exception.h"
-#include "../../include/xtd/convert.h"
+#include "../../include/xtd/math.h"
 
 using namespace std;
 using namespace xtd;
@@ -340,17 +340,17 @@ byte_t convert::to_byte(wchar_t value) {
 
 byte_t convert::to_byte(decimal_t value) {
   if (value < static_cast<decimal_t>(numeric_limits<byte_t>::lowest()) || value > static_cast<decimal_t>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<byte_t>(round(value));
+  return static_cast<byte_t>(math::round(value));
 }
 
 byte_t convert::to_byte(double value) {
   if (value < static_cast<double>(numeric_limits<byte_t>::lowest()) || value > static_cast<double>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<byte_t>(round(value));
+  return static_cast<byte_t>(math::round(value));
 }
 
 byte_t convert::to_byte(float value) {
   if (value < static_cast<float>(numeric_limits<byte_t>::lowest()) || value > static_cast<float>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<byte_t>(round(value));
+  return static_cast<byte_t>(math::round(value));
 }
 
 byte_t convert::to_byte(int16_t value) {
@@ -513,17 +513,17 @@ char convert::to_char(wchar_t value) {
 
 char convert::to_char(decimal_t value) {
   if (value < 0.0l || value > 255.0l) throw overflow_exception(csf_);
-  return static_cast<char>(round(value));
+  return static_cast<char>(math::round(value));
 }
 
 char convert::to_char(double value) {
   if (value < 0.0 || value > 255.0) throw overflow_exception(csf_);
-  return static_cast<char>(round(value));
+  return static_cast<char>(math::round(value));
 }
 
 char convert::to_char(float value) {
   if (value < 0.0f || value > 255.0f) throw overflow_exception(csf_);
-  return static_cast<byte_t>(round(value));
+  return static_cast<byte_t>(math::round(value));
 }
 
 char convert::to_char(int16_t value) {
@@ -688,17 +688,17 @@ char8_t convert::to_char8(wchar_t value) {
 
 char8_t convert::to_char8(decimal_t value) {
   if (value < 0.0l || value > 255.0l) throw overflow_exception(csf_);
-  return static_cast<char8_t>(round(value));
+  return static_cast<char8_t>(math::round(value));
 }
 
 char8_t convert::to_char8(double value) {
   if (value < 0.0 || value > 255.0) throw overflow_exception(csf_);
-  return static_cast<char8_t>(round(value));
+  return static_cast<char8_t>(math::round(value));
 }
 
 char8_t convert::to_char8(float value) {
   if (value < 0.0f || value > 255.0f) throw overflow_exception(csf_);
-  return static_cast<char8_t>(round(value));
+  return static_cast<char8_t>(math::round(value));
 }
 
 char8_t convert::to_char8(int16_t value) {
@@ -869,17 +869,17 @@ char16_t convert::to_char16(wchar_t value) noexcept {
 
 char16_t convert::to_char16(decimal_t value) {
   if (value < 0.0l || value > 65535.0l) throw overflow_exception(csf_);
-  return static_cast<char16_t>(round(value));
+  return static_cast<char16_t>(math::round(value));
 }
 
 char16_t convert::to_char16(double value) {
   if (value < 0.0 || value > 65535.0) throw overflow_exception(csf_);
-  return static_cast<char16_t>(round(value));
+  return static_cast<char16_t>(math::round(value));
 }
 
 char16_t convert::to_char16(float value) {
   if (value < 0.0f || value > 65535.0f) throw overflow_exception(csf_);
-  return static_cast<char16_t>(round(value));
+  return static_cast<char16_t>(math::round(value));
 }
 
 char16_t convert::to_char16(int16_t value) {
@@ -1048,17 +1048,17 @@ char32_t convert::to_char32(wchar_t value) noexcept {
 
 char32_t convert::to_char32(decimal_t value) {
   if (value < 0.0l || value > 4294967295.0l) throw overflow_exception(csf_);
-  return static_cast<char32_t>(round(value));
+  return static_cast<char32_t>(math::round(value));
 }
 
 char32_t convert::to_char32(double value) {
   if (value < 0.0 || value > 4294967295.0) throw overflow_exception(csf_);
-  return static_cast<char32_t>(round(value));
+  return static_cast<char32_t>(math::round(value));
 }
 
 char32_t convert::to_char32(float value) {
   if (value < 0.0f) throw overflow_exception(csf_);
-  return static_cast<char32_t>(round(value));
+  return static_cast<char32_t>(math::round(value));
 }
 
 char32_t convert::to_char32(int16_t value) {
@@ -1227,17 +1227,17 @@ wchar_t convert::to_wchar(wchar_t value) noexcept {
 
 wchar_t convert::to_wchar(decimal_t value) {
   if (value < 0.0l || value > 65535.0l) throw overflow_exception(csf_);
-  return static_cast<wchar_t>(round(value));
+  return static_cast<wchar_t>(math::round(value));
 }
 
 wchar_t convert::to_wchar(double value) {
   if (value < 0.0 || value > 65535.0) throw overflow_exception(csf_);
-  return static_cast<wchar_t>(round(value));
+  return static_cast<wchar_t>(math::round(value));
 }
 
 wchar_t convert::to_wchar(float value) {
   if (value < 0.0f || value > 65535.0f) throw overflow_exception(csf_);
-  return static_cast<wchar_t>(round(value));
+  return static_cast<wchar_t>(math::round(value));
 }
 
 wchar_t convert::to_wchar(int16_t value) {
@@ -1847,17 +1847,17 @@ int16_t convert::to_int16(wchar_t value) noexcept {
 
 int16_t convert::to_int16(decimal_t value) {
   if (value < static_cast<decimal_t>(numeric_limits<int16_t>::lowest()) || value > static_cast<decimal_t>(numeric_limits<int16_t>::max())) throw overflow_exception(csf_);
-  return static_cast<int16_t>(round(value));
+  return static_cast<int16_t>(math::round(value));
 }
 
 int16_t convert::to_int16(double value) {
   if (value < static_cast<double>(numeric_limits<int16_t>::lowest()) || value > static_cast<double>(numeric_limits<int16_t>::max())) throw overflow_exception(csf_);
-  return static_cast<int16_t>(round(value));
+  return static_cast<int16_t>(math::round(value));
 }
 
 int16_t convert::to_int16(float value) {
   if (value < static_cast<float>(numeric_limits<int16_t>::lowest()) || value > static_cast<float>(numeric_limits<int16_t>::max())) throw overflow_exception(csf_);
-  return static_cast<int16_t>(round(value));
+  return static_cast<int16_t>(math::round(value));
 }
 
 int16_t convert::to_int16(int16_t value) noexcept {
@@ -2015,16 +2015,16 @@ int32_t convert::to_int32(wchar_t value) noexcept {
 
 int32_t convert::to_int32(decimal_t value) {
   if (value < static_cast<decimal_t>(numeric_limits<int32_t>::lowest()) || value > static_cast<decimal_t>(numeric_limits<int32_t>::max())) throw overflow_exception(csf_);
-  return static_cast<int32_t>(round(value));
+  return static_cast<int32_t>(math::round(value));
 }
 
 int32_t convert::to_int32(double value) {
   if (value < static_cast<double>(numeric_limits<int32_t>::lowest()) || value > static_cast<double>(numeric_limits<int32_t>::max())) throw overflow_exception(csf_);
-  return static_cast<int32_t>(round(value));
+  return static_cast<int32_t>(math::round(value));
 }
 
 int32_t convert::to_int32(float value) noexcept {
-  return static_cast<int32_t>(round(value));
+  return static_cast<int32_t>(math::round(value));
 }
 
 int32_t convert::to_int32(int16_t value) noexcept {
@@ -2179,15 +2179,15 @@ int64_t convert::to_int64(wchar_t value) noexcept {
 }
 
 int64_t convert::to_int64(decimal_t value) noexcept {
-  return static_cast<int64_t>(round(value));
+  return static_cast<int64_t>(math::round(value));
 }
 
 int64_t convert::to_int64(double value) noexcept {
-  return static_cast<int64_t>(round(value));
+  return static_cast<int64_t>(math::round(value));
 }
 
 int64_t convert::to_int64(float value) noexcept {
-  return static_cast<int64_t>(round(value));
+  return static_cast<int64_t>(math::round(value));
 }
 
 int64_t convert::to_int64(int16_t value) noexcept {
@@ -2339,15 +2339,15 @@ llong_t convert::to_llong(wchar_t value) noexcept {
 }
 
 llong_t convert::to_llong(decimal_t value) noexcept {
-  return static_cast<llong_t>(round(value));
+  return static_cast<llong_t>(math::round(value));
 }
 
 llong_t convert::to_llong(double value) noexcept {
-  return static_cast<llong_t>(round(value));
+  return static_cast<llong_t>(math::round(value));
 }
 
 llong_t convert::to_llong(float value) noexcept {
-  return static_cast<llong_t>(round(value));
+  return static_cast<llong_t>(math::round(value));
 }
 
 llong_t convert::to_llong(int16_t value) noexcept {
@@ -2503,17 +2503,17 @@ sbyte_t convert::to_sbyte(wchar_t value) {
 
 sbyte_t convert::to_sbyte(decimal_t value) {
   if (value < static_cast<decimal_t>(numeric_limits<sbyte_t>::lowest()) || value > static_cast<decimal_t>(numeric_limits<sbyte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<sbyte_t>(round(value));
+  return static_cast<sbyte_t>(math::round(value));
 }
 
 sbyte_t convert::to_sbyte(double value) {
   if (value < static_cast<double>(numeric_limits<sbyte_t>::lowest()) || value > static_cast<double>(numeric_limits<sbyte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<sbyte_t>(round(value));
+  return static_cast<sbyte_t>(math::round(value));
 }
 
 sbyte_t convert::to_sbyte(float value) {
   if (value < static_cast<float>(numeric_limits<sbyte_t>::lowest()) || value > static_cast<float>(numeric_limits<sbyte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<sbyte_t>(round(value));
+  return static_cast<sbyte_t>(math::round(value));
 }
 
 sbyte_t convert::to_sbyte(int16_t value) {
@@ -2673,17 +2673,17 @@ uint16_t convert::to_uint16(wchar_t value) noexcept {
 
 uint16_t convert::to_uint16(decimal_t value) {
   if (value < static_cast<decimal_t>(numeric_limits<uint16_t>::lowest()) || value > static_cast<decimal_t>(numeric_limits<uint16_t>::max())) throw overflow_exception(csf_);
-  return static_cast<uint16_t>(round(value));
+  return static_cast<uint16_t>(math::round(value));
 }
 
 uint16_t convert::to_uint16(double value) {
   if (value < static_cast<double>(numeric_limits<uint16_t>::lowest()) || value > static_cast<double>(numeric_limits<uint16_t>::max())) throw overflow_exception(csf_);
-  return static_cast<uint16_t>(round(value));
+  return static_cast<uint16_t>(math::round(value));
 }
 
 uint16_t convert::to_uint16(float value) {
   if (value < static_cast<float>(numeric_limits<uint16_t>::lowest()) || value > static_cast<float>(numeric_limits<uint16_t>::max())) throw overflow_exception(csf_);
-  return static_cast<uint16_t>(round(value));
+  return static_cast<uint16_t>(math::round(value));
 }
 
 uint16_t convert::to_uint16(int16_t value) {
@@ -2842,17 +2842,17 @@ uint32_t convert::to_uint32(wchar_t value) noexcept {
 
 uint32_t convert::to_uint32(decimal_t value) {
   if (value < static_cast<decimal_t>(numeric_limits<uint32_t>::lowest()) || value > static_cast<decimal_t>(numeric_limits<uint32_t>::max())) throw overflow_exception(csf_);
-  return static_cast<uint32_t>(round(value));
+  return static_cast<uint32_t>(math::round(value));
 }
 
 uint32_t convert::to_uint32(double value) {
   if (value < static_cast<double>(numeric_limits<uint32_t>::lowest()) || value > static_cast<double>(numeric_limits<uint32_t>::max())) throw overflow_exception(csf_);
-  return static_cast<uint32_t>(round(value));
+  return static_cast<uint32_t>(math::round(value));
 }
 
 uint32_t convert::to_uint32(float value) {
   if (value < static_cast<float>(numeric_limits<uint32_t>::lowest())) throw overflow_exception(csf_);
-  return static_cast<uint32_t>(round(value));
+  return static_cast<uint32_t>(math::round(value));
 }
 
 uint32_t convert::to_uint32(int16_t value) {
@@ -3010,17 +3010,17 @@ uint64_t convert::to_uint64(wchar_t value) noexcept {
 
 uint64_t convert::to_uint64(decimal_t value) {
   if (value < static_cast<decimal_t>(numeric_limits<uint64_t>::lowest()) || value > static_cast<decimal_t>(numeric_limits<uint64_t>::max())) throw overflow_exception(csf_);
-  return static_cast<uint64_t>(round(value));
+  return static_cast<uint64_t>(math::round(value));
 }
 
 uint64_t convert::to_uint64(double value) {
   if (value < static_cast<double>(numeric_limits<uint64_t>::lowest())) throw overflow_exception(csf_);
-  return static_cast<uint64_t>(round(value));
+  return static_cast<uint64_t>(math::round(value));
 }
 
 uint64_t convert::to_uint64(float value) {
   if (value < static_cast<float>(numeric_limits<uint64_t>::lowest())) throw overflow_exception(csf_);
-  return static_cast<uint64_t>(round(value));
+  return static_cast<uint64_t>(math::round(value));
 }
 
 uint64_t convert::to_uint64(int16_t value) {
@@ -3176,17 +3176,17 @@ ullong_t convert::to_ullong(wchar_t value) noexcept {
 
 ullong_t convert::to_ullong(decimal_t value) {
   if (value < static_cast<decimal_t>(numeric_limits<ullong_t>::lowest()) || value > static_cast<decimal_t>(numeric_limits<ullong_t>::max())) throw overflow_exception(csf_);
-  return static_cast<ullong_t>(round(value));
+  return static_cast<ullong_t>(math::round(value));
 }
 
 ullong_t convert::to_ullong(double value) {
   if (value < static_cast<double>(numeric_limits<ullong_t>::lowest())) throw overflow_exception(csf_);
-  return static_cast<ullong_t>(round(value));
+  return static_cast<ullong_t>(math::round(value));
 }
 
 ullong_t convert::to_ullong(float value) {
   if (value < static_cast<float>(numeric_limits<ullong_t>::lowest())) throw overflow_exception(csf_);
-  return static_cast<ullong_t>(round(value));
+  return static_cast<ullong_t>(math::round(value));
 }
 
 ullong_t convert::to_ullong(int16_t value) {
