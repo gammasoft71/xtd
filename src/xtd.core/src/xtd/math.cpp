@@ -103,7 +103,7 @@ double math::exp(double value) {
 }
 
 double math::ieee_remainder(double dividend, double divisor) {
-  return divisor == 0 ? NaN : dividend - (divisor * std::round(dividend / divisor));
+  return divisor == 0 ? NaN : dividend - (divisor * math::round(dividend / divisor));
 }
 
 decimal_t math::floor(decimal_t value) {
@@ -132,4 +132,26 @@ bool math::is_NaN(double value) {
 
 double math::radians_to_degrees(double radians) {
   return radians * (180 / math::pi);
+}
+
+decimal_t math::round(decimal_t value) {
+  return math::round(value, 0);
+}
+
+decimal_t math::round(decimal_t value, int32_t decimals) {
+  decimal_t muliplicator = 1;
+  for (int32_t index = 0; index < decimals; index++)
+    muliplicator *= 10;
+  return math::floor((value * muliplicator) + 0.5) / muliplicator;
+}
+
+double math::round(double value) {
+  return math::round(value, 0);
+}
+
+double math::round(double value, int32_t decimals) {
+  double muliplicator = 1;
+  for (int32_t index = 0; index < decimals; index++)
+    muliplicator *= 10;
+  return math::floor((value * muliplicator) + 0.5) / muliplicator;
 }

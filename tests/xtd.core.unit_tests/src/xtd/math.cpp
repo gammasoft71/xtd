@@ -438,5 +438,19 @@ namespace unit_tests {
       assert::are_equal(270.0, math::radians_to_degrees(math::degrees_to_radians(270.0)), csf_);
       assert::are_equal(360.0, math::radians_to_degrees(math::degrees_to_radians(360.0)), csf_);
     }
+
+    void test_method_(round) {
+      assert::are_equal(11.0, math::round(11.1), csf_);
+      assert::are_equal(11.0, math::round(11.4), csf_);
+      assert::are_equal(12.0, math::round(11.5), csf_);
+      assert::are_equal(12.0, math::round(11.9), csf_);
+    }
+    
+    void test_method_(round_decimals) {
+      assert::are_equal(11.58, math::round(11.581, 2), csf_);
+      assert::are_equal(11.58, math::round(11.584, 2), csf_);
+      assert::are_equal(11.59, math::round(11.585, 2), csf_);
+      assert::are_equal(11.59, math::round(11.589, 2), csf_);
+    }
   };
 }

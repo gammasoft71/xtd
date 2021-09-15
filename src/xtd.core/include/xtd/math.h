@@ -215,5 +215,27 @@ namespace xtd {
     /// @param radians A double-precision floating-point number.
     /// @return A converted radians from degrees.
     static double radians_to_degrees(double radians);
+
+    /// @brief Rounds a double-precision floating-point value to the nearest integral value.
+    /// @param value A double-precision floating-point number to be rounded.
+    /// @return The integer nearest value. If the fractional component of a is halfway between two integers, one of which is even and the other odd, then the even number is returned. Note that this method returns a double instead of an integral type.
+    static decimal_t round(decimal_t value);
+    
+    /// @brief Rounds a decimal value to a specified number of fractional digits.
+    /// @param value A double-precision floating-point number to be rounded.
+    /// @param decimals The number of decimal places in the return value.
+    /// @return The number nearest to d that contains a number of fractional digits equal to decimals.
+    static decimal_t round(decimal_t value, int32_t decimals);
+    
+    /// @brief Rounds a double-precision floating-point value to the nearest integral value.
+    /// @param value A double-precision floating-point number to be rounded.
+    /// @return The integer nearest value. If the fractional component of a is halfway between two integers, one of which is even and the other odd, then the even number is returned. Note that this method returns a double instead of an integral type.
+    static double round(double value);
+    
+    /// @brief Rounds a decimal value to a specified number of fractional digits.
+    /// @param value A double-precision floating-point number to be rounded.
+    /// @param decimals The number of decimal places in the return value.
+    /// @return The number nearest to d that contains a number of fractional digits equal to decimals.
+    static double round(double value, int32_t decimals);
   };
 }
