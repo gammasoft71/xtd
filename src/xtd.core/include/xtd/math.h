@@ -469,5 +469,139 @@ namespace xtd {
     /// @param decimals The number of decimal places in the return value.
     /// @return The number nearest to d that contains a number of fractional digits equal to decimals.
     static double round(double value, int32_t decimals);
+
+    /// @brief Returns a value indicating the sign of a double-precision floating-point number.
+    /// @param value A signed number.
+    /// @return int32 A number that indicates the sign of value, as shown in the following table.
+    /// | Return value | Meaning                     |
+    /// |--------------|-----------------------------|
+    /// | -1           | value is less than zero.    |
+    /// | 0            | value is equal to zero.     |
+    /// | 1            | value is greater than zero. |
+    /// @exception xtd::arithmetic_exception value is equal to NaN.
+    static int32_t sign(decimal_t value);
+    
+    /// @brief Returns a value indicating the sign of a double-precision floating-point number.
+    /// @param value A signed number.
+    /// @return int32 A number that indicates the sign of value, as shown in the following table.
+    /// | Return value | Meaning                     |
+    /// |--------------|-----------------------------|
+    /// | -1           | value is less than zero.    |
+    /// | 0            | value is equal to zero.     |
+    /// | 1            | value is greater than zero. |
+    /// @exception xtd::arithmetic_exception value is equal to NaN.
+    static int32_t sign(double value);
+    
+    /// @brief Returns a value indicating the sign of a 16-bit signed integer.
+    /// @param value A signed number.
+    /// @return int32 A number that indicates the sign of value, as shown in the following table.
+    /// | Return value | Meaning                     |
+    /// |--------------|-----------------------------|
+    /// | -1           | value is less than zero.    |
+    /// | 0            | value is equal to zero.     |
+    /// | 1            | value is greater than zero. |
+    static int32_t sign(int16_t value);
+    
+    /// @brief Returns a value indicating the sign of a 32-bit signed integer.
+    /// @param value A signed number.
+    /// @return int32 A number that indicates the sign of value, as shown in the following table.
+    /// | Return value | Meaning                     |
+    /// |--------------|-----------------------------|
+    /// | -1           | value is less than zero.    |
+    /// | 0            | value is equal to zero.     |
+    /// | 1            | value is greater than zero. |
+    static int32_t sign(int32_t value);
+    
+    /// @brief Returns a value indicating the sign of a 64-bit signed integer.
+    /// @param value A signed number.
+    /// @return int32 A number that indicates the sign of value, as shown in the following table.
+    /// | Return value | Meaning                     |
+    /// |--------------|-----------------------------|
+    /// | -1           | value is less than zero.    |
+    /// | 0            | value is equal to zero.     |
+    /// | 1            | value is greater than zero. |
+    static int32_t sign(int64_t value);
+    
+    /// @brief Returns a value indicating the sign of a 64-bit signed integer.
+    /// @param value A signed number.
+    /// @return int32 A number that indicates the sign of value, as shown in the following table.
+    /// | Return value | Meaning                     |
+    /// |--------------|-----------------------------|
+    /// | -1           | value is less than zero.    |
+    /// | 0            | value is equal to zero.     |
+    /// | 1            | value is greater than zero. |
+    static int32_t sign(llong_t value);
+
+    /// @brief Returns a value indicating the sign of an 8-bit signed integer.
+    /// @param value A signed number.
+    /// @return int32 A number that indicates the sign of value, as shown in the following table.
+    /// | Return value | Meaning                     |
+    /// |--------------|-----------------------------|
+    /// | -1           | value is less than zero.    |
+    /// | 0            | value is equal to zero.     |
+    /// | 1            | value is greater than zero. |
+    static int32_t sign(sbyte_t value);
+    
+    /// @brief Returns a value indicating the sign of a single-precision floating-point number.
+    /// @param value A signed number.
+    /// @return int32 A number that indicates the sign of value, as shown in the following table.
+    /// | Return value | Meaning                     |
+    /// |--------------|-----------------------------|
+    /// | -1           | value is less than zero.    |
+    /// | 0            | value is equal to zero.     |
+    /// | 1            | value is greater than zero. |
+    /// @exception xtd::arithmetic_exception value is equal to NaN.
+    static int32_t sign(float value);
+    
+    /// @brief Returns the sine of the specified angle.
+    /// @param value An angle, measured in radians.
+    /// @return double The sine of value. If value is equal to math::NaN, math::negative_infinity, or math::positiveI_infinity, this method returns math::NaN.
+    static double sin(double value);
+    
+    /// @brief Returns the hyperbolic sine of the specified angle.
+    /// @param value An angle, measured in radians.
+    /// @return double The sine of a. If a is equal to math::NaN, math::negative_infinity, or math::positive_infinity, this method returns math::NaN.
+    static double sinh(double value);
+
+    /// @brief Returns the square root of a specified number.
+    /// @param value The number whose square root is to be found.
+    /// @return One of the values in the following table.
+    /// | value parameter                | Return value                   |
+    /// |--------------------------------|--------------------------------|
+    /// | Zero or positive               | The positive square root of d. |
+    /// | Negative                       | math::NaN                      |
+    /// | Equals math::NaN               | math::NaN                      |
+    /// | Equals math::positive_infinity | math::positive_infinity        |
+    static double sqrt(double value);
+    
+    /// @brief Returns the tangent of the specified angle.
+    /// @param value An angle, measured in radians.
+    /// @return The tangent of value. If value is equal to math::NaN, math::negative_infinity, or math::psitive_infinity, this method returns math::NaN.
+    static double tan(double value);
+    
+    /// @brief Returns the hyperbolic tangent of the specified angle.
+    /// @param value An angle, measured in radians.
+    /// @return The hyperbolic tangent of value. If value is equal to math::negative_infinity, this method returns -1. If value is equal to math::positive_infinity, this method returns 1. If value is equal to math::NaN, this method returns math::NaN.
+    static double tanh(double value);
+    
+    /// @brief Calculates the integral part of a specified double-precision floating-point number.
+    /// @param value A number to truncate.
+    /// @return The integral part of d; that is, the number that remains after any fractional digits have been discarded, or one of the values listed in the following table.
+    /// | value            | Return value     |
+    /// |------------------|------------------|
+    /// | NaN              | NaN              |
+    /// | NegativeInfinity | NegativeInfinity |
+    /// | PositiveInfinity | PositiveInfinity |
+    static decimal_t truncate(decimal_t value);
+    
+    /// @brief Calculates the integral part of a specified double-precision floating-point number.
+    /// @param value A number to truncate.
+    /// @return The integral part of d; that is, the number that remains after any fractional digits have been discarded, or one of the values listed in the following table.
+    /// | value                   | Return value            |
+    /// |-------------------------|-------------------------|
+    /// | math::NaN               | math::NaN               |
+    /// | math::negative_infinity | math::negative_infinity |
+    /// | math::positive_infinity | math::positive_infinity |
+    static double truncate(double value);
   };
 }

@@ -278,3 +278,62 @@ double math::round(double value, int32_t decimals) {
     muliplicator *= 10;
   return math::floor((value * muliplicator) + 0.5) / muliplicator;
 }
+
+int32_t math::sign(decimal_t value) {
+  if (value != value) throw arithmetic_exception(csf_);
+  return value < 0 ? -1 : value == 0 ? 0 : 1;
+}
+
+int32_t math::sign(double value) {
+  if (is_NaN(value)) throw arithmetic_exception(csf_);
+  return value < 0.0 ? -1 : value == 0.0 ? 0 : 1;
+}
+
+int32_t math::sign(int16_t value) {
+  return value < 0 ? -1 : value == 0 ? 0 : 1;
+}
+
+int32_t math::sign(int32_t value) {
+  return value < 0 ? -1 : value == 0 ? 0 : 1;
+}
+
+int32_t math::sign(int64_t value) {
+  return value < 0 ? -1 : value == 0 ? 0 : 1;
+}
+
+int32_t math::sign(sbyte_t value) {
+  return value < 0 ? -1 : value == 0 ? 0 : 1;
+}
+
+int32_t math::sign(float value) {
+  if (value != value) throw arithmetic_exception(csf_);
+  return value < 0.0f ? -1 : value == 0.0f ? 0 : 1;
+}
+
+double math::sin(double value) {
+  return std::sin(value);
+}
+
+double math::sinh(double value) {
+  return std::sinh(value);
+}
+
+double math::sqrt(double value) {
+  return std::sqrt(value);
+}
+
+double math::tan(double value) {
+  return std::tan(value);
+}
+
+double math::tanh(double value) {
+  return std::tanh(value);
+}
+
+decimal math::truncate(decimal value) {
+  return (value > 0) ? math::floor(value) : math::ceiling(value);
+}
+
+double math::truncate(double value) {
+  return (value > 0) ? math::floor(value) : math::ceiling(value);
+}
