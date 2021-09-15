@@ -38,3 +38,8 @@ sbyte_t math::abs(sbyte_t value) {
   if (value == numeric_limits<sbyte_t>::lowest()) throw xtd::overflow_exception(csf_);
   return value < 0 ? -value : value;
 }
+
+llong_t math::abs(llong_t value) {
+  if (value == numeric_limits<llong_t>::lowest()) throw xtd::overflow_exception(csf_);
+  return value < 0 ? -value : value;
+}

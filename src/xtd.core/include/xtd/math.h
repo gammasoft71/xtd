@@ -66,6 +66,12 @@ namespace xtd {
     /// @return A 8-bit signed integer, x, such that 0 <= x <= std::numeric_limit<sbyte_t>::max().
     /// @exception xtd::overflow_exception value equals std::numeric_limit<sbyte_tsbyte_t>::lowest().
     static sbyte_t abs(sbyte_t value);
+    
+    /// @brief Returns the absolute value of a 64-bit signed integer
+    /// @param value A number in the range std::numeric_limit<llong_t>::lowest() <= value <= std::numeric_limit<llong_t>::max().
+    /// @return A 8-bit signed integer, x, such that 0 <= x <= std::numeric_limit<llong_t>::max().
+    /// @exception xtd::overflow_exception value equals std::numeric_limit<llong_t>::lowest().
+    static llong_t abs(llong_t value);
 
   };
 }
