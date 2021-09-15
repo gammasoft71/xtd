@@ -130,6 +130,21 @@ bool math::is_NaN(double value) {
   return value != value;
 }
 
+double math::log(double value) {
+  return std::log(value);
+}
+
+double math::log(double a, double newBase) {
+  if (a < 0 || newBase < 0 || (a != 1 && newBase == 0) || (a != 1 && math::is_positive_infinity(newBase)) || math::is_NaN(a) || math::is_NaN(newBase) || newBase == 1) return math::NaN;
+  if ((a == 0 && 0 < newBase && newBase < 1) || (math::is_positive_infinity(a) && newBase > 1)) return math::positive_infinity;
+  if ((a == 0 && newBase > 1) || (math::is_positive_infinity(a) && 0 < newBase && newBase < 1)) return math::negative_infinity;
+  return (math::log(a) / math::log(newBase));
+}
+
+double math::log10(double value) {
+  return std::log10(value);
+}
+
 double math::radians_to_degrees(double radians) {
   return radians * (180 / math::pi);
 }
