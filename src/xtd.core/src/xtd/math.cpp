@@ -98,6 +98,22 @@ int64_t math::div_rem(int64_t dividend, int64_t divisor, int64_t& remainder) {
   return dividend / divisor;
 }
 
+double math::exp(double value) {
+  return std::exp(value);
+}
+
+double math::ieee_remainder(double dividend, double divisor) {
+  return divisor == 0 ? NaN : dividend - (divisor * std::round(dividend / divisor));
+}
+
+decimal_t math::floor(decimal_t value) {
+  return std::floor(value);
+}
+
+double math::floor(double value) {
+  return std::floor(value);
+}
+
 bool math::is_infinity(double value) {
   return is_negative_infinity(value) || is_positive_infinity(value);
 }
