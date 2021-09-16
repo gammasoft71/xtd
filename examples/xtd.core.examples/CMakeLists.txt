@@ -16,6 +16,7 @@ add_projects(
   guid
   keywords
   mains
+  math
   network
   processes
   random
