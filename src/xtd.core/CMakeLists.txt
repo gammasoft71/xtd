@@ -247,6 +247,7 @@ add_sources(
   src/xtd/types.cpp
   src/xtd/types.cpp
   src/xtd/ustring.cpp
+  src/xtd/version.cpp
   src/xtd/diagnostics/boolean_switch.cpp
   src/xtd/diagnostics/console_trace_listener.cpp
   src/xtd/diagnostics/debug.cpp

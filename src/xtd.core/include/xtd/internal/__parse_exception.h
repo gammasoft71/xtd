@@ -10,6 +10,6 @@
 #include <string>
 
 /// @cond
-void __throw_parse_argument_exception(const std::string& message);
+void __throw_parse_formatt_exception(const std::string& message);
 void __throw_parse_index_out_of_range_exception();
 /// @endcond

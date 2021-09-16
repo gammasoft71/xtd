@@ -161,6 +161,7 @@ namespace xtd {
     guid& operator=(const guid&) = default;
     friend std::ostream& operator <<(std::ostream& os, const guid& guid) noexcept {return os << guid.to_string();}
     /// @endcond
+    /// 
     /// @brief Compares the current instance with another object of the same type.
     /// @param obj An object to compare with this instance.
     /// @return A 32-bit signed integer that indicates the relative order of the objects being compared.

@@ -157,6 +157,10 @@
 * [split](strings/split/README.md) shows how to use [xtd::strings::split](../../src/xtd.core/include/xtd/strings.h) method.
 * [string_unicode](strings/string_unicode/README.md) shows how to use [xtd::strings](../../src/xtd.core/include/xtd/strings.h) class with unicode.
 
+## [Version](version/README.md)
+
+* [version](version/version/README.md) shows how to use [xtd::version](../../src/xtd.core/include/xtd/version.h) to get the Operating System version.
+
 ## [Web](web/README.md)
 
 * [css_reader](web/css_reader/README.md) shows how to use [xtd::web/css/reader](../../src/xtd.core/include/xtd/html/css/reader.h) class.

@@ -22,6 +22,7 @@ add_projects(
   random
   sprintf
   strings
+  version
   web
   others
   tests

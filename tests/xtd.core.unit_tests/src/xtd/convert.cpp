@@ -316,7 +316,7 @@ namespace unit_tests {
       value = "false";
       assert::is_false(convert::to_boolean(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_boolean(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_boolean(value);}, csf_);
     }
     
     void test_method_(to_boolean_from_string) {
@@ -325,7 +325,7 @@ namespace unit_tests {
       value = "false";
       assert::is_false(convert::to_boolean(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_boolean(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_boolean(value);}, csf_);
     }
     
     void test_method_(to_boolean_from_u8string) {
@@ -334,7 +334,7 @@ namespace unit_tests {
       value = u8"false";
       assert::is_false(convert::to_boolean(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_boolean(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_boolean(value);}, csf_);
     }
     
     void test_method_(to_boolean_from_u16string) {
@@ -343,7 +343,7 @@ namespace unit_tests {
       value = u"false";
       assert::is_false(convert::to_boolean(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_boolean(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_boolean(value);}, csf_);
     }
     
     void test_method_(to_boolean_from_u32string) {
@@ -352,7 +352,7 @@ namespace unit_tests {
       value = U"false";
       assert::is_false(convert::to_boolean(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_boolean(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_boolean(value);}, csf_);
     }
 
     void test_method_(to_boolean_from_wstring) {
@@ -361,7 +361,7 @@ namespace unit_tests {
       value = L"false";
       assert::is_false(convert::to_boolean(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_boolean(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_boolean(value);}, csf_);
     }
 
     void test_method_(to_boolean_from_literal_char) {
@@ -370,7 +370,7 @@ namespace unit_tests {
       value = "false";
       assert::is_false(convert::to_boolean(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_boolean(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_boolean(value);}, csf_);
     }
 
     void test_method_(to_boolean_from_literal_char8) {
@@ -379,7 +379,7 @@ namespace unit_tests {
       value = u8"false";
       assert::is_false(convert::to_boolean(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_boolean(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_boolean(value);}, csf_);
     }
 
     void test_method_(to_boolean_from_literal_char16) {
@@ -388,7 +388,7 @@ namespace unit_tests {
       value = u"false";
       assert::is_false(convert::to_boolean(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_boolean(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_boolean(value);}, csf_);
     }
 
     void test_method_(to_boolean_from_literal_char32) {
@@ -397,7 +397,7 @@ namespace unit_tests {
       value = U"false";
       assert::is_false(convert::to_boolean(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_boolean(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_boolean(value);}, csf_);
     }
 
     void test_method_(to_boolean_from_literal_wchar) {
@@ -406,7 +406,7 @@ namespace unit_tests {
       value = L"false";
       assert::is_false(convert::to_boolean(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_boolean(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_boolean(value);}, csf_);
     }
 
     void test_method_(to_boolean_from_values) {
@@ -623,7 +623,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_byte(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_byte(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_byte(value);}, csf_);
     }
     
     void test_method_(to_byte_from_ustring_with_base) {
@@ -640,7 +640,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_byte(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_byte(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_byte(value);}, csf_);
     }
 
     void test_method_(to_byte_from_u8string) {
@@ -649,7 +649,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_byte(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_byte(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_byte(value);}, csf_);
     }
     
     void test_method_(to_byte_from_u16string) {
@@ -658,7 +658,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_byte(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_byte(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_byte(value);}, csf_);
     }
     
     void test_method_(to_byte_from_u32string) {
@@ -667,7 +667,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_byte(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_byte(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_byte(value);}, csf_);
     }
     
     void test_method_(to_byte_from_wstring) {
@@ -676,7 +676,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_byte(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_byte(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_byte(value);}, csf_);
     }
     
     void test_method_(to_byte_from_literal_char) {
@@ -685,7 +685,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_byte(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_byte(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_byte(value);}, csf_);
     }
     
     void test_method_(to_byte_from_literal_char8) {
@@ -694,7 +694,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_byte(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_byte(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_byte(value);}, csf_);
     }
     
     void test_method_(to_byte_from_literal_char16) {
@@ -703,7 +703,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_byte(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_byte(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_byte(value);}, csf_);
     }
     
     void test_method_(to_byte_from_literal_char32) {
@@ -712,7 +712,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_byte(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_byte(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_byte(value);}, csf_);
     }
     
     void test_method_(to_byte_from_literal_wchar) {
@@ -721,7 +721,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_byte(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_byte(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_byte(value);}, csf_);
     }
 
     void test_method_(to_byte_from_values) {
@@ -2261,7 +2261,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_decimal(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_decimal(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_decimal(value);}, csf_);
     }
     
     void test_method_(to_decimal_from_string) {
@@ -2270,7 +2270,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_decimal(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_decimal(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_decimal(value);}, csf_);
     }
     
     void test_method_(to_decimal_from_u8string) {
@@ -2279,7 +2279,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_decimal(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_decimal(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_decimal(value);}, csf_);
     }
     
     void test_method_(to_decimal_from_u16string) {
@@ -2288,7 +2288,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_decimal(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_decimal(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_decimal(value);}, csf_);
     }
     
     void test_method_(to_decimal_from_u32string) {
@@ -2297,7 +2297,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_decimal(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_decimal(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_decimal(value);}, csf_);
     }
     
     void test_method_(to_decimal_from_wstring) {
@@ -2306,7 +2306,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_decimal(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_decimal(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_decimal(value);}, csf_);
     }
     
     void test_method_(to_decimal_from_literal_char) {
@@ -2315,7 +2315,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_decimal(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_decimal(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_decimal(value);}, csf_);
     }
     
     void test_method_(to_decimal_from_literal_char8) {
@@ -2324,7 +2324,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_decimal(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_decimal(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_decimal(value);}, csf_);
     }
     
     void test_method_(to_decimal_from_literal_char16) {
@@ -2333,7 +2333,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_decimal(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_decimal(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_decimal(value);}, csf_);
     }
     
     void test_method_(to_decimal_from_literal_char32) {
@@ -2342,7 +2342,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_decimal(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_decimal(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_decimal(value);}, csf_);
     }
     
     void test_method_(to_decimal_from_literal_wchar) {
@@ -2351,7 +2351,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_decimal(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_decimal(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_decimal(value);}, csf_);
     }
     
     void test_method_(to_decimal_from_values) {
@@ -2513,7 +2513,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_double(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_double(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_double(value);}, csf_);
     }
     
     void test_method_(to_double_from_string) {
@@ -2522,7 +2522,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_double(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_double(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_double(value);}, csf_);
     }
     
     void test_method_(to_double_from_u8string) {
@@ -2531,7 +2531,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_double(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_double(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_double(value);}, csf_);
     }
     
     void test_method_(to_double_from_u16string) {
@@ -2540,7 +2540,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_double(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_double(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_double(value);}, csf_);
     }
     
     void test_method_(to_double_from_u32string) {
@@ -2549,7 +2549,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_double(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_double(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_double(value);}, csf_);
     }
     
     void test_method_(to_double_from_wstring) {
@@ -2558,7 +2558,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_double(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_double(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_double(value);}, csf_);
     }
     
     void test_method_(to_double_from_literal_char) {
@@ -2567,7 +2567,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_double(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_double(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_double(value);}, csf_);
     }
     
     void test_method_(to_double_from_literal_char8) {
@@ -2576,7 +2576,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_double(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_double(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_double(value);}, csf_);
     }
     
     void test_method_(to_double_from_literal_char16) {
@@ -2585,7 +2585,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_double(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_double(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_double(value);}, csf_);
     }
     
     void test_method_(to_double_from_literal_char32) {
@@ -2594,7 +2594,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_double(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_double(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_double(value);}, csf_);
     }
     
     void test_method_(to_double_from_literal_wchar) {
@@ -2603,7 +2603,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_double(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_double(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_double(value);}, csf_);
     }
     
     void test_method_(to_double_from_values) {
@@ -2765,7 +2765,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_single(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_single(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_single(value);}, csf_);
     }
     
     void test_method_(to_single_from_string) {
@@ -2774,7 +2774,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_single(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_single(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_single(value);}, csf_);
     }
     
     void test_method_(to_single_from_u8string) {
@@ -2783,7 +2783,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_single(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_single(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_single(value);}, csf_);
     }
     
     void test_method_(to_single_from_u16string) {
@@ -2792,7 +2792,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_single(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_single(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_single(value);}, csf_);
     }
     
     void test_method_(to_single_from_u32string) {
@@ -2801,7 +2801,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_single(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_single(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_single(value);}, csf_);
     }
     
     void test_method_(to_single_from_wstring) {
@@ -2810,7 +2810,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_single(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_single(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_single(value);}, csf_);
     }
     
     void test_method_(to_single_from_literal_char) {
@@ -2819,7 +2819,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_single(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_single(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_single(value);}, csf_);
     }
     
     void test_method_(to_single_from_literal_char8) {
@@ -2828,7 +2828,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_single(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_single(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_single(value);}, csf_);
     }
     
     void test_method_(to_single_from_literal_char16) {
@@ -2837,7 +2837,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_single(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_single(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_single(value);}, csf_);
     }
     
     void test_method_(to_single_from_literal_char32) {
@@ -2846,7 +2846,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_single(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_single(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_single(value);}, csf_);
     }
     
     void test_method_(to_single_from_literal_wchar) {
@@ -2855,7 +2855,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_single(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_single(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_single(value);}, csf_);
     }
     
     void test_method_(to_single_from_values) {
@@ -3050,7 +3050,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_int16(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_int16(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int16(value);}, csf_);
     }
     
     void test_method_(to_int16_from_ustring_with_base) {
@@ -3067,7 +3067,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_int16(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_int16(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int16(value);}, csf_);
     }
     
     void test_method_(to_int16_from_u8string) {
@@ -3076,7 +3076,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_int16(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_int16(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int16(value);}, csf_);
     }
     
     void test_method_(to_int16_from_u16string) {
@@ -3085,7 +3085,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_int16(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_int16(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int16(value);}, csf_);
     }
     
     void test_method_(to_int16_from_u32string) {
@@ -3094,7 +3094,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_int16(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_int16(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int16(value);}, csf_);
     }
     
     void test_method_(to_int16_from_wstring) {
@@ -3103,7 +3103,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_int16(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_int16(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int16(value);}, csf_);
     }
     
     void test_method_(to_int16_from_literal_char) {
@@ -3112,7 +3112,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_int16(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_int16(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int16(value);}, csf_);
     }
     
     void test_method_(to_int16_from_literal_char8) {
@@ -3121,7 +3121,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_int16(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_int16(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int16(value);}, csf_);
     }
     
     void test_method_(to_int16_from_literal_char16) {
@@ -3130,7 +3130,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_int16(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_int16(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int16(value);}, csf_);
     }
     
     void test_method_(to_int16_from_literal_char32) {
@@ -3139,7 +3139,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_int16(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_int16(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int16(value);}, csf_);
     }
     
     void test_method_(to_int16_from_literal_wchar) {
@@ -3148,7 +3148,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_int16(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_int16(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int16(value);}, csf_);
     }
     
     void test_method_(to_int16_from_values) {
@@ -3333,7 +3333,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_int32(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_int32(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int32(value);}, csf_);
     }
     
     void test_method_(to_int32_from_ustring_with_base) {
@@ -3350,7 +3350,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_int32(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_int32(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int32(value);}, csf_);
     }
     
     void test_method_(to_int32_from_u8string) {
@@ -3359,7 +3359,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_int32(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_int32(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int32(value);}, csf_);
     }
     
     void test_method_(to_int32_from_u16string) {
@@ -3368,7 +3368,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_int32(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_int32(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int32(value);}, csf_);
     }
     
     void test_method_(to_int32_from_u32string) {
@@ -3377,7 +3377,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_int32(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_int32(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int32(value);}, csf_);
     }
     
     void test_method_(to_int32_from_wstring) {
@@ -3386,7 +3386,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_int32(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_int32(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int32(value);}, csf_);
     }
     
     void test_method_(to_int32_from_literal_char) {
@@ -3395,7 +3395,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_int32(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_int32(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int32(value);}, csf_);
     }
     
     void test_method_(to_int32_from_literal_char8) {
@@ -3404,7 +3404,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_int32(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_int32(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int32(value);}, csf_);
     }
     
     void test_method_(to_int32_from_literal_char16) {
@@ -3413,7 +3413,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_int32(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_int32(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int32(value);}, csf_);
     }
     
     void test_method_(to_int32_from_literal_char32) {
@@ -3422,7 +3422,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_int32(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_int32(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int32(value);}, csf_);
     }
     
     void test_method_(to_int32_from_literal_wchar) {
@@ -3431,7 +3431,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_int32(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_int32(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int32(value);}, csf_);
     }
     
     void test_method_(to_int32_from_values) {
@@ -3606,7 +3606,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_int64(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_int64(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int64(value);}, csf_);
     }
     
     void test_method_(to_int64_from_ustring_with_base) {
@@ -3623,7 +3623,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_int64(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_int64(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int64(value);}, csf_);
     }
     
     void test_method_(to_int64_from_u8string) {
@@ -3632,7 +3632,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_int64(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_int64(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int64(value);}, csf_);
     }
     
     void test_method_(to_int64_from_u16string) {
@@ -3641,7 +3641,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_int64(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_int64(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int64(value);}, csf_);
     }
     
     void test_method_(to_int64_from_u32string) {
@@ -3650,7 +3650,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_int64(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_int64(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int64(value);}, csf_);
     }
     
     void test_method_(to_int64_from_wstring) {
@@ -3659,7 +3659,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_int64(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_int64(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int64(value);}, csf_);
     }
     
     void test_method_(to_int64_from_literal_char) {
@@ -3668,7 +3668,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_int64(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_int64(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int64(value);}, csf_);
     }
     
     void test_method_(to_int64_from_literal_char8) {
@@ -3677,7 +3677,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_int64(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_int64(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int64(value);}, csf_);
     }
     
     void test_method_(to_int64_from_literal_char16) {
@@ -3686,7 +3686,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_int64(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_int64(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int64(value);}, csf_);
     }
     
     void test_method_(to_int64_from_literal_char32) {
@@ -3695,7 +3695,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_int64(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_int64(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int64(value);}, csf_);
     }
     
     void test_method_(to_int64_from_literal_wchar) {
@@ -3704,7 +3704,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_int64(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_int64(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_int64(value);}, csf_);
     }
     
     void test_method_(to_int64_from_values) {
@@ -3879,7 +3879,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_llong(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_llong(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_llong(value);}, csf_);
     }
     
     void test_method_(to_llong_from_ustring_with_base) {
@@ -3896,7 +3896,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_llong(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_llong(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_llong(value);}, csf_);
     }
     
     void test_method_(to_llong_from_u8string) {
@@ -3905,7 +3905,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_llong(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_llong(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_llong(value);}, csf_);
     }
     
     void test_method_(to_llong_from_u16string) {
@@ -3914,7 +3914,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_llong(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_llong(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_llong(value);}, csf_);
     }
     
     void test_method_(to_llong_from_u32string) {
@@ -3923,7 +3923,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_llong(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_llong(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_llong(value);}, csf_);
     }
     
     void test_method_(to_llong_from_wstring) {
@@ -3932,7 +3932,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_llong(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_llong(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_llong(value);}, csf_);
     }
     
     void test_method_(to_llong_from_literal_char) {
@@ -3941,7 +3941,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_llong(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_llong(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_llong(value);}, csf_);
     }
     
     void test_method_(to_llong_from_literal_char8) {
@@ -3950,7 +3950,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_llong(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_llong(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_llong(value);}, csf_);
     }
     
     void test_method_(to_llong_from_literal_char16) {
@@ -3959,7 +3959,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_llong(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_llong(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_llong(value);}, csf_);
     }
     
     void test_method_(to_llong_from_literal_char32) {
@@ -3968,7 +3968,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_llong(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_llong(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_llong(value);}, csf_);
     }
     
     void test_method_(to_llong_from_literal_wchar) {
@@ -3977,7 +3977,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_llong(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_llong(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_llong(value);}, csf_);
     }
     
     void test_method_(to_llong_from_values) {
@@ -4178,7 +4178,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_sbyte(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_sbyte(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_sbyte(value);}, csf_);
     }
     
     void test_method_(to_sbyte_from_ustring_with_base) {
@@ -4195,7 +4195,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_sbyte(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_sbyte(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_sbyte(value);}, csf_);
     }
     
     void test_method_(to_sbyte_from_u8string) {
@@ -4204,7 +4204,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_sbyte(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_sbyte(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_sbyte(value);}, csf_);
     }
     
     void test_method_(to_sbyte_from_u16string) {
@@ -4213,7 +4213,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_sbyte(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_sbyte(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_sbyte(value);}, csf_);
     }
     
     void test_method_(to_sbyte_from_u32string) {
@@ -4222,7 +4222,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_sbyte(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_sbyte(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_sbyte(value);}, csf_);
     }
     
     void test_method_(to_sbyte_from_wstring) {
@@ -4231,7 +4231,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_sbyte(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_sbyte(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_sbyte(value);}, csf_);
     }
     
     void test_method_(to_sbyte_from_literal_char) {
@@ -4240,7 +4240,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_sbyte(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_sbyte(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_sbyte(value);}, csf_);
     }
     
     void test_method_(to_sbyte_from_literal_char8) {
@@ -4249,7 +4249,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_sbyte(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_sbyte(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_sbyte(value);}, csf_);
     }
     
     void test_method_(to_sbyte_from_literal_char16) {
@@ -4258,7 +4258,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_sbyte(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_sbyte(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_sbyte(value);}, csf_);
     }
     
     void test_method_(to_sbyte_from_literal_char32) {
@@ -4267,7 +4267,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_sbyte(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_sbyte(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_sbyte(value);}, csf_);
     }
     
     void test_method_(to_sbyte_from_literal_wchar) {
@@ -4276,7 +4276,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_sbyte(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_sbyte(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_sbyte(value);}, csf_);
     }
     
     void test_method_(to_sbyte_from_values) {
@@ -4469,7 +4469,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_uint16(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint16(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint16(value);}, csf_);
     }
     
     void test_method_(to_uint16_from_ustring_with_base) {
@@ -4486,7 +4486,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_uint16(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint16(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint16(value);}, csf_);
     }
     
     void test_method_(to_uint16_from_u8string) {
@@ -4495,7 +4495,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_uint16(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint16(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint16(value);}, csf_);
     }
     
     void test_method_(to_uint16_from_u16string) {
@@ -4504,7 +4504,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_uint16(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint16(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint16(value);}, csf_);
     }
     
     void test_method_(to_uint16_from_u32string) {
@@ -4513,7 +4513,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_uint16(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint16(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint16(value);}, csf_);
     }
     
     void test_method_(to_uint16_from_wstring) {
@@ -4522,7 +4522,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_uint16(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint16(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint16(value);}, csf_);
     }
     
     void test_method_(to_uint16_from_literal_char) {
@@ -4531,7 +4531,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_uint16(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint16(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint16(value);}, csf_);
     }
     
     void test_method_(to_uint16_from_literal_char8) {
@@ -4540,7 +4540,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_uint16(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint16(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint16(value);}, csf_);
     }
     
     void test_method_(to_uint16_from_literal_char16) {
@@ -4549,7 +4549,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_uint16(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint16(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint16(value);}, csf_);
     }
     
     void test_method_(to_uint16_from_literal_char32) {
@@ -4558,7 +4558,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_uint16(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint16(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint16(value);}, csf_);
     }
     
     void test_method_(to_uint16_from_literal_wchar) {
@@ -4567,7 +4567,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_uint16(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint16(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint16(value);}, csf_);
     }
     
     void test_method_(to_uint16_from_values) {
@@ -4748,7 +4748,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_uint32(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint32(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint32(value);}, csf_);
     }
     
     void test_method_(to_uint32_from_ustring_with_base) {
@@ -4765,7 +4765,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_uint32(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint32(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint32(value);}, csf_);
     }
     
     void test_method_(to_uint32_from_u8string) {
@@ -4774,7 +4774,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_uint32(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint32(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint32(value);}, csf_);
     }
     
     void test_method_(to_uint32_from_u16string) {
@@ -4783,7 +4783,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_uint32(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint32(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint32(value);}, csf_);
     }
     
     void test_method_(to_uint32_from_u32string) {
@@ -4792,7 +4792,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_uint32(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint32(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint32(value);}, csf_);
     }
     
     void test_method_(to_uint32_from_wstring) {
@@ -4801,7 +4801,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_uint32(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint32(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint32(value);}, csf_);
     }
     
     void test_method_(to_uint32_from_literal_char) {
@@ -4810,7 +4810,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_uint32(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint32(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint32(value);}, csf_);
     }
     
     void test_method_(to_uint32_from_literal_char8) {
@@ -4819,7 +4819,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_uint32(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint32(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint32(value);}, csf_);
     }
     
     void test_method_(to_uint32_from_literal_char16) {
@@ -4828,7 +4828,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_uint32(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint32(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint32(value);}, csf_);
     }
     
     void test_method_(to_uint32_from_literal_char32) {
@@ -4837,7 +4837,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_uint32(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint32(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint32(value);}, csf_);
     }
     
     void test_method_(to_uint32_from_literal_wchar) {
@@ -4846,7 +4846,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_uint32(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint32(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint32(value);}, csf_);
     }
     
     void test_method_(to_uint32_from_values) {
@@ -5019,7 +5019,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_uint64(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint64(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint64(value);}, csf_);
     }
     
     void test_method_(to_uint64_from_ustring_with_base) {
@@ -5036,7 +5036,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_uint64(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint64(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint64(value);}, csf_);
     }
     
     void test_method_(to_uint64_from_u8string) {
@@ -5045,7 +5045,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_uint64(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint64(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint64(value);}, csf_);
     }
     
     void test_method_(to_uint64_from_u16string) {
@@ -5054,7 +5054,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_uint64(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint64(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint64(value);}, csf_);
     }
     
     void test_method_(to_uint64_from_u32string) {
@@ -5063,7 +5063,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_uint64(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint64(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint64(value);}, csf_);
     }
     
     void test_method_(to_uint64_from_wstring) {
@@ -5072,7 +5072,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_uint64(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint64(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint64(value);}, csf_);
     }
     
     void test_method_(to_uint64_from_literal_char) {
@@ -5081,7 +5081,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_uint64(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint64(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint64(value);}, csf_);
     }
     
     void test_method_(to_uint64_from_literal_char8) {
@@ -5090,7 +5090,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_uint64(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint64(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint64(value);}, csf_);
     }
     
     void test_method_(to_uint64_from_literal_char16) {
@@ -5099,7 +5099,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_uint64(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint64(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint64(value);}, csf_);
     }
     
     void test_method_(to_uint64_from_literal_char32) {
@@ -5108,7 +5108,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_uint64(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint64(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint64(value);}, csf_);
     }
     
     void test_method_(to_uint64_from_literal_wchar) {
@@ -5117,7 +5117,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_uint64(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_uint64(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_uint64(value);}, csf_);
     }
     
     void test_method_(to_uint64_from_values) {
@@ -5290,7 +5290,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_ullong(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_ullong(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_ullong(value);}, csf_);
     }
     
     void test_method_(to_ullong_from_ustring_with_base) {
@@ -5307,7 +5307,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_ullong(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_ullong(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_ullong(value);}, csf_);
     }
     
     void test_method_(to_ullong_from_u8string) {
@@ -5316,7 +5316,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_ullong(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_ullong(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_ullong(value);}, csf_);
     }
     
     void test_method_(to_ullong_from_u16string) {
@@ -5325,7 +5325,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_ullong(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_ullong(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_ullong(value);}, csf_);
     }
     
     void test_method_(to_ullong_from_u32string) {
@@ -5334,7 +5334,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_ullong(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_ullong(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_ullong(value);}, csf_);
     }
     
     void test_method_(to_ullong_from_wstring) {
@@ -5343,7 +5343,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_ullong(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_ullong(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_ullong(value);}, csf_);
     }
     
     void test_method_(to_ullong_from_literal_char) {
@@ -5352,7 +5352,7 @@ namespace unit_tests {
       value = "0";
       assert::is_zero(convert::to_ullong(value), csf_);
       value = "bad value";
-      assert::throws<argument_exception>([&]{convert::to_ullong(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_ullong(value);}, csf_);
     }
     
     void test_method_(to_ullong_from_literal_char8) {
@@ -5361,7 +5361,7 @@ namespace unit_tests {
       value = u8"0";
       assert::is_zero(convert::to_ullong(value), csf_);
       value = u8"bad value";
-      assert::throws<argument_exception>([&]{convert::to_ullong(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_ullong(value);}, csf_);
     }
     
     void test_method_(to_ullong_from_literal_char16) {
@@ -5370,7 +5370,7 @@ namespace unit_tests {
       value = u"0";
       assert::is_zero(convert::to_ullong(value), csf_);
       value = u"bad value";
-      assert::throws<argument_exception>([&]{convert::to_ullong(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_ullong(value);}, csf_);
     }
     
     void test_method_(to_ullong_from_literal_char32) {
@@ -5379,7 +5379,7 @@ namespace unit_tests {
       value = U"0";
       assert::is_zero(convert::to_ullong(value), csf_);
       value = U"bad value";
-      assert::throws<argument_exception>([&]{convert::to_ullong(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_ullong(value);}, csf_);
     }
     
     void test_method_(to_ullong_from_literal_wchar) {
@@ -5388,7 +5388,7 @@ namespace unit_tests {
       value = L"0";
       assert::is_zero(convert::to_ullong(value), csf_);
       value = L"bad value";
-      assert::throws<argument_exception>([&]{convert::to_ullong(value);}, csf_);
+      assert::throws<format_exception>([&]{convert::to_ullong(value);}, csf_);
     }
     
     void test_method_(to_ullong_from_values) {
