@@ -119,11 +119,6 @@ public:
 using namespace std;
 using namespace xtd;
 
-
-int math_abs(int value) {
-  return value < 0 ? -value : value;
-}
-
 class xtd_core_manual_test : public object {
 public:
   static void main() {

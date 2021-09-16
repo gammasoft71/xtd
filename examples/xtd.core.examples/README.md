@@ -116,6 +116,10 @@
 * [static_class2](keywords/static_class2/README.md) shows how to use [xtd::static_class](../../src/xtd.core/include/xtd/static_class.h) method.
 * [using](keywords/using/README.md) shows how to use [xtd::using](../../src/xtd.core/include/xtd/using.h) method.
 
+## [Math](math/README.md)
+
+* [math](math/math/README.md) uses several mathematical and trigonometric functions from the [xtd::math](../../src/xtd.core/include/xtd/math.h) class to calculate the inner angles of a trapezoid.
+
 ## [Network](network/README.md)
 
 * [dns_get_host_addresses](network/dns_get_host_addresses/README.md) shows hows how to use [xtd::net::dns](../../src/xtd.core/include/xtd/net/dns.h) class.
