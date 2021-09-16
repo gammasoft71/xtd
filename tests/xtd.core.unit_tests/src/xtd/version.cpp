@@ -17,12 +17,36 @@ namespace unit_tests {
       assert::are_equal(-1, version.revision(), csf_);
     }
 
+    void test_method_(create_version_with_string_that_contains_major_and_minor) {
+      assert::are_equal(version(1, 2), version("1.2"), csf_);
+    }
+
+    void test_method_(create_version_with_string_that_contains_major_minor_and_build) {
+      assert::are_equal(version(1, 2, 3), version("1.2.3"), csf_);
+    }
+
+    void test_method_(create_version_with_string_that_contains_major_minor_build_and_revision) {
+      assert::are_equal(version(1, 2, 3, 4), version("1.2.3.4"), csf_);
+    }
+
+    void test_method_(create_version_with_string_that_contains_invalid_major_minor_build_and_revision) {
+      assert::throws<argument_exception>([] {version("-1.2.3.4");}, csf_);
+    }
+
     void test_method_(create_version_with_major_and_minor) {
       version version(1, 2);
       assert::are_equal(1, version.major(), csf_);
       assert::are_equal(2, version.minor(), csf_);
       assert::are_equal(-1, version.build(), csf_);
       assert::are_equal(-1, version.revision(), csf_);
+    }
+
+    void test_method_(create_version_with_invalid_major_and_minor) {
+      assert::throws<argument_exception>([] {version version(-1, 2);}, csf_);
+    }
+
+    void test_method_(create_version_with_major_and_invalid_minor) {
+      assert::throws<argument_exception>([] {version version(1, -2);}, csf_);
     }
 
     void test_method_(create_version_with_major_minor_and_build) {
@@ -85,7 +109,7 @@ namespace unit_tests {
     }
 
     void test_method_(parse_version_with_major) {
-      assert::throws<format_exception>([] {version::parse("1");}, csf_);
+      assert::throws<argument_exception>([] {version::parse("1");}, csf_);
     }
 
     void test_method_(parse_version_with_major_and_minor) {
@@ -93,7 +117,7 @@ namespace unit_tests {
     }
 
     void test_method_(parse_version_with_bad_major_and_minor) {
-      assert::throws<invalid_argument>([] {version::parse("one.2");}, csf_);
+      assert::throws<format_exception>([] {version::parse("one.2");}, csf_);
     }
 
     void test_method_(parse_version_with_major_minor_and_build) {
@@ -105,11 +129,11 @@ namespace unit_tests {
     }
 
     void test_method_(parse_version_with_major_minor_build_revision_and_bad_value) {
-      assert::throws<format_exception>([] {version::parse("1.2.3.4.5");}, csf_);
+      assert::throws<argument_exception>([] {version::parse("1.2.3.4.5");}, csf_);
     }
 
     void test_method_(parse_version_with_bad_value) {
-      assert::throws<format_exception>([] {version::parse("one");}, csf_);
+      assert::throws<argument_exception>([] {version::parse("one");}, csf_);
     }
 
     void test_method_(try_parse_version_with_good_string_value) {
