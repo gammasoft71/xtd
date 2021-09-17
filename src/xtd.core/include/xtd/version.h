@@ -163,30 +163,111 @@ namespace xtd {
     bool operator!=(const version& v) const noexcept;
     /// @endcond
 
+    /// @brief Gets the value of the build component of the version number for the current xtdd::version object.
+    /// @return The build number, or -1 if the build number is undefined.
+    /// @remarks For example, if the version number is 6.2.1.3, the build number is 1. If the version number is 6.2, the build number is undefined.
     int32_t build() const noexcept;
     
+    /// @brief Gets the value of the major component of the version number for the current xtdd::version object.
+    /// @return The major version number.
+    /// @remarks For example, if the version number is 6.2, the major version is 6.
     int32_t major() const noexcept;
     
+    /// @brief Gets the high 16 bits of the revision number.
+    /// @return A 16-bit signed integer.
+    /// @remarks Suppose you release an interim version of your application to temporarily correct a problem until you can release a permanent solution. The temporary version does not warrant a new revision number, but it does need to be identified as a different version. In this case, encode the identification information in the high and low 16-bit portions of the 32-bit revision number. Use the xtd::version::revision property to obtain the entire revision number, use the xtd::version::major_revision property to obtain the high 16 bits, and use the xtd::version::minor_revision property to obtain the low 16 bits.
     int16_t major_revision() const noexcept;
     
+    /// @brief Gets the value of the minor component of the version number for the current xtdd::version object.
+    /// @return The minor version number.
+    /// @remarks For example, if the version number is 6.2, the minor version is 2.
     int32_t minor() const noexcept;
     
+    /// @brief Gets the low 16 bits of the revision number.
+    /// @return A 16-bit signed integer.
+    /// @remarks Suppose you release an interim version of your application to temporarily correct a problem until you can release a permanent solution. The temporary version does not warrant a new revision number, but it does need to be identified as a different version. In this case, encode the identification information in the high and low 16-bit portions of the 32-bit revision number. Use the xtd::version::revision property to obtain the entire revision number, use the xtd::version::major_revision property to obtain the high 16 bits, and use the xtd::version::minor_revision property to obtain the low 16 bits.
     int16_t minor_revision() const noexcept;
     
+    /// @brief Gets the value of the revision component of the version number for the current xtd::version object.
+    /// @return The revision number, or -1 if the revision number is undefined.
+    /// @remarks For example, if the version number is 6.2.1.3, the revision number is 3. If the version number is 6.2, the revision number is undefined.
     int32_t revision() const noexcept;
 
-    int32_t compare_to(const object& obj) const noexcept override;
-    
-    int32_t compare_to(const version& value) const noexcept override;
+    /// @brief Compares the current xtd::version object to a specified object and returns an indication of their relative values.
+    /// @param version An object to compare.
+    /// @return A signed integer that indicates the relative values of the two objects, as shown in the following table.
+    /// | Return value      | Meaning                                                                                                       |
+    /// |-------------------|---------------------------------------------------------------------------------------------------------------|
+    /// | Less than zero    | The current xtd::version object is a version before version.                                                  |
+    /// | Zero              | The current xtd::version object is the same version as version.                                               |
+    /// | Greater than zero | The current xttd::version object is a version subsequent to version or version is not ta xtd::version object. |
+    /// @remarks The components of Version in decreasing order of importance are: major, minor, build, and revision. An unknown component is assumed to be older than any known component.
+    /// For example:
+    /// * xtd::version 1.1 is older than version 1.1.0
+    /// * xtd::version 1.1 is older than version 1.1.1
+    /// * xtd::version 1.1 is older than version 1.1.2.3
+    /// * xtd::version 1.1.2 is older than version 1.1.2.4
+    /// * xtd::version 1.2.5 is newer than version 1.2.3.4
+    int32_t compare_to(const object& version) const noexcept override;
+    /// @brief Compares the current xtd::version object to a specified object and returns an indication of their relative values.
+    /// @param version An object to compare.
+    /// @return A signed integer that indicates the relative values of the two objects, as shown in the following table.
+    /// | Return value      | Meaning                                                              |
+    /// |-------------------|----------------------------------------------------------------------|
+    /// | Less than zero    | The current xtd::version object is a version before version.         |
+    /// | Zero              | The current xtd::version object is the same version as version.      |
+    /// | Greater than zero | The current xttd::version object is a version subsequent to version. |
+    /// @remarks The components of Version in decreasing order of importance are: major, minor, build, and revision. An unknown component is assumed to be older than any known component.
+    /// For example:
+    /// * xtd::version 1.1 is older than version 1.1.0
+    /// * xtd::version 1.1 is older than version 1.1.1
+    /// * xtd::version 1.1 is older than version 1.1.2.3
+    /// * xtd::version 1.1.2 is older than version 1.1.2.4
+    /// * xtd::version 1.2.5 is newer than version 1.2.3.4
+    int32_t compare_to(const version& version) const noexcept override;
 
-    static version parse(const xtd::ustring& ver);
+    /// @brief Converts the string representation of a version number to an equivalent Version object.
+    /// @param input A string that contains a version number to convert.
+    /// @return An object that is equivalent to the version number specified in the input parameter.
+    /// @exception xtd::argument_out_of_range_exception A major, minor, build, or revision component is less than zero.
+    /// @exception xtd::format_exception At least one component of input does not parse to an integer.
+    /// @exception xtd::overflow_exception At least one component of input represents a number greater than std::numeric_limits<int32_t>::max().
+    /// @remarks The input parameter must have the following format:
+    /// @verbatim major.minor[.build[.revision]] @endverbatim
+    /// @remarks where major, minor, build, and revision are the string representations of the version number's four components: major version number, minor version number, build number, and revision number, respectively. Optional components are shown in square brackets ([ and ]). The components must appear in the specified order and must be separated by periods
+    /// @warning Because the string representation of a version number must conform to a recognized pattern, applications should always use exception handling when calling the xtd::version::parse method to parse user input. Alternatively, you can call the xtd::version::try_parse method to parse the string representation of a version number and return a value that indicates whether the parse operation succeeded.
+    /// @remarks The xtd::version::parse method is a convenience method; it is equivalent to calling the xtd::version(const ustring&) constructor.
+    static version parse(const xtd::ustring& input);
     
-    static bool try_parse(const xtd::ustring& ver, version& result) noexcept;
-    
+    /// @brief Converts the value of the current xtd::version object to its equivalent xtd::ustring representation.
+    /// @return The xtd::ustring representation of the values of the major, minor, build, and revision components of the current xtd::version object, as depicted in the following format. Each component is separated by a period character ('.'). Square brackets ('[' and ']') indicate a component that will not appear in the return value if the component is not defined:
+    /// @verbatim major.minor[.build[.revision]] @endverbatim
+    /// For example, if you create a xtd::version object using the constructor xtd::version(1, 1), the returned string is "1.1". If you create a xtd::version object using the constructor xtd::version(1, 3, 4, 2), the returned string is "1.3.4.2".
     xtd::ustring to_string() const noexcept override;
-    
+    /// @brief Converts the value of the current xtd::version object to its equivalent xtd::ustring representation. A specified count indicates the number of components to return.
+    /// @param field_count The number of components to return. The field_count ranges from 0 to 4.
+    /// @return The xtd::ustring representation of the values of the major, minor, build, and revision components of the current xtd::version object, each separated by a period character ('.'). The field_count parameter determines how many components are returned.
+    /// | field_count | Return Value               |
+    /// |-------------|----------------------------|
+    /// | 0           | An empty string ("").      |
+    /// | 1           | major                      |
+    /// | 2           | major.minor                |
+    /// | 3           | major.minor.build          |
+    /// | 4           | major.minor.build.revision |
+    /// For example, if you create xtd::version object using the constructor xtd::version(1,3,5), xtd::version::to_string(2) returns "1.3" and xtd::version::to_string(4) throws an exception.
+    /// @exception xtd::argument_exception field_count is more than 4 -or- field_count is more than the number of components defined in the current xtd::version object.
     xtd::ustring to_string(size_t field_count) const;
     
+    /// @brief Tries to convert the string representation of a version number to an equivalent xtd::version object, and returns a value that indicates whether the conversion succeeded.
+    /// @param input A string that contains a version number to convert.
+    /// @param result When this method returns, contains the xtd::version equivalent of the number that is contained in input, if the conversion succeeded. If input is empty, or if the conversion fails, result is empty when the method returns.
+    /// @return true if the input parameter was converted successfully; otherwise, false.
+    /// @remarks The xtd::version::try_parse method is similar to the xtd::version::parse method, except that it doesn't throw an exception if the conversion fails. Instead, it returns false if input is null, has fewer than two or more than four components, has at least one component that is not an integer, has at least one component that is less than zero, or has at least one component that is greater than std::numeric_limits<int32_t>::max().
+    /// For the parse operation to succeed, the input parameter must be in the following format:
+    /// @verbatim major.minor[.build[.revision]] @endverbatim
+    /// where major, minor, build, and revision are the string representations of the version number's four components: major version number, minor version number, build number, and revision number, respectively. Optional components are shown in square brackets ([ and ]). The components must appear in order and must be separated by periods.
+    static bool try_parse(const xtd::ustring& input, version& result) noexcept;
+
   private:
     int32_t major_ = 0;
     int32_t minor_ = 0;

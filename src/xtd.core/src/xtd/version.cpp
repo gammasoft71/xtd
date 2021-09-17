@@ -75,10 +75,10 @@ int32_t version::compare_to(const version& value) const noexcept {
   return 0;
 }
 
-version version::parse(const xtd::ustring& ver) {
+version version::parse(const xtd::ustring& input) {
   std::regex rgx("\\.");
   xtd::collections::specialized::string_vector versions;
-  for (std::sregex_token_iterator it(ver.begin(), ver.end(), rgx, -1), end; it != end; ++it)
+  for (std::sregex_token_iterator it(input.begin(), input.end(), rgx, -1), end; it != end; ++it)
     versions.push_back(it->str());
   
   switch (versions.size()) {
@@ -90,9 +90,9 @@ version version::parse(const xtd::ustring& ver) {
   throw xtd::argument_exception(csf_);
 }
 
-bool version::try_parse(const xtd::ustring& ver, version& result) noexcept {
+bool version::try_parse(const xtd::ustring& input, version& result) noexcept {
   try {
-    result = parse(ver);
+    result = parse(input);
     return true;
   } catch (...) {
     return false;
