@@ -4,7 +4,7 @@ Shows how to use [xtd::collections::vector_list](../../../../src/xtd.core/includ
 
 ## Sources
 
-[src/vector_list.cpp](src/vector_list2.cpp)
+[src/vector_list2.cpp](src/vector_list2.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
