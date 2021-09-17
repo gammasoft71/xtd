@@ -7,7 +7,8 @@
 #include <ostream>
 #include <stdexcept>
 #include <vector>
-#include <xtd/strings.h>
+#include <xtd/object.h>
+#include <xtd/ustring.h>
 #include "../drawing_export.h"
 #include "font_style.h"
 #include "text/generic_font_families.h"
@@ -21,16 +22,19 @@ namespace xtd {
       class font_collection;
     }
     /// @endcond
+
+    /// @brief Defines a group of type faces having a similar basic design and certain variations in styles. This class cannot be inherited.
+    /// @par Namespace
+    /// xtd::drawing
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    /// @brief Defines a group of type faces having a similar basic design and certain variations in styles. This class cannot be inherited.
-    class drawing_export_ font_family final {
+    class drawing_export_ font_family final : public object {
     public:
       /// @brief Initializes a new xtd::drawing::font_family with the specified name.
       /// @param name The name of the new xtd::drawing::font_family.
       /// @exception std::invalid_argument name is an empty string ("") - or - name specifies a font that is not installed on the computer running the application.
-      font_family(const std::string& name);
+      font_family(const xtd::ustring& name);
 
       /// @brief Initializes a new xtd::drawing::font_family from the specified generic font family.
       /// @param generic_font_families The xtd::drawing::text::generic_font_families from which to create the new font_family.
@@ -40,7 +44,7 @@ namespace xtd {
       /// @param name The name of the new xtd::drawing::font_family.
       /// @param font_collection The FontCollection that contains this FontFamily.
       /// @exception std::invalid_argument name is an empty string ("") - or - name specifies a font that is not installed on the computer running the application - or - name specifies a font that is not a part of specified font_collection..
-      font_family(const std::string& name, const text::font_collection& font_collection);
+      font_family(const xtd::ustring& name, const text::font_collection& font_collection);
       
       /// @cond
       ~font_family();
@@ -69,7 +73,7 @@ namespace xtd {
       
       /// @brief Gets the name of this font_family.
       /// @return A String that represents the name of this font_family.
-      const std::string& name() const {return data_->name_;}
+      const xtd::ustring& name() const {return data_->name_;}
       
       /// @brief Returns the cell ascent, in design units, of the font_family of the specified style.
       /// @param style A font_style that contains style information for the font.
@@ -95,7 +99,7 @@ namespace xtd {
       /// @param language The language in which the name is returned.
       /// @return A String that represents the name, in the specified language, of this font_family.
       /// @remarks To indicate language neutral, you should specify 0 for the language parameter. For a listing of the available languages and sublanguages, see the Winnt.h header file. If you have Visual Studio installed, this header file can typically be found relative to the Visual Studio installation directory at \\VC\PlatformSDK\Include.
-      std::string get_name(int32_t language) const;
+      xtd::ustring get_name(int32_t language) const;
 
       /// @brief Indicates whether the specified font_style enumeration is available.
       /// @param style The font_style to test.
@@ -104,7 +108,7 @@ namespace xtd {
 
       /// @brief Converts this font_family to a human-readable string representation.
       /// @return The string that represents this font_family.
-      std::string to_string() const {return strings::format("[{}: name={}]", strings::class_name(*this), data_->name_);}
+      xtd::ustring to_string() const noexcept override {return ustring::format("[{}: name={}]", ustring::class_name(*this), data_->name_);}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::font_family& font_family) noexcept {
@@ -115,7 +119,7 @@ namespace xtd {
     private:
       struct data {
         intptr_t handle_ = 0;
-        std::string name_;
+        xtd::ustring name_;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };

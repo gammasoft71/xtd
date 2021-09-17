@@ -46,7 +46,7 @@ namespace minesweeper {
     static constexpr const int maximum_mines = 667;
 
   private:
-    void on_text_box_key_press(xtd::forms::control& sender, xtd::forms::key_press_event_args& e);
+    void on_text_box_key_press(object& sender, xtd::forms::key_press_event_args& e);
     xtd::forms::label message_label_;
     xtd::forms::label custom_height_label_;
     xtd::forms::label custom_width_label_;

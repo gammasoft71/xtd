@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::progress_dialog dialog.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <string>
+#include <xtd/ustring.h>
 #include <xtd/forms/progress_dialog_flags.h>
 #include "component.h"
 #include "dialog_style.h"
@@ -13,24 +13,14 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a common dialog box that displays progress box.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
     /// @par Examples
     /// The following code example demonstrate the use of progress_dialog dialog.
     /// @include progress_dialog.cpp
-    /// @par Windows
-    /// @image html progress_dialog_w.png
-    /// <br>
-    /// @image html progress_dialog_wd.png
-    /// @par macOS
-    /// @image html progress_dialog_m.png
-    /// <br>
-    /// @image html progress_dialog_md.png
-    /// @par Gnome
-    /// @image html progress_dialog_g.png
-    /// <br>
-    /// @image html progress_dialog_gd.png
     class forms_export_ progress_dialog  final : public component {
     public:
       /// @brief Initializes a new instance of the progress_dialog class.
@@ -61,11 +51,11 @@ namespace xtd {
       
       /// @brief Gets the information texts.
       /// @return The information texts.
-      const std::vector<std::string>& informations() const {return informations_;}
+      const std::vector<xtd::ustring>& informations() const {return informations_;}
       /// @brief Sets the information texts.
       /// @param informations The information texts.
       /// @return Current progress_dialog instance.
-      progress_dialog& informations(const std::vector<std::string>& informations);
+      progress_dialog& informations(const std::vector<xtd::ustring>& informations);
 
       /// @brief Gets a value that Indicates progress by continuously scrolling a block across a progress_bar in a marquee fashion.
       /// @return truee is marquee; otherwise false. The default is false.
@@ -99,11 +89,11 @@ namespace xtd {
       
       /// @brief Gets the message text.
       /// @return The message text.
-      const std::string& message() const {return message_;}
+      const xtd::ustring& message() const {return message_;}
       /// @brief Sets the message text.
       /// @param description The message text.
       /// @return Current progress_dialog instance.
-      progress_dialog& message(const std::string& message);
+      progress_dialog& message(const xtd::ustring& message);
       
       /// @brief Gets the minimum value of the range of the control.
       /// @return The minimum value of the range. The default is 0.
@@ -169,11 +159,11 @@ namespace xtd {
 
       /// @brief Gets the dialog title.
       /// @return The dialog title.
-      const std::string& text() const {return text_;}
+      const xtd::ustring& text() const {return text_;}
       /// @brief Sets the dialog title.
       /// @param copyright The dialog title.
       /// @return Current progress_dialog instance.
-      progress_dialog& text(const std::string& text) {
+      progress_dialog& text(const xtd::ustring& text) {
         if (text_ != text) {
           text_ = text;
           recreate_dialog();
@@ -232,16 +222,16 @@ namespace xtd {
       
       xtd::forms::dialog_style dialog_style_ = xtd::forms::dialog_style::system;
       intptr_t handle_ = 0;
-      std::vector<std::string> informations_;
+      std::vector<xtd::ustring> informations_;
       size_t marquee_animation_speed_ = 100;
       int32_t maximum_ = 100;
-      std::string message_;
+      xtd::ustring message_;
       int32_t minimum_ = 0;
       bool native_ = false;
       size_t options_ = PROGDLG_NORMAL|PROGDLG_NOCANCEL|PROGDLG_NOSKIP;
       const iwin32_window* owner_ = nullptr;
       int32_t step_ = 10;
-      std::string text_;
+      xtd::ustring text_;
       int32_t value_ = 0;
     };
   }

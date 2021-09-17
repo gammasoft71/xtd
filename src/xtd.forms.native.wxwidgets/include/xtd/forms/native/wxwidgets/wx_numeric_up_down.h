@@ -7,6 +7,7 @@
 
 #include <codecvt>
 #include <xtd/argument_exception.h>
+#include <xtd/convert_string.h>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/forms/create_params.h>
 #include <xtd/forms/native/up_down_styles.h>
@@ -28,7 +29,7 @@ namespace xtd {
 #if defined(__WXGTK__)
           if (height < 32) height = 32;
 #endif
-          control_handler::create<wxSpinCtrlDouble>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxString(create_params.caption().c_str(), wxMBConvUTF8()), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), height), style_to_wx_style(create_params.style(), create_params.ex_style()));
+          control_handler::create<wxSpinCtrlDouble>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption())), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), height), style_to_wx_style(create_params.style(), create_params.ex_style()));
           // Workaround : with wxWidgets version <= 3.1.4 when wxSpinCtrlDouble lost focus the value is changed by error.
           value_ = static_cast<wxSpinCtrlDouble*>(control())->GetValue();
           control()->Bind(wxEVT_SPINCTRLDOUBLE, [&](wxCommandEvent& event) {

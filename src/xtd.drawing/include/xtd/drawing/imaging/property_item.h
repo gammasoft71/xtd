@@ -4,6 +4,7 @@
 #pragma once
 #include <cstdint>
 #include <vector>
+#include <xtd/object.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -13,13 +14,15 @@ namespace xtd {
     /// @remarks The metafile class provides methods for recording and saving metafiles. The encoder class enables users to extend GDI+ to support any image format. The property_item class provides methods for storing and retrieving metadata in image files.
     namespace imaging {
       /// @brief Encapsulates a metadata property to be included in an image file. Not inheritable.
+      /// @par Namespace
+      /// xtd::drawing::imaging
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing
       /// @remarks The data consists of: an identifier, the length (in bytes) of the property, the property type, and a pointer to the property value.
       /// @remarks A property_item is not intended to be used as a stand-alone object. A property_item object is intended to be used by classes that are derived from image. A property_item object is used to retrieve and to change the metadata of existing image files, not to create the metadata. Therefore, the property_item class does not have a defined Public constructor, and you cannot create an instance of a property_item object.
       /// @remarks To work around the absence of a Public constructor, use an existing property_item object instead of creating a new instance of the property_item class. For more information, see image.Getproperty_item.
-      class property_item final {
+      class property_item final : public object {
       public:
         /// @cond
         property_item() = default;

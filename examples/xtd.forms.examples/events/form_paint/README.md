@@ -1,12 +1,11 @@
 # form_paint
 
-demonstrates paint event with [form](../../../../src/xtd_forms/include/xtd/forms/form.hpp).
+demonstrates paint event with [form](../../../../src/xtd.forms/include/xtd/forms/form.h).
 
 # Sources
 
-[src/form_paint.cpp](src/form_paint.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/form_paint.cpp](src/form_paint.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

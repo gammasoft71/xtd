@@ -13,10 +13,11 @@ namespace xtd {
     /// @brief Represents the method that will handle the key_up or key_down event of a control.
     /// @param sender The source of the event.
     /// @param e A key_event_args that contains the event data.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    template<typename type_t>
-    using key_event_handler = delegate<void(type_t sender, key_event_args& e)>;
+    using key_event_handler = delegate<void(object& sender, key_event_args& e)>;
   }
 }

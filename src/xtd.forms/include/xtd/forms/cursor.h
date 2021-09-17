@@ -5,6 +5,7 @@
 #include <any>
 #include <cstdint>
 #include <memory>
+#include <xtd/object.h>
 #include <xtd/drawing/bitmap.h>
 #include <xtd/drawing/point.h>
 #include <xtd/drawing/size.h>
@@ -19,6 +20,8 @@ namespace xtd {
     /// @endcond
     
     /// @brief Represents the image used to paint the mouse pointer.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms components
@@ -29,19 +32,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of cursor component.
     /// @include cursors.cpp
-    /// @par Windows
-    /// @image html cursors_w.png
-    /// <br>
-    /// @image html cursors_wd.png
-    /// @par macOS
-    /// @image html cursors_m.png
-    /// <br>
-    /// @image html cursors_md.png
-    /// @par Gnome
-    /// @image html cursors_g.png
-    /// <br>
-    /// @image html cursors_gd.png
-    class forms_export_ cursor {
+    class forms_export_ cursor : public object {
     public:
       /// @brief Initializes a new instance of the cursor class.
       cursor();
@@ -123,7 +114,7 @@ namespace xtd {
       
       /// @brief Returns a string containing the name of the cursor.
       /// @return A string containing the name of the cursor.
-      std::string to_string() const;
+      xtd::ustring to_string() const noexcept override;
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const cursor& value) noexcept {return os << value.to_string();}
@@ -137,13 +128,13 @@ namespace xtd {
     private:
       friend class xtd::forms::cursors;
       cursor(const xtd::drawing::bitmap& bitmap, const xtd::drawing::point& hot_spot);
-      cursor(intptr_t handle, bool destroyable, const std::string& name);
+      cursor(intptr_t handle, bool destroyable, const xtd::ustring& name);
 
       struct data {
         intptr_t handle_ = 0;
         bool destroyable_ = true;
         xtd::drawing::point hot_spot_;
-        std::string name_;
+        xtd::ustring name_;
         xtd::drawing::size size_;
         std::any tag_;
       };

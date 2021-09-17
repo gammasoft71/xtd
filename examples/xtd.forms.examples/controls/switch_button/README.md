@@ -1,12 +1,11 @@
 # switch_button
 
-demonstrates how to use [xtd::forms::switch_button](../../../../src/xtd_forms/include/xtd/forms/switch_button.hpp) control.
+demonstrates how to use [xtd::forms::switch_button](../../../../src/xtd.forms/include/xtd/forms/switch_button.h) control.
 
 # Sources
 
-[src/switch_button.cpp](src/switch_button.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/switch_button.cpp](src/switch_button.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

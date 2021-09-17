@@ -1,12 +1,11 @@
 # hello_world_say
 
-The classic first application "Hello, World!" with [xtd::forms::button](../../../../src/xtd_forms/include/xtd/forms/button.hpp) control.
+The classic first application "Hello, World!" with [xtd::forms::button](../../../../src/xtd.forms/include/xtd/forms/button.h) control.
 
 # Sources
 
-[src/hello_world_say.cpp](src/hello_world_say.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/hello_world_say.cpp](src/hello_world_say.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

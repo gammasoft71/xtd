@@ -1,12 +1,11 @@
 # main_menu_create_standard_items
 
-demonstrates the use of [xtd::forms::main_main_menu](../../../../src/xtd_forms/include/xtd/forms/main_main_menu.hpp) component.
+demonstrates the use of [xtd::forms::main_main_menu](../../../../src/xtd.forms/include/xtd/forms/main_main_menu.h) component.
 
 # Sources
 
-[src/main_menu_create_standard_items.cpp](src/main_menu_create_standard_items.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/main_menu_create_standard_items.cpp](src/main_menu_create_standard_items.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

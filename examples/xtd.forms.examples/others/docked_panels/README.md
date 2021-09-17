@@ -1,12 +1,11 @@
 # docked_panels
 
-demonstrates the use of [xtd::forms::panel](../../../../src/xtd_forms/include/xtd/forms/panel.hpp) container with [xtd::forms::dock_style](../../../../src/xtd_forms/include/xtd/forms/dock_style.hpp).
+demonstrates the use of [xtd::forms::panel](../../../../src/xtd.forms/include/xtd/forms/panel.h) container with [xtd::forms::dock_style](../../../../src/xtd.forms/include/xtd/forms/dock_style.h).
 
 # Sources
 
-[src/docked_panels.cpp](src/docked_panels.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/docked_panels.cpp](src/docked_panels.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

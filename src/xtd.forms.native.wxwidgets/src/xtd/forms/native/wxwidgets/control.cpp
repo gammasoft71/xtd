@@ -1,6 +1,7 @@
 #include <codecvt>
 #include <map>
 #include <stdexcept>
+#include <xtd/convert_string.h>
 #include <xtd/environment.h>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/drawing/system_fonts.h>
@@ -35,6 +36,7 @@
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_picture_box.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_progress_bar.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_radio_button.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_scroll_bar.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_switch_button.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_tab_control.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_tab_page.h"
@@ -99,6 +101,7 @@ intptr_t control::create(const forms::create_params& create_params) {
   if (create_params.class_name() == "picturebox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_picture_box(create_params)));
   if (create_params.class_name() == "progressbar") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_progress_bar(create_params)));
   if (create_params.class_name() == "radiobutton") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_radio_button(create_params)));
+  if (create_params.class_name() == "scrollbar") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_scroll_bar(create_params)));
   if (create_params.class_name() == "switchbutton") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_switch_button(create_params)));
   if (create_params.class_name() == "tabcontrol") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_tab_control(create_params)));
   if (create_params.class_name() == "tabpage") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_tab_page(create_params)));
@@ -202,12 +205,13 @@ void control::font(intptr_t control, const drawing::font& font) {
   reinterpret_cast<control_handler*>(control)->control()->SetFont(*reinterpret_cast<wxFont*>(font.handle()));
 }
 
-void control::invoke_in_control_thread(intptr_t control, delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args, std::shared_ptr<std::shared_mutex> invoked) {
+void control::invoke_in_control_thread(intptr_t control, delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args, std::shared_ptr<std::shared_mutex> invoked, std::shared_ptr<bool> completed) {
   if (control == 0 || !wxTheApp || !wxTheApp->IsMainLoopRunning() || !reinterpret_cast<control_handler*>(control)->control()->GetEvtHandlerEnabled()) {
     invoked->unlock();
   } else {
     reinterpret_cast<control_handler*>(control)->control()->CallAfter([=] {
       invoker(args);
+      *completed = true;
       invoked->unlock();
     });
   }
@@ -247,14 +251,14 @@ void control::size(intptr_t control, const drawing::size& size) {
   reinterpret_cast<control_handler*>(control)->SetSize(size.width(), size.height());
 }
 
-std::string control::text(intptr_t control) {
+ustring control::text(intptr_t control) {
   if (control == 0) return {};
-  return reinterpret_cast<control_handler*>(control)->control()->GetLabel().utf8_str().data();
+  return xtd::convert_string::to_string(reinterpret_cast<control_handler*>(control)->control()->GetLabel().c_str().AsWChar());
 }
 
-void control::text(intptr_t control, const std::string& text) {
+void control::text(intptr_t control, const ustring& text) {
   if (control == 0) return;
-  reinterpret_cast<control_handler*>(control)->control()->SetLabel({text.c_str(), wxMBConvUTF8()});
+  reinterpret_cast<control_handler*>(control)->control()->SetLabel(convert_string::to_wstring(text));
 }
 
 bool control::visible(intptr_t control) {
@@ -270,17 +274,16 @@ void control::visible(intptr_t control, bool visible) {
 void control::invalidate(intptr_t control, const drawing::rectangle& rect, bool erase_background) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->main_control()->RefreshRect(wxRect(rect.left(), rect.top(), rect.width(), rect.height()), erase_background);
+  reinterpret_cast<control_handler*>(control)->main_control()->Update();
 }
 
 void control::refresh(intptr_t control) {
   if (control == 0) return;
-  
   reinterpret_cast<control_handler*>(control)->main_control()->Refresh();
 }
 
 void control::update(intptr_t control) {
   if (control == 0) return;
-  
   reinterpret_cast<control_handler*>(control)->main_control()->Update();
 }
 

@@ -32,7 +32,7 @@ namespace examples {
           // The WM_ACTIVATEAPP message occurs when the application becomes the active application or becomes inactive.
         case WM_ACTIVATEAPP:
           // The wparam value identifies what is occurring.
-          app_active = (static_cast<int>(m.wparam()) != 0);
+          app_active = (as<int>(m.wparam()) != 0);
           // Invalidate to get new text painted.
           invalidate();
           break;

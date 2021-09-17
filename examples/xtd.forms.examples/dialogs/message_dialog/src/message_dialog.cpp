@@ -20,7 +20,7 @@ public:
       dialog.icon(message_dialog_icon::warning);
       dialog.message("Hello, World!");
       dialog.text("Message");
-      label_dialog_result.text(strings::format("dialog_result = {}", dialog.show_sheet_dialog(*this)));
+      label_dialog_result.text(ustring::format("dialog_result = {}", dialog.show_sheet_dialog(*this)));
     };
     
     label_dialog_result.location({10, 45});

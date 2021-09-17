@@ -8,11 +8,11 @@
 #include <functional>
 #include <map>
 #include <memory>
-#include <shared_mutex>
 #include <optional>
 #include <string>
 #include <thread>
 #include <vector>
+#include <xtd/iasync_result.h>
 #include <xtd/drawing/color.h>
 #include <xtd/drawing/font.h>
 #include <xtd/drawing/point.h>
@@ -52,6 +52,8 @@ namespace xtd {
     /// @endcond
     
     /// @brief Defines the base class for controls, which are components with visual representation.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
@@ -62,18 +64,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of control control.
     /// @include control.cpp
-    /// @par Windows
-    /// @image html control_w.png
-    /// <br>
-    /// @image html control_wd.png
-    /// @par macOS
-    /// @image html control_m.png
-    /// <br>
-    /// @image html control_md.png
-    /// @par Gnome
-    /// @image html control_g.png
-    /// <br>
-    /// @image html control_gd.png
     class forms_export_ control : public component, public iwin32_window {
     protected:
       /// @cond
@@ -125,25 +115,20 @@ namespace xtd {
       };
       /// @endcond
       
-    public:
-      /// @brief Represents the status of an asynchronous operation.
-      class async_result_invoke {
+      class async_result_invoke : public xtd::iasync_result {
       public:
-        /// @cond
-        async_result_invoke(const async_result_invoke&) = default;
-        async_result_invoke(async_result_invoke&&) = default;
-        /// @endcond
+        async_result_invoke(std::any async_state) : async_state_(async_state) {}
+        std::any async_state() const noexcept override {return async_state_;}
+        std::shared_mutex& async_mutex() override {return *async_mutex_;}
+        bool completed_synchronously() const noexcept override {return false;}
+        bool is_completed() const noexcept override {return *is_completed_;};
         
-        /// @brief Gets a std::shared_mutex that is used to wait for an asynchronous operation to complete.
-        /// @return A std::shared_mutex that is used to wait for an asynchronous operation to complete.
-        std::shared_mutex& async_mutex() {return *async_mutex_;}
-        
-      private:
-        async_result_invoke() = default;
-        friend class control;
+        std::any async_state_;
+        std::shared_ptr<bool> is_completed_ = std::make_shared<bool>(false);
         std::shared_ptr<std::shared_mutex> async_mutex_ = std::make_shared<std::shared_mutex>();
       };
       
+    public:
       /// @brief Represents a collection of controls.
       class control_collection : public xtd::forms::layout::arranged_element_collection<control_ref> {
       public:
@@ -166,12 +151,12 @@ namespace xtd {
         /// @param name The name of the xtd::forms::control to get from the list.
         /// @return The first xtd::forms::control in the list with the given Name. This item returns optional with no value if no xtd::forms::control with the given name can be found.
         /// @remarks The operator[] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator[] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
-        std::optional<value_type> operator[](const std::string& name) const;
+        std::optional<value_type> operator[](const xtd::ustring& name) const;
         /// @brief Gets the first xtd::forms::control::control_collection in the list with the specified name.
         /// @param name The name of the xtd::forms::control to get from the list.
         /// @return The first xtd::forms::control in the list with the given Name. This item returns optional with no value if no xtd::forms::control with the given name can be found.
         /// @remarks The operator[] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator[] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
-        std::optional<value_type> operator[](const std::string& name);
+        std::optional<value_type> operator[](const xtd::ustring& name);
       };
       
       /// @brief Initializes a new instance of the control class with default settings.
@@ -181,7 +166,7 @@ namespace xtd {
       /// @param text The text displayed by the control.
       /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       /// @remarks This version of the control constructor sets the initial text property value to the text parameter value.
-      explicit control(const std::string& text) : control() {
+      explicit control(const xtd::ustring& text) : control() {
         this->text(text);
       }
       /// @brief nitializes a new instance of the control class as a child control, with specific text.
@@ -189,7 +174,7 @@ namespace xtd {
       /// @param text The text displayed by the control.
       /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       /// @remarks This version of the control constructor sets the initial text property value to the text parameter value. The constructor also adds the control to the parent control's control::control_collection.
-      explicit control(const control& parent, const std::string& text) : control() {
+      explicit control(const control& parent, const xtd::ustring& text) : control() {
         this->parent(parent);
         this->text(text);
       }
@@ -201,7 +186,7 @@ namespace xtd {
       /// @param height The height of the control, in pixels. The value is assigned to the height property.
       /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       /// @remarks This version of the control constructor sets the initial text property value to the text parameter value. The initial size and location of the control are determined by the left, top, width and height parameter values.
-      explicit control(const std::string& text, int32_t left, int32_t top, int32_t width, int32_t height) : control() {
+      explicit control(const xtd::ustring& text, int32_t left, int32_t top, int32_t width, int32_t height) : control() {
         this->text(text);
         this->left(left);
         this->top(top);
@@ -217,7 +202,7 @@ namespace xtd {
       /// @param height The height of the control, in pixels. The value is assigned to the height property.
       /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       /// @remarks This version of the control constructor sets the initial text property value to the text parameter value. The constructor also adds the control to the parent control's control::control_collection. The initial size and location of the control are determined by the left, top, width and height parameter values.
-      explicit control(const control& parent, const std::string& text, int32_t left, int32_t top, int32_t width, int32_t height) : control() {
+      explicit control(const control& parent, const xtd::ustring& text, int32_t left, int32_t top, int32_t width, int32_t height) : control() {
         this->parent(parent);
         this->text(text);
         this->left(left);
@@ -315,7 +300,7 @@ namespace xtd {
       /// @remarks The bounds of the control include the nonclient elements such as scroll bars, borders, title bars, and menus.
       virtual drawing::rectangle bounds() const {return {location_, size_};}
       /// @brief Sets the size and location of the control including its nonclient elements, in pixels, relative to the parent control.
-      /// @param A rectangle in pixels relative to the parent control that represents the size and location of the control including its nonclient elements.
+      /// @param bounds A rectangle in pixels relative to the parent control that represents the size and location of the control including its nonclient elements.
       /// @return Current control.
       /// @remarks The bounds of the control include the nonclient elements such as scroll bars, borders, title bars, and menus. The Set_bounds_core method is called to set the bounds property. The bounds property is not always changed through its set method so you should override the set_bounds_core method to ensure that your code is executed when the bounds property is set.
       virtual control& bounds(const drawing::rectangle& bounds) {
@@ -324,7 +309,7 @@ namespace xtd {
       }
       
       /// @brief Gets a value indicating whether the control can receive focus.
-      /// @brief true if the control can receive focus; otherwise, false.
+      /// @return true if the control can receive focus; otherwise, false.
       /// @remarks In order for a control to receive input focus, the control must have a handle assigned to it, and the visible and enabled properties must both be set to true for both the control and all its parent controls, and the control must be a form or the control's outermost parent must be a form.
       virtual bool can_focus() const;
       
@@ -369,7 +354,7 @@ namespace xtd {
       
       /// @brief Gets the name of the company or creator of the application containing the control.
       /// @return The company name or creator of the application containing the control.
-      virtual std::string compagny_name() const {return "Gammasoft";}
+      virtual xtd::ustring compagny_name() const {return "Gammasoft";}
       
       /// @brief Gets the collection of controls contained within the control.
       /// @return A control::control_collection representing the collection of controls contained within the control.
@@ -554,36 +539,12 @@ namespace xtd {
       /// @par Exemples
       /// The folling code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
-      /// @par Windows
-      /// @image html form_resize_w.png
-      /// <br>
-      /// @image html form_resize_wd.png
-      /// @par macOS
-      /// @image html form_resize_m.png
-      /// <br>
-      /// @image html form_resize_md.png
-      /// @par Gnome
-      /// @image html form_resize_g.png
-      /// <br>
-      /// @image html form_resize_gd.png
       virtual const drawing::size& maximum_size() const;
       /// @brief Sets the size that is the upper limit that xtd::forms::control::get_preferred_size can specify.
       /// @param size An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
       /// @par Exemples
       /// The folling code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
-      /// @par Windows
-      /// @image html form_resize_w.png
-      /// <br>
-      /// @image html form_resize_wd.png
-      /// @par macOS
-      /// @image html form_resize_m.png
-      /// <br>
-      /// @image html form_resize_md.png
-      /// @par Gnome
-      /// @image html form_resize_g.png
-      /// <br>
-      /// @image html form_resize_gd.png
       virtual control& maximum_size(const drawing::size& size);
       
       /// @brief Gets the size that is the lower limit that xtd::forms::control::get_preferred_size can specify.
@@ -591,36 +552,12 @@ namespace xtd {
       /// @par Exemples
       /// The folling code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
-      /// @par Windows
-      /// @image html form_resize_w.png
-      /// <br>
-      /// @image html form_resize_wd.png
-      /// @par macOS
-      /// @image html form_resize_m.png
-      /// <br>
-      /// @image html form_resize_md.png
-      /// @par Gnome
-      /// @image html form_resize_g.png
-      /// <br>
-      /// @image html form_resize_gd.png
       virtual const drawing::size& minimum_size() const;
       /// @brief Sets the size that is the lower limit that xtd::forms::control::get_preferred_size can specify.
       /// @param size An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
       /// @par Exemples
       /// The folling code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
-      /// @par Windows
-      /// @image html form_resize_w.png
-      /// <br>
-      /// @image html form_resize_wd.png
-      /// @par macOS
-      /// @image html form_resize_m.png
-      /// <br>
-      /// @image html form_resize_md.png
-      /// @par Gnome
-      /// @image html form_resize_g.png
-      /// <br>
-      /// @image html form_resize_gd.png
       virtual control& minimum_size(const drawing::size& size);
       
       /// @brief Gets a value indicating which of the modifier keys (SHIFT, CTRL, and ALT) is in a pressed state.
@@ -633,11 +570,11 @@ namespace xtd {
       
       /// @brief Gets the name of the control.
       /// @return The name of the control. The default is an empty string ("").
-      virtual const std::string& name() const {return name_;}
+      virtual const xtd::ustring& name() const {return name_;}
       /// @brief Sets the name of the control.
       /// @param name The name of the control. The default is an empty string ("").
       /// @return Current control.
-      virtual control& name(const std::string& name) {
+      virtual control& name(const xtd::ustring& name) {
         name_ = name;
         return*this;
       }
@@ -668,7 +605,7 @@ namespace xtd {
 
       /// @brief Gets the product name of the assembly containing the control.
       /// @return The product name of the assembly containing the control.
-      virtual std::string product_name() const {return "xtd";}
+      virtual xtd::ustring product_name() const {return "xtd";}
       
       /// @brief Gets a value indicating whether the control is currently re-creating its handle.
       /// @return true if the control is currently re-creating its handle; otherwise, false.
@@ -710,11 +647,11 @@ namespace xtd {
       
       /// @brief Gets the text associated with this control.
       /// @return The text associated with this control.
-      virtual const std::string& text() const {return text_;}
+      virtual const xtd::ustring& text() const {return text_;}
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
       /// @return Current control.
-      virtual control& text(const std::string& text);
+      virtual control& text(const xtd::ustring& text);
 
       /// @brief Gets the distance, in pixels, between the top edge of the control and the top edge of its container's client area.
       /// @return An Int32_t representing the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
@@ -774,20 +711,20 @@ namespace xtd {
       /// @brief Executes the specified delegate asynchronously on the thread that the control's underlying handle was created on.
       /// @param value A delegate to a method that takes no parameters.
       /// @return An async_result_invoke that represents the result of the begin_invoke(delegate) operation.
-      async_result_invoke begin_invoke(delegate<void()> value) {return begin_invoke(delegate<void(std::vector<std::any>)>(value), {});}
+      std::shared_ptr<xtd::iasync_result> begin_invoke(delegate<void()> value) {return begin_invoke(delegate<void(std::vector<std::any>)>(value), {});}
       
       /// @brief Executes the specified delegate asynchronously with the specified arguments, on the thread that the control's underlying handle was created on.
       /// @param value A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
       /// @param args An array of objects to pass as arguments to the given method. This can be empty if no arguments are needed.
       /// @return An async_result_invoke that represents the result of the begin_invoke(delegate) operation.
-      async_result_invoke begin_invoke(delegate<void(std::vector<std::any>)> value, const std::vector<std::any>& args);
+      std::shared_ptr<xtd::iasync_result> begin_invoke(delegate<void(std::vector<std::any>)> value, const std::vector<std::any>& args);
       
       /// @cond
       template<typename delegate_t>
-      async_result_invoke begin_invoke(delegate_t value, const std::vector<std::any>& args) {return begin_invoke(delegate<void(std::vector<std::any>)>(value), args);}
+      std::shared_ptr<xtd::iasync_result> begin_invoke(delegate_t value, const std::vector<std::any>& args) {return begin_invoke(delegate<void(std::vector<std::any>)>(value), args);}
       
       template<typename delegate_t>
-      async_result_invoke begin_invoke(delegate_t value) {return begin_invoke(delegate<void(std::vector<std::any>)>(value), {});}
+      std::shared_ptr<xtd::iasync_result> begin_invoke(delegate_t value) {return begin_invoke(delegate<void(std::vector<std::any>)>(value), {});}
       /// @endcond
 
       /// @brief Brings the control to the front of the z-order.
@@ -836,7 +773,7 @@ namespace xtd {
       /// @param fore_color A xtd::drawing::color that represent foreground color of the control.
       /// @return New control created.
       template<typename control_t>
-      static std::unique_ptr<control_t> create(const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
+      static std::unique_ptr<control_t> create(const xtd::ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
         std::unique_ptr<control_t> item = std::make_unique<control_t>();
         item->text(text);
         if (location != drawing::point {-1, -1}) item->location(location);
@@ -855,7 +792,7 @@ namespace xtd {
       /// @param fore_color A xtd::drawing::color that represent foreground color of the control.
       /// @return New control created.
       template<typename control_t>
-      static std::unique_ptr<control_t> create(const control& parent, const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
+      static std::unique_ptr<control_t> create(const control& parent, const xtd::ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
         std::unique_ptr<control_t> item = std::make_unique<control_t>();
         item->parent(parent);
         item->text(text);
@@ -896,7 +833,7 @@ namespace xtd {
 
       /// @brief Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.
       /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke(delegate).
-      void end_invoke(async_result_invoke async);
+      void end_invoke(std::shared_ptr<xtd::iasync_result> async);
 
       /// @brief Sets input focus to the control.
       /// @return true if the input focus request was successful; otherwise, false.
@@ -943,7 +880,7 @@ namespace xtd {
       
       /// @brief Invalidates the entire surface of the control and causes the control to be redrawn.
       /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
-      virtual void invalidate() const {invalidate({{0, 0}, client_size()}, true);}
+      virtual void invalidate() const {invalidate({{0, 0}, client_size()}, false);}
 
       /// @brief Invalidates a specific region of the control and causes a paint message to be sent to the control. Optionally, invalidates the child controls assigned to the control.
       /// @param invalidate_children true to invalidate the control's child controls; otherwise, false.
@@ -953,7 +890,7 @@ namespace xtd {
       /// @brief Invalidates the specified region of the control (adds it to the control's update region, which is the area that will be repainted at the next paint operation), and causes a paint message to be sent to the control.
       /// @param rect A xtd::drawing::rectangle that represents the region to invalidate.
       /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
-      virtual void invalidate(const drawing::rectangle& rect) const {invalidate(rect, true);}
+      virtual void invalidate(const drawing::rectangle& rect) const {invalidate(rect, false);}
       
       /// @brief Invalidates the specified region of the control (adds it to the control's update region, which is the area that will be repainted at the next paint operation), and causes a paint message to be sent to the control. Optionally, invalidates the child controls assigned to the control.
       /// @param rect A xtd::drawing::rectangle that represents the region to invalidate.
@@ -1062,7 +999,7 @@ namespace xtd {
       
       /// @brief Returns a string containing the name of the control, if any.
       /// @return A string containing the name of the control, if any, or class name if the control is unnamed.
-      virtual std::string to_string() const;
+      xtd::ustring to_string() const noexcept override;
       
       /// @brief Causes the control to redraw the invalidated regions within its client area.
       /// @remarks Executes any pending requests for painting.
@@ -1085,22 +1022,22 @@ namespace xtd {
       /// @brief Occurs when the value of the auto_size property changes.
       /// @ingroup events
       /// @remarks This event is raised if the auto_size property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> auto_size_changed;
+      event<control, event_handler> auto_size_changed;
 
       /// @brief Occurs when the value of the back_color property changes.
       /// @ingroup events
       /// @remarks This event is raised if the back_color property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> back_color_changed;
+      event<control, event_handler> back_color_changed;
 
       /// @brief Occurs when the value of the background_image property changes.
       /// @ingroup events
       /// @remarks This event is raised if the background_image property is changed by either a programmatic modification or user interaction
-      event<control, event_handler<control&>> background_image_changed;
+      event<control, event_handler> background_image_changed;
       
       /// @brief Occurs when the value of the background_image_layouot property changes.
       /// @ingroup events
       /// @remarks This event is raised if the background_image_layout property is changed by either a programmatic modification or user interaction
-      event<control, event_handler<control&>> background_image_layout_changed;
+      event<control, event_handler> background_image_layout_changed;
       
       /// @brief Occurs when the control is clicked.
       /// @ingroup events
@@ -1125,42 +1062,30 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @par Windows
-      /// @image html mouse_events_w.png
-      /// <br>
-      /// @image html mouse_events_wd.png
-      /// @par macOS
-      /// @image html mouse_events_d.png
-      /// <br>
-      /// @image html mouse_events_md.png
-      /// @par Gnome
-      /// @image html mouse_events_g.png
-      /// <br>
-      /// @image html mouse_events_gd.png
-      event<control, event_handler<control&>> click;
+      event<control, event_handler> click;
       
       /// @brief Occurs when the value of the client_size property changes.
       /// @ingroup events
       /// @remarks This event is raised if the client_size property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> client_size_changed;
+      event<control, event_handler> client_size_changed;
         
       /// @brief Occurs when the value of the cursor property changes.
       /// @ingroup events
       /// @remarks This event is raised if the cursor property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> cursor_changed;
+      event<control, event_handler> cursor_changed;
 
       /// @brief Occurs when a new control is added to the control::control_collection.
       /// @ingroup events
-      event<control, control_event_handler<control&>> control_added;
+      event<control, control_event_handler> control_added;
       
       /// @brief Occurs when a new control is removed to the control::control_collection.
       /// @ingroup events
-      event<control, control_event_handler<control&>> control_removed;
+      event<control, control_event_handler> control_removed;
       
       /// @brief Occurs when the value of the dock property changes.
       /// @ingroup events
       /// @remarks This event is raised if the dock property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> dock_changed;
+      event<control, event_handler> dock_changed;
         
       /// @brief Occurs when the control is double-clicked.
       /// @ingroup events
@@ -1184,19 +1109,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @par Windows
-      /// @image html mouse_events_w.png
-      /// <br>
-      /// @image html mouse_events_wd.png
-      /// @par macOS
-      /// @image html mouse_events_d.png
-      /// <br>
-      /// @image html mouse_events_md.png
-      /// @par Gnome
-      /// @image html mouse_events_g.png
-      /// <br>
-      /// @image html mouse_events_gd.png
-      event<control, event_handler<control&>> double_click;
+      event<control, event_handler> double_click;
 
       /// @brief Occurs when the control receives focus.
       /// @ingroup events
@@ -1217,32 +1130,32 @@ namespace xtd {
       /// @remarks If the causes_validation property is set to false, the xtd::forms::control::validating and xtd::forms::control::validated events are suppressed.
       /// @remarks Note The got_focus and lost_focus events are low-level focus events that are tied to the WM_KILLFOCUS and WM_SETFOCUS Windows messages. Typically, the got_focus and lost_focus events are only used when updating when writing custom controls. Instead the enter and leave events should be used for all controls except the xtd::forms::form class, which uses the activated and deactivate events.
       /// @warning Do not attempt to set focus from within the enter, got_focus, leave, lost_focus, validating, or validated event handlers. Doing so can cause your application or the operating system to stop responding.
-      event<control, event_handler<control&>> got_focus;
+      event<control, event_handler> got_focus;
       
       /// @brief Occurs when a handle is created for the control.
       /// @ingroup events
       /// @remarks A handle is created when the xtd::forms::control is displayed for the first time. For example, if a xtd::forms::control is created that has visible set to false, the handle_created event will not be raised until visible is set to true.
-      event<control, event_handler<control&>> handle_created;
+      event<control, event_handler> handle_created;
       
       /// @brief Occurs when the control's handle is in the process of being destroyed.
       /// @ingroup events
       /// @remarks During the handle_destroyed event, the control is still a valid Windows control and the handle can be recreated by calling the recreate_handle method.
-      event<control, event_handler<control&>> handle_destroyed;
+      event<control, event_handler> handle_destroyed;
       
       /// @brief Occurs when the value of the enabled property changes.
       /// @ingroup events
       /// @remarks This event is raised if the enabled property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> enabled_changed;
+      event<control, event_handler> enabled_changed;
 
       /// @brief Occurs when the value of the fore_color property changes.
       /// @ingroup events
       /// @remarks This event is raised if the fore_color property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> fore_color_changed;
+      event<control, event_handler> fore_color_changed;
       
       /// @brief Occurs when the value of the font property changes.
       /// @ingroup events
       /// @remarks This event is raised if the font property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> font_changed;
+      event<control, event_handler> font_changed;
       
       /// @brief Occurs when a key is pressed while the control has focus.
       /// @ingroup events
@@ -1254,19 +1167,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control keyboard events.
       /// @include key_events.cpp
-      /// @par Windows
-      /// @image html key_events_w.png
-      /// <br>
-      /// @image html key_events_wd.png
-      /// @par macOS
-      /// @image html key_events_d.png
-      /// <br>
-      /// @image html key_events_md.png
-      /// @par Gnome
-      /// @image html key_events_g.png
-      /// <br>
-      /// @image html key_events_gd.png
-      event<control, key_event_handler<control&>> key_down;
+      event<control, key_event_handler> key_down;
       
       /// @brief Occurs when a character. space or backspace key is pressed while the control has focus.
       /// @ingroup events
@@ -1280,19 +1181,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control keyboard events.
       /// @include key_events.cpp
-      /// @par Windows
-      /// @image html key_events_w.png
-      /// <br>
-      /// @image html key_events_wd.png
-      /// @par macOS
-      /// @image html key_events_d.png
-      /// <br>
-      /// @image html key_events_md.png
-      /// @par Gnome
-      /// @image html key_events_g.png
-      /// <br>
-      /// @image html key_events_gd.png
-      event<control, key_press_event_handler<control&>> key_press;
+      event<control, key_press_event_handler> key_press;
       
       /// @brief Occurs when a key is released while the control has focus.
       /// @ingroup events
@@ -1304,29 +1193,17 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control keyboard events.
       /// @include key_events.cpp
-      /// @par Windows
-      /// @image html key_events_w.png
-      /// <br>
-      /// @image html key_events_wd.png
-      /// @par macOS
-      /// @image html key_events_d.png
-      /// <br>
-      /// @image html key_events_md.png
-      /// @par Gnome
-      /// @image html key_events_g.png
-      /// <br>
-      /// @image html key_events_gd.png
-      event<control, key_event_handler<control&>> key_up;
+      event<control, key_event_handler> key_up;
       
       /// @brief Occurs when a control should reposition its child controls.
       /// @ingroup events
       /// @remarks The layout event occurs when child controls are added or removed, when the bounds of the control changes, and when other changes occur that can affect the layout of the control. The layout event can be suppressed using the suspend_layout and resume_layout methods. Suspending layout enables you to perform multiple actions on a control without having to perform a layout for each change. For example, if you resize and move a control, each operation would raise a layout event.
-      event<control, event_handler<control&>> layout;
+      event<control, event_handler> layout;
       
       /// @brief Occurs when the value of the location property changes.
       /// @ingroup events
       /// @remarks This event is raised if the location property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> location_changed;
+      event<control, event_handler> location_changed;
       
       /// @brief Occurs when the control loses focus.
       /// @ingroup events
@@ -1348,7 +1225,7 @@ namespace xtd {
       /// @remarks If the cancel property of the xtd::forms::cancel_event_args is set to true in the vvalidating event delegate, all events that would usually occur after the validating event are suppressed.
       /// @remarks Note The got_focus and lost_focus events are low-level focus events that are tied to the WM_KILLFOCUS and WM_SETFOCUS Windows messages. Typically, the got_focus and lost_focus events are only used when updating when writing custom controls. Instead the enter and leave events should be used for all controls except the xtd::forms::form class, which uses the activated and deactivate events.
       /// @warning Do not attempt to set focus from within the enter, got_focus, leave, lost_focus, validating, or validated event handlers. Doing so can cause your application or the operating system to stop responding.
-      event<control, event_handler<control&>> lost_focus;
+      event<control, event_handler> lost_focus;
       
       /// @brief Occurs when the control is clicked by the mouse.
       /// @ingroup events
@@ -1364,19 +1241,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @par Windows
-      /// @image html mouse_events_w.png
-      /// <br>
-      /// @image html mouse_events_wd.png
-      /// @par macOS
-      /// @image html mouse_events_d.png
-      /// <br>
-      /// @image html mouse_events_md.png
-      /// @par Gnome
-      /// @image html mouse_events_g.png
-      /// <br>
-      /// @image html mouse_events_gd.png
-      event<control, mouse_event_handler<control&>> mouse_click;
+      event<control, mouse_event_handler> mouse_click;
       
       /// @brief Occurs when the control is double clicked by the mouse.
       /// @ingroup events
@@ -1396,19 +1261,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @par Windows
-      /// @image html mouse_events_w.png
-      /// <br>
-      /// @image html mouse_events_wd.png
-      /// @par macOS
-      /// @image html mouse_events_d.png
-      /// <br>
-      /// @image html mouse_events_md.png
-      /// @par Gnome
-      /// @image html mouse_events_g.png
-      /// <br>
-      /// @image html mouse_events_gd.png
-      event<control, mouse_event_handler<control&>> mouse_double_click;
+      event<control, mouse_event_handler> mouse_double_click;
       
       /// @brief Occurs when the mouse pointer is over the control and a mouse button is pressed.
       /// @ingroup events
@@ -1422,19 +1275,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @par Windows
-      /// @image html mouse_events_w.png
-      /// <br>
-      /// @image html mouse_events_wd.png
-      /// @par macOS
-      /// @image html mouse_events_d.png
-      /// <br>
-      /// @image html mouse_events_md.png
-      /// @par Gnome
-      /// @image html mouse_events_g.png
-      /// <br>
-      /// @image html mouse_events_gd.png
-      event<control, mouse_event_handler<control&>> mouse_down;
+      event<control, mouse_event_handler> mouse_down;
       
       /// @brief Occurs when the mouse pointer enters the control.
       /// @ingroup events
@@ -1448,19 +1289,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @par Windows
-      /// @image html mouse_events_w.png
-      /// <br>
-      /// @image html mouse_events_wd.png
-      /// @par macOS
-      /// @image html mouse_events_d.png
-      /// <br>
-      /// @image html mouse_events_md.png
-      /// @par Gnome
-      /// @image html mouse_events_g.png
-      /// <br>
-      /// @image html mouse_events_gd.png
-      event<control, event_handler<control&>> mouse_enter;
+      event<control, event_handler> mouse_enter;
       
       /// @brief Occurs when the mouse hoirontal wheel moves while the control has focus.
       /// @ingroup events
@@ -1475,19 +1304,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @par Windows
-      /// @image html mouse_events_w.png
-      /// <br>
-      /// @image html mouse_events_wd.png
-      /// @par macOS
-      /// @image html mouse_events_d.png
-      /// <br>
-      /// @image html mouse_events_md.png
-      /// @par Gnome
-      /// @image html mouse_events_g.png
-      /// <br>
-      /// @image html mouse_events_gd.png
-      event<control, mouse_event_handler<control&>> mouse_horizontal_wheel;
+      event<control, mouse_event_handler> mouse_horizontal_wheel;
       
       /// @brief Occurs when the mouse pointer leaves the control.
       /// @ingroup events
@@ -1501,19 +1318,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @par Windows
-      /// @image html mouse_events_w.png
-      /// <br>
-      /// @image html mouse_events_wd.png
-      /// @par macOS
-      /// @image html mouse_events_d.png
-      /// <br>
-      /// @image html mouse_events_md.png
-      /// @par Gnome
-      /// @image html mouse_events_g.png
-      /// <br>
-      /// @image html mouse_events_gd.png
-      event<control, event_handler<control&>> mouse_leave;
+      event<control, event_handler> mouse_leave;
       
       /// @brief Occurs when the mouse pointer is moved over the control.
       /// @ingroup events
@@ -1527,19 +1332,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @par Windows
-      /// @image html mouse_events_w.png
-      /// <br>
-      /// @image html mouse_events_wd.png
-      /// @par macOS
-      /// @image html mouse_events_d.png
-      /// <br>
-      /// @image html mouse_events_md.png
-      /// @par Gnome
-      /// @image html mouse_events_g.png
-      /// <br>
-      /// @image html mouse_events_gd.png
-      event<control, mouse_event_handler<control&>> mouse_move;
+      event<control, mouse_event_handler> mouse_move;
       
       /// @brief Occurs when the mouse pointer is over the control and a mouse button is released.
       /// @ingroup events
@@ -1553,19 +1346,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @par Windows
-      /// @image html mouse_events_w.png
-      /// <br>
-      /// @image html mouse_events_wd.png
-      /// @par macOS
-      /// @image html mouse_events_d.png
-      /// <br>
-      /// @image html mouse_events_md.png
-      /// @par Gnome
-      /// @image html mouse_events_g.png
-      /// <br>
-      /// @image html mouse_events_gd.png
-      event<control, mouse_event_handler<control&>> mouse_up;
+      event<control, mouse_event_handler> mouse_up;
       
       /// @brief Occurs when the mouse wheel moves while the control has focus.
       /// @ingroup events
@@ -1580,19 +1361,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @par Windows
-      /// @image html mouse_events_w.png
-      /// <br>
-      /// @image html mouse_events_wd.png
-      /// @par macOS
-      /// @image html mouse_events_d.png
-      /// <br>
-      /// @image html mouse_events_md.png
-      /// @par Gnome
-      /// @image html mouse_events_g.png
-      /// <br>
-      /// @image html mouse_events_gd.png
-      event<control, mouse_event_handler<control&>> mouse_wheel;
+      event<control, mouse_event_handler> mouse_wheel;
       
       /// @brief Occurs when the control is redrawn.
       /// @ingroup events
@@ -1601,24 +1370,12 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control paint events.
       /// @include form_paint.cpp
-      /// @par Windows
-      /// @image html form_paint_w.png
-      /// <br>
-      /// @image html form_paint_wd.png
-      /// @par macOS
-      /// @image html form_paint_d.png
-      /// <br>
-      /// @image html form_paint_md.png
-      /// @par Gnome
-      /// @image html form_paint_g.png
-      /// <br>
-      /// @image html form_paint_gd.png
-      event<control, paint_event_handler<control&>> paint;
+      event<control, paint_event_handler> paint;
       
       /// @brief Occurs when the value of the parent property changes.
       /// @ingroup events
       /// @remarks This event is raised if the parent property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> parent_changed;
+      event<control, event_handler> parent_changed;
       
       /// @brief Occurs when the control is resized.
       /// @ingroup events
@@ -1627,34 +1384,22 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of control resize event.
       /// @include dot_matrix_display.cpp
-      /// @par Windows
-      /// @image html dot_matrix_display_w.png
-      /// <br>
-      /// @image html dot_matrix_display_wd.png
-      /// @par macOS
-      /// @image html dot_matrix_display_m.png
-      /// <br>
-      /// @image html dot_matrix_display_md.png
-      /// @par Gnome
-      /// @image html dot_matrix_display_g.png
-      /// <br>
-      /// @image html dot_matrix_display_gd.png
-      event<control, event_handler<control&>> resize;
+      event<control, event_handler> resize;
         
       /// @brief Occurs when the value of the size property changes.
       /// @ingroup events
       /// @remarks This event is raised if the size property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> size_changed;
+      event<control, event_handler> size_changed;
 
       /// @brief Occurs when the value of the text property changes.
       /// @ingroup events
       /// @remarks This event is raised if the text property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> text_changed;
+      event<control, event_handler> text_changed;
       
       /// @brief Occurs when the value of the visible property changes.
       /// @ingroup events
       /// @remarks This event is raised if the visible property is changed by either a programmatic modification or user interaction.
-      event<control, event_handler<control&>> visible_changed;
+      event<control, event_handler> visible_changed;
 
     protected:
       friend class application;
@@ -1871,11 +1616,16 @@ namespace xtd {
       /// @ingroup events
       virtual void on_parent_changed(const event_args& e);
       
+      /// @brief Raises the xtd::control::enabled_changed event when the xttd::control::enabled property value of the control's container changes..
+      /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
+      virtual void on_parent_enabled_changed(const event_args& e);
+      
       /// @brief Raises the control::parent_fore_color_changed event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_parent_fore_color_changed(const event_args& e);
-      
+
       /// @brief Raises the control::parent_font_changed event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
@@ -1969,26 +1719,27 @@ namespace xtd {
       static forms::keys modifier_keys_;
       static forms::mouse_buttons mouse_buttons_;
       bool mouse_in_ = false;
-      std::string name_;
+      xtd::ustring name_;
       intptr_t parent_ = 0;
       drawing::size parent_size_;
       drawing::size size_;
       control::state state_ = state::empty;
       control_styles style_ = control_styles::none;
       std::any tag_;
-      std::string text_;
+      xtd::ustring text_;
       static std::map<intptr_t, control*> handles_;
       static control_collection top_level_controls_;
       /// @endcond
       
     private:
-      void on_parent_size_changed(const control& sender, const event_args& e);
+      void on_parent_size_changed(object& sender, const event_args& e);
       void do_layout_childs_with_dock_style();
       void do_layout_with_auto_size_mode();
       void do_layout_with_anchor_styles();
-      control(const std::string& name, bool) {name_ = name;}
+      control(const xtd::ustring& name, bool) {name_ = name;}
       intptr_t wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
       void wm_child_activate(message& message);
+      void wm_create(message& message);
       void wm_command(message& message);
       void wm_key_char(message& message);
       void wm_kill_focus(message& message);

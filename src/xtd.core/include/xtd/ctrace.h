@@ -13,12 +13,16 @@ inline xtd::tracestreambuf __ctracestreambuf__;
 namespace xtd {
 #if defined(TRACE)
   /// @brief Provides an std::ostream for xtd::diagnostics::trace.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   inline std::ostream ctrace(&__ctracestreambuf__);
 #else
   /// @brief Provides an std::ostream for xtd::diagnostics::trace.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core

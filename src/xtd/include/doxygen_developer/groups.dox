@@ -1,6 +1,11 @@
 /// @file
 /// @brief Contains groups definitions.
 
+/// @defgroup address_family address family
+/// @brief address family definitions.
+/// @warning Internal use only
+/// @ingroup native
+
 /// @defgroup adr assert dialog result
 /// @brief assert dialog result definitions.
 /// @warning Internal use only
@@ -130,6 +135,10 @@
 /// @brief Native API for access to underlying operating systems and toolkits.
 /// @warning Internal use only
 
+/// @defgroup net net
+/// @brief Network definitions.
+/// @ingroup system
+
 /// @defgroup ofn open file flags
 /// @brief open file flags definitions.
 /// @warning Internal use only
@@ -160,6 +169,11 @@
 /// @warning Internal use only
 /// @ingroup native
 
+/// @defgroup protocol_type protocol type
+/// @brief protocol type definitions.
+/// @warning Internal use only
+/// @ingroup native
+
 /// @defgroup pws process window style
 /// @brief process window style definitions.
 /// @warning Internal use only
@@ -167,6 +181,36 @@
 
 /// @defgroup sb scroll bar styles
 /// @brief scroll bar styles definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup select_mode select mode
+/// @brief select mode definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup socket_error socket error
+/// @brief socket error definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup socket_option_level socket option level
+/// @brief socket option level definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup socket_option_name socket option name
+/// @brief socket option name definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup socket_shutdown socket shutdown
+/// @brief socket shutdown definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup socket_type socket type
+/// @brief socket type definitions.
 /// @warning Internal use only
 /// @ingroup native
 

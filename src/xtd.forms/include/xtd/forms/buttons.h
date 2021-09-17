@@ -10,24 +10,14 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Provides a collection of button objects for use by a Windows Forms application.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
     /// The following code example demonstrate the use of buttons control factory.
     /// @include buttons.cpp
-    /// @par Windows
-    /// @image html buttons_w.png
-    /// <br>
-    /// @image html buttons_wd.png
-    /// @par macOS
-    /// @image html buttons_m.png
-    /// <br>
-    /// @image html buttons_md.png
-    /// @par Gnome
-    /// @image html buttons_g.png
-    /// <br>
-    /// @image html buttons_gd.png
     class buttons final static_ {
     public:
       /// @brief Create a system-defined button that represent abort button.

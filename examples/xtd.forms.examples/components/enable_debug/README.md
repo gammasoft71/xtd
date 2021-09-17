@@ -1,12 +1,11 @@
 f# enable_debug
 
-demonstrates the use of [xtd::enable_debugs::enable_debug](../../../../src/xtd_forms/include/xtd/forms/enable_debug.hpp) container.
+demonstrates the use of [xtd::enable_debugs::enable_debug](../../../../src/xtd.forms/include/xtd/forms/enable_debug.h) container.
 
 # Sources
 
-[src/enable_debug.cpp](src/enable_debug.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/enable_debug.cpp](src/enable_debug.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

@@ -12,6 +12,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
@@ -20,18 +22,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of color_dialog dialog.
     /// @include color_dialog.cpp
-    /// @par Windows
-    /// @image html color_dialog_w.png
-    /// <br>
-    /// @image html color_dialog_wd.png
-    /// @par macOS
-    /// @image html color_dialog_m.png
-    /// <br>
-    /// @image html color_dialog_md.png
-    /// @par Gnome
-    /// @image html color_dialog_g.png
-    /// <br>
-    /// @image html color_dialog_gd.png
     class forms_export_ color_dialog : public common_dialog {
     public:
       /// @brief Initializes a new instance of the color_dialog class.

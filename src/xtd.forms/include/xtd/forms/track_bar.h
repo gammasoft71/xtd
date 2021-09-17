@@ -11,6 +11,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a standard Windows track bar.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
@@ -20,18 +22,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of track_bar control.
     /// @include track_bar.cpp
-    /// @par Windows
-    /// @image html track_bar_w.png
-    /// <br>
-    /// @image html track_bar_wd.png
-    /// @par macOS
-    /// @image html track_bar_m.png
-    /// <br>
-    /// @image html track_bar_md.png
-    /// @par Gnome
-    /// @image html track_bar_g.png
-    /// <br>
-    /// @image html track_bar_gd.png
     class forms_export_ track_bar : public control {
     public:
       /// @brief Initializes a new instance of the track_bar class.
@@ -133,15 +123,15 @@ namespace xtd {
       /// @brief Returns a string that represents the track_bar control.
       /// @return A string that represents the current progress_bar.
       /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
-      std::string to_string() const override {return strings::format("{}, minimum: {}, maximum: {}, value: {}", strings::full_class_name(*this), minimum_, maximum_, value_);}
+      xtd::ustring to_string() const noexcept override {return ustring::format("{}, minimum: {}, maximum: {}, value: {}", ustring::full_class_name(*this), minimum_, maximum_, value_);}
       
       /// @brief Occurs when either a mouse or keyboard action moves the scroll box.
       /// @ingroup events
-      event<track_bar, event_handler<control&>> scroll;
+      event<track_bar, event_handler> scroll;
 
       /// @brief Occurs when the value property of a track bar changes, either by movement of the scroll box or by manipulation in code.
       /// @ingroup events
-      event<track_bar, event_handler<control&>> value_changed;
+      event<track_bar, event_handler> value_changed;
       
     protected:
       /// @brief Gets the required creation parameters when the control handle is created.

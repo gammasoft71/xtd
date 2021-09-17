@@ -1,12 +1,11 @@
 # use_wait_cursor
 
-Shows how to create an use_wait_cursor with  [xtd::forms::application](../../../../src/xtd_forms/include/xtd/forms/application.hpp) class.
+Shows how to create an use_wait_cursor with  [xtd::forms::application](../../../../src/xtd.forms/include/xtd/forms/application.h) class.
 
 # Sources
 
-[src/use_wait_cursor.cpp](src/use_wait_cursor.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/use_wait_cursor.cpp](src/use_wait_cursor.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

@@ -3,7 +3,6 @@
 #include <xtd/forms/native/menu_item.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_exception.h>
-#include <xtd/strings.h>
 #include "../../../include/xtd/forms/menu.h"
 #include "../../../include/xtd/forms/context_menu.h"
 #include "../../../include/xtd/forms/main_menu.h"
@@ -87,8 +86,8 @@ std::optional<main_menu> menu::get_main_menu() const {
   return {};
 }
 
-std::string menu::to_string() const {
-  return strings::format("{}, items.size: {}", strings::full_class_name(*this), data_->menu_items_.size());
+ustring menu::to_string() const noexcept {
+  return ustring::format("{}, items.size: {}", ustring::full_class_name(*this), data_->menu_items_.size());
 }
 
 void menu::clone_menu(const menu& menu_src) {

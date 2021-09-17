@@ -1,11 +1,10 @@
 #include <xtd/xtd>
 
-using namespace std;
 using namespace xtd;
 
 int main() {
   // Write arguments to the console output
-  for (string arg : environment::get_command_line_args())
+  for (ustring arg : environment::get_command_line_args())
     console::write_line(arg);
 
   return 42;

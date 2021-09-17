@@ -12,9 +12,10 @@ namespace xtd {
   /// @brief Represents the method that will handle an event that has no event data.
   /// @param sender The source of the event.
   /// @param e An object that contains no event data.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core events
-  template<typename sender_t>
-  using event_handler = xtd::delegate<void(sender_t sender, const event_args& e)>;
+  using event_handler = xtd::delegate<void(object& sender, const event_args& e)>;
 }

@@ -4,9 +4,8 @@ demonstrates the use of [xtd::forms::trace_message_box](../../../../src/xtd.form
 
 # Sources
 
-[src/trace_message_box.cpp](src/trace_message_box.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/trace_message_box.cpp](src/trace_message_box.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

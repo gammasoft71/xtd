@@ -61,44 +61,26 @@ namespace xtd {
   }
 }
 
-namespace xtd {
-  namespace forms {
-    class link_label : public label {
-    public:
-      class link {
-      public:
-        link() = default;
-      };
-      using link_collection  = xtd::forms::layout::arranged_element_collection<xtd::forms::link_label::link>;
-      link_label() {
-      }
-      
-    protected:
-      void on_paint(paint_event_args& e) override {
-        label::on_paint(e);
-        //e.graphics().clear(back_color());
-        //e.graphics().draw_string(text_, {font(), xtd::drawing::font_style::underline}, xtd::drawing::brushes::blue(), 0, 0, string_format());
-      }
-    };
+class manual_test_form : public form {
+public:
+  static void main() {
+    application::run(manual_test_form());
   }
-}
-
-void on_menu_click(component& sender, const event_args& e) {
-  debug::write_line(strings::format("menu {} clicked", static_cast<menu_item&>(sender).text()));
-}
-
-int main() {
-  try {
-    form form_main;
-    form_main.text("Manual tests");
-    //form_main.menu(forms::main_menu::create_standard_items([&](component& sender, const event_args& e) {
-    //  //cdebug << strings::format("Menu item [{}] clicked", as<menu_item&>(sender)) << endl;
-    //}));
-    form_main.menu(main_menu {
-      {texts::file(), {
-        {texts::new_(), {on_menu_click}, menu_images::file_new(), shortcut::cmd_n},
-      }}
-    });
+  
+  manual_test_form() {
+    text("Manual tests");
+    
+    label1.parent(*this);
+    label1.location({10, 10});
+    label1.auto_size(true);
+    label1.text(as<string>(u8"àçéèêëïî@°_#§$ù£€æœøπµ©®∞\\\""));
+    diagnostics::debug::write_line(as<string>(ustring::format("label1={}", label1.text())));
+    
+    text_box1.parent(*this);
+    text_box1.location({10, 40});
+    text_box1.width(220);
+    text_box1.text(as<string>(u8"àçéèêëïî@°_#§$ù£€æœøπµ©®∞\\\""));
+    diagnostics::debug::write_line(as<string>(ustring::format("text_box1={}", text_box1.text())));
     
     /*
      form_main.client_size({300, 300});
@@ -106,18 +88,11 @@ int main() {
      table_layout_panel.parent(form_main);
      table_layout_panel.dock(dock_style::fill);
      */
-    
-    
-    /*
-     link_label link_label1;
-     link_label1.location({10, 10});
-     link_label1.auto_size(true);
-     link_label1.parent(form_main);
-     link_label1.text("Gammasoft present xtd_forms examples\nNext line...");
-     */
-
-    application::run(form_main);
-  } catch(const exception& e) {
-    message_box::show(e.what(), xtd::strings::full_class_name(e));
   }
-}
+  
+private:
+  label label1;
+  text_box text_box1;
+};
+
+startup_(manual_test_form);

@@ -1,4 +1,5 @@
 #include<limits>
+#include <xtd/convert_string.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/domain_up_down.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_domain_up_down.h"
@@ -24,9 +25,9 @@ void domain_up_down::end_update(intptr_t control) {
   reinterpret_cast<control_handler*>(control)->control()->Thaw();
 }
 
-void domain_up_down::insert_item(intptr_t control, size_t index, const std::string& value) {
+void domain_up_down::insert_item(intptr_t control, size_t index, const ustring& value) {
   if (control == 0) return;
-  static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetItems().Insert({value.c_str(), wxMBConvUTF8()}, index);
+  static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetItems().Insert(xtd::convert_string::to_wstring(value), index);
   static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->updateSpin();
 }
 
@@ -40,8 +41,8 @@ void domain_up_down::selected_index(intptr_t control, size_t index) {
   return static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetSelectedIndex(index);
 }
 
-void domain_up_down::update_item(intptr_t control, size_t index, const std::string& value) {
+void domain_up_down::update_item(intptr_t control, size_t index, const ustring& value) {
   if (control == 0) return;
-  static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetItems()[index] = {value.c_str(), wxMBConvUTF8()};
+  static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetItems()[index] = xtd::convert_string::to_wstring(value);
   static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->updateSpin();
 }

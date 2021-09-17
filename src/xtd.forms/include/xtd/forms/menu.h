@@ -20,6 +20,8 @@ namespace xtd {
     /// @endcond
 
     /// @brief Represents the base functionality for all menus. Although tool_strip_drop_down and tool_strip_drop_down_menu replace and add functionality to the menu control of previous versions, menu is retained for both backward compatibility and future use if you choose.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
@@ -71,13 +73,13 @@ namespace xtd {
       /// @brief Gets the name of the menu.
       /// @return A string representing the name.
       /// @remarks At design time, this property is set to the programmatic identifier of the control. However, this property has no bearing on the control at run time.
-      const std::string& name() const {return data_->name_;}
+      const xtd::ustring& name() const {return data_->name_;}
 
       /// @brief Sets the name of the menu.
       /// @param value A string representing the name.
       /// @return Current menu class.
       /// @remarks At design time, this property is set to the programmatic identifier of the control. However, this property has no bearing on the control at run time.
-      menu& name(const std::string& value) {
+      menu& name(const xtd::ustring& value) {
         data_->name_ = value;
         return *this;
       }
@@ -111,7 +113,7 @@ namespace xtd {
       /// @brief Returns a string that represents the menu control.
       /// @return A string that represents the current menu.
       /// @remarks The to_string method returns a string that includes the type and the number of items in the menu_items property of the control.
-      virtual std::string to_string() const;
+      xtd::ustring to_string() const noexcept override;
       
       /// @brief Specifies that the find_menu_item(int32_t, intptr_t) method should search for a handle.
       static constexpr const int find_handle = 0;
@@ -165,10 +167,10 @@ namespace xtd {
         menu_item_collection menu_items_;
         std::unique_ptr<menu_item> mdi_list_item_;
         std::optional<std::reference_wrapper<menu>> main_menu_;
-        std::string name_;
+        xtd::ustring name_;
         std::optional<std::reference_wrapper<menu>> parent_;
         std::any tag_;
-        xtd::event_handler<xtd::forms::component&> on_click_;
+        xtd::event_handler on_click_;
         void callback(xtd::forms::menu& menu) {
           on_click_(menu, event_args::empty);
         };

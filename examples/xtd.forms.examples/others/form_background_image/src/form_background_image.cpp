@@ -19,7 +19,7 @@ namespace examples {
       button.parent(*this);
       button.text("Close");
       button.location({10, 10});
-      button.click += {*this, &form::close};
+      button.click += event_handler(*this, &form::close);
     }
     
   private:

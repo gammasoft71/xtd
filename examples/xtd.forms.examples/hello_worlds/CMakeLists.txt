@@ -8,6 +8,7 @@ add_projects(
   hello_world_label
   hello_world_message_box
   hello_world_message_box2
+  hello_world_message_box3
   hello_world_paint
   hello_world_say
 )

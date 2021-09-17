@@ -11,6 +11,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a Windows progress bar control.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
@@ -26,18 +28,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of progress_bar control.
     /// @include progress_bar.cpp
-    /// @par Windows
-    /// @image html progress_bar_w.png
-    /// <br>
-    /// @image html progress_bar_wd.png
-    /// @par macOS
-    /// @image html progress_bar_m.png
-    /// <br>
-    /// @image html progress_bar_md.png
-    /// @par Gnome
-    /// @image html progress_bar_g.png
-    /// <br>
-    /// @image html progress_bar_gd.png
     class forms_export_ progress_bar : public control {
     public:
       /// @brief Initializes a new instance of the progress_bar class.
@@ -148,7 +138,7 @@ namespace xtd {
       /// @brief Returns a string that represents the progress_bar control.
       /// @return A string that represents the current progress_bar.
       /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
-      std::string to_string() const override {return strings::format("{}, minimum: {}, maximum: {}, value: {}", strings::full_class_name(*this), minimum_, maximum_, value_);}
+      xtd::ustring to_string() const noexcept override {return ustring::format("{}, minimum: {}, maximum: {}, value: {}", ustring::full_class_name(*this), minimum_, maximum_, value_);}
       
     protected:
       /// @brief Gets the required creation parameters when the control handle is created.

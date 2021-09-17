@@ -1,12 +1,11 @@
 # debug_form
 
-demonstrates the use of [xtd::debug_forms::debug_form](../../../../src/xtd_forms/include/xtd/forms/debug_form.hpp) container.
+demonstrates the use of [xtd::debug_forms::debug_form](../../../../src/xtd.forms/include/xtd/forms/debug_form.h) container.
 
 # Sources
 
-[src/debug_form.cpp](src/debug_form.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/debug_form.cpp](src/debug_form.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

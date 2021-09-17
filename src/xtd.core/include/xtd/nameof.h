@@ -6,6 +6,8 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Used to obtain the simple (unqualified) string name of a variable, type, or member.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core keywords
@@ -25,7 +27,7 @@ namespace xtd {
   /// @code
   /// class c {
   ///   public_ void f(int i) {
-  ///     log(xtd::strings::format("{0}.{1}", typeof_(C), nameof_(f)), "method entry");
+  ///     log(xtd::ustring::format("{0}.{1}", typeof_(C), nameof_(f)), "method entry");
   ///   }
   /// }
   /// @endcode

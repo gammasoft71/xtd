@@ -7,8 +7,8 @@
 #endif
 /// @endcond
 
-#include "../strings.h"
 #include "__format_exception.h"
+#include "__sprintf.h"
 #include <chrono>
 #include <ratio>
 
@@ -30,35 +30,35 @@ inline std::basic_string<char_t> __make_string_from_duration(std::chrono::durati
     result += '-';
   value = std::chrono::duration<type_t, period_t>(std::abs(value.count()));
   if (std::chrono::duration_cast<std::chrono::days>(value).count())
-    result += xtd::strings::format(std::basic_string<char_t> {'{', ':', 'D', '}', '.'}, std::chrono::duration_cast<std::chrono::days>(value).count());
-  result += xtd::strings::format(constant ? std::basic_string<char_t> {'{', ':', 'D', '2', '}', ':', '{', ':', 'D', '2', '}', ':', '{', ':', 'D', '2', '}'} : std::basic_string<char_t> {'{', ':', 'D', '}', ':', '{', ':', 'D', '2', '}', ':', '{', ':', 'D', '2', '}'}, std::chrono::duration_cast<std::chrono::hours>(value).count() % 24, std::chrono::duration_cast<std::chrono::minutes>(value).count() % 60, std::chrono::duration_cast<std::chrono::seconds>(value).count() % 60);
-  if (std::chrono::duration_cast<std::chrono::nanoseconds>(value).count() % 1000000000)
-    result += xtd::strings::format(std::basic_string<char_t> {':', '{', ':', 'D', '9', '}'}, std::chrono::duration_cast<std::chrono::nanoseconds>(value).count() % 1000000000);
+    result += __sprintf(std::basic_string<char_t> {'%', 'd', '.'}.c_str(), std::chrono::duration_cast<std::chrono::days>(value).count());
+  result += __sprintf(constant ? std::basic_string<char_t> {'%', '0', '2', 'd', ':', '%', '0', '2', 'd', ':', '%', '0', '2', 'd'}.c_str() : std::basic_string<char_t> {'%', 'd', ':', '%', '0', '2', 'd', ':', '%', '0', '2', 'd'}.c_str(), std::chrono::duration_cast<std::chrono::hours>(value).count() % 24, std::chrono::duration_cast<std::chrono::minutes>(value).count() % 60, std::chrono::duration_cast<std::chrono::seconds>(value).count() % 60);
+  if (std::chrono::duration_cast<std::chrono::nanoseconds>(value).count() % 1000000000UL)
+    result += __sprintf(std::basic_string<char_t> {':', '%', '0', '9', 'l', 'u'}.c_str(), std::chrono::duration_cast<std::chrono::nanoseconds>(value).count() % 1000000000UL);
   
   return result;
 }
 
 template<typename char_t, typename type_t, typename period_t = std::ratio<1>>
 inline std::basic_string<char_t> __duration_formater(std::basic_string<char_t> fmt, const std::chrono::duration<type_t, period_t>& value, const std::locale& loc) {
-  if (fmt.empty()) fmt =  xtd::strings::format(std::basic_string<char_t> {'G'});
+  if (fmt.empty()) fmt = std::basic_string<char_t> {'G'};
   if (fmt.size() > 1) __format_exception("Invalid format");
   
   switch (fmt[0]) {
     case 'c': return __make_string_from_duration<char_t>(value);
-    case 'd': return xtd::strings::format(std::basic_string<char_t> {'{', ':', 'D', '}'}, std::chrono::duration_cast<std::chrono::days>(value).count());
-    case 'D': return xtd::strings::format(std::basic_string<char_t> {'{', ':', 'D', '2', '}'}, std::chrono::duration_cast<std::chrono::days>(value).count());
-    case 'f': return xtd::strings::format(std::basic_string<char_t> {'{', ':', 'D', '}', ':', '{', ':', 'D', '}', ':', '{', ':', 'D', '2', '}', ':', '{', ':', 'D', '2', '}', ':', '{', ':', 'D', '9', '}'}, std::chrono::duration_cast<std::chrono::days>(value).count(), std::chrono::duration_cast<std::chrono::hours>(value).count() % 24, std::chrono::duration_cast<std::chrono::minutes>(value).count() % 60, std::chrono::duration_cast<std::chrono::seconds>(value).count() % 60, std::chrono::duration_cast<std::chrono::nanoseconds>(value).count() % 1000000000);
-    case 'F': return xtd::strings::format(std::basic_string<char_t> {'{', ':', 'D', '}', ':', '{', ':', 'D', '2', '}', ':', '{', ':', 'D', '2', '}', ':', '{', ':', 'D', '2', '}', ':', '{', ':', 'D', '9', '}'}, std::chrono::duration_cast<std::chrono::days>(value).count(), std::chrono::duration_cast<std::chrono::hours>(value).count() % 24, std::chrono::duration_cast<std::chrono::minutes>(value).count() % 60, std::chrono::duration_cast<std::chrono::seconds>(value).count() % 60, std::chrono::duration_cast<std::chrono::nanoseconds>(value).count() % 1000000000);
+    case 'd': return __sprintf(std::basic_string<char_t> {'%', 'd'}.c_str(), std::chrono::duration_cast<std::chrono::days>(value).count());
+    case 'D': return __sprintf(std::basic_string<char_t> {'%', '0', '2', 'd'}.c_str(), std::chrono::duration_cast<std::chrono::days>(value).count());
+    case 'f': return __sprintf(std::basic_string<char_t> {'%', 'd', ':', '%', 'd', ':', '%', '0', '2', 'd', ':', '%', '0', '2', 'd', ':', '%', '0', '9', 'l', 'u'}.c_str(), std::chrono::duration_cast<std::chrono::days>(value).count(), std::chrono::duration_cast<std::chrono::hours>(value).count() % 24, std::chrono::duration_cast<std::chrono::minutes>(value).count() % 60, std::chrono::duration_cast<std::chrono::seconds>(value).count() % 60, std::chrono::duration_cast<std::chrono::nanoseconds>(value).count() % 1000000000UL);
+    case 'F': return __sprintf(std::basic_string<char_t> {'%', 'd', ':', '%', '0', '2', 'd', ':', '%', '0', '2', 'd', ':', '%', '0', '2', 'd', ':', '%', '0', '9', 'l', 'u'}.c_str(), std::chrono::duration_cast<std::chrono::days>(value).count(), std::chrono::duration_cast<std::chrono::hours>(value).count() % 24, std::chrono::duration_cast<std::chrono::minutes>(value).count() % 60, std::chrono::duration_cast<std::chrono::seconds>(value).count() % 60, std::chrono::duration_cast<std::chrono::nanoseconds>(value).count() % 1000000000UL);
     case 'g': return __make_string_from_duration<char_t>(value, false);
     case 'G': return __make_string_from_duration<char_t>(value);
-    case 'h': return xtd::strings::format(std::basic_string<char_t> {'{', ':', 'D', '}'}, std::chrono::duration_cast<std::chrono::hours>(value).count() % 24);
-    case 'H': return xtd::strings::format(std::basic_string<char_t> {'{', ':', 'D', '2', '}'}, std::chrono::duration_cast<std::chrono::hours>(value).count() % 24);
-    case 'm': return xtd::strings::format(std::basic_string<char_t> {'{', ':', 'D', '}'}, std::chrono::duration_cast<std::chrono::minutes>(value).count() % 60);
-    case 'M': return xtd::strings::format(std::basic_string<char_t> {'{', ':', 'D', '2', '}'}, std::chrono::duration_cast<std::chrono::minutes>(value).count() % 60);
-    case 'n': return xtd::strings::format(std::basic_string<char_t> {'{', ':', 'D', '}'}, std::chrono::duration_cast<std::chrono::nanoseconds>(value).count() % 1000000000);
-    case 'N': return xtd::strings::format(std::basic_string<char_t> {'{', ':', 'D', '9', '}'}, std::chrono::duration_cast<std::chrono::nanoseconds>(value).count() % 1000000000);
-    case 's': return xtd::strings::format(std::basic_string<char_t> {'{', ':', 'D', '}'}, std::chrono::duration_cast<std::chrono::seconds>(value).count() % 60);
-    case 'S': return xtd::strings::format(std::basic_string<char_t> {'{', ':', 'D', '2', '}'}, std::chrono::duration_cast<std::chrono::seconds>(value).count() % 60);
+    case 'h': return __sprintf(std::basic_string<char_t> {'%', 'd'}.c_str(), std::chrono::duration_cast<std::chrono::hours>(value).count() % 24);
+    case 'H': return __sprintf(std::basic_string<char_t> {'%', '0', '2', 'd'}.c_str(), std::chrono::duration_cast<std::chrono::hours>(value).count() % 24);
+    case 'm': return __sprintf(std::basic_string<char_t> {'%', 'd'}.c_str(), std::chrono::duration_cast<std::chrono::minutes>(value).count() % 60);
+    case 'M': return __sprintf(std::basic_string<char_t> {'%', '0', '2', 'd'}.c_str(), std::chrono::duration_cast<std::chrono::minutes>(value).count() % 60);
+    case 'n': return __sprintf(std::basic_string<char_t> {'%', 'l', 'u'}.c_str(), std::chrono::duration_cast<std::chrono::nanoseconds>(value).count() % 1000000000UL);
+    case 'N': return __sprintf(std::basic_string<char_t> {'%', '0', '9', 'l', 'u'}.c_str(), std::chrono::duration_cast<std::chrono::nanoseconds>(value).count() % 1000000000UL);
+    case 's': return __sprintf(std::basic_string<char_t> {'%', 'd'}.c_str(), std::chrono::duration_cast<std::chrono::seconds>(value).count() % 60);
+    case 'S': return __sprintf(std::basic_string<char_t> {'%', '0', '2', 'd'}.c_str(), std::chrono::duration_cast<std::chrono::seconds>(value).count() % 60);
     default: __format_exception("Invalid format"); return {};
   }
 }

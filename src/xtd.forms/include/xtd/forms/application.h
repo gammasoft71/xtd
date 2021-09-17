@@ -27,6 +27,8 @@ namespace xtd {
     /// @endcond
 
     /// @brief Represents a collection of form objects.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
@@ -46,33 +48,9 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of application class.
     /// @include application.cpp
-    /// @par Windows
-    /// @image html application_w.png
-    /// <br>
-    /// @image html application_wd.png
-    /// @par macOS
-    /// @image html application_m.png
-    /// <br>
-    /// @image html application_md.png
-    /// @par Gnome
-    /// @image html application_g.png
-    /// <br>
-    /// @image html application_gd.png
     /// @par Examples
     ///  How to manage exception with application class.
     /// @include application_and_exception.cpp
-    /// @par Windows
-    /// @image html application_and_exception_w.png
-    /// <br>
-    /// @image html application_and_exception_wd.png
-    /// @par macOS
-    /// @image html application_and_exception_m.png
-    /// <br>
-    /// @image html application_and_exception_md.png
-    /// @par Gnome
-    /// @image html application_and_exception_g.png
-    /// <br>
-    /// @image html application_and_exception_gd.png
     class forms_export_ application final static_ {
     public:
       /// @brief Gets a value indicating whether the caller can quit this application.
@@ -85,7 +63,7 @@ namespace xtd {
       /// @remarks If a path does not exist, one is created in the following format: base_path\company_name\product_name\product_version
       /// @remarks product_version first looks to see if the assembly containing the main executable has the AssemblyInformationalVersion attribute on it. If this attribute exists, it is used for both product_version and common_app_data_path. If this attribute does not exist, both properties use the version of the executable file instead.
       /// @remarks The path will be different depending on whether the Windows Forms application is deployed using ClickOnce. ClickOnce applications are stored in a per-user application cache in the C:\Documents and Settings\username directory. For more information, see Accessing Local and Remote Data in ClickOnce Applications.
-      static std::string common_app_data_path();
+      static xtd::ustring common_app_data_path();
       
       /*
       /// @brief Gets the registry key for the application data that is shared among all users.
@@ -101,18 +79,18 @@ namespace xtd {
       /// The following code example gets this property and displays its value in a text box. The example requires that textBox1 has been placed on a form.
       /// @code
       /// void PrintCompanyName() {
-      ///   textBox1.Text(xtd;;strings::format("The company name is: {0}", application::company_name);
+      ///   textBox1.Text(xtd::ustring::format("The company name is: {0}", application::company_name);
       /// }
       /// @endcode
-      static std::string company_name();
+      static xtd::ustring company_name();
 
       /// @brief Gets the executable name for the executable file that started the application, including the executable extension.
       /// @return The executable name and executable name for the executable file that started the application.<br><br>
-      static std::string executable_name();
+      static xtd::ustring executable_name();
       
       /// @brief Gets the path for the executable file that started the application, including the executable name.
       /// @return The path and executable name for the executable file that started the application.<br><br>
-      static std::string executable_path();
+      static xtd::ustring executable_path();
       
       /// @brief Gets a value indicating whether a message loop exists on this thread.
       /// @return true if a message loop exists; otherwise, false.
@@ -126,23 +104,23 @@ namespace xtd {
       /// @brief Gets the product name associated with this application.
       /// @return The product name.
       /// @remarks product_name is taken from the application_informations containing the current application. You can set it by setting application_informations::product_name property. For more information, see application_informations.
-      static std::string product_name();
+      static xtd::ustring product_name();
       
       /// @brief Gets the product version associated with this application.
       /// @return The product version.
       /// @remarks product_version is taken from the application_informations containing the current application. You can set it by setting application_informations::product_version property. For more information, see application_informations.
-      static std::string product_version();
+      static xtd::ustring product_version();
       
       /// @brief Gets the path for the executable file that started the application, not including the executable name.
       /// @return The path for the executable file that started the application.
-      static std::string startup_path();
+      static xtd::ustring startup_path();
 
       /// @brief Gets the path for the application data of a user.
       /// @return The path for the application data of a user.
       /// @remarks If a path does not exist, one is created in the following format: base_path\company_name\product_name\product_version
       /// @remarks Data stored in this path is part of user profile that is enabled for roaming. A roaming user works on more than one computer in a network. The user profile for a roaming user is kept on a server on the network and is loaded onto a system when the user logs on. For a user profile to be considered for roaming, the operating system must support roaming profiles and it must be enabled.
       /// @remarks A typical base path is "C:\Documents and Settings\username\Application Data".
-      static std::string user_app_data_path();
+      static xtd::ustring user_app_data_path();
 
       /*
        /// @brief Gets the registry key for the application data of a user.
@@ -163,18 +141,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of application use wait cursor property.
       /// @include application_use_wait_cursor.cpp
-      /// @par Windows
-      /// @image html application_use_wait_cursor_w.png
-      /// <br>
-      /// @image html application_use_wait_cursor_wd.png
-      /// @par macOS
-      /// @image html application_use_wait_cursor_m.png
-      /// <br>
-      /// @image html application_use_wait_cursor_md.png
-      /// @par Gnome
-      /// @image html application_use_wait_cursor_g.png
-      /// <br>
-      /// @image html application_use_wait_cursor_gd.png
       static bool use_wait_cursor();
       
       /// @brief Sets whether the wait cursor is used for all open forms of the application.
@@ -183,18 +149,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of application use wait cursor property.
       /// @include application_use_wait_cursor.cpp
-      /// @par Windows
-      /// @image html application_use_wait_cursor_w.png
-      /// <br>
-      /// @image html application_use_wait_cursor_wd.png
-      /// @par macOS
-      /// @image html application_use_wait_cursor_m.png
-      /// <br>
-      /// @image html application_use_wait_cursor_md.png
-      /// @par Gnome
-      /// @image html application_use_wait_cursor_g.png
-      /// <br>
-      /// @image html application_use_wait_cursor_gd.png
       static void use_wait_cursor(bool use_wait_cursor);
       
       /// @brief Adds a message filter to monitor Windows messages as they are routed to their destinations.
@@ -272,18 +226,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of application restart method.
       /// @include application_restart.cpp
-      /// @par Windows
-      /// @image html application_restart_w.png
-      /// <br>
-      /// @image html application_restart_wd.png
-      /// @par macOS
-      /// @image html application_restart_m.png
-      /// <br>
-      /// @image html application_restart_md.png
-      /// @par Gnome
-      /// @image html application_restart_g.png
-      /// <br>
-      /// @image html application_restart_gd.png
       static void restart();
       
       /// @brief Begins running a standard application message loop on the current thread, without a form.
@@ -300,18 +242,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of application run method.
       /// @include application_context.cpp
-      /// @par Windows
-      /// @image html application_context_w.png
-      /// <br>
-      /// @image html application_context_wd.png
-      /// @par macOS
-      /// @image html application_context_m.png
-      /// <br>
-      /// @image html application_context_md.png
-      /// @par Gnome
-      /// @image html application_context_g.png
-      /// <br>
-      /// @image html application_context_gd.png
       static void run(application_context& context);
       
       /// @brief Begins running a standard application message loop on the current thread, and makes the specified form visible.
@@ -321,24 +251,12 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of application run method.
       /// @include application.cpp
-      /// @par Windows
-      /// @image html application_w.png
-      /// <br>
-      /// @image html application_wd.png
-      /// @par macOS
-      /// @image html application_m.png
-      /// <br>
-      /// @image html application_md.png
-      /// @par Gnome
-      /// @image html application_g.png
-      /// <br>
-      /// @image html application_gd.png
       static void run(const form& main_form);
       
-      static void theme(const std::string& theme_name);
+      static void theme(const xtd::ustring& theme_name);
       static void theme(const xtd::forms::theme& theme);
       static const xtd::forms::theme& theme();
-      static const std::vector<std::string>& theme_names();
+      static const std::vector<xtd::ustring>& theme_names();
 
       /*
       /// @brief Instructs the application how to respond to unhandled exceptions.
@@ -376,18 +294,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of application idle event.
       /// @include application_idle.cpp
-      /// @par Windows
-      /// @image html application_idle_w.png
-      /// <br>
-      /// @image html application_idle_wd.png
-      /// @par macOS
-      /// @image html application_idle_m.png
-      /// <br>
-      /// @image html application_idle_md.png
-      /// @par Gnome
-      /// @image html application_idle_g.png
-      /// <br>
-      /// @image html application_idle_gd.png
       static event<application, delegate<void(const event_args&)>> idle;
 
       /// @brief Occurs when the application is about to leave a modal state.
@@ -413,7 +319,7 @@ namespace xtd {
       friend class input_dialog;
       friend class message_box;
 
-      static void on_app_thread_exit(const application_context& sender, const event_args& e);
+      static void on_app_thread_exit(object& sender, const event_args& e);
       static bool on_app_thread_exception();
       static void raise_enter_thread_modal(const event_args& e);
       static void raise_leave_thread_modal(const event_args& e);

@@ -2,14 +2,16 @@
 /// @brief Contains xtd::tunit::ignore_error exception.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+#include <xtd/ustring.h>
 #include <stdexcept>
-#include <string>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @brief Exception thow when ignore.
+    /// @par Namespace
+    /// xtd::tunit
     /// @par Library
     /// xtd.tunit
     /// @ingroup xtd_tunit exceptions
@@ -17,7 +19,7 @@ namespace xtd {
     public:
       /// @brief Create a new instance of ignore_error class.
       /// @param message Message string associate to the error.
-      explicit ignore_error(const std::string& message) : message_(message) {}
+      explicit ignore_error(const xtd::ustring& message) : message_(message) {}
 
       /// @brief Create a new instance of ignore_error class.
       /// @param message Message string associate to the error.
@@ -33,7 +35,7 @@ namespace xtd {
       const char* what() const noexcept {return message_.c_str();}
       
     private:
-      std::string message_;
+      xtd::ustring message_;
     };
   }
 }

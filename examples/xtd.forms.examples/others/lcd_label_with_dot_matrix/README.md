@@ -1,12 +1,11 @@
 # lcd_label_with_dot_matrix
 
-demonstrates how to use [xtd::forms::lcd_label_with_dot_matrix](../../../../src/xtd_forms/include/xtd/forms/lcd_label_with_dot_matrix.hpp) control.
+demonstrates how to use [xtd::forms::lcd_label_with_dot_matrix](../../../../src/xtd.forms/include/xtd/forms/lcd_label_with_dot_matrix.h) control.
 
 # Sources
 
-[src/lcd_label_with_dot_matrix.cpp](src/lcd_label_with_dot_matrix.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/lcd_label_with_dot_matrix.cpp](src/lcd_label_with_dot_matrix.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

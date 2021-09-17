@@ -22,6 +22,8 @@ Minesweeper features:
 * [src/cell.h](src/cell.h)
 * [src/cell.cpp](src/cell.cpp)
 * [src/cell_state.h](src/cell_state.h)
+* [src/custom_field_dialog.h](src/custom_field_dialog.h)
+* [src/custom_field_dialog.cpp](src/custom_field_dialog.cpp)
 * [src/high_scores_dialog.h](src/high_scores_dialog.h)
 * [src/high_scores_dialog.cpp](src/high_scores_dialog.cpp)
 * [src/input_name_dialog.h](src/input_name_dialog.h)

@@ -1,16 +1,13 @@
 # picture_box
 
-demonstrates the use of [xtd::forms::picture_box](../../../../src/xtd_forms/include/xtd/forms/picture_box.hpp) control.
+demonstrates the use of [xtd::forms::picture_box](../../../../src/xtd.forms/include/xtd/forms/picture_box.h) control.
 
 # Sources
 
-[src/picture_box.cpp](src/picture_box.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
-
-[properties/resources.cmake](properties/resources.cmake)
-
-[resources/logo.png](resources/logo.png)
+* [src/picture_box.cpp](src/picture_box.cpp)
+* [properties/resources.cmake](properties/resources.cmake)
+* [resources/logo.png](resources/logo.png)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

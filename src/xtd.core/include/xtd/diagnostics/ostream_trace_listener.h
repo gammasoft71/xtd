@@ -10,6 +10,8 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Directs tracing or debugging output to a std::ostream, such as std::fstream, std::stream...
+    /// @par Namespace
+    /// xtd::diagnostics
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core diagnostics debug
@@ -38,14 +40,14 @@ namespace xtd {
       }
       
       using xtd::diagnostics::trace_listener::write;
-      void write(const std::string& message) override {
+      void write(const xtd::ustring& message) override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_(message);
 #endif
       }
       
       using xtd::diagnostics::trace_listener::write_line;
-      void write_line(const std::string& message) override {
+      void write_line(const xtd::ustring& message) override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line_(message);
 #endif
@@ -53,8 +55,8 @@ namespace xtd {
       
     private:
       void flush_();
-      void write_(const std::string& message);
-      void write_line_(const std::string& message);
+      void write_(const xtd::ustring& message);
+      void write_line_(const xtd::ustring& message);
       std::ostream ostream_ {nullptr};
     };
   }

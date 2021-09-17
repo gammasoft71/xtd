@@ -6,7 +6,7 @@ using namespace std::literals;
 using namespace xtd;
 
 int main() {
-  cout << strings::format("{0,10} {1} {2:D3} {3}", "string", "literal"_is, 42, 'a') << endl;
+  cout << ustring::format("{0,10} {1} {2:D3} {3}", "string"_s, "literal", 42, 'a') << endl;
 }
 
 // This code produces the following output:

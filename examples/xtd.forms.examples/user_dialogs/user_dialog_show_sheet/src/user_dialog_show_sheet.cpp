@@ -35,8 +35,8 @@ public:
     active_control(input);
   }
   
-  virtual std::string input_text() const {return input.text();}
-  virtual user_input_dialog& input_text(const std::string& input_text) {
+  virtual ustring input_text() const {return input.text();}
+  virtual user_input_dialog& input_text(const ustring& input_text) {
     input.text(input_text);
     return *this;
   }

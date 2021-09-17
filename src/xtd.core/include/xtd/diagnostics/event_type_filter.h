@@ -10,6 +10,8 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Indicates whether a listener should trace based on the event type.
+    /// @par Namespace
+    /// xtd::diagnostics
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
@@ -39,7 +41,7 @@ namespace xtd {
       /// @param data1 A trace data object.
       /// @param data_array A trace data object.
       /// @remarks If the value of the event_type parameter is greater than or equal to the value of the xtd::diagnostics::event_type_filter::event_type property, the method returns true.
-      bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const std::string& source, xtd::diagnostics::trace_event_type event_type, int32_t id, const std::string& message, std::any data1, const std::vector<std::any>& data_array) override;
+      bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const xtd::ustring& source, xtd::diagnostics::trace_event_type event_type, int32_t id, const xtd::ustring& message, std::any data1, const std::vector<std::any>& data_array) override;
       
     private:
       xtd::diagnostics::source_levels level_ = xtd::diagnostics::source_levels::off;

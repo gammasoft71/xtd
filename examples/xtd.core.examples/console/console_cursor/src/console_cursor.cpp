@@ -1,12 +1,11 @@
 #include <xtd/xtd>
 
-using namespace std;
 using namespace xtd;
 
 int orig_row = 0;
 int orig_col = 0;
 
-void write_at(const string& s, int x, int y) {
+void write_at(const ustring& s, int x, int y) {
   console::set_cursor_position(orig_col + x, orig_row + y);
   console::write(s);
 }

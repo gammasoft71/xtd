@@ -1,12 +1,11 @@
 # button_renderer
 
-demonstrates the use of [xtd::forms::button_renderer](../../../../src/xtd_forms/include/xtd/forms/button_renderer.hpp) control.
+demonstrates the use of [xtd::forms::button_renderer](../../../../src/xtd.forms/include/xtd/forms/button_renderer.h) control.
 
 # Sources
 
-[src/button_renderer.cpp](src/button_renderer.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/button_renderer.cpp](src/button_renderer.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

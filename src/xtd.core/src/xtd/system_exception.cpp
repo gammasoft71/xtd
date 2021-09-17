@@ -7,25 +7,25 @@ using namespace xtd;
 
 bool system_exception::enable_stack_trace_ = true;
 
-system_exception::system_exception(const std::string& message, const std::exception* inner_exception, const std::error_code& error, const std::string& help_link, const xtd::diagnostics::stack_frame& information) : message_(message), error_(error), help_link_(help_link), information_(information) {
+system_exception::system_exception(const ustring& message, const std::exception* inner_exception, const std::error_code& error, const ustring& help_link, const xtd::diagnostics::stack_frame& information) : message_(message), error_(error), help_link_(help_link), information_(information) {
   if (inner_exception) inner_exception_ = *inner_exception;
   if (enable_stack_trace_) stack_trace_ = std::make_shared<xtd::diagnostics::stack_trace>(0, true);
   //if (!stack_trace_.size()) stack_trace_.push_back(information_.to_string());
 }
 
-std::string system_exception::to_string() const noexcept {
+ustring system_exception::to_string() const noexcept {
   if (message().empty() && stack_trace().empty()) return name();
-  if (message().empty()) return xtd::strings::format("{}\n{}", name(), stack_trace());
-  if (stack_trace().empty()) return xtd::strings::format("{} : {}", name(), message());
-  return xtd::strings::format("{} : {}\n{}", name(), message(), stack_trace());
+  if (message().empty()) return xtd::ustring::format("{}\n{}", name(), stack_trace());
+  if (stack_trace().empty()) return xtd::ustring::format("{} : {}", name(), message());
+  return xtd::ustring::format("{} : {}\n{}", name(), message(), stack_trace());
 }
 
-std::string system_exception::stack_trace_to_string() const noexcept {
+ustring system_exception::stack_trace_to_string() const noexcept {
   if (!stack_trace_) return information_.to_string();
 
   size_t skip_frames = stack_trace_->frame_count();
   for (size_t index = 0; index < stack_trace_->frame_count(); ++index)
-    if (xtd::strings::starts_with(stack_trace_->get_frame(index).get_method(), name()))
+    if (stack_trace_->get_frame(index).get_method().starts_with(name()))
       skip_frames = index;
   return stack_trace_->to_string(skip_frames + 1, information_);
 }

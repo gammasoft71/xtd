@@ -20,12 +20,15 @@ add_sources(
   include/xtd/xtd.core.native.unix
   include/xtd/native/unix/strings.h
   src/xtd/native/unix/console.cpp
+  src/xtd/native/unix/cryptography.cpp
   src/xtd/native/unix/debugger.cpp
+  src/xtd/native/unix/dns.cpp
   src/xtd/native/unix/environment.cpp
   src/xtd/native/unix/file.cpp
   src/xtd/native/unix/guid.cpp
   src/xtd/native/unix/path.cpp
   src/xtd/native/unix/process.cpp
+  src/xtd/native/unix/socket.cpp
   src/xtd/native/unix/translator.cpp
 )
 if (APPLE)

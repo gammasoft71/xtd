@@ -9,6 +9,8 @@
 namespace xtd {
   namespace collections {
     /// @brief Implements a std::pair with the key and the value strongly typed to be std::any.
+    /// @par Namespace
+    /// xtd::collections
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core collections

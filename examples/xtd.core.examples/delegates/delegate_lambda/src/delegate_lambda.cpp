@@ -7,7 +7,7 @@ using namespace xtd;
 
 int main() {
   // use delegate as std::function
-  delegate<void(const string& str)> writer([](const string& str)  {
+  delegate<void(const ustring& str)> writer([](const ustring& str)  {
     cout << str << endl;
   });
   

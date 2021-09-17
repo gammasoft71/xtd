@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::drawing2d::pen_alignment enum class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/strings.h>
+#include <xtd/ustring.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -11,6 +11,8 @@ namespace xtd {
     /// @brief The xtd::.drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing2d {
       /// @brief SSpecifies the alignment of a xtd::drawing::pen object in relation to the theoretical, zero-width line.
+      /// @par Namespace
+      /// xtd::drawing::drawing2d
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing

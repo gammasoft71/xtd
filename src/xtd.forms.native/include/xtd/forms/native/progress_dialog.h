@@ -12,6 +12,7 @@
 #include <string>
 #include <vector>
 #include <xtd/static.h>
+#include <xtd/ustring.h>
 #include <xtd/drawing/color.h>
 #include <xtd/drawing/icon.h>
 #include <xtd/forms_native_export.h>
@@ -28,6 +29,8 @@ namespace xtd {
     /// @warning Internal use only
     namespace native {
       /// @brief Contains progress dialog native API.
+      /// @par Namespace
+      /// xtd::forms::native
       /// @par Library
       /// xtd.forms.native
       /// @ingroup xtd_forms_native native
@@ -52,7 +55,7 @@ namespace xtd {
         /// @param options A bittwise progress dialog flags value.
        /// @return The created progress dialog window handle.
         /// @warning Internal use only
-        static intptr_t create(intptr_t hwnd, const std::string& text, const std::string& message, const std::vector<std::string>& informations, size_t marquee_animation_speed, int32_t minimum, int32_t maximum, int32_t value, size_t options);
+        static intptr_t create(intptr_t hwnd, const xtd::ustring& text, const xtd::ustring& message, const std::vector<xtd::ustring>& informations, size_t marquee_animation_speed, int32_t minimum, int32_t maximum, int32_t value, size_t options);
         /// @brief Destroys progress dialog.
         /// @param dialog Progress dialog window handle to destroy.
         /// @warning Internal use only
@@ -61,7 +64,7 @@ namespace xtd {
         /// @param dialog Progress dialog window handle.
         /// @param informations The information texts.
         /// @warning Internal use only
-        static void informations(intptr_t dialog, const std::vector<std::string>& informations);
+        static void informations(intptr_t dialog, const std::vector<xtd::ustring>& informations);
         /// @brief Gets a value that Indicates progress by continuously scrolling a block across a progress_bar in a marquee fashion.
         /// @param dialog Progress dialog window handle.
         /// @param marquee truee is marquee; otherwise false. The default is false.
@@ -76,7 +79,7 @@ namespace xtd {
         /// @param dialog Progress dialog window handle.
         /// @param description The message text.
         /// @warning Internal use only
-        static void message(intptr_t dialog, const std::string& message);
+        static void message(intptr_t dialog, const xtd::ustring& message);
         /// @brief Sets the minimum value of the range of the control.
         /// @param dialog Progress dialog window handle.
         /// @param minimum The minimum value of the range.

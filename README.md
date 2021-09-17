@@ -1,8 +1,8 @@
 # xtd
 
-**Modern C++17/20 framework to create console, forms (GUI like WinForms) and unit test applications on Windows, macOS, Linux, iOS and android.**
+**Modern C++17/20 framework to create console (CLI), forms (GUI like WinForms) and tunit (unit tests like Microsoft Unit Testing Framework) applications on Windows, macOS, Linux, iOS and android.**
 
-[![xtd](docs/pictures/xtd_header.png)](https://gammasoft71.wixsite.com/xtdpro)
+[![logo](docs/pictures/logo.png)](https://gammasoft71.wixsite.com/xtdpro)
 
 ## Continuous Integration build status
 
@@ -14,11 +14,14 @@
 
 ## Features
 
+* Free and open-source ([MIT License](https://github.com/gammasoft71/xtd/blob/master/docs/license.md))
 * a collection of native C++ classes libraries, to complete std
 * written in efficient, modern C++17 / C++20
 * and highly portable and available on many different platforms (Windows, macOS, Linux, iOS and Android)
+* API close to the .net API with a modern C++ approach and full integration with the std standard.
 
 For more information see:
+
 * [website](https://gammasoft71.wixsite.com/xtdpro)
 * [markdown documentations](https://github.com/gammasoft71/xtd/blob/master/docs/home.md)
 * [sources](https://github.com/gammasoft71/xtd) 
@@ -29,7 +32,7 @@ For more information see:
 
 The classic first application 'Hello World'.
 
-### Console
+### Console (CLI)
 
 hello_world_console.cpp:
 
@@ -70,7 +73,7 @@ xtdc run
 Hello, World!
 ```
 
-### Forms
+### Forms (GUI like WinForms)
 
 hello_world_forms.cpp:
 
@@ -79,19 +82,25 @@ hello_world_forms.cpp:
 
 using namespace xtd::forms;
 
+class main_form : public form {
+public:
+  main_form() {
+    text("Hello world (message_box)");
+
+    button1.location({10, 10});
+    button1.parent(*this);
+    button1.text("&Click me");
+    button1.click += [] {
+      message_box::show("Hello, World!");
+    };
+  }
+  
+private:
+  button button1;
+};
+
 int main() {
-  button button;
-  button.text("Click me");
-  button.location({10, 10});
-  button.click += [] {
-    message_box::show("Hello, World!");
-  };
-  
-  form form;
-  form.text("Hello world (message_box)");
-  form.controls().push_back(button);
-  
-  application::run(form);
+  application::run(main_form());
 }
 ```
 
@@ -134,7 +143,7 @@ xtdc run
 
 ![Screenshot](docs/pictures/examples/hello_world_message_box_gd.png)
 
-### Unit tests
+### tunit (Unit tests like Microsoft Unit Testing Framework)
 
 hello_world_test.cpp:
 
@@ -205,3 +214,49 @@ End 2 tests from 1 test case ran. (0 ms total)
 * [Installation](docs/downloads.md) provides download and install documentation.
 * [Portability](docs/portability.md) provides information about C++, libraries dependency, Operating System suported, Compilators and Devepment Environment tools.
 * [Examples](examples/README.md) provides some examples.
+
+## To the contributors
+
+**Your contributions are welcome.**
+
+* First read [Code of conduct](CODE_OF_CONDUCT.md) and the [design guidelines](docs/design_guidelines.md) to make sure your contribution follows the rules.
+* [Fork](https://github.com/gammasoft71/xtd/fork) the project and use a pull request for adding your contribution.
+* If you detect a problem or a defect you can add an [issue](https://github.com/gammasoft71/xtd/issues).
+
+**Your feedback is important for the evolution of the project.**
+
+## Gallery
+
+[![minesweeper](docs/pictures/minesweeper.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/minesweeper/README.md)
+
+[minesweeper (on Windows)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/minesweeper/README.md)
+
+______________________________________________________________________________________________
+
+[![game_of_life](docs/pictures/game_of_life.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/game_of_life/README.md)
+
+[game_of_life (on macOS)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/game_of_life/README.md)
+
+______________________________________________________________________________________________
+
+[![calculator](docs/pictures/calculator.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/calculator/README.md)
+
+[calculator (on Ubuntu)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/calculator/README.md)
+
+______________________________________________________________________________________________
+
+[![stopwatch](docs/pictures/stopwatch.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/stopwatch_form/README.md)
+
+[stopwatch (on Windows)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/stopwatch_form/README.md)
+
+______________________________________________________________________________________________
+
+[![xtdc-gui](docs/pictures/xtdc-gui.png)](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc-gui/README.md)
+
+[xtdc-gui - Create a new project (on macOS)](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc-gui/README.md)
+
+______________________________________________________________________________________________
+
+[![painting](docs/pictures/painting.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/painting/README.md)
+
+[painting (on Ubuntu)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/painting/README.md)

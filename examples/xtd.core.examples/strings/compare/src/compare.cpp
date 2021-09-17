@@ -6,7 +6,7 @@ using namespace string_literals;
 using namespace xtd;
 
 int main() {
-  int result = strings::compare("Aaa", "Baa");
+  int result = ustring::compare("Aaa", "Baa");
   if (result < 0)
     cout << "Aaa < Baa" << endl;
   else if (result > 0)

@@ -69,7 +69,7 @@
 /// The composite formatting feature takes a list of objects and a composite format string as input. A composite format string consists of fixed text intermixed with indexed placeholders, called format items, that correspond to the objects in the list. The formatting operation yields a result string that consists of the original fixed text intermixed with the string representation of the objects in the list.
 ///
 /// The composite formatting feature is supported by methods such as the following:
-/// * xtd::strings::format, which returns a formatted result string (xtd library).
+/// * xtd::ustring::format, which returns a formatted result string (xtd library).
 /// * Some overloads of the console::write_line method, which display a formatted result string to the console (xtd.core library).
 /// * xtd::diagnostics::debug::write_line method, which outputs a formatted message to trace listeners (xtd.core library).
 /// * The xtd::diagnostics::trace::trace_error, xtd::diagnostics::trace::trace_information, and xtd::diagnostics::trace::trace_warning methods, which output formatted messages to trace listeners (xtd.core library).
@@ -82,7 +82,7 @@
 ///
 /// @code
 /// string name = "Fred";
-/// xtd::strings::format("Name = {0}, age = {1:D3}", name, 42);
+/// xtd::ustring::format("Name = {0}, age = {1:D3}", name, 42);
 /// @endcode
 ///
 /// The fixed text is "Name = " and ", age = ". The format items are "{0}", whose index is 0, which corresponds to the object name, and "{1:D3}", whose index is 1, which corresponds to the integer 42.
@@ -101,7 +101,7 @@
 ///
 /// @code
 /// std::string primes;
-/// primes = xtd::strings::format("Prime numbers less than 10: {0}, {1}, {2}, {3}", 2, 3, 5, 7 );
+/// primes = xtd::ustring::format("Prime numbers less than 10: {0}, {1}, {2}, {3}", 2, 3, 5, 7 );
 /// std::cout << primes << std::endl;
 /// // The example displays the following output:
 /// //
@@ -111,7 +111,7 @@
 /// Multiple format items can refer to the same element in the list of objects by specifying the same parameter specifier. For example, you can format the same numeric value in hexadecimal, scientific, and number format by specifying a composite format string such as : "0x{0:X} {0:E} {0:N}", as the following example shows.
 ///
 /// @code
-/// std::string multiple = xtd::strings::format("0x{0:X} {0:E} {0:N}", std::numeric_limits<long long>::max());
+/// std::string multiple = xtd::ustring::format("0x{0:X} {0:E} {0:N}", std::numeric_limits<long long>::max());
 /// std::cout << multiple << std::endl;
 /// // The example displays the following output:
 /// //
@@ -125,7 +125,7 @@
 /// The following example shows format without specified index:
 ///
 /// @code
-/// std::cout << xtd::strings::format("{} {} {:F2}", 1, "two", 3.0) << std::endl;
+/// std::cout << xtd::ustring::format("{} {} {:F2}", 1, "two", 3.0) << std::endl;
 /// // The example displays the following output:
 /// //
 /// // 1 two 3.00
@@ -146,9 +146,9 @@
 ///   std::vector names = {"Adam", "Bridgette", "Carla", "Daniel", "Ebenezer", "Francine", "George"};
 ///   std::vector hours = {40.0, 6.667, 40.39, 82.0, 40.333, 80.0, 16.75};
 ///
-///   std::cout << xtd::strings::format("{0,-20} {1,5}\n", "Name", "Hours") << std::endl;
+///   std::cout << xtd::ustring::format("{0,-20} {1,5}\n", "Name", "Hours") << std::endl;
 ///   for (size_t ctr = 0; ctr < names.size(); ctr++)
-///     std::cout << xtd::strings::format("{0,-20} {1,5:N1}", names[ctr], hours[ctr]) << std::endl;
+///     std::cout << xtd::ustring::format("{0,-20} {1,5:N1}", names[ctr], hours[ctr]) << std::endl;
 /// }
 ///
 /// // The example displays the following output:
@@ -194,7 +194,7 @@
 ///
 /// @code
 /// int value = 6324;
-/// std::string output = xtd::strings::format("{0}{1:D}{2}", "{", value, "}");
+/// std::string output = xtd::ustring::format("{0}{1:D}{2}", "{", value, "}");
 /// std::cout << output << std::endl;
 /// // The example displays the following output:
 /// //
@@ -206,11 +206,11 @@
 /// The following example shows one string created using composite formatting and another created using xtd::to_string method. Both types of formatting produce equivalent results.
 ///
 /// @code
-/// std::string format_string1 = xtd::strings::format("0:X4", std::numeric_limits<short>::max());
-/// std::string format_string2 = xtd::to_strings::format(std::numeric_limits<short>::max(), "X4");
+/// std::string format_string1 = xtd::ustring::format("0:X4", std::numeric_limits<short>::max());
+/// std::string format_string2 = xtd::to_ustring::format(std::numeric_limits<short>::max(), "X4");
 /// @endcode
 ///
-/// xtd::console::write_line exposes the same functionality as xtd::strings::format. The only difference between the two methods is that xtd::strings::format returns its result as a string, while xtd::console::write_line writes the result to the output stream (std::cout) associated with the console object. The following example uses the xtd::console::write_line method to format the value of my_int to a currency value.
+/// xtd::console::write_line exposes the same functionality as xtd::ustring::format. The only difference between the two methods is that xtd::ustring::format returns its result as a string, while xtd::console::write_line writes the result to the output stream (std::cout) associated with the console object. The following example uses the xtd::console::write_line method to format the value of my_int to a currency value.
 ///
 /// @code
 /// int my_int = 100;
@@ -224,7 +224,7 @@
 ///
 /// @code
 /// std::string my_name = "Fred";
-/// xtd::console::write_line(xtd::strings::format("Name = {0}, hours = {1:hh}, minutes = {1:mm}", myName, std::chrono::system_clock::now()));
+/// xtd::console::write_line(xtd::ustring::format("Name = {0}, hours = {1:hh}, minutes = {1:mm}", myName, std::chrono::system_clock::now()));
 /// // Depending on the current time, the example displays output like the following:
 /// //
 /// // Name = Fred, hours = 11, minutes = 30
@@ -236,17 +236,17 @@
 /// std::string my_first_name = "Fred";
 /// std::string my_last_name = "Opals";
 /// int myInt = 100;
-/// std::string format_first_name = xtd::strings::format("First Name = |{0,10}|", my_first_name);
-/// std::string format_last_name = xtd::strings::format("Last Name = |{0,10}|", my_last_name);
-/// std::string format_price = xtd::strings::format("Price = |{0,10:C}|", myInt);
+/// std::string format_first_name = xtd::ustring::format("First Name = |{0,10}|", my_first_name);
+/// std::string format_last_name = xtd::ustring::format("Last Name = |{0,10}|", my_last_name);
+/// std::string format_price = xtd::ustring::format("Price = |{0,10:C}|", myInt);
 /// xtd::console::write_line(format_first_name);
 /// xtd::console::write_line(format_last_name);
 /// xtd::console::write_line(format_price);
 /// xtd::console::write_line();
 ///
-/// format_first_name = xtd::strings::format("First Name = |{0,-10}|", my_first_name);
-/// format_last_name = xtd::strings::format("Last Name = |{0,-10}|", my_last_name);
-/// format_price = xtd::strings::format("Price = |{0,-10:C}|", myInt);
+/// format_first_name = xtd::ustring::format("First Name = |{0,-10}|", my_first_name);
+/// format_last_name = xtd::ustring::format("Last Name = |{0,-10}|", my_last_name);
+/// format_price = xtd::ustring::format("Price = |{0,-10:C}|", myInt);
 /// xtd::console::write_line(format_first_name);
 /// xtd::console::write_line(format_last_name);
 /// xtd::console::write_line(format_price);

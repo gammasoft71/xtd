@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.3)
+
+project(process_with_standard_output_redirection)
+find_package(xtd REQUIRED)
+add_sources(src/process_with_standard_output_redirection.cpp)
+target_type(CONSOLE_APPLICATION)

@@ -1,12 +1,11 @@
 # input_dialog_password
 
-demonstrates the use of [xtd::forms::input_dialog](../../../../src/xtd_forms/include/xtd/forms/input_dialog.hpp) dialog.
+demonstrates the use of [xtd::forms::input_dialog](../../../../src/xtd.forms/include/xtd/forms/input_dialog.h) dialog.
 
 # Sources
 
-[src/input_dialog_password.cpp](src/input_dialog_password.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/input_dialog_password.cpp](src/input_dialog_password.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

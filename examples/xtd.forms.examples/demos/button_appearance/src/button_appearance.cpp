@@ -120,7 +120,7 @@ public:
     label_width.location({10, 258});
     
     numeric_up_down_width.value_changed += [&] {
-      button_demo.width(static_cast<int>(numeric_up_down_width.value()));
+      button_demo.width(as<int>(numeric_up_down_width.value()));
     };
     numeric_up_down_width.value(button_demo.width());
     numeric_up_down_width.set_range(0, std::numeric_limits<int32_t>::max());
@@ -133,7 +133,7 @@ public:
     label_height.location({10, 293});
     
     numeric_up_down_height.value_changed += [&] {
-      button_demo.height(static_cast<int>(numeric_up_down_height.value()));
+      button_demo.height(as<int>(numeric_up_down_height.value()));
     };
     numeric_up_down_height.value(button_demo.height());
     numeric_up_down_height.set_range(0, std::numeric_limits<int32_t>::max());

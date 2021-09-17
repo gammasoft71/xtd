@@ -4,9 +4,8 @@ demonstrates the use of [xtd::forms::about_box](../../../../src/xtd.forms/includ
 
 # Sources
 
-[src/about_box.cpp](src/about_box.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/about_box.cpp](src/about_box.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

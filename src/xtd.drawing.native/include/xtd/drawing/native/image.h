@@ -7,10 +7,10 @@
 
 #include <cstdint>
 #include <istream>
-#include <string>
 #include <tuple>
 #include <vector>
 #include <xtd/static.h>
+#include <xtd/ustring.h>
 #include <xtd/drawing_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -26,6 +26,8 @@ namespace xtd {
     /// @warning Internal use only
     namespace native {
       /// @brief Contains image native API.
+      /// @par Namespace
+      /// xtd::drawing::native
       /// @par Library
       /// xtd.drawing.native
       /// @ingroup xtd_drawing_native native
@@ -42,7 +44,7 @@ namespace xtd {
         };
         
         static void color_palette(intptr_t image, std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t>>& entries, int32_t& flags);
-        static intptr_t create(const std::string& filename);
+        static intptr_t create(const xtd::ustring& filename);
         static intptr_t create(std::istream& stream);
         static intptr_t create(const char* const* bits);
         static intptr_t create(int32_t width, int32_t height);
@@ -61,8 +63,8 @@ namespace xtd {
         static float vertical_resolution(intptr_t image);
         static void get_pixel(intptr_t image, int32_t x, int32_t y, uint8_t& a, uint8_t& r, uint8_t& g, uint8_t& b);
         static void set_pixel(intptr_t image, int32_t x, int32_t y, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
-        static void save(intptr_t image, const std::string& filename);
-        static void save(intptr_t image, const std::string& filename, size_t raw_format);
+        static void save(intptr_t image, const xtd::ustring& filename);
+        static void save(intptr_t image, const xtd::ustring& filename, size_t raw_format);
         static void save(intptr_t image, std::ostream& stream, size_t raw_format);
       };
     }

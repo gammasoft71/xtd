@@ -5,7 +5,6 @@
 #include <cstdint>
 #include <limits>
 #include <xtd/event_args.h>
-#include <xtd/strings.h>
 #include "check_state.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -17,6 +16,8 @@ namespace xtd {
     /// @endcond
     
     /// @brief Provides data for the item_check event of the checked_list_box and list_view controls.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events

@@ -13,6 +13,7 @@
 #include <vector>
 #include <xtd/delegate.h>
 #include <xtd/static.h>
+#include <xtd/ustring.h>
 #include <xtd/forms_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -28,6 +29,8 @@ namespace xtd {
     /// @warning Internal use only
     namespace native {
       /// @brief Contains file dialog native API.
+      /// @par Namespace
+      /// xtd::forms::native
       /// @par Library
       /// xtd.forms.native
       /// @ingroup xtd_forms_native native
@@ -51,7 +54,7 @@ namespace xtd {
         /// @return true if the user clicks OK in the dialog box; otherwise, false.
         /// @remarks If result is true, the file_name parameter contains the new chosen file name and if opotioon cantains OFN_ALLOWMULTISELECT flags, the file_names parameter contains the new chosen file names.
         /// @warning Internal use only
-        static bool run_open_dialog(intptr_t hwnd, const std::string& default_ext, std::string& file_name, std::vector<std::string>& file_names, const std::string& filter, size_t filter_index, const std::string& initial_directory, size_t options, bool support_multi_dotted_extensions, const std::string& title);
+        static bool run_open_dialog(intptr_t hwnd, const xtd::ustring& default_ext, xtd::ustring& file_name, std::vector<xtd::ustring>& file_names, const xtd::ustring& filter, size_t filter_index, const xtd::ustring& initial_directory, size_t options, bool support_multi_dotted_extensions, const xtd::ustring& title);
         /// @brief Shows async open file dialog as sheet.
         /// @param on_dialog_closed a dialog close delegate to call when the dialog is closed.
         /// @param hwnd Parent window handle.
@@ -67,7 +70,7 @@ namespace xtd {
         /// @return true if the user clicks OK in the dialog box; otherwise, false.
         /// @remarks When dialog closed and if result is true, the file_name parameter contains the new chosen file name and if opotioon cantains OFN_ALLOWMULTISELECT flags, the file_names parameter contains the new chosen file names.
         /// @warning Internal use only
-        static void run_open_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const std::string& default_ext, std::string& file_name, std::vector<std::string>& file_names, const std::string& filter, size_t filter_index, const std::string& initial_directory, size_t options, bool support_multi_dotted_extensions, const std::string& title);
+        static void run_open_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const xtd::ustring& default_ext, xtd::ustring& file_name, std::vector<xtd::ustring>& file_names, const xtd::ustring& filter, size_t filter_index, const xtd::ustring& initial_directory, size_t options, bool support_multi_dotted_extensions, const xtd::ustring& title);
         /// @brief Shows save file dialog.
         /// @param hwnd Parent window handle.
         /// @param default_ext The default file name extension. The returned string does not include the period.
@@ -82,7 +85,7 @@ namespace xtd {
         /// @return true if the user clicks OK in the dialog box; otherwise, false.
         /// @remarks If result is true, the file_name parameter contains the new chosen file name and if opotioon cantains OFN_ALLOWMULTISELECT flags, the file_names parameter contains the new chosen file names.
         /// @warning Internal use only
-        static bool run_save_dialog(intptr_t hwnd, const std::string& default_ext, std::string& file_name, std::vector<std::string>& file_names, const std::string& filter, size_t filter_index, const std::string& initial_directory, size_t options, bool support_multi_dotted_extensions, const std::string& title);
+        static bool run_save_dialog(intptr_t hwnd, const xtd::ustring& default_ext, xtd::ustring& file_name, std::vector<xtd::ustring>& file_names, const xtd::ustring& filter, size_t filter_index, const xtd::ustring& initial_directory, size_t options, bool support_multi_dotted_extensions, const xtd::ustring& title);
         /// @brief Shows async save file dialog as sheet.
         /// @param on_dialog_closed a dialog close delegate to call when the dialog is closed.
         /// @param hwnd Parent window handle.
@@ -98,7 +101,7 @@ namespace xtd {
         /// @return true if the user clicks OK in the dialog box; otherwise, false.
         /// @remarks When dialog closed and if result is true, the file_name parameter contains the new chosen file name and if opotioon cantains OFN_ALLOWMULTISELECT flags, the file_names parameter contains the new chosen file names.
         /// @warning Internal use only
-        static void run_save_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const std::string& default_ext, std::string& file_name, std::vector<std::string>& file_names, const std::string& filter, size_t filter_index, const std::string& initial_directory, size_t options, bool support_multi_dotted_extensions, const std::string& title);
+        static void run_save_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const xtd::ustring& default_ext, xtd::ustring& file_name, std::vector<xtd::ustring>& file_names, const xtd::ustring& filter, size_t filter_index, const xtd::ustring& initial_directory, size_t options, bool support_multi_dotted_extensions, const xtd::ustring& title);
       };
     }
   }

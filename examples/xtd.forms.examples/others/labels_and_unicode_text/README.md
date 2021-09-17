@@ -1,12 +1,11 @@
 # labels_and_unicode_text
 
-demonstrates the use of [xtd::forms::label](../../../../src/xtd_forms/include/xtd/forms/label.hpp) control with unicode text.
+demonstrates the use of [xtd::forms::label](../../../../src/xtd.forms/include/xtd/forms/label.h) control with unicode text.
 
 # Sources
 
-[src/labels_and_unicode_text.cpp](src/labels_and_unicode_text.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/labels_and_unicode_text.cpp](src/labels_and_unicode_text.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

@@ -12,6 +12,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a base form for debug_form and trace_form forms. This class cannot be instantiated.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms debug
@@ -28,11 +30,11 @@ namespace xtd {
       
       /// @brief Gets the string used to separate date and/or time from trace text.
       /// @return A string that represent separator. By default is "|".
-      virtual const std::string& header_separator() const {return header_separator_;}
+      virtual const xtd::ustring& header_separator() const {return header_separator_;}
       /// @brief Sets the string used to separate date and/or time from trace text.
       /// @param header_separator A string that represent separator. By default is "|".
       /// @return Current trace_form_base.
-      virtual trace_form_base& header_separator(const std::string& header_separator) {
+      virtual trace_form_base& header_separator(const xtd::ustring& header_separator) {
         if (header_separator_ != header_separator_) {
           header_separator_ = header_separator;
           update_format();
@@ -40,7 +42,7 @@ namespace xtd {
         return *this;
       }
 
-      const std::string& name() const override {return form::name();}
+      const xtd::ustring& name() const override {return form::name();}
       
       /// @brief Gets a vallue indicate if date is showing before trace text.
       /// @return true is date showing; otherwise false. By default is true.
@@ -73,7 +75,7 @@ namespace xtd {
    protected:
       /// @brief Initializes a new instance of the trace_form_base class with spefied caption text.
       /// @param text A string that represent the caption text oof the debug form.
-      trace_form_base(const std::string& text) {
+      trace_form_base(const xtd::ustring& text) {
         name("9f5767d6-7a21-4ebe-adfe-2427b2024a55");
         text_.name("d014d407-851c-49c1-a343-3380496a639a");
 
@@ -90,6 +92,14 @@ namespace xtd {
         update_format();
       }
       
+      void on_back_color_changed(const xtd::event_args& e) override {
+        text_.back_color(back_color());
+      }
+      
+      void on_fore_color_changed(const xtd::event_args& e) override {
+        text_.fore_color(fore_color());
+      }
+
       void on_form_closing(form_closing_event_args& e) override {
         e.cancel(true);
         window_state(form_window_state::minimized);
@@ -98,14 +108,14 @@ namespace xtd {
 
       /// @brief Writes trace string to the multiline text.
       /// @param trace A string to write.
-      virtual void write(const std::string& trace) {
+      virtual void write(const xtd::ustring& trace) {
         if (need_header()) write_header();
         text_.append_text(trace);
       }
       
       /// @brief Writes trace string to the multiline text followed by a line terminator.
       /// @param trace A string to write.
-      virtual void write_line(const std::string& trace) {
+      virtual void write_line(const xtd::ustring& trace) {
         write(trace);
         text_.append_text(environment::new_line());
         need_header(true);
@@ -115,7 +125,7 @@ namespace xtd {
       /// @param trace A string to write.
       virtual void write_header() {
         auto now =  std::chrono::system_clock::now();
-        text_.append_text(xtd::strings::format(format_, now, (std::chrono::duration_cast<std::chrono::microseconds>(now.time_since_epoch())).count() % 1000000, header_separator_));
+        text_.append_text(xtd::ustring::format(format_, now, (std::chrono::duration_cast<std::chrono::microseconds>(now.time_since_epoch())).count() % 1000000, header_separator_));
         need_header_ = false;
       }
       
@@ -146,8 +156,8 @@ namespace xtd {
       bool need_header_ = true;
       bool show_date_ = true;
       bool show_time_ = true;
-      std::string format_ = "{0}";
-      std::string header_separator_ = "|";
+      xtd::ustring format_ = "{0}";
+      xtd::ustring header_separator_ = "|";
       xtd::forms::text_box text_;
     };
   }

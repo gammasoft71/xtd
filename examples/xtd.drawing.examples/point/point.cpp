@@ -7,17 +7,17 @@ using namespace xtd::drawing;
 
 int main() {
   point location = {10, 235};
-  cout << strings::format("location = {}", location) << endl;
+  cout << ustring::format("location = {}", location) << endl;
 
   location.x(location.x() + 20);
   location.y(location.y() - 15);
-  cout << strings::format("location = {}", location) << endl;
+  cout << ustring::format("location = {}", location) << endl;
   
   location = point(10, 10) + drawing::size(20, 50);
-  cout << strings::format("location = {}", location) << endl;
+  cout << ustring::format("location = {}", location) << endl;
   
   location.offset({70, 140});
-  cout << strings::format("location = {}", location) << endl;
+  cout << ustring::format("location = {}", location) << endl;
 }
 
 // This code produces the following output:

@@ -10,6 +10,7 @@
 
 #include "../create_params.h"
 #include <xtd/static.h>
+#include <xtd/ustring.h>
 #include <xtd/forms_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -25,6 +26,8 @@ namespace xtd {
     /// @warning Internal use only
     namespace native {
       /// @brief Menu native API.
+      /// @par Namespace
+      /// xtd::forms::native
       /// @par Library
       /// xtd.forms.native
       /// @ingroup xtd_forms_native native
@@ -38,7 +41,7 @@ namespace xtd {
         /// @param items A menu item handles array.
         /// @return The created menu handle.
         /// @warning Internal use only
-        static intptr_t create(const std::string& text, const std::vector<intptr_t>& items);
+        static intptr_t create(const xtd::ustring& text, const std::vector<intptr_t>& items);
         /// @brief Destroy menu.
         /// @param menu Menu handle.
         /// @warning Internal use only

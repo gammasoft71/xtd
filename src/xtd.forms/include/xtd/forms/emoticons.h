@@ -9,24 +9,14 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Countries for all known emoticons. This class cannot be inherited.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms components
     /// @par Examples
     /// The following code example demonstrate the use of emoticons class.
     /// @include emoticons.cpp
-    /// @par Windows
-    /// @image html emoticons_w.png
-    /// <br>
-    /// @image html emoticons_wd.png
-    /// @par macOS
-    /// @image html emoticons_m.png
-    /// <br>
-    /// @image html emoticons_md.png
-    /// @par Gnome
-    /// @image html emoticons_g.png
-    /// <br>
-    /// @image html emoticons_gd.png
     class forms_export_ emoticons final static_ {
     public:
       // 00080-00FF Latin 1 Supplement

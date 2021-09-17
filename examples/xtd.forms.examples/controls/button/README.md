@@ -1,12 +1,11 @@
 # button
 
-demonstrates the use of [xtd::forms::button](../../../../src/xtd_forms/include/xtd/forms/button.hpp) control.
+demonstrates the use of [xtd::forms::button](../../../../src/xtd.forms/include/xtd/forms/button.h) control.
 
 # Sources
 
-[src/button.cpp](src/button.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/button.cpp](src/button.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

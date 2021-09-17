@@ -1,12 +1,11 @@
 # track_bar
 
-demonstrates the use of [xtd::forms::track_bar](../../../../src/xtd_forms/include/xtd/forms/track_bar.hpp) control.
+demonstrates the use of [xtd::forms::track_bar](../../../../src/xtd.forms/include/xtd/forms/track_bar.h) control.
 
 # Sources
 
-[src/track_bar.cpp](src/track_bar.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/track_bar.cpp](src/track_bar.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

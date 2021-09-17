@@ -10,6 +10,8 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Encapsulates a GDI+ bitmap, which consists of the pixel data for a graphics image and its attributes. A bitmap is an object used to work with images defined by pixel data.
+    /// @par Namespace
+    /// xtd::drawing
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
@@ -30,7 +32,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the bitmap class from the specified file.
       /// @param fillename The bitmap file name and path.
       /// @remarks The file name and path can be relative to the application or an absolute path. Use this constructor to open images with the following file formats: BMP, GIF, EXIF, JPG, PNG and TIFF. For more information about supported formats, see Types of Bitmaps. The file remains locked until the Bitmap is disposed.
-      explicit bitmap(const std::string& filename) : xtd::drawing::image(filename) {}
+      explicit bitmap(const xtd::ustring& filename) : xtd::drawing::image(filename) {}
       /// @brief Initializes a new instance of the bitmap class from the specified data stream.
       /// @param stream The data stream used to load the image.
       explicit bitmap(std::istream& stream) : xtd::drawing::image(stream) {}

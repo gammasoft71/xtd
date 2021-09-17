@@ -4,9 +4,8 @@ demonstrates the use of [xtd::forms::exception_box](../../../../src/xtd.forms/in
 
 # Sources
 
-[src/exception_box.cpp](src/exception_box.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/exception_box.cpp](src/exception_box.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

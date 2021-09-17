@@ -3,7 +3,8 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
-#include <xtd/strings.h>
+#include <xtd/object.h>
+#include <xtd/ustring.h>
 #include "../forms_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -11,10 +12,12 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a display device or multiple display devices on a single system.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    class forms_export_ padding {
+    class forms_export_ padding : public object {
     public:
       /// @brief Initializes a new instance of the padding class.
       padding() = default;
@@ -138,7 +141,7 @@ namespace xtd {
       /// @brief Returns a string that represents the current padding.
       /// @return A string that represents the current padding.
       /// @remarks This method returns a string containing the labeled values of the padding for all four edges.
-      std::string to_string() const {return xtd::strings::format("padding [all={}, left={}, top={}, right={}, bottom={}]", all_, left_, top_, right_, bottom_);}
+      xtd::ustring to_string() const noexcept override {return xtd::ustring::format("padding [all={}, left={}, top={}, right={}, bottom={}]", all_, left_, top_, right_, bottom_);}
       
       /// @cond
       bool operator==(const padding& p) const {return all_ == p.all_ && left_ == p.left_ && top_ == p.top_ && right_ == p.right_ && bottom_ == p.bottom_;}

@@ -1,12 +1,11 @@
 # sixteen_segment_display
 
-demonstrates how to use [xtd::forms::sixteen_segment_display](../../../../src/xtd_forms/include/xtd/forms/sixteen_segment_display.hpp) control.
+demonstrates how to use [xtd::forms::sixteen_segment_display](../../../../src/xtd.forms/include/xtd/forms/sixteen_segment_display.h) control.
 
 # Sources
 
-[src/sixteen_segment_display.cpp](src/sixteen_segment_display.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/sixteen_segment_display.cpp](src/sixteen_segment_display.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

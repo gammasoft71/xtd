@@ -13,6 +13,8 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @brief The directory_assert class contains a collection of static methods that implement the most directory assertions used in xtd::tUnit.
+    /// @par Namespace
+    /// xtd::tunit
     /// @par Library
     /// xtd.tunit
     /// @ingroup xtd_tunit
@@ -36,20 +38,20 @@ namespace xtd {
       /// xtd::tunit::directory_assert::are_equal(d1, d2); // test ok.
       /// xtd::tunit::directory_assert::are_equal(d1, d2); // test throws an assertion_error exception.
       /// @endcode
-      static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual) {are_equal(expected, actual, "", line_info());}
+      static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual) {are_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
       
       /// @brief Asserts that two directories are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param line_info Contains information about current file and current line.
+      /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
       /// ...
-      /// xtd::tunit::file_assert::are_equal(d1, d2, line_info_); // test ok.
-      /// xtd::tunit::file_assert::are_equal(d1, d2, line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::file_assert::are_equal(d1, d2, csf_); // test ok.
+      /// xtd::tunit::file_assert::are_equal(d1, d2, csf_); // test throws an assertion_error exception.
       /// @endcode
-      static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, "", line_info);}
+      static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(expected, actual, "", stack_frame);}
       
       /// @brief Asserts that two directories are equal.
       /// @param expected the expected value.
@@ -62,25 +64,25 @@ namespace xtd {
       /// xtd::tunit::file_assert::are_equal(d1, d2, "User message..."); // test ok.
       /// xtd::tunit::file_assert::are_equal(d1, d2, "User message..."); // test throws an assertion_error exception.
       /// @endcode
-      static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
+      static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message) {are_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
       
       /// @brief Asserts that two directories are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param line_info Contains information about current file and current line.
+      /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
       /// ...
-      /// xtd::tunit::file_assert::are_equal(d1, d2, "User message...", line_info_); // test ok.
-      /// xtd::tunit::file_assert::are_equal(d1, d2, "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::file_assert::are_equal(d1, d2, "User message...", csf_); // test ok.
+      /// xtd::tunit::file_assert::are_equal(d1, d2, "User message...", csf_); // test throws an assertion_error exception.
       /// @endcode
-      static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (expected != actual)
-          base_assert::fail(base_assert::to_string(expected.path().string()), base_assert::to_string(actual.path().string()), message, line_info);
+          base_assert::fail(base_assert::to_string(expected.path().string()), base_assert::to_string(actual.path().string()), message, stack_frame);
         else
-          assert::succeed(message, line_info);
+          assert::succeed(message, stack_frame);
       }
 
       /// @brief Asserts that two std::filesystem::directory_entry are not equal.
@@ -90,54 +92,54 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// ...
-      /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", line_info_); // test ok.
-      /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", csf_); // test ok.
+      /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", csf_); // test throws an assertion_error exception.
       /// @endcode
-      static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual) {are_not_equal(expected, actual, "", line_info());}
+      static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual) {are_not_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
       
       /// @brief Asserts that two std::filesystem::directory_entry are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param line_info Contains information about current file and current line.
+      /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
       /// ...
-      /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", line_info_); // test ok.
-      /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", csf_); // test ok.
+      /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", csf_); // test throws an assertion_error exception.
       /// @endcode
-      static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const xtd::tunit::line_info& line_info) {are_not_equal(expected, actual, "", line_info);}
-      
-      /// @brief Asserts that two std::filesystem::directory_entry are not equal.
-      /// @param expected the expected value.
-      /// @param actual the actual value.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// ...
-      /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", line_info_); // test ok.
-      /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", line_info_); // test throws an assertion_error exception.
-      /// @endcode
-      static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message) {are_not_equal(expected, actual, message, line_info());}
+      static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(expected, actual, "", stack_frame);}
       
       /// @brief Asserts that two std::filesystem::directory_entry are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
       /// ...
-      /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", line_info_); // test ok.
-      /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", csf_); // test ok.
+      /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", csf_); // test throws an assertion_error exception.
       /// @endcode
-      static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message) {are_not_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
+      
+      /// @brief Asserts that two std::filesystem::directory_entry are not equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// ...
+      /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", csf_); // test ok.
+      /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", csf_); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (expected != actual)
-          base_assert::fail(base_assert::to_string(expected.path().string()), base_assert::to_string(actual.path().string()), message, line_info);
+          base_assert::fail(base_assert::to_string(expected.path().string()), base_assert::to_string(actual.path().string()), message, stack_frame);
         else
-          assert::succeed(message, line_info);
+          assert::succeed(message, stack_frame);
       }
 #endif
       
@@ -153,22 +155,22 @@ namespace xtd {
       /// xtd::tunit::file_assert::exists("Test2.txt"); // test throws an assertion_error exception.
       /// @endcode
       template<typename Char>
-      static void exists(const std::basic_string<Char>& directory) {exists(directory, "", line_info());}
+      static void exists(const std::basic_string<Char>& directory) {exists(directory, "", xtd::diagnostics::stack_frame::empty());}
       
       /// @brief Asserts that directory exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param line_info Contains information about current file and current line.
+      /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
       /// std::ifstream f1("Test1.txt");
       /// f1.close();
-      /// xtd::tunit::file_assert::exists("Test1.txt", line_info_); // test ok.
-      /// xtd::tunit::file_assert::exists("Test2.txt", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::file_assert::exists("Test1.txt", csf_); // test ok.
+      /// xtd::tunit::file_assert::exists("Test2.txt", csf_); // test throws an assertion_error exception.
       /// @endcode
       template<typename Char>
-      static void exists(const std::basic_string<Char>& directory, const xtd::tunit::line_info& line_info) {exists(directory, "", line_info);}
+      static void exists(const std::basic_string<Char>& directory, const xtd::diagnostics::stack_frame& stack_frame) {exists(directory, "", stack_frame);}
       
       /// @brief Asserts that directory exists.
       /// @param expected the expected value.
@@ -183,39 +185,39 @@ namespace xtd {
       /// xtd::tunit::file_assert::exists("Test2.txt", "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename Char>
-      static void exists(const std::basic_string<Char>& directory, const std::string& message) {exists(directory, message, line_info());}
+      static void exists(const std::basic_string<Char>& directory, const std::string& message) {exists(directory, message, xtd::diagnostics::stack_frame::empty());}
       
       /// @brief Asserts that directory exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param line_info Contains information about current file and current line.
+      /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
       /// std::ifstream f1("Test1.txt");
       /// f1.close();
-      /// xtd::tunit::file_assert::exists("Test1.txt" "User message...", line_info_); // test ok.
-      /// xtd::tunit::file_assert::exists("Test2.txt", "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::file_assert::exists("Test1.txt" "User message...", csf_); // test ok.
+      /// xtd::tunit::file_assert::exists("Test2.txt", "User message...", csf_); // test throws an assertion_error exception.
       /// @endcode
       template<typename Char>
-      static void exists(const std::basic_string<Char>& directory, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void exists(const std::basic_string<Char>& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         struct stat info;
         if(stat(directory.c_str(), &info ) != 0 || (info.st_mode & S_IFDIR) != S_IFDIR)
-          base_assert::fail("directory exists", base_assert::to_string(directory), message, line_info);
+          base_assert::fail("directory exists", base_assert::to_string(directory), message, stack_frame);
         else
-          assert::succeed(message, line_info);
+          assert::succeed(message, stack_frame);
       }
       
       /// @cond
       template<typename Char>
-      static void exists(const Char* directory) {exists(directory, "", line_info());}
+      static void exists(const Char* directory) {exists(directory, "", xtd::diagnostics::stack_frame::empty());}
       template<typename Char>
-      static void exists(const Char* directory, const xtd::tunit::line_info& line_info) {exists(directory, "", line_info);}
+      static void exists(const Char* directory, const xtd::diagnostics::stack_frame& stack_frame) {exists(directory, "", stack_frame);}
       template<typename Char>
-      static void exists(const Char* directory, const std::string& message) {exists(directory, message, line_info());}
+      static void exists(const Char* directory, const std::string& message) {exists(directory, message, xtd::diagnostics::stack_frame::empty());}
       template<typename Char>
-      static void exists(const Char* directory, const std::string& message, const xtd::tunit::line_info& line_info) {exists(std::basic_string<Char>(directory), message, line_info);}
+      static void exists(const Char* directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {exists(std::basic_string<Char>(directory), message, stack_frame);}
       /// @endcond
       
       /// @brief Asserts that file not exists.
@@ -230,22 +232,22 @@ namespace xtd {
       /// xtd::tunit::file_assert::does_not_exist("Test1.txt"); // test throws an assertion_error exception.
       /// @endcode
       template<typename Char>
-      static void does_not_exist(const std::basic_string<Char>& directory) {does_not_exist(directory, "", line_info());}
+      static void does_not_exist(const std::basic_string<Char>& directory) {does_not_exist(directory, "", xtd::diagnostics::stack_frame::empty());}
       
       /// @brief Asserts that file not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param line_info Contains information about current file and current line.
+      /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
       /// std::ifstream f1("Test1.txt");
       /// f1.close();
-      /// xtd::tunit::file_assert::does_not_exist("Test2.txt", line_info_); // test ok.
-      /// xtd::tunit::file_assert::does_not_exist("Test1.txt", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::file_assert::does_not_exist("Test2.txt", csf_); // test ok.
+      /// xtd::tunit::file_assert::does_not_exist("Test1.txt", csf_); // test throws an assertion_error exception.
       /// @endcode
       template<typename Char>
-      static void does_not_exist(const std::basic_string<Char>& directory, const xtd::tunit::line_info& line_info) {does_not_exist(directory, "", line_info);}
+      static void does_not_exist(const std::basic_string<Char>& directory, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(directory, "", stack_frame);}
       
       /// @brief Asserts that file not exists.
       /// @param expected the expected value.
@@ -260,39 +262,39 @@ namespace xtd {
       /// xtd::tunit::file_assert::does_not_exist("Test1.txt", "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename Char>
-      static void does_not_exist(const std::basic_string<Char>& directory, const std::string& message) {does_not_exist(directory, message, line_info());}
+      static void does_not_exist(const std::basic_string<Char>& directory, const std::string& message) {does_not_exist(directory, message, xtd::diagnostics::stack_frame::empty());}
       
       /// @brief Asserts that file not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param line_info Contains information about current file and current line.
+      /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
       /// std::ifstream f1("Test1.txt");
       /// f1.close();
-      /// xtd::tunit::file_assert::does_not_exist("Test2.txt" "User message...", line_info_); // test ok.
-      /// xtd::tunit::file_assert::does_not_exist("Test1.txt", "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::file_assert::does_not_exist("Test2.txt" "User message...", csf_); // test ok.
+      /// xtd::tunit::file_assert::does_not_exist("Test1.txt", "User message...", csf_); // test throws an assertion_error exception.
       /// @endcode
       template<typename Char>
-      static void does_not_exist(const std::basic_string<Char>& directory, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void does_not_exist(const std::basic_string<Char>& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         struct stat info;
         if(stat(directory.c_str(), &info ) == 0 && (info.st_mode & S_IFDIR) == S_IFDIR)
-          base_assert::fail("not directory exists", base_assert::to_string(directory), message, line_info);
+          base_assert::fail("not directory exists", base_assert::to_string(directory), message, stack_frame);
         else
-          assert::succeed(message, line_info);
+          assert::succeed(message, stack_frame);
       }
       
       /// @cond
       template<typename Char>
-      static void does_not_exist(const Char* directory) {does_not_exist(directory, "", line_info());}
+      static void does_not_exist(const Char* directory) {does_not_exist(directory, "", xtd::diagnostics::stack_frame::empty());}
       template<typename Char>
-      static void does_not_exist(const Char* directory, const xtd::tunit::line_info& line_info) {does_not_exist(directory, "", line_info);}
+      static void does_not_exist(const Char* directory, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(directory, "", stack_frame);}
       template<typename Char>
-      static void does_not_exist(const Char* directory, const std::string& message) {does_not_exist(directory, message, line_info());}
+      static void does_not_exist(const Char* directory, const std::string& message) {does_not_exist(directory, message, xtd::diagnostics::stack_frame::empty());}
       template<typename Char>
-      static void does_not_exist(const Char* directory, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_exist(std::basic_string<Char>(directory), message, line_info);}
+      static void does_not_exist(const Char* directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(std::basic_string<Char>(directory), message, stack_frame);}
       /// @endcond
     };
   }

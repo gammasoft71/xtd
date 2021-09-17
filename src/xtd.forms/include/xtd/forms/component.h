@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
+#include <xtd/object.h>
 #include "../forms_export.h"
 #include "../forms_namespace_aliases.h"
 
@@ -11,20 +12,18 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Provides the base implementation and enables object sharing between applications.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms components
     /// @remarks component is the base class for all components and controls.
-    class component {
+    class component : public xtd::object {
     public:
       
     protected:
       /// @brief Initialises a new instance of the compnent class.
       component() = default;
-      
-      /// @cond
-      virtual ~component() = default;
-      /// @endcond
       
       /// @brief Gets a value indicating whether the component can raise an event.
       /// @return true if the component can raise events; otherwise, false. The default is true.

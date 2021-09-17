@@ -7,18 +7,22 @@
 #include <sstream>
 #include <cstdint>
 #include <string>
+#include <xtd/object.h>
+#include <xtd/ustring.h>
 #include "../forms_export.h"
 
 namespace xtd {
   namespace forms {
     /// @brief Implements a Windows message.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
     /// @remarks The message structure wraps messages that Windows sends. You can use this structure to wrap a message and assign it to the window procedure to be dispatched. You can also use this structure to get information about a message the system sends to your application or controls.
     /// @remarks You cannot create the message directly. Instead, use the create method. For the sake of efficiency, the message uses its pool of existing Messages instead of instantiating a new one, if possible. However, if a message is not available in the pool, a new one is instantiated.
     /// @remarks Windows message are simulate on macOS and linux.
-    class forms_export_ message {
+    class forms_export_ message : public object {
     public:
       /// @cond
       message() = default;
@@ -93,8 +97,8 @@ namespace xtd {
       type get_lparam() { return reinterpret_cast<type>(lparam_); }
       
       /// @brief Returns a string that represents the current message.
-      /// @return A std::string that represents the current message.
-      std::string to_string() const;
+      /// @return A xtd::ustring that represents the current message.
+      xtd::ustring to_string() const noexcept override;
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::forms::message& message) noexcept {

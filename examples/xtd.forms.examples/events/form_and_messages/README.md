@@ -1,12 +1,11 @@
 # form_and_messages
 
-demonstrates some events received by [form](../../../../src/xtd_forms/include/xtd/forms/form.hpp).
+demonstrates some events received by [form](../../../../src/xtd.forms/include/xtd/forms/form.h).
 
 # Sources
 
-[src/form_and_messages.cpp](src/form_and_messages.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/form_and_messages.cpp](src/form_and_messages.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

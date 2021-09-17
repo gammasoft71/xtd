@@ -1,6 +1,6 @@
 # console_unicode
 
-Shows how to use [xtd::console](../../../../src/xtd.core/include/xtd/basic_console.h) with unicode characters.
+Shows how to use [xtd::console](../../../../src/xtd.core/include/xtd/console.h) with unicode characters.
 
 # Sources
 

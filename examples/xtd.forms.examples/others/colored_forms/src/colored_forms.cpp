@@ -15,7 +15,7 @@ int main() {
     static vector<shared_ptr<form>> forms;
     static auto form_color = known_color::alice_blue;
     
-    auto form = control::create<forms::form>(strings::format("{}", form_color));
+    auto form = control::create<forms::form>(ustring::format("{}", form_color));
     form->back_color(color::from_known_color(form_color));
     form->visible(true);
     forms.push_back(move(form));

@@ -4,6 +4,7 @@
 #pragma once
 #include <codecvt>
 #include <xtd/argument_out_of_range_exception.h>
+#include <xtd/as.h>
 #include <xtd/interface.h>
 #include "control.h"
 #include "dot_matrix_display.h"
@@ -16,44 +17,22 @@
 namespace xtd {
   namespace forms {
     /// @brief Represents a lcd label.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
     /// The following code example demonstrate the use of lcd_label control.
     /// @include lcd_label.cpp
-    /// @par Windows
-    /// @image html lcd_label_w.png
-    /// <br>
-    /// @image html lcd_label_wd.png
-    /// @par macOS
-    /// @image html lcd_label_m.png
-    /// <br>
-    /// @image html lcd_label_md.png
-    /// @par Gnome
-    /// @image html lcd_label_g.png
-    /// <br>
-    /// @image html lcd_label_gd.png
     /// @par Examples
     /// The following code example demonstrate the use of lcd_label control.
     /// @include lcd_label2.cpp
-    /// @par Windows
-    /// @image html lcd_label2_w.png
-    /// <br>
-    /// @image html lcd_label2_wd.png
-    /// @par macOS
-    /// @image html lcd_label2_m.png
-    /// <br>
-    /// @image html lcd_label2_md.png
-    /// @par Gnome
-    /// @image html lcd_label2_g.png
-    /// <br>
-    /// @image html lcd_label2_gd.png
     class lcd_label : public control {
       class idigit interface_ {
       public:
         virtual wchar_t get_character() const = 0;
-        virtual std::string get_valid_characters() const = 0;
+        virtual xtd::ustring get_valid_characters() const = 0;
         virtual int32_t get_thickness() const = 0;
 
         virtual void set_back_digit_color(const xtd::drawing::color& value) = 0;
@@ -70,7 +49,7 @@ namespace xtd {
         dot_matrix_display_digit() = default;
         
         wchar_t get_character() const override {return character_;}
-        std::string get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/%\\_°\"'[](){}<>| .,:;!?&$€";}
+        xtd::ustring get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/%\\_°\"'[](){}<>| .,:;!?&$€";}
         int32_t get_thickness() const override {return dot_matrix_display::thickness();}
         
         void set_back_digit_color(const xtd::drawing::color& value) override {dot_matrix_display::back_dot_color(value);}
@@ -172,7 +151,7 @@ namespace xtd {
           };
           if (character_ != value) {
             auto it = characters.find(value);
-            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
+            if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
             character_ = value;
             dot_matrix_display::set_dots(it->second);
           }
@@ -191,7 +170,7 @@ namespace xtd {
         fourteen_segment_display_digit() = default;
         
         wchar_t get_character() const override {return character_;}
-        std::string get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/\\_°\"'[]()| .,:";}
+        xtd::ustring get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/\\_°\"'[]()| .,:";}
         int32_t get_thickness() const override {return fourteen_segment_display::thickness();}
         
         void set_back_digit_color(const xtd::drawing::color& value) override {fourteen_segment_display::back_segment_color(value);}
@@ -282,7 +261,7 @@ namespace xtd {
           };
           if (character_ != value) {
             auto it = characters.find(value);
-            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
+            if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
             character_ = value;
             fourteen_segment_display::value(it->second);
           }
@@ -301,7 +280,7 @@ namespace xtd {
         nine_segment_display_digit() = default;
         
         wchar_t get_character() const override {return character_;}
-        std::string get_valid_characters() const override {return "0123456789ABCDEFGHIJLNOPQRSTUYabcdefghijlnopqrstuy=-_°\"'[]| .,:";}
+        xtd::ustring get_valid_characters() const override {return "0123456789ABCDEFGHIJLNOPQRSTUYabcdefghijlnopqrstuy=-_°\"'[]| .,:";}
         int32_t get_thickness() const override {return nine_segment_display::thickness();}
         
         void set_back_digit_color(const xtd::drawing::color& value) override {nine_segment_display::back_segment_color(value);}
@@ -372,7 +351,7 @@ namespace xtd {
           };
           if (character_ != value) {
             auto it = characters.find(value);
-            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
+            if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
             character_ = value;
             nine_segment_display::value(it->second);
           }
@@ -391,7 +370,7 @@ namespace xtd {
         seven_segment_display_digit() = default;
 
         wchar_t get_character() const override {return character_;}
-        std::string get_valid_characters() const override {return "0123456789ABCDEFGHIJLNOPQRSTUYabcdefghijlnopqrstuy=-_°\"'[]| .,:";}
+        xtd::ustring get_valid_characters() const override {return "0123456789ABCDEFGHIJLNOPQRSTUYabcdefghijlnopqrstuy=-_°\"'[]| .,:";}
         int32_t get_thickness() const override {return seven_segment_display::thickness();}
 
         void set_back_digit_color(const xtd::drawing::color& value) override {seven_segment_display::back_segment_color(value);}
@@ -462,7 +441,7 @@ namespace xtd {
             {':', forms::segments::pc}};
           if (character_ != value) {
             auto it = characters.find(value);
-            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
+            if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
             character_ = value;
             seven_segment_display::value(it->second);
           }
@@ -481,7 +460,7 @@ namespace xtd {
         sixteen_segment_display_digit() = default;
         
         wchar_t get_character() const override {return character_;}
-        std::string get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/\\_°\"'[]()| .,:";}
+        xtd::ustring get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/\\_°\"'[]()| .,:";}
         int32_t get_thickness() const override {return sixteen_segment_display::thickness();}
         
         void set_back_digit_color(const xtd::drawing::color& value) override {sixteen_segment_display::back_segment_color(value);}
@@ -572,7 +551,7 @@ namespace xtd {
           };
           if (character_ != value) {
             auto it = characters.find(value);
-            if (it == characters.end()) throw argument_exception(strings::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
+            if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
             character_ = value;
             sixteen_segment_display::value(it->second);
           }
@@ -664,7 +643,7 @@ namespace xtd {
       lcd_label& lcd_style(forms::lcd_style value) {
         if (lcd_style_ != value) {
           lcd_style_ = value;
-          std::string current_text = text();
+          xtd::ustring current_text = text();
           text("");
           text(current_text);
         }
@@ -719,7 +698,7 @@ namespace xtd {
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
       /// @return Current control.
-      control& text(const std::string& value) override {
+      control& text(const xtd::ustring& value) override {
         if (text_ != value) {
           suspend_layout();
           std::wstring str = std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().from_bytes(value.c_str());
@@ -737,9 +716,9 @@ namespace xtd {
               }
               dynamic_cast<control*>(digits_[digits_.size() - 1].get())->parent(*this);
               dynamic_cast<control*>(digits_[digits_.size() - 1].get())->click += [this] {on_click(event_args::empty);};
-              dynamic_cast<control*>(digits_[digits_.size() - 1].get())->mouse_down += [this](control& sender, const mouse_event_args& e) {on_mouse_down(mouse_event_args(e.button(), e.clicks(), e.location() + drawing::size(sender.location()), e.delta()));};
-              dynamic_cast<control*>(digits_[digits_.size() - 1].get())->mouse_move += [this](control& sender, const mouse_event_args& e) {on_mouse_move(mouse_event_args(e.button(), e.clicks(), e.location() + drawing::size(sender.location()), e.delta()));};
-              dynamic_cast<control*>(digits_[digits_.size() - 1].get())->mouse_up += [this](control& sender, const mouse_event_args& e) {on_mouse_up(mouse_event_args(e.button(), e.clicks(), e.location() + drawing::size(sender.location()), e.delta()));};
+              dynamic_cast<control*>(digits_[digits_.size() - 1].get())->mouse_down += [this](object& sender, const mouse_event_args& e) {on_mouse_down(mouse_event_args(e.button(), e.clicks(), e.location() + drawing::size(as<control>(sender).location()), e.delta()));};
+              dynamic_cast<control*>(digits_[digits_.size() - 1].get())->mouse_move += [this](object& sender, const mouse_event_args& e) {on_mouse_move(mouse_event_args(e.button(), e.clicks(), e.location() + drawing::size(as<control>(sender).location()), e.delta()));};
+              dynamic_cast<control*>(digits_[digits_.size() - 1].get())->mouse_up += [this](object& sender, const mouse_event_args& e) {on_mouse_up(mouse_event_args(e.button(), e.clicks(), e.location() + drawing::size(as<control>(sender).location()), e.delta()));};
             }
           for (size_t index = 0; index < str.size(); index++)
             digits_[index]->set_character(str[index]);
@@ -753,7 +732,7 @@ namespace xtd {
       /// @brief Gets valid characters.
       /// @return A sttring tthat represent valid characters.
       /// @remarks The valid characters are different according to lcd_style.
-      std::string valid_characters() {
+      xtd::ustring valid_characters() {
         switch (lcd_style_) {
           case lcd_style::seven_segment_display: return std::make_shared<seven_segment_display_digit>()->get_valid_characters();
           case lcd_style::nine_segment_display: return std::make_shared<nine_segment_display_digit>()->get_valid_characters();
@@ -767,6 +746,16 @@ namespace xtd {
     protected:
       drawing::size default_size() const override {return {100, 25};}
       
+      void on_back_color_changed(const event_args& e) override {
+        control::on_back_color_changed(e);
+        invalidate();
+      }
+      
+      void on_fore_color_changed(const event_args& e) override {
+        control::on_fore_color_changed(e);
+        invalidate();
+      }
+
       void on_handle_created(const event_args& e) override {
         control::on_handle_created(e);
         set_digits_params();
@@ -805,7 +794,7 @@ namespace xtd {
 
       bool show_back_digit_ = true;
       std::optional<xtd::drawing::color> back_digit_color_;
-      double back_digit_opacity_ = 0.05;
+      double back_digit_opacity_ = 0.95;
       std::optional<int32_t> digit_spacing_;
       forms::lcd_style lcd_style_ = forms::lcd_style::seven_segment_display;
       forms::segment_style segment_style_ = forms::segment_style::standard;

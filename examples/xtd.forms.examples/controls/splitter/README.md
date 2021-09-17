@@ -1,12 +1,11 @@
 # splitter
 
-demonstrates the use of [xtd::forms::splitter](../../../../src/xtd_forms/include/xtd/forms/splitter.hpp) control.
+demonstrates the use of [xtd::forms::splitter](../../../../src/xtd.forms/include/xtd/forms/splitter.h) control.
 
 # Sources
 
-[src/splitter.cpp](src/splitter.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/splitter.cpp](src/splitter.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

@@ -1,12 +1,11 @@
 # lcd_label_appearance
 
-demonstrates how to use [xtd::forms::lcd_label](../../../../src/xtd_forms/include/xtd/forms/lcd_label.hpp) control.
+demonstrates how to use [xtd::forms::lcd_label](../../../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
 
 # Sources
 
-[src/lcd_label_appearance.cpp](src/lcd_label_appearance.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/lcd_label_appearance.cpp](src/lcd_label_appearance.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

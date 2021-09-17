@@ -7,9 +7,9 @@
 
 #include <cstdint>
 #include <istream>
-#include <string>
 #include <vector>
 #include <xtd/static.h>
+#include <xtd/ustring.h>
 #include <xtd/drawing_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -24,6 +24,8 @@ namespace xtd {
     /// @warning Internal use only
     namespace native {
       /// @brief Contains icon native API.
+      /// @par Namespace
+      /// xtd::drawing::native
       /// @par Library
       /// xtd.drawing.native
       /// @ingroup xtd_drawing_native native
@@ -38,14 +40,14 @@ namespace xtd {
           std::vector<uint8_t> value;
         };
         
-        static intptr_t create(const std::string& filename);
+        static intptr_t create(const xtd::ustring& filename);
         static intptr_t create(std::istream& stream);
         static intptr_t create(const char* const* bits);
         static intptr_t create(intptr_t image);
         static intptr_t create(intptr_t icon, int32_t width, int32_t height);
         static void destroy(intptr_t icon);
-        static void save(intptr_t icon, const std::string& filename);
-        static void save(intptr_t icon, std::ostream& stream);
+        static void save(intptr_t icon, const xtd::ustring& filename);
+        static void save(intptr_t icon, std::ostream& stream, size_t raw_format);
         static intptr_t to_image(intptr_t icon);
       };
     }

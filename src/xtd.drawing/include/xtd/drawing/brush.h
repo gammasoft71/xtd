@@ -5,7 +5,8 @@
 #include <cstdint>
 #include <memory>
 #include <ostream>
-#include <xtd/strings.h>
+#include <xtd/object.h>
+#include <xtd/ustring.h>
 #include "../drawing_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -17,25 +18,27 @@ namespace xtd {
     /// @endcond
 
     /// @brief Defines objects used to fill the interiors of graphical shapes such as rectangles, ellipses, pies, polygons, and paths.
+    /// @par Namespace
+    /// xtd::drawing
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing
     /// @remarks This is an abstract base class and cannot be instantiated. To create a brush object, use classes derived from xtd::drawing::brush, such as xtd::drawing::solid_brush, xtd::drawing::texture_brush, and xtd::drawing::drawing2d::linear_gradient_brush.
-    class drawing_export_ brush {
+    class drawing_export_ brush : public object {
     public:
       //static const brush null;
       
       /// @cond
       brush(const brush& value);
       brush& operator=(const brush& value);
-      virtual ~brush();
+      ~brush();
       bool operator==(const brush& value) const {return data_->handle_ == value.data_->handle_;}
       bool operator!=(const brush& value) const {return !operator==(value);}
       /// @endcond
       
       /// @brief Converts this brush object to a human-readable string.
       /// @return A string that represents this brush object.
-      std::string to_string() const {return strings::full_class_name(*this);}
+      xtd::ustring to_string() const noexcept override {return ustring::full_class_name(*this);}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::brush& brush) noexcept {

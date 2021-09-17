@@ -12,24 +12,14 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a standard Windows list box.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
     /// The following code example demonstrate the use of list_box control.
     /// @include list_box.cpp
-    /// @par Windows
-    /// @image html list_box_w.png
-    /// <br>
-    /// @image html list_box_wd.png
-    /// @par macOS
-    /// @image html list_box_m.png
-    /// <br>
-    /// @image html list_box_md.png
-    /// @par Gnome
-    /// @image html list_box_g.png
-    /// <br>
-    /// @image html list_box_gd.png
     class forms_export_ list_box : public list_control {
     public:
       /// @brief Represents the collection containing the indexes to the selected items in a list_box.
@@ -124,7 +114,7 @@ namespace xtd {
       using list_control::text;
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
-      control& text(const std::string& text) override {return *this;}
+      control& text(const xtd::ustring& text) override {return *this;}
 
       /// @brief Maintains performance while items are added to the list_box one at a time by preventing the control from drawing until the EndUpdate() method is called.
       /// @remarks The preferred way to add multiple items to the list_box is to use the push_back_range method of the list_box::object_collection class (through the items property of the list_box). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the list_box::object_collection class, you can use the begin_update method to prevent the control from repainting the list_box each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the list_box to repaint. This way of adding items can prevent flickered drawing of the list_box when a large number of items are being added to the list.

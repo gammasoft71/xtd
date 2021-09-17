@@ -1,12 +1,11 @@
 # toggle_button2
 
-demonstrates the use of [xtd::forms::check_box](../../../../src/xtd_forms/include/xtd/forms/toggle_button.hpp) control.
+demonstrates the use of [xtd::forms::check_box](../../../../src/xtd.forms/include/xtd/forms/toggle_button.h) control.
 
 # Sources
 
-[src/toggle_button2.cpp](src/toggle_button2.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/toggle_button2.cpp](src/toggle_button2.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

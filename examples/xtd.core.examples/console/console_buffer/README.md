@@ -1,6 +1,6 @@
 # console_buffer
 
-Shows how to use [xtd::console::buffer_height](../../../../src/xtd.core/include/xtd/basic_console.h) and [xtd::console::buffer_width](../../../../src/xtd.core/include/xtd/basic_console.h) methods.
+Shows how to use [xtd::console::buffer_height](../../../../src/xtd.core/include/xtd/console.h) and [xtd::console::buffer_width](../../../../src/xtd.core/include/xtd/basic_console.h) methods.
 
 # Sources
 

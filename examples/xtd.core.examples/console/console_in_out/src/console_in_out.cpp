@@ -9,7 +9,7 @@ int main() {
   
   os << "Ola Mundo!" << endl;
   os << "What is your name: ";
-  string name;
+  ustring name;
   is >> name;
   
   os << "Buenos Dias, " << name << endl;

@@ -1,12 +1,11 @@
 # dialog
 
-demonstrates the use of [xtd::forms::form](../../../../src/xtd_forms/include/xtd/forms/form.hpp) container as dialog.
+demonstrates the use of [xtd::forms::form](../../../../src/xtd.forms/include/xtd/forms/form.h) container as dialog.
 
 # Sources
 
-[src/dialog.cpp](src/dialog.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/dialog.cpp](src/dialog.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

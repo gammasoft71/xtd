@@ -9,6 +9,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a standard Windows numeric up down.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
@@ -19,18 +21,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of numeric up down control.
     /// @include numeric_up_down.cpp
-    /// @par Windows
-    /// @image html numeric_up_down_w.png
-    /// <br>
-    /// @image html numeric_up_down_wd.png
-    /// @par macOS
-    /// @image html numeric_up_down_m.png
-    /// <br>
-    /// @image html numeric_up_down_md.png
-    /// @par Gnome
-    /// @image html numeric_up_down_g.png
-    /// <br>
-    /// @image html numeric_up_down_gd.png
     class forms_export_ numeric_up_down : public up_down_base {
     public:
       /// @brief Initializes a new instance of the numeric_up_down class.
@@ -106,11 +96,11 @@ namespace xtd {
       /// @brief Returns a string that represents the track_bar control.
       /// @return A string that represents the current progress_bar.
       /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
-      std::string to_string() const override {return strings::format("{}, minimum: {}, maximum: {}, value: {}", strings::full_class_name(*this), minimum_, maximum_, value_);}
+      xtd::ustring to_string() const noexcept override {return ustring::format("{}, minimum: {}, maximum: {}, value: {}", ustring::full_class_name(*this), minimum_, maximum_, value_);}
 
       /// @brief Occurs when the value property has been changed in some way.
       /// @ingroup events
-      event<numeric_up_down, event_handler<control&>> value_changed;
+      event<numeric_up_down, event_handler> value_changed;
       
     protected:
       drawing::color default_back_color() const override {return xtd::forms::theme_colors::current_theme().window();}

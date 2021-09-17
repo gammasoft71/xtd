@@ -2,7 +2,8 @@
 /// @brief Contains xtd::forms::control_layout_style class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/strings.h>
+#include <xtd/object.h>
+#include <xtd/ustring.h>
 #include "content_alignment.h"
 #include "size_type.h"
 
@@ -11,10 +12,12 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Implements the basic functionality that represents the appearance and behavior of a control layout.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    class control_layout_style {
+    class control_layout_style : public object {
     protected:
       /// @brief Initialises a new instance of control layout style class.
       control_layout_style() = default;
@@ -45,10 +48,6 @@ namespace xtd {
       /// @param expanded true if control expanded; otherwise false.
       /// @param align One of the content_alignment values..
       control_layout_style(bool expanded, xtd::forms::content_alignment align) : expanded_(expanded), align_(align) {}
-
-      /// @cond
-      virtual ~control_layout_style() = default;
-      /// @endcond
 
     public:
       /// @brief Gets a flag indicating how a control should be sized relative to its containing layout container.
@@ -85,7 +84,7 @@ namespace xtd {
 
       /// @brief Returns a string that represent xtd::forms::control_layout_style.
       /// @return A string containing that represent xtd::forms::control_layout_style.
-      virtual std::string to_string() const {return strings::format("control_layout_style=[expanded={}, align={}, size_type={}]", expanded_, align_, size_type_);}
+      xtd::ustring to_string() const noexcept override {return ustring::format("control_layout_style=[expanded={}, align={}, size_type={}]", expanded_, align_, size_type_);}
       
       /// @cond
       bool operator==(const control_layout_style& value) const {return size_type_ == value.size_type_ && expanded_ == value.expanded_;}

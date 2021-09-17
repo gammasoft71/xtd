@@ -6,6 +6,8 @@
 #include <memory>
 #include <vector>
 #include "../core_export.h"
+#include "../object.h"
+#include "../ustring.h"
 #include "stack_frame.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -17,6 +19,8 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Represents a stack trace, which is an ordered collection of one or more stack frames.
+    /// @par Namespace
+    /// xtd::diagnostics
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core diagnostics debug
@@ -25,7 +29,7 @@ namespace xtd {
     /// @include stack_trace_simple.cpp
     /// @remarks xtd::diagnostics::stack_trace information will be most informative with Debug build configurations. By default, Debug builds include debug symbols, while Release builds do not. The debug symbols contain most of the file, method name, line number, and column information used in constructing xtd::diagnostics::stack_frame and xtd::diagnostics::stack_trace objects.
     /// @remarks xtd::diagnostics::stack_trace might not report as many method calls as expected, due to code transformations that occur during optimization.
-    class core_export_ stack_trace {
+    class core_export_ stack_trace : public object {
     public:
       /// @brief Represents a stack_frame collection.
       using stack_frame_collection = std::vector<xtd::diagnostics::stack_frame>;
@@ -111,7 +115,7 @@ namespace xtd {
       /// @code
       /// stack_frame fr(1, true);
       /// stack_trace st(fr);
-      /// debug::write_line(strings::format("{}\n{}", fr.get_method(), st.to_string());
+      /// debug::write_line(ustring::format("{}\n{}", fr.get_method(), st.to_string());
       /// @endcode
       /// @remarks Use this constructor when you do not want the overhead of a full stack trace.
       explicit stack_trace(const xtd::diagnostics::stack_frame& frame);
@@ -287,9 +291,9 @@ namespace xtd {
       /// @code
       /// stack_frame fr(1, true);
       /// stack_trace st(fr);
-      /// debug::write_line(strings::format("{}\n{}", fr.get_method(), st.to_string());
+      /// debug::write_line(ustring::format("{}\n{}", fr.get_method(), st.to_string());
       /// @endcode
-      std::string to_string() const;
+      xtd::ustring to_string() const noexcept;
 
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::diagnostics::stack_trace& stack_trace) noexcept {return os << stack_trace.to_string();}
@@ -301,8 +305,8 @@ namespace xtd {
       
     private:
       friend class xtd::system_exception;
-      stack_trace(const std::string& str, size_t skip_frames, bool need_file_info);
-      std::string to_string(size_t skip_frames, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::empty()) const;
+      stack_trace(const xtd::ustring& str, size_t skip_frames, bool need_file_info);
+      xtd::ustring to_string(size_t skip_frames, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::empty()) const noexcept;
       
       stack_frame_collection frames_;
     };

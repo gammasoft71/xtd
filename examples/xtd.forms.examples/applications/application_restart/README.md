@@ -4,9 +4,8 @@ Shows how to create an application with  [xtd::forms::application::restart](../.
 
 # Sources
 
-[src/application_restart.cpp](src/application_restart.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/application_restart.cpp](src/application_restart.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

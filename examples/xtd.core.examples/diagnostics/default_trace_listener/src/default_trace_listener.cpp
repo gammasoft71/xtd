@@ -8,7 +8,7 @@ class binomial {
 public:
   // args(0) is the number of possibilities for binomial coefficients.
   // args(1) is the file specification for the trace log file.
-  static void main(const vector<string>& args) {
+  static void main(const vector<ustring>& args) {
     decimal possibilities;
     decimal iter;
     
@@ -30,9 +30,9 @@ public:
         const decimal MAX_POSSIBILITIES = 99;
         possibilities = parse<decimal>(args[0]);
         if (possibilities < 0 || possibilities > MAX_POSSIBILITIES)
-          throw new system_exception(strings::format("The number of possibilities must be in the range 0..{}.", MAX_POSSIBILITIES));
+          throw new system_exception(ustring::format("The number of possibilities must be in the range 0..{}.", MAX_POSSIBILITIES));
       } catch (const system_exception& ex) {
-        string fail_message = strings::format("\"{}\" is not a valid number of possibilities.", args[0]);
+        ustring fail_message = ustring::format("\"{}\" is not a valid number of possibilities.", args[0]);
         default_listener->fail(fail_message, ex.message());
         if (!default_listener->assert_ui_enabled())
           console::write_line(fail_message + "\n" + ex.message());
@@ -40,7 +40,7 @@ public:
       }
     } else {
       // Report that the required argument is not present.
-      const string ENTER_PARAM = "Enter the number of possibilities as a command line argument.";
+      const ustring ENTER_PARAM = "Enter the number of possibilities as a command line argument.";
       default_listener->fail(ENTER_PARAM);
       if (!default_listener->assert_ui_enabled())
         console::write_line(ENTER_PARAM);
@@ -49,13 +49,13 @@ public:
     
     for (iter = 0; iter <= possibilities; iter++) {
       decimal result;
-      string binomial;
+      ustring binomial;
       
       // Compute the next binomial coefficient and handle all exceptions.
       try {
         result = calc_binomial(possibilities, iter);
       } catch (const system_exception& ex) {
-        string fail_message = strings::format("An exception was raised when calculating Binomial( {}, {} ).", possibilities, iter);
+        ustring fail_message = ustring::format("An exception was raised when calculating Binomial( {}, {} ).", possibilities, iter);
         default_listener->fail(fail_message, ex.message());
         if (!default_listener->assert_ui_enabled())
           console::write_line(fail_message + "\n" + ex.message());
@@ -63,9 +63,9 @@ public:
       }
       
       // Format the trace and console output.
-      binomial = strings::format("Binomial( {0}, {1} ) = ", possibilities, iter);
+      binomial = ustring::format("Binomial( {0}, {1} ) = ", possibilities, iter);
       default_listener->write(binomial);
-      default_listener->write_line(strings::format("{}", result));
+      default_listener->write_line(ustring::format("{}", result));
       console::write_line("{0} {1}", binomial, result);
     }
   }

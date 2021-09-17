@@ -5,13 +5,15 @@
 
 #include <ostream>
 
-/// @brief The xtd namespace contains all fundamental classes to access console.
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Specifies the culture, case, and sort rules to be used by certain overloads of the strings::compare(string, string) method
+  /// @brief Specifies the culture, case, and sort rules to be used by certain overloads of the xtd::ustring::compare method
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  /// @see xtd::strings
+  /// @see xtd::ustring
   enum class string_comparison {
     /// @brief Compare strings using ordinal (binary) sort rules.
     ordinal,

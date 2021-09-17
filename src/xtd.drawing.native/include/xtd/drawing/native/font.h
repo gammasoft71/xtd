@@ -6,9 +6,9 @@
 /// @endcond
 
 #include <cstdint>
-#include <string>
 #include <vector>
 #include <xtd/static.h>
+#include <xtd/ustring.h>
 #include <xtd/drawing_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -23,6 +23,8 @@ namespace xtd {
     /// @warning Internal use only
     namespace native {
       /// @brief Contains font native API.
+      /// @par Namespace
+      /// xtd::drawing::native
       /// @par Library
       /// xtd.drawing.native
       /// @ingroup xtd_drawing_native native
@@ -41,12 +43,12 @@ namespace xtd {
         /// @param gdi_vertical_font A boolean value indicating whether the new xtd::drawing::font is derived from a GDI vertical font.
         /// @return The created brush handle.
         /// @warning Internal use only
-        static intptr_t create(const std::string& family_name, float em_size, bool bold, bool italic, bool underline, bool strikeout, uint8_t gdi_char_set, bool gdi_vertical_font);
+        static intptr_t create(const xtd::ustring& family_name, float em_size, bool bold, bool italic, bool underline, bool strikeout, uint8_t gdi_char_set, bool gdi_vertical_font);
         static intptr_t create_from_hdc(intptr_t hdc);
         static intptr_t create_from_hfont(intptr_t hfont);
         static void destroy(intptr_t font);
         static int32_t dpi();
-        static void get_information(intptr_t font, std::string& name, float& em_size, bool& bold, bool& italic, bool& underline, bool& strikeout, uint8_t& gdi_char_set, bool& gdi_vertical_font);
+        static void get_information(intptr_t font, xtd::ustring& name, float& em_size, bool& bold, bool& italic, bool& underline, bool& strikeout, uint8_t& gdi_char_set, bool& gdi_vertical_font);
         static float height(intptr_t font);
         static float height(intptr_t font, intptr_t hdc);
       };

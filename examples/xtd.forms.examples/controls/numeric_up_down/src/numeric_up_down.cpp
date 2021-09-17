@@ -14,10 +14,10 @@ namespace examples {
       numeric_up_down1.location({80, 50});
       numeric_up_down1.wrapped(true);
       numeric_up_down1.value_changed += [&] {
-        label1.text(strings::format("value = {}", numeric_up_down1.value()));
+        label1.text(ustring::format("value = {}", numeric_up_down1.value()));
       };
       numeric_up_down1.text_changed += [&] {
-        cdebug << strings::format("text = {}", numeric_up_down1.text()) << std::endl;
+        cdebug << ustring::format("text = {}", numeric_up_down1.text()) << std::endl;
       };
       numeric_up_down1.value(50);
       

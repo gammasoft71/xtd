@@ -4,9 +4,8 @@ represents a Windows control to display a loading indicator animation.
 
 # Sources
 
-[src/loading_indicator.cpp](src/loading_indicator.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/loading_indicator.cpp](src/loading_indicator.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

@@ -3,7 +3,6 @@
 #include <set>
 #include <xtd/diagnostics/debug.h>
 #include <xtd/diagnostics/trace_switch.h>
-#include <xtd/strings.h>
 #include <xtd/drawing/system_fonts.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/graphics.h>
@@ -66,13 +65,13 @@ control::control_collection& control::control_collection::operator=(const contro
   return *this;
 }
 
-optional<control::control_collection::value_type> control::control_collection::operator[](const string& name) const {
+optional<control::control_collection::value_type> control::control_collection::operator[](const ustring& name) const {
   for(auto item : *this)
     if(item.get().name() == name) return item;
   return {};
 }
 
-optional<control::control_collection::value_type> control::control_collection::operator[](const string& name) {
+optional<control::control_collection::value_type> control::control_collection::operator[](const ustring& name) {
   for(auto item : *this)
     if(item.get().name() == name) return item;
   return {};
@@ -92,17 +91,13 @@ control::control() {
   size_ = default_size();
   controls_.item_added += [&](size_t, reference_wrapper<control> item) {
     item.get().parent_ = handle_;
-    if (handle_) {
+    if (handle_)
       item.get().create_control();
-      item.get().on_parent_changed(event_args::empty);
-      on_control_added(control_event_args(item.get()));
-    }
   };
   
   controls_.item_erased += [&](size_t, reference_wrapper<control> item) {
     item.get().parent_ = 0;
     item.get().destroy_control();
-    on_control_removed(control_event_args(item.get()));
   };
 }
 
@@ -137,9 +132,9 @@ control& control::back_color(const color& color) {
   if (back_color_ != color) {
     back_color_ = color;
     native::control::back_color(handle_, back_color_.value());
-    on_back_color_changed(event_args::empty);
     for (auto& control : controls())
       if (control.get().parent_) control.get().on_parent_back_color_changed(event_args::empty);
+    on_back_color_changed(event_args::empty);
   }
   return *this;
 }
@@ -148,9 +143,9 @@ control& control::back_color(nullptr_t) {
   if (back_color_.has_value()) {
     back_color_.reset();
     recreate_handle();
-    on_back_color_changed(event_args::empty);
     for (auto& control : controls())
       if (control.get().parent_) control.get().on_parent_back_color_changed(event_args::empty);
+    on_back_color_changed(event_args::empty);
   }
   return *this;
 }
@@ -194,9 +189,9 @@ control& control::cursor(const forms::cursor &cursor) {
   if (cursor_ != cursor) {
     cursor_ = cursor;
     native::control::cursor(handle_, cursor_.value().handle());
-    on_cursor_changed(event_args::empty);
     for (auto& control : controls())
       if (control.get().parent_) control.get().on_parent_cursor_changed(event_args::empty);
+    on_cursor_changed(event_args::empty);
   }
   return *this;
 }
@@ -205,9 +200,9 @@ control& control::cursor(nullptr_t) {
   if (cursor_.has_value()) {
     cursor_.reset();
     recreate_handle();
-    on_cursor_changed(event_args::empty);
     for (auto& control : controls())
       if (control.get().parent_) control.get().on_parent_cursor_changed(event_args::empty);
+    on_cursor_changed(event_args::empty);
   }
   return *this;
 }
@@ -229,6 +224,8 @@ control& control::enabled(bool enabled) {
   if (get_state(state::enabled) != enabled) {
     set_state(state::enabled, enabled);
     native::control::enabled(handle_, get_state(state::enabled));
+    for (auto& control : controls())
+      if (control.get().parent_) control.get().on_parent_enabled_changed(event_args::empty);
     on_enabled_changed(event_args::empty);
   }
   return *this;
@@ -244,9 +241,9 @@ control& control::font(const drawing::font& font) {
   if (font_ != font) {
     font_ = font;
     native::control::font(handle_, font_.value());
-    on_font_changed(event_args::empty);
     for (auto& control : controls())
       if (control.get().parent_) control.get().on_parent_font_changed(event_args::empty);
+    on_font_changed(event_args::empty);
   }
   return *this;
 }
@@ -255,9 +252,9 @@ control& control::font(nullptr_t) {
   if (font_.has_value()) {
     font_.reset();
     recreate_handle();
-    on_font_changed(event_args::empty);
     for (auto& control : controls())
       if (control.get().parent_) control.get().on_parent_font_changed(event_args::empty);
+    on_font_changed(event_args::empty);
   }
   return *this;
 }
@@ -272,9 +269,9 @@ control& control::fore_color(const color& color) {
   if (fore_color_ != color) {
     fore_color_ = color;
     native::control::fore_color(handle_, fore_color_.value());
-    on_fore_color_changed(event_args::empty);
     for (auto& control : controls())
       if (control.get().parent_) control.get().on_parent_fore_color_changed(event_args::empty);
+    on_fore_color_changed(event_args::empty);
   }
   return *this;
 }
@@ -283,9 +280,9 @@ control& control::fore_color(nullptr_t) {
   if (fore_color_.has_value()) {
     fore_color_.reset();
     recreate_handle();
-    on_fore_color_changed(event_args::empty);
     for (auto& control : controls())
       if (control.get().parent_) control.get().on_parent_fore_color_changed(event_args::empty);
+    on_fore_color_changed(event_args::empty);
   }
   return *this;
 }
@@ -342,7 +339,7 @@ control& control::parent(nullptr_t) {
   return *this;
 }
 
-control& control::text(const string& text) {
+control& control::text(const ustring& text) {
   if (text_ != text) {
     text_ = text;
     native::control::text(handle_, text_);
@@ -374,14 +371,12 @@ void control::bring_to_front() {
 }
 
 void control::create_control() {
-  suspend_layout();
   if (!get_state(state::destroying) && !get_state(state::creating) && !get_state(state::created)) {
+    suspend_layout();
     set_state(state::destroyed, false);
     set_state(state::creating, true);
     create_handle();
-    if (!parent_) top_level_controls_.push_back(control_ref(*this));
-    send_message(handle_, WM_CREATE, 0, 0);
-    on_create_control();
+    send_message(handle_, WM_CREATE, 0, handle_);
     set_state(state::creating, false);
     set_state(state::created, true);
     resume_layout();
@@ -397,9 +392,10 @@ void control::destroy_control() {
       for(control_ref child : controls_)
         child.get().destroy_control();
       
-      if (parent_ != 0 && parent().has_value() && !parent().value().get().get_state(state::destroying))
+      if (parent_ != 0 && parent().has_value() && !parent().value().get().get_state(state::destroying)) {
+        parent().value().get().on_control_removed(control_event_args(*this));
         parent(nullptr);
-      else {
+      } else {
         for (size_t index = 0; index < top_level_controls_.size(); index++) {
           if (top_level_controls_[index].get().handle_ == handle_) {
             top_level_controls_.erase_at(index);
@@ -420,7 +416,9 @@ graphics control::create_graphics() const {
 
 void control::create_handle() {
   set_state(state::creating_handle, true);
-  handle_ = native::control::create(create_params());
+  auto params = create_params();
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::creation), ustring::format("create handle {} with params {}", *this, params));
+  handle_ = native::control::create(params);
   on_handle_created(event_args::empty);
   set_state(state::creating_handle, false);
 }
@@ -463,27 +461,27 @@ optional<reference_wrapper<control>> control::from_handle(intptr_t handle) {
 }
 
 void control::invalidate(const drawing::rectangle& rect, bool invalidate_children) const {
-  native::control::invalidate(handle_, rect, true);
   if (invalidate_children)
-    for ( auto child : controls_)
+    for (auto child : controls_)
       child.get().invalidate(rect, invalidate_children);
+  native::control::invalidate(handle_, rect, true);
 }
 
 bool control::is_handle_created() const {
   return handle_ != 0;
 }
 
-control::async_result_invoke control::begin_invoke(delegate<void(vector<any>)> value, const vector<any>& args) {
+shared_ptr<iasync_result> control::begin_invoke(delegate<void(vector<any>)> value, const vector<any>& args) {
   while (!xtd::forms::application::message_loop()) this_thread::sleep_for(10ms);
-  async_result_invoke async;
-  async.async_mutex().lock();
-  native::control::invoke_in_control_thread(handle_, value, args, async.async_mutex_);
+  shared_ptr<async_result_invoke> async = make_shared<async_result_invoke>(std::reference_wrapper(*this));
+  async->async_mutex().lock();
+  native::control::invoke_in_control_thread(handle_, value, args, async->async_mutex_, async->is_completed_);
   this_thread::yield();
   return async;
 }
 
-void control::end_invoke(async_result_invoke async) {
-  lock_guard<shared_mutex> lock(async.async_mutex());
+void control::end_invoke(shared_ptr<iasync_result> async) {
+  lock_guard<shared_mutex> lock(async->async_mutex());
 }
 
 forms::create_params control::create_params() const {
@@ -517,16 +515,19 @@ void control::on_back_color_changed(const event_args &e) {
 }
 
 void control::on_background_image_changed(const event_args &e) {
-  invalidate();
+  refresh();
   if (can_raise_events()) background_image_changed(*this, e);
 }
 
 void control::on_background_image_layout_changed(const event_args &e) {
-  invalidate();
+  refresh();
   if (can_raise_events()) background_image_layout_changed(*this, e);
 }
 
 void control::on_create_control() {
+  if (!parent_) top_level_controls_.push_back(control_ref(*this));
+  on_parent_changed(event_args::empty);
+  if (parent_) parent().value().get().on_control_added(control_event_args(*this));
   for (auto control : controls_) {
     control.get().parent_ = handle_;
     control.get().create_control();
@@ -595,6 +596,7 @@ void control::on_handle_created(const event_args &e) {
   native::control::register_wnd_proc(handle_, {*this, &control::wnd_proc_});
   handles_[handle_] = this;
   if (get_state(state::client_size_setted)) native::control::client_size(handle_, client_size());
+  else native::control::size(handle_, this->size());
   if (!xtd::forms::theme_colors::current_theme().is_default() || back_color_.has_value() || back_color() != default_back_color()) native::control::back_color(handle_, back_color());
   if (cursor_.has_value() || cursor() != default_cursor()) native::control::cursor(handle_, cursor().handle());
   if (!xtd::forms::theme_colors::current_theme().is_default() || fore_color_.has_value() || fore_color() != default_fore_color()) native::control::fore_color(handle_, fore_color());
@@ -609,9 +611,11 @@ void control::on_handle_created(const event_args &e) {
   size_ = native::control::size(handle_);
 
   if (can_raise_events()) handle_created(*this, e);
-  
-  if (parent_) parent().value().get().perform_layout();
-  perform_layout();
+
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::creation), ustring::format("on handle created control={}, location={}, size={}, client_size={}", *this, location(), this->size(), client_size()));
+
+  if (!get_state(control::state::recreate) && parent_) parent().value().get().perform_layout();
+  if (!get_state(control::state::recreate)) perform_layout();
 }
 
 void control::on_handle_destroyed(const event_args &e) {
@@ -638,7 +642,6 @@ void control::on_layout(const event_args &e) {
 }
 
 void control::on_location_changed(const event_args &e) {
-  if (handle_ && top() < screen::get_working_area(handle_).top()) top(screen::get_working_area(handle_).top());
   if (parent_ && parent().value().get().auto_size()) parent().value().get().perform_layout();
   if (can_raise_events()) location_changed(*this, e);
 }
@@ -710,6 +713,13 @@ void control::on_parent_cursor_changed(const event_args &e) {
     for (auto control : controls())
       control.get().on_parent_back_color_changed(event_args::empty);
   }
+}
+
+void control::on_parent_enabled_changed(const event_args &e) {
+  set_state(state::enabled, parent().value().get().enabled());
+  native::control::enabled(handle_, get_state(state::enabled));
+  for (auto control : controls())
+    control.get().on_parent_enabled_changed(event_args::empty);
 }
 
 void control::on_parent_fore_color_changed(const event_args &e) {
@@ -800,10 +810,10 @@ void control::set_auto_size_mode(auto_size_mode auto_size_mode) {
   }
 }
 
-string control::to_string() const {
-  if (!name_.empty()) return strings::format("{}, name: {}", strings::full_class_name(*this), name_);
-  if (!text_.empty()) return strings::format("{}, text: {}", strings::full_class_name(*this), text_);
-  return strings::full_class_name(*this);
+ustring control::to_string() const noexcept {
+  if (!name_.empty()) return ustring::format("{}, name: {}", ustring::full_class_name(*this), name_);
+  if (!text_.empty()) return ustring::format("{}, text: {}", ustring::full_class_name(*this), text_);
+  return ustring::full_class_name(*this);
 }
 
 void control::update() const {
@@ -817,7 +827,7 @@ intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_
     return message.result();
   /*
   } catch(const exception& e) {
-    message_box::show(from_handle(hwnd).value(), xtd::strings::format("message: {}", e.what()), xtd::strings::format("Exception {}", xtd::strings::class_name(e)), message_box_buttons::ok, message_box_icon::error);
+    message_box::show(from_handle(hwnd).value(), xtd::ustring::format("message: {}", e.what()), xtd::ustring::format("Exception {}", xtd::ustring::class_name(e)), message_box_buttons::ok, message_box_icon::error);
   } catch(...) {
     message_box::show(from_handle(hwnd).value(), "message: An unknown exception occure", "Unknown Exception", message_box_buttons::ok, message_box_icon::error);
   }
@@ -826,9 +836,10 @@ intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_
 }
 
 void control::wnd_proc(message& message) {
-  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::events), strings::format("({}) receive message [{}]", *this, message));
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::events), ustring::format("({}) receive message [{}]", *this, message));
   switch (message.msg()) {
       // keyboard:
+    case WM_CREATE: wm_create(message); break;
     case WM_CHAR:
     case WM_KEYDOWN:
     case WM_KEYUP:
@@ -877,21 +888,21 @@ void control::recreate_handle() {
     set_state(state::recreate, true);
     for (auto control : controls()) control.get().set_state(state::parent_recreating, true);
 
+    native::control::unregister_wnd_proc(handle_);
+    handles_.erase(handle_);
     on_handle_destroyed(event_args::empty);
-    intptr_t old_handle = handle_;
+    intptr_t previous_handle = handle_;
     handle_ = 0;
     create_handle();
     for (auto control : controls()) {
       control.get().parent_ = handle_;
       control.get().recreate_handle();
     }
-    intptr_t new_handle = handle_;
-    handle_ = old_handle;
-    destroy_handle();
-    handle_ = new_handle;
+    native::control::destroy(previous_handle);
 
     for (auto control : controls()) control.get().set_state(state::parent_recreating, false);
     set_state(state::recreate, false);
+    perform_layout();
   }
 }
 
@@ -928,7 +939,7 @@ void control::set_client_size_core(int32_t width, int32_t height) {
   on_resize(event_args::empty);
 }
 
-void control::on_parent_size_changed(const control& sender, const event_args& e) {
+void control::on_parent_size_changed(object& sender, const event_args& e) {
   if (!get_state(state::layout_deferred) && !reentrant_layout::is_reentrant(this)) {
     perform_layout();
     parent_size_ = parent().value().get().get_state(state::client_size_setted) ? parent().value().get().client_size() :  parent().value().get().size();
@@ -944,10 +955,10 @@ void control::do_layout_childs_with_dock_style() {
 
   if (docked) {
     drawing::rectangle docking_rect = {{0, 0}, client_size()};
-    if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), strings::format("({}) do_layout :", *this));
+    if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), ustring::format("({}) do_layout :", *this));
     if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::indent();
-    if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), strings::format("docking_rect = {}", docking_rect));
-    if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), strings::format("padding = {}", padding_));
+    if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), ustring::format("docking_rect = {}", docking_rect));
+    if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), ustring::format("padding = {}", padding_));
     docking_rect.left(docking_rect.left() + padding_.left());
     docking_rect.top(docking_rect.top() + padding_.top());
     docking_rect.width(docking_rect.width() - padding_.left() - padding_.right());
@@ -959,31 +970,31 @@ void control::do_layout_childs_with_dock_style() {
         iterator->get().width(docking_rect.width());
         docking_rect.top(docking_rect.top() + iterator->get().height());
         docking_rect.height(docking_rect.height() - iterator->get().height());
-        if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), strings::format("top ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
+        if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), ustring::format("top ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
       } else if (iterator->get().dock() == dock_style::bottom) {
         iterator->get().location({docking_rect.left(), docking_rect.bottom() - iterator->get().height()});
         iterator->get().width(docking_rect.width());
         docking_rect.height(docking_rect.height() - iterator->get().height());
-        if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), strings::format("bottom ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
+        if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), ustring::format("bottom ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
       } else if (iterator->get().dock() == dock_style::left) {
         iterator->get().location({docking_rect.left(), docking_rect.top()});
         iterator->get().height(docking_rect.height());
         docking_rect.left(docking_rect.left() + iterator->get().width());
         docking_rect.width(docking_rect.width() - iterator->get().width());
-        if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), strings::format("left ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
+        if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), ustring::format("left ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
       } else if (iterator->get().dock() == dock_style::right) {
         iterator->get().location({docking_rect.right() - iterator->get().width(), docking_rect.top()});
         iterator->get().height(docking_rect.height());
         docking_rect.width(docking_rect.width() - iterator->get().width());
-        if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), strings::format("right ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
+        if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), ustring::format("right ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
       } else if (iterator->get().dock() == dock_style::fill) {
         iterator->get().location({docking_rect.left(), docking_rect.top()});
         iterator->get().size({docking_rect.width(), docking_rect.height()});
-        if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), strings::format("fill ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
+        if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), ustring::format("fill ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
       }
     }
     if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::unindent();
-    if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), strings::format("({}) end do_layout :", *this));
+    if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), ustring::format("({}) end do_layout :", *this));
   }
 }
 
@@ -1023,6 +1034,10 @@ void control::do_layout_with_auto_size_mode() {
   }
 }
 
+void control::wm_create(message& message) {
+  on_create_control();
+}
+
 void control::wm_child_activate(message& message) {
   def_wnd_proc(message);
 }
@@ -1034,7 +1049,7 @@ void control::wm_command(message& message) {
 }
 
 void control::wm_key_char(message& message) {
-  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::key_events), strings::format("({}) receive message [{}]", *this, message));
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::key_events), ustring::format("({}) receive message [{}]", *this, message));
   if (message.msg() == WM_KEYDOWN || message.msg ()== WM_SYSKEYDOWN) {
     key_event_args key_event_args(static_cast<keys>(message.wparam()));
     modifier_keys_ = key_event_args.modifiers();
@@ -1063,7 +1078,7 @@ void control::wm_kill_focus(message& message) {
 }
 
 void control::wm_mouse_down(message& message) {
-  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), strings::format("({}) receive message [{}]", *this, message));
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), ustring::format("({}) receive message [{}]", *this, message));
   def_wnd_proc(message);
   set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
   mouse_event_args e = mouse_event_args::create(message, get_state(state::double_click_fired));
@@ -1072,7 +1087,7 @@ void control::wm_mouse_down(message& message) {
 }
 
 void control::wm_mouse_double_click(message& message) {
-  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), strings::format("({}) receive message [{}]", *this, message));
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), ustring::format("({}) receive message [{}]", *this, message));
   def_wnd_proc(message);
   set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
   on_double_click(event_args::empty);
@@ -1080,21 +1095,21 @@ void control::wm_mouse_double_click(message& message) {
 }
 
 void control::wm_mouse_enter(message& message) {
-  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), strings::format("({}) receive message [{}]", *this, message));
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), ustring::format("({}) receive message [{}]", *this, message));
   mouse_in_ = true;
   def_wnd_proc(message);
   on_mouse_enter(event_args::empty);
 }
 
 void control::wm_mouse_leave(message& message) {
-  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), strings::format("({}) receive message [{}]", *this, message));
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), ustring::format("({}) receive message [{}]", *this, message));
   mouse_in_ = false;
   def_wnd_proc(message);
   on_mouse_leave(event_args::empty);
 }
 
 void control::wm_mouse_up(message& message) {
-  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), strings::format("({}) receive message [{}]", *this, message));
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), ustring::format("({}) receive message [{}]", *this, message));
   def_wnd_proc(message);
   mouse_event_args e = mouse_event_args::create(message);
   mouse_buttons_ &= ~e.button();
@@ -1104,7 +1119,7 @@ void control::wm_mouse_up(message& message) {
 }
 
 void control::wm_mouse_move(message& message) {
-  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), strings::format("({}) receive message [{}]", *this, message));
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), ustring::format("({}) receive message [{}]", *this, message));
   def_wnd_proc(message);
   mouse_event_args e = mouse_event_args(wparam_to_mouse_buttons(message), get_state(control::state::double_click_fired) ? 2 : 1, point_to_client({(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}), 0);
   // Workaround : sometimes mouse enter and/or mouse leave message are not send
@@ -1129,7 +1144,7 @@ void control::wm_move(message& message) {
 }
 
 void control::wm_mouse_wheel(message& message) {
-  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), strings::format("({}) receive message [{}]", *this, message));
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), ustring::format("({}) receive message [{}]", *this, message));
   def_wnd_proc(message);
   if (message.msg() == WM_MOUSEHWHEEL)
     on_mouse_horizontal_wheel(mouse_event_args::create(message, get_state(state::double_click_fired), static_cast<int32_t>(HIWORD(message.wparam()))));

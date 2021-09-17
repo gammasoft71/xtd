@@ -12,7 +12,7 @@
 #include "__format_exception.h"
 #include "__format_stringer.h"
 #include "__natural_formater.h"
-#include "../strings.h"
+#include "__sprintf.h"
 
 /// @cond
 template<typename char_t, typename value_t>
@@ -42,11 +42,11 @@ inline std::basic_string<char_t> __fixed_point_formater(const std::basic_string<
     case 'f':
     case 'F':
     case 'g':
-    case 'G': return xtd::strings::sprintf(fmt_str + fmt[0], precision, static_cast<long double>(value));
+    case 'G': return __sprintf((fmt_str + fmt[0]).c_str(), precision, static_cast<long double>(value));
     case 'n':
     case 'N': return __natural_formater<char_t>(static_cast<long double>(value), precision, loc);
-    case 'p': return xtd::strings::sprintf(fmt_str + char_t('f'), precision, static_cast<long double>(value * 100)) + std::basic_string<char_t>({char_t(' '), char_t('%')});
-    case 'P': return xtd::strings::sprintf(fmt_str + char_t('F'), precision, static_cast<long double>(value * 100)) + std::basic_string<char_t>({char_t(' '), char_t('%')});
+    case 'p': return __sprintf((fmt_str + char_t('f')).c_str(), precision, static_cast<long double>(value * 100)) + std::basic_string<char_t>({char_t(' '), char_t('%')});
+    case 'P': return __sprintf((fmt_str + char_t('F')).c_str(), precision, static_cast<long double>(value * 100)) + std::basic_string<char_t>({char_t(' '), char_t('%')});
     default: __format_exception("Invalid format expression"); return {};
   }
 }

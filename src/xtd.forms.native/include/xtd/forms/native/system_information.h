@@ -9,8 +9,8 @@
 /// @endcond
 
 #include <cstdint>
-#include <string>
 #include <xtd/static.h>
+#include <xtd/ustring.h>
 #include <xtd/environment.h>
 #include <xtd/drawing/size.h>
 #include <xtd/forms_native_export.h>
@@ -27,6 +27,8 @@ namespace xtd {
     /// @warning Internal use only
     namespace native {
       /// @brief Contains settings native API.
+      /// @par Namespace
+      /// xtd::forms::native
       /// @par Library
       /// xtd.forms.native
       /// @ingroup xtd_forms_native native
@@ -81,7 +83,7 @@ namespace xtd {
         /// @brief Gets the NetBIOS computer name of the local computer.
         /// @return The name of this computer.
         /// @warning Internal use only
-        static std::string computer_name();
+        static xtd::ustring computer_name();
         /// @brief Gets the maximum size, in pixels, that a cursor can occupy.
         /// @return A size that indicates the maximum dimensions of a cursor in pixels.
         /// @warning Internal use only

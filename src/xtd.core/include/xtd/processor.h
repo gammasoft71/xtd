@@ -5,11 +5,12 @@
 #include <map>
 #include <vector>
 #include "architecture_id.h"
-#include "strings.h"
+#include "object.h"
+#include "ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  class processor final {
+  class processor final : public object {
   public:
     processor(xtd::architecture_id architecture, bool is_64_bit, uint32_t core_count) : architecture_(architecture), is_64_bit_(is_64_bit), core_count_(core_count) {}
 
@@ -20,7 +21,7 @@ namespace xtd {
     friend std::ostream& operator <<(std::ostream& os, const processor& processor) noexcept {return os << processor.to_string();}
     /// @endcond
     
-    /// @brief Gets a System::xtd::platform_id enumeration value that identifies the operating system platform.
+    /// @brief Gets a xtd::platform_id enumeration value that identifies the operating system platform.
     /// @return xtd::platform_id One of the xtd::platform_id values.
     xtd::architecture_id architecture() const noexcept {return architecture_;}
 
@@ -34,14 +35,14 @@ namespace xtd {
     
     /// @brief Gets the concatenated string representation of the platform identifier.
     /// @return The string representation of the values returned by the platform.
-    std::string name() const noexcept {
-      static std::map<xtd::architecture_id, std::string> processor_names {{architecture_id::x86, "Intel or AMD"}, {architecture_id::arm, "ARM"}, {architecture_id::unknown, "<Unknown>"}};
+    xtd::ustring name() const noexcept {
+      static std::map<xtd::architecture_id, xtd::ustring> processor_names {{architecture_id::x86, "Intel or AMD"}, {architecture_id::arm, "ARM"}, {architecture_id::unknown, "<Unknown>"}};
       return processor_names[architecture_];
     }
 
-    std::string architecture_string() const noexcept {
+    xtd::ustring architecture_string() const noexcept {
       if (!architecture_string_.empty()) return architecture_string_;
-      architecture_string_ = strings::format("{}", architecture_);
+      architecture_string_ = ustring::format("{}", architecture_);
       if (is_64_bit_) {
         if (architecture_ == architecture_id::x86) architecture_string_ += "_";
         architecture_string_ += "64";
@@ -51,12 +52,12 @@ namespace xtd {
     
     /// @brief Converts the value of this processor object to its equivalent string representation.
     /// @return The string representation of the values returned by the platform, version, and service_pack methods.
-    std::string to_string() const noexcept {return architecture_string();}
+    xtd::ustring to_string() const noexcept {return architecture_string();}
     
   private:
     xtd::architecture_id architecture_ = xtd::architecture_id::unknown;
     bool is_64_bit_ = false;
     uint32_t core_count_ = 1;
-    mutable std::string architecture_string_;
+    mutable xtd::ustring architecture_string_;
   };
 }

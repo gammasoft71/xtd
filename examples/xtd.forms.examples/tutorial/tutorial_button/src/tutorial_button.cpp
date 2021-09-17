@@ -13,7 +13,7 @@ namespace tutorial {
       button_quit.image_align(xtd::forms::content_alignment::middle_left);
       button_quit.text("&Quit");
       button_quit.location(xtd::drawing::point(20, 20));
-      button_quit.click += xtd::event_handler<xtd::forms::control&>(*this, &form_button::on_quit);
+      button_quit.click += xtd::event_handler(*this, &form_button::on_quit);
     }
 
     static void main() {
@@ -21,7 +21,7 @@ namespace tutorial {
     }
     
   private:
-    void on_quit(xtd::forms::control& sender, const xtd::event_args& e) {
+    void on_quit(object& sender, const xtd::event_args& e) {
       close();
     }
     

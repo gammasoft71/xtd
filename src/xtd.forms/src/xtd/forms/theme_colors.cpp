@@ -58,7 +58,7 @@ namespace {
   //
   // int main() {
   //   for (xtd::forms::known_themed_color color = xtd::forms::known_themed_color::accent; color <= xtd::forms::known_themed_color::window_text; color = (xtd::forms::known_themed_color)((int)color + 1))
-  //     xtd::cdebug << xtd::strings::format("      case xtd::forms::known_themed_color::{}: return xtd::drawing::color::from_argb(0x{:X8});", color, xtd::forms::theme_color::current_theme().from_known_themed_color(color).to_argb()) << std::endl;
+  //     xtd::cdebug << xtd::ustring::format("      case xtd::forms::known_themed_color::{}: return xtd::drawing::color::from_argb(0x{:X8});", color, xtd::forms::theme_color::current_theme().from_known_themed_color(color).to_argb()) << std::endl;
   // }
 
   color gnome_dark_color_getter(known_themed_color color) {
@@ -605,7 +605,7 @@ namespace {
 const theme_colors theme_colors::empty {};
 theme_colors theme_colors::current_theme_;
 
-theme_colors theme_colors::theme_from_name(const std::string& name) {
+theme_colors theme_colors::theme_from_name(const xtd::ustring& name) {
   if (name == default_theme_name()) return theme_colors(default_theme_name(), theme_style::system_auto, {system_color_getter}, true);
   if (name == "gnome") return theme_colors("gnome", theme_style::system_auto, {gnome_color_getter});
   if (name == "gnome (dark)") return theme_colors("gnome (dark)", theme_style::dark, {gnome_dark_color_getter});

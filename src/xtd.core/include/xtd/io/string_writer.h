@@ -11,6 +11,8 @@ namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief Represents a writer that can write a sequential series of characters.
+    /// @par Namespace
+    /// xtd::io
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core io
@@ -20,29 +22,25 @@ namespace xtd {
       string_writer() = default;
       /// @brief Initializes a new instance of the stream_writer class for the specified string.
       /// @param str base string.
-      string_writer(const std::string& str) {write(str);}
+      string_writer(const xtd::ustring& str);
+      
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
-      const std::ostream& base_stream() const {return stream_;}
+      const std::ostream& base_stream() const noexcept;
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
-      std::ostream& base_stream() {return stream_;}
+      std::ostream& base_stream() noexcept;
 
       /// @brief Clears all buffers for the current writer and causes any buffered data to be written to the underlying device.
       /// @remarks This default method does nothing, but derived classes can virtual the method to provide the appropriate functionality
-      void flush() override {
-        stream_.flush();
-      }
+      void flush() override;
  
-      std::string to_string() const {return stream_.str();}
+      xtd::ustring to_string() const noexcept override;
       
       /// @brief Writes the specified string value to the text stream.
       /// @param value The value to write
-      /// @exception io::ioexception An I/O error occurs.
-      void write(const std::string& value) override {
-        stream_.write(value.c_str(), value.length());
-      }
-
+      /// @exception io::io_exception An I/O error occurs.
+      void write(const xtd::ustring& value) override;
     private:
       std::stringstream stream_;
     };

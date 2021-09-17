@@ -5,60 +5,156 @@
 /// @brief Contains dialogs appearances.
 ///
 /// @par About dialog appearance
-/// xtd::forms::about_dialog
-///
-/// | Mode  | Windows                                | macOS                                  | Gnome                                  |
-/// |-------|----------------------------------------|----------------------------------------|----------------------------------------|
-/// | Light | @image html dialog_about_dialog_w.png  | @image html dialog_about_dialog_m.png  | @image html dialog_about_dialog_g.png  |
-/// | Dark  | @image html dialog_about_dialog_wd.png | @image html dialog_about_dialog_md.png | @image html dialog_about_dialog_gd.png |
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <td style="width:100px">xtd::forms::about_dialog</td>
+///     <th><b>Windows</b></th>
+///     <th><b>macOS</b></th>
+///     <th><b>Gnome</b></th>
+///   </tr>
+///   <tr>
+///     <td>Light</td>
+///     <td>@image html dialog_about_dialog_w.png</td>
+///     <td>@image html dialog_about_dialog_m.png</td>
+///     <td>@image html dialog_about_dialog_g.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dark</td>
+///     <td>@image html dialog_about_dialog_wd.png</td>
+///     <td>@image html dialog_about_dialog_md.png</td>
+///     <td>@image html dialog_about_dialog_gd.png</td>
+///   </tr>
+/// </table>
 ///
 /// @par Busy dialog appearance
-/// xtd::forms::busy_dialog
-///
-/// | Mode  | Windows                               | macOS                                 | Gnome                                 |
-/// |-------|---------------------------------------|---------------------------------------|---------------------------------------|
-/// | Light | @image html dialog_busy_dialog_w.png  | @image html dialog_busy_dialog_m.png  | @image html dialog_busy_dialog_g.png  |
-/// | Dark  | @image html dialog_busy_dialog_wd.png | @image html dialog_busy_dialog_md.png | @image html dialog_busy_dialog_gd.png |
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <td style="width:100px">xtd::forms::busy_dialog</td>
+///     <th><b>Windows</b></th>
+///     <th><b>macOS</b></th>
+///     <th><b>Gnome</b></th>
+///   </tr>
+///   <tr>
+///     <td>Light</td>
+///     <td>@image html dialog_busy_dialog_w.png</td>
+///     <td>@image html dialog_busy_dialog_m.png</td>
+///     <td>@image html dialog_busy_dialog_g.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dark</td>
+///     <td>@image html dialog_busy_dialog_wd.png</td>
+///     <td>@image html dialog_busy_dialog_md.png</td>
+///     <td>@image html dialog_busy_dialog_gd.png</td>
+///   </tr>
+/// </table>
 ///
 /// @par Color folder browser appearance
-/// xtd::forms::folder_browser_dialog
-///
-/// | Mode  | Windows                                | macOS                                  | Gnome                                  |
-/// |-------|----------------------------------------|----------------------------------------|----------------------------------------|
-/// | Light | @image html dialog_color_dialog_w.png  | @image html dialog_color_dialog_m.png  | @image html dialog_color_dialog_g.png  |
-/// | Dark  | @image html dialog_color_dialog_wd.png | @image html dialog_color_dialog_md.png | @image html dialog_color_dialog_gd.png |
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <td style="width:100px">xtd::forms::folder_browser_dialog</td>
+///     <th><b>Windows</b></th>
+///     <th><b>macOS</b></th>
+///     <th><b>Gnome</b></th>
+///   </tr>
+///   <tr>
+///     <td>Light</td>
+///     <td>@image html dialog_color_dialog_w.png</td>
+///     <td>@image html dialog_color_dialog_m.png</td>
+///     <td>@image html dialog_color_dialog_g.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dark</td>
+///     <td>@image html dialog_color_dialog_wd.png</td>
+///     <td>@image html dialog_color_dialog_md.png</td>
+///     <td>@image html dialog_color_dialog_gd.png</td>
+///   </tr>
+/// </table>
 ///
 /// @par Exception dialog appearance
-/// xtd::forms::exception_dialog
-///
-/// | Mode  | Windows                                    | macOS                                      | Gnome                                      |
-/// |-------|--------------------------------------------|--------------------------------------------|--------------------------------------------|
-/// | Light | @image html dialog_exception_dialog_w.png  | @image html dialog_exception_dialog_m.png  | @image html dialog_exception_dialog_g.png  |
-/// | Dark  | @image html dialog_exception_dialog_wd.png | @image html dialog_exception_dialog_md.png | @image html dialog_exception_dialog_gd.png |
-///
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <td style="width:100px">xtd::forms::exception_dialog</td>
+///     <th><b>Windows</b></th>
+///     <th><b>macOS</b></th>
+///     <th><b>Gnome</b></th>
+///   </tr>
+///   <tr>
+///     <td>Light</td>
+///     <td>@image html dialog_exception_dialog_w.png</td>
+///     <td>@image html dialog_exception_dialog_m.png</td>
+///     <td>@image html dialog_exception_dialog_g.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dark</td>
+///     <td>@image html dialog_exception_dialog_wd.png</td>
+///     <td>@image html dialog_exception_dialog_md.png</td>
+///     <td>@image html dialog_exception_dialog_gd.png</td>
+///   </tr>
+/// </table>
 ///
 /// @par Folder browser dialog appearance
-/// xtd::forms::folder_browser_dialog
-///
-/// | Mode  | Windows                                         | macOS                                           | Gnome                                           |
-/// |-------|-------------------------------------------------|-------------------------------------------------|-------------------------------------------------|
-/// | Light | @image html dialog_folder_browser_dialog_w.png  | @image html dialog_folder_browser_dialog_m.png  | @image html dialog_folder_browser_dialog_g.png  |
-/// | Dark  | @image html dialog_folder_browser_dialog_wd.png | @image html dialog_folder_browser_dialog_md.png | @image html dialog_folder_browser_dialog_gd.png |
-///
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <td style="width:100px">xtd::forms::folder_browser_dialog</td>
+///     <th><b>Windows</b></th>
+///     <th><b>macOS</b></th>
+///     <th><b>Gnome</b></th>
+///   </tr>
+///   <tr>
+///     <td>Light</td>
+///     <td>@image html dialog_folder_browser_dialog_w.png</td>
+///     <td>@image html dialog_folder_browser_dialog_m.png</td>
+///     <td>@image html dialog_folder_browser_dialog_g.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dark</td>
+///     <td>@image html dialog_folder_browser_dialog_wd.png</td>
+///     <td>@image html dialog_folder_browser_dialog_md.png</td>
+///     <td>@image html dialog_folder_browser_dialog_gd.png</td>
+///   </tr>
+/// </table>
 ///
 /// @par Font dialog appearance
-/// xtd::forms::font_dialog
-///
-/// | Mode  | Windows                               | macOS                                 | Gnome                                 |
-/// |-------|---------------------------------------|---------------------------------------|---------------------------------------|
-/// | Light | @image html dialog_font_dialog_w.png  | @image html dialog_font_dialog_m.png  | @image html dialog_font_dialog_g.png  |
-/// | Dark  | @image html dialog_font_dialog_wd.png | @image html dialog_font_dialog_md.png | @image html dialog_font_dialog_gd.png |
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <td style="width:100px">xtd::forms::font_dialog</td>
+///     <th><b>Windows</b></th>
+///     <th><b>macOS</b></th>
+///     <th><b>Gnome</b></th>
+///   </tr>
+///   <tr>
+///     <td>Light</td>
+///     <td>@image html dialog_font_dialog_w.png</td>
+///     <td>@image html dialog_font_dialog_m.png</td>
+///     <td>@image html dialog_font_dialog_g.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dark</td>
+///     <td>@image html dialog_font_dialog_wd.png</td>
+///     <td>@image html dialog_font_dialog_md.png</td>
+///     <td>@image html dialog_font_dialog_gd.png</td>
+///   </tr>
+/// </table>
 ///
 /// @par Input dialog appearance
-/// xtd::forms::input_dialog
-///
-/// | Mode  | Windows                                | macOS                                  | Gnome                                  |
-/// |-------|----------------------------------------|----------------------------------------|----------------------------------------|
-/// | Light | @image html dialog_input_dialog_w.png  | @image html dialog_input_dialog_m.png  | @image html dialog_input_dialog_g.png  |
-/// | Dark  | @image html dialog_input_dialog_wd.png | @image html dialog_input_dialog_md.png | @image html dialog_input_dialog_gd.png |
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <td style="width:100px">xtd::forms::input_dialog</td>
+///     <th><b>Windows</b></th>
+///     <th><b>macOS</b></th>
+///     <th><b>Gnome</b></th>
+///   </tr>
+///   <tr>
+///     <td>Light</td>
+///     <td>@image html dialog_input_dialog_w.png</td>
+///     <td>@image html dialog_input_dialog_m.png</td>
+///     <td>@image html dialog_input_dialog_g.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dark</td>
+///     <td>@image html dialog_input_dialog_wd.png</td>
+///     <td>@image html dialog_input_dialog_md.png</td>
+///     <td>@image html dialog_input_dialog_gd.png</td>
+///   </tr>
+/// </table>
 ///

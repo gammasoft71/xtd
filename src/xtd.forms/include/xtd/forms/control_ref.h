@@ -2,6 +2,7 @@
 /// @brief Contains xtd::forms::control_ref typedef.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+#include <xtd/object.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -12,22 +13,28 @@ namespace xtd {
     /// @endcond
     
     /// @brief Represents a control reference.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
     using control_ref = std::reference_wrapper<control>;
     
     /// @brief Represents a const control reference.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
     using const_control_ref = std::reference_wrapper<const control>;
 
     /// @brief Represents less comparator for control_ref.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    struct control_ref_less {
+    struct control_ref_less : public object {
       /// @brief Compare two specified control_ref.
       /// @param value1 The first value to compare.
       /// @param value2 The second value to compare.
@@ -38,6 +45,8 @@ namespace xtd {
     };
 
     /// @brief Represents less comparator for const const_control_ref.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms

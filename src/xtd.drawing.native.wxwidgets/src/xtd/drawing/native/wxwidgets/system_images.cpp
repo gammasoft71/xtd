@@ -4,8 +4,8 @@
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/system_images.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/convert_string.h>
 #include <xtd/environment.h>
-#include <xtd/strings.h>
 
 using namespace xtd;
 using namespace xtd::drawing::native;
@@ -16,7 +16,7 @@ GdkPixbuf* __gtk_get_image_from_name__(const char* name, int32_t width, int32_t 
 intptr_t __macos_get_image_from_name__(const char* name, int32_t width, int32_t height);
 #endif
 
-intptr_t system_images::from_name(const std::string& name, int32_t width, int32_t height) {
+intptr_t system_images::from_name(const ustring& name, int32_t width, int32_t height) {
 #if defined(__WXMSW__)
   return 0;
 #elif defined(__WXGTK__)

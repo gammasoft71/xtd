@@ -1,13 +1,14 @@
 #pragma once
 #include <vector>
 #include <xtd/event.h>
+#include <xtd/object.h>
 #include "cell.h"
 
 namespace game_of_life {
   using cell_row_collection = std::vector<cell>;
   using cell_collection = std::vector<cell_row_collection>;
   
-  class grid {
+  class grid : public xtd::object {
   public:
     static constexpr int columns = 1000; //5200;
     static constexpr int rows = 800; //4100;
@@ -71,7 +72,7 @@ namespace game_of_life {
       return neighbors;
     }
 
-    xtd::event<grid, xtd::event_handler<grid&>> cells_updated;
+    xtd::event<grid, xtd::event_handler> cells_updated;
 
   private:
     void on_cells_updated(const xtd::event_args& e) {cells_updated(*this, e);}

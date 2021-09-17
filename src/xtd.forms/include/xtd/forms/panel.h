@@ -10,24 +10,14 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Used to group collections of controls.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms containers
     /// @par Examples
     /// The following code example demonstrate the use of panel container.
     /// @include panel.cpp
-    /// @par Windows
-    /// @image html panel_w.png
-    /// <br>
-    /// @image html panel_wd.png
-    /// @par macOS
-    /// @image html panel_m.png
-    /// <br>
-    /// @image html panel_md.png
-    /// @par Gnome
-    /// @image html panel_g.png
-    /// <br>
-    /// @image html panel_gd.png
     class forms_export_ panel : public scrollable_control {
     public:
       /// @brief Initialises a new instance of panel class.

@@ -1,12 +1,11 @@
 # label
 
-demonstrates the use of [xtd::forms::label](../../../../src/xtd_forms/include/xtd/forms/label.hpp) control.
+demonstrates the use of [xtd::forms::label](../../../../src/xtd.forms/include/xtd/forms/label.h) control.
 
 # Sources
 
-[src/label.cpp](src/label.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/label.cpp](src/label.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

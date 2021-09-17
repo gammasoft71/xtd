@@ -19,24 +19,14 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a common dialog box that displays exception box.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
     /// @par Examples
     /// The following code example demonstrate the use of exception_dialog dialog.
     /// @include exception_dialog.cpp
-    /// @par Windows
-    /// @image html exception_dialog_w.png
-    /// <br>
-    /// @image html exception_dialog_wd.png
-    /// @par macOS
-    /// @image html exception_dialog_m.png
-    /// <br>
-    /// @image html exception_dialog_md.png
-    /// @par Gnome
-    /// @image html exception_dialog_g.png
-    /// <br>
-    /// @image html exception_dialog_gd.png
     class forms_export_ exception_dialog final : public component {
     public:
       /// @brief Initializes a new instance of the exception_dialog class.
@@ -71,11 +61,11 @@ namespace xtd {
 
       /// @brief Gets the dialog caption text.
       /// @return The current dialog caption text.
-      std::string text() const {return text_;}
+      xtd::ustring text() const {return text_;}
       /// @brief Sets the dialog caption text.
       /// @param text The new dialog caption text.
       /// @return Current input_dialog instance.
-      exception_dialog& text(const std::string& text) {
+      exception_dialog& text(const xtd::ustring& text) {
         if (text_ != text)
           text_ = text;
         return *this;
@@ -96,7 +86,7 @@ namespace xtd {
       
       /// @brief Occurs when the user close an exception dialog box with dialog close button or other dialog buttons.
       /// @ingroup events
-      event<exception_dialog, dialog_closed_event_handler<exception_dialog&>> dialog_closed;
+      event<exception_dialog, dialog_closed_event_handler> dialog_closed;
 
     protected:
       /// @brief Raises the close event.
@@ -111,7 +101,7 @@ namespace xtd {
       xtd::forms::dialog_result dialog_result_ = xtd::forms::dialog_result::none;
       xtd::forms::dialog_style dialog_style_ = xtd::forms::dialog_style::standard;
       const std::exception* exception_ = nullptr;
-      std::string text_;
+      xtd::ustring text_;
     };
   }
 }

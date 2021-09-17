@@ -6,13 +6,13 @@ using namespace xtd;
 namespace examples {
   class istringable : public interface {
   public:
-    virtual std::string to_string() const = 0;
+    virtual ustring to_string() const = 0;
   };
   
   class program : public istringable {
   public:
     program() = default;
-    std::string to_string() const override {return "program";}
+    ustring to_string() const override {return "program";}
   };
 }
 

@@ -27,6 +27,8 @@ namespace xtd {
     /// @warning Internal use only
     namespace native {
       /// @brief Contains cursor native API.
+      /// @par Namespace
+      /// xtd::forms::native
       /// @par Library
       /// xtd.forms.native
       /// @ingroup xtd_forms_native native

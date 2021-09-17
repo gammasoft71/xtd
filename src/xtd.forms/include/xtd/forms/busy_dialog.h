@@ -17,24 +17,14 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a dialog box that displays busy dialog.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
     /// @par Examples
     /// The following code example demonstrate the use of busy_dialog dialog.
     /// @include busy_dialog.cpp
-    /// @par Windows
-    /// @image html busy_dialog_w.png
-    /// <br>
-    /// @image html busy_dialog_wd.png
-    /// @par macOS
-    /// @image html busy_dialog_m.png
-    /// <br>
-    /// @image html busy_dialog_md.png
-    /// @par Gnome
-    /// @image html busy_dialog_g.png
-    /// <br>
-    /// @image html busy_dialog_gd.png
     class forms_export_ busy_dialog  final : public component {
     public:
       /// @brief Initializes a new instance of the busy_dialog class.
@@ -78,22 +68,22 @@ namespace xtd {
       
       /// @brief Gets the dialog title.
       /// @return The dialog title.
-      const std::string& text() const {return text_;}
+      const xtd::ustring& text() const {return text_;}
       /// @brief Sets the dialog title.
       /// @param text The dialog title.
       /// @return Current busy_dialog instance.
-      busy_dialog& text(const std::string& text) {
+      busy_dialog& text(const xtd::ustring& text) {
         text_ = text;
         return *this;
       }
       
       /// @brief Gets the product description.
       /// @return The product description.
-      const std::string& description() const {return description_;}
+      const xtd::ustring& description() const {return description_;}
       /// @brief Sets the product description.
       /// @param description The product description.
       /// @return Current busy_dialog instance.
-      busy_dialog& description(const std::string& description) {
+      busy_dialog& description(const xtd::ustring& description) {
         description_ = description;
         return *this;
       }
@@ -152,8 +142,8 @@ namespace xtd {
       xtd::forms::dialog_style dialog_style_ = xtd::forms::dialog_style::system;
       xtd::drawing::color fore_color_ = xtd::forms::theme_colors::current_theme().control_text();
       xtd::drawing::image icon_;
-      std::string text_;
-      std::string description_;
+      xtd::ustring text_;
+      xtd::ustring description_;
       double opacity_ = 0.;
       bool native_ = false;
       intptr_t handle_ = 0;

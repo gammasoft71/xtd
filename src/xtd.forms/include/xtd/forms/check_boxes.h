@@ -10,24 +10,14 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Provides a collection of check_box objects for use by a Windows Forms application.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
     /// The following code example demonstrate the use of check_boxes control factory.
     /// @include check_boxes.cpp
-    /// @par Windows
-    /// @image html check_boxescheck_boxes_w.png
-    /// <br>
-    /// @image html check_boxes_wd.png
-    /// @par macOS
-    /// @image html check_boxescheck_boxes_m.png
-    /// <br>
-    /// @image html check_boxes_md.png
-    /// @par Gnome
-    /// @image html check_boxes_g.png
-    /// <br>
-    /// @image html check_boxes_gd.png
     class check_boxes final static_ {
     public:
       /// @brief Create a system-defined check_box that represent abort check_box.

@@ -4,10 +4,11 @@
 #pragma once
 #include <any>
 #include <limits>
+#include <memory>
 #include <stdexcept>
 #include "parse.h"
-#include "strings.h"
 #include "types.h"
+#include "unused.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -43,6 +44,8 @@ namespace xtd {
   /// @endcond
   
   /// @brief Return true if specified value is the specified bool. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -59,6 +62,8 @@ namespace xtd {
   }
   
   /// @brief Return true if specified value is the specified decimal_t. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -75,6 +80,8 @@ namespace xtd {
   }
   
   /// @brief Return true if specified value is the specified double. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -91,6 +98,8 @@ namespace xtd {
   }
   
   /// @brief Return true if specified value is the specified float. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -107,6 +116,8 @@ namespace xtd {
   }
   
   /// @brief Return true if specified value is the specified int8_t. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -123,6 +134,8 @@ namespace xtd {
   }
 
   /// @brief Return true if specified value is the specified int16_t. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -139,6 +152,8 @@ namespace xtd {
   }
   
   /// @brief Return true if specified value is the specified int32_t. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -155,6 +170,8 @@ namespace xtd {
   }
   
   /// @brief Return true if specified value is the specified int64_t. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -171,6 +188,8 @@ namespace xtd {
   }
 
   /// @brief Return true if specified value is the specified llong_t. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -187,6 +206,8 @@ namespace xtd {
   }
  
   /// @brief Return true if specified value is the specified uint8_t. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -203,6 +224,8 @@ namespace xtd {
   }
   
   /// @brief Return true if specified value is the specified uint16_t. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -219,6 +242,8 @@ namespace xtd {
   }
     
   /// @brief Return true if specified value is the specified uint32_t. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -235,6 +260,8 @@ namespace xtd {
   }
   
   /// @brief Return true if specified value is the specified uint64_t. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -251,6 +278,8 @@ namespace xtd {
   }
   
   /// @brief Return true if specified value is the specified ullong_t. A Is expression takes the following form:
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -309,5 +338,16 @@ namespace xtd {
   template<typename type_t, typename param_t>
   bool is(param_t& value) {
     return is<type_t>(&value);
+  }
+
+  template<typename new_type_t, typename current_type_t>
+  bool is(std::shared_ptr<current_type_t>& value) {
+    try {
+      unused_(dynamic_pointer_cast<new_type_t>(value));
+      return true;
+    } catch (const std::exception&) {
+      return false;
+    }
+    return false;
   }
 }

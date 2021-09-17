@@ -1,12 +1,11 @@
 # emoticons
 
-demonstrates the use of [xtd::forms::emoticons](../../../../src/xtd_forms/include/xtd/forms/emoticons.hpp) control.
+demonstrates the use of [xtd::forms::emoticons](../../../../src/xtd.forms/include/xtd/forms/emoticons.h) control.
 
 # Sources
 
-[src/emoticons.cpp](src/emoticons.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/emoticons.cpp](src/emoticons.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

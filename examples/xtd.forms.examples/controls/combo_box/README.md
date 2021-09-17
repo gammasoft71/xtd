@@ -1,12 +1,11 @@
 # combo_box
 
-demonstrates the use of [xtd::forms::combo_box](../../../../src/xtd_forms/include/xtd/forms/combo_box.hpp) control.
+demonstrates the use of [xtd::forms::combo_box](../../../../src/xtd.forms/include/xtd/forms/combo_box.h) control.
 
 # Sources
 
-[src/combo_box.cpp](src/combo_box.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/combo_box.cpp](src/combo_box.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

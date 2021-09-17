@@ -11,24 +11,14 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Prompts the user to select a folder. This class cannot be inherited.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
     /// @par Examples
     /// The following code example demonstrate the use of folder_browser_dialog dialog.
     /// @include folder_browser_dialog.cpp
-    /// @par Windows
-    /// @image html folder_browser_dialog_w.png
-    /// <br>
-    /// @image html folder_browser_dialog_wd.png
-    /// @par macOS
-    /// @image html folder_browser_dialog_m.png
-    /// <br>
-    /// @image html folder_browser_dialog_md.png
-    /// @par Gnome
-    /// @image html folder_browser_dialog_g.png
-    /// <br>
-    /// @image html folder_browser_dialog_gd.png
     class forms_export_ folder_browser_dialog final : public common_dialog {
     public:
       /// @brief Initializes a new instance of the folder_browser_dialog class.
@@ -52,12 +42,12 @@ namespace xtd {
       /// @brief Gets the descriptive text displayed above the tree view control in the dialog box.
       /// @return The description to display. The default is an empty string ("").
       /// @remarks The description property can be used to specify additional information to the user, like instructions.
-      const std::string& description() const {return description_;}
+      const xtd::ustring& description() const {return description_;}
       /// @brief Sets the descriptive text displayed above the tree view control in the dialog box.
       /// @param value The description to display. The default is an empty string ("").
       /// @return Current folder_browser_dialog.
       /// @remarks The description property can be used to specify additional information to the user, like instructions.
-      folder_browser_dialog& description(const std::string& value) {
+      folder_browser_dialog& description(const xtd::ustring& value) {
         description_ = value;
         return *this;
       }
@@ -78,13 +68,13 @@ namespace xtd {
       /// @return The path of the folder first selected in the dialog box or the last folder selected by the user. The default is an empty string ("").
       /// @remarks If the selected_ath property is set before showing the dialog box, the folder with this path will be the selected folder, as long as selected_path is set to an absolute path that is a subfolder of root_folder (or more accurately, points to a subfolder of the shell namespace represented by root_folder).
       /// @remarks If the show_dialog returns OK, meaning the user clicked the OK button, the selected_path property will return a string containing the path to the selected folder. If show_dialog returns Cancel, meaning the user canceled out of the dialog box, this property will have the same value that it had prior to displaying the dialog box. If the user selects a folder that does not have a physical path (for example, My Computer), the OK button on the dialog box will be disabled.
-      const std::string& selected_path() const {return selected_path_;}
+      const xtd::ustring& selected_path() const {return selected_path_;}
       /// @brief Sets the path selected by the user.
       /// @param value The path of the folder first selected in the dialog box or the last folder selected by the user. The default is an empty string ("").
       /// @return Current folder_browser_dialog.
       /// @remarks If the selected_ath property is set before showing the dialog box, the folder with this path will be the selected folder, as long as selected_path is set to an absolute path that is a subfolder of root_folder (or more accurately, points to a subfolder of the shell namespace represented by root_folder).
       /// @remarks If the show_dialog returns OK, meaning the user clicked the OK button, the selected_path property will return a string containing the path to the selected folder. If show_dialog returns Cancel, meaning the user canceled out of the dialog box, this property will have the same value that it had prior to displaying the dialog box. If the user selects a folder that does not have a physical path (for example, My Computer), the OK button on the dialog box will be disabled.
-      folder_browser_dialog& selected_path(const std::string& value) {
+      folder_browser_dialog& selected_path(const xtd::ustring& value) {
         selected_path_ = value;
         return *this;
       }
@@ -118,9 +108,9 @@ namespace xtd {
       bool get_option(size_t flag) const {return (options_ & flag) == flag;}
       void set_option(size_t flag, bool value) {options_ = value ? options_ | flag : options_ & ~flag;}
 
-      std::string description_;
+      xtd::ustring description_;
       environment::special_folder root_folder_ = environment::special_folder::desktop;
-      std::string selected_path_;
+      xtd::ustring selected_path_;
       size_t options_ =  BIF_RETURNONLYFSDIRS | BIF_NEWDIALOGSTYLE;
     };
   }

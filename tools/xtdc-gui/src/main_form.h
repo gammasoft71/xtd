@@ -59,16 +59,20 @@ namespace xtdc_gui {
     xtd::forms::panel open_xtd_examples_panel_;
     xtd::forms::label open_xtd_examples_title_label_;
     xtd::forms::tab_control open_xtd_example_tab_control_;
-    xtd::forms::tab_page open_xtd_example_console_tab_page_;
+    xtd::forms::tab_page open_xtd_example_core_tab_page_;
     xtd::forms::tab_page open_xtd_example_forms_tab_page_;
     xtd::forms::tab_page open_xtd_example_tunit_tab_page_;
-    xtd::forms::picture_box open_xtd_example_console_picture_box_;
+    xtd::forms::tab_page open_xtd_example_cmake_tab_page_;
+    xtd::forms::picture_box open_xtd_example_core_picture_box_;
     xtd::forms::picture_box open_xtd_example_forms_picture_box_;
     xtd::forms::picture_box open_xtd_example_tunit_picture_box_;
-    xtd::forms::label open_xtd_example_console_title_label_;
+    xtd::forms::picture_box open_xtd_example_cmake_picture_box_;
+    xtd::forms::label open_xtd_example_cmake_title_label_;
+    xtd::forms::label open_xtd_example_core_title_label_;
     xtd::forms::label open_xtd_example_forms_title_label_;
     xtd::forms::label open_xtd_example_tunit_title_label_;
-    xtd::forms::list_box open_xtd_example_console_list_box_;
+    xtd::forms::list_box open_xtd_example_cmake_list_box_;
+    xtd::forms::list_box open_xtd_example_core_list_box_;
     xtd::forms::list_box open_xtd_example_forms_list_box_;
     xtd::forms::list_box open_xtd_example_tunit_list_box_;
     xtd::forms::text_box open_xtd_examples_information_text_box_;
@@ -97,179 +101,9 @@ namespace xtdc_gui {
     xtd::forms::button next_button_;
     
     size_t current_project_type_index_ = std::numeric_limits<size_t>::max();
-    size_t current_open_xtd_example_console_list_box_index_ = 0;
+    size_t current_open_xtd_example_core_list_box_index_ = 0;
     size_t current_open_xtd_example_forms_list_box_index_ = 0;
     size_t current_open_xtd_example_tunit_list_box_index_ = 0;
-    std::vector<xtd_example_item> xtd_console_examples_ {
-      {"Console - background color", "shows how to set console background color.", {"xtd.core.examples/console_background_color"}},
-      {"Console - beep", "shows how to use console beep.", {"xtd.core.examples/console_beep"}},
-      {"Console - buffer", "shows how to use console buffer.\n\nThis code produces the following output:\n\nThe current buffer height is 300 rows.\nThe current buffer width is 85 columns.", {"xtd.core.examples/console_buffer"}},
-      {"Console - color", "shows how to set background and foreground color.", {"xtd.core.examples/console_color"}},
-      {"Console - cursor", "shows how to use console cursor position.\n\nThis code produces the following output:\n\n+---+\n|   |\n|   |\n|   |\n+---+\n\nAll done!", {"xtd.core.examples/console_cursor"}},
-      {"Console - in out", "shows how to use in and out stream properties.", {"xtd.core.examples/console_in_out"}},
-      {"Console - read line", "shows how to use read line.", {"xtd.core.examples/console_read_line"}},
-      {"Hello world - hello world (console)", "The classic first \"Hello, World!\" console application.\n\nThis code produces the following output with colors :\n\nHello, World!", {"xtd.core.examples/hello_world_console"}},
-      {"other - song", "Show how to play song with beep.", {"xtd.core.examples/console_song"}},
-    };
-    std::vector<xtd_example_item> xtd_forms_examples_ {
-      {"Hello world - hello world (emoticons)", "The classic first \"Hello, World!\" with xtd::forms::emoticons component.", {"xtd.forms.examples/hello_worlds/hello_world_emoticons"}},
-      {"Hello world - hello world (label)", "The classic first \"Hello, World!\" with xtd::forms::label control.", {"xtd.forms.examples/hello_worlds/hello_world_label"}},
-      {"Hello world - hello world (message box)", "The classic first \"Hello, World!\" with xtd::forms::message_box dialog.", {"xtd.forms.examples/hello_worlds/hello_world_message_box"}},
-      {"Hello world - hello world (message box) 2", "The classic first \"Hello, World!\" with xtd::forms::message_box dialog.", {"xtd.forms.examples/hello_worlds/hello_world_message_box2"}},
-      {"Hello world - hello world (paint)", "The classic first \"Hello, World!\" with GDI+ drawing objects.", {"xtd.forms.examples/hello_worlds/hello_world_paint"}},
-      {"Hello world - hello world (say)", "The classic first application \"Hello, World!\" with say.", {"xtd.forms.examples/hello_worlds/hello_world_say"}},
-      
-      {"Application - application", "shows how to create an application with xtd::forms::application class.", {"xtd.forms.examples/applications/application"}},
-      {"Application - exception", "shows how to create an application with xtd::forms::application and how to manage exception.", {"xtd.forms.examples/applications/application_and_exception"}},
-      {"Application - application context", "shows how to create an application with xtd::forms::application and xtd::forms::application_context classes.", {"xtd.forms.examples/applications/application_context"}},
-      {"Application - enable dark mode", "shows how to enbale dark mode with xtd::forms::application class.", {"xtd.forms.examples/applications/application_enable_dark_mode"}},
-      {"Application - enable light mode", "shows how to enbale light mode with xtd::forms::application class.", {"xtd.forms.examples/applications/application_enable_light_mode"}},
-      {"Application - restart", "shows how to restart application with xtd::forms::application::restart method.", {"xtd.forms.examples/applications/application_restart"}},
-      {"Application - use wait cursor", "shows how to show and hide wait cursor application with xtd::forms::application::use_wait_cursor method.", {"xtd.forms.examples/applications/application_use_wait_cursor"}},
-
-      {"Controls - button", "represents a xtd::forms::button control.", {"xtd.forms.examples/controls/button"}},
-      {"Controls - buttons", "shows how to create a button with xtd::froms::buttons factory class.", {"xtd.forms.examples/controls/buttons"}},
-      {"Controls - check box", "represents a Windows xtd::forms::check_box control.", {"xtd.forms.examples/controls/check_box"}},
-      {"Controls - check boxes", "shows how to create a check box with xtd::froms::check_boxes factory class", {"xtd.forms.examples/controls/check_boxes"}},
-      {"Controls - checked list box", "represents a Windows control to display a list of check box.", {"xtd.forms.examples/controls/checked_list_box"}},
-      {"Controls - choice", "represents a Windows xtd::forms::choice control.", {"xtd.forms.examples/controls/choice"}},
-      {"Controls - color picker", "represents a Windows control that allows the user to select and display a color.", {"xtd.forms.examples/controls/color_picker"}},
-      {"Controls - combo box", "represents a Windows xtd::forms::combo_box control.", {"xtd.forms.examples/controls/combo_box"}},
-      {"Controls - command link button", "represents a Windows xtd::forms::command_link_button control.", {"xtd.forms.examples/controls/command_link_button"}},
-      {"Controls - control", "defines the base class for controls, which are components with visual representation.", {"xtd.forms.examples/controls/control"}},
-      {"Controls - date time_picker", "represents a Windows control that allows the user to select a date and a time and to display the date and time with a specified format.", {"xtd.forms.examples/controls/date_time_picker"}},
-      {"Controls - domain up down", "represents a Windows spin box (also known as an up-down control) that displays string values.", {"xtd.forms.examples/controls/domain_up_down"}},
-      {"Controls - dot matrix display", "represents a xtd::forms::fourteen_segment_display control.", {"xtd.forms.examples/controls/dot_matrix_display"}},
-      {"Controls - font picker", "represents a Windows control that allows the user to select and display a font.", {"xtd.forms.examples/controls/font_picker"}},
-      {"Controls - fourteen segment display", "represents a xtd::forms::fourteen_segment_display control.", {"xtd.forms.examples/controls/fourteen_segment_display"}},
-      {"Controls - label", " represents a standard Windows xtd::forms::label.", {"xtd.forms.examples/controls/label"}},
-      {"Controls - lcd label", "represents a xtd::forms::lcd_label control.", {"xtd.forms.examples/controls/lcd_label"}},
-      {"Controls - list box", "represents a Windows control to display a list of items.", {"xtd.forms.examples/controls/list_box"}},
-      {"Controls - nine segment display", "represents a xtd::forms::nine_segment_display control.", {"xtd.forms.examples/controls/fourteen_nine_display"}},
-      {"Controls - nunmeric up down", "represents a Windows spin box (also known as an up-down control) that displays numeric values.", {"xtd.forms.examples/controls/numeric_up_down"}},
-      {"Controls - picture box", "represents a Windows picture box control for displaying an image.", {"xtd.forms.examples/controls/picture_box"}},
-      {"Controls - progress bar", "represents a Windows xtd::forms::progress_bar control.", {"xtd.forms.examples/controls/progress_bar"}},
-      {"Controls - radio button", "enables the user to select a single option from a group of choices when paired with other xtd::forms::radio_button controls.", {"xtd.forms.examples/controls/radio_button"}},
-      {"Controls - radio buttons", "shows how to create a radio button with xtd::froms::radio_buttons factory class", {"xtd.forms.examples/controls/radio_buttons"}},
-      {"Controls - seven segment display", "represents a xtd::forms::seven_segment_display control.", {"xtd.forms.examples/controls/seven_segment_display"}},
-      {"Controls - sixteen segment display", "represents a xtd::forms::sixteen_segment_display control.", {"xtd.forms.examples/controls/sixteen_segment_display"}},
-      {"Controls - splitter", "represents a Windows xtd::forms::splitter control.", {"xtd.forms.examples/controls/splitter"}},
-      {"Controls - switch button", "represents a Windows xtd::forms::switch_button control.", {"xtd.forms.examples/controls/switch_button"}},
-      {"Controls - text box", "represents a Windows xtd::forms::text_box control.", {"xtd.forms.examples/controls/text_box"}},
-      {"Controls - toggle button", "represents a Windows xtd::forms::toggle_button control.", {"xtd.forms.examples/controls/toggle_button"}},
-      {"Controls - track bar", "represents a standard Windows xtd::forms::track_bar.", {"xtd.forms.examples/controls/track_bar"}},
-      {"Controls - up down button", "represents a Windows spin button.", {"xtd.forms.examples/controls/up_down_button"}},
-      {"Controls - user control", "defines the base class for user controls.", {"xtd.forms.examples/controls/user_control"}},
-      
-      {"Containers - form", "represents a window or dialog box that makes up an application's user interface.", {"xtd.forms.examples/containers/form"}},
-      {"Containers - group box", "represents a Windows control that displays a frame around a group of controls with an optional caption.", {"xtd.forms.examples/containers/group_box"}},
-      {"Containers - panel", "used to group collections of controls.", {"xtd.forms.examples/containers/panel"}},
-      {"Containers - split container", "represents a control consisting of a movable bar that divides a container's display area into two resizable panels.", {"xtd.forms.examples/containers/split_container"}},
-      {"Containers - tab control", "manages a related set of tab pages.", {"xtd.forms.examples/containers/tab_control"}},
-      
-      {"Menus and toolbars - main_menu", "provides a menu system for a form.", {"xtd.forms.examples/menus_and_toolbars/main_menu"}},
-
-      {"Components - background worker", "executes an operation on a separate thread.", {"xtd.forms.examples/components/background_worker"}},
-      {"Components - button images", "shows how to create a bitmap button with xtd::froms::button_images factory class.", {"xtd.forms.examples/components/button_images"}},
-      {"Components - button renderer", "shows how to draw button with xtd::froms::button_renderer class.", {"xtd.forms.examples/components/button_renderer"}},
-      {"Components - check box renderer", "shows how to draw check box with xtd::froms::check_box_renderer class.", {"xtd.forms.examples/components/check_box_renderer"}},
-      {"Components - countries", "demonstrates the use of xtd::forms::countries class.", {"xtd.forms.examples/components/countries"}},
-      {"Components - cursors", "represents the image used to paint the mouse pointer.", {"xtd.forms.examples/components/cursors"}},
-      {"Components - emoticons", "demonstrates the use of xtd::forms::emoticons class.", {"xtd.forms.examples/components/emoticons"}},
-      {"Components - image list", "provides methods to manage a collection of image objects.", {"xtd.forms.examples/components/image_list"}},
-      {"Components - radio button renderer", "shows how to draw radio button with xtd::froms::radio_button_renderer class.", {"xtd.forms.examples/components/radio_button_renderer"}},
-      {"Components - screen", "represents a display device or multiple display devices on a single system.", {"xtd.forms.examples/components/screen"}},
-      {"Components - settings", "represents settings application.", {"xtd.forms.examples/components/settings_example"}},
-      {"Components - system images", "demonstrates the use of xtd::drawing::system_images class.", {"xtd.forms.examples/components/system_images"}},
-      {"Components - texts", "demonstrates the use of xtd::forms::texts class.", {"xtd.forms.examples/components/texts"}},
-      {"Components - timer", "implements a timer that raises an event at user-defined intervals.", {"xtd.forms.examples/components/timer"}},
-      {"Components - translator", "demonstrates the use of xtd::forms::translator strings for internationalization.", {"xtd.forms.examples/components/translattor"}},
-      {"Components - use wait cursor", "shows how to use xtd::forms::use_wait_cursor component.", {"xtd.forms.examples/components/use_wait_cursor"}},
-
-      {"Dialogs - about dialog", "represents a common dialog box that displays about dialog.", {"xtd.forms.examples/dialogs/about_dialog"}},
-      {"Dialogs - busy box", "represents a busy box that displays busy box.", {"xtd.forms.examples/dialogs/busy_box"}},
-      {"Dialogs - busy dialog", "represents a busy box that displays busy box.", {"xtd.forms.examples/dialogs/busy_dialog"}},
-      {"Dialogs - color dialog", "represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.", {"xtd.forms.examples/dialogs/color_dialog"}},
-      {"Dialogs - folder browser dialog", "prompts the user to select a folder.", {"xtd.forms.examples/dialogs/folder_browser_dialog"}},
-      {"Dialogs - font dialog", "prompts the user to choose a font from among those installed on the local computer.", {"xtd.forms.examples/dialogs/font_dialog"}},
-      {"Dialogs - input dialog", "prompts the user to input text.", {"xtd.forms.examples/dialogs/input_dialog"}},
-      {"Dialogs - message box", "displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.", {"xtd.forms.examples/dialogs/message_box"}},
-      {"Dialogs - message dialog", "displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.", {"xtd.forms.examples/dialogs/message_dialog"}},
-      {"Dialogs - open file dialog", "displays a standard dialog box that prompts the user to open a file.", {"xtd.forms.examples/dialogs/open_file_dialog"}},
-      {"Dialogs - progress dialog", "represents a progress box that displays progress box.", {"xtd.forms.examples/dialogs/progress_dialog"}},
-      {"Dialogs - save file dialog", "prompts the user to select a location for saving a file.", {"xtd.forms.examples/dialogs/save_file_dialog"}},
-
-      {"Event - application idle", "shows how to create an application with xtd::forms::application class and idle event.", {"xtd.forms.examples/events/application_idle"}},
-      {"Event - enable changed event", "demonstrates the use of enable_changed event.", {"xtd.forms.examples/events/enable_changed_event"}},
-      {"Event - font changed event", "demonstrates the use of font_changed event.", {"xtd.forms.examples/events/font_changed_event"}},
-      {"Event - form click", "demonstrates the use of xtd::forms::form control and click event.", {"xtd.forms.examples/events/form_click"}},
-      {"Event - form and messages", "demonstrates some events received by xtd::forms::form.", {"xtd.forms.examples/events/form_and_messages"}},
-      {"Event - form paint", "demonstrates paint event with xtd::forms::form.", {"xtd.forms.examples/events/form_paint"}},
-      {"Event - key events", "demonstrates the use of mouse events.", {"xtd.forms.examples/events/key_events"}},
-      {"Event - mouse events", "demonstrates the use of mouse events.", {"xtd.forms.examples/events/mouse_events"}},
-      {"Event - move form", "demonstrates the use of mouse events.", {"xtd.forms.examples/events/move_form"}},
-      {"Event - send message", "demonstrates how to send message to xtd::forms::form.", {"xtd.forms.examples/events/send_message_to_form"}},
-      {"Event - wnd proc", "demonstrates the xtd::control::wnd_proc method.", {"xtd.forms.examples/events/wnd_proc"}},
-      
-      {"User controls - line", "demonstrates the use of xtd::forms::user_controlcontrol to draw simple lines.", {"xtd.forms.examples/user_controls/line"}},
-      {"User controls - numeric text box", "demonstrates how to customize xtd::forms::text_box control.", {"xtd.forms.examples/user_controls/numeric_text_box"}},
-
-      {"User dialogs - user dialog", "demonstrates the use of xtd::forms::form as dialog.", {"xtd.forms.examples/User_dialogs/user_dialog"}},
-      
-      {"Games - game of life", "The Game of Life is not your typical computer game. It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.", {"xtd.forms.examples/games/game_of_life"}},
-      {"Games - minesweeper", "The goal of the game is to uncover all the squares that do not contain mines.", {"xtd.forms.examples/games/minesweeper"}},
-
-      {"Others - about dialog (system)", "represents a common dialog box that displays system about dlialog.", {"xtd.forms.examples/others/about_dialog_system"}},
-      {"Others - auto scroll", "demonstrates the use of xtd::forms::panel container with xtd::forms::scrollable_control::auto_scroll.", {"xtd.forms.examples/others/auto_scroll"}},
-      {"Others - bitmap button", "demonstrates the use of xtd::forms::button control with image.", {"xtd.forms.examples/others/bitmap_button"}},
-      {"Others - button 2", "represents a xtd::forms::button control.", {"xtd.forms.examples/others/button2"}},
-      {"Others - button 3", "represents a xtd::forms::button control.", {"xtd.forms.examples/others/button3"}},
-      {"Others - button 4", "represents a xtd::forms::button control.", {"xtd.forms.examples/others/button4"}},
-      {"Others - calculator", "demonstrates the use of xtd::forms::label and  xtd::forms::button controls.", {"xtd.forms.examples/others/calculator"}},
-      {"Others - clock", "demonstrates the use of xtd::forms::lcd_label control.", {"xtd.forms.examples/others/clock"}},
-      {"Others - colored forms", "demonstrates the use of xtd::foxms::form container with colored background.", {"xtd.forms.examples/others/colored_forms"}},
-      {"Others - colored tab pages", "demonstrates the use of xtd::foxms::tab_page container with colored background.", {"xtd.forms.examples/others/colored_tab_pages"}},
-      {"Others - colors", "demonstrates the use of xtd::forms::user_control control with xtd::drawing::color.", {"xtd.forms.examples/others/colors"}},
-      {"Others - docked panels", "demonstrates the use of xtd::forms::panel container with xtd::forms::control::dock style.", {"xtd.forms.examples/others/docked_panels"}},
-      {"Others - font families", "demonstrates the use of xtd::drawing::font_families class.", {"xtd.forms.examples/others/font_families"}},
-      {"Others - form and main", "demonstrates how to use startup_ keyword.", {"xtd.forms.examples/others/form_and_main"}},
-      {"Others - form and thread", "demonstrates how a thread can update ui with xtd::forms::control::invoke method.", {"xtd.forms.examples/others/form_and_thread"}},
-      {"Others - form show", "demontrate how to launch form as normal window, modeless window and modal window.", {"xtd.forms.examples/others/form_show"}},
-      {"Others - form window state", "demonstrates the use of xtd::forms::form window state.", {"xtd.forms.examples/others/form_window_state"}},
-      {"Others - form 2", "represents a window or dialog box that makes up an application's user interface.", {"xtd.forms.examples/others/form2"}},
-      {"Others - group box and check box", "demonstrates the use of xtd::forms::group_box container and  xtd::forms::check_box control.", {"xtd.forms.examples/others/group_box_and_check_box"}},
-      {"Others - group box and radio button", "demonstrates the use of xtd::forms::group_box container and  xtd::forms::check_box control.", {"xtd.forms.examples/others/group_box_and_radio_button"}},
-      {"Others - input dialog multiline", "demonstrates the use of xtd::forms::input_dialog dialog.", {"xtd.forms.examples/others/input_dialog_multiline"}},
-      {"Others - input dialog password", "demonstrates the use of xtd::forms::input_dialog dialog.", {"xtd.forms.examples/others/input_dialog_password"}},
-      {"Others - labels and unicode text", "demonstrates the use of xtd::forms::label control with unicode text.", {"xtd.forms.examples/others/labels_and_unicode_text"}},
-      {"Others - lcd label with dot matrix", "demonstrates the use of xtd::forms::lcd_label control with dot matrix.", {"xtd.forms.examples/others/lcd_label_with dot matrix"}},
-      {"Others - lcd label with fourteen segment", "demonstrates the use of xtd::forms::lcd_label control with fourteen segment.", {"xtd.forms.examples/others/lcd_label_with_fourteen_segment"}},
-      {"Others - lcd label with nine segment", "demonstrates the use of xtd::forms::lcd_label control with nine segment.", {"xtd.forms.examples/others/lcd_label_with_nine_segment"}},
-      {"Others - lcd label with seven segment", "demonstrates the use of xtd::forms::lcd_label control with seven segment.", {"xtd.forms.examples/others/lcd_label_with_seven_segment"}},
-      {"Others - lcd label with sixteen segment", "demonstrates the use of xtd::forms::lcd_label control with sixteen segment.", {"xtd.forms.examples/others/lcd_label_with_sixteen_segment"}},
-      {"Others - lcd label 2", "represents a xtd::forms::lcd_label control.", {"xtd.forms.examples/others/lcd_label2"}},
-      {"Others - painting", "demonstrates the use of xtd::forms::form, xtd::forms::panel, xtd::forms::track_bar and  xtd::forms::button controls with mouse_down, mouse_move and paint events.", {"xtd.forms.examples/others/painting"}},
-      {"Others - settings2", "represents settings application.", {"xtd.forms.examples/others/settings_example2"}},
-      {"Others - smileys", "demonstrates the use of xtd::forms::label control.", {"xtd.forms.examples/others/smileys"}},
-      {"Others - stopwatch", "demonstrates the use of xtd::forms::button, xtd::forms::label controls and xtd::forms::timer component..", {"xtd.forms.examples/others/stopwatch_form"}},
-      {"Others - system images 2", "demonstrates the use of xtd::drawing::system_images class.", {"xtd.forms.examples/others/system_images2"}},
-      {"Others - system images 3", "demonstrates the use of xtd::drawing::system_images class.", {"xtd.forms.examples/others/system_images3"}},
-      {"Others - system report", "shows system_repoort with xtd::forms::text_box control.", {"xtd.forms.examples/others/system_report"}},
-      {"Others - text box multiline", "represents a Windows xtd::forms::text_box control.", {"xtd.forms.examples/others/text_box_multiline"}},
-      {"Others - text box password", "represents a Windows xtd::forms::text_box control.", {"xtd.forms.examples/others/text_box_password"}},
-      {"Others - toggle button 2", "represents a Windows xtd::forms::toggle_button control.", {"xtd.forms.examples/others/toggle_button2"}},
-      {"Others - track bar 2", "represents a standard Windows xtd::forms::track_bar.", {"xtd.forms.examples/others/track_bar2"}},
-      {"Others - wiggly", "shows how to animate a user control using timer and timer::event. In addition, the example demonstrates how to use graphics::measure_string to determine the size of text on screen.", {"xtd.forms.examples/others/wiggly"}},
-      
-      {"Demo - button appearance", "demonstrates the different appearance of xtd::forms::button control.", {"xtd.forms.examples/custom_dialogs/button_appearance"}},
-      {"Demo - check box appearance", "demonstrates the different appearance of xtd::forms::check_box control.", {"xtd.forms.examples/custom_dialogs/check_box_appearance"}},
-      {"Demo - lcd label appearance", "demonstrates the different appearance of xtd::forms::lcd_label control.", {"xtd.forms.examples/custom_dialogs/lcd_label_appearance"}},
-      {"Demo - message box appearance", "demonstrates the different appearance of xtd::forms::message_box dialog.", {"xtd.forms.examples/custom_dialogs/message_box_appearance"}},
-    };
-    std::vector<xtd_example_item> xtd_tunit_examples_ {
-      {"assert - abort", "Tshows how to use assert abort.", "xtd.tunit.examples/assert_abort"},
-      {"assert - abort", "Tshows how to use assert abort.", "xtd.tunit.examples/assert_abort"},
-      {"Hello world - hello world (assert)", "The classic first \"Hello, World!\" unit tests application.", "xtd.tunit.examples/hello_world_tunit"},
-    };
+    size_t current_open_xtd_example_cmake_list_box_index_ = 0;
   };
 }

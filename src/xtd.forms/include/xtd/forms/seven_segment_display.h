@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/argument_out_of_range_exception.h>
+#include <xtd/drawing/system_colors.h>
 #include "control.h"
 #include "segments.h"
 #include "segment_style.h"
@@ -10,24 +11,14 @@
 namespace xtd {
   namespace forms {
     /// @brief represent a seven segment display class
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Example
     /// The following code example demonstrate the use of seven segment display control.
     /// @include seven_segment_display.cpp
-    /// @par Windows
-    /// @image html seven_segment_display_w.png
-    /// <br>
-    /// @image html seven_segment_display_wd.png
-    /// @par macOS
-    /// @image html seven_segment_display_m.png
-    /// <br>
-    /// @image html seven_segment_display_md.png
-    /// @par Gnome
-    /// @image html seven_segment_display_g.png
-    /// <br>
-    /// @image html seven_segment_display_gd.png
     class seven_segment_display : public control {
     public:
       /// @brief Initialize a new instance of seven_segment_display class.
@@ -135,21 +126,42 @@ namespace xtd {
     protected:
       drawing::size default_size() const override {return {13, 25};}
 
-      void on_paint(paint_event_args& e) override {
-        control::on_paint(e);
-        e.graphics().clear(back_color());
-        if (show_back_segment_) draw_back_digit(e.graphics());
-        if ((value_ & forms::segments::dp) == forms::segments::dp) draw_dp(e.graphics(), fore_color());
-        if ((value_ & forms::segments::pc) == forms::segments::pc) draw_pc(e.graphics(), fore_color());
-        if ((value_ & forms::segments::a) == forms::segments::a) draw_segment_a(e.graphics(), fore_color());
-        if ((value_ & forms::segments::b) == forms::segments::b) draw_segment_b(e.graphics(), fore_color());
-        if ((value_ & forms::segments::c) == forms::segments::c) draw_segment_c(e.graphics(), fore_color());
-        if ((value_ & forms::segments::d) == forms::segments::d) draw_segment_d(e.graphics(), fore_color());
-        if ((value_ & forms::segments::e) == forms::segments::e) draw_segment_e(e.graphics(), fore_color());
-        if ((value_ & forms::segments::f) == forms::segments::f) draw_segment_f(e.graphics(), fore_color());
-        if ((value_ & forms::segments::g) == forms::segments::g) draw_segment_g(e.graphics(), fore_color());
+      void on_back_color_changed(const event_args& e) override {
+        control::on_back_color_changed(e);
+        invalidate();
       }
       
+      void on_enabled_changed(const event_args& e) override {
+        control::on_enabled_changed(e);
+        invalidate();
+      }
+      
+      void on_fore_color_changed(const event_args& e) override {
+        control::on_fore_color_changed(e);
+        invalidate();
+      }
+      
+      void on_paint(paint_event_args& e) override {
+        control::on_paint(e);
+        if (back_color() != default_back_color()) e.graphics().clear(back_color());
+        if (show_back_segment_) draw_back_digit(e.graphics());
+        auto color = enabled() ? fore_color() : drawing::system_colors::gray_text();
+        if ((value_ & forms::segments::dp) == forms::segments::dp) draw_dp(e.graphics(), color);
+        if ((value_ & forms::segments::pc) == forms::segments::pc) draw_pc(e.graphics(), color);
+        if ((value_ & forms::segments::a) == forms::segments::a) draw_segment_a(e.graphics(), color);
+        if ((value_ & forms::segments::b) == forms::segments::b) draw_segment_b(e.graphics(), color);
+        if ((value_ & forms::segments::c) == forms::segments::c) draw_segment_c(e.graphics(), color);
+        if ((value_ & forms::segments::d) == forms::segments::d) draw_segment_d(e.graphics(), color);
+        if ((value_ & forms::segments::e) == forms::segments::e) draw_segment_e(e.graphics(), color);
+        if ((value_ & forms::segments::f) == forms::segments::f) draw_segment_f(e.graphics(), color);
+        if ((value_ & forms::segments::g) == forms::segments::g) draw_segment_g(e.graphics(), color);
+      }
+      
+      void on_parent_enabled_changed(const event_args& e) override {
+        control::on_parent_enabled_changed(e);
+        invalidate();
+      }
+
       drawing::size measure_control() const override {
         return drawing::size((height() - 3) / 2 + 2, height());
       }
@@ -177,13 +189,14 @@ namespace xtd {
       /// @brief Draw all background digit on specified graphics.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       virtual void draw_back_digit(drawing::graphics& graphics) {
-        draw_segment_a(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
-        draw_segment_b(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
-        draw_segment_c(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
-        draw_segment_d(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
-        draw_segment_e(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
-        draw_segment_f(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
-        draw_segment_g(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
+        auto color = enabled() ? drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()) : back_color();
+        draw_segment_a(graphics, color);
+        draw_segment_b(graphics, color);
+        draw_segment_c(graphics, color);
+        draw_segment_d(graphics, color);
+        draw_segment_e(graphics, color);
+        draw_segment_f(graphics, color);
+        draw_segment_g(graphics, color);
       }
 
       /// @brief Draw segment a on specified graphics with specified color.

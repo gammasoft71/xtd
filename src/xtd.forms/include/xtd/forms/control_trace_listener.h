@@ -10,6 +10,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Directs tracing or debugging output to either vers un icontrol_trace.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms debug
@@ -46,7 +48,7 @@ namespace xtd {
       using trace_listener::write;
       /// @brief Writes the message to the listener you create when you implement the trace_listener class.
       /// @param message A string you want to write.
-      void write(const std::string& message) override {
+      void write(const xtd::ustring& message) override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         if (need_indent()) write_indent();
         if (control_trace_) control_trace_->write(message);
@@ -56,7 +58,7 @@ namespace xtd {
       using trace_listener::write_line;
       /// @brief Writes the message to the listener you create when you implement the trace_listener class.
       /// @param message A string you want to write.
-      void write_line(const std::string& message) override {
+      void write_line(const xtd::ustring& message) override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         //write(message + "\n");
         if (need_indent()) write_indent();

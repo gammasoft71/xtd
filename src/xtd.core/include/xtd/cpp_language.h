@@ -6,19 +6,22 @@
 #include <map>
 #include <vector>
 #include "language_id.h"
-#include "strings.h"
+#include "object.h"
+#include "ustring.h"
 #include "version.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents information about c++ libraries, such as the version and langauge identifier. This class cannot be inherited.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @remarks The cpp_language class contains information about c++ libraries.
   /// @remarks For information about current c++ libraries, retrieve the cpp_language object returned by the xtd::environment::cpp_language_version method.
   /// @remarks By design, the operating_system class is not a general purpose means of describing an operating system, and you cannot derive a more inclusive type from the operating_system class. If you need a type to contain other information about C++ libraries, create your own type, then include a field of typecpp_language and any additional fields or methods that you require.
-  class cpp_language final {
+  class cpp_language final : public object {
   public:
     cpp_language(uint32_t cpp) : cpp_(cpp) {}
   
@@ -55,16 +58,16 @@ namespace xtd {
     
     int32_t month() const noexcept {return cpp_ % 100;}
 
-    std::string name() const noexcept {
-      static std::map<language_id, std::string> names {{language_id::cpp_pre98, "C++ Pre 98"}, {language_id::cpp98, "C++ 98"}, {language_id::cpp11, "C++ 11"}, {language_id::cpp14, "C++ 14"}, {language_id::cpp17, "C++ 17"}, {language_id::cpp20, "C++ 20"}, {language_id::unknown, "<unknown>"}};
-      if (is_experimental_language()) return strings::format("Experimental {}", names[experimental_language()]);
+    xtd::ustring name() const noexcept {
+      static std::map<language_id, xtd::ustring> names {{language_id::cpp_pre98, "C++ Pre 98"}, {language_id::cpp98, "C++ 98"}, {language_id::cpp11, "C++ 11"}, {language_id::cpp14, "C++ 14"}, {language_id::cpp17, "C++ 17"}, {language_id::cpp20, "C++ 20"}, {language_id::unknown, "<unknown>"}};
+      if (is_experimental_language()) return ustring::format("Experimental {}", names[experimental_language()]);
       return names[language()];
     }
     
     uint32_t value() const noexcept {return cpp_;}
 
-    std::string version_string() const noexcept {
-      return strings::format("{} {}", name(), version());
+    xtd::ustring version_string() const noexcept {
+      return ustring::format("{} {}", name(), version());
     }
     
     const xtd::version& version() const noexcept {
@@ -76,7 +79,7 @@ namespace xtd {
     
     /// @brief Converts the value of this operating_system object to its equivalent string representation.
     /// @return The string representation of the values returned by the platform, version, and service_pack methods.
-    std::string to_string() const noexcept {return version_string();}
+    xtd::ustring to_string() const noexcept {return version_string();}
 
   private:
     uint32_t cpp_ = __cplusplus;

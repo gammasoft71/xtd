@@ -156,7 +156,6 @@ void application::run() {
   initialize(); { // Must be first
     static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, true, 0, 0);
     static_cast<wx_application*>(wxTheApp)->MainLoop();
-    static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, false, 0, 0);
     static_cast<wx_application*>(wxTheApp)->send_message(0, WM_QUIT, 0, 0, 0);
     wxApp::SetInstance(nullptr);
     delete wxTheApp;

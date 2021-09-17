@@ -1,12 +1,11 @@
 # system_report
 
-shows system_repoort with [xtd::forms::text_box](../../../../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
+shows system_repoort with [xtd::forms::text_box](../../../../src/xtd.forms/include/xtd/forms/text_box.h) control.
 
 # Sources
 
-[src/system_report.cpp](src/system_report.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/system_report.cpp](src/system_report.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

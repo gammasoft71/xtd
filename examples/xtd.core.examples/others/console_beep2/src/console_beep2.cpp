@@ -10,7 +10,7 @@ int main(int argc, char* argv[]) {
   //
   if ((argc == 2) && (x = atoi(argv[1])) && ((x >= 1) && (x <= 9))) {
     for (int i = 1; i <= x; i++) {
-      console::out << strings::format("Beep number {}.", i) << beep() << environment::new_line;
+      console::out << ustring::format("Beep number {}.", i) << beep() << environment::new_line;
       sleep_for(milliseconds(100));
     }
   } else

@@ -1,6 +1,6 @@
 # console_read_line
 
-Shows how to use [xtd::console::in](../../../../src/xtd.core/include/xtd/basic_console.h) stream.
+Shows how to use [xtd::console::in](../../../../src/xtd.core/include/xtd/console.h) stream.
 
 # Sources
 

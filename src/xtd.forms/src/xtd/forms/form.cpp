@@ -385,6 +385,7 @@ forms::create_params form::create_params() const {
     }
   }
 
+  //diagnostics::debug::write_line("create_params = {}", create_params);
   return create_params;
 }
 
@@ -442,6 +443,12 @@ void form::on_handle_destroyed(const event_args &e) {
 void form::on_layout(const event_args& e) {
   scrollable_control::on_layout(e);
   if (auto_scroll_) native::form::virtual_size(handle(), display_rectangle().size());
+}
+
+
+void form::on_location_changed(const event_args &e) {
+  if (handle_ && top() < screen::get_working_area(handle_).top()) top(screen::get_working_area(handle_).top());
+  container_control::on_location_changed(e);
 }
 
 void form::on_resize(const event_args& e) {

@@ -9,6 +9,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Provides a common implementation of members for the list_box, choice and combo_box classes.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
@@ -36,11 +38,11 @@ namespace xtd {
         item() = default;
         /// @brief Initializes a new instance of the item class with specified value.
         /// @param value a string that represent the item.
-        item(const std::string& value) : value_(value) {}
+        item(const xtd::ustring& value) : value_(value) {}
         /// @brief Initializes a new instance of the item class with specified value and tag.
         /// @param value a string that represent the item.
         /// @param tag an object that contains data about the item.
-        item(const std::string& value, const std::any& tag) : value_(value), tag_(tag) {}
+        item(const xtd::ustring& value, const std::any& tag) : value_(value), tag_(tag) {}
         /// @cond
         item(const char* value) : value_(value) {}
         item(const item& value) = default;
@@ -58,8 +60,8 @@ namespace xtd {
         /// @endcond
         
         /// @brief Gets the value of the item.
-        /// @return A std::string that represent the value of item.
-        virtual const std::string& value() const {return value_;}
+        /// @return A xtd::ustring that represent the value of item.
+        virtual const xtd::ustring& value() const {return value_;}
         
         /// @brief Gets the tag of the item.
         /// @return A std::any that represent the tag of item.
@@ -67,10 +69,10 @@ namespace xtd {
         
         /// @brief Returns a string containing the vakue of the item.
         /// @return A string containing the value of the item.
-        std::string to_string() const {return value_;}
+        xtd::ustring to_string() const {return value_;}
         
       private:
-        std::string value_;
+        xtd::ustring value_;
         std::any tag_;
       };
    
@@ -87,11 +89,11 @@ namespace xtd {
                   
       /// @brief Occurs when the selected_index property changes.
       /// @ingroup events
-      event<list_control, event_handler<control&>> selected_index_changed;
+      event<list_control, event_handler> selected_index_changed;
 
       /// @brief Occurs when the selected_value property changes.
       /// @ingroup events
-      event<list_control, event_handler<control&>> selected_value_changed;
+      event<list_control, event_handler> selected_value_changed;
 
       /// @brief This is a special value equal to the maximum value representable by the type size_t.
       static const size_t npos = std::numeric_limits<size_t>::max();

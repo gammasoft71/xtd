@@ -5,6 +5,8 @@
 #include <cstdint>
 #include <ostream>
 #include <string>
+#include <xtd/object.h>
+#include <xtd/ustring.h>
 #include "../drawing_export.h"
 #include "known_color.h"
 
@@ -13,6 +15,8 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Represents an ARGB (alpha, red, green, blue) color.
+    /// @par Namespace
+    /// xtd::drawing
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
@@ -28,11 +32,11 @@ namespace xtd {
     ///   byte b = slate_blue.b();
     ///   byte r = slate_blue.r();
     ///   byte a = slate_blue.a();
-    ///   string text = xtd::strings::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
+    ///   string text = xtd::ustring::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
     ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
     /// }
     /// @endcode
-    class drawing_export_ color {
+    class drawing_export_ color : public object {
     public:
       /// @brief Represents a color that is null.
       static const xtd::drawing::color empty;
@@ -486,7 +490,7 @@ namespace xtd {
       ///   byte b = slate_blue.b();
       ///   byte r = slate_blue.r();
       ///   byte a = slate_blue.a();
-      ///   string text = xtd::string::strings::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
+      ///   string text = xtd::string::ustring::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
       ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
       /// }
       /// @endcode
@@ -505,7 +509,7 @@ namespace xtd {
       ///   byte b = slate_blue.b();
       ///   byte r = slate_blue.r();
       ///   byte a = slate_blue.a();
-      ///   string text = xtd::strings::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
+      ///   string text = xtd::ustring::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
       ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
       /// }
       /// @endcode
@@ -524,7 +528,7 @@ namespace xtd {
       ///   byte b = slate_blue.b();
       ///   byte r = slate_blue.r();
       ///   byte a = slate_blue.a();
-      ///   string text = xtd::strings::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
+      ///   string text = xtd::ustring::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
       ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
       /// }
       /// @endcode
@@ -545,7 +549,7 @@ namespace xtd {
 
       /// @brief Gets a value indicating whether this xtd::drawing::color structure is a named color or a member of the xtd::drawing::known_color enumeration.
       /// @return bool Returns true if this xtd::drawing::color was created by using either the FromName method or the FromKnownColor method; otherwise, false.
-      bool is_named_color() const {return name_ != strings::format("{:X8}", argb_) && name_ != "0";}
+      bool is_named_color() const {return name_ != ustring::format("{:X8}", argb_) && name_ != "0";}
       
       /// @brief Gets a value indicating whether this xtd::drawing::color structure is a system color. A system color is a color that is used in a Windows display element. System colors are represented by elements of the xtd::drawing::known_color enumeration.
       /// @return bool Returns true if this xtd::drawing::color was created from a system color by using either the FromName method or the FromKnownColor method; otherwise, false.
@@ -553,7 +557,7 @@ namespace xtd {
       
       /// @brief Gets the name of this xtd::drawing::color.
       /// @return string The name of this xtd::drawing::color.
-      std::string name() const {return name_;}
+      xtd::ustring name() const {return name_;}
       
       /// @brief Gets the red component value of this xtd::drawing::color class.
       /// @return byte The red component value of this xtd::drawing::color.
@@ -568,7 +572,7 @@ namespace xtd {
       ///   byte b = slate_blue.b();
       ///   byte r = slate_blue.r();
       ///   byte a = slate_blue.a();
-      ///   string text = xtd::strings::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
+      ///   string text = xtd::ustring::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
       ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
       /// }
       /// @endcode
@@ -909,11 +913,11 @@ namespace xtd {
       ///   byte b = slate_blue.b();
       ///   byte r = slate_blue.r();
       ///   byte a = slate_blue.a();
-      ///   string text = xtd::strings::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
+      ///   string text = xtd::ustring::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
       ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
       /// }
       /// @endcode
-      static xtd::drawing::color from_name(const std::string& name);
+      static xtd::drawing::color from_name(const xtd::ustring& name);
       
       /// @brief Gets the hue-saturation-brightness (HSB) brightness value for this xtd::drawing::color structure.
       /// @return The brightness of this xtd::drawing::color. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
@@ -1075,7 +1079,7 @@ namespace xtd {
       /// @brief Creates a xtd::drawing::color class from the specified name.
       /// @param name A string that is the name of a predefined color. Valid names are the same as the names of the elements of the xtd::drawing::known_color enumeration or hexadecimal value that represents argb value, or four decimal values separated by a comma represanting respectively a, r, g, b, values.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
-      static xtd::drawing::color parse(const std::string& color);
+      static xtd::drawing::color parse(const xtd::ustring& color);
       
       /// @brief Gets the 32-bit ARGB value of this xtd::drawing::color class.
       /// @return int The 32-bit ARGB value of this xtd::drawing::color.
@@ -1183,17 +1187,17 @@ namespace xtd {
       ///   }
       /// }
       /// @endcode
-      std::string to_string() const;
+      xtd::ustring to_string() const noexcept override;
       
     private:
-      explicit color(uint32_t argb) : argb_(argb), name_(argb ? strings::format("{:X8}", argb) : "0"), empty_(false) {}
-      explicit color(intptr_t handle)  : handle_(handle), name_(strings::format("{:X}h", handle)), empty_(false) {}
+      explicit color(uint32_t argb) : argb_(argb), name_(argb ? ustring::format("{:X8}", argb) : "0"), empty_(false) {}
+      explicit color(intptr_t handle)  : handle_(handle), name_(ustring::format("{:X}h", handle)), empty_(false) {}
       color(const color& color, const xtd::drawing::known_color& know_color);
 
       uint32_t argb_ = 0;
       intptr_t handle_ = 0;
       xtd::drawing::known_color known_color_ = (xtd::drawing::known_color)0;
-      std::string name_ = "0";
+      xtd::ustring name_ = "0";
       bool empty_ = true;
     };
     

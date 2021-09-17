@@ -1,0 +1,898 @@
+/// @file
+/// @brief Contains CMake commands page.
+
+/// @page CMakeCoommands CMake commands
+/// @brief Caintains specific CMake commands to manage project, assembly informations and application properties.
+///
+/// These specific CMake commands are automaticaly added when you add find_package(xtd REQUIRED) to your CMakeLists.txt file.
+///
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+/// @endcode
+///
+/// @par xtd Specific CMake commands
+/// * @ref GenericCommandsSection
+///   * @ref ChoiceOptionsSubSection provides a choice options for the user to select an option from options list.
+/// * @ref TargetPropertiesCommandsSection
+///   * @ref TargetDefaultNamespaceSubSection specifies the the base namespace for files added to the project.
+///   * @ref TargetDisplaySubSection specifies if application is displaying in GNOME or KDE menu.
+///   * @ref TargetIconSubSection specifies the icon file (.ico for Windows, icns for maOS and png or svg for linux) that you want to use as your program icon.
+///   * @ref TargetNameSubSection specifies the name of the output file.
+///   * @ref TargetRegisteredSubSection Speficy the target is registered in the system.
+///   * @ref TargetStartupSubSection specifies the entry point to be called when the application is load.
+///   * @ref TargetTypeSubSection specifies the type of target to build.
+/// * @ref AssemblyInformationsCommandsSection
+///   * @ref AssemblyCompanySubSection specifies a company name for the assembly manifest. Corresponds to AssemblyCompanyAttribute.
+///   * @ref AssemblyConfigurationSubSection specifies a configuration for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
+///   * @ref AssemblyCopyrightSubSection specifies a configuration for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
+///   * @ref AssemblyCultureSubSection specifies the culture for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
+///   * @ref AssemblyDescriptionSubSection specifies an optional description for the assembly manifest. Corresponds to AssemblyDescriptionAttribute.
+///   * @ref AssemblyFileVersionSubSection specifies a version number that instructs the compiler to use a specific version for the Win32 file version resource. Corresponds to AssemblyFileVersionAttribute.
+///   * @ref AssemblyGuidSubSection specifies an unique GUID that identifies the assembly. When you create a project, Visual Studio generates a GUID for the assembly. Corresponds to Guid.
+///   * @ref AssemblyProductSubSection specifies a product name for the assembly manifest. Corresponds to AssemblyProductAttribute.
+///   * @ref AssemblyTitleSubSection specifies a title for the assembly manifest. Corresponds to AssemblyTitleAttribute.
+///   * @ref AssemblyTrademarkSubSection specifies a trademark for the assembly manifest. Corresponds to AssemblyTrademarkAttribute.
+///   * @ref AssemblyVersionSubSection specifies the version of the assembly. Corresponds to AssemblyVersionAttribute.
+/// * @ref BuildOptionsCommandsSection
+///   * @ref BuildOutputDirectorySubSection specifies the directory into which runtime target files should be built.
+/// * @ref InstallCommandsSection
+///   * @ref AddInstallIncludeDirectoriesSubSection Install include directories.
+///   * @ref AddInstallIncludeFilesSubSection installs include files.
+///   * @ref InstallComponentSubSection installs component.
+///   * @ref InstallPackageSubSection installs application MODULE_LIBRARY, STATIC_LIBRARY or SHARED_LIBRAY package.
+///   * @ref InstallNameSubSection specifies the install name.
+/// * @ref ProjectCommandsSection
+///   * @ref AddIncludeDirectoriesSubSection Add include directory to current project.
+///   * @ref AddPackagesSubSection adds, finds and loads settings from external required projects to current project.
+///   * @ref AddProjectsSubSection adds child projects to parent project.
+///   * @ref AddReferencesSubSection adds references (libraries) to current project.
+///   * @ref AddResourcesSubSection adds resources to current project.
+///   * @ref AddResourceStringSubSection adds resource string to current project.
+///   * @ref AddSettingSubSection adds a setting to current project.
+///   * @ref AddSourcesSubSection adds source and header files to current project.
+///
+/// @par xtd Specific CMake variables
+/// * @ref ApplicationPropertiesVariablesSection
+///   * @ref ApplicationDefaultNamespaceVariableSubSection contains default namespace use by application.
+///   * @ref ApplicatioIconVariableSubSection contains application icon file name without extension.
+///   * @ref ApplicationNameVariableSubSection contains application name.
+///   * @ref ApplicationRegisteredVariableSubSection contains boolean that specify if application is registered or not on the system.
+///   * @ref TargetTypeVariableSubSection contains application type.
+/// * @ref AssemblyInformationsVariablesSection
+///   * @ref AssemblyCompanyVariableSubSection contains assembly company name.
+///   * @ref AssemblyConfigurationVariableSubSection contains assembly configuration string.
+///   * @ref AssemblyCopyrightVariableSubSection contains assembly copyrignt string.
+///   * @ref AssemblyCultureVariableSubSection contains assembly culture information.
+///   * @ref AssemblyDescriptionVariableSubSection contains assembly description string.
+///   * @ref AssemblyFileVersionVariableSubSection contains assembly file version number.
+///   * @ref AssemblyGuidVariableSubSection contains assembly guid string.
+///   * @ref AssemblyProductVariableSubSection contains assembly product string.
+///   * @ref AssemblyTitleVariableSubSection contains assembly title string.
+///   * @ref AssemblyTrademarkVariableSubSection contains assembly trademark information.
+///   * @ref AssemblyVersionVariableSubSection contains assembly version number.
+/// * @ref BuildOptionsVariablesSection
+///   * @ref BuildOutputDirectoryVariableSubSection contains build output directory.
+///   * @ref BuildTypeVariableSubSection contains build type.
+/// * @ref InstallVariablesSection
+///   * @ref InstallComponentsVariableSubSection contains install project components.
+///   * @ref InstallIncludeDirectoriesVariableSubSection contains install include directories.
+///   * @ref InstallIncludeFilesVariableSubSection contains install include files.
+///   * @ref InstallNameVariableSubSection contains install name.
+/// * @ref ProjectVariablesSection
+///   * @ref ProjectApplicationSettingsSubSection contains project application settings.
+///   * @ref ProjectIncludeDirectoriesSubSection contains include directories.
+///   * @ref ProjectPackagesSubSection contains project packages.
+///   * @ref ProjectProjectsSubSection contains solution or project projects.
+///   * @ref ProjectReferencesSubSection contains project references.
+///   * @ref ProjectResourcesSubSection contains project resources.
+///   * @ref ProjectResourceStringsSubSection contains project resource strings.
+///   * @ref ProjectSettingsSubSection contains project settings.
+///   * @ref ProjectSourcesSubSection contains project sources.
+///   * @ref ProjectUserSettingsSubSection contains project user settings.
+/// * @ref SystemVariablesSection
+///   * @ref UserDirectorySubSection The path to user home.
+///
+/// @section GenericCommandsSection Generic commands
+///
+/// @subsection ChoiceOptionsSubSection choice_options
+/// @brief Provides a choice options for the user to select an option from options list.
+/// @param OPTION the option to set.
+/// @param MESSAGE Description message for the choice options.
+/// @param DEFAULT_OPTION The default option.
+/// @param ... Other options.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional. 
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(my_project.cpp)
+///  
+///  choice_options(TARGET_TYPE "Choose library dynamic, static, interface or module" DINAMIC_LIBRARY STATIC_LIBRARY INTERFACE_LIBRARY MODULE_LIBRARY)
+///  target_type(${TARGET_TYPE})
+/// @endcode
+///
+/// @section TargetPropertiesCommandsSection Target properties commands
+///
+/// @subsection TargetDefaultNamespaceSubSection target_default_namespace
+/// @brief Specifies the the base namespace for files added to the project.
+/// @param APPLICATION_DEFAULT_NAMESPACE the namespace to set.
+/// @remarks If you don't specify the target_default_namespace, it will be the same of the project name.
+/// @remarks Call only once by project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(my_project.cpp)
+///
+///  target_default_namespace("my_namespace")
+///  target_type(CONSOLE_APPLICATION)
+/// @endcode
+///
+/// @subsection TargetDisplaySubSection target_display
+/// @brief Specifies if application is displaying in GNOME or KDE menu.
+/// @param APPLICATION_DISPLAY option to display (ON or OFF)
+/// @remarks Only effect on linux.
+/// @remarks By default the application is registered but not visible in the general menu.
+/// @remarks Call only once by project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(my_project.cpp)
+///
+///  target_display(ON)
+///  target_type(GUI_APPLICATION)
+/// @endcode
+///
+/// @subsection TargetIconSubSection target_icon
+/// @brief Specifies the icon file (.ico for Windows, icns for maOS and png or svg for linux) that you want to use as your program icon.
+/// @param ARGV0 the icon to set without extension. It can be empty.
+/// @remarks Do not specify the extesion of file. It's operatin system depedant.
+/// @remarks If you write multiplatform application you must have the specified file in ico, icns and png or svg formats.
+/// @remarks On Linux you can specify one icon format like icon.png or icon.svg (typically 512 x 512 pixels) or more icon format terminated by the number of pixels:
+///   * icon8.png (8 x 8 pixels)
+///   * icon16.png (16 x 16 pixels)
+///   * icon22.png (22 x 22 pixels)
+///   * icon24.png (24 x 24 pixels)
+///   * icon32.png (32 x 32 pixels)
+///   * icon36.png (36 x 36 pixels)
+///   * icon42.png (42 x 42 pixels)
+///   * icon48.png (48 x 48 pixels)
+///   * icon52.png (52 x 52 pixels)
+///   * icon64.png (64 x 64 pixels)
+///   * icon72.png (72 x 72 pixels)
+///   * icon96.png (96 x 96 pixels)
+///   * icon128.png (128 x 128 pixels)
+///   * icon192.png (192 x 192 pixels)
+///   * icon256.png (256 x 256 pixels)
+///   * icon512.png (512 x 512 pixels)
+/// @remarks Call only once by project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(my_project.cpp)
+///
+///  target_icon(my_icon)
+///  target_type(CONSOLE_APPLICATION)
+/// @endcode
+///
+/// @subsection TargetNameSubSection target_name
+/// @brief Specifies the name of the output file.
+/// @param APPLICATION_NAME the name to set.
+/// @remarks If you don't specify the target_name, it will be the same of the project name.
+/// @remarks Call only once by project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(my_project.cpp)
+///
+///  target_name("my_exe")
+///  target_type(CONSOLE_APPLICATION)
+/// @endcode
+///
+/// @subsection TargetRegisteredSubSection target_registered
+/// @brief Speficy the application is registered in the system.
+/// @remarks Only effect on linux.
+/// @remarks By default the application is registered but not visible in GNOME or KDE menu.
+/// @remarks Call only once by project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(my_project.cpp)
+///
+///  target_registered(OFF)
+///  target_type(GUI_APPLICATION)
+/// @endcode
+///
+/// @subsection TargetStartupSubSection target_startup
+/// @brief Specifies the entry point to be called when the application is load.
+/// @param ARGV0 the object that contains the entry point.
+/// @param ARGV1 the object definition file. (optional if you use TUnitMain_ or TUnitFrameworkMain_ entry point)
+/// @remarks Do not use this method of startup_(...) is present in your files or if you use standard c++ main() method.
+/// @remarks Call only once by project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(my_project.cpp)
+///
+///  target_startup("my_project::my_class" my_project.cpp)
+///  target_type(GUI_APPLICATION)
+/// @endcode
+///
+/// @subsection TargetTypeSubSection target_type
+/// @brief Specifies the type of application to build.
+/// @param TARGET_TYPE Type of application.
+/// Possible values :
+/// * CONSOLE_APPLICATION Console application
+/// * GUI_APPLICATION Gui application (Winforms)
+/// * TEST_APPLICATION Test application (TUnit)
+/// * MODULE_LIBRARY Module library
+/// * SHARED_LIBRARY Shared library (.dll or .so)
+/// * STATIC_LIBRARY Static library (.lib or .a)
+/// * INTERFACE_LIBRARY Interface library (header files only)
+/// * CUSTOM_TARGET Target with no output.
+/// @remarks This method is required except container project like Solution.
+/// @remarks This method must be the last method.
+/// @remarks Call only once by project.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(my_project.cpp)
+///  add_references(xtd.drawing xtd.drawing.native)
+///
+///  target_name("my_exe")
+///  target_type(CONSOLE_APPLICATION)
+/// @endcode
+///
+/// @section AssemblyInformationsCommandsSection Assembly informations commands
+///
+/// @subsection AssemblyCompanySubSection assembly_company
+/// @brief Specifies a company name for the assembly manifest. Corresponds to AssemblyCompanyAttribute.
+/// @param ASSEMBLY_COMPANY The company name to set.
+/// @remarks Call only once by project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(my_project.cpp)
+///
+///  assembly_company("Gammasoft")
+///
+///  target_type(GUI_APPLICATION)
+/// @endcode
+///
+/// @subsection AssemblyConfigurationSubSection assembly_configuration
+/// @brief Specifies a configuration for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
+/// @param ASSEMBLY_CONFIGURATION The configuration to set.
+/// @remarks Call only once by project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(my_project.cpp)
+///
+///  assembly_configuration("Beta public")
+///
+///  target_type(GUI_APPLICATION)
+/// @endcode
+///
+/// @subsection AssemblyCopyrightSubSection assembly_copyright
+/// @brief Specifies a copyright notice for the assembly manifest. Corresponds to AssemblyCopyrightAttribute.
+/// @param ASSEMBLY_COPYRIGHT The copyright to set.
+/// @remarks Call only once by project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(my_project.cpp)
+///
+///  assembly_copyright("© 2021 by Gammasoft.")
+///
+///  target_type(GUI_APPLICATION)
+/// @endcode
+///
+/// @subsection AssemblyCultureSubSection assembly_culture
+/// @brief Specifies the culture for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
+/// @param ASSEMBLY_CONFIGURATION The culture to set.
+/// @remarks Call only once by project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+///
+/// @subsection AssemblyDescriptionSubSection assembly_description
+/// @brief Specifies an optional description for the assembly manifest. Corresponds to AssemblyDescriptionAttribute.
+/// @param ASSEMBLY_DESCRIPTION The description to set.
+/// @remarks Call only once by project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(my_project.cpp)
+///
+///  assembly_description("The application to stuff it.")
+///
+///  target_type(GUI_APPLICATION)
+/// @endcode
+///
+/// @subsection AssemblyFileVersionSubSection assembly_file_version
+/// @brief Specifies a version number that instructs the compiler to use a specific version for the Win32 file version resource. Corresponds to AssemblyFileVersionAttribute.
+/// @param ASSEMBLY_FILE_VERSION The file version to set (Major, Minor and build).
+/// @remarks Call only once by project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(my_project.cpp)
+///
+///  assembly_file_version("1.2.3")
+///
+///  target_type(GUI_APPLICATION)
+/// @endcode
+///
+/// @subsection AssemblyGuidSubSection assembly_guid
+/// @brief Specifies an unique GUID that identifies the assembly. When you create a project, Visual Studio generates a GUID for the assembly. Corresponds to Guid.
+/// @param ASSEMBLY_GUID The guid to set.
+/// @remarks Call only once by project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(my_project.cpp)
+///
+///  assembly_guid("fc5beb89-a4cc-445e-8ef7-07a9e471ef9a")
+///
+///  target_type(GUI_APPLICATION)
+/// @endcode
+///
+/// @subsection AssemblyProductSubSection assembly_product
+/// @brief Specifies a product name for the assembly manifest. Corresponds to AssemblyProductAttribute.
+/// @param ASSEMBLY_PRODUCT The product name to set.
+/// @remarks Call only once by project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(my_project.cpp)
+///
+///  assembly_product("my_project")
+///
+///  target_type(GUI_APPLICATION)
+/// @endcode
+///
+/// @subsection AssemblyTitleSubSection assembly_title
+/// @brief Specifies a title for the assembly manifest. Corresponds to AssemblyTitleAttribute.
+/// @param ASSEMBLY_TITLE The title to set.
+/// @remarks Call only once by project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(my_project.cpp)
+///
+///  assembly_title("My Project")
+///
+///  target_type(GUI_APPLICATION)
+/// @endcode
+///
+/// @subsection AssemblyTrademarkSubSection assembly_trademark
+/// @brief Specifies a trademark for the assembly manifest. Corresponds to AssemblyTrademarkAttribute.
+/// @param ASSEMBLY_TRADEMARK The trademark to set.
+/// @remarks Call only once by project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+///
+/// @subsection AssemblyVersionSubSection assembly_version
+/// @brief Specifies the version of the assembly. Corresponds to AssemblyVersionAttribute.
+/// @param ASSEMBLY_FILE_VERSION The version to set (Major, Minor and build).
+/// @remarks Call only once by project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(my_project.cpp)
+///
+///  assembly_version("1.2.3")
+///
+///  target_type(GUI_APPLICATION)
+/// @endcode
+///
+/// @section BuildOptionsCommandsSection Build options commands
+///
+/// @subsection BuildOutputDirectorySubSection build_output_directory
+/// @brief Specifies the directory into which runtime target files should be built.
+/// @param OUTPUT_DIRECTORY the directory where runtime target files should be built.
+/// @remark This option is use mainly when a solution as more than one projec.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(MySolution)
+///  find_package(xtd REQUIRED)
+///
+///  build_output_directory("${USER_DIRECTORY}/Output")
+///
+///  add_projects(lib_project1 lib_project2 lib_project3)
+///  add_projects(tests/test_lib_project1 tests/test_lib_project2 tests/test_lib_project3)
+/// @endcode
+///
+/// @section InstallCommandsSection Install commands
+///
+/// @subsection AddInstallIncludeDirectoriesSubSection add_install_include_directories
+/// @brief Installs include directories.
+/// @param ARGN Include directories to install.
+/// @remarks This method is required for install package.
+/// @remarks This method can be call more than once in the same project.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(src/my_project1.cpp src/my_project2.cpp include/my_project/my_project.h include/my_project/MyProjec2.h)
+///
+///  target_type(STATIC_LIBRARY)
+///
+///  add_install_include_directories(include/my_project)
+///  install_component()
+///  install_application()
+/// @endcode
+///
+/// @subsection AddInstallIncludeFilesSubSection add_install_include_files
+/// @brief Installs include files.
+/// @param ARGN Include files to install.
+/// @remarks This method is required for install package.
+/// @remarks This method can be call more than once in the same project.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(my_project1.cpp my_project2.cpp my_project.h MyProjec2.h)
+///
+///  target_type(STATIC_LIBRARY)
+///
+///  install_include_files(my_project1.h my_project2.h)
+///  install_component()
+///  install_application()
+/// @endcode
+///
+/// @subsection InstallComponentSubSection install_component
+/// @param ARGV0 Install name (optional).
+/// @remarks if install name no specified and install_name() method no called, the install name is equal to application name.
+/// @remarks This method is required for install package.
+/// @remarks This method must be call after target_type.
+/// @remarks Call only once by project.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(my_project.cpp my_project.h)
+///
+///  target_type(STATIC_LIBRARY)
+///
+///  add_install_include_files(my_project.h)
+///  install_component()
+///  install_package()
+/// @endcode
+///
+/// @subsection InstallPackageSubSection install_package
+/// @brief Installs package MODULE_LIBRARY, STATIC_LIBRARY or SHARED_LIBRAY package.
+/// @param ARGV0 Install name (optional).
+/// @remarks if install name no specified and install_name() method no called, the install name is equal to application name.
+/// @remarks This method is required for install package.
+/// @remarks This method must be after target_type.
+/// @remarks Call only once by project.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(my_project.cpp my_project.h)
+///
+///  target_type(STATIC_LIBRARY)
+///
+///  add_install_include_files(my_project.h)
+///  install_component()
+///  install_package()
+/// @endcode
+///
+/// @subsection InstallNameSubSection install_name
+/// @brief Specifies the install name.
+/// @param NAME Install name.
+/// @remarks This method is optional.
+/// @remarks This method must be after add_references.
+/// @remarks Call only once by project.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(my_project.cpp my_project.h)
+///
+///  target_type(STATIC_LIBRARY)
+///
+///  install_name("specific_project")
+///  add_install_include_files(my_project.h)
+///  install_component()
+///  install_application()
+/// @endcode
+///
+/// @section ProjectCommandsSection Project commands
+///
+/// @subsection AddIncludeDirectoriesSubSection add_include_directories
+/// @brief Add include directory to current project.
+/// @param ARGN directories to add.
+/// @remarks This method can be call more than once in the same project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_include_directories(include)
+///  add_sources(my_project.cpp include/my_project/my_project.h)
+///
+///  target_type(STATIC_LIBRARY)
+/// @endcode
+///
+/// @subsection AddPackagesSubSection add_packages
+/// @brief Adds, finds and loads settings from external required projects to current project.
+/// @param ARGN packages to add.
+/// @remarks This method can be call more than once in the same project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_packages(my_package1 my_package2)
+///  add_references(my_project1_in_my_package1 my_project1_in_my_package2 my_project2_in_my_package2)
+///  add_sources(my_project.cpp)
+///
+///  target_type(CONSOLE_APPLICATION)
+/// @endcode
+///
+/// @subsection AddProjectsSubSection add_projects
+/// @brief Add child projects to parent project.
+/// @param ARGN projects to add.
+/// @remarks  The path can be relative from CMAKE_CURRENT_SOURCE_DIR or absolute.
+/// @remarks This method can be call more than once in the same project.
+/// @remarks This method is optional except container project like Solution.
+/// @remarks This method must be call before target_type().
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(MySolution)
+///  find_package(xtd REQUIRED)
+///  add_projects(lib_project1 lib_project2 lib_project3)
+///  add_projects(tests/test_lib_project1 tests/test_lib_project2 tests/test_lib_project3)
+/// @endcode
+///
+/// @subsection AddReferencesSubSection add_references
+/// @brief Add references (libraries) to current project.
+/// @param ARGN references to add.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(my_project.cpp)
+///
+///  add_references(xtd.drawing xtd.drawing.native)
+///  add_references(xtd.forms)
+///
+///  target_type(CONSOLE_APPLICATION)
+/// @endcode
+///
+/// @subsection AddResourcesSubSection resource
+/// @brief Add resources to current project.
+/// @param NAME resource name to add.
+/// @param FILE resource file to add.
+/// @remarks  The path can be relative from CMAKE_CURRENT_SOURCE_DIR or absolute.
+/// @remarks This method can be call more than once in the same project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(file.h file.cpp)
+///  resource(image1 resources/image1.png)
+///  resource(image2 resources/image2.bmp)
+///  resource(animation1 animations/ani1.gif)
+///
+///  target_type(CONSOLE_APPLICATION)
+/// @endcode
+///
+/// @subsection AddResourceStringSubSection resource_string
+/// @brief Add resource string to current project.
+/// @param NAME Name of string to add.
+/// @param VALUE Value of string to add.
+/// @param COMMENT Comment of string to add.
+/// @remarks This method can be call more than once in the same project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(file.h file.cpp)
+///  resource_string(caption "\"Form examples\"" "Caption of main Form.")
+///  resource_string(button_close_text "\"Close\"" "Text of close button.")
+///
+///  target_type(GUI_APPLICATION)
+/// @endcode
+///
+/// @subsection AddSettingSubSection setting
+/// @brief Add a setting to current project.
+/// @param NAME The name of setting to add.
+/// @param TYPE The type of setting to add.
+/// @param SCOPE The scope of setting to add (APPLICATION or USER).
+/// @param VALUE The value of setting to add.
+/// @remarks Application-scope settings are read only at run time.
+/// @remarks User-scope settings are read/write at run time, and their values can be changed and saved in code.
+/// @remarks This method can be call more than once in the same project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(file.h file.cpp)
+///  setting(name string APPLICATION "\"Settings example\"")
+///  setting(back_color xtd::drawing::color USER "xtd::drawing::color::spring_green")
+///
+///  target_type(CONSOLE_APPLICATION)
+/// @endcode
+///
+/// @subsection AddSourcesSubSection add_sources
+/// @brief Add source and header files to current project.
+/// @param ARGN Files list to add.
+/// @remarks  The path can be relative from CMAKE_CURRENT_SOURCE_DIR or absolute.
+/// @remarks This method can be call more than once in the same project.
+/// @remarks This method is required except container project like Solution.
+/// @remarks This method must be call before target_type().
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.3)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(file1.h file2.h options/file3.h)
+///  add_sources(file1.cpp file2.cpp options/file3.cpp)
+///
+///  target_type(CONSOLE_APPLICATION)
+/// @endcode
+///
+/// @section ApplicationPropertiesVariablesSection Application properties Variables
+///
+/// @subsection ApplicationDefaultNamespaceVariableSubSection APPLICATION_DEFAULT_NAMESPACE
+/// @brief Contains default namespace use by application.
+/// @see @ref TargetDefaultNamespaceSubSection
+///
+/// @subsection ApplicatioIconVariableSubSection APPLICATION_ICON
+/// @brief Contains application icon file name without extension.
+/// @see @ref TargetIconSubSection
+///
+/// @subsection ApplicationNameVariableSubSection APPLICATION_NAME
+/// @brief Contains application name.
+/// @see @ref TargetNameSubSection
+///
+/// @subsection ApplicationRegisteredVariableSubSection APPLICATION_REGISTERED
+/// @brief Contains boolean that specify if application is registered or not on the system.
+///  * ON Registered
+///  * OFF Not registered
+///
+/// @see @ref ApplicationNoRegisterSubSection
+///
+/// @subsection TargetTypeVariableSubSection TARGET_TYPE
+/// @brief Contains application type.
+/// @see @ref TargetTypeSubSection
+///
+/// @section AssemblyInformationsVariablesSection Assembly informations Variables
+///
+/// @subsection AssemblyCompanyVariableSubSection ASSEMBLY_COMPANY
+/// @brief Contains assembly company name.
+/// @see @ref AssemblyCompanySubSection
+///
+/// @subsection AssemblyConfigurationVariableSubSection ASSEMBLY_CONFIGURATION
+/// @brief Contains assembly configuration string.
+/// @see @ref AssemblyConfigurationSubSection
+///
+/// @subsection AssemblyCopyrightVariableSubSection ASSEMBLY_COPYRIGHT
+/// @brief Contains assembly copyrignt string.
+/// @see @ref AssemblyCopyrightSubSection
+///
+/// @subsection AssemblyCultureVariableSubSection ASSEMBLY_CULTURE
+/// @brief Contains assembly culture information.
+/// @see @ref AssemblyCultureSubSection
+///
+/// @subsection AssemblyDescriptionVariableSubSection ASSEMBLY_DESCRIPTION
+/// @brief Contains assembly description string.
+/// @see @ref AssemblyDescriptionSubSection
+///
+/// @subsection AssemblyFileVersionVariableSubSection ASSEMBLY_FILE_VERSION
+/// @brief Contains assembly file version number.
+/// @see @ref AssemblyFileVersionSubSection
+///
+/// @subsection AssemblyGuidVariableSubSection ASSEMBLY_GUID
+/// @brief Contains assembly guid string.
+/// @see @ref AssemblyGuidSubSection
+///
+/// @subsection AssemblyProductVariableSubSection ASSEMBLY_PRODUCT
+/// @brief Contains assembly product string.
+/// @see @ref AssemblyProductSubSection
+///
+/// @subsection AssemblyTitleVariableSubSection ASSEMBLY_TITLE
+/// @brief Contains assembly title string.
+/// @see @ref AssemblyTitleSubSection
+///
+/// @subsection AssemblyTrademarkVariableSubSection ASSEMBLY_TRADEMARK
+/// @brief Contains assembly trademark information.
+/// @see @ref AssemblyTrademarkSubSection
+///
+/// @subsection AssemblyVersionVariableSubSection ASSEMBLY_VERSION
+/// @brief Contains assembly version number.
+/// @see @ref AssemblyVersionSubSection
+///
+/// @section BuildOptionsVariablesSection Build options Variables
+///
+/// @subsection BuildOutputDirectoryVariableSubSection BUILD_OUTPUT_DIRECTORY
+/// @brief Contains build output directory.
+/// @see @ref BuildOutputDirectorySubSection
+///
+/// @subsection BuildTypeVariableSubSection BUILD_TYPE
+/// @brief Contains build type.
+///
+/// @section InstallVariablesSection Install Variables
+///
+/// @subsection InstallComponentsVariableSubSection INSTALL_COMPONENTS
+/// @brief Contains install project components.
+/// @see @ref InstallComponentSubSection
+///
+/// @subsection InstallIncludeDirectoriesVariableSubSection INSTALL_INCLUDE_DIRECTORIES
+/// @brief Contains install include directories.
+/// @see @ref AddInstallIncludeDirectoriesSubSection
+///
+/// @subsection InstallIncludeFilesVariableSubSection INSTALL_INCLUDE_FILES
+/// @brief Contains install include files.
+/// @see @ref AddInstallIncludeFilesSubSection
+///
+/// @subsection InstallNameVariableSubSection INSTALL_NAME
+/// @brief Contains install name.
+/// @see @ref InstallNameSubSection
+///
+/// @section ProjectVariablesSection Project Variables
+///
+/// @subsection ProjectApplicationSettingsSubSection PROJECT_APPLICATION_SETTINGS
+/// @brief Contains project application settings.
+/// @see @ref AddSettingSubSection
+///
+/// @subsection ProjectIncludeDirectoriesSubSection PROJECT_INCLUDE_DIRECTORIES
+/// @brief Contains include directories.
+/// @see @ref AddIncludeDirectoriesSubSection
+///
+/// @subsection ProjectPackagesSubSection PROJECT_PACKAGES
+/// @brief Contains project packages.
+/// @see @ref AddPackagesSubSection
+///
+/// @subsection ProjectProjectsSubSection PROJECT_PROJECTS
+/// @brief Contains solution or project projects.
+/// @see @ref AddProjectsSubSection
+///
+/// @subsection ProjectReferencesSubSection PROJECT_REFERENCES
+/// @brief Contains project references.
+/// @see @ref AddReferencesSubSection
+///
+/// @subsection ProjectResourcesSubSection PROJECT_RESOURCES
+/// @brief Contains project resources.
+/// @see @ref AddResourcesSubSection
+///
+/// @subsection ProjectResourceStringsSubSection PROJECT_RESOURCE_STRINGS
+/// @brief Contains project resource strings.
+/// @see @ref AddResourceStringSubSection
+///
+/// @subsection ProjectSourcesSubSection PROJECT_SOURCES
+/// @brief Contains project sources.
+/// @see @ref AddSourcesSubSection
+///
+/// @subsection ProjectUserSettingsSubSection PROJECT_USER_SETTINGS
+/// @brief Contains project user settings.
+/// @see @ref AddSettingSubSection
+///
+/// @section SystemVariablesSection System Variables
+///
+/// @subsection UserDirectorySubSection USER_DIRECTORY
+/// @brief The path to user home.

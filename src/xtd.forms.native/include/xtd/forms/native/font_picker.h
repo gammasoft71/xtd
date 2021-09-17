@@ -26,6 +26,8 @@ namespace xtd {
     /// @warning Internal use only
     namespace native {
       /// @brief Contains font picker native API.
+      /// @par Namespace
+      /// xtd::forms::native
       /// @par Library
       /// xtd.forms.native
       /// @ingroup xtd_forms_native native

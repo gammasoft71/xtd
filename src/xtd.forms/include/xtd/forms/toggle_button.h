@@ -11,6 +11,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a Windows toggle_button.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
@@ -25,18 +27,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of toggle_button control.
     /// @include toggle_button.cpp
-    /// @par Windows
-    /// @image html toggle_button_w.png
-    /// <br>
-    /// @image html toggle_button_wd.png
-    /// @par macOS
-    /// @image html toggle_button_m.png
-    /// <br>
-    /// @image html toggle_button_md.png
-    /// @par Gnome
-    /// @image html toggle_button_g.png
-    /// <br>
-    /// @image html toggle_button_gd.png
     class forms_export_ toggle_button : public button_base {
     public:
       /// @brief Initializes a new instance of the CheckBox class.
@@ -103,11 +93,11 @@ namespace xtd {
       
       /// @brief Occurs when the value of the checked property changes.
       /// @ingroup events
-      event<toggle_button, event_handler<control&>> checked_changed;
+      event<toggle_button, event_handler> checked_changed;
       
       /// @brief Occurs when the value of the check_state property changes.
       /// @ingroup events
-      event<toggle_button, event_handler<control&>> check_state_changed;
+      event<toggle_button, event_handler> check_state_changed;
 
     protected:
       /// @brief Gets the required creation parameters when the control handle is created.

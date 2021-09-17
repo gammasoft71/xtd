@@ -4,10 +4,10 @@ using namespace std;
 using namespace xtd;
 
 int main() {
-  cout << strings::sprintf("%d", true) << endl;
-  cout << strings::sprintf("%o", true) << endl;
-  cout << strings::sprintf("%x", true) << endl;
-  cout << strings::sprintf("%X", true) << endl;
+  cout << ustring::sprintf("%d", true) << endl;
+  cout << ustring::sprintf("%o", true) << endl;
+  cout << ustring::sprintf("%x", true) << endl;
+  cout << ustring::sprintf("%X", true) << endl;
 }
 
 // This code produces the following output :

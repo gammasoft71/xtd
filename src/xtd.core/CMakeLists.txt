@@ -9,14 +9,15 @@ add_references(xtd.3rdparty.call_stack ${XTD_CORE_NATIVE_LIBRARY})
 add_sources(
   include/xtd/action.h
   include/xtd/add_last_arg_to_command.h
+  include/xtd/any.h
   include/xtd/architecture_id.h
   include/xtd/argument_exception.h
   include/xtd/argument_null_exception.h
   include/xtd/argument_out_of_range_exception.h
   include/xtd/arithmetic_exception.h
   include/xtd/as.h
+  include/xtd/async_callback.h
   include/xtd/background_color.h
-  include/xtd/basic_console.h
   include/xtd/beep.h
   include/xtd/bit_converter.h
   include/xtd/block_scope.h
@@ -33,6 +34,9 @@ add_sources(
   include/xtd/console_key_info.h
   include/xtd/console_modifiers.h
   include/xtd/console_special_key.h
+  include/xtd/convert.h
+  include/xtd/convert_pointer.h
+  include/xtd/convert_string.h
   include/xtd/cpp_language.h
   include/xtd/ctrace.h
   include/xtd/debugstreambuf.h
@@ -48,6 +52,7 @@ add_sources(
   include/xtd/format_exception.h
   include/xtd/func.h
   include/xtd/guid.h
+  include/xtd/iasync_result.h
   include/xtd/icomparable.h
   include/xtd/iequatable.h
   include/xtd/index_out_of_range_exception.h
@@ -56,10 +61,10 @@ add_sources(
   include/xtd/invalid_operation_exception.h
   include/xtd/invalid_program_exception.h
   include/xtd/is.h
-  include/xtd/istring.h
   include/xtd/language_id.h
   include/xtd/length_exception.h
   include/xtd/literals.h
+  include/xtd/math.h
   include/xtd/nameof.h
   include/xtd/not_finite_number_exception.h
   include/xtd/not_implemented_exception.h
@@ -67,6 +72,7 @@ add_sources(
   include/xtd/null_pointer_exception.h
   include/xtd/number_styles.h
   include/xtd/object.h
+  include/xtd/object_closed_exception.h
   include/xtd/operation_canceled_exception.h
   include/xtd/operating_system.h
   include/xtd/overflow_exception.h
@@ -82,7 +88,6 @@ add_sources(
   include/xtd/static.h
   include/xtd/string_comparison.h
   include/xtd/string_split_options.h
-  include/xtd/strings.h
   include/xtd/system_exception.h
   include/xtd/tick.h
   include/xtd/ticks.h
@@ -95,9 +100,9 @@ add_sources(
   include/xtd/underflow_exception.h
   include/xtd/unused.h
   include/xtd/using.h
+  include/xtd/ustring.h
   include/xtd/va_args_comma.h
   include/xtd/version.h
-  include/xtd/wconsole.h
   include/xtd/xml_syntax_exception.h
   include/xtd/xtd.core
   include/xtd/xtd.core.h
@@ -147,17 +152,12 @@ add_sources(
   include/xtd/internal/__enum_formater.h
   include/xtd/internal/__fixed_point_formater.h
   include/xtd/internal/__generic_stream_output.h
-  include/xtd/internal/__get_err_rdbuf.h
-  include/xtd/internal/__get_in_rdbuf.h
-  include/xtd/internal/__get_out_rdbuf.h
   include/xtd/internal/__format_exception.h
   include/xtd/internal/__format_information.h
   include/xtd/internal/__format_stringer.h
-  include/xtd/internal/__literals_exception.h
   include/xtd/internal/__natural_formater.h
   include/xtd/internal/__numeric_formater.h
   include/xtd/internal/__opaque_console.h
-  include/xtd/internal/__parse_exception.h
   include/xtd/internal/__parse.h
   include/xtd/internal/__sprintf.h
   include/xtd/internal/__string_formater.h
@@ -169,7 +169,7 @@ add_sources(
   include/xtd/io/file_format_exception.h
   include/xtd/io/file_load_exception.h
   include/xtd/io/file_not_found_exception.h
-  include/xtd/io/ioexception.h
+  include/xtd/io/io_exception.h
   include/xtd/io/path.h
   include/xtd/io/path_too_long_exception.h
   include/xtd/io/stream_reader.h
@@ -178,6 +178,45 @@ add_sources(
   include/xtd/io/string_writer.h
   include/xtd/io/text_reader.h
   include/xtd/io/text_writer.h
+  include/xtd/net/cookie_exception.h
+  include/xtd/net/dns.h
+  include/xtd/net/dns_end_point.h
+  include/xtd/net/end_point.h
+  include/xtd/net/ip_address.h
+  include/xtd/net/ip_end_point.h
+  include/xtd/net/ip_host_entry.h
+  include/xtd/net/network_credential.h
+  include/xtd/net/protocol_violation_exception.h
+  include/xtd/net/web_exception.h
+  include/xtd/net/socket_address.h
+  include/xtd/net/sockets/address_family.h
+  include/xtd/net/sockets/io_control_code.h
+  include/xtd/net/sockets/ip_packet_information.h
+  include/xtd/net/sockets/ip_protection_level.h
+  include/xtd/net/sockets/ip_v6_multicast_option.h
+  include/xtd/net/sockets/linger_option.h
+  include/xtd/net/sockets/multicast_option.h
+  include/xtd/net/sockets/network_stream.h
+  include/xtd/net/sockets/protocol_family.h
+  include/xtd/net/sockets/protocol_type.h
+  include/xtd/net/sockets/select_mode.h
+  include/xtd/net/sockets/send_packets_element.h
+  include/xtd/net/sockets/socket.h
+  include/xtd/net/sockets/socket_async_event_args.h
+  include/xtd/net/sockets/socket_async_operation.h
+  include/xtd/net/sockets/socket_error.h
+  include/xtd/net/sockets/socket_exception.h
+  include/xtd/net/sockets/socket_flags.h
+  include/xtd/net/sockets/socket_information.h
+  include/xtd/net/sockets/socket_information_options.h
+  include/xtd/net/sockets/socket_option_level.h
+  include/xtd/net/sockets/socket_option_name.h
+  include/xtd/net/sockets/socket_shutdown.h
+  include/xtd/net/sockets/socket_type.h
+  include/xtd/net/sockets/tcp_client.h
+  include/xtd/net/sockets/tcp_listener.h
+  include/xtd/net/sockets/transmit_file_options.h
+  include/xtd/net/sockets/udp_client.h
   include/xtd/security/secure_string.h
   include/xtd/web/css/property.h
   include/xtd/web/css/property_map.h
@@ -185,17 +224,29 @@ add_sources(
   include/xtd/web/css/selector.h
   include/xtd/web/css/selector_map.h
   include/xtd/web/css/writer.h
+)
+add_sources(
   src/xtd/environment_version.cpp
+  src/xtd/any.cpp
   src/xtd/bit_converter.cpp
+  src/xtd/console.cpp
+  src/xtd/convert.cpp
+  src/xtd/convert_pointer.cpp
+  src/xtd/convert_string.cpp
   src/xtd/environment.cpp
   src/xtd/event_args.cpp
   src/xtd/guid.cpp
+  src/xtd/literals.cpp
+  src/xtd/math.cpp
+  src/xtd/object.cpp
 # src/xtd/signal_catcher.cpp
-  src/xtd/strings.cpp
   src/xtd/system_exception.cpp
+  src/xtd/to_string.cpp
   src/xtd/translator.cpp
   src/xtd/types.cpp
   src/xtd/types.cpp
+  src/xtd/ustring.cpp
+  src/xtd/version.cpp
   src/xtd/diagnostics/boolean_switch.cpp
   src/xtd/diagnostics/console_trace_listener.cpp
   src/xtd/diagnostics/debug.cpp
@@ -210,17 +261,48 @@ add_sources(
   src/xtd/diagnostics/stack_frame.cpp
   src/xtd/diagnostics/stack_trace.cpp
   src/xtd/diagnostics/stopwatch.cpp
+  src/xtd/diagnostics/switch_base.cpp
   src/xtd/diagnostics/trace.cpp
+  src/xtd/diagnostics/trace_event_cache.cpp
+  src/xtd/diagnostics/trace_filter.cpp
+  src/xtd/diagnostics/trace_listener.cpp
   src/xtd/diagnostics/trace_listener_collection.cpp
+  src/xtd/diagnostics/trace_source.cpp 
+  src/xtd/diagnostics/trace_switch.cpp 
   src/xtd/internal/__format_exception.cpp
-  src/xtd/internal/__litterals_exception.cpp
+  src/xtd/internal/__format_stringer.cpp
   src/xtd/internal/__opaque_console_gcc.cpp
   src/xtd/internal/__opaque_console_win32.cpp
-  src/xtd/internal/__parse_exception.cpp
+  src/xtd/internal/__parse.cpp
   src/xtd/io/file.cpp
   src/xtd/io/path.cpp
+  src/xtd/io/stream_reader.cpp
+  src/xtd/io/stream_writer.cpp
+  src/xtd/io/string_reader.cpp
+  src/xtd/io/string_writer.cpp
   src/xtd/io/text_reader.cpp
   src/xtd/io/text_writer.cpp
+  src/xtd/net/dns.cpp
+  src/xtd/net/dns_end_point.cpp
+  src/xtd/net/end_point.cpp
+  src/xtd/net/ip_address.cpp
+  src/xtd/net/ip_end_point.cpp
+  src/xtd/net/ip_host_entry.cpp
+  src/xtd/net/network_credential.cpp
+  src/xtd/net/socket_address.cpp
+  src/xtd/net/sockets/ip_packet_information.cpp
+  src/xtd/net/sockets/ip_v6_multicast_option.cpp
+  src/xtd/net/sockets/linger_option.cpp
+  src/xtd/net/sockets/multicast_option.cpp
+  src/xtd/net/sockets/network_stream.cpp
+  src/xtd/net/sockets/send_packets_element.cpp
+  src/xtd/net/sockets/socket.cpp
+  src/xtd/net/sockets/socket_async_event_args.cpp
+  src/xtd/net/sockets/socket_information.cpp
+  src/xtd/net/sockets/tcp_client.cpp
+  src/xtd/net/sockets/tcp_listener.cpp
+  src/xtd/net/sockets/udp_client.cpp
+  src/xtd/security/secure_string.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})
 

@@ -1,3 +1,4 @@
+#include <xtd/convert_string.h>
 #include <xtd/drawing/system_colors.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control.h>
@@ -48,23 +49,23 @@ size_t text_box::selection_start() const {
   return text_box_base::selection_start();
 }
 
-const std::string& text_box::text() const {
+const ustring& text_box::text() const {
   if (!use_system_password_char_ && password_char_) return text_;
   return text_box_base::text();
 }
 
-control& text_box::text(const std::string& text) {
+control& text_box::text(const ustring& text) {
   if (text_ != text) {
     text_ = text;
     if (!use_system_password_char_ && password_char_) {
       native::text_box::text(handle(), "");
       for (size_t count = 0; count < text.size(); count++)
-        native::text_box::append(handle(), xtd::strings::format("{}", password_char_));
+        native::text_box::append(handle(), xtd::ustring::format("{}", password_char_));
     } else {
       switch (character_casing_) {
         case xtd::forms::character_casing::normal: text_ = text; break;
-        case xtd::forms::character_casing::upper: text_ = xtd::strings::to_upper(text); break;
-        case xtd::forms::character_casing::lower: text_ = xtd::strings::to_lower(text); break;
+        case xtd::forms::character_casing::upper: text_ = text.to_upper(); break;
+        case xtd::forms::character_casing::lower: text_ = text.to_lower(); break;
         default: break;
       }
       native::text_box::text(handle(), text_.c_str());
@@ -106,7 +107,7 @@ drawing::size text_box::measure_control() const {
   return drawing::size(client_size_.width(), static_cast<int32_t>(font().get_height()) + 2 + (border_style_ == border_style::none ? 0 : 4));
 }
 
-void text_box::append_text(const std::string& value) {
+void text_box::append_text(const xtd::ustring& value) {
   native::text_box::append(handle_, value);
 }
 
@@ -119,8 +120,8 @@ void text_box::on_handle_created(const event_args& e) {
   text_box_base::on_handle_created(e);
   /*
   switch (character_casing_) {
-    case xtd::forms::character_casing::upper: text_ = xtd::strings::to_upper(text_); break;
-    case xtd::forms::character_casing::lower: text_ = xtd::strings::to_lower(text_); break;
+    case xtd::forms::character_casing::upper: text_ = text_.to_upper(text_); break;
+    case xtd::forms::character_casing::lower: text_ = text_.to_lower(text_); break;
     default: break;
   }*/
 
@@ -128,18 +129,18 @@ void text_box::on_handle_created(const event_args& e) {
     auto text = text_;
     native::text_box::text(handle(), "");
     for (size_t count = 0; count < text.size(); count++)
-      native::text_box::append(handle(), xtd::strings::format("{}", password_char_));
+      native::text_box::append(handle(), xtd::ustring::format("{}", password_char_));
   } else {
     switch (character_casing_) {
-      case xtd::forms::character_casing::upper: text_ = xtd::strings::to_upper(text_); break;
-      case xtd::forms::character_casing::lower: text_ = xtd::strings::to_lower(text_); break;
+      case xtd::forms::character_casing::upper: text_ = text_.to_upper(); break;
+      case xtd::forms::character_casing::lower: text_ = text_.to_lower(); break;
       default: break;
     }
     native::text_box::text(handle(), text_.c_str());
   }
   
   // Workaround : on macOS with wxWidgets toolkit, retina display, dark mode enabled, border style is not none, and multiline, the border is not show.
-  parent().value().get().paint += [this](control& sender, paint_event_args& e) {
+  parent().value().get().paint += [this](object& sender, paint_event_args& e) {
     if (environment::os_version().is_macos_platform() && native::toolkit::name() == "wxwidgets" && screen::from_handle(parent().value().get().handle()).scale_factor() > 1. && application::dark_mode_enabled() && border_style_ != forms::border_style::none && multiline_)
       e.graphics().draw_rectangle(xtd::drawing::pens::white(), xtd::drawing::rectangle::offset(xtd::drawing::rectangle::inflate(this->bounds(), {-2, -2}), {1, 1}));
   };
@@ -173,8 +174,8 @@ void text_box::wm_key_char(message &message) {
       message.result(key_event_args.suppress_key_press());
     } else if (message.msg() == WM_CHAR) {
       key_press_event_args key_event_args(static_cast<int32_t>(message.wparam()));
-      text_ += xtd::strings::format("{}",key_event_args.key_char());
-      native::text_box::append(handle(), xtd::strings::format("{}", password_char_));
+      text_ += xtd::ustring::format("{}",key_event_args.key_char());
+      native::text_box::append(handle(), xtd::ustring::format("{}", password_char_));
       message.result(true);
     } else if (message.msg() == WM_KEYUP) {
       key_event_args key_event_args(static_cast<keys>(message.wparam()));
@@ -189,8 +190,8 @@ void text_box::wm_set_text(message &message) {
     on_text_changed(event_args::empty);
   } else {
     def_wnd_proc(message);
-    if (text_ != reinterpret_cast<const char*>(message.lparam())) {
-      text_ = reinterpret_cast<const char*>(message.lparam());
+    if (text_ != convert_string::to_string(reinterpret_cast<const wchar_t*>(message.lparam()))) {
+      text_ = convert_string::to_string(reinterpret_cast<const wchar_t*>(message.lparam()));
       on_text_changed(event_args::empty);
     }
   }

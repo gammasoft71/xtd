@@ -20,18 +20,21 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @cond
-  class guid;
+  struct guid;
   /// @endcond
   
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
     /// @brief Contains guid native API.
+    /// @par Namespace
+    /// xtd::native
     /// @par Library
     /// xtd.core.native
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
     class core_native_export_ guid final {
+      guid() = delete;
       friend xtd::guid;
     protected:
       /// @brief Generates a globally unique identifier (GUID).

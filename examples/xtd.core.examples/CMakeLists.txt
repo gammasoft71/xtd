@@ -7,17 +7,22 @@ add_projects(
   hello_worlds
   collections
   console
+  convert
   delegates
   diagnostics
   environment
+  exceptions
   format
   guid
   keywords
   mains
+  math
+  network
   processes
   random
   sprintf
   strings
+  version
   web
   others
   tests

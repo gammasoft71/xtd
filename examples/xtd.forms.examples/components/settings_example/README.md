@@ -1,14 +1,13 @@
 # settings_example
 
-demonstrates the use of [xtd::forms::settings](../../../../src/xtd_forms/include/xtd/forms/settings.hpp) component.
+demonstrates the use of [xtd::forms::settings](../../../../src/xtd.forms/include/xtd/forms/settings.h) component.
 
 # Sources
 
-[src/settings_example.cpp](src/settings_example.cpp)
+* [src/settings_example.cpp](src/settings_example.cpp)
+* [properties/settings.cmake](properties/settings.cmake)
+* [CMakeLists.txt](CMakeLists.txt)
 
-[CMakeLists.txt](CMakeLists.txt)
-
-[properties/settings.cmake](properties/settings.cmake)
 
 # Build and run
 

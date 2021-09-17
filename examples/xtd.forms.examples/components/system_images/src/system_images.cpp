@@ -25,7 +25,7 @@ namespace example {
       choice_theme.items().push_back("default_theme");
       choice_theme.items().push_back_range(theme::theme_names());
       choice_theme.selected_index(0);
-      choice_theme.selected_index_changed += {*this, &form1::update_form};
+      choice_theme.selected_index_changed += event_handler(*this, &form1::update_form);
 
       choice_context.bounds({75, 55, 280, 25});
       choice_context.items().push_back_range(system_images::contexts());
@@ -38,9 +38,9 @@ namespace example {
       choice_size.bounds({75, 85, 280, 25});
       for (auto size  : system_images::sizes())
         if (size.width() <= picture.width() && size.height() <= picture.height())
-          choice_size.items().push_back({strings::format("{}x{} pixels", size.width(), size.height()), size});
+          choice_size.items().push_back({ustring::format("{}x{} pixels", size.width(), size.height()), size});
       choice_size.selected_index(7);
-      choice_size.selected_index_changed += {*this, &form1::update_form};
+      choice_size.selected_index_changed += event_handler(*this, &form1::update_form);
 
       label_picture_name.text_align(content_alignment::middle_center);
       label_picture_name.bounds({75, 420, 280, label_picture_name.height()});

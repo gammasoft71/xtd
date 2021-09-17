@@ -3,35 +3,35 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <ostream>
-#include <string>
-#include <xtd/strings.h>
+#include "../../object.h"
+#include "../../ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   namespace web {
     namespace css {
-      class property {
+      class property : public object{
       public:
         property() = default;
-        explicit property(const std::string& value) : value_(value) {}
-        operator std::string() {return value_;}
+        explicit property(const xtd::ustring& value) : value_(value) {}
+        operator xtd::ustring() {return value_;}
         
-        static property from(bool value) {return property(strings::format("{}", value));}
-        static property from(double value) {return property(strings::format("{}", value));}
-        static property from(float value) {return property(strings::format("{}", value));}
-        static property from(int8_t value) {return property(strings::format("{}", value));}
-        static property from(int16_t value) {return property(strings::format("{}", value));}
-        static property from(int32_t value) {return property(strings::format("{}", value));}
-        static property from(int64_t value) {return property(strings::format("{}", value));}
-        static property from(const std::string& value) {return property(strings::format("{}", value));}
-        static property from(uint8_t value) {return property(strings::format("{}", value));}
-        static property from(uint16_t value) {return property(strings::format("{}", value));}
-        static property from(uint32_t value) {return property(strings::format("{}", value));}
-        static property from(uint64_t value) {return property(strings::format("{}", value));}
+        static property from(bool value) {return property(ustring::format("{}", value));}
+        static property from(double value) {return property(ustring::format("{}", value));}
+        static property from(float value) {return property(ustring::format("{}", value));}
+        static property from(int8_t value) {return property(ustring::format("{}", value));}
+        static property from(int16_t value) {return property(ustring::format("{}", value));}
+        static property from(int32_t value) {return property(ustring::format("{}", value));}
+        static property from(int64_t value) {return property(ustring::format("{}", value));}
+        static property from(const xtd::ustring& value) {return property(ustring::format("{}", value));}
+        static property from(uint8_t value) {return property(ustring::format("{}", value));}
+        static property from(uint16_t value) {return property(ustring::format("{}", value));}
+        static property from(uint32_t value) {return property(ustring::format("{}", value));}
+        static property from(uint64_t value) {return property(ustring::format("{}", value));}
         template<typename value_t>
-        static property from(value_t value) {return property(strings::format("{}", value));}
+        static property from(value_t value) {return property(ustring::format("{}", value));}
         
-        const std::string& value() const {return value_;}
+        const xtd::ustring& value() const {return value_;}
         template<typename value_t>
         uintptr_t value() const {return xtd::parse<value_t>(value_);}
 
@@ -43,7 +43,7 @@ namespace xtd {
         int64_t to_int64() const {return xtd::parse<int64_t>(value_);}
         intptr_t to_intptr() const {return xtd::parse<intptr_t>(value_);}
         float to_single() const {return xtd::parse<float>(value_);}
-        std::string to_string() const {return value_;}
+        xtd::ustring to_string() const noexcept override {return value_;}
         uint8_t to_uint8() const {return xtd::parse<uint8_t>(value_);}
         uint16_t to_uint16() const {return xtd::parse<uint16_t>(value_);}
         uint32_t to_uint32() const {return xtd::parse<uint32_t>(value_);}
@@ -55,7 +55,7 @@ namespace xtd {
         friend std::ostream& operator <<(std::ostream& os, const property& property) noexcept {return os << property.to_string();}
         
       private:
-        std::string value_;
+        xtd::ustring value_;
       };
     }
   }

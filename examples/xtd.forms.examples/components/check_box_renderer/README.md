@@ -1,12 +1,11 @@
 # check_box_renderer
 
-demonstrates the use of [xtd::forms::check_box_renderer](../../../../src/xtd_forms/include/xtd/forms/check_box_renderer.hpp) control.
+demonstrates the use of [xtd::forms::check_box_renderer](../../../../src/xtd.forms/include/xtd/forms/check_box_renderer.h) control.
 
 # Sources
 
-[src/check_box_renderer.cpp](src/check_box_renderer.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/check_box_renderer.cpp](src/check_box_renderer.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

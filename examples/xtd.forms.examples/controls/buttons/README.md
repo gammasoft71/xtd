@@ -1,12 +1,11 @@
 # buttons
 
-demonstrates the use of [xtd::forms::buttons](../../../../src/xtd_forms/include/xtd/forms/buttons.hpp) button object collection.
+demonstrates the use of [xtd::forms::buttons](../../../../src/xtd.forms/include/xtd/forms/buttons.h) button object collection.
 
 # Sources
 
-[src/buttons.cpp](src/buttons.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/buttons.cpp](src/buttons.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

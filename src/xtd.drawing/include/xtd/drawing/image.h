@@ -6,7 +6,8 @@
 #include <cstdint>
 #include <memory>
 #include <iostream>
-#include <string>
+#include <xtd/object.h>
+#include <xtd/ustring.h>
 #include "../drawing_export.h"
 #include "imaging/color_palette.h"
 #include "imaging/frame_dimension.h"
@@ -24,17 +25,19 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief An abstract base class that provides functionality for the bitmap and metafile descended classes.
+    /// @par Namespace
+    /// xtd::drawing
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
     /// @remarks To draw an image on a Windows Form, you should use one of the draw_image methods.
-    class drawing_export_ image {
+    class drawing_export_ image : public object {
     public:
       /// @cond
       image() = default;
       image(const image& image) = default;
       image& operator=(const image& image) = default;
-      virtual ~image();
+      ~image();
       bool operator==(const image& image) const {return data_->handle_ == image.data_->handle_;}
       bool operator!=(const image& image) const {return !operator==(image);}
       /// @endcond
@@ -140,21 +143,21 @@ namespace xtd {
       /// @brief Creates an image from the specified file.
       /// @param filename A string that contains the name of the file from which to create the image.
       /// @return The Image this method creates.
-      static image from_file(const std::string& filename) {return image(filename);}
+      static image from_file(const xtd::ustring& filename) {return image(filename);}
 
       static image from_stream(std::istream& stream) {return image(stream);}
 
       static image from_data(const char* const* bits) {return image(bits);}
       
-      void save(const std::string& filename) const;
-      void save(const std::string& filename, const imaging::image_format& format) const;
+      void save(const xtd::ustring& filename) const;
+      void save(const xtd::ustring& filename, const imaging::image_format& format) const;
       void save(std::ostream& stream, const imaging::image_format& format) const;
 
       static image empty;
       
     protected:
       explicit image(intptr_t hbitmap);
-      explicit image(const std::string& fileName);
+      explicit image(const xtd::ustring& fileName);
       explicit image(std::istream& stream);
       explicit image(const char* const* bits);
       image(int32_t width, int32_t height);

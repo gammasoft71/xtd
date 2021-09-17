@@ -3,13 +3,15 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <stdexcept>
-#include <string>
+#include <xtd/ustring.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @brief Exception thow when an assertion failed.
+    /// @par Namespace
+    /// xtd::tunit
     /// @par Library
     /// xtd.tunit
     /// @ingroup xtd_tunit exceptions
@@ -17,7 +19,7 @@ namespace xtd {
     public:
       /// @brief Create a new instance of assert_error class.
       /// @param message Message string associate to the error.
-      explicit assert_error(const std::string& message) : message_(message) {}
+      explicit assert_error(const xtd::ustring& message) : message_(message) {}
 
       /// @brief Create a new instance of assert_error class.
       /// @param message Message string associate to the error.
@@ -33,7 +35,7 @@ namespace xtd {
       const char* what() const noexcept {return message_.c_str();}
       
     private:
-      std::string message_;
+      xtd::ustring message_;
     };
   }
 }

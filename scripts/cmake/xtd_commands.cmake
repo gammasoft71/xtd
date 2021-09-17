@@ -1663,9 +1663,9 @@ macro(write_resources_file_header)
       )
     elseif ("${EXTENSION}" STREQUAL ".txt")
       file(APPEND ${RESOURCES_FILE_HEADER}
-        "    /// @brief Looks up a localized resource of type std::string.\n"
-        "    static const std::string& ${NAME}() {\n"
-        "      static std::string text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), ${PREFIX_RESOURCE_PATH}, \"${FILENAME}\"));\n"
+        "    /// @brief Looks up a localized resource of type xtd::ustring.\n"
+        "    static const xtd::ustring& ${NAME}() {\n"
+        "      static xtd::ustring text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), ${PREFIX_RESOURCE_PATH}, \"${FILENAME}\"));\n"
         "      return text;\n"
         "    }\n"
         "\n"
@@ -1680,9 +1680,9 @@ macro(write_resources_file_header)
       )
     else ()
       file(APPEND ${RESOURCES_FILE_HEADER}
-        "    /// @brief Looks up a localized resource of type std::string.\n"
-        "    static const std::string& ${NAME}() {\n"
-        "      static std::string text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), ${PREFIX_RESOURCE_PATH}, \"${FILENAME}\"));\n"
+        "    /// @brief Looks up a localized resource of type xtd::ustring.\n"
+        "    static const xtd::ustring& ${NAME}() {\n"
+        "      static xtd::ustring text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), ${PREFIX_RESOURCE_PATH}, \"${FILENAME}\"));\n"
         "      return text;\n"
         "    }\n"
         "\n"
@@ -1695,9 +1695,9 @@ macro(write_resources_file_header)
     split_resource_string(${RESOURCE_STRING} NAME VALUE COMMENT)
 
     file(APPEND ${RESOURCES_FILE_HEADER}
-      "    /// @brief Looks up a localized resource of type std::string.\n"
-      "    static const std::string& ${NAME}() {\n"
-      "      static std::string str = ${VALUE};\n"
+      "    /// @brief Looks up a localized resource of type xtd::ustring.\n"
+      "    static const xtd::ustring& ${NAME}() {\n"
+      "      static xtd::ustring str = ${VALUE};\n"
       "      return str;\n"
       "    }\n"
       "\n"

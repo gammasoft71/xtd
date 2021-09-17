@@ -2,6 +2,7 @@
 /// @brief Contains xtd::forms::application_context class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+#include <xtd/object.h>
 #include "form.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -13,6 +14,8 @@ namespace xtd {
     /// @endcond
     
     /// @brief Specifies the contextual information about an application thread.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms application
@@ -20,19 +23,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of application and application_context classes.
     /// @include application_context.cpp
-    /// @par Windows
-    /// @image html application_context_w.png
-    /// <br>
-    /// @image html application_context_wd.png
-    /// @par macOS
-    /// @image html application_context_m.png
-    /// <br>
-    /// @image html application_context_md.png
-    /// @par Gnome
-    /// @image html application_context_g.png
-    /// <br>
-    /// @image html application_context_gd.png
-    class application_context {
+    class application_context : public object {
     public:
       /// @brief Initializes a new instance of the application_context class with no context.
       application_context() = default;
@@ -42,7 +33,7 @@ namespace xtd {
       explicit application_context(const form& main_form) {this->main_form(main_form);}
 
       /// @cond
-      virtual ~application_context() {
+      ~application_context() {
         if (main_form_ != nullptr) main_form_->handle_destroyed -= {*this, &application_context::on_main_form_closed};
       }
       /// @endcond
@@ -77,7 +68,7 @@ namespace xtd {
 
       /// @brief Occurs when the message loop of the thread should be terminated, by calling exit_thread().
       /// @ingroup events
-      event<application_context, event_handler<const application_context&>> thread_exit;
+      event<application_context, event_handler> thread_exit;
       
       /// @brief Terminates the message loop of the thread.
       /// @remarks This method calls exit_thread_core.
@@ -94,7 +85,7 @@ namespace xtd {
       /// @param sender The object that raised the event.
       /// @param e The event_args that contains the event data.
       /// @remarks The default implementation of this method calls exit_thread_core.
-      virtual void on_main_form_closed(const control& sender, const event_args& e) {
+      virtual void on_main_form_closed(object& sender, const event_args& e) {
         if (!main_form_->visible()) {
           if (!main_form_->can_close_) main_form_->close();
           if (main_form_->can_close_) {
