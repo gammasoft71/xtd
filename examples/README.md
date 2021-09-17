@@ -9,6 +9,7 @@
 [xtd.core.examples](xtd.core.examples/README.md) contains xtd.core examples library examples.
 
 * [Hello Worlds](xtd.core.examples/hello_worlds/README.md) contains xtd.core "Hello, World!" examples.
+* [bit_converter](xtd.core.examples/bit_converter/README.md) contains bit converter examples.
 * [Collections](xtd.core.examples/collections/README.md) contains collections examples.
 * [Console](xtd.core.examples/console/README.md) contains console examples.
 * [Convert](xtd.core.examples/convert/README.md) contains convert examples.
