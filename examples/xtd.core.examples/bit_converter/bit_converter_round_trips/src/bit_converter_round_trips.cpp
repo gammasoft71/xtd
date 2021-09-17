@@ -26,4 +26,4 @@ startup_(examples::program);
 // This code produces the following output:
 //
 // -16 = -16: Round-trips
-// -16 = 4294967280: Does not round-trip
+// -16 = 4294967280: Round-trip
