@@ -25,6 +25,7 @@
 * [Processes](xtd.core.examples/processes/README.md) contains process examples.
 * [Random](xtd.core.examples/random/README.md) contains random examples.
 * [Strings](xtd.core.examples/strings/README.md) contains strings examples.
+* [Version](xtd.core.examples/version/README.md) contains version examples.
 * [Web](xtd.core.examples/web/README.md) contains web examples.
 * [Others](xtd.core.examples/others/README.md) contains others examples.
 
