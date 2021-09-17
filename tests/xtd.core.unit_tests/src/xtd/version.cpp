@@ -105,7 +105,7 @@ namespace unit_tests {
     }
 
     void test_method_(get_minor_revision) {
-      assert::are_equal(0x24, version(1, 2, 3, 0x420024).mainor_revision(), csf_);
+      assert::are_equal(0x24, version(1, 2, 3, 0x420024).minor_revision(), csf_);
     }
 
     void test_method_(parse_version_with_major) {

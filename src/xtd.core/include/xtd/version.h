@@ -20,7 +20,7 @@ namespace xtd {
   /// @ingroup xtd_core system
   /// @par Examples
   /// The following example shows how to use xtd::version to get the version of the Operating System.
-  /// @include version.cpp
+  /// @include version_os.cpp
   /// @remarks xtd::version numbers consist of two to four components: major, minor, build, and revision. The major and minor components are required; the build and revision components are optional, but the build component is required if the revision component is defined. All defined components must be integers greater than or equal to 0. The format of the version number is as follows (optional components are shown in square brackets ([ and ]):
   /// @verbatim major.minor[.build[.revision]] @endverbatim
   /// @remarks The components are used by convention as follows:
@@ -60,7 +60,7 @@ namespace xtd {
   /// // The example displays the following output:
   /// //       version 2.0 is earlier than version 2.1.
   /// @endcode
-  /// For two versions to be equal, the major, minor, build, and revision numbers of the first xttd::version object must be identical to those of the second xtd::version object. If the build or revision number of a xtd::version object is undefined, that Vxtd::version object is considered to be earlier than a xttd::vVersion object whose build or revision number is equal to zero. The following example illustrates this by comparing three xtd::version objects that have undefined version components.
+  /// For two versions to be equal, the major, minor, build, and revision numbers of the first xtd::version object must be identical to those of the second xtd::version object. If the build or revision number of a xtd::version object is undefined, that Vxtd::version object is considered to be earlier than a xtd::vVersion object whose build or revision number is equal to zero. The following example illustrates this by comparing three xtd::version objects that have undefined version components.
   /// @code
   ///
   /// using namespace xtd;
@@ -93,7 +93,7 @@ namespace xtd {
   class version final : public object, public icomparable<version> {
   public:
     /// @brief Initializes a new instance of the xtd::version class.
-    /// @remarks This constructor creates a xttd::ersion object with the following property values.
+    /// @remarks This constructor creates a xtd::ersion object with the following property values.
     /// | Properrty              | Value |
     /// |------------------------|-------|
     /// | xtd::version::major    | 0     |
@@ -112,8 +112,47 @@ namespace xtd {
     /// @verbatim major.minor[.build[.revision]] @endverbatim
     /// @remarks All defined components must be integers greater than or equal to 0. For example, if the major number is 6, the minor number is 2, the build number is 1, and the revision number is 3, then version should be "6.2.1.3".
     version(const xtd::ustring& verion);
+    /// @brief Initializes a new instance of the xtd::version class using the specified major and minor values.
+    /// @param major The major version number.
+    /// @param minor The minor version number.
+    /// @exception xtd::out_of_range_excepttion major or minor is less than zero.
+    /// @remarks This constructor creates a xtd::ersion object with the following property values.
+    /// | Properrty              | Value          |
+    /// |------------------------|----------------|
+    /// | xtd::version::major    | major          |
+    /// | xtd::version::minor    | minor          |
+    /// | xtd::version::build    | undefined (-1) |
+    /// | xtd::version::revision | undefined (-1) |
     version(int32_t major, int32_t minor);
+    /// @brief Initializes a new instance of the xtd::version class using the specified major, minor and build values.
+    /// @param major The major version number.
+    /// @param minor The minor version number.
+    /// @param build The build version number.
+    /// @exception xtd::out_of_range_excepttion major, minor or build is less than zero.
+    /// @remarks This constructor creates a xtd::ersion object with the following property values.
+    /// | Properrty              | Value          |
+    /// |------------------------|----------------|
+    /// | xtd::version::major    | major          |
+    /// | xtd::version::minor    | minor          |
+    /// | xtd::version::build    | build          |
+    /// | xtd::version::revision | undefined (-1) |
     version(int32_t major, int32_t minor, int32_t build);
+    /// @brief Initializes a new instance of the xtd::version class using the specified major, minor, build andd revision values.
+    /// @param major The major version number.
+    /// @param minor The minor version number.
+    /// @param build The build version number.
+    /// @param revision The revision version number.
+    /// @exception xtd::out_of_range_excepttion major, minor, build or revision is less than zero.
+    /// @remarks This constructor creates a xtd::version object with the following property values.
+    /// | Properrty              | Value    |
+    /// |------------------------|----------|
+    /// | xtd::version::major    | major    |
+    /// | xtd::version::minor    | minor    |
+    /// | xtd::version::build    | build    |
+    /// | xtd::version::revision | revision |
+    /// @par Examples
+    /// The following code example demonstrates the xtd::version constructor, and xtd::version::major, xtd::version::minor, xtd::version::build, xtd::version::revision, xtd::version::major_revision, and xtd::version::minor_revision properties.
+    /// @include version.cpp
     version(int32_t major, int32_t minor, int32_t build, int32_t revision);
 
     /// @cond
@@ -132,7 +171,7 @@ namespace xtd {
     
     int32_t minor() const noexcept;
     
-    int16_t mainor_revision() const noexcept;
+    int16_t minor_revision() const noexcept;
     
     int32_t revision() const noexcept;
 

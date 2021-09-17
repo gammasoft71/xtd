@@ -50,7 +50,7 @@ int32_t version::minor() const noexcept {
   return minor_;
 }
 
-int16_t version::mainor_revision() const noexcept {
+int16_t version::minor_revision() const noexcept {
   return as<int16_t>(revision_ & 0x0000FFFF);
 }
 

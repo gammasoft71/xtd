@@ -117,14 +117,12 @@ public:
 };
 
 using namespace std;
-
 using namespace xtd;
 
 class xtd_core_manual_test : public object {
 public:
   static void main() {
-    byte_t b = parse<byte_t>("312");
-    console::write_line("b = {}", b);
+    console::write_line("Hello, World!");
   }
 };
 
