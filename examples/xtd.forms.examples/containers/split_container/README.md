@@ -1,12 +1,11 @@
 # split_container
 
-demonstrates the use of [xtd::forms::split_container](../../../../src/xtd_forms/include/xtd/forms/split_container.hpp) container.
+demonstrates the use of [xtd::forms::split_container](../../../../src/xtd.forms/include/xtd/forms/split_container.h) container.
 
 # Sources
 
-[src/split_container.cpp](src/split_container.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/split_container.cpp](src/split_container.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

@@ -14,6 +14,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Prompts the user to choose a font from among those installed on the local computer.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
@@ -22,18 +24,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of font_dialog dialog.
     /// @include font_dialog.cpp
-    /// @par Windows
-    /// @image html font_dialog_w.png
-    /// <br>
-    /// @image html font_dialog_wd.png
-    /// @par macOS
-    /// @image html font_dialog_m.png
-    /// <br>
-    /// @image html font_dialog_md.png
-    /// @par Gnome
-    /// @image html font_dialog_g.png
-    /// <br>
-    /// @image html font_dialog_gd.png
     class forms_export_ font_dialog : public common_dialog {
     public:
       /// @brief Initializes a new instance of the font_dialog class.
@@ -231,7 +221,7 @@ namespace xtd {
       /// @brief Occurs when the user clicks the Apply button in the font dialog box.
       /// @ingroup events
       /// @remarks Every time the Apply button is clicked, another apply event is raised.
-      event<font_dialog, event_handler<component&>> apply;
+      event<font_dialog, event_handler> apply;
       
       /// @brief Resets all dialog box options to their default values.
       /// @remarks When the options are reset, the strikethrough, underline, and color effects are enabled. The fonts listed include only the screen fonts supported by the system.

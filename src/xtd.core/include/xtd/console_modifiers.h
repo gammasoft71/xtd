@@ -2,11 +2,13 @@
 /// @brief Contains xtd::console_modifiers enum class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/strings.h>
+#include "ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents the SHIFT, ALT, and CTRL modifier keys on a keyboard.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core

@@ -12,10 +12,11 @@ namespace xtd {
     /// @brief Provides handler for a dialog closed event.
     /// @param sender The source of the event.
     /// @param e An dialog_closed_event_args that contains event data.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    template<typename type_t>
-    using dialog_closed_event_handler = delegate<void(type_t sender, const dialog_closed_event_args& e)>;
+    using dialog_closed_event_handler = delegate<void(object& sender, const dialog_closed_event_args& e)>;
   }
 }

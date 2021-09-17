@@ -72,8 +72,8 @@ namespace examples {
       list_box1.dock(dock_style::fill);
     }
     
-    void on_menu_click(component& sender, const event_args& e) {
-      list_box1.items().push_back(strings::format("{} clicked", static_cast<menu_item&>(sender).text()));
+    void on_menu_click(object& sender, const event_args& e) {
+      list_box1.items().push_back(ustring::format("{} clicked", as<menu_item&>(sender).text()));
       list_box1.selected_index(list_box1.items().size() - 1);
     }
     

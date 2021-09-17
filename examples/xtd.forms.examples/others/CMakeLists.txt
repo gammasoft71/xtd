@@ -17,6 +17,7 @@ add_projects(
   colored_tab_pages
   colors
   docked_panels
+  flat_button
   font_families
   form2
   form_and_main
@@ -39,7 +40,6 @@ add_projects(
   main_menu_create_standard_items
   message_dialog_show_sheet
   painting
-  process_form
   screen_informations
   settings_example2
   smileys

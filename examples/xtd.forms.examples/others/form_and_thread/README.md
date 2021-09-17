@@ -1,12 +1,11 @@
 # form_and_thread
 
-demonstrates how a thread can update ui with [xtd::forms::control::invoke](../../../../src/xtd_forms/include/xtd/forms/form.hpp) method.
+demonstrates how a thread can update ui with [xtd::forms::control::invoke](../../../../src/xtd.forms/include/xtd/forms/form.h) method.
 
 # Sources
 
-[src/form_and_thread.cpp](src/form_and_thread.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/form_and_thread.cpp](src/form_and_thread.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

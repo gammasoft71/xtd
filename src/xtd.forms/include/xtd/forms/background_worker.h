@@ -15,6 +15,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Executes an operation on a separate thread.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms components
@@ -26,18 +28,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of background_worker component.
     /// @include background_worker.cpp
-    /// @par Windows
-    /// @image html background_worker_w.png
-    /// <br>
-    /// @image html background_worker_wd.png
-    /// @par macOS
-    /// @image html background_worker_m.png
-    /// <br>
-    /// @image html background_worker_md.png
-    /// @par Gnome
-    /// @image html background_worker_g.png
-    /// <br>
-    /// @image html background_worker_gd.png
     class forms_export_ background_worker : public component {
     public:
       /// @brief Initializes a new instance of the background_worker class.
@@ -113,15 +103,15 @@ namespace xtd {
 
       /// @brief Occurs when run_worker_async() is called.
       /// @ingroup events
-      event<background_worker, do_work_event_handler<component&>> do_work;
+      event<background_worker, do_work_event_handler> do_work;
 
       /// @brief Occurs when report_progress(int32_t) is called.
       /// @ingroup events
-      event<background_worker, progress_changed_event_handler<component&>> progress_changed;
+      event<background_worker, progress_changed_event_handler> progress_changed;
 
       /// @brief Occurs when the background operation has completed, has been canceled, or has raised an exception.
       /// @ingroup events
-      event<background_worker, run_worker_completed_event_handler<component&>> run_worker_completed;
+      event<background_worker, run_worker_completed_event_handler> run_worker_completed;
       
     private:
       std::any argument_;

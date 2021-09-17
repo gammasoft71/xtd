@@ -17,10 +17,10 @@ namespace examples {
         choice_segment_style.items().clear();
         if (choice_lcd_style.selected_item().value() == "Dot matrix display") {
           choice_segment_style.items().push_back_range({{"Standard (or round)", dot_matrix_style::standard}, {"Square", dot_matrix_style::square}});
-          choice_segment_style.selected_index(static_cast<int>(lcd_label_label.dot_matrix_style()));
+          choice_segment_style.selected_index(as<int>(lcd_label_label.dot_matrix_style()));
         } else {
           choice_segment_style.items().push_back_range({{"Standard", segment_style::standard}, {"Modern", segment_style::modern}, {"Mixed", segment_style::mixed}, {"expanded", segment_style::expanded}, {"Design", segment_style::design}, {"Stick", segment_style::stick}});
-          choice_segment_style.selected_index(static_cast<int>(lcd_label_label.segment_style()));
+          choice_segment_style.selected_index(as<int>(lcd_label_label.segment_style()));
         }
       };
       choice_lcd_style.selected_index(0);
@@ -38,7 +38,7 @@ namespace examples {
       numeric_up_down_height.location({270, 10});
       numeric_up_down_height.set_range(1, 400);
       numeric_up_down_height.value_changed += [&] {
-        lcd_label_label.height(static_cast<int>(numeric_up_down_height.value()));
+        lcd_label_label.height(as<int>(numeric_up_down_height.value()));
       };
       numeric_up_down_height.value(50);
       

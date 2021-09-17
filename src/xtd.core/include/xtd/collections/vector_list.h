@@ -9,6 +9,8 @@
 namespace xtd {
   namespace collections {
     /// @brief Represents a collection of std::any.
+    /// @par Namespace
+    /// xtd::collections
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core collections

@@ -1,6 +1,5 @@
 #include <xtd/xtd>
 
-using namespace std;
 using namespace std::chrono;
 using namespace std::literals;
 using namespace std::this_thread;
@@ -16,7 +15,7 @@ int main() {
   nanoseconds ns = stopwatch.elapsed();
   
   // Format and display the duration value.
-  string elapsed_time = strings::format("{0:H}:{0:M}:{0:S}.{1:D2}", ns, duration_cast<milliseconds>(ns).count() % 1000 / 10);
+  ustring elapsed_time = ustring::format("{0:H}:{0:M}:{0:S}.{1:D2}", ns, duration_cast<milliseconds>(ns).count() % 1000 / 10);
   console::write_line("RunTime " + elapsed_time);
 }
 

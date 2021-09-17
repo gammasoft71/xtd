@@ -1,12 +1,11 @@
 # line
 
-demonstrates how to create a custom control with [xtd::forms::user_control](../../../../src/xtd_forms/include/xtd/forms/user_control.hpp) control.
+demonstrates how to create a custom control with [xtd::forms::user_control](../../../../src/xtd.forms/include/xtd/forms/user_control.h) control.
 
 # Sources
 
-[src/line.cpp](src/line.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/line.cpp](src/line.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

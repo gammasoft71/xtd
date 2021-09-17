@@ -20,11 +20,14 @@ namespace xtd {
   /// @warning Internal use only
   namespace native {
     /// @brief Contains console native API.
+    /// @par Namespace
+    /// xtd::native
     /// @par Library
     /// xtd.core.native
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
     class core_native_export_ console final {
+      console() = delete;
     protected:
       /// @brief Gets the background color of the console.
       /// @return the background console color.

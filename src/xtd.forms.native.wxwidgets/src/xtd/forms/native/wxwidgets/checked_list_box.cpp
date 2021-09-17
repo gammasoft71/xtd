@@ -1,5 +1,6 @@
 #include <limits>
 #include <stdexcept>
+#include <xtd/convert_string.h>
 #include <xtd/drawing/system_colors.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
@@ -37,9 +38,9 @@ void checked_list_box::end_update(intptr_t control) {
   reinterpret_cast<control_handler*>(control)->control()->Thaw();
 }
 
-void checked_list_box::insert_item(intptr_t control, size_t index, const std::string& value, int32_t check_state) {
+void checked_list_box::insert_item(intptr_t control, size_t index, const ustring& value, int32_t check_state) {
   if (control == 0) return;
-  static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert({value.c_str(), wxMBConvUTF8()}, static_cast<int32_t>(index));
+  static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(xtd::convert_string::to_wstring(value), static_cast<int32_t>(index));
   static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Check(static_cast<int32_t>(index), check_state != 0);
 #if defined(__WXMSW__)
   static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->GetItem(index)->SetTextColour(static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->GetForegroundColour());
@@ -72,8 +73,8 @@ vector<size_t> checked_list_box::selected_indices(intptr_t control) {
     
 }
 
-void checked_list_box::update_item(intptr_t control, size_t index, const std::string& value, int32_t check_state) {
+void checked_list_box::update_item(intptr_t control, size_t index, const xtd::ustring& value, int32_t check_state) {
   if (control == 0) return;
-  static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetString(static_cast<int32_t>(index), {value.c_str(), wxMBConvUTF8()});
+  static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetString(static_cast<int32_t>(index), xtd::convert_string::to_wstring(value));
   static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Check(static_cast<int32_t>(index), check_state != 0);
 }

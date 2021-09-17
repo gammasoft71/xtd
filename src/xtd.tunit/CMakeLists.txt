@@ -32,7 +32,6 @@ add_sources(
   include/xtd/tunit/file_assume.h
   include/xtd/tunit/file_valid.h
   include/xtd/tunit/ignore_error.h
-  include/xtd/tunit/line_info.h
   include/xtd/tunit/ostream_event_listener.h
   include/xtd/tunit/ostream_unit_test.h
   include/xtd/tunit/settings.h

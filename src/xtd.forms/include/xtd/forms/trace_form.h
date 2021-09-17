@@ -10,6 +10,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a form that displays trace form.  This class cannot be inherited.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms forms debug
@@ -20,18 +22,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of trace_form form.
     /// @include trace_form.cpp
-    /// @par Windows
-    /// @image html trace_form_w.png
-    /// <br>
-    /// @image html trace_form_wd.png
-    /// @par macOS
-    /// @image html trace_form_m.png
-    /// <br>
-    /// @image html trace_form_md.png
-    /// @par Gnome
-    /// @image html trace_form_g.png
-    /// <br>
-    /// @image html trace_form_gd.png
     class trace_form final : public xtd::forms::icontrol_trace, public xtd::forms::trace_form_base {
     public:
       /// @brief Initializes a new instance of the trace_form class.
@@ -52,12 +42,12 @@ namespace xtd {
       /// @return A xtd::diagnostics::trace_listener trace listener. In this case a xtd::forms::control_trace_listener.
       xtd::diagnostics::trace_listener& trace_listener() {return *listener_;}
 
-      void write(const std::string& trace) override {
+      void write(const xtd::ustring& trace) override {
 #if defined(TRACE)
         trace_form_base::write(trace);
 #endif
       }
-      void write_line(const std::string& trace) override {
+      void write_line(const xtd::ustring& trace) override {
 #if defined(TRACE)
         trace_form_base::write_line(trace);
 #endif

@@ -9,7 +9,7 @@
 namespace xtd {
   namespace web {
     namespace css {
-      using selector_map = std::map<std::string, xtd::web::css::selector>;
+      using selector_map = std::map<xtd::ustring, xtd::web::css::selector>;
     }
   }
 }

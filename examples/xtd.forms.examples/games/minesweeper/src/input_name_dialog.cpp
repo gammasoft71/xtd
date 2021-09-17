@@ -25,7 +25,7 @@ input_name_dialog::input_name_dialog() {
   message_label_.location({10, 10});
   message_label_.size({180, 60});
   message_label_.text_align(content_alignment::middle_center);
-  message_label_.text(xtd::strings::format("You have the fastest time\nfor {} level.\nPlease type your name."_t, level_to_string()));
+  message_label_.text(xtd::ustring::format("You have the fastest time\nfor {} level.\nPlease type your name."_t, level_to_string()));
   
   name_text_box_.parent(*this);
   name_text_box_.location({10, 80});
@@ -49,20 +49,20 @@ minesweeper::level input_name_dialog::level() const noexcept {
 
 void input_name_dialog::level(minesweeper::level level) noexcept {
   level_ = level;
-  message_label_.text(xtd::strings::format("You have the fastest time\nfor {} level.\nPlease type your name."_t, level_to_string()));
+  message_label_.text(xtd::ustring::format("You have the fastest time\nfor {} level.\nPlease type your name."_t, level_to_string()));
 }
 
-std::string input_name_dialog::gammer_name() const noexcept {
+ustring input_name_dialog::gammer_name() const noexcept {
   return gammer_name_;
 }
 
-void input_name_dialog::gammer_name(const std::string& gammer_name) noexcept {
+void input_name_dialog::gammer_name(const ustring& gammer_name) noexcept {
   gammer_name_ = gammer_name;
   name_text_box_.text(gammer_name_);
 }
 
-std::string input_name_dialog::level_to_string() noexcept {
-  static std::map<minesweeper::level, std::string> levels {{minesweeper::level::beginner, "beginner"_t}, {minesweeper::level::intermediate, "intermediate"_t}, {minesweeper::level::expert, "expert"_t}};
+ustring input_name_dialog::level_to_string() noexcept {
+  static std::map<minesweeper::level, ustring> levels {{minesweeper::level::beginner, "beginner"_t}, {minesweeper::level::intermediate, "intermediate"_t}, {minesweeper::level::expert, "expert"_t}};
   auto it = levels.find(level_);
   if (it == levels.end()) return "{unknown"_t;
   return it->second;

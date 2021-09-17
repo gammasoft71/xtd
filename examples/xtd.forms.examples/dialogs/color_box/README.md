@@ -4,9 +4,8 @@ demonstrates the use of [xtd::forms::color_box](../../../../src/xtd.forms/includ
 
 # Sources
 
-[src/color_box.cpp](src/color_box.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/color_box.cpp](src/color_box.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

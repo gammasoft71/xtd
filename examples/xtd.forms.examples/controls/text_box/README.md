@@ -1,12 +1,11 @@
 # text_box
 
-demonstrates the use of [xtd::forms::text_box](../../../../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
+demonstrates the use of [xtd::forms::text_box](../../../../src/xtd.forms/include/xtd/forms/text_box.h) control.
 
 # Sources
 
-[src/text_box.cpp](src/text_box.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/text_box.cpp](src/text_box.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

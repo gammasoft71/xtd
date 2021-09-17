@@ -21,6 +21,8 @@ namespace xtd {
     /// @endcond
     
     /// @brief Provides data for the xtd::forms::control::mouse_up, xtd::forms::control::mouse_down, and xtd::forms::control::mouse_move events.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events

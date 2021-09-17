@@ -1,12 +1,11 @@
 # background_worker
 
-demonstrates the use of [xtd::forms::background_worker](../../../../src/xtd_forms/include/xtd/forms/background_worker.hpp) component.
+demonstrates the use of [xtd::forms::background_worker](../../../../src/xtd.forms/include/xtd/forms/background_worker.h) component.
 
 # Sources
 
-[src/background_worker.cpp](src/background_worker.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/background_worker.cpp](src/background_worker.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

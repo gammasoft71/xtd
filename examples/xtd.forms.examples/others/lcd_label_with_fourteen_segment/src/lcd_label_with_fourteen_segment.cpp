@@ -18,14 +18,14 @@ int main() {
   label.fore_color(color::yellow);
   label.back_color(color::average(color::black, label.fore_color(), 0.05));
   label.lcd_style(forms::lcd_style::fourteen_segment_display);
-  label.text(strings::format("{}", label.valid_characters()[index]));
+  label.text(ustring::format("{}", label.valid_characters()[index]));
 
   timer timer;
   timer.interval(300ms);
   timer.enabled(!timer.enabled());
   timer.tick += [&] {
     if (++index >= label.valid_characters().size()) index = 0;
-    label.text(strings::format("{}", label.valid_characters()[index]));
+    label.text(ustring::format("{}", label.valid_characters()[index]));
   };
 
   application::run(form_main);

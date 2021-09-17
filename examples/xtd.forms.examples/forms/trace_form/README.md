@@ -1,12 +1,11 @@
 # trace_form
 
-demonstrates the use of [xtd::trace_forms::trace_form](../../../../src/xtd_forms/include/xtd/forms/trace_form.hpp) container.
+demonstrates the use of [xtd::trace_forms::trace_form](../../../../src/xtd.forms/include/xtd/forms/trace_form.h) container.
 
 # Sources
 
-[src/trace_form.cpp](src/trace_form.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/trace_form.cpp](src/trace_form.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

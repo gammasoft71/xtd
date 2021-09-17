@@ -1,6 +1,6 @@
 # vector_list
 
-Shows how to use [xtd::web::css:parser](../../../../src/xtd.core/include/xtd/collections/vector_list.h) class.
+Shows how to use [vector_list](../../../../src/xtd.core/include/xtd/collections/vector_list.h) class.
 
 ## Sources
 
@@ -19,4 +19,8 @@ xtdc run
 # Output
 
 ```
+my_vl
+    size:    3
+    Capacity: 4
+    Values:   Hello   World   !
 ```

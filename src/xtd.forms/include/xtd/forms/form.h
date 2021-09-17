@@ -26,6 +26,8 @@ namespace xtd {
     /// @endcond
     
     /// @brief Represents a window or dialog box that makes up an application's user interface.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms forms
@@ -35,18 +37,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of form control.
     /// @include form.cpp
-    /// @par Windows
-    /// @image html form_w.png
-    /// <br>
-    /// @image html form_wd.png
-    /// @par macOS
-    /// @image html form_m.png
-    /// <br>
-    /// @image html form_md.png
-    /// @par Gnome
-    /// @image html form_g.png
-    /// <br>
-    /// @image html form_gd.png
     class forms_export_ form : public container_control {
     public:
       /// @brief Initializes a new instance of the Form class.
@@ -277,19 +267,19 @@ namespace xtd {
       
       /// @brief Occurs when the form is activated in code or by the user.
       /// @ingroup events
-      event<form, event_handler<control&>> activated;
+      event<form, event_handler> activated;
       
       /// @brief Occurs when the form loses focus and is no longer the active form.
       /// @ingroup events
-      event<form, event_handler<control&>> deactivate;
+      event<form, event_handler> deactivate;
 
       /// @brief Occurs after the form is closed.
       /// @ingroup events
-      event<form, form_closed_event_handler<control&>> form_closed;
+      event<form, form_closed_event_handler> form_closed;
       
       /// @brief Occurs before the form is closed.
       /// @ingroup events
-      event<form, form_closing_event_handler<control&>> form_closing;
+      event<form, form_closing_event_handler> form_closing;
 
     protected:
       friend class application;
@@ -316,6 +306,7 @@ namespace xtd {
       virtual void on_form_closing(form_closing_event_args& e) {form_closing(*this, e);}
 
       void on_layout(const event_args& e) override;
+      void on_location_changed(const event_args& e) override;
       void on_resize(const event_args& e) override;
       void wnd_proc(message& message) override;
       

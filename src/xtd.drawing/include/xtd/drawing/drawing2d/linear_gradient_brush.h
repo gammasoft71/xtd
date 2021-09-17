@@ -17,24 +17,14 @@ namespace xtd {
     /// @brief The xtd::.drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing2d {
       /// @brief Encapsulates a xtd::drawing::brush with a linear gradient. This class cannot be inherited.
+      /// @par Namespace
+      /// xtd::drawing::drawing2d
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing drawing
       /// @par Examples
       /// The following code example demonstrate the use of linear_gradient_brush class.
       /// @include fill_rectangle.cpp
-      /// @par Windows
-      /// @image html fill_rectangle_w.png
-      /// <br>
-      /// @image html fill_rectangle_wd.png
-      /// @par macOS
-      /// @image html fill_rectangle_m.png
-      /// <br>
-      /// @image html fill_rectangle_md.png
-      /// @par Gnome
-      /// @image html fill_rectangle_g.png
-      /// <br>
-      /// @image html fill_rectangle_gd.png
        class drawing_export_ linear_gradient_brush final : public brush {
       public:
         /// @brief Initializes a new instance of the linear_gradient_brush class.

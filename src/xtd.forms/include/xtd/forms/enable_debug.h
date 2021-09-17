@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
+#include <xtd/object.h>
 #include <xtd/static.h>
 #include <xtd/diagnostics/trace_switch.h>
 #include "../forms_export.h"
@@ -12,6 +13,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represent enable debug class.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms debug
@@ -19,19 +22,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of enable_debug class.
     /// @include enable_debug.cpp
-    /// @par Windows
-    /// @image html enable_debug_w.png
-    /// <br>
-    /// @image html enable_debug_wd.png
-    /// @par macOS
-    /// @image html enable_debug_m.png
-    /// <br>
-    /// @image html enable_debug_md.png
-    /// @par Gnome
-    /// @image html enable_debug_g.png
-    /// <br>
-    /// @image html enable_debug_gd.png
-    class forms_export_ enable_debug {
+    class forms_export_ enable_debug : public object {
     public:
       /// @cond
       enable_debug() = default;
@@ -46,6 +37,8 @@ namespace xtd {
 
       /// @brief Represent none debug.
       static const enable_debug none;
+      /// @brief Represent creation debug.
+      static const enable_debug creation;
       /// @brief Represent events debug.
       static const enable_debug events;
       /// @brief Represent key events debug.

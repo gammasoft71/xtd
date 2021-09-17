@@ -12,6 +12,9 @@ add_sources(
   include/xtd/forms/about_box.h
   include/xtd/forms/about_dialog.h
   include/xtd/forms/anchor_styles.h
+  include/xtd/forms/animation_update_event_args.h
+  include/xtd/forms/animation_update_event_handler.h
+  include/xtd/forms/animation.h
   include/xtd/forms/appearance.h
   include/xtd/forms/application.h
   include/xtd/forms/application_context.h
@@ -87,6 +90,7 @@ add_sources(
   include/xtd/forms/exception_dialog.h
   include/xtd/forms/file_dialog.h
   include/xtd/forms/fixed_layout_panel.h
+  include/xtd/forms/flat_button_appearance.h
   include/xtd/forms/flat_style.h
   include/xtd/forms/flow_layout_panel.h
   include/xtd/forms/folder_browser_dialog.h
@@ -108,6 +112,7 @@ add_sources(
   include/xtd/forms/horizontal_control_layout_style.h
   include/xtd/forms/horizontal_control_layout_style_collection.h
   include/xtd/forms/horizontal_layout_panel.h
+  include/xtd/forms/hscroll_bar.h
   include/xtd/forms/ibutton_control.h
   include/xtd/forms/icontrol_trace.h
   include/xtd/forms/image_layout.h
@@ -128,6 +133,10 @@ add_sources(
   include/xtd/forms/label.h
   include/xtd/forms/lcd_label.h
   include/xtd/forms/lcd_style.h
+  include/xtd/forms/link_label.h
+  include/xtd/forms/link_label_clicked_event_args.h
+  include/xtd/forms/link_label_clicked_event_handler.h
+  include/xtd/forms/link.h
   include/xtd/forms/list_box.h
   include/xtd/forms/list_control.h
   include/xtd/forms/loading_indicator.h
@@ -219,17 +228,19 @@ add_sources(
   include/xtd/forms/up_down_button.h
   include/xtd/forms/use_wait_cursor.h
   include/xtd/forms/user_control.h
-  include/xtd/forms/layout/arranged_element_collection.h
-  include/xtd/forms/layout/sorter_none.h
-  include/xtd/forms/properties/resources.h
   include/xtd/forms/vertical_control_layout_style.h
   include/xtd/forms/vertical_control_layout_style_collection.h
   include/xtd/forms/vertical_layout_panel.h
+  include/xtd/forms/vscroll_bar.h
+  include/xtd/forms/layout/arranged_element_collection.h
+  include/xtd/forms/layout/sorter_none.h
+  include/xtd/forms/properties/resources.h
   include/xtd/forms/visual_styles/check_box_state.h
   include/xtd/forms/visual_styles/push_button_state.h
   include/xtd/forms/visual_styles/radio_button_state.h
   include/xtd/forms/visual_styles/toggle_button_state.h
   src/xtd/forms/about_dialog.cpp
+  src/xtd/forms/animation.cpp
   src/xtd/forms/application.cpp
   src/xtd/forms/background_worker.cpp
   src/xtd/forms/busy_dialog.cpp
@@ -259,6 +270,7 @@ add_sources(
   src/xtd/forms/emoticons.cpp
   src/xtd/forms/enable_debug.cpp
   src/xtd/forms/exception_dialog.cpp
+  src/xtd/forms/flat_button_appearance.cpp
   src/xtd/forms/file_dialog.cpp
   src/xtd/forms/fixed_layout_panel.cpp
   src/xtd/forms/flow_layout_panel.cpp
@@ -268,9 +280,13 @@ add_sources(
   src/xtd/forms/form.cpp
   src/xtd/forms/group_box.cpp
   src/xtd/forms/horizontal_layout_panel.cpp
+  src/xtd/forms/hscroll_bar.cpp
   src/xtd/forms/image_list.cpp
   src/xtd/forms/input_dialog.cpp
   src/xtd/forms/label.cpp
+  src/xtd/forms/link_label.cpp
+  src/xtd/forms/link_label_clicked_event_args.cpp
+  src/xtd/forms/link.cpp
   src/xtd/forms/list_box.cpp
   src/xtd/forms/list_control.cpp
   src/xtd/forms/loading_indicator.cpp
@@ -293,6 +309,7 @@ add_sources(
   src/xtd/forms/renderer.cpp
   src/xtd/forms/save_file_dialog.cpp
   src/xtd/forms/screen.cpp
+  src/xtd/forms/scroll_bar.cpp
   src/xtd/forms/scrollable_control.cpp
   src/xtd/forms/settings.cpp
   src/xtd/forms/split_container.cpp
@@ -314,8 +331,9 @@ add_sources(
   src/xtd/forms/track_bar.cpp
   src/xtd/forms/up_down_base.cpp
   src/xtd/forms/up_down_button.cpp
-  src/xtd/forms/vertical_layout_panel.cpp
   src/xtd/forms/user_control.cpp
+  src/xtd/forms/vertical_layout_panel.cpp
+  src/xtd/forms/vscroll_bar.cpp
   src/xtd/forms/xtd_forms_common_dialog_closed_caller.h
   src/xtd/forms/xtd_forms_message_dialog_closed_caller.h
 )

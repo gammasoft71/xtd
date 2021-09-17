@@ -23,6 +23,7 @@
 #include <unordered_set>
 #include <utility>
 #include <vector>
+#include <xtd/ustring.h>
 
 /// @cond
 template<class type_t> struct __tunit_is_printable : std::false_type {};
@@ -48,6 +49,10 @@ template<> struct __tunit_is_printable<float> : std::true_type {};
 template<> struct __tunit_is_printable<double> : std::true_type {};
 template<> struct __tunit_is_printable<long double> : std::true_type {};
 template<> struct __tunit_is_printable<std::string> : std::true_type {};
+template<> struct __tunit_is_printable<xtd::ustring> : std::true_type {};
+template<> struct __tunit_is_printable<std::u8string> : std::true_type {};
+template<> struct __tunit_is_printable<std::u16string> : std::true_type {};
+template<> struct __tunit_is_printable<std::u32string> : std::true_type {};
 template<> struct __tunit_is_printable<std::wstring> : std::true_type {};
 
 template<typename char_t, typename char_traits_t, typename value_t>
@@ -124,6 +129,13 @@ struct __tunit_value_printer<char_t, char_traits_t, std::optional<value_t>> {
 
 template <typename char_t, typename char_traits_t>
 struct __tunit_value_printer<char_t, char_traits_t, std::string> {
+  static void print(std::basic_ostream<char_t, char_traits_t>& os, const std::string& value) {
+    os << "\"" << value << "\"";
+  }
+};
+
+template <typename char_t, typename char_traits_t>
+struct __tunit_value_printer<char_t, char_traits_t, xtd::ustring> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const std::string& value) {
     os << "\"" << value << "\"";
   }
@@ -604,6 +616,12 @@ inline std::string __tunit_to_string(const wchar_t& value) {
 }
 
 inline std::string __tunit_to_string(const std::string& value) {
+  std::stringstream ss;
+  ss << "\"" << value << "\"";
+  return ss.str();
+}
+
+inline std::string __tunit_to_string(const xtd::ustring& value) {
   std::stringstream ss;
   ss << "\"" << value << "\"";
   return ss.str();

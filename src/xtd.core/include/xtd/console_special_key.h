@@ -2,12 +2,14 @@
 /// @brief Contains xtd::console_special_key enum class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <string>
 #include <sstream>
+#include "ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Specifies combinations of modifier and console keys that can interrupt the current process.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core

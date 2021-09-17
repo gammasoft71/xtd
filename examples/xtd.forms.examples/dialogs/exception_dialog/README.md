@@ -1,12 +1,11 @@
 # exception_dialog
 
-demonstrates the use of [xtd::forms::exception_dialog](../../../../src/xtd_forms/include/xtd/forms/exception_dialog.hpp) dialog.
+demonstrates the use of [xtd::forms::exception_dialog](../../../../src/xtd.forms/include/xtd/forms/exception_dialog.h) dialog.
 
 # Sources
 
-[src/exception_dialog.cpp](src/exception_dialog.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/exception_dialog.cpp](src/exception_dialog.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

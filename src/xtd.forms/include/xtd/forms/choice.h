@@ -10,6 +10,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a choice control.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
@@ -20,18 +22,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of choice control.
     /// @include choice.cpp
-    /// @par Windows
-    /// @image html choice_w.png
-    /// <br>
-    /// @image html choice_wd.png
-    /// @par macOS
-    /// @image html choice_m.png
-    /// <br>
-    /// @image html choice_md.png
-    /// @par Gnome
-    /// @image html choice_g.png
-    /// <br>
-    /// @image html choice_gd.png
     class forms_export_ choice : public list_control {
     public:
       /// @brief Initializes a new instance of the choice class.
@@ -77,7 +67,7 @@ namespace xtd {
       using list_control::text;
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
-      control& text(const std::string& text) override {return *this;}
+      control& text(const xtd::ustring& text) override {return *this;}
       
       /// @brief Maintains performance while items are added to the choice one at a time by preventing the control from drawing until the EndUpdate() method is called.
       /// @remarks The preferred way to add multiple items to the choice is to use the push_back_range method of the choice::object_collection class (through the items property of the choice). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the choice::object_collection class, you can use the begin_update method to prevent the control from repainting the choice each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the choice to repaint. This way of adding items can prevent flickered drawing of the choice when a large number of items are being added to the list.

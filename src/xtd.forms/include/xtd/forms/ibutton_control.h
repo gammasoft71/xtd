@@ -11,6 +11,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Allows a control to act like a button on a form.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms interfaces
@@ -36,10 +38,6 @@ namespace xtd {
       /// @brief Generates a click event for the control.
       /// @remarks This method is called for the button that has focus, or for the default button (if no other button has focus) when the user presses the ENTER key. This method is also called when the user presses the ESC key if the button is set as the cancel button.
       virtual void perform_click() = 0;
-      
-      /// @cond
-      virtual ~ibutton_control() = default;
-      /// @endcond
     };
   }
 }

@@ -93,3 +93,6 @@ value "Arithmetic operation resulted in an underflow."
 
 key "Syntax error in XML."
 value "Syntax error in XML."
+
+key "The Socket operation failed."
+value "The Socket operation failed."

@@ -5,4 +5,5 @@ find_package(xtd REQUIRED)
 
 add_projects(
   vector_list
+  vector_list2
 )

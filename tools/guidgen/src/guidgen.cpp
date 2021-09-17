@@ -8,7 +8,7 @@ using namespace xtd;
 namespace guidgen {
   class program final static_ {
   public:
-    static int main(const vector<string>& args) {
+    static int main(const vector<ustring>& args) {
       string format = "";
       int count = 1;
       bool show_help = false;
@@ -55,15 +55,15 @@ namespace guidgen {
     }
     
     static string get_version() {
-      return strings::format("guidgen version {}, © {:L} by Gammasoft", environment::version(), chrono::system_clock::now());
+      return ustring::format("guidgen version {}, © {:L} by Gammasoft", environment::version(), chrono::system_clock::now());
     }
 
-    static bool process_arguments(const vector<string>& args, string& format, int& count, bool& show_version, bool& show_help) {
+    static bool process_arguments(const vector<ustring>& args, string& format, int& count, bool& show_version, bool& show_help) {
       for (size_t index = 0; index < args.size(); index += 1) {
         vector<string> format_types {"N", "D", "B", "P", "X"};
         if ((args[index] == "-f" || args[index] == "--format") && index + 1 < args.size() && std::count(format_types.begin(), format_types.end(), args[index + 1]))
           format = args[index++ + 1];
-        else if ((args[index] == "-c" || args[index] == "--count") && index + 1 < args.size() && strings::try_parse(args[index++ + 1], count) && count >= 1) {
+        else if ((args[index] == "-c" || args[index] == "--count") && index + 1 < args.size() && ustring::try_parse(args[index++ + 1], count) && count >= 1) {
           // nothing to do all is done
         } else if (args[index] == "-v" || args[index] == "--version")
           show_version = true;

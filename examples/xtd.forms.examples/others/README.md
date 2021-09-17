@@ -4,7 +4,7 @@
 
 * [about_dialog_system](about_dialog_system/README.md) represents a dialog box that displays about box.
 * [auto_scroll](auto_scroll/README.md) demonstrates the use of [xtd::forms::panel](../../../src/xtd.forms/include/xtd/forms/panel.h) container with [xtd::forms/scrollable_control::auto_scroll](../../../src/xtd.forms/include/xtd/forms/scrollable_control.h).
-* [bitmap_button](bitmap_button/README.md) demonstrates the use of [xtd::forms::button](../../../src/xtd.forms/include/xtd/forms/button.h) control and xtd::drawing::image].
+* [bitmap_button](bitmap_button/README.md) demonstrates the use of [xtd::forms::button](../../../src/xtd.forms/include/xtd/forms/button.h) control with [xtd::drawing::image](../../../src/xtd.drawing/include/xtd/drawing/image.h).
 * [button2](button2/README.md) demonstrates the use of [xtd::forms::button](../../../src/xtd.forms/include/xtd/forms/button.h) control.
 * [button3](button3/README.md) demonstrates the use of [xtd::forms::button](../../../src/xtd.forms/include/xtd/forms/button.h) control.
 * [button4](button4/README.md) demonstrates the use of [xtd::forms::button](../../../src/xtd.forms/include/xtd/forms/button.h) control.
@@ -12,12 +12,13 @@
 * [clock](clock/README.md) demonstrates the use of [xtd::forms::lcd_label](../../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
 * [colored_forms](colored_forms/README.md) demonstrates the use of [xtd::forms::form](../../../src/xtd.forms/include/xtd/forms/form.h) control and xtd::drawing::color class.
 * [colored_tab_pages](colored_tab_pages/README.md) demonstrates the use of [xtd::forms::tab_control](../../../src/xtd.forms/include/xtd/forms/tab_control.h) and colored [xtd::forms::tab_page](../../../src/xtd.forms/include/xtd/forms/tab_page.h) controls.
-* [colors](colors/README.md) demonstrates the use of [xtd::forms::user_control](../../../../../src/xtd.forms/include/xtd/forms/user_control.h) control with xtd::drawing::color.
+* [colors](colors/README.md) demonstrates the use of [xtd::forms::user_control](../../../src/xtd.forms/include/xtd/forms/user_control.h) control with xtd::drawing::color.
 * [docked_panels](docked_panels/README.md) demonstrates the use of [xtd::forms::panel](../../../src/xtd.forms/include/xtd/forms/panel.h) container with [xtd::forms::dock_style](../../../src/xtd.forms/include/xtd/forms/dock_style.h).
+* [flat_button](flat_button/README.md) demonstrates the use of [xtd::forms::button](../../../src/xtd.forms/include/xtd/forms/button.h) control with flat style.
 * [font_families](font_families/README.md) demonstrates the use of xtd::drawing::font_family class.
 * [form_and_main](form_and_main/README.md) demonstrates how to use startup_ keyword.
-* [form_and_thread](form_and_thread/README.md) demonstrates how a thread can update ui with [xtd::forms::control::invoke](../../../../../src/xtd.forms/include/xtd/forms/form.h) method.
-* [form_background_image](form_background_image/README.md) demonstrates how to use [xtd::forms::forms](../../../../../src/xtd.forms/include/xtd/forms/form.h) class with image_background property.
+* [form_and_thread](form_and_thread/README.md) demonstrates how a thread can update ui with [xtd::forms::control::invoke](../../../src/xtd.forms/include/xtd/forms/form.h) method.
+* [form_background_image](form_background_image/README.md) demonstrates how to use [xtd::forms::forms](../../../src/xtd.forms/include/xtd/forms/form.h) class with image_background property.
 * [form_resize](form_resize/README.md) shows how to set minimum size, set maximum size, move and resize a form.
 * [form_show](form_show/README.md) demontrate how to launch form as normal window, modeless window and modal window.
 * [form_window_state](form_window_state/README.md) demonstrates the use of [xtd::forms::form](../../../src/xtd.forms/include/xtd/forms/form.h) window state.
@@ -35,7 +36,6 @@
 * [lcd_label_with_sixteen_segment](lcd_label_with_sixteen_segment/README.md) representsthe use of [xtd::forms::lcd_label](../../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
 * [lcd_label2](lcd_label2/README.md) representsthe use of [xtd::forms::lcd_label](../../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
 * [painting](painting/README.md) demonstrates the use of xtd::forms::form, xtd::forms::panel, [xtd::forms::track_bar](../../../src/xtd.forms/include/xtd/forms/track_bar.h) and [xtd::forms::button](../../../src/xtd.forms/include/xtd/forms/button.h) controls with mouse_down, mouse_move and paint events..
-* [process_form](process_form/README.md) shows how to launch process from forms.
 * [screen_informations](screen_informations/README.md) shows how to get screen information of [xtd::forms::screen](../../../src/xtd_forms/include/xtd/forms/screen.hpp) control.
 * [settings2](settings_example2/README.md) represents settings application.
 * [smileys](smileys/README.md) demonstrates the use of [xtd::forms::label](../../../src/xtd.forms/include/xtd/forms/label.h) control.

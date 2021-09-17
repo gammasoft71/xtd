@@ -7,7 +7,7 @@
 using namespace xtd;
 using namespace xtd::drawing;
 
-font_family::font_family(const std::string& name) {
+font_family::font_family(const ustring& name) {
   data_->name_ = name;
   if (data_->name_.empty()) throw xtd::argument_exception("name is an empty string"_t, current_stack_frame_);
   data_->handle_ = native::font_family::create(name);
@@ -23,7 +23,7 @@ font_family::font_family(text::generic_font_families generic_font_families) {
   }
 }
 
-font_family::font_family(const std::string& name, const text::font_collection& font_collection) {
+font_family::font_family(const ustring& name, const text::font_collection& font_collection) {
   for (const font_family& font_family : font_collection.families())
     if (name == font_family.name()) {
       *this = font_family;
@@ -68,7 +68,7 @@ int32_t font_family::get_line_spacing(font_style style) const {
   return native::font_family::get_line_spacing(data_->handle_, get_em_height(style), (style & font_style::bold) == font_style::bold, (style & font_style::italic) == font_style::italic, (style & font_style::underline) == font_style::underline, (style & font_style::strikeout) == font_style::strikeout);
 }
 
-std::string font_family::get_name(int32_t language) const {
+ustring font_family::get_name(int32_t language) const {
   return native::font_family::get_name(data_->handle_, language);
 }
 

@@ -7,6 +7,8 @@
 namespace xtd {
   /// @brief Determines the styles permitted in numeric string arguments that are passed to the xtd::parse and xtd::try_parse methods of the integral and floating-point numeric types.
   /// This enumeration has a flags attribute that allows a bitwise combination of its member values.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core

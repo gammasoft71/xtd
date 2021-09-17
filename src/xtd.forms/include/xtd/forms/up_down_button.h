@@ -10,24 +10,14 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a standard Windows up down button.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
     /// The following code example demonstrate the use of up down button control.
     /// @include up_down_button.cpp
-    /// @par Windows
-    /// @image html up_down_button_w.png
-    /// <br>
-    /// @image html up_down_button_wd.png
-    /// @par macOS
-    /// @image html up_down_button_m.png
-    /// <br>
-    /// @image html up_down_button_md.png
-    /// @par Gnome
-    /// @image html up_down_button_g.png
-    /// <br>
-    /// @image html up_down_button_gd.png
     class forms_export_ up_down_button : public button_base {
     public:
       /// @brief Initializes a new instance of up_down_button class.
@@ -91,15 +81,15 @@ namespace xtd {
       /// @brief Returns a string that represents the track_bar control.
       /// @return A string that represents the current progress_bar.
       /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
-      std::string to_string() const override {return strings::format("{}, minimum: {}, maximum: {}, value: {}", strings::full_class_name(*this), minimum_, maximum_, value_);}
+      xtd::ustring to_string() const noexcept override {return ustring::format("{}, minimum: {}, maximum: {}, value: {}", ustring::full_class_name(*this), minimum_, maximum_, value_);}
 
       /// @brief Occurs when either a mouse or keyboard action moves the scroll box.
       /// @ingroup events
-      event<up_down_button, event_handler<control&>> scroll;
+      event<up_down_button, event_handler> scroll;
 
       /// @brief Occurs when the value of the value property changes.
       /// @ingroup events
-      event<up_down_button, event_handler<control&>> value_changed;
+      event<up_down_button, event_handler> value_changed;
       
     protected:
       

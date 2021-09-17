@@ -8,12 +8,15 @@ add_include_directories(include)
 add_sources(
   include/xtd/xtd.core.native
   include/xtd/xtd.core.native.h
+  include/xtd/native/address_family_constants.h
   include/xtd/native/assert_dialog_results.h
   include/xtd/native/console_color.h
   include/xtd/native/console_special_key.h
   include/xtd/native/console.h
   include/xtd/native/constant_special_item_id_list.h
+  include/xtd/native/cryptography.h
   include/xtd/native/debugger.h
+  include/xtd/native/dns.h
   include/xtd/native/drive_type.h
   include/xtd/native/drive.h
   include/xtd/native/environment.h
@@ -27,6 +30,14 @@ add_sources(
   include/xtd/native/process.h
   include/xtd/native/process_creation_flags.h
   include/xtd/native/process_window_style.h
+  include/xtd/native/protocol_type_constants.h
+  include/xtd/native/select_mode_constants.h
+  include/xtd/native/socket.h
+  include/xtd/native/socket_option_level_constants.h
+  include/xtd/native/socket_option_name_constants.h
+  include/xtd/native/socket_error_constants.h
+  include/xtd/native/socket_shutdown_constants.h
+  include/xtd/native/socket_type_constants.h
   include/xtd/native/translator.h
 )
 target_type(INTERFACE_LIBRARY)

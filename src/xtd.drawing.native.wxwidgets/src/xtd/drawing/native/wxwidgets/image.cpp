@@ -5,7 +5,7 @@
 #include <xtd/drawing/native/image_format.h>
 #include <xtd/drawing/native/toolkit.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/strings.h>
+#include <xtd/convert_string.h>
 #include <atomic>
 #include <wx/image.h>
 #include <wx/palette.h>
@@ -85,9 +85,9 @@ void image::color_palette(intptr_t image, std::vector<std::tuple<uint8_t, uint8_
   flags = 0;
 }
 
-intptr_t image::create(const std::string& filename) {
+intptr_t image::create(const ustring& filename) {
   toolkit::initialize(); // Must be first
-  return reinterpret_cast<intptr_t>(new wxImage({filename.c_str(), wxMBConvUTF8()}));
+  return reinterpret_cast<intptr_t>(new wxImage(wxString(convert_string::to_wstring(filename))));
 }
 
 intptr_t image::create(std::istream& stream) {
@@ -144,10 +144,10 @@ size_t image::frame_resolutions(intptr_t image) {
 float image::horizontal_resolution(intptr_t image) {
   if (!reinterpret_cast<wxImage*>(image)->HasOption(wxIMAGE_OPTION_RESOLUTIONX))
     return 96.0f;
-  float horizontal_resolution = xtd::strings::parse<float>(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONX).utf8_str().data());
+  float horizontal_resolution = xtd::ustring::parse<float>(xtd::convert_string::to_string(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONX).c_str().AsWChar()));
   if (!reinterpret_cast<wxImage*>(image)->HasOption(wxIMAGE_OPTION_RESOLUTIONUNIT))
     return horizontal_resolution;
-  if (xtd::strings::parse<int>(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONUNIT).utf8_str().data()) == wxIMAGE_RESOLUTION_CM)
+  if (xtd::ustring::parse<int>(xtd::convert_string::to_string(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONUNIT).c_str().AsWChar())) == wxIMAGE_RESOLUTION_CM)
     horizontal_resolution *= 2.54f;
   return horizontal_resolution;
 }
@@ -184,10 +184,10 @@ void image::size(intptr_t image, int32_t& width, int32_t& height) {
 float image::vertical_resolution(intptr_t image) {
   if (!reinterpret_cast<wxImage*>(image)->HasOption(wxIMAGE_OPTION_RESOLUTIONY))
     return 96.0f;
-  float vertical_resolution = xtd::strings::parse<float>(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONY).utf8_str().data());
+  float vertical_resolution = xtd::ustring::parse<float>(xtd::convert_string::to_string(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONY).c_str().AsWChar()));
   if (!reinterpret_cast<wxImage*>(image)->HasOption(wxIMAGE_OPTION_RESOLUTIONUNIT))
     return vertical_resolution;
-  if (xtd::strings::parse<int>(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONUNIT).utf8_str().data()) == wxIMAGE_RESOLUTION_CM)
+  if (xtd::ustring::parse<int>(xtd::convert_string::to_string(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONUNIT).c_str().AsWChar())) == wxIMAGE_RESOLUTION_CM)
     vertical_resolution *= 2.54f;
   return vertical_resolution;
 }
@@ -207,12 +207,12 @@ void image::set_pixel(intptr_t image, int32_t x, int32_t y, uint8_t a, uint8_t r
   reinterpret_cast<wxImage*>(image)->SetRGB(x, y, r, g, b);
 }
 
-void image::save(intptr_t image, const std::string& filename) {
-  reinterpret_cast<wxImage*>(image)->SaveFile({filename.c_str(), wxMBConvUTF8()});
+void image::save(intptr_t image, const ustring& filename) {
+  reinterpret_cast<wxImage*>(image)->SaveFile(wxString(convert_string::to_wstring(filename)));
 }
 
-void image::save(intptr_t image, const std::string& filename, size_t raw_format) {
-  reinterpret_cast<wxImage*>(image)->SaveFile({filename.c_str(), wxMBConvUTF8()}, to_bitmap_type(raw_format));
+void image::save(intptr_t image, const ustring& filename, size_t raw_format) {
+  reinterpret_cast<wxImage*>(image)->SaveFile(wxString(convert_string::to_wstring(filename)), to_bitmap_type(raw_format));
 }
 
 void image::save(intptr_t image, std::ostream& stream, size_t raw_format) {

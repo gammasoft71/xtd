@@ -46,8 +46,8 @@ namespace examples {
         color->tag(colors_.size());
         colors_.push_back(color);
         controls().push_back(*color);
-        color->click += [&](control& sender, const event_args& e) {
-          selected_index(colors_.size() - 1 - std::any_cast<size_t>(sender.tag()));
+        color->click += [&](object& sender, const event_args& e) {
+          selected_index(colors_.size() - 1 - std::any_cast<size_t>(as<control>(sender).tag()));
         };
       }
     }
@@ -68,8 +68,8 @@ namespace examples {
       }
     }
 
-    event<color_chooser, event_handler<control&>> selected_index_changed;
-    event<color_chooser, event_handler<control&>> selected_color_changed;
+    event<color_chooser, event_handler> selected_index_changed;
+    event<color_chooser, event_handler> selected_color_changed;
 
     static const size_t npos = std::numeric_limits<size_t>::max();
 
@@ -119,7 +119,7 @@ namespace examples {
       track_bar_alpha.size({190, 25});
       track_bar_alpha.tick_style(tick_style::none);
       track_bar_alpha.value_changed += [&] {
-        color(drawing::color::from_argb(static_cast<uint8_t>(track_bar_alpha.value()), color_.r(), color_.g(), color_.b()));
+        color(drawing::color::from_argb(as<uint8_t>(track_bar_alpha.value()), color_.r(), color_.g(), color_.b()));
       };
 
       numeric_up_down_alpha.parent(*this);
@@ -127,7 +127,7 @@ namespace examples {
       numeric_up_down_alpha.minimum(0);
       numeric_up_down_alpha.maximum(255);
       numeric_up_down_alpha.value_changed += [&] {
-        color(drawing::color::from_argb(static_cast<uint8_t>(numeric_up_down_alpha.value()), color_.r(), color_.g(), color_.b()));
+        color(drawing::color::from_argb(as<uint8_t>(numeric_up_down_alpha.value()), color_.r(), color_.g(), color_.b()));
       };
       
       label_red.parent(*this);
@@ -142,7 +142,7 @@ namespace examples {
       track_bar_red.size({190, 25});
       track_bar_red.tick_style(tick_style::none);
       track_bar_red.value_changed += [&] {
-        color(drawing::color::from_argb(color_.a(), static_cast<uint8_t>(track_bar_red.value()), color_.g(), color_.b()));
+        color(drawing::color::from_argb(color_.a(), as<uint8_t>(track_bar_red.value()), color_.g(), color_.b()));
       };
 
       numeric_up_down_red.parent(*this);
@@ -150,7 +150,7 @@ namespace examples {
       numeric_up_down_red.minimum(0);
       numeric_up_down_red.maximum(255);
       numeric_up_down_red.value_changed += [&] {
-        color(drawing::color::from_argb(color_.a(), static_cast<uint8_t>(numeric_up_down_red.value()), color_.g(), color_.b()));
+        color(drawing::color::from_argb(color_.a(), as<uint8_t>(numeric_up_down_red.value()), color_.g(), color_.b()));
       };
 
       label_green.parent(*this);
@@ -165,7 +165,7 @@ namespace examples {
       track_bar_green.size({190, 25});
       track_bar_green.tick_style(tick_style::none);
       track_bar_green.value_changed += [&] {
-        color(drawing::color::from_argb(color_.a(), color_.r(), static_cast<uint8_t>(track_bar_green.value()), color_.b()));
+        color(drawing::color::from_argb(color_.a(), color_.r(), as<uint8_t>(track_bar_green.value()), color_.b()));
       };
 
       numeric_up_down_green.parent(*this);
@@ -173,7 +173,7 @@ namespace examples {
       numeric_up_down_green.minimum(0);
       numeric_up_down_green.maximum(255);
       numeric_up_down_green.value_changed += [&] {
-        color(drawing::color::from_argb(color_.a(), color_.r(), static_cast<uint8_t>(numeric_up_down_green.value()), color_.b()));
+        color(drawing::color::from_argb(color_.a(), color_.r(), as<uint8_t>(numeric_up_down_green.value()), color_.b()));
       };
 
       label_blue.parent(*this);
@@ -188,7 +188,7 @@ namespace examples {
       track_bar_blue.size({190, 25});
       track_bar_blue.tick_style(tick_style::none);
       track_bar_blue.value_changed += [&] {
-        color(drawing::color::from_argb(color_.a(), color_.r(), color_.g(), static_cast<uint8_t>(track_bar_blue.value())));
+        color(drawing::color::from_argb(color_.a(), color_.r(), color_.g(), as<uint8_t>(track_bar_blue.value())));
       };
 
       numeric_up_down_blue.parent(*this);
@@ -196,7 +196,7 @@ namespace examples {
       numeric_up_down_blue.minimum(0);
       numeric_up_down_blue.maximum(255);
       numeric_up_down_blue.value_changed += [&] {
-        color(drawing::color::from_argb(color_.a(), color_.r(), color_.g(), static_cast<uint8_t>(numeric_up_down_blue.value())));
+        color(drawing::color::from_argb(color_.a(), color_.r(), color_.g(), as<uint8_t>(numeric_up_down_blue.value())));
       };
 
       panel_color_box.parent(*this);
@@ -214,7 +214,7 @@ namespace examples {
       }
     }
     
-    event<color_editor, event_handler<control&>> color_changed;
+    event<color_editor, event_handler> color_changed;
 
   protected:
     void on_color_changed(const event_args& e) {
@@ -233,7 +233,7 @@ namespace examples {
   private:
     
     void on_argb_changed() {
-      color(drawing::color::from_argb(static_cast<uint8_t>(track_bar_alpha.value()), static_cast<uint8_t>(track_bar_red.value()), static_cast<uint8_t>(track_bar_green.value()), static_cast<uint8_t>(track_bar_blue.value())));
+      color(drawing::color::from_argb(as<uint8_t>(track_bar_alpha.value()), as<uint8_t>(track_bar_red.value()), as<uint8_t>(track_bar_green.value()), as<uint8_t>(track_bar_blue.value())));
     }
     
     label label_alpha;

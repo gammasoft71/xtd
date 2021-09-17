@@ -1,6 +1,6 @@
 # console_read_key
 
-Shows how to use [xtd::console::read_key](../../../../src/xtd.core/include/xtd/basic_console.h) and [xtd::console::key_available](../../../../src/xtd.core/include/xtd/basic_console.h) methods.
+Shows how to use [xtd::console::read_key](../../../../src/xtd.core/include/xtd/console.h) and [xtd::console::key_available](../../../../src/xtd.core/include/xtd/console.h) methods.
 
 # Sources
 

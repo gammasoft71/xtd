@@ -4,7 +4,8 @@
 #pragma once
 #include <cstdint>
 #include <memory>
-#include <xtd/strings.h>
+#include <xtd/object.h>
+#include <xtd/ustring.h>
 #include "../drawing_export.h"
 #include "bitmap.h"
 
@@ -13,15 +14,17 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Represents a Windows icon, which is a small bitmap image that is used to represent an object. Icons can be thought of as transparent bitmaps, although their size is determined by the system.
+    /// @par Namespace
+    /// xtd::drawing
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    class drawing_export_ icon {
+    class drawing_export_ icon : public object {
     public:
       icon() = default;
       ~icon();
 
-      explicit icon(const std::string& filename);
+      explicit icon(const xtd::ustring& filename);
 
       explicit icon(std::istream& stream);
 
@@ -42,7 +45,7 @@ namespace xtd {
 
       static icon empty;
 
-      void save(const std::string& filename) const;
+      void save(const xtd::ustring& filename) const;
       void save(std::ostream& stream) const;
       
       static icon from_bitmap(const bitmap& bitmap);

@@ -4,10 +4,10 @@ using namespace std;
 using namespace xtd;
 
 int main() {
-  cout << strings::format("{}", exception()) << endl;
-  cout << strings::format("{}", invalid_argument("Invvalid argument")) << endl;
-  cout << strings::format("{}", system_exception("System exception")) << endl;
-  cout << strings::format("{}", argument_out_of_range_exception("Argument out of range exception")) << endl;
+  cout << ustring::format("{}", exception()) << endl;
+  cout << ustring::format("{}", invalid_argument("Invvalid argument")) << endl;
+  cout << ustring::format("{}", system_exception("System exception")) << endl;
+  cout << ustring::format("{}", argument_out_of_range_exception("Argument out of range exception")) << endl;
 }
 
 // This code produces the following output :

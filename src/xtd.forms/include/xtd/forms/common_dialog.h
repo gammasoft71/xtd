@@ -22,10 +22,12 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Specifies the base class used for displaying dialog boxes on the screen.
-    /// @remarks Inherited classes are required to implement run_dialog by invoking show_dialog to create a specific common dialog box. Inherited classes can optionally override hook_proc to implement specific dialog box hook functionality.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
+    /// @remarks Inherited classes are required to implement run_dialog by invoking show_dialog to create a specific common dialog box. Inherited classes can optionally override hook_proc to implement specific dialog box hook functionality.
     class common_dialog : public component {
     public:
       /// @brief Initializes a new instance of the common_dialog class.
@@ -97,11 +99,11 @@ namespace xtd {
 
       /// @brief Occurs when the user clicks the Help button on a common dialog box.
       /// @ingroup events
-      event<common_dialog, help_event_handler<component&>> help_request;
+      event<common_dialog, help_event_handler> help_request;
 
       /// @brief Occurs when the user close a common dialog box with dialog close button or other dialog buttons.
       /// @ingroup events
-      event<common_dialog, dialog_closed_event_handler<component&>> dialog_closed;
+      event<common_dialog, dialog_closed_event_handler> dialog_closed;
       
     protected:
       /// @cond

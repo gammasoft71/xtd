@@ -23,24 +23,14 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A message_dialog can contain text, buttons, and symbols that inform and instruct the user.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
     /// @par Examples
     /// The following code example demonstrate the use of message_dialog dialog.
     /// @include message_dialog.cpp
-    /// @par Windows
-    /// @image html message_dialog_w.png
-    /// <br>
-    /// @image html message_dialog_wd.png
-    /// @par macOS
-    /// @image html message_dialog_m.png
-    /// <br>
-    /// @image html message_dialog_md.png
-    /// @par Gnome
-    /// @image html message_dialog_g.png
-    /// <br>
-    /// @image html message_dialog_gd.png
     class forms_export_ message_dialog final : public component {
     public:
       /// @brief Initializes a new instance of the message_dialog class.
@@ -124,11 +114,11 @@ namespace xtd {
       
       /// @brief Gets the text message.
       /// @return The text message.
-      std::string messsage() const {return message_;}
+      xtd::ustring messsage() const {return message_;}
       /// @brief Sets the text message.
       /// @param message The text message.
       /// @return Current message_dialog instance.
-      message_dialog& message(const std::string& message) {
+      message_dialog& message(const xtd::ustring& message) {
         if (message_ != message)
           message_ = message;
         return *this;
@@ -136,11 +126,11 @@ namespace xtd {
       
       /// @brief Gets the dialog caption text.
       /// @return The current dialog caption text.
-      std::string text() const {return text_;}
+      xtd::ustring text() const {return text_;}
       /// @brief Sets the dialog caption text.
       /// @param text The new dialog caption text.
       /// @return Current message_dialog instance.
-      message_dialog& text(const std::string& text) {
+      message_dialog& text(const xtd::ustring& text) {
         if (text_ != text)
           text_ = text;
         return *this;
@@ -160,11 +150,11 @@ namespace xtd {
 
       /// @brief Occurs when the user clicks the Help button on a common dialog box.
       /// @ingroup events
-      event<message_dialog, help_event_handler<message_dialog&>> help_request;
+      event<message_dialog, help_event_handler> help_request;
       
       /// @brief Occurs when the user close a message dialog box with dialog close button or other dialog buttons.
       /// @ingroup events
-      event<message_dialog, dialog_closed_event_handler<message_dialog&>> dialog_closed;
+      event<message_dialog, dialog_closed_event_handler> dialog_closed;
       
     private:
       /// @cond
@@ -186,8 +176,8 @@ namespace xtd {
       bool display_help_button_ = false;
       xtd::forms::message_dialog_icon icon_ = xtd::forms::message_dialog_icon::none;
       xtd::forms::message_dialog_options options_ = static_cast<xtd::forms::message_dialog_options>(0);
-      std::string message_;
-      std::string text_;
+      xtd::ustring message_;
+      xtd::ustring text_;
     };
   }
 }

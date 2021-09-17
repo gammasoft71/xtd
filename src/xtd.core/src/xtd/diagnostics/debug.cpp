@@ -16,7 +16,7 @@ extern char** __diagnostics_argv;
 trace_listener_collection& debug::listeners_ = __listeners__;
 bool& debug::show_assert_dialog_ = __show_assert_dialog__;
 mutex debug::global_lock_;
-string debug::source_name_ = environment::get_command_line_args().size() == 0 ? "(unknown)" : environment::get_command_line_args()[0];
+ustring debug::source_name_ = environment::get_command_line_args().size() == 0 ? "(unknown)" : environment::get_command_line_args()[0];
 
 bool debug::auto_flush() {
   return auto_flush_;
@@ -78,11 +78,11 @@ void debug::cassert(bool condition) {
   if (__should_aborted__(condition, "", csf_)) debug_break_();
 }
 
-void debug::cassert(bool condition, const std::string& message) {
+void debug::cassert(bool condition, const ustring& message) {
   if (__should_aborted__(condition, message, csf_)) debug_break_();
 }
 
-void debug::cassert(bool condition, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+void debug::cassert(bool condition, const ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   if (__should_aborted__(condition, message, stack_frame)) debug_break_();
 }
 
@@ -90,7 +90,7 @@ void debug::cassert(bool condition, const xtd::diagnostics::stack_frame& stack_f
   if (__should_aborted__(condition, "", stack_frame)) debug_break_();
 }
 
-void debug::fail_(const std::string& message) {
+void debug::fail__(const ustring& message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -104,7 +104,7 @@ void debug::fail_(const std::string& message) {
   if (auto_flush_) flush();
 }
 
-void debug::fail_(const std::string& message, const std::string& detail_message) {
+void debug::fail__(const ustring& message, const ustring& detail_message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -123,7 +123,7 @@ void debug::flush_() {
     listener->flush();
 }
 
-void debug::trace_event_(trace_event_type trace_event_type, const std::string& message) {
+void debug::trace_event_(trace_event_type trace_event_type, const ustring& message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -137,7 +137,7 @@ void debug::trace_event_(trace_event_type trace_event_type, const std::string& m
   if (auto_flush_) flush();
 }
 
-void debug::write_(const std::string& message) {
+void debug::write_(const ustring& message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -151,7 +151,7 @@ void debug::write_(const std::string& message) {
   if (auto_flush_) flush();
 }
 
-void debug::write_(const std::string& message, const std::string& category) {
+void debug::write_(const ustring& message, const ustring& category) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -165,7 +165,7 @@ void debug::write_(const std::string& message, const std::string& category) {
   if (auto_flush_) flush();
 }
 
-void debug::write_line_(const std::string& message) {
+void debug::write_line_(const ustring& message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -179,7 +179,7 @@ void debug::write_line_(const std::string& message) {
   if (auto_flush_) flush();
 }
 
-void debug::write_line_(const std::string& message, const std::string& category) {
+void debug::write_line_(const ustring& message, const ustring& category) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -193,7 +193,7 @@ void debug::write_line_(const std::string& message, const std::string& category)
   if (auto_flush_) flush();
 }
 
-xtd::diagnostics::assert_dialog_result debug::assert_dialog(bool condition, const std::string& message, const stack_frame& stack_frrame) {
+xtd::diagnostics::assert_dialog_result debug::assert_dialog(bool condition, const ustring& message, const stack_frame& stack_frrame) {
   if (condition == true ) return assert_dialog_result::ignore;
   write_line("---- DEBUG ASSERTION FAILED ----");
   write_line("---- Assert Short Message----");
@@ -202,5 +202,5 @@ xtd::diagnostics::assert_dialog_result debug::assert_dialog(bool condition, cons
   write_line("");
   write_line(stack_trace(stack_frrame).to_string());
   write_line("");
-  return show_assert_dialog_ ? static_cast<xtd::diagnostics::assert_dialog_result>(native::debugger::show_assert_dialog(strings::format("{}\n\n{}", message, stack_trace(stack_frrame)), "Assertion Failed: Abort=Quit, Retry=Debug, Ignore=Continue")) : assert_dialog_result::retry;
+  return show_assert_dialog_ ? static_cast<xtd::diagnostics::assert_dialog_result>(native::debugger::show_assert_dialog(ustring::format("{}\n\n{}", message, stack_trace(stack_frrame)), "Assertion Failed: Abort=Quit, Retry=Debug, Ignore=Continue")) : assert_dialog_result::retry;
 }

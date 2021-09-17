@@ -20,25 +20,25 @@ public:
     generate_handled_exception_button.location({10, 10});
     generate_handled_exception_button.parent(*this);
     generate_handled_exception_button.text("Generate handled exception");
-    generate_handled_exception_button.click += {*this, &main_form::generate_handled_exception};
+    generate_handled_exception_button.click += event_handler(*this, &main_form::generate_handled_exception);
 
     generate_exception_button.auto_size(true);
     generate_exception_button.location({10, 40});
     generate_exception_button.parent(*this);
     generate_exception_button.text("Generate exception");
-    generate_exception_button.click += {*this, &main_form::generate_exception};
+    generate_exception_button.click += event_handler(*this, &main_form::generate_exception);
 
     generate_system_exception_button.auto_size(true);
     generate_system_exception_button.location({10, 70});
     generate_system_exception_button.parent(*this);
     generate_system_exception_button.text("Generate system exception");
-    generate_system_exception_button.click += {*this, &main_form::generate_system_exception};
+    generate_system_exception_button.click += event_handler(*this, &main_form::generate_system_exception);
 
     generate_unknown_exception_button.auto_size(true);
     generate_unknown_exception_button.location({10, 100});
     generate_unknown_exception_button.parent(*this);
     generate_unknown_exception_button.text("Generate unknown exception");
-    generate_unknown_exception_button.click += {*this, &main_form::generate_unknown_exception};
+    generate_unknown_exception_button.click += event_handler(*this, &main_form::generate_unknown_exception);
   }
   
 private:
@@ -46,7 +46,7 @@ private:
     try {
       throw operation_canceled_exception(current_stack_frame_);
     } catch(const xtd::system_exception& e) {
-      message_box::show(*this, e.message(), strings::format("Exception {} handled", e.name()));
+      message_box::show(*this, e.message(), ustring::format("Exception {} handled", e.name()));
     }
   }
   void generate_exception() {throw invalid_argument("Invalid argument");}

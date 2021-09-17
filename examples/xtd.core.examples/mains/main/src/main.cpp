@@ -6,7 +6,7 @@ using namespace xtd;
 namespace examples {
   class program {
   public:
-    static int main(const vector<string>& args) {
+    static int main(const vector<ustring>& args) {
       int number;
       if (args.size() != 1 || try_parse(args[0], number) == false || number < 0 || number > 20) {
         cout << "Please enter an integer argument betwween 0 and 20." << endl;
@@ -14,7 +14,7 @@ namespace examples {
         return -1;
       }
 
-      cout << strings::format("The factorial of {0} is {1}", number, [&] {
+      cout << ustring::format("The factorial of {0} is {1}", number, [&] {
         int64_t result = 1;
         for (int i = 1; i <= number; ++i)
           result *= i;

@@ -80,7 +80,7 @@ namespace examples {
 
   private:
     void set_color(const color& color) {
-      cdebug << strings::format("color = {}", color.to_string()) << endl;
+      cdebug << ustring::format("color = {}", color.to_string()) << endl;
     }
     void set_color(nullptr_t) {
       cdebug << "color = (nullptr)" << endl;

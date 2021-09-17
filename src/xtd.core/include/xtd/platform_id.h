@@ -2,12 +2,14 @@
 /// @brief Contains xtd::platform_id enum class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/strings.h>
+#include "ustring.h"
 #undef unix
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Identifies the operating system, or platform, supported by an assembly.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core

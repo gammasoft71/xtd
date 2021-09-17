@@ -12,24 +12,14 @@
 namespace xtd {
   namespace forms {
     /// @brief represent a dot matrix display class
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
     /// The following code example demonstrate the use of dot matrix display control.
     /// @include dot_matrix_display.cpp
-    /// @par Windows
-    /// @image html dot_matrix_display_w.png
-    /// <br>
-    /// @image html dot_matrix_display_wd.png
-    /// @par macOS
-    /// @image html dot_matrix_display_m.png
-    /// <br>
-    /// @image html dot_matrix_display_md.png
-    /// @par Gnome
-    /// @image html dot_matrix_display_g.png
-    /// <br>
-    /// @image html dot_matrix_display_gd.png
     class dot_matrix_display : public control {
     public:
       /// @brief Represents a dots collection.
@@ -205,13 +195,23 @@ namespace xtd {
 
     protected:
       drawing::size default_size() const override {return {25, 25};}
+      
+      void on_back_color_changed(const event_args& e) override {
+        control::on_back_color_changed(e);
+        invalidate();
+      }
+      
+      void on_fore_color_changed(const event_args& e) override {
+        control::on_fore_color_changed(e);
+        invalidate();
+      }
 
       void on_paint(paint_event_args& e) override {
-        e.graphics().clear(back_color());
+        if (back_color() != default_back_color()) e.graphics().clear(back_color());
         for (int32_t y = 0; y < static_cast<int32_t>(dots_.size()); y++) {
           for (int32_t x = 0; x < static_cast<int32_t>(dots_[y].size()); x++) {
             if (dots_[y][x]) draw_dot(e.graphics(), fore_color(), {x, y});
-            else if (show_back_dot_) draw_dot(e.graphics(), drawing::color::average(back_color(), back_dot_color(), 1.0 - back_dot_opacity_), {x, y});
+            else if (show_back_dot_) draw_dot(e.graphics(), drawing::color::average(back_dot_color(), back_color(), back_dot_opacity_), {x, y});
           }
         }
         control::on_paint(e);

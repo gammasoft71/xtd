@@ -15,24 +15,14 @@ namespace xtd {
     /// @endcond
   
     /// @brief Manages a related set of tab pages.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms containers
     /// @par Examples
     /// The following code example demonstrate the use of tab_control container.
     /// @include tab_control.cpp
-    /// @par Windows
-    /// @image html tab_control_w.png
-    /// <br>
-    /// @image html tab_control_wd.png
-    /// @par macOS
-    /// @image html tab_control_m.png
-    /// <br>
-    /// @image html tab_control_md.png
-    /// @par Gnome
-    /// @image html tab_control_g.png
-    /// <br>
-    /// @image html tab_control_gd.png
     class forms_export_ tab_control : public control {
     public:
       /// @brief Initializes a new instance of the tab_control class.
@@ -83,7 +73,7 @@ namespace xtd {
 
       /// @brief Occurs when the selected_index property has changed.
       /// @ingroup events
-      event<tab_control, event_handler<control&>> selected_index_changed;
+      event<tab_control, event_handler> selected_index_changed;
 
       /// @brief This is a special value equal to the maximum value representable by the type size_t.
       static const size_t npos = std::numeric_limits<size_t>::max();

@@ -1,5 +1,4 @@
 #if defined(__APPLE__)
-#include <xtd/strings.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/dialog_box_identifiers.h>
@@ -32,7 +31,7 @@ namespace {
     return NSAlertStyleWarning;
   }
   
-  static NSAlert* create_alert(const std::string& text, const std::string& caption, uint32_t style, bool display_help_button) {
+  static NSAlert* create_alert(const ustring& text, const ustring& caption, uint32_t style, bool display_help_button) {
     NSAlert* alert = [[NSAlert alloc] init];
     if ((style & MB_RETRYCANCEL) == MB_RETRYCANCEL) {
       [alert addButtonWithTitle:@"Retry"];
@@ -67,14 +66,14 @@ namespace {
   }
 }
 
-int32_t message_box::show(intptr_t control, const std::string& text, const std::string& caption, uint32_t style, bool display_help_button) {
+int32_t message_box::show(intptr_t control, const ustring& text, const ustring& caption, uint32_t style, bool display_help_button) {
   @autoreleasepool {
     NSAlert* alert = create_alert(text, caption, style, display_help_button);
     return convert_to_dialog_rsult(style, [alert runModal]);
   }
 }
 
-void message_box::show_sheet(xtd::delegate<void(int32_t)> on_dialog_closed, intptr_t control, const std::string& text, const std::string& caption, uint32_t style, bool display_help_button) {
+void message_box::show_sheet(xtd::delegate<void(int32_t)> on_dialog_closed, intptr_t control, const ustring& text, const ustring& caption, uint32_t style, bool display_help_button) {
   @autoreleasepool {
     NSAlert *alert = create_alert(text, caption, style, display_help_button);
     [alert beginSheetModalForWindow:[reinterpret_cast<control_handler*>(control)->control()->GetHandle() window] completionHandler:^(NSModalResponse return_code) {

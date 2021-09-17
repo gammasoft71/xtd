@@ -26,7 +26,6 @@
 // *   light folder item gradient : fg(69, 181, 232), bg(101, 197, 240)
 // *   dark folder item gradient : fg(78, 139, 182), bg(94, 153, 185)
 
-
 using namespace std;
 using namespace std::filesystem;
 using namespace xtd;
@@ -45,13 +44,13 @@ namespace {
   }
 }
 
-image system_images::from_name(const string& theme, const string& name, const size& size) {
+image system_images::from_name(const ustring& theme, const ustring& name, const size& size) {
   static vector<drawing::size> default_sizes = {{1024, 1024}, {512, 512}, {256, 256}, {128, 128}, {96, 96}, {64, 64}, {48, 48}, {32, 32}, {24, 24}, {16, 16}};
   static vector<string> default_size_names = {"1024x1024", "512x512", "256x256", "128x128", "96x96", "64x64", "48x48", "32x32", "24x24", "16x16"};
-  auto dark_mode = (system_colors::window().get_lightness() < 0.5 && !strings::ends_with(theme, " (light)")) || strings::ends_with(theme, " (dark)");
-  auto theme_name = strings::replace(strings::replace(theme, " (dark)", ""), " (light)", "");
+  auto dark_mode = (system_colors::window().get_lightness() < 0.5 && !theme.ends_with(" (light)")) || theme.ends_with(" (dark)");
+  string theme_name = theme.replace(" (dark)", "").replace(" (light)", "");
 
-  auto theme_path = exists(system_images_resource_path()/theme_name) ? system_images_resource_path()/theme_name : system_images_resource_path()/default_theme();
+  auto theme_path = exists(system_images_resource_path()/theme_name) ? system_images_resource_path()/theme_name : system_images_resource_path()/default_theme().c_str();
   auto it_sizes = find(default_sizes.begin(), default_sizes.end(), get_closed_size(size));
   
   if (theme == default_theme()) {
@@ -60,38 +59,37 @@ image system_images::from_name(const string& theme, const string& name, const si
   }
 
   if (dark_mode) {
-    if (exists(theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png"))) return bitmap((theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png")).string());
+    if (exists(theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png").c_str())) return bitmap((theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png").c_str()).string());
     for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
-      if (exists(theme_path/default_size_names[it - default_sizes.begin()]/(name + "-dark.png"))) return bitmap(bitmap((theme_path/default_size_names[it - default_sizes.begin()]/(name + "-dark.png")).string()), *it_sizes);
+      if (exists(theme_path/default_size_names[it - default_sizes.begin()]/(name + "-dark.png").c_str())) return bitmap(bitmap((theme_path/default_size_names[it - default_sizes.begin()]/(name + "-dark.png").c_str()).string()), *it_sizes);
   }
   
-  if (exists(theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png"))) return bitmap((theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png")).string());
+  if (exists(theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png").c_str())) return bitmap((theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png").c_str()).string());
   for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
-    if (exists(theme_path/default_size_names[it - default_sizes.begin()]/(name + ".png"))) return bitmap(bitmap((theme_path/default_size_names[it - default_sizes.begin()]/(name + ".png")).string()), *it_sizes);
-  
+    if (exists(theme_path/default_size_names[it - default_sizes.begin()]/(name + ".png").c_str())) return bitmap(bitmap((theme_path/default_size_names[it - default_sizes.begin()]/(name + ".png").c_str()).string()), *it_sizes);
   
   if (dark_mode) {
-    if (exists(system_images_resource_path()/fallback_theme()/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png"))) return bitmap((system_images_resource_path()/fallback_theme()/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png")).string());
+    if (exists(system_images_resource_path()/fallback_theme().c_str()/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png").c_str())) return bitmap((system_images_resource_path()/fallback_theme().c_str()/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png").c_str()).string());
     for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
-      if (exists(system_images_resource_path()/fallback_theme()/default_size_names[it - default_sizes.begin()]/(name + "-dark.png"))) return bitmap(bitmap((system_images_resource_path()/fallback_theme()/default_size_names[it - default_sizes.begin()]/(name + "-dark.png")).string()), *it_sizes);
+      if (exists(system_images_resource_path()/fallback_theme().c_str()/default_size_names[it - default_sizes.begin()]/(name + "-dark.png").c_str())) return bitmap(bitmap((system_images_resource_path()/fallback_theme().c_str()/default_size_names[it - default_sizes.begin()]/(name + "-dark.png").c_str()).string()), *it_sizes);
   }
 
-  if (exists(system_images_resource_path()/fallback_theme()/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png"))) return bitmap((system_images_resource_path()/fallback_theme()/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png")).string());
+  if (exists(system_images_resource_path()/fallback_theme().c_str()/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png").c_str())) return bitmap((system_images_resource_path()/fallback_theme().c_str()/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png").c_str()).string());
   for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
-    if (exists(system_images_resource_path()/fallback_theme()/default_size_names[it - default_sizes.begin()]/(name + ".png"))) return bitmap(bitmap((system_images_resource_path()/fallback_theme()/default_size_names[it - default_sizes.begin()]/(name + ".png")).string()), *it_sizes);
+    if (exists(system_images_resource_path()/fallback_theme().c_str()/default_size_names[it - default_sizes.begin()]/(name + ".png").c_str())) return bitmap(bitmap((system_images_resource_path()/fallback_theme().c_str()/default_size_names[it - default_sizes.begin()]/(name + ".png").c_str()).string()), *it_sizes);
 
   return image::empty;
 }
 
-vector<string> system_images::contexts() {
-  vector<string> result;
+vector<ustring> system_images::contexts() {
+  vector<ustring> result;
   for (const auto& context_name : context_names())
     result.push_back(context_name.first);
   return result;
 }
 
-map<string, vector<string>> system_images::context_names() {
-  static map<string, vector<string>> context_names {
+map<ustring, vector<ustring>> system_images::context_names() {
+  static map<ustring, vector<ustring>> context_names {
     {"Actions", {"address-book-new", "application-exit", "appointment-new", "call-start", "call-stop", "contact-new", "dialog-cancel", "dialog-ok", "dialog-ok-apply", "document-edit", "document-new", "document-open", "document-open-recent", "document-page-setup", "document-print", "document-print-preview", "document-properties", "document-revert", "document-save", "document-save-as", "document-send", "edit-clear", "edit-copy", "edit-cut", "edit-delete", "edit-find", "edit-find-replace", "edit-paste", "edit-redo", "edit-rename", "edit-select-all", "edit-undo", "folder-new", "format-indent-less", "format-indent-more", "format-justify-center", "format-justify-fill", "format-justify-left", "format-justify-right", "format-text-direction-ltr", "format-text-direction-rtl", "format-text-bold", "format-text-italic", "format-text-underline", "format-text-strikethrough", "go-bottom", "go-down", "go-first", "go-home", "go-jump", "go-last", "go-next", "go-previous", "go-top", "go-up", "help-about", "help-contents", "help-faq", "insert-image", "insert-link", "insert-object", "insert-table", "insert-text", "list-add", "list-remove", "mail-forward", "mail-mark-important", "mail-mark-junk", "mail-mark-notjunk", "mail-mark-read", "mail-mark-unread", "mail-message-new", "mail-reply-all", "mail-reply-sender", "mail-send", "mail-send-receive", "media-eject", "media-optical-burn", "media-playback-pause", "media-playback-start", "media-playback-stop", "media-record", "media-seek-backward", "media-seek-forward", "media-skip-backward", "media-skip-forward", "object-flip-horizontal", "object-flip-vertical", "object-rotate-left", "object-rotate-right", "process-stop", "system-lock-screen", "system-log-out", "system-run", "system-search", "system-reboot", "system-shutdown", "tools-check-spelling", "view-fullscreen", "view-media-equalizer", "view-media-lyrics", "view-refresh", "view-restore", "view-sort-ascending", "view-sort-descending", "window-close", "window-close-hovered", "window-fullscreen", "window-fullscreen-hovered", "window-maximize", "window-maximize-hovered", "window-minimize", "window-minimize-hovered", "window-new", "window-restore", "window-restore-hovered", "zoom-fit-best", "zoom-in", "zoom-original", "zoom-out"}},
     {"Animations", {"process-working"}},
     {"Applications", {"accessories-calculator", "accessories-character-map", "accessories-dictionary", "accessories-text-editor", "help-browser", "help", "multimedia-volume-control", "preferences-desktop-accessibility", "preferences-desktop-font", "preferences-desktop-keyboard", "preferences-desktop-locale", "preferences-desktop-screensaver", "preferences-desktop-theme", "preferences-desktop-wallpaper", "system-file-manager", "system-software-install", "system-software-update", "utilities-system-monitor", "utilities-terminal"}},
@@ -108,8 +106,8 @@ map<string, vector<string>> system_images::context_names() {
   return context_names;
 }
 
-std::vector<string> system_images::names() {
-  vector<string> result;
+std::vector<ustring> system_images::names() {
+  vector<ustring> result;
   for (const auto& context_name : context_names())
     for (const auto& name : context_name.second)
       result.push_back(name);
@@ -120,14 +118,14 @@ std::vector<xtd::drawing::size> system_images::sizes() {
   return {{16, 16}, {24, 24}, {32, 32}, {48, 48}, {64, 64}, {96, 96}, {128, 128}, {256, 256}, {512, 512}, {1024, 1024}};
 }
 
-string system_images::default_theme()  {
+ustring system_images::default_theme()  {
   return xtd::environment::os_version().desktop_environment() == "" ? "symbolic" :  xtd::environment::os_version().desktop_environment();
 }
 
-string system_images::fallback_theme() {
+ustring system_images::fallback_theme() {
   return "symbolic";
 }
 
-vector<string> system_images::themes() {
+vector<ustring> system_images::themes() {
   return {"gnome", "gnome (dark)", "gnome (light)", "kde", "kde (dark)", "kde (light)", "macos", "macos (dark)", "macos (light)", "symbolic", "symbolic (dark)", "symbolic (light)", "windows", "windows (dark)", "windows (light)", "xtd", "xtd (dark)", "xtd (light)"};
 }

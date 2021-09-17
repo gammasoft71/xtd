@@ -22,78 +22,78 @@ namespace {
 
 // This delehgate will be initialized by __init_process_message_box_message__ in xtd.forns/src/xtd/forms/appllication.cpp file.
 // This operation can be done only if xtd.forms lib is present.
-//xtd::delegate<void(const std::string&)> process::message_box_message_;
+//xtd::delegate<void(const xtd::ustring&)> process::message_box_message_;
 
 bool process::error_data_received_event::is_empty() const noexcept {
-  return data_received_event_handler<process&>::is_empty();
+  return data_received_event_handler::is_empty();
 }
 
-data_received_event_handler<process&>& process::error_data_received_event::operator+=(const data_received_event_handler<process&>& handler) noexcept {
+data_received_event_handler& process::error_data_received_event::operator+=(const data_received_event_handler& handler) noexcept {
   data_->error_data_received_callback_+=(handler);
-  return data_received_event_handler<process&>::operator+=(handler);
+  return data_received_event_handler::operator+=(handler);
 }
 
-data_received_event_handler<process&>& process::error_data_received_event::operator+=(const typename data_received_event_handler<process&>::function_t& function) noexcept {
+data_received_event_handler& process::error_data_received_event::operator+=(const typename data_received_event_handler::function_t& function) noexcept {
   data_->error_data_received_callback_+=(function);
-  return data_received_event_handler<process&>::operator+=(function);
+  return data_received_event_handler::operator+=(function);
 }
 
-data_received_event_handler<process&>& process::error_data_received_event::operator-=(const data_received_event_handler<process&>& handler) noexcept {
+data_received_event_handler& process::error_data_received_event::operator-=(const data_received_event_handler& handler) noexcept {
   data_->error_data_received_callback_-=(handler);
-  return data_received_event_handler<process&>::operator-=(handler);
+  return data_received_event_handler::operator-=(handler);
 }
 
-data_received_event_handler<process&>& process::error_data_received_event::operator-=(const typename data_received_event_handler<process&>::function_t& function) noexcept {
+data_received_event_handler& process::error_data_received_event::operator-=(const typename data_received_event_handler::function_t& function) noexcept {
   data_->error_data_received_callback_-=(function);
-  return data_received_event_handler<process&>::operator-=(function);
+  return data_received_event_handler::operator-=(function);
 }
 
 bool process::exit_event::is_empty() const noexcept {
-  return event_handler<process&>::is_empty();
+  return event_handler::is_empty();
 }
 
-event_handler<process&>& process::exit_event::operator+=(const event_handler<process&>& handler) noexcept {
+event_handler& process::exit_event::operator+=(const event_handler& handler) noexcept {
   data_->exit_callback_+=(handler);
-  return event_handler<process&>::operator+=(handler);
+  return event_handler::operator+=(handler);
 }
 
-event_handler<process&>& process::exit_event::operator+=(const typename event_handler<process&>::function_t& function) noexcept {
+event_handler& process::exit_event::operator+=(const typename event_handler::function_t& function) noexcept {
   data_->exit_callback_+=(function);
-  return event_handler<process&>::operator+=(function);
+  return event_handler::operator+=(function);
 }
 
-event_handler<process&>& process::exit_event::operator-=(const event_handler<process&>& handler) noexcept {
+event_handler& process::exit_event::operator-=(const event_handler& handler) noexcept {
   data_->exit_callback_-=(handler);
-  return event_handler<process&>::operator-=(handler);
+  return event_handler::operator-=(handler);
 }
 
-event_handler<process&>& process::exit_event::operator-=(const typename event_handler<process&>::function_t& function) noexcept {
+event_handler& process::exit_event::operator-=(const typename event_handler::function_t& function) noexcept {
   data_->exit_callback_-=(function);
-  return event_handler<process&>::operator-=(function);
+  return event_handler::operator-=(function);
 }
 
 bool process::output_data_received_event::is_empty() const noexcept {
-  return data_received_event_handler<process&>::is_empty();
+  return data_received_event_handler::is_empty();
 }
 
-data_received_event_handler<process&>& process::output_data_received_event::operator+=(const data_received_event_handler<process&>& handler) noexcept {
+data_received_event_handler& process::output_data_received_event::operator+=(const data_received_event_handler& handler) noexcept {
   data_->output_data_received_callback_+=(handler);
-  return data_received_event_handler<process&>::operator+=(handler);
+  return data_received_event_handler::operator+=(handler);
 }
 
-data_received_event_handler<process&>& process::output_data_received_event::operator+=(const typename data_received_event_handler<process&>::function_t& function) noexcept {
+data_received_event_handler& process::output_data_received_event::operator+=(const typename data_received_event_handler::function_t& function) noexcept {
   data_->output_data_received_callback_+=(function);
-  return data_received_event_handler<process&>::operator+=(function);
+  return data_received_event_handler::operator+=(function);
 }
 
-data_received_event_handler<process&>& process::output_data_received_event::operator-=(const data_received_event_handler<process&>& handler) noexcept {
+data_received_event_handler& process::output_data_received_event::operator-=(const data_received_event_handler& handler) noexcept {
   data_->output_data_received_callback_-=(handler);
-  return data_received_event_handler<process&>::operator-=(handler);
+  return data_received_event_handler::operator-=(handler);
 }
 
-data_received_event_handler<process&>& process::output_data_received_event::operator-=(const typename data_received_event_handler<process&>::function_t& function) noexcept {
+data_received_event_handler& process::output_data_received_event::operator-=(const typename data_received_event_handler::function_t& function) noexcept {
   data_->output_data_received_callback_-=(function);
-  return data_received_event_handler<process&>::operator-=(function);
+  return data_received_event_handler::operator-=(function);
 }
 
 process::process() {
@@ -154,7 +154,7 @@ int32_t process::id() const {
   return data_->id_;
 }
 
-std::string process::machine_name() const {
+ustring process::machine_name() const {
   if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(current_stack_frame_);
   return data_->machine_name_;
 }
@@ -174,7 +174,7 @@ process& process::priority_class(process_priority_class value) {
   return *this;
 }
 
-std::string process::process_name() const {
+ustring process::process_name() const {
   if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(current_stack_frame_);
   return path::get_file_name_without_extension(data_->start_info_.file_name());
 }
@@ -226,7 +226,7 @@ void process::close() {
 void process::kill() {
   if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(current_stack_frame_);
   native::process::kill(data_->handle_.value());
-  debug::write_line_if(show_debug_process.enabled(), strings::format("process::kill [handle={}, killed]", data_->handle_));
+  debug::write_line_if(show_debug_process.enabled(), ustring::format("process::kill [handle={}, killed]", data_->handle_));
 }
 
 bool process::start() {
@@ -255,11 +255,11 @@ bool process::start() {
       }
       if (process.data_->handle_ == 0) throw invalid_operation_exception("The system cannot find the file specified", current_stack_frame_);
       allow_to_continue = true;
-      debug::write_line_if(show_debug_process.enabled(), strings::format("process::start [handle={}, command_line={}, start_time={:u}.{:D6}, started]", process.data_->handle_, strings::format("{}{}", process.start_info().file_name(), process.start_info().arguments() == "" ? "" : strings::format(" {}", process.start_info().arguments())), process.data_->start_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time_.time_since_epoch())).count() % 1000000));
+      debug::write_line_if(show_debug_process.enabled(), ustring::format("process::start [handle={}, command_line={}, start_time={:u}.{:D6}, started]", process.data_->handle_, ustring::format("{}{}", process.start_info().file_name(), process.start_info().arguments() == "" ? "" : ustring::format(" {}", process.start_info().arguments())), process.data_->start_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time_.time_since_epoch())).count() % 1000000));
       int32_t exit_code = 0;
       process.data_->exit_code_ =  native::process::wait(process.data_->handle_.value(), exit_code) ? exit_code : -1;
       process.data_->exit_time_ = system_clock::now();
-      debug::write_line_if(show_debug_process.enabled(), strings::format("process::start [handle={}, exit_time={:u}.{:D6}, exit_code={}, exited]", process.data_->handle_, process.data_->exit_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->exit_time_.time_since_epoch())).count() % 1000000, process.data_->exit_code_));
+      debug::write_line_if(show_debug_process.enabled(), ustring::format("process::start [handle={}, exit_time={:u}.{:D6}, exit_code={}, exited]", process.data_->handle_, process.data_->exit_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->exit_time_.time_since_epoch())).count() % 1000000, process.data_->exit_code_));
       if (!process.data_->exit_code_.has_value() || process.data_->exit_code_ == -1 || process.data_->exit_code_ == 0x00ffffff) throw invalid_operation_exception("The system cannot find the file specified", current_stack_frame_);
       process.on_exited();
     } catch(...) {
@@ -284,20 +284,20 @@ process process::start(const process_start_info &start_info) {
   return process;
 }
 
-process process::start(const std::string& file_name) {
+process process::start(const ustring& file_name) {
   return start(process_start_info(file_name));
 }
 
-process process::start(const std::string& file_name, const std::string& arguments) {
+process process::start(const ustring& file_name, const ustring& arguments) {
   return start(process_start_info(file_name, arguments));
 }
 
 process& process::wait_for_exit() {
   if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(current_stack_frame_);
-  debug::write_line_if(show_debug_process.enabled(), strings::format("process::wait_for_exit [handle={}, wait...]", data_->handle_));
+  debug::write_line_if(show_debug_process.enabled(), ustring::format("process::wait_for_exit [handle={}, wait...]", data_->handle_));
   if (data_->thread_.joinable()) data_->thread_.join();
   close();
-  debug::write_line_if(show_debug_process.enabled(), strings::format("process::wait_for_exit [handle={}, exit_code={}, ...exit]", data_->handle_, data_->exit_code_));
+  debug::write_line_if(show_debug_process.enabled(), ustring::format("process::wait_for_exit [handle={}, exit_code={}, ...exit]", data_->handle_, data_->exit_code_));
   if (data_->exception_pointer_) {
     if (data_->start_info_.use_shell_execute() && data_->start_info_.error_dialog())  message_box_message_(data_->start_info_.file_name());
     std::exception_ptr exception_pointer = data_->exception_pointer_;
@@ -312,10 +312,10 @@ process& process::wait_for_exit(int32_t milliseconds) {
   /// @todo create a timeout...
   /// @see https://stackoverflow.com/questions/9948420/timeout-for-thread-join
   if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(current_stack_frame_);
-  debug::write_line_if(show_debug_process.enabled(), strings::format("process::wait_for_exit [handle={}, wait...]", data_->handle_));
+  debug::write_line_if(show_debug_process.enabled(), ustring::format("process::wait_for_exit [handle={}, wait...]", data_->handle_));
   if (data_->thread_.joinable()) data_->thread_.join();
   close();
-  debug::write_line_if(show_debug_process.enabled(), strings::format("process::wait_for_exit [handle={}, exit_code={}, ...exit]", data_->handle_, data_->exit_code_));
+  debug::write_line_if(show_debug_process.enabled(), ustring::format("process::wait_for_exit [handle={}, exit_code={}, ...exit]", data_->handle_, data_->exit_code_));
   if (data_->exception_pointer_) {
     if (data_->start_info_.use_shell_execute() && data_->start_info_.error_dialog())  message_box_message_(data_->start_info_.file_name());
     std::exception_ptr exception_pointer = data_->exception_pointer_;

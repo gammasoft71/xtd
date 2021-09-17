@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <string>
+#include "../object.h"
 #include "../ticks.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -10,6 +11,8 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Provides a set of methods and properties that you can use to accurately measure elapsed time.
+    /// @par Namespace
+    /// xtd::diagnostics
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core diagnostics
@@ -21,7 +24,7 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates how to use the xtd::diagnostics::stopwatch class to determine the execution time for an application.
     /// @include stopwatch.cpp
-    class stopwatch {
+    class stopwatch : public object{
     public:
       /// @brief Initializes a new instance of the xtd::diagnostics::stopwatch class.
       /// @remarks The returned xtd::diagnostics::stopwatch instance is stopped, and the xtd::diagnostics::stopwatch::elapsed time property of the instance is zero.

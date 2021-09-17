@@ -4,6 +4,7 @@ project(controls)
 find_package(xtd REQUIRED)
 
 add_projects(
+  animation
   button
   buttons
   check_box
@@ -19,8 +20,10 @@ add_projects(
   dot_matrix_display
   font_picker
   fourteen_segment_display
+  hscroll_bar
   label
   lcd_label
+  link_label
   list_box
   loading_indicator
   nine_segment_display
@@ -39,4 +42,5 @@ add_projects(
   track_bar
   up_down_button
   user_control
+  vscroll_bar
 )

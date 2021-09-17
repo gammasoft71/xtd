@@ -12,6 +12,8 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @brief The settings class contains xtd.tunit settings.
+    /// @par Namespace
+    /// xtd::tunit
     /// @par Library
     /// xtd.tunit
     /// @ingroup xtd_tunit

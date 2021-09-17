@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::string_alignment enum class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/strings.h>
+#include <xtd/ustring.h>
 
 #if defined(_WIN32)
 #undef far
@@ -14,6 +14,8 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Specifies the alignment of a text string relative to its layout rectangle.
+    /// @par Namespace
+    /// xtd::drawing
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing

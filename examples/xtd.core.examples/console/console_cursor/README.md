@@ -1,6 +1,6 @@
 # console_cursor
 
-Shows how to use [xtd::console::set_cursor_position](../../../../src/xtd.core/include/xtd/basic_console.h), [xtd::console::cursor_top](../../../../src/xtd.core/include/xtd/basic_console.h) and [xtd::console::cursor_left](../../../../src/xtd.core/include/xtd/basic_console.h) methods.
+Shows how to use [xtd::console::set_cursor_position](../../../../src/xtd.core/include/xtd/console.h), [xtd::console::cursor_top](../../../../src/xtd.core/include/xtd/console.h) and [xtd::console::cursor_left](../../../../src/xtd.core/include/xtd/console.h) methods.
 
 # Sources
 

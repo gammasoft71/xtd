@@ -4,9 +4,8 @@ demonstrates the use of [xtd::forms::busy_box](../../../../src/xtd.forms/include
 
 # Sources
 
-[busy_box.cpp](busy_box.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/busy_box.cpp](src/busy_box.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

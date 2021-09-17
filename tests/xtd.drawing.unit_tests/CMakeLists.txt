@@ -6,9 +6,9 @@ include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 add_references(xtd.drawing)
 add_sources(
-  src/color.cpp
   src/main.cpp 
-  src/point.cpp
-  src/size.cpp
+  src/xtd/drawing/color.cpp
+  src/xtd/drawing/point.cpp
+  src/xtd/drawing/size.cpp
 )
 target_type(TEST_APPLICATION)

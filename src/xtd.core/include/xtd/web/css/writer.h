@@ -3,19 +3,20 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "selector_map.h"
-#include <xtd/argument_exception.h>
-#include <xtd/format_exception.h>
-#include <xtd/io/stream_writer.h>
+#include "../../argument_exception.h"
+#include "../../format_exception.h"
+#include "../../object.h"
+#include "../../io/stream_writer.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   namespace web {
     namespace css {
-      class writer {
+      class writer : public object {
       public:
         writer(std::ostream& stream) : text_writer_(new xtd::io::stream_writer(stream)) {}
         writer(xtd::io::text_writer& text_writer) : text_writer_(&text_writer), delete_when_destroy_(false) {}
-        writer(const std::string& path) : text_writer_(new xtd::io::stream_writer(path)) {}
+        writer(const xtd::ustring& path) : text_writer_(new xtd::io::stream_writer(path)) {}
         ~writer() {
           if (delete_when_destroy_ && text_writer_) delete text_writer_;
         }

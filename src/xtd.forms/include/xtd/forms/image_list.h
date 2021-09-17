@@ -12,6 +12,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Provides methods to manage a collection of xtd::drawing::image objects. This class cannot be inherited.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms components
@@ -20,18 +22,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of image_list class.
     /// @include image_list.cpp
-    /// @par Windows
-    /// @image html image_list_w.png
-    /// <br>
-    /// @image html image_list_wd.png
-    /// @par macOS
-    /// @image html image_list_m.png
-    /// <br>
-    /// @image html image_list_md.png
-    /// @par Gnome
-    /// @image html image_list_g.png
-    /// <br>
-    /// @image html image_list_gd.png
     class forms_export_ image_list final : public component {
     public:
       /// @brief Encapsulates the collection of xtd::drawing::image objects in an image_list.

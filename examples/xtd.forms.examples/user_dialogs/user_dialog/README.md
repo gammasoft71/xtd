@@ -1,12 +1,11 @@
 # user_dialog
 
-demonstrates the use of [xtd::forms::form](../../../../src/xtd_forms/include/xtd/forms/form.hpp) as dialog.
+demonstrates the use of [xtd::forms::form](../../../../src/xtd.forms/include/xtd/forms/form.h) as dialog.
 
 # Sources
 
-[src/user_dialog.cpp](src/user_dialog.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/user_dialog.cpp](src/user_dialog.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

@@ -1,12 +1,11 @@
 # tab_control
 
-demonstrates the use of [xtd::forms::tab_control](../../../../src/xtd_forms/include/xtd/forms/tab_control.hpp) container.
+demonstrates the use of [xtd::forms::tab_control](../../../../src/xtd.forms/include/xtd/forms/tab_control.h) container.
 
 # Sources
 
-[src/tab_control.cpp](src/tab_control.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/tab_control.cpp](src/tab_control.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

@@ -11,24 +11,14 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a standard Windows text box.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
     /// The following code example demonstrate the use of text box control.
     /// @include text_box.cpp
-    /// @par Windows
-    /// @image html text_box_w.png
-    /// <br>
-    /// @image html text_box_wd.png
-    /// @par macOS
-    /// @image html text_box_m.png
-    /// <br>
-    /// @image html text_box_md.png
-    /// @par Gnome
-    /// @image html text_box_g.png
-    /// <br>
-    /// @image html text_box_gd.png
     class forms_export_ text_box : public text_box_base {
     public:
       /// @brief initializes a new instance of the text_box class.
@@ -91,8 +81,8 @@ namespace xtd {
       /// @remarks If no text is selected in the control, this property indicates the insertion point, or caret, for new text. If you set this property to a location beyond the length of the text in the control, the selection start position will be placed after the last character. When text is selected in the text box control, changing this property might decrease the value of the SelectionLength property. If the remaining text in the control after the position indicated by the selection_start property is less than the value of the selection_length property, the value of the selection_length property is automatically decreased. The value of the selection_start property never causes an increase in the selection_length property.
       size_t selection_start() const override;
       
-      const std::string& text() const override;
-      control& text(const std::string& text) override;
+      const xtd::ustring& text() const override;
+      control& text(const xtd::ustring& text) override;
       
       /// @brief Gets a value indicating whether the text in the TextBox control should appear as the default password character.
       /// @return true if the text in the TextBox control should appear as the default password character; otherwise, false.
@@ -106,9 +96,9 @@ namespace xtd {
       
       /// @brief Occurs when the value of the accepts_return property has changed.
       /// @ingroup events
-      event<text_box, event_handler<control&>> accepts_return_changed;
+      event<text_box, event_handler> accepts_return_changed;
 
-      void append_text(const std::string& value) override;
+      void append_text(const xtd::ustring& value) override;
       
       void select(size_t start, size_t length) override;
 

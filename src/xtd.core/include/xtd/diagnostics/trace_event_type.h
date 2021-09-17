@@ -2,13 +2,15 @@
 /// @brief Contains xtd::diagnostics::trace_event_type enum class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/strings.h>
+#include "../ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Identifies the type of event that has caused the trace.
+    /// @par Namespace
+    /// xtd::diagnostics
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core

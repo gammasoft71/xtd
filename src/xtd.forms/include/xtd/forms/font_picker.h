@@ -9,24 +9,14 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a picker control that displays available fonts along with controls.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
     /// The following code example demonstrate the use of font_picker picker.
     /// @include font_picker.cpp
-    /// @par Windows
-    /// @image html font_picker_w.png
-    /// <br>
-    /// @image html font_picker_wd.png
-    /// @par macOS
-    /// @image html font_picker_m.png
-    /// <br>
-    /// @image html font_picker_md.png
-    /// @par Gnome
-    /// @image html font_picker_g.png
-    /// <br>
-    /// @image html font_picker_gd.png
     class forms_export_ font_picker : public control {
     public:
       /// @brief Initializes a new instance of the font_picker class.
@@ -54,7 +44,7 @@ namespace xtd {
       
       /// @brief Occurs when the value of the font property changes.
       /// @ingroup events
-      event<font_picker, event_handler<control&>> font_changed;
+      event<font_picker, event_handler> font_changed;
 
     protected:
       forms::create_params create_params() const override;

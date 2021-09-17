@@ -1,12 +1,11 @@
 # date_time_picker
 
-demonstrates the use of [xtd::forms::date_time_picker](../../../../src/xtd_forms/include/xtd/forms/date_time_picker.hpp) dialog.
+demonstrates the use of [xtd::forms::date_time_picker](../../../../src/xtd.forms/include/xtd/forms/date_time_picker.h) dialog.
 
 # Sources
 
-[src/date_time_picker.cpp](src/date_time_picker.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/date_time_picker.cpp](src/date_time_picker.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

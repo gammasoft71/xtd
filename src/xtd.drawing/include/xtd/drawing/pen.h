@@ -5,7 +5,8 @@
 #include <cstdint>
 #include <memory>
 #include <ostream>
-#include <xtd/strings.h>
+#include <xtd/object.h>
+#include <xtd/ustring.h>
 #include "../drawing_export.h"
 #include "drawing2d/pen_alignment.h"
 #include "drawing2d/pen_type.h"
@@ -25,7 +26,7 @@ namespace xtd {
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    class drawing_export_ pen final {
+    class drawing_export_ pen final : public object {
     public:
       /// @brief Initializes a new instance of the xtd::drawing::pen class.
       pen();
@@ -57,7 +58,7 @@ namespace xtd {
       /// @cond
       pen(const xtd::drawing::pen& value);
       pen& operator=(const xtd::drawing::pen& value);
-      virtual ~pen();
+      ~pen();
       bool operator==(const xtd::drawing::pen& value) const {return data_->alignment_ == value.data_->alignment_ && data_->type_ == value.data_->type_;}
       bool operator!=(const xtd::drawing::pen& value) const {return !operator==(value);}
       /// @endcond
@@ -91,7 +92,7 @@ namespace xtd {
       float width() const {return data_->width_;}
       xtd::drawing::pen& width(float width);
       
-      std::string to_string() const {return strings::full_class_name(*this);}
+      xtd::ustring to_string() const noexcept override {return ustring::full_class_name(*this);}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::pen& pen) noexcept {

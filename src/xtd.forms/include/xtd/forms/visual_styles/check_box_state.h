@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::visual_styles::check_box_state enum class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/strings.h>
+#include <xtd/ustring.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -11,6 +11,8 @@ namespace xtd {
     /// @brief The xtd::forms::visual_styles namespace contains classes for rendering controls and other windows user interface (UI) elements with visual styles in operating systems that support them.
     namespace visual_styles {
       /// @brief Specifies the visual state of a check box that is drawn with visual styles.
+      /// @par Namespace
+      /// xtd::forms::visual_style
       /// @par Library
       /// xtd.forms
       /// @ingroup xtd_forms

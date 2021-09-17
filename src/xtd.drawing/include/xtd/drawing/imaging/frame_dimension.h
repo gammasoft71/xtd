@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <ostream>
 #include <xtd/guid.h>
+#include <xtd/object.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -14,10 +15,12 @@ namespace xtd {
     /// @remarks The metafile class provides methods for recording and saving metafiles. The encoder class enables users to extend GDI+ to support any image format. The property_item class provides methods for storing and retrieving metadata in image files.
     namespace imaging {
       /// @brief Provides properties that get the frame dimensions of an image. Not inheritable.
+      /// @par Namespace
+      /// xtd::drawing::imaging
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing
-      class frame_dimension final {
+      class frame_dimension final : public object {
       public:
         /// @brief Initializes a new instance of the FrameDimension class using the specified Guid structure.
         /// @param guid A Guid structure that contains a GUID for this frame_dimension object.

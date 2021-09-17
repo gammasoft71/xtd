@@ -8,6 +8,8 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents class that use to determine one of non const overloaded methods.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
@@ -81,18 +83,24 @@ namespace xtd {
 }
 
 /// @brief Helper keyword that use to determine one of const and non const overloaded methods.
+/// @par Namespace
+/// xtd
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core
 #define overload_ xtd::overload_
 
 /// @brief Helper keyword that use to determine one of const overloaded methods.
+/// @par Namespace
+/// xtd
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core
 #define const_overload_ xtd::const_overload_
 
 /// @brief Helper keyword that use to determine one of non const overloaded methods.
+/// @par Namespace
+/// xtd
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core

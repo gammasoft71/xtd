@@ -12,6 +12,8 @@
 
 #ifndef TBS_AUTOTICKS
 /// @brief The trackbar control has a tick mark for each increment in its range of values.
+/// @par Namespace
+/// xtd::forms::native
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native tbs

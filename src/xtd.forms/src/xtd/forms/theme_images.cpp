@@ -5,87 +5,87 @@
 using namespace xtd::forms;
 
 namespace {
-  xtd::drawing::image system_dark_image_getter(const std::string& name, const xtd::drawing::size& size) {
+  xtd::drawing::image system_dark_image_getter(const xtd::ustring& name, const xtd::drawing::size& size) {
     return xtd::drawing::system_images::from_name(name, size);
   }
 
-  xtd::drawing::image system_light_image_getter(const std::string& name, const xtd::drawing::size& size) {
+  xtd::drawing::image system_light_image_getter(const xtd::ustring& name, const xtd::drawing::size& size) {
     return xtd::drawing::system_images::from_name(name, size);
   }
 
-  xtd::drawing::image system_image_getter(const std::string& name, const xtd::drawing::size& size) {
+  xtd::drawing::image system_image_getter(const xtd::ustring& name, const xtd::drawing::size& size) {
     return xtd::drawing::system_colors::window().get_lightness() < 0.5 ? system_dark_image_getter(name, size) : system_light_image_getter(name, size);
   }
 
-  xtd::drawing::image gnome_dark_image_getter(const std::string& name, const xtd::drawing::size& size) {
+  xtd::drawing::image gnome_dark_image_getter(const xtd::ustring& name, const xtd::drawing::size& size) {
     return xtd::drawing::system_images::from_name("gnome (dark)", name, size);
   }
 
-  xtd::drawing::image gnome_light_image_getter(const std::string& name, const xtd::drawing::size& size) {
+  xtd::drawing::image gnome_light_image_getter(const xtd::ustring& name, const xtd::drawing::size& size) {
     return xtd::drawing::system_images::from_name("gnome (light)", name, size);
   }
 
-  xtd::drawing::image gnome_image_getter(const std::string& name, const xtd::drawing::size& size) {
+  xtd::drawing::image gnome_image_getter(const xtd::ustring& name, const xtd::drawing::size& size) {
     return xtd::drawing::system_colors::window().get_lightness() < 0.5 ? gnome_dark_image_getter(name, size) : gnome_light_image_getter(name, size);
   }
 
-  xtd::drawing::image kde_dark_image_getter(const std::string& name, const xtd::drawing::size& size) {
+  xtd::drawing::image kde_dark_image_getter(const xtd::ustring& name, const xtd::drawing::size& size) {
     return xtd::drawing::system_images::from_name("kde (dark)", name, size);
   }
 
-  xtd::drawing::image kde_light_image_getter(const std::string& name, const xtd::drawing::size& size) {
+  xtd::drawing::image kde_light_image_getter(const xtd::ustring& name, const xtd::drawing::size& size) {
     return xtd::drawing::system_images::from_name("kde (light)", name, size);
   }
 
-  xtd::drawing::image kde_image_getter(const std::string& name, const xtd::drawing::size& size) {
+  xtd::drawing::image kde_image_getter(const xtd::ustring& name, const xtd::drawing::size& size) {
     return xtd::drawing::system_colors::window().get_lightness() < 0.5 ? kde_dark_image_getter(name, size) : kde_light_image_getter(name, size);
   }
 
-  xtd::drawing::image macos_dark_image_getter(const std::string& name, const xtd::drawing::size& size) {
+  xtd::drawing::image macos_dark_image_getter(const xtd::ustring& name, const xtd::drawing::size& size) {
     return xtd::drawing::system_images::from_name("macos (dark)", name, size);
   }
 
-  xtd::drawing::image macos_light_image_getter(const std::string& name, const xtd::drawing::size& size) {
+  xtd::drawing::image macos_light_image_getter(const xtd::ustring& name, const xtd::drawing::size& size) {
     return xtd::drawing::system_images::from_name("macos (light)", name, size);
   }
 
-  xtd::drawing::image macos_image_getter(const std::string& name, const xtd::drawing::size& size) {
+  xtd::drawing::image macos_image_getter(const xtd::ustring& name, const xtd::drawing::size& size) {
     return xtd::drawing::system_colors::window().get_lightness() < 0.5 ? macos_dark_image_getter(name, size) : macos_light_image_getter(name, size);
   }
 
-xtd::drawing::image symbolic_dark_image_getter(const std::string& name, const xtd::drawing::size& size) {
+xtd::drawing::image symbolic_dark_image_getter(const xtd::ustring& name, const xtd::drawing::size& size) {
   return xtd::drawing::system_images::from_name("symbolic (dark)", name, size);
 }
 
-xtd::drawing::image symbolic_light_image_getter(const std::string& name, const xtd::drawing::size& size) {
+xtd::drawing::image symbolic_light_image_getter(const xtd::ustring& name, const xtd::drawing::size& size) {
   return xtd::drawing::system_images::from_name("symbolic (light)", name, size);
 }
 
-xtd::drawing::image symbolic_image_getter(const std::string& name, const xtd::drawing::size& size) {
+xtd::drawing::image symbolic_image_getter(const xtd::ustring& name, const xtd::drawing::size& size) {
   return xtd::drawing::system_colors::window().get_lightness() < 0.5 ? symbolic_dark_image_getter(name, size) : symbolic_light_image_getter(name, size);
 }
 
-xtd::drawing::image windows_dark_image_getter(const std::string& name, const xtd::drawing::size& size) {
+xtd::drawing::image windows_dark_image_getter(const xtd::ustring& name, const xtd::drawing::size& size) {
   return xtd::drawing::system_images::from_name("windows (dark)", name, size);
 }
 
-xtd::drawing::image windows_light_image_getter(const std::string& name, const xtd::drawing::size& size) {
+xtd::drawing::image windows_light_image_getter(const xtd::ustring& name, const xtd::drawing::size& size) {
   return xtd::drawing::system_images::from_name("windows (light)", name, size);
 }
 
-xtd::drawing::image windows_image_getter(const std::string& name, const xtd::drawing::size& size) {
+xtd::drawing::image windows_image_getter(const xtd::ustring& name, const xtd::drawing::size& size) {
   return xtd::drawing::system_colors::window().get_lightness() < 0.5 ? windows_dark_image_getter(name, size) : windows_light_image_getter(name, size);
 }
 
-xtd::drawing::image xtd_dark_image_getter(const std::string& name, const xtd::drawing::size& size) {
+xtd::drawing::image xtd_dark_image_getter(const xtd::ustring& name, const xtd::drawing::size& size) {
   return xtd::drawing::system_images::from_name("xtd (dark)", name, size);
 }
 
-xtd::drawing::image xtd_light_image_getter(const std::string& name, const xtd::drawing::size& size) {
+xtd::drawing::image xtd_light_image_getter(const xtd::ustring& name, const xtd::drawing::size& size) {
   return xtd::drawing::system_images::from_name("xtd (light)", name, size);
 }
 
-xtd::drawing::image xtd_image_getter(const std::string& name, const xtd::drawing::size& size) {
+xtd::drawing::image xtd_image_getter(const xtd::ustring& name, const xtd::drawing::size& size) {
   return xtd::drawing::system_colors::window().get_lightness() < 0.5 ? xtd_dark_image_getter(name, size) : xtd_light_image_getter(name, size);
 }
 
@@ -94,7 +94,7 @@ xtd::drawing::image xtd_image_getter(const std::string& name, const xtd::drawing
 const theme_images theme_images::empty {};
 theme_images theme_images::current_theme_;
 
-theme_images theme_images::theme_from_name(const std::string& name) {
+theme_images theme_images::theme_from_name(const xtd::ustring& name) {
   if (name == default_theme_name()) return theme_images(default_theme_name(), theme_style::system_auto, {system_image_getter}, true);
   if (name == "gnome") return theme_images("gnome", theme_style::system_auto, {gnome_image_getter});
   if (name == "gnome (dark)") return theme_images("gnome (dark)", theme_style::dark, {gnome_dark_image_getter});

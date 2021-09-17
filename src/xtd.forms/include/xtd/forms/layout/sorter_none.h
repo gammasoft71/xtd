@@ -2,6 +2,7 @@
 /// @brief Contains xtd::forms::layout::sorter_none class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+#include <xtd/object.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -10,10 +11,12 @@ namespace xtd {
     /// @brief The xtd::forms::layout namespace contains classes for implementing layout behaviors in your form or control.
     namespace layout {
       /// @brief Represents a sorter none of objects.
+      /// @par Namespace
+      /// xtd::forms::layout
       /// @par Library
       /// xtd.forms
       /// @ingroup xtd_forms
-      class sorter_none {
+      class sorter_none : public object {
       public:
         template<typename type_t>
         void operator()(type_t first, type_t last) {}

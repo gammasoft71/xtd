@@ -6,8 +6,8 @@
 /// @endcond
 
 #include <cstdint>
-#include <string>
 #include <xtd/static.h>
+#include <xtd/ustring.h>
 #include <xtd/drawing_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -22,6 +22,8 @@ namespace xtd {
     /// @warning Internal use only
     namespace native {
       /// @brief Contains system images native API.
+      /// @par Namespace
+      /// xtd::drawing::native
       /// @par Library
       /// xtd.drawing.native
       /// @ingroup xtd_drawing_native native
@@ -29,7 +31,7 @@ namespace xtd {
       class drawing_native_export_ system_images final static_ {
         friend xtd::drawing::system_images;
       protected:
-        static intptr_t from_name(const std::string& name, int32_t width, int32_t height);
+        static intptr_t from_name(const xtd::ustring& name, int32_t width, int32_t height);
       };
     }
   }

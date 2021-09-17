@@ -4,34 +4,34 @@
 using namespace std;
 using namespace xtd;
 
-std::string date_time_to_string(const std::string& format, const tm& tm) {
-  std::string result(255, 0);
+ustring date_time_to_string(const ustring& format, const tm& tm) {
+  string result(255, 0);
   strftime(result.data(), result.size(), ("%" + format).c_str(), &tm);
   result.shrink_to_fit();
   return result;
 }
 
-std::string date_time_to_string(const std::string& format, const time_t& time) {
+ustring date_time_to_string(const ustring& format, const time_t& time) {
   auto tm = localtime(&time);
   return date_time_to_string(format, *tm);
 }
 
-std::string date_time_to_string(const std::string& format, const std::chrono::system_clock::time_point& tp) {
+ustring date_time_to_string(const ustring& format, const chrono::system_clock::time_point& tp) {
   auto time = std::chrono::system_clock::to_time_t(tp);
   return date_time_to_string(format, time);
 }
 
-std::string date_time_to_string(const tm& tm) {
+ustring date_time_to_string(const tm& tm) {
   return date_time_to_string("c", tm);
 }
 
-std::string date_time_to_string(const time_t& time) {
+ustring date_time_to_string(const time_t& time) {
   auto tm = localtime(&time);
   return date_time_to_string(*tm);
 }
 
-std::string date_time_to_string(const std::chrono::system_clock::time_point& tp) {
-  auto time = std::chrono::system_clock::to_time_t(tp);
+ustring date_time_to_string(const chrono::system_clock::time_point& tp) {
+  auto time = chrono::system_clock::to_time_t(tp);
   return date_time_to_string(time);
 }
 
@@ -43,60 +43,60 @@ int main() {
   // auto t = std::time(nullptr);
   // auto date_time = *std::localtime(&t);
 
-  cout << strings::sprintf("%s", date_time_to_string(date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("Y", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("EY", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("y", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("0y", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("Ey", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("C", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("EC", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("G", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("g", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("b", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("h", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("B", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("m", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("0m", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("U", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("0U", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("W", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("0W", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("V", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("0V", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("j", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("d", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("0d", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("e", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("0e", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("a", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("A", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("w", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("0w", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("u", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("0u", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("H", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("0h", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("I", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("0I", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("M", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("0M", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("S", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("0S", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("c", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("Ec", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("x", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("Ex", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("X", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("EX", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("D", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("F", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("r", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("R", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("T", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("p", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("z", date_time)) << endl;
-  cout << strings::sprintf("%s", date_time_to_string("Z", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string(date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("Y", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("EY", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("y", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("0y", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("Ey", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("C", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("EC", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("G", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("g", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("b", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("h", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("B", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("m", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("0m", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("U", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("0U", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("W", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("0W", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("V", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("0V", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("j", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("d", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("0d", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("e", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("0e", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("a", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("A", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("w", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("0w", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("u", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("0u", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("H", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("0h", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("I", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("0I", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("M", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("0M", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("S", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("0S", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("c", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("Ec", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("x", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("Ex", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("X", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("EX", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("D", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("F", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("r", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("R", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("T", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("p", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("z", date_time)) << endl;
+  cout << ustring::sprintf("%s", date_time_to_string("Z", date_time)) << endl;
 }
 
 // This code can be produce the following output :

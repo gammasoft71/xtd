@@ -11,6 +11,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Provides a button images factories for use by a button control.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms components
@@ -22,7 +24,7 @@ namespace xtd {
       /// @brief Add image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent "list-add".
-      static xtd::drawing::image add(const std::string& theme) {return add(theme, size());}
+      static xtd::drawing::image add(const xtd::ustring& theme) {return add(theme, size());}
       /// @brief Add image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "list-add".
@@ -31,7 +33,7 @@ namespace xtd {
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "list-add".
-      static xtd::drawing::image add(const std::string& theme, const xtd::drawing::size& size) {return add(xtd::forms::theme_images::theme_from_name(theme), size);}
+      static xtd::drawing::image add(const xtd::ustring& theme, const xtd::drawing::size& size) {return add(xtd::forms::theme_images::theme_from_name(theme), size);}
       /// @brief Add image object with specified theme images and size.
       /// @param theme A xtd::forms::theme_images that represent a theme images
       /// @param size A xtd::drawing::size size for the image
@@ -44,7 +46,7 @@ namespace xtd {
       /// @brief Apply image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent "dialog-ok-apply".
-      static xtd::drawing::image apply(const std::string& theme) {return apply(theme, size());}
+      static xtd::drawing::image apply(const xtd::ustring& theme) {return apply(theme, size());}
       /// @brief Apply image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "dialog-ok-apply".
@@ -53,7 +55,7 @@ namespace xtd {
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "dialog-ok-apply".
-      static xtd::drawing::image apply(const std::string& theme, const xtd::drawing::size& size) {return apply(xtd::forms::theme_images::theme_from_name(theme), size);}
+      static xtd::drawing::image apply(const xtd::ustring& theme, const xtd::drawing::size& size) {return apply(xtd::forms::theme_images::theme_from_name(theme), size);}
       /// @brief Apply image object with specified theme images and size.
       /// @param theme A xtd::forms::theme_images that represent a theme images
       /// @param size A xtd::drawing::size size for the image
@@ -66,7 +68,7 @@ namespace xtd {
       /// @brief Ok image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent "dialog-ok".
-      static xtd::drawing::image ok(const std::string& theme) {return ok(theme, size());}
+      static xtd::drawing::image ok(const xtd::ustring& theme) {return ok(theme, size());}
       /// @brief Ok image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "dialog-ok".
@@ -75,7 +77,7 @@ namespace xtd {
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "dialog-ok".
-      static xtd::drawing::image ok(const std::string& theme, const xtd::drawing::size& size) {return ok(xtd::forms::theme_images::theme_from_name(theme), size);}
+      static xtd::drawing::image ok(const xtd::ustring& theme, const xtd::drawing::size& size) {return ok(xtd::forms::theme_images::theme_from_name(theme), size);}
       /// @brief Ok image object with specified theme images and size.
       /// @param theme A xtd::forms::theme_images that represent a theme images
       /// @param size A xtd::drawing::size size for the image
@@ -88,7 +90,7 @@ namespace xtd {
       /// @brief Cancel image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent "dialog-cancel".
-      static xtd::drawing::image cancel(const std::string& theme) {return cancel(theme, size());}
+      static xtd::drawing::image cancel(const xtd::ustring& theme) {return cancel(theme, size());}
       /// @brief Cancel image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "dialog-cancel".
@@ -97,7 +99,7 @@ namespace xtd {
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "dialog-cancel".
-      static xtd::drawing::image cancel(const std::string& theme, const xtd::drawing::size& size) {return cancel(xtd::forms::theme_images::theme_from_name(theme), size);}
+      static xtd::drawing::image cancel(const xtd::ustring& theme, const xtd::drawing::size& size) {return cancel(xtd::forms::theme_images::theme_from_name(theme), size);}
       /// @brief Cancel image object with specified theme images and size.
       /// @param theme A xtd::forms::theme_images that represent a theme images
       /// @param size A xtd::drawing::size size for the image
@@ -110,7 +112,7 @@ namespace xtd {
       /// @brief Next image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent "go-next".
-      static xtd::drawing::image next(const std::string& theme) {return next(theme, size());}
+      static xtd::drawing::image next(const xtd::ustring& theme) {return next(theme, size());}
       /// @brief Next image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "go-next".
@@ -119,7 +121,7 @@ namespace xtd {
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "go-next".
-      static xtd::drawing::image next(const std::string& theme, const xtd::drawing::size& size) {return next(xtd::forms::theme_images::theme_from_name(theme), size);}
+      static xtd::drawing::image next(const xtd::ustring& theme, const xtd::drawing::size& size) {return next(xtd::forms::theme_images::theme_from_name(theme), size);}
       /// @brief Next image object with specified theme images and size.
       /// @param theme A xtd::forms::theme_images that represent a theme images
       /// @param size A xtd::drawing::size size for the image
@@ -132,7 +134,7 @@ namespace xtd {
       /// @brief No image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent "dialog-cancel".
-      static xtd::drawing::image no(const std::string& theme) {return no(theme, size());}
+      static xtd::drawing::image no(const xtd::ustring& theme) {return no(theme, size());}
       /// @brief No image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "dialog-cancel".
@@ -141,7 +143,7 @@ namespace xtd {
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "dialog-cancel".
-      static xtd::drawing::image no(const std::string& theme, const xtd::drawing::size& size) {return no(xtd::forms::theme_images::theme_from_name(theme), size);}
+      static xtd::drawing::image no(const xtd::ustring& theme, const xtd::drawing::size& size) {return no(xtd::forms::theme_images::theme_from_name(theme), size);}
       /// @brief No image object with specified theme images and size.
       /// @param theme A xtd::forms::theme_images that represent a theme images
       /// @param size A xtd::drawing::size size for the image
@@ -154,7 +156,7 @@ namespace xtd {
       /// @brief Previous image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent "go-previous".
-      static xtd::drawing::image previous(const std::string& theme) {return previous(theme, size());}
+      static xtd::drawing::image previous(const xtd::ustring& theme) {return previous(theme, size());}
       /// @brief Previous image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "go-previous".
@@ -163,7 +165,7 @@ namespace xtd {
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "go-previous".
-      static xtd::drawing::image previous(const std::string& theme, const xtd::drawing::size& size) {return previous(xtd::forms::theme_images::theme_from_name(theme), size);}
+      static xtd::drawing::image previous(const xtd::ustring& theme, const xtd::drawing::size& size) {return previous(xtd::forms::theme_images::theme_from_name(theme), size);}
       /// @brief Previous image object with specified theme images and size.
       /// @param theme A xtd::forms::theme_images that represent a theme images
       /// @param size A xtd::drawing::size size for the image
@@ -176,7 +178,7 @@ namespace xtd {
       /// @brief Remove image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent "list-remove".
-      static xtd::drawing::image remove(const std::string& theme) {return remove(theme, size());}
+      static xtd::drawing::image remove(const xtd::ustring& theme) {return remove(theme, size());}
       /// @brief Remove image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "list-remove".
@@ -185,7 +187,7 @@ namespace xtd {
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "list-remove".
-      static xtd::drawing::image remove(const std::string& theme, const xtd::drawing::size& size) {return remove(xtd::forms::theme_images::theme_from_name(theme), size);}
+      static xtd::drawing::image remove(const xtd::ustring& theme, const xtd::drawing::size& size) {return remove(xtd::forms::theme_images::theme_from_name(theme), size);}
       /// @brief Remove image object with specified theme images and size.
       /// @param theme A xtd::forms::theme_images that represent a theme images
       /// @param size A xtd::drawing::size size for the image
@@ -198,7 +200,7 @@ namespace xtd {
       /// @brief Yes image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent "dialog-ok".
-      static xtd::drawing::image yes(const std::string& theme) {return yes(theme, size());}
+      static xtd::drawing::image yes(const xtd::ustring& theme) {return yes(theme, size());}
       /// @brief Yes image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "dialog-ok".
@@ -207,7 +209,7 @@ namespace xtd {
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "dialog-ok".
-      static xtd::drawing::image yes(const std::string& theme, const xtd::drawing::size& size) {return yes(xtd::forms::theme_images::theme_from_name(theme), size);}
+      static xtd::drawing::image yes(const xtd::ustring& theme, const xtd::drawing::size& size) {return yes(xtd::forms::theme_images::theme_from_name(theme), size);}
       /// @brief Yes image object with specified theme images and size.
       /// @param theme A xtd::forms::theme_images that represent a theme images
       /// @param size A xtd::drawing::size size for the image
@@ -222,21 +224,21 @@ namespace xtd {
       /// @param name the image name to get.
       /// @return A xtd::drawing::image that represent the specified name.
       /// @remarks Use xtd::drawing::system_images::context_names to get names by context.
-      static xtd::drawing::image from_name(const std::string& name) {return from_name(name, size());}
+      static xtd::drawing::image from_name(const xtd::ustring& name) {return from_name(name, size());}
       /// @brief Gets image object with specified theme and name.
       /// @param theme the theme name that contains the image to get.
       /// @param name the image name to get.
       /// @return A xtd::drawing::image that represent the specified name.
       /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
       /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
-      static xtd::drawing::image from_name(const std::string& theme, const std::string& name) {return from_name(theme, name, size());}
+      static xtd::drawing::image from_name(const xtd::ustring& theme, const xtd::ustring& name) {return from_name(theme, name, size());}
       /// @brief Gets image object with specified name and size.
       /// @param name the image name to get.
       /// @param size The size that represents the height and width of the button images in pixels.
       /// @return A xtd::drawing::image that represent the specified name.
       /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
       /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
-      static xtd::drawing::image from_name(const std::string& name, const xtd::drawing::size& size) {return from_name(xtd::forms::theme_images::current_theme(), name, size);}
+      static xtd::drawing::image from_name(const xtd::ustring& name, const xtd::drawing::size& size) {return from_name(xtd::forms::theme_images::current_theme(), name, size);}
       /// @brief Gets image object with specified theme, name and size.
       /// @param theme the theme name that contains the image to get.
       /// @param name the image name to get.
@@ -244,7 +246,7 @@ namespace xtd {
       /// @return A xtd::drawing::image that represent the specified name.
       /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
       /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
-      static xtd::drawing::image from_name(const std::string& theme, const std::string& name, const xtd::drawing::size& size) {return from_name(xtd::forms::theme_images::theme_from_name(theme), name, size);}
+      static xtd::drawing::image from_name(const xtd::ustring& theme, const xtd::ustring& name, const xtd::drawing::size& size) {return from_name(xtd::forms::theme_images::theme_from_name(theme), name, size);}
       /// @brief Gets image object with specified theme, name and size.
       /// @param theme the theme that contains the image to get.
       /// @param name the image name to get.
@@ -252,7 +254,7 @@ namespace xtd {
       /// @return A xtd::drawing::image that represent the specified name.
       /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
       /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
-      static xtd::drawing::image from_name(const xtd::forms::theme_images& theme, const std::string& name, const xtd::drawing::size& size) {return theme.from_name(name, size);}
+      static xtd::drawing::image from_name(const xtd::forms::theme_images& theme, const xtd::ustring& name, const xtd::drawing::size& size) {return theme.from_name(name, size);}
     };
   }
 }

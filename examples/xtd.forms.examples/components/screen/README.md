@@ -1,12 +1,11 @@
 # screen
 
-demonstrates the use of [xtd::forms::screen](../../../../src/xtd_forms/include/xtd/forms/screen.hpp) component.
+demonstrates the use of [xtd::forms::screen](../../../../src/xtd.forms/include/xtd/forms/screen.h) component.
 
 # Sources
 
-[src/screen.cpp](src/screen.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/screen.cpp](src/screen.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

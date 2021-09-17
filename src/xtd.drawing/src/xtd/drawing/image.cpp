@@ -32,7 +32,7 @@ image::image(intptr_t hbitmap) {
   }
 }
 
-image::image(const std::string &filename) {
+image::image(const ustring &filename) {
   data_->handle_ = native::image::create(filename);
   update_properties();
 }
@@ -108,11 +108,11 @@ void image::update_properties() {
   data_->vertical_resolution_ = native::image::vertical_resolution(data_->handle_);
 }
 
-void image::save(const std::string& filename) const {
+void image::save(const ustring& filename) const {
   native::image::save(data_->handle_, filename);
 }
 
-void image::save(const std::string& filename, const imaging::image_format& format) const {
+void image::save(const ustring& filename, const imaging::image_format& format) const {
   native::image::save(data_->handle_, filename, to_raw_format(format));
 }
 

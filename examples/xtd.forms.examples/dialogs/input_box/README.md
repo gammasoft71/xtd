@@ -4,9 +4,8 @@ demonstrates the use of [xtd::forms::input_box](../../../../src/xtd.forms/includ
 
 # Sources
 
-[src/input_box.cpp](src/input_box.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/input_box.cpp](src/input_box.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

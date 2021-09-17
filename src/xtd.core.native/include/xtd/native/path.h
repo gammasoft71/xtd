@@ -24,11 +24,14 @@ namespace xtd {
   /// @warning Internal use only
   namespace native {
     /// @brief Contains path native API.
+    /// @par Namespace
+    /// xtd::native
     /// @par Library
     /// xtd.core.native
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
     class core_native_export_ path final {
+      path() = delete;
       friend xtd::io::path;
     protected:
       /// @brief Gets temp path.

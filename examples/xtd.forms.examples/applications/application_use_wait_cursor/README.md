@@ -4,9 +4,8 @@ Shows how to create an application_use_wait_cursor with  [xtd::forms::applicatio
 
 # Sources
 
-[src/application_use_wait_cursor.cpp](src/application_use_wait_cursor.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/application_use_wait_cursor.cpp](src/application_use_wait_cursor.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

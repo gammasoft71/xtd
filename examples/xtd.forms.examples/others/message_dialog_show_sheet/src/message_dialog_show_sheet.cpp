@@ -20,8 +20,8 @@ public:
       dialog->message("Hello, World!");
       dialog->buttons(xtd::forms::message_dialog_buttons::ok_cancel);
       dialog->icon(xtd::forms::message_dialog_icon::warning);
-      dialog->dialog_closed += [this, dialog](message_dialog& sender, const dialog_closed_event_args& e) {
-        label_dialog_result.text(strings::format("dialog_result = {}", e.dialog_result()));
+      dialog->dialog_closed += [this, dialog](object& sender, const dialog_closed_event_args& e) {
+        label_dialog_result.text(ustring::format("dialog_result = {}", e.dialog_result()));
       };
       dialog->show_sheet(*this);
     };

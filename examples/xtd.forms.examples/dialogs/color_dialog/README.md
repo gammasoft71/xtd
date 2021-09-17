@@ -1,12 +1,11 @@
 # color_dialog
 
-demonstrates the use of [xtd::forms::color_dialog](../../../../src/xtd_forms/include/xtd/forms/color_dialog.hpp) dialog.
+demonstrates the use of [xtd::forms::color_dialog](../../../../src/xtd.forms/include/xtd/forms/color_dialog.h) dialog.
 
 # Sources
 
-[src/color_dialog.cpp](src/color_dialog.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/color_dialog.cpp](src/color_dialog.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

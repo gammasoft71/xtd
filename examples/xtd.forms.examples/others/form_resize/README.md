@@ -4,9 +4,8 @@ Shows how to set minimum size, set maximum size, move and resize a form.
 
 # Sources
 
-[src/form_resize.cpp](src/form_resize.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/form_resize.cpp](src/form_resize.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

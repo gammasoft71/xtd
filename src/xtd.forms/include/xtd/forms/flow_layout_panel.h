@@ -9,6 +9,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Used to group collections of fixed alligned controls.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms containers
@@ -16,18 +18,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of flow_layout_panel container.
     /// @include flow_layout_panel.cpp
-    /// @par Windows
-    /// @image html flow_layout_panel_w.png
-    /// <br>
-    /// @image html flow_layout_panel_wd.png
-    /// @par macOS
-    /// @image html flow_layout_panel_m.png
-    /// <br>
-    /// @image html flow_layout_panel_md.png
-    /// @par Gnome
-    /// @image html flow_layout_panel_g.png
-    /// <br>
-    /// @image html flow_layout_panel_gd.png
     class flow_layout_panel : public panel {
     public:
       /// @brief Initialises a new instance of fixed layout panel class.

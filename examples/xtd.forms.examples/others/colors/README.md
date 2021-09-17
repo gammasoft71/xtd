@@ -1,12 +1,11 @@
 # colors
 
-demonstrates the use of [xtd::forms::user_control](../../../../src/xtd_forms/include/xtd/forms/user_control.hpp) control with xtd::drawing::color.
+demonstrates the use of [xtd::forms::user_control](../../../../src/xtd.forms/include/xtd/forms/user_control.h) control with xtd::drawing::color.
 
 # Sources
 
-[src/colors.cpp](src/colors.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/colors.cpp](src/colors.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

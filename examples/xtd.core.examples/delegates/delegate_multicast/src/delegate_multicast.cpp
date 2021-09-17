@@ -4,19 +4,19 @@
 using namespace std;
 using namespace xtd;
 
-using write = delegate<void(const string& str)>;
+using write = delegate<void(const ustring& str)>;
 
-void write_debug(const string& str) {
+void write_debug(const ustring& str) {
   cdebug << str << environment::new_line;
 }
 
 class tracer {
 public:
-  void write_trace(const string& str) {
+  void write_trace(const ustring& str) {
     ctrace << str << environment::new_line;
   }
 
-  void write_trace2(const string& str) {
+  void write_trace2(const ustring& str) {
     ctrace << "2 " << str << environment::new_line;
   }
 };
@@ -24,7 +24,7 @@ public:
 int main() {
   ::write write;
 
-  write += [](const string& str)  {
+  write += [](const ustring& str)  {
     console::out << str << environment::new_line;
   };
   
@@ -41,7 +41,7 @@ int main() {
 
   struct writer {
     writer() = default;
-    void operator()(const string& str) {
+    void operator()(const ustring& str) {
       console::write_line(str);
     }
   };

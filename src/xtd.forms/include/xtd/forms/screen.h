@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <string>
 #include <vector>
+#include <xtd/object.h>
 #include <xtd/drawing/rectangle.h>
 #include "control.h"
 
@@ -13,6 +14,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a display device or multiple display devices on a single system.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms components
@@ -20,34 +23,10 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of screen class.
     /// @include screen.cpp
-    /// @par Windows
-    /// @image html screen_w.png
-    /// <br>
-    /// @image html screen_wd.png
-    /// @par macOS
-    /// @image html screen_m.png
-    /// <br>
-    /// @image html screen_md.png
-    /// @par Gnome
-    /// @image html screen_g.png
-    /// <br>
-    /// @image html screen_gd.png
     /// @par Examples
     /// The following code example shows how to get screen informations of screen component.
     /// @include screen_informations.cpp
-    /// @par Windows
-    /// @image html screen_informations_w.png
-    /// <br>
-    /// @image html screen_informations_wd.png
-    /// @par macOS
-    /// @image html screen_informations_m.png
-    /// <br>
-    /// @image html screen_informations_md.png
-    /// @par Gnome
-    /// @image html screen_informations_g.png
-    /// <br>
-    /// @image html screen_informations_gd.png
-    class forms_export_ screen {
+    class forms_export_ screen : public object {
     public:
       /// @cond
       screen(const screen&) = default;
@@ -70,7 +49,7 @@ namespace xtd {
       /// @brief Gets the device name associated with a display.
       /// @return The device name associated with a display.
       /// @remarks This string may contain non-printable characters.
-      const std::string& device_name() const {return device_name_;}
+      const xtd::ustring& device_name() const {return device_name_;}
       
       /// @brief Gets a value indicating whether a particular display is high resolution.
       /// @return true if this display is high resolution; otherwise, false.
@@ -186,11 +165,11 @@ namespace xtd {
                                   
     private:
       screen() = default;
-      screen(int32_t bits_per_pixel, const drawing::rectangle& bounds, const std::string& device_name, int32_t pixels_per_inch, bool primary, double scale_factor, const drawing::rectangle& working_area) : bits_per_pixel_(bits_per_pixel), bounds_(bounds), device_name_(device_name), pixels_per_inch_(pixels_per_inch), primary_(primary), scale_factor_(scale_factor), working_area_(working_area) {}
+      screen(int32_t bits_per_pixel, const drawing::rectangle& bounds, const xtd::ustring& device_name, int32_t pixels_per_inch, bool primary, double scale_factor, const drawing::rectangle& working_area) : bits_per_pixel_(bits_per_pixel), bounds_(bounds), device_name_(device_name), pixels_per_inch_(pixels_per_inch), primary_(primary), scale_factor_(scale_factor), working_area_(working_area) {}
       
       int32_t bits_per_pixel_ = 0;
       drawing::rectangle bounds_;
-      std::string device_name_;
+      xtd::ustring device_name_;
       int32_t pixels_per_inch_ = 96;
       bool primary_ = false;
       double scale_factor_ = 1.;

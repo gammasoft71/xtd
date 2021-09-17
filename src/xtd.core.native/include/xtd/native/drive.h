@@ -20,11 +20,14 @@ namespace xtd {
   /// @warning Internal use only
   namespace native {
     /// @brief Contains drive native API.
+    /// @par Namespace
+    /// xtd::native
     /// @par Library
     /// xtd.core.native
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
     class core_native_export_ drive final {
+      drive() = delete;
     protected:
       /// @brief Gets availlable free space for specified root path.
       /// @param root_path_name root path name to get avaible free space.

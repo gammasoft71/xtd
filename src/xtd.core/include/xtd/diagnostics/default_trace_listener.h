@@ -10,6 +10,8 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Provides the default output methods and behavior for tracing.
+    /// @par Namespace
+    /// xtd::diagnostics
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core diagnostics debug
@@ -49,7 +51,7 @@ namespace xtd {
       /// /// try {
       ///   result = calc_binomial(possibilities, iter);
       /// } catch (const system_exception& ex) {
-      ///   string fail_message = strings::format("An exception was raised when calculating Binomial( {}, {} ).", possibilities, iter);
+      ///   ustring fail_message = ustring::format("An exception was raised when calculating Binomial( {}, {} ).", possibilities, iter);
       ///   default_listener->fail(fail_message, ex.message());
       ///   if (!default_listener->assert_ui_enabled())
       ///     console::write_line(fail_message + "\n" + ex.message());
@@ -66,7 +68,7 @@ namespace xtd {
       /// /// try {
       ///   result = calc_binomial(possibilities, iter);
       /// } catch (const system_exception& ex) {
-      ///   string fail_message = strings::format("An exception was raised when calculating Binomial( {}, {} ).", possibilities, iter);
+      ///   ustring fail_message = ustring::format("An exception was raised when calculating Binomial( {}, {} ).", possibilities, iter);
       ///   default_listener->fail(fail_message, ex.message());
       ///   if (!default_listener->assert_ui_enabled())
       ///     console::write_line(fail_message + "\n" + ex.message());
@@ -88,7 +90,7 @@ namespace xtd {
       /// if (args.size() >= 2)
       ///   default_listener->log_file_name(args[1]);
       /// @endcode
-      std::string log_file_name() const;
+      xtd::ustring log_file_name() const;
       /// @brief Sets the name of a log file to write trace or debug messages to.
       /// @param log_file_name The name of a log file to write trace or debug messages to.
       /// @par Examples
@@ -102,16 +104,16 @@ namespace xtd {
       /// if (args.size() >= 2)
       ///   default_listener->log_file_name(args[1]);
       /// @endcode
-      void log_file_name(const std::string log_file_name);
+      void log_file_name(const xtd::ustring log_file_name);
 
       void close() override;
       void flush() override;
       
       using xtd::diagnostics::trace_listener::write;
-      void write(const std::string& message) override;
+      void write(const xtd::ustring& message) override;
       
       using xtd::diagnostics::trace_listener::write_line;
-      void write_line(const std::string& message) override;
+      void write_line(const xtd::ustring& message) override;
       
     private:
 #if defined(__CMAKE_TARGET_TYPE__) && __CMAKE_TARGET_TYPE__ == 2 // 2 == GUI_APPLICATION
@@ -119,8 +121,8 @@ namespace xtd {
 #else
       bool assert_ui_enabled_ = false;
 #endif
-      std::string log_file_name_;
-      std::string message_line_;
+      xtd::ustring log_file_name_;
+      xtd::ustring message_line_;
     };
   }
 }

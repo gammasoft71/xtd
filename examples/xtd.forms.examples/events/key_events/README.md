@@ -1,12 +1,11 @@
 # key_events
 
-demonstrates some events received by [form](../../../../src/xtd_forms/include/xtd/forms/form.hpp).
+demonstrates some events received by [form](../../../../src/xtd.forms/include/xtd/forms/form.h).
 
 # Sources
 
-[src/key_events.cpp](src/key_events.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/key_events.cpp](src/key_events.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

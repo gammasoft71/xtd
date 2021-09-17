@@ -1,14 +1,16 @@
 /// @file
-/// @brief Contains xtd::assert_dialog_result enum class.
+/// @brief Contains xtd::diagnostics::assert_dialog_result enum class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include "../strings.h"
+#include "../ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
   /// @brief Specifies identifiers to indicate the return value of an assertt dialog box.
+    /// @par Namespace
+    /// xtd::diagnostics
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core

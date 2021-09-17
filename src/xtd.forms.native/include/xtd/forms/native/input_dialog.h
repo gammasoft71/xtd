@@ -12,6 +12,7 @@
 #include <string>
 #include <xtd/delegate.h>
 #include <xtd/static.h>
+#include <xtd/ustring.h>
 #include <xtd/forms_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -26,6 +27,8 @@ namespace xtd {
     /// @warning Internal use only
     namespace native {
       /// @brief Contains input dialog native API.
+      /// @par Namespace
+      /// xtd::forms::native
       /// @par Library
       /// xtd.forms.native
       /// @ingroup xtd_forms_native native
@@ -35,9 +38,9 @@ namespace xtd {
       protected:
         /// @brief Shows dialog.
         /// @param hwnd Parent window handle.
-        /// @param text A std::string that specifies the caption title of dialog.
-        /// @param message A std::string that specifies the invite message text to display.
-        /// @param value A std::string that specifies the text to display.
+        /// @param text A xtd::ustring that specifies the caption title of dialog.
+        /// @param message A xtd::ustring that specifies the invite message text to display.
+        /// @param value A xtd::ustring that specifies the text to display.
         /// @param character_casting Character casing values (0 : normal, 1 : upper, 2 : lower).
         /// @param multiline true foor multiline; otherwise false.
         /// @param use_system_password_char true if use system password char; otherwise false.
@@ -45,13 +48,13 @@ namespace xtd {
         /// @return true if the user clicks OK in the dialog box; otherwise, false.
         /// @remarks If result is true, the font parameter contains the new font, and the color rparamter contains the now coolor.
         /// @warning Internal use only
-        static bool run_dialog(intptr_t hwnd, const std::string& text, const std::string& message, std::string& value, int32_t character_casting, bool multiline, bool use_system_password_char, bool word_wrap);
+        static bool run_dialog(intptr_t hwnd, const xtd::ustring& text, const xtd::ustring& message, xtd::ustring& value, int32_t character_casting, bool multiline, bool use_system_password_char, bool word_wrap);
         /// @brief Shows async dialog as sheet.
         /// @param on_dialog_closed a dialog close delegate to call when the dialog is closed.
         /// @param hwnd Parent window handle.
-        /// @param text A std::string that specifies the caption title of dialog.
-        /// @param message A std::string that specifies the invite message text to display.
-        /// @param value A std::string that specifies the text to display.
+        /// @param text A xtd::ustring that specifies the caption title of dialog.
+        /// @param message A xtd::ustring that specifies the invite message text to display.
+        /// @param value A xtd::ustring that specifies the text to display.
         /// @param character_casting Character casing values (0 : normal, 1 : upper, 2 : lower).
         /// @param multiline true foor multiline; otherwise false.
         /// @param use_system_password_char true if use system password char; otherwise false.
@@ -59,7 +62,7 @@ namespace xtd {
         /// @return true if the user clicks OK in the dialog box; otherwise, false.
         /// @remarks When dialog closed and if result is true, the value parameter contains the new string value.
         /// @warning Internal use only
-        static void run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const std::string& text, const std::string& message, std::string& value, int32_t character_casting, bool multiline, bool use_system_password_char, bool word_wrap);
+        static void run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const xtd::ustring& text, const xtd::ustring& message, xtd::ustring& value, int32_t character_casting, bool multiline, bool use_system_password_char, bool word_wrap);
       };
     }
   }

@@ -1,12 +1,11 @@
 # font_picker
 
-demonstrates the use of [xtd::forms::font_picker](../../../../src/xtd_forms/include/xtd/forms/font_picker.hpp) dialog.
+demonstrates the use of [xtd::forms::font_picker](../../../../src/xtd.forms/include/xtd/forms/font_picker.h) dialog.
 
 # Sources
 
-[src/font_picker.cpp](src/font_picker.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/font_picker.cpp](src/font_picker.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

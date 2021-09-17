@@ -1,6 +1,6 @@
 # console_color
 
-Shows how to use [xtd::console::background_color](../../../../src/xtd.core/include/xtd/basic_console.h) and  [xtd::console::foreground_color](../../../../src/xtd.core/include/xtd/basic_console.h) methods.
+Shows how to use [xtd::console::background_color](../../../../src/xtd.core/include/xtd/console.h) and  [xtd::console::foreground_color](../../../../src/xtd.core/include/xtd/console.h) methods.
 
 # Sources
 

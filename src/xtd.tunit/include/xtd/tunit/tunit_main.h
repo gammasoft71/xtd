@@ -2,6 +2,7 @@
 /// @brief Contains main entry point.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+#include <xtd/startup.h>
 #include "../tunit_export.h"
 
 /// @cond

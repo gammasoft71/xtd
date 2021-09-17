@@ -7,44 +7,39 @@
 #include <vector>
 #include "collections/specialized/string_map.h"
 #include "static.h"
+#include "ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents translatoor class. This class cannot be inherited.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
   class translator final static_ {
   public:
-    static std::string language();
-    static void language(const std::string& language);
+    static xtd::ustring language();
+    static void language(const xtd::ustring& language);
     
-    static std::vector<std::string> languages();
+    static std::vector<xtd::ustring> languages();
 
-    static std::string system_language();
+    static xtd::ustring system_language();
 
-    static void add_value(const std::string& language, const std::string& key, const std::string& value);
+    static void add_value(const xtd::ustring& language, const xtd::ustring& key, const xtd::ustring& value);
     
-    static void parse_locale(const std::filesystem::path& locale_path);
-    static void parse_locale(const std::string& locale_path) {parse_locale(std::filesystem::path(locale_path));}
-    /// @cond
-    static void parse_locale(const char* locale_path) {parse_locale(std::filesystem::path(locale_path));}
-    /// @endcond
+    static void parse_locale(const xtd::ustring& locale_path);
 
-    static void parse_file(const std::filesystem::path& file, const std::string& language);
-    static void parse_file(const std::string& file, const std::string& language) {parse_file(std::filesystem::path(file), language);}
-    /// @cond
-    static void parse_file(const char* file, const char* language) {parse_file(std::filesystem::path(file), language);}
-    /// @endcond
+    static void parse_file(const xtd::ustring& file, const xtd::ustring& language);
 
-    static std::string translate(const std::string& value) {return translate(language(), value);}
-    static std::string translate(const std::string& language, const std::string& value);
+    static xtd::ustring translate(const xtd::ustring& value) {return translate(language(), value);}
+    static xtd::ustring translate(const xtd::ustring& language, const xtd::ustring& value);
     static const char* translate(const char* value) {return translate(language(), value);}
-    static const char* translate(const std::string& language, const char* value);
+    static const char* translate(const xtd::ustring& language, const char* value);
 
   private:
     static void initialize();
-    static std::map<std::string, xtd::collections::specialized::string_map> language_values_;
-    static std::string language_;
+    static std::map<xtd::ustring, xtd::collections::specialized::string_map> language_values_;
+    static xtd::ustring language_;
   };
 }

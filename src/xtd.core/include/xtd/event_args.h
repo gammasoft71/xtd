@@ -3,23 +3,25 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "core_export.h"
+#include "object.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents the base class for classes that contain event data, and provides a value to use for events that do not include event data.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core events
   /// @remarks This class serves as the base class for all classes that represent event data. For example, the xtd::forms::form_closing_event_args class derives from event_args and is used to hold information when form closin. To create a custom event data class, create a class that derives from the event_args class and provide the properties to store the necessary data. The name of your custom event data class should end with _event_args.
   /// @remarks To pass an object that does not contain any data, use the empty field.
-  class core_export_ event_args {
+  class core_export_ event_args : public object {
   public:
     /// @brief Initializes a new instance of the event_args class.
     /// @remarks To pass an object that does not contain any data, use the empty field.
     event_args() = default;
     
     /// @cond
-    virtual ~event_args() = default;
     event_args(const event_args& event_args) = default;
     event_args& operator=(const event_args& event_args) = default;
     /// @endcond

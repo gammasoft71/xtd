@@ -12,7 +12,7 @@ namespace sleepfor {
     enum class period_type {nanoseconds, microseconds, milliseconds, seconds, minutes};
 
   public:
-    static int main(const vector<string>& args) {
+    static int main(const vector<ustring>& args) {
       int duration = 0;
       period_type type = period_type::milliseconds;
       bool indefinitely = false;
@@ -53,10 +53,10 @@ namespace sleepfor {
     }
     
     static string get_version() {
-      return strings::format("sleepfor version {}, © {:L} by Gammasoft", environment::version(), chrono::system_clock::now());
+      return ustring::format("sleepfor version {}, © {:L} by Gammasoft", environment::version(), chrono::system_clock::now());
     }
 
-    static bool process_arguments(const vector<string>& args, int32_t& duration, period_type& type, bool& indefinitely, bool& show_version, bool& show_help) {
+    static bool process_arguments(const vector<ustring>& args, int32_t& duration, period_type& type, bool& indefinitely, bool& show_version, bool& show_help) {
       for (size_t index = 0; index < args.size(); index += 1) {
         if (args[index] == "-ns" || args[index] == "--nanoseconds") type = period_type::nanoseconds;
         else if (args[index] == "-ms" || args[index] == "--milliseconds") type = period_type::milliseconds;

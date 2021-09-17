@@ -10,6 +10,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Implements the basic functionality that represents the appearance and behavior of a control layout.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
@@ -125,7 +127,7 @@ namespace xtd {
 
       /// @brief Returns a string that represent xtd::forms::control_layout_style.
       /// @return A string containing that represent xtd::forms::control_layout_style.
-      std::string to_string() const override {return strings::format("horizontal_control_layout_style=[expanded={}, align={}, size_type={}, width={}]", expanded(), align(), size_type(), width_);}
+      xtd::ustring to_string() const noexcept override {return ustring::format("horizontal_control_layout_style=[expanded={}, align={}, size_type={}, width={}]", expanded(), align(), size_type(), width_.value_or(-1));}
       
       /// @cond
       bool operator==(const horizontal_control_layout_style& value) const {return width_ == value.width_ && control_layout_style::operator==(value);}

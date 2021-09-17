@@ -1,12 +1,11 @@
 # open_file_dialog
 
-demonstrates the use of [xtd::forms::open_file_dialog](../../../../src/xtd_forms/include/xtd/forms/open_file_dialog.hpp) dialog.
+demonstrates the use of [xtd::forms::open_file_dialog](../../../../src/xtd.orms/include/xtd/forms/open_file_dialog.h) dialog.
 
 # Sources
 
-[src/open_file_dialog.cpp](src/open_file_dialog.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/open_file_dialog.cpp](src/open_file_dialog.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

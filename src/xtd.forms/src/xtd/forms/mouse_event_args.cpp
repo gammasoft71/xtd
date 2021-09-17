@@ -1,4 +1,3 @@
-#include <xtd/strings.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/mouse_key.h>

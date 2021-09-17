@@ -71,6 +71,10 @@
 /// @brief menus and toolbars definitions.
 /// @ingroup gui
 
+/// @defgroup net net
+/// @brief Network definitions.
+/// @ingroup system
+
 /// @defgroup renderers renderers
 /// @brief Control renderers definitions.
 /// @ingroup gui

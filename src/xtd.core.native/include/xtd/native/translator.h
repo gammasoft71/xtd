@@ -21,11 +21,14 @@ namespace xtd {
   /// @warning Internal use only
   namespace native {
     /// @brief Contains translator native API.
+    /// @par Namespace
+    /// xtd::native
     /// @par Library
     /// xtd.core.native
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
     class core_native_export_ translator final {
+      translator() = delete;
       friend xtd::translator;
     protected:
       /// @brief Gets the system language.

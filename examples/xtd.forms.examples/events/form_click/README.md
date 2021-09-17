@@ -1,12 +1,11 @@
 # form_click
 
-demonstrates the use of [mouse_click](../../../../src/xtd_forms/include/xtd/forms/control.hpp) event.
+demonstrates the use of [mouse_click](../../../../src/xtd.forms/include/xtd/forms/control.h) event.
 
 # Sources
 
-[src/form_click.cpp](src/form_click.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/form_click.cpp](src/form_click.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

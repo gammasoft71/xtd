@@ -1,12 +1,11 @@
 # up_down_button
 
-demonstrates the use of [xtd::forms::up_down_button](../../../../src/xtd_forms/include/xtd/forms/up_down_button.hpp) control.
+demonstrates the use of [xtd::forms::up_down_button](../../../../src/xtd.forms/include/xtd/forms/up_down_button.h) control.
 
 # Sources
 
-[src/up_down_button.cpp](src/up_down_button.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/up_down_button.cpp](src/up_down_button.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

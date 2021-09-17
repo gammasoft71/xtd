@@ -9,10 +9,13 @@
 #include "argument_out_of_range_exception.h"
 #include "core_export.h"
 #include "environment.h"
+#include "object.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet certain statistical requirements for randomness.
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
@@ -31,7 +34,7 @@ namespace xtd {
   /// @par Examples
   /// The following example generates a random integer that it uses as an index to retrieve a string value from an array.
   /// @include random3.cpp
-  class random {
+  class random : public object {
   public:
     /// @brief Initializes a new instance of the random class, using a default generated seed value
     random() : generator_(static_cast<uint32_t>(environment::tick_count().count())) {}
@@ -44,10 +47,6 @@ namespace xtd {
     /// @param random_device A random device value.
     explicit random(std::random_device& random_device) : generator_(random_device()) {}
     
-    /// @cond
-    virtual ~random() = default;
-    /// @endcond
-
     /// @brief Returns a nonnegative random number.
     /// @return A 32-bit signed integer greater than or equal to zero and less than std::numeric_limits<int32_t>::max())
     virtual int32_t next() const {return next(std::numeric_limits<int32_t>::max());}

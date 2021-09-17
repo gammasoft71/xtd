@@ -10,24 +10,14 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Used to group collections of controls in a collapsible panel.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms containers
     /// @par Examples
     /// The following code example demonstrate the use of collapsible_panel container.
     /// @include collapsible_panel.cpp
-    /// @par Windows
-    /// @image html collapsible_panel_w.png
-    /// <br>
-    /// @image html collapsible_panel_wd.png
-    /// @par macOS
-    /// @image html collapsible_panel_m.png
-    /// <br>
-    /// @image html collapsible_panel_md.png
-    /// @par Gnome
-    /// @image html collapsible_panel_g.png
-    /// <br>
-    /// @image html collapsible_panel_gd.png
     class forms_export_ collapsible_panel : public control {
     public:
       /// @brief Initializes a new instance of the collapsible_panel class.
@@ -70,7 +60,7 @@ namespace xtd {
       
       /// @brief Occurs when the expanded property changes.
       /// @ingroup events
-      xtd::event<collapsible_panel, xtd::event_handler<control&>> expanded_changed;
+      xtd::event<collapsible_panel, xtd::event_handler> expanded_changed;
 
     protected:
       forms::create_params create_params() const override;

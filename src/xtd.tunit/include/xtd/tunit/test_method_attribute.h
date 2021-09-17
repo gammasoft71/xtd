@@ -12,16 +12,16 @@ namespace xtd {
     class test_method_attribute {
     public:
       template<typename test_class_t>
-      test_method_attribute(const std::string& name, test_class_t& test_class, void (test_class_t::*method)()) noexcept : test_method_attribute(name, test_class, method, xtd::tunit::test_state::considered, xtd::tunit::line_info()) {}
+      test_method_attribute(const std::string& name, test_class_t& test_class, void (test_class_t::*method)()) noexcept : test_method_attribute(name, test_class, method, xtd::tunit::test_state::considered, xtd::diagnostics::stack_frame()) {}
       
       template<typename test_class_t>
-      test_method_attribute(const std::string& name, test_class_t& test_class, void (test_class_t::*method)(), const xtd::tunit::line_info& line_info) noexcept : test_method_attribute(name, test_class, method, xtd::tunit::test_state::considered, line_info) {}
+      test_method_attribute(const std::string& name, test_class_t& test_class, void (test_class_t::*method)(), const xtd::diagnostics::stack_frame& stack_frame) noexcept : test_method_attribute(name, test_class, method, xtd::tunit::test_state::considered, stack_frame) {}
       
       template<typename test_class_t>
-      test_method_attribute(const std::string& name, test_class_t& test_class, void (test_class_t::*method)(), xtd::tunit::test_state test_state) noexcept : test_method_attribute(name, test_class, method, test_state, xtd::tunit::line_info()) {}
+      test_method_attribute(const std::string& name, test_class_t& test_class, void (test_class_t::*method)(), xtd::tunit::test_state test_state) noexcept : test_method_attribute(name, test_class, method, test_state, xtd::diagnostics::stack_frame()) {}
       
       template<typename test_class_t>
-      test_method_attribute(const std::string& name, test_class_t& test_class, void (test_class_t::*method)(), xtd::tunit::test_state test_state, const xtd::tunit::line_info& line_info) noexcept {test_class.add_test_method({name, std::bind(method, &test_class), test_state == xtd::tunit::test_state::ignored, line_info});}
+      test_method_attribute(const std::string& name, test_class_t& test_class, void (test_class_t::*method)(), xtd::tunit::test_state test_state, const xtd::diagnostics::stack_frame& stack_frame) noexcept {test_class.add_test_method({name, std::bind(method, &test_class), test_state == xtd::tunit::test_state::ignored, stack_frame});}
     };
   }
 }
@@ -30,7 +30,7 @@ namespace xtd {
   __##method_name##_unused() = delete; \
   class __##method_name##_attribute##_class : public xtd::tunit::test_method_attribute { \
   public:\
-    template<typename test_class> __##method_name##_attribute##_class(test_class& test) : test_method_attribute(#method_name, test, &test_class::method_name, xtd::tunit::test_state::ignored, {__func__, __FILE__, __LINE__}) {} \
+    template<typename test_class> __##method_name##_attribute##_class(test_class& test) : test_method_attribute(#method_name, test, &test_class::method_name, xtd::tunit::test_state::ignored, {__FILE__, __LINE__, __func__}) {} \
   } __##method_name##_attribute {*this}; \
   void method_name()
 
@@ -38,6 +38,6 @@ namespace xtd {
   __##method_name##_unused() = delete; \
   class __##method_name##_attribute##_class : public xtd::tunit::test_method_attribute { \
   public:\
-    template<typename test_class> __##method_name##_attribute##_class(test_class& test) : test_method_attribute(#method_name, test, &test_class::method_name, {__func__, __FILE__, __LINE__}) {} \
+    template<typename test_class> __##method_name##_attribute##_class(test_class& test) : test_method_attribute(#method_name, test, &test_class::method_name, {__FILE__, __LINE__, __func__}) {} \
   } __##method_name##_attribute {*this}; \
   void method_name()

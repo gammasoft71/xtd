@@ -11,6 +11,8 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @brief The ostream_unit_test class is a specialisation of event_listener class for writing events in std::ostream.
+    /// @par Namespace
+    /// xtd::tunit
     /// @par Library
     /// xtd.tunit
     /// @ingroup xtd_tunit
@@ -42,9 +44,9 @@ namespace xtd {
           os_ << "    Expected: " << e.test().expect() << std::endl;
         if (e.test().actual() != "")
           os_ << "    But was:  " << e.test().actual() << std::endl;
-        if ((e.test().expect() != "" || e.test().actual() != "") && e.test().line_info() != xtd::tunit::line_info::empty()) {
-          os_ << "    Stack Trace: in " << e.test().line_info().file_path();
-          if (e.test().line_info().line_number() != 0) os_ << ":" << e.test().line_info().line_number();
+        if ((e.test().expect() != "" || e.test().actual() != "") && e.test().stack_frame() != xtd::diagnostics::stack_frame::empty()) {
+          os_ << "    Stack Trace: in " << e.test().stack_frame().get_file_name();
+          if (e.test().stack_frame().get_file_line_number() != 0) os_ << ":" << e.test().stack_frame().get_file_line_number();
         }
         os_ << std::endl;
      }
@@ -66,9 +68,9 @@ namespace xtd {
           os_ << "    Expected: " << e.test().expect() << std::endl;
         if (e.test().actual() != "")
           os_ << "    But was:  " << e.test().actual() << std::endl;
-        if (e.test().line_info() != xtd::tunit::line_info::empty()) {
-          os_ << "    Stack Trace: in " << e.test().line_info().file_path();
-          if (e.test().line_info().line_number() != 0) os_ << ":" << e.test().line_info().line_number();
+        if (e.test().stack_frame() != xtd::diagnostics::stack_frame::empty()) {
+          os_ << "    Stack Trace: in " << e.test().stack_frame().get_file_name();
+          if (e.test().stack_frame().get_file_line_number() != 0) os_ << ":" << e.test().stack_frame().get_file_line_number();
         }
         os_ << std::endl;
       }

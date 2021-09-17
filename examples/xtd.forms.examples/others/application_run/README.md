@@ -1,12 +1,11 @@
 # application_run
 
-Shows how to create an application with  [xtd::forms::application](../../../../src/xtd_forms/include/xtd/forms/application.hpp) class.
+Shows how to create an application with  [xtd::forms::application](../../../../src/xtd.forms/include/xtd/forms/application.h) class.
 
 # Sources
 
-[src/application.cpp](src/application_run.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/application.cpp](src/application_run.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

@@ -18,11 +18,11 @@ namespace {
     switch (state) {
       case xtd::forms::visual_styles::toggle_button_state::unchecked_normal: return xtd::forms::visual_styles::push_button_state::normal;
       case xtd::forms::visual_styles::toggle_button_state::unchecked_hot: return xtd::forms::visual_styles::push_button_state::hot;
-      case xtd::forms::visual_styles::toggle_button_state::unchecked_pressed: return xtd::forms::visual_styles::push_button_state::normal;
+      case xtd::forms::visual_styles::toggle_button_state::unchecked_pressed: return xtd::forms::visual_styles::push_button_state::checked;
       case xtd::forms::visual_styles::toggle_button_state::unchecked_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
-      case xtd::forms::visual_styles::toggle_button_state::checked_normal: return xtd::forms::visual_styles::push_button_state::pressed;
-      case xtd::forms::visual_styles::toggle_button_state::checked_hot: return xtd::forms::visual_styles::push_button_state::pressed;
-      case xtd::forms::visual_styles::toggle_button_state::checked_pressed: return xtd::forms::visual_styles::push_button_state::pressed;
+      case xtd::forms::visual_styles::toggle_button_state::checked_normal: return xtd::forms::visual_styles::push_button_state::checked;
+      case xtd::forms::visual_styles::toggle_button_state::checked_hot: return xtd::forms::visual_styles::push_button_state::checked;
+      case xtd::forms::visual_styles::toggle_button_state::checked_pressed: return xtd::forms::visual_styles::push_button_state::checked;
       case xtd::forms::visual_styles::toggle_button_state::checked_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
       case xtd::forms::visual_styles::toggle_button_state::mixed_normal: return xtd::forms::visual_styles::push_button_state::default_state;
       case xtd::forms::visual_styles::toggle_button_state::mixed_hot: return xtd::forms::visual_styles::push_button_state::default_state;
@@ -109,8 +109,8 @@ void toggle_button::on_handle_created(const event_args &e) {
 void toggle_button::on_paint(paint_event_args& e) {
   if (flat_style_ != xtd::forms::flat_style::system) {
     text_format_flags flags = to_text_format_flags(text_align_);
-    if (flat_style_ == xtd::forms::flat_style::flat) button_renderer::draw_flat_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), to_push_button_style(state_), !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
-    else if (flat_style_ == xtd::forms::flat_style::popup) button_renderer::draw_popup_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), to_push_button_style(state_), !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
+    if (flat_style_ == xtd::forms::flat_style::flat) button_renderer::draw_flat_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), to_push_button_style(state_), !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_, flat_appearance_);
+    else if (flat_style_ == xtd::forms::flat_style::popup) button_renderer::draw_popup_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), to_push_button_style(state_), !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_, flat_appearance_);
     else theme_renderers::current_theme().draw_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), to_push_button_style(state_), !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
   }
   button_base::on_paint(e);

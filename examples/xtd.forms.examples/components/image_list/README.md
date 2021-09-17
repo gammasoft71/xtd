@@ -1,12 +1,11 @@
 # image_list
 
-demonstrates the use of [xtd::forms::image_list](../../../../src/xtd_forms/include/xtd/forms/image_list.hpp) component.
+demonstrates the use of [xtd::forms::image_list](../../../../src/xtd.forms/include/xtd/forms/image_list.h) component.
 
 # Sources
 
-[src/image_list.cpp](src/image_list.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/image_list.cpp](src/image_list.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

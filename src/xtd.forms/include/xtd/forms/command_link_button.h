@@ -12,24 +12,14 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a Windows coommand link button control.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
     /// The following code example demonstrate the use of command link button control.
     /// @include command_link_button.cpp
-    /// @par Windows
-    /// @image html command_link_button_w.png
-    /// <br>
-    /// @image html command_link_button_wd.png
-    /// @par macOS
-    /// @image html command_link_button_m.png
-    /// <br>
-    /// @image html command_link_button_md.png
-    /// @par Gnome
-    /// @image html command_link_button_g.png
-    /// <br>
-    /// @image html command_link_button_gd.png
     class forms_export_ command_link_button : public button_base {
     public:
       /// @brief Initializes a new instance of the button class.
@@ -47,7 +37,7 @@ namespace xtd {
       /// @param text A string that represent control text
       /// @param supplementary_text A string thatt represent supplementary text.
       /// @remarks Is equavant to call text property with text and spplementary_text separed by "\n".
-      virtual control& texts(const std::string& text, const std::string& supplementary_text) {return this->text(strings::format("{}{}{}", text, environment::new_line(), supplementary_text));}
+      virtual control& texts(const xtd::ustring& text, const xtd::ustring& supplementary_text) {return this->text(ustring::format("{}{}{}", text, environment::new_line(), supplementary_text));}
 
       drawing::size default_size() const override {return {200, 60};}
       

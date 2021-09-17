@@ -7,24 +7,14 @@
 namespace xtd {
   namespace forms {
     /// @brief represent a nine segment display class
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
     /// The following code example demonstrate the use of fourteen segment display control.
     /// @include fourteen_segment_display.cpp
-    /// @par Windows
-    /// @image html fourteen_segment_display_w.png
-    /// <br>
-    /// @image html fourteen_segment_display_wd.png
-    /// @par macOS
-    /// @image html fourteen_segment_display_m.png
-    /// <br>
-    /// @image html fourteen_segment_display_md.png
-    /// @par Gnome
-    /// @image html fourteen_segment_display_g.png
-    /// <br>
-    /// @image html fourteen_segment_display_gd.png
     class fourteen_segment_display : public seven_segment_display {
     public:
       /// @brief Initialize a new instance of fourteen_segment_display class.
@@ -51,14 +41,14 @@ namespace xtd {
  
       void draw_back_digit(drawing::graphics& graphics) override {
         seven_segment_display::draw_back_digit(graphics);
-        draw_segment_g1(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
-        draw_segment_g2(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
-        draw_segment_h(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
-        draw_segment_i(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
-        draw_segment_j(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
-        draw_segment_k(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
-        draw_segment_l(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
-        draw_segment_m(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
+        draw_segment_g1(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
+        draw_segment_g2(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
+        draw_segment_h(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
+        draw_segment_i(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
+        draw_segment_j(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
+        draw_segment_k(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
+        draw_segment_l(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
+        draw_segment_m(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
       }
 
       /// @brief Draw segment g1 on specified graphics with specified color.

@@ -26,11 +26,14 @@ namespace xtd {
   /// @warning Internal use only
   namespace native {
     /// @brief Contains process native API.
+    /// @par Namespace
+    /// xtd::native
     /// @par Library
     /// xtd.core.native
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
     class core_native_export_ process final {
+      process() = delete;
       friend xtd::diagnostics::process;
     protected:
       /// @brief Contains the created process hande and created standard streams :

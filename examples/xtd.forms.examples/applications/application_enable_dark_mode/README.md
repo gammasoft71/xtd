@@ -1,12 +1,11 @@
 # application_enable_dark_mode
 
-Shows how to create an application with  [xtd::forms::application::enable_dark_mode](../../../../src/xtd_forms/include/xtd/forms/application.hpp) method.
+Shows how to create an application with  [xtd::forms::application::enable_dark_mode](../../../../src/xtd.forms/include/xtd/forms/application.h) method.
 
 # Sources
 
-[src/application_enable_dark_mode.cpp](src/application_enable_dark_mode.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/application_enable_dark_mode.cpp](src/application_enable_dark_mode.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

@@ -13,24 +13,14 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a standard Windows picture box.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
     /// The following code example demonstrate the use of picture box control.
     /// @include picture_box.cpp
-    /// @par Windows
-    /// @image html picture_box_w.png
-    /// <br>
-    /// @image html picture_box_wd.png
-    /// @par macOS
-    /// @image html picture_box_m.png
-    /// <br>
-    /// @image html picture_box_md.png
-    /// @par Gnome
-    /// @image html picture_box_g.png
-    /// <br>
-    /// @image html picture_box_gd.png
     class forms_export_ picture_box : public control {
     public:
       picture_box();

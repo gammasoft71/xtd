@@ -9,16 +9,19 @@
 
 #include <chrono>
 #include <cctype>
+#include <cstddef>
+#include <cstdint>
 #include <iomanip>
 #include <locale>
 #include <map>
 #include <sstream>
 #include <string>
 #include <vector>
-#include "../types.h"
 
 /// @cond
 namespace xtd {
+  class ustring;
+
   template<typename value_t>
   inline std::string to_string(const value_t& value, const std::string& fmt, const std::locale& loc);
   template<>
@@ -231,10 +234,29 @@ std::basic_ostream<char_t>& operator<<(std::basic_ostream<char_t>& os, const std
   return os << xtd::to_string(value, std::basic_string<char_t> {'G'}, std::locale());
 }
 
+template<typename value_t>
+std::string __format_stringer_to_std_string(const value_t& value) {
+  std::basic_stringstream<char> ss;
+  ss << value;
+  return ss.str();
+}
+
+std::string __format_stringer_to_std_string(const char* str);
+std::string __format_stringer_to_std_string(const char8_t* str);
+std::string __format_stringer_to_std_string(const char16_t* str);
+std::string __format_stringer_to_std_string(const char32_t* str);
+std::string __format_stringer_to_std_string(const wchar_t* str);
+std::string __format_stringer_to_std_string(const std::string& str);
+std::string __format_stringer_to_std_string(const xtd::ustring& str);
+std::string __format_stringer_to_std_string(const std::u8string& str);
+std::string __format_stringer_to_std_string(const std::u16string& str);
+std::string __format_stringer_to_std_string(const std::u32string& str);
+std::string __format_stringer_to_std_string(const std::wstring& str);
+
 template<typename char_t, typename value_t>
 inline std::basic_string<char_t> __format_stringer(value_t value) {
   std::basic_stringstream<char_t> ss;
-  ss << value;
+  ss << __format_stringer_to_std_string(value).c_str();
   return ss.str();
 }
 
@@ -254,11 +276,7 @@ inline std::basic_string<char_t> __format_stringer(const char* const& value) {
 
 template<typename char_t, typename value_t>
 inline std::basic_string<char_t> __format_stringer(const char8_t*& value) {
-#if defined(__cpp_lib_char8_t)
   auto s = std::u8string(value);
-#else
-  auto s = std::string(value);
-#endif
   std::basic_stringstream<char_t> ss;
   ss << std::basic_string<char_t>(s.begin(), s.end());
   return ss.str();
@@ -266,11 +284,7 @@ inline std::basic_string<char_t> __format_stringer(const char8_t*& value) {
 
 template<typename char_t, typename value_t>
 inline std::basic_string<char_t> __format_stringer(const char8_t* const& value) {
-#if defined(__cpp_lib_char8_t)
   auto s = std::u8string(value);
-#else
-  auto s = std::string(value);
-#endif
   std::basic_stringstream<char_t> ss;
   ss << std::basic_string<char_t>(s.begin(), s.end());
   return ss.str();
@@ -318,14 +332,12 @@ inline std::basic_string<char_t> __format_stringer(const wchar_t* const& value) 
   return ss.str();
 }
 
-#if defined(__cpp_lib_char8_t)
 template<>
 inline std::string __format_stringer<char, std::u8string&>(std::u8string& value) {
   std::basic_stringstream<char> ss;
   ss << std::string(value.begin(), value.end());
   return ss.str();
 }
-#endif
 
 template<>
 inline std::string __format_stringer<char, std::u16string&>(std::u16string& value) {
@@ -355,6 +367,11 @@ inline std::string __format_stringer<char, bool&>(bool& value) {
 
 template<>
 inline std::string __format_stringer<char, int8_t&>(int8_t& value) {
+  return xtd::to_string(value, "G", std::locale());
+}
+
+template<>
+inline std::string __format_stringer<char, const unsigned char&>(const unsigned char& value) {
   return xtd::to_string(value, "G", std::locale());
 }
 
@@ -448,14 +465,12 @@ inline std::string __format_stringer<char, char32_t&>(char32_t& value) {
   return xtd::to_string(value, "G", std::locale());
 }
 
-#if defined(__cpp_lib_char8_t)
 template<>
 inline std::wstring __format_stringer<wchar_t, std::u8string&>(std::u8string& value) {
   std::basic_stringstream<wchar_t> ss;
   ss << std::wstring(value.begin(), value.end());
   return ss.str();
 }
-#endif
 
 template<>
 inline std::wstring __format_stringer<wchar_t, std::u16string&>(std::u16string& value) {

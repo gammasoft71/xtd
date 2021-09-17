@@ -10,6 +10,8 @@
 #include <map>
 #include <string>
 #include <vector>
+#include <xtd/convert_string.h>
+#include <xtd/ustring.h>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/forms/native/virtual_keys.h>
 #include <wx/app.h>
@@ -41,12 +43,12 @@ namespace xtd {
       private:
         wx_menu_item() = default;
         
-        wx_menu_item(const std::string& text, intptr_t image, wx_menu_item_kind kind, bool checked, size_t shortcut) : text_(text), shortcut_(shortcut), image_(image), kind_(kind != wx_menu_item_kind::normal ? kind : (text == "-" ? wx_menu_item_kind::separator : wx_menu_item_kind::normal)), checked_(checked) {}
+        wx_menu_item(const xtd::ustring& text, intptr_t image, wx_menu_item_kind kind, bool checked, size_t shortcut) : text_(text), shortcut_(shortcut), image_(image), kind_(kind != wx_menu_item_kind::normal ? kind : (text == "-" ? wx_menu_item_kind::separator : wx_menu_item_kind::normal)), checked_(checked) {}
         
-        wx_menu_item(const std::string& text, const std::vector<wx_menu_item*>& items) : text_(text), items_(items) {}
-        wx_menu_item(const std::string& text, size_t shortcut, const std::vector<wx_menu_item*>& items) : text_(text), shortcut_(shortcut), items_(items) {}
+        wx_menu_item(const xtd::ustring& text, const std::vector<wx_menu_item*>& items) : text_(text), items_(items) {}
+        wx_menu_item(const xtd::ustring& text, size_t shortcut, const std::vector<wx_menu_item*>& items) : text_(text), shortcut_(shortcut), items_(items) {}
         
-        const std::string& text() const {return text_;}
+        const xtd::ustring& text() const {return text_;}
         size_t shortcut() const {return shortcut_;}
         bool enabled() const {return enabled_;}
         intptr_t image() const {return image_;}
@@ -55,7 +57,7 @@ namespace xtd {
         const std::vector<wx_menu_item*>& items() const {return items_;}
         std::vector<wx_menu_item*>& items() {return items_;}
         
-        static bool isAboutItem(const std::string& text) {
+        static bool isAboutItem(const xtd::ustring& text) {
           wxString itemText = text;
           itemText.Replace("&", "");
           itemText.Replace(".", "");
@@ -63,7 +65,7 @@ namespace xtd {
           return itemText == "about";
         }
         
-        static bool isHelpItem(const std::string& text) {
+        static bool isHelpItem(const xtd::ustring& text) {
           wxString itemText = text;
           itemText.Replace("&", "");
           itemText.Replace(".", "");
@@ -71,7 +73,7 @@ namespace xtd {
           return itemText == "help";
         }
         
-        static bool isQuitItem(const std::string& text) {
+        static bool isQuitItem(const xtd::ustring& text) {
           wxString itemText = text;
           itemText.Replace("&", "");
           itemText.Replace(".", "");
@@ -79,7 +81,7 @@ namespace xtd {
           return itemText == "exit" || itemText == "quit";
         }
         
-        static bool isPreferencesItem(const std::string& text) {
+        static bool isPreferencesItem(const xtd::ustring& text) {
           wxString itemText = text;
           itemText.Replace("&", "");
           itemText.Replace(".", "");
@@ -87,7 +89,7 @@ namespace xtd {
           return itemText == "preferences" || itemText == "options";
         }
         
-        static bool isWindowItem(const std::string& text) {
+        static bool isWindowItem(const xtd::ustring& text) {
           wxString itemText = text;
           itemText.Replace("&", "");
           itemText.Replace(".", "");
@@ -99,7 +101,7 @@ namespace xtd {
         friend class wx_menu_bar;
         friend class wx_menu;
         
-        static wxWindowID MakeWindowID(const std::string& text) {
+        static wxWindowID MakeWindowID(const xtd::ustring& text) {
           if (isAboutItem(text)) return wxID_ABOUT;
           if (isQuitItem(text)) return wxID_EXIT;
           if (isPreferencesItem(text)) return wxID_PREFERENCES;
@@ -117,7 +119,7 @@ namespace xtd {
           return kinds[kind];
         }
         
-        static std::string MakeItemText(const std::string& text, size_t shortcut) {
+        static xtd::ustring MakeItemText(const xtd::ustring& text, size_t shortcut) {
           using namespace std::literals;
 #if defined(__APPLE__)
           if (isAboutItem(text)) return "";
@@ -183,7 +185,7 @@ namespace xtd {
           return text + "\t" + key;
         }
         
-        static std::tuple<wxMenu*, std::string> MakeMenu(wx_menu_item* menu_item) {
+        static std::tuple<wxMenu*, xtd::ustring> MakeMenu(wx_menu_item* menu_item) {
           menu_item->menu_ = new wxMenu();
           auto index = 0;
           
@@ -191,10 +193,10 @@ namespace xtd {
             item->parent_ = menu_item->menu_;
             if (item->items().size() != 0) {
               auto [sub_menu, name] = MakeMenu(item);
-              menu_item->menu_->AppendSubMenu(sub_menu, item->text());
+              menu_item->menu_->AppendSubMenu(sub_menu, xtd::convert_string::to_wstring(item->text()));
             } else {
               item->item_id = MakeWindowID(item->text());
-              item->menu_item_ = menu_item->menu_->Append(wxMenuItem::New(menu_item->menu_, item->item_id, MakeItemText(item->text(), item->shortcut()), "", ToItemKind(item->kind())));
+              item->menu_item_ = menu_item->menu_->Append(wxMenuItem::New(menu_item->menu_, item->item_id, xtd::convert_string::to_wstring(MakeItemText(item->text(), item->shortcut())), L"", ToItemKind(item->kind())));
               item->index_ = index++;
               if (item->image() != 0) item->menu_item_->SetBitmap({*reinterpret_cast<wxImage*>(item->image())});
               if (item->kind() == wx_menu_item_kind::check || item->kind() == wx_menu_item_kind::radio) item->menu_item_->Check(item->checked());
@@ -204,7 +206,7 @@ namespace xtd {
           return std::make_tuple(menu_item->menu_, menu_item->text());
         }
         
-        std::string text_;
+        xtd::ustring text_;
         size_t shortcut_ = VK_NONE;
         bool enabled_ = true;
         intptr_t image_ = 0;
@@ -312,10 +314,10 @@ namespace xtd {
           for (auto* item : items_) {
             if (item->items().size() != 0) {
               auto [sub_menu, name] = wx_menu_item::MakeMenu(item);
-              AppendSubMenu(sub_menu, item->text());
+              AppendSubMenu(sub_menu, xtd::convert_string::to_wstring(item->text()));
             } else {
               wxWindowID itemID = wx_menu_item::MakeWindowID(item->text());
-              wxMenuItem* menuItem = Append(wxMenuItem::New(this, itemID, wx_menu_item::MakeItemText(item->text(), item->shortcut()), "", wx_menu_item::ToItemKind(item->kind())));
+              wxMenuItem* menuItem = Append(wxMenuItem::New(this, itemID, xtd::convert_string::to_wstring(wx_menu_item::MakeItemText(item->text(), item->shortcut())), L"", wx_menu_item::ToItemKind(item->kind())));
               if (item->image() != 0) menuItem->SetBitmap({*reinterpret_cast<wxImage*>(item->image())});
               if (item->kind() == wx_menu_item_kind::check || item->kind() == wx_menu_item_kind::radio) menuItem->Check(item->checked());
             }

@@ -4,9 +4,8 @@ demonstrates the use of [xtd::forms::debug_message_box](../../../../src/xtd.form
 
 # Sources
 
-[src/debug_message_box.cpp](src/debug_message_box.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/debug_message_box.cpp](src/debug_message_box.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

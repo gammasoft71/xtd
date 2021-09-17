@@ -1,10 +1,9 @@
 #include <xtd/xtd>
 
-using namespace std;
 using namespace xtd;
 
 int main() {
-  const string formatter = "{0,25}{1,30}";
+  const ustring formatter = "{0,25}{1,30}";
   
   double a_doubl = 0.1111111111111111111;
   float a_singl = 0.1111111111111111111F;

@@ -3,7 +3,8 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <ostream>
-#include <xtd/strings.h>
+#include <xtd/object.h>
+#include <xtd/ustring.h>
 #include "../drawing_export.h"
 #include "size_f.h"
 
@@ -16,10 +17,12 @@ namespace xtd {
     /// @endcond
     
     /// @brief Stores an ordered pair of integers, which specify a height and width.
+    /// @par Namespace
+    /// xtd::drawing
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    class drawing_export_ size {
+    class drawing_export_ size : public object {
     public:
       /// @brief Gets a Size class that has a Height and Width value of 0. This field is constant.
       static const xtd::drawing::size empty;
@@ -97,7 +100,7 @@ namespace xtd {
 
       /// @brief Creates a human-readable string that represents this size class.
       /// @return string A string that represents this size.
-      std::string to_string() const {return "{width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";}
+      xtd::ustring to_string() const noexcept override {return "{width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";}
  
       /// @brief Converts the specified size_f to a size by truncating the values of the size_f.
       /// @param value The size_f to convert.
@@ -118,7 +121,7 @@ namespace xtd {
 
   template<>
   inline drawing::size parse<drawing::size>(const std::string& str) {
-    auto values = xtd::strings::split(xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(str, "}", ""), " height=", ""), "{width=", ""), {','});
+    auto values = xtd::ustring(str).replace("}", "").replace(" height=", "").replace("{width=", "").split({','});
     return {xtd::parse<int32_t>(values[0]), xtd::parse<int32_t>(values[1])};
   }
 }

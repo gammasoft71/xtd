@@ -3,6 +3,8 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
+#include <xtd/xtd.core.h>
+
 #include "tunit/abort_error.h"
 #include "tunit/assert.h"
 #include "tunit/assert_error.h"
@@ -25,7 +27,6 @@
 #include "tunit/file_assume.h"
 #include "tunit/file_valid.h"
 #include "tunit/ignore_error.h"
-#include "tunit/line_info.h"
 #include "tunit/ostream_event_listener.h"
 #include "tunit/ostream_unit_test.h"
 #include "tunit/registered_test_class.h"

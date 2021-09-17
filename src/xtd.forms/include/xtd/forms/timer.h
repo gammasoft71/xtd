@@ -14,6 +14,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Implements a timer that raises an event at user-defined intervals. This timer is optimized for use in Windows Forms applications and must be used in a window.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms components
@@ -24,18 +26,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of timer component.
     /// @include timer.cpp
-    /// @par Windows
-    /// @image html timer_w.png
-    /// <br>
-    /// @image html timer_wd.png
-    /// @par macOS
-    /// @image html timer_m.png
-    /// <br>
-    /// @image html timer_md.png
-    /// @par Gnome
-    /// @image html timer_g.png
-    /// <br>
-    /// @image html timer_gd.png
     class forms_export_ timer final : public component {
     public:
       /// @brief Initializes a new instance of the timer class.
@@ -47,11 +37,6 @@ namespace xtd {
       timer(const timer&) = delete;
       ~timer() {stop();}
       /// @endcond
-      
-      /// @brief Occurs when the specified timer interval has elapsed and the timer is enabled.
-      /// @ingroup events
-      /// @remarks Calling the Assert method on the xtd::diadnostics::debug class from within the tick event may not behave as expected, as displaying the assertion dialog box may cause Windows to raise the tick event repeatedly. We recommend that you refrain from testing assertions within this event, and use the write, write_if, write_line, or write_line_if methods instead.
-      event<timer, event_handler<timer&>> tick;
 
       /// @brief Gets whether the timer is running.
       /// @return true if the timer is currently enabled; otherwise, false. The default is false.
@@ -88,9 +73,14 @@ namespace xtd {
       /// @brief Starts the timer.
       /// @remarks You can also start the timer by setting the enabled property to true.
       void stop() {enabled(false);}
+      
+      /// @brief Occurs when the specified timer interval has elapsed and the timer is enabled.
+      /// @ingroup events
+      /// @remarks Calling the Assert method on the xtd::diadnostics::debug class from within the tick event may not behave as expected, as displaying the assertion dialog box may cause Windows to raise the tick event repeatedly. We recommend that you refrain from testing assertions within this event, and use the write, write_if, write_line, or write_line_if methods instead.
+      event<timer, event_handler> tick;
 
     protected:
-      /// @brief Raises the Tick event.
+      /// @brief Raises the xtd::forms::timer::tick event.
       /// @param e An event_args that contains the event data. This is always xtd::event_args::empty.
       void on_tick(const event_args& e);
       

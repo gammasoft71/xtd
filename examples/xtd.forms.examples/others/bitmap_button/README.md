@@ -1,12 +1,11 @@
 # bitmap_button
 
-demonstrates the use of [xtd::forms::button](../../../../src/xtd_forms/include/xtd/forms/button.hpp) control with image.
+demonstrates the use of [xtd::forms::button](../../../../src/xtd.forms/include/xtd/forms/button.h) control with image.
 
 # Sources
 
-[src/bitmap_button.cpp](src/bitmap_button.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/bitmap_button.cpp](src/bitmap_button.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

@@ -71,6 +71,7 @@ add_sources(
   include/xtd/forms/native/progress_dialog.h
   include/xtd/forms/native/radio_button.h
   include/xtd/forms/native/screen.h
+  include/xtd/forms/native/scroll_bar.h
   include/xtd/forms/native/scroll_bar_styles.h
   include/xtd/forms/native/settings.h
   include/xtd/forms/native/static_styles.h

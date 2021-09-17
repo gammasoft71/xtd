@@ -15,7 +15,7 @@ namespace {
 
 cursor cursor::none(0, false, "none");
 
-cursor::cursor(intptr_t handle, bool destroyable, const std::string& name) {
+cursor::cursor(intptr_t handle, bool destroyable, const xtd::ustring& name) {
   data_->handle_ = handle;
   data_->destroyable_ = destroyable;
   data_->name_ = name;
@@ -69,6 +69,6 @@ void cursor::show() {
   native::cursor::show();
 }
 
-std::string cursor::to_string() const {
-  return strings::format("[cursor: {}]", data_->name_ != "" ? data_->name_ : strings::full_class_name(*this));
+ustring cursor::to_string() const noexcept {
+  return ustring::format("[cursor: {}]", data_->name_ != "" ? data_->name_ : ustring::full_class_name(*this));
 }

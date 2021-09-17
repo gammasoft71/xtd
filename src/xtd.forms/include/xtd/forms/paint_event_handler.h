@@ -13,10 +13,11 @@ namespace xtd {
     /// @brief Represents the method that will handle the paint event of a control.
     /// @param sender The source of the event.
     /// @param e A paint_event_args that contains the event data.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    template<typename type_t>
-    using paint_event_handler = delegate<void(type_t sender, paint_event_args& e)>;
+    using paint_event_handler = delegate<void(object& sender, paint_event_args& e)>;
   }
 }

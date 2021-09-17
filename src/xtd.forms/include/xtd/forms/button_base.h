@@ -6,6 +6,7 @@
 #include "control.h"
 #include "content_alignment.h"
 #include "image_list.h"
+#include "flat_button_appearance.h"
 #include "flat_style.h"
 #include "text_format_flags.h"
 
@@ -14,6 +15,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Implements the basic functionality common to button controls.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
@@ -43,6 +46,13 @@ namespace xtd {
           auto_ellipsis_ = false;
         return *this;
       }
+
+      /// @brief Gets the appearance of the border and the colors used to indicate check state and mouse state.
+      /// @return The xtd::forms::flat_button_appearance appearance.
+      const xtd::forms::flat_button_appearance& flat_appearance() const {return flat_appearance_;}
+      /// @brief Gets the appearance of the border and the colors used to indicate check state and mouse state.
+      /// @return The xtd::forms::flat_button_appearance appearance.
+      xtd::forms::flat_button_appearance& flat_appearance() {return flat_appearance_;}
 
       /// @brief Gets the flat style appearance of the button control.
       /// @return One of the xtd::forms::flat_style values. The default value is xtd::forms::flat_style::standard.
@@ -102,7 +112,7 @@ namespace xtd {
       /// @brief Occurs when the value of the image property changes.
       /// @ingroup events
       /// @remarks This event is raised if the image property is changed by either a programmatic modification or user interaction.
-      event<button_base, event_handler<control&>> image_changed;
+      event<button_base, event_handler> image_changed;
 
     protected:
       /// @brief Initializes a new instance of the ButtonBase class.
@@ -194,6 +204,7 @@ namespace xtd {
       xtd::drawing::rectangle compute_image_bounds(const xtd::drawing::rectangle& rectangle);
 
       bool auto_ellipsis_ = false;
+      xtd::forms::flat_button_appearance flat_appearance_;
       xtd::forms::flat_style flat_style_ = xtd::forms::flat_style::standard;
       xtd::drawing::image image_ = xtd::drawing::image::empty;
       xtd::forms::image_list image_list_ = xtd::forms::image_list::empty;

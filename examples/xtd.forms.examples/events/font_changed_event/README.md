@@ -1,12 +1,11 @@
 # font_changed_event
 
-demonstrates the use of [idle](../../../../src/xtd_forms/include/xtd/forms/application.hpp) event.
+demonstrates the use of [idle](../../../../src/xtd.forms/include/xtd/forms/application.h) event.
 
 # Sources
 
-[src/font_changed_event.cpp](src/font_changed_event.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/font_changed_event.cpp](src/font_changed_event.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

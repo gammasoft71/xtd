@@ -9,6 +9,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a picker control that displays available colors along with controls that enable the user to define custom colors.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
@@ -17,18 +19,6 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of color_picker picker.
     /// @include color_picker.cpp
-    /// @par Windows
-    /// @image html color_picker_w.png
-    /// <br>
-    /// @image html color_picker_wd.png
-    /// @par macOS
-    /// @image html color_picker_m.png
-    /// <br>
-    /// @image html color_picker_md.png
-    /// @par Gnome
-    /// @image html color_picker_g.png
-    /// <br>
-    /// @image html color_picker_gd.png
     class forms_export_ color_picker : public control {
     public:
       /// @brief Initializes a new instance of the color_picker class.
@@ -61,7 +51,7 @@ namespace xtd {
 
       /// @brief Occurs when the value of the color property changes.
       /// @ingroup events
-      event<color_picker, event_handler<control&>> color_changed;
+      event<color_picker, event_handler> color_changed;
       
     protected:
       forms::create_params create_params() const override;

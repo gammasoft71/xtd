@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::about_dialog dialog.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <string>
 #include <xtd/delegate.h>
+#include <xtd/ustring.h>
 #include <xtd/drawing/icon.h>
 #include "component.h"
 #include "dialog_style.h"
@@ -15,114 +15,113 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a dialog box that displays about dialog.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
+    /// @par Appearance
+    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+    ///   <tr>
+    ///     <th style="width:100px"></th>
+    ///     <th><b>Windows</b></th>
+    ///     <th><b>macOS</b></th>
+    ///     <th><b>Gnome</b></th>
+    ///   </tr>
+    ///   <tr>
+    ///     <th>Light</th>
+    ///     <td>@image html dialog_about_dialog_w.png</td>
+    ///     <td>@image html dialog_about_dialog_m.png</td>
+    ///     <td>@image html dialog_about_dialog_g.png</td>
+    ///   </tr>
+    ///   <tr>
+    ///     <th>Dark</th>
+    ///     <td>@image html dialog_about_dialog_wd.png</td>
+    ///     <td>@image html dialog_about_dialog_md.png</td>
+    ///     <td>@image html dialog_about_dialog_gd.png</td>
+    ///   </tr>
+    /// </table>
     /// @par Examples
     /// The following code example demonstrate the use of about_dialog dialog.
     /// @include about_dialog.cpp
-    /// @par Windows
-    /// @image html about_dialog_w.png
-    /// <br>
-    /// @image html about_dialog_wd.png
-    /// @par macOS
-    /// @image html about_dialog_m.png
-    /// <br>
-    /// @image html about_dialog_md.png
-    /// @par Gnome
-    /// @image html about_dialog_g.png
-    /// <br>
-    /// @image html about_dialog_gd.png
     /// @par Examples
     /// The following code example demonstrate the use of about_dialog dialog with dialog_styledialog_style tooo system.
     /// @include about_dialog_system.cpp
-    /// @par Windows
-    /// @image html about_dialog_system_w.png
-    /// <br>
-    /// @image html about_dialog_system_wd.png
-    /// @par macOS
-    /// @image html about_dialog_system_m.png
-    /// <br>
-    /// @image html about_dialog_system_md.png
-    /// @par Gnome
-    /// @image html about_dialog_system_g.png
-    /// <br>
-    /// @image html about_dialog_system_gd.png
     class forms_export_ about_dialog final : public component {
     public:
-      /// @brief Represents a creators collection.
-      using creators_collection = xtd::forms::layout::arranged_element_collection<std::string>;
-      /// @brief Represents a designers collection.
-      using designers_collection = xtd::forms::layout::arranged_element_collection<std::string>;
-      /// @brief Represents a documentt writers collection.
-      using doc_writers_collection = xtd::forms::layout::arranged_element_collection<std::string>;
-      /// @brief Represents a translators collection.
-      using translators_collection = xtd::forms::layout::arranged_element_collection<std::string>;
+      /// @brief Represents a author collection.
+      using author_collection = xtd::forms::layout::arranged_element_collection<xtd::ustring>;
+      /// @brief Represents a artist collection.
+      using artist_collection = xtd::forms::layout::arranged_element_collection<xtd::ustring>;
+      /// @brief Represents a documenter collection.
+      using documenter_collection = xtd::forms::layout::arranged_element_collection<xtd::ustring>;
+      /// @brief Represents a translator collection.
+      using translator_collection = xtd::forms::layout::arranged_element_collection<xtd::ustring>;
 
       /// @brief Initializes a new instance of the about_dialog class.
       about_dialog() = default;
       
+      /// @brief Gets the artists array.
+      /// @return The artists array.
+      const artist_collection& artists() const {return artists_;}
+      /// @brief Gets the artists array.
+      /// @return The artists array.
+      artist_collection& artists() {return artists_;}
+      /// @brief Sets the artists array.
+      /// @param artists The artists array.
+      /// @return Current about_dialog instance.
+      about_dialog& artists(const artist_collection& artists) {
+        artists_ = artists;
+        return *this;
+      }
+
+      /// @brief Gets the authors array.
+      /// @return The author array.
+      const author_collection& authors() const {return authors_;}
+      /// @brief Gets the authors array.
+      /// @return The authors array.
+      author_collection& authors() {return authors_;}
+      /// @brief Sets the authors array.
+      /// @param authors The authors array.
+      /// @return Current about_dialog instance.
+      about_dialog& authors(const author_collection& authors) {
+        authors_ = authors;
+        return *this;
+      }
+      
       /// @brief Gets the product copyright.
       /// @return The product copyright.
-      std::string copyright() const {return copyright_;}
+      xtd::ustring copyright() const {return copyright_;}
       /// @brief Sets the product description.
       /// @param copyright The description copyright.
       /// @return Current about_dialog instance.
-      about_dialog& copyright(const std::string& copyright) {
+      about_dialog& copyright(const xtd::ustring& copyright) {
         copyright_ = copyright;
-        return *this;
-      }
-      
-      /// @brief Gets the creators array.
-      /// @return The creator array.
-      const creators_collection& creators() const {return creators_;}
-      /// @brief Gets the creators array.
-      /// @return The creator array.
-      creators_collection& creators() {return creators_;}
-      /// @brief Sets the creators array.
-      /// @param creators The creators array.
-      /// @return Current about_dialog instance.
-      about_dialog& creators(const creators_collection& creators) {
-        creators_ = creators;
-        return *this;
-      }
-      
-      /// @brief Gets the documentation writers array.
-      /// @return The documentation writers array.
-      const doc_writers_collection& doc_writers() const {return doc_writers_;}
-      /// @brief Gets the documentation writers array.
-      /// @return The designers array.
-      doc_writers_collection& doc_writers() {return doc_writers_;}
-      /// @brief Sets the documentation writers array.
-      /// @param doc_writers The documentation writers array.
-      /// @return Current about_dialog instance.
-      about_dialog& doc_writers(const doc_writers_collection& doc_writers) {
-        doc_writers_ = doc_writers;
         return *this;
       }
 
       /// @brief Gets the product description.
       /// @return The product description.
-      std::string description() const {return description_;}
+      xtd::ustring description() const {return description_;}
       /// @brief Sets the product description.
       /// @param description The product description.
       /// @return Current about_dialog instance.
-      about_dialog& description(const std::string& description) {
+      about_dialog& description(const xtd::ustring& description) {
         description_ = description;
         return *this;
       }
-      
-      /// @brief Gets the designers array.
-      /// @return The designers array.
-      const designers_collection& designers() const {return designers_;}
-      /// @brief Gets the designers array.
-      /// @return The designers array.
-      designers_collection& designers() {return designers_;}
-      /// @brief Sets the designers array.
-      /// @param designers The designers array.
+
+      /// @brief Gets the documentation writers array.
+      /// @return The documentation writers array.
+      const documenter_collection& documenters() const {return documenters_;}
+      /// @brief Gets the artists array.
+      /// @return The artists array.
+      documenter_collection& documenters() {return documenters_;}
+      /// @brief Sets the documenters array.
+      /// @param documenters The documenters array.
       /// @return Current about_dialog instance.
-      about_dialog& designers(const designers_collection& designers) {
-        designers_ = designers;
+      about_dialog& documenters(const documenter_collection& documenters) {
+        documenters_ = documenters;
         return *this;
       }
 
@@ -164,80 +163,80 @@ namespace xtd {
 
       /// @brief Gets the product license.
       /// @return The product license.
-      std::string license() const {return license_;}
+      xtd::ustring license() const {return license_;}
       /// @brief Sets the product license.
       /// @param name The product license.
       /// @return Current about_dialog instance.
-      about_dialog& license(const std::string& license) {
+      about_dialog& license(const xtd::ustring& license) {
         license_ = license;
         return *this;
       }
 
       /// @brief Gets the product long version.
       /// @return The product long version.
-      std::string long_version() const {return long_version_;}
+      xtd::ustring long_version() const {return long_version_;}
       /// @brief Sets the product long version.
       /// @param version The version version.
       /// @return Current about_dialog instance.
-      about_dialog& long_version(const std::string& long_version) {
+      about_dialog& long_version(const xtd::ustring& long_version) {
         long_version_ = long_version;
         return *this;
       }
 
       /// @brief Gets the product name.
       /// @return The product name.
-      std::string name() const {return name_;}
+      xtd::ustring name() const {return name_;}
       /// @brief Sets the product name.
       /// @param name The product name.
       /// @return Current about_dialog instance.
-      about_dialog& name(const std::string& name) {
+      about_dialog& name(const xtd::ustring& name) {
         name_ = name;
         return *this;
       }
       
       /// @brief Gets the translators array.
       /// @return The translators array.
-      const translators_collection& translators() const {return translators_;}
+      const translator_collection& translators() const {return translators_;}
       /// @brief Gets the translators array.
       /// @return The translators array.
-      translators_collection& translators() {return translators_;}
+      translator_collection& translators() {return translators_;}
       /// @brief Sets the translators array.
       /// @param translators The translators array.
       /// @return Current about_dialog instance.
-      about_dialog& translators(const translators_collection& translators) {
+      about_dialog& translators(const translator_collection& translators) {
         translators_ = translators;
         return *this;
       }
 
       /// @brief Gets the product version.
       /// @return The product version.
-      std::string version() const {return version_;}
+      xtd::ustring version() const {return version_;}
       /// @brief Sets the product version.
       /// @param version The version version.
       /// @return Current about_dialog instance.
-      about_dialog& version(const std::string& version) {
+      about_dialog& version(const xtd::ustring& version) {
         version_ = version;
         return *this;
       }
       
       /// @brief Gets the product website.
       /// @return The website.
-      std::string website() const {return website_;}
+      xtd::ustring website() const {return website_;}
       /// @brief Sets the product website.
       /// @param website The  product website.
       /// @return Current about_dialog instance.
-      about_dialog& website(const std::string& website) {
+      about_dialog& website(const xtd::ustring& website) {
         website_ = website;
         return *this;
       }
       
       /// @brief Gets the product website label.
       /// @return The product website label.
-      std::string website_label() const {return website_label_;}
+      xtd::ustring website_label() const {return website_label_;}
       /// @brief Sets the product website label.
       /// @param website_label The product website label.
       /// @return Current about_dialog instance.
-      about_dialog& website_label(const std::string& website_label) {
+      about_dialog& website_label(const xtd::ustring& website_label) {
         website_label_ = website_label;
         return *this;
       }
@@ -253,18 +252,18 @@ namespace xtd {
     private:
       xtd::forms::dialog_style dialog_style_ = xtd::forms::dialog_style::standard;
       xtd::drawing::image icon_;
-      std::string name_;
-      std::string version_;
-      std::string long_version_;
-      std::string description_;
-      std::string copyright_;
-      std::string website_;
-      std::string website_label_;
-      creators_collection creators_;
-      doc_writers_collection doc_writers_;
-      translators_collection translators_;
-      designers_collection designers_;
-      std::string license_;
+      xtd::ustring name_;
+      xtd::ustring version_;
+      xtd::ustring long_version_;
+      xtd::ustring description_;
+      xtd::ustring copyright_;
+      xtd::ustring website_;
+      xtd::ustring website_label_;
+      author_collection authors_;
+      documenter_collection documenters_;
+      translator_collection translators_;
+      artist_collection artists_;
+      xtd::ustring license_;
     };
   }
 }

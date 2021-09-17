@@ -4,9 +4,8 @@ represents a window or dialog box that makes up an application's user interface.
 
 # Sources
 
-[src/form2.cpp](src/form2.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/form2.cpp](src/form2.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

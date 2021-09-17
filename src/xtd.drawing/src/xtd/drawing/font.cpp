@@ -29,7 +29,7 @@ font::font(const font& prototype, font_style style) {
   data_->handle_ = native::font::create(data_->original_font_name_, size_in_points(), (data_->style_ & font_style::bold) == font_style::bold, (data_->style_ & font_style::italic) == font_style::italic, (data_->style_ & font_style::underline) == font_style::underline, (data_->style_ & font_style::strikeout) == font_style::strikeout, data_->gdi_char_set_, data_->gdi_vertical_font_);
 }
 
-font::font(std::string family_name, float em_size, font_style style, graphics_unit unit, uint8_t gdi_char_set, bool gdi_vertical_font) {
+font::font(ustring family_name, float em_size, font_style style, graphics_unit unit, uint8_t gdi_char_set, bool gdi_vertical_font) {
   if (em_size <= 0 || em_size == std::numeric_limits<float>::infinity() || std::isnan(em_size)) throw xtd::argument_exception("em_size is less than or equal to 0, evaluates to infinity, or is not a valid number."_t, current_stack_frame_);
   if (unit == graphics_unit::display) throw xtd::argument_exception("unit can't be equal to graphics_unit::display."_t, current_stack_frame_);
   try {
@@ -48,7 +48,7 @@ font::font(std::string family_name, float em_size, font_style style, graphics_un
 
 font::font(intptr_t handle) {
   data_->handle_ = handle;
-  std::string family_name;
+  ustring family_name;
   bool bold = false, italic = false, underline = false, strikeout = false;
   native::font::get_information(data_->handle_, family_name, data_->size_, bold, italic, underline, strikeout, data_->gdi_char_set_, data_->gdi_vertical_font_);
   try {
@@ -102,7 +102,7 @@ int32_t font::height() const {
 font font::from_hdc(const intptr_t hdc) {
   font font;
   font.data_->handle_ = native::font::create_from_hdc(hdc);
-  std::string family_name;
+  ustring family_name;
   bool bold = false, italic = false, underline = false, strikeout = false;
   native::font::get_information(font.data_->handle_, family_name, font.data_->size_, bold, italic, underline, strikeout, font.data_->gdi_char_set_, font.data_->gdi_vertical_font_);
   try {

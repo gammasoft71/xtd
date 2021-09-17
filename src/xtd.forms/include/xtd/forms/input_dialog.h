@@ -13,54 +13,20 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a common dialog box that displays input box.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
     /// @par Examples
     /// The following code example demonstrate the use of input_dialog dialog.
     /// @include input_dialog.cpp
-    /// @par Windows
-    /// @image html input_dialog_w.png
-    /// <br>
-    /// @image html input_dialog_wd.png
-    /// @par macOS
-    /// @image html input_dialog_m.png
-    /// <br>
-    /// @image html input_dialog_md.png
-    /// @par Gnome
-    /// @image html input_dialog_g.png
-    /// <br>
-    /// @image html input_dialog_gd.png
     /// @par Examples
     /// The following code example demonstrate the use of input_dialog dialog with multiline.
     /// @include input_dialog_multiline.cpp
-    /// @par Windows
-    /// @image html input_dialog_multiline_w.png
-    /// <br>
-    /// @image html input_dialog_multiline_wd.png
-    /// @par macOS
-    /// @image html input_dialog_multiline_m.png
-    /// <br>
-    /// @image html input_dialog_multiline_md.png
-    /// @par Gnome
-    /// @image html input_dialog_multiline_g.png
-    /// <br>
-    /// @image html input_dialog_multiline_gd.png
     /// @par Examples
     /// The following code example demonstrate the use of input_dialog dialog with password.
     /// @include input_dialog_password.cpp
-    /// @par Windows
-    /// @image html input_dialog_password_w.png
-    /// <br>
-    /// @image html input_dialog_password_wd.png
-    /// @par macOS
-    /// @image html input_dialog_passwordpassword_m.png
-    /// <br>
-    /// @image html input_dialog_password_md.png
-    /// @par Gnome
-    /// @image html input_dialog_password_g.png
-    /// <br>
-    /// @image html input_dialog_multiline_gd.png
     class forms_export_ input_dialog : public common_dialog {
     public:
       /// @brief Initializes a new instance of the input_dialog class.
@@ -76,8 +42,8 @@ namespace xtd {
         if (character_casing_ != character_casing) {
           character_casing_ = character_casing;
           switch (character_casing_) {
-            case xtd::forms::character_casing::upper: value_ = xtd::strings::to_upper(value_); break;
-            case xtd::forms::character_casing::lower: value_ = xtd::strings::to_lower(value_); break;
+            case xtd::forms::character_casing::upper: value_ = value_.to_upper(); break;
+            case xtd::forms::character_casing::lower: value_ = value_.to_lower(); break;
             default: break;
           }
         }
@@ -112,11 +78,11 @@ namespace xtd {
 
       /// @brief Gets the text message.
       /// @return The text message.
-      std::string messsage() const {return message_;}
+      xtd::ustring messsage() const {return message_;}
       /// @brief Sets the text message.
       /// @param message The text message.
       /// @return Current input_dialog instance.
-      input_dialog& message(const std::string& message) {
+      input_dialog& message(const xtd::ustring& message) {
         if (message_ != message)
           message_ = message;
         return *this;
@@ -124,11 +90,11 @@ namespace xtd {
       
       /// @brief Gets the dialog caption text.
       /// @return The current dialog caption text.
-      std::string text() const {return text_;}
+      xtd::ustring text() const {return text_;}
       /// @brief Sets the dialog caption text.
       /// @param text The new dialog caption text.
       /// @return Current input_dialog instance.
-      input_dialog& text(const std::string& text) {
+      input_dialog& text(const xtd::ustring& text) {
         if (text_ != text)
           text_ = text;
         return *this;
@@ -149,16 +115,16 @@ namespace xtd {
       
       /// @brief Gets the value.
       /// @return The value.
-      std::string value() const {return value_;}
+      xtd::ustring value() const {return value_;}
       /// @brief Sets thevalue.
       /// @param value The value.
       /// @return Current input_dialog instance.
-      input_dialog& value(const std::string& value) {
+      input_dialog& value(const xtd::ustring& value) {
         if (value != value_) {
           switch (character_casing_) {
             case xtd::forms::character_casing::normal: value_ = value; break;
-            case xtd::forms::character_casing::upper: value_ = xtd::strings::to_upper(value); break;
-            case xtd::forms::character_casing::lower: value_ = xtd::strings::to_lower(value); break;
+            case xtd::forms::character_casing::upper: value_ = value.to_upper(); break;
+            case xtd::forms::character_casing::lower: value_ = value.to_lower(); break;
           }
         }
         return *this;
@@ -189,10 +155,10 @@ namespace xtd {
       xtd::forms::character_casing character_casing_ = xtd::forms::character_casing::normal;
       xtd::forms::dialog_style dialog_style_ = xtd::forms::dialog_style::standard;
       bool multiline_ = false;
-      std::string message_;
-      std::string text_;
+      xtd::ustring message_;
+      xtd::ustring text_;
       bool use_system_password_char_ = false;
-      std::string value_;
+      xtd::ustring value_;
       bool word_wrap_ = true;
       /// @endcond
     };

@@ -1,12 +1,11 @@
 # group_box_and_radio_button
 
-demonstrates the use of [xtd::forms::group_box](../../../../src/xtd_forms/include/xtd/forms/group_box.hpp) container and  [xtd::forms::radio_button](../../../../src/xtd_forms/include/xtd/forms/radio_button.hpp) control.
+demonstrates the use of [xtd::forms::group_box](../../../../src/xtd.forms/include/xtd/forms/group_box.h) container and  [xtd::forms::radio_button](../../../../src/xtd.forms/include/xtd/forms/radio_button.h) control.
 
 # Sources
 
-[src/group_box_and_radio_button.cpp](src/group_box_and_radio_button.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/group_box_and_radio_button.cpp](src/group_box_and_radio_button.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

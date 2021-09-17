@@ -1,32 +1,48 @@
 #include <xtd/xtd>
 
 using namespace xtd;
-using namespace xtd::io;
-using namespace xtd::diagnostics;
-using namespace xtd::forms;
+using namespace xtd::drawing;
+using namespace xtd::windows::forms;
 
 class form_main : public form {
 public:
   static void main() {
-    xtd::forms::application::run(form_main());
+    application::run(form_main());
   }
 
   form_main() {
-    background_image(xtd::drawing::system_images::from_name("xtd", xtd::drawing::size(16, 16)));
-    client_size({480, 320});
-    double_buffered(true);
-    text("Assert example");
+    auto_size(true);
+    auto_size_mode(forms::auto_size_mode::grow_and_shrink);
+    close_box(false);
+    maximize_box(false);
+    minimize_box(false);
+    control_box(false);
+    top_most(true);
+    form_border_style(forms::form_border_style::none);
+    opacity(0.5);
 
-    button1.location({10, 10});
-    button1.parent(*this);
-    button1.text("Assert...");
-    button1.click += [] {
-      assert_(false, "Test assert");
+    label1.parent(*this);
+    label1.fore_color(color::lime);
+    label1.height(50);
+    label1.auto_size(true);
+    label1.lcd_style(lcd_style::dot_matrix_display);
+    label1.text("LCD DISPLAY");
+    label1.mouse_down += [&](object& sender, const mouse_event_args& e) {
+      mouse_location = e.location();
+      label1.cursor(cursors::no_move_2d());
+    };
+    label1.mouse_up += [&](object& sender, const mouse_event_args& e) {
+      mouse_location = point::empty;
+      label1.cursor(cursors::default_cursor());
+    };
+    label1.mouse_move += [&](object& sender, const mouse_event_args& e) {
+      if (mouse_location != point::empty) this->location(this->location() + e.location() - mouse_location);
     };
   }
 
 private:
-  button button1;
+  lcd_label label1;
+  point mouse_location = point::empty;
 };
 
 startup_(form_main);

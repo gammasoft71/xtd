@@ -24,6 +24,8 @@ namespace xtd {
     /// @endcond
 
     /// @brief The template class.
+    /// @par Namespace
+    /// xtd::tunit
     /// @par Library
     /// xtd.tunit
     /// @ingroup xtd_tunit
@@ -264,8 +266,8 @@ namespace xtd {
       
       std::string message_to_string(const xtd::tunit::test& test) {
         std::stringstream ss;
-        if (test.line_info() != xtd::tunit::line_info::empty())
-          ss << test.line_info().file_path() << ":" << test.line_info().line_number() << "&#0x0A;";
+        if (test.stack_frame() != xtd::diagnostics::stack_frame::empty())
+          ss << test.stack_frame().get_file_name() << ":" << test.stack_frame().get_file_line_number() << "&#0x0A;";
         ss << "Expected: " << test.expect() << "&#0x0A;";
         ss << "But was : " << test.actual();
         return ss.str();
@@ -273,8 +275,8 @@ namespace xtd {
       
       std::string cdata_message_to_string(const xtd::tunit::test& test) {
         std::stringstream ss;
-        if (test.line_info() != xtd::tunit::line_info::empty())
-          ss << test.line_info().file_path() << ":" << test.line_info().line_number() << std::endl;
+        if (test.stack_frame() != xtd::diagnostics::stack_frame::empty())
+          ss << test.stack_frame().get_file_name() << ":" << test.stack_frame().get_file_line_number() << std::endl;
         ss << "Expected: " << test.expect() << std::endl;
         ss << "But was : " << test.actual();
         return ss.str();

@@ -26,7 +26,7 @@ namespace examples {
         country_flag_picture_box.image(bitmap(any_cast<forms::country>(countries_list_box.selected_item().tag()).flag(), {256, 192}));
         country_flag_squared_picture_box.image(bitmap(any_cast<forms::country>(countries_list_box.selected_item().tag()).flag_squared(), {128, 128}));
         country_emoticon_label.text(any_cast<forms::country>(countries_list_box.selected_item().tag()).emoticon());
-        country_code_label.text(strings::format("Codes : {} ({}) / {}", any_cast<forms::country>(countries_list_box.selected_item().tag()).alpha_3_code(), any_cast<forms::country>(countries_list_box.selected_item().tag()).alpha_2_code(), any_cast<forms::country>(countries_list_box.selected_item().tag()).numeric_code()));
+        country_code_label.text(ustring::format("Codes : {} ({}) / {}", any_cast<forms::country>(countries_list_box.selected_item().tag()).alpha_3_code(), any_cast<forms::country>(countries_list_box.selected_item().tag()).alpha_2_code(), any_cast<forms::country>(countries_list_box.selected_item().tag()).numeric_code()));
       };
       countries_list_box.selected_index(0);
       

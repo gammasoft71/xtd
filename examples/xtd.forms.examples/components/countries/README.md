@@ -1,12 +1,11 @@
 # countries
 
-demonstrates the use of [xtd::forms::countries](../../../../src/xtd_forms/include/xtd/forms/countries.hpp) component.
+demonstrates the use of [xtd::forms::countries](../../../../src/xtd.forms/include/xtd/forms/countries.h) component.
 
 # Sources
 
-[src/countries.cpp](src/countries.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/countries.cpp](src/countries.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

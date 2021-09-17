@@ -48,12 +48,12 @@ namespace minesweeper {
 
     void mark_cell(int x, int y);
 
-    void on_about_menuu_click(xtd::forms::component& sender, const xtd::event_args& e);
-    void on_custom_menu_click(xtd::forms::component& sender, const xtd::event_args& e);
-    void on_game_panel_mouse_up(xtd::forms::control& sender, const xtd::forms::mouse_event_args& e);
-    void on_game_panel_paint(xtd::forms::control& sender, xtd::forms::paint_event_args& e);
-    void on_status_panel_paint(xtd::forms::control& sender, xtd::forms::paint_event_args& e);
-    void on_status_panel_resize(xtd::forms::control& sender, const xtd::event_args& e);
+    void on_about_menuu_click(object& sender, const xtd::event_args& e);
+    void on_custom_menu_click(object& sender, const xtd::event_args& e);
+    void on_game_panel_mouse_up(object& sender, const xtd::forms::mouse_event_args& e);
+    void on_game_panel_paint(object& sender, xtd::forms::paint_event_args& e);
+    void on_status_panel_paint(object& sender, xtd::forms::paint_event_args& e);
+    void on_status_panel_resize(object& sender, const xtd::event_args& e);
     void on_stopwatch_tick();
     
     void uncover_cell(int x, int y);

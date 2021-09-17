@@ -9,13 +9,13 @@ using namespace xtd::drawing;
 int main() {
   bitmap img = bitmap(logo_xpm);
 
-  cout << strings::format("handle = 0x{:X}", img.handle()) << endl;
-  cout << strings::format("horizontal resolution = {}", img.horizontal_resolution()) << endl;
-  cout << strings::format("physical dimension = {}", img.physical_dimension()) << endl;
-  cout << strings::format("raw format = {}", img.raw_format()) << endl;
-  cout << strings::format("vertcal resolution = {}", img.vertical_resolution()) << endl;
-  cout << strings::format("size = {}", img.size()) << endl;
-  cout << strings::format("pixel[50][100] = {}", img.get_pixel(50, 100)) << endl;
+  cout << ustring::format("handle = 0x{:X}", img.handle()) << endl;
+  cout << ustring::format("horizontal resolution = {}", img.horizontal_resolution()) << endl;
+  cout << ustring::format("physical dimension = {}", img.physical_dimension()) << endl;
+  cout << ustring::format("raw format = {}", img.raw_format()) << endl;
+  cout << ustring::format("vertcal resolution = {}", img.vertical_resolution()) << endl;
+  cout << ustring::format("size = {}", img.size()) << endl;
+  cout << ustring::format("pixel[50][100] = {}", img.get_pixel(50, 100)) << endl;
 }
 
 // This code produces the following output:

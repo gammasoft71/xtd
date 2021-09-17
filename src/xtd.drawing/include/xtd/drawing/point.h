@@ -4,7 +4,8 @@
 #pragma once
 #include <cstdint>
 #include <ostream>
-#include <xtd/strings.h>
+#include <xtd/object.h>
+#include <xtd/ustring.h>
 #include "../drawing_export.h"
 #include "point_f.h"
 
@@ -17,6 +18,8 @@ namespace xtd {
     /// @endcond
 
     /// @brief Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional plane.
+    /// @par Namespace
+    /// xtd::drawing
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
@@ -42,7 +45,7 @@ namespace xtd {
     ///   }
     /// }
     /// @endcode
-    class drawing_export_ point {
+    class drawing_export_ point : public object {
     public:
       /// @brief Represents a point that has x and y values set to zero.
       static const point empty;
@@ -81,7 +84,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use the Equality operator and how to construct a point from a size or two integers. It also demonstrates how to use the x and y properties. This example is designed to be used with Windows Forms (xtd.forms). Paste the code into a form that contains a button named button1, and associate the button1_click method with the button's click event.
       /// @code
-      /// void button1_Click(const control& sender, const event_args& e) {
+      /// void button1_click(object& sender, const event_args& e) {
       ///   // Construct a new point with integers.
       ///   point point1(100, 100);
       ///
@@ -93,7 +96,7 @@ namespace xtd {
       ///
       ///   // Call the equality operator to see if the points are equal, and if so print out their x and y values.
       ///   if (point1 == point2) {
-      ///     form_graphics.draw_string(strings::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
+      ///     form_graphics.draw_string(ustring::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
       ///   }
       /// }
       /// @endcode
@@ -104,7 +107,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use the Equality operator and how to construct a point from a size or two integers. It also demonstrates how to use the x and y properties. This example is designed to be used with Windows Forms (xtd.forms). Paste the code into a form that contains a button named button1, and associate the button1_click method with the button's click event.
       /// @code
-      /// void button1_Click(const control& sender, const event_args& e) {
+      /// void button1_click(object& sender, const event_args& e) {
       ///   // Construct a new point with integers.
       ///   point point1(100, 100);
       ///
@@ -116,7 +119,7 @@ namespace xtd {
       ///
       ///   // Call the equality operator to see if the points are equal, and if so print out their x and y values.
       ///   if (point1 == point2) {
-      ///     form_graphics.draw_string(strings::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
+      ///     form_graphics.draw_string(ustring::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
       ///   }
       /// }
       /// @endcode
@@ -137,7 +140,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use the Equality operator and how to construct a point from a size or two integers. It also demonstrates how to use the x and y properties. This example is designed to be used with Windows Forms (xtd.forms). Paste the code into a form that contains a button named button1, and associate the button1_click method with the button's click event.
       /// @code
-      /// void button1_Click(const control& sender, const event_args& e) {
+      /// void button1_click(object& sender, const event_args& e) {
       ///   // Construct a new point with integers.
       ///   point point1(100, 100);
       ///
@@ -149,7 +152,7 @@ namespace xtd {
       ///
       ///   // Call the equality operator to see if the points are equal, and if so print out their x and y values.
       ///   if (point1 == point2) {
-      ///     form_graphics.draw_string(strings::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
+      ///     form_graphics.draw_string(ustring::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
       ///   }
       /// }
       /// @endcode
@@ -160,7 +163,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use the Equality operator and how to construct a point from a size or two integers. It also demonstrates how to use the x and y properties. This example is designed to be used with Windows Forms (xtd.forms). Paste the code into a form that contains a button named button1, and associate the button1_click method with the button's click event.
       /// @code
-      /// void button1_Click(const control& sender, const event_args& e) {
+      /// void button1_click(object& sender, const event_args& e) {
       ///   // Construct a new point with integers.
       ///   point point1(100, 100);
       ///
@@ -172,7 +175,7 @@ namespace xtd {
       ///
       ///   // Call the equality operator to see if the points are equal, and if so print out their x and y values.
       ///   if (point1 == point2) {
-      ///     form_graphics.draw_string(strings::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
+      ///     form_graphics.draw_string(ustring::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
       ///   }
       /// }
       /// @endcode
@@ -183,7 +186,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use the Equality operator and how to construct a point from a size or two integers. It also demonstrates how to use the x and y properties. This example is designed to be used with Windows Forms (xtd.forms). Paste the code into a form that contains a button named button1, and associate the button1_click method with the button's click event.
       /// @code
-      /// void button1_Click(const control& sender, const event_args& e) {
+      /// void button1_Click(object& sender, const event_args& e) {
       ///   // Construct a new point with integers.
       ///   point point1(100, 100);
       ///
@@ -195,7 +198,7 @@ namespace xtd {
       ///
       ///   // Call the equality operator to see if the points are equal, and if so print out their x and y values.
       ///   if (point1 == point2) {
-      ///     form_graphics.draw_string(strings::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
+      ///     form_graphics.draw_string(ustring::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
       ///   }
       /// }
       /// @endcode
@@ -206,7 +209,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use the Equality operator and how to construct a point from a size or two integers. It also demonstrates how to use the x and y properties. This example is designed to be used with Windows Forms (xtd.forms). Paste the code into a form that contains a button named button1, and associate the button1_click method with the button's click event.
       /// @code
-      /// void button1_Click(const control& sender, const event_args& e) {
+      /// void button1_Click(object& sender, const event_args& e) {
       ///   // Construct a new point with integers.
       ///   point point1(100, 100);
       ///
@@ -218,7 +221,7 @@ namespace xtd {
       ///
       ///   // Call the equality operator to see if the points are equal, and if so print out their x and y values.
       ///   if (point1 == point2) {
-      ///     form_graphics.draw_string(strings::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
+      ///     form_graphics.draw_string(ustring::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
       ///   }
       /// }
       /// @endcode
@@ -288,7 +291,7 @@ namespace xtd {
 
       /// @brief Converts this point to a human-readable string.
       /// @return A string that represents this point.
-      std::string to_string() const {return  strings::format("{{x={}, y={}}}", x_, y_);}
+      xtd::ustring to_string() const noexcept override {return  ustring::format("{{x={}, y={}}}", x_, y_);}
 
       /// @brief Converts the specified point_f to a point by truncating the values of the point_f.
       /// @param value The point_f to convert.
@@ -321,7 +324,7 @@ namespace xtd {
 
   template<>
   inline drawing::point parse<drawing::point>(const std::string& str) {
-    auto values = xtd::strings::split(xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(str, "}", ""), " y=", ""), "{x=", ""), {','});
+    auto values = xtd::ustring(str).replace("}", "").replace(" y=", "").replace("{x=", "").split({','});
     return {xtd::parse<int32_t>(values[0]), xtd::parse<int32_t>(values[1])};
   }
 }

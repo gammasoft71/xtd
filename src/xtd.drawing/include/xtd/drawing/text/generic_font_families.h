@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::text::generic_font_families enum class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/strings.h>
+#include <xtd/ustring.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -11,6 +11,8 @@ namespace xtd {
     /// @brief The xtd::drawing::text namespace provides advanced GDI+ typography functionality.
     namespace text {
       /// @brief Specifies a generic font_family object.
+      /// @par Namespace
+      /// xtd::drawing::text
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing

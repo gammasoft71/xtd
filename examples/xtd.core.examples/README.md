@@ -6,7 +6,7 @@
 
 ## [Hello Worlds](hello_worlds/README.md)
 
-* [hello_world_console](hello_worlds/hello_world_console/README.md) The classic first application "Hello, World!" with [xtd::console](../../src/xtd.core/include/xtd/basic_console.h) class.
+* [hello_world_console](hello_worlds/hello_world_console/README.md) The classic first application "Hello, World!" with [xtd::console](../../src/xtd.core/include/xtd/console.h) class.
 * [hello_world_diagnostics](hello_worlds/hello_world_diagnostics/README.md) The classic first application "Hello, World!" with [xtd::diagnostics::trace](../../src/xtd.core/include/xtd/diagnostics/trace.h) class.
 * [hello_world_environment](hello_worlds/hello_world_environment/README.md) The classic first application "Hello, World!" with [xtd::environment](../../src/xtd.core/include/xtd/environment.h) class.
 * [hello_world_io](hello_worlds/hello_world_io/README.md) The classic first application "Hello, World!" with [xtd::io::file](../../src/xtd.core/include/xtd/io/file.h) and [xtd::io::path](../../src/xtd.core/include/xtd/io/path.h) classes.
@@ -14,18 +14,37 @@
 
 ## [Console](console/README.md)
 
-* [console_background_color](console/console_background_color/README.md) shows how to use [xtd::console::background_color](../../src/xtd.core/include/xtd/basic_console.h) method.
-* [console_beep](console/console_beep/README.md) shows how to use [xtd::console::beep](../../src/xtd.core/include/xtd/basic_console.h) method.
-* [console_buffer](console/console_buffer/README.md) shows how to use [xtd::console::buffer_height](../../src/xtd.core/include/xtd/basic_console.h) and [xtd::console::buffer_width](../../src/xtd.core/include/xtd/basic_console.h) methods.
-* [console_color](console/console_color/README.md) shows how to use [xtd::console::background_color](../../src/xtd.core/include/xtd/basic_console.h) and [xtd::console::foreground_color](../../src/xtd.core/include/xtd/basic_console.h) methods.
-* [console_cursor](console/console_cursor/README.md) shows how to use [xtd::console::set_cursor_position](../../src/xtd.core/include/xtd/basic_console.h), [xtd::console::cursor_top](../../src/xtd.core/include/xtd/basic_console.h) and [xtd::console::cursor_left](../../src/xtd.core/include/xtd/basic_console.h) methods.
-* [console_in_out](console/console_in_out/README.md) shows how to use [xtd::console::in](../../src/xtd.core/include/xtd/basic_console.h) and [xtd::console::out](../../src/xtd.core/include/xtd/basic_console.h) streams.
-* [console_read_key](console/console_read_key/README.md) shows how to use [xtd::console::read_key](../../src/xtd.core/include/xtd/basic_console.h) and [xtd::console::key_available](../../src/xtd.core/include/xtd/basic_console.h) methods.
-* [console_read_line](console/console_read_line/README.md) shows how to use [xtd::console::read_line](../../src/xtd.core/include/xtd/basic_console.h) method.
-* [console_song](console/console_song/README.md) shows how to use [xtd::console::beep](../../src/xtd.core/include/xtd/basic_console.h) method.
-* [console_title](console/console_title/README.md) shows how to use [xtd::console::title](../../src/xtd.core/include/xtd/basic_console.h) method.
-* [console_unicode](console/console_unicode/README.md) shows how to use [xtd::console](../../src/xtd.core/include/xtd/basic_console.h) with unicode characters.
-* [wconsole](console/wconsole/README.md) shows how to use [xtd::wconsole](../../src/xtd.core/include/xtd/basic_console.h) class.
+* [console_background_color](console/console_background_color/README.md) shows how to use [xtd::console::background_color](../../src/xtd.core/include/xtd/console.h) method.
+* [console_beep](console/console_beep/README.md) shows how to use [xtd::console::beep](../../src/xtd.core/include/xtd/console.h) method.
+* [console_buffer](console/console_buffer/README.md) shows how to use [xtd::console::buffer_height](../../src/xtd.core/include/xtd/console.h) and [xtd::console::buffer_width](../../src/xtd.core/include/xtd/console.h) methods.
+* [console_color](console/console_color/README.md) shows how to use [xtd::console::background_color](../../src/xtd.core/include/xtd/console.h) and [xtd::console::foreground_color](../../src/xtd.core/include/xtd/console.h) methods.
+* [console_cursor](console/console_cursor/README.md) shows how to use [xtd::console::set_cursor_position](../../src/xtd.core/include/xtd/console.h), [xtd::console::cursor_top](../../src/xtd.core/include/xtd/console.h) and [xtd::console::cursor_left](../../src/xtd.core/include/xtd/console.h) methods.
+* [console_in_out](console/console_in_out/README.md) shows how to use [xtd::console::in](../../src/xtd.core/include/xtd/console.h) and [xtd::console::out](../../src/xtd.core/include/xtd/console.h) streams.
+* [console_read_key](console/console_read_key/README.md) shows how to use [xtd::console::read_key](../../src/xtd.core/include/xtd/console.h) and [xtd::console::key_available](../../src/xtd.core/include/xtd/console.h) methods.
+* [console_read_line](console/console_read_line/README.md) shows how to use [xtd::console::read_line](../../src/xtd.core/include/xtd/console.h) method.
+* [console_song](console/console_song/README.md) shows how to use [xtd::console::beep](../../src/xtd.core/include/xtd/console.h) method.
+* [console_title](console/console_title/README.md) shows how to use [xtd::console::title](../../src/xtd.core/include/xtd/console.h) method.
+* [console_unicode](console/console_unicode/README.md) shows how to use [xtd::console](../../src/xtd.core/include/xtd/console.h) with unicode characters.
+* [wconsole](console/wconsole/README.md) shows how to use [xtd::wconsole](../../src/xtd.core/include/xtd/console.h) class.
+
+## [Convert](convert/README.md)
+
+* [as](convert/as/README.md) shows how to use [xtd::guid](../../src/xtd.core/include/xtd/as.h) operator.
+* [to_byte](convert/to_byte/README.md) shows how to use [xtd::convert](../../src/xtd.core/include/xtd/convert.h) class.
+* [to_int32](convert/to_int32/README.md) shows how to use [xtd::convert](../../src/xtd.core/include/xtd/convert.h) class.
+* [to_ustring](convert/to_ustring/README.md) shows how to use [xtd::convert](../../src/xtd.core/include/xtd/convert.h) class.
+
+# [Delegates](delegates/README.md)
+
+* [action](delegates/action/README.md) shows how to use [xtd::action](../../src/xtd.core/include/xtd/action.h) alias.
+* [action1](delegates/action1/README.md) shows how to simplify code by instantiating the action delegate instead of explicitly defining a new delegate and assigning a named method to it.
+* [action2](delegates/action2/README.md) shows how to simplify code by instantiating the action delegate instead of explicitly defining a new delegate and assigning a named method to it.
+* [action3](action3/README.md) shows how to simplify code by instantiating the action delegate instead of explicitly defining a new delegate and assigning a named method to it.
+* [delegate](delegates/delegate/README.md) shows how to use [xtd::delegate](../../src/xtd.core/include/xtd/delegate.h) class.
+* [delegate_lambda](delegates/delegate_lambda/README.md) shows how to use [xtd::delegate](../../src/xtd.core/include/xtd/delegate.h) class.
+* [delegate_member_method](delegates/delegate_member_method/README.md) shows how to use [xtd::delegate](../../src/xtd.core/include/xtd/delegate.h) class.
+* [delegate_multicast](delegates/delegate_multicast/README.md) shows how to use [xtd::delegate](../../src/xtd.core/include/xtd/delegate.h) class.
+* [event](delegates/event/README.md) shows how to use [xtd::event](../../src/xtd.core/include/xtd/event.h) class.
 
 ## [Diagnostics](diagnostics/README.md)
 
@@ -48,6 +67,11 @@
 * [environment_expand_environment_variables](environment/environment_expand_environment_variables/README.md) shows how to use [xtd::environment::expand_environment_variables](../../src/xtd.core/include/xtd/environment.h) method.
 * [environment_stack_trace](environment/environment_stack_trace/README.md) shows how to use [xtd::environment::stack_trace](../../src/xtd.core/include/xtd/environment.h) method.
 * [environment_tick_count](environment/environment_tick_count/README.md) shows how to use [xtd::environment::tick_count](../../src/xtd.core/include/xtd/environment.h) method.
+
+## [Exceptions](exceptions/README.md)
+
+* [exception_ptr](exception_ptr/README.md) shows how to use std::exception_ptr and [invalid_operation_exception](../../src/xtd.core/include/xtd/invalid_operation_exception.h) exception.
+* [system_exception](exceptions/system_exception/README.md) shows how to use [xtd::system_exception](../../src/xtd.core/include/xtd/system_exception.h) exception.
 
 ## [Format](format/README.md)
 
@@ -75,23 +99,44 @@
 * [format_with_alignment](format/format_with_alignment/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with specified alignment args.
 * [format_with_order](format/format_with_order/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with specified order args.
 
+## [Guid](guid/README.md)
+
+* [guid](guid/guid/README.md) shows how to use [xtd::guid](../../src/xtd.core/include/xtd/guid.h) class.
+
 ## [Keywords](keywords/README.md)
 
-* [block_scope](keywords/block_scope/README.md) shows how to use [xtd::block_scope](../../../src/xtd.core/include/xtd/block_scope.h) method.
-* [current_stack_frame](keywords/current_stack_frame/README.md) shows how to use [xtd::diagnostics::stack_frame(../../../src/xtd.core/include/xtd/diagnostics/starck_frame.h) method.
-* [csf](keywords/csf/README.md) shows how to use [xtd::diagnostics::stack_frame(../../../src/xtd.core/include/xtd/diagnostics/starck_frame.h) method.
-* [interface](keywords/interface/README.md) shows how to use [xtd::interface](../../../src/xtd.core/include/xtd/interface.h) method.
-* [interface2](keywords/interface2/README.md) shows how to use [xtd::interface](../../../src/xtd.core/include/xtd/interface.h) method.
-* [startup](keywords/startup/README.md) shows how to use [xtd::startup](../../../src/xtd.core/include/xtd/startup.h) method.
-* [static](keywords/static/README.md) shows how to use [xtd::static](../../../src/xtd.core/include/xtd/static.h) method.
-* [static_class](keywords/static_class/README.md) shows how to use [xtd::static_class](../../../src/xtd.core/include/xtd/static_class.h) method.
-* [static_class2](keywords/static_class2/README.md) shows how to use [xtd::static_class](../../../src/xtd.core/include/xtd/static_class.h) method.
-* [using](keywords/using/README.md) shows how to use [xtd::using](../../../src/xtd.core/include/xtd/using.h) method.
+* [block_scope](keywords/block_scope/README.md) shows how to use [xtd::block_scope](../../src/xtd.core/include/xtd/block_scope.h) method.
+* [current_stack_frame](keywords/current_stack_frame/README.md) shows how to use [xtd::diagnostics::stack_frame(../../src/xtd.core/include/xtd/diagnostics/starck_frame.h) method.
+* [csf](keywords/csf/README.md) shows how to use [xtd::diagnostics::stack_frame(../../src/xtd.core/include/xtd/diagnostics/starck_frame.h) method.
+* [interface](keywords/interface/README.md) shows how to use [xtd::interface](../../src/xtd.core/include/xtd/interface.h) method.
+* [interface2](keywords/interface2/README.md) shows how to use [xtd::interface](../../src/xtd.core/include/xtd/interface.h) method.
+* [startup](keywords/startup/README.md) shows how to use [xtd::startup](../../src/xtd.core/include/xtd/startup.h) method.
+* [static](keywords/static/README.md) shows how to use [xtd::static](../../src/xtd.core/include/xtd/static.h) method.
+* [static_class](keywords/static_class/README.md) shows how to use [xtd::static_class](../../src/xtd.core/include/xtd/static_class.h) method.
+* [static_class2](keywords/static_class2/README.md) shows how to use [xtd::static_class](../../src/xtd.core/include/xtd/static_class.h) method.
+* [using](keywords/using/README.md) shows how to use [xtd::using](../../src/xtd.core/include/xtd/using.h) method.
+
+## [Math](math/README.md)
+
+* [math](math/math/README.md) uses several mathematical and trigonometric functions from the [xtd::math](../../src/xtd.core/include/xtd/math.h) class to calculate the inner angles of a trapezoid.
+
+## [Network](network/README.md)
+
+* [dns_get_host_addresses](network/dns_get_host_addresses/README.md) shows hows how to use [xtd::net::dns](../../src/xtd.core/include/xtd/net/dns.h) class.
+* [dns_get_host_entry](network/dns_get_host_entry/README.md) shows hows how to use [xtd::net::dns](../../src/xtd.core/include/xtd/net/dns.h) class.
+* [network_stream](network/network_stream/README.md) shows hows how to use [xtd::net::sockets::network_stream](../../src/xtd.core/include/xtd/net/sockets/network_stream.h) class.
+* [socket_tcp_ip_v4](network/socket_tcp_ip_v4/README.md) shows hows how to use [xtd::net::sockets::socket](../../src/xtd.core/include/xtd/net/sockets/socket.h) class.
+* [socket_tcp_ip_v4_without_thread](network/socket_tcp_ip_v4_without_thread/README.md) shows hows how to use [xtd::net::sockets::socket](../../src/xtd.core/include/xtd/net/sockets/socket.h) class.
+* [socket_tcp_ip_v6](network/socket_tcp_ip_v6/README.md) shows hows how to use [xtd::net::sockets::socket](../../src/xtd.core/include/xtd/net/sockets/socket.h) class.
+* [socket_udp_ip_v4](network/socket_udp_ip_v4/README.md) shows hows how to use [xtd::net::sockets::socket](../../src/xtd.core/include/xtd/net/sockets/socket.h) class.
+* [socket_udp_ip_v6](network/socket_udp_ip_v6/README.md) shows hows how to use [xtd::net::sockets::socket](../../src/xtd.core/include/xtd/net/sockets/socket.h) class.
+* [tcp_client_ip_v4](nettwork/tcp_client_ip_v4/README.md) shows hows how to use [xtd::net::sockets::tcp_client](../../src/xtd.core/include/xtd/net/sockets/tcp_client.h) class.
+* [tcp_client_ip_v6](nettwork/tcp_client_ip_v6/README.md) shows hows how to use [xtd::net::sockets::tcp_client](../../src/xtd.core/include/xtd/net/sockets/tcp_client.h) class.
 
 ## [Processes](processes/README.md)
 
 * [process_start_info](processes/process_start_info/README.md) shows how to use [xtd::diagnostics:process_start_info](../../src/xtd.core/include/xtd/diagnostics/process_start_info.h) class.
-* [process_with_sandard_output_redirection](processes/process_with_sandard_output_redirection/README.md) shows how to use [xtd::diagnostics:process](../../src/xtd.core/include/xtd/diagnostics/process.h) class with standard output redirection.
+* [process_with_standard_output_redirection](processes/process_with_standard_output_redirection/README.md) shows how to use [xtd::diagnostics:process](../../src/xtd.core/include/xtd/diagnostics/process.h) class with standard output redirection.
 
 ## [random](random/README.md)
 
@@ -112,6 +157,11 @@
 * [split](strings/split/README.md) shows how to use [xtd::strings::split](../../src/xtd.core/include/xtd/strings.h) method.
 * [string_unicode](strings/string_unicode/README.md) shows how to use [xtd::strings](../../src/xtd.core/include/xtd/strings.h) class with unicode.
 
+## [Version](version/README.md)
+
+* [version](version/version/version/README.md) demonstrates the [xtd::version](../../src/xtd.core/include/xtd/version.h) constructor, and major, minor, build, revision, major_revision, and minor_revision properties.
+* [version_os](version/version_os/README.md) shows how to use [xtd::version](../..src/xtd.core/include/xtd/version.h) to get the Operating System version.
+
 ## [Web](web/README.md)
 
 * [css_reader](web/css_reader/README.md) shows how to use [xtd::web/css/reader](../../src/xtd.core/include/xtd/html/css/reader.h) class.
@@ -120,16 +170,17 @@
 ## [Others](others/README.md)
 
 * [bit_converter](others/bit_converter/README.md) shows hows how to use [xtd::bit_converter](../../src/xtd.core/include/xtd/bit_converter.h) class.
-* [console_background_color2](others/console_background_color2/README.md) shows how to use [xtd::console::background_color](../../src/xtd.core/include/xtd/basic_console.h) method.
-* [console_background_color3](others/console_background_color3/README.md) shows how to use [xtd::console::background_color](../../src/xtd.core/include/xtd/basic_console.h) method.
-* [console_beep2](others/console_beep2/README.md) shows how to use [xtd::console::beep](../../src/xtd.core/include/xtd/basic_console.h) method.
-* [console_beep3](others/console_beep3/README.md) shows how to use [xtd::console::beep](../../src/xtd.core/include/xtd/basic_console.h) method.
-* [console_color2](others/console_color2/README.md) shows how to use [xtd::console::background_color](../../src/xtd.core/include/xtd/basic_console.h) and [xtd::console::foreground_color](../../../src/xtd.core/include/xtd/basic_console.h) methods.
-* [console_color3](others/console_color3/README.md) shows how to use [xtd::console::background_color](../../src/xtd.core/include/xtd/basic_console.h) and [xtd::console::foreground_color](../../../src/xtd.core/include/xtd/basic_console.h) methods.
-* [console_color4](cothers/onsole_color4/README.md) shows how to use [xtd::console::background_color](../../src/xtd.core/include/xtd/basic_console.h) and [xtd::console::foreground_color](../../../src/xtd.core/include/xtd/basic_console.h) methods.
-* [console_read_line](others/console_read_line/README.md) shows how to use [xtd::console::in](../../src/xtd.core/include/xtd/basic_console.h) stream.
+* [console_background_color2](others/console_background_color2/README.md) shows how to use [xtd::console::background_color](../../src/xtd.core/include/xtd/console.h) method.
+* [console_background_color3](others/console_background_color3/README.md) shows how to use [xtd::console::background_color](../../src/xtd.core/include/xtd/console.h) method.
+* [console_beep2](others/console_beep2/README.md) shows how to use [xtd::console::beep](../../src/xtd.core/include/xtd/console.h) method.
+* [console_beep3](others/console_beep3/README.md) shows how to use [xtd::console::beep](../../src/xtd.core/include/xtd/console.h) method.
+* [console_color2](others/console_color2/README.md) shows how to use [xtd::console::background_color](../../src/xtd.core/include/xtd/console.h) and [xtd::console::foreground_color](../../src/xtd.core/include/xtd/console.h) methods.
+* [console_color3](others/console_color3/README.md) shows how to use [xtd::console::background_color](../../src/xtd.core/include/xtd/console.h) and [xtd::console::foreground_color](../../src/xtd.core/include/xtd/console.h) methods.
+* [console_color4](cothers/onsole_color4/README.md) shows how to use [xtd::console::background_color](../../src/xtd.core/include/xtd/console.h) and [xtd::console::foreground_color](../../src/xtd.core/include/xtd/console.h) methods.
+* [console_read_line](others/console_read_line/README.md) shows how to use [xtd::console::in](../../src/xtd.core/include/xtd/console.h) stream.
+* [fibonacci_series](others/fibonacci_series/README.md) shows how to use [xtd::console](../../src/xtd.core/include/xtd/console.h) and [xtd::ustring](../../../src/xtd.core/include/xtd/ustring.h) classes.
 * [hello_world_console2](others/hello_world_console2/README.md) The same classic first application "Hello World" on the standard output stream with another style.
 * [hello_world_console3](others/hello_world_console3/README.md) The same classic first application "Hello World" on the standard output stream with another style.
 * [hello_world_diagnostics2](others/hello_world_diagnostics2/README.md) The same classic first application "Hello World" on the debug output stream with another style.
 * [hello_world_environment2](others/hello_world_environment2/README.md) The same classic first application "Hello World" environment with another style.
-* [wconsole2](others/wconsole2/README.md) shows how to use [xtd::wconsole](../../src/xtd.core/include/xtd/basic_console.h) class.
+* [wconsole2](others/wconsole2/README.md) shows how to use [xtd::wconsole](../../src/xtd.core/include/xtd/console.h) class.

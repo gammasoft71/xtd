@@ -7,24 +7,14 @@
 namespace xtd {
   namespace forms {
     /// @brief represent a nine segment display class
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
     /// The following code example demonstrate the use of sixteen segment display control.
     /// @include sixteen_segment_display.cpp
-    /// @par Windows
-    /// @image html sixteen_segment_display_w.png
-    /// <br>
-    /// @image html sixteen_segment_display_wd.png
-    /// @par macOS
-    /// @image html sixteen_segment_display_m.png
-    /// <br>
-    /// @image html sixteen_segment_display_md.png
-    /// @par Gnome
-    /// @image html sixteen_segment_display_g.png
-    /// <br>
-    /// @image html sixteen_segment_display_gd.png
     class sixteen_segment_display : public fourteen_segment_display {
     public:
       /// @brief Initialize a new instance of nine_segment_display class.
@@ -47,10 +37,10 @@ namespace xtd {
  
       void draw_back_digit(drawing::graphics& graphics) override {
         fourteen_segment_display::draw_back_digit(graphics);
-        draw_segment_a1(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
-        draw_segment_a2(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
-        draw_segment_d1(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
-        draw_segment_d2(graphics, drawing::color::average(back_color(), back_segment_color(), back_segment_opacity()));
+        draw_segment_a1(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
+        draw_segment_a2(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
+        draw_segment_d1(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
+        draw_segment_d2(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
       }
 
       /// @brief Draw segment a1 on specified graphics with specified color.

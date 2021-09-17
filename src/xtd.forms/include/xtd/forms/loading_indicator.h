@@ -12,39 +12,17 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a loading indicator control.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
     /// The following code example demonstrate the use of loading indicator control.
     /// @include loading_indicator.cpp
-    /// @par Windows
-    /// @image html loading_indicator_w.png
-    /// <br>
-    /// @image html loading_indicator_wd.png
-    /// @par macOS
-    /// @image html loading_indicator_m.png
-    /// <br>
-    /// @image html loading_indicator_md.png
-    /// @par Gnome
-    /// @image html loading_indicator_g.png
-    /// <br>
-    /// @image html loading_indicator_gd.png
     /// @par Examples
     /// The following code example demonstrate the use of loading_indicator control.
     /// @include hello_world_loading_indicator.cpp
-    /// @par Windows
-    /// @image html hello_world_loading_indicator_w.png
-    /// <br>
-    /// @image html hello_world_loading_indicator_wd.png
-    /// @par macOS
-    /// @image html hello_world_loading_indicator_m.png
-    /// <br>
-    /// @image html hello_world_loading_indicator_md.png
-    /// @par Gnome
-    /// @image html hello_world_loading_indicator_g.png
-    /// <br>
-    /// @image html hello_world_loading_indicator_gd.png
     class forms_export_ loading_indicator : public control {
     public:
       /// @brief Initializee a new instance of loading_indicator class.
@@ -81,7 +59,7 @@ namespace xtd {
       void on_paint(xtd::forms::paint_event_args& e) override;
       
     private:
-      void on_timer_tick(timer& timer, const xtd::event_args& e);
+      void on_timer_tick(object& timer, const xtd::event_args& e);
     
       bool is_running_ = false;
       xtd::forms::loading_indicator_style loading_indicator_style_ = xtd::forms::loading_indicator_style::standard;

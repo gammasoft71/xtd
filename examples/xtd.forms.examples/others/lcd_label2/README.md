@@ -1,12 +1,11 @@
 # lcd_label2
 
-demonstrates how to use [xtd::forms::lcd_label](../../../../src/xtd_forms/include/xtd/forms/lcd_label.hpp) control.
+demonstrates how to use [xtd::forms::lcd_label](../../../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
 
 # Sources
 
-[src/lcd_label2.cpp](src/lcd_label2.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/lcd_label2.cpp](src/lcd_label2.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

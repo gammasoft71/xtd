@@ -2,7 +2,7 @@
 
 [This folder](.) contains all examples used by [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/) and more.
 
-[![xtd](../docs/pictures/xtd_header.png)](https://gammasoft71.wixsite.com/xtdpro)
+[![xtd](../docs/pictures/logo.png)](https://gammasoft71.wixsite.com/xtdpro)
 
 ## [xtd.core](xtd.core.examples/README.md)
 
@@ -11,15 +11,21 @@
 * [Hello Worlds](xtd.core.examples/hello_worlds/README.md) contains xtd.core "Hello, World!" examples.
 * [Collections](xtd.core.examples/collections/README.md) contains collections examples.
 * [Console](xtd.core.examples/console/README.md) contains console examples.
+* [Convert](xtd.core.examples/convert/README.md) contains convert examples.
 * [Delegates](xtd.core.examples/delegates/README.md) contains delegates examples.
 * [Diagnostics](xtd.core.examples/diagnostics/README.md) contains diagnostics examples.
 * [Environment](xtd.core.examples/environment/README.md) contains environment examples.
+* [Exceptions](xtd.core.examples/exceptions/README.md) contains exceptions examples.
 * [Format](xtd.core.examples/format/README.md) contains format examples.
+* [Guid](xtd.core.examples/guid/README.md) contains guid examples.
 * [Keywords](xtd.core.examples/keywords/README.md) contains keywords examples.
 * [Mains](xtd.core.examples/mains/README.md) contains main examples.
+* [Math](xtd.core.examples/math/README.md) contains math examples.
+* [Network](xtd.core.examples/network/README.md) contains network examples.
 * [Processes](xtd.core.examples/processes/README.md) contains process examples.
 * [Random](xtd.core.examples/random/README.md) contains random examples.
 * [Strings](xtd.core.examples/strings/README.md) contains strings examples.
+* [Version](xtd.core.examples/version/README.md) contains version examples.
 * [Web](xtd.core.examples/web/README.md) contains web examples.
 * [Others](xtd.core.examples/others/README.md) contains others examples.
 
@@ -46,6 +52,7 @@
 * [events](xtd.forms.examples/events/README.md) contains events examples.
 * [User Controls](xtd.forms.examples/user_controls/README.md) contains custom controls examples.
 * [User dialogs](xtd.forms.examples/user_dialogs/README.md) contains custom dialogs examples.
+* [Drawing](xtd.forms.examples/drawing/README.md) contains drawing examples.
 * [Games](xtd.forms.examples/games/README.md) contains games examples.
 * [Others](xtd.forms.examples/others/README.md) contains others examples.
 

@@ -6,12 +6,12 @@ using namespace std::literals;
 using namespace xtd;
 using namespace xtd::forms;
 
-class something_ready_notifier {
+class something_ready_notifier : public object{
 public:
   something_ready_notifier() = default;
   
   /// @brief Event raised when something is ready. The event is always raised in the message loop of the thread where this object was created.
-  event<something_ready_notifier, event_handler<const something_ready_notifier&>> something_ready;
+  event<something_ready_notifier, event_handler> something_ready;
   
   void on_something_ready() {
     something_ready.invoke(*this, event_args::empty);
@@ -37,7 +37,7 @@ public:
     
     notifier.something_ready += [&] {
       static auto counter = 0;
-      list_box_messages.items().push_back(strings::format("Something ready notified {} times", ++counter));
+      list_box_messages.items().push_back(ustring::format("Something ready notified {} times", ++counter));
       list_box_messages.selected_index(list_box_messages.items().size() - 1);
     };
     

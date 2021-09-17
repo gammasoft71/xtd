@@ -1,12 +1,11 @@
 # toggle_buttons
 
-demonstrates the use of [xtd::forms::toggle_buttons](../../../../src/xtd_forms/include/xtd/forms/toggle_buttons.hpp) toggle_button object collection.
+demonstrates the use of [xtd::forms::toggle_buttons](../../../../src/xtd.forms/include/xtd/forms/toggle_buttons.h) toggle_button object collection.
 
 # Sources
 
-[src/toggle_buttons.cpp](src/toggle_buttons.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/toggle_buttons.cpp](src/toggle_buttons.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 

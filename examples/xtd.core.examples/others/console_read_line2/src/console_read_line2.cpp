@@ -8,7 +8,7 @@ int main() {
   console::out << "Hello ";
   console::out << "World!" << endl;
   console::out << "Enter your name: ";
-  string name;
+  ustring name;
   console::in >> name;
   console::out << "Good day, ";
   console::out << name;

@@ -12,39 +12,17 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a standard Windows label.
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
     /// The following code example demonstrate the use of label control.
     /// @include label.cpp
-    /// @par Windows
-    /// @image html label_w.png
-    /// <br>
-    /// @image html label_wd.png
-    /// @par macOS
-    /// @image html label_m.png
-    /// <br>
-    /// @image html label_md.png
-    /// @par Gnome
-    /// @image html label_g.png
-    /// <br>
-    /// @image html label_gd.png
     /// @par Examples
     /// The following code example demonstrate the use of label control.
     /// @include hello_world_label.cpp
-    /// @par Windows
-    /// @image html hello_world_label_w.png
-    /// <br>
-    /// @image html hello_world_label_wd.png
-    /// @par macOS
-    /// @image html hello_world_label_m.png
-    /// <br>
-    /// @image html hello_world_label_md.png
-    /// @par Gnome
-    /// @image html hello_world_label_g.png
-    /// <br>
-    /// @image html hello_world_label_gd.png
     class forms_export_ label : public control {
     public:
       /// @brief Initializee a new instance of label class.
@@ -81,6 +59,9 @@ namespace xtd {
       /// @return Current label instance.
       /// @remarks You can use this property to align the text within a label to match the layout of controls on your form. For example, if your controls are located to the right edge of the labels, you can set the text_align property to one of the right-aligned horizontal alignments (top_right, middle_right, bottom_right) and the text will be aligned with the right edge of the labels to align with your controls.
       virtual xtd::forms::label& text_align(xtd::forms::content_alignment text_align);
+      
+      /// @brief Occurs when the value of the xtd::forms::label::text_align property has changed.
+      event<label, event_handler> text_align_changed;
 
     protected:
       xtd::forms::create_params create_params() const override;
@@ -88,10 +69,15 @@ namespace xtd {
       xtd::drawing::size measure_control() const override;
       
       void on_font_changed(const xtd::event_args& e) override;
-
-      void on_paint(xtd::forms::paint_event_args& e) override;
-      
+      void on_handle_created(const event_args& e) override;
+      void on_paint(xtd::forms::paint_event_args& e) override;      
       void on_resize(const xtd::event_args& e) override;
+      
+      /// @brief Raises the xtd::forms::label::text_align_changed event.
+      /// @remarks Raising an event invokes the event handler through a delegate.
+      /// @par Notes to Inheritors
+      /// When overriding xtd::forms::label::on_text_align_changed in a derived class, be sure to call the base class's xtd::forms::label::on_text_align_changed method.
+      virtual void on_text_align_changed(const xtd::event_args& e);
       
       void on_text_changed(const xtd::event_args& e) override;
 
