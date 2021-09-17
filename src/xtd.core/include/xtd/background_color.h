@@ -16,6 +16,9 @@ namespace xtd {
   /// @see xtd::console::background_color method.
   class background_color final : public object {
   public:
+    /// @brief Sets the background color of the console.
+    /// @param color A xtd::console_color that specifies the background color of the console; that is, the color that appears behind each character.
+    /// @remarks A change to the background_color method affects only output that is written to individual character cells after the background color is changed. To change the background color of the console window as a whole, set the BackgroundColor property and call the Clear method. The following example provides an illustration.
     explicit background_color(console_color color) : color(color) {}
     
     /// @cond
