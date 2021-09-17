@@ -10,8 +10,8 @@
 using namespace std;
 using namespace xtd;
 
-version::version(const ustring& ver) {
-  *this = parse(ver);
+version::version(const ustring& version) {
+  *this = parse(version);
 }
 
 version::version(int32_t major, int32_t minor) : major_(major), minor_(minor) {
@@ -32,10 +32,6 @@ bool version::operator==(const version& v) const noexcept {
 
 bool version::operator!=(const version& v) const noexcept {
   return !operator==(v);
-}
-
-std::ostream& xtd::operator<<(std::ostream& os, const version& ver) noexcept {
-  return os << ver.to_string();
 }
 
 int32_t version::build() const noexcept {
@@ -120,4 +116,8 @@ xtd::ustring version::to_string(size_t field_count) const {
   if (field_count == 4)
     result << "." << std::to_string(revision_);
   return result.str();
+}
+
+std::ostream& xtd::operator<<(std::ostream& os, const version& ver) noexcept {
+  return os << ver.to_string();
 }

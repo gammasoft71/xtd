@@ -105,7 +105,13 @@ namespace xtd {
     /// @param version A string containing the major, minor, build, and revision numbers, where each number is delimited with a period character ('.').
     /// @exception xtd::argument_exception version has fewer than two components or more than four components.
     /// @exception xtd::argument_out_of_range_exception A major, minor, build, or revision component is less than zero.
-    version(const xtd::ustring& ver);
+    /// @exception xtd::format_exception At least one component of version does not parse to an integer.
+    /// @exception xtd::overflow_exception At least one component of version represents a number greater than std::numeric_limits<int32_t>::max().
+    /// @remarks The version parameter can contain only the components major, minor, build, and revision, in that order, and all separated by periods. There must be at least two components, and at most four. The first two components are assumed to be major and minor. The value of unspecified components is undefined.
+    /// @remarks The format of the version number is as follows. Optional components are shown in square brackets ('[' and ']'):
+    /// @verbatim major.minor[.build[.revision]] @endverbatim
+    /// @remarks All defined components must be integers greater than or equal to 0. For example, if the major number is 6, the minor number is 2, the build number is 1, and the revision number is 3, then version should be "6.2.1.3".
+    version(const xtd::ustring& verion);
     version(int32_t major, int32_t minor);
     version(int32_t major, int32_t minor, int32_t build);
     version(int32_t major, int32_t minor, int32_t build, int32_t revision);
@@ -116,7 +122,6 @@ namespace xtd {
     
     bool operator==(const version& v) const noexcept;
     bool operator!=(const version& v) const noexcept;
-    friend std::ostream& operator <<(std::ostream& os, const version& ver) noexcept;
     /// @endcond
 
     int32_t build() const noexcept;
@@ -149,4 +154,8 @@ namespace xtd {
     int32_t build_ = -1;
     int32_t revision_ = -1;
   };
+
+  /// @cond
+  std::ostream& operator <<(std::ostream& os, const version& ver) noexcept;
+  /// @endcond
 }
