@@ -120,23 +120,11 @@ using namespace std;
 
 using namespace xtd;
 
-enum class version_time {earlier = -1, same = 0, later = 1 };
-
-std::ostream& operator<<(std::ostream& os, version_time value) {return os << to_string(value, {{version_time::earlier, "earlier"}, {version_time::same, "same"}, {version_time::later, "later"}});}
-
 class xtd_core_manual_test : public object {
 public:
   static void main() {
-    version v1(1, 1);
-    version v1a("1.1.0");
-    show_relationship(v1, v1a);
-    
-    version v1b(1, 1, 0, 0);
-    show_relationship(v1b, v1a);
-  }
-private:
-  static void show_relationship(const version& v1, const version& v2) {
-    console::write_line("Relationship of {0} to {1}: {2}", v1, v2, as<version_time>(v1.compare_to(v2)));
+    byte_t b = parse<byte_t>("312");
+    console::write_line("b = {}", b);
   }
 };
 
