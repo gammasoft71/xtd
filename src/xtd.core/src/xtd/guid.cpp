@@ -17,7 +17,7 @@ guid::guid(const std::initializer_list<byte_t>& data) : data_(data) {
   if (data.size() != 16) throw xtd::argument_exception("Vector size must be 16", current_stack_frame_);
 }
 
-guid::guid(int a, int b, int c, const std::vector<byte_t>& d) {
+guid::guid(int32_t a, int32_t b, int32_t c, const std::vector<byte_t>& d) {
   if (d.size() != 8) throw xtd::argument_exception("Vector size must be 8", current_stack_frame_);
   
   data_[0] = static_cast<byte_t>((a & 0xFF000000) >> 24);
@@ -29,11 +29,11 @@ guid::guid(int a, int b, int c, const std::vector<byte_t>& d) {
   data_[6] = static_cast<byte_t>((c & 0xFF00) >> 8);
   data_[7] = static_cast<byte_t>((c & 0x00FF) >> 0);
   
-  for (int index = 0; index < 8; index++)
+  for (int32_t index = 0; index < 8; index++)
     data_[8 + index] = d[index];
 }
 
-guid::guid(int a, short b, short c, byte_t d, byte_t e, byte_t f, byte_t g, byte_t h, byte_t i, byte_t j, byte_t k) noexcept {
+guid::guid(int32_t a, int16_t b, int16_t c, byte_t d, byte_t e, byte_t f, byte_t g, byte_t h, byte_t i, byte_t j, byte_t k) noexcept {
   data_[0] = static_cast<byte_t>((a & 0xFF000000) >> 24);
   data_[1] = static_cast<byte_t>((a & 0x00FF0000) >> 16);
   data_[2] = static_cast<byte_t>((a & 0x0000FF00) >> 8);
