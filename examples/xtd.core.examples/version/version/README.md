@@ -1,6 +1,6 @@
 # version
 
-Shows how to use [xtd::version](../../../src/xtd.core/include/xtd/version.h) to get the Operating System version.
+Demonstrates the [xtd::version](../../../src/xtd.core/include/xtd/version.h) constructor, and major, minor, build, revision, major_revision, and minor_revision properties.
 
 # Sources
 
@@ -19,5 +19,8 @@ xtdc run
 # Output
 
 ```
-Operating System: macOS 11.6.0 (11.6.0.0)
+Standard version:
+  major.minor.build.revision = 2.4.1128.2
+Interim version:
+  major.minor.build.maj_rev/min_rev = 2.4.1128.100/2
 ```
