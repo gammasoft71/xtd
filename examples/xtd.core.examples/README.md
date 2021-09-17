@@ -12,6 +12,16 @@
 * [hello_world_io](hello_worlds/hello_world_io/README.md) The classic first application "Hello, World!" with [xtd::io::file](../../src/xtd.core/include/xtd/io/file.h) and [xtd::io::path](../../src/xtd.core/include/xtd/io/path.h) classes.
 * [hello_world_strings](hello_worlds/hello_world_strings/README.md) The classic first application "Hello, World!" with [xtd::strings](../../src/xtd.core/include/xtd/strings.h) class.
 
+## [Bit converter](bit_converter/README.md)
+
+* [bit_converter_round_trips](bit_converter/bit_converter_round_trips/README.md) shows how to use [xtd::bit_converter](../../src/xtd.core/include/xtd/bitt_converter.h) class.
+
+## [Collections](collections/README.md)
+
+* [vector_list](collections/vector_list/README.md) shows how to use [xtd::collections::vector_list](../../src/xtd.core/include/xtd/collections/vector_list.h) class.
+* [vector_list2](collections/vector_list2/README.md) shows how to use [xtd::collections::vector_list](../../src/xtd.core/include/xtd/collections/vector_list.h) class.
+
+
 ## [Console](console/README.md)
 
 * [console_background_color](console/console_background_color/README.md) shows how to use [xtd::console::background_color](../../src/xtd.core/include/xtd/console.h) method.
