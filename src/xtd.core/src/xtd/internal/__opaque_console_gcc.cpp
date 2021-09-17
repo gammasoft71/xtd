@@ -555,10 +555,10 @@ xtd::console_color __opaque_console::background_color() {
 }
 
 bool __opaque_console::background_color(xtd::console_color color) {
-  if (!terminal::is_ansi_supported()) return;
+  if (!terminal::is_ansi_supported()) return false;
   static std::map<xtd::console_color, const char*> colors {{xtd::console_color::black, "\033[40m"}, {xtd::console_color::dark_blue, "\033[44m"}, {xtd::console_color::dark_green, "\033[42m"}, {xtd::console_color::dark_cyan, "\033[46m"}, {xtd::console_color::dark_red, "\033[41m"}, {xtd::console_color::dark_magenta, "\033[45m"}, {xtd::console_color::dark_yellow, "\033[43m"}, {xtd::console_color::gray, "\033[47m"}, {xtd::console_color::dark_gray, "\033[100m"}, {xtd::console_color::blue, "\033[104m"}, {xtd::console_color::green, "\033[102m"}, {xtd::console_color::cyan, "\033[106m"}, {xtd::console_color::red, "\033[101m"}, {xtd::console_color::magenta, "\033[105m"}, {xtd::console_color::yellow, "\033[103m"}, {xtd::console_color::white, "\033[107m"}};
   auto it = colors.find(color);
-  if (it == colors.end()) return;
+  if (it == colors.end()) return false;
   std::cout << it->second << std::flush;
   backColor = color;
   return true;
@@ -667,10 +667,10 @@ xtd::console_color __opaque_console::foreground_color() {
 }
 
 bool __opaque_console::foreground_color(xtd::console_color color) {
-  if (!terminal::is_ansi_supported()) return;
+  if (!terminal::is_ansi_supported()) return false;
   static std::map<xtd::console_color, const char*> colors {{xtd::console_color::black, "\033[30m"}, {xtd::console_color::dark_blue, "\033[34m"}, {xtd::console_color::dark_green, "\033[32m"}, {xtd::console_color::dark_cyan, "\033[36m"}, {xtd::console_color::dark_red, "\033[31m"}, {xtd::console_color::dark_magenta, "\033[35m"}, {xtd::console_color::dark_yellow, "\033[33m"}, {xtd::console_color::gray, "\033[37m"}, {xtd::console_color::dark_gray, "\033[90m"}, {xtd::console_color::blue, "\033[94m"}, {xtd::console_color::green, "\033[92m"}, {xtd::console_color::cyan, "\033[96m"}, {xtd::console_color::red, "\033[91m"}, {xtd::console_color::magenta, "\033[95m"}, {xtd::console_color::yellow, "\033[93m"}, {xtd::console_color::white, "\033[97m"}};
   auto it = colors.find(color);
-  if (it == colors.end()) return;
+  if (it == colors.end()) return false;
   std::cout << it->second << std::flush;
   foreColor = color;
   return true;
