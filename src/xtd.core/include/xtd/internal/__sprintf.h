@@ -18,7 +18,7 @@ template <>
 inline std::basic_string<char> __sprintf<char>(const char* fmt, ...) {
   va_list args;
   va_start(args, fmt);
-  std::basic_string<char> formated_string(vsnprintf(nullptr, 0, fmt, args), 0);
+  std::basic_string<char> formatted_string(vsnprintf(nullptr, 0, fmt, args), 0);
   va_end(args);
   va_start(args, fmt);
   vsnprintf(&formated_string[0], formated_string.size() + 1, fmt, args);
@@ -33,7 +33,7 @@ inline std::basic_string<wchar_t> __sprintf<wchar_t>(const wchar_t* fmt, ...) {
   va_list args;
   size_t size = 1024;
   int length = 0;
-  std::basic_string<wchar_t> formated_string;
+  std::basic_string<wchar_t> formatted_string;
   bool error = false;
   do {
     formated_string = std::basic_string<wchar_t>(size, 0);

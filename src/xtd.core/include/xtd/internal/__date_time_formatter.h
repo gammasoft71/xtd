@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains __date_time_formater method.
+/// @brief Contains __date_time_formatter method.
 #pragma once
 /// @cond
 #ifndef __XTD_CORE_INTERNAL__
@@ -44,14 +44,14 @@ inline std::basic_string<char_t> __get_brief_month_name(const std::tm& value, co
 }
 
 template<typename char_t>
-inline std::basic_string<char_t> __tm_formater(const char_t* fmt, const std::tm& value, const std::locale& loc) {
+inline std::basic_string<char_t> __tm_formatter(const char_t* fmt, const std::tm& value, const std::locale& loc) {
   std::basic_stringstream<char_t> result;
   result.imbue(loc);
   result << std::put_time(&value, fmt);
   return result.str();
 }
 
-inline std::string __date_time_formater(std::string fmt, const std::tm& time, const std::locale& loc) {
+inline std::string __date_time_formatter(std::string fmt, const std::tm& time, const std::locale& loc) {
   if (fmt.empty()) fmt =  "G";
   if (fmt.size() > 1) __format_exception("Invalid format");
   
@@ -93,7 +93,7 @@ inline std::string __date_time_formater(std::string fmt, const std::tm& time, co
   }
 }
 
-inline std::wstring __date_time_formater(std::wstring fmt, const std::tm& time, const std::locale& loc) {
+inline std::wstring __date_time_formatter(std::wstring fmt, const std::tm& time, const std::locale& loc) {
   if (fmt.empty()) fmt =  L"G";
   if (fmt.size() > 1) __format_exception("Invalid format");
   
@@ -135,11 +135,11 @@ inline std::wstring __date_time_formater(std::wstring fmt, const std::tm& time, 
   }
 }
 
-inline std::string __date_time_formater(std::string fmt, time_t time, const std::locale& loc) {
+inline std::string __date_time_formatter(std::string fmt, time_t time, const std::locale& loc) {
   return __date_time_formater(fmt, *std::localtime(&time), loc);
 }
 
-inline std::wstring __date_time_formater(std::wstring fmt, time_t time, const std::locale& loc) {
+inline std::wstring __date_time_formatter(std::wstring fmt, time_t time, const std::locale& loc) {
   return __date_time_formater(fmt, *std::localtime(&time), loc);
 }
 /// @endcond

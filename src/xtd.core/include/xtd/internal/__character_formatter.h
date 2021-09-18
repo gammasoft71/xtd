@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains __character_formater method.
+/// @brief Contains __character_formatter method.
 #pragma once
 /// @cond
 #ifndef __XTD_CORE_INTERNAL__
@@ -11,7 +11,7 @@
 
 /// @cond
 template<typename char_t, typename value_t>
-inline std::basic_string<char_t> __character_formater(const std::basic_string<char_t>& fmt, value_t value, const std::locale& loc) {
+inline std::basic_string<char_t> __character_formatter(const std::basic_string<char_t>& fmt, value_t value, const std::locale& loc) {
   std::basic_string<char_t> result;
   char32_t codepoint = value;
   if (codepoint < 0x80) {

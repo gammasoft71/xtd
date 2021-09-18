@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains __numeric_formater method.
+/// @brief Contains __numeric_formatter method.
 #pragma once
 /// @cond
 #ifndef __XTD_CORE_INTERNAL__
@@ -7,14 +7,14 @@
 #endif
 /// @endcond
 
-#include "__binary_formater.h"
-#include "__fixed_point_formater.h"
+#include "__binary_formatter.h"
+#include "__fixed_point_formatter.h"
 #include "__format_exception.h"
 #include "__sprintf.h"
 
 /// @cond
 template<typename char_t, typename value_t>
-inline std::basic_string<char_t> __numeric_formater(const std::basic_string<char_t>& fmt, value_t value, const std::locale& loc) {
+inline std::basic_string<char_t> __numeric_formatter(const std::basic_string<char_t>& fmt, value_t value, const std::locale& loc) {
   std::basic_string<char_t> format = fmt;
   if (format.empty()) format = {'G'};
   
