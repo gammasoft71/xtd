@@ -61,7 +61,7 @@ namespace xtd {
     using special_folder_collection = std::vector<std::pair<std::string, std::string>>;
     /// @brief Represents a colors collection.
     using system_color_collection = std::vector<std::pair<std::string, xtd::drawing::color>>;
-    /// @brief Represents a font famlilies collection.
+    /// @brief Represents a font families collection.
     using system_font_family_collection = std::vector<std::pair<std::string, xtd::drawing::font_family>>;
     /// @brief Represents a fonts collection.
     using system_font_collection = std::vector<std::pair<std::string, xtd::drawing::font>>;

@@ -19,7 +19,7 @@ namespace xtd {
     class key_not_found_exception : public system_exception {
     public:
       /// @brief Create a new instance of class key_not_found_exception
-      /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       /// @remarks Message is set with the default message associate to the exception.
       key_not_found_exception(const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(default_message(), info) {}
       /// @brief Create a new instance of class key_not_found_exception

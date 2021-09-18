@@ -4,7 +4,7 @@
 /// @page FormatPage Format
 /// @brief Contains formatting converting documentation
 ///
-/// @section FormatingType Formating Types
+/// @section FormattingType Formatting Types
 ///
 /// Formatting is the process of converting an instance of a class, structure, or enumeration value to its string representation, often so that the resulting string can be displayed to users or deserialized to restore the original data type. This conversion can pose a number of challenges:
 ///
@@ -18,7 +18,7 @@
 /// xtd provides rich formatting support that enables developers to address these requirements.
 ///
 /// This overview contains the following sections:
-/// * @ref FormatingSection
+/// * @ref FormattingSection
 /// * @ref DefaultFormattingUsingOperatorShiftLeftSection
 /// * @ref OverridingShiftLeftoperatorMethodSection
 /// * @ref ToStringMethodAndFormatStringsSection
@@ -34,7 +34,7 @@
 /// * @ref RelatedTopicsSection
 /// * @ref ReferenceSection
 ///
-/// @subsection FormatingSection Formating
+/// @subsection FormattingSection Formatting
 ///
 /// The basic mechanism for formatting is the default implementation of the operator << object method, which is discussed in the @ref DefaultFormattingUsingOperatorShiftLeftSection section later in this topic. xtd.Strings provides several ways to modify and extend its default formatting support. These include the following:
 /// * Overriding the operator << object method to define a custom string representation of an object’s value. For more information, see the @ref OverridingShiftLeftoperatorMethodSection section later in this topic.
