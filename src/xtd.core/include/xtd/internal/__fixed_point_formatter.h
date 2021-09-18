@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains __fixed_point_formater method.
+/// @brief Contains __fixed_point_formatter method.
 #pragma once
 /// @cond
 #ifndef __XTD_CORE_INTERNAL__
@@ -7,16 +7,16 @@
 #endif
 /// @endcond
 
-#include "__character_formater.h"
-#include "__currency_formater.h"
+#include "__character_formatter.h"
+#include "__currency_formatter.h"
 #include "__format_exception.h"
 #include "__format_stringer.h"
-#include "__natural_formater.h"
+#include "__natural_formatter.h"
 #include "__sprintf.h"
 
 /// @cond
 template<typename char_t, typename value_t>
-inline std::basic_string<char_t> __fixed_point_formater(const std::basic_string<char_t>& fmt, value_t value, const std::locale& loc) {
+inline std::basic_string<char_t> __fixed_point_formatter(const std::basic_string<char_t>& fmt, value_t value, const std::locale& loc) {
   if (fmt.empty()) return __format_stringer<char_t>(value);
   
   std::vector<char_t> possible_formats {'c', 'C', 'e', 'E', 'f', 'F', 'g', 'G', 'n', 'N', 'p', 'P'};
