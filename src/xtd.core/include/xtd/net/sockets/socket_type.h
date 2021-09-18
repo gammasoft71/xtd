@@ -21,7 +21,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core
-      /// @remarks Before a xtd::net::sockets::socket can send and receive data, it must first be created using an xtd::net::sockects::address_family, a xtd::net::sockets::socket_type, and a xtd::net::sockets::protocol_type. The xtd::net::sockets::socket_type enumeration provides several options for defining the type of xtd::net::sockets::socket that you intend to open.
+      /// @remarks Before a xtd::net::sockets::socket can send and receive data, it must first be created using an xtd::net::sockets::address_family, a xtd::net::sockets::socket_type, and a xtd::net::sockets::protocol_type. The xtd::net::sockets::socket_type enumeration provides several options for defining the type of xtd::net::sockets::socket that you intend to open.
       /// @note xtd::net::sockets::socket_type will sometimes implicitly indicate which xtd::net::sockets::protocol_type will be used within an xtd::net::sockets::address_family. For example when the xtd::net::sockets::socket_type is xtd::net::sockets::socket_typedgram, the xtd::net::sockets::protocol_type is always xtd::net::sockets::protocol_type::udp. When the xtd::net::sockets::socket_type is xtd::net::sockets::socket_type::stream, the xtd::net::sockets::protocol_type is always xtd::net::sockets::protocol_type::tcp. If you try to create a xtd::net::sockets::socket with an incompatible combination, xtd::net::sockets::socket will throw a xtd::net::sockets::socket_exception.
       enum class socket_type {
         /// @brief Specifies an unknown xtd::net::sockets::socket type.

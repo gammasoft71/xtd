@@ -34,7 +34,7 @@ namespace xtd {
         multicast_option() = default;
         /// @brief Initializes a new instance of the xtd::net::sockets::multicast_option class with the specified IP multicast group and the local interface address.
         /// @param group The xtd::net::ip_address of the multicast group.
-        /// @param local_address The local xtd::net::ip_addres.
+        /// @param local_address The local xtd::net::ip_address.
         multicast_option(const xtd::net::ip_address& group, const xtd::net::ip_address& local_address);
         /// @brief Initializes a new version of the xtd::net::sockets::multicast_option class for the specified IP multicast group.
         /// @param group The xtd::net::ip_address of the multicast group.
@@ -73,16 +73,16 @@ namespace xtd {
 
         /// @brief Gets the local IP address associated with a multicast group.
         /// @return An xtd::net::ip_address that contains the local address associated with a multicast group.
-        const xtd::net::ip_address& local_adress() const noexcept;
+        const xtd::net::ip_address& local_address() const noexcept;
         /// @brief Sets he local IP address associated with a multicast group.
         /// @param value An xtd::net::ip_address that contains the local address associated with a multicast group.
         /// @return the current instance.
-        multicast_option& local_adress(const xtd::net::ip_address& value) noexcept;
+        multicast_option& local_address(const xtd::net::ip_address& value) noexcept;
         
       private:
         xtd::net::ip_address group_ = xtd::net::ip_address::none;
         uint32_t interface_index_ = 0;
-        xtd::net::ip_address local_adress_ = xtd::net::ip_address::none;
+        xtd::net::ip_address local_address_ = xtd::net::ip_address::none;
       };
     }
   }

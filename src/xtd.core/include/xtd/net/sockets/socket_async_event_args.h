@@ -55,7 +55,7 @@ namespace xtd {
         /// @remarks The caller must set the appropriate properties prior to passing the object to the appropriate asynchronous socket (xxx_async) method.
         socket_async_event_args() = default;
         /// @brief Initializes the SocketAsyncEventArgs.
-        /// @param suppress_executioon_context_flow Whether to disable the capturing and flow of execution context. Execution context flow should only be disabled if it's handled by higher layers.
+        /// @param suppress_execution_context_flow Whether to disable the capturing and flow of execution context. Execution context flow should only be disabled if it's handled by higher layers.
         socket_async_event_args(bool suppress_execution_context_flow);
 
         /// @brief Gets the socket to use or the socket created for accepting a connection with an asynchronous socket method.
@@ -88,7 +88,7 @@ namespace xtd {
         /// @param count The maximum amount of data, in bytes, to send or receive in the buffer.
         /// @exception xtd::argument_out_of_range_exception An argument was out of range. This exception occurs if the offset parameter is greater than the length of the array in the xtd::net::sockets::socket_async_event_args::buffer property. This exception also occurs if the count parameter is greater than the length of the array in the xtd::net::sockets::socket_async_event_args::buffer property minus the offset parameter.
         /// @remarks The offset and count parameters can't be negative numbers. The combination of the offset and count parameters must be in bounds of the buffer array in the xtd::net::sockets::socket_async_event_args::buffer property.
-        /// @remarks This method sets the xtd::net::sockets::socket_async_event_args::count property to the count parameter and the xtd::net::sockets::socket_async_event_args::offset property to the offset parameter. If the xtd::net::sockets::socket_async_event_args::buffer property is emptty, this method ignores the offset and count parameters and sets the xtd::net::sockets::socket_async_event_args::offset and xtd::net::sockets::socket_async_event_args::count properties to 0.
+        /// @remarks This method sets the xtd::net::sockets::socket_async_event_args::count property to the count parameter and the xtd::net::sockets::socket_async_event_args::offset property to the offset parameter. If the xtd::net::sockets::socket_async_event_args::buffer property is empty, this method ignores the offset and count parameters and sets the xtd::net::sockets::socket_async_event_args::offset and xtd::net::sockets::socket_async_event_args::count properties to 0.
         /// @remarks This method does not change the xtd::net::sockets::socket_async_event_args::buffer property.
         void set_buffer(size_t offset, size_t count);
         /// @brief Sets the data buffer to use with an asynchronous socket method.
@@ -114,14 +114,14 @@ namespace xtd {
         /// @remarks This method is used to hook up an event handler to be used as the completion callback for a subsequent asynchronous socket operation. The caller must implement at least one callback delegate inherited from this method prior to starting an asynchronous socket operation using one of the asynchronous (xxx_async) methods on the xtd::net::sockets::socket class.
         /// @remarks The caller's xtd::net::sockets::socket_async_event_args::on_completed method provides a way for client applications to complete an asynchronous socket operation. A callback delegate must be implemented when an asynchronous socket operation is initiated. The completion callback delegate(s) inherited from the xtd::net::sockets::socket_async_event_args::on_completed method must contain program logic to finish processing the asynchronous socket operation for the client.
         /// @remarks When an asynchronous operation is signaled, the application uses the xtd::net::sockets::socket_async_event_args object parameter to obtain status of the completed asynchronous socket operation.
-        virtual void on_complet(const socket_async_event_args& e);
+        virtual void on_complete(const socket_async_event_args& e);
         
       private:
         friend socket;
         xtd::net::sockets::socket accept_socket_;
         std::vector<byte_t> buffer_;
         std::vector<std::vector<byte_t>> buffer_list_;
-        size_t bytes_transfered_ = 0;
+        size_t bytes_transferred_ = 0;
         std::unique_ptr<xtd::system_exception> connect_by_name_error_;
         xtd::net::sockets::socket connect_socket_;
         size_t count_ = 0;
