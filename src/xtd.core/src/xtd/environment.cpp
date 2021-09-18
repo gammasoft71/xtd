@@ -8,7 +8,7 @@
 #include <filesystem>
 #include <vector>
 
-// Workaround : Add "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin" to PATH if needed on macOS when debugging on Xcodde...
+// Workaround : Add "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin" to PATH if needed on macOS when debugging on Xcode...
 struct __update__macos_path__ {
   __update__macos_path__() {
     if (!xtd::environment::os_version().is_macos_platform()) return;
