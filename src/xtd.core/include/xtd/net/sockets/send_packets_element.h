@@ -32,7 +32,7 @@ namespace xtd {
       /// @remarks The xtd::net::sockets::send_packets_element class is used to enhance the xtd::net::sockets::socket class for use by server applications that use asynchronous network I/O to achieve the highest performance. The xtd::net::sockets::send_packets_element class is used with the xtd::net::sockets::socket_async_event_args::send_packets_elements property to get or set a data buffer or file to be sent using the xtd::net::sockets::socket::send_packets_async method.
       class send_packets_element {
       public:
-        /// @brief Represent ta std::ifsttrream reference.
+        /// @brief Represent ta std::ifstream reference.
         using ifstream_ref = std::reference_wrapper<std::ifstream>;
         
         /// @brief Initializes a new instance of the xtd::net::sockets::send_packets_element class
@@ -122,7 +122,7 @@ namespace xtd {
         const xtd::ustring& file_path() const noexcept;
         
         /// @brief Gets the object representation of the file to send if the xtd::net::sockets::send_packets_element object was initialized with a std::ifstream parameter.
-        /// @remarks An object representation of the file to send if the xtd::net::sockets::send_packets_element object was initialized with a std::ifstrea parameter.
+        /// @remarks An object representation of the file to send if the xtd::net::sockets::send_packets_element object was initialized with a std::ifstream parameter.
         /// @remarks The default value for the xtd::net::sockets::send_packets_element::file_stream property is empty if the xtd::net::sockets::send_packets_element object was not initialized with a file_stream parameter.
         std::optional<ifstream_ref> file_stream() const noexcept;
 

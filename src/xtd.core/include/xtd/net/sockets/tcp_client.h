@@ -48,7 +48,7 @@ namespace xtd {
         /// @remarks You must call the xtd::net::sockets::tcp_client::connect method before sending and receiving data.
         tcp_client(const xtd::net::ip_end_point& end_point);
         /// @brief The xtd::net::sockets::address_family of the IP protocol.
-        /// @exception xtd::argument_exception The family parameter is not equal to xtd::net::sockects::address_family::inter_network -or- The family parameter is not equal to xtd::net::sockects::address_family::inter_network_v6.
+        /// @exception xtd::argument_exception The family parameter is not equal to xtd::net::sockets::address_family::inter_network -or- The family parameter is not equal to xtd::net::sockets::address_family::inter_network_v6.
         tcp_client(xtd::net::sockets::address_family address_family);
         /// @brief Initializes a new instance of the xtd::net::sockets::tcp_client class and connects to the specified port on the specified host.
         /// @param hostname The DNS name of the remote host to which you intend to connect.

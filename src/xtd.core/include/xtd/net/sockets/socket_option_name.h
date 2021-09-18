@@ -29,7 +29,7 @@ namespace xtd {
         accept_connection = 2,
         /// @brief Allows the socket to be bound to an address that is already in use.
         reuse_address = 4,
-        /// @brief Use keep-alives.
+        /// @brief Use keep-alive.
         keep_alive = 8,
         /// @brief Do not route; send the packet directly to the interface addresses.
         dont_route = 16,

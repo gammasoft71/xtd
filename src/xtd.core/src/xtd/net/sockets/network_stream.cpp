@@ -38,7 +38,7 @@ network_stream::network_stream(const xtd::net::sockets::socket& socket) : std::i
 network_stream::network_stream(const xtd::net::sockets::socket& socket, bool owns_socket) : std::iostream(&stream_buf_), stream_buf_(socket, owns_socket) {
 }
 
-bool network_stream::data_availlable() const {
+bool network_stream::data_available() const {
   return stream_buf_.socket_.available() != 0;
 }
 
