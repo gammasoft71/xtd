@@ -120,7 +120,7 @@ constexpr int32_t SOCKET_ERROR_NOT_SOCKET = 10038;
 /// @ingroup xtd_core_native socket_error
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t SOCKET_ERROR_DESTINATION_ADDDRESS_REQUIRED = 10039;
+constexpr int32_t SOCKET_ERROR_DESTINATION_ADDRESS_REQUIRED = 10039;
 
 /// @brief Datagram message is too long
 /// @par Library

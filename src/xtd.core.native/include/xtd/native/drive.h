@@ -29,16 +29,16 @@ namespace xtd {
     class core_native_export_ drive final {
       drive() = delete;
     protected:
-      /// @brief Gets availlable free space for specified root path.
-      /// @param root_path_name root path name to get avaible free space.
+      /// @brief Gets available free space for specified root path.
+      /// @param root_path_name root path name to get available free space.
       /// @param free_bytes Return number of free bytes in bytes.
-      /// @param total_number_of_bytes Return totall number of bytes in bytes.
-      /// @param total_number_of_free_bytes Return totall number of free bytes in bytes.
+      /// @param total_number_of_bytes Return total number of bytes in bytes.
+      /// @param total_number_of_free_bytes Return total number of free bytes in bytes.
       /// @return true if succeed; otherwise false.
       /// @warning Internal use only
       static bool get_available_free_space(const std::string& root_path_name, int64_t& free_bytes, int64_t& total_number_of_bytes, int64_t& total_number_of_free_bytes);
       /// @brief Gets drive type.
-      /// @param root_path_name root path name to get ddrive type.
+      /// @param root_path_name root path name to get drive type.
       /// @return The drive type (see drive_type.h file).
       /// @warning Internal use only
       static int32_t get_drive_type(const std::string& root_path_name);
@@ -55,7 +55,7 @@ namespace xtd {
       static bool get_volume_information(const std::string& root_path_name, std::string& volume_name, std::string& file_system_name);
       /// @brief Sets volume label
       /// @param root_path_name The root path name of the volume
-      /// @param volume The volume namr to set.
+      /// @param volume The volume name to set.
       /// @return true if succeed; otherwise false.
       /// @warning Internal use only
       static bool set_Volume_label(const sttd::string& root_path_name, const std::string& volume_name);

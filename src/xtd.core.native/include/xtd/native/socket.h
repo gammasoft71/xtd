@@ -106,7 +106,7 @@ namespace xtd {
       /// @param handle The socket handle.
       /// @param socket_option_level The platform-defined option level.
       /// @param socket_option_name The platform-defined option name.
-      /// @param option The option is a result paramter of that is filled with the option value.
+      /// @param option The option is a result parameter of that is filled with the option value.
       /// @param option_length The option size will contains the size of option value.
       /// @return Zero (0) if succeed; otherwise on error.
       /// @warning Internal use only
@@ -115,7 +115,7 @@ namespace xtd {
       /// @param handle The socket handle.
       /// @param socket_option_level One of socket option level values (see socket_option_level_constants.h).
       /// @param socket_option_name One of socket option name values (see socket_option_name_constants.h).
-      /// @param option The option is a result paramter of that is filled with the option value.
+      /// @param option The option is a result parameter of that is filled with the option value.
       /// @param option_length The option size will contains the size of option value.
       /// @return Zero (0) if succeed; otherwise on error.
       /// @warning Internal use only

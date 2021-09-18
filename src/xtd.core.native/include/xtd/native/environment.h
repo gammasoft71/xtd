@@ -48,12 +48,12 @@ namespace xtd {
       static std::vector<std::string> get_command_line_args();
       /// @brief Gets the desktop environment name.
       /// @return std::string A string containing desktop environment name.
-      /// @remarks Returns "windows" on Windows, "macos" on macOS, "budgie" or "cinamon" or "deepin" or "Enlightenment", "étoilé" or "gnome" or "kde" or "lxqt" or "mate" or "pantheon" or "razor" or "unity" or "xfce" on linux.
+      /// @remarks Returns "windows" on Windows, "macos" on macOS, "budgie" or "cinnamon" or "deepin" or "Enlightenment", "étoilé" or "gnome" or "kde" or "lxqt" or "mate" or "pantheon" or "razor" or "unity" or "xfce" on linux.
       /// @remarks Return "" if not found or defined.
       /// @warning Internal use only
       static std::string get_desktop_environment();
       /// @brief Retrieves all environment variable names and their values from the current process, or from the Windows operating system registry key for the current user or local machine.
-      /// @param target The environment variable target (see environment_variable_target.h fille).
+      /// @param target The environment variable target (see environment_variable_target.h file).
       /// @return std::map A dictionary that contains all environment variable names and their values from the source specified by the target parameter; otherwise, an empty dictionary if no environment variables are found.
       /// @warning Internal use only
       static std::map<std::string, std::string>& get_environment_variables(int32_t target);
@@ -72,10 +72,10 @@ namespace xtd {
       /// @warning Internal use only
       static std::string get_machine_name();
       /// @brief Gets a platform id that identifies the operating system platform.
-      /// @return Operating system platform iidentifier (see platform_ids.h file).
+      /// @return Operating system platform identifier (see platform_ids.h file).
       /// @warning Internal use only
       static int32_t get_os_platform_id();
-      /// @brief Gets a xtd::cersion object that identifies the operating system.
+      /// @brief Gets a xtd::version object that identifies the operating system.
       /// @param major return the major version.
       /// @param minor return the minor version, build, and revision numbers for the operating system.
       /// @param build return the build.
@@ -106,8 +106,8 @@ namespace xtd {
       /// @return The user name of the person who is logged on to the operating system.
       /// @warning Internal use only
       static std::string get_user_name();
-      /// @brief Determines whether the current proocessor is arm.
-      /// @return true if the processoris is arm; otherwise, false.
+      /// @brief Determines whether the current processor is arm.
+      /// @return true if the processor is is arm; otherwise, false.
       /// @warning Internal use only
       static bool is_processor_arm();
       /// @brief Determines whether the current operating system is a 64-bit operating system.
