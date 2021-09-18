@@ -35,7 +35,7 @@ namespace xtd {
       cryptography() = delete;
       friend xtd::security::secure_string;
     protected:
-      /// @brief Gets the macine GUID.
+      /// @brief Gets the machine's GUID.
       /// @return A byte array that contains the machine GUID.
       /// @warning Internal use only
       static std::vector<uint8_t> machine_guid();
