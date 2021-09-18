@@ -40,7 +40,7 @@ namespace xtd {
       std::vector<xtd::net::ip_address>& address_list() noexcept;
       /// @brief Set List of IP addresses that are associated with a host.
       /// @param address_list An xtd::net::ip_address array of IP addresses that are associated with a host.
-      /// @return The currentt instance.
+      /// @return The current instance.
       ip_host_entry& address_list(const std::vector<xtd::net::ip_address>& address_list) noexcept;
 
       /// @brief Get List of aliases that are associated with a host.
@@ -51,7 +51,7 @@ namespace xtd {
       std::vector<xtd::ustring>& aliases() noexcept;
       /// @brief Set List of aliases that are associated with a host.
       /// @param aliases A string array of aliases that are associated with a host.
-      /// @return The currentt instance.
+      /// @return The current instance.
       ip_host_entry& aliases(const std::vector<xtd::ustring>& aliases) noexcept;
 
       /// @brief Get the DNS name of the host.
@@ -59,7 +59,7 @@ namespace xtd {
       const xtd::ustring& host_name() const noexcept;
       /// @brief Set the DNS name of the host.
       /// @param hist_name A string represent the DNS name of the host.
-      /// @return The currentt instance.
+      /// @return The current instance.
       ip_host_entry& host_name(const xtd::ustring& host_name) noexcept;
 
     private:
