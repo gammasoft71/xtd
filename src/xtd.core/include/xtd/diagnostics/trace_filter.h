@@ -27,7 +27,7 @@ namespace xtd {
     class trace_filter : public object {
     public:
       /// @brief When overridden in a derived class, determines whether the trace listener should trace the event.
-      /// @param chache The trace_event_cache that contains information for the trace event.
+      /// @param cache The trace_event_cache that contains information for the trace event.
       /// @param source The name of the source.
       /// @param event_type One of the trace_event_type values specifying the type of event that has caused the trace
       /// @param id A trace identifier number.
@@ -41,14 +41,14 @@ namespace xtd {
       trace_filter() = default;
 
       /// @brief determines whether the trace listener should trace the event.
-      /// @param chache The trace_event_cache that contains information for the trace event.
+      /// @param cache The trace_event_cache that contains information for the trace event.
       /// @param source The name of the source.
       /// @param event_type One of the trace_event_type values specifying the type of event that has caused the trace
       /// @param id A trace identifier number.
       /// @param message Message to write.
       bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const xtd::ustring& source, xtd::diagnostics::trace_event_type event_type, int32_t id, const xtd::ustring& message);
       /// @brief determines whether the trace listener should trace the event.
-      /// @param chache The trace_event_cache that contains information for the trace event.
+      /// @param cache The trace_event_cache that contains information for the trace event.
       /// @param source The name of the source.
       /// @param event_type One of the trace_event_type values specifying the type of event that has caused the trace
       /// @param id A trace identifier number.

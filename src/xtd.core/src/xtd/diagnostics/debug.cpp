@@ -193,14 +193,14 @@ void debug::write_line_(const ustring& message, const ustring& category) {
   if (auto_flush_) flush();
 }
 
-xtd::diagnostics::assert_dialog_result debug::assert_dialog(bool condition, const ustring& message, const stack_frame& stack_frrame) {
+xtd::diagnostics::assert_dialog_result debug::assert_dialog(bool condition, const ustring& message, const stack_frame& stack_frame) {
   if (condition == true ) return assert_dialog_result::ignore;
   write_line("---- DEBUG ASSERTION FAILED ----");
   write_line("---- Assert Short Message----");
   write_line(message);
   write_line("---- Assert Long Message----");
   write_line("");
-  write_line(stack_trace(stack_frrame).to_string());
+  write_line(stack_trace(stack_frame).to_string());
   write_line("");
-  return show_assert_dialog_ ? static_cast<xtd::diagnostics::assert_dialog_result>(native::debugger::show_assert_dialog(ustring::format("{}\n\n{}", message, stack_trace(stack_frrame)), "Assertion Failed: Abort=Quit, Retry=Debug, Ignore=Continue")) : assert_dialog_result::retry;
+  return show_assert_dialog_ ? static_cast<xtd::diagnostics::assert_dialog_result>(native::debugger::show_assert_dialog(ustring::format("{}\n\n{}", message, stack_trace(stack_frame)), "Assertion Failed: Abort=Quit, Retry=Debug, Ignore=Continue")) : assert_dialog_result::retry;
 }

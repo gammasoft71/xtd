@@ -42,28 +42,28 @@ namespace xtd {
       stack_frame(size_t skip_frame, bool need_file_info);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that contains only the given file name, and line number.
       /// @param file_name The file name.
-      /// @param line_numer The line number in the specified file.
+      /// @param line_number The line number in the specified file.
       stack_frame(const xtd::ustring& file_name, uint32_t line_number);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that contains only the given file name, line number, and method name.
       /// @param file_name The file name.
-      /// @param line_numer The line number in the specified file.
+      /// @param line_number The line number in the specified file.
       /// @param method_name The method name.
       stack_frame(const xtd::ustring& file_name, uint32_t line_number, const xtd::ustring& method_name);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that contains only the given file name, line number, and column number.
       /// @param file_name The file name.
-      /// @param line_numer The line number in the specified file.
+      /// @param line_number The line number in the specified file.
       /// @param method_name The method name.
       /// @param offset The offset from the code for the method that is being executed.
       stack_frame(const xtd::ustring& file_name, uint32_t line_number, const xtd::ustring& method_name, uint32_t column_number);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that contains only the given file name, line number, and column number.
       /// @param file_name The file name.
-      /// @param line_numer The line number in the specified file.
+      /// @param line_number The line number in the specified file.
       /// @param method_name The method name.
       /// @param column_number The column number in the specified file.
       stack_frame(const xtd::ustring& file_name, uint32_t line_number, uint32_t column_number);
-      /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that contains only the given file name, line number, column number, method name, and ofsset.
+      /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that contains only the given file name, line number, column number, method name, and offset.
       /// @param file_name The file name.
-      /// @param line_numer The line number in the specified file.
+      /// @param line_number The line number in the specified file.
       /// @param method_name The method name.
       /// @param offset The offset from the code for the method that is being executed.
       stack_frame(const xtd::ustring& file_name, uint32_t line_number, const xtd::ustring& method_name, uint32_t column_number, uint32_t offset);
@@ -173,7 +173,7 @@ namespace xtd {
       /// @endcond
 
       /// @brief Defines the value that is returned from the get_offset() method when the offset is unknown. This field is constant.
-      /// @remarks The value of this constant is std::numric_limit<uint32_t>::max().
+      /// @remarks The value of this constant is std::numeric_limit<uint32_t>::max().
       static constexpr const uint32_t OFFSET_UNKNOWN = std::numeric_limits<uint32_t>::max();
       
     private:

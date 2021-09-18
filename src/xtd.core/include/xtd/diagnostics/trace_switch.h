@@ -23,7 +23,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::diagnostics::trace_switch class, using the specified display name and description.
       /// @param display_name The name to display on a user interface.
       /// @param description The description of the switch.
-      /// @remarks he xtd::diagnostics::trace_switch class provides the xtd::diagnostics::trace_switch::trace_error, xtd::diagnostics::trace_switch::trace_warning, xtd::diagnostics::trace_switch::trace_info, and xtd::diagnostics::trace_switcht::trace_verbose properties to test the Level of the switch. The xtd::diagnostics::trace_switch::level property gets or sets the switch's xtd::diagnostics::trace_level.
+      /// @remarks he xtd::diagnostics::trace_switch class provides the xtd::diagnostics::trace_switch::trace_error, xtd::diagnostics::trace_switch::trace_warning, xtd::diagnostics::trace_switch::trace_info, and xtd::diagnostics::trace_switch::trace_verbose properties to test the Level of the switch. The xtd::diagnostics::trace_switch::level property gets or sets the switch's xtd::diagnostics::trace_level.
       /// @note To improve performance, you can make xtd::diagnostics::trace_switch members static in your class.
       trace_switch(const xtd::ustring& display_name, const xtd::ustring& description);
       /// @brief Initializes a new instance of the xtd::diagnostics::trace_switch class, using the specified display name, description, and default value for the switch.
