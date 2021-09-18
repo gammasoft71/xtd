@@ -9,7 +9,7 @@ using namespace xtd;
 using namespace xtd::security;
 
 namespace {
-  vector<byte_t> encript(const xtd::guid& guid, const char value[], size_t length) {
+  vector<byte_t> encrypt(const xtd::guid& guid, const char value[], size_t length) {
     // https://kylewbanks.com/blog/Simple-XOR-Encryption-Decryption-in-Cpp
     auto key = guid.to_string("D");
     vector<byte_t> result;
@@ -18,16 +18,16 @@ namespace {
     return result;
   }
 
-  ustring decript(const xtd::guid& guid, const byte_t value[], size_t length) {
+  ustring decrypt(const xtd::guid& guid, const byte_t value[], size_t length) {
     // https://kylewbanks.com/blog/Simple-XOR-Encryption-Decryption-in-Cpp
-    return ustring(reinterpret_cast<const char*>(encript(guid, reinterpret_cast<const char*>(value), length).data()), length);
+    return ustring(reinterpret_cast<const char*>(encrypt(guid, reinterpret_cast<const char*>(value), length).data()), length);
   }
 }
 
 secure_string::secure_string(const char value[], size_t length) {
   if (value == nullptr) return;
   guid machine_guid(native::cryptography::machine_guid());
-  data_ = encript(guid(native::cryptography::machine_guid()), value, length);
+  data_ = encrypt(guid(native::cryptography::machine_guid()), value, length);
 }
 
 bool secure_string::empty() const noexcept {
@@ -44,5 +44,5 @@ size_t secure_string::size() const noexcept {
 
 std::string secure_string::to_unsecure_string() const noexcept {
   if (empty()) return "";
-  return decript(guid(native::cryptography::machine_guid()), data_.data(), data_.size());
+  return decrypt(guid(native::cryptography::machine_guid()), data_.data(), data_.size());
 }

@@ -38,6 +38,6 @@ void socket_async_event_args::set_buffer(const std::vector<byte_t>& buffer, size
   count_ = count;
 }
 
-void socket_async_event_args::on_complet(const socket_async_event_args& e) {
+void socket_async_event_args::on_complete(const socket_async_event_args& e) {
   completed(e);
 }

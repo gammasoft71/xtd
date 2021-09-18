@@ -273,10 +273,10 @@ double math::round(double value) {
 }
 
 double math::round(double value, int32_t decimals) {
-  double muliplicator = 1;
+  double multiplicator = 1.0;
   for (int32_t index = 0; index < decimals; index++)
-    muliplicator *= 10;
-  return math::floor((value * muliplicator) + 0.5) / muliplicator;
+      multiplicator *= 10.0;
+  return math::floor((value * multiplicator) + 0.5) / multiplicator;
 }
 
 int32_t math::sign(decimal_t value) {

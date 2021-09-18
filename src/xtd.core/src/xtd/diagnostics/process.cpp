@@ -20,7 +20,7 @@ namespace {
   boolean_switch show_debug_process("process", "Shows xtd::diagnostics::process log", "false");
 }
 
-// This delehgate will be initialized by __init_process_message_box_message__ in xtd.forns/src/xtd/forms/appllication.cpp file.
+// This delegate will be initialized by __init_process_message_box_message__ in xtd.forms/src/xtd/forms/application.cpp file.
 // This operation can be done only if xtd.forms lib is present.
 //xtd::delegate<void(const xtd::ustring&)> process::message_box_message_;
 

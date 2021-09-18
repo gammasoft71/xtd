@@ -627,14 +627,14 @@ size_t socket::end_receive_from(std::shared_ptr<xtd::iasync_result> ar, std::sha
   return as<async_result_receive_from>(ar)->number_of_bytes_received_;
 }
 
-size_t socket::end_receive_message_from(std::shared_ptr<xtd::iasync_result> ar, xtd::net::sockets::socket_flags& socket_flags, std::shared_ptr<xtd::net::end_point>& end_point, ip_packet_information& ip_packet_informattion) {
+size_t socket::end_receive_message_from(std::shared_ptr<xtd::iasync_result> ar, xtd::net::sockets::socket_flags& socket_flags, std::shared_ptr<xtd::net::end_point>& end_point, ip_packet_information& ip_packet_information) {
   if (ar == nullptr) throw argument_null_exception(csf_);
   if (!is<async_result_receive_message_from>(ar)) throw argument_exception(csf_);
   lock_guard<shared_mutex> lock(ar->async_mutex());
   if (as<async_result_receive_message_from>(ar)->exception_) rethrow_exception(as<async_result_receive_message_from>(ar)->exception_);
   end_point = as<async_result_receive_message_from>(ar)->end_point_;
   socket_flags = as<async_result_receive_message_from>(ar)->socket_flags_;
-  ip_packet_informattion = as<async_result_receive_message_from>(ar)->ip_packet_information_;
+  ip_packet_information = as<async_result_receive_message_from>(ar)->ip_packet_information_;
   return as<async_result_receive_message_from>(ar)->number_of_bytes_received_;
 }
 
