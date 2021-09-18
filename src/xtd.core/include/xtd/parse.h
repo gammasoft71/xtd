@@ -13,16 +13,16 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   template<typename value_t>
-  inline value_t parse(const std::string& str) {__throw_parse_format_exception("Parse speciailisation not found"); return {};}
+  inline value_t parse(const std::string& str) {__throw_parse_format_exception("Parse specialisation not found"); return {};}
 
   template<typename value_t>
-  inline value_t parse(const std::string& str, const std::string& fmt) {__throw_parse_format_exception("Parse speciailisation not found"); return {};}
+  inline value_t parse(const std::string& str, const std::string& fmt) {__throw_parse_format_exception("Parse specialisation not found"); return {};}
 
   template<>
   inline std::string parse<std::string>(const std::string& str) {return str;}
 
   template<typename value_t>
-  inline value_t parse(const std::string& str, number_styles) {__throw_parse_format_exception("Parse speciailisation not found"); return {};}
+  inline value_t parse(const std::string& str, number_styles) {__throw_parse_format_exception("Parse specialisation not found"); return {};}
   
   template<>
   inline int8_t parse<int8_t>(const std::string& str, number_styles styles) {return __parse_number<int8_t>(str, styles);}
@@ -120,13 +120,13 @@ namespace xtd {
   }
 
   template<typename value_t>
-  inline value_t parse(const std::wstring& str) {__throw_parse_format_exception("Parse speciailisation not found"); return {};}
+  inline value_t parse(const std::wstring& str) {__throw_parse_format_exception("Parse specialisation not found"); return {};}
 
   template<typename value_t>
-  inline value_t parse(const std::u16string& str) {__throw_parse_format_exception("Parse speciailisation not found"); return {};}
+  inline value_t parse(const std::u16string& str) {__throw_parse_format_exception("Parse specialisation not found"); return {};}
 
   template<typename value_t>
-  inline value_t parse(const std::u32string& str) {__throw_parse_format_exception("Parse speciailisation not found"); return {};}
+  inline value_t parse(const std::u32string& str) {__throw_parse_format_exception("Parse specialisation not found"); return {};}
 
   template<typename value_t, typename char_t>
   inline bool try_parse(const std::basic_string<char_t>& str, value_t& value) {

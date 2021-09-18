@@ -5,7 +5,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief The specified expression is cleared automaticaly when the scope is ended.
+  /// @brief The specified expression is cleared automatically when the scope is ended.
   /// @par Namespace
   /// xtd
   /// @par Library

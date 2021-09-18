@@ -12,7 +12,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core events
   /// @paramt object_t the owner object type of the event.
-  /// @paramt handler_t Tipically a xtd::event_handler or inherited type.
+  /// @paramt handler_t Typically a xtd::event_handler or inherited type.
   /// @remarks Only an object of type object_t can be create and invoke event.
   /// @par Examples
   /// The following example cshow hot to use event.

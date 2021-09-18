@@ -11,7 +11,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  /// @param args variables to suppress the unsed warning
+  /// @param args variables to suppress the unused warning
   /// @par Examples
   /// This example sho how to use Unused():
   /// @include unused.cpp
@@ -24,7 +24,7 @@ namespace xtd {
   /// @par Library
   /// xtd_core
   /// @ingroup xtd_core keywords
-  /// @param args variables to suppress the unsed warning
+  /// @param args variables to suppress the unused warning
   /// @par Examples
   /// This example sho how to use Unused():
   /// @include unused.cpp
