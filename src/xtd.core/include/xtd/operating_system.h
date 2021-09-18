@@ -32,7 +32,7 @@ namespace xtd {
     /// @brief Initializes a new instance of the operating_system class, using the specified platform identifier value and version object.
     /// @param platform One of the xtd::platform_id values that indicates the operating system platform.
     /// @param version A Version object that indicates the version of the operating system.
-    /// @param service_pack A string, such as "Service Pack 3", that represent the sercie pack. If no Service Pack has been installed, the string must be empty.
+    /// @param service_pack A string, such as "Service Pack 3", that represent the service pack. If no Service Pack has been installed, the string must be empty.
     /// @exception ArgumentNullException version is null.
     /// @exception ArgumentException platform is not a xtd::platform_id enumeration value.
     operating_system(xtd::platform_id platform, const xtd::version& version, const xtd::ustring& service_pack) : platform_(platform), version_(version), service_pack_(service_pack) {}
@@ -40,7 +40,7 @@ namespace xtd {
     /// @brief Initializes a new instance of the operating_system class, using the specified platform identifier value and version object.
     /// @param platform One of the xtd::platform_id values that indicates the operating system platform.
     /// @param version A Version object that indicates the version of the operating system.
-    /// @param service_pack A string, such as "Service Pack 3", that represent the sercie pack. If no Service Pack has been installed, the string must be empty.
+    /// @param service_pack A string, such as "Service Pack 3", that represent the service pack. If no Service Pack has been installed, the string must be empty.
     /// @param desktop_environment A string, such as "gnome", "kde", "windows", "macos".
     /// @exception ArgumentNullException version is null.
     /// @exception ArgumentException platform is not a xtd::platform_id enumeration value.
@@ -49,7 +49,7 @@ namespace xtd {
     /// @brief Initializes a new instance of the operating_system class, using the specified platform identifier value and version object.
     /// @param platform One of the xtd::platform_id values that indicates the operating system platform.
     /// @param version A Version object that indicates the version of the operating system.
-    /// @param service_pack A string, such as "Service Pack 3", that represent the sercie pack. If no Service Pack has been installed, the string must be empty.
+    /// @param service_pack A string, such as "Service Pack 3", that represent the service pack. If no Service Pack has been installed, the string must be empty.
     /// @param desktop_environment A string, such as "gnome", "kde", "windows", "macos".
     /// @exception ArgumentNullException version is null.
     /// @exception ArgumentException platform is not a xtd::platform_id enumeration value.

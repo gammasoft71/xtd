@@ -109,7 +109,7 @@ namespace xtd {
     /// @remarks Using the clear method is equivalent invoking the MS-DOS cls command in the command prompt window.
     /// @remarks When the Clear method is called, the cursor automatically scrolls to the top-left corner of the window and the contents of the screen buffer are set to blanks using the current foreground background colors.
     /// @par Examples
-    /// The following example uses the cear method to clear the console before it executes a loop, prompts the user to select a foreground and background color and to enter a string to display. If the user chooses not to exit the program, the console's original foreground and background colors are restored and the Clear method is called again before re-executing the loop.
+    /// The following example uses the clear method to clear the console before it executes a loop, prompts the user to select a foreground and background color and to enter a string to display. If the user chooses not to exit the program, the console's original foreground and background colors are restored and the Clear method is called again before re-executing the loop.
     /// @include console_clear.cpp
     /// The example relies on a get_key_press method to validate the user's selection of a foreground and background color.
     /// @par Examples
@@ -194,13 +194,13 @@ namespace xtd {
     
     /// @brief Gets a value that indicates whether the error output stream has been redirected from the standard error stream.
     /// @param true if error output is redirected; otherwise, false.
-    static bool is_error_redireted();
+    static bool is_error_redirected();
     /// @brief  Gets a value that indicates whether the input stream has been redirected from the standard input stream.
     /// @param true if input is redirected; otherwise, false.
-    static bool is_in_redireted();
+    static bool is_in_redirected();
     /// @brief  Gets a value that indicates whether the output stream has been redirected from the standard output stream.
     /// @param true if output is redirected; otherwise, false.
-    static bool is_out_redireted();
+    static bool is_out_redirected();
     
     /// @brief Gets a value indicating whether a key press is available in the input stream.
     /// @param true if a key press is available; otherwise, false
@@ -212,7 +212,7 @@ namespace xtd {
     /// @param The height of the largest possible console window measured in rows.
     static int32_t largest_window_height();
     /// @brief Gets the largest possible number of console window columns, based on the current font and screen resolution.
-    /// @param The width of the largest possible console window measured in colomns.
+    /// @param The width of the largest possible console window measured in columns.
     static int32_t largest_window_width();
     
     /// @brief Gets a value indicating whether the NUM LOCK keyboard toggle is turned on or turned off.
@@ -272,7 +272,7 @@ namespace xtd {
     /// @brief Sets the int property to the specified std::istream object.
     /// @param os A stream that is the new standard input.
     /// @remarks By default, the in property is set to the standard input stream.
-    /// @remarks A std::istream that encapsulates a std::ifstream can be used to receivr input from a file.
+    /// @remarks A std::istream that encapsulates a std::ifstream can be used to receiver input from a file.
     static void set_in(const std::istream& is);
     /// @brief Sets the out property to the specified std::ostream object.
     /// @param os A stream that is the new standard output.
@@ -337,7 +337,7 @@ namespace xtd {
     static void write(std::initializer_list<type_t>&& il) {write_(xtd::ustring::format("{}", il));}
     /// @endcond
     
-    /// @brief Writes the text representation of the specified listt of values to the standard output stream using the specified format information.
+    /// @brief Writes the text representation of the specified list of values to the standard output stream using the specified format information.
     /// @tparam ...args_t Types of the values to write.
     /// @param values Values to write,
     template<typename ... args_t>
@@ -357,7 +357,7 @@ namespace xtd {
     static void write_line(const std::initializer_list<type_t>& il) {write_line_(xtd::ustring::format("{}", il));}
     /// @endcond
     
-    /// @brief Writes the text representation of the specified listt of values, followed by the current line terminator, to the standard output stream using the specified format information.
+    /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.
     /// @tparam ...args_t Types of the values to write.
     /// @param values Values to write,
     template<typename ... args_t>

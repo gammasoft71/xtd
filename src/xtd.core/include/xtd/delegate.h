@@ -24,7 +24,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// The following example shows how to define a delegate named myMethoddelegate. Instances of this delegate are created for an instance method && a static method of the nested mySampleClass class. The delegate for the instance method requires an instance of mySampleClass. The mySampleClass instance is saved in a variable named mySC.
+  /// The following example shows how to define a delegate named my Method delegate. Instances of this delegate are created for an instance method && a static method of the nested mySampleClass class. The delegate for the instance method requires an instance of mySampleClass. The mySampleClass instance is saved in a variable named mySC.
   /// @include delegate.cpp
   template<typename result_t>
   class delegate<result_t()> : public object {
@@ -61,7 +61,7 @@ namespace xtd {
     }
 
     /// @brief invokes the method represented by the current delegate.
-    /// @param arguments The paramter list.
+    /// @param arguments The parameter list.
     /// @return result_t The return value.
     result_t operator()() const {
       if (functions_.size() == 0) return result_t();
@@ -75,20 +75,20 @@ namespace xtd {
     }
 
     /// @brief Gets the delegates array
-    /// @return The delagetes array.
+    /// @return The delegates array.
     const std::vector<function_t>& functions() const {return functions_;}
     
     /// @brief Clear delegates array.
     void clear() {functions_.clear();}
 
     /// @brief invokes the method represented by the current delegate.
-    /// @param arguments The paramter list.
+    /// @param arguments The parameter list.
     /// @return result_t The return value.
     result_t invoke() const { return operator()(); }
     
     /// @brief Concatenates the invocation lists of an array of delegates.
-    /// @param delagates The array of delegates to combine.
-    /// @return Delegte A new delegate with an invocation list that concatenates the invocation lists of the delegates in the delegates array. Returns null if delegates is null, if delegates contains zero elements, || if every entry in delegates is null.
+    /// @param delegates The array of delegates to combine.
+    /// @return Delegate A new delegate with an invocation list that concatenates the invocation lists of the delegates in the delegates array. Returns null if delegates is null, if delegates contains zero elements, || if every entry in delegates is null.
     /// @remarks If the delegates array contains entries that are null, those entries are ignored.
     /// @remarks The invocation list can contain duplicate entries; that is, entries that refer to the same method on the same object.
     static delegate combine(const std::vector<delegate>& delegates) noexcept {
@@ -113,7 +113,7 @@ namespace xtd {
     }
     
     /// @brief Return if the delegate is empty.
-    /// @return bool Return true if delegate is empty; otherwhise false.
+    /// @return bool Return true if delegate is empty; otherwise false.
     bool is_empty() const noexcept { return functions_.size() == 0; }
     
     /// @brief removes the last occurrence of the invocation list of a delegate from the invocation list of another delegate.
@@ -230,7 +230,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// The following example shows how to define a delegate named myMethoddelegate. Instances of this delegate are created for an instance method && a static method of the nested mySampleClass class. The delegate for the instance method requires an instance of mySampleClass. The mySampleClass instance is saved in a variable named mySC.
+  /// The following example shows how to define a delegate named my Method delegate. Instances of this delegate are created for an instance method && a static method of the nested mySampleClass class. The delegate for the instance method requires an instance of mySampleClass. The mySampleClass instance is saved in a variable named mySC.
   /// @include delegate.cpp
   template<typename result_t, typename... arguments_t>
   class delegate<result_t(arguments_t...)> : public object {
@@ -381,7 +381,7 @@ namespace xtd {
     /// @endcond
 
     /// @brief invokes the method represented by the current delegate.
-    /// @param arguments The paramter list.
+    /// @param arguments The parameter list.
     /// @return result_t The return value.
     result_t operator()(arguments_t... arguments) const {
       if (no_arguments_functions_.size() == 0 && functions_.size() == 0) return result_t();
@@ -406,12 +406,12 @@ namespace xtd {
       return functions_.back()(arguments...);
     }
     
-    /// @brief Gets the no arguuments delegates array
-    /// @return The delagetes array.
+    /// @brief Gets the no arguments delegates array
+    /// @return The delegates array.
     const std::vector<no_arguments_function_t>& no_arguments_functions() const {return no_arguments_functions_;}
     
     /// @brief Gets the delegates array
-    /// @return The delagetes array.
+    /// @return The delegates array.
     const std::vector<function_t>& functions() const {return functions_;}
     
     /// @brief Clear delegates array.
@@ -421,13 +421,13 @@ namespace xtd {
     }
     
     /// @brief invokes the method represented by the current delegate.
-    /// @param arguments The paramter list.
+    /// @param arguments The parameter list.
     /// @return result_t The return value.
     result_t invoke(arguments_t... arguments) const { return operator()(arguments...); }
 
     /// @brief Concatenates the invocation lists of an array of delegates.
-    /// @param delagates The array of delegates to combine.
-    /// @return Delegte A new delegate with an invocation list that concatenates the invocation lists of the delegates in the delegates array. Returns null if delegates is null, if delegates contains zero elements, || if every entry in delegates is null.
+    /// @param delegates The array of delegates to combine.
+    /// @return Delegate A new delegate with an invocation list that concatenates the invocation lists of the delegates in the delegates array. Returns null if delegates is null, if delegates contains zero elements, || if every entry in delegates is null.
     /// @remarks If the delegates array contains entries that are null, those entries are ignored.
     /// @remarks The invocation list can contain duplicate entries; that is, entries that refer to the same method on the same object.
     static delegate combine(const std::vector<delegate>& delegates) noexcept {
@@ -456,7 +456,7 @@ namespace xtd {
     }
 
     /// @brief Return if the delegate is empty.
-    /// @return bool Return true if delegate is empty; otherwhise false.
+    /// @return bool Return true if delegate is empty; otherwise false.
     bool is_empty() const noexcept { return functions_.size() == 0 && no_arguments_functions_.size() == 0; }
 
     /// @brief removes the last occurrence of the invocation list of a delegate from the invocation list of another delegate.

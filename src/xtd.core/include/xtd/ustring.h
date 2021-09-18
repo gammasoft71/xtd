@@ -42,14 +42,14 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @remarks A string is a sequential collection of characters that's used to represent text. A xtd::ustring object is a sequential collection of xtd::char8 objects that represent a string; a xtd::char8 object corresponds to a UTF-8 code unit. The value of the xtd::utring object is the content of the sequential collection of xtd::char8 objects, and unlike std::basic_string that value is immutable (that is, it is read-only).
+  /// @remarks A string is a sequential collection of characters that's used to represent text. A xtd::ustring object is a sequential collection of xtd::char8 objects that represent a string; a xtd::char8 object corresponds to a UTF-8 code unit. The value of the xtd::ustring object is the content of the sequential collection of xtd::char8 objects, and unlike std::basic_string that value is immutable (that is, it is read-only).
   /// @remarks if you want the same mutable string class, you can use xtd::text::ustring_builder class.
   /// @remarks xtd::ustring derives from std::basic_string<char> and therefore offers the complete immutable API of std::string.
   class ustring : public object, public std::basic_string<char> {
   public:
     /// @brief Initializes a new instance of xtd::ustring.
     ustring() noexcept;
-    /// @brief Initializes a new instance of xtd::ustring with specitifed allocator.
+    /// @brief Initializes a new instance of xtd::ustring with specified allocator.
     /// @param allocator The allocator to use for all memory allocations of this string.
     explicit ustring(const allocator_type& allocator) noexcept;
     
@@ -111,22 +111,22 @@ namespace xtd {
 
     /// @brief Initializes a new instance of xtd::ustring with specified substring at index and count characters.
     /// @param str The string to copy.
-    /// @param index The index of the first substring charecter where start copy.
+    /// @param index The index of the first substring character where start copy.
     /// @param count The number of substring characters to copy.
     ustring(const ustring& str, size_t index, size_t count);
     /// @brief Initializes a new instance of xtd::ustring with specified substring at index, count characters and allocator.
     /// @param str The string to copy.
-    /// @param index The index of the first substring charecter where start copy.
+    /// @param index The index of the first substring character where start copy.
     /// @param count The number of substring characters to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const ustring& str, size_t index, size_t count, const allocator_type& allocator);
     /// @brief Initializes a new instance of xtd::ustring with specified substring at index.
     /// @param str The string to copy.
-    /// @param index The index of the first substring charecter where start copy.
+    /// @param index The index of the first substring character where start copy.
     ustring(const ustring& str, size_t index);
     /// @brief Initializes a new instance of xtd::ustring with specified substring at index and allocator.
     /// @param str The string to copy.
-    /// @param index The index of the first substring charecter where start copy.
+    /// @param index The index of the first substring character where start copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const ustring& str, size_t index, const allocator_type& allocator);
 
@@ -278,42 +278,42 @@ namespace xtd {
     ustring(input_iterator_t first, input_iterator_t last, const allocator_type& allocator) : std::basic_string<value_type>(first, last, allocator) {}
     
     /// @brief Initializes a new instance of xtd::ustring with specified initializer list.
-    /// @param il The initalizer list to fill.
+    /// @param il The initializer list to fill.
     ustring(std::initializer_list<value_type> il);
     /// @brief Initializes a new instance of xtd::ustring with specified initializer list and allocator.
-    /// @param il The initalizer list to fill.
+    /// @param il The initializer list to fill.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(std::initializer_list<value_type> il, const allocator_type& allocator);
     
     /// @brief Initializes a new instance of xtd::ustring with specified initializer list.
-    /// @param il The initalizer list to fill.
+    /// @param il The initializer list to fill.
     ustring(std::initializer_list<char8_t> il);
     /// @brief Initializes a new instance of xtd::ustring with specified initializer list and allocator.
-    /// @param il The initalizer list to fill.
+    /// @param il The initializer list to fill.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(std::initializer_list<char8_t> il, const allocator_type& allocator);
     
     /// @brief Initializes a new instance of xtd::ustring with specified initializer list.
-    /// @param il The initalizer list to fill.
+    /// @param il The initializer list to fill.
     ustring(std::initializer_list<char16_t> il);
     /// @brief Initializes a new instance of xtd::ustring with specified initializer list and allocator.
-    /// @param il The initalizer list to fill.
+    /// @param il The initializer list to fill.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(std::initializer_list<char16_t> il, const allocator_type& allocator);
     
     /// @brief Initializes a new instance of xtd::ustring with specified initializer list.
-    /// @param il The initalizer list to fill.
+    /// @param il The initializer list to fill.
     ustring(std::initializer_list<char32_t> il);
     /// @brief Initializes a new instance of xtd::ustring with specified initializer list and allocator.
-    /// @param il The initalizer list to fill.
+    /// @param il The initializer list to fill.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(std::initializer_list<char32_t> il, const allocator_type& allocator);
     
     /// @brief Initializes a new instance of xtd::ustring with specified initializer list.
-    /// @param il The initalizer list to fill.
+    /// @param il The initializer list to fill.
     ustring(std::initializer_list<wchar_t> il);
     /// @brief Initializes a new instance of xtd::ustring with specified initializer list and allocator.
-    /// @param il The initalizer list to fill.
+    /// @param il The initializer list to fill.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(std::initializer_list<wchar_t> il, const allocator_type& allocator);
 
@@ -458,7 +458,7 @@ namespace xtd {
     /// @brief Compares two specified string objects and returns an integer that indicates their relative position in the sort order.
     /// @param str_a The first string to compare.
     /// @param str_b The second string to compare.
-    /// @return A 32-bit signed integer that indicates the lexical relationship between the two comparands.
+    /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
     /// | Value             | Condition                                                     |
     /// |-------------------|---------------------------------------------------------------|
     /// | Less than zero    | str_a precedes str_b in the sort order.                       |
@@ -469,7 +469,7 @@ namespace xtd {
     /// @param str_a The first string to compare.
     /// @param str_b The second string to compare.
     /// @param ignore_case true to ignore case during the comparison; otherwise, false.
-    /// @return A 32-bit signed integer that indicates the lexical relationship between the two comparands.
+    /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
     /// | Value             | Condition                                                     |
     /// |-------------------|---------------------------------------------------------------|
     /// | Less than zero    | str_a precedes str_b in the sort order.                       |
@@ -481,7 +481,7 @@ namespace xtd {
     /// @param str_a The first string to compare.
     /// @param str_b The second string to compare.
     /// @param comparison_type One of the enumeration values that specifies the rules to use in the comparison.
-    /// @return A 32-bit signed integer that indicates the lexical relationship between the two comparands.
+    /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
     /// | Value             | Condition                                                     |
     /// |-------------------|---------------------------------------------------------------|
     /// | Less than zero    | str_a precedes str_b in the sort order.                       |
@@ -494,7 +494,7 @@ namespace xtd {
     /// @param str_b The second string to use in the comparison.
     /// @param index_b The position of the substring within str_b.
     /// @param length The maximum number of characters in the substrings to compare
-    /// @return A 32-bit signed integer that indicates the lexical relationship between the two comparands.
+    /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
     /// | Value             | Condition                                                     |
     /// |-------------------|---------------------------------------------------------------|
     /// | Less than zero    | str_a precedes str_b in the sort order.                       |
@@ -508,7 +508,7 @@ namespace xtd {
     /// @param index_b The position of the substring within str_b.
     /// @param length The maximum number of characters in the substrings to compare
     /// @param ignore_case true to ignore case during the comparison; otherwise, false.
-    /// @return A 32-bit signed integer that indicates the lexical relationship between the two comparands.
+    /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
     /// | Value             | Condition                                                     |
     /// |-------------------|---------------------------------------------------------------|
     /// | Less than zero    | str_a precedes str_b in the sort order.                       |
@@ -522,7 +522,7 @@ namespace xtd {
     /// @param index_b The position of the substring within str_b.
     /// @param length The maximum number of characters in the substrings to compare
     /// @param comparison_type One of the enumeration values that specifies the rules to use in the comparison.
-    /// @return A 32-bit signed integer that indicates the lexical relationship between the two comparands.
+    /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
     /// | Value             | Condition                                                     |
     /// |-------------------|---------------------------------------------------------------|
     /// | Less than zero    | str_a precedes str_b in the sort order.                       |
@@ -681,8 +681,8 @@ namespace xtd {
 
     /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
     /// @param fmt A composite format string.
-    /// @param args anarguments list to write using format.
-    /// @return string formated.
+    /// @param args arguments list to write using format.
+    /// @return string formatted.
     /// @ingroup format_parse
     /// @remarks for more information about format see @ref FormatPage "Format".
     template<typename ...args_t>
@@ -1053,8 +1053,8 @@ namespace xtd {
     
     /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
     /// @param fmt A composite format string.
-    /// @param args anarguments list to write using format.
-    /// @return string formated.
+    /// @param args arguments list to write using format.
+    /// @return string formatted.
     /// @ingroup format_parse
     /// @remarks A format specifier follows this prototype:
     /// @remarks %[flags][width][.precision][length]specifier
@@ -1082,9 +1082,9 @@ namespace xtd {
     /// | flags   | description                                                                                                                                                                                                                                                                                                 |
     /// |---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
     /// | -       | Left-justify within the given field width; Right justification is the default (see width sub-specifier).                                                                                                                                                                                                    |
-    /// | +       | Forces to preceed the result with a plus or minus sign (+ or -) even for positive numbers. By default, only negative numbers are preceded with a - sign.                                                                                                                                                    |
+    /// | +       | Forces to prefix the result with a plus or minus sign (+ or -) even for positive numbers. By default, only negative numbers are preceded with a - sign.                                                                                                                                                    |
     /// | (space) | If no sign is going to be written, a blank space is inserted before the value.                                                                                                                                                                                                                              |
-    /// | #       | Used with o, x or X specifiers the value is preceeded with 0, 0x or 0X respectively for values different than zero. Used with a, A, e, E, f, F, g or G it forces the written output to contain a decimal point even if no more digits follow. By default, if no digits follow, no decimal point is written. |
+    /// | #       | Used with o, x or X specifiers the value is prefixed with 0, 0x or 0X respectively for values different than zero. Used with a, A, e, E, f, F, g or G it forces the written output to contain a decimal point even if no more digits follow. By default, if no digits follow, no decimal point is written. |
     /// | 0       | Left-pads the number with zeroes (0) instead of spaces when padding is specified (see width sub-specifier).                                                                                                                                                                                                 |
     ///
     /// | width    | description                                                                                                                                                                                          |
@@ -1155,12 +1155,12 @@ namespace xtd {
     /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty String, the returned array is empty and has a zero length.
     std::vector<value_type> to_array() const noexcept;
     
-    /// @brief Copies the characters in this instance to a Unicode character array starting at specitied index.
+    /// @brief Copies the characters in this instance to a Unicode character array starting at specified index.
     /// @param start_index The starting position of string to convert.
     /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty String, the returned array is empty and has a zero length.
     std::vector<value_type> to_array(size_t start_index) const noexcept;
     
-    /// @brief Copies the characters in this instance to a Unicode character array starting at specitied index with specified legnth.
+    /// @brief Copies the characters in this instance to a Unicode character array starting at specified index with specified length.
     /// @param start_index The starting position of string to convert.
     /// @param length The length of the string to convert
     /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty String, the returned array is empty and has a zero length.
@@ -1177,34 +1177,34 @@ namespace xtd {
     /// @return A new string in uppercase.
     ustring to_upper() const noexcept;
     
-    /// @brief Removes all leading and trailing occurrences of white-space characters from the specifed String.
+    /// @brief Removes all leading and trailing occurrences of white-space characters from the specified String.
     /// @param str String to trim end.
     /// @param trim_char A character to remove.
     /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the start and te and of the specified String.
     ustring trim() const noexcept;
     
-    /// @brief Removes all eading and trailing occurrences of a character specified from the specifed String .
+    /// @brief Removes all leading and trailing occurrences of a character specified from the specified String .
     /// @param str String to trim start.
     /// @param trim_char A character to remove.
-    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the start and the end of the specofoed String.
+    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the start and the end of the specified String.
     ustring trim(value_type trim_char) const noexcept;
     
-    /// @brief Removes all eading and trailing occurrences of a set of characters specified in an array from the specified String.
+    /// @brief Removes all leading and trailing occurrences of a set of characters specified in an array from the specified String.
     /// @param str String to trim end.
     /// @param trim_chars An array of characters to remove.
     /// @return The String that remains after all occurrences of the characters in the trim_chars parameter are removed from the start and the edn of the specified String.
     ustring trim(const std::vector<value_type>& trim_chars) const noexcept;
     
-    /// @brief Removes all trailing occurrences of white-space characters from the specifed String.
+    /// @brief Removes all trailing occurrences of white-space characters from the specified String.
     /// @param str String to trim end.
     /// @param trim_char A character to remove.
     /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the end of the specified String.
     ustring trim_end() const noexcept;
     
-    /// @brief Removes all trailing occurrences of a character specified from the specifed String .
+    /// @brief Removes all trailing occurrences of a character specified from the specified String .
     /// @param str String to trim start.
     /// @param trim_char A character to remove.
-    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the end of the specofoed String.
+    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the end of the specified String.
     ustring trim_end(value_type trim_char) const noexcept;
     
     /// @brief Removes all trailing occurrences of a set of characters specified in an array from the specified String.
@@ -1213,16 +1213,16 @@ namespace xtd {
     /// @return The String that remains after all occurrences of the characters in the trim_chars parameter are removed from the end of the specified String.
     ustring trim_end(const std::vector<value_type>& trim_chars) const noexcept;
     
-    /// @brief Removes all leading occurrences of white-space characters from the specifed String.
+    /// @brief Removes all leading occurrences of white-space characters from the specified String.
     /// @param str String to trim start.
     /// @param trim_char A character to remove.
     /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the start of the specified String.
     ustring trim_start() const noexcept;
     
-    /// @brief Removes all leading occurrences of a character specified from the specifed String .
+    /// @brief Removes all leading occurrences of a character specified from the specified String .
     /// @param str String to trim start.
     /// @param trim_char A character to remove.
-    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the start of the specofoed String.
+    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the start of the specified String.
     ustring trim_start(value_type trim_char) const noexcept;
     
     /// @brief Removes all leading occurrences of a set of characters specified in an array from the specified String.
@@ -1602,6 +1602,6 @@ template<typename ...args_t>
 void __ustring_extract_format_arg(xtd::ustring& fmt, std::vector<__format_information<char>>& formats, args_t&&... args) {
   size_t index = 0;
   (__ustring_extract_format_arg(fmt, index, formats, args),...);
-  __xtd_ustrings_unused(index); // workouround to mute gcc warning: unused-but-set-variable
+  __xtd_ustrings_unused(index); // workaround to mute gcc warning: unused-but-set-variable
 }
 /// @endcond

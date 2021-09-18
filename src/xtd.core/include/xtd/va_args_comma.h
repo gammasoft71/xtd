@@ -12,7 +12,7 @@
 //
 // clang : add_compile_options(-Wno-gnu-zero-variadic-macro-arguments) : Work
 // msvc : add_compile_options(/wd5105 /Zc:preprocessor) : Not work !!!!!!
-// Not working well with windows specific include... eror on some macro like _VARIANT_BOOL... with bad definition...
+// Not working well with windows specific include... error on some macro like _VARIANT_BOOL... with bad definition...
 // See https://docs.microsoft.com/en-us/cpp/preprocessor/preprocessor-experimental-overview?view=msvc-160
 //
 // #if !defined(__VA_ARGS_COMMA__)

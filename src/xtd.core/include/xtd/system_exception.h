@@ -23,61 +23,61 @@ namespace xtd {
   /// @ingroup xtd_core exceptions
   class core_export_ system_exception : public object, public std::exception {
   public:
-    /// @brief Optional reference wrapper on std::eception
+    /// @brief Optional reference wrapper on std::exception
     using exception_ref = std::optional<std::reference_wrapper<const std::exception>>;
     
     /// @brief Create a new instance of class system_exception
-    /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     /// @remarks Message is set with the default message associate to the exception.
     explicit system_exception(const xtd::diagnostics::stack_frame& information = xtd::diagnostics::stack_frame::empty()) : system_exception(default_message(), nullptr, std::error_code(), "", information) {}
     /// @brief Create a new instance of class system_exception
     /// @param message Message string associate to the exception.
-    /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     explicit system_exception(const xtd::ustring& message, const xtd::diagnostics::stack_frame& information = xtd::diagnostics::stack_frame::empty()) : system_exception(message, nullptr, std::error_code(), "", information) {}
     /// @brief Create a new instance of class system_exception
     /// @param message Message string associate to the exception.
     /// @param error Error code associate to the exception.
-    /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     system_exception(const xtd::ustring& message, const std::error_code& error, const xtd::diagnostics::stack_frame& information = xtd::diagnostics::stack_frame::empty()) : system_exception(message, nullptr, error, "", information) {}
     /// @brief Create a new instance of class system_exception
     /// @param message Message string associate to the exception.
     /// @param help_link Help link string associate to the exception.
-    /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     system_exception(const xtd::ustring& message, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& information = xtd::diagnostics::stack_frame::empty()) : system_exception(message, nullptr, std::error_code(), help_link, information) {}
     /// @brief Create a new instance of class system_exception
     /// @param message Message string associate to the exception.
     /// @param error Error code associate to the exception.
     /// @param help_link Help link string associate to the exception.
-    /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     system_exception(const xtd::ustring& message, const std::error_code& error, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& information = xtd::diagnostics::stack_frame::empty()) : system_exception(message, nullptr, error, help_link, information) {}
     /// @brief Create a new instance of class system_exception
     /// @param inner_exception The exception that is the cause of the current exception.
-    /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     /// @remarks Message is set with the default message associate to the exception.
     explicit system_exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& information = xtd::diagnostics::stack_frame::empty()) : system_exception(default_message(), &inner_exception, std::error_code(), "", information) {}
     /// @brief Create a new instance of class system_exception
     /// @param message Message string associate to the exception.
     /// @param inner_exception The exception that is the cause of the current exception.
-    /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     system_exception(const xtd::ustring& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& information = xtd::diagnostics::stack_frame::empty()) : system_exception(message, &inner_exception, std::error_code(), "", information) {}
     /// @brief Create a new instance of class system_exception
     /// @param message Message string associate to the exception.
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param error Error code associate to the exception.
-    /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     system_exception(const xtd::ustring& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& information = xtd::diagnostics::stack_frame::empty()) : system_exception(message, &inner_exception, error, "", information) {}
     /// @brief Create a new instance of class system_exception
     /// @param message Message string associate to the exception.
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param help_link Help link string associate to the exception.
-    /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     system_exception(const xtd::ustring& message, const std::exception& inner_exception, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& information = xtd::diagnostics::stack_frame::empty()) : system_exception(message, &inner_exception, std::error_code(), help_link, information) {}
     /// @brief Create a new instance of class system_exception
     /// @param message Message string associate to the exception.
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param error Error code associate to the exception.
     /// @param help_link Help link string associate to the exception.
-    /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     system_exception(const xtd::ustring& message, const std::exception& inner_exception, const std::error_code& error, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& information = xtd::diagnostics::stack_frame::empty()) : system_exception(message, &inner_exception, error, help_link, information) {}
     
     /// @cond
@@ -90,7 +90,7 @@ namespace xtd {
     virtual const xtd::ustring& file_path() const noexcept {return information_.get_file_name();}
     
     /// @brief Gets a link to the help file associated with this exception.
-    /// @return A string represent a link to Help file associated with sxception
+    /// @return A string represent a link to Help file associated with exception
     virtual const xtd::ustring& help_link() const noexcept {return help_link_;}
     
     /// @brief Gets or sets if the generation of the stack trace is enabled.
@@ -107,7 +107,7 @@ namespace xtd {
     
     /// @brief Get Line number where the exception occurred
     /// @return the line number where exception occurred
-    virtual uint32_t line_numer() const noexcept {return information_.get_file_line_number();}
+    virtual uint32_t line_number() const noexcept {return information_.get_file_line_number();}
     
     /// @brief Get file member where exception occurred
     /// @return A string represent member name where exception occurred
@@ -162,8 +162,8 @@ namespace xtd {
 /// @remarks Is equivalent to system_exception({any argument}, current_stack_frame_)
 /// @code
 /// void my_func() {
-///   if (invalid_info) throw stystem_exception_(); // same as : throw system_exception(current_stack_frame_)
-///   if (invalid_value) throw stystem_exception_("Bad value"); // same as : throw system_exception("Bad value", current_stack_frame_)
+///   if (invalid_info) throw system_exception_(); // same as : throw system_exception(current_stack_frame_)
+///   if (invalid_value) throw system_exception_("Bad value"); // same as : throw system_exception("Bad value", current_stack_frame_)
 ///   ...
 /// }
 /// @endcode
