@@ -2,7 +2,7 @@
  License: BSD licence (http://www.opensource.org/licenses/bsd-license.php)
  Based on: http://stupefydeveloper.blogspot.com/2008/10/cc-call-stack.html */
 
-/* Liux/gcc implementation of the call_stack class. */
+/* Linux/gcc implementation of the call_stack class. */
 #if defined(__GNUC__)
 
 #if __ANDROID__ | __CYGWIN__

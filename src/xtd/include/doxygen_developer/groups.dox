@@ -259,6 +259,6 @@
 /// @ingroup libraries
 
 /// @defgroup xtd_forms_native xtd.forms.native
-/// @brief The xtd.foms.native library contains internal native API definitions to access underlying toolkits used by xtd.forms library.
+/// @brief The xtd.forms.native library contains internal native API definitions to access underlying toolkits used by xtd.forms library.
 /// @warning Internal use only
 /// @ingroup libraries

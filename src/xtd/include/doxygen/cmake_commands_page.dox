@@ -1,10 +1,10 @@
 /// @file
 /// @brief Contains CMake commands page.
 
-/// @page CMakeCoommands CMake commands
-/// @brief Caintains specific CMake commands to manage project, assembly informations and application properties.
+/// @page CMakeCommands CMake commands
+/// @brief Contains specific CMake commands to manage project, assembly informations and application properties.
 ///
-/// These specific CMake commands are automaticaly added when you add find_package(xtd REQUIRED) to your CMakeLists.txt file.
+/// These specific CMake commands are automatically added when you add find_package(xtd REQUIRED) to your CMakeLists.txt file.
 ///
 /// @par Examples
 /// @code
@@ -20,9 +20,9 @@
 /// * @ref TargetPropertiesCommandsSection
 ///   * @ref TargetDefaultNamespaceSubSection specifies the the base namespace for files added to the project.
 ///   * @ref TargetDisplaySubSection specifies if application is displaying in GNOME or KDE menu.
-///   * @ref TargetIconSubSection specifies the icon file (.ico for Windows, icns for maOS and png or svg for linux) that you want to use as your program icon.
+///   * @ref TargetIconSubSection specifies the icon file (.ico for Windows, icons for maOS and png or svg for linux) that you want to use as your program icon.
 ///   * @ref TargetNameSubSection specifies the name of the output file.
-///   * @ref TargetRegisteredSubSection Speficy the target is registered in the system.
+///   * @ref TargetRegisteredSubSection Specify the target is registered in the system.
 ///   * @ref TargetStartupSubSection specifies the entry point to be called when the application is load.
 ///   * @ref TargetTypeSubSection specifies the type of target to build.
 /// * @ref AssemblyInformationsCommandsSection
@@ -43,7 +43,7 @@
 ///   * @ref AddInstallIncludeDirectoriesSubSection Install include directories.
 ///   * @ref AddInstallIncludeFilesSubSection installs include files.
 ///   * @ref InstallComponentSubSection installs component.
-///   * @ref InstallPackageSubSection installs application MODULE_LIBRARY, STATIC_LIBRARY or SHARED_LIBRAY package.
+///   * @ref InstallPackageSubSection installs application MODULE_LIBRARY, STATIC_LIBRARY or SHARED_LIBRARY package.
 ///   * @ref InstallNameSubSection specifies the install name.
 /// * @ref ProjectCommandsSection
 ///   * @ref AddIncludeDirectoriesSubSection Add include directory to current project.
@@ -58,14 +58,14 @@
 /// @par xtd Specific CMake variables
 /// * @ref ApplicationPropertiesVariablesSection
 ///   * @ref ApplicationDefaultNamespaceVariableSubSection contains default namespace use by application.
-///   * @ref ApplicatioIconVariableSubSection contains application icon file name without extension.
+///   * @ref ApplicationIconVariableSubSection contains application icon file name without extension.
 ///   * @ref ApplicationNameVariableSubSection contains application name.
 ///   * @ref ApplicationRegisteredVariableSubSection contains boolean that specify if application is registered or not on the system.
 ///   * @ref TargetTypeVariableSubSection contains application type.
 /// * @ref AssemblyInformationsVariablesSection
 ///   * @ref AssemblyCompanyVariableSubSection contains assembly company name.
 ///   * @ref AssemblyConfigurationVariableSubSection contains assembly configuration string.
-///   * @ref AssemblyCopyrightVariableSubSection contains assembly copyrignt string.
+///   * @ref AssemblyCopyrightVariableSubSection contains assembly copyright string.
 ///   * @ref AssemblyCultureVariableSubSection contains assembly culture information.
 ///   * @ref AssemblyDescriptionVariableSubSection contains assembly description string.
 ///   * @ref AssemblyFileVersionVariableSubSection contains assembly file version number.
@@ -114,7 +114,7 @@
 ///  find_package(xtd REQUIRED)
 ///  add_sources(my_project.cpp)
 ///  
-///  choice_options(TARGET_TYPE "Choose library dynamic, static, interface or module" DINAMIC_LIBRARY STATIC_LIBRARY INTERFACE_LIBRARY MODULE_LIBRARY)
+///  choice_options(TARGET_TYPE "Choose library dynamic, static, interface or module" DYNAMIC_LIBRARY STATIC_LIBRARY INTERFACE_LIBRARY MODULE_LIBRARY)
 ///  target_type(${TARGET_TYPE})
 /// @endcode
 ///
@@ -160,10 +160,10 @@
 /// @endcode
 ///
 /// @subsection TargetIconSubSection target_icon
-/// @brief Specifies the icon file (.ico for Windows, icns for maOS and png or svg for linux) that you want to use as your program icon.
+/// @brief Specifies the icon file (.ico for Windows, icons for maOS and png or svg for linux) that you want to use as your program icon.
 /// @param ARGV0 the icon to set without extension. It can be empty.
-/// @remarks Do not specify the extesion of file. It's operatin system depedant.
-/// @remarks If you write multiplatform application you must have the specified file in ico, icns and png or svg formats.
+/// @remarks Do not specify the extension of file. It's operation system dependant.
+/// @remarks If you write multiplatform application you must have the specified file in ico, icons and png or svg formats.
 /// @remarks On Linux you can specify one icon format like icon.png or icon.svg (typically 512 x 512 pixels) or more icon format terminated by the number of pixels:
 ///   * icon8.png (8 x 8 pixels)
 ///   * icon16.png (16 x 16 pixels)
@@ -216,7 +216,7 @@
 /// @endcode
 ///
 /// @subsection TargetRegisteredSubSection target_registered
-/// @brief Speficy the application is registered in the system.
+/// @brief Specify the application is registered in the system.
 /// @remarks Only effect on linux.
 /// @remarks By default the application is registered but not visible in GNOME or KDE menu.
 /// @remarks Call only once by project.
@@ -474,7 +474,7 @@
 /// @subsection BuildOutputDirectorySubSection build_output_directory
 /// @brief Specifies the directory into which runtime target files should be built.
 /// @param OUTPUT_DIRECTORY the directory where runtime target files should be built.
-/// @remark This option is use mainly when a solution as more than one projec.
+/// @remark This option is use mainly when a solution as more than one project.
 /// @par Examples
 /// @code
 ///  cmake_minimum_required(VERSION 3.3)
@@ -501,7 +501,7 @@
 ///
 ///  project(my_project)
 ///  find_package(xtd REQUIRED)
-///  add_sources(src/my_project1.cpp src/my_project2.cpp include/my_project/my_project.h include/my_project/MyProjec2.h)
+///  add_sources(src/my_project1.cpp src/my_project2.cpp include/my_project/my_project.h include/my_project/MyProject2.h)
 ///
 ///  target_type(STATIC_LIBRARY)
 ///
@@ -521,7 +521,7 @@
 ///
 ///  project(my_project)
 ///  find_package(xtd REQUIRED)
-///  add_sources(my_project1.cpp my_project2.cpp my_project.h MyProjec2.h)
+///  add_sources(my_project1.cpp my_project2.cpp my_project.h MyProject2.h)
 ///
 ///  target_type(STATIC_LIBRARY)
 ///
@@ -552,7 +552,7 @@
 /// @endcode
 ///
 /// @subsection InstallPackageSubSection install_package
-/// @brief Installs package MODULE_LIBRARY, STATIC_LIBRARY or SHARED_LIBRAY package.
+/// @brief Installs package MODULE_LIBRARY, STATIC_LIBRARY or SHARED_LIBRARY package.
 /// @param ARGV0 Install name (optional).
 /// @remarks if install name no specified and install_name() method no called, the install name is equal to application name.
 /// @remarks This method is required for install package.
@@ -762,7 +762,7 @@
 /// @brief Contains default namespace use by application.
 /// @see @ref TargetDefaultNamespaceSubSection
 ///
-/// @subsection ApplicatioIconVariableSubSection APPLICATION_ICON
+/// @subsection ApplicationIconVariableSubSection APPLICATION_ICON
 /// @brief Contains application icon file name without extension.
 /// @see @ref TargetIconSubSection
 ///
@@ -792,7 +792,7 @@
 /// @see @ref AssemblyConfigurationSubSection
 ///
 /// @subsection AssemblyCopyrightVariableSubSection ASSEMBLY_COPYRIGHT
-/// @brief Contains assembly copyrignt string.
+/// @brief Contains assembly copyright string.
 /// @see @ref AssemblyCopyrightSubSection
 ///
 /// @subsection AssemblyCultureVariableSubSection ASSEMBLY_CULTURE

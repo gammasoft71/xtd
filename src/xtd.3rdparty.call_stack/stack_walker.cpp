@@ -12,7 +12,7 @@
  *                       (should also be enough)
  *                     - Changed to compile correctly with the PSDK of VC7.0
  *                       (GetFileVersionInfoSizeA and GetFileVersionInfoA is wrongly defined:
- *                        it uses LPSTR instead of LPCSTR as first paremeter)
+ *                        it uses LPSTR instead of LPCSTR as first parameter)
  *                     - Added declarations to support VC5/6 without using 'dbghelp.h'
  *                     - Added a 'pUserData' member to the ShowCallstack function and the 
  *                       PReadProcessMemoryRoutine declaration (to pass some user-defined data, 
