@@ -45,14 +45,14 @@ namespace xtd {
       /// @brief Represents a process error data received event.
       /// @par Library
       /// xtd.core
-      /// @remarks Used by xtd::diagnostics::process::exited, xtd::diagnostics::process::error_data_recaived and xtd::diagnostics::process::output_data_received events.
+      /// @remarks Used by xtd::diagnostics::process::exited, xtd::diagnostics::process::error_data_received and xtd::diagnostics::process::output_data_received events.
       /// @ingroup xtd_core events
       class error_data_received_event : protected xtd::diagnostics::data_received_event_handler {
         friend process;
         void set_data(data* data) {data_ = data;}
       public:
         /// @brief Gets a value indicate if the event is empty.
-        /// @return true if evcent does not contains functions; otherwise false.
+        /// @return true if event does not contains functions; otherwise false.
         bool is_empty() const noexcept;
         
         /// @brief Adds an handler to the event.
@@ -107,7 +107,7 @@ namespace xtd {
         void set_data(data* data) {data_ = data;}
       public:
         /// @brief Gets a value indicate if the event is empty.
-        /// @return true if evcent does not contains functions; otherwise false.
+        /// @return true if event does not contains functions; otherwise false.
         bool is_empty() const noexcept;
         
         /// @brief Adds an handler to the event.
@@ -155,14 +155,14 @@ namespace xtd {
       /// @brief Represents a process output data received event.
       /// @par Library
       /// xtd.core
-      /// @remarks Used by xtd::diagnostics::process::exited, xtd::diagnostics::process::error_data_recaived and xtd::diagnostics::process::output_data_received events.
+      /// @remarks Used by xtd::diagnostics::process::exited, xtd::diagnostics::process::error_data_received and xtd::diagnostics::process::output_data_received events.
       /// @ingroup xtd_core events
       class output_data_received_event : protected xtd::diagnostics::data_received_event_handler {
         friend process;
         void set_data(data* data) {data_ = data;}
       public:
         /// @brief Gets a value indicate if the event is empty.
-        /// @return true if evcent does not contains functions; otherwise false.
+        /// @return true if event does not contains functions; otherwise false.
         bool is_empty() const noexcept;
         
         /// @brief Adds an handler to the event.
@@ -212,11 +212,11 @@ namespace xtd {
 
       /// @brief Initializes a new instance of the xtd::diagnostics::process class.
       /// @remarks If you do not specify the machine_name property, the default is the local computer, (".").
-      /// @remarks You have two options for associating a new xtd::diagnostics::process component with a process on the computer. The first option is to use the constructor to create the xtd::diagnostics::process component, set the appropriate members of the xtd::diagnostics::proces::start_info property and call xtd::diagnostics::proces::start to associate the xtd::diagnostics::process with a new system process. The second option is to associate the xtd::diagnostics::process with a running system process by using xtd::diagnostics::process:get_process_by_id or one of the xtd::diagnostics::process::get_processes return values.
-      /// @remarks If you use a static overload of the xtd::diagnostics::processs::start method to start a new system process, the method creates a new xtd::diagnostics::process component and associates it with the process.
+      /// @remarks You have two options for associating a new xtd::diagnostics::process component with a process on the computer. The first option is to use the constructor to create the xtd::diagnostics::process component, set the appropriate members of the xtd::diagnostics::process::start_info property and call xtd::diagnostics::process::start to associate the xtd::diagnostics::process with a new system process. The second option is to associate the xtd::diagnostics::process with a running system process by using xtd::diagnostics::process:get_process_by_id or one of the xtd::diagnostics::process::get_processes return values.
+      /// @remarks If you use a static overload of the xtd::diagnostics::process::start method to start a new system process, the method creates a new xtd::diagnostics::process component and associates it with the process.
       /// @remarks When the xtd::diagnostics::process_start_info::use_shell_execute property is set to its default value, true, you can start applications and documents in a way that is similar to using the Run dialog box of the Windows Start menu. When xtd::diagnostics::process_start_info::use_shell_execute is false, you can start only executables.
       /// @remarks Any executable file that you can call from the command line can be started in one of two ways: by setting the appropriate members of the xtd::diagnostics::process:start_info property and calling the xtd::diagnostics::process::start method with no parameters, or by passing the appropriate parameter to the static_start member.
-      /// @remarks You can create a xtd::diagnostics::processs component by using the constructor, one of the static xtd::diagnostics::processs::start overloads, or any of the xtd::diagnostics::processs::get_process_by_id, xtd::diagnostics::processs::get_processes, or xtd::diagnostics::processs::get_processes_by_name methods. After you have done so, you have a view into the associated process. This is not a dynamic view that updates itself automatically when the process properties have changed in memory. Instead, you must call xtd::diagnostics::processs::refresh for the component to update the xtd::diagnostics::processs property information in your application.
+      /// @remarks You can create a xtd::diagnostics::processes component by using the constructor, one of the static xtd::diagnostics::process::start overloads, or any of the xtd::diagnostics::process::get_process_by_id, xtd::diagnostics::process::get_processes, or xtd::diagnostics::process::get_processes_by_name methods. After you have done so, you have a view into the associated process. This is not a dynamic view that updates itself automatically when the process properties have changed in memory. Instead, you must call xtd::diagnostics::process::refresh for the component to update the xtd::diagnostics::process property information in your application.
       process();
       /// @cond
       process(const process&) = default;
@@ -225,12 +225,12 @@ namespace xtd {
       /// @endcond
       
       /// @brief Gets the base priority xof the associated process.
-      /// @return The base priority, which is computed from the xtd::diagnostics::processs::priority_class of the associated process.
-      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::processs object.
-      /// @remarks The value returned by this property represents the most recently refreshed base priority of the process. To get the most up to date base priority, you need to call xtd::diagnostics::processs::refresh() method first.
-      /// @remarks The xtd::diagnostics::processs::base_priority of the process is the starting priority for threads created within the associated process. You can view information about the base priority through the System Monitor's Priority Base counter.
+      /// @return The base priority, which is computed from the xtd::diagnostics::process::priority_class of the associated process.
+      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
+      /// @remarks The value returned by this property represents the most recently refreshed base priority of the process. To get the most up to date base priority, you need to call xtd::diagnostics::process::refresh() method first.
+      /// @remarks The xtd::diagnostics::process::base_priority of the process is the starting priority for threads created within the associated process. You can view information about the base priority through the System Monitor's Priority Base counter.
       /// @remarks Based on the time elapsed or other boosts, the operating system can change the base priority when a process should be placed ahead of others.
-      /// @remarks The xtd::diagnostics::processs::base_priority property lets you view the starting priority assigned to a process. However, because it is read-only, you cannot use the xtd::diagnostics::processs::base_priority to set the priority of the process. To change the priority, use the xtd::diagnostics::processs::priority_class property. The xtd::diagnostics::processs::base_priority is viewable using the System Monitor, while the xtd::diagnostics::processs::priority_class is not. Both the xtd::diagnostics::processs::base_priority and the xtd::diagnostics::processs::priority_class can be viewed programmatically. The following table shows the relationship between xtd::diagnostics::processs::base_priority values and xtd::diagnostics::processs::priority_class values.
+      /// @remarks The xtd::diagnostics::process::base_priority property lets you view the starting priority assigned to a process. However, because it is read-only, you cannot use the xtd::diagnostics::process::base_priority to set the priority of the process. To change the priority, use the xtd::diagnostics::process::priority_class property. The xtd::diagnostics::process::base_priority is viewable using the System Monitor, while the xtd::diagnostics::process::priority_class is not. Both the xtd::diagnostics::process::base_priority and the xtd::diagnostics::process::priority_class can be viewed programmatically. The following table shows the relationship between xtd::diagnostics::process::base_priority values and xtd::diagnostics::process::priority_class values.
       /// | Windows base_priority | macOS base_priority                        | linux base_priority                        | priority_class                                         |
       /// |-----------------------|--------------------------------------------|--------------------------------------------|--------------------------------------------------------|
       /// | 4                     | PRIO_MIN                             (-20) | PRIO_MIN                             (-20) | xtd::diagnostics::process_priority_class::idle         |
@@ -279,11 +279,11 @@ namespace xtd {
 
       /// @brief Gets the native handle of the associated process.
       /// @return The handle that the operating system assigned to the associated process when the process was started. The system uses this handle to keep track of process attributes.
-      /// @exception xtd::invalid_operation_exception The process has not been started or has exited. The xtd::diagnostics::processs::handle property cannot be read because there is no process associated with this xtd::diagnostics::processs instance. -or- The xtd::diagnostics::processs instance has been attached to a running process but you do not have the necessary permissions to get a handle with full access rights.
-      /// @exception xtd::not_supported_exception You are trying to access the xtd::diagnostics::processs::handle property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.
+      /// @exception xtd::invalid_operation_exception The process has not been started or has exited. The xtd::diagnostics::process::handle property cannot be read because there is no process associated with this xtd::diagnostics::process instance. -or- The xtd::diagnostics::process instance has been attached to a running process but you do not have the necessary permissions to get a handle with full access rights.
+      /// @exception xtd::not_supported_exception You are trying to access the xtd::diagnostics::process::handle property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.
       /// @remarks An application can obtain a handle to a process that can be used as a parameter to many process-information and control functions. You can use this handle to initialize a xtd::diagnostics::wait_handle or to call native methods with platform invoke.
-      /// @remarks This process handle is private to an application--in other words, process handles cannot be shared. A process also has a process Id which, unlike the xtd::diagnostics::processs::handle, is unique and, therefore, valid throughout the system.
-      /// @remarks Only processes started through a call to xtd::diagnostics::processs::start set the xtd::diagnostics::processs::handle property of the corresponding xtd::diagnostics::processs instances.
+      /// @remarks This process handle is private to an application--in other words, process handles cannot be shared. A process also has a process Id which, unlike the xtd::diagnostics::process::handle, is unique and, therefore, valid throughout the system.
+      /// @remarks Only processes started through a call to xtd::diagnostics::process::start set the xtd::diagnostics::process::handle property of the corresponding xtd::diagnostics::process instances.
       intptr_t handle() const;
       
       /// @brief Gets a value indicating whether the associated process has been terminated.
@@ -306,18 +306,18 @@ namespace xtd {
 
       /// @brief Gets the name of the computer the associated process is running on.
       /// @return The name of the computer that the associated process is running on.
-      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::processs object.
+      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
       /// @remarks You can view statistical data and process information for processes running on remote computers but you cannot call xtd::diagnostics::process::start, xtd::diagnostics::process::close_main_window, or xtd::diagnostics::process::kill on remote computers.
       /// @note When the associated process is executing on the local machine, this property returns a period (".") for the machine name. You should use the xtd::environment::machine_name property to get the correct machine name.
       ustring machine_name() const;
 
       /// @brief Gets the overall priority category for the associated process.
-      /// @return The priority category for the associated process, from which the xtd::diagnostics::processs::base_priority of the process is calculated.
-      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::processs object.
+      /// @return The priority category for the associated process, from which the xtd::diagnostics::process::base_priority of the process is calculated.
+      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
       /// @remarks The value returned by this property represents the most recently refreshed priority of the process. To get the most up to date priority, you need to call xtd::diagnostics::process::refresh() method first.
       /// @remarks A process priority class encompasses a range of thread priority levels. Threads with different priorities that are running in the process run relative to the priority class of the process. Win32 uses four priority classes with seven base priority levels per class. These process priority classes are captured in the xtd::diagnostics::process_priority_class enumeration, which lets you set the process priority to xtd::diagnostics::process_priority_class::idle, xtd::diagnostics::process_priority_class::normal, xtd::diagnostics::process_priority_class::high, xtd::diagnostics::process_priority_class::above_normal, xtd::diagnostics::process_priority_class::xtd::diagnostics::process_priority_class::below_normal, or xtd::diagnostics::process_priority_class::real_time. Based on the time elapsed or other boosts, the base priority level can be changed by the operating system when a process needs to be put ahead of others for access to the processor. In addition, you can set the xtd::diagnostics::process::priority_boost_enabled to temporarily boost the priority level of threads that have been taken out of the wait state. The priority is reset when the process returns to the wait state.
-      /// @remarks The xtd::diagnostics::processs::base_priority property lets you view the starting priority that is assigned to a process. However, because it is read-only, you cannot use the xtd::diagnostics::processs::base_priority property to set the priority of a process. To change the priority, use the xtd::diagnostics::processs::priority_class property, which gets or sets the overall priority category for the process.
-      /// @remarks The priority class cannot be viewed using System Monitor. The following table shows the relationship between the xtd::diagnostics::processs::base_priority and xtd::diagnostics::processs::priority_class values.
+      /// @remarks The xtd::diagnostics::process::base_priority property lets you view the starting priority that is assigned to a process. However, because it is read-only, you cannot use the xtd::diagnostics::process::base_priority property to set the priority of a process. To change the priority, use the xtd::diagnostics::process::priority_class property, which gets or sets the overall priority category for the process.
+      /// @remarks The priority class cannot be viewed using System Monitor. The following table shows the relationship between the xtd::diagnostics::process::base_priority and xtd::diagnostics::process::priority_class values.
       /// | Windows base_priority | macOS base_priority                        | linux base_priority                        | priority_class                                         |
       /// |-----------------------|--------------------------------------------|--------------------------------------------|--------------------------------------------------------|
       /// | 4                     | PRIO_MIN                             (-20) | PRIO_MIN                             (-20) | xtd::diagnostics::process_priority_class::idle         |
@@ -328,12 +328,12 @@ namespace xtd {
       /// | 24                    | PRIO_MAX                              (20) | PRIO_MAX                              (20) | xtd::diagnostics::process_priority_class::real_time    |
       xtd::diagnostics::process_priority_class priority_class() const;
       /// @brief Sets the overall priority category for the associated process.
-      /// @param value The priority category for the associated process, from which the xtd::diagnostics::processs::base_priority of the process is calculated.
-      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::processs object.
+      /// @param value The priority category for the associated process, from which the xtd::diagnostics::process::base_priority of the process is calculated.
+      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
       /// @remarks The value returned by this property represents the most recently refreshed priority of the process. To get the most up to date priority, you need to call xtd::diagnostics::process::refresh() method first.
       /// @remarks A process priority class encompasses a range of thread priority levels. Threads with different priorities that are running in the process run relative to the priority class of the process. Win32 uses four priority classes with seven base priority levels per class. These process priority classes are captured in the xtd::diagnostics::process_priority_class enumeration, which lets you set the process priority to xtd::diagnostics::process_priority_class::idle, xtd::diagnostics::process_priority_class::normal, xtd::diagnostics::process_priority_class::high, xtd::diagnostics::process_priority_class::above_normal, xtd::diagnostics::process_priority_class::xtd::diagnostics::process_priority_class::below_normal, or xtd::diagnostics::process_priority_class::real_time. Based on the time elapsed or other boosts, the base priority level can be changed by the operating system when a process needs to be put ahead of others for access to the processor. In addition, you can set the xtd::diagnostics::process::priority_boost_enabled to temporarily boost the priority level of threads that have been taken out of the wait state. The priority is reset when the process returns to the wait state.
-      /// @remarks The xtd::diagnostics::processs::base_priority property lets you view the starting priority that is assigned to a process. However, because it is read-only, you cannot use the xtd::diagnostics::processs::base_priority property to set the priority of a process. To change the priority, use the xtd::diagnostics::processs::priority_class property, which gets or sets the overall priority category for the process.
-      /// @remarks The priority class cannot be viewed using System Monitor. The following table shows the relationship between the xtd::diagnostics::processs::base_priority and xtd::diagnostics::processs::priority_class values.
+      /// @remarks The xtd::diagnostics::process::base_priority property lets you view the starting priority that is assigned to a process. However, because it is read-only, you cannot use the xtd::diagnostics::process::base_priority property to set the priority of a process. To change the priority, use the xtd::diagnostics::process::priority_class property, which gets or sets the overall priority category for the process.
+      /// @remarks The priority class cannot be viewed using System Monitor. The following table shows the relationship between the xtd::diagnostics::process::base_priority and xtd::diagnostics::process::priority_class values.
       /// | Windows base_priority | macOS base_priority                        | linux base_priority                        | priority_class                                         |
       /// |-----------------------|--------------------------------------------|--------------------------------------------|--------------------------------------------------------|
       /// | 4                     | PRIO_MIN                             (-20) | PRIO_MIN                             (-20) | xtd::diagnostics::process_priority_class::idle         |
@@ -346,14 +346,14 @@ namespace xtd {
       
       /// @brief Gets the name of the process.
       /// @return The name that the system uses to identify the process to the user.
-      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::processs object.
+      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
       /// @remarks The xtd::diagnostics::process::process_name property holds an executable file name, such as Outlook, that does not include the .exe extension or the path. It is helpful for getting and manipulating all the processes that are associated with the same executable file.
-      /// @remarks You can call xtd::diagnostics::processs::get_processes_by_name, passing it an executable file name, to retrieve an array that contains every running instance on the specified computer. You can use this array, for example, to shut down all the running instances of the executable file.
+      /// @remarks You can call xtd::diagnostics::process::get_processes_by_name, passing it an executable file name, to retrieve an array that contains every running instance on the specified computer. You can use this array, for example, to shut down all the running instances of the executable file.
       ustring process_name() const;
 
       /// @brief Gets a stream used to read the error output of the application.
       /// @return A std::istream that can be used to read the standard error stream of the application.
-      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::processs object.
+      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
       /// @par Examples
       /// The following example uses the net use command together with a user supplied argument to map a network resource. It then reads the standard error stream of the net command and writes it to console.
       /// @code
@@ -436,7 +436,7 @@ namespace xtd {
       ///   p.start_info().redirect_standard_output(true);
       ///   string e_out;
       ///   p.start_info().redirect_standard_error(true);
-      ///   p.error_data_recaived += [&](object& sender, const data_received_event_args& e) {
+      ///   p.error_data_received += [&](object& sender, const data_received_event_args& e) {
       ///     e_out += e.data();
       ///   };
       ///   p.start_info().file_name("write_500_lines");
@@ -463,7 +463,7 @@ namespace xtd {
 
       /// @brief Gets a stream used to write the input of the application.
       /// @return A std::ostream that can be used to write the standard input stream of the application.
-      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::processs object.
+      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::processes object.
       /// @par Examples
       /// The following example illustrates how to redirect the xtd::diagnostics::process::standard_input stream of a process. The example starts the sort command with redirected input. It then prompts the user for text, and passes that to the sort process by means of the redirected xtd::diagnostics::process::standard_input stream. The sort results are displayed to the user on the console.
       /// @code
@@ -528,8 +528,8 @@ namespace xtd {
 
       /// @brief Gets a stream used to read the textual output of the application.
       /// @return A std::istream that can be used to read the standard output stream of the application.
-      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::processs object.
-      /// @par Examplles
+      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
+      /// @par Examples
       /// The following example runs the ipconfig.exe command and redirects its standard output to the example's console window.
       /// @code
       /// #include <xtd/xtd>
@@ -560,11 +560,11 @@ namespace xtd {
       ///   console::read_line();
       /// }
       /// @endcode
-      /// @remarks When a xtd::diagnostics::processs writes text to its standard stream, that text is normally displayed on the console. By redirecting the xtd::diagnostics::processs::standard_output stream, you can manipulate or suppress the output of a process. For example, you can filter the text, format it differently, or write the output to both the console and a designated log file.
-      /// @note To use xtd::diagnostics::processs::standard_output, you must set xtd::diagnostics::process_start_info::use_shell_execute to false, and you must set xtd::diagnostics::process_start_info::redirect_standard_output to true. Otherwise, reading from the xtd::diagnostics::processs::standard_output stream throws an exception.
-      /// @remarks The redirected xtd::diagnostics::processs::standard_output stream can be read synchronously or asynchronously. Methods such as xtd::io::stream_reader::read, xtd::io::stream_reader::read_line, and xtd::io::stream_reader::read_to_end perform synchronous read operations on the output stream of the process. These synchronous read operations do not complete until the associated Process writes to its xtd::diagnostics::processs::xtd::diagnostics::processs::standard_output stream, or closes the stream.
-      /// @remarks In contrast, xtd::diagnostics::processs::begin_output_read_line starts asynchronous read operations on the xtd::diagnostics::processs::standard_output stream. This method enables a designated event handler for the stream output and immediately returns to the caller, which can perform other work while the stream output is directed to the event handler.
-      /// @remarks Synchronous read operations introduce a dependency between the caller reading from the xtd::diagnostics::processs::standard_output stream and the child process writing to that stream. These dependencies can result in deadlock conditions. When the caller reads from the redirected stream of a child process, it is dependent on the child. The caller waits on the read operation until the child writes to the stream or closes the stream. When the child process writes enough data to fill its redirected stream, it is dependent on the parent. The child process waits on the next write operation until the parent reads from the full stream or closes the stream. The deadlock condition results when the caller and child process wait on each other to complete an operation, and neither can proceed. You can avoid deadlocks by evaluating dependencies between the caller and child process.
+      /// @remarks When a xtd::diagnostics::process writes text to its standard stream, that text is normally displayed on the console. By redirecting the xtd::diagnostics::process::standard_output stream, you can manipulate or suppress the output of a process. For example, you can filter the text, format it differently, or write the output to both the console and a designated log file.
+      /// @note To use xtd::diagnostics::process::standard_output, you must set xtd::diagnostics::process_start_info::use_shell_execute to false, and you must set xtd::diagnostics::process_start_info::redirect_standard_output to true. Otherwise, reading from the xtd::diagnostics::process::standard_output stream throws an exception.
+      /// @remarks The redirected xtd::diagnostics::process::standard_output stream can be read synchronously or asynchronously. Methods such as xtd::io::stream_reader::read, xtd::io::stream_reader::read_line, and xtd::io::stream_reader::read_to_end perform synchronous read operations on the output stream of the process. These synchronous read operations do not complete until the associated Process writes to its xtd::diagnostics::process::xtd::diagnostics::process::standard_output stream, or closes the stream.
+      /// @remarks In contrast, xtd::diagnostics::process::begin_output_read_line starts asynchronous read operations on the xtd::diagnostics::process::standard_output stream. This method enables a designated event handler for the stream output and immediately returns to the caller, which can perform other work while the stream output is directed to the event handler.
+      /// @remarks Synchronous read operations introduce a dependency between the caller reading from the xtd::diagnostics::process::standard_output stream and the child process writing to that stream. These dependencies can result in deadlock conditions. When the caller reads from the redirected stream of a child process, it is dependent on the child. The caller waits on the read operation until the child writes to the stream or closes the stream. When the child process writes enough data to fill its redirected stream, it is dependent on the parent. The child process waits on the next write operation until the parent reads from the full stream or closes the stream. The deadlock condition results when the caller and child process wait on each other to complete an operation, and neither can proceed. You can avoid deadlocks by evaluating dependencies between the caller and child process.
       /// @remarks The last two examples in this section use the xtd::diagnostics:process::start method to launch an executable named Write500Lines.exe. The following example contains its source code.
       /// @code
       /// #include <xtd/xtd>
@@ -626,7 +626,7 @@ namespace xtd {
       ///   p.start_info().redirect_standard_output(true);
       ///   string e_out;
       ///   p.start_info().redirect_standard_error(true);
-      ///   p.error_data_recaived += [&](object& sender, const data_received_event_args& e) {
+      ///   p.error_data_received += [&](object& sender, const data_received_event_args& e) {
       ///     e_out += e.data();
       ///   };
       ///   p.start_info().file_name("write_500_lines");
@@ -648,7 +648,7 @@ namespace xtd {
       /// //      Error stream: Successfully wrote 500 lines.
       /// @endcode
       /// @remarks You can use asynchronous read operations to avoid these dependencies and their deadlock potential. Alternately, you can avoid the deadlock condition by creating two threads and reading the output of each stream on a separate thread.
-      /// @note You cannot mix asynchronous and synchronous read operations on a redirected stream. Once the redirected stream of a xtd::diagnostics::processs is opened in either asynchronous or synchronous mode, all further read operations on that stream must be in the same mode. For example, do not follow xtd::diagnostics::processs::begin_output_read_line with a call to xtd::io::stream_reader::read_line on the xtd::diagnostics::processs::standard_output stream, or vice versa. However, you can read two different streams in different modes. For example, you can call xtd::diagnostics::processs::begin_output_read_line and then call xtd::io::stream_reader::read_line for the xtd::diagnostics::processs::standard_error stream.
+      /// @note You cannot mix asynchronous and synchronous read operations on a redirected stream. Once the redirected stream of a xtd::diagnostics::process is opened in either asynchronous or synchronous mode, all further read operations on that stream must be in the same mode. For example, do not follow xtd::diagnostics::process::begin_output_read_line with a call to xtd::io::stream_reader::read_line on the xtd::diagnostics::process::standard_output stream, or vice versa. However, you can read two different streams in different modes. For example, you can call xtd::diagnostics::process::begin_output_read_line and then call xtd::io::stream_reader::read_line for the xtd::diagnostics::process::standard_error stream.
       std::istream& standard_output();
 
       /// @brief Gets the properties to pass to the xtd::diagnostics::process::start() method of the xtd::diagnostics::process.
@@ -684,16 +684,16 @@ namespace xtd {
 
       /// @brief Gets the time that the associated process was started.
       /// @return An object that indicates when the process started. An exception is thrown if the process is not running.
-      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::processs object.
+      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
       time_point start_time() const;
 
       /// @brief Frees all the resources that are associated with this component.
-      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::processs object.
+      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
       /// @remarks The xtd::diagnostics::process::close method causes the process to stop waiting for exit if it was waiting, closes the process handle, and clears process-specific properties. Close does not close the standard output, input, and error readers and writers in case they are being referenced externally.
       void close();
       
       /// @brief Immediately stops the associated process.
-      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::processs object.
+      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
       /// @remarks The xtd::diagnostics::process::kill method forces a termination of the process, while xtd::diagnostics::process::close_main_window only requests a termination. When a process with a graphical interface is executing, its message loop is in a wait state. The message loop executes every time a Windows message is sent to the process by the operating system. Calling xtd::diagnostics::process::close_main_window sends a request to close the main window, which, in a well-formed application, closes child windows and revokes all running message loops for the application. The request to exit the process by calling xtd::diagnostics::process::close_main_window does not force the application to quit. The application can ask for user verification before quitting, or it can refuse to quit. To force the application to quit, use the xtd::diagnostics::process::kill method.
       /// @remarks The behavior of xtd::diagnostics::process::xtd::diagnostics::process::close_main_window is identical to that of a user closing an application's main window using the system menu. Therefore, the request to exit the process by closing the main window does not force the application to quit immediately.
       /// @note The xtd::diagnostics::process::kill method executes asynchronously. After calling the xtd::diagnostics::process::kill method, call the xtd::diagnostics::process::xtd::diagnostics::process::wait_for_exit method to wait for the process to exit, or check the xtd::diagnostics::process::has_exited property to determine if the process has exited.
@@ -717,16 +717,16 @@ namespace xtd {
       /// Shows how to launch process.
       /// @include process_form.cpp
       /// @remarks Use this overload to start a process resource by specifying a xtd::diagnostics::process_start_info instance. The overload associates the resource with a new xtd::diagnostics::process object.
-      /// @remarks This overload lets you start a process without first creating a new xtd::diagnostics::process instance. Using this overload with a xtd::diagnostics::processxtd::diagnostics::process_start_info parameter is an alternative to the explicit steps of creating a new xtd::diagnostics::process instance, setting its xtd::diagnostics::process::start_info properties, and calling Start for the xtd::diagnostics::process instance.
+      /// @remarks This overload lets you start a process without first creating a new xtd::diagnostics::process instance. Using this overload with a xtd::diagnostics::process_start_info parameter is an alternative to the explicit steps of creating a new xtd::diagnostics::process instance, setting its xtd::diagnostics::process::start_info properties, and calling Start for the xtd::diagnostics::process instance.
       /// @remarks Using a xtd::diagnostics::process_start_info instance as the parameter lets you call xtd::diagnostics::process::start with the most control over what is passed into the call to start the process. If you need to pass only a file name or a file name and arguments, it is not necessary to create a new xtd::diagnostics::process_start_info instance, although that is an option. The only xtd::diagnostics::process::start_info property that must be set is the xtd::diagnostics::process_start_info::file_name property. The xtd::diagnostics::process_start_info::file_name property does not need to represent an executable file. It can be of any file type for which the extension has been associated with an application that is installed on the system. For example, the xtd::diagnostics::process_start_info::file_name property can have a .txt extension if you have associated text files with an editor, such as Notepad, or it can have a .doc extension if you have associated .doc files with a word processing tool, such as Microsoft Word.
       /// @remarks Unlike the other overloads, the overload of td::diagnostics::process::start that has no parameters is not a static member. Use that overload when you have already created a td::diagnostics::process instance and specified start information (including the file name), and you want to start a process resource and associate it with the existing Process instance. Use one of the static overloads when you want to create a new Process component rather than start a process for an existing component. Both this overload and the overload that has no parameters allow you to specify the start information for the process resource by using a td::diagnostics::process_start_info instance.
       /// @remarks If you have a path variable declared in your system using quotes, you must fully qualify that path when starting any process found in that location. Otherwise, the system will not find the path. For example, if c:\mypath is not in your path, and you add it using quotation marks: path = %path%;"c:\mypath", you must fully qualify any process in c:\mypath when starting it.
       /// @remarks Whenever you use xtd::diagnostics::process::start to start a process, you might need to close it or you risk losing system resources. Close processes using xtd::diagnostics::process::close_main_window or xtd::diagnostics::process::kill. You can check whether a process has already been closed by using its xtd::diagnostics::process::has_exited property.
       static process start(const xtd::diagnostics::process_start_info& start_info);
       /// @brief Starts a process resource by specifying the name of a document or application file and associates the resource with a new Process component.
-      /// @param fille_name The name of a document or application file to run in the process.
+      /// @param file_name The name of a document or application file to run in the process.
       /// @return A new xtd::diagnostics::process that is associated with the process resource. Note that a new process that's started alongside already running instances of the same process will be independent from the others. In addition, Start may return a xtd::diagnostics::process with its xtd::diagnostics::process::has_exited property already set to true. In this case, the started process may have activated an existing instance of itself and then exited.
-      /// @exception xtd::invalid_operation_exception No file name was specified in the filen_ame parameter's xtd::diagnostics::process_start_info::file_name property.
+      /// @exception xtd::invalid_operation_exception No file name was specified in the file_name parameter's xtd::diagnostics::process_start_info::file_name property.
       /// @remarks Use this overload to start a process resource by specifying its file name. The overload associates the resource with a new xtd::diagnostics::process object.
       /// @remarks This overload lets you start a process without first creating a new xtd::diagnostics::process instance. The overload is an alternative to the explicit steps of creating a new xtd::diagnostics::process instance, setting the xtd::diagnostics::process_start_info::file_name member of the xtd::diagnostics::process::start_info property, and calling xtd::diagnostics::process::start for the xtd::diagnostics::process instance.
       /// @remarks Starting a process by specifying its file name is similar to typing the information in the Run dialog box of the Windows Start menu. Therefore, the file name does not need to represent an executable file. It can be of any file type for which the extension has been associated with an application installed on the system. For example the file name can have a .txt extension if you have associated text files with an editor, such as Notepad, or it can have a .doc if you have associated .doc files with a word processing tool, such as Microsoft Word. Similarly, in the same way that the Run dialog box can accept an executable file name with or without the .exe extension, the .exe extension is optional in the fileName parameter. For example, you can set the fileName parameter to either "Notepad.exe" or "Notepad".
@@ -736,10 +736,10 @@ namespace xtd {
       /// @remarks Whenever you use xtd::diagnostics::process::start to start a process, you might need to close it or you risk losing system resources. Close processes using xtd::diagnostics::process::close_main_window or xtd::diagnostics::process::kill. You can check whether a process has already been closed by using its xtd::diagnostics::process::has_exited property.
       static process start(const ustring& file_name);
       /// @brief Starts a process resource by specifying the name of an application and a set of command-line arguments, and associates the resource with a new xtd::diagnostics::process component.
-      /// @param fille_name The name of a document or application file to run in the process.
+      /// @param file_name The name of a document or application file to run in the process.
       /// @param arguments Command-line arguments to pass when starting the process.
       /// @return A new xtd::diagnostics::process that is associated with the process resource. Note that a new process that's started alongside already running instances of the same process will be independent from the others. In addition, Start may return a xtd::diagnostics::process with its xtd::diagnostics::process::has_exited property already set to true. In this case, the started process may have activated an existing instance of itself and then exited.
-      /// @exception xtd::invalid_operation_exception No file name was specified in the filen_ame parameter's xtd::diagnostics::process_start_info::file_name property.
+      /// @exception xtd::invalid_operation_exception No file name was specified in the file_name parameter's xtd::diagnostics::process_start_info::file_name property.
       /// @remarks Use this overload to start a process resource by specifying its file name and command-line arguments. The overload associates the resource with a new xtd::diagnostics::process object.
       /// @remarks This overload lets you start a process without first creating a new xtd::diagnostics::process instance. The overload is an alternative to the explicit steps of creating a new xtd::diagnostics::process instance, setting the file_name and arguments members of the xtd::diagnostics::process_start_info property, and calling xtd::diagnostics::process::start for the xtd::diagnostics::process instance.
       /// @remarks Starting a process by specifying its file name and arguments is similar to typing the file name and command-line arguments in the Run dialog box of the Windows Start menu. Therefore, the file name does not need to represent an executable file. It can be of any file type for which the extension has been associated with an application installed on the system. For example the file name can have a .txt extension if you have associated text files with an editor, such as Notepad, or it can have a .doc if you have associated .doc files with a word processing tool, such as Microsoft Word. Similarly, in the same way that the Run dialog box can accept an executable file name with or without the .exe extension, the .exe extension is optional in the file_name parameter. For example, you can set the file_name parameter to either "Notepad.exe" or "Notepad". If the file_name parameter represents an executable file, the arguments parameter might represent a file to act upon, such as the text file in Notepad.exe myfile.txt. If the file_name parameter represents a command (.cmd) file, the arguments parameter must include either a "/c" or "/k" argument to specify whether the command window exits or remains after completion.
@@ -749,7 +749,7 @@ namespace xtd {
       static process start(const ustring& file_name, const ustring& arguments);
 
       /// @brief Instructs the xtd::diagnostics::process component to wait indefinitely for the associated process to exit.
-      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::processs object.
+      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
       /// @remarks xtd::diagnostics::process::wait_for_exit() makes the current thread wait until the associated process terminates. It should be called after all other methods are called on the process. To avoid blocking the current thread, use the xtd::diagnostics::process::exited event.
       /// @remarks This method instructs the xtd::diagnostics::process component to wait an infinite amount of time for the process and event handlers to exit. This can cause an application to stop responding. For example, if you call td::diagnostics::process::close_main_window for a process that has a user interface, the request to the operating system to terminate the associated process might not be handled if the process is written to never enter its message loop.
       /// @remarks This overload ensures that all processing has been completed, including the handling of asynchronous events for redirected standard output. You should use this overload after a call to the xtd::diagnostics::process::wait_for_exit(int32_t) overload when standard output has been redirected to asynchronous event handlers.
@@ -759,7 +759,7 @@ namespace xtd {
       
       /// @brief Instructs the Process component to wait the specified number of milliseconds for the associated process to exit.
       /// @param milliseconds The amount of time, in milliseconds, to wait for the associated process to exit. A value of 0 specifies an immediate return, and a value of -1 specifies an infinite wait.The amount of time, in milliseconds, to wait for the associated process to exit. A value of 0 specifies an immediate return, and a value of -1 specifies an infinite wait.
-      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::processs object.
+      /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
       /// @remarks xtd::diagnostics::process::wait_for_exit() makes the current thread wait until the associated process terminates. It should be called after all other methods are called on the process. To avoid blocking the current thread, use the xtd::diagnostics::process::exited event.
       /// @remarks This method instructs the xtd::diagnostics::process component to wait an infinite amount of time for the process and event handlers to exit. This can cause an application to stop responding. For example, if you call td::diagnostics::process::close_main_window for a process that has a user interface, the request to the operating system to terminate the associated process might not be handled if the process is written to never enter its message loop.
       /// @remarks This overload ensures that all processing has been completed, including the handling of asynchronous events for redirected standard output. You should use this overload after a call to the xtd::diagnostics::process::wait_for_exit(int32_t) overload when standard output has been redirected to asynchronous event handlers.
@@ -771,7 +771,7 @@ namespace xtd {
       /// @remarks The xtd::diagnostics::process::error_data_received event indicates that the associated xtd::diagnostics::process has written a line that's terminated with a newline (carriage return (CR), line feed (LF), or CR+LF) to its redirected xtd::diagnostics::process::standard_error stream.
       /// @remarks The event only occurs during asynchronous read operations on xtd::diagnostics::process::standard_error. To start asynchronous read operations, you must redirect the xtd::diagnostics::process::standard_error stream of a xtd::diagnostics::process, add your event handler to the xtd::diagnostics::process::error_data_received event, and call xtd::diagnostics::process::begin_error_read_line. Thereafter, the xtd::diagnostics::process::error_data_received event signals each time the process writes a line to the redirected xtd::diagnostics::process::standard_error stream, until the process exits or calls xtd::diagnostics::process::cancel_error_read.
       /// @note The application that is processing the asynchronous output should call the xtd::diagnostics::process::wait_forE_exit() method to ensure that the output buffer has been flushed. Note that specifying a timeout by using the xtd::diagnostics::process::wait_for_exit(int32_t) overload does not ensure the output buffer has been flushed.
-      error_data_received_event error_data_recaived;
+      error_data_received_event error_data_received;
       
       /// @brief Occurs when a process exits.
       /// @remarks The exited event indicates that the associated process exited. This occurrence means either that the process terminated (aborted) or successfully closed. This event can occur only if the value of the EnableRaisingEvents property is true.
@@ -784,7 +784,7 @@ namespace xtd {
       /// @remarks The xtd::diagnostics::process::output_data_received event indicates that the associatedxtd::diagnostics::process has written a line that's terminated with a newline (carriage return (CR), line feed (LF), or CR+LF) to its redirected xtd::diagnostics::process::standard_output stream.
       /// @remarks The event is enabled during asynchronous read operations on xtd::diagnostics::process::standard_output. To start asynchronous read operations, you must redirect the standard_output stream of a xtd::diagnostics::process, add your event handler to the xtd::diagnostics::process::Output_data_received event, and call xtd::diagnostics::process::begin_output_read_line. Thereafter, the xtd::diagnostics::process::output_dData_rReceived event signals each time the process writes a line to the redirected xtd::diagnostics::process::standard_output stream, until the process exits or calls xtd::diagnostics::process::cancel_output_read.
       /// @note The application that is processing the asynchronous output should call the WaitForExit method to ensure that the output buffer has been flushed.
-      output_data_received_event output_data_recaived;
+      output_data_received_event output_data_received;
       
     protected:
       /// @brief Raises the xtd::diagnostics::process::exited event.

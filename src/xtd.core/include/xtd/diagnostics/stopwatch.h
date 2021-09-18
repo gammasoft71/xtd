@@ -44,8 +44,8 @@ namespace xtd {
       static int64_t frequency();
       
       /// @brief Indicates whether the timer is based on a high-resolution performance counter. This field is read-only.
-      /// @return true if the timer is based on a high-resolution performance counte; otherwise, false.
-      /// @remarks The timer used by the xtd::diagnostics::stopwatch class depends on the system hardware and operating system. xtd::diagnostics::stopwatch::is_high_resolution is true if the xtd::diagnostics::stopwatch timer is based on a high-resolution performance counter. Otherwise, xtd::diagnostics::stopwatch::is_high_resolution is false, which indicates that thextd::diagnostics::stopwatch timer is based on the system timer.
+      /// @return true if the timer is based on a high-resolution performance count; otherwise, false.
+      /// @remarks The timer used by the xtd::diagnostics::stopwatch class depends on the system hardware and operating system. xtd::diagnostics::stopwatch::is_high_resolution is true if the xtd::diagnostics::stopwatch timer is based on a high-resolution performance counter. Otherwise, xtd::diagnostics::stopwatch::is_high_resolution is false, which indicates that the xtd::diagnostics::stopwatch timer is based on the system timer.
       /// @remarks Returns always true
       static bool is_high_resolution();
       

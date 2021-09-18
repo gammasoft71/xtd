@@ -33,7 +33,7 @@ namespace xtd {
       void event_type(xtd::diagnostics::source_levels level);
       
       /// @brief Determines whether the trace listener should trace the event.
-      /// @param chache The xtd::diagnostics::trace_event_cache that contains information for the trace event.
+      /// @param cache The xtd::diagnostics::trace_event_cache that contains information for the trace event.
       /// @param source The name of the source.
       /// @param event_type One of the trace_event_type values specifying the type of event that has caused the trace
       /// @param id A trace identifier number.

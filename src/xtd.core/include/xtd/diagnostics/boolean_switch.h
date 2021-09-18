@@ -32,9 +32,9 @@ namespace xtd {
     ///     }
     ///   }
     /// @endcode
-    /// @remarks You must enable tracing or debugging to use a switch. The syntax is compiler specific. If you use other than cmake to manage your build, refer to the documentation of your build nanager.
-    ///  * To enable debug mode with cmake, add the add_definitions(-DDEBUG) command line in the CMakeLists.txt of your porject, or you can add #define DEBUG to the top of your file.
-    ///  * To enable trace mode with cmake, add the add_definitions(-DTRACE) command line in the CMakeLists.txt of your porject, or you can add #define TRACE to the top of your file.
+    /// @remarks You must enable tracing or debugging to use a switch. The syntax is compiler specific. If you use other than cmake to manage your build, refer to the documentation of your build manager.
+    ///  * To enable debug mode with cmake, add the add_definitions(-DDEBUG) command line in the CMakeLists.txt of your project, or you can add #define DEBUG to the top of your file.
+    ///  * To enable trace mode with cmake, add the add_definitions(-DTRACE) command line in the CMakeLists.txt of your project, or you can add #define TRACE to the top of your file.
     /// @note These debug and trace compiler switches are not required when using the xtd::diagnostics::boolean_switch class in isolation. They are only required in conjunction with xtd::diagnostics::trace or xtd::diagnostics::debug methods that are conditionally compiled.
     /// @remarks For more information on instrumenting your application, see xtd::diagnostics::debug and xtd::diagnostics::trace.
     /// @note To improve performance, you can make xtd::diagnostics::boolean_switch members static in your class.
@@ -70,7 +70,7 @@ namespace xtd {
       /// @param display_name The name to display on a user interface.
       /// @param description The description of the switch.
       /// @param default_switch_value The default value of the switch.
-      /// @remarks The display_name parameter is used to set the value of the xtd::diagnostics::boolean_switch::display_name property, and the description parameter is use to set the value of the xtd::diagnostics::boolean_switch::description property. The default_switch_value parameter is saved as a field and used to initialize the xtd::diagnostics::boolean_switch::value property on first reference. For more information about constructor use, see the xtd::diagnostics::boolean_switch::booleanswitch(std::sring, xtd::ustring) constructor.
+      /// @remarks The display_name parameter is used to set the value of the xtd::diagnostics::boolean_switch::display_name property, and the description parameter is use to set the value of the xtd::diagnostics::boolean_switch::description property. The default_switch_value parameter is saved as a field and used to initialize the xtd::diagnostics::boolean_switch::value property on first reference. For more information about constructor use, see the xtd::diagnostics::boolean_switch::booleanswitch(std::string, xtd::ustring) constructor.
       boolean_switch(const xtd::ustring& display_name, const xtd::ustring& description, const xtd::ustring& default_switch_value);
       
       /// @brief Gets a value indicating whether the switch is enabled or disabled.

@@ -21,9 +21,9 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @remarks For examples of how to implement a trace_listener, see the default_trace_listener, text_writer_trace_listener and the event_log_trace_listener classes.
-    /// @remarks You must enable tracing or debugging to use a trace listener. The syntax is compiler specific. If you use other than cmake to manage your build, refer to the documentation of your build nanager.
-    ///  * To enable debugging with cmake, add the add_definitions(-DDEBUG) command line in the CMakeLists.txt of your porject, or you can add #define DEBUG to the top of your file but in this case, the compiler options for debug is not activated.
-    ///  * To enable tracing with cmake, add the add_definitions(-DTRACE) command line in the CMakeLists.txt of your porject, or you can add #define TRACE to the top of your file.
+    /// @remarks You must enable tracing or debugging to use a trace listener. The syntax is compiler specific. If you use other than cmake to manage your build, refer to the documentation of your build manager.
+    ///  * To enable debugging with cmake, add the add_definitions(-DDEBUG) command line in the CMakeLists.txt of your project, or you can add #define DEBUG to the top of your file but in this case, the compiler options for debug is not activated.
+    ///  * To enable tracing with cmake, add the add_definitions(-DTRACE) command line in the CMakeLists.txt of your project, or you can add #define TRACE to the top of your file.
     /// @note <b>to Inheritors:</b> Inherit from this class to implement a custom listener for the debug and trace classes. At a minimum, you must implement the write and write_line methods. Additionally, you can implement the fail, close and flush methods.
     class trace_listener : public object {
     public:
@@ -227,11 +227,11 @@ namespace xtd {
       /// @param relatedActivityId A Guid object identifying a related activity.
       /// @remarks <b>Important</b> This method is not intended to be called directly by application code but by members of the Debug, Trace, and TraceSource classes to write trace data to output.
       /// @remarks The TraceTransfer method is used for the correlation of related traces. The TraceTransfer method calls the TraceEvent method to process the call, with the eventType level set to Transfer and the relatedActivityIdGuid as a string appended to the message.
-      /// @remarks activity_id_type is generaly a guid.
+      /// @remarks activity_id_type is generally a guid.
       template<typename activity_id_type>
       void trace_transfer(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::ustring& source, int id, const xtd::ustring& message, const activity_id_type& related_activity_id) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        write_line(xtd::ustring::format("{} transfert: {} : {}, related_activity_id={}", source, id, message, related_activity_id));
+        write_line(xtd::ustring::format("{} transfer: {} : {}, related_activity_id={}", source, id, message, related_activity_id));
         write_event_cache(event_cache);
 #endif
       }

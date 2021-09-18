@@ -23,7 +23,7 @@ namespace xtd {
     /// @remarks The trace_source class is used by applications to produce traces that can be associated with the application. trace_source provides tracing methods that allow you to easily trace events, trace data, and issue informational traces.
     /// @remarks The trace_source class is identified by the name of a source, typically the name of the application. The trace messages coming from a particular component can be initiated by a particular trace source, allowing all messages coming from that component to be easily identified.
     /// @remarks trace_source defines tracing methods but does not actually provide any specific mechanism for generating and storing tracing data. The tracing data is produced by trace listeners, which are plug-ins that can be loaded by trace sources.
-    /// @remarks You can customize the tracing output's target by adding or removing trace_istener instances to or from the collection stored in the trace_source::listeners property. By default, trace output is produced using an instance of the default_trace_listener class.
+    /// @remarks You can customize the tracing output's target by adding or removing trace_listener instances to or from the collection stored in the trace_source::listeners property. By default, trace output is produced using an instance of the default_trace_listener class.
     /// @note Adding a trace listener to the listeners collection can cause an exception to be thrown while tracing, if a resource used by the trace listener is not available. The conditions and the exception thrown depend on the trace listener and cannot be enumerated in this topic. It may be useful to place calls to the trace_source methods in try/catch blocks to detect and handle any exceptions from trace listeners.
     /// @remarks The source_switch class provides the means to dynamically control the tracing output. You can modify the value of the source switch without recompiling your application.
     /// @remarks The trace_event_type enumeration is used to define the event type of the trace message. Trace filters use the trace_event_type to determine if a trace listener should produce the trace message.
@@ -143,14 +143,14 @@ namespace xtd {
       /// @brief Writes an informational message to the trace listeners in the listeners collection using the specified message.
       /// @param message The informative message to write.
       /// @remarks The trace_information method provides an informational message intended to be read by users and not by tools.
-      /// @remarks trace_information(const std::dtring&, calls the trace_event(const trace_eventType&, Int32_t, const xtd::ustring&, ...objects_t) method, setting event_type to trace_event_type.Information and passing the message content as an object array with formatting information. The trace_event(const trace_event_type, Int32_t, xtd::ustring&) method in turn calls the trace_event(const trace_event_cache&, const xtd::ustring&, trace_event_type, Int32_t, const xtd::ustring&) method of each trace listener.
+      /// @remarks trace_information(const std::string&, calls the trace_event(const trace_eventType&, Int32_t, const xtd::ustring&, ...objects_t) method, setting event_type to trace_event_type.Information and passing the message content as an object array with formatting information. The trace_event(const trace_event_type, Int32_t, xtd::ustring&) method in turn calls the trace_event(const trace_event_cache&, const xtd::ustring&, trace_event_type, Int32_t, const xtd::ustring&) method of each trace listener.
       void trace_information(const xtd::ustring& message);
       
       /// @brief Writes an informational message to the trace listeners in the listeners collection using the specified object array and formatting information.
       /// @param format A composite format string that contains text intermixed with zero or more format items, which correspond to objects in the args array.
       /// @param args... An array containing zero or more objects to format.
       /// @remarks The trace_information method provides an informational message intended to be read by users and not by tools.
-      /// @remarks trace_information(const std::dtring&, const Objects_t) calls the trace_event(const trace_eventType&, Int32_t, const xtd::ustring&, ...objects_t) method, setting event_type to trace_event_type.Information and passing the message content as an object array with formatting information. The trace_event(const trace_event_type, Int32_t, xtd::ustring&, ...objects_t) method in turn calls the trace_event(const trace_event_cache&, const xtd::ustring&, trace_event_type, Int32_t, const xtd::ustring&, ...objects_t) method of each trace listener.
+      /// @remarks trace_information(const std::string&, const Objects_t) calls the trace_event(const trace_eventType&, Int32_t, const xtd::ustring&, ...objects_t) method, setting event_type to trace_event_type.Information and passing the message content as an object array with formatting information. The trace_event(const trace_event_type, Int32_t, xtd::ustring&, ...objects_t) method in turn calls the trace_event(const trace_event_cache&, const xtd::ustring&, trace_event_type, Int32_t, const xtd::ustring&, ...objects_t) method of each trace listener.
       template<typename ...objects_t>
       void trace_information(const xtd::ustring& format, const objects_t& ... args) {trace_event(trace_event_type::information, 0, format, args...);}
 
@@ -158,7 +158,7 @@ namespace xtd {
       /// @param id A numeric identifier for the event.
       /// @param message The trace message to write.
       /// @param related_activity_id A structure that identifies the related activity.
-      /// @remarks The trace_transfer method calls the trace_transfer method of each trace listener in the listeners property to write the trace information. The default trace_transfer method in the base trace_listener class calls the trace_listener::trace_event(const trace_event_cache&, const xtd::ustring&, trace_svent_type, Int32_t, const xtd::ustring&) method to process the call, setting event_type to trace_event_type::transfer and appending a string representation of the related_activity_id GUID to message.
+      /// @remarks The trace_transfer method calls the trace_transfer method of each trace listener in the listeners property to write the trace information. The default trace_transfer method in the base trace_listener class calls the trace_listener::trace_event(const trace_event_cache&, const xtd::ustring&, trace_event_type, Int32_t, const xtd::ustring&) method to process the call, setting event_type to trace_event_type::transfer and appending a string representation of the related_activity_id GUID to message.
       /// @remarks trace_transfer is intended to be used with the logical operations of a correlation_manager. The related_activity_id parameter relates to the activity_id property of a correlation_manager object. If a logical operation begins in one activity and transfers to another, the second activity logs the transfer by calling the trace_transfer method. The trace_transfer call relates the new activity identity to the previous identity. The most likely consumer of this functionality is a trace viewer that can report logical operations that span multiple activities.
       template<typename guid_t>
       void trace_transfer (int32_t id, const xtd::ustring& message,const  guid_t& related_activity_id) {
@@ -171,7 +171,7 @@ namespace xtd {
     private:
       std::map<xtd::ustring, xtd::ustring> attributes_;
       xtd::ustring name_;
-      /// @todo Update source_swith with this...
+      /// @todo Update source_switch with this...
       xtd::diagnostics::source_levels switch_levels_ = xtd::diagnostics::source_levels::off;
       xtd::diagnostics::trace_listener_collection listeners_ {std::make_shared<xtd::diagnostics::default_trace_listener>()};
       xtd::diagnostics::source_switch source_switch_ {""};

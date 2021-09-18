@@ -92,11 +92,11 @@ namespace xtd {
 
       /// @brief Gets search paths for files, directories for temporary files, application-specific options, and other similar information.
       /// @return std::map<xtd::ustring, xtd::ustring> A string dictionary that provides environment variables that apply to this process and child processes. The default is empty.
-      /// @remarks Although you cannot set the xtd::diagnostics::process_start_info::environment_variables property, you can modify the generic disctionary returned by the property. For example, the following code adds a TempPath environment variable: @verbatim my_process.startInfo().environment_variables().insert({"TempPath", "C:\\Temp"}); @endverbatim. You must set the xtd::diagnostics::process_start_info::use_shell_execute property to false to start the process after changing the xtd::diagnostics::process_start_info::environment_variables property. If xtd::diagnostics::process_start_info::use_shell_execute is true, an xtd::invalid_operation_exception is thrown when the xtd::diagnostics::process::start method is called.
+      /// @remarks Although you cannot set the xtd::diagnostics::process_start_info::environment_variables property, you can modify the generic dictionary returned by the property. For example, the following code adds a TempPath environment variable: @verbatim my_process.startInfo().environment_variables().insert({"TempPath", "C:\\Temp"}); @endverbatim. You must set the xtd::diagnostics::process_start_info::use_shell_execute property to false to start the process after changing the xtd::diagnostics::process_start_info::environment_variables property. If xtd::diagnostics::process_start_info::use_shell_execute is true, an xtd::invalid_operation_exception is thrown when the xtd::diagnostics::process::start method is called.
       const std::map<xtd::ustring, xtd::ustring>& environment_variables() const;
       /// @brief Gets search paths for files, directories for temporary files, application-specific options, and other similar information.
       /// @return std::map<xtd::ustring, xtd::ustring> A string dictionary that provides environment variables that apply to this process and child processes. The default is empty.
-      /// @remarks Although you cannot set the xtd::diagnostics::process_start_info::environment_variables property, you can modify the generic disctionary returned by the property. For example, the following code adds a TempPath environment variable: @verbatim my_process.startInfo().environment_variables().insert({"TempPath", "C:\\Temp"}); @endverbatim. You must set the xtd::diagnostics::process_start_info::use_shell_execute property to false to start the process after changing the xtd::diagnostics::process_start_info::environment_variables property. If xtd::diagnostics::process_start_info::use_shell_execute is true, an xtd::invalid_operation_exception is thrown when the xtd::diagnostics::process::start method is called.
+      /// @remarks Although you cannot set the xtd::diagnostics::process_start_info::environment_variables property, you can modify the generic dictionary returned by the property. For example, the following code adds a TempPath environment variable: @verbatim my_process.startInfo().environment_variables().insert({"TempPath", "C:\\Temp"}); @endverbatim. You must set the xtd::diagnostics::process_start_info::use_shell_execute property to false to start the process after changing the xtd::diagnostics::process_start_info::environment_variables property. If xtd::diagnostics::process_start_info::use_shell_execute is true, an xtd::invalid_operation_exception is thrown when the xtd::diagnostics::process::start method is called.
       std::map<xtd::ustring, xtd::ustring>& environment_variables();
 
       /// @brief Gets a value indicating whether an error dialog box is displayed to the user if the process cannot be started.
@@ -262,7 +262,7 @@ namespace xtd {
       ///   p.start_info().redirect_standard_output(true);
       ///   string e_out;
       ///   p.start_info().redirect_standard_error(true);
-      ///   p.error_data_recaived += [&](object& sender, const data_received_event_args& e) {
+      ///   p.error_data_received += [&](object& sender, const data_received_event_args& e) {
       ///     e_out += e.data();
       ///   };
       ///   p.start_info().file_name("write_500_lines");
@@ -371,7 +371,7 @@ namespace xtd {
       ///   p.start_info().redirect_standard_output(true);
       ///   string e_out;
       ///   p.start_info().redirect_standard_error(true);
-      ///   p.error_data_recaived += [&](object& sender, const data_received_event_args& e) {
+      ///   p.error_data_received += [&](object& sender, const data_received_event_args& e) {
       ///     e_out += e.data();
       ///   };
       ///   p.start_info().file_name("write_500_lines");
@@ -526,7 +526,7 @@ namespace xtd {
       
       /// @brief Gets a value that indicates whether the textual output of an application is written to the xtd::diagnostics::process::standard_output stream.
       /// @return bool true if output should be written to xtd::diagnostics::process::standard_output; otherwise, false. The default is false.
-      /// @par Examplles
+      /// @par Examples
       /// The following example runs the ipconfig.exe command and redirects its standard output to the example's console window.
       /// @code
       /// #include <xtd/xtd>
@@ -557,11 +557,11 @@ namespace xtd {
       ///   console::read_line();
       /// }
       /// @endcode
-      /// @remarks When a xtd::diagnostics::processs writes text to its standard stream, that text is normally displayed on the console. By redirecting the xtd::diagnostics::processs::standard_output stream, you can manipulate or suppress the output of a process. For example, you can filter the text, format it differently, or write the output to both the console and a designated log file.
-      /// @note To use xtd::diagnostics::processs::standard_output, you must set xtd::diagnostics::process_start_info::use_shell_execute to false, and you must set xtd::diagnostics::process_start_info::redirect_standard_output to true. Otherwise, reading from the xtd::diagnostics::processs::standard_output stream throws an exception.
-      /// @remarks The redirected xtd::diagnostics::processs::standard_output stream can be read synchronously or asynchronously. Methods such as xtd::io::stream_reader::read, xtd::io::stream_reader::read_line, and xtd::io::stream_reader::read_to_end perform synchronous read operations on the output stream of the process. These synchronous read operations do not complete until the associated Process writes to its xtd::diagnostics::processs::xtd::diagnostics::processs::standard_output stream, or closes the stream.
-      /// @remarks In contrast, xtd::diagnostics::processs::begin_output_read_line starts asynchronous read operations on the xtd::diagnostics::processs::standard_output stream. This method enables a designated event handler for the stream output and immediately returns to the caller, which can perform other work while the stream output is directed to the event handler.
-      /// @remarks Synchronous read operations introduce a dependency between the caller reading from the xtd::diagnostics::processs::standard_output stream and the child process writing to that stream. These dependencies can result in deadlock conditions. When the caller reads from the redirected stream of a child process, it is dependent on the child. The caller waits on the read operation until the child writes to the stream or closes the stream. When the child process writes enough data to fill its redirected stream, it is dependent on the parent. The child process waits on the next write operation until the parent reads from the full stream or closes the stream. The deadlock condition results when the caller and child process wait on each other to complete an operation, and neither can proceed. You can avoid deadlocks by evaluating dependencies between the caller and child process.
+      /// @remarks When a xtd::diagnostics::process writes text to its standard stream, that text is normally displayed on the console. By redirecting the xtd::diagnostics::process::standard_output stream, you can manipulate or suppress the output of a process. For example, you can filter the text, format it differently, or write the output to both the console and a designated log file.
+      /// @note To use xtd::diagnostics::process::standard_output, you must set xtd::diagnostics::process_start_info::use_shell_execute to false, and you must set xtd::diagnostics::process_start_info::redirect_standard_output to true. Otherwise, reading from the xtd::diagnostics::process::standard_output stream throws an exception.
+      /// @remarks The redirected xtd::diagnostics::process::standard_output stream can be read synchronously or asynchronously. Methods such as xtd::io::stream_reader::read, xtd::io::stream_reader::read_line, and xtd::io::stream_reader::read_to_end perform synchronous read operations on the output stream of the process. These synchronous read operations do not complete until the associated Process writes to its xtd::diagnostics::process::xtd::diagnostics::process::standard_output stream, or closes the stream.
+      /// @remarks In contrast, xtd::diagnostics::process::begin_output_read_line starts asynchronous read operations on the xtd::diagnostics::process::standard_output stream. This method enables a designated event handler for the stream output and immediately returns to the caller, which can perform other work while the stream output is directed to the event handler.
+      /// @remarks Synchronous read operations introduce a dependency between the caller reading from the xtd::diagnostics::process::standard_output stream and the child process writing to that stream. These dependencies can result in deadlock conditions. When the caller reads from the redirected stream of a child process, it is dependent on the child. The caller waits on the read operation until the child writes to the stream or closes the stream. When the child process writes enough data to fill its redirected stream, it is dependent on the parent. The child process waits on the next write operation until the parent reads from the full stream or closes the stream. The deadlock condition results when the caller and child process wait on each other to complete an operation, and neither can proceed. You can avoid deadlocks by evaluating dependencies between the caller and child process.
       /// @remarks The last two examples in this section use the xtd::diagnostics:process::start method to launch an executable named Write500Lines.exe. The following example contains its source code.
       /// @code
       /// #include <xtd/xtd>
@@ -623,7 +623,7 @@ namespace xtd {
       ///   p.start_info().redirect_standard_output(true);
       ///   string e_out;
       ///   p.start_info().redirect_standard_error(true);
-      ///   p.error_data_recaived += [&](object& sender, const data_received_event_args& e) {
+      ///   p.error_data_received += [&](object& sender, const data_received_event_args& e) {
       ///     e_out += e.data();
       ///   };
       ///   p.start_info().file_name("write_500_lines");
@@ -645,12 +645,12 @@ namespace xtd {
       /// //      Error stream: Successfully wrote 500 lines.
       /// @endcode
       /// @remarks You can use asynchronous read operations to avoid these dependencies and their deadlock potential. Alternately, you can avoid the deadlock condition by creating two threads and reading the output of each stream on a separate thread.
-      /// @note You cannot mix asynchronous and synchronous read operations on a redirected stream. Once the redirected stream of a xtd::diagnostics::processs is opened in either asynchronous or synchronous mode, all further read operations on that stream must be in the same mode. For example, do not follow xtd::diagnostics::processs::begin_output_read_line with a call to xtd::io::stream_reader::read_line on the xtd::diagnostics::processs::standard_output stream, or vice versa. However, you can read two different streams in different modes. For example, you can call xtd::diagnostics::processs::begin_output_read_line and then call xtd::io::stream_reader::read_line for the xtd::diagnostics::processs::standard_error stream.
+      /// @note You cannot mix asynchronous and synchronous read operations on a redirected stream. Once the redirected stream of a xtd::diagnostics::process is opened in either asynchronous or synchronous mode, all further read operations on that stream must be in the same mode. For example, do not follow xtd::diagnostics::process::begin_output_read_line with a call to xtd::io::stream_reader::read_line on the xtd::diagnostics::process::standard_output stream, or vice versa. However, you can read two different streams in different modes. For example, you can call xtd::diagnostics::process::begin_output_read_line and then call xtd::io::stream_reader::read_line for the xtd::diagnostics::process::standard_error stream.
       bool redirect_standard_output() const;
       /// @brief Sets a value that indicates whether the textual output of an application is written to the xtd::diagnostics::process::standard_output stream.
       /// @param value true if output should be written to xtd::diagnostics::process::standard_output; otherwise, false. The default is false.
       /// @return The current instance of process_start_info.
-      /// @par Examplles
+      /// @par Examples
       /// The following example runs the ipconfig.exe command and redirects its standard output to the example's console window.
       /// @code
       /// #include <xtd/xtd>
@@ -681,11 +681,11 @@ namespace xtd {
       ///   console::read_line();
       /// }
       /// @endcode
-      /// @remarks When a xtd::diagnostics::processs writes text to its standard stream, that text is normally displayed on the console. By redirecting the xtd::diagnostics::processs::standard_output stream, you can manipulate or suppress the output of a process. For example, you can filter the text, format it differently, or write the output to both the console and a designated log file.
-      /// @note To use xtd::diagnostics::processs::standard_output, you must set xtd::diagnostics::process_start_info::use_shell_execute to false, and you must set xtd::diagnostics::process_start_info::redirect_standard_output to true. Otherwise, reading from the xtd::diagnostics::processs::standard_output stream throws an exception.
-      /// @remarks The redirected xtd::diagnostics::processs::standard_output stream can be read synchronously or asynchronously. Methods such as xtd::io::stream_reader::read, xtd::io::stream_reader::read_line, and xtd::io::stream_reader::read_to_end perform synchronous read operations on the output stream of the process. These synchronous read operations do not complete until the associated Process writes to its xtd::diagnostics::processs::xtd::diagnostics::processs::standard_output stream, or closes the stream.
-      /// @remarks In contrast, xtd::diagnostics::processs::begin_output_read_line starts asynchronous read operations on the xtd::diagnostics::processs::standard_output stream. This method enables a designated event handler for the stream output and immediately returns to the caller, which can perform other work while the stream output is directed to the event handler.
-      /// @remarks Synchronous read operations introduce a dependency between the caller reading from the xtd::diagnostics::processs::standard_output stream and the child process writing to that stream. These dependencies can result in deadlock conditions. When the caller reads from the redirected stream of a child process, it is dependent on the child. The caller waits on the read operation until the child writes to the stream or closes the stream. When the child process writes enough data to fill its redirected stream, it is dependent on the parent. The child process waits on the next write operation until the parent reads from the full stream or closes the stream. The deadlock condition results when the caller and child process wait on each other to complete an operation, and neither can proceed. You can avoid deadlocks by evaluating dependencies between the caller and child process.
+      /// @remarks When a xtd::diagnostics::process writes text to its standard stream, that text is normally displayed on the console. By redirecting the xtd::diagnostics::process::standard_output stream, you can manipulate or suppress the output of a process. For example, you can filter the text, format it differently, or write the output to both the console and a designated log file.
+      /// @note To use xtd::diagnostics::process::standard_output, you must set xtd::diagnostics::process_start_info::use_shell_execute to false, and you must set xtd::diagnostics::process_start_info::redirect_standard_output to true. Otherwise, reading from the xtd::diagnostics::process::standard_output stream throws an exception.
+      /// @remarks The redirected xtd::diagnostics::process::standard_output stream can be read synchronously or asynchronously. Methods such as xtd::io::stream_reader::read, xtd::io::stream_reader::read_line, and xtd::io::stream_reader::read_to_end perform synchronous read operations on the output stream of the process. These synchronous read operations do not complete until the associated Process writes to its xtd::diagnostics::process::xtd::diagnostics::process::standard_output stream, or closes the stream.
+      /// @remarks In contrast, xtd::diagnostics::process::begin_output_read_line starts asynchronous read operations on the xtd::diagnostics::process::standard_output stream. This method enables a designated event handler for the stream output and immediately returns to the caller, which can perform other work while the stream output is directed to the event handler.
+      /// @remarks Synchronous read operations introduce a dependency between the caller reading from the xtd::diagnostics::process::standard_output stream and the child process writing to that stream. These dependencies can result in deadlock conditions. When the caller reads from the redirected stream of a child process, it is dependent on the child. The caller waits on the read operation until the child writes to the stream or closes the stream. When the child process writes enough data to fill its redirected stream, it is dependent on the parent. The child process waits on the next write operation until the parent reads from the full stream or closes the stream. The deadlock condition results when the caller and child process wait on each other to complete an operation, and neither can proceed. You can avoid deadlocks by evaluating dependencies between the caller and child process.
       /// @remarks The last two examples in this section use the xtd::diagnostics:process::start method to launch an executable named Write500Lines.exe. The following example contains its source code.
       /// @code
       /// #include <xtd/xtd>
@@ -747,7 +747,7 @@ namespace xtd {
       ///   p.start_info().redirect_standard_output(true);
       ///   string e_out;
       ///   p.start_info().redirect_standard_error(true);
-      ///   p.error_data_recaived += [&](object& sender, const data_received_event_args& e) {
+      ///   p.error_data_received += [&](object& sender, const data_received_event_args& e) {
       ///     e_out += e.data();
       ///   };
       ///   p.start_info().file_name("write_500_lines");
@@ -769,7 +769,7 @@ namespace xtd {
       /// //      Error stream: Successfully wrote 500 lines.
       /// @endcode
       /// @remarks You can use asynchronous read operations to avoid these dependencies and their deadlock potential. Alternately, you can avoid the deadlock condition by creating two threads and reading the output of each stream on a separate thread.
-      /// @note You cannot mix asynchronous and synchronous read operations on a redirected stream. Once the redirected stream of a xtd::diagnostics::processs is opened in either asynchronous or synchronous mode, all further read operations on that stream must be in the same mode. For example, do not follow xtd::diagnostics::processs::begin_output_read_line with a call to xtd::io::stream_reader::read_line on the xtd::diagnostics::processs::standard_output stream, or vice versa. However, you can read two different streams in different modes. For example, you can call xtd::diagnostics::processs::begin_output_read_line and then call xtd::io::stream_reader::read_line for the xtd::diagnostics::processs::standard_error stream.
+      /// @note You cannot mix asynchronous and synchronous read operations on a redirected stream. Once the redirected stream of a xtd::diagnostics::process is opened in either asynchronous or synchronous mode, all further read operations on that stream must be in the same mode. For example, do not follow xtd::diagnostics::process::begin_output_read_line with a call to xtd::io::stream_reader::read_line on the xtd::diagnostics::process::standard_output stream, or vice versa. However, you can read two different streams in different modes. For example, you can call xtd::diagnostics::process::begin_output_read_line and then call xtd::io::stream_reader::read_line for the xtd::diagnostics::process::standard_error stream.
       process_start_info& redirect_standard_output(bool value);
       
       /// @brief Gets the user name to be used when starting the process.
@@ -793,7 +793,7 @@ namespace xtd {
       /// @remarks When you use the operating system shell to start processes, you can start any document (which is any registered file type associated with an executable that has a default open action) and perform operations on the file, such as printing, by using the Process object. When xtd::diagnostics::process_start_info::use_shell_execute is false, you can start only executables by using the xtd::diagnostics::process object.
       /// @note xtd::diagnostics::process_start_info::use_shell_execute must be true if you set the xtd::diagnostics::process_start_info::error_dialog property to true.
       /// @remarks The xtd::diagnostics::process_start_info::working_directory property behaves differently depending on the value of the xtd::diagnostics::process_start_info::use_shell_execute property. When xtd::diagnostics::process_start_info::use_shell_execute is true, the xtd::diagnostics::process_start_info::working_directory property specifies the location of the executable. If working_directory is an empty string, it is assumed that the current directory contains the executable.
-      /// @remarks When xtd::diagnostics::process_start_info::use_shell_execute is false, the xtd::diagnostics::process_start_info::working_directory property is not used to find the executable. Instead, it is used only by the process that is started and has meaning only within the context of the new process. When xtd::diagnostics::process_start_info::use_shell_xecute is false, the xtd::diagnostics::process_start_info::file_name property can be either a fully qualified path to the executable, or a simple executable name that the system will attempt to find within folders specified by the PATH environment variable.
+      /// @remarks When xtd::diagnostics::process_start_info::use_shell_execute is false, the xtd::diagnostics::process_start_info::working_directory property is not used to find the executable. Instead, it is used only by the process that is started and has meaning only within the context of the new process. When xtd::diagnostics::process_start_info::use_shell_execute is false, the xtd::diagnostics::process_start_info::file_name property can be either a fully qualified path to the executable, or a simple executable name that the system will attempt to find within folders specified by the PATH environment variable.
       bool use_shell_execute() const;
       /// @brief Sets a value indicating whether to use the operating system shell to start the process.
       /// @param value true if the shell should be used when starting the process; false if the process should be created directly from the executable file. The default is true.
@@ -803,7 +803,7 @@ namespace xtd {
       /// @remarks When you use the operating system shell to start processes, you can start any document (which is any registered file type associated with an executable that has a default open action) and perform operations on the file, such as printing, by using the Process object. When xtd::diagnostics::process_start_info::use_shell_execute is false, you can start only executables by using the xtd::diagnostics::process object.
       /// @note xtd::diagnostics::process_start_info::use_shell_execute must be true if you set the xtd::diagnostics::process_start_info::error_dialog property to true.
       /// @remarks The xtd::diagnostics::process_start_info::working_directory property behaves differently depending on the value of the xtd::diagnostics::process_start_info::use_shell_execute property. When xtd::diagnostics::process_start_info::use_shell_execute is true, the xtd::diagnostics::process_start_info::working_directory property specifies the location of the executable. If working_directory is an empty string, it is assumed that the current directory contains the executable.
-      /// @remarks When xtd::diagnostics::process_start_info::use_shell_execute is false, the xtd::diagnostics::process_start_info::working_directory property is not used to find the executable. Instead, it is used only by the process that is started and has meaning only within the context of the new process. When xtd::diagnostics::process_start_info::use_shell_xecute is false, the xtd::diagnostics::process_start_info::file_name property can be either a fully qualified path to the executable, or a simple executable name that the system will attempt to find within folders specified by the PATH environment variable.
+      /// @remarks When xtd::diagnostics::process_start_info::use_shell_execute is false, the xtd::diagnostics::process_start_info::working_directory property is not used to find the executable. Instead, it is used only by the process that is started and has meaning only within the context of the new process. When xtd::diagnostics::process_start_info::use_shell_execute is false, the xtd::diagnostics::process_start_info::file_name property can be either a fully qualified path to the executable, or a simple executable name that the system will attempt to find within folders specified by the PATH environment variable.
       process_start_info& use_shell_execute(bool value);
       
       /// @brief Gets the verb to use when opening the application or document specified by the FileName property.

@@ -16,7 +16,7 @@ namespace xtd {
     /// @ingroup xtd_core
     /// @remarks One of several different types of filters can be assigned to a trace listener to provide a layer of screening beyond that provided by the trace switch. The filter can be used to control the level of tracing that is produced by the listener.
     /// @remarks This class filters events based on a specific trace source set by the user.
-    /// @remarks xtd::diagnostics::source_filter overrides the xtd::diagnostics::source_filter::should_trace method and defines a xtd::diagnostics::soource_filter::source property that specifies the name of the trace source to be traced by the listener.
+    /// @remarks xtd::diagnostics::source_filter overrides the xtd::diagnostics::source_filter::should_trace method and defines a xtd::diagnostics::source_filter::source property that specifies the name of the trace source to be traced by the listener.
     /// @note This filter is provided because multiple trace sources can simultaneously use the same trace listener.
     class source_filter : public xtd::diagnostics::trace_filter {
     public:
@@ -32,7 +32,7 @@ namespace xtd {
       void source(const xtd::ustring& source);
       
       /// @brief Determines whether the trace listener should trace the event.
-      /// @param chache The trace_event_cache that contains information for the trace event.
+      /// @param cache The trace_event_cache that contains information for the trace event.
       /// @param source The name of the source.
       /// @param event_type One of the trace_event_type values specifying the type of event that has caused the trace
       /// @param id A trace identifier number.
