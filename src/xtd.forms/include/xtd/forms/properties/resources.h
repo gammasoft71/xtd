@@ -19,15 +19,15 @@ namespace xtd {
     public:
       /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
       static const xtd::drawing::bitmap& cursor_arrow() {
-        if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path_, "cursors", xtd::ustring::format("arrow{}.png", get_os_potfix())))) return xtd::drawing::bitmap::empty;
-        static xtd::drawing::bitmap bitmap(xtd::io::path::combine(forms_resource_path_, "cursors", xtd::ustring::format("arrow{}.png", get_os_potfix())));
+        if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path_, "cursors", xtd::ustring::format("arrow{}.png", get_os_postfix())))) return xtd::drawing::bitmap::empty;
+        static xtd::drawing::bitmap bitmap(xtd::io::path::combine(forms_resource_path_, "cursors", xtd::ustring::format("arrow{}.png", get_os_postfix())));
         return bitmap;
       }
       
       /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
       static const xtd::drawing::bitmap& cursor_no_move_2d() {
-        if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path_, "cursors", xtd::ustring::format("cursor_no_move_2d{}.png", get_os_potfix())))) return xtd::drawing::bitmap::empty;
-        static xtd::drawing::bitmap bitmap(xtd::io::path::combine(forms_resource_path_, "cursors", xtd::ustring::format("cursor_no_move_2d{}.png", get_os_potfix())));
+        if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path_, "cursors", xtd::ustring::format("cursor_no_move_2d{}.png", get_os_postfix())))) return xtd::drawing::bitmap::empty;
+        static xtd::drawing::bitmap bitmap(xtd::io::path::combine(forms_resource_path_, "cursors", xtd::ustring::format("cursor_no_move_2d{}.png", get_os_postfix())));
         return bitmap;
       }
       
@@ -60,7 +60,7 @@ namespace xtd {
       }
 
     private:
-      static std::string get_os_potfix() noexcept {return xtd::environment::os_version().is_windows_platform() ? "_w" : xtd::environment::os_version().is_linux_platform() ? "_g" : xtd::environment::os_version().is_macos_platform() ? "_m" : "";}
+      static std::string get_os_postfix() noexcept {return xtd::environment::os_version().is_windows_platform() ? "_w" : xtd::environment::os_version().is_linux_platform() ? "_g" : xtd::environment::os_version().is_macos_platform() ? "_m" : "";}
 #if defined(__XTD_RESOURCES_PATH__)
       static constexpr const char* forms_resource_path_ = __XTD_RESOURCES_PATH__;
 #else
