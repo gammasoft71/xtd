@@ -309,7 +309,7 @@ bool socket::accept_async(xtd::net::sockets::socket_async_event_args& e) {
       e->accept_socket_.data_->socket_type = socket_type;
       e->accept_socket_.data_->protocol_type = protocol_type;
       e->connect_socket_ = e->accept_socket_.accept();
-       e->on_complet(*e);
+      e->on_complete(*e);
     }
   }, &e, data_->address_family, data_->socket_type, data_->protocol_type);
   thread.detach();
@@ -916,7 +916,7 @@ void socket::set_socket_option(xtd::net::sockets::socket_option_name socket_opti
   if (data_->handle == 0) throw object_closed_exception(csf_);
   if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
   uint32_t multicast_address = option_value.group().address_;
-  uint32_t interface_index = option_value.local_adress() != ip_address::none ? option_value.local_adress().address_ : ip_address::host_to_network_order(option_value.interface_index());
+  uint32_t interface_index = option_value.local_address() != ip_address::none ? option_value.local_address().address_ : ip_address::host_to_network_order(option_value.interface_index());
   if (native::socket::set_socket_multicast_option(data_->handle, static_cast<int32_t>(socket_option_name), multicast_address, interface_index) != 0) throw socket_exception(get_last_error_(), csf_);
 }
 
