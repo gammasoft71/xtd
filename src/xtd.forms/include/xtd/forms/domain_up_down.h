@@ -52,7 +52,7 @@ namespace xtd {
          /// @return A std::any that represent the tag of item.
          virtual std::any tag() const {return tag_;}
          
-         /// @brief Returns a string containing the vakue of the item.
+         /// @brief Returns a string containing the vague of the item.
          /// @return A string containing the value of the item.
          xtd::ustring to_string() const {return value_;}
 

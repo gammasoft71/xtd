@@ -14,7 +14,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    /// @remarks This enumeration is used by classes such as list_box and chacked_list_box.
+    /// @remarks This enumeration is used by classes such as list_box and checked_list_box.
     enum class selection_mode {
       /// @brief No items can be selected.
       none = 0,

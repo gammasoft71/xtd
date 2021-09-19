@@ -767,7 +767,7 @@ namespace xtd {
       /// @image html zw.png
       static const country zimbabwe();
 
-      /// @brief Get All coutries colllection.
+      /// @brief Get All countries collection.
       /// @return Countries collection.
       static const std::vector<country>& get_countries();
     };

@@ -29,8 +29,8 @@ namespace xtd {
       
       /// @brief Initializes a new instance of the padding class using a separate padding size for each edge.
       /// @param left The padding size, in pixels, for the left edge.
-      /// @param topo The padding size, in pixels, for the toop edge.
-      /// @param rright The padding size, in pixels, for the right edge.
+      /// @param top The padding size, in pixels, for the top edge.
+      /// @param right The padding size, in pixels, for the right edge.
       /// @param bottom The padding size, in pixels, for the bottom edge.
       /// @remarks If all of the parameter values are equal, then the all property will reflect this common value.
       padding(int left, int top, int right, int bottom) : all_(left == top && left == right && left == bottom), left_(left), top_(top), right_(right), bottom_(bottom) {}

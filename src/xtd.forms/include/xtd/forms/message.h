@@ -63,11 +63,11 @@ namespace xtd {
       void result(intptr_t value) {result_ = value;}
       
       /// @brief Gets the wparam field of the message.
-      /// @return The wwparam field of the message.
+      /// @return The wparam field of the message.
       /// @remarks The value of this field depends on the message. Use the wparam field to get information that is important to handling the message. This field is typically used to store small pieces of information, such as flags.
       intptr_t wparam() const {return wparam_;}
       /// @brief Sets the wparam field of the message.
-      /// @param value The wwparam field of the message.
+      /// @param value The wparam field of the message.
       /// @remarks The value of this field depends on the message. Use the wparam field to get information that is important to handling the message. This field is typically used to store small pieces of information, such as flags.
       void wparam(intptr_t value) {wparam_ = value;}
       

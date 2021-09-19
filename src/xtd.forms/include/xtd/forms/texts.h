@@ -69,7 +69,7 @@ namespace xtd {
       static xtd::ustring cut();
       /// @brief Gets a system-defined text that has a string value of "&Delete". This field is constant.
       static xtd::ustring del();
-      /// @brief Gets a system-defined text that has a string value of "&Decending". This field is constant.
+      /// @brief Gets a system-defined text that has a string value of "&Descending". This field is constant.
       static xtd::ustring descending();
       /// @brief Gets a system-defined text that has a string value of "&Down". This field is constant.
       static xtd::ustring down();

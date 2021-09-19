@@ -15,15 +15,15 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms
   enum class lcd_style {
-    /// @brief Seven segment dsiplay style.
+    /// @brief Seven segment display style.
     seven_segment_display,
-    /// @brief Nine segment dsiplay style.
+    /// @brief Nine segment display style.
     nine_segment_display,
-    /// @brief Fourteen segment dsiplay style.
+    /// @brief Fourteen segment display style.
     fourteen_segment_display,
-    /// @brief Sixteen segment dsiplay style.
+    /// @brief Sixteen segment display style.
     sixteen_segment_display,
-    /// @brief Dot matrix dsiplay style.
+    /// @brief Dot matrix display style.
     dot_matrix_display,
   };
 

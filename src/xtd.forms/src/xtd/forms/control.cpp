@@ -32,7 +32,7 @@ namespace {
   public:
     explicit reentrant_layout(control* do_layout) : do_layout_(do_layout) {do_layouts.insert(do_layout_);}
     ~reentrant_layout() {do_layouts.erase(do_layout_);}
-    static bool is_reentrant(control* do_laout) {return do_layouts.find(do_laout) != do_layouts.end(); }
+    static bool is_reentrant(control* do_layout) {return do_layouts.find(do_layout) != do_layouts.end(); }
   private:
     control* do_layout_ = nullptr;
     static set<control*> do_layouts;
@@ -637,7 +637,7 @@ void control::on_key_up(key_event_args& e) {
 void control::on_layout(const event_args &e) {
   do_layout_with_anchor_styles();
   do_layout_with_auto_size_mode();
-  do_layout_childs_with_dock_style();
+  do_layout_children_with_dock_style();
   if (can_raise_events()) layout(*this, e);
 }
 
@@ -946,7 +946,7 @@ void control::on_parent_size_changed(object& sender, const event_args& e) {
   }
 }
 
-void control::do_layout_childs_with_dock_style() {
+void control::do_layout_children_with_dock_style() {
   bool docked = false;
   for(control_ref control : controls_) {
     docked = control.get().get_state(state::docked);

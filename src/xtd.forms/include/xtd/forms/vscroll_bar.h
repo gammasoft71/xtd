@@ -19,7 +19,7 @@ namespace xtd {
     /// @include vscroll_bar.cpp
     class forms_export_ vscroll_bar : public scroll_bar {
     public:
-      /// @brief Initializee a new instance of vscroll_bar class.
+      /// @brief Initialize a new instance of vscroll_bar class.
       vscroll_bar();
       xtd::drawing::size default_size() const override {return {17, 80};}
       

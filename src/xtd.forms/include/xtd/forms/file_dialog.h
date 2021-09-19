@@ -109,7 +109,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether the dialog box returns the location of the file referenced by the shortcut or whether it returns the location of the shortcut (.lnk).
       /// @return true if the dialog box returns the location of the file referenced by the shortcut; otherwise, false. The default value is true.
       virtual bool dereference_link() const {return !get_option(OFN_NODEREFERENCELINKS);}
-      /// @brief Dets a value indicating whether the dialog box returns the location of the file referenced by the shortcut or whether it returns the location of the shortcut (.lnk).
+      /// @brief Sets a value indicating whether the dialog box returns the location of the file referenced by the shortcut or whether it returns the location of the shortcut (.lnk).
       /// @param value true if the dialog box returns the location of the file referenced by the shortcut; otherwise, false. The default value is true.
       /// @return Current file_dialog.
       virtual file_dialog& dereference_link(bool value) {
@@ -239,10 +239,10 @@ namespace xtd {
       }
       
       /// @brief Gets a value indicating whether preview file is displayed in the file dialog box.
-      /// @return true if the dialog box includes peview file; otherwise, false. The default value is false.
+      /// @return true if the dialog box includes preview file; otherwise, false. The default value is false.
       virtual bool show_preview() const {return !get_option(OFN_SHOWPREVIEW);}
       /// @brief Sets a value indicating whether preview file is displayed in the file dialog box.
-      /// @param value true if the dialog box includes peview file; otherwise, false. The default value is false.
+      /// @param value true if the dialog box includes preview file; otherwise, false. The default value is false.
       /// @return Current file_dialog.
       virtual file_dialog& show_preview(bool value) {
         set_option(OFN_SHOWPREVIEW, value);

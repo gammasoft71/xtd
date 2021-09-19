@@ -39,7 +39,7 @@ namespace xtd {
       /// @return A xtd::drawing::color that represents the checked background color of the control. The default is the value of the xtd::forms::theme_colors::current_theme::accent color.
       virtual xtd::drawing::color checked_back_color() const {return checked_back_color_.value_or(xtd::forms::theme_colors::current_theme().accent());}
       /// @brief Sets the checked background color for the control.
-      /// @param color A xtd::drawing::color that represents the checked background color of the control. The default is the value of the xtd::forms::theme_colors::current_theme::accent clor.
+      /// @param color A xtd::drawing::color that represents the checked background color of the control. The default is the value of the xtd::forms::theme_colors::current_theme::accent color.
       virtual switch_button& checked_back_color(const xtd::drawing::color& color) {
         if (!checked_back_color_.has_value() || checked_back_color_.value() != color) {
           checked_back_color_ = color;
@@ -79,10 +79,10 @@ namespace xtd {
       }
       /// @endcond
 
-      /// @brief Gets a value indicating whether the switch_button is rouded appearance.
+      /// @brief Gets a value indicating whether the switch_button is rounded appearance.
       /// @return true if the switch_button is in the rounded appearance; otherwise, false. The default value is true.
       virtual bool rounded() const {return rounded_;}
-      /// @brief Sets a value indicating whether the switch_button is rouded appearance.
+      /// @brief Sets a value indicating whether the switch_button is rounded appearance.
       /// @param value true if the switch_button is in the rounded appearance; otherwise, false. The default value is true.
       /// @return Current switch_button instance.
       virtual switch_button& rounded(bool value) {

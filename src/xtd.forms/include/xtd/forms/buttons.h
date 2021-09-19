@@ -380,14 +380,14 @@ namespace xtd {
       /// @param fore_core The button foreground color.
       /// @return The created button.
       static std::unique_ptr<button> del(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<button>(parent, texts::del(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined button that represent decending button.
+      /// @brief Create a system-defined button that represent descending button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param back_color The button background color.
       /// @param fore_core The button foreground color.
       /// @return The created button.
       static std::unique_ptr<button> descending(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<button>(texts::descending(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined button that represent decending button.
+      /// @brief Create a system-defined button that represent descending button.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
@@ -530,14 +530,14 @@ namespace xtd {
       /// @param fore_core The button foreground color.
       /// @return The created button.
       static std::unique_ptr<button> forward(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<button>(parent, texts::forward(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined button that represent harddisk button.
+      /// @brief Create a system-defined button that represent hard disk button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param back_color The button background color.
       /// @param fore_core The button foreground color.
       /// @return The created button.
       static std::unique_ptr<button> harddisk(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<button>(texts::harddisk(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined button that represent harddisk button.
+      /// @brief Create a system-defined button that represent hard disk button.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
@@ -995,7 +995,7 @@ namespace xtd {
       /// @param fore_core The button foreground color.
       /// @return The created button.
       static std::unique_ptr<button> save_as(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<button>(parent, texts::save_as(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined button that represent seach button.
+      /// @brief Create a system-defined button that represent search button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param back_color The button background color.
@@ -1145,14 +1145,14 @@ namespace xtd {
       /// @param fore_core The button foreground color.
       /// @return The created button.
       static std::unique_ptr<button> undo(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<button>(parent, texts::undo(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined button that represent uindent button.
+      /// @brief Create a system-defined button that represents an unindented button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param back_color The button background color.
       /// @param fore_core The button foreground color.
       /// @return The created button.
       static std::unique_ptr<button> unindent(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<button>(texts::unindent(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined button that represent unindent button.
+      /// @brief Create a system-defined button that represents an unindented button.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.

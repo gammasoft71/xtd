@@ -27,11 +27,11 @@ namespace xtd {
       progress_dialog() = default;
       ~progress_dialog() {hide();}
       
-      /// @brief Gets whether user has clicked on cancel butttoon.
+      /// @brief Gets whether user has clicked on cancel button.
       /// @return true if user has clicked on cancel button; otherwise false.
       bool cancelled() const;
 
-      /// @brief Gets whether user has clicked on skip butttoon.
+      /// @brief Gets whether user has clicked on skip button.
       /// @return true if user has clicked on skip button; otherwise false.
       bool skipped() const;
       
@@ -58,10 +58,10 @@ namespace xtd {
       progress_dialog& informations(const std::vector<xtd::ustring>& informations);
 
       /// @brief Gets a value that Indicates progress by continuously scrolling a block across a progress_bar in a marquee fashion.
-      /// @return truee is marquee; otherwise false. The default is false.
+      /// @return tree is marquee; otherwise false. The default is false.
       bool marquee() const {return get_option(PROGDLG_MARQUEEPROGRESS);}
       /// @brief Gets a value that Indicates progress by continuously scrolling a block across a progress_bar in a marquee fashion.
-      /// @param marquee truee is marquee; otherwise false. The default is false.
+      /// @param marquee tree is marquee; otherwise false. The default is false.
       /// @return Current progress_dialog instance.
       progress_dialog& marquee(bool marquee);
       
@@ -116,7 +116,7 @@ namespace xtd {
       /// @return Current progress_dialog instance.
       progress_dialog& show_cancel_button(bool show_cancel_button);
       
-      /// @brief Gets a value that indicates whether ealapsed time is shown.
+      /// @brief Gets a value that indicates whether elapsed time is shown.
       /// @return true if elapsed time is shown; otherwise false. By default false.
       bool show_elapsed_time() const {return !get_option(PROGDLG_ELAPSEDTIME);}
       /// @brief Sets a value that indicates whether elapsed time is shown.
@@ -141,7 +141,7 @@ namespace xtd {
       progress_dialog& show_remaining_time(bool show_remaining_time);
 
       /// @brief Gets a value that indicates whether skip button is shown.
-      /// @return true if skipv button shown; otherwise false. By default false.
+      /// @return true if skip button shown; otherwise false. By default false.
       bool show_skip_button() const {return !get_option(PROGDLG_NOSKIP);}
       /// @brief Sets a value that indicates whether skip button is shown.
       /// @param show_skip_button true if skip button is shown; otherwise false. By default false.

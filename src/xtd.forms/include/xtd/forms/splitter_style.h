@@ -17,13 +17,13 @@ namespace xtd {
     enum class splitter_style {
       /// @brief Draw line splitter style.
       draw_line = 0,
-      /// @brief Update childs splitter style.
-      update_childs = 1
+      /// @brief Update children splitter style.
+      update_children = 1
     };
 
     /// @cond
-    inline std::ostream& operator<<(std::ostream& os, splitter_style value) {return os << to_string(value, {{splitter_style::draw_line, "draw_line"}, {splitter_style::update_childs, "update_childs"}});}
-    inline std::wostream& operator<<(std::wostream& os, splitter_style value) {return os << to_string(value, {{splitter_style::draw_line, L"draw_line"}, {splitter_style::update_childs, L"update_childs"}});}
+    inline std::ostream& operator<<(std::ostream& os, splitter_style value) {return os << to_string(value, {{splitter_style::draw_line, "draw_line"}, {splitter_style::update_children, "update_children"}});}
+    inline std::wostream& operator<<(std::wostream& os, splitter_style value) {return os << to_string(value, {{splitter_style::draw_line, L"draw_line"}, {splitter_style::update_children, L"update_children"}});}
     /// @endcond
   }
 }
