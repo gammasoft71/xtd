@@ -34,11 +34,11 @@ namespace xtd {
       std::optional<xtd::drawing::color> border_color() const;
       /// @brief Sets the color of the border around the button.
       /// @param color A xtd::drawing::color structure representing the color of the border around the button.
-      /// @return Current xtd::froms::flat_button_appearance.
+      /// @return Current xtd::forms::flat_button_appearance.
       flat_button_appearance& border_color(const xtd::drawing::color& color);
-      /// @brief Reseets the color of the border around the button.
+      /// @brief Resets the color of the border around the button.
       /// @param color nullptr.
-      /// @return Current xtd::froms::flat_button_appearance.
+      /// @return Current xtd::forms::flat_button_appearance.
       flat_button_appearance& border_color(nullptr_t color);
 
       /// @brief Gets a value that specifies the size, in pixels, of the border around the button.
@@ -46,7 +46,7 @@ namespace xtd {
       int32_t border_size() const;
       /// @brief Sets a value that specifies the size, in pixels, of the border around the button.
       /// @param size An int32_t representing the size, in pixels, of the border around the button.
-      /// @return Current xtd::froms::flat_button_appearance.
+      /// @return Current xtd::forms::flat_button_appearance.
       flat_button_appearance& border_size(int32_t size);
       
       /// @brief Gets the color of the client area of the button when the button is checked and the mouse pointer is outside the bounds of the control.
@@ -54,9 +54,9 @@ namespace xtd {
       std::optional<xtd::drawing::color> checked_back_color() const;
       /// @brief Sets the color of the client area of the button when the button is checked and the mouse pointer is outside the bounds of the control.
       /// @param color A xtd::drawing::color structure representing the color of the client area of the button.structure representing the color of the client area of the button.
-      /// @return Current xtd::froms::flat_button_appearance.
+      /// @return Current xtd::forms::flat_button_appearance.
       flat_button_appearance& checked_back_color(const xtd::drawing::color& color);
-      /// @brief Reseets the color of the client area of the button when the button is checked and the mouse pointer is outside the bounds of the control.
+      /// @brief Resets the color of the client area of the button when the button is checked and the mouse pointer is outside the bounds of the control.
       /// @param color nullptr.
       /// @return Current flat_button_appearance.
       flat_button_appearance& checked_back_color(nullptr_t color);
@@ -66,11 +66,11 @@ namespace xtd {
       std::optional<xtd::drawing::color> mouse_down_back_color() const;
       /// @brief Sets the color of the client area of the button when the mouse is pressed within the bounds of the control.
       /// @param color A xtd::drawing::color structure representing the color of the client area of the button.
-      /// @return Current xtd::froms::flat_button_appearance.
+      /// @return Current xtd::forms::flat_button_appearance.
       flat_button_appearance& mouse_down_back_color(const xtd::drawing::color& color);
-      /// @brief Reseets the color of the client area of the button when the mouse is pressed within the bounds of the control.
+      /// @brief Resets the color of the client area of the button when the mouse is pressed within the bounds of the control.
       /// @param color nullptr.
-      /// @return Current xtd::froms::flat_button_appearance.
+      /// @return Current xtd::forms::flat_button_appearance.
       flat_button_appearance& mouse_down_back_color(nullptr_t color);
 
       /// @brief Gets the color of the client area of the button when the mouse pointer is within the bounds of the control.
@@ -78,11 +78,11 @@ namespace xtd {
       std::optional<xtd::drawing::color> mouse_over_back_color() const;
       /// @brief Sets the color of the client area of the button when the mouse pointer is within the bounds of the control.
       /// @param color A xtd::drawing::color structure representing the color of the client area of the button.
-      /// @return Current xtd::froms::flat_button_appearance.
+      /// @return Current xtd::forms::flat_button_appearance.
       flat_button_appearance& mouse_over_back_color(const xtd::drawing::color& color);
-      /// @brief Reseets the color of the client area of the button when the mouse pointer is within the bounds of the control.
+      /// @brief Resets the color of the client area of the button when the mouse pointer is within the bounds of the control.
       /// @param color nullptr.
-      /// @return Current xtd::froms::flat_button_appearance.
+      /// @return Current xtd::forms::flat_button_appearance.
       flat_button_appearance& mouse_over_back_color(nullptr_t color);
 
     private:

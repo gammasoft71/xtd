@@ -92,7 +92,7 @@ namespace xtd {
       virtual track_bar& tick_frequency(int32_t tick_frequency);
       
       /// @brief Gets a value indicating how to display the tick marks on the track bar.
-      /// @return One of the Ttick_style values. The default is bottom_right.
+      /// @return One of the Tick_style values. The default is bottom_right.
       /// @remarks You can use the tick_style property to modify the manner in which the tick marks are displayed on the track bar.
       virtual forms::tick_style tick_style() {return tick_style_;}
       /// @brief Sets a value indicating how to display the tick marks on the track bar.

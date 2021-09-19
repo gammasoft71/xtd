@@ -76,14 +76,14 @@ namespace xtd {
         using iterator = typename std::vector<value_type>::iterator;
         /// @brief Represents the const iterator type of the collection.
         using const_iterator = typename std::vector<value_type>::const_iterator;
-        /// @brief Represents the reverse iterrator type of the collection.
+        /// @brief Represents the reverse iterator type of the collection.
         using reverse_iterator = typename std::vector<value_type>::reverse_iterator;
-        /// @brief Represents the constt reverse iterator type of the collection.
+        /// @brief Represents the const reverse iterator type of the collection.
         using const_reverse_iterator = typename std::vector<value_type>::const_reverse_iterator;
         
         /// @brief Creates a new object xtd::forms::layout::arranged_element_collection with specified allocator (optional).
         /// @param allocator The allocator associate to the collection (optional).
-        /// @remarks If allocator not specified, the std::allocator<vallue_type> is used.
+        /// @remarks If allocator not specified, the std::allocator<value_type> is used.
         explicit arranged_element_collection(const allocator_type& allocator = allocator_type()) : collection_(allocator) {}        
         /// @brief Creates a new object xtd::diagnostics::trace_listener_collection with specified initializer list.
         /// @param il The initializer list that contains items to fill the collection.
@@ -123,7 +123,7 @@ namespace xtd {
         
         /// @brief Access specified element with bounds checking.
         /// @param pos The position of the element to return.
-        /// @exception std::out_of_range pos is greather than arranged_element_collection::size.
+        /// @exception std::out_of_range pos is greater than arranged_element_collection::size.
         reference at(size_type pos) {
           collection_[pos].pos = pos;
           collection_[pos].owner = this;
@@ -131,7 +131,7 @@ namespace xtd {
         }
         /// @brief Access specified element with bounds checking.
         /// @param pos The position of the element to return.
-        /// @exception std::out_of_range pos is greather than arranged_element_collection::size.
+        /// @exception std::out_of_range pos is greater than arranged_element_collection::size.
         const_reference at(size_type pos) const {return collection_.at(pos);}
        
         /// @brief Access the first element.
@@ -167,13 +167,13 @@ namespace xtd {
         const_reference operator[](size_type pos) const {return collection_[pos];}
         
         /// @brief Returns an iterator to the beginning.
-        /// @return The iterator to the begining.
+        /// @return The iterator to the beginning.
         iterator begin() {return collection_.begin();}
         /// @brief Returns an iterator to the beginning.
-        /// @return The iterator to the begining.
+        /// @return The iterator to the beginning.
         const_iterator begin() const {return collection_.begin();}
         /// @brief Returns an iterator to the beginning.
-        /// @return The iterator to the begining.
+        /// @return The iterator to the beginning.
         const_iterator cbegin() const {return collection_.cbegin();}
         
         /// @brief Returns an iterator to the end.
@@ -319,7 +319,7 @@ namespace xtd {
         
         /// @brief Erases elements at specified range.
         /// @param first The first iterator range which the content will be erased.
-        /// @param first The llast iterator range which the content will be erased.
+        /// @param first The last iterator range which the content will be erased.
         iterator erase(iterator first, iterator last) {
           iterator result = end();
           for (iterator it = first; it <= last; it++)
@@ -328,7 +328,7 @@ namespace xtd {
         }
         /// @brief Erases elements at specified range.
         /// @param first The first iterator range which the content will be erased.
-        /// @param first The llast iterator range which the content will be erased.
+        /// @param first The last iterator range which the content will be erased.
         iterator erase(const_iterator first, const_iterator last) {
           iterator result = this->bend();
           for (const_iterator it = first; it <= last; it++)
@@ -396,7 +396,7 @@ namespace xtd {
           sorter(begin(), end());
         }
 
-        /// @brief Gets an arrray with the elements of the container.
+        /// @brief Gets an array with the elements of the container.
         /// @return The array that contains elements of the container.
         std::vector<type_t> to_array() const {
           std::vector<type_t> array;
@@ -405,7 +405,7 @@ namespace xtd {
           return array;
         }
         
-        /// @brief Gets an arrray with the elements of the container.
+        /// @brief Gets an array with the elements of the container.
         /// @return The array that contains elements of the container.
         std::vector<type_t> to_vector() const {return to_array();}
 

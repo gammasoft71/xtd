@@ -293,7 +293,7 @@ namespace xtd {
 
       /// @brief Gets the default maximum dimensions, in pixels, of a window that has a caption and sizing borders.
       /// @return A size that specifies the maximum dimensions, in pixels, to which a window can be sized.
-      /// @remarks The max_window_track_size property indicates the maximum dimensions to which a user can drag resize a window. The value returned by max_>indow_track_size refers to the dimensions of the entire desktop.
+      /// @remarks The max_window_track_size property indicates the maximum dimensions to which a user can drag resize a window. The value returned by max_>window_track_size refers to the dimensions of the entire desktop.
       static xtd::drawing::size max_window_track_size();
 
       /// @brief Gets a value indicating whether menu access keys are always underlined.

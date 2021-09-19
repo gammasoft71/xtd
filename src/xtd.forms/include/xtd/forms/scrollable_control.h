@@ -78,7 +78,7 @@ namespace xtd {
       }
 
     protected:
-      /// @brief Initialize a new instance of scollable_control class.
+      /// @brief Initialize a new instance of scrollable_control class.
       scrollable_control() = default;
 
       forms::create_params create_params() const override;

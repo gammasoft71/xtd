@@ -135,7 +135,7 @@ namespace xtd {
         /// @brief Represents the base type of the collection.
         using base = xtd::forms::layout::arranged_element_collection<control_ref>;
         
-        /// @brief Creates a new object xtd::forms::control::control_collection with specified alllocator (optional).
+        /// @brief Creates a new object xtd::forms::control::control_collection with specified allocator (optional).
         /// @param allocator The allocator associate to the collection (optional).
         /// @remarks If allocator not specified, the std::allocator<value_type> is used.
         explicit control_collection(const allocator_type& allocator = allocator_type());
@@ -169,7 +169,7 @@ namespace xtd {
       explicit control(const xtd::ustring& text) : control() {
         this->text(text);
       }
-      /// @brief nitializes a new instance of the control class as a child control, with specific text.
+      /// @brief Initializes a new instance of the control class as a child control, with specific text.
       /// @param parent The control to be the parent of the control.
       /// @param text The text displayed by the control.
       /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
@@ -222,7 +222,7 @@ namespace xtd {
       /// @remarks Use the anchor property to define how a control is automatically resized as its parent control is resized. Anchoring a control to its parent control ensures that the anchored edges remain in the same position relative to the edges of the parent control when the parent control is resized.
       /// @remarks You can anchor a control to one or more edges of its container. For example, if you have a form with a button whose anchor property value is set to top and bottom, the button is stretched to maintain the anchored distance to the top and bottom edges of the form as the height of the form is increased.
       /// @note The anchor and dock properties are mutually exclusive. Only one can be set at a time, and the last one set takes precedence.
-      /// @par Notes to Ineritors
+      /// @par Notes to Inheritors
       /// When overriding the anchor property in a derived class, use the base class's anchor property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the anchor property; you can override only one if needed.
       virtual anchor_styles anchor() const {return anchor_;}
       /// @brief Gets the edges of the container to which a control is bound and determines how a control is resized with its parent.
@@ -231,7 +231,7 @@ namespace xtd {
       /// @remarks Use the anchor property to define how a control is automatically resized as its parent control is resized. Anchoring a control to its parent control ensures that the anchored edges remain in the same position relative to the edges of the parent control when the parent control is resized.
       /// @remarks You can anchor a control to one or more edges of its container. For example, if you have a form with a button whose anchor property value is set to top and bottom, the button is stretched to maintain the anchored distance to the top and bottom edges of the form as the height of the form is increased.
       /// @note The anchor and dock properties are mutually exclusive. Only one can be set at a time, and the last one set takes precedence.
-      /// @par Notes to Ineritors
+      /// @par Notes to Inheritors
       /// When overriding the anchor property in a derived class, use the base class's anchor property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the anchor property; you can override only one if needed.
       virtual control& anchor(anchor_styles anchor);
       
@@ -327,7 +327,7 @@ namespace xtd {
       virtual bool can_select() const {return enabled() &&  visible() && get_style(control_styles::selectable);}
       
       /// @brief Determines if events can be raised on the control.
-      /// @return true if the control ican raise events; otherwise, false.
+      /// @return true if the control can raise events; otherwise, false.
       bool can_raise_events() const override {return can_raise_events_;}
 
       /// @brief Gets the rectangle that represents the client area of the control.
@@ -354,7 +354,7 @@ namespace xtd {
       
       /// @brief Gets the name of the company or creator of the application containing the control.
       /// @return The company name or creator of the application containing the control.
-      virtual xtd::ustring compagny_name() const {return "Gammasoft";}
+      virtual xtd::ustring company_name() const {return "Gammasoft";}
       
       /// @brief Gets the collection of controls contained within the control.
       /// @return A control::control_collection representing the collection of controls contained within the control.
@@ -447,7 +447,7 @@ namespace xtd {
       /// @return true if the control can respond to user interaction; otherwise, false. The default is true.
       virtual bool enabled() const {return get_state(state::enabled);}
       /// @brief Sets a value indicating whether the control can respond to user interaction.
-      /// @param enabe true if the control can respond to user interaction; otherwise, false. The default is true.
+      /// @param enabled true if the control can respond to user interaction; otherwise, false. The default is true.
       /// @return Current control.
       virtual control& enabled(bool enabled);
 
@@ -536,27 +536,27 @@ namespace xtd {
 
       /// @brief Gets the size that is the upper limit that xtd::forms::control::get_preferred_size can specify.
       /// @return An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
-      /// @par Exemples
-      /// The folling code shows how to set minimum size, set maximum size, move and resize a form.
+      /// @par Examples
+      /// The following code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
       virtual const drawing::size& maximum_size() const;
       /// @brief Sets the size that is the upper limit that xtd::forms::control::get_preferred_size can specify.
       /// @param size An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
-      /// @par Exemples
-      /// The folling code shows how to set minimum size, set maximum size, move and resize a form.
+      /// @par Examples
+      /// The following code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
       virtual control& maximum_size(const drawing::size& size);
       
       /// @brief Gets the size that is the lower limit that xtd::forms::control::get_preferred_size can specify.
       /// @return An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
-      /// @par Exemples
-      /// The folling code shows how to set minimum size, set maximum size, move and resize a form.
+      /// @par Examples
+      /// The following code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
       virtual const drawing::size& minimum_size() const;
       /// @brief Sets the size that is the lower limit that xtd::forms::control::get_preferred_size can specify.
       /// @param size An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
-      /// @par Exemples
-      /// The folling code shows how to set minimum size, set maximum size, move and resize a form.
+      /// @par Examples
+      /// The following code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
       virtual control& minimum_size(const drawing::size& size);
       
@@ -837,7 +837,7 @@ namespace xtd {
 
       /// @brief Sets input focus to the control.
       /// @return true if the input focus request was successful; otherwise, false.
-      /// @remarks The focus method returns true if the control successfully received input focus. The control can have the input focus while not displaying any visual cues of having the focus. This behavior is primarily observed by the nonselectable controls listed below, or any controls derived from them.
+      /// @remarks The focus method returns true if the control successfully received input focus. The control can have the input focus while not displaying any visual cues of having the focus. This behavior is primarily observed by the unselectable controls listed below, or any controls derived from them.
       bool focus();
       
       /// @brief Retrieves the control that contains the specified handle.
@@ -863,7 +863,7 @@ namespace xtd {
 
       /// @brief Retrieves the index of the specified child control within the control collection, and optionally raises an exception if the specified control is not within the control collection.
       /// @param child The control to search for in the control collection.
-      /// @@param throw_exceptiion true to throw an exception if the control specified in the child parameter is not a control in the control::control_collection; otherwise, false.
+      /// @@param throw_exception true to throw an exception if the control specified in the child parameter is not a control in the control::control_collection; otherwise, false.
       size_t get_child_index(intptr_t child, bool& throw_exception) const {
         throw_exception = false;
         try {
@@ -899,7 +899,7 @@ namespace xtd {
       virtual void invalidate(const drawing::rectangle& rect, bool invalidate_children) const;
 
       /// @brief Executes the specified delegate on the thread that owns the control's underlying window handle.
-      /// @param vallue A delegate that contains a method to be called in the control's thread context.
+      /// @param value A delegate that contains a method to be called in the control's thread context.
       void invoke(delegate<void()> value) {invoke(delegate<void(std::vector<std::any>)>(value), {});}
       
       /// @brief Executes the specified delegate, on the thread that owns the control's underlying window handle, with the specified list of arguments.
@@ -1034,7 +1034,7 @@ namespace xtd {
       /// @remarks This event is raised if the background_image property is changed by either a programmatic modification or user interaction
       event<control, event_handler> background_image_changed;
       
-      /// @brief Occurs when the value of the background_image_layouot property changes.
+      /// @brief Occurs when the value of the background_image_layout property changes.
       /// @ingroup events
       /// @remarks This event is raised if the background_image_layout property is changed by either a programmatic modification or user interaction
       event<control, event_handler> background_image_layout_changed;
@@ -1042,7 +1042,7 @@ namespace xtd {
       /// @brief Occurs when the control is clicked.
       /// @ingroup events
       /// @remarks The click event passes an xtd::event_args to its event handler, so it only indicates that a click has occurred. If you need more specific mouse information (button, number of clicks, wheel rotation, or location), use the mouse_click event. However, the mouse_click event will not be raised if the click is caused by action other than that of the mouse, such as pressing the ENTER key.
-      /// @remarks A double-click is determined by the mouse settings of the user's operating system. The user can set the time between clicks of a mouse button that should be considered a double-click rather than two clicks. The click event is raised every time a control is double-clicked. For example, if you have event handlers for the click and double_click events of a xtd::forms::form, the click and double_dlick events are raised when the form is double-clicked and both methods are called. If a control is double-clicked and that control does not support the double_click event, the click event might be raised twice.
+      /// @remarks A double-click is determined by the mouse settings of the user's operating system. The user can set the time between clicks of a mouse button that should be considered a double-click rather than two clicks. The click event is raised every time a control is double-clicked. For example, if you have event handlers for the click and double_click events of a xtd::forms::form, the click and double_click events are raised when the form is double-clicked and both methods are called. If a control is double-clicked and that control does not support the double_click event, the click event might be raised twice.
       /// @remarks You must set the standard_click value of xtd::forms::control_styles to true for this event to be raised.
       /// @note The following events are not raised for the xtd::forms::tab_control class unless there is at least one xtd::forms::tab_page in the xtd::forms::tab_control. xtd::forms::tab_control::tab_pages collection: click, double_click, mouse_down, mouse_up, mouse_hover, mouse_enter, mouse_leave and mouse_move. If there is at least one xtd::forms::tab_page in the collection, and the user interacts with the tab control's header (where the xtd::forms::tab_page names appear), the xtd::forms::tab_control raises the appropriate event. However, if the user interaction is within the client area of the tab page, the xtd::forms::tab_page raises the appropriate event.
       /// @par Notes to Inheritors
@@ -1089,7 +1089,7 @@ namespace xtd {
         
       /// @brief Occurs when the control is double-clicked.
       /// @ingroup events
-      /// @remarks A double-click is determined by the mouse settings of the user's operating system. The user can set the time between clicks of a mouse button that should be considered a double-click rather than two clicks. The click event is raised every time a control is double-clicked. For example, if you have event handlers for the click and double_click events of a xtd::forms::form, the click and double_dlick events are raised when the form is double-clicked and both methods are called. If a control is double-clicked and that control does not support the double_click event, the click event might be raised twice.
+      /// @remarks A double-click is determined by the mouse settings of the user's operating system. The user can set the time between clicks of a mouse button that should be considered a double-click rather than two clicks. The click event is raised every time a control is double-clicked. For example, if you have event handlers for the click and double_click events of a xtd::forms::form, the click and double_click events are raised when the form is double-clicked and both methods are called. If a control is double-clicked and that control does not support the double_click event, the click event might be raised twice.
       /// @remarks You must set the standard_double_click and standard_click value of xtd::forms::control_styles to true for this event to be raised.
       /// @note The following events are not raised for the xtd::forms::tab_control class unless there is at least one xtd::forms::tab_page in the xtd::forms::tab_control. xtd::forms::tab_control::tab_pages collection: click, double_click, mouse_down, mouse_up, mouse_hover, mouse_enter, mouse_leave and mouse_move. If there is at least one xtd::forms::tab_page in the collection, and the user interacts with the tab control's header (where the xtd::forms::tab_page names appear), the xtd::forms::tab_control raises the appropriate event. However, if the user interaction is within the client area of the tab page, the xtd::forms::tab_page raises the appropriate event.
       /// @par Notes to Inheritors
@@ -1163,7 +1163,7 @@ namespace xtd {
       /// 1. xtd::forms::control::key_down event
       /// 1. xtd::forms::control::key_press event
       /// 1. xtd::forms::control::key_up event
-      /// @remarks To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the key_press_event_args::handled property in your form's key_press event-handling method to true. Certain keys, such as the TAB, RETURN, ESC, and arrow keys are handled by controls automatically. To have these keys raise the key_down event, you must override the is_input_key method in each control on your form. The code for the override of the is_input_key would need to determine if one of the special keys is pressed and return a value of true. Instead of overriding the is_input_key method, you can handle the preview_key_ddown event and set the is_input_key property to true.
+      /// @remarks To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the key_press_event_args::handled property in your form's key_press event-handling method to true. Certain keys, such as the TAB, RETURN, ESC, and arrow keys are handled by controls automatically. To have these keys raise the key_down event, you must override the is_input_key method in each control on your form. The code for the override of the is_input_key would need to determine if one of the special keys is pressed and return a value of true. Instead of overriding the is_input_key method, you can handle the preview_key_down event and set the is_input_key property to true.
       /// @par Examples
       /// The following code example demonstrate the use of control keyboard events.
       /// @include key_events.cpp
@@ -1186,10 +1186,10 @@ namespace xtd {
       /// @brief Occurs when a key is released while the control has focus.
       /// @ingroup events
       /// @remarks Key events occur in the following order:
-      /// 1. xtd::forms::control::key_down eventv
+      /// 1. xtd::forms::control::key_down event
       /// 1. xtd::forms::control::key_press event
       /// 1. xtd::forms::control::key_up event
-      /// @remarks To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the key_press_event_args::handled property in your form's key_press event-handling method to true. Certain keys, such as the TAB, RETURN, ESC, and arrow keys are handled by controls automatically. To have these keys raise the key_down event, you must override the is_input_key method in each control on your form. The code for the override of the is_input_key would need to determine if one of the special keys is pressed and return a value of true. Instead of overriding the is_input_key method, you can handle the preview_key_ddown event and set the is_input_key property to true.
+      /// @remarks To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the key_press_event_args::handled property in your form's key_press event-handling method to true. Certain keys, such as the TAB, RETURN, ESC, and arrow keys are handled by controls automatically. To have these keys raise the key_down event, you must override the is_input_key method in each control on your form. The code for the override of the is_input_key would need to determine if one of the special keys is pressed and return a value of true. Instead of overriding the is_input_key method, you can handle the preview_key_down event and set the is_input_key property to true.
       /// @par Examples
       /// The following code example demonstrate the use of control keyboard events.
       /// @include key_events.cpp
@@ -1222,7 +1222,7 @@ namespace xtd {
       /// 5. xtd::forms::control::validating event
       /// 6. xtd::forms::control::validated event
       /// @remarks If the causes_validation property is set to false, the xtd::forms::control::validating and xtd::forms::control::validated events are suppressed.
-      /// @remarks If the cancel property of the xtd::forms::cancel_event_args is set to true in the vvalidating event delegate, all events that would usually occur after the validating event are suppressed.
+      /// @remarks If the cancel property of the xtd::forms::cancel_event_args is set to true in the validating event delegate, all events that would usually occur after the validating event are suppressed.
       /// @remarks Note The got_focus and lost_focus events are low-level focus events that are tied to the WM_KILLFOCUS and WM_SETFOCUS Windows messages. Typically, the got_focus and lost_focus events are only used when updating when writing custom controls. Instead the enter and leave events should be used for all controls except the xtd::forms::form class, which uses the activated and deactivate events.
       /// @warning Do not attempt to set focus from within the enter, got_focus, leave, lost_focus, validating, or validated event handlers. Doing so can cause your application or the operating system to stop responding.
       event<control, event_handler> lost_focus;
@@ -1268,7 +1268,7 @@ namespace xtd {
       /// @remarks Mouse events occur in the following order:
       /// 1. xtd::forms::control::mouse_enter
       /// 2. xtd::forms::control::mouse_move
-      /// 3. xtd::forms::control::mouse_hover / xtd::forms::control::mouse_down / xtd::forms::control::mouse_wheel / xtd::forms::control::mouse_horizonttal_wheel
+      /// 3. xtd::forms::control::mouse_hover / xtd::forms::control::mouse_down / xtd::forms::control::mouse_wheel / xtd::forms::control::mouse_horizontal_wheel
       /// 4. xtd::forms::control::mouse_up
       /// 5. xtd::forms::control::mouse_leave
       /// @note The following events are not raised for the tab_control class unless there is at least one tab_page in the tab_control::tab_pages collection: click, double_click, mouse_down, mouse_up, mouse_hover, mouse_enter, mouse_leave and mouse_move. If there is at least one tab_page in the collection, and the user interacts with the tab control's header (where the tab_page names appear), the tab_control raises the appropriate event. However, if the user interaction is within the client area of the tab page, the tab_page raises the appropriate event.
@@ -1282,7 +1282,7 @@ namespace xtd {
       /// @remarks Mouse events occur in the following order:
       /// 1. xtd::forms::control::mouse_enter
       /// 2. xtd::forms::control::mouse_move
-      /// 3. xtd::forms::control::mouse_hover / xtd::forms::control::mouse_down / xtd::forms::control::mouse_wheel / xtd::forms::control::mouse_horizonttal_wheel
+      /// 3. xtd::forms::control::mouse_hover / xtd::forms::control::mouse_down / xtd::forms::control::mouse_wheel / xtd::forms::control::mouse_horizontal_wheel
       /// 4. xtd::forms::control::mouse_up
       /// 5. xtd::forms::control::mouse_leave
       /// @note The following events are not raised for the tab_control class unless there is at least one tab_page in the tab_control::tab_pages collection: click, double_click, mouse_down, mouse_up, mouse_hover, mouse_enter, mouse_leave and mouse_move. If there is at least one tab_page in the collection, and the user interacts with the tab control's header (where the tab_page names appear), the tab_control raises the appropriate event. However, if the user interaction is within the client area of the tab page, the tab_page raises the appropriate event.
@@ -1291,13 +1291,13 @@ namespace xtd {
       /// @include mouse_events.cpp
       event<control, event_handler> mouse_enter;
       
-      /// @brief Occurs when the mouse hoirontal wheel moves while the control has focus.
+      /// @brief Occurs when the mouse horizontal wheel moves while the control has focus.
       /// @ingroup events
-      /// @remarks When handling the mouse_hoorizontal_wheel event it is important to follow the user interface (UI) standards associated with the mouse wheel. The mouse_event_args::delta property value indicates the amount the mouse wheel has been moved.
+      /// @remarks When handling the mouse_horizontal_wheel event it is important to follow the user interface (UI) standards associated with the mouse wheel. The mouse_event_args::delta property value indicates the amount the mouse wheel has been moved.
       /// @remarks Mouse events occur in the following order:
       /// 1. xtd::forms::control::mouse_enter
       /// 2. xtd::forms::control::mouse_move
-      /// 3. xtd::forms::control::mouse_hover / xtd::forms::control::mouse_down / xtd::forms::control::mouse_wheel / xtd::forms::control::mouse_horizonttal_wheel
+      /// 3. xtd::forms::control::mouse_hover / xtd::forms::control::mouse_down / xtd::forms::control::mouse_wheel / xtd::forms::control::mouse_horizontal_wheel
       /// 4. xtd::forms::control::mouse_up
       /// 5. xtd::forms::control::mouse_leave
       /// @note The following events are not raised for the tab_control class unless there is at least one tab_page in the tab_control::tab_pages collection: click, double_click, mouse_down, mouse_up, mouse_hover, mouse_enter, mouse_leave and mouse_move. If there is at least one tab_page in the collection, and the user interacts with the tab control's header (where the tab_page names appear), the tab_control raises the appropriate event. However, if the user interaction is within the client area of the tab page, the tab_page raises the appropriate event.
@@ -1311,7 +1311,7 @@ namespace xtd {
       /// @remarks Mouse events occur in the following order:
       /// 1. xtd::forms::control::mouse_enter
       /// 2. xtd::forms::control::mouse_move
-      /// 3. xtd::forms::control::mouse_hover / xtd::forms::control::mouse_down / xtd::forms::control::mouse_wheel / xtd::forms::control::mouse_horizonttal_wheel
+      /// 3. xtd::forms::control::mouse_hover / xtd::forms::control::mouse_down / xtd::forms::control::mouse_wheel / xtd::forms::control::mouse_horizontal_wheel
       /// 4. xtd::forms::control::mouse_up
       /// 5. xtd::forms::control::mouse_leave
       /// @note The following events are not raised for the tab_control class unless there is at least one tab_page in the tab_control::tab_pages collection: click, double_click, mouse_down, mouse_up, mouse_hover, mouse_enter, mouse_leave and mouse_move. If there is at least one tab_page in the collection, and the user interacts with the tab control's header (where the tab_page names appear), the tab_control raises the appropriate event. However, if the user interaction is within the client area of the tab page, the tab_page raises the appropriate event.
@@ -1325,7 +1325,7 @@ namespace xtd {
       /// @remarks Mouse events occur in the following order:
       /// 1. xtd::forms::control::mouse_enter
       /// 2. xtd::forms::control::mouse_move
-      /// 3. xtd::forms::control::mouse_hover / xtd::forms::control::mouse_down / xtd::forms::control::mouse_wheel / xtd::forms::control::mouse_horizonttal_wheel
+      /// 3. xtd::forms::control::mouse_hover / xtd::forms::control::mouse_down / xtd::forms::control::mouse_wheel / xtd::forms::control::mouse_horizontal_wheel
       /// 4. xtd::forms::control::mouse_up
       /// 5. xtd::forms::control::mouse_leave
       /// @note The following events are not raised for the tab_control class unless there is at least one tab_page in the tab_control::tab_pages collection: click, double_click, mouse_down, mouse_up, mouse_hover, mouse_enter, mouse_leave and mouse_move. If there is at least one tab_page in the collection, and the user interacts with the tab control's header (where the tab_page names appear), the tab_control raises the appropriate event. However, if the user interaction is within the client area of the tab page, the tab_page raises the appropriate event.
@@ -1339,7 +1339,7 @@ namespace xtd {
       /// @remarks Mouse events occur in the following order:
       /// 1. xtd::forms::control::mouse_enter
       /// 2. xtd::forms::control::mouse_move
-      /// 3. xtd::forms::control::mouse_hover / xtd::forms::control::mouse_down / xtd::forms::control::mouse_wheel / xtd::forms::control::mouse_horizonttal_wheel
+      /// 3. xtd::forms::control::mouse_hover / xtd::forms::control::mouse_down / xtd::forms::control::mouse_wheel / xtd::forms::control::mouse_horizontal_wheel
       /// 4. xtd::forms::control::mouse_up
       /// 5. xtd::forms::control::mouse_leave
       /// @note The following events are not raised for the tab_control class unless there is at least one tab_page in the tab_control::tab_pages collection: click, double_click, mouse_down, mouse_up, mouse_hover, mouse_enter, mouse_leave and mouse_move. If there is at least one tab_page in the collection, and the user interacts with the tab control's header (where the tab_page names appear), the tab_control raises the appropriate event. However, if the user interaction is within the client area of the tab page, the tab_page raises the appropriate event.
@@ -1354,7 +1354,7 @@ namespace xtd {
       /// @remarks Mouse events occur in the following order:
       /// 1. xtd::forms::control::mouse_enter
       /// 2. xtd::forms::control::mouse_move
-      /// 3. xtd::forms::control::mouse_hover / xtd::forms::control::mouse_down / xtd::forms::control::mouse_wheel / xtd::forms::control::mouse_horizonttal_wheel
+      /// 3. xtd::forms::control::mouse_hover / xtd::forms::control::mouse_down / xtd::forms::control::mouse_wheel / xtd::forms::control::mouse_horizontal_wheel
       /// 4. xtd::forms::control::mouse_up
       /// 5. xtd::forms::control::mouse_leave
       /// @note The following events are not raised for the tab_control class unless there is at least one tab_page in the tab_control::tab_pages collection: click, double_click, mouse_down, mouse_up, mouse_hover, mouse_enter, mouse_leave and mouse_move. If there is at least one tab_page in the collection, and the user interacts with the tab control's header (where the tab_page names appear), the tab_control raises the appropriate event. However, if the user interaction is within the client area of the tab page, the tab_page raises the appropriate event.
@@ -1616,7 +1616,7 @@ namespace xtd {
       /// @ingroup events
       virtual void on_parent_changed(const event_args& e);
       
-      /// @brief Raises the xtd::control::enabled_changed event when the xttd::control::enabled property value of the control's container changes..
+      /// @brief Raises the xtd::control::enabled_changed event when the xtd::control::enabled property value of the control's container changes..
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_parent_enabled_changed(const event_args& e);
@@ -1662,7 +1662,7 @@ namespace xtd {
       /// @param height The new height property value of the control.
       /// @param specified A bitwise combination of the bounds_specified values.
       /// @remarks Typically, the parameters that correspond to the bounds not included in the specified parameter are passed in with their current values. For example, the height, width, or the y or y properties of the location property can be passed in with a reference to the current instance of the control. However all values passed in are honored and applied to the control.
-      /// @remarks The specified parameter represents the elements of the controls Bounds changed by your application. For example, if you change the size of the control, the specified parameter value is the size value of bounds_specified. However, if the size is adjusted in response to the dock property being set, the pecified parameter value is the none value of bounds_specified.
+      /// @remarks The specified parameter represents the elements of the controls Bounds changed by your application. For example, if you change the size of the control, the specified parameter value is the size value of bounds_specified. However, if the size is adjusted in response to the dock property being set, the specified parameter value is the none value of bounds_specified.
       /// @par Notes to Inheritors
       /// When overriding set_bounds_core(int32_t, int32_t, int32_t, int32_t, bounds_specified) in a derived class, be sure to call the base class's set_bounds_core(int32_t, int32_t, int32_t, int32_t, bounds_specified) method to force the bounds of the control to change. Derived classes can add size restrictions to the set_bounds_core(int32_t, int32_t, int32_t, int32_t, bounds_specified) method.
       virtual void set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified);
@@ -1733,7 +1733,7 @@ namespace xtd {
       
     private:
       void on_parent_size_changed(object& sender, const event_args& e);
-      void do_layout_childs_with_dock_style();
+      void do_layout_children_with_dock_style();
       void do_layout_with_auto_size_mode();
       void do_layout_with_anchor_styles();
       control(const xtd::ustring& name, bool) {name_ = name;}

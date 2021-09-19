@@ -33,7 +33,7 @@ namespace xtd {
       /// | allow_simulations    | true          |
       /// | allow_vector_fonts   | true          |
       /// | allow_vertical_fonts | true          |
-      /// | allow_script_shange  | true          |
+      /// | allow_script_change  | true          |
       /// | color                | color::black  |
       /// | fixed_pitch_only     | false         |
       /// | max_size             | 0             |

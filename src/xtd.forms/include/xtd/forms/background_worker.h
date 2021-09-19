@@ -75,7 +75,7 @@ namespace xtd {
       
       /// @brief Raises the background_worker::progress_changed event.
       /// @param e An event_args that contains the event data.
-      virtual void on_progres_changed(const progress_changed_event_args& e) {progress_changed(*this, e);}
+      virtual void on_progress_changed(const progress_changed_event_args& e) {progress_changed(*this, e);}
       
       /// @brief Raises the background_worker::run_worker_completed event.
       /// @param e An event_args that contains the event data.

@@ -27,7 +27,7 @@ namespace xtd {
         can_focus_ = false;
         size_ = default_size();
         controls().push_back_range({panel2_, splitter_, panel1_});
-        arrange_childs();
+        arrange_children();
       }
       
       drawing::size default_size() const override {return {150, 100};}
@@ -41,7 +41,7 @@ namespace xtd {
       virtual split_container& orientation(xtd::forms::orientation orientation) {
         if (orientation_ != orientation) {
           orientation_ = orientation;
-          arrange_childs();
+          arrange_children();
         }
         return *this;
       }
@@ -76,10 +76,10 @@ namespace xtd {
       }
 
       /// @brief Gets the style of the splitter.
-      /// @return One of xtd::forms::splitter_style values. The default is xtd::forms::splitter_style::update_childs
+      /// @return One of xtd::forms::splitter_style values. The default is xtd::forms::splitter_style::update_children
       virtual xtd::forms::splitter_style splitter_style() const {return splitter_.splitter_style();}
       /// @brief Sets the style of the splitter.
-      /// @param splitter_style One of xtd::forms::splitter_style values. The default is xtd::forms::splitter_style::update_childs
+      /// @param splitter_style One of xtd::forms::splitter_style values. The default is xtd::forms::splitter_style::update_children
       /// @return Current split_container instance.
       virtual split_container& splitter_style(xtd::forms::splitter_style splitter_style) {
         if (splitter_.splitter_style() != splitter_style) {
@@ -99,7 +99,7 @@ namespace xtd {
       virtual split_container& splitter_width(int splitter_width) {
         if (splitter_width_ != splitter_width) {
           splitter_width_ = splitter_width;
-          arrange_childs();
+          arrange_children();
         }
         return *this;
       }
@@ -110,7 +110,7 @@ namespace xtd {
       }
       
     private:
-      void arrange_childs() {
+      void arrange_children() {
         if (orientation_ == xtd::forms::orientation::vertical) {
           panel1_.dock(xtd::forms::dock_style::left);
           panel1_.width(splitter_distance_);

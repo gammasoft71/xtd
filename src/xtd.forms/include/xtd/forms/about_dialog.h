@@ -45,7 +45,7 @@ namespace xtd {
     /// The following code example demonstrate the use of about_dialog dialog.
     /// @include about_dialog.cpp
     /// @par Examples
-    /// The following code example demonstrate the use of about_dialog dialog with dialog_styledialog_style tooo system.
+    /// The following code example demonstrates the use of about_dialog dialog with dialog_styledialog_style to system.
     /// @include about_dialog_system.cpp
     class forms_export_ about_dialog final : public component {
     public:

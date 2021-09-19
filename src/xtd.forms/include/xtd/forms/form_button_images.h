@@ -455,7 +455,7 @@ namespace xtd {
       /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
       /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
       static xtd::drawing::image from_name(const xtd::ustring& name, bool maximized_form) {return from_name(name, size(maximized_form));}
-      /// @brief Gets image object with specified thele,  name and maximized form.
+      /// @brief Gets image object with specified theme,  name and maximized form.
       /// @param theme the theme name that contains the image to get.
       /// @param name the image name to get.
       /// @param maximized_form true if form is maximized; otherwise false.
@@ -463,7 +463,7 @@ namespace xtd {
       /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
       /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
       static xtd::drawing::image from_name(const xtd::ustring& theme, const xtd::ustring& name, bool maximized_form) {return from_name(theme, name, size(maximized_form));}
-      /// @brief Gets image object with specified thele,  name and maximized form.
+      /// @brief Gets image object with specified theme,  name and maximized form.
       /// @param theme the theme name that contains the image to get.
       /// @param name the image name to get.
       /// @param maximized_form true if form is maximized; otherwise false.

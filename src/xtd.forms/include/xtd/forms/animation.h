@@ -22,14 +22,14 @@ namespace xtd {
     /// @include animation.cpp
     class animation : public xtd::forms::control {
     public:
-      /// @brief Initializee a new instance of animation class.
+      /// @brief Initialize a new instance of animation class.
       animation();
       
       drawing::size default_size() const override {return {200, 100};}
       
       /// @brief Gets the elapsed time for the current frame, in milliseconds.
       /// @return A long integer representing the elapsed time for the current frame, in milliseconds.
-      virtual int64_t elapsed_millliseconds() const;
+      virtual int64_t elapsed_milliseconds() const;
       
       /// @brief Gets the current frame counter value.
       /// @return The current frame counter value.
@@ -39,7 +39,7 @@ namespace xtd {
       /// @return The number if frame per seconds. The default is 10.
       virtual int32_t frames_per_second() const;
       /// @brief Sets the number of frame per second.
-      /// @para mvalue The number if frame per seconds. The default is 10.
+      /// @para value The number if frame per seconds. The default is 10.
       virtual animation& frames_per_second(int32_t value);
       
       /// @brief Returns if the animation is started.

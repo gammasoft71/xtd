@@ -72,7 +72,7 @@ namespace xtd {
         return *this;
       }
 
-      /// @brief Get assync dialog_result result after dialog box is closing.
+      /// @brief Get async dialog_result result after dialog box is closing.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       xtd::forms::dialog_result dialog_result() const {return dialog_result_;}
       
@@ -114,7 +114,7 @@ namespace xtd {
       
       /// @brief Gets the text message.
       /// @return The text message.
-      xtd::ustring messsage() const {return message_;}
+      xtd::ustring message() const {return message_;}
       /// @brief Sets the text message.
       /// @param message The text message.
       /// @return Current message_dialog instance.

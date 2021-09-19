@@ -32,7 +32,7 @@ namespace xtd {
       /// @param color1 The first color.
       /// @param color2 The second color.
       /// @param weight The weighting factor
-      /// @param average_alpha if true alpha was comptute to; otheerwise the alpha result is the alpha of color1
+      /// @param average_alpha if true alpha was compute to; otherwise the alpha result is the alpha of color1
       /// @return The average color.
       /// @remarks The alpha, red, green and blue values are averages using the following formula:
       /// @code
@@ -95,7 +95,7 @@ namespace xtd {
       /// @param image The xtd::drawing::image to draw.
       /// @param x The x-coordinate of the top left of the border image.
       /// @param y The y-coordinate of the top left of the border image.
-      /// @param brightness The brighness (between 0.0 and 1.0 for drawing image disabled.
+      /// @param brightness The brightness (between 0.0 and 1.0 for drawing image disabled.
       /// @remarks The background parameter is used to calculate the fill color of the disabled image so that it is always visible against the background
       static void draw_image_disabled(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, int32_t x, int32_t y, float brightness);
       /// @brief Draws the specified image in a disabled state.
@@ -110,7 +110,7 @@ namespace xtd {
       /// @param xtd::drawing::graphics The Graphics to draw on.
       /// @param image The xtd::drawing::image to draw.
       /// @param location The xtd::drawing::point of the top left of the border image.
-      /// @param brightness The brighness (between 0.0 and 1.0 for drawing image disabled.
+      /// @param brightness The brightness (between 0.0 and 1.0 for drawing image disabled.
       /// @remarks The background parameter is used to calculate the fill color of the disabled image so that it is always visible against the background
       static void draw_image_disabled(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, const xtd::drawing::point& location, float brightness) {draw_image_disabled(graphics, image, location.x(), location.y(), brightness);}
       /// @brief Draws the specified image in a disabled state.
@@ -128,14 +128,14 @@ namespace xtd {
       static xtd::drawing::color light(const xtd::drawing::color& base_color) {return light(base_color, 1.0/3);}
       /// @brief Creates a new light color object for the control from the specified color and lightens it by the specified percentage.
       /// @param color The xtd::drawing::color to be lightened.
-      /// @param perc_of_lightt The percentage to lighten the specified xtd::drawing::color.
+      /// @param perc_of_light The percentage to lighten the specified xtd::drawing::color.
       /// @remarks If the specified xtd::drawing::color is one of the xtd::drawing::system_color, the color is converted to a xtd::drawing::system_color.control_light color; otherwise, the color's luminosity value is decreased.
       static xtd::drawing::color light(const xtd::drawing::color& base_color, double perc_of_light_light) {return xtd::drawing::color::light(base_color, perc_of_light_light);}
       
       /// @brief Creates a new light color object for the control from the specified color.
       /// @param color The xtd::drawing::color to be lightened.
       /// @return A xtd::drawing::color that represents the light color on the control.
-      /// @remarks If the specified xtd::drawing::color is one of the xtd::drawing::system_color, the color is converted to a xtd::drawing::system_color.control_light_lightk color; otherwise, the color's luminosity value is decreased.
+      /// @remarks If the specified xtd::drawing::color is one of the xtd::drawing::system_color, the color is converted to a xtd::drawing::system_color.control_light_light color; otherwise, the color's luminosity value is decreased.
       static xtd::drawing::color light_light(const xtd::drawing::color& base_color) {return light(base_color, 1.0);}
       
       /// @brief Convert xtd::forms::text_format_flags to xtd::drawing::string_format.
@@ -147,7 +147,7 @@ namespace xtd {
         string_format.alignment(xtd::drawing::string_alignment::center);
         
         if ((flags & text_format_flags::horizontal_center) == text_format_flags::horizontal_center) string_format.alignment(xtd::drawing::string_alignment::center);
-        else if ((flags & text_format_flags::rigth) == text_format_flags::rigth) string_format.alignment(xtd::drawing::string_alignment::far);
+        else if ((flags & text_format_flags::right) == text_format_flags::right) string_format.alignment(xtd::drawing::string_alignment::far);
         else string_format.alignment(xtd::drawing::string_alignment::near);
         
         if ((flags & text_format_flags::vertical_center) == text_format_flags::vertical_center) string_format.line_alignment(xtd::drawing::string_alignment::center);
