@@ -35,10 +35,10 @@ namespace xtd {
         /// @brief Creates font.
         /// @param family_name A string representation of the font family for the new font.
         /// @param em_size The em-size of the new font in the units specified by the unit parameter.
-        /// @param bold true if font is bold; otherwhise false.
-        /// @param italic true if font is italic; otherwhise false.
-        /// @param underline true if font is underline; otherwhise false.
-        /// @param strikeout true if font is strikeout; otherwhise false.
+        /// @param bold true if font is bold; otherwise false.
+        /// @param italic true if font is italic; otherwise false.
+        /// @param underline true if font is underline; otherwise false.
+        /// @param strikeout true if font is strikeout; otherwise false.
         /// @param gdi_char_set A byte that specifies a GDI character set to use for this font.
         /// @param gdi_vertical_font A boolean value indicating whether the new xtd::drawing::font is derived from a GDI vertical font.
         /// @return The created brush handle.
