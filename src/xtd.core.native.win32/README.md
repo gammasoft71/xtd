@@ -1,7 +1,7 @@
 
 # xtd.core.native.win32
 
-xtd.core is made to have many Operating System: Windows, linux, macOS, ...
+xtd.core is made to support many Operating Systems: Windows, Linux, macOS, ...
 
 The [xtd.core.native.win32](.) is based on Windows Operating System.
 
