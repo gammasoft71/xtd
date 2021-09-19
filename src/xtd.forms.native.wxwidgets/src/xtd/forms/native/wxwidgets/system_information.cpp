@@ -37,7 +37,7 @@ int32_t system_information::boot_mode() {
 #if defined(__WXMSW__)
   return GetSystemMetrics(SM_CLEANBOOT);
 #else
-  return 0; // mode : 0 = Normal, 1 = Fail Safeand 2 = Fail safe with network.
+  return 0; // mode : 0 = Normal, 1 = Fail Safe and 2 = Fail safe with network.
 #endif
 }
 

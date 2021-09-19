@@ -37,7 +37,7 @@ namespace xtd {
 
         wx_user_window(wxWindow *parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxTAB_TRAVERSAL | wxNO_BORDER, const wxString& name = wxASCII_STR(wxPanelNameStr)) : wxPanel(parent, winid, pos, size, style, name) {}
         
-        void set_accepts_focus(bool acceps_focus) {accepts_focus_ = acceps_focus;}
+        void set_accepts_focus(bool accepts_focus) {accepts_focus_ = accepts_focus;}
         
         bool AcceptsFocus() const override {return accepts_focus_;}
         
