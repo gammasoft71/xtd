@@ -453,7 +453,7 @@ namespace {
     {"Y", {89, 89, false, false, true}}, // Y
     {"Z", {90, 90, false, false, true}}, // Z
     //{"", {91, 0, false, false, false}}, // LeftWindows
-    //{"", {92, 0, false, false, false}}, // RighttWindows
+    //{"", {92, 0, false, false, false}}, // RightWindows
     //{"", {93, 0, false, false, false}}, // Applications
     //{"", {95, 0, false, false, false}}, // Sleep
     //{"", {96, 0, false, false, false}}, // NumPad0
