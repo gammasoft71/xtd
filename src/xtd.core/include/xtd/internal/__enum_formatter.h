@@ -23,7 +23,7 @@ inline std::basic_string<char_t> __enum_formatter(const std::basic_string<char_t
     case 'o':
     case 'O':
     case 'x':
-    case 'X': return __numeric_formater(fmt, static_cast<long long int>(value), loc);
+    case 'X': return __numeric_formatter(fmt, static_cast<long long int>(value), loc);
     case 'g':
     case 'G': return __format_stringer<char_t>(value);
     default: __format_exception("Invalid format expression"); return {};
@@ -31,13 +31,13 @@ inline std::basic_string<char_t> __enum_formatter(const std::basic_string<char_t
 }
 
 template<typename value_t>
-static std::string __to_string_enum(const value_t& value, const std::string& fmt, const std::locale& loc, std::true_type) {return __enum_formater(fmt, value, loc);}
+static std::string __to_string_enum(const value_t& value, const std::string& fmt, const std::locale& loc, std::true_type) {return __enum_formatter(fmt, value, loc);}
 
 template<typename value_t>
 static std::string __to_string_enum(const value_t& value, const std::string& fmt, const std::locale& loc, std::false_type) {__format_exception("to_string specialisation not found"); return {};}
 
 template<typename value_t>
-static std::wstring __to_string_enum(const value_t& value, const std::wstring& fmt, const std::locale& loc, std::true_type) {return __enum_formater(fmt, value, loc);}
+static std::wstring __to_string_enum(const value_t& value, const std::wstring& fmt, const std::locale& loc, std::true_type) {return __enum_formatter(fmt, value, loc);}
 
 template<typename value_t>
 static std::wstring __to_string_enum(const value_t& value, const std::wstring& fmt, const std::locale& loc, std::false_type) {__format_exception("to_string specialisation not found"); return {};}

@@ -46,7 +46,7 @@ namespace xtd {
         static int32_t get_cell_descent(intptr_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout);
         static int32_t get_line_spacing(intptr_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout);
         static xtd::ustring get_name(intptr_t font_family, int32_t language);
-        static bool is_style_avaible(intptr_t font_family, bool bold, bool italic, bool underline, bool strikeout);
+        static bool is_style_available(intptr_t font_family, bool bold, bool italic, bool underline, bool strikeout);
       };
     }
   }

@@ -137,7 +137,7 @@ namespace xtd {
       //int min_size_extra_ = 25;
       //int split_position_ = -1;
       int mouse_down_location = -1;
-      xtd::forms::splitter_style splitter_style_ = xtd::forms::splitter_style::update_childs;
+      xtd::forms::splitter_style splitter_style_ = xtd::forms::splitter_style::update_children;
       xtd::forms::cursor previous_control_cursor_;
       xtd::forms::cursor next_control_cursor_;
       control* previous_control_ = nullptr;

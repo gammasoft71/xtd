@@ -24,7 +24,7 @@ inline std::basic_string<char_t> __boolean_formatter(const std::basic_string<cha
     case 'o':
     case 'O':
     case 'x':
-    case 'X': return __numeric_formater(fmt, value ? 1 : 0, loc);
+    case 'X': return __numeric_formatter(fmt, value ? 1 : 0, loc);
     case 'g':
     case 'G': return value ? std::basic_string<char_t> {'t', 'r', 'u', 'e'} : std::basic_string<char_t> {'f', 'a', 'l', 's', 'e'};
     default: __format_exception("Invalid format expression"); return {};

@@ -36,7 +36,7 @@ inline std::basic_string<char_t> __fixed_point_formatter(const std::basic_string
   std::basic_string<char_t> fmt_str({'%', '.', '*', 'L'});
   switch (fmt[0]) {
     case 'c':
-    case 'C': return __currency_formater<char_t>(static_cast<long double>(value), loc);
+    case 'C': return __currency_formatter<char_t>(static_cast<long double>(value), loc);
     case 'e':
     case 'E':
     case 'f':
@@ -44,7 +44,7 @@ inline std::basic_string<char_t> __fixed_point_formatter(const std::basic_string
     case 'g':
     case 'G': return __sprintf((fmt_str + fmt[0]).c_str(), precision, static_cast<long double>(value));
     case 'n':
-    case 'N': return __natural_formater<char_t>(static_cast<long double>(value), precision, loc);
+    case 'N': return __natural_formatter<char_t>(static_cast<long double>(value), precision, loc);
     case 'p': return __sprintf((fmt_str + char_t('f')).c_str(), precision, static_cast<long double>(value * 100)) + std::basic_string<char_t>({char_t(' '), char_t('%')});
     case 'P': return __sprintf((fmt_str + char_t('F')).c_str(), precision, static_cast<long double>(value * 100)) + std::basic_string<char_t>({char_t(' '), char_t('%')});
     default: __format_exception("Invalid format expression"); return {};
