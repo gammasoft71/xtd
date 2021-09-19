@@ -163,7 +163,7 @@ void graphics::draw_rounded_rectangle(intptr_t hdc, intptr_t pen, int32_t x, int
 
 void graphics::draw_string(intptr_t hdc, const ustring& text, intptr_t font, int32_t x, int32_t y, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
   if (!hdc) return;
-  // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::DrawText doesn't work witth unicode on Windows.
+  // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::DrawText doesn't work with unicode on Windows.
   if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") {
     wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc();
     dc.SetFont(*reinterpret_cast<wxFont*>(font));
@@ -179,7 +179,7 @@ void graphics::draw_string(intptr_t hdc, const ustring& text, intptr_t font, int
 
 void graphics::draw_string(intptr_t hdc, const ustring& text, intptr_t font, int32_t x, int32_t y, int32_t w, int32_t h, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
   if (!hdc) return;
-  // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::DrawText doesn't work witth unicode on Windows.
+  // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::DrawText doesn't work with unicode on Windows.
   if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") {
     wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc();
     dc.SetClippingRegion({ x, y }, { w, h });
@@ -252,7 +252,7 @@ void graphics::measure_string(intptr_t hdc, const ustring &text, intptr_t font, 
   auto strings = text.split({ '\n' });
   for (auto string : strings) {
     double line_width = 0, line_height = 0;
-    // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::GetTextExtent doesn't work witth unicode on Windows.
+    // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::GetTextExtent doesn't work with unicode on Windows.
     if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") {
       reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetFont(*reinterpret_cast<wxFont*>(font));
       wxSize line_size = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().GetTextExtent(wxString(convert_string::to_wstring(string)));

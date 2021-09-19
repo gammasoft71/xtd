@@ -79,6 +79,6 @@ std::string font_family::get_name(intptr_t font_family, int32_t language) {
   return *reinterpret_cast<std::string*>(font_family);
 }
 
-bool font_family::is_style_avaible(intptr_t font_family, bool bold, bool italic, bool underline, bool strikeout) {
+bool font_family::is_style_available(intptr_t font_family, bool bold, bool italic, bool underline, bool strikeout) {
   return true;
 }
