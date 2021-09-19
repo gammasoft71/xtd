@@ -10,7 +10,7 @@ xtdc-gui can open an xtd example from xtd.core, xtd.forms or xtd.tunit examples.
 
 # Templates project
 
-xtdc-gui contians many project template. All project listed below are created with CMake and target your system (Visual Studio on Windows, Xcode on macOS and Code::Blocks or makefile on Linux).
+xtdc-gui contains many project template. All project listed below are created with CMake and target your system (Visual Studio on Windows, Xcode on macOS and Code::Blocks or makefile on Linux).
 
 ## GUI Application sdk :
 
@@ -53,7 +53,7 @@ xtdc-gui contians many project template. All project listed below are created wi
 
 * First step choose "Create a new project" button.
 * Choose your project template then click to "Next" button
-* Choose the name for your new project and the path where the project will be create, and finaly click "Create button" to create it.
+* Choose the name for your new project and the path where the project will be created, and finally click the "Create button" to create it.
 
 ## Windows :
 

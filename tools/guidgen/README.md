@@ -4,7 +4,7 @@ guidgen is a guid generator command line tool.
 
 # Some examples
 
-## generate one guid wuth 32 digits separated by hyphen format
+## generate one guid with 32 digits separated by hyphen format
 
 Open "Command Prompt" or "Terminal", and type the following:
 
@@ -24,7 +24,7 @@ Example output
 372812f1-0472-4d87-9954-738f7cc2b213
 ```
 
-## generate ten guids wuth Four hexadecimal values enclosed in braces, where the fourth value is a subset of eight hexadecimal values that is also enclosed in braces.
+## generate ten guids with Four hexadecimal values enclosed in braces, where the fourth value is a subset of eight hexadecimal values that is also enclosed in braces.
 
 Open "Command Prompt" or "Terminal", and type the following:
 
