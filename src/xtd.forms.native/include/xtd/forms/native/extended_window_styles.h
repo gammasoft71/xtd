@@ -27,7 +27,7 @@ constexpr size_t WS_EX_DLGMODALFRAME = 0x00000001;
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t WS_EX_NOPARENTNOTIFY = 0x00000004;
-/// @brief Specifies that a window created with this style should be placed above all nontopmost windows and stay above them even when the window is deactivated. An application can use the SetWindowPos member function to add or remove this attribute.
+/// @brief Specifies that a window created with this style should be placed above all non topmost windows and stay above them even when the window is deactivated. An application can use the SetWindowPos member function to add or remove this attribute.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native ex_ws
@@ -178,7 +178,7 @@ constexpr size_t WS_EX_LAYERED = 0x00080000;
 /// @ingroup xtd_forms_native ex_ws
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
-constexpr size_t WS_EX_NOINHERITLAYOUT = 0x00100000; // Disable inheritence of mirroring by children
+constexpr size_t WS_EX_NOINHERITLAYOUT = 0x00100000; // Disable inheritance of mirroring by children
 
 /// @brief The window does not render to a redirection surface. This is for windows that do not have visible content or that use mechanisms other than surfaces to provide their visual.
 /// @par Library
@@ -222,7 +222,7 @@ constexpr size_t WS_EX_AUTOSCROLL = 0x40000000;
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native ex_ws
-/// @todo check if it's not redondant with WS_EX_DLGMODALFRAME fllags ?
+/// @todo check if it's not redundant with WS_EX_DLGMODALFRAME flags ?
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t WS_EX_MODALWINDOW = 0x80000000;

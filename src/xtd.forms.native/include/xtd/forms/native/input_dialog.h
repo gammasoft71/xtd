@@ -42,11 +42,11 @@ namespace xtd {
         /// @param message A xtd::ustring that specifies the invite message text to display.
         /// @param value A xtd::ustring that specifies the text to display.
         /// @param character_casting Character casing values (0 : normal, 1 : upper, 2 : lower).
-        /// @param multiline true foor multiline; otherwise false.
+        /// @param multiline true for multiline; otherwise false.
         /// @param use_system_password_char true if use system password char; otherwise false.
         /// @param word_wrap true if word_wrap; otherwise false.
         /// @return true if the user clicks OK in the dialog box; otherwise, false.
-        /// @remarks If result is true, the font parameter contains the new font, and the color rparamter contains the now coolor.
+        /// @remarks If result is true, the font parameter contains the new font, and the color parameter contains the now color.
         /// @warning Internal use only
         static bool run_dialog(intptr_t hwnd, const xtd::ustring& text, const xtd::ustring& message, xtd::ustring& value, int32_t character_casting, bool multiline, bool use_system_password_char, bool word_wrap);
         /// @brief Shows async dialog as sheet.
@@ -56,7 +56,7 @@ namespace xtd {
         /// @param message A xtd::ustring that specifies the invite message text to display.
         /// @param value A xtd::ustring that specifies the text to display.
         /// @param character_casting Character casing values (0 : normal, 1 : upper, 2 : lower).
-        /// @param multiline true foor multiline; otherwise false.
+        /// @param multiline true for multiline; otherwise false.
         /// @param use_system_password_char true if use system password char; otherwise false.
         /// @param word_wrap true if word_wrap; otherwise false.
         /// @return true if the user clicks OK in the dialog box; otherwise, false.

@@ -56,7 +56,7 @@ namespace xtd {
         /// @return true if the caller can quit this application; otherwise, false.
         /// @warning Internal use only
         static bool allow_quit();
-        /// @brief Cleanup all datas, handles, references, ... initialized by initilize before quit.
+        /// @brief Cleanup all data, handles, references, ... initialized by initialize() before quit.
         /// @remarks Some toolkits are nothing to clean. Leave this method empty.
         /// @warning Internal use only
         static void cleanup();
@@ -88,7 +88,7 @@ namespace xtd {
         /// @brief Exits application.
         /// @warning Internal use only
         static void exit();
-        /// @brief Initialize all datas, handles, references, ... needed by tookits.
+        /// @brief Initialize all data, handles, references, ... needed by toolkits.
         /// @remarks Some toolkits are nothing to init. Leave this method empty.
         /// @warning Internal use only
         static void initialize();

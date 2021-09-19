@@ -35,7 +35,7 @@ namespace xtd {
       class forms_native_export_ choice final static_ {
         friend xtd::forms::choice;
       protected:
-        /// @brief Maintains performance while items are added to the choioce one at a time by preventing the control from drawing until the end_update() method is called.
+        /// @brief Maintains performance while items are added to the choice one at a time by preventing the control from drawing until the end_update() method is called.
         /// @param control Choice window handle.
         /// @warning Internal use only
         static void begin_update(intptr_t control);

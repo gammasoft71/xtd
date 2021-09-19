@@ -40,7 +40,7 @@ namespace xtd {
         /// @return The created cursor handle.
         /// @warning Internal use only
         static intptr_t create();
-        /// @brief Creates cursor with specifiiedd image and hot spot.
+        /// @brief Creates cursor with specified image and hot spot.
         /// @param image A xtd::drawing::image image will be use by cursor.
         /// @param hot_spot A xtd::drawing::point hot spot location.
         /// @return The created cursor handle.

@@ -40,7 +40,7 @@ namespace xtd {
         /// @param image A xtd::drawing::image associated with this menu_item.
         /// @param kind A menu item kind.
         /// @param checked true if menu item is checked; otherwise false.
-        /// @param shortcut A bittwise virtual key and virtual key modifiers shortcut associate with this menu_item.
+        /// @param shortcut A bitwise virtual key and virtual key modifiers shortcut associate with this menu_item.
         /// @return The created menu handle.
         /// @warning Internal use only
         static intptr_t create(const xtd::ustring& text, const xtd::drawing::image& image, int32_t kind, bool checked, size_t shortcut);

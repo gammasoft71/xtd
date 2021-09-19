@@ -44,7 +44,7 @@ namespace xtd {
         /// @param max_size The maximum point size a user can select.
         /// @param show_color true if the dialog box displays the color choice; otherwise, false.
         /// @return true if the user clicks OK in the dialog box; otherwise, false.
-        /// @remarks If result is true, the font parameter contains the new font, and the color rparamter contains the now coolor.
+        /// @remarks If result is true, the font parameter contains the new font, and the color parameter contains the now color.
         /// @warning Internal use only
         static bool run_dialog(intptr_t hwnd, drawing::font& font, drawing::color& color, size_t options, size_t min_size, size_t max_size, bool show_color);
         /// @brief Shows async dialog as sheet.
@@ -55,7 +55,7 @@ namespace xtd {
         /// @param max_size The maximum point size a user can select.
         /// @param show_color true if the dialog box displays the color choice; otherwise, false.
         /// @return true if the user clicks OK in the dialog box; otherwise, false.
-        /// @remarks When dialog closed and if result is true, the font parameter contains the new font, and the color rparamter contains the now coolor.
+        /// @remarks When dialog closed and if result is true, the font parameter contains the new font, and the color parameter contains the now color.
         /// @warning Internal use only
         static void run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, drawing::font& font, drawing::color& color, size_t options, size_t min_size, size_t max_size, bool show_color);
       };
