@@ -106,7 +106,9 @@ namespace xtd {
     guid& operator=(const guid&) = default;
     friend std::ostream& operator <<(std::ostream& os, const guid& guid) noexcept {return os << guid.to_string();}
     /// @endcond
-    /// 
+    
+    /// @name Methods
+    /// @{
     /// @brief Compares the current instance with another object of the same type.
     /// @param obj An object to compare with this instance.
     /// @return A 32-bit signed integer that indicates the relative order of the objects being compared.
@@ -165,6 +167,7 @@ namespace xtd {
     /// | X         | Four hexadecimal values enclosed in braces, where the fourth value is a subset of eight hexadecimal values that is also enclosed in braces: |
     /// |           | {0x00000000,0x0000,0x0000,{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}                                                                         |
     ustring to_string(ustring format) const;
+    /// @}
     
   private:
     std::vector<byte_t> data_ = std::vector<byte_t>(16);
