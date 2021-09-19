@@ -9,11 +9,11 @@
 class Fl_Form : public Fl_Window {
 public:
   Fl_Form(int x, int y, int w, int h , const char* l = 0) : Fl_Window(x, y, w, h, l) {
-    resiable_control_.hide();
-    resizable(resiable_control_);
+    resizable_control_.hide();
+    resizable(resizable_control_);
   }
   
-  Fl_Box resiable_control_ {10000, 10000, 1, 1, ""};
+  Fl_Box resizable_control_ {10000, 10000, 1, 1, ""};
   int dialog_result_ = 0;
 };
 

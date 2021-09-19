@@ -65,7 +65,7 @@ namespace {
   
   vector<string> convert_to_buttons(uint32_t style) {
     if ((style & MB_OKCANCEL) == MB_OKCANCEL) return {fl_ok, fl_cancel};
-    if ((style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE) return {"Abord", "Retry", "Ignore"};
+    if ((style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE) return {"Abort", "Retry", "Ignore"};
     if ((style & MB_YESNOCANCEL) == MB_YESNOCANCEL) return {fl_yes, fl_no, fl_cancel};
     if ((style & MB_YESNO) == MB_YESNO) return {fl_yes, fl_no};
     if ((style & MB_RETRYCANCEL) == MB_RETRYCANCEL) return {"Retry", fl_cancel};
