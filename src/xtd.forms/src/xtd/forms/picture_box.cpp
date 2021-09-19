@@ -75,7 +75,7 @@ forms::create_params picture_box::create_params() const {
 drawing::size picture_box::measure_control() const {
   drawing::size size;
   size = image_.has_value() ? image_.value().size() : drawing::size(0, 0);
-  /// @todo add locatoin
+  /// @todo add location
   return size;
 }
 
