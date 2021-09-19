@@ -8,7 +8,7 @@
 namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
-    /// @brief This attribute is use to add cleaup class method to class test attribute.
+    /// @brief This attribute is use to add cleanup class method to class test attribute.
     /// @par Namespace
     /// xtd::tunit
     /// @par Library
@@ -34,7 +34,7 @@ namespace xtd {
   }
 }
 
-/// @brief add cleaup class method to class test.
+/// @brief Add cleanup class method to class test.
 /// @par Library
 /// xtd.tunit
 /// @ingroup xtd_tunit

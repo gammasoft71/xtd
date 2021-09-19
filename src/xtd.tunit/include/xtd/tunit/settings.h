@@ -27,7 +27,7 @@ namespace xtd {
       settings& operator=(const settings&) = default;
       /// @endcond
 
-      /// @brief Get default settings intance.
+      /// @brief Get default settings instance.
       /// @return Default settings instance.
       static xtd::tunit::settings& default_settings() noexcept;
 
@@ -42,13 +42,13 @@ namespace xtd {
       /// @brief Gets exit status.
       /// @return exit status.
       /// @remarks The value by default is EXIT_SUCCESS.
-      /// @remarks When an error occured in unit test the value is set to EXIT_FAILURE.
+      /// @remarks When an error occurred in unit test the value is set to EXIT_FAILURE.
       int exit_status() const noexcept {return exit_status_;}
       
       /// @brief Sets exit status.
       /// @param exit_status exit status.
       /// @remarks The value by default is EXIT_SUCCESS.
-      /// @remarks When an error occured in unit test the value is set to EXIT_FAILURE.
+      /// @remarks When an error occurred in unit test the value is set to EXIT_FAILURE.
       void exit_status(int exit_status) noexcept {exit_status_ = exit_status;}
       
       /// @brief Gets filter tests.
@@ -120,7 +120,7 @@ namespace xtd {
       /// @brief Gets repeat tests count.
       /// @return Repeat test count.
       /// @remarks By default is set to 1 (no repeat).
-      int repeaat_test() const noexcept {return repeat_tests_;}
+      int repeat_test() const noexcept {return repeat_tests_;}
       
       /// @brief Sets repeat tests count.
       /// @param repeat_tests Repeat test count.

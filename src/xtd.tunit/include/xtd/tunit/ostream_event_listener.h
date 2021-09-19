@@ -24,7 +24,7 @@ namespace xtd {
     class ostream_event_listener : public xtd::tunit::event_listener {
     public:
       /// @brief Creates new instance ostream event lister with ostream specified.
-      /// @param os sotream where evnets are writting.
+      /// @param os std::ostream where events are written.
       ostream_event_listener(std::ostream& os) noexcept : os_(os) {}
       
       /// @brief Occurs when test is aborted.
