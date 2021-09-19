@@ -25,7 +25,7 @@ namespace xtd {
       point = 3,
       /// @brief Specifies the inch as the unit of measure.
       inch = 4,
-      /// @brief Specifes the document unit (1/300 inch) as the unit of measure.
+      /// @brief Specifies the document unit (1/300 inch) as the unit of measure.
       document = 5,
       /// @brief Specifies the millimeter as the unit of measure.
       millimeter = 6

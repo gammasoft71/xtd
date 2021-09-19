@@ -244,7 +244,7 @@ namespace xtd {
         /// | 0xA20E | property_tag_exif_focal_x_res                 |
         /// | 0xA20F | property_tag_exif_focal_y_res                 |
         /// | 0xA210 | property_tag_exif_focal_res_unit              |
-        /// | 0xA214 | property_tag_exif_dubject_loc                 |
+        /// | 0xA214 | property_tag_exif_subject_loc                 |
         /// | 0xA215 | property_tag_exif_exposure_index              |
         /// | 0xA217 | property_tag_exif_sensing_method              |
         /// | 0xA300 | property_tag_exif_file_Source                 |
@@ -405,7 +405,7 @@ namespace xtd {
         /// | 0x502F | property_tag_thumbnail_planar_config          |
         /// | 0x5030 | property_tag_thumbnail_resolution_unit        |
         /// | 0x5031 | property_tag_thumbnail_transfer_function      |
-        /// | 0x5032 | property_tag_thumbnail_doftware_used          |
+        /// | 0x5032 | property_tag_thumbnail_software_used          |
         /// | 0x5033 | property_tag_thumbnail_date_time              |
         /// | 0x5034 | property_tag_thumbnail_artist                 |
         /// | 0x5035 | property_tag_thumbnail_white_point            |

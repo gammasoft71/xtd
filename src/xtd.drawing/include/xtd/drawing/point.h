@@ -54,7 +54,7 @@ namespace xtd {
       /// @remarks x and y values are set to zero.
       point() = default;
       
-      /// @brief nitializes a new instance of the point class using coordinates specified by an integer value.
+      /// @brief Initializes a new instance of the point class using coordinates specified by an integer value.
       /// @param dx A 32-bit integer that specifies the coordinates for the new point.
       /// @remarks The low-order 16 bits of the dw parameter specify the horizontal x-coordinate and the higher 16 bits specify the vertical y-coordinate for the new point.
       /// @par Examples
@@ -233,7 +233,7 @@ namespace xtd {
       /// @return The point that is the result of the addition operation.
       /// @remarks The add adds the width and height of the specified size to the y and y values of the specified point.
       /// @par Examples
-      /// The following example shows how to use the add method. To run this example, paste it into a Windows Form (xtd::formsà. Handle the form's paint event and call the add_point method from the paint event-handling method, passing e as paint_event_args.
+      /// The following example shows how to use the add method. To run this example, paste it into a Windows Form (xtd::forms. Handle the form's paint event and call the add_point method from the paint event-handling method, passing e as paint_event_args.
       /// @code
       /// void add_point(paint_event_args& e) {
       ///   point point1(10, 10);
@@ -269,7 +269,7 @@ namespace xtd {
       ///   point point1(10, 10);
       ///   point1.offset(50, 0);
       ///   point point2(250, 10);
-      ///   e.eraphics().draw_line(pens::red, point1, point2);
+      ///   e.graphics().draw_line(pens::red, point1, point2);
       /// }
       /// @endcode
       void offset(const point& p) {offset(p.x_, p.y_);}
