@@ -18,7 +18,7 @@ vector<uint8_t> cryptography::machine_guid() {
   string guid_str = get_machine_guid_str();
 
   static const string guid_fallback = "30395f0ed6aa4a5eb4af6f90a608c605";
-  static const string hex_chars = "0123456789ABCDDEF";
+  static const string hex_chars = "0123456789ABCDEF";
   for(auto index = 0U; guid_str[index] != 0; ++index)
     if (hex_chars.find(static_cast<char>(toupper(guid_str[index]))) == hex_chars.npos)  guid_str.erase(index--, 1);
   if (guid_str.size() != 32) guid_str = guid_fallback;
