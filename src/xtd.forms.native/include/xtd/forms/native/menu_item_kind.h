@@ -34,7 +34,7 @@ constexpr size_t MI_RADIO = 2;
 /// @ingroup xtd_forms_native mi
 /// @warning Internal use only
 constexpr size_t MI_DROPDOWN = 3;
-/// @brief Seprator menu item.
+/// @brief Separator menu item.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native mi

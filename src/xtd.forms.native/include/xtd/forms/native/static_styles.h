@@ -269,7 +269,7 @@ constexpr size_t SS_BITMAP_NORMAL = 0x00000000;
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t SS_BITMAP_STRETCH = 0x00040000;
-/// @brief Specifies a autosized bitmap is to be displayed in the static control.
+/// @brief Specifies an auto-sized bitmap to be displayed in the static control.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native ss

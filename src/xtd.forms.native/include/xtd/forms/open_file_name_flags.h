@@ -103,7 +103,7 @@ constexpr size_t OFN_FILEMUSTEXIST = 0x00001000;
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t OFN_CREATEPROMPT = 0x00002000;
-/// @brief pecifies that if a call to the OpenFile function fails because of a network sharing violation, the error is ignored and the dialog box returns the selected file name. If this flag is not set, the dialog box notifies your hook procedure when a network sharing violation occurs for the file name specified by the user. If you set the OFN_EXPLORER flag, the dialog box sends the CDN_SHAREVIOLATION message to the hook procedure. If you do not set OFN_EXPLORER, the dialog box sends the SHAREVISTRING registered message to the hook procedure.
+/// @brief Specifies that if a call to the OpenFile function fails because of a network sharing violation, the error is ignored and the dialog box returns the selected file name. If this flag is not set, the dialog box notifies your hook procedure when a network sharing violation occurs for the file name specified by the user. If you set the OFN_EXPLORER flag, the dialog box sends the CDN_SHAREVIOLATION message to the hook procedure. If you do not set OFN_EXPLORER, the dialog box sends the SHAREVISTRING registered message to the hook procedure.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native ofn

@@ -47,14 +47,14 @@ namespace xtd {
         /// @param result A dialog box id.
         /// @warning Internal use only
         static void end_dialog(intptr_t control, int32_t result);
-        /// @brief Get a vallue indicates whether full screen window.
+        /// @brief Get a value indicates whether full screen window.
         /// @param control Control window handle.
-        /// @return true if form is fulll screen; otherwise false.
+        /// @return true if form is full screen; otherwise false.
         /// @warning Internal use only
         static bool full_screen(intptr_t control);
-        /// @brief Set a vallue indicates whether full screen window.
+        /// @brief Set a value indicates whether full screen window.
         /// @param control Control window handle.
-        /// @param fulll_screen true if form is fulll screen; otherwise false.
+        /// @param full_screen true if form is full screen; otherwise false.
         /// @warning Internal use only
         static void full_screen(intptr_t control, bool full_screen);
         /// @brief Sets the icon for the form.
@@ -64,7 +64,7 @@ namespace xtd {
         static void icon(intptr_t control, const xtd::drawing::icon& icon);
         /// @brief Gets a value indicate whether maximized windows.
         /// @param control Control window handle.
-        /// @return true if form is fulll screen; otherwise false.
+        /// @return true if form is full screen; otherwise false.
         /// @warning Internal use only
         static bool maximize(intptr_t control);
         /// @brief Sets a value indicate whether maximized windows.
@@ -74,12 +74,12 @@ namespace xtd {
         static void maximize(intptr_t control, bool maximize);
         /// @brief Gets a value indicate whether minimized windows.
         /// @param control Control window handle.
-        /// @return true if form is fulll screen; otherwise false.
+        /// @return true if form is full screen; otherwise false.
         /// @warning Internal use only
         static bool minimize(intptr_t control);
         /// @brief Sets a value indicate whether minimized windows.
         /// @param control Control window handle.
-        /// @param minimize true if form is fulll screen; otherwise false.
+        /// @param minimize true if form is full screen; otherwise false.
         /// @warning Internal use only
         static void minimize(intptr_t control, bool minimize);
         /// @brief Sets the main_menu that is displayed in the form.
@@ -87,7 +87,7 @@ namespace xtd {
         /// @param menu A menu handle that represents the menu to display in the form.
         /// @warning Internal use only
         static void menu(intptr_t control, intptr_t menu);
-        /// @brief Restor form in normal state (not minimized, not maximized and not full screen).
+        /// @brief Restore form in normal state (not minimized, not maximized and not full screen).
         /// @param control Control window handle.
         /// @warning Internal use only
         static void restore(intptr_t control);
