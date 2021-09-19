@@ -59,7 +59,7 @@ namespace xtd {
           std::shuffle(test_classes().begin(), test_classes().end(), g);
         }
           
-        for (repeat_iteration_ = 1; repeat_iteration_ <= xtd::tunit::settings::default_settings().repeaat_test() || xtd::tunit::settings::default_settings().repeaat_test() < 0; ++repeat_iteration_) {
+        for (repeat_iteration_ = 1; repeat_iteration_ <= xtd::tunit::settings::default_settings().repeat_test() || xtd::tunit::settings::default_settings().repeat_test() < 0; ++repeat_iteration_) {
            try {
             event_listener_->on_unit_test_start(xtd::tunit::tunit_event_args(*this));
             
@@ -95,9 +95,9 @@ namespace xtd {
       
       int repeat_iteration() const noexcept {return repeat_iteration_;}
       
-      int repeat_iteration_count() const noexcept {return xtd::tunit::settings::default_settings().repeaat_test();}
+      int repeat_iteration_count() const noexcept {return xtd::tunit::settings::default_settings().repeat_test();}
       
-      bool repeat_tests() const noexcept {return xtd::tunit::settings::default_settings().repeaat_test() != 1;}
+      bool repeat_tests() const noexcept {return xtd::tunit::settings::default_settings().repeat_test() != 1;}
       
       size_t test_cases_count() const noexcept {
         size_t count = 0;

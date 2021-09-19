@@ -16,7 +16,7 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
   
   if (ignored() && settings::default_settings().also_run_ignored_tests()) status_ = test_status::not_started;
 
-  if ((std::string(reinterpret_cast<const char*>(__internal_tunit_unit_tests_mode__)) == "internal_tests" || settings::default_settings().repeaat_test() != 1) && (aborted() || failed() || succeed())) status_ = test_status::not_started;
+  if ((std::string(reinterpret_cast<const char*>(__internal_tunit_unit_tests_mode__)) == "internal_tests" || settings::default_settings().repeat_test() != 1) && (aborted() || failed() || succeed())) status_ = test_status::not_started;
 
   if (settings::default_settings().is_match_test_name(test_class.name(), name())) {
     if (ignored()) {

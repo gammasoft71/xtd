@@ -6,7 +6,7 @@
 
 /// @brief If you define TUNIT_CONFIG_MAIN before including xtd.tunit.h include, a main entry point is generated for you.
 /// @par Examples
-/// This example shows how to usse
+/// This example shows how to use
 /// @include tunit_config_main.cpp TUNIT_CONFIG_MAIN
 #if defined(TUNIT_CONFIG_MAIN)
 int main(int argc, char* argv[]) {

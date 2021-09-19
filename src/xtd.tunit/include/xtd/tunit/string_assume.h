@@ -24,7 +24,7 @@ namespace xtd {
       string_assume() = delete;
       /// @endcond
       
-      /// @brief Valids that two type are equal ignoring case.
+      /// @brief Validates that two type are equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -35,7 +35,7 @@ namespace xtd {
       /// @endcode
       static void are_equal_ignoring_case(const xtd::ustring& expected, const xtd::ustring& actual) {are_equal_ignoring_case(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that two type are equal ignoring case.
+      /// @brief Validates that two type are equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param stack_frame Contains information about current file and current line.
@@ -47,7 +47,7 @@ namespace xtd {
       /// @endcode
       static void are_equal_ignoring_case(const xtd::ustring& expected, const xtd::ustring& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_equal_ignoring_case(expected, actual, "", stack_frame);}
       
-      /// @brief Valids that two type are equal ignoring case.
+      /// @brief Validates that two type are equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -59,7 +59,7 @@ namespace xtd {
       /// @endcode
       static void are_equal_ignoring_case(const xtd::ustring& expected, const xtd::ustring& actual, const xtd::ustring& message) {are_equal_ignoring_case(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that two type are equal ignoring case.
+      /// @brief Validates that two type are equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -78,7 +78,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that two type are not equal ignoring case.
+      /// @brief Validates that two type are not equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -89,7 +89,7 @@ namespace xtd {
       /// @endcode
       static void are_not_equal_ignoring_case(const xtd::ustring& expected, const xtd::ustring& actual) {are_not_equal_ignoring_case(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that two type are not equal ignoring case.
+      /// @brief Validates that two type are not equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param stack_frame Contains information about current file and current line.
@@ -101,7 +101,7 @@ namespace xtd {
       /// @endcode
       static void are_not_equal_ignoring_case(const xtd::ustring& expected, const xtd::ustring& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal_ignoring_case(expected, actual, "", stack_frame);}
       
-      /// @brief Valids that two type are not equal ignoring case.
+      /// @brief Validates that two type are not equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -113,7 +113,7 @@ namespace xtd {
       /// @endcode
       static void are_not_equal_ignoring_case(const xtd::ustring& expected, const xtd::ustring& actual, const xtd::ustring& message) {are_not_equal_ignoring_case(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that two type are not equal ignoring case.
+      /// @brief Validates that two type are not equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -132,7 +132,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that string contains an item.
+      /// @brief Validates that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -144,7 +144,7 @@ namespace xtd {
       /// @endcode
       static void contains(const xtd::ustring& item, const xtd::ustring& string) {contains(item, string, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that string contains an item.
+      /// @brief Validates that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param stack_frame Contains information about current file and current line.
@@ -157,7 +157,7 @@ namespace xtd {
       /// @endcode
       static void contains(const xtd::ustring& item, const xtd::ustring& string, const xtd::diagnostics::stack_frame& stack_frame) {contains(item, string, "", stack_frame);}
       
-      /// @brief Valids that string contains an item.
+      /// @brief Validates that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -170,7 +170,7 @@ namespace xtd {
       /// @endcode
       static void contains(const xtd::ustring& item, const xtd::ustring& string, const xtd::ustring& message) {contains(item, string, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that string contains an item.
+      /// @brief Validates that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -190,7 +190,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that string contains an item.
+      /// @brief Validates that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -202,7 +202,7 @@ namespace xtd {
       /// @endcode
       static void does_not_contain(const xtd::ustring& item, const xtd::ustring& string) {does_not_contain(item, string, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that string contains an item.
+      /// @brief Validates that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param stack_frame Contains information about current file and current line.
@@ -215,7 +215,7 @@ namespace xtd {
       /// @endcode
       static void does_not_contain(const xtd::ustring& item, const xtd::ustring& string, const xtd::diagnostics::stack_frame& stack_frame) {does_not_contain(item, string, "", stack_frame);}
       
-      /// @brief Valids that string contains an item.
+      /// @brief Validates that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -228,7 +228,7 @@ namespace xtd {
       /// @endcode
       static void does_not_contain(const xtd::ustring& item, const xtd::ustring& string, const xtd::ustring& message) {does_not_contain(item, string, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that string contains an item.
+      /// @brief Validates that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -248,7 +248,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that string starts witdh item.
+      /// @brief Validates that string starts with a specific item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -260,7 +260,7 @@ namespace xtd {
       /// @endcode
       static void starts_with(const xtd::ustring& item, const xtd::ustring& string) {starts_with(item, string, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that string starts with item.
+      /// @brief Validates that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param stack_frame Contains information about current file and current line.
@@ -273,7 +273,7 @@ namespace xtd {
       /// @endcode
       static void starts_with(const xtd::ustring& item, const xtd::ustring& string, const xtd::diagnostics::stack_frame& stack_frame) {starts_with(item, string, "", stack_frame);}
       
-      /// @brief Valids that string starts with item.
+      /// @brief Validates that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -286,7 +286,7 @@ namespace xtd {
       /// @endcode
       static void starts_with(const xtd::ustring& item, const xtd::ustring& string, const xtd::ustring& message) {starts_with(item, string, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that string starts with item.
+      /// @brief Validates that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -306,7 +306,7 @@ namespace xtd {
         }
       }
 
-      /// @brief Valids that string does noy start witdh item.
+      /// @brief Validates that string does not start with a specific item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -318,7 +318,7 @@ namespace xtd {
       /// @endcode
       static void does_not_start_with(const xtd::ustring& item, const xtd::ustring& string) {does_not_start_with(item, string, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that string starts with item.
+      /// @brief Validates that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param stack_frame Contains information about current file and current line.
@@ -331,7 +331,7 @@ namespace xtd {
       /// @endcode
       static void does_not_start_with(const xtd::ustring& item, const xtd::ustring& string, const xtd::diagnostics::stack_frame& stack_frame) {does_not_start_with(item, string, "", stack_frame);}
       
-      /// @brief Valids that string starts with item.
+      /// @brief Validates that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -344,7 +344,7 @@ namespace xtd {
       /// @endcode
       static void does_not_start_with(const xtd::ustring& item, const xtd::ustring& string, const xtd::ustring& message) {does_not_start_with(item, string, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that string starts with item.
+      /// @brief Validates that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -364,7 +364,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that string ends witdh item.
+      /// @brief Validates that string ends with a specific item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -376,7 +376,7 @@ namespace xtd {
       /// @endcode
       static void ends_with(const xtd::ustring& item, const xtd::ustring& string) {ends_with(item, string, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that string starts with item.
+      /// @brief Validates that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param stack_frame Contains information about current file and current line.
@@ -389,7 +389,7 @@ namespace xtd {
       /// @endcode
       static void ends_with(const xtd::ustring& item, const xtd::ustring& string, const xtd::diagnostics::stack_frame& stack_frame) {ends_with(item, string, "", stack_frame);}
       
-      /// @brief Valids that string starts with item.
+      /// @brief Validates that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -402,7 +402,7 @@ namespace xtd {
       /// @endcode
       static void ends_with(const xtd::ustring& item, const xtd::ustring& string, const xtd::ustring& message) {ends_with(item, string, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that string starts with item.
+      /// @brief Validates that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -422,7 +422,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that string does not end witdh item.
+      /// @brief Validates that string does not end with a specific item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -434,7 +434,7 @@ namespace xtd {
       /// @endcode
       static void does_not_end_with(const xtd::ustring& item, const xtd::ustring& string) {does_not_end_with(item, string, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that string starts with item.
+      /// @brief Validates that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param stack_frame Contains information about current file and current line.
@@ -447,7 +447,7 @@ namespace xtd {
       /// @endcode
       static void does_not_end_with(const xtd::ustring& item, const xtd::ustring& string, const xtd::diagnostics::stack_frame& stack_frame) {does_not_end_with(item, string, "", stack_frame);}
       
-      /// @brief Valids that string starts with item.
+      /// @brief Validates that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -460,7 +460,7 @@ namespace xtd {
       /// @endcode
       static void does_not_end_with(const xtd::ustring& item, const xtd::ustring& string, const xtd::ustring& message) {does_not_end_with(item, string, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that string starts with item.
+      /// @brief Validates that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -480,8 +480,8 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that matches regex patern.
-      /// @param regex_pattern the regex patern.
+      /// @brief Validates that matches regex pattern.
+      /// @param regex_pattern the regex pattern.
       /// @param actual the actual value.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -491,8 +491,8 @@ namespace xtd {
       /// @endcode
       static void matches(const xtd::ustring& regex_pattern, const xtd::ustring& actual) {matches(regex_pattern, actual, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that matches regex patern.
-      /// @param regex_pattern the regex patern.
+      /// @brief Validates that matches regex pattern.
+      /// @param regex_pattern the regex pattern.
       /// @param actual the actual value.
       /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -503,8 +503,8 @@ namespace xtd {
       /// @endcode
       static void matches(const xtd::ustring& regex_pattern, const xtd::ustring& actual, const xtd::diagnostics::stack_frame& stack_frame) {matches(regex_pattern, actual, "", stack_frame);}
       
-      /// @brief Valids that matches regex patern.
-      /// @param regex_pattern the regex patern.
+      /// @brief Validates that matches regex pattern.
+      /// @param regex_pattern the regex pattern.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -515,8 +515,8 @@ namespace xtd {
       /// @endcode
       static void matches(const xtd::ustring& regex_pattern, const xtd::ustring& actual, const xtd::ustring& message) {matches(regex_pattern, actual, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that matches regex patern.
-      /// @param regex_pattern the regex patern.
+      /// @brief Validates that matches regex pattern.
+      /// @param regex_pattern the regex pattern.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -534,8 +534,8 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that does not match regex patern.
-      /// @param regex_pattern the regex patern.
+      /// @brief Validates that does not match regex pattern.
+      /// @param regex_pattern the regex pattern.
       /// @param actual the actual value.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -545,8 +545,8 @@ namespace xtd {
       /// @endcode
       static void does_not_match(const xtd::ustring& regex_pattern, const xtd::ustring& actual) {does_not_match(regex_pattern, actual, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that does not match regex patern.
-      /// @param regex_pattern the regex patern.
+      /// @brief Validates that does not match regex pattern.
+      /// @param regex_pattern the regex pattern.
       /// @param actual the actual value.
       /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -557,8 +557,8 @@ namespace xtd {
       /// @endcode
       static void does_not_match(const xtd::ustring& regex_pattern, const xtd::ustring& actual, const xtd::diagnostics::stack_frame& stack_frame) {does_not_match(regex_pattern, actual, "", stack_frame);}
       
-      /// @brief Valids that does not match regex patern.
-      /// @param regex_pattern the regex patern.
+      /// @brief Validates that does not match regex pattern.
+      /// @param regex_pattern the regex pattern.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -569,8 +569,8 @@ namespace xtd {
       /// @endcode
       static void does_not_match(const xtd::ustring& regex_pattern, const xtd::ustring& actual, const xtd::ustring& message) {does_not_match(regex_pattern, actual, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that does not match regex patern.
-      /// @param regex_pattern the regex patern.
+      /// @brief Validates that does not match regex pattern.
+      /// @param regex_pattern the regex pattern.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.

@@ -231,7 +231,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> a1 = {1, 2, 3, 4};
-      /// xtd::tunit::collection_assert::all_iall_items_are_uniquetems_are_not_null(a1, csf_); // test ok.
+      /// xtd::tunit::collection_assert::all_items_are_unique(a1, csf_); // test ok.
       /// std::vector<int> a2 = {1, 2, 3, 4, 1};
       /// xtd::tunit::collection_assert::all_items_are_unique(a2, csf_); // test throws an assertion_error exception.
       /// @endcode
@@ -257,7 +257,7 @@ namespace xtd {
         for (auto item : collection) {
           auto result = counts.insert(std::pair<decltype(item), int>(item, 1));
           if (result.second == false)
-            base_assert::fail("all items are unqiue", base_assert::join_items(collection), message, stack_frame);
+            base_assert::fail("all items are unique", base_assert::join_items(collection), message, stack_frame);
         }
         assert::succeed(message, stack_frame);
       }
@@ -275,7 +275,7 @@ namespace xtd {
         for (auto item : collection) {
           auto result = counts.insert(std::pair<item_t, int>(item, 1));
           if (result.second == false)
-            base_assert::fail("all items are unqiue", base_assert::join_items(collection), message, stack_frame);
+            base_assert::fail("all items are unique", base_assert::join_items(collection), message, stack_frame);
         }
         assert::succeed(message, stack_frame);
       }
@@ -553,7 +553,7 @@ namespace xtd {
       template<typename expected_t, typename actual_t>
       static void are_not_equal(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(expected, actual, "", stack_frame);}
       
-      /// @brief Asserts that all collection items arenot  equal.
+      /// @brief Asserts that all collection items are not  equal.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -741,7 +741,7 @@ namespace xtd {
       }
       /// @endcond
 
-      /// @brief Asserts that ollection contains all items.
+      /// @brief Asserts that collection contains all items.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -860,7 +860,7 @@ namespace xtd {
       }
       /// @endcond
 
-      /// @brief Asserts that ollection contains all items.
+      /// @brief Asserts that collection contains all items.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -1217,7 +1217,7 @@ namespace xtd {
 
 #define all_items_are_not_null_(...) __CMD_ASSERT_ARGS(all_items_are_not_null, __VA_ARGS__)
 
-#define all_items_are_unqiue_(...) __CMD_ASSERT_ARGS(all_items_are_unqiue, __VA_ARGS__)
+#define all_items_are_unique_(...) __CMD_ASSERT_ARGS(all_items_are_unique, __VA_ARGS__)
 
 #define are_equivalent_(...) __CMD_ASSERT_ARGS(are_equivalent, __VA_ARGS__)
 

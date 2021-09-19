@@ -57,7 +57,7 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_equal_ignoring_case("value", xtd::ustringg("VALUE"), "User message..."); // test ok.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case("value", xtd::ustring("VALUE"), "User message..."); // test ok.
       /// xtd::tunit::string_assert::are_equal_ignoring_case("key", xtd::ustring("VALUE"), "User message..."); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal_ignoring_case(const xtd::ustring& expected, const xtd::ustring& actual, const xtd::ustring& message) {are_equal_ignoring_case(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
@@ -304,7 +304,7 @@ namespace xtd {
           base_assert::fail("string starting with " + base_assert::to_string(item), base_assert::to_string(string), message, stack_frame);
       }
  
-      /// @brief Asserts that string does noy start witdh item.
+      /// @brief Asserts that string does not start with a specific item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -361,7 +361,7 @@ namespace xtd {
           base_assert::fail("not string starting with " + base_assert::to_string(item), base_assert::to_string(string), message, stack_frame);
       }
       
-      /// @brief Asserts that string ends witdh item.
+      /// @brief Asserts that string ends with a specific item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -418,7 +418,7 @@ namespace xtd {
           base_assert::fail("string ending with " + base_assert::to_string(item), base_assert::to_string(string), message, stack_frame);
       }
       
-      /// @brief Asserts that string does not end witdh item.
+      /// @brief Asserts that string does not end with a specific item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -475,8 +475,8 @@ namespace xtd {
           base_assert::fail("not string ending with " + base_assert::to_string(item), base_assert::to_string(string), message, stack_frame);
       }
        
-      /// @brief Asserts that matches regex patern.
-      /// @param regex_pattern the regex patern.
+      /// @brief Asserts that matches regex pattern.
+      /// @param regex_pattern the regex pattern.
       /// @param actual the actual value.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
@@ -486,8 +486,8 @@ namespace xtd {
       /// @endcode
       static void matches(const xtd::ustring& regex_pattern, const xtd::ustring& actual) {matches(regex_pattern, actual, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Asserts that matches regex patern.
-      /// @param regex_pattern the regex patern.
+      /// @brief Asserts that matches regex pattern.
+      /// @param regex_pattern the regex pattern.
       /// @param actual the actual value.
       /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -498,8 +498,8 @@ namespace xtd {
       /// @endcode
       static void matches(const xtd::ustring& regex_pattern, const xtd::ustring& actual, const xtd::diagnostics::stack_frame& stack_frame) {matches(regex_pattern, actual, "", stack_frame);}
       
-      /// @brief Asserts that matches regex patern.
-      /// @param regex_pattern the regex patern.
+      /// @brief Asserts that matches regex pattern.
+      /// @param regex_pattern the regex pattern.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -510,8 +510,8 @@ namespace xtd {
       /// @endcode
       static void matches(const xtd::ustring& regex_pattern, const xtd::ustring& actual, const xtd::ustring& message) {matches(regex_pattern, actual, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Asserts that matches regex patern.
-      /// @param regex_pattern the regex patern.
+      /// @brief Asserts that matches regex pattern.
+      /// @param regex_pattern the regex pattern.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -532,8 +532,8 @@ namespace xtd {
           base_assert::fail("string matching " + base_assert::to_string(regex_pattern), base_assert::to_string(actual), message, stack_frame);
       }
       
-      /// @brief Asserts that does not match regex patern.
-      /// @param regex_pattern the regex patern.
+      /// @brief Asserts that does not match regex pattern.
+      /// @param regex_pattern the regex pattern.
       /// @param actual the actual value.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
@@ -543,8 +543,8 @@ namespace xtd {
       /// @endcode
       static void does_not_match(const xtd::ustring& regex_pattern, const xtd::ustring& actual) {does_not_match(regex_pattern, actual, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Asserts that does not match regex patern.
-      /// @param regex_pattern the regex patern.
+      /// @brief Asserts that does not match regex pattern.
+      /// @param regex_pattern the regex pattern.
       /// @param actual the actual value.
       /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -555,8 +555,8 @@ namespace xtd {
       /// @endcode
       static void does_not_match(const xtd::ustring& regex_pattern, const xtd::ustring& actual, const xtd::diagnostics::stack_frame& stack_frame) {does_not_match(regex_pattern, actual, "", stack_frame);}
       
-      /// @brief Asserts that does not match regex patern.
-      /// @param regex_pattern the regex patern.
+      /// @brief Asserts that does not match regex pattern.
+      /// @param regex_pattern the regex pattern.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -567,8 +567,8 @@ namespace xtd {
       /// @endcode
       static void does_not_match(const xtd::ustring& regex_pattern, const xtd::ustring& actual, const xtd::ustring& message) {does_not_match(regex_pattern, actual, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Asserts that does not match regex patern.
-      /// @param regex_pattern the regex patern.
+      /// @brief Asserts that does not match regex pattern.
+      /// @param regex_pattern the regex pattern.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
