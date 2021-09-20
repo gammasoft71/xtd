@@ -22,16 +22,11 @@ namespace xtd {
   /// @include guid.cpp
   struct core_export_ guid final : public object, public icomparable<guid>, public iequatable<guid> {
   public:
-    /// @name Fields
-    /// @{
     /// @brief Get A read-only instance of the xtd::guid structure whose value is all zeros.
     /// @return xtd::guid A read-only instance of the xtd::guid structure whose value is all zeros.
     /// @remarks You can compare a GUID with the value of the xtd::guid.Empty field to determine whether a GUID is non-zero. The following example uses the Equality operator to compare two GUID values with xtd::guid.Empty to determine whether they consist exclusively of zeros.
     static const guid empty;
-    /// @}
     
-    /// @name Constructors
-    /// @{
     /// @brief Initializes a new instance of the xtd::guid structure.
     guid() = default;
     /// @brief Initializes a new instance of the xtd::guid structure by using the specified array of bytes.
@@ -99,7 +94,6 @@ namespace xtd {
     /// @remarks "(CA761232-ED42-11CE-BACD-00AA0057B223)"
     /// @remarks "{0xCA761232, 0xED42, 0x11CE, {0xBA, 0xCD, 0x00, 0xAA, 0x00, 0x57, 0xB2, 0x23}}"
     guid(const ustring& guid);
-    /// @}
 
     /// @cond
     guid(const guid&) = default;
@@ -107,8 +101,6 @@ namespace xtd {
     friend std::ostream& operator <<(std::ostream& os, const guid& guid) noexcept {return os << guid.to_string();}
     /// @endcond
     
-    /// @name Methods
-    /// @{
     /// @brief Compares the current instance with another object of the same type.
     /// @param obj An object to compare with this instance.
     /// @return A 32-bit signed integer that indicates the relative order of the objects being compared.
@@ -167,7 +159,6 @@ namespace xtd {
     /// | X         | Four hexadecimal values enclosed in braces, where the fourth value is a subset of eight hexadecimal values that is also enclosed in braces: |
     /// |           | {0x00000000,0x0000,0x0000,{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}                                                                         |
     ustring to_string(ustring format) const;
-    /// @}
     
   private:
     std::vector<byte_t> data_ = std::vector<byte_t>(16);
