@@ -26,7 +26,7 @@ namespace xtd {
   class console final static_ {
   public:
     /// @name Properties
-    /// @brief
+    /// Properties
     /// @{
     /// @brief Gets the error output stream. A std::basic_ostream<char_t> that represents the error output stream.
     static std::ostream error;
@@ -245,7 +245,7 @@ namespace xtd {
     /// @}
     
     /// @name Methods
-    /// @brief
+    /// Methods
     /// @{
     /// @brief Reads the next line of characters from the standard input stream.
     /// @return The next line of characters from the input stream, or "" if no more lines are available.
