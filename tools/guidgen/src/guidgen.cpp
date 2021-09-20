@@ -1,6 +1,5 @@
 #include <xtd/xtd.core>
 #include <chrono>
-#include <iostream>
 
 using namespace std;
 using namespace xtd;
@@ -14,22 +13,24 @@ namespace guidgen {
       bool show_help = false;
       bool show_version = false;
       if (!process_arguments(args, format, count, show_version, show_help)) {
-        cout << get_error() << endl;
+        console::write_line(get_error());
         return -1;
       }
       
       if (show_version) {
-        cout << get_version() << endl;
+        console::write_line(get_version());
         return 0;
       }
       
       if (show_help) {
-        cout << get_version() << endl << endl << get_usage() << endl;
+        console::write_line(get_version());
+        console::write_line();
+        console::write_line(get_usage());
         return 0;
       }
       
       for (int index = 0; index < count; index++)
-        cout << guid::new_guid().to_string(format) << endl;
+        console::write_line(guid::new_guid().to_string(format));
       return 0;
     }
     
