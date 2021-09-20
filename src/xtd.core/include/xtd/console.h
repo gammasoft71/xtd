@@ -25,9 +25,6 @@ namespace xtd {
   /// @include console_out.cpp
   class console final static_ {
   public:
-    /// @name Properties
-    /// Properties
-    /// @{
     /// @brief Gets the error output stream. A std::basic_ostream<char_t> that represents the error output stream.
     static std::ostream error;
     /// @brief Gets the standard input stream. A std::basic_istream<char_t> that represents the standard input stream.
@@ -242,11 +239,7 @@ namespace xtd {
     /// @param code_page The code page used to write console output.
     /// @return true if the code page changed; otherwise false.
     static bool output_code_page(int32_t code_page);
-    /// @}
     
-    /// @name Methods
-    /// Methods
-    /// @{
     /// @brief Reads the next line of characters from the standard input stream.
     /// @return The next line of characters from the input stream, or "" if no more lines are available.
     static xtd::ustring read_line();
@@ -369,7 +362,6 @@ namespace xtd {
     /// @param values Values to write,
     template<typename ... args_t>
     static void write_line(const xtd::ustring& fmt, args_t&& ... values) {write_line_(xtd::ustring::format(fmt, std::forward<args_t>(values)...));}
-    /// @}
 
     /// @cond
     static void __internal_cancel_key_press__(xtd::console_cancel_event_args& e);
