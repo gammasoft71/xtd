@@ -23,9 +23,7 @@ namespace guidgen {
       }
       
       if (show_help) {
-        console::write_line(get_version());
-        console::write_line();
-        console::write_line(get_usage());
+        console::write_line("{0}{1}{1}{2}", get_version(), environment::new_line(), get_usage());
         return 0;
       }
       
