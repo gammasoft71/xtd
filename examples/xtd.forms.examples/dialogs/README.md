@@ -8,8 +8,9 @@
 * [busy_dialog](busy_dialog/README.md) represents a dialog box that displays busy dialog.
 * [color_box](color_box/README.md) represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.
 * [color_dialog](color_dialog/README.md) represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.
-* [exception_box](exception_box/README.md) represents a exception box that displays exceptioon box.
-* [exception_dialog](exception_dialog/README.md) represents a exception box that displays exceptioon box.
+* [debug_message_box](debug_message_box/README.md) represents a debug message box that displays debug message box and write debug message.
+* [exception_box](exception_box/README.md) represents a exception box that displays exception box.
+* [exception_dialog](exception_dialog/README.md) represents a exception box that displays exception box.
 * [folder_browser_dialog](folder_browser_dialog/README.md) prompts the user to select a folder.
 * [font_dialog](font_dialog/README.md) prompts the user to choose a font from among those installed on the local computer.
 * [input_box](input_box/README.md) represents a dialog box that displays input dialog.
@@ -20,3 +21,5 @@
 * [open_file_dialog](open_file_dialog/README.md) displays a standard dialog box that prompts the user to open a file.
 * [progress_dialog](progress_dialog/README.md) represents a dialog box that displays progress dialog.
 * [save_file_dialog](save_file_dialog/README.md) prompts the user to select a location for saving a file.
+* [trace_message_box](trace_message_box/README.md) represents a trace message box that displays trace message box and write trace message.
+* 
