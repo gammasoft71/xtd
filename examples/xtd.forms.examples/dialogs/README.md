@@ -22,4 +22,3 @@
 * [progress_dialog](progress_dialog/README.md) represents a dialog box that displays progress dialog.
 * [save_file_dialog](save_file_dialog/README.md) prompts the user to select a location for saving a file.
 * [trace_message_box](trace_message_box/README.md) represents a trace message box that displays trace message box and write trace message.
-* 
