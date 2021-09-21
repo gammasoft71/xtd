@@ -116,7 +116,7 @@ Use internal tools installed with xtd.
 
 ## xtdc-gui (gui)
 
-Let the gui tools drive you for create your new project.
+Let the gui tool drive you for create your new project.
 
 * First step choose "Create a new project" button.
 * Choose your project template then click to "Next" button
