@@ -140,7 +140,7 @@
 | [vscroll_bar](../src/xtd.forms/include/xtd/forms/vscroll_bar.h)                           | class | ![progress100](pictures/progress100.png) |
 | [web_view](../src/xtd.forms/include/xtd/forms/web_view.h)                                 | class | ![progress0](pictures/progress0.png)     |
 
-# components :
+# Components :
 
 | Name                                                                                      | Type  | Status                                   |
 |-------------------------------------------------------------------------------------------|-------|------------------------------------------|
@@ -168,6 +168,18 @@
 | [timer](../src/xtd.forms/include/xtd/forms/timer.h)                                       | class | ![progress100](pictures/progress100.png) |
 | [translator](../src/xtd.core/include/xtd/translator.h)                                    | class | ![progress100](pictures/progress100.png) |
 | [use_wait_cursor](../src/xtd.forms/include/xtd/forms/use_wait_cursor.h)                   | class | ![progress100](pictures/progress100.png) |
+
+# Renderers :
+
+| Name                                                                                              | Type  | Status                                   |
+|---------------------------------------------------------------------------------------------------|-------|------------------------------------------|
+| [button_renderer](../src/xtd.forms/include/xtd/forms/button_renderer.h)                           | class | ![progress75](pictures/progress75.png)   |
+| [check_box_renderer](../src/xtd.forms/include/xtd/forms/check_box_renderer.h)                     | class | ![progress75](pictures/progress75.png)   |
+| [checked_list_box_renderer](../src/xtd.forms/include/xtd/forms/checked_list _box_renderer.h)      | class | ![progress0](pictures/progress0.png)     |
+| [choice_renderer](../src/xtd.forms/include/xtd/forms/choice_renderer.h)                           | class | ![progress0](pictures/progress0.png)     |
+| [color_picker_renderer](../src/xtd.forms/include/xtd/forms/color_picker_renderer.h)               | class | ![progress0](pictures/progress0.png)     |
+| [combo_box_renderer](../src/xtd.forms/include/xtd/forms/combo_box_renderer.h)                     | class | ![progress0](pictures/progress0.png)     |
+| [command_link_button_renderer](../src/xtd.forms/include/xtd/forms/command_link_button_renderer.h) | class | ![progress0](pictures/progress0.png)     |
 
 ______________________________________________________________________________________________
 
