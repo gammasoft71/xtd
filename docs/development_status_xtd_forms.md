@@ -14,11 +14,11 @@
 
 ![progress100](pictures/progress100.png) Complete
 
-# xtd.forms :
+# Controls :
 
-| Name              | Type  | Status                                   |
-|-------------------|-------|------------------------------------------|
-| ...               | class | ![progress75](pictures/progress75.png)   |
+| Name                                                         | Type  | Status                                   |
+|--------------------------------------------------------------|-------|------------------------------------------|
+| [animation](../src/xtd.forms/include/xtd/forms/animation.h)  | class | ![progress100](pictures/progress100.png) |
 
 ______________________________________________________________________________________________
 
