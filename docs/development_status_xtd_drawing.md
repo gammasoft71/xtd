@@ -14,7 +14,7 @@
 
 ![progress100](pictures/progress100.png) Complete
 
-# xtd.drawing :
+# xtd::drawing :
 
 | Name                                                                      | Type         | Status                                     |
 |---------------------------------------------------------------------------|--------------|--------------------------------------------|
@@ -45,7 +45,14 @@
 | [system_pens](../src/xtd.drawing/include/xtd/drawing/system_pens.h)       | class        | ![progress100](pictures/progress100.png)   |
 | [textire_brush](../src/xtd.drawing/include/xtd/drawing/textire_brush.h)   | class        | ![progress100](pictures/progress100.png)   |
 
-______________________________________________________________________________________________
+# xtd::drawing::drawing2d :
+
+| Name                                                                                             | Type         | Status                                     |
+|--------------------------------------------------------------------------------------------------|--------------|--------------------------------------------|
+| [hatch_brush](../src/xtd.drawing/include/xtd/drawing/drawing2d/hatch_brush.h)                    | class        | ![progress75](pictures/progress75.png)     |
+| [linear_gradiet_brush](../src/xtd.drawing/include/xtd/drawing/drawing2d/linear_gradient_brush.h) | class        | ![progress75](pictures/progress75.png)     |
+
+__________________________________________________________________________________________
 
 © 2021 Gammasoft.
 
