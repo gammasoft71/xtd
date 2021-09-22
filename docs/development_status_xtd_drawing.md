@@ -16,25 +16,34 @@
 
 # xtd.drawing :
 
-| Name                                                               | Type         | Status                                     |
-|--------------------------------------------------------------------|--------------|--------------------------------------------|
-| [bitmap](../src/xtd.drawing/include/xtd/drawing/bitmap.h)          | class        | ![progress75](pictures/progress75.png)     |
-| [brush](../src/xtd.drawing/include/xtd/drawing/brush.h)            | class        | ![progress100](pictures/progress100.png)   |
-| [brushes](../src/xtd.drawing/include/xtd/drawing/bruches.h)        | static class | ![progress100](pictures/progress100.png)   |
-| [color](../src/xtd.drawing/include/xtd/drawing/color.h)            | class        | ![progress100](pictures/progress100.png)   |
-| [colors](../src/xtd.drawing/include/xtd/drawing/colors.h)          | static class | ![progress100](pictures/progress100.png)   |
-| [font](../src/xtd.drawing/include/xtd/drawing/font.h)              | class        | ![progress100](pictures/progress100.png)   |
-| [graphics](../src/xtd.drawing/include/xtd/drawing/graphics.h)      | class        | ![progress75](pictures/progress75.png)     |
-| [icon](../src/xtd.drawing/include/xtd/drawing/icon.h)              | class        | ![progress100](pictures/progress100.png)   |
-| [image](../src/xtd.drawing/include/xtd/drawing/image.h)            | class        | ![progress75](pictures/progress75.png)     |
-| [pen](../src/xtd.drawing/include/xtd/drawing/pen.h)                | class        | ![progress100](pictures/progress100.png)   |
-| [pens](../src/xtd.drawing/include/xtd/drawing/pens.h)              | static class | ![progress100](pictures/progress100.png)   |
-| [point](../src/xtd.drawing/include/xtd/drawing/point.h)            | class        | ![progress100](pictures/progress100.png)   |
-| [point_f](../src/xtd.drawing/include/xtd/drawing/point_f.h)        | class        | ![progress100](pictures/progress100.png)   |
-| [rectangle](../src/xtd.drawing/include/xtd/drawing/rectangle.h)    | class        | ![progress100](pictures/progress100.png)   |
-| [rectangle_f](../src/xtd.drawing/include/xtd/drawing/rectangle_.h) | class        | ![progress100](pictures/progress100.png)   |
-| [size](../src/xtd.drawing/include/xtd/drawing/size.h)              | class        | ![progress100](pictures/progress100.png)   |
-| [size_f](../src/xtd.drawing/include/xtd/drawing/size_f.h)          | class        | ![progress100](pictures/progress100.png)   |
+| Name                                                                      | Type         | Status                                     |
+|---------------------------------------------------------------------------|--------------|--------------------------------------------|
+| [bitmap](../src/xtd.drawing/include/xtd/drawing/bitmap.h)                 | class        | ![progress75](pictures/progress75.png)     |
+| [brush](../src/xtd.drawing/include/xtd/drawing/brush.h)                   | class        | ![progress100](pictures/progress100.png)   |
+| [brushes](../src/xtd.drawing/include/xtd/drawing/bruches.h)               | static class | ![progress100](pictures/progress100.png)   |
+| [color](../src/xtd.drawing/include/xtd/drawing/color.h)                   | class        | ![progress100](pictures/progress100.png)   |
+| [colors](../src/xtd.drawing/include/xtd/drawing/colors.h)                 | static class | ![progress100](pictures/progress100.png)   |
+| [font](../src/xtd.drawing/include/xtd/drawing/font.h)                     | class        | ![progress100](pictures/progress100.png)   |
+| [graphics](../src/xtd.drawing/include/xtd/drawing/graphics.h)             | class        | ![progress75](pictures/progress75.png)     |
+| [icon](../src/xtd.drawing/include/xtd/drawing/icon.h)                     | class        | ![progress100](pictures/progress100.png)   |
+| [image](../src/xtd.drawing/include/xtd/drawing/image.h)                   | class        | ![progress75](pictures/progress75.png)     |
+| [pen](../src/xtd.drawing/include/xtd/drawing/pen.h)                       | class        | ![progress100](pictures/progress100.png)   |
+| [pens](../src/xtd.drawing/include/xtd/drawing/pens.h)                     | static class | ![progress100](pictures/progress100.png)   |
+| [point](../src/xtd.drawing/include/xtd/drawing/point.h)                   | class        | ![progress100](pictures/progress100.png)   |
+| [point_f](../src/xtd.drawing/include/xtd/drawing/point_f.h)               | class        | ![progress100](pictures/progress100.png)   |
+| [rectangle](../src/xtd.drawing/include/xtd/drawing/rectangle.h)           | class        | ![progress100](pictures/progress100.png)   |
+| [rectangle_f](../src/xtd.drawing/include/xtd/drawing/rectangle_.h)        | class        | ![progress100](pictures/progress100.png)   |
+| [size](../src/xtd.drawing/include/xtd/drawing/size.h)                     | class        | ![progress100](pictures/progress100.png)   |
+| [size_f](../src/xtd.drawing/include/xtd/drawing/size_f.h)                 | class        | ![progress100](pictures/progress100.png)   |
+| [solid_brush](../src/xtd.drawing/include/xtd/drawing/solid__brush.h)      | class        | ![progress100](pictures/progress100.png)   |
+| [string_format](../src/xtd.drawing/include/xtd/drawing/string_format.h)   | class        | ![progress100](pictures/progress100.png)   |
+| [system_brushes](../src/xtd.drawing/include/xtd/drawing/system_brushes.h) | class        | ![progress100](pictures/progress100.png)   |
+| [system_colors](../src/xtd.drawing/include/xtd/drawing/system_colors.h)   | class        | ![progress100](pictures/progress100.png)   |
+| [system_fons](../src/xtd.drawing/include/xtd/drawing/fonts.h)             | class        | ![progress100](pictures/progress100.png)   |
+| [system_icons](../src/xtd.drawing/include/xtd/drawing/system_icons.h)     | class        | ![progress100](pictures/progress100.png)   |
+| [system_images](../src/xtd.drawing/include/xtd/drawing/system_images.h)   | class        | ![progress100](pictures/progress100.png)   |
+| [system_pens](../src/xtd.drawing/include/xtd/drawing/system_pens.h)       | class        | ![progress100](pictures/progress100.png)   |
+| [textire_brush](../src/xtd.drawing/include/xtd/drawing/textire_brush.h)   | class        | ![progress100](pictures/progress100.png)   |
 
 ______________________________________________________________________________________________
 
