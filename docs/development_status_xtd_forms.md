@@ -63,6 +63,19 @@
 | [form](../src/xtd.forms/include/xtd/forms/form.h)             | class | ![progress75](pictures/progress75.png)   |
 | [trace_form](../src/xtd.forms/include/xtd/forms/trace_form.h) | class | ![progress100](pictures/progress100.png) |
 
+# Menus and toolbars :
+
+| Name                                                                              | Type  | Status                                   |
+|-----------------------------------------------------------------------------------|-------|------------------------------------------|
+| [context_menu](../src/xtd.forms/include/xtd/forms/context_menu.h)                 | class | ![progress0](pictures/progress0.png)     |
+| [context_menu_strip](../src/xtd.forms/include/xtd/forms/context_menu_strip.h)     | class | ![progress0](pictures/progress0.png)     |
+| [main_menu](../src/xtd.forms/include/xtd/forms/main_menu.h)                       | class | ![progress100](pictures/progress100.png) |
+| [menu_strip](../src/xtd.forms/include/xtd/forms/menu_strip.h)                     | class | ![progress0](pictures/progress0.png)     |
+| [menu_bar](../src/xtd.forms/include/xtd/forms/menu_bar.h)                         | class | ![progress0](pictures/progress0.png)     |
+| [status_strip](../src/xtd.forms/include/xtd/forms/status_strip.h)                 | class | ![progress0](pictures/progress0.png)     |
+| [tool_strip](../src/xtd.forms/include/xtd/forms/tool_strip.h)                     | class | ![progress0](pictures/progress0.png)     |
+| [tool_strip_container](../src/xtd.forms/include/xtd/forms/tool_strip_container.h) | class | ![progress0](pictures/progress0.png)     |
+
 # Containers :
 
 | Name                                                                                    | Type  | Status                                   |
