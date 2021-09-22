@@ -16,9 +16,9 @@
 
 # xtd.drawing :
 
-| Name                                          | Type  | Status                                   |
-|-----------------------------------------------|-------|------------------------------------------|
-| [bitmap](../src/xtd.drawing/include/bitmap.h) | class | ![progress75](pictures/progress75.png)   |
+| Name                                                      | Type  | Status                                   |
+|-----------------------------------------------------------|-------|------------------------------------------|
+| [bitmap](../src/xtd.drawing/include/xtd/drawing/bitmap.h) | class | ![progress75](pictures/progress75.png)   |
 
 ______________________________________________________________________________________________
 
