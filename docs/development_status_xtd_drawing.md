@@ -37,12 +37,12 @@
 | [size_f](../src/xtd.drawing/include/xtd/drawing/size_f.h)                 | class        | ![progress100](pictures/progress100.png)   |
 | [solid_brush](../src/xtd.drawing/include/xtd/drawing/solid__brush.h)      | class        | ![progress100](pictures/progress100.png)   |
 | [string_format](../src/xtd.drawing/include/xtd/drawing/string_format.h)   | class        | ![progress100](pictures/progress100.png)   |
-| [system_brushes](../src/xtd.drawing/include/xtd/drawing/system_brushes.h) | class        | ![progress100](pictures/progress100.png)   |
-| [system_colors](../src/xtd.drawing/include/xtd/drawing/system_colors.h)   | class        | ![progress100](pictures/progress100.png)   |
-| [system_fons](../src/xtd.drawing/include/xtd/drawing/fonts.h)             | class        | ![progress100](pictures/progress100.png)   |
-| [system_icons](../src/xtd.drawing/include/xtd/drawing/system_icons.h)     | class        | ![progress100](pictures/progress100.png)   |
-| [system_images](../src/xtd.drawing/include/xtd/drawing/system_images.h)   | class        | ![progress100](pictures/progress100.png)   |
-| [system_pens](../src/xtd.drawing/include/xtd/drawing/system_pens.h)       | class        | ![progress100](pictures/progress100.png)   |
+| [system_brushes](../src/xtd.drawing/include/xtd/drawing/system_brushes.h) | static class | ![progress100](pictures/progress100.png)   |
+| [system_colors](../src/xtd.drawing/include/xtd/drawing/system_colors.h)   | static class | ![progress100](pictures/progress100.png)   |
+| [system_fons](../src/xtd.drawing/include/xtd/drawing/fonts.h)             | static class | ![progress100](pictures/progress100.png)   |
+| [system_icons](../src/xtd.drawing/include/xtd/drawing/system_icons.h)     | static class | ![progress100](pictures/progress100.png)   |
+| [system_images](../src/xtd.drawing/include/xtd/drawing/system_images.h)   | static class | ![progress100](pictures/progress100.png)   |
+| [system_pens](../src/xtd.drawing/include/xtd/drawing/system_pens.h)       | static class | ![progress100](pictures/progress100.png)   |
 | [textire_brush](../src/xtd.drawing/include/xtd/drawing/textire_brush.h)   | class        | ![progress100](pictures/progress100.png)   |
 
 # xtd::drawing::drawing2d :
