@@ -79,21 +79,42 @@
 
 # Dialogs :
 
-| Name                                                                                    | Type  | Status                                   |
-|-----------------------------------------------------------------------------------------|-------|------------------------------------------|
-| [about_dialog](../src/xtd.forms/include/xtd/forms/about_dialog.h)                       | class | ![progress100](pictures/progress100.png) |
-| [busy_dialog](../src/xtd.forms/include/xtd/forms/busy_dialog.h)                         | class | ![progress100](pictures/progress100.png) |
-| [color_dialog](../src/xtd.forms/include/xtd/forms/color_dialog.h)                       | class | ![progress100](pictures/progress100.png) |
-| [exception_dialog](../src/xtd.forms/include/xtd/forms/exception_dialog.h)               | class | ![progress100](pictures/progress100.png) |
-| [find_dialog](../src/xtd.forms/include/xtd/forms/find_dialog.h)                         | class | ![progress0](pictures/progress0.png)     |
-| [folder_browser_dialog](../src/xtd.forms/include/xtd/forms/folder_browser_dialog.h)     | class | ![progress100](pictures/progress100.png) |
-| [font_dialog](../src/xtd.forms/include/xtd/forms/font_dialog.h)                         | class | ![progress100](pictures/progress100.png) |
-| [input_dialog](../src/xtd.forms/include/xtd/forms/input_dialog.h)                       | class | ![progress100](pictures/progress100.png) |
-| [message_dialog](../src/xtd.forms/include/xtd/forms/message_dialog.h)                   | class | ![progress100](pictures/progress100.png) |
-| [open_file_dialog](../src/xtd.forms/include/xtd/forms/open_file_dialog.h)               | class | ![progress100](pictures/progress100.png) |
-| [progress_dialog](../src/xtd.forms/include/xtd/forms/progress_dialog.h)                 | class | ![progress75](pictures/progress75.png)   |
-| [replace_dialog](../src/xtd.forms/include/xtd/forms/replace_dialog.h)                   | class | ![progress0](pictures/progress0.png)     |
-| [save_file_dialog](../src/xtd.forms/include/xtd/forms/save_file_dialog.h)               | class | ![progress100](pictures/progress100.png) |
+| Name                                                                                | Type  | Status                                   |
+|-------------------------------------------------------------------------------------|-------|------------------------------------------|
+| [about_dialog](../src/xtd.forms/include/xtd/forms/about_dialog.h)                   | class | ![progress100](pictures/progress100.png) |
+| [busy_dialog](../src/xtd.forms/include/xtd/forms/busy_dialog.h)                     | class | ![progress100](pictures/progress100.png) |
+| [color_dialog](../src/xtd.forms/include/xtd/forms/color_dialog.h)                   | class | ![progress100](pictures/progress100.png) |
+| [exception_dialog](../src/xtd.forms/include/xtd/forms/exception_dialog.h)           | class | ![progress100](pictures/progress100.png) |
+| [find_dialog](../src/xtd.forms/include/xtd/forms/find_dialog.h)                     | class | ![progress0](pictures/progress0.png)     |
+| [folder_browser_dialog](../src/xtd.forms/include/xtd/forms/folder_browser_dialog.h) | class | ![progress100](pictures/progress100.png) |
+| [font_dialog](../src/xtd.forms/include/xtd/forms/font_dialog.h)                     | class | ![progress100](pictures/progress100.png) |
+| [input_dialog](../src/xtd.forms/include/xtd/forms/input_dialog.h)                   | class | ![progress100](pictures/progress100.png) |
+| [message_dialog](../src/xtd.forms/include/xtd/forms/message_dialog.h)               | class | ![progress100](pictures/progress100.png) |
+| [open_file_dialog](../src/xtd.forms/include/xtd/forms/open_file_dialog.h)           | class | ![progress100](pictures/progress100.png) |
+| [progress_dialog](../src/xtd.forms/include/xtd/forms/progress_dialog.h)             | class | ![progress75](pictures/progress75.png)   |
+| [replace_dialog](../src/xtd.forms/include/xtd/forms/replace_dialog.h)               | class | ![progress0](pictures/progress0.png)     |
+| [save_file_dialog](../src/xtd.forms/include/xtd/forms/save_file_dialog.h)           | class | ![progress100](pictures/progress100.png) |
+|
+
+# Box :
+
+| Name                                                                          | Type  | Status                                   |
+|-------------------------------------------------------------------------------|-------|------------------------------------------|
+| [about_box](../src/xtd.forms/include/xtd/forms/about_box.h)                   | class | ![progress100](pictures/progress100.png) |
+| [busy_box](../src/xtd.forms/include/xtd/forms/busy_box.h)                     | class | ![progress100](pictures/progress100.png) |
+| [color_box](../src/xtd.forms/include/xtd/forms/color_box.h)                   | class | ![progress100](pictures/progress100.png) |
+| [debug_message_box](../src/xtd.forms/include/xtd/forms/debug_message_box.h)   | class | ![progress100](pictures/progress100.png) |
+| [exception_box](../src/xtd.forms/include/xtd/forms/exception_box.h)           | class | ![progress100](pictures/progress100.png) |
+| [find_box](../src/xtd.forms/include/xtd/forms/find_box.h)                     | class | ![progress0](pictures/progress0.png)     |
+| [folder_browser_box](../src/xtd.forms/include/xtd/forms/folder_browser_box.h) | class | ![progress0](pictures/progress0.png)     |
+| [font_box](../src/xtd.forms/include/xtd/forms/font_box.h)                     | class | ![progress0](pictures/progress0.png)     |
+| [input_box](../src/xtd.forms/include/xtd/forms/input_box.h)                   | class | ![progress100](pictures/progress100.png) |
+| [message_box](../src/xtd.forms/include/xtd/forms/message_box.h)               | class | ![progress100](pictures/progress100.png) |
+| [open_file_box](../src/xtd.forms/include/xtd/forms/open_file_box.h)           | class | ![progress0](pictures/progress0.png)     |
+| [progress_box](../src/xtd.forms/include/xtd/forms/progress_box.h)             | class | ![progress0](pictures/progress0.png)     |
+| [replace_box](../src/xtd.forms/include/xtd/forms/replace_box.h)               | class | ![progress0](pictures/progress0.png)     |
+| [save_file_box](../src/xtd.forms/include/xtd/forms/save_file_box.h)           | class | ![progress0](pictures/progress0.png)     |
+| [trace_message_box](../src/xtd.forms/include/xtd/forms/trace_message_box.h)   | class | ![progress100](pictures/progress100.png) |
 
 ______________________________________________________________________________________________
 
