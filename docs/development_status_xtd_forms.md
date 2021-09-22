@@ -175,7 +175,7 @@
 |---------------------------------------------------------------------------------------------------|-------|------------------------------------------|
 | [button_renderer](../src/xtd.forms/include/xtd/forms/button_renderer.h)                           | class | ![progress75](pictures/progress75.png)   |
 | [check_box_renderer](../src/xtd.forms/include/xtd/forms/check_box_renderer.h)                     | class | ![progress75](pictures/progress75.png)   |
-| [checked_list_box_renderer](../src/xtd.forms/include/xtd/forms/checked_list _box_renderer.h)      | class | ![progress0](pictures/progress0.png)     |
+| [checked_list_box_renderer](../src/xtd.forms/include/xtd/forms/checked_list_box_renderer.h)       | class | ![progress0](pictures/progress0.png)     |
 | [choice_renderer](../src/xtd.forms/include/xtd/forms/choice_renderer.h)                           | class | ![progress0](pictures/progress0.png)     |
 | [color_picker_renderer](../src/xtd.forms/include/xtd/forms/color_picker_renderer.h)               | class | ![progress0](pictures/progress0.png)     |
 | [combo_box_renderer](../src/xtd.forms/include/xtd/forms/combo_box_renderer.h)                     | class | ![progress0](pictures/progress0.png)     |
