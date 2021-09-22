@@ -16,9 +16,13 @@
 
 # Controls :
 
-| Name                                                         | Type  | Status                                   |
-|--------------------------------------------------------------|-------|------------------------------------------|
-| [animation](../src/xtd.forms/include/xtd/forms/animation.h)  | class | ![progress100](pictures/progress100.png) |
+| Name                                                                      | Type  | Status                                   |
+|---------------------------------------------------------------------------|-------|------------------------------------------|
+| [animation](../src/xtd.forms/include/xtd/forms/animation.h)               | class | ![progress100](pictures/progress100.png) |
+| [button](../src/xtd.forms/include/xtd/forms/button.h)                     | class | ![progress100](pictures/progress100.png) |
+| [check_box](../src/xtd.forms/include/xtd/forms/check_box.h)               | class | ![progress100](pictures/progress100.png) |
+| [checked_list_box](../src/xtd.forms/include/xtd/forms/checked_list_box.h) | class | ![progress100](pictures/progress100.png) |
+| [choice](../src/xtd.forms/include/xtd/forms/choice.h)                     | class | ![progress100](pictures/progress100.png) |
 
 ______________________________________________________________________________________________
 
