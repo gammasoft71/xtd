@@ -14,7 +14,7 @@
 
 ![progress100](pictures/progress100.png) Complete
 
-# xtd::drawing :
+# xtd::drawing
 
 | Name                                                                      | Type         | Status                                     |
 |---------------------------------------------------------------------------|--------------|--------------------------------------------|
@@ -45,7 +45,7 @@
 | [system_pens](../src/xtd.drawing/include/xtd/drawing/system_pens.h)       | static class | ![progress100](pictures/progress100.png)   |
 | [texture_brush](../src/xtd.drawing/include/xtd/drawing/texture_brush.h)   | class        | ![progress100](pictures/progress100.png)   |
 
-# xtd::drawing::drawing2d :
+# xtd::drawing::drawing2d
 
 | Name                                                                                             | Type         | Status                                     |
 |--------------------------------------------------------------------------------------------------|--------------|--------------------------------------------|
