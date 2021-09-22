@@ -148,7 +148,7 @@
 | [button_images](../src/xtd.forms/include/xtd/forms/button_images.h)                       | class | ![progress100](pictures/progress100.png) |
 | [countries](../src/xtd.forms/include/xtd/forms/countries.h)                               | class | ![progress100](pictures/progress100.png) |
 | [cursors](../src/xtd.forms/include/xtd/forms/cursors.h)                                   | class | ![progress100](pictures/progress100.png) |
-| [empticons](../src/xtd.forms/include/xtd/forms/emoticons.h)                               | class | ![progress75](pictures/progress75.png)   |
+| [emoticons](../src/xtd.forms/include/xtd/forms/emoticons.h)                               | class | ![progress75](pictures/progress75.png)   |
 | [directory_entry](../src/xtd.forms/include/xtd/forms/directory_entry.h)                   | class | ![progress0](pictures/progress0.png)     |
 | [directory_searcher](../src/xtd.forms/include/xtd/forms/directory_sercher.h)              | class | ![progress0](pictures/progress0.png)     |
 | [error_provider](../src/xtd.forms/include/xtd/forms/error_provider.h)                     | class | ![progress0](pictures/progress0.png)     |
