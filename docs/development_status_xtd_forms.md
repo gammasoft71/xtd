@@ -20,7 +20,7 @@
 |-------------------------------------------------------------------------------------------|-------|------------------------------------------|
 | [application](../src/xtd.forms/include/xtd/forms/application.h)                           | class | ![progress100](pictures/progress100.png) |
 | [application_context](../src/xtd.forms/include/xtd/forms/application_context.h)           | class | ![progress100](pictures/progress100.png) |
-| [application_information](../src/xtd.forms/include/xtd/forms/application_information.h)   | class | ![progress25](pictures/progress25.png)   |
+| [application_informations](../src/xtd.forms/include/xtd/forms/application_informations.h) | class | ![progress25](pictures/progress25.png)   |
 
 # Forms :
 
