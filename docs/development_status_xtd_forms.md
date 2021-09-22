@@ -71,8 +71,9 @@
 | [context_menu_strip](../src/xtd.forms/include/xtd/forms/context_menu_strip.h)     | class | ![progress0](pictures/progress0.png)     |
 | [main_menu](../src/xtd.forms/include/xtd/forms/main_menu.h)                       | class | ![progress100](pictures/progress100.png) |
 | [menu_strip](../src/xtd.forms/include/xtd/forms/menu_strip.h)                     | class | ![progress0](pictures/progress0.png)     |
-| [menu_bar](../src/xtd.forms/include/xtd/forms/menu_bar.h)                         | class | ![progress0](pictures/progress0.png)     |
+| [status_bar](../src/xtd.forms/include/xtd/forms/status_bar.h)                     | class | ![progress0](pictures/progress0.png)     |
 | [status_strip](../src/xtd.forms/include/xtd/forms/status_strip.h)                 | class | ![progress0](pictures/progress0.png)     |
+| [tool_bar](../src/xtd.forms/include/xtd/forms/tool_bar.h)                         | class | ![progress0](pictures/progress0.png)     |
 | [tool_strip](../src/xtd.forms/include/xtd/forms/tool_strip.h)                     | class | ![progress0](pictures/progress0.png)     |
 | [tool_strip_container](../src/xtd.forms/include/xtd/forms/tool_strip_container.h) | class | ![progress0](pictures/progress0.png)     |
 
@@ -111,7 +112,7 @@
 | [hscroll_bar](../src/xtd.forms/include/xtd/forms/hscroll_bar.h)                           | class | ![progress100](pictures/progress100.png) |
 | [label](../src/xtd.forms/include/xtd/forms/label.h)                                       | class | ![progress100](pictures/progress100.png) |
 | [lcd_label](../src/xtd.forms/include/xtd/forms/lcd_label.h)                               | class | ![progress100](pictures/progress100.png) |
-| [light_button](../src/xtd.forms/include/xtd/forms/light_button.h)                         | class | ![progress0](pictures/progress0.png) |
+| [light_button](../src/xtd.forms/include/xtd/forms/light_button.h)                         | class | ![progress0](pictures/progress0.png)     |
 | [link_label](../src/xtd.forms/include/xtd/forms/link_label.h)                             | class | ![progress100](pictures/progress100.png) |
 | [list_box](../src/xtd.forms/include/xtd/forms/list_box.h)                                 | class | ![progress100](pictures/progress100.png) |
 | [list_view](../src/xtd.forms/include/xtd/forms/list_view.h)                               | class | ![progress0](pictures/progress0.png)     |
