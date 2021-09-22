@@ -68,7 +68,7 @@ find_package(xtd REQUIRED)
 
 ```cmake
 add_sources(console1.cpp)
-ttarget_type(CONSOLE_APPLICATION)
+target_type(CONSOLE_APPLICATION)
 ```
 
 ### To compile and run the application
