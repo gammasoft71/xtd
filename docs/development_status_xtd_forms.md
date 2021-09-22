@@ -14,7 +14,7 @@
 
 ![progress100](pictures/progress100.png) Complete
 
-# Application :
+# Application
 
 | Name                                                                                      | Type         | Status                                   |
 |-------------------------------------------------------------------------------------------|--------------|------------------------------------------|
@@ -22,7 +22,7 @@
 | [application_context](../src/xtd.forms/include/xtd/forms/application_context.h)           | class        | ![progress100](pictures/progress100.png) |
 | [application_informations](../src/xtd.forms/include/xtd/forms/application_informations.h) | class        | ![progress25](pictures/progress25.png)   |
       
-# Dialogs :
+# Dialogs
 
 | Name                                                                                | Type         | Status                                   |
 |-------------------------------------------------------------------------------------|--------------|------------------------------------------|
@@ -55,7 +55,7 @@
 | [save_file_box](../src/xtd.forms/include/xtd/forms/save_file_box.h)                 | static class | ![progress0](pictures/progress0.png)     |
 | [trace_message_box](../src/xtd.forms/include/xtd/forms/trace_message_box.h)         | static class | ![progress100](pictures/progress100.png) |
 
-# Forms :
+# Forms
 
 | Name                                                          | Type  | Status                                   |
 |---------------------------------------------------------------|-------|------------------------------------------|
@@ -63,7 +63,7 @@
 | [form](../src/xtd.forms/include/xtd/forms/form.h)             | class | ![progress75](pictures/progress75.png)   |
 | [trace_form](../src/xtd.forms/include/xtd/forms/trace_form.h) | class | ![progress100](pictures/progress100.png) |
 
-# Menus and toolbars :
+# Menus and toolbars
 
 | Name                                                                              | Type  | Status                                   |
 |-----------------------------------------------------------------------------------|-------|------------------------------------------|
@@ -76,7 +76,7 @@
 | [tool_bar](../src/xtd.forms/include/xtd/forms/tool_bar.h)                         | class | ![progress0](pictures/progress0.png)     |
 | [tool_strip](../src/xtd.forms/include/xtd/forms/tool_strip.h)                     | class | ![progress0](pictures/progress0.png)     |
 
-# Containers :
+# Containers
 
 | Name                                                                                    | Type  | Status                                   |
 |-----------------------------------------------------------------------------------------|-------|------------------------------------------|
@@ -92,7 +92,7 @@
 | [tool_strip_container](../src/xtd.forms/include/xtd/forms/tool_strip_container.h)       | class | ![progress0](pictures/progress0.png)     |
 | [vertical_layout_panel](../src/xtd.forms/include/xtd/forms/vertical_layout_panel.h)     | class | ![progress100](pictures/progress100.png) |
 
-# Controls :
+# Controls
 
 | Name                                                                                      | Type  | Status                                   |
 |-------------------------------------------------------------------------------------------|-------|------------------------------------------|
@@ -141,7 +141,7 @@
 | [vscroll_bar](../src/xtd.forms/include/xtd/forms/vscroll_bar.h)                           | class | ![progress100](pictures/progress100.png) |
 | [web_view](../src/xtd.forms/include/xtd/forms/web_view.h)                                 | class | ![progress0](pictures/progress0.png)     |
 
-# Components :
+# Components
 
 | Name                                                                                      | Type  | Status                                   |
 |-------------------------------------------------------------------------------------------|-------|------------------------------------------|
@@ -170,7 +170,7 @@
 | [translator](../src/xtd.core/include/xtd/translator.h)                                    | class | ![progress100](pictures/progress100.png) |
 | [use_wait_cursor](../src/xtd.forms/include/xtd/forms/use_wait_cursor.h)                   | class | ![progress100](pictures/progress100.png) |
 
-# Datas :
+# Datas
 
 | Name                                                                                      | Type  | Status                                   |
 |-------------------------------------------------------------------------------------------|-------|------------------------------------------|
@@ -180,7 +180,7 @@
 | [data_grid_view](../src/xtd.forms/include/xtd/forms/data_grid_view.h)                     | class | ![progress0](pictures/progress0.png)     |
 | [data_set](../src/xtd.forms/include/xtd/forms/data_set.h)                                 | class | ![progress0](pictures/progress0.png)     |
 
-# Printing :
+# Printing
 
 | Name                                                                                      | Type  | Status                                   |
 |-------------------------------------------------------------------------------------------|-------|------------------------------------------|
@@ -190,7 +190,7 @@
 | [print_preview_control](../src/xtd.forms/include/xtd/forms/print_preview_control.h)       | class | ![progress0](pictures/progress0.png)     |
 | [print_preview_dialog](../src/xtd.forms/include/xtd/forms/print_preview_dialog.h)         | class | ![progress0](pictures/progress0.png)     |
 
-# Renderers :
+# Renderers
 
 | Name                                                                                              | Type  | Status                                   |
 |---------------------------------------------------------------------------------------------------|-------|----------------------------------------|
