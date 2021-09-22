@@ -24,7 +24,7 @@
 | [color](../src/xtd.drawing/include/xtd/drawing/color.h)       | class        | ![progress100](pictures/progress100.png)   |
 | [colors](../src/xtd.drawing/include/xtd/drawing/colors.h)     | static class | ![progress100](pictures/progress100.png)   |
 | [font](../src/xtd.drawing/include/xtd/drawing/font.h)         | class        | ![progress100](pictures/progress100.png)   |
-| [graphics](../src/xtd.drawing/include/xtd/drawing/graphics.h) | class        | ![progress75](pictures/progress175.png)    |
+| [graphics](../src/xtd.drawing/include/xtd/drawing/graphics.h) | class        | ![progress75](pictures/progress75.png)     |
 | [icon](../src/xtd.drawing/include/xtd/drawing/icon.h)         | class        | ![progress100](pictures/progress100.png)   |
 | [image](../src/xtd.drawing/include/xtd/drawing/image.h)       | class        | ![progress75](pictures/progress75.png)     |
 | [pen](../src/xtd.drawing/include/xtd/drawing/pen.h)           | class        | ![progress100](pictures/progress100.png)   |
