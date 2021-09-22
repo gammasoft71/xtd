@@ -150,7 +150,7 @@ CMakeLists.txt:
 cmake_minimum_required(VERSION 3.3)
 
 project(console1)
-find_package(xtd.forms REQUIRED)
+find_package(xtd REQUIRED)
 add_sources(console1.cpp)
 target_type(CONSOLE_APPLICATION)
 ```
