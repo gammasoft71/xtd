@@ -14,6 +14,22 @@
 
 ![progress100](pictures/progress100.png) Complete
 
+# Application :
+
+| Name                                                                                      | Type  | Status                                   |
+|-------------------------------------------------------------------------------------------|-------|------------------------------------------|
+| [application](../src/xtd.forms/include/xtd/forms/application.h)                           | class | ![progress100](pictures/progress100.png) |
+| [application_context](../src/xtd.forms/include/xtd/forms/application_context.h)           | class | ![progress100](pictures/progress100.png) |
+| [application_information](../src/xtd.forms/include/xtd/forms/application_information.h)   | class | ![progress25](pictures/progress25.png)   |
+
+# Forms :
+
+| Name                                                          | Type  | Status                                   |
+|---------------------------------------------------------------|-------|------------------------------------------|
+| [debug_form](../src/xtd.forms/include/xtd/forms/debug_form.h) | class | ![progress100](pictures/progress100.png) |
+| [form](../src/xtd.forms/include/xtd/forms/form.h)             | class | ![progress75](pictures/progress75.png)   |
+| [trace_form](../src/xtd.forms/include/xtd/forms/trace_form.h) | class | ![progress100](pictures/progress100.png) |
+
 # Controls :
 
 | Name                                                                                      | Type  | Status                                   |
