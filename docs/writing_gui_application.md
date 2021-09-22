@@ -185,7 +185,7 @@ CMakeLists.txt:
 cmake_minimum_required(VERSION 3.3)
 
 project(form1)
-find_package(xtd.forms REQUIRED)
+find_package(xtd REQUIRED)
 add_sources(form1.cpp)
 target_type(GUI_APPLICATION)
 ```
