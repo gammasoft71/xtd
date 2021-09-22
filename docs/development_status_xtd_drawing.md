@@ -43,7 +43,7 @@
 | [system_icons](../src/xtd.drawing/include/xtd/drawing/system_icons.h)     | static class | ![progress100](pictures/progress100.png)   |
 | [system_images](../src/xtd.drawing/include/xtd/drawing/system_images.h)   | static class | ![progress100](pictures/progress100.png)   |
 | [system_pens](../src/xtd.drawing/include/xtd/drawing/system_pens.h)       | static class | ![progress100](pictures/progress100.png)   |
-| [textire_brush](../src/xtd.drawing/include/xtd/drawing/textire_brush.h)   | class        | ![progress100](pictures/progress100.png)   |
+| [texture_brush](../src/xtd.drawing/include/xtd/drawing/texture_brush.h)   | class        | ![progress100](pictures/progress100.png)   |
 
 # xtd::drawing::drawing2d :
 
