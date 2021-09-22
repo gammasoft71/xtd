@@ -77,6 +77,24 @@
 | [table_layout_panel](../src/xtd.forms/include/xtd/forms/table_layout_panel.h)           | class | ![progress0](pictures/progress0.png)     |
 | [vertical_layout_panel](../src/xtd.forms/include/xtd/forms/vertical_layout_panel.h)     | class | ![progress100](pictures/progress100.png) |
 
+# Dialogs :
+
+| Name                                                                                    | Type  | Status                                   |
+|-----------------------------------------------------------------------------------------|-------|------------------------------------------|
+| [about_dialog](../src/xtd.forms/include/xtd/forms/about_dialog.h)                       | class | ![progress100](pictures/progress100.png) |
+| [busy_dialog](../src/xtd.forms/include/xtd/forms/busy_dialog.h)                         | class | ![progress100](pictures/progress100.png) |
+| [color_dialog](../src/xtd.forms/include/xtd/forms/color_dialog.h)                       | class | ![progress100](pictures/progress100.png) |
+| [exception_dialog](../src/xtd.forms/include/xtd/forms/exception_dialog.h)               | class | ![progress100](pictures/progress100.png) |
+| [find_dialog](../src/xtd.forms/include/xtd/forms/find_dialog.h)                         | class | ![progress0](pictures/progress0.png)     |
+| [folder_browser_dialog](../src/xtd.forms/include/xtd/forms/folder_browser_dialog.h)     | class | ![progress100](pictures/progress100.png) |
+| [font_dialog](../src/xtd.forms/include/xtd/forms/font_dialog.h)                         | class | ![progress100](pictures/progress100.png) |
+| [input_dialog](../src/xtd.forms/include/xtd/forms/input_dialog.h)                       | class | ![progress100](pictures/progress100.png) |
+| [message_dialog](../src/xtd.forms/include/xtd/forms/message_dialog.h)                   | class | ![progress100](pictures/progress100.png) |
+| [open_file_dialog](../src/xtd.forms/include/xtd/forms/open_file_dialog.h)               | class | ![progress100](pictures/progress100.png) |
+| [progress_dialog](../src/xtd.forms/include/xtd/forms/progress_dialog.h)                 | class | ![progress75](pictures/progress75.png)   |
+| [replace_dialog](../src/xtd.forms/include/xtd/forms/replace_dialog.h)                   | class | ![progress0](pictures/progress0.png)     |
+| [save_file_dialog](../src/xtd.forms/include/xtd/forms/save_file_dialog.h)               | class | ![progress100](pictures/progress100.png) |
+
 ______________________________________________________________________________________________
 
 © 2021 Gammasoft.
