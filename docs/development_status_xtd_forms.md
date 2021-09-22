@@ -169,10 +169,30 @@
 | [translator](../src/xtd.core/include/xtd/translator.h)                                    | class | ![progress100](pictures/progress100.png) |
 | [use_wait_cursor](../src/xtd.forms/include/xtd/forms/use_wait_cursor.h)                   | class | ![progress100](pictures/progress100.png) |
 
+# Datas :
+
+| Name                                                                                      | Type  | Status                                   |
+|-------------------------------------------------------------------------------------------|-------|------------------------------------------|
+| [binding_navigator](../src/xtd.forms/include/xtd/forms/binding_navigator.h)               | class | ![progress0](pictures/progress0.png)     |
+| [binding_source](../src/xtd.forms/include/xtd/forms/binding_source.h)                     | class | ![progress0](pictures/progress0.png)     |
+| [chart](../src/xtd.forms/include/xtd/forms/chart.h)                                       | class | ![progress0](pictures/progress0.png)     |
+| [data_grid_view](../src/xtd.forms/include/xtd/forms/data_grid_view.h)                     | class | ![progress0](pictures/progress0.png)     |
+| [data_set](../src/xtd.forms/include/xtd/forms/data_set.h)                                 | class | ![progress0](pictures/progress0.png)     |
+
+# Printing :
+
+| Name                                                                                      | Type  | Status                                   |
+|-------------------------------------------------------------------------------------------|-------|------------------------------------------|
+| [page_setup_dialog](../src/xtd.forms/include/xtd/forms/page_setup_dialog.h)               | class | ![progress0](pictures/progress0.png)     |
+| [print_dialog](../src/xtd.forms/include/xtd/forms/print_dialog.h)                         | class | ![progress0](pictures/progress0.png)     |
+| [print_document](../src/xtd.forms/include/xtd/forms/print_document.h)                     | class | ![progress0](pictures/progress0.png)     |
+| [print_preview_control](../src/xtd.forms/include/xtd/forms/print_preview_control.h)       | class | ![progress0](pictures/progress0.png)     |
+| [print_preview_dialog](../src/xtd.forms/include/xtd/forms/print_preview_dialog.h)         | class | ![progress0](pictures/progress0.png)     |
+
 # Renderers :
 
 | Name                                                                                              | Type  | Status                                   |
-|---------------------------------------------------------------------------------------------------|-------|------------------------------------------|
+|---------------------------------------------------------------------------------------------------|-------|----------------------------------------|
 | [button_renderer](../src/xtd.forms/include/xtd/forms/button_renderer.h)                           | class | ![progress75](pictures/progress75.png)   |
 | [check_box_renderer](../src/xtd.forms/include/xtd/forms/check_box_renderer.h)                     | class | ![progress75](pictures/progress75.png)   |
 | [checked_list_box_renderer](../src/xtd.forms/include/xtd/forms/checked_list_box_renderer.h)       | class | ![progress0](pictures/progress0.png)     |
