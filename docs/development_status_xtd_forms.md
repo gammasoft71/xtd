@@ -105,7 +105,7 @@
 | [combo_box](../src/xtd.forms/include/xtd/forms/combo_box.h)                               | class | ![progress100](pictures/progress100.png) |
 | [command_link_button](../src/xtd.forms/include/xtd/forms/command_link_button.h)           | class | ![progress100](pictures/progress100.png) |
 | [control](../src/xtd.forms/include/xtd/forms/control.h)                                   | class | ![progress75](pictures/progress75.png)   |
-| [date_timme_picker](../src/xtd.forms/include/xtd/forms/date_time_picker.h)                | class | ![progress100](pictures/progress100.png) |
+| [date_time_picker](../src/xtd.forms/include/xtd/forms/date_time_picker.h)                | class | ![progress100](pictures/progress100.png) |
 | [domain_up_down](../src/xtd.forms/include/xtd/forms/domain_up_down.h)                     | class | ![progress100](pictures/progress100.png) |
 | [dot_matrix_display](../src/xtd.forms/include/xtd/forms/dot_matrix_display.h)             | class | ![progress100](pictures/progress100.png) |
 | [font_picker](../src/xtd.forms/include/xtd/forms/font_picker.h)                           | class | ![progress100](pictures/progress100.png) |
