@@ -16,9 +16,27 @@
 
 # xtd.core :
 
-| Name                                                   | Type  | Status                                   |
-|--------------------------------------------------------|-------|------------------------------------------|
-| [action](../src/xtd.core/include/xtd/action.h)         | class | ![progress100](pictures/progress100.png) |
+| Name                                                                                             | Type         | Status                                   |
+|--------------------------------------------------------------------------------------------------|--------------|------------------------------------------|
+| [action](../src/xtd.core/include/xtd/action.h)                                                   | delegate     | ![progress100](pictures/progress100.png) |
+| [architecture_id](../src/xtd.core/include/xtd/architecture_id.h)                                 | enum class   | ![progress100](pictures/progress100.png) |
+| [argument_exception](../src/xtd.core/include/xtd/argument_exception.h)                           | exception    | ![progress100](pictures/progress100.png) |
+| [argument_null_exception](../src/xtd.core/include/xtd/argument_null_exception.h)                 | exception    | ![progress100](pictures/progress100.png) |
+| [argument_out_of_range_exception](../src/xtd.core/include/xtd/argument_out_of_range_exception.h) | exception    | ![progress100](pictures/progress100.png) |
+| [arithmetic_exception](../src/xtd.core/include/xtd/arithmetic_exception.h)                       | exception    | ![progress100](pictures/progress100.png) |
+| [as](../src/xtd.core/include/xtd/as.h)                                                           | operator     | ![progress75](pictures/progress75.png)  |
+| [async_callback](../src/xtd.core/include/xtd/async_callback.h)                                   | delegate     | ![progress100](pictures/progress100.png) |
+| [background_color](../src/xtd.core/include/xtd/background_color.h)                               | iomanip      | ![progress100](pictures/progress100.png) |
+| [beep](../src/xtd.core/include/xtd/beep.h)                                                       | iomanip      | ![progress100](pictures/progress100.png) |
+| [bit_converter](../src/xtd.core/include/xtd/bit_converter.h)                                     | static class | ![progress100](pictures/progress100.png) |
+| [block_scope](../src/xtd.core/include/xtd/block_scope.h)                                         | keyword      | ![progress100](pictures/progress100.png) |
+| [build_type](../src/xtd.core/include/xtd/build_type.h)                                           | enum class   | ![progress100](pictures/progress100.png) |
+| [compiler](../src/xtd.core/include/xtd/compiler.h)                                               | class        | ![progress100](pictures/progress100.png) |
+| [compiler_id](../src/xtd.core/include/xtd/compiler_id.h)                                         | enum class   | ![progress100](pictures/progress100.png) |
+| [console](../src/xtd.core/include/xtd/console.h)                                                 | static class | ![progress100](pictures/progress100.png) |
+| [console_cancel_event_args](../src/xtd.core/include/xtd/console_cancel_event_args.h)             | class        | ![progress100](pictures/progress100.png) |
+| [console_cancel_event_handler](../src/xtd.core/include/xtd/console_cancel_event_handler.h)      | event handler | ![progress100](pictures/progress100.png) |
+| [...](../src/xtd.core/include/xtd)                                                              | class         | ![progress75](pictures/progress75.png)  |
 
 ______________________________________________________________________________________________
 
