@@ -18,7 +18,7 @@
 
 | Name                                                   | Type  | Status                                   |
 |--------------------------------------------------------|-------|------------------------------------------|
-| [action](../src/xtd.core/include/action.h)             | class | ![progress100](pictures/progress100.png) |
+| [action](../src/xtd.core/include/xtd/action.h)         | class | ![progress100](pictures/progress100.png) |
 
 ______________________________________________________________________________________________
 
