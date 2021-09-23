@@ -44,6 +44,28 @@
 | [convert](../src/xtd.core/include/xtd/convert.h)                                                | static class  | ![progress100](pictures/progress100.png) |
 | [convert_pointer](../src/xtd.core/include/xtd/convert_pointer.h)                                | static class  | ![progress100](pictures/progress100.png) |
 | [convert_string](../src/xtd.core/include/xtd/convert_string.h)                                  | static class  | ![progress100](pictures/progress100.png) |
+| [cpp_language](../src/xtd.core/include/xtd/cpp_language.h)                                      |  class        | ![progress100](pictures/progress100.png) |
+| [date_time](../src/xtd.core/include/xtd/date_time.h)                                            | struct        | ![progress0](pictures/progress0.png)   |
+| [delegate](../src/xtd.core/include/xtd/delegate.h)                                              | delegate      | ![progress100](pictures/progress100.png) |
+| [divide_by_zero_exception](../src/xtd.core/include/xtd/divide_by_zero_exception.h)              | exception     | ![progress100](pictures/progress100.png) |
+| [domain_exception](../src/xtd.core/include/xtd/domain_exception.h)                              | exception     | ![progress100](pictures/progress100.png) |
+| [environment](../src/xtd.core/include/xtd/environment.h)                                        | static class  | ![progress100](pictures/progress100.png) |
+| [environment_variable_target](../src/xtd.core/include/xtd/environment_variable_target.h)        | enum class    | ![progress100](pictures/progress100.png) |
+| [event](../src/xtd.core/include/xtd/event.h)                                                    | event         | ![progress100](pictures/progress100.png) |
+| [event_args](../src/xtd.core/include/xtd/event_args.h)                                          | class         | ![progress100](pictures/progress100.png) |
+| [event_handler](../src/xtd.core/include/xtd/event_handler.h)                                    | event handler | ![progress100](pictures/progress100.png) |
+| [foreground_color](../src/xtd.core/include/xtd/foreground_color.h)                              | iomanip       | ![progress100](pictures/progress100.png) |
+| [format_exception](../src/xtd.core/include/xtd/format_exception.h)                              | exception     | ![progress100](pictures/progress100.png) |
+| [func](../src/xtd.core/include/xtd/func.h)                                                      | delegate      | ![progress100](pictures/progress100.png) |
+| [guid](../src/xtd.core/include/xtd/guid.h)                                                      | struct        | ![progress100](pictures/progress100.png) |
+| [iasync_result](../src/xtd.core/include/xtd/iasync_result.h)                                    | interface     | ![progress100](pictures/progress100.png) |
+| [icomparable](../src/xtd.core/include/xtd/icomparable.h)                                        | interface     | ![progress100](pictures/progress100.png) |
+| [iequatable](../src/xtd.core/include/xtd/iequatable.h)                                          | interface     | ![progress100](pictures/progress100.png) |
+| [index_out_of_range_exception](../src/xtd.core/include/xtd/index_out_of_range_exception.h)      | exception     | ![progress100](pictures/progress100.png) |
+| [interface](../src/xtd.core/include/xtd/interface.h)                                            | interface     | ![progress100](pictures/progress100.png) |
+| [invalid_cast_exception](../src/xtd.core/include/xtd/invalid_cast_exception.h)                  | exception     | ![progress100](pictures/progress100.png) |
+| [invalid_operation_exception](../src/xtd.core/include/xtd/invalid_operation_exception.h)        | exception     | ![progress100](pictures/progress100.png) |
+| [invalid_program_exception](../src/xtd.core/include/xtd/invalid_program_exception.h)            | exception     | ![progress100](pictures/progress100.png) |
 | [...](../src/xtd.core/include/xtd)                                                              | class         | ![progress75](pictures/progress75.png)  |
 
 ______________________________________________________________________________________________
