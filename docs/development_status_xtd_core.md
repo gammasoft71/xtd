@@ -36,6 +36,14 @@
 | [console](../src/xtd.core/include/xtd/console.h)                                                 | static class | ![progress100](pictures/progress100.png) |
 | [console_cancel_event_args](../src/xtd.core/include/xtd/console_cancel_event_args.h)             | class        | ![progress100](pictures/progress100.png) |
 | [console_cancel_event_handler](../src/xtd.core/include/xtd/console_cancel_event_handler.h)      | event handler | ![progress100](pictures/progress100.png) |
+| [console_color](../src/xtd.core/include/xtd/console_color.h)                                    | enum class    | ![progress100](pictures/progress100.png) |
+| [console_key](../src/xtd.core/include/xtd/console_key.h)                                        | enum class    | ![progress100](pictures/progress100.png) |
+| [console_key_info](../src/xtd.core/include/xtd/console_key_info.h)                              | class         | ![progress100](pictures/progress100.png) |
+| [console_modifiers](../src/xtd.core/include/xtd/console_modifiers.h)                            | enum class    | ![progress100](pictures/progress100.png) |
+| [console_special_key](../src/xtd.core/include/xtd/console_special_key.h)                        | enum class    | ![progress100](pictures/progress100.png) |
+| [convert](../src/xtd.core/include/xtd/convert.h)                                                | static class  | ![progress100](pictures/progress100.png) |
+| [convert_pointer](../src/xtd.core/include/xtd/convert_pointer.h)                                | static class  | ![progress100](pictures/progress100.png) |
+| [convert_string](../src/xtd.core/include/xtd/convert_string.h)                                  | static class  | ![progress100](pictures/progress100.png) |
 | [...](../src/xtd.core/include/xtd)                                                              | class         | ![progress75](pictures/progress75.png)  |
 
 ______________________________________________________________________________________________
