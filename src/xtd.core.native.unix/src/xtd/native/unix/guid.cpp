@@ -43,10 +43,8 @@ std::vector<uint8_t> guid::new_guid() {
   static std::random_device rand;
   std::uniform_int_distribution<int32_t> rand_byte_distribution(0, std::numeric_limits<uint8_t>::max());
   std::for_each(guid.begin(), guid.end(), [&](uint8_t& value) {value = static_cast<int8_t>(rand_byte_distribution(rand));});
-  guid[8] &= 0xDF;
-  guid[8] |= 0x40;
-  guid[7] &= 0x0F;
-  guid[7] |= 0x40;
+  guid[6] = (guid[6] & 0x0f) | 0x40;
+  guid[8] = (guid[8] & 0x3f) | 0x80;
 #endif
   return guid;
 }
