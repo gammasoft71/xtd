@@ -44,7 +44,7 @@
 | [convert](../src/xtd.core/include/xtd/convert.h)                                                | static class  | ![progress100](pictures/progress100.png) |
 | [convert_pointer](../src/xtd.core/include/xtd/convert_pointer.h)                                | static class  | ![progress100](pictures/progress100.png) |
 | [convert_string](../src/xtd.core/include/xtd/convert_string.h)                                  | static class  | ![progress100](pictures/progress100.png) |
-| [cpp_language](../src/xtd.core/include/xtd/cpp_language.h)                                      |  class        | ![progress100](pictures/progress100.png) |
+| [cpp_language](../src/xtd.core/include/xtd/cpp_language.h)                                      | class         | ![progress100](pictures/progress100.png) |
 | [date_time](../src/xtd.core/include/xtd/date_time.h)                                            | struct        | ![progress0](pictures/progress0.png)   |
 | [delegate](../src/xtd.core/include/xtd/delegate.h)                                              | delegate      | ![progress100](pictures/progress100.png) |
 | [divide_by_zero_exception](../src/xtd.core/include/xtd/divide_by_zero_exception.h)              | exception     | ![progress100](pictures/progress100.png) |
@@ -66,6 +66,11 @@
 | [invalid_cast_exception](../src/xtd.core/include/xtd/invalid_cast_exception.h)                  | exception     | ![progress100](pictures/progress100.png) |
 | [invalid_operation_exception](../src/xtd.core/include/xtd/invalid_operation_exception.h)        | exception     | ![progress100](pictures/progress100.png) |
 | [invalid_program_exception](../src/xtd.core/include/xtd/invalid_program_exception.h)            | exception     | ![progress100](pictures/progress100.png) |
+| [is](../src/xtd.core/include/xtd/is.h)                                                          | operator      | ![progress100](pictures/progress100.png) |
+| [language_id](../src/xtd.core/include/xtd/language_id.h)                                        | enum class    | ![progress100](pictures/progress100.png) |
+| [length_exception](../src/xtd.core/include/xtd/length_exception.h)                              | exception     | ![progress100](pictures/progress100.png) |
+| [literals](../src/xtd.core/include/xtd/literals.h)                                              | operator      | ![progress100](pictures/progress100.png) |
+| [math](../src/xtd.core/include/xtd/math.h)                                                      | static class  | ![progress100](pictures/progress100.png) |
 | [...](../src/xtd.core/include/xtd)                                                              | class         | ![progress75](pictures/progress75.png)  |
 
 ______________________________________________________________________________________________
