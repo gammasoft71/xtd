@@ -35,7 +35,7 @@ The classic first application 'Hello World'.
 
 ### Console (CLI)
 
-hello_world_console.cpp:
+#### hello_world_console.cpp
 
 ```c++
 #include <xtd/xtd>
@@ -49,7 +49,7 @@ int main() {
 }
 ```
 
-CMakeLists.txt:
+#### CMakeLists.txt
 
 ```cmake
 cmake_minimum_required(VERSION 3.3)
@@ -76,7 +76,7 @@ Hello, World!
 
 ### Forms (GUI like WinForms)
 
-hello_world_forms.cpp:
+#### hello_world_forms.cpp
 
 ```c++
 #include <xtd/xtd>
@@ -105,7 +105,7 @@ int main() {
 }
 ```
 
-CMakeLists.txt:
+#### CMakeLists.txt
 
 ```cmake
 cmake_minimum_required(VERSION 3.3)
@@ -126,19 +126,19 @@ xtdc run
 
 #### Output
 
-##### Windows :
+##### Windows
 
 ![Screenshot](docs/pictures/examples/hello_world_message_box_w.png)
 
 ![Screenshot](docs/pictures/examples/hello_world_message_box_wd.png)
 
-##### macOS :
+##### macOS
 
 ![Screenshot](docs/pictures/examples/hello_world_message_box_m.png)
 
 ![Screenshot](docs/pictures/examples/hello_world_message_box_md.png)
 
-##### Linux Gnome :
+##### Linux Gnome
 
 ![Screenshot](docs/pictures/examples/hello_world_message_box_g.png)
 
@@ -146,7 +146,7 @@ xtdc run
 
 ### tunit (Unit tests like Microsoft Unit Testing Framework)
 
-hello_world_test.cpp:
+#### hello_world_test.cpp
 
 ```c++
 #include <xtd/xtd>
@@ -178,7 +178,7 @@ int main() {
 }
 ```
 
-CMakeLists.txt:
+#### CMakeLists.txt
 
 ```cmake
 cmake_minimum_required(VERSION 3.3)
