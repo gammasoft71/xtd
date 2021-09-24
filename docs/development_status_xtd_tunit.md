@@ -14,7 +14,7 @@
 
 ![progress100](pictures/progress100.png) Complete
 
-# Tests :
+# Tests
 
 | Name              | Type  | Status                                   |
 |-------------------|-------|------------------------------------------|
@@ -24,14 +24,14 @@
 | ostream_unit_test | class | ![progress100](pictures/progress100.png) |
 | console_unit_test | class | ![progress100](pictures/progress100.png) |
 
-# Event listener :
+# Event listener
 
 | Name                   | Type  | Status                                   |
 |------------------------|-------|------------------------------------------|
 | event_listener         | class | ![progress100](pictures/progress100.png) |
 | ostream_event_listener | class | ![progress100](pictures/progress100.png) |
 
-# Assertions :
+# Assertions
 
 | Name              | Type  | Status                                   |
 |-------------------|-------|------------------------------------------|
@@ -41,7 +41,7 @@
 | file_assert       | class | ![progress100](pictures/progress100.png) |
 | directory_assert  | class | ![progress100](pictures/progress100.png) |
 
-# Validations :
+# Validations
 
 | Name             | Type  | Status                                   |
 |------------------|-------|------------------------------------------|
@@ -51,7 +51,7 @@
 | file_valid       | class | ![progress100](pictures/progress100.png) |
 | directory_valid  | class | ![progress100](pictures/progress100.png) |
 
-# Assumptions :
+# Assumptions
 
 | Name             | Type  | Status                                   |
 |------------------|-------|------------------------------------------|
@@ -61,7 +61,8 @@
 | file_assum       | class | ![progress100](pictures/progress100.png) |
 | directory_assum  | class | ![progress100](pictures/progress100.png) |
 
-# settings :
+# settings
+
 | Name     | Type  | Status                                   |
 |----------|-------|------------------------------------------|
 | settings | class | ![progress100](pictures/progress100.png) |
