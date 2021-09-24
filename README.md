@@ -20,7 +20,7 @@
 * and highly portable and available on many different platforms (Windows, macOS, Linux, iOS and Android)
 * API close to the .net API with a modern C++ approach and full integration with the std standard.
 
-For more information see:
+### For more information see
 
 * [website](https://gammasoft71.wixsite.com/xtdpro)
 * [markdown documentations](https://github.com/gammasoft71/xtd/blob/master/docs/home.md)
