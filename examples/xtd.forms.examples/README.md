@@ -25,6 +25,59 @@
 * [application_restart](applications/application_restart/README.md) shows how to restart application with [xtd::forms::application::restart](../../src/xtd_forms/include/xtd/forms/application.hpp) method.
 * [application_use_wait_cursor](applications/application_use_wait_cursor/README.md) shows how to show and hide wait cursor application with [xtd::forms::application::use_wait_cursor](../../src/xtd.forms/include/xtd/forms/application.h) method.
 
+## [Dialogs](dialogs/README.md)
+
+* [about_box](dialogs/about_box/README.md) represents a dialog box that displays about box.
+* [about_dialog](dialogs/about_dialog/README.md) represents a dialog box that displays about dialog.
+* [busy_box](dialogs/busy_box/README.md) represents a busy box that displays busy box.
+* [busy_dialog](dialogs/busy_dialog/README.md) represents a busy box that displays busy dialog.
+* [color_box](dialogs/color_box/README.md) represents a dialog box that displays available colors along with controls that enable the user to define custom colors.
+* [color_dialog](dialogs/color_dialog/README.md) represents a dialog box that displays available colors along with controls that enable the user to define custom colors.
+* [debug_message_box](dialogs/debug_message_box/README.md) represents a debug message box that displays debug message box and write debug message.
+* [exception_box](dialogs/exception_box/README.md) represents a exception box that displays exceptioon box.
+* [exception_dialog](dialogs/exception_dialog/README.md) represents a exception box that displays exceptioon box.
+* **find_dialog** represents a find dialog box.
+* [folder_browser_dialog](dialogs/folder_browser_dialog/README.md) prompts the user to select a folder.
+* [font_dialog](dialogs/font_dialog/README.md) prompts the user to choose a font from among those installed on the local computer.
+* [input_box](dialogs/input_box/README.md) prompts the user to input text.
+* [input_dialog](dialogs/input_dialog/README.md) prompts the user to input text.
+* [message_box](dialogs/message_box/README.md) displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.
+* [message_dialog](dialogs/message_dialog/README.md) displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.
+* [open_file_dialog](dialogs/open_file_dialog/README.md) displays a standard dialog box that prompts the user to open a file.
+* [progress_dialog](dialogs/progress_dialog/README.md) represents a progress box that displays progress box.
+* **replace_dialog** represents a replace dialog box.
+* [save_file_dialog](dialogs/save_file_dialog/README.md) prompts the user to select a location for saving a file.
+* [trace_message_box](dialogs/trace_message_box/README.md) represents a trace message box that displays trace message box and write trace message.
+
+## [forms](forms/README.md)
+
+* [debug_form](forms/debug_form/README.md) represents a form that trace all written debug with xtd::diagnosticts::debug class.
+* [dialog](forms/dialog/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd_forms/include/xtd/forms/form.hpp) container as dialog.
+* [form](forms/form/README.md) represents a window or dialog box that makes up an application's user interface.
+* [trace_form](forms/trace_form/README.md) represents a form that trace all written trace with xtd::diagnosticts::trace class.
+
+## [Menus and Toolbars](menus_and_tollbars/README.md)
+
+* **context_menu** represents a shortcut menu.
+* **context_menu_strip** represents a shortcut menu.
+* [main_menu](menus_and_toolbars/main_menu/README.md) provides a main menu system for a form.
+* **menu_strip** provides a menu system for a form.
+* **status_strip** represents a Windows status bar control.
+* **tool_strip** provides a container for Windows toolbar objects.
+* **tool_strip_container** provides panels on each side of the form and a central panel that can hold one or more controls.
+
+## [containers](containers/README.md)
+
+* **flow_layout_panel** represents a panel that dynamically lays out its contents horizontally or vertically.
+* [collapsible_panel](containers/collapsible_panel/README.md) used to group collections of controls in a collapsible container.
+* [group_box](containers/group_box/README.md) represents a Windows control that displays a frame around a group of controls with an optional caption.
+* [horizontal_layout_panel](containers/horizontal_layout_panel/README.md) used to group collections of horizontal alligned controls.
+* [panel](containers/panel/README.md) used to group collections of controls.
+* [split_container](containers/split_container/README.md) represents a control consisting of a movable bar that divides a container's display area into two resizable panels.
+* [tab_control](containers/tab_control/README.md) manages a related set of tab pages.
+* **table_layout_panel** represents a panel that dynamically lays out its contents in a grid composed of rows and columns.
+* [vertical_layout_panel](containers/vertical_layout_panel/README.md) used to group collections of horizontal alligned controls.
+
 ## [Controls](controls/README.md)
 
 * [animation](controls/animation/README.md) represents a [xtd::forms::animation](../../src/xtd.forms/include/xtd/forms/animation.h) control.
@@ -75,67 +128,6 @@
 * [vscroll_bar](controls/vscroll_bar/README.md) represents a standard Windows vertical scroll bar.
 * **web_browser** enables the user to navigate Web pages inside your form.
 
-## [containers](containers/README.md)
-
-* **flow_layout_panel** represents a panel that dynamically lays out its contents horizontally or vertically.
-* [collapsible_panel](containers/collapsible_panel/README.md) used to group collections of controls in a collapsible container.
-* [group_box](containers/group_box/README.md) represents a Windows control that displays a frame around a group of controls with an optional caption.
-* [horizontal_layout_panel](containers/horizontal_layout_panel/README.md) used to group collections of horizontal alligned controls.
-* [panel](containers/panel/README.md) used to group collections of controls.
-* [split_container](containers/split_container/README.md) represents a control consisting of a movable bar that divides a container's display area into two resizable panels.
-* [tab_control](containers/tab_control/README.md) manages a related set of tab pages.
-* **table_layout_panel** represents a panel that dynamically lays out its contents in a grid composed of rows and columns.
-* [vertical_layout_panel](containers/vertical_layout_panel/README.md) used to group collections of horizontal alligned controls.
-
-## [Menus and Toolbars](menus_and_tollbars/README.md)
-
-* **context_menu** represents a shortcut menu.
-* **context_menu_strip** represents a shortcut menu.
-* [main_menu](menus_and_toolbars/main_menu/README.md) provides a main menu system for a form.
-* **menu_strip** provides a menu system for a form.
-* **status_strip** represents a Windows status bar control.
-* **tool_strip** provides a container for Windows toolbar objects.
-* **tool_strip_container** provides panels on each side of the form and a central panel that can hold one or more controls.
-
-## [forms](forms/README.md)
-
-* [debug_form](forms/debug_form/README.md) represents a form that trace all written debug with xtd::diagnosticts::debug class.
-* [dialog](forms/dialog/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd_forms/include/xtd/forms/form.hpp) container as dialog.
-* [form](forms/form/README.md) represents a window or dialog box that makes up an application's user interface.
-* [trace_form](forms/trace_form/README.md) represents a form that trace all written trace with xtd::diagnosticts::trace class.
-
-## [Dialogs](dialogs/README.md)
-
-* [about_box](dialogs/about_box/README.md) represents a dialog box that displays about box.
-* [about_dialog](dialogs/about_dialog/README.md) represents a dialog box that displays about dialog.
-* [busy_box](dialogs/busy_box/README.md) represents a busy box that displays busy box.
-* [busy_dialog](dialogs/busy_dialog/README.md) represents a busy box that displays busy dialog.
-* [color_box](dialogs/color_box/README.md) represents a dialog box that displays available colors along with controls that enable the user to define custom colors.
-* [color_dialog](dialogs/color_dialog/README.md) represents a dialog box that displays available colors along with controls that enable the user to define custom colors.
-* [debug_message_box](dialogs/debug_message_box/README.md) represents a debug message box that displays debug message box and write debug message.
-* [exception_box](dialogs/exception_box/README.md) represents a exception box that displays exceptioon box.
-* [exception_dialog](dialogs/exception_dialog/README.md) represents a exception box that displays exceptioon box.
-* **find_dialog** represents a find dialog box.
-* [folder_browser_dialog](dialogs/folder_browser_dialog/README.md) prompts the user to select a folder.
-* [font_dialog](dialogs/font_dialog/README.md) prompts the user to choose a font from among those installed on the local computer.
-* [input_box](dialogs/input_box/README.md) prompts the user to input text.
-* [input_dialog](dialogs/input_dialog/README.md) prompts the user to input text.
-* [message_box](dialogs/message_box/README.md) displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.
-* [message_dialog](dialogs/message_dialog/README.md) displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.
-* [open_file_dialog](dialogs/open_file_dialog/README.md) displays a standard dialog box that prompts the user to open a file.
-* [progress_dialog](dialogs/progress_dialog/README.md) represents a progress box that displays progress box.
-* **replace_dialog** represents a replace dialog box.
-* [save_file_dialog](dialogs/save_file_dialog/README.md) prompts the user to select a location for saving a file.
-* [trace_message_box](dialogs/trace_message_box/README.md) represents a trace message box that displays trace message box and write trace message.
-
-## [Datas](datas/README.md)
-
-* **binding_navigator** represents the navigation and manipulation user interface (UI) for controls on a form that are bound to data.
-* **binding_source** encapsulates the data source for a form.
-* **chart** 
-* **data_grid_view** displays data in a customizable grid.
-* **data_set** 
-
 ## [Components](components/README.md)
 
 * [background_worker](components/background_worker/README.md) executes an operation on a separate thread.
@@ -165,6 +157,14 @@
 * [timer](components/timer/README.md) implements a timer that raises an event at user-defined intervals. This timer is optimized for use in Windows Forms applications and must be used in a window.
 * [translator](components/translator/README.md) demonstrates the use of [xtd::forms::translator](../../src/xtd.core/include/xtd/translator.h) strings.
 * [use_wait_cursor](components/use_wait_cursor/README.md) shows how to use [xtd::forms::use_wait_cursor](../../src/xtd.forms/include/xtd/forms/use_wait_cursor.h) component.
+
+## [Datas](datas/README.md)
+
+* **binding_navigator** represents the navigation and manipulation user interface (UI) for controls on a form that are bound to data.
+* **binding_source** encapsulates the data source for a form.
+* **chart** 
+* **data_grid_view** displays data in a customizable grid.
+* **data_set** 
 
 ## [Printing](printing/README.md)
 
