@@ -90,6 +90,7 @@
 | [tab_page](../src/xtd.forms/include/xtd/forms/tab_page.h)                               | class | ![progress100](pictures/progress100.png) |
 | [table_layout_panel](../src/xtd.forms/include/xtd/forms/table_layout_panel.h)           | class | ![progress0](pictures/progress0.png)     |
 | [tool_strip_container](../src/xtd.forms/include/xtd/forms/tool_strip_container.h)       | class | ![progress0](pictures/progress0.png)     |
+| [tool_strip_panel](../src/xtd.forms/include/xtd/forms/tool_strip_panel.h)               | class | ![progress0](pictures/progress0.png)     |
 | [vertical_layout_panel](../src/xtd.forms/include/xtd/forms/vertical_layout_panel.h)     | class | ![progress100](pictures/progress100.png) |
 
 # Controls
@@ -135,6 +136,8 @@
 | [switch_button](../src/xtd.forms/include/xtd/forms/switch_button.h)                       | class | ![progress100](pictures/progress100.png) |
 | [text_box](../src/xtd.forms/include/xtd/forms/text_box.h)                                 | class | ![progress75](pictures/progress75.png)   |
 | [tool_tip](../src/xtd.forms/include/xtd/forms/tool_tip.h)                                 | class | ![progress0](pictures/progress0.png)     |
+| [tool_strip_progress_bar](../src/xtd.forms/include/xtd/forms/tool_strip_progress_bar.h)   | class | ![progress0](pictures/progress0.png)     |
+| [tool_strip_status_label](../src/xtd.forms/include/xtd/forms/tool_strip_status_label.h)   | class | ![progress0](pictures/progress0.png)     |
 | [toggle_button](../src/xtd.forms/include/xtd/forms/toggle_button.h)                       | class | ![progress100](pictures/progress100.png) |
 | [track_bar](../src/xtd.forms/include/xtd/forms/track_bar.h)                               | class | ![progress100](pictures/progress100.png) |
 | [tree_view](../src/xtd.forms/include/xtd/forms/tree_view.h)                               | class | ![progress0](pictures/progress0.png)     |
@@ -166,8 +169,10 @@
 | [settings](../src/xtd.forms/include/xtd/forms/settings.h)                                 | class | ![progress100](pictures/progress100.png) |
 | [serial_port](../src/xtd.forms/include/xtd/forms/serial_port.h)                           | class | ![progress0](pictures/progress0.png)     |
 | [service_controler](../src/xtd.forms/include/xtd/forms/service_controler.h)               | class | ![progress0](pictures/progress0.png)     |
+| [sound_player](../src/xtd.forms/include/xtd/forms/sound_player.h)                         | class | ![progress0](pictures/progress0.png)     |
 | [system_images](../src/xtd.forms/include/xtd/forms/system_images.h)                       | class | ![progress75](pictures/progress75.png)   |
-| [texts](../src/xtd.forms/include/xtd/forms/texts.h)                                       | class | ![progress100](pictures/progress100.png) |
+| [system_sounds](../src/xtd.forms/include/xtd/forms/system_sounds.h)                       | class | ![progress0](pictures/progress0.png)     |
+| [texts](../src/xid.forms/include/xtd/forms/texts.h)                                       | class | ![progress100](pictures/progress100.png) |
 | [timer](../src/xtd.forms/include/xtd/forms/timer.h)                                       | class | ![progress100](pictures/progress100.png) |
 | [translator](../src/xtd.core/include/xtd/translator.h)                                    | class | ![progress100](pictures/progress100.png) |
 | [use_wait_cursor](../src/xtd.forms/include/xtd/forms/use_wait_cursor.h)                   | class | ![progress100](pictures/progress100.png) |
@@ -179,6 +184,7 @@
 | [binding_navigator](../src/xtd.forms/include/xtd/forms/binding_navigator.h)               | class | ![progress0](pictures/progress0.png)     |
 | [binding_source](../src/xtd.forms/include/xtd/forms/binding_source.h)                     | class | ![progress0](pictures/progress0.png)     |
 | [chart](../src/xtd.forms/include/xtd/forms/chart.h)                                       | class | ![progress0](pictures/progress0.png)     |
+| [data_grid](../src/xtd.forms/include/xtd/forms/data_grid.h)                               | class | ![progress0](pictures/progress0.png)     |
 | [data_grid_view](../src/xtd.forms/include/xtd/forms/data_grid_view.h)                     | class | ![progress0](pictures/progress0.png)     |
 | [data_set](../src/xtd.forms/include/xtd/forms/data_set.h)                                 | class | ![progress0](pictures/progress0.png)     |
 
