@@ -127,6 +127,7 @@
 | [numeric_up_down](../src/xtd.forms/include/xtd/forms/numeric_up_down.h)                   | class | ![progress100](pictures/progress100.png) |
 | [picture_box](../src/xtd.forms/include/xtd/forms/picture_box.h)                           | class | ![progress100](pictures/progress100.png) |
 | [progress_bar](../src/xtd.forms/include/xtd/forms/progress_bar.h)                         | class | ![progress100](pictures/progress100.png) |
+| [property_grid](../src/xtd.forms/include/xtd/forms/property_grid.h)                       | class | ![progress0](pictures/progress0.png)     |
 | [radio_button](../src/xtd.forms/include/xtd/forms/radio_button.h)                         | class | ![progress100](pictures/progress100.png) |
 | [rich_text_box](../src/xtd.forms/include/xtd/forms/rich_text_box.h)                       | class | ![progress0](pictures/progress0.png)     |
 | [roller](../src/xtd.forms/include/xtd/forms/roller.h)                                     | class | ![progress0](pictures/progress0.png)     |
