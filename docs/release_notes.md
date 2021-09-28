@@ -334,7 +334,7 @@
 * ![todo](pictures/todo.png) context_menu
 * ![todo](pictures/todo.png) context_menu_strip
 * ![added](pictures/added.png) main_menu
-* ![added](pictures/added.png) menu_strip
+* ![todo](pictures/todo.png) menu_strip
 * ![todo](pictures/todo.png) status_bar
 * ![todo](pictures/todo.png) tool_bar
 * ![todo](pictures/todo.png) tool_strip
