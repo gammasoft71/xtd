@@ -219,6 +219,19 @@ First version of xtd.
 
 ## xtd.tunit
 
+### Tests
+
+* ![added](pictures/added.png) test
+* ![added](pictures/added.png) test class
+* ![added](pictures/added.png) unit test base
+* ![added](pictures/added.png) ostream unit test
+* ![added](pictures/added.png) console unit test
+
+### Event listeners
+
+* ![added](pictures/added.png) event listener
+* ![added](pictures/added.png) ostream event listener
+
 ### Assertions
 
 * ![added](pictures/added.png) assert
@@ -242,6 +255,14 @@ First version of xtd.
 * ![added](pictures/added.png) directory_assume
 * ![added](pictures/added.png) file_assume
 * ![added](pictures/added.png) string_assume
+
+### Settings
+
+* ![added](pictures/added.png) tests selection
+* ![added](pictures/added.png) tests execution
+* ![added](pictures/added.png) tests output
+
+
 ______________________________________________________________________________________________
 
 © 2021 Gammasoft.
