@@ -21,6 +21,36 @@ First version of xtd.
 * ![added](pictures/added.png) color_dialog
 * ![added](pictures/added.png) exception_dialog
 * ![todo](pictures/todo.png) find_dialog
+* ![added](pictures/added.png) folder_browser_dialog
+* ![added](pictures/added.png) font_dialog
+* ![added](pictures/added.png) inpu_dialog
+* ![added](pictures/added.png) message_dialog
+* ![added](pictures/added.png) open_file_dialog
+* ![added](pictures/added.png) progress_dialog
+* ![todo](pictures/todo.png) replace_dialog
+* ![added](pictures/added.png) save_file_dialog
+
+* ![added](pictures/added.png) about_box
+* ![added](pictures/added.png) busy_box
+* ![added](pictures/added.png) color_box
+* ![added](pictures/added.png) debug_message_box
+* ![added](pictures/added.png) exception_box
+* ![todo](pictures/todo.png) find_box
+* ![todo](pictures/todo.png) folder_browser_box
+* ![added](pictures/added.png) font_box
+* ![added](pictures/added.png) inpu_box
+* ![added](pictures/added.png) message_box
+* ![todo](pictures/todo.png) open_file_box
+* ![todo](pictures/todo.png) progress_box
+* ![todo](pictures/todo.png) replace_box
+* ![todo](pictures/todo.png) save_file_box
+* ![added](pictures/added.png) trace_message_box
+
+### Forms
+
+* ![added](pictures/added.png) debug_form
+* ![added](pictures/added.png) form
+* ![added](pictures/added.png) trace_form
 
 ______________________________________________________________________________________________
 
