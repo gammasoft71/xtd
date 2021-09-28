@@ -219,6 +219,29 @@ First version of xtd.
 
 ## xtd.tunit
 
+### Assertions
+
+* ![added](pictures/added.png) assert
+* ![added](pictures/added.png) collection_assert
+* ![added](pictures/added.png) directory_assert
+* ![added](pictures/added.png) file_assert
+* ![added](pictures/added.png) string_assert
+
+### Validations
+
+* ![added](pictures/added.png) valid
+* ![added](pictures/added.png) collection_valid
+* ![added](pictures/added.png) directory_valid
+* ![added](pictures/added.png) file_valid
+* ![added](pictures/added.png) string_valid
+
+### Assumptions
+
+* ![added](pictures/added.png) assume
+* ![added](pictures/added.png) collection_assume
+* ![added](pictures/added.png) directory_assume
+* ![added](pictures/added.png) file_assume
+* ![added](pictures/added.png) string_assume
 ______________________________________________________________________________________________
 
 © 2021 Gammasoft.
