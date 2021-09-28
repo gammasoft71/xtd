@@ -75,7 +75,7 @@ First version of xtd.
 * ![todo](pictures/todo.png) table_layout_panel
 * ![todo](pictures/todo.png) tool_strip_container
 * ![todo](pictures/todo.png) tool_strip_panel
-* ![added](pictures/addled.png) vertical_layout_panel
+* ![added](pictures/added.png) vertical_layout_panel
 
 ### Controls
 
@@ -157,6 +157,39 @@ First version of xtd.
 * ![added](pictures/added.png) timer
 * ![added](pictures/added.png) translator
 * ![added](pictures/added.png) use_wait_cursor
+
+### Datas
+
+* ![todo](pictures/todo.png) binding_navigator
+* ![todo](pictures/todo.png) binding_source
+* ![todo](pictures/todo.png) chart
+* ![todo](pictures/todo.png) data_grid
+* ![todo](pictures/todo.png) data_grid_view
+* ![todo](pictures/todo.png) data_set
+
+### Printing
+
+* ![todo](pictures/todo.png) page_setup_dialog
+* ![todo](pictures/todo.png) print_dialog
+* ![todo](pictures/todo.png) print_document
+* ![todo](pictures/todo.png) print_preview_control
+* ![todo](pictures/todo.png) print_preview_dialog
+
+### Renderers
+
+* ![added](pictures/added.png) button_renderers
+* ![added](pictures/added.png) check_box_renderer
+* ![todo](pictures/todo.png) checked_list_box_renderer
+* ![todo](pictures/todo.png) choice_renderer
+* ![todo](pictures/todo.png) color_picker_renderer
+* ![todo](pictures/todo.png) combo_box_renderer
+* ![todo](pictures/todo.png) command_link_button_renderer
+* ![todo](pictures/todo.png) date_time_picker_renderer
+* ![todo](pictures/todo.png) dial_renderer
+* ![todo](pictures/todo.png) domain_up_down_renderer
+* ![todo](pictures/todo.png) dot_matrix_display_renderer
+* ![todo](pictures/todo.png) font_picker_renderer
+* ![todo](pictures/todo.png) fourteen_segment_display_renderer
 
 ______________________________________________________________________________________________
 
