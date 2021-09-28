@@ -467,6 +467,12 @@
 * ![todo](pictures/todo.png) print_preview_control
 * ![todo](pictures/todo.png) print_preview_dialog
 
+### Clipbard and Drag & Drop
+
+* ![todo](pictures/todo.png) clipboard
+* ![todo](pictures/todo.png) data_format
+* ![todo](pictures/todo.png) data_object
+
 ### Renderers
 
 * ![added](pictures/added.png) button_renderers
