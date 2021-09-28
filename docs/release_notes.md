@@ -159,6 +159,12 @@
 * ![added](pictures/added.png) text_reader
 * ![added](pictures/added.png) text_writer
 
+### Media
+
+* ![todo](pictures/todo.png) sound_player
+* ![todo](pictures/todo.png) system_sound
+* ![todo](pictures/todo.png) system_sounds
+
 #### Memory mapped files
 
 * ![todo](pictures/todo.png) memory_mapped_file
@@ -395,6 +401,7 @@
 * ![todo](pictures/todo.png) list_view
 * ![added](pictures/added.png) loading_indicator
 * ![todo](pictures/todo.png) masked_text_box
+* ![todo](pictures/todo.png) media_player
 * ![todo](pictures/todo.png) month_calender
 * ![todo](pictures/todo.png) notify_icon
 * ![added](pictures/added.png) nine_segment_display
@@ -442,7 +449,6 @@
 * ![added](pictures/added.png) settings
 * ![todo](pictures/todo.png) serial_port
 * ![todo](pictures/todo.png) service_controler
-* ![todo](pictures/todo.png) sound_player
 * ![added](pictures/added.png) system_images
 * ![todo](pictures/todo.png) system_sounds
 * ![added](pictures/added.png) system_texts
@@ -457,7 +463,7 @@
 * ![todo](pictures/todo.png) chart
 * ![todo](pictures/todo.png) data_grid
 * ![todo](pictures/todo.png) data_grid_view
-* ![todo](pictures/todo.png) data_set
+* ![todo](pictures/todo.png) data_set-
 
 ### Printing
 
@@ -472,12 +478,6 @@
 * ![todo](pictures/todo.png) clipboard
 * ![todo](pictures/todo.png) data_format
 * ![todo](pictures/todo.png) data_object
-
-### Media
-
-* ![todo](pictures/todo.png) sound_player
-* ![todo](pictures/todo.png) system_sound
-* ![todo](pictures/todo.png) system_sounds
 
 ### Renderers
 
