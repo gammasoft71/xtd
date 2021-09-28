@@ -52,6 +52,14 @@ First version of xtd.
 * ![added](pictures/added.png) form
 * ![added](pictures/added.png) trace_form
 
+### Menus and toolbars
+
+* ![todo](pictures/todo.png) context_menu
+* ![todo](pictures/todo.png) context_menu_strip
+* ![added](pictures/added.png) main_menu
+* ![added](pictures/added.png) menu_strip
+* ![todo](pictures/todo.png) status_bar
+
 ______________________________________________________________________________________________
 
 © 2021 Gammasoft.
