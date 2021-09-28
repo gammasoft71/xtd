@@ -27,7 +27,6 @@
 * [sources](https://github.com/gammasoft71/xtd) 
 * [project](https://sourceforge.net/projects/xtdpro/) 
 * [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html)
-* [Development status](https://github.com/gammasoft71/xtd/blob/master/docs/development_status.md)
 
 ## Examples
 
