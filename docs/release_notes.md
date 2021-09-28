@@ -1,6 +1,6 @@
 | [Home](home.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md)  | [Contact](contact.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-# Notes
+# Release Notes
 
 ![0.1.0](pictures/version_0_1_0.png) (beta) October 10th 2021
 
@@ -123,6 +123,52 @@
 * ![added](pictures/added.png) writer
 
 ## xtd.drawing
+
+* ![added](pictures/added.png) bitmap
+* ![added](pictures/added.png) brush
+* ![added](pictures/added.png) brushes
+* ![added](pictures/added.png) color
+* ![added](pictures/added.png) colors
+* ![added](pictures/added.png) font
+* ![added](pictures/added.png) font_family
+* ![added](pictures/added.png) graphics
+* ![added](pictures/added.png) icon
+* ![added](pictures/added.png) image
+* ![added](pictures/added.png) pen
+* ![added](pictures/added.png) pens
+* ![added](pictures/added.png) point
+* ![added](pictures/added.png) point_f
+* ![added](pictures/added.png) rectangle
+* ![added](pictures/added.png) rectangle_f
+* ![added](pictures/added.png) size
+* ![added](pictures/added.png) size_f
+* ![added](pictures/added.png) solid_brush
+* ![added](pictures/added.png) string_format
+* ![added](pictures/added.png) system_brushes
+* ![added](pictures/added.png) system_colors
+* ![added](pictures/added.png) system_fonts
+* ![added](pictures/added.png) system_icons
+* ![added](pictures/added.png) system_images
+* ![added](pictures/added.png) system_pens
+* ![added](pictures/added.png) texture_brush
+
+### Drawing 2d
+
+* ![added](pictures/added.png) hatch_brush
+* ![added](pictures/added.png) linear_gradient_brush
+
+### Imaging
+
+* ![added](pictures/added.png) color_palette
+* ![added](pictures/added.png) frame_dimension
+* ![added](pictures/added.png) image_format
+* ![added](pictures/added.png) property_item
+
+### Text
+
+* ![added](pictures/added.png) font_collection
+* ![added](pictures/added.png) installed_font_collection
+* ![added](pictures/added.png) private_font_collection
 
 ## xtd.forms
 
