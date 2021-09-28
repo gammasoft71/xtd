@@ -18,13 +18,17 @@ First version of xtd.
 
 ## xtd.core
 
+### System
+
+![added](pictures/added.png) directory
+
 ### Collections
 
 * ![added](pictures/added.png) any_pair
 * ![added](pictures/added.png) key_not_found_exception
 * ![added](pictures/added.png) vector_list
 
-#### Speialized collection
+#### Speialized
 
 * ![added](pictures/added.png) string_map
 * ![added](pictures/added.png) string_pair
@@ -58,7 +62,63 @@ First version of xtd.
 
 * ![added](pictures/added.png) directory_not_found_exception
 * ![added](pictures/added.png) drive_not_found_exception
-* 
+* ![added](pictures/added.png) end_of_stream_exception
+* ![added](pictures/added.png) file
+* ![added](pictures/added.png) file_format_exception
+* ![added](pictures/added.png) file_load_exception
+* ![added](pictures/added.png) file_not_found_exception
+* ![added](pictures/added.png) io_exception
+* ![added](pictures/added.png) path
+* ![added](pictures/added.png) path_ too_ long_ exception
+* ![added](pictures/added.png) stream_reader
+* ![added](pictures/added.png) stream_writer
+* ![added](pictures/added.png) string_reader
+* ![added](pictures/added.png) string_writer
+* ![added](pictures/added.png) text_reader
+* ![added](pictures/added.png) text_writer
+
+### Net
+
+* ![added](pictures/added.png) cookie_exception
+* ![added](pictures/added.png) dns
+* ![added](pictures/added.png) dns_end_point
+* ![added](pictures/added.png) end_point
+* ![added](pictures/added.png) ip_address
+* ![added](pictures/added.png) ip_end_point
+* ![added](pictures/added.png) ip_host_entry
+* ![added](pictures/added.png) network_credential
+* ![added](pictures/added.png) protocol_violation_exception
+* ![added](pictures/added.png) socket_address
+* ![added](pictures/added.png) web_exception
+
+#### Sockets
+
+* ![added](pictures/added.png) ip_v6_multicast_option
+* ![added](pictures/added.png) linger_option
+* ![added](pictures/added.png) multicast_option
+* ![added](pictures/added.png) network_stream
+* ![added](pictures/added.png) send_packet_element
+* ![added](pictures/added.png) socket
+* ![added](pictures/added.png) socket_exception
+* ![added](pictures/added.png) socket_information
+* ![added](pictures/added.png) tcp_client
+* ![added](pictures/added.png) tcp_listener
+* ![added](pictures/added.png) udp_client
+
+### Security
+
+* ![added](pictures/added.png) secure_string
+
+### Web
+
+#### CSS
+
+* ![added](pictures/added.png) property
+* ![added](pictures/added.png) property_map
+* ![added](pictures/added.png) reader
+* ![added](pictures/added.png) selector
+* ![added](pictures/added.png) selector_map
+* ![added](pictures/added.png) writer
 
 ## xtd.drawing
 
