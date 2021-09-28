@@ -376,6 +376,13 @@
 * ![added](pictures/added.png) tests execution
 * ![added](pictures/added.png) tests output
 
+## Tools
+
+* ![added](pictures/added.png) guigen
+* ![added](pictures/added.png) guigen-gui
+* ![added](pictures/added.png) sleepfor
+* ![added](pictures/added.png) xtdc
+* ![added](pictures/added.png) xtdc-gui
 
 ______________________________________________________________________________________________
 
