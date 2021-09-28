@@ -6,6 +6,16 @@
 
 First version of xtd.
 
+## xtd
+
+* ![added](pictures/added.png) CMake commands
+* ![added](pictures/added.png) countinuous inegration build
+* ![added](pictures/added.png) installation
+* ![added](pictures/added.png) reference guide (online and offline)
+* ![added](pictures/added.png) documentation
+* ![added](pictures/added.png) website
+* ![added](pictures/added.png) project
+
 ## xtd.core
 
 ## xtd.drawing
