@@ -87,8 +87,10 @@
 * ![added](pictures/added.png) time_out_exception
 * ![added](pictures/added.png) to_string
 * ![added](pictures/added.png) translator
+* ![todo](pictures/todo.png) type
 * ![added](pictures/added.png) underflow_exception
 * ![added](pictures/added.png) unused
+* ![todo](pictures/todo.png) uri
 * ![added](pictures/added.png) ustring
 * ![added](pictures/added.png) version
 * ![added](pictures/added.png) xml_syntax_exception
@@ -150,6 +152,12 @@
 * ![added](pictures/added.png) text_reader
 * ![added](pictures/added.png) text_writer
 
+#### Memory mapped files
+
+* ![todo](pictures/todo.png) memory_mapped_file
+* ![todo](pictures/todo.png) memory_mapped_view_accessor
+* ![todo](pictures/todo.png) memory_mapped_view_stream
+
 ### Net
 
 * ![added](pictures/added.png) cookie_exception
@@ -163,6 +171,8 @@
 * ![added](pictures/added.png) protocol_violation_exception
 * ![added](pictures/added.png) socket_address
 * ![added](pictures/added.png) web_exception
+* ![todo](pictures/todo.png) web_request
+* ![todo](pictures/todo.png) web_response
 
 #### Sockets
 
@@ -178,6 +188,11 @@
 * ![added](pictures/added.png) tcp_listener
 * ![added](pictures/added.png) udp_client
 
+##### web sockets
+
+* ![todo](pictures/todo.png) client_web_socket
+* ![todo](pictures/todo.png) web_socket
+
 ### Security
 
 * ![added](pictures/added.png) secure_string
@@ -185,12 +200,14 @@
 ### Threading
 
 * ![todo](pictures/todo.png) auto_reset_event
+* ![todo](pictures/todo.png) barrier
 * ![todo](pictures/todo.png) event_wait_handle
 * ![todo](pictures/todo.png) interlocked
 * ![todo](pictures/todo.png) manual_reset_event
 * ![todo](pictures/todo.png) monitor
 * ![todo](pictures/todo.png) mutex
 * ![todo](pictures/todo.png) registered_wait_handle
+* ![todo](pictures/todo.png) semaphore
 * ![todo](pictures/todo.png) spin_lock
 * ![todo](pictures/todo.png) thread_local
 * ![todo](pictures/todo.png) thread_pool
@@ -199,6 +216,10 @@
 * ![todo](pictures/todo.png) wait_callback
 * ![todo](pictures/todo.png) wait_handle
 * ![todo](pictures/todo.png) wait_or_timer_callback
+
+### Timers
+
+* ![todo](pictures/todo.png) timer
 
 ### Web
 
