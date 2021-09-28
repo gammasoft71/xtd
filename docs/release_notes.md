@@ -503,6 +503,7 @@
 * ![todo](pictures/todo.png) list_view_renderer
 * ![todo](pictures/todo.png) loading_indicator_renderer
 * ![todo](pictures/todo.png) masked_text_box_renderer
+* ![todo](pictures/todo.png) media_player_renderer
 * ![todo](pictures/todo.png) month_calendar_renderer
 * ![todo](pictures/todo.png) nine_segment_display_renderer
 * ![todo](pictures/todo.png) numeric_up_down_renderer
