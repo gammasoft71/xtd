@@ -467,7 +467,7 @@
 * ![todo](pictures/todo.png) print_preview_control
 * ![todo](pictures/todo.png) print_preview_dialog
 
-### Clipbard and Drag & Drop
+### Clipboard and Drag & Drop
 
 * ![todo](pictures/todo.png) clipboard
 * ![todo](pictures/todo.png) data_format
