@@ -22,7 +22,76 @@
 
 ### System
 
-![added](pictures/added.png) directory
+* ![added](pictures/added.png) action
+* ![added](pictures/added.png) argument_exception
+* ![added](pictures/added.png) argument_null_exception
+* ![added](pictures/added.png) argument_out_of_range_exception
+* ![added](pictures/added.png) arithmetic_exception
+* ![added](pictures/added.png) as
+* ![added](pictures/added.png) async_callback
+* ![added](pictures/added.png) bacground_color
+* ![added](pictures/added.png) beep
+* ![added](pictures/added.png) bit_converter
+* ![added](pictures/added.png) block_scope
+* ![added](pictures/added.png) cdebug
+* ![added](pictures/added.png) cnull
+* ![added](pictures/added.png) compiler
+* ![added](pictures/added.png) console
+* ![added](pictures/added.png) console_key_info
+* ![added](pictures/added.png) convert
+* ![added](pictures/added.png) convert_pointer
+* ![added](pictures/added.png) convert_string
+* ![added](pictures/added.png) cpp_language
+* ![added](pictures/added.png) ctrace
+* ![todo](pictures/todo.png) date_time
+* ![added](pictures/added.png) delegate
+* ![added](pictures/added.png) divide_by_zero_exception
+* ![added](pictures/added.png) domain_exception
+* ![added](pictures/added.png) environment
+* ![added](pictures/added.png) event
+* ![added](pictures/added.png) foreground_color
+* ![added](pictures/added.png) format_exception
+* ![added](pictures/added.png) func
+* ![added](pictures/added.png) guid
+* ![added](pictures/added.png) index_out_of_range_exception
+* ![added](pictures/added.png) interface
+* ![added](pictures/added.png) invalid_castexception
+* ![added](pictures/added.png) invalid_operation_exception
+* ![added](pictures/added.png) invalid_program_exception
+* ![added](pictures/added.png) is
+* ![added](pictures/added.png) length_exception
+* ![added](pictures/added.png) literals operators
+* ![added](pictures/added.png) math
+* ![added](pictures/added.png) nameof
+* ![added](pictures/added.png) not_finit_number_exception
+* ![added](pictures/added.png) not_implemented_exception
+* ![added](pictures/added.png) not_supported_exception
+* ![added](pictures/added.png) null_pointer_exception
+* ![added](pictures/added.png) object
+* ![added](pictures/added.png) object_closed_exception
+* ![added](pictures/added.png) operating_system
+* ![added](pictures/added.png) operation_canceled_exception
+* ![added](pictures/added.png) overflow_exception
+* ![added](pictures/added.png) overload
+* ![added](pictures/added.png) parse
+* ![added](pictures/added.png) platform_not_supported_exception
+* ![added](pictures/added.png) predicate
+* ![added](pictures/added.png) processor
+* ![added](pictures/added.png) random
+* ![added](pictures/added.png) reset_color
+* ![added](pictures/added.png) startup
+* ![added](pictures/added.png) static
+* ![added](pictures/added.png) system_exception
+* ![added](pictures/added.png) tick
+* ![added](pictures/added.png) ticks
+* ![added](pictures/added.png) time_out_exception
+* ![added](pictures/added.png) to_string
+* ![added](pictures/added.png) translator
+* ![added](pictures/added.png) underflow_exception
+* ![added](pictures/added.png) unused
+* ![added](pictures/added.png) ustring
+* ![added](pictures/added.png) version
+* ![added](pictures/added.png) xml_syntax_exception
 
 ### Collections
 
