@@ -169,7 +169,7 @@ namespace xtd {
 }
 ```
 
-The file will be named to *form_closing_event_handler.h*.
+The file will be named to *form_closed_event_handler.h*.
 
 ## File extensions
 
