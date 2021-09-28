@@ -2,9 +2,11 @@
 
 # Notes
 
-![01.0](pictures/version_0_1_0.png) (beta) October 10th 2021
+![0.1.0](pictures/version_0_1_0.png) (beta) October 10th 2021
 
-First version of xtd.
+* We are happy to release the first version of xtd.
+* This version contains a lot of functionalities. 
+* The essentials are listed below. For more information about all functionalities read the [Guide Reference](https://codedocs.xyz/gammasoft71/xtd/index.html).
 
 ## xtd
 
