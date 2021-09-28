@@ -12,11 +12,13 @@
 
 * ![added](pictures/added.png) CMake commands
 * ![added](pictures/added.png) countinuous inegration build
-* ![added](pictures/added.png) installation
-* ![added](pictures/added.png) reference guide (online and offline)
 * ![added](pictures/added.png) documentation
+* ![added](pictures/added.png) installation
+* ![todo](pictures/todo.png) packages (vcpkg, brew, apt)
+* ![added](pictures/added.png) project (SourceForge)
+* ![added](pictures/added.png) reference guide (online and offline)
+* ![todo](pictures/todo.png) register xtd domain name
 * ![added](pictures/added.png) website
-* ![added](pictures/added.png) project
 
 ## xtd.core
 
@@ -551,6 +553,16 @@
 * ![added](pictures/added.png) xtdc
 * ![added](pictures/added.png) xtdc-gui
 * ![todo](pictures/todo.png) xtd-code
+
+## Toolkits
+
+* ![todo](pictures/todo.png) cocoa
+* ![todo](pictures/todo.png) fltk
+* ![todo](pictures/todo.png) gtk4
+* ![todo](pictures/todo.png) qt6
+* ![todo](pictures/todo.png) sdl2
+* ![todo](pictures/todo.png) win32
+* ![added](pictures/added.png) wxwidgets
 ______________________________________________________________________________________________
 
 © 2021 Gammasoft.
