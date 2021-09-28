@@ -138,11 +138,15 @@
 
 * ![todo](pictures/todo.png) binary_reader
 * ![todo](pictures/todo.png) binary_writer
+* ![todo](pictures/todo.png) directory
+* ![todo](pictures/todo.png) directory_info
 * ![added](pictures/added.png) directory_not_found_exception
+* ![todo](pictures/todo.png) drive_info
 * ![added](pictures/added.png) drive_not_found_exception
 * ![added](pictures/added.png) end_of_stream_exception
 * ![added](pictures/added.png) file
 * ![added](pictures/added.png) file_format_exception
+* ![todo](pictures/todo.png) file_info
 * ![added](pictures/added.png) file_load_exception
 * ![added](pictures/added.png) file_not_found_exception
 * ![added](pictures/added.png) io_exception
