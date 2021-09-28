@@ -262,7 +262,7 @@ private:
 class my_class {
 public:
   static constexpr int max_value = std::numeric_limits<int>::max();
-  static const xtd::min_version;
+  static const xtd::version min_version;
 };
 ```
 
