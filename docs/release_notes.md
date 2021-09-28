@@ -18,6 +18,48 @@ First version of xtd.
 
 ## xtd.core
 
+### Collections
+
+* ![added](pictures/added.png) any_pair
+* ![added](pictures/added.png) key_not_found_exception
+* ![added](pictures/added.png) vector_list
+
+### Speialized collection
+
+* ![added](pictures/added.png) string_map
+* ![added](pictures/added.png) string_pair
+* ![added](pictures/added.png) string_vector
+
+# Diagnostics
+
+* ![added](pictures/added.png) assert_dialog
+* ![added](pictures/added.png) boolean_switch
+* ![added](pictures/added.png) console_trace_listener
+* ![added](pictures/added.png) debug
+* ![added](pictures/added.png) debugger
+* ![added](pictures/added.png) default_trace_listener
+* ![added](pictures/added.png) ostream_trace_listener
+* ![added](pictures/added.png) process
+* ![added](pictures/added.png) source_filter
+* ![added](pictures/added.png) source_switch
+* ![added](pictures/added.png) stack_frame
+* ![added](pictures/added.png) stack_trace
+* ![added](pictures/added.png) stopwatch
+* ![added](pictures/added.png) switch_base
+* ![added](pictures/added.png) trace
+* ![added](pictures/added.png) trace_event_cache
+* ![added](pictures/added.png) trace_filter
+* ![added](pictures/added.png) trace_listener
+* ![added](pictures/added.png) trace_listener_collection
+* ![added](pictures/added.png) trace_source
+* ![added](pictures/added.png) trace_switch
+
+### IO
+
+* ![added](pictures/added.png) directory_not_found_exception
+* ![added](pictures/added.png) drive_not_found_exception
+* 
+
 ## xtd.drawing
 
 ## xtd.forms
