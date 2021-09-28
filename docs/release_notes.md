@@ -24,13 +24,13 @@ First version of xtd.
 * ![added](pictures/added.png) key_not_found_exception
 * ![added](pictures/added.png) vector_list
 
-### Speialized collection
+#### Speialized collection
 
 * ![added](pictures/added.png) string_map
 * ![added](pictures/added.png) string_pair
 * ![added](pictures/added.png) string_vector
 
-# Diagnostics
+### Diagnostics
 
 * ![added](pictures/added.png) assert_dialog
 * ![added](pictures/added.png) boolean_switch
