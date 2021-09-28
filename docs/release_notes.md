@@ -480,12 +480,22 @@
 * ![todo](pictures/todo.png) picture_box_renderer
 * ![todo](pictures/todo.png) progress_bar_renderer
 * ![todo](pictures/todo.png) property_grid_renderer
-* ![todo](pictures/todo.png) radio_button_renderer
+* ![added](pictures/added.png) radio_button_renderer
 * ![todo](pictures/todo.png) rich_text_box_renderer
 * ![todo](pictures/todo.png) roller_renderer
 * ![todo](pictures/todo.png) sevent_segment_display_renderer
 * ![todo](pictures/todo.png) sixteen_segment_display_renderer
 * ![todo](pictures/todo.png) splitter_renderer
+* ![added](pictures/added.png) switch_button_renderer
+* ![todo](pictures/todo.png) text_box_renderer
+* ![todo](pictures/todo.png) tool_tip_renderer
+* ![todo](pictures/todo.png) tool_strip_progresse_bar_renderer
+* ![todo](pictures/todo.png) toggle_button_renderer
+* ![todo](pictures/todo.png) track_bar_renderer
+* ![todo](pictures/todo.png) tree_view_renderer
+* ![todo](pictures/todo.png) up_down_button_renderer
+* ![todo](pictures/todo.png) vscroll_bar_renderer
+* ![todo](pictures/todo.png) web_view_renderer
 
 
 ## xtd.tunit
