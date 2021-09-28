@@ -6,7 +6,7 @@
 
 * We are happy to release the first version of xtd.
 * This version contains a lot of functionalities. 
-* The essentials are listed below. For more information about all functionalities read the [Guide Reference](https://codedocs.xyz/gammasoft71/xtd/index.html).
+* The essentials are listed below. For more information about all functionalities read the [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html).
 
 ## xtd
 
