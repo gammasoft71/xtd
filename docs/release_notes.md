@@ -63,6 +63,7 @@
 * ![added](pictures/added.png) is
 * ![added](pictures/added.png) length_exception
 * ![added](pictures/added.png) literals operators
+* ![todo](pictures/todo.png) lock
 * ![added](pictures/added.png) math
 * ![added](pictures/added.png) nameof
 * ![added](pictures/added.png) not_finit_number_exception
@@ -160,6 +161,12 @@
 * ![todo](pictures/todo.png) memory_mapped_view_accessor
 * ![todo](pictures/todo.png) memory_mapped_view_stream
 
+### Microsoft
+
+#### Win32
+* ![todo](pictures/todo.png) registry
+* ![todo](pictures/todo.png) registry_key
+
 ### Net
 
 * ![added](pictures/added.png) cookie_exception
@@ -198,6 +205,10 @@
 ### Security
 
 * ![added](pictures/added.png) secure_string
+
+### Text
+
+* ![todo](pictures/todo.png) string_builder
 
 ### Threading
 
