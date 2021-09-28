@@ -131,6 +131,8 @@
 
 ### IO
 
+* ![todo](pictures/todo.png) binary_reader
+* ![todo](pictures/todo.png) binary_writer
 * ![added](pictures/added.png) directory_not_found_exception
 * ![added](pictures/added.png) drive_not_found_exception
 * ![added](pictures/added.png) end_of_stream_exception
@@ -179,6 +181,24 @@
 ### Security
 
 * ![added](pictures/added.png) secure_string
+
+### Threading
+
+* ![todo](pictures/todo.png) auto_reset_event
+* ![todo](pictures/todo.png) event_wait_handle
+* ![todo](pictures/todo.png) interlocked
+* ![todo](pictures/todo.png) manual_reset_event
+* ![todo](pictures/todo.png) monitor
+* ![todo](pictures/todo.png) mutex
+* ![todo](pictures/todo.png) registered_wait_handle
+* ![todo](pictures/todo.png) spin_lock
+* ![todo](pictures/todo.png) thread_local
+* ![todo](pictures/todo.png) thread_pool
+* ![todo](pictures/todo.png) timer
+* ![todo](pictures/todo.png) timer_callback
+* ![todo](pictures/todo.png) wait_callback
+* ![todo](pictures/todo.png) wait_handle
+* ![todo](pictures/todo.png) wait_or_timer_callback
 
 ### Web
 
