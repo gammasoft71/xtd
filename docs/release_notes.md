@@ -159,17 +159,17 @@
 * ![added](pictures/added.png) text_reader
 * ![added](pictures/added.png) text_writer
 
-### Media
-
-* ![todo](pictures/todo.png) sound_player
-* ![todo](pictures/todo.png) system_sound
-* ![todo](pictures/todo.png) system_sounds
-
 #### Memory mapped files
 
 * ![todo](pictures/todo.png) memory_mapped_file
 * ![todo](pictures/todo.png) memory_mapped_view_accessor
 * ![todo](pictures/todo.png) memory_mapped_view_stream
+
+### Media
+
+* ![todo](pictures/todo.png) sound_player
+* ![todo](pictures/todo.png) system_sound
+* ![todo](pictures/todo.png) system_sounds
 
 ### Microsoft
 
