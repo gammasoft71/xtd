@@ -237,6 +237,7 @@
 * ![added](pictures/added.png) bitmap
 * ![added](pictures/added.png) brush
 * ![added](pictures/added.png) brushes
+* ![todo](pictures/todo.png) buffered_graphics
 * ![added](pictures/added.png) color
 * ![added](pictures/added.png) colors
 * ![added](pictures/added.png) font
