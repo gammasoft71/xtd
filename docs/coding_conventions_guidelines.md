@@ -326,7 +326,7 @@ class MyClass {
 /// @param name A string that contains the name.
 /// @remarks The name must be begin by a uppercase; otherwise std::invalid_argument throws.
 /// @exception std::invalid_argument name not started by uppercase.
-void my_func(const std::sstring& name) {
+void my_func(const std::string& name) {
 };
 ```
 
