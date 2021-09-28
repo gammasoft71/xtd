@@ -190,6 +190,27 @@ First version of xtd.
 * ![todo](pictures/todo.png) dot_matrix_display_renderer
 * ![todo](pictures/todo.png) font_picker_renderer
 * ![todo](pictures/todo.png) fourteen_segment_display_renderer
+* ![todo](pictures/todo.png) hscroll_bar_renderer
+* ![todo](pictures/todo.png) label_renderer
+* ![todo](pictures/todo.png) lcd_label_renderer
+* ![todo](pictures/todo.png) light_button
+* ![todo](pictures/todo.png) link_label_renderer
+* ![todo](pictures/todo.png) list_box_renderer
+* ![todo](pictures/todo.png) list_view_renderer
+* ![todo](pictures/todo.png) loading_indicator_renderer
+* ![todo](pictures/todo.png) masked_text_box_renderer
+* ![todo](pictures/todo.png) month_calendar_renderer
+* ![todo](pictures/todo.png) nine_segment_display_renderer
+* ![todo](pictures/todo.png) numeric_up_down_renderer
+* ![todo](pictures/todo.png) picture_box_renderer
+* ![todo](pictures/todo.png) progress_bar_renderer
+* ![todo](pictures/todo.png) property_grid_renderer
+* ![todo](pictures/todo.png) radio_button_renderer
+* ![todo](pictures/todo.png) rich_text_box_renderer
+* ![todo](pictures/todo.png) roller_renderer
+* ![todo](pictures/todo.png) sevent_segment_display_renderer
+* ![todo](pictures/todo.png) sixteen_segment_display_renderer
+* ![todo](pictures/todo.png) splitter_renderer
 
 ______________________________________________________________________________________________
 
