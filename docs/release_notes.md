@@ -582,6 +582,11 @@
 * ![added](pictures/added.png) xtdc-gui
 * ![todo](pictures/todo.png) xtd-code
 
+## Translations
+
+* ![added](pictures/added.png) english
+* ![added](pictures/added.png) french
+
 ## Toolkits
 
 * ![todo](pictures/todo.png) cocoa
