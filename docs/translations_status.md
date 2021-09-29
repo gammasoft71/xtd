@@ -16,10 +16,10 @@
 
 # Translations
 
-| Languages | Status                                  |
-|-----------|-----------------------------------------|
-| English   | ![progresser](pictures/progress100.png) |
-| French    | ![progresser](pictures/progress100.png) |
+| Languages               | Status                                  |
+|-------------------------|-----------------------------------------|
+| [English](../locale/en) | ![progresser](pictures/progress100.png) |
+| [French](../locale/fr)  | ![progresser](pictures/progress100.png) |
 
 ______________________________________________________________________________________________
 
