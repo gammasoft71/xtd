@@ -33,7 +33,7 @@ namespace xtd {
       bool empty() const noexcept;
       /// @endcond
 
-      /// @brief Gets underlying ripted data.
+      /// @brief Gets underlying cripted data.
       /// @return The underlying cripted data.
       intptr_t data() const noexcept;
       
