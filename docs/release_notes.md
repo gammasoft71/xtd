@@ -587,6 +587,26 @@
 * ![added](pictures/added.png) english
 * ![added](pictures/added.png) french
 
+## Themes
+
+* ![todo](pictures/todo.png) gnome dark
+* ![todo](pictures/todo.png) gnome light
+* ![todo](pictures/todo.png) kde dark
+* ![todo](pictures/todo.png) kde light
+* ![todo](pictures/todo.png) macos dark
+* ![todo](pictures/todo.png) macos light
+* ![todo](pictures/todo.png) windows dark
+* ![todo](pictures/todo.png) wondows light
+* ![todo](pictures/todo.png) xtd dark
+* ![todo](pictures/todo.png) xtd light
+* ![todo](pictures/todo.png) light
+* ![todo](pictures/todo.png) dark
+* ![todo](pictures/todo.png) white
+* ![todo](pictures/todo.png) black
+* ![todo](pictures/todo.png) blue
+* ![todo](pictures/todo.png) green
+* ![todo](pictures/todo.png) red
+
 ## Toolkits
 
 * ![todo](pictures/todo.png) cocoa
