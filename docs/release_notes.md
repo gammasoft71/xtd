@@ -250,10 +250,10 @@
 
 * ![added](pictures/added.png) property
 * ![added](pictures/added.png) property_map
-* ![added](pictures/added.png) reader
+* ![added](pictures/added.png) css_reader
 * ![added](pictures/added.png) selector
 * ![added](pictures/added.png) selector_map
-* ![added](pictures/added.png) writer
+* ![added](pictures/added.png) css_writer
 
 ## xtd.drawing
 
