@@ -7,6 +7,7 @@
 # xtd is ...
 
 * a collection of native C++ classes libraries, to complete std;
+* API close to the .net API with a modern C++ approach and full integration with the std standard;
 * written in efficient, modern C++17/20 with [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom;
 * and [highly portable](portability.md#the-xtd-libraries-portability-list) and available on [many different platforms](portability.md#operating-system-supported);
 
