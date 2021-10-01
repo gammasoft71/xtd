@@ -9,7 +9,8 @@
 ///
 /// @section FeaturesSection Features
 ///   * a collection of native C++ classes libraries, to complete std;
-///   * written in efficient, modern C++17 / C++20;
+///   * API close to the .net API with a modern C++ approach and full integration with the std standard;
+///   * written in efficient, modern C++17 / C++20 with <a href="https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization">RAII> programming idiom;
 ///   * and highly portable and available on many different platforms (Windows, macOS, Linux, iOS and android);
 ///
 /// @subsection MoreInformationSubsection For more information see:
