@@ -17,11 +17,11 @@ namespace unit_tests {
       assert::are_equal(0, e.error_code().value(), csf_);
       assert::are_equal(0U, e.line_number(), csf_);
       assert::is_empty(e.member_name(), csf_);
-      assert::are_equal("The specified path, file name, or both are too long. The fully qualified file name must be less than 260 caracters, and the directory name must be less than 248 caracters.", e.message(), csf_);
+      assert::are_equal("The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters.", e.message(), csf_);
       assert::are_equal("xtd::io::path_too_long_exception", e.name(), csf_);
       assert::is_empty(e.stack_trace(), csf_);
-      assert::are_equal("xtd::io::path_too_long_exception : The specified path, file name, or both are too long. The fully qualified file name must be less than 260 caracters, and the directory name must be less than 248 caracters.", e.to_string(), csf_);
-      assert::are_equal("The specified path, file name, or both are too long. The fully qualified file name must be less than 260 caracters, and the directory name must be less than 248 caracters.", e.what(), csf_);
+      assert::are_equal("xtd::io::path_too_long_exception : The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters.", e.to_string(), csf_);
+      assert::are_equal("The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters.", e.what(), csf_);
     }
 
     void test_method_(default_creator_with_current_stack_frame) {
@@ -34,11 +34,11 @@ namespace unit_tests {
       assert::are_equal(0, e.error_code().value(), csf_);
       assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
-      assert::are_equal("The specified path, file name, or both are too long. The fully qualified file name must be less than 260 caracters, and the directory name must be less than 248 caracters.", e.message(), csf_);
+      assert::are_equal("The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters.", e.message(), csf_);
       assert::are_equal("xtd::io::path_too_long_exception", e.name(), csf_);
       assert::are_equal(info.to_string(), e.stack_trace(), csf_);
-      assert::are_equal("xtd::io::path_too_long_exception : The specified path, file name, or both are too long. The fully qualified file name must be less than 260 caracters, and the directory name must be less than 248 caracters.\n" + info.to_string(), e.to_string(), csf_);
-      assert::are_equal("The specified path, file name, or both are too long. The fully qualified file name must be less than 260 caracters, and the directory name must be less than 248 caracters.", e.what(), csf_);
+      assert::are_equal("xtd::io::path_too_long_exception : The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters.\n" + info.to_string(), e.to_string(), csf_);
+      assert::are_equal("The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters.", e.what(), csf_);
     }
     
     void test_method_(creator_with_empty_message) {

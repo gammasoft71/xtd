@@ -17,11 +17,11 @@ namespace unit_tests {
       assert::are_equal(0, e.error_code().value(), csf_);
       assert::are_equal(0U, e.line_number(), csf_);
       assert::is_empty(e.member_name(), csf_);
-      assert::are_equal("Attempted to access a drive that is not avaible.", e.message(), csf_);
+      assert::are_equal("Attempted to access a drive that is not available.", e.message(), csf_);
       assert::are_equal("xtd::io::drive_not_found_exception", e.name(), csf_);
       assert::is_empty(e.stack_trace(), csf_);
-      assert::are_equal("xtd::io::drive_not_found_exception : Attempted to access a drive that is not avaible.", e.to_string(), csf_);
-      assert::are_equal("Attempted to access a drive that is not avaible.", e.what(), csf_);
+      assert::are_equal("xtd::io::drive_not_found_exception : Attempted to access a drive that is not available.", e.to_string(), csf_);
+      assert::are_equal("Attempted to access a drive that is not available.", e.what(), csf_);
     }
 
     void test_method_(default_creator_with_current_stack_frame) {
@@ -34,11 +34,11 @@ namespace unit_tests {
       assert::are_equal(0, e.error_code().value(), csf_);
       assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
-      assert::are_equal("Attempted to access a drive that is not avaible.", e.message(), csf_);
+      assert::are_equal("Attempted to access a drive that is not available.", e.message(), csf_);
       assert::are_equal("xtd::io::drive_not_found_exception", e.name(), csf_);
       assert::are_equal(info.to_string(), e.stack_trace(), csf_);
-      assert::are_equal("xtd::io::drive_not_found_exception : Attempted to access a drive that is not avaible.\n" + info.to_string(), e.to_string(), csf_);
-      assert::are_equal("Attempted to access a drive that is not avaible.", e.what(), csf_);
+      assert::are_equal("xtd::io::drive_not_found_exception : Attempted to access a drive that is not available.\n" + info.to_string(), e.to_string(), csf_);
+      assert::are_equal("Attempted to access a drive that is not available.", e.what(), csf_);
     }
     
     void test_method_(creator_with_empty_message) {

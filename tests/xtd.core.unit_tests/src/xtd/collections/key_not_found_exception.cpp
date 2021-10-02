@@ -17,11 +17,11 @@ namespace unit_tests {
       assert::are_equal(0, e.error_code().value(), csf_);
       assert::are_equal(0U, e.line_number(), csf_);
       assert::is_empty(e.member_name(), csf_);
-      assert::are_equal("The given key was not present in the dictionnary.", e.message(), csf_);
+      assert::are_equal("The given key was not present in the dictionary.", e.message(), csf_);
       assert::are_equal("xtd::collections::key_not_found_exception", e.name(), csf_);
       assert::is_empty(e.stack_trace(), csf_);
-      assert::are_equal("xtd::collections::key_not_found_exception : The given key was not present in the dictionnary.", e.to_string(), csf_);
-      assert::are_equal("The given key was not present in the dictionnary.", e.what(), csf_);
+      assert::are_equal("xtd::collections::key_not_found_exception : The given key was not present in the dictionary.", e.to_string(), csf_);
+      assert::are_equal("The given key was not present in the dictionary.", e.what(), csf_);
     }
 
     void test_method_(default_creator_with_current_stack_frame) {
@@ -34,11 +34,11 @@ namespace unit_tests {
       assert::are_equal(0, e.error_code().value(), csf_);
       assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
-      assert::are_equal("The given key was not present in the dictionnary.", e.message(), csf_);
+      assert::are_equal("The given key was not present in the dictionary.", e.message(), csf_);
       assert::are_equal("xtd::collections::key_not_found_exception", e.name(), csf_);
       assert::are_equal(info.to_string(), e.stack_trace(), csf_);
-      assert::are_equal("xtd::collections::key_not_found_exception : The given key was not present in the dictionnary.\n" + info.to_string(), e.to_string(), csf_);
-      assert::are_equal("The given key was not present in the dictionnary.", e.what(), csf_);
+      assert::are_equal("xtd::collections::key_not_found_exception : The given key was not present in the dictionary.\n" + info.to_string(), e.to_string(), csf_);
+      assert::are_equal("The given key was not present in the dictionary.", e.what(), csf_);
     }
     
     void test_method_(creator_with_empty_message) {
