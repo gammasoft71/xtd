@@ -10,6 +10,8 @@
 
 ## To the contributors
 
+The [authors file](AUTHORS.md) lists contributors together with contact information. If you make a contribution, please add yourself to the list.
+
 **Your contributions are welcome.**
 
 * First read [Code of conduct](CODE_OF_CONDUCT.md) and the [design guidelines](docs/design_guidelines.md) to make sure your contribution follows the rules.
