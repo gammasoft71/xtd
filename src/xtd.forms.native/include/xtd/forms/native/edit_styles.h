@@ -100,7 +100,7 @@ constexpr size_t ES_OEMCONVERT = 0x00000400L;
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t ES_READONLY = 0x00000800L;
-/// @brief Specifies that a carriage return be inserted when the user presses the ENTER key while entering text into a multiple-line edit control in a dialog box. Without this style, pressing the ENTER key has the same effect as pressing the dialog boxs default pushbutton. This style has no effect on a single-line edit control.
+/// @brief Specifies that a carriage return be inserted when the user presses the ENTER key while entering text into a multiple-line edit control in a dialog box. Without this style, pressing the ENTER key has the same effect as pressing the dialog boxes default pushbutton. This style has no effect on a single-line edit control.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native es

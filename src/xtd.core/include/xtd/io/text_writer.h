@@ -119,7 +119,7 @@ namespace xtd {
 
       /// @brief Writes the specified arguments with specified format to the text stream.
       /// @param format The arguments format to write.
-      /// @param args The arguments to write witth format
+      /// @param args The arguments to write with format
       /// @exception io::io_exception An I/O error occurs.
       template<typename ... args_t>
       void write(const xtd::ustring& fmt, args_t&& ... args) noexcept {write(xtd::ustring::format(fmt, std::forward<args_t>(args)...));}
@@ -197,7 +197,7 @@ namespace xtd {
 
       /// @brief Writes the specified arguments with specified format to the text stream.
       /// @param format The arguments format to write.
-      /// @param args The arguments to write witth format.
+      /// @param args The arguments to write with format.
       /// @exception io::io_exception An I/O error occurs.
       template<typename ... args_t>
       void write_line(const xtd::ustring& fmt, args_t&& ... args) noexcept {write_line(xtd::ustring::format(fmt, std::forward<args_t>(args)...));}

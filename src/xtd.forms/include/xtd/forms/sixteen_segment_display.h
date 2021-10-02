@@ -22,7 +22,7 @@ namespace xtd {
 
       using fourteen_segment_display::thickness;
       /// @brief Sets thickness of segment.
-      /// @param value A int32_t that represent the segment tickness.
+      /// @param value A int32_t that represent the segment thickness.
       /// @return Current seven_segment_display.
       int32_t thickness() const override {return thickness_.value_or(size_.height() < 20 ? 1 : (size_.height() / 20 + ((size_.height() / 20) % 2 ? 0 : 1)));}
 
@@ -45,7 +45,7 @@ namespace xtd {
 
       /// @brief Draw segment a1 on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
-      /// @param color A xtd::drawing::color used to draw segemnt.
+      /// @param color A xtd::drawing::color used to draw segment.
       virtual void draw_segment_a1(drawing::graphics& graphics, const drawing::color& color) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
@@ -70,7 +70,7 @@ namespace xtd {
       
       /// @brief Draw segment a2 on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
-      /// @param color A xtd::drawing::color used to draw segemnt.
+      /// @param color A xtd::drawing::color used to draw segment.
       virtual void draw_segment_a2(drawing::graphics& graphics, const drawing::color& color) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
@@ -95,7 +95,7 @@ namespace xtd {
       
       /// @brief Draw segment d1 on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
-      /// @param color A xtd::drawing::color used to draw segemnt.
+      /// @param color A xtd::drawing::color used to draw segment.
       virtual void draw_segment_d1(drawing::graphics& graphics, const drawing::color& color) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
@@ -120,7 +120,7 @@ namespace xtd {
       
       /// @brief Draw segment d2 on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
-      /// @param color A xtd::drawing::color used to draw segemnt.
+      /// @param color A xtd::drawing::color used to draw segment.
       virtual void draw_segment_d2(drawing::graphics& graphics, const drawing::color& color) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
@@ -145,7 +145,7 @@ namespace xtd {
       
       /// @brief Draw segment i on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
-      /// @param color A xtd::drawing::color used to draw segemnt.
+      /// @param color A xtd::drawing::color used to draw segment.
       void draw_segment_i(drawing::graphics& graphics, const drawing::color& color) override {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
@@ -170,7 +170,7 @@ namespace xtd {
   
       /// @brief Draw segment l on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
-      /// @param color A xtd::drawing::color used to draw segemnt.
+      /// @param color A xtd::drawing::color used to draw segment.
       void draw_segment_l(drawing::graphics& graphics, const drawing::color& color) override {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)

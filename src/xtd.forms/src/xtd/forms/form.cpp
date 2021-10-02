@@ -198,9 +198,9 @@ form& form::opacity(double opacity) {
 
 control& form::visible(bool visible) {
   std::optional<forms::form_window_state> current_window_state;
-  if (!previous_screeen_) {
+  if (!previous_screen_) {
     current_window_state = window_state_;
-    previous_screeen_ = std::make_shared<screen>(screen::from_control(*this));
+    previous_screen_ = std::make_shared<screen>(screen::from_control(*this));
     recreate_handle();
   }
   container_control::visible(visible);
@@ -258,7 +258,7 @@ bool form::pre_process_message(xtd::forms::message& message) {
 }
 forms::dialog_result form::show_dialog() {
   set_state(state::modal, true);
-  previous_screeen_ = std::make_shared<screen>(screen::from_control(*this));
+  previous_screen_ = std::make_shared<screen>(screen::from_control(*this));
   recreate_handle();
   forms::dialog_result result = dialog_result_ = forms::dialog_result::none;
   application::raise_enter_thread_modal(event_args::empty);
@@ -272,7 +272,7 @@ forms::dialog_result form::show_dialog(const iwin32_window& owner) {
   parent_before_show_dialog_ = parent_;
   set_state(state::modal, true);
   if (owner.handle() != handle()) parent_ = owner.handle();
-  previous_screeen_ = std::make_shared<screen>(screen::from_control(*this));
+  previous_screen_ = std::make_shared<screen>(screen::from_control(*this));
   recreate_handle();
   forms::dialog_result result = dialog_result_ = forms::dialog_result::none;
   application::raise_enter_thread_modal(event_args::empty);
@@ -284,7 +284,7 @@ void form::show_sheet(const iwin32_window& owner) {
   parent_before_show_dialog_ = parent_;
   set_state(state::modal, true);
   if (owner.handle() != handle()) parent_ = owner.handle();
-  previous_screeen_ = std::make_shared<screen>(screen::from_control(*this));
+  previous_screen_ = std::make_shared<screen>(screen::from_control(*this));
   recreate_handle();
   dialog_result_ = forms::dialog_result::none;
   application::raise_enter_thread_modal(event_args::empty);
@@ -295,7 +295,7 @@ forms::dialog_result form::show_sheet_dialog(const iwin32_window& owner) {
   parent_before_show_dialog_ = parent_;
   set_state(state::modal, true);
   if (owner.handle() != handle()) parent_ = owner.handle();
-  previous_screeen_ = std::make_shared<screen>(screen::from_control(*this));
+  previous_screen_ = std::make_shared<screen>(screen::from_control(*this));
   recreate_handle();
   forms::dialog_result result = dialog_result_ = forms::dialog_result::none;
   application::raise_enter_thread_modal(event_args::empty);
@@ -352,7 +352,7 @@ forms::create_params form::create_params() const {
 
   if (top_most_) create_params.ex_style(create_params.ex_style() | WS_EX_TOPMOST);
   
-  if (previous_screeen_) {
+  if (previous_screen_) {
     switch (start_position_) {
       case form_start_position::manual:
         create_params.location(location());
@@ -360,7 +360,7 @@ forms::create_params form::create_params() const {
         if (application::open_forms().size() == 1) default_location = 40;
         break;
       case form_start_position::center_screen:
-        create_params.location({(previous_screeen_->working_area().width() - width()) / 2, (previous_screeen_->working_area().height() - height()) / 2});
+        create_params.location({(previous_screen_->working_area().width() - width()) / 2, (previous_screen_->working_area().height() - height()) / 2});
         create_params.size(size());
         break;
       case form_start_position::windows_default_location:
@@ -369,7 +369,7 @@ forms::create_params form::create_params() const {
         break;
       case form_start_position::windows_default_bounds:
         create_params.location({default_location, default_location});
-        create_params.size({previous_screeen_->working_area().width() / 4 * 3, previous_screeen_->working_area().height() / 4 * 3});
+        create_params.size({previous_screen_->working_area().width() / 4 * 3, previous_screen_->working_area().height() / 4 * 3});
         break;
       case form_start_position::center_parent:
         if (parent_ != 0)
@@ -464,7 +464,7 @@ void form::on_resize(const event_args& e) {
 }
 
 void form::internal_set_window_state() {
-  if (!previous_screeen_)
+  if (!previous_screen_)
     recreate_handle();
   else {
     switch (window_state_) {

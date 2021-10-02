@@ -12,7 +12,7 @@
 using namespace xtd::forms::native;
 
 namespace {
-  static std::string get_os_potfix() noexcept {
+  static std::string get_os_postfix() noexcept {
     return xtd::environment::os_version().is_windows_platform() ? "_w" : xtd::environment::os_version().is_linux_platform() ? "_g" : xtd::environment::os_version().is_macos_platform() ? "_m" : "";
   }
  
@@ -25,8 +25,8 @@ namespace {
   }
 
   static intptr_t create_cursor_from_resources(const std::string& name, const xtd::drawing::point& hot_spot ) {
-    if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path(), "cursors", xtd::ustring::format("{}{}.png", name, get_os_potfix())))) return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_DEFAULT));
-    wxImage image(std::string(xtd::io::path::combine(forms_resource_path(), "cursors", xtd::ustring::format("{}{}.png", name, get_os_potfix()))));
+    if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path(), "cursors", xtd::ustring::format("{}{}.png", name, get_os_postfix())))) return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_DEFAULT));
+    wxImage image(std::string(xtd::io::path::combine(forms_resource_path(), "cursors", xtd::ustring::format("{}{}.png", name, get_os_postfix()))));
     image.SetOption(wxIMAGE_OPTION_CUR_HOTSPOT_X, hot_spot.x());
     image.SetOption(wxIMAGE_OPTION_CUR_HOTSPOT_Y, hot_spot.y());
     wxCursor* cursor = new wxCursor(image);

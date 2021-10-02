@@ -67,7 +67,7 @@ namespace xtd {
       /// @param icon An icon value that specifies the icon to display.
       /// @param back_color A color that represents the background color of the busy box.
       /// @param fore_color A color that represents the background color of the busy box.
-      /// @param opacity A float that represents the topacity of the busy box. (0: full opacity and 1.0 no full opacity)
+      /// @param opacity A float that represents the opacity of the busy box. (0: full opacity and 1.0 no full opacity)
       static void show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color, float opacity) {show_busy_dialog(&owner, text, caption, icon, back_color, fore_color, opacity);}
 
       /// @brief Displays a busy box.
@@ -103,7 +103,7 @@ namespace xtd {
       /// @param icon An icon value that specifies the icon to display.
       /// @param back_color A color that represents the background color of the busy box.
       /// @param fore_color A color that represents the background color of the busy box.
-      /// @param opacity A float that represents the topacity of the busy box. (0: full opacity and 1.0 no opacity)
+      /// @param opacity A float that represents the opacity of the busy box. (0: full opacity and 1.0 no opacity)
       static void show(const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color, float opacity) {show_busy_dialog(nullptr, text, caption, icon, back_color, fore_color, opacity);}
       
     private:

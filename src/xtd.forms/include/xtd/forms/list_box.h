@@ -46,14 +46,14 @@ namespace xtd {
       drawing::size default_size() const override {return {120, 96};}
       
       /// @brief Gets the items of the list_box.
-      /// @return An list_boxlist_box::object_collection representing the items in the list_box.
+      /// @return An list_box::object_collection representing the items in the list_box.
       /// @remarks This property enables you to obtain a reference to the list of items that are currently stored in the list_box. With this reference, you can add items, remove items, and obtain a count of the items in the collection.
       object_collection& items() {return items_;}
       /// @brief Gets the items of the list_box.
-      /// @return An list_boxlist_box::object_collection representing the items in the list_box.
+      /// @return An list_box::object_collection representing the items in the list_box.
       const object_collection& items() const {return items_;}
       /// @brief Sets the items of the list_box.
-      /// @param items An list_boxlist_box::object_collection representing the items in the list_box.
+      /// @param items An list_box::object_collection representing the items in the list_box.
       /// @return Current list_box.
       /// @remarks This property enables you to obtain a reference to the list of items that are currently stored in the list_box. With this reference, you can add items, remove items, and obtain a count of the items in the collection.
       const list_box& items(const object_collection& items) {
@@ -70,18 +70,18 @@ namespace xtd {
       /// @brief Gets a collection that contains the zero-based indexes of all currently selected items in the list_box.
       /// @brief A list_box.selected_index_collection containing the indexes of the currently selected items in the control. If no items are currently selected, an empty ListBox.SelectedIndexCollection is returned.
       /// @remarks For a multiple-selection list_box, this property returns a collection containing the indexes to all items that are selected in the list_box. For a single-selection ListBox, this property returns a collection containing a single element containing the index of the only selected item in the list_box. For more information about how to manipulate the items of the collection, see list_box::selected_index_collection.
-      /// @remarks The list_box class provides a number of ways to reference selected items. Instead of using the selected_indices property to obtain the index position of the currently selected item in a single-selection list_box, you can use the selected_index property. If you want to obtain the item that is currently selected in the list_box, instead of the index position of the item, use the delected_item property. In addition, you can use the selected_items property if you want to obtain all the selected items in a multiple-selection list_box.
+      /// @remarks The list_box class provides a number of ways to reference selected items. Instead of using the selected_indices property to obtain the index position of the currently selected item in a single-selection list_box, you can use the selected_index property. If you want to obtain the item that is currently selected in the list_box, instead of the index position of the item, use the selected_item property. In addition, you can use the selected_items property if you want to obtain all the selected items in a multiple-selection list_box.
       virtual selected_index_collection selected_indices() const;
 
       /// @brief Gets the currently selected item in the list_box.
       /// @return An object that represents the current selection in the control.
-      /// @remarks For a standard list_box, you can use this property to determine which item is selected in the list_box. If the selection_mode property of the list_boxlist_box is set to either selection_mode::multi_simple or selection_mode::multi_extended (which indicates a multiple-selection list_box) and multiple items are selected in the list, this property can return any selected item.
+      /// @remarks For a standard list_box, you can use this property to determine which item is selected in the list_box. If the selection_mode property of the list_box is set to either selection_mode::multi_simple or selection_mode::multi_extended (which indicates a multiple-selection list_box) and multiple items are selected in the list, this property can return any selected item.
       /// @remarks To retrieve a collection containing all selected items in a multiple-selection list_box, use the selected_items property. If you want to obtain the index position of the currently selected item in the list_box, use the selected_index property. In addition, you can use the selected_indices property to obtain all the selected indexes in a multiple-selection list_box.
       const item& selected_item() const {return selected_item_;}
       /// @brief Sets the currently selected item in the list_box.
       /// @param selected_item An object that represents the current selection in the control.
       /// @return Current list_box.
-      /// @remarks For a standard list_box, you can use this property to determine which item is selected in the list_box. If the selection_mode property of the list_boxlist_box is set to either selection_mode::multi_simple or selection_mode::multi_extended (which indicates a multiple-selection list_box) and multiple items are selected in the list, this property can return any selected item.
+      /// @remarks For a standard list_box, you can use this property to determine which item is selected in the list_box. If the selection_mode property of the list_box is set to either selection_mode::multi_simple or selection_mode::multi_extended (which indicates a multiple-selection list_box) and multiple items are selected in the list, this property can return any selected item.
       /// @remarks To retrieve a collection containing all selected items in a multiple-selection list_box, use the selected_items property. If you want to obtain the index position of the currently selected item in the list_box, use the selected_index property. In addition, you can use the selected_indices property to obtain all the selected indexes in a multiple-selection list_box.
       list_box& selected_item(const item& selected_item);
       

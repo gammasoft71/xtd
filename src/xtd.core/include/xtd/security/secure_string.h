@@ -33,15 +33,15 @@ namespace xtd {
       bool empty() const noexcept;
       /// @endcond
 
-      /// @brief Gets underlying cripted data.
-      /// @return The underlying cripted data.
+      /// @brief Gets underlying encrypted data.
+      /// @return The underlying encrypted data.
       intptr_t data() const noexcept;
       
-      /// @brief Gets underlying cripted data size.
-      /// @return The underlying cripted data size.
+      /// @brief Gets underlying encrypted data size.
+      /// @return The underlying encrypted data size.
       size_t size() const noexcept;
       
-      /// @brief Gets decripted data.
+      /// @brief Gets decrypted data.
       /// @brief A encrypted byte array.
       /// @warning This is a more convenient but less secure alternative to using xtd::security::secure_string::data.
       std::string to_unsecure_string() const noexcept;

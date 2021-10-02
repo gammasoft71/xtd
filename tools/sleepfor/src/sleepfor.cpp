@@ -44,7 +44,7 @@ namespace sleepfor {
       "  sleepfor [duration] [--nanoseconds|--milliseconds|--seconds|--minutes|]\n"
       "\n"
       "-ns, --nanoseconds : The specified duration is in nanoseconds.\n"
-      "-ms, --miliseconds : The specified duration is in milliseconds. Is the default.\n"
+      "-ms, --milliseconds : The specified duration is in milliseconds. Is the default.\n"
       "-s, --seconds      : The specified duration is in seconds.\n"
       "-m, --minutes      : The specified duration is in minutes.\n"
       "-i, --indefinitely : sleep indefinitely.\n"

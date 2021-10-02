@@ -49,7 +49,7 @@ namespace xtd {
     /// The following code example demonstrate the use of button control.
     /// @include button.cpp
     /// @par Examples
-    /// The following code example demonstrate the use of button control witth bitmap.
+    /// The following code example demonstrate the use of button control with bitmap.
     /// @include bitmap_button.cpp
     class forms_export_ button : public ibutton_control, public button_base {
     public:
@@ -108,7 +108,7 @@ namespace xtd {
       /// @return One of the AutoSizeMode values. The default value is grow_only.
       virtual forms::auto_size_mode auto_size_mode() const {return auto_size_mode_;}
       /// @brief Sets the mode by which the button automatically resizes itself.
-      /// @param value One of the AutoSizeMode values. The default value is growonly.
+      /// @param value One of the AutoSizeMode values. The default value is grow only.
       virtual button& auto_size_mode(forms::auto_size_mode value);
       
       forms::dialog_result dialog_result() const override {return dialog_result_;}

@@ -62,7 +62,7 @@
 /// @image html applicationapplication_gd.png
 ///
 /// @example application_and_exception.cpp
-///  following code example demonstrate the use offollowing code example demonstrate how to manage exception with xtd::forms::application class.
+///  following code example demonstrate the use of following code example demonstrate how to manage exception with xtd::forms::application class.
 /// @par Windows
 /// @image html application_and_exception_w.png
 /// <br>
@@ -152,7 +152,7 @@
 /// @image html button_gd.png
 ///
 /// @example bitmap_button.cpp
-/// The following code example demonstrate the use of button control witth bitmap.
+/// The following code example demonstrate the use of button control with bitmap.
 /// @par Windows
 /// @image html bitmap_button_w.png
 /// <br>
@@ -797,7 +797,7 @@
 /// @image html main_menu_gd.png
 ///
 /// @example main_menu_create_standard_items.cpp
-/// The following code example demonstrate the use of main_menu::create_standard_items factroy.
+/// The following code example demonstrate the use of main_menu::create_standard_items factory.
 /// @par Windows
 /// @image html main_menu_create_standard_items_w.png
 /// <br>
@@ -962,7 +962,7 @@
 /// @image html radio_button_gd.png
 ///
 /// @example radio_buttons.cpp
-/// The following code example demonstrate the use of radio_button control facttory.
+/// The following code example demonstrate the use of radio_button control factory.
 /// @par Windows
 /// @image html radio_buttons_w.png
 /// <br>

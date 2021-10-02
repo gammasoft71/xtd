@@ -21,7 +21,7 @@ inline void __startup_catch_exception__() {xtd::forms::application::open_forms()
 #else
 inline void __startup_catch_exception__(const std::exception& e) {std::cerr << std::endl << xtd::ustring::format("Unhandled exception: {}", e.what()) << std::endl;}
 inline void __startup_catch_exception__(const xtd::system_exception& e) { std::cerr << std::endl << xtd::ustring::format("Unhandled exception: {}", e) << std::endl;}
-inline void __startup_catch_exception__() { std::cerr << std::endl << xtd::ustring::format("Unhandled exception: Unknown exception occured") << std::endl;}
+inline void __startup_catch_exception__() { std::cerr << std::endl << xtd::ustring::format("Unhandled exception: Unknown exception occurred") << std::endl;}
 #endif
 /// @endcond
 

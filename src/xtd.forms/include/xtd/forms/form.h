@@ -56,7 +56,7 @@ namespace xtd {
       form& accept_button(nullptr_t);
       
       /// @brief Gets the currently active form for this application.
-      /// @return A form that represents the currently active form, or std::optional with no vallue if there is no active form.
+      /// @return A form that represents the currently active form, or std::optional with no value if there is no active form.
       static std::optional<std::reference_wrapper<form>> active_form() {return active_form_;}
       
       /// @brief Gets the mode by which the form automatically resizes itself.
@@ -256,13 +256,13 @@ namespace xtd {
       virtual forms::dialog_result show_dialog(const iwin32_window& owner);
       
       /// @brief Shows the form as a sheet dialog box.
-      /// @remarks dialog_result property contains the rresult when the form will closed.
-      /// @remarks Sheet mode is only avaible on macOS. For other platform show_dialog is underlying called.
+      /// @remarks dialog_result property contains the result when the form will closed.
+      /// @remarks Sheet mode is only available on macOS. For other platform show_dialog is underlying called.
       virtual void show_sheet(const iwin32_window& owner);
       
       /// @brief Shows the form as a modal sheet dialog box.
       /// @return One of the dialog_result values.
-      /// @remarks Sheet mode is only avaible on macOS. For other platform show_dialog is underlying called.
+      /// @remarks Sheet mode is only available on macOS. For other platform show_dialog is underlying called.
       virtual forms::dialog_result show_sheet_dialog(const iwin32_window& owner);
       
       /// @brief Occurs when the form is activated in code or by the user.
@@ -331,7 +331,7 @@ namespace xtd {
       bool maximize_box_ = true;
       std::optional<forms::main_menu> menu_;
       bool minimize_box_ = true;
-      std::shared_ptr<screen> previous_screeen_;
+      std::shared_ptr<screen> previous_screen_;
       bool show_icon_ = true;
       bool show_in_taskbar_ = true;
       form_start_position start_position_ = form_start_position::windows_default_location;

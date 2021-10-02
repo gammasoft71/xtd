@@ -15,7 +15,7 @@ namespace xtd {
   ///
   /// A nameof expression has this form:
   /// @code
-  /// if (x == null) throw  std::arghument_error(nameof_(x));
+  /// if (x == null) throw  std::argument_error(nameof_(x));
   /// write_line(nameof_(person.address().zip_code())); // prints "person.address().zip_code()"
   /// @endcode
   /// @par Examples

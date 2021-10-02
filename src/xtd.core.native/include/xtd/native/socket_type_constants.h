@@ -17,7 +17,7 @@
 /// @ingroup xtd_core_native socket_type
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t SOCKET_TYPE_UNKNWON = -1;
+constexpr int32_t SOCKET_TYPE_UNKNOWN = -1;
 
 /// @brief Supports reliable, two-way, connection-based byte streams without the duplication of data and without preservation of boundaries. A xtd::net::sockets::socket of this type communicates with a single peer and requires a remote host connection before communication can begin. xtd::net::sockets::socket_types::stream uses the Transmission Control Protocol (xtd::net::sockets::protocol_type::tcp) and the xtd::net::sockets::address_family::inter_network address family.
 /// @par Library
@@ -43,7 +43,7 @@ constexpr int32_t SOCKET_TYPE_DGRAM = 2;
 /// @warning Internal use only
 constexpr int32_t SOCKET_TYPE_RAW = 3;
 
-/// @brief Supports connectionless, message-oriented, reliably delivered messages, and preserves message boundaries in data. xtd::net::sockets::socket_type::rdm (Reliably Delivered Messages) messages arrive unduplicated and in order. Furthermore, the sender is notified if messages are lost. If you initialize a xtd::net::sockets::socket using xtd::net::sockets::socket_type::rdm, you do not require a remote host connection before sending and receiving data. With xtd::net::sockets::socket_typerdm, you can communicate with multiple peers.
+/// @brief Supports connectionless, message-oriented, reliably delivered messages, and preserves message boundaries in data. xtd::net::sockets::socket_type::rdm (Reliably Delivered Messages) messages arrive unique and in order. Furthermore, the sender is notified if messages are lost. If you initialize a xtd::net::sockets::socket using xtd::net::sockets::socket_type::rdm, you do not require a remote host connection before sending and receiving data. With xtd::net::sockets::socket_typerdm, you can communicate with multiple peers.
 /// @par Library
 /// xtd.core.native
 /// @ingroup xtd_core_native socket_type

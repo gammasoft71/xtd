@@ -22,7 +22,7 @@ namespace xtd {
       /// @param dialog_result The dialog_result contains the result when closing dialog.
       explicit dialog_closed_event_args(forms::dialog_result dialog_result) : dialog_result_(dialog_result) {};
       
-      /// @brief Get the dialog_result contains tthe result when closing dialog.
+      /// @brief Get the dialog_result contains the result when closing dialog.
       /// One of dialog_result enumerated values.
       virtual forms::dialog_result dialog_result() const {return dialog_result_;}
       

@@ -23,7 +23,7 @@ namespace xtd {
     
     /// @cond
     friend std::ostream& operator<<(std::ostream& os, const background_color& color) {
-      if (!console::is_out_redireted() && os.rdbuf() == console::out.rdbuf())
+      if (!console::is_out_redirected() && os.rdbuf() == console::out.rdbuf())
         console::background_color(color.color);
       return os;
     }

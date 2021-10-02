@@ -647,7 +647,7 @@ namespace xtd {
           if (event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_CLOSE, 0, 0, reinterpret_cast<intptr_t>(&event))) {
             def_process_event(1, event);
 #if !defined(__APPLE__)
-            // Workarouund : Floating frame on parent frame does not close on wxEVT_CLOSE°WINDOW. Then destroys it.
+            // Workaround : Floating frame on parent frame does not close on wxEVT_CLOSE°WINDOW. Then destroys it.
             if ((event_handler_->control()->GetWindowStyle() & wxFRAME_FLOAT_ON_PARENT) == wxFRAME_FLOAT_ON_PARENT) event_handler_->destroy();
 #endif
           }

@@ -77,7 +77,7 @@ pen& pen::brush(const drawing::brush& brush) {
   //  type_ = drawing2d::pen_type::hatch_fill;
   //} else if (dynamic_cast<const texture_brush*>(&brush) != nullptr) {
   //  type_ = drawing2d::pen_type::texture_fill;
-  //} else if (dynamic_cast<const ddrawing2d::path_gradient_brush*>(&brush) != nullptr) {
+  //} else if (dynamic_cast<const drawing2d::path_gradient_brush*>(&brush) != nullptr) {
   //  type_ = drawing2d::pen_type::path_gradient;
   //} else if (dynamic_cast<const drawing2d::linear_gradient_brush*>(&brush) != nullptr) {
   //  type_ = drawing2d::pen_type::linear_gradient;

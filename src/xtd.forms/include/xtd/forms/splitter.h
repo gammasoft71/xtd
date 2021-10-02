@@ -60,10 +60,10 @@ namespace xtd {
       }
       
       /// @brief Gets the style of the splitter.
-      /// @return One of xtd::forms::splitter_style values. The default is xtd::forms::splitter_style::update_childs
+      /// @return One of xtd::forms::splitter_style values. The default is xtd::forms::splitter_style::update_children
       virtual xtd::forms::splitter_style splitter_style() const {return splitter_style_;}
       /// @brief Sets the style of the splitter.
-      /// @param splitter_style One of xtd::forms::splitter_style values. The default is xtd::forms::splitter_style::update_childs
+      /// @param splitter_style One of xtd::forms::splitter_style values. The default is xtd::forms::splitter_style::update_children
       /// @return Current splitter instance.
       virtual splitter& splitter_style(xtd::forms::splitter_style splitter_style) {
         if (splitter_style_ != splitter_style) {
@@ -137,7 +137,7 @@ namespace xtd {
       //int min_size_extra_ = 25;
       //int split_position_ = -1;
       int mouse_down_location = -1;
-      xtd::forms::splitter_style splitter_style_ = xtd::forms::splitter_style::update_childs;
+      xtd::forms::splitter_style splitter_style_ = xtd::forms::splitter_style::update_children;
       xtd::forms::cursor previous_control_cursor_;
       xtd::forms::cursor next_control_cursor_;
       control* previous_control_ = nullptr;

@@ -18,7 +18,7 @@ namespace xtd {
     /// @ingroup xtd_tunit
     /// @remarks All messages are displayed on the console.
     /// @par Examples
-    /// This example sho how to instanciate and launch tests witn console unit test.
+    /// This example shows how to instantiate and launch tests with console unit test.
     /// @include console_unit_test.cpp
     class console_unit_test final : public ostream_unit_test {
     public:

@@ -89,7 +89,7 @@ namespace xtd {
       
       /// @brief Gets the custom attributes supported by the switch.
       /// @return A string array that contains the names of the custom attributes supported by the switch, or null if there no custom attributes are supported.
-      /// @remarks The default implementation for the get_supported_attributes method returns {} (mepty array)l. If a switch is added in a configuration file and custom attributes are specified that are not included in the string array returned by get_supported_attributes, a configuration_exception is thrown when the switch is loaded.
+      /// @remarks The default implementation for the get_supported_attributes method returns {} (empty array). If a switch is added in a configuration file and custom attributes are specified that are not included in the string array returned by get_supported_attributes, a configuration_exception is thrown when the switch is loaded.
       /// @par Notes to Inheritors
       /// When inheriting from the switch_base class or a derived class, you can override the get_supported_attributes() method to provide custom attributes for your class.
       virtual std::vector<xtd::ustring> get_supported_attributes() const;

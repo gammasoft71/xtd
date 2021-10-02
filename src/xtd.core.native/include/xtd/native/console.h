@@ -114,7 +114,7 @@ namespace xtd {
       /// @warning Internal use only
       static int32_t largest_window_height();
       /// @brief Gets the largest possible number of console window columns, based on the current font and screen resolution.
-      /// @param The width of the largest possible console window measured in colomns.
+      /// @param The width of the largest possible console window measured in columns.
       /// @warning Internal use only
       static int32_t largest_window_width();
       /// @brief Gets a value indicating whether the NUM LOCK keyboard toggle is turned on or turned off.
@@ -141,7 +141,7 @@ namespace xtd {
       /// @param alt true if alt key modifier is pressed; otherwise false.
       /// @param shift true if shift key modifier is pressed; otherwise false.
       /// @param ctrl true if control key modifier is pressed; otherwise false.
-      /// @remarks The five parametrs will contains informations on key pressed.
+      /// @remarks The five parameters will contains informations on key pressed.
       /// @warning Internal use only
       static void read_key(int32_t& key_char, int32_t& key_code, bool& alt, bool& shift, bool& ctrl);
       /// @brief Sets the foreground and background console colors to their defaults.

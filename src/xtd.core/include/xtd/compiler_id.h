@@ -12,7 +12,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  /// @see compileer
+  /// @see compiler
   enum class compiler_id {
     /// @brief The compiler is unknown.
     unknown = -1,

@@ -81,7 +81,7 @@ namespace xtd {
         /// @param control Control window handle.
         /// @return A size that represents the dimensions of the client area of the control.
         /// @warning Internal use only
-        /// @todo Check the redondancy with client_rectangle method.
+        /// @todo Check the redundancy with client_rectangle method.
         static drawing::size client_size(intptr_t control);
         /// @brief Sets the height and width of the client area of the control.
         /// @param control Control window handle.
@@ -91,39 +91,39 @@ namespace xtd {
         /// @brief Creates control.
         /// @param create_param A xtd::forms::create_param object that contains needed parameters to create control.
         /// @return The created control window handle.
-        /// @remarks For creating controls somes xtd::forms::create_params members are filled in as follow :
+        /// @remarks For creating controls, some xtd::forms::create_params members are filled in as follow :
         /// | Control                         | xtd::forms::create_params::class_name | xtd::forms::create_params::style                              |
         /// |---------------------------------|---------------------------------------|---------------------------------------------------------------|
-        /// | xtd::forms::button              | "button"                              | button_styles.h and window_styles.h bitwise combinaison       |
-        /// | xtd::forms::check_box           | "checkbox"                            | button_styles.h and window_styles.h bitwise combinaison       |
-        /// | xtd::forms::checked_list_box    | "checkedlistbox"                      | window_styles.h bitwise combinaison                           |
-        /// | xtd::forms::choice              | "choice"                              | window_styles.h bitwise combinaison                           |
-        /// | xtd::forms::collapsible_panel   | "collapsiblepanel"                    | window_styles.h bitwise combinaison                           |
-        /// | xtd::forms::color_picker        | "colorpicker"                         | window_styles.h bitwise combinaison                           |
-        /// | xtd::forms::combo_box           | "combobox"                            | combo_box_styles.h and window_styles.h bitwise combinaison    |
-        /// | xtd::forms::command_link_button | "commandlinkbutton"                   | window_styles.h bitwise combinaison                           |
-        /// | xtd::forms::date_time_picker    | "datetimepicker"                      | window_styles.h bitwise combinaison                           |
-        /// | xtd::forms::domain_up_down      | "domainupdown"                        | window_styles.h bitwise combinaison                           |
-        /// | xtd::forms::font_picker         | "fontpicker"                          | window_styles.h bitwise combinaison                           |
-        /// | xtd::forms::form                | "form"                                | window_styles.h bitwise combinaison                           |
-        /// | xtd::forms::group_box           | "groupbox"                            | button_styles.h and window_styles.h bitwise combinaison       |
-        /// | xtd::forms::label               | "label"                               | window_styles.h bitwise combinaison                           |
-        /// | xtd::forms::list_box            | "listbox"                             | list_box_styles.h and window_styles.h bitwise combinaison     |
-        /// | xtd::forms::loading_indicator   | "loadingindicator"                    | window_styles.h bitwise combinaison                           |
-        /// | xtd::forms::numeric_up_down     | "numericupdown"                       | window_styles.h bitwise combinaison                           |
-        /// | xtd::forms::panel               | "panel"                               | window_styles.h bitwise combinaison                           |
-        /// | xtd::forms::picture_box         | "picturebox"                          | window_styles.h bitwise combinaison                           |
-        /// | xtd::forms::progress_bar        | "progressbar"                         | progress_bar_styles.h and window_styles.h bitwise combinaison |
-        /// | xtd::forms::radio_button        | "radiobutton"                         | button_styles.h and window_styles.h bitwise combinaison       |
-        /// | xtd::forms::scrollbar           | "scrollbar"                           | scroll_bar_styles.h and window_styles.h bitwise combinaison   |
-        /// | xtd::forms::switch_button       | "switchbutton"                        | button_styles.h and window_styles.h bitwise combinaison       |
-        /// | xtd::forms::tab_control         | "tabcontrol"                          | tab_control_styles.h and window_styles.h bitwise combinaison  |
-        /// | xtd::forms::tab_page            | "tabpage"                             | window_styles.h bitwise combinaison                           |
-        /// | xtd::forms::text_box            | "textbox"                             | window_styles.h bitwise combinaison                           |
-        /// | xtd::forms::toggle_button       | "togglebutton"                        | button_styles.h and window_styles.h bitwise combinaison       |
-        /// | xtd::forms::track_bar           | "trackbar"                            | track_bar_styles.h and window_styles.h bitwise combinaison    |
-        /// | xtd::forms::up_down_button      | "updownbutton"                        | button_styles.h and window_styles.h bitwise combinaison       |
-        /// | xtd::forms::user_control        | "usercontrol"                         | window_styles.h bitwise combinaison                           |
+        /// | xtd::forms::button              | "button"                              | button_styles.h and window_styles.h bitwise combination       |
+        /// | xtd::forms::check_box           | "checkbox"                            | button_styles.h and window_styles.h bitwise combination       |
+        /// | xtd::forms::checked_list_box    | "checkedlistbox"                      | window_styles.h bitwise combination                           |
+        /// | xtd::forms::choice              | "choice"                              | window_styles.h bitwise combination                           |
+        /// | xtd::forms::collapsible_panel   | "collapsiblepanel"                    | window_styles.h bitwise combination                           |
+        /// | xtd::forms::color_picker        | "colorpicker"                         | window_styles.h bitwise combination                           |
+        /// | xtd::forms::combo_box           | "combobox"                            | combo_box_styles.h and window_styles.h bitwise combination    |
+        /// | xtd::forms::command_link_button | "commandlinkbutton"                   | window_styles.h bitwise combination                           |
+        /// | xtd::forms::date_time_picker    | "datetimepicker"                      | window_styles.h bitwise combination                           |
+        /// | xtd::forms::domain_up_down      | "domainupdown"                        | window_styles.h bitwise combination                           |
+        /// | xtd::forms::font_picker         | "fontpicker"                          | window_styles.h bitwise combination                           |
+        /// | xtd::forms::form                | "form"                                | window_styles.h bitwise combination                           |
+        /// | xtd::forms::group_box           | "groupbox"                            | button_styles.h and window_styles.h bitwise combination       |
+        /// | xtd::forms::label               | "label"                               | window_styles.h bitwise combination                           |
+        /// | xtd::forms::list_box            | "listbox"                             | list_box_styles.h and window_styles.h bitwise combination     |
+        /// | xtd::forms::loading_indicator   | "loadingindicator"                    | window_styles.h bitwise combination                           |
+        /// | xtd::forms::numeric_up_down     | "numericupdown"                       | window_styles.h bitwise combination                           |
+        /// | xtd::forms::panel               | "panel"                               | window_styles.h bitwise combination                           |
+        /// | xtd::forms::picture_box         | "picturebox"                          | window_styles.h bitwise combination                           |
+        /// | xtd::forms::progress_bar        | "progressbar"                         | progress_bar_styles.h and window_styles.h bitwise combination |
+        /// | xtd::forms::radio_button        | "radiobutton"                         | button_styles.h and window_styles.h bitwise combination       |
+        /// | xtd::forms::scrollbar           | "scrollbar"                           | scroll_bar_styles.h and window_styles.h bitwise combination   |
+        /// | xtd::forms::switch_button       | "switchbutton"                        | button_styles.h and window_styles.h bitwise combination       |
+        /// | xtd::forms::tab_control         | "tabcontrol"                          | tab_control_styles.h and window_styles.h bitwise combination  |
+        /// | xtd::forms::tab_page            | "tabpage"                             | window_styles.h bitwise combination                           |
+        /// | xtd::forms::text_box            | "textbox"                             | window_styles.h bitwise combination                           |
+        /// | xtd::forms::toggle_button       | "togglebutton"                        | button_styles.h and window_styles.h bitwise combination       |
+        /// | xtd::forms::track_bar           | "trackbar"                            | track_bar_styles.h and window_styles.h bitwise combination    |
+        /// | xtd::forms::up_down_button      | "updownbutton"                        | button_styles.h and window_styles.h bitwise combination       |
+        /// | xtd::forms::user_control        | "usercontrol"                         | window_styles.h bitwise combination                           |
         /// @remarks Read xtd::forms::create_params for other members.
         /// @note For more portability and compatibility with underlying toolkits, xtd::forms::create_params::class_name does not contains real Windows names like WC_DIALOG, WC_BUTTON,...
         /// @warning Internal use only
@@ -138,7 +138,7 @@ namespace xtd {
         /// @return A graphics handle for the paint event control.
         /// @warning Internal use only
         static intptr_t create_paint_graphics(intptr_t control);
-        /// @brief Creates a raphics for the double buffer paint event control.
+        /// @brief Creates a graphics for the double buffer paint event control.
         /// @param control Control window handle.
         /// @return A graphics handle for the double buffered paint event control.
         /// @warning Internal use only
@@ -152,7 +152,7 @@ namespace xtd {
         /// @param control Control window handle.
         /// @param hwnd The window handle of the message.
         /// @param msg The ID number for the message.
-        /// @param wparam The wwparam field of the message.
+        /// @param wparam The wparam field of the message.
         /// @param lparam The lparam field of the message.
         /// @param result The return value of the message.
         /// @param handle The handle on specific operating system data
@@ -285,7 +285,7 @@ namespace xtd {
         /// @warning Internal use only
         static void visible(intptr_t control, bool visible);
         
-        /// @brief Coomvert message identifiers to a string.
+        /// @brief Convert message identifiers to a string.
         /// @param control Control window handle.
         /// @param id An int32_t message id.
         /// @return A string that represent the message id.

@@ -65,7 +65,7 @@ namespace xtd {
         static std::string device_name(size_t index);
         /// @brief Gets the pixels per inch of the display.
         /// @param index The screen index.
-        /// @return The pixels per inch of the diplay.
+        /// @return The pixels per inch of the display.
         /// @warning Internal use only
         static int32_t pixels_per_inch(size_t index);
         /// @brief Gets a value indicating whether a particular display is the primary device.
@@ -75,7 +75,7 @@ namespace xtd {
         static bool primary(size_t index);
         /// @brief Gets the scale factor of the display.
         /// @param index The screen index.
-        /// @return The scale factor of the diplay.
+        /// @return The scale factor of the display.
         /// @warning Internal use only
         static double scale_factor(size_t index);
         /// @brief Gets the standard pixels per inch.
@@ -94,7 +94,7 @@ namespace xtd {
         /// @warning Internal use only
         static size_t from_handle(intptr_t handle);
         /// @brief Retrieves a screen for the display that contains the specified point.
-        /// @param point A xtd::drawing::oint that specifies the location for which to retrieve a screen.
+        /// @param point A xtd::drawing::point that specifies the location for which to retrieve a screen.
         /// @return A screen index for the display that contains the point. In multiple display environments where no display contains the point, the display closest to the specified point is returned.
         /// @warning Internal use only
         static size_t from_point(const drawing::point& point);

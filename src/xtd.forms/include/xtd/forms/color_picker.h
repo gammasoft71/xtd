@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::color_picker picker contrtols.
+/// @brief Contains xtd::forms::color_picker picker controls.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "control.h"

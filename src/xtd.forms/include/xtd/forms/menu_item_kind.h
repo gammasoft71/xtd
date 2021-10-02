@@ -23,7 +23,7 @@ namespace xtd {
       radio = 2,
       /// Drop down menu item.
       drop_down = 3,
-      /// Seprator menu item.
+      /// Separator menu item.
       separator = 4,
     };
 

@@ -25,7 +25,7 @@ namespace xtd {
     /// The following code example demonstrate the use of main_menu control.
     /// @include main_menu.cpp
     /// @par Examples
-    /// The following code example demonstrate the use of main_menu::create_standard_items factroy.
+    /// The following code example demonstrate the use of main_menu::create_standard_items factory.
     /// @include main_menu_create_standard_items.cpp
     class forms_export_ main_menu : public menu {
     public:
@@ -44,7 +44,7 @@ namespace xtd {
       /// @return new main menu instance.
       static xtd::forms::main_menu create_standard_items(const xtd::event_handler& on_click);
       /// @brief A factory to create a main menu with specified image size and on click event handler.
-      /// @param image_size A xttd::drawing::size that represent the menu item image size.
+      /// @param image_size A xtd::drawing::size that represent the menu item image size.
       /// @param on_click an event handler to respond on lick event.
       /// @return new main menu instance.
       static xtd::forms::main_menu create_standard_items(const xtd::drawing::size& image_size, const xtd::event_handler& on_click);
@@ -55,13 +55,13 @@ namespace xtd {
       static xtd::forms::main_menu create_standard_items(const xtd::ustring& theme, const xtd::event_handler& on_click);
       /// @brief A factory to create a main menu with specified theme, image size and on click event handler.
       /// @param theme The theme of menu item image.
-      /// @param image_size A xttd::drawing::size that represent the menu item image size.
+      /// @param image_size A xtd::drawing::size that represent the menu item image size.
       /// @param on_click an event handler to respond on lick event.
       /// @return new main menu instance.
       static xtd::forms::main_menu create_standard_items(const xtd::ustring& theme, const xtd::drawing::size& size, const xtd::event_handler& on_click);
       /// @brief A factory to create a main menu with specified theme, image size and on click event handler.
       /// @param theme The theme of menu item image.
-      /// @param image_size A xttd::drawing::size that represent the menu item image size.
+      /// @param image_size A xtd::drawing::size that represent the menu item image size.
       /// @param on_click an event handler to respond on lick event.
       /// @return new main menu instance.
       static xtd::forms::main_menu create_standard_items(const xtd::forms::theme_images& theme, const xtd::drawing::size& size, const xtd::event_handler& on_click);

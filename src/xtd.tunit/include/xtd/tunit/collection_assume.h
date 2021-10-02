@@ -228,7 +228,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> a1 = {1, 2, 3, 4};
-      /// xtd::tunit::collection_assume::all_iall_items_are_uniquetems_are_not_null(a1, csf_); // test ok.
+      /// xtd::tunit::collection_assume::all_items_are_unique(a1, csf_); // test ok.
       /// std::vector<int> a2 = {1, 2, 3, 4, 1};
       /// xtd::tunit::collection_assume::all_items_are_unique(a2, csf_);// test throws an abort_error exception..
       /// @endcode
@@ -828,7 +828,7 @@ namespace xtd {
       }
       /// @endcond
 
-      /// @brief Assumes that ollection contains all items.
+      /// @brief Assumes that collection contains all items.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.

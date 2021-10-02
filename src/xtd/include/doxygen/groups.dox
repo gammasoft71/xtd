@@ -18,7 +18,7 @@
 /// @ingroup gui
 
 /// @defgroup controls controls
-/// @brief Controls are childs windows that an application uses in conjunction with another window to enable interaction with the user.
+/// @brief Controls are children windows that an application uses in conjunction with another window to enable interaction with the user.
 /// @ingroup gui
 
 /// @defgroup debug debug
@@ -35,7 +35,7 @@
 /// @defgroup drawing drawing
 /// @brief All needed for drawing something.
 /// @remarks A xtd::drawing::graphics class is create from xtd::forms::control::create_graphics or xtd::forms::screen::create_graphics or xtd::drawing::image::create_graphics.
-/// @remarks And also when xtd::forms::control::paint event is sended, the xtd::forms::paint_event_args contains a xtd::drawing::graphics associate to the control event paint.
+/// @remarks And also when xtd::forms::control::paint event is sent, the xtd::forms::paint_event_args contains a xtd::drawing::graphics associate to the control event paint.
 
 /// @defgroup events events
 /// @brief events are event args and event handler needed to response to window messages.
@@ -100,11 +100,11 @@
 /// @ingroup libraries
 
 /// @defgroup xtd_forms xtd.forms
-/// @brief The xtd.foms library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
+/// @brief The xtd.forms library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
 /// @ingroup libraries
 
 /// @defgroup xtd_tunit xtd.tunit
-/// @brief The xtd.tunit library contains compnents needed for unit testing.
+/// @brief The xtd.tunit library contains components needed for unit testing.
 /// @ingroup libraries
 
 /// @defgroup web web

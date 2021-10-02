@@ -6,13 +6,13 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Identifies the buil type
+  /// @brief Identifies the build type
   /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  /// @see compileer
+  /// @see compiler
   enum class build_type {
     /// @brief Build type debug.
     debug = 0,

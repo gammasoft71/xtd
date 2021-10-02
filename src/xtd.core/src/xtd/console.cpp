@@ -121,15 +121,15 @@ bool console::input_code_page(int32_t code_page) {
   return __opaque_console::input_code_page(code_page);
 }
 
-bool console::is_error_redireted() {
+bool console::is_error_redirected() {
   return error.rdbuf() != __get_err_rdbuf();
 }
 
-bool console::is_in_redireted() {
+bool console::is_in_redirected() {
   return in.rdbuf() != __get_in_rdbuf();
 }
 
-bool console::is_out_redireted() {
+bool console::is_out_redirected() {
   return out.rdbuf() != __get_out_rdbuf();
 }
 

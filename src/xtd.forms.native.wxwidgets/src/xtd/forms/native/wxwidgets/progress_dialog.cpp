@@ -36,18 +36,18 @@ namespace {
     }
     
     void minimum(int32_t minimum) {
-      minumum_ = minimum;
-      if (maximum_ - minumum_> 0) SetRange(maximum_ - minumum_);
+      minimum_ = minimum;
+      if (maximum_ - minimum_> 0) SetRange(maximum_ - minimum_);
     }
 
     void maximum(int32_t maximum) {
       maximum_ = maximum;
-      if (maximum_ - minumum_ > 0) SetRange(maximum_ - minumum_);
+      if (maximum_ - minimum_ > 0) SetRange(maximum_ - minimum_);
     }
 
     void value(int32_t value) {
       value_ = value;
-      if (value_ - minumum_ > 0) Update(value_ - minumum_);
+      if (value_ - minimum_ > 0) Update(value_ - minimum_);
     }
 
     void marquee(bool marquee, size_t animation_speed) {
@@ -68,7 +68,7 @@ namespace {
   private:
     size_t animation_speed_ = 0;
     int32_t maximum_ = 0;
-    int32_t minumum_ = 0;
+    int32_t minimum_ = 0;
     wxTimer timer_marquee;
     int32_t value_ = 0;
   };

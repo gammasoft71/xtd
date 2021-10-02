@@ -380,14 +380,14 @@ namespace xtd {
       /// @param fore_core The toggle_button foreground color.
       /// @return The created toggle_button.
       static std::unique_ptr<toggle_button> del(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<toggle_button>(parent, texts::del(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined toggle_button that represent decending toggle_button.
+      /// @brief Create a system-defined toggle_button that represent descending toggle_button.
       /// @param location The toggle_button location in pixels.
       /// @param size The toggle_button size in pixels.
       /// @param back_color The toggle_button background color.
       /// @param fore_core The toggle_button foreground color.
       /// @return The created toggle_button.
       static std::unique_ptr<toggle_button> descending(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<toggle_button>(texts::descending(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined toggle_button that represent decending toggle_button.
+      /// @brief Create a system-defined toggle_button that represent descending toggle_button.
       /// @param parent The control that contains the toggle_button.
       /// @param location The toggle_button location in pixels.
       /// @param size The toggle_button size in pixels.
@@ -995,7 +995,7 @@ namespace xtd {
       /// @param fore_core The toggle_button foreground color.
       /// @return The created toggle_button.
       static std::unique_ptr<toggle_button> save_as(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<toggle_button>(parent, texts::save_as(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined toggle_button that represent seach toggle_button.
+      /// @brief Create a system-defined toggle_button that represent search toggle_button.
       /// @param location The toggle_button location in pixels.
       /// @param size The toggle_button size in pixels.
       /// @param back_color The toggle_button background color.
@@ -1145,14 +1145,14 @@ namespace xtd {
       /// @param fore_core The toggle_button foreground color.
       /// @return The created toggle_button.
       static std::unique_ptr<toggle_button> undo(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<toggle_button>(parent, texts::undo(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined toggle_button that represent uindent toggle_button.
+      /// @brief Create a system-defined toggle_button that represents an unindented toggle_button.
       /// @param location The toggle_button location in pixels.
       /// @param size The toggle_button size in pixels.
       /// @param back_color The toggle_button background color.
       /// @param fore_core The toggle_button foreground color.
       /// @return The created toggle_button.
       static std::unique_ptr<toggle_button> unindent(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<toggle_button>(texts::unindent(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined toggle_button that represent unindent toggle_button.
+      /// @brief Create a system-defined toggle_button that represents an unindented toggle_button.
       /// @param parent The control that contains the toggle_button.
       /// @param location The toggle_button location in pixels.
       /// @param size The toggle_button size in pixels.

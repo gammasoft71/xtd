@@ -276,7 +276,7 @@ namespace xtd {
       static cursor no();
       
       /// @brief Gets the cursor that indicates that a particular region is invalid for the current drag & drop operation.
-      /// @return The cursor that represents the cursor that indicates that a particular region is invalid for the curren drag & dropt operation.
+      /// @return The cursor that represents the cursor that indicates that a particular region is invalid for the curren drag & drop operation.
       /// @par Appearance
       /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
       ///   <tr>

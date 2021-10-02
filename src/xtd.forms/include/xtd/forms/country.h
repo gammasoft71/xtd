@@ -47,7 +47,7 @@ namespace xtd {
       virtual const xtd::ustring alpha_3_code() const {return alpha_3_code_;}
 
       /// @brief Gets the country emoticon.
-      /// @return A string that represent the emoticpn.
+      /// @return A string that represent the emoticon.
       virtual const xtd::ustring emoticon() const {return emoticon_;}
       
       /// @brief Gets the country flag.
@@ -63,7 +63,7 @@ namespace xtd {
       virtual const xtd::ustring name() const {return name_;}
 
       /// @brief Gets the country numeric code.
-      /// @return A signed-integer that represent the numerci code.
+      /// @return A signed-integer that represent the numeric code.
       virtual int numeric_code() const {return numeric_code_;}
 
       /// @brief Gets a country from alpha 2 code.

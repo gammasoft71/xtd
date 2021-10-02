@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains __string_formater method.
+/// @brief Contains __string_formatter method.
 #pragma once
 /// @cond
 #ifndef __XTD_CORE_INTERNAL__
@@ -11,7 +11,7 @@
 
 /// @cond
 template<typename char_t, typename value_t>
-inline std::basic_string<char_t> __string_formater(const std::basic_string<char_t>& fmt, value_t value, const std::locale& loc) {
+inline std::basic_string<char_t> __string_formatter(const std::basic_string<char_t>& fmt, value_t value, const std::locale& loc) {
   return __format_stringer<char_t>(value);
 }
 /// @endcond

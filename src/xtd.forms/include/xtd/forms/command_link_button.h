@@ -11,7 +11,7 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    /// @brief Represents a Windows coommand link button control.
+    /// @brief Represents a Windows command link button control.
     /// @par Namespace
     /// xtd::forms
     /// @par Library
@@ -30,13 +30,13 @@ namespace xtd {
       /// @return One of the AutoSizeMode values. The default value is grow_only.
       virtual forms::auto_size_mode auto_size_mode() const {return auto_size_mode_;}
       /// @brief Sets the mode by which the button automatically resizes itself.
-      /// @param value One of the AutoSizeMode values. The default value is growonly.
+      /// @param value One of the AutoSizeMode values. The default value is grow_only.
       virtual command_link_button& auto_size_mode(forms::auto_size_mode value);
       
       /// @brief Set text and supplementary text.
       /// @param text A string that represent control text
-      /// @param supplementary_text A string thatt represent supplementary text.
-      /// @remarks Is equavant to call text property with text and spplementary_text separed by "\n".
+      /// @param supplementary_text A string that represent supplementary text.
+      /// @remarks Is equivalent to call text property with text and supplementary_text separated by "\n".
       virtual control& texts(const xtd::ustring& text, const xtd::ustring& supplementary_text) {return this->text(ustring::format("{}{}{}", text, environment::new_line(), supplementary_text));}
 
       drawing::size default_size() const override {return {200, 60};}

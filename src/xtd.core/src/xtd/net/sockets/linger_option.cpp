@@ -5,15 +5,15 @@ using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 
-linger_option::linger_option(bool enabled, uint32_t linger_time) : enabledd_(enabled), linger_time_(linger_time) {
+linger_option::linger_option(bool enabled, uint32_t linger_time) : enabled_(enabled), linger_time_(linger_time) {
 }
 
 bool linger_option::enabled() const noexcept {
-  return enabledd_;
+  return enabled_;
 }
 
 linger_option& linger_option::enabled(bool value) noexcept {
-  enabledd_ = value;
+  enabled_ = value;
   return *this;
 }
 

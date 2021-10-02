@@ -24,7 +24,7 @@ namespace xtd {
       file_valid() = delete;
       /// @endcond
 
-      /// @brief Valids that two files are equal.
+      /// @brief Validate that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @par Examples
@@ -43,7 +43,7 @@ namespace xtd {
       template<typename Char>
       static void are_equal(const std::basic_istream<Char>& expected, const std::basic_istream<Char>& actual) {are_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that two files are equal.
+      /// @brief Validate that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param stack_frame Contains information about current file and current line.
@@ -63,7 +63,7 @@ namespace xtd {
       template<typename Char>
       static void are_equal(const std::basic_istream<Char>& expected, const std::basic_istream<Char>& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(expected, actual, "", stack_frame);}
       
-      /// @brief Valids that two files are equal.
+      /// @brief Validate that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -83,7 +83,7 @@ namespace xtd {
       template<typename Char>
       static void are_equal(const std::basic_istream<Char>& expected, const std::basic_istream<Char>& actual, const std::string& message) {are_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that two files are equal.
+      /// @brief Validate that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -110,7 +110,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that two files are equal.
+      /// @brief Validate that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @par Examples
@@ -129,7 +129,7 @@ namespace xtd {
       template<typename Char>
       static void are_equal(const std::basic_string<Char>& expected, const std::basic_string<Char>& actual) {are_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that two files are equal.
+      /// @brief Validate that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param stack_frame Contains information about current file and current line.
@@ -149,7 +149,7 @@ namespace xtd {
       template<typename Char>
       static void are_equal(const std::basic_string<Char>& expected, const std::basic_string<Char>& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(expected, actual, "", stack_frame);}
       
-      /// @brief Valids that two files are equal.
+      /// @brief Validate that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -169,7 +169,7 @@ namespace xtd {
       template<typename Char>
       static void are_equal(const std::basic_string<Char>& expected, const std::basic_string<Char>& actual, const std::string& message) {are_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that two files are equal.
+      /// @brief Validate that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -217,7 +217,7 @@ namespace xtd {
       static void are_equal(const Char* expected, const Char* actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual), message, stack_frame);}
       /// @endcond
 
-      /// @brief Valids that two files are not equal.
+      /// @brief Validate that two files are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @par Examples
@@ -236,7 +236,7 @@ namespace xtd {
       template<typename Char>
       static void are_not_equal(const std::basic_istream<Char>& expected, const std::basic_istream<Char>& actual) {are_not_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that two files are not equal.
+      /// @brief Validate that two files are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param stack_frame Contains information about current file and current line.
@@ -256,7 +256,7 @@ namespace xtd {
       template<typename Char>
       static void are_not_equal(const std::basic_istream<Char>& expected, const std::basic_istream<Char>& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(expected, actual, "", stack_frame);}
       
-      /// @brief Valids that two files are not equal.
+      /// @brief Validate that two files are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -276,7 +276,7 @@ namespace xtd {
       template<typename Char>
       static void are_not_equal(const std::basic_istream<Char>& expected, const std::basic_istream<Char>& actual, const std::string& message) {are_not_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that two files are not equal.
+      /// @brief Validate that two files are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -303,7 +303,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that two files are not equal.
+      /// @brief Validate that two files are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @par Examples
@@ -322,7 +322,7 @@ namespace xtd {
       template<typename Char>
       static void are_not_equal(const std::basic_string<Char>& expected, const std::basic_string<Char>& actual) {are_not_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that two files are not equal.
+      /// @brief Validate that two files are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param stack_frame Contains information about current file and current line.
@@ -342,7 +342,7 @@ namespace xtd {
       template<typename Char>
       static void are_not_equal(const std::basic_string<Char>& expected, const std::basic_string<Char>& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(expected, actual, "", stack_frame);}
       
-      /// @brief Valids that two files are not equal.
+      /// @brief Validate that two files are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -362,7 +362,7 @@ namespace xtd {
       template<typename Char>
       static void are_not_equal(const std::basic_string<Char>& expected, const std::basic_string<Char>& actual, const std::string& message) {are_not_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that two files are not equal.
+      /// @brief Validate that two files are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -410,7 +410,7 @@ namespace xtd {
       static void are_not_equal(const Char* expected, const Char* actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual), message, stack_frame);}
       /// @endcond
       
-      /// @brief Valids that file exists.
+      /// @brief Validate that file exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @par Examples
@@ -423,7 +423,7 @@ namespace xtd {
       template<typename Char>
       static void exists(const std::basic_string<Char>& file) {exists(file, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that file exists.
+      /// @brief Validate that file exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param stack_frame Contains information about current file and current line.
@@ -437,7 +437,7 @@ namespace xtd {
       template<typename Char>
       static void exists(const std::basic_string<Char>& file, const xtd::diagnostics::stack_frame& stack_frame) {exists(file, "", stack_frame);}
       
-      /// @brief Valids that file exists.
+      /// @brief Validate that file exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -451,7 +451,7 @@ namespace xtd {
       template<typename Char>
       static void exists(const std::basic_string<Char>& file, const std::string& message) {exists(file, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that file exists.
+      /// @brief Validate that file exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -483,7 +483,7 @@ namespace xtd {
       static void exists(const Char* file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {exists(std::basic_string<Char>(file), message, stack_frame);}
       /// @endcond
       
-      /// @brief Valids that file not exists.
+      /// @brief Validate that file not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @par Examples
@@ -496,7 +496,7 @@ namespace xtd {
       template<typename Char>
       static void does_not_exist(const std::basic_string<Char>& file) {does_not_exist(file, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that file not exists.
+      /// @brief Validate that file not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param stack_frame Contains information about current file and current line.
@@ -510,7 +510,7 @@ namespace xtd {
       template<typename Char>
       static void does_not_exist(const std::basic_string<Char>& file, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(file, "", stack_frame);}
       
-      /// @brief Valids that file not exists.
+      /// @brief Validate that file not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -524,7 +524,7 @@ namespace xtd {
       template<typename Char>
       static void does_not_exist(const std::basic_string<Char>& file, const std::string& message) {does_not_exist(file, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that file not exists.
+      /// @brief Validate that file not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.

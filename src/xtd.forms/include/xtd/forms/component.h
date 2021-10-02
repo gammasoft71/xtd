@@ -22,7 +22,7 @@ namespace xtd {
     public:
       
     protected:
-      /// @brief Initialises a new instance of the compnent class.
+      /// @brief Initialises a new instance of the component class.
       component() = default;
       
       /// @brief Gets a value indicating whether the component can raise an event.

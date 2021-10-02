@@ -8,16 +8,16 @@
 ///
 /// @section xtdBuildOptions xtd build options
 ///
-/// | Option Name                                  | Type   | Descrption                                                                            | Default Value       |
+/// | Option Name                                  | Type   | Description                                                                            | Default Value       |
 /// | ---------------------------------------------|--------|---------------------------------------------------------------------------------------|---------------------|
-/// | XTD_BUILD_CPP_STANDARD                       | string | Choose c++ standardd to build xtd projects (20 17 14 11 compiler_default)             | 20                  |
+/// | XTD_BUILD_CPP_STANDARD                       | string | Choose c++ standard to build xtd projects (20 17 14 11 compiler_default)             | 20                  |
 /// | XTD_BUILD_LIBRARIES_XTD_CORE                 | bool   | Build xtd.core libraries                                                              | ON                  |
 /// | XTD_BUILD_LIBRARIES_XTD_DRAWING              | bool   | Build xtd.drawing libraries                                                           | ON                  |
 /// | XTD_BUILD_LIBRARIES_XTD_FORMS                | bool   | Build xtd.forms libraries                                                             | ON                  |
 /// | XTD_BUILD_LIBRARIES_XTD_TUNIT                | bool   | Build xtd.tunit libraries                                                             | ON                  |
 /// | XTD_BUILD_SHARED_LIBRARIES                   | bool   | Build shared libraries                                                                | OFF                 |
 /// | XTD_BUILD_TESTS_XTD_CORE                     | bool   | Build xtd.core tests                                                                  | OFF                 |
-/// | XTD_BUILD_TESTS_XTD_DRRAWING                 | bool   | Build xtd.drawing tests                                                               | OFF                 |
+/// | XTD_BUILD_TESTS_XTD_DRAWING                  | bool   | Build xtd.drawing tests                                                               | OFF                 |
 /// | XTD_BUILD_TESTS_XTD_FORMS                    | bool   | Build xtd.forms tests                                                                 | OFF                 |
 /// | XTD_BUILD_TESTS_XTD_TUNIT                    | bool   | Build xtd.tunit tests                                                                 | OFF                 |
 /// | XTD_BUILD_TOOL_GUIDGEN_COMMAND_LINE          | bool   | Build tool guidgen command line                                                       | ON                  |
@@ -32,7 +32,7 @@
 /// | XTD_INSTALL_RESOURCES                        | bool   | Install resources                                                                     | ON                  |
 /// | XTD_NATIVE_GRAPHIC_TOOLKIT                   | string | Choose toolkit for native drawing and forms libraries <i>(see note 1)</i>             | wxwidgets           |
 /// | XTD_NATIVE_OPERATING_SYSTEM                  | string | Choose Operating System for native system libraries (Windows macOS linux iOS android) | The current host OS |
-/// | XTD_SET_COMPILER_OPTION_WARNINGS_AS_ERRORS   | bool   | nable compiler option warnings as errors                                              | ON                  |
+/// | XTD_SET_COMPILER_OPTION_WARNINGS_AS_ERRORS   | bool   | Enable compiler option warnings as errors                                              | ON                  |
 /// | XTD_SET_COMPILER_OPTION_WARNINGS_TO_ALL      | bool   | Enable compiler option warnings to all                                                | ON                  |
 ///
 /// <i>(note 1)</i> The list of the underlying graphic toolkit depends of the operating system :
@@ -47,10 +47,10 @@
 ///
 /// @section xtUserProjectdBuildOptions xtd user project build options
 ///
-/// | Option Name                                  | Type   | Descrption                                                                            | Default Value       |
+/// | Option Name                                  | Type   | Description                                                                            | Default Value       |
 /// | ---------------------------------------------|--------|---------------------------------------------------------------------------------------|---------------------|
-/// | XTD_BUILD_CPP_STANDARD                       | string | Choose c++ standardd to build xtd projects (20 17 14 11 compiler_default)             | 20                  |
+/// | XTD_BUILD_CPP_STANDARD                       | string | Choose c++ standard to build xtd projects (20 17 14 11 compiler_default)             | 20                  |
 /// | XTD_DOWNLOAD_DOXYGEN                         | bool   | Download and build doxygen from Github                                                | OFF                 |
 /// | XTD_ENABLE_COMMAND_REFERENCE_GUIDE_GENERATOR | bool   | Enable command Reference Guide Generator                                              | ON                  |
-/// | XTD_SET_COMPILER_OPTION_WARNINGS_AS_ERRORS   | bool   | nable compiler option warnings as errors                                              | OFF                 |
+/// | XTD_SET_COMPILER_OPTION_WARNINGS_AS_ERRORS   | bool   | Enable compiler option warnings as errors                                              | OFF                 |
 /// | XTD_SET_COMPILER_OPTION_WARNINGS_TO_ALL      | bool   | Enable compiler option warnings to all                                                | ON                  |

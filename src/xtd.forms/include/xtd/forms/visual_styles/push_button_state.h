@@ -16,7 +16,7 @@ namespace xtd {
       /// @par Library
       /// xtd.forms
       /// @ingroup xtd_forms
-      /// @remarks The push_button_state values correspond to the states of the visual_style_element objects exposed by the visual_style_element:bvutton::push_button class. The push_button_state values are also used as an argument in the button_renderer.draw_button method.
+      /// @remarks The push_button_state values correspond to the states of the visual_style_element objects exposed by the visual_style_element:button::push_button class. The push_button_state values are also used as an argument in the button_renderer.draw_button method.
       enum class push_button_state {
         /// @brief The button has the normal appearance.
         normal = 1,

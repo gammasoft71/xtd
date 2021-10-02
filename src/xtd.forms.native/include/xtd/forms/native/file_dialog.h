@@ -48,11 +48,11 @@ namespace xtd {
         /// @param filter The file filtering options available in the dialog box.
         /// @param filter_index A value containing the index of the filter currently selected in the file dialog box.
         /// @param initial_directory The initial directory displayed by the file dialog box.
-        /// @param options A bittwise file dialog flags value.
+        /// @param options A bitwise file dialog flags value.
         /// @param support_multi_dotted_extensions true if the dialog box supports multiple file name extensions; otherwise, false. The default is false.
         /// @param title The file dialog box title.
         /// @return true if the user clicks OK in the dialog box; otherwise, false.
-        /// @remarks If result is true, the file_name parameter contains the new chosen file name and if opotioon cantains OFN_ALLOWMULTISELECT flags, the file_names parameter contains the new chosen file names.
+        /// @remarks If result is true, the file_name parameter contains the new chosen file name and if option contains OFN_ALLOWMULTISELECT flags, the file_names parameter contains the new chosen file names.
         /// @warning Internal use only
         static bool run_open_dialog(intptr_t hwnd, const xtd::ustring& default_ext, xtd::ustring& file_name, std::vector<xtd::ustring>& file_names, const xtd::ustring& filter, size_t filter_index, const xtd::ustring& initial_directory, size_t options, bool support_multi_dotted_extensions, const xtd::ustring& title);
         /// @brief Shows async open file dialog as sheet.
@@ -64,11 +64,11 @@ namespace xtd {
         /// @param filter The file filtering options available in the dialog box.
         /// @param filter_index A value containing the index of the filter currently selected in the file dialog box.
         /// @param initial_directory The initial directory displayed by the file dialog box.
-        /// @param options A bittwise file dialog flags value.
+        /// @param options A bitwise file dialog flags value.
         /// @param support_multi_dotted_extensions true if the dialog box supports multiple file name extensions; otherwise, false. The default is false.
         /// @param title The file dialog box title.
         /// @return true if the user clicks OK in the dialog box; otherwise, false.
-        /// @remarks When dialog closed and if result is true, the file_name parameter contains the new chosen file name and if opotioon cantains OFN_ALLOWMULTISELECT flags, the file_names parameter contains the new chosen file names.
+        /// @remarks When dialog closed and if result is true, the file_name parameter contains the new chosen file name and if option contains OFN_ALLOWMULTISELECT flags, the file_names parameter contains the new chosen file names.
         /// @warning Internal use only
         static void run_open_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const xtd::ustring& default_ext, xtd::ustring& file_name, std::vector<xtd::ustring>& file_names, const xtd::ustring& filter, size_t filter_index, const xtd::ustring& initial_directory, size_t options, bool support_multi_dotted_extensions, const xtd::ustring& title);
         /// @brief Shows save file dialog.
@@ -79,11 +79,11 @@ namespace xtd {
         /// @param filter The file filtering options available in the dialog box.
         /// @param filter_index A value containing the index of the filter currently selected in the file dialog box.
         /// @param initial_directory The initial directory displayed by the file dialog box.
-        /// @param options A bittwise file dialog flags value.
+        /// @param options A bitwise file dialog flags value.
         /// @param support_multi_dotted_extensions true if the dialog box supports multiple file name extensions; otherwise, false. The default is false.
         /// @param title The file dialog box title.
         /// @return true if the user clicks OK in the dialog box; otherwise, false.
-        /// @remarks If result is true, the file_name parameter contains the new chosen file name and if opotioon cantains OFN_ALLOWMULTISELECT flags, the file_names parameter contains the new chosen file names.
+        /// @remarks If result is true, the file_name parameter contains the new chosen file name and if option contains OFN_ALLOWMULTISELECT flags, the file_names parameter contains the new chosen file names.
         /// @warning Internal use only
         static bool run_save_dialog(intptr_t hwnd, const xtd::ustring& default_ext, xtd::ustring& file_name, std::vector<xtd::ustring>& file_names, const xtd::ustring& filter, size_t filter_index, const xtd::ustring& initial_directory, size_t options, bool support_multi_dotted_extensions, const xtd::ustring& title);
         /// @brief Shows async save file dialog as sheet.
@@ -95,11 +95,11 @@ namespace xtd {
         /// @param filter The file filtering options available in the dialog box.
         /// @param filter_index A value containing the index of the filter currently selected in the file dialog box.
         /// @param initial_directory The initial directory displayed by the file dialog box.
-        /// @param options A bittwise file dialog flags value.
+        /// @param options A bitwise file dialog flags value.
         /// @param support_multi_dotted_extensions true if the dialog box supports multiple file name extensions; otherwise, false. The default is false.
         /// @param title The file dialog box title.
         /// @return true if the user clicks OK in the dialog box; otherwise, false.
-        /// @remarks When dialog closed and if result is true, the file_name parameter contains the new chosen file name and if opotioon cantains OFN_ALLOWMULTISELECT flags, the file_names parameter contains the new chosen file names.
+        /// @remarks When dialog closed and if result is true, the file_name parameter contains the new chosen file name and if option contains OFN_ALLOWMULTISELECT flags, the file_names parameter contains the new chosen file names.
         /// @warning Internal use only
         static void run_save_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const xtd::ustring& default_ext, xtd::ustring& file_name, std::vector<xtd::ustring>& file_names, const xtd::ustring& filter, size_t filter_index, const xtd::ustring& initial_directory, size_t options, bool support_multi_dotted_extensions, const xtd::ustring& title);
       };

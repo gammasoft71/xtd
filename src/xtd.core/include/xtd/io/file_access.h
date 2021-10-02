@@ -8,7 +8,7 @@
 namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
-    /// @brief Defines constants for read, write, or read/write access to a file. This enumeration has a fllags attribute that allows a bitwise combination of its member values.
+    /// @brief Defines constants for read, write, or read/write access to a file. This enumeration has a flags attribute that allows a bitwise combination of its member values.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core

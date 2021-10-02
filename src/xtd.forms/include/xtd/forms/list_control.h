@@ -15,13 +15,13 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms
     /// @remarks The list_control class provides implementations of common elements for the list_box and combo_box controls.
-    /// @remarks The following properties are of primary concern to users of a data-bound list_box, choioce or combo_box: data_source, display_member, selected_value, and value_member properties.
+    /// @remarks The following properties are of primary concern to users of a data-bound list_box, choice or combo_box: data_source, display_member, selected_value, and value_member properties.
     class forms_export_ list_control : public control {
     public:
       /// @brief Represent an item contained in the list_control::object_collection collection.
       class item {
       public:
-        /// @brief Represent the sorter cllass used by list_control::object_collection collection.
+        /// @brief Represent the sorter class used by list_control::object_collection collection.
         class sorter {
         public:
           /// @brief sorter functor.
@@ -67,7 +67,7 @@ namespace xtd {
         /// @return A std::any that represent the tag of item.
         virtual std::any tag() const {return tag_;}
         
-        /// @brief Returns a string containing the vakue of the item.
+        /// @brief Returns a string containing the value of the item.
         /// @return A string containing the value of the item.
         xtd::ustring to_string() const {return value_;}
         
@@ -99,7 +99,7 @@ namespace xtd {
       static const size_t npos = std::numeric_limits<size_t>::max();
       
     protected:
-      /// @brief Initializes a new instance of the listt_conrol class.
+      /// @brief Initializes a new instance of the list_control class.
       list_control();
   
       /// @brief Gets a value indicating whether the list enables selection of list items.

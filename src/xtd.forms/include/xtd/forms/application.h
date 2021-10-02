@@ -184,7 +184,7 @@ namespace xtd {
       static void enable_menu_images();
 
       /// @brief Enables visual styles for the application.
-      /// @remarks This method enables visual styles for the application. Visual styles are the colors, fonts, and other visual elements that form an operating system theme. Controls will draw with visual styles if the control and the operating system support it. To have an effect, nnable_visual_styles() must be called before creating any controls in the application; typically, enable_visual_styles() is the first line in the Main function. A separate manifest is not required to enable visual styles when calling enable_visual_styles().
+      /// @remarks This method enables visual styles for the application. Visual styles are the colors, fonts, and other visual elements that form an operating system theme. Controls will draw with visual styles if the control and the operating system support it. To have an effect, enable_visual_styles() must be called before creating any controls in the application; typically, enable_visual_styles() is the first line in the Main function. A separate manifest is not required to enable visual styles when calling enable_visual_styles().
       static void enable_visual_styles();
       
       /// @brief Informs all message pumps that they must terminate, and then closes all application windows after the messages have been processed.
@@ -301,7 +301,7 @@ namespace xtd {
       static event<application, delegate<void(const event_args&)>> leave_thread_modal;
       
       /*
-      /// @brief Occurs when an untrapped thread exception is thrown.
+      /// @brief Occurs when an untapped thread exception is thrown.
       /// @ingroup events
       /// @remarks This event allows your Windows Forms application to handle otherwise unhandled exceptions that occur in Windows Forms threads. Attach your event handlers to the thread_exception event to deal with these exceptions, which will leave your application in an unknown state. Where possible, exceptions should be handled by a structured exception handling block.
       /// @param You can change whether this callback is used for unhandled Windows Forms thread exceptions by setting set_unhandled_exception_mode. To catch exceptions that occur in threads not created and owned by Windows Forms, use the unhandled_exception event handler.

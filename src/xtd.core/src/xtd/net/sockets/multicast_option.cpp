@@ -6,10 +6,10 @@ using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 
-multicast_option::multicast_option(const xtd::net::ip_address& group, const xtd::net::ip_address& local_address) : group_(group), local_adress_(local_address) {
+multicast_option::multicast_option(const xtd::net::ip_address& group, const xtd::net::ip_address& local_address) : group_(group), local_address_(local_address) {
 }
 
-multicast_option::multicast_option(const xtd::net::ip_address& group) : group_(group), local_adress_(ip_address::any) {
+multicast_option::multicast_option(const xtd::net::ip_address& group) : group_(group), local_address_(ip_address::any) {
 }
 
 multicast_option::multicast_option(const xtd::net::ip_address& group, uint32_t interface_index) : group_(group), interface_index_(interface_index) {
@@ -32,16 +32,16 @@ uint32_t multicast_option::interface_index() const noexcept {
 multicast_option& multicast_option::interface_index(uint32_t value) {
   if (value > 0x00FFFFFF) throw argument_out_of_range_exception(csf_);
   interface_index_ = value;
-  local_adress_ = ip_address::none;
+  local_address_ = ip_address::none;
   return *this;
 }
 
-const xtd::net::ip_address& multicast_option::local_adress() const noexcept {
-  return local_adress_;
+const xtd::net::ip_address& multicast_option::local_address() const noexcept {
+  return local_address_;
 }
 
-multicast_option& multicast_option::local_adress(const xtd::net::ip_address& value) noexcept {
+multicast_option& multicast_option::local_address(const xtd::net::ip_address& value) noexcept {
   interface_index_ = 0;
-  local_adress_ = value;
+  local_address_ = value;
   return *this;
 }

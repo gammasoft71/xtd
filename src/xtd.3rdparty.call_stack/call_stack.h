@@ -31,7 +31,7 @@ namespace stacktrace {
   /** Stack-trace base class, for retrieving the current call-stack. */
   class call_stack_export_ call_stack {
   public:
-    /** Stack-trace consructor.
+    /** Stack-trace constructor.
      \param num_discard - number of stack entries to discard at the top. */
     explicit call_stack (const size_t num_discard = 0);
     

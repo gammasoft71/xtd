@@ -57,7 +57,7 @@ namespace xtd {
 
       /// @brief Gets the handle of the cursor.
       /// @return An intptr_t that represents the cursor's handle.
-      /// @remarks This is not a copy of the handle; do not detroy it.
+      /// @remarks This is not a copy of the handle; do not destroy it.
       intptr_t handle() const {return data_->handle_;}
       
       /// @brief Gets the cursor hot spot.

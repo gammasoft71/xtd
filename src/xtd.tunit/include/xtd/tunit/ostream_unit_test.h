@@ -16,7 +16,7 @@ namespace xtd {
     /// @par Library
     /// xtd.tunit
     /// @ingroup xtd_tunit
-    /// @remarks All messages are writting on the specified ostream.
+    /// @remarks All messages are written on the specified ostream.
     class ostream_unit_test : public xtd::tunit::unit_test {
     public:
       /// @brief Create a new console unit test with ostream specified.

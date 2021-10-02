@@ -19,7 +19,7 @@ namespace xtd {
     /// @include hscroll_bar.cpp
     class forms_export_ hscroll_bar : public scroll_bar {
     public:
-      /// @brief Initializee a new instance of hscroll_bar class.
+      /// @brief Initialize a new instance of hscroll_bar class.
       hscroll_bar();
       xtd::drawing::size default_size() const override {return {80, 17};}
       

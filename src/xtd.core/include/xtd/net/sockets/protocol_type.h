@@ -26,7 +26,7 @@ namespace xtd {
         unknown = -1,
         /// @brief IPv6 Hop by Hop Options header.
         ip_v6_hop_by_hop_options = 0,
-        /// @brief Undpecified Protocol.
+        /// @brief Unspecified Protocol.
         unspecified = 0,
         /// @brief Internet Protocol.
         ip = 0,

@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::create_params cllass.
+/// @brief Contains xtd::forms::create_params class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
@@ -74,7 +74,7 @@ namespace xtd {
       /// @remarks see window_styles.h file
       size_t ex_style() const {return ex_style_;}
       /// @brief Sets a bitwise combination of extended window style values.
-      /// @param ex_Sttyle A bitwise combination of the extended window style values.
+      /// @param ex_style A bitwise combination of the extended window style values.
       /// @return Current create_param instance.
       /// @remarks The ex_style property supports extended appearance and initial state values to apply to the control.
       /// @remarks see window_styles.h file

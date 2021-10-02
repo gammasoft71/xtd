@@ -11,7 +11,7 @@ void radio_button::checked(intptr_t control, bool checked) {
   if (control == 0 || reinterpret_cast<wx_radio_button*>(control)->owner_draw_) return;
   wx_radio_button* radio_button = reinterpret_cast<wx_radio_button*>(control);
   if (dynamic_cast<wxRadioButton*>(radio_button->control()) != nullptr) {
-    radio_button->hiden_radio_button->SetValue(!checked);
+    radio_button->hidden_radio_button->SetValue(!checked);
     static_cast<wxRadioButton*>(radio_button->control())->SetValue(checked);
   } else {
     static_cast<wxToggleButton*>(radio_button->control())->SetValue(checked);

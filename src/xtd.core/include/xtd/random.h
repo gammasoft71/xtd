@@ -27,7 +27,7 @@ namespace xtd {
   /// @par Notes to Callers
   /// The implementation of the random number generator in the random class is not guaranteed to remain the same across major versions of the xtd. As a result, your application code should not assume that the same seed will result in the same pseudo-random sequence in different versions of the xtd.
   /// @par Notes to Inheritors
-  /// In xtd, the behavior of the random::next(), random::next(int32_t, int32_t), and next_bytes methods have changed so that these methods do not necessarily call the derived class implementation of the sample method. As a result, classes derived from Rrandom that target the xtd should also virtual these three methods.
+  /// In xtd, the behavior of the random::next(), random::next(int32_t, int32_t), and next_bytes methods have changed so that these methods do not necessarily call the derived class implementation of the sample method. As a result, classes derived from Random that target the xtd should also virtual these three methods.
   /// @par Examples
   /// The following example creates a single random number generator and calls its next_bytes, next, and next_double methods to generate sequences of random numbers within different ranges.
   /// @include random2.cpp

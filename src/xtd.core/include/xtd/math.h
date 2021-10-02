@@ -57,7 +57,7 @@ namespace xtd {
     
     /// @brief Returns the absolute value of a double-precision floating-point number
     /// @param value A number in the range std::numeric_limit<double>::lowest() <= value <= std::numeric_limit<double>::max().
-    /// @return A double-precision floating-point number, x, such that 0 <= x <= std::numeric_limit<douuble>::max().
+    /// @return A double-precision floating-point number, x, such that 0 <= x <= std::numeric_limit<double>::max().
     static double abs(double value);
     
     /// @brief Returns the absolute value of a single-precision floating-point number
@@ -78,7 +78,7 @@ namespace xtd {
     static int32_t abs(int32_t value);
     
     /// @brief Returns the absolute value of a 64-bit signed integer
-    /// @param value A number in the range std::numeric_limit<int64_t>::lowestlowest() <= value <= std::numeric_limit<int64_t>::max().
+    /// @param value A number in the range std::numeric_limit<int64_t>::min() <= value <= std::numeric_limit<int64_t>::max().
     /// @return A 64-bit signed integer, x, such that 0 <= x <= std::numeric_limit<int64_t>::max().
     /// @exception xtd::overflow_exception value equals std::numeric_limit<int64_t>::lowest().
     static int64_t abs(int64_t value);
@@ -149,7 +149,7 @@ namespace xtd {
     
     /// @brief Returns the hyperbolic cosine of the specified angle.
     /// @param value An angle, measured in radians.
-    /// @return The hyperbolic cosine of value. If value is equal to xtd::math::negative_infinity() or xtd::math::posittive_:infinity, xtd::math::positive_infinity is returned. If value is equal to xtd::math::NaN, xtd::math::NaN is returned.
+    /// @return The hyperbolic cosine of value. If value is equal to xtd::math::negative_infinity() or xtd::math::positive_:infinity, xtd::math::positive_infinity is returned. If value is equal to xtd::math::NaN, xtd::math::NaN is returned.
     static double cosh(double value);
 
     /// @brief Convert degrees to radians.
@@ -311,7 +311,7 @@ namespace xtd {
     static sbyte_t max(sbyte_t a, sbyte_t b);
     
     /// @brief Returns the larger of two single single.
-    /// @param a The first of two signle single to compare.
+    /// @param a The first of two single single to compare.
     /// @param b The second of two single single to compare.
     /// @return Parameter a or b, whichever is larger.
     static float max(float a, float b);
@@ -389,7 +389,7 @@ namespace xtd {
     static sbyte_t min(sbyte_t a, sbyte_t b);
     
     /// @brief Returns the smaller of two single single.
-    /// @param a The first of two signle single to compare.
+    /// @param a The first of two single single to compare.
     /// @param b The second of two single single to compare.
     /// @return Parameter a or b, whichever is smaller.
     static float min(float a, float b);
@@ -576,7 +576,7 @@ namespace xtd {
     
     /// @brief Returns the tangent of the specified angle.
     /// @param value An angle, measured in radians.
-    /// @return The tangent of value. If value is equal to math::NaN, math::negative_infinity, or math::psitive_infinity, this method returns math::NaN.
+    /// @return The tangent of value. If value is equal to math::NaN, math::negative_infinity, or math::positive_infinity, this method returns math::NaN.
     static double tan(double value);
     
     /// @brief Returns the hyperbolic tangent of the specified angle.

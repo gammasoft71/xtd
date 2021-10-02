@@ -18,7 +18,7 @@
 namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
-    /// @brief Provides static methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of std::ftream objects.
+    /// @brief Provides static methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of std::fstream objects.
     /// @par Namespace
     /// xtd::io
     /// @par Library
@@ -181,7 +181,7 @@ namespace xtd {
 
       /// @brief Opens a text file, reads all text of the file, and then closes the file.
       /// @param path The file to open for reading.
-      /// @return A dstring containing all text of the file.
+      /// @return A string containing all text of the file.
       /// @remarks This method also returns empty string if path is empty or an invalid path.
       /// @remarks If the caller does not have sufficient permissions to read the specified file, no exception is thrown and the method returns empty string regardless of the existence of file.
       static xtd::ustring read_all_text(const xtd::ustring& path);

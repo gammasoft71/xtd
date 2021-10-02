@@ -27,7 +27,7 @@ namespace xtd {
       /// @brief Centers the text horizontally within the bounding rectangle.
       horizontal_center = 0b1,
       /// @brief Aligns the text on the right side of the clipping area.
-      rigth = 0b10,
+      right = 0b10,
       /// @brief Centers the text vertically, within the bounding rectangle.
       vertical_center = 0b100,
       /// @brief Aligns the text on the bottom of the bounding rectangle. Applied only when the text is a single line.v
@@ -35,7 +35,7 @@ namespace xtd {
       /// @brief Breaks the text at the end of a word.
       word_break = 0b10000,
       /// @brief Displays the text in a single line.
-      signgle_line = 0b100000,
+      single_line = 0b100000,
       /// @brief Expands tab characters. The default number of characters per tab is eight. The word_ellipsis, path_ellipsis, and end_ellipsis values cannot be used with expand_tabs.
       expand_tabs = 0b1000000,
       /// @brief Allows the overhanging parts of glyphs and unwrapped text reaching outside the formatting rectangle to show.

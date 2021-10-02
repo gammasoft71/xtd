@@ -53,11 +53,11 @@ namespace xtd {
       }
 
       /// @brief Gets the root folder where the browsing starts from.
-      /// @return One of the environment::special_folder values. The default is environment::special_folder::ddesktop.
+      /// @return One of the environment::special_folder values. The default is environment::special_folder::desktop.
       /// @remarks Only the specified folder and any subfolders that are beneath it will appear in the dialog box and be selectable. The selected_path property, along with root_folder, determines what the selected folder will be when the dialog box is displayed, as long as SelectedPath is an absolute path that is a subfolder of root_folder (or more accurately, points to a subfolder of the shell namespace represented by root_folder).
       environment::special_folder root_folder() const {return root_folder_;}
       /// @brief Sets the root folder where the browsing starts from.
-      /// @param value One of the environment::special_folder values. The default is environment::special_folder::ddesktop.
+      /// @param value One of the environment::special_folder values. The default is environment::special_folder::desktop.
       /// @return Current folder_browser_dialog.
       /// @remarks Only the specified folder and any subfolders that are beneath it will appear in the dialog box and be selectable. The selected_path property, along with root_folder, determines what the selected folder will be when the dialog box is displayed, as long as SelectedPath is an absolute path that is a subfolder of root_folder (or more accurately, points to a subfolder of the shell namespace represented by root_folder).
       folder_browser_dialog& root_folder(environment::special_folder value) {

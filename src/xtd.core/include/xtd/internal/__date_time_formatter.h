@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains __date_time_formater method.
+/// @brief Contains __date_time_formatter method.
 #pragma once
 /// @cond
 #ifndef __XTD_CORE_INTERNAL__
@@ -44,24 +44,24 @@ inline std::basic_string<char_t> __get_brief_month_name(const std::tm& value, co
 }
 
 template<typename char_t>
-inline std::basic_string<char_t> __tm_formater(const char_t* fmt, const std::tm& value, const std::locale& loc) {
+inline std::basic_string<char_t> __tm_formatter(const char_t* fmt, const std::tm& value, const std::locale& loc) {
   std::basic_stringstream<char_t> result;
   result.imbue(loc);
   result << std::put_time(&value, fmt);
   return result.str();
 }
 
-inline std::string __date_time_formater(std::string fmt, const std::tm& time, const std::locale& loc) {
+inline std::string __date_time_formatter(std::string fmt, const std::tm& time, const std::locale& loc) {
   if (fmt.empty()) fmt =  "G";
   if (fmt.size() > 1) __format_exception("Invalid format");
   
   switch (fmt[0]) {
     case 'd': return __sprintf("%02d/%02d/%d", time.tm_mon + 1, time.tm_mday, time.tm_year + 1900);
     case 'D': return __sprintf("%d/%02d/%d", time.tm_mon+1, time.tm_mday, time.tm_year + 1900);
-    case 'f': return __tm_formater("%Ec", time, loc);
-    case 'F': return __tm_formater("%c", time, loc);
-    case 'g': return __tm_formater("%Ec", time, loc);
-    case 'G': return __tm_formater("%c", time, loc);
+    case 'f': return __tm_formatter("%Ec", time, loc);
+    case 'F': return __tm_formatter("%c", time, loc);
+    case 'g': return __tm_formatter("%Ec", time, loc);
+    case 'G': return __tm_formatter("%c", time, loc);
     case 'h': return __sprintf("%s", __get_brief_weekday_name<char>(time, loc).c_str());
     case 'H': return __sprintf("%s", __get_weekday_name<char>(time, loc).c_str());
     case 'i': return __sprintf("%02d", time.tm_mday);
@@ -88,22 +88,22 @@ inline std::string __date_time_formater(std::string fmt, const std::tm& time, co
     case 'y': return __sprintf("%s %d", __get_month_name<char>(time, loc).c_str(), time.tm_year % 100);
     case 'Y': return __sprintf("%s %d", __get_month_name<char>(time, loc).c_str(), time.tm_year + 1900);
     case 'z':
-    case 'Z': return __tm_formater("%Z", time, loc);
+    case 'Z': return __tm_formatter("%Z", time, loc);
     default: __format_exception("Invalid format"); return {};
   }
 }
 
-inline std::wstring __date_time_formater(std::wstring fmt, const std::tm& time, const std::locale& loc) {
+inline std::wstring __date_time_formatter(std::wstring fmt, const std::tm& time, const std::locale& loc) {
   if (fmt.empty()) fmt =  L"G";
   if (fmt.size() > 1) __format_exception("Invalid format");
   
   switch (fmt[0]) {
     case 'd': return __sprintf(L"%02d/%02d/%d", time.tm_mon + 1, time.tm_mday, time.tm_year + 1900);
     case 'D': return __sprintf(L"%d/%02d/%d", time.tm_mon+1, time.tm_mday, time.tm_year + 1900);
-    case 'f': return __tm_formater(L"%Ec", time, loc);
-    case 'F': return __tm_formater(L"%c", time, loc);
-    case 'g': return __tm_formater(L"%Ec", time, loc);
-    case 'G': return __tm_formater(L"%c", time, loc);
+    case 'f': return __tm_formatter(L"%Ec", time, loc);
+    case 'F': return __tm_formatter(L"%c", time, loc);
+    case 'g': return __tm_formatter(L"%Ec", time, loc);
+    case 'G': return __tm_formatter(L"%c", time, loc);
     case 'h': return __sprintf(L"%ls", __get_brief_weekday_name<wchar_t>(time, loc).c_str());
     case 'H': return __sprintf(L"%ls", __get_weekday_name<wchar_t>(time, loc).c_str());
     case 'i': return __sprintf(L"%02d", time.tm_mday);
@@ -130,16 +130,16 @@ inline std::wstring __date_time_formater(std::wstring fmt, const std::tm& time, 
     case 'y': return __sprintf(L"%ls %d", __get_month_name<wchar_t>(time, loc).c_str(), time.tm_year % 100);
     case 'Y': return __sprintf(L"%ls %d", __get_month_name<wchar_t>(time, loc).c_str(), time.tm_year + 1900);
     case 'z':
-    case 'Z': return __tm_formater(L"%Z", time, loc);
+    case 'Z': return __tm_formatter(L"%Z", time, loc);
     default: __format_exception("Invalid format"); return {};
   }
 }
 
-inline std::string __date_time_formater(std::string fmt, time_t time, const std::locale& loc) {
-  return __date_time_formater(fmt, *std::localtime(&time), loc);
+inline std::string __date_time_formatter(std::string fmt, time_t time, const std::locale& loc) {
+  return __date_time_formatter(fmt, *std::localtime(&time), loc);
 }
 
-inline std::wstring __date_time_formater(std::wstring fmt, time_t time, const std::locale& loc) {
-  return __date_time_formater(fmt, *std::localtime(&time), loc);
+inline std::wstring __date_time_formatter(std::wstring fmt, time_t time, const std::locale& loc) {
+  return __date_time_formatter(fmt, *std::localtime(&time), loc);
 }
 /// @endcond

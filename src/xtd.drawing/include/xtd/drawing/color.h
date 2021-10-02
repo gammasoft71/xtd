@@ -582,7 +582,7 @@ namespace xtd {
       /// @param color1 The first color.
       /// @param color2 The second color.
       /// @param weight The weighting factor
-      /// @param average_alpha if true alpha was comptute to; otheerwise the alpha result is the alpha of color1
+      /// @param average_alpha if true alpha was compute to; otherwise the alpha result is the alpha of color1
       /// @return The average color.
       /// @remarks The alpha, red, green and blue values are averages using the following formula:
       /// @code
@@ -851,7 +851,7 @@ namespace xtd {
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       /// @exception std::invalid_argument color is not a known_color.
       /// @par Examples
-      /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgse, which is a parameter of the Paint event handler. The code performs the following actions:
+      /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgs, which is a parameter of the Paint event handler. The code performs the following actions:
       /// * Creates an instance of a xtd::drawing::color structure, redShade, to be used for comparisons.
       /// * Iterates through the xtd::drawing::known_color enumeration elements to find all known colors that have the same lightness as redShade. The iterations are terminated when 15 matches are found or the value of the loop counter is greater than the last xtd::drawing::known_color element.
       /// * During each iteration, saves the xtd::drawing::known_color element—if it matches the criteria—in an array.
@@ -922,7 +922,7 @@ namespace xtd {
       /// @brief Gets the hue-saturation-brightness (HSB) brightness value for this xtd::drawing::color structure.
       /// @return The brightness of this xtd::drawing::color. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
       /// @par Examples
-      /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgse, which is a parameter of the Paint event handler. The code performs the following actions:
+      /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgs, which is a parameter of the Paint event handler. The code performs the following actions:
       /// * Creates an instance of a xtd::drawing::color structure, redShade, to be used for comparisons.
       /// * Iterates through the xtd::drawing::known_color enumeration elements to find all known colors that have the same lightness as redShade. The iterations are terminated when 15 matches are found or the value of the loop counter is greater than the last xtd::drawing::known_color element.
       /// * During each iteration, saves the xtd::drawing::known_color element—if it matches the criteria—in an array.
@@ -973,7 +973,7 @@ namespace xtd {
       /// @brief Gets the hue-saturation-brightness (HSB) hue value, in degrees, for this xtd::drawing::color structure.
       /// @return The hue, in degrees, of this xtd::drawing::color. The hue is measured in degrees, ranging from 0.0 through 360.0, in HSL color space.
       /// @par Examples
-      /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgse, which is a parameter of the Paint event handler. The code performs the following actions:
+      /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgs, which is a parameter of the Paint event handler. The code performs the following actions:
       /// * Creates an instance of a xtd::drawing::color structure, redShade, to be used for comparisons.
       /// * Iterates through the xtd::drawing::known_color enumeration elements to find all known colors that have the same lightness as redShade. The iterations are terminated when 15 matches are found or the value of the loop counter is greater than the last xtd::drawing::known_color element.
       /// * During each iteration, saves the xtd::drawing::known_color element—if it matches the criteria—in an array.
@@ -1028,7 +1028,7 @@ namespace xtd {
       /// @brief Gets the hue-saturation-brightness (HSB) saturation value for this xtd::drawing::color structure.
       /// @return The saturation of this xtd::drawing::color. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
       /// @par Examples
-      /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgse, which is a parameter of the Paint event handler. The code performs the following actions:
+      /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgs, which is a parameter of the Paint event handler. The code performs the following actions:
       /// * Creates an instance of a xtd::drawing::color structure, redShade, to be used for comparisons.
       /// * Iterates through the xtd::drawing::known_color enumeration elements to find all known colors that have the same lightness as redShade. The iterations are terminated when 15 matches are found or the value of the loop counter is greater than the last xtd::drawing::known_color element.
       /// * During each iteration, saves the xtd::drawing::known_color element—if it matches the criteria—in an array.
@@ -1077,7 +1077,7 @@ namespace xtd {
       float get_saturation() const;
       
       /// @brief Creates a xtd::drawing::color class from the specified name.
-      /// @param name A string that is the name of a predefined color. Valid names are the same as the names of the elements of the xtd::drawing::known_color enumeration or hexadecimal value that represents argb value, or four decimal values separated by a comma represanting respectively a, r, g, b, values.
+      /// @param name A string that is the name of a predefined color. Valid names are the same as the names of the elements of the xtd::drawing::known_color enumeration or hexadecimal value that represents argb value, or four decimal values separated by a comma representing respectively a, r, g, b, values.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       static xtd::drawing::color parse(const xtd::ustring& color);
       
@@ -1085,7 +1085,7 @@ namespace xtd {
       /// @return int The 32-bit ARGB value of this xtd::drawing::color.
       /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
       /// @par Examples
-      /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgse, which is a parameter of the Paint event handler. The code performs the following actions:
+      /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgs, which is a parameter of the Paint event handler. The code performs the following actions:
       /// * Creates an instance of a xtd::drawing::color structure, redShade, to be used for comparisons.
       /// * Iterates through the xtd::drawing::known_color enumeration elements to find all known colors that have the same lightness as redShade. The iterations are terminated when 15 matches are found or the value of the loop counter is greater than the last xtd::drawing::known_color element.
       /// * During each iteration, saves the xtd::drawing::known_color element—if it matches the criteria—in an array.
@@ -1141,7 +1141,7 @@ namespace xtd {
       /// @brief Creates a human-readable string that represents this color class.
       /// @return string A string that represents this Size.
       /// @par Examples
-      /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgse, which is a parameter of the Paint event handler. The code performs the following actions:
+      /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgs, which is a parameter of the Paint event handler. The code performs the following actions:
       /// * Creates an instance of a xtd::drawing::color structure, redShade, to be used for comparisons.
       /// * Iterates through the xtd::drawing::known_color enumeration elements to find all known colors that have the same lightness as redShade. The iterations are terminated when 15 matches are found or the value of the loop counter is greater than the last xtd::drawing::known_color element.
       /// * During each iteration, saves the xtd::drawing::known_color element—if it matches the criteria—in an array.
@@ -1207,7 +1207,7 @@ namespace xtd {
   }
 
   /// @brief Creates a xtd::drawing::color class from the specified name.
-  /// @param name A string that is the name of a predefined color. Valid names are the same as the names of the elements of the xtd::drawing::known_color enumeration or hexadecimal value that represents argb value, or four decimal values separated by a comma represanting respectively a, r, g, b, values.
+  /// @param name A string that is the name of a predefined color. Valid names are the same as the names of the elements of the xtd::drawing::known_color enumeration or hexadecimal value that represents argb value, or four decimal values separated by a comma representing respectively a, r, g, b, values.
   /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
   /// @ingroup format_parse
   template<>

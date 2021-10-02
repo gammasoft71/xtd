@@ -38,7 +38,7 @@ namespace xtd {
       class forms_native_export_ progress_dialog final static_ {
         friend xtd::forms::progress_dialog;
       protected:
-        /// @brief Gets whether user has clicked on cancel butttoon.
+        /// @brief Gets whether user has clicked on cancel button.
         /// @param dialog Progress dialog window handle.
         /// @return true if user has clicked on cancel button; otherwise false.
         /// @warning Internal use only
@@ -52,7 +52,7 @@ namespace xtd {
         /// @param minimum The minimum value of the range.
         /// @param maximum The maximum value of the range.
         /// @param value The position within the range of the progress bar. The default is 0.
-        /// @param options A bittwise progress dialog flags value.
+        /// @param options A bitwise progress dialog flags value.
        /// @return The created progress dialog window handle.
         /// @warning Internal use only
         static intptr_t create(intptr_t hwnd, const xtd::ustring& text, const xtd::ustring& message, const std::vector<xtd::ustring>& informations, size_t marquee_animation_speed, int32_t minimum, int32_t maximum, int32_t value, size_t options);
@@ -67,7 +67,7 @@ namespace xtd {
         static void informations(intptr_t dialog, const std::vector<xtd::ustring>& informations);
         /// @brief Gets a value that Indicates progress by continuously scrolling a block across a progress_bar in a marquee fashion.
         /// @param dialog Progress dialog window handle.
-        /// @param marquee truee is marquee; otherwise false. The default is false.
+        /// @param marquee tree is marquee; otherwise false. The default is false.
         /// @warning Internal use only
         static void marquee(intptr_t dialog, bool marquee, size_t animation_speed);
         /// @brief Sets the maximum value of the range of the control.
@@ -97,7 +97,7 @@ namespace xtd {
         /// @param dialog Progress dialog window handle.
         /// @warning Internal use only
         static void show_sheet(intptr_t dialog);
-        /// @brief Gets whether user has clicked on skip butttoon.
+        /// @brief Gets whether user has clicked on skip button.
         /// @param dialog Progress dialog window handle.
         /// @return true if user has clicked on skip button; otherwise false.
         /// @warning Internal use only

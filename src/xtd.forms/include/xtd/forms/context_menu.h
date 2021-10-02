@@ -16,7 +16,7 @@ namespace xtd {
     /// @ingroup xtd_forms menus_and_toolbars
     class forms_export_ context_menu : public menu {
     public:
-      /// @brief Initialoize context_menu class.
+      /// @brief Initialize context_menu class.
       context_menu();
       
       /// @cond

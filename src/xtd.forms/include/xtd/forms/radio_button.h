@@ -101,7 +101,7 @@ namespace xtd {
       /// @param e An EventArgs that contains the event data.
       /// @remarks Raising an event invokes the event handler through a delegate.
       /// @remarks The on_appearance_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
-      /// @par Note to Inhearitors
+      /// @par Note to Inheritors
       /// When overriding on_appearance_changed(const event_args&) in a derived class, be sure to call the base class' on_appearance_changed(const event_args&) method so that registered delegates receive the event.
       virtual void on_appearance_changed(const event_args& e) {
         if (flat_style_ != xtd::forms::flat_style::system) invalidate();
@@ -112,7 +112,7 @@ namespace xtd {
       /// @param e An EventArgs that contains the event data.
       /// @remarks Raising an event invokes the event handler through a delegate.
       /// @remarks The on_checked_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
-      /// @par Note to Inhearitors
+      /// @par Note to Inheritors
       /// When overriding on_checked_changed(const event_args&) in a derived class, be sure to call the base class' on_checked_changed(const event_args&) method so that registered delegates receive the event.
       virtual void on_checked_changed(const event_args& e) {
         if (flat_style_ != xtd::forms::flat_style::system)  {

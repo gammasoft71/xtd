@@ -23,7 +23,7 @@ namespace xtd {
       valid() = delete;
       /// @endcond
       
-      /// @brief Valids that two type are equal.
+      /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @par Examples
@@ -34,7 +34,7 @@ namespace xtd {
       template<typename expected_t, typename actual_t>
       static void are_equal(const expected_t& expected, const actual_t& actual) {are_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that two type are equal.
+      /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param stack_frame Contains information about current file and current line.
@@ -46,7 +46,7 @@ namespace xtd {
       template<typename expected_t, typename actual_t>
       static void are_equal(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(expected, actual, "", stack_frame);}
       
-      /// @brief Valids that two type are equal.
+      /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -58,7 +58,7 @@ namespace xtd {
       template<typename expected_t, typename actual_t>
       static void are_equal(const expected_t& expected, const actual_t& actual, const xtd::ustring& message) {are_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that two type are equal.
+      /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -143,7 +143,7 @@ namespace xtd {
       }
       /// @endcond
       
-      /// @brief Valids that two type are equal.
+      /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param tolerance Indicates a tolerance within which they will be considered as equal.
@@ -155,7 +155,7 @@ namespace xtd {
       /// @endcode
       static void are_equal(float expected, float actual, float tolerance) {are_equal(expected, actual, tolerance, "", csf_);}
       
-      /// @brief Valids that two type are equal.
+      /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param tolerance Indicates a tolerance within which they will be considered as equal.
@@ -168,7 +168,7 @@ namespace xtd {
       /// @endcode
       static void are_equal(float expected, float actual, float tolerance, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(expected, actual, tolerance, "", stack_frame);}
       
-      /// @brief Valids that two type are equal.
+      /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param tolerance Indicates a tolerance within which they will be considered as equal.
@@ -181,7 +181,7 @@ namespace xtd {
       /// @endcode
       static void are_equal(float expected, float& actual, float tolerance, const xtd::ustring& message) {are_equal(expected, actual, tolerance, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that two type are equal.
+      /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param tolerance Indicates a tolerance within which they will be considered as equal.
@@ -201,7 +201,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that two type are equal.
+      /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param tolerance Indicates a tolerance within which they will be considered as equal.
@@ -213,7 +213,7 @@ namespace xtd {
       /// @endcode
       static void are_equal(double expected, double actual, double tolerance) {are_equal(expected, actual, tolerance, "", csf_);}
       
-      /// @brief Valids that two type are equal.
+      /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param tolerance Indicates a tolerance within which they will be considered as equal.
@@ -226,7 +226,7 @@ namespace xtd {
       /// @endcode
       static void are_equal(double expected, double actual, double tolerance, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(expected, actual, tolerance, "", stack_frame);}
       
-      /// @brief Valids that two type are equal.
+      /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param tolerance Indicates a tolerance within which they will be considered as equal.
@@ -239,7 +239,7 @@ namespace xtd {
       /// @endcode
       static void are_equal(double expected, double actual, double tolerance, const xtd::ustring& message) {are_equal(expected, actual, tolerance, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that two type are equal.
+      /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param tolerance Indicates a tolerance within which they will be considered as equal.
@@ -259,7 +259,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that two type are equal.
+      /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param tolerance Indicates a tolerance within which they will be considered as equal.
@@ -271,7 +271,7 @@ namespace xtd {
       /// @endcode
       static void are_equal(long double expected, long double actual, long double tolerance) {are_equal(expected, actual, tolerance, "", csf_);}
       
-      /// @brief Valids that two type are equal.
+      /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param tolerance Indicates a tolerance within which they will be considered as equal.
@@ -284,7 +284,7 @@ namespace xtd {
       /// @endcode
       static void are_equal(long double expected, long double actual, long double tolerance, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(expected, actual, tolerance, "", stack_frame);}
       
-      /// @brief Valids that two type are equal.
+      /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param tolerance Indicates a tolerance within which they will be considered as equal.
@@ -297,7 +297,7 @@ namespace xtd {
       /// @endcode
       static void are_equal(long double expected, long double actual, long double tolerance, const xtd::ustring& message) {are_equal(expected, actual, tolerance, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that two type are equal.
+      /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param tolerance Indicates a tolerance within which they will be considered as equal.
@@ -317,7 +317,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that two type are not equal.
+      /// @brief Validates that two type are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @par Examples
@@ -328,7 +328,7 @@ namespace xtd {
       template<typename expected_t, typename actual_t>
       static void are_not_equal(const expected_t& expected, const actual_t& actual) {are_not_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that two type are not equal.
+      /// @brief Validates that two type are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param stack_frame Contains information about current file and current line.
@@ -340,7 +340,7 @@ namespace xtd {
       template<typename expected_t, typename actual_t>
       static void are_not_equal(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(expected, actual, "", stack_frame);}
       
-      /// @brief Valids that two type are not equal.
+      /// @brief Validates that two type are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -352,7 +352,7 @@ namespace xtd {
       template<typename expected_t, typename actual_t>
       static void are_not_equal(const expected_t& expected, const actual_t& actual, const xtd::ustring& message) {are_not_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that two type are not equal.
+      /// @brief Validates that two type are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -413,7 +413,7 @@ namespace xtd {
       }
       /// @endcond
 
-      /// @brief Valids that two objects do refer to differents objects.
+      /// @brief Validates that two objects do refer to different objects.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @par Examples
@@ -427,7 +427,7 @@ namespace xtd {
       template<typename expected_t, typename actual_t>
       static void are_not_same(const expected_t& expected, const actual_t& actual) {are_not_same(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that two objects do refer to differents objects.
+      /// @brief Validates that two objects do refer to different objects.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param stack_frame Contains information about current file and current line.
@@ -442,7 +442,7 @@ namespace xtd {
       template<typename expected_t, typename actual_t>
       static void are_not_same(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_not_same(expected, actual, "", stack_frame);}
       
-      /// @brief Valids that two objects do refer to differents objects.
+      /// @brief Validates that two objects do refer to different objects.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -457,7 +457,7 @@ namespace xtd {
       template<typename expected_t, typename actual_t>
       static void are_not_same(const expected_t& expected, const actual_t& actual, const xtd::ustring& message) {are_not_same(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that two objects do refer to differents objects.
+      /// @brief Validates that two objects do refer to different objects.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -479,7 +479,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that two objects do refer to differents objects.
+      /// @brief Validates that two objects do refer to different objects.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @par Examples
@@ -493,7 +493,7 @@ namespace xtd {
       template<typename expected_t, typename actual_t>
       static void are_same(const expected_t& expected, const actual_t& actual) {are_same(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that two objects do refer to differents objects.
+      /// @brief Validates that two objects do refer to different objects.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param stack_frame Contains information about current file and current line.
@@ -508,7 +508,7 @@ namespace xtd {
       template<typename expected_t, typename actual_t>
       static void are_same(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_same(expected, actual, "", stack_frame);}
       
-      /// @brief Valids that two objects do refer to differents objects.
+      /// @brief Validates that two objects do refer to different objects.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -523,7 +523,7 @@ namespace xtd {
       template<typename expected_t, typename actual_t>
       static void are_same(const expected_t& expected, const actual_t& actual, const xtd::ustring& message) {are_same(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that two objects do refer to differents objects.
+      /// @brief Validates that two objects do refer to different objects.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -545,7 +545,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that collection contains an item.
+      /// @brief Validates that collection contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -557,7 +557,7 @@ namespace xtd {
       template<typename item_t, typename collection_t>
       static void contains(const item_t& item, const collection_t& collection) {contains(item, collection, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that collection contains an item.
+      /// @brief Validates that collection contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param stack_frame Contains information about current file and current line.
@@ -570,7 +570,7 @@ namespace xtd {
       template<typename item_t, typename collection_t>
       static void contains(const item_t& item, const collection_t& collection, const xtd::diagnostics::stack_frame& stack_frame) {contains(item, collection, "", stack_frame);}
       
-      /// @brief Valids that collection contains an item.
+      /// @brief Validates that collection contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -583,7 +583,7 @@ namespace xtd {
       template<typename item_t, typename collection_t>
       static void contains(const item_t& item, const collection_t& collection, const xtd::ustring& message) {contains(item, collection, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that collection contains an item.
+      /// @brief Validates that collection contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -660,7 +660,7 @@ namespace xtd {
       }
       /// @endcond
       
-      /// @brief Valids that the staement does not throw an exception.
+      /// @brief Validates that the statement does not throw an exception.
       /// @param statement The statement that verify.
       /// @par Examples
       /// @code
@@ -670,7 +670,7 @@ namespace xtd {
       /// @endcode
       static void does_not_throw(const std::function<void()>& statement) {does_not_throw(statement, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the staement does not throw an exception.
+      /// @brief Validates that the statement does not throw an exception.
       /// @param statement The statement that verify.
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
@@ -681,7 +681,7 @@ namespace xtd {
       /// @endcode
       static void does_not_throw(const std::function<void()>& statement, const xtd::diagnostics::stack_frame& stack_frame) {does_not_throw(statement, "", stack_frame);}
       
-      /// @brief Valids that the staement does not throw an exception.
+      /// @brief Validates that the statement does not throw an exception.
       /// @param statement The statement that verify.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
@@ -692,7 +692,7 @@ namespace xtd {
       /// @endcode
       static void does_not_throw(const std::function<void()>& statement, const xtd::ustring& message) {does_not_throw(statement, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the staement does not throw an exception.
+      /// @brief Validates that the statement does not throw an exception.
       /// @param statement The statement that verify.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -710,7 +710,7 @@ namespace xtd {
         }
       }
      
-      /// @brief Valids that collection contains an item.
+      /// @brief Validates that collection contains an item.
       /// @param value The value to check is empty.
       /// @par Examples
       /// @code
@@ -722,7 +722,7 @@ namespace xtd {
       template<typename value_t>
       static void is_empty(const value_t& value) {is_empty(value, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that collection contains an item.
+      /// @brief Validates that collection contains an item.
       /// @param value The value to check is empty.
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
@@ -735,7 +735,7 @@ namespace xtd {
       template<typename value_t>
       static void is_empty(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame) {is_empty(value, "", stack_frame);}
       
-      /// @brief Valids that collection contains an item.
+      /// @brief Validates that collection contains an item.
       /// @param value The value to check is empty.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
@@ -748,7 +748,7 @@ namespace xtd {
       template<typename value_t>
       static void is_empty(const value_t& value, const xtd::ustring& message) {is_empty(value, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that collection contains an item.
+      /// @brief Validates that collection contains an item.
       /// @param value The value to check is empty.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -825,7 +825,7 @@ namespace xtd {
       }
       /// @endocnd
       
-      /// @brief Valids that ta condition is false.
+      /// @brief Validates that ta condition is false.
       /// @param condition The condition to check is false.
       /// @par Examples
       /// @code
@@ -836,7 +836,7 @@ namespace xtd {
       /// @endcode
       static void is_false(bool condition) {is_false(condition, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that a condition is false.
+      /// @brief Validates that a condition is false.
       /// @param condition The condition to check is false.
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
@@ -848,7 +848,7 @@ namespace xtd {
       /// @endcode
       static void is_false(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {is_false(condition, "", stack_frame);}
       
-      /// @brief Valids that a condition is false.
+      /// @brief Validates that a condition is false.
       /// @param condition The condition to check is false.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
@@ -860,7 +860,7 @@ namespace xtd {
       /// @endcode
       static void is_false(bool condition, const xtd::ustring& message) {is_false(condition, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that a condition is false.
+      /// @brief Validates that a condition is false.
       /// @param condition The condition to check is false.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -879,7 +879,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that the first value is greater than the second value.
+      /// @brief Validates that the first value is greater than the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @par Examples
@@ -890,7 +890,7 @@ namespace xtd {
       template<typename value1_t, typename value2_t>
       static void is_greater(const value1_t& val1, const value2_t& val2) {is_greater(val1, val2, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the first value is greater than the second value.
+      /// @brief Validates that the first value is greater than the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @param stack_frame Contains information about current file and current line.
@@ -902,7 +902,7 @@ namespace xtd {
       template<typename value1_t, typename value2_t>
       static void is_greater(const value1_t& val1, const value2_t& val2, const xtd::diagnostics::stack_frame& stack_frame) {is_greater(val1, val2, "", stack_frame);}
       
-      /// @brief Valids that the first value is greater than the second value.
+      /// @brief Validates that the first value is greater than the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -914,7 +914,7 @@ namespace xtd {
       template<typename value1_t, typename value2_t>
       static void is_greater(const value1_t& val1, const value2_t& val2, const xtd::ustring& message) {is_greater(val1, val2, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the first value is greater than the second value.
+      /// @brief Validates that the first value is greater than the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -975,7 +975,7 @@ namespace xtd {
       }
       /// @endcond
 
-      /// @brief Valids that the first value is greater than or equal to the second value.
+      /// @brief Validates that the first value is greater than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @par Examples
@@ -987,7 +987,7 @@ namespace xtd {
       template<typename value1_t, typename value2_t>
       static void is_greater_or_equal(const value1_t& val1, const value2_t& val2) {is_greater_or_equal(val1, val2, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the first value is greater than or equal to the second value.
+      /// @brief Validates that the first value is greater than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @param stack_frame Contains information about current file and current line.
@@ -1000,7 +1000,7 @@ namespace xtd {
       template<typename value1_t, typename value2_t>
       static void is_greater_or_equal(const value1_t& val1, const value2_t& val2, const xtd::diagnostics::stack_frame& stack_frame) {is_greater_or_equal(val1, val2, "", stack_frame);}
       
-      /// @brief Valids that the first value is greater than or equal to the second value.
+      /// @brief Validates that the first value is greater than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1013,7 +1013,7 @@ namespace xtd {
       template<typename value1_t, typename value2_t>
       static void is_greater_or_equal(const value1_t& val1, const value2_t& val2, const xtd::ustring& message) {is_greater_or_equal(val1, val2, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the first value is greater than or equal to the second value.
+      /// @brief Validates that the first value is greater than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1075,7 +1075,7 @@ namespace xtd {
       }
       /// @endcond
 
-      /// @brief Valids that an object is of the type supplied or a derived type.
+      /// @brief Validates that an object is of the type supplied or a derived type.
       /// @param value The object to verify
       /// @par Examples
       /// @code
@@ -1086,7 +1086,7 @@ namespace xtd {
       template<typename type_t, typename value_t>
       static void is_instance_of(const value_t& value) {is_instance_of<type_t>(value, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that an object is of the type supplied or a derived type.
+      /// @brief Validates that an object is of the type supplied or a derived type.
       /// @param value The object to verify
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
@@ -1098,7 +1098,7 @@ namespace xtd {
       template<typename type_t, typename value_t>
       static void is_instance_of(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame) {is_instance_of<type_t>(value, "", stack_frame);}
       
-      /// @brief Valids that an object is of the type supplied or a derived type.
+      /// @brief Validates that an object is of the type supplied or a derived type.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
@@ -1110,7 +1110,7 @@ namespace xtd {
       template<typename type_t, typename value_t>
       static void is_instance_of(const value_t& value, const xtd::ustring& message) {is_instance_of<type_t>(value, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that an object is of the type supplied or a derived type.
+      /// @brief Validates that an object is of the type supplied or a derived type.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -1129,7 +1129,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that the first value is is_less than the second value.
+      /// @brief Validates that the first value is is_less than the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @par Examples
@@ -1140,7 +1140,7 @@ namespace xtd {
       template<typename value1_t, typename value2_t>
       static void is_less(const value1_t& val1, const value2_t& val2) {is_less(val1, val2, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the first value is is_less than the second value.
+      /// @brief Validates that the first value is is_less than the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @param stack_frame Contains information about current file and current line.
@@ -1152,7 +1152,7 @@ namespace xtd {
       template<typename value1_t, typename value2_t>
       static void is_less(const value1_t& val1, const value2_t& val2, const xtd::diagnostics::stack_frame& stack_frame) {is_less(val1, val2, "", stack_frame);}
       
-      /// @brief Valids that the first value is is_less than the second value.
+      /// @brief Validates that the first value is is_less than the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1164,7 +1164,7 @@ namespace xtd {
       template<typename value1_t, typename value2_t>
       static void is_less(const value1_t& val1, const value2_t& val2, const xtd::ustring& message) {is_less(val1, val2, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the first value is is_less than the second value.
+      /// @brief Validates that the first value is is_less than the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1225,7 +1225,7 @@ namespace xtd {
       }
       /// @endcond
 
-      /// @brief Valids that the first value is is_less than or equal to the second value.
+      /// @brief Validates that the first value is is_less than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @par Examples
@@ -1237,7 +1237,7 @@ namespace xtd {
       template<typename value1_t, typename value2_t>
       static void is_less_or_equal(const value1_t& val1, const value2_t& val2) {is_less_or_equal(val1, val2, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the first value is is_less than or equal to the second value.
+      /// @brief Validates that the first value is is_less than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @param stack_frame Contains information about current file and current line.
@@ -1250,7 +1250,7 @@ namespace xtd {
       template<typename value1_t, typename value2_t>
       static void is_less_or_equal(const value1_t& val1, const value2_t& val2, const xtd::diagnostics::stack_frame& stack_frame) {is_less_or_equal(val1, val2, "", stack_frame);}
       
-      /// @brief Valids that the first value is is_less than or equal to the second value.
+      /// @brief Validates that the first value is is_less than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1263,7 +1263,7 @@ namespace xtd {
       template<typename value1_t, typename value2_t>
       static void is_less_or_equal(const value1_t& val1, const value2_t& val2, const xtd::ustring& message) {is_less_or_equal(val1, val2, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the first value is is_less than or equal to the second value.
+      /// @brief Validates that the first value is is_less than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1348,7 +1348,7 @@ namespace xtd {
       /// @endcode
       static void is_NaN(double value, const xtd::diagnostics::stack_frame& stack_frame) {is_NaN(value, "", stack_frame);}
       
-      /// @brief Valids that a value is NaN.
+      /// @brief Validates that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
@@ -1360,7 +1360,7 @@ namespace xtd {
       /// @endcode
       static void is_NaN(double value, const xtd::ustring& message) {is_NaN(value, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that a value is NaN.
+      /// @brief Validates that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -1402,7 +1402,7 @@ namespace xtd {
       /// @endcode
       static void is_NaN(long double value, const xtd::diagnostics::stack_frame& stack_frame) {is_NaN(value, "", stack_frame);}
       
-      /// @brief Valids that a value is NaN.
+      /// @brief Validates that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
@@ -1414,7 +1414,7 @@ namespace xtd {
       /// @endcode
       static void is_NaN(long double value, const xtd::ustring& message) {is_NaN(value, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that a value is NaN.
+      /// @brief Validates that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -1456,7 +1456,7 @@ namespace xtd {
       /// @endcode
       static void is_NaN(float value, const xtd::diagnostics::stack_frame& stack_frame) {is_NaN(value, "", stack_frame);}
       
-      /// @brief Valids that a value is NaN.
+      /// @brief Validates that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
@@ -1468,7 +1468,7 @@ namespace xtd {
       /// @endcode
       static void is_NaN(float value, const xtd::ustring& message) {is_NaN(value, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that a value is NaN.
+      /// @brief Validates that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -1487,7 +1487,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that ta condition is negative.
+      /// @brief Validates that ta condition is negative.
       /// @param value The value to check is negative.
       /// @par Examples
       /// @code
@@ -1499,7 +1499,7 @@ namespace xtd {
       template<typename value_t>
       static void is_negative(const value_t& value) {is_negative(value, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that ta condition is negative.
+      /// @brief Validates that ta condition is negative.
       /// @param value The value to check is negative.
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
@@ -1512,7 +1512,7 @@ namespace xtd {
       template<typename value_t>
       static void is_negative(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame) {is_negative(value, "", stack_frame);}
       
-      /// @brief Valids that ta condition is negative.
+      /// @brief Validates that ta condition is negative.
       /// @param value The value to check is negative.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
@@ -1525,7 +1525,7 @@ namespace xtd {
       template<typename value_t>
       static void is_negative(const value_t& value, const xtd::ustring& message) {is_negative(value, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that ta condition is negative.
+      /// @brief Validates that ta condition is negative.
       /// @param value The value to check is negative.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -1545,7 +1545,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that collection oes not contain any item.
+      /// @brief Validates that collection oes not contain any item.
       /// @param value The value to check is empty.
       /// @par Examples
       /// @code
@@ -1557,7 +1557,7 @@ namespace xtd {
       template<typename value_t>
       static void is_not_empty(const value_t& value) {is_not_empty(value, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that collection does not contain any item.
+      /// @brief Validates that collection does not contain any item.
       /// @param value The value to check is empty.
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
@@ -1570,7 +1570,7 @@ namespace xtd {
       template<typename value_t>
       static void is_not_empty(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame) {is_not_empty(value, "", stack_frame);}
       
-      /// @brief Valids that collection does not contain any item.
+      /// @brief Validates that collection does not contain any item.
       /// @param value The value to check is empty.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
@@ -1583,7 +1583,7 @@ namespace xtd {
       template<typename value_t>
       static void is_not_empty(const value_t& value, const xtd::ustring& message) {is_not_empty(value, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that collection does not contain any item.
+      /// @brief Validates that collection does not contain any item.
       /// @param value The value to check is empty.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -1660,7 +1660,7 @@ namespace xtd {
       }
       /// @endcond
       
-      /// @brief Valids that an object is not of the type supplied or a derived type.
+      /// @brief Validates that an object is not of the type supplied or a derived type.
       /// @param value The object to verify
       /// @par Examples
       /// @code
@@ -1671,7 +1671,7 @@ namespace xtd {
       template<typename type_t, typename value_t>
       static void is_not_instance_of(const value_t& value) {is_not_instance_of<type_t>(value, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that an object is not of the type supplied or a derived type.
+      /// @brief Validates that an object is not of the type supplied or a derived type.
       /// @param value The object to verify
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
@@ -1683,7 +1683,7 @@ namespace xtd {
       template<typename type_t, typename value_t>
       static void is_not_instance_of(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame) {is_not_instance_of<type_t>(value, "", stack_frame);}
       
-      /// @brief Valids that an object is not of the type supplied or a derived type.
+      /// @brief Validates that an object is not of the type supplied or a derived type.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
@@ -1695,7 +1695,7 @@ namespace xtd {
       template<typename type_t, typename value_t>
       static void is_not_instance_of(const value_t& value, const xtd::ustring& message) {is_not_instance_of<type_t>(value, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that an object is not of the type supplied or a derived type.
+      /// @brief Validates that an object is not of the type supplied or a derived type.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -1714,7 +1714,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that the pointer is not null.
+      /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @par Examples
       /// @code
@@ -1727,7 +1727,7 @@ namespace xtd {
       template<typename pointer_t>
       static void is_not_null(const pointer_t* pointer) {is_not_null(pointer, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the pointer is not null.
+      /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
@@ -1741,7 +1741,7 @@ namespace xtd {
       template<typename pointer_t>
       static void is_not_null(const pointer_t* pointer, const xtd::diagnostics::stack_frame& stack_frame) {is_not_null(pointer, "", stack_frame);}
       
-      /// @brief Valids that the pointer is not null.
+      /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
@@ -1755,7 +1755,7 @@ namespace xtd {
       template<typename pointer_t>
       static void is_not_null(const pointer_t* pointer, const xtd::ustring& message) {is_not_null(pointer, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the pointer is not null.
+      /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -1776,7 +1776,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that the pointer is not null.
+      /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @par Examples
       /// @code
@@ -1788,7 +1788,7 @@ namespace xtd {
       template<typename pointer_t>
       static void is_not_null(const std::unique_ptr<pointer_t>& pointer) {is_not_null(pointer, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the pointer is not null.
+      /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
@@ -1801,7 +1801,7 @@ namespace xtd {
       template<typename pointer_t>
       static void is_not_null(const std::unique_ptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame) {is_not_null(pointer, "", stack_frame);}
       
-      /// @brief Valids that the pointer is not null.
+      /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
@@ -1814,7 +1814,7 @@ namespace xtd {
       template<typename pointer_t>
       static void is_not_null(const std::unique_ptr<pointer_t>& pointer, const xtd::ustring& message) {is_not_null(pointer, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the pointer is not null.
+      /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -1834,7 +1834,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that the pointer is not null.
+      /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @par Examples
       /// @code
@@ -1846,7 +1846,7 @@ namespace xtd {
       template<typename pointer_t>
       static void is_not_null(const std::shared_ptr<pointer_t>& pointer) {is_not_null(pointer, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the pointer is not null.
+      /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
@@ -1859,7 +1859,7 @@ namespace xtd {
       template<typename pointer_t>
       static void is_not_null(const std::shared_ptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame) {is_not_null(pointer, "", stack_frame);}
       
-      /// @brief Valids that the pointer is not null.
+      /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
@@ -1872,7 +1872,7 @@ namespace xtd {
       template<typename pointer_t>
       static void is_not_null(const std::shared_ptr<pointer_t>& pointer, const xtd::ustring& message) {is_not_null(pointer, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the pointer is not null.
+      /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -1892,9 +1892,9 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that the pointer is not null.
+      /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
-      /// @remarks Always true, a weaptr can't be equal to nullptr by contruction or assignation.
+      /// @remarks Always true, a weak_ptr can't be equal to nullptr by construction or assignation.
       /// @par Examples
       /// @code
       /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
@@ -1906,10 +1906,10 @@ namespace xtd {
       template<typename pointer_t>
       static void is_not_null(const std::weak_ptr<pointer_t>& pointer) {is_not_null(pointer, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the pointer is not null.
+      /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
-      /// @remarks Always true, a weaptr can't be equal to nullptr by contruction or assignation.
+      /// @remarks Always true, a weak_ptr can't be equal to nullptr by construction or assignation.
       /// @par Examples
       /// @code
       /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
@@ -1921,10 +1921,10 @@ namespace xtd {
       template<typename pointer_t>
       static void is_not_null(const std::weak_ptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame) {is_not_null(pointer, "", stack_frame);}
       
-      /// @brief Valids that the pointer is not null.
+      /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @remarks Always true, a weaptr can't be equal to nullptr by contruction or assignation.
+      /// @remarks Always true, a weak_ptr can't be equal to nullptr by construction or assignation.
       /// @par Examples
       /// @code
       /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
@@ -1936,11 +1936,11 @@ namespace xtd {
       template<typename pointer_t>
       static void is_not_null(const std::weak_ptr<pointer_t>& pointer, const xtd::ustring& message) {is_not_null(pointer, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the pointer is not null.
+      /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
-      /// @remarks Always true, a weaptr can't be equal to nullptr by contruction or assignation.
+      /// @remarks Always true, a weak_ptr can't be equal to nullptr by construction or assignation.
       /// @par Examples
       /// @code
       /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
@@ -1952,7 +1952,7 @@ namespace xtd {
       template<typename pointer_t>
       static void is_not_null(const std::weak_ptr<pointer_t>& pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {assert::succeed(message, stack_frame);}
       
-      /// @brief Valids that the pointer is not null.
+      /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @remarks Always false, a nullptr_t is always equal to nullptr.
       /// @par Examples
@@ -1961,7 +1961,7 @@ namespace xtd {
       /// @endcode
       static void is_not_null(std::nullptr_t pointer) {is_not_null(pointer, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the pointer is not null.
+      /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
       /// @remarks Always false, a nullptr_t is always equal to nullptr.
@@ -1971,7 +1971,7 @@ namespace xtd {
       /// @endcode
       static void is_not_null(std::nullptr_t pointer, const xtd::diagnostics::stack_frame& stack_frame) {is_not_null(pointer, "", stack_frame);}
       
-      /// @brief Valids that the pointer is not null.
+      /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @remarks Always false, a nullptr_t is always equal to nullptr.
@@ -1981,7 +1981,7 @@ namespace xtd {
       /// @endcode
       static void is_not_null(std::nullptr_t pointer, const xtd::ustring& message) {is_not_null(pointer, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the pointer is not null.
+      /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -1998,7 +1998,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that ta condition is not zero.
+      /// @brief Validates that ta condition is not zero.
       /// @param value The value to check is not zero.
       /// @par Examples
       /// @code
@@ -2010,7 +2010,7 @@ namespace xtd {
       template<typename value_t>
       static void is_not_zero(const value_t& value) {is_not_zero(value, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that ta condition is not zero.
+      /// @brief Validates that ta condition is not zero.
       /// @param value The value to check is not zero.
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
@@ -2023,7 +2023,7 @@ namespace xtd {
       template<typename value_t>
       static void is_not_zero(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame) {is_not_zero(value, "", stack_frame);}
       
-      /// @brief Valids that ta condition is not zero.
+      /// @brief Validates that ta condition is not zero.
       /// @param value The value to check is not zero.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
@@ -2036,7 +2036,7 @@ namespace xtd {
       template<typename value_t>
       static void is_not_zero(const value_t& value, const xtd::ustring& message) {is_not_zero(value, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that ta condition is not zero.
+      /// @brief Validates that ta condition is not zero.
       /// @param value The value to check is not zero.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -2056,7 +2056,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that the pointer is null.
+      /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @par Examples
       /// @code
@@ -2069,7 +2069,7 @@ namespace xtd {
       template<typename pointer_t>
       static void is_null(const pointer_t* pointer) {is_null(pointer, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the pointer is null.
+      /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
@@ -2083,7 +2083,7 @@ namespace xtd {
       template<typename pointer_t>
       static void is_null(const pointer_t* pointer, const xtd::diagnostics::stack_frame& stack_frame) {is_null(pointer, "", stack_frame);}
       
-      /// @brief Valids that the pointer is null.
+      /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
@@ -2097,7 +2097,7 @@ namespace xtd {
       template<typename pointer_t>
       static void is_null(const pointer_t* pointer, const xtd::ustring& message) {is_null(pointer, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the pointer is null.
+      /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -2118,7 +2118,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that the pointer is null.
+      /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @par Examples
       /// @code
@@ -2130,7 +2130,7 @@ namespace xtd {
       template<typename pointer_t>
       static void is_null(const std::unique_ptr<pointer_t>& pointer) {is_null(pointer, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the pointer is null.
+      /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
@@ -2143,7 +2143,7 @@ namespace xtd {
       template<typename pointer_t>
       static void is_null(const std::unique_ptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame) {is_null(pointer, "", stack_frame);}
       
-      /// @brief Valids that the pointer is null.
+      /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
@@ -2156,7 +2156,7 @@ namespace xtd {
       template<typename pointer_t>
       static void is_null(const std::unique_ptr<pointer_t>& pointer, const xtd::ustring& message) {is_null(pointer, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the pointer is null.
+      /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -2176,7 +2176,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that the pointer is null.
+      /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @par Examples
       /// @code
@@ -2188,7 +2188,7 @@ namespace xtd {
       template<typename pointer_t>
       static void is_null(const std::shared_ptr<pointer_t>& pointer) {is_null(pointer, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the pointer is null.
+      /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
@@ -2201,7 +2201,7 @@ namespace xtd {
       template<typename pointer_t>
       static void is_null(const std::shared_ptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame) {is_null(pointer, "", stack_frame);}
       
-      /// @brief Valids that the pointer is null.
+      /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
@@ -2214,7 +2214,7 @@ namespace xtd {
       template<typename pointer_t>
       static void is_null(const std::shared_ptr<pointer_t>& pointer, const xtd::ustring& message) {is_null(pointer, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the pointer is null.
+      /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -2234,9 +2234,9 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that the pointer is null.
+      /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
-      /// @remarks Always false, a weaptr can't be equal to nullptr by contruction or assignation.
+      /// @remarks Always false, a weak_ptr can't be equal to nullptr by construction or assignation.
       /// @par Examples
       /// @code
       /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
@@ -2248,10 +2248,10 @@ namespace xtd {
       template<typename pointer_t>
       static void is_null(const std::weak_ptr<pointer_t>& pointer) {is_null(pointer, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the pointer is null.
+      /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
-      /// @remarks Always false, a weaptr can't be equal to nullptr by contruction or assignation.
+      /// @remarks Always false, a weak_ptr can't be equal to nullptr by construction or assignation.
       /// @par Examples
       /// @code
       /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
@@ -2263,10 +2263,10 @@ namespace xtd {
       template<typename pointer_t>
       static void is_null(const std::weak_ptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame) {is_null(pointer, "", stack_frame);}
       
-      /// @brief Valids that the pointer is null.
+      /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @remarks Always false, a weaptr can't be equal to nullptr by contruction or assignation.
+      /// @remarks Always false, a weak_ptr can't be equal to nullptr by construction or assignation.
       /// @par Examples
       /// @code
       /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
@@ -2278,11 +2278,11 @@ namespace xtd {
       template<typename pointer_t>
       static void is_null(const std::weak_ptr<pointer_t>& pointer, const xtd::ustring& message) {is_null(pointer, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the pointer is null.
+      /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
-      /// @remarks Always false, a weaptr can't be equal to nullptr by contruction or assignation.
+      /// @remarks Always false, a weak_ptr can't be equal to nullptr by construction or assignation.
       /// @par Examples
       /// @code
       /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
@@ -2300,7 +2300,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that the pointer is null.
+      /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @remarks Always false, a nullptr_t is always equal to nullptr.
       /// @par Examples
@@ -2309,7 +2309,7 @@ namespace xtd {
       /// @endcode
       static void is_null(std::nullptr_t pointer) {is_null(pointer, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the pointer is null.
+      /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
       /// @remarks Always false, a nullptr_t is always equal to nullptr.
@@ -2319,7 +2319,7 @@ namespace xtd {
       /// @endcode
       static void is_null(std::nullptr_t pointer, const xtd::diagnostics::stack_frame& stack_frame) {is_null(pointer, "", stack_frame);}
       
-      /// @brief Valids that the pointer is null.
+      /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @remarks Always false, a nullptr_t is always equal to nullptr.
@@ -2329,7 +2329,7 @@ namespace xtd {
       /// @endcode
       static void is_null(std::nullptr_t pointer, const xtd::ustring& message) {is_null(pointer, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the pointer is null.
+      /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -2340,7 +2340,7 @@ namespace xtd {
       /// @endcode
       static void is_null(std::nullptr_t pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {assert::succeed(message, stack_frame);}
       
-      /// @brief Valids that ta condition is positive.
+      /// @brief Validates that ta condition is positive.
       /// @param value The value to check is positive.
       /// @par Examples
       /// @code
@@ -2352,7 +2352,7 @@ namespace xtd {
       template<typename value_t>
       static void is_positive(const value_t& value) {is_positive(value, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that ta condition is positive.
+      /// @brief Validates that ta condition is positive.
       /// @param value The value to check is positive.
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
@@ -2365,7 +2365,7 @@ namespace xtd {
       template<typename value_t>
       static void is_positive(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame) {is_positive(value, "", stack_frame);}
       
-      /// @brief Valids that ta condition is positive.
+      /// @brief Validates that ta condition is positive.
       /// @param value The value to check is positive.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
@@ -2378,7 +2378,7 @@ namespace xtd {
       template<typename value_t>
       static void is_positive(const value_t& value, const xtd::ustring& message) {is_positive(value, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that ta condition is positive.
+      /// @brief Validates that ta condition is positive.
       /// @param value The value to check is positive.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -2398,7 +2398,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that ta condition is true.
+      /// @brief Validates that ta condition is true.
       /// @param condition The condition to check is true.
       /// @par Examples
       /// @code
@@ -2409,7 +2409,7 @@ namespace xtd {
       /// @endcode
       static void is_true(bool condition) {is_true(condition, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that a condition is true.
+      /// @brief Validates that a condition is true.
       /// @param condition The condition to check is true.
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
@@ -2421,7 +2421,7 @@ namespace xtd {
       /// @endcode
       static void is_true(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {is_true(condition, "", stack_frame);}
       
-      /// @brief Valids that a condition is true.
+      /// @brief Validates that a condition is true.
       /// @param condition The condition to check is true.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
@@ -2433,7 +2433,7 @@ namespace xtd {
       /// @endcode
       static void is_true(bool condition, const xtd::ustring& message) {is_true(condition, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that a condition is true.
+      /// @brief Validates that a condition is true.
       /// @param condition The condition to check is true.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -2452,7 +2452,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that ta condition is zero.
+      /// @brief Validates that ta condition is zero.
       /// @param value The value to check is zero.
       /// @par Examples
       /// @code
@@ -2464,7 +2464,7 @@ namespace xtd {
       template<typename value_t>
       static void is_zero(const value_t& value) {is_zero(value, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that ta condition is zero.
+      /// @brief Validates that ta condition is zero.
       /// @param value The value to check is zero.
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
@@ -2477,7 +2477,7 @@ namespace xtd {
       template<typename value_t>
       static void is_zero(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame) {is_zero(value, "", stack_frame);}
       
-      /// @brief Valids that ta condition is zero.
+      /// @brief Validates that ta condition is zero.
       /// @param value The value to check is zero.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
@@ -2490,7 +2490,7 @@ namespace xtd {
       template<typename value_t>
       static void is_zero(const value_t& value, const xtd::ustring& message) {is_zero(value, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that ta condition is zero.
+      /// @brief Validates that ta condition is zero.
       /// @param value The value to check is zero.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -2510,7 +2510,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that the statement throws a particular exception when called.
+      /// @brief Validates that the statement throws a particular exception when called.
       /// @tparam exception_t The exception type that must be throw.
       /// @param statement The statement that verify.
       /// @par Examples
@@ -2522,7 +2522,7 @@ namespace xtd {
       template<typename exception_t>
       static void throws(const std::function<void()>& statement) {throws<exception_t>(statement, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the statement throws a particular exception when called.
+      /// @brief Validates that the statement throws a particular exception when called.
       /// @tparam exception_t The exception type that must be throw.
       /// @param statement The statement that verify.
       /// @param stack_frame Contains information about current file and current line.
@@ -2535,7 +2535,7 @@ namespace xtd {
       template<typename exception_t>
       static void throws(const std::function<void()>& statement, const xtd::diagnostics::stack_frame& stack_frame) {throws<exception_t>(statement, "", stack_frame);}
       
-      /// @brief Valids that the statement throws a particular exception when called.
+      /// @brief Validates that the statement throws a particular exception when called.
       /// @tparam exception_t The exception type that must be throw.
       /// @param statement The statement that verify.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2548,7 +2548,7 @@ namespace xtd {
       template<typename exception_t>
       static void throws(const std::function<void()>& statement, const xtd::ustring& message) {throws<exception_t>(statement, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the statement throws a particular exception when called.
+      /// @brief Validates that the statement throws a particular exception when called.
       /// @tparam exception_t The exception type that must be throw.
       /// @param statement The statement that verify.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2568,7 +2568,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valids that the staement does not throw an exception.
+      /// @brief Validates that the statement does not throw an exception.
       /// @param statement The statement that verify.
       /// @par Examples
       /// @code
@@ -2578,7 +2578,7 @@ namespace xtd {
       /// @endcode
       static void throws_any(const std::function<void()>& statement) {throws_any(statement, "", xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the staement does not throw an exception.
+      /// @brief Validates that the statement does not throw an exception.
       /// @param statement The statement that verify.
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
@@ -2589,7 +2589,7 @@ namespace xtd {
       /// @endcode
       static void throws_any(const std::function<void()>& statement, const xtd::diagnostics::stack_frame& stack_frame) {throws_any(statement, "", stack_frame);}
       
-      /// @brief Valids that the staement does not throw an exception.
+      /// @brief Validates that the statement does not throw an exception.
       /// @param statement The statement that verify.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
@@ -2600,7 +2600,7 @@ namespace xtd {
       /// @endcode
       static void throws_any(const std::function<void()>& statement, const xtd::ustring& message) {throws_any(statement, message, xtd::diagnostics::stack_frame::empty());}
       
-      /// @brief Valids that the staement does not throw an exception.
+      /// @brief Validates that the statement does not throw an exception.
       /// @param statement The statement that verify.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.

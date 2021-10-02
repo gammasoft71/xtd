@@ -33,7 +33,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the common_dialog class.
       common_dialog() = default;
       
-      /// @brief Get assync dialog_result result after dialog box is closing.
+      /// @brief Get async dialog_result result after dialog box is closing.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       xtd::forms::dialog_result dialog_result() const {return dialog_result_;}
 
@@ -131,7 +131,7 @@ namespace xtd {
       /// @brief When overridden in a derived class, specifies a common dialog box.
       /// @param hwnd_owner A value that represents the window handle of the owner window for the common dialog box.
       /// @return true if the dialog box was successfully run; otherwise, false.
-      /// @remarks The result will done in asynch. Check result_dialog property aftter dialog box closed to obtain the result.
+      /// @remarks The result will done in async. Check result_dialog property after dialog box closed to obtain the result.
       virtual void run_sheet(intptr_t hwnd_owner) = 0;
 
       /// @cond
