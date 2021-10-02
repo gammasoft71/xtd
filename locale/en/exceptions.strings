@@ -1,11 +1,11 @@
-key "The given key was not present in the dictionnary."
-value "The given key was not present in the dictionnary."
+key "The given key was not present in the dictionary."
+value "The given key was not present in the dictionary."
 
 key "Attempted to access a path that is not on the disk."
 value "Attempted to access a path that is not on the disk."
 
-key "Attempted to access a drive that is not avaible."
-value "Attempted to access a drive that is not avaible."
+key "Attempted to access a drive that is not available."
+value "Attempted to access a drive that is not available."
 
 key "Attempted to read past the end of the stream."
 value "Attempted to read past the end of the stream."
@@ -19,11 +19,11 @@ value "Could not load the specified file."
 key "Unable to find the specified file."
 value "Unable to find the specified file."
 
-key "I/O error occured."
-value "I/O error occured."
+key "I/O error occurred."
+value "I/O error occurred."
 
-key "The specified path, file name, or both are too long. The fully qualified file name must be less than 260 caracters, and the directory name must be less than 248 caracters."
-value "The specified path, file name, or both are too long. The fully qualified file name must be less than 260 caracters, and the directory name must be less than 248 caracters."
+key "The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters."
+value "The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters."
 
 key "Value does not fall within the expected range."
 value "Value does not fall within the expected range."

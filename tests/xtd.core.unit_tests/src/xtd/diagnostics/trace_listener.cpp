@@ -131,10 +131,10 @@ namespace unit_tests {
       assert::are_equal("source error: 1 : informations 42, 84\n", trace_listener.result(), csf_);
     }
     
-    void test_method_(trace_transfert) {
+    void test_method_(trace_transfer) {
       unit_test_trace_listener trace_listener;
       trace_listener.trace_transfer(xtd::diagnostics::trace_event_cache(), "source", 1, "message", "10203040-5060-7080-90a0-b0c0d0e0f001");
-      assert::are_equal("source transfert: 1 : message, related_activity_id=10203040-5060-7080-90a0-b0c0d0e0f001\n", trace_listener.result(), csf_);
+      assert::are_equal("source transfer: 1 : message, related_activity_id=10203040-5060-7080-90a0-b0c0d0e0f001\n", trace_listener.result(), csf_);
     }
     
     void test_method_(write_string) {
