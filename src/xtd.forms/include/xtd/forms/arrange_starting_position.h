@@ -15,7 +15,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms
     /// @remarks This enumeration has a flags attribute attribute that allows a bitwise combination of its member values.
-    /// @remarks This enumeration is used by the arrange_starting_position property of the systemonformation class.
+    /// @remarks This enumeration is used by the arrange_starting_position property of the system_information class.
     enum class arrange_starting_position {
       /// @brief Starts at the lower-left corner of the screen, which is the default position.
       bottom_left = 0,

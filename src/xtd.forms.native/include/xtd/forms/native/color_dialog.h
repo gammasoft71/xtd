@@ -40,7 +40,7 @@ namespace xtd {
         /// @brief Shows dialog.
         /// @param hwnd Parent window handle.
         /// @param color A xtd::drawing::color that specifies the color to display.
-        /// @param custom_colors A collors array that contains user custom colors.
+        /// @param custom_colors A colors array that contains user custom colors.
         /// @param options A bitwise combination of the color dialog flags.
         /// @return true if the user clicks OK in the dialog box; otherwise, false.
         /// @remarks If result is true, the color parameter contains the new chosen color.
@@ -49,7 +49,7 @@ namespace xtd {
         /// @brief Shows async dialog as sheet.
         /// @param on_dialog_closed a dialog close delegate to call when the dialog is closed.
         /// @param color A xtd::drawing::color that specifies the color to display.
-        /// @param custom_colors A collors array that contains user custom colors.
+        /// @param custom_colors A colors array that contains user custom colors.
         /// @param options A bitwise combination of the color dialog flags.
         /// @remarks When dialog closed and if result is true, the color parameter contains the new chosen color.
         /// @warning Internal use only

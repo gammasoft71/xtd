@@ -36,9 +36,9 @@ namespace xtd {
     /// @note Adding a trace listener to the xtd::diagnostics::debug::listeners collection can cause an exception to be thrown while tracing, if a resource used by the trace listener is not available. The conditions and the exception thrown depend on the trace listener and cannot be enumerated in this topic. It may be useful to place calls to the debug methods in try/catch blocks to detect and handle any exceptions from trace listeners.
     /// @remarks You can modify the level of indentation using the xtd::diagnostics::debug::indent method or the xtd::diagnostics::debug::indent_level property. To modify the indent spacing, use the xtd::diagnostics::debug::indent_size property. You can specify whether to automatically flush the output buffer after each write by setting the xtd::diagnostics::debug::auto_flush property to true.
     /// @remarks The debug class provides properties to get or set the level of indent, the xtd::diagnostics::debug::indent_size, and whether to xtd::diagnostics::debug::auto_flush after each write.
-    /// @remarks You must enable debug mode to use a trace listener. The syntax is compiler specific. If you use other than cmake to manage your build, refer to the documentation of your build nanager.
-    ///  * To enable debug mode with cmake, add the add_definitions(-DDEBUG) command line in the CMakeLists.txt of your porject, or you can add #define DEBUG to the top of your file.
-    /// @remarks To activete your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if defined(DEBUG) ... #endif block, and add the /DDEBUG option to the compiler command line or add #define DEBUG to the file.
+    /// @remarks You must enable debug mode to use a trace listener. The syntax is compiler specific. If you use other than cmake to manage your build, refer to the documentation of your build manager.
+    ///  * To enable debug mode with cmake, add the add_definitions(-DDEBUG) command line in the CMakeLists.txt of your project, or you can add #define DEBUG to the top of your file.
+    /// @remarks To activate your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if defined(DEBUG) ... #endif block, and add the /DDEBUG option to the compiler command line or add #define DEBUG to the file.
     /// @par Examples
     /// The following example uses debug to indicate the beginning and the end of a program's execution. The example also uses the debug::indent and debug::unindent methods to distinguish the tracing output.
     /// @include debug.cpp
@@ -82,7 +82,7 @@ namespace xtd {
       /// @note The xtd::diagnostics::debug::listeners collection is shared by both the xtd::diagnostics::debug and the xtd::diagnostics::trace classes; adding a trace listener to either class adds the listener to both.
       static listener_collection& listeners();
       /// @brief Sets the collection of listeners that is monitoring the trace output.
-      /// @paral$m listerners A xtd::diagnostics::debug::listener_collection that represents a collection of type xtd::diagnostics::trace_listener monitoring the trace output.
+      /// @paral$m listeners A xtd::diagnostics::debug::listener_collection that represents a collection of type xtd::diagnostics::trace_listener monitoring the trace output.
       /// @remarks The xtd::diagnostics::debug::listeners produce formatted output from the trace output. By default, the collection contains an instance of the xtd::diagnostics::default_trace_listener class. If you want to remove the default listener, call the erase method, and pass it the instance of the xtd::diagnostics::default_trace_listener. To redirect output to the console window, add an instance of the xtd::diagnostics::console_trace_listener class.
       /// @note The xtd::diagnostics::debug::listeners collection is shared by both the xtd::diagnostics::debug and the xtd::diagnostics::trace classes; adding a trace listener to either class adds the listener to both.
       static void listeners(const listener_collection& listeners);
@@ -104,7 +104,7 @@ namespace xtd {
       static bool use_global_lock();
       /// @brief Sets a value indicating whether the global lock should be used.
       /// @param use_global_lock true if the global lock is to be used; otherwise, false. The default is true.
-      /// @remarks The global lock is always used if the trace listener is not thread safe, regardless of the value of UseGlobalLock. The xtd::diagnostics::debug::is_threa_safe property is used to determine if the listener is thread safe. The global lock is not used only if the value of xtd::diagnostics::debug::use_global_lock is false and the value of xtd::diagnostics::debug::is_thread_safe is true. The default behavior is to use the global lock.
+      /// @remarks The global lock is always used if the trace listener is not thread safe, regardless of the value of UseGlobalLock. The xtd::diagnostics::debug::is_thread_safe property is used to determine if the listener is thread safe. The global lock is not used only if the value of xtd::diagnostics::debug::use_global_lock is false and the value of xtd::diagnostics::debug::is_thread_safe is true. The default behavior is to use the global lock.
       static void use_global_lock(bool use_global_lock);
 
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
@@ -319,7 +319,7 @@ namespace xtd {
       /// @brief Writes a category name and message to the trace listeners in the Listeners collection if a condition is true.
       /// @param condition true to cause a message to be written; otherwise, false.
       /// @param message A message to write.
-      /// @param categoory A category name used to organize the output.
+      /// @param category A category name used to organize the output.
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
       template<typename object_t>
@@ -412,7 +412,7 @@ namespace xtd {
       /// @brief Writes a category name and message followed by a line terminator to the trace listeners in the Listeners collection if a condition is true.
       /// @param condition true to cause a message to be written; otherwise, false.
       /// @param message A message to write.
-      /// @param categoory A category name used to organize the output.
+      /// @param category A category name used to organize the output.
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
       template<typename object_t>
@@ -438,7 +438,7 @@ namespace xtd {
 
     private:
       friend trace;
-      static xtd::diagnostics::assert_dialog_result assert_dialog(bool condition, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frrame);
+      static xtd::diagnostics::assert_dialog_result assert_dialog(bool condition, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       static void fail__(const xtd::ustring& message);
       static void fail__(const xtd::ustring& message, const xtd::ustring& detail_message);
       static void flush_();

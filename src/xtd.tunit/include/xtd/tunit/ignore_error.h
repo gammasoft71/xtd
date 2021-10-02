@@ -9,7 +9,7 @@
 namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
-    /// @brief Exception thow when ignore.
+    /// @brief Exception to be thrown when something is ignored.
     /// @par Namespace
     /// xtd::tunit
     /// @par Library

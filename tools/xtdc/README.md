@@ -8,7 +8,7 @@ xtdc can build, open, run, install, test or uninstall an existing project.
 
 # Templates project
 
-xtdc contians many project template. All project listed below are created with CMake and target your system (Visual Studio on Windows, Xcode on macOS and Code::Blocks or makefile on Linux).
+xtdc contains many project template. All project listed below are created with CMake and target your system (Visual Studio on Windows, Xcode on macOS and Code::Blocks or makefile on Linux).
 
 ## GUI Application sdk :
 

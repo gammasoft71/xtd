@@ -35,7 +35,7 @@ constexpr int32_t SOCKET_OPTION_NAME_ACCEPT_CONNECTION = 2;
 /// @warning Internal use only
 constexpr int32_t SOCKET_OPTION_NAME_REUSE_ADDRESS = 4;
 
-//// @brief Use keep-alives.
+//// @brief Use keep-alive.
 /// @par Library
 /// xtd.core.native
 /// @ingroup xtd_core_native socket_option_name

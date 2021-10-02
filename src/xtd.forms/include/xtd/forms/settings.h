@@ -17,7 +17,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms components
-    /// @remarks On Windows settings are stored in registry with "HKEY_CURRENT_USER\Software\company_name\product_name" key or if no Comapny name "\HKEY_CURRENT_USER\Software\Product Name\Product Name" key.
+    /// @remarks On Windows settings are stored in registry with "HKEY_CURRENT_USER\Software\company_name\product_name" key or if no Company name "\HKEY_CURRENT_USER\Software\Product Name\Product Name" key.
     /// @remarks On macos settings are stored in "~/Library/Preferences/product_name Preferences" file.
     /// @remarks On linux settings are stored in "~/.product_name" file.
     /// @par Examples

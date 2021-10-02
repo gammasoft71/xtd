@@ -41,7 +41,7 @@ namespace xtd {
   /// Because the return value of some methods depends on system architecture, be careful when transmitting byte_t data beyond machine boundaries:
   /// * If all systems sending and receiving data are guaranteed to have the same endianness, nothing has be done to the data.
   /// * If systems sending and receiving data can have different endianness, always transmit data in a particular order. This means that the order of bytes in the std::vector may have to be reversed either before sending them or after receiving them. A common convention is to transmit data in network byte_t order (big-endian order). The following example provides an implementation for sending an integer value in network byte_t order.
-  /// @include bit_converterEndianess.cpp
+  /// @include bit_converterEndianness.cpp
   /// * If systems sending and receiving data can have different endianness and the data to be transmitted consists of signed integers, call the IPAddress.HostToNetworkOrder method to convert the data to network byte_t order and the IPAddress.NetworkToHostOrder method to convert it to the order required by the recipient.
   /// @par Examples
   /// The following code example illustrates the use of several bit_converter class methods.
@@ -63,7 +63,7 @@ namespace xtd {
     /// @remarks Different computer architectures store data using different byte_t orders. "Big-endian" means the most significant byte_t is on the left end of a word. "Little-endian" means the most significant byte_t is on the right end of a word.
     /// @par Examples
     /// The following code example illustrates the use of the is_little_endian field.
-    /// @include bit_converteris_little_endian.cpp
+    /// @include bit_converters_little_endian.cpp
     static const bool is_little_endian;
 
     /// @brief Converts the specified double-precision floating point number to a 64-bit signed integer.
@@ -313,7 +313,7 @@ namespace xtd {
     /// @include bit_converterto_string.cpp
     static xtd::ustring to_string(const std::vector<byte_t>& value);
 
-    /// @brief Converts the numeric value of each element of a specified substd::vector of bytes to its equivalent hexadecimal xtd::ustring representation.
+    /// @brief Converts the numeric value of each element of a specified sub std::vector of bytes to its equivalent hexadecimal xtd::ustring representation.
     /// @param value An std::vector of bytes.
     /// @param start_index The starting position within value.
     /// @return xtd::ustring A xtd::ustring of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in value; for example, "7F-2C-4A-00".
@@ -325,7 +325,7 @@ namespace xtd {
     /// @include bit_converterto_string2.cpp
     static xtd::ustring to_string(const std::vector<byte_t>& value, size_t start_index);
 
-    /// @brief Converts the numeric value of each element of a specified substd::vector of bytes to its equivalent hexadecimal xtd::ustring representation.
+    /// @brief Converts the numeric value of each element of a specified sub std::vector of bytes to its equivalent hexadecimal xtd::ustring representation.
     /// @param value An std::vector of bytes.
     /// @param start_index The starting position within value.
     /// @param length The number of std::vector elements in value to convert.

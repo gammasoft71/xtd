@@ -72,6 +72,6 @@ ustring font_family::get_name(int32_t language) const {
   return native::font_family::get_name(data_->handle_, language);
 }
 
-bool font_family::is_style_avaible(font_style style) const {
-  return native::font_family::is_style_avaible(data_->handle_, (style & font_style::bold) == font_style::bold, (style & font_style::italic) == font_style::italic, (style & font_style::underline) == font_style::underline, (style & font_style::strikeout) == font_style::strikeout);
+bool font_family::is_style_available(font_style style) const {
+  return native::font_family::is_style_available(data_->handle_, (style & font_style::bold) == font_style::bold, (style & font_style::italic) == font_style::italic, (style & font_style::underline) == font_style::underline, (style & font_style::strikeout) == font_style::strikeout);
 }

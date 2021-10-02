@@ -42,7 +42,7 @@ namespace xtd {
         /// @param description The description to display.
         /// @param root_folder One of the environment::special_folder values.
         /// @param selected_path The path of the folder first selected in the dialog box or the last folder selected by the user.
-        /// @param options A bittwise folder browser dialog flags value.
+        /// @param options A bitwise folder browser dialog flags value.
         /// @return true if the user clicks OK in the dialog box; otherwise, false.
         /// @remarks If result is true, the selected_path parameter contains the new selected path.
         /// @warning Internal use only
@@ -52,7 +52,7 @@ namespace xtd {
         /// @param description The description to display.
         /// @param root_folder One of the environment::special_folder values.
         /// @param selected_path The path of the folder first selected in the dialog box or the last folder selected by the user.
-        /// @param options A bittwise folder browser dialog flags value.
+        /// @param options A bitwise folder browser dialog flags value.
         /// @return true if the user clicks OK in the dialog box; otherwise, false.
         /// @remarks When dialog closed and if result is true, the selected_path parameter contains the new selected path.
         /// @warning Internal use only

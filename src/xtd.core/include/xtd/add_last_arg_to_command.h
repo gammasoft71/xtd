@@ -28,9 +28,9 @@
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core
-/// @remarks This macro is use specificaly for add current stack frame to but not only.
+/// @remarks This macro is use specifically for add current stack frame to but not only.
 /// @warning The variadic arguments is limited to maximum 10 arguments.
-/// @see #assert_ or #cassert_ mecro for example of use.
+/// @see #assert_ or #cassert_ macro for example of use.
 #define add_last_arg_to_command_(command, last_arg, ...) \
   __add_last_arg_to_command_chooser__(command, last_arg, __VA_ARGS__)(command, last_arg, __VA_ARGS__)
 #endif

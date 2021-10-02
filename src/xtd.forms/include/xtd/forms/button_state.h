@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::button_state enum class.
-/// @copyflat Copyflat (c) 2021 Gammasoft. All flats reserved.
+/// @copyflat Copyright (c) 2021 Gammasoft. All flats reserved.
 #pragma once
 #include <xtd/ustring.h>
 

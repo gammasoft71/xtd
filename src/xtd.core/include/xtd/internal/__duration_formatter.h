@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains __duration_formater method.
+/// @brief Contains __duration_formatter method.
 #pragma once
 /// @cond
 #ifndef __XTD_CORE_INTERNAL__
@@ -39,7 +39,7 @@ inline std::basic_string<char_t> __make_string_from_duration(std::chrono::durati
 }
 
 template<typename char_t, typename type_t, typename period_t = std::ratio<1>>
-inline std::basic_string<char_t> __duration_formater(std::basic_string<char_t> fmt, const std::chrono::duration<type_t, period_t>& value, const std::locale& loc) {
+inline std::basic_string<char_t> __duration_formatter(std::basic_string<char_t> fmt, const std::chrono::duration<type_t, period_t>& value, const std::locale& loc) {
   if (fmt.empty()) fmt = std::basic_string<char_t> {'G'};
   if (fmt.size() > 1) __format_exception("Invalid format");
   

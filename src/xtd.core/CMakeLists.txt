@@ -143,24 +143,24 @@ add_sources(
   include/xtd/diagnostics/trace_options.h
   include/xtd/diagnostics/trace_source.h
   include/xtd/diagnostics/trace_switch.h
-  include/xtd/internal/__binary_formater.h
-  include/xtd/internal/__boolean_formater.h
-  include/xtd/internal/__character_formater.h
-  include/xtd/internal/__currency_formater.h
-  include/xtd/internal/__date_time_formater.h
-  include/xtd/internal/__duration_formater.h
-  include/xtd/internal/__enum_formater.h
-  include/xtd/internal/__fixed_point_formater.h
+  include/xtd/internal/__binary_formatter.h
+  include/xtd/internal/__boolean_formatter.h
+  include/xtd/internal/__character_formatter.h
+  include/xtd/internal/__currency_formatter.h
+  include/xtd/internal/__date_time_formatter.h
+  include/xtd/internal/__duration_formatter.h
+  include/xtd/internal/__enum_formatter.h
+  include/xtd/internal/__fixed_point_formatter.h
   include/xtd/internal/__generic_stream_output.h
   include/xtd/internal/__format_exception.h
   include/xtd/internal/__format_information.h
   include/xtd/internal/__format_stringer.h
-  include/xtd/internal/__natural_formater.h
-  include/xtd/internal/__numeric_formater.h
+  include/xtd/internal/__natural_formatter.h
+        include/xtd/internal/__numeric_formatter.h
   include/xtd/internal/__opaque_console.h
   include/xtd/internal/__parse.h
   include/xtd/internal/__sprintf.h
-  include/xtd/internal/__string_formater.h
+  include/xtd/internal/__string_formatter.h
   include/xtd/io/directory_not_found_exception.h
   include/xtd/io/drive_not_found_exception.h
   include/xtd/io/end_of_stream_exception.h

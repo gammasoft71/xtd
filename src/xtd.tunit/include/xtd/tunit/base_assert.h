@@ -16,7 +16,7 @@
 namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
-    /// @brief Thebase class for assert.
+    /// @brief The base class for assert.
     /// @par Namespace
     /// xtd::tunit
     /// @par Library

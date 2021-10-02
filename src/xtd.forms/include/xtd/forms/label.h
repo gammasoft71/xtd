@@ -25,7 +25,7 @@ namespace xtd {
     /// @include hello_world_label.cpp
     class forms_export_ label : public control {
     public:
-      /// @brief Initializee a new instance of label class.
+      /// @brief Initialize a new instance of label class.
       label();
 
       /// @brief Gets the border style for the control.

@@ -380,14 +380,14 @@ namespace xtd {
       /// @param fore_core The check_box foreground color.
       /// @return The created check_box.
       static std::unique_ptr<check_box> del(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<check_box>(parent, texts::del(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined check_box that represent decending check_box.
+      /// @brief Create a system-defined check_box that represent descending check_box.
       /// @param location The check_box location in pixels.
       /// @param size The check_box size in pixels.
       /// @param back_color The check_box background color.
       /// @param fore_core The check_box foreground color.
       /// @return The created check_box.
       static std::unique_ptr<check_box> descending(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<check_box>(texts::descending(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined check_box that represent decending check_box.
+      /// @brief Create a system-defined check_box that represent descending check_box.
       /// @param parent The control that contains the check_box.
       /// @param location The check_box location in pixels.
       /// @param size The check_box size in pixels.
@@ -530,14 +530,14 @@ namespace xtd {
       /// @param fore_core The check_box foreground color.
       /// @return The created check_box.
       static std::unique_ptr<check_box> forward(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<check_box>(parent, texts::forward(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined check_box that represent harddisk check_box.
+      /// @brief Create a system-defined check_box that represent hard disk check_box.
       /// @param location The check_box location in pixels.
       /// @param size The check_box size in pixels.
       /// @param back_color The check_box background color.
       /// @param fore_core The check_box foreground color.
       /// @return The created check_box.
       static std::unique_ptr<check_box> harddisk(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<check_box>(texts::harddisk(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined check_box that represent harddisk check_box.
+      /// @brief Create a system-defined check_box that represent hard disk check_box.
       /// @param parent The control that contains the check_box.
       /// @param location The check_box location in pixels.
       /// @param size The check_box size in pixels.
@@ -995,7 +995,7 @@ namespace xtd {
       /// @param fore_core The check_box foreground color.
       /// @return The created check_box.
       static std::unique_ptr<check_box> save_as(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<check_box>(parent, texts::save_as(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined check_box that represent seach check_box.
+      /// @brief Create a system-defined check_box that represent search check_box.
       /// @param location The check_box location in pixels.
       /// @param size The check_box size in pixels.
       /// @param back_color The check_box background color.
@@ -1145,14 +1145,14 @@ namespace xtd {
       /// @param fore_core The check_box foreground color.
       /// @return The created check_box.
       static std::unique_ptr<check_box> undo(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<check_box>(parent, texts::undo(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined check_box that represent uindent check_box.
+      /// @brief Create a system-defined check_box that represents an unindented check_box.
       /// @param location The check_box location in pixels.
       /// @param size The check_box size in pixels.
       /// @param back_color The check_box background color.
       /// @param fore_core The check_box foreground color.
       /// @return The created check_box.
       static std::unique_ptr<check_box> unindent(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<check_box>(texts::unindent(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined check_box that represent unindent check_box.
+      /// @brief Create a system-defined check_box that represents an unindented check_box.
       /// @param parent The control that contains the check_box.
       /// @param location The check_box location in pixels.
       /// @param size The check_box size in pixels.

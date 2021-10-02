@@ -32,7 +32,7 @@ namespace {
   public:
     explicit reentrant_layout(control* do_layout) : do_layout_(do_layout) {do_layouts.insert(do_layout_);}
     ~reentrant_layout() {do_layouts.erase(do_layout_);}
-    static bool is_reentrant(control* do_laout) {return do_layouts.find(do_laout) != do_layouts.end(); }
+    static bool is_reentrant(control* do_layout) {return do_layouts.find(do_layout) != do_layouts.end(); }
   private:
     control* do_layout_ = nullptr;
     static set<control*> do_layouts;
@@ -167,15 +167,15 @@ control& control::background_image_layout(xtd::forms::image_layout background_im
 }
 
 bool control::can_focus() const {
-  bool visible_and_enebled = handle_ && get_state(state::visible) && get_state(state::enabled);
+  bool visible_and_enabled = handle_ && get_state(state::visible) && get_state(state::enabled);
 
   optional<reference_wrapper<control>> top_level_control = const_cast<control&>(*this);
-  while (visible_and_enebled && top_level_control.has_value() && !top_level_control.value().get().get_state(state::top_level)) {
+  while (visible_and_enabled && top_level_control.has_value() && !top_level_control.value().get().get_state(state::top_level)) {
     top_level_control = top_level_control.value().get().parent();
-    if (top_level_control.has_value()) visible_and_enebled = top_level_control.value().get().get_state(state::visible) && get_state(state::enabled);
+    if (top_level_control.has_value()) visible_and_enabled = top_level_control.value().get().get_state(state::visible) && get_state(state::enabled);
   }
   
-  if (!visible_and_enebled) return false;
+  if (!visible_and_enabled) return false;
   return can_focus_;
 }
 
@@ -637,7 +637,7 @@ void control::on_key_up(key_event_args& e) {
 void control::on_layout(const event_args &e) {
   do_layout_with_anchor_styles();
   do_layout_with_auto_size_mode();
-  do_layout_childs_with_dock_style();
+  do_layout_children_with_dock_style();
   if (can_raise_events()) layout(*this, e);
 }
 
@@ -829,7 +829,7 @@ intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_
   } catch(const exception& e) {
     message_box::show(from_handle(hwnd).value(), xtd::ustring::format("message: {}", e.what()), xtd::ustring::format("Exception {}", xtd::ustring::class_name(e)), message_box_buttons::ok, message_box_icon::error);
   } catch(...) {
-    message_box::show(from_handle(hwnd).value(), "message: An unknown exception occure", "Unknown Exception", message_box_buttons::ok, message_box_icon::error);
+    message_box::show(from_handle(hwnd).value(), "message: An unknown exception occur", "Unknown Exception", message_box_buttons::ok, message_box_icon::error);
   }
   return 0;
    */
@@ -946,7 +946,7 @@ void control::on_parent_size_changed(object& sender, const event_args& e) {
   }
 }
 
-void control::do_layout_childs_with_dock_style() {
+void control::do_layout_children_with_dock_style() {
   bool docked = false;
   for(control_ref control : controls_) {
     docked = control.get().get_state(state::docked);
@@ -1123,7 +1123,7 @@ void control::wm_mouse_move(message& message) {
   def_wnd_proc(message);
   mouse_event_args e = mouse_event_args(wparam_to_mouse_buttons(message), get_state(control::state::double_click_fired) ? 2 : 1, point_to_client({(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}), 0);
   // Workaround : sometimes mouse enter and/or mouse leave message are not send
-  // For example on macos when mouse down in control and mouse is moved out then moved in, the mouse enter messege is not send...
+  // For example on macos when mouse down in control and mouse is moved out then moved in, the mouse enter message is not send...
   // The two followed line fixed it
   if (!mouse_in_ && client_rectangle().contains(e.location())) {
     xtd::diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::trace_switch().trace_warning() && enable_debug::get(enable_debug::workaround), "Workaround : mouse enter event !!!");

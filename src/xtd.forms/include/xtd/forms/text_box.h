@@ -42,13 +42,13 @@ namespace xtd {
       }
       
       /// @brief Gets whether the text_box control modifies the case of characters as they are typed.
-      /// @return One of the xtd::forms::character_casing enumeration values that specifies whether the ttext_box control modifies the case of characters. The default is xtd::forms::character_casing::normal.
-      /// @remarks You can use the character_casingcharacter_casing property to change the case of characters as required by your application. For example, you could change the case of all characters entered in a text_box control used for password entry to uppercase or lowercase to enforce a policy for passwords.
+      /// @return One of the xtd::forms::character_casing enumeration values that specifies whether the text_box control modifies the case of characters. The default is xtd::forms::character_casing::normal.
+      /// @remarks You can use the character_casing property to change the case of characters as required by your application. For example, you could change the case of all characters entered in a text_box control used for password entry to uppercase or lowercase to enforce a policy for passwords.
       virtual xtd::forms::character_casing character_casing() const {return character_casing_;}
       /// @brief Sets whether the text_box control modifies the case of characters as they are typed.
-      /// @param value One of the xtd::forms::character_casing enumeration values that specifies whether the ttext_box control modifies the case of characters. The default is xtd::forms::character_casing::normal.
+      /// @param value One of the xtd::forms::character_casing enumeration values that specifies whether the text_box control modifies the case of characters. The default is xtd::forms::character_casing::normal.
       /// @return Current text_box instance.
-      /// @remarks You can use the character_casingcharacter_casing property to change the case of characters as required by your application. For example, you could change the case of all characters entered in a text_box control used for password entry to uppercase or lowercase to enforce a policy for passwords.
+      /// @remarks You can use the character_casing property to change the case of characters as required by your application. For example, you could change the case of all characters entered in a text_box control used for password entry to uppercase or lowercase to enforce a policy for passwords.
       virtual text_box& character_casing(xtd::forms::character_casing value);
 
       drawing::color default_back_color() const override {return xtd::forms::theme_colors::current_theme().text_box();}

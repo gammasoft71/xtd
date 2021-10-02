@@ -574,12 +574,12 @@ namespace xtd {
       
       /// @brief Gets background digit color.
       /// @return A xtd::drawing color that represent the background digit color.
-      /// @remarks Do not confuse back_digit_color and back_color. Background digitt color is the color when digit is off.
+      /// @remarks Do not confuse back_digit_color and back_color. Background digit color is the color when digit is off.
       xtd::drawing::color back_digit_color() const {return back_digit_color_.value_or(fore_color());}
       /// @brief Sets background digit color.
       /// @param value A xtd::drawing color that represent the background digit color.
       /// @return Current lcd_label.
-      /// @remarks Do not confuse back_digit_color and back_color. Background digitt color is the color when digit is off.
+      /// @remarks Do not confuse back_digit_color and back_color. Background digit color is the color when digit is off.
       lcd_label& back_digit_color(const xtd::drawing::color& value) {
         if (!back_digit_color_.has_value() || back_digit_color_.value() != value) {
           back_digit_color_ = value;
@@ -608,7 +608,7 @@ namespace xtd {
       /// @return true if background digits are shown; otherwise false
       bool show_back_digit() const {return show_back_digit_;}
       /// @brief Sets a value indicate if background digits are shown.
-      /// @param value true if background digits arrer shown; otherwise false
+      /// @param value true if background digits are shown; otherwise false
       /// @return Current lcd_label.
       lcd_label& show_back_digit(bool value) {
         if (show_back_digit_ != value) {
@@ -624,7 +624,7 @@ namespace xtd {
       /// @brief Sets the digit spacing.
       /// @param value A int32_t represent the digit spacing.
       /// @return Current lcd_label.
-      /// @exception xtdd::argument_out_of_range_exception if value less than 0.
+      /// @exception xtd::argument_out_of_range_exception if value less than 0.
       lcd_label& digit_spacing(int32_t value) {
         if (value < 0) throw argument_out_of_range_exception("value must be positive"_t, current_stack_frame_);
         if (digit_spacing_ != value) {
@@ -681,10 +681,10 @@ namespace xtd {
       }
 
       /// @brief Gets thickness of lcd.
-      /// @return A int32_t that represent the lcd tickness.
+      /// @return A int32_t that represent the lcd thickness.
       int32_t thickness() const {return thickness_.value_or(digits_.size() ? digits_[0]->get_thickness() : 1);}
       /// @brief Sets thickness of lcd.
-      /// @param value A int32_t that represent the lcd tickness.
+      /// @param value A int32_t that represent the lcd thickness.
       /// @return Current lcd_label.
      lcd_label& thickness(int32_t value) {
         if (thickness_ != value) {
@@ -730,7 +730,7 @@ namespace xtd {
       }
       
       /// @brief Gets valid characters.
-      /// @return A sttring tthat represent valid characters.
+      /// @return A string that represent valid characters.
       /// @remarks The valid characters are different according to lcd_style.
       xtd::ustring valid_characters() {
         switch (lcd_style_) {

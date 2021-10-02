@@ -16,7 +16,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
-    /// The following code example demonstrate the use of radio_button control facttory.
+    /// The following code example demonstrate the use of radio_button control factory.
     /// @include radio_buttons.cpp
     class forms_export_ radio_buttons final static_ {
     public:
@@ -380,14 +380,14 @@ namespace xtd {
       /// @param fore_core The radio_button foreground color.
       /// @return The created radio_button.
       static std::unique_ptr<radio_button> del(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<radio_button>(parent, texts::del(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined radio_button that represent decending radio_button.
+      /// @brief Create a system-defined radio_button that represent descending radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param back_color The radio_button background color.
       /// @param fore_core The radio_button foreground color.
       /// @return The created radio_button.
       static std::unique_ptr<radio_button> descending(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<radio_button>(texts::descending(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined radio_button that represent decending radio_button.
+      /// @brief Create a system-defined radio_button that represent descending radio_button.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
@@ -530,14 +530,14 @@ namespace xtd {
       /// @param fore_core The radio_button foreground color.
       /// @return The created radio_button.
       static std::unique_ptr<radio_button> forward(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<radio_button>(parent, texts::forward(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined radio_button that represent harddisk radio_button.
+      /// @brief Create a system-defined radio_button that represent hard disk radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param back_color The radio_button background color.
       /// @param fore_core The radio_button foreground color.
       /// @return The created radio_button.
       static std::unique_ptr<radio_button> harddisk(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<radio_button>(texts::harddisk(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined radio_button that represent harddisk radio_button.
+      /// @brief Create a system-defined radio_button that represent hard disk radio_button.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
@@ -995,7 +995,7 @@ namespace xtd {
       /// @param fore_core The radio_button foreground color.
       /// @return The created radio_button.
       static std::unique_ptr<radio_button> save_as(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<radio_button>(parent, texts::save_as(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined radio_button that represent seach radio_button.
+      /// @brief Create a system-defined radio_button that represent search radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param back_color The radio_button background color.
@@ -1145,14 +1145,14 @@ namespace xtd {
       /// @param fore_core The radio_button foreground color.
       /// @return The created radio_button.
       static std::unique_ptr<radio_button> undo(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<radio_button>(parent, texts::undo(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined radio_button that represent uindent radio_button.
+      /// @brief Create a system-defined radio_button that represents an unindented radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param back_color The radio_button background color.
       /// @param fore_core The radio_button foreground color.
       /// @return The created radio_button.
       static std::unique_ptr<radio_button> unindent(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<radio_button>(texts::unindent(), location, size, back_color, fore_color);}
-      /// @brief Create a system-defined radio_button that represent unindent radio_button.
+      /// @brief Create a system-defined radio_button that represents an unindented radio_button.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.

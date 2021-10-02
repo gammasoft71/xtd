@@ -32,7 +32,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the exception_dialog class.
       exception_dialog() = default;
       
-      /// @brief Get assync dialog_result result after dialog box is closing.
+      /// @brief Get async dialog_result result after dialog box is closing.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       xtd::forms::dialog_result dialog_result() const {return dialog_result_;}
       
@@ -47,8 +47,8 @@ namespace xtd {
         return *this;
       }
       
-      /// @brief Gets exception referecne.
-      /// @return A exception referecne.
+      /// @brief Gets exception reference.
+      /// @return A exception reference.
       std::reference_wrapper<const std::exception> exception() const {return std::reference_wrapper<const std::exception>(*exception_);}
       /// @brief Sets exception.
       /// @param exception The exception.
@@ -79,7 +79,7 @@ namespace xtd {
       /// @brief Runs exception dialog box.
       xtd::forms::dialog_result show_dialog(const iwin32_window& owner);
       /// @brief Runs exception dialog box.
-      /// @remarks The result will done in asynch. Check result_dialog property aftter dialog box closed to obtain the result.
+      /// @remarks The result will done in async. Check result_dialog property after dialog box closed to obtain the result.
       void show_sheet(const iwin32_window& owner);
       /// @brief Runs exception dialog box.
       xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner);

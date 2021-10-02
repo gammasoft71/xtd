@@ -21,7 +21,7 @@ namespace xtd {
       /// @brief Represents the base type of the collection.
       using base = std::vector<value_type>;
       
-      /// @brief Creates a new object xtd::diagnostics::trace_listener_collection with specified alllocator (optional).
+      /// @brief Creates a new object xtd::diagnostics::trace_listener_collection with specified allocator (optional).
       /// @param allocator The allocator associate to the collection (optional).
       /// @remarks If allocator not specified, the std::allocator<value_type> is used.
       explicit trace_listener_collection(const allocator_type& allocator = allocator_type());
@@ -47,7 +47,7 @@ namespace xtd {
       /// @code
       /// #include <xtd/xtd>
       ///
-      /// using xtdd::diagnostics;
+      /// using xtd::diagnostics;
       ///
       /// int main() {
       ///   debug::listeners()["default"]->write_line("User message");
@@ -63,7 +63,7 @@ namespace xtd {
       /// @code
       /// #include <xtd/xtd>
       ///
-      /// using xtdd::diagnostics;
+      /// using xtd::diagnostics;
       ///
       /// int main() {
       ///   debug::listeners()["default"]->write_line("User message");

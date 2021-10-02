@@ -26,7 +26,7 @@ namespace xtd {
       /// @remarks The following illustration shows an ellipse filled with a horizontal hatch pattern.
       /// @image html hatch1.png
       /// @par Examples
-      /// The following code example demonstrate the use of hacth_brush class.
+      /// The following code example demonstrate the use of hatch_brush class.
       /// @include fill_rectangle.cpp
       class drawing_export_ hatch_brush final : public brush {
       public:

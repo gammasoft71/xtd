@@ -63,11 +63,11 @@ namespace xtd {
       }
       
       /// @brief Gets multiline status.
-      /// @return true if dialoog text box is multiline; otherwise false.
+      /// @return true if dialog text box is multiline; otherwise false.
       /// @remarks The default value is false.
       bool multiline() const {return multiline_;}
       /// @brief Sets multiline status.
-      /// @param multiline true if dialoog text box is multiline; otherwise false.
+      /// @param multiline true if dialog text box is multiline; otherwise false.
       /// @return Current input_dialog instance.
       /// @remarks The default value is false.
       input_dialog& multiline(bool multiline) {
@@ -78,7 +78,7 @@ namespace xtd {
 
       /// @brief Gets the text message.
       /// @return The text message.
-      xtd::ustring messsage() const {return message_;}
+      xtd::ustring message() const {return message_;}
       /// @brief Sets the text message.
       /// @param message The text message.
       /// @return Current input_dialog instance.
@@ -101,11 +101,11 @@ namespace xtd {
       }
 
       /// @brief Gets use system password char status.
-      /// @return true if dialoog text box use system password char status; otherwise false.
+      /// @return true if dialog text box use system password char status; otherwise false.
       /// @remarks The default value is false.
       bool use_system_password_char() const {return use_system_password_char_;}
       /// @brief Sets use system password char status.
-      /// @param use_system_password_char true if dialoog text box use system password char status; otherwise false.
+      /// @param use_system_password_char true if dialog text box use system password char status; otherwise false.
       /// @return Current input_dialog instance.
       /// @remarks The default value is false.
       input_dialog&  use_system_password_char(bool use_system_password_char) {
@@ -116,7 +116,7 @@ namespace xtd {
       /// @brief Gets the value.
       /// @return The value.
       xtd::ustring value() const {return value_;}
-      /// @brief Sets thevalue.
+      /// @brief Sets the value.
       /// @param value The value.
       /// @return Current input_dialog instance.
       input_dialog& value(const xtd::ustring& value) {
@@ -131,11 +131,11 @@ namespace xtd {
       }
 
       /// @brief Gets word wrap status.
-      /// @return true if dialoog text box is word wrap; otherwise false.
+      /// @return true if dialog text box is word wrap; otherwise false.
       /// @remarks The default value is true.
       bool word_wrap() const {return word_wrap_;}
       /// @brief Sets word wrap status.
-      /// @param word_wrap true if dialoog text box is word wrap; otherwise false.
+      /// @param word_wrap true if dialog text box is word wrap; otherwise false.
       /// @return Current input_dialog instance.
       /// @remarks The default value is true.
       input_dialog& word_wrap(bool word_wrap) {

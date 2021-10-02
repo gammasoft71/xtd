@@ -16,7 +16,7 @@
 /// @ingroup xtd_core_native protocol_type
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t PROTOCOL_TYPE_UNKNWON = -1;
+constexpr int32_t PROTOCOL_TYPE_UNKNOWN = -1;
 
 /// @brief IPv6 Hop by Hop Options header.
 /// @par Library
@@ -26,7 +26,7 @@ constexpr int32_t PROTOCOL_TYPE_UNKNWON = -1;
 /// @warning Internal use only
 constexpr int32_t PROTOCOL_TYPE_IP_V6_HOP_BY_HOP_OPTIONS = 0;
 
-/// @brief Undpecified Protocol.
+/// @brief Unspecified Protocol.
 /// @par Library
 /// xtd.core.native
 /// @ingroup xtd_core_native protocol_type
@@ -144,7 +144,7 @@ constexpr int32_t PROTOCOL_TYPE_IP_SEC_ENCAPSULATING_SECURITY_PAYLOAD = 50;
 /// @ingroup xtd_core_native protocol_type
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t PROTOCOL_TYPE_IP_SEC_AUTHENTIFICATION_HEADER = 51;
+constexpr int32_t PROTOCOL_TYPE_IP_SEC_AUTHENTICATION_HEADER = 51;
 
 /// @brief Internet Control Message Protocol for IPv6.
 /// @par Library

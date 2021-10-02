@@ -67,7 +67,7 @@ namespace xtd {
       void interval_milliseconds(int32_t interval);
 
       /// @brief Stops the timer.
-      /// @remarks You can also stop the timer by setting the enabled property to fallse.
+      /// @remarks You can also stop the timer by setting the enabled property to false.
       void start() {enabled(true);}
 
       /// @brief Starts the timer.
@@ -76,7 +76,7 @@ namespace xtd {
       
       /// @brief Occurs when the specified timer interval has elapsed and the timer is enabled.
       /// @ingroup events
-      /// @remarks Calling the Assert method on the xtd::diadnostics::debug class from within the tick event may not behave as expected, as displaying the assertion dialog box may cause Windows to raise the tick event repeatedly. We recommend that you refrain from testing assertions within this event, and use the write, write_if, write_line, or write_line_if methods instead.
+      /// @remarks Calling the Assert method on the xtd::diagnostics::debug class from within the tick event may not behave as expected, as displaying the assertion dialog box may cause Windows to raise the tick event repeatedly. We recommend that you refrain from testing assertions within this event, and use the write, write_if, write_line, or write_line_if methods instead.
       event<timer, event_handler> tick;
 
     protected:

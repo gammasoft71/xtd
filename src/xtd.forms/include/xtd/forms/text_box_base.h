@@ -163,7 +163,7 @@ namespace xtd {
       virtual void select(size_t start, size_t length) {
         if (selection_start_ != start || length != selection_length_) {
           if (start > text().size()) throw argument_out_of_range_exception("start greater than text size"_t, current_stack_frame_);
-          if (start + length > text().size()) throw argument_out_of_range_exception("start + lenght greater than text size"_t, current_stack_frame_);
+          if (start + length > text().size()) throw argument_out_of_range_exception("start + length greater than text size"_t, current_stack_frame_);
           selection_start_ = start;
           selection_length_ = length;
         }

@@ -16,8 +16,8 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-bool __toogle_full_screen_frame__(wxTopLevelWindow* control);
-void __toogle_full_screen_frame__(wxTopLevelWindow* control, bool full_screen);
+bool __toggle_full_screen_frame__(wxTopLevelWindow* control);
+void __toggle_full_screen_frame__(wxTopLevelWindow* control, bool full_screen);
 
 void form::activate(intptr_t control) {
   if (control == 0) return;
@@ -32,7 +32,7 @@ void form::close(intptr_t control) {
 bool form::full_screen(intptr_t control) {
   if (control == 0) return false;
 #if defined(__APPLE__)
-  return __toogle_full_screen_frame__(static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()));
+  return __toggle_full_screen_frame__(static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()));
 #else
   return static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->IsFullScreen();
 #endif
@@ -41,7 +41,7 @@ bool form::full_screen(intptr_t control) {
 void form::full_screen(intptr_t control, bool full_screen) {
   if (control == 0) return;
 #if defined(__APPLE__)
-  __toogle_full_screen_frame__(static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()), full_screen);
+  __toggle_full_screen_frame__(static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()), full_screen);
 #else
   static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->ShowFullScreen(full_screen);
 #endif

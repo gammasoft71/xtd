@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains __numeric_formater method.
+/// @brief Contains __numeric_formatter method.
 #pragma once
 /// @cond
 #ifndef __XTD_CORE_INTERNAL__
@@ -7,14 +7,14 @@
 #endif
 /// @endcond
 
-#include "__binary_formater.h"
-#include "__fixed_point_formater.h"
+#include "__binary_formatter.h"
+#include "__fixed_point_formatter.h"
 #include "__format_exception.h"
 #include "__sprintf.h"
 
 /// @cond
 template<typename char_t, typename value_t>
-inline std::basic_string<char_t> __numeric_formater(const std::basic_string<char_t>& fmt, value_t value, const std::locale& loc) {
+inline std::basic_string<char_t> __numeric_formatter(const std::basic_string<char_t>& fmt, value_t value, const std::locale& loc) {
   std::basic_string<char_t> format = fmt;
   if (format.empty()) format = {'G'};
   
@@ -38,7 +38,7 @@ inline std::basic_string<char_t> __numeric_formater(const std::basic_string<char
   std::basic_string<char_t> fmt_str({'%', '0', '*', 'l', 'l'});
   switch (format[0]) {
     case 'b':
-    case 'B': return __binary_formater<char_t>(value, precision);
+    case 'B': return __binary_formatter<char_t>(value, precision);
     case 'd':
     case 'D':
     case 'G': return __sprintf((fmt_str + char_t(std::is_unsigned<value_t>::value ? 'u' : 'd')).c_str(), precision, static_cast<long long>(value));
@@ -46,7 +46,7 @@ inline std::basic_string<char_t> __numeric_formater(const std::basic_string<char
     case 'O': return __sprintf((fmt_str + char_t('o')).c_str(), precision, static_cast<long long>(value));
     case 'x':
     case 'X': return __sprintf((fmt_str + format[0]).c_str(), precision, static_cast<long long>(value));
-    default: return __fixed_point_formater(format, static_cast<long double>(value), loc);
+    default: return __fixed_point_formatter(format, static_cast<long double>(value), loc);
   }
 }
 /// @endcond

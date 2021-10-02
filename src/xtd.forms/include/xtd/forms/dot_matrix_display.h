@@ -84,10 +84,10 @@ namespace xtd {
       }
 
       /// @brief Gets all dots status.
-      /// @return A dots_colllection that represent all dots status.
+      /// @return A dots_collection that represent all dots status.
       virtual const dots_collection& dots() const {return dots_;}
       /// @brief Sets all dots status.
-      /// @param dots A dots_colllection that represent all dots status.
+      /// @param dots A dots_collection that represent all dots status.
       /// @return Current dot_matrix_display.
       virtual const dot_matrix_display& dots(const dots_collection& dots) {
         if (dots_ != dots) {
@@ -132,7 +132,7 @@ namespace xtd {
       /// @return true if background dots are shown; otherwise false
       virtual bool show_back_dot() const {return show_back_dot_;}
       /// @brief Sets a value indicate if background dots are shown.
-      /// @param value true if background dots arrer shown; otherwise false
+      /// @param value true if background dots are shown; otherwise false
       /// @return Current dot_matrix_display.
       virtual dot_matrix_display& show_back_dot(bool value) {
         if (show_back_dot_ != value) {
@@ -143,10 +143,10 @@ namespace xtd {
       }
 
       /// @brief Gets thickness of dot.
-      /// @return A int32_t that represent the dot tickness.
+      /// @return A int32_t that represent the dot thickness.
       virtual int32_t thickness() const {return thickness_.value_or(size_.height() < (matrix_size_.height() * 2) ? 1 : (size_.height() - matrix_size_.height()) / matrix_size_.height());}
       /// @brief Sets thickness of dot.
-      /// @param value A int32_t that represent the dot tickness.
+      /// @param value A int32_t that represent the dot thickness.
       /// @return Current dot_matrix_display.
       virtual dot_matrix_display& thickness(int32_t value) {
         if (!thickness_.has_value() || thickness_.value() != value) {
@@ -187,7 +187,7 @@ namespace xtd {
       }
       /// @brief Sets specified dots with specified boolean.
       /// @param points Dot points collection tha contains locations in the matrix.
-      /// @param on true to set pecified dots points to on; otherwise false.
+      /// @param on true to set specified dots points to on; otherwise false.
       virtual void set_dots(const points_collection& points, bool on) {
         for (auto point : points)
           set_dot(point, on);
@@ -223,7 +223,7 @@ namespace xtd {
       }
 
       /// @brief Draw specified dot point with specified color on specified graphics.
-      /// @param graphics DEfine the conrol graphics where draw the specified dot point.
+      /// @param graphics Define the control graphics where draw the specified dot point.
       /// @param color The dot color to draw.
       /// @param point The dot point location in the matrix.
       virtual void draw_dot(drawing::graphics& graphics, const drawing::color& color, const drawing::point& point) {

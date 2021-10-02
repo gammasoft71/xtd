@@ -41,8 +41,8 @@ namespace xtd {
             control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
 #endif
-          hiden_radio_button = new wxRadioButton(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption())), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), 0);
-          hiden_radio_button->Show(false);
+          hidden_radio_button = new wxRadioButton(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption())), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), 0);
+          hidden_radio_button->Show(false);
         }
         
         static long style_to_wx_style(size_t style, size_t ex_style) {
@@ -61,7 +61,7 @@ namespace xtd {
           control()->SetSize(width, height);
         }
 
-        wxRadioButton* hiden_radio_button = nullptr;
+        wxRadioButton* hidden_radio_button = nullptr;
         bool owner_draw_ = false;
       };
     }

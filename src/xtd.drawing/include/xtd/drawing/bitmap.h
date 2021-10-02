@@ -30,7 +30,7 @@ namespace xtd {
       /// @param new_rect The xtd::drawing::rect structure that represent the location and size of the new bitmap.
       bitmap(const image& original, const rectangle& new_rect) : xtd::drawing::image(original, new_rect) {}
       /// @brief Initializes a new instance of the bitmap class from the specified file.
-      /// @param fillename The bitmap file name and path.
+      /// @param filename The bitmap file name and path.
       /// @remarks The file name and path can be relative to the application or an absolute path. Use this constructor to open images with the following file formats: BMP, GIF, EXIF, JPG, PNG and TIFF. For more information about supported formats, see Types of Bitmaps. The file remains locked until the Bitmap is disposed.
       explicit bitmap(const xtd::ustring& filename) : xtd::drawing::image(filename) {}
       /// @brief Initializes a new instance of the bitmap class from the specified data stream.
@@ -62,13 +62,13 @@ namespace xtd {
       /// @brief Gets the color of the specified pixel in this bitmap.
       /// @param x The x-coordinate of the pixel to retrieve.
       /// @param y The y-coordinate of the pixel to retrieve.
-      /// @return A xttd::drawing::color structure that represents the color of the specified pixel.
+      /// @return A xtd::drawing::color structure that represents the color of the specified pixel.
       drawing::color get_pixel(int32_t x, int32_t y) const;
       
       /// @brief Sets the color of the specified pixel in this bitmap.
       /// @param x The x-coordinate of the pixel to retrieve.
       /// @param y The y-coordinate of the pixel to retrieve.
-      /// @param color A xttd::drawing::color structure that represents the color of the specified pixel.
+      /// @param color A xtd::drawing::color structure that represents the color of the specified pixel.
       void set_pixel(int32_t x, int32_t y, const drawing::color& color);
 
       /// @brief Represent an empty bitmap.

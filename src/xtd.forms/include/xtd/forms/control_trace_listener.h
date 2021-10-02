@@ -9,7 +9,7 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    /// @brief Directs tracing or debugging output to either icontrol_trace.
+    /// @brief Directs tracing or debugging output to a icontrol_trace object.
     /// @par Namespace
     /// xtd::forms
     /// @par Library
@@ -19,7 +19,7 @@ namespace xtd {
     class control_trace_listener : public xtd::diagnostics::trace_listener {
     public:
       /// @brief Initializes a new instance of the control_trace_listener class with specified control_trace.
-      /// @param control_trace A controll that hinerits to the icontrol_trace interface.
+      /// @param control_trace A control that inherits to the icontrol_trace interface.
       /// @see see xtd::forms::icontrol_trace interface.
       control_trace_listener(xtd::forms::icontrol_trace& control_trace) : control_trace_(&control_trace) {}
       /// @cond

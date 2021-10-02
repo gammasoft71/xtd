@@ -24,7 +24,7 @@ void background_worker::report_progress(int32_t percent_progress, std::any user_
   if (worker_reports_progress_) {
     e_ = {percent_progress, user_state};
     invoker_->begin_invoke([&] {
-      on_progres_changed(e_);
+      on_progress_changed(e_);
     });
   }
 }

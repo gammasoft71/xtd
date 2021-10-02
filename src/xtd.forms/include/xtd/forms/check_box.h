@@ -115,7 +115,7 @@ namespace xtd {
       /// @include check_box.cpp
       virtual forms::check_state check_state() const {return check_state_;}
       /// @brief Sets the state of the check_box.
-      /// @param chexk_state One of the check_state enumeration values. The default value is unchecked.
+      /// @param check_state One of the check_state enumeration values. The default value is unchecked.
       /// @remarks The following table describes the xtd::forms::appearance of the check_box control in its different states for the normal and button style control check_box::appearance.
       /// | Check_state   |  appearance::normal                                                    | appearance::button                |
       /// |--------------------|------------------------------------------------------------------------|----------------------------------------|
@@ -162,7 +162,7 @@ namespace xtd {
 
       /// @brief Measure this control.
       /// @return The drawing::size size of this control.
-      /// @remarks This metod is not relevant for this class.
+      /// @remarks This method is not relevant for this class.
       drawing::size measure_control() const override;
 
       /// @brief Raises the check_box::appearance_changed event.

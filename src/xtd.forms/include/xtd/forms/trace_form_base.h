@@ -44,10 +44,10 @@ namespace xtd {
 
       const xtd::ustring& name() const override {return form::name();}
       
-      /// @brief Gets a vallue indicate if date is showing before trace text.
+      /// @brief Gets a value indicate if date is showing before trace text.
       /// @return true is date showing; otherwise false. By default is true.
       virtual bool show_date() const {return show_date_;}
-      /// @brief Sets a vallue indicate if date is showing before trace text.
+      /// @brief Sets a value indicate if date is showing before trace text.
       /// @param value true is date showing; otherwise false. By default is true.
       /// @return Current trace_form_base.
       virtual trace_form_base& show_date(bool value) {
@@ -58,10 +58,10 @@ namespace xtd {
         return *this;
       }
       
-      /// @brief Gets a vallue indicate if time is showing before trace text.
+      /// @brief Gets a value indicate if time is showing before trace text.
       /// @return true is time showing; otherwise false. By default is true.
       virtual  bool show_time() const {return show_time_;}
-      /// @brief Sets a vallue indicate if time is showing before trace text.
+      /// @brief Sets a value indicate if time is showing before trace text.
       /// @param value true is time showing; otherwise false. By default is true.
       /// @return Current trace_form_base.
       virtual trace_form_base& show_time(bool value) {
@@ -73,7 +73,7 @@ namespace xtd {
       }
 
    protected:
-      /// @brief Initializes a new instance of the trace_form_base class with spefied caption text.
+      /// @brief Initializes a new instance of the trace_form_base class with specified caption text.
       /// @param text A string that represent the caption text oof the debug form.
       trace_form_base(const xtd::ustring& text) {
         name("9f5767d6-7a21-4ebe-adfe-2427b2024a55");
@@ -121,7 +121,7 @@ namespace xtd {
         need_header(true);
       }
       
-      /// @brief Writes header, if needed. Writes date and/or time and header_separtor.
+      /// @brief Writes header, if needed. Writes date and/or time and header_separator.
       /// @param trace A string to write.
       virtual void write_header() {
         auto now =  std::chrono::system_clock::now();

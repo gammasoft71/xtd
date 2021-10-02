@@ -69,15 +69,15 @@ namespace xtdc_gui {
     }
     
     static xtd::drawing::image get_picture(const std::string& name) {
-      auto picture_file_name = xtd_share_path_/"resources"/"pictures/examples"/(name + "_" + get_os_potfix() + get_theme_postfix() +".png");
+      auto picture_file_name = xtd_share_path_/"resources"/"pictures/examples"/(name + "_" + get_os_postfix() + get_theme_postfix() +".png");
       if (std::filesystem::exists(picture_file_name)) return xtd::drawing::bitmap(picture_file_name.string());
-      picture_file_name = xtd_share_path_/"resources"/"pictures/examples"/(name + "_" + get_os_potfix() +".png");
+      picture_file_name = xtd_share_path_/"resources"/"pictures/examples"/(name + "_" + get_os_postfix() +".png");
       if (std::filesystem::exists(picture_file_name)) return xtd::drawing::bitmap(picture_file_name.string());
       //return xtd::drawing::bitmap(noimage_picture);
       return xtd::drawing::bitmap(400, 250);
     }
     
-    static std::string get_os_potfix() noexcept {return xtd::environment::os_version().is_windows_platform() ? "w" : xtd::environment::os_version().is_linux_platform() ? "g" : "m";}
+    static std::string get_os_postfix() noexcept {return xtd::environment::os_version().is_windows_platform() ? "w" : xtd::environment::os_version().is_linux_platform() ? "g" : "m";}
     static std::string get_theme_postfix() noexcept {return xtd::forms::application::dark_mode_enabled() ? "d" : "";}
     
     inline static const std::filesystem::path xtd_share_path_ = std::filesystem::path(__XTD_RESOURCES_PATH__)/"share"/"xtd";

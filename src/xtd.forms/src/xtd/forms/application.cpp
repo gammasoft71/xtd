@@ -1,4 +1,4 @@
-/// @todo Removev following includes when xtd::diagnostics::process will used for restart see below..
+/// @todo Remove following includes when xtd::diagnostics::process will used for restart see below..
 #if !defined(_WIN32)
 #include <unistd.h>
 #endif
@@ -189,27 +189,27 @@ bool application::light_mode_enabled() {
 }
 
 void application::enable_dark_mode() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call applicaiton::enable_dark_mode() before application::run()"_t, current_stack_frame_);
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_dark_mode() before application::run()"_t, current_stack_frame_);
   native::application::enable_dark_mode();
 }
 
 void application::enable_button_images() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call applicaiton::enable_button_images() before application::run()"_t, current_stack_frame_);
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_button_images() before application::run()"_t, current_stack_frame_);
   native::application::enable_button_images();
 }
 
 void application::enable_light_mode() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call applicaiton::enable_light_mode() before application::run()"_t, current_stack_frame_);
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_light_mode() before application::run()"_t, current_stack_frame_);
   native::application::enable_light_mode();
 }
 
 void application::enable_menu_images() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call applicaiton::enable_menu_images() before application::run()"_t, current_stack_frame_);
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_menu_images() before application::run()"_t, current_stack_frame_);
   native::application::enable_menu_images();
 }
 
 void application::enable_visual_styles() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call applicaiton::enable_visual_styles() before application::run()"_t, current_stack_frame_);
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_visual_styles() before application::run()"_t, current_stack_frame_);
   application::use_visual_styles_ = true;
   native::application::enable_visual_style();
 }
@@ -294,7 +294,7 @@ void application::run(const form& form) {
     for (size_t index = 0; index < command_line_args.size(); index++)
     argv[index] = command_line_args[index].data();
     argv[command_line_args.size()] = 0;
-    /// @todo Rplace following lines by xtd::diagnostics::process...
+    /// @todo Replace following lines by xtd::diagnostics::process...
     execv(argv[0], argv);
     delete[] argv;
     _Exit(0);

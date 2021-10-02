@@ -15,7 +15,7 @@ namespace xtd {
     class point_f;
     /// @endcond
     
-    /// @brief Stores an ordered pair of flooating-point, which specify a height and width.
+    /// @brief Stores an ordered pair of floating-point, which specify a height and width.
     /// @par Namespace
     /// xtd::drawing
     /// @par Library

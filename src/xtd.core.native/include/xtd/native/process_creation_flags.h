@@ -82,7 +82,7 @@ constexpr int32_t CREATE_SHARED_WOW_VDM = 0x00001000;
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr int32_t INHERIT_PARENT_AFFINITY = 0x00010000;
-/// @brief The process is to be run as a protected process. The system restricts access to protected processes and the threads of protected processes. For more information on how processes can interact with protecte
+/// @brief The process is to be run as a protected process. The system restricts access to protected processes and the threads of protected processes. For more information on how processes can interact with protect
 /// @par Library
 /// xtd.core.native
 /// @ingroup xtd_core_native pcf

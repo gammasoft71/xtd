@@ -59,17 +59,17 @@ namespace xtd {
       /// @warning Internal use only
       static intptr_t get_host_by_name(const std::string& host_name);
       /// @brief Gets aliases for a host.
-      /// @param host The host handle to retreive aliases.
+      /// @param host The host handle to retrieve aliases.
       /// @return An alias array for yhe host.
       /// @warning Internal use only
       static std::vector<std::string> get_aliases(intptr_t host);
       /// @brief Gets IP addresses for a host.
-      /// @param host The host handle to retreive IP adresses.
+      /// @param host The host handle to retrieve IP addresses.
       /// @return An IP address array for yhe host.
       /// @warning Internal use only
       static std::vector<std::vector<uint8_t>> get_addresses(intptr_t host);
       /// @brief Gets name for a host.
-      /// @param host The host handle to retreive name.
+      /// @param host The host handle to retrieve name.
       /// @return A string that represent the host.
       /// @warning Internal use only
       static std::string get_host_name(intptr_t host);

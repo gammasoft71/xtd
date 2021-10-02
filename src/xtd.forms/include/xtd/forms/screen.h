@@ -103,7 +103,7 @@ namespace xtd {
       static screen from_handle(intptr_t handle);
 
       /// @brief Retrieves a screen for the display that contains the specified point.
-      /// @param point A xtd::drawing::oint that specifies the location for which to retrieve a screen.
+      /// @param point A xtd::drawing::point that specifies the location for which to retrieve a screen.
       /// @return A screen for the display that contains the point. In multiple display environments where no display contains the point, the display closest to the specified point is returned.
       static screen from_point(const drawing::point& point);
       
@@ -134,7 +134,7 @@ namespace xtd {
       
       /// @brief Gets the the standard number of pixels per inch of the display.
       /// @return The standard number of pixels per inch of the display.
-      /// @remarks In printing, DPI (dots per inch) refers to the output resolution of a printer, scanner or imagesetter, and PPI (pixels per inch) refers to the input resolution of a photograph, image or screen.
+      /// @remarks In printing, DPI (dots per inch) refers to the output resolution of a printer, scanner or image setter, and PPI (pixels per inch) refers to the input resolution of a photograph, image or screen.
       /// @remarks The following table shows the standard values by operating system :
       /// |  Values and conversion            | Windows | macOS | linux |
       /// |-----------------------------------|---------|-------|-------|

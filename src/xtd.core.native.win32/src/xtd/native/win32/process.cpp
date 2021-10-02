@@ -18,13 +18,13 @@ namespace {
   map<intptr_t, tuple<intptr_t, intptr_t, wstring, wstring, wstring, wstring>> process_infos;
   class file_handle_streambuf : public std::streambuf {
   public:
-    file_handle_streambuf(HANDLE file_handlle) : fille_handle_(file_handlle) {}
-    ~file_handle_streambuf() { CloseHandle(fille_handle_); }
+    file_handle_streambuf(HANDLE file_handle) : file_handle_(file_handle) {}
+    ~file_handle_streambuf() { CloseHandle(file_handle_); }
 
   protected:
     int underflow() override {
       DWORD number_of_bytes_read = 0;
-      ReadFile(fille_handle_, &value_, 1, &number_of_bytes_read, nullptr);
+      ReadFile(file_handle_, &value_, 1, &number_of_bytes_read, nullptr);
       if (number_of_bytes_read == 1) {
         this->setg(&value_, &value_, &value_ + 1);
         return value_;
@@ -35,7 +35,7 @@ namespace {
     int overflow(int c) override {
       value_ = static_cast<char>(c);
       DWORD number_of_bytes_written = 0;
-      WriteFile(fille_handle_, &value_, 1, &number_of_bytes_written, nullptr);
+      WriteFile(file_handle_, &value_, 1, &number_of_bytes_written, nullptr);
       if (number_of_bytes_written != -1) {
         this->setp(&value_, &value_);
         return 0;
@@ -43,7 +43,7 @@ namespace {
       return std::streambuf::overflow(c); // EOF
     }
 
-    HANDLE fille_handle_;
+    HANDLE file_handle_;
     char value_ = EOF;
   };
 

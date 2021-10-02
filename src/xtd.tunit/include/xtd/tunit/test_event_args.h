@@ -19,7 +19,7 @@ namespace xtd {
     class test_event_args : public xtd::tunit::tunit_event_args {
     public:
       /// @brief Create a new instance of class class_event_args.
-      /// @param test Current testt.
+      /// @param test Current test.
       /// @param test_class Current test_class.
       explicit test_event_args(const xtd::tunit::test& test, const xtd::tunit::test_class& test_class, const xtd::tunit::unit_test& unit_test) : xtd::tunit::tunit_event_args(unit_test), t_(test), tc_(test_class) {}
 

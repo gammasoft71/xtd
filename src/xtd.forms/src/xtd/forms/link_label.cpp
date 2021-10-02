@@ -225,11 +225,11 @@ void link_label::on_text_changed(const event_args& e) {
 }
 
 link_label::link& link_label::point_in_link(const xtd::drawing::point& point) {
-  size_t link_inddex = 0;
+  size_t link_index = 0;
   for (auto [rect, is_link] : generate_text_rects())
     if (is_link) {
-      if (rect.contains(point)) return links_[link_inddex];
-      ++link_inddex;
+      if (rect.contains(point)) return links_[link_index];
+      ++link_index;
     }
 
   return link_empty_;

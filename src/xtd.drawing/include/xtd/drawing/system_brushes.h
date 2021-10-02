@@ -117,7 +117,7 @@ namespace xtd {
       /// @brief Gets a solid_brush that is the color of the menu highlight.
       static xtd::drawing::solid_brush menu_highlight();
       
-      /// @brief Gets a solid_brush that is the color of theaccent.
+      /// @brief Gets a solid_brush that is the color of the accent.
       static xtd::drawing::solid_brush accent();
     };
   }

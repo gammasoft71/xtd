@@ -18,7 +18,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core net
-      /// @remarks The xtd::net::sockets::network_stream class provides methods for sending and receiving data over sttd::iostrream sockets in blocking mode. You can use the xtd::net::sockets::network_stream class for both synchronous and asynchronous data transfer.
+      /// @remarks The xtd::net::sockets::network_stream class provides methods for sending and receiving data over std::iostream sockets in blocking mode. You can use the xtd::net::sockets::network_stream class for both synchronous and asynchronous data transfer.
       /// @remarks To create a xtd::net::sockets::network_stream, you must provide a connected xtd::net::sockets::socket. By default, closing the xtd::net::sockets::network_stream does not close the provided xtd::net::sockets::socket. If you want the xtd::net::sockets::network_stream to have permission to close the provided xtd::net::sockets::socket, you must specify true for the value of the owns_socket parameter.
       /// @remarks Use the std::iostream::write and std::iostream::read methods for simple single thread synchronous blocking I/O.
       /// @remarks The xtd::net::sockets::network_stream does not support random access to the network data stream.
@@ -57,7 +57,7 @@ namespace xtd {
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks Use the xtd::net::sockets::network_stream::data_available property to determine if data is ready to be read. If xtd::net::sockets::network_stream::data_available is true, a call to std::iostream::read returns immediately. If the remote host shuts down or closes the connection, xtd::net::sockets::network_stream::data_available may throw a xtd::net::sockets::socket_exception.
-        virtual bool data_availlable() const;
+        virtual bool data_available() const;
         
         /// @brief Gets the underlying xtd::net::sockets::socket.
         /// @return A xtd::net::sockets::socket that represents the underlying network connection.

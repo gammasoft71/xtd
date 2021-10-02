@@ -44,8 +44,8 @@ namespace xtd {
         bool ProcessEvent(wxEvent &event) override {
           if (exceptionStored) return wxApp::ProcessEvent(event);
           if (event.GetEventType() == wxEVT_ACTIVATE_APP) {
-            wxActivateEvent& acitvate_event = static_cast<wxActivateEvent&>(event);
-            send_message(0, WM_ACTIVATEAPP, acitvate_event.GetActive(), 0, reinterpret_cast<intptr_t>(&event));
+            wxActivateEvent& activate_event = static_cast<wxActivateEvent&>(event);
+            send_message(0, WM_ACTIVATEAPP, activate_event.GetActive(), 0, reinterpret_cast<intptr_t>(&event));
           } else if (event.GetEventType() == wxEVT_IDLE)
             send_message(0, WM_ENTERIDLE, 0, 0, reinterpret_cast<intptr_t>(&event));
           //else if (event.GetEventType() == wxEVT_END_SESSION)

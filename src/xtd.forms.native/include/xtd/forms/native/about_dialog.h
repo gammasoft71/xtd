@@ -40,7 +40,7 @@ namespace xtd {
         /// @param hwnd Window handle.
         /// @param icon An icon value that specifies the icon to display.
         /// @param name A string that specifies the title bar caption to display.
-        /// @param decription A string that specifies the text to display.
+        /// @param description A string that specifies the text to display.
         /// @param version A string that specifies the version to display.
         /// @param long_version A string that specifies the long version to display.
         /// @param copyright A string that specifies the copyright to display.
@@ -49,7 +49,7 @@ namespace xtd {
         /// @param creators A creators_collection that specifies the creators collection.
         /// @param doc_writers A doc_writers_collection that specifies the documentation writers collection.
         /// @param translators A translators_collection that specifies the translators collection.
-        /// @param designers A designers_collection that specifies the gesigners collection.
+        /// @param designers A designers_collection that specifies the designers collection.
         /// @param license A string that specifies the license text to display.
         /// @warning Internal use only
         static void show(intptr_t hwnd, const xtd::drawing::icon& icon, const xtd::ustring& name, const xtd::ustring& description, const xtd::ustring& version, const xtd::ustring& long_version, const xtd::ustring& copyright, const xtd::ustring& website, const xtd::ustring& website_label, const std::vector<xtd::ustring>& creators, const std::vector<xtd::ustring>& designers, const std::vector<xtd::ustring>& doc_writers, const std::vector<xtd::ustring>& translators, const xtd::ustring& license);

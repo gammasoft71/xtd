@@ -94,7 +94,7 @@ namespace xtd {
         /// @warning Internal use only
         static intptr_t no();
         /// @brief Gets the cursor that indicates that a particular region is invalid for the current drag & drop operation.
-        /// @return The cursor that represents the cursor that indicates that a particular region is invalid for the curren drag & dropt operation.
+        /// @return The cursor that represents the cursor that indicates that a particular region is invalid for the curren drag & drop operation.
         /// @warning Internal use only
         static intptr_t no_drag();
         /// @brief Gets the cursor that appears during wheel operations when the mouse is not moving, but the window can be scrolled in both a horizontal and vertical direction.

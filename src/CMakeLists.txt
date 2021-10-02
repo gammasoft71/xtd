@@ -26,7 +26,7 @@ file(WRITE ${XTD_CMAKE_REFERENCES}
 )
 
 # Remarks : 
-# for 3rdparty libraries don't forget modify target_type macro (SHARED_LIBRARY) in srcripts/cmake/xtd_command.cmake file to skip target_link_libraries with xtd.core
+# for 3rdparty libraries don't forget modify target_type macro (SHARED_LIBRARY) in scripts/cmake/xtd_command.cmake file to skip target_link_libraries with xtd.core
 
 # Projects
 if (XTD_BUILD_LIBRARIES_XTD_CORE)

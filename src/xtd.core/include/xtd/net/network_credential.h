@@ -42,11 +42,11 @@ namespace xtd {
       
       /// @brief Gets the domain or computer name that verifies the credentials.
       /// @return The name of the domain associated with the credentials.
-      /// @remarks The xtd::net::network_credential::dmain property specifies the domain or realm to which the user name belongs. Typically, this is the host computer name where the application runs or the user domain for the currently logged in user.
+      /// @remarks The xtd::net::network_credential::domain property specifies the domain or realm to which the user name belongs. Typically, this is the host computer name where the application runs or the user domain for the currently logged in user.
       const xtd::ustring& domain() const noexcept;
       /// @brief Sets the domain or computer name that verifies the credentials.
       /// @param value The name of the domain associated with the credentials.
-      /// @remarks The xtd::net::network_credential::dmain property specifies the domain or realm to which the user name belongs. Typically, this is the host computer name where the application runs or the user domain for the currently logged in user.
+      /// @remarks The xtd::net::network_credential::domain property specifies the domain or realm to which the user name belongs. Typically, this is the host computer name where the application runs or the user domain for the currently logged in user.
       network_credential& domain(const xtd::ustring& value) noexcept;
       
       /// @brief Gets the password for the user name associated with the credentials.
