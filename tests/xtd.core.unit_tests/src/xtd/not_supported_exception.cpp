@@ -14,7 +14,7 @@ namespace unit_tests {
       assert::is_empty(e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
       assert::are_equal(0, e.error_code().value(), csf_);
-      assert::are_equal(0U, e.line_numer(), csf_);
+      assert::are_equal(0U, e.line_number(), csf_);
       assert::is_empty(e.member_name(), csf_);
       assert::are_equal("Specified method is not supported.", e.message(), csf_);
       assert::are_equal("xtd::not_supported_exception", e.name(), csf_);
@@ -31,7 +31,7 @@ namespace unit_tests {
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
       assert::are_equal(0, e.error_code().value(), csf_);
-      assert::are_equal(info.get_file_line_number(), e.line_numer(), csf_);
+      assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
       assert::are_equal("Specified method is not supported.", e.message(), csf_);
       assert::are_equal("xtd::not_supported_exception", e.name(), csf_);
@@ -47,7 +47,7 @@ namespace unit_tests {
       assert::is_empty(e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
-      assert::are_equal(0U, e.line_numer(), csf_);
+      assert::are_equal(0U, e.line_number(), csf_);
       assert::is_empty(e.member_name(), csf_);
       assert::are_equal("", e.message(), csf_);
       assert::are_equal("xtd::not_supported_exception", e.name(), csf_);
@@ -64,7 +64,7 @@ namespace unit_tests {
       assert::are_equal(0, e.error_code().value(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
       assert::are_equal(std::system_category(), e.error_code().category(), csf_);
-      assert::are_equal(info.get_file_line_number(), e.line_numer(), csf_);
+      assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
       assert::are_equal("", e.message(), csf_);
       assert::are_equal("xtd::not_supported_exception", e.name(), csf_);
@@ -80,7 +80,7 @@ namespace unit_tests {
       assert::is_empty(e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
-      assert::are_equal(0U, e.line_numer(), csf_);
+      assert::are_equal(0U, e.line_number(), csf_);
       assert::is_empty(e.member_name(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
       assert::are_equal("xtd::not_supported_exception", e.name(), csf_);
@@ -97,7 +97,7 @@ namespace unit_tests {
       assert::are_equal(0, e.error_code().value(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
       assert::are_equal(std::system_category(), e.error_code().category(), csf_);
-      assert::are_equal(info.get_file_line_number(), e.line_numer(), csf_);
+      assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
       assert::are_equal("xtd::not_supported_exception", e.name(), csf_);
@@ -114,7 +114,7 @@ namespace unit_tests {
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
-      assert::are_equal(info.get_file_line_number(), e.line_numer(), csf_);
+      assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
       assert::are_equal("xtd::not_supported_exception", e.name(), csf_);
@@ -131,7 +131,7 @@ namespace unit_tests {
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::are_equal("https://codedocs.xyz/gammasoft71/xtd_core/", e.help_link(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
-      assert::are_equal(info.get_file_line_number(), e.line_numer(), csf_);
+      assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
       assert::are_equal("xtd::not_supported_exception", e.name(), csf_);
@@ -148,7 +148,7 @@ namespace unit_tests {
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::are_equal("https://codedocs.xyz/gammasoft71/xtd_core/", e.help_link(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
-      assert::are_equal(info.get_file_line_number(), e.line_numer(), csf_);
+      assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
       assert::are_equal("xtd::not_supported_exception", e.name(), csf_);
@@ -166,7 +166,7 @@ namespace unit_tests {
       assert::is_empty(e.help_link(), csf_);
       assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get(), csf_);
       assert::are_equal(inner_exception.what(), e.inner_exception().value().get().what(), csf_);
-      assert::are_equal(0U, e.line_numer(), csf_);
+      assert::are_equal(0U, e.line_number(), csf_);
       assert::is_empty(e.member_name(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
       assert::are_equal("xtd::not_supported_exception", e.name(), csf_);
@@ -185,7 +185,7 @@ namespace unit_tests {
       assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get(), csf_);
       assert::are_equal(inner_exception.what(), e.inner_exception().value().get().what(), csf_);
       assert::are_equal(std::system_category(), e.error_code().category(), csf_);
-      assert::are_equal(info.get_file_line_number(), e.line_numer(), csf_);
+      assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
       assert::are_equal("xtd::not_supported_exception", e.name(), csf_);
@@ -204,7 +204,7 @@ namespace unit_tests {
       assert::is_empty(e.help_link(), csf_);
       assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get(), csf_);
       assert::are_equal(inner_exception.what(), e.inner_exception().value().get().what(), csf_);
-      assert::are_equal(info.get_file_line_number(), e.line_numer(), csf_);
+      assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
       assert::are_equal("xtd::not_supported_exception", e.name(), csf_);
@@ -223,7 +223,7 @@ namespace unit_tests {
       assert::are_equal("https://codedocs.xyz/gammasoft71/xtd_core/", e.help_link(), csf_);
       assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get(), csf_);
       assert::are_equal(inner_exception.what(), e.inner_exception().value().get().what(), csf_);
-      assert::are_equal(info.get_file_line_number(), e.line_numer(), csf_);
+      assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
       assert::are_equal("xtd::not_supported_exception", e.name(), csf_);
@@ -242,7 +242,7 @@ namespace unit_tests {
       assert::are_equal("https://codedocs.xyz/gammasoft71/xtd_core/", e.help_link(), csf_);
       assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get(), csf_);
       assert::are_equal(inner_exception.what(), e.inner_exception().value().get().what(), csf_);
-      assert::are_equal(info.get_file_line_number(), e.line_numer(), csf_);
+      assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
       assert::are_equal("xtd::not_supported_exception", e.name(), csf_);
@@ -261,7 +261,7 @@ namespace unit_tests {
       assert::are_equal("https://codedocs.xyz/gammasoft71/xtd_core/", e.help_link(), csf_);
       assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get(), csf_);
       assert::are_equal(inner_exception.what(), e.inner_exception().value().get().what(), csf_);
-      assert::are_equal(info.get_file_line_number(), e.line_numer(), csf_);
+      assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
       assert::are_equal("xtd::not_supported_exception", e.name(), csf_);
@@ -281,7 +281,7 @@ namespace unit_tests {
       assert::are_equal("https://codedocs.xyz/gammasoft71/xtd_core/", e.help_link(), csf_);
       assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get(), csf_);
       assert::are_equal(inner_exception.what(), e.inner_exception().value().get().what(), csf_);
-      assert::are_equal(info.get_file_line_number(), e.line_numer(), csf_);
+      assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
       assert::are_equal("xtd::not_supported_exception", e.name(), csf_);
