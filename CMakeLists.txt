@@ -47,7 +47,7 @@ else ()
   choice_options(XTD_NATIVE_GRAPHIC_TOOLKIT "Choose toolkit for native drawing and forms libraries" wxwidgets gtk4 gtk3 qt5 fltk)
 endif ()
 
-# Validation options
+# Options validations
 if (XTD_BUILD_LIBRARIES_XTD_DRAWING AND NOT XTD_BUILD_LIBRARIES_XTD_CORE)
   message(FATAL_ERROR "Build xtd.core libraries must must be set to ON: xtd.drawing depends of xtd.core")
 endif ()
