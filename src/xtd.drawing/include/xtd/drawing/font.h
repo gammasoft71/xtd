@@ -184,27 +184,27 @@ namespace xtd {
       /// @return A byte value that specifies the GDI character set that this xtd::drawing::font uses. The default is 1.
       /// @remarks This property returns 1, unless a different character set is specified in the font(string, float, font_style, graphics_unit, uint8_t) constructor. This property takes a value from the list defined in the Windows SDK header file WinGDI.h. The character sets and byte values are listed in the following table.
       /// | Character set | Value |
-      /// |---------------|------|
-      /// | ANSI          | 0    |
-      /// | DEFAULT       | 1    |
-      /// | SYMBOL        | 2    |
-      /// | SHIFTJIS      | 128  |
-      /// | HANGEUL       | 129  |
-      /// | HANGUL        | 129  |
-      /// | GB2312        | 134  |
-      /// | CHINESEBIG5   | 136  |
-      /// | OEM           | 255  |
-      /// | JOHAB         | 130  |
-      /// | HEBREW        | 177  |
-      /// | ARABIC        | 178  |
-      /// | GREEK         | 161  |
-      /// | TURKISH       | 162  |
-      /// | VIETNAMESE    | 163  |
-      /// | THAI          | 222  |
-      /// | EASTEUROPE    | 238  |
-      /// | RUSSIAN       | 204  |
-      /// | MAC           | 77   |
-      /// | BALTIC        | 186  |
+      /// |---------------|-------|
+      /// | ANSI          | 0     |
+      /// | DEFAULT       | 1     |
+      /// | SYMBOL        | 2     |
+      /// | SHIFTJIS      | 128   |
+      /// | HANGEUL       | 129   |
+      /// | HANGUL        | 129   |
+      /// | GB2312        | 134   |
+      /// | CHINESEBIG5   | 136   |
+      /// | OEM           | 255   |
+      /// | JOHAB         | 130   |
+      /// | HEBREW        | 177   |
+      /// | ARABIC        | 178   |
+      /// | GREEK         | 161   |
+      /// | TURKISH       | 162   |
+      /// | VIETNAMESE    | 163   |
+      /// | THAI          | 222   |
+      /// | EASTEUROPE    | 238   |
+      /// | RUSSIAN       | 204   |
+      /// | MAC           | 77    |
+      /// | BALTIC        | 186   |
       uint8_t gdi_char_set() const {return data_->gdi_char_set_;}
       
       /// @brief Gets a Boolean value that indicates whether this xtd::drawing::font is derived from a GDI vertical font.
