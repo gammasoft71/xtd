@@ -165,7 +165,7 @@ if (XTD_BUILD_TESTS_XTD_CORE OR XTD_BUILD_TESTS_XTD_DRAWING OR XTD_BUILD_TESTS_X
 endif ()
 
 # Projects
-add_projects(src tests tools)
+add_projects(docs locale scripts src tests tools)
 
 # Updates export file
 xtd_update_export_file(src/xtd.3rdparty.call_stack/call_stack_export.h XTD_3RDPARTY_CALL_STACK_EXPORT call_stack_export_)
@@ -204,8 +204,6 @@ install(FILES scripts/cmake/xtd_commands.cmake DESTINATION cmake/xtd_modules)
 install(FILES scripts/cmake/MacOSXBundleInfo.plist.in DESTINATION cmake/xtd_modules)
 if (XTD_INSTALL_RESOURCES)
   install(DIRECTORY resources DESTINATION share/xtd)
-  install(DIRECTORY locale DESTINATION share/xtd)
-  install(DIRECTORY docs/pictures/examples/. DESTINATION share/xtd/resources/pictures/examples)
 endif ()
 if (XTD_INSTALL_EXAMPLES)
   install(DIRECTORY examples/. DESTINATION share/xtd/examples)
