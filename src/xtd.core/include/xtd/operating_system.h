@@ -66,7 +66,7 @@ namespace xtd {
     /// @return string The desktop environment for the operating system, if not found empty string ("").
     /// @remarks On Windows is always "windows".
     /// @remarks On macOS is always "macos".
-    /// @remarks On linux it can be "budgie", "cinamon",  "deepin", "Enlightenment", "étoilé", "gnome", "kde", "lxqt", "mate", "pantheon", "razor-qt", "unity", "xfce".
+    /// @remarks On linux it can be "budgie", "cinnamon",  "deepin", "Enlightenment", "étoilé", "gnome", "kde", "lxqt", "mate", "pantheon", "razor-qt", "unity", "xfce".
     xtd::ustring desktop_environment() const {return desktop_environment_;}
     
     /// @brief Determines whether the current operating system is a 64-bit operating system.
