@@ -14,6 +14,6 @@ bool __toggle_full_screen_frame__(wxTopLevelWindow* control) {
 
 void __toggle_full_screen_frame__(wxTopLevelWindow* control, bool full_screen) {
   if (control == 0) return;
-  if (full_screen != __toogle_full_screen_frame__(control)) [[control->GetHandle() window] toggleFullScreen:[control->GetHandle() window]];
+  if (full_screen != __toggle_full_screen_frame__(control)) [[control->GetHandle() window] toggleFullScreen:[control->GetHandle() window]];
 }
 #endif
