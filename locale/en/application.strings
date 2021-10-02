@@ -1,17 +1,17 @@
-key "Call applicaiton::enable_dark_mode() before application::run()"
-value "Call applicaiton::enable_dark_mode() before application::run()"
+key "Call application::enable_dark_mode() before application::run()"
+value "Call application::enable_dark_mode() before application::run()"
 
-key "Call applicaiton::enable_button_images() before application::run()"
-value "Call applicaiton::enable_button_images() before application::run()"
+key "Call application::enable_button_images() before application::run()"
+value "Call application::enable_button_images() before application::run()"
 
-key "Call applicaiton::enable_light_mode() before application::run()"
-value "Call applicaiton::enable_light_mode() before application::run()"
+key "Call application::enable_light_mode() before application::run()"
+value "Call application::enable_light_mode() before application::run()"
 
-key "Call applicaiton::enable_menu_images() before application::run()"
-value "Call applicaiton::enable_menu_images() before application::run()"
+key "Call application::enable_menu_images() before application::run()"
+value "Call application::enable_menu_images() before application::run()"
 
-key "Call applicaiton::enable_visual_styles() before application::run()"
-value "Call applicaiton::enable_visual_styles() before application::run()"
+key "Call application::enable_visual_styles() before application::run()"
+value "Call application::enable_visual_styles() before application::run()"
 
 key "Application already running"
 value "Application already running"
