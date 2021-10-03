@@ -309,41 +309,41 @@
 
 ### Application
 
-* ![added](pictures/added.png) application
-* ![added](pictures/added.png) application_context
-* ![added](pictures/added.png) application_information
+* ![added](pictures/added.png) application - Provides static methods and properties to manage an application, such as methods to start and stop an application, to process Windows messages, and methods to get information about an application.
+* ![added](pictures/added.png) application_context - Specifies the contextual information about an application thread.
+* ![added](pictures/added.png) application_information - Specifies the application informations.
 
 ### Dialog
 
-* ![added](pictures/added.png) about_dialog
-* ![added](pictures/added.png) busy_dialog
-* ![added](pictures/added.png) color_dialog
-* ![added](pictures/added.png) exception_dialog
-* ![todo](pictures/todo.png) find_dialog
-* ![added](pictures/added.png) folder_browser_dialog
-* ![added](pictures/added.png) font_dialog
-* ![added](pictures/added.png) inpu_dialog
-* ![added](pictures/added.png) message_dialog
-* ![added](pictures/added.png) open_file_dialog
-* ![added](pictures/added.png) progress_dialog
-* ![todo](pictures/todo.png) replace_dialog
-* ![added](pictures/added.png) save_file_dialog
+* ![added](pictures/added.png) about_dialog - Represents a dialog box that displays about dialog.
+* ![added](pictures/added.png) busy_dialog - Represents a dialog box that displays busy dialog.
+* ![added](pictures/added.png) color_dialog - Represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.
+* ![added](pictures/added.png) exception_dialog - Represents a common dialog box that displays exception dialog.
+* ![todo](pictures/todo.png) find_dialog - Represents a dialog box that displays find dialog.
+* ![added](pictures/added.png) folder_browser_dialog - Prompts the user to select a folder.
+* ![added](pictures/added.png) font_dialog - Prompts the user to choose a font from among those installed on the local computer.
+* ![added](pictures/added.png) input_dialog - Represents a common dialog box that displays input dialog.
+* ![added](pictures/added.png) message_dialog - Displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A message_dialog can contain text, buttons, and symbols that inform and instruct the user.
+* ![added](pictures/added.png) open_file_dialog - Displays a standard dialog box that prompts the user to open a file.
+* ![added](pictures/added.png) progress_dialog - Represents a common dialog box that displays progress dialog.
+* ![todo](pictures/todo.png) replace_dialog - Represents a dialog box that displays replace dialog.
+* ![added](pictures/added.png) save_file_dialog - Prompts the user to select a location for saving a file.
 
-* ![added](pictures/added.png) about_box
-* ![added](pictures/added.png) busy_box
-* ![added](pictures/added.png) color_box
-* ![added](pictures/added.png) debug_message_box
-* ![added](pictures/added.png) exception_box
-* ![todo](pictures/todo.png) find_box
-* ![todo](pictures/todo.png) folder_browser_box
-* ![added](pictures/added.png) font_box
-* ![added](pictures/added.png) inpu_box
-* ![added](pictures/added.png) message_box
-* ![todo](pictures/todo.png) open_file_box
-* ![todo](pictures/todo.png) progress_box
-* ![todo](pictures/todo.png) replace_box
-* ![todo](pictures/todo.png) save_file_box
-* ![added](pictures/added.png) trace_message_box
+* ![added](pictures/added.png) about_box - Represents a dialog box that displays about box.
+* ![added](pictures/added.png) busy_box - Represents a dialog box that displays busy box.
+* ![added](pictures/added.png) color_box - Represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.
+* ![added](pictures/added.png) debug_message_box - Displays a dialog box and write debug.
+* ![added](pictures/added.png) exception_box - Represents a common dialog box that displays exception box.
+* ![todo](pictures/todo.png) find_box - Represents a dialog box that displays find box.
+* ![todo](pictures/todo.png) folder_browser_box - Prompts the user to select a folder.
+* ![added](pictures/added.png) font_box - Prompts the user to choose a font from among those installed on the local computer.
+* ![added](pictures/added.png) input_box - Represents a common dialog box that displays input box.
+* ![added](pictures/added.png) message_box - Displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A message_dialog can contain text, buttons, and symbols that inform and instruct the user.
+* ![todo](pictures/todo.png) open_file_box - Displays a standard dialog box that prompts the user to open a file.
+* ![todo](pictures/todo.png) progress_box - Represents a common dialog box that displays progress box.
+* ![todo](pictures/todo.png) replace_box - Represents a dialog box that displays replace box.
+* ![todo](pictures/todo.png) save_file_box - Prompts the user to select a location for saving a file.
+* ![added](pictures/added.png) trace_message_box - Displays a dialog box and write trace.
 
 ### Forms
 
