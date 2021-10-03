@@ -63,7 +63,7 @@
 * ![added](pictures/added.png) is - Checks if the result of an expression is compatible with a given type.
 * ![added](pictures/added.png) length_exception - The exception that is thrown when an attempts to exceed implementation defined length limits for some object.
 * ![added](pictures/added.png) literals operators - Used to convert specified value into another.
-* ![todo](pictures/todo.png) lock_ - The lock_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion lock for a given object, executing a statement, and then releasing the lock. The following example includes a lock statement.
+* ![todo](pictures/todo.png) lock - The lock keyword marks a statement block as a critical section by obtaining the mutual-exclusion lock for a given object, executing a statement, and then releasing the lock. The following example includes a lock statement.
 * ![added](pictures/added.png) math - Provides constants and static methods for trigonometric, logarithmic, and other common mathematical functions.
 * ![added](pictures/added.png) nameof - Used to obtain the simple (unqualified) string name of a variable, type, or member.
 * ![added](pictures/added.png) not_finit_number_exception - The exception that is thrown when a floating-point value is positive infinity, negative infinity, or Not-a-Number (NaN).
