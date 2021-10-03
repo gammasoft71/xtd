@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::vscroll_bar control.
+/// @brief Contains xtd::forms::v_scroll_bar control.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "scroll_bar.h"
@@ -8,19 +8,19 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    /// @brief Represents a standard Windows vscroll_bar.
+    /// @brief Represents a standard Windows horizontal scroll bar.
     /// @par Namespace
     /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
-    /// The following code example demonstrate the use of vscroll_bar control.
-    /// @include vscroll_bar.cpp
-    class forms_export_ vscroll_bar : public scroll_bar {
+    /// The following code example demonstrate the use of v_scroll_bar control.
+    /// @include v_scroll_bar.cpp
+    class forms_export_ v_scroll_bar : public scroll_bar {
     public:
-      /// @brief Initialize a new instance of vscroll_bar class.
-      vscroll_bar();
+      /// @brief Initialize a new instance of v_scroll_bar class.
+      v_scroll_bar();
       xtd::drawing::size default_size() const override {return {17, 80};}
       
     protected:

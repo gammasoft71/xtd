@@ -112,7 +112,7 @@
 | [dot_matrix_display](../src/xtd.forms/include/xtd/forms/dot_matrix_display.h)             | class | ![progress100](pictures/progress100.png) |
 | [font_picker](../src/xtd.forms/include/xtd/forms/font_picker.h)                           | class | ![progress100](pictures/progress100.png) |
 | [fourteen_segment_display](../src/xtd.forms/include/xtd/forms/fourteen_segment_display.h) | class | ![progress100](pictures/progress100.png) |
-| [hscroll_bar](../src/xtd.forms/include/xtd/forms/hscroll_bar.h)                           | class | ![progress100](pictures/progress100.png) |
+| [h_scroll_bar](../src/xtd.forms/include/xtd/forms/h_scroll_bar.h)                         | class | ![progress100](pictures/progress100.png) |
 | [label](../src/xtd.forms/include/xtd/forms/label.h)                                       | class | ![progress100](pictures/progress100.png) |
 | [lcd_label](../src/xtd.forms/include/xtd/forms/lcd_label.h)                               | class | ![progress100](pictures/progress100.png) |
 | [light_button](../src/xtd.forms/include/xtd/forms/light_button.h)                         | class | ![progress0](pictures/progress0.png)     |
@@ -144,7 +144,7 @@
 | [tree_view](../src/xtd.forms/include/xtd/forms/tree_view.h)                               | class | ![progress0](pictures/progress0.png)     |
 | [up_down_button](../src/xtd.forms/include/xtd/forms/up_down_button.h)                     | class | ![progress100](pictures/progress100.png) |
 | [user_control](../src/xtd.forms/include/xtd/forms/user_control.h)                         | class | ![progress100](pictures/progress100.png) |
-| [vscroll_bar](../src/xtd.forms/include/xtd/forms/vscroll_bar.h)                           | class | ![progress100](pictures/progress100.png) |
+| [v_scroll_bar](../src/xtd.forms/include/xtd/forms/v_scroll_bar.h)                         | class | ![progress100](pictures/progress100.png) |
 | [web_view](../src/xtd.forms/include/xtd/forms/web_view.h)                                 | class | ![progress0](pictures/progress0.png)     |
 
 # Components

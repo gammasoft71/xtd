@@ -14,8 +14,8 @@ forms::create_params scrollable_control::create_params() const {
     create_params.style(create_params.style() | WS_HSCROLL | WS_VSCROLL);
     create_params.ex_style(create_params.ex_style() | WS_EX_AUTOSCROLL);
   } else {
-    if (hscroll_) create_params.style(create_params.style() | WS_HSCROLL);
-    if (vscroll_) create_params.style(create_params.style() | WS_VSCROLL);
+    if (h_scroll_) create_params.style(create_params.style() | WS_HSCROLL);
+    if (v_scroll_) create_params.style(create_params.style() | WS_VSCROLL);
   }
   
   return create_params;

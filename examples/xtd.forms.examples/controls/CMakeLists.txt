@@ -20,7 +20,7 @@ add_projects(
   dot_matrix_display
   font_picker
   fourteen_segment_display
-  hscroll_bar
+  h_scroll_bar
   label
   lcd_label
   link_label
@@ -42,5 +42,5 @@ add_projects(
   track_bar
   up_down_button
   user_control
-  vscroll_bar
+  v_scroll_bar
 )

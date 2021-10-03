@@ -114,7 +114,7 @@ namespace xtd {
       int32_t minimum_ = 0;
       int32_t small_change_ = 1;
       int32_t value_ = 0;
-      bool vscroll_ = true;
+      bool v_scroll_ = true;
       /// @endcond
       
     private:

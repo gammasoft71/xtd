@@ -51,13 +51,13 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the horizontal scroll bar is visible.
       /// @return true if the horizontal scroll bar is visible; otherwise, false.
-      virtual bool hscroll() const {return hscroll_;}
+      virtual bool h_scroll() const {return h_scroll_;}
       /// @brief Sets a value indicating whether the horizontal scroll bar is visible.
       /// @param hscrooll true if the horizontal scroll bar is visible; otherwise, false.
       /// @return Current scrollable_control instance.
-      virtual scrollable_control& hscroll(bool hscroll) {
-        if (hscroll_ != hscroll) {
-          hscroll_ = hscroll;
+      virtual scrollable_control& h_scroll(bool h_scroll) {
+        if (h_scroll_ != h_scroll) {
+          h_scroll_ = h_scroll;
           recreate_handle();
         }
         return *this;
@@ -65,13 +65,13 @@ namespace xtd {
 
       /// @brief Gets a value indicating whether the vertical scroll bar is visible.
       /// @return true if the vertical scroll bar is visible; otherwise, false.
-      virtual bool vscroll() const {return vscroll_;}
+      virtual bool v_scroll() const {return v_scroll_;}
       /// @brief Sets a value indicating whether the vertical scroll bar is visible.
       /// @param vscroll true if the vertical scroll bar is visible; otherwise, false.
       /// @return Current scrollable_control instance.
-      virtual scrollable_control& vscroll(bool vscroll) {
-        if (vscroll_ != vscroll) {
-          vscroll_ = vscroll;
+      virtual scrollable_control& v_scroll(bool v_scroll) {
+        if (v_scroll_ != v_scroll) {
+          v_scroll_ = v_scroll;
           recreate_handle();
         }
         return *this;
@@ -100,8 +100,8 @@ namespace xtd {
 
       /// @cond
       bool auto_scroll_ = false;
-      bool hscroll_ = false;
-      bool vscroll_ = false;
+      bool h_scroll_ = false;
+      bool v_scroll_ = false;
       drawing::rectangle display_rectangle_;
       drawing::size auto_scroll_margin_;
       /// @endcond
