@@ -2,7 +2,7 @@
 
 # Release Notes
 
-![0.1.0](pictures/releases/version_0_1_0.png) (beta) October 10th 2021
+![0.1.0](pictures/releases/version_0_1_0.png) (beta) October 10, 2021
 
 * We are happy to release the first beta version of xtd.
 * This version contains a lot of functionalities. 
