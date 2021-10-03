@@ -10,15 +10,15 @@
 
 ## xtd
 
-* ![added](pictures/added.png) CMake commands
+* ![added](pictures/added.png) CMake commands - Specific CMake commands to manage project, assembly informations and application properties
 * ![added](pictures/added.png) countinuous inegration build
-* ![added](pictures/added.png) documentation
-* ![added](pictures/added.png) installation
-* ![todo](pictures/todo.png) packages (vcpkg, brew, apt)
-* ![added](pictures/added.png) project (SourceForge)
-* ![added](pictures/added.png) reference guide (online and offline)
-* ![todo](pictures/todo.png) register xtd domain name
-* ![added](pictures/added.png) website
+* ![added](pictures/added.png) documentation - Markdown documentattion.
+* ![added](pictures/added.png) installation - Insttall scripts for Windows, macOS and linux.
+* ![todo](pictures/todo.png) packages (vcpkg, brew, apt) - xtd packages.
+* ![added](pictures/added.png) project - SourceForge project.
+* ![added](pictures/added.png) reference guide -  Online and offline user and developerrr guide.
+* ![todo](pictures/todo.png) register xtd domain nameProvides the default output methods and behavior for tracing.
+* ![added](pictures/added.png) website - https://gammasoft71.wixsite.com/xtdpro
 
 ## xtd.core
 
@@ -100,64 +100,64 @@
 
 ### Collections
 
-* ![added](pictures/added.png) any_pair
-* ![added](pictures/added.png) key_not_found_exception
-* ![added](pictures/added.png) vector_list
+* ![added](pictures/added.png) any_pair - Implements a std::pair with the key and the value strongly typed to be std::any.
+* ![added](pictures/added.png) key_not_found_exception - The exception that is thrown when the key specified for accessing an element in a collection does not match any key in the collection.
+* ![added](pictures/added.png) vector_list - Represents a collection of std::any.
 
 #### Speialized
 
-* ![added](pictures/added.png) string_map
-* ![added](pictures/added.png) string_pair
-* ![added](pictures/added.png) string_vector
+* ![added](pictures/added.png) string_map - Implements a std::map with the key and the value strongly typed to be strings.
+* ![added](pictures/added.png) string_pair - Implements a std::pair with the key and the value strongly typed to be strings.
+* ![added](pictures/added.png) string_vector - Represents a collection of strings.
 
 ### Diagnostics
 
-* ![added](pictures/added.png) assert_dialog
-* ![added](pictures/added.png) boolean_switch
-* ![added](pictures/added.png) console_trace_listener
-* ![added](pictures/added.png) debug
-* ![added](pictures/added.png) debugger
-* ![added](pictures/added.png) default_trace_listener
-* ![added](pictures/added.png) ostream_trace_listener
-* ![added](pictures/added.png) process
-* ![added](pictures/added.png) source_filter
-* ![added](pictures/added.png) source_switch
-* ![added](pictures/added.png) stack_frame
-* ![added](pictures/added.png) stack_trace
-* ![added](pictures/added.png) stopwatch
-* ![added](pictures/added.png) switch_base
-* ![added](pictures/added.png) trace
-* ![added](pictures/added.png) trace_event_cache
-* ![added](pictures/added.png) trace_filter
-* ![added](pictures/added.png) trace_listener
-* ![added](pictures/added.png) trace_listener_collection
-* ![added](pictures/added.png) trace_source
-* ![added](pictures/added.png) trace_switch
+* ![added](pictures/added.png) assert_dialog - Implement an assert dialog box.
+* ![added](pictures/added.png) boolean_switch - Provides a simple on/off switch that controls debugging and tracing output.
+* ![added](pictures/added.png) console_trace_listener - Directs tracing or debugging output to either the standard output or the standard error stream.
+* ![added](pictures/added.png) debug - Provides a set of methods and properties that help you debug the execution of your code.
+* ![added](pictures/added.png) debugger - Enables communication with a debugger.
+* ![added](pictures/added.png) default_trace_listener - Provides the default output methods and behavior for tracing.
+* ![added](pictures/added.png) ostream_trace_listener - Directs tracing or debugging output to a std::ostream, such as std::fstream, std::stream...
+* ![added](pictures/added.png) process - Provides access to local and remote processes and enables you to start and stop local system processes.
+* ![added](pictures/added.png) source_filter - Indicates whether a listener should trace a message based on the source of a trace.
+* ![added](pictures/added.png) source_switch - Provides a multilevel switch to control tracing and debug output without recompiling your code.
+* ![added](pictures/added.png) stack_frame - Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the call stack for the current thread.
+* ![added](pictures/added.png) stack_trace - Represents a stack trace, which is an ordered collection of one or more stack frames.
+* ![added](pictures/added.png) stopwatch - Provides a set of methods and properties that you can use to accurately measure elapsed time.
+* ![added](pictures/added.png) switch_base - Provides an abstract base class to create new debugging and tracing switches.
+* ![added](pictures/added.png) trace - Provides a set of methods and properties that help you debug the execution of your code. This class cannot be inherited.
+* ![added](pictures/added.png) trace_event_cache - Provides trace event data specific to a thread and a process.
+* ![added](pictures/added.png) trace_filter - Provides the base class for trace filter implementations.
+* ![added](pictures/added.png) trace_listener - Provides the abstract base class for the listeners who monitor trace and debug output.
+* ![added](pictures/added.png) trace_listener_collection - Represents a collection of xtd::diagnostics::trace_listener.
+* ![added](pictures/added.png) trace_source - Provides a set of methods and properties that enable applications to trace the execution of code and associate trace messages with their source.
+* ![added](pictures/added.png) trace_switch - Provides a multilevel switch to control tracing and debug output without recompiling your code.
 
 ### IO
 
-* ![todo](pictures/todo.png) binary_reader
-* ![todo](pictures/todo.png) binary_writer
-* ![todo](pictures/todo.png) directory
-* ![todo](pictures/todo.png) directory_info
-* ![added](pictures/added.png) directory_not_found_exception
-* ![todo](pictures/todo.png) drive_info
-* ![added](pictures/added.png) drive_not_found_exception
-* ![added](pictures/added.png) end_of_stream_exception
-* ![added](pictures/added.png) file
-* ![added](pictures/added.png) file_format_exception
-* ![todo](pictures/todo.png) file_info
-* ![added](pictures/added.png) file_load_exception
-* ![added](pictures/added.png) file_not_found_exception
-* ![added](pictures/added.png) io_exception
-* ![added](pictures/added.png) path
-* ![added](pictures/added.png) path_ too_ long_ exception
-* ![added](pictures/added.png) stream_reader
-* ![added](pictures/added.png) stream_writer
-* ![added](pictures/added.png) string_reader
-* ![added](pictures/added.png) string_writer
-* ![added](pictures/added.png) text_reader
-* ![added](pictures/added.png) text_writer
+* ![todo](pictures/todo.png) binary_reader - Reads primitive data types as binary values in a specific encoding.
+* ![todo](pictures/todo.png) binary_writer - Writes primitive types in binary to a stream and supports writing strings in a specific encoding.
+* ![todo](pictures/todo.png) directory - Provides static methods for the creation, copying, deletion, moving, and opening of Directories, and aids in the creation of System::IO::DirectoryStream objects.
+* ![todo](pictures/todo.png) directory_info - Exposes instance methods for creating, moving, and enumerating through directories and subdirectories. This class cannot be inherited.
+* ![added](pictures/added.png) directory_not_found_exception - The exception that is thrown when part of a file or directory cannot be found.
+* ![todo](pictures/todo.png) drive_info - Provides access to information on a drive.
+* ![added](pictures/added.png) drive_not_found_exception - The exception that is thrown when trying to access a drive or share that is not available.
+* ![added](pictures/added.png) end_of_stream_exception - The exception that is thrown when reading is attempted past the end of a stream.
+* ![added](pictures/added.png) file - Provides static methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of std::fstream objects.
+* ![added](pictures/added.png) file_format_exception - The exception that is thrown when the format of an argument does not meet the parameter specifications of the invoked method.
+* ![todo](pictures/todo.png) file_info - Provides properties and instance methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of std::fstream objects.
+* ![added](pictures/added.png) file_load_exception - The exception that is thrown when a managed assembly is found but cannot be loaded.
+* ![added](pictures/added.png) file_not_found_exception - The exception that is thrown when an attempt to access a file that does not exist on disk fails.
+* ![added](pictures/added.png) io_exception - The exception that is thrown when an I/O error occurs.
+* ![added](pictures/added.png) path - Performs operations on std::basic_string instances that contain file or directory path information. These operations are performed in a cross-platform manner.
+* ![added](pictures/added.png) path_too_long_exception - The exception that is thrown when a path or file name is longer than the system-defined maximum length.
+* ![added](pictures/added.png) stream_reader - Implements a xtd::io::text_reader that reads characters from a byte stream.
+* ![added](pictures/added.png) stream_writer - Implements a xtd::io::text_writer for writing characters to a stream.
+* ![added](pictures/added.png) string_reader - Implements a xtd::io::text_reader that reads from a string.
+* ![added](pictures/added.png) string_writer - Implements a xtd::io::text_writer for writing characters to a string.
+* ![added](pictures/added.png) text_reader - Represents a reader that can read a sequential series of characters.
+* ![added](pictures/added.png) text_writer - Represents a writer that can write a sequential series of characters.
 
 #### Memory mapped files
 
