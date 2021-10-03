@@ -609,6 +609,7 @@
 * ![todo](pictures/todo.png) sdl2
 * ![todo](pictures/todo.png) win32
 * ![added](pictures/added.png) wxwidgets
+
 ______________________________________________________________________________________________
 
 © 2021 Gammasoft.
