@@ -161,88 +161,89 @@
 
 #### Memory mapped files
 
-* ![todo](pictures/todo.png) memory_mapped_file
-* ![todo](pictures/todo.png) memory_mapped_view_accessor
-* ![todo](pictures/todo.png) memory_mapped_view_stream
+* ![todo](pictures/todo.png) memory_mapped_file - Represents a memory-mapped file.
+* ![todo](pictures/todo.png) memory_mapped_view_accessor - Represents a randomly accessed view of a memory-mapped file.
+* ![todo](pictures/todo.png) memory_mapped_view_stream - Represents a view of a memory-mapped file as a sequentially accessed stream.
 
 ### Media
 
-* ![todo](pictures/todo.png) sound_player
-* ![todo](pictures/todo.png) system_sound
-* ![todo](pictures/todo.png) system_sounds
+* ![todo](pictures/todo.png) sound_player - Controls playback of a sound from a .wav file.
+* ![todo](pictures/todo.png) system_sound - Represents a system sound type.
+* ![todo](pictures/todo.png) system_sounds - Retrieves sounds associated with a set of Windows operating system sound-event types.
 
 ### Microsoft
 
 #### Win32
-* ![todo](pictures/todo.png) registry
-* ![todo](pictures/todo.png) registry_key
+* ![todo](pictures/todo.png) registry - Provides xtd::microsoft::win32::registry_key objects that represent the root keys in the Windows registry, and static methods to access key/value pairs.
+* ![todo](pictures/todo.png) registry_key - Represents a key-level node in the Windows registry. This class is a registry encapsulation.
 
 ### Net
 
-* ![added](pictures/added.png) cookie_exception
-* ![added](pictures/added.png) dns
-* ![added](pictures/added.png) dns_end_point
-* ![added](pictures/added.png) end_point
-* ![added](pictures/added.png) ip_address
-* ![added](pictures/added.png) ip_end_point
-* ![added](pictures/added.png) ip_host_entry
-* ![added](pictures/added.png) network_credential
-* ![added](pictures/added.png) protocol_violation_exception
-* ![added](pictures/added.png) socket_address
-* ![added](pictures/added.png) web_exception
-* ![todo](pictures/todo.png) web_request
-* ![todo](pictures/todo.png) web_response
+* ![added](pictures/added.png) cookie_exception - The exception that is thrown when an error is made adding a xtd::net::cookie to a xtd::net::cookie_container.
+* ![added](pictures/added.png) dns - Provides simple domain name resolution functionality.
+* ![added](pictures/added.png) dns_end_point - Represents a network endpoint as a host name or a string representation of an IP address and a port number.
+* ![added](pictures/added.png) end_point - Identifies a network address.
+* ![added](pictures/added.png) ip_address - Provides an Internet Protocol (IP) address.
+* ![added](pictures/added.png) ip_end_point - Represents a network endpoint as an IP address and a port number.
+* ![added](pictures/added.png) ip_host_entry - Provides a container class for Internet host address information.
+* ![added](pictures/added.png) network_credential - Provides credentials for password-based authentication schemes such as basic, digest, NTLM, and Kerberos authentication.
+* ![added](pictures/added.png) protocol_violation_exception - The exception that is thrown when an error is made adding a xtd::net::cookie to a xtd::net::cookie_container.
+* ![added](pictures/added.png) socket_address - Stores serialized information from end_point derived classes.
+* ![added](pictures/added.png) web_exception - The exception that is thrown when an error is made adding a xtd::net::cookie to a xtd::net::cookie_container.
+* ![todo](pictures/todo.png) web_request - Makes a request to a Uniform Resource Identifier (URI).
+* ![todo](pictures/todo.png) web_response - Provides a response from a Uniform Resource Identifier (URI).
 
 #### Sockets
 
-* ![added](pictures/added.png) ip_v6_multicast_option
-* ![added](pictures/added.png) linger_option
-* ![added](pictures/added.png) multicast_option
-* ![added](pictures/added.png) network_stream
-* ![added](pictures/added.png) send_packet_element
-* ![added](pictures/added.png) socket
-* ![added](pictures/added.png) socket_exception
-* ![added](pictures/added.png) socket_information
-* ![added](pictures/added.png) tcp_client
-* ![added](pictures/added.png) tcp_listener
-* ![added](pictures/added.png) udp_client
+* ![added](pictures/added.png) ip_packet_information - Gets the network interface information that is associated with a call to xtd::net::sockets::socket::receive_message_from or xtd::net::sockets::socket::end_receive_message_from.
+* ![added](pictures/added.png) ip_v6_multicast_option - Contains option values for joining an IPv6 multicast group.
+* ![added](pictures/added.png) linger_option - Specifies whether a xtd::net::sockets::socket will remain connected after a call to the xtd::net::sockets::socket::close or xtd::net::sockets::tcp_client::close methods and the length of time it will remain connected, if data remains to be sent.
+* ![added](pictures/added.png) multicast_option - Contains IPAddress values used to join and drop multicast groups.
+* ![added](pictures/added.png) network_stream - Provides the underlying stream of data for network access.
+* ![added](pictures/added.png) send_packet_element - Represents an element in a xtd::net::sockets::send_packets_element array.
+* ![added](pictures/added.png) socket - Implements the Berkeley sockets interface.
+* ![added](pictures/added.png) socket_exception - The exception that is thrown when a socket error occurs.
+* ![added](pictures/added.png) socket_information - Encapsulates the information that is necessary to duplicate a xtd::net::sockets::socket.
+* ![added](pictures/added.png) tcp_client - Provides client connections for TCP network services.
+* ![added](pictures/added.png) tcp_listener - Listens for connections from TCP network clients.
+* ![added](pictures/added.png) udp_client - Provides User Datagram Protocol (UDP) network services.
 
 ##### web sockets
 
-* ![todo](pictures/todo.png) client_web_socket
-* ![todo](pictures/todo.png) web_socket
+* ![todo](pictures/todo.png) client_web_socket - Provides a client for connecting to WebSocket services.
+* ![todo](pictures/todo.png) web_socket - The xtd::net::sockets::web_sockets::web_socket class allows applications to send and receive data after the WebSocket upgrade has completed.
 
 ### Security
 
-* ![added](pictures/added.png) secure_string
+* ![added](pictures/added.png) secure_string - Represents text that should be kept confidential, such as by deleting it from computer memory when no longer needed.
 
 ### Text
 
-* ![todo](pictures/todo.png) string_builder
+* ![todo](pictures/todo.png) string_builder - Represents a mutable string of characters.
 
 ### Threading
 
-* ![todo](pictures/todo.png) auto_reset_event
-* ![todo](pictures/todo.png) barrier
-* ![todo](pictures/todo.png) event_wait_handle
-* ![todo](pictures/todo.png) interlocked
-* ![todo](pictures/todo.png) manual_reset_event
-* ![todo](pictures/todo.png) monitor
-* ![todo](pictures/todo.png) mutex
-* ![todo](pictures/todo.png) registered_wait_handle
-* ![todo](pictures/todo.png) semaphore
-* ![todo](pictures/todo.png) spin_lock
-* ![todo](pictures/todo.png) thread_local
-* ![todo](pictures/todo.png) thread_pool
-* ![todo](pictures/todo.png) timer
-* ![todo](pictures/todo.png) timer_callback
-* ![todo](pictures/todo.png) wait_callback
-* ![todo](pictures/todo.png) wait_handle
-* ![todo](pictures/todo.png) wait_or_timer_callback
+* ![todo](pictures/todo.png) auto_reset_event - Notifies a waiting thread that an event has occurred.
+* ![todo](pictures/todo.png) barrier - Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.
+* ![todo](pictures/todo.png) event_wait_handle - Represents a thread synchronization event.
+* ![todo](pictures/todo.png) interlocked - Provides atomic operations for variables that are shared by multiple threads.
+* ![todo](pictures/todo.png) manual_reset_event - Notifies a waiting thread that an event has occurred.
+* ![todo](pictures/todo.png) monitor - Provides a mechanism that synchronizes access to objects.
+* ![todo](pictures/todo.png) mutex - A synchronization primitive that can also be used for interprocess synchronization.
+* ![todo](pictures/todo.png) registered_wait_handle - Represents a handle that has been registered when calling xtd::threading::register_wait_for_single_object.
+* ![todo](pictures/todo.png) semaphore - Limits the number of threads that can access a resource or pool of resources concurrently.
+* ![todo](pictures/todo.png) spin_lock - Provides a mechanism for executing a method at specified intervals.
+* ![todo](pictures/todo.png) thread_local - Provides thread-local storage of data.
+* ![todo](pictures/todo.png) thread_pool - Provides a pool of threads that can be used to post work items, process asynchronous I/O, wait on behalf of other threads, and process timers.
+* ![todo](pictures/todo.png) timer - Provides a mechanism for executing a method at specified intervals.
+* ![todo](pictures/todo.png) timer_callback - Represents the method that handles calls from a xtd::threading::timer.
+* ![todo](pictures/todo.png) wait_callback - Represents a method to be called when a xtd::threading::wait_handle is signaled or times out.
+* ![todo](pictures/todo.png) wait_handle - Encapsulates operating system specific objects that wait for exclusive access to shared resources.
+* ![todo](pictures/todo.png) wait_or_timer_callback - Represents a method to be called when a xtd::threading::wait_handle is signaled or times out.
 
 ### Timers
 
-* ![todo](pictures/todo.png) timer
+* ![todo](pictures/todo.png) timer - Generates an event after a set interval, with an option to generate recurring events.
 
 ### Web
 
