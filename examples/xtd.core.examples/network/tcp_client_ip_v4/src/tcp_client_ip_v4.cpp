@@ -17,7 +17,7 @@ int main() {
     stream_reader reader(stream);
     
     while (!terminate_app)
-      if (stream.data_availlable()) console::write_line(reader.read_line());
+      if (stream.data_available()) console::write_line(reader.read_line());
   });
   
   thread client([&] {
