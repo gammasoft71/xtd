@@ -11,12 +11,12 @@
 ## xtd
 
 * ![added](pictures/added.png) CMake commands - Specific CMake commands to manage project, assembly informations and application properties
-* ![added](pictures/added.png) countinuous inegration build
-* ![added](pictures/added.png) documentation - Markdown documentattion.
-* ![added](pictures/added.png) installation - Insttall scripts for Windows, macOS and linux.
+* ![added](pictures/added.png) countinuous inegration build - Countinuous inegration build forr Windows, macOs anddd linux (appveyor, CirclleCI and travisCI).
+* ![added](pictures/added.png) documentation - Markdown documentation.
+* ![added](pictures/added.png) installation - Install scripts for Windows, macOS and linux.
 * ![todo](pictures/todo.png) packages (vcpkg, brew, apt) - xtd packages.
 * ![added](pictures/added.png) project - SourceForge project.
-* ![added](pictures/added.png) reference guide -  Online and offline user and developerrr guide.
+* ![added](pictures/added.png) reference guide -  Online and offline user and developer guide.
 * ![todo](pictures/todo.png) register xtd domain nameProvides the default output methods and behavior for tracing.
 * ![added](pictures/added.png) website - https://gammasoft71.wixsite.com/xtdpro
 
@@ -72,7 +72,7 @@
 * ![added](pictures/added.png) null_pointer_exception - The exception that is thrown when there is an attempt to dereference a null object pointer.
 * ![added](pictures/added.png) object - Supports all classes in the xtd class hierarchy and provides low-level services to derived classes.
 * ![added](pictures/added.png) object_closed_exception - The exception that is thrown when one of the arguments provided to a method is not valid.
-* ![added](pictures/added.png) operating_system - Represents information about an operating system, such as the version and platform identifier. This class cannot be inherited.
+* ![added](pictures/added.png) operating_system - Represents information about an operating system, such as the version and platform identifier.
 * ![added](pictures/added.png) operation_canceled_exception - The exception that is thrown in a thread upon cancellation of an operation that the thread was executing.
 * ![added](pictures/added.png) overflow_exception - The exception that is thrown when an arithmetic, casting, or conversion operation in a checked context results in an overflow.
 * ![added](pictures/added.png) overload - Represents class that use to determine one of const and non const overloaded methods.
@@ -95,7 +95,7 @@
 * ![added](pictures/added.png) unused - It may be used to suppress the "unused variable" or "unused local typedefs" compiler warnings when the variable or typedef can't be removed or commented out, e.g. when some blocks of the code are conditionally activated.
 * ![todo](pictures/todo.png) uri - Provides an object representation of a uniform resource identifier (URI) and easy access to the parts of the URI.
 * ![added](pictures/added.png) ustring - Represents text as a sequence of UTF-8 code units.
-* ![added](pictures/added.png) version - Represents the version number of an assembly, operating system, or the xtd. This class cannot be inherited.
+* ![added](pictures/added.png) version - Represents the version number of an assembly, operating system, or the xtd.
 * ![added](pictures/added.png) xml_syntax_exception - The exception that is thrown when there is a syntax error in XML parsing
 
 ### Collections
@@ -126,7 +126,7 @@
 * ![added](pictures/added.png) stack_trace - Represents a stack trace, which is an ordered collection of one or more stack frames.
 * ![added](pictures/added.png) stopwatch - Provides a set of methods and properties that you can use to accurately measure elapsed time.
 * ![added](pictures/added.png) switch_base - Provides an abstract base class to create new debugging and tracing switches.
-* ![added](pictures/added.png) trace - Provides a set of methods and properties that help you debug the execution of your code. This class cannot be inherited.
+* ![added](pictures/added.png) trace - Provides a set of methods and properties that help you debug the execution of your code.
 * ![added](pictures/added.png) trace_event_cache - Provides trace event data specific to a thread and a process.
 * ![added](pictures/added.png) trace_filter - Provides the base class for trace filter implementations.
 * ![added](pictures/added.png) trace_listener - Provides the abstract base class for the listeners who monitor trace and debug output.
@@ -139,7 +139,7 @@
 * ![todo](pictures/todo.png) binary_reader - Reads primitive data types as binary values in a specific encoding.
 * ![todo](pictures/todo.png) binary_writer - Writes primitive types in binary to a stream and supports writing strings in a specific encoding.
 * ![todo](pictures/todo.png) directory - Provides static methods for the creation, copying, deletion, moving, and opening of Directories, and aids in the creation of System::IO::DirectoryStream objects.
-* ![todo](pictures/todo.png) directory_info - Exposes instance methods for creating, moving, and enumerating through directories and subdirectories. This class cannot be inherited.
+* ![todo](pictures/todo.png) directory_info - Exposes instance methods for creating, moving, and enumerating through directories and subdirectories.
 * ![added](pictures/added.png) directory_not_found_exception - The exception that is thrown when part of a file or directory cannot be found.
 * ![todo](pictures/todo.png) drive_info - Provides access to information on a drive.
 * ![added](pictures/added.png) drive_not_found_exception - The exception that is thrown when trying to access a drive or share that is not available.
@@ -258,52 +258,52 @@
 
 ## xtd.drawing
 
-* ![added](pictures/added.png) bitmap
-* ![added](pictures/added.png) brush
-* ![added](pictures/added.png) brushes
-* ![todo](pictures/todo.png) buffered_graphics
-* ![added](pictures/added.png) color
-* ![added](pictures/added.png) colors
-* ![added](pictures/added.png) font
-* ![added](pictures/added.png) font_family
-* ![added](pictures/added.png) graphics
-* ![added](pictures/added.png) icon
-* ![added](pictures/added.png) image
-* ![added](pictures/added.png) pen
-* ![added](pictures/added.png) pens
-* ![added](pictures/added.png) point
-* ![added](pictures/added.png) point_f
-* ![added](pictures/added.png) rectangle
-* ![added](pictures/added.png) rectangle_f
-* ![added](pictures/added.png) size
-* ![added](pictures/added.png) size_f
-* ![added](pictures/added.png) solid_brush
-* ![added](pictures/added.png) string_format
-* ![added](pictures/added.png) system_brushes
-* ![added](pictures/added.png) system_colors
-* ![added](pictures/added.png) system_fonts
-* ![added](pictures/added.png) system_icons
-* ![added](pictures/added.png) system_images
-* ![added](pictures/added.png) system_pens
-* ![added](pictures/added.png) texture_brush
+* ![added](pictures/added.png) bitmap - Encapsulates a GDI+ bitmap, which consists of the pixel data for a graphics image and its attributes. A bitmap is an object used to work with images defined by pixel data.
+* ![added](pictures/added.png) brush - Defines objects used to fill the interiors of graphical shapes such as rectangles, ellipses, pies, polygons, and paths.
+* ![added](pictures/added.png) brushes - brushes for all the standard colors.
+* ![todo](pictures/todo.png) buffered_graphics - Provides a graphics buffer for double buffering.
+* ![added](pictures/added.png) color - Represents an ARGB (alpha, red, green, blue) color.
+* ![added](pictures/added.png) colors - colors for all the standard colors.
+* ![added](pictures/added.png) font - Defines a particular format for text, including font face, size, and style attributes.
+* ![added](pictures/added.png) font_family - Defines a group of type faces having a similar basic design and certain variations in styles.
+* ![added](pictures/added.png) graphics - Defines an object used to draw lines and curves.
+* ![added](pictures/added.png) icon - Represents a Windows icon, which is a small bitmap image that is used to represent an object. Icons can be thought of as transparent bitmaps, although their size is determined by the system.
+* ![added](pictures/added.png) image - An abstract base class that provides functionality for the bitmap and metafile descended classes.
+* ![added](pictures/added.png) pen - Defines an object used to draw lines and curves.
+* ![added](pictures/added.png) pens - pens for all the standard colors.
+* ![added](pictures/added.png) point - Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional plane.
+* ![added](pictures/added.png) point_f - Represents an ordered pair of floating-point x- and y-coordinates that defines a point in a two-dimensional plane.
+* ![added](pictures/added.png) rectangle - Stores a set of four integers that represent the location and size of a rectangle.
+* ![added](pictures/added.png) rectangle_f - Stores a set of four floating-points that represent the location and size of a rectangle.
+* ![added](pictures/added.png) size - Stores an ordered pair of integers, which specify a height and width.
+* ![added](pictures/added.png) size_f - Stores an ordered pair of floating-point, which specify a height and width.
+* ![added](pictures/added.png) solid_brush - Defines a xtd::drawing::brush of a single color. Brushes are used to fill graphics shapes, such as rectangles, ellipses, pies, polygons, and paths.
+* ![added](pictures/added.png) string_format - Encapsulates text layout information (such as alignment, orientation and tab stops) display manipulations (such as ellipsis insertion and national digit substitution) and OpenType features.
+* ![added](pictures/added.png) system_brushes - Each property of the xtd::drawing::system_brushes class is a xtd::drawing::solid_brush that is the color of a Windows display element.
+* ![added](pictures/added.png) system_colors - Each property of the xtd::drawing::system_colors class is a xtd::drawing::color structure that is the color of a Windows display element.
+* ![added](pictures/added.png) system_fonts - Specifies the fonts used to display text in Windows display elements.
+* ![added](pictures/added.png) system_icons - Each property of the xtd::drawing::system_icons class is an xtd::drawing::icon object for Windows system-wide icons.
+* ![added](pictures/added.png) system_images - Each property of the xtd::drawing::system_images class is an xtd::drawing::image object for Windows system-wide images.
+* ![added](pictures/added.png) system_pens - Each property of the xtd::drawing::system_pens class is a xtd::drawing::pen that is the color of a Windows display element and that has a width of 1 pixel.
+* ![added](pictures/added.png) texture_brush - Each property of the xtd::drawing::texture_brush class is a xtd::drawing::brush object that uses an image to fill the interior of a shape.
 
 ### Drawing 2d
 
-* ![added](pictures/added.png) hatch_brush
-* ![added](pictures/added.png) linear_gradient_brush
+* ![added](pictures/added.png) hatch_brush - Defines a rectangular xtd::drawing::brush with a hatch style, a foreground color, and a background color
+* ![added](pictures/added.png) linear_gradient_brush - Encapsulates a xtd::drawing::brush with a linear gradient.
 
 ### Imaging
 
-* ![added](pictures/added.png) color_palette
-* ![added](pictures/added.png) frame_dimension
-* ![added](pictures/added.png) image_format
-* ![added](pictures/added.png) property_item
+* ![added](pictures/added.png) color_palette - Defines an array of colors that make up a color palette. The colors are 32-bit ARGB colors.
+* ![added](pictures/added.png) frame_dimension - Provides properties that get the frame dimensions of an image.
+* ![added](pictures/added.png) image_format - Specifies the file format of the image
+* ![added](pictures/added.png) property_item - Encapsulates a metadata property to be included in an image file.
 
 ### Text
 
-* ![added](pictures/added.png) font_collection
-* ![added](pictures/added.png) installed_font_collection
-* ![added](pictures/added.png) private_font_collection
+* ![added](pictures/added.png) font_collection - Provides a base class for installed and private font collections.
+* ![added](pictures/added.png) installed_font_collection - Represents the fonts installed on the system.
+* ![added](pictures/added.png) private_font_collection - Provides a collection of font families built from font files that are provided by the client application.
 
 ## xtd.forms
 
