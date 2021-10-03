@@ -602,13 +602,13 @@
 
 ## Toolkits
 
-* ![todo](pictures/todo.png) cocoa
-* ![todo](pictures/todo.png) fltk
-* ![todo](pictures/todo.png) gtk4
-* ![todo](pictures/todo.png) qt6
-* ![todo](pictures/todo.png) sdl2
-* ![todo](pictures/todo.png) win32
-* ![added](pictures/added.png) wxwidgets
+* ![todo](pictures/todo.png) cocoa - Apple AppKit toolkit.
+* ![todo](pictures/todo.png) fltk - FLTK toolkit.
+* ![todo](pictures/todo.png) gtk4 - Gtk4 toolkit.
+* ![todo](pictures/todo.png) qt6 - Qt6 toolkit.
+* ![todo](pictures/todo.png) sdl2 - Sdl2 toolkit.
+* ![todo](pictures/todo.png) win32 - Win32 API toolkit.
+* ![added](pictures/added.png) wxwidgets - wxWidgets toolkit.
 
 ______________________________________________________________________________________________
 
