@@ -120,7 +120,7 @@
 | [uri_format_exception](../src/xtd.core/include/xtd/uri_format_exception.h)                         | exception     | ![progress0](pictures/progress0.png)     |
 | [uri_kind](../src/xtd.core/include/xtd/uri_kind.h)                                                 | enum class    | ![progress0](pictures/progress0.png)     |
 | [uri_partial](../src/xtd.core/include/xtd/uri_partial.h)                                           | enum class    | ![progress0](pictures/progress0.png)     |
-| [uri_ttemplate_match_exception](../src/xtd.core/include/xtd/uri_ttemplate_match_exception.h)       | exception     | ![progress0](pictures/progress0.png)     |
+| [uri_template_match_exception](../src/xtd.core/include/xtd/uri_template_match_exception.h)         | exception     | ![progress0](pictures/progress0.png)     |
 | [ustring](../src/xtd.core/include/xtd/ustring.h)                                                   | class         | ![progress100](pictures/progress100.png) |
 | [version](../src/xtd.core/include/xtd/version.h)                                                   | class         | ![progress100](pictures/progress100.png) |
 | [xml_syntax_exception](../src/xtd.core/include/xtd/xml_syntax_exception.h)                         | exception     | ![progress100](pictures/progress100.png) |
