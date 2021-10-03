@@ -525,46 +525,46 @@
 
 ### Tests
 
-* ![added](pictures/added.png) test
-* ![added](pictures/added.png) test class
-* ![added](pictures/added.png) unit test base
-* ![added](pictures/added.png) ostream unit test
-* ![added](pictures/added.png) console unit test
+* ![added](pictures/added.png) test - Represents the test.
+* ![added](pictures/added.png) test_class - Represents the test class.
+* ![added](pictures/added.png) unit_test_base - Represents the test base.
+* ![added](pictures/added.png) ostream_unit_test - Represents ostream unit test.
+* ![added](pictures/added.png) console_unit_test - Represents console unit test.
 
 ### Event listeners
 
-* ![added](pictures/added.png) event listener
-* ![added](pictures/added.png) ostream event listener
+* ![added](pictures/added.png) event_listener - Represents event listener.
+* ![added](pictures/added.png) ostream_event_listener - Represents ostrzam event listener.
 
 ### Assertions
 
-* ![added](pictures/added.png) assert
-* ![added](pictures/added.png) collection_assert
-* ![added](pictures/added.png) directory_assert
-* ![added](pictures/added.png) file_assert
-* ![added](pictures/added.png) string_assert
+* ![added](pictures/added.png) assert - Contains generic assertions.
+* ![added](pictures/added.png) collection_assert - Contains collection assertions.
+* ![added](pictures/added.png) directory_assert - Contains specific directory assertions.
+* ![added](pictures/added.png) file_assert - Contains specific file assertions.
+* ![added](pictures/added.png) string_assert - Contains specific string assertions.
 
 ### Validations
 
-* ![added](pictures/added.png) valid
-* ![added](pictures/added.png) collection_valid
-* ![added](pictures/added.png) directory_valid
-* ![added](pictures/added.png) file_valid
-* ![added](pictures/added.png) string_valid
+* ![added](pictures/added.png) valid - Contains generic validations.
+* ![added](pictures/added.png) collection_valid - Contains specific colection validations.
+* ![added](pictures/added.png) directory_valid - Contains specific directory validations.
+* ![added](pictures/added.png) file_valid - Contains specific file validations.
+* ![added](pictures/added.png) string_valid - Contains specific string validations.
 
 ### Assumptions
 
-* ![added](pictures/added.png) assume
-* ![added](pictures/added.png) collection_assume
-* ![added](pictures/added.png) directory_assume
-* ![added](pictures/added.png) file_assume
-* ![added](pictures/added.png) string_assume
+* ![added](pictures/added.png) assume - Contains generic assumptions.
+* ![added](pictures/added.png) collection_assume - Contains specific collection assumptions.
+* ![added](pictures/added.png) directory_assume - Contains specific directory assumptions.
+* ![added](pictures/added.png) file_assume - Contains specific file assumptions.
+* ![added](pictures/added.png) string_assume - Contains specific string assumptions.
 
 ### Settings
 
-* ![added](pictures/added.png) tests selection
-* ![added](pictures/added.png) tests execution
-* ![added](pictures/added.png) tests output
+* ![added](pictures/added.png) tests selection - Contains tests selection settings.
+* ![added](pictures/added.png) tests execution - Contains tests execution settings.
+* ![added](pictures/added.png) tests output - Contains tests output settings.
 
 ## Tools
 
