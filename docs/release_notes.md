@@ -140,7 +140,7 @@
 * ![todo](pictures/releases/status/todo.png) binary_writer - Writes primitive types in binary to a stream and supports writing strings in a specific encoding.
 * ![todo](pictures/releases/status/todo.png) directory - Provides static methods for the creation, copying, deletion, moving, and opening of Directories, and aids in the creation of System::IO::DirectoryStream objects.
 * ![todo](pictures/releases/status/todo.png) directory_info - Exposes instance methods for creating, moving, and enumerating through directories and subdirectories.
-* ![added](pictures/releases/status/added.png) directory_not_found_exception - The exception that is thrown when part of a file or directory cannot be found.
+* ![todo](pictures/releases/status/todo.png) directory_not_found_exception - The exception that is thrown when part of a file or directory cannot be found.
 * ![todo](pictures/releases/status/todo.png) drive_info - Provides access to information on a drive.
 * ![added](pictures/releases/status/added.png) drive_not_found_exception - The exception that is thrown when trying to access a drive or share that is not available.
 * ![added](pictures/releases/status/added.png) end_of_stream_exception - The exception that is thrown when reading is attempted past the end of a stream.
