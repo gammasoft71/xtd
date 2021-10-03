@@ -1,6 +1,6 @@
 # css_writer
 
-Shows how to use [xtd::web::css:writer](../../../../src/xtd.core/include/xtd/web/css/writer.h) class.
+Shows how to use [xtd::web::css:css_writer](../../../../src/xtd.core/include/xtd/web/css/css_writer.h) class.
 
 ## Sources
 

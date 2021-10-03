@@ -218,12 +218,12 @@ add_sources(
   include/xtd/net/sockets/transmit_file_options.h
   include/xtd/net/sockets/udp_client.h
   include/xtd/security/secure_string.h
+  include/xtd/web/css/css_reader.h
+  include/xtd/web/css/css_writer.h
   include/xtd/web/css/property.h
   include/xtd/web/css/property_map.h
-  include/xtd/web/css/reader.h
   include/xtd/web/css/selector.h
   include/xtd/web/css/selector_map.h
-  include/xtd/web/css/writer.h
 )
 add_sources(
   src/xtd/environment_version.cpp

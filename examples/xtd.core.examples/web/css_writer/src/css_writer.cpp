@@ -7,7 +7,7 @@ using namespace xtd::web::css;
 
 int main() {
   stringstream string_stream;
-  writer writer(string_stream);
+  css_writer writer(string_stream);
   
   writer.selectors()[".user_box"].properties()["display"] = property::from("none");
   writer.selectors()[".user_box"].properties()["position"] = property::from("fixed");

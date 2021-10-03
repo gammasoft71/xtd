@@ -1,6 +1,6 @@
 # css_reader
 
-Shows how to use [xtd::web::css:parser](../../../../src/xtd.core/include/xtd/web/css/reader.h) class.
+Shows how to use [xtd::web::css:css_reader](../../../../src/xtd.core/include/xtd/web/css/css_reader.h) class.
 
 ## Sources
 

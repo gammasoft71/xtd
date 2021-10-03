@@ -12,12 +12,12 @@
 namespace xtd {
   namespace web {
     namespace css {
-      class writer : public object {
+      class css_writer : public object {
       public:
-        writer(std::ostream& stream) : text_writer_(new xtd::io::stream_writer(stream)) {}
-        writer(xtd::io::text_writer& text_writer) : text_writer_(&text_writer), delete_when_destroy_(false) {}
-        writer(const xtd::ustring& path) : text_writer_(new xtd::io::stream_writer(path)) {}
-        ~writer() {
+        css_writer(std::ostream& stream) : text_writer_(new xtd::io::stream_writer(stream)) {}
+        css_writer(xtd::io::text_writer& text_writer) : text_writer_(&text_writer), delete_when_destroy_(false) {}
+        css_writer(const xtd::ustring& path) : text_writer_(new xtd::io::stream_writer(path)) {}
+        ~css_writer() {
           if (delete_when_destroy_ && text_writer_) delete text_writer_;
         }
         
