@@ -577,8 +577,8 @@
 
 ## Translations
 
-* ![added](pictures/added.png) english
-* ![added](pictures/added.png) french
+* ![added](pictures/added.png) english - English language.
+* ![added](pictures/added.png) french - French language.
 
 ## Themes
 
