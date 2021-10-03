@@ -10,6 +10,12 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @brief Represents information about a processor, such as the architecture. This class cannot be inherited.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   class processor final : public object {
   public:
     processor(xtd::architecture_id architecture, bool is_64_bit, uint32_t core_count) : architecture_(architecture), is_64_bit_(is_64_bit), core_count_(core_count) {}

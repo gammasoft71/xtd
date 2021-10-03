@@ -12,102 +12,300 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<typename value_t>
   inline value_t parse(const std::string& str) {__throw_parse_format_exception("Parse specialisation not found"); return {};}
 
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<typename value_t>
   inline value_t parse(const std::string& str, const std::string& fmt) {__throw_parse_format_exception("Parse specialisation not found"); return {};}
 
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline std::string parse<std::string>(const std::string& str) {return str;}
 
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<typename value_t>
   inline value_t parse(const std::string& str, number_styles) {__throw_parse_format_exception("Parse specialisation not found"); return {};}
   
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline int8_t parse<int8_t>(const std::string& str, number_styles styles) {return __parse_number<int8_t>(str, styles);}
   
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline char parse<char>(const std::string& str, number_styles styles) {return __parse_number<char>(str, styles);}
   
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline unsigned char parse<unsigned char>(const std::string& str, number_styles styles) {return __parse_unsigned_number<unsigned char>(str, styles);}
   
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline short parse<short>(const std::string& str, number_styles styles) {return __parse_number<short>(str, styles);}
   
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline unsigned short parse<unsigned short>(const std::string& str, number_styles styles) {return __parse_unsigned_number<unsigned short>(str, styles);}
 
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline int parse<int>(const std::string& str, number_styles styles) {return __parse_number<int>(str, styles);}
   
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline unsigned int parse<unsigned int>(const std::string& str, number_styles styles) {return __parse_unsigned_number<unsigned int>(str, styles);}
 
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline long parse<long>(const std::string& str, number_styles styles) {return __parse_number<long>(str, styles);}
   
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline unsigned long parse<unsigned long>(const std::string& str, number_styles styles) {return __parse_unsigned_number<unsigned long>(str, styles);}
 
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline long long parse<long long>(const std::string& str, number_styles styles) {return __parse_number<long long>(str, styles);}
   
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline unsigned long long parse<unsigned long long>(const std::string& str, number_styles styles) {return __parse_unsigned_number<unsigned long long>(str, styles);}
 
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline float parse<float>(const std::string& str, number_styles styles) {return __parse_floating_point_number<float>(str, styles);}
 
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline double parse<double>(const std::string& str, number_styles styles) {return __parse_floating_point_number<double>(str, styles);}
 
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline long double parse<long double>(const std::string& str, number_styles styles) {return __parse_floating_point_number<long double>(str, styles);}
 
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline int8_t parse<int8_t>(const std::string& str) {return parse<int8_t>(str, number_styles::integer);}
   
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline char parse<char>(const std::string& str) {return parse<char>(str, number_styles::integer);}
   
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline unsigned char parse<unsigned char>(const std::string& str) {return parse<unsigned char>(str, number_styles::integer);}
 
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline short parse<short>(const std::string& str) {return parse<short>(str, number_styles::integer);}
   
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline unsigned short parse<unsigned short>(const std::string& str) {return parse<unsigned short>(str, number_styles::integer);}
 
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline int parse<int>(const std::string& str) {return parse<int>(str, number_styles::integer);}
   
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline unsigned int parse<unsigned int>(const std::string& str) {return parse<unsigned int>(str, number_styles::integer);}
 
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline long parse<long>(const std::string& str) {return parse<long>(str, number_styles::integer);}
   
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline unsigned long parse<unsigned long>(const std::string& str) {return parse<unsigned long>(str, number_styles::integer);}
 
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline long long parse<long long>(const std::string& str) {return parse<long long>(str, number_styles::integer);}
 
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline unsigned long long parse<unsigned long long>(const std::string& str) {return parse<unsigned long long>(str, number_styles::integer);}
 
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline float parse<float>(const std::string& str) {return parse<float>(str, number_styles::fixed_point);}
 
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline double parse<double>(const std::string& str) {return parse<double>(str, number_styles::fixed_point);}
 
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline long double parse<long double>(const std::string& str) {return parse<long double>(str, number_styles::fixed_point);}
 
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline bool parse<bool>(const std::string& str) {
     std::string lower_str = str;
@@ -119,15 +317,39 @@ namespace xtd {
     return lower_str == "true" || lower_str == "1";
   }
 
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<typename value_t>
   inline value_t parse(const std::wstring& str) {__throw_parse_format_exception("Parse specialisation not found"); return {};}
 
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<typename value_t>
   inline value_t parse(const std::u16string& str) {__throw_parse_format_exception("Parse specialisation not found"); return {};}
 
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<typename value_t>
   inline value_t parse(const std::u32string& str) {__throw_parse_format_exception("Parse specialisation not found"); return {};}
 
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<typename value_t, typename char_t>
   inline bool try_parse(const std::basic_string<char_t>& str, value_t& value) {
     try {
@@ -138,6 +360,12 @@ namespace xtd {
     }
   }
 
+  /// @brief Convert a type into a string.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<typename value_t, typename char_t>
   inline bool try_parse(const char_t* str, value_t& value) {
     return try_parse(std::basic_string<char_t>(str), value);
