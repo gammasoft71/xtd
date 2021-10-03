@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::texts factory.
+/// @brief Contains xtd::forms::system_texts factory.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/static.h>
@@ -19,7 +19,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of texts class.
     /// @include texts.cpp
-    class forms_export_ texts final static_ {
+    class forms_export_ system_texts final static_ {
     public:
       /// @brief Gets a system-defined text that has a string value of "&Abort". This field is constant.
       static xtd::ustring abort();

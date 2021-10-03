@@ -75,7 +75,7 @@ high_scores_dialog::high_scores_dialog() {
   
   ok_button_.location({190, 150});
   ok_button_.width(100);
-  ok_button_.text(texts::ok());
+  ok_button_.text(system_texts::ok());
   ok_button_.dialog_result(dialog_result::ok);
   accept_button(ok_button_);
   

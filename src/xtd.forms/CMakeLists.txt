@@ -201,6 +201,7 @@ add_sources(
   include/xtd/forms/switch_button.h
   include/xtd/forms/switch_button_renderer.h
   include/xtd/forms/system_information.h
+  include/xtd/forms/system_texts.h
   include/xtd/forms/tab_alignment.h
   include/xtd/forms/tab_control.h
   include/xtd/forms/tab_page.h
@@ -208,7 +209,6 @@ add_sources(
   include/xtd/forms/text_box_base.h
   include/xtd/forms/text_box.h
   include/xtd/forms/text_format_flags.h
-  include/xtd/forms/texts.h
   include/xtd/forms/theme.h
   include/xtd/forms/theme_base.h
   include/xtd/forms/theme_colors.h
@@ -316,11 +316,11 @@ add_sources(
   src/xtd/forms/splitter.cpp
   src/xtd/forms/switch_button_renderer.cpp
   src/xtd/forms/system_information.cpp
+  src/xtd/forms/system_texts.cpp
   src/xtd/forms/tab_control.cpp
   src/xtd/forms/tab_page.cpp
   src/xtd/forms/table_layout_panel.cpp
   src/xtd/forms/text_box.cpp
-  src/xtd/forms/texts.cpp
   src/xtd/forms/theme.cpp
   src/xtd/forms/theme_base.cpp
   src/xtd/forms/theme_colors.cpp

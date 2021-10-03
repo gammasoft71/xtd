@@ -70,7 +70,7 @@ custom_field_dialog::custom_field_dialog() {
 
   ok_button_.parent(*this);
   ok_button_.location({165, 65});
-  ok_button_.text(xtd::forms::texts::ok());
+  ok_button_.text(xtd::forms::system_texts::ok());
   ok_button_.dialog_result(dialog_result::ok);
   ok_button_.click += [&] {
     custom_height(parse<int>(custom_height_text_box_.text()));

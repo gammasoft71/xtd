@@ -11,7 +11,7 @@ namespace examples {
       menu(main_menu::create_standard_items([&](object& sender, const event_args& e) {
         list_box1.items().push_back(ustring::format("{} clicked", as<menu_item&>(sender).text()));
         list_box1.selected_index(list_box1.items().size() - 1);
-        if (as<menu_item&>(sender).text() == texts::exit()) application::exit();
+        if (as<menu_item&>(sender).text() == system_texts::exit()) application::exit();
       }));
       list_box1.parent(*this);
       list_box1.dock(dock_style::fill);

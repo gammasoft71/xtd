@@ -11,7 +11,7 @@ int main() {
   form_main.size({1024, 768});
   form_main.text("Demo forms");
   form_main.menu(forms::main_menu::create_standard_items([&](object& sender, const event_args& e) {
-    if (as<menu_item&>(sender).text() == texts::exit()) application::exit();
+    if (as<menu_item&>(sender).text() == system_texts::exit()) application::exit();
   }));
   
   tab_control tab_control_main;

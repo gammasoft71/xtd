@@ -153,14 +153,14 @@ main_menu minesweeper_form::create_main_menu() {
       {"-"},
       {"Best &times..."_t, {[&] {minesweeper::high_scores_dialog().show_dialog(*this);}}},
       {"-"},
-      {texts::exit(), {overload_<>(application::exit)}},
+      {system_texts::exit(), {overload_<>(application::exit)}},
     }},
-    {texts::help(), {
+    {system_texts::help(), {
       {"&Contens"_t, {[&] {}}, shortcut::f1},
       {"&Search for Help On..."_t, {[&] {}}},
       {"&How to Use Help"_t, {[&] {}}},
       {"-"},
-      {texts::about(), {*this, &minesweeper_form::on_about_menuu_click}}
+      {system_texts::about(), {*this, &minesweeper_form::on_about_menuu_click}}
     }},
   };
 }
