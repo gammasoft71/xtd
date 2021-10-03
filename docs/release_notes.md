@@ -568,12 +568,12 @@
 
 ## Tools
 
-* ![added](pictures/added.png) guigen
-* ![added](pictures/added.png) guigen-gui
-* ![added](pictures/added.png) sleepfor
-* ![added](pictures/added.png) xtdc
-* ![added](pictures/added.png) xtdc-gui
-* ![todo](pictures/todo.png) xtd-code
+* ![added](pictures/added.png) guigen - Guid generator command line tool.
+* ![added](pictures/added.png) guigen-gui - Guid generator GUI application.
+* ![added](pictures/added.png) sleepfor - Sleep for duration command line tool.
+* ![added](pictures/added.png) xtdc - Project management command line tool.
+* ![added](pictures/added.png) xtdc-gui - Project management GUI application.
+* ![todo](pictures/todo.png) xtd-code - Forms builder and c++ code generator.
 
 ## Translations
 
