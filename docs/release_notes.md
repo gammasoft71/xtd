@@ -414,7 +414,7 @@
 * ![todo](pictures/releases/status/todo.png) property_grid - Provides a user interface for browsing the properties of an object.
 * ![added](pictures/releases/status/added.png) radio_button - Enables the user to select a single option from a group of choices when paired with other xtd::forms::radio_button controls.
 * ![todo](pictures/releases/status/todo.png) rich_text_box - Represents a Windows rich text box control.
-* ![added](pictures/releases/status/todo.png) roller - Represents a roller control.
+* ![todo](pictures/releases/status/todo.png) roller - Represents a roller control.
 * ![added](pictures/releases/status/added.png) seven_segment_display - Represents a seven segment display class.
 * ![added](pictures/releases/status/added.png) sixtenn_segment_display - Represents a sixteen segment display class.
 * ![added](pictures/releases/status/added.png) splitter - Represents a splitter control that enables the user to resize docked controls.
