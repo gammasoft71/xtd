@@ -453,26 +453,25 @@
 
 ### Datas
 
-* ![todo](pictures/todo.png) binding_navigator
-* ![todo](pictures/todo.png) binding_source
-* ![todo](pictures/todo.png) chart
-* ![todo](pictures/todo.png) data_grid
-* ![todo](pictures/todo.png) data_grid_view
-* ![todo](pictures/todo.png) data_set-
+* ![todo](pictures/todo.png) binding_navigator - Represents the navigation and manipulation user interface (UI) for controls on a form that are bound to data.
+* ![todo](pictures/todo.png) binding_source - Encapsulates the data source for a form.
+* ![todo](pictures/todo.png) chart - Displays data in a customizable chart.
+* ![todo](pictures/todo.png) data_grid_view - Displays data in a customizable grid.
+* ![todo](pictures/todo.png) data_set - Represents an in-memory cache of data.
 
 ### Printing
 
-* ![todo](pictures/todo.png) page_setup_dialog
-* ![todo](pictures/todo.png) print_dialog
-* ![todo](pictures/todo.png) print_document
-* ![todo](pictures/todo.png) print_preview_control
-* ![todo](pictures/todo.png) print_preview_dialog
+* ![todo](pictures/todo.png) page_setup_dialog - Enables users to change page-related print settings, including margins and paper orientation.
+* ![todo](pictures/todo.png) print_dialog - Lets users select a printer and choose which sections of the document to print from a Windows Forms application.
+* ![todo](pictures/todo.png) print_document - Defines a reusable object that sends output to a printer, when printing from a Windows Forms application.
+* ![todo](pictures/todo.png) print_preview_control - Represents the raw preview part of print previewing from a Windows Forms application, without any dialog boxes or buttons. Most xtd::forms::print_preview_control objects are found on xtd::forms::print_preview_dialog objects, but they do not have to be.
+* ![todo](pictures/todo.png) print_preview_dialog - Represents a dialog box form that contains a xtd::forms::print_preview_control for printing from a Windows Forms application.
 
 ### Clipboard and Drag & Drop
 
-* ![todo](pictures/todo.png) clipboard
-* ![todo](pictures/todo.png) data_format
-* ![todo](pictures/todo.png) data_object
+* ![todo](pictures/todo.png) clipboard - Provides methods to place data on and retrieve data from the system Clipboard. This class cannot be inherited.
+* ![todo](pictures/todo.png) data_format - Provides static, predefined xtd::forms::clipboard format names. Use them to identify the format of data that you store in an xtd::forms::idata_object.
+* ![todo](pictures/todo.png) data_object - Implements a basic data transfer mechanism.
 
 ### Renderers
 
@@ -521,7 +520,6 @@
 * ![todo](pictures/todo.png) up_down_button_renderer
 * ![todo](pictures/todo.png) v_scroll_bar_renderer
 * ![todo](pictures/todo.png) web_view_renderer
-
 
 ## xtd.tunit
 
