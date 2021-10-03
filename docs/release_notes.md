@@ -582,23 +582,23 @@
 
 ## Themes
 
-* ![todo](pictures/todo.png) gnome dark
-* ![todo](pictures/todo.png) gnome light
-* ![todo](pictures/todo.png) kde dark
-* ![todo](pictures/todo.png) kde light
-* ![todo](pictures/todo.png) macos dark
-* ![todo](pictures/todo.png) macos light
-* ![todo](pictures/todo.png) windows dark
-* ![todo](pictures/todo.png) wondows light
-* ![todo](pictures/todo.png) xtd dark
-* ![todo](pictures/todo.png) xtd light
-* ![todo](pictures/todo.png) light
-* ![todo](pictures/todo.png) dark
-* ![todo](pictures/todo.png) white
-* ![todo](pictures/todo.png) black
-* ![todo](pictures/todo.png) blue
-* ![todo](pictures/todo.png) green
-* ![todo](pictures/todo.png) red
+* ![todo](pictures/todo.png) gnome dark - Gnome dark theme css files.
+* ![todo](pictures/todo.png) gnome light - Gnome light theme css files.
+* ![todo](pictures/todo.png) kde dark - kde dark theme css files.
+* ![todo](pictures/todo.png) kde light - kde light theme css files.
+* ![todo](pictures/todo.png) macos dark - macOS dark theme css files.
+* ![todo](pictures/todo.png) macos light - macOS light theme css files.
+* ![todo](pictures/todo.png) windows dark - Windows dark theme css files.
+* ![todo](pictures/todo.png) wondows light - Windows light theme css files.
+* ![todo](pictures/todo.png) xtd dark - xtd dark theme css files.
+* ![todo](pictures/todo.png) xtd light - xtd light theme css files.
+* ![todo](pictures/todo.png) light - Light color theme css files.
+* ![todo](pictures/todo.png) dark - Dark color theme css files.
+* ![todo](pictures/todo.png) white - White color theme css files.
+* ![todo](pictures/todo.png) black - Black color theme css files.
+* ![todo](pictures/todo.png) blue - Blue color theme css files.
+* ![todo](pictures/todo.png) green - Green color theme css files.
+* ![todo](pictures/todo.png) red - Red color theme css files.
 
 ## Toolkits
 
