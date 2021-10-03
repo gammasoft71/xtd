@@ -24,8 +24,8 @@ namespace examples {
     }
     
   private:
-    hscroll_bar h_scroll_bar1;
-    hscroll_bar h_scroll_bar2;
+    h_scroll_bar h_scroll_bar1;
+    h_scroll_bar h_scroll_bar2;
   };
 }
 
