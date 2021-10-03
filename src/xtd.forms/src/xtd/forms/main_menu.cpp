@@ -5,7 +5,7 @@
 #include "../../../include/xtd/forms/main_menu.h"
 #include "../../../include/xtd/forms/menu_images.h"
 #include "../../../include/xtd/forms/shortcut.h"
-#include "../../../include/xtd/forms/texts.h"
+#include "../../../include/xtd/forms/system_texts.h"
 
 using namespace xtd;
 using namespace xtd::drawing;
@@ -116,44 +116,44 @@ xtd::forms::main_menu main_menu::create_standard_items(const xtd::ustring& theme
 xtd::forms::main_menu main_menu::create_standard_items(const xtd::forms::theme_images& theme, const drawing::size& size, const xtd::event_handler& on_click) {
   return  {
     {
-      texts::file(), {
-        {texts::new_(), on_click, menu_images::file_new(theme, size), shortcut::cmd_n},
-        {texts::open(), on_click, menu_images::file_open(theme, size), shortcut::cmd_o},
+      system_texts::file(), {
+        {system_texts::new_(), on_click, menu_images::file_new(theme, size), shortcut::cmd_n},
+        {system_texts::open(), on_click, menu_images::file_open(theme, size), shortcut::cmd_o},
         {"-"},
-        {texts::save(), on_click, menu_images::file_save(theme, size), shortcut::cmd_s},
-        {texts::save_as(), on_click},
+        {system_texts::save(), on_click, menu_images::file_save(theme, size), shortcut::cmd_s},
+        {system_texts::save_as(), on_click},
         {"-"},
-        {texts::print(), on_click, menu_images::file_print(theme, size), shortcut::cmd_p},
-        {texts::print_preview(), on_click, menu_images::file_print_preview(theme, size)},
+        {system_texts::print(), on_click, menu_images::file_print(theme, size), shortcut::cmd_p},
+        {system_texts::print_preview(), on_click, menu_images::file_print_preview(theme, size)},
         {"-"},
-        {texts::exit(), on_click, shortcut::alt_f4}
+        {system_texts::exit(), on_click, shortcut::alt_f4}
       }
     },
     {
-      texts::edit(), {
-        {texts::undo(), on_click, shortcut::cmd_z},
-        {texts::redo(), on_click, shortcut::cmd_shift_z},
+      system_texts::edit(), {
+        {system_texts::undo(), on_click, shortcut::cmd_z},
+        {system_texts::redo(), on_click, shortcut::cmd_shift_z},
         {"-"},
-        {texts::cut(), on_click, menu_images::edit_cut(theme, size), shortcut::cmd_x},
-        {texts::copy(), on_click, menu_images::edit_copy(theme, size), shortcut::cmd_c},
-        {texts::paste(), on_click, menu_images::edit_paste(theme, size), shortcut::cmd_v},
+        {system_texts::cut(), on_click, menu_images::edit_cut(theme, size), shortcut::cmd_x},
+        {system_texts::copy(), on_click, menu_images::edit_copy(theme, size), shortcut::cmd_c},
+        {system_texts::paste(), on_click, menu_images::edit_paste(theme, size), shortcut::cmd_v},
         {"-"},
-        {texts::select_all(), on_click, shortcut::cmd_a}
+        {system_texts::select_all(), on_click, shortcut::cmd_a}
       }
     },
     {
-      texts::tools(), {
-        {texts::customize(), on_click},
-        {texts::options(), on_click}
+      system_texts::tools(), {
+        {system_texts::customize(), on_click},
+        {system_texts::options(), on_click}
       }
     },
     {
-      texts::help(), {
-        {texts::contents(), on_click},
-        {texts::index(), on_click},
-        {texts::search(), on_click},
+      system_texts::help(), {
+        {system_texts::contents(), on_click},
+        {system_texts::index(), on_click},
+        {system_texts::search(), on_click},
         {"-"},
-        {texts::about(), on_click}
+        {system_texts::about(), on_click}
       }
     }
   };

@@ -13,7 +13,7 @@ public:
     ok_button.dialog_result(dialog_result::ok);
     ok_button.location({60, 40});
     ok_button.parent(*this);
-    ok_button.text(texts::ok());
+    ok_button.text(system_texts::ok());
   }
   
 public:
