@@ -249,12 +249,12 @@
 
 #### CSS
 
-* ![added](pictures/added.png) property
-* ![added](pictures/added.png) property_map
-* ![added](pictures/added.png) css_reader
-* ![added](pictures/added.png) selector
-* ![added](pictures/added.png) selector_map
-* ![added](pictures/added.png) css_writer
+* ![added](pictures/added.png) css_reader - Represent a css reader class.
+* ![added](pictures/added.png) css_writer - Represent a css writer class.
+* ![added](pictures/added.png) property - Representtt a css property class.
+* ![added](pictures/added.png) property_map - Represent a css property collection.
+* ![added](pictures/added.png) selector - Represent a css selector class.
+* ![added](pictures/added.png) selector_map - Represent a css selector collection.
 
 ## xtd.drawing
 
