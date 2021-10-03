@@ -323,7 +323,7 @@
 * ![added](pictures/added.png) folder_browser_dialog - Prompts the user to select a folder.
 * ![added](pictures/added.png) font_dialog - Prompts the user to choose a font from among those installed on the local computer.
 * ![added](pictures/added.png) input_dialog - Represents a common dialog box that displays input dialog.
-* ![added](pictures/added.png) message_dialog - Displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A message_dialog can contain text, buttons, and symbols that inform and instruct the user.
+* ![added](pictures/added.png) message_dialog - Displays a message window, also known as a dialog box, which presents a message to the user.
 * ![added](pictures/added.png) open_file_dialog - Displays a standard dialog box that prompts the user to open a file.
 * ![added](pictures/added.png) progress_dialog - Represents a common dialog box that displays progress dialog.
 * ![todo](pictures/todo.png) replace_dialog - Represents a dialog box that displays replace dialog.
@@ -338,7 +338,7 @@
 * ![todo](pictures/todo.png) folder_browser_box - Prompts the user to select a folder.
 * ![added](pictures/added.png) font_box - Prompts the user to choose a font from among those installed on the local computer.
 * ![added](pictures/added.png) input_box - Represents a common dialog box that displays input box.
-* ![added](pictures/added.png) message_box - Displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A message_dialog can contain text, buttons, and symbols that inform and instruct the user.
+* ![added](pictures/added.png) message_box - Displays a message window, also known as a dialog box, which presents a message to the user.
 * ![todo](pictures/todo.png) open_file_box - Displays a standard dialog box that prompts the user to open a file.
 * ![todo](pictures/todo.png) progress_box - Represents a common dialog box that displays progress box.
 * ![todo](pictures/todo.png) replace_box - Represents a dialog box that displays replace box.
