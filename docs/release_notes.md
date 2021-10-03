@@ -24,25 +24,25 @@
 
 ### System
 
-* ![added](pictures/added.png) action
-* ![added](pictures/added.png) argument_exception
-* ![added](pictures/added.png) argument_null_exception
-* ![added](pictures/added.png) argument_out_of_range_exception
-* ![added](pictures/added.png) arithmetic_exception
-* ![added](pictures/added.png) as
-* ![added](pictures/added.png) async_callback
-* ![added](pictures/added.png) bacground_color
-* ![added](pictures/added.png) beep
-* ![added](pictures/added.png) bit_converter
-* ![added](pictures/added.png) block_scope
-* ![added](pictures/added.png) cdebug
-* ![added](pictures/added.png) cnull
-* ![added](pictures/added.png) compiler
-* ![added](pictures/added.png) console
-* ![added](pictures/added.png) console_key_info
-* ![added](pictures/added.png) convert
-* ![added](pictures/added.png) convert_pointer
-* ![added](pictures/added.png) convert_string
+* ![added](pictures/added.png) action - Represents a xtd::delegate that has variable parameters and does not return a value.
+* ![added](pictures/added.png) argument_exception - The exception that is thrown when one of the arguments provided to a method is not valid.
+* ![added](pictures/added.png) argument_null_exception - The exception that is thrown when one of the arguments provided to a method is null.
+* ![added](pictures/added.png) argument_out_of_range_exception - The exception that is thrown when one of the arguments provided to a method is out of range.
+* ![added](pictures/added.png) arithmetic_exception - The exception that is thrown for errors in an arithmetic, casting, or conversion operation.
+* ![added](pictures/added.png) as - Casts a type into another type.
+* ![added](pictures/added.png) async_callback - References a method to be called when a corresponding asynchronous operation completes.
+* ![added](pictures/added.png) bacground_color - Sets the background color of the console.
+* ![added](pictures/added.png) beep - Represent beep output manipulator class.
+* ![added](pictures/added.png) bit_converter - Converts base data types to an std::vector of bytes, and an std::vector of bytes to base data types.
+* ![added](pictures/added.png) block_scope - The specified expression is cleared automatically when the scope is ended.
+* ![added](pictures/added.png) cdebug - Provides an std::ostream for xtd::diagnostics::debug.
+* ![added](pictures/added.png) cnull - Provides a null std::ostream.
+* ![added](pictures/added.png) compiler - Represents information about c++ libraries, such as the version and standard identifier. This class cannot be inherited.
+* ![added](pictures/added.png) console - Represents the standard input, output, and error streams for console applications.
+* ![added](pictures/added.png) console_key_info - Specifies the standard keys on a console.
+* ![added](pictures/added.png) convert - Represents API to convert base type code.
+* ![added](pictures/added.png) convert_pointer - Represents API to convert pointers.
+* ![added](pictures/added.png) convert_string - Represents API to convert string containers.
 * ![added](pictures/added.png) cpp_language
 * ![added](pictures/added.png) ctrace
 * ![todo](pictures/todo.png) date_time
