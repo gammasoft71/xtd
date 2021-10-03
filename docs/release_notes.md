@@ -347,115 +347,109 @@
 
 ### Forms
 
-* ![added](pictures/added.png) debug_form
-* ![added](pictures/added.png) form
-* ![added](pictures/added.png) trace_form
+* ![added](pictures/added.png) debug_form - Represents a form that displays debug form.
+* ![added](pictures/added.png) form - Represents a window or dialog box that makes up an application's user interface.
+* ![added](pictures/added.png) trace_form - Represents a form that displays trace form.
 
 ### Menus and toolbars
 
-* ![todo](pictures/todo.png) context_menu
-* ![todo](pictures/todo.png) context_menu_strip
-* ![added](pictures/added.png) main_menu
-* ![todo](pictures/todo.png) menu_strip
-* ![todo](pictures/todo.png) status_bar
-* ![todo](pictures/todo.png) tool_bar
-* ![todo](pictures/todo.png) tool_strip
+* ![todo](pictures/todo.png) context_menu - Represents a shortcut menu.
+* ![todo](pictures/todo.png) context_menu_strip - Represents a shortcut menu.
+* ![added](pictures/added.png) main_menu - Represents the menu structure of a form.
+* ![todo](pictures/todo.png) menu_strip - Provides a menu system for a form.
+* ![todo](pictures/todo.png) ribbon_bar - Represents a Windows ribbon bar control.
+* ![todo](pictures/todo.png) status_bar - Represents a Windows status bar control.
+* ![todo](pictures/todo.png) status_strip - Represents a Windows status bar control.
+* ![todo](pictures/todo.png) tool_bar - Represents a Windows tool bar control.
+* ![todo](pictures/todo.png) tool_strip - Provides a container for Windows toolbar objects.
 
 ### Containers
 
-* ![added](pictures/added.png) collapsible_panel
-* ![todo](pictures/todo.png) flow_layout_panel
-* ![added](pictures/added.png) group_box
-* ![added](pictures/added.png) horizontal_layout_panel
-* ![added](pictures/added.png) panel
-* ![added](pictures/added.png) split_container
-* ![added](pictures/added.png) tab_control
-* ![added](pictures/added.png) tab_page
-* ![todo](pictures/todo.png) table_layout_panel
-* ![todo](pictures/todo.png) tool_strip_container
-* ![todo](pictures/todo.png) tool_strip_panel
-* ![added](pictures/added.png) vertical_layout_panel
+* ![todo](pictures/todo.png) collapsible_panel - Used to group collections of controls in a collapsible panel.
+* ![todo](pictures/todo.png) flow_layout_panel - Used to group collections of fixed aligned controls.
+* ![added](pictures/added.png) group_box - Represents a Windows control that displays a frame around a group of controls with an optional caption.
+* ![added](pictures/added.png) horizontal_layout_panel - Used to group collections of horizontally aligned controls.
+* ![added](pictures/added.png) panel - Used to group collections of controls.
+* ![added](pictures/added.png) split_container - Represents a control consisting of a movable bar that divides a container's display area into two resizable panels.
+* ![added](pictures/added.png) tab_control - Manages a related set of tab pages.
+* ![added](pictures/added.png) tab_page - Represents a single tab page in a tab_control.
+* ![todo](pictures/todo.png) table_layout_panel - Used to group collections of fixed aligned controls.
+* ![todo](pictures/todo.png) tool_strip_container - Provides panels on each side of the form and a central panel that can hold one or more controls.
+* ![todo](pictures/todo.png) tool_strip_panel - Creates a container within which other controls can share horizontal or vertical space.
+* ![added](pictures/added.png) vertical_layout_panel - Used to group collections of vertically aligned controls.
 
 ### Controls
 
-* ![added](pictures/added.png) animation
-* ![added](pictures/added.png) button
-* ![added](pictures/added.png) check_box
-* ![added](pictures/added.png) checked_list_box
-* ![added](pictures/added.png) choice
-* ![added](pictures/added.png) color_picker
-* ![added](pictures/added.png) combo_box
-* ![added](pictures/added.png) command_link_button
-* ![added](pictures/added.png) control
-* ![added](pictures/added.png) date_time_picker
-* ![todo](pictures/todo.png) dial
-* ![added](pictures/added.png) domain_up_down
-* ![added](pictures/added.png) dot_matrix_display
-* ![added](pictures/added.png) font_picker
-* ![added](pictures/added.png) fourteen_segment_display
-* ![added](pictures/added.png) hscroll_bar
-* ![added](pictures/added.png) label
-* ![added](pictures/added.png) lcd_label
-* ![todo](pictures/todo.png) light_button
-* ![added](pictures/added.png) link_label
-* ![added](pictures/added.png) list_box
-* ![todo](pictures/todo.png) list_view
-* ![added](pictures/added.png) loading_indicator
-* ![todo](pictures/todo.png) masked_text_box
-* ![todo](pictures/todo.png) media_player
-* ![todo](pictures/todo.png) month_calender
-* ![todo](pictures/todo.png) notify_icon
-* ![added](pictures/added.png) nine_segment_display
-* ![added](pictures/added.png) numeric_up_down
-* ![added](pictures/added.png) picture_box
-* ![added](pictures/added.png) progress_bar
-* ![todo](pictures/todo.png) property_grid
-* ![added](pictures/added.png) radio_button
-* ![todo](pictures/todo.png) rich_text_box
-* ![added](pictures/todo.png) roller
-* ![added](pictures/added.png) seven_segment_display
-* ![added](pictures/added.png) sixtenn_segment_display
-* ![added](pictures/added.png) splitter
-* ![added](pictures/added.png) switch_button
-* ![added](pictures/added.png) text_box
-* ![todo](pictures/todo.png) tool_tip
-* ![todo](pictures/todo.png) tool_strip_progress_bar
-* ![added](pictures/added.png) toggle_button
-* ![added](pictures/added.png) track_bar
-* ![todo](pictures/todo.png) tree_view
-* ![added](pictures/added.png) up_down_button
-* ![added](pictures/added.png) user_control
-* ![added](pictures/added.png) vscroll_bar
-* ![todo](pictures/todo.png) web_view
+* ![added](pictures/added.png) animation - Represents an animation control.
+* ![added](pictures/added.png) button - Represents a Windows button control.
+* ![added](pictures/added.png) check_box - Represents a Windows check_box.
+* ![added](pictures/added.png) checked_list_box - Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.
+* ![added](pictures/added.png) choice - Represents a choice control.
+* ![added](pictures/added.png) color_picker - Represents a picker control that displays available colors along with controls that enable the user to define custom colors.
+* ![added](pictures/added.png) combo_box - Represents a Windows combo box control.
+* ![added](pictures/added.png) command_link_button - Represents a Windows command link button control.
+* ![added](pictures/added.png) control - Defines the base class for controls, which are components with visual representation.
+* ![added](pictures/added.png) date_time_picker - Represents a picker control that displays available date time along with controls.
+* ![todo](pictures/todo.png) dial - Represents a dial control.
+* ![added](pictures/added.png) domain_up_down - Represents a Windows spin box (also known as an up-down control) that displays string values.
+* ![added](pictures/added.png) dot_matrix_display - Represents a dot matrix display class.
+* ![added](pictures/added.png) font_picker - Represents a picker control that displays available fonts along with controls.
+* ![added](pictures/added.png) fourteen_segment_display - Represents a nine segment display class.
+* ![added](pictures/added.png) h_scroll_bar - Represents a standard Windows horizontal scroll bar.
+* ![added](pictures/added.png) label - Represents a standard Windows label.
+* ![added](pictures/added.png) lcd_label - Represents a lcd label.
+* ![todo](pictures/todo.png) light_button - Represents a light button control.
+* ![added](pictures/added.png) link_label - Represents a Windows label control that can display hyperlinks.
+* ![added](pictures/added.png) list_box - Represents a standard Windows list box.
+* ![todo](pictures/todo.png) list_view - Represents a Windows list view control, which displays a collection of items that can be displayed using one of four different views.
+* ![added](pictures/added.png) loading_indicator - Represents a loading indicator control.
+* ![todo](pictures/todo.png) masked_text_box - Uses a mask to distinguish between proper and improper user input.
+* ![todo](pictures/todo.png) media_player - Represents a media player control.
+* ![todo](pictures/todo.png) month_calender - Represents a Windows control that enables the user to select a date using a visual monthly calendar display.
+* ![todo](pictures/todo.png) notify_icon - Specifies a component that creates an icon in the notification area.
+* ![added](pictures/added.png) nine_segment_display - Represents a nine segment display class.
+* ![added](pictures/added.png) numeric_up_down - Represents a standard Windows numeric up down.
+* ![added](pictures/added.png) picture_box - Represents a standard Windows picture box.
+* ![added](pictures/added.png) progress_bar - Represents a Windows progress bar control.
+* ![todo](pictures/todo.png) property_grid - Provides a user interface for browsing the properties of an object.
+* ![added](pictures/added.png) radio_button - Enables the user to select a single option from a group of choices when paired with other xtd::forms::radio_button controls.
+* ![todo](pictures/todo.png) rich_text_box - Represents a Windows rich text box control.
+* ![added](pictures/todo.png) roller - Represents a roller control.
+* ![added](pictures/added.png) seven_segment_display - Represents a seven segment display class.
+* ![added](pictures/added.png) sixtenn_segment_display - Represents a sixteen segment display class.
+* ![added](pictures/added.png) splitter - Represents a splitter control that enables the user to resize docked controls.
+* ![added](pictures/added.png) switch_button - Represents a standard Windows switch button.
+* ![added](pictures/added.png) text_box - Represents a standard Windows text box.
+* ![todo](pictures/todo.png) tool_tip - Represents a small rectangular pop-up window that displays a brief description of a control's purpose when the user rests the pointer on the control.
+* ![todo](pictures/todo.png) tool_strip_progress_bar - Represents a tool strip progress bar class.
+* ![added](pictures/added.png) toggle_button - Represents a Windows toggle_button.
+* ![added](pictures/added.png) track_bar - Represents a standard Windows track bar.
+* ![todo](pictures/todo.png) tree_view - Displays a hierarchical collection of labeled items, each represented by a xtd::forms::tree_node.
+* ![added](pictures/added.png) up_down_button - Represents a standard Windows up down button.
+* ![added](pictures/added.png) user_control - Represents a standard Windows user control.
+* ![added](pictures/added.png) v_scroll_bar - Represents a standard Windows horizontal scroll bar.
+* ![todo](pictures/todo.png) web_browser - Enables the user to navigate Web pages inside your form.
 
 ### Components
 
-* ![added](pictures/added.png) background_worker
-* ![added](pictures/added.png) button_images
-* ![added](pictures/added.png) countries
-* ![added](pictures/added.png) cursors
-* ![added](pictures/added.png) emoticons
-* ![todo](pictures/todo.png) directory_entry
-* ![todo](pictures/todo.png) directory_searcher
-* ![todo](pictures/todo.png) error_provider
-* ![todo](pictures/todo.png) event_log
-* ![todo](pictures/todo.png) file_system_watcher
-* ![added](pictures/added.png) flags
-* ![todo](pictures/todo.png) help_provider
-* ![added](pictures/added.png) image_list
-* ![todo](pictures/todo.png) message_queue
-* ![todo](pictures/todo.png) performance_counter
-* ![added](pictures/added.png) process
-* ![added](pictures/added.png) screen
-* ![added](pictures/added.png) settings
-* ![todo](pictures/todo.png) serial_port
-* ![todo](pictures/todo.png) service_controler
-* ![added](pictures/added.png) system_images
-* ![todo](pictures/todo.png) system_sounds
-* ![added](pictures/added.png) system_texts
-* ![added](pictures/added.png) timer
-* ![added](pictures/added.png) translator
-* ![added](pictures/added.png) use_wait_cursor
+* ![added](pictures/added.png) background_worker - Executes an operation on a separate thread.
+* ![added](pictures/added.png) button_images - Provides a button images factories for use by a button control.
+* ![added](pictures/added.png) country - Represent a country with name, alpha codes, numeric code, emoticon and flag.
+* ![added](pictures/added.png) countries - Provides a collection of xtd::forms::country for all countries in the world.
+* ![added](pictures/added.png) cursor - Represents the image used to paint the mouse pointer.
+* ![added](pictures/added.png) cursors - Provides a collection of xtd::forms::cursor objects for use by a Windows Forms application.
+* ![added](pictures/added.png) emoticon - Represent a emoticon with name and codepoints.
+* ![added](pictures/added.png) emoticons - Provides a collection of xtd::forms:emoticon for all known emoticons.
+* ![todo](pictures/todo.png) error_provider - Provides a user interface for indicating that a control on a form has an error associated with it
+* ![todo](pictures/todo.png) file_system_watcher - Listens to the file system change notifications and raises events when a directory, or file in a directory, changes.
+* ![todo](pictures/todo.png) help_provider - Provides pop-up or online Help for controls.
+* ![added](pictures/added.png) image_list - Provides methods to manage a collection of xtd::drawing::image objects. This class cannot be inherited.
+* ![todo](pictures/todo.png) performance_counter - Represents a Windows NT performance counter component.
+* ![added](pictures/added.png) screen - Represents a display device or multiple display devices on a single system.
+* ![added](pictures/added.png) settings - Represent settings associate to the application
+* ![added](pictures/added.png) system_texts - Provides a collection of string objects for use by a Windows Forms application.
+* ![added](pictures/added.png) timer - Implements a timer that raises an event at user-defined intervals. This timer is optimized for use in Windows Forms applications and must be used in a window.
+* ![added](pictures/added.png) use_wait_cursor - Creates a use wait cursor class.
 
 ### Datas
 
@@ -495,7 +489,7 @@
 * ![todo](pictures/todo.png) dot_matrix_display_renderer
 * ![todo](pictures/todo.png) font_picker_renderer
 * ![todo](pictures/todo.png) fourteen_segment_display_renderer
-* ![todo](pictures/todo.png) hscroll_bar_renderer
+* ![todo](pictures/todo.png) h_scroll_bar_renderer
 * ![todo](pictures/todo.png) label_renderer
 * ![todo](pictures/todo.png) lcd_label_renderer
 * ![todo](pictures/todo.png) light_button
@@ -525,7 +519,7 @@
 * ![todo](pictures/todo.png) track_bar_renderer
 * ![todo](pictures/todo.png) tree_view_renderer
 * ![todo](pictures/todo.png) up_down_button_renderer
-* ![todo](pictures/todo.png) vscroll_bar_renderer
+* ![todo](pictures/todo.png) v_scroll_bar_renderer
 * ![todo](pictures/todo.png) web_view_renderer
 
 
