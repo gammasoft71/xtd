@@ -11,7 +11,7 @@
 
 namespace xtd {
   namespace forms {
-    /// @brief represent a dot matrix display class
+    /// @brief Represents a dot matrix display class.
     /// @par Namespace
     /// xtd::forms
     /// @par Library
