@@ -475,51 +475,51 @@
 
 ### Renderers
 
-* ![added](pictures/added.png) button_renderers
-* ![added](pictures/added.png) check_box_renderer
-* ![todo](pictures/todo.png) checked_list_box_renderer
-* ![todo](pictures/todo.png) choice_renderer
-* ![todo](pictures/todo.png) color_picker_renderer
-* ![todo](pictures/todo.png) combo_box_renderer
-* ![todo](pictures/todo.png) command_link_button_renderer
-* ![todo](pictures/todo.png) date_time_picker_renderer
-* ![todo](pictures/todo.png) dial_renderer
-* ![todo](pictures/todo.png) domain_up_down_renderer
-* ![todo](pictures/todo.png) dot_matrix_display_renderer
-* ![todo](pictures/todo.png) font_picker_renderer
-* ![todo](pictures/todo.png) fourteen_segment_display_renderer
-* ![todo](pictures/todo.png) h_scroll_bar_renderer
-* ![todo](pictures/todo.png) label_renderer
-* ![todo](pictures/todo.png) lcd_label_renderer
-* ![todo](pictures/todo.png) light_button
-* ![todo](pictures/todo.png) link_label_renderer
-* ![todo](pictures/todo.png) list_box_renderer
-* ![todo](pictures/todo.png) list_view_renderer
-* ![todo](pictures/todo.png) loading_indicator_renderer
-* ![todo](pictures/todo.png) masked_text_box_renderer
-* ![todo](pictures/todo.png) media_player_renderer
-* ![todo](pictures/todo.png) month_calendar_renderer
-* ![todo](pictures/todo.png) nine_segment_display_renderer
-* ![todo](pictures/todo.png) numeric_up_down_renderer
-* ![todo](pictures/todo.png) picture_box_renderer
-* ![todo](pictures/todo.png) progress_bar_renderer
-* ![todo](pictures/todo.png) property_grid_renderer
-* ![added](pictures/added.png) radio_button_renderer
-* ![todo](pictures/todo.png) rich_text_box_renderer
-* ![todo](pictures/todo.png) roller_renderer
-* ![todo](pictures/todo.png) sevent_segment_display_renderer
-* ![todo](pictures/todo.png) sixteen_segment_display_renderer
-* ![todo](pictures/todo.png) splitter_renderer
-* ![added](pictures/added.png) switch_button_renderer
-* ![todo](pictures/todo.png) text_box_renderer
-* ![todo](pictures/todo.png) tool_tip_renderer
-* ![todo](pictures/todo.png) tool_strip_progresse_bar_renderer
-* ![todo](pictures/todo.png) toggle_button_renderer
-* ![todo](pictures/todo.png) track_bar_renderer
-* ![todo](pictures/todo.png) tree_view_renderer
-* ![todo](pictures/todo.png) up_down_button_renderer
-* ![todo](pictures/todo.png) v_scroll_bar_renderer
-* ![todo](pictures/todo.png) web_view_renderer
+* ![added](pictures/added.png) button_renderers - Provides button renderer methods.
+* ![added](pictures/added.png) check_box_renderer - Provides check box renderer methods.
+* ![todo](pictures/todo.png) checked_list_box_renderer - Provides checked list box renderer methods.
+* ![todo](pictures/todo.png) choice_renderer - Provides choice renderer methods.
+* ![todo](pictures/todo.png) color_picker_renderer - Provides color picker renderer methods.
+* ![todo](pictures/todo.png) combo_box_renderer - Provides combo box renderer methods.
+* ![todo](pictures/todo.png) command_link_button_renderer - Provides link button renderer methods.
+* ![todo](pictures/todo.png) date_time_picker_renderer - Provides data time picker renderer methods.
+* ![todo](pictures/todo.png) dial_renderer - Provides dial renderer methods.
+* ![todo](pictures/todo.png) domain_up_down_renderer - Provides up down renderer methods.
+* ![todo](pictures/todo.png) dot_matrix_display_renderer - Provides dot matrix display renderer methods.
+* ![todo](pictures/todo.png) font_picker_renderer - Provides font picker renderer methods.
+* ![todo](pictures/todo.png) fourteen_segment_display_renderer - Provides fourteen segment display renderer methods.
+* ![todo](pictures/todo.png) h_scroll_bar_renderer - Provides horizont scroll bar renderer methods.
+* ![todo](pictures/todo.png) label_renderer - Provides label renderer methods.
+* ![todo](pictures/todo.png) lcd_label_renderer - Provides lcd label renderer methods.
+* ![todo](pictures/todo.png) light_button - Provides light button renderer methods.
+* ![todo](pictures/todo.png) link_label_renderer - Provides link label renderer methods.
+* ![todo](pictures/todo.png) list_box_renderer - Provides list box renderer methods.
+* ![todo](pictures/todo.png) list_view_renderer - Provides list view renderer methods.
+* ![todo](pictures/todo.png) loading_indicator_renderer - Provides loading indicator renderer methods.
+* ![todo](pictures/todo.png) masked_text_box_renderer - Provides masked text box renderer methods.
+* ![todo](pictures/todo.png) media_player_renderer - Provides media player renderer methods.
+* ![todo](pictures/todo.png) month_calendar_renderer - Provides month calendar renderer methods.
+* ![todo](pictures/todo.png) nine_segment_display_renderer - Provides nine segment display renderer methods.
+* ![todo](pictures/todo.png) numeric_up_down_renderer - Provides numeric up down renderer methods.
+* ![todo](pictures/todo.png) picture_box_renderer - Provides picture box renderer methods.
+* ![todo](pictures/todo.png) progress_bar_renderer - Provides progress bar renderer methods.
+* ![todo](pictures/todo.png) property_grid_renderer - Provides property grid renderer methods.
+* ![added](pictures/added.png) radio_button_renderer - Provides radio button renderer methods.
+* ![todo](pictures/todo.png) rich_text_box_renderer - Provides text box renderer methods.
+* ![todo](pictures/todo.png) roller_renderer - Provides roller renderer methods.
+* ![todo](pictures/todo.png) sevent_segment_display_renderer - Provides seven segment display renderer methods.
+* ![todo](pictures/todo.png) sixteen_segment_display_renderer - Provides sixteen segement display renderer methods.
+* ![todo](pictures/todo.png) splitter_renderer - Provides splitter renderer methods.
+* ![added](pictures/added.png) switch_button_renderer - Provides switch buttton renderer methods.
+* ![todo](pictures/todo.png) text_box_renderer - Provides text box renderer methods.
+* ![todo](pictures/todo.png) tool_tip_renderer - Provides tool tip renderer methods.
+* ![todo](pictures/todo.png) tool_strip_progresse_bar_renderer - Provides strip progress bar renderer methods.
+* ![todo](pictures/todo.png) toggle_button_renderer - Provides toggle button renderer methods.
+* ![todo](pictures/todo.png) track_bar_renderer - Provides track bar renderer methods.
+* ![todo](pictures/todo.png) tree_view_renderer - Provides tree view renderer methods.
+* ![todo](pictures/todo.png) up_down_button_renderer - Provides up down button renderer methods.
+* ![todo](pictures/todo.png) v_scroll_bar_renderer - Provides vertical scroll bar renderer methods.
+* ![todo](pictures/todo.png) web_browser_renderer - Provides web browser renderer methods.
 
 ## xtd.tunit
 
