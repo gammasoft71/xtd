@@ -43,7 +43,7 @@ namespace xtd {
   inline bool is(ullong_t value) {return false;}
   /// @endcond
   
-  /// @brief Return true if specified value is the specified bool. A Is expression takes the following form:
+  /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -61,7 +61,7 @@ namespace xtd {
     return true;
   }
   
-  /// @brief Return true if specified value is the specified decimal_t. A Is expression takes the following form:
+  /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -79,7 +79,7 @@ namespace xtd {
     return true;
   }
   
-  /// @brief Return true if specified value is the specified double. A Is expression takes the following form:
+  /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -97,7 +97,7 @@ namespace xtd {
     return true;
   }
   
-  /// @brief Return true if specified value is the specified float. A Is expression takes the following form:
+  /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -115,7 +115,7 @@ namespace xtd {
     return true;
   }
   
-  /// @brief Return true if specified value is the specified int8_t. A Is expression takes the following form:
+  /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -133,7 +133,7 @@ namespace xtd {
     return true;
   }
 
-  /// @brief Return true if specified value is the specified int16_t. A Is expression takes the following form:
+  /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -151,7 +151,7 @@ namespace xtd {
     return true;
   }
   
-  /// @brief Return true if specified value is the specified int32_t. A Is expression takes the following form:
+  /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -169,7 +169,7 @@ namespace xtd {
     return true;
   }
   
-  /// @brief Return true if specified value is the specified int64_t. A Is expression takes the following form:
+  /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -187,7 +187,7 @@ namespace xtd {
     return true;
   }
 
-  /// @brief Return true if specified value is the specified llong_t. A Is expression takes the following form:
+  /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -205,7 +205,7 @@ namespace xtd {
     return true;
   }
  
-  /// @brief Return true if specified value is the specified uint8_t. A Is expression takes the following form:
+  /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -223,7 +223,7 @@ namespace xtd {
     return true;
   }
   
-  /// @brief Return true if specified value is the specified uint16_t. A Is expression takes the following form:
+  /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -241,7 +241,7 @@ namespace xtd {
     return true;
   }
     
-  /// @brief Return true if specified value is the specified uint32_t. A Is expression takes the following form:
+  /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -259,7 +259,7 @@ namespace xtd {
     return true;
   }
   
-  /// @brief Return true if specified value is the specified uint64_t. A Is expression takes the following form:
+  /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -277,7 +277,7 @@ namespace xtd {
     return true;
   }
   
-  /// @brief Return true if specified value is the specified ullong_t. A Is expression takes the following form:
+  /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -295,6 +295,12 @@ namespace xtd {
     return true;
   }
 
+  /// @brief Checks if the result of an expression is compatible with a given type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<typename type_t>
   bool is(std::any value) {
     try {
@@ -305,11 +311,23 @@ namespace xtd {
     }
   }
 
+  /// @brief Checks if the result of an expression is compatible with a given type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<>
   inline bool is<std::any>(std::any value) {
     return true;
   }
 
+  /// @brief Checks if the result of an expression is compatible with a given type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<typename type_t, typename param_t>
   bool is(const param_t* value) {
     try {
@@ -320,11 +338,23 @@ namespace xtd {
     }
   }
   
+  /// @brief Checks if the result of an expression is compatible with a given type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<typename type_t, typename param_t>
   bool is(const param_t& value) {
     return is<type_t>(&value);
   }
   
+  /// @brief Checks if the result of an expression is compatible with a given type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<typename type_t, typename param_t>
   bool is(param_t* value) {
     try {
@@ -335,11 +365,23 @@ namespace xtd {
     }
   }
   
+  /// @brief Checks if the result of an expression is compatible with a given type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<typename type_t, typename param_t>
   bool is(param_t& value) {
     return is<type_t>(&value);
   }
 
+  /// @brief Checks if the result of an expression is compatible with a given type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
   template<typename new_type_t, typename current_type_t>
   bool is(std::shared_ptr<current_type_t>& value) {
     try {

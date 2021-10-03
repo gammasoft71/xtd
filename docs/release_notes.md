@@ -37,66 +37,66 @@
 * ![added](pictures/added.png) block_scope - The specified expression is cleared automatically when the scope is ended.
 * ![added](pictures/added.png) cdebug - Provides an std::ostream for xtd::diagnostics::debug.
 * ![added](pictures/added.png) cnull - Provides a null std::ostream.
-* ![added](pictures/added.png) compiler - Represents information about c++ libraries, such as the version and standard identifier. This class cannot be inherited.
+* ![added](pictures/added.png) compiler - Represents information about c++ libraries, such as the version and standard identifier.
 * ![added](pictures/added.png) console - Represents the standard input, output, and error streams for console applications.
 * ![added](pictures/added.png) console_key_info - Specifies the standard keys on a console.
 * ![added](pictures/added.png) convert - Represents API to convert base type code.
 * ![added](pictures/added.png) convert_pointer - Represents API to convert pointers.
 * ![added](pictures/added.png) convert_string - Represents API to convert string containers.
-* ![added](pictures/added.png) cpp_language
-* ![added](pictures/added.png) ctrace
-* ![todo](pictures/todo.png) date_time
-* ![added](pictures/added.png) delegate
-* ![added](pictures/added.png) divide_by_zero_exception
-* ![added](pictures/added.png) domain_exception
-* ![added](pictures/added.png) environment
-* ![added](pictures/added.png) event
-* ![added](pictures/added.png) foreground_color
-* ![added](pictures/added.png) format_exception
-* ![added](pictures/added.png) func
-* ![added](pictures/added.png) guid
-* ![added](pictures/added.png) index_out_of_range_exception
-* ![added](pictures/added.png) interface
-* ![added](pictures/added.png) invalid_castexception
-* ![added](pictures/added.png) invalid_operation_exception
-* ![added](pictures/added.png) invalid_program_exception
-* ![added](pictures/added.png) is
-* ![added](pictures/added.png) length_exception
-* ![added](pictures/added.png) literals operators
-* ![todo](pictures/todo.png) lock
-* ![added](pictures/added.png) math
-* ![added](pictures/added.png) nameof
-* ![added](pictures/added.png) not_finit_number_exception
-* ![added](pictures/added.png) not_implemented_exception
-* ![added](pictures/added.png) not_supported_exception
-* ![added](pictures/added.png) null_pointer_exception
-* ![added](pictures/added.png) object
-* ![added](pictures/added.png) object_closed_exception
-* ![added](pictures/added.png) operating_system
-* ![added](pictures/added.png) operation_canceled_exception
-* ![added](pictures/added.png) overflow_exception
-* ![added](pictures/added.png) overload
-* ![added](pictures/added.png) parse
-* ![added](pictures/added.png) platform_not_supported_exception
-* ![added](pictures/added.png) predicate
-* ![added](pictures/added.png) processor
-* ![added](pictures/added.png) random
-* ![added](pictures/added.png) reset_color
-* ![added](pictures/added.png) startup
-* ![added](pictures/added.png) static
-* ![added](pictures/added.png) system_exception
-* ![added](pictures/added.png) tick
-* ![added](pictures/added.png) ticks
-* ![added](pictures/added.png) time_out_exception
-* ![added](pictures/added.png) to_string
-* ![added](pictures/added.png) translator
-* ![todo](pictures/todo.png) type
-* ![added](pictures/added.png) underflow_exception
-* ![added](pictures/added.png) unused
-* ![todo](pictures/todo.png) uri
-* ![added](pictures/added.png) ustring
-* ![added](pictures/added.png) version
-* ![added](pictures/added.png) xml_syntax_exception
+* ![added](pictures/added.png) cpp_language - Represents information about c++ libraries, such as the version and language identifier.
+* ![added](pictures/added.png) ctrace - Provides an std::ostream for xtd::diagnostics::trace.
+* ![todo](pictures/todo.png) date_time - Represents an instant in time, typically expressed as a date and time of day.
+* ![added](pictures/added.png) delegate - Represents a delegate, which is a data structure that refers to a static method or to a class instance && an instance method of that class.
+* ![added](pictures/added.png) divide_by_zero_exception - The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
+* ![added](pictures/added.png) domain_exception - The exception that is thrown for errors in domain. That is, situations where the inputs are outside of the domain on which an operation is defined..
+* ![added](pictures/added.png) environment - The environment class.
+* ![added](pictures/added.png) event - Represents an event.
+* ![added](pictures/added.png) foreground_color - Represent foreground color output manipulator class.
+* ![added](pictures/added.png) format_exception - The exception that is thrown when the format of an argument does not meet the parameter specifications of the invoked method.
+* ![added](pictures/added.png) func - Represents a delegate that has variables parameters and returns a value of the type specified by the result_t type.
+* ![added](pictures/added.png) guid - Represents a globally unique identifier (GUID). A GUID is a 128-bit integer (16 bytes) that can be used across all computers and networks wherever a unique identifier is required. Such an identifier has a very low probability of being duplicated.
+* ![added](pictures/added.png) index_out_of_range_exception - The exception that is thrown when an attempt is made to access an element of an array with an index that is outside the bounds of the array.
+* ![added](pictures/added.png) interface - Represent an interface class.
+* ![added](pictures/added.png) invalid_cast_exception - The exception that is thrown for invalid casting or explicit conversion.
+* ![added](pictures/added.png) invalid_operation_exception - The exception that is thrown when a method call is invalid for the object's current state.
+* ![added](pictures/added.png) invalid_program_exception - The exception that is thrown when a program contains invalid metadata. Generally this indicates a bug in the compiler that generated the program.
+* ![added](pictures/added.png) is - Checks if the result of an expression is compatible with a given type.
+* ![added](pictures/added.png) length_exception - The exception that is thrown when an attempts to exceed implementation defined length limits for some object.
+* ![added](pictures/added.png) literals operators - Used to convert specified value into another.
+* ![todo](pictures/todo.png) lock_ - The lock_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion lock for a given object, executing a statement, and then releasing the lock. The following example includes a lock statement.
+* ![added](pictures/added.png) math - Provides constants and static methods for trigonometric, logarithmic, and other common mathematical functions.
+* ![added](pictures/added.png) nameof - Used to obtain the simple (unqualified) string name of a variable, type, or member.
+* ![added](pictures/added.png) not_finit_number_exception - The exception that is thrown when a floating-point value is positive infinity, negative infinity, or Not-a-Number (NaN).
+* ![added](pictures/added.png) not_implemented_exception - The exception that is thrown when a requested method or operation is not implemented.
+* ![added](pictures/added.png) not_supported_exception - The exception that is thrown when an invoked method is not supported, or when there is an attempt to read, seek, or write to a stream that does not support the invoked functionality.
+* ![added](pictures/added.png) null_pointer_exception - The exception that is thrown when there is an attempt to dereference a null object pointer.
+* ![added](pictures/added.png) object - Supports all classes in the xtd class hierarchy and provides low-level services to derived classes.
+* ![added](pictures/added.png) object_closed_exception - The exception that is thrown when one of the arguments provided to a method is not valid.
+* ![added](pictures/added.png) operating_system - Represents information about an operating system, such as the version and platform identifier. This class cannot be inherited.
+* ![added](pictures/added.png) operation_canceled_exception - The exception that is thrown in a thread upon cancellation of an operation that the thread was executing.
+* ![added](pictures/added.png) overflow_exception - The exception that is thrown when an arithmetic, casting, or conversion operation in a checked context results in an overflow.
+* ![added](pictures/added.png) overload - Represents class that use to determine one of const and non const overloaded methods.
+* ![added](pictures/added.png) parse - Convert a type into a string.
+* ![added](pictures/added.png) platform_not_supported_exception - The exception that is thrown when a feature does not run on a particular platform.
+* ![added](pictures/added.png) predicate - Represents a delegate that defines a set of criteria and determines whether the specified object meets those criteria.
+* ![added](pictures/added.png) processor - Represents information about a processor, such as the architecture.
+* ![added](pictures/added.png) random - Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet certain statistical requirements for randomness.
+* ![added](pictures/added.png) reset_color - Represent reset color output manipulator class.
+* ![added](pictures/added.png) startup - Defines the entry point to be called when the application loads. Generally this is set either to the main form in your application or to the main procedure that should run when the application starts.
+* ![added](pictures/added.png) static - Represent a static object. A static class can't be instantiated (constructors are deleted).
+* ![added](pictures/added.png) system_exception - Defines the base class for predefined exceptions in the xtd namespace.
+* ![added](pictures/added.png) tick - Represents a tick (1 tick = 100 nanoseconds).
+* ![added](pictures/added.png) ticks - Represents a tick duration
+* ![added](pictures/added.png) time_out_exception - The exception that is thrown when the time allotted for a process or operation has expired.
+* ![added](pictures/added.png) to_string - Convert a specified value into a string with specified format.
+* ![added](pictures/added.png) translator - Represents translator class.
+* ![todo](pictures/todo.png) type - Represents type declarations: class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.
+* ![added](pictures/added.png) underflow_exception - The exception that is thrown when an arithmetic, casting, or conversion operation in a checked context results in an underflow.
+* ![added](pictures/added.png) unused - It may be used to suppress the "unused variable" or "unused local typedefs" compiler warnings when the variable or typedef can't be removed or commented out, e.g. when some blocks of the code are conditionally activated.
+* ![todo](pictures/todo.png) uri - Provides an object representation of a uniform resource identifier (URI) and easy access to the parts of the URI.
+* ![added](pictures/added.png) ustring - Represents text as a sequence of UTF-8 code units.
+* ![added](pictures/added.png) version - Represents the version number of an assembly, operating system, or the xtd. This class cannot be inherited.
+* ![added](pictures/added.png) xml_syntax_exception - The exception that is thrown when there is a syntax error in XML parsing
 
 ### Collections
 
