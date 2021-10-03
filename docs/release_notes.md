@@ -11,7 +11,7 @@
 ## xtd
 
 * ![added](pictures/added.png) CMake commands - Specific CMake commands to manage project, assembly informations and application properties
-* ![added](pictures/added.png) countinuous inegration build - Countinuous inegration build forr Windows, macOs anddd linux (appveyor, CirclleCI and travisCI).
+* ![added](pictures/added.png) countinuous inegration build - Countinuous inegration build for Windows, macOs anddd linux (appveyor, CirclleCI and travisCI).
 * ![added](pictures/added.png) documentation - Markdown documentation.
 * ![added](pictures/added.png) installation - Install scripts for Windows, macOS and linux.
 * ![todo](pictures/todo.png) packages (vcpkg, brew, apt) - xtd packages.
