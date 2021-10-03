@@ -27,7 +27,7 @@ public:
   static void is_min(TValue1 value1, TValue2 value2, const xtd::diagnostics::stack_frame& stack_frame) {is_min(value1, value2, "", stack_frame);}
   
   template<typename TValue1, typename TValue2>
-  static void is_min(TValue1 value1, TValue2 value2, const std::string& message) {is_min(value1, value2, message, xtd::diagnostics::stack_framextd::diagnostics::stack_frame());}
+  static void is_min(TValue1 value1, TValue2 value2, const std::string& message) {is_min(value1, value2, message, xtd::diagnostics::stack_frame());}
   
   template<typename TValue1, typename TValue2>
   static void is_min(TValue1 value1, TValue2 value2, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
