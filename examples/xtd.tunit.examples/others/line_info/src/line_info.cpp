@@ -2,17 +2,18 @@
 #include <iostream>
 
 using namespace std;
+using namespace xtd::diagnostics;
 using namespace xtd::tunit;
 
-void trace_message(const string& message, const line_info& info) {
+void trace_message(const string& message, const stack_frame& sf) {
   cout << "message: " << message << endl;
-  cout << "member name: " << info.member_name() << endl;
-  cout << "source file path: " << info.file_path() << endl;
-  cout << "source line number: " << info.line_number() << endl;
+  cout << "member name: " << sf.get_method() << endl;
+  cout << "source file path: " << sf.get_file_name() << endl;
+  cout << "source line number: " << sf.get_file_line_number() << endl;
 }
 
 int main() {
-  trace_message("Something happened.", line_info_);
+  trace_message("Something happened.", csf_);
 }
 
 // This code can produce the following output:

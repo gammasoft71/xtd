@@ -58,7 +58,7 @@ private:
 
   void on_test_failed(const xtd::tunit::test_event_args& e) const override {
     event_listener::on_test_failed(e);
-    cout << e.test().line_info().file_path() << ":" << e.test().line_info().line_number() << ": Failure" << endl;
+    cout << e.test().stack_frame().get_file_name() << ":" << e.test().stack_frame().get_file_line_number() << ": Failure" << endl;
     if (e.test().actual() != "") cout << "  Actual: " << e.test().actual() << endl;
     if (e.test().expect() != "") cout << "Expected: " << e.test().expect() << endl;
     if (e.test().message() != "") cout << e.test().message() << endl;
