@@ -10,7 +10,7 @@
 
 namespace xtd {
   namespace forms {
-    /// @brief represent a seven segment display class
+    /// @brief Represents a seven segment display class.
     /// @par Namespace
     /// xtd::forms
     /// @par Library
