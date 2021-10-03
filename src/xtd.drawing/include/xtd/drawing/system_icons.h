@@ -14,7 +14,7 @@
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
-    /// @brief Each property of the system_icons class is an icon object for Windows system-wide icons. This class cannot be inherited.
+    /// @brief Each property of the xtd::drawing::system_icons class is an xtd::drawing::icon object for Windows system-wide icons. This class cannot be inherited.
     /// @par Namespace
     /// xtd::drawing
     /// @par Library
