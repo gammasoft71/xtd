@@ -185,7 +185,11 @@
 | [binary_writer](../src/xtd.core/include/xtd/io/binary_writer.h)                                      | class         | ![progress0](pictures/progress0.png)     |
 | [directory](../src/xtd.core/include/xtd/io/directory.h)                                              | sttatic class | ![progress0](pictures/progress0.png)     |
 | [directory_info](../src/xtd.core/include/xtd/io/directory_info.h)                                    | class         | ![progress0](pictures/progress0.png)     |
-| [directory_not_found_exception](../src/xtd.core/include/xtd/io/directory_not_found_exception.h)      | exception     | ![progress0](pictures/progress0.png)     |
+| [directory_not_found_exception](../src/xtd.core/include/xtd/io/directory_not_found_exception.h)      | exception     | ![progress100](pictures/progress100.png) |
+| [drive_info](../src/xtd.core/include/xtd/io/drive_info.h)                                            | class         | ![progress0](pictures/progress0.png)     |
+| [drive_not_found_exception](../src/xtd.core/include/xtd/io/drive_not_found_exception.h)              | exception     | ![progress100](pictures/progress100.png) |
+| [end_of_stream_exception](../src/xtd.core/include/xtd/io/end_of_stream_exception.h)                  | exception     | ![progress100](pictures/progress100.png) |
+| [file](../src/xtd.core/include/xtd/io/file.h)                                                        | stattic class | ![progress100](pictures/progress100.png) |
 
 ______________________________________________________________________________________________
 
