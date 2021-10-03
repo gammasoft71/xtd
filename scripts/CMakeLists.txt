@@ -42,7 +42,4 @@ add_sources(
   travis/build_xtd_and_launch_unit_tests_on_macos.sh
   travis/build_xtd_on_macos.sh
 )
-add_sources(
-  ../src/xtd/references.cmake
-)
 target_type(INTERFACE_LIBRARY)
