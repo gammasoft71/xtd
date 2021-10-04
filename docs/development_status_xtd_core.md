@@ -362,9 +362,11 @@
 
 ## xtd::timers
 
-| Name                                                                                                 | Type         | Status                                |
-|------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
-| [...](../src/xtd.core/include/xtd/timers)                                                            | all          | ![progress](pictures/progress0.png)   |
+| Name                                                                                | Type         | Status                                |
+|-------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| [elapsed_event_args](../src/xtd.core/include/xtd/timers/elapsed_event_args.h)       | class        | ![progress](pictures/progress0.png)   |
+| [elapsed_event_handler](../src/xtd.core/include/xtd/timers/elapsed_event_handler.h) | delegate     | ![progress](pictures/progress0.png)   |
+| [timer](../src/xtd.core/include/xtd/timers/timer.h)                                 | class        | ![progress](pictures/progress0.png)   |
 
 ## xtd::web::css
 
