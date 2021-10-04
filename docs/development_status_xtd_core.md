@@ -72,7 +72,7 @@
 | [date_time](../src/xtd.core/include/xtd/date_time.h)                                               | struct        | ![progress](pictures/progress0.png)   |
 | [date_time_kind](../src/xtd.core/include/xtd/date_time_kind.h)                                     | enumeration   | ![progress](pictures/progress0.png)   |
 | [day_of_week](../src/xtd.core/include/xtd/day_of_week.h)                                           | enumeration   | ![progress](pictures/progress0.png)   |
-| [debugstreamnuf](../src/xtd.core/include/xtd/debugstreamnuf.h)                                     | class         | ![progress](pictures/progress100.png) |
+| [debugstreambuf](../src/xtd.core/include/xtd/debugstreambuf.h)                                     | class         | ![progress](pictures/progress100.png) |
 | [delegate](../src/xtd.core/include/xtd/delegate.h)                                                 | delegate      | ![progress](pictures/progress100.png) |
 | [divide_by_zero_exception](../src/xtd.core/include/xtd/divide_by_zero_exception.h)                 | exception     | ![progress](pictures/progress100.png) |
 | [domain_exception](../src/xtd.core/include/xtd/domain_exception.h)                                 | exception     | ![progress](pictures/progress100.png) |
