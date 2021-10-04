@@ -27,8 +27,8 @@
 | [about_dialog](../src/xtd.forms/include/xtd/forms/about_dialog.h)                                       | class        | ![progress](pictures/progress100.png) |
 | [anchor_styles](../src/xtd.forms/include/xtd/forms/anchor_styles.h)                                     | enumeration  | ![progress](pictures/progress100.png) |
 | [animation](../src/xtd.forms/include/xtd/forms/animation.h)                                             | class        | ![progress](pictures/progress100.png) |
-| [animation_updated_event_args](../src/xtd.forms/include/xtd/forms/animation_updated_event_args.h)       | class        | ![progress](pictures/progress100.png) |
-| [animation_updated_event_handler](../src/xtd.forms/include/xtd/forms/animation_updated_event_handler.h) | class        | ![progress](pictures/progress100.png) |
+| [animation_update_event_args](../src/xtd.forms/include/xtd/forms/animation_update_event_args.h)         | class        | ![progress](pictures/progress100.png) |
+| [animation_update_event_handler](../src/xtd.forms/include/xtd/forms/animation_update_event_handler.h)   | class        | ![progress](pictures/progress100.png) |
 | [appearance](../src/xtd.forms/include/xtd/forms/appearance.h)                                           | enumeration  | ![progress](pictures/progress100.png) |
 | [application](../src/xtd.forms/include/xtd/forms/application.h)                                         | static class | ![progress](pictures/progress100.png) |
 | [application_context](../src/xtd.forms/include/xtd/forms/application_context.h)                         | class        | ![progress](pictures/progress100.png) |
@@ -39,32 +39,57 @@
 | [background_worker](../src/xtd.forms/include/xtd/forms/background_worker.h)                             | class        | ![progress](pictures/progress100.png) |
 | [binding_navigator](../src/xtd.forms/include/xtd/forms/binding_navigator.h)                             | class        | ![progress](pictures/progress0.png)   |
 | [binding_source](../src/xtd.forms/include/xtd/forms/binding_source.h)                                   | class        | ![progress](pictures/progress0.png)   |
+| [boot_mode](../src/xtd.forms/include/xtd/forms/boot_mode.h)                                             | enumeration  | ![progress](pictures/progress100.png) |
+| [border_style](../src/xtd.forms/include/xtd/forms/border_style.h)                                       | enumeration  | ![progress](pictures/progress100.png) |
+| [bound_specified](../src/xtd.forms/include/xtd/forms/bound_specified.h)                                 | enumeration  | ![progress](pictures/progress100.png) |
 | [busy_box](../src/xtd.forms/include/xtd/forms/busy_box.h)                                               | static class | ![progress](pictures/progress100.png) |
 | [busy_dialog](../src/xtd.forms/include/xtd/forms/busy_dialog.h)                                         | class        | ![progress](pictures/progress100.png) |
 | [button](../src/xtd.forms/include/xtd/forms/button.h)                                                   | class        | ![progress](pictures/progress100.png) |
+| [button_base](../src/xtd.forms/include/xtd/forms/button_base.h)                                         | class        | ![progress](pictures/progress75.png)  |
 | [button_images](../src/xtd.forms/include/xtd/forms/button_images.h)                                     | class        | ![progress](pictures/progress100.png) |
 | [button_renderer](../src/xtd.forms/include/xtd/forms/button_renderer.h)                                 | class        | ![progress](pictures/progress75.png)  |
+| [button_state](../src/xtd.forms/include/xtd/forms/button_state.h)                                       | enumeration  | ![progress](pictures/progress100.png) |
+| [buttons](../src/xtd.forms/include/xtd/forms/buttons.h)                                                 | static class | ![progress](pictures/progress100.png) |
+| [cancel_event_args](../src/xtd.forms/include/xtd/forms/cancel_event_args.h)                             | class        | ![progress](pictures/progress100.png) |
+| [cancel_event_handler](../src/xtd.forms/include/xtd/forms/cancel_event_handler.h)                       | delegate     | ![progress](pictures/progress100.png) |
+| [character_casing](../src/xtd.forms/include/xtd/forms/character_casing.h)                               | enumeration  | ![progress](pictures/progress100.png) |
 | [chart](../src/xtd.forms/include/xtd/forms/chart.h)                                                     | class        | ![progress](pictures/progress0.png)   |
 | [check_box](../src/xtd.forms/include/xtd/forms/check_box.h)                                             | class        | ![progress](pictures/progress100.png) |
 | [check_box_renderer](../src/xtd.forms/include/xtd/forms/check_box_renderer.h)                           | class        | ![progress](pictures/progress75.png)  |
+| [check_boxes](../src/xtd.forms/include/xtd/forms/check_boxes.h)                                         | static class | ![progress](pictures/progress100.png) |
+| [check_state](../src/xtd.forms/include/xtd/forms/check_state.h)                                         | enumeration  | ![progress](pictures/progress75.png)  |
 | [checked_list_box](../src/xtd.forms/include/xtd/forms/checked_list_box.h)                               | class        | ![progress](pictures/progress100.png) |
 | [checked_list_box_renderer](../src/xtd.forms/include/xtd/forms/checked_list_box_renderer.h)             | class        | ![progress](pictures/progress0.png)   |
 | [choice](../src/xtd.forms/include/xtd/forms/choice.h)                                                   | class        | ![progress](pictures/progress100.png) |
 | [choice_renderer](../src/xtd.forms/include/xtd/forms/choice_renderer.h)                                 | class        | ![progress](pictures/progress0.png)   |
-| [collapsible_panel](../src/xtd.forms/include/xtd/forms/collapsible_panel.h)                             | class        | ![progress](pictures/progress50.png)   |
+| [close_reason](../src/xtd.forms/include/xtd/forms/close_reason.h)                                       | enumeration  | ![progress](pictures/progress100.png) |
+| [collapsible_panel](../src/xtd.forms/include/xtd/forms/collapsible_panel.h)                             | class        | ![progress](pictures/progress50.png)  |
 | [color_box](../src/xtd.forms/include/xtd/forms/color_box.h)                                             | static class | ![progress](pictures/progress100.png) |
+| [color_box_styles](../src/xtd.forms/include/xtd/forms/color_box_styles.h)                               | enumeration  | ![progress](pictures/progress100.png) |
+| [color_dialog](../src/xtd.forms/include/xtd/forms/color_dialog.h)                                       | class        | ![progress](pictures/progress100.png) |
 | [color_picker](../src/xtd.forms/include/xtd/forms/color_picker.h)                                       | class        | ![progress](pictures/progress100.png) |
 | [color_picker_renderer](../src/xtd.forms/include/xtd/forms/color_picker_renderer.h)                     | class        | ![progress](pictures/progress0.png)   |
-| [color_dialog](../src/xtd.forms/include/xtd/forms/color_dialog.h)                                       | class        | ![progress](pictures/progress100.png) |
 | [combo_box](../src/xtd.forms/include/xtd/forms/combo_box.h)                                             | class        | ![progress](pictures/progress100.png) |
 | [combo_box_renderer](../src/xtd.forms/include/xtd/forms/combo_box_renderer.h)                           | class        | ![progress](pictures/progress0.png)   |
+| [combo_box_styles](../src/xtd.forms/include/xtd/forms/combo_box_styles.h)                               | enumeration  | ![progress](pictures/progress100.png) |
 | [command_link_button](../src/xtd.forms/include/xtd/forms/command_link_button.h)                         | class        | ![progress](pictures/progress100.png) |
 | [command_link_button_renderer](../src/xtd.forms/include/xtd/forms/command_link_button_renderer.h)       | class        | ![progress](pictures/progress0.png)   |
+| [command_link_buttons](../src/xtd.forms/include/xtd/forms/command_link_buttons.h)                       | static class | ![progress](pictures/progress0.png)   |
+| [common_dialog](../src/xtd.forms/include/xtd/forms/common_dialog.h)                                     | class        | ![progress](pictures/progress100.png) |
+| [component](../src/xtd.forms/include/xtd/forms/component.h)                                             | class        | ![progress](pictures/progress75.png)  |
+| [container_control](../src/xtd.forms/include/xtd/forms/container_control.h)                             | class        | ![progress](pictures/progress75.png)  |
+| [content_alignment](../src/xtd.forms/include/xtd/forms/content_alignment.h)                             | enumeration  | ![progress](pictures/progress100.png) |
 | [context_menu](../src/xtd.forms/include/xtd/forms/context_menu.h)                                       | class        | ![progress](pictures/progress0.png)   |
 | [context_menu_strip](../src/xtd.forms/include/xtd/forms/context_menu_strip.h)                           | class        | ![progress](pictures/progress0.png)   |
-| [countries](../src/xtd.forms/include/xtd/forms/countries.h)                                             | class        | ![progress](pictures/progress100.png) |
 | [control](../src/xtd.forms/include/xtd/forms/control.h)                                                 | class        | ![progress](pictures/progress75.png)  |
-| [cursors](../src/xtd.forms/include/xtd/forms/cursors.h)                                                 | class        | ![progress](pictures/progress100.png) |
+| [control_event_args](../src/xtd.forms/include/xtd/forms/control_event_args.h)                           | class        | ![progress](pictures/progress100.png) |
+| [control_event_handler](../src/xtd.forms/include/xtd/forms/control_event_handler.h)                     | delegate     | ![progress](pictures/progress100.png) |
+| [control_layout_style](../src/xtd.forms/include/xtd/forms/control_layout_style.h)                       | enumeration  | ![progress](pictures/progress100.png) |
+| [control_styles](../src/xtd.forms/include/xtd/forms/control_styles.h)                                   | enumeration  | ![progress](pictures/progress100.png) |
+| [countries](../src/xtd.forms/include/xtd/forms/countries.h)                                             | static class | ![progress](pictures/progress100.png) |
+| [country](../src/xtd.forms/include/xtd/forms/country.h)                                                 | class        | ![progress](pictures/progress100.png) |
+| [cursor](../src/xtd.forms/include/xtd/forms/cursor.h)                                                   | class        | ![progress](pictures/progress100.png) |
+| [cursors](../src/xtd.forms/include/xtd/forms/cursors.h)                                                 | static class | ![progress](pictures/progress100.png) |
 | [data_grid](../src/xtd.forms/include/xtd/forms/data_grid.h)                                             | class        | ![progress](pictures/progress0.png)   |
 | [data_grid_view](../src/xtd.forms/include/xtd/forms/data_grid_view.h)                                   | class        | ![progress](pictures/progress0.png)   |
 | [data_set](../src/xtd.forms/include/xtd/forms/data_set.h)                                               | class        | ![progress](pictures/progress0.png)   |
