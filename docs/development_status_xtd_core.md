@@ -19,11 +19,11 @@
 ## In this section
 
 * [xtd](#xtd)
-* [xtd::collections](#xtd__collections)
-* [xtd::collections::specialized](#xtd::collections::specialized)
-* [xtd::diagnostics](#xtd::diagnostics)
-* [xtd::io](#xtd::io)
-* [xtd::io::memory_mapped_files](#xtd::io::memory_mapped_files)
+* [xtd::collections](#xtd-collections)
+* [xtd::collections::specialized](#xtd-collections-specialized)
+* [xtd::diagnostics](#xtd-diagnostics)
+* [xtd::io](#xtd-io)
+* [xtd::io::memory_mapped_files](#xtd-io-memory_mapped_files)
 * [xtd:media](#xtd::media)
 * [xtd::microsoft::win32](#xtd::microsoft::win32)
 * [xtd::net](#xtd::net)
