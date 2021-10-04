@@ -265,6 +265,42 @@
 | [dns](../src/xtd.core/include/xtd/net/dns.h)                                                         | static class | ![progress](pictures/progress100.png) |
 | [dns_end_point](../src/xtd.core/include/xtd/net/dns_end_point.h)                                     | class        | ![progress](pictures/progress100.png) |
 
+## xtd::net::sockets
+
+| Name                                                                                                 | Type         | Status                                |
+|------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| [...](../src/xtd.core/include/xtd/net/sockets)                                                       | all          | ![progress](pictures/progress75.png)  |
+
+## xtd::security
+
+| Name                                                                                                 | Type         | Status                                |
+|------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| [...](../src/xtd.core/include/xtd/security)                                                          | all          | ![progress](pictures/progress75.png)  |
+
+## xtd::text
+
+| Name                                                                                                 | Type         | Status                                |
+|------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| [...](../src/xtd.core/include/xtd/text)                                                              | all          | ![progress](pictures/progress0.png)   |
+
+## xtd::threading
+
+| Name                                                                                                 | Type         | Status                                |
+|------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| [...](../src/xtd.core/include/xtd/threading)                                                         | all          | ![progress](pictures/progress0.png)   |
+
+## xtd::timers
+
+| Name                                                                                                 | Type         | Status                                |
+|------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| [...](../src/xtd.core/include/xtd/timers)                                                            | all          | ![progress](pictures/progress0.png)   |
+
+## xtd::web::css
+
+| Name                                                                                                 | Type         | Status                                |
+|------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| [...](../src/xtd.core/include/xtd/web/css)                                                           | all          | ![progress](pictures/progress100.png) |
+
 ______________________________________________________________________________________________
 
 © 2021 Gammasoft.
