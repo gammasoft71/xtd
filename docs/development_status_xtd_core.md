@@ -28,7 +28,7 @@
 * [xtd::microsoft::win32](#xtdmicrosoftwin32)
 * [xtd::net](#xtdnet)
 * [xtd::net::sockets](#xtdnetsockets)
-* [xtd::net::sockets](#xtdnetwebsockets)
+* [xtd::net::websockets](#xtdnetwebsockets)
 * [xtd::security](#xtdsecurity)
 * [xtd::text](#xtdtext)
 * [xtd::threading](#xtdthreading)
