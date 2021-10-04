@@ -23,7 +23,7 @@
 ## Notes
 
 * This list is not exhaustive but is already ambitious. It will be completed in the future.
-* If there are any things that should be forgotten or missed. Do not hesitate to ask [issues](https://github.com/gammasoft71/xtd/issues/new/choose).
+* If there are any things that should be forgotten or missed. Do not hesitate to send a [pull request](https://github.com/gammasoft71/xtd/compare) or ask [issues](https://github.com/gammasoft71/xtd/issues/new/choose).
 
 # xtd libraries
 
