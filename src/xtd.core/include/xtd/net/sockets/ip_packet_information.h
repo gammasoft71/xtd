@@ -25,7 +25,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core
-      class ip_packet_information {
+      class ip_packet_information : public xtd::object {
       public:
         /// @brief Creates an empty xtd::net::sockets::ip_packet_information instance.
         ip_packet_information() = default;
