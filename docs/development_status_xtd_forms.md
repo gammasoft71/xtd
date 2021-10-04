@@ -211,6 +211,11 @@
 | [combo_box_renderer](../src/xtd.forms/include/xtd/forms/combo_box_renderer.h)                     | class | ![progress0](pictures/progress0.png)     |
 | [command_link_button_renderer](../src/xtd.forms/include/xtd/forms/command_link_button_renderer.h) | class | ![progress0](pictures/progress0.png)     |
 
+## See also
+
+* [Development status](development_status.md)
+* [Documentation](documentation.md)
+
 ______________________________________________________________________________________________
 
 © 2021 Gammasoft.
