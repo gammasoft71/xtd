@@ -60,7 +60,7 @@
 | [system_pens](../src/xtd.drawing/include/xtd/drawing/system_pens.h)                 | static class | ![progress](pictures/progress100.png) |
 | [texture_brush](../src/xtd.drawing/include/xtd/drawing/texture_brush.h)             | class        | ![progress](pictures/progress100.png) |
 
-# xtd::drawing::drawing2d
+## xtd::drawing::drawing2d
 
 | Name                                                                                              | Type         | Status                                |
 |---------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
@@ -71,7 +71,7 @@
 | [pen_alignment](../src/xtd.drawing/include/xtd/drawing/drawing2d/pen_alignment.h)                 | enumeration  | ![progress](pictures/progress100.png) |
 | [pen_type](../src/xtd.drawing/include/xtd/drawing/drawing2d/pen_type.h)                           | enumeration  | ![progress](pictures/progress100.png) |
 
-# xtd::drawing::imaging
+## xtd::drawing::imaging
 
 | Name                                                                                | Type         | Status                                |
 |-------------------------------------------------------------------------------------|--------------|---------------------------------------|
@@ -82,7 +82,7 @@
 | [pixel_format](../src/xtd.drawing/include/xtd/drawing/imaging/pixel_format.h)       | enumerattion | ![progress](pictures/progress100.png) |
 | [property_item](../src/xtd.drawing/include/xtd/drawing/imaging/property_item.h)     | class        | ![progress](pictures/progress100.png) |
 
-# xtd::drawing::text
+## xtd::drawing::text
 
 | Name                                                                                                 | Type         | Status                                |
 |------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
