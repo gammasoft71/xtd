@@ -2,22 +2,9 @@
 
 # xtd.core Development status
 
-## Status information
-
-![progress](pictures/progress_ina.png) Not applicable
-
-![progress](pictures/progress0.png) Not started
-
-![progress](pictures/progress25.png) Started
-
-![progress](pictures/progress50.png) In progress
-
-![progress](pictures/progress75.png) Usable
-
-![progress](pictures/progress100.png) Complete
-
 ## In this section
 
+* [Status information](#status-information)
 * [xtd](#xtd)
 * [xtd::collections](#xtdcollections)
 * [xtd::collections::specialized](#xtdcollectionsspecialized)
@@ -34,6 +21,20 @@
 * [xtd::threading](#xtdthreading)
 * [xtd::timers](#xtdtimers)
 * [xtd::web::css](#xtdwebcss)
+
+## Status information
+
+![progress](pictures/progress_ina.png) Not applicable
+
+![progress](pictures/progress0.png) Not started
+
+![progress](pictures/progress25.png) Started
+
+![progress](pictures/progress50.png) In progress
+
+![progress](pictures/progress75.png) Usable
+
+![progress](pictures/progress100.png) Complete
 
 ## xtd
 
@@ -179,8 +180,10 @@
 | [debuug](../src/xtd.core/include/xtd/diagnostics/debug.h)                                            | static clas  | ![progress](pictures/progress100.png) |
 | [debugger](../src/xtd.core/include/xtd/diagnostics/debugger.h)                                       | static clas  | ![progress](pictures/progress100.png) |
 | [default_trace_listener](../src/xtd.core/include/xtd/diagnostics/default_trace_listener.h)           | class        | ![progress](pictures/progress100.png) |
+| [event_log](../src/xtd.core/include/xtd/diagnostics/event_log.h)                                     | class        | ![progress](pictures/progress0.png)   |
 | [event_type_filter](../src/xtd.core/include/xtd/diagnostics/event_type_filter.h)                     | class        | ![progress](pictures/progress100.png) |
 | [ostream_trace_listener](../src/xtd.core/include/xtd/diagnostics/ostream_trace_listener.h)           | class        | ![progress](pictures/progress100.png) |
+| [performance_counter](../src/xtd.core/include/xtd/diagnostics/performance_counter.h)                 | class        | ![progress](pictures/progress0.png)   |
 | [process](../src/xtd.core/include/xtd/diagnostics/process.h)                                         | class        | ![progress](pictures/progress75.png)  |
 | [process_priority_class](../src/xtd.core/include/xtd/diagnostics/process_priority_class.h)           | enumeration  | ![progress](pictures/progress100.png) |
 | [process_start_info](../src/xtd.core/include/xtd/diagnostics/process_start_info.h)                   | class        | ![progress](pictures/progress100.png) |
@@ -221,6 +224,7 @@
 | [file_info](../src/xtd.core/include/xtd/io/file_info.h)                                              | class        | ![progress](pictures/progress0.png)   |
 | [file_load_exception](../src/xtd.core/include/xtd/io/file_load_exception.h)                          | exception    | ![progress](pictures/progress100.png) |
 | [file_not_found_exception](../src/xtd.core/include/xtd/io/file_not_found_exception.h)                | exception    | ![progress](pictures/progress100.png) |
+| [file_system_watcher](../src/xtd.core/include/xtd/io/file_system_watcher.h)                          | class        | ![progress](pictures/progress0.png)   |
 | [io_exception](../src/xtd.core/include/xtd/io/io_exception.h)                                        | exception    | ![progress](pictures/progress100.png) |
 | [path](../src/xtd.core/include/xtd/io/path.h)                                                        | static class | ![progress](pictures/progress100.png) |
 | [path_too_long_exception](../src/xtd.core/include/xtd/io/path_too_long_exception.h)                  | exception    | ![progress](pictures/progress100.png) |

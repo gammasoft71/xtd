@@ -2,6 +2,11 @@
 
 # xtd.drawing Development status
 
+## In this section
+
+* [Status information](#status-information)
+* [xtd::drawing](#xtddrawing)
+
 ## Status information
 
 ![progress](pictures/progress_ina.png) Not applicable
