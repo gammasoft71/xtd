@@ -68,7 +68,9 @@
 | [convert_pointer](../src/xtd.core/include/xtd/convert_pointer.h)                                   | static class  | ![progress](pictures/progress100.png) |
 | [convert_string](../src/xtd.core/include/xtd/convert_string.h)                                     | static class  | ![progress](pictures/progress100.png) |
 | [cpp_language](../src/xtd.core/include/xtd/cpp_language.h)                                         | class         | ![progress](pictures/progress100.png) |
+| [csf_](../src/xtd.core/include/xtd/stack_frame.h)                                                  | keyword       | ![progress](pictures/progress100.png) |
 | [ctrace](../src/xtd.core/include/xtd/ctrace.h)                                                     | object        | ![progress](pictures/progress100.png) |
+| [current_stack_frame_](../src/xtd.core/include/xtd/stack_frame.h)                                  | keyword       | ![progress](pictures/progress100.png) |
 | [date_time](../src/xtd.core/include/xtd/date_time.h)                                               | struct        | ![progress](pictures/progress0.png)   |
 | [date_time_kind](../src/xtd.core/include/xtd/date_time_kind.h)                                     | enumeration   | ![progress](pictures/progress0.png)   |
 | [day_of_week](../src/xtd.core/include/xtd/day_of_week.h)                                           | enumeration   | ![progress](pictures/progress0.png)   |
@@ -89,7 +91,7 @@
 | [icomparable](../src/xtd.core/include/xtd/icomparable.h)                                           | interface     | ![progress](pictures/progress100.png) |
 | [iequatable](../src/xtd.core/include/xtd/iequatable.h)                                             | interface     | ![progress](pictures/progress100.png) |
 | [index_out_of_range_exception](../src/xtd.core/include/xtd/index_out_of_range_exception.h)         | exception     | ![progress](pictures/progress100.png) |
-| [interface](../src/xtd.core/include/xtd/interface.h)                                               | interface     | ![progress](pictures/progress100.png) |
+| [interface_](../src/xtd.core/include/xtd/interface.h)                                              | keyword       | ![progress](pictures/progress100.png) |
 | [invalid_cast_exception](../src/xtd.core/include/xtd/invalid_cast_exception.h)                     | exception     | ![progress](pictures/progress100.png) |
 | [invalid_operation_exception](../src/xtd.core/include/xtd/invalid_operation_exception.h)           | exception     | ![progress](pictures/progress100.png) |
 | [invalid_program_exception](../src/xtd.core/include/xtd/invalid_program_exception.h)               | exception     | ![progress](pictures/progress100.png) |
@@ -120,9 +122,11 @@
 | [reset_color](../src/xtd.core/include/xtd/reset_color.h)                                           | iomanip       | ![progress](pictures/progress100.png) |
 | [startup_](../src/xtd.core/include/xtd/startup.h)                                                  | keyword       | ![progress](pictures/progress100.png) |
 | [static_](../src/xtd.core/include/xtd/static.h)                                                    | keyword       | ![progress](pictures/progress100.png) |
+| [static_object_](../src/xtd.core/include/xtd/static.h)                                             | keyword       | ![progress](pictures/progress100.png) |
 | [string_comparison](../src/xtd.core/include/xtd/string_comparison.h)                               | enumeration   | ![progress](pictures/progress100.png) |
 | [string_split_options](../src/xtd.core/include/xtd/string_split_options.h)                         | enumeration   | ![progress](pictures/progress100.png) |
 | [system_exception](../src/xtd.core/include/xtd/system_exception.h)                                 | exception     | ![progress](pictures/progress100.png) |
+| [system_exception_](../src/xtd.core/include/xtd/system_exception.h)                                | keyword       | ![progress](pictures/progress100.png) |
 | [tick](../src/xtd.core/include/xtd/tick.h)                                                         | class         | ![progress](pictures/progress100.png) |
 | [ticks](../src/xtd.core/include/xtd/ticks.h)                                                       | class         | ![progress](pictures/progress100.png) |
 | [time_out_exception](../src/xtd.core/include/xtd/time_out_exception.h)                             | exception     | ![progress](pictures/progress100.png) |
@@ -142,6 +146,7 @@
 | [uri_kind](../src/xtd.core/include/xtd/uri_kind.h)                                                 | enumeration   | ![progress](pictures/progress0.png)   |
 | [uri_partial](../src/xtd.core/include/xtd/uri_partial.h)                                           | enumeration   | ![progress](pictures/progress0.png)   |
 | [uri_template_match_exception](../src/xtd.core/include/xtd/uri_template_match_exception.h)         | exception     | ![progress](pictures/progress0.png)   |
+| [using_](../src/xtd.core/include/xtd/using.h)                                                      | keyword       | ![progress](pictures/progress100.png) |
 | [ustring](../src/xtd.core/include/xtd/ustring.h)                                                   | class         | ![progress](pictures/progress100.png) |
 | [version](../src/xtd.core/include/xtd/version.h)                                                   | class         | ![progress](pictures/progress100.png) |
 | [xml_syntax_exception](../src/xtd.core/include/xtd/xml_syntax_exception.h)                         | exception     | ![progress](pictures/progress100.png) |
