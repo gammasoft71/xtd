@@ -370,9 +370,14 @@
 
 ## xtd::web::css
 
-| Name                                                                                                 | Type         | Status                                |
-|------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
-| [...](../src/xtd.core/include/xtd/web/css)                                                           | all          | ![progress](pictures/progress100.png) |
+| Name                                                             | Type         | Status                                |
+|------------------------------------------------------------------|--------------|---------------------------------------|
+| [css_reader](../src/xtd.core/include/xtd/web/css/css_reader.h)   | class        | ![progress](pictures/progress100.png) |
+| [css_writer](../src/xtd.core/include/xtd/web/css/css_writer.h)   | class        | ![progress](pictures/progress100.png) |
+| [property](../src/xtd.core/include/xtd/web/css/property.h)       | class        | ![progress](pictures/progress100.png) |
+| [css_writer](../src/xtd.core/include/xtd/web/css/property_map.h) | alias        | ![progress](pictures/progress100.png) |
+| [css_writer](../src/xtd.core/include/xtd/web/css/selector.h)     | class        | ![progress](pictures/progress100.png) |
+| [css_writer](../src/xtd.core/include/xtd/web/css/selector_map.h) | alias        | ![progress](pictures/progress100.png) |
 
 ______________________________________________________________________________________________
 
