@@ -2,17 +2,12 @@
 
 # Status information
 
-![progress](pictures/progress_ina.png) Not applicable
-
-![progress](pictures/progress0.png) Not started
-
-![progress](pictures/progress25.png) Started
-
-![progress](pictures/progress50.png) In progress
-
-![progress](pictures/progress75.png) Usable
-
-![progress](pictures/progress100.png) Complete
+* ![progress](pictures/progress_ina.png) Not applicable
+* ![progress](pictures/progress0.png) Not started
+* ![progress](pictures/progress25.png) Started
+* ![progress](pictures/progress50.png) In progress
+* ![progress](pictures/progress75.png) Usable
+* ![progress](pictures/progress100.png) Complete
 
 ## In this section
 
@@ -23,6 +18,7 @@
 ## Notes
 
 * This list is not exhaustive but is already ambitious. It will be completed in the future.
+* The status will evolve according to the evolution of developments.
 * If there are any things that should be forgotten or missed. Do not hesitate to send a [pull request](https://github.com/gammasoft71/xtd/compare) or ask [issues](https://github.com/gammasoft71/xtd/issues/new/choose).
 
 # xtd libraries
@@ -38,9 +34,10 @@
 
 | Name                                       | Status                                |
 |--------------------------------------------|---------------------------------------|
-| [tools](development_status_tools.md)       | ![progress](pictures/progress75.png)  |
 | [cmake](development_status_cmake.md)       | ![progress](pictures/progress75.png)  |
+| [themes](development_status_themes.md)     | ![progress](pictures/progress75.png)  |
 | [toolkits](development_status_toolkits.md) | ![progress](pictures/progress75.png)  |
+| [tools](development_status_tools.md)       | ![progress](pictures/progress75.png)  |
 
 ## See also
 
