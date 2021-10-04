@@ -315,21 +315,25 @@
 
 ## xtd::net::web_sockets
 
-| Name                                                                                                 | Type         | Status                                |
-|------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
-| [...](../src/xtd.core/include/xtd/net/web_sockets)                                                   | all          | ![progress](pictures/progress75.png)  |
+| Name                                                                                            | Type         | Status                                |
+|-------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| [client_web_socket](../src/xtd.core/include/xtd/net/websockets/client_web_socket.h)             | class        | ![progress](pictures/progress0.png)   |
+| [web_socket](../src/xtd.core/include/xtd/net/websockets/web_socket.h)                           | class        | ![progress](pictures/progress0.png)   |
+| [web_socket_close_status](../src/xtd.core/include/xtd/net/websockets/web_socket_close_status.h) | enumeration  | ![progress](pictures/progress0.png)   |
+| [web_socket_message_type](../src/xtd.core/include/xtd/net/websockets/web_socket_message_type.h) | enumeration  | ![progress](pictures/progress0.png)   |
+| [web_socket_state](../src/xtd.core/include/xtd/net/websockets/web_socket_state.h)               | enumeration  | ![progress](pictures/progress0.png)   |
 
 ## xtd::security
 
-| Name                                                                                                 | Type         | Status                                |
-|------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
-| [...](../src/xtd.core/include/xtd/security)                                                          | all          | ![progress](pictures/progress75.png)  |
+| Name                                                                | Type         | Status                                |
+|---------------------------------------------------------------------|--------------|---------------------------------------|
+| [secure_string](../src/xtd.core/include/xtd/security/secure_string) | all          | ![progress](pictures/progress100.png) |
 
 ## xtd::text
 
 | Name                                                                                                 | Type         | Status                                |
 |------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
-| [...](../src/xtd.core/include/xtd/text)                                                              | all          | ![progress](pictures/progress0.png)   |
+| [string_builder](../src/xtd.core/include/xtd/text/string_builder)                                    | all          | ![progress](pictures/progress0.png)   |
 
 ## xtd::threading
 
