@@ -16,8 +16,14 @@
 
 ## In this section
 
+* [Notes](#notes)
 * [xtd libraries](#xtd-libraries)
 * [Others](#others)
+
+## Notes
+
+* This list is not exhaustive but is already ambitious. It will be completed in the future.
+* If there are any things that should be forgotten or missed. Do not hesitate to ask [issues](https://github.com/gammasoft71/xtd/issues/new/choose).
 
 # xtd libraries
 
