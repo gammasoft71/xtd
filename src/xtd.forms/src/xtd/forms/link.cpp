@@ -2,79 +2,81 @@
 
 using namespace std;
 using namespace xtd;
-using namespace xtd::forms;
 
-link::link(size_t start, size_t length) : length_(length), start_(start) {
+xtd::forms::link::link(size_t start, size_t length) : length_(length), start_(start) {
 }
 
-link::link(size_t start, size_t length, std::any link_data) : length_(length), link_data_(link_data), start_(start) {
+xtd::forms::link::link(size_t start, size_t length, std::any link_data) : length_(length), link_data_(link_data), start_(start) {
 }
 
-const xtd::ustring& link::description() const {
+const xtd::ustring& xtd::forms::link::description() const {
   return description_;
 }
 
-link& link::description(const xtd::ustring& value) {
+xtd::forms::link& xtd::forms::link::description(const xtd::ustring& value) {
   description_ = value;
   return *this;
 }
 
-bool link::enabled() const {
+bool xtd::forms::link::enabled() const {
   return enabled_;
 }
 
-link& link::enabled(bool value) {
+xtd::forms::link& xtd::forms::link::enabled(bool value) {
   enabled_ = value;
   return *this;
 }
 
-size_t link::length() const {
+size_t xtd::forms::link::length() const {
   return length_;
 }
 
-link& length(size_t value);
+xtd::forms::link& xtd::forms::link::length(size_t value) {
+  length_ = value;
+  return *this;
+}
 
-std::any link::link_data() const {
+std::any xtd::forms::link::link_data() const {
   return link_data_;
 }
 
-link& link::link_data(std::any value) {
+xtd::forms::link& xtd::forms::link::link_data(std::any value) {
   link_data_ = value;
   return *this;
 }
 
-const xtd::ustring& link::name() const {
+const xtd::ustring& xtd::forms::link::name() const {
   return name_;
 }
 
-link& link::name(const xtd::ustring& value) {
+xtd::forms::link& xtd::forms::link::name(const xtd::ustring& value) {
   name_ = value;
   return *this;
 }
 
-size_t link::start() const {
+size_t xtd::forms::link::start() const {
   return start_;
 }
 
-link& link::start(size_t value) {
+xtd::forms::link& xtd::forms::link::start(size_t value) {
   start_ = value;
   return *this;
 }
 
-std::any link::tag() const {
+std::any xtd::forms::link::tag() const {
   return tag_;
 }
 
-link& link::tag(std::any value) {
+xtd::forms::link& xtd::forms::link::tag(std::any value) {
   tag_ = value;
   return *this;
 }
 
-bool link::visited() const {
+bool xtd::forms::link::visited() const {
   return visited_;
 }
 
-link& link::visited(bool value) {
+xtd::forms::link& xtd::forms::link::visited(bool value) {
   visited_ = value;
   return *this;
 }
