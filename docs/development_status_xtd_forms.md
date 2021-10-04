@@ -94,15 +94,24 @@
 | [data_grid_view](../src/xtd.forms/include/xtd/forms/data_grid_view.h)                                   | class        | ![progress](pictures/progress0.png)   |
 | [data_set](../src/xtd.forms/include/xtd/forms/data_set.h)                                               | class        | ![progress](pictures/progress0.png)   |
 | [date_time_picker](../src/xtd.forms/include/xtd/forms/date_time_picker.h)                               | class        | ![progress](pictures/progress100.png) |
+| [date_time_picker_format](../src/xtd.forms/include/xtd/forms/date_time_picker_format.h)                 | enumeration  | ![progress](pictures/progress100.png) |
 | [debug_form](../src/xtd.forms/include/xtd/forms/debug_form.h)                                           | class        | ![progress](pictures/progress100.png) |
 | [debug_message_box](../src/xtd.forms/include/xtd/forms/debug_message_box.h)                             | static class | ![progress](pictures/progress100.png) |
 | [dial](../src/xtd.forms/include/xtd/forms/dial.h)                                                       | class        | ![progress](pictures/progress0.png)   |
+| [dialog_closed_event_args](../src/xtd.forms/include/xtd/forms/dialog_closed_event_args.h)               | class        | ![progress](pictures/progress100.png) |
+| [dialog_closed_event_handler](../src/xtd.forms/include/xtd/forms/dialog_closed_event_handler.h)         | delegate     | ![progress](pictures/progress100.png) |
+| [dialog_result](../src/xtd.forms/include/xtd/forms/dialog_result.h)                                     | enumeration  | ![progress](pictures/progress100.png) |
+| [dialog_style](../src/xtd.forms/include/xtd/forms/dialog_style.h)                                       | enumeration  | ![progress](pictures/progress100.png) |
 | [domain_up_down](../src/xtd.forms/include/xtd/forms/domain_up_down.h)                                   | class        | ![progress](pictures/progress100.png) |
 | [dot_matrix_display](../src/xtd.forms/include/xtd/forms/dot_matrix_display.h)                           | class        | ![progress](pictures/progress100.png) |
-| [emoticons](../src/xtd.forms/include/xtd/forms/emoticons.h)                                             | class        | ![progress](pictures/progress75.png)  |
+| [dot_matrix_style](../src/xtd.forms/include/xtd/forms/dot_matrix_style.h)                               | enumeration  | ![progress](pictures/progress100.png) |
+| [emoticon](../src/xtd.forms/include/xtd/forms/emoticon.h)                                               | class        | ![progress](pictures/progress75.png)  |
+| [emoticons](../src/xtd.forms/include/xtd/forms/emoticons.h)                                             | static class | ![progress](pictures/progress75.png)  |
+| [enable_debug](../src/xtd.forms/include/xtd/forms/enable_debug.h)                                       | class        | ![progress](pictures/progress75.png)  |
 | [error_provider](../src/xtd.forms/include/xtd/forms/error_provider.h)                                   | class        | ![progress](pictures/progress0.png)   |
 | [exception_box](../src/xtd.forms/include/xtd/forms/exception_box.h)                                     | static class | ![progress](pictures/progress100.png) |
 | [exception_dialog](../src/xtd.forms/include/xtd/forms/exception_dialog.h)                               | class        | ![progress](pictures/progress100.png) |
+| [file_dialog](../src/xtd.forms/include/xtd/forms/file_dialog.h)                                         | class        | ![progress](pictures/progress0.png)   |
 | [find_box](../src/xtd.forms/include/xtd/forms/find_box.h)                                               | static class | ![progress](pictures/progress0.png)   |
 | [find_dialog](../src/xtd.forms/include/xtd/forms/find_dialog.h)                                         | class        | ![progress](pictures/progress0.png)   |
 | [flow_layout_panel](../src/xtd.forms/include/xtd/forms/flow_layout_panel.h)                             | class        | ![progress](pictures/progress0.png)   |
