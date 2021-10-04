@@ -1,17 +1,11 @@
 | [Home](home.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md)  | [Contact](contact.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-# Status information
-
-* ![progress](pictures/progress_ina.png) Not applicable
-* ![progress](pictures/progress0.png) Not started
-* ![progress](pictures/progress25.png) Started
-* ![progress](pictures/progress50.png) In progress
-* ![progress](pictures/progress75.png) Usable
-* ![progress](pictures/progress100.png) Complete
+# Development status
 
 ## In this section
 
 * [Notes](#notes)
+* [Status information](#status-information)
 * [xtd libraries](#xtd-libraries)
 * [Others](#others)
 
@@ -21,7 +15,16 @@
 * The status will evolve according to the evolution of developments.
 * If there are any things that should be forgotten or missed. Do not hesitate to send a [pull request](https://github.com/gammasoft71/xtd/compare) or ask [issues](https://github.com/gammasoft71/xtd/issues/new/choose).
 
-# xtd libraries
+## Status information
+
+* ![progress](pictures/progress_ina.png) Not applicable
+* ![progress](pictures/progress0.png) Not started
+* ![progress](pictures/progress25.png) Started
+* ![progress](pictures/progress50.png) In progress
+* ![progress](pictures/progress75.png) Usable
+* ![progress](pictures/progress100.png) Complete
+
+## xtd libraries
 
 | Name                                             | Status                                |
 |--------------------------------------------------|---------------------------------------|
@@ -30,7 +33,7 @@
 | [xtd.forms](development_status_xtd_forms.md)     | ![progress](pictures/progress75.png)  |
 | [xtd.tunit](development_status_xtd_tunit.md)     | ![progress](pictures/progress100.png) |
 
-# Others
+## Others
 
 | Name                                       | Status                                |
 |--------------------------------------------|---------------------------------------|
