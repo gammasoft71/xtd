@@ -17,7 +17,7 @@
 ## In this section
 
 * [xtd libraries](#xtd-libraries)
-* [Others](#xtdcollections)
+* [Others](#others)
 
 # xtd libraries
 
