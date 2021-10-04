@@ -9,17 +9,12 @@
 
 ## Status information
 
-![progress](pictures/progress_ina.png) Not applicable
-
-![progress](pictures/progress0.png) Not started
-
-![progress](pictures/progress25.png) Started
-
-![progress](pictures/progress50.png) In progress
-
-![progress](pictures/progress75.png) Usable
-
-![progress](pictures/progress100.png) Complete
+* ![progress](pictures/progress_ina.png) Not applicable
+* ![progress](pictures/progress0.png) Not started
+* ![progress](pictures/progress25.png) Started
+* ![progress](pictures/progress50.png) In progress
+* ![progress](pictures/progress75.png) Usable
+* ![progress](pictures/progress100.png) Complete
 
 ## In this section
 
