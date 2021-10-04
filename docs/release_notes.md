@@ -434,8 +434,8 @@
 
 * ![added](pictures/releases/status/added.png) background_worker - Executes an operation on a separate thread.
 * ![added](pictures/releases/status/added.png) button_images - Provides a button images factories for use by a button control.
-* ![added](pictures/releases/status/added.png) country - Represent a country with name, alpha codes, numeric code, emoticon and flag.
 * ![added](pictures/releases/status/added.png) countries - Provides a collection of xtd::forms::country for all countries in the world.
+* ![added](pictures/releases/status/added.png) country - Represent a country with name, alpha codes, numeric code, emoticon and flag.
 * ![added](pictures/releases/status/added.png) cursor - Represents the image used to paint the mouse pointer.
 * ![added](pictures/releases/status/added.png) cursors - Provides a collection of xtd::forms::cursor objects for use by a Windows Forms application.
 * ![added](pictures/releases/status/added.png) emoticon - Represent a emoticon with name and codepoints.

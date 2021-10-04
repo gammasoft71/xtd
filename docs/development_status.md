@@ -14,6 +14,7 @@
 * This list is not exhaustive but is already ambitious. It will be completed in the future.
 * The status will evolve according to the evolution of developments.
 * If there are any things that should be forgotten or missed. Do not hesitate to send a [pull request](https://github.com/gammasoft71/xtd/compare) or ask [issues](https://github.com/gammasoft71/xtd/issues/new/choose).
+* For more information about all namespaces and classes read the [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html).
 
 ## Status information
 
