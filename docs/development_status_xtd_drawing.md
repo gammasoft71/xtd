@@ -59,6 +59,11 @@
 | [hatch_brush](../src/xtd.drawing/include/xtd/drawing/drawing2d/hatch_brush.h)                    | class        | ![progress](pictures/progress75.png) |
 | [linear_gradiet_brush](../src/xtd.drawing/include/xtd/drawing/drawing2d/linear_gradient_brush.h) | class        | ![progress](pictures/progress75.png) |
 
+## See also
+
+* [Development status](development_status.md)
+* [Documentation](documentation.md)
+
 __________________________________________________________________________________________
 
 © 2021 Gammasoft.

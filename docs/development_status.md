@@ -30,11 +30,15 @@
 
 # Others
 
-| Name                                               | Status                                |
-|----------------------------------------------------|---------------------------------------|
-| [xtd.tools](development_status_xtd_tools.md)       | ![progress](pictures/progress75.png)  |
-| [xtd.cmake](development_status_xtd_cmake.md)       | ![progress](pictures/progress75.png)  |
-| [xtd.toolkits](development_status_xtd_toolkits.md) | ![progress](pictures/progress75.png)  |
+| Name                                       | Status                                |
+|--------------------------------------------|---------------------------------------|
+| [tools](development_status_tools.md)       | ![progress](pictures/progress75.png)  |
+| [cmake](development_status_cmake.md)       | ![progress](pictures/progress75.png)  |
+| [toolkits](development_status_toolkits.md) | ![progress](pictures/progress75.png)  |
+
+## See also
+
+* [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
 

@@ -67,6 +67,11 @@
 |----------|-------|------------------------------------------|
 | settings | class | ![progress100](pictures/progress100.png) |
 
+## See also
+
+* [Development status](development_status.md)
+* [Documentation](documentation.md)
+
 ______________________________________________________________________________________________
 
 © 2021 Gammasoft.
