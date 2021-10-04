@@ -2,26 +2,43 @@
 
 # Status information
 
-![progressina](pictures/progress_ina.png) Not applicable
+![progress](pictures/progress_ina.png) Not applicable
 
-![progress0](pictures/progress0.png) Not started
+![progress](pictures/progress0.png) Not started
 
-![progress25](pictures/progress25.png) Started
+![progress](pictures/progress25.png) Started
 
-![progress50](pictures/progress50.png) In progress
+![progress](pictures/progress50.png) In progress
 
-![progress75](pictures/progress75.png) Usable
+![progress](pictures/progress75.png) Usable
 
-![progress100](pictures/progress100.png) Complete
+![progress](pictures/progress100.png) Complete
+
+## In this section
+
+* [xtd libraries](#xtd-libraries)
+* [Others](#others)
+## In this section
+
+* [xtd](#xtd)
+* [xtd::collections](#xtdcollections)
 
 # xtd libraries
 
-| Library                                          | Status                                   |
-|--------------------------------------------------|------------------------------------------|
-| [xtd.core](development_status_xtd_core.md)       | ![progress75](pictures/progress75.png)   |
-| [xtd.drawing](development_status_xtd_drawing.md) | ![progress75](pictures/progress75.png)   |
-| [xtd.forms](development_status_xtd_forms.md)     | ![progress75](pictures/progress75.png)   |
-| [xtd.tunit](development_status_xtd_tunit.md)     | ![progress100](pictures/progress100.png) |
+| Name                                             | Status                                |
+|--------------------------------------------------|---------------------------------------|
+| [xtd.core](development_status_xtd_core.md)       | ![progress](pictures/progress75.png)  |
+| [xtd.drawing](development_status_xtd_drawing.md) | ![progress](pictures/progress75.png)  |
+| [xtd.forms](development_status_xtd_forms.md)     | ![progress](pictures/progress75.png)  |
+| [xtd.tunit](development_status_xtd_tunit.md)     | ![progress](pictures/progress100.png) |
+
+# Others
+
+| Name                                               | Status                                |
+|----------------------------------------------------|---------------------------------------|
+| [xtd.tools](development_status_xtd_tools.md)       | ![progress](pictures/progress75.png)  |
+| [xtd.cmake](development_status_xtd_cmake.md)       | ![progress](pictures/progress75.png)  |
+| [xtd.toolkits](development_status_xtd_toolkits.md) | ![progress](pictures/progress75.png)  |
 
 ______________________________________________________________________________________________
 

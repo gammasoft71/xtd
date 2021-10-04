@@ -163,55 +163,107 @@
 
 ## xtd::diagnostics
 
-| Name                                                                                                 | Type          | Status                                |
-|------------------------------------------------------------------------------------------------------|---------------|---------------------------------------|
-| [assert_dialog_result](../src/xtd.core/include/xtd/diagnostics/assert_dialog_result.h)               | enum class    | ![progress](pictures/progress100.png) |
-| [boolean_switch](../src/xtd.core/include/xtd/diagnostics/boolean_switch.h)                           | class         | ![progress](pictures/progress100.png) |
-| [console_trace_listener](../src/xtd.core/include/xtd/diagnostics/console_trace_listener.h)           | class         | ![progress](pictures/progress100.png) |
-| [data_received_event_args](../src/xtd.core/include/xtd/diagnostics/data_received_event_args.h)       | class         | ![progress](pictures/progress100.png) |
-| [data_received_event_handler](../src/xtd.core/include/xtd/diagnostics/data_received_event_handler.h) | delegate      | ![progress](pictures/progress100.png) |
-| [debuug](../src/xtd.core/include/xtd/diagnostics/debug.h)                                            | static class  | ![progress](pictures/progress100.png) |
-| [debugger](../src/xtd.core/include/xtd/diagnostics/debugger.h)                                       | static class  | ![progress](pictures/progress100.png) |
-| [default_trace_listener](../src/xtd.core/include/xtd/diagnostics/default_trace_listener.h)           | class         | ![progress](pictures/progress100.png) |
-| [event_type_filter](../src/xtd.core/include/xtd/diagnostics/event_type_filter.h)                     | class         | ![progress](pictures/progress100.png) |
-| [ostream_trace_listener](../src/xtd.core/include/xtd/diagnostics/ostream_trace_listener.h)           | class         | ![progress](pictures/progress100.png) |
-| [process](../src/xtd.core/include/xtd/diagnostics/process.h)                                         | class         | ![progress](pictures/progress75.png)  |
-| [process_priority_class](../src/xtd.core/include/xtd/diagnostics/process_priority_class.h)           | enum class    | ![progress](pictures/progress100.png) |
-| [process_start_info](../src/xtd.core/include/xtd/diagnostics/process_start_info.h)                   | class         | ![progress](pictures/progress100.png) |
-| [process_window_style](../src/xtd.core/include/xtd/diagnostics/process_window_style.h)               | enum class    | ![progress](pictures/progress100.png) |
-| [source_filter](../src/xtd.core/include/xtd/diagnostics/source_filter.h)                             | class         | ![progress](pictures/progress100.png) |
-| [source_levels](../src/xtd.core/include/xtd/diagnostics/source_levels.h)                             | enum class    | ![progress](pictures/progress100.png) |
-| [source_switch](../src/xtd.core/include/xtd/diagnostics/source_switch.h)                             | class         | ![progress](pictures/progress100.png) |
-| [stack_frame](../src/xtd.core/include/xtd/diagnostics/stack_frame.h)                                 | class         | ![progress](pictures/progress100.png) |
-| [stack_trace](../src/xtd.core/include/xtd/diagnostics/stack_trace.h)                                 | class         | ![progress](pictures/progress100.png) |
-| [stopwatch](../src/xtd.core/include/xtd/diagnostics/stopwatch.h)                                     | class         | ![progress](pictures/progress100.png) |
-| [switch_base](../src/xtd.core/include/xtd/diagnostics/switch_base.h)                                 | class         | ![progress](pictures/progress100.png) |
-| [trace](../src/xtd.core/include/xtd/diagnostics/trace.h)                                             | static class  | ![progress](pictures/progress100.png) |
-| [trace_event_cache](../src/xtd.core/include/xtd/diagnostics/trace_event_cache.h)                     | class         | ![progress](pictures/progress100.png) |
-| [trace_event_type](../src/xtd.core/include/xtd/diagnostics/trace_event_type.h)                       | enum class    | ![progress](pictures/progress100.png) |
-| [trace_filter](../src/xtd.core/include/xtd/diagnostics/trace_filter.h)                               | class         | ![progress](pictures/progress100.png) |
-| [trace_level](../src/xtd.core/include/xtd/diagnostics/trace_level.h)                                 | enum class    | ![progress](pictures/progress100.png) |
-| [trace_listener](../src/xtd.core/include/xtd/diagnostics/trace_listener.h)                           | class         | ![progress](pictures/progress100.png) |
-| [trace_listener_collection](../src/xtd.core/include/xtd/diagnostics/trace_listener_collection.h)     | class         | ![progress](pictures/progress100.png) |
-| [trace_options](../src/xtd.core/include/xtd/diagnostics/trace_options.h)                             | enum class    | ![progress](pictures/progress100.png) |
-| [trace_source](../src/xtd.core/include/xtd/diagnostics/trace_source.h)                               | class         | ![progress](pictures/progress100.png) |
-| [trace_switch](../src/xtd.core/include/xtd/diagnostics/trace_switch.h)                               | class         | ![progress](pictures/progress100.png) |
+| Name                                                                                                 | Type         | Status                                |
+|------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| [assert_dialog_result](../src/xtd.core/include/xtd/diagnostics/assert_dialog_result.h)               | enum class   | ![progress](pictures/progress100.png) |
+| [boolean_switch](../src/xtd.core/include/xtd/diagnostics/boolean_switch.h)                           | class        | ![progress](pictures/progress100.png) |
+| [console_trace_listener](../src/xtd.core/include/xtd/diagnostics/console_trace_listener.h)           | class        | ![progress](pictures/progress100.png) |
+| [data_received_event_args](../src/xtd.core/include/xtd/diagnostics/data_received_event_args.h)       | class        | ![progress](pictures/progress100.png) |
+| [data_received_event_handler](../src/xtd.core/include/xtd/diagnostics/data_received_event_handler.h) | delegate     | ![progress](pictures/progress100.png) |
+| [debuug](../src/xtd.core/include/xtd/diagnostics/debug.h)                                            | static clas  | ![progress](pictures/progress100.png) |
+| [debugger](../src/xtd.core/include/xtd/diagnostics/debugger.h)                                       | static clas  | ![progress](pictures/progress100.png) |
+| [default_trace_listener](../src/xtd.core/include/xtd/diagnostics/default_trace_listener.h)           | class        | ![progress](pictures/progress100.png) |
+| [event_type_filter](../src/xtd.core/include/xtd/diagnostics/event_type_filter.h)                     | class        | ![progress](pictures/progress100.png) |
+| [ostream_trace_listener](../src/xtd.core/include/xtd/diagnostics/ostream_trace_listener.h)           | class        | ![progress](pictures/progress100.png) |
+| [process](../src/xtd.core/include/xtd/diagnostics/process.h)                                         | class        | ![progress](pictures/progress75.png)  |
+| [process_priority_class](../src/xtd.core/include/xtd/diagnostics/process_priority_class.h)           | enum class   | ![progress](pictures/progress100.png) |
+| [process_start_info](../src/xtd.core/include/xtd/diagnostics/process_start_info.h)                   | class        | ![progress](pictures/progress100.png) |
+| [process_window_style](../src/xtd.core/include/xtd/diagnostics/process_window_style.h)               | enum class   | ![progress](pictures/progress100.png) |
+| [source_filter](../src/xtd.core/include/xtd/diagnostics/source_filter.h)                             | class        | ![progress](pictures/progress100.png) |
+| [source_levels](../src/xtd.core/include/xtd/diagnostics/source_levels.h)                             | enum class   | ![progress](pictures/progress100.png) |
+| [source_switch](../src/xtd.core/include/xtd/diagnostics/source_switch.h)                             | class        | ![progress](pictures/progress100.png) |
+| [stack_frame](../src/xtd.core/include/xtd/diagnostics/stack_frame.h)                                 | class        | ![progress](pictures/progress100.png) |
+| [stack_trace](../src/xtd.core/include/xtd/diagnostics/stack_trace.h)                                 | class        | ![progress](pictures/progress100.png) |
+| [stopwatch](../src/xtd.core/include/xtd/diagnostics/stopwatch.h)                                     | class        | ![progress](pictures/progress100.png) |
+| [switch_base](../src/xtd.core/include/xtd/diagnostics/switch_base.h)                                 | class        | ![progress](pictures/progress100.png) |
+| [trace](../src/xtd.core/include/xtd/diagnostics/trace.h)                                             | static class | ![progress](pictures/progress100.png) |
+| [trace_event_cache](../src/xtd.core/include/xtd/diagnostics/trace_event_cache.h)                     | class        | ![progress](pictures/progress100.png) |
+| [trace_event_type](../src/xtd.core/include/xtd/diagnostics/trace_event_type.h)                       | enum class   | ![progress](pictures/progress100.png) |
+| [trace_filter](../src/xtd.core/include/xtd/diagnostics/trace_filter.h)                               | class        | ![progress](pictures/progress100.png) |
+| [trace_level](../src/xtd.core/include/xtd/diagnostics/trace_level.h)                                 | enum class   | ![progress](pictures/progress100.png) |
+| [trace_listener](../src/xtd.core/include/xtd/diagnostics/trace_listener.h)                           | class        | ![progress](pictures/progress100.png) |
+| [trace_listener_collection](../src/xtd.core/include/xtd/diagnostics/trace_listener_collection.h)     | class        | ![progress](pictures/progress100.png) |
+| [trace_options](../src/xtd.core/include/xtd/diagnostics/trace_options.h)                             | enum class   | ![progress](pictures/progress100.png) |
+| [trace_source](../src/xtd.core/include/xtd/diagnostics/trace_source.h)                               | class        | ![progress](pictures/progress100.png) |
+| [trace_switch](../src/xtd.core/include/xtd/diagnostics/trace_switch.h)                               | class        | ![progress](pictures/progress100.png) |
 
 ## xtd::io
 
-| Name                                                                                                 | Type          | Status                                |
-|------------------------------------------------------------------------------------------------------|---------------|---------------------------------------|
-| [binary_reader](../src/xtd.core/include/xtd/io/binary_reader.h)                                      | class         | ![progress](pictures/progress0.png)   |
-| [binary_writer](../src/xtd.core/include/xtd/io/binary_writer.h)                                      | class         | ![progress](pictures/progress0.png)   |
-| [directory](../src/xtd.core/include/xtd/io/directory.h)                                              | sttatic class | ![progress](pictures/progress0.png)   |
-| [directory_info](../src/xtd.core/include/xtd/io/directory_info.h)                                    | class         | ![progress](pictures/progress0.png)   |
-| [directory_not_found_exception](../src/xtd.core/include/xtd/io/directory_not_found_exception.h)      | exception     | ![progress](pictures/progress100.png) |
-| [drive_info](../src/xtd.core/include/xtd/io/drive_info.h)                                            | class         | ![progress](pictures/progress0.png)   |
-| [drive_not_found_exception](../src/xtd.core/include/xtd/io/drive_not_found_exception.h)              | exception     | ![progress](pictures/progress100.png) |
-| [end_of_stream_exception](../src/xtd.core/include/xtd/io/end_of_stream_exception.h)                  | exception     | ![progress](pictures/progress100.png) |
-| [file](../src/xtd.core/include/xtd/io/file.h)                                                        | stattic class | ![progress](pictures/progress100.png) |
-| [file_format_exception](../src/xtd.core/include/xtd/io/file_format_exception.h)                      | exception     | ![progress](pictures/progress100.png) |
-| [file_info](../src/xtd.core/include/xtd/io/file_info.h)                                              | class         | ![progress](pictures/progress0.png)   |
+| Name                                                                                                 | Type         | Status                                |
+|------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| [binary_reader](../src/xtd.core/include/xtd/io/binary_reader.h)                                      | class        | ![progress](pictures/progress0.png)   |
+| [binary_writer](../src/xtd.core/include/xtd/io/binary_writer.h)                                      | class        | ![progress](pictures/progress0.png)   |
+| [directory](../src/xtd.core/include/xtd/io/directory.h)                                              | static class | ![progress](pictures/progress0.png)   |
+| [directory_info](../src/xtd.core/include/xtd/io/directory_info.h)                                    | class        | ![progress](pictures/progress0.png)   |
+| [directory_not_found_exception](../src/xtd.core/include/xtd/io/directory_not_found_exception.h)      | exception    | ![progress](pictures/progress100.png) |
+| [drive_info](../src/xtd.core/include/xtd/io/drive_info.h)                                            | class        | ![progress](pictures/progress0.png)   |
+| [drive_not_found_exception](../src/xtd.core/include/xtd/io/drive_not_found_exception.h)              | exception    | ![progress](pictures/progress100.png) |
+| [end_of_stream_exception](../src/xtd.core/include/xtd/io/end_of_stream_exception.h)                  | exception    | ![progress](pictures/progress100.png) |
+| [file](../src/xtd.core/include/xtd/io/file.h)                                                        | static class | ![progress](pictures/progress100.png) |
+| [file_attributes](../src/xtd.core/include/xtd/io/file_attributes.h)                                  | enum class   | ![progress](pictures/progress100.png) |
+| [file_format_exception](../src/xtd.core/include/xtd/io/file_format_exception.h)                      | exception    | ![progress](pictures/progress100.png) |
+| [file_info](../src/xtd.core/include/xtd/io/file_info.h)                                              | class        | ![progress](pictures/progress0.png)   |
+| [file_load_exception](../src/xtd.core/include/xtd/io/file_load_exception.h)                          | exception    | ![progress](pictures/progress100.png) |
+| [file_not_found_exception](../src/xtd.core/include/xtd/io/file_not_found_exception.h)                | exception    | ![progress](pictures/progress100.png) |
+| [io_exception](../src/xtd.core/include/xtd/io/io_exception.h)                                        | exception    | ![progress](pictures/progress100.png) |
+| [path](../src/xtd.core/include/xtd/io/path.h)                                                        | static class | ![progress](pictures/progress100.png) |
+| [path_too_long_exception](../src/xtd.core/include/xtd/io/path_too_long_exception.h)                  | exception    | ![progress](pictures/progress100.png) |
+| [stream_reader](../src/xtd.core/include/xtd/io/stream_reader.h)                                      | class        | ![progress](pictures/progress100.png) |
+| [stream_writer](../src/xtd.core/include/xtd/io/stream_reader.h)                                      | class        | ![progress](pictures/progress100.png) |
+| [string_reader](../src/xtd.core/include/xtd/io/string_reader.h)                                      | class        | ![progress](pictures/progress100.png) |
+| [string_writer](../src/xtd.core/include/xtd/io/string_reader.h)                                      | class        | ![progress](pictures/progress100.png) |
+| [text_reader](../src/xtd.core/include/xtd/io/text_reader.h)                                          | class        | ![progress](pictures/progress100.png) |
+| [text_writer](../src/xtd.core/include/xtd/io/text_reader.h)                                          | class        | ![progress](pictures/progress100.png) |
+
+## xtd::io::memory_mapped_files
+
+| Name                                                                                                            | Type         | Status                                |
+|-----------------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| [memory_mapped_file](../src/xtd.core/include/xtd/io/memory_mapped_files/memory_mapped_file.h)                   | class        | ![progress](pictures/progress0.png)   |
+| [memory_mapped_file_access](../src/xtd.core/include/xtd/io/memory_mapped_files/memory_mapped_file_access.h)     | enum class   | ![progress](pictures/progress0.png)   |
+| [memory_mapped_file_options](../src/xtd.core/include/xtd/io/memory_mapped_files/memory_mapped_file_options.h)   | enum class   | ![progress](pictures/progress0.png)   |
+| [memory_mapped_file_rights](../src/xtd.core/include/xtd/io/memory_mapped_files/memory_mapped_file_rights.h)     | enum class   | ![progress](pictures/progress0.png)   |
+| [memory_mapped_view_accessor](../src/xtd.core/include/xtd/io/memory_mapped_files/memory_mapped_view_accessor.h) | class        | ![progress](pictures/progress0.png)   |
+| [memory_mapped_view_stream](../src/xtd.core/include/xtd/io/memory_mapped_files/memory_mapped_view_stream.h)     | class        | ![progress](pictures/progress0.png)   |
+
+## xtd::media
+
+| Name                                                                                                 | Type         | Status                                |
+|------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| [sound_player](../src/xtd.core/include/xtd/media/sound_player.h)                                     | class        | ![progress](pictures/progress0.png)   |
+| [system_sound](../src/xtd.core/include/xtd/media/system_sound.h)                                     | class        | ![progress](pictures/progress0.png)   |
+| [system_sounds](../src/xtd.core/include/xtd/media/system_sounds.h)                                   | static class | ![progress](pictures/progress0.png)   |
+
+## xtd::microsoft::win32
+
+| Name                                                                                                         | Type         | Status                                |
+|--------------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| [registry](../src/xtd.core/include/xtd/microsoft/win32/registry.h)                                           | class        | ![progress](pictures/progress0.png)   |
+| [registry_hive](../src/xtd.core/include/xtd/microsoft/win32/registry_hive.h)                                 | enum class   | ![progress](pictures/progress0.png)   |
+| [registry_key](../src/xtd.core/include/xtd/microsoft/win32/registry_key.h)                                   | class        | ![progress](pictures/progress0.png)   |
+| [registry_key_permission_check](../src/xtd.core/include/xtd/microsoft/win32/registry_key_permission_check.h) | enum class   | ![progress](pictures/progress0.png)   |
+| [registry_options](../src/xtd.core/include/xtd/microsoft/win32/registry_options.h)                           | enum class   | ![progress](pictures/progress0.png)   |
+| [registry_value_kind](../src/xtd.core/include/xtd/microsoft/win32/registry_value_kind.h)                     | enum class   | ![progress](pictures/progress0.png)   |
+| [registry_value_options](../src/xtd.core/include/xtd/microsoft/win32/registry_value_options.h)               | enum class   | ![progress](pictures/progress0.png)   |
+| [Registry_view](../src/xtd.core/include/xtd/microsoft/win32/registry_view.h)                                 | class        | ![progress](pictures/progress0.png)   |
+
+## xtd::net
+
+| Name                                                                                                 | Type         | Status                                |
+|------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| [cookie_exception](../src/xtd.core/include/xtd/net/cookie_exception.h)                               | exception    | ![progress](pictures/progress100.png) |
+| [dns](../src/xtd.core/include/xtd/net/dns.h)                                                         | static class | ![progress](pictures/progress100.png) |
+| [dns_end_point](../src/xtd.core/include/xtd/net/dns_end_point.h)                                     | class        | ![progress](pictures/progress100.png) |
 
 ______________________________________________________________________________________________
 
