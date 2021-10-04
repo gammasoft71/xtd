@@ -19,7 +19,7 @@
 ## In this section
 
 * [xtd](#xtd)
-* [xtd::collections](#xtd::collections)
+* [xtd::collections](#xtd_collections)
 * [xtd::collections::specialized](#xtd::collections::specialized)
 * [xtd::diagnostics](#xtd::diagnostics)
 * [xtd::io](#xtd::io)
