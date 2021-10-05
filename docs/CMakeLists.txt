@@ -21,6 +21,10 @@ add_sources(
   design_guidelines_for_exception.md
   designing_for_extensibility.md
   development_status.md
+  development_status_cmake.md
+  development_status_themes.md
+  development_status_toolkits.md
+  development_status_tools.md
   development_status_xtd_core.md
   development_status_xtd_drawing.md
   development_status_xtd_forms.md
