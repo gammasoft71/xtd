@@ -148,9 +148,22 @@
 | [horizontal_control_layout_style](../src/xtd.forms/include/xtd/forms/horizontal_control_layout_style.h)                       | class        | ![progress](pictures/progress100.png) |
 | [horizontal_control_layout_style_collection](../src/xtd.forms/include/xtd/forms/horizontal_control_layout_style_collection.h) | alias        | ![progress](pictures/progress100.png) |
 | [horizontal_layout_panel](../src/xtd.forms/include/xtd/forms/horizontal_layout_panel.h)                                       | class        | ![progress](pictures/progress100.png) |
+| [ibutton_control](../src/xtd.forms/include/xtd/forms/ibutton_control.h)                                                       | interface    | ![progress](pictures/progress100.png) |
+| [icontrol_trace](../src/xtd.forms/include/xtd/forms/icontrol_trace.h)                                                         | interface    | ![progress](pictures/progress100.png) |
+| [image_layout](../src/xtd.forms/include/xtd/forms/image_layout.h)                                                             | enumeration  | ![progress](pictures/progress100.png) |
 | [image_list](../src/xtd.forms/include/xtd/forms/image_list.h)                                                                 | class        | ![progress](pictures/progress100.png) |
+| [imessage_filter](../src/xtd.forms/include/xtd/forms/imessage_filter.h)                                                       | interface    | ![progress](pictures/progress100.png) |
 | [input_box](../src/xtd.forms/include/xtd/forms/input_box.h)                                                                   | static class | ![progress](pictures/progress100.png) |
 | [input_dialog](../src/xtd.forms/include/xtd/forms/input_dialog.h)                                                             | class        | ![progress](pictures/progress100.png) |
+| [item_check_event_args](../src/xtd.forms/include/xtd/forms/item_check_event_args.h)                                           | class        | ![progress](pictures/progress100.png) |
+| [item_check_event_handler](../src/xtd.forms/include/xtd/forms/item_check_event_handler.h)                                     | delegate     | ![progress](pictures/progress100.png) |
+| [iwin32_window](../src/xtd.forms/include/xtd/forms/iwin32_window.h)                                                           | interface    | ![progress](pictures/progress100.png) |
+| [key_event_args](../src/xtd.forms/include/xtd/forms/key_event_args.h)                                                         | class        | ![progress](pictures/progress100.png) |
+| [key_event_handler](../src/xtd.forms/include/xtd/forms/key_event_handler.h)                                                   | delegate     | ![progress](pictures/progress100.png) |
+| [key_press_event_args](../src/xtd.forms/include/xtd/forms/key_press_event_args.h)                                             | class        | ![progress](pictures/progress100.png) |
+| [key_press_event_handler](../src/xtd.forms/include/xtd/forms/key_press_event_handler.h)                                       | delegate     | ![progress](pictures/progress100.png) |
+| [keys](../src/xtd.forms/include/xtd/forms/keys.h)                                                                             | enumeration  | ![progress](pictures/progress100.png) |
+| [known_themed_color](../src/xtd.forms/include/xtd/forms/known_themed_color.h)                                                 | enumeration  | ![progress](pictures/progress100.png) |
 | [label](../src/xtd.forms/include/xtd/forms/label.h)                                                                           | class        | ![progress](pictures/progress100.png) |
 | [lcd_label](../src/xtd.forms/include/xtd/forms/lcd_label.h)                                                                   | class        | ![progress](pictures/progress100.png) |
 | [light_button](../src/xtd.forms/include/xtd/forms/light_button.h)                                                             | class        | ![progress](pictures/progress0.png)   |
