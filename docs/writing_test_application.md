@@ -67,16 +67,16 @@ int main(int argc, char* argv[]) {
 
 xtd.tunit uses custom helpers to identify test fixtures and test methods. It's the easy way to create tests.
 
-| helpers                                                   | Usage                                                                                                                            |
-|-----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| [test_class_(class_name)](test_class.md)                  | Is used to define the class (test fixture) wtih class_name name.                                                                 |
-| [class_initialize_(initialize_name)](class_initialize.md) | Is used to define class initialize method with initialize_name name.                                                             |
-| [class_cleanup_(cleanup_name)](class_cleanup.md)          | Is used to define class cleanup method with cleanup_name name.                                                                   |
-| [test_initialize_(initialize_name)](test_initialize.md)   | Is used to define test initialize method with initialize_name name.                                                              |
-| [test_cleanup_(cleanup_name)](test_cleanup.md)            | Is used to define test cleanup method with cleanup_name name.                                                                    |
-| [test_method_(method_name)](test_method.md)               | Is used to define test method (test case) with method_name name.                                                                 |
-| [ingore_test_method_(method_name)](ingore_test_method.md) | Is used to define ignored test method (test case) with method_name name.                                                         |
-| [line_info_](line_info.md)                                | Is used to create a xtd::tunit::line_info class initialized with current method name, current file name and current line number. |
+| helpers                                                   | Usage                                                                                                                                    |
+|-----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| [test_class_(class_name)](test_class.md)                  | Is used to define the class (test fixture) wtih class_name name.                                                                         |
+| [class_initialize_(initialize_name)](class_initialize.md) | Is used to define class initialize method with initialize_name name.                                                                     |
+| [class_cleanup_(cleanup_name)](class_cleanup.md)          | Is used to define class cleanup method with cleanup_name name.                                                                           |
+| [test_initialize_(initialize_name)](test_initialize.md)   | Is used to define test initialize method with initialize_name name.                                                                      |
+| [test_cleanup_(cleanup_name)](test_cleanup.md)            | Is used to define test cleanup method with cleanup_name name.                                                                            |
+| [test_method_(method_name)](test_method.md)               | Is used to define test method (test case) with method_name name.                                                                         |
+| [ingore_test_method_(method_name)](ingore_test_method.md) | Is used to define ignored test method (test case) with method_name name.                                                                 |
+| [csf_](csf.md)                                            | Is used to create a xtd::diagnostics::stack_frame class initialized with current method name, current file name and current line number. |
 
 ### Examples
 
@@ -205,15 +205,15 @@ The following example shows how to get current informations with helper :
 using namespace std;
 using namespace xtd::tunit;
 
-void trace_message(const string& message, const line_info& info) {
+void trace_message(const string& message, const xtd::diagnostics::stack_frame& stack_frame) {
   cout << "message: " << message << endl;
-  cout << "member name: " << info.member_name() << endl;
-  cout << "source file path: " << info.file_path() << endl;
-  cout << "source line number: " << info.line_number() << endl;
+  cout << "member name: " << stack_frame.get_method() << endl;
+  cout << "source file path: " << stack_frame.get_file_name() << endl;
+  cout << "source line number: " << stack_frame.get_file_line_number() << endl;
 }
 
 int main() {
-  trace_message("Something happened.", line_info_);
+  trace_message("Something happened.", csf_);
 }
 ```
 
@@ -226,27 +226,27 @@ The following example shows how to get same current informations without helper 
 using namespace std;
 using namespace xtd::tunit;
 
-void trace_message(const string& message, const line_info& info) {
+void trace_message(const string& message, const xtd::diagnostics::stack_frame& stack_frame) {
   cout << "message: " << message << endl;
-  cout << "member name: " << info.member_name() << endl;
-  cout << "source file path: " << info.file_path() << endl;
-  cout << "source line number: " << info.line_number() << endl;
+  cout << "member name: " << stack_frame.get_method() << endl;
+  cout << "source file path: " << stack_frame.get_file_name() << endl;
+  cout << "source line number: " << stack_frame.get_file_line_number() << endl;
 }
 
 int main() {
-  trace_message("Something happened.", line_info(__func__, __FILE__, __LINE__));
+  trace_message("Something happened.", xtd::diagnostics::stack_frame(__FILE__, __LINE__, __func__));
 }
 ```
 
 ### More helpers
 
-For each assertion, validation or assumption test method, the last parameter is line_info class that contains current informations.
-To add automatically line_info, helpers are create. Add '_' at the end of test method member to used helper.
+For each assertion, validation or assumption test method, the last parameter is xtd::diagnostics::stack_frame class that contains current informations.
+To add automatically xtd::diagnostics::stack_frame, helpers are create. Add '_' at the end of test method member to used helper.
 
 exemple wirthout helper :
 ```c++
-assert::contains('a', str, line_info_);
-string_valid::are_equal_ignoring_case("value", str, line_linfo_);
+assert::contains('a', str, csf_);
+string_valid::are_equal_ignoring_case("value", str, csf_);
 ```
 
 example with helper :
@@ -290,8 +290,8 @@ namespace unit_tests {
   public:
     void test_method_(test_case_1) {
       int i = 24;
-      assert::are_equal(24, i, line_info(__func__, __FILE__, __LINE__));
-      assert::are_equal(24, i, "My message", line_info(__func__, __FILE__, __LINE__));
+      assert::are_equal(24, i, xtd::diagnostics::stack_frame(__FILE__, __LINE__, __func__));
+      assert::are_equal(24, i, "My message", xtd::diagnostics::stack_frame(__FILE__, __LINE__, _-func__));
     }
   };
 }
@@ -308,7 +308,7 @@ Some functions are template, in this case the template parameter becomes the fir
 example without helper : 
 
 ```c++
-assert::is_instance_of<std::ios_base>(stream, line_info_);
+assert::is_instance_of<std::ios_base>(stream, csf_);
 ```
 
 example with helper :
@@ -337,8 +337,8 @@ Assertions make use with the following static classes :
 
 ```c++
 void test_method_(test_case_1) {
-  assert::are_equal(4, 2 + 2, line_info_);
-  string_Assert::start_width("Hello", "Hello, World!", line_info_)
+  assert::are_equal(4, 2 + 2, csf_);
+  string_Assert::start_width("Hello", "Hello, World!", csf_)
 }
 ```
 
@@ -360,8 +360,8 @@ Validations make use with the following static classes :
 
 ```c++
 void test_method_(test_case_1) {
-  valid::are_equal(4, 2 + 2, line_info_);
-  string_valid::start_width("Hello", "Hello, World!", line_info_)
+  valid::are_equal(4, 2 + 2, csf_);
+  string_valid::start_width("Hello", "Hello, World!", csf_)
 }
 ```
 
@@ -381,8 +381,8 @@ Assumptions make use with the following static classes :
 
 ```c++
 void test_method_(test_case_1) {
-  assume::are_equal(4, 2 + 2, line_info_);
-  string_assume::start_width("Hello", "Hello, World!", line_info_)
+  assume::are_equal(4, 2 + 2, csf_);
+  string_assume::start_width("Hello", "Hello, World!", csf_)
 }
 ```
 
