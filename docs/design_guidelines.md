@@ -10,6 +10,8 @@ There might be situations where good library design requires that you violate th
 Such cases should be rare, and it is important that you have a clear and compelling reason for your decision.
 These guidelines are excerpted from the book Framework Design Guidelines:
 Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition, by Krzysztof Cwalina and Brad Abrams.
+The guidelines are adapted to modern C++ and follow the std standard.
+You can see the original source : [Framework Design Guidelines](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines).
 
 # In this section
 

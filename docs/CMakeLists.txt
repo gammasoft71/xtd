@@ -5,11 +5,13 @@ project(docs)
 include(../scripts/cmake/xtd_commands.cmake)
 include(../scripts/cmake/xtd_version.cmake)
 
-add_sources(
+add_sources(  
   README.md
+  abstract_class_design.md
   architecture.md
   c++.md
   capitalisation_conventions.md
+  choosing_between_class_and_struct.md
   class_cleanup.md
   class_initialize.md
   csf.md
@@ -36,6 +38,7 @@ add_sources(
   documentation.md
   downloads.md
   drag_and_drop.md
+  enum_design.md
   events.md
   examples.md
   extending_test.md
@@ -49,6 +52,7 @@ add_sources(
   hierarchy.md
   home.md
   ignore_test_method.md
+  interface_design.md
   introduction.md
   layout_management.md
   license.md
@@ -62,9 +66,12 @@ add_sources(
   naming_guidelines.md
   naming_parameters.md
   naming_resources.md
+  nested_types.md
   portability.md
   release_notes.md
   running_test.md
+  static_class_design.md
+  struct_design.md
   test_class.md
   test_cleanup.md
   test_initialize.md
