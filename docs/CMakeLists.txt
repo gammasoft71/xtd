@@ -16,6 +16,8 @@ add_sources(
   common_design_patterns.md
   console_classes.md
   contact.md
+  controls.md
+  custom_controls.md
   dependences.md
   design_guidelines.md
   design_guidelines_for_exception.md
@@ -29,8 +31,11 @@ add_sources(
   development_status_xtd_drawing.md
   development_status_xtd_forms.md
   development_status_xtd_tunit.md
+  dialogs.md
   documentation.md
   downloads.md
+  drag_and_drop.md
+  events.md
   examples.md
   extending_test.md
   external_tools_libraries_and_toolkits.md
@@ -39,14 +44,17 @@ add_sources(
   gammasoft.md
   general_naming_conventions.md
   getting_started.md
+  graphics.md
   hierarchy.md
   home.md
   ignore_test_method.md
   introduction.md
+  layout_management.md
   license.md
   line_info.md
   links.md
   member_design_guidelines.md
+  menus_and_toolbars.md
   names_of_classes_structs_and_interfaces.md
   names_of_libraries_and_dlls.md
   names_of_namespace.md
@@ -61,6 +69,7 @@ add_sources(
   test_cleanup.md
   test_initialize.md
   test_method.md
+  tetris.md
   tools.md
   translations_status.md
   tutorial.md
