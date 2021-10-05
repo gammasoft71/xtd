@@ -44,17 +44,17 @@
 | [point](../src/xtd.drawing/include/xtd/drawing/point.h)                             | class        | ![progress](pictures/progress100.png) |
 | [point_f](../src/xtd.drawing/include/xtd/drawing/point_f.h)                         | class        | ![progress](pictures/progress100.png) |
 | [rectangle](../src/xtd.drawing/include/xtd/drawing/rectangle.h)                     | class        | ![progress](pictures/progress100.png) |
-| [rectangle_f](../src/xtd.drawing/include/xtd/drawing/rectangle_.h)                  | class        | ![progress](pictures/progress100.png) |
+| [rectangle_f](../src/xtd.drawing/include/xtd/drawing/rectangle_f.h)                 | class        | ![progress](pictures/progress100.png) |
 | [size](../src/xtd.drawing/include/xtd/drawing/size.h)                               | class        | ![progress](pictures/progress100.png) |
 | [size_f](../src/xtd.drawing/include/xtd/drawing/size_f.h)                           | class        | ![progress](pictures/progress100.png) |
-| [solid_brush](../src/xtd.drawing/include/xtd/drawing/solid__brush.h)                | class        | ![progress](pictures/progress100.png) |
+| [solid_brush](../src/xtd.drawing/include/xtd/drawing/solid_brush.h)                 | class        | ![progress](pictures/progress100.png) |
 | [string_alignment](../src/xtd.drawing/include/xtd/drawing/string_alignment.h)       | enumeration  | ![progress](pictures/progress100.png) |
 | [string_format](../src/xtd.drawing/include/xtd/drawing/string_format.h)             | class        | ![progress](pictures/progress100.png) |
 | [string_format_flags](../src/xtd.drawing/include/xtd/drawing/string_format_flags.h) | enumeration  | ![progress](pictures/progress100.png) |
 | [string_trimming](../src/xtd.drawing/include/xtd/drawing/string_trimming.h)         | enumeration  | ![progress](pictures/progress100.png) |
 | [system_brushes](../src/xtd.drawing/include/xtd/drawing/system_brushes.h)           | static class | ![progress](pictures/progress100.png) |
 | [system_colors](../src/xtd.drawing/include/xtd/drawing/system_colors.h)             | static class | ![progress](pictures/progress100.png) |
-| [system_fons](../src/xtd.drawing/include/xtd/drawing/fonts.h)                       | static class | ![progress](pictures/progress100.png) |
+| [system_fonts](../src/xtd.drawing/include/xtd/drawing/system_fonts.h)               | static class | ![progress](pictures/progress100.png) |
 | [system_icons](../src/xtd.drawing/include/xtd/drawing/system_icons.h)               | static class | ![progress](pictures/progress100.png) |
 | [system_images](../src/xtd.drawing/include/xtd/drawing/system_images.h)             | static class | ![progress](pictures/progress100.png) |
 | [system_pens](../src/xtd.drawing/include/xtd/drawing/system_pens.h)                 | static class | ![progress](pictures/progress100.png) |
