@@ -420,9 +420,9 @@
 * ![added](pictures/releases/status/added.png) splitter - Represents a splitter control that enables the user to resize docked controls.
 * ![added](pictures/releases/status/added.png) switch_button - Represents a standard Windows switch button.
 * ![added](pictures/releases/status/added.png) text_box - Represents a standard Windows text box.
+* ![added](pictures/releases/status/added.png) toggle_button - Represents a Windows toggle_button.
 * ![todo](pictures/releases/status/todo.png) tool_tip - Represents a small rectangular pop-up window that displays a brief description of a control's purpose when the user rests the pointer on the control.
 * ![todo](pictures/releases/status/todo.png) tool_strip_progress_bar - Represents a tool strip progress bar class.
-* ![added](pictures/releases/status/added.png) toggle_button - Represents a Windows toggle_button.
 * ![added](pictures/releases/status/added.png) track_bar - Represents a standard Windows track bar.
 * ![todo](pictures/releases/status/todo.png) tree_view - Displays a hierarchical collection of labeled items, each represented by a xtd::forms::tree_node.
 * ![added](pictures/releases/status/added.png) up_down_button - Represents a standard Windows up down button.
