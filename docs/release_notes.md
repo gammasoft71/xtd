@@ -416,7 +416,7 @@
 * ![todo](pictures/releases/status/todo.png) rich_text_box - Represents a Windows rich text box control.
 * ![todo](pictures/releases/status/todo.png) roller - Represents a roller control.
 * ![added](pictures/releases/status/added.png) seven_segment_display - Represents a seven segment display class.
-* ![added](pictures/releases/status/added.png) sixtenn_segment_display - Represents a sixteen segment display class.
+* ![added](pictures/releases/status/added.png) sixteen_segment_display - Represents a sixteen segment display class.
 * ![added](pictures/releases/status/added.png) splitter - Represents a splitter control that enables the user to resize docked controls.
 * ![added](pictures/releases/status/added.png) switch_button - Represents a standard Windows switch button.
 * ![added](pictures/releases/status/added.png) text_box - Represents a standard Windows text box.
