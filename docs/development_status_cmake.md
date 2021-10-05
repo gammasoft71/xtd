@@ -5,7 +5,7 @@
 ## In this section
 
 * [Status information](#status-information)
-* [xtd::tunit](#xtdtunit)
+* [CMake commands](#cmake-commands)
 
 ## Status information
 
