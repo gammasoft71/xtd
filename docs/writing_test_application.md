@@ -252,7 +252,7 @@ string_valid::are_equal_ignoring_case("value", str, csf_);
 example with helper :
 ```c++
 assert::contains_('a', str);
-string_valid::are_equal_ignoring_case_("value");
+string_valid::are_equal_ignoring_case_("value", str);
 ```
 
 The following example shows hot to call are_equal assertion tests with helper :
