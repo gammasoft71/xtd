@@ -12,6 +12,7 @@ add_sources(
   capitalisation_conventions.md
   class_cleanup.md
   class_initialize.md
+  csf.md
   coding_conventions_guidelines.md
   common_design_patterns.md
   console_classes.md
@@ -51,7 +52,6 @@ add_sources(
   introduction.md
   layout_management.md
   license.md
-  line_info.md
   links.md
   member_design_guidelines.md
   menus_and_toolbars.md
