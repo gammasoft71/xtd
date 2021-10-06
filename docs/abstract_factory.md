@@ -10,7 +10,7 @@ Usage     ![Usage](pictures/usage5.png)     High
 
 # UML class diagram
 
-![diagram](picturres/diagrams/uml/design_patterns/abstract_factory.png)
+![diagram](pictures/diagrams/uml/design_patterns/abstract_factory.png)
 
 # Sample code
 
