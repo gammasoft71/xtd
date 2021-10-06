@@ -1,20 +1,20 @@
 | [Home](home.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md)  | [Contact](contact.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-# Builder
+# Composite
 
 # Definition
 
-Separate the construction of a complex object from its representation so that the same construction process can create different representations.
+Compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions of objects uniformly.
 
-Usage     ![Usage](pictures/usage2.png)     Medium low
+Usage     ![Usage](pictures/usage4.png)     Medium high
 
 # UML class diagram
 
-![diagram](pictures/diagrams/uml/design_patterns/builder.png)
+![diagram](pictures/diagrams/uml/design_patterns/composite.png)
 
 # Sample code
 
-This structural code demonstrates the Builder pattern in which complex objects are created in a step-by-step fashion. The construction process can create different object representations and provides a high level of control over the assembly of the objects. 
+This structural code demonstrates the Composite pattern which allows the creation of a tree structure in which individual nodes are accessed uniformly whether they are leaf nodes or branch (composite) nodes.
 
 ```c++
 

@@ -14,7 +14,7 @@ Usage     ![Usage](pictures/usage4.png)     Medium high
 
 # Sample code
 
-...
+This structural code demonstrates the Singleton pattern which assures only a single instance (the singleton) of the class can be created.
 
 ```c++
 
