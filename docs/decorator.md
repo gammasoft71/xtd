@@ -1,20 +1,20 @@
 | [Home](home.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md)  | [Contact](contact.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-# Abstract Factory
+# Decorator
 
-The Abstract Factory design pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes.
+The Decorator design pattern attaches additional responsibilities to an object dynamically. This pattern provide a flexible alternative to subclassing for extending functionality.
 
-Usage     ![Usage](pictures/usage5.png)     High
+Usage     ![Usage](pictures/usage3.png)     Medium
 
 ## UML class diagram
 
 A visualization of the classes and objects participating in this pattern.
 
-![diagram](pictures/diagrams/uml/design_patterns/abstract_factory.png)
+![diagram](pictures/diagrams/uml/design_patterns/decorator.png)
 
 ## Sample code
 
-This structural code demonstrates the Abstract Factory pattern creating parallel hierarchies of objects. Object creation has been abstracted and there is no need for hard-coded class names in the client code.
+This structural code demonstrates the Decorator pattern which dynamically adds extra functionality to an existing object.
 
 ```c++
 

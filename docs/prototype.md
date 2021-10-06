@@ -2,31 +2,32 @@
 
 # Builder
 
-# Definition
-
-Specify the kind of objects to create using a prototypical instance, and create new objects by copying this prototype.
+The Prototype design pattern specifies the kind of objects to create using a prototypical instance, and create new objects by copying this prototype.
 
 Usage     ![Usage](pictures/usage3.png)     Medium
 
-# UML class diagram
+## UML class diagram
+
+A visualization of the classes and objects participating in this pattern.
 
 ![diagram](pictures/diagrams/uml/design_patterns/prototype.png)
 
-# Sample code
+## Sample code
 
-This structural code demonstrates the Factory method offering great flexibility in creating different objects. The Abstract class may provide a default object, but each subclass can instantiate an extended version of the object.
+This structural code demonstrates the Prototype pattern in which new objects are created by copying pre-existing objects (prototypes) of the same class.
+
 
 ```c++
 
 ```
 
-# Output
+## Output
 
 ```
 
 ```
 
-# See also
+## See also
 ​
 * [Common Design Patterns](common_design_patterns.md)
 * [Design Guidelines](design_guidelines.md)

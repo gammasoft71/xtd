@@ -2,31 +2,32 @@
 
 # Builder
 
-# Definition
+The Builder design pattern separates the construction of a complex object from its representation so that the same construction process can create different representations.
+Frequency of use:
 
-Separate the construction of a complex object from its representation so that the same construction process can create different representations.
+Usage     ![Usage](pictures/usage2.png)     Medium-low
 
-Usage     ![Usage](pictures/usage2.png)     Medium low
+## UML class diagram
 
-# UML class diagram
+A visualization of the classes and objects participating in this pattern.
 
 ![diagram](pictures/diagrams/uml/design_patterns/builder.png)
 
-# Sample code
+## Sample code
 
-This structural code demonstrates the Builder pattern in which complex objects are created in a step-by-step fashion. The construction process can create different object representations and provides a high level of control over the assembly of the objects. 
+This structural code demonstrates demonstrates the Builder pattern in which complex objects are created in a step-by-step fashion. The construction process can create different object representations and provides a high level of control over the assembly of the objects.
 
 ```c++
 
 ```
 
-# Output
+## Output
 
 ```
 
 ```
 
-# See also
+## See also
 ​
 * [Common Design Patterns](common_design_patterns.md)
 * [Design Guidelines](design_guidelines.md)
