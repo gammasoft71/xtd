@@ -23,10 +23,12 @@ namespace {
 
 vector<uint8_t> cryptography::machine_guid() {
 #if defined(__APPLE__)
-  string guid_str = create_process("ioreg -rd1 -c IOPlatformExpertDevice | grep -E '(UUID)'");
-  guid_str = guid_str.substr(guid_str.find("=") + 1);
+  static bool first = true;
+  static string guid_str = create_process("ioreg -rd1 -c IOPlatformExpertDevice | grep -E '(UUID)'");
+  if (first) guid_str = guid_str.substr(guid_str.find("=") + 1);
+  first = false;
 #else
-  string guid_str = create_process("{ uname -n ; cat /proc/meminfo | head -n1 ; cat /proc/cpuinfo ; } | md5sum");
+  static string guid_str = create_process("{ uname -n ; cat /proc/meminfo | head -n1 ; cat /proc/cpuinfo ; } | md5sum");
 #endif
 
   static const string guid_fallback = "30395f0ed6aa4a5eb4af6f90a608c605";
