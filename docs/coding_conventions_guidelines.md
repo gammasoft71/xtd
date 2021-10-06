@@ -138,7 +138,7 @@ namespace xtd {
       form_closed_event_args& operator=(const form_closed_event_args& form_closed_event_args) = default;
       /// @endcond
 
-      forms::close_reason close_reason() const {return this->close_reason_;}
+      forms::close_reason close_reason() const {return close_reason_;}
 
     private:
       forms::close_reason close_reason_ = forms::close_reason::none;
@@ -232,15 +232,15 @@ public:
   my_control(const my_control&) = default;
   my_control& my_control& operator=(const my_control& my_control);
   
-  const std::string base_name() const {return this->base_name_;;}  
-  intptr_t handle() const {return this->handle_;}
+  const std::string base_name() const {return base_name_;;}
+  intptr_t handle() const {return handle_;}
   
   xtd::event<my_control, event_handler<xtd::forms::control>> name_changed;
   
-  std::string to_string() const override {return this->name_generator();}
+  std::string to_string() const override {return name_generator();}
 
 protected:
-  virtual std::string name_generator() const {return this->base_name_;}
+  virtual std::string name_generator() const {return base_name_;}
 
   intptr_t handle_ = 0;
   
@@ -314,8 +314,8 @@ The documentation is generate by Doxygen.
 **√ DO** All documentation comment must start by triple slash **///**
 
 ```c++
-/// @brief MyClass do something
-class MyClass {
+/// @brief my_class do something
+class my_class {
 };
 ```
 
@@ -360,37 +360,37 @@ namespace xtd {
 
       /// @cond
       virtual ~application_context() {
-        if (this->main_form_ != nullptr) this->main_form_->handle_destroyed -= {*this, &application_context::on_main_form_closed};
+        if (main_form_ != nullptr) main_form_->handle_destroyed -= {*this, &application_context::on_main_form_closed};
       }
       /// @endcond
       
       /// @brief Gets the form to use as context.
       /// @return The form to use as context.
       /// @remarks This property determines the main form for this context. This property can change at any time. If on_main_form_closed is not overridden, the message loop of the thread terminates when the main_form parameter closes.
-      const form& main_form() const {return *this->main_form_;}
+      const form& main_form() const {return *main_form_;}
       /// @brief Gets or sets the Form to use as context.
       /// @return The form to use as context.
       /// @remarks This property determines the main form for this context. This property can change at any time. If on_main_form_closed is not overridden, the message loop of the thread terminates when the main_form parameter closes.
-      form& main_form() {return *this->main_form_;}
+      form& main_form() {return *main_form_;}
       /// @brief Sets the Form to use as context.
       /// @param main_form The form to use as context.
       /// @remarks This property determines the main form for this context. This property can change at any time. If on_main_form_closed is not overridden, the message loop of the thread terminates when the main_form parameter closes.
       void main_form(const form& main_form) {
-        if (this->main_form_ != nullptr) this->main_form_->handle_destroyed -= {*this, &application_context::on_main_form_closed};
-        this->main_form_ = const_cast<form*>(&main_form);
-        this->main_form_->handle_destroyed += {*this, &application_context::on_main_form_closed};
+        if (main_form_ != nullptr) main_form_->handle_destroyed -= {*this, &application_context::on_main_form_closed};
+        main_form_ = const_cast<form*>(&main_form);
+        main_form_->handle_destroyed += {*this, &application_context::on_main_form_closed};
       }
 
       /// @brief Gets an object that contains data about the control.
       /// @return A std::any that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
       /// @remarks A common use for the tag property is to store data that is closely associated with the control. For example, if you have a control that displays information about a customer, you might store a data_set that contains the customer's order history in that control's tag property so the data can be accessed quickly.
-      std::any tag() const {return this->tag_;}
+      std::any tag() const {return tag_;}
       /// @brief Sets an object that contains data about the control.
       /// @param tag A std::any that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
       /// @remarks A common use for the tag property is to store data that is closely associated with the control. For example, if you have a control that displays information about a customer, you might store a data_set that contains the customer's order history in that control's tag property so the data can be accessed quickly.
-      void tag(std::any tag) {this->tag_ = tag;}
+      void tag(std::any tag) {tag_ = tag;}
 
       /// @brief Occurs when the message loop of the thread should be terminated, by calling exit_thread().
       event<application_context, event_handler<const application_context&>> thread_exit;
@@ -398,22 +398,22 @@ namespace xtd {
       /// @brief Terminates the message loop of the thread.
       /// @remarks This method calls exit_thread_core.
       /// @note exit_thread and exit_thread_core do not actually cause the thread to terminate. These methods raise the thread_exit event to which the Application object listens. The Application object then terminates the thread.
-      void exit_thread() {this->exit_thread_core();}
+      void exit_thread() {exit_thread_core();}
       
     protected:
       /// @brief Terminates the message loop of the thread.
       /// @remarks This method is called from exit_thread.
       /// @note exit_thread and exit_thread_core do not actually cause the thread to terminate. These methods raise the thread_exit event to which the Application object listens. The Application object then terminates the thread.
-      virtual void exit_thread_core() {this->thread_exit(*this, event_args::empty);}
+      virtual void exit_thread_core() {thread_exit(*this, event_args::empty);}
       
       /// @brief Calls ExitThreadCore(), which raises the ThreadExit event.
       /// @param sender The object that raised the event.
       /// @param e The event_args that contains the event data.
       /// @remarks The default implementation of this method calls exit_thread_core.
       virtual void on_main_form_closed(const control& sender, const event_args& e) {
-        if (!this->main_form_->recreating_handle()) {
-          this->main_form_->handle_destroyed -= {*this, &application_context::on_main_form_closed};
-          this->exit_thread_core();
+        if (!main_form_->recreating_handle()) {
+          main_form_->handle_destroyed -= {*this, &application_context::on_main_form_closed};
+          exit_thread_core();
         }
       }
       
