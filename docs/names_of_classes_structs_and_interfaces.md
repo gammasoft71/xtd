@@ -4,25 +4,25 @@
 
 The naming guidelines that follow apply to general type naming.
 
-√ DO name classes and structs with nouns or noun phrases, using use lower case only and digits, separate words with underscores.
+**✔️ DO** name classes and structs with nouns or noun phrases, using use lower case only and digits, separate words with underscores.
 
 This distinguishes type names from methods, which are named with verb phrases.
 
-√ DO name interfaces with adjective phrases, or occasionally with nouns or noun phrases.
+**✔️ DO** name interfaces with adjective phrases, or occasionally with nouns or noun phrases.
 
 Nouns and noun phrases should be used rarely and they might indicate that the type should be an abstract class, and not an interface.
 
-X DO NOT give class names a prefix (e.g., "C", "c").
+**❌ DO NOT** give class names a prefix (e.g., "C", "c").
 
-√ CONSIDER ending the name of derived classes with the name of the base class.
+**✔️ CONSIDER** ending the name of derived classes with the name of the base class.
 
 This is very readable and explains the relationship clearly. Some examples of this in code are: argument_out_of_range_exception, which is a kind of exception, and serializable_attribute, which is a kind of attribute. However, it is important to use reasonable judgment in applying this guideline; for example, the button class is a kind of control event, although control doesn’t appear in its name.
 
-√ DO prefix interface names with the letter "i", to indicate that the type is an interface.
+**✔️ DO** prefix interface names with the letter "i", to indicate that the type is an interface.
 
 For example, icomponent (descriptive noun), icustom_attribute_provider (noun phrase), and ipersistable (adjective) are appropriate interface names. As with other type names, avoid abbreviations.
 
-√ DO ensure that the names differ only by the "i" prefix on the interface name when you are defining a class–interface pair where the class is a standard implementation of the interface.
+**✔️ DO** ensure that the names differ only by the "i" prefix on the interface name when you are defining a class–interface pair where the class is a standard implementation of the interface.
 
 # Names of Generic Type Parameters
 
