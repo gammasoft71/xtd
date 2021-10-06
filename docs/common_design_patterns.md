@@ -34,7 +34,7 @@ You can see the original source : [C# Design Patterns](https://www.dofactory.com
 
 # Behavioral Patterns
 
-* [Chain of Responsibility](chain_oof_responsibility.md) A way of passing a request between a chain of objects
+* [Chain of Responsibility](chain_of_responsibility.md) A way of passing a request between a chain of objects
 * [Command](command.md) Encapsulate a command request as an object
 * [Interpreter](interpreter.md) A way to include language elements in a program
 * [Iterator](iterator.md) Sequentially access the elements of a collection
