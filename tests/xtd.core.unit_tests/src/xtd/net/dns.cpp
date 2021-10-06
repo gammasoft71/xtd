@@ -49,7 +49,7 @@ namespace unit_tests {
     
     void test_method_(get_host_entry_from_host_name) {
       ip_host_entry host_entry = dns::get_host_entry(dns::get_host_name());
-      assert::are_equal(dns::get_host_name().to_lower(), host_entry.host_name().to_lower(), csf_);
+      string_assert::starts_with(dns::get_host_name().to_lower(), host_entry.host_name().to_lower(), csf_);
       assert::is_greater_or_equal(host_entry.address_list().size(), 1U, csf_);
     }
     
