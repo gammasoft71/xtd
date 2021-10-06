@@ -4,7 +4,7 @@
 
 ## Folders hierarchy
 
-**√ DO** Respect the project hierarchy
+**✔️ DO** Respect the project hierarchy
 
 ```
 root
@@ -151,7 +151,7 @@ The file will be in root/src/xtd.forms/include/xtd/forms/ path
 
 ## File names
 
-**√ DO** Name file with same name of the class, struct, enum, delegate or event that contains.
+**✔️ DO** Name file with same name of the class, struct, enum, delegate or event that contains.
 
 For example, if file contains :
 
@@ -173,23 +173,23 @@ The file will be named to *form_closed_event_handler.h*.
 
 ## File extensions
 
-**√ DO** Use .h for header files.
+**✔️ DO** Use .h for header files.
 
-**√ DO** Use .cpp for source files.
+**✔️ DO** Use .cpp for source files.
 
 # Diagrams
 
-**√ DO** Diagrams are generate by [Draw.IO Desktop](https://chrome.google.com/webstore/detail/drawio-desktop/pebppomjfocnoigkeepgbmcifnnlndla?hl=en-GB). Draw.IO Desktop is a Google Chrome extension.
+**✔️ DO** Diagrams are generate by [Draw.IO Desktop](https://chrome.google.com/webstore/detail/drawio-desktop/pebppomjfocnoigkeepgbmcifnnlndla?hl=en-GB). Draw.IO Desktop is a Google Chrome extension.
 
 # UML diagrams
 
-**√ DO** UML diuagrams are generate by [plantUML](http://plantuml.com).
+**✔️ DO** UML diuagrams are generate by [plantUML](http://plantuml.com).
 
 # Editor
 
-**√ DO** Replace tab character with double spaces in your editor or IDE properties.
+**✔️ DO** Replace tab character with double spaces in your editor or IDE properties.
  
-**√ DO** Use two space for indentation. 
+**✔️ DO** Use two space for indentation. 
 
 ```c++
 class my_control : public xtd::form::control {
@@ -203,27 +203,27 @@ public:
 
 ## First order is on protection type : 
 
-**√ DO** Put public members in first.
+**✔️ DO** Put public members in first.
 
-**√ DO** Put protected members in second.
+**✔️ DO** Put protected members in second.
 
-**√ DO** And finaly put private members at least.
+**✔️ DO** And finaly put private members at least.
 
 ## Second order for each protection type :
 
-**√ DO** Put inner classes and structs in first.
+**✔️ DO** Put inner classes and structs in first.
 
-**√ DO** Put constructors / Destructor / Copy operator in seconds.
+**✔️ DO** Put constructors / Destructor / Copy operator in seconds.
 
-**√ DO** Put properties in third.
+**✔️ DO** Put properties in third.
 
-**√ DO** Put events in fourth.
+**✔️ DO** Put events in fourth.
 
-**√ DO** Put methods in fifth.
+**✔️ DO** Put methods in fifth.
 
-**√ DO** And put members in last.
+**✔️ DO** And put members in last.
 
-**√ DO** Organize properties, events, methods and member in alphabetic order.
+**✔️ DO** Organize properties, events, methods and member in alphabetic order.
 
 ```c++
 class my_control : public xtd::form::control {
@@ -253,9 +253,9 @@ private:
 
 # #define
 
-**X DO NOT** Use #define for any good or bad reason.
+**❌ DO NOT** Use #define for any good or bad reason.
 
-**√ DO** But instead use *static constexpr* or *static const* for constantes.
+**✔️ DO** But instead use *static constexpr* or *static const* for constantes.
 
 ### header file :
 ```c++
@@ -271,7 +271,7 @@ public:
 const xtd::version my_class::min_version(2, 1, 0);
 ```
 
-**√ Do** All macro can be replaced by template method.
+**✔️ Do** All macro can be replaced by template method.
 
 ```c++
 class math {
@@ -287,17 +287,17 @@ math() = delete;
 
 ## Global methods
 
-**X DO NOT** Use global methods. All methods are in class. If necessary creates container class like xtd::forms:cursors to group static methods. 
+**❌ DO NOT** Use global methods. All methods are in class. If necessary creates container class like xtd::forms:cursors to group static methods.
 
 ## global variables
 
-**X DO NOT** Use global variables. All variables are in class. If necessary a global or static variable can create in a source files (.cpp) but it can't visible in the header file (.h). 
+**❌ DO NOT** Use global variables. All variables are in class. If necessary a global or static variable can create in a source files (.cpp) but it can't visible in the header file (.h).
 
-**√ DO** Uses [factory_method](factory_method.md), [builder](builder.md) or [singleton](singleton.md) patterns to create unique object.
+**✔️ DO** Uses [factory_method](factory_method.md), [builder](builder.md) or [singleton](singleton.md) patterns to create unique object.
 
 # Comments
 
-**√ DO** Using always simple line comment **//** instead block comment /* */
+**✔️ DO** Using always simple line comment **//** instead block comment /* */
 
 ```c++
 // This is my
@@ -309,9 +309,9 @@ int x = 3;
 
 The documentation is generate by Doxygen.
 
-**√ DO** Write Doxygen documentation only in header file (**.h**).
+**✔️ DO** Write Doxygen documentation only in header file (**.h**).
 
-**√ DO** All documentation comment must start by triple slash **///**
+**✔️ DO** All documentation comment must start by triple slash **///**
 
 ```c++
 /// @brief my_class do something
@@ -319,7 +319,7 @@ class my_class {
 };
 ```
 
-**√ DO** Doxygen command start with at-sign **@**
+**✔️ DO** Doxygen command start with at-sign **@**
 
 ```c++
 /// @brief my_func do something
@@ -432,7 +432,7 @@ For more commands see [Doxygen Special commands](http://www.stack.nl/~dimitri/do
 
 # Indentation
 
-**√ DO** Indent block contents
+**✔️ DO** Indent block contents
 
 ```c++
 namespace test {
@@ -445,7 +445,7 @@ namespace test {
 }
 ```
 
-**X DO NOT** Indent open and close braces
+**❌ DO NOT** Indent open and close braces
 
 ```c++
 class aclass {
@@ -456,7 +456,7 @@ class aclass {
 };
 ```
 
-**X DO NOT** Indent switch sections
+**❌ DO NOT** Indent switch sections
 
 ```c++
 class aclass {
@@ -469,7 +469,7 @@ class aclass {
 };
 ```
 
-**√ DO** Indent case sections
+**✔️ DO** Indent case sections
 
 ```c++
 class aclass {
@@ -482,7 +482,7 @@ class aclass {
 };
 ```
 
-**X DO NOT** Indent label
+**❌ DO NOT** Indent label
 
 ```c++
 class test {
@@ -497,21 +497,21 @@ class test {
 
 ## New line options for braces
 
-**X DO NOT** Place open brace on new line for types
+**❌ DO NOT** Place open brace on new line for types
 
 ```c++
 class example {
 };
 ```
 
-**X DO NOT** Place open brace on new line for methods
+**❌ DO NOT** Place open brace on new line for methods
 
 ```c++
 void example() {
 }
 ```
 
-**X DO NOT** Place open brace on new line for lambda expressions
+**❌ DO NOT** Place open brace on new line for lambda expressions
 
 ```c++
 void example() {
@@ -520,7 +520,7 @@ void example() {
 }
 ```
 
-**X DO NOT** Place open brace on new line for control blocks
+**❌ DO NOT** Place open brace on new line for control blocks
 
 ```c++
 void example() {
@@ -529,7 +529,7 @@ void example() {
 }
 ```
 
-**X DO NOT** Place open brace on new line for object initializers
+**❌ DO NOT** Place open brace on new line for object initializers
 
 ```c++
 void example() {
@@ -541,7 +541,7 @@ void example() {
 
 ## New line options for keywords
 
-**X DO NOT** Place "else" on new line
+**❌ DO NOT** Place "else" on new line
 
 ```c++
 void example() {
@@ -553,7 +553,7 @@ void example() {
 }
 ```
 
-**X DO NOT** Place "catch" on new line
+**❌ DO NOT** Place "catch" on new line
 
 ```c++
 void example() {
@@ -567,7 +567,7 @@ void example() {
 
 ## New line options for expressions
 
-**X DO NOT** Place memberin object initializers on new line
+**❌ DO NOT** Place memberin object initializers on new line
 
 ```c++
 void example() {
@@ -581,14 +581,14 @@ void example() {
 
 ## Set spacing for method declarations
 
-**X DO NOT** Insert space between method name and its opening parenthesis
+**❌ DO NOT** Insert space between method name and its opening parenthesis
 
 ```c++
 void example() {
 }
 ```
 
-**X DO NOT** Insert space within argument list parentheses
+**❌ DO NOT** Insert space within argument list parentheses
 
 ```c++
 void example(int i, int j) {
@@ -596,7 +596,7 @@ void example(int i, int j) {
 ```
 
 
-**X DO NOT** Insert space within empty argument list parentheses
+**❌ DO NOT** Insert space within empty argument list parentheses
 
 ```c++
 void example() {
@@ -605,7 +605,7 @@ void example() {
 
 ## Set spacing for method calls
 
-**X DO NOT** Insert space between method name and its opening parenthesis
+**❌ DO NOT** Insert space between method name and its opening parenthesis
 
 ```c++
 void example() {
@@ -613,7 +613,7 @@ void example() {
 }
 ```
 
-**X DO NOT** Insert space within argument list parentheses
+**❌ DO NOT** Insert space within argument list parentheses
 
 ```c++
 void example() {
@@ -622,7 +622,7 @@ void example() {
 ```
 
 
-**X DO NOT** Insert space within empty argument list parentheses
+**❌ DO NOT** Insert space within empty argument list parentheses
 
 ```c++
 void example() {
@@ -632,7 +632,7 @@ void example() {
 
 ## Set other spacing options
 
-**√ DO** Insert space after keywords in control flow statements
+**✔️ DO** Insert space after keywords in control flow statements
 
 ```c++
 void example() {
@@ -641,7 +641,7 @@ void example() {
 }
 ```
 
-**X DO NOT** Insert space within parentheses of expressions
+**❌ DO NOT** Insert space within parentheses of expressions
 
 ```c++
 void example() {
@@ -649,14 +649,14 @@ void example() {
 }
 ```
 
-**X DO NOT** Insert space within parentheses of type casts
+**❌ DO NOT** Insert space within parentheses of type casts
 
 ```c++
 void example() {
   test = (const itest&)o;
 }
 ```
-**X DO NOT** Insert space within parentheses of control flow statements
+**❌ DO NOT** Insert space within parentheses of control flow statements
 
 ```c++
 void example() {
@@ -665,7 +665,7 @@ void example() {
 }
 ```
 
-**X DO NOT** Insert space after casts
+**❌ DO NOT** Insert space after casts
 
 ```c++
 void example() {
@@ -673,7 +673,7 @@ void example() {
 }
 ```
 
-**√ DO** Insert space in declaration statements
+**✔️ DO** Insert space in declaration statements
 
 ```c++
 void example() {
@@ -683,7 +683,7 @@ void example() {
 
 ## Set spacing for square brackets
 
-**X DO NOT** Insert space before open square bracket
+**❌ DO NOT** Insert space before open square bracket
 
 ```c++
 void example() {
@@ -691,7 +691,7 @@ void example() {
 }
 ```
 
-**X DO NOT** Insert space within empty square brackets
+**❌ DO NOT** Insert space within empty square brackets
 
 ```c++
 void example() {
@@ -699,7 +699,7 @@ void example() {
 }
 ```
 
-**X DO NOT** Insert space within square brackets
+**❌ DO NOT** Insert space within square brackets
 
 ```c++
 void example() {
@@ -709,14 +709,14 @@ void example() {
 
 ## Set spacing for brackets
 
-**√ DO** Insert space after colon for base or interface in type declaration
+**✔️ DO** Insert space after colon for base or interface in type declaration
 
 ```c++
 class foo : public bar {
 }
 ```
 
-**√ DO** Insert space after comma
+**✔️ DO** Insert space after comma
 
 ```c++
 void example() {
@@ -724,7 +724,7 @@ void example() {
 }
 ```
 
-**X DO NOT** Insert space after dot
+**❌ DO NOT** Insert space after dot
 
 ```c++
 void example() {
@@ -732,7 +732,7 @@ void example() {
 }
 ```
 
-**X DO NOT** Insert space after structure or class dereference 
+**❌ DO NOT** Insert space after structure or class dereference
 
 ```c++
 void example() {
@@ -740,7 +740,7 @@ void example() {
 }
 ```
 
-**√ DO** Insert space after semicolon in "for" statement
+**✔️ DO** Insert space after semicolon in "for" statement
 
 ```c++
 void example() {
@@ -749,14 +749,14 @@ void example() {
 }
 ```
 
-**√ DO** Insert space before colon for base or interface in type declaration
+**✔️ DO** Insert space before colon for base or interface in type declaration
 
 ```c++
 class foo : public bar {
 }
 ```
 
-**X DO NOT** Insert space before dot
+**❌ DO NOT** Insert space before dot
 
 ```c++
 void example() {
@@ -764,7 +764,7 @@ void example() {
 }
 ```
 
-**X DO NOT** Insert space before structure or class dereference 
+**❌ DO NOT** Insert space before structure or class dereference
 
 ```c++
 void example() {
@@ -772,7 +772,7 @@ void example() {
 }
 ```
 
-**X DO NOT** Insert space before semicolon in "for" statement
+**❌ DO NOT** Insert space before semicolon in "for" statement
 
 ```c++
 void example() {
@@ -781,7 +781,7 @@ void example() {
 }
 ```
 
-**√ DO** Set spacing for operators
+**✔️ DO** Set spacing for operators
 
 ```c++
 void example() {

@@ -6,9 +6,9 @@ One of the basic design decisions every framework designer faces is whether to d
 
 The only difference between a class and a struct in C++ is that structs have default public members and bases and classes have default private members and bases. Both classes and structs can have a mixture of public and private members, can use inheritance, and can have member functions.
 
-**√ CONSIDER** defining a struct instead of a class if instances of the type are small and commonly short-lived or are commonly embedded in other objects.
+**✔️ CONSIDER** defining a struct instead of a class if instances of the type are small and commonly short-lived or are commonly embedded in other objects.
 
-**X AVOID** defining a struct unless the type has all of the following characteristics:
+**❌ AVOID** defining a struct unless the type has all of the following characteristics:
 
 * It logically represents a single value, similar to primitive types (int, double, etc.).
 * It is immutable.
