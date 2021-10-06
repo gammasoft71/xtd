@@ -8,7 +8,9 @@ include(../scripts/cmake/xtd_version.cmake)
 add_sources(
   README.md
   abstract_class_design.md
+  abstractions_abstract_types_and_interfaces.md
   architecture.md
+  base_classes_for_implementing_abstractions.md
   capitalisation_conventions.md
   choosing_between_class_and_struct.md
   class_cleanup.md
@@ -41,10 +43,12 @@ add_sources(
   enum_design.md
   event_design.md
   events.md
+  events_and_callbacks.md
   examples.md
   extending_test.md
   external_tools_libraries_and_toolkits.md
   field_design.md
+  final.md
   first_programs.md
   gallery.md
   gammasoft.md
@@ -70,10 +74,12 @@ add_sources(
   naming_parameters.md
   naming_resources.md
   nested_types.md
+  non-final_classes.md
   operator_overloads.md
   parameter_design.md
   portability.md
   property_design.md
+  protected_members.md
   release_notes.md
   running_test.md
   static_class_design.md
@@ -89,6 +95,7 @@ add_sources(
   type_design_guidelines.md
   unit_testing_classes.md
   usage_guidelines.md
+  virtual_members.md
   writing_applications.md
   writing_console_application.md
   writing_gui_application.md
