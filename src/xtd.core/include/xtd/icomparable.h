@@ -4,6 +4,7 @@
 #pragma once
 #include "interface.h"
 #include "object.h"
+#include "is.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -25,7 +26,10 @@ namespace xtd {
     /// | Less than zero    | This instance is less than obj.    |
     /// | Zero              | This instance is equal to obj.     |
     /// | Greater than zero | This instance is greater than obj. |
-    virtual int32_t compare_to(const object& obj) const noexcept = 0;
+    virtual int32_t compare_to(const object& obj) const noexcept {
+      if (!is<type_t>(&obj)) return 1;
+      return compare_to(static_cast<const type_t&>(obj));
+    }
     
     /// @brief Compares the current instance with another object of the same type.
     /// @param obj An object to compare with this instance.

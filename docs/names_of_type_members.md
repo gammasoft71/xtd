@@ -76,9 +76,9 @@ For example, a close event that is raised before a window is closed would be cal
 ```c++
 using clicked_event_handler = delegate<void(object&, const event_args&)>;
 ```
-**✔️ DO** use two parameters named sender and e in event handlers.
+**✔️ DO** use two parameters named *sender* and *e* in event handlers.
 
-The sender parameter represents the object that raised the event. The sender parameter is typically of type object, even if it is possible to employ a more specific type.
+The *sender* parameter represents the object that raised the event. The *sender* parameter is typically of type object, even if it is possible to employ a more specific type.
 
 **✔️ DO** name event argument classes with the "_event_args" suffix.
 
