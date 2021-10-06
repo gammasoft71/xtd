@@ -11,7 +11,7 @@ The guidelines in this chapter lay out a simple method for using case that, when
 html_tag
 ```
 
-**√ DO** To differenciate members form accessors or metods, end members by _.
+**✔️ DO** To differenciate members form accessors or metods, end members by _.
 
 
 ```c++
@@ -126,7 +126,7 @@ private:
 ​
 Most compound terms are treated as single words .
  
-**X DO NOT** separate each word in so-called closed-form compound words.
+**❌ DO NOT** separate each word in so-called closed-form compound words.
 ​
 These are compound words written as a single word, such as endpoint. For the purpose of casing guidelines, treat a closed-form compound word as a single word. Use a current dictionary to determine if a compound word is written in closed form. ​​
 
