@@ -61,7 +61,7 @@ For example, a parameter constrained to isession might be called session_t.
 
 # Names of Common Types
 
-**✔️ DO** follow the guidelines described in the following table when naming types derived from or implementing certain Switch Framework types.
+**✔️ DO** follow the guidelines described in the following table when naming types derived from or implementing certain xtd Framework types.
 
 | Base Type               | Derived/Implementing Type Guideline                                                                |
 |-------------------------|----------------------------------------------------------------------------------------------------|
