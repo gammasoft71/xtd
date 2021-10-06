@@ -1,12 +1,12 @@
 | [Home](home.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md)  | [Contact](contact.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-# Abstract Factory
+# Builder
 
 # Definition
 
-Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
+Separate the construction of a complex object from its representation so that the same construction process can create different representations.
 
-Usage     ![Usage](pictures/usage5.png)     High
+Usage     ![Usage](pictures/usage52.png)     Medium low
 
 # UML class diagram
 
@@ -23,6 +23,7 @@ Usage     ![Usage](pictures/usage5.png)     High
 
 ```
 ```
+
 
 # See also
 ​
