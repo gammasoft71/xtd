@@ -1,0 +1,40 @@
+@startuml
+
+skinparam backgroundcolor transparent
+skinparam classBackgroundColor white
+skinparam classBorderColor #60A5FF
+skinparam classArrowColor #60A5FF
+skinparam noteBackgroundColor white
+skinparam noteBorderColor #60A5FF
+
+class client
+
+abstract implementor {
+  +operation_imp()
+}
+
+class abstraction {
+  +operation()
+}
+
+note left of abstraction::operation
+  implementor.operation_imp()
+end note
+
+class rafined_abstraction
+
+class concrete_implementor_a {
+  +operation_imp()
+}
+
+class concrete_implementor_b {
+  +operation_imp()
+}
+
+client --> abstraction
+implementor <--o abstraction
+abstraction <|-- rafined_abstraction
+implementor <|-- concrete_implementor_a
+implementor <|-- concrete_implementor_b
+
+@enduml

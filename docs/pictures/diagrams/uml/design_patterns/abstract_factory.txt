@@ -1,0 +1,53 @@
+@startuml
+
+skinparam backgroundcolor transparent
+skinparam classBackgroundColor white
+skinparam classBorderColor #60A5FF
+skinparam classArrowColor #60A5FF
+skinparam noteBackgroundColor white
+skinparam noteBorderColor #60A5FF
+
+class client
+
+abstract abstract_product_a
+
+class product_a1
+
+class product_a2
+
+abstract abstract_product_b
+
+class product_b1
+
+class product_b2
+
+abstract abstract_factory {
+  +create_product_a()
+  +create_product_b()
+}
+
+class concrete_factory1 {
+  +create_product_a()
+  +create_product_b()
+}
+
+class concrete_factory2 {
+  +create_product_a()
+  +create_product_b()
+}
+
+client --> abstract_product_a
+abstract_product_a <|-- product_a1
+abstract_product_a <|-- product_a2
+client --> abstract_product_b
+abstract_product_b <|-- product_b1
+abstract_product_b <|-- product_b2
+client --> abstract_factory
+abstract_factory <|-- concrete_factory1
+abstract_factory <|-- concrete_factory2
+concrete_factory1 ..> product_a1
+concrete_factory1 ..> product_b1
+concrete_factory2 ..> product_a2
+concrete_factory2 ..> product_b2
+
+@enduml

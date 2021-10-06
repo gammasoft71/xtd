@@ -1,0 +1,47 @@
+@startuml
+
+skinparam backgroundcolor transparent
+skinparam classBackgroundColor white
+skinparam classBorderColor #60A5FF
+skinparam classArrowColor #60A5FF
+skinparam noteBackgroundColor white
+skinparam noteBorderColor #60A5FF
+
+abstract component {
+  +operation()
+}
+
+class concrete_component {
+  +operation()
+}
+
+abstract decorator {
+  +operation()
+}
+
+note left of decorator::operation
+  component operation()
+end note
+
+class concrete_decorator_a {
+  -added_state
+  +operation()
+}
+
+class concrete_decorator_b {
+  +operation()
+  +added_behavior()
+}
+
+note left of concrete_decorator_b::operation
+  decorator::operation();
+  added_behavior();
+end note
+
+component <|-- concrete_component
+component <|-- decorator
+decorator <|-- concrete_decorator_a
+decorator <|-- concrete_decorator_b
+component <--o decorator : component
+
+@enduml
