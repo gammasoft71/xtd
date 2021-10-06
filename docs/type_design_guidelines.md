@@ -16,7 +16,7 @@ Static classes are types intended to be containers for static members. They are 
 
 Delegates, exceptions, attributes, arrays, and collections are all special cases of reference types intended for specific uses, and guidelines for their design and usage are discussed elsewhere in this book.
 
-√ DO ensure that each type is a well-defined set of related members, not just a random collection of unrelated functionality.
+**✔️ DO** ensure that each type is a well-defined set of related members, not just a random collection of unrelated functionality.
 
 # In This Section
 
