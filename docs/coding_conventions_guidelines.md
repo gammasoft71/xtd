@@ -64,39 +64,23 @@ root
       +- ...
 ```
 
-**root** folder is the project folder where xtd project was extracted or cloned.
-
-**root/build** folder contains the build result. This folder is automaticaly create by the install.
-
-**root/docs** folder contains markdown documentations.
-
-**root/docs/diagrams** folder contains the diagrams used to illustrate the markdown documentation and website.
-
-**root/docs/diagrams/uml** folder contains the UML diagrams used to illustrate the markdown documentation and website.
-
-**root/docs/pictures** folder contains the pictures used to illustrate the markdown documentation and website.
-
-**root/docs/tutorials** folder contains the xtd tutorials.
-
-**root/docs/movies** folder contains the movies used to demonstrate how to use xtd.
-
-**root/examples** folder contains examples to show how to used xtd libraries organized by library and example theme.
-
-**root/locale** folder contains rlocale files organized by language.
-
-**root/resources** folder contains resource files organized by theme.
-
-**root/scripts** folder contains developper helper scripts.
-
-**root/scripts/appveyor** folder contains scripts needed by appveyor CI.
-
-**root/scripts/cmake** folder contains scripts needed by cmake.
-
-**root/scripts/install** folder contains installation scripts.
-
-**root/scripts/travis** folder contains scripts needed by travis CI.
-
-**root/src** folder contains source files organized by library.
+* **root** folder is the project folder where xtd project was extracted or cloned.
+* **root/build** folder contains the build result. This folder is automaticaly create by the install.
+* **root/docs** folder contains markdown documentations.
+* **root/docs/diagrams** folder contains the diagrams used to illustrate the markdown documentation and website.
+* **root/docs/diagrams/uml** folder contains the UML diagrams used to illustrate the markdown documentation and website.
+* **root/docs/pictures** folder contains the pictures used to illustrate the markdown documentation and website.
+* **root/docs/tutorials** folder contains the xtd tutorials.
+* **root/docs/movies** folder contains the movies used to demonstrate how to use xtd.
+* **root/examples** folder contains examples to show how to used xtd libraries organized by library and example theme.
+* **root/locale** folder contains rlocale files organized by language.
+* **root/resources** folder contains resource files organized by theme.
+* **root/scripts** folder contains developper helper scripts.
+* **root/scripts/appveyor** folder contains scripts needed by appveyor CI.
+* **root/scripts/cmake** folder contains scripts needed by cmake.
+* **root/scripts/install** folder contains installation scripts.
+* **root/scripts/travis** folder contains scripts needed by travis CI.
+* **root/src** folder contains source files organized by library.
 
 For each library the hierarchy is identical :
 
