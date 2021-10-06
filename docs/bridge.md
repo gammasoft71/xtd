@@ -2,31 +2,29 @@
 
 # Bridge
 
-# Definition
+The Bridge design pattern decouples an abstraction from its implementation so that the two can vary independently.
 
-Decouple an abstraction from its implementation so that the two can vary independently.
+Usage     ![Usage](pictures/usage2.png)     Medium-low
 
-Usage     ![Usage](pictures/usage3.png)     Medium
-
-# UML class diagram
+## UML class diagram
 
 ![diagram](pictures/diagrams/uml/design_patterns/bridge.png)
 
-# Sample code
+## Sample code
 
-This structural code demonstrates the Builder pattern in which complex objects are created in a step-by-step fashion. The construction process can create different object representations and provides a high level of control over the assembly of the objects.
+This structural code demonstrates the Bridge pattern which separates (decouples) the interface from its implementation. The implementation can evolve without changing clients which use the abstraction of the object.
 
 ```c++
 
 ```
 
-# Output
+## Output
 
 ```
 
 ```
 
-# See also
+## See also
 ​
 * [Common Design Patterns](common_design_patterns.md)
 * [Design Guidelines](design_guidelines.md)
