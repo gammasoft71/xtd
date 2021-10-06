@@ -10,20 +10,21 @@ Usage     ![Usage](pictures/usage2.png)     Medium low
 
 # UML class diagram
 
-![diagram](pictures/diagrams/uml/design_patterns/abstract_factory.png)
+![diagram](pictures/diagrams/uml/design_patterns/builder.png)
 
 # Sample code
 
 ...
 
 ```c++
+
 ```
 
 # Output
 
 ```
-```
 
+```
 
 # See also
 ​
