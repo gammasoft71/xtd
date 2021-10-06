@@ -10,12 +10,17 @@
 #include <wx/config.h>
 
 using namespace std;
+using namespace std::literals;
 using namespace xtd;
 using namespace xtd::forms::native;
 
 intptr_t settings::create(const ustring& product_name, const ustring& company_name) {
   application::initialize(); // Must be first
+#if defined(__WXGTK__)
+  return reinterpret_cast<intptr_t>(new wxConfig(convert_string::to_wstring(product_name), convert_string::to_wstring(company_name), L"~/.config/"s + convert_string::to_wstring(product_name)));
+#else
   return reinterpret_cast<intptr_t>(new wxConfig(convert_string::to_wstring(product_name), convert_string::to_wstring(company_name)));
+#endif
 }
 
 void settings::destroy(intptr_t config) {
