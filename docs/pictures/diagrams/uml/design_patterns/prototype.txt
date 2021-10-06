@@ -1,0 +1,43 @@
+@startuml
+
+skinparam backgroundcolor transparent
+skinparam classBackgroundColor white
+skinparam classBorderColor #60A5FF
+skinparam classArrowColor #60A5FF
+skinparam noteBackgroundColor white
+skinparam noteBorderColor #60A5FF
+
+
+class client {
+  +Operation()
+}
+
+note left of client::Operation
+  p = prototype.clone()
+end note
+
+abstract prototype {
+  +clone()
+}
+
+class concrete_prototype1 {
+  +clone()
+}
+
+note right of concrete_prototype1::clone
+  return copy of this
+end note
+
+class concrete_prototype2 {
+  +clone()
+}
+
+note left of concrete_prototype2::clone
+  return copy of this
+end note
+
+client --> prototype
+prototype <|-- concrete_prototype1
+prototype <|-- concrete_prototype2
+
+@enduml

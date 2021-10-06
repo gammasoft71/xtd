@@ -25,7 +25,6 @@ You can see the original source : [Framework Design Guidelines](https://docs.mic
 * [Member Design Guidelines](member_design_guidelines.md) Provides guidelines for designing and using properties, methods, constructors, fields, events, operators, and parameters.
 * [Designing for Extensibility](designing_for_extensibility.md) Discusses extensibility mechanisms such as subclassing, using events, virtual members, and callbacks, and explains how to choose the mechanisms that best meet your framework's requirements.
 * [Design Guidelines for Exception](design_guidelines_for_exception.md) Describes design guidelines for designing, throwing, and catching exceptions.
-* [Usage Guidelines](usage_guidelines.md) Describes guidelines for using common types such as arrays, attributes, and collections, supporting serialisation, and overloading equality operators.
 * [Common Design Patterns](common_design_patterns.md) are solutions to software design problems you find again and again in real-world application development. Patterns are about reusable designs and interactions of objects.
 
 ## See also
