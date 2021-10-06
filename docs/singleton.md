@@ -1,16 +1,16 @@
 | [Home](home.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md)  | [Contact](contact.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-# Abstract Factory
+# Builder
 
 # Definition
 
-Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
+Specify the kind of objects to create using a prototypical instance, and create new objects by copying this prototype.
 
-Usage     ![Usage](pictures/usage5.png)     High
+Usage     ![Usage](pictures/usage4.png)     Medium high
 
 # UML class diagram
 
-![diagram](pictures/diagrams/uml/design_patterns/abstract_factory.png)
+![diagram](pictures/diagrams/uml/design_patterns/singleton.png)
 
 # Sample code
 

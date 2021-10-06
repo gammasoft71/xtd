@@ -19,7 +19,7 @@ You can see the original source : [C# Design Patterns](https://www.dofactory.com
 * [Abstract Factory](abstract_factory.md) Creates an instance of several families of classes
 * [Builder](builder.md) Separates object construction from its representation
 * [Factory Method](factory_method.md) Creates an instance of several derived classes
-* [Prototype](Pprototype.md) A fully initialized instance to be copied or cloned
+* [Prototype](prototype.md) A fully initialized instance to be copied or cloned
 * [Singleton](singleton.md) A class of which only a single instance can exist
 
 # Structural Patterns

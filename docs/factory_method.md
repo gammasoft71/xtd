@@ -1,16 +1,16 @@
 | [Home](home.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md)  | [Contact](contact.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-# Abstract Factory
+# Builder
 
 # Definition
 
-Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
+Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
 
 Usage     ![Usage](pictures/usage5.png)     High
 
 # UML class diagram
 
-![diagram](pictures/diagrams/uml/design_patterns/abstract_factory.png)
+![diagram](pictures/diagrams/uml/design_patterns/factory_method.png)
 
 # Sample code
 
