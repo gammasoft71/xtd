@@ -15,6 +15,7 @@ namespace xtd {
   /// @par Examples
   /// The following example demonstrates how to throw and catch an argument_exception.
   /// @include argument_exception.cpp
+  /// @todo add param_name property and constructors param (param_nam is the parameter that cause the exception).
   class argument_exception : public system_exception {
   public:
     /// @brief Create a new instance of class argument_exception

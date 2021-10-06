@@ -45,6 +45,8 @@ add_sources(
   events.md
   events_and_callbacks.md
   examples.md
+  exceptions_and_performance.md
+  exception_throwing.md
   extending_test.md
   external_tools_libraries_and_toolkits.md
   field_design.md
@@ -95,6 +97,7 @@ add_sources(
   type_design_guidelines.md
   unit_testing_classes.md
   usage_guidelines.md
+  using_standard_exception_types.md
   virtual_members.md
   writing_applications.md
   writing_console_application.md
