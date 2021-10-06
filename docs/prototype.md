@@ -14,7 +14,7 @@ Usage     ![Usage](pictures/usage3.png)     Medium
 
 # Sample code
 
-...
+This structural code demonstrates the Factory method offering great flexibility in creating different objects. The Abstract class may provide a default object, but each subclass can instantiate an extended version of the object.
 
 ```c++
 

@@ -14,7 +14,7 @@ Usage     ![Usage](pictures/usage5.png)     High
 
 # Sample code
 
-...
+This structural code demonstrates the Abstract Factory pattern creating parallel hierarchies of objects. Object creation has been abstracted and there is no need for hard-coded class names in the client code.
 
 ```c++
 

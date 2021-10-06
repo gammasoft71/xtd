@@ -1,20 +1,20 @@
 | [Home](home.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md)  | [Contact](contact.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-# Builder
+# Adapter
 
 # Definition
 
-Separate the construction of a complex object from its representation so that the same construction process can create different representations.
+Convert the interface of a class into another interface clients expect. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces.
 
-Usage     ![Usage](pictures/usage2.png)     Medium low
+Usage     ![Usage](pictures/usage4.png)     Medium high
 
 # UML class diagram
 
-![diagram](pictures/diagrams/uml/design_patterns/builder.png)
+![diagram](pictures/diagrams/uml/design_patterns/adapter.png)
 
 # Sample code
 
-This structural code demonstrates the Builder pattern in which complex objects are created in a step-by-step fashion. The construction process can create different object representations and provides a high level of control over the assembly of the objects. 
+This structural code demonstrates the Adapter pattern which maps the interface of one class onto another so that they can work together. These incompatible classes may come from different libraries or frameworks.
 
 ```c++
 
