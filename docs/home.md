@@ -4,7 +4,7 @@
 
 (*) See [portability](portability.md#the-xtd-libraries-portability-list) for more information
 
-# Lastest news
+# Latest news
 
 Comming soon...
 <!--- [October 10, 2021 - Release xtd 0.1.0 (beta)](news.md#october-10-2021-release-xtd-010-beta) 
