@@ -103,7 +103,7 @@ cd xtd_path_name
 
 4. Install CMake 3.3 or later
   
-   After g++, gdound and gtk3, you need to install the latest version cmake from [https://cmake.org/download/](https://cmake.org/download/).
+   After g++, gsound and gtk3, you need to install the latest version cmake from [https://cmake.org/download/](https://cmake.org/download/).
 
    *Remarks: Verify if you can execute 'cmake --version' in "Terminal", if it's no, add cmake install directory to your path.*
 
