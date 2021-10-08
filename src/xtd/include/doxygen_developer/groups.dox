@@ -214,6 +214,11 @@
 /// @warning Internal use only
 /// @ingroup native
 
+/// @defgroup sound_type sound type
+/// @brief sound type definitions.
+/// @warning Internal use only
+/// @ingroup native
+
 /// @defgroup ss static styles
 /// @brief static styles definitions.
 /// @warning Internal use only

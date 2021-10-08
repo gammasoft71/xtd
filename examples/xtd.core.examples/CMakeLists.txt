@@ -18,6 +18,7 @@ add_projects(
   keywords
   mains
   math
+  media
   network
   processes
   random

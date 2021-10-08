@@ -130,6 +130,10 @@
 
 * [math](math/math/README.md) uses several mathematical and trigonometric functions from the [xtd::math](../../src/xtd.core/include/xtd/math.h) class to calculate the inner angles of a trapezoid.
 
+## [Media](media/README.md)
+
+* [system_sounds](media/system_sounds/README.md) shows how to use [xtd::media::system_soundds](../../src/xtd.core/include/xtd/media/system_sounds.h) and [xtd::media::system_soundd](../../src/xtd.core/include/xtd/media/system_sound.h) classes.
+
 ## [Network](network/README.md)
 
 * [dns_get_host_addresses](network/dns_get_host_addresses/README.md) shows hows how to use [xtd::net::dns](../../src/xtd.core/include/xtd/net/dns.h) class.

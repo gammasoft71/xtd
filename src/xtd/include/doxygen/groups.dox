@@ -67,6 +67,10 @@
 /// @defgroup libraries libraries
 /// @brief The xtd libraries.
 
+/// @defgroup media media
+/// @brief media definitions.
+/// @ingroup system
+
 /// @defgroup menus_and_toolbars  menus and toolbars
 /// @brief menus and toolbars definitions.
 /// @ingroup gui
