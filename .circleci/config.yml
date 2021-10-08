@@ -25,6 +25,9 @@ jobs:
           name: Install lcov
           command: 'sudo apt-get update && sudo apt-get install -y lcov'
       - run:
+          name: Install gsound
+          command: 'sudo apt-get update && sudo apt-get install -y libgsound-dev'
+      - run:
           name: Install gtk-3
           command: 'sudo apt-get update && sudo apt-get install -y libgtk-3-dev'
       - run:
