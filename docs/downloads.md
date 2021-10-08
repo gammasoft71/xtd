@@ -6,6 +6,8 @@ You can download latest stable version on [SourceForge](https://sourceforge.net/
 
 [![Downloadxtd](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/xtdpro/files/latest/download)
 
+See [release notes](release_notes.md) to known the latest xtd version.
+
 # Clone the latest xtd commit
 
 Or clone latest development version on [GitHub](https://github.com/gammasoft71/xtd).
@@ -101,11 +103,11 @@ cd xtd_path_name
 
 4. Install CMake 3.3 or later
   
-   After g++ and gtk3, you need to install the latest version cmake from [https://cmake.org/download/](https://cmake.org/download/).
+   After g++, gdound and gtk3, you need to install the latest version cmake from [https://cmake.org/download/](https://cmake.org/download/).
 
    *Remarks: Verify if you can execute 'cmake --version' in "Terminal", if it's no, add cmake install directory to your path.*
 
-5. After installing g++, gtk3 and CMake, do the following in "Terminal" to Build and install :
+5. After installing g++, gsound, gtk3 and CMake, do the following in "Terminal" to Build and install :
 
 ```shell
 cd xtd_path_name
