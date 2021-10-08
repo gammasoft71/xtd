@@ -19,17 +19,15 @@ namespace examples {
       console::write_line("  Esc : exit");
       
       while(true) {
-        if (console::key_available()) {
-          console_key_info key_info = console::read_key(true);
-          switch (key_info.key()) {
-            case console_key::a: system_sounds::asterisk().play(); break;
-            case console_key::b: system_sounds::beep().play(); break;
-            case console_key::e: system_sounds::exclamation().play(); break;
-            case console_key::h: system_sounds::hand().play(); break;
-            case console_key::q: system_sounds::question().play(); break;
-            case console_key::escape: environment::exit(0); break;
-            default: break;
-          }
+        console_key_info key_info = console::read_key(true);
+        switch (key_info.key()) {
+          case console_key::a: system_sounds::asterisk().play(); break;
+          case console_key::b: system_sounds::beep().play(); break;
+          case console_key::e: system_sounds::exclamation().play(); break;
+          case console_key::h: system_sounds::hand().play(); break;
+          case console_key::q: system_sounds::question().play(); break;
+          case console_key::escape: environment::exit(0); break;
+          default: break;
         }
       }
     }
