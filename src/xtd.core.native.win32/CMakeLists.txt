@@ -22,6 +22,7 @@ add_sources(
   src/xtd/native/win32/path.cpp
   src/xtd/native/win32/process.cpp
   src/xtd/native/win32/socket.cpp
+  src/xtd/native/win32/system_sound.cpp
   src/xtd/native/win32/translator.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})

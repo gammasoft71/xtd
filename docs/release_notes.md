@@ -168,8 +168,8 @@
 ### Media
 
 * ![todo](pictures/releases/status/todo.png) sound_player - Controls playback of a sound from a .wav file.
-* ![todo](pictures/releases/status/todo.png) system_sound - Represents a system sound type.
-* ![todo](pictures/releases/status/todo.png) system_sounds - Retrieves sounds associated with a set of Windows operating system sound-event types.
+* ![added](pictures/releases/status/added.png) system_sound - Represents a system sound type.
+* ![added](pictures/releases/status/added.png) system_sounds - Retrieves sounds associated with a set of Windows operating system sound-event types.
 
 ### Microsoft
 

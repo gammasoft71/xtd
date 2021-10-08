@@ -38,6 +38,8 @@ add_sources(
   include/xtd/native/socket_error_constants.h
   include/xtd/native/socket_shutdown_constants.h
   include/xtd/native/socket_type_constants.h
+  include/xtd/native/sounds.h
+  include/xtd/native/system_sound.h
   include/xtd/native/translator.h
 )
 target_type(INTERFACE_LIBRARY)

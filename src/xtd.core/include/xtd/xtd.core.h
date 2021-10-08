@@ -147,6 +147,8 @@
 #include "io/string_writer.h"
 #include "io/text_reader.h"
 #include "io/text_writer.h"
+#include "media/system_sound.h"
+#include "media/system_sounds.h"
 #include "net/cookie_exception.h"
 #include "net/dns.h"
 #include "net/dns_end_point.h"

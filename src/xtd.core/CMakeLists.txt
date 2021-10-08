@@ -5,6 +5,7 @@ project(xtd.core)
 include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 add_include_directories(include)
+
 add_references(xtd.3rdparty.call_stack ${XTD_CORE_NATIVE_LIBRARY})
 add_sources(
   include/xtd/action.h
@@ -156,7 +157,7 @@ add_sources(
   include/xtd/internal/__format_information.h
   include/xtd/internal/__format_stringer.h
   include/xtd/internal/__natural_formatter.h
-        include/xtd/internal/__numeric_formatter.h
+  include/xtd/internal/__numeric_formatter.h
   include/xtd/internal/__opaque_console.h
   include/xtd/internal/__parse.h
   include/xtd/internal/__sprintf.h
@@ -178,6 +179,8 @@ add_sources(
   include/xtd/io/string_writer.h
   include/xtd/io/text_reader.h
   include/xtd/io/text_writer.h
+  include/xtd/media/system_sound.h
+  include/xtd/media/system_sounds.h
   include/xtd/net/cookie_exception.h
   include/xtd/net/dns.h
   include/xtd/net/dns_end_point.h
@@ -282,6 +285,8 @@ add_sources(
   src/xtd/io/string_writer.cpp
   src/xtd/io/text_reader.cpp
   src/xtd/io/text_writer.cpp
+  src/xtd/media/system_sound.cpp
+  src/xtd/media/system_sounds.cpp
   src/xtd/net/dns.cpp
   src/xtd/net/dns_end_point.cpp
   src/xtd/net/end_point.cpp

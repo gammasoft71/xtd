@@ -47,6 +47,7 @@ add_projects(
   system_images2
   system_images3
   system_report
+  system_sound
   text_box_multiline
   text_box_password
   text_box_password2

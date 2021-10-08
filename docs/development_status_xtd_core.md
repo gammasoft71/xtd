@@ -246,8 +246,8 @@
 | Name                                                                                                 | Type         | Status                                |
 |------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
 | [sound_player](../src/xtd.core/include/xtd/media/sound_player.h)                                     | class        | ![progress](pictures/progress0.png)   |
-| [system_sound](../src/xtd.core/include/xtd/media/system_sound.h)                                     | class        | ![progress](pictures/progress0.png)   |
-| [system_sounds](../src/xtd.core/include/xtd/media/system_sounds.h)                                   | static class | ![progress](pictures/progress0.png)   |
+| [system_sound](../src/xtd.core/include/xtd/media/system_sound.h)                                     | class        | ![progress](pictures/progress100.png) |
+| [system_sounds](../src/xtd.core/include/xtd/media/system_sounds.h)                                   | static class | ![progress](pictures/progress100.png) |
 
 ## xtd::microsoft::win32
 

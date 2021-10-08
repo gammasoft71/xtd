@@ -44,7 +44,7 @@
 * [system_images2](system_images2/README.md) demonstrates the use of **xtd::drawing::system_images** class.
 * [system_images3](system_images3/README.md) demonstrates the use of **xtd::drawing::system_images** class.
 * [system_report](system_report/README.md) shows system_repoort with [xtd::forms::text_box](../../../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
-* [system_sound](system_sound/README.md) demonstrates the use of xtd::media::system_sound component.
+* [system_sound](system_sound/README.md) demonstrates the use of [xtd::media::system_sound(../../../src/xtd_forms/include/xtd/media/system_sound.hpp) component.
 * [text_box_multiline](text_box_multiline/README.md) represents a Windows [xtd::forms::text_box](../../../src/xtd.forms/include/xtd/forms/text_box.h) control.
 * [text_box_password](text_box_password/README.md) represents a Windows [xtd::forms::text_box](../../../src/xtd.forms/include/xtd/forms/text_box.h) control.
 * [texts](texts/README.md) demonstrates the use of [xtd::forms::texts](../../../src/xtd.forms/include/xtd/forms/texts.h) strings.
