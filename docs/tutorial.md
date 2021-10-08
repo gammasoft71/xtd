@@ -1,4 +1,4 @@
-| [Home](home.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md)  | [Contact](contact.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
+| [Home](home.md) | [News](news.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md)  | [Contact](contact.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
 This is [xtd](https://github.com/gammasoft71/xtd) tutorial for the [C++](c++.md) programming language. [xtd](https://github.com/gammasoft71/xtd) is a cross platform toolkit or framework for creating [C++](c++.md) GUI applications. After reading this tutorial, you will be able to program non trivial [xtd](https://github.com/gammasoft71/xtd) applications.
 

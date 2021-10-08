@@ -91,6 +91,7 @@ add_sources(
   naming_parameters.md
   naming_resources.md
   nested_types.md
+  news.md
   non-final_classes.md
   observer.md
   operator_overloads.md
