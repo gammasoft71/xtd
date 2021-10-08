@@ -16,7 +16,7 @@ elseif (NOT ANDROID)
   include_directories(${GSOUND_INCLUDE_DIRS})
   link_directories(${GSOUND_LIBRARY_DIRS})
   
-  pkg_check_modules(GTK REQUIRRED gtk+-3.0)
+  pkg_check_modules(GTK REQUIRED gtk+-3.0)
   include_directories(${GTK_INCLUDE_DIRS})
   link_directories(${GTK_LIBRARY_DIRS})
 
