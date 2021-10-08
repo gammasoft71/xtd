@@ -2,16 +2,12 @@
 
 # news
 
-Comming soon...
-
-<!---
 ## October 10, 2021 - Release xtd 0.1.0 (beta)
 
 * After 3 years of development, we are happy to release the first beta version of xtd. This version contains a lot of functionalities. It is the first of a long serie.
 * Read the [release note](release_notes.md) for more informations.
 * [Installation](downloads.md) provides download and install documentation.
 * For more information about all functionalities read the [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html).
---->
 
 ______________________________________________________________________________________________
 
