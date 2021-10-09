@@ -14,6 +14,7 @@ add_projects(
   datas
   components
   printing
+  themes
   events
   drawing
   user_controls
