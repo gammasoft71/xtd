@@ -20,8 +20,6 @@
 * [application_and_assert](applications/application_and_assert/README.md) shows how to create an application with [xtd::forms::application](../../src/xtd_forms/include/xtd/forms/application.hpp) class and hot to manage assert.
 * [application_and_exception](applications/application_and_exception/README.md) shows how to create an application with [xtd::forms::application](../../src/xtd_forms/include/xtd/forms/application.hpp) class and hot to manage exception.
 * [application_context](applications/application_context/README.md) shows how to create an application with [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) class with [xtd::forms::application_context](../../src/xtd.forms/include/xtd/forms/application_context.h) class.
-* [application_enable_dark_mode](applications/application_enable_dark_mode/README.md) shows how to enable dark mode with [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) class with [xtd::forms::application_context](../../src/xtd.forms/include/xtd/forms/application_context.h) class.
-* [application_enable_light_mode](applications/application_enable_light_mode/README.md) shows how to enable light mode with [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) class with [xtd::forms::application_context](../../src/xtd.forms/include/xtd/forms/application_context.h) class.
 * [application_restart](applications/application_restart/README.md) shows how to restart application with [xtd::forms::application::restart](../../src/xtd_forms/include/xtd/forms/application.hpp) method.
 * [application_use_wait_cursor](applications/application_use_wait_cursor/README.md) shows how to show and hide wait cursor application with [xtd::forms::application::use_wait_cursor](../../src/xtd.forms/include/xtd/forms/application.h) method.
 
@@ -173,6 +171,12 @@
 * **print_document** defines a reusable object that sends output to a printer, when printing from a Windows Forms application.
 * **print_preview_control** represents the raw preview part of print previewing from a Windows Forms application, without any dialog boxes or buttons. Most PrintPreviewControl objects are found on PrintPreviewDialog objects, but they do not have to be.
 * **print_preview_dialog** represents a dialog box form that contains a PrintPreviewControl for printing from a Windows Forms application.
+
+## [Themes](themes/README.md)
+
+* [application_enable_dark_mode](themes/application_enable_dark_mode/README.md) shows how to enable dark mode with [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) class with [xtd::forms::application_context](../../src/xtd.forms/include/xtd/forms/application_context.h) class.
+* [application_enable_light_mode](themes/application_enable_light_mode/README.md) shows how to enable light mode with [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) class with [xtd::forms::application_context](../../src/xtd.forms/include/xtd/forms/application_context.h) class.
+* [themes](themes/themes/README.md) shows how to use [xtd::forms::theme](../../src/xtd_forms/include/xtd/forms/theme.hpp) class.
 
 ## [Events](events/README.md)
 
