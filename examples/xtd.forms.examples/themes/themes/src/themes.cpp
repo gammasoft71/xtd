@@ -226,8 +226,12 @@ public:
     themes_choice.location({70, 420});
     themes_choice.width(560);
     themes_choice.anchor(anchor_styles::left | anchor_styles::right | anchor_styles::bottom);
-    themes_choice.items().push_back_range({"Default", "Gnome dark", "Gnome light", "macOS dark", "macOS light", "Windows dark", "Windows light"});
+    themes_choice.items().push_back("default theme");
+    themes_choice.items().push_back_range(theme::theme_names());
     themes_choice.selected_index(0);
+    themes_choice.selected_index_changed += [&] {
+      application::theme(themes_choice.selected_index() == 0 ? theme::default_theme_name() : themes_choice.selected_item().value());
+    };
   }
   
 private:
