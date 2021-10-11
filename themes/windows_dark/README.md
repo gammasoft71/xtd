@@ -1,8 +1,6 @@
-# Windows dark themes
+# Windows dark theme
 
 Contains contains Windows dark theme.
-
-## css files
 
 * [theme.css](theme.css) contains theme style
 * [system_colors.css](system_colors.css) contains system colors style 
