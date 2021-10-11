@@ -1,6 +1,6 @@
-# Gnome light theme
+# GNOME light theme
 
-Contains contains Gnome light theme.
+Contains contains GNOME light theme.
 
 * [theme.css](theme.css) contains theme style
 * [system_colors.css](system_colors.css) contains system colors style 
