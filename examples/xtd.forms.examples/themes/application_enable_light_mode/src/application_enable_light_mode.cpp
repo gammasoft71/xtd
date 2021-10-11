@@ -12,7 +12,7 @@ class form1 : public form {
 public:
   form1() {
     client_size({650, 450});
-    text("Light theme example");
+    text("Light mode example");
     
     tab_control_controls.parent(*this);
     tab_control_controls.location({10, 10});
