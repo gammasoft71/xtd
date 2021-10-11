@@ -43,6 +43,7 @@ add_projects(
   screen_informations
   settings_example2
   smileys
+  some_controls
   stopwatch_form
   system_images2
   system_images3
