@@ -252,6 +252,7 @@
 * [screen_informations](others/screen_informations/README.md) shows how to get screen information of [xtd::forms::screen](../../src/xtd_forms/include/xtd/forms/screen.hpp) control.
 * [settings2](others/settings_example2/README.md) represents settings application.
 * [smileys](others/smileys/README.md) demonstrates the use of [xtd::forms::label](../../src/xtd.forms/include/xtd/forms/label.h) control.
+* [some_conttrols](others/some_conttrols/README.md) demonstrates the use of some controls.
 * [stopwatch_form](others/stopwatch_form/README.md) demonstrates the use of stopwatch class, [xtd::forms::label](../../src/xtd.forms/include/xtd/forms/label.h) and [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) controls.
 * [system_images2](others/system_images2/README.md) demonstrates the use of **xtd::drawing::system_images** class.
 * [system_images3](others/system_images3/README.md) demonstrates the use of **xtd::drawing::system_images** class.

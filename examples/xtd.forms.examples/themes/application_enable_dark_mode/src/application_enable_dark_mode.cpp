@@ -49,10 +49,7 @@ public:
 
     button1.parent(tab_page_buttons);
     button1.location({10, 10});
-    button1.text("Message");
-    button1.click += [&] {
-      message_box::show(*this, "Message with dark mode enabled...", "");
-    };
+    button1.text("Button");
 
     toggle_button1.parent(tab_page_buttons);
     toggle_button1.location({110, 10});

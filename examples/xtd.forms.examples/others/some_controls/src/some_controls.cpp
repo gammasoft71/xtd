@@ -10,9 +10,13 @@ namespace xtd {
 
 class form1 : public form {
 public:
+  static int main() {
+    xtd::forms::application::run(form1());
+  }
+
   form1() {
     client_size({650, 450});
-    text("Light theme example");
+    text("Some controls example");
     
     tab_control_controls.parent(*this);
     tab_control_controls.location({10, 10});
@@ -274,7 +278,4 @@ private:
   loading_indicator loading_indicator1;
 };
 
-int main() {
-  application::enable_light_mode();
-  xtd::forms::application::run(form1());
-}
+startup_(form1);
