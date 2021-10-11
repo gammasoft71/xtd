@@ -1,0 +1,7 @@
+/* Contains theme definitions. */
+/* Copyright (c) 2021 Gammasoft. All rights reserved. */
+
+.theme {
+  name: "Gnome dark";
+  description: "Contains Gnome dark Theme.";
+}

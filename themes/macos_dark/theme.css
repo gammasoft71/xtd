@@ -1,0 +1,7 @@
+/* Contains theme definitions. */
+/* Copyright (c) 2021 Gammasoft. All rights reserved. */
+
+.theme {
+  name: "macOS dark";
+  description: "Contains macOS dark Theme.";
+}

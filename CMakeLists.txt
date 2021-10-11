@@ -165,7 +165,7 @@ if (XTD_BUILD_TESTS_XTD_CORE OR XTD_BUILD_TESTS_XTD_DRAWING OR XTD_BUILD_TESTS_X
 endif ()
 
 # Projects
-add_projects(docs locale scripts src tests tools)
+add_projects(docs locale scripts src tests tools themes)
 
 # Updates export file
 xtd_update_export_file(src/xtd.3rdparty.call_stack/call_stack_export.h XTD_3RDPARTY_CALL_STACK_EXPORT call_stack_export_)
