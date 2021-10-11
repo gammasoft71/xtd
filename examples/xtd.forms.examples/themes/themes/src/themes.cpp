@@ -13,10 +13,7 @@ public:
     button1.parent(*this);
     button1.auto_size(true);
     button1.location({110, 10});
-    button1.text("Click me");
-    button1.click += [&] {
-      message_box::show(*this, "Message with dark mode enabled...", "");
-    };
+    button1.text("Button");
 
     list_box1.parent(*this);
     list_box1.location({10, 50});
