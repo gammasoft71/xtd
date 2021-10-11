@@ -1,4 +1,4 @@
-# macos light theme
+# macOS light theme
 
 Contains contains macOS light theme.
 
