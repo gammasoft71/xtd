@@ -16,7 +16,7 @@ Contains themes styles.
 ## Generic
 
 * [symbolic_dark](symbolic_dark) contains Symbolic dark theme.
-v* [symbolic_light](symbolic_light) contains Symbolic light theme.
+* [symbolic_light](symbolic_light) contains Symbolic light theme.
 * [xtd_dark](xtd_dark) contains xtd dark theme.
 * [xtd_light](xtd_light) contains xtd light theme.
 
