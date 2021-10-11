@@ -1,0 +1,7 @@
+/* Contains form definitions. */
+/* Copyright (c) 2021 Gammasoft. All rights reserved. */
+
+.form {
+  back-color: window;
+  fore-color: window-text;
+}
