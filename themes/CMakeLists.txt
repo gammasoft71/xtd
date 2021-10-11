@@ -10,5 +10,10 @@ add_projects(gnome_dark gnome_light macos_dark macos_light windows_dark windows_
 
 # Install
 if (XTD_INSTALL_RESOURCES)
-  install(DIRECTORY . DESTINATION share/xtd/themes)
+  install(DIRECTORY gnome_dark DESTINATION share/xtd/themes)
+  install(DIRECTORY gnome_light DESTINATION share/xtd/themes)
+  install(DIRECTORY macos_dark DESTINATION share/xtd/themes)
+  install(DIRECTORY macos_light DESTINATION share/xtd/themes)
+  install(DIRECTORY windows_dark DESTINATION share/xtd/themes)
+  install(DIRECTORY windows_light DESTINATION share/xtd/themes)
 endif ()
