@@ -16,9 +16,19 @@ Contains themes styles.
 ## Generic
 
 * [symbolic_dark](symbolic_dark) contains Symbolic dark theme.
-* [symbolic_light](symbolic_light) contains Symbolic light theme.
+v* [symbolic_light](symbolic_light) contains Symbolic light theme.
 * [xtd_dark](xtd_dark) contains xtd dark theme.
 * [xtd_light](xtd_light) contains xtd light theme.
+
+## Colors only
+
+* [black](black) contains black color theme.
+* [blue](blue) contains blue color theme.
+* [dark](dark) contains dark color theme.
+* [green](green) contains green color theme.
+* [light](light) contains light color theme.
+* [red](red) contains red color theme.
+* [white](white) contains white color theme.
 
 ## Old Operating System
 
