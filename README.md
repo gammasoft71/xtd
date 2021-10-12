@@ -4,7 +4,7 @@
 
 [![logo](docs/pictures/logo.png)](https://gammasoft71.wixsite.com/xtdpro)
 
-[![Language](https://img.shields.io/badge/language-c++-brightgreen.svg)](docs/portability.md#c++17)
+[![Language](https://img.shields.io/badge/language-C++17/20-brightgreen.svg)](docs/portability.md#c++17)
 [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](docs/license.md)
 [![Reference Guide](https://codedocs.xyz/gammasoft71/xtd.svg)](https://codedocs.xyz/gammasoft71/xtd/index.html)
 [![Download xtd](https://img.shields.io/sourceforge/dt/xtdpro.svg)](https://sourceforge.net/projects/xtdpro/files/latest/download)
