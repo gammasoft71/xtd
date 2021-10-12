@@ -1,15 +1,15 @@
 | [Home](home.md) | [News](news.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md)  | [Contact](contact.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-# First programs in xtd_forms
+# First programs in xtd.forms
 
-In this chapter, we will cover the basics needed to create xtd_forms applications. We will create our first simple example, show how to display an icon. Next we will create a simple example demonstrating usage of an event. Finally, we will see how widgets communicate in xtd_forms applications.
+In this chapter, we will cover the basics needed to create xtd.forms applications. We will create our first simple example, show how to display an icon. Next we will create a simple example demonstrating usage of an event. Finally, we will see how widgets communicate in xtd.forms applications.
 
 ## A simple application
 
-First we create the very basic xtd_forms program.
+First we create the very basic xtd.forms program.
 
 ```c++
-#include <xtd/xtd.forms>
+#include <xtd/xtd>
 
 namespace tutorial {
   class simple : public xtd::forms::form {
@@ -55,7 +55,7 @@ This example can be build on Windows, macOS or linux operating system with CMake
 cmake_minimum_required(VERSION 3.3)
 
 project(simple)
-find_package(xtd.forms REQUIRED)
+find_package(xtd REQUIRED)
 add_sources(src/simple.cpp)
 target_type(GUI_APPLICATION)
 ```
@@ -71,7 +71,7 @@ Figure: simple
 In this example, we provide an icon for our application. It became a standard to display a small icon in the upper left corner of the window. The icon is a graphical identity of the program.
 
 ```c++
-#include <xtd/xtd.forms>
+#include <xtd/xtd>
 
 namespace tutorial {
   class form_icon : public xtd::forms::form {
@@ -108,7 +108,7 @@ Figure: icon
 In the following example, we create a button on the form control. We will show, how to create a simple event handler.
 
 ```c++
-#include <xtd/xtd.forms>
+#include <xtd/xtd>
 
 namespace tutorial {
   class form_button : public xtd::forms::form {
@@ -127,7 +127,6 @@ namespace tutorial {
     }
 
     static void main() {
-      xtd::forms::application::enable_button_images();
       xtd::forms::application::run(form_button());
     }
     
@@ -159,13 +158,6 @@ button_quit.location(xtd::drawing::point(20, 20));
 
 It will be placed inside a form control. It will cause to display a small operating system dependent exit icon on the button. The label of the button is "Quit". The button is positioned manually at x=20, y=20 coordinates. The beginning of the coordinate system is at the upper left hand corner.
 
-
-```c++
-xtd::forms::application::enable_button_images();
-```
-
-By default, some operating systems do not display button images. With this method, we allow the display of the button image.
-
 ```c++
 button_quit.click += xtd::event_handler<xtd::forms::control&>(*this, &form_button::on_quit);
 ```
@@ -193,7 +185,7 @@ Figure: button
 It is important to know, how controls can communicate in application. Follow the next example.
 
 ```c++
-#include <xtd/xtd.forms>
+#include <xtd/xtd>
 
 namespace tutorial {
   class panel_right : public xtd::forms::panel {
