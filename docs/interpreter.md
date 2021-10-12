@@ -14,7 +14,7 @@ A visualization of the classes and objects participating in this pattern.
 
 ## Sample code
 
-This structural code demonstrates the Interpreter patterns, which using a defined grammer, provides the interpreter that processes parsed statements.
+This structural code demonstrates the Interpreter patterns, which using a defined grammar, provides the interpreter that processes parsed statements.
 
 ```c++
 

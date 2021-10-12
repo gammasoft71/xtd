@@ -19,7 +19,7 @@ The [C++](c++.md) programming language is one of the most widely used programmin
 
 # Programming languages
 
-There are currently several widely used programming languages. The following list is based on the [TIOBE](https://www.tiobe.com/tiobe-index) Programming Community Index. The numbers are from Jully 2020. As we can see, [C++](c++.md) still belongs to the most popular programming languages in the world.
+There are currently several widely used programming languages. The following list is based on the [TIOBE](https://www.tiobe.com/tiobe-index) Programming Community Index. The numbers are from July 2020. As we can see, [C++](c++.md) still belongs to the most popular programming languages in the world.
 
 | Position | Language      | Ratings |
 |----------|---------------|---------|
@@ -48,7 +48,7 @@ Python is the most widely used scripting language.
 
 # Multiplatform programming
 
-Today, multiplatform programming is a buzzword. Most languages and libraries want to be multiplatform. xtd_foms was created as a multiplatform tool from the beginning. Most developers choose among these options. If it is possible, they go to the web. Or they can use Qt, wxWidgets, [xtd](https://github.com/gammasoft71/xtd), Swing, or SWT. The Qt library and wxWisgets are the closest competitors to [xtd](https://github.com/gammasoft71/xtd).
+Today, multiplatform programming is a buzzword. Most languages and libraries want to be multiplatform. xtd_forms was created as a multiplatform tool from the beginning. Most developers choose among these options. If it is possible, they go to the web. Or they can use Qt, wxWidgets, [xtd](https://github.com/gammasoft71/xtd), Swing, or SWT. The Qt library and wxWidgets are the closest competitors to [xtd](https://github.com/gammasoft71/xtd).
 
 # Install
 

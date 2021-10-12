@@ -8,7 +8,7 @@
 
 ## See also
 
-* [Tutorial](tutorual.md)
+* [Tutorial](tutorial.md)
 * [Documentation](documentation.md)
 
 ______________________________________________________________________________________________

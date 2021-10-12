@@ -6,7 +6,7 @@ This section provides broad guidelines on parameter design, including sections w
 
 **✔️ DO** use the least derived parameter type that provides the functionality required by the member.
 
-For example, suppose you want to design a method that chnage the size of any control. Such a method should take xtd::forms::control as the parameter, not xtd::forms::button or xtd::forms::text_box, for example.
+For example, suppose you want to design a method that change the size of any control. Such a method should take xtd::forms::control as the parameter, not xtd::forms::button or xtd::forms::text_box, for example.
 
 **❌ DO NOT** use reserved parameters.
 

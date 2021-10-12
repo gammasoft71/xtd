@@ -2,7 +2,7 @@
 
 # Portability
 
-The Portability section provide informations about Operating System suported, Compilers and Development Environment tools.
+The Portability section provide informations about Operating System supported, Compilers and Development Environment tools.
 
 ## In this section
 
@@ -51,7 +51,7 @@ Actually xtd run on Windows, macOS, Linux, iOS and Android Operating System.
 
 #### Debian 9.2.1 or later
 
-[![Debuan](pictures/os/Debian.png)](https://debian.org)
+[![Debian](pictures/os/Debian.png)](https://debian.org)
 
 #### Elementary OS 0.4 or later
 

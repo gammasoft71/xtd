@@ -39,7 +39,7 @@ int main(int argc, char* argv[]) {
 
 For generic test_class actually no helper is provided.
 
-The folowing example show how to register a generic test class without helper:
+The following example show how to register a generic test class without helper:
 
 ```c++
 #include <xtd/tunit>
@@ -50,10 +50,10 @@ namespace unit_tests {
   template<typename T>
   class test;
 
-  // Register generic test class with 'std:string' as generic partmeter.
+  // Register generic test class with 'std:string' as generic parameter.
   test_class_attribute<test<std::string>> test_class_string_attr {"test<string>"};
 
-  // Register generic test class with 'int' as generic partmeter.
+  // Register generic test class with 'int' as generic parameter.
   test_class_attribute<test<int>> test_class_int_attr {"test<int>"};
 
   // Create new test fixture inherited test_class.
@@ -103,7 +103,7 @@ int main(int argc, char* argv[]) {
 ## See also
 
 * [Writing test applications](writing_test_applications.md)
-* [Writing applicattions](writing_applications.md)
+* [Writing applications](writing_applications.md)
 * [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
