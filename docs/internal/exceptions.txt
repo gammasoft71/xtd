@@ -28,7 +28,7 @@ xtd
       file_format_exception *
     ioexception *
       directory_not_found_exception *
-      drive_not_found_excepttion *
+      drive_not_found_exception *
       end_of_stream_exception *
       file_load_exception *
       file_not_found_exception *
@@ -77,13 +77,13 @@ mscorelib
       HostProtectionException
       IOException
         DirectoryNotFoundException
-        DriveNotFoundExcepttion
+        DriveNotFoundException
         EndOfStreamException
         FileLoadException
         File_not_foundException
         PathTooLongException
       IndexOutOfRangeException
-      InsufisantExecutionStackException
+      InsufficientExecutionStackException
       InvalidCastException
       InvalidOperationException
         ObjectDisposedException
@@ -112,7 +112,7 @@ mscorelib
       ThreadAbortException
       ThreadInterruptException
       ThreadStartException
-      ThreadStateExcpeiotn
+      ThreadStateException
       TimeOutException
       TimeZoneNotFoundException
       TypeInitializationException
@@ -121,7 +121,7 @@ mscorelib
         EntryPointNotFoundException
         TypeAccessException
       TypeUnloadException
-      UnauthorizedAccessEsception
+      UnauthorizedAccessException
       VerificationException
       XmlSyntaxException
     
