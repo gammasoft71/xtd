@@ -8,11 +8,13 @@
 [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](docs/license.md)
 [![Reference Guide](https://codedocs.xyz/gammasoft71/xtd.svg)](https://codedocs.xyz/gammasoft71/xtd/index.html)
 [![Download xtd](https://img.shields.io/sourceforge/dt/xtdpro.svg)](https://sourceforge.net/projects/xtdpro/files/latest/download)
+<!---
 [![Windows](https://img.shields.io/badge/os-Windows-004080.svg)](docs/portability.md)
 [![macOS](https://img.shields.io/badge/os-macOS-004080.svg)](docs/portability.md)
 [![Linux](https://img.shields.io/badge/os-Linux-004080.svg)](docs/portability.md)
 [![iOS](https://img.shields.io/badge/os-iOS-004080.svg)](docs/portability.md)
 [![android](https://img.shields.io/badge/os-android-004080.svg)](docs/portability.md)
+--->
 
 
 ## Continuous Integration build status
