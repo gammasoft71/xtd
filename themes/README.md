@@ -2,7 +2,7 @@
 
 Contains themes styles.
 
-## Current Operating System
+## Current Operating System / Desktop Environment
 
 * [gnome_dark](gnome_dark.css) contains Gnome dark theme.
 * [gnome_light](gnome_light.css) contains Gnome dark theme.
