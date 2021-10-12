@@ -28,6 +28,7 @@ namespace xtd {
       class brush;
       class icon;
       class image;
+      class system_colors;
       /// @endcond
       
       /// @brief Contains toolkit native API.
@@ -41,6 +42,7 @@ namespace xtd {
         friend xtd::drawing::native::brush;
         friend xtd::drawing::native::icon;
         friend xtd::drawing::native::image;
+        friend xtd::drawing::native::system_colors;
         friend xtd::forms::native::application;
       protected:
         static intptr_t initialize();

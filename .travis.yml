@@ -11,7 +11,7 @@ addons:
 
 matrix:
   include:
-  - env: TEST="Build xtd 0.1.0 on macOS"
+  - env: TEST="Build xtd 0.2.0 on macOS"
     os: osx
     osx_image: xcode12.2
     script: scripts/travis/build_xtd_on_macos.sh

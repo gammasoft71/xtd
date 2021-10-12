@@ -307,10 +307,21 @@ void application::theme(const xtd::ustring& theme_name) {
 
 void application::theme(const xtd::forms::theme& theme) {
   xtd::forms::theme::current_theme(theme);
+
+  std::function<void(xtd::forms::control&)> update_control = [&](xtd::forms::control& control) {
+    control.back_color(nullptr);
+    control.fore_color(nullptr);
+    for (auto& child_control : control.controls())
+      update_control(child_control.get());
+  };
+
   for (auto form : open_forms()) {
     form.get().back_color(theme_colors::current_theme().control());
     form.get().fore_color(theme_colors::current_theme().control_text());
+    for (auto& child_control : form.get().controls())
+      update_control(child_control.get());
     form.get().invalidate(true);
+    form.get().refresh();
   }
 }
 

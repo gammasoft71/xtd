@@ -2,7 +2,7 @@
 #
 # Changes to this file may cause incorrect behavior and will be lost if the file is regenerated.
 
-version: 0.1.0.{build}
+version: 0.2.0.{build}
 image: Visual Studio 2019
 
 environment:
