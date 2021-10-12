@@ -72,7 +72,7 @@ if (${STRING_FOUND} EQUAL -1)
     "jobs:\n"
     "  build:\n"
     "    machine:\n"
-    "      image: ubuntu-2004:202010-01\n"
+    "      image: ubuntu-2004:202104-01\n"
     "      \n"
     "    steps:\n"
     "      - checkout\n"
