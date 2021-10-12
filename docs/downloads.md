@@ -1,6 +1,8 @@
 | [Home](home.md) | [News](news.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md)  | [Contact](contact.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-# Download the latest stable xtd version
+# Download
+
+## Download the latest stable xtd version
 
 You can download latest stable version on [SourceForge](https://sourceforge.net/projects/xtdpro/).
 
@@ -8,7 +10,7 @@ You can download latest stable version on [SourceForge](https://sourceforge.net/
 
 See [release notes](release_notes.md) to known the latest xtd version.
 
-# Clone the latest xtd commit
+## Clone the latest xtd commit
 
 Or clone latest development version on [GitHub](https://github.com/gammasoft71/xtd).
 
@@ -16,7 +18,7 @@ Or clone latest development version on [GitHub](https://github.com/gammasoft71/x
 git clone https://github.com/gammasoft71/xtd.git
 ```
 
-# Libraries dependency
+## Libraries dependency
 
 xtd is currently in development mode and the only [xtd.forms.native.wxwidgets](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.wxwidgets/README.md) backend is supported.
 
