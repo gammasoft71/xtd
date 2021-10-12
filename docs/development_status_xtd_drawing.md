@@ -77,9 +77,9 @@
 |-------------------------------------------------------------------------------------|--------------|---------------------------------------|
 | [color_palette](../src/xtd.drawing/include/xtd/drawing/imaging/color_palette.h)     | class        | ![progress](pictures/progress100.png) |
 | [frame_dimension](../src/xtd.drawing/include/xtd/drawing/imaging/frame_dimension.h) | class        | ![progress](pictures/progress100.png) |
-| [image_flags](../src/xtd.drawing/include/xtd/drawing/imaging/image_flags.h)         | enumerration | ![progress](pictures/progress100.png) |
+| [image_flags](../src/xtd.drawing/include/xtd/drawing/imaging/image_flags.h)         | enumeration | ![progress](pictures/progress100.png) |
 | [image_format](../src/xtd.drawing/include/xtd/drawing/imaging/image_format.h)       | class        | ![progress](pictures/progress100.png) |
-| [pixel_format](../src/xtd.drawing/include/xtd/drawing/imaging/pixel_format.h)       | enumerattion | ![progress](pictures/progress100.png) |
+| [pixel_format](../src/xtd.drawing/include/xtd/drawing/imaging/pixel_format.h)       | enumeration | ![progress](pictures/progress100.png) |
 | [property_item](../src/xtd.drawing/include/xtd/drawing/imaging/property_item.h)     | class        | ![progress](pictures/progress100.png) |
 
 ## xtd::drawing::text

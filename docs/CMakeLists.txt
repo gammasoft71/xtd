@@ -31,7 +31,7 @@ add_sources(
   controls.md
   custom_controls.md
   decorator.md
-  dependences.md
+  dependencies.md
   design_guidelines.md
   design_guidelines_for_exception.md
   designing_for_extensibility.md

@@ -8,7 +8,7 @@
 * [Adding a Control and Handling an Event](#adding-a-control-and-handling-an-event)
 * [Example](#example)
 
-This tutorial describe the basic steps that you must complete to create and run a GUI application from the command line.
+This tutorial describes the basic steps that you must complete to create and run a GUI application from the command line.
 
 ## Create GUI
 
@@ -66,7 +66,7 @@ Project(form1)
 find_package(xtd REQUIRED)
 ```
 
-3. Add build rules for the he project.
+3. Add build rules for the project.
 
 ```cmake
 add_sources(form1.cpp)
@@ -192,7 +192,7 @@ target_type(GUI_APPLICATION)
 
 ## See also
 
-* [Writing applicattions](writing_applications.md)
+* [Writing applications](writing_applications.md)
 * [Documentation](documentation.md)
 
 ______________________________________________________________________________________________

@@ -2,7 +2,7 @@
 
 # Adapter
 
-The Adapter design pattern converts the interface of a class into another interface clients expect. This design pattern lets classes work together that couldn‘t otherwise because of incompatible interfaces.
+The Adapter design pattern converts the interface of a class into another interface clients expect. This design pattern lets classes work together that couldn't otherwise because of incompatible interfaces.
 
 Usage     ![Usage](pictures/usage4.png)     Medium-high
 

@@ -126,7 +126,7 @@
 ## Notes
 * If flat_style == xtd::forms::flat_style::system, height must be 34 on Gtk.
 
-## xtd::forms::dot_mattrix_display
+## xtd::forms::dot_matrix_display
 
 |OS           | width  | height |
 |-------------|--------|--------|
@@ -312,7 +312,7 @@
 | Linux Gnome |    152 |      4 |
 | xtd         |    100 |     23 |
 
-## xtd::forms::propety_grid
+## xtd::forms::property_grid
 
 |OS           | width  | height |
 |-------------|--------|--------|
@@ -463,7 +463,7 @@
 | xtd         |     18 |     34 |
 
 ## Notes
-* If flat_style == xtd::forms::flat_style::system, wdth must be 71 on Gtk.
+* If flat_style == xtd::forms::flat_style::system, width must be 71 on Gtk.
 
 ## xtd::forms::user_control
 

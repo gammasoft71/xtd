@@ -16,7 +16,7 @@ Nouns and noun phrases should be used rarely and they might indicate that the ty
 
 **✔️ CONSIDER** ending the name of derived classes with the name of the base class.
 
-This is very readable and explains the relationship clearly. Some examples of this in code are: argument_out_of_range_exception, which is a kind of exception, and serializable_attribute, which is a kind of attribute. However, it is important to use reasonable judgment in applying this guideline; for example, the button class is a kind of control event, although control doesn’t appear in its name.
+This is very readable and explains the relationship clearly. Some examples of this in code are: argument_out_of_range_exception, which is a kind of exception, and serializable_attribute, which is a kind of attribute. However, it is important to use reasonable judgment in applying this guideline; for example, the button class is a kind of control event, although control doesn't appear in its name.
 
 **✔️ DO** prefix interface names with the letter "i", to indicate that the type is an interface.
 
@@ -71,20 +71,20 @@ For example, a parameter constrained to isession might be called session_t.
 | xtd::event_args         | **✔️ DO** add the suffix "_event_args".                                                             |
 | xtd::event_handler      | **✔️ DO** add the suffix "_event_handler".                                                          |
 | enum class              | **❌ DO NOT** add the suffix "_enum" or "_flag".                                                    |
-| xtd::system_exception   | **✔️ DO** add the suffix "_exception".                                                              |
-| std::arrray             | **✔️ DO** add the suffix "_collection" for seequence container.                                     |
-| std::vector             | **✔️ DO** add the suffix "_collection" for seequence container.                                     |
-| std::deque              | **✔️ DO** add the suffix "_collection" for seequence container.                                     |
-| std::forward_list       | **✔️ DO** add the suffix "_collection" for seequence container.                                     |
-| std::list               | **✔️ DO** add the suffix "_collection" for seequence container.                                     |
-| std::set                | **✔️ DO** add the suffix "_dictionary" for associative conttainer.                                  |
-| std::multiset           | **✔️ DO** add the suffix "_dictionary" for associative conttainer.                                  |
-| std::map                | **✔️ DO** add the suffix "_dictionary" for associative conttainer.                                  |
-| std::multimap           | **✔️ DO** add the suffix "_dictionary" for associative conttainer.                                  |
-| std::unordered_set      | **✔️ DO** add the suffix "_dictionary" for unordered associative conttainer.                        |
-| std::unordered_multiset | **✔️ DO** add the suffix "_dictionary" for unordered associative conttainer.                        |
-| std::unordered_map      | **✔️ DO** add the suffix "_dictionary" for unordered associative conttainer.                        |
-| std::unordered_multimap | **✔️ DO** add the suffix "_dictionary" for unordered associative conttainer.                        |
+| xtd::system_exception| **✔️ DO** add the suffix "_exception".                                                              |
+| std::array              | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
+| std::vector             | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
+| std::deque              | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
+| std::forward_list       | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
+| std::list               | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
+| std::set                | **✔️ DO** add the suffix "_dictionary" for associative container.                                  |
+| std::multiset           | **✔️ DO** add the suffix "_dictionary" for associative container.                                  |
+| std::map                | **✔️ DO** add the suffix "_dictionary" for associative container.                                  |
+| std::multimap           | **✔️ DO** add the suffix "_dictionary" for associative container.                                  |
+| std::unordered_set      | **✔️ DO** add the suffix "_dictionary" for unordered associative container.                        |
+| std::unordered_multiset | **✔️ DO** add the suffix "_dictionary" for unordered associative container.                        |
+| std::unordered_map      | **✔️ DO** add the suffix "_dictionary" for unordered associative container.                        |
+| std::unordered_multimap | **✔️ DO** add the suffix "_dictionary" for unordered associative container.                        |
 | std::span               | **✔️ DO** add the suffix "_span".                                                                   |
 | std::istream            | **✔️ DO** add the suffix "_stream".                                                                 |
 | std::ostream            | **✔️ DO** add the suffix "_stream".                                                                 |

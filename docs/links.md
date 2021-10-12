@@ -21,11 +21,11 @@ The primary objective is to have a good specification of C and C++. That is, thi
 
 Build desktop Windows apps using the Win32 API.
 
-# Apple developper
+# Apple developer
 
 [https://developer.apple.com](https://developer.apple.com)
 
-News, updates, documentation, softaware downloads and developper program for apple developper.
+News, updates, documentation, software downloads and developer program for Apple developer.
 
 # GTK 4 Reference manual
 
@@ -45,7 +45,7 @@ Unicode Character Table.
 
 This page is a collection of obscure C++ features, gathered over the years as I've explored different corners of the language. C++ is very big and I'm always learning more about it. Hopefully you'll learn something from this page even if you already know C++ pretty well. The features below are roughly ordered from least to most obscure.
 
-# dofactory
+# factory
 
 [http://www.dofactory.com/net/design-patterns](http://www.dofactory.com/net/design-patterns)
 
