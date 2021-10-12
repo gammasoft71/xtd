@@ -8,7 +8,7 @@
 * [Portability](docs/portability.md) provides information about C++, libraries dependency, Operating System supported, Compilers and Development Environment tools.
 * [Examples](examples/README.md) provides some examples.
 
-## To the contributors
+## Contributing
 
 The [authors file](AUTHORS.md) lists contributors together with contact information. If you make a contribution, please add yourself to the list.
 
