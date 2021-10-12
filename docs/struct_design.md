@@ -10,7 +10,7 @@ Following this guideline allows arrays of structs to be created without having t
 
 **❌ DO NOT** define mutable value types.
 
-Mutable value types have several problems. For example, when a property getter returns a value type, the caller receives a copy. Because the copy is created implicitly, developers might not be aware that they are mutating the copy, and not the original value. Also, some languages (dynamic languages, in particular) have problems using mutable value types because even local variables, when dereferenced, cause a copy to be made.
+Mutable value types have several problems. For example, when a property getter returns a value type, the caller receives a copy. Because the copy is created implicitly, developers might not be aware that they are mutating the copy, and not the original value. Also, some languages (dynamic languages, in particular) have problems using mutable value types because even local variables, when dereference, cause a copy to be made.
 
 **✔️ DO** ensure that a state where all instance data is set to zero, false, or null (as appropriate) is valid.
 

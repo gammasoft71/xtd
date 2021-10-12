@@ -4,7 +4,7 @@
 
 Exception-throwing guidelines described in this section require a good definition of the meaning of execution failure. Execution failure occurs whenever a member cannot do what it was designed to do (what the member name implies). For example, if the open_file method cannot return an opened file handle to the caller, it would be considered an execution failure.
 
-Most developers have become comfortable with using exceptions for usage errors such as division by zero or null references. In the Framework, exceptions are used for all error conditions, including execution errors.
+Most developers have become comfortable using exceptions for errors such as division by zero or null references. In the Framework, exceptions are used for all error conditions, including execution errors.
 
 **❌ DO NOT** return error codes.
 

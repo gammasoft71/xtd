@@ -8,7 +8,7 @@ You can download latest stable version on [SourceForge](https://sourceforge.net/
 
 [![Downloadxtd](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/xtdpro/files/latest/download)
 
-See [release notes](release_notes.md) to known the latest xtd version.
+See [release notes](release_notes.md) to know the latest xtd version.
 
 ## Clone the latest xtd commit
 
@@ -128,7 +128,7 @@ Let the gui tool drive you for create your new project.
 
 * First step choose "Create a new project" button.
 * Choose your project template then click to "Next" button
-* Choose the name for your new project and the path where the project will be create, and finaly click "Create button" to create it.
+* Choose the name for your new project and the path where the project will be create, and finally click "Create button" to create it.
 
 ![xtdc-gui](pictures/xtdc-gui.gif)
 
@@ -143,7 +143,7 @@ xtdc new gui hello_world
 cd hello_world
 xtdc open
 ```
-"xtdc" command line tool will creating hello_world gui application, generate Visual Studio sultion if you running it on Windows, Xcode project if you are on macOS or Code::Blocks project if you are on Linux. If you are on Windows, Visual Studio will running with your new project. If you are on macOS, Xcode will running with your new project. If you are on Linux, Code::Blocks will running with your project.
+"xtdc" command line tool for creating hello_world gui application, generate Visual Studio solution if you running it on Windows, Xcode project if you are on macOS or Code::Blocks project if you are on Linux. If you are on Windows, Visual Studio will be running with your new project. If you are on macOS, Xcode will be running with your new project. If you are on Linux, Code::Blocks will be running with your project.
 
 ## Remarks
 

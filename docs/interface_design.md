@@ -18,11 +18,11 @@ If you need to mark a class as having a specific characteristic (marker), in gen
 
 **✔️ DO** provide at least one type that is an implementation of an interface.
 
-Doing this helps to validate the design of the interface. For example, xtd::forms::buttton is an implementation of the xttd::forms::ibutton_conttrol interface.
+Doing this helps to validate the design of the interface. For example, xtd::forms::button is an implementation of the xtd::forms::ibutton_control interface.
 
-**✔️ DO** provide at least one API that consumes each interface you define (a method taking the interface as a parameter or a property typed as the interface).
+**✔️ DO** provide at least one API that consumes each interface you define (a method taking the interface as a parameter, or a property typed as the interface).
 
-Doing this helps to validate the interface design. For example, xtd::forms::buttton is an implementation of the xttd::forms::ibutton_conttrol interface.
+Doing this helps to validate the interface design. For example, xtd::forms::button is an implementation of the xtd::forms::ibutton_control interface.
 
 **❌ DO NOT** add members to an interface that has previously shipped.
 

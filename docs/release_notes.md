@@ -10,7 +10,7 @@
 ## xtd
 
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) CMake commands - Specific CMake commands to manage project, assembly informations and application properties
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) countinuous inegration build - Countinuous inegration build for Windows, macOs anddd linux (appveyor, CirclleCI and travisCI).
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) continuous integration build - Continuous integration build for Windows, MacOS and linux (appveyor, CircleCI and travisCI).
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) documentation - Markdown documentation.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) installation - Install scripts for Windows, macOS and linux.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) packages (vcpkg, brew, apt) - xtd packages.
@@ -30,7 +30,7 @@
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) arithmetic_exception - The exception that is thrown for errors in an arithmetic, casting, or conversion operation.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) as - Casts a type into another type.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) async_callback - References a method to be called when a corresponding asynchronous operation completes.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) bacground_color - Sets the background color of the console.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) background_color - Sets the background color of the console.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) beep - Represent beep output manipulator class.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) bit_converter - Converts base data types to an std::vector of bytes, and an std::vector of bytes to base data types.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) block_scope - The specified expression is cleared automatically when the scope is ended.
@@ -103,7 +103,7 @@
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) key_not_found_exception - The exception that is thrown when the key specified for accessing an element in a collection does not match any key in the collection.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) vector_list - Represents a collection of std::any.
 
-#### Speialized
+#### Specialized
 
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) string_map - Implements a std::map with the key and the value strongly typed to be strings.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) string_pair - Implements a std::pair with the key and the value strongly typed to be strings.
@@ -250,7 +250,7 @@
 
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) css_reader - Represent a css reader class.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) css_writer - Represent a css writer class.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) property - Representtt a css property class.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) property - Represented a css property class.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) property_map - Represent a css property collection.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) selector - Represent a css selector class.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) selector_map - Represent a css selector collection.
@@ -450,7 +450,7 @@
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) timer - Implements a timer that raises an event at user-defined intervals. This timer is optimized for use in Windows Forms applications and must be used in a window.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) use_wait_cursor - Creates a use wait cursor class.
 
-### Datas
+### Data
 
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) binding_navigator - Represents the navigation and manipulation user interface (UI) for controls on a form that are bound to data.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) binding_source - Encapsulates the data source for a form.
@@ -507,12 +507,12 @@
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) rich_text_box_renderer - Provides text box renderer methods.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) roller_renderer - Provides roller renderer methods.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) sevent_segment_display_renderer - Provides seven segment display renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) sixteen_segment_display_renderer - Provides sixteen segement display renderer methods.
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) sixteen_segment_display_renderer - Provides sixteen segment display renderer methods.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) splitter_renderer - Provides splitter renderer methods.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) switch_button_renderer - Provides switch buttton renderer methods.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) switch_button_renderer - Provides switch button renderer methods.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) text_box_renderer - Provides text box renderer methods.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) tool_tip_renderer - Provides tool tip renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) tool_strip_progresse_bar_renderer - Provides strip progress bar renderer methods.
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) tool_strip_progress_bar_renderer - Provides strip progress bar renderer methods.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) toggle_button_renderer - Provides toggle button renderer methods.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) track_bar_renderer - Provides track bar renderer methods.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) tree_view_renderer - Provides tree view renderer methods.
@@ -533,7 +533,7 @@
 ### Event listeners
 
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) event_listener - Represents event listener.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) ostream_event_listener - Represents ostrzam event listener.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) ostream_event_listener - Represents ostream event listener.
 
 ### Assertions
 
@@ -546,7 +546,7 @@
 ### Validations
 
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) valid - Contains generic validations.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) collection_valid - Contains specific colection validations.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) collection_valid - Contains specific collection validations.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) directory_valid - Contains specific directory validations.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) file_valid - Contains specific file validations.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) string_valid - Contains specific string validations.
@@ -588,7 +588,7 @@
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) macos dark - macOS dark theme css files.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) macos light - macOS light theme css files.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) windows dark - Windows dark theme css files.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) wondows light - Windows light theme css files.
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) windows light - Windows light theme css files.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) xtd dark - xtd dark theme css files.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) xtd light - xtd light theme css files.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) light - Light color theme css files.

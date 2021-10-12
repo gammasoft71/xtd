@@ -2,11 +2,11 @@
 
 # Writing applications
 
-This tutorial describe the basic steps that you must complete to create and run a console, GUI or test application from the command line.
+This tutorial describes the basic steps that you must complete to create and run a console, GUI or test application from the command line.
 
 ## In this section
 
-* [Writing console applicaiton](writing_console_application.md) describes the basic steps that you must complete to create and run a console application from the command line.
+* [Writing console application](writing_console_application.md) describes the basic steps that you must complete to create and run a console application from the command line.
 * [Writing GUI application](writing_gui_application.md) describes the basic steps that you must complete to create and run a xtd.forms application from the command line.
 * [Writing test application](writing_test_application.md) describes the basic steps that you must complete to create and run a xtd.tunit unitests application from the command line.
 * [Running test](running_test.md) provides running xtd.tunit test documentation.
