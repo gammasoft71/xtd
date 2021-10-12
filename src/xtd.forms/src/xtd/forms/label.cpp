@@ -108,7 +108,7 @@ void label::on_paint(paint_event_args& e) {
       case content_alignment::bottom_right: string_format.line_alignment(xtd::drawing::string_alignment::far); string_format.alignment(xtd::drawing::string_alignment::far); break;
       default: break;
     }
-    e.graphics().draw_string(text_, font(), xtd::drawing::solid_brush(enabled() ? fore_color() : system_colors::gray_text()), xtd::drawing::rectangle(0, 0, client_size().width(), client_size().height()), string_format);
+    e.graphics().draw_string(text_, font(), xtd::drawing::solid_brush(enabled() ? fore_color() : application::theme().theme_colors().gray_text()), xtd::drawing::rectangle(0, 0, client_size().width(), client_size().height()), string_format);
   }
   control::on_paint(e);
 }

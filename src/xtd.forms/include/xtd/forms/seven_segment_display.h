@@ -4,6 +4,7 @@
 #pragma once
 #include <xtd/argument_out_of_range_exception.h>
 #include <xtd/drawing/system_colors.h>
+#include "application.h"
 #include "control.h"
 #include "segments.h"
 #include "segment_style.h"
@@ -145,7 +146,7 @@ namespace xtd {
         control::on_paint(e);
         if (back_color() != default_back_color()) e.graphics().clear(back_color());
         if (show_back_segment_) draw_back_digit(e.graphics());
-        auto color = enabled() ? fore_color() : drawing::system_colors::gray_text();
+        auto color = enabled() ? fore_color() : application::theme().theme_colors().gray_text();
         if ((value_ & forms::segments::dp) == forms::segments::dp) draw_dp(e.graphics(), color);
         if ((value_ & forms::segments::pc) == forms::segments::pc) draw_pc(e.graphics(), color);
         if ((value_ & forms::segments::a) == forms::segments::a) draw_segment_a(e.graphics(), color);
