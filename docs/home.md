@@ -6,7 +6,7 @@
 
 # Latest news
 
-* [October 10, 2021 - Release xtd 0.1.0 (beta)](news.md#october-10-2021-release-xtd-010-beta) 
+* [Release xtd 0.1.0 (beta) - October 10, 2021](news.md#release-xtd-010-beta-october-10-2021) 
 
 # xtd is ...
 
