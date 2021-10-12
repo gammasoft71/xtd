@@ -2,12 +2,12 @@
 
 # Ignore test method (ignore_test_method)
 
-Comming soon...
+Coming soon...
 
 ## See also
 
 * [Writing test applications](writing_test_applications.md)
-* [Writing applicattions](writing_applications.md)
+* [Writing applications](writing_applications.md)
 * [Documentation](documentation.md)
 
 ______________________________________________________________________________________________

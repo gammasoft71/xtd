@@ -28,7 +28,7 @@ If you don’t explicitly declare any constructors on a type, C++ language will 
 
 Adding a parameterized constructor to a class prevents the compiler from adding the default constructor. This often causes accidental breaking changes.
 
-**❌ AVOID** calling virtual members on an object inside its constructor. Calling a virtual member will not supported by C++.
+**❌ AVOID** calling virtual members on an object inside its constructor. Calling a virtual member is not supported by C++.
 
 # See also
 ​

@@ -4,7 +4,7 @@
 
 Although properties are technically similar to methods, they are quite different in terms of their usage scenarios.
 
-**✔️ DO** create get-only (const)) properties if the caller should not be able to change the value of the property.
+**✔️ DO** create get-only (const) properties if the caller should not be able to change the value of the property.
 
 Keep in mind that if the type of the property is a mutable reference type, the property value can be changed even if the property is get-only.
 

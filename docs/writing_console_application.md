@@ -8,7 +8,7 @@
 * [Adding a write line and read line](#adding-a-write-line-and-read-line)
 * [Example](#example)
 
-This tutorial describe the basic steps that you must complete to create and run a console application from the command line.
+This tutorial describes the basic steps that you must complete to create and run a console application from the command line.
 
 ## Create console
 
@@ -89,15 +89,15 @@ xtdc run
 
 ## Adding a write line and read line
 
-The previous procedure steps demonstrated how to just create a basic consolecthat compiles and runs.
+The previous procedure steps demonstrated how to just create a basic console that compiles and runs.
 
-### To change background and forground colors and write and read line with the console
+### To change background and foreground colors and write and read line with the console
 
 1. Change background color
 2. Change foreground color
 3. Write desired text to the console.
 4. Ask user and write result in **name**.
-5. Write formated result to the console.
+5. Write formatted result to the console.
 
 The following code example demonstrates how to write and read with the console.
 
@@ -157,7 +157,7 @@ target_type(CONSOLE_APPLICATION)
 
 ## See also
 
-* [Writing applicattions](writing_applications.md)
+* [Writing applications](writing_applications.md)
 * [Documentation](documentation.md)
 
 ______________________________________________________________________________________________

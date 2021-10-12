@@ -14,7 +14,7 @@ Version 0.1.0 (beta) March 20th 2019
 
 [added] immutable_base string class.
 
-[added] immutable string litteral operators.
+[added] immutable string literal operators.
 
 [added] istring type.
 

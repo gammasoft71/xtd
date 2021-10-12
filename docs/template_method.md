@@ -14,7 +14,7 @@ A visualization of the classes and objects participating in this pattern.
 
 ## Sample code
 
-This structural code ddemonstrates the Template Method which provides a skeleton calling sequence of methods. One or more steps can be deferred to subclasses which implement these steps without changing the overall calling sequence.This structural code ddemonstrates the Template Method which provides a skeleton calling sequence of methods. One or more steps can be deferred to subclasses which implement these steps without changing the overall calling sequence.
+This structural code demonstrates the Template Method which provides a skeleton calling sequence of methods. One or more steps can be deferred to subclasses which implement these steps without changing the overall calling sequence.This structural code demonstrates the Template Method which provides a skeleton calling sequence of methods. One or more steps can be deferred to subclasses which implement these steps without changing the overall calling sequence.
 
 ```c++
 

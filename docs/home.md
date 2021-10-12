@@ -20,7 +20,7 @@
 
 # ... composed of several libraries
 
-These libreries are grouped by theme :
+These libraries are grouped by theme :
 
 - **system** : The *xtd.core* library is modern C++17/20 libraries of classes, interfaces, and value types that provide access to system functionality. It is the foundation on which c++ applications, components, and controls are built.
 - **drawing** : The *xtd.drawing* library contains types that support basic GDI+ graphics functionality. Child namespaces support advanced two-dimensional and vector graphics functionality, advanced imaging functionality, and print-related and typographical services. A child namespace also contains types that extend design-time user-interface logic and drawing.
@@ -46,7 +46,7 @@ See [xtd libraries hierarchy](hierarchy.md).
 # Getting Started
 
 * [Installation](downloads.md) provides download and install documentation.
-* [Portability](portability.md) provides information about C++, libraries dependency, Operating System suported, Compilators and Devepment Environment tools.
+* [Portability](portability.md) provides information about C++, libraries dependency, Operating System supported, Compilers and Development Environment tools.
 * [Examples](../examples/README.md) provides some examples.
 
 ______________________________________________________________________________________________

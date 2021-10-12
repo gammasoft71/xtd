@@ -172,8 +172,8 @@
 | [current_stack_frame_](../src/xtd.core/include/xtd/diagnostics/stack_frame.h)                        | keyword      | ![progress](pictures/progress100.png) |
 | [data_received_event_args](../src/xtd.core/include/xtd/diagnostics/data_received_event_args.h)       | class        | ![progress](pictures/progress100.png) |
 | [data_received_event_handler](../src/xtd.core/include/xtd/diagnostics/data_received_event_handler.h) | delegate     | ![progress](pictures/progress100.png) |
-| [debuug](../src/xtd.core/include/xtd/diagnostics/debug.h)                                            | static clas  | ![progress](pictures/progress100.png) |
-| [debugger](../src/xtd.core/include/xtd/diagnostics/debugger.h)                                       | static clas  | ![progress](pictures/progress100.png) |
+| [debug](../src/xtd.core/include/xtd/diagnostics/debug.h)                                             | static class | ![progress](pictures/progress100.png) |
+| [debugger](../src/xtd.core/include/xtd/diagnostics/debugger.h)                                       | static class | ![progress](pictures/progress100.png) |
 | [default_trace_listener](../src/xtd.core/include/xtd/diagnostics/default_trace_listener.h)           | class        | ![progress](pictures/progress100.png) |
 | [event_log](../src/xtd.core/include/xtd/diagnostics/event_log.h)                                     | class        | ![progress](pictures/progress0.png)   |
 | [event_type_filter](../src/xtd.core/include/xtd/diagnostics/event_type_filter.h)                     | class        | ![progress](pictures/progress100.png) |

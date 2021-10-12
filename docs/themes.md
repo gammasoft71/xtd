@@ -40,7 +40,7 @@ A control can have several style modes ([xtd::forms::flat_style](../src/xtd.form
 
 You can create your owner themes.
 
-Comming soon...
+Coming soon...
 
 ______________________________________________________________________________________________
 

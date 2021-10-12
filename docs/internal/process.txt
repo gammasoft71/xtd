@@ -17,5 +17,5 @@ verbs :
      osascript = "osascript -e "do shell script \"App.app/Contents/MacOS/App\" with administrator privileges""
    TextEdit example :
      osascript -e "do shell script \"/System/Applications/TextEdit.app/Contents/MacOS/TextEdit\" with administrator privileges"
-   TextEdit examplle with system :
+   TextEdit example with system :
      system("osascript -e \"do shell script \\\"/System/Applications/TextEdit.app/Contents/MacOS/TextEdit\\\" with administrator privileges\"");

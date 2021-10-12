@@ -4,14 +4,14 @@ The guidelines in this chapter lay out a simple method for using case that, when
  
 # Capitalisation Rules for Identifiers
 ​
-​As ​ISO Standard, use lower case only and digits, separate words with underscores. Do not use capitilise to differentiate words, or for that matter, anywhere in identifiers
+​As ​ISO Standard, use lower case only and digits, separate words with underscores. Do not use capitalise to differentiate words, or for that matter, anywhere in identifiers
 
 ```c++
 ​​property_descriptor
 html_tag
 ```
 
-**✔️ DO** To differenciate members form accessors or metods, end members by _.
+**✔️ DO** To differentiate members form accessors or methods, end members by _.
 
 
 ```c++

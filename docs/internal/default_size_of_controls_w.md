@@ -15,7 +15,7 @@
 | time_picker                 |     64 |     25 |
 | dial(*)                     |    100 |    100 |
 | domain_up_down              |     62 |     23 |
-| dot_mattrix_display(*)      |     25 |     25 |
+| dot_matrix_display(*)      |     25 |     25 |
 | font_picker                 |     79 |     23 |
 | fourteen_segment_display(*) |     13 |     25 |
 | h_scroll_bar                |    100 |     17 |
@@ -34,7 +34,7 @@
 | numeric_up_down             |     62 |     23 |
 | picture_box                 |     16 |     16 |
 | progress_bar                |    187 |     15 |
-| propety_grid                |     20 |     20 |
+| property_grid                |     20 |     20 |
 | radio_button                |     15 |     15 |
 | rich_text_box               |     10 |     10 |
 | roller(*)                   |     25 |    100 |

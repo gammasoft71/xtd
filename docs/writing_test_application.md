@@ -9,14 +9,14 @@
 * [Assertions](#assertions)
 * [Validations](#validations)
 * [Assumptions](#assumptions)
-* [Initilize and Cleanup](#initialize-and-cleanup)
+* [Initialize and Cleanup](#initialize-and-cleanup)
 * [Test case](#test-case)
 * [Test class](#test-class)
 * [Test](#test)
 
 ## Namespace
 
-xtd.tunit has a unqiue namespace : ***xtd::tunit***.
+xtd.tunit has a unique namespace : ***xtd::tunit***.
 
 This example show how to use xtd.tunit with using namespace:
 
@@ -69,13 +69,13 @@ xtd.tunit uses custom helpers to identify test fixtures and test methods. It's t
 
 | helpers                                                   | Usage                                                                                                                                    |
 |-----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| [test_class_(class_name)](test_class.md)                  | Is used to define the class (test fixture) wtih class_name name.                                                                         |
+| [test_class_(class_name)](test_class.md)                  | Is used to define the class (test fixture) with class_name name.                                                                         |
 | [class_initialize_(initialize_name)](class_initialize.md) | Is used to define class initialize method with initialize_name name.                                                                     |
 | [class_cleanup_(cleanup_name)](class_cleanup.md)          | Is used to define class cleanup method with cleanup_name name.                                                                           |
 | [test_initialize_(initialize_name)](test_initialize.md)   | Is used to define test initialize method with initialize_name name.                                                                      |
 | [test_cleanup_(cleanup_name)](test_cleanup.md)            | Is used to define test cleanup method with cleanup_name name.                                                                            |
 | [test_method_(method_name)](test_method.md)               | Is used to define test method (test case) with method_name name.                                                                         |
-| [ingore_test_method_(method_name)](ingore_test_method.md) | Is used to define ignored test method (test case) with method_name name.                                                                 |
+| [ignore_test_method_(method_name)](ingore_test_method.md) | Is used to define ignored test method (test case) with method_name name.                                                                 |
 | [csf_](csf.md)                                            | Is used to create a xtd::diagnostics::stack_frame class initialized with current method name, current file name and current line number. |
 
 ### Examples
@@ -243,7 +243,7 @@ int main() {
 For each assertion, validation or assumption test method, the last parameter is xtd::diagnostics::stack_frame class that contains current informations.
 To add automatically xtd::diagnostics::stack_frame, helpers are create. Add '_' at the end of test method member to used helper.
 
-exemple wirthout helper :
+example without helper :
 ```c++
 assert::contains('a', str, csf_);
 string_valid::are_equal_ignoring_case("value", str, csf_);
@@ -301,7 +301,7 @@ int main(int argc, char* argv[]) {
 }
 ```
 
-#### Remarques
+#### Remarks
 
 Some functions are template, in this case the template parameter becomes the first parameter of the helper.
 
@@ -344,14 +344,14 @@ void test_method_(test_case_1) {
 
 ## Validations
 
-Validations are the same as assertions with the difference, no exception is throwed but an error is generate. 
+Validations are the same as assertions with the difference, no exception is thrown, but an error is generated. 
 
-If a validation fails, he test can be continue to the end or to an assertion is generate.
+If a validation fails, he test can be continued to the end or to an assertion is generated.
 
 Validations make use with the following static classes :
 
 * valid
-* string_avalid
+* string_valid
 * collection_valid
 * file_valid
 * directory_valid.
@@ -388,24 +388,24 @@ void test_method_(test_case_1) {
 
 ## Initialize and Cleanup
 
-Comming soon...
+Coming soon...
 
 ## Test case
 
-Comming soon...
+Coming soon...
 
 ## Test class
 
-Comming soon...
+Coming soon...
 
 ## Test
 
-Comming soon...
+Coming soon...
 
 ## See also
 
 ## See also
-* [Writing applicattions](writing_applications.md)
+* [Writing applications](writing_applications.md)
 * [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
