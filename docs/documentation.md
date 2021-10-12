@@ -15,6 +15,7 @@ This section contains the xtd documentation. ​
 * [Translation status](translations_status.md) provides information about translations status.
 * [Release notes](release_notes.md) provides release notes information.
 * [Portability](portability.md) provides information about C++, libraries dependency, Operating System suported, Compilators and Devepment Environment tools.
+* [Themes](themes.md) list the xtd themes.
 * [Tools](tools.md) list the xtd tools.
 * [External tools, libraries and toolkits](external_tools_libraries_and_toolkits.md) list the external tools, libraries and toolkits used by xtd.
 * [License](license.md) provides license information.
