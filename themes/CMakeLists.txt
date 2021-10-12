@@ -13,6 +13,8 @@ add_projects(
   kde_light
   macos_dark
   macos_light
+  symbolic_dark
+  symbolic_light
   windows_dark
   windows_light
   xtd_dark
