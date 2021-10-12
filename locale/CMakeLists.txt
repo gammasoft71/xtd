@@ -75,5 +75,5 @@ target_type(INTERFACE_LIBRARY)
 
 # Install
 if (XTD_INSTALL_RESOURCES)
-  install(DIRECTORY . DESTINATION share/xtd)
+  install(DIRECTORY . DESTINATION share/xtd/locale)
 endif ()

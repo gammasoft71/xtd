@@ -35,8 +35,7 @@ namespace {
     int overflow(int c) override {
       value_ = static_cast<char>(c);
       DWORD number_of_bytes_written = 0;
-      WriteFile(file_handle_, &value_, 1, &number_of_bytes_written, nullptr);
-      if (number_of_bytes_written != -1) {
+      if (WriteFile(file_handle_, &value_, 1, &number_of_bytes_written, nullptr) == 0) {
         this->setp(&value_, &value_);
         return 0;
       }
