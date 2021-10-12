@@ -2,6 +2,12 @@
 
 # Themes
 
+A control can have several style modes ([xtd::forms::flat_style](../src/xtd.forms/include/xtd/forms/flat_style.h)):
+  * [xtd::forms::flat_style::system](../src/xtd.forms/include/xtd/forms/flat_style.h) : The control is native and therefore cannot adapt to the theme defined in the application ([xtd::forms::application::theme](../src/xtd.forms/include/xtd/forms/application.h)).
+  * [xtd::forms::flat_style::standard](../src/xtd.forms/include/xtd/forms/flat_style.h) : The control will adapt to the theme defined in the application ([xtd::forms::application::theme](../src/xtd.forms/include/xtd/forms/application.h)) with the standard style.
+  * [xtd::forms::flat_style::flat](../src/xtd.forms/include/xtd/forms/flat_style.h) : The control will adapt to the theme defined in the application ([xtd::forms::application::theme](../src/xtd.forms/include/xtd/forms/application.h)) but with the flat style.
+  * [xtd::forms::flat_style::popup](../src/xtd.forms/include/xtd/forms/flat_style.h) : The control will adapt to the theme defined in the application ([xtd::forms::application::theme](../src/xtd.forms/include/xtd/forms/application.h)) but with the popup style.
+  
 ## Current Operating System / Desktop Environment
 
 * [gnome_dark](../themes/gnome_dark) contains GNOME dark theme.
@@ -29,6 +35,12 @@
 * [light](../themes/light) contains light color theme.
 * [red](../themes/red) contains red color theme.
 * [white](../themes/white) contains white color theme.
+
+## Owner themes
+
+You can create your owner themes.
+
+Comming soon...
 
 ______________________________________________________________________________________________
 
