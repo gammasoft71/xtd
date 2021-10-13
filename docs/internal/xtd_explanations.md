@@ -227,7 +227,7 @@ A control can have several style modes ([xtd::forms::flat_style](https://github.
   * [xtd::forms::flat_style::flat](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/flat_style.h) : The control will adapt to the theme defined in the application ([xtd::forms::application::theme](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/application.h)) but with the flat style.
   * [xtd::forms::flat_style::popup](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/flat_style.h) : The control will adapt to the theme defined in the application ([xtd::forms::application::theme](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/application.h)) but with the popup style.
   
-## Current Operating System / Desktop Environment
+### Current Operating System / Desktop Environment
 
 * [gnome_dark](https://github.com/gammasoft71/xtd/blob/master/themes/gnome_dark) contains GNOME dark theme.
 * [gnome_light](https://github.com/gammasoft71/xtd/blob/master/themes/gnome_light) contains GNOME dark theme.
@@ -238,14 +238,14 @@ A control can have several style modes ([xtd::forms::flat_style](https://github.
 * [windows_dark](https://github.com/gammasoft71/xtd/blob/master/themes/windows_dark) contains Windows dark theme.
 * [windows_light](https://github.com/gammasoft71/xtd/blob/master/themes/windows_light) contains Windows light theme.
 
-## Generic
+### Generic
 
 * [symbolic_dark](https://github.com/gammasoft71/xtd/blob/master/themes/symbolic_dark) contains Symbolic dark theme.
 * [symbolic_light](https://github.com/gammasoft71/xtd/blob/master/themes/symbolic_light) contains Symbolic light theme.
 * [xtd_dark](https://github.com/gammasoft71/xtd/blob/master/themes/xtd_dark) contains xtd dark theme.
 * [xtd_light](https://github.com/gammasoft71/xtd/blob/master/themes/xtd_light) contains xtd light theme.
 
-## Colors only
+### Colors only
 
 * [black](https://github.com/gammasoft71/xtd/blob/master/themes/black) contains black color theme.
 * [blue](https://github.com/gammasoft71/xtd/blob/master/themes/blue) contains blue color theme.
@@ -255,7 +255,7 @@ A control can have several style modes ([xtd::forms::flat_style](https://github.
 * [red](https://github.com/gammasoft71/xtd/blob/master/themes/red) contains red color theme.
 * [white](https://github.com/gammasoft71/xtd/blob/master/themes/white) contains white color theme.
 
-## Owner themes
+### Owner themes
 
 In the future, developers will be able to create their own themes.
 
