@@ -8,7 +8,7 @@ What are the criteria for a modern C++ framework in 2020 :
 * [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization)
 * Use of namespace and no prefix
 * No defines for constants and no macros for functions or event logging.
-* All classes must be in a namespace.
+* All classes must be in namespaces.
 * No global but rather static classes.
 * No functions outside of jump classes to extend std.
 * Native controls if no theme defined. However, controls must be able to support predefined themes or themes created by the developer himself.
