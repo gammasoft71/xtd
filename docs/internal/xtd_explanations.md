@@ -2,7 +2,7 @@
 
 ## Motivations
 
-What are the criteria for a modern C++ framework in 2020 :
+What are the criteria for a modern C++ framework in 2019 :
 
 * C++17/20 modern
 * [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization)
