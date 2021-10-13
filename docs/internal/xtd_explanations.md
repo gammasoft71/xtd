@@ -74,7 +74,7 @@ So I had to create a framework (threads, diagnostics, sockets, web sockets, io, 
 * The Win32 API is too low level and is in pure C.
 * The MFC API is not consistant and old.
 * The .Net Framework is consistant and close to WIn32 API and events but is CSharp or managed C++ with garbage collector.
-* JavaFX is not close too Win32 API and events but is Java with garbage collector.
+* JavaFX is not close to Win32 API and events but is Java with garbage collector.
 * Qt API is old C++ and i don't like it.
 * wxWidgets API is convoluted and old c++.
 * ...
