@@ -119,10 +119,66 @@ public:
 using namespace std;
 using namespace xtd;
 
+xtd::drawing::color get_system_color_from_name(const xtd::ustring& name, const xtd::ustring& color) {
+  std::map<xtd::ustring, xtd::drawing::color> colors {
+    {"active-border", xtd::drawing::system_colors::active_border()},
+    {"active-caption", xtd::drawing::system_colors::active_caption()},
+    {"active-caption-text", xtd::drawing::system_colors::active_caption_text()},
+    {"app-workspace", xtd::drawing::system_colors::app_workspace()},
+    {"control", xtd::drawing::system_colors::control()},
+    {"control-dark", xtd::drawing::system_colors::control_dark()},
+    {"control-dark-dark", xtd::drawing::system_colors::control_dark_dark()},
+    {"control-light", xtd::drawing::system_colors::control_light()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+    {"accent", xtd::drawing::system_colors::accent()},
+  };
+  xtd::drawing::color result = xtd::drawing::color::from_name(color);
+  if (!result.is_empty()) return result;
+  return colors[name];
+}
+
 class xtd_core_manual_test : public object {
 public:
   static void main() {
-    console::write_line("Hello, World!");
+    //console::write_line("Hello, World!");
+    io::stream_reader file_reader("/Users/yves/Projects/xtd/themes/macos_dark/system-colors.css");
+    web::css::css_reader reader(file_reader);
+    
+    for (auto selector : reader.selectors()) {
+      console::write_line("{}", selector.first);
+      //for (auto property : selector.second.properties()) {
+      //  console::write_line("  {}: {}", property.first, drawing::color::from_name(property.second));
+      //}
+      console::write_line("  accent: {}", get_system_color_from_name("accent", selector.second.properties()["accent"]));
+      console::write_line("  any: {}", get_system_color_from_name("any", selector.second.properties()["any"]));
+    }
   }
 };
 
