@@ -110,11 +110,9 @@ These libraries are grouped by theme :
 * xtd.core.native.unix : xtd.core.native
 * xtd.core.native.win32 : xtd.core.native
 * xtd.core : xtd.core.native, xtd.core.native.unix or xtd.core.native.win32 or other in the future.
-
 * xtd.drawing.native : xtd.core
 * xtd.drawing.native.wxwidgets : xtd.drawing.native
 * xtd.drawing : xtd.drawing.native, xtd.drawing.native.wxwidgets or other in the future.
-
 * xtd.form.native : xtd.drawing
 * xtd.form.native.wxwidgets : xtd.forms.native
 * xtd.forms : xtd.forms.native, xtd.forms.native.wxwidgets or other in the future.
