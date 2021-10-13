@@ -15,7 +15,7 @@
   desktop: #FF9A9A9A;
   gray-text: #3FFFFFFF;
   highlight: #FF314F78;
-  highlight-text: #FFFFFFFF;
+  highlight-text: white;
   hot-track: #FF3586FF;
   inactive-border: #FF9A9A9A;
   inactive-caption: #FF9A9A9A;
@@ -36,9 +36,9 @@
   menu-bar: #FF9A9A9A;
   menu-highlight: #FF345DF1;
   accent: #FF007AFF;
-  accent-text: #FFFFFFFF;
+  accent-text: white;
   text-box: #10FFFFFF;
-  text-box-text: #FFFFFFFF;
+  text-box-text: white;
 }
 
 /*

@@ -8,26 +8,26 @@
   app-workspace: #FF2D2D2D;
   control: #FF333333;
   control-dark: #FF1B1B1B;
-  control-dark-dark: #FF000000;
+  control-dark-dark: black;
   control-light: #FF333333;
   control-light-light: #FF373737;
   control-text: #FFEEEEEC;
   desktop: #FF333333;
   gray-text: #FF919190;
   highlight: #FF15539E;
-  highlight-text: #FFFFFFFF;
+  highlight-text: white;
   hot-track: #FF3584E4;
   inactive-border: #FF333333;
   inactive-caption: #FF353535;
   inactive-caption-text: #FFEEEEEC;
   info: #CC000000;
-  info-text: #FFFFFFFF;
+  info-text: white;
   menu: #FF2F2F2F;
   menu-text: #FFEEEEEC;
   scroll-bar: #FF333333;
   window: #FF2D2D2D;
   window-frame: #FF333333;
-  window-text: #FFFFFFFF;
+  window-text: white;
   button-face: #FF333333;
   button-highlight: #FF373737;
   button-shadow: #FF1B1B1B;
@@ -36,9 +36,9 @@
   menu-bar: #FF353535;
   menu-highlight: #FF15539E;
   accent: #FF15539E;
-  accent-text: #FFFFFFFF;
+  accent-text: white;
   text-box: #FF2D2D2D;
-  text-box-text: #FFFFFFFF;
+  text-box-text: white;
 }
 
 /*

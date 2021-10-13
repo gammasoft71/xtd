@@ -5,29 +5,29 @@
   active-border: #FFF1F0EE;
   active-caption: #FFDDDAD6;
   active-caption-text: #FF2E3436;
-  app-workspace: #FFFFFFFF;
+  app-workspace: white;
   control: #FFF1F0EE;
   control-dark: #FFCDC7C2;
-  control-dark-dark: #FF000000;
+  control-dark-dark: black;
   control-light: #FFF1F0EE;
   control-light-light: #FFF8F8F7;
   control-text: #FF2E3436;
   desktop: #FFF1F0EE;
   gray-text: #FF929595;
   highlight: #FF3584E4;
-  highlight-text: #FFFFFFFF;
+  highlight-text: white;
   hot-track: #FF1B6ACB;
   inactive-border: #FFF1F0EE;
   inactive-caption: #FFF6F5F4;
   inactive-caption-text: #FF2E3436;
   info: #CC000000;
-  info-text: #FFFFFFFF;
-  menu: #FFFFFFFF;
+  info-text: white;
+  menu: white;
   menu-text: #FF2E3436;
   scroll-bar: #FFF1F0EE;
-  window: #FFFFFFFF;
+  window: white;
   window-frame: #FFF1F0EE;
-  window-text: #FF000000;
+  window-text: black;
   button-face: #FFF1F0EE;
   button-highlight: #FFF8F8F7;
   button-shadow: #FFCDC7C2;
@@ -36,9 +36,9 @@
   menu-bar: #FFF6F5F4;
   menu-highlight: #FF3584E4;
   accent: #FF3584E4;
-  accent-text: #FFFFFFFF;
-  text-box: #FFFFFFFF;
-  text-box-text: #FF000000;
+  accent-text: white;
+  text-box: white;
+  text-box-text: black;
 }
 
 /*
