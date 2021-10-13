@@ -265,7 +265,40 @@ In the future, developers will be able to create their own themes.
 
 ### CMake
 
+xtd uses [CMake](https://cmake.org) as build script generator.
+
+Commands to generate xtd build project.
+
+* On Windows :
+```shell
+cd xtd
+mkdir build
+cd build
+cmake ..
+start xtd.sln
+```
+
+* On macOS :
+```shell
+cd xtd
+mkdir build && cd build
+cmake .. -G "Xcode"
+open xtdd.xcoddeproj
+```
+
+* On Linux :
+```shell
+cd xtd
+mkdir build && cd build
+cmake ..
+make all
+```
+
 ### Specific CMake commands
+
+xtd adds a set of [specific CMake commands](https://github.com/gammasoft71/xtd/blob/master/scripts/cmake/xtd_commands.cmake) for simplifying CMakeLists.txt.
+
+You can see the reference guide for documentation.
 
 ### xtd build CMake options for xtd developers
 
@@ -274,9 +307,12 @@ Use the default options except for the following:
 * XTD_BUILD_TESTS_XTD_CORE=ON
 * XTD_BUILD_TESTS_XTD_DRAWING=ON
 * XTD_BUILD_TESTS_XTD_FORMS=ON
-* XTD_BUILD_TESTS_XTD_TUUUNIT=ON
+* XTD_BUILD_TESTS_XTD_TUNIT=ON
 
-These options enable respectively unit tests for each xtd library.
+These options respectively enable unit tests for each xtd library.
+
+Simply add "-DXTD_BUILD_TESTS_XTD_CORE=ON -DXTD_BUILD_TESTS_XTD_DRAWING=ON -DXTD_BUILD_TESTS_XTD_FORMS=ON -DXTD_BUILD_TESTS_XTD_TUNIT=ON" to the cmake command line.
+Or enable options in CMake-gui.
 
 ## xtd guideline
 
@@ -314,9 +350,9 @@ These options enable respectively unit tests for each xtd library.
 * The documentation is only present in the .h file. (Some IDEs use these documentations to help you develop).
 * Most of the documentation is based on [MSDN](https://docs.microsoft.com/en-us/dotnet/api/?view=windowsdesktop-5.0) and adapted to xtd and C++.
 
-There are two reference guides:
+There are two guides:
 * Reference Guide : [On line](https://codedocs.xyz/gammasoft71/xtd/index.html) and offline [documentation](https://github.com/gammasoft71/xtd/blob/master/docs/doxygen/doxygen.txt). This guide contains high level documentation.
-* Developer Reference Guide : Only offline [documentation](https://github.com/gammasoft71/xtd/blob/master/docs/doxygen/doxygen_developer.txt). This guide contains high and low level documentation.
+* Developer Guide : Only offline [documentation](https://github.com/gammasoft71/xtd/blob/master/docs/doxygen/doxygen_developer.txt). This guide contains high and low level documentation.
 
 ### Notes
 
