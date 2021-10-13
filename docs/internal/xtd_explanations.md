@@ -322,7 +322,7 @@ Or enable options in CMake-gui.
 
 ## Unit tests
 
-* For each development add unit tests. See unit tests for reach xtd library.
+* For each development add unit tests. See unit tests for each xtd library.
 * Unit tests must be simple and fast.
 * In general, each method must be validated (e.g. limits, exceptions, ...).
 * xtd.tunit is use for all libraries except xtd.tunit wish has its has own test units.
