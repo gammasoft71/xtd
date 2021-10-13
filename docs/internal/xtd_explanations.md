@@ -312,7 +312,7 @@ These options respectively enable unit tests for each xtd library.
 Simply add "-DXTD_BUILD_TESTS_XTD_CORE=ON -DXTD_BUILD_TESTS_XTD_DRAWING=ON -DXTD_BUILD_TESTS_XTD_FORMS=ON -DXTD_BUILD_TESTS_XTD_TUNIT=ON" to the cmake command line.
 Or enable options in CMake-gui.
 
-## xtd guideline
+## xtd guidelines
 
 * See [Designe Guidelines](https://github.com/gammasoft71/xtd/blob/master/docs/design_guidelines.md) (for coding conventions, naming, type, ...)
 
