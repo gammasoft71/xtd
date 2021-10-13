@@ -329,7 +329,7 @@ Or enable options in CMake-gui.
 
 #### Notes
 
-* Currently, there are +/- 10000 unit tests executed successfullly andd 0 failed.
+* Currently, there are +/- 10000 unit tests executed successfullly and 0 failed.
 * There are many missing. But the goal is to complete them as much as possible to have a complete coverage.
 
 ## Continuous integration builds
