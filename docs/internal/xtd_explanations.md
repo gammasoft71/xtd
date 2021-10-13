@@ -117,7 +117,7 @@ These libraries are grouped by theme :
 
 * xtd.form.native : xtd.drawing
 * xtd.form.native.wxwidgets : xtd.forms.native
-* xtd.forms : xtd.forms.native, xtd.drawing.native.wxwidgets or other in the future.
+* xtd.forms : xtd.forms.native, xtd.forms.native.wxwidgets or other in the future.
 * xtd.tunit : xtd.core (not for tests as such, but only used by xtd::tunit::console_unit_test to print the result on the console and for the very partial use of xtd::diagnostics::stack_frame to know the test line).
 
 #### Remarks
