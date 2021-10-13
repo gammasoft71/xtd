@@ -4,41 +4,41 @@
 .system-colors {
   active-border: #FFB4B4B4;
   active-caption: #FF99B4D1;
-  active-caption-text: #FF000000;
+  active-caption-text: black;
   app-workspace: #FFABABAB;
   control: #FFF0F0F0;
   control-dark: #FFA0A0A0;
-  control-dark-dark: #FF696969;
+  control-dark-dark: dimgray;
   control-light: #FFE3E3E3;
-  control-light-light: #FFFFFFFF;
-  control-text: #FF000000;
-  desktop: #FF000000;
+  control-light-light: white;
+  control-text: black;
+  desktop: black;
   gray-text: #FF6D6D6D;
   highlight: #FF0078D7;
-  highlight-text: #FFFFFFFF;
+  highlight-text: white;
   hot-track: #FF0066CC;
   inactive-border: #FFF4F7FC;
   inactive-caption: #FFBFCDDB;
-  inactive-caption-text: #FF000000;
+  inactive-caption-text: black;
   info: #FFFFFFE1;
-  info-text: #FF000000;
+  info-text: black;
   menu: #FFF0F0F0;
-  menu-text: #FF000000;
+  menu-text: black;
   scroll-bar: #FFC8C8C8;
-  window: #FFFFFFFF;
+  window: white;
   window-frame: #FF646464;
-  window-text: #FF000000;
-  button-face: #FFFFFFFF;
-  button-highlight: #FFFFFFFF;
+  window-text: black;
+  button-face: white;
+  button-highlight: white;
   button-shadow: #FFA0A0A0;
   gradient-active-caption: #FFB9D1EA;
   gradient-inactive-caption: #FFD7E4F2;
   menu-bar: #FFF0F0F0;
   menu-highlight: #FF3399FF;
   accent: #FFD2E8F8;
-  accent-text: #FFFFFFFF;
-  text-box: #FFFFFFFF;
-  text-box-text: #FF000000;
+  accent-text: white;
+  text-box: white;
+  text-box-text: black;
 }
 
 /*

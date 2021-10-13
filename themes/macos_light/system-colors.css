@@ -2,20 +2,20 @@
 /* Copyright (c) 2021 Gammasoft. All rights reserved. */
 
 .system-colors {
-  active-border: #FFFFFFFF;
+  active-border: white;
   active-caption: #FF9A9A9A;
   active-caption-text: #D8000000;
   app-workspace: #FFE7E7E7;
   control: #FFECECEC;
   control-dark: #44000000;
   control-dark-dark: #44000000;
-  control-light: #FFFFFFFF;
-  control-light-light: #FFFFFFFF;
+  control-light: white;
+  control-light-light: white;
   control-text: #D8000000;
   desktop: #FF9A9A9A;
   gray-text: #3F000000;
   highlight: #FFA5CDFF;
-  highlight-text: #FF000000;
+  highlight-text: black;
   hot-track: #FF094FD1;
   inactive-border: #FF9A9A9A;
   inactive-caption: #FF9A9A9A;
@@ -25,20 +25,20 @@
   menu: #FF9A9A9A;
   menu-text: #D8000000;
   scroll-bar: #FF9A9A9A;
-  window: #FFFFFFFF;
+  window: white;
   window-frame: #FF9A9A9A;
   window-text: #D8000000;
-  button-face: #FFFFFFFF;
-  button-highlight: #FFFFFFFF;
+  button-face: white;
+  button-highlight: white;
   button-shadow: #44000000;
   gradient-active-caption: #FF9A9A9A;
   gradient-inactive-caption: #FF9A9A9A;
   menu-bar: #FF9A9A9A;
   menu-highlight: #FF345DF1;
   accent: #FF007AFF;
-  accent-text: #FFFFFFFF;
-  text-box: #FFFFFFFF;
-  text-box-text: #FF000000;
+  accent-text: white;
+  text-box: white;
+  text-box-text: black;
 }
 
 /*
