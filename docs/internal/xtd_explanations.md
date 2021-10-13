@@ -12,7 +12,7 @@ What are the criteria for a modern C++ framework in 2020 :
 * No global but rather static classes.
 * No functions outside of classes except for extend std.
 * Native controls if no theme defined. However, controls must be able to support predefined themes or themes created by the developer himself.
-* Controls must be paintable by the user.
+* Controls can be drawing by the user.
 * Close to the std.
 * Denomination of classes and functions according to std and boost standard.
 * Modern events based on std::functional.
