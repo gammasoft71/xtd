@@ -344,7 +344,7 @@ Or enable options in CMake-gui.
 
 ## xtd documentation
 
-* xtd is documented with [doxygen gui](https://www.doxygen.nl/index.html), see tags and commands.
+* xtd is documented with [doxygen](https://www.doxygen.nl/index.html), see tags and commands.
 * The documentation is only present in the .h file. (Some IDEs use these documentations to help you develop).
 * Most of the documentation is based on [MSDN](https://docs.microsoft.com/en-us/dotnet/api/?view=windowsdesktop-5.0) and adapted to xtd and C++.
 
