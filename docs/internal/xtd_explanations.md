@@ -18,9 +18,12 @@ What are the criteria for a modern C++ framework in 2020 :
 * Modern events based on std::functional.
 * Clear and unambiguous API. With a consistent style throughout the evolution of the framework.
 
-After looking and trying (more or less in depth) many known or unknown C++ GUI libraries/frameworks. I never found one that matched these criteria.
+After looking and trying (more or less in depth) many known or unknown C++ GUI libraries/frameworks. 
+I never found one that matched these criteria.
 
-Just take all the existing C++ GUI libraries and frameworks and you can see that none of them fit the above criteria. This does not mean that they are not good or that they do not work. Far from it, some of them are excellent, like Qt, wxWidgets, JUCE to name only these three. Some others are excellent too, some are less good and unfortunately many are mediocre or even abandoned.
+Just take all the existing C++ GUI libraries and frameworks and you can see that none of them fit the above criteria. 
+This does not mean that they are not good or that they do not work. Far from it, some of them are excellent, like Qt, wxWidgets, JUCE to name only these three.
+Some others are excellent too, some are less good and unfortunately many are mediocre or even abandoned.
 
 Here is a [paper](https://philippegroarke.com/posts/2018/c++_ui_solutions/) written by Philippe M. Groarke that summarizes the advantages and disadvantages of each C++ library/framework.
 
@@ -57,7 +60,8 @@ In summary the goal of xtd framework is to provide a high level interface with i
 
 ## xtd API
 
-When I created xtd, I had the choice of creating my own API or using an existing API. I chose to use an existing API because it is difficult to have a consistent API.
+When I created xtd, I had the choice of creating my own API or using an existing API. 
+I chose to use an existing API because it is difficult to have a consistent API.
 
 I also wanted to have an AI close to the Win32 API and events because this API and events are known by many developers.
 
@@ -128,8 +132,7 @@ This library is high level API that has access only to the std and xtd.core.nati
 
 * In no case xtd.core should do precompilation tests (#if defined ... #endif) on the compiler or lOS.
 Some cases like debug or release (NDEBUG) for diagnostic components. But otherwise that's all. 
-If there is a possible difference between bones or compilers, you have to use the xtd.core.native interface. 
-
+If there is a possible difference between OS or compilers, you have to use the xtd.core.native interface. 
 * In the same way, if you use an external library, you have to use the xtd.core.native interface. 
 This allows you to isolate yourself from the thridparty library and to replace it if necessary without having to rewrite all the code that calls it.
 
@@ -139,21 +142,55 @@ There are still some cases that are not yet fully compliant with these rules but
 
 ### xtd.core.native
 
+This library is a low-level API that has access to the operating system and third-party libraries.
+
+The role of is API is the same que l'API de le JVM of Java ou Common Language Runtime (CLR) of .Net Framework.
+
 ### xtd.core.native.unix
+
+It is a low-level library that implements the xtd.core.native interface for linux, macOS, iOs and Android.
 
 ### xtd.core.native.win32
 
+It is a low-level library that implements the xtd.core.native interface for Windows.
+
 ### xtd.drawing
+
+This library is high level API that has access only to xtd.core and xtd.drawing.native.xxx (xxx = wxwidgets or other in the future) via xtd.drawing.native interface.
+
+#### Rule
+
+* In no case xtd.drawing should do precompilation tests (#if defined ... #endif) on the GDI+ graphics.
+If there is a possible difference between GDI+ graphics, you have to use the xtd.ddrawing.native interface. 
 
 ### xtd.drawing.native
 
+This library is a low-level API that has access to the GDI+ graphics.
+
+The role of is API is the same que l'API de le JVM of Java ou Common Language Runtime (CLR) of .Net Framework.
+
 ### xtd.drawing.native.wxwidgets
+
+It is a low-level library that implements the xtd.drawing.native interface for wxWidgets.
 
 ### xtd.forms
 
+This library is high level API that has access only to xtd.ddrawing and xtd.forms.native.xxx (xxx = wxwidgets or other in the future) via xtd.forms.native interface.
+
+#### Rule
+
+* In no case xtd.forms should do precompilation tests (#if defined ... #endif) on the GUI.
+If there is a possible difference between GUI, you have to use the xtd.forms.native interface. 
+
 ### xtd.forms.native
 
+This library is a low-level API that has access to the GUI.
+
+The role of is API is the same que l'API de le JVM of Java ou Common Language Runtime (CLR) of .Net Framework.
+
 ### xtd.forms.native.wxwidgets
+
+It is a low-level library that implements the xtd.forms.native interface for wxWidgets.
 
 ## xtd tools
 
@@ -261,6 +298,12 @@ These options enable respectively unit tests for each xtd library.
 * Currently, there are +/- 10000 unit tests executed successfullly andd 0 failed.
 * There are many missing. But the goal is to complete them as much as possible to have a complete coverage.
 
+## Continuous integration builds
+
+* [Appveyor](https://ci.appveyor.com/project/gammasoft71/xtd) for Windows 32 and d64 bits.
+* [Travis-CI](https://travis-ci.com/gammasoft71/xtd) for macOS.
+* [CircleCI](https://circleci.com/gh/gammasoft71/xtd) for Linux.
+
 ## Test coverage
 
 * Not present for the moment. But planned in the future with [Codecov](https://about.codecov.io)
@@ -271,32 +314,40 @@ These options enable respectively unit tests for each xtd library.
 * The documentation is only present in the .h file. (Some IDEs use these documentations to help you develop).
 * Most of the documentation is based on [MSDN](https://docs.microsoft.com/en-us/dotnet/api/?view=windowsdesktop-5.0) and adapted to xtd and C++.
 
-## My everyday development tools
+There are two reference guides:
+* Reference Guide : [On line](https://codedocs.xyz/gammasoft71/xtd/index.html) and offline [documentation](https://github.com/gammasoft71/xtd/blob/master/docs/doxygen/doxygen.txt). This guide contains high level documentation.
+* Developer Reference Guide : Only offline [documentation](https://github.com/gammasoft71/xtd/blob/master/docs/doxygen/doxygen_developer.txt). This guide contains high and low level documentation.
+
+### Notes
+
+For the offline documentation use doxygen command or doxygen gui.
+
+## My everyday development machines and tools
 
 ### macOS (my main development machine) 
 
 * IDE : [Xcode 12](https://developer.apple.com/xcode/)
-* Git : [GitHub Desktop](https://desktop.github.com) and sometimes terminal.
-* CMake : [CMake-gui](https://cmake.org) and sometimes terminal.
+* Git : [GitHub Desktop](https://desktop.github.com) and sometimes git command in the terminal.
+* CMake : [CMake-gui](https://cmake.org) and sometimes cmake command in the terminal.
 * Text editor : [CotEditor](https://coteditor.com)
-* Documentations : [Doxygen gui](https://www.doxygen.nl/index.html) and sometimes terminal. (to generate local reference guide and local developer guide).
+* Documentations : [Doxygen gui](https://www.doxygen.nl/index.html) and sometimes doxygen command in the terminal. (to generate local reference guide and local developer guide).
 * Markdown viewer/editor : [Typora](https://typora.io)
 
-### Windows Windows 10 (my secondary development machine) and Windows 11 preview (virtual machine)
+### Windows 10 (my secondary development machine) and Windows 11 preview (virtual machine)
 
 * IDE : [VisualStudio Community 2019](https://visualstudio.microsoft.com)
-* Git : [GitHub Desktop](https://desktop.github.com) and sometimes terminal.
-* CMake : [CMake-gui](https://cmake.org) and sometimes terminal.
+* Git : [GitHub Desktop](https://desktop.github.com) and sometimes git command in the terminal.
+* CMake : [CMake-gui](https://cmake.org) and sometimes cmake command in th cmake command in th terminal.
 * Text editor : [Notepad++](https://notepad-plus-plus.org)
-* Documentations : [Doxygen gui](https://www.doxygen.nl/index.html) and sometimes terminal. (to generate local reference guide and local developer guide).
+* Documentations : [Doxygen gui](https://www.doxygen.nl/index.html) and sometimes doxygen command in the terminal. (to generate local reference guide and local developer guide).
 * Markdown viewer/editor : [Typora](https://typora.io)
 
 ### Ubuntu 20.04 with GNOME (virtual machine) and KUbuntu 20.4 with KDE (virtual machines)
 
 * IDE : [Qt](https://qt.io)
-* Git : [GitHub Desktop](https://desktop.github.com) (beta version with manual installation) and sometimes terminal.
-* CMake : [CMake-gui](https://cmake.org) and sometimes terminal.
+* Git : [GitHub Desktop](https://desktop.github.com) (beta version with manual installation) and sometimes git command in the terminal.
+* CMake : [CMake-gui](https://cmake.org) and sometimes cmake command in th terminal.
 * Text editor : [gedit](https://wiki.gnome.org/Apps/Gedit)
-* Documentations : [Doxygen gui](https://www.doxygen.nl/index.html) and sometimes terminal. (to generate local reference guide and local developer guide).
+* Documentations : [Doxygen gui](https://www.doxygen.nl/index.html) and sometimes doxygen command in the terminal. (to generate local reference guide and local developer guide).
 * Markdown viewer/editor : [Typora](https://typora.io)
 
