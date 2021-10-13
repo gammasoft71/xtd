@@ -230,7 +230,7 @@ color color::from_name(const ustring& name) {
   auto it = names.find(key);
   if (it == names.end()) {
     color result;
-    result.empty_ = false;
+    result.empty_ = name == "";
     result.name_ = name;
     return result;
   }
