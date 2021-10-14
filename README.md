@@ -228,7 +228,7 @@ End 2 tests from 1 test case ran. (0 ms total)
 * [Portability](docs/portability.md) provides information about C++, libraries dependency, Operating System supported, Compilers and Development Environment tools.
 * [Examples](examples/README.md) provides some examples.
 
-## Developement status
+## Development status
 
 * [Development status](docs/development_status.md) provides information about classes and libraries development status.
 * [Translation status](docs/translations_status.md) provides information about translations status.
