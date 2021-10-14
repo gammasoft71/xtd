@@ -25,8 +25,11 @@ If applicable, add screenshots to help explain your problem.
 
 **Desktop (please complete the following information):**
  - OS: [e.g. macOS]
- - Version [e.g. 11]
-- xtd version [e.g. 0.1.0]
+ - Version: [e.g. 11]
+- xtd version: [e.g. 0.1.0]
 
 **Additional context**
 Add any other context about the problem here.
+
+**Workaround**
+Add a workaround if there is one here.
