@@ -18,25 +18,27 @@
 
 ## Themes
 
-| Name                                     | Type      | Status                                |
-|------------------------------------------|-----------|---------------------------------------|
-| [gnome_dark](../themes/gnome_dark)       | css files | ![progress](pictures/progress0.png)   |
-| [gnome_light](../themes/gnome_light)     | css files | ![progress](pictures/progress0.png)   |
-| [kde_dark](../themes/kde_dark)           | css files | ![progress](pictures/progress0.png)   |
-| [kde_light](../themes/kde_light)         | css files | ![progress](pictures/progress0.png)   |
-| [macos_dark](../themes/macos_dark)       | css files | ![progress](pictures/progress0.png)   |
-| [macos_light](../themes/macos_light)     | css files | ![progress](pictures/progress0.png)   |
-| [windows_dark](../themes/windows_dark)   | css files | ![progress](pictures/progress0.png)   |
-| [windows_light](../themes/windows_light) | css files | ![progress](pictures/progress0.png)   |
-| [xtd_dark](../themes/xtd_dark)           | css files | ![progress](pictures/progress0.png)   |
-| [xtd_light](../themes/xtd_light)         | css files | ![progress](pictures/progress0.png)   |
-| [light](../themes/light)                 | css files | ![progress](pictures/progress0.png)   |
-| [dark](../themes/dark)                   | css files | ![progress](pictures/progress0.png)   |
-| [white](../themes/white)                 | css files | ![progress](pictures/progress0.png)   |
-| [black](../themes/black)                 | css files | ![progress](pictures/progress0.png)   |
-| [blue](../themes/blue)                   | css files | ![progress](pictures/progress0.png)   |
-| [green](../themes/green)                 | css files | ![progress](pictures/progress0.png)   |
-| [red](../themes/red)                     | css files | ![progress](pictures/progress0.png)   |
+| Name                                       | Type      | Status                                |
+|--------------------------------------------|-----------|---------------------------------------|
+| [gnome_dark](../themes/gnome_dark)         | css files | ![progress](pictures/progress25.png)  |
+| [gnome_light](../themes/gnome_light)       | css files | ![progress](pictures/progress25.png)  |
+| [kde_dark](../themes/kde_dark)             | css files | ![progress](pictures/progress25.png)  |
+| [kde_light](../themes/kde_light)           | css files | ![progress](pictures/progress25.png)  |
+| [macos_dark](../themes/macos_dark)         | css files | ![progress](pictures/progress25.png)  |
+| [symbolic_dark](../themes/symbolic_dark)   | css files | ![progress](pictures/progress25.png)  |
+| [symbolic_light](../themes/symbolic_light) | css files | ![progress](pictures/progress25.png)  |
+| [macos_light](../themes/macos_light)       | css files | ![progress](pictures/progress25.png)  |
+| [windows_dark](../themes/windows_dark)     | css files | ![progress](pictures/progress25.png)  |
+| [windows_light](../themes/windows_light)   | css files | ![progress](pictures/progress25.png)  |
+| [xtd_dark](../themes/xtd_dark)             | css files | ![progress](pictures/progress25.png)  |
+| [xtd_light](../themes/xtd_light)           | css files | ![progress](pictures/progress25.png)  |
+| [light](../themes/light)                   | css files | ![progress](pictures/progress0.png)   |
+| [dark](../themes/dark)                     | css files | ![progress](pictures/progress0.png)   |
+| [white](../themes/white)                   | css files | ![progress](pictures/progress0.png)   |
+| [black](../themes/black)                   | css files | ![progress](pictures/progress0.png)   |
+| [blue](../themes/blue)                     | css files | ![progress](pictures/progress0.png)   |
+| [green](../themes/green)                   | css files | ![progress](pictures/progress0.png)   |
+| [red](../themes/red)                       | css files | ![progress](pictures/progress0.png)   |
 
 ## See also
 
