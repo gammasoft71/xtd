@@ -24,6 +24,21 @@
 * [xtd tests](#xtd-tests)
   * [Unit tests](#unit-tests)
   * [Manual tests](#manual-tests)
+* [xtd themes](#xtd-themes)
+  * [Current Operating System / Desktop Environment](#current-operating-system-desktop-environment)
+  * [Generic](#generic)
+  * [Colors only](#colors-only)
+  * [Owner themes](#owner-themes)
+* [Build](#build)
+  * [CMake](#cmake)
+  * [Specific CMake commands](#specific-cmake-commands)
+  * [xtd build CMake options for xtd developers](#xtd-build-cmake-options-for-xtd-developers)
+* [xtd guidelines](#xtd-guidelines)
+* [Unit tests](#unit-tests)
+* [Continuous integration builds](#continuous-integration-builds)
+* [Test coverage](#test-coverage)
+* [xtd documentation](#xtd-documentation)
+* [My everyday development machines and tools](#my-everyday-development-machines-and-tools)
 
 ## Motivations
 
