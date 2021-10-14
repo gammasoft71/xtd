@@ -1,5 +1,16 @@
 # xtd explanations (DRAFT)
 
+## Table of contents
+
+* [Motivations](#motivations)
+* [What is xtd Framework ?](#What-is-xtd-framework)
+* [xtd API](#xtd-api)
+* [xtd libraries](#xtd-libraries)
+* [xtd architecture](#xtd-architecture)
+  * [Dependency](#dependency)
+  * [xtd.core](#xtdcore)
+  * [xtd.core.native](#xtdcorenative)
+
 ## Motivations
 
 What are the criteria for a modern C++ framework in 2019 :
@@ -366,6 +377,9 @@ For the offline documentation use doxygen command or doxygen gui.
 * Text editor : [CotEditor](https://coteditor.com)
 * Documentations : [Doxygen gui](https://www.doxygen.nl/index.html) and sometimes doxygen command in the terminal. (to generate local reference guide and local developer guide).
 * Markdown viewer/editor : [Typora](https://typora.io)
+* Image editor : [Gimp](https://www.gimp.org)
+* Diagram editor : [Draw.IO Desktop](https://chrome.google.com/webstore/detail/drawio-desktop/pebppomjfocnoigkeepgbmcifnnlndla?hl=en-GB)
+* UML Diagram : [plantUML](http://plantuml.com)
 
 ### Windows 10 (my secondary development machine) and Windows 11 preview (virtual machine)
 
@@ -375,6 +389,9 @@ For the offline documentation use doxygen command or doxygen gui.
 * Text editor : [Notepad++](https://notepad-plus-plus.org)
 * Documentations : [Doxygen gui](https://www.doxygen.nl/index.html) and sometimes doxygen command in the terminal. (to generate local reference guide and local developer guide).
 * Markdown viewer/editor : [Typora](https://typora.io)
+* Image editor : [Gimp](https://www.gimp.org)
+* Diagram editor : [Draw.IO Desktop](https://chrome.google.com/webstore/detail/drawio-desktop/pebppomjfocnoigkeepgbmcifnnlndla?hl=en-GB)
+* UML Diagram : [plantUML](http://plantuml.com)
 
 ### Ubuntu 20.04 with GNOME (virtual machine) and KUbuntu 20.4 with KDE (virtual machines)
 
@@ -384,4 +401,6 @@ For the offline documentation use doxygen command or doxygen gui.
 * Text editor : [gedit](https://wiki.gnome.org/Apps/Gedit)
 * Documentations : [Doxygen gui](https://www.doxygen.nl/index.html) and sometimes doxygen command in the terminal. (to generate local reference guide and local developer guide).
 * Markdown viewer/editor : [Typora](https://typora.io)
-
+* Image editor : [Gimp](https://www.gimp.org)
+* Diagram editor : [Draw.IO Desktop](https://chrome.google.com/webstore/detail/drawio-desktop/pebppomjfocnoigkeepgbmcifnnlndla?hl=en-GB)
+* UML Diagram : [plantUML](http://plantuml.com)
