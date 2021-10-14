@@ -62,6 +62,12 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 
 ## Release 0.3.0 (beta)
 
+### Bugs
+
+see [Issues](https://github.com/gammasoft71/xtd/issues)
+
+### Enhancements
+
 | Library   | Enhancements                    | Developer | status  |
 |-----------|---------------------------------|-----------|---------|
 | xtd.core  | assembly (with CMake)           |           | [ ]     |
@@ -109,10 +115,14 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 
 ## Release 0.4.0 (beta)
 
+### Bugs
+
+see [Issues](https://github.com/gammasoft71/xtd/issues)
+
+### Enhancements
+
 | Library   | Enhancements                    | Developer | status  |
 |-----------|---------------------------------|-----------|---------|
-| xtd.forms | binding_navigator               |           | [ ]     |
-| xtd.forms | binding_source                  |           | [ ]     |
 | xtd.forms | chart                           |           | [ ]     |
 | xtd.forms | chart_render                    |           | [ ]     |
 | xtd.forms | error_provider                  |           | [ ]     |
@@ -132,23 +142,31 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | xtd.forms | property_grid_render            |           | [ ]     |
 | xtd.forms | tool_strip                      |           | [ ]     |
 | xtd.forms | tool_strip_render               |           | [ ]     |
-| xtd.forms | web_view                        |           | [ ]     |
-| xtd.forms | web_view_render                 |           | [ ]     |
 
 ## Release 0.5.0 (beta)
 
+### Bugs
+
+see [Issues](https://github.com/gammasoft71/xtd/issues)
+
+### Enhancements
+
 | Library   | Enhancements                    | Developer | status  |
 |-----------|---------------------------------|-----------|---------|
+| xtd.forms | binding_navigator               |           | [ ]     |
+| xtd.forms | binding_source                  |           | [ ]     |
 | xtd.forms | context_menu_strip              |           | [ ]     |
 | xtd.forms | context_menu_strip_render       |           | [ ]     |
 | xtd.forms | menu_strip                      |           | [ ]     |
 | xtd.forms | menu_strip_render               |           | [ ]     |
 | xtd.forms | status_strip                    |           | [ ]     |
 | xtd.forms | status_strip_render             |           | [ ]     |
+| xtd.forms | web_view                        |           | [ ]     |
+| xtd.forms | web_view_render                 |           | [ ]     |
 
 ## Release 1.0.0 (release)
 
-Not yet defined.
+* The first release will be planned on version 0.4.0.
 
 ______________________________________________________________________________________________
 
