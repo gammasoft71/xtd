@@ -235,6 +235,10 @@ End 2 tests from 1 test case ran. (0 ms total)
 * [Roadmap](docs/roadmap.md) provides xtd roadmap.
 * [Release notes](docs/release_notes.md) provides release notes information.
 
+This project is an open source project. The developers who participate do so on their own time. It is therefore difficult to fix realese dates. 
+
+But you can follow the evolution of the development. We keep the status up to date.
+
 ## Contributing
 
 The [authors file](AUTHORS.md) lists contributors together with contact information. If you make a contribution, please add yourself to the list.
