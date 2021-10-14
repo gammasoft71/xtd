@@ -10,6 +10,20 @@
   * [Dependency](#dependency)
   * [xtd.core](#xtdcore)
   * [xtd.core.native](#xtdcorenative)
+  * [xtd.core.native.unix](#xtdcorenativeunix)
+  * [xtd.core.native.win32](#xtdcorenativewin32)
+  * [xtd.drawing](#xtddrawing)
+  * [xtd.drawing.native](#xtddrawingnative)
+  * [xtd.drawing.native.wxwidgets](#xtddrawingnativewxwidgets)
+  * [xtd.forms](#xtdforms)
+  * [xtd.forms.native](#xtdformsnative)
+  * [xtd.forms.native.wxwidgets](#xtdformsnativewxwidgets)
+* [xtd tools](#xtd-tools)
+  * [Command line tools](#command-line-tools)
+  * [GUI tools](#gui-tools)
+* [xtd tests](#xtd-tests)
+  * [Unit tests](#unit-tests)
+  * [Manual tests](#manual-tests)
 
 ## Motivations
 
