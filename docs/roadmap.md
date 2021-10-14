@@ -4,11 +4,18 @@
 
 ## Table of contents
 
+* [Remarks](#remarks)
 * [Release 0.2.0 (beta)](#release-020-beta)
 * [Release 0.3.0 (beta)](#release-030-beta)
 * [Release 0.4.0 (beta)](#release-040-beta)
 * [Release 0.5.0 (beta)](#release-050-beta)
 * [Release 1.0.0 (relase)](#release-100-release)
+
+## Remarks
+
+This project is an open source project. The developers who participate do so on their own time. It is therefore difficult to fix realese dates. 
+
+But you can follow the evolution of the development. We keep the status up to date.
 
 ## Release 0.2.0 (beta)
 
