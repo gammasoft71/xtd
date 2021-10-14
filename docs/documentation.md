@@ -13,6 +13,7 @@ This section contains the xtd documentation. ​
 * [Design Guidelines](design_guidelines.md) provides guidelines for designing libraries that extend and interact with the xtd.
 * [Development status](development_status.md) provides information about classes and libraries development status.
 * [Translation status](translations_status.md) provides information about translations status.
+* [Roadmap](roadmap.md) provides xtd roadmap.
 * [Release notes](release_notes.md) provides release notes information.
 * [Portability](portability.md) provides information about C++, libraries dependency, Operating System supported, Compilers and Development Environment tools.
 * [Themes](themes.md) lists the xtd themes.
