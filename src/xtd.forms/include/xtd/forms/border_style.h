@@ -25,7 +25,7 @@ namespace xtd {
     };
 
     /// @cond
-    inline std::ostream& operator<<(std::ostream& os, border_style value) {return os << to_string(value, {{border_style::none, "none"}, {border_style::fixed_single, "fixed_single"}, {border_style::fixed_3d, "fixed_3"}});}
+    inline std::ostream& operator<<(std::ostream& os, border_style value) {return os << to_string(value, {{border_style::none, "none"}, {border_style::fixed_single, "fixed_single"}, {border_style::fixed_3d, "fixed_3d"}});}
     inline std::wostream& operator<<(std::wostream& os, border_style value) {return os << to_string(value, {{border_style::none, L"none"}, {border_style::fixed_single, L"fixed_single"}, {border_style::fixed_3d, L"fixed_3d"}});}
     /// @endcond
   }
