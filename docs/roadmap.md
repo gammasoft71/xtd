@@ -4,9 +4,9 @@
 
 ## Table of contents
 
-* [Release 0.2.0 (beta)](#Release020-beta)
-* [Release 0.3.0 (beta)](#Release030-beta)
-* [Release 1.0.0 (relase)](#Release100-release)
+* [Release 0.2.0 (beta)](#release020-beta)
+* [Release 0.3.0 (beta)](#release030-beta)
+* [Release 1.0.0 (relase)](#release100-release)
 
 ## Release 0.2.0 (beta)
 
