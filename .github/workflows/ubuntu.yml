@@ -26,5 +26,5 @@ jobs:
 
     - name: Build
       # Build your program with the given configuration
-      run: scripts/circleci/build_xtd_and_launch_unit_tests_on_linux.sh
+      run: scripts/github/build_xtd_and_launch_unit_tests_on_linux.sh
       
