@@ -10,7 +10,7 @@ namespace xtd {
 
 class form1 : public form {
 public:
-  static int main() {
+  static void main() {
     xtd::forms::application::run(form1());
   }
 
