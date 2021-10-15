@@ -8,7 +8,7 @@ git submodule update --init
 mkdir build_cmake && cd build_cmake
 cmake .. -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF -DCMAKE_INSTALL_PREFIX=~/local
 if [ $? -ne 0 ]; then exit -1; fi
-cmake --build . --target install -- -j $(nproc)
+cmake --build . --target install -- -j 8
 if [ $? -ne 0 ]; then exit -1; fi
 cd ../../../..
 
@@ -17,7 +17,7 @@ git submodule update --init
 mkdir -p build && cd build
 cmake .. -DCMAKE_BUILD_TYPE=Debug -DXTD_BUILD_TESTS_XTD_CORE=ON -DXTD_BUILD_TESTS_XTD_DRAWING=ON -DXTD_BUILD_TESTS_XTD_FORMS=ON -DXTD_BUILD_TESTS_XTD_TUNIT=ON -DCMAKE_INSTALL_PREFIX=~/local
 if [ $? -ne 0 ]; then exit -1; fi
-cmake --build . -- -j $(nproc)
+cmake --build . -- -j 8
 if [ $? -ne 0 ]; then exit -1; fi
 cmake --build . --target install
 if [ $? -ne 0 ]; then exit -1; fi
