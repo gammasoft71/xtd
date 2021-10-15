@@ -10,6 +10,7 @@
 #include <xtd/native/socket_type_constants.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <map>
+#include <errno.h>
 #include <fcntl.h>
 #include <poll.h>
 #include <unistd.h>
