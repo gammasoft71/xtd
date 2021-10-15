@@ -22,7 +22,7 @@
 | Operating system | Status                                                                                                                                                                               |
 |------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Windows (win32)  | [![Windows (win32) Debug](https://github.com/gammasoft71/xtd/actions/workflows/windows_win32.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/windows_win32.yml) |
-| Windows (x64)    | [![Windows Debug](https://github.com/gammasoft71/xtd/actions/workflows/windows.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/windows.yml)                     |
+| Windows (x64)    | [![Windows (x64) Debug](https://github.com/gammasoft71/xtd/actions/workflows/windows.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/windows.yml)               |
 | macOS            | [![macOS Debug](https://github.com/gammasoft71/xtd/actions/workflows/macos.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/macos.yml)                           |
 | Ubuntu           | [![Ubuntu Debug](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu.yml)                        |
 <!---
