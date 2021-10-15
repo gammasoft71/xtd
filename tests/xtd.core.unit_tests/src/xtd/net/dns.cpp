@@ -55,7 +55,7 @@ namespace unit_tests {
     
     void test_method_(get_host_entry_from_host_address) {
       ip_host_entry host_entry = dns::get_host_entry(dns::get_host_entry(dns::get_host_name()).address_list()[0]);
-#if !_WIN32
+#if !_WIN32 && !__APPLE__
       string_assert::starts_with(dns::get_host_name().to_lower(), host_entry.host_name().to_lower(), csf_);
 #endif
       assert::is_greater_or_equal(host_entry.address_list().size(), 1U, csf_);
@@ -63,7 +63,7 @@ namespace unit_tests {
     
     void test_method_(get_host_entry_from_host_address_string) {
       ip_host_entry host_entry = dns::get_host_entry(dns::get_host_entry(dns::get_host_name()).address_list()[0].to_string());
-#if !_WIN32
+#if !_WIN32 && !__APPLE__
       string_assert::starts_with(dns::get_host_name().to_lower(), host_entry.host_name().to_lower(), csf_);
 #endif
       assert::is_greater_or_equal(host_entry.address_list().size(), 1U, csf_);
