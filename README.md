@@ -19,11 +19,12 @@
 
 ## Continuous Integration build status
 
-| Operating system | Status                                                                                                                                |
-|------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| Windows          | [![Windows Debug](https://github.com/gammasoft71/xtd/actions/workflows/windows.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/windows.yml) |
-| macOS            | [![macOS Debug](https://github.com/gammasoft71/xtd/actions/workflows/macos.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/macos.yml) |
-| Ubuntu           | [![Ubuntu Debug](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu.yml) |
+| Operating system | Status                                                                                                                                                                               |
+|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Windows (win32)  | [![Windows (win32) Debug](https://github.com/gammasoft71/xtd/actions/workflows/windows_win32.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/windows_win32.yml) |
+| Windows (x64)    | [![Windows Debug](https://github.com/gammasoft71/xtd/actions/workflows/windows.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/windows.yml)                     |
+| macOS            | [![macOS Debug](https://github.com/gammasoft71/xtd/actions/workflows/macos.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/macos.yml)                           |
+| Ubuntu           | [![Ubuntu Debug](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu.yml)                        |
 <!---
 | Windows          | [![Appveyor](https://ci.appveyor.com/api/projects/status/uqn1xbctwy88eghu?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd) |
 | macOS            | [![TravisCI](https://travis-ci.com/gammasoft71/xtd.svg?branch=master)](https://travis-ci.com/gammasoft71/xtd)                         |
