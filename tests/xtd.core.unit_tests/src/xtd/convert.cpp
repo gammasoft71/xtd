@@ -4699,7 +4699,7 @@ namespace unit_tests {
     }
     
     void test_method_(to_uint32_from_llong) {
-      llong_t value = 42ll;
+      llong_t value = 42;
       assert::are_equal(42u, convert::to_uint32(value), csf_);
       value = 0ll;
       assert::is_zero(convert::to_uint32(value), csf_);
