@@ -21,10 +21,11 @@
 
 | Operating system | Status                                                                                                                                |
 |------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| Windows          | [![Appveyor](https://ci.appveyor.com/api/projects/status/uqn1xbctwy88eghu?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd) |
+| Windows          | [![Windows Debug](https://github.com/gammasoft71/xtd/actions/workflows/windows.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/windows.yml) |
 | macOS            | [![macOS Debug](https://github.com/gammasoft71/xtd/actions/workflows/macos.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/macos.yml) |
 | Ubuntu           | [![Ubuntu Debug](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu.yml) |
 <!---
+| Windows          | [![Appveyor](https://ci.appveyor.com/api/projects/status/uqn1xbctwy88eghu?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd) |
 | macOS            | [![TravisCI](https://travis-ci.com/gammasoft71/xtd.svg?branch=master)](https://travis-ci.com/gammasoft71/xtd)                         |
 | Linux            | [![CircleCI](https://circleci.com/gh/gammasoft71/xtd.svg?style=shield)](https://circleci.com/gh/gammasoft71/xtd)                      |
 --->
