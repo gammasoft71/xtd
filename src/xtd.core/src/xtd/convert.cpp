@@ -2871,7 +2871,7 @@ uint32_t convert::to_uint32(int64_t value) {
 }
 
 uint32_t convert::to_uint32(llong_t value) {
-  if (value < static_cast<llong_t>(numeric_limits<uint32_t>::lowest()) || value > static_cast<llong_t>(numeric_limits<uint32_t>::max())) throw overflow_exception(csf_);
+  if (value < static_cast<llong_t>(numeric_limits<uint32_t>::lowest())) throw overflow_exception(csf_);
   return static_cast<uint32_t>(value);
 }
 
