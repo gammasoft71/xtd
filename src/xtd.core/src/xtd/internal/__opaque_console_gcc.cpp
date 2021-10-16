@@ -108,7 +108,8 @@ namespace {
       termioAttributes.c_cc[VMIN] = 0;
       tcsetattr(0, TCSANOW, &termioAttributes);
       
-      read(0, &peekCharacter, 1);
+      if (read(0, &peekCharacter, 1) == -1)
+        return  false;
       
       tcsetattr(0, TCSANOW, &backupedTermioAttributes);
       
