@@ -27,6 +27,11 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 
 | Library   | Enhancements                    | Developer | status  |
 |-----------|---------------------------------|-----------|---------|
+| xtd.core  | io::directory                   | Gammasoft | [ ]     |
+| xtd.core  | io::directory_info              | Gammasoft | [ ]     |
+| xtd.core  | io::drive_info                  | Gammasoft | [ ]     |
+| xtd.core  | io::file_info                   | Gammasoft | [ ]     |
+|           | iOS platforms                   | Gammasoft | [ ]     |
 | xtd.forms | button_render                   | Gammasoft | [ ]     |
 | xtd.forms | check_box_render                | Gammasoft | [ ]     |
 | xtd.forms | collapsible_panel               | Gammasoft | [ ]     |
