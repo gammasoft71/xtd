@@ -1,3 +1,4 @@
+#define TRACE
 #include <xtd/diagnostics/trace_listener.h>
 #include <xtd/xtd.tunit>
 #include <sstream>
