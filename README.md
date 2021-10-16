@@ -29,6 +29,10 @@
 | macOS            |  Release | [![macOS Release](https://github.com/gammasoft71/xtd/actions/workflows/macos_release.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/macos_release.yml)                           |
 | Ubuntu           |  Debug   | [![Ubuntu Debug](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu.yml)                                          |
 | Ubuntu           |  Release | [![Ubuntu Release](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu_release.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu_release.yml)                        |
+| iOS              |  Debug   | Coming soon...                                                                                                                                                                                         |
+| iOS              |  Release | Coming soon...                                                                                                                                                                                         |
+| Android          |  Debug   | Coming soon...                                                                                                                                                                                         |
+| Android          |  Release | Coming soon...                                                                                                                                                                                         |
 
 ## Features
 
