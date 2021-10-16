@@ -79,7 +79,9 @@ namespace {
 #endif
   
   void set_current_director(const std::string& current_path) {
-    chdir(current_path.c_str());
+    if (chdir(current_path.c_str())) {
+      // do nothing, just for remove warning...
+    }
   }
 
   string get_full_file_name_with_extension(function<vector<string>(const string& str, const vector<char>& separators, size_t count)> splitter, const string& file_name, const string& working_directory = "") {
