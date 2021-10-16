@@ -19,18 +19,16 @@
 
 ## Continuous Integration build status
 
-| Operating system | Status                                                                                                                                                                               |
-|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Windows (win32)  | [![Windows (win32) Debug](https://github.com/gammasoft71/xtd/actions/workflows/windows_win32.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/windows_win32.yml) [![Windows (win32) Release](https://github.com/gammasoft71/xtd/actions/workflows/windows_win32_release.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/windows_win32_release.yml) |
-| Windows (x64)    | [![Windows (x64) Debug](https://github.com/gammasoft71/xtd/actions/workflows/windows.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/windows.yml) [![Windows (x64) Release](https://github.com/gammasoft71/xtd/actions/workflows/windows_release.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/windows_release.yml)               |
-| macOS            | [![macOS Debug](https://github.com/gammasoft71/xtd/actions/workflows/macos.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/macos.yml) [![macOS Release](https://github.com/gammasoft71/xtd/actions/workflows/macos_release.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/macos_release.yml)                           |
-| Ubuntu           | [![Ubuntu Debug](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu.yml) [![Ubuntu Release](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu_release.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu_release.yml)                        |
-<!---
-| Windows          | [![Appveyor](https://ci.appveyor.com/api/projects/status/uqn1xbctwy88eghu?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd) |
-| macOS            | [![TravisCI](https://travis-ci.com/gammasoft71/xtd.svg?branch=master)](https://travis-ci.com/gammasoft71/xtd)                         |
-| Linux            | [![CircleCI](https://circleci.com/gh/gammasoft71/xtd.svg?style=shield)](https://circleci.com/gh/gammasoft71/xtd)                      |
---->
-
+| Operating system | Build    | Status                                                                                                                                                                                                 |
+|------------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Windows (win32)  |  Debug   | [![Windows (win32) Debug](https://github.com/gammasoft71/xtd/actions/workflows/windows_win32.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/windows_win32.yml)                   |
+| Windows (win32)  |  Release | [![Windows (win32) Release](https://github.com/gammasoft71/xtd/actions/workflows/windows_win32_release.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/windows_win32_release.yml) |
+| Windows (x64)    |  Debug   | [![Windows (x64) Debug](https://github.com/gammasoft71/xtd/actions/workflows/windows.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/windows.yml)                                 |
+| Windows (x64)    |  Release | [![Windows (x64) Release](https://github.com/gammasoft71/xtd/actions/workflows/windows_release.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/windows_release.yml)               |
+| macOS            |  Debug   | [![macOS Debug](https://github.com/gammasoft71/xtd/actions/workflows/macos.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/macos.yml)                                             |
+| macOS            |  Release | [![macOS Release](https://github.com/gammasoft71/xtd/actions/workflows/macos_release.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/macos_release.yml)                           |
+| Ubuntu           |  Debug   | [![Ubuntu Debug](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu.yml)                                          |
+| Ubuntu           |  Release | [![Ubuntu Release](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu_release.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu_release.yml)                        |
 
 ## Features
 
