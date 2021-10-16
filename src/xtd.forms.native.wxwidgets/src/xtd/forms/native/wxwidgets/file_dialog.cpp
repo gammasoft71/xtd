@@ -50,11 +50,7 @@ namespace {
       wxArrayString files;
       dialog.GetFilenames(files);
       for (wxString file : files)
-#if defined(__APPLE__)
         file_names.push_back(path::combine(convert_string::to_string(dialog.GetDirectory().c_str().AsWChar()), convert_string::to_string(file.c_str().AsWChar())));
-#else
-      file_names.push_back(convert_string::to_string(file.c_str().AsWChar()));
-#endif
       file_name = file_names[0];
     }
   }
