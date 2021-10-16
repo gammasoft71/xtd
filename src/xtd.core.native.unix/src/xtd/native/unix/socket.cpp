@@ -133,7 +133,7 @@ int32_t socket::connect(intptr_t handle, const vector<uint8_t>& socket_address) 
 #if defined(__APPLE__)
   swap(const_cast<vector<uint8_t>&>(socket_address)[0], const_cast<vector<uint8_t>&>(socket_address)[1]);
 #endif
-  auto result = ::connect(static_cast<int32_t>(handle), reinterpret_cast<const sockaddr*>(socket_address.data()), socket_address.size());
+  auto result = ::connect(static_cast<int32_t>(handle), reinterpret_cast<const sockaddr*>(socket_address.data()), static_cast<socklen_t>(socket_address.size()));
 #if defined(__APPLE__)
   swap(const_cast<vector<uint8_t>&>(socket_address)[0], const_cast<vector<uint8_t>&>(socket_address)[1]);
 #endif
