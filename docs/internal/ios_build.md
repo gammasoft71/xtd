@@ -29,3 +29,14 @@ cmake .. -DCMAKE_TOOLCHAIN_FILE=../scripts/cmake/toolchain/ios.cmake -DPLATFORM=
 ## Check macOS and iOS target :
 
 [https://stackoverflow.com/questions/5919996/how-to-detect-reliably-mac-os-x-ios-linux-windows-in-c-preprocessor](https://stackoverflow.com/questions/5919996/how-to-detect-reliably-mac-os-x-ios-linux-windows-in-c-preprocessor)
+
+## Prerequisites 
+
+std::filesystem::path is not supported on iOS.
+
+* For a full compatibility the following classes must be implemented
+  * xtd::io::directory
+  * xtd::io::directory_info
+  * xtd::io::drive_info
+  * xtd::io::file_info  
+* Remove all references to std::filesystem::path in xtd implementation.
