@@ -2,9 +2,9 @@
 
 **Modern C++17/20 framework to create console (CLI), forms (GUI like WinForms) and tunit (unit tests like Microsoft Unit Testing Framework) applications on Windows, macOS, Linux, iOS and android (*).**
 
-(*) See [portability](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#the-xtd-libraries-portability-list) for more information.
-
 [![logo](docs/pictures/logo.png)](https://gammasoft71.wixsite.com/xtdpro)
+
+(*) See [portability](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#the-xtd-libraries-portability-list) for more information.
 
 [![License](https://img.shields.io/github/license/gammasoft71/xtd)](docs/license.md)
 [![Language](https://img.shields.io/badge/language-C++17/20-brightgreen.svg)](docs/portability.md#c++17)
