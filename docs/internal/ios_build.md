@@ -26,3 +26,6 @@ cmake .. -DCMAKE_TOOLCHAIN_FILE=../scripts/cmake/toolchain/ios.cmake -DPLATFORM=
 
 ### Note : The options called *COMBINED (OS64COMBINED, TVOSCOMBINED and WATCHOSCOMBINED) will build complete FAT-libraries for the given platform. These FAT-libraries include slices for both device and simulator, making the distribution and usage of the library much more simple!
 
+## Check macOS and iOS target :
+
+[https://stackoverflow.com/questions/5919996/how-to-detect-reliably-mac-os-x-ios-linux-windows-in-c-preprocessor](https://stackoverflow.com/questions/5919996/how-to-detect-reliably-mac-os-x-ios-linux-windows-in-c-preprocessor)
