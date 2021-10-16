@@ -2,7 +2,7 @@
 
 [![xtd_background](pictures/xtd_background.png)](https://gammasoft71.wixsite.com/xtdpro)
 
-(*) See [portability](portability.md#the-xtd-libraries-portability-list) for more information
+(*) See [portability](portability.md#the-xtd-libraries-portability-list) for more information.
 
 # Latest news
 
