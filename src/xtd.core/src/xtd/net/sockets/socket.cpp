@@ -64,7 +64,7 @@ socket::socket(intptr_t handle) {
 
 socket::socket(const socket_information& socket_information) {
   //data_ = std::make_shared<data>();
-  throw not_implemented_exception(csf_);
+  if (data_) throw not_implemented_exception(csf_);
 }
 
 socket::socket(xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type) : socket(native::socket::get_os_supports_ip_v6() ? address_family::inter_network_v6 : address_family::inter_network, socket_type, protocol_type)  {
