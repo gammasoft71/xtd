@@ -1,6 +1,7 @@
 # xtd
 
-**Modern C++17/20 framework to create console (CLI), forms (GUI like WinForms) and tunit (unit tests like Microsoft Unit Testing Framework) applications on Windows, macOS, Linux, iOS and android.**
+**Modern C++17/20 framework to create console (CLI), forms (GUI like WinForms) and tunit (unit tests like Microsoft Unit Testing Framework) applications on Windows, macOS, Linux, iOS and android (*).**
+(*) See [portability](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#the-xtd-libraries-portability-list) for more information.
 
 [![logo](docs/pictures/logo.png)](https://gammasoft71.wixsite.com/xtdpro)
 
@@ -29,10 +30,10 @@
 | macOS            |  Release | [![macOS Release](https://github.com/gammasoft71/xtd/actions/workflows/macos_release.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/macos_release.yml)                           |
 | Ubuntu           |  Debug   | [![Ubuntu Debug](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu.yml)                                          |
 | Ubuntu           |  Release | [![Ubuntu Release](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu_release.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu_release.yml)                        |
-| iOS (*)          |  Debug   | Coming soon...                                                                                                                                                                                         |
-| iOS (*)          |  Release | Coming soon...                                                                                                                                                                                         |
-| Android (*)      |  Debug   | Coming soon...                                                                                                                                                                                         |
-| Android (*)      |  Release | Coming soon...                                                                                                                                                                                         |
+| iOS (**)         |  Debug   | Coming soon...                                                                                                                                                                                         |
+| iOS (**)         |  Release | Coming soon...                                                                                                                                                                                         |
+| Android (**)     |  Debug   | Coming soon...                                                                                                                                                                                         |
+| Android (**)     |  Release | Coming soon...                                                                                                                                                                                         |
 
  (*) [xtd.core and xtd.tunit only](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#the-xtd-libraries-portability-list).
 
