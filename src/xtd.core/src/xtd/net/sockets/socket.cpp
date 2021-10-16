@@ -63,7 +63,7 @@ socket::socket(intptr_t handle) {
 }
 
 socket::socket(const socket_information& socket_information) {
-  data_ = std::make_shared<data>();
+  //data_ = std::make_shared<data>();
   throw not_implemented_exception(csf_);
 }
 
