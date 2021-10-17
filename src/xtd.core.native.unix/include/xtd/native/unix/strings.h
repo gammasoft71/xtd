@@ -13,11 +13,13 @@
 #undef unix
 
 namespace xtd::native {
+  class directory;
   class environment;
   class process;
   class translator;
   namespace unix {
     class strings final {
+      friend xtd::native::directory;
       friend xtd::native::environment;
       friend xtd::native::process;
       friend xtd::native::translator;
@@ -45,6 +47,42 @@ namespace xtd::native {
         return ss.str();
       }
 
+      static size_t last_index_of(const std::string& str, char value) noexcept {
+        return last_index_of(str, value, 0, str.size());
+      }
+      
+      static size_t last_index_of(const std::string& str, const std::string& value) noexcept {
+        return last_index_of(str, value, 0, str.size());
+      }
+      
+      static size_t last_index_of(const std::string& str, char value, size_t start_index) noexcept {
+        return last_index_of(str, value, start_index, str.size() - start_index);
+      }
+      
+      static size_t last_index_of(const std::string& str, const std::string& value, size_t start_index) noexcept {
+        return last_index_of(str, value, start_index, str.size() - start_index);
+      }
+      
+      static size_t last_index_of(const std::string& str, char value, size_t start_index, size_t count) noexcept {
+        size_t result = str.rfind(value, start_index + count - 1);
+        return result < start_index ? str.npos : result;
+      }
+      
+      static size_t last_index_of(const std::string& str, const std::string& value, size_t start_index, size_t count) noexcept {
+        size_t result = str.rfind(value, start_index + count - value.size());
+        return result < start_index ? str.npos : result;
+      }
+
+      static std::string remove(const std::string& str, size_t start_index) noexcept {
+        return remove(str, start_index, str.size() - start_index);
+      }
+      
+      static std::string remove(const std::string& str, size_t start_index, size_t count) noexcept {
+        if (start_index > str.size()) return str;
+        std::string result(str);
+        return result.erase(start_index, count);
+      }
+
       static std::string replace(const std::string& str, const std::string& old_string, const std::string& new_string) noexcept {
         std::string result(str);
         size_t index = 0;
@@ -58,7 +96,7 @@ namespace xtd::native {
         return result;
       }
       
-      static std::vector<std::string> split(const std::string& str, const std::vector<char>& separators, size_t count = std::numeric_limits<size_t>::max()) noexcept {
+      static std::vector<std::string> split(const std::string& str, const std::vector<char>& separators, size_t count = std::numeric_limits<size_t>::max(), bool remove_empty_entries = false) noexcept {
         if (count == 0) return {};
         if (count == 1) return {str};
         
@@ -68,7 +106,7 @@ namespace xtd::native {
         for (std::string::const_iterator it = str.begin(); it != str.end(); it++) {
           bool is_separator =  std::find(split_char_separators.begin(), split_char_separators.end(), *it) != split_char_separators.end();
           if (!is_separator) subString.append(std::string(1, *it));
-          if ((static_cast<size_t>(it - str.begin()) == str.length() - 1 || is_separator) && (subString.length() > 0 || (subString.length() == 0))) {
+          if ((static_cast<size_t>(it - str.begin()) == str.length() - 1 || is_separator) && (subString.length() > 0 || (subString.length() == 0  && !remove_empty_entries))) {
             if (list.size() == count - 1) {
               list.push_back(subString + std::string(str.c_str(), it - str.begin() + (is_separator ? 0 : 1), str.length() - (it - str.begin()) + (is_separator ? 0 : 1)));
               return list;

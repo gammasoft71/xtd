@@ -43,14 +43,14 @@ namespace xtd::native {
         return result;
       }
       
-      static std::vector<std::string> split(const std::string& str, const std::vector<char>& separators) noexcept {
+      static std::vector<std::string> split(const std::string& str, const std::vector<char>& separators, bool remove_empty_entries = false) noexcept {
         std::vector<std::string> list;
         std::string subString;
         std::vector<char> split_char_separators = separators.size() == 0 ? std::vector<char> {9, 10, 11, 12, 13, 32} : separators;
         for (std::string::const_iterator it = str.begin(); it != str.end(); it++) {
           bool is_separator =  std::find(split_char_separators.begin(), split_char_separators.end(), *it) != split_char_separators.end();
           if (!is_separator) subString.append(std::string(1, *it));
-          if ((static_cast<size_t>(it - str.begin()) == str.length() - 1 || is_separator) && (subString.length() > 0 || (subString.length() == 0))) {
+          if ((static_cast<size_t>(it - str.begin()) == str.length() - 1 || is_separator) && (subString.length() > 0 || (subString.length() == 0  && !remove_empty_entries))) {
             list.push_back(subString);
             subString.clear();
           }
