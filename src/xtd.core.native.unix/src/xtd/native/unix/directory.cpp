@@ -3,7 +3,6 @@
 #include <xtd/native/path.h>
 #include "../../../../include/xtd/native/unix/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#include <string>
 #include <dirent.h>
 #include <unistd.h>
 #include <sys/param.h>
