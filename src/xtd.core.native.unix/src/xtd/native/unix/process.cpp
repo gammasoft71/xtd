@@ -214,7 +214,7 @@ intptr_t process::shell_execute(const std::string& verb, const string& file_name
       }
     } else {
       command_line_args = split_arguments(arguments);
-      if (working_directory != "") chdir(working_directory.c_str());
+      if (working_directory != "") current_path(working_directory.c_str());
       command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name));
     }
     vector<char*> execvp_args(command_line_args.size() + 1);
@@ -259,7 +259,7 @@ process::started_process process::start(const string& file_name, const string& a
     }
     
     vector<string> command_line_args;
-    if (working_directory != "") chdir(working_directory.c_str());
+    if (working_directory != "") current_path(working_directory.c_str());
     command_line_args = split_arguments(arguments);
     command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name));
     vector<char*> execvp_args(command_line_args.size() + 1);
