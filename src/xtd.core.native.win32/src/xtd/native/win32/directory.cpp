@@ -34,7 +34,7 @@ directory::directory_iterator::directory_iterator() {
 directory::directory_iterator::~directory_iterator() {
   if (data_.use_count() == 1) {
     // close handle...
-    data_->handle_ = nuullptr;
+    //data_->handle_ = nullptr;
   }
 }
 
@@ -76,7 +76,7 @@ directory::file_iterator::file_iterator() {
 directory::file_iterator::~file_iterator() {
   if (data_.use_count() == 1) {
     // close handle...
-    data_->handle_ = nuullptr;
+    //data_->handle_ = nullptr;
   }
 }
 
