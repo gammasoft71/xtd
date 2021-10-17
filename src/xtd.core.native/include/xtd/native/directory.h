@@ -11,6 +11,7 @@
 #include <xtd/core_native_export.h>
 #include <cstdint>
 #include <iterator>
+#include <memory>
 #include <string>
 #include <vector>
 #include "file_attribute.h"
@@ -33,9 +34,14 @@ namespace xtd {
       /// @brief Represent directory iterator used by xtd::native::directtory::enumerate_directories.
       /// @warning Internal use only
       class directory_iterator : public std::iterator<std::input_iterator_tag, std::string> {
+        explicit directory_iterator(const std::string& path, const std::string& pattern);
       public:
         /// @cond
-        directory_iterator() = default;
+        directory_iterator();
+        directory_iterator(const directory_iterator&) = default;
+        directory_iterator(directory_iterator&&) = default;
+        ~directory_iterator();
+
         directory_iterator& operator++();
         directory_iterator operator++(int);
         bool operator==(directory_iterator other) const;
@@ -45,16 +51,21 @@ namespace xtd {
         
       private:
         friend xtd::native::directory;
-        explicit directory_iterator(intptr_t handle) : handle_(handle) {}
-        intptr_t handle_ = 0;
+        struct data;
+        std::shared_ptr<data> data_;
       };
       
       /// @brief Represent file iterator used by xtd::native::directtory::enumerate_files.
       /// @warning Internal use only
       class file_iterator : public std::iterator<std::input_iterator_tag, std::string> {
+        explicit file_iterator(const std::string& path, const std::string& pattern);
       public:
         /// @cond
-        file_iterator() = default;
+        file_iterator();
+        file_iterator(const file_iterator&) = default;
+        file_iterator(file_iterator&&) = default;
+        ~file_iterator();
+
         file_iterator& operator++();
         file_iterator operator++(int);
         bool operator==(file_iterator other) const;
@@ -64,9 +75,11 @@ namespace xtd {
 
       private:
         friend xtd::native::directory;
-        explicit file_iterator(intptr_t handle) : handle_(handle) {}
-        intptr_t handle_ = 0;
+        struct data;
+        std::shared_ptr<data> data_;
       };
+      friend directory_iterator;
+      friend file_iterator;
 
       /// @brief Creates all directories and subdirectories in the specified path unless they already exist.
       /// @param directory_name The directory to create.
