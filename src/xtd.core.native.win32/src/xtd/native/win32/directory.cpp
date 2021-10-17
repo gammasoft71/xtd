@@ -15,14 +15,14 @@ using namespace xtd::native;
 
 struct directory::directory_iterator::data {
   data() = default;
-  data(const std::string& path, const std::string& pattern, int32_t file_type) : path_(path), pattern_(pattern), file_type_(file_type) {}
+  data(const std::string& path, const std::string& pattern) : path_(path), pattern_(pattern), file_type_(file_type) {}
   std::string path_;
   std::string pattern_;
-  int32_t file_type_;
+  mutable string current_;
 };
 
-directory::directory_iterator::directory_iterator(const std::string& path, const std::string& pattern, int32_t file_type) {
-  data_ = make_shared<data>(path, pattern, file_type);
+directory::directory_iterator::directory_iterator(const std::string& path, const std::string& pattern) {
+  data_ = make_shared<data>(path, pattern);
 }
 
 directory::directory_iterator::directory_iterator() {

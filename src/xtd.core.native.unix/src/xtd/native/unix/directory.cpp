@@ -60,7 +60,9 @@ directory::directory_iterator& directory::directory_iterator::operator++() {
 }
 
 directory::directory_iterator directory::directory_iterator::operator++(int) {
-  return *this;
+  directory_iterator result = *this;
+  ++(*this);
+  return result;
 }
 
 bool directory::directory_iterator::operator==(directory::directory_iterator other) const {
@@ -109,7 +111,9 @@ directory::file_iterator& directory::file_iterator::operator++() {
 }
 
 directory::file_iterator directory::file_iterator::operator++(int) {
-  return *this;
+  file_iterator result = *this;
+  ++(*this);
+  return result;
 }
 
 bool directory::file_iterator::operator==(directory::file_iterator other) const {
