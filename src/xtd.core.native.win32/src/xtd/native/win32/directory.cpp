@@ -97,7 +97,7 @@ int64_t directory::get_file_size(const std::string& path) {
   return size.QuadPart;
 }
 
-int32_t directory::move_file(const std::string& old_path, const std::string& new_ath) {
+int32_t directory::move_file(const std::string& old_path, const std::string& new_path) {
   int32_t file_attributes = 0;
   if (get_file_attributes(new_path, file_attributes) == 0)
     return -1;
@@ -109,9 +109,9 @@ int32_t directory::remove_directory(const std::string& directory_name) {
 }
 
 int32_t directory::remove_file(const std::string& file) {
-  return ::remove(path.c_str());
+  return ::remove(file.c_str());
 }
 
 int32_t directory::set_current_directory(const std::string& directory_name) {
-  return _chdir(directoryName.c_str());
+  return _chdir(directory_name.c_str());
 }
