@@ -15,7 +15,7 @@ using namespace xtd::native;
 
 struct directory::directory_iterator::data {
   data() = default;
-  data(const std::string& path, const std::string& pattern) : path_(path), pattern_(pattern), file_type_(file_type) {}
+  data(const std::string& path, const std::string& pattern) : path_(path), pattern_(pattern) {}
   std::string path_;
   std::string pattern_;
   mutable string current_;
