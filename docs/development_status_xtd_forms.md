@@ -215,7 +215,7 @@
 | [nine_segment_display_renderer](../src/xtd.forms/include/xtd/forms/nine_segment_display_renderer.h)                           | static class | ![progress](pictures/progress0.png)   |
 | [numeric_up_down](../src/xtd.forms/include/xtd/forms/numeric_up_down.h)                                                       | class        | ![progress](pictures/progress100.png) |
 | [numeric_up_down_renderer](../src/xtd.forms/include/xtd/forms/numeric_up_down_renderer.h)                                     | static class | ![progress](pictures/progress0.png)   |
-| [open_file_box](../src/xtd.forms/include/xtd/forms/open_file_box.h)                                                           | static class | ![progress](pictures/progress0.png)   |
+| [open_file_box](../src/xtd.forms/include/xtd/forms/open_file_box.h)                                                           | static class | ![progress](pictures/progress100.png) |
 | [open_file_dialog](../src/xtd.forms/include/xtd/forms/open_file_dialog.h)                                                     | class        | ![progress](pictures/progress100.png) |
 | [orientation](../src/xtd.forms/include/xtd/forms/orientation.h)                                                               | enumeration  | ![progress](pictures/progress100.png) |
 | [padding](../src/xtd.forms/include/xtd/forms/padding.h)                                                                       | class        | ![progress](pictures/progress100.png) |
