@@ -70,9 +70,9 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | xtd.forms | toggle_button_render            | Gammasoft | -       |
 | xtd.forms | toolbar_bar                     | Bader     | -       |
 
- - No tstarted
-👨‍💻 Work in progress
-✅ Done
+*  - No tstarted
+* 👨‍💻 Work in progress
+* ✅ Done
 
 ## Release 0.3.0 (beta)
 
