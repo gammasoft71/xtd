@@ -100,7 +100,7 @@ namespace {
       if (working_directory != "" && exists(path(working_directory)/file_name_with_extension)) return (path(working_directory)/file_name_with_extension).string();
       if (path(file_name_with_extension).has_root_directory()) return file_name_with_extension;
       if (exists(current_path()/file_name_with_extension)) return (current_path()/file_name_with_extension).string();
-      for (auto directory : splitter(path_directories, {':'}, numeric_limits<size_t>::max()))
+      for (auto directory : splitter(path_directories, {':'}, numeric_limits<size_t>::max(), false))
         if (exists(path(directory)/file_name_with_extension)) return (path(directory)/file_name_with_extension).string();
     }
     return file_name;
