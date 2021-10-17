@@ -229,11 +229,12 @@ namespace xtd {
               .show_preview(options & open_file_box_options::show_preview)
               .support_multi_dotted_extensions(options & open_file_box_options::support_multi_dotted_extensions);
         const auto res = owner ? dialog.show_sheet_dialog(*owner) : dialog.show_dialog();
-        if (res == dialog_result::ok)
+        if (res == dialog_result::ok) {
           if constexpr (multiselect)
             output = dialog.file_names();
           else
             output = dialog.file_name();
+        }
         return res;
       }
     };
