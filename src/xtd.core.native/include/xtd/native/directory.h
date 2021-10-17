@@ -1,0 +1,139 @@
+/// @file
+/// @brief Contains directory API.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
+#pragma once
+/// @cond
+#ifndef __XTD_CORE_NATIVE_LIBRARY__
+#error "Do not include this file: Internal use only"
+#endif
+/// @endcond
+
+#include <xtd/core_native_export.h>
+#include <cstdint>
+#include <iterator>
+#include <string>
+#include <vector>
+#include "file_attribute.h"
+
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
+namespace xtd {
+  /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
+  /// @warning Internal use only
+  namespace native {
+    /// @brief Contains directory native API.
+    /// @par Namespace
+    /// xtd::native
+    /// @par Library
+    /// xtd.core.native
+    /// @ingroup xtd_core_native native
+    /// @warning Internal use only
+    class core_native_export_ directory final {
+      directory() = delete;
+    protected:
+      /// @brief Represent directory iterator used by xtd::native::directtory::enumerate_directories.
+      /// @warning Internal use only
+      class directory_iterator : public std::iterator<std::input_iterator_tag, std::string> {
+      public:
+        /// @cond
+        directory_iterator() = default;
+        directory_iterator& operator++();
+        directory_iterator operator++(int);
+        bool operator==(directory_iterator other) const;
+        bool operator!=(directory_iterator other) const {return !operator==(other);}
+        value_type operator*() const;
+        /// @endcond
+        
+      private:
+        friend xtd::native::directory;
+        explicit directory_iterator(intptr_t handle) : handle_(handle) {}
+        intptr_t handle_ = 0;
+      };
+      
+      /// @brief Represent file iterator used by xtd::native::directtory::enumerate_files.
+      /// @warning Internal use only
+      class file_iterator : public std::iterator<std::input_iterator_tag, std::string> {
+      public:
+        /// @cond
+        file_iterator() = default;
+        file_iterator& operator++();
+        file_iterator operator++(int);
+        bool operator==(file_iterator other) const;
+        bool operator!=(file_iterator other) const {return !operator==(other);}
+        value_type operator*() const;
+        /// @endcond
+
+      private:
+        friend xtd::native::directory;
+        explicit file_iterator(intptr_t handle) : handle_(handle) {}
+        intptr_t handle_ = 0;
+      };
+
+      /// @brief Creates all directories and subdirectories in the specified path unless they already exist.
+      /// @param directory_name The directory to create.
+      /// @return 0 if success; otherwise failed.
+      /// @warning Internal use only
+      static int32_t create_directory(const std::string& directory_name);
+      /// @brief Returns an enumerable collection of directory full names that match a search pattern in a specified path.
+      /// @param path The relative or absolute path to the directory to search.
+      /// @param pattern The search string to match against the names of directories in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
+      /// @return An iterator of the full names (including paths) for the directories in the directory specified by path and that match the specified search pattern.
+      /// @warning Internal use only
+      static directory_iterator enumerate_directories(const std::string& path, const std::string& pattern);
+      /// @brief Returns an iterator of full file names that match a search pattern in a specified path.
+      /// @param path The relative or absolute path to the directory to search.
+      /// @param pattern The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
+      /// @return An iterator of the full names (including paths) for the files in the directory specified by path and that match the specified search pattern.
+      /// @warning Internal use only
+      static file_iterator enumerate_files(const std::string& path, const std::string& pattern);
+      /// @brief Get the current directory.
+      /// @return The currrent directory.
+      /// @warning Internal use only
+      static std::string get_current_directory();
+      /// @brief Gets the attributes for the specified file or directory path.
+      /// @param path The relative or absolute path to the directory to get attribute.
+      /// @param attribute The file or path attribute. (see file_attribute.h)
+      /// @return 0 if success; otherwise failed.
+      /// @warning Internal use only
+      static int32_t get_file_attributes(const std::string& path, int32_t& attributes);
+      /// @brief Get file size of specified path.
+      /// @param path The relative or absolute path to the directory to get size.
+      /// @return The file size.
+      /// @warning Internal use only
+      static int64_t get_file_size(const std::string& path);
+      /// @brief Get file creeation time, last access time and lastt write time of specified path.
+      /// @param path The relative or absolute path to the directory to get times.
+      /// @param creation_time That contains the creation time.
+      /// @param last_access_time That contains the last access time.
+      /// @param last_write_time That contains the last write time.
+      /// @return 0 if success; otherwise failed.
+      /// @warning Internal use only
+      static int32_t get_file_time(const std::string& path, int64_t& creation_time, int64_t& last_access_time, int64_t& last_write_time);
+      /// @brief Get full path of specified path.
+      /// @param relative_path The relative path to the directory to search.
+      /// @return The fulll path.
+      /// @warning Internal use only
+      static std::string get_full_path(const std::string& relative_path);
+      /// @brief Moves a file or a directory and its contents to a new location.
+      /// @param old_path The path of the file or directory to move.
+      /// @param new_path The path to the new location for old_path. If old_path is a file, then new_path must also be a file name.
+      /// @return 0 if success; otherwise failed.
+      /// @warning Internal use only
+      static int32_t move_file(const std::string& old_path, const std::string& new_path);
+      /// @brief Deletes an empty directory from a specified path.
+      /// @param directory_name The name of the empty directory to remove. This directory must be writable and empty.
+      /// @return 0 if success; otherwise failed.
+      /// @warning Internal use only
+      static int32_t remove_directory(const std::string& directory_name);
+      /// @brief Permanently deletes a speccified file.
+      /// @param file The file name to delete.
+      /// @return 0 if success; otherwise failed.
+      /// @warning Internal use only
+      static int32_t remove_file(const std::string& file);
+      /// @brief Set the current directory.
+      /// @param dirrectory_name The currrent directory.
+      /// @return 0 if success; otherwise failed.
+      /// @warning Internal use only
+      static int32_t set_current_directory(const std::string& directory_name);
+    };
+  }
+}

@@ -84,7 +84,7 @@ namespace {
     }
   }
 
-  string get_full_file_name_with_extension(function<vector<string>(const string& str, const vector<char>& separators, size_t count)> splitter, const string& file_name, const string& working_directory = "") {
+  string get_full_file_name_with_extension(function<vector<string>(const string& str, const vector<char>& separators, size_t count, bool)> splitter, const string& file_name, const string& working_directory = "") {
     string path_directories = getenv("PATH") == nullptr ? "" : getenv("PATH");
 #if defined(__APPLE__)
     path_directories += ":/Applications:/Applications/Utilities:/System/Applications:/System/Applications/Utilities";
@@ -110,7 +110,7 @@ namespace {
 #endif
   }
   
-  bool is_valid_process(function<vector<string>(const string& str, const vector<char>& separators, size_t count)> splitter, const string& command_line, const string& working_directory) {
+  bool is_valid_process(function<vector<string>(const string& str, const vector<char>& separators, size_t count, bool)> splitter, const string& command_line, const string& working_directory) {
 #if defined(__linux__) || (!defined(TARGET_IPHONE_SIMULATOR) && !defined(TARGET_OS_MACCATALYST) && !defined(TARGET_OS_IPHONE))
     auto full_file_name_with_extension = get_full_file_name_with_extension(splitter, command_line, working_directory);
     return exists(full_file_name_with_extension);
@@ -127,7 +127,7 @@ namespace {
     return false;
   }
 
-  bool is_valid_shell_execute_process(function<vector<string>(const string& str, const vector<char>& separators, size_t count)> splitter, const string& command_line, const string& working_directory) {
+  bool is_valid_shell_execute_process(function<vector<string>(const string& str, const vector<char>& separators, size_t count, bool)> splitter, const string& command_line, const string& working_directory) {
     return command_line == "" || is_valid_process(splitter, command_line, working_directory) || is_valid_uri(command_line);
   }
   
