@@ -68,20 +68,12 @@ namespace {
     file_descriptor_streambuf stream_buf_;
   };
 
-#if defined(__linux__) || (!defined(TARGET_IPHONE_SIMULATOR) && !defined(TARGET_OS_MACCATALYST) && !defined(TARGET_OS_IPHONE))
   string shell_execute_command() {
 #if defined(__APPLE__)
     return "open";
 #else
     return "xdg-open";
 #endif
-  }
-#endif
-  
-  void set_current_director(const std::string& current_path) {
-    if (chdir(current_path.c_str())) {
-      // do nothing, just for remove warning...
-    }
   }
 
   string get_full_file_name_with_extension(function<vector<string>(const string& str, const vector<char>& separators, size_t count, bool)> splitter, const string& file_name, const string& working_directory = "") {
@@ -92,7 +84,6 @@ namespace {
     if (user != "") path_directories += ":/Users/" + user + "/Applications";
 #endif
     
-#if defined(__linux__) || (!defined(TARGET_IPHONE_SIMULATOR) && !defined(TARGET_OS_MACCATALYST) && !defined(TARGET_OS_IPHONE))
     static set<string> standard_extensions = {"", ".action", ".apk", ".app", ".bin", ".command", ".csh", ".ipa", ".ksh", ".osx", ".out", ".run", ".sh", ".workflow"};
     set<string> extensions = path(file_name).has_extension() ? set<string> {""} : standard_extensions;
     for(auto extension : extensions) {
@@ -104,20 +95,11 @@ namespace {
         if (exists(path(directory)/file_name_with_extension)) return (path(directory)/file_name_with_extension).string();
     }
     return file_name;
-#else
-    /// @todo iOS : Add code when xtd::io::file_info was created...
-    return "";
-#endif
   }
   
   bool is_valid_process(function<vector<string>(const string& str, const vector<char>& separators, size_t count, bool)> splitter, const string& command_line, const string& working_directory) {
-#if defined(__linux__) || (!defined(TARGET_IPHONE_SIMULATOR) && !defined(TARGET_OS_MACCATALYST) && !defined(TARGET_OS_IPHONE))
     auto full_file_name_with_extension = get_full_file_name_with_extension(splitter, command_line, working_directory);
     return exists(full_file_name_with_extension);
-#else
-    /// @todo iOS : Add ios code when xtd::io::file_info was created...
-    return true;
-#endif
   }
 
   bool is_valid_uri(const string& command_line) {
@@ -218,7 +200,6 @@ intptr_t process::shell_execute(const std::string& verb, const string& file_name
         command_line_args.insert(command_line_args.begin(), "lpr");
       } else
 #endif
-#if defined(__linux__) || (!defined(TARGET_IPHONE_SIMULATOR) && !defined(TARGET_OS_MACCATALYST) && !defined(TARGET_OS_IPHONE))
       if (verb == "" || verb == "open" || verb == "explore" || verb == "edit" || verb == "runas" || verb == "runasuser" || verb == "print") {
         if (verb == "") command_line_args = split_arguments(arguments);
         if ((verb == "open" || verb == "runas" || verb == "runasuser") && file_name == "") return 0;
@@ -228,17 +209,12 @@ intptr_t process::shell_execute(const std::string& verb, const string& file_name
         command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name, working_directory));
         command_line_args.insert(command_line_args.begin(), shell_execute_command());
       } else {
-#else
-        if (verb == "" || verb == "open" || verb == "explore" || verb == "edit" || verb == "runas" || verb == "runasuser" || verb == "print") {
-          /// @todo iOS : Add code when xtd::io::file_info was created...
-        } else {
-#endif
         command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name, working_directory));
         command_line_args.insert(command_line_args.begin(), verb);
       }
     } else {
       command_line_args = split_arguments(arguments);
-      if (working_directory != "") set_current_director(working_directory);
+      if (working_directory != "") chdir(working_directory.c_str());
       command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name));
     }
     vector<char*> execvp_args(command_line_args.size() + 1);
@@ -283,7 +259,7 @@ process::started_process process::start(const string& file_name, const string& a
     }
     
     vector<string> command_line_args;
-    if (working_directory != "") set_current_director(working_directory);
+    if (working_directory != "") chdir(working_directory.c_str());
     command_line_args = split_arguments(arguments);
     command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name));
     vector<char*> execvp_args(command_line_args.size() + 1);

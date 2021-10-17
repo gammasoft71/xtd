@@ -13,6 +13,28 @@
 using namespace std;
 using namespace xtd::native;
 
+struct directory::directory_iterator::data {
+  data() = default;
+  data(const std::string& path, const std::string& pattern, int32_t file_type) : path_(path), pattern_(pattern), file_type_(file_type) {}
+  std::string path_;
+  std::string pattern_;
+  int32_t file_type_;
+};
+
+directory::directory_iterator::directory_iterator(const std::string& path, const std::string& pattern, int32_t file_type) {
+  data_ = make_shared<data>(path, pattern, file_type);
+}
+
+directory::directory_iterator::directory_iterator() {
+  data_ = make_shared<data>();
+}
+
+directory::directory_iterator::~directory_iterator() {
+  if (data_.use_count() == 1) {
+    // clear iterator...
+  }
+}
+
 directory::directory_iterator& directory::directory_iterator::operator++() {
   return *this;
 }
@@ -22,11 +44,34 @@ directory::directory_iterator directory::directory_iterator::operator++(int) {
 }
 
 bool directory::directory_iterator::operator==(directory::directory_iterator other) const {
-  return true;
+  return data_ == data_;
 }
 
 directory::directory_iterator::value_type directory::directory_iterator::operator*() const {
-  return handle_ ? "" : "";
+  if (data_ == nullptr) return "";
+  return data_->current_;
+}
+
+struct directory::file_iterator::data {
+  data() = default;
+  data(const std::string& path, const std::string& pattern) : path_(path), pattern_(pattern) {}
+  std::string path_;
+  std::string pattern_;
+  mutable string current_;
+};
+
+directory::file_iterator::file_iterator(const std::string& path, const std::string& pattern) {
+  data_ = make_shared<data>(path, pattern);
+}
+
+directory::file_iterator::file_iterator() {
+  data_ = make_shared<data>();
+}
+
+directory::file_iterator::~file_iterator() {
+  if (data_.use_count() == 1) {
+    // clear iterator...
+  }
 }
 
 directory::file_iterator& directory::file_iterator::operator++() {
@@ -38,11 +83,12 @@ directory::file_iterator directory::file_iterator::operator++(int) {
 }
 
 bool directory::file_iterator::operator==(directory::file_iterator other) const {
-  return true;
+  return data_ == data_;
 }
 
 directory::file_iterator::value_type directory::file_iterator::operator*() const {
-  return handle_ ? "" : "";
+  if (data_ == nullptr) return "";
+  return data_->current_;
 }
 
 int32_t directory::create_directory(const std::string& directory_name) {
@@ -50,11 +96,11 @@ int32_t directory::create_directory(const std::string& directory_name) {
 }
 
 directory::directory_iterator directory::enumerate_directories(const std::string& path, const std::string& pattern) {
-  return directory_iterator(0);
+  return directory_iterator(path, pattern);
 }
 
 directory::file_iterator directory::enumerate_files(const std::string& path, const std::string& pattern) {
-  return file_iterator(0);
+  return file_iterator(path, pattern);
 }
 
 string directory::get_current_directory() {
