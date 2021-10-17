@@ -30,7 +30,7 @@ namespace xtd {
     /// @warning Internal use only
     class core_native_export_ directory final {
       directory() = delete;
-    protected:
+    public:
       /// @brief Represent directory iterator used by xtd::native::directtory::enumerate_directories.
       /// @warning Internal use only
       class directory_iterator : public std::iterator<std::input_iterator_tag, std::string> {
@@ -78,6 +78,8 @@ namespace xtd {
         struct data;
         std::shared_ptr<data> data_;
       };
+
+    protected:
       friend directory_iterator;
       friend file_iterator;
 
@@ -149,4 +151,11 @@ namespace xtd {
       static int32_t set_current_directory(const std::string& directory_name);
     };
   }
+}
+
+namespace std {
+  xtd::native::directory::directory_iterator begin(xtd::native::directory::directory_iterator it) {return it;}
+  xtd::native::directory::directory_iterator end(xtd::native::directory::directory_iterator it) {return xtd::native::directory::directory_iterator();}
+  xtd::native::directory::file_iterator begin(xtd::native::directory::file_iterator it) {return it;}
+  xtd::native::directory::file_iterator end(xtd::native::directory::file_iterator it) {return xtd::native::directory::file_iterator();}
 }

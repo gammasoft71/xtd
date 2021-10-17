@@ -23,6 +23,8 @@ struct directory::directory_iterator::data {
 
 directory::directory_iterator::directory_iterator(const std::string& path, const std::string& pattern) {
   data_ = make_shared<data>(path, pattern);
+  // create handle...
+  ++(*this);
 }
 
 directory::directory_iterator::directory_iterator() {
@@ -31,7 +33,8 @@ directory::directory_iterator::directory_iterator() {
 
 directory::directory_iterator::~directory_iterator() {
   if (data_.use_count() == 1) {
-    // clear iterator...
+    // close handle...
+    data_->handle_ = nuullptr;
   }
 }
 
@@ -40,11 +43,13 @@ directory::directory_iterator& directory::directory_iterator::operator++() {
 }
 
 directory::directory_iterator directory::directory_iterator::operator++(int) {
-  return *this;
+  directory_iterator result = *this;
+  ++(*this);
+  return result;
 }
 
 bool directory::directory_iterator::operator==(directory::directory_iterator other) const {
-  return data_ == data_;
+  return data_->current_ == other.data_->current_;
 }
 
 directory::directory_iterator::value_type directory::directory_iterator::operator*() const {
@@ -70,7 +75,8 @@ directory::file_iterator::file_iterator() {
 
 directory::file_iterator::~file_iterator() {
   if (data_.use_count() == 1) {
-    // clear iterator...
+    // close handle...
+    data_->handle_ = nuullptr;
   }
 }
 
@@ -79,11 +85,13 @@ directory::file_iterator& directory::file_iterator::operator++() {
 }
 
 directory::file_iterator directory::file_iterator::operator++(int) {
-  return *this;
+  file_iterator result = *this;
+  ++(*this);
+  return result;
 }
 
 bool directory::file_iterator::operator==(directory::file_iterator other) const {
-  return data_ == data_;
+  return data_->current_ == other.data_->current_;
 }
 
 directory::file_iterator::value_type directory::file_iterator::operator*() const {
