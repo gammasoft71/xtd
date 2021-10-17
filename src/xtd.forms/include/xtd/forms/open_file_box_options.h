@@ -16,7 +16,7 @@ namespace xtd {
     /// @ingroup xtd_forms
     /// @remarks This enumeration is used by the xtd::forms::open_file_dialog class.
     enum class open_file_box_options {
-      /// @brief Single line text box.
+      /// @brief No options.
       none = 0x0000,
       /// @brief Whether the dialog box displays a warning if the user specifies a file name that does not exist.
       check_file_exists = 1 << 0,
