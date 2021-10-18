@@ -9,7 +9,7 @@
 * [Delegates Overview](#delegates-overview)
 * [Using Delegates](#using-delegates)
 * [Delegates with Named methods](#delegates-with-named-methods)
-* [Delegates with Lambda expression](#delegates-with-lambda-expressions)
+* [Delegates with Lambda expressions](#delegates-with-lambda-expressions)
 
 ## Overview
 
