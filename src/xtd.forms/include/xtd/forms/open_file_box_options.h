@@ -14,7 +14,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    /// @remarks This enumeration is used by the xtd::forms::open_file_dialog class.
+    /// @remarks This enumeration is used by the xtd::forms::open_file_box class.
     enum class open_file_box_options {
       /// @brief No options.
       none = 0b0,
