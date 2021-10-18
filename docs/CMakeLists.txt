@@ -13,14 +13,13 @@ add_sources(
   adapter.md
   architecture.md
   base_classes_for_implementing_abstractions.md
-  builder.md
   bridge.md
+  builder.md
   capitalisation_conventions.md
   chain_of_responsibility.md
   choosing_between_class_and_struct.md
   class_cleanup.md
   class_initialize.md
-  csf.md
   coding_conventions_guidelines.md
   command.md
   common_design_patterns.md
@@ -29,6 +28,7 @@ add_sources(
   constructor_design.md
   contact.md
   controls.md
+  csf.md
   custom_controls.md
   decorator.md
   delegates_tutorial.md
@@ -49,14 +49,15 @@ add_sources(
   documentation.md
   downloads.md
   drag_and_drop.md
+  ebook_tutorial.md
   enum_design.md
   event_design.md
   events.md
   events_and_callbacks.md
   events_tutorial.md
   examples.md
-  exceptions_and_performance.md
   exception_throwing.md
+  exceptions_and_performance.md
   extending_test.md
   external_tools_libraries_and_toolkits.md
   facade.md
@@ -73,6 +74,7 @@ add_sources(
   hierarchy.md
   home.md
   ignore_test_method.md
+  ingore_test_method.md
   interface_design.md
   interpreter.md
   introduction.md
@@ -83,8 +85,8 @@ add_sources(
   mediator.md
   member_design_guidelines.md
   member_overloading.md
-  menus_and_toolbars.md
   memento.md
+  menus_and_toolbars.md
   names_of_classes_structs_and_interfaces.md
   names_of_libraries_and_dlls.md
   names_of_namespace.md
@@ -104,6 +106,7 @@ add_sources(
   prototype.md
   proxy.md
   release_notes.md
+  roadmap.md
   running_test.md
   singleton.md
   state.md
@@ -116,6 +119,7 @@ add_sources(
   test_initialize.md
   test_method.md
   tetris.md
+  themes.md
   tools.md
   translations_status.md
   tutorials.md
