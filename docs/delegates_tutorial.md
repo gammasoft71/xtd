@@ -273,14 +273,14 @@ startup_(test_sample_class);
 
 ## Delegates with Lambda expressions
 
-The "\[]\()" operator creates a [lambda expression](https://en.cppreference.com/w/cpp/language/lambda) that can be converted to a [xtd::delegate](../src/xtd.core/include/xtd/delegate.h) type:
+The **\[]\()** operator creates a [lambda expression](https://en.cppreference.com/w/cpp/language/lambda) that can be converted to a [xtd::delegate](../src/xtd.core/include/xtd/delegate.h) type:
 
 ```c++
 xtd::func<int, int, int> sum([] (int a, int b) { return a + b; });
 xtd::console::write_line(sum(3, 4));  // output: 7
 ```
 
-When you use the "\[]\()" operator, you might omit the parameter list. If you do that, the created anonymous method can be converted to a delegate type with any list of parameters, as the following example shows:
+When you use the **\[]\()** operator, you might omit the parameter list. If you do that, the created anonymous method can be converted to a delegate type with any list of parameters, as the following example shows:
 
 ```c++
 xtd::action<> greet([] { xtd::console::write_line("Hello!"); });
