@@ -253,7 +253,7 @@
 | [roller_renderer](../src/xtd.forms/include/xtd/forms/roller_renderer.h)                                                       | static class | ![progress](pictures/progress0.png)   |
 | [run_worker_completed_event_args](../src/xtd.forms/include/xtd/forms/run_worker_completed_event_args.h)                       | class        | ![progress](pictures/progress100.png) |
 | [run_worker_completed_event_handler](../src/xtd.forms/include/xtd/forms/run_worker_completed_event_handler.h)                 | delegate     | ![progress](pictures/progress100.png) |
-| [save_file_box](../src/xtd.forms/include/xtd/forms/save_file_box.h)                                                           | static class | ![progress](pictures/progress0.png)   |
+| [save_file_box](../src/xtd.forms/include/xtd/forms/save_file_box.h)                                                           | static class | ![progress](pictures/progress1000.png) |
 | [save_file_dialog](../src/xtd.forms/include/xtd/forms/save_file_dialog.h)                                                     | class        | ![progress](pictures/progress100.png) |
 | [screen](../src/xtd.forms/include/xtd/forms/screen.h)                                                                         | class        | ![progress](pictures/progress100.png) |
 | [scroll_bar](../src/xtd.forms/include/xtd/forms/scroll_bar.h)                                                                 | class        | ![progress](pictures/progress100.png) |
