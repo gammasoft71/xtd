@@ -2,6 +2,13 @@
 
 # Release Notes
 
+![0.2.0](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/version_0_2_0.png) (beta) 
+
+## Issues
+
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #16 - WriteFile never sets number_of_bytes_written to -1
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #19 - operator + and operator - does not build with xtd::delegate
+
 ![0.1.0](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/version_0_1_0.png) (beta) October 10, 2021
 
 * After 3 years of development, we are happy to release the first beta version of xtd. This version contains a lot of functionalities. It is the first of a long serie.
@@ -10,7 +17,7 @@
 ## xtd
 
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) CMake commands - Specific CMake commands to manage project, assembly informations and application properties
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) continuous integration build - Continuous integration build for Windows, MacOS and linux (appveyor, CircleCI and travisCI).
+* ![add ed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) continuous integration build - Continuous integration build for Windows, MacOS and linux (appveyor, CircleCI and travisCI).
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) documentation - Markdown documentation.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) installation - Install scripts for Windows, macOS and linux.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) packages (vcpkg, brew, apt) - xtd packages.
