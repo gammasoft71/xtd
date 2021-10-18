@@ -31,6 +31,8 @@ add_sources(
   controls.md
   custom_controls.md
   decorator.md
+  delegates_tutorial.md
+  delegates_covariance_tutorial.md
   dependencies.md
   design_guidelines.md
   design_guidelines_for_exception.md
@@ -52,6 +54,7 @@ add_sources(
   event_design.md
   events.md
   events_and_callbacks.md
+  events_tutorial.md
   examples.md
   exceptions_and_performance.md
   exception_throwing.md
@@ -116,7 +119,7 @@ add_sources(
   tetris.md
   tools.md
   translations_status.md
-  tutorial.md
+  tutorials.md
   type_design_guidelines.md
   unit_testing_classes.md
   usage_guidelines.md
