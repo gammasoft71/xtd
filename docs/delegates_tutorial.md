@@ -28,7 +28,7 @@ This ability to refer to a method as a parameter makes delegates ideal for defin
 
 ## Difference betwwen xtd::delegate and std::function
 
-Unlike std::functional xtd::delegate contains sbe chaned together; for example, multiple methods can be called on a single event.
+Unlike std::functional xtd::delegate can be chained together; for example, multiple methods can be called on a single event.
 
 A xtd::delegate is a collection of std::function.
 
