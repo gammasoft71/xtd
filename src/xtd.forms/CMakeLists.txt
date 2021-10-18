@@ -163,6 +163,8 @@ add_sources(
   include/xtd/forms/mouse_event_handler.h
   include/xtd/forms/nine_segment_display.h
   include/xtd/forms/numeric_up_down.h
+  include/xtd/forms/open_file_box.h
+  include/xtd/forms/open_file_box_options.h
   include/xtd/forms/open_file_dialog.h
   include/xtd/forms/orientation.h
   include/xtd/forms/padding.h
