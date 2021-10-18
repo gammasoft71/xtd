@@ -9,7 +9,7 @@
 * [Delegates Overview](#delegates-overview)
 * [Using Delegates](#using-delegates)
 * [Delegates with Named methods](#delegates-with-named-methods)
-* [Delegates with Lambda expression](#delegates-with-lambda-expression)
+* [Delegates with Lambda expression](#delegates-with-lambda-expressions)
 
 ## Overview
 
@@ -295,7 +295,7 @@ introduce(42, 2.7);
 // This is world!
 ```
 
-This functionality of lambda expression is supported by xtd::delegate but not by std::function.
+This functionality of lambda expression is supported by [xtd::delegate](../src/xtd.core/include/xtd/delegate.h) but not by std::function.
 
 ## See also
 
