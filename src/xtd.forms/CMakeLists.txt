@@ -185,6 +185,8 @@ add_sources(
   include/xtd/forms/run_worker_completed_event_args.h
   include/xtd/forms/run_worker_completed_event_handler.h
   include/xtd/forms/save_file_dialog.h
+  include/xtd/forms/save_file_box.h
+  include/xtd/forms/save_file_box_options.h
   include/xtd/forms/scroll_bar.h
   include/xtd/forms/scrollable_control.h
   include/xtd/forms/screen.h
