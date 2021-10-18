@@ -2,9 +2,11 @@
 
 # Tutorials
 
-* [xtd applications](xtd_applications_tutorial.md) provides a tutorial to cover the basics needed to create xtd applications.
-* [delegates](delegates_tutorial.md) provides a tutorial to cover all needed to using xtd::delegate.
-* [evens](events_tutorial.md) provides a tutorial to cover all needed to using xtd::event.
+* [Delegates](delegates_tutorial.md) provides a tutorial to cover all needed to using xtd::delegate.
+* [Events](events_tutorial.md) provides a tutorial to cover all needed to using xtd::event.
+* [Writing applications](writing_applications.md) provides the necessary documentation to write basic xtd applications.
+* [eBook](ebook_tutorial.md) provides a tutorial to program non trivial xtd applications.
+
 
 ## See also
 
