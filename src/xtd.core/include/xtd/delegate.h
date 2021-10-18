@@ -181,6 +181,18 @@ namespace xtd {
     }
     
     /// @cond
+    delegate operator+(const delegate& other) noexcept {
+      delegate result = *this;
+      result += other;
+      return result;
+    }
+    
+    delegate operator+(const function_t& function) noexcept {
+      delegate result = *this;
+      result += function;
+      return result;
+    }
+
     delegate& operator+=(const delegate& delegate) noexcept {
       *this = delegate::combine(*this, delegate);
       return *this;
@@ -189,6 +201,18 @@ namespace xtd {
     delegate& operator+=(const function_t& function) noexcept {
       *this = delegate::combine(*this, delegate(function));
       return *this;
+    }
+    
+    delegate operator-(const delegate& other) noexcept {
+      delegate result = *this;
+      result -= other;
+      return result;
+    }
+    
+    delegate operator-(const function_t& function) noexcept {
+      delegate result = *this;
+      result -= function;
+      return result;
     }
     
     delegate& operator-=(const delegate& delegate) noexcept {
@@ -565,6 +589,31 @@ namespace xtd {
       return *this;
     }
     
+    delegate operator+(const delegate& other) noexcept {
+      delegate result = *this;
+      result += other;
+      return result;
+    }
+    
+    delegate operator+(const no_arguments_function_t& function) noexcept {
+      delegate result = *this;
+      result += function;
+      return result;
+    }
+
+    delegate operator+(const function_t& function) noexcept {
+      delegate result = *this;
+      result += function;
+      return result;
+    }
+
+    template<typename fn_t>
+    delegate operator+(fn_t function) noexcept {
+      delegate result = *this;
+      result += function;
+      return result;
+    }
+
     delegate& operator+=(const delegate& delegate) noexcept {
       *this = delegate::combine(*this, delegate);
       return *this;
@@ -586,6 +635,31 @@ namespace xtd {
       return *this;
     }
     
+    delegate operator-(const delegate& other) noexcept {
+      delegate result = *this;
+      result -= other;
+      return result;
+    }
+    
+    delegate operator-(const no_arguments_function_t& function) noexcept {
+      delegate result = *this;
+      result -= function;
+      return result;
+    }
+    
+    delegate operator-(const function_t& function) noexcept {
+      delegate result = *this;
+      result -= function;
+      return result;
+    }
+
+    template<typename fn_t>
+    delegate operator-(fn_t function) noexcept {
+      delegate result = *this;
+      result -= function;
+      return result;
+    }
+
     delegate& operator-=(const delegate& delegate) noexcept {
       *this = delegate::remove(*this, delegate);
       return *this;
