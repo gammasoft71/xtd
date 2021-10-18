@@ -8,6 +8,8 @@
 * [Difference betwwen xtd::delegate and std::function](#difference-betwwen-xtddelegate-and-stdfunction)
 * [Delegates Overview](#delegates-overview)
 * [Using Delegates](#using-delegates)
+* [Delegates with Named methods](#delegates-with-named-methods)
+* [Delegates with Lambda expression](#delegates-with-lambda-expression)
 
 ## Overview
 
@@ -160,6 +162,140 @@ void method(delegate1 d, delegate2 e, xtd::delegate<result_t(arguments_t...)> f)
 }
 ```
 
+## Delegates with Named methods
+
+A [xtd::delegate](../src/xtd.core/include/xtd/delegate.h) can be associated with a named method. When you instantiate a delegate by using a named method, the method is passed as a parameter, for example:
+
+```c++
+// Declare a delegate.
+using del = xtd::delegate<void(int x)>;
+
+// Define a named method.
+void doW_work(int k) { /* ... */ }
+
+// Instantiate the delegate using the method as a parameter.
+del d = {obj, &objectt_class::do_work};
+```
+
+This is called using a named method. Delegates constructed with a named method can encapsulate either a static method or an instance method. However, in a situation where creating a new method is unwanted overhead, C++ and xtd enable you to instantiate a delegate and immediately specify a code block that the delegate will process when it is called. The block can contain either a [lambda expression](#lambda-expression).
+
+### Remarks
+
+* The method that you pass as a delegate parameter must have the same signature as the delegate declaration.
+* A delegate instance may encapsulate either static or instance method.
+* Although the delegate can use an reference parameter (not const reference), we do not recommend its use with multicast event delegates because you cannot know which delegate will be called.
+
+### Example 1
+
+TThe following is a simple example of declaring and using a delegate. Notice that both the delegate, **del**, and the associated method, **multiply_numbers**, have the same signature
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd;
+
+// Declare a delegate
+using del = delegate<void(int i, double j)>;
+
+class math_class {
+public:
+  static void main() {
+    math_class m;
+    
+    // Delegate instantiation using "MultiplyNumbers"
+    del d = {m, &math_class::multiply_numbers};
+    
+    // Invoke the delegate object.
+    console::write_line("Invoking the delegate using 'multiply_numbers':");
+    for (int i = 1; i <= 5; i++) {
+      d(i, 2);
+    }
+    console::write_line();
+  }
+  
+  // Declare the associated method.
+  void multiply_numbers(int m, double n) {
+    console::write("{} ", m * n);
+  }
+};
+
+startup_(math_class);
+
+/* Output:
+ Invoking the delegate using 'multiply_numbers':
+ 2 4 6 8 10
+ */
+```
+
+### Example 2
+
+In the following example, one delegate is mapped to both static and instance methods and returns specific information from each.
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd;
+
+using del = delegate<void()>;
+
+class sample_class {
+public:
+  void instance_method() {
+    console::write_line("A message from the instance method.");
+  }
+  
+  static void static_method() {
+    console::write_line("A message from the static method.");
+  }
+};
+
+class test_sample_class {
+public:
+  static void main() {
+    sample_class sc;
+    
+    // Map the delegate to the instance method:
+    del d = {sc, &sample_class::instance_method};
+    d();
+    
+    // Map to the static method:
+    d = sample_class::static_method;
+    d();
+  }
+};
+
+startup_(test_sample_class);
+
+/* Output:
+ A message from the instance method.
+ A message from the static method.
+ */
+```
+
+## Delegates with Lambda expressions
+
+The "\*[]()\*" operator creates a [lambda expression](https://en.cppreference.com/w/cpp/language/lambda) that can be converted to a [xtd::delegate](../src/xtd.core/include/xtd/delegate.h) type:
+
+```c++
+xtd::func<int, int, int> sum([] (int a, int b) { return a + b; });
+xtd::console::write_line(sum(3, 4));  // output: 7
+```
+
+When you use the "\*[]()\*" operator, you might omit the parameter list. If you do that, the created anonymous method can be converted to a delegate type with any list of parameters, as the following example shows:
+
+```c++
+xtd::action<> greet([] { xtd::console::write_line("Hello!"); });
+greet();
+
+xtd::action<int, double> introduce([] { xtd::console::write_line("This is world!"); });
+introduce(42, 2.7);
+
+// Output:
+// Hello!
+// This is world!
+```
+
+This functionality of lambda expression is supported by xtd::delegate but not by std::function.
 
 ## See also
 
