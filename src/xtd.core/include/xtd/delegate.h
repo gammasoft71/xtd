@@ -116,6 +116,10 @@ namespace xtd {
     /// @return bool Return true if delegate is empty; otherwise false.
     bool is_empty() const noexcept { return functions_.size() == 0; }
     
+    /// @brief Return the size of invocation list.
+    /// @return Return the size of invocatioon list.
+    size_t size() const noexcept { return functions_.size(); }
+    
     /// @brief removes the last occurrence of the invocation list of a delegate from the invocation list of another delegate.
     /// @param source The delegate from which to remove the invocation list of value.
     /// @param value The delegate that supplies the invocation list to remove from the invocation list of source.
@@ -482,6 +486,10 @@ namespace xtd {
     /// @brief Return if the delegate is empty.
     /// @return bool Return true if delegate is empty; otherwise false.
     bool is_empty() const noexcept { return functions_.size() == 0 && no_arguments_functions_.size() == 0; }
+
+    /// @brief Return the size of invocation list.
+    /// @return Return the size of invocatioon list.
+    size_t size() const noexcept { return functions_.size() + no_arguments_functions_.size(); }
 
     /// @brief removes the last occurrence of the invocation list of a delegate from the invocation list of another delegate.
     /// @param source The delegate from which to remove the invocation list of value.
