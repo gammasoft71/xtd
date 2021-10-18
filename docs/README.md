@@ -3,8 +3,9 @@
 # docs
 
 Contains xtd markdown documentations.
-
+q
 * [xtd](home.md) contains general information.
+* [News](news.md) contains all news.
 * [Gallery](gallery.md) contains some pictures that represents xtd working.
 * [Examples](examples.md) contains some examples of xtd use.
 * [Downloads](downloads.md) contains all informations about download, install, build and run your first xtd application.
