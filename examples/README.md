@@ -21,8 +21,8 @@
 * [Guid](xtd.core.examples/guid/README.md) contains guid examples.
 * [Keywords](xtd.core.examples/keywords/README.md) contains keywords examples.
 * [Mains](xtd.core.examples/mains/README.md) contains main examples.
-* [Math](xtd.core.examples/math/README.md) contains media examples.
-* [Media](xtd.core.examples/media/README.md) contains math examples.
+* [Math](xtd.core.examples/math/README.md) contains math examples.
+* [Media](xtd.core.examples/media/README.md) contains media examples.
 * [Network](xtd.core.examples/network/README.md) contains network examples.
 * [Processes](xtd.core.examples/processes/README.md) contains process examples.
 * [Random](xtd.core.examples/random/README.md) contains random examples.
