@@ -41,7 +41,6 @@ Delegates have the following properties:
 * Delegates allow methods to be passed as parameters.
 * Delegates can be used to define callback methods.
 * Unlike std::function, delegates can be chained together; for example, multiple methods can be called on a single event.
-* Methods don't have to match the delegate type exactly. For more information, see [Using Variance in Delegates](delegates_covariance_tutorial.md).
 * Lambda expressions are a more concise way of writing inline code blocks. Lambda expressions (in certain contexts) are compiled to delegate types. For more information about lambda expressions, see [Lambda expressions](https://en.cppreference.com/w/cpp/language/lambda).
 
 ## Using Delegates
@@ -274,14 +273,14 @@ startup_(test_sample_class);
 
 ## Delegates with Lambda expressions
 
-The "\*[]()\*" operator creates a [lambda expression](https://en.cppreference.com/w/cpp/language/lambda) that can be converted to a [xtd::delegate](../src/xtd.core/include/xtd/delegate.h) type:
+The "\[]\()" operator creates a [lambda expression](https://en.cppreference.com/w/cpp/language/lambda) that can be converted to a [xtd::delegate](../src/xtd.core/include/xtd/delegate.h) type:
 
 ```c++
 xtd::func<int, int, int> sum([] (int a, int b) { return a + b; });
 xtd::console::write_line(sum(3, 4));  // output: 7
 ```
 
-When you use the "\*[]()\*" operator, you might omit the parameter list. If you do that, the created anonymous method can be converted to a delegate type with any list of parameters, as the following example shows:
+When you use the "\[]\()" operator, you might omit the parameter list. If you do that, the created anonymous method can be converted to a delegate type with any list of parameters, as the following example shows:
 
 ```c++
 xtd::action<> greet([] { xtd::console::write_line("Hello!"); });

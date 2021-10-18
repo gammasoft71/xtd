@@ -32,7 +32,6 @@ add_sources(
   custom_controls.md
   decorator.md
   delegates_tutorial.md
-  delegates_covariance_tutorial.md
   dependencies.md
   design_guidelines.md
   design_guidelines_for_exception.md
