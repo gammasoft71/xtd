@@ -113,7 +113,8 @@ public:
   custom_event_args(const xtd::ustring& message) : message_(message) {}
   
   xtd::ustring message() const noexcept {return message_;}
-  
+  void message(const xtd::ustring& value) noexcept {message_ = value;}
+
 private:
   xtd::ustring message_;
 };
