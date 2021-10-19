@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
+#include "abstract.h"
 #include "action.h"
 #include "any.h"
 #include "argument_exception.h"
