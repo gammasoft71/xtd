@@ -15,7 +15,7 @@ public:
       .size({150, 35})
       .text("Save file")
       .click += [this] {
-        ustring file_name;
+        ustring file_name = "MyFile.txt";
         auto res = save_file_box::show(file_name, *this, "Save file as...", environment::get_folder_path(environment::special_folder::my_documents), "*.txt");
         if (res == dialog_result::ok)
           message_box::show(ustring::format("File will be saved as:\n{}", file_name));

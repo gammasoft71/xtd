@@ -122,6 +122,7 @@ namespace xtd {
         xtd::forms::save_file_dialog dialog{};
         dialog.title(title)
               .initial_directory(initial_directory)
+              .file_name(output)
               .filter(filter)
               .check_file_exists(options & save_file_box_options::check_file_exists)
               .dereference_link(options & save_file_box_options::dereference_link)
