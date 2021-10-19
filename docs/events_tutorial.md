@@ -12,6 +12,8 @@
   * [To unsubscribe from an event](#to-unsubscribe-from-an-event)
 * [How to publish events that conform to xtd Guidelines](#how-to-publish-events-that-conform-to-xtd-guidelines)
   * [Publish events based on the event_handler pattern](#publish-events-based-on-the-event_handler-pattern)
+* [Example](#example)
+
 ## Overview
 
 [Events](../src/xtd.core/include/xtd/event.h) enable a class or object to notify other classes or objects when something of interest occurs. The class that sends (or raises) the event is called the publisher and the classes that receive (or handle) the event are called subscribers.
@@ -149,7 +151,7 @@ using custom_event_handler = xtd::delegate<void(xtd::object& sender, const custo
   
   Where *publisher* is the class name that contains the raise_custom_event event.
 
-### Example
+## Example
 
 The following example demonstrates the previous steps by using a custom event_args class and genric_event_handler<event_args_t> as the event type.
 
@@ -236,8 +238,6 @@ public:
 
 startup_(program);
 ```
-
-
 
 ## See also
 
