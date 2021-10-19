@@ -239,6 +239,7 @@ End 2 tests from 1 test case ran. (0 ms total)
 
 * [Installation](docs/downloads.md) provides download and install documentation.
 * [Portability](docs/portability.md) provides information about C++, libraries dependency, Operating System supported, Compilers and Development Environment tools.
+* [Tutorials](docs/tutorials.md) provides xtd tutorials.
 * [Examples](examples/README.md) provides some examples.
 
 ## Development status
