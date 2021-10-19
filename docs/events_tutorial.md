@@ -242,7 +242,7 @@ startup_(program);
 
 ## See also
 
-* [Tutorials](tutoruals.md)
+* [Tutorials](tutorials.md)
 * [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
