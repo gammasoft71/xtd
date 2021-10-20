@@ -34,6 +34,7 @@ add_sources(
   src/xtd/native/unix/debugger.cpp
   src/xtd/native/unix/directory.cpp
   src/xtd/native/unix/dns.cpp
+  src/xtd/native/unix/drive.cpp
   src/xtd/native/unix/environment.cpp
   src/xtd/native/unix/file.cpp
   src/xtd/native/unix/guid.cpp

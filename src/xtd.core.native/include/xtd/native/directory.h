@@ -21,6 +21,10 @@ namespace xtd {
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
+    /// @cond
+    class drive;
+    /// @endcond
+    
     /// @brief Contains directory native API.
     /// @par Namespace
     /// xtd::native
@@ -81,6 +85,7 @@ namespace xtd {
 
     protected:
       friend directory_iterator;
+      friend drive;
       friend file_iterator;
 
       /// @brief Creates all directories and subdirectories in the specified path unless they already exist.
