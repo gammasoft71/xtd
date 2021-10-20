@@ -8,7 +8,7 @@
 * [How to subscribe to and unsubscribe from events](#how-to-subscribe-to-and-unsubscribe-from-events)
   * [To subscribe to events programmatically](#to-subscribe-to-events-programmatically)
   * [To subscribe to events by using a lambda expression](#to-subscribe-to-events-by-using-a-lambda-expression)
-  * [Unsubscribing](#uunsubscribing)
+  * [Unsubscribing](#unsubscribing)
   * [To unsubscribe from an event](#to-unsubscribe-from-an-event)
 * [How to publish events that conform to xtd Guidelines](#how-to-publish-events-that-conform-to-xtd-guidelines)
   * [Publish events based on the event_handler pattern](#publish-events-based-on-the-event_handler-pattern)
@@ -242,7 +242,7 @@ startup_(program);
 
 ## See also
 
-* [Tutorials](tutoruals.md)
+* [Tutorials](tutorials.md)
 * [Documentation](documentation.md)
 
 ______________________________________________________________________________________________

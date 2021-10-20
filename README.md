@@ -2,12 +2,12 @@
 
 **Modern C++17/20 framework to create console (CLI), forms (GUI like WinForms) and tunit (unit tests like Microsoft Unit Testing Framework) applications on Windows, macOS, Linux, iOS and android (*).**
 
-[![logo](docs/pictures/logo.png)](https://gammasoft71.wixsite.com/xtdpro)
+[![logo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/logo.png)](https://gammasoft71.wixsite.com/xtdpro)
 
 (*) See [portability](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#the-xtd-libraries-portability-list) for more information.
 
-[![License](https://img.shields.io/github/license/gammasoft71/xtd)](docs/license.md)
-[![Language](https://img.shields.io/badge/language-C++17/20-brightgreen.svg)](docs/portability.md#c++17)
+[![License](https://img.shields.io/github/license/gammasoft71/xtd)](https://github.com/gammasoft71/xtd/blob/master/docs/license.md)
+[![Language](https://img.shields.io/badge/language-C++17/20-brightgreen.svg)](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#c++17)
 [![Reference Guide](https://codedocs.xyz/gammasoft71/xtd.svg)](https://codedocs.xyz/gammasoft71/xtd/index.html)
 [![Download xtd](https://img.shields.io/sourceforge/dt/xtdpro.svg)](https://sourceforge.net/projects/xtdpro/files/latest/download)
 <!---
@@ -153,21 +153,21 @@ xtdc run
 
 ##### Windows
 
-![Screenshot](docs/pictures/examples/hello_world_message_box_w.png)
+![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/examples/hello_world_message_box_w.png)
 
-![Screenshot](docs/pictures/examples/hello_world_message_box_wd.png)
+![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/examples/hello_world_message_box_wd.png)
 
 ##### macOS
 
-![Screenshot](docs/pictures/examples/hello_world_message_box_m.png)
+![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/examples/hello_world_message_box_m.png)
 
-![Screenshot](docs/pictures/examples/hello_world_message_box_md.png)
+![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/examples/hello_world_message_box_md.png)
 
 ##### Linux Gnome
 
-![Screenshot](docs/pictures/examples/hello_world_message_box_g.png)
+![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/examples/hello_world_message_box_g.png)
 
-![Screenshot](docs/pictures/examples/hello_world_message_box_gd.png)
+![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/examples/hello_world_message_box_gd.png)
 
 ### tunit (Unit tests like Microsoft Unit Testing Framework)
 
@@ -237,17 +237,17 @@ End 2 tests from 1 test case ran. (0 ms total)
 
 ## Getting Started
 
-* [Installation](docs/downloads.md) provides download and install documentation.
-* [Portability](docs/portability.md) provides information about C++, libraries dependency, Operating System supported, Compilers and Development Environment tools.
-* [Tutorials](docs/tutorials.md) provides xtd tutorials.
-* [Examples](examples/README.md) provides some examples.
+* [Installation](https://github.com/gammasoft71/xtd/blob/master/docs/downloads.md) provides download and install documentation.
+* [Portability](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md) provides information about C++, libraries dependency, Operating System supported, Compilers and Development Environment tools.
+* [Tutorials](https://github.com/gammasoft71/xtd/blob/master/docs/tutorials.md) provides xtd tutorials.
+* [Examples](https://github.com/gammasoft71/xtd/blob/master/examples/README.md) provides some examples.
 
 ## Development status
 
-* [Development status](docs/development_status.md) provides information about classes and libraries development status.
-* [Translation status](docs/translations_status.md) provides information about translations status.
-* [Roadmap](docs/roadmap.md) provides xtd roadmap.
-* [Release notes](docs/release_notes.md) provides release notes information.
+* [Development status](https://github.com/gammasoft71/xtd/blob/master/docs/development_status.md) provides information about classes and libraries development status.
+* [Translation status](https://github.com/gammasoft71/xtd/blob/master/docs/translations_status.md) provides information about translations status.
+* [Roadmap](https://github.com/gammasoft71/xtd/blob/master/docs/roadmap.md) provides xtd roadmap.
+* [Release notes](https://github.com/gammasoft71/xtd/blob/master/docs/release_notes.md) provides release notes information.
 
 This project is an open source project. The developers who participate do so on their own time. It is therefore difficult to fix realese dates. 
 
@@ -255,11 +255,11 @@ But you can follow the evolution of the development. We keep the status up to da
 
 ## Contributing
 
-The [authors file](AUTHORS.md) lists contributors together with contact information. If you make a contribution, please add yourself to the list.
+The [authors file](https://github.com/gammasoft71/xtd/blob/master/AUTHORS.md) lists contributors together with contact information. If you make a contribution, please add yourself to the list.
 
 **Your contributions are welcome.**
 
-* First read [Code of conduct](CODE_OF_CONDUCT.md) and the [design guidelines](docs/design_guidelines.md) to make sure your contribution follows the rules.
+* First read [Code of conduct](https://github.com/gammasoft71/xtd/blob/master/CODE_OF_CONDUCT.md) and the [design guidelines](https://github.com/gammasoft71/xtd/blob/master/docs/design_guidelines.md) to make sure your contribution follows the rules.
 * [Fork](https://github.com/gammasoft71/xtd/fork) the project and use a pull request for adding your contribution.
 * If you face any problems feel free to open an issue at the [issues tracker](https://github.com/gammasoft71/xtd/issues), If you feel like there is a missing feature, please raise a ticket on Github. Pull request are also welcome.
 
@@ -267,36 +267,36 @@ The [authors file](AUTHORS.md) lists contributors together with contact informat
 
 ## Gallery
 
-[![minesweeper](docs/pictures/minesweeper.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/minesweeper/README.md)
+[![minesweeper](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/minesweeper.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/minesweeper/README.md)
 
 [minesweeper (on Windows)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/minesweeper/README.md)
 
 ______________________________________________________________________________________________
 
-[![game_of_life](docs/pictures/game_of_life.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/game_of_life/README.md)
+[![game_of_life](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/game_of_life.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/game_of_life/README.md)
 
 [game_of_life (on macOS)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/game_of_life/README.md)
 
 ______________________________________________________________________________________________
 
-[![calculator](docs/pictures/calculator.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/calculator/README.md)
+[![calculator](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/calculator.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/calculator/README.md)
 
 [calculator (on Ubuntu)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/calculator/README.md)
 
 ______________________________________________________________________________________________
 
-[![stopwatch](docs/pictures/stopwatch.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/stopwatch_form/README.md)
+[![stopwatch](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/stopwatch.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/stopwatch_form/README.md)
 
 [stopwatch (on Windows)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/stopwatch_form/README.md)
 
 ______________________________________________________________________________________________
 
-[![xtdc-gui](docs/pictures/xtdc-gui.png)](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc-gui/README.md)
+[![xtdc-gui](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtdc-gui.png)](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc-gui/README.md)
 
 [xtdc-gui - Create a new project (on macOS)](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc-gui/README.md)
 
 ______________________________________________________________________________________________
 
-[![painting](docs/pictures/painting.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/painting/README.md)
+[![painting](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/painting.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/painting/README.md)
 
 [painting (on Ubuntu)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/painting/README.md)

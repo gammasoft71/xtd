@@ -19,8 +19,8 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core events
-  template<typename event_args_t = const event_args&>
-  using generic_event_handler = xtd::delegate<void(object& sender, event_args_t e)>;
+  template<typename event_args_t = const xtd::event_args&>
+  using generic_event_handler = xtd::delegate<void(xtd::object& sender, event_args_t e)>;
   
   /// @brief Represents the method that will handle an event that has no event data.
   /// @param sender The source of the event.

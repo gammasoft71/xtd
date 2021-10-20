@@ -8,6 +8,7 @@ add_include_directories(include)
 
 add_references(xtd.3rdparty.call_stack ${XTD_CORE_NATIVE_LIBRARY})
 add_sources(
+  include/xtd/abstract.h
   include/xtd/action.h
   include/xtd/add_last_arg_to_command.h
   include/xtd/any.h
@@ -162,14 +163,20 @@ add_sources(
   include/xtd/internal/__parse.h
   include/xtd/internal/__sprintf.h
   include/xtd/internal/__string_formatter.h
+  include/xtd/io/directory.h
+  include/xtd/io/directory_info.h
   include/xtd/io/directory_not_found_exception.h
+  include/xtd/io/drive_info.h
+  include/xtd/io/drive_type.h
   include/xtd/io/drive_not_found_exception.h
   include/xtd/io/end_of_stream_exception.h
   include/xtd/io/file.h
   include/xtd/io/file_attributes.h
   include/xtd/io/file_format_exception.h
+  include/xtd/io/file_info.h
   include/xtd/io/file_load_exception.h
   include/xtd/io/file_not_found_exception.h
+  include/xtd/io/file_system_info.h
   include/xtd/io/io_exception.h
   include/xtd/io/path.h
   include/xtd/io/path_too_long_exception.h
@@ -230,6 +237,7 @@ add_sources(
 )
 add_sources(
   src/xtd/environment_version.cpp
+  src/xtd/abstract.cpp
   src/xtd/any.cpp
   src/xtd/bit_converter.cpp
   src/xtd/console.cpp
@@ -278,6 +286,11 @@ add_sources(
   src/xtd/internal/__opaque_console_win32.cpp
   src/xtd/internal/__parse.cpp
   src/xtd/io/file.cpp
+  src/xtd/io/file_info.cpp
+  src/xtd/io/file_system_info.cpp
+  src/xtd/io/directory.cpp
+  src/xtd/io/directory_info.cpp
+  src/xtd/io/drive_info.cpp
   src/xtd/io/path.cpp
   src/xtd/io/stream_reader.cpp
   src/xtd/io/stream_writer.cpp

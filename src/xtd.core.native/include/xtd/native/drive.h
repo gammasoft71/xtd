@@ -58,7 +58,7 @@ namespace xtd {
       /// @param volume The volume name to set.
       /// @return true if succeed; otherwise false.
       /// @warning Internal use only
-      static bool set_Volume_label(const sttd::string& root_path_name, const std::string& volume_name);
+      static bool set_Volume_label(const std::string& root_path_name, const std::string& volume_name);
     };
   }
 }
