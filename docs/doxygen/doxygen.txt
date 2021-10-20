@@ -329,7 +329,9 @@ EXPAND_ONLY_PREDEF     = YES # Default : NO
 SEARCH_INCLUDES        = YES
 INCLUDE_PATH           = 
 INCLUDE_FILE_PATTERNS  = 
-PREDEFINED             = "assert_=xtd::diagnostics::debug::cassert" \
+PREDEFINED             = "abstract_=: public xtd::static_object" \
+                         "abstract_object_=: public xtd::static_object" \
+                         "assert_=xtd::diagnostics::debug::cassert" \
                          "block_scope_=" \
                          "cassert_=cassert" \
                          "core_export_=" \

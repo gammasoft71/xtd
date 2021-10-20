@@ -144,7 +144,7 @@
 
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) binary_reader - Reads primitive data types as binary values in a specific encoding.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) binary_writer - Writes primitive types in binary to a stream and supports writing strings in a specific encoding.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) directory - Provides static methods for the creation, copying, deletion, moving, and opening of Directories, and aids in the creation of System::IO::DirectoryStream objects.
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) directory - Provides static methods for the creation, copying, deletion, moving, and opening of directories, and aids in the creation of xtd::io::directory_dtream objects.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) directory_info - Exposes instance methods for creating, moving, and enumerating through directories and subdirectories.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) directory_not_found_exception - The exception that is thrown when part of a file or directory cannot be found.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) drive_info - Provides access to information on a drive.

@@ -4,7 +4,7 @@
 #pragma once
 #include <memory>
 #include <stdexcept>
-#include "../object.h"
+#include "../abstract.h"
 #include "../ustring.h"
 #include "trace_event_cache.h"
 #include "trace_event_type.h"
@@ -25,7 +25,7 @@ namespace xtd {
     ///  * To enable debugging with cmake, add the add_definitions(-DDEBUG) command line in the CMakeLists.txt of your project, or you can add #define DEBUG to the top of your file but in this case, the compiler options for debug is not activated.
     ///  * To enable tracing with cmake, add the add_definitions(-DTRACE) command line in the CMakeLists.txt of your project, or you can add #define TRACE to the top of your file.
     /// @note <b>to Inheritors:</b> Inherit from this class to implement a custom listener for the debug and trace classes. At a minimum, you must implement the write and write_line methods. Additionally, you can implement the fail, close and flush methods.
-    class trace_listener : public object {
+    class trace_listener abstract_ {
     public:
       /// @brief Initializes a new instance of the trace_listener class.
       /// @remarks The following table shows initial property values for an instance of trace_listener.

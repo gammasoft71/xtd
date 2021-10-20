@@ -14,7 +14,7 @@ The following guidelines should help you decide when and how to use operator ove
 
 **✔️ CONSIDER** defining operator overloads in a type that should feel like a primitive type.
 
-For example, System::String has operator== and operator!= defined.
+For example, xtd:ustring has operator== and operator!= defined.
 
 **✔️ DO** define operator overloads in structs that represent numbers.
 
