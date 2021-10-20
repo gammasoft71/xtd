@@ -56,8 +56,8 @@ directory::directory_iterator& directory::directory_iterator::operator++() {
       native::directory::get_file_attributes(data_->path_+ '/' + item->d_name, attributes);
   } while (item != nullptr && ((attributes & FILE_ATTRIBUTE_DIRECTORY) != FILE_ATTRIBUTE_DIRECTORY || string(item->d_name) == "." ||  string(item->d_name) == ".."  || !pattern_compare(item->d_name, data_->pattern_)));
   
-  if (item == nullptr) return *this;
-  data_->current_ = data_->path_ + (data_->path_.rfind('/') == data_->path_.size() - 1 ? "" : "/") + item->d_name;
+  if (item == nullptr) data_->current_ = "";
+  else data_->current_ = data_->path_ + (data_->path_.rfind('/') == data_->path_.size() - 1 ? "" : "/") + item->d_name;
   return *this;
 }
 
@@ -110,8 +110,8 @@ directory::file_iterator& directory::file_iterator::operator++() {
       native::directory::get_file_attributes(data_->path_+ '/' + item->d_name, attributes);
   } while (item != nullptr && ((attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY || string(item->d_name) == "." ||  string(item->d_name) == ".."  || !pattern_compare(item->d_name, data_->pattern_)));
   
-  if (item == nullptr) return *this;
-  data_->current_ = data_->path_ + (data_->path_.rfind('/') == data_->path_.size() - 1 ? "" : "/") + item->d_name;
+  if (item == nullptr) data_->current_ = "";
+  else data_->current_ = data_->path_ + (data_->path_.rfind('/') == data_->path_.size() - 1 ? "" : "/") + item->d_name;
   return *this;
 }
 
