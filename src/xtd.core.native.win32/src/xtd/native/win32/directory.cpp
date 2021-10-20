@@ -18,13 +18,20 @@ struct directory::directory_iterator::data {
   data(const std::string& path, const std::string& pattern) : path_(path), pattern_(pattern) {}
   std::string path_;
   std::string pattern_;
+  HANDLE handle_ = nullptr;
   mutable string current_;
 };
 
 directory::directory_iterator::directory_iterator(const std::string& path, const std::string& pattern) {
   data_ = make_shared<data>(path, pattern);
-  // create handle...
-  ++(*this);
+  WIN32_FIND_DATA item;
+  string search_pattern = data_->path_ + (data_->path_.rfind('\\') == data_->path_.size() - 1 ? "" : "\\") + data_->pattern_;
+  data_->handle_ = FindFirstFile(search_pattern.c_str(), &item);
+  bool result = data_->handle_;
+  while (result == true && ((item.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) != FILE_ATTRIBUTE_DIRECTORY) || string(item.cFileName) == "." || string(item.cFileName) == "..")
+    result = FindNextFile(data_->handle_, &item) != FALSE;
+  if (result) data_->current_ = data_->path_ + (data_->path_.rfind('\\') == data_->path_.size() - 1 ? "" : "\\") + item.cFileName;
+  else  data_->current_ = "";
 }
 
 directory::directory_iterator::directory_iterator() {
@@ -33,12 +40,19 @@ directory::directory_iterator::directory_iterator() {
 
 directory::directory_iterator::~directory_iterator() {
   if (data_.use_count() == 1) {
-    // close handle...
-    //data_->handle_ = nullptr;
+    FindClose(data_->handle_);
+    data_->handle_ = nullptr;
   }
 }
 
 directory::directory_iterator& directory::directory_iterator::operator++() {
+  WIN32_FIND_DATA item;
+  bool result = FindNextFile(data_->handle_, &item) != FALSE;
+  while (result == true && ((item.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) != FILE_ATTRIBUTE_DIRECTORY) || string(item.cFileName) == "." || string(item.cFileName) == "..")
+    result = FindNextFile(data_->handle_, &item) != FALSE;
+
+  if (result) data_->current_ = data_->path_ + (data_->path_.rfind('\\') == data_->path_.size() - 1 ? "" : "\\") + item.cFileName;
+  else  data_->current_ = "";
   return *this;
 }
 
@@ -62,11 +76,20 @@ struct directory::file_iterator::data {
   data(const std::string& path, const std::string& pattern) : path_(path), pattern_(pattern) {}
   std::string path_;
   std::string pattern_;
+  HANDLE handle_ = nullptr;
   mutable string current_;
 };
 
 directory::file_iterator::file_iterator(const std::string& path, const std::string& pattern) {
   data_ = make_shared<data>(path, pattern);
+  WIN32_FIND_DATA item;
+  string search_pattern = data_->path_ + (data_->path_.rfind('\\') == data_->path_.size() - 1 ? "" : "\\") + data_->pattern_;
+  data_->handle_ = FindFirstFile(search_pattern.c_str(), &item);
+  bool result = data_->handle_;
+  while (result == true && ((item.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY) || string(item.cFileName) == "." || string(item.cFileName) == "..")
+    result = FindNextFile(data_->handle_, &item) != FALSE;
+  if (result) data_->current_ = data_->path_ + (data_->path_.rfind('\\') == data_->path_.size() - 1 ? "" : "\\") + item.cFileName;
+  else  data_->current_ = "";
 }
 
 directory::file_iterator::file_iterator() {
@@ -75,12 +98,19 @@ directory::file_iterator::file_iterator() {
 
 directory::file_iterator::~file_iterator() {
   if (data_.use_count() == 1) {
-    // close handle...
-    //data_->handle_ = nullptr;
+    FindClose(data_->handle_);
+    data_->handle_ = nullptr;
   }
 }
 
 directory::file_iterator& directory::file_iterator::operator++() {
+  WIN32_FIND_DATA item;
+  bool result = FindNextFile(data_->handle_, &item) != FALSE;
+  while (result == true && ((item.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY) || string(item.cFileName) == "." || string(item.cFileName) == "..")
+    result = FindNextFile(data_->handle_, &item) != FALSE;
+
+  if (result) data_->current_ = data_->path_ + (data_->path_.rfind('\\') == data_->path_.size() - 1 ? "" : "\\") + item.cFileName;
+  else  data_->current_ = "";
   return *this;
 }
 
