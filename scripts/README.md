@@ -7,6 +7,7 @@ Contains cmake, CI, install and tests scrips.
 * [appveyor](appveyor) contains Windows build and unit tests scripts for Appveyor.
 * [circleci](circleci) contains linux and unit tests build scripts for CircleCI.
 * [travis](travis) contains macOS build and unit tests scripts for TravisCI.
+* [github](github) contains Windows, macOS and linux build and unit tests scripts for GitHub Actions.
 
 ## Installation
 
