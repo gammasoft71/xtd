@@ -159,8 +159,8 @@ namespace xtd {
 }
 
 namespace std {
-  xtd::native::directory::directory_iterator begin(xtd::native::directory::directory_iterator it) {return it;}
-  xtd::native::directory::directory_iterator end(xtd::native::directory::directory_iterator it) {return xtd::native::directory::directory_iterator();}
-  xtd::native::directory::file_iterator begin(xtd::native::directory::file_iterator it) {return it;}
-  xtd::native::directory::file_iterator end(xtd::native::directory::file_iterator it) {return xtd::native::directory::file_iterator();}
+  inline xtd::native::directory::directory_iterator begin(xtd::native::directory::directory_iterator it) {return it;}
+  inline xtd::native::directory::directory_iterator end(xtd::native::directory::directory_iterator it) {return xtd::native::directory::directory_iterator();}
+  inline xtd::native::directory::file_iterator begin(xtd::native::directory::file_iterator it) {return it;}
+  inline xtd::native::directory::file_iterator end(xtd::native::directory::file_iterator it) {return xtd::native::directory::file_iterator();}
 }
