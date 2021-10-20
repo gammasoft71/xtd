@@ -17,6 +17,7 @@ add_sources(
   src/xtd/native/win32/debugger.cpp
   src/xtd/native/win32/directory.cpp
   src/xtd/native/win32/dns.cpp
+  src/xtd/native/win32/drive.cpp
   src/xtd/native/win32/environment.cpp
   src/xtd/native/win32/file.cpp
   src/xtd/native/win32/guid.cpp
