@@ -5,6 +5,7 @@
 
 #include "../core_export.h"
 #include "../static.h"
+#include "directory_info.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
