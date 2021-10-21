@@ -43,7 +43,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | xtd.forms | dot_matrix_display_render       | Gammasoft |                                                 |
 | xtd.forms | find_box                        | Bader     |                                                 |
 | xtd.forms | find_dialog                     | Bader     |                                                 |
-| xtd.forms | font_box                        | Bader     |                                                 |
+| xtd.forms | font_box                        | Bader     | ![status](pictures/releases/status/started.png) |
 | xtd.forms | font_picker_render              | Gammasoft |                                                 |
 | xtd.forms | fourteen_segment_display_render | Gammasoft |                                                 |
 | xtd.forms | label_render                    | Gammasoft |                                                 |
