@@ -1,5 +1,6 @@
 #include "../../../include/xtd/io/file_system_info.h"
 #include "../../../include/xtd/io/io_exception.h"
+#include "../../../include/xtd/io/path.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/directory.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
@@ -19,20 +20,28 @@ file_system_info& file_system_info::attributes(xtd::io::file_attributes value) {
   return *this;
 }
 
-std::chrono::system_clock::time_point file_system_info::creation_time() const {
+ustring file_system_info::extension() const {
+  return path::get_extension(full_path_);
+}
+
+chrono::system_clock::time_point file_system_info::creation_time() const {
   return creation_time_;
 }
 
-std::chrono::system_clock::time_point file_system_info::last_access_time() const {
+chrono::system_clock::time_point file_system_info::last_access_time() const {
   return last_write_time_;
 }
 
-std::chrono::system_clock::time_point file_system_info::last_write_time() const {
+chrono::system_clock::time_point file_system_info::last_write_time() const {
   return last_write_time_;
 }
 
-xtd::ustring file_system_info::full_name() const {
+ustring file_system_info::full_name() const {
   return full_path_;
+}
+
+bool file_system_info::is_empty(const file_system_info& file_system_info) {
+  return file_system_info.original_path_.is_empty();
 }
 
 void file_system_info::refresh() {

@@ -84,7 +84,7 @@ namespace xtd {
       
       /// @brief Gets the string representing the extension part of the file.
       /// @return A string containing the System::IO::FileSystemInfo extension.
-      xtd::ustring extension() const;
+      virtual xtd::ustring extension() const;
       
       xtd::ustring full_name() const;
       
