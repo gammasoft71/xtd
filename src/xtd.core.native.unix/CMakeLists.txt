@@ -47,6 +47,7 @@ add_sources(
 if (APPLE)
   add_sources(
     src/xtd/native/unix/debugger.mm
+    src/xtd/native/unix/directory.mm
     src/xtd/native/unix/system_sound.mm
     src/xtd/native/unix/translator.mm
   )

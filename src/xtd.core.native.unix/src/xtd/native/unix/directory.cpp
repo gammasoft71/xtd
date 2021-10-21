@@ -130,6 +130,60 @@ directory::file_iterator::value_type directory::file_iterator::operator*() const
   return data_->current_;
 }
 
+struct directory::file_system_iterator::data {
+  data() = default;
+  data(const std::string& path, const std::string& pattern) : path_(path), pattern_(pattern) {}
+  std::string path_;
+  std::string pattern_;
+  DIR* handle_ = nullptr;
+  mutable string current_;
+};
+
+directory::file_system_iterator::file_system_iterator(const std::string& path, const std::string& pattern) {
+  data_ = make_shared<data>(path, pattern);
+  data_->handle_ = opendir(data_->path_.c_str());
+  ++(*this);
+}
+
+directory::file_system_iterator::file_system_iterator() {
+  data_ = make_shared<data>();
+}
+
+directory::file_system_iterator::~file_system_iterator() {
+  if (data_.use_count() == 1) {
+    closedir(data_->handle_);
+    data_->handle_ = nullptr;
+  }
+}
+
+directory::file_system_iterator& directory::file_system_iterator::operator++() {
+  dirent* item;
+  int32_t attributes;
+  do {
+    if ((item = readdir(data_->handle_)) != nullptr)
+      native::directory::get_file_attributes(data_->path_+ '/' + item->d_name, attributes);
+  } while (item != nullptr && ((attributes & FILE_ATTRIBUTE_SYSTEM) != FILE_ATTRIBUTE_SYSTEM || string(item->d_name) == "." ||  string(item->d_name) == ".."  || !pattern_compare(item->d_name, data_->pattern_)));
+  
+  if (item == nullptr) data_->current_ = "";
+  else data_->current_ = data_->path_ + (data_->path_.rfind('/') == data_->path_.size() - 1 ? "" : "/") + item->d_name;
+  return *this;
+}
+
+directory::file_system_iterator directory::file_system_iterator::operator++(int) {
+  file_system_iterator result = *this;
+  ++(*this);
+  return result;
+}
+
+bool directory::file_system_iterator::operator==(directory::file_system_iterator other) const {
+  return data_->current_ == other.data_->current_;
+}
+
+directory::file_system_iterator::value_type directory::file_system_iterator::operator*() const {
+  if (data_ == nullptr) return "";
+  return data_->current_;
+}
+
 int32_t directory::create_directory(const std::string& directory_name) {
   return mkdir(directory_name.c_str(), S_IRUSR | S_IWUSR | S_IXUSR | S_IRGRP | S_IWGRP | S_IXGRP | S_IROTH | S_IWOTH | S_IXOTH);
 }
@@ -161,15 +215,17 @@ int32_t directory::get_file_attributes(const std::string& path, int32_t& attribu
   return ret_value;
 }
 
-int32_t directory::get_file_time(const std::string& path, int64_t& creation_time, int64_t& last_access_time, int64_t& last_write_time) {
+#if !__APPLE__
+int32_t directory::get_file_times(const std::string& path, std::chrono::system_clock::time_point& creation_time, std::chrono::system_clock::time_point& last_access_time, std::chrono::system_clock::time_point& last_write_time) {
   struct stat status;
   if (stat(path.c_str(), &status) != 0) return -1;
   
-  creation_time = status.st_ctime;
-  last_access_time = status.st_atime;
-  last_write_time = status.st_mtime;
+  creation_time = std::chrono::system_clock::from_time_t(static_cast<time_t>(status.st_ctime));
+  last_access_time = std::chrono::system_clock::from_time_t(static_cast<time_t>(status.st_atime));
+  last_write_time = std::chrono::system_clock::from_time_t(static_cast<time_t>(status.st_mtime));
   return 0;
 }
+#endif
 
 string directory::get_full_path(const string& relative_path) {
   vector<string> directories = native::unix::strings::split(relative_path, {path::directory_separator_char()}, true);
@@ -218,4 +274,8 @@ int32_t directory::remove_file(const std::string& file) {
 
 int32_t directory::set_current_directory(const std::string& directory_name) {
   return chdir(directory_name.c_str());
+}
+
+int32_t directory::set_file_attributes(const std::string& path, int32_t attributes) {
+  return -1;
 }

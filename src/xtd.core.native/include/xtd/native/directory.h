@@ -9,6 +9,7 @@
 /// @endcond
 
 #include <xtd/core_native_export.h>
+#include <chrono>
 #include <cstdint>
 #include <iterator>
 #include <memory>
@@ -18,6 +19,12 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @cond
+  namespace io {
+    class directory_info;
+    class file_system_info;
+  }
+  /// @endcond
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
@@ -69,14 +76,38 @@ namespace xtd {
         file_iterator(const file_iterator&) = default;
         file_iterator(file_iterator&&) = default;
         ~file_iterator();
-
+        
         file_iterator& operator++();
         file_iterator operator++(int);
         bool operator==(file_iterator other) const;
         bool operator!=(file_iterator other) const {return !operator==(other);}
         value_type operator*() const;
         /// @endcond
-
+        
+      private:
+        friend xtd::native::directory;
+        struct data;
+        std::shared_ptr<data> data_;
+      };
+      
+      /// @brief Represent file iterator used by xtd::native::directtory::enumerate_files.
+      /// @warning Internal use only
+      class file_system_iterator : public std::iterator<std::input_iterator_tag, std::string> {
+        explicit file_system_iterator(const std::string& path, const std::string& pattern);
+      public:
+        /// @cond
+        file_system_iterator();
+        file_system_iterator(const file_system_iterator&) = default;
+        file_system_iterator(file_system_iterator&&) = default;
+        ~file_system_iterator();
+        
+        file_system_iterator& operator++();
+        file_system_iterator operator++(int);
+        bool operator==(file_system_iterator other) const;
+        bool operator!=(file_system_iterator other) const {return !operator==(other);}
+        value_type operator*() const;
+        /// @endcond
+        
       private:
         friend xtd::native::directory;
         struct data;
@@ -87,6 +118,8 @@ namespace xtd {
       friend directory_iterator;
       friend drive;
       friend file_iterator;
+      friend xtd::io::directory_info;
+      friend xtd::io::file_system_info;
 
       /// @brief Creates all directories and subdirectories in the specified path unless they already exist.
       /// @param directory_name The directory to create.
@@ -105,6 +138,12 @@ namespace xtd {
       /// @return An iterator of the full names (including paths) for the files in the directory specified by path and that match the specified search pattern.
       /// @warning Internal use only
       static file_iterator enumerate_files(const std::string& path, const std::string& pattern);
+      /// @brief Returns an iterator of full file names that match a search pattern in a specified path.
+      /// @param path The relative or absolute path to the directory to search.
+      /// @param pattern The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
+      /// @return An iterator of the full names (including paths) for the files in the directory specified by path and that match the specified search pattern.
+      /// @warning Internal use only
+      static file_iterator enumerate_file_system_entries(const std::string& path, const std::string& pattern);
       /// @brief Get the current directory.
       /// @return The currrent directory.
       /// @warning Internal use only
@@ -127,7 +166,7 @@ namespace xtd {
       /// @param last_write_time That contains the last write time.
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
-      static int32_t get_file_time(const std::string& path, int64_t& creation_time, int64_t& last_access_time, int64_t& last_write_time);
+      static int32_t get_file_times(const std::string& path, std::chrono::system_clock::time_point& creation_time, std::chrono::system_clock::time_point& last_access_time, std::chrono::system_clock::time_point& last_write_time);
       /// @brief Get full path of specified path.
       /// @param relative_path The relative path to the directory to search.
       /// @return The fulll path.
@@ -154,6 +193,12 @@ namespace xtd {
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
       static int32_t set_current_directory(const std::string& directory_name);
+      /// @brief Sets the attributes for the specified file or directory path.
+      /// @param path The relative or absolute path to the directory to get attribute.
+      /// @param attribute The file or path attribute. (see file_attribute.h)
+      /// @return 0 if success; otherwise failed.
+      /// @warning Internal use only
+      static int32_t set_file_attributes(const std::string& path, int32_t attributes);
     };
   }
 }
@@ -163,4 +208,6 @@ namespace std {
   inline xtd::native::directory::directory_iterator end(xtd::native::directory::directory_iterator it) {return xtd::native::directory::directory_iterator();}
   inline xtd::native::directory::file_iterator begin(xtd::native::directory::file_iterator it) {return it;}
   inline xtd::native::directory::file_iterator end(xtd::native::directory::file_iterator it) {return xtd::native::directory::file_iterator();}
+  inline xtd::native::directory::file_system_iterator begin(xtd::native::directory::file_system_iterator it) {return it;}
+  inline xtd::native::directory::file_system_iterator end(xtd::native::directory::file_system_iterator it) {return xtd::native::directory::file_system_iterator();}
 }

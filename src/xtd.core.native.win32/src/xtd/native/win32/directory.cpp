@@ -3,6 +3,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/directory.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#include <chrono>
 #include <string>
 #include <direct.h>
 #include <Windows.h>
@@ -129,6 +130,64 @@ directory::file_iterator::value_type directory::file_iterator::operator*() const
   return data_->current_;
 }
 
+struct directory::file_system_iterator::data {
+  data() = default;
+  data(const std::string& path, const std::string& pattern) : path_(path), pattern_(pattern) {}
+  std::string path_;
+  std::string pattern_;
+  HANDLE handle_ = nullptr;
+  mutable string current_;
+};
+
+directory::file_system_iterator::file_system_iterator(const std::string& path, const std::string& pattern) {
+  data_ = make_shared<data>(path, pattern);
+  WIN32_FIND_DATA item;
+  string search_pattern = data_->path_ + (data_->path_.rfind('\\') == data_->path_.size() - 1 ? "" : "\\") + data_->pattern_;
+  data_->handle_ = FindFirstFile(search_pattern.c_str(), &item);
+  bool result = data_->handle_;
+  while (result == true && ((item.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY) || string(item.cFileName) == "." || string(item.cFileName) == "..")
+    result = FindNextFile(data_->handle_, &item) != FALSE;
+  if (result) data_->current_ = data_->path_ + (data_->path_.rfind('\\') == data_->path_.size() - 1 ? "" : "\\") + item.cFileName;
+  else  data_->current_ = "";
+}
+
+directory::file_system_iterator::file_system_iterator() {
+  data_ = make_shared<data>();
+}
+
+directory::file_system_iterator::~file_system_iterator() {
+  if (data_.use_count() == 1) {
+    FindClose(data_->handle_);
+    data_->handle_ = nullptr;
+  }
+}
+
+directory::file_system_iterator& directory::file_system_iterator::operator++() {
+  WIN32_FIND_DATA item;
+  bool result = FindNextFile(data_->handle_, &item) != FALSE;
+  while (result == true && ((item.dwFileAttributes & FILE_ATTRIBUTE_SYSTEM) != FILE_ATTRIBUTE_SYSTEM) || string(item.cFileName) == "." || string(item.cFileName) == "..")
+    result = FindNextFile(data_->handle_, &item) != FALSE;
+  
+  if (result) data_->current_ = data_->path_ + (data_->path_.rfind('\\') == data_->path_.size() - 1 ? "" : "\\") + item.cFileName;
+  else  data_->current_ = "";
+  return *this;
+}
+
+directory::file_system_iterator directory::file_system_iterator::operator++(int) {
+  file_system_iterator result = *this;
+  ++(*this);
+  return result;
+}
+
+bool directory::file_system_iterator::operator==(directory::file_system_iterator other) const {
+  return data_->current_ == other.data_->current_;
+}
+
+directory::file_system_iterator::value_type directory:file_system_iterator::operator*() const {
+  if (data_ == nullptr) return "";
+  return data_->current_;
+}
+
 int32_t directory::create_directory(const std::string& directory_name) {
   return CreateDirectoryA(directory_name.c_str(), nullptr) != FALSE ? 0 : -1;
 }
@@ -153,13 +212,13 @@ int32_t directory::get_file_attributes(const std::string& path, int32_t& attribu
   return 0;
 }
 
-int32_t directory::get_file_time(const std::string& path, int64_t& creation_time, int64_t& last_access_time, int64_t& last_write_time) {
+int32_t directory::get_file_time(const std::string& path, std::chrono::system_clock::time_point& creation_time, std::chrono::system_clock::time_point& last_access_time, std::chrono::system_clock::time_point& last_write_time) {
   struct stat file_stat;
   if (stat(path.c_str(), &file_stat) != 0)
     return -1;
-  creation_time = static_cast<int64_t>(file_stat.st_ctime);
-  last_access_time = static_cast<int64_t>(file_stat.st_atime);
-  last_write_time = static_cast<int64_t>(file_stat.st_mtime);
+  creation_time = std::chrono::system_clock::from_time_t(static_cast<time_t>(file_stat.st_ctime));
+  last_access_time = std::chrono::system_clock::from_time_t(static_cast<time_t>(file_stat.st_atime));
+  last_write_time = std::chrono::system_clock::from_time_t(static_cast<time_t>(file_stat.st_mtime));
   return 0;
 }
 
@@ -198,4 +257,8 @@ int32_t directory::remove_file(const std::string& file) {
 
 int32_t directory::set_current_directory(const std::string& directory_name) {
   return _chdir(directory_name.c_str());
+}
+
+int32_t directory::set_file_attributes(const std::string& path, int32_t attributes) {
+  return -1;
 }
