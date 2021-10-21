@@ -41,7 +41,7 @@ ustring file_system_info::full_name() const {
 }
 
 bool file_system_info::is_empty(const file_system_info& file_system_info) {
-  return file_system_info.original_path_.is_empty();
+  return ustring::is_empty(file_system_info.original_path_);
 }
 
 void file_system_info::refresh() {

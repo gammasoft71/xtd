@@ -229,7 +229,7 @@ ip_address ip_address::parse(const ustring& str) {
   using_(vector<ustring> address_parts = work_ip_string.split({':'})) {
     if (address_parts.size() == 8) {
       for (auto index = 0U; index < address_parts.size(); index++)
-        value.numbers_[index] = xtd::parse<uint16_t>(address_parts[index].is_empty() ? "0" : address_parts[index], number_styles::hex_number);
+        value.numbers_[index] = xtd::parse<uint16_t>(ustring::is_empty(address_parts[index]) ? "0" : address_parts[index], number_styles::hex_number);
       return value;
     }
   }

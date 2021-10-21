@@ -77,7 +77,7 @@ void translator::parse_file(const xtd::ustring& file, const xtd::ustring& langua
   for (auto line : lines) {
     line_count++;
     line = line.trim();
-    if (line.is_empty()) continue;
+    if (ustring::is_empty(line)) continue;
     if (line.starts_with("#")) continue;
     if (key.empty() && line.starts_with("key ")) key = line.remove(0, 4).trim('"');
     else if (!key.empty() && line.starts_with("value ")) value = line.remove(0, 6).trim('"');

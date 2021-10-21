@@ -719,8 +719,8 @@ ustring ustring::insert(size_t start_index, const ustring& value) const noexcept
   return result;
 }
 
-bool ustring::is_empty() const noexcept {
-  return basic_string<value_type>::empty();
+bool ustring::is_empty(const ustring& sttring) noexcept {
+  return sttring.empty();
 }
 
 size_t ustring::last_index_of(value_type value) const noexcept {
