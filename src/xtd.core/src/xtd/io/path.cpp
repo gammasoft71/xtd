@@ -15,8 +15,8 @@ char path::alt_directory_separator_char() noexcept {
 
 ustring path::change_extension(const ustring& path, const ustring& extension) {
   ustring path_without_extension = combine(get_directory_name(path), get_file_name_without_extension(path));
-  if (path_without_extension.is_empty() && !extension.is_empty()) return extension;
-  if (extension.is_empty()) return path_without_extension;
+  if (ustring::is_empty(path_without_extension) && !ustring::is_empty(extension)) return extension;
+  if (ustring::is_empty(extension)) return path_without_extension;
   stringstream ss;
   ss << path_without_extension;
   if (path_without_extension[path_without_extension.size() - 1] != '.'  && extension[0] != '.') ss << '.';
@@ -26,8 +26,8 @@ ustring path::change_extension(const ustring& path, const ustring& extension) {
 
 ustring path::combine(const ustring& path1, const ustring& path2) {
   // if (path1.IndexOfAny(GetInvalidPathchar_ts()) != -1 || path2.IndexOfAny(GetInvalidPathchar_ts()) != -1)  return {};
-  if (path2.is_empty()) return path1;
-  if (path1.is_empty() || is_path_rooted(path2)) return path2;
+  if (ustring::is_empty(path2)) return path1;
+  if (ustring::is_empty(path1) || is_path_rooted(path2)) return path2;
   
   stringstream ss;
   ss << path1;
@@ -150,7 +150,7 @@ ustring path::get_temp_path() noexcept {
 }
 
 bool path::has_extension(const ustring& path) {
-  return !get_extension(path).is_empty();
+  return !ustring::is_empty(get_extension(path));
 }
 
 bool path::is_path_rooted(const ustring& path) {

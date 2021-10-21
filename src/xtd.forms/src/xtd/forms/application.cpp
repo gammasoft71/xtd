@@ -95,7 +95,7 @@ microsoft::win32::registry_key application::common_app_data_registry() {
  */
 
 xtd::ustring application::company_name() {
-  if (!application_informations::company_name().is_empty()) return application_informations::company_name();
+  if (!ustring::is_empty(application_informations::company_name())) return application_informations::company_name();
   return product_name();
 }
 
@@ -130,12 +130,12 @@ const form_collection application::open_forms() {
 }
 
 xtd::ustring application::product_name() {
-  if (!application_informations::product_name().is_empty()) return application_informations::product_name();
+  if (!ustring::is_empty(application_informations::product_name())) return application_informations::product_name();
   return io::path::get_file_name_without_extension(executable_path());
 }
 
 xtd::ustring application::product_version() {
-  if (!application_informations::product_version().is_empty()) return application_informations::product_version();
+  if (!ustring::is_empty(application_informations::product_version())) return application_informations::product_version();
   return "0.0.0.0";
 }
 

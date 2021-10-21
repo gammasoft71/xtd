@@ -830,8 +830,15 @@ namespace xtd {
     
     /// @brief Indicates whether this string is an empty string ("").
     /// @return true if the value parameter is null or an empty string (""); otherwise, false.
-    bool is_empty() const noexcept;
-
+    /// @deprecated Replaced by xtd::ustring::is_empty(const xtd::ustring&) - Will be removed in version 0.4.0
+    [[deprecated("Replaced by xtd::ustring::is_empty(const xtd::ustring&) - Will be removed in version 0.4.0")]]
+    bool is_empty() const noexcept {return is_empty(*this);}
+    
+    /// @brief Indicates whether the specifeid string is an empty string ("").
+    /// @param string The xtd::ustring to check if empty.
+    /// @return true if the value parameter is null or an empty string (""); otherwise, false.
+    static bool is_empty(const xtd::ustring& string) noexcept;
+    
     /// @brief Concatenates a specified separator string between each element of a specified object array, yielding a single concatenated string.
     /// @param separator A string separator.
     /// @param values An array of Object.

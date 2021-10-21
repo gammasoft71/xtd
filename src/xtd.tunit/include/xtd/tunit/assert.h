@@ -832,7 +832,7 @@ namespace xtd {
       
       static void is_empty(const char* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         ustring s(value);
-        if (s.is_empty())
+        if (ustring::is_empty(s))
           succeed(message, stack_frame);
         else
           base_assert::fail("collection <empty>", base_assert::join_items(s), message, stack_frame);
@@ -840,7 +840,7 @@ namespace xtd {
       
       static void is_empty(const char8_t* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         ustring s(value);
-        if (s.is_empty())
+        if (ustring::is_empty(s))
           succeed(message, stack_frame);
         else
           base_assert::fail("collection <empty>", base_assert::join_items(s), message, stack_frame);
@@ -848,7 +848,7 @@ namespace xtd {
 
       static void is_empty(const char16_t* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         ustring s(value);
-        if (s.is_empty())
+        if (ustring::is_empty(s))
           succeed(message, stack_frame);
         else
           base_assert::fail("collection <empty>", base_assert::join_items(s), message, stack_frame);
@@ -856,7 +856,7 @@ namespace xtd {
       
       static void is_empty(const char32_t* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         ustring s(value);
-        if (s.is_empty())
+        if (ustring::is_empty(s))
           succeed(message, stack_frame);
         else
           base_assert::fail("collection <empty>", base_assert::join_items(s), message, stack_frame);
@@ -864,7 +864,7 @@ namespace xtd {
 
       static void is_empty(const wchar_t* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         ustring s(value);
-        if (s.is_empty())
+        if (ustring::is_empty(s))
           succeed(message, stack_frame);
         else
           base_assert::fail("collection <empty>", base_assert::join_items(s), message, stack_frame);
@@ -1680,35 +1680,35 @@ namespace xtd {
       }
       
       static void is_not_empty(const char* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        if (!ustring(value).is_empty())
+        if (!ustring::is_empty(ustring(value)))
           succeed(message, stack_frame);
         else
           base_assert::fail("collection not <empty>", "<empty>", message, stack_frame);
       }
       
       static void is_not_empty(const char8_t* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        if (!ustring(value).is_empty())
+        if (!ustring::is_empty(ustring(value)))
           succeed(message, stack_frame);
         else
           base_assert::fail("collection not <empty>", "<empty>", message, stack_frame);
       }
       
       static void is_not_empty(const char16_t* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        if (!ustring(value).is_empty())
+        if (!ustring::is_empty(ustring(value)))
           succeed(message, stack_frame);
         else
           base_assert::fail("collection not <empty>", "<empty>", message, stack_frame);
       }
       
       static void is_not_empty(const char32_t* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        if (!ustring(value).is_empty())
+        if (!ustring::is_empty(ustring(value)))
           succeed(message, stack_frame);
         else
           base_assert::fail("collection not <empty>", "<empty>", message, stack_frame);
       }
 
       static void is_not_empty(const wchar_t* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        if (!ustring(value).is_empty())
+        if (!ustring::is_empty(ustring(value)))
           succeed(message, stack_frame);
         else
           base_assert::fail("collection not <empty>", "<empty>", message, stack_frame);

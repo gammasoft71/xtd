@@ -104,10 +104,10 @@ xtd::processor environment::processor_information() {
 }
 
 void environment::set_environment_variable(const ustring& variable, const ustring& value, environment_variable_target target) {
-  if (variable.is_empty()) throw xtd::argument_exception("Environment variable name is empty"_t, current_stack_frame_);
+  if (ustring::is_empty(variable)) throw xtd::argument_exception("Environment variable name is empty"_t, current_stack_frame_);
   
   if (target == environment_variable_target::process) {
-    if (value.is_empty()) {
+    if (ustring::is_empty(value)) {
       get_environment_variables().erase(variable);
       native::environment::unset_environment_variable(variable);
     } else {

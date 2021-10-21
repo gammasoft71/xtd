@@ -11,7 +11,7 @@ namespace unit_tests {
     void test_method_(default_constructor) {
       ustring s;
       assert::is_zero(s.length(), csf_);
-      assert::is_true(s.is_empty(), csf_);
+      assert::is_true(ustring::is_empty(s), csf_);
     }
 
     void test_method_(constructor_with_ustring) {
