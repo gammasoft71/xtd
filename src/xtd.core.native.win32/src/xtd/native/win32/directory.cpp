@@ -183,7 +183,7 @@ bool directory::file_system_iterator::operator==(directory::file_system_iterator
   return data_->current_ == other.data_->current_;
 }
 
-directory::file_system_iterator::value_type directory:file_system_iterator::operator*() const {
+directory::file_system_iterator::value_type directory::file_system_iterator::operator*() const {
   if (data_ == nullptr) return "";
   return data_->current_;
 }
@@ -212,7 +212,7 @@ int32_t directory::get_file_attributes(const std::string& path, int32_t& attribu
   return 0;
 }
 
-int32_t directory::get_file_time(const std::string& path, std::chrono::system_clock::time_point& creation_time, std::chrono::system_clock::time_point& last_access_time, std::chrono::system_clock::time_point& last_write_time) {
+int32_t directory::get_file_times(const std::string& path, std::chrono::system_clock::time_point& creation_time, std::chrono::system_clock::time_point& last_access_time, std::chrono::system_clock::time_point& last_write_time) {
   struct stat file_stat;
   if (stat(path.c_str(), &file_stat) != 0)
     return -1;
