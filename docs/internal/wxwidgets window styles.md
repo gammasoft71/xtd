@@ -1,15 +1,24 @@
+# wxStyles
+
+## Default styles
+
 wxDEFAULT_FRAME_STYLE  = wxSYSTEM_MENU wxRESIZE_BORDER wxMINIMIZE_BOX wxMAXIMIZE_BOX wxCLOSE_BOX wxCAPTION wxCLIP_CHILDREN
+
 wxDEFAULT_DIALOG_STYLE = wxSYSTEM_MENU                                               wxCLOSE_BOX wxCAPTION
+
+## Style values examples with decomposition
 
 0x20401840
 
 0x20001800
 
-0x20000000 --> wxCAPTION
-0x00001000 --> wxCLOSE_BOX
-0x00000800 --> wxSYSTEM_MENU
+* 0x20000000 --> wxCAPTION
+* 0x00001000 --> wxCLOSE_BOX
+* 0x00000800 --> wxSYSTEM_MENU
 
+## wxStyles definitions
 
+```c++
 #define wxDOUBLE_BORDER          0x10000000
 #define wxCAPTION                0x20000000
 #define wxCLIP_SIBLINGS          0x20000000
@@ -44,4 +53,6 @@ wxDEFAULT_DIALOG_STYLE = wxSYSTEM_MENU                                          
 
 #define wxRESIZE_BORDER          0x00000040
 #define wxTINY_CAPTION           0x00000080
+```
+
 
