@@ -11,7 +11,7 @@
 * [Deprecated](deprecated.md) provides information about how to remove a method or class in xtd.
 * [Sounds](sounds.md) provides information about sounds.
 * [Theme](theme.md) provides information about themes.
-* [wix_themes](wix_themes.md) provides information about website themes (Wix).
+* [Wix themes](wix_themes.md) provides information about website themes (Wix).
 * [wxWidgets window styles](wxwidgets window styles.md) provides information about Windows styles of wxWidgets.
 * [xtd explanations](xtd_explanations.md) provides xtd explanations.
 
