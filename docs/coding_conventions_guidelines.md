@@ -259,7 +259,7 @@ const xtd::version my_class::min_version(2, 1, 0);
 
 ```c++
 class math {
-pubmic:
+public:
 math() = delete;
   // equivalent : #define max(value1, value2) (value1 >= value2 ? value1 : value2)
   template<typename T>
