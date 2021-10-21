@@ -1,5 +1,13 @@
 # Internal documentations
 
+## Warning
+
+* Internal use only
+* These documents are internal. They serve as *documentations*, *tips*, *how to*, *...* for xtd developers.
+
+
+## Contents
+
 * [Computer Guid](computer_guid.md) provides information about about computer guid.
 * [Gnome default size of controls](default_size_of_controls_g.md) provides information about default control sizes on Gnome.
 * [macOS default size of controls](default_size_of_controls_m.md) provides information about default control sizes on macOS.
@@ -15,6 +23,6 @@
 * [wxWidgets window styles](wxwidgets window styles.md) provides information about Windows styles of wxWidgets.
 * [xtd explanations](xtd_explanations.md) provides xtd explanations.
 
-# Code review
+## Code review
 
 * [Code review](code_review) provides xtd code review.
