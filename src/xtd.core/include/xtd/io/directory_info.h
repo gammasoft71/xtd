@@ -20,7 +20,7 @@ namespace xtd {
       directory_info(const xtd::ustring& path);
       
       xtd::ustring name() const override;
-      
+
       bool exists() const override;
       
       void remove() override;
