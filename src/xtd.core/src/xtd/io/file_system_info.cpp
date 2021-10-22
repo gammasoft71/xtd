@@ -36,6 +36,10 @@ chrono::system_clock::time_point file_system_info::last_write_time() const {
   return last_write_time_;
 }
 
+size_t file_system_info::length() const {
+  return length_;
+}
+
 ustring file_system_info::full_name() const {
   return full_path_;
 }
@@ -50,5 +54,10 @@ void file_system_info::refresh() {
   if (native::directory::get_file_attributes(full_path_, attributes) == 0) {
     attributes_ = static_cast<xtd::io::file_attributes>(attributes);
     native::directory::get_file_times(full_path_, creation_time_, last_access_time_, last_write_time_);
+    length_ = native::directory::get_file_size(full_path_);
   }
+}
+
+xtd::ustring file_system_info::to_string() const noexcept {
+  return original_path_;
 }

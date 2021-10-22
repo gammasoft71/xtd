@@ -11,6 +11,7 @@ using namespace xtd;
 using namespace io;
 
 file_info::file_info(const xtd::ustring& path) {
+  original_path_ = path;
   refresh();
 }
 
@@ -24,7 +25,7 @@ ustring file_info::directory_name() const {
 
 bool file_info::exists() const {
   int32_t attributes = 0;
-  return native::directory::get_file_attributes(full_path_, attributes) == 0 && (static_cast<file_attributes>(attributes) & file_attributes::directory) == file_attributes::directory;
+  return native::directory::get_file_attributes(full_path_, attributes) == 0 && (static_cast<file_attributes>(attributes) & file_attributes::directory) != file_attributes::directory;
 }
 
 bool file_info::is_read_only() const {

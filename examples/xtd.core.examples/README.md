@@ -21,7 +21,6 @@
 * [vector_list](collections/vector_list/README.md) shows how to use [xtd::collections::vector_list](../../src/xtd.core/include/xtd/collections/vector_list.h) class.
 * [vector_list2](collections/vector_list2/README.md) shows how to use [xtd::collections::vector_list](../../src/xtd.core/include/xtd/collections/vector_list.h) class.
 
-
 ## [Console](console/README.md)
 
 * [console_background_color](console/console_background_color/README.md) shows how to use [xtd::console::background_color](../../src/xtd.core/include/xtd/console.h) method.
@@ -112,6 +111,11 @@
 ## [Guid](guid/README.md)
 
 * [guid](guid/guid/README.md) shows how to use [xtd::guid](../../src/xtd.core/include/xtd/guid.h) class.
+
+## [IO](io/README.md)
+
+* [directory_info](io/directory_info/README.md) shows how to use [xtd::io::directory_info](../../src/xtd.core/include/xtd/io.directory_info.h) class.
+* [file_info](io/file_info/README.md) shows how to use [xtd::io::file_info](../../src/xtd.core/include/xtd/io.file_info.h) class.
 
 ## [Keywords](keywords/README.md)
 
