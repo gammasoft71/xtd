@@ -21,7 +21,6 @@ namespace xtd {
     /// @include fill_rectangle.cpp
     class drawing_export_ solid_brush final : public brush {
     public:
-      solid_brush();
       solid_brush(const drawing::color& color) {this->color(color);}
 
       /// @cond
@@ -35,6 +34,7 @@ namespace xtd {
       solid_brush& color(const drawing::color& color);
       
     private:
+      solid_brush();
       struct data {
         drawing::color color_;
       };

@@ -21,7 +21,6 @@ namespace xtd {
     /// @include fill_rectangle.cpp
     class drawing_export_ texture_brush final : public brush {
     public:
-      texture_brush();
       texture_brush(const drawing::image& image) {this->image(image);}
 
       /// @cond
@@ -35,6 +34,7 @@ namespace xtd {
       texture_brush& image(const drawing::image& image);
       
     private:
+      texture_brush();
       struct data {
         drawing::image image_;
       };

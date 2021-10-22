@@ -30,8 +30,6 @@ namespace xtd {
       /// @include fill_rectangle.cpp
       class drawing_export_ hatch_brush final : public brush {
       public:
-        /// @brief Initializes a new instance of the hatch_brush class.
-        hatch_brush();
         /// @brief Initializes a new instance of the xtd::drawing::drawing2d::hatch_brush class with the specified xtd::drawing::drawing2d::hatch_style enumeration and foreground color.
         /// @param hatch_style One of the xtd::drawing::drawing2d::hatch_style values that represents the pattern drawn by this xtd::drawing::drawing2d::hatch_brush.
         /// @param fore_color The xtd::drawing::color structure that represents the color of lines drawn by this xtd::drawing::drawing2d::hatch_brush.
@@ -63,6 +61,7 @@ namespace xtd {
         xtd::drawing::drawing2d::hatch_style hatch_style() const {return data_->hatch_style_;}
 
         private:
+        hatch_brush();
         void recreate_handle();
         struct data {
           xtd::drawing::drawing2d::hatch_style hatch_style_ = xtd::drawing::drawing2d::hatch_style::horizontal;

@@ -28,9 +28,6 @@ namespace xtd {
     /// @ingroup xtd_drawing drawing
     class drawing_export_ pen final : public object {
     public:
-      /// @brief Initializes a new instance of the xtd::drawing::pen class.
-      pen();
-
       /// @brief Initializes a new instance of the xtd::drawing::pen class with the specified xtd::drawing::brush.
       /// @param brush A xtd::drawing::brush that determines the fill properties of this xtd::drawing::pen.
       /// @remarks The brush property determines how the xtd::drawing::pen draws lines. Lines are drawn as if they are filled rectangles, with the characteristics of the specified brush.
@@ -101,6 +98,7 @@ namespace xtd {
       /// @endcond
 
     private:
+      pen();
       friend class graphics;
       struct data {
         intptr_t handle_ = 0;
