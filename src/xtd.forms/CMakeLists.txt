@@ -95,6 +95,8 @@ add_sources(
   include/xtd/forms/flow_layout_panel.h
   include/xtd/forms/folder_browser_dialog.h
   include/xtd/forms/font_dialog.h
+  include/xtd/forms/font_box.h
+  include/xtd/forms/font_box_options.h
   include/xtd/forms/font_picker.h
   include/xtd/forms/form.h
   include/xtd/forms/form_border_style.h

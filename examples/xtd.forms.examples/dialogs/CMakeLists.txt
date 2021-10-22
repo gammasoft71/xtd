@@ -14,6 +14,7 @@ add_projects(
   exception_box
   exception_dialog
   folder_browser_dialog
+  font_box
   font_dialog
   input_box
   input_dialog
