@@ -15,6 +15,7 @@ add_projects(
   exceptions
   format
   guid
+  io
   keywords
   mains
   math

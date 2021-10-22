@@ -27,14 +27,14 @@ namespace xtd {
       
       xtd::ustring directory_name() const;
       
-      xtd::ustring name() const override;
-      
       bool exists() const override;
       
       bool is_read_only() const;
       
       size_t length() const;
       
+      xtd::ustring name() const override;
+
       void remove() override;
     };
   }

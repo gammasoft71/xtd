@@ -13,7 +13,7 @@ char path::alt_directory_separator_char() {
 }
 
 char path::directory_separator_char() {
-  return '\\';
+  return '/';
 }
 
 string path::get_temp_path() {

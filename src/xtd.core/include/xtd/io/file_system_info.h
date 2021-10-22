@@ -91,7 +91,9 @@ namespace xtd {
       std::chrono::system_clock::time_point last_access_time() const;
       
       std::chrono::system_clock::time_point last_write_time() const;
-      
+
+      size_t length() const;
+
       virtual xtd::ustring name() const = 0;
       
       static bool is_empty(const file_system_info& file_system_info);
@@ -99,6 +101,8 @@ namespace xtd {
       void refresh();
       
       virtual void remove() = 0;
+      
+      xtd::ustring to_string() const noexcept override;
       
       /// @cond
       file_system_info(const file_system_info&) = default;
@@ -108,11 +112,12 @@ namespace xtd {
     protected:
       xtd::ustring full_path_;
       xtd::ustring original_path_;
+    private:
       xtd::io::file_attributes attributes_ = static_cast<xtd::io::file_attributes>(0);
       std::chrono::system_clock::time_point creation_time_;
       std::chrono::system_clock::time_point last_access_time_;
       std::chrono::system_clock::time_point last_write_time_;
-      bool exists_ = false;
+      size_t length_ = 0;
     };
   }
 }
