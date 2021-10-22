@@ -252,10 +252,10 @@ string directory::get_current_directory() {
   return getcwd(path, MAXPATHLEN) ? path : "";
 }
 
-int64_t directory::get_file_size(const std::string& path) {
+size_t directory::get_file_size(const std::string& path) {
   struct stat status;
   if (stat(path.c_str(), &status) != 0) return 0;
-  return status.st_size;
+  return static_cast<size_t>(status.st_size);
 }
 
 int32_t directory::move_file(const std::string& old_path, const std::string& new_path) {

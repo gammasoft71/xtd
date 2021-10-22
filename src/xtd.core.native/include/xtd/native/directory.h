@@ -160,7 +160,7 @@ namespace xtd {
       /// @param path The relative or absolute path to the directory to get size.
       /// @return The file size.
       /// @warning Internal use only
-      static int64_t get_file_size(const std::string& path);
+      static size_t get_file_size(const std::string& path);
       /// @brief Get file creeation time, last access time and lastt write time of specified path.
       /// @param path The relative or absolute path to the directory to get times.
       /// @param creation_time That contains the creation time.
