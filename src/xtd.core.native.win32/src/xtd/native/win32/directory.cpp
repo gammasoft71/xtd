@@ -227,7 +227,7 @@ string directory::get_full_path(const std::string& relative_path) {
   return _fullpath(full_path, relative_path.c_str(), MAX_PATH) ? full_path : "";
 }
 
-int64_t directory::get_file_size(const std::string& path) {
+size_t directory::get_file_size(const std::string& path) {
   WIN32_FIND_DATA file;
   void* handle = FindFirstFileA(path.c_str(), &file);
   if (handle == INVALID_HANDLE_VALUE)
@@ -237,7 +237,7 @@ int64_t directory::get_file_size(const std::string& path) {
   size.HighPart = file.nFileSizeHigh;
   size.LowPart = file.nFileSizeLow;
   FindClose(handle);
-  return size.QuadPart;
+  return static_cast<size_t>(size.QuadPart);
 }
 
 int32_t directory::move_file(const std::string& old_path, const std::string& new_path) {
