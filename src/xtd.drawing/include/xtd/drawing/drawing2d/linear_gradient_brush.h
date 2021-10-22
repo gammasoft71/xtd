@@ -27,8 +27,6 @@ namespace xtd {
       /// @include fill_rectangle.cpp
        class drawing_export_ linear_gradient_brush final : public brush {
       public:
-        /// @brief Initializes a new instance of the linear_gradient_brush class.
-        linear_gradient_brush();
         /// @brief Initializes a new instance of the linear_gradient_brush class with the specified points and colors.
         /// @param point1 A xtd::drawing::point structure that represents the starting point of the linear gradient.
         /// @param point2 A xtd::drawing::point structure that represents the endpoint of the linear gradient.
@@ -120,7 +118,8 @@ namespace xtd {
         /// @return A xtd::drawing::rectangle_f structure that specifies the starting and ending points of the gradient.
         xtd::drawing::rectangle_f rectangle() const;
       
-        private:
+      private:
+        linear_gradient_brush();
         void recreate_handle();
         struct data {
           xtd::drawing::point_f point1_;
