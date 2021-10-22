@@ -12,6 +12,7 @@
 * [exception_box](exception_box/README.md) represents a exception box that displays exception box.
 * [exception_dialog](exception_dialog/README.md) represents a exception box that displays exception box.
 * [folder_browser_dialog](folder_browser_dialog/README.md) prompts the user to select a folder.
+* [font_box](font_box/README.md) represents a dialog box that displays a font box to the user to choose a font from among those installed on the local computer.
 * [font_dialog](font_dialog/README.md) prompts the user to choose a font from among those installed on the local computer.
 * [input_box](input_box/README.md) represents a dialog box that displays input dialog.
 * [input_dialog](input_dialog/README.md) prompts the user to input text.
