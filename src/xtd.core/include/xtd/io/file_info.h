@@ -17,6 +17,13 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ file_info : public xtd::io::file_system_info {
     public:
+      file_info(const xtd::ustring& path);
+      
+      xtd::ustring name() const override;
+      
+      bool exists() const override;
+      
+      void remove() override;
     };
   }
 }
