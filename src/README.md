@@ -41,3 +41,9 @@ Contains xtd sources.
 
 * [xtd.3rdparty.call_stack](xtd.3rdparty.call_stack) provides information about the call stack.
 
+## The xtd libraries hierarchy
+
+![libraries_img](../docs/pictures/hierarchy.png)
+
+
+
