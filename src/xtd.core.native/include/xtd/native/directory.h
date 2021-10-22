@@ -22,6 +22,7 @@ namespace xtd {
   /// @cond
   namespace io {
     class directory_info;
+    class file_info;
     class file_system_info;
   }
   /// @endcond
@@ -119,6 +120,7 @@ namespace xtd {
       friend drive;
       friend file_iterator;
       friend xtd::io::directory_info;
+      friend xtd::io::file_info;
       friend xtd::io::file_system_info;
 
       /// @brief Creates all directories and subdirectories in the specified path unless they already exist.
