@@ -24,7 +24,7 @@ You should always provide robust exception handling when calling filesystem meth
 
 ## Streams
 
-The std classes [std::ostream](https://en.cppreference.com/w/cpp/io/basic_iostream) and [std::istream](https://en.cppreference.com/w/cpp/io/basic_ostream) and [std::iostream](https://en.cppreference.com/w/cpp/io/basic_istream) support reading and writing bytes.
+The std classes [std::ostream](https://en.cppreference.com/w/cpp/io/basic_ostream) and [std::istream](https://en.cppreference.com/w/cpp/io/basic_istream) and [std::iostream](https://en.cppreference.com/w/cpp/io/basic_iostream) support reading and writing bytes.
 
 ## Readers and writers
 
