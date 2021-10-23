@@ -17,16 +17,18 @@ namespace xtd {
     /// @remarks This enumeration has a flags  attribute that allows a bitwise combination of its member values.
     /// @remarks When a control is anchored to an edge of its container, the distance between the control and the specified edge remains constant when the container resizes. For example, if a control is anchored to the right edge of its container, the distance between the right edge of the control and the right edge of the container remains constant when the container resizes. A control can be anchored to any combination of control edges. If the control is anchored to opposite edges of its container (for example, to the top and bottom), it resizes when the container resizes. If a control has its anchor property set to none, the control moves half of the distance that the container of the control is resized. For example, if a button has its anchor property set to none and the form that the control is located on is resized by 20 pixels in either direction, the button will be moved 10 pixels in both directions.
     enum class anchor_styles {
-      /// @brief The cause of the closure was not defined or could not be determined.
+      /// @brief no styles.
       none = 0b0,
-      /// @brief The operating system is closing all applications before shutting down.
+      /// @brief Bind control edges to the top of its container.
       top = 0b1,
-      /// @brief The parent form of this multiple document interface (MDI) form is closing.
+      /// @brief Bind control edges to the bottom of its container.
       bottom = 0b10,
-      /// @brief The user is closing the form through the user interface (UI), for example by clicking the Close button on the form window, selecting Close from the window's control menu, or pressing ALT+F4.
+      /// @brief Bind control edges to the left of its container.
       left = 0b100,
-      /// @brief The Microsoft Windows Task Manager is closing the application.
+      /// @brief Bind control edges to the right of its container.
       right = 0b1000,
+      /// @brief All flags except none.
+      all = top | bottom | left | right,
     };
 
     /// @cond
